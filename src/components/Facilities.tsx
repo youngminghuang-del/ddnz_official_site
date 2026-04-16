@@ -4,15 +4,15 @@ import { getImgUrl } from '../constants';
 export default function Facilities() {
   const facilityData = [
     {
-      title: "Guangzhou Operational Hub",
-      tag: "18-Year Self-Owned",
-      desc: "Our strategic nerve center in Guangzhou. With nearly two decades of operational history, we provide absolute cargo control, professional consolidation, and rigorous QC for every shipment.",
+      title: "Guangzhou: Your Command & Control Center",
+      tag: "1. A Strategic Hub, Owned & Mastered for 18 Years",
+      desc: "This is not a leased space; it’s our strategic nerve center, owned and refined over nearly two decades. Here, we exercise absolute control. Every shipment undergoes professional consolidation and rigorous, standardized quality checks, ensuring integrity from the first to the final mile.",
       img: getImgUrl('FACILITY_SCALE'),
     },
     {
-      title: "Professional Handling & Sorting",
-      tag: "Precision Execution",
-      desc: "Equipped with automated sorting lines and expert staff. We specialize in complex packing requirements, including export-grade plywood crating for high-value engineering projects.",
+      title: "Advanced Systems for Complex Cargo",
+      tag: "2. Engineered for Precision & Protection",
+      desc: "Equipped with automated sorting and a team of specialists, we handle what standard warehouses cannot. Our core expertise lies in custom, export-grade packaging solutions—most notably, precision-engineered plywood crating for high-value, sensitive machinery and project cargo, built to survive the global supply chain.",
       img: getImgUrl('FACILITY_SORT'),
     }
   ];
@@ -21,8 +21,8 @@ export default function Facilities() {
     <section id="our-facilities" className="py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mb-16 text-center md:text-left">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight">OPERATIONAL STRENGTH</h2>
-          <p className="mt-4 text-lg text-slate-600">Where 26 Years of Experience Meets Modern Infrastructure</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">OPERATIONAL EXCELLENCE</h2>
+          <p className="mt-4 text-lg text-slate-600">Where Legacy Expertise Powers Modern Infrastructure</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">

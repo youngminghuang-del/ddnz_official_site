@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { cn } from '../lib/utils';
-import { getImgUrl } from '../constants'; // 确保资产库对接
 
 const navItems = [
   { label: 'WHO WE ARE', href: '#who-we-are' },
   { label: 'WHAT WE DO', href: '#what-we-do' },
   { label: 'WHY DDNZ?', href: '#why-ddnz' },
   { label: 'OUR FACILITIES', href: '#our-facilities' },
+  { label: 'INSIGHTS', href: '#insights' },
   { label: 'GET A QUOTE', href: '#get-a-quote' },
 ];
 

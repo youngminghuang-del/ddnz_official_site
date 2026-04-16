@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Mail } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { getImgUrl } from '../constants';
 
 export default function Hero() {
@@ -25,16 +25,17 @@ export default function Hero() {
             <span className="text-blue-400 font-black">Personal Touch</span>.
           </h1>
           <p className="mt-4 text-xl md:text-2xl text-slate-100 max-w-3xl mx-auto font-medium mb-10">
-            Empowering Your Global Supply Chain Since 1999.
+            Empowering Your Global Supply Chain Since 1997.
           </p>
           
-          {/* 修改点：按钮逻辑由 WhatsApp 切换为直接唤起邮件客户端 */}
           <a
-            href="mailto:services@ddnzglobal.com?subject=Inquiry from DDNZ Global Website"
-            className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white bg-blue-600 hover:bg-blue-500 transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
+            href="https://wa.me/85261077362?text=Hi%20DDNZ%20Global,%20I%27m%20interested%20in%20your%20logistics%20services.%20Can%20we%20talk?"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white bg-[#25D366] hover:bg-[#20bd5a] transition-all shadow-xl hover:shadow-2xl transform hover:-translate-y-1"
           >
-            <Mail className="w-6 h-6 mr-3" />
-            Direct Email Inquiry
+            <MessageCircle className="w-6 h-6 mr-3" />
+            Chat on WhatsApp
           </a>
         </motion.div>
       </div>

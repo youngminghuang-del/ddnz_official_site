@@ -6,7 +6,9 @@ import WhyDDNZ from './components/WhyDDNZ';
 import Partners from './components/Partners';
 import Facilities from './components/Facilities';
 import GetAQuote from './components/GetAQuote';
+import Insights from './components/Insights';
 import Footer from './components/Footer';
+import WhatsAppFloat from './components/WhatsAppFloat';
 
 export default function App() {
   return (
@@ -14,14 +16,16 @@ export default function App() {
       <Navbar />
       <main>
         <Hero />
+        <GetAQuote />
         <WhoWeAre />
         <WhatWeDo />
         <WhyDDNZ />
         <Partners />
         <Facilities />
-        <GetAQuote />
+        <Insights />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </div>
   );
 }

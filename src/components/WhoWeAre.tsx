@@ -3,7 +3,7 @@ import { getImgUrl } from '../constants';
 
 const timelineEvents = [
   {
-    year: '1999 - 2004',
+    year: '1997 - 2004',
     title: "The WTO Era: Connecting the World's Factory",
     description: 'Riding the historic wave of China\'s entry into the WTO, we began our journey by bridging the "World\'s Factory" to every reachable corner of the globe. From delicate electronics and apparel to heavy machinery and daily chemicals, we ensured that "Made in China" reached the world with absolute reliability.',
     image: getImgUrl('JOURNEY_1999'),
@@ -41,8 +41,8 @@ export default function WhoWeAre() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           {/* 统一视觉：正体加粗标题 */}
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">Our Heritage</h2>
-          <p className="mt-4 text-lg text-slate-600">A 26-Year Legacy of Trust, Vision, and Global Adaptation</p>
+          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">WHO WE ARE</h2>
+          <p className="mt-4 text-lg text-slate-600">A 29-Year Legacy of Trust, Vision, and Global Adaptation</p>
         </div>
 
         <div className="relative">

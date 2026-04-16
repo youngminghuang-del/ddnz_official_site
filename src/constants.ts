@@ -1,12 +1,9 @@
 export const IMAGES = {
   BASE_URL: "https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/",
-  LOGO_MAIN: "brand_logo_main.png",
   HERO_BG: "hero_gz_nansha_port.png",
   JOURNEY_1999: "journey_1999_gz_port.png",
-  JOURNEY_2003: "journey_2003_electronic_logistics.png",
   JOURNEY_2004: "journey_2004_warehouse.png",
   JOURNEY_2009: "journey_2009_hk_office.png",
-  JOURNEY_2024: "tech_digital_dashboard.png",
   EV_01: "ev_export_port_01.png",
   EV_02: "ev_export_port_02.png",
   EV_03: "ev_export_port_03.png",
