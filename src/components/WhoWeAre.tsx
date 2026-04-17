@@ -4,33 +4,33 @@ import { getImgUrl } from '../constants';
 const timelineEvents = [
   {
     year: '1997 - 2004',
-    title: "The WTO Era: Connecting the World's Factory",
-    description: 'Riding the historic wave of China\'s entry into the WTO, we began our journey by bridging the "World\'s Factory" to every reachable corner of the globe. From delicate electronics and apparel to heavy machinery and daily chemicals, we ensured that "Made in China" reached the world with absolute reliability.',
+    title: "The WTO Era: Linking the World's Workshop",
+    description: 'Capitalizing on China’s historic WTO accession, we established ourselves as a vital link between the "World’s Workshop" and emerging global markets. We specialized in moving a diverse range of goods—from fragile electronics and textiles to industrial machinery—establishing a reputation for steadfast reliability when "Made in China" went global.',
     image: getImgUrl('JOURNEY_1999'),
     highlight: true,
   },
   {
     year: '2005 - 2010',
-    title: 'Infrastructure & Trade Synergy',
-    description: 'Growth brought depth. We expanded our footprint by establishing self-owned warehousing hubs. Evolving into a versatile trade partner, we successfully launched our proprietary brands for commercial kitchenware alongside deep-agency alliances, and professional sourcing for premium commercial furniture.',
+    title: 'Building Infrastructure & Integrated Trade',
+    description: 'As volumes grew, so did our capabilities. We invested in self-owned warehouse hubs to gain full operational control. Simultaneously, we evolved beyond logistics into a versatile trading partner, launching proprietary commercial kitchen brands while forging deep agency partnerships and managing professional sourcing for premium hospitality furniture.',
     image: getImgUrl('JOURNEY_2004'),
   },
   {
     year: '2011 - 2018',
-    title: 'The Financial Gateway: DDNZ Global (Hong Kong)',
-    description: 'To ensure maximum financial security and settlement efficiency for our global clientele, we established our Hong Kong gateway. This strategic move allowed us to facilitate seamless multi-currency transactions, providing our partners with a secure and robust financial buffer in international trade.',
+    title: 'The Financial Gateway: DDNZ Global (HK)',
+    description: 'To offer our global clients superior financial security and settlement efficiency, we strategically established our Hong Kong entity. This pivotal move enabled seamless multi-currency transactions and provided a stable, reliable financial bridge for international trade settlements.',
     image: getImgUrl('JOURNEY_2009'),
   },
   {
     year: '2020',
-    title: 'Resilience Amidst Crisis',
-    description: 'When the world stood still in 2020, DDNZ moved faster. We pivoted our logistics power to export critical medical supplies (PPE, masks, and gloves) to Europe. We didn\'t just ship cargo; we stood shoulder-to-shoulder with our clients to overcome the toughest challenges of our generation.',
+    title: 'Crisis Response: Delivering Critical Supplies',
+    description: 'When global supply chains faltered during the pandemic, our infrastructure remained operational. We rapidly redirected our logistics networks to export essential medical supplies (including PPE, masks, and gloves) to Europe. We were recognized not merely as shippers, but as responsive partners capable of navigating extreme disruption.',
     image: getImgUrl('JOURNEY_2019'),
   },
   {
     year: '2021 - Present',
-    title: 'The Green Energy Revolution',
-    description: 'Embracing the dawn of the EV era, we became experts in New Energy logistics. Today, we specialize in bespoke, case-by-case export solutions for Energy Storage Systems (ESS) and electric commercial vehicles, navigating the complexities of customized DG (Dangerous Goods) handling.',
+    title: 'The New Energy Frontier',
+    description: 'Anticipating the global shift, we entered the green logistics arena. Today, we are specialists in complex, compliance-driven exports for the new energy sector. We engineer custom logistics solutions for Energy Storage Systems (ESS) and electric commercial vehicles, mastering the intricate regulations governing Dangerous Goods transport.',
     image: getImgUrl('ESS_STORAGE'),
   },
 ];
@@ -42,7 +42,7 @@ export default function WhoWeAre() {
         <div className="text-center mb-20">
           {/* 统一视觉：正体加粗标题 */}
           <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">WHO WE ARE</h2>
-          <p className="mt-4 text-lg text-slate-600">A 29-Year Legacy of Trust, Vision, and Global Adaptation</p>
+          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">A 29-Year Evolution: From Trade Pioneers to Industrial Logistics Experts</p>
         </div>
 
         <div className="relative">

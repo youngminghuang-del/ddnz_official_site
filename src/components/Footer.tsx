@@ -32,28 +32,28 @@ export default function Footer() {
 
           {/* Column 2: Guangzhou HQ */}
           <div>
-            <h4 className="text-xs font-bold text-white mb-5 uppercase tracking-widest flex items-center">
-              <Globe className="w-4 h-4 mr-2 text-blue-500" /> Guangzhou HQ
+            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-[0.15em] flex items-center">
+              <Globe className="w-4 h-4 mr-2.5 text-blue-500" /> Guangzhou HQ
             </h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              Room 6025 - 6027, 6th Floor,<br />
-              Lianfu Building, No. 1-10 Qifu Road,<br />
-              Yuncheng Street, Baiyun District,<br />
-              Guangzhou, China
-            </p>
+            <address className="not-italic text-sm text-slate-400 leading-relaxed font-normal space-y-1.5 pl-6 border-l-2 border-slate-800/60 transition-colors hover:border-blue-500/50">
+              <span className="block">Room 6025 - 6027, 6th Floor,</span>
+              <span className="block">Lianfu Building, No. 1-10 Qifu Road,</span>
+              <span className="block">Yuncheng Street, Baiyun District,</span>
+              <span className="block font-medium text-slate-300 mt-2">Guangzhou, China</span>
+            </address>
           </div>
 
           {/* Column 3: Hong Kong Node */}
           <div>
-            <h4 className="text-xs font-bold text-white mb-5 uppercase tracking-widest flex items-center">
-              <Globe className="w-4 h-4 mr-2 text-blue-500" /> Hong Kong Node
+            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-[0.15em] flex items-center">
+              <Globe className="w-4 h-4 mr-2.5 text-blue-500" /> Hong Kong Node
             </h4>
-            <p className="text-slate-400 text-sm leading-relaxed">
-              5F, Sun Hung Kai Centre,<br />
-              38 Russell Street,<br />
-              Causeway Bay,<br />
-              Hong Kong, China
-            </p>
+            <address className="not-italic text-sm text-slate-400 leading-relaxed font-normal space-y-1.5 pl-6 border-l-2 border-slate-800/60 transition-colors hover:border-blue-500/50">
+              <span className="block">5F, Sun Hung Kai Centre,</span>
+              <span className="block">38 Russell Street,</span>
+              <span className="block">Causeway Bay,</span>
+              <span className="block font-medium text-slate-300 mt-2">Hong Kong, China</span>
+            </address>
           </div>
 
         </div>
