@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 告诉 Google 你的站点地图在哪里
+Sitemap: https://ddnzglobal.com/sitemap.xml
