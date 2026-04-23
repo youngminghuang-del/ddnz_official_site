@@ -71,8 +71,8 @@ export default function WhoWeAre() {
                       {event.year}
                     </span>
                   </div>
-                  <h3 className="text-xl font-semibold text-slate-900 mb-2">{event.title}</h3>
-                  <p className="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">{event.title}</h3>
+                  <p className="text-lg text-slate-600 mb-6 leading-relaxed font-medium">
                     {event.description}
                   </p>
                   

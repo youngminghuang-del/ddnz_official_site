@@ -35,10 +35,15 @@ export default function Navbar() {
           
           {/* 升级后的 Logo + Text 组合 */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center gap-3">
+            <a href="#" className="flex items-center gap-3 group">
+              <img 
+                src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
+                alt="DDNZ Global Logo" 
+                className="h-9 w-auto transition-transform duration-300 group-hover:scale-105"
+              />
               {/* DDNZ 文字，也需要跟随滚屏变色 */}
               <span className={cn(
-                "text-2xl font-extrabold tracking-tighter transition-all",
+                "hidden sm:block text-2xl font-extrabold tracking-tight transition-all font-sans",
                 scrolled ? "text-slate-900" : "text-white"
               )}>
                 DDNZ Global

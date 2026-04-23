@@ -16,7 +16,12 @@ export default function Footer() {
           <div className="space-y-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-2xl font-bold text-white tracking-tighter">DDNZ Global</span>
+                <img 
+                  src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
+                  alt="DDNZ Global Logo" 
+                  className="h-10 w-auto opacity-90"
+                />
+                <span className="text-2xl font-bold text-white tracking-tight font-sans">DDNZ Global</span>
               </div>
               <p className="text-slate-400 text-sm leading-relaxed max-w-sm italic">
                 "29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions."
