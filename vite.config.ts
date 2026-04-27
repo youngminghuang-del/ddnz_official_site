@@ -9,9 +9,10 @@ export default defineConfig(({mode}) => {
   return {
     /**
      * 🚀 终极路径优化：
-     * 使用 './' 相对路径可以确保网站在 GitHub 子目录和独立域名下都能正常加载资源。
+     * 为提升 SEO，防止服务端产生 "Page with redirect"（尾部斜杠重定向），
+     * 使用 '/' 绝对路径，因为项目部署在独立根域名下。
      */
-    base: './', 
+    base: '/', 
     
     plugins: [react(), tailwindcss()],
     
