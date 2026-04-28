@@ -23,6 +23,7 @@ export default function GetAQuote() {
 
   // Estimator State
   const [mode, setMode] = useState<TransportMode>('sea');
+  const [seaLane, setSeaLane] = useState<'SA/SEA' | 'EA/EU'>('SA/SEA');
   const [length, setLength] = useState<number | ''>('');
   const [width, setWidth] = useState<number | ''>('');
   const [height, setHeight] = useState<number | ''>('');
@@ -55,17 +56,53 @@ export default function GetAQuote() {
       return;
     }
 
-    const factors = { sea: 1000, land: 1000, air: 167 };
-    const factor = factors[mode];
+    let factor = 1000;
+    let ratioText = '';
+    let destinationLabel = 'Global';
+    let modeText = '';
+
+    if (mode === 'air') {
+      factor = 167; // 1 CBM = 167 KG
+      ratioText = '1:167';
+      destinationLabel = 'Global';
+      modeText = 'Air/Express';
+    } else if (mode === 'sea') {
+      modeText = 'Sea LCL';
+      if (seaLane === 'EA/EU') {
+         factor = 1000;
+         ratioText = '1:1000';
+         destinationLabel = 'Eastern Europe / Europe';
+      } else {
+         factor = 500;
+         ratioText = '1:500';
+         destinationLabel = 'South America / Southeast Asia';
+      }
+    } else if (mode === 'land') {
+      factor = 500;
+      ratioText = '1:500';
+      destinationLabel = 'Central Asia';
+      modeText = 'Road Freight';
+    }
+
     const actualWeightNum = Number(actualWeight) || 0;
-
     const volumeNum = cbm;
-    const weightCalcTons = actualWeightNum / factor;
 
-    // Final_Units = Max(Total_CBM, Total_KG / factor)
-    const finalUnits = Math.max(volumeNum, weightCalcTons);
-    const isHeavy = weightCalcTons > volumeNum;
-    const classification = isHeavy ? 'Heavy Cargo' : 'Light Cargo';
+    const density = volumeNum > 0 ? actualWeightNum / volumeNum : actualWeightNum;
+    const isHeavy = density > factor;
+    const classification = isHeavy ? 'Heavy Cargo (Charged by Weight)' : 'Light/Light-bubble Cargo (Charged by Volume)';
+
+    let finalUnits = 0;
+    let finalUnitLabel = '';
+
+    if (mode === 'air') {
+      const volWeight = volumeNum * factor;
+      finalUnits = Math.max(actualWeightNum, volWeight);
+      finalUnitLabel = 'KG';
+    } else {
+      const weightTons = actualWeightNum / factor;
+      finalUnits = Math.max(volumeNum, weightTons);
+      finalUnitLabel = 'RT';
+    }
 
     // Total Freight
     let totalFreight = 0;
@@ -75,20 +112,23 @@ export default function GetAQuote() {
     if (rateNum > 0) {
       const baseFreight = finalUnits * rateNum;
       totalFreight = baseFreight * (cargoType === 'NEV' ? 1.25 : 1);
-      minFreight = totalFreight * 0.95;
-      maxFreight = totalFreight * 1.05;
+      minFreight = totalFreight * 0.90;
+      maxFreight = totalFreight * 1.10;
     }
 
     setResults({
       cbm: Math.max(0.01, volumeNum).toFixed(3), // Ensure slightly visible if 0
       actualWeight: actualWeightNum.toFixed(2),
       finalUnits: finalUnits.toFixed(2),
+      finalUnitLabel,
       classification,
       isHeavy,
       hasRate: rateNum > 0,
       minFreight: minFreight.toFixed(2),
       maxFreight: maxFreight.toFixed(2),
-      ratio: `1:${factor}`
+      ratio: ratioText,
+      destinationLabel,
+      modeText
     });
 
     setTimeout(() => {
@@ -169,6 +209,37 @@ export default function GetAQuote() {
                   ))}
                 </div>
               </div>
+
+              {/* Lane Selection dependent on Mode */}
+              {mode === 'sea' && (
+                <div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Select Sea Freight Lane</label>
+                  <select 
+                    value={seaLane} 
+                    onChange={(e) => setSeaLane(e.target.value as any)}
+                    className="w-full px-3 py-2 text-sm font-medium rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none"
+                  >
+                    <option value="SA/SEA">South America / SE Asia (1 CBM = 500 KG)</option>
+                    <option value="EA/EU">Eastern Europe / Europe (1 CBM = 1000 KG)</option>
+                  </select>
+                </div>
+              )}
+              {mode === 'land' && (
+                <div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Land Freight Lane</label>
+                  <div className="px-3 py-2 text-sm font-medium rounded bg-slate-50 border border-slate-200 text-slate-600">
+                    Central Asia Road (1 CBM = 500 KG)
+                  </div>
+                </div>
+              )}
+              {mode === 'air' && (
+               <div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Air Freight Lane</label>
+                  <div className="px-3 py-2 text-sm font-medium rounded bg-slate-50 border border-slate-200 text-slate-600">
+                    Global Express/Air (1 CBM = 167 KG)
+                  </div>
+                </div>
+              )}
 
               {/* Dimensions Input */}
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
@@ -278,18 +349,26 @@ export default function GetAQuote() {
                         </div>
                         <div className="flex justify-between text-sm items-center pt-2 mt-2 border-t border-slate-100">
                           <span className="text-slate-900 font-bold">Chargeable Units:</span>
-                          <span className="text-blue-700 text-lg font-black">{results.finalUnits}</span>
+                          <span className="text-blue-700 text-lg font-black">{results.finalUnits} {results.finalUnitLabel}</span>
                         </div>
                         <p className="text-[10px] text-slate-400 text-right uppercase tracking-wider">(Based on {results.ratio} weight/volume ratio)</p>
                       </div>
                       
-                      <div className={`text-sm font-bold text-center py-2 px-3 rounded ${results.isHeavy ? 'bg-orange-100 text-orange-800' : 'bg-blue-100 text-blue-800'}`}>
-                        {results.isHeavy ? 'Heavy Cargo Detected: Rate adjusted by weight.' : 'Standard/Light Cargo Detected.'}
+                      <div className={`text-sm font-bold text-center py-2 px-3 rounded mb-4 shadow-sm ${results.isHeavy ? 'bg-orange-100 text-orange-800 border border-orange-200' : 'bg-blue-100 text-blue-800 border border-blue-200'}`}>
+                        Mode: {results.classification}
+                      </div>
+
+                      {/* DDNZ Insight Tooltip */}
+                      <div className="bg-white/90 rounded-lg shadow-sm border border-slate-200 p-3 mb-4 flex gap-3 items-start">
+                        <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                        <p className="text-xs text-slate-600 leading-relaxed font-medium">
+                          <span className="font-bold text-blue-700">DDNZ Insight:</span> For your <span className="font-bold">{results.modeText}</span> shipment to <span className="font-bold">{results.destinationLabel}</span>, we use a density ratio of <span className="font-bold text-slate-800">{results.ratio}</span> to ensure fair market pricing.
+                        </p>
                       </div>
 
                       <button 
                         onClick={() => window.open(waUrl, '_blank')}
-                        className="mt-4 w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#20bd5a] transition-colors shadow-md"
+                        className="mt-2 w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#20bd5a] transition-colors shadow-md"
                       >
                         <MessageCircle className="w-5 h-5" /> Request Firm Quote
                       </button>

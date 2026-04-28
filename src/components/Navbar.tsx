@@ -43,7 +43,7 @@ export default function Navbar() {
               />
               {/* DDNZ 文字，也需要跟随滚屏变色 */}
               <span className={cn(
-                "hidden sm:block text-2xl font-extrabold tracking-tight transition-all font-sans",
+                "text-xl sm:text-2xl font-extrabold tracking-tight transition-all font-sans",
                 scrolled ? "text-slate-900" : "text-white"
               )}>
                 DDNZ Global
