@@ -160,22 +160,16 @@ export default function GetAQuote() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     try {
-      const response = await fetch("https://formsubmit.co/ajax/1bc24f86a9457c4bc4bf3ed157c32ead", {
+      const response = await fetch("https://formspree.io/f/1bc24f86a9457c4bc4bf3ed157c32ead", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
           "Accept": "application/json"
         },
-        body: JSON.stringify({
-          ...data,
-          _subject: `🚀 New Web Inquiry: ${data.product} | ${data.name}`,
-          _template: "table",
-        }),
+        body: JSON.stringify(data),
       });
 
-      const result = await response.json();
-
-      if (response.ok && result.success === "true") {
+      if (response.ok) {
         trackEvent('rfq_submit_success', { 'event_category': 'conversion' });
         trackEvent('submit_quote_form', { 'method': 'Email' });
         setIsSubmitted(true);
