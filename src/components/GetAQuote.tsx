@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Calculator, Info, ArrowRight, MessageCircle } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackEvent } from '../lib/utils';
 
 type FormData = {
   name: string;
@@ -138,12 +139,11 @@ export default function GetAQuote() {
       landLane
     });
 
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'click_calculator', {
-        'transport_mode': mode,
-        'destination': destinationLabel
-      });
-    }
+    trackEvent('tool_calculator_use');
+    trackEvent('click_calculator', {
+      'transport_mode': mode,
+      'destination': destinationLabel
+    });
 
     setTimeout(() => {
       resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -169,9 +169,8 @@ export default function GetAQuote() {
       const result = await response.json();
 
       if (response.ok && result.success === "true") {
-        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-          (window as any).gtag('event', 'submit_quote_form', { 'method': 'Email' });
-        }
+        trackEvent('rfq_submit_success');
+        trackEvent('submit_quote_form', { 'method': 'Email' });
         alert(t('get_a_quote.alertSuccess'));
         reset();
       } else {

@@ -2,9 +2,14 @@ import { motion } from 'framer-motion';
 import { MessageCircle } from 'lucide-react';
 import { getImgUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackEvent } from '../lib/utils';
 
 export default function Hero() {
   const { t } = useLanguage();
+
+  const handleWhatsAppClick = () => {
+    trackEvent('contact_whatsapp_click', { 'location': 'hero_section' });
+  };
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-slate-900 font-sans">
@@ -36,6 +41,7 @@ export default function Hero() {
             href="https://wa.me/85261077362?text=Hi%20DDNZ%20Global,%20I%27m%20interested%20in%20your%20logistics%20services.%20Can%20we%20talk?"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={handleWhatsAppClick}
             className="inline-flex items-center px-10 py-4 text-lg font-bold rounded-full text-white bg-[#25D366] hover:bg-[#20bd5a] hover:shadow-xl transition-all transform hover:-translate-y-1 mb-6"
           >
             <MessageCircle className="w-6 h-6 mr-3" />

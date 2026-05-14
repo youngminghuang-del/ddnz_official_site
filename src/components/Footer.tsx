@@ -2,10 +2,15 @@ import { useState } from 'react';
 import { Mail, Globe, Clock, FileText, Shield } from 'lucide-react';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackEvent } from '../lib/utils';
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<LegalType>(null);
   const { t } = useLanguage();
+
+  const handleContactClick = (method: string) => {
+    trackEvent('contact_method_click', { 'method': method });
+  };
 
   return (
     <footer className="bg-[#4B27B1] text-purple-200 py-8 font-sans border-t border-purple-900">
@@ -31,7 +36,11 @@ export default function Footer() {
               </p>
             </div>
             <div className="pt-1">
-              <a href="mailto:partnership@ddnzglobal.com" className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm">
+              <a 
+                href="mailto:partnership@ddnzglobal.com" 
+                onClick={() => handleContactClick('email')}
+                className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
+              >
                 <Mail className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-orange-500 group-hover:text-orange-400 transition-colors" />
                 partnership@ddnzglobal.com
               </a>

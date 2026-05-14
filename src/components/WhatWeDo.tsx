@@ -1,10 +1,15 @@
 import { Check } from 'lucide-react';
 import { getImgUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackEvent } from '../lib/utils';
 
 export default function WhatWeDo() {
   const { t, language } = useLanguage();
   
+  const handleServiceClick = (id: string) => {
+    trackEvent('service_card_click', { 'service_type': id });
+  };
+
   const businessSectors = [
     {
       id: 'rail',
@@ -72,7 +77,11 @@ export default function WhatWeDo() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {businessSectors.map((sector) => {
             return (
-              <div key={sector.id} className="group relative bg-white rounded-2xl shadow-xl border border-slate-100 transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-3 min-h-[600px] md:min-h-[640px]">
+              <div 
+                key={sector.id} 
+                onClick={() => handleServiceClick(sector.id)}
+                className="group cursor-pointer relative bg-white rounded-2xl shadow-xl border border-slate-100 transition-all duration-500 flex flex-col overflow-hidden hover:-translate-y-3 min-h-[600px] md:min-h-[640px]"
+              >
                 <div className="aspect-[16/10] overflow-hidden relative">
                     <img src={sector.img} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" alt={sector.title} loading="lazy" />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />

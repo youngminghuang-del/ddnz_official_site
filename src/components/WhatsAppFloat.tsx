@@ -1,10 +1,9 @@
 import { MessageCircle } from 'lucide-react';
+import { trackEvent } from '../lib/utils';
 
 export default function WhatsAppFloat() {
   const handleClick = () => {
-    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
-      (window as any).gtag('event', 'contact_us_click', { 'type': 'WhatsApp' });
-    }
+    trackEvent('contact_whatsapp_click', { 'location': 'floating_button' });
     const url = 'https://wa.me/85261077362?text=Hi%20DDNZ%20Global,%20I%27m%20interested%20in%20your%20logistics%20services.%20Can%20we%20talk?';
     window.open(url, '_blank');
   };

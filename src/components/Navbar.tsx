@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Menu, X, Globe } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn, trackEvent } from '../lib/utils';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
 
@@ -31,6 +31,7 @@ export default function Navbar() {
   const closeMenu = () => setIsOpen(false);
 
   const handleLanguageChange = (lang: Language) => {
+    trackEvent('language_select', { 'language': lang });
     setLanguage(lang);
     setShowLanguageDropdown(false);
   };
