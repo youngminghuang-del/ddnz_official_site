@@ -160,7 +160,7 @@ export default function GetAQuote() {
     await new Promise(resolve => setTimeout(resolve, 2000));
 
     try {
-      const response = await fetch("https://formspree.io/f/1bc24f86a9457c4bc4bf3ed157c32ead", {
+      const response = await fetch("https://formspree.io/f/mdabvqbd", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
@@ -175,17 +175,13 @@ export default function GetAQuote() {
         setIsSubmitted(true);
         reset();
       } else {
-        throw new Error('Submission failed');
+        alert("Submission failed. Please contact manager@ddnzglobal.com directly.");
+        setSubmissionError(true);
+        setIsSubmitted(true);
       }
     } catch (error) {
-      // Fallback: Still show success but maybe keep state for debugging or show failure?
-      // User said: "模擬一個成功的提交體驗... 如果表单校验失败或模拟提交异常，不要只显示'System busy'，应引导用户..."
-      // Let's show success state to the user ANYWAY for positive UX, but track the error.
-      // Or actually, if it fails, maybe I should show the error state with the fallback link.
+      alert("Submission failed. Please contact manager@ddnzglobal.com directly.");
       setSubmissionError(true);
-      // If it's a real network error, let's still transition to a "state" that informs the user.
-      // But the user requested "Success state" UI style #4B27B1 etc.
-      // Let's show the success view but with an error fallback if it failed.
       setIsSubmitted(true); 
     } finally {
       setIsSubmitting(false);
