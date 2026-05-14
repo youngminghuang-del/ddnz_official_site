@@ -65,7 +65,7 @@ export const translations = {
           'Pre-shipment Quality Inspection',
           'Alibaba/1688 Order Consolidation'
         ],
-        desc: 'We bridge the trust gap. From verifying Chinese suppliers\' legitimacy to conducting on-site quality checks and consolidating multiple platform orders at our Guangzhou hub, we de-risk your entire China sourcing process.'
+        desc: 'We bridge the trust gap. From supplier verification to on-site quality checks and consolidating multiple platform orders at our Guangzhou hub, we de-risk your entire China sourcing process.'
       }
     },
     who_we_are: {
@@ -290,7 +290,7 @@ export const translations = {
           'Предотгрузочная инспекция качества',
           'Консолидация заказов с Alibaba/1688'
         ],
-        desc: 'Мы устраняем дефицит доверия. От проверки легитимности китайских поставщиков до проведения инспекций качества на месте и консолидации заказов на нашем хабе в Гуанчжоу — мы минимизируем риски вашего сорсинга в Китае.'
+        desc: 'Мы устраняем дефицит доверия. От проверки поставщиков до инспекций качества и консолидации заказов на нашем хабе в Гуанчжоу — мы минимизируем риски вашего сорсинга в Китае.'
       }
     },
     who_we_are: {
@@ -515,7 +515,7 @@ export const translations = {
           'Inspection qualité avant expédition',
           'Consolidation de commandes Alibaba/1688'
         ],
-        desc: 'Nous comblons le fossé de la confiance. De la vérification de la légitimité des fournisseurs chinois aux contrôles qualité sur place et à la consolidation de commandes multiples sur notre hub de Guangzhou, nous sécurisons tout votre processus d\'approvisionnement en Chine.'
+        desc: 'Nous comblons le fossé de la confiance. De la vérification des fournisseurs aux contrôles qualité et à la consolidation de commandes sur notre hub de Guangzhou, nous sécurisons votre sourcing en Chine.'
       }
     },
     who_we_are: {

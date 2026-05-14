@@ -145,6 +145,24 @@ export default function GetAQuote() {
     }, 100);
   };
 
+  const [isFormExpanded, setIsFormExpanded] = useState(false);
+  const [formStep, setFormStep] = useState(1);
+  const [selectedService, setSelectedService] = useState<string | null>(null);
+
+  const handleServiceSelect = (service: string) => {
+    setSelectedService(service);
+    if (!isFormExpanded) {
+      setIsFormExpanded(true);
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'quote_form_expand', { 'category': 'interaction', 'service': service });
+      }
+    }
+  };
+
+  const isStep1Valid = () => {
+    return true; // Simplified for UI logic, HTML5 required handles actual validation
+  };
+
   return (
     <section id="get-a-quote" className="py-10 md:py-24 bg-purple-50/50 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -385,119 +403,182 @@ export default function GetAQuote() {
           </div>
 
           {/* Right Column: Inquiry Form or Success State */}
-          <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-purple-100 p-8 md:p-10 flex flex-col h-full hover:shadow-md transition-shadow relative overflow-hidden">
+          <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-purple-100 p-6 md:p-10 flex flex-col h-full hover:shadow-md transition-shadow relative overflow-hidden">
             {!isSubmitted ? (
               <>
                 <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{t('get_a_quote.formTitle')}</h3>
                 <p className="text-sm text-slate-500 mb-8">{t('get_a_quote.formSubtitle')}</p>
                 
-                <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.fname')}</label>
-                      <input
-                        id="name"
-                        name="name"
-                        type="text"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
-                        placeholder="John Doe / Acme Corp"
-                      />
-                      <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-xs mt-1" />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.email')}</label>
-                      <input
-                        id="email"
-                        name="email"
-                        type="email"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
-                        placeholder="john@company.com"
-                      />
-                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
-                    </div>
+                {/* Mobile Entrance Buttons */}
+                {!isFormExpanded && (
+                  <div className="grid grid-cols-2 gap-4 lg:hidden animate-in fade-in slide-in-from-bottom-4 duration-500">
+                    {[
+                      { id: 'Railway', label: t('get_a_quote.modeLand'), icon: <ArrowRight className="w-4 h-4" /> },
+                      { id: 'Sea', label: t('get_a_quote.modeSea'), icon: <ArrowRight className="w-4 h-4" /> },
+                      { id: 'Air', label: t('get_a_quote.modeAir'), icon: <ArrowRight className="w-4 h-4" /> },
+                      { id: 'Sourcing', label: t('services.trust.title').split(' ').pop(), icon: <ArrowRight className="w-4 h-4" /> }
+                    ].map((entry) => (
+                      <button
+                        key={entry.id}
+                        onClick={() => handleServiceSelect(entry.id)}
+                        className="flex flex-col items-center justify-center p-6 rounded-xl border border-purple-100 bg-purple-50/30 hover:bg-purple-50 transition-all group"
+                      >
+                        <span className="text-sm font-bold text-[#4B27B1] mb-2">{entry.label}</span>
+                        <div className="w-8 h-8 rounded-full border border-purple-200 flex items-center justify-center group-hover:bg-[#FF8A00] group-hover:border-[#FF8A00] transition-colors">
+                          <ArrowRight className="w-4 h-4 text-[#4B27B1] group-hover:text-white" />
+                        </div>
+                      </button>
+                    ))}
                   </div>
+                )}
 
-                  <div>
-                    <label htmlFor="product" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.industryLabel')}</label>
-                    <select
-                      id="product"
-                      name="product"
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all bg-white"
-                    >
-                      <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
-                      <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
-                      <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject')}</option>
-                      <option value="Other">{t('get_a_quote.indOther')}</option>
-                    </select>
-                  </div>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="origin" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.originLabel')}</label>
-                      <input
-                        id="origin"
-                        name="origin"
-                        type="text"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
-                        placeholder={t('get_a_quote.originPlaceholder')}
-                      />
+                <div 
+                  className={`transition-all duration-500 ease-in-out overflow-hidden ${
+                    isFormExpanded ? 'max-h-[2000px] opacity-100 pointer-events-auto' : 'max-h-0 opacity-0 pointer-events-none lg:max-h-none lg:opacity-100 lg:pointer-events-auto'
+                  }`}
+                >
+                  <form id="quote-form" onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col pt-4 lg:pt-0">
+                    
+                    {/* Step Indicator - Mobile Only */}
+                    <div className="flex lg:hidden items-center gap-4 mb-6">
+                      <div className={`h-1.5 flex-1 rounded-full ${formStep >= 1 ? 'bg-[#FF8A00]' : 'bg-slate-100'}`} />
+                      <div className={`h-1.5 flex-1 rounded-full ${formStep >= 2 ? 'bg-[#FF8A00]' : 'bg-slate-100'}`} />
                     </div>
-                    <div>
-                      <label htmlFor="destination" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.destLabel')}</label>
-                      <input
-                        id="destination"
-                        name="destination"
-                        type="text"
-                        required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
-                        placeholder={t('get_a_quote.destPlaceholder')}
-                      />
-                    </div>
-                  </div>
 
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.cargo')}</label>
-                    <textarea
-                      id="message"
-                      name="message"
-                      rows={4}
-                      required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all resize-none"
-                      placeholder={t('get_a_quote.msgPlaceholder')}
-                    />
-                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
-                  </div>
+                    {/* Step 1: Goods Information */}
+                    {(formStep === 1 || !isFormExpanded) && (
+                      <div className="space-y-6 animate-in fade-in duration-500">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="origin" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.originLabel')}</label>
+                            <input
+                              id="origin"
+                              name="origin"
+                              type="text"
+                              required
+                              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none"
+                              placeholder={t('get_a_quote.originPlaceholder')}
+                            />
+                          </div>
+                          <div>
+                            <label htmlFor="destination" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.destLabel')}</label>
+                            <input
+                              id="destination"
+                              name="destination"
+                              type="text"
+                              required
+                              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none"
+                              placeholder={t('get_a_quote.destPlaceholder')}
+                            />
+                          </div>
+                        </div>
 
-                  <div className="mt-auto pt-4">
-                    <button
-                      type="submit"
-                      disabled={state.submitting}
-                      className={`w-full text-white font-bold py-4 rounded-lg transition-all focus:ring-4 focus:ring-purple-200 outline-none flex items-center justify-center shadow-lg hover:-translate-y-0.5 ${
-                        state.submitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
-                      }`}
-                    >
-                      {state.submitting ? (
-                        <>
-                          <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3"></div>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          {t('get_a_quote.submit')} <ArrowRight className="w-5 h-5 ml-2" />
-                        </>
-                      )}
-                    </button>
-                    {state.errors && (
-                      <p className="mt-4 text-xs text-red-500 text-center">
-                        Something went wrong. Please <a href="mailto:partnership@ddnzglobal.com" className="underline font-bold">email us directly.</a>
-                      </p>
+                        <div>
+                          <label htmlFor="product" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.industryLabel')}</label>
+                          <select
+                            id="product"
+                            name="product"
+                            required
+                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none bg-white font-medium"
+                          >
+                            <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
+                            <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
+                            <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject')}</option>
+                            <option value="Other">{t('get_a_quote.indOther')}</option>
+                          </select>
+                        </div>
+
+                        <div>
+                          <label htmlFor="message" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.cargo')}</label>
+                          <textarea
+                            id="message"
+                            name="message"
+                            rows={4}
+                            required
+                            className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none resize-none"
+                            placeholder={t('get_a_quote.msgPlaceholder')}
+                          />
+                        </div>
+
+                        {/* Mobile Step Transition */}
+                        <div className="lg:hidden pt-4">
+                          <button
+                            type="button"
+                            onClick={() => setFormStep(2)}
+                            className="w-full bg-[#4B27B1] text-white font-bold py-4 rounded-lg flex items-center justify-center gap-2 group"
+                          >
+                            Next Step <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                          </button>
+                        </div>
+                      </div>
                     )}
-                  </div>
-                </form>
+
+                    {/* Step 2: Contact Information */}
+                    {(formStep === 2 || !isFormExpanded) && (
+                      <div className="space-y-6 animate-in fade-in duration-500">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                          <div>
+                            <label htmlFor="name" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.fname')}</label>
+                            <input
+                              id="name"
+                              name="name"
+                              type="text"
+                              required
+                              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none"
+                              placeholder="John Doe / Acme Corp"
+                            />
+                            <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                          </div>
+                          <div>
+                            <label htmlFor="email" className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.email')}</label>
+                            <input
+                              id="email"
+                              name="email"
+                              type="email"
+                              required
+                              className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] outline-none"
+                              placeholder="john@company.com"
+                            />
+                            <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
+                          </div>
+                        </div>
+
+                        <div className="pt-4 flex gap-4">
+                          <button
+                            type="button"
+                            onClick={() => setFormStep(1)}
+                            className="lg:hidden px-6 py-4 rounded-lg border border-slate-200 font-bold text-slate-600"
+                          >
+                            Back
+                          </button>
+                          <button
+                            type="submit"
+                            disabled={state.submitting}
+                            className={`flex-1 text-white font-bold py-4 rounded-lg transition-all flex items-center justify-center shadow-lg hover:-translate-y-0.5 ${
+                              state.submitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
+                            }`}
+                          >
+                            {state.submitting ? (
+                              <>
+                                <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3"></div>
+                                Sending...
+                              </>
+                            ) : (
+                              <>
+                                {t('get_a_quote.submit')} <ArrowRight className="w-5 h-5 ml-2" />
+                              </>
+                            )}
+                          </button>
+                        </div>
+                        {state.errors && (
+                          <p className="mt-4 text-xs text-red-500 text-center">
+                            Something went wrong. Please <a href="mailto:partnership@ddnzglobal.com" className="underline font-bold">email us directly.</a>
+                          </p>
+                        )}
+                      </div>
+                    )}
+                  </form>
+                </div>
               </>
             ) : (
               <motion.div 
