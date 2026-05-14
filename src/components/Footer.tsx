@@ -1,106 +1,134 @@
 import { useState } from 'react';
 import { Mail, Globe, Clock, FileText, Shield } from 'lucide-react';
 import LegalModal, { LegalType } from './LegalModal';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<LegalType>(null);
+  const { t } = useLanguage();
 
   return (
-    <footer className="bg-slate-950 text-slate-300 py-16 font-sans border-t border-slate-900">
+    <footer className="bg-[#4B27B1] text-purple-200 py-8 font-sans border-t border-purple-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Row: Brand & Addresses */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-x-12 lg:gap-y-0 mb-10 md:mb-12">
           
           {/* Column 1: Brand & Contact */}
-          <div className="space-y-8">
+          <div className="space-y-4 lg:space-y-6 md:col-span-2 lg:col-span-1">
             <div>
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
                 <img 
                   src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
                   alt="DDNZ Global Logo" 
-                  className="h-10 w-auto opacity-90"
+                  loading="lazy"
+                  className="h-8 md:h-10 w-auto opacity-90"
                 />
-                <span className="text-2xl font-bold text-white tracking-tight font-sans">DDNZ Global</span>
+                <span className="text-xl md:text-2xl font-bold text-white tracking-tight font-sans text-nowrap">DDNZ Global</span>
               </div>
-              <p className="text-slate-400 text-sm leading-relaxed max-w-sm italic">
-                "29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions."
+              <p className="text-purple-300 text-xs md:text-sm leading-relaxed max-w-xs italic lg:not-italic font-medium">
+                {t('footer.slogan')}
               </p>
             </div>
-            <div>
-              <a href="mailto:partnership@ddnzglobal.com" className="inline-flex items-center text-white hover:text-blue-400 transition-colors group font-medium text-sm">
-                <Mail className="w-5 h-5 mr-3 text-blue-500 group-hover:text-blue-400 transition-colors" />
+            <div className="pt-1">
+              <a href="mailto:partnership@ddnzglobal.com" className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm">
+                <Mail className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-orange-500 group-hover:text-orange-400 transition-colors" />
                 partnership@ddnzglobal.com
               </a>
             </div>
           </div>
 
-          {/* Column 2: Guangzhou HQ */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-[0.15em] flex items-center">
-              <Globe className="w-4 h-4 mr-2.5 text-blue-500" /> Guangzhou HQ
-            </h4>
-            <address className="not-italic text-sm text-slate-400 leading-relaxed font-normal space-y-1.5 pl-6 border-l-2 border-slate-800/60 transition-colors hover:border-blue-500/50">
-              <span className="block">Room 6025 - 6027, 6th Floor,</span>
-              <span className="block">Lianfu Building, No. 1-10 Qifu Road,</span>
-              <span className="block">Yuncheng Street, Baiyun District,</span>
-              <span className="block font-medium text-slate-300 mt-2">Guangzhou, China</span>
-            </address>
-          </div>
+          {/* Container for addresses */}
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:contents gap-4 md:gap-12 lg:gap-0 lg:col-span-2">
+            {/* Column 2: Guangzhou HQ */}
+            <div className="lg:px-4">
+              <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
+                <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> {t('footer.hq')}
+              </h4>
+              <address className="not-italic text-[11px] md:text-sm text-purple-200 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+                <div className="space-y-1">
+                  {(() => {
+                    const parts = t('footer.hq_addr').split(', ');
+                    const line1 = parts.slice(0, 3).join(', ');
+                    const line2 = parts.slice(3, 6).join(', ');
+                    const line3 = parts.slice(6).join(', ');
+                    return (
+                      <>
+                        <span className="block">{line1}</span>
+                        <span className="block">{line2}</span>
+                        <span className="block font-medium text-white mt-1">{line3}</span>
+                      </>
+                    );
+                  })()}
+                </div>
+              </address>
+            </div>
 
-          {/* Column 3: Hong Kong Node */}
-          <div>
-            <h4 className="text-sm font-semibold text-white mb-4 uppercase tracking-[0.15em] flex items-center">
-              <Globe className="w-4 h-4 mr-2.5 text-blue-500" /> Hong Kong Node
-            </h4>
-            <address className="not-italic text-sm text-slate-400 leading-relaxed font-normal space-y-1.5 pl-6 border-l-2 border-slate-800/60 transition-colors hover:border-blue-500/50">
-              <span className="block">5F, Sun Hung Kai Centre,</span>
-              <span className="block">38 Russell Street,</span>
-              <span className="block">Causeway Bay,</span>
-              <span className="block font-medium text-slate-300 mt-2">Hong Kong, China</span>
-            </address>
+            {/* Column 3: Hong Kong Node */}
+            <div>
+              <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
+                <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> {t('footer.hk')}
+              </h4>
+              <address className="not-italic text-[11px] md:text-sm text-purple-200 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+                <div className="space-y-1">
+                  {(() => {
+                    const parts = t('footer.hk_addr').split(', ');
+                    const line1 = parts.slice(0, 2).join(', ');
+                    const line2 = parts.slice(2, 4).join(', ');
+                    const line3 = parts.slice(4).join(', ');
+                    return (
+                      <>
+                        <span className="block">{line1}</span>
+                        <span className="block">{line2}</span>
+                        <span className="block font-medium text-white mt-1">{line3}</span>
+                      </>
+                    );
+                  })()}
+                </div>
+              </address>
+            </div>
           </div>
 
         </div>
 
         {/* Middle Row: Hours & Legal */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16 p-6 rounded-2xl bg-slate-900/50 border border-slate-800/50">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16 p-6 rounded-2xl bg-[#4B27B1]/50 border border-purple-800/50">
           
           {/* Hours */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
-              <Clock className="w-5 h-5 text-blue-500" />
+            <div className="w-10 h-10 rounded-full bg-[#3b1e8e]/50 flex items-center justify-center shrink-0">
+              <Clock className="w-5 h-5 text-orange-500" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">Office Hours</h4>
-              <p className="text-sm text-slate-400">
-                <span className="text-white font-medium">Mon - Fri:</span> 9:00 AM - 6:00 PM <span className="text-slate-500">(GMT+8)</span>
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">{t('footer.hours')}</h4>
+              <p className="text-sm text-purple-300">
+                <span className="text-white font-medium">Mon - Fri:</span> 9:00 AM - 6:00 PM <span className="text-purple-400">(GMT+8)</span>
               </p>
             </div>
           </div>
 
           {/* Legal */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center shrink-0">
-              <Shield className="w-5 h-5 text-blue-500" />
+            <div className="w-10 h-10 rounded-full bg-[#3b1e8e]/50 flex items-center justify-center shrink-0">
+              <Shield className="w-5 h-5 text-orange-500" />
             </div>
             <div>
-              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">Compliance & Legal</h4>
+              <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">{t('footer.compliance')}</h4>
               <div className="flex flex-wrap items-center gap-4 text-sm mt-1">
                 <button 
                   onClick={() => setLegalType('privacy')}
-                  className="text-slate-400 hover:text-white transition-colors flex items-center group"
+                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                  Privacy Policy
+                  {t('footer.privacy')}
                 </button>
-                <span className="text-slate-700 hidden sm:inline">|</span>
+                <span className="text-purple-800 hidden sm:inline">|</span>
                 <button 
                   onClick={() => setLegalType('terms')}
-                  className="text-slate-400 hover:text-white transition-colors flex items-center group"
+                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
-                  Terms of Service
+                  {t('footer.terms')}
                 </button>
               </div>
             </div>
@@ -109,10 +137,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Copyright */}
-        <div className="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
-          <p>&copy; 2026 DDNZ Global. All Rights Reserved.</p>
+        <div className="border-t border-purple-800/50 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-purple-400">
+          <p>{t('footer.rights')}</p>
           <div className="mt-4 md:mt-0 uppercase font-bold tracking-tighter">
-            <span>Specialized NEV & SCM Experts</span>
+            <span>{t('footer.experts')}</span>
           </div>
         </div>
       </div>
@@ -122,3 +150,4 @@ export default function Footer() {
     </footer>
   );
 }
+

@@ -1,95 +1,136 @@
 import { motion } from 'framer-motion';
 import { getImgUrl } from '../constants';
-
-const timelineEvents = [
-  {
-    year: '1997 - 2004',
-    title: "The WTO Era: Linking the World's Workshop",
-    description: 'Capitalizing on China’s historic WTO accession, we established ourselves as a vital link between the "World’s Workshop" and emerging global markets. We specialized in moving a diverse range of goods—from fragile electronics and textiles to industrial machinery—establishing a reputation for steadfast reliability when "Made in China" went global.',
-    image: getImgUrl('JOURNEY_1999'),
-    highlight: true,
-  },
-  {
-    year: '2005 - 2010',
-    title: 'Building Infrastructure & Integrated Trade',
-    description: 'As volumes grew, so did our capabilities. We invested in self-owned warehouse hubs to gain full operational control. Simultaneously, we evolved beyond logistics into a versatile trading partner, launching proprietary commercial kitchen brands while forging deep agency partnerships and managing professional sourcing for premium hospitality furniture.',
-    image: getImgUrl('JOURNEY_2004'),
-  },
-  {
-    year: '2011 - 2018',
-    title: 'The Financial Gateway: DDNZ Global (HK)',
-    description: 'To offer our global clients superior financial security and settlement efficiency, we strategically established our Hong Kong entity. This pivotal move enabled seamless multi-currency transactions and provided a stable, reliable financial bridge for international trade settlements.',
-    image: getImgUrl('JOURNEY_2009'),
-  },
-  {
-    year: '2020',
-    title: 'Crisis Response: Delivering Critical Supplies',
-    description: 'When global supply chains faltered during the pandemic, our infrastructure remained operational. We rapidly redirected our logistics networks to export essential medical supplies (including PPE, masks, and gloves) to Europe. We were recognized not merely as shippers, but as responsive partners capable of navigating extreme disruption.',
-    image: getImgUrl('JOURNEY_2019'),
-  },
-  {
-    year: '2021 - Present',
-    title: 'The New Energy Frontier',
-    description: 'Anticipating the global shift, we entered the green logistics arena. Today, we are specialists in complex, compliance-driven exports for the new energy sector. We engineer custom logistics solutions for Energy Storage Systems (ESS) and electric commercial vehicles, mastering the intricate regulations governing Dangerous Goods transport.',
-    image: getImgUrl('ESS_STORAGE'),
-  },
-];
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function WhoWeAre() {
+  const { t } = useLanguage();
+
+  const aboutCards = [
+    {
+      id: 'heritage',
+      title: t('who_we_are.heritage.title'),
+      description: t('who_we_are.heritage.desc'),
+      keywords: 'SINCE 1997 • 29Y TRUST • GLOBAL',
+      label: 'Heritage',
+      image: getImgUrl('JOURNEY_1999'),
+    },
+    {
+      id: 'nev-experts',
+      title: t('who_we_are.nev.title'),
+      description: t('who_we_are.nev.desc'),
+      keywords: 'DG LICENSED • BATTERY • EV',
+      label: 'NEV Experts',
+      image: getImgUrl('ESS_STORAGE'),
+    },
+    {
+      id: 'infrastructure',
+      title: t('who_we_are.infra.title'),
+      description: t('who_we_are.infra.desc'),
+      keywords: 'OWNED ASSETS • HUB • SECURE',
+      label: 'Infrastructure',
+      image: getImgUrl('JOURNEY_2004'),
+    },
+    {
+      id: 'resilience',
+      title: t('who_we_are.resilience.title'),
+      description: t('who_we_are.resilience.desc'),
+      keywords: 'RELIABLE • A-CLASS • 24/7',
+      label: 'Resilience',
+      image: getImgUrl('JOURNEY_2019'),
+    },
+  ];
+
   return (
-    <section id="who-we-are" className="py-24 bg-white">
+    <section id="who-we-are" className="py-10 md:py-24 bg-purple-50/50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          {/* 统一视觉：正体加粗标题 */}
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">WHO WE ARE</h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-3xl mx-auto">A 29-Year Evolution: From Trade Pioneers to Industrial Logistics Experts</p>
+        <div className="text-center mb-10 md:mb-16">
+          <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-2">{t('who_we_are.label')}</div>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-slate-900 mb-2">
+            {t('who_we_are.title')}
+          </h2>
+          <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-8" />
+          <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-10">
+            {t('who_we_are.subtitle')}
+          </p>
         </div>
 
-        <div className="relative">
-          {/* Vertical Timeline Line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-px bg-slate-200 transform md:-translate-x-1/2" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-6 mb-8 text-center">
+          <div className="bg-white p-3 lg:p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+            <div className="text-3xl lg:text-5xl font-black text-[#4B27B1] mb-1 md:mb-2 tracking-tight">29+</div>
+            <div className="text-[10px] md:text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.years')}</div>
+          </div>
+          <div className="bg-white p-3 lg:p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+            <div className="text-3xl lg:text-5xl font-black text-[#4B27B1] mb-1 md:mb-2 tracking-tight">1.5k</div>
+            <div className="text-[10px] md:text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.clients')}</div>
+          </div>
+          <div className="bg-white p-3 lg:p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+            <div className="text-3xl lg:text-5xl font-black text-[#4B27B1] mb-1 md:mb-2 tracking-tight">1M+</div>
+            <div className="text-[10px] md:text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.shipments')}</div>
+          </div>
+          <div className="bg-white p-3 lg:p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
+            <div className="text-3xl lg:text-5xl font-black text-[#4B27B1] mb-1 md:mb-2 tracking-tight">960</div>
+            <div className="text-[10px] md:text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.projects')}</div>
+          </div>
+        </div>
+        <div className="bg-white px-6 py-4 text-center rounded-xl shadow-sm border border-purple-100 mb-12 md:mb-20">
+          <p className="text-slate-600 text-sm md:text-base italic font-medium">{t('who_we_are.stats.desc')}</p>
+        </div>
 
-          <div className="space-y-16">
-            {timelineEvents.map((event, index) => (
-              <motion.div
-                key={event.year}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className={`relative flex flex-col md:flex-row items-center ${
-                  index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                }`}
-              >
-                {/* Timeline Dot */}
-                <div className="absolute left-4 md:left-1/2 w-4 h-4 rounded-full bg-blue-600 transform -translate-x-1/2 mt-6 md:mt-0 z-10 shadow-[0_0_0_4px_white]" />
-
-                {/* Content Box */}
-                <div className={`w-full md:w-1/2 pl-12 md:pl-0 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12 text-left md:text-right'}`}>
-                  <div className="mb-2">
-                    <span className={`font-bold ${event.highlight ? 'text-4xl text-blue-600' : 'text-2xl text-slate-400'}`}>
-                      {event.year}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 tracking-tight">{event.title}</h3>
-                  <p className="text-lg text-slate-600 mb-6 leading-relaxed font-medium">
-                    {event.description}
-                  </p>
-                  
-                  {event.image && (
-                    <div className="rounded-xl overflow-hidden shadow-md bg-slate-100 aspect-video group relative">
-                      <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                        loading="lazy"
+        <div className="bg-slate-50 p-4 lg:p-12 rounded-3xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 md:gap-10">
+            {aboutCards.map((card, index) => {
+              return (
+                <motion.div
+                  key={card.id}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="group bg-white rounded-xl overflow-hidden shadow-sm lg:shadow-lg lg:hover:shadow-2xl transition-all duration-300 lg:hover:-translate-y-2 flex flex-row md:flex-col items-center md:items-stretch h-auto md:h-full p-3 lg:p-0"
+                >
+                  {/* Thumbnail / Image Section */}
+                  <div className="w-20 h-20 md:w-full md:h-auto md:aspect-[16/10] shrink-0 overflow-hidden relative rounded-xl md:rounded-none">
+                    <img
+                      src={card.image}
+                      alt={card.title}
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
+                      loading="lazy"
+                    />
+                    {/* Watermark Logo - PC Only */}
+                    <div className="hidden md:block absolute top-4 right-4 opacity-20 pointer-events-none">
+                      <img 
+                        src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
+                        alt="" 
+                        className="w-8 h-8 object-contain gray-scale brightness-0"
                       />
-                      <div className="absolute inset-0 ring-1 ring-inset ring-black/10 rounded-xl" />
                     </div>
-                  )}
-                </div>
-              </motion.div>
-            ))}
+                  </div>
+                  
+                  {/* Text Content Section */}
+                  <div className="pl-4 md:p-8 flex-1 flex flex-col justify-center">
+                    {/* Tiny Mobile Label */}
+                    <div className="block md:hidden text-[#FF8A00] text-[9px] uppercase tracking-[0.2em] mb-1 font-bold">
+                      {card.label}
+                    </div>
+                    
+                    {/* Title */}
+                    <h3 className="text-base lg:text-xl font-bold lg:font-extrabold text-slate-900 group-hover:text-[#4B27B1] transition-colors mb-1 md:mb-4 tracking-tight">
+                      {card.title}
+                    </h3>
+                    
+                    {/* Short Description - Mobile (2 lines) */}
+                    <p className="block md:hidden text-[11px] text-slate-500 leading-tight line-clamp-2">
+                      {card.description}
+                    </p>
+                    
+                    {/* Full Description - PC */}
+                    <p className="hidden md:block text-slate-600 text-md leading-relaxed">
+                      {card.description}
+                    </p>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

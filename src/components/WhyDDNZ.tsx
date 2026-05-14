@@ -1,82 +1,66 @@
 import { motion } from 'framer-motion';
-import { Award, Target, Warehouse } from 'lucide-react';
-
-const comparisons = [
-  {
-    title: 'Trust Built on 29 Years',
-    ddnz: 'Founded in 1997, our near-three-decade journey is your assurance. We have successfully navigated the evolution from general cargo to the complexities of New Energy Vehicle exports, building a track record you can rely on.',
-    industry: 'Many suppliers lack the long-term, proven experience in critical areas like Dangerous Goods compliance and project logistics, representing a tangible risk for your shipments.',
-    icon: Award,
-  },
-  {
-    title: 'Specialized Solutions',
-    ddnz: "We solve specific problems. Our expertise is not generic; it's focused on designing compliant, efficient logistics for NEVs and sensitive cargo to markets like the Middle East, Malaysia, Europe, and the Americas.",
-    industry: 'Standard freight forwarders often apply a one-size-fits-all approach, lacking the specific knowledge to engineer optimal solutions for NEV finished vehicles and hazardous materials.',
-    icon: Target,
-  },
-  {
-    title: 'Seamless & Secure Operations',
-    ddnz: 'Direct control means predictable outcomes. Our owned hub and port network in Guangzhou guarantees consistent, high-standard handling, ensuring the safety and timeliness of your bulk exports.',
-    industry: 'Heavy reliance on fragmented third parties often leads to inconsistent execution, compromising both the security and schedule integrity of your supply chain.',
-    icon: Warehouse,
-  },
-];
+import { getImgUrl } from '../constants';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function WhyDDNZ() {
+  const { t } = useLanguage();
+
+  const facilityData = [
+    {
+      title: t('facilities.guangzhou.title'),
+      tag: t('facilities.guangzhou.tag'),
+      desc: t('facilities.guangzhou.desc'),
+      img: getImgUrl('FACILITY_SCALE'),
+    },
+    {
+      title: t('facilities.systems.title'),
+      tag: t('facilities.systems.tag'),
+      desc: t('facilities.systems.desc'),
+      img: getImgUrl('FACILITY_SORT'),
+    }
+  ];
+
   return (
-    <section id="why-ddnz" className="relative py-24 bg-slate-900 text-white overflow-hidden">
+    <section className="relative py-10 md:py-24 bg-[#4B27B1] text-white overflow-hidden">
       {/* Subtle Background Pattern */}
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#4c1d95_1px,transparent_1px),linear-gradient(to_bottom,#4c1d95_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight uppercase">Our Competitive Edge</h2>
-          <p className="mt-4 text-lg text-slate-400">The Power of Depth and Personal Touch</p>
-        </div>
+        {/* --- FACILITIES PART --- */}
+        <div id="our-facilities">
+            <div className="mb-10 md:mb-16 text-center">
+              <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-2">{t('facilities.label')}</div>
+              <h2 className="text-2xl md:text-5xl font-extrabold text-white mb-2">
+                {t('facilities.title')}
+              </h2>
+              <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-8" />
+              <p className="text-purple-200 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-12">
+                {t('facilities.subtitle')}
+              </p>
+            </div>
 
-        <div className="max-w-4xl mx-auto">
-          {/* Header Row */}
-          <div className="relative grid grid-cols-1 md:grid-cols-12 gap-4 pb-6 mb-8 text-sm uppercase tracking-widest text-slate-500 font-semibold">
-            <div className="md:col-span-4 hidden md:block pl-14">Our Strength</div>
-            <div className="md:col-span-4 hidden md:block text-white">How It Benefits You</div>
-            <div className="md:col-span-4 hidden md:block">Common Industry Gaps</div>
-            <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-700 to-transparent" />
-          </div>
-
-          <div className="space-y-12 md:space-y-0">
-            {comparisons.map((item, index) => (
-              <motion.div
-                key={item.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="relative grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-4 py-8 group"
-              >
-                {/* Subtle Gradient Divider */}
-                {index !== comparisons.length - 1 && (
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-slate-800 to-transparent" />
-                )}
-                <div className="md:col-span-4 flex items-start md:items-center space-x-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-blue-500/10 flex items-center justify-center text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-colors duration-300">
-                    <item.icon className="w-5 h-5" />
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+              {facilityData.map((item, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                  className="group"
+                >
+                  <div className="aspect-[16/10] rounded-3xl overflow-hidden shadow-2xl bg-[#4B27B1] mb-8 border border-purple-800 relative">
+                    <div className="absolute inset-0 bg-[#4B27B1]/20 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                    <img src={item.img} alt={item.title} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 opacity-80 group-hover:opacity-100" />
                   </div>
-                  <h3 className="text-lg font-medium text-slate-300 mt-1 md:mt-0">{item.title}</h3>
-                </div>
-                <div className="md:col-span-4 flex items-start md:items-center">
-                  <div className="text-lg md:text-xl font-bold text-white tracking-tight leading-snug">
-                    {item.ddnz}
+                  <div className="px-2">
+                    <span className="inline-block px-3 py-1 bg-orange-500/20 text-orange-400 text-xs font-bold rounded-full mb-4 border border-orange-500/30">{item.tag}</span>
+                    <h3 className="text-2xl font-extrabold text-white mb-3">{item.title}</h3>
+                    <p className="text-purple-200 leading-relaxed font-medium">{item.desc}</p>
                   </div>
-                </div>
-                <div className="md:col-span-4 flex items-start md:items-center">
-                  <div className="text-sm md:text-base text-slate-400 opacity-50 bg-slate-800/40 px-4 py-3 rounded-lg border border-slate-700/50">
-                    <span className="font-bold text-slate-300 mr-2">Others:</span>
-                    {item.industry}
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
         </div>
       </div>
     </section>

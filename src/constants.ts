@@ -16,10 +16,13 @@ export const IMAGES = {
   KITCHEN_02: "kitchen_zone_02.png",
   KITCHEN_03: "kitchen_zone_03.png",
   FACILITY_SCALE: "facility_warehouse_automation.png",
+  WAREHOUSE_SCALE: "facility_warehouse_scale.png",
+  AIR_FREIGHT: "business_air_freight.png",
   FACILITY_SORT: "facility_warehouse_sorting.png",
   FACILITY_TEAM: "facility_warehouse_team.png",
   JOURNEY_2019: "team_meeting_professional.png",
   ESS_STORAGE: "service_nev_ess_storage.png",
+  INSPECTION: "container_loading_inspection.png",
   LOGO_WALL: "brand_logo_wall.png",
 };
 

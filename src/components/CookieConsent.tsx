@@ -37,10 +37,10 @@ export default function CookieConsent() {
           <div className="max-w-6xl mx-auto pointer-events-auto">
             <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 relative overflow-hidden backdrop-blur-md">
               {/* Decorative background blur */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-blue-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+              <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
 
-              <div className="flex-shrink-0 bg-blue-600/20 p-3 rounded-full relative z-10">
-                <Cookie className="w-8 h-8 text-blue-400" />
+              <div className="flex-shrink-0 bg-violet-600/20 p-3 rounded-full relative z-10">
+                <Cookie className="w-8 h-8 text-violet-400" />
               </div>
               
               <div className="flex-1 text-left relative z-10 pr-6 md:pr-0">
@@ -59,7 +59,7 @@ export default function CookieConsent() {
                 </button>
                 <button 
                   onClick={handleAccept}
-                  className="px-6 py-2.5 text-sm font-bold text-white bg-blue-600 hover:bg-blue-500 rounded-xl shadow-lg shadow-blue-900/20 transition-colors whitespace-nowrap"
+                  className="px-6 py-2.5 text-sm font-bold text-white bg-violet-600 hover:bg-violet-500 rounded-xl shadow-lg shadow-violet-900/20 transition-colors whitespace-nowrap"
                 >
                   Accept All
                 </button>

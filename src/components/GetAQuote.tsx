@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { useForm } from 'react-hook-form';
 import { motion } from 'framer-motion';
 import { Calculator, Info, ArrowRight, MessageCircle } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 type FormData = {
   name: string;
@@ -20,6 +21,7 @@ export default function GetAQuote() {
   const { register, handleSubmit, reset, watch, formState: { errors } } = useForm<FormData>();
   const watchDestination = watch('destination');
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { t } = useLanguage();
 
   // Estimator State
   const [mode, setMode] = useState<TransportMode>('sea');
@@ -32,6 +34,8 @@ export default function GetAQuote() {
   const [actualWeight, setActualWeight] = useState<number | ''>('');
   const [baseRate, setBaseRate] = useState<number | ''>('');
   const [cargoType, setCargoType] = useState<'General' | 'NEV'>('General');
+  const [isDG, setIsDG] = useState(false);
+  const [landLane, setLandLane] = useState<'Central' | 'Uzbekistan/Kazakhstan'>('Uzbekistan/Kazakhstan');
   const [results, setResults] = useState<any>(null);
 
   const resultsRef = useRef<HTMLDivElement>(null);
@@ -52,7 +56,7 @@ export default function GetAQuote() {
     }
 
     if (cbm === 0 && Number(actualWeight) === 0) {
-      alert('Please enter dimensions/quantity or Total CBM, and Actual Weight.');
+      alert(t('get_a_quote.alertInput'));
       return;
     }
 
@@ -65,23 +69,23 @@ export default function GetAQuote() {
       factor = 167; // 1 CBM = 167 KG
       ratioText = '1:167';
       destinationLabel = 'Global';
-      modeText = 'Air/Express';
+      modeText = t('get_a_quote.modeAir') + '/Express';
     } else if (mode === 'sea') {
-      modeText = 'Sea LCL';
+      modeText = t('get_a_quote.modeSea') + ' LCL';
       if (seaLane === 'EA/EU') {
          factor = 1000;
          ratioText = '1:1000';
-         destinationLabel = 'Eastern Europe / Europe';
+         destinationLabel = t('get_a_quote.sea_opt2');
       } else {
          factor = 500;
          ratioText = '1:500';
-         destinationLabel = 'South America / Southeast Asia';
+         destinationLabel = t('get_a_quote.sea_opt1');
       }
     } else if (mode === 'land') {
       factor = 500;
       ratioText = '1:500';
-      destinationLabel = 'Central Asia';
-      modeText = 'Road Freight';
+      destinationLabel = t('get_a_quote.land');
+      modeText = t('get_a_quote.modeLand') + ' Freight';
     }
 
     const actualWeightNum = Number(actualWeight) || 0;
@@ -89,7 +93,7 @@ export default function GetAQuote() {
 
     const density = volumeNum > 0 ? actualWeightNum / volumeNum : actualWeightNum;
     const isHeavy = density > factor;
-    const classification = isHeavy ? 'Heavy Cargo (Charged by Weight)' : 'Light/Light-bubble Cargo (Charged by Volume)';
+    const classification = isHeavy ? t('get_a_quote.classHeavy') : t('get_a_quote.classLight');
 
     let finalUnits = 0;
     let finalUnitLabel = '';
@@ -111,7 +115,9 @@ export default function GetAQuote() {
     
     if (rateNum > 0) {
       const baseFreight = finalUnits * rateNum;
-      totalFreight = baseFreight * (cargoType === 'NEV' ? 1.25 : 1);
+      // Add 25% surcharge for NEV or Battery/DG
+      const surcharge = (cargoType === 'NEV' || isDG) ? 1.25 : 1;
+      totalFreight = baseFreight * surcharge;
       minFreight = totalFreight * 0.90;
       maxFreight = totalFreight * 1.10;
     }
@@ -128,8 +134,16 @@ export default function GetAQuote() {
       maxFreight: maxFreight.toFixed(2),
       ratio: ratioText,
       destinationLabel,
-      modeText
+      modeText,
+      landLane
     });
+
+    if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+      (window as any).gtag('event', 'click_calculator', {
+        'transport_mode': mode,
+        'destination': destinationLabel
+      });
+    }
 
     setTimeout(() => {
       resultsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
@@ -155,44 +169,55 @@ export default function GetAQuote() {
       const result = await response.json();
 
       if (response.ok && result.success === "true") {
-        alert('Thank you! Your inquiry has been prioritized. A DDNZ senior expert will contact you via email within 24 hours.');
+        if (typeof window !== 'undefined' && typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'submit_quote_form', { 'method': 'Email' });
+        }
+        alert(t('get_a_quote.alertSuccess'));
         reset();
       } else {
         throw new Error('Submission failed');
       }
     } catch (error) {
       console.error("Form Error:", error);
-      alert('System busy. Please try again later or contact us directly via our official email for an immediate quote.');
+      alert(t('get_a_quote.alertError'));
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <section id="get-a-quote" className="py-24 bg-slate-50 font-sans">
+    <section id="get-a-quote" className="py-10 md:py-24 bg-purple-50/50 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900 tracking-tight uppercase">Logistics Tools & Inquiry</h2>
-          <p className="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
-            Use our professional Chargeable Weight Estimator for instant volume assessment, or submit a detailed inquiry to our senior team.
+        <div className="text-center mb-10 md:mb-16">
+          <div className="text-orange-600 font-semibold tracking-widest text-xs uppercase mb-2">{t('get_a_quote.estimatorTitle')}</div>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-slate-900 tracking-tight text-center mb-4">
+            {t('get_a_quote.title')}
+          </h2>
+          <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-8" />
+          <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed mb-4">
+            {t('get_a_quote.subtitle')}
           </p>
+          <div className="flex items-center justify-center gap-2 text-[#FF8A00] font-bold text-sm bg-orange-50 w-fit mx-auto px-4 py-1.5 rounded-full border border-orange-100 shadow-sm">
+            <Info className="w-4 h-4" />
+            {t('hero.alibaba_cta')}
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-stretch">
           
           {/* Left Column: Estimator */}
-          <div className="lg:col-span-2 bg-white rounded-2xl shadow-xl p-6 md:p-8 flex flex-col h-full">
+          <div className="lg:col-span-2 bg-white rounded-2xl shadow-sm border border-purple-100 p-6 md:p-8 flex flex-col h-full hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-6 pb-6 border-b border-slate-100">
-              <div className="w-10 h-10 rounded-full bg-blue-50 flex items-center justify-center">
-                <Calculator className="w-5 h-5 text-blue-600" />
+              <div className="w-10 h-10 rounded-full bg-purple-50 flex items-center justify-center">
+                <Calculator className="w-5 h-5 text-[#4B27B1]" />
               </div>
-              <h3 className="text-xl font-bold text-slate-900">Rate Estimator</h3>
+              <h3 className="text-xl font-bold text-slate-900">{t('get_a_quote.calcTitle')}</h3>
             </div>
 
             <div className="flex-1 flex flex-col space-y-6">
               {/* Transport Mode */}
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-2">Transport Mode</label>
+                <label className="block text-sm font-bold text-slate-700 mb-2">{t('get_a_quote.mode')}</label>
                 <div className="grid grid-cols-3 gap-2">
                   {(['sea', 'land', 'air'] as TransportMode[]).map((m) => (
                     <button
@@ -200,11 +225,11 @@ export default function GetAQuote() {
                       onClick={() => setMode(m)}
                       className={`py-2 text-sm font-bold rounded-lg border transition-all ${
                         mode === m 
-                          ? 'border-blue-600 bg-blue-50 text-blue-700' 
+                          ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1]' 
                           : 'border-slate-200 text-slate-500 hover:border-slate-300'
                       }`}
                     >
-                      {m.toUpperCase()}
+                      {t(`get_a_quote.mode${m.charAt(0).toUpperCase() + m.slice(1)}`)}
                     </button>
                   ))}
                 </div>
@@ -213,30 +238,35 @@ export default function GetAQuote() {
               {/* Lane Selection dependent on Mode */}
               {mode === 'sea' && (
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 mb-1">Select Sea Freight Lane</label>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">{t('get_a_quote.sea')}</label>
                   <select 
                     value={seaLane} 
                     onChange={(e) => setSeaLane(e.target.value as any)}
-                    className="w-full px-3 py-2 text-sm font-medium rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none"
+                    className="w-full px-3 py-2 text-sm font-medium rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none"
                   >
-                    <option value="SA/SEA">South America / SE Asia (1 CBM = 500 KG)</option>
-                    <option value="EA/EU">Eastern Europe / Europe (1 CBM = 1000 KG)</option>
+                    <option value="SA/SEA">{t('get_a_quote.sea_opt1')}</option>
+                    <option value="EA/EU">{t('get_a_quote.sea_opt2')}</option>
                   </select>
                 </div>
               )}
               {mode === 'land' && (
                 <div>
-                  <label className="block text-xs font-bold text-slate-500 mb-1">Land Freight Lane</label>
-                  <div className="px-3 py-2 text-sm font-medium rounded bg-slate-50 border border-slate-200 text-slate-600">
-                    Central Asia Road (1 CBM = 500 KG)
-                  </div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">{t('get_a_quote.land')}</label>
+                  <select 
+                    value={landLane} 
+                    onChange={(e) => setLandLane(e.target.value as any)}
+                    className="w-full px-3 py-2 text-sm font-medium rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none"
+                  >
+                    <option value="Central">{t('get_a_quote.land_opt1')}</option>
+                    <option value="Uzbekistan/Kazakhstan">{t('get_a_quote.land_opt2')}</option>
+                  </select>
                 </div>
               )}
               {mode === 'air' && (
                <div>
-                  <label className="block text-xs font-bold text-slate-500 mb-1">Air Freight Lane</label>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">{t('get_a_quote.air')}</label>
                   <div className="px-3 py-2 text-sm font-medium rounded bg-slate-50 border border-slate-200 text-slate-600">
-                    Global Express/Air (1 CBM = 167 KG)
+                    {t('get_a_quote.air_opt1')}
                   </div>
                 </div>
               )}
@@ -244,33 +274,33 @@ export default function GetAQuote() {
               {/* Dimensions Input */}
               <div className="bg-slate-50 p-4 rounded-xl border border-slate-100">
                 <div className="flex items-center justify-between mb-3">
-                  <label className="block text-sm font-bold text-slate-700">Dimensions (Build-up CBM)</label>
+                  <label className="block text-sm font-bold text-slate-700">{t('get_a_quote.packageDim')}</label>
                 </div>
                 <div className="grid grid-cols-4 gap-2 mb-3">
-                  <input type="number" placeholder="L(cm)" value={length} onChange={(e) => setLength(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" />
-                  <input type="number" placeholder="W(cm)" value={width} onChange={(e) => setWidth(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" />
-                  <input type="number" placeholder="H(cm)" value={height} onChange={(e) => setHeight(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" />
-                  <input type="number" placeholder="Qty" value={quantity} onChange={(e) => setQuantity(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" />
+                  <input type="number" placeholder="L(cm)" value={length} onChange={(e) => setLength(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" />
+                  <input type="number" placeholder="W(cm)" value={width} onChange={(e) => setWidth(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" />
+                  <input type="number" placeholder="H(cm)" value={height} onChange={(e) => setHeight(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" />
+                  <input type="number" placeholder={t('get_a_quote.quantity')} value={quantity} onChange={(e) => setQuantity(Number(e.target.value) || '')} className="w-full px-2 py-2 text-sm rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" />
                 </div>
                 <div className="flex items-start gap-2 mb-4">
-                  <Info className="w-4 h-4 text-blue-500 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-500 italic">Please use the max protrusion point for measurement.</p>
+                  <Info className="w-4 h-4 text-[#4B27B1] shrink-0 mt-0.5" />
+                  <p className="text-xs text-slate-500 italic">{t('get_a_quote.dimInfo')}</p>
                 </div>
 
                 <div className="flex items-center gap-3">
                   <div className="flex-1 h-px bg-slate-200"></div>
-                  <span className="text-xs font-bold text-slate-400 uppercase">OR OVERRIDE CBM</span>
+                  <span className="text-xs font-bold text-slate-400 uppercase">{t('get_a_quote.orOverride')}</span>
                   <div className="flex-1 h-px bg-slate-200"></div>
                 </div>
 
                 <div className="mt-4">
-                  <label className="block text-sm font-bold text-slate-700 mb-1">Total CBM</label>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.totalCbm')}</label>
                   <input 
                     type="number" 
-                    placeholder={`Auto: ${calculateAutoCbm().toFixed(3)} CBM`}
+                    placeholder={`${t('get_a_quote.autoPrefix')}: ${calculateAutoCbm().toFixed(3)} CBM`}
                     value={manualCbm} 
                     onChange={(e) => setManualCbm(Number(e.target.value) || '')} 
-                    className="w-full px-3 py-2 rounded bg-white border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" 
+                    className="w-full px-3 py-2 rounded bg-white border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" 
                   />
                 </div>
               </div>
@@ -278,35 +308,40 @@ export default function GetAQuote() {
               {/* Weight, Cargo Type & Rate */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">Actual Weight (KG)</label>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.actualWeightLabel')}</label>
                   <input 
                     type="number" 
                     value={actualWeight} 
                     onChange={(e) => setActualWeight(Number(e.target.value) || '')} 
-                    className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" 
+                    className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" 
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-bold text-slate-700 mb-1">Cargo Category</label>
+                  <label className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.cargoCat')}</label>
                   <select
                     value={cargoType}
                     onChange={(e) => setCargoType(e.target.value as 'General' | 'NEV')}
-                    className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none bg-white"
+                    className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none bg-white"
                   >
-                    <option value="General">General / Standard</option>
-                    <option value="NEV">NEV / Base Station</option>
+                    <option value="General">{t('get_a_quote.catGeneral')}</option>
+                    <option value="NEV">{t('get_a_quote.catNev')}</option>
                   </select>
                 </div>
               </div>
 
+              <div className="flex items-center gap-2">
+                 <input type="checkbox" id="isDG" checked={isDG} onChange={(e) => setIsDG(e.target.checked)} className="rounded text-[#4B27B1] border-slate-300 focus:ring-[#4B27B1]" />
+                 <label htmlFor="isDG" className="text-sm font-bold text-slate-700">{t('get_a_quote.includeDG')}</label>
+              </div>
+
               <div>
-                <label className="block text-sm font-bold text-slate-700 mb-1">Base Rate ($)</label>
+                <label className="block text-sm font-bold text-slate-700 mb-1">{t('get_a_quote.baseRate')}</label>
                 <input 
                   type="number" 
-                  placeholder="Optional (Input rate per Chargeable Unit)"
+                  placeholder={t('get_a_quote.baseRatePlaceholder')}
                   value={baseRate} 
                   onChange={(e) => setBaseRate(Number(e.target.value) || '')} 
-                  className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-blue-500 outline-none" 
+                  className="w-full px-3 py-2 rounded border border-slate-200 focus:ring-1 focus:ring-[#4B27B1] outline-none" 
                 />
               </div>
 
@@ -314,14 +349,18 @@ export default function GetAQuote() {
                 <button
                   type="button"
                   onClick={handleCalculate}
-                  className="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition-colors shadow-lg"
+                  className="w-full bg-slate-900 text-white font-bold py-3 rounded-lg hover:bg-slate-800 transition-colors shadow-md"
                 >
-                  Calculate Chargeable Weight
+                  {t('get_a_quote.calcBtn')}
                 </button>
 
                 {/* Results */}
                 {results && (() => {
-                  const waText = `Hi DDNZ, I just used your Rate Tool. My shipment is ${results.cbm} CBM / ${results.actualWeight} KG to ${watchDestination || '[Destination]'}. It's detected as ${results.classification.toLowerCase()}. Can I get a final firm quote?`;
+                  const waText = t('get_a_quote.waTemplate')
+                    .replace('{cbm}', results.cbm)
+                    .replace('{weight}', results.actualWeight)
+                    .replace('{destination}', watchDestination || '[Destination]')
+                    .replace('{class}', results.classification.toLowerCase());
                   const waUrl = `https://wa.me/85261077362?text=${encodeURIComponent(waText)}`;
 
                   return (
@@ -329,52 +368,54 @@ export default function GetAQuote() {
                       ref={resultsRef}
                       initial={{ opacity: 0, height: 0 }}
                       animate={{ opacity: 1, height: 'auto' }}
-                      className="bg-blue-50 rounded-xl p-5 border border-blue-100"
+                      className="bg-purple-50/50 rounded-xl p-5 border border-purple-100"
                     >
                       {results.hasRate && (
                         <div className="mb-4 text-center">
-                          <p className="text-sm text-slate-600 font-bold mb-1">Estimated Total Freight:</p>
+                          <p className="text-sm text-slate-600 font-bold mb-1">{t('get_a_quote.estTotalFreight')}</p>
                           <p className="text-2xl font-black text-emerald-600">${results.minFreight} - ${results.maxFreight}</p>
                         </div>
                       )}
                       
-                      <div className="space-y-2 mb-4 bg-white p-4 rounded-lg border border-blue-100/50">
+                      <div className="space-y-2 mb-4 bg-white p-4 rounded-lg border border-purple-100/50">
                         <div className="flex justify-between text-sm">
-                          <span className="text-slate-600">Total Volume:</span>
+                          <span className="text-slate-600">{t('get_a_quote.totalVolLabel')}</span>
                           <span className="font-bold text-slate-900">{results.cbm} CBM</span>
                         </div>
                         <div className="flex justify-between text-sm">
-                          <span className="text-slate-600">Actual Weight:</span>
+                          <span className="text-slate-600">{t('get_a_quote.actualWeightLabel').split(' (')[0]}:</span>
                           <span className="font-bold text-slate-900">{results.actualWeight} KG</span>
                         </div>
                         <div className="flex justify-between text-sm items-center pt-2 mt-2 border-t border-slate-100">
-                          <span className="text-slate-900 font-bold">Chargeable Units:</span>
-                          <span className="text-blue-700 text-lg font-black">{results.finalUnits} {results.finalUnitLabel}</span>
+                          <span className="text-slate-900 font-bold">{t('get_a_quote.chargeableUnitsLabel')}</span>
+                          <span className="text-[#4B27B1] text-lg font-black">{results.finalUnits} {results.finalUnitLabel}</span>
                         </div>
-                        <p className="text-[10px] text-slate-400 text-right uppercase tracking-wider">(Based on {results.ratio} weight/volume ratio)</p>
                       </div>
                       
-                      <div className={`text-sm font-bold text-center py-2 px-3 rounded mb-4 shadow-sm ${results.isHeavy ? 'bg-orange-100 text-orange-800 border border-orange-200' : 'bg-blue-100 text-blue-800 border border-blue-200'}`}>
-                        Mode: {results.classification}
+                      <div className={`text-sm font-bold text-center py-2 px-3 rounded mb-4 shadow-sm ${results.isHeavy ? 'bg-orange-100 text-orange-800 border border-orange-200' : 'bg-purple-100 text-purple-800 border border-purple-200'}`}>
+                        {t('get_a_quote.modeLabel')}: {results.classification}
                       </div>
 
                       {/* DDNZ Insight Tooltip */}
                       <div className="bg-white/90 rounded-lg shadow-sm border border-slate-200 p-3 mb-4 flex gap-3 items-start">
-                        <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
-                        <p className="text-xs text-slate-600 leading-relaxed font-medium">
-                          <span className="font-bold text-blue-700">DDNZ Insight:</span> For your <span className="font-bold">{results.modeText}</span> shipment to <span className="font-bold">{results.destinationLabel}</span>, we use a density ratio of <span className="font-bold text-slate-800">{results.ratio}</span> to ensure fair market pricing.
-                        </p>
+                        <Info className="w-5 h-5 text-[#4B27B1] shrink-0 mt-0.5" />
+                        <div className="text-xs text-slate-600 leading-relaxed font-medium">
+                          <p><span className="font-bold text-[#4B27B1]">{t('get_a_quote.insight')}</span> For your <span className="font-bold">{results.modeText}</span> shipment to <span className="font-bold">{results.destinationLabel}</span>, {t('get_a_quote.insightDesc')}</p>
+                          {results.modeText === 'Road Freight' && results.landLane === 'Uzbekistan/Kazakhstan' && (
+                            <p className="mt-1 font-bold text-emerald-700 bg-emerald-50 px-2 py-1 rounded inline-block">{t('get_a_quote.roadNote')}</p>
+                          )}
+                        </div>
                       </div>
 
                       <button 
                         onClick={() => window.open(waUrl, '_blank')}
-                        className="mt-2 w-full flex items-center justify-center gap-2 bg-[#25D366] text-white py-3 rounded-lg font-bold text-sm hover:bg-[#20bd5a] transition-colors shadow-md"
+                        className="mt-2 w-full flex items-center justify-center gap-2 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] text-white py-3 rounded-lg font-bold text-sm hover:shadow-lg transition-all transform hover:-translate-y-0.5"
                       >
-                        <MessageCircle className="w-5 h-5" /> Request Firm Quote
+                        <MessageCircle className="w-5 h-5" /> {t('get_a_quote.reqQuote')}
                       </button>
                       
                       <p className="text-[10px] text-slate-500 mt-4 leading-relaxed italic text-center">
-                        * FCL (Full Container Load) is quoted separately. Pricing excludes local origin/destination charges and duties.
+                        {t('get_a_quote.fclNote')}
                       </p>
                     </motion.div>
                   );
@@ -384,98 +425,98 @@ export default function GetAQuote() {
           </div>
 
           {/* Right Column: Inquiry Form */}
-          <div className="lg:col-span-3 bg-white rounded-2xl shadow-xl p-8 md:p-10 flex flex-col h-full">
-            <h3 className="text-2xl font-extrabold text-slate-900 mb-2">Get Your Tailored Logistics Plan</h3>
-            <p className="text-sm text-slate-500 mb-8">Fill out the details for a comprehensive quote and routing options.</p>
+          <div className="lg:col-span-3 bg-white rounded-2xl shadow-sm border border-purple-100 p-8 md:p-10 flex flex-col h-full hover:shadow-md transition-shadow">
+            <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{t('get_a_quote.formTitle')}</h3>
+            <p className="text-sm text-slate-500 mb-8">{t('get_a_quote.formSubtitle')}</p>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-1 flex flex-col">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">Full Name / Company</label>
+                  <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.fname')}</label>
                   <input
                     id="name"
                     type="text"
                     {...register('name', { required: true })}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                     placeholder="John Doe / Acme Corp"
                   />
-                  {errors.name && <span className="text-red-500 text-xs mt-1">This field is required</span>}
+                  {errors.name && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">Corporate Email Address</label>
+                  <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.email')}</label>
                   <input
                     id="email"
                     type="email"
                     {...register('email', { required: true })}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                     placeholder="john@company.com"
                   />
-                  {errors.email && <span className="text-red-500 text-xs mt-1">This field is required</span>}
+                  {errors.email && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                 </div>
               </div>
 
               <div>
-                <label htmlFor="product" className="block text-sm font-medium text-slate-700 mb-1">Industry / Product Category</label>
+                <label htmlFor="product" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.industryLabel')}</label>
                 <select
                   id="product"
                   {...register('product', { required: true })}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all bg-white"
+                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all bg-white"
                 >
-                  <option value="New Energy / ESS">New Energy / Energy Storage Systems (ESS)</option>
-                  <option value="Commercial Furniture">Commercial Furniture Engineering</option>
-                  <option value="Project Cargo / Heavy Lift">Project Cargo / Heavy Lift</option>
-                  <option value="Other">Other (General Cargo)</option>
+                  <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
+                  <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
+                  <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject')}</option>
+                  <option value="Other">{t('get_a_quote.indOther')}</option>
                 </select>
               </div>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="origin" className="block text-sm font-medium text-slate-700 mb-1">Origin Port / City</label>
+                  <label htmlFor="origin" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.originLabel')}</label>
                   <input
                     id="origin"
                     type="text"
                     {...register('origin', { required: true })}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    placeholder="e.g., Guangzhou, Shenzhen"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
+                    placeholder={t('get_a_quote.originPlaceholder')}
                   />
-                  {errors.origin && <span className="text-red-500 text-xs mt-1">This field is required</span>}
+                  {errors.origin && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                 </div>
                 <div>
-                  <label htmlFor="destination" className="block text-sm font-medium text-slate-700 mb-1">Destination Port / Country</label>
+                  <label htmlFor="destination" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.destLabel')}</label>
                   <input
                     id="destination"
                     type="text"
                     {...register('destination', { required: true })}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all"
-                    placeholder="e.g., Malaysia, Saudi Arabia"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
+                    placeholder={t('get_a_quote.destPlaceholder')}
                   />
-                  {errors.destination && <span className="text-red-500 text-xs mt-1">This field is required</span>}
+                  {errors.destination && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                 </div>
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">Project Specifications & Requirements</label>
+                <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.cargo')}</label>
                 <textarea
                   id="message"
                   rows={4}
                   {...register('message', { required: true })}
-                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none transition-all resize-none"
-                  placeholder="Please provide details regarding your cargo, timeline, and any special handling requirements..."
+                  className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all resize-none"
+                  placeholder={t('get_a_quote.msgPlaceholder')}
                 />
-                {errors.message && <span className="text-red-500 text-xs mt-1">This field is required</span>}
+                {errors.message && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
               </div>
 
               <div className="mt-auto pt-4">
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className={`w-full text-white font-bold py-4 rounded-lg transition-colors focus:ring-4 focus:ring-blue-200 outline-none flex items-center justify-center shadow-lg ${
-                    isSubmitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
+                  className={`w-full text-white font-bold py-4 rounded-lg transition-all focus:ring-4 focus:ring-purple-200 outline-none flex items-center justify-center shadow-lg hover:-translate-y-0.5 ${
+                    isSubmitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
                   }`}
                 >
-                  {isSubmitting ? 'Submitting...' : (
+                  {isSubmitting ? t('get_a_quote.submitting') : (
                     <>
-                      Submit Inquiry for Priority Review <ArrowRight className="w-5 h-5 ml-2" />
+                      {t('get_a_quote.submit')} <ArrowRight className="w-5 h-5 ml-2" />
                     </>
                   )}
                 </button>

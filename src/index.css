@@ -6,6 +6,10 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+body {
+  font-family: 'Inter', sans-serif;
+}
+
 html {
   scroll-behavior: smooth;
 }

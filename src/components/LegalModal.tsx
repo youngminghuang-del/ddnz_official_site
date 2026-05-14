@@ -35,7 +35,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 20 }}
-          className="fixed inset-0 z-[100] bg-slate-900 overflow-y-auto font-sans"
+          className="fixed inset-0 z-[100] bg-[#4B27B1] overflow-y-auto font-sans"
         >
           <div className="max-w-4xl mx-auto px-4 py-12 sm:px-6 lg:px-8">
             <button
