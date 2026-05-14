@@ -1,33 +1,26 @@
-import { useState, useRef } from 'react';
-import { useForm } from 'react-hook-form';
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Calculator, Info, ArrowRight, MessageCircle } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
 
-type FormData = {
-  name: string;
-  email: string;
-  product: string;
-  origin: string;
-  destination: string;
-  volume: string;
-  weight: string;
-  message: string;
-};
-
-type TransportMode = 'sea' | 'land' | 'air';
-
 export default function GetAQuote() {
-  const { register, handleSubmit, reset, watch, formState: { errors } } = useForm<FormData>();
-  const watchDestination = watch('destination');
-  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [state, handleSubmit] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [submissionError, setSubmissionError] = useState(false);
   const { t } = useLanguage();
 
+  // Handle tracking and local success state
+  useEffect(() => {
+    if (state.succeeded) {
+      trackEvent('rfq_submit_success', { 'event_category': 'conversion' });
+      trackEvent('submit_quote_form', { 'method': 'Email' });
+      setIsSubmitted(true);
+    }
+  }, [state.succeeded]);
+
   // Estimator State
-  const [mode, setMode] = useState<TransportMode>('sea');
+  const [mode, setMode] = useState<'sea' | 'land' | 'air'>('sea');
   const [seaLane, setSeaLane] = useState<'SA/SEA' | 'EA/EU'>('SA/SEA');
   const [length, setLength] = useState<number | ''>('');
   const [width, setWidth] = useState<number | ''>('');
@@ -152,42 +145,6 @@ export default function GetAQuote() {
     }, 100);
   };
 
-  const onSubmit = async (data: FormData) => {
-    setIsSubmitting(true);
-    setSubmissionError(false);
-    
-    // Simulate thinking/processing
-    await new Promise(resolve => setTimeout(resolve, 2000));
-
-    try {
-      const response = await fetch("https://formspree.io/f/mdabvqbd", {
-        method: "POST",
-        headers: { 
-          "Content-Type": "application/json",
-          "Accept": "application/json"
-        },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        trackEvent('rfq_submit_success', { 'event_category': 'conversion' });
-        trackEvent('submit_quote_form', { 'method': 'Email' });
-        setIsSubmitted(true);
-        reset();
-      } else {
-        alert("Submission failed. Please contact manager@ddnzglobal.com directly.");
-        setSubmissionError(true);
-        setIsSubmitted(true);
-      }
-    } catch (error) {
-      alert("Submission failed. Please contact manager@ddnzglobal.com directly.");
-      setSubmissionError(true);
-      setIsSubmitted(true); 
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
   return (
     <section id="get-a-quote" className="py-10 md:py-24 bg-purple-50/50 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -222,7 +179,7 @@ export default function GetAQuote() {
               <div>
                 <label className="block text-sm font-bold text-slate-700 mb-2">{t('get_a_quote.mode')}</label>
                 <div className="grid grid-cols-3 gap-2">
-                  {(['sea', 'land', 'air'] as TransportMode[]).map((m) => (
+                  {(['sea', 'land', 'air'] as const).map((m) => (
                     <button
                       key={m}
                       onClick={() => setMode(m)}
@@ -362,7 +319,7 @@ export default function GetAQuote() {
                   const waText = t('get_a_quote.waTemplate')
                     .replace('{cbm}', results.cbm)
                     .replace('{weight}', results.actualWeight)
-                    .replace('{destination}', watchDestination || '[Destination]')
+                    .replace('{destination}', '[Destination]')
                     .replace('{class}', results.classification.toLowerCase());
                   const waUrl = `https://wa.me/85261077362?text=${encodeURIComponent(waText)}`;
 
@@ -434,29 +391,31 @@ export default function GetAQuote() {
                 <h3 className="text-2xl font-extrabold text-slate-900 mb-2">{t('get_a_quote.formTitle')}</h3>
                 <p className="text-sm text-slate-500 mb-8">{t('get_a_quote.formSubtitle')}</p>
                 
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6 flex-1 flex flex-col">
+                <form onSubmit={handleSubmit} className="space-y-6 flex-1 flex flex-col">
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.fname')}</label>
                       <input
                         id="name"
+                        name="name"
                         type="text"
-                        {...register('name', { required: true })}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                         placeholder="John Doe / Acme Corp"
                       />
-                      {errors.name && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
+                      <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-xs mt-1" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.email')}</label>
                       <input
                         id="email"
+                        name="email"
                         type="email"
-                        {...register('email', { required: true })}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                         placeholder="john@company.com"
                       />
-                      {errors.email && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
+                      <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
                     </div>
                   </div>
 
@@ -464,7 +423,8 @@ export default function GetAQuote() {
                     <label htmlFor="product" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.industryLabel')}</label>
                     <select
                       id="product"
-                      {...register('product', { required: true })}
+                      name="product"
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all bg-white"
                     >
                       <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
@@ -479,23 +439,23 @@ export default function GetAQuote() {
                       <label htmlFor="origin" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.originLabel')}</label>
                       <input
                         id="origin"
+                        name="origin"
                         type="text"
-                        {...register('origin', { required: true })}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                         placeholder={t('get_a_quote.originPlaceholder')}
                       />
-                      {errors.origin && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                     </div>
                     <div>
                       <label htmlFor="destination" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.destLabel')}</label>
                       <input
                         id="destination"
+                        name="destination"
                         type="text"
-                        {...register('destination', { required: true })}
+                        required
                         className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all"
                         placeholder={t('get_a_quote.destPlaceholder')}
                       />
-                      {errors.destination && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
                     </div>
                   </div>
 
@@ -503,26 +463,27 @@ export default function GetAQuote() {
                     <label htmlFor="message" className="block text-sm font-medium text-slate-700 mb-1">{t('get_a_quote.cargo')}</label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
-                      {...register('message', { required: true })}
+                      required
                       className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:ring-2 focus:ring-[#4B27B1] focus:border-transparent outline-none transition-all resize-none"
                       placeholder={t('get_a_quote.msgPlaceholder')}
                     />
-                    {errors.message && <span className="text-red-500 text-xs mt-1">{t('get_a_quote.required')}</span>}
+                    <ValidationError prefix="Message" field="message" errors={state.errors} className="text-red-500 text-xs mt-1" />
                   </div>
 
                   <div className="mt-auto pt-4">
                     <button
                       type="submit"
-                      disabled={isSubmitting}
+                      disabled={state.submitting}
                       className={`w-full text-white font-bold py-4 rounded-lg transition-all focus:ring-4 focus:ring-purple-200 outline-none flex items-center justify-center shadow-lg hover:-translate-y-0.5 ${
-                        isSubmitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
+                        state.submitting ? 'bg-slate-600 cursor-not-allowed' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
                       }`}
                     >
-                      {isSubmitting ? (
+                      {state.submitting ? (
                         <>
                           <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin mr-3"></div>
-                          {t('get_a_quote.submitting')}
+                          Sending...
                         </>
                       ) : (
                         <>
@@ -530,9 +491,9 @@ export default function GetAQuote() {
                         </>
                       )}
                     </button>
-                    {submissionError && (
+                    {state.errors && (
                       <p className="mt-4 text-xs text-red-500 text-center">
-                        Submission limit reached? <a href="mailto:partnership@ddnzglobal.com" className="underline font-bold">Click here to email us directly.</a>
+                        Something went wrong. Please <a href="mailto:partnership@ddnzglobal.com" className="underline font-bold">email us directly.</a>
                       </p>
                     )}
                   </div>
@@ -564,15 +525,6 @@ export default function GetAQuote() {
                 >
                   Send another inquiry
                 </button>
-                
-                {submissionError && (
-                  <div className="mt-12 pt-8 border-t border-white/10 w-full">
-                    <p className="text-xs text-purple-300 mb-2 italic">Psst. If you don't hear from us, try manual email:</p>
-                    <a href="mailto:partnership@ddnzglobal.com" className="text-[#FF8A00] font-bold text-sm hover:underline">
-                      partnership@ddnzglobal.com
-                    </a>
-                  </div>
-                )}
               </motion.div>
             )}
           </div>
