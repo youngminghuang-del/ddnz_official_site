@@ -1,16 +1,17 @@
 import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { Menu, X, Globe } from 'lucide-react';
 import { cn, trackEvent } from '../lib/utils';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
 
 const navKeys = [
-  { key: 'who_we_are', href: '#who-we-are' },
-  { key: 'what_we_do', href: '#what-we-do' },
-  { key: 'why_ddnz', href: '#why-ddnz' },
-  { key: 'our_facilities', href: '#our-facilities' },
-  { key: 'insights', href: '#insights' },
-  { key: 'get_a_quote', href: '#get-a-quote' },
+  { key: 'who_we_are', href: '/#who-we-are' },
+  { key: 'what_we_do', href: '/#what-we-do' },
+  { key: 'why_ddnz', href: '/#why-ddnz' },
+  { key: 'our_facilities', href: '/#our-facilities' },
+  { key: 'insights', href: '/insights' },
+  { key: 'get_a_quote', href: '/#get-a-quote' },
 ];
 
 export default function Navbar() {
@@ -48,7 +49,7 @@ export default function Navbar() {
           
           {/* Logo + Text */}
           <div className="flex-shrink-0">
-            <a href="#" className="flex items-center gap-3 group">
+            <Link to="/" className="flex items-center gap-3 group">
               <img 
                 src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
                 alt="DDNZ Global Logo" 
@@ -61,7 +62,7 @@ export default function Navbar() {
               )}>
                 DDNZ Global
               </span>
-            </a>
+            </Link>
           </div>
           
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8 ml-auto">
