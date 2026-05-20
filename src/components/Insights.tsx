@@ -3,11 +3,11 @@ import { motion } from 'framer-motion';
 import { Calendar, ArrowRight, ArrowUpRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import blogDataFallback from '../data/blogData.json';
+import notionBlogPosts from '../data/notionBlogData.json';
 
 export default function Insights() {
   const { t } = useLanguage();
-  const [posts, setPosts] = useState<any[]>(blogDataFallback);
+  const [posts] = useState<any[]>(notionBlogPosts);
 
   useEffect(() => {
     // 埋点同步: insights_section_view
@@ -17,19 +17,6 @@ export default function Insights() {
         'event_label': 'Insights Section View'
       });
     }
-
-    // Fetch live posts from Notion API
-    fetch('/api/blog-posts')
-      .then(res => res.json())
-      .then(data => {
-        if (Array.isArray(data) && data.length > 0) {
-          setPosts(data);
-          console.log("Successfully loaded live Notion posts in client:", data.length);
-        }
-      })
-      .catch(err => {
-        console.error("Error loading live Notion posts, using local fallback:", err);
-      });
 
     // Load Elfsight Script
     const script = document.createElement('script');

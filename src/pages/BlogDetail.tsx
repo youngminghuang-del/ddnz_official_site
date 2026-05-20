@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
-import blogDataFallback from '../data/blogData.json';
+import notionBlogPosts from '../data/notionBlogData.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
@@ -26,48 +26,32 @@ export default function BlogDetail() {
 
     setIsLoading(true);
 
-    // Fetch live post details from Express Notion backend
-    fetch(`/api/blog-posts/${id}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Post not found");
-        return res.json();
-      })
-      .then((data) => {
-        setPost(data as BlogPost);
-        setIsLoading(false);
+    // Look up in build-time notion blog posts (which holds full HTML content)
+    const found = notionBlogPosts.find((p) => p.id === id);
+    if (found) {
+      setPost(found as BlogPost);
 
-        // Update meta description with the post's summary
-        let metaDesc = document.querySelector('meta[name="description"]');
-        if (!metaDesc) {
-          metaDesc = document.createElement('meta');
-          metaDesc.setAttribute('name', 'description');
-          document.head.appendChild(metaDesc);
-        }
-        metaDesc.setAttribute('content', data.summary || "DDNZ Global Logistics Insight content");
+      // Update meta description with the post's summary
+      let metaDesc = document.querySelector('meta[name="description"]');
+      if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.setAttribute('name', 'description');
+        document.head.appendChild(metaDesc);
+      }
+      metaDesc.setAttribute('content', found.summary || "DDNZ Global Logistics Insight content");
 
-        // Tracking
-        if (typeof window !== 'undefined' && (window as any).gtag) {
-          (window as any).gtag('event', 'blog_view', {
-            'page_title': data.title,
-            'page_id': id
-          });
-        }
-      })
-      .catch((err) => {
-        console.error("Error loading live Notion page, checking fallback data:", err);
-        // Fallback to local blogData matching the key
-        const found = blogDataFallback.find((p) => p.id === id);
-        if (found) {
-          setPost(found as BlogPost);
-          // Set page meta
-          let metaDesc = document.querySelector('meta[name="description"]');
-          if (metaDesc) {
-            metaDesc.setAttribute('content', found.summary);
-          }
-        }
-        setIsLoading(false);
-      });
+      // Tracking
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        (window as any).gtag('event', 'blog_view', {
+          'page_title': found.title,
+          'page_id': id
+        });
+      }
+    } else {
+      console.warn(`Post with ID ${id} not found in Notion static data.`);
+    }
 
+    setIsLoading(false);
     window.scrollTo(0, 0);
   }, [id]);
 

@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { Calendar, ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
-import blogDataFallback from "../data/blogData.json";
+import notionBlogPosts from "../data/notionBlogData.json";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
@@ -16,29 +16,11 @@ interface BlogPost {
 }
 
 export default function InsightsHub() {
-  const [posts, setPosts] = useState<BlogPost[]>(blogDataFallback as BlogPost[]);
+  const [posts] = useState<BlogPost[]>(notionBlogPosts as BlogPost[]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    setIsLoading(true);
-    // Fetch live categories and blog articles from Notion
-    fetch("/api/blog-posts")
-      .then((res) => {
-        if (!res.ok) throw new Error("API response error");
-        return res.json();
-      })
-      .then((data) => {
-        if (Array.isArray(data) && data.length > 0) {
-          setPosts(data as BlogPost[]);
-        }
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        console.error("Failed to load live list from Notion. Fallback to offline blog JSON data:", err);
-        setIsLoading(false);
-      });
-
     // Tracking event
     if (typeof window !== "undefined" && (window as any).gtag) {
       (window as any).gtag("event", "insights_hub_view", {
