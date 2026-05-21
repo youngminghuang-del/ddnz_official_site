@@ -24,6 +24,7 @@ export const IMAGES = {
   ESS_STORAGE: "service_nev_ess_storage.png",
   INSPECTION: "container_loading_inspection.png",
   LOGO_WALL: "brand_logo_wall.png",
+  INSIGHTS_BANNER: "Insights_Banner_DDNZ_1779354063012.png",
 };
 
 export const getImgUrl = (name: keyof typeof IMAGES) => {

@@ -187,6 +187,14 @@ export const translations = {
       adviceTitle: 'Need personalized advice?',
       adviceSubtitle: 'Our experts are ready to analyze your specific logistics needs.',
       contactExpert: 'Contact Expert for Consultation',
+      hubLabel: 'DDNZ GLOBAL INSIGHTS',
+      hubTitle: 'Industry Insights & News',
+      hubSubtitle: 'Unlock local guidelines, shipping timelines, regulatory changes, and first-hand supply chain intelligence direct from Asian hub authorities.',
+      showAll: '🏷️ Show All Categories',
+      deep_dive_read: 'Deep Dive Read',
+      read_time: '4 Min',
+      no_articles: 'No articles found',
+      no_articles_desc: 'No items matching this category are published yet.',
       posts: {
         "1": {
           title: "2025 Market Trends: Managing Logistics Costs in South America",
@@ -412,6 +420,14 @@ export const translations = {
       adviceTitle: 'Нужен персональный совет?',
       adviceSubtitle: 'Наши эксперты готовы проанализировать ваши конкретные логистические потребности.',
       contactExpert: 'Связаться с экспертом',
+      hubLabel: 'ГЛОБАЛЬНАЯ АНАЛИТИКА DDNZ',
+      hubTitle: 'Отраслевая аналитика и новости',
+      hubSubtitle: 'Получите доступ к правилам, срокам доставки, изменениям в регулировании и оперативной информации от азиатских ведомств.',
+      showAll: '🏷️ Показать все темы',
+      deep_dive_read: 'Подробный обзор',
+      read_time: '4 мин',
+      no_articles: 'Материалы не найдены',
+      no_articles_desc: 'Нет опубликованных материалов по выбранной теме.',
       posts: {
         "1": {
           title: "Тренды рынка 2025: Управление логистическими затратами в Южной Америке",
@@ -637,6 +653,14 @@ export const translations = {
       adviceTitle: 'Besoin d\'un conseil personnalisé ?',
       adviceSubtitle: 'Nos experts sont prêts à analyser vos besoins logistiques spécifiques.',
       contactExpert: 'Contacter un expert',
+      hubLabel: 'ACTUALITÉS GLOBALES DDNZ',
+      hubTitle: "Actualités et Analyses de l'Industrie",
+      hubSubtitle: "Accédez aux directives locales, aux délais d'expédition, aux changements réglementaires et aux informations de première main sur la chaîne d'approvisionnement.",
+      showAll: '🏷️ Afficher toutes les catégories',
+      deep_dive_read: 'Lecture Approfondie',
+      read_time: '4 Min',
+      no_articles: 'Aucun article trouvé',
+      no_articles_desc: 'Aucun article correspondant n\'est encore publié.',
       posts: {
         "1": {
           title: "Tendances 2025 : Gérer les coûts logistiques en Amérique du Sud",

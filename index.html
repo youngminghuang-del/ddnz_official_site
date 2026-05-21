@@ -31,6 +31,17 @@
         });
       })();
     </script>
+
+    <!-- SPA Router Redirect Recovery for GitHub Pages -->
+    <script type="text/javascript">
+      (function(){
+        var redirect = window.location.search.match(/[?&]p=([^&]*)/);
+        if (redirect) {
+          var path = redirect[1].replace(/~and~/g, '&');
+          window.history.replaceState(null, null, window.location.pathname.slice(0, -1) + path + window.location.hash);
+        }
+      })();
+    </script>
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZD9QT4W8H"></script>

@@ -82,7 +82,7 @@ export default function BlogDetail() {
       <Navbar />
       
       {/* Breadcrumb Navigation */}
-      <div className="bg-slate-50 border-b border-slate-100 pt-24 md:pt-32 pb-6">
+      <div className="bg-slate-50 border-b border-slate-100 pt-28 md:pt-36 pb-6">
         <div className="max-w-4xl mx-auto px-4 md:px-6 flex items-center gap-2 text-xs md:text-sm font-medium text-slate-500">
           <Link to="/" className="hover:text-[#4B27B1] transition-colors">Home</Link>
           <ChevronRight className="w-3 h-3" />
@@ -123,15 +123,15 @@ export default function BlogDetail() {
             </div>
 
             {/* Main Content Area */}
-            <div className="prose prose-slate lg:prose-xl max-w-none 
-              prose-headings:text-[#4B27B1] prose-headings:font-black 
-              prose-strong:text-slate-900 prose-a:text-[#FF8A00]
-              prose-img:rounded-2xl prose-table:border-collapse prose-table:border prose-table:border-slate-200">
-              <div 
-                dangerouslySetInnerHTML={{ __html: post.content }} 
-                className="blog-content font-sans text-slate-700 leading-relaxed"
-              />
-            </div>
+            <div 
+              className="prose prose-slate lg:prose-lg max-w-none 
+                         prose-headings:font-bold prose-headings:text-[#4B27B1] 
+                         prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-4
+                         prose-strong:text-slate-900 prose-strong:font-semibold
+                         prose-a:text-[#FF8A00] prose-a:no-underline hover:prose-a:underline
+                         prose-ul:list-disc prose-ol:list-decimal"
+              dangerouslySetInnerHTML={{ __html: post.content }} 
+            />
 
             {/* Back Button Footer */}
             <div className="mt-16 pt-8 border-t border-slate-100">

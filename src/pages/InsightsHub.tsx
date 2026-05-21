@@ -5,6 +5,8 @@ import { Calendar, ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
 import notionBlogPosts from "../data/notionBlogData.json";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
+import { useLanguage } from "../contexts/LanguageContext";
+import { getImgUrl } from "../constants";
 
 interface BlogPost {
   id: string;
@@ -16,6 +18,7 @@ interface BlogPost {
 }
 
 export default function InsightsHub() {
+  const { t } = useLanguage();
   const [posts] = useState<BlogPost[]>(notionBlogPosts as BlogPost[]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isLoading] = useState<boolean>(false);
@@ -47,16 +50,23 @@ export default function InsightsHub() {
         <Navbar />
 
         {/* Page Header */}
-        <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-[#4B27B1]/5 border-b border-purple-100">
-          <div className="max-w-7xl mx-auto text-center">
-            <span className="inline-block px-3.5 py-1 bg-[#FF8A00]/10 text-[#FF8A00] text-xs font-bold uppercase tracking-widest rounded-full mb-4">
-              DDNZ GLOBAL INSIGHTS
+        <section 
+          className="relative pt-40 pb-24 px-4 sm:px-6 lg:px-8 bg-cover bg-center overflow-hidden border-b border-purple-100"
+          style={{ backgroundImage: `url(${getImgUrl('INSIGHTS_BANNER')})` }}
+        >
+          {/* Subtle overlay to preserve clean high contrast display text and read-legibility */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/65 via-[#4B27B1]/85 to-slate-900/90 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-[#4B27B1]/15 backdrop-blur-[3px]" />
+
+          <div className="relative max-w-7xl mx-auto text-center z-10">
+            <span className="inline-block px-3.5 py-1.5 bg-[#FF8A00]/25 text-[#FF8A00] text-xs font-black uppercase tracking-widest rounded-full mb-4 border border-[#FF8A00]/30 backdrop-blur-md">
+              {t('insights.hubLabel')}
             </span>
-            <h1 className="text-4xl md:text-6xl font-black text-[#4B27B1] tracking-tight mb-6">
-              Industry Insights & News
+            <h1 className="text-4xl md:text-6xl font-black text-white tracking-tight mb-6 drop-shadow-sm font-sans">
+              {t('insights.hubTitle')}
             </h1>
-            <p className="max-w-2xl mx-auto text-slate-600 text-base md:text-lg leading-relaxed">
-              Unlock local guidelines, shipping timelines, regulatory changes, and first-hand supply chain intelligence direct from Asian hub authorities.
+            <p className="max-w-2xl mx-auto text-white/90 text-base md:text-lg leading-relaxed font-sans drop-shadow">
+              {t('insights.hubSubtitle')}
             </p>
           </div>
         </section>
@@ -77,7 +87,7 @@ export default function InsightsHub() {
                       : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
                   }`}
                 >
-                  {cat === "All" ? "🏷️ Show All Categories" : cat}
+                  {cat === "All" ? t('insights.showAll') : cat}
                 </button>
               );
             })}
@@ -140,13 +150,13 @@ export default function InsightsHub() {
                           to={`/blog/${post.id}`}
                           className="inline-flex items-center text-[#4B27B1] hover:text-[#381d86] font-extrabold text-sm group/btn"
                         >
-                          <span>Deep Dive Read</span>
+                          <span>{t('insights.deep_dive_read')}</span>
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1.5 transition-transform" />
                         </Link>
                         
                         <div className="flex items-center gap-1 text-slate-300 text-xs font-mono font-bold">
                           <Clock className="w-3.5 h-3.5" />
-                          <span>4 Min</span>
+                          <span>{t('insights.read_time')}</span>
                         </div>
                       </div>
                     </div>
@@ -160,8 +170,11 @@ export default function InsightsHub() {
           {!isLoading && filteredPosts.length === 0 && (
             <div className="py-24 text-center bg-white rounded-3xl border border-slate-200">
               <BookOpen className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-slate-700 mb-1">No articles found</h3>
-              <p className="text-slate-500 text-sm">No items matching "{selectedCategory}" are published yet.</p>
+              <h3 className="text-lg font-bold text-slate-700 mb-1">{t('insights.no_articles')}</h3>
+              <p className="text-slate-500 text-sm">
+                {t('insights.no_articles_desc')}{" "}
+                {selectedCategory !== "All" && `(${selectedCategory})`}
+              </p>
             </div>
           )}
         </main>

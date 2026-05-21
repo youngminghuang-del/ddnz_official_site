@@ -29,7 +29,7 @@ export default function Hero() {
            animate={{ opacity: 1, y: 0 }}
            transition={{ duration: 0.8 }}
         >
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-wider uppercase leading-tight mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-extrabold text-white tracking-wider uppercase leading-tight mb-6 break-words [overflow-wrap:anywhere]">
             {t('hero.title1')} <br className="hidden md:block" />
             <span className="text-white">{t('hero.title2')}</span>
           </h1>
