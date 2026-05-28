@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Globe, Clock, FileText, Shield } from 'lucide-react';
+import { Mail, Globe, Clock, FileText, Shield, Linkedin } from 'lucide-react';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
@@ -35,14 +35,24 @@ export default function Footer() {
                 {t('footer.slogan')}
               </p>
             </div>
-            <div className="pt-1">
+            <div className="pt-1 flex flex-col gap-3">
               <a 
                 href="mailto:partnership@ddnzglobal.com" 
                 onClick={() => handleContactClick('email')}
                 className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
               >
-                <Mail className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-orange-500 group-hover:text-orange-400 transition-colors" />
+                <Mail className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors" />
                 partnership@ddnzglobal.com
+              </a>
+              <a 
+                href="https://linkedin.com/company/ddnz-global-logistics-supply-chain" 
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => handleContactClick('linkedin')}
+                className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
+              >
+                <Linkedin className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors" />
+                LinkedIn: DDNZ Global Logistics &amp; Supply Chain
               </a>
             </div>
           </div>

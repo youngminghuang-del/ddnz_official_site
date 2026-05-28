@@ -1,6 +1,7 @@
 import React from 'react';
 import { ShieldCheck, History, UserPlus, Gauge, Globe, DollarSign } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { getImgUrl } from '../constants';
 
 const CompetitiveEdge: React.FC = () => {
   const { t } = useLanguage();
@@ -69,6 +70,65 @@ const CompetitiveEdge: React.FC = () => {
             );
           })}
         </div>
+
+        {/* --- INCORPORATED FACILITIES SUB-SECTION --- */}
+        <div className="mt-16 sm:mt-24 pt-12 sm:pt-20 border-t border-purple-100">
+          <div className="text-center mb-10 md:mb-16">
+            <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-3">
+              {t('facilities.label')}
+            </div>
+            <h3 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
+              {t('facilities.title')}
+            </h3>
+            <p className="text-slate-500 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              {t('facilities.subtitle')}
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            {[
+              {
+                title: t('facilities.guangzhou.title'),
+                tag: t('facilities.guangzhou.tag'),
+                desc: t('facilities.guangzhou.desc'),
+                img: getImgUrl('FACILITY_SCALE'),
+              },
+              {
+                title: t('facilities.systems.title'),
+                tag: t('facilities.systems.tag'),
+                desc: t('facilities.systems.desc'),
+                img: getImgUrl('FACILITY_SORT'),
+              }
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="group bg-white rounded-3xl overflow-hidden border border-slate-100 shadow-md hover:shadow-xl transition-all duration-300 flex flex-col"
+              >
+                <div className="aspect-[16/10] overflow-hidden relative bg-slate-100">
+                  <div className="absolute inset-0 bg-[#4B27B1]/10 group-hover:bg-transparent transition-colors duration-500 z-10" />
+                  <img 
+                    src={item.img} 
+                    alt={item.title} 
+                    loading="lazy" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                  />
+                </div>
+                <div className="p-6 md:p-8 flex-1 flex flex-col justify-start">
+                  <span className="inline-block w-fit px-3 py-1 bg-[#FF8A00]/10 text-[#FF8A00] text-xs font-bold rounded-full mb-4 border border-[#FF8A00]/20">
+                    {item.tag}
+                  </span>
+                  <h4 className="text-xl md:text-2xl font-black text-slate-900 mb-3 group-hover:text-[#4B27B1] transition-colors">
+                    {item.title}
+                  </h4>
+                  <p className="text-slate-600 leading-relaxed text-sm md:text-base font-medium">
+                    {item.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </div>
     </section>
   );

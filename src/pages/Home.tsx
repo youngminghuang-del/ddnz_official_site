@@ -3,7 +3,6 @@ import Hero from '../components/Hero';
 import WhoWeAre from '../components/WhoWeAre';
 import WhatWeDo from '../components/WhatWeDo';
 import CompetitiveEdge from '../components/CompetitiveEdge';
-import WhyDDNZ from '../components/WhyDDNZ';
 import Partners from '../components/Partners';
 import GetAQuote from '../components/GetAQuote';
 import Insights from '../components/Insights';
@@ -18,12 +17,11 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <GetAQuote />
         <WhoWeAre />
         <WhatWeDo />
         <CompetitiveEdge />
-        <WhyDDNZ />
         <Partners />
+        <GetAQuote />
         <Insights />
       </main>
       <Footer />

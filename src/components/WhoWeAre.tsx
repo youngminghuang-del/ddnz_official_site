@@ -1,218 +1,320 @@
-import { motion } from 'framer-motion';
+import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { Check } from 'lucide-react';
 import { getImgUrl } from '../constants';
-import { History, ShieldCheck, Zap, Target } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 export default function WhoWeAre() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
+  const [activeIndex, setActiveIndex] = useState(0);
+  const scrollRef = useRef<HTMLDivElement>(null);
 
-  const aboutCards = [
-    {
-      id: 'heritage',
-      title: t('who_we_are.heritage.title'),
-      description: t('who_we_are.heritage.desc'),
-      keywords: 'SINCE 1997 • 29Y TRUST • GLOBAL',
-      label: 'Established 1997',
-      image: getImgUrl('JOURNEY_1999'),
-      icon: <History className="w-8 h-8 md:w-12 md:h-12 text-[#4B27B1] group-hover:rotate-12 transition-transform duration-700" />
-    },
-    {
-      id: 'nev-experts',
-      title: t('who_we_are.nev.title'),
-      description: t('who_we_are.nev.desc'),
-      keywords: 'DG LICENSED • BATTERY • EV',
-      label: 'Visionary',
-      image: getImgUrl('ESS_STORAGE'),
-      icon: <Target className="w-8 h-8 md:w-12 md:h-12 text-[#4B27B1] group-hover:scale-110 transition-transform" />
-    },
-    {
-      id: 'infrastructure',
-      title: t('who_we_are.infra.title'),
-      description: t('who_we_are.infra.desc'),
-      keywords: 'OWNED ASSETS • HUB • SECURE',
-      label: 'Infrastructure',
-      image: getImgUrl('JOURNEY_2004'),
-      icon: <Zap className="w-8 h-8 md:w-12 md:h-12 text-[#4B27B1] group-hover:rotate-12 transition-transform" />
-    },
-    {
-      id: 'resilience',
-      title: t('who_we_are.resilience.title'),
-      description: t('who_we_are.resilience.desc'),
-      keywords: 'RELIABLE • A-CLASS • 24/7',
-      label: 'Resilience & Trust',
-      image: getImgUrl('JOURNEY_2019'),
-      icon: <ShieldCheck className="w-8 h-8 md:w-12 md:h-12 text-[#4B27B1]" />
-    },
-  ];
+  useEffect(() => {
+    const handleScroll = () => {
+      if (scrollRef.current) {
+        const { scrollLeft, clientWidth } = scrollRef.current;
+        const index = Math.round(scrollLeft / clientWidth);
+        setActiveIndex(index);
+      }
+    };
+
+    const currentScrollRef = scrollRef.current;
+    if (currentScrollRef) {
+      currentScrollRef.addEventListener('scroll', handleScroll, { passive: true });
+    }
+
+    return () => {
+      if (currentScrollRef) {
+        currentScrollRef.removeEventListener('scroll', handleScroll);
+      }
+    };
+  }, []);
+
+  const getAboutCards = () => {
+    switch (language) {
+      case 'zh':
+        return [
+          {
+            id: 'heritage',
+            title: '29载全球资源传承',
+            highlights: ['始于1997年', '全球供应链', '资深贸易纽带'],
+            desc: '自1997年创立起，我们从中国外贸开拓先驱蜕变并精通于全球综合物流网路。',
+            img: getImgUrl('JOURNEY_1999'),
+            ctaText: '了解发展历程',
+            linkTarget: '/'
+          },
+          {
+            id: 'nev-experts',
+            title: '新能源与危险品专家',
+            highlights: ['前瞻能源物流', '合规危险品运输', '绿色转型专家'],
+            desc: '把握全球绿色物流转型契机，为储能系统与电动汽车提供定制合规安全承运。',
+            img: getImgUrl('ESS_STORAGE'),
+            ctaText: '探索特种承运',
+            linkTarget: '/services/air-freight'
+          },
+          {
+            id: 'infrastructure',
+            title: '实体自营仓储与贸易',
+            highlights: ['自营实体仓库', '香港关键网关', '多币种安全结算'],
+            desc: '凭借对底层基础设施及自营仓库的控制，确保高效全球运作及财务安全。',
+            img: getImgUrl('JOURNEY_2004'),
+            ctaText: '查看物理基建',
+            linkTarget: '/services/warehouse-services'
+          },
+          {
+            id: 'resilience',
+            title: '坚韧不拔的应急交付',
+            highlights: ['供应链抗风险', '紧急货载保障', '可信赖全球网'],
+            desc: '当全球主要航路遭遇突发中断，我们保障紧急物资送达，主动捍卫您的商业利益。',
+            img: getImgUrl('JOURNEY_2019'),
+            ctaText: '阅读客户案例',
+            linkTarget: '/'
+          }
+        ];
+      case 'ru':
+        return [
+          {
+            id: 'heritage',
+            title: '29 лет наследия',
+            highlights: ['Работа с 1997', 'Глобальные цепи', 'Проверенные связи'],
+            desc: 'С 1997 года мы прошли путь от первопроходцев торговли до признанных экспертов логистики.',
+            img: getImgUrl('JOURNEY_1999'),
+            ctaText: 'Наша история',
+            linkTarget: '/'
+          },
+          {
+            id: 'nev-experts',
+            title: 'Специалисты по DG',
+            highlights: ['Логистика энергии', 'Безопасный транспорт', 'Зеленый переход'],
+            desc: 'Лидерство в переходе к эко-логистике с надежным сопровождением литиевых батарей и ESS.',
+            img: getImgUrl('ESS_STORAGE'),
+            ctaText: 'Специальные грузы',
+            linkTarget: '/services/air-freight'
+          },
+          {
+            id: 'infrastructure',
+            title: 'Интегрированные поставки',
+            highlights: ['Собственные склады', 'Гонконгский хаб', 'Гибкие расчеты'],
+            desc: 'Благодаря прямому владению складами, мы гарантируем стабильные операции и безопасность.',
+            img: getImgUrl('JOURNEY_2004'),
+            ctaText: 'Наша инфраструктура',
+            linkTarget: '/services/warehouse-services'
+          },
+          {
+            id: 'resilience',
+            title: 'Надежность и антикризис',
+            highlights: ['Устойчивые цепи', 'Срочная поддержка', 'Мировое партнерство'],
+            desc: 'Даже при сбоях мировых сетей мы находим решения, защищая ваши бизнес-интересы.',
+            img: getImgUrl('JOURNEY_2019'),
+            ctaText: 'Кейсы и опыт',
+            linkTarget: '/'
+          }
+        ];
+      case 'fr':
+        return [
+          {
+            id: 'heritage',
+            title: "29 ans d'héritage",
+            highlights: ['Établi depuis 1997', 'Flux mondiaux', 'Liaisons éprouvées'],
+            desc: 'Depuis 1997, nous sommes passés de l’ouverture des marchés à la pleine maîtrise logistique.',
+            img: getImgUrl('JOURNEY_1999'),
+            ctaText: 'Découvrir l’histoire',
+            linkTarget: '/'
+          },
+          {
+            id: 'nev-experts',
+            title: 'Spécialiste DG & NEV',
+            highlights: ['Logistique verte', 'Transport certifié', 'Transition propre'],
+            desc: 'Pionniers de la transition verte adaptés aux batteries, ESS et véhicules électriques.',
+            img: getImgUrl('ESS_STORAGE'),
+            ctaText: 'Explorer le cargo',
+            linkTarget: '/services/air-freight'
+          },
+          {
+            id: 'infrastructure',
+            title: 'Supply Chain Intégrée',
+            highlights: ['Entrepôts propres', 'Passerelle HK', 'Paiement sécurisé'],
+            desc: 'Le contrôle direct d’infrastructures de pointe offre continuité et transactions sécurisées.',
+            img: getImgUrl('JOURNEY_2004'),
+            ctaText: 'Voir les entrepôts',
+            linkTarget: '/services/warehouse-services'
+          },
+          {
+            id: 'resilience',
+            title: 'Résilience & Protection',
+            highlights: ['Chaîne haute', 'Fret d’urgence', 'Réseau de confiance'],
+            desc: 'En période de rupture globale de fret, nous restons debout pour pérenniser votre commerce.',
+            img: getImgUrl('JOURNEY_2019'),
+            ctaText: 'Lire les études',
+            linkTarget: '/'
+          }
+        ];
+      default: // 'en'
+        return [
+          {
+            id: 'heritage',
+            title: '29 Years of Global Heritage',
+            highlights: ['Established Since 1997', 'Global Supply Chains', 'Proven Trade Links'],
+            desc: "Since 1997, we evolved from pioneering trade links during China's WTO accession to mastering worldwide logistics networks.",
+            img: getImgUrl('JOURNEY_1999'),
+            ctaText: 'Learn Our History',
+            linkTarget: '/'
+          },
+          {
+            id: 'nev-experts',
+            title: 'DG & New Energy Specialists',
+            highlights: ['Visionary Energy Logistics', 'Compliant DG Transport', 'Green Transition Experts'],
+            desc: 'Leading the global green logistics transition with bespoke, compliance-driven solutions for Energy Storage Systems (ESS) and EVs.',
+            img: getImgUrl('ESS_STORAGE'),
+            ctaText: 'Explore Special Cargo',
+            linkTarget: '/services/air-freight'
+          },
+          {
+            id: 'infrastructure',
+            title: 'Integrated Supply Chain & Trade',
+            highlights: ['Self-Owned Warehouses', 'Hong Kong Gateway', 'Multi-Currency Settlement'],
+            desc: 'Empowered by structural infrastructure control, we guarantee seamless global operations and secure cross-border settlements.',
+            img: getImgUrl('JOURNEY_2004'),
+            ctaText: 'View Infrastructure',
+            linkTarget: '/services/warehouse-services'
+          },
+          {
+            id: 'resilience',
+            title: 'Unwavering Resilience & Care',
+            highlights: ['Supply Chain Resilience', 'Critical Cargo Support', 'Trusted Global Network'],
+            desc: 'When global networks falter, we deliver by prioritizing critical supplies and proactively protecting your business interests.',
+            img: getImgUrl('JOURNEY_2019'),
+            ctaText: 'Read Case Studies',
+            linkTarget: '/'
+          }
+        ];
+    }
+  };
+
+  const aboutCards = getAboutCards();
+
+  const highlightTerms = (text: string) => {
+    if (!text) return '';
+    const dictionary: Record<string, string[]> = {
+      en: ["Since 1997", "custom", "compliance-driven", "structural", "seamless", "critical", "proactively"],
+      zh: ["自1997年创立起", "定制", "合规安全", "控制", "高效", "确保", "紧急"],
+      ru: ["С 1997 года", "эко-логистике", "прямому владению", "всегда", "защищая"],
+      fr: ["Depuis 1997", "contrôle direct", "matière", "toujours", "continuité"]
+    };
+    
+    const terms = dictionary[language] || dictionary['en'];
+    
+    let highlightedText = text;
+    terms.forEach(term => {
+      const regex = new RegExp(`(${term})`, 'gi');
+      highlightedText = highlightedText.replace(regex, '<span class="font-bold text-slate-700">$1</span>');
+    });
+    
+    return highlightedText;
+  };
 
   return (
-    <section id="who-we-are" className="py-16 md:py-24 bg-white overflow-hidden font-sans">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="who-we-are" className="py-10 md:py-24 bg-white overflow-hidden font-sans border-b border-slate-100">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Mobile View - Bento Grid Layout */}
-        <div className="lg:hidden">
-          <div className="max-w-3xl mb-12">
-            <h2 className="text-[#FF8A00] font-bold tracking-[0.2em] text-[10px] uppercase mb-3">
-              {t('who_we_are.label')}
-            </h2>
-            <h3 className="text-3xl font-black text-[#4B27B1] leading-tight flex items-center flex-wrap gap-x-4">
-              {t('who_we_are.title')}
-              <span className="inline-block w-12 h-1 bg-[#FF8A00] rounded-full" />
-            </h3>
+        {/* Title Block */}
+        <div className="text-center mb-10 md:mb-16">
+          <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-3">
+            {t('who_we_are.label')}
           </div>
+          <h2 className="text-2xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-[-0.02em]">
+            {t('who_we_are.title')}
+          </h2>
+          <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6 md:mb-8" />
+          <p className="text-slate-500 text-sm md:text-xl max-w-3xl mx-auto leading-relaxed">
+            {t('who_we_are.subtitle')}
+          </p>
+        </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            {/* Heritage Card - Full row on mobile */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="col-span-2 bg-[#4B27B1] rounded-3xl p-8 text-white relative overflow-hidden group flex flex-col justify-between min-h-[320px]"
-            >
-              <div className="relative z-10">
-                <span className="inline-block px-3 py-1 bg-[#FF8A00] text-[9px] font-bold uppercase tracking-widest rounded-full mb-6">
-                  Established 1997
-                </span>
-                <h4 className="text-2xl font-black leading-tight mb-4">
-                  29 Years of Excellence
-                </h4>
-                <p className="text-purple-100/80 text-sm leading-relaxed max-w-sm">
-                  {t('who_we_are.heritage.desc')}
-                </p>
-              </div>
-              <History className="absolute -bottom-6 -right-6 w-32 h-32 text-white/5 group-hover:rotate-12 transition-transform duration-700" />
-            </motion.div>
-
-            {/* Vision Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="col-span-1 bg-white border border-purple-100 rounded-3xl p-6 flex flex-col shadow-sm"
-            >
-              <span className="text-[#FF8A00] text-[9px] font-bold uppercase tracking-widest mb-4">Visionary</span>
-              <Target className="w-8 h-8 text-[#4B27B1] mb-6" />
-              <h4 className="text-lg font-black text-[#4B27B1] mb-3 leading-tight">{t('who_we_are.nev.title')}</h4>
-              <p className="text-slate-500 text-[11px] leading-relaxed line-clamp-3">
-                {t('who_we_are.nev.desc')}
-              </p>
-            </motion.div>
-
-            {/* Infrastructure Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.2 }}
-              className="col-span-1 bg-white border border-purple-100 rounded-3xl p-6 flex flex-col shadow-sm"
-            >
-              <span className="text-[#FF8A00] text-[9px] font-bold uppercase tracking-widest mb-4">Infrastructure</span>
-              <Zap className="w-8 h-8 text-[#4B27B1] mb-6" />
-              <h4 className="text-lg font-black text-[#4B27B1] mb-3 leading-tight">{t('who_we_are.infra.title')}</h4>
-              <p className="text-slate-500 text-[11px] leading-relaxed line-clamp-3">
-                {t('who_we_are.infra.desc')}
-              </p>
-            </motion.div>
-
-            {/* Resilience Card */}
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.3 }}
-              className="col-span-2 bg-slate-50 rounded-3xl p-8 border border-slate-100 flex flex-col"
-            >
-              <div className="flex items-center gap-2 mb-4">
-                <span className="text-[#FF8A00] text-[9px] font-bold uppercase tracking-widest">Resilience & Trust</span>
-                <ShieldCheck className="w-4 h-4 text-[#FF8A00]" />
-              </div>
-              <h4 className="text-xl font-black text-[#4B27B1] mb-4">
-                {t('who_we_are.resilience.title')}
-              </h4>
-              <p className="text-slate-600 text-sm leading-relaxed">
-                {t('who_we_are.resilience.desc')}
-              </p>
-            </motion.div>
+        {/* Stats Grid */}
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20 text-center">
+          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">29+</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.years')}</div>
+          </div>
+          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1.5k</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.clients')}</div>
+          </div>
+          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1M+</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.shipments')}</div>
+          </div>
+          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">960</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.projects')}</div>
           </div>
         </div>
 
-        {/* Desktop View - Original Layout */}
-        <div className="hidden lg:block">
-          <div className="text-center mb-16">
-            <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-2">{t('who_we_are.label')}</div>
-            <h2 className="text-5xl font-extrabold text-slate-900 mb-2">
-              {t('who_we_are.title')}
-            </h2>
-            <div className="h-1.5 w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-8" />
-            <p className="text-slate-500 text-xl max-w-3xl mx-auto leading-relaxed">
-              {t('who_we_are.subtitle')}
-            </p>
-          </div>
-
-          <div className="grid grid-cols-4 gap-6 mb-20 text-center">
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
-              <div className="text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">29+</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.years')}</div>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
-              <div className="text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1.5k</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.clients')}</div>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
-              <div className="text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1M+</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.shipments')}</div>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow-sm border border-purple-100 hover:shadow-md transition-shadow">
-              <div className="text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">960</div>
-              <div className="text-sm font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.projects')}</div>
-            </div>
-          </div>
-
-          <div className="bg-slate-50 p-12 rounded-3xl">
-            <div className="grid grid-cols-2 gap-10">
-              {aboutCards.map((card, index) => (
-                <motion.div
-                  key={card.id}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="group bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 flex flex-col"
-                >
-                  <div className="aspect-[16/10] overflow-hidden relative">
-                    <img
-                      src={card.image}
-                      alt={card.title}
-                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
-                      loading="lazy"
+        {/* Standardized Card Container - Slider on Mobile, 4-Col Grid on Desktop */}
+        <div 
+          ref={scrollRef}
+          className="flex lg:grid lg:grid-cols-4 overflow-x-auto lg:overflow-x-visible snap-x snap-mandatory scrollbar-hide pb-6 -mx-4 px-4 gap-4 lg:gap-8 lg:mx-0 lg:px-0"
+        >
+          {aboutCards.map((card) => {
+            return (
+              <Link 
+                to={card.linkTarget}
+                key={card.id} 
+                className="group cursor-pointer relative bg-white rounded-2xl shadow-sm lg:shadow-xl border border-slate-100 transition-all duration-500 flex flex-col overflow-hidden lg:hover:-translate-y-3 min-h-[510px] md:min-h-[540px] lg:min-h-[560px] snap-center min-w-[85vw] md:min-w-[45vw] lg:min-w-0"
+              >
+                {/* Image aspect ratio identical to services */}
+                <div className="aspect-[16/10] overflow-hidden relative">
+                    <img src={card.img} className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110" alt={card.title} loading="lazy" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                </div>
+                <div className="p-6 md:p-8 flex flex-col flex-1 relative">
+                  {/* Symmetrical Left Gradient Header */}
+                  <div className="flex items-center min-h-[50px] md:min-h-[60px] mb-4 md:mb-5 group/title text-left">
+                    <div className="w-[1.5px] md:w-[2px] h-full self-stretch bg-gradient-to-b from-[#4B27B1] to-[#FF8A00] mr-4 md:mr-5 rounded-full" />
+                    <h3 className="text-lg md:text-xl font-black text-[#4B27B1] tracking-tight group-hover:text-[#FF8A00] transition-colors duration-300 leading-tight">
+                      {card.title}
+                    </h3>
+                  </div>
+                  
+                  {/* 3 Core Bullet Points - Identical Height and Spacing */}
+                  <ul className="mb-6 space-y-3 min-h-[100px] md:min-h-[110px]">
+                    {card.highlights.map((highlight, idx) => (
+                      <li key={idx} className="flex items-start text-slate-700 font-semibold group/item">
+                        <Check className="w-4 h-4 mr-3 text-[#FF8A00] shrink-0 mt-[3px] transition-transform group-hover/item:scale-110" />
+                        <span className="text-[13px] md:text-[14px] leading-snug">{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  
+                  {/* Concise Summary Paragraph - Locked Max-height */}
+                  <div className="mb-4 overflow-hidden">
+                    <div 
+                      className="text-slate-500 text-sm leading-relaxed text-left min-h-[60px] md:min-h-[70px]"
+                      dangerouslySetInnerHTML={{ __html: highlightTerms(card.desc) }}
                     />
-                    <div className="absolute top-4 right-4 opacity-20 pointer-events-none">
-                      <img 
-                        src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
-                        alt="" 
-                        className="w-8 h-8 object-contain gray-scale brightness-0"
-                      />
-                    </div>
                   </div>
-                  <div className="p-8 flex-1">
-                    <div className="flex items-center gap-4 mb-4">
-                      {card.icon}
-                      <div>
-                        <div className="text-[#FF8A00] text-xs font-bold uppercase tracking-widest mb-1">{card.label}</div>
-                        <h3 className="text-xl font-extrabold text-slate-900 group-hover:text-[#4B27B1] transition-colors tracking-tight">
-                          {card.title}
-                        </h3>
-                      </div>
-                    </div>
-                    <p className="text-slate-600 text-md leading-relaxed">
-                      {card.description}
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
-          </div>
+
+                  <div className="flex-1" />
+                  
+                  {/* Micro gradient action line */}
+                  <div className="absolute bottom-0 left-0 w-0 h-[3px] bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] transition-all duration-500 group-hover:w-full md:block hidden" />
+                </div>
+              </Link>
+            );
+          })}
+        </div>
+
+        {/* Mobile Page Progress Indicators */}
+        <div className="flex justify-center items-center gap-1.5 mt-2 lg:hidden">
+          {aboutCards.map((_, idx) => (
+            <div 
+              key={idx}
+              className={`h-1 transition-all duration-300 rounded-full ${
+                activeIndex === idx ? 'w-6 bg-[#FF8A00]' : 'w-2 bg-slate-200'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-export type Language = 'en' | 'ru' | 'fr';
+export type Language = 'en' | 'zh' | 'ru' | 'fr';
 
 export const translations = {
   en: {
@@ -6,14 +6,18 @@ export const translations = {
       who_we_are: 'WHO WE ARE',
       what_we_do: 'WHAT WE DO',
       why_ddnz: 'WHY CHOOSE US',
-      our_facilities: 'OUR FACILITIES',
+      services: 'SERVICES',
+      services_sea: 'Sea freight',
+      services_air: 'Air freight',
+      services_fba: 'Amazon FBA',
+      services_warehouse: 'Warehouse services',
       insights: 'INSIGHTS',
       get_a_quote: 'GET A QUOTE',
     },
     hero: {
-      title1: 'Global Logistics',
-      title2: 'Excellence Since 1997',
-      subtitle: 'Professional & Integrated Supply Chain Solutions.',
+      title1: 'China Freight Forwarder',
+      title2: 'Global Logistics Solutions',
+      subtitle: 'Since 1997 • Sea Freight • Air Freight • Amazon FBA • Warehouse Services — Professional & Integrated Supply Chain Solutions.',
       primary_cta: 'Calculate Freight & Get Quote',
       secondary_cta: 'Download Company Deck',
       chat: 'Chat on WhatsApp',
@@ -31,41 +35,41 @@ export const translations = {
       label: 'SERVICES',
       title: 'WHAT WE DO',
       subtitle: 'We provide integrated logistics solutions',
-      rail: { 
-        title: 'China-Europe Railway Express', 
+      sea: {
+        title: 'Sea Freight Solutions',
         highlights: [
           'Licensed Customs Brokerage',
-          'CIS & Europe Door-to-Door',
-          'Asset-Based Cost Efficiency'
+          'FCL & LCL Consolidation',
+          'Direct Carrier Contracts'
         ],
-        desc: 'Our team manages complex rail documentation and cargo handling. This asset-based advantage ensures reliable door-to-door delivery with secure, consistent service.' 
+        desc: 'Reliable ocean freight forwarding with predictable schedules and cost-effective door-to-door (DDP/DAP) options worldwide.'
       },
-      warehousing: { 
-        title: 'Local Warehousing & Distribution', 
+      air: {
+        title: 'Air Freight Solutions',
         highlights: [
-          'Agile Overseas Buffer Storage',
-          'Efficient Cargo Consolidation',
-          'Last-Mile Delivery Optimization'
+          'Time-Critical Air Cargo',
+          'Global Airport Coverage',
+          'Express & Economy Options'
         ],
-        desc: 'Turn our warehouses into your hub for deconsolidation and cross-docking. We act as your flexible footprint, accelerating market delivery without long-term lease commitments.' 
+        desc: 'Fast and flexible air cargo transportation tailored to meet your strict deadlines with seamless customs handling.'
       },
-      freight: { 
-        title: 'Global Freight (Sea, Air & Land)', 
+      fba: {
+        title: 'Amazon FBA Logistics',
         highlights: [
-          'Licensed Customs Brokerage',
-          'Direct Carrier Contracts',
-          'Global Visibility & Visibility'
+          'FNSKU Labeling & Prep',
+          'Appointment Booking Included',
+          'Direct Warehouse Delivery'
         ],
-        desc: 'Orchestrating seamless transportation via air and sea. You gain complete supply chain visibility while we optimize routes to ensure competitive all-in rates.' 
+        desc: 'Comprehensive Amazon FBA freight services from Chinese suppliers straight to global fulfillment centers with full compliance.'
       },
-      trust: {
-        title: 'Your Eyes & Ears in China',
+      warehouse: {
+        title: 'Warehouse & Fulfillment',
         highlights: [
-          'Factory Audit & Supplier Verification',
-          'Pre-shipment Quality Inspection',
-          'Alibaba/1688 Order Consolidation'
+          '100,000+ sq ft Secure Facility',
+          'WMS Real-time Inventory',
+          'Kitting & Cross-Docking'
         ],
-        desc: 'We bridge the trust gap. From supplier verification to on-site quality checks and consolidating multiple platform orders at our Guangzhou hub, we de-risk your entire China sourcing process.'
+        desc: 'Modern 3PL warehousing and smart order fulfillment solutions to streamline and optimize your local supply chain storage.'
       }
     },
     who_we_are: {
@@ -110,9 +114,9 @@ export const translations = {
       systems: { title: 'Advanced Systems for Complex Cargo', tag: '2. Engineered for Precision & Protection', desc: 'Equipped with automated sorting and a team of specialists, we handle what standard warehouses cannot. Our core expertise lies in custom, export-grade packaging solutions—most notably, precision-engineered plywood crating for high-value, sensitive machinery and project cargo, built to survive the global supply chain.' }
     },
     get_a_quote: {
-      title: 'LOGISTICS TOOLS & INQUIRY',
-      estimatorTitle: 'Estimator & Inquiry',
-      subtitle: 'Use our professional Chargeable Weight Estimator for instant volume assessment, or submit a detailed inquiry to our senior team.',
+      title: 'SUBMIT RFQ',
+      estimatorTitle: 'Submit RFQ',
+      subtitle: 'Submit a detailed inquiry and our senior team will build your custom logistics plan within 24 hours.',
       calcTitle: 'Chargeable Weight Estimator',
       formTitle: 'Submit RFQ',
       mode: 'Mode of Transport',
@@ -237,16 +241,20 @@ export const translations = {
   ru: {
     nav: {
       who_we_are: 'О НАС',
-      what_we_do: 'НАШИ УСЛУГИ',
-      why_ddnz: 'ПОЧЕМУ МЫ?',
-      our_facilities: 'НАШИ ОБЪЕКТЫ',
-      insights: 'ИНФОРМАЦИЯ',
-      get_a_quote: 'РАССЧИТАТЬ',
+      what_we_do: 'ЧЕМ МЫ ЗАНИМАЕМСЯ',
+      why_ddnz: 'ПОЧЕМУ ВЫБИРАЮТ НАС',
+      services: 'УСЛУГИ',
+      services_sea: 'Морские перевозки',
+      services_air: 'Авиаперевозки',
+      services_fba: 'Амазон FBA',
+      services_warehouse: 'Складские услуги',
+      insights: 'РЕСУРСЫ',
+      get_a_quote: 'ПОЛУЧИТЬ РАСЧЕТ',
     },
     hero: {
-      title1: 'Глобальная логистика',
-      title2: 'Превосходство с 1997 года',
-      subtitle: 'Профессиональные и комплексные решения для цепей поставок.',
+      title1: 'Грузоперевозки из Китая',
+      title2: 'Глобальные логистические решения',
+      subtitle: 'С 1997 года • Морские перевозки • Авиаперевозки • Амазон FBA • Складские услуги — Профессиональные и интегрированные цепочки поставок.',
       primary_cta: 'Рассчитать стоимость',
       secondary_cta: 'Скачать презентацию',
       chat: 'Связаться в WhatsApp',
@@ -264,41 +272,41 @@ export const translations = {
       label: 'УСЛУГИ',
       title: 'НАШИ УСЛУГИ',
       subtitle: 'Мы предоставляем интегрированные логистические решения',
-      rail: { 
-        title: 'Железнодорожный экспресс Китай-Европа', 
+      sea: {
+        title: 'Морские перевозки',
         highlights: [
-          'Лицензированный таможенный брокер',
-          'Доставка от двери до двери (СНГ и Европа)',
-          'Собственные активы и ценовая эффективность'
+          'Лицензированное таможенное оформление',
+          'Консолидация FCL и LCL грузов',
+          'Прямые контракты с судовладельцами'
         ],
-        desc: 'Наша команда управляет сложной документацией и обработкой грузов. Собственные активы гарантируют надежную доставку «от двери до двери» и стабильный сервис.' 
+        desc: 'Надежное экспедирование океанских грузов с предсказуемым расписанием и выгодной доставкой «до двери» (DDP/DAP).'
       },
-      warehousing: { 
-        title: 'Локальное складирование и дистрибуция', 
+      air: {
+        title: 'Авиаперевозки',
         highlights: [
-          'Гибкое буферное хранение за рубежом',
-          'Эффективная консолидация грузов',
-          'Оптимизация доставки «последней мили»'
+          'Срочные авиаперевозки грузов',
+          'Глобальный охват ведущих аэропортов',
+          'Экспресс и экономичные тарифы'
         ],
-        desc: 'Используйте наши склады как свой хаб. Мы обеспечиваем гибкое присутствие и ускоряем выход на рынок без долгосрочных обязательств по аренде.' 
+        desc: 'Быстрая и гибкая транспортировка авиагрузов под ваши жесткие сроки с беспрепятственным таможенным оформлением.'
       },
-      freight: { 
-        title: 'Глобальные перевозки (море, воздух и суша)', 
+      fba: {
+        title: 'Амазон FBA',
         highlights: [
-          'Лицензированный таможенный брокер',
-          'Прямые контракты с перевозчиками',
-          'Глобальный контроль и отслеживание'
+          'Маркировка FNSKU и подготовка',
+          'Бронирование слотов доставки включено',
+          'Прямая доставка на склады Amazon'
         ],
-        desc: 'Бесперебойная транспортировка по воздуху и морю. Получите полную видимость цепочки поставок при оптимальных маршрутах и конкурентных ставках.' 
+        desc: 'Комплексные услуги доставки Amazon FBA напрямую от китайских поставщиков на международные склады с полной комплаенс-поддержкой.'
       },
-      trust: {
-        title: 'Ваши глаза и уши в Китае',
+      warehouse: {
+        title: 'Складские услуги',
         highlights: [
-          'Аудит заводов и проверка поставщиков',
-          'Предотгрузочная инспекция качества',
-          'Консолидация заказов с Alibaba/1688'
+          'Безопасный склад более 100 000 кв. футов',
+          'WMS-система складского учета в реальном времени',
+          'Комплектация заказов и кросс-докинг'
         ],
-        desc: 'Мы устраняем дефицит доверия. От проверки поставщиков до инспекций качества и консолидации заказов на нашем хабе в Гуанчжоу — мы минимизируем риски вашего сорсинга в Китае.'
+        desc: 'Современные решения 3PL-складирования и смарт-исполнения заказов для оптимизации локального хранения в цепи поставок.'
       }
     },
     who_we_are: {
@@ -343,9 +351,9 @@ export const translations = {
       systems: { title: 'Передовые системы для сложных грузов', tag: '2. Разработано для точности и защиты', desc: 'Оснащенные системами автоматической сортировки, мы обрабатываем то, что не могут обычные склады. Наш основной опыт — экспортная упаковка.' }
     },
     get_a_quote: {
-      title: 'ИНСТРУМЕНТЫ ЛОГИСТИКИ И ЗАПРОСЫ',
-      estimatorTitle: 'Калькулятор и запрос',
-      subtitle: 'Используйте наш профессиональный калькулятор для оценки оплачиваемого веса.',
+      title: 'ОТПРАВИТЬ ЗАПРОС (RFQ)',
+      estimatorTitle: 'Отправить запрос (RFQ)',
+      subtitle: 'Отправьте подробный запрос, и наша команда подготовит индивидуальный логистический план в течение 24 часов.',
       calcTitle: 'Оценка оплачиваемого веса',
       formTitle: 'Отправить запрос (RFQ)',
       mode: 'Вид транспорта',
@@ -469,17 +477,21 @@ export const translations = {
   },
   fr: {
     nav: {
-      who_we_are: 'QUI SOMMES-NOUS',
-      what_we_do: 'NOS SERVICES',
-      why_ddnz: 'POURQUOI NOUS ?',
-      our_facilities: 'NOS INFRASTRUCTURES',
-      insights: 'ACTUALITÉS',
-      get_a_quote: 'DEVIS',
+      who_we_are: 'À PROPOS',
+      what_we_do: 'CE QUE NOUS FAISONS',
+      why_ddnz: 'POURQUOI NOUS CHOISIR',
+      services: 'SERVICES',
+      services_sea: 'Fret maritime',
+      services_air: 'Fret aérien',
+      services_fba: 'Amazon FBA',
+      services_warehouse: 'Services d\'entreposage',
+      insights: 'INSIGHTS',
+      get_a_quote: 'OBTENIR UN DEVIS',
     },
     hero: {
-      title1: "L'Excellence en Logistique",
-      title2: 'Mondiale Depuis 1997',
-      subtitle: "Solutions de chaîne d'approvisionnement professionnelles et intégrées.",
+      title1: 'Transitaire en Chine',
+      title2: 'Solutions Logistiques Globales',
+      subtitle: "Depuis 1997 • Fret maritime • Fret aérien • Amazon FBA • Services d'entreposage — Solutions de chaîne d'approvisionnement professionnelles et intégrées.",
       primary_cta: 'Calculer le fret et devis',
       secondary_cta: 'Télécharger la présentation',
       chat: 'Discuter sur WhatsApp',
@@ -497,41 +509,41 @@ export const translations = {
       label: 'SERVICES',
       title: 'NOS SERVICES',
       subtitle: 'Nous fournissons des solutions logistiques intégrées',
-      rail: { 
-        title: 'Express Ferroviaire Chine-Europe', 
+      sea: {
+        title: 'Solutions de Fret Maritime',
         highlights: [
-          'Courtage en douane agréé',
-          'Porte-à-porte CEI & Europe',
-          'Efficacité des coûts basée sur les actifs'
+          "Dédouanement agréé par l'État",
+          'Consolidation FCL (complet) & LCL (groupage)',
+          'Contrats directs avec les compagnies maritimes'
         ],
-        desc: 'Notre équipe gère la documentation et la manutention. Cet avantage basé sur nos actifs assure une livraison porte-à-porte fiable et un service sécurisé.' 
+        desc: 'Expédition océanique fiable à calendrier fixe avec options de livraison porte-à-porte (DDP/DAP) compétitives.'
       },
-      warehousing: { 
-        title: 'Entreposage Local & Distribution', 
+      air: {
+        title: 'Solutions de Fret Aérien',
         highlights: [
-          'Stockage tampon agile à l\'étranger',
-          'Consolidation efficace du fret',
-          'Optimisation de la livraison du dernier kilomètre'
+          'Transport aérien urgent sous délais serrés',
+          'Couverture mondiale de tous les grands aéroports',
+          "Options d'expédition Express ou Économique"
         ],
-        desc: 'Utilisez nos entrepôts comme votre hub de dégroupage. Nous agissons comme votre empreinte flexible, accélérant la livraison sans engagements à long terme.' 
+        desc: 'Fret aérien rapide et flexible adapté à vos impératifs de livraison urgents avec gestion douanière intégrée.'
       },
-      freight: { 
-        title: 'Global Freight (Sea, Air & Land)', 
+      fba: {
+        title: 'Logistique Amazon FBA',
         highlights: [
-          'Courtage en douane agréé',
-          'Contrats directs transporteurs',
-          'Visibilité mondiale et suivi'
+          'Étiquetage FNSKU & préparation réglementaire',
+          "Prise de rendez-vous d'entrepôt Amazon incluse",
+          'Livraison directe sans intermédiaire aux centres FBA'
         ],
-        desc: 'Transport de bout en bout via air et mer. Bénéficiez d\'une visibilité complète de la chaîne d\'approvisionnement avec des itinéraires optimisés et des tarifs compétitifs.' 
+        desc: 'Services de fret Amazon FBA de bout en bout, connectant vos fournisseurs chinois aux centres de distribution mondiaux.'
       },
-      trust: {
-        title: 'Vos Yeux & Oreilles en Chine',
+      warehouse: {
+        title: 'Entreposage & Distribution',
         highlights: [
-          'Audit d\'usine & Vérification fournisseur',
-          'Inspection qualité avant expédition',
-          'Consolidation de commandes Alibaba/1688'
+          'Entrepôts hautement sécurisés de +100 000 pi²',
+          'Gestion de stock WMS en temps réel',
+          'Tri, emballage et cross-docking agile'
         ],
-        desc: 'Nous comblons le fossé de la confiance. De la vérification des fournisseurs aux contrôles qualité et à la consolidation de commandes sur notre hub de Guangzhou, nous sécurisons votre sourcing en Chine.'
+        desc: 'Solutions d’entreposage 3PL modernes et de préparation de commandes intelligentes pour optimiser votre chaîne logistique locale.'
       }
     },
     who_we_are: {
@@ -576,9 +588,9 @@ export const translations = {
       systems: { title: 'Systèmes Avancés de Fret', tag: '2. Ingénierie de Précision et Protection', desc: "Équipés de tris automatiques et spécialisés dans les solutions d'emballage pour l'export." }
     },
     get_a_quote: {
-      title: 'OUTILS LOGISTIQUES ET DEMANDES',
-      estimatorTitle: 'Estimateur & Demandes',
-      subtitle: 'Utilisez notre estimateur de poids facturable ou envoyez une demande à notre équipe senior.',
+      title: 'ENVOYER UNE DEMANDE (RFQ)',
+      estimatorTitle: 'Envoyer une demande (RFQ)',
+      subtitle: 'Envoyez-nous une demande détaillée et notre équipe senior élaborera votre plan logistique sur mesure sous 24 heures.',
       calcTitle: 'Estimateur de Poids',
       formTitle: 'Envoyer une Demande (RFQ)',
       mode: 'Mode de Transport',
@@ -698,6 +710,243 @@ export const translations = {
       terms: 'Conditions d\'utilisation',
       experts: 'Experts spécialisés NEV & SCM',
       rights: '© 2024 DDNZ Global. Tous droits réservés.'
+    }
+  },
+  zh: {
+    nav: {
+      who_we_are: '关于我们',
+      what_we_do: '核心业务',
+      why_ddnz: '为什么选择我们',
+      services: '服务项目',
+      services_sea: '海运服务',
+      services_air: '空运服务',
+      services_fba: '亚马逊 FBA',
+      services_warehouse: '仓储服务',
+      insights: '行业洞察',
+      get_a_quote: '获取报价',
+    },
+    hero: {
+      title1: '中国货运代理',
+      title2: '全球综合物流解决方案',
+      subtitle: '自1997年以来 • 海运服务 • 空运服务 • 亚马逊FBA • 仓储服务 —— 专业高效的一站式综合供应链解决方案。',
+      primary_cta: '计算运费并获取报价',
+      secondary_cta: '下载公司手册',
+      chat: 'WhatsApp咨询',
+      alibaba_cta: '从阿里巴巴采购？我们提供一站式物流与验货解决方案。',
+      stats: {
+        years: '29+',
+        years_label: '载卓越表现',
+        countries: '160+',
+        countries_label: '覆盖国家地区',
+        support: '24/7',
+        support_label: '贴心专业支持',
+      }
+    },
+    services: {
+      label: '服务',
+      title: '我们的业务',
+      subtitle: '我们提供集成的优质供应链及物流方案',
+      sea: {
+        title: '海运货运方案',
+        highlights: [
+          '专业持牌清关报关',
+          'FCL整柜与LCL拼箱集运',
+          '船东直签特惠合约价格'
+        ],
+        desc: '可靠的全球海洋货运代理，班期稳定且提供极具性价比的全球双清到门（DDP/DAP）专线服务。'
+      },
+      air: {
+        title: '空运物流方案',
+        highlights: [
+          '高时效紧急空运方案',
+          '全球各大机场航线覆盖',
+          '快捷与经济型自选舱位'
+        ],
+        desc: '快速灵活的空中货运服务，专为满足您严苛的交货时效而定制，配合无缝清关高效派送。'
+      },
+      fba: {
+        title: '亚马逊 FBA 头程',
+        highlights: [
+          'FNSKU贴标与专业贴牌',
+          '亚马逊仓预约入库服务',
+          '指向亚马逊运送直送到仓'
+        ],
+        desc: '全方位跨境电商亚马逊FBA头程服务，从中国供应商到全球运营中心全程严密合规护航。'
+      },
+      warehouse: {
+        title: '仓储与订单履约',
+        highlights: [
+          '十万平方英尺高规安防仓库',
+          'WMS系统云端实时库存管理',
+          '拼箱集拼与交叉转运作业'
+        ],
+        desc: '现代化第三方物流（3PL）仓储与智能订单履约方案，无缝简化并优化您的本地供应链存储。'
+      }
+    },
+    who_we_are: {
+      label: '关于我们',
+      title: '我们是谁',
+      subtitle: '29年坚守：从商贸先驱演进至专业工业物流与危险品专家',
+      stats: {
+        years: '年行业深耕储备',
+        clients: '全球活跃老客户',
+        shipments: '已妥投国际货载',
+        projects: '战略承运项目案例',
+        desc: '“近三十年的信任重托。DDNZ Global 是复杂跨国供应链的坚强后盾，以严谨细节成就百万次货运的安全嘱托。”'
+      },
+      heritage: { title: '29载全球资源传承', desc: '自1997年起，我们见证并协助多国企业共谱商贸篇章，深耕全球可靠而弹性的承运网络。' },
+      nev: { title: '新能源与九类危险品行家', desc: '把握绿色转型，提供储能系统(ESS)及电动汽车(EV)的整套合规和高标准包装与出运保障。' },
+      infra: { title: '实体自营仓储与财务安全', desc: '在广州和香港自营中转枢纽和分拨仓，结合香港合规财务通道，全方位防范供应链中断及结算风险。' },
+      resilience: { title: '长红交付与温情关怀', desc: '在危机时期，我们全力开辟紧急通道包机包列，以强大的物流底气为客户撑起安全屏障。' }
+    },
+    why_ddnz: {
+      title: '为什么选择我们',
+      subtitle: '集深厚经验、自营实体和全球清关网路于一体的放心之选',
+      label: '我们的优势',
+      strength: 'DDNZ 的绝对优势',
+      industry: '相比同行劣势',
+      c1: { title: '端到端自主掌控不外包', desc: '我们自营仓库、车队和报关中转行，保障流程严密配合，杜绝中间流失。', vs: '拼凑型货代拼箱，极度依赖多层外包导致信息延误和丢货风险。' },
+      c2: { title: '资深项目专家对接服务', desc: '为每个重要客户配有专家管家，即时跟进特需，随时应对突发。', vs: '全自动化工单，机械式冷漠客服或由不成熟经验新人套用模板。' },
+      c3: { title: '成熟DG危险品及新能源操作', desc: '常态化承揽纯电池、储能系统和EV整车，严密固定和九类清关无忧。', vs: '普通货物快件商，缺乏九类危险品经验，被临时拒绝或罚没。' },
+      edge: {
+        e1: { title: '海关AEO权威资质', desc: '持牌卓越报关' },
+        e2: { title: '近30年积淀', desc: '29+ 年全球物流资深经验' },
+        e3: { title: '一对一管家式跟进', desc: '主动汇报动态与答疑' },
+        e4: { title: '高效与精准交付', desc: '承诺严密，有诺必履' },
+        e5: { title: '成熟国际合作网路', desc: '全球百余港口支持' },
+        e6: { title: '极致性价比约价', desc: '直签各大船东与航空公司' }
+      }
+    },
+    facilities: {
+      label: '我们的自营实体',
+      title: '实打实的卓越物流保障',
+      subtitle: '以自置实体资产与资深包装，超越轻资产货代拼凑的局限',
+      guangzhou: { title: '广州仓：您的核心主控集货基地', tag: '1. 18年精心运营，绝非短期租赁仓', desc: '本仓为公司成熟自营核心，实现百万货品集货合装。全流程专人质检与标准化堆存，铸就您的安全防线。' },
+      systems: { title: '精密工业件定制木箱与包装支持', tag: '2. 专注守护高价值与敏感货品', desc: '配备定制卡板、高承重定制胶合板木箱，精细包装重型机械及光学敏感仪器，稳妥应对越洋颠簸。' }
+    },
+    get_a_quote: {
+      title: '提交正式 RFQ',
+      estimatorTitle: '提交正式 RFQ',
+      subtitle: '提交一份详细的需求表单，我们的资深物流专家将在24小时内为您量身定制最省钱的物流路线方案。',
+      calcTitle: '计费重量快速测算',
+      formTitle: '提交 RFQ 表单',
+      mode: '推荐运输方式',
+      modeSea: '海运 FCL/LCL',
+      modeLand: '陆运',
+      modeAir: '空运',
+      lane: '拟运线路/贸易路线',
+      sea: '海运优势航线',
+      sea_opt1: '南美 / 东南亚大包',
+      sea_opt2: '东欧 / 欧洲全境',
+      land: '陆运优势航线',
+      land_opt1: '中亚卡铁联运',
+      land_opt2: '乌兹别克斯坦/哈萨克斯坦专线',
+      air: '空运优势服务',
+      air_opt1: '全球高时效空专线',
+      packageDim: '单件外包装尺寸 (cm)',
+      quantity: '件数',
+      calcBtn: '速算计费重量',
+      totalVol: '预估总体积:',
+      totalGross: '预估总毛重:',
+      chargeableUnits: '计费重量 (KG):',
+      insight: '测算助手意见:',
+      insightDesc: '计费重量按承运人规则多取大值计算。实际以最终承配出运账单为准。',
+      reqQuote: '直接索取精准报价',
+      fname: '联系人姓名/公司名 *',
+      email: '企业常用邮箱 *',
+      phone: '联系电话 / 微信 / WhatsApp *',
+      cargo: '货品详述、申报货值、电池情况 *',
+      baseRate: '预估基础运费 ($)',
+      baseRatePlaceholder: '可选（填入单价进行快速估算）',
+      includeDG: '包含带电/DG九类危险品（加收+25%）',
+      cargoCat: '货品分类类型',
+      catGeneral: '一般货物普货',
+      catNev: '新能源储能包电池件',
+      actualWeightLabel: '实际总重量 (KG)',
+      totalCbm: '指定或者输入总体积 CBM码',
+      autoPrefix: '自适应',
+      dimInfo: '请按包装最外溢凸出面进行精确长宽高测算。',
+      orOverride: '或者直接输入总体积 CBM值',
+      estTotalFreight: '估算全包基本海运费 :',
+      totalVolLabel: '实体总体积 (CBM):',
+      chargeableUnitsLabel: '计价重量 (KG):',
+      fclNote: '* 整箱 FCL 另外提供定制专属约价。估算报价不包含目的港清关手续费、代理代垫、卡车配送及因延误产生的可能港杂费。',
+      formSubtitle: '填写以下运载计划，确保我司团队能够极速评估路线性价比。',
+      industryLabel: '您的主营行业 / 货物品类',
+      indNev: '新能源汽车 / 电池储能系统与配件 (ESS)',
+      indFurn: '商业家装 / 展会家私与工期货载',
+      indProject: '超高超宽设备 / 工业重箱项目工程',
+      indOther: '日常普通杂货普货 (General Cargo)',
+      originLabel: '始发港 / 始发城市',
+      originPlaceholder: '例如：中国广州、深圳、义乌市',
+      destLabel: '目的港 / 目的国',
+      destPlaceholder: '例如：马来西亚、沙特阿拉伯、波兰',
+      msgPlaceholder: '请提供详实的包装件数、大体纸箱尺寸、特殊操作限制及交货期要求...',
+      required: '必填选项码',
+      alertInput: '请写明尺寸/数量，或直接指定总体积 CBM 及毛重。',
+      alertSuccess: '提交成功！我司高级物流规划师已将您的询价单置为最高优先级别。24小时内发送正轨报价单！',
+      alertError: '网络瞬时繁忙。欢迎通过右下角官方微信/WhatsApp等工具直联专席。',
+      roadNote: '提示：此处自动套用符合公路承运标准的计重折算系数。',
+      submit: '点击发送 RFQ 询价',
+      submitting: '正在加急处理并上传中...',
+      classHeavy: '重货按实际毛重计费',
+      classLight: '轻抛泡货按泡积测算计费',
+      modeLabel: '海空陆模式',
+      waTemplate: '你好 DDNZ，我刚在官网计算了费用。我的货物有 {cbm} CBM / {weight} KG，打算发往 {destination}。算出来属于{class}。我想了解最终的折扣海运价？',
+    },
+    insights: {
+      title: '物流趋势与跨国贸易实操分享',
+      subtitle: '全面理解本地进口合规、实战清关案例及直营航季一手干货报告',
+      label: '行业洞见',
+      readMore: '阅读全文',
+      adviceTitle: '需要专业的供应链一对一解惑？',
+      adviceSubtitle: 'DDNZ 高级物流顾问时刻为您排忧解难。',
+      contactExpert: '点击直通专家进行深度方案规划',
+      hubLabel: 'DDNZ GLOBAL 前沿资讯',
+      hubTitle: '海关通关、运力预测及港口实时情报',
+      hubSubtitle: '获取由资深报关员与项目运力专家出具的一线实操作报告。',
+      showAll: '🏷️ 切换全品类情报',
+      deep_dive_read: '实战深度长文',
+      read_time: '阅读耗时 4 分钟',
+      no_articles: '暂无符合条件的简报',
+      no_articles_desc: '此目录下暂时没有发布的更新，欢迎向我们咨询具体课题。',
+      posts: {
+        "1": {
+          title: "2025 全瞻：南美国际进口海运费与港口拥堵走势应对秘诀",
+          summary: "分析近期美西、美东及南美通关和塞港形势，为中资出海企业献策如何提前锁定运力、规避超期滞箱费。"
+        },
+        "2": {
+          title: "安全大于天：新能源整车及大型储能系统的长途多式联运实战指南",
+          summary: "针对 Class 9 类储能集装箱及商用车，分享 DDNZ 实操出口报关规范和独特的加固技术防范海上自燃。"
+        },
+        "3": {
+          title: "时效交付：商业厨房重件设备中欧卡航15天神速妥投波兰全纪实",
+          summary: "解析中欧公路通道如何克服大雪、口岸滞关，特快到底完成客户工期的实操细节。"
+        }
+      }
+    },
+    partners: {
+      title: '全球卓越伙伴一致推崇的选择',
+      subtitle: '携手世界班轮公会直签及国际优质联络网',
+      desc: '我们以深厚资质和香港、大湾区核心通道，与一众巨头保持极佳运价合作，保障不抛货、稳定抢舱。'
+    },
+    footer: {
+      slogan: '“29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
+      hq: '广州自营总部',
+      hq_addr: '中国广东省广州市白云区云城东路云城街启福路1-10号联富大厦6楼6025-6027室',
+      hk: '香港核心金融办公室',
+      hk_addr: '中国香港湾仔罗素街38号新鸿基中心5楼',
+      hours: '24小时全年全天候技术服务支持',
+      hours_desc: '全球运营协调总指挥台',
+      cert: '行业核心持牌资质',
+      cert_desc: '无船承运人 NVOCC / 国际空协 IATA A级 / ZATCA 认证',
+      quick: '便捷网页导航',
+      contact: '联系客服',
+      compliance: '合规安全及法律声明',
+      privacy: '保障隐私声明条款',
+      terms: '一般承运基本商业条款',
+      experts: '新能源与合规清关资深专家团',
+      rights: '© 2024 DDNZ Global。保留最终解释及所有相关版权。'
     }
   }
 };
