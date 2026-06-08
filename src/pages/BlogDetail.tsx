@@ -185,7 +185,7 @@ export default function BlogDetail() {
 
             {/* Main Content Area */}
             <div 
-              className="prose prose-slate lg:prose-lg max-w-none 
+              className="prose prose-slate lg:prose-lg max-w-none blog-content post-content
                          prose-headings:font-bold prose-headings:text-[#4B27B1] 
                          prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-4
                          prose-strong:text-slate-900 prose-strong:font-semibold
@@ -214,6 +214,18 @@ export default function BlogDetail() {
       
       {/* Global Style for HTML content layout */}
       <style>{`
+        .prose img, .post-content img, .blog-content img {
+          width: 100% !important;      /* 宽度撑满容器 */
+          height: auto !important;     /* 高度必须全自动等比例缩放，禁止写死固定像素！ */
+          max-width: 100% !important;  /* 防止图片超出容器边界 */
+          object-fit: contain !important; /* 确保图片完整显示，绝对不允许进行上下裁剪或拉伸 */
+          display: block !important;
+          margin: 1.5rem auto !important; /* 上下留白，居中对齐 */
+        }
+        .image-wrapper {
+          height: auto !important; /* 允许容器随图片高度自适应撑开 */
+          width: 100% !important;
+        }
         .blog-content h2 { margin-top: 2.5rem; margin-bottom: 1.25rem; color: #4B27B1; font-weight: 850; font-size: 1.875rem; line-height: 1.35; border-left: 5px solid #FF8A00; padding-left: 0.75rem; }
         .blog-content h3 { margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; font-weight: 800; font-size: 1.5rem; }
         .blog-content h4 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: #334155; font-weight: 700; font-size: 1.25rem; }
