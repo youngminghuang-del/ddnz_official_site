@@ -111,11 +111,13 @@ export default function Navbar() {
                 loading="lazy"
                 className="h-8 md:h-10 w-auto transition-transform duration-300 group-hover:scale-105"
               />
-              <span className={cn(
-                "text-xl sm:text-2xl font-black tracking-tight transition-all font-sans",
-                scrolled ? "text-slate-900" : "text-white"
-              )}>
-                DDNZ Global
+              <span 
+                id="navbar-brand-name"
+                className={cn(
+                  "text-lg sm:text-xl md:text-2xl font-black tracking-tight transition-all font-sans",
+                  scrolled ? "text-slate-900" : "text-white"
+                )}>
+                {language === 'zh' ? '华正邦泰国际货运' : 'DDNZ Global'}
               </span>
             </Link>
           </div>

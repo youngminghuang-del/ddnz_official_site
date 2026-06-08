@@ -792,7 +792,7 @@ export const translations = {
         clients: '全球活跃老客户',
         shipments: '已妥投国际货载',
         projects: '战略承运项目案例',
-        desc: '“近三十年的信任重托。DDNZ Global 是复杂跨国供应链的坚强后盾，以严谨细节成就百万次货运的安全嘱托。”'
+        desc: '“近三十年的信任重托。华正邦泰国际货运（DDNZ Global）是复杂跨国供应链的坚强后盾，以严谨细节成就百万次货运的安全嘱托。”'
       },
       heritage: { title: '29载全球资源传承', desc: '自1997年起，我们见证并协助多国企业共谱商贸篇章，深耕全球可靠而弹性的承运网络。' },
       nev: { title: '新能源与九类危险品行家', desc: '把握绿色转型，提供储能系统(ESS)及电动汽车(EV)的整套合规和高标准包装与出运保障。' },
@@ -803,7 +803,7 @@ export const translations = {
       title: '为什么选择我们',
       subtitle: '集深厚经验、自营实体和全球清关网路于一体的放心之选',
       label: '我们的优势',
-      strength: 'DDNZ 的绝对优势',
+      strength: '华正邦泰（DDNZ）的绝对优势',
       industry: '相比同行劣势',
       c1: { title: '端到端自主掌控不外包', desc: '我们自营仓库、车队和报关中转行，保障流程严密配合，杜绝中间流失。', vs: '拼凑型货代拼箱，极度依赖多层外包导致信息延误和丢货风险。' },
       c2: { title: '资深项目专家对接服务', desc: '为每个重要客户配有专家管家，即时跟进特需，随时应对突发。', vs: '全自动化工单，机械式冷漠客服或由不成熟经验新人套用模板。' },
@@ -892,7 +892,7 @@ export const translations = {
       classHeavy: '重货按实际毛重计费',
       classLight: '轻抛泡货按泡积测算计费',
       modeLabel: '海空陆模式',
-      waTemplate: '你好 DDNZ，我刚在官网计算了费用。我的货物有 {cbm} CBM / {weight} KG，打算发往 {destination}。算出来属于{class}。我想了解最终的折扣海运价？',
+      waTemplate: '你好，华正邦泰（DDNZ）！我刚在官网计算了费用。我的货物有 {cbm} CBM / {weight} KG，打算发往 {destination}。算出来属于{class}。我想了解最终的折扣海运价？',
     },
     insights: {
       title: '物流趋势与跨国贸易实操分享',
@@ -900,9 +900,9 @@ export const translations = {
       label: '行业洞见',
       readMore: '阅读全文',
       adviceTitle: '需要专业的供应链一对一解惑？',
-      adviceSubtitle: 'DDNZ 高级物流顾问时刻为您排忧解难。',
+      adviceSubtitle: '华正邦泰（DDNZ）高级物流顾问时刻为您排忧解难。',
       contactExpert: '点击直通专家进行深度方案规划',
-      hubLabel: 'DDNZ GLOBAL 前沿资讯',
+      hubLabel: '华正邦泰 DDNZ GLOBAL 前沿资讯',
       hubTitle: '海关通关、运力预测及港口实时情报',
       hubSubtitle: '获取由资深报关员与项目运力专家出具的一线实操作报告。',
       showAll: '🏷️ 切换全品类情报',
@@ -917,7 +917,7 @@ export const translations = {
         },
         "2": {
           title: "安全大于天：新能源整车及大型储能系统的长途多式联运实战指南",
-          summary: "针对 Class 9 类储能集装箱及商用车，分享 DDNZ 实操出口报关规范和独特的加固技术防范海上自燃。"
+          summary: "针对 Class 9 类储能集装箱及商用车，分享 华正邦泰（DDNZ）实操出口报关规范和独特的加固技术防范海上自燃。"
         },
         "3": {
           title: "时效交付：商业厨房重件设备中欧卡航15天神速妥投波兰全纪实",
@@ -931,7 +931,7 @@ export const translations = {
       desc: '我们以深厚资质和香港、大湾区核心通道，与一众巨头保持极佳运价合作，保障不抛货、稳定抢舱。'
     },
     footer: {
-      slogan: '“29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
+      slogan: '“华正邦泰国际货运 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
       hq: '广州自营总部',
       hq_addr: '中国广东省广州市白云区云城东路云城街启福路1-10号联富大厦6楼6025-6027室',
       hk: '香港核心金融办公室',
@@ -946,7 +946,7 @@ export const translations = {
       privacy: '保障隐私声明条款',
       terms: '一般承运基本商业条款',
       experts: '新能源与合规清关资深专家团',
-      rights: '© 2024 DDNZ Global。保留最终解释及所有相关版权。'
+      rights: '© 2024 华正邦泰 DDNZ Global。保留最终解释及所有相关版权。'
     }
   }
 };

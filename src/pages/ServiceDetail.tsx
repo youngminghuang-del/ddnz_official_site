@@ -5,6 +5,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
+import SchemaMarkup from '../components/SchemaMarkup';
 import { motion } from 'framer-motion';
 import { 
   Ship, Plane, ShieldAlert, BadgeCheck, CheckCircle2, ArrowRight, 
@@ -77,7 +78,7 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       ],
       deepDive: {
         title: '海洋运输深度服务项目',
-        desc: 'DDNZ Global 29年积淀的海运网络是您拓展跨国商贸的核心动力。无论是处理标准非重工件还是高价值重型机械工程项目，我们的专业海运专家都能从装箱起算、口岸接单到最终尾端配送，打造万无一失的拼合或独柜闭环。',
+        desc: '华正邦泰国际货运 29年积淀的海运网络是您拓展跨国商贸的核心动力。无论是处理标准非重工件还是高价值重型机械工程项目，我们的专业海运专家都能从装箱起算、口岸接单到最终尾端配送，打造万无一失的拼合或独柜闭环。',
         sections: [
           { name: '海运整箱 (FCL)', info: '提供标准 20GP、40HQ 及特种平板柜(FR)、开顶柜(OT)的最优配舱和快速直航装载。' },
           { name: '海运拼箱 (LCL)', info: '在广州和香港自有仓库集货多品牌包装合一，降低拼箱港杂费及运价门槛。' },
@@ -469,7 +470,7 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       ],
       deepDive: {
         title: '亚马逊电商专业入仓体系',
-        desc: '对于跨境大卖家来说，任何一次断货都是致命排名危机。DDNZ Global 为您的全渠道履约保驾护航。我们严防装箱超标、标码模糊不清等常见顽疾，提供高容错、可追踪的一站式端到端电商空海运大后援。',
+        desc: '对于跨境大卖家来说，任何一次断货都是致命排名危机。华正邦泰国际货运 为您的全渠道履约保驾护航。我们严防装箱超标、标码模糊不清等常见顽疾，提供高容错、可追踪的一站式端到端电商空海运大后援。',
         sections: [
           { name: 'FBA海派专线 (双清包税)', info: '定期海运快船直航，搭配尾端 UPS/FedEx/主流拖车卡车派配，高性价比电商补货首选。' },
           { name: 'FBA空派专线', info: '空运包板起飞，专为爆款极速追单、防止断货打造的7-10天极速履约通道。' },
@@ -627,7 +628,7 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       ],
       deepDive: {
         title: '全方位物流仓储与中转支撑',
-        desc: '大多数国际拒收与损失均归咎于货厂端业余的外箱或装运准备。DDNZ Global 自置大型实体厂房，结合29年海陆空综合运转控制，提供重载、极温绝缘防护及精准系统出仓跟踪。不论是散货理货还是特种机器拼凑，我们用坚实后备做您的定海神针。',
+        desc: '大多数国际拒收与损失均归咎于货厂端业余的外箱或装运准备。华正邦泰国际货运 自置大型实体厂房，结合29年海陆空综合运转控制，提供重载、极温绝缘防护及精准系统出仓跟踪。不论是散货理货还是特种机器拼凑，我们用坚实后备做您的定海神针。',
         sections: [
           { name: '集拼装箱 (Consolidation)', info: '全天候卡车卸货泊位，多厂家订单拆包核对并分类置入指定待装柜货位，高效合并。' },
           { name: '外贸定制免熏蒸木箱 (Plywood Crating)', info: '精算重心与受力点，生产抗震胶合板托盘箱包，专治工业重件全球长途跋涉。' },
@@ -752,7 +753,7 @@ export default function ServiceDetail() {
         },
         zh: {
           title: '中国海运货代公司 | 便宜海运集装箱拼箱门到门',
-          desc: 'DDNZ Global提供便宜中国海运拼箱及整柜进出口。cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent 双清包税。',
+          desc: '华正邦泰国际货运提供便宜中国海运拼箱及整柜进出口。cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent 双清包税。',
           keywords: 'cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent'
         },
         ru: {
@@ -1115,7 +1116,7 @@ export default function ServiceDetail() {
                 {activeLang === 'zh' ? '规范出飞流程' : activeLang === 'ru' ? 'ЭТАПЫ РАБОТЫ' : activeLang === 'fr' ? 'ÉTAPES CLÉS' : 'TRANSPARENT ROADMAP'}
               </div>
               <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-4">
-                {activeLang === 'zh' ? 'DDNZ 专属 6 步快飞流程' : activeLang === 'ru' ? 'Как осуществляется авиадоставка' : activeLang === 'fr' ? 'Fret en 6 Étapes Célestes' : 'Standard 1-to-6 Air Cargo Cycle'}
+                {activeLang === 'zh' ? '华正邦泰专属 6 步快飞流程' : activeLang === 'ru' ? 'Как осуществляется авиадоставка' : activeLang === 'fr' ? 'Fret en 6 Étapes Célestes' : 'Standard 1-to-6 Air Cargo Cycle'}
               </h2>
               <div className="h-1.5 w-16 bg-gradient-to-r from-blue-600 to-indigo-800 mx-auto rounded-full" />
             </div>
@@ -1320,7 +1321,7 @@ export default function ServiceDetail() {
                      <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 mb-3">
-                    {activeLang === 'zh' ? '您的询盘已递交给 DDNZ 调度小组！' : activeLang === 'ru' ? 'Ваш запрос успешно отправлен!' : activeLang === 'fr' ? 'Votre demande de fret est enregistrée !' : 'Your Air Freight RFQ Appreciated!'}
+                    {activeLang === 'zh' ? '您的询盘已递交给 华正邦泰 调度小组！' : activeLang === 'ru' ? 'Ваш запрос успешно отправлен!' : activeLang === 'fr' ? 'Votre demande de fret est enregistrée !' : 'Your Air Freight RFQ Appreciated!'}
                   </h3>
                   <p className="text-slate-500 font-semibold mb-6 max-w-md mx-auto text-sm sm:text-base">
                     {activeLang === 'zh' ? '我们经验丰富的空中走廊承配人将在 2 小时内安排专属卡车及班机测算计划，并在您的邮箱中呈现最省钱的费率和最迅速的路线方案。' : activeLang === 'ru' ? 'Наши авиаспециалисты подготовят коммерческое предложение и свяжутся с вами в течение 2 часов.' : activeLang === 'fr' ? 'Nos répartiteurs aériens préparent votre calcul de densité et vous reviendront avec les meilleurs plans d\'enlèvement d\'ici 2 heures.' : 'Our route agents are crunching numbers and and will deliver custom air pathways directly to your inbox within the next 2 hours.'}
@@ -2060,7 +2061,7 @@ export default function ServiceDetail() {
                      <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 mb-3">
-                    {activeLang === 'zh' ? '您的意向已递交给 DDNZ 调度小组！' : activeLang === 'ru' ? 'Ваш запрос успешно отправлен!' : activeLang === 'fr' ? 'Votre demande e-commerce est enregistrée !' : 'Your FBA Shipping RFQ Appreciated!'}
+                    {activeLang === 'zh' ? '您的意向已递交给 华正邦泰 调度小组！' : activeLang === 'ru' ? 'Ваш запрос успешно отправлен!' : activeLang === 'fr' ? 'Votre demande e-commerce est enregistrée !' : 'Your FBA Shipping RFQ Appreciated!'}
                   </h3>
                   <p className="text-slate-500 font-semibold mb-6 max-w-md mx-auto text-sm sm:text-base">
                     {activeLang === 'zh' ? '我们专业的 FBA 项目主事人将在 2 小时内按您的供应商所在地进行定制航路与备货周期测算，并将最优化的双清方案呈现于您的收件箱。' : activeLang === 'ru' ? 'Наши FBA-специалисты подготовят коммерческое предложение и свяжутся с вами в течение 2 часов.' : activeLang === 'fr' ? 'Nos ingénieurs logistiques analysent votre plan de chargement et vous contacteront avec un devis DDP sous 2 heures.' : 'Our FBA route experts are configuring dynamic transport pathways and will deliver your complete door-to-door FBA strategy within 2 hours.'}
@@ -2954,7 +2955,7 @@ export default function ServiceDetail() {
                      <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 mb-3">
-                    {activeLang === 'zh' ? '集货需求已接收！DDNZ 专属仓管小队已就位！' : activeLang === 'ru' ? 'Ваш запрос на склад отправлен!' : activeLang === 'fr' ? 'Demande de stockage configurée !' : 'Warehouse RFQ Successfully Registered!'}
+                    {activeLang === 'zh' ? '集货需求已接收！华正邦泰 专属仓管小队已就位！' : activeLang === 'ru' ? 'Ваш запрос на склад отправлен!' : activeLang === 'fr' ? 'Demande de stockage configurée !' : 'Warehouse RFQ Successfully Registered!'}
                   </h3>
                   <p className="text-slate-500 font-semibold mb-6 max-w-md mx-auto text-sm sm:text-base">
                     {activeLang === 'zh' ? '我们的大湾区集拼专家将在 2 小时内给您出具最优零中转费集货排期与打包加固估费。请关注您的邮件或社交网络。' : activeLang === 'ru' ? 'Наши логисты свяжутся с вами в течение 2 часов для обсуждения условий упаковки и хранения.' : activeLang === 'fr' ? 'Nos ingénieurs logistiques analysent les points de livraison de vos fournisseurs et reviennent vers vous sous 2 heures.' : 'Our South China consolidation specialists are computing your factory consolidation map and will deliver a custom crating/routing report within 2 hours.'}
@@ -2981,6 +2982,14 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <SchemaMarkup 
+        type="Service" 
+        data={{
+          name: data.title,
+          description: data.heroSubtitle || data.title,
+          serviceType: 'Freight Forwarding and Global Supply Chain'
+        }} 
+      />
       <Navbar />
 
       {/* Hero Block */}
@@ -3152,7 +3161,7 @@ export default function ServiceDetail() {
               {activeLang === 'zh' ? '规范交付流程' : activeLang === 'ru' ? 'ЭТАПЫ РАБОТЫ' : activeLang === 'fr' ? 'ÉTAPES CLÉS' : 'TRANSPARENT ROADMAP'}
             </div>
             <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-4">
-              {activeLang === 'zh' ? 'DDNZ 标准 6 步服务周期' : activeLang === 'ru' ? 'Как осуществляется доставка' : activeLang === 'fr' ? 'Notre cycle en 6 étapes' : 'Standard 1-to-6 Step Logistics Workflow'}
+              {activeLang === 'zh' ? '华正邦泰标准 6 步服务周期' : activeLang === 'ru' ? 'Как осуществляется доставка' : activeLang === 'fr' ? 'Notre cycle en 6 étapes' : 'Standard 1-to-6 Step Logistics Workflow'}
             </h2>
             <div className="h-1.5 w-16 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full" />
           </div>
