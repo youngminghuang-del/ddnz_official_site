@@ -1,6 +1,7 @@
 import "dotenv/config";
 import fs from "fs";
 import path from "path";
+import { generateSlug, downloadNotionImage } from "./notion-img-sync";
 
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
@@ -62,7 +63,7 @@ function formatRichText(richText: any): string {
   return text;
 }
 
-async function getPageContentHtml(pageId: string, propertyContent?: string): Promise<string> {
+async function getPageContentHtml(pageId: string, slug: string, propertyContent?: string): Promise<string> {
   let html = propertyContent || "";
 
   try {
@@ -71,6 +72,7 @@ async function getPageContentHtml(pageId: string, propertyContent?: string): Pro
     
     let listOpen = false;
     let listType = ""; // "ul" or "ol"
+    let imageIndex = 1;
 
     for (const block of blocks as any[]) {
       const type = block.type;
@@ -114,7 +116,8 @@ async function getPageContentHtml(pageId: string, propertyContent?: string): Pro
       } else if (type === "image") {
         const imageUrl = block.image.type === "external" ? block.image.external.url : block.image.file?.url;
         if (imageUrl) {
-          html += `<div class="my-6 rounded-2xl overflow-hidden shadow-md"><img src="${imageUrl}" alt="Notion Image" class="w-full object-cover max-h-[500px]" referrerPolicy="no-referrer" /></div>`;
+          const localUrl = await downloadNotionImage(imageUrl, slug, imageIndex++);
+          html += `<div class="my-6 rounded-2xl overflow-hidden shadow-md"><img src="${localUrl}" alt="Notion Image" class="w-full object-cover max-h-[500px]" referrerPolicy="no-referrer" /></div>`;
         }
       } else if (type === "table") {
         try {
@@ -154,6 +157,27 @@ async function getPageContentHtml(pageId: string, propertyContent?: string): Pro
     
     if (listOpen) {
       html += `</${listType}>`;
+    }
+
+    // Clean up any remaining secure.notion-static.com or amazonaws.com links from HTML
+    try {
+      let cleanHtml = html;
+      const imgRegex = /src=["'](https?:\/\/[^"']*(?:secure\.notion-static\.com|amazonaws\.com)[^"']*)["']/g;
+      let match;
+      let inlineIndex = 100;
+      const urlsToDownload: string[] = [];
+      while ((match = imgRegex.exec(html)) !== null) {
+        if (!urlsToDownload.includes(match[1])) {
+          urlsToDownload.push(match[1]);
+        }
+      }
+      for (const url of urlsToDownload) {
+        const localUrl = await downloadNotionImage(url, slug, `inline-${inlineIndex++}`);
+        cleanHtml = cleanHtml.replaceAll(url, localUrl);
+      }
+      html = cleanHtml;
+    } catch (regexErr) {
+      console.error("Regex replacement error for inline images in page " + pageId, regexErr);
     }
   } catch (err) {
     console.error("Error retrieving blocks for block_id: " + pageId, err);
@@ -270,6 +294,12 @@ async function run() {
         }
       }
 
+      // Generate clean SEO fallback Slug and localize the thumbnail image
+      const slug = generateSlug(title, page.id);
+      if (thumbnailUrl) {
+        thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover");
+      }
+
       // If there is a properties content block (Rich text)
       let initialContent = "";
       const contentProp = properties.Content || properties.content;
@@ -279,7 +309,7 @@ async function run() {
 
       // Fetch block components and build the HTML content at build-time!
       console.log(`Compiling HTML blocks for Notion page: "${title}" (${page.id})`);
-      const contentHtml = await getPageContentHtml(page.id, initialContent);
+      const contentHtml = await getPageContentHtml(page.id, slug, initialContent);
 
       posts.push({
         id: page.id,
