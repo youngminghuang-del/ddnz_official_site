@@ -17,11 +17,11 @@ export const translations = {
     hero: {
       title1: 'China Freight Forwarder',
       title2: 'Global Logistics Solutions',
-      subtitle: 'Since 1997 • Sea Freight • Air Freight • Amazon FBA • Warehouse Services — Professional & Integrated Supply Chain Solutions.',
+      subtitle: 'China Freight Forwarder Global Logistics Solutions | Heaven Born International Freight — Since 1997 • Sea Freight • Air Freight • Amazon FBA • Warehouse Services.',
       primary_cta: 'Calculate Freight & Get Quote',
       secondary_cta: 'Download Company Deck',
       chat: 'Chat on WhatsApp',
-      alibaba_cta: 'Sourcing from Alibaba? We offer integrated logistics & inspection solutions.',
+      alibaba_cta: 'Sourcing from Alibaba or 1688? Our dedicated supply chain division, DDNZ Global (powered by Heaven Born), offers integrated logistics, product inspection, and multi-currency settlement solutions.',
       stats: {
         years: '29+',
         years_label: 'Years Excellence',
@@ -60,7 +60,7 @@ export const translations = {
           'Appointment Booking Included',
           'Direct Warehouse Delivery'
         ],
-        desc: 'Comprehensive Amazon FBA freight services from Chinese suppliers straight to global fulfillment centers with full compliance.'
+        desc: 'Comprehensive Amazon FBA freight services powered by Heaven Born International Freight, moving your cargo from Chinese suppliers straight to global fulfillment centers with full compliance.'
       },
       warehouse: {
         title: 'Warehouse & Fulfillment',
@@ -75,16 +75,16 @@ export const translations = {
     who_we_are: {
       label: 'ABOUT US',
       title: 'WHO WE ARE',
-      subtitle: 'A 29-Year Evolution: From Trade Pioneers to Specialized Industrial Logistics Experts',
+      subtitle: 'A 29-Year Evolution: How Heaven Born International Freight Evolved From Trade Pioneers to Specialized Industrial Logistics Experts',
       stats: {
         years: 'Years In Business',
         clients: 'Happy Clients',
-        shipments: 'Shipments Completed',
+        shipments: 'Total TEUs Shipped',
         projects: 'Strategic Projects',
-        desc: '"A legacy of integrity and excellence. For nearly three decades, DDNZ Global has been the trusted backbone for complex supply chains, managing over a million successful shipments with precision and care."'
+        desc: '"A legacy of integrity and excellence. For nearly three decades, Heaven Born International Freight has been the trusted backbone for complex supply chains, managing over 37,000 TEUs of successful shipments with precision and care."'
       },
-      heritage: { title: '29 Years of Global Heritage', desc: 'Since 1997, we evolved from pioneering trade links during China’s WTO accession to mastering global supply chains. A relentless focus on long-term reliability and adaptability.' },
-      nev: { title: 'DG & New Energy Specialists', desc: 'Leading the green transition with bespoke logistics for Energy Storage Systems (ESS) and EVs. We master complex, compliance-driven Dangerous Goods (DG) global transport.' },
+      heritage: { title: '29 Years of Global Heritage', desc: 'Since 1997, Heaven Born International Freight has evolved from pioneering trade links during China’s WTO accession to mastering worldwide logistics networks.' },
+      nev: { title: 'DG & New Energy Specialists', desc: 'DG & New Energy Specialists: Heaven Born International Freight is leading the global green logistics transition with bespoke, compliance-driven solutions for ESS and EVs.' },
       infra: { title: 'Integrated Supply Chain & Trade', desc: 'Empowered by self-owned warehousing hubs and our Hong Kong financial gateway, we guarantee structural control, secure multi-currency settlements, and seamless global operations.' },
       resilience: { title: 'Unwavering Resilience & Care', desc: 'When global networks falter, we deliver. Proven during the pandemic by prioritizing critical supplies, our network is built to absorb shocks and protect your business interests.' }
     },
@@ -110,7 +110,7 @@ export const translations = {
       label: 'OUR FACILITIES',
       title: 'OPERATIONAL EXCELLENCE',
       subtitle: 'Where Legacy Expertise Powers Modern Infrastructure',
-      guangzhou: { title: 'Guangzhou: Your Command & Control Center', tag: '1. A Strategic Hub, Owned & Mastered for 18 Years', desc: 'This is not a leased space; it’s our strategic nerve center, owned and refined over nearly two decades. Here, we exercise absolute control. Every shipment undergoes professional consolidation and rigorous, standardized quality checks, ensuring integrity from the first to the final mile.' },
+      guangzhou: { title: 'Guangzhou: Your Command & Control Center', tag: '1. A Strategic Hub, Owned & Mastered for 18 Years', desc: 'This is not a leased space; it’s the strategic nerve center owned and operated by Heaven Born International Freight for nearly two decades. Here, we exercise absolute control. Every shipment undergoes professional consolidation and rigorous, standardized quality checks, ensuring integrity from the first to the final mile.' },
       systems: { title: 'Advanced Systems for Complex Cargo', tag: '2. Engineered for Precision & Protection', desc: 'Equipped with automated sorting and a team of specialists, we handle what standard warehouses cannot. Our core expertise lies in custom, export-grade packaging solutions—most notably, precision-engineered plywood crating for high-value, sensitive machinery and project cargo, built to survive the global supply chain.' }
     },
     get_a_quote: {
@@ -217,7 +217,7 @@ export const translations = {
     partners: {
       title: 'Trusted by Global Leaders',
       subtitle: "Seamlessly Integrated with the World's Premier Carriers & Networks",
-      desc: 'Our strategic alliances with top-tier shipping lines and airlines ensure that DDNZ Global (Hong Kong) provides the most competitive rates and priority space allocations for your critical cargo.'
+      desc: 'Our strategic alliances with top-tier shipping lines and airlines ensure that Heaven Born International Freight (Hong Kong) provides the most competitive rates and priority space allocations for your critical cargo.'
     },
     footer: {
       slogan: '"29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions."',
@@ -235,7 +235,7 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       experts: 'Specialized NEV & SCM Experts',
-      rights: '© 2024 DDNZ Global. All rights reserved.'
+      rights: '© 2026 Heaven Born International Freight. All rights reserved. DDNZ Global is a premium supply chain management brand operated by Heaven Born.'
     }
   },
   ru: {
@@ -316,7 +316,7 @@ export const translations = {
       stats: {
         years: 'Лет в бизнесе',
         clients: 'Довольных клиентов',
-        shipments: 'Выполненных отгрузок',
+        shipments: 'Перевезено TEU',
         projects: 'Стратегических проектов',
         desc: '"Наследие честности и превосходства. Почти три десятилетия DDNZ Global является надежной опорой для сложных цепей поставок."'
       },
@@ -428,7 +428,7 @@ export const translations = {
       adviceTitle: 'Нужен персональный совет?',
       adviceSubtitle: 'Наши эксперты готовы проанализировать ваши конкретные логистические потребности.',
       contactExpert: 'Связаться с экспертом',
-      hubLabel: 'ГЛОБАЛЬНАЯ АНАЛИТИКА DDNZ',
+      hubLabel: 'ГЛОБАЛЬНАЯ АНАЛИТИКА HEAVEN BORN',
       hubTitle: 'Отраслевая аналитика и новости',
       hubSubtitle: 'Получите доступ к правилам, срокам доставки, изменениям в регулировании и оперативной информации от азиатских ведомств.',
       showAll: '🏷️ Показать все темы',
@@ -442,8 +442,8 @@ export const translations = {
           summary: "Изучите последние тенденции рынка, новости о заторах в портах и практические стратегии для навигации по колебаниям стоимости доставки из Китая в Южную Америку."
         },
         "2": {
-          title: "Безопасность прежде всего: Как DDNZ обрабатывает поставки NEV и аккумуляторов",
-          summary: "Транспортные средства на новых источниках энергии и системы хранения энергии требуют специализированного управления опасными грузами. Узнайте, как DDNZ контролирует риски."
+          title: "Безопасность прежде всего: Как Heaven Born обрабатывает поставки NEV и аккумуляторов",
+          summary: "Транспортные средства на новых источниках энергии и системы хранения энергии требуют специализированного управления опасными грузами. Узнайте, как Heaven Born контролирует риски."
         },
         "3": {
           title: "Эффективность имеет значение: Доставка в Польшу за 15 дней",
@@ -454,7 +454,7 @@ export const translations = {
     partners: {
       title: 'Нам доверяют мировые лидеры',
       subtitle: 'Бесшовная интеграция с ведущими мировыми перевозчиками и сетями',
-      desc: 'Наши стратегические альянсы с первоклассными судоходными и авиалиниями гарантируют, что DDNZ Global предоставляет наиболее конкурентоспособные ставки и приоритетное выделение места для вашего важного груза.'
+      desc: 'Наши стратегические альянсы с первоклассными судоходными и авиалиниями гарантируют, что Heaven Born предоставляет наиболее конкурентоспособные ставки и приоритетное выделение места для вашего важного груза.'
     },
     footer: {
       slogan: '"29 лет превосходства и честности в логистике. Ваш стратегический партнер."',
@@ -472,7 +472,7 @@ export const translations = {
       privacy: 'Политика конфиденциальности',
       terms: 'Условия использования',
       experts: 'Специалисты по NEV и SCM',
-      rights: '© 2024 DDNZ Global. Все права защищены.'
+      rights: '© 2026 Heaven Born International Freight. Все права защищены. DDNZ Global является премиальным брендом управления поставками, управляемым Heaven Born.'
     }
   },
   fr: {
@@ -553,7 +553,7 @@ export const translations = {
       stats: {
         years: "Années d'activité",
         clients: 'Clients Satisfaits',
-        shipments: 'Expéditions Réalisées',
+        shipments: 'Volume TEU Expédié',
         projects: 'Projets Stratégiques',
         desc: '"Un héritage d\'intégrité et d\'excellence. Depuis près de trois décennies, DDNZ Global est l\'épine dorsale de confiance des chaînes logistiques complexes."'
       },
@@ -665,7 +665,7 @@ export const translations = {
       adviceTitle: 'Besoin d\'un conseil personnalisé ?',
       adviceSubtitle: 'Nos experts sont prêts à analyser vos besoins logistiques spécifiques.',
       contactExpert: 'Contacter un expert',
-      hubLabel: 'ACTUALITÉS GLOBALES DDNZ',
+      hubLabel: 'ACTUALITÉS GLOBALES HEAVEN BORN',
       hubTitle: "Actualités et Analyses de l'Industrie",
       hubSubtitle: "Accédez aux directives locales, aux délais d'expédition, aux changements réglementaires et aux informations de première main sur la chaîne d'approvisionnement.",
       showAll: '🏷️ Afficher toutes les catégories',
@@ -679,7 +679,7 @@ export const translations = {
           summary: "Explorez les tendances du marché et les stratégies pour naviguer dans les fluctuations des coûts d'expédition entre la Chine et l'Amérique du Sud."
         },
         "2": {
-          title: "La sécurité d'abord : Comment DDNZ gère les expéditions de NEV et de batteries",
+          title: "La sécurité d'abord : Comment Heaven Born gère les expéditions de NEV et de batteries",
           summary: "Les véhicules à énergie nouvelle et les systèmes de stockage nécessitent une gestion spécialisée des marchandises dangereuses."
         },
         "3": {
@@ -691,7 +691,7 @@ export const translations = {
     partners: {
       title: 'Approuvé par les leaders mondiaux',
       subtitle: 'Intégré de manière transparente aux principaux transporteurs et réseaux mondiaux',
-      desc: 'Nos alliances stratégiques avec les meilleures compagnies maritimes et aériennes garantissent que DDNZ Global offre les tarifs les plus compétitifs et des allocations d\'espace prioritaires pour votre cargaison critique.'
+      desc: 'Nos alliances stratégiques avec les meilleures compagnies maritimes et aériennes garantissent que Heaven Born offre les tarifs les plus compétitifs et des allocations d\'espace prioritaires pour votre cargaison critique.'
     },
     footer: {
       slogan: '"29 ans d\'excellence et d\'intégrité logistique. Votre partenaire stratégique."',
@@ -709,7 +709,7 @@ export const translations = {
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d\'utilisation',
       experts: 'Experts spécialisés NEV & SCM',
-      rights: '© 2024 DDNZ Global. Tous droits réservés.'
+      rights: '© 2026 Heaven Born International Freight. Tous droits réservés. DDNZ Global est une marque de gestion de chaîne d\'approvisionnement premium opérée par Heaven Born.'
     }
   },
   zh: {
@@ -790,11 +790,11 @@ export const translations = {
       stats: {
         years: '年行业深耕储备',
         clients: '全球活跃老客户',
-        shipments: '已妥投国际货载',
+        shipments: '已妥投集装箱量 (TEU)',
         projects: '战略承运项目案例',
-        desc: '“近三十年的信任重托。华正邦泰国际货运（DDNZ Global）是复杂跨国供应链的坚强后盾，以严谨细节成就百万次货运的安全嘱托。”'
+        desc: '“近三十年的信任重托。华正邦泰国际物流始于1997年，是复杂跨国供应链的坚强后盾。专属供应链业务线 DDNZ Global（由华正邦泰赋能）提供领先的一站式采购与物流解决方案，不负每一次长途相托。”'
       },
-      heritage: { title: '29载全球资源传承', desc: '自1997年起，我们见证并协助多国企业共谱商贸篇章，深耕全球可靠而弹性的承运网络。' },
+      heritage: { title: '29载全球资源传承', desc: '作为一家拥有近30年经验的供应链合作伙伴，华正邦泰国际物流始终致力于将传统工匠精神与现代高效物流完美融合。我们自1997年起深耕全球可靠而弹性的承运网络，协助多国企业共谱商贸篇章。' },
       nev: { title: '新能源与九类危险品行家', desc: '把握绿色转型，提供储能系统(ESS)及电动汽车(EV)的整套合规和高标准包装与出运保障。' },
       infra: { title: '实体自营仓储与财务安全', desc: '在广州和香港自营中转枢纽和分拨仓，结合香港合规财务通道，全方位防范供应链中断及结算风险。' },
       resilience: { title: '长红交付与温情关怀', desc: '在危机时期，我们全力开辟紧急通道包机包列，以强大的物流底气为客户撑起安全屏障。' }
@@ -803,7 +803,7 @@ export const translations = {
       title: '为什么选择我们',
       subtitle: '集深厚经验、自营实体和全球清关网路于一体的放心之选',
       label: '我们的优势',
-      strength: '华正邦泰（DDNZ）的绝对优势',
+      strength: '华正邦泰（Heaven Born）的绝对优势',
       industry: '相比同行劣势',
       c1: { title: '端到端自主掌控不外包', desc: '我们自营仓库、车队和报关中转行，保障流程严密配合，杜绝中间流失。', vs: '拼凑型货代拼箱，极度依赖多层外包导致信息延误和丢货风险。' },
       c2: { title: '资深项目专家对接服务', desc: '为每个重要客户配有专家管家，即时跟进特需，随时应对突发。', vs: '全自动化工单，机械式冷漠客服或由不成熟经验新人套用模板。' },
@@ -892,7 +892,7 @@ export const translations = {
       classHeavy: '重货按实际毛重计费',
       classLight: '轻抛泡货按泡积测算计费',
       modeLabel: '海空陆模式',
-      waTemplate: '你好，华正邦泰（DDNZ）！我刚在官网计算了费用。我的货物有 {cbm} CBM / {weight} KG，打算发往 {destination}。算出来属于{class}。我想了解最终的折扣海运价？',
+      waTemplate: '你好，华正邦泰（Heaven Born）！我刚在官网计算了费用。我的货物有 {cbm} CBM / {weight} KG，打算发往 {destination}。算出来属于{class}。我想了解最终的折扣海运价？',
     },
     insights: {
       title: '物流趋势与跨国贸易实操分享',
@@ -900,9 +900,9 @@ export const translations = {
       label: '行业洞见',
       readMore: '阅读全文',
       adviceTitle: '需要专业的供应链一对一解惑？',
-      adviceSubtitle: '华正邦泰（DDNZ）高级物流顾问时刻为您排忧解难。',
+      adviceSubtitle: '华正邦泰（Heaven Born）高级物流顾问时刻为您排忧解难。',
       contactExpert: '点击直通专家进行深度方案规划',
-      hubLabel: '华正邦泰 DDNZ GLOBAL 前沿资讯',
+      hubLabel: '华正邦泰 HEAVEN BORN GLOBAL 前沿资讯',
       hubTitle: '海关通关、运力预测及港口实时情报',
       hubSubtitle: '获取由资深报关员与项目运力专家出具的一线实操作报告。',
       showAll: '🏷️ 切换全品类情报',
@@ -916,8 +916,8 @@ export const translations = {
           summary: "分析近期美西、美东及南美通关和塞港形势，为中资出海企业献策如何提前锁定运力、规避超期滞箱费。"
         },
         "2": {
-          title: "安全大于天：新能源整车及大型储能系统的长途多式联运实战指南",
-          summary: "针对 Class 9 类储能集装箱及商用车，分享 华正邦泰（DDNZ）实操出口报关规范和独特的加固技术防范海上自燃。"
+          title: "安全与效率并重：重型新能源项目欧洲方向首航大捷",
+          summary: "上周，华正邦泰国际物流的项目工程团队成功为一个‘重量级’巨无霸的新能源项目开启了前往欧洲的处女航。这不仅仅是移动一个箱子，更是华正邦泰在攻克多维度物流谜题上的又一次实力证明。面对进入欧盟的复杂货物（能源存储、重型设备、高价值受管制货物），华正邦泰国际物流凭借深厚的合规经验，为您打通物流、海关与项目执行的全链路，确保货物安全触达。"
         },
         "3": {
           title: "时效交付：商业厨房重件设备中欧卡航15天神速妥投波兰全纪实",
@@ -931,7 +931,7 @@ export const translations = {
       desc: '我们以深厚资质和香港、大湾区核心通道，与一众巨头保持极佳运价合作，保障不抛货、稳定抢舱。'
     },
     footer: {
-      slogan: '“华正邦泰国际货运 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
+      slogan: '“华正邦泰国际物流 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
       hq: '广州自营总部',
       hq_addr: '中国广东省广州市白云区云城东路云城街启福路1-10号联富大厦6楼6025-6027室',
       hk: '香港核心金融办公室',
@@ -946,7 +946,7 @@ export const translations = {
       privacy: '保障隐私声明条款',
       terms: '一般承运基本商业条款',
       experts: '新能源与合规清关资深专家团',
-      rights: '© 2024 华正邦泰 DDNZ Global。保留最终解释及所有相关版权。'
+      rights: '© 2026 华正邦泰国际物流（Heaven Born International Freight）。保留所有权利。DDNZ Global 是由华正邦泰自营运营的专属供应链管理服务品牌。'
     }
   }
 };

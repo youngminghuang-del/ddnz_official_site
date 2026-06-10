@@ -238,11 +238,11 @@ export default function WhoWeAre() {
             <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.years')}</div>
           </div>
           <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1.5k</div>
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">700+</div>
             <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.clients')}</div>
           </div>
           <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">1M+</div>
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight whitespace-nowrap">37,000+</div>
             <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.shipments')}</div>
           </div>
           <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">

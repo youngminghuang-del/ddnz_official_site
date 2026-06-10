@@ -6,7 +6,7 @@ import { trackEvent } from '../lib/utils';
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<LegalType>(null);
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   const handleContactClick = (method: string) => {
     trackEvent('contact_method_click', { 'method': method });
@@ -24,12 +24,32 @@ export default function Footer() {
             <div>
               <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
                 <img 
-                  src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png" 
-                  alt="DDNZ Global Logo" 
+                  src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/heaven_born_logo_wing_transparent.png" 
+                  alt="Heaven Born International Freight Logo" 
                   loading="lazy"
                   className="h-8 md:h-10 w-auto opacity-90"
                 />
-                <span className="text-xl md:text-2xl font-bold text-white tracking-tight font-sans text-nowrap">DDNZ Global</span>
+                <div className="flex flex-col select-none">
+                  {language === 'zh' ? (
+                    <>
+                      <span className="text-lg md:text-xl font-black tracking-tight leading-none text-white font-sans">
+                        华正邦泰
+                      </span>
+                      <span className="text-[9px] md:text-[10px] tracking-[0.25em] font-bold uppercase text-purple-300 font-sans mt-0.5">
+                        国际物流
+                      </span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="text-lg md:text-xl font-extrabold tracking-tight leading-none text-white font-sans">
+                        Heaven Born
+                      </span>
+                      <span className="text-[8px] md:text-[9px] tracking-[0.12em] font-semibold uppercase text-purple-300 font-sans mt-1 whitespace-nowrap">
+                        International Freight
+                      </span>
+                    </>
+                  )}
+                </div>
               </div>
               <p className="text-purple-300 text-xs md:text-sm leading-relaxed max-w-xs italic lg:not-italic font-medium">
                 {t('footer.slogan')}
