@@ -2155,7 +2155,7 @@ export default function ServiceDetail() {
             { title: 'Modern Equipment', desc: 'State-of-the-art material handling equipment with heavy cranes, safety lifts, and automated sorting conveyor technology.' }
           ],
           specs: [
-            { label: 'Total Storage Space', value: '100,000+ sq ft' },
+            { label: 'Total Storage Space', value: '21,500+ sq ft' },
             { label: 'Ceiling Height', value: '30+ feet' },
             { label: 'Loading Docks', value: '50+ bays' },
             { label: 'Operating Hours', value: '24/7' },
@@ -2264,7 +2264,7 @@ export default function ServiceDetail() {
             { title: '精锐重载调车设备', desc: '配备重型高升叉车、机械爪吊整套起卸，全自动分流流水轨线极速转运。' }
           ],
           specs: [
-            { label: '总仓储及集装容积', value: '100,000+ 平方英尺' },
+            { label: '总仓储及集装容积', value: '2000+ 平方米' },
             { label: '仓库净挑高', value: '30+ 英尺 / 11+ 米' },
             { label: '装卸坞口挡板车位', value: '50+ 个重卡车位' },
             { label: '周转营运时间', value: '24/7/365 全天候' },
@@ -2373,7 +2373,7 @@ export default function ServiceDetail() {
             { title: 'Современное оборудование', desc: 'Фирменные штабелеры, автоматические системы сортировки и ленты быстрой транспортировки тяжелого оборудования.' }
           ],
           specs: [
-            { label: 'Общая площадь складов', value: '100,000+ кв. футов' },
+            { label: 'Общая площадь складов', value: '21 500+ кв. футов' },
             { label: 'Высота потолков складов', value: '30+ футов / 9+ метров' },
             { label: 'Количество погрузочных доков', value: '50+ ворот' },
             { label: 'Режим работы терминала', value: '24/7/365 без выходных' },
@@ -2482,7 +2482,7 @@ export default function ServiceDetail() {
             { title: 'Équipements de Manutention High-Tech', desc: 'Flotte de chariots élévateurs modernes à grande portée, ponts roulants de chargement et convoyeurs intégrés.' }
           ],
           specs: [
-            { label: 'Surface Totale de Stockage', value: '100 000+ pieds carrés' },
+            { label: 'Surface Totale de Stockage', value: '21 500+ pieds carrés' },
             { label: 'Hauteur sous Plafond', value: '30+ pieds / 9+ mètres' },
             { label: 'Docks de Chargement', value: '50+ quais poids lourds' },
             { label: 'Heures d\'Ouverture', value: '24h/24 & 7j/7' },

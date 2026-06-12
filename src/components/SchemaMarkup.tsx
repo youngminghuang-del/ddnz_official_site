@@ -54,7 +54,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'name': language === 'zh' ? '华正邦泰（广州总部）' : 'DDNZ Global Logistics (Guangzhou HQ)',
         'image': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
         'url': 'https://www.ddnzglobal.com',
-        'telephone': '+86-13800000000', // standard representational phone or email
+        'telephone': '+86-20-3654-6132',
         'email': 'partnership@ddnzglobal.com',
         'address': {
           '@type': 'PostalAddress',

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Mail, Globe, Clock, FileText, Shield, Linkedin } from 'lucide-react';
+import { Mail, Globe, Clock, FileText, Shield, Linkedin, Phone } from 'lucide-react';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
@@ -35,8 +35,8 @@ export default function Footer() {
                       <span className="text-lg md:text-xl font-black tracking-tight leading-none text-white font-sans">
                         华正邦泰
                       </span>
-                      <span className="text-[9px] md:text-[10px] tracking-[0.25em] font-bold uppercase text-purple-300 font-sans mt-0.5">
-                        国际物流
+                      <span className="text-[10px] md:text-xs tracking-[0.2em] font-black uppercase text-purple-300 font-sans mt-1">
+                        国际货运
                       </span>
                     </>
                   ) : (
@@ -44,7 +44,7 @@ export default function Footer() {
                       <span className="text-lg md:text-xl font-extrabold tracking-tight leading-none text-white font-sans">
                         Heaven Born
                       </span>
-                      <span className="text-[8px] md:text-[9px] tracking-[0.12em] font-semibold uppercase text-purple-300 font-sans mt-1 whitespace-nowrap">
+                      <span className="text-[9px] md:text-xs tracking-[0.08em] font-black uppercase text-purple-300 font-sans mt-1 whitespace-nowrap">
                         International Freight
                       </span>
                     </>
@@ -56,6 +56,14 @@ export default function Footer() {
               </p>
             </div>
             <div className="pt-1 flex flex-col gap-3">
+              <a 
+                href="tel:+862036546132" 
+                onClick={() => handleContactClick('phone')}
+                className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
+              >
+                <Phone className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors" />
+                {language === 'zh' ? '020 - 3654 6132' : '+86 20 3654 6132'}
+              </a>
               <a 
                 href="mailto:partnership@ddnzglobal.com" 
                 onClick={() => handleContactClick('email')}
@@ -69,9 +77,9 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleContactClick('linkedin')}
-                className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
+                className="inline-flex items-center text-white hover:text-[#FF8A00] transition-colors group font-medium text-xs md:text-sm animate-pulse-short"
               >
-                <Linkedin className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors" />
+                <Linkedin className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors animate-pulse-short" />
                 LinkedIn: DDNZ Global Logistics &amp; Supply Chain
               </a>
             </div>

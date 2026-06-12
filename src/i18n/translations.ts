@@ -65,7 +65,7 @@ export const translations = {
       warehouse: {
         title: 'Warehouse & Fulfillment',
         highlights: [
-          '100,000+ sq ft Secure Facility',
+          '21,500+ sq ft Secure Facility',
           'WMS Real-time Inventory',
           'Kitting & Cross-Docking'
         ],
@@ -302,7 +302,7 @@ export const translations = {
       warehouse: {
         title: 'Складские услуги',
         highlights: [
-          'Безопасный склад более 100 000 кв. футов',
+          'Безопасный склад более 21 500 кв. футов',
           'WMS-система складского учета в реальном времени',
           'Комплектация заказов и кросс-докинг'
         ],
@@ -539,7 +539,7 @@ export const translations = {
       warehouse: {
         title: 'Entreposage & Distribution',
         highlights: [
-          'Entrepôts hautement sécurisés de +100 000 pi²',
+          'Entrepôts hautement sécurisés de +21 500 pi²',
           'Gestion de stock WMS en temps réel',
           'Tri, emballage et cross-docking agile'
         ],
@@ -776,7 +776,7 @@ export const translations = {
       warehouse: {
         title: '仓储与订单履约',
         highlights: [
-          '十万平方英尺高规安防仓库',
+          '2000平方米高规安防仓库',
           'WMS系统云端实时库存管理',
           '拼箱集拼与交叉转运作业'
         ],

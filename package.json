@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "npm run fetch-notion && vite --host 0.0.0.0 --port 3000",
     "fetch-notion": "tsx scripts/fetch-notion.ts",
-    "build": "npm run fetch-notion && vite build",
+    "build": "npm run fetch-notion && vite build && tsx scripts/generate-static-pages.ts",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
@@ -35,6 +35,7 @@
     "@types/node": "^22.14.0",
     "autoprefixer": "^10.4.21",
     "esbuild": "^0.28.0",
+    "gh-pages": "^6.3.0",
     "tailwindcss": "^4.1.14",
     "tsx": "^4.22.3",
     "typescript": "~5.8.2",

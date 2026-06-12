@@ -133,14 +133,14 @@ export default function Navbar() {
                 ) : (
                   <>
                     <span className={cn(
-                      "text-sm sm:text-base md:text-[15px] lg:text-xl xl:text-2xl font-extrabold tracking-tight leading-none transition-all font-sans",
+                      "text-base sm:text-lg md:text-[17px] lg:text-2xl xl:text-3xl font-black tracking-tight leading-none transition-all font-sans",
                       scrolled ? "text-slate-900" : "text-white"
                     )}>
                       Heaven Born
                     </span>
                     <span className={cn(
-                      "text-[7px] sm:text-[8px] md:text-[7px] lg:text-[10px] xl:text-xs tracking-[0.05em] lg:tracking-[0.12em] xl:tracking-[0.14em] font-semibold uppercase transition-all font-sans mt-0.5 lg:mt-1 whitespace-nowrap",
-                      scrolled ? "text-slate-500" : "text-white/80"
+                      "text-[8px] sm:text-[9.5px] md:text-[9px] lg:text-[11px] xl:text-[13px] tracking-[0.03em] lg:tracking-[0.08em] xl:tracking-[0.1em] font-black uppercase transition-all font-sans mt-1 whitespace-nowrap",
+                      scrolled ? "text-purple-600 font-bold" : "text-white/90"
                     )}>
                       International Freight
                     </span>

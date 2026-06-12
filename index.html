@@ -22,6 +22,7 @@
           console.warn("Could not patch window.fetch property", e);
         }
         
+        // Suppress benign ResizeObserver warning messages
         window.addEventListener('error', function(e) {
           if (e.message && (e.message.indexOf('ResizeObserver') >= 0 || e.message.indexOf('Resize observer') >= 0)) {
             e.stopImmediatePropagation();
@@ -48,29 +49,28 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
+
       gtag('config', 'G-TZD9QT4W8H');
     </script>
     
     <!-- Primary Meta Tags -->
-    <title>Heaven Born &amp; DDNZ Supply Chain | Guangzhou Freight Forwarder Since 2005</title>
-    <meta name="msvalidate.01" content="F15382AABC8F95FFE99D37A0410B32DD" />
-    <meta name="baidu-site-verification" content="codeva-WLDJNwXBr2" />
-    <meta name="title" content="Heaven Born &amp; DDNZ Supply Chain | Guangzhou Freight Forwarder Since 2005" />
-    <meta name="description" content="Heaven Born International Freight &amp; DDNZ Supply Chain: Guangzhou-based freight forwarder since 2005. Sea/air freight, Amazon FBA head haul, warehousing for global trade." />
-    <meta name="keywords" content="Heaven Born, DDNZ, Guangzhou freight forwarder, China sea freight, air freight, FBA head haul, warehousing, global logistics, supply chain" />
+    <title>DDNZ Global | China Sourcing, Sea Freight & Global Logistics</title>
+    <meta name="title" content="DDNZ Global | China Sourcing, Sea Freight & Global Logistics" />
+    <meta name="description" content="Optimize your China supply chain with DDNZ Global. We provide expert China sourcing, reliable sea freight forwarding, exclusive Canton Fair logistics support, and comprehensive global supply chain solutions." />
+    <meta name="keywords" content="Global Logistics, Freight Forwarding, Supply Chain Solutions, China Sourcing, Sea Freight, Canton Fair Logistics, Shipping from China, Guangzhou Forwarder, Cargo Management, DDNZ Global" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.ddnzglobal.com/" />
-    <meta property="og:title" content="Heaven Born &amp; DDNZ Supply Chain | Guangzhou Freight Forwarder Since 2005" />
-    <meta property="og:description" content="Heaven Born International Freight &amp; DDNZ Supply Chain: Guangzhou-based freight forwarder since 2005. Sea/air freight, Amazon FBA head haul, warehousing for global trade." />
+    <meta property="og:title" content="DDNZ Global | China Sourcing, Sea Freight & Global Logistics" />
+    <meta property="og:description" content="Optimize your China supply chain with DDNZ Global. We provide expert China sourcing, reliable sea freight forwarding, exclusive Canton Fair logistics support, and comprehensive global supply chain solutions." />
     <meta property="og:image" content="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/hero_gz_nansha_port.png" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.ddnzglobal.com/" />
-    <meta property="twitter:title" content="Heaven Born &amp; DDNZ Supply Chain | Guangzhou Freight Forwarder Since 2005" />
-    <meta property="twitter:description" content="Heaven Born International Freight &amp; DDNZ Supply Chain: Guangzhou-based freight forwarder since 2005. Sea/air freight, Amazon FBA head haul, warehousing for global trade." />
+    <meta property="twitter:title" content="DDNZ Global | China Sourcing, Sea Freight & Global Logistics" />
+    <meta property="twitter:description" content="Optimize your China supply chain with DDNZ Global. We provide expert China sourcing, reliable sea freight forwarding, exclusive Canton Fair logistics support, and comprehensive global supply chain solutions." />
     <meta property="twitter:image" content="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/hero_gz_nansha_port.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -79,8 +79,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   </head>
   <body>
-    <h1 style="display:none;">Heaven Born &amp; DDNZ Supply Chain – Guangzhou Freight Forwarder Since 2005</h1>
     <div id="root"></div>
     <script type="module" src="src/main.tsx"></script>
   </body>
 </html>
+
