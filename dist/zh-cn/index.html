@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/favicon_ddnzglobal_32x32.png" />
+    <link rel="canonical" href="https://www.ddnzglobal.com/zh-cn" />
+    
+    <!-- Defensive Sandboxing Patches -->
+    <script>
+      (function() {
+        try {
+          var originalFetch = window.fetch;
+          var customFetch = originalFetch;
+          Object.defineProperty(window, 'fetch', {
+            configurable: true,
+            enumerable: true,
+            get: function() { return customFetch; },
+            set: function(v) { customFetch = v; }
+          });
+        } catch (e) {
+          console.warn("Could not patch window.fetch property", e);
+        }
+        
+        // Suppress benign ResizeObserver warning messages
+        window.addEventListener('error', function(e) {
+          if (e.message && (e.message.indexOf('ResizeObserver') >= 0 || e.message.indexOf('Resize observer') >= 0)) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
+          }
+        });
+      })();
+    </script>
+
+    <!-- SPA Router Redirect Recovery for GitHub Pages -->
+    <script type="text/javascript">
+      (function(){
+        var redirect = window.location.search.match(/[?&]p=([^&]*)/);
+        if (redirect) {
+          var path = redirect[1].replace(/~and~/g, '&');
+          window.history.replaceState(null, null, window.location.pathname.slice(0, -1) + path + window.location.hash);
+        }
+      })();
+    </script>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZD9QT4W8H"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-TZD9QT4W8H');
+    </script>
+    
+    <!-- Primary Meta Tags -->
+    <title>华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运</title>
+    <meta name="title" content="华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运" />
+    <meta name="description" content="广州靠谱实力出口货运代理，华正邦泰国际物流联合 DDNZ 供应链为您提供专业的中国商品采购代理、广州货代、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 及全球一站式跨境物流和海外仓增值支持。" />
+    <meta name="keywords" content="广州货代, 广州靠谱货代, 实力出口货代, 华正邦泰国际物流, DDNZ供应链, 广州出口货运代理, 广州集装箱海运, 广州空运专线, 中国商品采购代理, 国际货运代理" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.ddnzglobal.com/" />
+    <meta property="og:title" content="华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运" />
+    <meta property="og:description" content="广州靠谱实力出口货运代理，华正邦泰国际物流联合 DDNZ 供应链为您提供专业的中国商品采购代理、广州货代、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 及全球一站式跨境物流和海外仓增值支持。" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/hero_gz_nansha_port.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://www.ddnzglobal.com/" />
+    <meta property="twitter:title" content="DDNZ Global | China Sourcing, Sea Freight & Global Logistics" />
+    <meta property="twitter:description" content="Optimize your China supply chain with DDNZ Global. We provide expert China sourcing, reliable sea freight forwarding, exclusive Canton Fair logistics support, and comprehensive global supply chain solutions." />
+    <meta property="twitter:image" content="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/hero_gz_nansha_port.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://raw.githubusercontent.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="module" crossorigin src="/assets/index-0P2PzSdg.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-_cHonO5a.css">
+    <meta name="twitter:title" content="华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运" />
+  <meta name="twitter:description" content="广州靠谱实力出口货运代理，华正邦泰国际物流联合 DDNZ 供应链为您提供专业的中国商品采购代理、广州货代、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 及全球一站式跨境物流和海外仓增值支持。" />
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
+
