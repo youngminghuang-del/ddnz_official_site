@@ -222,7 +222,7 @@ export const translations = {
     footer: {
       slogan: '"29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions."',
       hq: 'Guangzhou HQ',
-      hq_addr: 'Room 6025 - 6027, 6th Floor, Lianfu Building, No. 1-10 Qifu Road, Yuncheng Street, Baiyun District, Guangzhou, China',
+      hq_addr: '6th Floor, Area C, Phase II, International Unit Creative Park, Huangshi Street, Baiyun District, Guangzhou, China',
       hk: 'Hong Kong Office',
       hk_addr: '5F, Sun Hung Kai Centre, 38 Russell Street, Causeway Bay, Hong Kong, China',
       hours: '24/7 Support',
@@ -459,7 +459,7 @@ export const translations = {
     footer: {
       slogan: '"29 лет превосходства и честности в логистике. Ваш стратегический партнер."',
       hq: 'Штаб-квартира в Гуанчжоу',
-      hq_addr: 'Офис 6025 - 6027, 6-й этаж, здание Lianfu, № 1-10 Qifu Road, улица Yuncheng, район Baiyun, Гуанчжоу, Китай',
+      hq_addr: '6-й этаж, Зона C, Фаза II, Креативный парк International Unit, улица Huangshi, район Baiyun, Гуанчжоу, Китай',
       hk: 'Гонконгский офис',
       hk_addr: '5F, Центр Sun Hung Kai, 38 Russell Street, Козуэй-Бей, Гонконг, Китай',
       hours: 'Поддержка 24/7',
@@ -696,7 +696,7 @@ export const translations = {
     footer: {
       slogan: '"29 ans d\'excellence et d\'intégrité logistique. Votre partenaire stratégique."',
       hq: 'Siège de Guangzhou',
-      hq_addr: 'Bureau 6025 - 6027, 6e étage, bâtiment Lianfu, n° 1-10 Qifu Road, rue Yuncheng, district de Baiyun, Guangzhou, Chine',
+      hq_addr: '6e étage, Zone C, Phase II, Parc Créatif International Unit, Rue Huangshi, District de Baiyun, Guangzhou, Chine',
       hk: 'Bureau de Hong Kong',
       hk_addr: '5F, centre Sun Hung Kai, 38 Russell Street, Causeway Bay, Hong Kong, Chine',
       hours: 'Support 24/7',
@@ -933,7 +933,7 @@ export const translations = {
     footer: {
       slogan: '“华正邦泰国际物流 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
       hq: '广州自营总部',
-      hq_addr: '中国广东省广州市白云区云城东路云城街启福路1-10号联富大厦6楼6025-6027室',
+      hq_addr: '广东省广州市白云区黄石街道国际单位创意园二期-C区6楼',
       hk: '香港核心金融办公室',
       hk_addr: '中国香港湾仔罗素街38号新鸿基中心5楼',
       hours: '24小时全年全天候技术服务支持',

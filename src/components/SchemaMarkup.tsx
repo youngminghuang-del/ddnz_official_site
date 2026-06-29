@@ -59,8 +59,8 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'address': {
           '@type': 'PostalAddress',
           'streetAddress': language === 'zh'
-            ? '云城东路云城街启福路1-10号联富大厦6楼6025-6027室'
-            : 'Room 6025-6027, 6F Lianfu Building, No 1-10 Qifu Road, Yuncheng Street, Baiyun District',
+            ? '黄石街道国际单位创意园二期-C区6楼'
+            : '6th Floor, Area C, Phase II, International Unit Creative Park, Huangshi Street, Baiyun District',
           'addressLocality': 'Guangzhou',
           'addressRegion': 'Guangdong',
           'postalCode': '510000',
