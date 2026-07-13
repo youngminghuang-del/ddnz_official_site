@@ -89,14 +89,41 @@ export const translations = {
       resilience: { title: 'Unwavering Resilience & Care', desc: 'When global networks falter, we deliver. Proven during the pandemic by prioritizing critical supplies, our network is built to absorb shocks and protect your business interests.' }
     },
     why_ddnz: {
-      title: 'WHY CHOOSE US',
+      title: 'Why Fortune 500 Choose Heaven Born',
       subtitle: 'Delivering excellence through experience and global connectivity',
       label: 'OUR STRENGTH',
       strength: 'Our Strength',
       industry: 'Industry Standard',
-      c1: { title: 'End-to-End Absolute Control', desc: 'We own our warehouses, cross-border fleets, and customs brokerages. This ensures zero handoffs, absolute security, and process integrity.', vs: 'Fragmented forwarding; reliance on third-party vendors leading to risk and delays.' },
-      c2: { title: 'Dedicated Project Managers', desc: 'Every client is assigned a Senior Expert. You get strategic advice, proactive problem-solving, and a 24/7 direct communication line.', vs: 'Call centers, automated ticketing, and Junior operators following scripts.' },
-      c3: { title: 'Hazardous / NEV Mastery', desc: 'Certified and experienced in Class 9 DG. We routinely handle Electric Vehicles and ESS units with airtight compliance and structural securing.', vs: 'Standard cargo generalists who outsource DG compliance at a premium.' },
+      f1: {
+        title: '29 Years Professional Freight Forwarding Expert',
+        desc: 'We are expert for shipping any type of goods from China to the world. Including shipping by sea, air, and train.',
+        cta: 'Case study'
+      },
+      f2: {
+        title: 'Warehousing',
+        desc: 'Heaven Born provides long time free warehouse service, we have vast experience in container loading, and making sure your goods are safe, while you are saving money.',
+        cta: 'Check case study'
+      },
+      f3: {
+        title: 'Container Loading Supervision',
+        desc: 'We provide supervision while your supplier loads the goods into the container. You will receive pictures and videos after the loading is finished.',
+        cta: 'Check case study'
+      },
+      f4: {
+        title: 'Competitive Rate',
+        desc: 'Heaven Born can get good prices from shipping companies and airlines because of our bulk shipping.',
+        cta: 'Check case study'
+      },
+      f5: {
+        title: 'Professional Customs Clearance Service',
+        desc: 'Our professional team makes sure customs clearance is always smooth. They provide an accurate product classification, handle all the paperwork, are always up to date with Chinese customs policy, and have a good relationship with customs officers in China.',
+        cta: 'Check case study'
+      },
+      f6: {
+        title: '24/7 Online Support & Free Quote',
+        desc: 'Our team will be online 24/7 to provide you the best support. Get a free quote or ask any questions.',
+        cta: 'Check case study'
+      },
       edge: {
         e1: { title: 'Licensed by GACC', desc: 'Licensed customs broker' },
         e2: { title: 'Long Experience', desc: '29+ Years of Experience' },
@@ -326,14 +353,41 @@ export const translations = {
       resilience: { title: 'Устойчивость и забота', desc: 'Когда глобальные сети дают сбой, мы доставляем. Наша сеть создана для амортизации потрясений и защиты ваших интересов.' }
     },
     why_ddnz: {
-      title: 'ПОЧЕМУ ВЫБИРАЮТ НАС?',
-      subtitle: 'Достижение совершенства благодаря опыту и связям',
-      label: 'НАШИ СИЛЬНЫЕ СТОРОНЫ',
-      strength: 'Наши сильные стороны',
+      title: 'Почему Fortune 500 выбирают Heaven Born',
+      subtitle: 'Превосходство благодаря колоссальному опыту и надежным глобальным связям',
+      label: 'НАШИ ПРЕИМУЩЕСТВА',
+      strength: 'Абсолютные преимущества Heaven Born',
       industry: 'Отраслевой стандарт',
-      c1: { title: 'Сквозной 100% контроль', desc: 'Мы владеем складами, автопарками и таможенными брокерами. Это обеспечивает безопасность и целостность процесса на каждом этапе.', vs: 'Фрагментированное экспедирование; зависимость от третьих лиц.' },
-      c2: { title: 'Выделенные проект-менеджеры', desc: 'За каждым клиентом закреплен старший эксперт. Вы получаете стратегические советы и круглосучную прямую связь.', vs: 'Колл-центры, автоматические тикеты и младшие операторы.' },
-      c3: { title: 'Мастерство в Опасных грузах (NEV)', desc: 'Сертифицированы по классу 9 DG. Мы регулярно обрабатываем электромобили и установки ESS с полным соблюдением стандартов.', vs: 'Широкопрофильные логисты, передающие опасные грузы на аутсорс.' },
+      f1: {
+        title: '29 лет опыта в качестве ведущего экспедитора',
+        desc: 'Мы эксперты по доставке любых видов грузов из Китая по всему миру, включая морские, авиа- и железнодорожные перевозки.',
+        cta: 'Наш кейс'
+      },
+      f2: {
+        title: 'Бесплатное складское хранение',
+        desc: 'Heaven Born предоставляет долгосрочное бесплатное хранение на складе. Мы обладаем огромным опытом в погрузке контейнеров, гарантируя сохранность груза при экономии средств.',
+        cta: 'Подробнее'
+      },
+      f3: {
+        title: 'Надзор за погрузкой контейнеров',
+        desc: 'Мы ведем строгий надзор за процессом погрузки вашего товара в контейнеры. Вы получите полные фото- и видеоотчеты сразу по завершении.',
+        cta: 'Подробнее'
+      },
+      f4: {
+        title: 'Конкурентоспособные тарифы',
+        desc: 'Heaven Born предлагает лучшие цены от судоходных линий и авиакомпаний благодаря нашему объему оптовых грузоперевозок.',
+        cta: 'Подробнее'
+      },
+      f5: {
+        title: 'Профессиональное таможенное оформление',
+        desc: 'Наша команда экспертов обеспечивает гладкую таможенную очистку. Мы точно классифицируем товары, ведем всю документацию и знаем таможенные тонкости Китая.',
+        cta: 'Подробнее'
+      },
+      f6: {
+        title: 'Поддержка 24/7 и бесплатный расчет',
+        desc: 'Наша команда работает 24 часа в сутки, 7 дней в неделю, чтобы оказать вам всестороннюю поддержку. Запросите бесплатный расчет или задайте вопрос.',
+        cta: 'Подробнее'
+      },
       edge: {
         e1: { title: 'Лицензия GACC', desc: 'Лицензированный брокер' },
         e2: { title: 'Большой Опыт', desc: '29+ лет опыта' },
@@ -563,14 +617,41 @@ export const translations = {
       resilience: { title: 'Résilience Inébranlable', desc: "Quand les réseaux mondiaux s'effondrent, nous livrons. Conçu pour absorber les chocs et protéger vos intérêts." }
     },
     why_ddnz: {
-      title: 'POURQUOI NOUS CHOISIR ?',
-      subtitle: 'Livrer l\'excellence grâce à l\'expérience et la connectivité',
+      title: 'Pourquoi Fortune 500 choisit Heaven Born',
+      subtitle: 'Offrir l\'excellence grâce à notre expérience inégalée et notre connectivité mondiale',
       label: 'NOTRE FORCE',
       strength: 'Notre Force',
-      industry: 'Standard de l\'Industrie',
-      c1: { title: 'Contrôle Absolu de Bout en Bout', desc: 'Nous possédons nos entrepôts et flottes. Cela assure zéro transfert non géré, une sécurité absolue.', vs: 'Expédition fragmentée ; dépendance aux sous-traitants et retards.' },
-      c2: { title: 'Chefs de Projet Dédiés', desc: 'Chaque client se voit assigner un Expert Senior. Conseils stratégiques et ligne directe 24/7.', vs: "Centres d'appels, billets automatisés, opérateurs juniors." },
-      c3: { title: 'Maîtrise Dangereux / NEV', desc: 'Certifiés Classe 9 DG. Nous manipulons quotidiennement des véhicules électriques et systèmes ESS en totale conformité.', vs: 'Généralistes qui sous-traitent la conformité DG.' },
+      industry: 'Standard de l\'industrie',
+      f1: {
+        title: '29 Ans d\'Expertise en Fret International',
+        desc: 'Nous sommes des experts de l\'expédition de tous types de marchandises depuis la Chine vers le monde entier : maritime, aérien et ferroviaire.',
+        cta: 'Étude de cas'
+      },
+      f2: {
+        title: 'Entreposage Gratuit',
+        desc: 'Heaven Born offre un service d\'entreposage gratuit de longue durée. Nous maîtrisons le chargement et la sécurisation pour optimiser vos coûts de transport.',
+        cta: 'En savoir plus'
+      },
+      f3: {
+        title: 'Supervision du Chargement',
+        desc: 'We supervise loading your container from supplier. You will receive pictures and videos as soon as loading is complete.',
+        cta: 'En savoir plus'
+      },
+      f4: {
+        title: 'Tarifs Ultra-Compétitifs',
+        desc: 'Heaven Born obtient des tarifs préférentiels auprès des compagnies maritimes et aériennes grâce à nos volumes d\'expédition importants.',
+        cta: 'En savoir plus'
+      },
+      f5: {
+        title: 'Service de Dédouanement Professionnel',
+        desc: 'Notre équipe dédiée assure un dédouanement fluide et rapide. Nous gérons la classification de vos marchandises, l\'administration et suivons de près les politiques douanières chinoises.',
+        cta: 'En savoir plus'
+      },
+      f6: {
+        title: 'Support en Ligne 24/7 & Devis Gratuit',
+        desc: 'Notre équipe internationale est en ligne 24h/24 et 7j/7 pour répondre à toutes vos interrogations et vous fournir des devis personnalisés gratuits.',
+        cta: 'En savoir plus'
+      },
       edge: {
         e1: { title: 'Agréé par GACC', desc: 'Courtier en douane agréé' },
         e2: { title: 'Longue Expérience', desc: '+29 Ans d\'Expérience' },
@@ -800,14 +881,41 @@ export const translations = {
       resilience: { title: '长红交付与温情关怀', desc: '在危机时期，我们全力开辟紧急通道包机包列，以强大的物流底气为客户撑起安全屏障。' }
     },
     why_ddnz: {
-      title: '为什么选择我们',
+      title: '为什么500强选择华正邦泰',
       subtitle: '集深厚经验、自营实体和全球清关网路于一体的放心之选',
       label: '我们的优势',
       strength: '华正邦泰（Heaven Born）的绝对优势',
       industry: '相比同行劣势',
-      c1: { title: '端到端自主掌控不外包', desc: '我们自营仓库、车队和报关中转行，保障流程严密配合，杜绝中间流失。', vs: '拼凑型货代拼箱，极度依赖多层外包导致信息延误和丢货风险。' },
-      c2: { title: '资深项目专家对接服务', desc: '为每个重要客户配有专家管家，即时跟进特需，随时应对突发。', vs: '全自动化工单，机械式冷漠客服或由不成熟经验新人套用模板。' },
-      c3: { title: '成熟DG危险品及新能源操作', desc: '常态化承揽纯电池、储能系统和EV整车，严密固定和九类清关无忧。', vs: '普通货物快件商，缺乏九类危险品经验，被临时拒绝或罚没。' },
+      f1: {
+        title: '29年专业货运代理专家',
+        desc: '我们是将任何类型的货物从中国运往世界的专家。包括海运、空运和铁路运输。',
+        cta: '案例研究'
+      },
+      f2: {
+        title: '免费自营仓储',
+        desc: '华正邦泰提供长期免费仓储服务，我们在装柜及集拼装载方面拥有丰富经验，在为您节省运输资金的同时确保您的货物安全。',
+        cta: '查看案例研究'
+      },
+      f3: {
+        title: '专业装柜监装服务',
+        desc: '我们在您的供应商装货进入集装箱时提供现场监装和清点。装载完成后，您将即时收到高清照片和视频反馈。',
+        cta: '查看案例研究'
+      },
+      f4: {
+        title: '极具竞争力的大庄约价',
+        desc: '由于我们拥有庞大的货运量，华正邦泰可以直接从各大船东和航空公司获得极具价格竞争力的庄家约价。',
+        cta: '查看案例研究'
+      },
+      f5: {
+        title: '双清包税与专业海外清关',
+        desc: '我们的专业团队确保国内外口岸清关流程顺畅安全。提供精准的海关HS商品编码归类，熟稔进出口关税政策，多国口岸通关无忧。',
+        cta: '查看案例研究'
+      },
+      f6: {
+        title: '24/7 全天候在线支持与免费估价',
+        desc: '我们的国际运营团队全天候 24/7 在线，为您解答货运难题，即时提供透明、合理的免费物流运费报价及路线规划。',
+        cta: '查看案例研究'
+      },
       edge: {
         e1: { title: '海关AEO权威资质', desc: '持牌卓越报关' },
         e2: { title: '近30年积淀', desc: '29+ 年全球物流资深经验' },
