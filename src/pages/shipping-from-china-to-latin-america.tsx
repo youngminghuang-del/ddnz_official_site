@@ -553,6 +553,37 @@ export default function ShippingLatinAmerica() {
     }
   };
 
+  const getTransitTimes = () => {
+    if (selectedCountry === 'mexico') {
+      return {
+        sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
+        air: language === 'zh' ? '5 - 12 工作日' : '5 - 12 Days',
+        seaLabel: language === 'zh' ? '曼萨尼约 / 拉萨罗卡德纳斯海运整箱 (FCL)' : 'Manzanillo / Lázaro Cárdenas FCL',
+        seaDesc: language === 'zh' ? '一级直航海运服务' : 'Tier-1 Direct Ocean Sailings',
+        airLabel: language === 'zh' ? '墨西哥城 (MEX) 空运专线' : 'Mexico City (MEX) Air Express',
+        airDesc: language === 'zh' ? '自主清关与最后一公里派送' : 'Direct Clearance & Last-Mile Delivery'
+      };
+    } else if (selectedCountry === 'brazil') {
+      return {
+        sea: language === 'zh' ? '50 - 80 天' : '50 - 80 Days',
+        air: language === 'zh' ? '15 - 20 工作日' : '15 - 20 Days',
+        seaLabel: language === 'zh' ? '桑托斯海运快线 (Santos Express)' : 'Santos Sea Express',
+        seaDesc: language === 'zh' ? '避开合恩角恶劣气候的优化航线' : 'Optimized Cape Horn Avoidance Routing',
+        airLabel: language === 'zh' ? '圣保罗 (GRU) 空运专线' : 'São Paulo (GRU) Air Express',
+        airDesc: language === 'zh' ? '稳定排舱 DDP 门到门' : 'Stable Space Booking & DDP Door-to-Door'
+      };
+    } else {
+      return {
+        sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
+        air: language === 'zh' ? '12 - 18 工作日' : '12 - 18 Days',
+        seaLabel: language === 'zh' ? '布宜诺斯艾利斯海运快线' : 'Buenos Aires Sea Express',
+        seaDesc: language === 'zh' ? '双清包税送货上门' : 'Customs Cleared Door-to-Door',
+        airLabel: language === 'zh' ? '埃塞萨 (EZE) 空运专线' : 'Ezeiza (EZE) Air Express',
+        airDesc: language === 'zh' ? '稳定排舱 DDP 门到门' : 'Stable Space Booking & DDP Door-to-Door'
+      };
+    }
+  };
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -669,8 +700,10 @@ export default function ShippingLatinAmerica() {
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#FF8A00]/10 border border-[#FF8A00]/30 text-[#FF8A00] text-xs font-black tracking-widest uppercase">
                   🌎 DDNZ LATAM REGIONAL HUB
                 </span>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white">
-                  {spec.headline}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#FF8A00]">
+                    {spec.headline}
+                  </span>
                 </h1>
                 <div className="space-y-4">
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed font-medium">
@@ -696,15 +729,7 @@ export default function ShippingLatinAmerica() {
               </motion.div>
 
               {/* Quick SCM Meta Tags */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/[0.08]">
-                <div className="bg-white/[0.02] backdrop-blur-sm p-4 rounded-xl border border-white/[0.08]">
-                  <div className="flex items-center gap-1.5 text-[#FF8A00] text-xs font-black uppercase mb-1">
-                    <Clock className="w-4 h-4 shrink-0" />
-                    <span>{t('timeBadge')}</span>
-                  </div>
-                  <div className="text-xs sm:text-sm font-extrabold text-white leading-tight">{spec.transitDays}</div>
-                </div>
-
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/[0.08]">
                 <div className="bg-white/[0.02] backdrop-blur-sm p-4 rounded-xl border border-white/[0.08]">
                   <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-black uppercase mb-1">
                     <ShieldCheck className="w-4 h-4 shrink-0" />
@@ -714,7 +739,7 @@ export default function ShippingLatinAmerica() {
                   <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : 'Period'}: {spec.complianceRowVal}</div>
                 </div>
 
-                <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center col-span-2 sm:col-span-1">
+                <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center">
                   <button
                     onClick={() => {
                       const formElem = document.getElementById('latam-quote-form');
@@ -734,26 +759,26 @@ export default function ShippingLatinAmerica() {
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
             <div className="lg:col-span-5 space-y-4">
               <h3 className="text-lg font-black tracking-wide text-[#FF8A00] uppercase mb-2">
-                Latin America Fast-Lane Transit Windows
+                {language === 'zh' ? '拉美专线真实货运时效' : 'Latin America Fast-Lane Transit Windows'}
               </h3>
               
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">Manzanillo / Lázaro Cárdenas FCL</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Tier-1 Direct Ocean Sailings</p>
+                  <h4 className="text-sm font-black text-white">{getTransitTimes().seaLabel}</h4>
+                  <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().seaDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 22 - 26 Days</span>
+                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {getTransitTimes().sea}</span>
                 </div>
               </div>
 
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">Santos / Buenos Aires Express</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Optimized Cape Horn Avoidance Routing</p>
+                  <h4 className="text-sm font-black text-white">{getTransitTimes().airLabel}</h4>
+                  <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().airDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 32 - 38 Days</span>
+                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {getTransitTimes().air}</span>
                 </div>
               </div>
             </div>

@@ -824,26 +824,26 @@ export default function ShippingCentralAsia() {
               {/* 右侧硬核时效侧边栏：占据 5 列 */}
               <div className="lg:col-span-5 space-y-4">
                 <h3 className="text-lg font-black tracking-wide text-[#FF8A00] uppercase mb-2">
-                  Central Asia Express Transit Windows
+                  {language === 'zh' ? '中亚专线真实货运时效' : (language === 'ru' ? 'Сроки доставки в Центральную Азию' : 'Central Asia Express Transit Windows')}
                 </h3>
                 
                 <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                   <div>
-                    <h4 className="text-sm font-black text-white">Almaty Block Train (Horgos Border)</h4>
-                    <p className="text-[11px] text-slate-400 mt-0.5">Direct Broad Gauge 1520mm Rail</p>
+                    <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿拉木图铁运双清专线 (霍尔果斯口岸)' : (language === 'ru' ? 'Блок-поезд в Алматы (граница Хоргос)' : 'Almaty Block Train (Horgos Border)')}</h4>
+                    <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '1520mm 宽轨直达铁路，免二次换装' : (language === 'ru' ? 'Прямая широкая колея 1520 мм' : 'Direct Broad Gauge 1520mm Rail')}</p>
                   </div>
                   <div className="text-right shrink-0 ml-4">
-                    <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 12 - 15 Days</span>
+                    <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {CENTRAL_ASIA_DATA.kazakhstan[activeLang].transitDays}</span>
                   </div>
                 </div>
 
                 <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                   <div>
-                    <h4 className="text-sm font-black text-white">Tashkent Cross-Border Trucking</h4>
-                    <p className="text-[11px] text-slate-400 mt-0.5">Rapid Highway Transit via Alashankou</p>
+                    <h4 className="text-sm font-black text-white">{language === 'zh' ? '塔什干公路汽运双清专线 (阿拉山口口岸)' : (language === 'ru' ? 'Трансграничные автоперевозки в Ташкент' : 'Tashkent Cross-Border Trucking')}</h4>
+                    <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '霍尔果斯/阿拉山口极速卡航直达' : (language === 'ru' ? 'Быстрый транзит по шоссе через Алашанькоу' : 'Rapid Highway Transit via Alashankou')}</p>
                   </div>
                   <div className="text-right shrink-0 ml-4">
-                    <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 15 - 18 Days</span>
+                    <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {CENTRAL_ASIA_DATA.uzbekistan[activeLang].transitDays}</span>
                   </div>
                 </div>
               </div>

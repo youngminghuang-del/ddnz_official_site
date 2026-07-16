@@ -872,6 +872,25 @@ export default function MiddleEastRoute() {
     }
   };
 
+  const getDynamicSeaDays = () => {
+    if (selectedCountry === 'Saudi-Arabia') {
+      if (language === 'zh') return '18 - 25 天';
+      if (language === 'ru') return '18 - 25 дней';
+      if (language === 'fr') return '18 - 25 jours';
+      return '18 - 25 Days';
+    } else if (selectedCountry === 'UAE') {
+      if (language === 'zh') return '15 - 22 天';
+      if (language === 'ru') return '15 - 22 дней';
+      if (language === 'fr') return '15 - 22 jours';
+      return '15 - 22 Days';
+    } else {
+      if (language === 'zh') return '18 - 28 天';
+      if (language === 'ru') return '18 - 28 дней';
+      if (language === 'fr') return '18 - 28 jours';
+      return '18 - 28 Days';
+    }
+  };
+
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA['en'];
     return data[key] || '';
@@ -1004,7 +1023,7 @@ export default function MiddleEastRoute() {
                       {t('seaDdpText')}
                     </span>
                     <span className="text-sm font-extrabold text-[#FF8A00]">
-                      {t('seaDaysText')}
+                      {getDynamicSeaDays()}
                     </span>
                   </div>
                   <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">

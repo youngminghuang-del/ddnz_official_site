@@ -702,8 +702,10 @@ export default function ShippingWestAfrica() {
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#FF8A00]/10 border border-[#FF8A00]/30 text-[#FF8A00] text-xs font-black tracking-widest uppercase">
                   🌍 DDNZ WEST AFRICA LINER
                 </span>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-[1.1] text-white">
-                  {spec.headline}
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#FF8A00]">
+                    {spec.headline}
+                  </span>
                 </h1>
                 <div className="space-y-4">
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed font-medium">
@@ -729,15 +731,7 @@ export default function ShippingWestAfrica() {
               </motion.div>
 
               {/* Quick SCM Meta Tags */}
-              <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mt-8 pt-6 border-t border-white/[0.08]">
-                <div className="bg-white/[0.02] backdrop-blur-sm p-4 rounded-xl border border-white/[0.08]">
-                  <div className="flex items-center gap-1.5 text-[#FF8A00] text-xs font-black uppercase mb-1">
-                    <Clock className="w-4 h-4 shrink-0" />
-                    <span>{t('timeBadge')}</span>
-                  </div>
-                  <div className="text-xs sm:text-sm font-extrabold text-white leading-tight">{spec.transitDays}</div>
-                </div>
-
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/[0.08]">
                 <div className="bg-white/[0.02] backdrop-blur-sm p-4 rounded-xl border border-white/[0.08]">
                   <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-black uppercase mb-1">
                     <ShieldCheck className="w-4 h-4 shrink-0" />
@@ -747,7 +741,7 @@ export default function ShippingWestAfrica() {
                   <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : 'Period'}: {spec.complianceRowVal}</div>
                 </div>
 
-                <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center col-span-2 sm:col-span-1">
+                <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center">
                   <button
                     onClick={() => {
                       const formElem = document.getElementById('west-africa-quote-form');
@@ -767,26 +761,26 @@ export default function ShippingWestAfrica() {
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
             <div className="lg:col-span-5 space-y-4">
               <h3 className="text-lg font-black tracking-wide text-[#FF8A00] uppercase mb-2">
-                West Africa Hub Transit Windows
+                {language === 'zh' ? '西非专线真实货运时效' : (language === 'fr' ? 'Délais de Transit en Afrique de l\'Ouest' : 'West Africa Hub Transit Windows')}
               </h3>
               
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">Lagos (Apapa / Tin Can) Ocean</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Guangzhou Hub Direct Consolidation</p>
+                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '拉各斯海运双清 (Apapa / Tin Can)' : 'Lagos (Apapa / Tin Can) Ocean'}</h4>
+                  <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '广州集拼仓直发整箱/拼箱' : (language === 'fr' ? 'Consolidation directe depuis le hub de Guangzhou' : 'Guangzhou Hub Direct Consolidation')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 35 - 42 Days</span>
+                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {WEST_AFRICA_DATA.nigeria[activeLang].transitDays}</span>
                 </div>
               </div>
 
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">Accra / Tema Premium Freight</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">Full Form M & SONCAP Pre-Clearance</p>
+                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿克拉海运双清 (Accra / Tema)' : 'Accra / Tema Premium Freight'}</h4>
+                  <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '全程双清、SABER与证书核准托底' : (language === 'fr' ? 'Dédouanement complet Form M & SONCAP' : 'Full Form M & SONCAP Pre-Clearance')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ 38 - 45 Days</span>
+                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
                 </div>
               </div>
             </div>
