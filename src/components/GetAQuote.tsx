@@ -248,7 +248,12 @@ const popularOriginOptions = [
   { code: 'YW', nameZh: '义乌', nameEn: 'Yiwu', flag: '🇨🇳' }
 ];
 
-export default function GetAQuote() {
+interface GetAQuoteProps {
+  presetDestination?: string;
+  presetService?: 'Sea' | 'Land' | 'Air' | 'Warehouse';
+}
+
+export default function GetAQuote({ presetDestination, presetService }: GetAQuoteProps = {}) {
   const [state, handleSubmit] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { language, t } = useLanguage();
@@ -261,11 +266,75 @@ export default function GetAQuote() {
   const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>('Sea');
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
+  const [isParamFilled, setIsParamFilled] = useState(false);
+
+  // Sync props to state if provided
+  useEffect(() => {
+    if (presetDestination) {
+      setDestination(presetDestination);
+      setIsParamFilled(true);
+    }
+  }, [presetDestination]);
+
+  useEffect(() => {
+    if (presetService) {
+      setSelectedService(presetService);
+    }
+  }, [presetService]);
   
   // Auto-set localized default origin on mount or language change if not already custom filled
   useEffect(() => {
     if (!origin) {
       setOrigin(language === 'zh' ? '广州' : 'Guangzhou');
+    }
+  }, [language]);
+
+  // Scan URL parameters for auto-fill on initial render
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const destParam = params.get('dest') || params.get('country');
+    if (destParam) {
+      if (destParam === 'Saudi-Arabia' || destParam === 'Saudi_Arabia' || destParam === 'saudi-arabia' || destParam === 'Middle-East') {
+        const saudiText = language === 'zh' ? '沙特阿拉伯' : 'Saudi Arabia';
+        setDestination(saudiText);
+        setIsParamFilled(true);
+      } else if (destParam === 'UAE' || destParam === 'uae') {
+        const uaeText = language === 'zh' ? '阿联酋' : 'United Arab Emirates';
+        setDestination(uaeText);
+        setIsParamFilled(true);
+      } else if (destParam === 'Kuwait' || destParam === 'kuwait') {
+        const kuwaitText = language === 'zh' ? '科威特' : 'Kuwait';
+        setDestination(kuwaitText);
+        setIsParamFilled(true);
+      } else if (destParam === 'kazakhstan' || destParam === 'Kazakhstan') {
+        const kzText = language === 'zh' ? '哈萨克斯坦' : 'Kazakhstan';
+        setDestination(kzText);
+        setIsParamFilled(true);
+      } else if (destParam === 'uzbekistan' || destParam === 'Uzbekistan') {
+        const uzText = language === 'zh' ? '乌兹别克斯坦' : 'Uzbekistan';
+        setDestination(uzText);
+        setIsParamFilled(true);
+      } else if (destParam === 'nigeria' || destParam === 'Nigeria') {
+        const ngText = language === 'zh' ? '尼日利亚' : 'Nigeria';
+        setDestination(ngText);
+        setIsParamFilled(true);
+      } else if (destParam === 'ghana' || destParam === 'Ghana') {
+        const ghText = language === 'zh' ? '加纳' : 'Ghana';
+        setDestination(ghText);
+        setIsParamFilled(true);
+      } else if (destParam === 'mexico' || destParam === 'Mexico') {
+        const mxText = language === 'zh' ? '墨西哥' : 'Mexico';
+        setDestination(mxText);
+        setIsParamFilled(true);
+      } else if (destParam === 'brazil' || destParam === 'Brazil') {
+        const brText = language === 'zh' ? '巴西' : 'Brazil';
+        setDestination(brText);
+        setIsParamFilled(true);
+      } else if (destParam === 'argentina' || destParam === 'Argentina') {
+        const arText = language === 'zh' ? '阿根廷' : 'Argentina';
+        setDestination(arText);
+        setIsParamFilled(true);
+      }
     }
   }, [language]);
   const [weight, setWeight] = useState(350);
@@ -336,6 +405,7 @@ export default function GetAQuote() {
 
   const handleCountrySelect = (countryName: string) => {
     setDestination(countryName);
+    setIsParamFilled(false);
   };
 
   const resetFunnel = () => {
@@ -397,7 +467,7 @@ export default function GetAQuote() {
             className="inline-flex items-center gap-2 bg-[#4B27B1]/10 text-[#4B27B1] font-extrabold tracking-wider text-xs uppercase px-4 py-2 rounded-full mb-4 border border-purple-200/50"
           >
             <Sparkles className="w-3.5 h-3.5 text-[#FF8A00]" />
-            {ft('estimatorTitle')}
+            {t('get_a_quote.estimatorTitle')}
           </motion.div>
           <motion.h2 
             initial={{ opacity: 0, y: 15 }}
@@ -657,11 +727,32 @@ export default function GetAQuote() {
                                   id="funnel-destination"
                                   type="text"
                                   value={destination}
-                                  onChange={(e) => setDestination(e.target.value)}
+                                  onChange={(e) => {
+                                    setDestination(e.target.value);
+                                    setIsParamFilled(false);
+                                  }}
                                   required
-                                  className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none transition-all placeholder-slate-400 font-bold text-sm"
+                                  className={`w-full pl-11 pr-4 py-3.5 rounded-xl border outline-none transition-all placeholder-slate-400 font-bold text-sm ${
+                                    isParamFilled
+                                      ? 'border-[#FF8A00] ring-2 ring-[#FF8A00]/25 bg-orange-50/10 shadow-sm shadow-[#FF8A00]/5'
+                                      : 'border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 bg-white'
+                                  }`}
                                   placeholder={ft('destinationPlaceholder')}
                                 />
+                                {isParamFilled && (
+                                  <p className="text-[11px] font-bold text-[#FF8A00] mt-1.5 flex items-center gap-1">
+                                    <Sparkles className="w-3.5 h-3.5" />
+                                    <span>
+                                      {language === 'zh' 
+                                        ? '根据您浏览的航线已为您自动预选和高亮目的地' 
+                                        : language === 'ru'
+                                        ? 'Пункт назначения автоматически выбран и выделен на основе вашего маршрута'
+                                        : language === 'fr'
+                                        ? 'Destination présélectionnée et mise en évidence en fonction de votre itinéraire'
+                                        : 'Destination automatically selected and highlighted based on your route'}
+                                    </span>
+                                  </p>
+                                )}
                               </div>
                             </div>
 

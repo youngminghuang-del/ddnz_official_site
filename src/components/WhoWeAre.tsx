@@ -233,21 +233,21 @@ export default function WhoWeAre() {
 
         {/* Stats Grid */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20 text-center">
-          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">29+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.years')}</div>
+          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">29+</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.years')}</div>
           </div>
-          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">700+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.clients')}</div>
+          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">700+</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.clients')}</div>
           </div>
-          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight whitespace-nowrap">37,000+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.shipments')}</div>
+          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
+            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight whitespace-nowrap transition-colors duration-300">37,000+</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.shipments')}</div>
           </div>
-          <div className="bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 hover:shadow-md transition-shadow">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] mb-2 tracking-tight">960</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 uppercase tracking-widest leading-none">{t('who_we_are.stats.projects')}</div>
+          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
+            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">960</div>
+            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.projects')}</div>
           </div>
         </div>
 

@@ -132,6 +132,114 @@ function run() {
   fs.writeFileSync(path404, updatedRootHtml, 'utf-8');
   console.log('✅ Generated GitHub Pages route fallback at: dist/404.html');
 
+  // --- 4. Generate Dynamic sitemap.xml and robots.txt ---
+  console.log('🌐 Generating dynamic sitemap.xml and robots.txt...');
+  
+  const languages = ['en', 'zh-cn', 'ru', 'fr'] as const;
+  
+  const formatUrl = (lang: string, relPath: string): string => {
+    const baseUrl = 'https://www.ddnzglobal.com';
+    if (!relPath) {
+      return lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}`;
+    }
+    return lang === 'en' ? `${baseUrl}/${relPath}` : `${baseUrl}/${lang}/${relPath}`;
+  };
+
+  const today = '2026-07-15'; // Current date
+
+  const basePaths = [
+    { path: '', priority: '1.0', changefreq: 'weekly', lastmod: today },
+    { path: 'insights', priority: '0.8', changefreq: 'weekly', lastmod: today },
+    { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'services/warehouse-services', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'shipping-from-china-to-middle-east', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', lastmod: today },
+    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', lastmod: today }
+  ];
+
+  // Try to load blog posts
+  let blogPosts: any[] = [];
+  const notionBlogPath = path.resolve(process.cwd(), 'src/data/notionBlogData.json');
+  const fallbackBlogPath = path.resolve(process.cwd(), 'src/data/blogData.json');
+
+  if (fs.existsSync(notionBlogPath)) {
+    try {
+      blogPosts = JSON.parse(fs.readFileSync(notionBlogPath, 'utf-8'));
+    } catch (e) {
+      console.warn('⚠️ Failed to parse notionBlogData.json:', e);
+    }
+  } else if (fs.existsSync(fallbackBlogPath)) {
+    try {
+      blogPosts = JSON.parse(fs.readFileSync(fallbackBlogPath, 'utf-8'));
+    } catch (e) {
+      console.warn('⚠️ Failed to parse blogData.json:', e);
+    }
+  }
+
+  const allPaths = [...basePaths];
+  blogPosts.forEach((post) => {
+    if (post && post.id) {
+      allPaths.push({
+        path: `blog/${post.id}`,
+        priority: '0.7',
+        changefreq: 'weekly',
+        lastmod: post.date || today
+      });
+    }
+  });
+
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
+  xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n\n';
+
+  allPaths.forEach((entry) => {
+    languages.forEach((lang) => {
+      const loc = formatUrl(lang, entry.path);
+      const enUrl = formatUrl('en', entry.path);
+      const zhUrl = formatUrl('zh-cn', entry.path);
+      const ruUrl = formatUrl('ru', entry.path);
+      const frUrl = formatUrl('fr', entry.path);
+
+      // Determine priority: localized subpages can have slightly lower priority or same
+      const priorityVal = lang === 'en' ? entry.priority : (parseFloat(entry.priority) - 0.1).toFixed(1);
+
+      xml += '  <url>\n';
+      xml += `    <loc>${loc}</loc>\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="zh-cn" href="${zhUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />\n`;
+      xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
+      xml += `    <changefreq>${entry.changefreq}</changefreq>\n`;
+      xml += `    <priority>${priorityVal}</priority>\n`;
+      xml += '  </url>\n';
+    });
+  });
+
+  xml += '\n</urlset>\n';
+
+  // Write to both public/ and dist/
+  const publicDir = path.resolve(process.cwd(), 'public');
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf-8');
+  console.log(`✅ Dynamically generated sitemap.xml (with ${allPaths.length * 4} URLs) at public/sitemap.xml and dist/sitemap.xml`);
+
+  // Generate optimized robots.txt
+  const robotsTxt = `User-agent: *
+Allow: /
+
+# Sitemap Location
+Sitemap: https://www.ddnzglobal.com/sitemap.xml
+`;
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf-8');
+  fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt, 'utf-8');
+  console.log('✅ Generated optimized robots.txt at public/robots.txt and dist/robots.txt');
+
   console.log('🎉 Multilingual SEO static generation complete!');
 }
 

@@ -1,6 +1,7 @@
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useLanguage } from '../contexts/LanguageContext';
+import { trackEvent } from '../lib/utils';
 import { 
   HelpCircle, 
   ChevronDown, 
@@ -482,7 +483,8 @@ export default function Partners() {
             </div>
             <a
               id="faq-contact-btn"
-              href="#quote"
+              href="#get-a-quote"
+              onClick={() => trackEvent('faq_cta_click', { 'location': 'partners_faq_section' })}
               className="shrink-0 px-6 py-3.5 bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold rounded-2xl shadow-lg shadow-amber-600/20 hover:shadow-xl hover:translate-y-[-1px] active:translate-y-[1px] transition-all duration-200 text-sm uppercase tracking-wide text-center w-full md:w-auto"
             >
               {content.ctaBtn[currentLang]}

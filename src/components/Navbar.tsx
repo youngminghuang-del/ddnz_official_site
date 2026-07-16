@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { cn, trackEvent } from '../lib/utils';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
@@ -10,6 +11,7 @@ const navKeys = [
   { key: 'what_we_do', href: '/#what-we-do' },
   { key: 'why_ddnz', href: '/#why-ddnz' },
   { key: 'services', isDropdown: true },
+  { key: 'shipping_by_region', isMegaMenu: true },
   { key: 'insights', href: '/insights' },
   { key: 'get_a_quote', href: '/#get-a-quote' },
 ];
@@ -21,10 +23,47 @@ const serviceItems = [
   { key: 'services_warehouse', href: '/services/warehouse-services' },
 ];
 
+const regionColumns = [
+  {
+    key: 'region_middle_east',
+    countries: [
+      { en: 'Saudi Arabia', zh: '沙特阿拉伯', ru: 'Саудовская Аравия', fr: 'Arabie Saoudite' },
+      { en: 'UAE', zh: '阿联酋', ru: 'ОАЭ', fr: 'Émirats Arabes Unis' },
+      { en: 'Kuwait', zh: '科威特', ru: 'Кувейт', fr: 'Koweït' },
+    ]
+  },
+  {
+    key: 'region_central_asia',
+    countries: [
+      { en: 'Kazakhstan', zh: '哈萨克斯坦', ru: 'Казахстан', fr: 'Kazakhstan' },
+      { en: 'Uzbekistan', zh: '乌兹别克斯坦', ru: 'Узбекистан', fr: 'Ouzbékistan' },
+    ]
+  },
+  {
+    key: 'region_west_africa',
+    countries: [
+      { en: 'Nigeria', zh: '尼日利亚', ru: 'Нигерия', fr: 'Nigéria' },
+      { en: 'Ghana', zh: '加纳', ru: 'Гана', fr: 'Ghana' },
+    ]
+  },
+  {
+    key: 'region_latin_america',
+    countries: [
+      { en: 'Brazil', zh: '巴西', ru: 'Бразилия', fr: 'Brésil' },
+      { en: 'Mexico', zh: '墨西哥', ru: 'Мексика', fr: 'Mexique' },
+      { en: 'Argentina', zh: '阿根廷', ru: 'Аргентина', fr: 'Argentine' },
+      { en: 'Chile', zh: '智利', ru: 'Чили', fr: 'Chili' },
+      { en: 'Peru', zh: '秘鲁', ru: 'Перу', fr: 'Pérou' },
+    ]
+  }
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
+  const [showMegaMenu, setShowMegaMenu] = useState(false);
+  const [showMobileRegions, setShowMobileRegions] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
@@ -183,6 +222,164 @@ export default function Navbar() {
                 );
               }
 
+              if (item.isMegaMenu) {
+                return (
+                  <div 
+                    key={item.key} 
+                    className="relative py-2"
+                    onMouseEnter={() => setShowMegaMenu(true)}
+                    onMouseLeave={() => setShowMegaMenu(false)}
+                  >
+                    <button
+                      className={cn(
+                        "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap flex items-center gap-0.5 lg:gap-1 cursor-pointer",
+                        scrolled ? "text-slate-700 hover:text-[#4B27B1]" : "text-white/90 hover:text-white"
+                      )}
+                    >
+                      <span>{t(`nav.${item.key}`)}</span>
+                      <ChevronDown className={cn(
+                        "w-3 h-3 md:w-3.5 md:h-3.5 transition-transform duration-300",
+                        showMegaMenu ? "rotate-180" : ""
+                      )} strokeWidth={2.5} />
+                    </button>
+                    
+                    {/* Mega Menu Dropdown */}
+                    <AnimatePresence>
+                      {showMegaMenu && (
+                        <motion.div 
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: 15 }}
+                          transition={{ duration: 0.25, ease: "easeOut" }}
+                          className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[550px] lg:w-[650px] xl:w-[750px] z-50"
+                        >
+                          <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
+                            {/* Accent top bar using purple-orange theme gradient */}
+                            <div className="h-1.5 bg-gradient-to-r from-[#4B27B1] via-[#8552D2] to-[#FF8A00]" />
+                            
+                            <div className="p-6 md:p-8 grid grid-cols-4 gap-4 md:gap-6">
+                              {regionColumns.map((col) => (
+                                <div key={col.key} className="flex flex-col space-y-3">
+                                  <h4 className="text-[11px] lg:text-xs tracking-wider font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] uppercase border-b border-slate-100 pb-1.5 whitespace-nowrap">
+                                    {t(`nav.${col.key}`)}
+                                  </h4>
+                                  <div className="flex flex-col space-y-2">
+                                    {col.countries.map((country, idx) => {
+                                      const label = country[language as 'en' | 'zh' | 'ru' | 'fr'] || country.en;
+                                      const isMiddleEast = col.key === 'region_middle_east';
+                                      const isCentralAsia = col.key === 'region_central_asia';
+                                      const isWestAfrica = col.key === 'region_west_africa';
+                                      const isLatinAmerica = col.key === 'region_latin_america';
+                                      
+                                      return isMiddleEast ? (
+                                        <Link
+                                          key={idx}
+                                          to={getLocalizedPath(`/shipping-from-china-to-middle-east?country=${country.en === 'Saudi Arabia' ? 'saudi-arabia' : country.en.toLowerCase()}`)}
+                                          onClick={() => {
+                                            setShowMegaMenu(false);
+                                            trackEvent('region_link_click', { country: country.en, specialized: true });
+                                          }}
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
+                                            {label}
+                                          </span>
+                                        </Link>
+                                      ) : isCentralAsia ? (
+                                        <Link
+                                          key={idx}
+                                          to={getLocalizedPath(`/shipping-from-china-to-central-asia?country=${country.en.toLowerCase()}`)}
+                                          onClick={() => {
+                                            setShowMegaMenu(false);
+                                            trackEvent('region_link_click', { country: country.en, specialized: true });
+                                          }}
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
+                                            {label}
+                                          </span>
+                                        </Link>
+                                      ) : isWestAfrica ? (
+                                        <Link
+                                          key={idx}
+                                          to={getLocalizedPath(`/shipping-from-china-to-west-africa?country=${country.en.toLowerCase()}`)}
+                                          onClick={() => {
+                                            setShowMegaMenu(false);
+                                            trackEvent('region_link_click', { country: country.en, specialized: true });
+                                          }}
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
+                                            {label}
+                                          </span>
+                                        </Link>
+                                      ) : isLatinAmerica ? (
+                                        <Link
+                                          key={idx}
+                                          to={getLocalizedPath(`/shipping-from-china-to-latin-america?country=${country.en.toLowerCase()}`)}
+                                          onClick={() => {
+                                            setShowMegaMenu(false);
+                                            trackEvent('region_link_click', { country: country.en, specialized: true });
+                                          }}
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
+                                            {label}
+                                          </span>
+                                        </Link>
+                                      ) : (
+                                        <a
+                                          key={idx}
+                                          href={getLocalizedPath('/#get-a-quote')}
+                                          onClick={() => {
+                                            setShowMegaMenu(false);
+                                            trackEvent('region_link_click', { country: country.en });
+                                          }}
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                        >
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00]/70 group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
+                                            {label}
+                                          </span>
+                                        </a>
+                                      );
+                                    })}
+                                  </div>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            {/* Mega menu footer banner */}
+                            <div className="bg-slate-50 px-6 py-3.5 border-t border-slate-100 flex items-center justify-between text-[10px] lg:text-xs">
+                              <span className="font-medium text-slate-500">
+                                {language === 'zh' ? '⭐ 29年跨境物流专线安全保障' : 
+                                 language === 'ru' ? '⭐ 29 лет безопасных грузоперевозок' :
+                                 language === 'fr' ? '⭐ 29 ans de sécurité logistique' :
+                                 '⭐ 29 Years of Secure Regional Freight forwarding'}
+                              </span>
+                              <a 
+                                href={getLocalizedPath('/#get-a-quote')}
+                                onClick={() => setShowMegaMenu(false)}
+                                className="font-extrabold text-[#4B27B1] hover:text-[#FF8A00] transition-colors flex items-center gap-0.5"
+                              >
+                                {language === 'zh' ? '立即询价 ➔' : 
+                                 language === 'ru' ? 'Запросить ставку ➔' :
+                                 language === 'fr' ? 'Demander un devis ➔' :
+                                 'Inquire Now ➔'}
+                              </a>
+                            </div>
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                );
+              }
+
               const isQuote = item.key === 'get_a_quote';
               return (
                 <a
@@ -267,6 +464,87 @@ export default function Navbar() {
                         </Link>
                       ))}
                     </div>
+                  </div>
+                );
+              }
+
+              if (item.isMegaMenu) {
+                return (
+                  <div key={item.key} className="space-y-1 block py-1 border-b border-slate-100/60 pb-3">
+                    <button 
+                      onClick={() => setShowMobileRegions(!showMobileRegions)}
+                      className="w-full flex items-center justify-between px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 focus:outline-none"
+                    >
+                      <span>{t(`nav.${item.key}`)}</span>
+                      <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-300", showMobileRegions ? "rotate-180" : "")} />
+                    </button>
+                    {showMobileRegions && (
+                      <div className="pl-4 border-l-2 border-[#FF8A00] ml-4 mt-1.5 space-y-4">
+                        {regionColumns.map((col) => (
+                          <div key={col.key} className="space-y-1.5">
+                            <h5 className="text-[11px] font-black text-[#4B27B1] uppercase tracking-wide">
+                              {t(`nav.${col.key}`)}
+                            </h5>
+                            <div className="grid grid-cols-2 gap-2">
+                              {col.countries.map((country, idx) => {
+                                const label = country[language as 'en' | 'zh' | 'ru' | 'fr'] || country.en;
+                                const isMiddleEast = col.key === 'region_middle_east';
+                                const isCentralAsia = col.key === 'region_central_asia';
+                                const isWestAfrica = col.key === 'region_west_africa';
+                                const isLatinAmerica = col.key === 'region_latin_america';
+                                
+                                return isMiddleEast ? (
+                                  <Link
+                                    key={idx}
+                                    to={getLocalizedPath(`/shipping-from-china-to-middle-east?country=${country.en === 'Saudi Arabia' ? 'saudi-arabia' : country.en.toLowerCase()}`)}
+                                    onClick={closeMenu}
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                  >
+                                    📍 {label}
+                                  </Link>
+                                ) : isCentralAsia ? (
+                                  <Link
+                                    key={idx}
+                                    to={getLocalizedPath(`/shipping-from-china-to-central-asia?country=${country.en.toLowerCase()}`)}
+                                    onClick={closeMenu}
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                  >
+                                    📍 {label}
+                                  </Link>
+                                ) : isWestAfrica ? (
+                                  <Link
+                                    key={idx}
+                                    to={getLocalizedPath(`/shipping-from-china-to-west-africa?country=${country.en.toLowerCase()}`)}
+                                    onClick={closeMenu}
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                  >
+                                    📍 {label}
+                                  </Link>
+                                ) : isLatinAmerica ? (
+                                  <Link
+                                    key={idx}
+                                    to={getLocalizedPath(`/shipping-from-china-to-latin-america?country=${country.en.toLowerCase()}`)}
+                                    onClick={closeMenu}
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                  >
+                                    📍 {label}
+                                  </Link>
+                                ) : (
+                                  <a
+                                    key={idx}
+                                    href={getLocalizedPath('/#get-a-quote')}
+                                    onClick={closeMenu}
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                  >
+                                    📍 {label}
+                                  </a>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
                   </div>
                 );
               }

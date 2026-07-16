@@ -12,6 +12,13 @@ export default function Footer() {
     trackEvent('contact_method_click', { 'method': method });
   };
 
+  const cookieLabel = {
+    en: 'Cookie Settings',
+    zh: 'Cookie 设置',
+    ru: 'Настройки Cookie',
+    fr: 'Paramètres des cookies'
+  }[language as 'en' | 'zh' | 'ru' | 'fr'] || 'Cookie Settings';
+
   return (
     <footer className="bg-[#4B27B1] text-purple-200 py-8 font-sans border-t border-purple-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -176,6 +183,14 @@ export default function Footer() {
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
                   {t('footer.terms')}
+                </button>
+                <span className="text-purple-800 hidden sm:inline">|</span>
+                <button 
+                  onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
+                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
+                >
+                  <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
+                  {cookieLabel}
                 </button>
               </div>
             </div>

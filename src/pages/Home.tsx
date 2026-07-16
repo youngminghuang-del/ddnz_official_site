@@ -9,7 +9,6 @@ import Insights from '../components/Insights';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
-import CookieConsent from '../components/CookieConsent';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 
@@ -32,7 +31,6 @@ export default function Home() {
       <Footer />
       <WhatsAppFloat />
       <ScrollToTop />
-      <CookieConsent />
     </div>
   );
 }

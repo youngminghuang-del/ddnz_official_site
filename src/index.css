@@ -13,3 +13,151 @@ body {
 html {
   scroll-behavior: smooth;
 }
+
+/* High-End Dark RFQ Form Integration Overrides */
+.dark-form-container #get-a-quote {
+  background: transparent !important;
+  padding: 0 !important;
+}
+
+.dark-form-container .bg-white:not(button[type="submit"]) {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.dark-form-container input,
+.dark-form-container select,
+.dark-form-container textarea {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+}
+
+.dark-form-container select option {
+  background-color: #0A051B !important;
+  color: #ffffff !important;
+}
+
+.dark-form-container input::placeholder,
+.dark-form-container textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.dark-form-container label,
+.dark-form-container label.text-slate-400,
+.dark-form-container label.text-slate-500,
+.dark-form-container span.text-slate-400.font-black,
+.dark-form-container .font-black.text-slate-400 {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.dark-form-container h2,
+.dark-form-container h3, 
+.dark-form-container h4 {
+  color: #ffffff !important;
+}
+
+.dark-form-container p {
+  color: rgba(255, 255, 255, 0.95) !important; /* High contrast paragraph text */
+}
+
+/* Specific slate color mapping to maintain contrast and hierarchy */
+.dark-form-container .text-slate-900,
+.dark-form-container .text-slate-800,
+.dark-form-container .text-slate-700 {
+  color: #ffffff !important;
+}
+
+.dark-form-container .text-slate-600 {
+  color: rgba(255, 255, 255, 0.95) !important;
+}
+
+.dark-form-container .text-slate-500 {
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.dark-form-container .text-slate-400 {
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+.dark-form-container .text-slate-300 {
+  color: rgba(255, 255, 255, 0.75) !important;
+}
+
+/* Button & Active States Overrides */
+.dark-form-container button[type="button"] {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+.dark-form-container button[type="button"].border-slate-100 {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* tag buttons (bg-white is used for inactive popular tags) */
+.dark-form-container button.bg-white {
+  background-color: rgba(255, 255, 255, 0.04) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(241, 245, 249, 0.85) !important;
+}
+.dark-form-container button.bg-white:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(167, 139, 250, 0.4) !important;
+  color: #ffffff !important;
+}
+
+/* active tag buttons (bg-purple-50) */
+.dark-form-container .bg-purple-50 {
+  background-color: rgba(139, 92, 246, 0.15) !important;
+  border-color: #a78bfa !important;
+  color: #c084fc !important;
+}
+
+/* Service Mode Icons / Active text neon glow adjustments */
+.dark-form-container .text-blue-700 { color: #60a5fa !important; }
+.dark-form-container .text-indigo-700 { color: #a5b4fc !important; }
+.dark-form-container .text-emerald-700 { color: #34d399 !important; }
+.dark-form-container .text-orange-700 { color: #fb923c !important; }
+
+/* Inactive backgrounds */
+.dark-form-container .bg-slate-50\/40,
+.dark-form-container .bg-slate-50 {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Inactive connector lines */
+.dark-form-container .bg-slate-100 {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Map active color text and backgrounds */
+.dark-form-container .text-\[\#4B27B1\] {
+  color: #a78bfa !important;
+}
+.dark-form-container .bg-\[\#4B27B1\] {
+  background-color: #6366f1 !important;
+}
+
+/* Step 4: Summary Box and contents styling */
+.dark-form-container .bg-gradient-to-r.from-purple-50 {
+  background: linear-gradient(to right, rgba(139, 92, 246, 0.12), rgba(249, 115, 22, 0.06)) !important;
+  border-color: rgba(139, 92, 246, 0.2) !important;
+}
+
+.dark-form-container .bg-white.border-purple-100 {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(139, 92, 246, 0.25) !important;
+  color: #f1f5f9 !important;
+}
+
+.dark-form-container .text-amber-700 {
+  color: #ffa726 !important;
+}
+
+.dark-form-container .bg-white\/80 {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+

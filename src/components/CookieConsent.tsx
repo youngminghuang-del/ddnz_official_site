@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, X, ShieldCheck, Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -236,6 +237,41 @@ export default function CookieConsent() {
   const [activeTab, setActiveTab] = useState<'privacy' | 'necessary' | 'functionality' | 'tracking' | 'targeting' | 'more'>('privacy');
   
   const { language, setLanguage } = useLanguage();
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleLanguageChange = (lang: Language) => {
+    setLanguage(lang);
+
+    // Rewrite URL prefix dynamically based on target language
+    let currentPath = location.pathname;
+    
+    // Remove current prefixes if present
+    if (currentPath.startsWith('/zh-cn')) {
+      currentPath = currentPath.slice(6);
+    } else if (currentPath.startsWith('/ru')) {
+      currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/fr')) {
+      currentPath = currentPath.slice(3);
+    }
+
+    if (currentPath === '') currentPath = '/';
+
+    // Construct target prefix path
+    let targetPath = '';
+    if (lang === 'zh') {
+      targetPath = `/zh-cn${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'ru') {
+      targetPath = `/ru${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'fr') {
+      targetPath = `/fr${currentPath === '/' ? '' : currentPath}`;
+    } else {
+      targetPath = currentPath;
+    }
+
+    const searchAndHash = location.search + location.hash;
+    navigate(targetPath + searchAndHash);
+  };
 
   const [preferences, setPreferences] = useState({
     necessary: true,
@@ -260,6 +296,16 @@ export default function CookieConsent() {
       const timer = setTimeout(() => setIsVisible(true), 1500);
       return () => clearTimeout(timer);
     }
+  }, []);
+
+  useEffect(() => {
+    const handleOpenSettings = () => {
+      setShowPreferencesModal(true);
+    };
+    window.addEventListener('open-cookie-settings', handleOpenSettings);
+    return () => {
+      window.removeEventListener('open-cookie-settings', handleOpenSettings);
+    };
   }, []);
 
   const handleAccept = () => {
@@ -422,7 +468,7 @@ export default function CookieConsent() {
                   <div className="relative">
                     <select
                       value={language}
-                      onChange={(e) => setLanguage(e.target.value as Language)}
+                      onChange={(e) => handleLanguageChange(e.target.value as Language)}
                       className="appearance-none bg-white border border-slate-200 hover:border-slate-300 rounded-lg pl-3 pr-8 py-1.5 text-xs font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-[#4B27B1]/30 cursor-pointer shadow-sm"
                     >
                       {languagesList.map((lang) => (
