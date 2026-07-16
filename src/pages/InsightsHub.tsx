@@ -12,6 +12,7 @@ import SEO from "../components/SEO";
 
 interface BlogPost {
   id: string;
+  slug?: string;
   title: string;
   category: string;
   date: string;
@@ -141,7 +142,7 @@ export default function InsightsHub() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="bg-white hover:bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-100 hover:border-[#4B27B1]/20 transition-all duration-300 flex flex-col group h-full"
                   >
-                    <Link to={`/blog/${post.id}`} className="block h-56 overflow-hidden relative bg-slate-100">
+                    <Link to={`/blog/${post.slug || post.id}`} className="block h-56 overflow-hidden relative bg-slate-100">
                       <img
                         src={post.thumbnailUrl}
                         alt={post.title}
@@ -165,7 +166,7 @@ export default function InsightsHub() {
 
                         {/* Title Link */}
                         <h3 className="text-xl font-extrabold text-[#4B27B1] leading-tight mb-4 group-hover:text-[#FF8A00] transition-colors line-clamp-2">
-                          <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                          <Link to={`/blog/${post.slug || post.id}`}>{post.title}</Link>
                         </h3>
 
                         {/* Paragraph Shortened Summary */}
@@ -176,7 +177,7 @@ export default function InsightsHub() {
 
                       <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
                         <Link
-                          to={`/blog/${post.id}`}
+                          to={`/blog/${post.slug || post.id}`}
                           className="inline-flex items-center text-[#4B27B1] hover:text-[#381d86] font-extrabold text-sm group/btn"
                         >
                           <span>{t('insights.deep_dive_read')}</span>

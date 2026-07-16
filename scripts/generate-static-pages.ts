@@ -412,9 +412,9 @@ function run() {
 
   const allPaths = [...basePaths];
   blogPosts.forEach((post) => {
-    if (post && post.id) {
+    if (post && (post.slug || post.id)) {
       allPaths.push({
-        path: `blog/${post.id}`,
+        path: `blog/${post.slug || post.id}`,
         priority: '0.7',
         changefreq: 'weekly',
         lastmod: post.date || today
@@ -432,8 +432,8 @@ function run() {
 
       // If it's a blog post, build it dynamically
       if (entry.path.startsWith('blog/')) {
-        const postId = entry.path.replace('blog/', '');
-        const post = blogPosts.find((p) => p.id === postId);
+        const postSlugOrId = entry.path.replace('blog/', '');
+        const post = blogPosts.find((p) => p.slug === postSlugOrId || p.id === postSlugOrId);
         if (post) {
           const cat = post.category ? post.category.toLowerCase() : 'global logistics';
           seo = {

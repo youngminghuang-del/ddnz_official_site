@@ -11,6 +11,7 @@ import SEO from '../components/SEO';
 
 interface BlogPost {
   id: string;
+  slug?: string;
   title: string;
   category: string;
   date: string;
@@ -20,18 +21,18 @@ interface BlogPost {
 }
 
 export default function BlogDetail() {
-  const { id } = useParams<{ id: string }>();
+  const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { language } = useLanguage();
 
   useEffect(() => {
-    if (!id) return;
+    if (!slug) return;
 
     setIsLoading(true);
 
-    // Look up in build-time notion blog posts (which holds full HTML content)
-    const found = notionBlogPosts.find((p) => p.id === id);
+    // Look up in build-time notion blog posts (which holds full HTML content) by slug or ID
+    const found = (notionBlogPosts as any[]).find((p) => p.slug === slug || p.id === slug);
     if (found) {
       setPost(found as BlogPost);
 
@@ -39,16 +40,17 @@ export default function BlogDetail() {
       if (typeof window !== 'undefined' && (window as any).gtag) {
         (window as any).gtag('event', 'blog_view', {
           'page_title': found.title,
-          'page_id': id
+          'page_id': found.id,
+          'page_slug': found.slug || ""
          });
       }
     } else {
-      console.warn(`Post with ID ${id} not found in Notion static data.`);
+      console.warn(`Post with slug/id ${slug} not found in Notion static data.`);
     }
 
     setIsLoading(false);
     window.scrollTo(0, 0);
-  }, [id, language]);
+  }, [slug, language]);
 
   if (isLoading) {
     return (
@@ -86,7 +88,7 @@ export default function BlogDetail() {
           description: post.summary,
           image: post.thumbnailUrl,
           datePublished: post.date,
-          url: `https://www.ddnzglobal.com/blog/${id}`
+          url: `https://www.ddnzglobal.com/blog/${post.slug || post.id}`
         }} 
       />
       <Navbar />

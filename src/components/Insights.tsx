@@ -62,7 +62,7 @@ export default function Insights() {
               transition={{ duration: 0.5 }}
               className="bg-purple-50/10 flex flex-col rounded-2xl overflow-hidden shadow-sm border border-purple-100/60 group hover:shadow-xl transition-all duration-300"
             >
-              <Link to={`/blog/${post.id}`} className="block overflow-hidden h-48 relative bg-slate-100">
+              <Link to={`/blog/${post.slug || post.id}`} className="block overflow-hidden h-48 relative bg-slate-100">
                 <img 
                   src={post.thumbnailUrl} 
                   alt={post.title} 
@@ -82,13 +82,13 @@ export default function Insights() {
                   </div>
                 </div>
                 <h3 className="text-xl font-extrabold text-slate-900 mb-3 leading-tight group-hover:text-[#4B27B1] transition-colors line-clamp-2">
-                  <Link to={`/blog/${post.id}`}>{post.title}</Link>
+                  <Link to={`/blog/${post.slug || post.id}`}>{post.title}</Link>
                 </h3>
                 <p className="text-slate-600 text-sm mb-6 line-clamp-3 leading-relaxed flex-1">
                   {post.summary}
                 </p>
                 <Link 
-                  to={`/blog/${post.id}`}
+                  to={`/blog/${post.slug || post.id}`}
                   className="inline-flex items-center text-[#4B27B1] font-extrabold text-sm group/btn mt-auto"
                 >
                   Read More 

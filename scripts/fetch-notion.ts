@@ -14,9 +14,16 @@ const writeFallbackData = () => {
   console.log("Writing fallback blog data to notionBlogData.json...");
   try {
     if (fs.existsSync(fallbackFilePath)) {
-      const fallbackData = fs.readFileSync(fallbackFilePath, "utf-8");
-      fs.writeFileSync(outputFilePath, fallbackData, "utf-8");
-      console.log("Successfully wrote offline fallback blog posts to destination.");
+      const raw = fs.readFileSync(fallbackFilePath, "utf-8");
+      const fallbackPosts = JSON.parse(raw);
+      const mappedPosts = fallbackPosts.map((p: any) => {
+        return {
+          ...p,
+          slug: p.slug || generateSlug(p.title, p.id)
+        };
+      });
+      fs.writeFileSync(outputFilePath, JSON.stringify(mappedPosts, null, 2), "utf-8");
+      console.log("Successfully wrote offline fallback blog posts with generated slugs to destination.");
     } else {
       fs.writeFileSync(outputFilePath, "[]", "utf-8");
       console.warn("Fallback blogData.json not found! Wrote empty array.");
@@ -294,8 +301,16 @@ async function run() {
         }
       }
 
-      // Generate clean SEO fallback Slug and localize the thumbnail image
-      const slug = generateSlug(title, page.id);
+      // Parse Slug (User's instruction: 新增一个 slug 字段，优先读取名为 Slug 的 Rich Text 属性)
+      let slug = "";
+      const slugProp = properties.Slug || properties.slug;
+      if (slugProp && slugProp.type === "rich_text" && slugProp.rich_text && slugProp.rich_text.length > 0) {
+        slug = slugProp.rich_text.map((t: any) => t.plain_text).join("").trim();
+      }
+      if (!slug) {
+        slug = generateSlug(title, page.id);
+      }
+
       if (thumbnailUrl) {
         thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover");
       }
@@ -313,6 +328,7 @@ async function run() {
 
       posts.push({
         id: page.id,
+        slug,
         title,
         category,
         date,

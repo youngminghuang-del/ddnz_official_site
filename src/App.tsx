@@ -46,7 +46,7 @@ export default function App() {
           <Routes>
             {/* English Default / Fallback Hub */}
             <Route path="/" element={<Home />} />
-            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/insights" element={<InsightsHub />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
@@ -57,7 +57,7 @@ export default function App() {
 
             {/* Chinese Bundle Router */}
             <Route path="/zh-cn" element={<Home />} />
-            <Route path="/zh-cn/blog/:id" element={<BlogDetail />} />
+            <Route path="/zh-cn/blog/:slug" element={<BlogDetail />} />
             <Route path="/zh-cn/insights" element={<InsightsHub />} />
             <Route path="/zh-cn/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
@@ -68,7 +68,7 @@ export default function App() {
 
             {/* Russian Bundle Router */}
             <Route path="/ru" element={<Home />} />
-            <Route path="/ru/blog/:id" element={<BlogDetail />} />
+            <Route path="/ru/blog/:slug" element={<BlogDetail />} />
             <Route path="/ru/insights" element={<InsightsHub />} />
             <Route path="/ru/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ru/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
@@ -79,7 +79,7 @@ export default function App() {
 
             {/* French Bundle Router */}
             <Route path="/fr" element={<Home />} />
-            <Route path="/fr/blog/:id" element={<BlogDetail />} />
+            <Route path="/fr/blog/:slug" element={<BlogDetail />} />
             <Route path="/fr/insights" element={<InsightsHub />} />
             <Route path="/fr/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/fr/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
