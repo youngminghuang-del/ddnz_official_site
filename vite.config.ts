@@ -14,7 +14,27 @@ export default defineConfig(({mode}) => {
      */
     base: '/', 
     
-    plugins: [react(), tailwindcss()],
+    plugins: [
+      react(),
+      tailwindcss(),
+      {
+        name: 'html-hreflang-injector',
+        transformIndexHtml(html) {
+          const tags = `
+    <!-- Multi-Language SEO hreflang Alternate Links -->
+    <link rel="alternate" hreflang="x-default" href="https://www.ddnzglobal.com/" />
+    <link rel="alternate" hreflang="en" href="https://www.ddnzglobal.com/" />
+    <link rel="alternate" hreflang="zh-cn" href="https://www.ddnzglobal.com/zh-cn" />
+    <link rel="alternate" hreflang="ru" href="https://www.ddnzglobal.com/ru" />
+    <link rel="alternate" hreflang="fr" href="https://www.ddnzglobal.com/fr" />
+`;
+          if (!html.includes('hreflang="x-default"')) {
+            return html.replace('</head>', `${tags}</head>`);
+          }
+          return html;
+        }
+      }
+    ],
     
     define: {
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
