@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Mail, Globe, Clock, FileText, Shield, Linkedin, Phone } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
@@ -24,7 +25,7 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Row: Brand & Addresses */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 lg:gap-x-12 lg:gap-y-0 mb-10 md:mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-x-8 lg:gap-y-0 mb-10 md:mb-12">
           
           {/* Column 1: Brand & Contact */}
           <div className="space-y-4 lg:space-y-6 md:col-span-2 lg:col-span-1">
@@ -141,6 +142,47 @@ export default function Footer() {
                 </div>
               </address>
             </div>
+          </div>
+
+          {/* Column 4: Popular Shipping Lanes (SEO Matrix) */}
+          <div className="md:col-span-2 lg:col-span-1 lg:px-4">
+            <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
+              <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> Popular Shipping Lanes
+            </h4>
+            <ul className="space-y-3 pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+              <li>
+                <Link 
+                  to="/shipping-from-china-to-middle-east" 
+                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                >
+                  LCL & FCL Ocean Shipping to Saudi Arabia & UAE
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/shipping-from-china-to-central-asia" 
+                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                >
+                  Reliable Land Freight & Rail Logistics to Kazakhstan
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/shipping-from-china-to-west-africa" 
+                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                >
+                  Fast Air Freight Consolidation to Lagos, Nigeria
+                </Link>
+              </li>
+              <li>
+                <Link 
+                  to="/shipping-from-china-to-latin-america" 
+                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                >
+                  DDP/DDU Double Customs Clearance to Mexico & Brazil
+                </Link>
+              </li>
+            </ul>
           </div>
 
         </div>

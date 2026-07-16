@@ -187,6 +187,18 @@ export default function BlogDetail() {
         .blog-content td { padding: 1rem 1.25rem; border: 1px solid #e2e8f0; vertical-align: top; color: #334155; font-size: 0.95rem; }
         .blog-content pre { background-color: #1e293b; color: #f8fafc; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1.5rem; font-family: monospace; }
         .blog-content strong { color: #0f172a; font-weight: 700; }
+        .blog-content a {
+          color: #FF8A00 !important;
+          font-weight: 700 !important;
+          text-decoration: none !important;
+          transition: all 0.15s ease-in-out !important;
+          border-bottom: 1px solid rgba(255, 138, 0, 0.3) !important;
+        }
+        .blog-content a:hover {
+          color: #FF8A00 !important;
+          text-decoration: underline !important;
+          border-bottom: 1px solid #FF8A00 !important;
+        }
         @media (max-width: 768px) {
           .blog-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
           .blog-content h1 { font-size: 2rem; }
