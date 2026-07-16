@@ -429,7 +429,7 @@ export const translations = {
       label: 'НАШИ ОБЪЕКТЫ',
       title: 'ОПЕРАЦИОННОЕ ПРЕВОСХОДСТВО',
       subtitle: 'Опыт наследия обеспечивает современную инфраструктуру',
-      guangzhou: { title: 'Гуанчжоу: Ваш командный центр', tag: '1. Стратегический хаб с 18-летней историей', desc: 'Это не арендованное помещение, это наш нервный центр. Здесь мы осуществляем абсолютный контроль и строгую проверку качества.' },
+      guangzhou: { title: 'Гуанчжоу: Ваш командный центр', tag: '1. Стратегический хаб с 18-летней историей', desc: 'Наш собственный склад в Гуанчжоу (18 лет в собственности) — это идеальное решение для сборных грузов из Китая. Бесплатная консолидация, проверка качества и упаковка для импортеров.' },
       systems: { title: 'Передовые системы для сложных грузов', tag: '2. Разработано для точности и защиты', desc: 'Оснащенные системами автоматической сортировки, мы обрабатываем то, что не могут обычные склады. Наш основной опыт — экспортная упаковка.' }
     },
     get_a_quote: {
@@ -555,6 +555,18 @@ export const translations = {
       terms: 'Условия использования',
       experts: 'Специалисты по NEV и SCM',
       rights: '© 2026 Heaven Born International Freight. Все права защищены. DDNZ Global является премиальным брендом управления поставками, управляемым Heaven Born.'
+    },
+    routes: {
+      centralAsia: {
+        metaTitle: "Доставка из Китая под ключ | Карго и логистика в Казахстан и Узбекистан — DDNZ",
+        metaDescription: "Надежная доставка из Китая под ключ от DDNZ Global. Собственный склад в Гуанчжоу, бесплатная консолидация, автодоставка и контейнерные перевозки сборных грузов.",
+        heroHeadline: "Доставка из Китая под ключ",
+        heroSubheadline: "Профессиональные решения для автодоставки и контейнерных перевозок в Казахстан, Узбекистан и страны Центральной Азии. Снижайте риски импорта вместе с экспертами с 29-летним опытом.",
+        warehouseTitle: "Наш собственный склад в Гуанчжоу (18 лет в собственности)",
+        warehouseDescription: "Идеальный хаб для сборных грузов из Китая. Мы бесплатно принимаем товары от ваших поставщиков с Alibaba и 1688, проводим инспекцию качества, надежно упаковываем и формируем контейнеры под ключ.",
+        lclLabel: "Сборный груз (LCL)",
+        expressLabel: "Автодоставка из Гуанчжоу"
+      }
     }
   },
   fr: {
@@ -833,6 +845,18 @@ export const translations = {
       terms: 'Conditions d\'utilisation',
       experts: 'Experts spécialisés NEV & SCM',
       rights: '© 2026 Heaven Born International Freight. Tous droits réservés. DDNZ Global est une marque de gestion de chaîne d\'approvisionnement premium opérée par Heaven Born.'
+    },
+    routes: {
+      westAfrica: {
+        metaTitle: "Transitaire en Chine | Groupage Maritime & FCL vers l'Afrique de l'Ouest — DDNZ",
+        metaDescription: "Besoin d'un transitaire en Chine fiable ? DDNZ Global propose des services de groupage maritime, inspection de conteneur и dédouanement fret maritime.",
+        heroHeadline: "Groupage Maritime и FCL depuis la Chine",
+        heroSubheadline: "Logistique spécialisée et transport sécurisé vers l'Afrique de l'Ouest (Lagos, Tema, Abidjan) et l'Europe. Votre partenaire SCM de confiance depuis 1997.",
+        inspectionTitle: "Votre Gestionnaire de SCM : Inspection de conteneur & Audit d'usine",
+        inspectionDescription: "Nous sommes vos yeux et vos oreilles en Chine. Avant le départ du fret, notre équipe effectue une inspection de conteneur rigoureuse pour sécuriser vos achats sur Alibaba et 1688, évitant ainsi tout litige qualité à l'arrivée.",
+        customsLabel: "Dédouanement fret maritime",
+        groupageLabel: "Groupage maritime direct"
+      }
     }
   },
   zh: {

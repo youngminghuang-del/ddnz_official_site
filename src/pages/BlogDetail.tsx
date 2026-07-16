@@ -7,6 +7,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
+import SEO from '../components/SEO';
 
 interface BlogPost {
   id: string;
@@ -33,63 +34,6 @@ export default function BlogDetail() {
     const found = notionBlogPosts.find((p) => p.id === id);
     if (found) {
       setPost(found as BlogPost);
-
-      // Set Document Title
-      document.title = `${found.title} | DDNZ Global Logistics Insights`;
-
-      // Update meta description with the post's summary
-      let metaDesc = document.querySelector('meta[name="description"]');
-      if (!metaDesc) {
-        metaDesc = document.createElement('meta');
-        metaDesc.setAttribute('name', 'description');
-        document.head.appendChild(metaDesc);
-      }
-      metaDesc.setAttribute('content', found.summary || "DDNZ Global Logistics Insight content");
-
-      // Dynamic Meta Keywords
-      let metaKeys = document.querySelector('meta[name="keywords"]');
-      if (!metaKeys) {
-        metaKeys = document.createElement('meta');
-        metaKeys.setAttribute('name', 'keywords');
-        document.head.appendChild(metaKeys);
-      }
-      metaKeys.setAttribute('content', `${found.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`);
-
-      // Set Canonical
-      let cLink = document.querySelector('link[rel="canonical"]');
-      if (!cLink) {
-        cLink = document.createElement('link');
-        cLink.setAttribute('rel', 'canonical');
-        document.head.appendChild(cLink);
-      }
-      const currentPathCode = language === 'en' ? '' : `/${language === 'zh' ? 'zh-cn' : language}`;
-      cLink.setAttribute('href', `https://www.ddnzglobal.com${currentPathCode}/blog/${id}`);
-
-      // Manage hreflangs
-      const oldHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-      oldHreflangs.forEach(el => el.remove());
-
-      const langMap = [
-        { code: 'en', pathCode: '' },
-        { code: 'zh-cn', pathCode: '/zh-cn' },
-        { code: 'ru', pathCode: '/ru' },
-        { code: 'fr', pathCode: '/fr' }
-      ];
-
-      langMap.forEach(({ code, pathCode }) => {
-        const link = document.createElement('link');
-        link.setAttribute('rel', 'alternate');
-        link.setAttribute('hreflang', code);
-        link.setAttribute('href', `https://www.ddnzglobal.com${pathCode}/blog/${id}`);
-        document.head.appendChild(link);
-      });
-
-      // Add x-default hreflang
-      const defLink = document.createElement('link');
-      defLink.setAttribute('rel', 'alternate');
-      defLink.setAttribute('hreflang', 'x-default');
-      defLink.setAttribute('href', `https://www.ddnzglobal.com/blog/${id}`);
-      document.head.appendChild(defLink);
 
       // Tracking
       if (typeof window !== 'undefined' && (window as any).gtag) {
@@ -130,6 +74,11 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
+      <SEO 
+        title={`${post.title} | DDNZ Global Logistics Insights`} 
+        description={post.summary} 
+        keywords={`${post.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`}
+      />
       <SchemaMarkup 
         type="BlogPosting" 
         data={{

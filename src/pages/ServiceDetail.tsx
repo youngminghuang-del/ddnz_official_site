@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SchemaMarkup from '../components/SchemaMarkup';
+import SEO from '../components/SEO';
 import { motion } from 'framer-motion';
 import { 
   Ship, Plane, ShieldAlert, BadgeCheck, CheckCircle2, ArrowRight, 
@@ -733,6 +734,7 @@ export default function ServiceDetail() {
   const [selectedService, setSelectedService] = useState('Sea');
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const [state, handleSubmit] = useForm("mdabvqbd");
+  const [currentSEO, setCurrentSEO] = useState<{ title: string; desc: string; keywords: string } | null>(null);
 
   // Format valid service key or default to first
   const currentKey = serviceId && SERVICES_DATA[serviceId] ? serviceId : 'sea-freight';
@@ -835,63 +837,9 @@ export default function ServiceDetail() {
       }
     };
 
-    const currentSEO = seoMeta[currentKey]?.[activeLang] || seoMeta[currentKey]?.['en'];
-    if (currentSEO) {
-      document.title = currentSEO.title;
-
-      // Update meta description
-      let mDesc = document.querySelector('meta[name="description"]');
-      if (!mDesc) {
-        mDesc = document.createElement('meta');
-        mDesc.setAttribute('name', 'description');
-        document.head.appendChild(mDesc);
-      }
-      mDesc.setAttribute('content', currentSEO.desc);
-
-      // Update meta keywords
-      let mKeys = document.querySelector('meta[name="keywords"]');
-      if (!mKeys) {
-        mKeys = document.createElement('meta');
-        mKeys.setAttribute('name', 'keywords');
-        document.head.appendChild(mKeys);
-      }
-      mKeys.setAttribute('content', currentSEO.keywords);
-
-      // Update canonical link
-      let cLink = document.querySelector('link[rel="canonical"]');
-      if (!cLink) {
-        cLink = document.createElement('link');
-        cLink.setAttribute('rel', 'canonical');
-        document.head.appendChild(cLink);
-      }
-      const canonicalUrl = `https://www.ddnzglobal.com${activeLang === 'en' ? '' : `/${activeLang === 'zh' ? 'zh-cn' : activeLang}`}/services/${currentKey}`;
-      cLink.setAttribute('href', canonicalUrl);
-
-      // Programmatically inject and replace hreflang links
-      const oldHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-      oldHreflangs.forEach(el => el.remove());
-
-      const langMap = [
-        { code: 'en', pathCode: '' },
-        { code: 'zh-cn', pathCode: '/zh-cn' },
-        { code: 'ru', pathCode: '/ru' },
-        { code: 'fr', pathCode: '/fr' }
-      ];
-
-      langMap.forEach(({ code, pathCode }) => {
-        const link = document.createElement('link');
-        link.setAttribute('rel', 'alternate');
-        link.setAttribute('hreflang', code);
-        link.setAttribute('href', `https://www.ddnzglobal.com${pathCode}/services/${currentKey}`);
-        document.head.appendChild(link);
-      });
-
-      // Add x-default hreflang pointing to english default
-      const defLink = document.createElement('link');
-      defLink.setAttribute('rel', 'alternate');
-      defLink.setAttribute('hreflang', 'x-default');
-      defLink.setAttribute('href', `https://www.ddnzglobal.com/services/${currentKey}`);
-      document.head.appendChild(defLink);
+    const currentSEOVal = seoMeta[currentKey]?.[activeLang] || seoMeta[currentKey]?.['en'];
+    if (currentSEOVal) {
+      setCurrentSEO(currentSEOVal);
     }
   }, [serviceId, currentKey, activeLang]);
 
@@ -2529,6 +2477,7 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
         {/* 1. Hero Banner */}
@@ -2982,6 +2931,7 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
         type="Service" 
         data={{

@@ -135,6 +135,65 @@ const WEST_AFRICA_DATA = {
           a: "我们在西非航线上长期与主流船东（如 MSK, CMA, COSCO）保持战略级协议，默认争取 14-21 天的超长目的港集装箱免箱期。同时，自营目的港单证员会在货船到港前 7 天完成舱单预清关录入，避开拥堵时段。"
         }
       ]
+    },
+    fr: {
+      seoTitle: "Transitaire en Chine | Groupage Maritime & FCL vers l'Afrique de l'Ouest — DDNZ",
+      seoDesc: "Besoin d'un transitaire en Chine fiable ? DDNZ Global propose des services de groupage maritime, inspection de conteneur и dédouanement fret maritime.",
+      headline: "Groupage Maritime и FCL depuis la Chine",
+      subheadline: "Logistique spécialisée et transport sécurisé vers l'Afrique de l'Ouest (Lagos, Tema, Abidjan) et l'Europe. Votre partenaire SCM de confiance depuis 1997.",
+      transitWindow: "⏱️ Délais de transit pour le Nigeria",
+      transitDays: "35 - 45 Jours",
+      complianceRowTitle: "Validation Form M & PAAR",
+      complianceRowVal: "2 - 4 Jours",
+      solutionsTitle: "Solutions de conformité SCM Nigeria",
+      solutionsSubtitle: "Canaux logistiques sur mesure pour surmonter les évaluations douanières, les barrières de certification et les congestions portuaires.",
+      solutions: [
+        {
+          title: "Processus de certification SONCAP",
+          desc: "N'expédiez pas à l'aveugle sans vérification. Nos experts vous aident à sécuriser votre Product Certificate (PC), à enregistrer votre Form M et votre rapport PAAR avec la Banque Centrale du Nigeria (CBN), puis à acquérir le SONCAP Certificate (SC).",
+          icon: "ShieldCheck"
+        },
+        {
+          title: "Note d'information ECTN/CTN obligatoire",
+          desc: "La douane du Nigeria exige la note de suivi de cargaison ECTN/CTN. Elle doit être émise et mentionnée sur le connaissement maritime en Chine avant le départ. Les demandes tardives à destination sont interdites.",
+          icon: "FileText"
+        },
+        {
+          title: "Sécurisation contre la sous-évaluation",
+          desc: "Les douanes de Lagos luttent contre la sous-évaluation des factures. Tout écart entraîne des amendes de 2 à 3 fois la différence de droits de douane. DDNZ fournit des analyses d'évaluation certifiées.",
+          icon: "Search"
+        }
+      ],
+      multimodalTable: [
+        {
+          mode: "🚢 Fret Maritime (LCL/FCL)",
+          days: "35 - 45 Jours",
+          suitability: "Idéal pour les stocks commerciaux, les équipements industriels et les frets lourds.",
+          sellingPoint: "POL : Guangzhou, Nansha, ou Shenzhen vers Lagos Apapa / Tin Can Island. Départs réguliers.",
+          warning: "La congestion à Lagos est importante. DDNZ offre de 14 à 21 jours de franchise (免箱期) pour faciliter un dédouanement rapide."
+        },
+        {
+          mode: "✈️ Fret Aérien Express",
+          days: "5 - 12 Jours Ouvrables",
+          suitability: "Idéal pour l'électronique haut de gamme, les pièces détachées auto et les échantillons urgents.",
+          sellingPoint: "Connexions de fret aérien directes vers l'aéroport de Lagos (LOS).",
+          warning: "Le fret général prend de 5 à 12 jours; les produits à batterie lithium, téléphones et cosmétiques nécessitent un canal spécial de 11 à 16 jours."
+        }
+      ],
+      faqs: [
+        {
+          q: "Quelle est la relation entre Form M, PAAR et SONCAP ?",
+          a: "Ce sont les maillons de la chaîne de conformité légale : d'abord le PC, puis le Form M et le PAAR enregistrés localement, et enfin le certificat SC pour le chargement. Sans eux, le dédouanement est impossible."
+        },
+        {
+          q: "Quand faut-il demander le CTN ?",
+          a: "Le CTN doit être enregistré en Chine AVANT le chargement. Il est illégal de le faire à Lagos et cela entraîne d'importantes amendes douanières."
+        },
+        {
+          q: "Comment DDNZ gère-t-il la congestion à Lagos ?",
+          a: "Nous négocions directement avec les transporteurs pour obtenir de 14 à 21 jours de franchise de conteneur. Nos équipes pré-enregistrent les dossiers 7 jours avant l'arrivée."
+        }
+      ]
     }
   },
   ghana: {
@@ -255,6 +314,65 @@ const WEST_AFRICA_DATA = {
           a: "相比于拉各斯，特马港口秩序更好，但常在季度交替、海外节日以及加纳关税政策调整期出现 5-10 天的阶段性塞港。DDNZ 提供自营拖车配合，保障第一时间拖离港口进入我们加纳本地拆箱仓。"
         }
       ]
+    },
+    fr: {
+      seoTitle: "Transitaire en Chine | Groupage Maritime & FCL vers l'Afrique de l'Ouest — DDNZ",
+      seoDesc: "Besoin d'un transitaire en Chine fiable ? DDNZ Global propose des services de groupage maritime, inspection de conteneur и dédouanement fret maritime.",
+      headline: "Groupage Maritime и FCL depuis la Chine",
+      subheadline: "Logistique spécialisée et transport sécurisé vers l'Afrique de l'Ouest (Lagos, Tema, Abidjan) et l'Europe. Votre partenaire SCM de confiance depuis 1997.",
+      transitWindow: "⏱️ Délais de transit pour le Ghana",
+      transitDays: "35 - 50 Jours",
+      complianceRowTitle: "Dépôt de certification CoC Ghana",
+      complianceRowVal: "1 - 3 Jours",
+      solutionsTitle: "Solutions de conformité logistique Ghana",
+      solutionsSubtitle: "Navigation sans effort parmi les exigences douanières, les contrôles de qualité obligatoires et les processus CoC.",
+      solutions: [
+        {
+          title: "Exigence de certification CoC",
+          desc: "Le gouvernement du Ghana impose un certificat de conformité (CoC) pour sécuriser le marché contre les produits de mauvaise qualité. Nous aidons à l'évaluation, aux tests et à l'obtention du certificat avant le départ.",
+          icon: "ShieldCheck"
+        },
+        {
+          title: "Note de suivi électronique CTN du Ghana",
+          desc: "Toutes les importations doivent comporter un numéro de suivi CTN sur le connaissement (B/L). Notre équipe gère ce dépôt numérique à Guangzhou pour éviter les blocages de fret à Tema.",
+          icon: "FileText"
+        },
+        {
+          title: "Transparence absolue des coûts de destination",
+          desc: "Le Ghana a des frais de port et des taxes fluctuants. Nous protégeons les importateurs en garantissant des tarifs logistiques DDP forfaitaires, transparents et sans frais cachés.",
+          icon: "Search"
+        }
+      ],
+      multimodalTable: [
+        {
+          mode: "🚢 Groupage LCL & FCL de Chine vers Tema",
+          days: "35 - 50 Jours",
+          suitability: "Idéal pour les envois réguliers de marchandises, les palettes de vente au détail et le fret volumineux.",
+          sellingPoint: "Ligne de consolidation directe hebdomadaire de Guangzhou à Tema Port. Dédouanement efficace.",
+          warning: "Assurez-vous que l'étiquetage correspond à 100% au certificat CoC pour éviter l'ouverture forcée des conteneurs."
+        },
+        {
+          mode: "✈️ Fret Aérien Direct vers Accra (ACC)",
+          days: "4 - 10 Jours Ouvrables",
+          suitability: "Idéal pour les pièces de rechange d'usine, l'électronique fine et les lancements de produits.",
+          sellingPoint: "Vols directs ou de transit rapide vers l'aéroport d'Accra, dédouanement accéléré.",
+          warning: "Le fret aérien est soumis à un contrôle strict des marchandises réglementées; l'obtention de permis spécifiques peut être nécessaire."
+        }
+      ],
+      faqs: [
+        {
+          q: "Pourquoi le CoC is obligatoire pour expédier vers Tema ?",
+          a: "La GSA (Ghana Standards Authority) l'impose pour des raisons de conformité et de sécurité. Les marchandises non certifiées reçoivent d'importantes amendes et des inspections de douane intrusives."
+        },
+        {
+          q: "Comment fonctionne le CTN ghanéen ?",
+          a: "Le Cargo Tracking Note doit être lié à la facture commerciale et au B/L. Nous le finalisons numériquement à Guangzhou sous 48 heures."
+        },
+        {
+          q: "Est-il possible d'expédier sous le régime DDP (rendu droits acquittés) ?",
+          a: "Oui, DDNZ propose des solutions DDP fiables couvrant l'ensemble du processus de douane et des taxes ghanéennes."
+        }
+      ]
     }
   }
 };
@@ -307,6 +425,30 @@ const PAGE_LANG_DATA = {
     actionConsult: "在线对接货代大庄家",
     guideHeader: "DDNZ 西非通用保命指南：18年大区老庄家硬实力方案",
     guideSub: "从中国自营集拼仓到西非口岸清关，完美击碎目的港天价隐藏收费黑幕与异国维权灾难。"
+  },
+  fr: {
+    seoTitle: "Spécialiste du fret en Afrique de l'Ouest | DDNZ",
+    seoDesc: "Votre passerelle de confiance pour l'expédition en Afrique de l'Ouest (Nigeria, Ghana, Afrique de l'Ouest francophone). Logistique DDP conforme garantie à 100%.",
+    tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
+    tabGhana: "Ghana (Tema / Accra)",
+    faqHeading: "FAQ sur la conformité SCM en Afrique de l'Ouest",
+    faqSubheading: "Vérifications de conformité proactives pour assurer le transit sécurisé de vos marchandises dans les couloirs douaniers.",
+    formTitle: "Demande de devis d'expédition en Afrique de l'Ouest",
+    formSub: "Envoyez vos exigences à nos gestionnaires de ligne de commerce senior pour l'Afrique de l'Ouest.",
+    formName: "Votre Nom / Entreprise",
+    formEmail: "Adresse e-mail de l'entreprise",
+    formPhone: "Mobile / WhatsApp",
+    formGoods: "Détails de la cargaison (Type d'article, poids/CBM total, etc.)",
+    formSubmit: "Obtenir un devis DDP précis",
+    formSuccess: "Demande soumise avec succès !",
+    formSuccessSub: "Notre gestionnaire de ligne commerciale pour l'Afrique de l'Ouest vous contactera sous 24 heures.",
+    formAnother: "Soumettre une nouvelle demande",
+    complianceBadge: "AVIS DE CONFORMITÉ",
+    timeBadge: "PRÉVISIONS DE DÉLAI",
+    actionQuote: "Générer un devis d'itinéraire",
+    actionConsult: "Consulter un spécialiste de la conformité",
+    guideHeader: "Guide de survie DDNZ Afrique de l'Ouest : Solutions d'expert depuis 18 ans",
+    guideSub: "Sécurisation de la logistique à travers l'Afrique de l'Ouest et élimination des goulets d'étranglement douaniers."
   }
 };
 
@@ -362,6 +504,32 @@ const UNIVERSAL_REDLINES = {
         desc: "除英语系国家外，DDNZ 在法语西非大区同样拥有强悍清关路权：科特迪瓦阿比让（40-50天）、塞内加尔达喀尔（50-60天），以及通过港口向内陆国家（马里 Mali、布基纳法索）进行公路多式联运。单证团队提供纯正法语/双语清关单据预审，并办妥 BESC 跟踪单。"
       }
     ]
+  },
+  fr: {
+    title: "Guide de survie de l'Afrique de l'Ouest : Lignes rouges opérationnelles",
+    subtitle: "L'expédition en Afrique de l'Ouest exige une exécution locale approfondie sous peine de confiscation de fret ou d'amendes douanières extrêmes.",
+    items: [
+      {
+        id: "01",
+        title: "Entrepôt de consolidation 1688 autogéré à Guangzhou",
+        desc: "Les acheteurs PME étrangers achètent souvent des produits auprès de dizaines de fournisseurs 1688 ou Alibaba dispersés. DDNZ propose un stockage gratuit et sécurisé dans son entrepôt principal de Guangzhou. Nous fournissons une gestion numérique, un reconditionnement renforcé et une optimisation de volume avancée (Cube Optimization) pour éliminer les espaces vides et économiser sur le fret."
+      },
+      {
+        id: "02",
+        title: "Votre Gestionnaire de SCM : Inspection de conteneur & Audit d'usine",
+        desc: "Nous sommes vos yeux et vos oreilles en Chine. Avant le départ du fret, notre équipe effectue une inspection de conteneur rigoureuse pour sécuriser vos achats sur Alibaba et 1688, évitant ainsi tout litige qualité à l'arrivée."
+      },
+      {
+        id: "03",
+        title: "Zéro frais caché : Engagement tarifaire fixe tout compris",
+        desc: "Nous condamnons fermement les agents logistiques trompeurs qui facturent peu en Chine mais extorquent des milliers de dollars aux destinations africaines ! DDNZ applique un taux tout compris strict (DDP/DDU) verrouillé par contrat."
+      },
+      {
+        id: "04",
+        title: "Réseau Afrique de l'Ouest francophone (Abidjan & Dakar)",
+        desc: "Au-delà des hubs anglophones, DDNZ gère des lignes directes vers l'Afrique de l'Ouest francophone : Abidjan (Côte d'Ivoire) en 40-50 jours, Dakar (Senegal) en 50-60 jours, avec transit multimodal vers les pays enclavés (Mali, Burkina Faso). Nos équipes bilingues gèrent parfaitement les dossiers de douane en français et les certificats obligatoires BESC/BIETC."
+      }
+    ]
   }
 };
 
@@ -406,7 +574,7 @@ export default function ShippingWestAfrica() {
     setActiveFaq(null);
   };
 
-  const activeLang = language === 'zh' ? 'zh' : 'en';
+  const activeLang = language === 'zh' ? 'zh' : (language === 'fr' ? 'fr' : 'en');
   
   const spec = WEST_AFRICA_DATA[selectedCountry][activeLang];
   const t = (key: string) => {

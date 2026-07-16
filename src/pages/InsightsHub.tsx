@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import { useLanguage } from "../contexts/LanguageContext";
 import { getImgUrl } from "../constants";
 import SchemaMarkup from "../components/SchemaMarkup";
+import SEO from "../components/SEO";
 
 interface BlogPost {
   id: string;
@@ -24,6 +25,31 @@ export default function InsightsHub() {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [isLoading] = useState<boolean>(false);
 
+  const seoMetrics: Record<string, { title: string; desc: string; keywords: string }> = {
+    en: {
+      title: 'Global Trade Insights & Logistics News | DDNZ Global',
+      desc: 'Stay informed with our curated global shipping guides, cross-border trade guidelines, and international supply chain trends.',
+      keywords: 'global supply chain, shipping news china, cross-border e-commerce ddp, ocean freight guides, air cargo metrics'
+    },
+    zh: {
+      title: '国际跨境贸易与供应链前沿资讯 | 华正邦泰国际货运',
+      desc: '华正邦泰国际货运为您深度剖析最新一站式国际海运拼箱政策、跨境电商包税规则、全球空运极速干线趋势及海外仓配实战指南。',
+      keywords: '国际货代资讯, 跨境物流指南, 外贸出口干货, 国际供应链前哨, 跨境电商干货库, 华正邦泰国际货运, 华正邦泰'
+    },
+    ru: {
+      title: 'Блоги и аналитика ВЭД, логистика из Китая | DDNZ Global',
+      desc: 'Актуальные инструкции, гайды по таможенному оформлению, морские тарифы и последние изменения рынка логистики из КНР.',
+      keywords: 'новости логистики из китая, вэд китай рф, таможенная очистка грузов, ставки фрахта, карго шэньчжэнь'
+    },
+    fr: {
+      title: 'Insights Logistique Globale et Transit Chine | DDNZ Global',
+      desc: 'Suivez l\'actualité du fret international, de la douane import/export, et des innovations supply chain.',
+      keywords: 'actus transit chine europe, réglementation amazon fba, douane importations france, tarifs expédition maritime'
+    }
+  };
+
+  const currentSEO = seoMetrics[language] || seoMetrics['en'];
+
   useEffect(() => {
     // Tracking event
     if (typeof window !== "undefined" && (window as any).gtag) {
@@ -34,89 +60,7 @@ export default function InsightsHub() {
     }
 
     window.scrollTo(0, 0);
-
-    // Dynamic SEO / GEO Meta Tags for Insights Hub
-    const seoMetrics: Record<string, { title: string; desc: string; keywords: string }> = {
-      en: {
-        title: 'Global Trade Insights & Logistics News | DDNZ Global',
-        desc: 'Stay informed with our curated global shipping guides, cross-border trade guidelines, and international supply chain trends.',
-        keywords: 'global supply chain, shipping news china, cross-border e-commerce ddp, ocean freight guides, air cargo metrics'
-      },
-      zh: {
-        title: '国际跨境贸易与供应链前沿资讯 | 华正邦泰国际货运',
-        desc: '华正邦泰国际货运为您深度剖析最新一站式国际海运拼箱政策、跨境电商包税规则、全球空运极速干线趋势及海外仓配实战指南。',
-        keywords: '国际货代资讯, 跨境物流指南, 外贸出口干货, 国际供应链前哨, 跨境电商干货库, 华正邦泰国际货运, 华正邦泰'
-      },
-      ru: {
-        title: 'Блоги и аналитика ВЭД, логистика из Китая | DDNZ Global',
-        desc: 'Актуальные инструкции, гайды по таможенному оформлению, морские тарифы и последние изменения рынка логистики из КНР.',
-        keywords: 'новости логистики из китая, вэд китай рф, таможенная очистка грузов, ставки фрахта, карго шэньчжэнь'
-      },
-      fr: {
-        title: 'Insights Logistique Globale et Transit Chine | DDNZ Global',
-        desc: 'Suivez l\'actualité du fret international, de la douane import/export, et des innovations supply chain.',
-        keywords: 'actus transit chine europe, réglementation amazon fba, douane importations france, tarifs expédition maritime'
-      }
-    };
-
-    const currentSEO = seoMetrics[language] || seoMetrics['en'];
-    document.title = currentSEO.title;
-
-    // Set Meta Description
-    let mDesc = document.querySelector('meta[name="description"]');
-    if (!mDesc) {
-      mDesc = document.createElement('meta');
-      mDesc.setAttribute('name', 'description');
-      document.head.appendChild(mDesc);
-    }
-    mDesc.setAttribute('content', currentSEO.desc);
-
-    // Set Meta Keywords
-    let mKeys = document.querySelector('meta[name="keywords"]');
-    if (!mKeys) {
-      mKeys = document.createElement('meta');
-      mKeys.setAttribute('name', 'keywords');
-      document.head.appendChild(mKeys);
-    }
-    mKeys.setAttribute('content', currentSEO.keywords);
-
-    // Set Canonical link
-    let cLink = document.querySelector('link[rel="canonical"]');
-    if (!cLink) {
-      cLink = document.createElement('link');
-      cLink.setAttribute('rel', 'canonical');
-      document.head.appendChild(cLink);
-    }
-    const currentPathCode = language === 'en' ? '' : `/${language === 'zh' ? 'zh-cn' : language}`;
-    cLink.setAttribute('href', `https://www.ddnzglobal.com${currentPathCode}/insights`);
-
-    // Manage hreflangs
-    const oldHreflangs = document.querySelectorAll('link[rel="alternate"][hreflang]');
-    oldHreflangs.forEach(el => el.remove());
-
-    const langMap = [
-      { code: 'en', pathCode: '' },
-      { code: 'zh-cn', pathCode: '/zh-cn' },
-      { code: 'ru', pathCode: '/ru' },
-      { code: 'fr', pathCode: '/fr' }
-    ];
-
-    langMap.forEach(({ code, pathCode }) => {
-      const link = document.createElement('link');
-      link.setAttribute('rel', 'alternate');
-      link.setAttribute('hreflang', code);
-      link.setAttribute('href', `https://www.ddnzglobal.com${pathCode}/insights`);
-      document.head.appendChild(link);
-    });
-
-    // Add x-default hreflang
-    const defLink = document.createElement('link');
-    defLink.setAttribute('rel', 'alternate');
-    defLink.setAttribute('hreflang', 'x-default');
-    defLink.setAttribute('href', 'https://www.ddnzglobal.com/insights');
-    document.head.appendChild(defLink);
-
-  }, [language]);
+  }, []);
 
   // Compute unique categories dynamically from database pages
   const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
@@ -129,6 +73,7 @@ export default function InsightsHub() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex flex-col justify-between">
+      <SEO title={currentSEO.title} description={currentSEO.desc} keywords={currentSEO.keywords} />
       <SchemaMarkup type="Organization" data={{}} />
       <div>
         <Navbar />
