@@ -902,10 +902,17 @@ export default function ServiceDetail() {
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
         <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+        <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
         {/* Block 1: Hero Banner */}
         <section className={`relative pt-32 pb-20 md:pb-32 bg-gradient-to-br from-blue-600 to-indigo-800 text-white overflow-hidden`}>
+          <img 
+            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
+            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop" 
+            alt="Air Freight backdrop" 
+            referrerPolicy="no-referrer" 
+          />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
           
@@ -1633,10 +1640,17 @@ export default function ServiceDetail() {
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
         <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+        <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
         {/* Block 1: Hero Banner */}
         <section className="relative pt-32 pb-20 md:pb-32 bg-gradient-to-br from-[#4B27B1] to-[#2D1375] text-white overflow-hidden">
+          <img 
+            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
+            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" 
+            alt="Amazon FBA backdrop" 
+            referrerPolicy="no-referrer" 
+          />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-30" />
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
           
@@ -2486,6 +2500,12 @@ export default function ServiceDetail() {
 
         {/* 1. Hero Banner */}
         <section className="relative pt-36 pb-24 md:pb-36 bg-gradient-to-br from-[#121B2B] via-[#0D2C43] to-[#123E5E] text-white overflow-hidden">
+          <img 
+            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
+            src="https://images.unsplash.com/photo-1553413719-8758712a47e2?q=80&w=1200&auto=format&fit=crop" 
+            alt="Warehouse Services backdrop" 
+            referrerPolicy="no-referrer" 
+          />
           <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
           <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
           <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
@@ -2933,6 +2953,23 @@ export default function ServiceDetail() {
   }
 
 
+  const getHeroImageUrl = (key: string) => {
+    switch (key) {
+      case 'sea-freight':
+        return 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop';
+      case 'rail-freight':
+        return 'https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1200&auto=format&fit=crop';
+      case 'road-freight':
+        return 'https://images.unsplash.com/photo-1516576885502-d4c0529424c3?q=80&w=1200&auto=format&fit=crop';
+      case 'customs-clearance':
+        return 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200&auto=format&fit=crop';
+      default:
+        return 'https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?q=80&w=1200&auto=format&fit=crop';
+    }
+  };
+
+  const heroImgUrl = getHeroImageUrl(currentKey);
+
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
       <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
@@ -2949,6 +2986,12 @@ export default function ServiceDetail() {
 
       {/* Hero Block */}
       <section className={`relative pt-32 pb-20 md:pb-32 bg-gradient-to-br ${config.bgGrad} text-white overflow-hidden`}>
+        <img 
+          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
+          src={heroImgUrl} 
+          alt={`${currentKey} backdrop`} 
+          referrerPolicy="no-referrer" 
+        />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
         

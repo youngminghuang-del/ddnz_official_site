@@ -128,39 +128,51 @@ export default function BlogDetail() {
       />
       <Navbar />
       
-      {/* Breadcrumb Navigation */}
-      <div className="bg-slate-50 border-b border-slate-100 pt-28 md:pt-36 pb-6">
-        <div className="max-w-4xl mx-auto px-4 md:px-6 flex items-center gap-2 text-xs md:text-sm font-medium text-slate-500">
-          <Link to="/" className="hover:text-[#4B27B1] transition-colors">Home</Link>
-          <ChevronRight className="w-3 h-3" />
-          <Link to="/insights" className="hover:text-[#4B27B1] transition-colors">Insights</Link>
-          <ChevronRight className="w-3 h-3" />
-          <span className="text-[#4B27B1] truncate max-w-[200px] md:max-w-none font-bold">{post.title}</span>
+      {/* Breadcrumb Navigation & Hero Banner */}
+      <div className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-gradient-to-br from-[#1E1145] via-[#2D1375] to-[#4B27B1] text-white overflow-hidden">
+        {/* Semi-transparent background photo */}
+        <img 
+          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
+          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" 
+          alt="Insights backdrop" 
+          referrerPolicy="no-referrer" 
+        />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
+        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
+
+        <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
+          <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-slate-300 mb-6">
+            <Link to="/" className="hover:text-white transition-colors">Home</Link>
+            <ChevronRight className="w-3 h-3 text-slate-400" />
+            <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
+            <ChevronRight className="w-3 h-3 text-slate-400" />
+            <span className="text-orange-400 font-bold truncate max-w-[200px] md:max-w-none">{post.title}</span>
+          </div>
+
+          <div className="flex flex-wrap items-center gap-4 mb-4">
+            <span className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              {post.category}
+            </span>
+            <div className="flex items-center text-slate-300 text-sm">
+              <Calendar className="w-4 h-4 mr-2 text-orange-400" />
+              {post.date}
+            </div>
+          </div>
+
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
+            {post.title}
+          </h1>
         </div>
       </div>
 
-      <main className="py-12 md:py-20">
+      <main className="pb-12 md:pb-20 relative z-10">
         <article className="max-w-4xl mx-auto px-4 md:px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="flex flex-wrap items-center gap-4 mb-6">
-              <span className="bg-purple-100 text-[#4B27B1] px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-                {post.category}
-              </span>
-              <div className="flex items-center text-slate-500 text-sm">
-                <Calendar className="w-4 h-4 mr-2 text-orange-500" />
-                {post.date}
-              </div>
-            </div>
-
-            <h1 className="text-3xl md:text-5xl font-black text-[#4B27B1] leading-tight mb-8">
-              {post.title}
-            </h1>
-
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-12 shadow-xl ring-1 ring-slate-200 bg-slate-100">
+            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-12 shadow-2xl ring-1 ring-slate-200 bg-slate-100 -mt-16 md:-mt-24 z-20">
               <img 
                 src={post.thumbnailUrl} 
                 alt={post.title}
