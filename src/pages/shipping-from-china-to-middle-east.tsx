@@ -20,7 +20,7 @@ import { COUNTRY_SPEC_DATA } from '../data/countrySpecData';
 const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
   en: {
     seoTitle: "China to Middle East Freight Forwarding Guide | DDNZ",
-    seoDesc: "Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance with 20+ years of reliable forwarding network.",
+    seoDesc: "Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance with 20+ years of forwarding.",
     heroHeadline: "Reliable Shipping Networks from China to Middle East Hubs.",
     heroSubheadline: "Navigating Red Sea infrastructure shifts with optimized transit paths. Complete door-to-door (DDP) logistics for global SMEs with absolute transparency.",
     heroCta: "Get Free Route & Tariff Analysis",

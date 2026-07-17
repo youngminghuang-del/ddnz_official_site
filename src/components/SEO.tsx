@@ -17,22 +17,22 @@ export default function SEO({ title, description, keywords, canonicalPath }: SEO
   const seoDefaults: Record<string, { title: string; desc: string; keywords: string }> = {
     en: {
       title: 'DDNZ & Heaven Born Freight | China Sourcing & Logistics',
-      desc: 'Optimize your China supply chain with Heaven Born International Freight and DDNZ Supply Chain. Offering professional China sourcing, sea freight forwarding, air cargo logistics, and FBA warehouse services from Guangzhou.',
+      desc: 'Optimize your China supply chain with Heaven Born Freight and DDNZ. Professional sourcing, sea/air freight forwarding, and FBA warehouse services from Guangzhou.',
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
     },
     zh: {
-      title: '华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运',
-      desc: '广州靠谱实力出口货运代理，华正邦泰国际物流联合 DDNZ 供应链为您提供专业的中国商品采购代理、广州货代、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 及全球一站式跨境物流 and 海外仓增值支持。',
+      title: '华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力货运代理与国际海运空运',
+      desc: '广州靠谱实力出口货代，华正邦泰与 DDNZ 供应链为您提供专业的中国采购代理、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 等一站式跨境物流服务。',
       keywords: '广州货代, 广州靠谱货代, 实力出口货代, 华正邦泰国际物流, DDNZ供应链, 广州出口货运代理, 广州集装箱海运, 广州空运专线, 中国商品采购代理, 国际货运代理',
     },
     fr: {
-      title: 'Heaven Born International Freight & DDNZ Supply Chain | Transitaire de Fret en Chine & Logistique',
-      desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born International Freight et DDNZ Supply Chain. Services professionnels d'approvisionnement, fret maritime, fret aérien et logistique globale à Guangzhou.",
+      title: 'DDNZ & Heaven Born | Transitaire & Logistique en Chine',
+      desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born & DDNZ. Services d'approvisionnement, fret maritime/aérien et logistique globale à Guangzhou.",
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Transitaire maritime Chine, Fret aérien direct, Commissionnaire de transport Guangzhou, Logistique Chine Europe',
     },
     ru: {
-      title: 'Heaven Born International Freight & DDNZ Supply Chain | Международная доставка грузов из Китая',
-      desc: 'Оптимизируйте ваши поставки из Китая с Heaven Born International Freight и DDNZ Supply Chain. Профессиональный поиск надежных поставщиков, недорогие морские контейнерные перевозки, авиадоставка под ключ и сборные грузы из Гуанчжоу.',
+      title: 'DDNZ & Heaven Born | Доставка грузов из Китая',
+      desc: 'Оптимизируйте ваши поставки из Китая с Heaven Born и DDNZ. Профессиональный поиск поставщиков, морские/авиаперевозки и сборные грузы из Гуанчжоу.',
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Доставка грузов из Китая, Карго Гуанчжоу, Морской фрахт Китай, Авиаперевозки из Китая, Экспортный логистический брокер',
     }
   };
@@ -42,7 +42,24 @@ export default function SEO({ title, description, keywords, canonicalPath }: SEO
 
   // Resolve final SEO fields
   const finalTitle = title || defaults.title;
-  const finalDesc = description || defaults.desc;
+  const finalRawDesc = description || defaults.desc;
+  
+  // Truncate description dynamically to ideal SEO length (110 - 155 chars for non-Chinese, 50 - 100 for Chinese)
+  const optimizeDesc = (desc: string, lang: string) => {
+    const cleanDesc = desc.trim();
+    if (lang === 'zh') {
+      if (cleanDesc.length > 100) {
+        return cleanDesc.slice(0, 97) + '...';
+      }
+    } else {
+      if (cleanDesc.length > 155) {
+        return cleanDesc.slice(0, 152) + '...';
+      }
+    }
+    return cleanDesc;
+  };
+
+  const finalDesc = optimizeDesc(finalRawDesc, currentLang);
   const finalKeywords = keywords || defaults.keywords;
 
   // Resolve language-agnostic clean path suffix

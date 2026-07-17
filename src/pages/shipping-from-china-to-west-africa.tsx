@@ -20,7 +20,7 @@ const WEST_AFRICA_DATA = {
   nigeria: {
     en: {
       seoTitle: "China to Nigeria Freight Forwarding Guide | DDNZ",
-      seoDesc: "Direct LCL/FCL ocean freight and air freight from China to Lagos (Apapa/Tin Can). Comprehensive Form M filing, PAAR reports, and SC SONCAP certificate management since 1999.",
+      seoDesc: "Direct LCL/FCL ocean & air freight from China to Lagos (Apapa/Tin Can). Complete Form M, PAAR, and SC SONCAP certificate management since 1999.",
       headline: "Secured Sea & Air Freight to Nigeria (Lagos) | 100% Compliant SONCAP & Form M Handling",
       subheadline: "Direct container consolidation from Guangzhou self-operated hub to Lagos Apapa and Tin Can ports. Tackle SONCAP compliance and Form M barriers with our local on-site clearing team.",
       transitWindow: "⏱️ Nigeria Transit Windows",
@@ -199,7 +199,7 @@ const WEST_AFRICA_DATA = {
   ghana: {
     en: {
       seoTitle: "China to Ghana Freight Forwarding Guide | DDNZ",
-      seoDesc: "Direct LCL consolidation and FCL direct ocean container service from China to Tema, Ghana. Expert handling of CoC conformance certification and pre-shipment CTN binding.",
+      seoDesc: "Direct LCL consolidation and FCL ocean container service from China to Tema, Ghana. Expert handling of CoC certification and pre-shipment CTN binding.",
       headline: "Reliable Shipping to Ghana (Tema/Accra) | Streamlined CoC Product Certification & LCL Cargo Consolidation",
       subheadline: "Consolidating your SME e-commerce and retail goods into weekly direct LCL containers from Guangzhou to Tema Port. Fast customs clearance with strict compliance mapping.",
       transitWindow: "⏱️ Ghana Transit Windows",
