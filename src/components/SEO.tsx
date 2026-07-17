@@ -16,7 +16,7 @@ export default function SEO({ title, description, keywords, canonicalPath }: SEO
   // 1. Define localized metadata dictionaries incorporating dual branding and targeted SEO keywords
   const seoDefaults: Record<string, { title: string; desc: string; keywords: string }> = {
     en: {
-      title: 'DDNZ Global & Heaven Born International Freight | China Sourcing & Cargo Logistics',
+      title: 'DDNZ & Heaven Born Freight | China Sourcing & Logistics',
       desc: 'Optimize your China supply chain with Heaven Born International Freight and DDNZ Supply Chain. Offering professional China sourcing, sea freight forwarding, air cargo logistics, and FBA warehouse services from Guangzhou.',
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
     },

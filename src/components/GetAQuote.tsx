@@ -18,6 +18,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
+import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
 
@@ -257,6 +258,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const [state, handleSubmit] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const { language, t } = useLanguage();
+  const location = useLocation();
+  const isQuotePage = location.pathname.includes('get-a-quote');
   
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
@@ -469,31 +472,59 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             <Sparkles className="w-3.5 h-3.5 text-[#FF8A00]" />
             {t('get_a_quote.estimatorTitle')}
           </motion.div>
-          <motion.h2 
-            initial={{ opacity: 0, y: 15 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-4 leading-[1.15]"
-          >
-            {language === 'zh' ? (
-              <>
-                极速定制 <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">专属智能航线</span> 与询价方案
-              </>
-            ) : language === 'ru' ? (
-              <>
-                Умный расчет <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">логистики</span> в 3 клика
-              </>
-            ) : language === 'fr' ? (
-              <>
-                Calculateur <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">de Logistique</span> Intelligent
-              </>
-            ) : (
-              <>
-                Get Your <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">Custom Logistics</span> Estimate
-              </>
-            )}
-          </motion.h2>
+          {isQuotePage ? (
+            <motion.h1 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-4 leading-[1.15]"
+            >
+              {language === 'zh' ? (
+                <>
+                  极速定制 <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">专属智能航线</span> 与询价方案
+                </>
+              ) : language === 'ru' ? (
+                <>
+                  Умный расчет <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">логистики</span> в 3 клика
+                </>
+              ) : language === 'fr' ? (
+                <>
+                  Calculateur <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">de Logistique</span> Intelligent
+                </>
+              ) : (
+                <>
+                  Get Your <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">Custom Logistics</span> Estimate
+                </>
+              )}
+            </motion.h1>
+          ) : (
+            <motion.h2 
+              initial={{ opacity: 0, y: 15 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-4 leading-[1.15]"
+            >
+              {language === 'zh' ? (
+                <>
+                  极速定制 <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">专属智能航线</span> 与询价方案
+                </>
+              ) : language === 'ru' ? (
+                <>
+                  Умный расчет <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">логистики</span> в 3 клика
+                </>
+              ) : language === 'fr' ? (
+                <>
+                  Calculateur <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">de Logistique</span> Intelligent
+                </>
+              ) : (
+                <>
+                  Get Your <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">Custom Logistics</span> Estimate
+                </>
+              )}
+            </motion.h2>
+          )}
           <div className="h-1.5 w-20 bg-gradient-to-r from-[#4B27B1] via-pink-500 to-[#FF8A00] mx-auto rounded-full mb-6" />
           <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
             {ft('step1Desc')}
