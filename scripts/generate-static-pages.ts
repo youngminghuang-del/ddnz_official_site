@@ -13,22 +13,22 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   '': {
     en: {
       title: 'DDNZ Global & Heaven Born International Freight | China Sourcing & Cargo Logistics',
-      desc: 'Optimize your China supply chain with Heaven Born International Freight and DDNZ Supply Chain. Offering professional China sourcing, sea freight forwarding, air cargo logistics, and FBA warehouse services from Guangzhou.',
+      desc: 'Optimize your supply chain with Heaven Born & DDNZ. Professional China sourcing, sea/air freight forwarding, and FBA warehouse services from Guangzhou.',
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
     },
     'zh-cn': {
       title: '华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运',
-      desc: '广州靠谱实力出口货运代理，华正邦泰国际物流联合 DDNZ 供应链为您提供专业的中国商品采购代理、广州货代、集装箱海运（拼箱/整柜）、航空高特空运、亚马逊 FBA 及全球一站式跨境物流和海外仓增值支持。',
+      desc: '广州实力出口货运代理，华正邦泰与 DDNZ 供应链为您提供专业商品采购、集装箱海运、航空空运、亚马逊 FBA 及一站式跨境物流服务。',
       keywords: '广州货代, 广州靠谱货代, 实力出口货代, 华正邦泰国际物流, DDNZ供应链, 广州出口货运代理, 广州集装箱海运, 广州空运专线, 中国商品采购代理, 国际货运代理',
     },
     ru: {
       title: 'Heaven Born International Freight & DDNZ Supply Chain | Международная доставка грузов из Китая',
-      desc: 'Оптимизируйте ваши поставки из Китая с Heaven Born International Freight и DDNZ Supply Chain. Профессиональный поиск надежных поставщиков, недорогие морские контейнерные перевозки, авиадоставка под ключ и сборные грузы из Гуанчжоу.',
+      desc: 'Оптимизируйте поставки из Китая с Heaven Born и DDNZ. Профессиональный поиск поставщиков, морские/авиаперевозки и сборные грузы из Гуанчжоу.',
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Доставка грузов из Китая, Карго Гуанчжоу, Морской фрахт Китай, Авиаперевозки из Китая, Экспортный логистический брокер',
     },
     fr: {
       title: 'Heaven Born International Freight & DDNZ Supply Chain | Transitaire de Fret en Chine & Logistique',
-      desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born International Freight et DDNZ Supply Chain. Services professionnels d'approvisionnement, fret maritime, fret aérien et logistique globale à Guangzhou.",
+      desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born & DDNZ. Approvisionnement, fret maritime/aérien et logistique à Guangzhou.",
       keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Transitaire maritime Chine, Fret aérien direct, Commissionnaire de transport Guangzhou, Logistique Chine Europe',
     }
   },
@@ -64,7 +64,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
     },
     'zh-cn': {
       title: '中国海运货代公司 | 便宜海运集装箱拼箱门到门',
-      desc: '华正邦泰国际货运提供便宜中国海运拼箱及整柜进出口。cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent 双清包税。',
+      desc: '华正邦泰提供低成本海运拼箱、多港口集装箱货运与一站式海运双清包税门到门服务。',
       keywords: 'cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent'
     },
     ru: {
@@ -82,12 +82,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'services/air-freight': {
     en: {
       title: 'Air Freight China | Express Air Shipping Agent Shenzhen',
-      desc: 'Need time-critical air cargo china? Get the best express air freight rate to US from an international air shipping agent shenzhen. Rapid delivery.',
+      desc: 'Need time-critical air cargo from China? Get the best express air freight rates from an international air shipping agent in Shenzhen.',
       keywords: 'time-critical air cargo china, international air shipping agent shenzhen, express air freight rate to US'
     },
     'zh-cn': {
       title: '深圳精密空运货代 | 跨境高时效航空货运报价',
-      desc: '直配急特需空中货运。提供 time-critical air cargo china, international air shipping agent shenzhen, 以及最优惠的 express air freight rate to US 快线。',
+      desc: '提供高时效航空货运服务。华正邦泰与 DDNZ 供应链为您提供专业深圳/广州空运出口、空海联运及跨境快线双清包税到门服务。',
       keywords: 'time-critical air cargo china, international air shipping agent shenzhen, express air freight rate to US'
     },
     ru: {
@@ -105,12 +105,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'services/amazon-fba': {
     en: {
       title: 'Amazon FBA Prep China | Professional FNSKU Labeling',
-      desc: 'Professional FBA prep services china & FNSKU labeling company china. Get secure, direct delivery to amazon warehouse with all customs cleared.',
+      desc: 'Professional FBA prep services and FNSKU labeling company in China. Secure, direct delivery to Amazon warehouses with all customs cleared.',
       keywords: 'professional FBA prep services china, FNSKU labeling company china, direct delivery to amazon warehouse'
     },
     'zh-cn': {
       title: '出口亚马逊FBA仓配 | 双清包税贴标拼箱DDP',
-      desc: 'professional FBA prep services china, FNSKU labeling company china, 提供快速 direct delivery to amazon warehouse 卡机一体电商一站式极速入仓。',
+      desc: '提供专业亚马逊 FBA 贴标、质检与仓配服务。自营广州集拼仓直配全球 FBA 仓库，双清包税一站式极速入仓。',
       keywords: 'professional FBA prep services china, FNSKU labeling company china, direct delivery to amazon warehouse'
     },
     ru: {
@@ -128,12 +128,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'services/warehouse-services': {
     en: {
       title: 'Secure Warehouse Storage China | Cheap Cross Docking',
-      desc: 'Secure warehouse storage china & cheap cross docking service. Expert e-commerce order fulfillment warehouse in Guangzhou. Fully integrated logistics.',
+      desc: 'Secure warehouse storage and cheap cross docking in China. Expert e-commerce order fulfillment in our self-operated Guangzhou warehouse.',
       keywords: 'secure warehouse storage china, e-commerce order fulfillment warehouse, cheap cross docking service'
     },
     'zh-cn': {
       title: '广州自营出口储运集运仓 | 廉价跨境仓储一件代发',
-      desc: '拥有18年自营大仓,提供 secure warehouse storage china, e-commerce order fulfillment warehouse, 及 cheap cross docking service 专业理箱打托。',
+      desc: '拥有18年自营广州集运大仓，提供安全跨境仓储、廉价跨港分拨、一件代发及专业包装打托加固等一站式综合仓储物流支持。',
       keywords: 'secure warehouse storage china, e-commerce order fulfillment warehouse, cheap cross docking service'
     },
     ru: {
@@ -151,12 +151,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'shipping-from-china-to-middle-east': {
     en: {
       title: 'Sea & Air Freight from China to Saudi Arabia, UAE, Kuwait | DDNZ Global',
-      desc: 'Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance with 20+ years of reliable forwarding network.',
+      desc: 'Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance since 1999.',
       keywords: 'middle east shipping, saudi arabia freight, uae shipping, kuwait cargo DDP'
     },
     'zh-cn': {
       title: '中国至中东(沙特/阿联酋/科威特)海运空运双清门到门专线 | 大递诺展 DDNZ Global',
-      desc: '专为中小贸易商与电商卖家打造的中国至中东货代方案。真实还原中东海空门到门全链路时效，锁定地缘变局下的舱位网络，提供SABER合规审单与广州自营集拼仓托底。',
+      desc: '专为中小贸易商打造的中国至中东货代方案。还原中东海空双清全时效，提供 SABER 合规审单与广州自营集拼仓一票到门托底。',
       keywords: '中东双清专线, 沙特海运DDP, 阿联酋空运专线, 中东包税货代, SABER合规'
     },
     ru: {
@@ -174,7 +174,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'shipping-from-china-to-central-asia': {
     en: {
       title: 'Secured Freight Forwarding to Kazakhstan & Uzbekistan | DDNZ',
-      desc: 'Professional road and rail container transportation from China to Kazakhstan, Uzbekistan, and Central Asia. EAEU customs clearance, EAC and GOST-UZ compliance support.',
+      desc: 'Professional road and rail container transportation from China to Kazakhstan, Uzbekistan, and Central Asia. Complete EAEU customs clearance.',
       keywords: 'central asia freight, shipping to kazakhstan, rail freight to tashkent, almaty truck cargo'
     },
     'zh-cn': {
@@ -197,7 +197,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'shipping-from-china-to-west-africa': {
     en: {
       title: 'West Africa Freight Specialist | Compliant Logistics Solutions | DDNZ',
-      desc: 'Your trusted gateway to West African shipping (Nigeria, Ghana, etc.). Direct container consolidation, rigorous factory auditing, and professional cargo pre-clearance.',
+      desc: 'Your trusted gateway to West African shipping (Nigeria, Ghana, etc.). Direct container consolidation and professional pre-clearance.',
       keywords: 'west africa freight, shipping to nigeria, ghana cargo, lagos ocean cargo'
     },
     'zh-cn': {
@@ -220,12 +220,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'shipping-from-china-to-latin-america': {
     en: {
       title: 'Latin America Freight Specialist | Compliant Logistics Solutions | DDNZ',
-      desc: 'Your trusted gateway to Latin American shipping (Mexico, Brazil, Argentina). 100% guaranteed Compliant DDP, free consolidation warehouse, and strict cargo pre-auditing.',
+      desc: 'Your trusted gateway to Latin American shipping (Mexico, Brazil, Argentina). 100% guaranteed DDP, free consolidation and strict pre-audits.',
       keywords: 'latin america freight, mexico shipping DDP, brazil customs CNPJ, argentina escrow logistics'
     },
     'zh-cn': {
       title: '中国到拉美(墨西哥/巴西/阿根廷)海运整柜拼箱双清DDP | 拉美庄家 | 华正邦泰 DDNZ Global',
-      desc: '二十余年专注中国至拉丁美洲（墨西哥、巴西、阿根廷）专业货运专线。提供自营拼箱，独家NOM/CNPJ核验备案、外汇代收付保障，拒绝对港二次加价，一票到底。',
+      desc: '专注中国至拉丁美洲（墨西哥、巴西、阿根廷）货运专线。提供自营拼箱、NOM/CNPJ核验、外汇保障，拒绝对港二次加价。',
       keywords: '拉美专线货代, 墨西哥海运DDP, 巴西包税DDP, 阿根廷外汇托收, 拉美老庄'
     },
     ru: {
@@ -312,14 +312,31 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
     }
   };
 
+  // Truncate description dynamically to ideal SEO length (110 - 145 chars for non-Chinese, 50 - 75 for Chinese) to satisfy Bing and Google limits
+  const optimizeDesc = (descStr: string, langCode: string) => {
+    const cleanDesc = descStr.trim();
+    if (langCode === 'zh' || langCode === 'zh-cn') {
+      if (cleanDesc.length > 75) {
+        return cleanDesc.slice(0, 72) + '...';
+      }
+    } else {
+      if (cleanDesc.length > 145) {
+        return cleanDesc.slice(0, 142) + '...';
+      }
+    }
+    return cleanDesc;
+  };
+
+  const optimizedDesc = optimizeDesc(seo.desc, lang);
+
   output = setMetaTag(output, 'title', seo.title);
-  output = setMetaTag(output, 'description', seo.desc);
+  output = setMetaTag(output, 'description', optimizedDesc);
   output = setMetaTag(output, 'keywords', seo.keywords);
 
   output = setOgMetaTag(output, 'og:title', seo.title);
-  output = setOgMetaTag(output, 'og:description', seo.desc);
+  output = setOgMetaTag(output, 'og:description', optimizedDesc);
   output = setOgMetaTag(output, 'twitter:title', seo.title);
-  output = setOgMetaTag(output, 'twitter:description', seo.desc);
+  output = setOgMetaTag(output, 'twitter:description', optimizedDesc);
 
   // 3. Set Canonical Link
   const getLanguageUrl = (langCode: string) => {
