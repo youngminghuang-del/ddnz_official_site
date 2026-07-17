@@ -28,7 +28,7 @@ export default function InsightsHub() {
 
   const seoMetrics: Record<string, { title: string; desc: string; keywords: string }> = {
     en: {
-      title: 'Global Trade Insights & Logistics News | DDNZ Global',
+      title: 'Global Supply Chain Insights & Cargo News | DDNZ',
       desc: 'Stay informed with our curated global shipping guides, cross-border trade guidelines, and international supply chain trends.',
       keywords: 'global supply chain, shipping news china, cross-border e-commerce ddp, ocean freight guides, air cargo metrics'
     },

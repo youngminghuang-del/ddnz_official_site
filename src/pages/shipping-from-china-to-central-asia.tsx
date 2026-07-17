@@ -19,7 +19,7 @@ import { trackEvent } from '../lib/utils';
 const CENTRAL_ASIA_DATA = {
   kazakhstan: {
     en: {
-      seoTitle: "Secured Freight Forwarding to Kazakhstan | EAEU Compliance | DDNZ",
+      seoTitle: "China to Central Asia Freight Forwarding Guide | DDNZ",
       seoDesc: "Cross-border block train & highway trucking from China to Almaty, Kazakhstan. Managing EAEU customs clearance, TR CU 027/2012, and broad gauge 1520mm rail transfers since 1999.",
       headline: "Secured Freight Forwarding from China to Kazakhstan | Multimodal Transit & EAEU Compliance",
       subheadline: "Direct block train and reliable cross-border truck freight. Overcoming 1520mm broad gauge border transfer bottlenecks (Horgos/Alashankou) with dedicated on-site teams. 100% compliant DDP/DDU logistics.",
@@ -255,7 +255,7 @@ const CENTRAL_ASIA_DATA = {
   },
   uzbekistan: {
     en: {
-      seoTitle: "Multimodal Rail & Direct Trucking to Uzbekistan | DDNZ Global",
+      seoTitle: "China to Central Asia Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct highway trucking & multimodal rail to Tashkent, Uzbekistan. Complete GOST-UZ conformity, online pre-declarations, and CIF 'tax-on-tax' optimization since 1999.",
       headline: "Direct Multimodal Rail & Trucking to Uzbekistan | 100% Digital Pre-Declaration Support",
       subheadline: "Direct intermodal pathways to Tashkent and key industrial grids. Solving GOST-UZ certifications, complying with the 1-hour pre-declaration redline, and optimizing CIF valuation structures to bypass tax traps.",

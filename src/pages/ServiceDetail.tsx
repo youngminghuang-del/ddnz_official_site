@@ -749,7 +749,7 @@ export default function ServiceDetail() {
     const seoMeta: Record<string, Record<string, { title: string; desc: string; keywords: string }>> = {
       'sea-freight': {
         en: {
-          title: 'China Sea Freight | Cheap LCL Container Shipping Agent',
+          title: 'China Sea Freight | Cheap LCL Container Agent',
           desc: 'Optimize your cargo with cheap sea freight from china, LCL consolidation container china. Top-rated door to door ocean freight shipping agent.',
           keywords: 'cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent'
         },
@@ -771,7 +771,7 @@ export default function ServiceDetail() {
       },
       'air-freight': {
         en: {
-          title: 'Air Freight China | Express Air Shipping Agent Shenzhen',
+          title: 'Air Freight China | Express Air Shipping Agent',
           desc: 'Need time-critical air cargo china? Get the best express air freight rate to US from an international air shipping agent shenzhen. Rapid delivery.',
           keywords: 'time-critical air cargo china, international air shipping agent shenzhen, express air freight rate to US'
         },

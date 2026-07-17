@@ -19,7 +19,7 @@ import { trackEvent } from '../lib/utils';
 const WEST_AFRICA_DATA = {
   nigeria: {
     en: {
-      seoTitle: "Compliant Cargo Shipping to Nigeria (Lagos) | SONCAP & Form M Experts | DDNZ",
+      seoTitle: "China to Nigeria Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct LCL/FCL ocean freight and air freight from China to Lagos (Apapa/Tin Can). Comprehensive Form M filing, PAAR reports, and SC SONCAP certificate management since 1999.",
       headline: "Secured Sea & Air Freight to Nigeria (Lagos) | 100% Compliant SONCAP & Form M Handling",
       subheadline: "Direct container consolidation from Guangzhou self-operated hub to Lagos Apapa and Tin Can ports. Tackle SONCAP compliance and Form M barriers with our local on-site clearing team.",
@@ -198,7 +198,7 @@ const WEST_AFRICA_DATA = {
   },
   ghana: {
     en: {
-      seoTitle: "Secure Shipping to Ghana (Tema/Accra) | CoC & CTN Experts | DDNZ",
+      seoTitle: "China to Ghana Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct LCL consolidation and FCL direct ocean container service from China to Tema, Ghana. Expert handling of CoC conformance certification and pre-shipment CTN binding.",
       headline: "Reliable Shipping to Ghana (Tema/Accra) | Streamlined CoC Product Certification & LCL Cargo Consolidation",
       subheadline: "Consolidating your SME e-commerce and retail goods into weekly direct LCL containers from Guangzhou to Tema Port. Fast customs clearance with strict compliance mapping.",
@@ -379,7 +379,7 @@ const WEST_AFRICA_DATA = {
 
 const PAGE_LANG_DATA = {
   en: {
-    seoTitle: "West Africa Freight Specialist | Compliant Logistics Solutions | DDNZ",
+    seoTitle: "China to West Africa Freight Forwarding Guide | DDNZ",
     seoDesc: "Your trusted gateway to West Africa shipping (Nigeria, Ghana, and French West Africa). 100% guaranteed Compliant DDP, free consolidation warehouse, and strict cargo pre-auditing.",
     tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
     tabGhana: "Ghana (Tema / Accra)",

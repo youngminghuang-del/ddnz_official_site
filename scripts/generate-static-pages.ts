@@ -436,8 +436,11 @@ function run() {
         const post = blogPosts.find((p) => p.slug === postSlugOrId || p.id === postSlugOrId);
         if (post) {
           const cat = post.category ? post.category.toLowerCase() : 'global logistics';
+          const isEasternEuropePost = post.slug === 'Actionable-insights-for-Eastern-Europe';
           seo = {
-            title: `${post.title} | DDNZ Global Logistics Insights`,
+            title: isEasternEuropePost 
+              ? 'China Sourcing Alert: July Rate Hikes & Customs Guide' 
+              : `${post.title} | DDNZ Global Logistics Insights`,
             desc: post.summary || post.title,
             keywords: `${cat}, global logistics, china freight forwarder, cargo news, ddnz global`
           };
@@ -476,7 +479,17 @@ function run() {
         fs.mkdirSync(targetDir, { recursive: true });
       }
 
-      const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
+      let localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
+      if (entry.path === 'blog/Actionable-insights-for-Eastern-Europe') {
+        localizedHtml = localizedHtml.replace(
+          /<div id="root"><\/div>/i,
+          `<div id="root">
+       <article style="display:none;">
+         <h1>China Sourcing Alert: July Rate Hikes & Customs Guide</h1>
+       </article>
+     </div>`
+        );
+      }
       const targetFilePath = path.join(targetDir, 'index.html');
       fs.writeFileSync(targetFilePath, localizedHtml, 'utf-8');
     });

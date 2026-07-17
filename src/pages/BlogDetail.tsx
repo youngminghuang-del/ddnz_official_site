@@ -74,10 +74,16 @@ export default function BlogDetail() {
     );
   }
 
+  const isEasternEuropePost = post.slug === 'Actionable-insights-for-Eastern-Europe';
+  const displayTitle = post.title.length > 40 ? post.title.slice(0, 40) + '...' : post.title;
+  const seoTitle = isEasternEuropePost 
+    ? 'China Sourcing Alert: July Rate Hikes & Customs Guide' 
+    : `${displayTitle} | DDNZ`;
+
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       <SEO 
-        title={`${post.title} | DDNZ Global Logistics Insights`} 
+        title={seoTitle} 
         description={post.summary} 
         keywords={`${post.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`}
       />

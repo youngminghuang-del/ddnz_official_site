@@ -18,7 +18,7 @@ import { trackEvent } from '../lib/utils';
 const LATAM_DATA = {
   mexico: {
     en: {
-      seoTitle: "Compliant Freight Forwarding to Mexico | Seamless NOM Certification & Automated RFQ Solutions",
+      seoTitle: "China to Mexico Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct FCL/LCL sea and air freight from China to Mexico. High-quality shipping with complete NOM quality conformance, customs tariff mapping, and robust last-mile delivery.",
       headline: "Compliant Freight Forwarding to Mexico | Seamless NOM Certification & Automated RFQ Solutions",
       subheadline: "Direct container sailings and cargo consolidation from Guangzhou self-operated hubs to Manzanillo, Lazaro Cardenas, and Mexico City. Clear complex NOM quality certification and RFC fiscal hurdles with our on-site compliance brokers.",
@@ -138,7 +138,7 @@ const LATAM_DATA = {
   },
   brazil: {
     en: {
-      seoTitle: "Risk-Free Shipping to Brazil (Santos) | SISCOS & CNPJ Single-Window Customs Mastermind",
+      seoTitle: "China to Brazil Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct LCL and FCL ocean container service from China to Santos, Brazil. Reliable DDP logistics to navigate 'customs hell' with expert CNPJ verification and SISCOS compliance.",
       headline: "Risk-Free Shipping to Brazil (Santos) | SISCOS & CNPJ Single-Window Customs Mastermind",
       subheadline: "Navigate Brazil's high-barrier customs corridor through our specialized direct routes from Guangzhou to Santos Port. Our on-site customs consultants offer bulletproof tax resolution and certified CNPJ verification.",
@@ -258,7 +258,7 @@ const LATAM_DATA = {
   },
   argentina: {
     en: {
-      seoTitle: "End-to-End Logistics to Argentina | Escrow & Hong Kong Gateway for Strict Forex Control",
+      seoTitle: "China to Argentina Freight Forwarding Guide | DDNZ",
       seoDesc: "Direct ocean and air freight shipping from China to Buenos Aires, Argentina. Overcome strict local monetary exchange controls and custom barriers with DDNZ offshore escrow gateway.",
       headline: "End-to-End Logistics to Argentina | Escrow & Hong Kong Gateway for Strict Forex Control",
       subheadline: "Direct container sailings and fast air cargo connections from Guangzhou to Buenos Aires Port. Conquer Argentina's severe central bank foreign currency exchange limits and CUIT validation through our dedicated Hong Kong finance and SCM bridge.",
@@ -380,7 +380,7 @@ const LATAM_DATA = {
 
 const PAGE_LANG_DATA = {
   en: {
-    seoTitle: "Latin America Freight Specialist | Compliant Logistics Solutions | DDNZ",
+    seoTitle: "China to Latin America Freight Forwarding Guide | DDNZ",
     seoDesc: "Your trusted gateway to Latin American shipping (Mexico, Brazil, Argentina). 100% guaranteed Compliant DDP, free consolidation warehouse, and strict cargo pre-auditing.",
     tabMexico: "Mexico (NOM & RFC Solutions)",
     tabBrazil: "Brazil (CNPJ & Santos Gate)",
