@@ -74,17 +74,42 @@ export default function BlogDetail() {
     );
   }
 
-  const isEasternEuropePost = post.slug === 'Actionable-insights-for-Eastern-Europe';
-  const displayTitle = post.title.length > 40 ? post.title.slice(0, 40) + '...' : post.title;
-  const seoTitle = isEasternEuropePost 
-    ? 'China Sourcing Alert: July Rate Hikes & Customs Guide' 
-    : `${displayTitle} | DDNZ`;
+  // Global Title Automation & Safe Truncation (Max 60 chars)
+  let seoTitle = '';
+  if (post.slug === 'Actionable-insights-for-Eastern-Europe') {
+    seoTitle = 'China Sourcing Alert: July Rate Hikes & Customs Guide';
+  } else if (post.slug === 'high-compliance-new-energy-logistics') {
+    seoTitle = 'New Energy & DG Logistics from China | DDNZ Global Insights';
+  } else {
+    const rawTitle = post.title;
+    const suffix = " | DDNZ Global";
+    const maxTitleLen = 60;
+    if (rawTitle.length + " | DDNZ Global Insights".length > maxTitleLen) {
+      const maxPrefixLen = maxTitleLen - suffix.length - 3; // Subtracting 3 for '...'
+      if (maxPrefixLen > 0) {
+        let truncated = rawTitle.slice(0, maxPrefixLen);
+        const lastSpace = truncated.lastIndexOf(' ');
+        if (lastSpace > 15) {
+          truncated = truncated.slice(0, lastSpace);
+        }
+        seoTitle = truncated.trim() + '...' + suffix;
+      } else {
+        seoTitle = rawTitle.slice(0, maxTitleLen - suffix.length) + suffix;
+      }
+    } else {
+      seoTitle = rawTitle + suffix;
+    }
+  }
+
+  // Global Description Automation (Max 155 chars)
+  const rawDesc = post.summary || post.title || '';
+  const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + '...' : rawDesc;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       <SEO 
         title={seoTitle} 
-        description={post.summary} 
+        description={seoDesc} 
         keywords={`${post.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`}
       />
       <SchemaMarkup 

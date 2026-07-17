@@ -436,12 +436,39 @@ function run() {
         const post = blogPosts.find((p) => p.slug === postSlugOrId || p.id === postSlugOrId);
         if (post) {
           const cat = post.category ? post.category.toLowerCase() : 'global logistics';
-          const isEasternEuropePost = post.slug === 'Actionable-insights-for-Eastern-Europe';
+          
+          let computedTitle = '';
+          if (post.slug === 'Actionable-insights-for-Eastern-Europe') {
+            computedTitle = 'China Sourcing Alert: July Rate Hikes & Customs Guide';
+          } else if (post.slug === 'high-compliance-new-energy-logistics') {
+            computedTitle = 'New Energy & DG Logistics from China | DDNZ Global Insights';
+          } else {
+            const rawTitle = post.title;
+            const suffix = " | DDNZ Global";
+            const maxTitleLen = 60;
+            if (rawTitle.length + " | DDNZ Global Insights".length > maxTitleLen) {
+              const maxPrefixLen = maxTitleLen - suffix.length - 3;
+              if (maxPrefixLen > 0) {
+                let truncated = rawTitle.slice(0, maxPrefixLen);
+                const lastSpace = truncated.lastIndexOf(' ');
+                if (lastSpace > 15) {
+                  truncated = truncated.slice(0, lastSpace);
+                }
+                computedTitle = truncated.trim() + '...' + suffix;
+              } else {
+                computedTitle = rawTitle.slice(0, maxTitleLen - suffix.length) + suffix;
+              }
+            } else {
+              computedTitle = rawTitle + suffix;
+            }
+          }
+
+          const rawDesc = post.summary || post.title || '';
+          const computedDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + '...' : rawDesc;
+
           seo = {
-            title: isEasternEuropePost 
-              ? 'China Sourcing Alert: July Rate Hikes & Customs Guide' 
-              : `${post.title} | DDNZ Global Logistics Insights`,
-            desc: post.summary || post.title,
+            title: computedTitle,
+            desc: computedDesc,
             keywords: `${cat}, global logistics, china freight forwarder, cargo news, ddnz global`
           };
         }
