@@ -44,16 +44,16 @@ export default function SEO({ title, description, keywords, canonicalPath }: SEO
   const finalTitle = title || defaults.title;
   const finalRawDesc = description || defaults.desc;
   
-  // Truncate description dynamically to ideal SEO length (110 - 155 chars for non-Chinese, 50 - 100 for Chinese)
+  // Truncate description dynamically to ideal SEO length (110 - 145 chars for non-Chinese, 50 - 75 for Chinese) to satisfy Bing and Google limits
   const optimizeDesc = (desc: string, lang: string) => {
     const cleanDesc = desc.trim();
     if (lang === 'zh') {
-      if (cleanDesc.length > 100) {
-        return cleanDesc.slice(0, 97) + '...';
+      if (cleanDesc.length > 75) {
+        return cleanDesc.slice(0, 72) + '...';
       }
     } else {
-      if (cleanDesc.length > 155) {
-        return cleanDesc.slice(0, 152) + '...';
+      if (cleanDesc.length > 145) {
+        return cleanDesc.slice(0, 142) + '...';
       }
     }
     return cleanDesc;
