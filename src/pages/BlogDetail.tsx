@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { ArrowLeft, Calendar, ChevronRight } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import notionBlogPosts from '../data/notionBlogData.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -107,6 +108,14 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
+      {post && (
+        <Helmet>
+          {/* 这里是 SEO 的核心：注入 H1，爬虫抓取时会立即解析此标签 */}
+          <title>{seoTitle}</title>
+          <h1 style={{ display: 'none' }}>{post.title}</h1>
+          <meta name="description" content={seoDesc} />
+        </Helmet>
+      )}
       <SEO 
         title={seoTitle} 
         description={seoDesc} 

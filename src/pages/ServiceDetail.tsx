@@ -1,5 +1,6 @@
 import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -900,6 +901,9 @@ export default function ServiceDetail() {
   if (currentKey === 'air-freight') {
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <Helmet>
+          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+        </Helmet>
         <Navbar />
 
         {/* Block 1: Hero Banner */}
@@ -1630,6 +1634,9 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <Helmet>
+          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+        </Helmet>
         <Navbar />
 
         {/* Block 1: Hero Banner */}
@@ -2477,6 +2484,9 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+        <Helmet>
+          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+        </Helmet>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
@@ -2931,6 +2941,9 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <Helmet>
+        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
+      </Helmet>
       <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
         type="Service" 

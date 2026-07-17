@@ -88,37 +88,41 @@ export default function SEO({ title, description, keywords, canonicalPath }: SEO
   const helmetLang = currentLang === 'zh' ? 'zh-CN' : currentLang;
 
   return (
-    <Helmet>
-      {/* HTML Language attribute */}
-      <html lang={helmetLang} />
+    <>
+      <Helmet>
+        {/* HTML Language attribute */}
+        <html lang={helmetLang} />
 
-      {/* Primary Meta Tags */}
-      <title>{finalTitle}</title>
-      <meta name="title" content={finalTitle} />
-      <meta name="description" content={finalDesc} />
-      <meta name="keywords" content={finalKeywords} />
+        {/* Primary Meta Tags */}
+        <title>{finalTitle}</title>
+        <meta name="title" content={finalTitle} />
+        <meta name="description" content={finalDesc} />
+        <meta name="keywords" content={finalKeywords} />
 
-      {/* Canonical Link */}
-      <link rel="canonical" href={canonicalUrl} />
+        {/* Canonical Link */}
+        <link rel="canonical" href={canonicalUrl} />
 
-      {/* Hreflang Alternate Links */}
-      <link rel="alternate" hrefLang="x-default" href={enUrl} />
-      <link rel="alternate" hrefLang="en" href={enUrl} />
-      <link rel="alternate" hrefLang="zh-cn" href={zhUrl} />
-      <link rel="alternate" hrefLang="ru" href={ruUrl} />
-      <link rel="alternate" hrefLang="fr" href={frUrl} />
+        {/* Hreflang Alternate Links */}
+        <link rel="alternate" hrefLang="x-default" href={enUrl} />
+        <link rel="alternate" hrefLang="en" href={enUrl} />
+        <link rel="alternate" hrefLang="zh-cn" href={zhUrl} />
+        <link rel="alternate" hrefLang="ru" href={ruUrl} />
+        <link rel="alternate" hrefLang="fr" href={frUrl} />
 
-      {/* Open Graph / Facebook */}
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={canonicalUrl} />
-      <meta property="og:title" content={finalTitle} />
-      <meta property="og:description" content={finalDesc} />
+        {/* Open Graph / Facebook */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={canonicalUrl} />
+        <meta property="og:title" content={finalTitle} />
+        <meta property="og:description" content={finalDesc} />
 
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:url" content={canonicalUrl} />
-      <meta name="twitter:title" content={finalTitle} />
-      <meta name="twitter:description" content={finalDesc} />
-    </Helmet>
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content={canonicalUrl} />
+        <meta name="twitter:title" content={finalTitle} />
+        <meta name="twitter:description" content={finalDesc} />
+      </Helmet>
+      {/* Hidden H1 for search crawler SEO mapping without visual layout distortion */}
+      <h1 style={{ display: 'none' }}>{finalTitle}</h1>
+    </>
   );
 }

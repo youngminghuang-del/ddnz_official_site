@@ -360,6 +360,11 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   // Inject the new page-specific ones before </head>
   output = output.replace(/<\/head>/i, `${newHreflangTags}</head>`);
 
+  // Inject hidden H1 right after <div id="root"> for crawlers (unless special Actionable insights post)
+  if (relPath !== 'blog/Actionable-insights-for-Eastern-Europe') {
+    output = output.replace(/<div id="root"><\/div>/i, `<div id="root"></div><h1 style="display: none;">${seo.title}</h1>`);
+  }
+
   return output;
 }
 
