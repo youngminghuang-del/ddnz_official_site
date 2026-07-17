@@ -901,9 +901,7 @@ export default function ServiceDetail() {
   if (currentKey === 'air-freight') {
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-        <Helmet>
-          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
-        </Helmet>
+        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <Navbar />
 
         {/* Block 1: Hero Banner */}
@@ -1634,9 +1632,7 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-        <Helmet>
-          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
-        </Helmet>
+        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <Navbar />
 
         {/* Block 1: Hero Banner */}
@@ -2484,9 +2480,7 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-        <Helmet>
-          <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
-        </Helmet>
+        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
@@ -2941,9 +2935,7 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
-      <Helmet>
-        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
-      </Helmet>
+      <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
       <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
         type="Service" 

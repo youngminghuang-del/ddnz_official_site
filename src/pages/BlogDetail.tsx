@@ -109,12 +109,7 @@ export default function BlogDetail() {
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
       {post && (
-        <Helmet>
-          {/* 这里是 SEO 的核心：注入 H1，爬虫抓取时会立即解析此标签 */}
-          <title>{seoTitle}</title>
-          <h1 style={{ display: 'none' }}>{post.title}</h1>
-          <meta name="description" content={seoDesc} />
-        </Helmet>
+        <h1 style={{ display: 'none' }}>{post.title}</h1>
       )}
       <SEO 
         title={seoTitle} 
