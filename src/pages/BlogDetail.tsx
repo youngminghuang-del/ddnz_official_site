@@ -19,6 +19,23 @@ interface BlogPost {
   summary: string;
   content: string;
   thumbnailUrl: string;
+  language?: string;
+  translationGroup?: string;
+}
+
+function normalizeNotionLinks(content: string) {
+  return content.replace(
+    /https:\/\/(?:www\.)?google\.com\/search\?q=([^"'&\s]+)/g,
+    (url, encodedPath: string) => {
+      try {
+        const path = decodeURIComponent(encodedPath);
+        const isInternalRoute = /^(?:\/services\/|\/shipping-from-china-to-|\/insights(?:\/|$))/.test(path);
+        return isInternalRoute ? `https://www.ddnzglobal.com${path}` : url;
+      } catch {
+        return url;
+      }
+    },
+  );
 }
 
 export default function BlogDetail() {
@@ -26,6 +43,11 @@ export default function BlogDetail() {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const { language } = useLanguage();
+  const ui = language === 'es'
+    ? { loading: 'Cargando contenido de Notion...', missing: 'Artículo no encontrado', back: 'Volver al inicio' }
+    : language === 'ar'
+    ? { loading: 'جارٍ تحميل محتوى Notion...', missing: 'المقال غير موجود', back: 'العودة إلى الصفحة الرئيسية' }
+    : { loading: 'Fetching secure Notion content...', missing: 'Post Not Found', back: 'Back to Home' };
 
   useEffect(() => {
     if (!slug) return;
@@ -58,7 +80,7 @@ export default function BlogDetail() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
         <div className="text-center">
           <div className="w-12 h-12 border-4 border-[#4B27B1] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-          <p className="text-slate-600 font-medium">Fetching secure Notion content...</p>
+          <p className="text-slate-600 font-medium">{ui.loading}</p>
         </div>
       </div>
     );
@@ -67,9 +89,9 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 font-sans">
-        <h1 className="text-2xl font-bold text-slate-800 mb-4">Post Not Found</h1>
+        <h1 className="text-2xl font-bold text-slate-800 mb-4">{ui.missing}</h1>
         <Link to="/" className="text-[#4B27B1] font-bold flex items-center hover:underline">
-          <ArrowLeft className="w-4 h-4 mr-2" /> Back to Home
+          <ArrowLeft className="w-4 h-4 mr-2" /> {ui.back}
         </Link>
       </div>
     );
@@ -105,16 +127,18 @@ export default function BlogDetail() {
   // Global Description Automation (Max 155 chars)
   const rawDesc = post.summary || post.title || '';
   const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + '...' : rawDesc;
+  const postLanguage = post.language || 'en';
+  const postPrefix = postLanguage === 'en' ? '' : `/${postLanguage}`;
+  const postPath = `${postPrefix}/blog/${post.slug || post.id}`;
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
-      {post && (
-        <h1 style={{ display: 'none' }}>{post.title}</h1>
-      )}
       <SEO 
         title={seoTitle} 
         description={seoDesc} 
         keywords={`${post.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`}
+        canonicalPath={postPath}
+        alternateUrls={[{ hrefLang: postLanguage, href: `https://www.ddnzglobal.com${postPath}` }]}
       />
       <SchemaMarkup 
         type="BlogPosting" 
@@ -123,7 +147,7 @@ export default function BlogDetail() {
           description: post.summary,
           image: post.thumbnailUrl,
           datePublished: post.date,
-          url: `https://www.ddnzglobal.com/blog/${post.slug || post.id}`
+          url: `https://www.ddnzglobal.com${postPath}`
         }} 
       />
       <Navbar />
@@ -189,7 +213,7 @@ export default function BlogDetail() {
                          prose-strong:text-slate-900 prose-strong:font-semibold
                          prose-a:text-[#FF8A00] prose-a:no-underline hover:prose-a:underline
                          prose-ul:list-disc prose-ol:list-decimal"
-              dangerouslySetInnerHTML={{ __html: post.content }} 
+              dangerouslySetInnerHTML={{ __html: normalizeNotionLinks(post.content) }}
             />
 
             {/* Back Button Footer */}

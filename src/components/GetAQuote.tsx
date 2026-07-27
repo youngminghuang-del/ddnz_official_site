@@ -8,6 +8,7 @@ import {
   Plane, 
   Truck, 
   Package, 
+  Boxes,
   Globe, 
   Scale, 
   CheckCircle2, 
@@ -28,11 +29,11 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step1Title: '选择运输方式',
     step1Desc: '不同的运输方式决定了时效与成本，我们将为您定制最优路由',
     step2Title: '选择始发地与目的地',
-    step2Desc: '自营广州总部辐射全球，自建多国海外双清渠道',
+    step2Desc: '填写始发地与目的地，便于我们初步判断可行的运输与清关安排',
     step3Title: '预估货物重量与体积',
     step3Desc: '拖动滑块或一键选择常见货量预设，实时反馈规格测算',
     step4Title: '留下联系方式获取精确报价',
-    step4Desc: '华正邦泰资深物流专家将在 24 小时内为您精算多套最优报价方案',
+    step4Desc: '留下联系方式，我们会根据路线、货物和服务范围核对报价条件',
     
     origin: '始发港/城市',
     originPlaceholder: '输入或选择始发港/城市，如：广州、深圳、上海...',
@@ -65,14 +66,14 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     seaDesc: '高性价比，适合大宗散货/整箱重载运输',
     airDesc: '极致时效，适合高附加值、紧急空运直飞',
     landDesc: '卡班直达，中亚五国与俄罗斯高性价比专线',
-    wareDesc: '自营万级平米仓，专业木箱打包装箱、贴标分流',
+    wareDesc: '仓储、验货、包装与集运等出口前支持服务',
     
     mode: '运输方式',
     industry: '所属行业 / 货物品类',
     cargoDesc: '货物详情描述',
     submitting: '正在提交询盘...',
     successHeading: '提交成功！',
-    successText: '我们已收到您的估价申请。专职资深物流专家将在 24 小时内（通常更短）与您联系。',
+    successText: '我们已收到您的估价申请，将通过您提交的联系方式确认路线、货物与服务要求。',
     sendAnother: '发起新的询价'
   },
   en: {
@@ -123,7 +124,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     cargoDesc: 'Cargo Details & Requirements',
     submitting: 'Submitting Inquiry...',
     successHeading: 'Successfully Submitted!',
-    successText: 'Your request has been received. A senior logistics specialist will reply to your corporate email within 24 hours.',
+    successText: 'Your request has been received. Our team will use your submitted contact details to confirm routing, cargo, and service requirements.',
     sendAnother: 'Send another inquiry'
   },
   ru: {
@@ -227,6 +228,36 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     successHeading: 'Soumis avec succès !',
     successText: 'Votre demande a bien été reçue. Un spécialiste logistique principal vous répondra par e-mail sous 24 heures.',
     sendAnother: 'Envoyer une autre demande'
+  },
+  es: {
+    step1Title: 'Elija el modo de transporte', step1Desc: 'Seleccione el canal; prepararemos la mejor ruta y tarifa',
+    step2Title: 'Origen y destino', step2Desc: 'Tránsito y despacho aduanero desde nuestra sede de Guangzhou',
+    step3Title: 'Peso y volumen estimados', step3Desc: 'Use los controles o elija una carga predefinida para calcular medidas',
+    step4Title: 'Obtenga su cotización personalizada', step4Desc: 'Nuestros especialistas prepararán su plan logístico en 24 horas',
+    origin: 'Puerto / ciudad de origen', originPlaceholder: 'Escriba o seleccione el origen, p. ej., Guangzhou, Shenzhen...', popularOrigins: 'Orígenes frecuentes',
+    destination: 'Puerto / país de destino', destinationPlaceholder: 'Escriba el país, p. ej., México, Brasil, España...', popularDests: 'Destinos frecuentes',
+    weight: 'Peso estimado (KG)', volume: 'Volumen estimado (CBM)', presetLabel: 'Cargas predefinidas',
+    presetSmall: 'Muestra / paquete exprés (<100 kg)', presetMedium: 'Carga LCL / paletizada (100-1500 kg)', presetLarge: 'Contenedor FCL / envío comercial (>1500 kg)',
+    back: 'Atrás', next: 'Siguiente paso', submitQuote: 'Obtener cotización y ruta',
+    summaryTitle: 'Resumen de su solicitud', summaryMode: 'Modo de transporte', summaryRoute: 'Detalles de la ruta', summaryCargo: 'Tamaño de la carga',
+    phonePlaceholder: 'Teléfono / WhatsApp (obligatorio)', namePlaceholder: 'Nombre / empresa (obligatorio)', emailPlaceholder: 'Correo corporativo (obligatorio)', notesPlaceholder: 'Opcional: producto, baterías, embalaje u otros requisitos.',
+    seaDesc: 'Económico para carga LCL y FCL', airDesc: 'Máxima velocidad para carga urgente y de alto valor', landDesc: 'Transporte terrestre directo para Asia Central y Rusia', wareDesc: 'Embalaje de madera, almacenamiento y cross-docking',
+    mode: 'Modo de transporte', industry: 'Industria / categoría de producto', cargoDesc: 'Detalles y requisitos de la carga', submitting: 'Enviando solicitud...', successHeading: '¡Solicitud enviada!', successText: 'Hemos recibido su solicitud. Un especialista responderá a su correo corporativo en 24 horas.', sendAnother: 'Enviar otra solicitud'
+  },
+  ar: {
+    step1Title: 'اختر وسيلة النقل', step1Desc: 'اختر قناة النقل وسنقدم أفضل مسار وتسعير',
+    step2Title: 'المنشأ والوجهة', step2Desc: 'عبور وتخليص جمركي من مقرنا في قوانغتشو',
+    step3Title: 'الوزن والحجم التقديريان', step3Desc: 'استخدم أشرطة التمرير أو اختر حمولة مسبقة لتقدير القياسات',
+    step4Title: 'احصل على عرض سعر مخصص', step4Desc: 'سيبني خبراؤنا خطة الشحن الخاصة بكم خلال 24 ساعة',
+    origin: 'ميناء / مدينة المنشأ', originPlaceholder: 'أدخل أو اختر المنشأ، مثل قوانغتشو أو شنتشن...', popularOrigins: 'منافذ منشأ شائعة',
+    destination: 'ميناء / دولة الوجهة', destinationPlaceholder: 'أدخل الدولة، مثل السعودية أو الإمارات أو المكسيك...', popularDests: 'وجهات شائعة',
+    weight: 'الوزن التقديري (كجم)', volume: 'الحجم التقديري (CBM)', presetLabel: 'حمولات سريعة الإعداد',
+    presetSmall: 'عينة / طرد سريع (أقل من 100 كجم)', presetMedium: 'شحنة مجمعة LCL / منصات (100-1500 كجم)', presetLarge: 'حاوية كاملة FCL / شحنة تجارية (أكثر من 1500 كجم)',
+    back: 'رجوع', next: 'الخطوة التالية', submitQuote: 'احصل على عرض سعر ومسار',
+    summaryTitle: 'ملخص طلبكم', summaryMode: 'وسيلة النقل', summaryRoute: 'تفاصيل المسار', summaryCargo: 'حجم الشحنة',
+    phonePlaceholder: 'الهاتف / واتساب (مطلوب)', namePlaceholder: 'الاسم / الشركة (مطلوب)', emailPlaceholder: 'البريد الإلكتروني للشركة (مطلوب)', notesPlaceholder: 'اختياري: نوع المنتج أو البطاريات أو التغليف أو المتطلبات الخاصة.',
+    seaDesc: 'اقتصادي للشحنات المجمعة والحاويات الكاملة', airDesc: 'أسرع خيار للبضائع العاجلة وعالية القيمة', landDesc: 'نقل بري مباشر لآسيا الوسطى وروسيا', wareDesc: 'تغليف خشبي وتخزين وتجميع وشحن متقاطع',
+    mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيرد عليكم أحد خبراء اللوجستيات عبر البريد خلال 24 ساعة.', sendAnother: 'إرسال طلب آخر'
   }
 };
 
@@ -456,9 +487,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   };
 
   return (
-    <section id="get-a-quote" className="py-16 md:py-28 bg-[#fafafc] font-sans relative overflow-hidden">
+    <section id="get-a-quote" className="scroll-mt-24 py-16 md:py-28 bg-[#fafafc] font-sans relative overflow-hidden">
       {/* Background ambient mesh gradients */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-purple-200/20 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute top-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none translate-x-1/3 translate-y-1/3" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -467,9 +498,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="inline-flex items-center gap-2 bg-[#4B27B1]/10 text-[#4B27B1] font-extrabold tracking-wider text-xs uppercase px-4 py-2 rounded-full mb-4 border border-purple-200/50"
+            className="inline-flex items-center gap-2 bg-sky-100 text-sky-800 font-extrabold tracking-wider text-xs uppercase px-4 py-2 rounded-full mb-4 border border-sky-200"
           >
-            <Sparkles className="w-3.5 h-3.5 text-[#FF8A00]" />
+            <Sparkles className="w-3.5 h-3.5 text-[var(--hb-amber)]" />
             {t('get_a_quote.estimatorTitle')}
           </motion.div>
           {isQuotePage ? (
@@ -482,19 +513,19 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             >
               {language === 'zh' ? (
                 <>
-                  极速定制 <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">专属智能航线</span> 与询价方案
+                  获取 <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">中国出口物流</span> 初步方案
                 </>
               ) : language === 'ru' ? (
                 <>
-                  Умный расчет <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">логистики</span> в 3 клика
+                  Расчет <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">логистики</span> из Китая
                 </>
               ) : language === 'fr' ? (
                 <>
-                  Calculateur <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">de Logistique</span> Intelligent
+                  Estimation <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">logistique</span> depuis la Chine
                 </>
               ) : (
                 <>
-                  Get Your <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">Custom Logistics</span> Estimate
+                  Request a <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">China Export</span> Estimate
                 </>
               )}
             </motion.h1>
@@ -508,28 +539,28 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             >
               {language === 'zh' ? (
                 <>
-                  极速定制 <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">专属智能航线</span> 与询价方案
+                  获取 <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">中国出口物流</span> 初步方案
                 </>
               ) : language === 'ru' ? (
                 <>
-                  Умный расчет <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">логистики</span> в 3 клика
+                  Расчет <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">логистики</span> из Китая
                 </>
               ) : language === 'fr' ? (
                 <>
-                  Calculateur <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">de Logistique</span> Intelligent
+                  Estimation <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">logistique</span> depuis la Chine
                 </>
               ) : (
                 <>
-                  Get Your <span className="bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] bg-clip-text text-transparent">Custom Logistics</span> Estimate
+                  Request a <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">China Export</span> Estimate
                 </>
               )}
             </motion.h2>
           )}
-          <div className="h-1.5 w-20 bg-gradient-to-r from-[#4B27B1] via-pink-500 to-[#FF8A00] mx-auto rounded-full mb-6" />
+          <div className="h-1 w-12 bg-[#d97706] mx-auto rounded-full mb-6" />
           <p className="text-slate-500 text-base md:text-lg max-w-2xl mx-auto leading-relaxed mb-6 font-medium">
             {ft('step1Desc')}
           </p>
-          <div className="flex items-center justify-center gap-2 text-[#FF8A00] font-bold text-xs bg-orange-50/70 w-fit mx-auto px-4 py-2 rounded-full border border-orange-100/50 shadow-sm">
+          <div className="flex items-center justify-center gap-2 text-[var(--hb-amber)] font-bold text-xs bg-amber-50/70 w-fit mx-auto px-4 py-2 rounded-full border border-amber-100/60 shadow-sm">
             <Info className="w-3.5 h-3.5 shrink-0" />
             {t('hero.alibaba_cta')}
           </div>
@@ -539,7 +570,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
           {/* Main Funnel Box */}
           <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-h-[580px] lg:min-h-[550px]">
             {/* Visual top accent gradient strip */}
-            <div className="absolute top-0 left-0 right-0 h-2 bg-gradient-to-r from-[#4B27B1] via-pink-500 to-[#FF8A00]" />
+            <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0b1f3a] via-[#0b4f8a] to-[#d97706]" />
             
             {!isSubmitted ? (
               <>
@@ -550,7 +581,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       Inquiry Funnel
                     </span>
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
-                    <span className="text-xs font-extrabold text-[#4B27B1]">
+                    <span className="text-xs font-extrabold text-[#0b4f8a]">
                       Step {step} of 4
                     </span>
                   </div>
@@ -568,9 +599,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           }}
                           className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black transition-all ${
                             step === item
-                              ? 'bg-[#4B27B1] text-white shadow-md shadow-purple-500/20 scale-110 ring-4 ring-purple-100'
+                              ? 'bg-[#0b4f8a] text-white shadow-md shadow-sky-500/20 scale-110 ring-4 ring-sky-100'
                               : step > item
-                              ? 'bg-[#FF8A00] text-white'
+                              ? 'bg-[var(--hb-amber)] text-white'
                               : 'bg-slate-100 text-slate-400 hover:bg-slate-200'
                           }`}
                         >
@@ -578,7 +609,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                         </button>
                         {item < 4 && (
                           <div className={`w-6 sm:w-10 h-1 mx-1.5 rounded-full transition-all duration-300 ${
-                            step > item ? 'bg-[#FF8A00]' : 'bg-slate-100'
+                            step > item ? 'bg-[var(--hb-amber)]' : 'bg-slate-100'
                           }`} />
                         )}
                       </div>
@@ -602,7 +633,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 1 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-50 text-[#4B27B1]">1</span>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">1</span>
                             {ft('step1Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-8 font-medium">
@@ -615,33 +646,25 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 id: 'Sea', 
                                 label: t('get_a_quote.modeSea') || 'Sea Freight', 
                                 desc: ft('seaDesc'), 
-                                icon: <Ship className="w-6 h-6" />,
-                                color: 'hover:border-blue-500 hover:bg-blue-50/20 text-blue-600 bg-blue-50/40 border-blue-100',
-                                activeColor: 'border-blue-600 bg-blue-50/50 text-blue-700 shadow-blue-500/10'
+                                icon: <Ship className="w-6 h-6" />
                               },
                               { 
                                 id: 'Air', 
                                 label: t('get_a_quote.modeAir') || 'Air Freight', 
                                 desc: ft('airDesc'), 
-                                icon: <Plane className="w-6 h-6" />,
-                                color: 'hover:border-indigo-500 hover:bg-indigo-50/20 text-indigo-600 bg-indigo-50/40 border-indigo-100',
-                                activeColor: 'border-indigo-600 bg-indigo-50/50 text-indigo-700 shadow-indigo-500/10'
+                                icon: <Plane className="w-6 h-6" />
                               },
                               { 
                                 id: 'Land', 
                                 label: t('get_a_quote.modeLand') || 'Land Freight', 
                                 desc: ft('landDesc'), 
-                                icon: <Truck className="w-6 h-6" />,
-                                color: 'hover:border-emerald-500 hover:bg-emerald-50/20 text-emerald-600 bg-emerald-50/40 border-emerald-100',
-                                activeColor: 'border-emerald-600 bg-emerald-50/50 text-emerald-700 shadow-emerald-500/10'
+                                icon: <Truck className="w-6 h-6" />
                               },
                               { 
                                 id: 'Warehouse', 
                                 label: t('nav.services_warehouse') || 'Warehouse & Fulfillment', 
                                 desc: ft('wareDesc'), 
-                                icon: <Package className="w-6 h-6" />,
-                                color: 'hover:border-orange-500 hover:bg-orange-50/20 text-orange-600 bg-orange-50/40 border-orange-100',
-                                activeColor: 'border-orange-600 bg-orange-50/50 text-orange-700 shadow-orange-500/10'
+                                icon: <Package className="w-6 h-6" />
                               }
                             ].map((item) => {
                               const isActive = selectedService === item.id;
@@ -652,8 +675,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   onClick={() => handleServiceSelect(item.id as any)}
                                   className={`p-5 rounded-2xl border-2 text-left transition-all duration-300 flex items-start gap-4 cursor-pointer relative overflow-hidden group ${
                                     isActive 
-                                      ? `${item.activeColor} ring-2 ring-offset-2 ring-[#4B27B1]/10 font-bold scale-[1.01] shadow-lg` 
-                                      : `${item.color} border-slate-100 bg-slate-50/40 text-slate-700 hover:scale-[1.01]`
+                                      ? 'border-[var(--hb-blue)] bg-sky-50/70 text-[var(--hb-blue)] ring-2 ring-offset-2 ring-sky-200 font-bold scale-[1.01] shadow-lg'
+                                      : 'border-slate-200 bg-slate-50/40 text-slate-700 hover:border-[var(--hb-blue)]/45 hover:bg-sky-50/40 hover:scale-[1.01]'
                                   }`}
                                 >
                                   <div className={`p-3 rounded-xl transition-all duration-300 ${
@@ -662,12 +685,12 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                     {item.icon}
                                   </div>
                                   <div className="flex-1 min-w-0">
-                                    <h4 className="font-extrabold text-slate-900 group-hover:text-[#4B27B1] transition-colors flex items-center justify-between">
+                                    <h4 className="font-extrabold text-slate-900 group-hover:text-[#0b4f8a] transition-colors flex items-center justify-between">
                                       <span>{item.label}</span>
                                       {isActive && (
                                         <motion.span 
                                           layoutId="activeTick" 
-                                          className="w-5 h-5 rounded-full bg-[#4B27B1] text-white flex items-center justify-center"
+                                          className="w-5 h-5 rounded-full bg-[#0b4f8a] text-white flex items-center justify-center"
                                         >
                                           <Check className="w-3 h-3 stroke-[3]" />
                                         </motion.span>
@@ -688,7 +711,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 2 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-50 text-[#4B27B1]">2</span>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">2</span>
                             {ft('step2Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-6 font-medium">
@@ -711,7 +734,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   value={origin}
                                   onChange={(e) => setOrigin(e.target.value)}
                                   required
-                                  className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none transition-all placeholder-slate-400 font-bold text-sm"
+                                  className="w-full pl-11 pr-4 py-3.5 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
                                   placeholder={ft('originPlaceholder')}
                                 />
                               </div>
@@ -733,8 +756,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       onClick={() => setOrigin(oName)}
                                       className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
                                         isSelected
-                                          ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1] ring-2 ring-purple-100'
-                                          : 'border-slate-200 bg-white hover:border-[#4B27B1] text-slate-700 hover:bg-slate-50'
+                                          ? 'border-[#0b4f8a] bg-sky-50 text-[#0b4f8a] ring-2 ring-sky-100'
+                                          : 'border-slate-200 bg-white hover:border-[#0b4f8a] text-slate-700 hover:bg-slate-50'
                                       }`}
                                     >
                                       <span className="text-sm">{o.flag}</span>
@@ -765,13 +788,13 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   required
                                   className={`w-full pl-11 pr-4 py-3.5 rounded-xl border outline-none transition-all placeholder-slate-400 font-bold text-sm ${
                                     isParamFilled
-                                      ? 'border-[#FF8A00] ring-2 ring-[#FF8A00]/25 bg-orange-50/10 shadow-sm shadow-[#FF8A00]/5'
-                                      : 'border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 bg-white'
+                                      ? 'border-[var(--hb-amber)] ring-2 ring-[var(--hb-amber)]/25 bg-amber-50/10 shadow-sm'
+                                      : 'border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 bg-white'
                                   }`}
                                   placeholder={ft('destinationPlaceholder')}
                                 />
                                 {isParamFilled && (
-                                  <p className="text-[11px] font-bold text-[#FF8A00] mt-1.5 flex items-center gap-1">
+                                  <p className="text-[11px] font-bold text-[var(--hb-amber)] mt-1.5 flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5" />
                                     <span>
                                       {language === 'zh' 
@@ -803,8 +826,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       onClick={() => handleCountrySelect(cName)}
                                       className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
                                         isSelected
-                                          ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1] ring-2 ring-purple-100'
-                                          : 'border-slate-200 bg-white hover:border-[#4B27B1] text-slate-700 hover:bg-slate-50'
+                                          ? 'border-[#0b4f8a] bg-sky-50 text-[#0b4f8a] ring-2 ring-sky-100'
+                                          : 'border-slate-200 bg-white hover:border-[#0b4f8a] text-slate-700 hover:bg-slate-50'
                                       }`}
                                     >
                                       <span className="text-sm">{c.flag}</span>
@@ -822,7 +845,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 3 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-50 text-[#4B27B1]">3</span>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">3</span>
                             {ft('step3Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-6 font-medium">
@@ -836,11 +859,12 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             </span>
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
                               {[
-                                { id: 'small', label: ft('presetSmall'), icon: '📦' },
-                                { id: 'medium', label: ft('presetMedium'), icon: '🧱' },
-                                { id: 'large', label: ft('presetLarge'), icon: '🚛' }
+                                { id: 'small', label: ft('presetSmall'), icon: Package },
+                                { id: 'medium', label: ft('presetMedium'), icon: Boxes },
+                                { id: 'large', label: ft('presetLarge'), icon: Truck }
                               ].map((preset) => {
                                 const isActive = presetActive === preset.id;
+                                const PresetIcon = preset.icon;
                                 return (
                                   <button
                                     key={preset.id}
@@ -848,11 +872,11 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                     onClick={() => handlePresetSelect(preset.id as any)}
                                     className={`py-3 px-4 rounded-xl border text-left transition-all duration-300 flex items-center gap-2.5 ${
                                       isActive
-                                        ? 'border-[#FF8A00] bg-orange-50/50 text-[#FF8A00] font-bold ring-2 ring-orange-100'
-                                        : 'border-slate-200 bg-white hover:border-[#FF8A00]/50 text-slate-700 hover:bg-slate-50'
+                                        ? 'border-[var(--hb-amber)] bg-amber-50/50 text-[var(--hb-amber)] font-bold ring-2 ring-amber-100'
+                                        : 'border-slate-200 bg-white hover:border-[var(--hb-amber)]/50 text-slate-700 hover:bg-slate-50'
                                     }`}
                                   >
-                                    <span className="text-lg">{preset.icon}</span>
+                                    <PresetIcon className="w-5 h-5 text-[#0b4f8a]" aria-hidden="true" />
                                     <span className="text-xs font-bold leading-tight">{preset.label}</span>
                                   </button>
                                 );
@@ -866,7 +890,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <div className="space-y-3">
                               <div className="flex items-center justify-between">
                                 <span className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                                  <Scale className="w-3.5 h-3.5 text-[#4B27B1]" />
+                                  <Scale className="w-3.5 h-3.5 text-[#0b4f8a]" />
                                   {ft('weight')}
                                 </span>
                                 <div className="flex items-center gap-1">
@@ -877,7 +901,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       setWeight(Math.max(0, parseInt(e.target.value) || 0));
                                       setPresetActive(null);
                                     }}
-                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-sm font-black text-slate-800 focus:border-[#4B27B1] focus:ring-1 focus:ring-[#4B27B1] outline-none"
+                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-base font-black text-slate-800 focus:border-[#0b4f8a] focus:ring-1 focus:ring-[#0b4f8a] outline-none"
                                   />
                                   <span className="text-xs font-bold text-slate-500">KG</span>
                                 </div>
@@ -892,7 +916,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   setWeight(parseInt(e.target.value));
                                   setPresetActive(null);
                                 }}
-                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#4B27B1]"
+                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0b4f8a]"
                               />
                               <div className="flex justify-between text-[10px] font-bold text-slate-400">
                                 <span>10 KG</span>
@@ -906,7 +930,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <div className="space-y-3">
                               <div className="flex items-center justify-between">
                                 <span className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                                  <Package className="w-3.5 h-3.5 text-[#FF8A00]" />
+                                  <Package className="w-3.5 h-3.5 text-[var(--hb-amber)]" />
                                   {ft('volume')}
                                 </span>
                                 <div className="flex items-center gap-1">
@@ -918,7 +942,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       setVolume(Math.max(0, parseFloat(e.target.value) || 0));
                                       setPresetActive(null);
                                     }}
-                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-sm font-black text-slate-800 focus:border-[#4B27B1] focus:ring-1 focus:ring-[#4B27B1] outline-none"
+                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-base font-black text-slate-800 focus:border-[#0b4f8a] focus:ring-1 focus:ring-[#0b4f8a] outline-none"
                                   />
                                   <span className="text-xs font-bold text-slate-500">CBM</span>
                                 </div>
@@ -933,7 +957,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   setVolume(parseFloat(e.target.value));
                                   setPresetActive(null);
                                 }}
-                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#FF8A00]"
+                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[var(--hb-amber)]"
                               />
                               <div className="flex justify-between text-[10px] font-bold text-slate-400">
                                 <span>0.1 CBM</span>
@@ -950,7 +974,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 4 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-purple-50 text-[#4B27B1]">4</span>
+                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">4</span>
                             {ft('step4Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-6 font-medium">
@@ -958,37 +982,37 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           </p>
 
                           {/* Dynamic Configuration Summary Box */}
-                          <div className="bg-gradient-to-r from-purple-50 to-orange-50/50 rounded-2xl border border-purple-100/60 p-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div>
                               <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">
                                 {ft('summaryTitle')}
                               </span>
                               <div className="flex flex-wrap items-center gap-2 text-slate-700 text-xs font-extrabold">
-                                <span className="bg-white border border-purple-100 px-2.5 py-1 rounded-lg text-[#4B27B1] flex items-center gap-1 shadow-sm">
-                                  {selectedService === 'Sea' ? '🚢' : selectedService === 'Air' ? '✈️' : selectedService === 'Land' ? '🚛' : '📦'} {selectedService}
+                                <span className="bg-white border border-sky-100 px-2.5 py-1 rounded-lg text-[#0b4f8a] flex items-center gap-1 shadow-sm">
+                                  {selectedService === 'Sea' ? <Ship className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Air' ? <Plane className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Land' ? <Truck className="w-3.5 h-3.5" aria-hidden="true" /> : <Package className="w-3.5 h-3.5" aria-hidden="true" />} {selectedService}
                                 </span>
-                                <span className="text-slate-300">➔</span>
-                                <span className="bg-white border border-purple-100 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
-                                  📍 {origin || 'Guangzhou'}
+                                <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+                                  <MapPin className="w-3.5 h-3.5 text-sky-700" aria-hidden="true" /> {origin || 'Guangzhou'}
                                 </span>
-                                <span className="text-slate-300">➔</span>
-                                <span className="bg-white border border-purple-100 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
-                                  🌎 {destination || 'Global Dest.'}
+                                <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
+                                  <Globe className="w-3.5 h-3.5 text-sky-700" aria-hidden="true" /> {destination || 'Global Dest.'}
                                 </span>
-                                <span className="text-slate-300">➔</span>
-                                <span className="bg-white border border-purple-100 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm text-amber-700">
-                                  ⚖️ {weight} KG / {volume} CBM
+                                <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
+                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm text-amber-700">
+                                  <Scale className="w-3.5 h-3.5" aria-hidden="true" /> {weight} KG / {volume} CBM
                                 </span>
                               </div>
                             </div>
                             
                             {/* Fast route speed indicator tag */}
                             <div className="text-right text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
-                              <span className="font-extrabold text-[#FF8A00] uppercase tracking-wide flex items-center gap-1">
-                                <Sparkles className="w-3 h-3 text-[#FF8A00] animate-pulse" /> Custom Router
+                              <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
+                                <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> Route review
                               </span>
                               <span className="font-bold text-slate-600">
-                                VIP Priority Response
+                                Quote details confirmed by scope
                               </span>
                             </div>
                           </div>
@@ -1011,7 +1035,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   required
                                   value={name}
                                   onChange={(e) => setName(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none transition-all placeholder-slate-400 font-bold text-sm"
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
                                   placeholder={ft('namePlaceholder')}
                                 />
                                 <ValidationError prefix="Name" field="name" errors={state.errors} className="text-red-500 text-xs mt-1" />
@@ -1025,7 +1049,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   required
                                   value={email}
                                   onChange={(e) => setEmail(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none transition-all placeholder-slate-400 font-bold text-sm"
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
                                   placeholder={ft('emailPlaceholder')}
                                 />
                                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
@@ -1039,7 +1063,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   required
                                   value={phone}
                                   onChange={(e) => setPhone(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none transition-all placeholder-slate-400 font-bold text-sm"
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
                                   placeholder={ft('phonePlaceholder')}
                                 />
                                 <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-500 text-xs mt-1" />
@@ -1052,7 +1076,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   required
                                   value={product}
                                   onChange={(e) => setProduct(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none bg-white font-bold text-sm transition-all"
+                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none bg-white font-bold text-base transition-all"
                                 >
                                   <option value="Commercial Furniture">{t('get_a_quote.indFurn') || 'Commercial Furniture'}</option>
                                   <option value="New Energy / ESS">{t('get_a_quote.indNev') || 'New Energy / ESS'}</option>
@@ -1069,7 +1093,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 rows={2}
                                 value={notes}
                                 onChange={(e) => setNotes(e.target.value)}
-                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#4B27B1] focus:ring-2 focus:ring-[#4B27B1]/10 outline-none resize-none transition-all placeholder-slate-400 font-bold text-sm"
+                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none resize-none transition-all placeholder-slate-400 font-bold text-base"
                                 placeholder={ft('notesPlaceholder')}
                               />
                             </div>
@@ -1082,7 +1106,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 className={`w-full text-white font-extrabold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:-translate-y-0.5 cursor-pointer ${
                                   state.submitting 
                                     ? 'bg-slate-500 cursor-not-allowed' 
-                                    : 'bg-gradient-to-r from-[#4B27B1] via-pink-600 to-[#FF8A00] hover:shadow-xl shadow-purple-500/10'
+                                    : 'bg-[#d97706] hover:bg-[#b45309] hover:shadow-xl shadow-amber-500/10'
                                 }`}
                               >
                                 {state.submitting ? (
@@ -1122,7 +1146,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           className={`px-6 py-2.5 rounded-xl font-extrabold text-xs flex items-center gap-1.5 transition-all cursor-pointer ${
                             step === 2 && !destination
                               ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
-                              : 'bg-[#4B27B1] text-white hover:bg-purple-800 shadow-sm hover:shadow-md'
+                              : 'bg-[#0b4f8a] text-white hover:bg-[#082f55] shadow-sm hover:shadow-md'
                           }`}
                         >
                           {ft('next')} <ChevronRight className="w-4 h-4" />
@@ -1137,9 +1161,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="flex-1 flex flex-col items-center justify-center text-center bg-[#4B27B1] p-8 sm:p-12 text-white"
+                className="flex-1 flex flex-col items-center justify-center text-center bg-[#10283d] p-8 sm:p-12 text-white"
               >
-                <div className="w-20 h-20 bg-[#FF8A00] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-orange-500/30 ring-8 ring-white/10">
+                <div className="w-20 h-20 bg-[var(--hb-amber)] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-amber-900/20 ring-8 ring-white/10">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
                 
@@ -1147,20 +1171,20 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                   {ft('successHeading')}
                 </h3>
                 
-                <p className="text-purple-100 text-base md:text-lg max-w-lg leading-relaxed mb-8 font-medium">
+                <p className="text-slate-200 text-base md:text-lg max-w-lg leading-relaxed mb-8 font-medium">
                   {ft('successText')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
                   <button 
                     onClick={resetFunnel}
-                    className="text-[#4B27B1] bg-white hover:bg-slate-50 px-8 py-3.5 rounded-xl text-sm font-black transition-all hover:scale-[1.02] shadow-md cursor-pointer"
+                    className="text-[#0b4f8a] bg-white hover:bg-slate-50 px-8 py-3.5 rounded-xl text-sm font-black transition-all hover:scale-[1.02] shadow-md cursor-pointer"
                   >
                     {ft('sendAnother')}
                   </button>
                   <a 
                     href="mailto:partnership@ddnzglobal.com"
-                    className="text-white bg-purple-800/60 hover:bg-purple-800 border border-purple-500/50 px-8 py-3.5 rounded-xl text-sm font-black transition-all cursor-pointer"
+                    className="text-white bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-3.5 rounded-xl text-sm font-black transition-all cursor-pointer"
                   >
                     partnership@ddnzglobal.com
                   </a>

@@ -1,7 +1,11 @@
-import "dotenv/config";
+import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { generateSlug, downloadNotionImage } from "./notion-img-sync";
+
+// Local development uses an ignored .env.local file, while GitHub Actions
+// supplies the same values through repository secrets.
+dotenv.config({ path: ".env.local" });
 
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
@@ -269,6 +273,23 @@ async function run() {
         }
       }
 
+      // Language is the source language of this individual article. It must be
+      // preserved so static publishing never duplicates one article across
+      // unrelated language URLs.
+      let language = "en";
+      const languageProp = properties.Language || properties.language;
+      if (languageProp?.type === "select" && languageProp.select?.name) {
+        language = languageProp.select.name;
+      }
+
+      // A shared group is optional. It is only populated when separate Notion
+      // pages are genuine translations of the same article.
+      let translationGroup = "";
+      const translationGroupProp = properties["Translation Group"] || properties.translationGroup;
+      if (translationGroupProp?.type === "rich_text") {
+        translationGroup = translationGroupProp.rich_text.map((t: any) => t.plain_text).join("").trim();
+      }
+
       // Parse Date
       let date = new Date(page.created_time).toISOString().split("T")[0];
       const dateProp = properties.Date || properties.date;
@@ -331,6 +352,8 @@ async function run() {
         slug,
         title,
         category,
+        language,
+        translationGroup,
         date,
         summary,
         thumbnailUrl,

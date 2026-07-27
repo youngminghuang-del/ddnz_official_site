@@ -1,17 +1,69 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense, useEffect } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
-import BlogDetail from './pages/BlogDetail';
-import InsightsHub from './pages/InsightsHub';
-import ServiceDetail from './pages/ServiceDetail';
-import ShippingMiddleEast from './pages/shipping-from-china-to-middle-east';
-import ShippingCentralAsia from './pages/shipping-from-china-to-central-asia';
-import ShippingWestAfrica from './pages/shipping-from-china-to-west-africa';
-import ShippingLatinAmerica from './pages/shipping-from-china-to-latin-america';
-import GetAQuotePage from './pages/get-a-quote';
 import CookieConsent from './components/CookieConsent';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+
+const BlogDetail = lazy(() => import('./pages/BlogDetail'));
+const InsightsHub = lazy(() => import('./pages/InsightsHub'));
+const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const ShippingMiddleEast = lazy(() => import('./pages/shipping-from-china-to-middle-east'));
+const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-central-asia'));
+const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
+const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-latin-america'));
+const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
+
+const SHIPPING_COUNTRIES = [
+  'saudi-arabia',
+  'uae',
+  'kuwait',
+  'qatar',
+  'oman',
+  'bahrain',
+  'kazakhstan',
+  'uzbekistan',
+  'nigeria',
+  'ghana',
+  'mexico',
+  'brazil',
+  'argentina',
+  'peru',
+  'chile',
+] as const;
+
+function CountryShippingRoute() {
+  const location = useLocation();
+  const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
+
+  if (['saudi-arabia', 'uae', 'kuwait', 'qatar', 'oman', 'bahrain'].includes(normalizedCountry)) {
+    return <ShippingMiddleEast />;
+  }
+  if (['kazakhstan', 'uzbekistan'].includes(normalizedCountry)) {
+    return <ShippingCentralAsia />;
+  }
+  if (['nigeria', 'ghana'].includes(normalizedCountry)) {
+    return <ShippingWestAfrica />;
+  }
+  if (['mexico', 'brazil', 'argentina', 'peru', 'chile'].includes(normalizedCountry)) {
+    return <ShippingLatinAmerica />;
+  }
+
+  return <Navigate to="/" replace />;
+}
+
+function RouteLoadingFallback() {
+  return (
+    <main className="min-h-[70dvh] bg-[#F5F8FC] pt-28" aria-busy="true" aria-live="polite">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="h-7 w-44 rounded-lg bg-slate-200" />
+        <div className="mt-6 h-12 max-w-2xl rounded-xl bg-slate-200" />
+        <div className="mt-5 h-5 max-w-xl rounded-lg bg-slate-200" />
+        <span className="sr-only">Loading page</span>
+      </div>
+    </main>
+  );
+}
 
 function LanguageRouteSync() {
   const { language, setLanguage } = useLanguage();
@@ -19,7 +71,7 @@ function LanguageRouteSync() {
 
   useEffect(() => {
     const pathname = location.pathname;
-    let targetLang: 'en' | 'zh' | 'ru' | 'fr' = 'en';
+    let targetLang: 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar' = 'en';
 
     if (pathname.startsWith('/zh-cn')) {
       targetLang = 'zh';
@@ -27,6 +79,10 @@ function LanguageRouteSync() {
       targetLang = 'ru';
     } else if (pathname.startsWith('/fr')) {
       targetLang = 'fr';
+    } else if (pathname.startsWith('/es')) {
+      targetLang = 'es';
+    } else if (pathname.startsWith('/ar')) {
+      targetLang = 'ar';
     }
 
     if (language !== targetLang) {
@@ -37,12 +93,47 @@ function LanguageRouteSync() {
   return null;
 }
 
+function HashScrollHandler() {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const targetId = decodeURIComponent(location.hash.slice(1));
+    let attempts = 0;
+    let retryTimer = 0;
+
+    const scrollToTarget = () => {
+      const target = document.getElementById(targetId);
+      if (target) {
+        target.scrollIntoView({ block: 'start' });
+        return;
+      }
+
+      attempts += 1;
+      if (attempts < 40) {
+        retryTimer = window.setTimeout(scrollToTarget, 50);
+      }
+    };
+
+    scrollToTarget();
+
+    return () => {
+      window.clearTimeout(retryTimer);
+    };
+  }, [location.hash, location.pathname]);
+
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
       <LanguageProvider>
         <Router>
           <LanguageRouteSync />
+          <HashScrollHandler />
+          <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
             {/* English Default / Fallback Hub */}
             <Route path="/" element={<Home />} />
@@ -53,6 +144,9 @@ export default function App() {
             <Route path="/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
             <Route path="/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
             <Route path="/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
             <Route path="/get-a-quote" element={<GetAQuotePage />} />
 
             {/* Chinese Bundle Router */}
@@ -64,6 +158,9 @@ export default function App() {
             <Route path="/zh-cn/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
             <Route path="/zh-cn/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
             <Route path="/zh-cn/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`zh-${country}`} path={`/zh-cn/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
             <Route path="/zh-cn/get-a-quote" element={<GetAQuotePage />} />
 
             {/* Russian Bundle Router */}
@@ -75,6 +172,9 @@ export default function App() {
             <Route path="/ru/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
             <Route path="/ru/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
             <Route path="/ru/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`ru-${country}`} path={`/ru/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
             <Route path="/ru/get-a-quote" element={<GetAQuotePage />} />
 
             {/* French Bundle Router */}
@@ -86,8 +186,40 @@ export default function App() {
             <Route path="/fr/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
             <Route path="/fr/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
             <Route path="/fr/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`fr-${country}`} path={`/fr/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
             <Route path="/fr/get-a-quote" element={<GetAQuotePage />} />
+
+            {/* Spanish routes */}
+            <Route path="/es" element={<Home />} />
+            <Route path="/es/blog/:slug" element={<BlogDetail />} />
+            <Route path="/es/insights" element={<InsightsHub />} />
+            <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
+            <Route path="/es/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
+            <Route path="/es/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
+            <Route path="/es/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
+            <Route path="/es/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`es-${country}`} path={`/es/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
+            <Route path="/es/get-a-quote" element={<GetAQuotePage />} />
+
+            {/* Arabic routes */}
+            <Route path="/ar" element={<Home />} />
+            <Route path="/ar/blog/:slug" element={<BlogDetail />} />
+            <Route path="/ar/insights" element={<InsightsHub />} />
+            <Route path="/ar/services/:serviceId" element={<ServiceDetail />} />
+            <Route path="/ar/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
+            <Route path="/ar/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
+            <Route path="/ar/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
+            <Route path="/ar/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`ar-${country}`} path={`/ar/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
+            ))}
+            <Route path="/ar/get-a-quote" element={<GetAQuotePage />} />
           </Routes>
+          </Suspense>
           <CookieConsent />
         </Router>
       </LanguageProvider>

@@ -18,12 +18,14 @@ interface BlogPost {
   date: string;
   summary: string;
   thumbnailUrl: string;
+  language?: string;
 }
 
 export default function InsightsHub() {
   const { language, t } = useLanguage();
   const [posts] = useState<BlogPost[]>(notionBlogPosts as BlogPost[]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedLanguage, setSelectedLanguage] = useState<string>("all");
   const [isLoading] = useState<boolean>(false);
 
   const seoMetrics: Record<string, { title: string; desc: string; keywords: string }> = {
@@ -38,14 +40,24 @@ export default function InsightsHub() {
       keywords: '国际货代资讯, 跨境物流指南, 外贸出口干货, 国际供应链前哨, 跨境电商干货库, 华正邦泰国际货运, 华正邦泰'
     },
     ru: {
-      title: 'Блоги и аналитика ВЭД, логистика из Китая | DDNZ Global',
+      title: 'Блоги и аналитика ВЭД, логистика из Китая | Heaven Born',
       desc: 'Актуальные инструкции, гайды по таможенному оформлению, морские тарифы и последние изменения рынка логистики из КНР.',
       keywords: 'новости логистики из китая, вэд китай рф, таможенная очистка грузов, ставки фрахта, карго шэньчжэнь'
     },
     fr: {
-      title: 'Insights Logistique Globale et Transit Chine | DDNZ Global',
+      title: 'Insights Logistique Globale et Transit Chine | Heaven Born',
       desc: 'Suivez l\'actualité du fret international, de la douane import/export, et des innovations supply chain.',
       keywords: 'actus transit chine europe, réglementation amazon fba, douane importations france, tarifs expédition maritime'
+    },
+    es: {
+      title: 'Análisis de cadena de suministro y noticias de carga | Heaven Born',
+      desc: 'Guías de envío desde China, comercio transfronterizo y tendencias de la cadena de suministro internacional.',
+      keywords: 'logística china, noticias de transporte, flete marítimo china, carga aérea, comercio internacional'
+    },
+    ar: {
+      title: 'رؤى سلسلة التوريد وأخبار الشحن | Heaven Born',
+      desc: 'أدلة الشحن من الصين وتحديثات التجارة العابرة للحدود واتجاهات سلسلة التوريد العالمية.',
+      keywords: 'الشحن من الصين، الشحن البحري، الشحن الجوي، الخدمات اللوجستية، التجارة الدولية'
     }
   };
 
@@ -64,13 +76,27 @@ export default function InsightsHub() {
   }, []);
 
   // Compute unique categories dynamically from database pages
-  const categories = ["All", ...Array.from(new Set(posts.map((p) => p.category)))];
+  const getPostPath = (post: BlogPost) => `${post.language && post.language !== 'en' ? `/${post.language}` : ''}/blog/${post.slug || post.id}`;
+  const languageLabels: Record<string, string> = {
+    all: language === 'es' ? 'Todos los idiomas' : language === 'ar' ? 'جميع اللغات' : 'All languages',
+    en: 'English',
+    es: 'Español',
+    ar: 'العربية',
+    fr: 'Français',
+    'zh-CN': '中文',
+    ru: 'Русский',
+  };
+  const availableLanguages = ['all', ...Array.from(new Set(posts.map((post) => post.language || 'en')))];
+  const languageFilteredPosts = selectedLanguage === 'all'
+    ? posts
+    : posts.filter((post) => (post.language || 'en') === selectedLanguage);
+  const categories = ["All", ...Array.from(new Set(languageFilteredPosts.map((p) => p.category)))];
 
   // Filter posts based on selected category
   const filteredPosts =
     selectedCategory === "All"
-      ? posts
-      : posts.filter((p) => p.category === selectedCategory);
+      ? languageFilteredPosts
+      : languageFilteredPosts.filter((p) => p.category === selectedCategory);
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 flex flex-col justify-between">
@@ -103,7 +129,31 @@ export default function InsightsHub() {
 
         {/* Filters and Blog list */}
         <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Tag Filter Ribbon */}
+          {/* Language-first discovery makes the active content library visible
+              while still helping visitors find a language they can read. */}
+          <div className="flex flex-wrap items-center justify-center gap-2 mb-5">
+            {availableLanguages.map((lang) => {
+              const isActive = selectedLanguage === lang;
+              return (
+                <button
+                  key={lang}
+                  onClick={() => {
+                    setSelectedLanguage(lang);
+                    setSelectedCategory('All');
+                  }}
+                  className={`px-4 py-2 rounded-full text-xs font-bold transition-all ${
+                    isActive
+                      ? 'bg-slate-900 text-white shadow-md scale-105'
+                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
+                  }`}
+                >
+                  {languageLabels[lang] || lang}
+                </button>
+              );
+            })}
+          </div>
+
+          {/* Topic filter */}
           <div className="flex flex-wrap items-center justify-center gap-2 md:gap-3 mb-12">
             {categories.map((cat) => {
               const isActive = selectedCategory === cat;
@@ -127,7 +177,7 @@ export default function InsightsHub() {
           {isLoading && posts.length === 0 ? (
             <div className="py-24 text-center">
               <div className="w-12 h-12 border-4 border-[#4B27B1] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
-              <p className="text-slate-500 font-bold">Synchronizing items with Notion Engine...</p>
+              <p className="text-slate-500 font-bold">{language === 'es' ? 'Sincronizando artículos...' : language === 'ar' ? 'جارٍ مزامنة المقالات...' : 'Synchronizing items with Notion Engine...'}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -142,7 +192,7 @@ export default function InsightsHub() {
                     transition={{ duration: 0.4, delay: index * 0.05 }}
                     className="bg-white hover:bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-2xl border border-slate-100 hover:border-[#4B27B1]/20 transition-all duration-300 flex flex-col group h-full"
                   >
-                    <Link to={`/blog/${post.slug || post.id}`} className="block h-56 overflow-hidden relative bg-slate-100">
+                    <Link to={getPostPath(post)} className="block h-56 overflow-hidden relative bg-slate-100">
                       <img
                         src={post.thumbnailUrl}
                         alt={post.title}
@@ -153,6 +203,9 @@ export default function InsightsHub() {
                       <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm shadow px-3 py-1.5 rounded-xl flex items-center gap-1.5 z-10 text-[10px] font-black text-[#4B27B1] uppercase tracking-wider">
                         <Tag className="w-3 h-3 text-[#FF8A00]" />
                         <span>{post.category}</span>
+                      </div>
+                      <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm px-2.5 py-1.5 rounded-lg z-10 text-[10px] font-black text-white tracking-wider">
+                        {languageLabels[post.language || 'en'] || (post.language || 'en').toUpperCase()}
                       </div>
                     </Link>
 
@@ -166,7 +219,7 @@ export default function InsightsHub() {
 
                         {/* Title Link */}
                         <h3 className="text-xl font-extrabold text-[#4B27B1] leading-tight mb-4 group-hover:text-[#FF8A00] transition-colors line-clamp-2">
-                          <Link to={`/blog/${post.slug || post.id}`}>{post.title}</Link>
+                          <Link to={getPostPath(post)}>{post.title}</Link>
                         </h3>
 
                         {/* Paragraph Shortened Summary */}
@@ -177,7 +230,7 @@ export default function InsightsHub() {
 
                       <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
                         <Link
-                          to={`/blog/${post.slug || post.id}`}
+                          to={getPostPath(post)}
                           className="inline-flex items-center text-[#4B27B1] hover:text-[#381d86] font-extrabold text-sm group/btn"
                         >
                           <span>{t('insights.deep_dive_read')}</span>

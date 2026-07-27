@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { MessageCircle, ArrowRight } from 'lucide-react';
+import { BadgeCheck, ClipboardCheck, MessageCircle, ArrowRight, Ship, Plane, PackageCheck, Warehouse } from 'lucide-react';
 import { getImgUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
@@ -16,7 +16,7 @@ export default function Hero() {
   };
 
   return (
-    <section className="relative h-screen min-h-[680px] flex items-center justify-center overflow-hidden bg-slate-950 font-sans">
+    <section className="relative min-h-[680px] min-h-[100dvh] flex items-center justify-center overflow-hidden bg-[#071A33] font-sans">
       <div className="absolute inset-0 z-0">
         <img
           src={getImgUrl('HERO_BG')}
@@ -25,9 +25,9 @@ export default function Hero() {
           fetchPriority="high"
         />
         {/* Asymmetric Gradient Mask Overlay & Ambient Darkening */}
-        <div className="absolute inset-0 bg-slate-950/45 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-r from-slate-950/95 via-slate-950/50 to-transparent" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(75,39,177,0.15)_0%,transparent_80%)]" />
+        <div className="absolute inset-0 bg-[#071A33]/55 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#071A33]/95 via-[#0B2A4A]/60 to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(30,136,229,0.15)_0%,transparent_80%)]" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -38,15 +38,16 @@ export default function Hero() {
           className="flex flex-col items-center justify-center"
         >
           {/* Dual Pill Badges Header */}
-          <div className="flex flex-wrap items-center justify-center gap-y-2.5 mb-6 max-w-3xl">
+          <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6 max-w-3xl">
             {/* Badge 1: Top-Tier China Freight Forwarder */}
             <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-purple-950/40 text-purple-300 border border-purple-500/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide inline-flex items-center gap-1.5 mr-2"
+              className="bg-blue-950/45 text-blue-100 border border-blue-300/30 px-4 py-2 rounded-full text-sm font-bold tracking-wide inline-flex items-center gap-2"
             >
-              {t('hero.badge_forwarder') || '🇨🇳 Top-Tier China Freight Forwarder'}
+              <BadgeCheck className="w-4 h-4 shrink-0 text-sky-300" aria-hidden="true" />
+              {t('hero.badge_forwarder') || 'Top-Tier China Freight Forwarder'}
             </motion.div>
 
             {/* Badge 2: Alibaba Glow Badge */}
@@ -54,17 +55,17 @@ export default function Hero() {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-amber-500/10 text-amber-300 border border-amber-500/20 px-3 py-1 rounded-full text-xs font-semibold tracking-wide inline-flex items-center gap-1.5"
+              className="bg-amber-500/10 text-amber-200 border border-amber-400/30 px-4 py-2 rounded-full text-sm font-bold tracking-wide inline-flex items-center gap-2"
             >
-              <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-              {t('hero.alibaba_badge') || '✨ Sourcing from Alibaba? We Inspect & Consolidate'}
+              <ClipboardCheck className="w-4 h-4 shrink-0 text-amber-300" aria-hidden="true" />
+              {t('hero.alibaba_badge') || 'Sourcing from Alibaba? We Inspect & Consolidate'}
             </motion.div>
           </div>
 
           {/* Primary Headline */}
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.1] mb-4 max-w-4xl break-words [overflow-wrap:anywhere]">
             {t('hero.title1') || 'Your Premier China Freight Forwarder'} <br className="hidden md:block" />
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-400 to-orange-400 font-extrabold">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-sky-300 via-blue-300 to-amber-300 font-extrabold">
               {t('hero.title2') || 'For Global Logistics Solutions.'}
             </span>
           </h1>
@@ -80,7 +81,7 @@ export default function Hero() {
             <a
               href="#get-a-quote"
               onClick={handlePrimaryCtaClick}
-              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold rounded-full text-white bg-gradient-to-r from-purple-600 via-pink-600 to-orange-500 hover:opacity-95 hover:shadow-xl hover:shadow-purple-500/10 transition-all transform hover:-translate-y-0.5 active:scale-95 duration-200 cursor-pointer"
+              className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold rounded-full text-white bg-gradient-to-r from-[#EA6A12] to-[#F59E0B] hover:opacity-95 hover:shadow-xl hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95 duration-200 cursor-pointer"
             >
               {t('hero.primary_cta') || 'Calculate Freight & Get Quote'}
               <ArrowRight className="w-4 h-4 ml-2 animate-pulse" />
@@ -106,18 +107,17 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex flex-wrap items-center justify-center gap-2 max-w-4xl mx-auto px-2"
           >
-            <div className="inline-flex items-center bg-white/5 border border-white/10 hover:border-[#FF8A00]/40 rounded-lg px-3 py-1.5 text-xs text-slate-300 font-medium transition-all duration-300 mr-2 mb-2">
-              {t('hero.services.sea') || '⚓ Sea Freight (FCL/LCL)'}
-            </div>
-            <div className="inline-flex items-center bg-white/5 border border-white/10 hover:border-[#FF8A00]/40 rounded-lg px-3 py-1.5 text-xs text-slate-300 font-medium transition-all duration-300 mr-2 mb-2">
-              {t('hero.services.air') || '✈️ Air Freight'}
-            </div>
-            <div className="inline-flex items-center bg-white/5 border border-white/10 hover:border-[#FF8A00]/40 rounded-lg px-3 py-1.5 text-xs text-slate-300 font-medium transition-all duration-300 mr-2 mb-2">
-              {t('hero.services.fba') || '📦 Amazon FBA Shipping'}
-            </div>
-            <div className="inline-flex items-center bg-white/5 border border-white/10 hover:border-[#FF8A00]/40 rounded-lg px-3 py-1.5 text-xs text-slate-300 font-medium transition-all duration-300 mr-2 mb-2">
-              {t('hero.services.warehouse') || '🏬 China Warehouse Services'}
-            </div>
+            {[
+              { icon: Ship, label: t('hero.services.sea') || 'Sea Freight (FCL/LCL)' },
+              { icon: Plane, label: t('hero.services.air') || 'Air Freight' },
+              { icon: PackageCheck, label: t('hero.services.fba') || 'Amazon FBA Shipping' },
+              { icon: Warehouse, label: t('hero.services.warehouse') || 'China Warehouse Services' },
+            ].map(({ icon: Icon, label }) => (
+              <div key={label} className="inline-flex items-center gap-2 bg-white/5 border border-white/15 hover:border-[#F59E0B]/50 rounded-lg px-4 py-2 text-sm text-slate-100 font-semibold transition-all duration-300">
+                <Icon className="w-4 h-4 shrink-0 text-sky-300" aria-hidden="true" />
+                {label}
+              </div>
+            ))}
           </motion.div>
         </motion.div>
       </div>

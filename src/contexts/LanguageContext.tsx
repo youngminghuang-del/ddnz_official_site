@@ -15,15 +15,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     try {
       const saved = localStorage.getItem('language') as Language;
-      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ru' || saved === 'fr')) {
+      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ru' || saved === 'fr' || saved === 'es' || saved === 'ar')) {
         setLanguageState(saved);
-        document.documentElement.lang = saved;
+        document.documentElement.lang = saved === 'zh' ? 'zh-CN' : saved;
+        document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr';
       } else {
         document.documentElement.lang = 'en';
       }
     } catch (e) {
       console.warn('LocalStorage not accessible', e);
       document.documentElement.lang = 'en';
+      document.documentElement.dir = 'ltr';
     }
   }, []);
 
@@ -34,7 +36,8 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     } catch (e) {
       console.warn('LocalStorage not accessible', e);
     }
-    document.documentElement.lang = lang;
+    document.documentElement.lang = lang === 'zh' ? 'zh-CN' : lang;
+    document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
   };
 
   const t = (path: string): any => {
@@ -52,7 +55,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       return current;
     };
 
-    let result = getVal(translations[language], keys);
+    let result = getVal((translations as Record<string, unknown>)[language] || translations.en, keys);
     
     if (result === undefined && language !== 'en') {
       console.warn(`Translation key missing: ${path} for lang ${language}`);

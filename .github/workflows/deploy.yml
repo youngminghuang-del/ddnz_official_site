@@ -24,12 +24,14 @@ jobs:
           node-version: 24
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm ci
       - name: Build
         env:
-          # 🌟 核心修复：把你在 GitHub 填的钥匙，在打包这一秒强行塞进印刷机里！
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          VITE_GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
+          VITE_BING_SITE_VERIFICATION: ${{ secrets.BING_SITE_VERIFICATION }}
+          VITE_BAIDU_SITE_VERIFICATION: ${{ secrets.BAIDU_SITE_VERIFICATION }}
         run: npm run build
       - name: Setup Pages
         uses: actions/configure-pages@v5
@@ -48,3 +50,13 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Checkout submission script
+        uses: actions/checkout@v4
+      - name: Set up Node for search-engine submission
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Submit deployed sitemap URLs to Baidu
+        env:
+          BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
+        run: node scripts/push-baidu-urls.mjs --sitemap https://www.ddnzglobal.com/sitemap.xml

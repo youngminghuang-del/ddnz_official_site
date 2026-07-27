@@ -224,11 +224,27 @@ const cookieTexts = {
   }
 };
 
+const cookieTextMap = cookieTexts as Record<string, any>;
+cookieTextMap.es = {
+  ...cookieTexts.en,
+  bannerTitle: 'Valoramos su privacidad', bannerDesc: 'Usamos cookies para mejorar su navegación, ofrecer contenido personalizado y analizar nuestro tráfico.',
+  btnAcceptAll: 'Aceptar todas', btnDecline: 'Rechazar', btnSettings: 'Configuración de cookies', modalTitle: 'Centro de preferencias de cookies', consentBy: 'Consentimiento de cookies de Heaven Born', btnSave: 'Guardar preferencias', activeLabel: 'Activo', inactiveLabel: 'Inactivo', alwaysActive: 'Siempre activo',
+  tabs: { privacy: 'Su privacidad', necessary: 'Cookies estrictamente necesarias', functionality: 'Cookies de funcionalidad', tracking: 'Cookies de seguimiento', targeting: 'Cookies de publicidad', more: 'Más información' },
+};
+cookieTextMap.ar = {
+  ...cookieTexts.en,
+  bannerTitle: 'نحن نقدر خصوصيتكم', bannerDesc: 'نستخدم ملفات تعريف الارتباط لتحسين التصفح وتقديم محتوى مخصص وتحليل حركة الموقع.',
+  btnAcceptAll: 'قبول الكل', btnDecline: 'رفض', btnSettings: 'إعدادات ملفات الارتباط', modalTitle: 'مركز تفضيلات ملفات الارتباط', consentBy: 'موافقة ملفات الارتباط من Heaven Born', btnSave: 'حفظ التفضيلات', activeLabel: 'نشط', inactiveLabel: 'غير نشط', alwaysActive: 'نشط دائماً',
+  tabs: { privacy: 'خصوصيتكم', necessary: 'ملفات الارتباط الضرورية', functionality: 'ملفات الارتباط الوظيفية', tracking: 'ملفات التتبع', targeting: 'ملفات الإعلان', more: 'معلومات إضافية' },
+};
+
 const languagesList = [
   { code: 'en', label: 'English' },
   { code: 'zh', label: '中文' },
   { code: 'ru', label: 'Русский' },
   { code: 'fr', label: 'Français' }
+  ,{ code: 'es', label: 'Español' }
+  ,{ code: 'ar', label: 'العربية' }
 ];
 
 export default function CookieConsent() {
@@ -348,7 +364,7 @@ export default function CookieConsent() {
     }));
   };
 
-  const tLocal = cookieTexts[language as Language] || cookieTexts.en;
+  const tLocal = cookieTextMap[language] || cookieTexts.en;
 
   const Toggle = ({ active, disabled, onChange }: { active: boolean; disabled?: boolean; onChange?: () => void }) => {
     return (

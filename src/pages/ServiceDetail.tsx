@@ -12,10 +12,11 @@ import { motion } from 'framer-motion';
 import { 
   Ship, Plane, ShieldAlert, BadgeCheck, CheckCircle2, ArrowRight, 
   Clock, DollarSign, Languages, Landmark, Star, HelpCircle, AlertCircle,
-  Package, ShieldCheck, Thermometer, FileText, Truck, Zap, Globe
+  Package, ShieldCheck, Thermometer, FileText, Truck, Zap, Globe, MapPin, ClipboardCheck, Boxes, Route
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import { trackEvent } from '../lib/utils';
+import { getImgUrl } from '../constants';
 
 // Multi-language data for the 4 core pillars
 const SERVICES_DATA: Record<string, Record<string, any>> = {
@@ -27,25 +28,25 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       quickFacts: {
         title: 'Quick Facts',
         points: [
-          'Direct carrier contracts with MAERSK, MSC, COSCO',
-          '99% Custom clearance success rate',
-          'Double-customs clearance (DDP) options available',
-          'Guangzhou hub inspection and loading control'
+          'Carrier and schedule options reviewed for each booking',
+          'Export documents checked before cargo moves to port',
+          'FCL and LCL planning based on cargo volume and destination',
+          'Inspection and loading coordination available in Guangzhou'
         ]
       },
       advs: [
-        { title: 'Best-in-class Rates', desc: 'Secure direct contract rates with top carrier alliances, cutting middleman fees.' },
-        { title: 'Ultimate Flexibility', desc: 'Custom schedules mapping FCL and weekly LCL consolidations to suit your inventory.' },
-        { title: 'Global Coverage', desc: 'Covering South America, South-East Asia, Eastern Europe and the Middle East.' },
-        { title: 'DG & Lithium Mastery', desc: 'Specialized containers and secure securing for Class 9 baterry/ESS units.' }
+        { title: 'Carrier Rate Review', desc: 'Quote options are confirmed against sailing schedule, equipment and destination scope.' },
+        { title: 'FCL & LCL Planning', desc: 'Container and consolidation options are matched to your cargo volume and delivery plan.' },
+        { title: 'Key Trade Lanes', desc: 'Routes are planned across Latin America, the Middle East, Africa and Eurasian markets.' },
+        { title: 'DG & Lithium Preparation', desc: 'Eligibility and documentation are reviewed before booking dangerous goods or lithium cargo.' }
       ],
       deepDive: {
-        title: 'Deep-Dive Services',
-        desc: 'Our ocean freight network keeps your business competitive. We handle everything from standard dry cargo to complex project cargo and industrial assemblies. By partnering directly with vessel operators, we secure container space even during peak shipping seasons.',
+        title: 'How we plan your shipment',
+        desc: 'We coordinate the shipment from booking through export documentation and handover. Your plan is built around cargo details, route availability and the delivery requirements you provide.',
         sections: [
-          { name: 'FCL (Full Container Load)', info: 'Complete container booking (20GP, 40HQ, 40FR) with optimized loading schemes and direct routes.' },
-          { name: 'LCL (Less-than-Container Load)', info: 'Weekly consolidation of smaller cargo at our Guangzhou self-owned hub, reducing overhead expenses.' },
-          { name: 'Customs Brokerage', info: 'In-house brokers at major Chinese ports ensuring fast and hassle-free export declaration and document filing.' }
+          { name: 'FCL (Full Container Load)', info: 'We confirm equipment, loading requirements and available sailing options for full-container cargo.' },
+          { name: 'LCL (Less-than-Container Load)', info: 'Smaller shipments can be consolidated after cargo, packing and destination requirements are confirmed.' },
+          { name: 'Export documentation', info: 'We review the export declaration and shipping documents needed before cargo is handed over.' }
         ]
       },
       lanes: {
@@ -66,25 +67,25 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       quickFacts: {
         title: '核心速览',
         points: [
-          '直签 MAERSK、MSC、COSCO 等班轮公会',
-          '中国主要口岸 99.9% 精准报关放行记录',
-          '包含双清包税 (DDP) 至多国门到门专线渠道',
-          '自营广州仓现场质检、防潮真空包装及实配监装'
+          '每票确认可用船期、舱位与目的港操作范围',
+          '货物进港前核对出口资料与申报要求',
+          '根据货量和目的地规划整柜或拼箱方案',
+          '可协调广州验货、集货及装柜监装'
         ]
       },
       advs: [
-        { title: '直签各大船东低价', desc: '绕过层层多级货代，直接拿到第一手优质约价，深度降低跨国基本运费支出。' },
-        { title: '拼箱集货灵活便捷', desc: '每周固定开班，精准匹配中小企业柔性采购批次，拼箱即达，库存压力大减。' },
-        { title: '覆盖多条特色航线', desc: '深耕南美全境、大东南亚、东欧及中东主要口岸港口，清关优势显赫。' },
-        { title: '九类危险品及工业品特需', desc: '配有高难储能柜及高货值精密设备卡板加固，全程锁孔稳固高频防护。' }
+        { title: '船期与运价核对', desc: '结合船期、用箱和目的港操作范围，确认适合本票货物的报价方案。' },
+        { title: '整柜与拼箱规划', desc: '根据货量、包装和交期，匹配整柜或拼箱的出运安排。' },
+        { title: '重点贸易航线', desc: '围绕中南美、中东、非洲及欧亚市场规划海运路线。' },
+        { title: '危险品与锂电前置审核', desc: '危险品或锂电货物在订舱前先核验适运性和资料要求。' }
       ],
       deepDive: {
-        title: '海洋运输深度服务项目',
-        desc: '华正邦泰国际货运 29年积淀的海运网络是您拓展跨国商贸的核心动力。无论是处理标准非重工件还是高价值重型机械工程项目，我们的专业海运专家都能从装箱起算、口岸接单到最终尾端配送，打造万无一失的拼合或独柜闭环。',
+        title: '如何规划您的海运方案',
+        desc: '我们从订舱、出口资料到货物交接进行协调。方案以货物信息、可用航线和您确认的交付要求为基础。',
         sections: [
-          { name: '海运整箱 (FCL)', info: '提供标准 20GP、40HQ 及特种平板柜(FR)、开顶柜(OT)的最优配舱和快速直航装载。' },
-          { name: '海运拼箱 (LCL)', info: '在广州和香港自有仓库集货多品牌包装合一，降低拼箱港杂费及运价门槛。' },
-          { name: '通关配合与金融安全', desc: '配备自营卓越 AEO 级别报关团队，确保各项复杂提单、产地证等迅速出单放行。' }
+          { name: '海运整箱 (FCL)', info: '确认用箱、装载要求和可用船期，为整柜货物安排订舱。' },
+          { name: '海运拼箱 (LCL)', info: '在货物、包装和目的地要求确认后，安排小批量货物的集拼方案。' },
+          { name: '出口资料配合', info: '货物交接前核对出口申报及运输所需资料。' }
         ]
       },
       lanes: {
@@ -212,9 +213,9 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
         title: 'Popular Lanes & Transit Times (Air Matrix)',
         headers: ['Lane / Trade Route', 'Destination Airport Ports (IATA)', 'Express Service', 'Standard Service'],
         rows: [
-          ['China → USA', 'LAX, JFK, ORD, DFW, ATL', '2 – 4 Days', '3 – 7 Days'],
-          ['China → Europe', 'AMS, FRA, LHR, CDG', '2 – 3 Days', '3 – 5 Days'],
-          ['China → Middle East', 'DXB, DOH, RUH', '1 – 3 Days', '2 – 4 Days']
+          ['China → USA', 'LAX, JFK, ORD, DFW, ATL', '2 - 4 Days', '3 - 7 Days'],
+          ['China → Europe', 'AMS, FRA, LHR, CDG', '2 - 3 Days', '3 - 5 Days'],
+          ['China → Middle East', 'DXB, DOH, RUH', '1 - 3 Days', '2 - 4 Days']
         ]
       },
       workflow: [
@@ -270,9 +271,9 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
         title: '热门干线与空运时效 (Air Matrix)',
         headers: ['始发航线 (中国)', '目的港主要机场口岸 (IATA)', '特快方案 (预计周期)', '标准方案 (预计周期)'],
         rows: [
-          ['中国 → 美国', 'LAX, JFK, ORD, DFW, ATL', '2 – 4 天', '3 – 7 天'],
-          ['中国 → 欧洲', 'AMS, FRA, LHR, CDG', '2 – 3 天', '3 – 5 天'],
-          ['中国 → 中东', 'DXB, DOH, RUH', '1 – 3 天', '2 – 4 天']
+          ['中国 → 美国', 'LAX, JFK, ORD, DFW, ATL', '2 - 4 天', '3 - 7 天'],
+          ['中国 → 欧洲', 'AMS, FRA, LHR, CDG', '2 - 3 天', '3 - 5 天'],
+          ['中国 → 中东', 'DXB, DOH, RUH', '1 - 3 天', '2 - 4 天']
         ]
       },
       workflow: [
@@ -328,9 +329,9 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
         title: 'Популярные маршруты и транзит (Air Matrix)',
         headers: ['Направление доставки (Китай)', 'Аэропорты прибытия (IATA)', 'Экспресс-тариф', 'Стандарт-тариф'],
         rows: [
-          ['Китай → США', 'LAX, JFK, ORD, DFW, ATL', '2 – 4 дня', '3 – 7 дней'],
-          ['Китай → Европа', 'AMS, FRA, LHR, CDG', '2 – 3 дня', '3 – 5 дней'],
-          ['Китай → Ближний Восток', 'DXB, DOH, RUH', '1 – 3 дня', '2 – 4 дня']
+          ['Китай → США', 'LAX, JFK, ORD, DFW, ATL', '2 - 4 дня', '3 - 7 дней'],
+          ['Китай → Европа', 'AMS, FRA, LHR, CDG', '2 - 3 дня', '3 - 5 дней'],
+          ['Китай → Ближний Восток', 'DXB, DOH, RUH', '1 - 3 дня', '2 - 4 дня']
         ]
       },
       workflow: [
@@ -386,9 +387,9 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
         title: 'Lignes Populaires & Temps de Transit (Air Matrix)',
         headers: ['Ligne Actuelle (Chine)', 'Aéroports de Destination (IATA)', 'Fret Express (Est.)', 'Fret Standard (Est.)'],
         rows: [
-          ['Chine → USA', 'LAX, JFK, ORD, DFW, ATL', '2 – 4 Jours', '3 – 7 Jours'],
-          ['Chine → Europe', 'AMS, FRA, LHR, CDG', '2 – 3 Jours', '3 – 5 Jours'],
-          ['Chine → Moyen-Orient', 'DXB, DOH, RUH', '1 – 3 Jours', '2 – 4 Jours']
+          ['Chine → USA', 'LAX, JFK, ORD, DFW, ATL', '2 - 4 Jours', '3 - 7 Jours'],
+          ['Chine → Europe', 'AMS, FRA, LHR, CDG', '2 - 3 Jours', '3 - 5 Jours'],
+          ['Chine → Moyen-Orient', 'DXB, DOH, RUH', '1 - 3 Jours', '2 - 4 Jours']
         ]
       },
       workflow: [
@@ -610,7 +611,7 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
       }
     },
     zh: {
-      title: '自营海外仓配与出口集运仓储服务',
+      title: '中国仓储、验货与出口集运服务',
       tag: '实自置大湾区核心实业基础设施',
       heroSubtitle: '在核心空港中转地深耕18年、配有高级真空抗震包装能力的自营广州仓储指挥基地。',
       quickFacts: {
@@ -729,6 +730,21 @@ const SERVICES_DATA: Record<string, Record<string, any>> = {
   }
 };
 
+const LOCALIZED_SERVICE_PRESENTATION: Record<string, Record<string, Record<string, any>>> = {
+  es: {
+    'sea-freight': { title: 'Flete marítimo desde China', tag: 'Soluciones integradas de logística oceánica', heroSubtitle: 'Envíos FCL y LCL rentables con contratos directos con navieras.', quickFacts: { title: 'Información clave', points: ['Contratos directos con MAERSK, MSC y COSCO', 'Gestión profesional del despacho de exportación', 'Opciones de entrega DDP disponibles', 'Inspección y control de carga en Guangzhou'] } },
+    'air-freight': { title: 'Carga aérea desde China', tag: 'Soluciones aéreas urgentes y flexibles', heroSubtitle: 'Carga aérea fiable para envíos urgentes, con recogida, despacho y seguimiento coordinados.', quickFacts: { title: 'Información clave', points: ['Rutas exprés y económicas', 'Cobertura global de aeropuertos', 'Gestión profesional de exportación', 'Seguimiento operativo de principio a fin'] } },
+    'amazon-fba': { title: 'Logística Amazon FBA desde China', tag: 'Preparación, etiquetado y entrega FBA', heroSubtitle: 'Preparamos, etiquetamos y enviamos su mercancía desde proveedores chinos a centros Amazon.', quickFacts: { title: 'Información clave', points: ['Etiquetado y preparación FNSKU', 'Consolidación de varios proveedores', 'Reserva de citas de entrega', 'Entrega directa a almacenes Amazon'] } },
+    'warehouse-services': { title: 'Almacén y consolidación en China', tag: 'Almacenamiento, preparación y distribución', heroSubtitle: 'Almacenamiento seguro, consolidación y preparación de exportación desde nuestro centro de Guangzhou.', quickFacts: { title: 'Información clave', points: ['Almacén seguro y controlado', 'Inventario WMS en tiempo real', 'Inspección, embalaje y etiquetado', 'Cross-docking y consolidación'] } },
+  },
+  ar: {
+    'sea-freight': { title: 'الشحن البحري من الصين', tag: 'حلول لوجستية بحرية متكاملة', heroSubtitle: 'شحنات FCL وLCL اقتصادية مع عقود مباشرة مع خطوط الملاحة.', quickFacts: { title: 'معلومات سريعة', points: ['عقود مباشرة مع MAERSK وMSC وCOSCO', 'إدارة احترافية لإجراءات التصدير', 'خيارات تسليم DDP متاحة', 'فحص وتحكم في التحميل في قوانغتشو'] } },
+    'air-freight': { title: 'الشحن الجوي من الصين', tag: 'حلول جوية سريعة ومرنة', heroSubtitle: 'شحن جوي موثوق للبضائع العاجلة مع استلام وتخليص ومتابعة منسقة.', quickFacts: { title: 'معلومات سريعة', points: ['مسارات سريعة واقتصادية', 'تغطية مطارات عالمية', 'إدارة تصدير احترافية', 'متابعة تشغيلية من البداية للنهاية'] } },
+    'amazon-fba': { title: 'لوجستيات Amazon FBA من الصين', tag: 'تجهيز ووسم وتسليم FBA', heroSubtitle: 'نجهز ونوسم ونشحن بضائعكم من الموردين في الصين إلى مراكز Amazon.', quickFacts: { title: 'معلومات سريعة', points: ['وسم وتجهيز FNSKU', 'تجميع عدة موردين', 'حجز مواعيد التسليم', 'تسليم مباشر إلى مستودعات Amazon'] } },
+    'warehouse-services': { title: 'التخزين والتجميع في الصين', tag: 'تخزين وتجهيز وتوزيع', heroSubtitle: 'تخزين آمن وتجميع وتجهيز للتصدير من مركزنا في قوانغتشو.', quickFacts: { title: 'معلومات سريعة', points: ['مستودع آمن ومراقب', 'مخزون WMS لحظي', 'فحص وتغليف ووسم', 'شحن متقاطع وتجميع'] } },
+  },
+};
+
 export default function ServiceDetail() {
   const { serviceId } = useParams<{ serviceId: string }>();
   const { language, t } = useLanguage();
@@ -741,7 +757,8 @@ export default function ServiceDetail() {
   const currentKey = serviceId && SERVICES_DATA[serviceId] ? serviceId : 'sea-freight';
   // Use current selected language or fallback to 'en'
   const activeLang = LANGUAGES_SUPPORTED.includes(language) ? language : 'en';
-  const data = SERVICES_DATA[currentKey]?.[activeLang] || SERVICES_DATA[currentKey]?.['en'];
+  const baseData = SERVICES_DATA[currentKey]?.[activeLang] || SERVICES_DATA[currentKey]?.['en'];
+  const data = { ...baseData, ...(LOCALIZED_SERVICE_PRESENTATION[language]?.[currentKey] || {}) };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -838,7 +855,21 @@ export default function ServiceDetail() {
       }
     };
 
-    const currentSEOVal = seoMeta[currentKey]?.[activeLang] || seoMeta[currentKey]?.['en'];
+    const localizedSeo: Record<string, Record<string, { title: string; desc: string; keywords: string }>> = {
+      es: {
+        'sea-freight': { title: 'Flete marítimo desde China | Heaven Born', desc: 'Servicios FCL y LCL desde China con consolidación, despacho y opciones puerta a puerta.', keywords: 'flete marítimo china, envío FCL LCL, agente de carga china' },
+        'air-freight': { title: 'Carga aérea desde China | Heaven Born', desc: 'Carga aérea urgente y económica desde China con recogida, exportación y seguimiento.', keywords: 'carga aérea china, flete aéreo urgente, agente de carga china' },
+        'amazon-fba': { title: 'Logística Amazon FBA desde China | Heaven Born', desc: 'Preparación FBA, etiquetado FNSKU y entrega desde China a centros Amazon.', keywords: 'amazon fba china, preparación fba, etiquetado fnsku' },
+        'warehouse-services': { title: 'Almacén y consolidación en China | Heaven Born', desc: 'Almacenamiento, inspección, consolidación y preparación de exportación en Guangzhou.', keywords: 'almacén china, consolidación carga, logística guangzhou' },
+      },
+      ar: {
+        'sea-freight': { title: 'الشحن البحري من الصين | Heaven Born', desc: 'خدمات FCL وLCL من الصين مع التجميع والتخليص وخيارات التسليم من الباب إلى الباب.', keywords: 'الشحن البحري من الصين، شحن FCL LCL، وكيل شحن الصين' },
+        'air-freight': { title: 'الشحن الجوي من الصين | Heaven Born', desc: 'شحن جوي سريع واقتصادي من الصين مع الاستلام وإجراءات التصدير والمتابعة.', keywords: 'الشحن الجوي من الصين، شحن جوي سريع، وكيل شحن الصين' },
+        'amazon-fba': { title: 'لوجستيات Amazon FBA من الصين | Heaven Born', desc: 'تجهيز FBA ووسم FNSKU وتسليم من الصين إلى مراكز Amazon.', keywords: 'Amazon FBA الصين، تجهيز FBA، وسم FNSKU' },
+        'warehouse-services': { title: 'التخزين والتجميع في الصين | Heaven Born', desc: 'تخزين وفحص وتجميع وتجهيز للتصدير في قوانغتشو.', keywords: 'مستودع الصين، تجميع الشحنات، لوجستيات قوانغتشو' },
+      },
+    };
+    const currentSEOVal = localizedSeo[language]?.[currentKey] || seoMeta[currentKey]?.[activeLang] || seoMeta[currentKey]?.['en'];
     if (currentSEOVal) {
       setCurrentSEO(currentSEOVal);
     }
@@ -855,13 +886,13 @@ export default function ServiceDetail() {
   const getServiceConfig = (sid: string) => {
     switch (sid) {
       case 'air-freight':
-        return { icon: Plane, bgGrad: 'from-blue-600 to-indigo-800', accentText: 'text-blue-500', defaultTab: 'Air' };
+        return { icon: Plane, bgGrad: 'from-[var(--hb-navy-deep)] to-[var(--hb-blue)]', accentText: 'text-[var(--hb-amber)]', defaultTab: 'Air' };
       case 'amazon-fba':
         return { icon: BadgeCheck, bgGrad: 'from-orange-600 to-amber-800', accentText: 'text-amber-500', defaultTab: 'Sourcing' };
       case 'warehouse-services':
-        return { icon: Ship, bgGrad: 'from-emerald-600 to-teal-800', accentText: 'text-emerald-500', defaultTab: 'Land' };
+        return { icon: Package, bgGrad: 'from-[#071A33] to-[#0E4C78]', accentText: 'text-sky-600', defaultTab: 'Land' };
       default:
-        return { icon: Ship, bgGrad: 'from-purple-600 to-indigo-900', accentText: 'text-purple-500', defaultTab: 'Sea' };
+        return { icon: Ship, bgGrad: 'from-[#071A33] to-[#0E4C78]', accentText: 'text-sky-600', defaultTab: 'Sea' };
     }
   };
 
@@ -875,6 +906,20 @@ export default function ServiceDetail() {
     { num: '04', title: '海空陆中转运载', desc: '根据配舱舱位直航装柜远航，GPS实时跟进轨迹防损监控。' },
     { num: '05', title: '目的港双清', desc: '自有海外清关代理强悍操作，代为缴付关税、申报并极速免息放行。' },
     { num: '06', title: '末端安全派送', desc: '协议拖车整车配送上门、UPS直发递送网内亚马逊中心或境外海外仓。' }
+  ] : activeLang === 'es' ? [
+    { num: '01', title: 'Cotización y viabilidad', desc: 'Comparta dimensiones y detalles de carga para definir la ruta adecuada.' },
+    { num: '02', title: 'Recogida y consolidación', desc: 'Recogemos en fábrica o recibimos la carga en nuestro almacén de Guangzhou.' },
+    { num: '03', title: 'Embalaje y documentos de exportación', desc: 'Embalaje de exportación y declaración aduanera gestionados por nuestro equipo.' },
+    { num: '04', title: 'Tránsito internacional', desc: 'Carga segura en rutas marítimas, aéreas o terrestres programadas.' },
+    { num: '05', title: 'Despacho de importación', desc: 'Coordinación de derechos, documentos y liberación local de la carga.' },
+    { num: '06', title: 'Entrega final', desc: 'Entrega a centros Amazon, almacenes privados o el destino acordado.' }
+  ] : activeLang === 'ar' ? [
+    { num: '01', title: 'عرض السعر ودراسة الجدوى', desc: 'أرسل الأبعاد وتفاصيل الشحنة لتحديد المسار المناسب.' },
+    { num: '02', title: 'الاستلام والتجميع', desc: 'نستلم من المصنع أو نستقبل البضائع في مستودعنا في قوانغتشو.' },
+    { num: '03', title: 'التغليف ووثائق التصدير', desc: 'يتولى فريقنا تغليف التصدير وإجراءات الإقرار الجمركي.' },
+    { num: '04', title: 'النقل الدولي', desc: 'تحميل آمن على مسارات بحرية أو جوية أو برية مجدولة.' },
+    { num: '05', title: 'تخليص الاستيراد', desc: 'تنسيق الرسوم والمستندات والإفراج المحلي عن البضائع.' },
+    { num: '06', title: 'التسليم النهائي', desc: 'تسليم إلى مراكز Amazon أو المستودعات الخاصة أو الوجهة المتفق عليها.' }
   ] : activeLang === 'ru' ? [
     { num: '01', title: 'Запрос и Расчет', desc: 'Предоставьте параметры груза для подбора наиболее выгодного маршрута.' },
     { num: '02', title: 'Забор Груза', desc: 'Организуем самовывоз с фабрики в Китае или прием груза на нашем складе.' },
@@ -897,80 +942,87 @@ export default function ServiceDetail() {
     { num: '05', title: 'Import Clearance', desc: 'Handling port duties prepayments and local customs release.' },
     { num: '06', title: 'Last-Mile Delivery', desc: 'Direct drop-off to Amazon hubs, private facilities, or sea ports.' }
   ];
+  const sharedServiceLabels = activeLang === 'zh'
+    ? { quote: '获取本服务报价', planning: '运输方案规划', process: '标准服务流程' }
+    : activeLang === 'es'
+      ? { quote: 'Solicitar cotización', planning: 'Planificación del servicio', process: 'Proceso operativo' }
+      : activeLang === 'ar'
+        ? { quote: 'اطلب عرض سعر', planning: 'تخطيط الخدمة', process: 'خطوات التشغيل' }
+        : activeLang === 'ru'
+          ? { quote: 'Запросить расчет', planning: 'Планирование перевозки', process: 'Порядок работы' }
+          : activeLang === 'fr'
+            ? { quote: 'Demander un tarif', planning: 'Planification du transport', process: 'Processus opérationnel' }
+            : { quote: 'Request a firm quote', planning: 'Service planning', process: 'Operating process' };
 
   if (currentKey === 'air-freight') {
     return (
-      <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <div className="min-h-screen hb-page-shell font-sans text-slate-900">
         <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
         {/* Block 1: Hero Banner */}
-        <section className={`relative pt-32 pb-20 md:pb-32 bg-gradient-to-br from-blue-600 to-indigo-800 text-white overflow-hidden`}>
-          <img 
-            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
-            src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop" 
-            alt="Air Freight backdrop" 
-            referrerPolicy="no-referrer" 
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-          
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-orange-200 text-xs font-bold uppercase tracking-widest mb-6 border border-white/10">
-                <Plane className="w-4 h-4 text-orange-400 rotate-12" />
+        <section className="relative pt-24 bg-gradient-to-br from-[var(--hb-navy-deep)] to-[var(--hb-blue)] text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
+              <div className="md:col-span-7 lg:col-span-6">
+              <span className="inline-flex items-center gap-2 text-amber-200 text-sm font-bold mb-5">
+                <Plane className="w-4 h-4 text-amber-300 rotate-12" />
                 {data.tag}
               </span>
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6 animate-fade-in">
+              <h1 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.04] mb-5">
                 {data.title}
               </h1>
-              <p className="text-blue-100 text-lg sm:text-xl font-medium leading-relaxed mb-8 max-w-2xl">
+              <p className="text-slate-200 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-xl">
                 {data.heroSubtitle}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
                   href="#rfq-form-section"
-                  className="bg-gradient-to-r from-[#FF8A00] to-[#FF5500] hover:from-[#ff9c22] hover:to-[#ff6715] text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                  className="bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] text-white font-bold px-7 py-3.5 rounded-xl text-center shadow-lg shadow-black/15 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
                 >
-                  {activeLang === 'zh' ? '立即询本服务底价' : activeLang === 'ru' ? 'Запросить расчет' : activeLang === 'fr' ? 'Demander un tarif' : 'Get Firm Rate Now'}
+                  {sharedServiceLabels.quote}
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://wa.me/8613430335022" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl border border-emerald-500 shadow-md transition-all flex items-center justify-center gap-2"
+                  className="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3.5 rounded-xl border border-white/25 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
                 >
-                  <span>Chat on WhatsApp</span>
+                  <span>{t('hero.chat')}</span>
                 </a>
               </div>
+              </div>
+              <figure className="relative h-[19rem] overflow-hidden rounded-2xl border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.28)] md:col-span-5 md:h-[27rem] md:rounded-l-none md:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)] lg:col-span-6">
+                <img
+                  className="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?q=80&w=1200&auto=format&fit=crop"
+                  alt={data.title}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)]/45 via-transparent to-transparent" />
+              </figure>
             </div>
           </div>
         </section>
 
-        {/* Block 2: Why Choose Our Air Freight (4-Column Layout) */}
-        <section className="py-16 md:py-24 bg-white border-b border-slate-100">
+        {/* Block 2: Operational capabilities */}
+        <section className="py-14 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-2xl border border-slate-200 md:grid-cols-12">
               {data.advs.map((adv: any, index: number) => {
-                const iconMap = [Zap, Globe, FileText, ShieldCheck];
-                const Icon = iconMap[index % 4] || ShieldCheck;
                 return (
-                  <div 
+                  <article
                     key={index}
-                    className="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300"
+                    className={`${index === 0 ? 'bg-[var(--hb-navy-deep)] text-white md:col-span-5 md:row-span-3' : 'border-t border-slate-200 bg-[var(--hb-surface)] md:col-span-7'} grid gap-5 p-7 md:p-9`}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mb-6 text-blue-600">
-                      <Icon className="w-6 h-6" />
+                    <Plane className={`${index === 0 ? 'h-9 w-9' : 'h-6 w-6'} text-[var(--hb-amber)]`} aria-hidden="true" />
+                    <div>
+                      <h2 className={`${index === 0 ? 'text-2xl md:text-3xl text-white' : 'text-xl text-[var(--hb-ink)]'} font-black mb-2 tracking-tight`}>{adv.title}</h2>
+                      <p className={`${index === 0 ? 'text-slate-200' : 'text-slate-600'} text-sm md:text-base font-medium leading-relaxed max-w-[38rem]`}>{adv.desc}</p>
                     </div>
-                    <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">
-                      {adv.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">
-                      {adv.desc}
-                    </p>
-                  </div>
+                  </article>
                 );
               })}
             </div>
@@ -978,27 +1030,25 @@ export default function ServiceDetail() {
         </section>
 
         {/* Block 3: Service Options & Quick Facts (Dual Split) */}
-        <section className="py-16 md:py-24">
+        <section className="py-16 md:py-20 bg-[var(--hb-surface)]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
               
               {/* Left Column: 5 Core Services */}
               <div className="lg:col-span-7">
-                <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-3">
+                <p className="text-sm font-black text-[var(--hb-amber)] mb-3">{sharedServiceLabels.planning}</p>
+                <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--hb-ink)] tracking-tight mb-3">
                   {data.coreServices.title}
                 </h2>
                 <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 font-medium">
                   {data.coreServices.desc}
                 </p>
-                <div className="space-y-6">
+                <div className="grid gap-4 sm:grid-cols-2">
                   {data.coreServices.items.map((sec: any, index: number) => (
-                    <div key={index} className="flex gap-4 p-5 bg-white rounded-xl border border-slate-100 shadow-sm hover:border-blue-100 transition-colors">
-                      <div className="w-10 h-10 rounded-full bg-blue-50/10 text-blue-600 flex items-center justify-center font-bold shrink-0 text-sm mt-0.5">
-                        {String(index + 1).padStart(2, '0')}
-                      </div>
+                    <div key={index} className={`${index === 0 ? 'sm:col-span-2' : ''} rounded-2xl border border-slate-200 bg-white p-6`}>
                       <div>
-                        <h4 className="text-lg font-bold text-slate-900 mb-1">{sec.name}</h4>
-                        <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">{sec.info || sec.desc}</p>
+                        <h4 className="text-lg font-bold text-[var(--hb-ink)] mb-1">{sec.name}</h4>
+                        <p className="text-slate-600 text-sm md:text-base font-medium leading-relaxed">{sec.info || sec.desc}</p>
                       </div>
                     </div>
                   ))}
@@ -1006,34 +1056,34 @@ export default function ServiceDetail() {
               </div>
 
               {/* Right Column: Air Quick Facts Card */}
-              <div className="lg:col-span-5 bg-gradient-to-br from-[#4B27B1] to-[#361793] text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+              <aside className="lg:col-span-5 bg-[var(--hb-navy-deep)] text-white rounded-2xl p-8 sm:p-10 shadow-[0_18px_45px_rgba(11,28,44,0.18)] relative overflow-hidden">
+                <div className="absolute inset-x-0 top-0 h-1 bg-[var(--hb-amber)]" />
                 <h3 className="text-2xl font-black tracking-tight mb-6 flex items-center gap-2">
-                  <Star className="w-6 h-6 text-orange-400" fill="currentColor" />
+                  <CheckCircle2 className="w-6 h-6 text-amber-300" />
                   {data.quickFacts.title}
                 </h3>
                 <ul className="space-y-4">
                   {data.quickFacts.points.map((pt: string, idx: number) => (
-                    <li key={idx} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-purple-100">
-                      <CheckCircle2 className="w-5 h-5 text-orange-400 shrink-0 mt-0.5" />
+                    <li key={idx} className="flex items-start gap-3 text-sm sm:text-base font-semibold text-slate-100">
+                      <CheckCircle2 className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
                       <span>{pt}</span>
                     </li>
                   ))}
                 </ul>
-              </div>
+              </aside>
 
             </div>
           </div>
         </section>
 
         {/* Block 4: Popular Lanes & Transit Times (Air Matrix) */}
-        <section className="py-16 bg-slate-105 border-y border-slate-200">
+        <section className="py-16 bg-[var(--hb-surface)] border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-10 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
                 {data.lanes.title}
               </h2>
-              <div className="h-1 w-16 bg-blue-600 mx-auto rounded-full" />
+              <div className="h-1 w-16 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full" />
             </div>
             
             <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden max-w-4xl mx-auto">
@@ -1049,8 +1099,8 @@ export default function ServiceDetail() {
                   <tbody className="divide-y divide-slate-100 text-sm md:text-base font-semibold text-slate-600">
                     {data.lanes.rows.map((row: string[], idx: number) => (
                       <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                        <td className="px-6 py-4 text-slate-900 font-bold flex items-center gap-2 select-none">
-                          <span>✈️</span>
+                        <td className="px-6 py-4 text-slate-900 font-bold flex items-center gap-2">
+                          <Plane className="w-4 h-4 text-[var(--hb-blue)] shrink-0" aria-hidden="true" />
                           {row[0]}
                         </td>
                         <td className="px-6 py-4 text-slate-700 font-mono text-sm">{row[1]}</td>
@@ -1068,44 +1118,41 @@ export default function ServiceDetail() {
         {/* Block 5: How It Works (6-Step Dedicated Operational Workflow) */}
         <section className="py-16 md:py-24 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 md:mb-24">
-              <div className="text-blue-600 font-bold tracking-widest text-xs uppercase mb-2">
-                {activeLang === 'zh' ? '规范出飞流程' : activeLang === 'ru' ? 'ЭТАПЫ РАБОТЫ' : activeLang === 'fr' ? 'ÉTAPES CLÉS' : 'TRANSPARENT ROADMAP'}
-              </div>
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-4">
-                {activeLang === 'zh' ? '华正邦泰专属 6 步快飞流程' : activeLang === 'ru' ? 'Как осуществляется авиадоставка' : activeLang === 'fr' ? 'Fret en 6 Étapes Célestes' : 'Standard 1-to-6 Air Cargo Cycle'}
+            <div className="mb-10 max-w-2xl md:mb-14">
+              <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-4">
+                {sharedServiceLabels.process}
               </h2>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-blue-600 to-indigo-800 mx-auto rounded-full" />
+              <p className="text-slate-600 font-medium leading-relaxed">
+                {activeLang === 'zh' ? '从货物资料确认到目的地交付，每个环节由同一空运运营团队衔接。' : activeLang === 'es' ? 'Un mismo equipo aéreo coordina cada etapa, desde los datos de la carga hasta la entrega.' : activeLang === 'ar' ? 'يتولى فريق الشحن الجوي نفسه تنسيق كل مرحلة من بيانات الشحنة حتى التسليم.' : 'One air freight team coordinates each stage from cargo review through final delivery.'}
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 relative">
+            <div className="grid grid-cols-1 gap-x-12 border-t border-slate-200 md:grid-cols-2">
               {data.workflow.map((step: any, index: number) => (
-                <div 
+                <article
                   key={index} 
-                  className="relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-lg hover:border-blue-100 transition-all group"
+                  className="grid grid-cols-[3rem_1fr] gap-4 border-b border-slate-200 py-7"
                 >
-                  <div className="absolute top-4 right-6 text-4xl sm:text-5xl font-black text-slate-200/60 group-hover:text-blue-500/10 select-none transition-colors">
+                  <div className="text-sm font-black text-[var(--hb-amber)]">
                     {step.num}
                   </div>
-                  <h3 className="text-xl font-bold text-slate-900 group-hover:text-blue-600 transition-colors mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-500 text-sm md:text-base leading-relaxed font-semibold">
-                    {step.desc}
-                  </p>
-                </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                    <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">{step.desc}</p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
         {/* Block 6: Value-Added Services (Air Logistics Specifics) */}
-        <section className="py-16 md:py-24 bg-slate-50 border-t border-slate-200/60">
+        <section className="py-16 md:py-20 bg-[var(--hb-surface)] border-t border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-black text-slate-900 mb-4">{data.valueAdded.title}</h2>
               <p className="text-slate-600 max-w-2xl mx-auto font-medium text-sm sm:text-base">{data.valueAdded.desc}</p>
-              <div className="h-1 w-12 bg-blue-600 mx-auto mt-4 rounded-full" />
+              <div className="h-1 w-12 bg-[var(--hb-amber)] mx-auto mt-4 rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1114,7 +1161,7 @@ export default function ServiceDetail() {
                 const CustomIcon = icons[idx % 4] || Landmark;
                 return (
                   <div key={idx} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-600 flex items-center justify-center mb-4">
+                    <div className="w-10 h-10 rounded-xl bg-sky-100 text-[var(--hb-blue)] flex items-center justify-center mb-4">
                       <CustomIcon className="w-5 h-5" />
                     </div>
                     <h3 className="text-base font-bold text-slate-900 mb-2">{item.title}</h3>
@@ -1127,7 +1174,7 @@ export default function ServiceDetail() {
         </section>
 
         {/* Lead Capture and Request form */}
-        <section id="rfq-form-section" className="py-16 md:py-24 bg-blue-50/25 border-t border-blue-105">
+        <section id="rfq-form-section" className="py-16 md:py-20 bg-white border-t border-slate-200">
           <div className="max-w-3xl mx-auto px-4">
             <div className="text-center mb-10">
               <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
@@ -1138,7 +1185,7 @@ export default function ServiceDetail() {
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl border border-blue-100 shadow-xl p-8 sm:p-10 relative overflow-hidden">
+            <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_18px_45px_rgba(11,28,44,0.10)] p-8 sm:p-10 relative overflow-hidden">
               {!isFormSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -1160,7 +1207,7 @@ export default function ServiceDetail() {
                             onClick={() => setSelectedService(item.id)}
                             className={`py-2.5 px-3 rounded-lg border-2 transition-all flex items-center justify-center font-bold text-xs sm:text-sm ${
                               (selectedService === 'Sea' ? item.id === 'Air' : selectedService === item.id)
-                                ? 'border-blue-600 bg-blue-50 text-blue-700 font-bold' 
+                                ? 'border-[var(--hb-blue)] bg-sky-50 text-[var(--hb-blue)] font-bold'
                                 : 'border-slate-100 bg-slate-50 text-slate-500 hover:bg-slate-100 font-medium'
                             }`}
                           >
@@ -1182,7 +1229,7 @@ export default function ServiceDetail() {
                         name="origin"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder={t('get_a_quote.originPlaceholder')}
                       />
                     </div>
@@ -1195,7 +1242,7 @@ export default function ServiceDetail() {
                         name="destination"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder={t('get_a_quote.destPlaceholder')}
                       />
                     </div>
@@ -1208,7 +1255,7 @@ export default function ServiceDetail() {
                     <select
                       id="comp"
                       name="product"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                     >
                       <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
                       <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
@@ -1226,7 +1273,7 @@ export default function ServiceDetail() {
                       name="cargo"
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all resize-none"
                       placeholder={t('get_a_quote.cargoPlaceholder')}
                     />
                   </div>
@@ -1241,7 +1288,7 @@ export default function ServiceDetail() {
                         name="email"
                         type="email"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder="yourname@company.com"
                       />
                     </div>
@@ -1254,7 +1301,7 @@ export default function ServiceDetail() {
                         name="phone"
                         type="tel"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-blue-600 outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[var(--hb-blue)] focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder="+1 (555) 000-0000"
                       />
                     </div>
@@ -1264,7 +1311,7 @@ export default function ServiceDetail() {
                     <button
                       type="submit"
                       disabled={state.submitting}
-                      className="w-full bg-[#FF8A00] hover:bg-[#FF5500] text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-all focus:ring-4 focus:ring-orange-200 disabled:opacity-50"
+                      className="w-full bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] text-white font-bold py-4 px-6 rounded-xl shadow-lg transition-colors active:scale-[0.99] focus:ring-4 focus:ring-amber-200 disabled:opacity-50"
                     >
                       {state.submitting 
                         ? (activeLang === 'zh' ? '正在提交...' : activeLang === 'ru' ? 'Отправка...' : activeLang === 'fr' ? 'Envoi...' : 'Submitting Cargo Plan...') 
@@ -1281,11 +1328,11 @@ export default function ServiceDetail() {
                     {activeLang === 'zh' ? '您的询盘已递交给 华正邦泰 调度小组！' : activeLang === 'ru' ? 'Ваш запрос успешно отправлен!' : activeLang === 'fr' ? 'Votre demande de fret est enregistrée !' : 'Your Air Freight RFQ Appreciated!'}
                   </h3>
                   <p className="text-slate-500 font-semibold mb-6 max-w-md mx-auto text-sm sm:text-base">
-                    {activeLang === 'zh' ? '我们经验丰富的空中走廊承配人将在 2 小时内安排专属卡车及班机测算计划，并在您的邮箱中呈现最省钱的费率和最迅速的路线方案。' : activeLang === 'ru' ? 'Наши авиаспециалисты подготовят коммерческое предложение и свяжутся с вами в течение 2 часов.' : activeLang === 'fr' ? 'Nos répartiteurs aériens préparent votre calcul de densité et vous reviendront avec les meilleurs plans d\'enlèvement d\'ici 2 heures.' : 'Our route agents are crunching numbers and and will deliver custom air pathways directly to your inbox within the next 2 hours.'}
+                    {activeLang === 'zh' ? '我们的空运团队将根据您提交的货物信息确认可用航线、舱位和相关操作要求，并通过您留下的联系方式回复。' : activeLang === 'ru' ? 'Наша команда проверит доступные маршруты, места и операционные требования по данным вашего груза и свяжется с вами.' : activeLang === 'fr' ? 'Notre équipe vérifie les itinéraires, capacités et exigences opérationnelles à partir des informations de votre fret, puis vous contacte.' : 'Our air freight team will review available routes, capacity and operating requirements using your cargo details, then contact you.'}
                   </p>
                   <button 
                     onClick={() => setIsFormSubmitted(false)}
-                    className="text-[#4B27B1] hover:text-[#361793] font-bold text-sm underline"
+                    className="text-[var(--hb-blue)] hover:text-[var(--hb-navy)] font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回提单页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
                   </button>
@@ -1305,25 +1352,25 @@ export default function ServiceDetail() {
       en: {
         hero: {
           title: 'Amazon FBA Shipping from China',
-          subtitle: 'Professional FBA prep, labeling, and delivery to Amazon fulfillment centers worldwide with duty prepaid (DDP).',
+          subtitle: 'FBA preparation, labeling, and coordinated delivery from China to Amazon fulfillment centers. DDP availability depends on the destination and cargo profile.',
           tag: 'Specialized E-Commerce Logistics',
         },
         solutions: {
           title: 'Complete Amazon FBA Solutions',
-          desc: 'Streamline your Amazon business with our comprehensive FBA shipping services. From supplier pickup in China to Amazon warehouse delivery, we handle every step of your FBA logistics.',
+          desc: 'Coordinate pickup, preparation, export, appointment handling and final delivery through one operating team.',
           pillars: [
             { title: 'FBA Prep Services', desc: 'Professional labeling, packaging, and preparation according to Amazon requirements.' },
             { title: 'Direct to Amazon', desc: 'Scheduled deliveries to Amazon fulfillment centers with appointment booking.' },
-            { title: 'Customs Clearance', desc: 'Expert handling of import procedures and customs documentation.' },
-            { title: 'Real-time Tracking', desc: 'Monitor your shipments from China to Amazon warehouses with live updates.' }
+            { title: 'Customs Coordination', desc: 'Prepare export documents and coordinate destination clearance within the confirmed service scope.' },
+            { title: 'Milestone Updates', desc: 'Receive operational updates from warehouse receipt through final delivery.' }
           ]
         },
         quickFacts: {
           title: 'FBA Quick Facts',
           points: [
             'Amazon-compliant labeling and packaging',
-            'Direct delivery to 200+ Amazon warehouses',
-            'Appointment scheduling included',
+            'Delivery plans for major Amazon marketplaces',
+            'Appointment coordination where required',
             'Palletizing and consolidation services',
             'Insurance coverage available',
             'Multi-channel fulfillment support'
@@ -1353,12 +1400,12 @@ export default function ServiceDetail() {
         },
         rates: {
           title: 'FBA Shipping Rates Matrix',
-          desc: 'Competitive pricing for Amazon FBA shipping with transparent costs and no hidden fees.',
+          desc: 'Use these planning ranges to choose a mode. Your final quote confirms routing, customs scope and delivery requirements.',
           headers: ['Shipping Mode', 'Transit Time', 'Minimum', 'Included Service Details'],
           rows: [
             ['Sea Freight FBA', '25-35 Days', '100 Kg', 'Includes FBA prep + delivery (Supplier pickup, FBA labeling & prep, Customs clearance, Amazon delivery).'],
             ['Air Freight FBA (MOST POPULAR)', '7-12 Days', '50 Kg', 'Includes FBA prep + delivery (Fast flight transport, priority clearance + express/LTL delivery).'],
-            ['Express FBA', '3-5 Days', '20 Kg', 'Includes FBA prep + delivery (Direct flight courier priority, instant clearance, no appointments needed).']
+            ['Express FBA', '3-5 Days', '20 Kg', 'Fast courier routing for time-sensitive cartons. Delivery requirements are confirmed before dispatch.']
           ]
         },
         warehouses: {
@@ -1377,25 +1424,25 @@ export default function ServiceDetail() {
       zh: {
         hero: {
           title: '亚马逊 FBA 跨境电商头程物流',
-          subtitle: '专业的一站式 FBA 贴标、包装准备及双清包税 (DDP) 派送，直达全球亚马逊海外运营中心。',
+          subtitle: '从中国供应商提货、FBA 贴标到预约派送的协同服务。DDP 服务范围将根据目的国和货物情况确认。',
           tag: '高标准跨境电商全程履约通道',
         },
         solutions: {
           title: '亚马逊 FBA 综合物流解决方案',
-          desc: '通过我们全面无忧的 FBA 货运代理方案，大幅简化您的亚马逊跨国业务。从中国供应商提货到海外 FBA 库房接收，我们悉心掌控全程每个物流节点。',
+          desc: '由同一运营团队协调提货、入仓、贴标、出口、预约与末端派送，减少多方沟通成本。',
           pillars: [
             { title: 'FBA 包装准备服务', desc: '根据亚马逊平台的严苛标准，进行高规格的商品加固、合规防跌落外箱贴标与清点。' },
             { title: '直发亚马逊库房', desc: '固定班期直接打托派送，与各大运营中心系统对接，完成无缝预约和入仓。' },
-            { title: '双清包税全程无忧', desc: '由自营关务代理全程负责出口退税与进口申报，无须卖家出任进口商，代理交纳税金。' },
-            { title: '全程可视化追踪', desc: '实时掌控从中国自营仓库至目的国亚马逊货架的仓储、海空干线与尾端派送详情。' }
+            { title: '关务协同支持', desc: '按确认的服务范围准备出口文件，并协调目的国清关与税费安排。' },
+            { title: '关键节点更新', desc: '从入仓、起运到最终派送，提供可核对的运营进度更新。' }
           ]
         },
         quickFacts: {
           title: 'FBA 核心要素说明',
           points: [
-            '完美契合亚马逊标准的 FNSKU 条形码标签贴标与复核',
-            '直发覆盖全球 200 多个活跃的亚马逊主要运营中心',
-            '包含目的港卡车打托装车和 CARP 服务系统预订预约',
+            '按 Amazon FBA 要求进行 FNSKU 标签贴标与复核',
+            '可规划主要 Amazon 站点的入仓派送',
+            '按目的仓要求协调预约与末端派送',
             '提供标准的打托、木卡板租赁和集运拼箱增值操作',
             '支持投保全损运输险以全面规避货损与拒收风险',
             '支持多平台海外仓中转调拨和全渠道一件代发支持'
@@ -1425,12 +1472,12 @@ export default function ServiceDetail() {
         },
         rates: {
           title: 'FBA 电商多式联运价目矩阵',
-          desc: '极具市场竞争优势的跨境头程资费，费用透明、绝无隐性增收。',
+          desc: '以下为选型参考时效与起运门槛，最终报价会确认路线、关务范围和末端交付要求。',
           headers: ['运输方式', '预计时效', '起运门槛', '包含的服务细节'],
           rows: [
             ['FBA 海运卡派/普派', '25-35 天', '100 公斤', '一站式包税送货到门（包含国内工厂提货、FBA 贴标与查验、出口申报、海运、双清、海外卡派）。'],
             ['FBA 空派包税专线（爆款主推）', '7-12 天', '50 公斤', '优先装运班机（包含高速空运干线、目的港急速清关及最后一英里快递或卡派）。'],
-            ['FBA 国际快递直达', '3-5 天', '20 公斤', '免预约优先清关放行，首班直飞大洋彼岸快递网点联运，直插运营中心。']
+            ['FBA 国际快递直达', '3-5 天', '20 公斤', '适合时效敏感的箱货。发运前确认派送方式与目的仓要求。']
           ]
         },
         warehouses: {
@@ -1454,7 +1501,7 @@ export default function ServiceDetail() {
         },
         solutions: {
           title: 'Комплексные решения для Amazon FBA',
-          desc: 'Оптимизируйте свой e-commerce бизнес на Amazon с помощью наших комплексных логистических услуг. От забора товара у поставщика в Китае до финальной приемки на складах Amazon — мы берем на себя каждый этап.',
+          desc: 'Оптимизируйте свой e-commerce бизнес на Amazon с помощью наших комплексных логистических услуг. От забора товара у поставщика в Китае до финальной приемки на складах Amazon. Мы берем на себя каждый этап.',
           pillars: [
             { title: 'Подготовка и Prep-услуги', desc: 'Профессиональное наклеивание этикеток, проверка упаковки и паллетирование в соответствии со строгими правилами Amazon.' },
             { title: 'Прямая доставка на склады', desc: 'Регулярная бережная доставка на фулфилмент-центры Amazon со своевременным бронированием слотов.' },
@@ -1597,7 +1644,7 @@ export default function ServiceDetail() {
     const renderWarehouseItems = (itemsStr: string) => {
       const parts = itemsStr.split(/\),\s*/);
       return (
-        <div className="flex flex-col gap-4 mt-2">
+        <div className="flex flex-col gap-4 mt-3">
           {parts.map((part, pIdx) => {
             if (!part.trim()) return null;
             const normalized = part.endsWith(')') ? part : part + ')';
@@ -1606,18 +1653,17 @@ export default function ServiceDetail() {
               const areaName = match[1].trim();
               const codes = match[2].split(/,\s*/);
               return (
-                <div key={pIdx} className="relative pl-3.5 pb-3 border-b border-slate-100/80 last:border-b-0 last:pb-0">
-                  {/* Decorative vertical line representing localization hubs branch */}
-                  <div className="absolute left-0 top-1 bottom-3 w-0.5 bg-gradient-to-b from-[#4B27B1]/80 to-purple-200/30 rounded-full" />
+                <div key={pIdx} className="relative pl-4 pb-3 border-b border-slate-200 last:border-b-0 last:pb-0">
+                  <div className="absolute left-0 top-1 bottom-3 w-px bg-sky-700/60" />
                   
-                  <span className="text-xs font-extrabold text-slate-700 tracking-wider block mb-2 uppercase">
+                  <span className="text-xs font-bold text-slate-700 tracking-wide block mb-2 uppercase">
                     {areaName}
                   </span>
                   <div className="flex flex-wrap gap-1.5">
                     {codes.map((code, cIdx) => (
                       <span
                         key={cIdx}
-                        className="inline-flex items-center px-2.5 py-1 rounded-lg bg-purple-50 hover:bg-[#4B27B1] text-[#4B27B1] hover:text-white text-xs font-mono font-black border border-purple-100 shadow-sm hover:shadow transition-all duration-200 tracking-wider select-all cursor-pointer"
+                        className="inline-flex items-center px-2.5 py-1 rounded-md bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs font-mono font-bold border border-slate-200 transition-colors duration-200 tracking-wider select-all cursor-pointer"
                         title={activeLang === 'zh' ? '点击可直接选取复制' : 'Click to select and copy'}
                       >
                         {code}
@@ -1638,75 +1684,77 @@ export default function ServiceDetail() {
     };
 
     return (
-      <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <div className="hb-page-shell min-h-screen font-sans text-slate-900">
         <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
-        {/* Block 1: Hero Banner */}
-        <section className="relative pt-32 pb-20 md:pb-32 bg-gradient-to-br from-[#4B27B1] to-[#2D1375] text-white overflow-hidden">
-          <img 
-            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
-            src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop" 
-            alt="Amazon FBA backdrop" 
-            referrerPolicy="no-referrer" 
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-30" />
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl" />
-          
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-orange-300 text-xs font-bold uppercase tracking-widest mb-6 border border-white/5">
-                <Package className="w-4 h-4 text-orange-400" />
+        {/* The FBA template uses the shared Heaven Born navy / amber conversion system. */}
+        <section className="relative pt-24 bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
+              <div className="md:col-span-7 lg:col-span-6">
+              <span className="inline-flex items-center gap-2 text-amber-200 text-sm font-semibold mb-5">
+                <Package className="w-4 h-4 text-amber-300" aria-hidden="true" />
                 {fba.hero.tag}
               </span>
-              <h1 className={activeLang === 'zh' ? "text-[6.6vw] sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6 leading-none whitespace-nowrap" : "text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6 leading-none"}>
+              <h1 className={activeLang === 'zh' ? "text-4xl sm:text-5xl lg:text-[3.65rem] font-extrabold tracking-tight leading-[1.12] mb-5" : "text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight leading-[1.08] mb-5"}>
                 {fba.hero.title}
               </h1>
-              <p className="text-purple-100 text-lg sm:text-xl font-medium leading-relaxed mb-8 max-w-2xl">
+              <p className="text-slate-200 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-2xl">
                 {fba.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
                   href="#rfq-form-section"
-                  className="bg-gradient-to-r from-[#FF8A00] to-[#FF5500] hover:from-[#ff9c22] hover:to-[#ff6715] text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                  className="hb-action font-bold px-7 py-3.5 rounded-xl text-center shadow-[0_10px_30px_rgba(217,119,6,.22)] transition-colors active:scale-[.98] flex items-center justify-center gap-2"
                 >
-                  {activeLang === 'zh' ? '立即获取FBA头程底价' : activeLang === 'ru' ? 'Запросить расчет' : activeLang === 'fr' ? 'Demander un devis FBA' : 'Get FBA Rates Now'}
+                  {sharedServiceLabels.quote}
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a 
                   href="https://wa.me/8613430335022" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-8 py-4 rounded-xl border border-emerald-500 shadow-md transition-all flex items-center justify-center gap-2"
+                  className="bg-white/10 hover:bg-white/15 text-white font-bold px-7 py-3.5 rounded-xl border border-white/25 transition-colors active:scale-[.98] flex items-center justify-center gap-2"
                 >
-                  <span>Chat on WhatsApp</span>
+                  <span>{t('hero.chat')}</span>
                 </a>
               </div>
+              </div>
+              <figure className="relative h-[19rem] overflow-hidden rounded-2xl border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.28)] md:col-span-5 md:h-[27rem] md:rounded-l-none md:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)] lg:col-span-6">
+                <img
+                  className="h-full w-full object-cover"
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?q=80&w=1200&auto=format&fit=crop"
+                  alt={fba.hero.title}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)]/50 via-transparent to-transparent" />
+              </figure>
             </div>
           </div>
         </section>
 
-        {/* Block 2: Solutions Pillars */}
-        <section className="py-16 md:py-24 bg-white border-b border-slate-100">
+        {/* Essential operating capabilities */}
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-3xl md:text-4xl font-black text-slate-900 mb-4">{fba.solutions.title}</h2>
-              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">{fba.solutions.desc}</p>
-              <div className="h-1 w-16 bg-[#4B27B1] mx-auto mt-4 rounded-full" />
+            <div className="max-w-2xl mb-10">
+              <h2 className="hb-section-title text-3xl md:text-4xl mb-4">{fba.solutions.title}</h2>
+              <p className="text-slate-600 text-base leading-relaxed">{fba.solutions.desc}</p>
             </div>
-
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-8 border-t border-slate-200 pt-8">
               {fba.solutions.pillars.map((pillar, idx) => {
-                const icons = [ShieldCheck, Truck, Landmark, Clock];
+                const icons = [ClipboardCheck, Truck, FileText, Route];
                 const CustomIcon = icons[idx % 4] || ShieldCheck;
                 return (
-                  <div key={idx} className="p-8 rounded-2xl bg-slate-50/50 hover:bg-white hover:border-[#4B27B1]/30 border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div className="w-12 h-12 rounded-xl bg-[#4B27B1]/10 flex items-center justify-center mb-6 text-[#4B27B1]">
-                      <CustomIcon className="w-6 h-6" />
+                  <div key={idx} className="grid grid-cols-[2.75rem_1fr] gap-4">
+                    <div className="w-11 h-11 rounded-lg bg-sky-50 flex items-center justify-center text-sky-800 border border-sky-100">
+                      <CustomIcon className="w-5 h-5" strokeWidth={1.8} />
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3">{pillar.title}</h3>
-                    <p className="text-slate-500 text-sm font-semibold leading-relaxed">{pillar.desc}</p>
+                    <div>
+                      <h3 className="text-lg font-bold text-slate-900 mb-1.5">{pillar.title}</h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
+                    </div>
                   </div>
                 );
               })}
@@ -1714,44 +1762,40 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        {/* Block 3: FBA Services & Quick Facts (Dual Split) */}
-        <section className="py-16 md:py-24 bg-slate-50/50">
+        {/* Preparation work and service scope */}
+        <section className="py-16 md:py-20 bg-[#f5f8fa] border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
               
               {/* Left: Services We Offer */}
               <div className="lg:col-span-7">
-                <h2 className="text-3xl font-black text-slate-900 mb-4">{fba.services.title}</h2>
-                <p className="text-slate-500 font-semibold mb-8 text-sm sm:text-base">{fba.services.desc}</p>
+                <h2 className="hb-section-title text-3xl mb-4">{fba.services.title}</h2>
+                <p className="text-slate-600 mb-8 text-base leading-relaxed">{fba.services.desc}</p>
                 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                   {fba.services.badges.map((badge, idx) => (
-                    <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-200/60 shadow-sm hover:shadow-md transition-shadow">
-                      <h4 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                        <span className="text-orange-500">✓</span>
+                    <div key={idx} className="py-5 border-t border-slate-200 first:border-t-0 first:pt-0">
+                      <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
+                        <CheckCircle2 className="w-4 h-4 text-amber-700 shrink-0" strokeWidth={2} />
                         {badge.title}
-                      </h4>
-                      <p className="text-slate-500 text-xs sm:text-sm font-semibold leading-relaxed">{badge.desc}</p>
+                      </h3>
+                      <p className="text-slate-600 text-sm leading-relaxed">{badge.desc}</p>
                     </div>
                   ))}
                 </div>
               </div>
 
               {/* Right: Quick Facts Card */}
-              <div className="lg:col-span-5 bg-gradient-to-br from-[#4B27B1] to-[#361793] text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
-                <div className="absolute inset-0 bg-grid-pattern opacity-10" />
-                <h3 className="text-2xl font-black tracking-tight mb-6 flex items-center gap-2">
-                  <Star className="w-6 h-6 text-orange-400" fill="currentColor" />
+              <div className="lg:col-span-5 bg-[#10283d] text-white rounded-[var(--hb-radius)] p-7 sm:p-8 border border-[#183b57]">
+                <h3 className="text-xl font-extrabold tracking-tight mb-6 flex items-center gap-2">
+                  <Boxes className="w-5 h-5 text-amber-300" strokeWidth={1.8} />
                   {fba.quickFacts.title}
                 </h3>
-                <div className="h-1 w-12 bg-orange-400 rounded-full mb-8" />
-                <ul className="space-y-4">
+                <ul className="space-y-4 border-t border-white/15 pt-5">
                   {fba.quickFacts.points.map((pt, idx) => (
-                    <li key={idx} className="flex items-start gap-3 text-purple-100">
-                      <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5 text-xs text-orange-300 font-bold">
-                        ✓
-                      </div>
-                      <span className="text-sm md:text-base leading-relaxed font-semibold">
+                    <li key={idx} className="flex items-start gap-3 text-slate-200">
+                      <CheckCircle2 className="w-4 h-4 text-amber-300 shrink-0 mt-0.5" strokeWidth={2} />
+                      <span className="text-sm leading-relaxed font-medium">
                         {pt}
                       </span>
                     </li>
@@ -1763,35 +1807,33 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        {/* Block 4: FBA Rates Matrix Table */}
-        <section className="py-16 bg-white border-y border-slate-200">
+        {/* The transport choice is the primary decision point on this page. */}
+        <section className="py-16 md:py-20 bg-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-black text-slate-900 mb-3">{fba.rates.title}</h2>
-              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">{fba.rates.desc}</p>
-              <div className="h-1 w-16 bg-[#4B27B1] mx-auto mt-4 rounded-full" />
+            <div className="max-w-2xl mb-10">
+              <h2 className="hb-section-title text-3xl mb-3">{fba.rates.title}</h2>
+              <p className="text-slate-600 text-base leading-relaxed">{fba.rates.desc}</p>
             </div>
 
-            <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden max-w-4xl mx-auto">
+            <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 overflow-hidden max-w-6xl">
               <div className="overflow-x-auto">
                 <table className="w-full text-left border-collapse">
                   <thead>
-                    <tr className="bg-slate-50 border-b border-slate-200 text-slate-750 font-bold text-xs sm:text-sm uppercase tracking-wider">
+                    <tr className="bg-[#eef4f7] border-b border-slate-300 text-slate-700 font-bold text-xs sm:text-sm tracking-wide">
                       {fba.rates.headers.map((h, idx) => (
                         <th key={idx} className="px-6 py-4">{h}</th>
                       ))}
                     </tr>
                   </thead>
-                  <tbody className="divide-y divide-slate-100 text-xs sm:text-sm md:text-base font-semibold text-slate-600">
+                  <tbody className="text-xs sm:text-sm md:text-base text-slate-600">
                     {fba.rates.rows.map((row, idx) => (
-                      <tr key={idx} className="hover:bg-slate-50/50 transition-colors">
-                        <td className="px-6 py-4 text-slate-900 font-bold flex items-center gap-2">
-                          <span>📦</span>
+                      <tr key={idx} className="border-b border-slate-200 last:border-b-0 hover:bg-slate-50 transition-colors">
+                        <td className="px-6 py-5 text-slate-900 font-bold">
                           {row[0]}
                         </td>
-                        <td className="px-6 py-4 text-[#4B27B1] font-bold font-mono text-sm">{row[1]}</td>
-                        <td className="px-6 py-4 text-orange-600 font-black font-mono text-sm">{row[2]}</td>
-                        <td className="px-6 py-4 text-slate-500 text-xs sm:text-sm leading-relaxed">{row[3]}</td>
+                        <td className="px-6 py-5 text-sky-800 font-bold font-mono text-sm">{row[1]}</td>
+                        <td className="px-6 py-5 text-amber-800 font-bold font-mono text-sm">{row[2]}</td>
+                        <td className="px-6 py-5 text-slate-600 text-xs sm:text-sm leading-relaxed">{row[3]}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1801,74 +1843,59 @@ export default function ServiceDetail() {
           </div>
         </section>
 
-        {/* Block 5: Operational FBA Process (6 Steps Grid) */}
-        <section className="py-16 md:py-24 bg-white">
+        {/* FBA operating sequence */}
+        <section className="py-16 md:py-20 bg-[#f5f8fa] border-y border-slate-200">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 md:mb-24">
-              <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-4">
+            <div className="max-w-2xl mb-10">
+              <h2 className="hb-section-title text-3xl md:text-4xl mb-4">
                 {fba.workflow.title}
               </h2>
-              <p className="text-slate-500 max-w-xl mx-auto font-semibold text-sm sm:text-base">{fba.workflow.desc}</p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-[#4B27B1] to-orange-500 mx-auto mt-4 rounded-full" />
+              <p className="text-slate-600 max-w-xl text-base leading-relaxed">{fba.workflow.desc}</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
+            <ol className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-0 border-t border-slate-300">
               {fba.workflow.steps.map((step, idx) => (
-                <div 
+                <li
                   key={idx} 
-                  className="relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-xl hover:border-[#4B27B1]/30 transition-all group"
+                  className="relative grid grid-cols-[2.5rem_1fr] gap-4 py-7 border-b border-slate-300"
                 >
-                  <div className="absolute top-4 right-6 text-4xl sm:text-5xl font-black text-slate-200/60 group-hover:text-[#4B27B1]/10 select-none transition-colors">
+                  <div className="w-10 h-10 rounded-full bg-[#10283d] text-amber-200 flex items-center justify-center font-mono text-xs font-bold">
                     {step.num}
                   </div>
-                  <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#4B27B1] transition-colors mb-2">
-                    {step.title}
-                  </h3>
-                  <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-semibold">
-                    {step.desc}
-                  </p>
-                </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-slate-900 mb-1.5">{step.title}</h3>
+                    <p className="text-slate-600 text-sm leading-relaxed">{step.desc}</p>
+                  </div>
+                </li>
               ))}
-            </div>
+            </ol>
           </div>
         </section>
 
-        {/* Block 6: Warehouses We Deliver To list Grid */}
-        <section className="py-20 bg-slate-50 border-t border-slate-200/60 relative overflow-hidden">
-          <div className="absolute top-0 left-0 right-0 h-[100px] bg-gradient-to-b from-slate-100/50 to-transparent pointer-events-none" />
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-purple-100/80 text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest mb-4">
-                Global Coverage
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight">
+        {/* Coverage is kept scannable without making six large cards compete for attention. */}
+        <section className="py-16 md:py-20 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-2xl mb-10">
+              <h2 className="hb-section-title text-3xl sm:text-4xl mb-4">
                 {fba.warehouses.title}
               </h2>
-              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed max-w-2xl mx-auto">
+              <p className="text-slate-600 text-base leading-relaxed max-w-2xl">
                 {fba.warehouses.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto mt-6 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-x-10">
               {fba.warehouses.regions.map((region, idx) => (
-                <div 
+                <div
                   key={idx} 
-                  className="bg-white p-8 rounded-3xl border border-slate-150 shadow-sm hover:shadow-xl hover:border-purple-200/60 transition-all duration-300 flex flex-col justify-between transform hover:-translate-y-1 relative overflow-hidden group"
+                  className="py-7 border-t border-slate-200 first:border-t-0 md:[&:nth-child(2)]:border-t-0 lg:[&:nth-child(3)]:border-t-0"
                 >
-                  {/* Premium top gradient stripe */}
-                  <div className="absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] opacity-80 group-hover:opacity-100 transition-opacity" />
-                  
-                  <div>
-                    <h3 className="text-base sm:text-lg font-black text-slate-900 mb-5 flex items-center gap-2.5 border-b border-slate-100 pb-3">
-                      <span className="w-8 h-8 rounded-lg bg-orange-55/10 text-orange-600 flex items-center justify-center font-bold text-sm select-none border border-orange-100/30 inline-flex shrink-0">
-                        📍
-                      </span>
-                      <span className="truncate">{region.name}</span>
-                    </h3>
-                    <div className="text-slate-500 text-xs sm:text-sm font-semibold leading-relaxed">
-                      {renderWarehouseItems(region.items)}
-                    </div>
+                  <h3 className="text-base sm:text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                    <MapPin className="w-4 h-4 text-amber-700 shrink-0" strokeWidth={2} />
+                    <span>{region.name}</span>
+                  </h3>
+                  <div className="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                    {renderWarehouseItems(region.items)}
                   </div>
                 </div>
               ))}
@@ -1877,18 +1904,18 @@ export default function ServiceDetail() {
         </section>
 
         {/* Lead Capture and Request form */}
-        <section id="rfq-form-section" className="py-16 md:py-24 bg-purple-50/40 border-t border-purple-100">
+        <section id="rfq-form-section" className="py-16 md:py-20 bg-[#eef4f7] border-t border-slate-200">
           <div className="max-w-3xl mx-auto px-4">
-            <div className="text-center mb-10">
-              <h2 className="text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight mb-4">
+            <div className="max-w-2xl mb-10">
+              <h2 className="hb-section-title text-2xl md:text-3xl mb-3">
                 {activeLang === 'zh' ? '获取专属 FBA 头程多式联运报价评估' : activeLang === 'ru' ? 'Заказать расчет доставки Amazon FBA' : activeLang === 'fr' ? 'Demander une étude de coût Amazon FBA' : 'Request a Custom FBA Shipping Quote'}
               </h2>
-              <p className="text-slate-500 font-medium text-sm md:text-base">
+              <p className="text-slate-600 text-sm md:text-base leading-relaxed">
                 {t('get_a_quote.formSubtitle')}
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl border border-purple-100 shadow-xl p-8 sm:p-10 relative overflow-hidden">
+            <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
               {!isFormSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -1908,9 +1935,9 @@ export default function ServiceDetail() {
                             key={item.id}
                             type="button"
                             onClick={() => setSelectedService(item.id)}
-                            className={`py-2.5 px-3 rounded-lg border-2 transition-all flex items-center justify-center font-bold text-xs sm:text-sm ${
+                            className={`py-2.5 px-3 rounded-lg border transition-colors flex items-center justify-center font-bold text-xs sm:text-sm ${
                               isSelected
-                                ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1] font-bold' 
+                                ? 'border-sky-800 bg-sky-50 text-sky-900 font-bold'
                                 : 'border-slate-100 bg-slate-50 text-slate-500 hover:bg-slate-100'
                             }`}
                           >
@@ -1932,7 +1959,7 @@ export default function ServiceDetail() {
                         name="origin"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors"
                         placeholder={t('get_a_quote.originPlaceholder')}
                       />
                     </div>
@@ -1945,7 +1972,7 @@ export default function ServiceDetail() {
                         name="destination"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors"
                         placeholder={t('get_a_quote.destPlaceholder')}
                       />
                     </div>
@@ -1958,7 +1985,7 @@ export default function ServiceDetail() {
                     <select
                       id="comp"
                       name="product"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors"
                     >
                       <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
                       <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
@@ -1976,7 +2003,7 @@ export default function ServiceDetail() {
                       name="message"
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all resize-none"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors resize-none"
                       placeholder={t('get_a_quote.msgPlaceholder')}
                     />
                   </div>
@@ -1991,8 +2018,8 @@ export default function ServiceDetail() {
                         name="name"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
-                        placeholder="e.g. Young Ming / DDNZ Global"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors"
+                        placeholder="e.g. Maria Lopez / Andina Trading"
                       />
                     </div>
                     <div>
@@ -2004,7 +2031,7 @@ export default function ServiceDetail() {
                         name="email"
                         type="email"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-300 focus:border-sky-800 focus:ring-2 focus:ring-sky-100 outline-none text-base transition-colors"
                         placeholder="partnership@ddnzglobal.com"
                       />
                     </div>
@@ -2014,7 +2041,7 @@ export default function ServiceDetail() {
                     type="submit"
                     disabled={state.submitting}
                     className={`w-full py-4 text-white font-bold rounded-xl transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 shrink-0 ${
-                      state.submitting ? 'bg-slate-600' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
+                      state.submitting ? 'bg-slate-600' : 'hb-action hover:shadow-lg'
                     }`}
                   >
                     {state.submitting ? t('get_a_quote.submitting') : t('get_a_quote.submit')}
@@ -2033,7 +2060,7 @@ export default function ServiceDetail() {
                   </p>
                   <button 
                     onClick={() => setIsFormSubmitted(false)}
-                    className="text-[#4B27B1] hover:text-[#361793] font-bold text-sm underline"
+                    className="text-sky-800 hover:text-sky-950 font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回提单页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
                   </button>
@@ -2055,17 +2082,17 @@ export default function ServiceDetail() {
       en: {
         hero: {
           title: 'Warehouse & Sourcing Services in China',
-          subtitle: 'Secure storage, advanced inventory management, and modular distribution solutions to streamline your global supply chain operations.',
+          subtitle: 'Storage, consolidation, inspection coordination, and export preparation designed around your shipping plan from China.',
           tag: 'Strategic Operational Infrastructure'
         },
         whyChoose: {
           title: 'Why Choose Our Warehouse Services',
-          desc: 'Our state-of-the-art facilities and advanced management tools ensure your goods are stored, processed, and shipped safely and efficiently.',
+          desc: 'One China-side operating point for receiving, checking, consolidating and preparing cargo before export.',
           pillars: [
-            { title: 'Secure Storage', desc: '24/7 security monitoring, climate control, and advanced fire protection systems.', icon: ShieldCheck },
-            { title: 'Real-time Tracking', desc: 'Advanced WMS with real-time inventory visibility, automated stock levels, and instant reporting.', icon: Globe },
-            { title: 'Fast Fulfillment', desc: 'Quick order processing, priority picking/packing, and same-day container loading capabilities.', icon: Zap },
-            { title: 'Cost Effective', desc: 'Competitive pricing with flexible storage sizes and tailored cargo handling options.', icon: DollarSign }
+            { title: 'Cargo-appropriate handling', desc: 'We review dimensions, packaging and declared special requirements before receiving, moving or packing the cargo.', icon: ShieldCheck },
+            { title: 'Multi-supplier control', desc: 'Supplier batches remain identified while cartons are received, checked and prepared for consolidation.', icon: Globe },
+            { title: 'Export-ready preparation', desc: 'Repacking, shipping marks, inspection hand-offs and loading are coordinated against the confirmed sailing plan.', icon: Zap },
+            { title: 'Visible handover records', desc: 'Receiving notes, exception photos and dispatch details keep the China-side handover easy to verify.', icon: DollarSign }
           ]
         },
         breakdown: {
@@ -2111,33 +2138,33 @@ export default function ServiceDetail() {
           ]
         },
         facilities: {
-          title: 'Our Warehouse Facilities & Specifications',
-          desc: 'Modern, highly secure, and strategically located hubs across China\'s major logistics corridors.',
+          title: 'What We Control Before Export',
+          desc: 'Concrete checkpoints that reduce supplier hand-off gaps before cargo leaves China.',
           features: [
-            { title: 'Strategic Locations', desc: 'Warehouses located in major logistics hubs including Shenzhen, Shanghai, Guangzhou, and Yiwu for optimal distribution coverage.' },
-            { title: 'Advanced Security', desc: '24/7 CCTV monitoring, strict access control systems, double fire suppression, and professional security personnel ensure maximum protection.' },
-            { title: 'Climate Control', desc: 'Temperature and humidity controlled environments suitable for sensitive products including electronics, high-end apparel, and medical elements.' },
-            { title: 'Modern Equipment', desc: 'State-of-the-art material handling equipment with heavy cranes, safety lifts, and automated sorting conveyor technology.' }
+            { title: 'Guangzhou consolidation base', desc: 'Receive goods from multiple suppliers, keep batches identified and prepare one consolidated export shipment.' },
+            { title: 'Receiving and exception checks', desc: 'Count cartons, check visible packaging condition and photograph discrepancies before further handling.' },
+            { title: 'Export packing support', desc: 'Repack cartons, apply shipping marks and coordinate export plywood cases for machinery or sensitive cargo.' },
+            { title: 'Inspection and loading coordination', desc: 'Arrange inspection hand-offs, loading tally and loading photos before dispatch to the port or airport.' }
           ],
           specs: [
-            { label: 'Total Storage Space', value: '21,500+ sq ft' },
-            { label: 'Ceiling Height', value: '30+ feet' },
-            { label: 'Loading Docks', value: '50+ bays' },
-            { label: 'Operating Hours', value: '24/7' },
-            { label: 'Certifications', value: 'ISO 9001, CTPAT' },
-            { label: 'Technology', value: 'WMS, RFID, Barcode' }
+            { label: 'Inbound check', value: 'Carton count + visible condition' },
+            { label: 'Supplier consolidation', value: 'Separate batch identification' },
+            { label: 'Packing support', value: 'Repacking, labels + export cases' },
+            { label: 'Inspection hand-off', value: 'Photos + third-party coordination' },
+            { label: 'Loading control', value: 'Tally + loading photos' },
+            { label: 'Dispatch record', value: 'Released quantity + handover details' }
           ]
         },
         technology: {
-          title: 'Advanced Warehouse Technology',
-          desc: 'Cutting-edge technology integrations for maximum operational efficiency, data accuracy, and minimal error rates.',
+          title: 'Warehouse Control & Shipment Visibility',
+          desc: 'Practical records and checkpoints for receiving, consolidation, packing and dispatch.',
           badges: [
-            { title: 'Warehouse Management System', desc: 'Proprietary advanced WMS for real-time inventory tracking, multi-client order dispatch, and optimal pathway planning.', icon: Globe },
-            { title: 'Mobile Scanning', desc: 'Handheld smart terminals with barcode and RFID scanning to verify stock instantly on arrival.', icon: Zap },
-            { title: 'Real-time Analytics', desc: 'Comprehensive dashboard presenting SKU aging, storage layout capacity, and hourly loading metrics.', icon: FileText },
-            { title: 'API Integration', desc: 'Seamless connections with major e-commerce platforms, ERP grids, and custom tracking applications.', icon: Languages },
-            { title: 'Automated Reporting', desc: 'Automated stock alerts, outgoing shipping notifications, and custom performance metrics directly to email.', icon: Clock },
-            { title: 'Secure Access', desc: 'Multi-tier team permissions, encrypted data hosting portals, and absolute privacy safeguards.', icon: ShieldCheck }
+            { title: 'Inbound records', desc: 'Record cartons, quantities, visible condition and supplier references when cargo is received.', icon: Globe },
+            { title: 'Barcode and label checks', desc: 'Scan or cross-check shipment labels, SKUs and carton marks before consolidation.', icon: Zap },
+            { title: 'Photo updates', desc: 'Provide receiving, exception, packing and loading photos within the agreed service scope.', icon: FileText },
+            { title: 'Supplier batch control', desc: 'Keep cargo from different suppliers identified before consolidation and export preparation.', icon: Languages },
+            { title: 'Dispatch records', desc: 'Confirm released quantities, packing status and handover details before cargo leaves the warehouse.', icon: Clock },
+            { title: 'Document access control', desc: 'Limit handling instructions and shipment documents to the assigned operating team.', icon: ShieldCheck }
           ]
         },
         industries: {
@@ -2163,18 +2190,18 @@ export default function ServiceDetail() {
       },
       zh: {
         hero: {
-          title: '自营海外集运与高端仓储服务',
-          subtitle: '提供极其安全可靠的货品暂存、智能化库存管理及一站式多厂拼装分发方案，帮助您全面简化并优化跨境供应链。',
-          tag: '大湾区实业基础设施保障'
+          title: '中国仓储、验货与出口集运服务',
+          subtitle: '围绕您的出运计划提供货物暂存、多供应商集货、验货协调及出口前准备服务，让中国采购与发运衔接更清晰。',
+          tag: '中国出口仓储与集运中心'
         },
         whyChoose: {
           title: '为什么选择我们的仓储服务',
-          desc: '依靠自营高标仓库与先进的信息化管控手段，您的货物在这里将获得最安全的周转保障与最高效的履约效率。',
+          desc: '用一个中国始发端操作节点，完成收货、核对、集货与出口前准备。',
           pillars: [
-            { title: '多维安全防护', desc: '配备 24/7 全天候监控、恒温恒湿管控、防爆隔离存放及多重烟雾火警防御系统。', icon: ShieldCheck },
-            { title: '实时动态追踪', desc: '接入高级 WMS 库存管理中枢，支持在线核对实物状况，提供详尽的库存报表及动态提醒。', icon: Globe },
-            { title: '敏捷出库履约', desc: '智能挑选配货、抗震打包加固以及当天即时配载出大货柜的货船装载力。', icon: Zap },
-            { title: '高性价比方案', desc: '提供极具竞争力的按需计费仓租、长短租拆分方案，配合长期合作大客户的优惠支持。', icon: DollarSign }
+            { title: '匹配货物的操作方案', desc: '收货、搬运与包装前，先核对尺寸、包装状态及已申报的特殊要求。', icon: ShieldCheck },
+            { title: '多供应商批次管控', desc: '不同供应商货物保持独立标识，完成收货核对后再按计划合并出运。', icon: Globe },
+            { title: '出口前准备', desc: '围绕已确认的船期协调换箱、贴标、验货衔接与装载安排。', icon: Zap },
+            { title: '可核对的交接记录', desc: '通过收货记录、异常照片和出库信息，让中国始发端交接过程可追溯。', icon: DollarSign }
           ]
         },
         breakdown: {
@@ -2220,33 +2247,33 @@ export default function ServiceDetail() {
           ]
         },
         facilities: {
-          title: '自营高标物理规格与合规指标',
-          desc: '坐落于中国三大沿海制造长廊的现代化仓储，从每一平米到每一立方都对安全严抓到脚尖。',
+          title: '货物出口前，我们实际管控什么',
+          desc: '用清晰的操作节点减少供应商交货、集货与出口衔接之间的断点。',
           features: [
-            { title: '骨干战略口岸布局', desc: '仓库均设在深圳、上海、广州及义乌等物流交通枢纽中心，提供无缝对接卡班的集配深度。' },
-            { title: '重金升级安防', desc: '数百个数字超清监控死角覆盖，严密生物进出验证，特级消防重器部署以及持证全夜候门哨保平安。' },
-            { title: '智能控温调湿', desc: '对微型元器件、顶尖面料及敏感粉末气雾进行恒温仓位锁定，保证物理品质无锈化衰坏。' },
-            { title: '精锐重载调车设备', desc: '配备重型高升叉车、机械爪吊整套起卸，全自动分流流水轨线极速转运。' }
+            { title: '广州集货主控基地', desc: '接收多家供应商货物，保持批次标识，并按同一出口计划完成合并出运。' },
+            { title: '入仓与异常核对', desc: '登记到仓件数、检查外包装可见状态，并在后续操作前记录异常照片。' },
+            { title: '出口包装支持', desc: '提供换箱、运输唛头及机械设备或敏感货物所需的出口木箱协调。' },
+            { title: '验货与装载衔接', desc: '协调第三方验货交接、装载件数复核，并留存装柜或装车照片。' }
           ],
           specs: [
-            { label: '总仓储及集装容积', value: '2000+ 平方米' },
-            { label: '仓库净挑高', value: '30+ 英尺 / 11+ 米' },
-            { label: '装卸坞口挡板车位', value: '50+ 个重卡车位' },
-            { label: '周转营运时间', value: '24/7/365 全天候' },
-            { label: '国际安保认证', value: 'ISO 9001, CTPAT 认证' },
-            { label: '数字化管理体系', value: 'WMS、RFID、条码识别' }
+            { label: '入仓核对', value: '件数登记 + 外观检查' },
+            { label: '多供应商集货', value: '分批标识 + 合并出运' },
+            { label: '包装支持', value: '换箱、贴标及出口木箱' },
+            { label: '验货衔接', value: '照片记录 + 第三方协调' },
+            { label: '装载核对', value: '件数复核 + 装载照片' },
+            { label: '出库记录', value: '放行数量 + 交接信息' }
           ]
         },
         technology: {
-          title: '最硬核的仓储数字化底座',
-          desc: '我们坚信，顶尖的仓储必须以实时数据为神经。通过数字化让千万个SKU做到零人工错漏。',
+          title: '仓储操作记录与货物可视化',
+          desc: '围绕入仓、集货、包装与出库设置可核对的记录与交接节点。',
           badges: [
-            { title: '智慧 WMS 管理系统', desc: '自研企业级核心WMS中枢，实现在线分区上架、最优拣货路线算法运算和包裹防丢警报。', icon: Globe },
-            { title: '全移动智能扫描', desc: '前线理货员标配高能手持PDA，多重条码及RFID闪电式读写，自动调拨归位信息。', icon: Zap },
-            { title: '实时大盘深度剖析', desc: '总指挥层实时展示库存老化分析、爆仓预充预警和作业饱和热力图，为您的决策引路。', icon: FileText },
-            { title: '无缝 API 系统对接', desc: '完美兼容各大知名跨境网店、ERP资源体系及定制API接口，一击打通跨境订单上下游。', icon: Languages },
-            { title: '全自控生成表单', desc: '出入库数据日结自动下账通知、预警库存智能催单，极大节约客户人工沟通负累。', icon: Clock },
-            { title: '特级云盾与加密隐私', desc: '高级账号分层、全流程数据多点热备灾防护，确保商业采购秘密获得铁甲防卫。', icon: ShieldCheck }
+            { title: '入仓记录', desc: '货物到仓时记录件数、外包装可见状态及对应供应商信息。', icon: Globe },
+            { title: '条码与标签核对', desc: '集货前扫描或复核产品标签、SKU 与外箱唛头，减少错发风险。', icon: Zap },
+            { title: '照片反馈', desc: '在约定服务范围内提供收货、异常、包装与装载照片。', icon: FileText },
+            { title: '供应商批次管理', desc: '不同供应商货物保持清晰标识，再按出运计划进行合并与出口准备。', icon: Languages },
+            { title: '出库记录', desc: '货物离仓前确认放行数量、包装状态及交接信息。', icon: Clock },
+            { title: '文件权限管理', desc: '由指定操作团队处理货物指令与运输文件，减少无关人员接触。', icon: ShieldCheck }
           ]
         },
         industries: {
@@ -2278,12 +2305,12 @@ export default function ServiceDetail() {
         },
         whyChoose: {
           title: 'Почему выбирают наши складские услуги',
-          desc: 'Современные охраняемые хабы и передовая система управления WMS исключают риски порчи грузов и оптимизируют отправку контейнеров из Китая.',
+          desc: 'Единая точка контроля в Китае для приемки, сверки, консолидации и подготовки груза к экспорту.',
           pillars: [
-            { title: 'Абсолютная безопасность', desc: 'Круглосуточное видеонаблюдение 24/7, жесткий температурный контроль и противопожарные системы класса А.', icon: ShieldCheck },
-            { title: 'Онлайн-контроль остатков', desc: 'Современная WMS-архитектура с онлайн-кабинетом для оперативного отслеживания остатков и отчетов.', icon: Globe },
-            { title: 'Молниеносная обработка', desc: 'Профессиональный подбор, бережная упаковка и быстрая погрузка сборных грузов в один контейнер.', icon: Zap },
-            { title: 'Оптимизация затрат', desc: 'Выгодные долгосрочные и краткосрочные сетки тарифов на хранение для любого объема бизнеса.', icon: DollarSign }
+            { title: 'Обработка по типу груза', desc: 'До приемки и упаковки сверяем размеры, состояние тары и заявленные особые требования.', icon: ShieldCheck },
+            { title: 'Контроль партий поставщиков', desc: 'Партии разных поставщиков сохраняют отдельную маркировку до объединения в одну отправку.', icon: Globe },
+            { title: 'Подготовка к экспорту', desc: 'Координируем переупаковку, маркировку, передачу на инспекцию и погрузку по подтвержденному плану.', icon: Zap },
+            { title: 'Проверяемые записи', desc: 'Фиксируем приемку, отклонения и сведения о передаче груза при отправке со склада.', icon: DollarSign }
           ]
         },
         breakdown: {
@@ -2329,33 +2356,33 @@ export default function ServiceDetail() {
           ]
         },
         facilities: {
-          title: 'Наши складские мощности и параметры (EXACT DATA LOCKED)',
-          desc: 'Наши собственные склады, построенные по современным строительным стандартам, гарантируют безупречную сохранность грузов.',
+          title: 'Что мы контролируем до экспорта',
+          desc: 'Понятные контрольные точки сокращают разрывы между поставщиками, консолидацией и отправкой.',
           features: [
-            { title: 'Ключевые гео-локации', desc: 'Хабы расположены в крупнейших промышленных и логистических центрах: Шэньчжэнь, Шанхай, Гуанчжоу и Иу для быстрой сборки.' },
-            { title: 'Многоуровневая охрана', desc: 'Камеры высокого разрешения по всей площади, строгий пропускной режим по картам сотрудников и современная противопожарная система.' },
-            { title: 'Климатический режим', desc: 'Регулируемые датчики тепла и сухости для защиты высокотехнологичной электроники, элитного текстиля и косметики.' },
-            { title: 'Современное оборудование', desc: 'Фирменные штабелеры, автоматические системы сортировки и ленты быстрой транспортировки тяжелого оборудования.' }
+            { title: 'База консолидации в Гуанчжоу', desc: 'Принимаем товары от нескольких поставщиков, сохраняем маркировку партий и готовим объединенную экспортную отправку.' },
+            { title: 'Приемка и фиксация отклонений', desc: 'Сверяем количество мест, видимое состояние упаковки и фотографируем отклонения до дальнейшей обработки.' },
+            { title: 'Экспортная упаковка', desc: 'Организуем переупаковку, транспортную маркировку и фанерные ящики для оборудования или чувствительных грузов.' },
+            { title: 'Инспекция и погрузка', desc: 'Координируем передачу на проверку, пересчет при погрузке и фотографии до отправки в порт или аэропорт.' }
           ],
           specs: [
-            { label: 'Общая площадь складов', value: '21 500+ кв. футов' },
-            { label: 'Высота потолков складов', value: '30+ футов / 9+ метров' },
-            { label: 'Количество погрузочных доков', value: '50+ ворот' },
-            { label: 'Режим работы терминала', value: '24/7/365 без выходных' },
-            { label: 'Сертификаты соответствия', value: 'ISO 9001, CTPAT' },
-            { label: 'Основные технологии', value: 'WMS, RFID, штрихкодирование' }
+            { label: 'Приемка', value: 'Количество + состояние упаковки' },
+            { label: 'Консолидация', value: 'Раздельная маркировка партий' },
+            { label: 'Упаковка', value: 'Короба, этикетки + экспортные ящики' },
+            { label: 'Инспекция', value: 'Фото + координация третьей стороны' },
+            { label: 'Погрузка', value: 'Пересчет + фотографии' },
+            { label: 'Передача', value: 'Количество + данные выдачи' }
           ]
         },
         technology: {
-          title: 'Инновационные решения управления паллетами',
-          desc: 'Автоматизация позволяет свести ручной человеческий фактор в обработке отгрузок до абсолютного нуля.',
+          title: 'Учет складских операций и видимость груза',
+          desc: 'Проверяемые записи для приемки, консолидации, упаковки и выдачи груза.',
           badges: [
-            { title: 'Умная система WMS', desc: 'Позволяет отслеживать весь цикл товаров, оптимизировать заполнение полок и автоматически строить маршруты сборки.', icon: Globe },
-            { title: 'Интеграция RFID и PDA', desc: 'Портативные терминалы считывают код коробки за доли секунды и вносят в систему без задержек.', icon: Zap },
-            { title: 'Продвинутая аналитика', desc: 'Удобный дашборд с показателем загружености склада, старением инвентаря и дневной выработкой грузчиков.', icon: FileText },
-            { title: 'Прямое API с ERP', desc: 'Легкое сопряжение со всеми популярными маркетплейсами и учетными системами клиентов (1С, SAP).', icon: Languages },
-            { title: 'Автоотчеты клиенту', desc: 'Автоматическая выгрузка ведомостей и мгновенные уведомления об отправке груза по e-mail.', icon: Clock },
-            { title: 'Безопасность ваших данных', desc: 'Многоступенчатая защита доступа к файлам и зашифрованные базы данных на защищенных шлюзах.', icon: ShieldCheck }
+            { title: 'Запись приемки', desc: 'Фиксируем количество мест, видимое состояние и данные поставщика при поступлении.', icon: Globe },
+            { title: 'Проверка маркировки', desc: 'Сверяем штрихкоды, SKU и маркировку коробов перед консолидацией.', icon: Zap },
+            { title: 'Фотоотчеты', desc: 'Предоставляем фотографии приемки, отклонений, упаковки и погрузки в согласованном объеме.', icon: FileText },
+            { title: 'Контроль партий', desc: 'Сохраняем идентификацию грузов разных поставщиков до подготовки общей отправки.', icon: Languages },
+            { title: 'Запись выдачи', desc: 'Подтверждаем количество, статус упаковки и сведения о передаче до выезда со склада.', icon: Clock },
+            { title: 'Контроль доступа', desc: 'Инструкции и транспортные документы доступны назначенной операционной команде.', icon: ShieldCheck }
           ]
         },
         industries: {
@@ -2387,12 +2414,12 @@ export default function ServiceDetail() {
         },
         whyChoose: {
           title: 'Pourquoi Choisir Nos Services de Stockage',
-          desc: "Bénéficiez d'infrastructures détenues en propre, de technologies de pointe d'automatisation et de protocoles de sécurité pour un flux logistique sans faille.",
+          desc: "Un point de contrôle en Chine pour réceptionner, vérifier, consolider et préparer la marchandise avant exportation.",
           pillars: [
-            { title: 'Sécurité Absolue', desc: "Caméras de surveillance actives 24h/24, contrôle climatique thermique et systèmes d'extinction d'incendie de dernière génération.", icon: ShieldCheck },
-            { title: 'Suivi Digital Direct', desc: 'Notre système WMS avancé vous offre une vision instantanée de vos niveaux de stock et génère des rapports d\'état complets.', icon: Globe },
-            { title: 'Fulfillment Express', desc: 'Préparation de commandes rapide, emballages bois de placage sur-mesure de haute qualité et chargement optimisé.', icon: Zap },
-            { title: 'Rentabilité Maîtrisée', desc: 'Une tarification transparente et ultra-compétitive adaptée à vos volumes et à la durée de votre stockage.', icon: DollarSign }
+            { title: 'Manutention adaptée au fret', desc: "Nous vérifions dimensions, emballage et exigences déclarées avant réception, déplacement ou conditionnement.", icon: ShieldCheck },
+            { title: 'Contrôle des lots fournisseurs', desc: "Les lots restent identifiés séparément jusqu'à leur consolidation dans une expédition commune.", icon: Globe },
+            { title: "Préparation à l'export", desc: "Nous coordonnons reconditionnement, marquage, inspection et chargement selon le plan confirmé.", icon: Zap },
+            { title: 'Traçabilité des remises', desc: "Les notes de réception, photos d'anomalies et détails de sortie permettent de vérifier chaque transfert.", icon: DollarSign }
           ]
         },
         breakdown: {
@@ -2438,33 +2465,33 @@ export default function ServiceDetail() {
           ]
         },
         facilities: {
-          title: 'Infrastructures Logistiques & Spécifications (EXACT DATA LOCKED)',
-          desc: "Nos dépôts modernes de haute sécurité sont positionnés au carrefour des principales autoroutes d'exportation chinoises.",
+          title: "Ce Que Nous Contrôlons Avant l'Export",
+          desc: "Des points de contrôle concrets réduisent les ruptures entre fournisseurs, consolidation et expédition.",
           features: [
-            { title: 'Emplacements Stratégiques', desc: 'Hubs stratégiquement positionnés à Shenzhen, Shanghai, Guangzhou et Yiwu pour assurer une réactivité de transit optimale.' },
-            { title: 'Sécurité Imparable', desc: 'Gardes qualifiés, vidéosurveillance continue par caméras thermiques, portails d\'accès contrôlés et sécurité incendie active.' },
-            { title: 'Environnement Thermorégulé', desc: "Espaces préservés de la chaleur et de l'humidité pour garantir l'état des cargaisons micro-électroniques ou pharmaceutiques." },
-            { title: 'Équipements de Manutention High-Tech', desc: 'Flotte de chariots élévateurs modernes à grande portée, ponts roulants de chargement et convoyeurs intégrés.' }
+            { title: 'Base de consolidation à Guangzhou', desc: "Réception des marchandises de plusieurs fournisseurs, identification des lots et préparation d'une expédition groupée." },
+            { title: 'Contrôle à la réception', desc: "Comptage des colis, vérification visuelle de l'emballage et photos des écarts avant manipulation." },
+            { title: "Emballage export", desc: "Reconditionnement, marquage et coordination de caisses en contreplaqué pour machines ou fret sensible." },
+            { title: 'Inspection et chargement', desc: "Coordination des inspections, pointage au chargement et photos avant départ vers le port ou l'aéroport." }
           ],
           specs: [
-            { label: 'Surface Totale de Stockage', value: '21 500+ pieds carrés' },
-            { label: 'Hauteur sous Plafond', value: '30+ pieds / 9+ mètres' },
-            { label: 'Docks de Chargement', value: '50+ quais poids lourds' },
-            { label: 'Heures d\'Ouverture', value: '24h/24 & 7j/7' },
-            { label: 'Certifications Officielles', value: 'ISO 9001, CTPAT' },
-            { label: 'Technologie Portative', value: 'WMS, RFID, Codes-barres' }
+            { label: 'Réception', value: 'Colis + état visible' },
+            { label: 'Consolidation', value: 'Identification séparée des lots' },
+            { label: 'Emballage', value: 'Reconditionnement, labels + caisses' },
+            { label: 'Inspection', value: 'Photos + coordination tierce' },
+            { label: 'Chargement', value: 'Pointage + photos' },
+            { label: 'Sortie', value: 'Quantité + détails de remise' }
           ]
         },
         technology: {
-          title: "L'Ingénierie Digitale de l'Entrepôt",
-          desc: "La traçabilité de bout en bout propulsée par des algorithmes d'orchestration pour éliminer les erreurs humaines.",
+          title: 'Contrôle des Opérations et Visibilité du Fret',
+          desc: "Des enregistrements vérifiables pour la réception, la consolidation, l'emballage et la sortie.",
           badges: [
-            { title: 'Système de Gestion de Stock (WMS)', desc: "Création de parcours optimisés, attribution intelligente de casiers automatisés, et détection avancée d'erreurs.", icon: Globe },
-            { title: 'Lecture PDA & RFID Autonome', desc: "Ordinateurs de poche lisant instantanément les puces d'inventaire sans friction physique.", icon: Zap },
-            { title: 'Rapports Analytics Dynamiques', desc: "Dashboard évaluant en temps réel sous-utilisation d'espace, pics d'activité horaire et goulots d'étranglement de l'expédition.", icon: FileText },
-            { title: 'Connecteurs API Standardisés', desc: "Connexion bidirectionnelle immédiate avec Shopify, WooCommerce et vos solutions ERP propriétaires.", icon: Languages },
-            { title: 'Rapports Automatisés', desc: "Alertes de rupture, envois automatiques hebdomadaires d'inventaires résiduels par email.", icon: Clock },
-            { title: 'Confidentialité Cryptée', desc: "Cryptage des banques de données douanières et segmentation fine des accès à vos bases confidentielles.", icon: ShieldCheck }
+            { title: 'Enregistrement à la réception', desc: "Colis, quantités, état visible et référence fournisseur sont enregistrés à l'arrivée.", icon: Globe },
+            { title: 'Contrôle des codes et labels', desc: 'Vérification des codes-barres, SKU et marques de colis avant consolidation.', icon: Zap },
+            { title: 'Mises à jour photo', desc: "Photos de réception, anomalies, emballage et chargement selon le périmètre convenu.", icon: FileText },
+            { title: 'Contrôle des lots fournisseurs', desc: "Les marchandises de chaque fournisseur restent identifiées avant préparation de l'export.", icon: Languages },
+            { title: 'Enregistrement de sortie', desc: "Quantités libérées, état d'emballage et détails de remise sont confirmés avant départ.", icon: Clock },
+            { title: "Contrôle d'accès documentaire", desc: "Les instructions et documents d'expédition sont réservés à l'équipe opérationnelle affectée.", icon: ShieldCheck }
           ]
         },
         industries: {
@@ -2491,41 +2518,47 @@ export default function ServiceDetail() {
     };
 
     const wh = warehouseData[activeLang as 'en' | 'zh' | 'ru' | 'fr'] || warehouseData.en;
+    const warehouseOpsLabelsByLanguage = {
+      en: { title: 'Service Deliverables', tag1: 'Recorded checkpoints', tag2: 'China-origin control' },
+      zh: { title: '仓储服务交付清单', tag1: '关键节点有记录', tag2: '中国始发端管控' },
+      ru: { title: 'Результаты складской обработки', tag1: 'Контрольные записи', tag2: 'Контроль в Китае' },
+      fr: { title: 'Livrables des Opérations', tag1: 'Points de contrôle enregistrés', tag2: 'Contrôle à l’origine' },
+      es: { title: 'Entregables del Servicio', tag1: 'Controles registrados', tag2: 'Control en origen' },
+      ar: { title: 'مخرجات خدمة المستودع', tag1: 'نقاط تحقق موثقة', tag2: 'تحكم من منشأ الصين' }
+    };
+    const warehouseOpsLabels = warehouseOpsLabelsByLanguage[
+      activeLang as keyof typeof warehouseOpsLabelsByLanguage
+    ] || {
+      title: 'Service Deliverables',
+      tag1: 'Recorded checkpoints',
+      tag2: 'China-origin control'
+    };
 
     return (
-      <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+      <div className="min-h-screen hb-page-shell font-sans text-slate-900">
         <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
         {/* 1. Hero Banner */}
-        <section className="relative pt-36 pb-24 md:pb-36 bg-gradient-to-br from-[#121B2B] via-[#0D2C43] to-[#123E5E] text-white overflow-hidden">
-          <img 
-            className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
-            src="https://images.unsplash.com/photo-1553413719-8758712a47e2?q=80&w=1200&auto=format&fit=crop" 
-            alt="Warehouse Services backdrop" 
-            referrerPolicy="no-referrer" 
-          />
-          <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:3.5rem_3.5rem]" />
-          <div className="absolute -top-40 -right-40 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl" />
-          <div className="absolute -bottom-40 -left-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl" />
-
-          <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 animate-fade-in">
-            <div className="max-w-4xl">
-              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-emerald-400 text-xs font-bold uppercase tracking-widest mb-6 border border-white/10">
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-400" />
+        <section className="relative pt-24 bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white overflow-hidden">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
+              <div className="md:col-span-7 lg:col-span-6">
+              <span className="inline-flex items-center gap-2 text-amber-200 text-sm font-bold mb-5">
+                <Package className="w-4 h-4 text-amber-300" aria-hidden="true" />
                 {wh.hero.tag}
               </span>
-              <h1 className={activeLang === 'zh' ? "text-[6.8vw] sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6 whitespace-nowrap" : "text-4xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6"}>
+              <h1 className="text-4xl sm:text-5xl lg:text-5xl font-black tracking-tight leading-[1.06] mb-5">
                 {wh.hero.title}
               </h1>
-              <p className="text-slate-300 text-lg sm:text-xl font-medium leading-relaxed mb-8 max-w-2xl">
+              <p className="text-slate-200 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-xl">
                 {wh.hero.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
                 <a 
                   href="#rfq-form-section"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-400 hover:to-teal-500 text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg hover:shadow-emerald-500/20 transition-all transform hover:-translate-y-0.5"
+                  className="hb-action px-8 py-4 text-center"
                 >
                   {wh.bottomCta.btn1}
                 </a>
@@ -2538,6 +2571,16 @@ export default function ServiceDetail() {
                   {wh.bottomCta.btn2}
                 </a>
               </div>
+              </div>
+              <figure className="relative h-[19rem] overflow-hidden rounded-2xl border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.28)] md:col-span-5 md:h-[27rem] md:rounded-l-none md:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)]">
+                <img
+                  className="h-full w-full object-cover"
+                  src={getImgUrl('FACILITY_SCALE')}
+                  alt={wh.hero.title}
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)]/45 via-transparent to-transparent" />
+              </figure>
             </div>
           </div>
         </section>
@@ -2545,37 +2588,45 @@ export default function ServiceDetail() {
         {/* 2. Why Choose Our Warehouse Services */}
         <section className="py-20 bg-white border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest block mb-3">
-                {activeLang === 'zh' ? '服务优势' : 'Core Advantages'}
-              </span>
+            <div className="max-w-3xl mb-12">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
                 {wh.whyChoose.title}
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
                 {wh.whyChoose.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mt-6 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-200 md:grid-cols-12">
               {wh.whyChoose.pillars.map((pil, idx) => {
                 const PilIcon = pil.icon;
                 return (
                   <div 
                     key={idx} 
-                    className="p-8 rounded-3xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:border-emerald-250 hover:shadow-xl transition-all duration-300 relative group"
+                    className={`${idx === 0 ? 'relative flex min-h-[24rem] flex-col justify-end overflow-hidden bg-[var(--hb-navy-deep)] text-white md:col-span-5 md:row-span-3' : 'border-t border-slate-200 bg-[var(--hb-surface)] md:col-span-7'} p-7 md:p-9`}
                   >
-                    <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-emerald-500 to-teal-600 opacity-0 group-hover:opacity-100 transition-opacity" />
-                    <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-6 border border-emerald-100 group-hover:bg-emerald-500 group-hover:text-white group-hover:border-emerald-500 transition-colors duration-300">
-                      <PilIcon className="w-6 h-6" />
+                    {idx === 0 && (
+                      <>
+                        <img
+                          className="absolute inset-0 h-full w-full object-cover"
+                          src={getImgUrl('FACILITY_SORT')}
+                          alt={pil.title}
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,28,44,.08)_18%,rgba(11,28,44,.94)_82%)]" />
+                      </>
+                    )}
+                    <div className="relative">
+                      <div className={`${idx === 0 ? 'text-amber-300' : 'text-[var(--hb-amber)]'} mb-5`}>
+                        <PilIcon className="w-6 h-6" />
+                      </div>
+                      <h3 className={`${idx === 0 ? 'text-2xl text-white' : 'text-xl text-slate-900'} font-bold mb-3 tracking-tight`}>
+                        {pil.title}
+                      </h3>
+                      <p className={`${idx === 0 ? 'text-slate-100' : 'text-slate-600'} text-sm font-medium leading-relaxed`}>
+                        {pil.desc}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-3 tracking-tight">
-                      {pil.title}
-                    </h3>
-                    <p className="text-slate-500 text-sm font-semibold leading-relaxed">
-                      {pil.desc}
-                    </p>
                   </div>
                 );
               })}
@@ -2586,47 +2637,43 @@ export default function ServiceDetail() {
         {/* 3. Our Warehouse Services Breakdown (6 Core Product Modules) */}
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest block mb-3">
-                {activeLang === 'zh' ? '业务矩阵' : 'Service Breakdown'}
-              </span>
+            <div className="max-w-3xl mb-12">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
                 {wh.breakdown.title}
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
                 {wh.breakdown.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mt-6 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-x-12 border-t border-slate-300 md:grid-cols-2">
               {wh.breakdown.modules.map((mod, idx) => {
                 const ModIcon = mod.icon;
                 return (
-                  <div 
+                  <article
                     key={idx} 
-                    className="bg-white p-8 rounded-3xl border border-slate-150 hover:border-emerald-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between"
+                    className="grid grid-cols-[2.75rem_1fr] gap-4 border-b border-slate-300 py-7"
                   >
+                    <div className="text-[var(--hb-amber)] pt-1">
+                      <ModIcon className="w-6 h-6" />
+                    </div>
                     <div>
-                      <div className="w-12 h-12 rounded-2xl bg-indigo-50 text-[#4B27B1] flex items-center justify-center mb-6">
-                        <ModIcon className="w-6 h-6" />
-                      </div>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 border-b border-slate-100 pb-2">
+                      <h3 className="text-xl font-bold text-slate-900 mb-2">
                         {mod.title}
                       </h3>
-                      <p className="text-slate-500 text-sm font-semibold leading-relaxed mb-6">
+                      <p className="text-slate-600 text-sm font-medium leading-relaxed mb-4">
                         {mod.desc}
                       </p>
-                    </div>
-                    <ul className="space-y-2.5">
+                    <ul className="grid gap-2">
                       {mod.bullets.map((b, bIdx) => (
                         <li key={bIdx} className="flex items-start gap-2.5 text-xs font-semibold text-slate-600">
-                          <CheckCircle2 className="w-4 h-4 text-emerald-500 shrink-0 mt-0.5" />
+                          <CheckCircle2 className="w-4 h-4 text-[var(--hb-amber)] shrink-0 mt-0.5" />
                           <span>{b}</span>
                         </li>
                       ))}
                     </ul>
-                  </div>
+                    </div>
+                  </article>
                 );
               })}
             </div>
@@ -2636,41 +2683,39 @@ export default function ServiceDetail() {
         {/* 4. Our Warehouse Facilities & Specifications */}
         <section className="py-20 bg-white border-t border-b border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest block mb-3">
-                {activeLang === 'zh' ? '物理基建规格' : 'Facilities & Specifications'}
-              </span>
+            <div className="max-w-3xl mb-12">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
                 {wh.facilities.title}
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
                 {wh.facilities.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mt-6 rounded-full" />
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
-              <div className="lg:col-span-6 space-y-6">
+              <div className="lg:col-span-6 border-t border-slate-300">
                 {wh.facilities.features.map((feat, fIdx) => (
-                  <div key={fIdx} className="p-6 bg-slate-50 rounded-2xl border border-slate-100 hover:bg-slate-105 transition-all duration-200">
+                  <div key={fIdx} className="grid grid-cols-[1.75rem_1fr] gap-3 border-b border-slate-300 py-6">
+                    <CheckCircle2 className="w-5 h-5 text-[var(--hb-amber)] mt-0.5" aria-hidden="true" />
+                    <div>
                     <h3 className="text-base font-bold text-slate-900 mb-2 flex items-center gap-2">
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
                       {feat.title}
                     </h3>
                     <p className="text-slate-500 text-xs sm:text-sm font-semibold leading-relaxed">
                       {feat.desc}
                     </p>
+                    </div>
                   </div>
                 ))}
               </div>
 
               <div className="lg:col-span-6">
-                <div className="bg-gradient-to-br from-slate-900 to-[#122c42] text-white p-8 rounded-3xl h-full flex flex-col justify-between relative overflow-hidden shadow-xl border border-slate-800">
-                  <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-500/5 rounded-full blur-3xl" />
+                <div className="bg-gradient-to-br from-slate-900 to-[#122c42] text-white p-8 rounded-[var(--hb-radius)] h-full flex flex-col justify-between relative overflow-hidden shadow-xl border border-slate-800">
+                  <div className="absolute top-0 right-0 w-64 h-64 bg-amber-400/10 rounded-full blur-3xl" />
                   <div>
-                    <h3 className="text-xl font-bold mb-6 pb-3 border-b border-slate-800 flex items-center gap-2 text-emerald-400">
-                      <span>📊</span>
-                      {activeLang === 'zh' ? '仓储规格核心数据' : 'Facility Certified Specs'}
+                    <h3 className="text-xl font-bold mb-6 pb-3 border-b border-slate-800 flex items-center gap-2 text-amber-300">
+                      <FileText className="w-5 h-5" aria-hidden="true" />
+                      {warehouseOpsLabels.title}
                     </h3>
                     <div className="grid grid-cols-2 gap-6">
                       {wh.facilities.specs.map((spec, sIdx) => (
@@ -2686,11 +2731,11 @@ export default function ServiceDetail() {
                     </div>
                   </div>
                   <div className="mt-8 pt-6 border-t border-slate-800 flex items-center gap-3">
-                    <div className="px-3 py-1 bg-emerald-500/10 border border-emerald-500/20 rounded text-emerald-400 text-xs font-bold leading-none uppercase">
-                      CTPAT Secure
+                    <div className="px-3 py-1 bg-sky-500/10 border border-sky-500/20 rounded text-sky-300 text-xs font-bold leading-none uppercase">
+                      {warehouseOpsLabels.tag1}
                     </div>
                     <div className="px-3 py-1 bg-blue-500/10 border border-blue-500/20 rounded text-blue-400 text-xs font-bold leading-none uppercase">
-                      ISO 9001 Certified
+                      {warehouseOpsLabels.tag2}
                     </div>
                   </div>
                 </div>
@@ -2702,33 +2747,42 @@ export default function ServiceDetail() {
         {/* 5. Advanced Warehouse Technology */}
         <section className="py-20 bg-slate-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest block mb-3">
-                {activeLang === 'zh' ? '数字化系统支撑' : 'Digital Infrastructure'}
-              </span>
+            <div className="max-w-3xl mb-12">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
                 {wh.technology.title}
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
                 {wh.technology.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mt-6 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 overflow-hidden rounded-2xl border border-slate-200 md:grid-cols-12">
               {wh.technology.badges.map((b, idx) => {
                 const TechIcon = b.icon;
                 return (
-                  <div key={idx} className="bg-white p-8 rounded-3xl border border-slate-150 shadow-sm hover:shadow-md transition-all duration-300">
-                    <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center mb-5 font-bold">
-                      <TechIcon className="w-5 h-5" />
+                  <div key={idx} className={`${idx === 0 ? 'relative flex min-h-[22rem] flex-col justify-end overflow-hidden bg-[var(--hb-navy-deep)] text-white md:col-span-5 md:row-span-2' : 'border-t border-slate-200 bg-white md:col-span-7'} p-8`}>
+                    {idx === 0 && (
+                      <>
+                        <img
+                          className="absolute inset-0 h-full w-full object-cover"
+                          src={getImgUrl('FACILITY_TEAM')}
+                          alt={b.title}
+                          referrerPolicy="no-referrer"
+                        />
+                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(11,28,44,.12)_15%,rgba(11,28,44,.95)_84%)]" />
+                      </>
+                    )}
+                    <div className="relative">
+                      <div className={`${idx === 0 ? 'text-amber-300' : 'text-[var(--hb-amber)]'} mb-5`}>
+                        <TechIcon className="w-5 h-5" />
+                      </div>
+                      <h3 className={`${idx === 0 ? 'text-2xl text-white' : 'text-lg text-slate-900'} font-bold mb-2`}>
+                        {b.title}
+                      </h3>
+                      <p className={`${idx === 0 ? 'text-slate-100' : 'text-slate-600'} text-xs sm:text-sm font-medium leading-relaxed`}>
+                        {b.desc}
+                      </p>
                     </div>
-                    <h3 className="text-lg font-bold text-slate-900 mb-2">
-                      {b.title}
-                    </h3>
-                    <p className="text-slate-500 text-xs sm:text-sm font-semibold leading-relaxed">
-                      {b.desc}
-                    </p>
                   </div>
                 );
               })}
@@ -2739,33 +2793,31 @@ export default function ServiceDetail() {
         {/* 6. Industries We Serve */}
         <section className="py-20 bg-white border-t border-slate-100">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="text-[#4B27B1] text-xs font-extrabold uppercase tracking-widest block mb-3">
-                {activeLang === 'zh' ? '服务品类' : 'Market Expertise'}
-              </span>
+            <div className="max-w-3xl mb-12">
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
                 {wh.industries.title}
               </h2>
               <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed">
                 {wh.industries.desc}
               </p>
-              <div className="h-1.5 w-16 bg-gradient-to-r from-emerald-500 to-teal-600 mx-auto mt-6 rounded-full" />
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 theme-grid-stagger bg-slate-50/50 p-8 rounded-3xl border border-slate-100">
+            <div className="grid grid-cols-1 gap-x-12 border-t border-slate-200 md:grid-cols-2">
               {wh.industries.sectors.map((sec, idx) => {
                 const SecIcon = sec.icon;
                 return (
-                  <div key={idx} className="p-6 bg-white rounded-2xl border border-slate-100 shadow-sm hover:border-emerald-200 hover:shadow-lg transition-all duration-300 flex flex-col items-center text-center">
-                    <div className="w-10 h-10 rounded-full bg-[#4B27B1]/5 text-[#4B27B1] flex items-center justify-center mb-4">
+                  <div key={idx} className="grid grid-cols-[2.5rem_1fr] gap-4 border-b border-slate-200 py-6">
+                    <div className="text-[var(--hb-amber)] pt-0.5">
                       <SecIcon className="w-5 h-5" />
                     </div>
-                    <h3 className="text-sm font-bold text-slate-900 mb-1.5">
+                    <div>
+                    <h3 className="text-base font-bold text-slate-900 mb-1.5">
                       {sec.name}
                     </h3>
-                    <p className="text-slate-500 text-[11px] sm:text-xs font-semibold leading-normal">
+                    <p className="text-slate-600 text-xs sm:text-sm font-medium leading-relaxed">
                       {sec.desc}
                     </p>
+                    </div>
                   </div>
                 );
               })}
@@ -2776,19 +2828,16 @@ export default function ServiceDetail() {
         {/* 7. Bottom Conversion Banner with Form */}
         <section id="rfq-form-section" className="py-20 bg-slate-50 border-t border-slate-200/60 scroll-mt-20">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-extrabold uppercase tracking-widest mb-4">
-                RFQ Instant Access
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight animate-fade-in">
+            <div className="max-w-3xl mb-10">
+              <h2 className="text-3xl sm:text-4xl font-black text-slate-900 mb-4 tracking-tight">
                 {wh.bottomCta.title}
               </h2>
-              <p className="text-slate-500 font-semibold text-sm sm:text-base leading-relaxed max-w-xl mx-auto">
+              <p className="text-slate-600 font-medium text-sm sm:text-base leading-relaxed max-w-xl">
                 {wh.bottomCta.desc}
               </p>
             </div>
 
-            <div className="bg-white rounded-3xl border border-slate-100 shadow-xl p-8 sm:p-10 relative overflow-hidden">
+            <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
               {!isFormSubmitted ? (
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
@@ -2810,7 +2859,7 @@ export default function ServiceDetail() {
                             onClick={() => setSelectedService(item.id)}
                             className={`py-2.5 px-3 rounded-lg border-2 transition-all flex items-center justify-center font-bold text-xs sm:text-sm ${
                               isSelected
-                                ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1] font-bold' 
+                                ? 'border-sky-600 bg-sky-50 text-sky-700 font-bold'
                                 : 'border-slate-100 bg-slate-50 text-slate-500 hover:bg-slate-100'
                             }`}
                           >
@@ -2832,7 +2881,7 @@ export default function ServiceDetail() {
                         name="origin"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder={t('get_a_quote.originPlaceholder')}
                         defaultValue="Guangzhou Hub"
                       />
@@ -2846,7 +2895,7 @@ export default function ServiceDetail() {
                         name="destination"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder={t('get_a_quote.destPlaceholder')}
                       />
                     </div>
@@ -2859,7 +2908,7 @@ export default function ServiceDetail() {
                     <select
                       id="comp"
                       name="product"
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                     >
                       <option value="Electronics / Digital">{activeLang === 'zh' ? '数字/3C电子' : 'Electronics / Digital'}</option>
                       <option value="Furniture / Wood">{activeLang === 'zh' ? '大件家具及木器' : 'Furniture / Wood'}</option>
@@ -2878,7 +2927,7 @@ export default function ServiceDetail() {
                       name="message"
                       required
                       rows={4}
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all resize-none animate-pulse-once"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all resize-none"
                       placeholder={activeLang === 'zh' ? '请简述：如 multi-supplier 拼货件数，大概箱数与卡板量、是否需要特殊免熏蒸木箱包装、是否需要开箱拍照/条码匹配等。' : 'Specify warehouse requirements (e.g. multi-supplier consolidation estimate, total cartons, request for crating, pallet counts, photo audit, or barcode matches).'}
                     />
                   </div>
@@ -2893,8 +2942,8 @@ export default function ServiceDetail() {
                         name="name"
                         type="text"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
-                        placeholder="e.g. Young Ming / DDNZ Global"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
+                        placeholder="e.g. Maria Lopez / Andina Trading"
                       />
                     </div>
                     <div>
@@ -2906,7 +2955,7 @@ export default function ServiceDetail() {
                         name="email"
                         type="email"
                         required
-                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                        className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 focus:ring-2 focus:ring-sky-100 outline-none font-semibold text-base transition-all"
                         placeholder="partnership@ddnzglobal.com"
                       />
                     </div>
@@ -2916,7 +2965,7 @@ export default function ServiceDetail() {
                     type="submit"
                     disabled={state.submitting}
                     className={`w-full py-4 text-white font-bold rounded-xl transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 shrink-0 ${
-                      state.submitting ? 'bg-slate-600' : 'bg-gradient-to-r from-emerald-500 to-teal-600 hover:shadow-xl'
+                      state.submitting ? 'bg-slate-600' : 'bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] hover:shadow-xl'
                     }`}
                   >
                     {state.submitting ? t('get_a_quote.submitting') : t('get_a_quote.submit')}
@@ -2924,18 +2973,18 @@ export default function ServiceDetail() {
                 </form>
               ) : (
                 <div className="text-center py-12">
-                  <div className="w-16 h-16 bg-emerald-50 text-emerald-500 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <div className="w-16 h-16 bg-sky-50 text-sky-700 rounded-full flex items-center justify-center mx-auto mb-6">
                      <CheckCircle2 className="w-10 h-10" />
                   </div>
                   <h3 className="text-2xl font-black text-slate-900 mb-3">
                     {activeLang === 'zh' ? '集货需求已接收！华正邦泰 专属仓管小队已就位！' : activeLang === 'ru' ? 'Ваш запрос на склад отправлен!' : activeLang === 'fr' ? 'Demande de stockage configurée !' : 'Warehouse RFQ Successfully Registered!'}
                   </h3>
                   <p className="text-slate-500 font-semibold mb-6 max-w-md mx-auto text-sm sm:text-base">
-                    {activeLang === 'zh' ? '我们的大湾区集拼专家将在 2 小时内给您出具最优零中转费集货排期与打包加固估费。请关注您的邮件或社交网络。' : activeLang === 'ru' ? 'Наши логисты свяжутся с вами в течение 2 часов для обсуждения условий упаковки и хранения.' : activeLang === 'fr' ? 'Nos ingénieurs logistiques analysent les points de livraison de vos fournisseurs et reviennent vers vous sous 2 heures.' : 'Our South China consolidation specialists are computing your factory consolidation map and will deliver a custom crating/routing report within 2 hours.'}
+                    {activeLang === 'zh' ? '我们的集货团队将根据您提交的货物信息和操作需求联系您，确认仓储、包装与出运安排。请留意您的邮箱或常用通讯方式。' : activeLang === 'ru' ? 'Наши специалисты свяжутся с вами, чтобы уточнить условия хранения, упаковки и дальнейшей отправки.' : activeLang === 'fr' ? 'Notre équipe vous contactera afin de préciser les besoins de stockage, d’emballage et d’expédition.' : 'Our consolidation team will contact you to confirm the storage, packing, and export requirements for your shipment.'}
                   </p>
                   <button 
                     onClick={() => setIsFormSubmitted(false)}
-                    className="text-[#4B27B1] hover:text-[#361793] font-bold text-sm underline"
+                    className="text-sky-700 hover:text-sky-900 font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回集运页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
                   </button>
@@ -2969,9 +3018,10 @@ export default function ServiceDetail() {
   };
 
   const heroImgUrl = getHeroImageUrl(currentKey);
+  const serviceCtas = sharedServiceLabels;
 
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900">
+    <div className="min-h-screen hb-page-shell font-sans text-slate-900">
       <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
       <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
@@ -2985,95 +3035,92 @@ export default function ServiceDetail() {
       <Navbar />
 
       {/* Hero Block */}
-      <section className={`relative pt-32 pb-20 md:pb-32 bg-gradient-to-br ${config.bgGrad} text-white overflow-hidden`}>
-        <img 
-          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
-          src={heroImgUrl} 
-          alt={`${currentKey} backdrop`} 
-          referrerPolicy="no-referrer" 
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md text-orange-300 text-xs font-bold uppercase tracking-widest mb-6 border border-white/10">
-              <IconComponent className="w-4 h-4 text-orange-400" />
+      <section className={`relative pt-24 bg-gradient-to-br ${config.bgGrad} text-white overflow-hidden`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
+            <div className="md:col-span-7 lg:col-span-6">
+            <span className="inline-flex items-center gap-2 text-amber-200 text-sm font-bold mb-5">
+              <IconComponent className="w-4 h-4 text-amber-300" />
               {data.tag}
             </span>
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-tight mb-6">
+            <h1 className="max-w-3xl text-4xl sm:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.04] mb-5">
               {data.title}
             </h1>
-            <p className="text-purple-100 text-lg sm:text-xl font-medium leading-relaxed mb-8 max-w-2xl">
+            <p className="text-slate-200 text-base sm:text-lg font-medium leading-relaxed mb-8 max-w-xl">
               {data.heroSubtitle}
             </p>
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a 
                 href="#rfq-form-section"
-                className="bg-gradient-to-r from-[#FF8A00] to-[#FF5500] hover:from-[#ff9c22] hover:to-[#ff6715] text-white font-bold px-8 py-4 rounded-xl text-center shadow-lg transition-all active:scale-95 flex items-center justify-center gap-2"
+                className="bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] text-white font-bold px-7 py-3.5 rounded-xl text-center shadow-lg shadow-black/15 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
               >
-                {activeLang === 'zh' ? '立即询本服务底价' : activeLang === 'ru' ? 'Запросить расчет' : activeLang === 'fr' ? 'Demander un tarif' : 'Get Firm Rate Now'}
+                {serviceCtas.quote}
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a 
                 href="https://wa.me/8613430335022" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl text-center border border-white/20 backdrop-blur-sm transition-all flex items-center justify-center gap-2"
+                className="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3.5 rounded-xl text-center border border-white/25 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
               >
                 {t('hero.chat')}
               </a>
             </div>
+            </div>
+
+            <figure className="relative h-[19rem] overflow-hidden rounded-2xl border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.28)] md:col-span-5 md:h-[27rem] md:rounded-l-none md:[clip-path:polygon(14%_0,100%_0,100%_100%,0_100%)] lg:col-span-6">
+              <img
+                className="h-full w-full object-cover"
+                src={heroImgUrl}
+                alt={data.title}
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)]/55 via-transparent to-transparent" />
+            </figure>
           </div>
         </div>
       </section>
 
-      {/* 4-Column Core USPs */}
-      <section className="py-16 md:py-24 bg-white border-b border-slate-100">
+      {/* Operational capabilities */}
+      <section className="bg-white py-14 md:py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 gap-0 overflow-hidden rounded-2xl border border-slate-200 md:grid-cols-12">
             {data.advs.map((adv: any, index: number) => (
-              <div 
+              <article
                 key={index}
-                className="p-8 rounded-2xl border border-slate-100 bg-slate-50/50 hover:bg-white hover:shadow-xl hover:border-purple-100 transition-all duration-300"
+                className={`${index === 0 ? 'bg-[var(--hb-navy-deep)] text-white md:col-span-5 md:row-span-3' : 'border-t border-slate-200 bg-[var(--hb-surface)] md:col-span-7'} grid gap-5 p-7 md:p-9`}
               >
-                <div className="w-12 h-12 rounded-xl bg-[#4B27B1]/10 flex items-center justify-center mb-6 text-[#4B27B1]">
-                  <CheckCircle2 className="w-6 h-6" />
+                <IconComponent className={`${index === 0 ? 'h-9 w-9' : 'h-6 w-6'} text-[var(--hb-amber)]`} aria-hidden="true" />
+                <div>
+                  <h2 className={`${index === 0 ? 'text-2xl md:text-3xl text-white' : 'text-xl text-[var(--hb-ink)]'} font-black mb-2 tracking-tight`}>{adv.title}</h2>
+                  <p className={`${index === 0 ? 'text-slate-200' : 'text-slate-600'} text-sm md:text-base font-medium leading-relaxed max-w-[38rem]`}>{adv.desc}</p>
                 </div>
-                <h3 className="text-lg font-black text-slate-900 mb-3 tracking-tight">
-                  {adv.title}
-                </h3>
-                <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">
-                  {adv.desc}
-                </p>
-              </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Deep-Dive / Quick Facts Dual Split */}
-      <section className="py-16 md:py-24">
+      <section className="py-16 md:py-20 bg-[var(--hb-surface)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 md:gap-16 items-start">
             
             {/* Left Column: Deep Dive */}
             <div className="lg:col-span-7">
-              <h2 className="text-3xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-6">
+              <p className="text-sm font-black text-[var(--hb-amber)] mb-3">{serviceCtas.planning}</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-[var(--hb-ink)] tracking-tight mb-5">
                 {data.deepDive.title}
               </h2>
               <p className="text-slate-600 text-base md:text-lg leading-relaxed mb-8 font-medium">
                 {data.deepDive.desc}
               </p>
-              <div className="space-y-6">
+              <div className="grid gap-4 sm:grid-cols-2">
                 {data.deepDive.sections.map((sec: any, index: number) => (
-                  <div key={index} className="flex gap-4 p-5 bg-white rounded-xl border border-slate-100 shadow-sm">
-                    <div className="w-8 h-8 rounded-full bg-orange-500/10 text-orange-500 flex items-center justify-center font-bold shrink-0 text-sm mt-0.5">
-                      {index + 1}
-                    </div>
+                  <div key={index} className={`${index === 0 ? 'sm:col-span-2' : ''} rounded-2xl border border-slate-200 bg-white p-6`}>
                     <div>
-                      <h4 className="text-lg font-bold text-slate-900 mb-1">{sec.name}</h4>
-                      <p className="text-slate-500 text-sm md:text-base font-medium leading-relaxed">{sec.info || sec.desc}</p>
+                      <h4 className="text-lg font-bold text-[var(--hb-ink)] mb-1">{sec.name}</h4>
+                      <p className="text-slate-600 text-sm md:text-base font-medium leading-relaxed">{sec.info || sec.desc}</p>
                     </div>
                   </div>
                 ))}
@@ -3081,19 +3128,17 @@ export default function ServiceDetail() {
             </div>
 
             {/* Right Column: Quick Facts Card */}
-            <div className="lg:col-span-5 bg-gradient-to-br from-[#4B27B1] to-[#361793] text-white rounded-3xl p-8 sm:p-10 shadow-xl relative overflow-hidden">
-              <div className="absolute inset-0 bg-grid-pattern opacity-10" />
+            <aside className="lg:col-span-5 bg-[var(--hb-navy-deep)] text-white rounded-2xl p-8 sm:p-10 shadow-[0_18px_45px_rgba(11,28,44,0.18)] relative overflow-hidden">
+              <div className="absolute inset-x-0 top-0 h-1 bg-[var(--hb-amber)]" />
               <h3 className="text-2xl font-black tracking-tight mb-6 flex items-center gap-2">
-                <Star className="w-6 h-6 text-orange-400" fill="currentColor" />
+                <CheckCircle2 className="w-6 h-6 text-amber-300" />
                 {data.quickFacts.title}
               </h3>
-              <div className="h-1 w-12 bg-orange-400 rounded-full mb-8" />
-              <ul className="space-y-6">
+              <div className="h-1 w-10 bg-[var(--hb-amber)] mb-8" />
+              <ul className="space-y-5">
                 {data.quickFacts.points.map((pt: string, index: number) => (
-                  <li key={index} className="flex items-start gap-3 text-purple-100">
-                    <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center shrink-0 mt-0.5 text-xs text-orange-300 font-bold">
-                      ✓
-                    </div>
+                  <li key={index} className="flex items-start gap-3 text-slate-100">
+                    <CheckCircle2 className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
                     <span className="text-sm md:text-base leading-relaxed font-semibold">
                       {pt}
                     </span>
@@ -3101,13 +3146,13 @@ export default function ServiceDetail() {
                 ))}
               </ul>
               
-              <div className="mt-10 p-4 rounded-xl bg-white/5 border border-white/10 flex items-center gap-3">
-                <HelpCircle className="w-5 h-5 text-orange-400 shrink-0" />
-                <p className="text-xs text-purple-200 font-medium leading-relaxed">
+              <div className="mt-10 p-4 rounded-xl bg-white/5 border border-white/15 flex items-center gap-3">
+                <HelpCircle className="w-5 h-5 text-amber-300 shrink-0" />
+                <p className="text-xs text-slate-200 font-medium leading-relaxed">
                   {t('get_a_quote.fclNote')}
                 </p>
               </div>
-            </div>
+            </aside>
 
           </div>
         </div>
@@ -3120,7 +3165,7 @@ export default function ServiceDetail() {
             <h2 className="text-2xl md:text-3xl font-black text-slate-900 mb-4">
               {data.lanes.title}
             </h2>
-            <div className="h-1 w-16 bg-[#4B27B1] mx-auto rounded-full" />
+            <div className="h-1 w-16 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full" />
           </div>
           
           <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden max-w-4xl mx-auto">
@@ -3137,11 +3182,11 @@ export default function ServiceDetail() {
                   {data.lanes.rows.map((row: string[], idx: number) => (
                     <tr key={idx} className="hover:bg-slate-55/40 transition-colors">
                       <td className="px-6 py-4 text-slate-900 font-bold flex items-center gap-2">
-                        <span>🌐</span>
+                        <Globe className="w-4 h-4 text-sky-600 shrink-0" aria-hidden="true" />
                         {row[0]}
                       </td>
                       <td className="px-6 py-4">{row[1]}</td>
-                      <td className="px-6 py-4 text-purple-700 font-mono text-sm">{row[2]}</td>
+                      <td className="px-6 py-4 text-sky-700 font-mono text-sm">{row[2]}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -3151,42 +3196,39 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {/* Step by Step Workflow (1 to 6) */}
+      {/* Operating workflow */}
       <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16 md:mb-24">
-            <div className="text-[#4B27B1] font-bold tracking-widest text-xs uppercase mb-2">
-              {activeLang === 'zh' ? '规范交付流程' : activeLang === 'ru' ? 'ЭТАПЫ РАБОТЫ' : activeLang === 'fr' ? 'ÉTAPES CLÉS' : 'TRANSPARENT ROADMAP'}
-            </div>
-            <h2 className="text-3xl md:text-5xl font-black text-slate-900 tracking-tight leading-none mb-4">
-              {activeLang === 'zh' ? '华正邦泰标准 6 步服务周期' : activeLang === 'ru' ? 'Как осуществляется доставка' : activeLang === 'fr' ? 'Notre cycle en 6 étapes' : 'Standard 1-to-6 Step Logistics Workflow'}
+          <div className="mb-10 max-w-2xl md:mb-14">
+            <h2 className="text-3xl md:text-4xl font-black text-slate-900 tracking-tight mb-4">
+              {serviceCtas.process}
             </h2>
-            <div className="h-1.5 w-16 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full" />
+            <p className="text-slate-600 font-medium leading-relaxed">
+              {activeLang === 'zh' ? '从货物资料确认到目的地交付，每个环节由同一运营团队衔接。' : activeLang === 'es' ? 'Un mismo equipo operativo coordina cada etapa, desde los datos de la carga hasta la entrega.' : activeLang === 'ar' ? 'يتولى فريق تشغيل واحد تنسيق كل مرحلة من بيانات الشحنة حتى التسليم.' : 'One operating team coordinates each stage from cargo review through final delivery.'}
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 relative">
+          <div className="grid grid-cols-1 gap-x-12 border-t border-slate-200 md:grid-cols-2">
             {stepsLocal.map((step, index) => (
-              <div 
+              <article
                 key={index} 
-                className="relative bg-slate-50 p-8 rounded-2xl border border-slate-100 hover:bg-white hover:shadow-lg hover:border-purple-100 transition-all group"
+                className="grid grid-cols-[3rem_1fr] gap-4 border-b border-slate-200 py-7"
               >
-                <div className="absolute top-4 right-6 text-4xl sm:text-5xl font-black text-slate-200/60 group-hover:text-[#FF8A00]/15 select-none transition-colors">
+                <div className="text-sm font-black text-[var(--hb-amber)]">
                   {step.num}
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 group-hover:text-[#4B27B1] transition-colors mb-3">
-                  {step.title}
-                </h3>
-                <p className="text-slate-500 text-sm md:text-base leading-relaxed font-semibold">
-                  {step.desc}
-                </p>
-              </div>
+                <div>
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{step.title}</h3>
+                  <p className="text-slate-600 text-sm md:text-base leading-relaxed font-medium">{step.desc}</p>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
       {/* Lead Capture and Request form */}
-      <section id="rfq-form-section" className="py-16 md:py-24 bg-purple-50/40 border-t border-purple-100">
+      <section id="rfq-form-section" className="py-16 md:py-24 bg-sky-50/60 border-t border-sky-100">
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-10">
             <h2 className="text-2xl md:text-4xl font-extrabold text-slate-900 tracking-tight mb-4">
@@ -3197,7 +3239,7 @@ export default function ServiceDetail() {
             </p>
           </div>
 
-          <div className="bg-white rounded-3xl border border-purple-100 shadow-xl p-8 sm:p-10 relative overflow-hidden">
+          <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
             {!isFormSubmitted ? (
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -3217,7 +3259,7 @@ export default function ServiceDetail() {
                         onClick={() => setSelectedService(item.id)}
                         className={`py-2.5 px-3 rounded-lg border-2 transition-all flex items-center justify-center font-bold text-xs sm:text-sm ${
                           selectedService === item.id 
-                            ? 'border-[#4B27B1] bg-purple-50 text-[#4B27B1]' 
+                            ? 'border-sky-600 bg-sky-50 text-sky-700'
                             : 'border-slate-100 bg-slate-50 text-slate-500 hover:bg-slate-100'
                         }`}
                       >
@@ -3238,7 +3280,7 @@ export default function ServiceDetail() {
                       name="origin"
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all"
                       placeholder={t('get_a_quote.originPlaceholder')}
                     />
                   </div>
@@ -3251,7 +3293,7 @@ export default function ServiceDetail() {
                       name="destination"
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all"
                       placeholder={t('get_a_quote.destPlaceholder')}
                     />
                   </div>
@@ -3264,7 +3306,7 @@ export default function ServiceDetail() {
                   <select
                     id="comp"
                     name="product"
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all"
                   >
                     <option value="New Energy / ESS">{t('get_a_quote.indNev')}</option>
                     <option value="Commercial Furniture">{t('get_a_quote.indFurn')}</option>
@@ -3282,7 +3324,7 @@ export default function ServiceDetail() {
                     name="message"
                     required
                     rows={4}
-                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all resize-none"
                     placeholder={t('get_a_quote.msgPlaceholder')}
                   ></textarea>
                 </div>
@@ -3297,8 +3339,8 @@ export default function ServiceDetail() {
                       name="name"
                       type="text"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
-                      placeholder="e.g. Young Ming / DDNZ Global"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all"
+                      placeholder="e.g. Maria Lopez / Andina Trading"
                     />
                   </div>
                   <div>
@@ -3310,7 +3352,7 @@ export default function ServiceDetail() {
                       name="email"
                       type="email"
                       required
-                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-[#4B27B1] outline-none font-semibold text-sm transition-all"
+                      className="w-full px-4 py-3 rounded-lg border border-slate-200 focus:border-sky-600 outline-none font-semibold text-sm transition-all"
                       placeholder="partnership@ddnzglobal.com"
                     />
                   </div>
@@ -3320,7 +3362,7 @@ export default function ServiceDetail() {
                   type="submit"
                   disabled={state.submitting}
                   className={`w-full py-4 text-white font-bold rounded-xl transition-all shadow-md transform hover:-translate-y-0.5 active:translate-y-0 shrink-0 ${
-                    state.submitting ? 'bg-slate-600' : 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:shadow-xl'
+                    state.submitting ? 'bg-slate-600' : 'bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] hover:shadow-xl'
                   }`}
                 >
                   {state.submitting ? t('get_a_quote.submitting') : t('get_a_quote.submit')}
@@ -3330,7 +3372,7 @@ export default function ServiceDetail() {
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
-                className="text-center py-12 px-6 bg-[#4B27B1] rounded-2xl text-white"
+                className="text-center py-12 px-6 bg-[#071A33] rounded-2xl text-white"
               >
                 <div className="w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center mx-auto mb-6">
                   <span className="text-white text-3xl font-bold">✓</span>
@@ -3338,7 +3380,7 @@ export default function ServiceDetail() {
                 <h3 className="text-2xl font-black mb-3">
                   {activeLang === 'zh' ? '询价需求提交成功！' : activeLang === 'ru' ? 'Заявка принята!' : activeLang === 'fr' ? 'Demande Reçue !' : 'RFQ Submitted successfully!'}
                 </h3>
-                <p className="text-purple-100 max-w-sm mx-auto leading-relaxed text-sm md:text-base mb-8">
+                <p className="text-slate-200 max-w-sm mx-auto leading-relaxed text-sm md:text-base mb-8">
                   {t('get_a_quote.alertSuccess')}
                 </p>
                 <button 
@@ -3360,4 +3402,4 @@ export default function ServiceDetail() {
   );
 }
 
-const LANGUAGES_SUPPORTED = ['en', 'zh', 'ru', 'fr'];
+const LANGUAGES_SUPPORTED = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];

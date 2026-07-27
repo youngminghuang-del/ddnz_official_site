@@ -1,4 +1,4 @@
-export type Language = 'en' | 'zh' | 'ru' | 'fr';
+export type Language = 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar';
 
 export const translations = {
   en: {
@@ -21,20 +21,20 @@ export const translations = {
     },
     hero: {
       title1: 'Your Premier China Freight Forwarder',
-      title2: 'For Global Logistics Solutions.',
+      title2: 'For Global Logistics Solutions',
       subtitle: 'Established in 1997, Heaven Born is your trusted partner for professional international freight forwarding. We deliver reliable Ocean Freight, fast Air Freight, seamless Amazon FBA, and secure warehouse consolidation directly from China to the world.',
       primary_cta: 'Calculate Freight & Get Quote',
       secondary_cta: 'Download Company Deck',
       chat: 'Chat on WhatsApp',
-      kicker: '⚡ Global Logistics Excellence Since 1997',
-      badge_forwarder: '🇨🇳 Top-Tier China Freight Forwarder',
-      alibaba_badge: '✨ Sourcing from Alibaba? We Inspect & Consolidate',
-      alibaba_cta: 'Sourcing from Alibaba or 1688? Our dedicated supply chain division, DDNZ Global (powered by Heaven Born), offers integrated logistics, product inspection, and multi-currency settlement solutions.',
+      kicker: 'Global Logistics Excellence Since 1997',
+      badge_forwarder: 'Top-Tier China Freight Forwarder',
+      alibaba_badge: 'Sourcing from Alibaba? We Inspect & Consolidate',
+      alibaba_cta: 'Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd, coordinates supplier checks, inspections and export support alongside the Heaven Born freight team.',
       services: {
-        sea: '⚓ Sea Freight (FCL/LCL)',
-        air: '✈️ Air Freight',
-        fba: '📦 Amazon FBA Shipping',
-        warehouse: '🏬 China Warehouse Services'
+        sea: 'Sea Freight (FCL/LCL)',
+        air: 'Air Freight',
+        fba: 'Amazon FBA Shipping',
+        warehouse: 'China Warehouse Services'
       },
       stats: {
         years: '29+',
@@ -46,9 +46,9 @@ export const translations = {
       }
     },
     services: {
-      label: 'SERVICES',
-      title: 'WHAT WE DO',
-      subtitle: 'We provide integrated logistics solutions',
+      label: 'WHAT WE DO',
+      title: 'Integrated Logistics Solutions',
+      subtitle: 'Sea, air, Amazon FBA and China-origin warehouse support planned around your cargo, route and delivery requirements.',
       sea: {
         title: 'Sea Freight Solutions',
         highlights: [
@@ -103,39 +103,39 @@ export const translations = {
       resilience: { title: 'Unwavering Resilience & Care', desc: 'When global networks falter, we deliver. Proven during the pandemic by prioritizing critical supplies, our network is built to absorb shocks and protect your business interests.' }
     },
     why_ddnz: {
-      title: 'Why Fortune 500 Choose Heaven Born',
+      title: 'Why Global Businesses Choose Heaven Born',
       subtitle: 'Delivering excellence through experience and global connectivity',
       label: 'OUR STRENGTH',
       strength: 'Our Strength',
       industry: 'Industry Standard',
       f1: {
-        title: '29 Years Professional Freight Forwarding Expert',
-        desc: 'We are expert for shipping any type of goods from China to the world. Including shipping by sea, air, and train.',
+        title: 'Freight experience since 1997',
+        desc: 'We plan sea, air and rail solutions around the cargo, route, timing and destination requirements.',
         cta: 'Case study'
       },
       f2: {
-        title: 'Warehousing',
-        desc: 'Heaven Born provides long time free warehouse service, we have vast experience in container loading, and making sure your goods are safe, while you are saving money.',
+        title: 'Self-operated origin warehousing',
+        desc: 'Our China facilities support supplier receiving, consolidation, storage and preparation before dispatch.',
         cta: 'Check case study'
       },
       f3: {
-        title: 'Container Loading Supervision',
-        desc: 'We provide supervision while your supplier loads the goods into the container. You will receive pictures and videos after the loading is finished.',
+        title: 'Loading supervision and records',
+        desc: 'We coordinate cargo counts and container loading, with photo and video records available after completion.',
         cta: 'Check case study'
       },
       f4: {
-        title: 'Competitive Rate',
-        desc: 'Heaven Born can get good prices from shipping companies and airlines because of our bulk shipping.',
+        title: 'Carrier and route comparison',
+        desc: 'We compare suitable schedules, capacity and routing options to balance cost, timing and cargo requirements.',
         cta: 'Check case study'
       },
       f5: {
-        title: 'Professional Customs Clearance Service',
-        desc: 'Our professional team makes sure customs clearance is always smooth. They provide an accurate product classification, handle all the paperwork, are always up to date with Chinese customs policy, and have a good relationship with customs officers in China.',
+        title: 'Customs documentation coordination',
+        desc: 'We review product information and export documents, then coordinate destination clearance with qualified local partners.',
         cta: 'Check case study'
       },
       f6: {
-        title: '24/7 Online Support & Free Quote',
-        desc: 'Our team will be online 24/7 to provide you the best support. Get a free quote or ask any questions.',
+        title: 'Responsive quotation and follow-up',
+        desc: 'Our team provides route assumptions, quotation details and shipment updates through a consistent point of contact.',
         cta: 'Check case study'
       },
       edge: {
@@ -149,10 +149,10 @@ export const translations = {
     },
     facilities: {
       label: 'OUR FACILITIES',
-      title: 'OPERATIONAL EXCELLENCE',
-      subtitle: 'Where Legacy Expertise Powers Modern Infrastructure',
-      guangzhou: { title: 'Guangzhou: Your Command & Control Center', tag: '1. A Strategic Hub, Owned & Mastered for 18 Years', desc: 'This is not a leased space; it’s the strategic nerve center owned and operated by Heaven Born International Freight for nearly two decades. Here, we exercise absolute control. Every shipment undergoes professional consolidation and rigorous, standardized quality checks, ensuring integrity from the first to the final mile.' },
-      systems: { title: 'Advanced Systems for Complex Cargo', tag: '2. Engineered for Precision & Protection', desc: 'Equipped with automated sorting and a team of specialists, we handle what standard warehouses cannot. Our core expertise lies in custom, export-grade packaging solutions—most notably, precision-engineered plywood crating for high-value, sensitive machinery and project cargo, built to survive the global supply chain.' }
+      title: 'Operational excellence',
+      subtitle: 'Self-operated facilities give our team direct control over receiving, consolidation, inspection hand-offs and export preparation.',
+      guangzhou: { title: 'Guangzhou: Your Origin Control Hub', tag: 'Self-operated for 18 years', desc: 'Our Guangzhou operation coordinates supplier receiving, consolidation, sorting, quality checks and container-loading preparation before cargo leaves China.' },
+      systems: { title: 'Custom Crating and Packaging for Complex Cargo', tag: 'Protection for sensitive cargo', desc: 'Custom pallets and export-grade plywood cases protect heavy machinery, optical equipment and other high-value cargo during international transit.' }
     },
     get_a_quote: {
       title: 'SUBMIT RFQ',
@@ -261,7 +261,7 @@ export const translations = {
       desc: 'Our strategic alliances with top-tier shipping lines and airlines ensure that Heaven Born International Freight (Hong Kong) provides the most competitive rates and priority space allocations for your critical cargo.'
     },
     footer: {
-      slogan: '"29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions."',
+      slogan: '29 Years of Logistics Excellence & Integrity. Your Strategic Partner for Specialized Supply Chain Solutions.',
       hq: 'Guangzhou HQ',
       hq_addr: '6th Floor, Area C, Phase II, International Unit Creative Park, Huangshi Street, Baiyun District, Guangzhou, China',
       hk: 'Hong Kong Office',
@@ -276,7 +276,7 @@ export const translations = {
       privacy: 'Privacy Policy',
       terms: 'Terms of Service',
       experts: 'Specialized NEV & SCM Experts',
-      rights: '© 2026 Heaven Born International Freight. All rights reserved. DDNZ Global is a premium supply chain management brand operated by Heaven Born.'
+      rights: '© 2026 Heaven Born International Freight Co., Ltd. All rights reserved. Trade-support services are provided by DDNZ Global Trade Co., Ltd.'
     }
   },
   ru: {
@@ -299,20 +299,20 @@ export const translations = {
     },
     hero: {
       title1: 'Ваш первоклассный экспедитор в Китае',
-      title2: 'Для глобальных логистических решений.',
+      title2: 'Для глобальных логистических решений',
       subtitle: 'Основанная в 1997 году, компания Heaven Born является вашим надежным партнером по профессиональному международному экспедированию грузов. Мы обеспечиваем надежные морские перевозки, быструю авиадоставку, удобную доставку Amazon FBA и безопасную консолидацию на складах напрямую из Китая по всему миру.',
       primary_cta: 'Рассчитать стоимость',
       secondary_cta: 'Скачать презентацию',
       chat: 'Связаться в WhatsApp',
-      kicker: '⚡ Превосходная глобальная логистика с 1997 года',
-      badge_forwarder: '🇨🇳 Ведущий экспедитор в Китае',
-      alibaba_badge: '✨ Закупки на Alibaba? Инспекция и консолидация',
+      kicker: 'Превосходная глобальная логистика с 1997 года',
+      badge_forwarder: 'Ведущий экспедитор в Китае',
+      alibaba_badge: 'Закупки на Alibaba? Инспекция и консолидация',
       alibaba_cta: 'Закупаете на Alibaba? Мы предлагаем комплексные решения по логистике и инспекции.',
       services: {
-        sea: '⚓ Морские перевозки (FCL/LCL)',
-        air: '✈️ Авиаперевозки',
-        fba: '📦 Доставка Amazon FBA',
-        warehouse: '🏬 Складские услуги в Китае'
+        sea: 'Морские перевозки (FCL/LCL)',
+        air: 'Авиаперевозки',
+        fba: 'Доставка Amazon FBA',
+        warehouse: 'Складские услуги в Китае'
       },
       stats: {
         years: '29+',
@@ -324,9 +324,9 @@ export const translations = {
       }
     },
     services: {
-      label: 'УСЛУГИ',
-      title: 'НАШИ УСЛУГИ',
-      subtitle: 'Мы предоставляем интегрированные логистические решения',
+      label: 'ЧЕМ МЫ ЗАНИМАЕМСЯ',
+      title: 'Комплексные логистические решения',
+      subtitle: 'Морские и авиаперевозки, Amazon FBA и складская поддержка в Китае с учетом груза, маршрута и требований к доставке.',
       sea: {
         title: 'Морские перевозки',
         highlights: [
@@ -381,39 +381,39 @@ export const translations = {
       resilience: { title: 'Устойчивость и забота', desc: 'Когда глобальные сети дают сбой, мы доставляем. Наша сеть создана для амортизации потрясений и защиты ваших интересов.' }
     },
     why_ddnz: {
-      title: 'Почему Fortune 500 выбирают Heaven Born',
+      title: 'Почему компании выбирают Heaven Born',
       subtitle: 'Превосходство благодаря колоссальному опыту и надежным глобальным связям',
       label: 'НАШИ ПРЕИМУЩЕСТВА',
       strength: 'Абсолютные преимущества Heaven Born',
       industry: 'Отраслевой стандарт',
       f1: {
-        title: '29 лет опыта в качестве ведущего экспедитора',
-        desc: 'Мы эксперты по доставке любых видов грузов из Китая по всему миру, включая морские, авиа- и железнодорожные перевозки.',
+        title: 'Опыт перевозок с 1997 года',
+        desc: 'Планируем морские, авиа- и железнодорожные решения с учетом груза, маршрута, сроков и требований страны назначения.',
         cta: 'Наш кейс'
       },
       f2: {
-        title: 'Бесплатное складское хранение',
-        desc: 'Heaven Born предоставляет долгосрочное бесплатное хранение на складе. Мы обладаем огромным опытом в погрузке контейнеров, гарантируя сохранность груза при экономии средств.',
+        title: 'Собственные складские операции',
+        desc: 'Наши объекты в Китае поддерживают прием от поставщиков, консолидацию, хранение и подготовку к отправке.',
         cta: 'Подробнее'
       },
       f3: {
-        title: 'Надзор за погрузкой контейнеров',
-        desc: 'Мы ведем строгий надзор за процессом погрузки вашего товара в контейнеры. Вы получите полные фото- и видеоотчеты сразу по завершении.',
+        title: 'Контроль погрузки и отчеты',
+        desc: 'Координируем подсчет и погрузку груза, после завершения доступны фото- и видеоматериалы.',
         cta: 'Подробнее'
       },
       f4: {
-        title: 'Конкурентоспособные тарифы',
-        desc: 'Heaven Born предлагает лучшие цены от судоходных линий и авиакомпаний благодаря нашему объему оптовых грузоперевозок.',
+        title: 'Сравнение перевозчиков и маршрутов',
+        desc: 'Сравниваем расписания, вместимость и маршруты, чтобы сбалансировать стоимость, сроки и требования к грузу.',
         cta: 'Подробнее'
       },
       f5: {
-        title: 'Профессиональное таможенное оформление',
-        desc: 'Наша команда экспертов обеспечивает гладкую таможенную очистку. Мы точно классифицируем товары, ведем всю документацию и знаем таможенные тонкости Китая.',
+        title: 'Координация таможенных документов',
+        desc: 'Проверяем сведения о товаре и экспортные документы, а оформление в стране назначения координируем с местными партнерами.',
         cta: 'Подробнее'
       },
       f6: {
-        title: 'Поддержка 24/7 и бесплатный расчет',
-        desc: 'Наша команда работает 24 часа в сутки, 7 дней в неделю, чтобы оказать вам всестороннюю поддержку. Запросите бесплатный расчет или задайте вопрос.',
+        title: 'Расчет и последовательное сопровождение',
+        desc: 'Предоставляем параметры маршрута, детали расчета и обновления по отправке через одного ответственного специалиста.',
         cta: 'Подробнее'
       },
       edge: {
@@ -427,10 +427,10 @@ export const translations = {
     },
     facilities: {
       label: 'НАШИ ОБЪЕКТЫ',
-      title: 'ОПЕРАЦИОННОЕ ПРЕВОСХОДСТВО',
-      subtitle: 'Опыт наследия обеспечивает современную инфраструктуру',
-      guangzhou: { title: 'Гуанчжоу: Ваш командный центр', tag: '1. Стратегический хаб с 18-летней историей', desc: 'Наш собственный склад в Гуанчжоу (18 лет в собственности) — это идеальное решение для сборных грузов из Китая. Бесплатная консолидация, проверка качества и упаковка для импортеров.' },
-      systems: { title: 'Передовые системы для сложных грузов', tag: '2. Разработано для точности и защиты', desc: 'Оснащенные системами автоматической сортировки, мы обрабатываем то, что не могут обычные склады. Наш основной опыт — экспортная упаковка.' }
+      title: 'Операционное превосходство',
+      subtitle: 'Собственные мощности дают нам прямой контроль над приемом, консолидацией, инспекцией и подготовкой к экспорту.',
+      guangzhou: { title: 'Гуанчжоу: центр контроля в Китае', tag: '18 лет собственной эксплуатации', desc: 'Здесь мы координируем прием от поставщиков, консолидацию, сортировку, проверку качества и подготовку к загрузке контейнера.' },
+      systems: { title: 'Индивидуальная тара для сложных грузов', tag: 'Защита чувствительных грузов', desc: 'Паллеты и экспортные фанерные ящики защищают тяжелое оборудование, оптические приборы и другие ценные грузы.' }
     },
     get_a_quote: {
       title: 'ОТПРАВИТЬ ЗАПРОС (RFQ)',
@@ -539,7 +539,7 @@ export const translations = {
       desc: 'Наши стратегические альянсы с первоклассными судоходными и авиалиниями гарантируют, что Heaven Born предоставляет наиболее конкурентоспособные ставки и приоритетное выделение места для вашего важного груза.'
     },
     footer: {
-      slogan: '"29 лет превосходства и честности в логистике. Ваш стратегический партнер."',
+      slogan: '29 лет превосходства и честности в логистике. Ваш стратегический партнер.',
       hq: 'Штаб-квартира в Гуанчжоу',
       hq_addr: '6-й этаж, Зона C, Фаза II, Креативный парк International Unit, улица Huangshi, район Baiyun, Гуанчжоу, Китай',
       hk: 'Гонконгский офис',
@@ -554,7 +554,7 @@ export const translations = {
       privacy: 'Политика конфиденциальности',
       terms: 'Условия использования',
       experts: 'Специалисты по NEV и SCM',
-      rights: '© 2026 Heaven Born International Freight. Все права защищены. DDNZ Global является премиальным брендом управления поставками, управляемым Heaven Born.'
+      rights: '© 2026 Heaven Born International Freight Co., Ltd. Все права защищены. Торговую поддержку предоставляет DDNZ Global Trade Co., Ltd.'
     },
     routes: {
       centralAsia: {
@@ -589,20 +589,20 @@ export const translations = {
     },
     hero: {
       title1: 'Votre transitaire de premier choix en Chine',
-      title2: 'Pour des solutions logistiques mondiales.',
+      title2: 'Pour des solutions logistiques mondiales',
       subtitle: "Fondée en 1997, Heaven Born est votre partenaire de confiance pour le transit international de fret professionnel. Nous proposons du fret maritime fiable, du fret aérien rapide, du FBA Amazon fluide et une consolidation sécurisée en entrepôt, directement de la Chine vers le monde.",
       primary_cta: 'Calculer le fret et devis',
       secondary_cta: 'Télécharger la présentation',
       chat: 'Discuter sur WhatsApp',
-      kicker: '⚡ Excellence en logistique mondiale depuis 1997',
-      badge_forwarder: '🇨🇳 Transitaire de premier plan en Chine',
-      alibaba_badge: '✨ Sourcing sur Alibaba? Inspection & Consolidation',
+      kicker: 'Excellence en logistique mondiale depuis 1997',
+      badge_forwarder: 'Transitaire de premier plan en Chine',
+      alibaba_badge: 'Sourcing sur Alibaba? Inspection & Consolidation',
       alibaba_cta: 'Vous approvisionnez-vous sur Alibaba ? Nous offrons des solutions logistiques et d\'inspection intégrées.',
       services: {
-        sea: '⚓ Fret maritime (FCL/LCL)',
-        air: '✈️ Fret aérien',
-        fba: '📦 Expédition Amazon FBA',
-        warehouse: '🏬 Services d\'entrepôt en Chine'
+        sea: 'Fret maritime (FCL/LCL)',
+        air: 'Fret aérien',
+        fba: 'Expédition Amazon FBA',
+        warehouse: 'Services d\'entrepôt en Chine'
       },
       stats: {
         years: '29+',
@@ -614,9 +614,9 @@ export const translations = {
       }
     },
     services: {
-      label: 'SERVICES',
-      title: 'NOS SERVICES',
-      subtitle: 'Nous fournissons des solutions logistiques intégrées',
+      label: 'CE QUE NOUS FAISONS',
+      title: 'Solutions Logistiques Intégrées',
+      subtitle: 'Fret maritime, aérien, Amazon FBA et entreposage en Chine, organisés selon votre marchandise, votre itinéraire et vos exigences de livraison.',
       sea: {
         title: 'Solutions de Fret Maritime',
         highlights: [
@@ -671,39 +671,39 @@ export const translations = {
       resilience: { title: 'Résilience Inébranlable', desc: "Quand les réseaux mondiaux s'effondrent, nous livrons. Conçu pour absorber les chocs et protéger vos intérêts." }
     },
     why_ddnz: {
-      title: 'Pourquoi Fortune 500 choisit Heaven Born',
+      title: 'Pourquoi les entreprises choisissent Heaven Born',
       subtitle: 'Offrir l\'excellence grâce à notre expérience inégalée et notre connectivité mondiale',
       label: 'NOTRE FORCE',
       strength: 'Notre Force',
       industry: 'Standard de l\'industrie',
       f1: {
-        title: '29 Ans d\'Expertise en Fret International',
-        desc: 'Nous sommes des experts de l\'expédition de tous types de marchandises depuis la Chine vers le monde entier : maritime, aérien et ferroviaire.',
+        title: 'Expérience du fret depuis 1997',
+        desc: 'Nous planifions mer, air et rail selon la marchandise, la route, le délai et les exigences de destination.',
         cta: 'Étude de cas'
       },
       f2: {
-        title: 'Entreposage Gratuit',
-        desc: 'Heaven Born offre un service d\'entreposage gratuit de longue durée. Nous maîtrisons le chargement et la sécurisation pour optimiser vos coûts de transport.',
+        title: 'Entreposage exploité en propre',
+        desc: 'Nos installations en Chine assurent réception fournisseurs, groupage, stockage et préparation avant expédition.',
         cta: 'En savoir plus'
       },
       f3: {
-        title: 'Supervision du Chargement',
-        desc: 'We supervise loading your container from supplier. You will receive pictures and videos as soon as loading is complete.',
+        title: 'Supervision et preuves de chargement',
+        desc: 'Nous coordonnons comptage et chargement, avec photos et vidéos disponibles après réalisation.',
         cta: 'En savoir plus'
       },
       f4: {
-        title: 'Tarifs Ultra-Compétitifs',
-        desc: 'Heaven Born obtient des tarifs préférentiels auprès des compagnies maritimes et aériennes grâce à nos volumes d\'expédition importants.',
+        title: 'Comparaison des routes et transporteurs',
+        desc: 'Nous comparons horaires, capacités et routes afin d\'équilibrer coût, délai et contraintes de la marchandise.',
         cta: 'En savoir plus'
       },
       f5: {
-        title: 'Service de Dédouanement Professionnel',
-        desc: 'Notre équipe dédiée assure un dédouanement fluide et rapide. Nous gérons la classification de vos marchandises, l\'administration et suivons de près les politiques douanières chinoises.',
+        title: 'Coordination des documents douaniers',
+        desc: 'Nous vérifions informations produit et documents export, puis coordonnons le dédouanement avec des partenaires locaux qualifiés.',
         cta: 'En savoir plus'
       },
       f6: {
-        title: 'Support en Ligne 24/7 & Devis Gratuit',
-        desc: 'Notre équipe internationale est en ligne 24h/24 et 7j/7 pour répondre à toutes vos interrogations et vous fournir des devis personnalisés gratuits.',
+        title: 'Devis clair et suivi régulier',
+        desc: 'Un interlocuteur fournit hypothèses de route, détails du devis et mises à jour de l\'expédition.',
         cta: 'En savoir plus'
       },
       edge: {
@@ -717,10 +717,10 @@ export const translations = {
     },
     facilities: {
       label: 'NOS INFRASTRUCTURES',
-      title: 'EXCELLENCE OPÉRATIONNELLE',
-      subtitle: "L'expertise patrimoniale au service de l'infrastructure moderne",
-      guangzhou: { title: 'Guangzhou : Votre Centre de Contrôle', tag: '1. Hub Stratégique Détenu depuis 18 ans', desc: "Ce n'est pas un espace loué. C'est notre centre vital, un contrôle absolu." },
-      systems: { title: 'Systèmes Avancés de Fret', tag: '2. Ingénierie de Précision et Protection', desc: "Équipés de tris automatiques et spécialisés dans les solutions d'emballage pour l'export." }
+      title: 'Excellence opérationnelle',
+      subtitle: "Nos installations en propre permettent de contrôler réception, groupage, inspections et préparation à l'export.",
+      guangzhou: { title: 'Guangzhou : votre centre de contrôle en Chine', tag: 'Exploité en propre depuis 18 ans', desc: "Nous coordonnons réception fournisseurs, groupage, tri, contrôle qualité et préparation au chargement avant le départ de Chine." },
+      systems: { title: 'Caisses et emballages pour cargaisons complexes', tag: 'Protection des marchandises sensibles', desc: "Palettes et caisses en contreplaqué d'exportation protègent machines lourdes, équipements optiques et autres marchandises de valeur." }
     },
     get_a_quote: {
       title: 'ENVOYER UNE DEMANDE (RFQ)',
@@ -829,7 +829,7 @@ export const translations = {
       desc: 'Nos alliances stratégiques avec les meilleures compagnies maritimes et aériennes garantissent que Heaven Born offre les tarifs les plus compétitifs et des allocations d\'espace prioritaires pour votre cargaison critique.'
     },
     footer: {
-      slogan: '"29 ans d\'excellence et d\'intégrité logistique. Votre partenaire stratégique."',
+      slogan: '29 ans d\'excellence et d\'intégrité logistique. Votre partenaire stratégique.',
       hq: 'Siège de Guangzhou',
       hq_addr: '6e étage, Zone C, Phase II, Parc Créatif International Unit, Rue Huangshi, District de Baiyun, Guangzhou, Chine',
       hk: 'Bureau de Hong Kong',
@@ -844,7 +844,7 @@ export const translations = {
       privacy: 'Politique de confidentialité',
       terms: 'Conditions d\'utilisation',
       experts: 'Experts spécialisés NEV & SCM',
-      rights: '© 2026 Heaven Born International Freight. Tous droits réservés. DDNZ Global est une marque de gestion de chaîne d\'approvisionnement premium opérée par Heaven Born.'
+      rights: '© 2026 Heaven Born International Freight Co., Ltd. Tous droits réservés. Le soutien commercial est assuré par DDNZ Global Trade Co., Ltd.'
     },
     routes: {
       westAfrica: {
@@ -879,20 +879,20 @@ export const translations = {
     },
     hero: {
       title1: '您的中国顶尖货运代理合作伙伴',
-      title2: '提供全球卓越物流解决方案。',
-      subtitle: 'Heaven Born（天博国际货运）创立于1997年，是您值得信赖的专业国际货运代理合作伙伴。我们提供可靠的海运、高效的空运、无缝的亚马逊 FBA 以及安全的中国自营仓储拼箱服务，助力您的货物从中国安全送达全球。',
+      title2: '提供全球卓越物流解决方案',
+      subtitle: '华正邦泰国际货运代理有限公司（Heaven Born International Freight Co., Ltd）创立于1997年，是您值得信赖的专业国际货运代理合作伙伴。我们提供可靠的海运、高效的空运、无缝的亚马逊 FBA 以及安全的中国自营仓储拼箱服务，助力您的货物从中国安全送达全球。',
       primary_cta: '计算运费并获取报价',
       secondary_cta: '下载公司手册',
       chat: 'WhatsApp咨询',
-      kicker: '⚡ 始于1997年的卓越全球物流服务',
-      badge_forwarder: '🇨🇳 顶尖中国货运代理庄家',
-      alibaba_badge: '✨ 阿里巴巴采购？专属验货拼箱服务',
+      kicker: '始于1997年的卓越全球物流服务',
+      badge_forwarder: '顶尖中国货运代理',
+      alibaba_badge: '阿里巴巴采购？专属验货拼箱服务',
       alibaba_cta: '从阿里巴巴采购？我们提供一站式物流与验货解决方案。',
       services: {
-        sea: '⚓ 海运服务 (整柜/拼箱)',
-        air: '✈️ 极速空运',
-        fba: '📦 亚马逊 FBA 专线',
-        warehouse: '🏬 中国自营专属仓储'
+        sea: '海运服务（整柜/拼箱）',
+        air: '极速空运',
+        fba: '亚马逊 FBA 专线',
+        warehouse: '中国自营专属仓储'
       },
       stats: {
         years: '29+',
@@ -904,9 +904,9 @@ export const translations = {
       }
     },
     services: {
-      label: '服务',
-      title: '我们的业务',
-      subtitle: '我们提供集成的优质供应链及物流方案',
+      label: '核心业务',
+      title: '一体化国际物流解决方案',
+      subtitle: '围绕货物属性、运输路线与交付要求，统筹海运、空运、亚马逊 FBA 及中国始发端仓储服务。',
       sea: {
         title: '海运货运方案',
         highlights: [
@@ -953,7 +953,7 @@ export const translations = {
         clients: '全球活跃老客户',
         shipments: '已妥投集装箱量 (TEU)',
         projects: '战略承运项目案例',
-        desc: '“近三十年的信任重托。华正邦泰国际物流始于1997年，是复杂跨国供应链的坚强后盾。专属供应链业务线 DDNZ Global（由华正邦泰赋能）提供领先的一站式采购与物流解决方案，不负每一次长途相托。”'
+        desc: '“华正邦泰国际货运代理有限公司始于1997年，专注中国始发国际货运。贸易支持品牌大递诺展贸易有限公司协同提供验厂、验货、代出口、报关与退税服务。”'
       },
       heritage: { title: '29载全球资源传承', desc: '作为一家拥有近30年经验的供应链合作伙伴，华正邦泰国际物流始终致力于将传统工匠精神与现代高效物流完美融合。我们自1997年起深耕全球可靠而弹性的承运网络，协助多国企业共谱商贸篇章。' },
       nev: { title: '新能源与九类危险品行家', desc: '把握绿色转型，提供储能系统(ESS)及电动汽车(EV)的整套合规和高标准包装与出运保障。' },
@@ -961,39 +961,39 @@ export const translations = {
       resilience: { title: '长红交付与温情关怀', desc: '在危机时期，我们全力开辟紧急通道包机包列，以强大的物流底气为客户撑起安全屏障。' }
     },
     why_ddnz: {
-      title: '为什么500强选择华正邦泰',
+      title: '为什么选择华正邦泰',
       subtitle: '集深厚经验、自营实体和全球清关网路于一体的放心之选',
       label: '我们的优势',
       strength: '华正邦泰（Heaven Born）的绝对优势',
       industry: '相比同行劣势',
       f1: {
-        title: '29年专业货运代理专家',
-        desc: '我们是将任何类型的货物从中国运往世界的专家。包括海运、空运和铁路运输。',
+        title: '始于1997年的货运经验',
+        desc: '根据货物、航线、时效与目的国要求，规划海运、空运和铁路运输方案。',
         cta: '案例研究'
       },
       f2: {
-        title: '免费自营仓储',
-        desc: '华正邦泰提供长期免费仓储服务，我们在装柜及集拼装载方面拥有丰富经验，在为您节省运输资金的同时确保您的货物安全。',
+        title: '自营始发端仓储',
+        desc: '中国端自营设施支持供应商收货、集货、仓储与出运前准备。',
         cta: '查看案例研究'
       },
       f3: {
-        title: '专业装柜监装服务',
-        desc: '我们在您的供应商装货进入集装箱时提供现场监装和清点。装载完成后，您将即时收到高清照片和视频反馈。',
+        title: '装柜监督与影像记录',
+        desc: '协调货物清点与装柜，完成后可提供照片及视频记录。',
         cta: '查看案例研究'
       },
       f4: {
-        title: '极具竞争力的大庄约价',
-        desc: '由于我们拥有庞大的货运量，华正邦泰可以直接从各大船东和航空公司获得极具价格竞争力的庄家约价。',
+        title: '承运人与航线方案比选',
+        desc: '比较可行班期、舱位与路径，在成本、时效和货物要求之间取得平衡。',
         cta: '查看案例研究'
       },
       f5: {
-        title: '双清包税与专业海外清关',
-        desc: '我们的专业团队确保国内外口岸清关流程顺畅安全。提供精准的海关HS商品编码归类，熟稔进出口关税政策，多国口岸通关无忧。',
+        title: '报关文件与目的地清关协同',
+        desc: '审核商品资料与出口文件，并与合格的当地合作伙伴协调目的地清关。',
         cta: '查看案例研究'
       },
       f6: {
-        title: '24/7 全天候在线支持与免费估价',
-        desc: '我们的国际运营团队全天候 24/7 在线，为您解答货运难题，即时提供透明、合理的免费物流运费报价及路线规划。',
+        title: '清晰报价与持续跟进',
+        desc: '由固定联系人说明航线假设、报价明细，并持续更新货物进度。',
         cta: '查看案例研究'
       },
       edge: {
@@ -1008,9 +1008,9 @@ export const translations = {
     facilities: {
       label: '我们的自营实体',
       title: '实打实的卓越物流保障',
-      subtitle: '以自置实体资产与资深包装，超越轻资产货代拼凑的局限',
-      guangzhou: { title: '广州仓：您的核心主控集货基地', tag: '1. 18年精心运营，绝非短期租赁仓', desc: '本仓为公司成熟自营核心，实现百万货品集货合装。全流程专人质检与标准化堆存，铸就您的安全防线。' },
-      systems: { title: '精密工业件定制木箱与包装支持', tag: '2. 专注守护高价值与敏感货品', desc: '配备定制卡板、高承重定制胶合板木箱，精细包装重型机械及光学敏感仪器，稳妥应对越洋颠簸。' }
+      subtitle: '依托自营实体设施，直接掌控收货、集货、验货衔接与出口前准备',
+      guangzhou: { title: '广州仓：中国始发端主控基地', tag: '自营运作 18 年', desc: '广州自营仓承担供应商收货、集货、分拣、质检与装柜前准备，减少多供应商拼货过程中的信息与操作断点。' },
+      systems: { title: '复杂货物定制包装支持', tag: '保护高价值与敏感货物', desc: '定制卡板与出口级胶合板木箱，可用于重型机械、光学设备及其他高价值货物的国际运输保护。' }
     },
     get_a_quote: {
       title: '提交正式 RFQ',
@@ -1119,7 +1119,7 @@ export const translations = {
       desc: '我们以深厚资质和香港、大湾区核心通道，与一众巨头保持极佳运价合作，保障不抛货、稳定抢舱。'
     },
     footer: {
-      slogan: '“华正邦泰国际物流 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。”',
+      slogan: '华正邦泰国际物流 29年深耕全球供应链重任，我们不负每一次长途相托。用中国实力托举全球未来。',
       hq: '广州自营总部',
       hq_addr: '广东省广州市白云区黄石街道国际单位创意园二期-C区6楼',
       hk: '香港核心金融办公室',
@@ -1134,7 +1134,162 @@ export const translations = {
       privacy: '保障隐私声明条款',
       terms: '一般承运基本商业条款',
       experts: '新能源与合规清关资深专家团',
-      rights: '© 2026 华正邦泰国际物流（Heaven Born International Freight）。保留所有权利。DDNZ Global 是由华正邦泰自营运营的专属供应链管理服务品牌。'
+      rights: '© 2026 华正邦泰国际货运代理有限公司（Heaven Born International Freight Co., Ltd）。保留所有权利。贸易支持服务由大递诺展贸易有限公司提供。'
     }
   }
 };
+
+// Spanish and Arabic use the complete English object as a safe base, then replace
+// the conversion-critical interface and homepage copy with native-language text.
+// This prevents untranslated keys from blanking the page while localization expands.
+const localizedTranslations = translations as Record<string, any>;
+
+localizedTranslations.es = {
+  ...translations.en,
+  nav: {
+    ...translations.en.nav,
+    who_we_are: 'QUIÉNES SOMOS', what_we_do: 'QUÉ HACEMOS', why_ddnz: 'POR QUÉ ELEGIRNOS',
+    services: 'SERVICIOS', shipping_by_region: 'ENVÍOS POR REGIÓN', insights: 'ACTUALIDAD', get_a_quote: 'SOLICITAR COTIZACIÓN',
+  },
+  hero: {
+    ...translations.en.hero,
+    title1: 'Su agente de carga líder en China', title2: 'para soluciones logísticas globales',
+    subtitle: 'Fundada en 1997, Heaven Born es su socio de confianza para el transporte internacional de carga. Ofrecemos flete marítimo fiable, carga aérea ágil, Amazon FBA y consolidación segura en almacén desde China hacia todo el mundo.',
+    primary_cta: 'Calcular flete y solicitar cotización', chat: 'Consultar por WhatsApp',
+    badge_forwarder: 'Agente de carga líder en China', alibaba_badge: '¿Compra en Alibaba? Inspeccionamos y consolidamos',
+    services: { sea: 'Flete marítimo (FCL/LCL)', air: 'Carga aérea', fba: 'Envíos Amazon FBA', warehouse: 'Servicios de almacén en China' },
+  },
+  services: {
+    ...translations.en.services,
+    label: 'QUÉ HACEMOS', title: 'Soluciones Logísticas Integradas', subtitle: 'Transporte marítimo y aéreo, Amazon FBA y almacén en China, coordinados según su carga, ruta y requisitos de entrega.',
+    sea: { ...translations.en.services.sea, title: 'Soluciones de flete marítimo', desc: 'Flete marítimo confiable con itinerarios previsibles y opciones puerta a puerta rentables en todo el mundo.' },
+    air: { ...translations.en.services.air, title: 'Soluciones de carga aérea', desc: 'Transporte aéreo rápido y flexible para cumplir plazos exigentes con gestión aduanera fluida.' },
+    fba: { ...translations.en.services.fba, title: 'Logística Amazon FBA' },
+    warehouse: { ...translations.en.services.warehouse, title: 'Servicios de almacén en China' },
+  },
+  who_we_are: { ...translations.en.who_we_are, label: 'SOBRE NOSOTROS', title: 'QUIÉNES SOMOS', subtitle: 'Un socio de carga internacional profesional desde China' },
+  get_a_quote: { ...translations.en.get_a_quote, estimatorTitle: 'Obtenga una cotización de flete', submitQuote: 'Solicitar cotización', submitting: 'Enviando...', successHeading: 'Solicitud recibida', successText: 'Nuestro equipo se pondrá en contacto con usted en 24 horas.' },
+  footer: {
+    ...translations.en.footer,
+    slogan: 'Logística internacional fiable desde China para cadenas de suministro globales.', hq: 'Sede de Guangzhou', hk: 'Oficina de Hong Kong', hours: 'Soporte 24/7',
+    compliance: 'Cumplimiento y legal', privacy: 'Política de privacidad', terms: 'Términos de servicio', experts: 'Expertos en logística y cadena de suministro',
+    rights: '© 2026 Heaven Born International Freight Co., Ltd. Todos los derechos reservados. El apoyo comercial es prestado por DDNZ Global Trade Co., Ltd.',
+  },
+};
+
+Object.assign(localizedTranslations.es, {
+  services: {
+    ...localizedTranslations.es.services,
+    sea: { ...localizedTranslations.es.services.sea, highlights: ['Agencia de aduanas autorizada', 'Consolidación FCL y LCL', 'Contratos directos con navieras'] },
+    air: { ...localizedTranslations.es.services.air, highlights: ['Carga aérea urgente', 'Cobertura de aeropuertos global', 'Opciones exprés y económica'] },
+    fba: { ...localizedTranslations.es.services.fba, highlights: ['Etiquetado y preparación FNSKU', 'Reserva de cita incluida', 'Entrega directa en almacén'] },
+    warehouse: { ...localizedTranslations.es.services.warehouse, highlights: ['Instalación segura de más de 2.000 m²', 'Inventario WMS en tiempo real', 'Kitting y cross-docking'] },
+  },
+  who_we_are: {
+    ...localizedTranslations.es.who_we_are,
+    stats: { years: 'Años de actividad', clients: 'Clientes satisfechos', shipments: 'TEU enviados', projects: 'Proyectos estratégicos', desc: 'Casi tres décadas de integridad y excelencia en cadenas de suministro complejas.' },
+    heritage: { title: '29 años de presencia global', desc: 'Desde 1997, Heaven Born ha pasado de conectar el comercio a dominar redes logísticas internacionales.' },
+    nev: { title: 'Especialistas en mercancías peligrosas y nueva energía', desc: 'Soluciones a medida y orientadas al cumplimiento para ESS y vehículos eléctricos.' },
+    infra: { title: 'Cadena de suministro y comercio integrados', desc: 'Nuestros centros de almacén y la puerta financiera de Hong Kong aportan control, liquidaciones seguras y operaciones globales fluidas.' },
+    resilience: { title: 'Resiliencia y atención constantes', desc: 'Cuando las redes globales fallan, respondemos: nuestra red absorbe disrupciones y protege sus intereses comerciales.' },
+  },
+  why_ddnz: {
+    ...translations.en.why_ddnz,
+    title: 'Por qué las empresas globales eligen Heaven Born', subtitle: 'Excelencia basada en experiencia y conectividad global', label: 'NUESTRA FORTALEZA', strength: 'Nuestra fortaleza', industry: 'Estándar del sector',
+    f1: { title: 'Experiencia en transporte desde 1997', desc: 'Planificamos mar, aire y ferrocarril según la carga, la ruta, el plazo y los requisitos del destino.', cta: 'Ver caso' },
+    f2: { title: 'Almacén propio en origen', desc: 'Nuestras instalaciones en China apoyan recepción, consolidación, almacenamiento y preparación antes del despacho.', cta: 'Ver caso' },
+    f3: { title: 'Supervisión y registro de carga', desc: 'Coordinamos conteo y carga del contenedor, con fotos y vídeos disponibles al finalizar.', cta: 'Ver caso' },
+    f4: { title: 'Comparación de rutas y transportistas', desc: 'Comparamos horarios, capacidad y rutas para equilibrar coste, plazo y requisitos de la carga.', cta: 'Ver caso' },
+    f5: { title: 'Coordinación de documentos aduaneros', desc: 'Revisamos datos del producto y documentos de exportación, y coordinamos el destino con socios locales cualificados.', cta: 'Ver caso' },
+    f6: { title: 'Cotización clara y seguimiento', desc: 'Un contacto responsable explica la ruta, el detalle de la cotización y las actualizaciones del envío.', cta: 'Ver caso' },
+  },
+  facilities: {
+    ...translations.en.facilities,
+    label: 'NUESTRAS INSTALACIONES', title: 'Excelencia operativa', subtitle: 'Experiencia consolidada e infraestructura moderna',
+    guangzhou: { title: 'Guangzhou: su centro de control en China', tag: 'Operación propia durante 18 años', desc: 'Coordinamos recepción de proveedores, consolidación, clasificación, controles de calidad y preparación para la carga del contenedor.' },
+    systems: { title: 'Embalaje a medida para carga compleja', tag: 'Protección para mercancía sensible', desc: 'Palés y cajas de madera contrachapada de exportación protegen maquinaria, equipos ópticos y otras mercancías de alto valor.' },
+  },
+  insights: {
+    ...translations.en.insights,
+    title: 'ANÁLISIS LOGÍSTICOS Y ACTUALIZACIONES DEL COMERCIO GLOBAL', subtitle: 'Tendencias recientes y casos prácticos de transporte internacional.', label: 'ANÁLISIS', readMore: 'Leer más',
+    adviceTitle: '¿Necesita asesoramiento personalizado?', adviceSubtitle: 'Nuestros expertos pueden analizar sus necesidades logísticas.', contactExpert: 'Consultar con un experto',
+    hubLabel: 'ANÁLISIS GLOBALES DE DDNZ', hubTitle: 'Noticias y análisis del sector', hubSubtitle: 'Guías locales, tiempos de tránsito, cambios normativos e inteligencia de cadena de suministro desde Asia.',
+    showAll: 'Ver todas las categorías', deep_dive_read: 'Análisis en profundidad', read_time: '4 min', no_articles: 'No se encontraron artículos', no_articles_desc: 'Aún no hay publicaciones para esta categoría.',
+  },
+  partners: { title: 'La confianza de líderes globales', subtitle: 'Integrados con las principales navieras y redes del mundo', desc: 'Nuestras alianzas con navieras y aerolíneas permiten a Heaven Born International Freight obtener tarifas competitivas y espacio prioritario para su carga crítica.' },
+});
+
+localizedTranslations.ar = {
+  ...translations.en,
+  nav: {
+    ...translations.en.nav,
+    who_we_are: 'من نحن', what_we_do: 'ماذا نقدم', why_ddnz: 'لماذا نحن', services: 'الخدمات',
+    shipping_by_region: 'الشحن حسب المنطقة', insights: 'المعرفة', get_a_quote: 'اطلب عرض سعر',
+  },
+  hero: {
+    ...translations.en.hero,
+    title1: 'وكيل الشحن الموثوق من الصين', title2: 'لحلول لوجستية عالمية',
+    subtitle: 'تأسست Heaven Born عام 1997، وهي شريككم الموثوق للشحن الدولي. نقدم الشحن البحري والجوي وخدمات Amazon FBA وتجميع البضائع الآمن من الصين إلى جميع أنحاء العالم.',
+    primary_cta: 'احسب الشحن واحصل على عرض سعر', chat: 'تواصل عبر واتساب',
+    badge_forwarder: 'وكيل شحن رائد في الصين', alibaba_badge: 'هل تشتري من علي بابا؟ نفحص ونجمع بضائعك',
+    services: { sea: 'الشحن البحري (FCL/LCL)', air: 'الشحن الجوي', fba: 'شحن Amazon FBA', warehouse: 'خدمات المستودعات في الصين' },
+  },
+  services: {
+    ...translations.en.services,
+    label: 'ماذا نقدم', title: 'حلول لوجستية متكاملة', subtitle: 'ننسق الشحن البحري والجوي وخدمات Amazon FBA والمستودعات في الصين وفق نوع البضاعة والمسار ومتطلبات التسليم.',
+    sea: { ...translations.en.services.sea, title: 'حلول الشحن البحري', desc: 'شحن بحري موثوق بمواعيد متوقعة وخيارات اقتصادية من الباب إلى الباب حول العالم.' },
+    air: { ...translations.en.services.air, title: 'حلول الشحن الجوي', desc: 'نقل جوي سريع ومرن للمواعيد الحساسة مع إجراءات جمركية سلسة.' },
+    fba: { ...translations.en.services.fba, title: 'خدمات Amazon FBA' },
+    warehouse: { ...translations.en.services.warehouse, title: 'خدمات المستودعات في الصين' },
+  },
+  who_we_are: { ...translations.en.who_we_are, label: 'عن الشركة', title: 'من نحن', subtitle: 'شريك احترافي للشحن الدولي من الصين' },
+  get_a_quote: { ...translations.en.get_a_quote, estimatorTitle: 'احصل على عرض سعر للشحن', submitQuote: 'اطلب عرض سعر', submitting: 'جارٍ الإرسال...', successHeading: 'تم استلام طلبك', successText: 'سيتواصل فريقنا معكم خلال 24 ساعة.' },
+  footer: {
+    ...translations.en.footer,
+    slogan: 'خدمات شحن دولي موثوقة من الصين لسلاسل التوريد العالمية.', hq: 'مقر قوانغتشو', hk: 'مكتب هونغ كونغ', hours: 'دعم على مدار الساعة',
+    compliance: 'الامتثال والشؤون القانونية', privacy: 'سياسة الخصوصية', terms: 'شروط الخدمة', experts: 'خبراء اللوجستيات وسلسلة التوريد',
+    rights: '© 2026 Heaven Born International Freight Co., Ltd. جميع الحقوق محفوظة. تقدم DDNZ Global Trade Co., Ltd خدمات الدعم التجاري.',
+  },
+};
+
+Object.assign(localizedTranslations.ar, {
+  services: {
+    ...localizedTranslations.ar.services,
+    sea: { ...localizedTranslations.ar.services.sea, highlights: ['تخليص جمركي مرخص', 'تجميع FCL وLCL', 'عقود مباشرة مع خطوط الملاحة'] },
+    air: { ...localizedTranslations.ar.services.air, highlights: ['شحن جوي حساس للوقت', 'تغطية مطارات عالمية', 'خيارات سريعة واقتصادية'] },
+    fba: { ...localizedTranslations.ar.services.fba, highlights: ['وسم وتجهيز FNSKU', 'حجز الموعد مشمول', 'تسليم مباشر للمستودع'] },
+    warehouse: { ...localizedTranslations.ar.services.warehouse, highlights: ['منشأة آمنة تزيد على 2,000 م²', 'مخزون WMS لحظي', 'تجهيز وتجميع وشحن متقاطع'] },
+  },
+  who_we_are: {
+    ...localizedTranslations.ar.who_we_are,
+    stats: { years: 'سنوات في العمل', clients: 'عملاء راضون', shipments: 'وحدات TEU مشحونة', projects: 'مشاريع استراتيجية', desc: 'ما يقارب ثلاثة عقود من النزاهة والتميز في إدارة سلاسل التوريد المعقدة.' },
+    heritage: { title: '29 عاماً من الحضور العالمي', desc: 'منذ 1997 تطورت Heaven Born من رائدة في ربط التجارة إلى خبيرة في شبكات اللوجستيات العالمية.' },
+    nev: { title: 'متخصصون في البضائع الخطرة والطاقة الجديدة', desc: 'حلول مخصصة قائمة على الامتثال لأنظمة تخزين الطاقة والمركبات الكهربائية.' },
+    infra: { title: 'سلسلة توريد وتجارة متكاملتان', desc: 'توفر مراكز التخزين الخاصة بنا وبوابة هونغ كونغ المالية تحكماً وهيكلياً وتسويات آمنة وعمليات عالمية سلسة.' },
+    resilience: { title: 'مرونة وعناية لا تتزعزع', desc: 'عندما تتعثر الشبكات العالمية، ننجز العمل: شبكتنا تمتص الاضطرابات وتحمي مصالح أعمالكم.' },
+  },
+  why_ddnz: {
+    ...translations.en.why_ddnz,
+    title: 'لماذا تختار الشركات العالمية Heaven Born', subtitle: 'تميز تشغيلي مبني على الخبرة والارتباط العالمي', label: 'نقاط قوتنا', strength: 'نقاط قوتنا', industry: 'معيار القطاع',
+    f1: { title: 'خبرة في الشحن منذ عام 1997', desc: 'نخطط حلول البحر والجو والسكك الحديدية وفق البضائع والمسار والوقت ومتطلبات الوجهة.', cta: 'عرض الحالة' },
+    f2: { title: 'مستودعات منشأ مُدارة ذاتياً', desc: 'تدعم منشآتنا في الصين الاستلام والتجميع والتخزين والإعداد قبل الشحن.', cta: 'عرض الحالة' },
+    f3: { title: 'الإشراف على التحميل وتوثيقه', desc: 'ننسق العد والتحميل، مع إتاحة الصور والفيديو بعد الانتهاء.', cta: 'عرض الحالة' },
+    f4: { title: 'مقارنة الناقلين والمسارات', desc: 'نقارن الجداول والسعة والمسارات لتحقيق توازن بين التكلفة والوقت ومتطلبات البضائع.', cta: 'عرض الحالة' },
+    f5: { title: 'تنسيق المستندات الجمركية', desc: 'نراجع بيانات المنتج ووثائق التصدير، ثم ننسق التخليص في الوجهة مع شركاء محليين مؤهلين.', cta: 'عرض الحالة' },
+    f6: { title: 'عرض واضح ومتابعة مستمرة', desc: 'يوضح مسؤول اتصال واحد افتراضات المسار وتفاصيل العرض وتحديثات الشحنة.', cta: 'عرض الحالة' },
+  },
+  facilities: {
+    ...translations.en.facilities,
+    label: 'منشآتنا', title: 'تميز تشغيلي', subtitle: 'خبرة راسخة وبنية تحتية حديثة',
+    guangzhou: { title: 'قوانغتشو: مركز التحكم في عمليات المنشأ', tag: 'تشغيل ذاتي لمدة 18 عاماً', desc: 'ننسق استلام بضائع الموردين وتجميعها وفرزها وفحص جودتها وتجهيزها لتحميل الحاويات.' },
+    systems: { title: 'تغليف مخصص للبضائع المعقدة', tag: 'حماية البضائع الحساسة', desc: 'تحمي المنصات والصناديق المصنوعة من الخشب الرقائقي المعدات الثقيلة والأجهزة البصرية وغيرها من البضائع عالية القيمة.' },
+  },
+  insights: {
+    ...translations.en.insights,
+    title: 'رؤى لوجستية وتحديثات التجارة العالمية', subtitle: 'أحدث الاتجاهات ودراسات الحالة العملية في الشحن الدولي.', label: 'رؤى', readMore: 'اقرأ المزيد',
+    adviceTitle: 'هل تحتاج إلى استشارة مخصصة؟', adviceSubtitle: 'خبراؤنا مستعدون لتحليل متطلباتكم اللوجستية.', contactExpert: 'تواصل مع خبير',
+    hubLabel: 'رؤى DDNZ العالمية', hubTitle: 'أخبار ورؤى القطاع', hubSubtitle: 'إرشادات محلية ومواعيد شحن وتغييرات تنظيمية ومعلومات سلسلة التوريد من آسيا.',
+    showAll: 'عرض جميع الفئات', deep_dive_read: 'تحليل متعمق', read_time: '4 دقائق', no_articles: 'لا توجد مقالات', no_articles_desc: 'لا توجد منشورات لهذه الفئة حتى الآن.',
+  },
+  partners: { title: 'موثوق به من قادة عالميين', subtitle: 'تكامل سلس مع كبرى خطوط الملاحة والشبكات العالمية', desc: 'تساعد تحالفاتنا مع خطوط الملاحة وشركات الطيران Heaven Born International Freight على تأمين أسعار تنافسية ومساحة أولوية لشحناتكم المهمة.' },
+});

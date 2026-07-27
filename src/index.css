@@ -6,8 +6,63 @@
   --font-sans: "Inter", system-ui, sans-serif;
 }
 
+:root {
+  --hb-navy: #10283d;
+  --hb-navy-deep: #0b1c2c;
+  --hb-blue: #246b93;
+  --hb-amber: #d97706;
+  --hb-amber-strong: #b45309;
+  --hb-surface: #f5f8fa;
+  --hb-ink: #152536;
+  --hb-muted: #566b7f;
+  --hb-line: #dbe5eb;
+  --hb-radius: 0.875rem;
+}
+
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+  color: var(--hb-ink);
+  background: var(--hb-surface);
+}
+
+:lang(ar) {
+  font-family: 'Noto Sans Arabic', 'Tahoma', sans-serif;
+}
+
+/* Shared B2B surface tokens. Keep the action colour reserved for real conversion actions. */
+.hb-page-shell {
+  background: var(--hb-surface);
+}
+
+.hb-region-shell {
+  background:
+    radial-gradient(circle at 82% 8%, rgba(36, 107, 147, 0.18), transparent 34rem),
+    linear-gradient(180deg, #071a33 0%, #0b2a4a 58%, #071a33 100%);
+  color: #f8fafc;
+}
+
+.hb-section-title {
+  color: var(--hb-ink);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+}
+
+.hb-action {
+  background: var(--hb-amber);
+  color: #fff;
+}
+
+.hb-action:hover {
+  background: var(--hb-amber-strong);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
 }
 
 html {
@@ -35,7 +90,7 @@ html {
 }
 
 .dark-form-container select option {
-  background-color: #0A051B !important;
+  background-color: #071a33 !important;
   color: #ffffff !important;
 }
 
@@ -104,15 +159,15 @@ html {
 }
 .dark-form-container button.bg-white:hover {
   background-color: rgba(255, 255, 255, 0.08) !important;
-  border-color: rgba(167, 139, 250, 0.4) !important;
+  border-color: rgba(217, 119, 6, 0.55) !important;
   color: #ffffff !important;
 }
 
-/* active tag buttons (bg-purple-50) */
+/* The quote component still emits legacy utility names; remap them to the Heaven Born palette. */
 .dark-form-container .bg-purple-50 {
-  background-color: rgba(139, 92, 246, 0.15) !important;
-  border-color: #a78bfa !important;
-  color: #c084fc !important;
+  background-color: rgba(217, 119, 6, 0.16) !important;
+  border-color: #d97706 !important;
+  color: #fbbf24 !important;
 }
 
 /* Service Mode Icons / Active text neon glow adjustments */
@@ -134,21 +189,21 @@ html {
 
 /* Map active color text and backgrounds */
 .dark-form-container .text-\[\#4B27B1\] {
-  color: #a78bfa !important;
+  color: #fbbf24 !important;
 }
 .dark-form-container .bg-\[\#4B27B1\] {
-  background-color: #6366f1 !important;
+  background-color: #d97706 !important;
 }
 
 /* Step 4: Summary Box and contents styling */
 .dark-form-container .bg-gradient-to-r.from-purple-50 {
-  background: linear-gradient(to right, rgba(139, 92, 246, 0.12), rgba(249, 115, 22, 0.06)) !important;
-  border-color: rgba(139, 92, 246, 0.2) !important;
+  background: linear-gradient(to right, rgba(36, 107, 147, 0.18), rgba(217, 119, 6, 0.1)) !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
 }
 
 .dark-form-container .bg-white.border-purple-100 {
   background-color: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(139, 92, 246, 0.25) !important;
+  border-color: rgba(217, 119, 6, 0.3) !important;
   color: #f1f5f9 !important;
 }
 
@@ -160,4 +215,3 @@ html {
   background-color: rgba(255, 255, 255, 0.03) !important;
   border-color: rgba(255, 255, 255, 0.08) !important;
 }
-

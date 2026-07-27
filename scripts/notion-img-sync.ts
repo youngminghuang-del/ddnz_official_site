@@ -62,6 +62,13 @@ export async function downloadNotionImage(notionImageUrl: string, slug: string, 
     const localPath = path.join(LOCAL_IMAGE_DIR, fileName);
     const webReferencePath = `/images/posts/${fileName}`;
 
+    // Notion file URLs expire, but once the image has been copied into the
+    // static site it is immutable for this build. Reusing it prevents every
+    // content sync from downloading the same asset again.
+    if (fs.existsSync(localPath)) {
+      return webReferencePath;
+    }
+
     console.log(`Downloading Notion image: ${fileName}`);
     const response = await fetch(notionImageUrl);
     if (!response.ok) {

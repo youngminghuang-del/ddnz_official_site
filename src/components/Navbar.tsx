@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Menu, X, Globe, ChevronDown } from 'lucide-react';
+import { Menu, X, Globe, ChevronDown, MapPin } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn, trackEvent } from '../lib/utils';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -27,33 +27,36 @@ const regionColumns = [
   {
     key: 'region_middle_east',
     countries: [
-      { en: 'Saudi Arabia', zh: '沙特阿拉伯', ru: 'Саудовская Аравия', fr: 'Arabie Saoudite' },
-      { en: 'UAE', zh: '阿联酋', ru: 'ОАЭ', fr: 'Émirats Arabes Unis' },
-      { en: 'Kuwait', zh: '科威特', ru: 'Кувейт', fr: 'Koweït' },
+      { en: 'Saudi Arabia', zh: '沙特阿拉伯', ru: 'Саудовская Аравия', fr: 'Arabie Saoudite', es: 'Arabia Saudí', ar: 'السعودية' },
+      { en: 'UAE', zh: '阿联酋', ru: 'ОАЭ', fr: 'Émirats Arabes Unis', es: 'Emiratos Árabes Unidos', ar: 'الإمارات' },
+      { en: 'Kuwait', zh: '科威特', ru: 'Кувейт', fr: 'Koweït', es: 'Kuwait', ar: 'الكويت' },
+      { en: 'Qatar', zh: '卡塔尔', ru: 'Катар', fr: 'Qatar', es: 'Catar', ar: 'قطر' },
+      { en: 'Oman', zh: '阿曼', ru: 'Оман', fr: 'Oman', es: 'Omán', ar: 'عُمان' },
+      { en: 'Bahrain', zh: '巴林', ru: 'Бахрейн', fr: 'Bahreïn', es: 'Baréin', ar: 'البحرين' },
     ]
   },
   {
     key: 'region_central_asia',
     countries: [
-      { en: 'Kazakhstan', zh: '哈萨克斯坦', ru: 'Казахстан', fr: 'Kazakhstan' },
-      { en: 'Uzbekistan', zh: '乌兹别克斯坦', ru: 'Узбекистан', fr: 'Ouzbékistan' },
+      { en: 'Kazakhstan', zh: '哈萨克斯坦', ru: 'Казахстан', fr: 'Kazakhstan', es: 'Kazajistán', ar: 'كازاخستان' },
+      { en: 'Uzbekistan', zh: '乌兹别克斯坦', ru: 'Узбекистан', fr: 'Ouzbékistan', es: 'Uzbekistán', ar: 'أوزبكستان' },
     ]
   },
   {
     key: 'region_west_africa',
     countries: [
-      { en: 'Nigeria', zh: '尼日利亚', ru: 'Нигерия', fr: 'Nigéria' },
-      { en: 'Ghana', zh: '加纳', ru: 'Гана', fr: 'Ghana' },
+      { en: 'Nigeria', zh: '尼日利亚', ru: 'Нигерия', fr: 'Nigéria', es: 'Nigeria', ar: 'نيجيريا' },
+      { en: 'Ghana', zh: '加纳', ru: 'Гана', fr: 'Ghana', es: 'Ghana', ar: 'غانا' },
     ]
   },
   {
     key: 'region_latin_america',
     countries: [
-      { en: 'Brazil', zh: '巴西', ru: 'Бразилия', fr: 'Brésil' },
-      { en: 'Mexico', zh: '墨西哥', ru: 'Мексика', fr: 'Mexique' },
-      { en: 'Argentina', zh: '阿根廷', ru: 'Аргентина', fr: 'Argentine' },
-      { en: 'Chile', zh: '智利', ru: 'Чили', fr: 'Chili' },
-      { en: 'Peru', zh: '秘鲁', ru: 'Перу', fr: 'Pérou' },
+      { en: 'Brazil', zh: '巴西', ru: 'Бразилия', fr: 'Brésil', es: 'Brasil', ar: 'البرازيل' },
+      { en: 'Mexico', zh: '墨西哥', ru: 'Мексика', fr: 'Mexique', es: 'México', ar: 'المكسيك' },
+      { en: 'Argentina', zh: '阿根廷', ru: 'Аргентина', fr: 'Argentine', es: 'Argentina', ar: 'الأرجنتين' },
+      { en: 'Chile', zh: '智利', ru: 'Чили', fr: 'Chili', es: 'Chile', ar: 'تشيلي' },
+      { en: 'Peru', zh: '秘鲁', ru: 'Перу', fr: 'Pérou', es: 'Perú', ar: 'بيرو' },
     ]
   }
 ];
@@ -82,14 +85,19 @@ export default function Navbar() {
   // Helper to resolve localized URL path
   const getLocalizedPath = (path: string) => {
     if (path.startsWith('/#')) {
-      if (language === 'zh') return `/zh-cn/${path.slice(1)}`;
-      if (language === 'ru') return `/ru/${path.slice(1)}`;
-      if (language === 'fr') return `/fr/${path.slice(1)}`;
+      const hash = path.slice(1);
+      if (language === 'zh') return `/zh-cn${hash}`;
+      if (language === 'ru') return `/ru${hash}`;
+      if (language === 'fr') return `/fr${hash}`;
+      if (language === 'es') return `/es${hash}`;
+      if (language === 'ar') return `/ar${hash}`;
       return path;
     }
     if (language === 'zh') return `/zh-cn${path === '/' ? '' : path}`;
     if (language === 'ru') return `/ru${path === '/' ? '' : path}`;
     if (language === 'fr') return `/fr${path === '/' ? '' : path}`;
+    if (language === 'es') return `/es${path === '/' ? '' : path}`;
+    if (language === 'ar') return `/ar${path === '/' ? '' : path}`;
     return path;
   };
 
@@ -108,6 +116,10 @@ export default function Navbar() {
       currentPath = currentPath.slice(3);
     } else if (currentPath.startsWith('/fr')) {
       currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/es')) {
+      currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/ar')) {
+      currentPath = currentPath.slice(3);
     }
 
     if (currentPath === '') currentPath = '/';
@@ -120,6 +132,10 @@ export default function Navbar() {
       targetPath = `/ru${currentPath === '/' ? '' : currentPath}`;
     } else if (lang === 'fr') {
       targetPath = `/fr${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'es') {
+      targetPath = `/es${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'ar') {
+      targetPath = `/ar${currentPath === '/' ? '' : currentPath}`;
     } else {
       targetPath = currentPath;
     }
@@ -131,7 +147,9 @@ export default function Navbar() {
   const currentLangLabel = 
     language === 'en' ? 'EN' : 
     language === 'zh' ? 'ZH' : 
-    language === 'ru' ? 'RU' : 'FR';
+    language === 'ru' ? 'RU' :
+    language === 'fr' ? 'FR' :
+    language === 'es' ? 'ES' : 'AR';
 
   return (
     <nav className={cn(
@@ -146,7 +164,7 @@ export default function Navbar() {
             <Link to={getLocalizedPath('/')} className="flex items-center gap-3 sm:gap-4 group">
               <img 
                 src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/heaven_born_logo_wing_transparent.png" 
-                alt="Heaven Born International Freight Logo" 
+                alt="Heaven Born International Freight Co., Ltd logo"
                 loading="lazy"
                 className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
               />
@@ -166,7 +184,7 @@ export default function Navbar() {
                       "text-[8px] sm:text-[9px] md:text-[8px] lg:text-[10px] xl:text-xs tracking-[0.16em] lg:tracking-[0.25em] font-bold uppercase transition-all font-sans mt-0.5",
                       scrolled ? "text-slate-500" : "text-white/80"
                     )}>
-                      国际物流
+                      国际货运
                     </span>
                   </>
                 ) : (
@@ -179,7 +197,7 @@ export default function Navbar() {
                     </span>
                     <span className={cn(
                       "text-[8px] sm:text-[9.5px] md:text-[9px] lg:text-[11px] xl:text-[13px] tracking-[0.03em] lg:tracking-[0.08em] xl:tracking-[0.1em] font-black uppercase transition-all font-sans mt-1 whitespace-nowrap",
-                      scrolled ? "text-purple-600 font-bold" : "text-white/90"
+                      scrolled ? "text-[#0B4F8A] font-bold" : "text-white/90"
                     )}>
                       International Freight
                     </span>
@@ -197,7 +215,7 @@ export default function Navbar() {
                     <button
                       className={cn(
                         "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap flex items-center gap-0.5 lg:gap-1",
-                        scrolled ? "text-slate-700 hover:text-[#4B27B1]" : "text-white/90 hover:text-white"
+                        scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
                       )}
                     >
                       <span>{t(`nav.${item.key}`)}</span>
@@ -211,7 +229,7 @@ export default function Navbar() {
                           <Link
                             key={sub.key}
                             to={getLocalizedPath(sub.href)}
-                            className="px-5 py-2.5 text-[11px] lg:text-xs tracking-widest uppercase font-black text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] transition-colors"
+                            className="px-5 py-2.5 text-[11px] lg:text-xs tracking-widest uppercase font-black text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] transition-colors"
                           >
                             {t(`nav.${sub.key}`)}
                           </Link>
@@ -233,7 +251,7 @@ export default function Navbar() {
                     <button
                       className={cn(
                         "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap flex items-center gap-0.5 lg:gap-1 cursor-pointer",
-                        scrolled ? "text-slate-700 hover:text-[#4B27B1]" : "text-white/90 hover:text-white"
+                        scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
                       )}
                     >
                       <span>{t(`nav.${item.key}`)}</span>
@@ -254,98 +272,35 @@ export default function Navbar() {
                           className="absolute left-1/2 -translate-x-1/2 top-full pt-2 w-[550px] lg:w-[650px] xl:w-[750px] z-50"
                         >
                           <div className="bg-white rounded-2xl shadow-2xl border border-slate-100 overflow-hidden">
-                            {/* Accent top bar using purple-orange theme gradient */}
-                            <div className="h-1.5 bg-gradient-to-r from-[#4B27B1] via-[#8552D2] to-[#FF8A00]" />
+                            {/* Shipping-blue navigation with an orange conversion accent */}
+                            <div className="h-1.5 bg-gradient-to-r from-[#0B1F3A] via-[#0B4F8A] to-[#F59E0B]" />
                             
                             <div className="p-6 md:p-8 grid grid-cols-4 gap-4 md:gap-6">
                               {regionColumns.map((col) => (
                                 <div key={col.key} className="flex flex-col space-y-3">
-                                  <h4 className="text-[11px] lg:text-xs tracking-wider font-black text-transparent bg-clip-text bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] uppercase border-b border-slate-100 pb-1.5 whitespace-nowrap">
+                                  <h4 className="text-[11px] lg:text-xs tracking-wider font-black text-transparent bg-clip-text bg-gradient-to-r from-[#0B1F3A] to-[#EA6A12] uppercase border-b border-slate-100 pb-1.5 whitespace-nowrap">
                                     {t(`nav.${col.key}`)}
                                   </h4>
                                   <div className="flex flex-col space-y-2">
                                     {col.countries.map((country, idx) => {
-                                      const label = country[language as 'en' | 'zh' | 'ru' | 'fr'] || country.en;
-                                      const isMiddleEast = col.key === 'region_middle_east';
-                                      const isCentralAsia = col.key === 'region_central_asia';
-                                      const isWestAfrica = col.key === 'region_west_africa';
-                                      const isLatinAmerica = col.key === 'region_latin_america';
+                                      const label = country[language as keyof typeof country] || country.en;
+                                      const countrySlug = country.en.toLowerCase().replace(/\s+/g, '-');
                                       
-                                      return isMiddleEast ? (
+                                      return (
                                         <Link
                                           key={idx}
-                                          to={getLocalizedPath(`/shipping-from-china-to-middle-east?country=${country.en === 'Saudi Arabia' ? 'saudi-arabia' : country.en.toLowerCase()}`)}
+                                          to={getLocalizedPath(`/shipping-from-china-to-${countrySlug}`)}
                                           onClick={() => {
                                             setShowMegaMenu(false);
                                             trackEvent('region_link_click', { country: country.en, specialized: true });
                                           }}
-                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
+                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#0B4F8A] transition-colors flex items-center gap-1 group/item"
                                         >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
+                                          <span className="w-1.5 h-1.5 rounded-full bg-[#F59E0B] group-hover/item:bg-[#0B4F8A] transition-colors" />
                                           <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
                                             {label}
                                           </span>
                                         </Link>
-                                      ) : isCentralAsia ? (
-                                        <Link
-                                          key={idx}
-                                          to={getLocalizedPath(`/shipping-from-china-to-central-asia?country=${country.en.toLowerCase()}`)}
-                                          onClick={() => {
-                                            setShowMegaMenu(false);
-                                            trackEvent('region_link_click', { country: country.en, specialized: true });
-                                          }}
-                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
-                                        >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
-                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
-                                            {label}
-                                          </span>
-                                        </Link>
-                                      ) : isWestAfrica ? (
-                                        <Link
-                                          key={idx}
-                                          to={getLocalizedPath(`/shipping-from-china-to-west-africa?country=${country.en.toLowerCase()}`)}
-                                          onClick={() => {
-                                            setShowMegaMenu(false);
-                                            trackEvent('region_link_click', { country: country.en, specialized: true });
-                                          }}
-                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
-                                        >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
-                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
-                                            {label}
-                                          </span>
-                                        </Link>
-                                      ) : isLatinAmerica ? (
-                                        <Link
-                                          key={idx}
-                                          to={getLocalizedPath(`/shipping-from-china-to-latin-america?country=${country.en.toLowerCase()}`)}
-                                          onClick={() => {
-                                            setShowMegaMenu(false);
-                                            trackEvent('region_link_click', { country: country.en, specialized: true });
-                                          }}
-                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
-                                        >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00] group-hover/item:bg-[#4B27B1] transition-colors" />
-                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
-                                            {label}
-                                          </span>
-                                        </Link>
-                                      ) : (
-                                        <a
-                                          key={idx}
-                                          href={getLocalizedPath('/#get-a-quote')}
-                                          onClick={() => {
-                                            setShowMegaMenu(false);
-                                            trackEvent('region_link_click', { country: country.en });
-                                          }}
-                                          className="text-[11px] lg:text-xs font-bold text-slate-600 hover:text-[#4B27B1] transition-colors flex items-center gap-1 group/item"
-                                        >
-                                          <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00]/70 group-hover/item:bg-[#4B27B1] transition-colors" />
-                                          <span className="group-hover/item:translate-x-1 transition-transform duration-200 whitespace-nowrap">
-                                            {label}
-                                          </span>
-                                        </a>
                                       );
                                     })}
                                   </div>
@@ -356,20 +311,20 @@ export default function Navbar() {
                             {/* Mega menu footer banner */}
                             <div className="bg-slate-50 px-6 py-3.5 border-t border-slate-100 flex items-center justify-between text-[10px] lg:text-xs">
                               <span className="font-medium text-slate-500">
-                                {language === 'zh' ? '⭐ 29年跨境物流专线安全保障' : 
-                                 language === 'ru' ? '⭐ 29 лет безопасных грузоперевозок' :
-                                 language === 'fr' ? '⭐ 29 ans de sécurité logistique' :
-                                 '⭐ 29 Years of Secure Regional Freight forwarding'}
+                                {language === 'zh' ? '中国出口物流规划与操作支持' :
+                                 language === 'ru' ? 'Логистическое планирование и экспортная поддержка из Китая' :
+                                 language === 'fr' ? 'Planification logistique et accompagnement export depuis la Chine' :
+                                 'China-origin logistics planning and export support'}
                               </span>
                               <a 
                                 href={getLocalizedPath('/#get-a-quote')}
                                 onClick={() => setShowMegaMenu(false)}
-                                className="font-extrabold text-[#4B27B1] hover:text-[#FF8A00] transition-colors flex items-center gap-0.5"
+                                className="font-extrabold text-[#0B4F8A] hover:text-[#EA6A12] transition-colors flex items-center gap-0.5"
                               >
-                                {language === 'zh' ? '立即询价 ➔' : 
-                                 language === 'ru' ? 'Запросить ставку ➔' :
-                                 language === 'fr' ? 'Demander un devis ➔' :
-                                 'Inquire Now ➔'}
+                                {language === 'zh' ? '立即询价' :
+                                 language === 'ru' ? 'Запросить ставку' :
+                                 language === 'fr' ? 'Demander un devis' :
+                                 'Request a quote'}
                               </a>
                             </div>
                           </div>
@@ -382,28 +337,28 @@ export default function Navbar() {
 
               const isQuote = item.key === 'get_a_quote';
               return (
-                <a
+                <Link
                   key={item.key}
-                  href={getLocalizedPath(item.href || '')}
+                  to={getLocalizedPath(item.href || '')}
                   className={cn(
                     "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap",
                     isQuote 
-                      ? "bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] text-white px-2.5 py-1.5 lg:px-4 lg:py-2 xl:px-5 xl:py-2.5 rounded-full hover:shadow-lg ml-1 md:ml-1.5 xl:ml-3 hover:scale-[1.03] transition-transform duration-150" 
-                      : (scrolled ? "text-slate-700 hover:text-[#4B27B1]" : "text-white/90 hover:text-white")
+                      ? "bg-gradient-to-r from-[#0B4F8A] to-[#EA6A12] text-white px-2.5 py-1.5 lg:px-4 lg:py-2 xl:px-5 xl:py-2.5 rounded-full hover:shadow-lg ml-1 md:ml-1.5 xl:ml-3 hover:scale-[1.03] transition-transform duration-150"
+                      : (scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white")
                   )}
                 >
                   {t(`nav.${item.key}`)}
-                </a>
+                </Link>
               );
             })}
 
             {/* Language Switcher */}
             <div className="relative ml-1 lg:ml-2">
-              <button 
+              <button
                 onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
                 className={cn(
                    "flex items-center gap-1 text-[10px] lg:text-xs xl:text-sm font-black transition-colors py-2 px-1",
-                  scrolled ? "text-slate-700 hover:text-[#4B27B1]" : "text-white/90 hover:text-white"
+                  scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
                 )}
               >
                 <Globe className="w-3 h-3 md:w-3.5 md:h-3.5" />
@@ -412,19 +367,22 @@ export default function Navbar() {
               
               {showLanguageDropdown && (
                 <div className="absolute right-0 mt-2 py-2 w-36 bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col z-50">
-                  <button onClick={() => handleLanguageChange('en')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] font-bold">English (EN)</button>
-                  <button onClick={() => handleLanguageChange('zh')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] font-bold">中文 (ZH)</button>
-                  <button onClick={() => handleLanguageChange('ru')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] font-bold">Русский (RU)</button>
-                  <button onClick={() => handleLanguageChange('fr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] font-bold">Français (FR)</button>
+                  <button onClick={() => handleLanguageChange('en')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">English (EN)</button>
+                  <button onClick={() => handleLanguageChange('zh')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">中文 (ZH)</button>
+                  <button onClick={() => handleLanguageChange('ru')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Русский (RU)</button>
+                  <button onClick={() => handleLanguageChange('fr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Français (FR)</button>
+                  <button onClick={() => handleLanguageChange('es')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Español (ES)</button>
+                  <button onClick={() => handleLanguageChange('ar')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">العربية (AR)</button>
                 </div>
               )}
             </div>
           </div>
 
           <div className="md:hidden flex items-center gap-4">
-            {/* Mobile Language Switcher (Circular Toggle) */}
-            <button 
-                onClick={() => handleLanguageChange(language === 'en' ? 'zh' : language === 'zh' ? 'ru' : language === 'ru' ? 'fr' : 'en')}
+            {/* Mobile Language Switcher */}
+            <div className="relative">
+              <button
+                onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
                 className={cn(
                   "flex items-center gap-1.5 text-xs font-black transition-colors px-2.5 py-1.5 rounded-full bg-black/10 border border-white/10",
                   scrolled ? "text-slate-700 bg-slate-100 border-slate-200" : "text-white/90"
@@ -432,7 +390,18 @@ export default function Navbar() {
               >
                 <Globe className="w-3.5 h-3.5" />
                 {currentLangLabel}
-            </button>
+              </button>
+              {showLanguageDropdown && (
+                <div className="absolute right-0 mt-2 py-2 w-36 bg-white rounded-xl shadow-xl border border-slate-100 flex flex-col z-50">
+                  <button onClick={() => handleLanguageChange('en')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">English (EN)</button>
+                  <button onClick={() => handleLanguageChange('zh')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">中文 (ZH)</button>
+                  <button onClick={() => handleLanguageChange('ru')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Русский (RU)</button>
+                  <button onClick={() => handleLanguageChange('fr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Français (FR)</button>
+                  <button onClick={() => handleLanguageChange('es')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Español (ES)</button>
+                  <button onClick={() => handleLanguageChange('ar')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">العربية (AR)</button>
+                </div>
+              )}
+            </div>
 
             <button onClick={() => setIsOpen(!isOpen)} className={cn("p-1 focus:outline-none", scrolled ? "text-slate-900" : "text-white")}>
               {isOpen ? <X className="h-6.5 w-6.5" /> : <Menu className="h-6.5 w-6.5" />}
@@ -452,13 +421,13 @@ export default function Navbar() {
                     <span className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400">
                       {t(`nav.${item.key}`)}
                     </span>
-                    <div className="pl-4 border-l-2 border-purple-100 ml-4 space-y-1.5">
+                    <div className="pl-4 border-l-2 border-sky-100 ml-4 space-y-1.5">
                       {serviceItems.map((sub) => (
                         <Link
                           key={sub.key}
                           to={getLocalizedPath(sub.href)}
                           onClick={closeMenu}
-                          className="block px-4 py-2 text-sm font-bold text-slate-700 hover:bg-purple-50 hover:text-[#4B27B1] rounded-lg transition-colors"
+                          className="block px-4 py-2 text-sm font-bold text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] rounded-lg transition-colors"
                         >
                           {t(`nav.${sub.key}`)}
                         </Link>
@@ -482,62 +451,24 @@ export default function Navbar() {
                       <div className="pl-4 border-l-2 border-[#FF8A00] ml-4 mt-1.5 space-y-4">
                         {regionColumns.map((col) => (
                           <div key={col.key} className="space-y-1.5">
-                            <h5 className="text-[11px] font-black text-[#4B27B1] uppercase tracking-wide">
+                            <h5 className="text-[11px] font-black text-[#0B4F8A] uppercase tracking-wide">
                               {t(`nav.${col.key}`)}
                             </h5>
                             <div className="grid grid-cols-2 gap-2">
                               {col.countries.map((country, idx) => {
-                                const label = country[language as 'en' | 'zh' | 'ru' | 'fr'] || country.en;
-                                const isMiddleEast = col.key === 'region_middle_east';
-                                const isCentralAsia = col.key === 'region_central_asia';
-                                const isWestAfrica = col.key === 'region_west_africa';
-                                const isLatinAmerica = col.key === 'region_latin_america';
+                                const label = country[language as keyof typeof country] || country.en;
+                                const countrySlug = country.en.toLowerCase().replace(/\s+/g, '-');
                                 
-                                return isMiddleEast ? (
+                                return (
                                   <Link
                                     key={idx}
-                                    to={getLocalizedPath(`/shipping-from-china-to-middle-east?country=${country.en === 'Saudi Arabia' ? 'saudi-arabia' : country.en.toLowerCase()}`)}
+                                    to={getLocalizedPath(`/shipping-from-china-to-${countrySlug}`)}
                                     onClick={closeMenu}
-                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
+                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#0B4F8A]"
                                   >
-                                    📍 {label}
+                                    <MapPin className="w-3.5 h-3.5 inline-block mr-1 text-amber-600" aria-hidden="true" />
+                                    {label}
                                   </Link>
-                                ) : isCentralAsia ? (
-                                  <Link
-                                    key={idx}
-                                    to={getLocalizedPath(`/shipping-from-china-to-central-asia?country=${country.en.toLowerCase()}`)}
-                                    onClick={closeMenu}
-                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
-                                  >
-                                    📍 {label}
-                                  </Link>
-                                ) : isWestAfrica ? (
-                                  <Link
-                                    key={idx}
-                                    to={getLocalizedPath(`/shipping-from-china-to-west-africa?country=${country.en.toLowerCase()}`)}
-                                    onClick={closeMenu}
-                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
-                                  >
-                                    📍 {label}
-                                  </Link>
-                                ) : isLatinAmerica ? (
-                                  <Link
-                                    key={idx}
-                                    to={getLocalizedPath(`/shipping-from-china-to-latin-america?country=${country.en.toLowerCase()}`)}
-                                    onClick={closeMenu}
-                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
-                                  >
-                                    📍 {label}
-                                  </Link>
-                                ) : (
-                                  <a
-                                    key={idx}
-                                    href={getLocalizedPath('/#get-a-quote')}
-                                    onClick={closeMenu}
-                                    className="block py-1.5 text-xs font-semibold text-slate-600 hover:text-[#4B27B1]"
-                                  >
-                                    📍 {label}
-                                  </a>
                                 );
                               })}
                             </div>
@@ -551,19 +482,19 @@ export default function Navbar() {
 
               const isQuote = item.key === 'get_a_quote';
               return (
-                <a
+                <Link
                   key={item.key}
-                  href={getLocalizedPath(item.href || '')}
+                  to={getLocalizedPath(item.href || '')}
                   onClick={closeMenu}
                   className={cn(
                     "block px-4 py-2.5 text-sm font-bold transition-colors",
                     isQuote
-                      ? "bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] text-white text-center rounded-lg mt-4 shadow-md"
-                      : "text-slate-700 hover:bg-slate-50 hover:text-[#4B27B1]"
+                      ? "bg-gradient-to-r from-[#0B4F8A] to-[#EA6A12] text-white text-center rounded-lg mt-4 shadow-md"
+                      : "text-slate-700 hover:bg-slate-50 hover:text-[#0B4F8A]"
                   )}
                 >
                   {t(`nav.${item.key}`)}
-                </a>
+                </Link>
               );
             })}
           </div>

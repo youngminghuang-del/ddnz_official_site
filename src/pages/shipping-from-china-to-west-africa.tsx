@@ -11,169 +11,171 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
-  Globe, Clock, HelpCircle, Plane, FileText, Scale, ArrowUpRight
+  Globe, Clock, HelpCircle, Plane, FileText, Scale, ArrowUpRight, Truck
 } from 'lucide-react';
 import { trackEvent } from '../lib/utils';
+import { buildShippingCountryPath, getShippingCountrySlug } from '../utils/shippingCountryRoutes';
+import { createLocalizedShippingContent, createLocalizedShippingRedlines } from '../utils/localizedShippingContent';
 
 // Multi-language strings for West Africa countries
 const WEST_AFRICA_DATA = {
   nigeria: {
     en: {
-      seoTitle: "China to Nigeria Freight Forwarding Guide | DDNZ",
-      seoDesc: "Direct LCL/FCL ocean & air freight from China to Lagos (Apapa/Tin Can). Complete Form M, PAAR, and SC SONCAP certificate management since 1999.",
-      headline: "Secured Sea & Air Freight to Nigeria (Lagos) | 100% Compliant SONCAP & Form M Handling",
-      subheadline: "Direct container consolidation from Guangzhou self-operated hub to Lagos Apapa and Tin Can ports. Tackle SONCAP compliance and Form M barriers with our local on-site clearing team.",
-      transitWindow: "⏱️ Nigeria Transit Windows",
+      seoTitle: "China to Nigeria Freight Forwarding Guide | Heaven Born",
+      seoDesc: "Sea and air freight planning from China to Lagos, including consolidation and support for Form M, PAAR and SONCAP document coordination.",
+      headline: "Sea & Air Freight to Nigeria (Lagos) | SONCAP & Form M Documentation Support",
+      subheadline: "Consolidation from China to Lagos Apapa and Tin Can ports, with SONCAP, Form M, and destination clearance coordination based on the confirmed service scope.",
+      transitWindow: "Nigeria Transit Windows",
       transitDays: "35 - 45 Days",
-      complianceRowTitle: "Form M & PAAR Pre-Audit Validation",
-      complianceRowVal: "2 - 4 Days",
+      complianceRowTitle: "Form M, PAAR & SONCAP Document Review",
+      complianceRowVal: "Before Booking",
       solutionsTitle: "Nigeria SCM Compliance Solutions",
       solutionsSubtitle: "Tailored logistics paths designed to overcome customs valuations, certification hurdles, and port congestions.",
       solutions: [
         {
           title: "Three-Step SONCAP Certification Rule",
-          desc: "Never ship FCL blindly without verification! DDNZ document experts help you secure your Product Certificate (PC), register your Form M and PAAR with the Central Bank of Nigeria (CBN) locally, and finally acquire the shipment-specific SONCAP Certificate (SC) before loading to prevent mandatory container re-export.",
+          desc: "Before shipment, confirm the applicable Product Certificate (PC), Form M, PAAR, and shipment-specific SONCAP Certificate (SC) requirements with the importer and relevant service partners.",
           icon: "ShieldCheck"
         },
         {
           title: "Mandatory Pre-Shipment ECTN/CTN",
-          desc: "Nigeria customs strictly mandates the Electronic Cargo Tracking Note (ECTN/CTN). It must be issued and printed on the Ocean Bill of Lading in China prior to vessel departure. Late applications at destination are absolutely forbidden and face heavy customs penalties.",
+          desc: "Nigeria may require an Electronic Cargo Tracking Note (ECTN/CTN) before departure. Confirm the current issuance timing and Bill of Lading requirements before the cargo is loaded.",
           icon: "FileText"
         },
         {
           title: "Under-Declaration Risk Containment",
-          desc: "Lagos custom authorities are actively cracking down on under-declared invoice valuations. Finding undervalued cargo results in heavy penalties of 2x to 3x the duty difference plus cargo seizure. DDNZ provides authentic valuation analysis and customs price verification.",
+          desc: "Use accurate commercial values and supporting documents. We can help review the shipment data with the importer and destination clearance partner before export.",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 Ocean Freight (LCL/FCL)",
+          mode: "Ocean Freight (LCL/FCL)",
           days: "35 - 45 Days",
           suitability: "Best for commercial inventory, manufacturing equipment, and heavy volume machinery.",
-          sellingPoint: "POL: Guangzhou, Nansha, or Shenzhen to POD: Lagos Apapa / Tin Can Island. Regular direct sailings.",
-          warning: "Lagos Port congestion is severe. Vessel berthing wait times can stretch to weeks. DDNZ's on-site customs broker handles document pre-validation to expedite terminal release."
+          sellingPoint: "Routes from South China ports to Lagos Apapa and Tin Can Island are assessed against current sailing schedules and cargo requirements.",
+          warning: "Lagos Port congestion can affect berthing and release times. Allow contingency time and confirm document readiness with the destination clearance partner."
         },
         {
-          mode: "✈️ Air Freight Express",
+          mode: "Air Freight Express",
           days: "5 - 12 Working Days",
           suitability: "Ideal for high-value consumer electronics, auto parts, fashion garments, and urgent samples.",
-          sellingPoint: "Direct air freight connections via Dubai/Middle East or European air cargo hubs to Lagos (LOS) Airport.",
+          sellingPoint: "Air routing is planned through available direct or connecting services to Lagos (LOS), subject to schedule and commodity acceptance.",
           warning: "General air cargo clears in 5-12 days; sensitive shipments (built-in lithium batteries, electronics, phones, cosmetics) must travel via specialized channels taking 11-16 days."
         }
       ],
       faqs: [
         {
           q: "What is the relation between Form M, PAAR, and SONCAP in Nigeria?",
-          a: "They form the complete legal clearance chain: first, obtain the Product Certificate (PC) for your goods. Second, the Nigerian importer opens Form M and applies for the Pre-Arrival Assessment Report (PAAR) locally. Finally, the exporter obtains the SONCAP Certificate (SC) for the shipment. Without these, cargo cannot clear Lagos customs legally."
+          a: "Form M, PAAR and SONCAP-related documents can apply depending on the product and import transaction. Before booking, ask the importer and qualified destination advisers to confirm the current sequence, scope and documents for the shipment."
         },
         {
           q: "When must the CTN (Cargo Tracking Note) be applied for?",
-          a: "The CTN MUST be applied for and registered in China BEFORE loading. It is illegal to apply at Lagos, and trying to do so results in extreme custom delays, massive demurrage fees, and official administrative fines."
+          a: "Nigeria’s ECTN process and Bill of Lading data requirements should be confirmed before the Bill of Lading is finalized. Keep the commercial invoice, packing list, transport document and ECTN data consistent."
         },
         {
-          q: "How does DDNZ handle Lagos port congestion and high demurrage?",
-          a: "Lagos port congestion is highly variable. DDNZ offers 14-21 days of free container storage (demurrage) directly negotiated with carriers. Furthermore, our dedicated port office coordinates customs pre-clearance to ensure immediate container pickup upon arrival."
+          q: "How should shippers plan for Lagos port congestion and demurrage?",
+          a: "Lagos congestion can vary by season and terminal. Confirm the carrier's free-time terms, document requirements, and destination handling plan before departure, then include a reasonable schedule buffer."
         }
       ]
     },
     zh: {
-      seoTitle: "中国到尼日利亚(拉各斯 Lagos)海运整柜拼箱与空运DDP | SONCAP认证 | 华正邦泰 DDNZ Global",
-      seoDesc: "专业中国到尼日利亚拉各斯(Apapa/Tin Can)海运空运物流双清专线。提供全流程 SONCAP 证书办理、Form M 申报、PAAR 预审等一站式尼日利亚进口合规托底方案。",
-      headline: "中国到尼日利亚（拉各斯 Lagos）专业海运/空运：攻克复杂 SONCAP 认证与 Form M 通关壁垒",
-      subheadline: "自营广州集拼枢纽仓直航拉各斯 Apapa & Tin Can 港口。专业单证团队协助买家理顺清关合规链条，自营目的港清关行保障清关放行时效。",
-      transitWindow: "⏱️ 尼日利亚专线预计时效",
+      seoTitle: "中国到尼日利亚（拉各斯 Lagos）海运整柜拼箱与空运 DDP | SONCAP 文件支持 | 华正邦泰国际货运",
+      seoDesc: "中国到尼日利亚拉各斯的海运、空运与集货规划，支持 SONCAP、Form M、PAAR 等进口文件的出运前核对。",
+      headline: "中国到尼日利亚（拉各斯 Lagos）海运/空运：SONCAP 与 Form M 文件协调支持",
+      subheadline: "提供中国集货、出运资料核对以及与目的地清关合作方的服务衔接，协助进口商梳理清关所需文件。",
+      transitWindow: "尼日利亚专线预计时效",
       transitDays: "35 - 45 天",
-      complianceRowTitle: "Form M 与 PAAR 舱单数据预审",
-      complianceRowVal: "2 - 4 工作日",
+      complianceRowTitle: "Form M、PAAR 与 SONCAP 文件核对",
+      complianceRowVal: "订舱前核对",
       solutionsTitle: "尼日利亚专线合规解决方案",
-      solutionsSubtitle: "深谙西非特有口岸规则，资深单证团队层层把关，确保重货、散货、敏感货合规通关无忧。",
+      solutionsSubtitle: "围绕进口文件、申报货值与港口操作要求，提供出运前资料核对与目的地操作协调。",
       solutions: [
         {
           title: "三步法 SONCAP 铁律风控",
-          desc: "拒绝整柜退运！DDNZ 数字化单证团队协助买家理顺清关链条：先办 PC 证书（产品注册） → 进口商本地申请 Form M 与 PAAR 报告 → 出货前申办每批货必备的 SC 清关证书。",
+          desc: "出运前可协助进口商梳理清关链条：PC 证书（产品注册）、Form M、PAAR 与单批次 SC 清关证书的适用要求应逐项确认。",
           icon: "ShieldCheck"
         },
         {
           title: "装船前强制 ECTN/CTN",
-          desc: "必须在物理装船起运前，在中国办妥 ECTN/CTN 货物跟踪单，并将号码标注在提单上！货物到港后绝无补办可能，一旦漏报将面临目的港海关天价罚金与无尽期卡关。",
+          desc: "ECTN/CTN 货物跟踪单的申请时间与提单标注方式，应在装船前向承运人及目的地合作方确认。",
           icon: "FileText"
         },
         {
           title: "严打低报货值估价预审",
-          desc: "尼日利亚海关对进口申报货值审查极严。一旦查出申报货值与系统参考价不符，将面临少缴税额 2-3 倍的毁灭性惩罚罚款甚至没收货物。DDNZ 提供专业的真实估价(TN VED)核算及海关底价对齐服务。",
+          desc: "请使用真实、可支持的商业货值和单证。我们可在出运前协助核对货物资料，并与进口商及目的地清关合作方沟通。",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 经典海运整箱/拼箱 (LCL/FCL)",
+          mode: "经典海运整箱/拼箱 (LCL/FCL)",
           days: "35 - 45 天",
           suitability: "适合商业库存、大型工业机械、建筑材料及大宗散货。",
-          sellingPoint: "POL: 广州、南沙、深圳直航 POD: 拉各斯阿帕帕 Apapa / 丁坎 Tin Can。定期直达排舱，舱位充足。",
-          warning: "拉各斯作为西非最繁忙港口，常态化拥堵严重，船舶靠泊等待可能长达数周。DDNZ 强力提供 14-21 天超长目的港免箱期，驻港清关组提前对齐资料，确保开箱提货周期缩至最短。"
+          sellingPoint: "可根据当前船期、货物资料和目的港操作范围，规划从华南港口至 Apapa / Tin Can 的出运方案。",
+          warning: "拉各斯港口操作可能影响靠泊和放行；建议预留缓冲时间，并在出运前与目的地清关合作方核对资料。"
         },
         {
-          mode: "✈️ 空运双清专线 (Air)",
+          mode: "空运双清专线 (Air)",
           days: "5 - 12 工作日",
           suitability: "适合高价值电子产品、手机配件、化妆品样品及加急商业大货。",
           sellingPoint: "中国始发，直飞或通过中东迪拜、欧洲枢纽中转直达拉各斯机场（LOS）。",
-          warning: "普通日用品 5-12 天急速放行；带电产品、手机、化妆品等敏感货强制走敏感专线，时效约为 11-16 天。"
+          warning: "带电产品、手机、化妆品等货物可能需要特定承运渠道；实际时效与资料要求应在起运前确认。"
         }
       ],
       faqs: [
         {
           q: "尼日利亚清关的 Form M、PAAR 和 SONCAP 是什么关系？",
-          a: "这是完整的清关合规链条：第一步，出口商协助在国内申请产品 PC 证书；第二步，尼日利亚进口商凭 PC 证书在当地银行系统开立 Form M 并申请 PAAR 进口批件；第三步，货物装箱前，国内申请针对单批次货物的 SC 清关证书。三者缺一不可，直接影响拉各斯放行。"
+          a: "Form M、PAAR 和 SONCAP/相关合格评定文件可能适用于不同货物及进口情形。请在装运前由进口商和目的地合格专业机构确认当前要求、文件顺序及适用范围。"
         },
         {
           q: "ECTN/CTN 货物跟踪单必须在什么时候申请？",
-          a: "ECTN/CTN 必须在货物于中国港口装船前完成在线申报。到港后无法补办，没有登记该单据的提单，船东拒绝签发进口提货单，且海关会直接下达巨额处罚单。"
+          a: "ECTN/CTN 的适用范围和办理时间应在订舱前确认。请将其与提单、商业发票和装箱单中的货物资料逐项核对。"
         },
         {
           q: "DDNZ 针对拉各斯常态化塞港有什么对应的保障方案？",
-          a: "我们在西非航线上长期与主流船东（如 MSK, CMA, COSCO）保持战略级协议，默认争取 14-21 天的超长目的港集装箱免箱期。同时，自营目的港单证员会在货船到港前 7 天完成舱单预清关录入，避开拥堵时段。"
+          a: "拉各斯港口条件会随季节和码头变化。请在出运前确认船公司的免箱条款、文件要求和目的港操作计划，并在运输计划中预留合理缓冲。"
         }
       ]
     },
     fr: {
-      seoTitle: "Transitaire en Chine | Groupage Maritime & FCL vers l'Afrique de l'Ouest — DDNZ",
-      seoDesc: "Besoin d'un transitaire en Chine fiable ? DDNZ Global propose des services de groupage maritime, inspection de conteneur и dédouanement fret maritime.",
-      headline: "Groupage Maritime и FCL depuis la Chine",
-      subheadline: "Logistique spécialisée et transport sécurisé vers l'Afrique de l'Ouest (Lagos, Tema, Abidjan) et l'Europe. Votre partenaire SCM de confiance depuis 1997.",
-      transitWindow: "⏱️ Délais de transit pour le Nigeria",
+      seoTitle: "Fret de Chine vers le Nigeria | Heaven Born",
+      seoDesc: "Planification maritime, aérienne et documentaire de Chine vers le Nigeria, avec vérification préalable des exigences d’importation.",
+      headline: "Fret maritime et aérien de Chine vers le Nigeria",
+      subheadline: "Planification habituelle de 35–45 jours par mer, avec vérification documentaire Form M, PAAR, SONCAP et ECTN/CTN selon la marchandise et les exigences applicables.",
+      transitWindow: "Délais de transit habituels vers le Nigeria",
       transitDays: "35 - 45 Jours",
       complianceRowTitle: "Validation Form M & PAAR",
-      complianceRowVal: "2 - 4 Jours",
+      complianceRowVal: "Avant réservation",
       solutionsTitle: "Solutions de conformité SCM Nigeria",
       solutionsSubtitle: "Canaux logistiques sur mesure pour surmonter les évaluations douanières, les barrières de certification et les congestions portuaires.",
       solutions: [
         {
           title: "Processus de certification SONCAP",
-          desc: "N'expédiez pas à l'aveugle sans vérification. Nos experts vous aident à sécuriser votre Product Certificate (PC), à enregistrer votre Form M et votre rapport PAAR avec la Banque Centrale du Nigeria (CBN), puis à acquérir le SONCAP Certificate (SC).",
+          desc: "Les exigences SONCAP, Form M et PAAR dépendent notamment de la marchandise, de l’importateur et du régime applicable. Nous vérifions les documents requis avant réservation avec l’importateur et les partenaires concernés.",
           icon: "ShieldCheck"
         },
         {
-          title: "Note d'information ECTN/CTN obligatoire",
-          desc: "La douane du Nigeria exige la note de suivi de cargaison ECTN/CTN. Elle doit être émise et mentionnée sur le connaissement maritime en Chine avant le départ. Les demandes tardives à destination sont interdites.",
+          title: "Vérification ECTN/CTN avant départ",
+          desc: "Lorsque l’ECTN/CTN s’applique, les données doivent être cohérentes avec le connaissement, la facture commerciale et la liste de colisage. Nous confirmons son applicabilité et la procédure avant expédition.",
           icon: "FileText"
         },
         {
           title: "Sécurisation contre la sous-évaluation",
-          desc: "Les douanes de Lagos luttent contre la sous-évaluation des factures. Tout écart entraîne des amendes de 2 à 3 fois la différence de droits de douane. DDNZ fournit des analyses d'évaluation certifiées.",
+          desc: "Les incohérences entre facture, classement, quantité et valeur peuvent entraîner un examen supplémentaire. Nous aidons à rapprocher les documents commerciaux et de transport avant le départ.",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 Fret Maritime (LCL/FCL)",
+          mode: "Fret Maritime (LCL/FCL)",
           days: "35 - 45 Jours",
           suitability: "Idéal pour les stocks commerciaux, les équipements industriels et les frets lourds.",
           sellingPoint: "POL : Guangzhou, Nansha, ou Shenzhen vers Lagos Apapa / Tin Can Island. Départs réguliers.",
-          warning: "La congestion à Lagos est importante. DDNZ offre de 14 à 21 jours de franchise (免箱期) pour faciliter un dédouanement rapide."
+          warning: "Les opérations portuaires, la disponibilité du navire et le dédouanement peuvent modifier le calendrier. Confirmez les jours de franchise et les conditions du transporteur au moment de la réservation."
         },
         {
-          mode: "✈️ Fret Aérien Express",
+          mode: "Fret Aérien Express",
           days: "5 - 12 Jours Ouvrables",
           suitability: "Idéal pour l'électronique haut de gamme, les pièces détachées auto et les échantillons urgents.",
           sellingPoint: "Connexions de fret aérien directes vers l'aéroport de Lagos (LOS).",
@@ -183,153 +185,153 @@ const WEST_AFRICA_DATA = {
       faqs: [
         {
           q: "Quelle est la relation entre Form M, PAAR et SONCAP ?",
-          a: "Ce sont les maillons de la chaîne de conformité légale : d'abord le PC, puis le Form M et le PAAR enregistrés localement, et enfin le certificat SC pour le chargement. Sans eux, le dédouanement est impossible."
+          a: "Ces documents peuvent intervenir dans le processus d’importation selon le produit et le régime applicable. Avant expédition, confirmez avec l’importateur les documents, la partie responsable et l’ordre de traitement requis."
         },
         {
           q: "Quand faut-il demander le CTN ?",
-          a: "Le CTN doit être enregistré en Chine AVANT le chargement. Il est illégal de le faire à Lagos et cela entraîne d'importantes amendes douanières."
+          a: "L’applicabilité et le calendrier de l’ECTN/CTN doivent être confirmés avant réservation. Les informations doivent correspondre au connaissement, à la facture commerciale et à la liste de colisage."
         },
         {
           q: "Comment DDNZ gère-t-il la congestion à Lagos ?",
-          a: "Nous négocions directement avec les transporteurs pour obtenir de 14 à 21 jours de franchise de conteneur. Nos équipes pré-enregistrent les dossiers 7 jours avant l'arrivée."
+          a: "Les conditions à Lagos évoluent selon le terminal, la saison et le transporteur. Avant expédition, confirmez les jours de franchise, les exigences documentaires et le plan opérationnel au port de destination."
         }
       ]
     }
   },
   ghana: {
     en: {
-      seoTitle: "China to Ghana Freight Forwarding Guide | DDNZ",
-      seoDesc: "Direct LCL consolidation and FCL ocean container service from China to Tema, Ghana. Expert handling of CoC certification and pre-shipment CTN binding.",
-      headline: "Reliable Shipping to Ghana (Tema/Accra) | Streamlined CoC Product Certification & LCL Cargo Consolidation",
-      subheadline: "Consolidating your SME e-commerce and retail goods into weekly direct LCL containers from Guangzhou to Tema Port. Fast customs clearance with strict compliance mapping.",
-      transitWindow: "⏱️ Ghana Transit Windows",
+      seoTitle: "China to Ghana Freight Forwarding Guide | Heaven Born",
+      seoDesc: "Sea and air freight planning from China to Ghana, including consolidation and CoC/CTN document coordination before export.",
+      headline: "Shipping to Ghana (Tema/Accra) | CoC & CTN Documentation Support",
+      subheadline: "Ocean and air freight planning from China to Tema and Accra, with consolidation, CoC, CTN, and destination clearance coordination.",
+      transitWindow: "Ghana Transit Windows",
       transitDays: "35 - 50 Days",
-      complianceRowTitle: "Ghana CoC Certification Filing",
-      complianceRowVal: "1 - 3 Days",
+      complianceRowTitle: "Ghana CoC & Import Document Review",
+      complianceRowVal: "Before Booking",
       solutionsTitle: "Ghana SCM Compliance Solutions",
       solutionsSubtitle: "Robust trade-flow processes aligned to Ghana Customs (GRA) standards and GSA quality regulations.",
       solutions: [
         {
           title: "Strict GSA CoC Quality Certification",
-          desc: "Ghana Standards Authority (GSA) enforces mandatory conformity assessment (EasyPASS) for regulated directory imports. Cargo must acquire a Certificate of Conformity (CoC) before loading in China; otherwise, it faces a 30% local penalty surcharge and mandatory testing upon landing.",
+          desc: "Ghana Standards Authority (GSA) may require conformity assessment (EasyPASS) for regulated product categories. Confirm whether a Certificate of Conformity (CoC) applies to the cargo before loading.",
           icon: "ShieldCheck"
         },
         {
           title: "Pre-Shipment Cargo Tracking Note (CTN)",
-          desc: "Ghana Revenue Authority (GRA) mandates a registered Cargo Tracking Note (CTN) for all import consignments. All CTN documents must match the commercial invoice and packaging list details with 100% character-by-character accuracy.",
+          desc: "Confirm the current Cargo Tracking Note (CTN) requirements and review the shipment data against the commercial invoice, packing list, and Bill of Lading before departure.",
           icon: "FileText"
         },
         {
-          title: "Rigid Currency Declaration Policies",
-          desc: "Ghana customs forbids changing invoice values at the destination port. Furthermore, all customs clearance valuations must be officially declared in USD or EUR only to prevent local currency tax calculation errors.",
+          title: "Commercial Value & Declaration Consistency",
+          desc: "Keep the commercial invoice, packing list, transport documents and customs declaration information consistent. The importer and destination clearing agent should confirm current valuation, currency and tax requirements before shipment.",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 Ocean Freight (Sea)",
+          mode: "Ocean Freight (Sea)",
           days: "35 - 50 Days",
           suitability: "Optimized for raw materials, industrial machinery, and wholesale consumer goods.",
-          sellingPoint: "Weekly direct container logistics from Guangzhou/Shenzhen hubs to Tema Port.",
-          warning: "Tema port has recently faced container handling bottlenecks. We strongly recommend adding 1-2 weeks of buffer transit window into your SCM plan."
+          sellingPoint: "Sailing options from South China to Tema are confirmed against current carrier schedules and cargo requirements.",
+          warning: "Tema conditions can change with demand and local operations. Include a practical schedule buffer and confirm destination handling requirements before departure."
         },
         {
-          mode: "✈️ Air Freight (Air)",
+          mode: "Air Freight (Air)",
           days: "6 - 8 Working Days",
           suitability: "Perfect for high-margin retail shipments, electronics, and spare parts.",
-          sellingPoint: "Direct air freight connections to Accra Kotoka International Airport (ACC). Highly reliable schedules.",
+          sellingPoint: "Air routing to Accra (ACC) is assessed against available schedules, commodity acceptance and destination handling requirements.",
           warning: "Strict customs screening is applied for high-value merchandise. Original commercial invoices matching the actual packing list are mandatory."
         }
       ],
       faqs: [
         {
           q: "Does Ghana require a CoC (Certificate of Conformity) for all imports?",
-          a: "It is mandatory for products in the GSA regulated directory (e.g., electronics, cosmetics, toys, building materials). Importing these without a pre-shipped CoC leads to a 30% fine on the CIF value and cargo quarantine for local lab testing."
+          a: "GSA conducts import inspection for high-risk goods. For products within the applicable scope, importers should register and provide the required Certificate of Analysis or Certificate of Conformity; without the required evidence, clearance can be delayed pending testing or conformity assessment."
         },
         {
           q: "What currencies are allowed for Ghana customs declarations?",
-          a: "GRA regulations require all commercial invoices and custom declaration data to be declared in USD or EUR only. Declaring in GHS (Ghanaian Cedi) directly is not accepted for standard sea import dossiers."
+          a: "Prepare commercial values consistently across the invoice, packing list and customs declaration. Confirm the current currency, valuation and tax-treatment requirements with the importer and destination clearing agent before shipment."
         },
         {
           q: "What is Tema port's status regarding congestion?",
-          a: "Tema is generally smoother than Lagos, but seasonal agricultural export surges or customs IT updates can create temporary 5-10 day cargo release delays. DDNZ advises packing 7 days in advance."
+          a: "Tema conditions can vary with seasonal demand and customs-system updates. Confirm the destination handling plan and include an appropriate buffer in your shipment schedule."
         }
       ]
     },
     zh: {
-      seoTitle: "中国到加纳(特马 Tema)海运整柜拼箱与空运DDP | CoC认证 | 华正邦泰 DDNZ Global",
-      seoDesc: "提供中国到加纳特马(Tema)/阿克拉(Accra)优质空海运物流服务。直航特马，专业代理加纳 GSA CoC 质量证书与装船前 CTN 单据绑定，自营散货拼箱集运更省钱。",
-      headline: "中国到加纳（特马 Tema / 阿克拉 Accra）海运拼箱与直航整柜：自营自发与 CoC 合规清关保障方案",
-      subheadline: "每周定期直拼特马港，攻克加纳特有 CTN 跟踪单绑定与 CoC 质量合格证合规障碍，全流程透明计费，消除西非目的港诈骗乱收费黑幕。",
-      transitWindow: "⏱️ 加纳专线预计时效",
+      seoTitle: "中国到加纳（特马 Tema / 阿克拉 Accra）海运整柜拼箱与空运 DDP | 华正邦泰国际货运",
+      seoDesc: "中国至加纳特马、阿克拉的海运、空运与集货规划，支持 CoC、CTN 等进口文件的出运前核对。",
+      headline: "中国到加纳（特马 Tema / 阿克拉 Accra）海运与空运：CoC、CTN 文件协调支持",
+      subheadline: "提供中国集货、起运资料核对及与目的地清关合作方的服务衔接，协助进口商确认 CoC 与 CTN 要求。",
+      transitWindow: "加纳专线预计时效",
       transitDays: "35 - 50 天",
-      complianceRowTitle: "加纳 GSA CoC 证书申报周期",
-      complianceRowVal: "1 - 3 工作日",
+      complianceRowTitle: "加纳 CoC 与进口文件核对",
+      complianceRowVal: "订舱前核对",
       solutionsTitle: "加纳专线合规解决方案",
-      solutionsSubtitle: "二十九年口岸物流老庄，直击加纳进口清关核心风险，单据100%字符对齐，消灭卡关隐患。",
+      solutionsSubtitle: "围绕 CoC、CTN、申报文件与目的地操作要求，提供出运前资料核对与服务协调。",
       solutions: [
         {
           title: "加纳 GSA 强制 CoC 认证",
-          desc: "加纳标准局（GSA）对受管制商品目录实行强制性合格评定（EasyPASS）。货物必须在中国装船起运前申请 CoC 产品合格证书，否则货到特马港后将被强制扣仓抽样送检，并处以货值（CIF）30% 的巨额罚金。",
+          desc: "加纳标准局（GSA）对受监管商品目录可能要求合格评定（EasyPASS）。请在装船前确认货物是否适用 CoC 产品合格证书。",
           icon: "ShieldCheck"
         },
         {
           title: "装箱绑定 CTN 货物跟踪单",
-          desc: "加纳税务局（GRA）强制进口货物在装船前绑定 CTN 电子货物跟踪单。CTN 上的货物描述、货值、件重尺数据必须与商业发票、装箱单、提单 100% 字节对齐，不准有一个数字的字符偏差。",
+          desc: "请在装船前确认 CTN 电子货物跟踪单的当前要求，并核对 CTN、商业发票、装箱单和提单中的货物资料。",
           icon: "FileText"
         },
         {
-          title: "严格的申报货值与币种限制",
-          desc: "加纳口岸海关绝不接受到港后修改发票申报金额。此外，所有出口至加纳的商业发票，其计价币种一律只能使用美元（USD）或欧元（EUR），不接受加纳塞地或人民币直接申报，避免清关计税出现汇率纠纷。",
+          title: "申报资料与计价信息核对",
+          desc: "请在出运前确保商业发票、装箱单和申报资料中的货物描述、数量、货值及计价信息一致；具体申报要求应由进口商与目的地合格专业机构确认。",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 直航海运整箱/拼箱 (Sea)",
+          mode: "直航海运整箱/拼箱 (Sea)",
           days: "35 - 50 天",
           suitability: "适合批发商品、建筑建材、日用百货及重型工业原材料。",
-          sellingPoint: "自营拼箱，每周固定班期直航特马（Tema）港口。自主装柜放行。",
-          warning: "近期 Tema 特马港口存在塞港风险，港口装卸出现排队现象。DDNZ 强力建议广大货主在备货期中额外多预留 1-2 周的弹性缓冲时间。"
+          sellingPoint: "根据当前船期、货物资料和目的港操作范围，规划从华南港口至 Tema 的出运方案。",
+          warning: "Tema 的港口条件可能受季节需求和当地操作变化影响。请确认目的港计划，并在运输安排中预留合理缓冲。"
         },
         {
-          mode: "✈️ 空运双清专线 (Air)",
+          mode: "空运双清专线 (Air)",
           days: "6 - 8 工作日",
           suitability: "适合快速消费品、高溢价数码产品、零配件及加急补货样品。",
-          sellingPoint: "中国始发直飞，或通过迪拜、欧洲全货机直达阿克拉（Accra）机场。航班稳定。",
-          warning: "阿克拉机场海关对高货值商品查验严格。原始随货商业发票必须与实物 100% 保持吻合，严禁虚报货品品名。"
+          sellingPoint: "可根据可用直飞或中转航班，结合货物属性和目的港操作要求规划至 Accra 的空运路线。",
+          warning: "高货值商品可能面临更严格的查验；商业发票、装箱单和实物信息应保持一致，并在出运前确认。"
         }
       ],
       faqs: [
         {
           q: "所有出口到加纳的产品都需要做 CoC (Certificate of Conformity) 认证吗？",
-          a: "只有加纳标准局（GSA）列明的受管制商品目录（如电器、化妆品、建材、玩具、二手服饰等）才需要强制做 CoC。DDNZ 的单证专员可免费帮您检索您的 HS 编码是否在受管制目录中。"
+          a: "CoC 是否适用取决于加纳标准局（GSA）的当前受监管商品目录和进口情形。请在装船前根据 HS 编码、产品资料和进口商信息确认。"
         },
         {
-          q: "加纳进口发票对于币种有什么死要求？",
-          a: "加纳海关 GRA 系统规定，清关所提交的原始发票和装箱单，其交易结算货币一律只能为美元（USD）或欧元（EUR）。其余小币种或未授权币种会面临海关退档重申。"
+          q: "加纳进口发票的计价信息应如何准备？",
+          a: "商业发票、装箱单和申报资料的计价信息应保持一致。进口商应在出运前与目的地合格专业机构确认适用的币种、申报和税费要求。"
         },
         {
           q: "特马港 Tema 最近通关和赛港情况如何？",
-          a: "相比于拉各斯，特马港口秩序更好，但常在季度交替、海外节日以及加纳关税政策调整期出现 5-10 天的阶段性塞港。DDNZ 提供自营拖车配合，保障第一时间拖离港口进入我们加纳本地拆箱仓。"
+          a: "Tema 港口条件可能受季节需求和当地操作变化影响。请在订舱前确认目的港操作计划，并在运输安排中预留合理缓冲。"
         }
       ]
     },
     fr: {
-      seoTitle: "Transitaire en Chine | Groupage Maritime & FCL vers l'Afrique de l'Ouest — DDNZ",
-      seoDesc: "Besoin d'un transitaire en Chine fiable ? DDNZ Global propose des services de groupage maritime, inspection de conteneur и dédouanement fret maritime.",
-      headline: "Groupage Maritime и FCL depuis la Chine",
-      subheadline: "Logistique spécialisée et transport sécurisé vers l'Afrique de l'Ouest (Lagos, Tema, Abidjan) et l'Europe. Votre partenaire SCM de confiance depuis 1997.",
-      transitWindow: "⏱️ Délais de transit pour le Ghana",
+      seoTitle: "Fret de Chine vers le Ghana | Heaven Born",
+      seoDesc: "Planification maritime, aérienne et documentaire de Chine vers le Ghana, avec vérification des exigences d’importation avant expédition.",
+      headline: "Fret maritime et aérien de Chine vers le Ghana",
+      subheadline: "Planification habituelle de 35–50 jours par mer, avec vérification de l’applicabilité du CoC et des documents d’importation avant expédition.",
+      transitWindow: "Délais de transit habituels vers le Ghana",
       transitDays: "35 - 50 Jours",
       complianceRowTitle: "Dépôt de certification CoC Ghana",
-      complianceRowVal: "1 - 3 Jours",
+      complianceRowVal: "Avant réservation",
       solutionsTitle: "Solutions de conformité logistique Ghana",
-      solutionsSubtitle: "Navigation sans effort parmi les exigences douanières, les contrôles de qualité obligatoires et les processus CoC.",
+      solutionsSubtitle: "Vérification des documents d’importation, du classement produit et des exigences applicables avant le départ de la cargaison.",
       solutions: [
         {
           title: "Exigence de certification CoC",
-          desc: "Le gouvernement du Ghana impose un certificat de conformité (CoC) pour sécuriser le marché contre les produits de mauvaise qualité. Nous aidons à l'évaluation, aux tests et à l'obtention du certificat avant le départ.",
+          desc: "Un CoC peut s’appliquer aux produits figurant dans le répertoire réglementé de la Ghana Standards Authority. Nous vérifions l’applicabilité avec l’importateur et les parties compétentes avant l’expédition.",
           icon: "ShieldCheck"
         },
         {
@@ -338,21 +340,21 @@ const WEST_AFRICA_DATA = {
           icon: "FileText"
         },
         {
-          title: "Transparence absolue des coûts de destination",
-          desc: "Le Ghana a des frais de port et des taxes fluctuants. Nous protégeons les importateurs en garantissant des tarifs logistiques DDP forfaitaires, transparents et sans frais cachés.",
+          title: "Vérification des coûts et du périmètre de destination",
+          desc: "Les frais portuaires, taxes et services à destination peuvent varier. Confirmez le périmètre DDP/DDU, les hypothèses et les éléments inclus avant réservation.",
           icon: "Search"
         }
       ],
       multimodalTable: [
         {
-          mode: "🚢 Groupage LCL & FCL de Chine vers Tema",
+          mode: "Groupage LCL & FCL de Chine vers Tema",
           days: "35 - 50 Jours",
           suitability: "Idéal pour les envois réguliers de marchandises, les palettes de vente au détail et le fret volumineux.",
-          sellingPoint: "Ligne de consolidation directe hebdomadaire de Guangzhou à Tema Port. Dédouanement efficace.",
-          warning: "Assurez-vous que l'étiquetage correspond à 100% au certificat CoC pour éviter l'ouverture forcée des conteneurs."
+          sellingPoint: "Les options de groupage et les départs disponibles sont planifiés selon les horaires des transporteurs et les exigences de destination.",
+          warning: "Vérifiez que l'étiquetage, les quantités et les descriptions de produits sont cohérents avec les documents et certificats applicables."
         },
         {
-          mode: "✈️ Fret Aérien Direct vers Accra (ACC)",
+          mode: "Fret Aérien Direct vers Accra (ACC)",
           days: "4 - 10 Jours Ouvrables",
           suitability: "Idéal pour les pièces de rechange d'usine, l'électronique fine et les lancements de produits.",
           sellingPoint: "Vols directs ou de transit rapide vers l'aéroport d'Accra, dédouanement accéléré.",
@@ -362,25 +364,54 @@ const WEST_AFRICA_DATA = {
       faqs: [
         {
           q: "Pourquoi le CoC is obligatoire pour expédier vers Tema ?",
-          a: "La GSA (Ghana Standards Authority) l'impose pour des raisons de conformité et de sécurité. Les marchandises non certifiées reçoivent d'importantes amendes et des inspections de douane intrusives."
+          a: "Le CoC peut s'appliquer aux produits figurant dans le répertoire réglementé de la GSA. Confirmez l'application actuelle avec l'importateur et un conseiller qualifié avant l'expédition."
         },
         {
           q: "Comment fonctionne le CTN ghanéen ?",
-          a: "Le Cargo Tracking Note doit être lié à la facture commerciale et au B/L. Nous le finalisons numériquement à Guangzhou sous 48 heures."
+          a: "Le Cargo Tracking Note doit être cohérent avec la facture commerciale, la liste de colisage et le connaissement. Confirmez les exigences et le délai applicables avant l'embarquement."
         },
         {
           q: "Est-il possible d'expédier sous le régime DDP (rendu droits acquittés) ?",
-          a: "Oui, DDNZ propose des solutions DDP fiables couvrant l'ensemble du processus de douane et des taxes ghanéennes."
+          a: "Un service DDP peut être évalué selon le produit, l'importateur et les conditions de destination. Confirmez par écrit le périmètre, les taxes et les exclusions avant réservation."
         }
       ]
     }
   }
 };
 
+const WEST_AFRICA_LOCALIZED = WEST_AFRICA_DATA as Record<string, any>;
+const westAfricaLocaleConfig = {
+  ru: {
+    nigeria: { country: 'Нигерия', destination: 'Лагос и Апапа', compliance: 'SONCAP, Form M и PAAR', transitDays: 'Море: 35 - 50 дней | Авиа: 5 - 12 дней' },
+    ghana: { country: 'Гана', destination: 'Тема и Аккра', compliance: 'CoC, CTN и таможни Ганы', transitDays: 'Море: 40 - 55 дней | Авиа: 5 - 12 дней' },
+  },
+  es: {
+    nigeria: { country: 'Nigeria', destination: 'Lagos y Apapa', compliance: 'SONCAP, Form M y PAAR', transitDays: 'Marítimo: 35 - 50 días | Aéreo: 5 - 12 días' },
+    ghana: { country: 'Ghana', destination: 'Tema y Accra', compliance: 'CoC, CTN y aduana de Ghana', transitDays: 'Marítimo: 40 - 55 días | Aéreo: 5 - 12 días' },
+  },
+  ar: {
+    nigeria: { country: 'نيجيريا', destination: 'لاغوس وأبابا', compliance: 'SONCAP وForm M وPAAR', transitDays: 'بحري: 35 - 50 يوماً | جوي: 5 - 12 يوماً' },
+    ghana: { country: 'غانا', destination: 'تيما وأكرا', compliance: 'CoC وCTN والجمارك الغانية', transitDays: 'بحري: 40 - 55 يوماً | جوي: 5 - 12 يوماً' },
+  },
+} as const;
+
+for (const locale of ['ru', 'es', 'ar'] as const) {
+  WEST_AFRICA_LOCALIZED.nigeria[locale] = createLocalizedShippingContent({
+    locale,
+    region: 'West Africa',
+    ...westAfricaLocaleConfig[locale].nigeria,
+  });
+  WEST_AFRICA_LOCALIZED.ghana[locale] = createLocalizedShippingContent({
+    locale,
+    region: 'West Africa',
+    ...westAfricaLocaleConfig[locale].ghana,
+  });
+}
+
 const PAGE_LANG_DATA = {
   en: {
-    seoTitle: "China to West Africa Freight Forwarding Guide | DDNZ",
-    seoDesc: "Your trusted gateway to West Africa shipping (Nigeria, Ghana, and French West Africa). 100% guaranteed Compliant DDP, free consolidation warehouse, and strict cargo pre-auditing.",
+    seoTitle: "China to West Africa Freight Forwarding Guide | Heaven Born",
+    seoDesc: "Freight planning from China to West Africa, including Nigeria, Ghana, and French-speaking markets, with consolidation, document review, and DDP/DDU coordination.",
     tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
     tabGhana: "Ghana (Tema / Accra)",
     faqHeading: "West Africa SCM Compliance FAQ",
@@ -393,42 +424,42 @@ const PAGE_LANG_DATA = {
     formGoods: "Cargo Details (Item Type, Total Weight/CBM, etc.)",
     formSubmit: "Get Precise DDP Quote",
     formSuccess: "Inquiry Submitted Successfully!",
-    formSuccessSub: "Our senior trade lane manager for West Africa will contact you within 24 hours.",
+    formSuccessSub: "Our West Africa route team will use your submitted contact details to confirm the information needed for the quotation.",
     formAnother: "Submit Another Quote Request",
     complianceBadge: "COMPLIANCE NOTICE",
     timeBadge: "TIMELINE FORECAST",
     actionQuote: "Generate Dynamic Route Quote",
     actionConsult: "Consult Compliance Specialist",
-    guideHeader: "DDNZ West Africa Gate: 18-Year SCM Hardcore Blueprint",
-    guideSub: "Realizing secure logistics across West Africa and overcoming customs bottlenecks."
+    guideHeader: "Heaven Born West Africa Shipping Notes",
+    guideSub: "Practical points for planning documents, consolidation, and destination operations."
   },
   zh: {
-    seoTitle: "中国到西非(尼日利亚/加纳)海运整柜拼箱双清DDP | 西非老庄 | 华正邦泰 DDNZ Global",
-    seoDesc: "二十余年专注中国至西非（尼日利亚、加纳、法语西非区）专业货运专线。提供霍尔果斯/广州双口岸集货，独家SONCAP证书代办、ECTN跟踪单申报，拒绝对港二次加价，一票到底。",
+    seoTitle: "中国到西非（尼日利亚/加纳）海运整柜拼箱与 DDP 服务 | 华正邦泰国际货运",
+    seoDesc: "中国至西非的海运、空运与集货服务，支持 SONCAP、ECTN 等文件的出运前核对，并协调 DDP/DDU 服务范围。",
     tabNigeria: "尼日利亚（拉各斯 Lagos）专区",
     tabGhana: "加纳（特马 Tema）专区",
     faqHeading: "西非航线通关合规常见问答",
-    faqSubheading: "加纳和尼日利亚口岸政策多变，DDNZ 提炼真实货主核心痛点，出货前帮您彻底避坑。",
+    faqSubheading: "加纳和尼日利亚的文件与港口要求可能变化，建议在出运前结合货物与目的地逐项核对。",
     formTitle: "立即获取西非双清方案及报价",
-    formSub: "由 DDNZ 运营十八年以上的西非大区专线经理亲自为您进行路由和精算方案设计。",
+    formSub: "提交货物信息后，我们将确认路线、文件要求和报价所需资料。",
     formName: "您的姓名 / 企业名称 (必填)",
     formEmail: "您的企业邮箱 (必填)",
     formPhone: "联系电话 / 微信 / WhatsApp (必填)",
     formGoods: "货物详情描述 (如品名、箱数、总重量/立方数、有无电池等)",
     formSubmit: "立即索取专属 DDP 精算报价",
     formSuccess: "西非专线询价提交成功！",
-    formSuccessSub: "西非大区专线经理正在精算成本，将在 24 小时内向您的邮箱或电话提供详细报价单。",
+    formSuccessSub: "西非路线团队将通过您提交的联系方式，确认货物、目的地和服务范围。",
     formAnother: "发起新的西非询价",
     complianceBadge: "合规风控红线",
     timeBadge: "时效安全测算",
     actionQuote: "获取本条航线精确预算",
     actionConsult: "在线对接货代大庄家",
-    guideHeader: "DDNZ 西非通用保命指南：18年大区老庄家硬实力方案",
-    guideSub: "从中国自营集拼仓到西非口岸清关，完美击碎目的港天价隐藏收费黑幕与异国维权灾难。"
+    guideHeader: "Heaven Born 西非出运注意事项",
+    guideSub: "围绕集货、文件与目的地操作，帮助您在出运前完成必要确认。"
   },
   fr: {
-    seoTitle: "Spécialiste du fret en Afrique de l'Ouest | DDNZ",
-    seoDesc: "Votre passerelle de confiance pour l'expédition en Afrique de l'Ouest (Nigeria, Ghana, Afrique de l'Ouest francophone). Logistique DDP conforme garantie à 100%.",
+    seoTitle: "Spécialiste du fret en Afrique de l'Ouest | Heaven Born",
+    seoDesc: "Planification de fret depuis la Chine vers l’Afrique de l’Ouest, avec consolidation, vérification documentaire et coordination DDP/DDU.",
     tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
     tabGhana: "Ghana (Tema / Accra)",
     faqHeading: "FAQ sur la conformité SCM en Afrique de l'Ouest",
@@ -441,67 +472,67 @@ const PAGE_LANG_DATA = {
     formGoods: "Détails de la cargaison (Type d'article, poids/CBM total, etc.)",
     formSubmit: "Obtenir un devis DDP précis",
     formSuccess: "Demande soumise avec succès !",
-    formSuccessSub: "Notre gestionnaire de ligne commerciale pour l'Afrique de l'Ouest vous contactera sous 24 heures.",
+    formSuccessSub: "Notre équipe vous contactera pour confirmer les informations nécessaires au devis.",
     formAnother: "Soumettre une nouvelle demande",
     complianceBadge: "AVIS DE CONFORMITÉ",
     timeBadge: "PRÉVISIONS DE DÉLAI",
     actionQuote: "Générer un devis d'itinéraire",
     actionConsult: "Consulter un spécialiste de la conformité",
-    guideHeader: "Guide de survie DDNZ Afrique de l'Ouest : Solutions d'expert depuis 18 ans",
-    guideSub: "Sécurisation de la logistique à travers l'Afrique de l'Ouest et élimination des goulets d'étranglement douaniers."
+    guideHeader: "Notes d’expédition Heaven Born pour l’Afrique de l’Ouest",
+    guideSub: "Points pratiques pour les documents, la consolidation et les opérations à destination."
   }
 };
 
 const UNIVERSAL_REDLINES = {
   en: {
-    title: "Avoid-Pitfall SCM Gate: Critical Operation Warnings",
-    subtitle: "West African shipping requires deep localized execution. If you do not follow these standard operating protocols, you will face lost cargo and unrecoverable port fines.",
+    title: "West Africa Shipping Preparation Notes",
+    subtitle: "Confirm cargo data, required documents, destination handling scope, and carrier terms before departure.",
     items: [
       {
         id: "01",
-        title: "Guangzhou Self-Operated 1688 Consolidation Warehouse",
-        desc: "Overseas SME buyers often procure miscellaneous retail products from dozens of scattered 1688 or Alibaba suppliers. DDNZ offers free, safe storage at our self-operated Guangzhou main warehouse (never sub-leased). We provide digital vendor management, barcode entry scans, packaging reinforcement, and advanced Cube Optimization (体积精算) to eliminate air pockets, packaging foam, and cargo waste."
+        title: "Multi-supplier Consolidation Planning",
+        desc: "For purchases from multiple 1688 or Alibaba suppliers, confirm receiving, inventory checks, packing requirements, and the consolidation schedule before booking freight."
       },
       {
         id: "02",
-        title: "Your Eyes & Ears: On-Site Chinese Pre-Shipment Inspection",
-        desc: "We provide complete quality assurance inside Chinese factories before cargo loading. We conduct visual quality check-ups, product verification, loading counts, and wood crating reinforcement. This completely eliminates the threat of receiving damaged, counter-feit, or missing goods upon opening containers thousands of miles away in Africa."
+        title: "Pre-shipment Inspection Scope",
+        desc: "Inspection can include agreed checks for visible condition, quantities, packaging, labels, and loading. Confirm the checklist and any sampling requirements before the visit."
       },
       {
         id: "03",
-        title: "Bait-and-Switch Demolished: Zero Hidden Fees Promise",
-        desc: "We strongly condemn deceptive shipping agents who charge $50 in China but extort $2000 at African destinations! DDNZ implements a strictly transparent, contract-bound all-in rate (DDP/DDU) locked in USD or RMB. We absorb destination fluctuation costs and customs IT system downtimes. No hidden surcharges."
+        title: "Quote Scope and Destination Charges",
+        desc: "Review the quote line by line. Confirm whether destination customs, duties, storage, inspection, delivery, and possible third-party charges are included or excluded."
       },
       {
         id: "04",
-        title: "French-Speaking West Africa Network (Abidjan & Dakar)",
-        desc: "Beyond English hubs, DDNZ manages direct routes to French-speaking West Africa: Abidjan (Côte d'Ivoire) in 40-50 days, Dakar (Senegal) in 50-60 days, and seamless multimodal rail/road trucking transits to inland countries like Mali. Our bilingual document team prepares impeccable French-language clearance dossiers and secures BESC/BIETC certificates."
+        title: "French-speaking West Africa Documentation",
+        desc: "For Abidjan, Dakar, and inland destinations, confirm applicable language, BESC/BIETC, and destination-document requirements before booking the route."
       }
     ]
   },
   zh: {
-    title: "西非通用保命指南：货主核心避坑红线",
-    subtitle: "西非物流专线水极深，目的港关卡重重。不遵守以下操作规范，大货到港后可能面临无尽的勒索甚至被海关查封充公。",
+    title: "西非出运准备要点",
+    subtitle: "出运前请核对货物资料、所需文件、目的地操作范围及承运人条款。",
     items: [
       {
         id: "01",
-        title: "放大自营广州集拼仓核心枢纽优势",
-        desc: "海外中小采购商往往从不同的 1688、淘宝或阿里巴巴供应商零散采购散货。DDNZ 广州自营总仓（自有非租用）提供免费全网订单集拼、多供应商 Vendor 集中理货、极致体积优化计算（Cube Optimization）。我们重新包装加固，打托盘拼箱（LCL），彻底打碎高昂的物流多重计费泡沫，保障每一立方都实打实不装空气。"
+        title: "多供应商集货安排",
+        desc: "如货物来自多个 1688、淘宝或阿里巴巴供应商，请在订舱前确认收货、库存核对、包装要求及集货排期。"
       },
       {
         id: "02",
-        title: "中国供应链本土品控验货（防范货不对板）",
-        desc: "我们在货物打包、装柜前，派遣品控专员实地进行 Pre-shipment 装运前质检和实地验厂。检查外观质量、清点数量、测试功能、监督装箱加固。杜绝大货漂洋过海跨越万里到了拉各斯或特马，开箱才发现是“假冒伪劣”、“垃圾货”的异国远程维权灾难。"
+        title: "装运前验货范围",
+        desc: "验货可按约定范围检查外观、数量、包装、标签及装柜情况。请在验货前确认检查清单与抽检要求。"
       },
       {
         id: "03",
-        title: "一票到底包税：坚决粉碎目的港敲诈黑幕",
-        desc: "全网痛斥那些“中国收 50 美金，目的港强收 2000 美金”的无良二道贩子货代！DDNZ 极力主张一站式双清包税一口价（DDP/DDU），合同内用美元或人民币一票锁定。绝不因为西非口岸海关系统瘫痪、当地货币极速贬值或者官员索贿，转嫁成本要求买家补差价扣货。"
+        title: "报价范围与目的地费用",
+        desc: "请逐项查看报价，确认目的地清关、税费、仓储、查验、派送及可能发生的第三方费用是否包含在服务范围内。"
       },
       {
         id: "04",
-        title: "法语西非区（科特迪瓦阿比让、塞内加尔达喀尔）扩容",
-        desc: "除英语系国家外，DDNZ 在法语西非大区同样拥有强悍清关路权：科特迪瓦阿比让（40-50天）、塞内加尔达喀尔（50-60天），以及通过港口向内陆国家（马里 Mali、布基纳法索）进行公路多式联运。单证团队提供纯正法语/双语清关单据预审，并办妥 BESC 跟踪单。"
+        title: "法语西非文件要求",
+        desc: "前往阿比让、达喀尔及内陆目的地时，请在订舱前确认法语文件、BESC/BIETC 及目的地清关资料要求。"
       }
     ]
   },
@@ -533,20 +564,89 @@ const UNIVERSAL_REDLINES = {
   }
 };
 
+for (const locale of ['ru', 'es', 'ar'] as const) {
+  (UNIVERSAL_REDLINES as Record<string, any>)[locale] = createLocalizedShippingRedlines(locale);
+}
+
+Object.assign(PAGE_LANG_DATA, {
+  ru: {
+    ...PAGE_LANG_DATA.en,
+    heroTag: "КИТАЙ — ЗАПАДНАЯ АФРИКА",
+    heroCta: "Получить анализ маршрута и тарифа",
+    insureText: "Координация перевозок из Китая с 1997 года",
+    insightTag: "Оперативная информация",
+    insightTitle: "Планирование портов Лагос, Апапа и Тема",
+    insightContent: "Расписание линий, портовая загруженность и требования к документам меняются. Перед погрузкой подтвердите маршрут, свободное место и документы назначения.",
+    faqHeading: "Таможенный контроль и FAQ по Западной Африке",
+    faqSubheading: "Практические проверки для Нигерии и Ганы.",
+    formTitle: "Запрос тарифа в Западную Африку",
+    formSub: "Отправьте данные груза для подтверждения маршрута и расчёта.",
+    formName: "Имя / Компания",
+    formEmail: "Электронная почта",
+    formPhone: "WhatsApp / Телефон",
+    formGoods: "Товар / Вес / Объём",
+    formSubmit: "Получить расчёт",
+    formSuccess: "Запрос отправлен.",
+    formSuccessSub: "Наша команда проверит данные и свяжется с вами.",
+    formAnother: "Отправить новый запрос",
+  },
+  es: {
+    ...PAGE_LANG_DATA.en,
+    heroTag: "CHINA — ÁFRICA OCCIDENTAL",
+    heroCta: "Obtener análisis de ruta y tarifa",
+    insureText: "Coordinación de carga desde China desde 1997",
+    insightTag: "Actualización operativa",
+    insightTitle: "Planificación para Lagos, Apapa y Tema",
+    insightContent: "Los horarios, la congestión portuaria y los requisitos documentales pueden cambiar. Confirme ruta, espacio y documentos antes de cargar.",
+    faqHeading: "Control aduanero y preguntas frecuentes de África Occidental",
+    faqSubheading: "Revisiones prácticas para Nigeria y Ghana.",
+    formTitle: "Solicitud de cotización para África Occidental",
+    formSub: "Envíe los datos de la carga para confirmar ruta y precio.",
+    formName: "Nombre / Empresa",
+    formEmail: "Correo electrónico",
+    formPhone: "WhatsApp / Teléfono",
+    formGoods: "Mercancía / Peso / Volumen",
+    formSubmit: "Obtener cotización",
+    formSuccess: "Solicitud enviada.",
+    formSuccessSub: "Nuestro equipo revisará los datos y se pondrá en contacto.",
+    formAnother: "Enviar otra solicitud",
+  },
+  ar: {
+    ...PAGE_LANG_DATA.en,
+    heroTag: "الصين — غرب أفريقيا",
+    heroCta: "الحصول على تحليل المسار والتعرفة",
+    insureText: "تنسيق الشحن من الصين منذ 1997",
+    insightTag: "تحديث تشغيلي",
+    insightTitle: "التخطيط لموانئ لاغوس وأبابا وتيما",
+    insightContent: "قد تتغير الجداول وازدحامات الموانئ ومتطلبات المستندات. يجب تأكيد المسار والمساحة والمستندات قبل التحميل.",
+    faqHeading: "التخليص والأسئلة الشائعة لغرب أفريقيا",
+    faqSubheading: "مراجعات عملية لنيجيريا وغانا.",
+    formTitle: "طلب عرض شحن إلى غرب أفريقيا",
+    formSub: "أرسل بيانات البضائع لتأكيد المسار والسعر.",
+    formName: "الاسم / الشركة",
+    formEmail: "البريد الإلكتروني",
+    formPhone: "واتساب / الهاتف",
+    formGoods: "البضائع / الوزن / الحجم",
+    formSubmit: "الحصول على عرض",
+    formSuccess: "تم إرسال الطلب.",
+    formSuccessSub: "سيراجع فريقنا البيانات ويتواصل معك.",
+    formAnother: "إرسال طلب آخر",
+  },
+});
+
 export default function ShippingWestAfrica() {
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
 
-  // Parse country query parameter, default to 'nigeria'
-  const getCountryFromQuery = () => {
-    const params = new URLSearchParams(location.search);
-    const countryParam = params.get('country') || params.get('dest');
-    if (countryParam && countryParam.toLowerCase() === 'ghana') return 'ghana';
-    return 'nigeria';
-  };
+  const getCountryFromLocation = () => getShippingCountrySlug(
+    location.pathname,
+    location.search,
+    ['nigeria', 'ghana'],
+    'nigeria',
+  ) as 'nigeria' | 'ghana';
 
-  const [selectedCountry, setSelectedCountry] = useState<'nigeria' | 'ghana'>(getCountryFromQuery());
+  const [selectedCountry, setSelectedCountry] = useState<'nigeria' | 'ghana'>(getCountryFromLocation);
   const [isLocked, setIsLocked] = useState(false);
   const [activeTransportMode, setActiveTransportMode] = useState<number>(0);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
@@ -556,11 +656,11 @@ export default function ShippingWestAfrica() {
     const lockParam = params.get('lock') === 'true' || params.get('locked') === 'true' || params.get('lockCountry') === 'true';
     setIsLocked(lockParam);
 
-    const currentQueryCountry = getCountryFromQuery();
-    if (currentQueryCountry !== selectedCountry) {
-      setSelectedCountry(currentQueryCountry);
+    const nextCountry = getCountryFromLocation();
+    if (nextCountry !== selectedCountry) {
+      setSelectedCountry(nextCountry);
     }
-  }, [location.search]);
+  }, [location.pathname, location.search, selectedCountry]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -569,16 +669,16 @@ export default function ShippingWestAfrica() {
 
   const handleCountryTabChange = (country: 'nigeria' | 'ghana') => {
     setSelectedCountry(country);
-    navigate(`?country=${country}`, { replace: true });
+    navigate(buildShippingCountryPath(location.pathname, country));
     setActiveTransportMode(0);
     setActiveFaq(null);
   };
 
-  const activeLang = language === 'zh' ? 'zh' : (language === 'fr' ? 'fr' : 'en');
+  const activeLang = language === 'zh' ? 'zh' : (language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en');
   
   const spec = WEST_AFRICA_DATA[selectedCountry][activeLang];
   const t = (key: string) => {
-    const data = PAGE_LANG_DATA[activeLang];
+    const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA.en;
     return data[key] || '';
   };
 
@@ -590,10 +690,10 @@ export default function ShippingWestAfrica() {
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#FF8A00] shrink-0" />;
-      case 'FileText': return <FileText className="w-5 h-5 text-[#FF8A00] shrink-0" />;
-      case 'Search': return <Search className="w-5 h-5 text-[#FF8A00] shrink-0" />;
-      default: return <Package className="w-5 h-5 text-[#FF8A00] shrink-0" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#d97706] shrink-0" />;
+      case 'FileText': return <FileText className="w-5 h-5 text-[#d97706] shrink-0" />;
+      case 'Search': return <Search className="w-5 h-5 text-[#d97706] shrink-0" />;
+      default: return <Package className="w-5 h-5 text-[#d97706] shrink-0" />;
     }
   };
 
@@ -639,7 +739,7 @@ export default function ShippingWestAfrica() {
   const redlines = UNIVERSAL_REDLINES[activeLang];
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#0A051B] to-[#120A2A] text-white font-sans overflow-x-hidden">
+    <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       
       <Navbar />
@@ -654,8 +754,7 @@ export default function ShippingWestAfrica() {
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
-          {/* Dark Purple Gradient Cover */}
-          <div className="absolute inset-0 bg-gradient-to-t from-[#0A051B] via-[#0A051B]/80 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)] via-[var(--hb-navy-deep)]/80 to-transparent" />
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -671,22 +770,22 @@ export default function ShippingWestAfrica() {
                     onClick={() => handleCountryTabChange('nigeria')}
                     className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'nigeria'
-                        ? 'bg-[#FF8A00] text-white shadow-lg scale-105'
+                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
                     }`}
                   >
-                    🇳🇬 {t('tabNigeria')}
+                    <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabNigeria')}
                   </button>
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('ghana')}
                     className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'ghana'
-                        ? 'bg-[#FF8A00] text-white shadow-lg scale-105'
+                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
                     }`}
                   >
-                    🇬🇭 {t('tabGhana')}
+                    <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabGhana')}
                   </button>
                 </div>
               )}
@@ -699,11 +798,11 @@ export default function ShippingWestAfrica() {
                 transition={{ duration: 0.4 }}
                 className="space-y-4"
               >
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#FF8A00]/10 border border-[#FF8A00]/30 text-[#FF8A00] text-xs font-black tracking-widest uppercase">
-                  🌍 DDNZ WEST AFRICA LINER
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#d97706]/10 border border-[#d97706]/30 text-[#d97706] text-xs font-black tracking-widest uppercase">
+                  HEAVEN BORN WEST AFRICA SHIPPING
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#FF8A00]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#d97706]">
                     {spec.headline}
                   </span>
                 </h1>
@@ -715,15 +814,15 @@ export default function ShippingWestAfrica() {
                   {/* Premium Micro-Badges / Key SCM Highlights */}
                   <div className="flex flex-wrap gap-2.5 pt-1">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
-                      {language === 'zh' ? 'SONCAP / CoC 合规护航' : 'SONCAP / CoC Certified'}
+                      <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
+                      {language === 'zh' ? 'SONCAP / CoC 文件支持' : 'SONCAP / CoC Document Support'}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#FF8A00]/10 border border-[#FF8A00]/20 text-xs font-bold text-[#FF8A00]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-[#FF8A00]"></span>
-                      {language === 'zh' ? '自营目的港单证与清关' : 'On-Site Customs Broker'}
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#d97706]/10 border border-[#d97706]/20 text-xs font-bold text-[#d97706]">
+                      <FileText className="w-3.5 h-3.5" aria-hidden="true" />
+                      {language === 'zh' ? '目的地单证与清关协调' : 'Destination Clearance Coordination'}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
-                      <span className="w-1.5 h-1.5 rounded-full bg-blue-400"></span>
+                      <Truck className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? '一站式西非 DDP / DDU' : 'One-Stop West Africa DDP'}
                     </span>
                   </div>
@@ -749,10 +848,10 @@ export default function ShippingWestAfrica() {
                         formElem.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-xs font-black text-white hover:text-[#FF8A00] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
+                    className="text-xs font-black text-white hover:text-[#d97706] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
                   >
                     <span>{language === 'zh' ? '立即询价' : 'Inquire Now'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#FF8A00]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
                   </button>
                 </div>
               </div>
@@ -760,7 +859,7 @@ export default function ShippingWestAfrica() {
 
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
             <div className="lg:col-span-5 space-y-4">
-              <h3 className="text-lg font-black tracking-wide text-[#FF8A00] uppercase mb-2">
+              <h3 className="text-lg font-black tracking-wide text-[#d97706] uppercase mb-2">
                 {language === 'zh' ? '西非专线真实货运时效' : (language === 'fr' ? 'Délais de Transit en Afrique de l\'Ouest' : 'West Africa Hub Transit Windows')}
               </h3>
               
@@ -770,7 +869,7 @@ export default function ShippingWestAfrica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '广州集拼仓直发整箱/拼箱' : (language === 'fr' ? 'Consolidation directe depuis le hub de Guangzhou' : 'Guangzhou Hub Direct Consolidation')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {WEST_AFRICA_DATA.nigeria[activeLang].transitDays}</span>
+                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{WEST_AFRICA_DATA.nigeria[activeLang].transitDays}</span>
                 </div>
               </div>
 
@@ -780,7 +879,7 @@ export default function ShippingWestAfrica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '全程双清、SABER与证书核准托底' : (language === 'fr' ? 'Dédouanement complet Form M & SONCAP' : 'Full Form M & SONCAP Pre-Clearance')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#FF8A00] whitespace-nowrap">⏱️ {WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
+                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
                 </div>
               </div>
             </div>
@@ -796,13 +895,13 @@ export default function ShippingWestAfrica() {
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#FF8A00]/10 text-[#FF8A00] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                🛡️ Compliance Vault
+              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+                Compliance Support
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
                 {spec.solutionsTitle}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm sm:text-base font-medium">
                 {spec.solutionsSubtitle}
               </p>
@@ -812,7 +911,7 @@ export default function ShippingWestAfrica() {
               {spec.solutions.map((sol: any, idx: number) => (
                 <div key={idx} className="bg-white/[0.02] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.04] flex flex-col justify-between group">
                   <div>
-                    <div className="bg-[#FF8A00]/10 p-3 rounded-xl inline-block mb-4">
+                    <div className="bg-[#d97706]/10 p-3 rounded-xl inline-block mb-4">
                       {getIcon(sol.icon)}
                     </div>
                     <h3 className="text-lg font-bold text-white mb-3">
@@ -822,7 +921,7 @@ export default function ShippingWestAfrica() {
                       {sol.desc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#FF8A00]">
+                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#d97706]">
                     <span>{language === 'zh' ? '申请专项预审' : 'Request File Pre-Audit'}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                   </div>
@@ -836,13 +935,20 @@ export default function ShippingWestAfrica() {
         <section className="py-16 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="px-3 py-1 bg-[#FF8A00]/10 text-[#FF8A00] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                📊 {language === 'zh' ? '核心时效透视' : 'SCM Lead-Time Matrix'}
+              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+                {language === 'zh' ? '核心时效参考' : 'Transit Time Reference'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
-                {language === 'zh' ? '西非多式联运全通道时效数据表' : 'West Africa Multimodal Lead-Time Matrix'}
+                {{
+                  en: 'West Africa Multimodal Lead-Time Matrix',
+                  zh: '西非多式联运全通道时效数据表',
+                  ru: 'Сроки мультимодальных перевозок по Западной Африке',
+                  fr: 'Délais du transport multimodal en Afrique de l’Ouest',
+                  es: 'Tiempos del transporte multimodal en África Occidental',
+                  ar: 'مدد النقل متعدد الوسائط في غرب أفريقيا',
+                }[activeLang]}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm font-semibold">
                 {language === 'zh' 
                   ? '精细对齐各物理运输通道，深剖西非清关时效落差，帮助您合理配载预算。' 
@@ -864,17 +970,19 @@ export default function ShippingWestAfrica() {
                       onClick={() => setActiveTransportMode(idx)}
                       className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
                         isSelected 
-                          ? 'bg-gradient-to-r from-[#4B27B1] to-[#FF8A00]/40 text-white border-transparent shadow-xl translate-x-1' 
+                          ? 'bg-gradient-to-r from-[var(--hb-navy)] to-[var(--hb-blue)] text-white border-transparent shadow-xl translate-x-1'
                           : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
                       }`}
                     >
                       <div className="flex items-center gap-3">
-                        <span className="text-xl">{row.mode.split(' ')[0]}</span>
+                        {row.mode.toLowerCase().includes('air') || row.mode.includes('空运') || row.mode.includes('Aérien')
+                          ? <Plane className="w-5 h-5 text-[#d97706]" aria-hidden="true" />
+                          : <Ship className="w-5 h-5 text-[#d97706]" aria-hidden="true" />}
                         <div>
                           <h4 className="text-sm font-black tracking-tight text-white">
-                            {row.mode.replace(/^\S+\s+/, '')}
+                            {row.mode}
                           </h4>
-                          <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-purple-200' : 'text-slate-500'}`}>
+                          <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-slate-200' : 'text-slate-500'}`}>
                             {language === 'zh' ? '预计时效' : 'Transit Window'}
                           </span>
                         </div>
@@ -895,34 +1003,34 @@ export default function ShippingWestAfrica() {
                   <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/[0.08] shadow-lg relative overflow-hidden min-h-[380px] flex flex-col justify-between">
                     {/* Subtle water-mark of active mode */}
                     <div className="absolute -top-12 -right-12 text-white/5 font-black text-9xl select-none pointer-events-none opacity-10">
-                      {spec.multimodalTable[activeTransportMode].mode.split(' ')[0]}
+                      {spec.multimodalTable[activeTransportMode].mode.slice(0, 1)}
                     </div>
 
                     <div className="relative z-10 space-y-6">
                       <div>
-                        <span className="px-2.5 py-1 bg-[#FF8A00]/10 text-[#FF8A00] text-[10px] font-black uppercase tracking-wider rounded-lg">
+                        <span className="px-2.5 py-1 bg-[#d97706]/10 text-[#d97706] text-[10px] font-black uppercase tracking-wider rounded-lg">
                           {language === 'zh' ? '深度解析' : 'SCM Detail Panel'}
                         </span>
                         <h3 className="text-xl md:text-2xl font-black text-white mt-2">
                           {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
-                        <p className="text-[#FF8A00] text-sm font-black mt-1">
-                          ⏱️ {language === 'zh' ? '货主到门时效' : 'Door-to-Door Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
+                        <p className="text-[#d97706] text-sm font-black mt-1">
+                          {language === 'zh' ? '门到门时效参考' : 'Door-to-Door Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                         <div>
                           <h5 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1.5">
-                            🎯 {language === 'zh' ? '最适用货品 / 场景' : 'Best Suited For'}
+                            {language === 'zh' ? '适用货品 / 场景' : 'Best Suited For'}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].suitability}
                           </p>
                         </div>
                         <div>
-                          <h5 className="text-xs font-black text-[#FF8A00] uppercase tracking-widest mb-1.5">
-                            💡 {language === 'zh' ? 'DDNZ 专线技术卖点' : 'DDNZ Unique SCM Features'}
+                          <h5 className="text-xs font-black text-[#d97706] uppercase tracking-widest mb-1.5">
+                            {language === 'zh' ? 'Heaven Born 操作要点' : 'Heaven Born Operating Notes'}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].sellingPoint}
@@ -930,11 +1038,11 @@ export default function ShippingWestAfrica() {
                         </div>
                       </div>
 
-                      <div className="p-4 bg-rose-950/20 rounded-2xl border border-rose-900/30 flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
+                      <div className="p-4 bg-amber-500/10 rounded-2xl border border-amber-400/20 flex items-start gap-3">
+                        <ShieldAlert className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
                         <div>
-                          <h5 className="text-xs font-black text-rose-200 uppercase tracking-wider mb-0.5">
-                            ⚠️ {language === 'zh' ? '风险提示 & 操作合规' : 'Operation Pre-Warnings'}
+                          <h5 className="text-xs font-black text-amber-200 uppercase tracking-wider mb-0.5">
+                            {language === 'zh' ? '风险提示与操作合规' : 'Operation Notes'}
                           </h5>
                           <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
                             {spec.multimodalTable[activeTransportMode].warning}
@@ -955,7 +1063,7 @@ export default function ShippingWestAfrica() {
                             quoteForm.scrollIntoView({ behavior: 'smooth' });
                           }
                         }}
-                        className="px-5 py-2.5 rounded-xl bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] hover:opacity-90 text-white text-xs font-black tracking-widest uppercase transition-all duration-200 flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap shrink-0 self-end"
+                        className="px-5 py-2.5 rounded-xl bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] text-white text-xs font-black tracking-widest uppercase transition-colors active:scale-[0.98] flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap shrink-0 self-end"
                       >
                         <span>{t('actionQuote')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -973,13 +1081,13 @@ export default function ShippingWestAfrica() {
         <section className="py-16 md:py-24 border-b border-white/[0.05] bg-transparent text-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#FF8A00]/10 border border-[#FF8A00]/20 text-[#FF8A00] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                ⚡ {language === 'zh' ? '通用避坑指南' : 'SCM Redlines'}
+              <span className="px-3 py-1 bg-[#d97706]/10 border border-[#d97706]/20 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+                {language === 'zh' ? '出运注意事项' : 'Shipping Notes'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight mb-4">
                 {redlines.title}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm sm:text-base font-semibold">
                 {redlines.subtitle}
               </p>
@@ -991,8 +1099,8 @@ export default function ShippingWestAfrica() {
                   <div className="absolute top-0 right-0 p-4 text-white/5 font-black text-7xl select-none leading-none opacity-40 group-hover:opacity-60 transition-opacity">
                     {item.id}
                   </div>
-                  <div className="flex items-center gap-2.5 text-[#FF8A00] font-black mb-4 text-sm sm:text-base">
-                    <ShieldAlert className="w-5.5 h-5.5 text-[#FF8A00] flex-shrink-0" />
+                  <div className="flex items-center gap-2.5 text-[#d97706] font-black mb-4 text-sm sm:text-base">
+                    <ShieldAlert className="w-5.5 h-5.5 text-[#d97706] flex-shrink-0" />
                     <h3>{item.title}</h3>
                   </div>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-semibold relative z-10">
@@ -1011,7 +1119,7 @@ export default function ShippingWestAfrica() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
                 {t('faqHeading')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm font-semibold">
                 {t('faqSubheading')}
               </p>
@@ -1033,7 +1141,7 @@ export default function ShippingWestAfrica() {
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.q}
                       </span>
-                      <ChevronDown className={`w-5 h-5 text-[#FF8A00] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-[#d97706] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     <AnimatePresence>

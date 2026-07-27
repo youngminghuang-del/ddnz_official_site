@@ -1,403 +1,296 @@
-import { useState, useRef, useEffect } from 'react';
+import { ArrowRight, Building2, ShieldCheck, Warehouse } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { Check, ArrowLeft, ArrowRight } from 'lucide-react';
 import { getImgUrl } from '../constants';
 import { useLanguage } from '../contexts/LanguageContext';
 
+type StoryItem = {
+  label: string;
+  title: string;
+  body: string;
+};
+
+type Copy = {
+  kicker: string;
+  title: string;
+  lead: string;
+  legalLabel: string;
+  legalName: string;
+  since: string;
+  portraitCaption: string;
+  story: StoryItem[];
+  facilityLabel: string;
+  facilityTitle: string;
+  facilityBody: string;
+  tradeLabel: string;
+  tradeName: string;
+  tradeBody: string;
+  servicesCta: string;
+  warehouseCta: string;
+};
+
+const COPY: Record<string, Copy> = {
+  en: {
+    kicker: 'Who we are',
+    title: 'A China-based freight team built around real cargo.',
+    lead: 'Heaven Born combines origin operations, specialist freight knowledge and practical trade support to help importers move goods from China with fewer hand-off gaps.',
+    legalLabel: 'Freight company',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'Operating since 1997',
+    portraitCaption: 'Our team grew from hands-on China export coordination into an international freight operation serving complex cargo and changing markets.',
+    story: [
+      {
+        label: '01 / Foundation',
+        title: 'Trade experience became freight discipline',
+        body: 'Since 1997, our work has been shaped by the details that determine whether a shipment moves smoothly: suppliers, documents, loading, routing and destination hand-offs.',
+      },
+      {
+        label: '02 / Specialisation',
+        title: 'Dangerous goods and new-energy logistics',
+        body: 'We developed focused operating knowledge for batteries, energy storage systems, electric vehicles and other cargo that requires careful compliance planning.',
+      },
+      {
+        label: '03 / Resilience',
+        title: 'A network designed to keep cargo moving',
+        body: 'When capacity, routes or regulations change, our team coordinates practical alternatives through trusted carriers and local partners.',
+      },
+    ],
+    facilityLabel: 'Physical operations',
+    facilityTitle: 'Self-operated warehouse capability',
+    facilityBody: 'Our own operating facilities support receiving, consolidation, loading coordination, inspection hand-offs and export preparation in China.',
+    tradeLabel: 'Trade-support brand',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'DDNZ Global Trade supports factory verification, inspection, export agency, customs declaration and tax-refund coordination alongside the freight team.',
+    servicesCta: 'Explore freight services',
+    warehouseCta: 'View warehouse services',
+  },
+  zh: {
+    kicker: '我们是谁',
+    title: '立足中国的专业国际货运团队',
+    lead: '华正邦泰将中国始发端操作、专业货运能力与贸易支持结合起来，帮助进口商减少供应商、仓库、报关与目的地交接之间的断点。',
+    legalLabel: '货运主体',
+    legalName: '华正邦泰国际货运代理有限公司',
+    since: '始于 1997 年',
+    portraitCaption: '从中国出口贸易与始发端协调起步，我们逐步发展为服务复杂货物与多变市场的专业国际货运团队。',
+    story: [
+      {
+        label: '01 / 起点',
+        title: '把贸易经验沉淀为货运执行力',
+        body: '自 1997 年起，我们持续处理影响出运质量的关键细节，包括供应商衔接、文件、装载、路径与目的地交接。',
+      },
+      {
+        label: '02 / 专业化',
+        title: '危险品与新能源物流能力',
+        body: '围绕电池、储能系统、电动汽车及其他需要严格合规规划的货物，建立更有针对性的操作经验。',
+      },
+      {
+        label: '03 / 韧性',
+        title: '为持续交付建立可靠协作网络',
+        body: '当舱位、航线或监管要求变化时，团队通过承运人与当地合作伙伴协调可执行的替代方案。',
+      },
+    ],
+    facilityLabel: '实体操作能力',
+    facilityTitle: '自营仓储能力',
+    facilityBody: '依托自营实体仓储，支持中国端收货、集货、装载协调、验货衔接与出口前准备。',
+    tradeLabel: '贸易支持品牌',
+    tradeName: '大递诺展贸易有限公司',
+    tradeBody: '大递诺展贸易有限公司与货运团队协同，为客户提供验厂、验货、代出口、报关与退税协调等贸易支持。',
+    servicesCta: '查看货运服务',
+    warehouseCta: '查看仓储服务',
+  },
+  ru: {
+    kicker: 'О компании',
+    title: 'Китайская команда, которая строит логистику вокруг реального груза.',
+    lead: 'Heaven Born объединяет операции в Китае, специализированную экспедиторскую экспертизу и практическую торговую поддержку.',
+    legalLabel: 'Экспедиторская компания',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'Работаем с 1997 года',
+    portraitCaption: 'От координации китайского экспорта мы выросли в международную команду для сложных грузов и меняющихся рынков.',
+    story: [
+      { label: '01 / Основа', title: 'Торговый опыт стал операционной дисциплиной', body: 'С 1997 года мы уделяем внимание поставщикам, документам, погрузке, маршрутам и передаче груза в пункте назначения.' },
+      { label: '02 / Специализация', title: 'Опасные грузы и новая энергетика', body: 'Мы развиваем практические знания для батарей, систем хранения энергии, электромобилей и других регулируемых грузов.' },
+      { label: '03 / Устойчивость', title: 'Сеть, которая помогает грузу двигаться', body: 'При изменении вместимости, маршрутов или правил мы координируем рабочие альтернативы с перевозчиками и местными партнёрами.' },
+    ],
+    facilityLabel: 'Физические операции',
+    facilityTitle: 'Собственные складские мощности',
+    facilityBody: 'Наши объекты поддерживают приём, консолидацию, координацию погрузки, инспекции и подготовку к экспорту в Китае.',
+    tradeLabel: 'Бренд торговой поддержки',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'DDNZ Global Trade помогает с аудитом фабрики, инспекцией, экспортным агентированием, таможней и координацией возврата налогов.',
+    servicesCta: 'Услуги перевозки',
+    warehouseCta: 'Складские услуги',
+  },
+  fr: {
+    kicker: 'Qui sommes-nous',
+    title: 'Une équipe basée en Chine, organisée autour de la marchandise réelle.',
+    lead: 'Heaven Born réunit opérations à l’origine, expertise de fret spécialisé et soutien commercial pratique pour limiter les ruptures de coordination.',
+    legalLabel: 'Société de transit',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'En activité depuis 1997',
+    portraitCaption: 'Partis de la coordination des exportations chinoises, nous sommes devenus une équipe de fret international pour les cargaisons complexes.',
+    story: [
+      { label: '01 / Fondation', title: 'L’expérience du commerce devenue discipline logistique', body: 'Depuis 1997, nous maîtrisons les détails qui comptent: fournisseurs, documents, chargement, itinéraires et relais à destination.' },
+      { label: '02 / Spécialisation', title: 'Marchandises dangereuses et nouvelles énergies', body: 'Nous développons un savoir-faire ciblé pour batteries, systèmes de stockage, véhicules électriques et autres cargaisons réglementées.' },
+      { label: '03 / Résilience', title: 'Un réseau conçu pour maintenir les flux', body: 'Lorsque les capacités, routes ou règles changent, nous coordonnons des solutions concrètes avec transporteurs et partenaires locaux.' },
+    ],
+    facilityLabel: 'Opérations physiques',
+    facilityTitle: 'Capacité d’entreposage en propre',
+    facilityBody: 'Nos installations soutiennent réception, groupage, coordination du chargement, inspections et préparation à l’export en Chine.',
+    tradeLabel: 'Marque de soutien commercial',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'DDNZ Global Trade accompagne audit d’usine, inspection, exportation pour compte de tiers, douane et coordination fiscale.',
+    servicesCta: 'Voir les services de fret',
+    warehouseCta: 'Voir l’entreposage',
+  },
+  es: {
+    kicker: 'Quiénes somos',
+    title: 'Un equipo en China que organiza la logística en torno a la carga real.',
+    lead: 'Heaven Born integra operaciones de origen, experiencia en carga especializada y apoyo comercial práctico para reducir fallos entre cada etapa.',
+    legalLabel: 'Empresa de transporte',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'Operamos desde 1997',
+    portraitCaption: 'Desde la coordinación de exportaciones en China evolucionamos hasta ser un equipo internacional para cargas complejas y mercados cambiantes.',
+    story: [
+      { label: '01 / Origen', title: 'La experiencia comercial se convirtió en disciplina logística', body: 'Desde 1997 trabajamos los detalles que definen un envío: proveedores, documentos, carga, rutas y entrega en destino.' },
+      { label: '02 / Especialización', title: 'Mercancías peligrosas y nueva energía', body: 'Desarrollamos experiencia para baterías, sistemas de almacenamiento, vehículos eléctricos y otras cargas reguladas.' },
+      { label: '03 / Resiliencia', title: 'Una red diseñada para mantener la carga en movimiento', body: 'Cuando cambian la capacidad, las rutas o las normas, coordinamos alternativas viables con transportistas y socios locales.' },
+    ],
+    facilityLabel: 'Operaciones físicas',
+    facilityTitle: 'Capacidad de almacén propio',
+    facilityBody: 'Nuestras instalaciones respaldan recepción, consolidación, coordinación de carga, inspecciones y preparación de exportación en China.',
+    tradeLabel: 'Marca de apoyo comercial',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'DDNZ Global Trade apoya auditorías de fábrica, inspecciones, agencia de exportación, aduanas y coordinación de devolución fiscal.',
+    servicesCta: 'Ver servicios de carga',
+    warehouseCta: 'Ver servicios de almacén',
+  },
+  ar: {
+    kicker: 'من نحن',
+    title: 'فريق شحن في الصين يبني الحلول حول تفاصيل البضائع الفعلية',
+    lead: 'تجمع Heaven Born بين عمليات المنشأ وخبرة الشحن المتخصص والدعم التجاري العملي لتقليل فجوات التنسيق بين مراحل الشحنة.',
+    legalLabel: 'شركة الشحن',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'نعمل منذ عام 1997',
+    portraitCaption: 'بدأنا بتنسيق الصادرات من الصين وتطورنا إلى فريق شحن دولي يخدم البضائع المعقدة والأسواق المتغيرة.',
+    story: [
+      { label: '01 / التأسيس', title: 'تحولت خبرة التجارة إلى انضباط تشغيلي', body: 'منذ عام 1997 نهتم بالتفاصيل التي تحرك الشحنة: الموردون والمستندات والتحميل والمسارات والتسليم في الوجهة.' },
+      { label: '02 / التخصص', title: 'البضائع الخطرة والطاقة الجديدة', body: 'طورنا معرفة تشغيلية للبطاريات وأنظمة تخزين الطاقة والمركبات الكهربائية وغيرها من البضائع الخاضعة للتنظيم.' },
+      { label: '03 / المرونة', title: 'شبكة تساعد على استمرار حركة البضائع', body: 'عند تغير السعة أو المسارات أو اللوائح، ننسق بدائل عملية مع الناقلين والشركاء المحليين.' },
+    ],
+    facilityLabel: 'العمليات الميدانية',
+    facilityTitle: 'قدرات مستودعات مُدارة ذاتياً',
+    facilityBody: 'تدعم منشآتنا الاستلام والتجميع وتنسيق التحميل والفحص والإعداد للتصدير في الصين.',
+    tradeLabel: 'علامة الدعم التجاري',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'تدعم DDNZ Global Trade تدقيق المصانع والفحص والتصدير بالنيابة والإقرار الجمركي وتنسيق استرداد الضرائب.',
+    servicesCta: 'استكشف خدمات الشحن',
+    warehouseCta: 'خدمات المستودعات',
+  },
+};
+
+const prefixByLanguage: Record<string, string> = {
+  zh: '/zh-cn',
+  ru: '/ru',
+  fr: '/fr',
+  es: '/es',
+  ar: '/ar',
+};
+
 export default function WhoWeAre() {
-  const { t, language } = useLanguage();
-  const [activeIndex, setActiveIndex] = useState(0);
-  const scrollRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (scrollRef.current) {
-        const { scrollLeft, clientWidth } = scrollRef.current;
-        const index = Math.round(scrollLeft / clientWidth);
-        setActiveIndex(index);
-      }
-    };
-
-    const currentScrollRef = scrollRef.current;
-    if (currentScrollRef) {
-      currentScrollRef.addEventListener('scroll', handleScroll, { passive: true });
-    }
-
-    return () => {
-      if (currentScrollRef) {
-        currentScrollRef.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, []);
-
-  const getAboutCards = () => {
-    switch (language) {
-      case 'zh':
-        return [
-          {
-            id: 'heritage',
-            title: '29载全球资源传承',
-            highlights: ['始于1997年', '全球供应链', '资深贸易纽带'],
-            desc: '自1997年创立起，我们从中国外贸开拓先驱蜕变并精通于全球综合物流网路。',
-            img: getImgUrl('JOURNEY_1999'),
-            ctaText: '了解发展历程',
-            linkTarget: '/'
-          },
-          {
-            id: 'nev-experts',
-            title: '新能源与危险品专家',
-            highlights: ['前瞻能源物流', '合规危险品运输', '绿色转型专家'],
-            desc: '把握全球绿色物流转型契机，为储能系统与电动汽车提供定制合规安全承运。',
-            img: getImgUrl('ESS_STORAGE'),
-            ctaText: '探索特种承运',
-            linkTarget: '/services/air-freight'
-          },
-          {
-            id: 'infrastructure',
-            title: '实体自营仓储与贸易',
-            highlights: ['自营实体仓库', '香港关键网关', '多币种安全结算'],
-            desc: '凭借对底层基础设施及自营仓库的控制，确保高效全球运作及财务安全。',
-            img: getImgUrl('JOURNEY_2004'),
-            ctaText: '查看物理基建',
-            linkTarget: '/services/warehouse-services'
-          },
-          {
-            id: 'resilience',
-            title: '坚韧不拔的应急交付',
-            highlights: ['供应链抗风险', '紧急货载保障', '可信赖全球网'],
-            desc: '当全球主要航路遭遇突发中断，我们保障紧急物资送达，主动捍卫您的商业利益。',
-            img: getImgUrl('JOURNEY_2019'),
-            ctaText: '阅读客户案例',
-            linkTarget: '/'
-          }
-        ];
-      case 'ru':
-        return [
-          {
-            id: 'heritage',
-            title: '29 лет наследия',
-            highlights: ['Работа с 1997', 'Глобальные цепи', 'Проверенные связи'],
-            desc: 'С 1997 года мы прошли путь от первопроходцев торговли до признанных экспертов логистики.',
-            img: getImgUrl('JOURNEY_1999'),
-            ctaText: 'Наша история',
-            linkTarget: '/'
-          },
-          {
-            id: 'nev-experts',
-            title: 'Специалисты по DG',
-            highlights: ['Логистика энергии', 'Безопасный транспорт', 'Зеленый переход'],
-            desc: 'Лидерство в переходе к эко-логистике с надежным сопровождением литиевых батарей и ESS.',
-            img: getImgUrl('ESS_STORAGE'),
-            ctaText: 'Специальные грузы',
-            linkTarget: '/services/air-freight'
-          },
-          {
-            id: 'infrastructure',
-            title: 'Интегрированные поставки',
-            highlights: ['Собственные склады', 'Гонконгский хаб', 'Гибкие расчеты'],
-            desc: 'Благодаря прямому владению складами, мы гарантируем стабильные операции и безопасность.',
-            img: getImgUrl('JOURNEY_2004'),
-            ctaText: 'Наша инфраструктура',
-            linkTarget: '/services/warehouse-services'
-          },
-          {
-            id: 'resilience',
-            title: 'Надежность и антикризис',
-            highlights: ['Устойчивые цепи', 'Срочная поддержка', 'Мировое партнерство'],
-            desc: 'Даже при сбоях мировых сетей мы находим решения, защищая ваши бизнес-интересы.',
-            img: getImgUrl('JOURNEY_2019'),
-            ctaText: 'Кейсы и опыт',
-            linkTarget: '/'
-          }
-        ];
-      case 'fr':
-        return [
-          {
-            id: 'heritage',
-            title: "29 ans d'héritage",
-            highlights: ['Établi depuis 1997', 'Flux mondiaux', 'Liaisons éprouvées'],
-            desc: 'Depuis 1997, nous sommes passés de l’ouverture des marchés à la pleine maîtrise logistique.',
-            img: getImgUrl('JOURNEY_1999'),
-            ctaText: 'Découvrir l’histoire',
-            linkTarget: '/'
-          },
-          {
-            id: 'nev-experts',
-            title: 'Spécialiste DG & NEV',
-            highlights: ['Logistique verte', 'Transport certifié', 'Transition propre'],
-            desc: 'Pionniers de la transition verte adaptés aux batteries, ESS et véhicules électriques.',
-            img: getImgUrl('ESS_STORAGE'),
-            ctaText: 'Explorer le cargo',
-            linkTarget: '/services/air-freight'
-          },
-          {
-            id: 'infrastructure',
-            title: 'Supply Chain Intégrée',
-            highlights: ['Entrepôts propres', 'Passerelle HK', 'Paiement sécurisé'],
-            desc: 'Le contrôle direct d’infrastructures de pointe offre continuité et transactions sécurisées.',
-            img: getImgUrl('JOURNEY_2004'),
-            ctaText: 'Voir les entrepôts',
-            linkTarget: '/services/warehouse-services'
-          },
-          {
-            id: 'resilience',
-            title: 'Résilience & Protection',
-            highlights: ['Chaîne haute', 'Fret d’urgence', 'Réseau de confiance'],
-            desc: 'En période de rupture globale de fret, nous restons debout pour pérenniser votre commerce.',
-            img: getImgUrl('JOURNEY_2019'),
-            ctaText: 'Lire les études',
-            linkTarget: '/'
-          }
-        ];
-      default: // 'en'
-        return [
-          {
-            id: 'heritage',
-            title: '29 Years of Global Heritage',
-            highlights: ['Established Since 1997', 'Global Supply Chains', 'Proven Trade Links'],
-            desc: "Since 1997, we evolved from pioneering trade links during China's WTO accession to mastering worldwide logistics networks.",
-            img: getImgUrl('JOURNEY_1999'),
-            ctaText: 'Learn Our History',
-            linkTarget: '/'
-          },
-          {
-            id: 'nev-experts',
-            title: 'DG & New Energy Specialists',
-            highlights: ['Visionary Energy Logistics', 'Compliant DG Transport', 'Green Transition Experts'],
-            desc: 'Leading the global green logistics transition with bespoke, compliance-driven solutions for Energy Storage Systems (ESS) and EVs.',
-            img: getImgUrl('ESS_STORAGE'),
-            ctaText: 'Explore Special Cargo',
-            linkTarget: '/services/air-freight'
-          },
-          {
-            id: 'infrastructure',
-            title: 'Integrated Supply Chain & Trade',
-            highlights: ['Self-Owned Warehouses', 'Hong Kong Gateway', 'Multi-Currency Settlement'],
-            desc: 'Empowered by structural infrastructure control, we guarantee seamless global operations and secure cross-border settlements.',
-            img: getImgUrl('JOURNEY_2004'),
-            ctaText: 'View Infrastructure',
-            linkTarget: '/services/warehouse-services'
-          },
-          {
-            id: 'resilience',
-            title: 'Unwavering Resilience & Care',
-            highlights: ['Supply Chain Resilience', 'Critical Cargo Support', 'Trusted Global Network'],
-            desc: 'When global networks falter, we deliver by prioritizing critical supplies and proactively protecting your business interests.',
-            img: getImgUrl('JOURNEY_2019'),
-            ctaText: 'Read Case Studies',
-            linkTarget: '/'
-          }
-        ];
-    }
-  };
-
-  const aboutCards = getAboutCards();
-
-  const highlightTerms = (text: string) => {
-    if (!text) return '';
-    const dictionary: Record<string, string[]> = {
-      en: ["Since 1997", "custom", "compliance-driven", "structural", "seamless", "critical", "proactively"],
-      zh: ["自1997年创立起", "定制", "合规安全", "控制", "高效", "确保", "紧急"],
-      ru: ["С 1997 года", "эко-логистике", "прямому владению", "всегда", "защищая"],
-      fr: ["Depuis 1997", "contrôle direct", "matière", "toujours", "continuité"]
-    };
-    
-    const terms = dictionary[language] || dictionary['en'];
-    
-    let highlightedText = text;
-    terms.forEach(term => {
-      const regex = new RegExp(`(${term})`, 'gi');
-      highlightedText = highlightedText.replace(regex, '<span class="font-extrabold text-amber-400">$1</span>');
-    });
-    
-    return highlightedText;
-  };
+  const { language } = useLanguage();
+  const content = COPY[language] || COPY.en;
+  const prefix = prefixByLanguage[language] || '';
 
   return (
-    <section id="who-we-are" className="py-10 md:py-24 bg-white overflow-hidden font-sans border-b border-slate-100">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Title Block */}
-        <div className="text-center mb-10 md:mb-16">
-          <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-3">
-            {t('who_we_are.label')}
+    <section id="who-we-are" className="scroll-mt-24 overflow-hidden border-b border-slate-200 bg-white py-16 md:py-24">
+      <div className="mx-auto max-w-[1440px] px-4 sm:px-6 lg:px-8">
+        <div className="grid gap-8 border-b border-slate-200 pb-10 md:pb-14 lg:grid-cols-12 lg:gap-16">
+          <div className="lg:col-span-6">
+            <p className="mb-5 text-xs font-black uppercase tracking-[0.2em] text-[#EA6A12]">{content.kicker}</p>
+            <h2 className={`font-black tracking-[-0.04em] text-[#0B1F3A] ${
+              language === 'zh'
+                ? 'max-w-[22ch] text-4xl leading-[1.12] sm:text-[2.6rem] md:text-[2.75rem] lg:text-5xl'
+                : 'max-w-[15ch] text-4xl leading-[1.02] sm:text-5xl md:text-6xl'
+            }`}>
+              {content.title}
+            </h2>
+            <div className="mt-5 h-1 w-12 rounded-full bg-[var(--hb-amber)]" aria-hidden="true" />
           </div>
-          <h2 className="text-2xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-[-0.02em]">
-            {t('who_we_are.title')}
-          </h2>
-          <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-6 md:mb-8" />
-          <p className="text-slate-500 text-sm md:text-xl max-w-3xl mx-auto leading-relaxed">
-            {t('who_we_are.subtitle')}
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-12 md:mb-20 text-center">
-          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">29+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.years')}</div>
-          </div>
-          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">700+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.clients')}</div>
-          </div>
-          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
-            <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight whitespace-nowrap transition-colors duration-300">37,000+</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.shipments')}</div>
-          </div>
-          <div className="group bg-slate-50 p-6 md:p-8 rounded-2xl border border-slate-100/80 transition-all duration-300 ease-out hover:-translate-y-1.5 hover:scale-[1.02] hover:bg-amber-50/20 hover:border-[#FF8A00]/30 hover:shadow-[0_12px_30px_rgba(255,138,0,0.08)] cursor-default">
-            <div className="text-3xl md:text-5xl font-black text-[#4B27B1] group-hover:text-[#FF8A00] mb-2 tracking-tight transition-colors duration-300">960</div>
-            <div className="text-[10px] md:text-xs font-semibold text-slate-600 group-hover:text-amber-700 uppercase tracking-widest leading-none transition-colors duration-300">{t('who_we_are.stats.projects')}</div>
+          <div className="flex flex-col justify-end lg:col-span-6">
+            <p className="max-w-[62ch] text-base font-medium leading-7 text-slate-600 md:text-lg">{content.lead}</p>
+            <div className="mt-7 flex items-start gap-4 border-l-2 border-[#F59E0B] pl-5">
+              <Building2 className="mt-0.5 h-5 w-5 shrink-0 text-[#0B4F8A]" aria-hidden="true" />
+              <div>
+                <p className="text-[11px] font-black uppercase tracking-[0.16em] text-slate-500">{content.legalLabel}</p>
+                <p className="mt-1.5 text-base font-black text-[#0B1F3A] md:text-lg">{content.legalName}</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        {/* Interactive Vertical-Strip Showcase/Slider */}
-        <div className="relative w-full h-[520px] md:h-[620px] rounded-3xl overflow-hidden shadow-2xl border border-slate-200/50 bg-slate-900 group/showcase">
-          {/* 1. Dynamic Background Image Layers with Cross-Fade */}
-          {aboutCards.map((card, idx) => (
-            <div
-              key={`bg-${card.id}`}
-              className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-                activeIndex === idx ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-              }`}
-              style={{
-                backgroundImage: `url(${card.img})`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
-              }}
-            >
-              {/* Overlay with radial gradient for professional vignette */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-black/30" />
-            </div>
-          ))}
-
-          {/* 2. Interactive Columns Overlay (Desktop & Tablet: sm and up) */}
-          <div className="hidden sm:flex relative z-10 h-full w-full">
-            {aboutCards.map((card, idx) => {
-              const isActive = activeIndex === idx;
-              return (
-                <div
-                  key={card.id}
-                  onClick={() => setActiveIndex(idx)}
-                  className={`flex-1 h-full flex flex-col justify-end p-6 md:p-8 border-r border-white/10 last:border-r-0 cursor-pointer transition-all duration-700 relative overflow-hidden ${
-                    isActive ? 'bg-black/10' : 'bg-black/55 hover:bg-black/40'
-                  }`}
-                >
-                  <div className="relative z-10 flex flex-col text-left h-full justify-end">
-                    {/* Badge */}
-                    <div className="border border-white/40 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm w-fit mb-3 bg-black/20 backdrop-blur-[2px] leading-none">
-                      {card.highlights[0] || 'INFO'}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className={`text-base md:text-xl lg:text-2xl font-black tracking-tight leading-tight transition-colors duration-500 ${
-                      isActive ? 'text-[#facc15]' : 'text-white'
-                    }`}>
-                      {card.title}
-                    </h3>
-
-                    {/* Expanding details for the active card */}
-                    <div className={`transition-all duration-700 ease-in-out overflow-hidden ${
-                      isActive ? 'max-h-[280px] opacity-100 mt-4' : 'max-h-0 opacity-0'
-                    }`}>
-                      <p className="text-white/85 text-xs md:text-sm leading-relaxed mb-4 font-medium"
-                         dangerouslySetInnerHTML={{ __html: highlightTerms(card.desc) }}
-                      />
-                      
-                      {/* highlights */}
-                      <div className="space-y-2 mb-5">
-                        {card.highlights.slice(1).map((hl, i) => (
-                          <div key={i} className="flex items-center gap-2 text-white/90 text-xs font-semibold">
-                            <Check className="w-3.5 h-3.5 text-[#facc15] shrink-0" />
-                            <span>{hl}</span>
-                          </div>
-                        ))}
-                      </div>
-
-                      {/* CTA */}
-                      <Link 
-                        to={card.linkTarget}
-                        className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white hover:text-[#facc15] font-extrabold text-xs px-4 py-2.5 rounded-xl transition-all shadow-md backdrop-blur-sm self-start"
-                      >
-                        <span>{card.ctaText || 'Explore'}</span>
-                        <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          {/* 3. Mobile Single-Slide Content Overlay (under sm screen sizes) */}
-          <div className="flex sm:hidden relative z-10 h-full w-full flex-col justify-end p-6 text-left">
-            <div className="border border-white/40 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm w-fit mb-3 bg-black/20 backdrop-blur-[2px] leading-none">
-              {aboutCards[activeIndex].highlights[0] || 'INFO'}
-            </div>
-            
-            <h3 className="text-xl font-black text-[#facc15] tracking-tight leading-tight mb-3">
-              {aboutCards[activeIndex].title}
-            </h3>
-            
-            <p className="text-white/85 text-xs leading-relaxed mb-4 font-medium"
-               dangerouslySetInnerHTML={{ __html: highlightTerms(aboutCards[activeIndex].desc) }}
+        <div className="mt-10 overflow-hidden rounded-[24px] bg-[#081D35] shadow-[0_24px_70px_rgba(11,31,58,0.16)] lg:grid lg:grid-cols-[1.25fr_0.75fr]">
+          <figure className="relative min-h-[390px] overflow-hidden lg:min-h-[610px]">
+            <img
+              src={getImgUrl('JOURNEY_2019')}
+              alt="Heaven Born International Freight team meeting"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
             />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#06182d] via-[#06182d]/25 to-transparent" />
+            <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8 md:p-10">
+              <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-amber-300">{content.since}</p>
+              <p className="max-w-[54ch] text-base font-semibold leading-7 text-white/90 md:text-lg">{content.portraitCaption}</p>
+            </figcaption>
+          </figure>
 
-            <div className="space-y-1.5 mb-5">
-              {aboutCards[activeIndex].highlights.slice(1).map((hl, i) => (
-                <div key={i} className="flex items-center gap-2 text-white/90 text-xs font-bold">
-                  <Check className="w-3.5 h-3.5 text-[#facc15] shrink-0" />
-                  <span>{hl}</span>
-                </div>
-              ))}
-            </div>
+          <div className="px-6 py-3 sm:px-8 lg:px-10 lg:py-7">
+            {content.story.map((item) => (
+              <article key={item.label} className="border-b border-white/12 py-7 last:border-b-0">
+                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-300">{item.label}</p>
+                <h3 className="mt-3 text-xl font-black leading-tight tracking-[-0.02em] text-white md:text-2xl">{item.title}</h3>
+                <p className="mt-3 text-sm font-medium leading-6 text-slate-300">{item.body}</p>
+              </article>
+            ))}
+          </div>
+        </div>
 
-            <Link 
-              to={aboutCards[activeIndex].linkTarget}
-              className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-black text-xs px-4 py-3 rounded-xl backdrop-blur-sm w-fit"
+        <div className="mt-6 grid overflow-hidden rounded-[24px] border border-slate-200 bg-[#F5F8FC] lg:grid-cols-[0.8fr_1fr_1fr]">
+          <div className="relative min-h-56 overflow-hidden lg:min-h-[310px]">
+            <img
+              src={getImgUrl('JOURNEY_2004')}
+              alt="Heaven Born self-operated warehouse and trade facilities"
+              className="absolute inset-0 h-full w-full object-cover"
+              loading="lazy"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0B1F3A]/55 to-transparent" />
+          </div>
+
+          <div className="border-b border-slate-200 p-7 sm:p-9 lg:border-b-0 lg:border-r">
+            <Warehouse className="h-7 w-7 text-[#0B4F8A]" aria-hidden="true" />
+            <p className="mt-7 text-[11px] font-black uppercase tracking-[0.17em] text-[#EA6A12]">{content.facilityLabel}</p>
+            <h3 className="mt-2 text-2xl font-black tracking-[-0.025em] text-[#0B1F3A]">{content.facilityTitle}</h3>
+            <p className="mt-4 text-sm font-medium leading-6 text-slate-600">{content.facilityBody}</p>
+            <Link
+              to={`${prefix}/services/warehouse-services`}
+              className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#0B4F8A] transition-colors hover:text-[#EA6A12]"
             >
-              <span>{aboutCards[activeIndex].ctaText || 'Explore'}</span>
-              <ArrowRight className="w-3.5 h-3.5" />
+              {content.warehouseCta}
+              <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          {/* 4. Left and Right Controls */}
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveIndex((prev) => (prev === 0 ? aboutCards.length - 1 : prev - 1));
-            }}
-            className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/20 hover:bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
-          >
-            <ArrowLeft className="w-5 h-5 stroke-[2.5]" />
-          </button>
-          <button
-            type="button"
-            onClick={(e) => {
-              e.stopPropagation();
-              setActiveIndex((prev) => (prev === aboutCards.length - 1 ? 0 : prev + 1));
-            }}
-            className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/20 hover:bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
-          >
-            <ArrowRight className="w-5 h-5 stroke-[2.5]" />
-          </button>
-
-
-        </div>
-
-        {/* 6. Dot Navigation Indicator */}
-        <div className="flex justify-center items-center gap-2 mt-6">
-          {aboutCards.map((_, idx) => (
-            <button 
-              key={idx}
-              type="button"
-              onClick={() => setActiveIndex(idx)}
-              className={`h-2 transition-all duration-300 rounded-full ${
-                activeIndex === idx ? 'w-8 bg-[#FF8A00]' : 'w-2 bg-slate-200 hover:bg-slate-300'
-              }`}
-            />
-          ))}
+          <div className="p-7 sm:p-9">
+            <ShieldCheck className="h-7 w-7 text-[#0B4F8A]" aria-hidden="true" />
+            <p className="mt-7 text-[11px] font-black uppercase tracking-[0.17em] text-[#EA6A12]">{content.tradeLabel}</p>
+            <h3 className="mt-2 text-2xl font-black tracking-[-0.025em] text-[#0B1F3A]">{content.tradeName}</h3>
+            <p className="mt-4 text-sm font-medium leading-6 text-slate-600">{content.tradeBody}</p>
+            <Link
+              to={`${prefix}/#what-we-do`}
+              className="mt-7 inline-flex items-center gap-2 text-sm font-black text-[#0B4F8A] transition-colors hover:text-[#EA6A12]"
+            >
+              {content.servicesCta}
+              <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
         </div>
       </div>
     </section>

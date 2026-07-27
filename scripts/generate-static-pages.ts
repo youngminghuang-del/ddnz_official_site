@@ -12,30 +12,40 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   // 1. Home ("")
   '': {
     en: {
-      title: 'DDNZ Global & Heaven Born International Freight | China Sourcing & Cargo Logistics',
-      desc: 'Optimize your supply chain with Heaven Born & DDNZ. Professional China sourcing, sea/air freight forwarding, and FBA warehouse services from Guangzhou.',
-      keywords: 'Heaven Born International Freight, DDNZ Supply Chain, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
+      title: 'Heaven Born | China Freight Forwarding & Logistics',
+      desc: 'Heaven Born International Freight provides freight forwarding from China, with trade support delivered by DDNZ Global Trade Co., Ltd.',
+      keywords: 'Heaven Born International Freight, DDNZ Global Trade, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
     },
     'zh-cn': {
-      title: '华正邦泰国际物流 | DDNZ 供应链 | 广州靠谱实力出口货运代理与国际海运空运',
-      desc: '广州实力出口货运代理，华正邦泰与 DDNZ 供应链为您提供专业商品采购、集装箱海运、航空空运、亚马逊 FBA 及一站式跨境物流服务。',
-      keywords: '广州货代, 广州靠谱货代, 实力出口货代, 华正邦泰国际物流, DDNZ供应链, 广州出口货运代理, 广州集装箱海运, 广州空运专线, 中国商品采购代理, 国际货运代理',
+      title: '华正邦泰国际货运 | 广州出口货代、国际海运与空运',
+      desc: '华正邦泰国际货运代理有限公司提供中国出口货运服务，大递诺展贸易有限公司协同提供验厂、验货、代出口与报关等贸易支持。',
+      keywords: '广州货代, 广州出口货运代理, 华正邦泰国际货运, 国际海运, 国际空运, 亚马逊FBA, 中国采购代理, 国际货运代理',
     },
     ru: {
-      title: 'Heaven Born International Freight & DDNZ Supply Chain | Международная доставка грузов из Китая',
+      title: 'Heaven Born International Freight | Международная доставка грузов из Китая',
       desc: 'Оптимизируйте поставки из Китая с Heaven Born и DDNZ. Профессиональный поиск поставщиков, морские/авиаперевозки и сборные грузы из Гуанчжоу.',
-      keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Доставка грузов из Китая, Карго Гуанчжоу, Морской фрахт Китай, Авиаперевозки из Китая, Экспортный логистический брокер',
+      keywords: 'Heaven Born International Freight, DDNZ Global Trade, Доставка грузов из Китая, Карго Гуанчжоу, Морской фрахт Китай, Авиаперевозки из Китая, Экспортный логистический брокер',
     },
     fr: {
-      title: 'Heaven Born International Freight & DDNZ Supply Chain | Transitaire de Fret en Chine & Logistique',
+      title: 'Heaven Born International Freight | Transitaire de Fret en Chine',
       desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born & DDNZ. Approvisionnement, fret maritime/aérien et logistique à Guangzhou.",
-      keywords: 'Heaven Born International Freight, DDNZ Supply Chain, Transitaire maritime Chine, Fret aérien direct, Commissionnaire de transport Guangzhou, Logistique Chine Europe',
+      keywords: 'Heaven Born International Freight, DDNZ Global Trade, Transitaire maritime Chine, Fret aérien direct, Commissionnaire de transport Guangzhou, Logistique Chine Europe',
+    },
+    es: {
+      title: 'Heaven Born | Agente de carga y logística desde China',
+      desc: 'Heaven Born International Freight ofrece logística desde China, con apoyo comercial de DDNZ Global Trade Co., Ltd.',
+      keywords: 'agente de carga china, flete marítimo china, carga aérea china, logística amazon fba, consolidación guangzhou',
+    },
+    ar: {
+      title: 'Heaven Born | وكيل شحن ولوجستيات من الصين',
+      desc: 'تقدم Heaven Born International Freight خدمات الشحن من الصين، مع دعم تجاري من DDNZ Global Trade Co., Ltd.',
+      keywords: 'وكيل شحن الصين، الشحن البحري من الصين، الشحن الجوي من الصين، لوجستيات أمازون، تجميع قوانغتشو',
     }
   },
   // 2. Insights ("insights")
   'insights': {
     en: {
-      title: 'Global Trade Insights & Logistics News | DDNZ Global',
+      title: 'Global Trade Insights & Logistics News | Heaven Born',
       desc: 'Stay informed with our curated global shipping guides, cross-border trade guidelines, and international supply chain trends.',
       keywords: 'global supply chain, shipping news china, cross-border e-commerce ddp, ocean freight guides, air cargo metrics'
     },
@@ -45,14 +55,24 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: '国际货代资讯, 跨境物流指南, 外贸出口干货, 国际供应链前哨, 跨境电商干货库, 华正邦泰国际货运, 华正邦泰'
     },
     ru: {
-      title: 'Блоги и аналитика ВЭД, логистика из Китая | DDNZ Global',
+      title: 'Блоги и аналитика ВЭД, логистика из Китая | Heaven Born',
       desc: 'Актуальные инструкции, гайды по таможенному оформлению, морские тарифы и последние изменения рынка логистики из КНР.',
       keywords: 'новости логистики из китая, вэд китай рф, таможенная очистка грузов, ставки фрахта, карго шэньчжэнь'
     },
     fr: {
-      title: 'Insights Logistique Globale et Transit Chine | DDNZ Global',
+      title: 'Insights Logistique Globale et Transit Chine | Heaven Born',
       desc: "Suivez l'actualité du fret international, de la douane import/export, et des innovations supply chain.",
       keywords: 'actus transit chine europe, réglementation amazon fba, douane importations france, tarifs expédition maritime'
+    },
+    es: {
+      title: 'Análisis de logística global y carga desde China | Heaven Born',
+      desc: 'Guías de envío desde China, comercio transfronterizo y tendencias de la cadena de suministro internacional.',
+      keywords: 'logística china, flete marítimo, carga aérea, comercio internacional, cadena de suministro'
+    },
+    ar: {
+      title: 'رؤى اللوجستيات العالمية والشحن من الصين | Heaven Born',
+      desc: 'أدلة الشحن من الصين وتحديثات التجارة العابرة للحدود واتجاهات سلسلة التوريد العالمية.',
+      keywords: 'الشحن من الصين، الشحن البحري، الشحن الجوي، التجارة الدولية، سلسلة التوريد'
     }
   },
   // 3. Services - Sea Freight ("services/sea-freight")
@@ -150,22 +170,22 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   // 7. Middle East ("shipping-from-china-to-middle-east")
   'shipping-from-china-to-middle-east': {
     en: {
-      title: 'Sea & Air Freight from China to Saudi Arabia, UAE, Kuwait | DDNZ Global',
+      title: 'Freight from China to the Middle East | Heaven Born',
       desc: 'Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance since 1999.',
       keywords: 'middle east shipping, saudi arabia freight, uae shipping, kuwait cargo DDP'
     },
     'zh-cn': {
-      title: '中国至中东(沙特/阿联酋/科威特)海运空运双清门到门专线 | 大递诺展 DDNZ Global',
+      title: '中国至中东海运空运与双清到门 | 华正邦泰国际货运',
       desc: '专为中小贸易商打造的中国至中东货代方案。还原中东海空双清全时效，提供 SABER 合规审单与广州自营集拼仓一票到门托底。',
       keywords: '中东双清专线, 沙特海运DDP, 阿联酋空运专线, 中东包税货代, SABER合规'
     },
     ru: {
-      title: 'Доставка грузов из Китая на Ближний Восток (ОАЭ, Саудовская Аравия) | DDNZ Global',
+      title: 'Доставка грузов из Китая на Ближний Восток | Heaven Born',
       desc: 'Надежные грузоперевозки из Китая в Саудовскую Аравию, ОАЭ и Кувейт. Оптимизация маршрутов и полное таможенное оформление с сертификатами SABER.',
       keywords: 'доставка на ближний восток, саудовская аравия карго, доставка оаэ, saber сертификат'
     },
     fr: {
-      title: 'Fret maritime et aérien de Chine vers le Moyen-Orient | DDNZ Global',
+      title: 'Fret de Chine vers le Moyen-Orient | Heaven Born',
       desc: "Expéditions sécurisées de Chine vers l'Arabie Saoudite, les EAU et le Koweït. Solutions logistiques optimisées face aux blocages portuaires.",
       keywords: 'fret moyen orient, transport arabie saoudite, logistique emirats, certification saber'
     }
@@ -242,27 +262,85 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   // 11. Quote ("get-a-quote")
   'get-a-quote': {
     en: {
-      title: 'Get a Custom Logistics & SCM Quote | DDNZ Global',
+      title: 'Get a Freight Quote & Route Plan | Heaven Born',
       desc: 'Request a custom freight quote for your sea freight, air cargo, or warehousing needs. Quick response from our senior global trade experts.',
       keywords: 'custom shipping quote, freight request china, cargo rates, logistics quote'
     },
     'zh-cn': {
-      title: '获取专属货运与供应链报价方案 | 华正邦泰 DDNZ Global',
+      title: '获取专属国际货运报价与航线方案 | 华正邦泰国际货运',
       desc: '立即提交您的货运需求。无论是集装箱海运、高特空中货运还是广州仓储，我们的资深航线经理都将在第一时间内为您定制专属的省心报价方案。',
       keywords: '货运报价, 国际海运估价, 货代报价咨询, 华正邦泰国际货运'
     },
     ru: {
-      title: 'Получить расчет стоимости доставки и логистики | DDNZ Global',
+      title: 'Получить расчет стоимости доставки и логистики | Heaven Born',
       desc: 'Запросите индивидуальный расчет стоимости морских, авиационных перевозок или складских услуг из Китая. Быстрый ответ от экспертов.',
       keywords: 'расчет доставки из китая, стоимость карго, тарифы фрахта, индивидуальный запрос логистики'
     },
     fr: {
-      title: 'Obtenir un devis personnalisé de logistique et SCM | DDNZ Global',
+      title: 'Obtenir un devis personnalisé de logistique et SCM | Heaven Born',
       desc: "Demandez un devis de transport maritime, aérien ou d'entreposage depuis la Chine. Réponse rapide de nos experts en logistique internationale.",
       keywords: 'devis fret maritime, tarif transport aerien, estimation logistique chine'
     }
   }
 };
+
+const countryNames: Record<string, Record<string, string>> = {
+  'saudi-arabia': { en: 'Saudi Arabia', 'zh-cn': '沙特阿拉伯', ru: 'Саудовскую Аравию', fr: "l’Arabie saoudite", es: 'Arabia Saudita', ar: 'السعودية' },
+  uae: { en: 'the UAE', 'zh-cn': '阿联酋', ru: 'ОАЭ', fr: 'les Émirats arabes unis', es: 'Emiratos Árabes Unidos', ar: 'الإمارات' },
+  kuwait: { en: 'Kuwait', 'zh-cn': '科威特', ru: 'Кувейт', fr: 'le Koweït', es: 'Kuwait', ar: 'الكويت' },
+  qatar: { en: 'Qatar', 'zh-cn': '卡塔尔', ru: 'Катар', fr: 'le Qatar', es: 'Catar', ar: 'قطر' },
+  oman: { en: 'Oman', 'zh-cn': '阿曼', ru: 'Оман', fr: 'Oman', es: 'Omán', ar: 'عُمان' },
+  bahrain: { en: 'Bahrain', 'zh-cn': '巴林', ru: 'Бахрейн', fr: 'Bahreïn', es: 'Baréin', ar: 'البحرين' },
+  kazakhstan: { en: 'Kazakhstan', 'zh-cn': '哈萨克斯坦', ru: 'Казахстан', fr: 'le Kazakhstan', es: 'Kazajistán', ar: 'كازاخستان' },
+  uzbekistan: { en: 'Uzbekistan', 'zh-cn': '乌兹别克斯坦', ru: 'Узбекистан', fr: "l’Ouzbékistan", es: 'Uzbekistán', ar: 'أوزبكستان' },
+  nigeria: { en: 'Nigeria', 'zh-cn': '尼日利亚', ru: 'Нигерию', fr: 'le Nigeria', es: 'Nigeria', ar: 'نيجيريا' },
+  ghana: { en: 'Ghana', 'zh-cn': '加纳', ru: 'Гану', fr: 'le Ghana', es: 'Ghana', ar: 'غانا' },
+  mexico: { en: 'Mexico', 'zh-cn': '墨西哥', ru: 'Мексику', fr: 'le Mexique', es: 'México', ar: 'المكسيك' },
+  brazil: { en: 'Brazil', 'zh-cn': '巴西', ru: 'Бразилию', fr: 'le Brésil', es: 'Brasil', ar: 'البرازيل' },
+  argentina: { en: 'Argentina', 'zh-cn': '阿根廷', ru: 'Аргентину', fr: "l’Argentine", es: 'Argentina', ar: 'الأرجنتين' },
+  peru: { en: 'Peru', 'zh-cn': '秘鲁', ru: 'Перу', fr: 'le Pérou', es: 'Perú', ar: 'بيرو' },
+  chile: { en: 'Chile', 'zh-cn': '智利', ru: 'Чили', fr: 'le Chili', es: 'Chile', ar: 'تشيلي' },
+};
+
+const countryRouteSlugs = Object.keys(countryNames);
+
+function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
+  const country = countryNames[countrySlug]?.[lang] || countryNames[countrySlug]?.en || countrySlug;
+  const templates: Record<string, SEOItem> = {
+    en: {
+      title: `Shipping from China to ${country} | Heaven Born`,
+      desc: `Plan sea, air and multimodal freight from China to ${country}, with consolidation, export documentation and destination coordination.`,
+      keywords: `shipping from China to ${country}, freight forwarder ${country}, China export logistics, sea freight, air freight`,
+    },
+    'zh-cn': {
+      title: `中国至${country}国际货运 | 华正邦泰`,
+      desc: `提供中国至${country}的海运、空运及多式联运方案，并协调集货、出口文件与目的地交接。`,
+      keywords: `中国至${country}货运, ${country}海运, ${country}空运, 国际货运代理, 华正邦泰`,
+    },
+    ru: {
+      title: `Доставка из Китая в ${country} | Heaven Born`,
+      desc: `Морские, авиационные и мультимодальные перевозки из Китая в ${country}: консолидация, экспортные документы и координация доставки.`,
+      keywords: `доставка из Китая в ${country}, грузоперевозки, морской фрахт, авиаперевозки, Heaven Born`,
+    },
+    fr: {
+      title: `Expédition de Chine vers ${country} | Heaven Born`,
+      desc: `Fret maritime, aérien et multimodal de Chine vers ${country}, avec consolidation, documents export et coordination à destination.`,
+      keywords: `expédition Chine ${country}, transitaire Chine, fret maritime, fret aérien, Heaven Born`,
+    },
+    es: {
+      title: `Envíos de China a ${country} | Heaven Born`,
+      desc: `Transporte marítimo, aéreo y multimodal de China a ${country}, con consolidación, documentos de exportación y coordinación en destino.`,
+      keywords: `envíos de China a ${country}, transitario China, flete marítimo, carga aérea, Heaven Born`,
+    },
+    ar: {
+      title: `الشحن من الصين إلى ${country} | Heaven Born`,
+      desc: `حلول الشحن البحري والجوي ومتعدد الوسائط من الصين إلى ${country}، مع التجميع ووثائق التصدير والتنسيق في الوجهة.`,
+      keywords: `الشحن من الصين إلى ${country}, وكيل شحن الصين, شحن بحري, شحن جوي, Heaven Born`,
+    },
+  };
+
+  return templates[lang] || templates.en;
+}
 
 const distDir = path.resolve(process.cwd(), 'dist');
 const sourceHtmlPath = path.join(distDir, 'index.html');
@@ -276,7 +354,9 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
     'en': 'en',
     'zh-cn': 'zh-CN',
     'ru': 'ru',
-    'fr': 'fr'
+    'fr': 'fr',
+    'es': 'es',
+    'ar': 'ar'
   };
   const targetLang = htmlLangMap[lang] || 'en';
   output = output.replace(/<html lang="[^"]*"/i, `<html lang="${targetLang}"`);
@@ -356,18 +436,16 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   }
 
   // 4. Set exact page-specific hreflang alternates (replacing any existing ones or rewriting them)
-  const enUrl = getLanguageUrl('en');
-  const zhUrl = getLanguageUrl('zh-cn');
-  const ruUrl = getLanguageUrl('ru');
-  const frUrl = getLanguageUrl('fr');
-
+  // Service pages have full UI translations. Blog posts only declare their
+  // source language until a genuine Translation Group links them together.
+  const alternateLanguages = relPath.startsWith('blog/')
+    ? [lang]
+    : ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'];
+  const defaultUrl = getLanguageUrl(alternateLanguages.includes('en') ? 'en' : lang);
   const newHreflangTags = `
-    <!-- Multi-Language SEO hreflang Alternate Links -->
-    <link rel="alternate" hreflang="x-default" href="${enUrl}" />
-    <link rel="alternate" hreflang="en" href="${enUrl}" />
-    <link rel="alternate" hreflang="zh-cn" href="${zhUrl}" />
-    <link rel="alternate" hreflang="ru" href="${ruUrl}" />
-    <link rel="alternate" hreflang="fr" href="${frUrl}" />
+    <!-- Language alternates -->
+    <link rel="alternate" hreflang="x-default" href="${defaultUrl}" />
+${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}" href="${getLanguageUrl(code)}" />`).join('\n')}
   `;
 
   // First, strip out any existing hreflang alternate links to avoid duplication
@@ -397,11 +475,11 @@ function run() {
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
   // Today's date for sitemaps
-  const today = '2026-07-16';
+  const today = new Date().toISOString().slice(0, 10);
 
   const basePaths = [
-    { path: '', priority: '1.0', changefreq: 'weekly', lastmod: today },
-    { path: 'insights', priority: '0.8', changefreq: 'weekly', lastmod: today },
+    { path: '', priority: '1.0', changefreq: 'weekly', lastmod: today, languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
+    { path: 'insights', priority: '0.8', changefreq: 'weekly', lastmod: today, languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
     { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
     { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
     { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly', lastmod: today },
@@ -412,6 +490,12 @@ function run() {
     { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', lastmod: today },
     { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', lastmod: today }
   ];
+  const countryPaths = countryRouteSlugs.map((country) => ({
+    path: `shipping-from-china-to-${country}`,
+    priority: '0.9',
+    changefreq: 'weekly',
+    lastmod: today,
+  }));
 
   // Try to load blog posts
   let blogPosts: any[] = [];
@@ -432,25 +516,30 @@ function run() {
     }
   }
 
-  const allPaths = [...basePaths];
+  const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod: string; languages?: string[] }> = [...basePaths, ...countryPaths];
   blogPosts.forEach((post) => {
     if (post && (post.slug || post.id)) {
       allPaths.push({
         path: `blog/${post.slug || post.id}`,
         priority: '0.7',
         changefreq: 'weekly',
-        lastmod: post.date || today
+        lastmod: post.date || today,
+        languages: [post.language || 'en']
       });
     }
   });
 
-  const languages = ['en', 'zh-cn', 'ru', 'fr'] as const;
+  const languages = ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] as const;
 
   // Now, pre-render EVERY path for EVERY language!
   allPaths.forEach((entry) => {
-    languages.forEach((lang) => {
+    (entry.languages || languages).forEach((lang) => {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
+      const countrySlug = entry.path.replace(/^shipping-from-china-to-/, '');
+      if (!seo && countryNames[countrySlug]) {
+        seo = buildCountrySeo(countrySlug, lang);
+      }
 
       // If it's a blog post, build it dynamically
       if (entry.path.startsWith('blog/')) {
@@ -570,23 +659,20 @@ function run() {
   xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n\n';
 
   allPaths.forEach((entry) => {
-    languages.forEach((lang) => {
+    (entry.languages || languages).forEach((lang) => {
       const loc = formatUrl(lang, entry.path);
-      const enUrl = formatUrl('en', entry.path);
-      const zhUrl = formatUrl('zh-cn', entry.path);
-      const ruUrl = formatUrl('ru', entry.path);
-      const frUrl = formatUrl('fr', entry.path);
+      const alternateLanguages = entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
 
       // Determine priority: localized subpages can have slightly lower priority or same
       const priorityVal = lang === 'en' ? entry.priority : (parseFloat(entry.priority) - 0.1).toFixed(1);
 
       xml += '  <url>\n';
       xml += `    <loc>${loc}</loc>\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="en" href="${enUrl}" />\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="zh-cn" href="${zhUrl}" />\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="ru" href="${ruUrl}" />\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="fr" href="${frUrl}" />\n`;
-      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${enUrl}" />\n`;
+      const defaultUrl = formatUrl(alternateLanguages.includes('en') ? 'en' : lang, entry.path);
+      xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl}" />\n`;
+      alternateLanguages.forEach((code) => {
+        xml += `    <xhtml:link rel="alternate" hreflang="${code}" href="${formatUrl(code, entry.path)}" />\n`;
+      });
       xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
       xml += `    <changefreq>${entry.changefreq}</changefreq>\n`;
       xml += `    <priority>${priorityVal}</priority>\n`;
@@ -600,7 +686,8 @@ function run() {
   const publicDir = path.resolve(process.cwd(), 'public');
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), xml, 'utf-8');
   fs.writeFileSync(path.join(distDir, 'sitemap.xml'), xml, 'utf-8');
-  console.log(`✅ Dynamically generated sitemap.xml (with ${allPaths.length * 4} URLs) at public/sitemap.xml and dist/sitemap.xml`);
+  const urlCount = allPaths.reduce((total, entry) => total + (entry.languages || languages).length, 0);
+  console.log(`✅ Dynamically generated sitemap.xml (with ${urlCount} URLs) at public/sitemap.xml and dist/sitemap.xml`);
 
   // Generate optimized robots.txt
   const robotsTxt = `User-agent: *

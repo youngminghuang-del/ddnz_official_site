@@ -1,16 +1,27 @@
+import { lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import WhoWeAre from '../components/WhoWeAre';
-import WhatWeDo from '../components/WhatWeDo';
-import CompetitiveEdge from '../components/CompetitiveEdge';
-import Partners from '../components/Partners';
-import GetAQuote from '../components/GetAQuote';
-import Insights from '../components/Insights';
-import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
+
+const WhatWeDo = lazy(() => import('../components/WhatWeDo'));
+const CompetitiveEdge = lazy(() => import('../components/CompetitiveEdge'));
+const TradeSupport = lazy(() => import('../components/TradeSupport'));
+const Insights = lazy(() => import('../components/Insights'));
+const GetAQuote = lazy(() => import('../components/GetAQuote'));
+const Partners = lazy(() => import('../components/Partners'));
+const Footer = lazy(() => import('../components/Footer'));
+
+function HomeSectionFallback() {
+  return (
+    <section className="min-h-64 bg-[#F5F8FC]" aria-busy="true" aria-live="polite">
+      <span className="sr-only">Loading section</span>
+    </section>
+  );
+}
 
 export default function Home() {
   return (
@@ -22,13 +33,18 @@ export default function Home() {
       <main>
         <Hero />
         <WhoWeAre />
-        <WhatWeDo />
-        <CompetitiveEdge />
-        <Partners />
-        <GetAQuote />
-        <Insights />
+        <Suspense fallback={<HomeSectionFallback />}>
+          <WhatWeDo />
+          <CompetitiveEdge />
+          <TradeSupport />
+          <Insights />
+          <GetAQuote />
+          <Partners />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={<HomeSectionFallback />}>
+        <Footer />
+      </Suspense>
       <WhatsAppFloat />
       <ScrollToTop />
     </div>

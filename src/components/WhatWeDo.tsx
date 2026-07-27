@@ -103,21 +103,33 @@ export default function WhatWeDo() {
         return 'Подробнее об услуге';
       case 'fr':
         return 'En savoir plus';
+      case 'es':
+        return 'Ver servicio';
+      case 'ar':
+        return 'استكشف الخدمة';
       default:
         return 'Explore Service';
     }
   };
 
+  const languagePrefix =
+    language === 'zh' ? '/zh-cn' :
+    language === 'en' ? '' :
+    `/${language}`;
+  const localizePath = (path: string) => `${languagePrefix}${path}`;
+
   return (
-    <section id="what-we-do" className="py-10 md:py-24 bg-slate-50 overflow-hidden">
+    <section id="what-we-do" className="scroll-mt-24 py-10 md:py-24 bg-slate-50 overflow-hidden">
       <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-10 md:mb-20">
-          <div className="text-[#FF8A00] font-bold tracking-widest text-xs uppercase mb-3">{t('services.label')}</div>
-          <h2 className="text-2xl md:text-5xl font-extrabold text-slate-900 mb-4 tracking-[-0.02em]">
+        <div className="mb-10 max-w-4xl md:mb-16">
+          <div className="text-xs font-black uppercase tracking-[0.14em] text-[var(--hb-amber)]">
+            {t('nav.what_we_do')}
+          </div>
+          <h2 className="mt-3 text-3xl font-black tracking-[-0.035em] text-[var(--hb-navy)] md:text-5xl">
             {t('services.title')}
           </h2>
-          <div className="h-1.5 w-12 md:w-20 bg-gradient-to-r from-[#4B27B1] to-[#FF8A00] mx-auto rounded-full mb-8" />
-          <p className="text-slate-500 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+          <div className="mt-4 h-1 w-12 rounded-full bg-[var(--hb-amber)]" aria-hidden="true" />
+          <p className="mt-4 max-w-3xl text-base font-medium leading-7 text-slate-600 md:text-lg">
             {t('services.subtitle')}
           </p>
         </div>
@@ -190,7 +202,7 @@ export default function WhatWeDo() {
 
                       {/* CTA */}
                       <Link 
-                        to={sector.linkTarget}
+                        to={localizePath(sector.linkTarget)}
                         onClick={() => handleServiceClick(sector.trackEventName, sector.id)}
                         className="inline-flex items-center gap-2 bg-white/10 hover:bg-white/20 border border-white/20 text-white hover:text-[#facc15] font-extrabold text-xs px-4 py-2.5 rounded-xl transition-all shadow-md backdrop-blur-sm self-start"
                       >
@@ -228,7 +240,7 @@ export default function WhatWeDo() {
             </div>
 
             <Link 
-              to={businessSectors[activeIndex].linkTarget}
+              to={localizePath(businessSectors[activeIndex].linkTarget)}
               onClick={() => handleServiceClick(businessSectors[activeIndex].trackEventName, businessSectors[activeIndex].id)}
               className="inline-flex items-center gap-2 bg-white/10 border border-white/20 text-white font-black text-xs px-4 py-3 rounded-xl backdrop-blur-sm w-fit"
             >

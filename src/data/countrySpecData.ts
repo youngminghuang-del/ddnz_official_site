@@ -19,69 +19,69 @@ export const COUNTRY_SPEC_DATA: Record<
   'Saudi-Arabia': {
     zh: {
       specTitle: "沙特 SABER 认证合规保障体系",
-      specSub: "根据沙特海关与标准局（SASO）强制性法令，所有受控货物出口沙特必须在 SABER 系统上完成合规录入，否则一律禁止入境并就地退运！",
+      specSub: "对受管制产品，进口商通常需要通过 SABER 完成适用的产品或装运合规程序；具体要求应按 HS 编码、产品类别与当前规则确认。",
       tab1Title: "Product Certificate (PC) 产品证书",
       tab1Header: "SABER PC 证书 - 针对具体品类长期备案",
-      tab1Desc: "针对具体品类及型号进行注册备案。基于合规的第三方检测报告及产品测试申请，通常在 2-4 工作日签发，有效期 1 年。PC 证书是申请单批次 SC 证书的绝对前置前提。",
+      tab1Desc: "适用范围、所需测试报告、有效期和处理周期会随产品类别及当前 SABER 规则而变化。请由进口商或合格机构确认该产品是否需要 PC 及后续装运文件。",
       tab2Title: "Shipment Certificate (SC) 批次证书",
       tab2Header: "SABER SC 证书 - 针对单批次出货清关",
-      tab2Desc: "每批次货物出运前必须单独申请。申请人必须提供装箱单、商业发票及有效 PC 证书。在起运港直接对接，并在 SABER 平台上支付政府规费，核发单批次 SC 清关证书。",
+      tab2Desc: "如适用，装运文件通常需要与商业发票、装箱单及产品合规资料保持一致。请在订舱前确认进口商、产品和装运批次所需文件。",
       redlinesTitle: "沙特海关 5 大清关红线（SABER 审单重点）",
       redlines: [
-        { id: "①", title: "SABER证书时效", desc: "货物到港前必须激活 SC 证书。未在到港前完成 SC 录入，将面临数十万元的高额滞港费和退运处罚。" },
-        { id: "②", title: "原产地标记刻印", desc: "沙特海关强制要求，所有商品及内外包装盒上必须永久刻印“Made in China”字样。使用贴纸直接扣关、罚款并强制退港。" },
-        { id: "③", title: "说明书与安全标语", desc: "电子设备及日用消费品的外包装、警示标签以及说明书，必须配备阿拉伯语或阿/英双语。无阿拉伯语直接拒收。" },
-        { id: "④", title: "SFDA 注册合规", desc: "化妆品、食品、医疗器械和部分保健品，属于沙特药监局（SFDA）强管控，出口前必须取得官方系统准入许可，无备案直接销毁。" },
-        { id: "⑤", title: "SASO 能效与禁运", desc: "空调、冰箱、照明等受控产品必须加贴 SASO 能效标识，白炽灯等高能耗灯泡属于绝对禁运品类。" }
+        { id: "①", title: "SABER 装运文件", desc: "如产品适用 SABER，请在订舱前由进口商或合格机构确认 PC、SC 及装运文件的适用性和完成节点，并预留目的港操作时间。" },
+        { id: "②", title: "原产地与产品标识", desc: "原产地、标签和包装要求会因货物类别而异。应按适用法规和进口商要求，在出运前核对标识方式与商业文件的一致性。" },
+        { id: "③", title: "阿拉伯语信息与说明书", desc: "部分消费品和受监管产品可能需要阿拉伯语或双语标签、警示或说明书。请按产品类别及现行目的地要求提前确认。" },
+        { id: "④", title: "SFDA 受监管产品", desc: "食品、化妆品、医疗器械及相关受监管产品可能涉及 SFDA 程序。请由进口商在订舱前确认产品准入和文件要求。" },
+        { id: "⑤", title: "SASO 能效与产品规则", desc: "制冷、空调、照明等产品可能适用能效或产品合规要求。请按 HS 编码、产品规格和最新目的地规则进行核对。" }
       ],
       guideTitle: "沙特专线物流实战操作守则",
       guideSub: "高能避坑指南，沙特专线全链路控制要点，保障货款与货物安全。",
       guideCards: [
         {
           title: "订舱审单与清关资料",
-          desc: "沙特提单必须包含沙特收货人的真实税号及营业执照，申报发票和装箱单必须 100% 对应 SABER 信息。严禁仿牌、虚报瞒报或过度低报。"
+          desc: "确认提单、商业发票、装箱单与进口商信息及适用的 SABER 文件一致。品牌货、受监管货物及高价值货物应在订舱前完成资料预审。"
         },
         {
           title: "原产地与木包装熏蒸",
-          desc: "提单和发票中的原产地必须完全吻合（Made in China）。凡是木包装、木卡板必须具备 IPPC 盖章熏蒸证明，无章或熏蒸单缺失将直接在海关销毁。"
+          desc: "根据货物与包装核对原产地信息和木质包装要求。木质包装通常需符合适用的检疫及承运要求，相关文件应在出运前准备齐全。"
         },
         {
           title: "物流防损与节日提前规划",
-          desc: "从深圳/广州出发到吉达海运约 18-25 天。装柜需四拍留证（空箱、半箱、满箱、封条），应对沙特港口搬运货损。每年开斋节、宰牲节期间沙特海关放假，务必提前一个月安排预订舱位。"
+          desc: "中国至吉达的海运请参考已订舱的承运人船期。装柜可留存空箱、装载过程和封条照片；斋月、开斋节、宰牲节和旺季前应为文件、港口操作与目的地派送预留缓冲时间。"
         }
       ]
     },
     en: {
       specTitle: "Saudi Arabia SABER Compliance Protection",
-      specSub: "Under the Saudi SASO directives, all controlled products exported to Saudi Arabia must be fully registered in the SABER portal, otherwise customs will deny entry!",
+      specSub: "For regulated products, importers may need to complete the applicable product or shipment conformity process through SABER. Requirements should be confirmed by HS code, product category and the current rule set.",
       tab1Title: "Product Certificate (PC)",
       tab1Header: "SABER PC - Long-term Product Registration",
-      tab1Desc: "Product registration valid for 1 year per category. Based on qualified laboratory test reports, issued in 2-4 working days. Active PC is the absolute prerequisite for the single batch Shipment Certificate (SC).",
+      tab1Desc: "Scope, test reports, validity and processing time vary by product category and the current SABER rules. Confirm with the importer or a qualified provider whether a PC and subsequent shipment documents apply.",
       tab2Title: "Shipment Certificate (SC)",
       tab2Header: "SABER SC - Single Batch Clearance Certificate",
-      tab2Desc: "Required for every shipment. Issued on the SABER portal after validating shipping invoice, packing list, and active PC certificate. Seamless clearance at departure port.",
+      tab2Desc: "Where applicable, shipment documentation should align with the commercial invoice, packing list and product-conformity records. Confirm the documentation needed for the importer, product and shipment before booking.",
       redlinesTitle: "Saudi Customs 5 Major Redlines (SABER Priority)",
       redlines: [
-        { id: "①", title: "SABER SC Expiry", desc: "SC must be issued before the vessel docks. If not ready, the consignment will trigger heavy port demurrage fees and forced returns." },
-        { id: "②", title: "Permanent Origin Engraving", desc: "Every item and box must permanently engrave 'Made in China'. Removable adhesive stickers are completely banned and fined." },
-        { id: "③", title: "Arabic Manuals & Signs", desc: "Warning labels and technical instructions must include Arabic or Arabic/English bilingual text. Monolingual English faces high rejection rates." },
-        { id: "④", title: "SFDA System Registration", desc: "Cosmetics, foodstuffs, and medical products are heavily monitored by the SFDA. Advance system listing is mandatory or goods are destroyed." },
-        { id: "⑤", title: "SASO Energy Labels", desc: "Refrigeration, air conditioning, and lighting items must hold SASO energy certificates. Incandescent tungsten lamps are strictly banned." }
+        { id: "①", title: "SABER Shipment Documents", desc: "Where SABER applies, confirm with the importer or qualified provider which PC, SC and shipment documents are required, and complete the review before booking." },
+        { id: "②", title: "Origin & Product Marking", desc: "Origin, label and packaging requirements vary by product category. Verify the required marking method and its consistency with commercial documents before shipment." },
+        { id: "③", title: "Arabic Information & Manuals", desc: "Some consumer and regulated products may require Arabic or bilingual labels, warnings or instructions. Confirm against the product category and current destination requirements." },
+        { id: "④", title: "SFDA-Regulated Products", desc: "Food, cosmetics, medical devices and related regulated products may involve SFDA procedures. The importer should confirm product admission and documentation before booking." },
+        { id: "⑤", title: "SASO Energy & Product Rules", desc: "Refrigeration, air conditioning and lighting products may be subject to energy-efficiency or product-conformity requirements. Check by HS code, product specification and current destination rule." }
       ],
       guideTitle: "Saudi Arabia Logistics Practical Guide",
       guideSub: "Frictionless delivery protocols for reliable freight transit and clearance matching.",
       guideCards: [
         {
           title: "Booking & Documentation Validation",
-          desc: "Bills of Lading must state the real Saudi consignee Commercial Register number. Invoice values and names must match your SABER filing with 100% precision."
+          desc: "Align the bill of lading, commercial invoice and packing list with importer information and any applicable SABER documents. Brand, regulated and high-value cargo should be pre-reviewed before booking."
         },
         {
           title: "Made in China & Wood Fumigation",
-          desc: "Declared origin must be strictly unified as 'Made in China'. Solid wooden packaging/pallets must bear IPPC fumigation stamps; otherwise, cargo faces on-the-spot destruction."
+          desc: "Check origin information and wood-packaging requirements against the cargo and packaging used. Wood packaging generally needs to meet the applicable phytosanitary and carrier requirements before departure."
         },
         {
           title: "Transit Delay & Holiday Schedules",
-          desc: "Transit time from China to Jeddah is 18-25 days. Capture 'four-point photographs' (empty, half-loaded, full, and lock sealed) to counter damage claims. Plan shipments 1 month ahead of Eid."
+          desc: "Use the booked carrier schedule for China–Jeddah sea transit. Keep photos of the empty container, loading process and seal; allow buffer time for documents, port operations and destination delivery around Ramadan, Eid and peak seasons."
         }
       ]
     },
@@ -166,32 +166,32 @@ export const COUNTRY_SPEC_DATA: Record<
       tab2Desc: "针对免税自贸区入仓及国际转口贸易客户。货物进入 JAFZA 自由贸易区保税仓库，可免征进口关税和增值税，提供保税仓储、贴签分拣及面向GCC海合会国家的再出口拼箱物流。",
       redlinesTitle: "阿联酋口岸 5 大严控红线（避坑要点）",
       redlines: [
-        { id: "①", title: "原产地物理标记验证", desc: "迪拜海关会进行常态化开箱查验，所有商品必须永久雕刻或刻印“Made in China”。若发现贴纸，将强制扣关直至补交数额高昂的保证金。" },
-        { id: "②", title: "新能源与危险品（DG）申报", desc: "锂电池、平衡车、新能源汽车出口阿联酋属于敏感危品，必须提供英文 MSDS 及 UN38.3 报告提前申报，严禁瞒报夹带。" },
-        { id: "③", title: "陆运轴重超限禁令", desc: "阿联酋联邦公路局对集装箱卡车实行严格的轴重限额检查，超重将被开具数千迪拉姆的巨额罚单，并强制在关口卸货转运。" },
-        { id: "④", title: "电商货物托盘合规", desc: "派送到迪拜 Amazon FBA、Noon 仓库的产品必须以标准托盘（Pallet）进行包装，高度及收缩膜规格不符将被直接拒收退回。" },
-        { id: "⑤", title: "HS 编码伪报处罚", desc: "阿联酋海关引入AI审单系统，对假冒名牌、低申报、伪报 HS 编码以偷逃税款的行径一律录入信誉黑名单，并处以货值数倍罚款。" }
+        { id: "①", title: "原产地与产品标识", desc: "进口产品的标识、原产地信息及文件要求应按产品类别、进口商和现行规则确认，并与商业文件保持一致。" },
+        { id: "②", title: "新能源与危险品（DG）申报", desc: "锂电池、含电池设备及其他受限货物应按承运人、航空/海运法规和目的地要求进行危险品或敏感货预审；所需测试和安全文件因货物而异。" },
+        { id: "③", title: "本地陆运载重规划", desc: "末端陆运需要按集装箱、车辆、路线和当地法规核对重量与尺寸。超限货或项目货应在订舱前确认运输方案。" },
+        { id: "④", title: "电商仓入仓要求", desc: "Amazon FBA、Noon 及其他目的仓库的托盘、标签、外箱和预约要求各不相同。请按实际入仓仓库的最新版规范准备。" },
+        { id: "⑤", title: "HS 编码与申报一致性", desc: "商业发票、装箱单、HS 编码和货物描述应真实、完整且相互一致。品牌货和受监管货物应在出运前做资料核对。" }
       ],
       guideTitle: "阿联酋操作守则与本地配送指南",
       guideSub: "打通中东首要自由贸易港，让您的跨境出海链路高效顺畅。",
       guideCards: [
         {
-          title: "极速清关与单证提柜",
-          desc: "迪拜海关通关通常可在24小时内完成。提货单（D/O）必须准确显示真实收货人。若收货人无自营进出口权，DDNZ可提供可靠的本地进口商双清代抬头报关。"
+          title: "清关资料与提货单核对",
+          desc: "清关周期取决于货物、进口商、文件和目的地程序。提货单（D/O）应准确显示收货人；如需目的地清关或派送支持，请在订舱前书面确认服务范围。"
         },
         {
           title: "海运特种加固与危险品舱位",
-          desc: "针对出口阿联酋的新新能源电池或超大工程设备，装柜必须进行专业的拉带和木方加固，并向船公司申请危险品舱位，防止运输震荡损坏。"
+          desc: "电池、超限设备和其他特殊货物应按承运人、包装标准及危险品规则评估加固和舱位要求；适用的文件与装载方案应在订舱前确认。"
         },
         {
-          title: "最后一公里派送与节假日避坑",
-          desc: "中国至迪拜海运约 15-22 天。最后一公里支持自营卡车派送，覆盖阿布扎比、迪拜、沙迦。特别注意：每年迪拜各种会展期间展会物流堵塞，以及斋月期间本地工作效率减半，需做好舱位和派送时效预留。"
+          title: "最后一公里派送与节假日规划",
+          desc: "中国至迪拜的海运应以已订舱船期为准；在会展、斋月和节假日附近安排派送时，应为目的港操作与末端配送预留缓冲时间。"
         }
       ]
     },
     en: {
       specTitle: "UAE Bulk Cargo & New Energy Project Logistics Channel",
-      specSub: "As the premier Middle Eastern trade hub, UAE (Dubai/Jebel Ali) delivers ultra-fast customs clearance for e-commerce, construction materials, and new energy cargo under strict marking & battery safety audits.",
+      specSub: "UAE routes via Dubai and Jebel Ali can support e-commerce, construction materials and new-energy cargo, subject to product, marking, battery-safety and destination requirements.",
       tab1Title: "Special Project & Bulk Cargo",
       tab1Header: "Project & Bulk Materials - Flat Rack & Open Top Solutions",
       tab1Desc: "Tailored for heavy machinery, structural steel, EVs, lithium batteries, and construction. Providing specialized equipment (Flat Rack, Open Top) shipping, secure rigging, and complete Jebel Ali port clearance.",
@@ -200,26 +200,26 @@ export const COUNTRY_SPEC_DATA: Record<
       tab2Desc: "Optimized for transshipment and tax-free storage. Ship directly to JAFZA bonded warehouses to defer import tariffs and VAT, enabling cost-effective labeling, inventory split, and re-export to other GCC countries.",
       redlinesTitle: "UAE Ports 5 Critical Compliance Redlines (Crucial Points)",
       redlines: [
-        { id: "①", title: "Physical Country of Origin Audits", desc: "Dubai customs inspects shipments frequently. Items must have molded or permanent 'Made in China' markers. Simple paper stickers often trigger custom fines." },
-        { id: "②", title: "New Energy & Dangerous Goods (DG)", desc: "Lithium batteries, EV chargers, and solar modules are flagged as hazardous. Shippers must present bilingual MSDS and UN38.3 test summaries in advance." },
-        { id: "③", title: "Axle Weight Trucking Regulations", desc: "UAE Federal Transport Authority strictly regulates local road weight caps. Exceeding truck load limits triggers massive penalties and impoundments." },
-        { id: "④", title: "E-Commerce Pallet Requirements", desc: "Shipments to Amazon FBA or Noon UAE hubs must be professionally palletized under strict height, label, and wrapping rules, or they are rejected." },
-        { id: "⑤", title: "AI Custom Tariffs Checking", desc: "Dubai custom's AI scanner automatically detects misclassified HS codes or heavily undervalued items, putting chronic offenders on blacklists." }
+        { id: "①", title: "Origin & Product Marking", desc: "Product marking, origin information and document requirements should be confirmed by product category, importer and current rules, and kept consistent with commercial documents." },
+        { id: "②", title: "New Energy & Dangerous Goods (DG)", desc: "Lithium batteries, battery-containing equipment and other restricted cargo need carrier, transport-regulation and destination pre-review. Required tests and safety documents vary by cargo." },
+        { id: "③", title: "Local Trucking Weight Planning", desc: "Final-mile trucking should be planned against the container, vehicle, route and local requirements. Confirm a solution before booking for over-dimensional or project cargo." },
+        { id: "④", title: "E-commerce Warehouse Requirements", desc: "Pallet, label, carton and appointment requirements differ by Amazon FBA, Noon and other destination warehouses. Prepare against the latest requirements of the receiving facility." },
+        { id: "⑤", title: "HS Code & Declaration Consistency", desc: "Keep the commercial invoice, packing list, HS code and cargo description accurate and consistent. Brand and regulated cargo should be reviewed before shipment." }
       ],
       guideTitle: "UAE Operational Codes & Last-Mile Delivery",
       guideSub: "Accelerate your local business operations inside the Gulf's core commerce entry portal.",
       guideCards: [
         {
-          title: "24-Hour Customs Clearances",
-          desc: "UAE clearances typically resolve inside 24 hours. Delivery Orders (D/O) must state the correct consignee. If lacking import licenses, use DDNZ's double clearance DDP proxy."
+          title: "Clearance Documents & Delivery Orders",
+          desc: "Clearance timing depends on the cargo, importer, documents and destination procedure. Ensure the Delivery Order (D/O) states the correct consignee and confirm the agreed clearance scope before booking."
         },
         {
           title: "DG Rigging & Flat Rack Reinforcement",
-          desc: "Oversized machineries and batteries must be strictly lashed with heavy-duty polyester straps and wood blocks inside container bays, following international IMDG standards."
+          desc: "Assess battery, oversized and other special cargo against carrier, packaging and dangerous-goods rules. Confirm the applicable documentation, lashing and stowage plan before booking."
         },
         {
           title: "GCC Distribution & Seasonal Holidays",
-          desc: "China to Dubai transit is 15-22 days. DDNZ provides inland trucking across Abu Dhabi, Dubai, and Sharjah. Anticipate logistics congestion during key Dubai exhibitions and Ramadan slowdowns."
+          desc: "Use the booked carrier schedule for China–Dubai sea transit. Allow buffer time for destination handling and local delivery around major exhibitions, Ramadan and public holidays."
         }
       ]
     },
@@ -294,89 +294,89 @@ export const COUNTRY_SPEC_DATA: Record<
   },
   'Kuwait': {
     zh: {
-      specTitle: "科威特 KUCAS (TER/TIR) 认证合规全攻略",
-      specSub: "科威特进口管制计划强制要求，未获得 KUCAS 认证的受控货物到港将面临退运或就地销毁！",
+      specTitle: "科威特 KUCAS/TABEK 合规与出运规划",
+      specSub: "科威特受监管产品可通过 KUCAS/TABEK 体系办理适用的技术评估、检验或放行程序。是否适用及所需资料应按 HS 编码、产品类别与现行规则由进口商确认。",
       tab1Title: "TER 技术评估报告 (Product Registration)",
-      tab1Header: "TER 技术评估报告 - 适合长期高频出口客户",
-      tab1Desc: "适合年出货 ≥ 2 次的高频客户。基于 CNAS/ISO17025 认可实验室测试报告，3-5 个工作日快速注册，有效期 1-2 年。后续出货在起运港免于重复测试，仅需申请单批次通关证，极大地节省合规成本和时间。",
+      tab1Header: "技术评估证书 - 用于后续同类产品申报",
+      tab1Desc: "科威特公共工业管理局可依据进口商已取得的符合性证书签发技术评估证书，供同一产品后续海关申报使用。所需资料、适用范围和有效性请按当前产品规则确认。",
       tab2Title: "TIR 技术检验报告 (Batch Clearance)",
-      tab2Header: "TIR 技术检验报告 - 单批次清关必备证书",
-      tab2Desc: "单批次清关必备。申请人必须提供装箱单、形式发票、有效第三方检测报告、CoC申请表。最关键的是：货物在起运港装柜前，必须安排线下物理检验（Inspection），现场核对产品标签、电压、插头等实物细节，无误后方可签发通关证。",
-      redlinesTitle: "科威特验货 5 大死穴（红字高亮提示）",
+      tab2Header: "TIR 技术检验报告与放行申请",
+      tab2Desc: "如产品适用 TIR 放行程序，进口商通常需提交海关申报信息、TIR 信息、产品信息及规定承诺，并通过平台跟踪申请。是否需要起运前检验、测试或标签核对取决于产品和适用法规。",
+      redlinesTitle: "科威特出运前 5 项核对",
       redlines: [
-        { id: "①", title: "电压硬性标准", desc: "设备工作电压必须标注 230V-240V/50Hz。若标牌或外包装仅标注 220V，则直接禁止入境或被海关退运。" },
-        { id: "②", title: "英标插头限制", desc: "所有电器类产品必须配备符合 BS1363 标准的英式三脚插头，传统双扁插头或两圆插头一律不予通关。" },
-        { id: "③", title: "阿拉伯语或双语标签说明书", desc: "所有进口电器的外包装标示、警示语以及说明书，必须包含阿拉伯语。无阿拉伯语标识将被海关拒绝入境。" },
-        { id: "④", title: "永久性原产地标识", desc: "产品及包装上必须采用雕刻、压印、丝网印刷等永久性方式标明“Made in China”。使用普通不干胶贴纸将被海关没收、退运并罚款。" },
-        { id: "⑤", title: "能效与特殊禁运", desc: "普通白炽钨丝灯泡及部分高能耗卤素光源属于科威特环保局绝对禁运产品，到港将被直接查封并就地销毁。" }
+        { id: "①", title: "确认产品是否受监管", desc: "按 HS 编码、产品类别及当前 KUCAS/TABEK 规则，确认是否需要符合性证书、技术评估、检验或其他主管部门文件。" },
+        { id: "②", title: "文件与申报信息一致", desc: "商业发票、装箱单、提单、产品说明及进口商信息应相互一致，并与适用的符合性资料相符。" },
+        { id: "③", title: "标签、说明与技术参数", desc: "电器、儿童用品、建材、节水产品等可能适用专项技术要求。请由进口商确认标签语言、插头、电压、能效或说明书要求。" },
+        { id: "④", title: "原产地与受限货物", desc: "科威特海关要求进口货物具备清晰原产地信息；禁止或限制品、危险品及品牌货应在订舱前确认主管部门许可和承运人接收条件。" },
+        { id: "⑤", title: "包装、重量与目的地操作", desc: "木质包装、集装箱重量、危险品包装和本地运输限制应按货物、承运人及目的地操作要求确认。" }
       ],
-      guideTitle: "科威特专线物流实战风控守则",
-      guideSub: "针对科威特严苛关税、重载公路管控以及特殊报关资质的避坑指南。",
+      guideTitle: "科威特出运操作清单",
+      guideSub: "围绕产品合规、文件、承运人与目的地操作的实用核对。",
       guideCards: [
         {
-          title: "箱重限制与精确申报",
-          desc: "科威特陆运对集装箱限重极为严苛！20尺柜限重22吨，40尺柜限重26吨，超重面临高额罚款和滞港提货困难。申报品名、金额、规格必须与 KUCAS 证书 100% 一致，严禁瞒报。"
+          title: "订舱前：产品与服务范围",
+          desc: "确认货物是否受监管、进口商主体、申报方式、税费责任及目的地清关/派送范围；危险品、品牌货和受限品应先确认承运人接收条件。"
         },
         {
-          title: "收货人资质与木包装熏蒸",
-          desc: "提单上收货人必须具备合法的科威特营业执照和税号，并提供强制性的 PAC 个人/企业民事身份登记号。凡是带木质包装的货物必须随附官方 IPPC 熏蒸证书，无熏蒸标识无法清关。"
+          title: "出运前：文件与包装核对",
+          desc: "与进口商核对收货人信息、商业文件、产品资料及适用的主管部门文件；木质包装和特殊包装应按目的地与承运人要求处理。"
         },
         {
-          title: "海运周期与留证防损",
-          desc: "中国至科威特舒威赫/舒艾巴港海运约 18-28 天。提货时本地搬运粗暴，装柜需“四拍留证”作为货损索赔依据。科威特属极热地区，夏季高温需注意电子元器件的防热保护。"
+          title: "在途与到港：时效和交付规划",
+          desc: "将页面的常规时效作为计划参考，并为旺季、班期调整、查验、节假日和目的地派送预留缓冲时间。装柜照片、封条和装箱记录有助于货况追溯。"
         }
       ]
     },
     en: {
-      specTitle: "Kuwait KUCAS (TER/TIR) Compliance Strategy",
-      specSub: "Under Kuwait's import control program, controlled goods must obtain KUCAS TER and TIR certificates. Failure to comply leads to immediate forced returns or cargo destruction!",
+      specTitle: "Kuwait KUCAS/TABEK Compliance & Shipment Planning",
+      specSub: "Regulated products may use the KUCAS/TABEK system for applicable technical evaluation, inspection or release procedures. The importer should confirm applicability and documentation by HS code, product category and current rules.",
       tab1Title: "TER Technical Evaluation (Product Registration)",
-      tab1Header: "TER Report - For Long-term High-frequency Exporters",
-      tab1Desc: "Perfect for clients shipping ≥ 2 times per year. Based on CNAS/ISO17025 accredited laboratory test reports, registration takes 3-5 working days and is valid for 1-2 years. Subsequent shipments are exempted from repetitive origin-port testing, saving immense compliance costs and time.",
+      tab1Header: "Technical Evaluation Certificate — for later declarations of the same product",
+      tab1Desc: "The Public Authority for Industry may issue a technical evaluation certificate based on a conformity certificate already obtained by the importer, for later customs declarations of the same product. Confirm documents, scope and validity under the current product rules.",
       tab2Title: "TIR Technical Inspection (Batch Clearance)",
-      tab2Header: "TIR Report - Essential for Single Batch Customs Clearance",
-      tab2Desc: "Mandatory for single-batch custom clearance. Applicants must provide packing list, proforma invoice, valid third-party test report, and CoC application form. Crucially, physical pre-shipment inspection is mandatory to verify product markings, voltage, and plugs before container sealing.",
-      redlinesTitle: "Kuwait Physical Inspection: 5 Redlines (Strict Enforcement)",
+      tab2Header: "TIR Technical Inspection Report & release application",
+      tab2Desc: "Where a TIR-based release procedure applies, the importer normally submits customs-declaration details, TIR details, product information and prescribed undertakings, then tracks the request in the platform. Pre-shipment inspection, testing and label checks depend on the product and applicable regulation.",
+      redlinesTitle: "Five Kuwait pre-shipment checks",
       redlines: [
-        { id: "①", title: "Voltage Requirements", desc: "Working voltage must be clearly labeled as 230V-240V/50Hz. Labeling only 220V will trigger direct rejection by port authorities." },
-        { id: "②", title: "British Standard Plug", desc: "All electrical items must be equipped with a BS1363 British standard (3-pin) plug. Traditional 2-pin flat plugs are strictly rejected." },
-        { id: "③", title: "Bilingual Manuals & Labels", desc: "Outer labels, warning signs, and instruction manuals must include Arabic or Arabic/English. Systemic rejection for lacking Arabic text." },
-        { id: "④", title: "Permanent Origin Engraving", desc: "The 'Made in China' mark must be permanently engraved, embossed, or silk-screened on both the product and its packaging. Adhesive paper labels are strictly prohibited." },
-        { id: "⑤", title: "Energy & Import Bans", desc: "Tungsten incandescent bulbs and certain halogen light sources are strictly banned and will be confiscated immediately upon port arrival." }
+        { id: "①", title: "Confirm whether the product is regulated", desc: "Use the HS code, product category and current KUCAS/TABEK rules to confirm whether a conformity certificate, technical evaluation, inspection or another authority document is needed." },
+        { id: "②", title: "Keep documents and declarations consistent", desc: "Commercial invoice, packing list, bill of lading, product information and importer details should align with each other and with applicable conformity records." },
+        { id: "③", title: "Labels, manuals and technical specifications", desc: "Electrical goods, toys, construction materials and water-conservation products can have product-specific rules. Have the importer confirm language, plug, voltage, energy-label or manual requirements." },
+        { id: "④", title: "Origin and restricted goods", desc: "Kuwait Customs requires clear country-of-origin information for imports. Confirm permits and carrier acceptance before booking prohibited or restricted goods, dangerous goods and branded cargo." },
+        { id: "⑤", title: "Packing, weight and destination operations", desc: "Confirm wood packing, container weight, dangerous-goods packing and inland transport constraints for the cargo, carrier and destination operation." }
       ],
-      guideTitle: "Kuwait Practical Logistics Handbook",
-      guideSub: "Risk mitigation manual for navigating local operations, weight limits, and port delivery networks.",
+      guideTitle: "Kuwait Shipment Planning Checklist",
+      guideSub: "Practical checks for product compliance, documentation, carrier acceptance and destination operations.",
       guideCards: [
         {
-          title: "Pickups & Declarations (Anti-Penalty)",
-          desc: "Kuwait customs strictly enforces container weight limits! 20ft containers are limited to 22 tons, and 40ft containers to 26 tons. Declare names, values, and specs with 100% accuracy to match your KUCAS certificate."
+          title: "Before booking: product and service scope",
+          desc: "Confirm whether cargo is regulated, the importer entity, declaration method, tax responsibility and destination clearance/delivery scope. Check carrier acceptance first for dangerous, branded or restricted goods."
         },
         {
-          title: "Consignee PAC & Wood Fumigation",
-          desc: "Bills of lading must mention the actual consignee in Kuwait and their mandatory PAC (Public Authority for Civil Information) number. For wooden packings, official IPPC fumigation certificates must be presented."
+          title: "Before departure: documents and packing",
+          desc: "Review consignee details, commercial documents, product information and applicable authority documents with the importer. Prepare wood and special packing according to destination and carrier requirements."
         },
         {
-          title: "Voyage Loss Proof & Holiday Slowdowns",
-          desc: "Average transit is 18-28 days. Implement the 'four-photo verification' (empty, half-loaded, fully-loaded, and lock door sealed) at origin as insurance against excessive container damage claims. Plan around Eid slowdowns."
+          title: "In transit and arrival: timing and delivery",
+          desc: "Use the page’s normal transit range for planning and allow buffer time for peak seasons, schedule changes, inspection, public holidays and destination delivery. Loading photos, seals and packing records help with cargo-condition traceability."
         }
       ]
     },
     ru: {
-      specTitle: "Полное руководство по сертификации KUCAS (TER/TIR) в Кувейте",
-      specSub: "В соответствии с требованиями Кувейта по контролю импорта, все подконтрольные товары должны иметь сертификаты KUCAS TER или TIR, иначе импорт будет запрещен с последующим уничтожением!",
+      specTitle: "Соответствие KUCAS/TABEK и планирование доставки в Кувейт",
+      specSub: "Для регулируемых товаров система KUCAS/TABEK может использоваться для технической оценки, инспекции или процедуры выпуска. Импортёр должен подтвердить применимость и документы по коду ТН ВЭД, категории товара и действующим правилам.",
       tab1Title: "TER Техническая оценка (Product Registration)",
-      tab1Header: "Отчет TER - Для долгосрочных и регулярных поставок",
-      tab1Desc: "Идеально подходит для экспортеров с частотой отгрузок ≥ 2 раз в год. Оформляется за 3-5 рабочих дней на основе протоколов ISO17025 и действует 1-2 года. Избавляет от повторных испытаний в порту отправления.",
+      tab1Header: "Техническая оценка — для последующих деклараций того же товара",
+      tab1Desc: "Public Authority for Industry может выдать сертификат технической оценки на основании уже полученного импортёром сертификата соответствия для последующих таможенных деклараций того же товара. Подтвердите документы, сферу действия и срок по текущим правилам продукта.",
       tab2Title: "TIR Техническая инспекция (Batch Clearance)",
-      tab2Header: "Отчет TIR - Обязателен для очистки разовой партии",
-      tab2Desc: "Обязательный документ для разовой партии груза. Требуются упаковочный лист, инвойс, протокол испытаний сторонней лаборатории и заявка CoC. Перед погрузкой проводится физическая инспекция.",
-      redlinesTitle: "Физический досмотр в Кувейте: 5 критических запретов",
+      tab2Header: "Технический отчёт об инспекции и заявка на выпуск",
+      tab2Desc: "Если применяется процедура выпуска на базе TIR, импортёр обычно подаёт данные декларации, сведения TIR, информацию о товаре и предусмотренные обязательства, затем отслеживает заявку в платформе. Требования к инспекции, тестам и маркировке зависят от товара и применимого регулирования.",
+      redlinesTitle: "Пять проверок перед отправкой в Кувейт",
       redlines: [
-        { id: "①", title: "Требования к напряжению", desc: "Рабочее напряжение должно быть четко указано как 230V-240V/50Hz. Указание только 220V ведет к немедленному возврату груза." },
-        { id: "②", title: "Британский стандарт вилок", desc: "Все электроприборы должны иметь трехконтактную вилку британского стандарта BS1363. Обычные двухконтактные плоские вилки запрещены." },
-        { id: "③", title: "Двуязычные инструкции и предупреждения", desc: "Этикетки, предупреждающие знаки и руководства должны содержать текст на арабском или арабском/английском языках." },
-        { id: "④", title: "Постоянное нанесение маркировки происхождения", desc: "Надпись 'Made in China' должна быть выгравирована, выштампована или напечатана методом шелкографии. Бумажные наклейки запрещены." },
-        { id: "⑤", title: "Запрещенные товары и энергопотребление", desc: "Лампы накаливания и некоторые галогенные лампы строго запрещены к импорту Министерством охраны окружающей среды Кувейта." }
+        { id: "①", title: "Проверьте, регулируется ли товар", desc: "По коду ТН ВЭД, категории и актуальным правилам KUCAS/TABEK подтвердите, нужен ли сертификат соответствия, техническая оценка, инспекция или иной документ ведомства." },
+        { id: "②", title: "Согласуйте документы и декларации", desc: "Коммерческий инвойс, упаковочный лист, коносамент, сведения о товаре и данные импортёра должны быть согласованы между собой и с применимыми документами соответствия." },
+        { id: "③", title: "Этикетки, инструкции и технические характеристики", desc: "Для электротоваров, игрушек, строительных материалов и водосберегающей продукции могут действовать отдельные правила. Импортёр должен подтвердить требования к языку, вилке, напряжению, энергоэтикетке и инструкции." },
+        { id: "④", title: "Происхождение и ограниченные товары", desc: "Для импорта в Кувейт требуется ясная информация о стране происхождения. До бронирования подтвердите разрешения и приём груза перевозчиком для запрещённых, ограниченных, опасных и брендовых товаров." },
+        { id: "⑤", title: "Упаковка, вес и операции в пункте назначения", desc: "Уточните требования к деревянной упаковке, весу контейнера, упаковке опасных грузов и внутренней перевозке для конкретного груза, перевозчика и операции в пункте назначения." }
       ],
       guideTitle: "Практическое руководство по логистике в Кувейте",
       guideSub: "Инструкции по минимизации рисков при работе с местными регламентами и ограничениями по весу.",
@@ -396,21 +396,21 @@ export const COUNTRY_SPEC_DATA: Record<
       ]
     },
     fr: {
-      specTitle: "Stratégie de conformité KUCAS (TER/TIR) Koweït",
-      specSub: "Dans le cadre du programme de contrôle des importations du Koweït, les marchandises contrôlées doivent obtenir les certificats KUCAS TER et TIR sous peine de renvoi forcé ou de destruction !",
+      specTitle: "Conformité KUCAS/TABEK et planification des expéditions vers le Koweït",
+      specSub: "Pour les produits réglementés, le système KUCAS/TABEK peut être utilisé pour l’évaluation technique, l’inspection ou la procédure de libération applicable. L’importateur doit confirmer l’applicabilité et les documents par code HS, catégorie de produit et règles en vigueur.",
       tab1Title: "TER Évaluation Technique (Product Registration)",
-      tab1Header: "Rapport TER - Pour les expéditeurs réguliers à long terme",
-      tab1Desc: "Parfait pour les clients expédiant ≥ 2 fois par an. Sur la base des rapports d'essais de laboratoires accrédités CNAS/ISO17025, l'enregistrement prend 3 à 5 jours ouvrables et est valide pendant 1 à 2 ans. Les expéditions ultérieures sont exemptées d'essais répétitifs au port d'origine, ce qui permet d'économiser d'immenses coûts de conformité.",
+      tab1Header: "Évaluation technique — pour les déclarations ultérieures du même produit",
+      tab1Desc: "La Public Authority for Industry peut délivrer un certificat d’évaluation technique à partir d’un certificat de conformité déjà obtenu par l’importateur, pour les déclarations douanières ultérieures du même produit. Confirmez les documents, le périmètre et la validité selon les règles actuelles du produit.",
       tab2Title: "TIR Inspection Technique (Batch Clearance)",
-      tab2Header: "Rapport TIR - Essentiel pour le dédouanement par lot",
-      tab2Desc: "Obligatoire pour le dédouanement d'un lot unique. Les demandeurs doivent fournir la liste de colisage, la facture proforma, un rapport d'essai tiers valide et le formulaire de demande CoC. Crucialement, une inspection physique avant expédition est obligatoire pour vérifier les marquages des produits.",
-      redlinesTitle: "Inspection physique au Koweït : 5 lignes rouges (application stricte)",
+      tab2Header: "Rapport d’inspection technique et demande de libération",
+      tab2Desc: "Lorsqu’une procédure de libération liée au TIR s’applique, l’importateur soumet généralement les données de déclaration, les détails TIR, les informations produit et les engagements prescrits, puis suit la demande sur la plateforme. L’inspection, les essais et l’étiquetage dépendent du produit et de la règle applicable.",
+      redlinesTitle: "Cinq vérifications avant expédition vers le Koweït",
       redlines: [
-        { id: "①", title: "Exigences de tension", desc: "La tension de fonctionnement doit être clairement indiquée comme étant de 230V-240V/50Hz. Indiquer seulement 220V entraînera un rejet direct par les autorités portuaires." },
-        { id: "②", title: "Fiche standard britannique", desc: "Tous les articles électriques doivent être équipés d'une fiche britannique standard BS1363 (3 broches). Les fiches plates traditionnelles à 2 broches sont strictement rejetées." },
-        { id: "③", title: "Manuels et étiquettes bilingues", desc: "Les étiquettes extérieures, les panneaux d'avertissement et les manuels d'instructions doivent inclure l'arabe ou l'arabe/anglais. Rejet systématique en cas d'absence de texte en arabe." },
-        { id: "④", title: "Gravure d'origine permanente", desc: "La mention 'Made in China' doit être gravée, gaufrée ou sérigraphiée de manière permanente sur le produit et son emballage. Les étiquettes adhésives sont strictement interdites et pénalisées." },
-        { id: "⑤", title: "Énergie et interdictions d'importation", desc: "Les ampoules à incandescence au tungstène et certaines sources lumineuses halogènes sont strictement interdites et seront saisies dès l'arrivée au port." }
+        { id: "①", title: "Vérifier si le produit est réglementé", desc: "Utilisez le code HS, la catégorie de produit et les règles KUCAS/TABEK actuelles pour confirmer si un certificat de conformité, une évaluation technique, une inspection ou un autre document est nécessaire." },
+        { id: "②", title: "Harmoniser documents et déclarations", desc: "La facture commerciale, la liste de colisage, le connaissement, les informations produit et les données de l’importateur doivent rester cohérents entre eux et avec les documents de conformité applicables." },
+        { id: "③", title: "Étiquettes, manuels et spécifications techniques", desc: "Les produits électriques, jouets, matériaux de construction et produits économes en eau peuvent relever de règles spécifiques. L’importateur doit confirmer la langue, la prise, la tension, l’étiquette énergétique ou le manuel requis." },
+        { id: "④", title: "Origine et marchandises restreintes", desc: "Les importations au Koweït doivent afficher une information claire sur l’origine. Confirmez les autorisations et l’acceptation du transporteur avant réservation pour les marchandises interdites, restreintes, dangereuses ou de marque." },
+        { id: "⑤", title: "Emballage, poids et opérations de destination", desc: "Confirmez l’emballage en bois, le poids du conteneur, l’emballage des marchandises dangereuses et les contraintes de transport intérieur selon la cargaison, le transporteur et l’opération de destination." }
       ],
       guideTitle: "Guide pratique de logistique au Koweït",
       guideSub: "Manuel de mitigation des risques pour naviguer dans les opérations locales, les limites de poids et les réseaux de livraison portuaire.",

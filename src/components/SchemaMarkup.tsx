@@ -10,8 +10,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
   const { language } = useLanguage();
 
   useEffect(() => {
-    // Remove any existing JSON-LD script for schema markup
-    const existingScript = document.getElementById('schema-jsonld');
+    const scriptId = `schema-jsonld-${type.toLowerCase()}`;
+    // Replace only the schema of the same type, so Organization and LocalBusiness
+    // can coexist on the homepage.
+    const existingScript = document.getElementById(scriptId);
     if (existingScript) {
       existingScript.remove();
     }
@@ -27,20 +29,20 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = {
         ...baseSchema,
         '@type': 'Organization',
-        'name': language === 'zh' ? '华正邦泰国际货运' : 'DDNZ Global Logistics',
-        'alternateName': ['DDNZ Global', '华正邦泰', '东达国际物流'],
+        'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd',
+        'alternateName': ['Heaven Born', '华正邦泰国际货运', '华正邦泰', 'DDNZ Global'],
         'url': 'https://www.ddnzglobal.com',
         'logo': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
         'description': language === 'zh' 
-          ? '华正邦泰国际货运专注于全球一站式跨境多式海运拼箱整柜、特需空运包机、海外Amazon FBA贴标一件代发及广州大仓储理运，安全高效。'
-          : 'DDNZ Global provides premium global supply chain logistics, sea freight consolidation, express air cargo, prep and fulfillment for Amazon FBA stores.',
+          ? '华正邦泰国际货运代理有限公司专注于全球一站式跨境海运拼箱整柜、空运、Amazon FBA 及广州仓储集拼服务。'
+          : 'Heaven Born International Freight Co., Ltd provides global freight forwarding, sea freight consolidation, air cargo, Amazon FBA preparation, and warehouse services from China.',
         'contactPoint': [
           {
             '@type': 'ContactPoint',
             'email': 'partnership@ddnzglobal.com',
             'contactType': 'customer service',
             'areaServed': 'Global',
-            'availableLanguage': ['English', 'Chinese', 'Russian', 'French']
+            'availableLanguage': ['English', 'Chinese', 'Russian', 'French', 'Spanish', 'Arabic']
           }
         ],
         'sameAs': [
@@ -51,7 +53,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = {
         ...baseSchema,
         '@type': 'LocalBusiness',
-        'name': language === 'zh' ? '华正邦泰（广州总部）' : 'DDNZ Global Logistics (Guangzhou HQ)',
+        'name': language === 'zh' ? '华正邦泰国际货运代理有限公司（广州总部）' : 'Heaven Born International Freight Co., Ltd (Guangzhou HQ)',
         'image': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
         'url': 'https://www.ddnzglobal.com',
         'telephone': '+86-20-3654-6132',
@@ -92,7 +94,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'serviceType': data.serviceType || 'Freight Forwarding',
         'provider': {
           '@type': 'LocalBusiness',
-          'name': language === 'zh' ? '华正邦泰国际货运' : 'DDNZ Global Logistics'
+          'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd'
         },
         'areaServed': data.areaServed || 'Global',
         'description': data.description || 'Global logistics transport and consolidation service',
@@ -118,7 +120,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         },
         'publisher': {
           '@type': 'Organization',
-          'name': language === 'zh' ? '华正邦泰国际货运' : 'DDNZ Global Logistics',
+          'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd',
           'logo': {
             '@type': 'ImageObject',
             'url': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png'
@@ -133,14 +135,14 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     // Create script tag and append to head
     const script = document.createElement('script');
-    script.id = 'schema-jsonld';
+    script.id = scriptId;
     script.type = 'application/ld+json';
     script.innerHTML = JSON.stringify(finalSchema, null, 2);
     document.head.appendChild(script);
 
     return () => {
       // Cleanup on unmount or route change
-      const toRemove = document.getElementById('schema-jsonld');
+      const toRemove = document.getElementById(scriptId);
       if (toRemove) {
         toRemove.remove();
       }

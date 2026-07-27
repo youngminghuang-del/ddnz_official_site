@@ -33,6 +33,9 @@ interface FAQItem {
   };
 }
 
+type SupportedFaqLanguage = 'zh' | 'en' | 'ru' | 'fr' | 'es' | 'ar';
+type SupplementalFaqLanguage = 'es' | 'ar';
+
 const faqData: FAQItem[] = [
   {
     id: 1,
@@ -206,9 +209,117 @@ const faqData: FAQItem[] = [
   }
 ];
 
+const supplementalFaqTranslations: Record<
+  SupplementalFaqLanguage,
+  Record<number, { question: string; answer: string }>
+> = {
+  es: {
+    1: {
+      question: '¿Cómo elijo un transitario internacional fiable en China?',
+      answer: 'Compruebe la licencia comercial y el registro NVOCC, confirme que su red cubre el puerto de destino y revise referencias verificables. Pida un presupuesto desglosado, condiciones de pago claras y ejemplos reales de embarques similares antes de reservar.'
+    },
+    2: {
+      question: '¿Cómo verifico que una fábrica china es real y evito fraudes?',
+      answer: 'Solicite la licencia comercial y verifíquela en el registro empresarial chino. Organice una videovisita en directo o una auditoría presencial, confirme los certificados del producto y empiece con una orden de prueba antes de aumentar el volumen.'
+    },
+    3: {
+      question: '¿Qué Incoterm conviene para importar con más seguridad desde China?',
+      answer: 'FOB suele dar al comprador mayor control sobre el transporte principal. CIF puede simplificar una compra pequeña, pero debe revisar qué costes quedan fuera. EXW exige gestionar la recogida y la exportación desde fábrica. Defina por contrato el punto exacto de transferencia de costes y riesgos.'
+    },
+    4: {
+      question: '¿Qué documentos necesito para el despacho de aduanas y qué errores son frecuentes?',
+      answer: 'Normalmente se requieren factura comercial, lista de empaque, conocimiento de embarque o guía aérea y, cuando corresponda, certificado de origen, seguro o certificados técnicos. Los problemas más comunes son códigos HS incorrectos, valores incoherentes y marcas de bultos que no coinciden.'
+    },
+    5: {
+      question: '¿Cuándo conviene usar LCL o FCL?',
+      answer: 'LCL suele ser práctico para volúmenes pequeños y FCL ofrece mayor control cuando el volumen se acerca a la capacidad de un contenedor. Compare el coste total, no solo el flete: consolidación, manipulación, riesgo de daños, tiempo de tránsito y gastos en destino.'
+    },
+    6: {
+      question: '¿Cómo puedo controlar la variación de las tarifas marítimas?',
+      answer: 'Solicite validez y recargos por escrito, planifique con antelación y compare una tarifa puntual con una asignación mensual o trimestral. Consolidar pedidos y evitar semanas punta también puede reducir exposición. La tarifa final depende de ruta, equipo, temporada y disponibilidad.'
+    },
+    7: {
+      question: '¿Quién paga las muestras y el envío internacional?',
+      answer: 'En muchas operaciones el proveedor cubre una muestra básica y el comprador paga el mensajero. Los prototipos o moldes personalizados suelen negociarse por separado. Puede acordar que el coste de la muestra se descuente de la primera orden de producción.'
+    },
+    8: {
+      question: '¿Qué hago si la carga se retrasa y genera demoras o detención?',
+      answer: 'Identifique primero si el retraso proviene de documentos, aduanas, terminal, transportista o destinatario. Pida al transitario un desglose diario, la fecha límite de tiempo libre y opciones de retirada o devolución. Documente la causa antes de negociar una reducción de cargos.'
+    },
+    9: {
+      question: '¿Cómo aseguro que la calidad de fábrica cumple mis requisitos?',
+      answer: 'Prepare una especificación con materiales, tolerancias, embalaje y método de prueba. Apruebe una muestra patrón y programe inspecciones durante la producción o antes del embarque. El contrato debe indicar el criterio de aceptación y la solución ante no conformidades.'
+    },
+    10: {
+      question: '¿Es mejor pagar por T/T o por carta de crédito?',
+      answer: 'T/T fraccionado es más sencillo, pero el calendario debe vincularse a hitos verificables. La carta de crédito reduce ciertos riesgos en operaciones mayores, aunque exige documentos exactos y costes bancarios. No pague el total por adelantado a un proveedor no verificado.'
+    }
+  },
+  ar: {
+    1: {
+      question: 'كيف أختار وكيل شحن دولي موثوقا في الصين؟',
+      answer: 'تحقق من الرخصة التجارية وتسجيل NVOCC، وتأكد من تغطية شبكة الخدمة لميناء الوصول. اطلب مراجع قابلة للتحقق، وأمثلة لشحنات مشابهة، وعرض سعر مفصل يوضح الرسوم وشروط الدفع قبل الحجز.'
+    },
+    2: {
+      question: 'كيف أتحقق من أن المصنع الصيني حقيقي وأتجنب الاحتيال؟',
+      answer: 'اطلب الرخصة التجارية وتحقق منها في السجل الوطني للشركات في الصين. رتب جولة فيديو مباشرة أو تدقيقا ميدانيا، وافحص شهادات المنتج، وابدأ بطلبية اختبار صغيرة قبل زيادة الكمية.'
+    },
+    3: {
+      question: 'ما شرط Incoterms الأنسب للاستيراد الآمن من الصين؟',
+      answer: 'يمنح FOB المشتري عادة تحكما أكبر في الشحن الرئيسي. قد يكون CIF أسهل للشحنات الصغيرة، لكن يجب مراجعة الرسوم غير المشمولة. يتطلب EXW إدارة الاستلام والتصدير من باب المصنع. حدد نقطة انتقال التكلفة والمخاطر بوضوح في العقد.'
+    },
+    4: {
+      question: 'ما مستندات التخليص الجمركي المطلوبة وما الأخطاء الشائعة؟',
+      answer: 'تشمل المستندات الأساسية الفاتورة التجارية وقائمة التعبئة وبوليصة الشحن أو الشحن الجوي. قد يلزم أيضا إثبات المنشأ أو التأمين أو شهادات فنية. أكثر المشكلات شيوعا هي رمز HS غير الصحيح، وتعارض القيم، وعدم تطابق علامات الطرود.'
+    },
+    5: {
+      question: 'متى أختار الشحن الجزئي LCL أو الحاوية الكاملة FCL؟',
+      answer: 'يناسب LCL الأحجام الصغيرة غالبا، بينما يمنح FCL تحكما أفضل عندما تقترب الكمية من سعة الحاوية. قارن التكلفة الكاملة التي تشمل التجميع والمناولة والوقت ورسوم الوجهة، وليس سعر الشحن الأساسي فقط.'
+    },
+    6: {
+      question: 'كيف أتحكم في تقلب أسعار الشحن البحري؟',
+      answer: 'اطلب مدة صلاحية السعر والرسوم الإضافية كتابة، وخطط مبكرا، وقارن السعر الفوري باتفاق شهري أو ربع سنوي. يساعد دمج الطلبات وتجنب أسابيع الذروة على تقليل التعرض للتقلب. يعتمد السعر النهائي على المسار والموسم وتوفر المعدات.'
+    },
+    7: {
+      question: 'من يتحمل تكلفة العينات والشحن السريع الدولي؟',
+      answer: 'في كثير من الصفقات يقدم المورد العينة الأساسية ويدفع المشتري تكلفة البريد السريع. يتم التفاوض بشكل منفصل على النماذج المعقدة أو القوالب. يمكن الاتفاق على خصم تكلفة العينة من أول طلبية إنتاج.'
+    },
+    8: {
+      question: 'ماذا أفعل إذا تأخرت الشحنة وتراكمت رسوم الأرضيات أو الاحتجاز؟',
+      answer: 'حدد أولا ما إذا كان السبب في المستندات أو الجمارك أو المحطة أو الناقل أو المستلم. اطلب بيانا يوميا للرسوم وآخر يوم مجاني وخيارات سحب الحاوية أو إعادتها. وثق السبب قبل التفاوض على تخفيض الرسوم.'
+    },
+    9: {
+      question: 'كيف أضمن مطابقة جودة المصنع لمتطلباتي؟',
+      answer: 'أعد مواصفة واضحة للمواد والأبعاد والتفاوتات والتعبئة وطريقة الاختبار. اعتمد عينة مرجعية ورتب فحصا أثناء الإنتاج أو قبل الشحن. يجب أن يحدد العقد معيار القبول والإجراء المتفق عليه عند وجود عدم مطابقة.'
+    },
+    10: {
+      question: 'هل الدفع عبر T/T أم الاعتماد المستندي L/C أفضل للمبتدئ؟',
+      answer: 'يعد T/T المجزأ أبسط، لكن اربط كل دفعة بمرحلة يمكن التحقق منها. يوفر الاعتماد المستندي حماية إضافية للصفقات الأكبر، لكنه يتطلب مستندات دقيقة وتكاليف مصرفية. تجنب الدفع الكامل مقدما لمورد غير موثق.'
+    }
+  }
+};
+
+const getFaqText = (
+  item: FAQItem,
+  language: SupportedFaqLanguage,
+  field: 'question' | 'answer'
+) => {
+  if (language === 'es' || language === 'ar') {
+    return supplementalFaqTranslations[language][item.id][field];
+  }
+  return item[field][language];
+};
+
 export default function Partners() {
   const { language } = useLanguage();
-  const currentLang = (language === 'zh' || language === 'en' || language === 'ru' || language === 'fr') ? language : 'en';
+  const currentLang: SupportedFaqLanguage = (
+    language === 'zh' ||
+    language === 'en' ||
+    language === 'ru' ||
+    language === 'fr' ||
+    language === 'es' ||
+    language === 'ar'
+  ) ? language : 'en';
 
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
@@ -217,62 +328,78 @@ export default function Partners() {
   // Localization resources
   const content = {
     title: {
-      zh: '国际贸易问答中心',
-      en: 'Global Trade Knowledge Hub',
-      ru: 'Центр знаний о торговле',
-      fr: 'Hub de Commerce International'
+      zh: '中国进口与国际运输实务问答',
+      en: 'China Import & Shipping Answers',
+      ru: 'Ответы по импорту и доставке из Китая',
+      fr: 'Questions pratiques sur l’import et le transport depuis la Chine',
+      es: 'Respuestas sobre importación y envíos desde China',
+      ar: 'إجابات عملية حول الاستيراد والشحن من الصين'
     },
     subtitle: {
-      zh: '深度解答海外买家与贸易商的十大痛点问题 · 29年国际货代与供应链管家',
-      en: 'Expert solutions for the top 10 pain points faced by international buyers and traders · 29 Years of Freight & Supply Chain Integrity',
-      ru: 'Экспертные ответы на 10 главных вопросов зарубежных импортеров · 29 лет опыта в логистике',
-      fr: 'Solutions d\'experts aux 10 questions clés des acheteurs internationaux · 29 ans d\'expertise logistique'
+      zh: '面向海外买家的中国采购、付款、验货、清关与国际运输实务解答',
+      en: 'Practical guidance for sourcing, payments, inspections, customs and shipping from China.',
+      ru: 'Практические рекомендации по закупкам, оплате, инспекции, таможне и доставке из Китая.',
+      fr: 'Des réponses pratiques sur les achats, paiements, inspections, douanes et expéditions depuis la Chine.',
+      es: 'Orientación práctica sobre compras, pagos, inspecciones, aduanas y envíos desde China.',
+      ar: 'إرشادات عملية حول الشراء والدفع والفحص والجمارك والشحن من الصين.'
     },
     searchPlaceholder: {
       zh: '搜索您关心的问题（如：清关、拼箱、付款、产品质量）...',
       en: 'Search trade queries (e.g., customs, LCL, T/T, quality)...',
       ru: 'Поиск вопросов (например: растаможка, LCL, T/T, качество)...',
-      fr: 'Rechercher une question (ex : douane, LCL, virement, qualité)...'
+      fr: 'Rechercher une question (ex : douane, LCL, virement, qualité)...',
+      es: 'Buscar temas (aduanas, LCL, T/T, calidad)...',
+      ar: 'ابحث عن موضوع مثل الجمارك أو LCL أو الدفع أو الجودة...'
     },
     noResults: {
       zh: '没有找到符合条件的问题。您可以尝试其他关键词。',
       en: 'No matching questions found. Try searching with other keywords.',
       ru: 'Вопросы не найдены. Попробуйте другие ключевые слова.',
-      fr: 'Aucun résultat trouvé. Essayez avec d\'autres mots-clés.'
+      fr: 'Aucun résultat trouvé. Essayez avec d\'autres mots-clés.',
+      es: 'No encontramos resultados. Pruebe con otras palabras.',
+      ar: 'لم نعثر على نتائج مطابقة. جرب كلمات بحث أخرى.'
     },
     resetSearch: {
       zh: '重置搜索',
       en: 'Reset Search',
       ru: 'Сбросить поиск',
-      fr: 'Réinitialiser'
+      fr: 'Réinitialiser',
+      es: 'Restablecer búsqueda',
+      ar: 'إعادة ضبط البحث'
     },
     ctaTitle: {
       zh: '还有其他贸易或物流难题？',
       en: 'Still have other supply chain challenges?',
       ru: 'Остались вопросы по логистике или торговле?',
-      fr: 'D\'autres défis logistiques ou commerciaux ?'
+      fr: 'D\'autres défis logistiques ou commerciaux ?',
+      es: '¿Tiene otro reto de comercio o logística?',
+      ar: 'هل لديكم تحد آخر في التجارة أو الخدمات اللوجستية؟'
     },
     ctaDesc: {
       zh: '我们的 24/7 国际运营专家随时待命，为您免费提供量身定制的物流航线规划和运费报价。',
       en: 'Our 24/7 Global Operations Desk is ready to provide you with tailored shipping routes and zero-obligation freight quotes.',
       ru: 'Наша круглосуточная служба поддержки 24/7 готова бесплатно рассчитать маршрут и стоимость доставки вашего груза.',
-      fr: 'Nos experts de permanence 24h/24 et 7j/7 conçoivent gratuitement vos plans de transport et devis sur mesure.'
+      fr: 'Nos experts de permanence 24h/24 et 7j/7 conçoivent gratuitement vos plans de transport et devis sur mesure.',
+      es: 'Nuestro equipo internacional puede preparar una ruta y un presupuesto adaptados a su carga.',
+      ar: 'يمكن لفريق العمليات الدولي إعداد مسار وعرض شحن مناسبين لطبيعة بضاعتكم.'
     },
     ctaBtn: {
       zh: '立即获取免费解决方案与报价',
       en: 'Get Free Solution & Quote Now',
       ru: 'Получить бесплатный расчет',
-      fr: 'Obtenir mon devis gratuit'
+      fr: 'Obtenir mon devis gratuit',
+      es: 'Solicitar solución y cotización',
+      ar: 'اطلب حلا وعرض سعر'
     }
   };
 
   const categories = {
-    all: { zh: '全部问题', en: 'All QA', ru: 'Все темы', fr: 'Tout' },
-    cred: { zh: '资质与验证', en: 'Credentials', ru: 'Проверка фабрик', fr: 'Vérifications' },
-    terms: { zh: '贸易条款', en: 'Incoterms', ru: 'Инкотермс', fr: 'Incoterms' },
-    shipping: { zh: '运输与费率', en: 'Shipping', ru: 'Доставка и тарифы', fr: 'Expéditions' },
-    issues: { zh: '异常解决', en: 'Issues', ru: 'Решение споров', fr: 'Litiges' },
-    quality: { zh: '质量与付款', en: 'Payments', ru: 'Оплата и качество', fr: 'Paiements' }
+    all: { zh: '全部问题', en: 'All topics', ru: 'Все темы', fr: 'Tout', es: 'Todos', ar: 'كل المواضيع' },
+    cred: { zh: '资质与验证', en: 'Credentials', ru: 'Проверка фабрик', fr: 'Vérifications', es: 'Verificación', ar: 'التحقق' },
+    terms: { zh: '贸易条款', en: 'Incoterms', ru: 'Инкотермс', fr: 'Incoterms', es: 'Incoterms', ar: 'شروط التجارة' },
+    shipping: { zh: '运输与费率', en: 'Shipping', ru: 'Доставка и тарифы', fr: 'Expéditions', es: 'Envíos', ar: 'الشحن' },
+    issues: { zh: '异常解决', en: 'Issues', ru: 'Решение споров', fr: 'Litiges', es: 'Incidencias', ar: 'المشكلات' },
+    quality: { zh: '质量与付款', en: 'Quality & payment', ru: 'Оплата и качество', fr: 'Paiements', es: 'Calidad y pago', ar: 'الجودة والدفع' }
   };
 
   const filteredFaqs = useMemo(() => {
@@ -284,8 +411,8 @@ export default function Partners() {
       // Search match
       if (searchQuery.trim() !== '') {
         const query = searchQuery.toLowerCase();
-        const qText = item.question[currentLang].toLowerCase();
-        const aText = item.answer[currentLang].toLowerCase();
+        const qText = getFaqText(item, currentLang, 'question').toLowerCase();
+        const aText = getFaqText(item, currentLang, 'answer').toLowerCase();
         return qText.includes(query) || aText.includes(query);
       }
       return true;
@@ -303,7 +430,11 @@ export default function Partners() {
   };
 
   return (
-    <section id="partners" className="py-16 md:py-28 bg-gradient-to-b from-white to-slate-50 border-t border-slate-100 overflow-hidden">
+    <section
+      id="partners"
+      dir={currentLang === 'ar' ? 'rtl' : 'ltr'}
+      className="py-16 md:py-24 bg-[var(--hb-surface)] border-t border-slate-200 overflow-hidden"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
@@ -311,7 +442,7 @@ export default function Partners() {
           <h2 id="faq-title" className="text-2xl md:text-4xl font-bold text-slate-950 tracking-tight">
             {content.title[currentLang]}
           </h2>
-          <div className="mt-3 w-16 lg:w-24 h-1 bg-violet-600 mx-auto rounded-full" />
+          <div className="mt-4 h-1 w-20 bg-[var(--hb-amber)] mx-auto rounded-full" />
           <p id="faq-subtitle" className="mt-4 text-slate-600 font-medium max-w-3xl mx-auto leading-relaxed text-sm md:text-base">
             {content.subtitle[currentLang]}
           </p>
@@ -320,7 +451,7 @@ export default function Partners() {
         {/* Filter Controls (Search + Categories) */}
         <div className="max-w-4xl mx-auto mb-10 space-y-6">
           {/* Search Box */}
-          <div className="relative rounded-2xl bg-white shadow-md border border-slate-200/80 p-1.5 flex items-center gap-2">
+          <div className="relative rounded-2xl bg-white shadow-[0_14px_35px_rgba(15,23,42,0.08)] border border-slate-200 p-1.5 flex items-center gap-2">
             <div className="pl-3.5 text-slate-400">
               <Search className="w-5 h-5 stroke-[2.5]" />
             </div>
@@ -358,7 +489,7 @@ export default function Partners() {
                   }}
                   className={`px-4 py-2 rounded-full text-xs md:text-sm font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'bg-violet-600 text-white shadow-sm shadow-violet-200'
+                      ? 'bg-[var(--hb-navy-deep)] text-white shadow-sm'
                       : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200/80 hover:border-slate-300'
                   }`}
                 >
@@ -388,7 +519,7 @@ export default function Partners() {
                     transition={{ duration: 0.25 }}
                     className={`rounded-2xl border transition-all duration-300 overflow-hidden bg-white ${
                       isOpen
-                        ? 'border-violet-500 shadow-lg shadow-violet-50/40 bg-gradient-to-br from-white to-violet-50/5'
+                        ? 'border-sky-700 shadow-[0_16px_38px_rgba(15,67,100,0.10)]'
                         : 'border-slate-200/80 hover:border-slate-300 shadow-sm hover:shadow-md'
                     }`}
                   >
@@ -401,18 +532,18 @@ export default function Partners() {
                     >
                       <div className="flex items-start gap-4">
                         <div className={`p-2.5 rounded-xl transition-colors shrink-0 ${
-                          isOpen ? 'bg-violet-600 text-white' : 'bg-slate-100 text-slate-600'
+                          isOpen ? 'bg-[var(--hb-navy)] text-white' : 'bg-slate-100 text-slate-600'
                         }`}>
                           <IconComponent className="w-5 h-5 stroke-[2]" />
                         </div>
                         <span className={`text-sm md:text-base font-bold leading-snug transition-colors pt-1 ${
-                          isOpen ? 'text-violet-700' : 'text-slate-800 hover:text-violet-600'
+                          isOpen ? 'text-[var(--hb-navy)]' : 'text-slate-800 hover:text-[var(--hb-navy)]'
                         }`}>
-                          {item.id}. {item.question[currentLang]}
+                          {item.id}. {getFaqText(item, currentLang, 'question')}
                         </span>
                       </div>
                       <div className={`p-1.5 rounded-full shrink-0 mt-1 transition-transform duration-300 ${
-                        isOpen ? 'rotate-180 bg-violet-100 text-violet-600' : 'bg-slate-50 text-slate-400'
+                        isOpen ? 'rotate-180 bg-sky-50 text-[var(--hb-navy)]' : 'bg-slate-50 text-slate-400'
                       }`}>
                         <ChevronDown className="w-4 h-4 stroke-[2.5]" />
                       </div>
@@ -430,7 +561,7 @@ export default function Partners() {
                         >
                           <div className="px-5 md:px-6 pb-6 pt-1 border-t border-slate-100/80">
                             <div className="pl-4 sm:pl-12 text-slate-600 text-xs md:text-sm leading-relaxed font-medium whitespace-pre-line space-y-2">
-                              {item.answer[currentLang]}
+                              {getFaqText(item, currentLang, 'answer')}
                             </div>
                           </div>
                         </motion.div>
@@ -451,7 +582,7 @@ export default function Partners() {
                 <button
                   id="faq-reset-btn"
                   onClick={handleReset}
-                  className="px-5 py-2.5 bg-violet-600 text-white font-semibold rounded-full hover:bg-violet-700 shadow-sm hover:shadow transition-all duration-200 text-sm"
+                  className="px-5 py-2.5 bg-[var(--hb-navy-deep)] text-white font-semibold rounded-full hover:bg-[var(--hb-navy)] shadow-sm hover:shadow transition-all duration-200 text-sm"
                 >
                   {content.resetSearch[currentLang]}
                 </button>
@@ -466,18 +597,15 @@ export default function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="mt-16 max-w-4xl mx-auto rounded-3xl bg-gradient-to-r from-violet-600 to-indigo-700 text-white p-8 md:p-10 shadow-xl shadow-violet-100/50 relative overflow-hidden"
+          className="mt-16 max-w-4xl mx-auto rounded-3xl bg-[var(--hb-navy-deep)] text-white p-8 md:p-10 shadow-[0_24px_60px_rgba(11,28,44,0.18)] relative overflow-hidden border border-white/10"
         >
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -mr-20 -mt-20 blur-2xl pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-64 h-64 bg-indigo-500/10 rounded-full -ml-20 -mb-20 blur-2xl pointer-events-none" />
-          
           <div className="relative flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="space-y-3 text-center md:text-left">
               <h3 className="text-xl md:text-2xl font-bold tracking-tight flex items-center justify-center md:justify-start gap-2">
                 <MessageSquare className="w-6 h-6 stroke-[2]" />
                 {content.ctaTitle[currentLang]}
               </h3>
-              <p className="text-violet-100 text-sm leading-relaxed max-w-xl font-medium">
+              <p className="text-slate-200 text-sm leading-relaxed max-w-xl font-medium">
                 {content.ctaDesc[currentLang]}
               </p>
             </div>

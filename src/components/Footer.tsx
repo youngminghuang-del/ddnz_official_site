@@ -21,7 +21,7 @@ export default function Footer() {
   }[language as 'en' | 'zh' | 'ru' | 'fr'] || 'Cookie Settings';
 
   return (
-    <footer className="bg-[#4B27B1] text-purple-200 py-8 font-sans border-t border-purple-900">
+    <footer className="bg-[#071A33] text-slate-300 py-8 font-sans border-t border-[#12355A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Top Row: Brand & Addresses */}
@@ -33,7 +33,7 @@ export default function Footer() {
               <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
                 <img 
                   src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/heaven_born_logo_wing_transparent.png" 
-                  alt="Heaven Born International Freight Logo" 
+                  alt="Heaven Born International Freight Co., Ltd logo"
                   loading="lazy"
                   className="h-8 md:h-10 w-auto opacity-90"
                 />
@@ -43,7 +43,7 @@ export default function Footer() {
                       <span className="text-lg md:text-xl font-black tracking-tight leading-none text-white font-sans">
                         华正邦泰
                       </span>
-                      <span className="text-[10px] md:text-xs tracking-[0.2em] font-black uppercase text-purple-300 font-sans mt-1">
+                      <span className="text-[10px] md:text-xs tracking-[0.2em] font-black uppercase text-sky-300 font-sans mt-1">
                         国际货运
                       </span>
                     </>
@@ -52,14 +52,14 @@ export default function Footer() {
                       <span className="text-lg md:text-xl font-extrabold tracking-tight leading-none text-white font-sans">
                         Heaven Born
                       </span>
-                      <span className="text-[9px] md:text-xs tracking-[0.08em] font-black uppercase text-purple-300 font-sans mt-1 whitespace-nowrap">
+                      <span className="text-[9px] md:text-xs tracking-[0.08em] font-black uppercase text-sky-300 font-sans mt-1 whitespace-nowrap">
                         International Freight
                       </span>
                     </>
                   )}
                 </div>
               </div>
-              <p className="text-purple-300 text-xs md:text-sm leading-relaxed max-w-xs italic lg:not-italic font-medium">
+              <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-xs italic lg:not-italic font-medium">
                 {t('footer.slogan')}
               </p>
             </div>
@@ -100,7 +100,7 @@ export default function Footer() {
               <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
                 <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> {t('footer.hq')}
               </h4>
-              <address className="not-italic text-[11px] md:text-sm text-purple-200 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+              <address className="not-italic text-[11px] md:text-sm text-slate-300 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#1D4E78] transition-colors hover:border-[#F59E0B]">
                 <div className="space-y-1">
                   {(() => {
                     const parts = t('footer.hq_addr').split(', ');
@@ -124,7 +124,7 @@ export default function Footer() {
               <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
                 <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> {t('footer.hk')}
               </h4>
-              <address className="not-italic text-[11px] md:text-sm text-purple-200 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+              <address className="not-italic text-[11px] md:text-sm text-slate-300 leading-tight md:leading-snug font-normal pl-3 border-l-2 border-[#1D4E78] transition-colors hover:border-[#F59E0B]">
                 <div className="space-y-1">
                   {(() => {
                     const parts = t('footer.hk_addr').split(', ');
@@ -149,11 +149,11 @@ export default function Footer() {
             <h4 className="text-[11px] md:text-sm font-semibold text-white mb-2 lg:mb-4 uppercase tracking-[0.12em] flex items-center">
               <Globe className="w-3 h-3 md:w-3.5 md:h-3.5 mr-1 lg:mr-2 text-[#FF8A00]" /> Popular Shipping Lanes
             </h4>
-            <ul className="space-y-3 pl-3 border-l-2 border-[#3b1e8e] transition-colors hover:border-[#FF8A00]">
+            <ul className="space-y-3 pl-3 border-l-2 border-[#1D4E78] transition-colors hover:border-[#F59E0B]">
               <li>
                 <Link 
                   to="/shipping-from-china-to-middle-east" 
-                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                  className="block text-[11px] md:text-sm text-slate-300 hover:text-white transition-colors leading-snug font-medium"
                 >
                   LCL & FCL Ocean Shipping to Saudi Arabia & UAE
                 </Link>
@@ -161,7 +161,7 @@ export default function Footer() {
               <li>
                 <Link 
                   to="/shipping-from-china-to-central-asia" 
-                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                  className="block text-[11px] md:text-sm text-slate-300 hover:text-white transition-colors leading-snug font-medium"
                 >
                   Reliable Land Freight & Rail Logistics to Kazakhstan
                 </Link>
@@ -169,7 +169,7 @@ export default function Footer() {
               <li>
                 <Link 
                   to="/shipping-from-china-to-west-africa" 
-                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                  className="block text-[11px] md:text-sm text-slate-300 hover:text-white transition-colors leading-snug font-medium"
                 >
                   Fast Air Freight Consolidation to Lagos, Nigeria
                 </Link>
@@ -177,7 +177,7 @@ export default function Footer() {
               <li>
                 <Link 
                   to="/shipping-from-china-to-latin-america" 
-                  className="block text-[11px] md:text-sm text-purple-200 hover:text-white transition-colors leading-snug font-medium"
+                  className="block text-[11px] md:text-sm text-slate-300 hover:text-white transition-colors leading-snug font-medium"
                 >
                   DDP/DDU Double Customs Clearance to Mexico & Brazil
                 </Link>
@@ -188,48 +188,48 @@ export default function Footer() {
         </div>
 
         {/* Middle Row: Hours & Legal */}
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16 p-6 rounded-2xl bg-[#4B27B1]/50 border border-purple-800/50">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-16 p-6 rounded-2xl bg-[#0B2A4A] border border-[#1D4E78]">
           
           {/* Hours */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#3b1e8e]/50 flex items-center justify-center shrink-0">
-              <Clock className="w-5 h-5 text-orange-500" />
+            <div className="w-10 h-10 rounded-full bg-[#12355A] flex items-center justify-center shrink-0">
+              <Clock className="w-5 h-5 text-[#F59E0B]" />
             </div>
             <div>
               <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">{t('footer.hours')}</h4>
-              <p className="text-sm text-purple-300">
-                <span className="text-white font-medium">Mon - Fri:</span> 9:00 AM - 6:00 PM <span className="text-purple-400">(GMT+8)</span>
+              <p className="text-sm text-slate-300">
+                <span className="text-white font-medium">Mon - Fri:</span> 9:00 AM - 6:00 PM <span className="text-sky-300">(GMT+8)</span>
               </p>
             </div>
           </div>
 
           {/* Legal */}
           <div className="flex items-center gap-4">
-            <div className="w-10 h-10 rounded-full bg-[#3b1e8e]/50 flex items-center justify-center shrink-0">
-              <Shield className="w-5 h-5 text-orange-500" />
+            <div className="w-10 h-10 rounded-full bg-[#12355A] flex items-center justify-center shrink-0">
+              <Shield className="w-5 h-5 text-[#F59E0B]" />
             </div>
             <div>
               <h4 className="text-xs font-bold text-white uppercase tracking-widest mb-1">{t('footer.compliance')}</h4>
               <div className="flex flex-wrap items-center gap-4 text-sm mt-1">
                 <button 
                   onClick={() => setLegalType('privacy')}
-                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
+                  className="text-slate-300 hover:text-white transition-colors flex items-center group"
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
                   {t('footer.privacy')}
                 </button>
-                <span className="text-purple-800 hidden sm:inline">|</span>
+                <span className="text-[#1D4E78] hidden sm:inline">|</span>
                 <button 
                   onClick={() => setLegalType('terms')}
-                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
+                  className="text-slate-300 hover:text-white transition-colors flex items-center group"
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
                   {t('footer.terms')}
                 </button>
-                <span className="text-purple-800 hidden sm:inline">|</span>
+                <span className="text-[#1D4E78] hidden sm:inline">|</span>
                 <button 
                   onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
-                  className="text-purple-300 hover:text-white transition-colors flex items-center group"
+                  className="text-slate-300 hover:text-white transition-colors flex items-center group"
                 >
                   <FileText className="w-3.5 h-3.5 mr-1.5 opacity-50 group-hover:opacity-100 transition-opacity" />
                   {cookieLabel}
@@ -241,7 +241,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Section: Copyright */}
-        <div className="border-t border-purple-800/50 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-purple-400">
+        <div className="border-t border-[#1D4E78] pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-slate-400">
           <p>{t('footer.rights')}</p>
           <div className="mt-4 md:mt-0 uppercase font-bold tracking-tighter">
             <span>{t('footer.experts')}</span>
@@ -254,4 +254,3 @@ export default function Footer() {
     </footer>
   );
 }
-
