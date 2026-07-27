@@ -69,6 +69,31 @@
     gtag('config', 'G-TZD9QT4W8H', { send_page_view: false });
   </script>
 
+  <script>
+    (function(c,l,a,r,i,t,y){
+      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+      var clarityTrackingGranted = false;
+      var clarityTargetingGranted = false;
+      try {
+        var clarityCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+        clarityTrackingGranted = Boolean(clarityCookiePreferences.tracking);
+        clarityTargetingGranted = Boolean(clarityCookiePreferences.targeting);
+      } catch (e) {
+        console.warn('Could not restore Clarity consent preferences', e);
+      }
+      c[a]('consentv2', {
+        ad_Storage: clarityTargetingGranted ? 'granted' : 'denied',
+        analytics_Storage: clarityTrackingGranted ? 'granted' : 'denied'
+      });
+      t=l.createElement(r);
+      t.id='microsoft-clarity-script';
+      t.async=1;
+      t.src='https://www.clarity.ms/tag/'+i;
+      y=l.getElementsByTagName(r)[0];
+      y.parentNode.insertBefore(t,y);
+    })(window, document, 'clarity', 'script', 'xswyojgnjd');
+  </script>
+
   <title>DDNZ & Heaven Born Freight | China Sourcing & Logistics</title>    
   <meta name="title" content="DDNZ & Heaven Born Freight | China Sourcing & Logistics" />    
   <meta name="description" content="Optimize your China supply chain with DDNZ Global. We provide expert China sourcing, reliable sea freight forwarding, and comprehensive logistics solutions." />    

@@ -93,7 +93,7 @@ function sanitizeParams(params: AnalyticsParams = {}) {
 }
 
 function ensureClarity() {
-  if (typeof window === 'undefined' || !analyticsConsentGranted) return;
+  if (typeof window === 'undefined') return;
 
   if (!window.clarity) {
     const clarity: ClarityFunction = (...args: unknown[]) => {
@@ -123,19 +123,11 @@ export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
     ad_personalization: targeting ? 'granted' : 'denied',
   });
 
-  if (tracking) {
-    ensureClarity();
-    window.clarity?.('consentv2', {
-      ad_Storage: targeting ? 'granted' : 'denied',
-      analytics_Storage: 'granted',
-    });
-  } else if (window.clarity) {
-    window.clarity('consentv2', {
-      ad_Storage: 'denied',
-      analytics_Storage: 'denied',
-    });
-    window.clarity('consent', false);
-  }
+  ensureClarity();
+  window.clarity?.('consentv2', {
+    ad_Storage: targeting ? 'granted' : 'denied',
+    analytics_Storage: tracking ? 'granted' : 'denied',
+  });
 }
 
 export function initializeAnalyticsConsent() {
