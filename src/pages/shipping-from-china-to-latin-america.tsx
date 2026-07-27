@@ -787,7 +787,6 @@ export default function ShippingLatinAmerica() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('page_view', { path: '/shipping-from-china-to-latin-america', country: selectedCountry });
   }, [location.pathname, selectedCountry]);
 
   const handleCountryTabChange = (country: 'mexico' | 'brazil' | 'argentina' | 'peru' | 'chile') => {
@@ -888,7 +887,11 @@ export default function ShippingLatinAmerica() {
   const handleSubmitInquiry = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    trackEvent('latin_america_quote_submit', { ...formData, selectedCountry });
+    trackEvent('quote_form_submit_attempt', {
+      form_location: 'latin_america_country_page',
+      country: selectedCountry,
+      service: 'freight_forwarding',
+    });
 
     setTimeout(() => {
       setIsSubmitting(false);

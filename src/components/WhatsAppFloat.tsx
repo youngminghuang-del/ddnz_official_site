@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function WhatsAppFloat() {
   const { language } = useLanguage();
   const handleClick = () => {
-    trackEvent('contact_whatsapp_click', { 'location': 'floating_button' });
+    trackEvent('whatsapp_click', { cta_location: 'floating_button' });
     const message = language === 'es'
       ? 'Hola%20Heaven%20Born,%20me%20interesan%20sus%20servicios%20log%C3%ADsticos.%20%C2%BFPodemos%20hablar%3F'
       : language === 'ar'

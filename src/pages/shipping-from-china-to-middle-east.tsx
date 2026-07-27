@@ -13,7 +13,6 @@ import {
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
   Globe, Clock, HelpCircle, Truck
 } from 'lucide-react';
-import { trackEvent } from '../lib/utils';
 import { COUNTRY_SPEC_DATA } from '../data/countrySpecData';
 import { buildShippingCountryPath, getShippingCountrySlug } from '../utils/shippingCountryRoutes';
 
@@ -1209,7 +1208,6 @@ export default function MiddleEastRoute() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('page_view', { path: '/shipping-from-china-to-middle-east', country: selectedCountry });
   }, [location.pathname, selectedCountry]);
 
   const handleCountryTabChange = (country: MiddleEastCountry) => {

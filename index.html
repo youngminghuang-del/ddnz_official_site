@@ -44,8 +44,29 @@
   <script>      
     window.dataLayer = window.dataLayer || [];      
     function gtag(){dataLayer.push(arguments);}      
+    window.gtag = gtag;
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500
+    });
+    try {
+      var savedCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+      if (savedCookiePreferences.tracking) {
+        gtag('consent', 'update', {
+          analytics_storage: 'granted',
+          ad_storage: savedCookiePreferences.targeting ? 'granted' : 'denied',
+          ad_user_data: savedCookiePreferences.targeting ? 'granted' : 'denied',
+          ad_personalization: savedCookiePreferences.targeting ? 'granted' : 'denied'
+        });
+      }
+    } catch (e) {
+      console.warn('Could not restore analytics consent preferences', e);
+    }
     gtag('js', new Date());      
-    gtag('config', 'G-TZD9QT4W8H');    
+    gtag('config', 'G-TZD9QT4W8H', { send_page_view: false });
   </script>
 
   <title>DDNZ & Heaven Born Freight | China Sourcing & Logistics</title>    

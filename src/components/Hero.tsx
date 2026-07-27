@@ -8,11 +8,11 @@ export default function Hero() {
   const { t } = useLanguage();
 
   const handleWhatsAppClick = () => {
-    trackEvent('contact_whatsapp_click', { 'location': 'hero_section' });
+    trackEvent('whatsapp_click', { cta_location: 'hero_section' });
   };
 
   const handlePrimaryCtaClick = () => {
-    trackEvent('hero_primary_cta_click', { 'location': 'hero_section' });
+    trackEvent('quote_click', { cta_location: 'hero_section' });
   };
 
   return (
@@ -80,6 +80,7 @@ export default function Hero() {
             {/* Primary Action Button */}
             <a
               href="#get-a-quote"
+              data-analytics-tracked="true"
               onClick={handlePrimaryCtaClick}
               className="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base font-bold rounded-full text-white bg-gradient-to-r from-[#EA6A12] to-[#F59E0B] hover:opacity-95 hover:shadow-xl hover:shadow-amber-500/20 transition-all transform hover:-translate-y-0.5 active:scale-95 duration-200 cursor-pointer"
             >
@@ -90,6 +91,7 @@ export default function Hero() {
             {/* WhatsApp Chat Button */}
             <a
               href="https://wa.me/85261077362?text=Hi%20DDNZ%20Global,%20I%27m%20interested%20in%20your%20logistics%20services.%20Can%20we%20talk?"
+              data-analytics-tracked="true"
               target="_blank"
               rel="noopener noreferrer"
               onClick={handleWhatsAppClick}

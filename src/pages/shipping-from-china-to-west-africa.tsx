@@ -664,7 +664,6 @@ export default function ShippingWestAfrica() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('page_view', { path: '/shipping-from-china-to-west-africa', country: selectedCountry });
   }, [location.pathname, selectedCountry]);
 
   const handleCountryTabChange = (country: 'nigeria' | 'ghana') => {
@@ -720,7 +719,11 @@ export default function ShippingWestAfrica() {
   const handleSubmitInquiry = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    trackEvent('west_africa_quote_submit', { ...formData, selectedCountry });
+    trackEvent('quote_form_submit_attempt', {
+      form_location: 'west_africa_country_page',
+      country: selectedCountry,
+      service: 'freight_forwarding',
+    });
 
     // Simulate reliable submission
     setTimeout(() => {

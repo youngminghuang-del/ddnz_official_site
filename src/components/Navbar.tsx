@@ -102,7 +102,7 @@ export default function Navbar() {
   };
 
   const handleLanguageChange = (lang: Language) => {
-    trackEvent('language_select', { 'language': lang });
+    trackEvent('language_change', { selected_language: lang });
     setLanguage(lang);
     setShowLanguageDropdown(false);
 

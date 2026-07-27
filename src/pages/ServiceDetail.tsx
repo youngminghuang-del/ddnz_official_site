@@ -877,7 +877,11 @@ export default function ServiceDetail() {
 
   useEffect(() => {
     if (state.succeeded) {
-      trackEvent('service_page_rfq_success', { 'service': currentKey });
+      trackEvent('quote_form_submit', {
+        event_category: 'conversion',
+        form_location: 'service_page',
+        service: currentKey,
+      });
       setIsFormSubmitted(true);
     }
   }, [state.succeeded]);

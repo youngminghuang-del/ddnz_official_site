@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, X, ShieldCheck, Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
+import { trackPageView, updateAnalyticsConsent } from '../lib/analytics';
 
 const cookieTexts = {
   en: {
@@ -334,6 +335,8 @@ export default function CookieConsent() {
     setPreferences(fullPrefs);
     localStorage.setItem('cookieConsent', 'accepted');
     localStorage.setItem('cookiePreferences', JSON.stringify(fullPrefs));
+    updateAnalyticsConsent(true, true);
+    trackPageView();
     setIsVisible(false);
   };
 
@@ -347,12 +350,17 @@ export default function CookieConsent() {
     setPreferences(declinedPrefs);
     localStorage.setItem('cookieConsent', 'declined');
     localStorage.setItem('cookiePreferences', JSON.stringify(declinedPrefs));
+    updateAnalyticsConsent(false, false);
     setIsVisible(false);
   };
 
   const handleSavePreferences = () => {
     localStorage.setItem('cookieConsent', 'custom');
     localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
+    updateAnalyticsConsent(preferences.tracking, preferences.targeting);
+    if (preferences.tracking) {
+      trackPageView();
+    }
     setShowPreferencesModal(false);
     setIsVisible(false);
   };

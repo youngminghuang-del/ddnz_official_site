@@ -10,7 +10,12 @@ export default function Footer() {
   const { t, language } = useLanguage();
 
   const handleContactClick = (method: string) => {
-    trackEvent('contact_method_click', { 'method': method });
+    const eventName = method === 'phone'
+      ? 'phone_click'
+      : method === 'email'
+        ? 'email_click'
+        : 'linkedin_click';
+    trackEvent(eventName, { cta_location: 'footer' });
   };
 
   const cookieLabel = {
@@ -66,6 +71,7 @@ export default function Footer() {
             <div className="pt-1 flex flex-col gap-3">
               <a 
                 href="tel:+862036546132" 
+                data-analytics-tracked="true"
                 onClick={() => handleContactClick('phone')}
                 className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
               >
@@ -74,6 +80,7 @@ export default function Footer() {
               </a>
               <a 
                 href="mailto:partnership@ddnzglobal.com" 
+                data-analytics-tracked="true"
                 onClick={() => handleContactClick('email')}
                 className="inline-flex items-center text-white hover:text-orange-400 transition-colors group font-medium text-xs md:text-sm"
               >
@@ -82,6 +89,7 @@ export default function Footer() {
               </a>
               <a 
                 href="https://linkedin.com/company/ddnz-global-logistics-supply-chain" 
+                data-analytics-tracked="true"
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => handleContactClick('linkedin')}

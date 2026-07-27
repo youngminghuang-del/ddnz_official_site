@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
   Info, 
@@ -295,6 +295,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
+  const hasTrackedFormStart = useRef(false);
   
   // Core Funnel Data
   const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>('Sea');
@@ -391,15 +392,25 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   // Tracking and local success state
   useEffect(() => {
     if (state.succeeded) {
-      trackEvent('rfq_submit_success', { 'event_category': 'conversion' });
-      trackEvent('submit_quote_form', { 'method': 'Email', 'service': selectedService, 'dest': destination });
+      trackEvent('quote_form_submit', {
+        event_category: 'conversion',
+        form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+        service: selectedService,
+      });
       setIsSubmitted(true);
     }
-  }, [state.succeeded, selectedService, destination]);
+  }, [state.succeeded, selectedService, isQuotePage]);
 
   // Navigate forward with sliding transition
   const nextStep = () => {
     if (step < 4) {
+      if (!hasTrackedFormStart.current) {
+        trackEvent('quote_form_start', {
+          form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+          service: selectedService,
+        });
+        hasTrackedFormStart.current = true;
+      }
       setDirection(1);
       setStep(step + 1);
     }

@@ -740,7 +740,6 @@ export default function ShippingCentralAsia() {
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
-    trackEvent('page_view', { path: '/shipping-from-china-to-central-asia', country: selectedCountry });
   }, [location.pathname, selectedCountry]);
 
   const handleCountryTabChange = (country: 'kazakhstan' | 'uzbekistan') => {
@@ -796,7 +795,11 @@ export default function ShippingCentralAsia() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    trackEvent('central_asia_quote_submit', { ...formData, selectedCountry });
+    trackEvent('quote_form_submit_attempt', {
+      form_location: 'central_asia_country_page',
+      country: selectedCountry,
+      service: 'land_freight',
+    });
 
     // Simulate reliable submission
     setTimeout(() => {

@@ -4,6 +4,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import CookieConsent from './components/CookieConsent';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
+import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
@@ -126,6 +127,60 @@ function HashScrollHandler() {
   return null;
 }
 
+function AnalyticsRouteTracker() {
+  const location = useLocation();
+
+  useEffect(() => {
+    initializeAnalyticsConsent();
+  }, []);
+
+  useEffect(() => {
+    const timer = window.setTimeout(() => {
+      trackPageView();
+    }, 0);
+
+    return () => window.clearTimeout(timer);
+  }, [location.pathname, location.search]);
+
+  return null;
+}
+
+function GlobalConversionTracker() {
+  useEffect(() => {
+    const handleClick = (event: MouseEvent) => {
+      const target = event.target;
+      if (!(target instanceof Element)) return;
+
+      const clickable = target.closest<HTMLAnchorElement | HTMLButtonElement>('a, button');
+      if (!clickable || clickable.dataset.analyticsTracked === 'true') return;
+
+      const href = clickable instanceof HTMLAnchorElement
+        ? clickable.getAttribute('href') || ''
+        : '';
+      const ctaLocation = clickable.closest('section')?.id || 'global_navigation';
+
+      if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
+        trackEvent('whatsapp_click', { cta_location: ctaLocation });
+      } else if (href.startsWith('tel:')) {
+        trackEvent('phone_click', { cta_location: ctaLocation });
+      } else if (href.startsWith('mailto:')) {
+        trackEvent('email_click', { cta_location: ctaLocation });
+      } else if (
+        href.includes('get-a-quote') ||
+        href.includes('#get-a-quote') ||
+        href.includes('#rfq-form-section')
+      ) {
+        trackEvent('quote_click', { cta_location: ctaLocation });
+      }
+    };
+
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
+
+  return null;
+}
+
 export default function App() {
   return (
     <HelmetProvider>
@@ -133,6 +188,8 @@ export default function App() {
         <Router>
           <LanguageRouteSync />
           <HashScrollHandler />
+          <AnalyticsRouteTracker />
+          <GlobalConversionTracker />
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
             {/* English Default / Fallback Hub */}
