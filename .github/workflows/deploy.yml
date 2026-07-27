@@ -57,6 +57,7 @@ jobs:
         with:
           node-version: 24
       - name: Submit deployed sitemap URLs to Baidu
+        continue-on-error: true
         env:
           BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
         run: node scripts/push-baidu-urls.mjs --sitemap https://www.ddnzglobal.com/sitemap.xml
