@@ -1012,7 +1012,14 @@ COUNTRY_CONTENT.Kuwait.ar = {
   ]
 };
 
-const createGccCountryContent = (name: string, nameZh: string, nameAr: string, nameEs: string) => ({
+const createGccCountryContent = (
+  name: string,
+  nameZh: string,
+  nameAr: string,
+  nameEs: string,
+  nameFr: string,
+  nameRu: string,
+) => ({
   en: {
     headline: `Shipping from China to ${name} | Freight and Document Planning`,
     subheadline: `Plan sea and air freight from China to ${name} around cargo information, import-document requirements, and destination-side operating scope.`,
@@ -1056,14 +1063,43 @@ const createGccCountryContent = (name: string, nameZh: string, nameAr: string, n
       { id: 'gcc-2', title: '¿Cómo debe planificarse el despacho en destino?', desc: 'Confirme los requisitos actuales del importador, documentos y manejo en destino antes de reservar.' },
       { id: 'gcc-3', title: '¿Puede organizarse un servicio DDP?', desc: 'La disponibilidad depende del producto, el importador y las condiciones de destino. Confirme alcance, impuestos y exclusiones por escrito.' }
     ]
+  },
+  fr: {
+    headline: `Fret maritime et aérien de Chine vers ${nameFr}`,
+    subheadline: `Planification du fret depuis la Chine vers ${nameFr} selon les données de la marchandise, les documents d’importation et le périmètre opérationnel à destination.`,
+    card3Title: `Coordination des documents et de la destination en ${nameFr}`,
+    card3Desc: 'Vérifiez les informations produit, les documents commerciaux et le périmètre confirmé à destination avant l’expédition.',
+    faqs: [
+      { id: 'gcc-fr-1', title: `Que faut-il vérifier avant une expédition vers ${nameFr} ?`, desc: 'Vérifiez le destinataire, la description, les quantités, les valeurs et les exigences produit avec l’importateur avant l’envoi.' },
+      { id: 'gcc-fr-2', title: 'Comment planifier le dédouanement à destination ?', desc: 'Confirmez les exigences actuelles de l’importateur, des documents et des opérations locales avant la réservation.' },
+      { id: 'gcc-fr-3', title: 'Un service DDP peut-il être organisé ?', desc: 'La disponibilité dépend du produit, de l’importateur et des conditions locales. Confirmez par écrit le périmètre, les taxes et les exclusions.' }
+    ]
+  },
+  ru: {
+    headline: `Доставка грузов из Китая в ${nameRu}`,
+    subheadline: `Планирование морской и авиационной перевозки из Китая в ${nameRu} с учетом данных о грузе, импортных документов и согласованного объема услуг в пункте назначения.`,
+    card3Title: `Координация документов и операций в пункте назначения`,
+    card3Desc: 'До отправки проверьте сведения о товаре, коммерческие документы и согласованный объем услуг в пункте назначения.',
+    faqs: [
+      { id: 'gcc-ru-1', title: `Что проверить перед отправкой в ${nameRu}?`, desc: 'Сверьте данные получателя, описание, количество, стоимость и требования к товару с импортером до отправки.' },
+      { id: 'gcc-ru-2', title: 'Как планировать оформление в пункте назначения?', desc: 'До бронирования подтвердите актуальные требования к импортеру, документам и местным операциям.' },
+      { id: 'gcc-ru-3', title: 'Можно ли организовать услугу DDP?', desc: 'Доступность зависит от товара, импортера и местных условий. Письменно согласуйте объем услуг, налоги и исключения.' }
+    ]
   }
 });
 
-COUNTRY_CONTENT.Qatar = createGccCountryContent('Qatar', '卡塔尔', 'قطر', 'Qatar');
-COUNTRY_CONTENT.Oman = createGccCountryContent('Oman', '阿曼', 'عُمان', 'Omán');
-COUNTRY_CONTENT.Bahrain = createGccCountryContent('Bahrain', '巴林', 'البحرين', 'Baréin');
+COUNTRY_CONTENT.Qatar = createGccCountryContent('Qatar', '卡塔尔', 'قطر', 'Qatar', 'Qatar', 'Катар');
+COUNTRY_CONTENT.Oman = createGccCountryContent('Oman', '阿曼', 'عُمان', 'Omán', 'Oman', 'Оман');
+COUNTRY_CONTENT.Bahrain = createGccCountryContent('Bahrain', '巴林', 'البحرين', 'Baréin', 'Bahreïn', 'Бахрейн');
 
-const createGccSpec = (name: string, nameZh: string, nameAr: string, nameEs: string) => ({
+const createGccSpec = (
+  name: string,
+  nameZh: string,
+  nameAr: string,
+  nameEs: string,
+  nameFr: string,
+  nameRu: string,
+) => ({
   en: {
     specTitle: `${name} Shipment Planning Checklist`, specSub: 'Confirm product information, commercial documents, and destination requirements before booking.',
     tab1Title: 'Product and document review', tab1Header: 'Pre-shipment information review', tab1Desc: 'Review product descriptions, quantities, values, importer information, and any applicable product documents before cargo is released.',
@@ -1123,13 +1159,43 @@ const createGccSpec = (name: string, nameZh: string, nameAr: string, nameEs: str
       { title: 'Antes de la salida', desc: 'Revise los documentos comerciales finales con el importador.' },
       { title: 'En destino', desc: 'Confirme manejo y entrega local según el alcance acordado.' }
     ]
+  },
+  fr: {
+    specTitle: `Liste de contrôle avant expédition vers ${nameFr}`, specSub: 'Confirmez les informations produit, les documents commerciaux et les exigences de destination avant la réservation.',
+    tab1Title: 'Vérification du produit et des documents', tab1Header: 'Revue des informations avant expédition', tab1Desc: 'Vérifiez la description, les quantités, les valeurs, les données de l’importateur et les documents applicables avant la remise de la marchandise.',
+    tab2Title: 'Périmètre du service à destination', tab2Header: 'Coordination du dédouanement et de la livraison', tab2Desc: 'Confirmez les responsabilités relatives au dédouanement, aux taxes, à la livraison et au déchargement avant la réservation.',
+    redlinesTitle: 'Contrôles essentiels avant expédition', redlines: [
+      { id: '01', title: 'Cohérence documentaire', desc: 'Gardez cohérentes les données produit, quantité, destinataire et valeur dans les documents commerciaux et de transport.' },
+      { id: '02', title: 'Exigences produit', desc: 'Confirmez avec l’importateur les permis, certificats ou exigences produit applicables avant l’envoi.' },
+      { id: '03', title: 'Périmètre de livraison', desc: 'Confirmez par écrit les opérations, le dédouanement, la livraison et le déchargement à destination.' }
+    ],
+    guideTitle: `Notes de planification de route vers ${nameFr}`, guideSub: 'Contrôles pratiques pour la marchandise, les documents et les opérations à destination.', guideCards: [
+      { title: 'Avant la réservation', desc: 'Confirmez la disponibilité de la marchandise, l’acceptation du transporteur et les documents.' },
+      { title: 'Avant le départ', desc: 'Vérifiez les documents commerciaux définitifs avec l’importateur.' },
+      { title: 'À destination', desc: 'Confirmez les opérations locales et la livraison selon le périmètre convenu.' }
+    ]
+  },
+  ru: {
+    specTitle: `Контрольный список для отправки в ${nameRu}`, specSub: 'До бронирования подтвердите сведения о товаре, коммерческие документы и требования пункта назначения.',
+    tab1Title: 'Проверка товара и документов', tab1Header: 'Проверка информации до отправки', tab1Desc: 'До передачи груза проверьте описание, количество, стоимость, данные импортера и применимые документы.',
+    tab2Title: 'Объем услуг в пункте назначения', tab2Header: 'Координация оформления и доставки', tab2Desc: 'До бронирования согласуйте ответственность за оформление, налоги, доставку и разгрузку.',
+    redlinesTitle: 'Ключевые проверки до отправки', redlines: [
+      { id: '01', title: 'Согласованность документов', desc: 'Сведения о товаре, количестве, получателе и стоимости должны совпадать в коммерческих и транспортных документах.' },
+      { id: '02', title: 'Требования к товару', desc: 'До отправки подтвердите с импортером применимые разрешения, сертификаты и требования пункта назначения.' },
+      { id: '03', title: 'Объем доставки', desc: 'Письменно согласуйте местные операции, оформление, доставку и разгрузку.' }
+    ],
+    guideTitle: `Примечания по маршруту в ${nameRu}`, guideSub: 'Практические проверки груза, документов и операций в пункте назначения.', guideCards: [
+      { title: 'До бронирования', desc: 'Подтвердите готовность груза, приемку перевозчиком и комплект документов.' },
+      { title: 'До отправления', desc: 'Сверьте окончательные коммерческие документы с импортером.' },
+      { title: 'В пункте назначения', desc: 'Подтвердите местные операции и доставку в рамках согласованной услуги.' }
+    ]
   }
 });
 
 const GCC_SPEC_DATA: Record<string, Record<string, any>> = {
-  Qatar: createGccSpec('Qatar', '卡塔尔', 'قطر', 'Qatar'),
-  Oman: createGccSpec('Oman', '阿曼', 'عُمان', 'Omán'),
-  Bahrain: createGccSpec('Bahrain', '巴林', 'البحرين', 'Baréin')
+  Qatar: createGccSpec('Qatar', '卡塔尔', 'قطر', 'Qatar', 'Qatar', 'Катар'),
+  Oman: createGccSpec('Oman', '阿曼', 'عُمان', 'Omán', 'Oman', 'Оман'),
+  Bahrain: createGccSpec('Bahrain', '巴林', 'البحرين', 'Baréin', 'Bahreïn', 'Бахрейн')
 };
 
 PAGE_LANG_DATA.ar = {
@@ -1156,6 +1222,12 @@ PAGE_LANG_DATA.ar = {
 PAGE_LANG_DATA.ar.country_Qatar = 'قطر';
 PAGE_LANG_DATA.ar.country_Oman = 'عُمان';
 PAGE_LANG_DATA.ar.country_Bahrain = 'البحرين';
+PAGE_LANG_DATA.fr.country_Qatar = 'Qatar';
+PAGE_LANG_DATA.fr.country_Oman = 'Oman';
+PAGE_LANG_DATA.fr.country_Bahrain = 'Bahreïn';
+PAGE_LANG_DATA.ru.country_Qatar = 'Катар';
+PAGE_LANG_DATA.ru.country_Oman = 'Оман';
+PAGE_LANG_DATA.ru.country_Bahrain = 'Бахрейн';
 
 export default function MiddleEastRoute() {
   const location = useLocation();
@@ -1277,9 +1349,53 @@ export default function MiddleEastRoute() {
     return data[key] || '';
   };
 
+  const countryLabelKey: Record<MiddleEastCountry, string> = {
+    'Saudi-Arabia': 'country_Saudi_Arabia',
+    UAE: 'country_UAE',
+    Kuwait: 'country_Kuwait',
+    Qatar: 'country_Qatar',
+    Oman: 'country_Oman',
+    Bahrain: 'country_Bahrain',
+  };
+  const selectedCountryLabel = t(countryLabelKey[selectedCountry]);
+  const selectedCountrySlug = getShippingCountrySlug(
+    location.pathname,
+    location.search,
+    Object.keys(countryBySlug),
+    '',
+  );
+  const hasDedicatedCountryRoute = Boolean(selectedCountrySlug);
+  const countrySeo = (() => {
+    if (!hasDedicatedCountryRoute) {
+      return { title: t('seoTitle'), description: t('seoDesc') };
+    }
+
+    const titles: Record<string, string> = {
+      en: `Shipping from China to ${selectedCountryLabel} | Freight Forwarding | Heaven Born`,
+      zh: `中国到${selectedCountryLabel}海运、空运与清关服务 | 华正邦泰国际货运`,
+      es: `Envíos de China a ${selectedCountryLabel} | Heaven Born`,
+      ar: `الشحن من الصين إلى ${selectedCountryLabel} | Heaven Born`,
+      fr: `Fret de Chine vers ${selectedCountryLabel} | Heaven Born`,
+      ru: `Доставка из Китая в ${selectedCountryLabel} | Heaven Born`,
+    };
+    const descriptions: Record<string, string> = {
+      en: `Sea and air freight planning from China to ${selectedCountryLabel}, with cargo, import-document, customs and destination-delivery coordination.`,
+      zh: `提供中国至${selectedCountryLabel}的海运、空运、集货、进口文件核对及目的地清关派送协调。`,
+      es: `Planificación de transporte marítimo y aéreo de China a ${selectedCountryLabel}, con revisión documental, aduanas y coordinación de entrega.`,
+      ar: `تخطيط الشحن البحري والجوي من الصين إلى ${selectedCountryLabel} مع مراجعة المستندات والجمارك وتنسيق التسليم.`,
+      fr: `Planification du fret maritime et aérien de Chine vers ${selectedCountryLabel}, avec vérification documentaire, douanes et coordination de la livraison.`,
+      ru: `Морские и авиационные перевозки из Китая в ${selectedCountryLabel} с проверкой документов, координацией таможенного оформления и доставки.`,
+    };
+
+    return {
+      title: titles[activeLang] || titles.en,
+      description: descriptions[activeLang] || descriptions.en,
+    };
+  })();
+
   return (
     <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
-      <SEO title={t('seoTitle')} description={t('seoDesc')} />
+      <SEO title={countrySeo.title} description={countrySeo.description} />
       
       <Navbar />
 

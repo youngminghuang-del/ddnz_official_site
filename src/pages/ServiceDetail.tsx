@@ -961,7 +961,6 @@ export default function ServiceDetail() {
   if (currentKey === 'air-freight') {
     return (
       <div className="min-h-screen hb-page-shell font-sans text-slate-900">
-        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
@@ -1689,7 +1688,6 @@ export default function ServiceDetail() {
 
     return (
       <div className="hb-page-shell min-h-screen font-sans text-slate-900">
-        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
@@ -2540,7 +2538,6 @@ export default function ServiceDetail() {
 
     return (
       <div className="min-h-screen hb-page-shell font-sans text-slate-900">
-        <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
         <Navbar />
 
@@ -3026,7 +3023,6 @@ export default function ServiceDetail() {
 
   return (
     <div className="min-h-screen hb-page-shell font-sans text-slate-900">
-      <h1 style={{ display: 'none' }}>{SERVICES_DATA[serviceId as string]?.[activeLang]?.title || SERVICES_DATA[currentKey]?.[activeLang]?.title || 'Service Details'}</h1>
       <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
         type="Service" 

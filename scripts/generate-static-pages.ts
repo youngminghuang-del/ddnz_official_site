@@ -455,11 +455,6 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
   // Inject the new page-specific ones before </head>
   output = output.replace(/<\/head>/i, `${newHreflangTags}</head>`);
 
-  // Inject hidden H1 right after <div id="root"> for crawlers (unless special Actionable insights post)
-  if (relPath !== 'blog/Actionable-insights-for-Eastern-Europe') {
-    output = output.replace(/<div id="root"><\/div>/i, `<div id="root"></div><h1 style="display: none;">${seo.title}</h1>`);
-  }
-
   return output;
 }
 
@@ -617,17 +612,7 @@ function run() {
         fs.mkdirSync(targetDir, { recursive: true });
       }
 
-      let localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
-      if (entry.path === 'blog/Actionable-insights-for-Eastern-Europe') {
-        localizedHtml = localizedHtml.replace(
-          /<div id="root"><\/div>/i,
-          `<div id="root">
-       <article style="display:none;">
-         <h1>China Sourcing Alert: July Rate Hikes & Customs Guide</h1>
-       </article>
-     </div>`
-        );
-      }
+      const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
       const targetFilePath = path.join(targetDir, 'index.html');
       fs.writeFileSync(targetFilePath, localizedHtml, 'utf-8');
     });
