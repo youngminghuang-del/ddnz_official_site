@@ -10,7 +10,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
   const { language } = useLanguage();
 
   useEffect(() => {
-    const pageUrl = data.url || `https://www.ddnzglobal.com${window.location.pathname}`;
+    const rawPageUrl = data.url || `https://www.ddnzglobal.com${window.location.pathname}`;
+    const pageUrl = rawPageUrl === 'https://www.ddnzglobal.com/'
+      ? rawPageUrl
+      : rawPageUrl.replace(/\/+$/, '');
     const scriptId = `schema-jsonld-${type.toLowerCase()}`;
     // Replace only the schema of the same type, so Organization and LocalBusiness
     // can coexist on the homepage.
