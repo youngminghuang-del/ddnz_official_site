@@ -455,6 +455,120 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
   // Inject the new page-specific ones before </head>
   output = output.replace(/<\/head>/i, `${newHreflangTags}</head>`);
 
+  // 5. Add crawlable route-level structured data to the static HTML. React
+  // enhances this after hydration, but search engines should not need to run
+  // JavaScript to understand the page type, service area, or hierarchy.
+  const isServicePage = relPath.startsWith('services/');
+  const isShippingPage = relPath.startsWith('shipping-from-china-to-');
+  if (isServicePage || isShippingPage) {
+    const countrySlug = relPath.replace(/^shipping-from-china-to-/, '');
+    const specificCountryName = countryNames[countrySlug]?.en;
+    const destinationName = specificCountryName
+      || (relPath === 'shipping-from-china-to-middle-east' ? 'Middle East'
+        : relPath === 'shipping-from-china-to-central-asia' ? 'Central Asia'
+          : relPath === 'shipping-from-china-to-west-africa' ? 'West Africa'
+            : relPath === 'shipping-from-china-to-latin-america' ? 'Latin America'
+              : 'Global');
+    const sectionName = isServicePage ? 'Services' : 'Shipping by Region';
+    const middleEastCountries = ['saudi-arabia', 'uae', 'kuwait', 'qatar', 'oman', 'bahrain'];
+    const centralAsiaCountries = ['kazakhstan', 'uzbekistan'];
+    const westAfricaCountries = ['nigeria', 'ghana'];
+    const latinAmericaCountries = ['mexico', 'brazil', 'argentina', 'peru', 'chile'];
+    const regionPath = middleEastCountries.includes(countrySlug)
+      ? 'shipping-from-china-to-middle-east'
+      : centralAsiaCountries.includes(countrySlug)
+        ? 'shipping-from-china-to-central-asia'
+        : westAfricaCountries.includes(countrySlug)
+          ? 'shipping-from-china-to-west-africa'
+          : latinAmericaCountries.includes(countrySlug)
+            ? 'shipping-from-china-to-latin-america'
+            : null;
+    const regionName = regionPath?.endsWith('middle-east')
+      ? 'Middle East'
+      : regionPath?.endsWith('central-asia')
+        ? 'Central Asia'
+        : regionPath?.endsWith('west-africa')
+          ? 'West Africa'
+          : regionPath?.endsWith('latin-america')
+            ? 'Latin America'
+            : sectionName;
+    const regionUrl = regionPath
+      ? (lang === 'en'
+        ? `https://www.ddnzglobal.com/${regionPath}`
+        : `https://www.ddnzglobal.com/${lang}/${regionPath}`)
+      : canonicalUrl;
+    const breadcrumbItems = [
+      {
+        '@type': 'ListItem',
+        position: 1,
+        name: lang === 'zh-cn' ? '首页' : 'Home',
+        item: 'https://www.ddnzglobal.com/'
+      },
+      ...(regionPath
+        ? [{
+            '@type': 'ListItem',
+            position: 2,
+            name: lang === 'zh-cn' ? '按区域运输' : regionName,
+            item: regionUrl
+          }]
+        : []),
+      {
+        '@type': 'ListItem',
+        position: regionPath ? 3 : 2,
+        name: seo.title,
+        item: canonicalUrl
+      }
+    ];
+    const structuredData = {
+      '@context': 'https://schema.org',
+      '@graph': [
+        {
+          '@type': 'WebPage',
+          '@id': canonicalUrl,
+          url: canonicalUrl,
+          name: seo.title,
+          description: optimizedDesc,
+          inLanguage: targetLang
+        },
+        {
+          '@type': 'BreadcrumbList',
+          '@id': `${canonicalUrl}#breadcrumb`,
+          itemListElement: breadcrumbItems
+        },
+        {
+          '@type': 'Service',
+          '@id': `${canonicalUrl}#service`,
+          name: seo.title,
+          serviceType: isShippingPage
+            ? `Freight forwarding from China to ${destinationName}`
+            : seo.title,
+          description: optimizedDesc,
+          provider: {
+            '@type': 'Organization',
+            name: lang === 'zh-cn'
+              ? '华正邦泰国际货运代理有限公司'
+              : 'Heaven Born International Freight Co., Ltd',
+            url: 'https://www.ddnzglobal.com/'
+          },
+          areaServed: isShippingPage
+            ? { '@type': specificCountryName ? 'Country' : 'Place', name: destinationName }
+            : 'Global',
+          offers: {
+            '@type': 'Offer',
+            url: 'https://www.ddnzglobal.com/get-a-quote/',
+            priceCurrency: 'USD',
+            description: 'Request a route-specific freight quotation based on cargo details and current capacity.'
+          }
+        }
+      ]
+    };
+    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    output = output.replace(
+      /<\/head>/i,
+      `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
+    );
+  }
+
   return output;
 }
 

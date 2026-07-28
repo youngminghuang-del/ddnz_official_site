@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -1396,6 +1397,26 @@ export default function MiddleEastRoute() {
   return (
     <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={countrySeo.title} description={countrySeo.description} />
+      <SchemaMarkup
+        type="Service"
+        data={{
+          name: countrySeo.title,
+          serviceType: `Freight forwarding from China to ${selectedCountryLabel}`,
+          areaServed: { '@type': 'Country', name: selectedCountryLabel },
+          description: countrySeo.description,
+          url: `https://www.ddnzglobal.com${location.pathname}`
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={{
+          items: [
+            { name: activeLang === 'zh' ? '首页' : 'Home', url: 'https://www.ddnzglobal.com/' },
+            { name: activeLang === 'zh' ? '按区域运输' : 'Middle East', url: `https://www.ddnzglobal.com${location.pathname.match(/^\/(zh-cn|ru|fr|es|ar)/)?.[0] || ''}/shipping-from-china-to-middle-east` },
+            { name: selectedCountryLabel, url: `https://www.ddnzglobal.com${location.pathname}` }
+          ]
+        }}
+      />
       
       <Navbar />
 
@@ -1944,9 +1965,7 @@ export default function MiddleEastRoute() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white/[0.03] backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/[0.08] dark-form-container">
               <GetAQuote
-                presetDestination={
-                  selectedCountry === 'Saudi-Arabia' ? 'Saudi Arabia' : selectedCountry === 'UAE' ? 'UAE' : 'Kuwait'
-                }
+                presetDestination={selectedCountryLabel}
                 presetService="Sea"
               />
             </div>

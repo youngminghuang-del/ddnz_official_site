@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 
 interface SchemaProps {
-  type: 'Organization' | 'LocalBusiness' | 'Service' | 'BlogPosting';
+  type: 'Organization' | 'LocalBusiness' | 'Service' | 'BlogPosting' | 'BreadcrumbList';
   data: Record<string, any>;
 }
 
@@ -10,6 +10,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
   const { language } = useLanguage();
 
   useEffect(() => {
+    const pageUrl = data.url || `https://www.ddnzglobal.com${window.location.pathname}`;
     const scriptId = `schema-jsonld-${type.toLowerCase()}`;
     // Replace only the schema of the same type, so Organization and LocalBusiness
     // can coexist on the homepage.
@@ -91,6 +92,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = {
         ...baseSchema,
         '@type': 'Service',
+        '@id': `${pageUrl}#service`,
         'serviceType': data.serviceType || 'Freight Forwarding',
         'provider': {
           '@type': 'LocalBusiness',
@@ -102,8 +104,21 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'offers': {
           '@type': 'Offer',
           'priceCurrency': 'USD',
-          'description': 'Contact us dynamically for personalized freight estimates'
+          'url': data.offerUrl || 'https://www.ddnzglobal.com/get-a-quote/',
+          'description': data.offerDescription || 'Request a route-specific freight quotation based on cargo details and current capacity.'
         }
+      };
+    } else if (type === 'BreadcrumbList') {
+      finalSchema = {
+        ...baseSchema,
+        '@type': 'BreadcrumbList',
+        '@id': `${pageUrl}#breadcrumb`,
+        'itemListElement': (data.items || []).map((item: { name: string; url: string }, index: number) => ({
+          '@type': 'ListItem',
+          'position': index + 1,
+          'name': item.name,
+          'item': item.url
+        }))
       };
     } else if (type === 'BlogPosting') {
       finalSchema = {

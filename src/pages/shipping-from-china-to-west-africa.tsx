@@ -6,6 +6,7 @@ import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
+import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
@@ -744,6 +745,26 @@ export default function ShippingWestAfrica() {
   return (
     <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
+      <SchemaMarkup
+        type="Service"
+        data={{
+          name: spec.seoTitle,
+          serviceType: `Freight forwarding from China to ${selectedCountry === 'nigeria' ? 'Nigeria' : 'Ghana'}`,
+          areaServed: { '@type': 'Country', name: selectedCountry === 'nigeria' ? 'Nigeria' : 'Ghana' },
+          description: spec.seoDesc,
+          url: `https://www.ddnzglobal.com${location.pathname}`
+        }}
+      />
+      <SchemaMarkup
+        type="BreadcrumbList"
+        data={{
+          items: [
+            { name: language === 'zh' ? '首页' : 'Home', url: 'https://www.ddnzglobal.com/' },
+            { name: language === 'zh' ? '按区域运输' : 'West Africa', url: `https://www.ddnzglobal.com${location.pathname.match(/^\/(zh-cn|ru|fr|es|ar)/)?.[0] || ''}/shipping-from-china-to-west-africa` },
+            { name: selectedCountry === 'nigeria' ? 'Nigeria' : 'Ghana', url: `https://www.ddnzglobal.com${location.pathname}` }
+          ]
+        }}
+      />
       
       <Navbar />
 

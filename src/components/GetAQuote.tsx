@@ -586,7 +586,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             {!isSubmitted ? (
               <>
                 {/* Visual Step Progress indicator */}
-                <div className="px-6 pt-8 pb-4 sm:px-10 border-b border-slate-100 flex items-center justify-between">
+                <div className="px-5 pt-8 pb-4 sm:px-10 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                   <div className="flex items-center gap-1.5">
                     <span className="text-xs font-black text-slate-400 tracking-wider uppercase">
                       Inquiry Funnel
@@ -598,17 +598,19 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                   </div>
                   
                   {/* Step dots with line connector */}
-                  <div className="flex items-center gap-3">
+                  <div className="flex items-center justify-center gap-1 sm:gap-3 w-full sm:w-auto">
                     {[1, 2, 3, 4].map((item) => (
                       <div key={item} className="flex items-center">
                         <button
                           type="button"
-                          disabled={item > step && !destination && item !== 4}
+                          disabled={item > step}
                           onClick={() => {
                             setDirection(item > step ? 1 : -1);
                             setStep(item);
                           }}
-                          className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-black transition-all ${
+                          aria-label={`Step ${item} of 4`}
+                          aria-current={step === item ? 'step' : undefined}
+                          className={`w-10 h-10 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-black transition-all disabled:cursor-not-allowed ${
                             step === item
                               ? 'bg-[#0b4f8a] text-white shadow-md shadow-sky-500/20 scale-110 ring-4 ring-sky-100'
                               : step > item
@@ -619,7 +621,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           {step > item ? <Check className="w-3.5 h-3.5 stroke-[3.5]" /> : item}
                         </button>
                         {item < 4 && (
-                          <div className={`w-6 sm:w-10 h-1 mx-1.5 rounded-full transition-all duration-300 ${
+                          <div className={`w-5 sm:w-10 h-1 mx-1 sm:mx-1.5 rounded-full transition-all duration-300 ${
                             step > item ? 'bg-[var(--hb-amber)]' : 'bg-slate-100'
                           }`} />
                         )}
@@ -765,7 +767,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       key={o.code}
                                       type="button"
                                       onClick={() => setOrigin(oName)}
-                                      className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
+                                      className={`px-4 py-2 min-h-11 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
                                         isSelected
                                           ? 'border-[#0b4f8a] bg-sky-50 text-[#0b4f8a] ring-2 ring-sky-100'
                                           : 'border-slate-200 bg-white hover:border-[#0b4f8a] text-slate-700 hover:bg-slate-50'
@@ -835,7 +837,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                       key={c.code}
                                       type="button"
                                       onClick={() => handleCountrySelect(cName)}
-                                      className={`px-4 py-2 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
+                                      className={`px-4 py-2 min-h-11 rounded-xl text-xs font-bold border transition-all flex items-center gap-1.5 ${
                                         isSelected
                                           ? 'border-[#0b4f8a] bg-sky-50 text-[#0b4f8a] ring-2 ring-sky-100'
                                           : 'border-slate-200 bg-white hover:border-[#0b4f8a] text-slate-700 hover:bg-slate-50'
@@ -1040,7 +1042,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}
                               <div>
+                                <label htmlFor="quote-contact-name" className="sr-only">{ft('namePlaceholder')}</label>
                                 <input
+                                  id="quote-contact-name"
                                   type="text"
                                   name="name"
                                   required
@@ -1054,7 +1058,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                               {/* Contact Email */}
                               <div>
+                                <label htmlFor="quote-contact-email" className="sr-only">{ft('emailPlaceholder')}</label>
                                 <input
+                                  id="quote-contact-email"
                                   type="email"
                                   name="email"
                                   required
@@ -1068,7 +1074,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                               {/* Phone / WeChat / WhatsApp */}
                               <div>
+                                <label htmlFor="quote-contact-phone" className="sr-only">{ft('phonePlaceholder')}</label>
                                 <input
+                                  id="quote-contact-phone"
                                   type="text"
                                   name="phone"
                                   required
@@ -1082,7 +1090,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                               {/* Industry Category */}
                               <div>
+                                <label htmlFor="quote-industry" className="sr-only">{t('get_a_quote.industry') || 'Industry category'}</label>
                                 <select
+                                  id="quote-industry"
                                   name="industry"
                                   required
                                   value={product}
@@ -1099,7 +1109,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                             {/* Additional Cargo Notes */}
                             <div>
+                              <label htmlFor="quote-cargo-notes" className="sr-only">{ft('notesPlaceholder')}</label>
                               <textarea
+                                id="quote-cargo-notes"
                                 name="message"
                                 rows={2}
                                 value={notes}
@@ -1144,7 +1156,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       <button
                         type="button"
                         onClick={prevStep}
-                        className="px-5 py-2.5 rounded-xl text-slate-500 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors flex items-center gap-2 font-bold text-xs cursor-pointer"
+                        className="px-5 py-2.5 min-h-11 rounded-xl text-slate-500 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors flex items-center gap-2 font-bold text-xs cursor-pointer"
                       >
                         <ArrowLeft className="w-4 h-4" /> {ft('back')}
                       </button>
@@ -1154,7 +1166,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           type="button"
                           disabled={step === 2 && !destination}
                           onClick={nextStep}
-                          className={`px-6 py-2.5 rounded-xl font-extrabold text-xs flex items-center gap-1.5 transition-all cursor-pointer ${
+                          className={`px-6 py-2.5 min-h-11 rounded-xl font-extrabold text-xs flex items-center gap-1.5 transition-all cursor-pointer ${
                             step === 2 && !destination
                               ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
                               : 'bg-[#0b4f8a] text-white hover:bg-[#082f55] shadow-sm hover:shadow-md'

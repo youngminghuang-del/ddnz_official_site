@@ -23,6 +23,9 @@ export default function Hero() {
           alt="China Freight Forwarder - Heaven Born Global Logistics Hub Since 1997"
           className="w-full h-full object-cover"
           fetchPriority="high"
+          decoding="async"
+          width={1080}
+          height={1440}
         />
         {/* Asymmetric Gradient Mask Overlay & Ambient Darkening */}
         <div className="absolute inset-0 bg-[#071A33]/55 mix-blend-multiply" />

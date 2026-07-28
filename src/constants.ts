@@ -1,6 +1,6 @@
 export const IMAGES = {
   BASE_URL: "https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/",
-  HERO_BG: "hero_gz_nansha_port.png",
+  HERO_BG: "/images/hero-gz-nansha-port-1080.jpg",
   JOURNEY_1999: "journey_1999_gz_port.png",
   JOURNEY_2004: "journey_2004_warehouse.png",
   JOURNEY_2009: "journey_2009_hk_office.png",
@@ -29,5 +29,6 @@ export const IMAGES = {
 
 export const getImgUrl = (name: keyof typeof IMAGES) => {
   if (name === 'BASE_URL') return '';
-  return `${IMAGES.BASE_URL}${IMAGES[name]}`;
+  const imagePath = IMAGES[name];
+  return imagePath.startsWith('/') ? imagePath : `${IMAGES.BASE_URL}${imagePath}`;
 };
