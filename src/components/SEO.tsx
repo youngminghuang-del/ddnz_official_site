@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 
@@ -127,40 +127,72 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
   const defaultAlternate = finalAlternates.find((item) => item.hrefLang === 'en') || finalAlternates[0];
 
   const helmetLang = currentLang === 'zh' ? 'zh-CN' : currentLang;
+  const alternateSignature = JSON.stringify(finalAlternates);
 
-  return (
-    <>
-      <Helmet>
-        {/* HTML Language attribute */}
-        <html lang={helmetLang} />
+  useEffect(() => {
+    const replaceMeta = (
+      attribute: 'name' | 'property',
+      key: string,
+      content: string,
+    ) => {
+      document.head
+        .querySelectorAll(`meta[${attribute}="${key}"]`)
+        .forEach((element) => element.remove());
+      const meta = document.createElement('meta');
+      meta.setAttribute(attribute, key);
+      meta.content = content;
+      document.head.appendChild(meta);
+    };
 
-        {/* Primary Meta Tags */}
-        <title>{finalTitle}</title>
-        <meta name="title" content={finalTitle} />
-        <meta name="description" content={finalDesc} />
-        <meta name="keywords" content={finalKeywords} />
+    document.documentElement.lang = helmetLang;
+    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.title = finalTitle;
 
-        {/* Canonical Link */}
-        <link rel="canonical" href={canonicalUrl} />
+    replaceMeta('name', 'title', finalTitle);
+    replaceMeta('name', 'description', finalDesc);
+    replaceMeta('name', 'keywords', finalKeywords);
+    replaceMeta('property', 'og:type', 'website');
+    replaceMeta('property', 'og:url', canonicalUrl);
+    replaceMeta('property', 'og:title', finalTitle);
+    replaceMeta('property', 'og:description', finalDesc);
+    replaceMeta('name', 'twitter:card', 'summary_large_image');
+    replaceMeta('name', 'twitter:url', canonicalUrl);
+    replaceMeta('name', 'twitter:title', finalTitle);
+    replaceMeta('name', 'twitter:description', finalDesc);
 
-        {/* Hreflang Alternate Links */}
-        {defaultAlternate && <link rel="alternate" hrefLang="x-default" href={defaultAlternate.href} />}
-        {finalAlternates.map((item) => (
-          <link key={item.hrefLang} rel="alternate" hrefLang={item.hrefLang} href={item.href} />
-        ))}
+    document.head
+      .querySelectorAll('link[rel="canonical"]')
+      .forEach((element) => element.remove());
+    const canonical = document.createElement('link');
+    canonical.rel = 'canonical';
+    canonical.href = canonicalUrl;
+    document.head.appendChild(canonical);
 
-        {/* Open Graph / Facebook */}
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={canonicalUrl} />
-        <meta property="og:title" content={finalTitle} />
-        <meta property="og:description" content={finalDesc} />
+    document.head
+      .querySelectorAll('link[rel="alternate"][hreflang]')
+      .forEach((element) => element.remove());
 
-        {/* Twitter */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:url" content={canonicalUrl} />
-        <meta name="twitter:title" content={finalTitle} />
-        <meta name="twitter:description" content={finalDesc} />
-      </Helmet>
-    </>
-  );
+    const appendAlternate = (hrefLang: string, href: string) => {
+      const link = document.createElement('link');
+      link.rel = 'alternate';
+      link.hreflang = hrefLang;
+      link.href = href;
+      document.head.appendChild(link);
+    };
+
+    if (defaultAlternate) {
+      appendAlternate('x-default', defaultAlternate.href);
+    }
+    finalAlternates.forEach((item) => appendAlternate(item.hrefLang, item.href));
+  }, [
+    alternateSignature,
+    canonicalUrl,
+    currentLang,
+    finalDesc,
+    finalKeywords,
+    finalTitle,
+    helmetLang,
+  ]);
+
+  return null;
 }
