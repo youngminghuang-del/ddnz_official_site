@@ -1,5 +1,9 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
+import { execFile } from 'node:child_process';
+import { promisify } from 'node:util';
 import type { Plugin } from 'vite';
+
+const execFileAsync = promisify(execFile);
 
 const DATABASES = {
   insights: '366eac33261880f7b7fbe903f189eca3',
@@ -48,6 +52,20 @@ type CandidateDraft = {
 };
 
 type WorkflowPayload = Awaited<ReturnType<typeof buildPayload>>;
+
+type WebsiteDeployConfig = {
+  repository: string;
+  workflow: string;
+  branch: string;
+};
+
+type WebsiteDeployResult = {
+  triggered: boolean;
+  status: 'queued' | 'scheduled-fallback';
+  message: string;
+  actionUrl: string;
+  triggeredAt: string;
+};
 
 let cache: CacheEntry | null = null;
 
@@ -1488,6 +1506,76 @@ async function publishArticle(apiKey: string, articleId: string, confirmationTit
   return { article: mapArticle(updated as NotionPage), publishedAt: new Date().toISOString() };
 }
 
+const safeCommandError = (error: unknown) => {
+  const raw = error instanceof Error ? error.message : String(error || '');
+  return raw
+    .replace(/gho_[A-Za-z0-9_]+|github_pat_[A-Za-z0-9_]+/g, '[credential removed]')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .slice(0, 360);
+};
+
+async function triggerWebsiteDeploy(
+  config: WebsiteDeployConfig,
+  article: Pick<ReturnType<typeof mapArticle>, 'id' | 'title' | 'status'>,
+): Promise<WebsiteDeployResult> {
+  const actionUrl = `https://github.com/${config.repository}/actions/workflows/${encodeURIComponent(config.workflow)}`;
+  const triggeredAt = new Date().toISOString();
+  if (article.status !== 'Published') {
+    throw new Error('只有 Published 文章可以触发网站同步。');
+  }
+
+  const reason = `DDNZ Content Ops published: ${article.title}`.slice(0, 240);
+  try {
+    await execFileAsync(
+      'gh',
+      [
+        'workflow',
+        'run',
+        config.workflow,
+        '--repo',
+        config.repository,
+        '--ref',
+        config.branch,
+        '-f',
+        `reason=${reason}`,
+      ],
+      { timeout: 20_000, maxBuffer: 32_000 },
+    );
+    return {
+      triggered: true,
+      status: 'queued',
+      message: 'GitHub Actions 网站同步已进入队列。通常几分钟内上线；定时同步仍会在每日 21:00 作为备份执行。',
+      actionUrl,
+      triggeredAt,
+    };
+  } catch (error) {
+    const detail = safeCommandError(error);
+    return {
+      triggered: false,
+      status: 'scheduled-fallback',
+      message: detail.includes('auth') || detail.includes('token')
+        ? 'Notion 已发布，但 GitHub 尚未授权，无法立即同步。请重新完成 GitHub 登录后点击“重新同步网站”；每日 21:00 的备份同步不受影响。'
+        : `Notion 已发布，但即时网站同步未启动。可点击“重新同步网站”重试；每日 21:00 仍会自动同步。${detail ? ` 原因：${detail}` : ''}`,
+      actionUrl,
+      triggeredAt,
+    };
+  }
+}
+
+async function deployPublishedArticle(
+  apiKey: string,
+  articleId: string,
+  config: WebsiteDeployConfig,
+) {
+  const page = await notionFetch(apiKey, `/v1/pages/${articleId}`) as NotionPage;
+  const article = mapArticle(page);
+  return {
+    article,
+    deployment: await triggerWebsiteDeploy(config, article),
+  };
+}
+
 const isLocalRequest = (request: IncomingMessage) => {
   const hostHeader = request.headers.host || '';
   const host = hostHeader.startsWith('[')
@@ -1525,7 +1613,10 @@ function actionableError(error: unknown) {
   return message;
 }
 
-export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
+export function createContentOpsApiPlugin(
+  apiKey: string | undefined,
+  deployConfig: WebsiteDeployConfig,
+): Plugin {
   return {
     name: 'ddnz-local-content-ops-api',
     apply: 'serve',
@@ -1550,6 +1641,7 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
           }
           const previewMatch = requestUrl.pathname.match(/^\/article\/([a-f0-9-]+)$/i);
           const publishMatch = requestUrl.pathname.match(/^\/article\/([a-f0-9-]+)\/publish$/i);
+          const deployMatch = requestUrl.pathname.match(/^\/article\/([a-f0-9-]+)\/deploy$/i);
           const prepareMatch = requestUrl.pathname.match(/^\/workflow\/topic\/([a-f0-9-]+)\/prepare$/i);
           const advanceMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/advance$/i);
           const briefMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/brief$/i);
@@ -1694,10 +1786,27 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
               return;
             }
             const body = await readJsonBody(request);
+            const published = await publishArticle(apiKey, publishMatch[1], body.confirmationTitle || '');
             sendJson(
               response,
               200,
-              await publishArticle(apiKey, publishMatch[1], body.confirmationTitle || ''),
+              {
+                ...published,
+                deployment: await triggerWebsiteDeploy(deployConfig, published.article),
+              },
+            );
+            return;
+          }
+
+          if (request.method === 'POST' && deployMatch) {
+            if (!isLocalOrigin(request)) {
+              sendJson(response, 403, { error: '网站同步只允许从本机控制台发起。' });
+              return;
+            }
+            sendJson(
+              response,
+              200,
+              await deployPublishedArticle(apiKey, deployMatch[1], deployConfig),
             );
             return;
           }

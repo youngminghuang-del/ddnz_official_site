@@ -153,6 +153,14 @@ type ArticlePreview = {
   };
 };
 
+type WebsiteDeployment = {
+  triggered: boolean;
+  status: 'queued' | 'scheduled-fallback';
+  message: string;
+  actionUrl: string;
+  triggeredAt: string;
+};
+
 type CandidatePreview = {
   title: string;
   leadGoal: string;
@@ -319,7 +327,7 @@ const generatorSteps = [
   { step: '03', title: '搜集证据', owner: '自动化 + 研究员', body: '创建研究请求，并把每个重要论点分别写入证据账本。' },
   { step: '04', title: '生成文章', owner: '自动化 + 研究员', body: '按 Brief 完成结构、正文、来源、图片方案和 CTA；未连接可信模型时不会伪造正文。' },
   { step: '05', title: '网站预览', owner: '你审核', body: '检查标题、格式、图片、专业事实和承接路径。' },
-  { step: '06', title: '一键发布', owner: '你确认', body: '写入人工审核记录，将 Notion 改为 Published；网站每日 21:00 自动同步。' },
+  { step: '06', title: '一键发布', owner: '你确认', body: '写入人工审核记录，将 Notion 改为 Published，并立即触发 GitHub 网站同步；每日 21:00 仍会备份同步。' },
 ];
 
 const glossary = [
@@ -537,6 +545,13 @@ function ExternalLink({ href, children }: { href: string; children: ReactNode })
   );
 }
 
+function publishedArticleUrl(article: Article) {
+  const rawLanguage = (article.language || 'en').toLowerCase();
+  const language = rawLanguage === 'zh' ? 'zh-cn' : rawLanguage;
+  const prefix = language === 'en' ? '' : `/${language}`;
+  return `https://www.ddnzglobal.com${prefix}/blog/${encodeURIComponent(article.slug || article.id)}`;
+}
+
 export default function ContentOpsDashboard() {
   const [data, setData] = useState<ContentOpsData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -550,6 +565,7 @@ export default function ContentOpsDashboard() {
   const [previewLoading, setPreviewLoading] = useState(false);
   const [publishing, setPublishing] = useState(false);
   const [previewMessage, setPreviewMessage] = useState('');
+  const [websiteDeployment, setWebsiteDeployment] = useState<WebsiteDeployment | null>(null);
   const [helpOpen, setHelpOpen] = useState(false);
   const [onboardingOpen, setOnboardingOpen] = useState(true);
   const [workflowStatus, setWorkflowStatus] = useState<WorkflowStatus | null>(null);
@@ -759,6 +775,7 @@ export default function ContentOpsDashboard() {
   const openPreview = useCallback(async (articleId: string) => {
     setPreviewLoading(true);
     setPreviewMessage('');
+    setWebsiteDeployment(null);
     try {
       const response = await fetch(`/api/content-ops/article/${articleId}`, {
         cache: 'no-store',
@@ -801,7 +818,11 @@ export default function ContentOpsDashboard() {
             }
           : current,
       );
-      setPreviewMessage('已写入两条人工审核记录，并将 Notion 更新为 Published。GitHub Actions 会在每日 21:00（上海时间）自动同步网站；同步失败会保留上一版。');
+      setWebsiteDeployment(payload.deployment || null);
+      setPreviewMessage(
+        payload.deployment?.message ||
+          'Notion 已更新为 Published。未收到即时同步状态；网站仍会在每日 21:00 自动同步。',
+      );
       await loadData(true);
     } catch (publishError) {
       setPreviewMessage(
@@ -811,6 +832,35 @@ export default function ContentOpsDashboard() {
       setPublishing(false);
     }
   }, [loadData, preview]);
+
+  const deployPublishedPreview = useCallback(async () => {
+    if (!preview || preview.article.status !== 'Published') return;
+    if (!window.confirm(`立即把这篇 Published 文章同步到正式网站？\n\n${preview.article.title}`)) return;
+
+    setPublishing(true);
+    setPreviewMessage('');
+    setWebsiteDeployment(null);
+    try {
+      const response = await fetch(`/api/content-ops/article/${preview.article.id}/deploy`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({}),
+      });
+      const payload = await response.json();
+      if (!response.ok) throw new Error(payload.error || '网站同步触发失败');
+      setWebsiteDeployment(payload.deployment || null);
+      setPreviewMessage(
+        payload.deployment?.message ||
+          '未收到 GitHub Actions 状态；网站仍会在每日 21:00 自动同步。',
+      );
+    } catch (deployError) {
+      setPreviewMessage(
+        deployError instanceof Error ? deployError.message : '网站同步触发失败',
+      );
+    } finally {
+      setPublishing(false);
+    }
+  }, [preview]);
 
   useEffect(() => {
     if (!isLocalHostname()) return;
@@ -2121,7 +2171,7 @@ export default function ContentOpsDashboard() {
                 <section className="grid gap-px border border-slate-300 bg-slate-300 sm:grid-cols-2">
                   <div className="bg-sky-50 p-5">
                     <p className="text-sm font-black text-[#0b4f8a]">系统可以做</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-700">候选模板、机械查重、研究/起草请求、治理闸门、Notion 网站预览、审计记录，以及 Published 后的每日 GitHub 网站同步。</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-700">候选模板、机械查重、研究/起草请求、治理闸门、Notion 网站预览、审计记录，以及 Published 后的即时 GitHub 网站同步；每日 21:00 仍保留备份同步。</p>
                   </div>
                   <div className="bg-amber-50 p-5">
                     <p className="text-sm font-black text-amber-900">必须由人完成</p>
@@ -2313,9 +2363,15 @@ export default function ContentOpsDashboard() {
                 <div className="mx-auto flex max-w-5xl flex-col justify-between gap-3 sm:flex-row sm:items-center">
                   <div>
                     {preview.article.status === 'Published' ? (
-                      <p className="inline-flex items-center gap-2 text-sm font-black text-emerald-800">
-                        <CheckCircle2 className="h-5 w-5" />已发布：当前预览就是网站同步后的文章结构。
-                      </p>
+                      <div className="text-sm text-emerald-900">
+                        <p className="inline-flex items-center gap-2 font-black">
+                          <CheckCircle2 className="h-5 w-5" />Notion 已 Published
+                        </p>
+                        <p className="mt-0.5 text-xs">正式网站是否上线以 GitHub Actions 完成状态为准；可在右侧立即触发或重试。</p>
+                        <p className="mt-1 text-xs">
+                          <ExternalLink href={publishedArticleUrl(preview.article)}>打开正式网站文章</ExternalLink>
+                        </p>
+                      </div>
                     ) : preview.article.status === 'Archived' ? (
                       <div className="text-sm text-slate-700">
                         <p className="font-black">已归档</p>
@@ -2332,18 +2388,31 @@ export default function ContentOpsDashboard() {
                       </div>
                     )}
                     {previewMessage && <p className="mt-1 text-xs font-bold text-[#0b4f8a]">{previewMessage}</p>}
+                    {websiteDeployment?.actionUrl && (
+                      <p className="mt-1 text-xs">
+                        <ExternalLink href={websiteDeployment.actionUrl}>查看 GitHub Actions</ExternalLink>
+                      </p>
+                    )}
                   </div>
                   <button
                     type="button"
-                    onClick={() => void publishPreview()}
-                    disabled={preview.article.status === 'Published' || preview.article.status === 'Archived' || !preview.eligibility.canPublish || publishing}
+                    onClick={() => void (preview.article.status === 'Published' ? deployPublishedPreview() : publishPreview())}
+                    disabled={preview.article.status === 'Archived' || (preview.article.status !== 'Published' && !preview.eligibility.canPublish) || publishing}
                     className="inline-flex min-h-12 shrink-0 items-center justify-center gap-2 bg-amber-600 px-5 text-sm font-black text-white hover:bg-amber-700 disabled:cursor-not-allowed disabled:bg-slate-300"
                   >
-                    {publishing ? <LoaderCircle className="h-5 w-5 animate-spin" /> : <Send className="h-5 w-5" />}
                     {publishing
-                      ? '正在写入审计并发布…'
+                      ? <LoaderCircle className="h-5 w-5 animate-spin" />
                       : preview.article.status === 'Published'
-                        ? '已 Published'
+                        ? <RefreshCw className="h-5 w-5" />
+                        : <Send className="h-5 w-5" />}
+                    {publishing
+                      ? preview.article.status === 'Published'
+                        ? '正在触发网站同步…'
+                        : '正在写入审计并触发同步…'
+                      : preview.article.status === 'Published'
+                        ? websiteDeployment?.triggered
+                          ? '重新同步网站'
+                          : '立即同步网站'
                         : preview.article.status === 'Archived'
                           ? '已归档'
                           : '我已完成审核：一键 Published'}

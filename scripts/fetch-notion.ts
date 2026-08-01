@@ -203,7 +203,11 @@ async function renderBlocks(blocks: any[], context: RenderContext): Promise<stri
       const source = block[type];
       const text = plainText(source.rich_text);
       rememberWords(context, text);
-      const tag = type === "heading_1" ? "h2" : type === "heading_2" ? "h3" : "h4";
+      // The page title is the article H1. Editors commonly start Notion article
+      // sections with either Heading 1 or Heading 2, so both become website H2;
+      // Heading 3 remains the nested H3. This matches the local final preview
+      // and prevents an H1 → H3 jump on the published page.
+      const tag = type === "heading_3" ? "h3" : "h2";
       const id = stableHeadingId(text, context);
       if (tag === "h2" || tag === "h3") {
         context.toc.push({ id, text, level: tag === "h2" ? 2 : 3 });

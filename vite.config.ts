@@ -18,7 +18,11 @@ export default defineConfig(({mode}) => {
     plugins: [
       react(),
       tailwindcss(),
-      createContentOpsApiPlugin(env.NOTION_API_KEY),
+      createContentOpsApiPlugin(env.NOTION_API_KEY, {
+        repository: env.GITHUB_REPOSITORY || 'youngminghuang-del/ddnz_official_site',
+        workflow: env.GITHUB_DEPLOY_WORKFLOW || 'deploy.yml',
+        branch: env.GITHUB_DEPLOY_BRANCH || 'main',
+      }),
       {
         name: 'html-hreflang-injector',
         transformIndexHtml(html) {
