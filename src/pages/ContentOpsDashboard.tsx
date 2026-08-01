@@ -52,6 +52,12 @@ type Article = {
   lastVerified: string;
   primaryCTA: string;
   evidenceCount: number;
+  evidenceMinimum: number;
+  qualifiedEvidenceCount: number;
+  relatedEvidenceCount: number;
+  pendingEvidenceCount: number;
+  evidenceGateBlockers: string[];
+  evidenceReady: boolean;
   auditCount: number;
   topicCount: number;
   language: string;
@@ -98,7 +104,9 @@ type Evidence = {
   expires: string;
   verifiedBy: string[];
   articleCount: number;
+  articleIds: string[];
   topicCount: number;
+  topicIds: string[];
   createdTime: string;
   lastEditedTime: string;
 };
@@ -172,6 +180,7 @@ type WorkflowStatus = {
   generatedAt: string;
   automationMaxStatus: string;
   writeNotice: string;
+  reviewers: Array<{ id: string; name: string; email: string }>;
   capabilities: {
     candidateMode: string;
     canPersistTemplateCandidates: boolean;
@@ -401,7 +410,7 @@ const reviewerLabel = (article: Article) =>
     : '缺少人工 Reviewer';
 
 const reviewGaps = (article: Article) => [
-  article.evidenceCount < 2 && '至少 2 条证据',
+  !article.evidenceReady && `合格证据 ${article.qualifiedEvidenceCount ?? 0}/${article.evidenceMinimum ?? 2}`,
   article.topicCount < 1 && 'Topic 关联',
   ['Domain Review', 'Approved', 'Scheduled', 'Published'].includes(article.status) &&
     !article.reviewers.length &&
@@ -554,6 +563,7 @@ export default function ContentOpsDashboard() {
   const [workflowMessage, setWorkflowMessage] = useState('');
   const [workflowError, setWorkflowError] = useState('');
   const [articleActionFeedback, setArticleActionFeedback] = useState<Record<string, { tone: 'error' | 'success'; message: string }>>({});
+  const [evidenceReviewerId, setEvidenceReviewerId] = useState('');
   const [brief, setBrief] = useState<ArticleBrief | null>(null);
 
   const loadData = useCallback(async (force = false) => {
@@ -685,8 +695,11 @@ export default function ContentOpsDashboard() {
   }, [loadData, loadWorkflowStatus, runWorkflowAction]);
 
   const advanceArticle = useCallback(async (article: Article, action: string) => {
-    if (article.evidenceCount < 2) {
-      const message = `当前只有 ${article.evidenceCount}/2 条关联证据。请先在 Evidence Ledger 为本文补齐并关联至少 ${2 - article.evidenceCount} 条，再刷新证据数量。`;
+    if (!article.evidenceReady) {
+      const qualified = article.qualifiedEvidenceCount ?? 0;
+      const minimum = article.evidenceMinimum ?? 2;
+      const pending = article.pendingEvidenceCount ?? article.evidenceCount;
+      const message = `当前只有 ${qualified}/${minimum} 条合格证据，另有 ${pending} 条待核验。请在文章卡片中逐条打开来源并确认；系统会自动写入 Verified 和 Verified By。`;
       setArticleActionFeedback((current) => ({ ...current, [article.id]: { tone: 'error', message } }));
       setWorkflowError(message);
       return;
@@ -710,6 +723,23 @@ export default function ContentOpsDashboard() {
     setWorkflowMessage(payload.request.instructions);
     await Promise.all([loadData(true), loadWorkflowStatus()]);
   }, [loadData, loadWorkflowStatus, runWorkflowAction]);
+
+  const reviewEvidenceItem = useCallback(async (item: Evidence, decision: 'Verified' | 'Rejected') => {
+    if (!evidenceReviewerId) {
+      setWorkflowError('请先选择本次证据审核者。');
+      return;
+    }
+    if (decision === 'Rejected' && !window.confirm(`确认拒绝这条证据？\n\n${item.claim}`)) return;
+    const payload = await runWorkflowAction<{ decision: string; reviewer: { name: string } }>(
+      `evidence-${item.id}-${decision}`,
+      `/workflow/evidence/${item.id}/review`,
+      { decision, reviewerId: evidenceReviewerId },
+      (message) => setWorkflowError(message),
+    );
+    if (!payload) return;
+    setWorkflowMessage(`${payload.reviewer.name} 已将“${item.claim}”标记为 ${payload.decision}，并写入 Evidence Audit。`);
+    await Promise.all([loadData(true), loadWorkflowStatus()]);
+  }, [evidenceReviewerId, loadData, loadWorkflowStatus, runWorkflowAction]);
 
   const loadBrief = useCallback(async (article: Article) => {
     setWorkflowLoading(`brief-${article.id}`);
@@ -788,6 +818,12 @@ export default function ContentOpsDashboard() {
     const timer = window.setInterval(() => void loadData(true), 60_000);
     return () => window.clearInterval(timer);
   }, [loadData, loadWorkflowStatus]);
+
+  useEffect(() => {
+    if (!evidenceReviewerId && workflowStatus?.reviewers?.length === 1) {
+      setEvidenceReviewerId(workflowStatus.reviewers[0].id);
+    }
+  }, [evidenceReviewerId, workflowStatus]);
 
   const articleCounts = useMemo(() => {
     const counts = Object.fromEntries(PIPELINE.map((stage) => [stage, 0])) as Record<string, number>;
@@ -1517,16 +1553,20 @@ export default function ContentOpsDashboard() {
                         <div className="font-mono text-4xl font-black text-amber-600">04</div>
                         <div>
                           <h2 className="text-xl font-black">研究、起草并送到专业审核</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">按当前状态显示唯一可执行的下一步。证据不足、正文过短或分数不足时，系统会阻止推进并说明原因。</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">“已关联”不等于“已核验”。系统可先建立证据包，但只有经过人工核验、字段完整、未过期的 A/B 级或一手证据才允许推进。</p>
                         </div>
                       </div>
                       {productionArticles.length ? (
                         <div className="divide-y divide-slate-200">
                           {productionArticles.map((article) => {
                             const next = actionForArticle(article);
-                            const missingEvidence = Math.max(0, 2 - article.evidenceCount);
-                            const evidenceBlocked = !!next && missingEvidence > 0;
+                            const evidenceMinimum = article.evidenceMinimum ?? 2;
+                            const qualifiedEvidence = article.qualifiedEvidenceCount ?? 0;
+                            const relatedEvidence = article.relatedEvidenceCount ?? article.evidenceCount;
+                            const pendingEvidence = article.pendingEvidenceCount ?? Math.max(0, relatedEvidence - qualifiedEvidence);
+                            const evidenceBlocked = !!next && !article.evidenceReady;
                             const actionFeedback = articleActionFeedback[article.id];
+                            const articleEvidence = data.evidence.filter((item) => item.articleIds?.includes(article.id));
                             return (
                               <article key={article.id} className="px-5 py-5">
                                 <div className="grid gap-4 xl:grid-cols-[1fr_auto] xl:items-center">
@@ -1535,7 +1575,7 @@ export default function ContentOpsDashboard() {
                                       <ExternalLink href={article.url}>{article.title}</ExternalLink>
                                       <Pill value={article.status} />
                                     </div>
-                                    <p className="mt-2 text-xs text-slate-500">证据 {article.evidenceCount}/2 · Quality {article.qualityScore ?? '—'}/100 · {reviewerLabel(article)}</p>
+                                    <p className="mt-2 text-xs text-slate-500">合格证据 {qualifiedEvidence}/{evidenceMinimum} · 已关联 {relatedEvidence} · 待核验 {pendingEvidence} · Quality {article.qualityScore ?? '—'}/100 · {reviewerLabel(article)}</p>
                                   </div>
                                   <div className="flex flex-wrap gap-2">
                                     <button
@@ -1549,7 +1589,7 @@ export default function ContentOpsDashboard() {
                                     </button>
                                     {evidenceBlocked ? (
                                       <>
-                                        <ExternalLink href={data.links.evidence}>打开证据账本补齐 {missingEvidence} 条</ExternalLink>
+                                        <ExternalLink href={data.links.evidence}>{relatedEvidence ? `审核 ${pendingEvidence} 条待核验证据` : '打开证据账本'}</ExternalLink>
                                         <button
                                           type="button"
                                           onClick={() => void Promise.all([loadData(true), loadWorkflowStatus()])}
@@ -1557,7 +1597,7 @@ export default function ContentOpsDashboard() {
                                           className="inline-flex min-h-10 items-center gap-1.5 bg-amber-600 px-3 text-xs font-black text-white hover:bg-amber-700 disabled:bg-slate-300"
                                         >
                                           {refreshing ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
-                                          已在 Notion 补齐，刷新数量
+                                          已审核，刷新合格数量
                                         </button>
                                       </>
                                     ) : next ? (
@@ -1583,7 +1623,74 @@ export default function ContentOpsDashboard() {
                                 </div>
                                 {evidenceBlocked && (
                                   <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-950" role="status">
-                                    <strong>当前不能推进：</strong>本文只有 {article.evidenceCount}/2 条关联证据。请在 Evidence Ledger 中按“一条重要论点一行”新增记录，并在 <strong>Article</strong> 关系中选择本文；完成核验后点击“刷新数量”。
+                                    <strong>当前不能推进：</strong>系统已关联 {relatedEvidence} 条证据草稿，其中 {qualifiedEvidence}/{evidenceMinimum} 条通过基础闸门。请在下方打开每条来源，确认它确实支持 Claim 和适用市场，再点击“确认支持 Claim”；系统会自动写入 <strong>Verified</strong> 和 <strong>Verified By</strong>。只有字段完整、未过期的 A/B 级或一手证据才计入；C 级供应商资料只能辅助型号核对。
+                                    {!!article.evidenceGateBlockers?.length && (
+                                      <ul className="mt-2 list-disc space-y-1 pl-5">
+                                        {article.evidenceGateBlockers.map((blocker) => <li key={blocker}>{blocker}</li>)}
+                                      </ul>
+                                    )}
+                                    {!!articleEvidence.length && (
+                                      <details className="mt-3 border-t border-amber-200 pt-3">
+                                        <summary className="cursor-pointer font-black text-[#0b4f8a]">在这里审核 {articleEvidence.length} 条证据，无需手动设置关系</summary>
+                                        <div className="mt-3 flex flex-wrap items-center gap-2">
+                                          <label htmlFor={`evidence-reviewer-${article.id}`} className="font-black">本次审核者</label>
+                                          <select
+                                            id={`evidence-reviewer-${article.id}`}
+                                            value={evidenceReviewerId}
+                                            onChange={(event) => setEvidenceReviewerId(event.target.value)}
+                                            className="min-h-10 border border-amber-300 bg-white px-3 text-xs font-bold text-slate-900"
+                                          >
+                                            <option value="">请选择 Notion 用户</option>
+                                            {(workflowStatus?.reviewers || []).map((reviewer) => (
+                                              <option key={reviewer.id} value={reviewer.id}>{reviewer.name}{reviewer.email ? ` · ${reviewer.email}` : ''}</option>
+                                            ))}
+                                          </select>
+                                          <span className="text-[11px] text-amber-800">先打开原始来源，确认 Claim、市场和限制，再点击通过。</span>
+                                        </div>
+                                        <div className="mt-3 space-y-2">
+                                          {articleEvidence.map((item) => (
+                                            <div key={item.id} className="border border-amber-200 bg-white p-3 text-slate-800">
+                                              <div className="flex flex-wrap items-start justify-between gap-3">
+                                                <div className="min-w-0 flex-1">
+                                                  <div className="flex flex-wrap items-center gap-2">
+                                                    <Pill value={item.status} />
+                                                    <span className="font-mono text-[10px] font-black">Tier {item.sourceTier || '—'} · {item.sourceType || '未分类'}</span>
+                                                  </div>
+                                                  <p className="mt-2 font-black leading-5">{item.claim}</p>
+                                                  <p className="mt-1 text-[11px] leading-5 text-slate-600">{item.publisher || '未填写 Publisher'} · {item.market || '未限定市场'}</p>
+                                                </div>
+                                                <div className="flex flex-wrap gap-2">
+                                                  {item.sourceUrl && <ExternalLink href={item.sourceUrl}>打开原始来源</ExternalLink>}
+                                                  <ExternalLink href={item.url}>查看 Notion 记录</ExternalLink>
+                                                  {item.status !== 'Verified' && (
+                                                    <button
+                                                      type="button"
+                                                      onClick={() => void reviewEvidenceItem(item, 'Verified')}
+                                                      disabled={!!workflowLoading || !evidenceReviewerId}
+                                                      className="inline-flex min-h-9 items-center gap-1 bg-emerald-700 px-3 text-[11px] font-black text-white hover:bg-emerald-800 disabled:bg-slate-300"
+                                                    >
+                                                      {workflowLoading === `evidence-${item.id}-Verified` ? <LoaderCircle className="h-3.5 w-3.5 animate-spin" /> : <Check className="h-3.5 w-3.5" />}
+                                                      确认支持 Claim
+                                                    </button>
+                                                  )}
+                                                  {item.status !== 'Rejected' && (
+                                                    <button
+                                                      type="button"
+                                                      onClick={() => void reviewEvidenceItem(item, 'Rejected')}
+                                                      disabled={!!workflowLoading || !evidenceReviewerId}
+                                                      className="inline-flex min-h-9 items-center gap-1 border border-rose-300 px-3 text-[11px] font-black text-rose-800 hover:bg-rose-50 disabled:opacity-40"
+                                                    >
+                                                      <X className="h-3.5 w-3.5" />拒绝
+                                                    </button>
+                                                  )}
+                                                </div>
+                                              </div>
+                                              <p className="mt-2 border-t border-slate-100 pt-2 text-[11px] leading-5 text-slate-600">{item.summary || '缺少 Evidence Summary'}</p>
+                                            </div>
+                                          ))}
+                                        </div>
+                                      </details>
+                                    )}
                                   </div>
                                 )}
                                 {actionFeedback && (
@@ -1631,7 +1738,7 @@ export default function ContentOpsDashboard() {
                                 <ExternalLink href={article.url}>{article.title}</ExternalLink>
                                 <div className="mt-2 flex flex-wrap gap-x-4 gap-y-1 text-xs text-slate-500">
                                   <span>{article.productCategory || article.leadGoal || '未分类'}</span>
-                                  <span>证据 {article.evidenceCount}</span>
+                                  <span>合格证据 {article.qualifiedEvidenceCount ?? 0}/{article.evidenceMinimum ?? 2}</span>
                                   <span>审核 {article.auditCount}</span>
                                   <span>{reviewerLabel(article)}</span>
                                 </div>
@@ -1771,7 +1878,7 @@ export default function ContentOpsDashboard() {
                                   <p className="mt-2 inline-flex items-center gap-1 text-xs font-black text-emerald-700"><CheckCircle2 className="h-4 w-4" />完整治理</p>
                                 )}
                               </td>
-                              <td className="px-4 py-4 text-sm"><p className="font-black">{article.evidenceCount} 条证据</p><p className="mt-1 text-xs text-slate-500">{article.auditCount} 次审核 · {article.topicCount} 个 Topic</p><p className="mt-1 font-mono text-xs font-black">{article.qualityScore ?? '—'}/100</p></td>
+                              <td className="px-4 py-4 text-sm"><p className="font-black">合格 {article.qualifiedEvidenceCount ?? 0}/{article.evidenceMinimum ?? 2} · 关联 {article.relatedEvidenceCount ?? article.evidenceCount}</p><p className="mt-1 text-xs text-slate-500">{article.auditCount} 次审核 · {article.topicCount} 个 Topic</p><p className="mt-1 font-mono text-xs font-black">{article.qualityScore ?? '—'}/100</p></td>
                               <td className="px-4 py-4 text-sm"><p>{reviewerLabel(article)}</p><p className="mt-1 text-xs text-slate-500">{formatDate(article.lastVerified)}</p></td>
                               <td className="px-4 py-4 text-sm">{article.primaryCTA || '未设置'}</td>
                               <td className="px-4 py-4">
@@ -2164,7 +2271,7 @@ export default function ContentOpsDashboard() {
                   )}
                   <div className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-300">
                     <span>{preview.readMinutes} 分钟阅读</span>
-                    <span>{preview.article.evidenceCount} 条证据</span>
+                    <span>合格证据 {preview.article.qualifiedEvidenceCount ?? 0}/{preview.article.evidenceMinimum ?? 2}</span>
                     <span>{preview.article.auditCount} 次审核</span>
                     <span>复核方式：{reviewerLabel(preview.article)}</span>
                   </div>
