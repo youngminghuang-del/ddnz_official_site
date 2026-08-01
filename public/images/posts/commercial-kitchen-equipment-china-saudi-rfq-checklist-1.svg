@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675">
+<rect width="1200" height="675" fill="#07182d"/>
+<path d="M0 0H1200V675H0Z" fill="url(#g)"/>
+<defs>
+  <linearGradient id="g" x1="0" y1="0" x2="1200" y2="675" gradientUnits="userSpaceOnUse">
+    <stop stop-color="#07182d"/>
+    <stop offset="1" stop-color="#0b3157"/>
+  </linearGradient>
+  <pattern id="grid" width="44" height="44" patternUnits="userSpaceOnUse">
+    <path d="M44 0H0V44" fill="none" stroke="#ffffff" stroke-opacity=".055"/>
+  </pattern>
+</defs>
+<rect width="1200" height="675" fill="url(#grid)"/>
+<rect x="64" y="60" width="56" height="56" rx="8" fill="#f59e0b"/>
+<text x="92" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-weight="800" font-size="28" fill="#07182d">D</text>
+<text x="144" y="83" font-family="Arial, sans-serif" font-weight="800" font-size="17" letter-spacing="3" fill="#ffffff">DDNZ SOURCING CONTROL</text>
+<text x="144" y="107" font-family="Arial, sans-serif" font-size="14" fill="#9fb5ca">Saudi Arabia · Commercial Kitchen Equipment</text>
+<text x="64" y="174" font-family="Arial, sans-serif" font-weight="800" font-size="43" fill="#ffffff">Seven model-level checks before PO</text>
+<text x="64" y="210" font-family="Arial, sans-serif" font-size="18" fill="#c9d7e5">A buyer-ready RFQ should make every important claim traceable to a model, document and destination.</text>
+<g font-family="Arial, sans-serif">
+  <g transform="translate(64 260)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">1</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Intended use</text><text x="70" y="46" font-size="14" fill="#aebfd0">commercial duty · workflow · load</text>
+  </g>
+  <g transform="translate(420 260)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">2</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Electrical</text><text x="70" y="46" font-size="14" fill="#aebfd0">V · Hz · phase · plug · power</text>
+  </g>
+  <g transform="translate(776 260)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">3</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Utility interfaces</text><text x="70" y="46" font-size="14" fill="#aebfd0">water · drain · gas · ventilation</text>
+  </g>
+  <g transform="translate(64 370)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">4</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Model evidence</text><text x="70" y="46" font-size="14" fill="#aebfd0">drawing · data plate · report</text>
+  </g>
+  <g transform="translate(420 370)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">5</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Saber route</text><text x="70" y="46" font-size="14" fill="#aebfd0">product · certificate · shipment</text>
+  </g>
+  <g transform="translate(776 370)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">6</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Packing &amp; loading</text><text x="70" y="46" font-size="14" fill="#aebfd0">carton · crate · gross size · marks</text>
+  </g>
+  <g transform="translate(64 480)">
+    <circle cx="27" cy="27" r="27" fill="#f59e0b"/><text x="27" y="34" text-anchor="middle" font-weight="800" font-size="19" fill="#07182d">7</text>
+    <text x="70" y="22" font-weight="800" font-size="18" fill="#ffffff">Pre-shipment proof</text><text x="70" y="46" font-size="14" fill="#aebfd0">labels · function · accessories · photos</text>
+  </g>
+</g>
+<line x1="64" y1="582" x2="1136" y2="582" stroke="#ffffff" stroke-opacity=".18"/>
+<text x="64" y="621" font-family="Arial, sans-serif" font-size="15" fill="#c9d7e5">Control rule:</text>
+<text x="160" y="621" font-family="Arial, sans-serif" font-weight="800" font-size="15" fill="#ffffff">No model number = no comparable claim.</text>
+<text x="1136" y="621" text-anchor="end" font-family="Arial, sans-serif" font-size="13" fill="#f7b84b">ddnzglobal.com</text>
+</svg>

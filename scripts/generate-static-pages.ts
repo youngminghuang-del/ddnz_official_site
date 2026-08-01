@@ -6,6 +6,11 @@ interface SEOItem {
   title: string;
   desc: string;
   keywords: string;
+  image?: string;
+  datePublished?: string;
+  dateModified?: string;
+  headline?: string;
+  governed?: boolean;
 }
 
 const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
@@ -281,6 +286,22 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       desc: "Demandez un devis de transport maritime, aérien ou d'entreposage depuis la Chine. Réponse rapide de nos experts en logistique internationale.",
       keywords: 'devis fret maritime, tarif transport aerien, estimation logistique chine'
     }
+  },
+  'sourcing/commercial-kitchen-equipment-from-china': {
+    en: {
+      title: 'Commercial Kitchen Equipment Sourcing from China | DDNZ',
+      desc: 'Source commercial kitchen equipment from China with model-level supplier checks, inspection evidence, consolidation and export coordination.',
+      keywords: 'commercial kitchen equipment from China, restaurant equipment sourcing China, commercial refrigerator supplier China, kitchen equipment inspection',
+      image: '/images/sourcing/commercial-kitchen-project-hero.webp'
+    }
+  },
+  'sourcing/outdoor-products-from-china': {
+    en: {
+      title: 'Outdoor Products Sourcing from China | DDNZ',
+      desc: 'Source grills, coolers, portable refrigerators and outdoor kitchens from China with supplier checks, inspection and export coordination.',
+      keywords: 'outdoor products sourcing China, BBQ grill supplier China, insulated cooler manufacturer China, portable refrigerator sourcing, outdoor kitchen China',
+      image: '/images/sourcing/outdoor-car-refrigerator-catalog.webp'
+    }
   }
 };
 
@@ -383,7 +404,7 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   // Helper to replace or append specific open graph/twitter tags
   const setOgMetaTag = (htmlStr: string, property: string, content: string): string => {
     const escapedContent = content.replace(/"/g, '&quot;');
-    const propertyAttr = property.startsWith('og:') ? 'property' : 'name';
+    const propertyAttr = property.startsWith('og:') || property.startsWith('article:') ? 'property' : 'name';
     const ogRegex = new RegExp(`<meta\\s+${propertyAttr}="${property}"\\s+content="[^"]*"\\s*\\/?>`, 'i');
     if (ogRegex.test(htmlStr)) {
       return htmlStr.replace(ogRegex, `<meta ${propertyAttr}="${property}" content="${escapedContent}" />`);
@@ -392,19 +413,17 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
     }
   };
 
-  // Truncate description dynamically to ideal SEO length (110 - 145 chars for non-Chinese, 50 - 75 for Chinese) to satisfy Bing and Google limits
+  // Keep descriptions concise without cutting a word in half. Search engines
+  // can rewrite snippets, but a complete 150-ish character summary is a useful
+  // default for both classic results and answer engines.
   const optimizeDesc = (descStr: string, langCode: string) => {
     const cleanDesc = descStr.trim();
-    if (langCode === 'zh' || langCode === 'zh-cn') {
-      if (cleanDesc.length > 75) {
-        return cleanDesc.slice(0, 72) + '...';
-      }
-    } else {
-      if (cleanDesc.length > 145) {
-        return cleanDesc.slice(0, 142) + '...';
-      }
-    }
-    return cleanDesc;
+    const maxLength = langCode === 'zh' || langCode === 'zh-cn' ? 78 : 155;
+    if (cleanDesc.length <= maxLength) return cleanDesc;
+    const candidate = cleanDesc.slice(0, maxLength - 1);
+    const lastSpace = candidate.lastIndexOf(' ');
+    const completeText = lastSpace > maxLength * 0.72 ? candidate.slice(0, lastSpace) : candidate;
+    return `${completeText.trim()}…`;
   };
 
   const optimizedDesc = optimizeDesc(seo.desc, lang);
@@ -412,11 +431,22 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   output = setMetaTag(output, 'title', seo.title);
   output = setMetaTag(output, 'description', optimizedDesc);
   output = setMetaTag(output, 'keywords', seo.keywords);
+  output = setMetaTag(output, 'robots', 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1');
 
+  output = setOgMetaTag(output, 'og:type', relPath.startsWith('blog/') ? 'article' : 'website');
   output = setOgMetaTag(output, 'og:title', seo.title);
   output = setOgMetaTag(output, 'og:description', optimizedDesc);
   output = setOgMetaTag(output, 'twitter:title', seo.title);
   output = setOgMetaTag(output, 'twitter:description', optimizedDesc);
+  if (seo.image) {
+    const absoluteImage = seo.image.startsWith('http')
+      ? seo.image
+      : `https://www.ddnzglobal.com${seo.image.startsWith('/') ? seo.image : `/${seo.image}`}`;
+    output = setOgMetaTag(output, 'og:image', absoluteImage);
+    output = setOgMetaTag(output, 'twitter:image', absoluteImage);
+  }
+  if (seo.datePublished) output = setOgMetaTag(output, 'article:published_time', seo.datePublished);
+  if (seo.dateModified) output = setOgMetaTag(output, 'article:modified_time', seo.dateModified);
 
   // 3. Set Canonical Link
   const getLanguageUrl = (langCode: string) => {
@@ -428,6 +458,8 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   };
 
   const canonicalUrl = getLanguageUrl(lang);
+  output = setOgMetaTag(output, 'og:url', canonicalUrl);
+  output = setOgMetaTag(output, 'twitter:url', canonicalUrl);
   const canonRegex = /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i;
   if (canonRegex.test(output)) {
     output = output.replace(canonRegex, `<link rel="canonical" href="${canonicalUrl}" />`);
@@ -438,7 +470,7 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   // 4. Set exact page-specific hreflang alternates (replacing any existing ones or rewriting them)
   // Service pages have full UI translations. Blog posts only declare their
   // source language until a genuine Translation Group links them together.
-  const alternateLanguages = relPath.startsWith('blog/')
+  const alternateLanguages = relPath.startsWith('blog/') || relPath.startsWith('sourcing/')
     ? [lang]
     : ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'];
   const defaultUrl = getLanguageUrl(alternateLanguages.includes('en') ? 'en' : lang);
@@ -458,7 +490,7 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
   // 5. Add crawlable route-level structured data to the static HTML. React
   // enhances this after hydration, but search engines should not need to run
   // JavaScript to understand the page type, service area, or hierarchy.
-  const isServicePage = relPath.startsWith('services/');
+  const isServicePage = relPath.startsWith('services/') || relPath.startsWith('sourcing/');
   const isShippingPage = relPath.startsWith('shipping-from-china-to-');
   if (isServicePage || isShippingPage) {
     const countrySlug = relPath.replace(/^shipping-from-china-to-/, '');
@@ -519,6 +551,16 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
         item: canonicalUrl
       }
     ];
+    const sourcingOfferUrl = relPath === 'sourcing/commercial-kitchen-equipment-from-china'
+      ? 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+Equipment&source=sourcing_landing'
+      : relPath === 'sourcing/outdoor-products-from-china'
+        ? 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Product+Sourcing&industry=Outdoor+Products&source=sourcing_landing'
+        : 'https://www.ddnzglobal.com/get-a-quote/';
+    const sourcingServiceType = relPath === 'sourcing/commercial-kitchen-equipment-from-china'
+      ? 'Commercial kitchen equipment sourcing and export coordination from China'
+      : relPath === 'sourcing/outdoor-products-from-china'
+        ? 'Outdoor product sourcing and export coordination from China'
+        : seo.title;
     const structuredData = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -541,7 +583,7 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
           name: seo.title,
           serviceType: isShippingPage
             ? `Freight forwarding from China to ${destinationName}`
-            : seo.title,
+            : sourcingServiceType,
           description: optimizedDesc,
           provider: {
             '@type': 'Organization',
@@ -555,9 +597,11 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
             : 'Global',
           offers: {
             '@type': 'Offer',
-            url: 'https://www.ddnzglobal.com/get-a-quote/',
+            url: sourcingOfferUrl,
             priceCurrency: 'USD',
-            description: 'Request a route-specific freight quotation based on cargo details and current capacity.'
+            description: relPath.startsWith('sourcing/')
+              ? 'Request a market-defined product sourcing, inspection, consolidation and export coordination plan.'
+              : 'Request a route-specific freight quotation based on cargo details and current capacity.'
           }
         }
       ]
@@ -569,7 +613,194 @@ ${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}"
     );
   }
 
+  if (relPath.startsWith('blog/')) {
+    const rawImage = seo.image || 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png';
+    const absoluteImage = rawImage.startsWith('http')
+      ? rawImage
+      : `https://www.ddnzglobal.com${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`;
+    const blogSchema = {
+      '@context': 'https://schema.org',
+      '@type': 'BlogPosting',
+      headline: seo.headline || seo.title.replace(/ \| DDNZ Global$/, ''),
+      description: optimizedDesc,
+      image: absoluteImage,
+      datePublished: seo.datePublished || '',
+      dateModified: seo.dateModified || seo.datePublished || '',
+      inLanguage: targetLang,
+      author: {
+        '@type': 'Organization',
+        name: seo.governed ? 'DDNZ Global Professional Team' : 'DDNZ Global Editorial Archive',
+        url: 'https://www.ddnzglobal.com/'
+      },
+      publisher: {
+        '@type': 'Organization',
+        name: 'Heaven Born International Freight Co., Ltd',
+        url: 'https://www.ddnzglobal.com/',
+        logo: {
+          '@type': 'ImageObject',
+          url: 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png'
+        }
+      },
+      mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }
+    };
+    output = output.replace(
+      /<\/head>/i,
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+    );
+  }
+
   return output;
+}
+
+const escapeStaticText = (value: string) =>
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;')
+    .replaceAll("'", '&#039;');
+
+const sourcingStaticContent: Record<string, {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  image: string;
+  imageAlt: string;
+  definition: string;
+  products: string[];
+  controls: string;
+  workflow: string[];
+  request: string;
+  quoteHref: string;
+}> = {
+  'sourcing/commercial-kitchen-equipment-from-china': {
+    eyebrow: 'Product Sourcing · Commercial Kitchen Equipment',
+    title: 'Source commercial kitchen equipment from China with a market-defined control plan.',
+    intro:
+      'For importers, distributors, restaurant groups, hotel projects and food-service contractors that need more than a supplier list. DDNZ coordinates the buying brief, supplier comparison, inspection evidence, consolidation and export handoff against the destination market.',
+    image: '/images/sourcing/commercial-kitchen-project-hero.webp',
+    imageAlt:
+      'Commercial kitchen project with stainless cooking, preparation, washing and refrigeration zones',
+    definition:
+      'The category covers commercial cooking, refrigeration, food preparation, meat processing, bar and beverage systems, stainless equipment and coordinated kitchen packages.',
+    products: [
+      'Commercial cooking: griddles, fryers, ranges, ovens, grills and heated holding equipment.',
+      'Commercial refrigeration: freezers, chillers, counters, display cabinets and cold-room components.',
+      'Food preparation: meat grinders, slicers, mixers and processing machinery.',
+      'Bar, beverage and stainless systems, including counters, sinks, tables, shelving and extraction.',
+      'Multi-supplier receiving, packing review, consolidation and export coordination from China.',
+    ],
+    controls:
+      'A usable quotation identifies the exact model, materials, capacity, dimensions, utilities and included accessories. Evidence is checked against the manufacturer, model, destination market and validity. Before release, the inspection record should connect the approved specification to the data plate, function checks, finish, accessories, packing method and measured shipping dimensions.',
+    workflow: [
+      'Define the destination, intended commercial use, product list, quantities, budget and timing.',
+      'Normalize supplier quotations before comparing price or lead time.',
+      'Verify supplier identity, technical documents and claim-specific evidence.',
+      'Inspect the agreed model, quantity, labels, function, accessories and packing.',
+      'Consolidate approved goods and prepare the export handoff.',
+    ],
+    request:
+      'Send the destination country, product list or reference models, estimated quantities, target timing and the services required. The first response will identify missing specifications, the evidence that can be checked and the buyer or local-compliance decisions still required.',
+    quoteHref:
+      '/get-a-quote?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+Equipment&source=sourcing_landing',
+  },
+  'sourcing/outdoor-products-from-china': {
+    eyebrow: 'Product Sourcing · Outdoor Products',
+    title: 'Build an outdoor product range in China without narrowing the category too early.',
+    intro:
+      'For importers, distributors, hospitality projects and outdoor brands sourcing a current or expanding assortment. DDNZ coordinates the buying brief, supplier comparison, market-specific specifications, inspection evidence, consolidation and export handoff.',
+    image: '/images/sourcing/outdoor-car-refrigerator-catalog.webp',
+    imageAlt: 'Portable outdoor refrigerator beside a camper in a lakeside setting',
+    definition:
+      'The top-level category is intentionally extensible: outdoor grills, insulated coolers, outdoor and portable refrigerators, outdoor kitchens, accessories and future outdoor product lines.',
+    products: [
+      'Outdoor grills in gas, charcoal and portable formats with market-specific fuel and label requirements.',
+      'Hard and soft insulated coolers, transport boxes and related accessories.',
+      'Vehicle, outdoor and portable refrigerators with defined voltage, power source and climate conditions.',
+      'Outdoor kitchen modules, cabinets, counters, sinks, refrigeration and coordinated cooking units.',
+      'Covers, stands, batteries, adapters and other model-specific accessories.',
+    ],
+    controls:
+      'The buying brief should define the destination climate, outdoor exposure, transport mode, duty cycle, power or fuel source and intended user. Performance claims need a stated method, such as temperature retention, cooling pull-down, current draw, corrosion or fuel-system checks. Model identity, warnings, manuals, packing and any battery or refrigerant declarations remain tied to the destination market.',
+    workflow: [
+      'Define the use environment, product list, quantities, budget and timing.',
+      'Compare like-for-like models and included accessories.',
+      'Verify supplier identity, technical claims and market-bound evidence.',
+      'Inspect performance, labels, accessories and packing under an agreed method.',
+      'Plan mixed-SKU consolidation and the export handoff.',
+    ],
+    request:
+      'Send the destination country, intended use, product list or reference photos, quantities, target timing and required services. The first response will identify the tests, technical files, packing details and buyer decisions needed before supplier or shipment release.',
+    quoteHref:
+      '/get-a-quote?leadGoal=Product+Sourcing&industry=Outdoor+Products&source=sourcing_landing',
+  },
+};
+
+function injectStaticRouteContent(
+  htmlContent: string,
+  lang: string,
+  relPath: string,
+  post?: Record<string, any>,
+) {
+  let staticBody = '';
+
+  if (relPath.startsWith('blog/') && post) {
+    const direction = lang === 'ar' ? 'rtl' : 'ltr';
+    const summary = post.summary
+      ? `<p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(post.summary)}</p>`
+      : '';
+    const cover = post.thumbnailUrl
+      ? `<figure class="mt-8"><img src="${escapeStaticText(post.thumbnailUrl)}" alt="${escapeStaticText(post.title)}" width="1200" height="675" /></figure>`
+      : '';
+    staticBody = `
+      <main class="mx-auto max-w-4xl px-4 py-16 sm:px-6" dir="${direction}" data-static-fallback="article">
+        <article>
+          <p class="text-xs font-black uppercase tracking-wider text-amber-700">DDNZ Global Insights</p>
+          <h1 class="mt-4 text-4xl font-black leading-tight text-slate-950">${escapeStaticText(post.title)}</h1>
+          ${summary}
+          ${cover}
+          <div class="article-body mt-10">${post.content || ''}</div>
+        </article>
+      </main>`;
+  } else {
+    const sourcing = sourcingStaticContent[relPath];
+    if (sourcing && lang === 'en') {
+      staticBody = `
+        <main class="mx-auto max-w-5xl px-4 py-16 sm:px-6" data-static-fallback="sourcing">
+          <p class="text-xs font-black uppercase tracking-wider text-amber-700">${escapeStaticText(sourcing.eyebrow)}</p>
+          <h1 class="mt-4 text-4xl font-black leading-tight text-slate-950">${escapeStaticText(sourcing.title)}</h1>
+          <p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(sourcing.intro)}</p>
+          <figure class="mt-8">
+            <img src="${escapeStaticText(sourcing.image)}" alt="${escapeStaticText(sourcing.imageAlt)}" width="1200" height="675" />
+          </figure>
+          <p class="mt-8 leading-7 text-slate-700">${escapeStaticText(sourcing.definition)}</p>
+          <section class="mt-10">
+            <h2 class="text-2xl font-black text-slate-950">Product scope</h2>
+            <ul class="mt-4 list-disc space-y-2 pl-6">${sourcing.products
+              .map((item) => `<li>${escapeStaticText(item)}</li>`)
+              .join('')}</ul>
+          </section>
+          <section class="mt-10">
+            <h2 class="text-2xl font-black text-slate-950">Evidence-based control plan</h2>
+            <p class="mt-4 leading-7 text-slate-700">${escapeStaticText(sourcing.controls)}</p>
+          </section>
+          <section class="mt-10">
+            <h2 class="text-2xl font-black text-slate-950">Working sequence</h2>
+            <ol class="mt-4 list-decimal space-y-2 pl-6">${sourcing.workflow
+              .map((item) => `<li>${escapeStaticText(item)}</li>`)
+              .join('')}</ol>
+          </section>
+          <section class="mt-10">
+            <h2 class="text-2xl font-black text-slate-950">Start with a scoped request</h2>
+            <p class="mt-4 leading-7 text-slate-700">${escapeStaticText(sourcing.request)}</p>
+            <p class="mt-6"><a href="${escapeStaticText(sourcing.quoteHref)}">Submit the sourcing brief</a></p>
+          </section>
+        </main>`;
+    }
+  }
+
+  if (!staticBody) return htmlContent;
+  return htmlContent.replace('<div id="root"></div>', `<div id="root">${staticBody}</div>`);
 }
 
 function run() {
@@ -597,7 +828,9 @@ function run() {
     { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly', lastmod: today },
     { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly', lastmod: today },
     { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', lastmod: today }
+    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', lastmod: today },
+    { path: 'sourcing/commercial-kitchen-equipment-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
+    { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] }
   ];
   const countryPaths = countryRouteSlugs.map((country) => ({
     path: `shipping-from-china-to-${country}`,
@@ -645,6 +878,7 @@ function run() {
     (entry.languages || languages).forEach((lang) => {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
+      let routePost: Record<string, any> | undefined;
       const countrySlug = entry.path.replace(/^shipping-from-china-to-/, '');
       if (!seo && countryNames[countrySlug]) {
         seo = buildCountrySeo(countrySlug, lang);
@@ -655,6 +889,7 @@ function run() {
         const postSlugOrId = entry.path.replace('blog/', '');
         const post = blogPosts.find((p) => p.slug === postSlugOrId || p.id === postSlugOrId);
         if (post) {
+          routePost = post;
           const cat = post.category ? post.category.toLowerCase() : 'global logistics';
           
           let computedTitle = '';
@@ -689,7 +924,12 @@ function run() {
           seo = {
             title: computedTitle,
             desc: computedDesc,
-            keywords: `${cat}, global logistics, china freight forwarder, cargo news, ddnz global`
+            keywords: `${post.primaryQuery || cat}, China sourcing, China freight forwarder, DDNZ Global`,
+            image: post.thumbnailUrl,
+            datePublished: post.date,
+            dateModified: post.lastEdited || post.lastVerified || post.date,
+            headline: post.title,
+            governed: Boolean(post.governed)
           };
         }
       }
@@ -727,8 +967,9 @@ function run() {
       }
 
       const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
+      const crawlableHtml = injectStaticRouteContent(localizedHtml, lang, entry.path, routePost);
       const targetFilePath = path.join(targetDir, 'index.html');
-      fs.writeFileSync(targetFilePath, localizedHtml, 'utf-8');
+      fs.writeFileSync(targetFilePath, crawlableHtml, 'utf-8');
     });
   });
 
@@ -798,6 +1039,19 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
   fs.writeFileSync(path.join(publicDir, 'robots.txt'), robotsTxt, 'utf-8');
   fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt, 'utf-8');
   console.log('✅ Generated optimized robots.txt at public/robots.txt and dist/robots.txt');
+
+  const redirectDataPath = path.resolve(process.cwd(), 'src/data/notionRedirects.json');
+  if (fs.existsSync(redirectDataPath)) {
+    const redirects = JSON.parse(fs.readFileSync(redirectDataPath, 'utf-8')) as Array<{ from: string; to: string }>;
+    redirects.forEach((redirect) => {
+      const sourceDir = path.join(distDir, redirect.from.replace(/^\/+/, ''));
+      fs.mkdirSync(sourceDir, { recursive: true });
+      const targetUrl = `https://www.ddnzglobal.com${redirect.to}`;
+      const redirectHtml = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${targetUrl}"><meta http-equiv="refresh" content="0;url=${targetUrl}"><script>location.replace(${JSON.stringify(targetUrl)})</script><title>Article moved</title></head><body><p>This article has moved to <a href="${targetUrl}">${targetUrl}</a>.</p></body></html>`;
+      fs.writeFileSync(path.join(sourceDir, 'index.html'), redirectHtml, 'utf-8');
+    });
+    console.log(`✅ Generated ${redirects.length} canonical article redirect page(s).`);
+  }
 
   console.log('🎉 Multilingual SEO static generation complete!');
 }

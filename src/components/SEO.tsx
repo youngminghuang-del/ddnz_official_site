@@ -8,9 +8,23 @@ interface SEOProps {
   keywords?: string;
   canonicalPath?: string;
   alternateUrls?: Array<{ hrefLang: string; href: string }>;
+  image?: string;
+  type?: 'website' | 'article';
+  publishedTime?: string;
+  modifiedTime?: string;
 }
 
-export default function SEO({ title, description, keywords, canonicalPath, alternateUrls }: SEOProps) {
+export default function SEO({
+  title,
+  description,
+  keywords,
+  canonicalPath,
+  alternateUrls,
+  image,
+  type = 'website',
+  publishedTime,
+  modifiedTime,
+}: SEOProps) {
   const { language } = useLanguage();
   const location = useLocation();
 
@@ -55,19 +69,16 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
   const finalTitle = title || defaults.title;
   const finalRawDesc = description || defaults.desc;
   
-  // Truncate description dynamically to ideal SEO length (110 - 145 chars for non-Chinese, 50 - 75 for Chinese) to satisfy Bing and Google limits
+  // Keep the summary concise without cutting a word in half. Search engines
+  // may rewrite snippets, but this gives them a complete default description.
   const optimizeDesc = (desc: string, lang: string) => {
     const cleanDesc = desc.trim();
-    if (lang === 'zh') {
-      if (cleanDesc.length > 75) {
-        return cleanDesc.slice(0, 72) + '...';
-      }
-    } else {
-      if (cleanDesc.length > 145) {
-        return cleanDesc.slice(0, 142) + '...';
-      }
-    }
-    return cleanDesc;
+    const maxLength = lang === 'zh' ? 78 : 155;
+    if (cleanDesc.length <= maxLength) return cleanDesc;
+    const candidate = cleanDesc.slice(0, maxLength - 1);
+    const lastSpace = candidate.lastIndexOf(' ');
+    const completeText = lastSpace > maxLength * 0.72 ? candidate.slice(0, lastSpace) : candidate;
+    return `${completeText.trim()}…`;
   };
 
   const finalDesc = optimizeDesc(finalRawDesc, currentLang);
@@ -143,6 +154,11 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
       meta.content = content;
       document.head.appendChild(meta);
     };
+    const removeMeta = (attribute: 'name' | 'property', key: string) => {
+      document.head
+        .querySelectorAll(`meta[${attribute}="${key}"]`)
+        .forEach((element) => element.remove());
+    };
 
     document.documentElement.lang = helmetLang;
     document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
@@ -151,7 +167,8 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
     replaceMeta('name', 'title', finalTitle);
     replaceMeta('name', 'description', finalDesc);
     replaceMeta('name', 'keywords', finalKeywords);
-    replaceMeta('property', 'og:type', 'website');
+    replaceMeta('name', 'robots', 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1');
+    replaceMeta('property', 'og:type', type);
     replaceMeta('property', 'og:url', canonicalUrl);
     replaceMeta('property', 'og:title', finalTitle);
     replaceMeta('property', 'og:description', finalDesc);
@@ -159,6 +176,26 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
     replaceMeta('name', 'twitter:url', canonicalUrl);
     replaceMeta('name', 'twitter:title', finalTitle);
     replaceMeta('name', 'twitter:description', finalDesc);
+    if (image) {
+      const absoluteImage = image.startsWith('http')
+        ? image
+        : `https://www.ddnzglobal.com${image.startsWith('/') ? image : `/${image}`}`;
+      replaceMeta('property', 'og:image', absoluteImage);
+      replaceMeta('name', 'twitter:image', absoluteImage);
+    } else {
+      removeMeta('property', 'og:image');
+      removeMeta('name', 'twitter:image');
+    }
+    if (type === 'article' && publishedTime) {
+      replaceMeta('property', 'article:published_time', publishedTime);
+    } else {
+      removeMeta('property', 'article:published_time');
+    }
+    if (type === 'article' && modifiedTime) {
+      replaceMeta('property', 'article:modified_time', modifiedTime);
+    } else {
+      removeMeta('property', 'article:modified_time');
+    }
 
     document.head
       .querySelectorAll('link[rel="canonical"]')
@@ -192,6 +229,10 @@ export default function SEO({ title, description, keywords, canonicalPath, alter
     finalKeywords,
     finalTitle,
     helmetLang,
+    image,
+    modifiedTime,
+    publishedTime,
+    type,
   ]);
 
   return null;

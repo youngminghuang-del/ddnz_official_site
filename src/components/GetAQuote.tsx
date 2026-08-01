@@ -291,6 +291,12 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const { language, t } = useLanguage();
   const location = useLocation();
   const isQuotePage = location.pathname.includes('get-a-quote');
+  const attributionParams = new URLSearchParams(location.search);
+  const leadGoal = attributionParams.get('leadGoal') || 'Freight Export';
+  const attributedCategory = attributionParams.get('industry') || '';
+  const attributedSubcategory = attributionParams.get('subcategory') || '';
+  const leadSource = attributionParams.get('source') || (isQuotePage ? 'quote_page' : 'embedded_quote_form');
+  const sourceArticle = attributionParams.get('article') || '';
   
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
@@ -383,6 +389,12 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const [product, setProduct] = useState('Other');
   const [notes, setNotes] = useState('');
 
+  useEffect(() => {
+    if (attributedCategory) {
+      setProduct(attributedCategory);
+    }
+  }, [attributedCategory]);
+
   // Get localized strings for funnel
   const ft = (key: string): string => {
     const lang = funnelTranslations[language] ? language : 'en';
@@ -396,10 +408,13 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
         event_category: 'conversion',
         form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
         service: selectedService,
+        lead_goal: leadGoal,
+        product_category: product,
+        lead_source: leadSource,
       });
       setIsSubmitted(true);
     }
-  }, [state.succeeded, selectedService, isQuotePage]);
+  }, [state.succeeded, selectedService, isQuotePage, leadGoal, product, leadSource]);
 
   // Navigate forward with sliding transition
   const nextStep = () => {
@@ -408,6 +423,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
         trackEvent('quote_form_start', {
           form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
           service: selectedService,
+          lead_goal: leadGoal,
+          product_category: product,
+          lead_source: leadSource,
         });
         hasTrackedFormStart.current = true;
       }
@@ -463,7 +481,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     setName('');
     setEmail('');
     setPhone('');
-    setProduct('Other');
+    setProduct(attributedCategory || 'Other');
     setNotes('');
     setIsSubmitted(false);
   };
@@ -1038,6 +1056,11 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <input type="hidden" name="Destination" value={destination} />
                             <input type="hidden" name="Estimated_Weight_KG" value={`${weight} KG`} />
                             <input type="hidden" name="Estimated_Volume_CBM" value={`${volume} CBM`} />
+                            <input type="hidden" name="Lead_Goal" value={leadGoal} />
+                            <input type="hidden" name="Product_Category" value={product} />
+                            <input type="hidden" name="Product_Subcategory" value={attributedSubcategory} />
+                            <input type="hidden" name="Lead_Source" value={leadSource} />
+                            <input type="hidden" name="Source_Article_Slug" value={sourceArticle} />
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}
@@ -1099,6 +1122,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   onChange={(e) => setProduct(e.target.value)}
                                   className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none bg-white font-bold text-base transition-all"
                                 >
+                                  <option value="Commercial Kitchen Equipment">Commercial Kitchen Equipment</option>
+                                  <option value="Outdoor Products">Outdoor Products</option>
                                   <option value="Commercial Furniture">{t('get_a_quote.indFurn') || 'Commercial Furniture'}</option>
                                   <option value="New Energy / ESS">{t('get_a_quote.indNev') || 'New Energy / ESS'}</option>
                                   <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject') || 'Project Cargo / Heavy Lift'}</option>

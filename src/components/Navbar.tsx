@@ -11,6 +11,7 @@ const navKeys = [
   { key: 'what_we_do', href: '/#what-we-do' },
   { key: 'why_ddnz', href: '/#why-ddnz' },
   { key: 'services', isDropdown: true },
+  { key: 'product_sourcing', isSourcingMenu: true },
   { key: 'shipping_by_region', isMegaMenu: true },
   { key: 'insights', href: '/insights' },
   { key: 'get_a_quote', href: '/#get-a-quote' },
@@ -21,6 +22,40 @@ const serviceItems = [
   { key: 'services_air', href: '/services/air-freight' },
   { key: 'services_fba', href: '/services/amazon-fba' },
   { key: 'services_warehouse', href: '/services/warehouse-services' },
+];
+
+const sourcingMenuLabels: Record<Language, string> = {
+  en: 'PRODUCT SOURCING',
+  zh: '产品采购',
+  ru: 'ПОИСК ТОВАРОВ',
+  fr: 'ACHATS PRODUITS',
+  es: 'COMPRA DE PRODUCTOS',
+  ar: 'توريد المنتجات',
+};
+
+const sourcingItems = [
+  {
+    href: '/sourcing/commercial-kitchen-equipment-from-china',
+    labels: {
+      en: 'Commercial Kitchen Equipment',
+      zh: '商用餐厨设备',
+      ru: 'Профессиональное кухонное оборудование',
+      fr: 'Équipement de cuisine professionnelle',
+      es: 'Equipos de cocina comercial',
+      ar: 'معدات المطابخ التجارية',
+    },
+  },
+  {
+    href: '/sourcing/outdoor-products-from-china',
+    labels: {
+      en: 'Outdoor Products',
+      zh: '户外用品',
+      ru: 'Товары для отдыха на открытом воздухе',
+      fr: 'Produits de plein air',
+      es: 'Productos para exteriores',
+      ar: 'المنتجات الخارجية',
+    },
+  },
 ];
 
 const regionColumns = [
@@ -67,6 +102,7 @@ export default function Navbar() {
   const [showLanguageDropdown, setShowLanguageDropdown] = useState(false);
   const [showMegaMenu, setShowMegaMenu] = useState(false);
   const [showMobileRegions, setShowMobileRegions] = useState(false);
+  const [showSourcingMenu, setShowSourcingMenu] = useState(false);
   const { language, setLanguage, t } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
@@ -75,6 +111,7 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
       setShowLanguageDropdown(false);
+      setShowSourcingMenu(false);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -232,6 +269,45 @@ export default function Navbar() {
                             className="px-5 py-2.5 text-[11px] lg:text-xs tracking-widest uppercase font-black text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] transition-colors"
                           >
                             {t(`nav.${sub.key}`)}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                );
+              }
+
+              if (item.isSourcingMenu) {
+                return (
+                  <div key={item.key} className="relative group/sourcing py-2">
+                    <button
+                      type="button"
+                      aria-expanded={showSourcingMenu}
+                      onClick={() => setShowSourcingMenu((open) => !open)}
+                      className={cn(
+                        "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap flex items-center gap-0.5 lg:gap-1",
+                        scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
+                      )}
+                    >
+                      <span>{sourcingMenuLabels[language]}</span>
+                      <ChevronDown className="w-3 h-3 md:w-3.5 md:h-3.5 transition-transform duration-300 group-hover/sourcing:rotate-180" strokeWidth={2.5} />
+                    </button>
+                    <div className={cn(
+                      "absolute left-1/2 top-full z-50 w-72 -translate-x-1/2 pt-2 group-hover/sourcing:block",
+                      showSourcingMenu ? "block" : "hidden",
+                    )}>
+                      <div className="border border-slate-100 bg-white py-2.5 shadow-2xl">
+                        <div className="border-b border-slate-100 px-5 pb-2 pt-1 text-[10px] font-black uppercase tracking-[0.18em] text-amber-700">
+                          Source from China
+                        </div>
+                        {sourcingItems.map((sub) => (
+                          <Link
+                            key={sub.href}
+                            to={sub.href}
+                            onClick={() => setShowSourcingMenu(false)}
+                            className="block px-5 py-3 text-xs font-black text-slate-700 transition-colors hover:bg-sky-50 hover:text-[#0B4F8A]"
+                          >
+                            {sub.labels[language]}
                           </Link>
                         ))}
                       </div>
@@ -430,6 +506,28 @@ export default function Navbar() {
                           className="block px-4 py-2 text-sm font-bold text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] rounded-lg transition-colors"
                         >
                           {t(`nav.${sub.key}`)}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                );
+              }
+
+              if (item.isSourcingMenu) {
+                return (
+                  <div key={item.key} className="block space-y-1 border-b border-slate-100/60 py-1 pb-3">
+                    <span className="block px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400">
+                      {sourcingMenuLabels[language]}
+                    </span>
+                    <div className="ml-4 space-y-1.5 border-l-2 border-amber-400 pl-4">
+                      {sourcingItems.map((sub) => (
+                        <Link
+                          key={sub.href}
+                          to={sub.href}
+                          onClick={closeMenu}
+                          className="block px-4 py-2 text-sm font-bold text-slate-700 transition-colors hover:bg-amber-50 hover:text-[#0B4F8A]"
+                        >
+                          {sub.labels[language]}
                         </Link>
                       ))}
                     </div>

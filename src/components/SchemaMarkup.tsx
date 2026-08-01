@@ -124,21 +124,27 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         }))
       };
     } else if (type === 'BlogPosting') {
+      const rawImage = data.image || 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png';
+      const absoluteImage = rawImage.startsWith('http')
+        ? rawImage
+        : `https://www.ddnzglobal.com${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`;
       finalSchema = {
         ...baseSchema,
         '@type': 'BlogPosting',
         'headline': data.headline || '',
         'description': data.description || '',
-        'image': data.image || 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
-        'datePublished': data.datePublished || '2026-05-28',
-        'dateModified': data.dateModified || '2026-06-08',
+        'image': absoluteImage,
+        'datePublished': data.datePublished || '',
+        'dateModified': data.dateModified || data.datePublished || '',
         'author': {
           '@type': 'Organization',
-          'name': 'DDNZ Global Experts'
+          'name': data.governed ? 'DDNZ Global Editorial Desk' : 'DDNZ Global Editorial Archive',
+          'url': 'https://www.ddnzglobal.com/'
         },
         'publisher': {
           '@type': 'Organization',
           'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd',
+          'url': 'https://www.ddnzglobal.com/',
           'logo': {
             '@type': 'ImageObject',
             'url': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png'
