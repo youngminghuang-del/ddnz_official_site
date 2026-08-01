@@ -420,7 +420,7 @@ async function buildPayload(apiKey: string) {
 const candidateTemplates: CandidateDraft[] = [
   {
     title: 'China-to-Saudi freight documents for commercial kitchen equipment: a shipment handover checklist',
-    leadGoal: 'Freight Export', productCategory: 'Freight Export', productSubcategory: 'Commercial equipment freight',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Commercial equipment freight',
     audienceMarket: 'Saudi Arabia', searchIntent: 'Checklist',
     primaryQuery: 'documents needed to ship commercial kitchen equipment from China to Saudi Arabia',
     coreAngle: 'handover checklist by shipment stage', contentType: 'Buyer Guide', candidateScore: 82,
@@ -429,7 +429,7 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'How to plan consolidation for restaurant equipment shipped from China to the UAE',
-    leadGoal: 'Freight Export', productCategory: 'Freight Export', productSubcategory: 'Consolidation',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Consolidation',
     audienceMarket: 'United Arab Emirates', searchIntent: 'How-to guide',
     primaryQuery: 'consolidate restaurant equipment shipments from China to UAE',
     coreAngle: 'packing sequence and shipment-ready decision points', contentType: 'Buyer Guide', candidateScore: 80,
@@ -438,7 +438,7 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Export packing requirements to confirm before shipping stainless kitchen worktables from China',
-    leadGoal: 'Freight Export', productCategory: 'Freight Export', productSubcategory: 'Export packing',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Export packing',
     audienceMarket: 'Middle East and Africa', searchIntent: 'Checklist',
     primaryQuery: 'export packing checklist stainless kitchen worktables from China',
     coreAngle: 'damage-risk controls before container loading', contentType: 'Buyer Guide', candidateScore: 78,
