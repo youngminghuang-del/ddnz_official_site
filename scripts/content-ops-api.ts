@@ -41,6 +41,10 @@ type CandidateDraft = {
   evidencePlan: string;
   citationAsset: string;
   primaryCTA: string;
+  whyNow?: string;
+  signalClass?: 'Recent official signal' | 'Seasonal buyer intent' | 'Recurring buyer question';
+  signalUrls?: string[];
+  validUntil?: string;
 };
 
 type WorkflowPayload = Awaited<ReturnType<typeof buildPayload>>;
@@ -426,7 +430,7 @@ async function buildPayload(apiKey: string) {
  * trend. Each accepted topic must still acquire claim-level evidence before
  * drafting can be treated as complete.
  */
-const candidateTemplates: CandidateDraft[] = [
+const candidateTemplatePool: CandidateDraft[] = [
   {
     title: 'China-to-Saudi freight documents for commercial kitchen equipment: a shipment handover checklist',
     leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
@@ -508,6 +512,211 @@ const candidateTemplates: CandidateDraft[] = [
     evidencePlan: 'Applicable Saudi product requirements, multiple manufacturer data sheets and verified materials documentation.',
     citationAsset: 'Outdoor grill specification comparison matrix', primaryCTA: '/sourcing/outdoor-products-from-china',
   },
+  {
+    title: 'Far East Asia to the Middle East PSS: what China exporters should verify in an all-in freight quote',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Middle East', searchIntent: 'News',
+    primaryQuery: 'China to Middle East all in freight quote peak season surcharge 2026',
+    coreAngle: 'quote validity and surcharge line-item controls after the July PSS adjustment', contentType: 'Market Update', candidateScore: 89,
+    evidencePlan: 'Current carrier PSS notices for the exact China–Middle East scope plus one independent carrier or authoritative rate source.',
+    citationAsset: 'All-in freight quote validity and surcharge checklist', primaryCTA: '/get-a-quote',
+    whyNow: 'A carrier PSS revision took effect in July 2026 and remains subject to current tariff and quotation checks, creating immediate quote-comparison intent.',
+    signalClass: 'Recent official signal',
+    signalUrls: ['https://www.maersk.com/news/articles/2026/06/15/pss-far-east-asia-to-middle-east-july'],
+    validUntil: '2026-08-31',
+  },
+  {
+    title: 'Red Sea routing changes: a booking contingency checklist for China-to-West Africa cargo',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Africa, Middle East', searchIntent: 'News',
+    primaryQuery: 'China to West Africa Red Sea route booking contingency checklist',
+    coreAngle: 'route confirmation, ETA range and fallback evidence before booking', contentType: 'Market Update', candidateScore: 87,
+    evidencePlan: 'Current carrier service notices, a second carrier or port source, and lane-specific booking confirmation.',
+    citationAsset: 'Routing and fallback confirmation matrix', primaryCTA: '/get-a-quote',
+    whyNow: 'A July 2026 WAF6 structural change returned a Middle East–West Africa service leg to the Red Sea while retaining contingency language.',
+    signalClass: 'Recent official signal',
+    signalUrls: ['https://www.maersk.com/news/articles/2026/07/13/structural-changes-to-waf6'],
+    validUntil: '2026-09-15',
+  },
+  {
+    title: 'Northern Mozambique imports from China: when a new shuttle changes port and inland planning',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Africa', searchIntent: 'News',
+    primaryQuery: 'ship from China to northern Mozambique Afungi shuttle route planning',
+    coreAngle: 'gateway choice, transshipment and inland handover questions for northern Mozambique', contentType: 'Market Update', candidateScore: 85,
+    evidencePlan: 'MSC service announcement, port or terminal confirmation, and current origin booking availability.',
+    citationAsset: 'Northern Mozambique gateway decision table', primaryCTA: '/get-a-quote',
+    whyNow: 'MSC announced the Afungi Shuttle in July 2026, giving northern Mozambique importers a new route-selection question to verify.',
+    signalClass: 'Recent official signal',
+    signalUrls: ['https://www.msc.com/en/newsroom/news/2026/july/msc-launches-afungi-shuttle-opening-a-new-gateway-to-northern-mozambique'],
+    validUntil: '2026-09-30',
+  },
+  {
+    title: 'LCL or FCL for mixed restaurant equipment from China to Ghana: a landed-cost decision matrix',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Africa', searchIntent: 'Comparison',
+    primaryQuery: 'LCL vs FCL restaurant equipment China to Ghana landed cost',
+    coreAngle: 'volume, handling, destination charges and damage exposure by shipment mode', contentType: 'Comparison', candidateScore: 83,
+    evidencePlan: 'Current carrier or forwarder charge structures, Ghana import guidance, and item-level packing dimensions.',
+    citationAsset: 'LCL-versus-FCL landed-cost worksheet', primaryCTA: '/get-a-quote',
+    whyNow: 'Mixed-equipment buyers often request a quote before packed dimensions are stable; the decision matrix captures high-intent quotation traffic.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Door-to-door commercial kitchen freight from China to Riyadh: charges buyers should request before booking',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
+    primaryQuery: 'door to door commercial kitchen shipping China to Riyadh charges',
+    coreAngle: 'scope boundary between origin, ocean, destination and final-delivery charges', contentType: 'Buyer Guide', candidateScore: 84,
+    evidencePlan: 'Saudi customs and import sources, current carrier quotation terms, and destination-agent charge confirmation.',
+    citationAsset: 'Door-to-door quote scope matrix', primaryCTA: '/get-a-quote',
+    whyNow: 'This query sits close to quotation and exposes a common conversion blocker: buyers cannot compare offers with different destination scopes.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Shipping refrigeration equipment from China to Kenya: a pre-booking packing and measurement checklist',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Africa', searchIntent: 'Buyer Guide',
+    primaryQuery: 'ship commercial refrigeration equipment China to Kenya packing checklist',
+    coreAngle: 'packed dimensions, fragile components, upright handling and document handover', contentType: 'Buyer Guide', candidateScore: 81,
+    evidencePlan: 'Kenya import guidance, carrier packing rules, and model-specific supplier packing records.',
+    citationAsset: 'Refrigeration shipment measurement sheet', primaryCTA: '/get-a-quote',
+    whyNow: 'Buyers searching a destination-specific packing checklist are usually preparing an RFQ or shipment, making the CTA naturally immediate.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Commercial refrigerators for Gulf kitchens: how to verify climate class and high-ambient performance claims',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Commercial Refrigeration',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
+    primaryQuery: 'commercial refrigerator climate class high ambient Gulf kitchen China supplier',
+    coreAngle: 'declared climate class, test conditions and installation limits before supplier comparison', contentType: 'Buyer Guide', candidateScore: 88,
+    evidencePlan: 'Applicable product standard, multiple model data sheets, disclosed test conditions, and DDNZ inspection evidence only if available.',
+    citationAsset: 'High-ambient refrigeration evidence matrix', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Peak Gulf heat makes ambient limits and ventilation immediately relevant, while buyers often see unsupported “tropical” claims.',
+    signalClass: 'Seasonal buyer intent',
+  },
+  {
+    title: 'Restaurant equipment for Saudi 60 Hz projects: a model-number and data-plate checklist',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Commercial Cooking',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
+    primaryQuery: 'Saudi 60Hz commercial kitchen equipment China data plate checklist',
+    coreAngle: 'model suffix, voltage, phase, frequency and release proof before purchase order', contentType: 'Buyer Guide', candidateScore: 86,
+    evidencePlan: 'Saudi or GCC electrical requirements plus same-model data sheets, manuals and data-plate artwork.',
+    citationAsset: 'Electrical configuration release checklist', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Electrical mismatch is a pre-order decision with clear commercial consequences and strong specification-search intent.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Commercial ice makers from China for Dubai: water, drain and ambient fields buyers should specify',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Bar and Beverage',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
+    primaryQuery: 'commercial ice maker China Dubai water drain ambient specification',
+    coreAngle: 'site utilities and operating conditions before comparing nominal ice output', contentType: 'Buyer Guide', candidateScore: 84,
+    evidencePlan: 'Applicable UAE requirements and several manufacturer installation manuals with model-level conditions.',
+    citationAsset: 'Ice-maker site-condition RFQ sheet', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Hot-weather beverage demand brings ice output questions forward, but utility and ambient conditions determine whether catalog figures are comparable.',
+    signalClass: 'Seasonal buyer intent',
+  },
+  {
+    title: 'Gas griddles for Saudi commercial kitchens: fuel, pressure and conversion documents to confirm before PO',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Commercial Cooking',
+    audienceMarket: 'Middle East', searchIntent: 'Compliance',
+    primaryQuery: 'Saudi commercial gas griddle China fuel pressure compliance documents',
+    coreAngle: 'gas family, inlet pressure, regulator and model-specific conformity evidence', contentType: 'Buyer Guide', candidateScore: 85,
+    evidencePlan: 'Applicable Saudi/GCC gas-appliance requirements, multiple manuals, and model-specific label or test records.',
+    citationAsset: 'Gas appliance configuration and evidence matrix', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Fuel and pressure are high-risk purchase fields that generic catalog comparisons omit, giving the article strong RFQ utility.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Turnkey hotel kitchen sourcing from China: how to control BOQ substitutions before shipment',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Stainless and Turnkey Kitchen',
+    audienceMarket: 'Middle East, Africa', searchIntent: 'Buyer Guide',
+    primaryQuery: 'turnkey hotel kitchen equipment China BOQ substitution control',
+    coreAngle: 'approved-equivalent rules, model register and exception closure across a project BOQ', contentType: 'Buyer Guide', candidateScore: 83,
+    evidencePlan: 'Project specification records, supplier technical submissions, and genuine DDNZ inspection data only when confirmed.',
+    citationAsset: 'BOQ substitution-control register', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Project buyers search for control methods when quotations contain mixed brands and late substitutions; the register supports a sourcing enquiry.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Commercial bar stations from China: drainage, water and stainless details to freeze before fabrication',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Bar and Beverage',
+    audienceMarket: 'Middle East, Africa', searchIntent: 'Buyer Guide',
+    primaryQuery: 'custom commercial bar station China drainage water stainless specification',
+    coreAngle: 'site interface and fabrication drawing release before production', contentType: 'Buyer Guide', candidateScore: 82,
+    evidencePlan: 'Approved layout, utility schedule, material specification and supplier fabrication drawings.',
+    citationAsset: 'Custom bar-station drawing release checklist', primaryCTA: '/sourcing/commercial-kitchen-equipment-from-china',
+    whyNow: 'Custom bar enquiries convert when buyers can submit dimensions and utilities; this asset shortens the path from search to scoped RFQ.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Portable refrigerators for Gulf summer: how buyers should compare DC input, ambient limits and real power draw',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor and Portable Refrigeration',
+    audienceMarket: 'Middle East', searchIntent: 'Comparison',
+    primaryQuery: 'portable refrigerator Gulf summer DC power ambient temperature comparison China',
+    coreAngle: 'comparable test conditions for power use and cooling performance', contentType: 'Comparison', candidateScore: 88,
+    evidencePlan: 'Applicable product requirements, several supplier technical sheets, and a disclosed test protocol for any performance comparison.',
+    citationAsset: 'Portable-fridge power and ambient test matrix', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'High summer temperatures make power consumption and ambient limits urgent purchasing questions for Gulf distributors.',
+    signalClass: 'Seasonal buyer intent',
+  },
+  {
+    title: 'Saudi portable-fridge sourcing: decide household, vehicle or off-grid use before conformity routing',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor and Portable Refrigeration',
+    audienceMarket: 'Middle East', searchIntent: 'Compliance',
+    primaryQuery: 'Saudi portable refrigerator China Saber household vehicle off grid classification',
+    coreAngle: 'intended-use classification before selecting standards and supplier evidence', contentType: 'Buyer Guide', candidateScore: 86,
+    evidencePlan: 'Current Saudi product classification and Saber sources plus exact-model technical documentation.',
+    citationAsset: 'Portable-fridge intended-use classification flow', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'Saudi conformity routing is product-specific; clarifying intended use before RFQ prevents buyers from requesting the wrong evidence.',
+    signalClass: 'Recurring buyer question',
+    signalUrls: ['https://www.saso.gov.sa/ar/mediacenter/news/Pages/saso-news-1483.aspx'],
+  },
+  {
+    title: 'Insulated cooler boxes for African cold-chain distribution: a payload and test-duration buyer matrix',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Insulated Coolers',
+    audienceMarket: 'Africa', searchIntent: 'Buyer Guide',
+    primaryQuery: 'insulated cooler box China Africa cold chain test duration payload',
+    coreAngle: 'test method, payload ratio, opening cycle and ambient conditions before comparing hold time', contentType: 'Buyer Guide', candidateScore: 85,
+    evidencePlan: 'Applicable food-contact or use requirements, multiple technical records, and a disclosed thermal test method.',
+    citationAsset: 'Cooler thermal-test method worksheet', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'Cold-chain buyers search for hold time, but a method-based matrix creates more trust and quotation value than unsupported hour claims.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Outdoor grills for coastal Gulf markets: corrosion, fuel and spare-parts checks before supplier selection',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor Grills',
+    audienceMarket: 'Middle East', searchIntent: 'Comparison',
+    primaryQuery: 'outdoor grill China coastal Gulf corrosion fuel spare parts comparison',
+    coreAngle: 'coastal exposure, fuel configuration and service-parts availability', contentType: 'Comparison', candidateScore: 83,
+    evidencePlan: 'Applicable market requirements, materials and coating records, fuel documentation and supplier spare-parts lists.',
+    citationAsset: 'Coastal outdoor-grill comparison matrix', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'Distributors planning the cooler outdoor season can use coastal durability and parts support to separate comparable suppliers.',
+    signalClass: 'Seasonal buyer intent',
+  },
+  {
+    title: 'Solar-ready portable refrigerators from China: battery protection and connector checks for African distributors',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Accessories and Power',
+    audienceMarket: 'Africa', searchIntent: 'Buyer Guide',
+    primaryQuery: 'solar portable refrigerator China Africa battery protection connector checklist',
+    coreAngle: 'power architecture, low-voltage protection and connector compatibility before bundle approval', contentType: 'Buyer Guide', candidateScore: 84,
+    evidencePlan: 'Exact-model electrical records, solar controller or battery specifications, and applicable safety requirements.',
+    citationAsset: 'Off-grid refrigerator power-chain checklist', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'Off-grid buyers need a complete power-chain answer rather than a refrigerator-only catalog, creating a clear bundled-sourcing enquiry.',
+    signalClass: 'Recurring buyer question',
+  },
+  {
+    title: 'Rotomolded or injection-moulded coolers from China: what evidence should support a durability claim?',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Insulated Coolers',
+    audienceMarket: 'Middle East, Africa', searchIntent: 'Comparison',
+    primaryQuery: 'rotomolded vs injection molded cooler China durability evidence',
+    coreAngle: 'construction, wall section, hardware, test method and landed-cost trade-offs', contentType: 'Comparison', candidateScore: 82,
+    evidencePlan: 'Multiple supplier construction records, material declarations, test methods and packing dimensions.',
+    citationAsset: 'Cooler construction evidence comparison table', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'This comparison query attracts buyers who have moved beyond basic price search and are deciding product positioning and supplier tier.',
+    signalClass: 'Recurring buyer question',
+  },
 ];
 
 function wordOverlap(left: string, right: string) {
@@ -555,6 +764,39 @@ function auditCandidate(candidate: CandidateDraft, payload: WorkflowPayload) {
     duplicateDecision: 'Clear',
     duplicateNotes: '通过初步机械查重：未发现相同 Primary Query 或 Topic Key。仍需在研究阶段复核章节和核心答案。',
     matchedRecord: null,
+  };
+}
+
+const candidateCategory = (candidate: CandidateDraft) =>
+  candidate.leadGoal === 'Freight Export' ? 'Freight Export' : candidate.productCategory;
+
+function candidateBatch(payload: WorkflowPayload, requestedBatch: number) {
+  const today = new Date().toISOString().slice(0, 10);
+  const audited = candidateTemplatePool
+    .filter((candidate) => !candidate.validUntil || candidate.validUntil >= today)
+    .map((candidate) => ({ ...candidate, ...auditCandidate(candidate, payload) }));
+  const available = audited.filter((candidate) => candidate.duplicateDecision !== 'Rejected');
+  const batch = Number.isInteger(requestedBatch) && requestedBatch >= 0 ? requestedBatch : 0;
+  const perCategory = 3;
+  const categories = ['Freight Export', 'Commercial Kitchen Equipment', 'Outdoor Products'];
+  const candidates = categories.flatMap((category) => {
+    const group = available
+      .filter((candidate) => candidateCategory(candidate) === category)
+      .sort((left, right) => {
+        if (left.duplicateDecision === right.duplicateDecision) return right.candidateScore - left.candidateScore;
+        return left.duplicateDecision === 'Clear' ? -1 : 1;
+      });
+    return group.slice(batch * perCategory, (batch + 1) * perCategory);
+  });
+  const hasMore = categories.some((category) =>
+    available.filter((candidate) => candidateCategory(candidate) === category).length > (batch + 1) * perCategory,
+  );
+  return {
+    batch,
+    nextBatch: hasMore ? batch + 1 : null,
+    candidates,
+    availableCount: available.length,
+    rejectedCount: audited.length - available.length,
   };
 }
 
@@ -1168,10 +1410,10 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
               automationMaxStatus: AUTOMATION_MAX_STATUS,
               writeNotice: WORKFLOW_WRITE_NOTICE,
               capabilities: {
-                candidateMode: 'safe-template-preview',
+                candidateMode: 'curated-signal-preview',
                 canPersistTemplateCandidates: true,
                 modelConnected: false,
-                modelNotice: '当前未配置可信研究/写作模型。生成候选只会产生待研究模板，不会伪造资料或正文。',
+                modelNotice: '候选池会隐藏已存在选题并显示“为什么现在”；近期信号仅用于发现角度，当前仍不会自动伪造研究资料或正文。',
               },
               queue: {
                 candidateCount: candidates.length,
@@ -1190,16 +1432,15 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
             }
             const body = await readJsonBody(request);
             const payload = await buildPayload(apiKey);
-            const candidates = candidateTemplates.map((candidate) => ({
-              ...candidate,
-              ...auditCandidate(candidate, payload),
-            }));
+            const preview = candidateBatch(payload, Number(body.batch || 0));
             if (!body.persist) {
               sendJson(response, 200, {
-                mode: 'template-preview',
-                warning: '这些是未研究的选题模板和初步机械查重结果，不是新闻、研究结论或可发布文章。',
+                mode: preview.candidates.length ? 'fresh-candidate-preview' : 'candidate-pool-exhausted',
+                warning: preview.candidates.length
+                  ? `只显示尚未命中 Topic Key / Primary Query 的候选。${preview.rejectedCount} 个已存在模板已自动隐藏；“为什么现在”只用于发现选题，仍不是已核验事实。`
+                  : '当前候选池没有更多未重复选题。不要通过改年份或换国家制造重复；请等待近期信号扫描，或根据真实询盘、Search Console 和官方变化增加新角度。',
                 requiresAcknowledgement: true,
-                candidates,
+                ...preview,
               });
               return;
             }
@@ -1207,11 +1448,22 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
               sendJson(response, 400, { error: '保存前请确认：候选仅为待研究模板，不能作为已核验事实或直接发布内容。' });
               return;
             }
-            const existingKeys = new Set(payload.topics.map((topic) => normalizeForMatch(topic.topicKey)).filter(Boolean));
-            if (candidates.some((candidate) => existingKeys.has(normalizeForMatch(candidate.topicKey)))) {
-              throw new Error('本批模板已有记录，已停止重复保存。请在“选题与查重”中处理已有候选，或先改写核心角度。');
+            const requestedKeys = Array.isArray(body.candidateTopicKeys)
+              ? body.candidateTopicKeys.filter((item: unknown): item is string => typeof item === 'string')
+              : [];
+            const selectedTemplates = candidateTemplatePool.filter((candidate) =>
+              requestedKeys.includes(stableTopicKey(candidate)),
+            );
+            if (selectedTemplates.length < 8 || selectedTemplates.length > 12 || selectedTemplates.length !== requestedKeys.length) {
+              throw new Error('保存批次与刚才预览的 8–12 个候选不一致。请重新预览后再保存。');
             }
-            const created = await persistCandidates(apiKey, payload, candidateTemplates);
+            const rejected = selectedTemplates
+              .map((candidate) => ({ candidate, audit: auditCandidate(candidate, payload) }))
+              .find((item) => item.audit.duplicateDecision === 'Rejected');
+            if (rejected) {
+              throw new Error(`“${rejected.candidate.title}”在保存前已出现重复记录。请重新预览未重复候选。`);
+            }
+            const created = await persistCandidates(apiKey, payload, selectedTemplates);
             sendJson(response, 201, {
               mode: 'template-persisted', created,
               warning: '已保存候选和查重审计。它们仍未经过研究；下一步仅能人工选择三篇并创建研究请求。',
