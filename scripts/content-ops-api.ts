@@ -95,6 +95,28 @@ async function notionFetch(
   return response.json();
 }
 
+async function workspaceReviewers(apiKey: string) {
+  const reviewers: Array<{ id: string; name: string; email: string }> = [];
+  let cursor: string | undefined;
+  do {
+    const result = await notionFetch(
+      apiKey,
+      `/v1/users?page_size=100${cursor ? `&start_cursor=${encodeURIComponent(cursor)}` : ''}`,
+    );
+    reviewers.push(
+      ...(result.results || [])
+        .filter((user: any) => user.type === 'person')
+        .map((user: any) => ({
+          id: user.id,
+          name: user.name || user.person?.email || 'Notion reviewer',
+          email: user.person?.email || '',
+        })),
+    );
+    cursor = result.has_more ? result.next_cursor : undefined;
+  } while (cursor);
+  return reviewers;
+}
+
 const plainText = (items: any[] = []) =>
   items.map((item) => item?.plain_text || '').join('').trim();
 
@@ -336,6 +358,8 @@ function mapTopic(page: NotionPage) {
 
 function mapEvidence(page: NotionPage) {
   const properties = page.properties;
+  const articleIds = relationIds(properties.Article);
+  const topicIds = relationIds(properties.Topic);
   return {
     id: page.id,
     url: pageUrl(page),
@@ -351,10 +375,54 @@ function mapEvidence(page: NotionPage) {
     publishedDate: dateValue(properties['Published Date']),
     expires: dateValue(properties.Expires),
     verifiedBy: peopleValue(properties['Verified By']),
-    articleCount: relationCount(properties.Article),
-    topicCount: relationCount(properties.Topic),
+    articleCount: articleIds.length,
+    articleIds,
+    topicCount: topicIds.length,
+    topicIds,
     createdTime: page.created_time,
     lastEditedTime: page.last_edited_time,
+  };
+}
+
+const MINIMUM_QUALIFIED_EVIDENCE = 2;
+
+function evidenceGate(articleId: string, evidence: ReturnType<typeof mapEvidence>[]) {
+  const today = new Date().toISOString().slice(0, 10);
+  const related = evidence.filter((item) => item.articleIds.includes(articleId));
+  const qualified = related.filter((item) => {
+    const acceptedTier = ['A', 'B', 'First Party'].includes(item.sourceTier);
+    const sourceReady = item.sourceTier === 'First Party' || !!item.sourceUrl;
+    return item.status === 'Verified'
+      && acceptedTier
+      && sourceReady
+      && !!item.publisher
+      && !!item.market
+      && !!item.summary
+      && !!item.accessedDate
+      && !!item.expires
+      && item.expires >= today
+      && item.verifiedBy.length > 0;
+  });
+  const unverified = related.filter((item) => item.status === 'Unverified');
+  const nonQualifying = related.filter((item) => item.status === 'Verified' && !qualified.some((qualifiedItem) => qualifiedItem.id === item.id));
+  const blockers: string[] = [];
+  if (qualified.length < MINIMUM_QUALIFIED_EVIDENCE) {
+    blockers.push(`至少需要 ${MINIMUM_QUALIFIED_EVIDENCE} 条合格证据，当前 ${qualified.length} 条`);
+  }
+  if (!qualified.some((item) => ['A', 'First Party'].includes(item.sourceTier))) {
+    blockers.push('至少需要 1 条 A 级官方/标准来源或可验证的一手记录');
+  }
+  if (new Set(qualified.map((item) => item.publisher.trim().toLowerCase())).size < 2) {
+    blockers.push('合格证据必须来自至少 2 个独立发布机构');
+  }
+  return {
+    evidenceMinimum: MINIMUM_QUALIFIED_EVIDENCE,
+    qualifiedEvidenceCount: qualified.length,
+    relatedEvidenceCount: related.length,
+    pendingEvidenceCount: unverified.length,
+    nonQualifyingEvidenceCount: nonQualifying.length,
+    evidenceGateBlockers: blockers,
+    evidenceReady: blockers.length === 0,
   };
 }
 
@@ -390,15 +458,16 @@ async function buildPayload(apiKey: string) {
     queryDatabase(apiKey, DATABASES.audits),
   ]);
 
-  const articles = articlePages
-    .map(mapArticle)
-    .sort((a, b) => b.lastEditedTime.localeCompare(a.lastEditedTime));
   const topics = topicPages
     .map(mapTopic)
     .sort((a, b) => (b.candidateScore ?? -1) - (a.candidateScore ?? -1));
   const evidence = evidencePages
     .map(mapEvidence)
     .sort((a, b) => (a.expires || '9999').localeCompare(b.expires || '9999'));
+  const articles = articlePages
+    .map(mapArticle)
+    .map((article) => ({ ...article, ...evidenceGate(article.id, evidence) }))
+    .sort((a, b) => b.lastEditedTime.localeCompare(a.lastEditedTime));
   const audits = auditPages
     .map(mapAudit)
     .sort((a, b) => (b.runDate || b.createdTime).localeCompare(a.runDate || a.createdTime));
@@ -803,7 +872,7 @@ function candidateBatch(payload: WorkflowPayload, requestedBatch: number) {
 async function createAutomationAudit(
   apiKey: string,
   auditSchema: DatabaseSchema,
-  input: { title: string; stage: string; result: 'Pass' | 'Needs Changes' | 'Blocked'; findings: string; blockers?: string; topicIds?: string[]; articleIds?: string[] },
+  input: { title: string; stage: string; result: 'Pass' | 'Needs Changes' | 'Blocked'; findings: string; blockers?: string; topicIds?: string[]; articleIds?: string[]; evidenceIds?: string[]; reviewerIds?: string[] },
 ) {
   const today = new Date().toISOString();
   const properties = {
@@ -816,6 +885,10 @@ async function createAutomationAudit(
     ...richTextProperty(auditSchema, 'Model or Version', 'DDNZ local workflow request (no autonomous publication)'),
     ...relationProperty(auditSchema, 'Topic', input.topicIds || []),
     ...relationProperty(auditSchema, 'Article', input.articleIds || []),
+    ...relationProperty(auditSchema, 'Evidence Items', input.evidenceIds || []),
+    ...(input.reviewerIds?.length && auditSchema.properties.Reviewer?.type === 'people'
+      ? { Reviewer: { people: input.reviewerIds.map((id) => ({ id })) } }
+      : {}),
   };
   return notionFetch(apiKey, '/v1/pages', {
     method: 'POST',
@@ -986,17 +1059,20 @@ async function advanceArticle(apiKey: string, articleId: string, action: Advance
   if (!validAdvanceActions.includes(action)) {
     throw new Error('无效的推进操作。可用操作：mark-evidence-ready、draft-request、editorial-ready、domain-ready。');
   }
-  const [page, articleSchema, auditSchema] = await Promise.all([
+  const [page, articleSchema, auditSchema, evidencePages] = await Promise.all([
     notionFetch(apiKey, `/v1/pages/${articleId}`) as Promise<NotionPage>,
     databaseSchema(apiKey, DATABASES.insights), databaseSchema(apiKey, DATABASES.audits),
+    queryDatabase(apiKey, DATABASES.evidence),
   ]);
-  const article = mapArticle(page);
+  const evidence = evidencePages.map(mapEvidence);
+  const gate = evidenceGate(articleId, evidence);
+  const article = { ...mapArticle(page), ...gate };
   const plan = advancePlan(action);
   if (!plan.from.includes(article.status)) {
     throw new Error(`当前文章状态为“${article.status}”，不能执行此操作。请按顺序从 ${plan.from.join(' 或 ')} 推进。`);
   }
-  if (['mark-evidence-ready', 'draft-request', 'editorial-ready', 'domain-ready'].includes(action) && article.evidenceCount < 2) {
-    throw new Error('至少需要 2 条关联 Evidence Ledger 记录才能继续。请先逐条补齐并核验重要论点。');
+  if (['mark-evidence-ready', 'draft-request', 'editorial-ready', 'domain-ready'].includes(action) && !gate.evidenceReady) {
+    throw new Error(`证据闸门未通过：${gate.evidenceGateBlockers.join('；')}。只有状态为 Verified、已指定 Verified By、字段完整、未过期的 A/B 级或一手证据才计入。`);
   }
   if (['editorial-ready', 'domain-ready'].includes(action)) {
     const length = await bodyTextLength(apiKey, articleId);
@@ -1013,7 +1089,7 @@ async function advanceArticle(apiKey: string, articleId: string, action: Advance
   const requestDescription = action === 'draft-request'
     ? '已创建起草请求；当前没有连接可信写作模型，因此未写入正文。请依据 Brief 和证据账本起草。'
     : action === 'mark-evidence-ready'
-      ? '证据数量达到基础门槛，仍需人工核验市场范围和每个关键结论。'
+      ? '证据已通过基础闸门：达到最低数量、包含 A 级/一手来源，并来自至少两个独立发布机构。仍需在专业审核中确认每个关键结论。'
       : action === 'editorial-ready'
         ? '正文已送编辑审核；不得将编辑审核当成专业或发布批准。'
         : '文章已送 Domain Review，等待货运/采购专业人员确认。';
@@ -1026,10 +1102,80 @@ async function advanceArticle(apiKey: string, articleId: string, action: Advance
   });
   cache = null;
   return {
-    article: mapArticle(updated), stage: plan.to,
+    article: { ...mapArticle(updated), ...gate }, stage: plan.to,
     request: { type: action, status: plan.to, instructions: requestDescription },
     notice: `${WORKFLOW_WRITE_NOTICE} 当前工作流不会执行最终发布。`,
   };
+}
+
+function evidenceReviewReadiness(item: ReturnType<typeof mapEvidence>) {
+  const today = new Date().toISOString().slice(0, 10);
+  return [
+    !item.claim && 'Claim',
+    !item.sourceTier && 'Source Tier',
+    !item.sourceType && 'Source Type',
+    item.sourceTier !== 'First Party' && !item.sourceUrl && 'Source URL',
+    !item.publisher && 'Publisher',
+    !item.market && 'Applicable Market',
+    !item.summary && 'Evidence Summary',
+    !item.accessedDate && 'Accessed Date',
+    !item.expires && 'Expires',
+    !!item.expires && item.expires < today && '证据已过期',
+  ].filter(Boolean) as string[];
+}
+
+async function reviewEvidence(
+  apiKey: string,
+  evidenceId: string,
+  decision: 'Verified' | 'Rejected',
+  reviewerId: string,
+) {
+  if (!['Verified', 'Rejected'].includes(decision)) throw new Error('证据审核决定只能是 Verified 或 Rejected。');
+  const [page, evidenceSchema, auditSchema, reviewers] = await Promise.all([
+    notionFetch(apiKey, `/v1/pages/${evidenceId}`) as Promise<NotionPage>,
+    databaseSchema(apiKey, DATABASES.evidence),
+    databaseSchema(apiKey, DATABASES.audits),
+    workspaceReviewers(apiKey),
+  ]);
+  const reviewer = reviewers.find((item) => item.id === reviewerId);
+  if (!reviewer) throw new Error('请选择当前 Notion 工作区中的人工审核者。');
+  const item = mapEvidence(page);
+  if (decision === 'Verified') {
+    const blockers = evidenceReviewReadiness(item);
+    if (blockers.length) throw new Error(`这条证据还不能核验：请先补齐 ${blockers.join('、')}。`);
+  }
+  if (evidenceSchema.properties['Verified By']?.type !== 'people') {
+    throw new Error('Evidence Ledger 的“Verified By”必须是 People 字段。');
+  }
+  const today = new Date().toISOString().slice(0, 10);
+  const reviewNote = decision === 'Verified'
+    ? `Human-reviewed in DDNZ local content control on ${today}. Reviewer confirmed that the source supports the stated claim within its recorded market and limitations.`
+    : `Rejected by human reviewer in DDNZ local content control on ${today}. This record must not be used to support the article.`;
+  const updated = (await notionFetch(apiKey, `/v1/pages/${evidenceId}`, {
+    method: 'PATCH',
+    body: {
+      properties: {
+        Status: selectProperty(evidenceSchema, 'Status', decision),
+        'Verified By': { people: [{ id: reviewerId }] },
+        ...richTextProperty(evidenceSchema, 'Verification Notes', reviewNote),
+      },
+    },
+  })) as NotionPage;
+  await createAutomationAudit(apiKey, auditSchema, {
+    title: item.claim,
+    stage: 'Evidence Audit',
+    result: decision === 'Verified' ? 'Pass' : 'Needs Changes',
+    findings: `${reviewer.name} marked this evidence record ${decision} in the local review control.`,
+    blockers: decision === 'Verified' && item.sourceTier === 'C'
+      ? 'Tier C supplier evidence may support exact-model comparison but cannot independently support a key regulatory or general performance conclusion.'
+      : decision === 'Rejected' ? 'Rejected evidence must be replaced or removed from the article evidence package.' : '',
+    topicIds: item.topicIds,
+    articleIds: item.articleIds,
+    evidenceIds: [evidenceId],
+    reviewerIds: [reviewerId],
+  });
+  cache = null;
+  return { evidence: mapEvidence(updated), reviewer, decision };
 }
 
 async function buildDraftBrief(apiKey: string, articleId: string) {
@@ -1198,15 +1344,16 @@ const coverUrl = (page: NotionPage) => {
     : page.cover.file?.url || '';
 };
 
-function publishEligibility(page: NotionPage) {
-  const article = mapArticle(page);
+function publishEligibility(page: NotionPage, evidence: ReturnType<typeof mapEvidence>[]) {
+  const gate = evidenceGate(page.id, evidence);
+  const article = { ...mapArticle(page), ...gate };
   const blockers: string[] = [];
   if (!['Domain Review', 'Approved'].includes(article.status)) {
     blockers.push('文章必须处于 Domain Review 或 Approved');
   }
   if ((article.qualityScore ?? 0) < 85) blockers.push('Quality Score 必须达到 85');
   if (!article.reviewers.length) blockers.push('必须指定人工 Reviewer');
-  if (article.evidenceCount < 2) blockers.push('至少需要 2 条关联证据');
+  blockers.push(...gate.evidenceGateBlockers);
   if (!article.auditCount) blockers.push('必须存在审核记录');
   if (!article.topicCount) blockers.push('必须关联 Topic Registry');
   if (!article.topicKey) blockers.push('Topic Key 不能为空');
@@ -1216,8 +1363,13 @@ function publishEligibility(page: NotionPage) {
 }
 
 async function buildArticlePreview(apiKey: string, articleId: string) {
-  const page = (await notionFetch(apiKey, `/v1/pages/${articleId}`)) as NotionPage;
-  const blocks = await fetchBlockChildren(apiKey, articleId);
+  const [page, blocks, evidencePages] = await Promise.all([
+    notionFetch(apiKey, `/v1/pages/${articleId}`) as Promise<NotionPage>,
+    fetchBlockChildren(apiKey, articleId),
+    queryDatabase(apiKey, DATABASES.evidence),
+  ]);
+  const evidence = evidencePages.map(mapEvidence);
+  const gate = evidenceGate(articleId, evidence);
   const html = await renderPreviewBlocks(apiKey, blocks);
   // Count the complete rendered body so nested callouts, toggles and table cells
   // contribute to the reading-time estimate.
@@ -1228,13 +1380,13 @@ async function buildArticlePreview(apiKey: string, articleId: string) {
     nonCjkText.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu)?.length || 0;
   const wordCount = nonCjkWords + Math.ceil(cjkCharacters / 2);
   return {
-    article: mapArticle(page),
+    article: { ...mapArticle(page), ...gate },
     summary: propertyValue(page.properties.Excerpt),
     coverUrl: coverUrl(page),
     html,
     wordCount,
     readMinutes: Math.max(1, Math.ceil(wordCount / 220)),
-    eligibility: publishEligibility(page),
+    eligibility: publishEligibility(page, evidence),
   };
 }
 
@@ -1296,12 +1448,16 @@ async function createHumanAudit(
 }
 
 async function publishArticle(apiKey: string, articleId: string, confirmationTitle: string) {
-  const page = (await notionFetch(apiKey, `/v1/pages/${articleId}`)) as NotionPage;
+  const [page, evidencePages] = await Promise.all([
+    notionFetch(apiKey, `/v1/pages/${articleId}`) as Promise<NotionPage>,
+    queryDatabase(apiKey, DATABASES.evidence),
+  ]);
+  const evidence = evidencePages.map(mapEvidence);
   const title = titleFrom(page, 'Title') || '';
   if (!title || confirmationTitle !== title) {
     throw new Error('发布确认标题不匹配');
   }
-  const eligibility = publishEligibility(page);
+  const eligibility = publishEligibility(page, evidence);
   if (!eligibility.canPublish) {
     throw new Error(`发布闸门未通过：${eligibility.blockers.join('；')}`);
   }
@@ -1397,9 +1553,10 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
           const prepareMatch = requestUrl.pathname.match(/^\/workflow\/topic\/([a-f0-9-]+)\/prepare$/i);
           const advanceMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/advance$/i);
           const briefMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/brief$/i);
+          const evidenceReviewMatch = requestUrl.pathname.match(/^\/workflow\/evidence\/([a-f0-9-]+)\/review$/i);
 
           if (request.method === 'GET' && requestUrl.pathname === '/workflow/status') {
-            const payload = await buildPayload(apiKey);
+            const [payload, reviewers] = await Promise.all([buildPayload(apiKey), workspaceReviewers(apiKey)]);
             const selectedTopics = payload.topics.filter((topic) => topic.status === 'Selected');
             const candidates = payload.topics.filter((topic) => topic.status === 'Candidate');
             const articlesAwaitingHuman = payload.articles.filter((article) =>
@@ -1409,6 +1566,7 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
               generatedAt: new Date().toISOString(),
               automationMaxStatus: AUTOMATION_MAX_STATUS,
               writeNotice: WORKFLOW_WRITE_NOTICE,
+              reviewers,
               capabilities: {
                 candidateMode: 'curated-signal-preview',
                 canPersistTemplateCandidates: true,
@@ -1503,6 +1661,20 @@ export function createContentOpsApiPlugin(apiKey: string | undefined): Plugin {
             }
             const body = await readJsonBody(request);
             sendJson(response, 200, await advanceArticle(apiKey, advanceMatch[1], body.action));
+            return;
+          }
+
+          if (request.method === 'POST' && evidenceReviewMatch) {
+            if (!isLocalOrigin(request)) {
+              sendJson(response, 403, { error: '证据审核只允许从本机控制台发起。' });
+              return;
+            }
+            const body = await readJsonBody(request);
+            sendJson(
+              response,
+              200,
+              await reviewEvidence(apiKey, evidenceReviewMatch[1], body.decision, body.reviewerId),
+            );
             return;
           }
 
