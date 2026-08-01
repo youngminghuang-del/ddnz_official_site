@@ -61,7 +61,7 @@ const stableTopicKey = (candidate: Omit<CandidateDraft, 'candidateScore' | 'evid
   [
     candidate.leadGoal,
     candidate.productCategory,
-    candidate.productSubcategory,
+    candidate.productSubcategory || 'Not Applicable',
     candidate.audienceMarket,
     candidate.searchIntent,
     candidate.coreAngle,
@@ -238,6 +238,15 @@ function textOrSelectProperty(schema: DatabaseSchema, name: string, value: strin
   if (!property) return {};
   if (property.type === 'select' || property.type === 'status') {
     return { [name]: selectProperty(schema, name, value) };
+  }
+  if (property.type === 'multi_select') {
+    const values = value.split(',').map((item) => item.trim()).filter(Boolean);
+    const options = property.multi_select?.options || [];
+    const missing = values.find((item) => !options.some((option: any) => option.name === item));
+    if (missing) {
+      throw new Error(`Notion 字段“${name}”没有“${missing}”选项。请先统一分类后再重试。`);
+    }
+    return { [name]: { multi_select: values.map((item) => ({ name: item })) } };
   }
   if (property.type === 'rich_text') return richTextProperty(schema, name, value);
   if (property.type === 'url') return { [name]: { url: value || null } };
@@ -420,8 +429,8 @@ async function buildPayload(apiKey: string) {
 const candidateTemplates: CandidateDraft[] = [
   {
     title: 'China-to-Saudi freight documents for commercial kitchen equipment: a shipment handover checklist',
-    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Commercial equipment freight',
-    audienceMarket: 'Saudi Arabia', searchIntent: 'Checklist',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
     primaryQuery: 'documents needed to ship commercial kitchen equipment from China to Saudi Arabia',
     coreAngle: 'handover checklist by shipment stage', contentType: 'Buyer Guide', candidateScore: 82,
     evidencePlan: 'Saudi official import/customs guidance, carrier documentation guidance, and a scope-confirmed freight record.',
@@ -429,8 +438,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'How to plan consolidation for restaurant equipment shipped from China to the UAE',
-    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Consolidation',
-    audienceMarket: 'United Arab Emirates', searchIntent: 'How-to guide',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
     primaryQuery: 'consolidate restaurant equipment shipments from China to UAE',
     coreAngle: 'packing sequence and shipment-ready decision points', contentType: 'Buyer Guide', candidateScore: 80,
     evidencePlan: 'UAE official import guidance, carrier packing constraints, and manufacturer packing specifications.',
@@ -438,8 +447,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Export packing requirements to confirm before shipping stainless kitchen worktables from China',
-    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: 'Export packing',
-    audienceMarket: 'Middle East and Africa', searchIntent: 'Checklist',
+    leadGoal: 'Freight Export', productCategory: 'Not Applicable', productSubcategory: '',
+    audienceMarket: 'Middle East, Africa', searchIntent: 'Buyer Guide',
     primaryQuery: 'export packing checklist stainless kitchen worktables from China',
     coreAngle: 'damage-risk controls before container loading', contentType: 'Buyer Guide', candidateScore: 78,
     evidencePlan: 'Carrier cargo packaging rules, destination-market wood-packaging requirements, and supplier packing records.',
@@ -447,8 +456,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Commercial kitchen equipment RFQ from China: the specification fields buyers should send first',
-    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'RFQ and specification',
-    audienceMarket: 'Saudi Arabia', searchIntent: 'Template',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Stainless and Turnkey Kitchen',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
     primaryQuery: 'commercial kitchen equipment RFQ template China Saudi Arabia',
     coreAngle: 'market-bounded RFQ fields that reduce rework', contentType: 'Buyer Guide', candidateScore: 84,
     evidencePlan: 'Applicable Saudi conformity source, manufacturer data sheets from multiple suppliers, and confirmed buyer requirements.',
@@ -456,8 +465,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'How to compare Chinese commercial upright refrigerator suppliers for a restaurant project',
-    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Commercial refrigeration',
-    audienceMarket: 'United Arab Emirates', searchIntent: 'Comparison',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Commercial Refrigeration',
+    audienceMarket: 'Middle East', searchIntent: 'Comparison',
     primaryQuery: 'compare commercial upright refrigerator suppliers China UAE restaurant',
     coreAngle: 'comparable capacity, climate class and service fields', contentType: 'Buyer Guide', candidateScore: 81,
     evidencePlan: 'Applicable electrical/product requirements plus comparable manufacturer technical sheets; no performance claims without test records.',
@@ -465,8 +474,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Commercial meat slicer sourcing from China: how to write a market-specific buyer brief',
-    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Food preparation equipment',
-    audienceMarket: 'Africa', searchIntent: 'How-to guide',
+    leadGoal: 'Product Sourcing', productCategory: 'Commercial Kitchen Equipment', productSubcategory: 'Food Preparation',
+    audienceMarket: 'Africa', searchIntent: 'Buyer Guide',
     primaryQuery: 'commercial meat slicer sourcing China buyer brief Africa',
     coreAngle: 'intended use, power supply and safety information before supplier comparison', contentType: 'Buyer Guide', candidateScore: 77,
     evidencePlan: 'Destination-market safety requirements, supplier manuals from multiple manufacturers, and verified power-supply requirements.',
@@ -474,8 +483,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Outdoor portable refrigerator sourcing from China: a buyer checklist for the UAE',
-    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor and portable refrigerators',
-    audienceMarket: 'United Arab Emirates', searchIntent: 'Checklist',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor and Portable Refrigeration',
+    audienceMarket: 'Middle East', searchIntent: 'Buyer Guide',
     primaryQuery: 'outdoor portable refrigerator sourcing China UAE buyer checklist',
     coreAngle: 'temperature range, power inputs and transport packaging before RFQ', contentType: 'Buyer Guide', candidateScore: 83,
     evidencePlan: 'Applicable UAE market requirements, multiple supplier data sheets, and test/inspection evidence only when supplied.',
@@ -483,7 +492,7 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'How to compare insulated cooler box suppliers in China for outdoor distribution',
-    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Insulated cooler boxes',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Insulated Coolers',
     audienceMarket: 'Middle East', searchIntent: 'Comparison',
     primaryQuery: 'compare insulated cooler box suppliers China Middle East',
     coreAngle: 'material, dimensions, temperature-test method and packaging comparison', contentType: 'Buyer Guide', candidateScore: 79,
@@ -492,8 +501,8 @@ const candidateTemplates: CandidateDraft[] = [
   },
   {
     title: 'Outdoor barbecue grill sourcing from China: how buyers can compare fuel, material and market scope',
-    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor barbecue grills',
-    audienceMarket: 'Saudi Arabia', searchIntent: 'Comparison',
+    leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor Grills',
+    audienceMarket: 'Middle East', searchIntent: 'Comparison',
     primaryQuery: 'outdoor barbecue grill sourcing China Saudi Arabia comparison',
     coreAngle: 'fuel type, material and market-specific compliance questions', contentType: 'Buyer Guide', candidateScore: 78,
     evidencePlan: 'Applicable Saudi product requirements, multiple manufacturer data sheets and verified materials documentation.',
