@@ -163,6 +163,9 @@ type CandidatePreview = {
   duplicateDecision: string;
   duplicateNotes: string;
   matchedRecord: { id: string; title: string; kind: string } | null;
+  whyNow?: string;
+  signalClass?: string;
+  signalUrls?: string[];
 };
 
 type WorkflowStatus = {
@@ -276,7 +279,7 @@ const tabGuidance: Record<TabKey, { purpose: string; focus: string; action: stri
   },
   generator: {
     purpose: '按六个步骤完成本周选题、研究、写作、预览和人工发布。',
-    focus: '系统组织研究与起草流程；当前安全模板模式不会伪造正文，专业审核和 Published 必须由你完成。',
+    focus: '系统先隐藏重复候选并标出近期信号；信号只用于发现角度，专业事实、审核和 Published 必须由你确认。',
     action: '从当前最靠前、且标记为“可以继续”的步骤开始。',
   },
   articles: {
@@ -302,7 +305,7 @@ const tabGuidance: Record<TabKey, { purpose: string; focus: string; action: stri
 };
 
 const generatorSteps = [
-  { step: '01', title: '生成候选', owner: '自动化', body: '每周先提出 8–12 个候选，并保存全部决定。' },
+  { step: '01', title: '生成候选', owner: '自动化', body: '每周提出 8–12 个未重复候选，显示“为什么现在”；可换一批。' },
   { step: '02', title: '选择三篇', owner: '你确认', body: '选择货运、商厨、户外各一篇，低于 75 分不进入研究。' },
   { step: '03', title: '搜集证据', owner: '自动化 + 研究员', body: '创建研究请求，并把每个重要论点分别写入证据账本。' },
   { step: '04', title: '生成文章', owner: '自动化 + 研究员', body: '按 Brief 完成结构、正文、来源、图片方案和 CTA；未连接可信模型时不会伪造正文。' },
@@ -543,6 +546,8 @@ export default function ContentOpsDashboard() {
   const [workflowStatus, setWorkflowStatus] = useState<WorkflowStatus | null>(null);
   const [candidatePreview, setCandidatePreview] = useState<CandidatePreview[]>([]);
   const [candidateWarning, setCandidateWarning] = useState('');
+  const [candidateBatch, setCandidateBatch] = useState(0);
+  const [candidateHasMore, setCandidateHasMore] = useState(true);
   const [acknowledgeTemplates, setAcknowledgeTemplates] = useState(false);
   const [selectedCandidateIds, setSelectedCandidateIds] = useState<Record<string, string>>({});
   const [workflowLoading, setWorkflowLoading] = useState('');
@@ -608,13 +613,21 @@ export default function ContentOpsDashboard() {
     const payload = await runWorkflowAction<{
       warning: string;
       candidates: CandidatePreview[];
-    }>('candidate-preview', '/workflow/candidates');
+      batch: number;
+      nextBatch: number | null;
+      availableCount: number;
+      rejectedCount: number;
+    }>('candidate-preview', '/workflow/candidates', { batch: candidateBatch });
     if (!payload) return;
     setCandidatePreview(payload.candidates);
     setCandidateWarning(payload.warning);
+    setCandidateBatch(payload.nextBatch ?? payload.batch);
+    setCandidateHasMore(payload.nextBatch !== null);
     setAcknowledgeTemplates(false);
-    setWorkflowMessage('已完成模板候选预览和机械查重；尚未向 Notion 写入任何记录。');
-  }, [runWorkflowAction]);
+    setWorkflowMessage(payload.candidates.length
+      ? `已显示 ${payload.candidates.length} 个未被精确查重拦截的候选；另有 ${payload.rejectedCount} 个已存在模板自动隐藏。尚未写入 Notion。`
+      : payload.warning);
+  }, [candidateBatch, runWorkflowAction]);
 
   const persistCandidates = useCallback(async () => {
     if (!acknowledgeTemplates) {
@@ -624,13 +637,19 @@ export default function ContentOpsDashboard() {
     const payload = await runWorkflowAction<{ warning: string; created: Array<{ title: string }> }>(
       'candidate-persist',
       '/workflow/candidates',
-      { persist: true, acknowledgeTemplateCandidates: true },
+      {
+        persist: true,
+        acknowledgeTemplateCandidates: true,
+        candidateTopicKeys: candidatePreview.map((candidate) => candidate.topicKey),
+      },
     );
     if (!payload) return;
     setWorkflowMessage(`${payload.created.length} 个候选及其查重审计已保存。下一步请选择三类各一篇。`);
     setCandidatePreview([]);
+    setCandidateBatch(0);
+    setCandidateHasMore(true);
     await Promise.all([loadData(true), loadWorkflowStatus()]);
-  }, [acknowledgeTemplates, loadData, loadWorkflowStatus, runWorkflowAction]);
+  }, [acknowledgeTemplates, candidatePreview, loadData, loadWorkflowStatus, runWorkflowAction]);
 
   const selectWeeklyCandidates = useCallback(async () => {
     const topicIds = ['Freight Export', 'Commercial Kitchen Equipment', 'Outdoor Products']
@@ -1283,8 +1302,31 @@ export default function ContentOpsDashboard() {
                       </div>
                       <DecisionBadge
                         state="continue"
-                        reason={workflowStatus?.capabilities.modelConnected ? '研究模型已连接，可以按闸门继续' : '安全模板模式可继续：当前只生成模板与工作请求，不会伪造研究正文'}
+                        reason={workflowStatus?.capabilities.modelConnected ? '研究模型已连接，可以按闸门继续' : '信号候选模式可继续：发现角度不等于已核验事实'}
                       />
+                    </section>
+
+                    <section className="border border-slate-300 bg-[#fffaf0] px-5 py-5">
+                      <div className="grid gap-5 lg:grid-cols-[1fr_1.4fr] lg:items-start">
+                        <div>
+                          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-amber-800">选题雷达 · 先看信号再写标题</p>
+                          <h2 className="mt-1 text-xl font-black text-slate-950">近期关注度来自“变化 + 决策 + 时间窗口”</h2>
+                          <p className="mt-2 text-sm leading-6 text-slate-600">候选卡会说明“为什么现在”。新闻或法规信号只负责发现角度；没有改变成本、流程、风险或产品选择时，应更新旧文，不应新建年份文章。</p>
+                        </div>
+                        <div className="grid gap-3 sm:grid-cols-2">
+                          {[
+                            ['一手需求', 'Search Console 上升查询、询价表、WhatsApp 和报价问题最接近真实客户。'],
+                            ['官方变化', '海关、承运人、港口、SASO/标准机构的新规则与服务变化。'],
+                            ['季节窗口', '海湾高温、户外采购季、酒店项目交付期等会改变选型与采购时间。'],
+                            ['转化判断', '题目必须自然落到运价、采购、验货、集货或出口服务 CTA。'],
+                          ].map(([title, body]) => (
+                            <div key={title} className="border-l-2 border-amber-500 pl-3">
+                              <p className="text-xs font-black text-slate-900">{title}</p>
+                              <p className="mt-1 text-xs leading-5 text-slate-600">{body}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
                     </section>
 
                     {(workflowError || workflowMessage) && (
@@ -1305,7 +1347,7 @@ export default function ContentOpsDashboard() {
                         <div className="font-mono text-4xl font-black text-amber-600">01</div>
                         <div>
                           <h2 className="text-xl font-black">生成并预览 8–12 个候选</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">先做机械查重，只在你明确确认后才把候选和审计写入 Notion。</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">先隐藏已存在的 Topic Key / Primary Query，再显示未重复候选；只有你确认后才写入 Notion。</p>
                         </div>
                         <button
                           type="button"
@@ -1314,9 +1356,16 @@ export default function ContentOpsDashboard() {
                           className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#0b4f8a] px-4 text-sm font-black text-white hover:bg-[#083b68] disabled:bg-slate-300"
                         >
                           {workflowLoading === 'candidate-preview' ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <WandSparkles className="h-4 w-4" />}
-                          预览本周候选
+                          {candidatePreview.length
+                            ? candidateHasMore ? '换一批未重复候选' : '重新检查当前批次'
+                            : '预览本周候选'}
                         </button>
                       </div>
+                      {selectedTopics.length === 3 && (
+                        <div className="border-b border-sky-200 bg-sky-50 px-5 py-3 text-sm font-bold leading-6 text-sky-900">
+                          本周 1 + 1 + 1 已经选完。这里的新候选只作为下周备选，不会替换当前三篇；当前任务请继续第 3 步创建研究文章。
+                        </div>
+                      )}
                       {candidatePreview.length > 0 && (
                         <div className="px-5 py-5">
                           <div className="border-l-4 border-amber-500 bg-amber-50 px-4 py-3 text-sm font-bold leading-6 text-amber-950">
@@ -1331,11 +1380,24 @@ export default function ContentOpsDashboard() {
                                 </div>
                                 <h3 className="mt-3 text-sm font-black leading-6">{candidate.title}</h3>
                                 <p className="mt-2 text-xs leading-5 text-slate-600">{candidate.audienceMarket} · {candidate.searchIntent}</p>
+                                {candidate.whyNow && (
+                                  <div className="mt-3 border-l-2 border-amber-500 bg-amber-50 px-3 py-2">
+                                    <p className="text-[10px] font-black uppercase tracking-[0.14em] text-amber-800">为什么现在 · {candidate.signalClass || '需求信号'}</p>
+                                    <p className="mt-1 text-xs leading-5 text-slate-700">{candidate.whyNow}</p>
+                                  </div>
+                                )}
                                 <p className="mt-2 text-xs leading-5 text-slate-500">{candidate.duplicateNotes}</p>
                                 <details className="mt-3 border-t border-slate-200 pt-3 text-xs text-slate-600">
                                   <summary className="cursor-pointer font-black text-[#0b4f8a]">查看证据计划和引用资产</summary>
                                   <p className="mt-2 leading-5"><strong>证据：</strong>{candidate.evidencePlan}</p>
                                   <p className="mt-2 leading-5"><strong>引用资产：</strong>{candidate.citationAsset}</p>
+                                  {!!candidate.signalUrls?.length && (
+                                    <p className="mt-2 leading-5">
+                                      <strong>发现信号：</strong>{candidate.signalUrls.map((url, index) => (
+                                        <span key={url}>{index > 0 ? ' · ' : ''}<a href={url} target="_blank" rel="noreferrer" className="font-bold text-[#0b4f8a] underline">官方来源 {index + 1}</a></span>
+                                      ))}
+                                    </p>
+                                  )}
                                 </details>
                               </article>
                             ))}
