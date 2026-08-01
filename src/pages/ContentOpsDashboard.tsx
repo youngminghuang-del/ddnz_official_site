@@ -553,6 +553,7 @@ export default function ContentOpsDashboard() {
   const [workflowLoading, setWorkflowLoading] = useState('');
   const [workflowMessage, setWorkflowMessage] = useState('');
   const [workflowError, setWorkflowError] = useState('');
+  const [articleActionFeedback, setArticleActionFeedback] = useState<Record<string, { tone: 'error' | 'success'; message: string }>>({});
   const [brief, setBrief] = useState<ArticleBrief | null>(null);
 
   const loadData = useCallback(async (force = false) => {
@@ -588,6 +589,7 @@ export default function ContentOpsDashboard() {
     key: string,
     path: string,
     body: Record<string, unknown> = {},
+    onError?: (message: string) => void,
   ): Promise<T | null> => {
     setWorkflowLoading(key);
     setWorkflowError('');
@@ -602,7 +604,9 @@ export default function ContentOpsDashboard() {
       if (!response.ok) throw new Error(payload.error || '操作未完成');
       return payload as T;
     } catch (workflowActionError) {
-      setWorkflowError(workflowActionError instanceof Error ? workflowActionError.message : '操作未完成');
+      const message = workflowActionError instanceof Error ? workflowActionError.message : '操作未完成';
+      setWorkflowError(message);
+      onError?.(message);
       return null;
     } finally {
       setWorkflowLoading('');
@@ -681,12 +685,28 @@ export default function ContentOpsDashboard() {
   }, [loadData, loadWorkflowStatus, runWorkflowAction]);
 
   const advanceArticle = useCallback(async (article: Article, action: string) => {
+    if (article.evidenceCount < 2) {
+      const message = `当前只有 ${article.evidenceCount}/2 条关联证据。请先在 Evidence Ledger 为本文补齐并关联至少 ${2 - article.evidenceCount} 条，再刷新证据数量。`;
+      setArticleActionFeedback((current) => ({ ...current, [article.id]: { tone: 'error', message } }));
+      setWorkflowError(message);
+      return;
+    }
+    setArticleActionFeedback((current) => {
+      const next = { ...current };
+      delete next[article.id];
+      return next;
+    });
     const payload = await runWorkflowAction<{ request: { instructions: string } }>(
       `advance-${article.id}`,
       `/workflow/article/${article.id}/advance`,
       { action },
+      (message) => setArticleActionFeedback((current) => ({ ...current, [article.id]: { tone: 'error', message } })),
     );
     if (!payload) return;
+    setArticleActionFeedback((current) => ({
+      ...current,
+      [article.id]: { tone: 'success', message: payload.request.instructions },
+    }));
     setWorkflowMessage(payload.request.instructions);
     await Promise.all([loadData(true), loadWorkflowStatus()]);
   }, [loadData, loadWorkflowStatus, runWorkflowAction]);
@@ -1504,36 +1524,53 @@ export default function ContentOpsDashboard() {
                         <div className="divide-y divide-slate-200">
                           {productionArticles.map((article) => {
                             const next = actionForArticle(article);
+                            const missingEvidence = Math.max(0, 2 - article.evidenceCount);
+                            const evidenceBlocked = !!next && missingEvidence > 0;
+                            const actionFeedback = articleActionFeedback[article.id];
                             return (
-                              <article key={article.id} className="grid gap-4 px-5 py-5 xl:grid-cols-[1fr_auto] xl:items-center">
-                                <div className="min-w-0">
-                                  <div className="flex flex-wrap items-center gap-2">
-                                    <ExternalLink href={article.url}>{article.title}</ExternalLink>
-                                    <Pill value={article.status} />
+                              <article key={article.id} className="px-5 py-5">
+                                <div className="grid gap-4 xl:grid-cols-[1fr_auto] xl:items-center">
+                                  <div className="min-w-0">
+                                    <div className="flex flex-wrap items-center gap-2">
+                                      <ExternalLink href={article.url}>{article.title}</ExternalLink>
+                                      <Pill value={article.status} />
+                                    </div>
+                                    <p className="mt-2 text-xs text-slate-500">证据 {article.evidenceCount}/2 · Quality {article.qualityScore ?? '—'}/100 · {reviewerLabel(article)}</p>
                                   </div>
-                                  <p className="mt-2 text-xs text-slate-500">证据 {article.evidenceCount} · Quality {article.qualityScore ?? '—'}/100 · {reviewerLabel(article)}</p>
-                                </div>
-                                <div className="flex flex-wrap gap-2">
-                                  <button
-                                    type="button"
-                                    onClick={() => void loadBrief(article)}
-                                    disabled={!!workflowLoading}
-                                    className="inline-flex min-h-10 items-center gap-1.5 border border-slate-400 px-3 text-xs font-black text-slate-700 hover:bg-slate-50"
-                                  >
-                                    {workflowLoading === `brief-${article.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <BookOpenText className="h-4 w-4" />}
-                                    研究/写作 Brief
-                                  </button>
-                                  {next ? (
+                                  <div className="flex flex-wrap gap-2">
                                     <button
                                       type="button"
-                                      onClick={() => void advanceArticle(article, next.action)}
+                                      onClick={() => void loadBrief(article)}
                                       disabled={!!workflowLoading}
-                                      className="inline-flex min-h-10 items-center gap-1.5 bg-[#0b4f8a] px-3 text-xs font-black text-white hover:bg-[#083b68] disabled:bg-slate-300"
+                                      className="inline-flex min-h-10 items-center gap-1.5 border border-slate-400 px-3 text-xs font-black text-slate-700 hover:bg-slate-50 disabled:opacity-50"
                                     >
-                                      {workflowLoading === `advance-${article.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
-                                      {next.label}
+                                      {workflowLoading === `brief-${article.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <BookOpenText className="h-4 w-4" />}
+                                      研究/写作 Brief
                                     </button>
-                                  ) : (
+                                    {evidenceBlocked ? (
+                                      <>
+                                        <ExternalLink href={data.links.evidence}>打开证据账本补齐 {missingEvidence} 条</ExternalLink>
+                                        <button
+                                          type="button"
+                                          onClick={() => void Promise.all([loadData(true), loadWorkflowStatus()])}
+                                          disabled={refreshing || !!workflowLoading}
+                                          className="inline-flex min-h-10 items-center gap-1.5 bg-amber-600 px-3 text-xs font-black text-white hover:bg-amber-700 disabled:bg-slate-300"
+                                        >
+                                          {refreshing ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
+                                          已在 Notion 补齐，刷新数量
+                                        </button>
+                                      </>
+                                    ) : next ? (
+                                      <button
+                                        type="button"
+                                        onClick={() => void advanceArticle(article, next.action)}
+                                        disabled={!!workflowLoading}
+                                        className="inline-flex min-h-10 items-center gap-1.5 bg-[#0b4f8a] px-3 text-xs font-black text-white hover:bg-[#083b68] disabled:bg-slate-300"
+                                      >
+                                        {workflowLoading === `advance-${article.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
+                                        {next.label}
+                                      </button>
+                                    ) : (
                                     <button
                                       type="button"
                                       onClick={() => void openPreview(article.id)}
@@ -1541,8 +1578,19 @@ export default function ContentOpsDashboard() {
                                     >
                                       <Eye className="h-4 w-4" />进入最终网站预览
                                     </button>
-                                  )}
+                                    )}
+                                  </div>
                                 </div>
+                                {evidenceBlocked && (
+                                  <div className="mt-4 border-l-4 border-amber-500 bg-amber-50 px-4 py-3 text-xs leading-5 text-amber-950" role="status">
+                                    <strong>当前不能推进：</strong>本文只有 {article.evidenceCount}/2 条关联证据。请在 Evidence Ledger 中按“一条重要论点一行”新增记录，并在 <strong>Article</strong> 关系中选择本文；完成核验后点击“刷新数量”。
+                                  </div>
+                                )}
+                                {actionFeedback && (
+                                  <div className={`mt-4 border-l-4 px-4 py-3 text-xs leading-5 ${actionFeedback.tone === 'error' ? 'border-rose-600 bg-rose-50 text-rose-950' : 'border-emerald-600 bg-emerald-50 text-emerald-950'}`} role="status">
+                                    {actionFeedback.message}
+                                  </div>
+                                )}
                               </article>
                             );
                           })}
