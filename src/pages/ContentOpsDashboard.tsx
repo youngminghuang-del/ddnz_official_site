@@ -1610,15 +1610,14 @@ export default function ContentOpsDashboard() {
                                         {workflowLoading === `advance-${article.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <ArrowRight className="h-4 w-4" />}
                                         {next.label}
                                       </button>
-                                    ) : (
+                                    ) : null}
                                     <button
                                       type="button"
                                       onClick={() => void openPreview(article.id)}
                                       className="inline-flex min-h-10 items-center gap-1.5 bg-amber-600 px-3 text-xs font-black text-white hover:bg-amber-700"
                                     >
-                                      <Eye className="h-4 w-4" />进入最终网站预览
+                                      <Eye className="h-4 w-4" />{evidenceBlocked || next ? '预览当前草稿' : '进入最终网站预览'}
                                     </button>
-                                    )}
                                   </div>
                                 </div>
                                 {evidenceBlocked && (
