@@ -696,11 +696,11 @@ async function prepareResearchArticle(apiKey: string, topicId: string) {
     ...richTextProperty(articleSchema, 'Primary Query', mappedTopic.primaryQuery),
     ...richTextProperty(articleSchema, 'Topic Key', mappedTopic.topicKey),
     ...textOrSelectProperty(articleSchema, 'Content Type', 'Buyer Guide'),
-    ...richTextProperty(articleSchema, 'Primary CTA', mappedTopic.productCategory === 'Outdoor Products'
-      ? '/sourcing/outdoor-products-from-china'
+    ...textOrSelectProperty(articleSchema, 'Primary CTA', mappedTopic.productCategory === 'Outdoor Products'
+      ? 'Outdoor Products Sourcing'
       : mappedTopic.productCategory === 'Commercial Kitchen Equipment'
-        ? '/sourcing/commercial-kitchen-equipment-from-china'
-        : '/get-a-quote'),
+        ? 'Commercial Kitchen Sourcing'
+        : 'Freight Quote'),
     ...relationProperty(articleSchema, 'Topic Record', [topic.id]),
   };
   const article = (await notionFetch(apiKey, '/v1/pages', {
