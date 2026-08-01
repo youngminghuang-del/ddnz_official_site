@@ -2,6 +2,7 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import {defineConfig, loadEnv} from 'vite';
+import { createContentOpsApiPlugin } from './scripts/content-ops-api';
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => {
@@ -17,6 +18,7 @@ export default defineConfig(({mode}) => {
     plugins: [
       react(),
       tailwindcss(),
+      createContentOpsApiPlugin(env.NOTION_API_KEY),
       {
         name: 'html-hreflang-injector',
         transformIndexHtml(html) {

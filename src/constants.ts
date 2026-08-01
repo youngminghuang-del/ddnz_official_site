@@ -20,7 +20,7 @@ export const IMAGES = {
   AIR_FREIGHT: "business_air_freight.png",
   FACILITY_SORT: "facility_warehouse_sorting.png",
   FACILITY_TEAM: "facility_warehouse_team.png",
-  JOURNEY_2019: "team_meeting_professional.png",
+  JOURNEY_2019: "/images/cargo-inspection-origin-operations.webp",
   ESS_STORAGE: "service_nev_ess_storage.png",
   INSPECTION: "container_loading_inspection.png",
   LOGO_WALL: "brand_logo_wall.png",

@@ -9,17 +9,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import { getImgUrl } from "../constants";
 import SchemaMarkup from "../components/SchemaMarkup";
 import SEO from "../components/SEO";
-
-interface BlogPost {
-  id: string;
-  slug?: string;
-  title: string;
-  category: string;
-  date: string;
-  summary: string;
-  thumbnailUrl: string;
-  language?: string;
-}
+import type { BlogPost } from "../types/content";
 
 export default function InsightsHub() {
   const { language, t } = useLanguage();
@@ -202,7 +192,7 @@ export default function InsightsHub() {
                       />
                       <div className="absolute top-4 left-4 bg-white/95 backdrop-blur-sm shadow px-3 py-1.5 rounded-xl flex items-center gap-1.5 z-10 text-[10px] font-black text-[#4B27B1] uppercase tracking-wider">
                         <Tag className="w-3 h-3 text-[#FF8A00]" />
-                        <span>{post.category}</span>
+                        <span>{post.contentType || post.category}</span>
                       </div>
                       <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm px-2.5 py-1.5 rounded-lg z-10 text-[10px] font-black text-white tracking-wider">
                         {languageLabels[post.language || 'en'] || (post.language || 'en').toUpperCase()}
@@ -215,6 +205,7 @@ export default function InsightsHub() {
                         <div className="flex items-center text-slate-400 font-mono text-[11px] mb-3 uppercase tracking-wider font-bold">
                           <Calendar className="w-3.5 h-3.5 mr-1.5 text-purple-300" />
                           {post.date}
+                          {post.audienceMarket && <span className="ml-2">· {post.audienceMarket}</span>}
                         </div>
 
                         {/* Title Link */}
@@ -239,7 +230,7 @@ export default function InsightsHub() {
                         
                         <div className="flex items-center gap-1 text-slate-300 text-xs font-mono font-bold">
                           <Clock className="w-3.5 h-3.5" />
-                          <span>{t('insights.read_time')}</span>
+                          <span>{post.readMinutes || 5} min</span>
                         </div>
                       </div>
                     </div>

@@ -1,376 +1,524 @@
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
-import { generateSlug, downloadNotionImage } from "./notion-img-sync";
+import { downloadNotionImage, generateSlug } from "./notion-img-sync";
 
-// Local development uses an ignored .env.local file, while GitHub Actions
-// supplies the same values through repository secrets.
 dotenv.config({ path: ".env.local" });
 
 const NOTION_API_KEY = process.env.NOTION_API_KEY;
 const NOTION_DATABASE_ID = process.env.NOTION_DATABASE_ID;
+const STRICT_SYNC = process.env.CI === "true" || process.env.STRICT_NOTION_SYNC === "true";
 
 const outputFilePath = path.join(process.cwd(), "src", "data", "notionBlogData.json");
+const redirectFilePath = path.join(process.cwd(), "src", "data", "notionRedirects.json");
 const fallbackFilePath = path.join(process.cwd(), "src", "data", "blogData.json");
+const fallbackCover =
+  "https://images.unsplash.com/photo-1474487585647-984bb91ffec9?q=80&w=2000&auto=format&fit=crop";
 
-// Helper to write fallback data
-const writeFallbackData = () => {
-  console.log("Writing fallback blog data to notionBlogData.json...");
-  try {
-    if (fs.existsSync(fallbackFilePath)) {
-      const raw = fs.readFileSync(fallbackFilePath, "utf-8");
-      const fallbackPosts = JSON.parse(raw);
-      const mappedPosts = fallbackPosts.map((p: any) => {
-        return {
-          ...p,
-          slug: p.slug || generateSlug(p.title, p.id)
-        };
-      });
-      fs.writeFileSync(outputFilePath, JSON.stringify(mappedPosts, null, 2), "utf-8");
-      console.log("Successfully wrote offline fallback blog posts with generated slugs to destination.");
-    } else {
-      fs.writeFileSync(outputFilePath, "[]", "utf-8");
-      console.warn("Fallback blogData.json not found! Wrote empty array.");
-    }
-  } catch (err) {
-    console.error("Failed to write offline fallback blog data:", err);
-  }
+type TocItem = {
+  id: string;
+  text: string;
+  level: 2 | 3;
 };
 
-// Directly fetch Notion REST API
-const fetchNotion = async (endpoint: string, options: any = {}) => {
-  const url = `https://api.notion.com${endpoint}`;
-  const response = await fetch(url, {
-    method: options.method || "GET",
-    headers: {
-      "Authorization": `Bearer ${NOTION_API_KEY}`,
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json",
-      ...options.headers
-    },
-    body: options.body ? JSON.stringify(options.body) : undefined
-  });
+type RenderContext = {
+  articleTitle: string;
+  imageIndex: number;
+  slug: string;
+  toc: TocItem[];
+  usedHeadingIds: Set<string>;
+  words: string[];
+};
 
-  if (!response.ok) {
-    const errText = await response.text();
-    throw new Error(`Notion API error ${response.status}: ${errText}`);
+const escapeHtml = (value: string) =>
+  value
+    .replaceAll("&", "&amp;")
+    .replaceAll("<", "&lt;")
+    .replaceAll(">", "&gt;")
+    .replaceAll('"', "&quot;")
+    .replaceAll("'", "&#039;");
+
+const escapeAttribute = (value: string) => escapeHtml(value).replaceAll("`", "&#096;");
+
+const plainText = (richText: any[] = []) =>
+  richText.map((item) => item?.plain_text || "").join("").trim();
+
+const propertyText = (property: any) => {
+  if (!property) return "";
+  if (property.type === "rich_text") return plainText(property.rich_text);
+  if (property.type === "title") return plainText(property.title);
+  if (property.type === "select") return property.select?.name || "";
+  if (property.type === "status") return property.status?.name || "";
+  if (property.type === "multi_select") {
+    return (property.multi_select || []).map((item: any) => item.name).join(", ");
   }
-  return response.json();
+  if (property.type === "url") return property.url || "";
+  return "";
+};
+
+const propertyDate = (property: any) =>
+  property?.type === "date" ? property.date?.start || "" : "";
+
+const propertyNumber = (property: any) =>
+  property?.type === "number" && typeof property.number === "number"
+    ? property.number
+    : null;
+
+const propertyRelationIds = (property: any): string[] =>
+  property?.type === "relation"
+    ? (property.relation || []).map((item: any) => item.id).filter(Boolean)
+    : [];
+
+const propertyPeople = (property: any): string[] =>
+  property?.type === "people"
+    ? (property.people || [])
+        .map((person: any) => person.name || person.person?.email || "")
+        .filter(Boolean)
+    : [];
+
+const stableHeadingId = (text: string, context: RenderContext) => {
+  const base =
+    text
+      .toLowerCase()
+      .normalize("NFKD")
+      .replace(/[^\p{L}\p{N}]+/gu, "-")
+      .replace(/^-+|-+$/g, "")
+      .slice(0, 72) || "section";
+  let id = base;
+  let suffix = 2;
+  while (context.usedHeadingIds.has(id)) {
+    id = `${base}-${suffix++}`;
+  }
+  context.usedHeadingIds.add(id);
+  return id;
+};
+
+const rememberWords = (context: RenderContext, value: string) => {
+  if (value.trim()) context.words.push(value.trim());
 };
 
 function formatRichText(richText: any): string {
-  if (!richText || !richText.plain_text) return "";
-  let text = richText.plain_text;
-  
+  if (!richText?.plain_text) return "";
+  let text = escapeHtml(richText.plain_text);
+
+  if (richText.annotations?.code) text = `<code>${text}</code>`;
   if (richText.annotations?.bold) text = `<strong>${text}</strong>`;
   if (richText.annotations?.italic) text = `<em>${text}</em>`;
   if (richText.annotations?.strikethrough) text = `<del>${text}</del>`;
   if (richText.annotations?.underline) text = `<u>${text}</u>`;
-  if (richText.annotations?.code) text = `<code>${text}</code>`;
-  
+
   if (richText.href) {
-    text = `<a href="${richText.href}" target="_blank" rel="noopener noreferrer" class="text-[#FF8A00] underline font-medium hover:text-[#4B27B1] transition-colors">${text}</a>`;
+    const href = escapeAttribute(richText.href);
+    const external = /^https?:\/\//i.test(richText.href);
+    text = `<a href="${href}"${external ? ' target="_blank" rel="noopener noreferrer"' : ""}>${text}</a>`;
   }
   return text;
 }
 
-async function getPageContentHtml(pageId: string, slug: string, propertyContent?: string): Promise<string> {
-  let html = propertyContent || "";
+const formatRichTextArray = (richText: any[] = []) =>
+  richText.map((item) => formatRichText(item)).join("");
 
-  try {
-    const blocksResponse = await fetchNotion(`/v1/blocks/${pageId}/children`);
-    const blocks = blocksResponse.results;
-    
-    let listOpen = false;
-    let listType = ""; // "ul" or "ol"
-    let imageIndex = 1;
+const fetchNotion = async (endpoint: string, options: Record<string, any> = {}) => {
+  const response = await fetch(`https://api.notion.com${endpoint}`, {
+    method: options.method || "GET",
+    headers: {
+      Authorization: `Bearer ${NOTION_API_KEY}`,
+      "Notion-Version": "2022-06-28",
+      "Content-Type": "application/json",
+      ...options.headers,
+    },
+    body: options.body ? JSON.stringify(options.body) : undefined,
+  });
 
-    for (const block of blocks as any[]) {
-      const type = block.type;
-      
-      // Close list if current block is not list_item of the same type
-      if (listOpen && type !== "bulleted_list_item" && type !== "numbered_list_item") {
-        html += `</${listType}>`;
-        listOpen = false;
-      }
+  if (!response.ok) {
+    throw new Error(`Notion API error ${response.status}: ${await response.text()}`);
+  }
+  return response.json();
+};
 
-      if (type === "paragraph") {
-        const text = block.paragraph.rich_text.map((r: any) => formatRichText(r)).join("");
-        html += `<p>${text}</p>`;
-      } else if (type === "heading_1") {
-        const text = block.heading_1.rich_text.map((r: any) => r.plain_text).join("");
-        html += `<h2>${text}</h2>`;
-      } else if (type === "heading_2") {
-        const text = block.heading_2.rich_text.map((r: any) => r.plain_text).join("");
-        html += `<h3>${text}</h3>`;
-      } else if (type === "heading_3") {
-        const text = block.heading_3.rich_text.map((r: any) => r.plain_text).join("");
-        html += `<h4>${text}</h4>`;
-      } else if (type === "bulleted_list_item") {
-        if (!listOpen || listType !== "ul") {
-          if (listOpen) { html += `</${listType}>`; }
-          html += "<ul>";
-          listOpen = true;
-          listType = "ul";
-        }
-        const text = block.bulleted_list_item.rich_text.map((r: any) => formatRichText(r)).join("");
-        html += `<li>${text}</li>`;
-      } else if (type === "numbered_list_item") {
-        if (!listOpen || listType !== "ol") {
-          if (listOpen) { html += `</${listType}>`; }
-          html += "<ol>";
-          listOpen = true;
-          listType = "ol";
-        }
-        const text = block.numbered_list_item.rich_text.map((r: any) => formatRichText(r)).join("");
-        html += `<li>${text}</li>`;
-      } else if (type === "image") {
-        const imageUrl = block.image.type === "external" ? block.image.external.url : block.image.file?.url;
-        if (imageUrl) {
-          const localUrl = await downloadNotionImage(imageUrl, slug, imageIndex++);
-          html += `<div class="my-6 rounded-2xl overflow-hidden shadow-md"><img src="${localUrl}" alt="Notion Image" class="w-full object-cover max-h-[500px]" referrerPolicy="no-referrer" /></div>`;
-        }
-      } else if (type === "table") {
-        try {
-          const rowsResponse = await fetchNotion(`/v1/blocks/${block.id}/children`);
-          html += `<table class="min-w-full border-collapse border border-slate-200 mt-4 mb-8 text-sm">`;
-          let isHeader = true;
-          for (const row of rowsResponse.results as any[]) {
-            if (row.type === "table_row") {
-              html += `<tr>`;
-              for (const cell of row.table_row.cells) {
-                const cellText = cell.map((r: any) => formatRichText(r)).join("");
-                if (isHeader && block.table.has_column_header) {
-                  html += `<th class="border border-slate-200 bg-slate-50 p-3 text-left font-bold">${cellText}</th>`;
-                } else {
-                  html += `<td class="border border-slate-200 p-3">${cellText}</td>`;
-                }
-              }
-              html += `</tr>`;
-              isHeader = false;
-            }
-          }
-          html += `</table>`;
-        } catch (tableErr) {
-          console.error("Error loading Notion table block:", tableErr);
-        }
-      } else if (type === "code") {
-        const text = block.code.rich_text.map((r: any) => r.plain_text).join("");
-        html += `<pre><code>${text}</code></pre>`;
-      } else if (type === "quote") {
-        const text = block.quote.rich_text.map((r: any) => formatRichText(r)).join("");
-        html += `<div class="bg-purple-50 p-6 rounded-xl border-l-4 border-[#4B27B1] italic my-6"><p class="text-slate-700">"${text}"</p></div>`;
-      } else if (type === "callout") {
-        const text = block.callout.rich_text.map((r: any) => formatRichText(r)).join("");
-        html += `<div class="bg-purple-50 p-6 rounded-xl border border-purple-100 my-6"><h4 class="text-[#4B27B1] font-bold mb-2">Notice</h4><p class="text-slate-700">${text}</p></div>`;
-      }
-    }
-    
-    if (listOpen) {
+async function fetchAllDatabasePages() {
+  const pages: any[] = [];
+  let cursor: string | undefined;
+
+  do {
+    const response = await fetchNotion(`/v1/databases/${NOTION_DATABASE_ID}/query`, {
+      method: "POST",
+      body: {
+        page_size: 100,
+        ...(cursor ? { start_cursor: cursor } : {}),
+        sorts: [{ property: "Date", direction: "descending" }],
+      },
+    });
+    pages.push(...response.results);
+    cursor = response.has_more ? response.next_cursor : undefined;
+  } while (cursor);
+
+  return pages;
+}
+
+async function fetchAllBlockChildren(blockId: string) {
+  const blocks: any[] = [];
+  let cursor: string | undefined;
+
+  do {
+    const params = new URLSearchParams({ page_size: "100" });
+    if (cursor) params.set("start_cursor", cursor);
+    const response = await fetchNotion(`/v1/blocks/${blockId}/children?${params.toString()}`);
+    blocks.push(...response.results);
+    cursor = response.has_more ? response.next_cursor : undefined;
+  } while (cursor);
+
+  return blocks;
+}
+
+async function renderChildBlocks(block: any, context: RenderContext) {
+  if (!block.has_children) return "";
+  return renderBlocks(await fetchAllBlockChildren(block.id), context);
+}
+
+async function renderBlocks(blocks: any[], context: RenderContext): Promise<string> {
+  let html = "";
+  let listType: "ul" | "ol" | "" = "";
+
+  const closeList = () => {
+    if (listType) {
       html += `</${listType}>`;
+      listType = "";
     }
+  };
 
-    // Clean up any remaining secure.notion-static.com or amazonaws.com links from HTML
-    try {
-      let cleanHtml = html;
-      const imgRegex = /src=["'](https?:\/\/[^"']*(?:secure\.notion-static\.com|amazonaws\.com)[^"']*)["']/g;
-      let match;
-      let inlineIndex = 100;
-      const urlsToDownload: string[] = [];
-      while ((match = imgRegex.exec(html)) !== null) {
-        if (!urlsToDownload.includes(match[1])) {
-          urlsToDownload.push(match[1]);
-        }
+  for (const block of blocks) {
+    const type = block.type;
+    const isList = type === "bulleted_list_item" || type === "numbered_list_item";
+    const nextListType = type === "bulleted_list_item" ? "ul" : type === "numbered_list_item" ? "ol" : "";
+
+    if (!isList || (listType && listType !== nextListType)) closeList();
+
+    if (type === "paragraph") {
+      const text = plainText(block.paragraph.rich_text);
+      rememberWords(context, text);
+      const children = await renderChildBlocks(block, context);
+      html += `<p>${formatRichTextArray(block.paragraph.rich_text)}</p>${children}`;
+    } else if (type === "heading_1" || type === "heading_2" || type === "heading_3") {
+      const source = block[type];
+      const text = plainText(source.rich_text);
+      rememberWords(context, text);
+      const tag = type === "heading_1" ? "h2" : type === "heading_2" ? "h3" : "h4";
+      const id = stableHeadingId(text, context);
+      if (tag === "h2" || tag === "h3") {
+        context.toc.push({ id, text, level: tag === "h2" ? 2 : 3 });
       }
-      for (const url of urlsToDownload) {
-        const localUrl = await downloadNotionImage(url, slug, `inline-${inlineIndex++}`);
-        cleanHtml = cleanHtml.replaceAll(url, localUrl);
+      html += `<${tag} id="${escapeAttribute(id)}">${formatRichTextArray(source.rich_text)}</${tag}>`;
+    } else if (isList) {
+      if (!listType) {
+        listType = nextListType as "ul" | "ol";
+        html += `<${listType}>`;
       }
-      html = cleanHtml;
-    } catch (regexErr) {
-      console.error("Regex replacement error for inline images in page " + pageId, regexErr);
+      const source = block[type];
+      const text = plainText(source.rich_text);
+      rememberWords(context, text);
+      html += `<li>${formatRichTextArray(source.rich_text)}${await renderChildBlocks(block, context)}</li>`;
+    } else if (type === "image") {
+      const image = block.image;
+      const imageUrl = image.type === "external" ? image.external?.url : image.file?.url;
+      if (imageUrl) {
+        const caption = plainText(image.caption);
+        const alt = caption || `${context.articleTitle} — supporting image ${context.imageIndex}`;
+        const localUrl = await downloadNotionImage(imageUrl, context.slug, context.imageIndex++);
+        html += `<figure class="article-figure"><img src="${escapeAttribute(localUrl)}" alt="${escapeAttribute(alt)}" loading="lazy" referrerpolicy="no-referrer" />${
+          caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ""
+        }</figure>`;
+      }
+    } else if (type === "table") {
+      const rows = await fetchAllBlockChildren(block.id);
+      html += '<div class="article-table-wrap"><table><tbody>';
+      rows.forEach((row: any, rowIndex: number) => {
+        if (row.type !== "table_row") return;
+        html += "<tr>";
+        row.table_row.cells.forEach((cell: any[]) => {
+          const tag = rowIndex === 0 && block.table.has_column_header ? "th" : "td";
+          const text = plainText(cell);
+          rememberWords(context, text);
+          html += `<${tag}>${formatRichTextArray(cell)}</${tag}>`;
+        });
+        html += "</tr>";
+      });
+      html += "</tbody></table></div>";
+    } else if (type === "code") {
+      const text = plainText(block.code.rich_text);
+      rememberWords(context, text);
+      html += `<pre><code>${escapeHtml(text)}</code></pre>`;
+    } else if (type === "quote") {
+      const text = plainText(block.quote.rich_text);
+      rememberWords(context, text);
+      html += `<blockquote>${formatRichTextArray(block.quote.rich_text)}${await renderChildBlocks(block, context)}</blockquote>`;
+    } else if (type === "callout") {
+      const text = plainText(block.callout.rich_text);
+      rememberWords(context, text);
+      const emoji = block.callout.icon?.type === "emoji" ? block.callout.icon.emoji : "i";
+      html += `<aside class="article-callout"><span aria-hidden="true">${escapeHtml(emoji)}</span><div>${formatRichTextArray(
+        block.callout.rich_text,
+      )}${await renderChildBlocks(block, context)}</div></aside>`;
+    } else if (type === "divider") {
+      html += "<hr />";
+    } else if (type === "toggle") {
+      const text = plainText(block.toggle.rich_text);
+      rememberWords(context, text);
+      html += `<details><summary>${formatRichTextArray(block.toggle.rich_text)}</summary>${await renderChildBlocks(
+        block,
+        context,
+      )}</details>`;
+    } else if (type === "bookmark") {
+      const url = block.bookmark.url || "";
+      const caption = plainText(block.bookmark.caption) || url;
+      rememberWords(context, caption);
+      html += `<p><a href="${escapeAttribute(url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(
+        caption,
+      )}</a></p>`;
+    } else if (type === "column_list" || type === "column" || type === "synced_block") {
+      html += await renderChildBlocks(block, context);
     }
-  } catch (err) {
-    console.error("Error retrieving blocks for block_id: " + pageId, err);
   }
 
+  closeList();
   return html;
+}
+
+async function getPageContentHtml(
+  pageId: string,
+  slug: string,
+  articleTitle: string,
+  propertyContent = "",
+) {
+  const context: RenderContext = {
+    articleTitle,
+    imageIndex: 1,
+    slug,
+    toc: [],
+    usedHeadingIds: new Set<string>(),
+    words: [],
+  };
+
+  if (propertyContent) rememberWords(context, propertyContent);
+  let html = propertyContent ? `<p>${escapeHtml(propertyContent)}</p>` : "";
+  html += await renderBlocks(await fetchAllBlockChildren(pageId), context);
+
+  const combinedText = context.words.join(" ").trim();
+  const cjkCharacters = combinedText.match(/[\u3400-\u9fff]/g)?.length || 0;
+  const nonCjkText = combinedText.replace(/[\u3400-\u9fff]/g, " ");
+  const nonCjkWords =
+    nonCjkText.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu)?.length || 0;
+  const wordCount = nonCjkWords + Math.ceil(cjkCharacters / 2);
+  const readMinutes = Math.max(1, Math.ceil(wordCount / 220));
+
+  return { html, toc: context.toc, wordCount, readMinutes };
+}
+
+function writeFallbackData() {
+  if (STRICT_SYNC) {
+    throw new Error("Strict Notion sync failed; refusing to deploy stale fallback content.");
+  }
+
+  console.warn("Using local fallback blog data because Notion is unavailable.");
+  if (!fs.existsSync(fallbackFilePath)) {
+    fs.writeFileSync(outputFilePath, "[]", "utf-8");
+    fs.writeFileSync(redirectFilePath, "[]", "utf-8");
+    return;
+  }
+
+  const fallbackPosts = JSON.parse(fs.readFileSync(fallbackFilePath, "utf-8")).map((post: any) => ({
+    ...post,
+    slug: post.slug || generateSlug(post.title, post.id),
+    readMinutes: post.readMinutes || 5,
+    wordCount: post.wordCount || 0,
+    toc: post.toc || [],
+  }));
+  fs.writeFileSync(outputFilePath, JSON.stringify(fallbackPosts, null, 2), "utf-8");
+  fs.writeFileSync(redirectFilePath, "[]", "utf-8");
+}
+
+function auditGovernedArticle(post: any) {
+  if (!post.governed) return [];
+
+  const blockers: string[] = [];
+  const delegatedAutomatedApproval =
+    post.status === "Published" &&
+    !post.reviewer?.length &&
+    post.evidenceCount >= 2 &&
+    post.topicCount >= 1 &&
+    post.auditCount >= 1 &&
+    Boolean(post.lastVerified) &&
+    (post.qualityScore ?? 0) >= 85;
+  if (!post.topicKey) blockers.push("Topic Key is missing");
+  if (!post.summary) blockers.push("Excerpt/Summary is missing");
+  if (!post.lastVerified) blockers.push("Last Verified is missing");
+  if (!post.reviewer?.length && !delegatedAutomatedApproval) {
+    blockers.push("Reviewer or delegated automated approval is missing");
+  }
+  if (!post.primaryCTA) blockers.push("Primary CTA is missing");
+  if ((post.qualityScore ?? 0) < 85) blockers.push("Quality Score is below 85");
+  if (post.thumbnailUrl === fallbackCover) blockers.push("A rights-cleared cover image is missing");
+  if (!/<a\s+href="https?:\/\//i.test(post.content)) blockers.push("No external source link appears in the article");
+
+  const minimumEvidence = post.contentType === "Case Study" ? 1 : 2;
+  if (post.evidenceCount < minimumEvidence) {
+    blockers.push(`${minimumEvidence} linked Evidence Ledger record(s) required for ${post.contentType || "this article"}`);
+  }
+  if (post.topicCount < 1) blockers.push("A linked Topic Registry decision is required");
+  if (post.auditCount < 1) blockers.push("Article-linked audit history is required");
+
+  return blockers;
 }
 
 async function run() {
   if (!NOTION_API_KEY || !NOTION_DATABASE_ID) {
-    console.log("NOTION_API_KEY or NOTION_DATABASE_ID is missing from the environment.");
+    console.warn("NOTION_API_KEY or NOTION_DATABASE_ID is missing.");
     writeFallbackData();
     return;
   }
 
-  console.log(`Starting build-time fetch from Notion. Database: ${NOTION_DATABASE_ID}`);
+  console.log(`Starting auditable build-time fetch from Notion database ${NOTION_DATABASE_ID}.`);
+
   try {
-    let response;
-    try {
-      response = await fetchNotion(`/v1/databases/${NOTION_DATABASE_ID}/query`, {
-        method: "POST",
-        body: {
-          filter: {
-            property: "Status",
-            status: {
-              equals: "Published"
-            }
-          },
-          sorts: [
-            {
-              property: "Date",
-              direction: "descending"
-            }
-          ]
-        }
-      });
-    } catch (queryErr) {
-      console.warn("Standard filter query failed. Falling back to query without limit/status filter.", queryErr);
-      response = await fetchNotion(`/v1/databases/${NOTION_DATABASE_ID}/query`, {
-        method: "POST"
+    const pages = await fetchAllDatabasePages();
+    const pageMetadata = new Map<string, { slug: string; language: string; status: string; canonicalIds: string[] }>();
+
+    for (const page of pages) {
+      const properties = page.properties || {};
+      const titleProperty = Object.values(properties).find((property: any) => property.type === "title") as any;
+      const title = propertyText(titleProperty) || "Untitled";
+      const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
+      const language = propertyText(properties.Language || properties.language) || "en";
+      pageMetadata.set(page.id, {
+        slug,
+        language,
+        status: propertyText(properties.Status),
+        canonicalIds: propertyRelationIds(properties["Canonical Article"]),
       });
     }
 
-    const posts = [];
-    for (const page of response.results as any[]) {
-      const properties = page.properties;
-      
-      // Determine Status safely
-      let statusValue = "";
-      if (properties.Status) {
-        if (properties.Status.type === "status") {
-          statusValue = properties.Status.status?.name || "";
-        } else if (properties.Status.type === "select") {
-          statusValue = properties.Status.select?.name || "";
-        } else if (properties.Status.type === "rich_text") {
-          statusValue = properties.Status.rich_text.map((t: any) => t.plain_text).join("");
-        }
-      }
+    const posts: any[] = [];
+    for (const page of pages) {
+      const properties = page.properties || {};
+      if (propertyText(properties.Status) !== "Published") continue;
 
-      // If we did a full database query, filter out non-Published records manually
-      if (statusValue !== "Published") {
-        continue;
-      }
+      const titleProperty = Object.values(properties).find((property: any) => property.type === "title") as any;
+      const title = propertyText(titleProperty) || "Untitled";
+      const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
+      const category = propertyText(properties.Category || properties.category) || "Logistics";
+      const language = propertyText(properties.Language || properties.language) || "en";
+      const translationGroup = propertyText(properties["Translation Group"] || properties.translationGroup);
+      const date = propertyDate(properties.Date || properties.date) || page.created_time.split("T")[0];
+      const summary = propertyText(
+        properties.Excerpt ||
+          properties.excerpt ||
+          properties.Summary ||
+          properties.summary ||
+          properties.Description ||
+          properties.description,
+      );
 
-      // Parse Title
-      let title = "Untitled";
-      const titleProperty = Object.values(properties).find((p: any) => p.type === "title") as any;
-      if (titleProperty && titleProperty.title) {
-        title = titleProperty.title.map((t: any) => t.plain_text).join("") || "Untitled";
-      }
-
-      // Parse Category
-      let category = "Logistics";
-      const catProp = properties.Category || properties.category;
-      if (catProp) {
-        if (catProp.type === "select" && catProp.select) {
-          category = catProp.select.name;
-        } else if (catProp.type === "multi_select" && catProp.multi_select && catProp.multi_select.length > 0) {
-          category = catProp.multi_select.map((m: any) => m.name).join(", ");
-        } else if (catProp.type === "rich_text") {
-          category = catProp.rich_text.map((t: any) => t.plain_text).join("") || "Logistics";
-        }
-      }
-
-      // Language is the source language of this individual article. It must be
-      // preserved so static publishing never duplicates one article across
-      // unrelated language URLs.
-      let language = "en";
-      const languageProp = properties.Language || properties.language;
-      if (languageProp?.type === "select" && languageProp.select?.name) {
-        language = languageProp.select.name;
-      }
-
-      // A shared group is optional. It is only populated when separate Notion
-      // pages are genuine translations of the same article.
-      let translationGroup = "";
-      const translationGroupProp = properties["Translation Group"] || properties.translationGroup;
-      if (translationGroupProp?.type === "rich_text") {
-        translationGroup = translationGroupProp.rich_text.map((t: any) => t.plain_text).join("").trim();
-      }
-
-      // Parse Date
-      let date = new Date(page.created_time).toISOString().split("T")[0];
-      const dateProp = properties.Date || properties.date;
-      if (dateProp && dateProp.type === "date" && dateProp.date) {
-        date = dateProp.date.start;
-      }
-
-      // Parse Summary
-      let summary = "";
-      const sumProp = properties.Summary || properties.summary || properties.description || properties.Description;
-      if (sumProp && sumProp.type === "rich_text") {
-        summary = sumProp.rich_text.map((t: any) => t.plain_text).join("");
-      }
-
-      // Parse Thumbnail/Cover Image Url
-      let thumbnailUrl = "https://images.unsplash.com/photo-1474487585647-984bb91ffec9?q=80&w=2000&auto=format&fit=crop";
-      
-      // Check for Page Cover
+      let thumbnailUrl = fallbackCover;
       if (page.cover) {
-        thumbnailUrl = page.cover.type === "external" ? page.cover.external.url : page.cover.file?.url;
+        thumbnailUrl =
+          page.cover.type === "external" ? page.cover.external.url : page.cover.file?.url || thumbnailUrl;
       }
-      // Check for Custom image property
-      const imgProp = properties.ThumbnailUrl || properties.thumbnailUrl || properties.Image || properties.image;
-      if (imgProp) {
-        if (imgProp.type === "url" && imgProp.url) {
-          thumbnailUrl = imgProp.url;
-        } else if (imgProp.type === "files" && imgProp.files && imgProp.files.length > 0) {
-          const firstFile = imgProp.files[0];
-          thumbnailUrl = firstFile.type === "external" ? firstFile.external.url : firstFile.file?.url;
-        }
+      const imageProperty =
+        properties.ThumbnailUrl || properties.thumbnailUrl || properties.Image || properties.image;
+      if (imageProperty?.type === "url" && imageProperty.url) thumbnailUrl = imageProperty.url;
+      if (imageProperty?.type === "files" && imageProperty.files?.length) {
+        const file = imageProperty.files[0];
+        thumbnailUrl = file.type === "external" ? file.external.url : file.file?.url || thumbnailUrl;
       }
-
-      // Parse Slug (User's instruction: 新增一个 slug 字段，优先读取名为 Slug 的 Rich Text 属性)
-      let slug = "";
-      const slugProp = properties.Slug || properties.slug;
-      if (slugProp && slugProp.type === "rich_text" && slugProp.rich_text && slugProp.rich_text.length > 0) {
-        slug = slugProp.rich_text.map((t: any) => t.plain_text).join("").trim();
-      }
-      if (!slug) {
-        slug = generateSlug(title, page.id);
-      }
-
-      if (thumbnailUrl) {
+      if (thumbnailUrl !== fallbackCover) {
         thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover");
       }
 
-      // If there is a properties content block (Rich text)
-      let initialContent = "";
-      const contentProp = properties.Content || properties.content;
-      if (contentProp && contentProp.type === "rich_text") {
-        initialContent = contentProp.rich_text.map((t: any) => formatRichText(t)).join("");
-      }
+      const initialContent = propertyText(properties.Content || properties.content);
+      console.log(`Compiling Notion article "${title}" (${page.id}).`);
+      const rendered = await getPageContentHtml(page.id, slug, title, initialContent);
+      const canonicalIds = propertyRelationIds(properties["Canonical Article"]);
 
-      // Fetch block components and build the HTML content at build-time!
-      console.log(`Compiling HTML blocks for Notion page: "${title}" (${page.id})`);
-      const contentHtml = await getPageContentHtml(page.id, slug, initialContent);
-
-      posts.push({
+      const post: Record<string, any> = {
         id: page.id,
+        status: propertyText(properties.Status),
         slug,
         title,
         category,
         language,
         translationGroup,
         date,
+        lastEdited: page.last_edited_time,
         summary,
         thumbnailUrl,
-        content: contentHtml
-      });
+        content: rendered.html,
+        toc: rendered.toc,
+        wordCount: rendered.wordCount,
+        readMinutes: rendered.readMinutes,
+        leadGoal: propertyText(properties["Lead Goal"]),
+        productCategory: propertyText(properties["Product Category"]),
+        productSubcategory: propertyText(properties["Product Subcategory"]),
+        audienceMarket: propertyText(properties["Audience Market"]),
+        searchIntent: propertyText(properties["Search Intent"]),
+        primaryQuery: propertyText(properties["Primary Query"]),
+        topicKey: propertyText(properties["Topic Key"]),
+        contentType: propertyText(properties["Content Type"]),
+        reviewer: propertyPeople(properties.Reviewer),
+        lastVerified: propertyDate(properties["Last Verified"]),
+        qualityScore: propertyNumber(properties["Quality Score"]),
+        primaryCTA: propertyText(properties["Primary CTA"]),
+        evidenceCount: propertyRelationIds(properties.Evidence).length,
+        topicCount: propertyRelationIds(properties["Topic Record"]).length,
+        auditCount: propertyRelationIds(properties["Audit History"]).length,
+        canonicalArticleId: canonicalIds[0] || "",
+      };
+      post.reviewMode = post.reviewer.length ? "human" : "delegated-automation";
+      // Low-risk migration metadata does not make a legacy article "governed".
+      // The strict publication gate begins only when verification/audit fields
+      // are being asserted for that article.
+      post.governed = Boolean(
+        post.reviewer.length ||
+          post.lastVerified ||
+          post.qualityScore !== null ||
+          post.evidenceCount ||
+          post.topicCount ||
+          post.auditCount,
+      );
+      post.legacyMigration = !post.governed && Boolean(post.topicKey || post.primaryCTA);
+
+      const blockers = auditGovernedArticle(post);
+      if (blockers.length) {
+        throw new Error(`Publication blocked for "${title}":\n- ${blockers.join("\n- ")}`);
+      }
+      posts.push(post);
     }
 
-    if (posts.length === 0) {
-      console.log("No published posts found in the Notion database response.");
+    const redirects = Array.from(pageMetadata.entries()).flatMap(([pageId, metadata]) => {
+      if (metadata.status !== "Archived" || !metadata.canonicalIds.length) return [];
+      const canonical = pageMetadata.get(metadata.canonicalIds[0]);
+      if (!canonical || canonical.status !== "Published") return [];
+      const sourcePrefix = metadata.language === "en" ? "" : `/${metadata.language}`;
+      const targetPrefix = canonical.language === "en" ? "" : `/${canonical.language}`;
+      return [
+        {
+          pageId,
+          from: `${sourcePrefix}/blog/${metadata.slug}`,
+          to: `${targetPrefix}/blog/${canonical.slug}`,
+        },
+      ];
+    });
+
+    if (!posts.length) {
+      if (STRICT_SYNC) throw new Error("No Published Notion articles were returned.");
       writeFallbackData();
-    } else {
-      // Write the compiled list of blog posts to the local file
-      fs.writeFileSync(outputFilePath, JSON.stringify(posts, null, 2), "utf-8");
-      console.log(`Successfully compiled and wrote ${posts.length} pages to ${outputFilePath}`);
+      return;
     }
-  } catch (err) {
-    console.error("Failed build-time fetch operation:", err);
+
+    fs.writeFileSync(outputFilePath, JSON.stringify(posts, null, 2), "utf-8");
+    fs.writeFileSync(redirectFilePath, JSON.stringify(redirects, null, 2), "utf-8");
+    console.log(`Compiled ${posts.length} published article(s) and ${redirects.length} redirect(s).`);
+  } catch (error) {
+    console.error("Notion build-time sync failed:", error);
     writeFallbackData();
   }
 }

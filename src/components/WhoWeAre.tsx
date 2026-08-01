@@ -16,6 +16,7 @@ type Copy = {
   legalLabel: string;
   legalName: string;
   since: string;
+  imageAlt: string;
   portraitCaption: string;
   story: StoryItem[];
   facilityLabel: string;
@@ -36,20 +37,21 @@ const COPY: Record<string, Copy> = {
     legalLabel: 'Freight company',
     legalName: 'Heaven Born International Freight Co., Ltd',
     since: 'Operating since 1997',
-    portraitCaption: 'Our team grew from hands-on China export coordination into an international freight operation serving complex cargo and changing markets.',
+    imageAlt: 'Cargo receiving and shipment preparation at a China warehouse',
+    portraitCaption: 'Receiving, document checks and loading preparation are coordinated together at the China origin.',
     story: [
       {
-        label: '01 / Foundation',
+        label: 'Origin control',
         title: 'Trade experience became freight discipline',
         body: 'Since 1997, our work has been shaped by the details that determine whether a shipment moves smoothly: suppliers, documents, loading, routing and destination hand-offs.',
       },
       {
-        label: '02 / Specialisation',
+        label: 'Regulated cargo',
         title: 'Dangerous goods and new-energy logistics',
         body: 'We developed focused operating knowledge for batteries, energy storage systems, electric vehicles and other cargo that requires careful compliance planning.',
       },
       {
-        label: '03 / Resilience',
+        label: 'Route continuity',
         title: 'A network designed to keep cargo moving',
         body: 'When capacity, routes or regulations change, our team coordinates practical alternatives through trusted carriers and local partners.',
       },
@@ -65,25 +67,26 @@ const COPY: Record<string, Copy> = {
   },
   zh: {
     kicker: '我们是谁',
-    title: '立足中国的专业国际货运团队',
+    title: '立足中国的国际货运团队',
     lead: '华正邦泰将中国始发端操作、专业货运能力与贸易支持结合起来，帮助进口商减少供应商、仓库、报关与目的地交接之间的断点。',
     legalLabel: '货运主体',
     legalName: '华正邦泰国际货运代理有限公司',
     since: '始于 1997 年',
-    portraitCaption: '从中国出口贸易与始发端协调起步，我们逐步发展为服务复杂货物与多变市场的专业国际货运团队。',
+    imageAlt: '中国仓库内的货物接收与出运准备',
+    portraitCaption: '中国始发端的收货、单证核对与装载准备由运营团队协同完成。',
     story: [
       {
-        label: '01 / 起点',
+        label: '始发端控制',
         title: '把贸易经验沉淀为货运执行力',
         body: '自 1997 年起，我们持续处理影响出运质量的关键细节，包括供应商衔接、文件、装载、路径与目的地交接。',
       },
       {
-        label: '02 / 专业化',
+        label: '特殊货物',
         title: '危险品与新能源物流能力',
         body: '围绕电池、储能系统、电动汽车及其他需要严格合规规划的货物，建立更有针对性的操作经验。',
       },
       {
-        label: '03 / 韧性',
+        label: '运输连续性',
         title: '为持续交付建立可靠协作网络',
         body: '当舱位、航线或监管要求变化时，团队通过承运人与当地合作伙伴协调可执行的替代方案。',
       },
@@ -104,11 +107,12 @@ const COPY: Record<string, Copy> = {
     legalLabel: 'Экспедиторская компания',
     legalName: 'Heaven Born International Freight Co., Ltd',
     since: 'Работаем с 1997 года',
-    portraitCaption: 'От координации китайского экспорта мы выросли в международную команду для сложных грузов и меняющихся рынков.',
+    imageAlt: 'Приём груза и подготовка отправки на складе в Китае',
+    portraitCaption: 'Приём груза, проверка документов и подготовка к погрузке координируются на стороне отправления в Китае.',
     story: [
-      { label: '01 / Основа', title: 'Торговый опыт стал операционной дисциплиной', body: 'С 1997 года мы уделяем внимание поставщикам, документам, погрузке, маршрутам и передаче груза в пункте назначения.' },
-      { label: '02 / Специализация', title: 'Опасные грузы и новая энергетика', body: 'Мы развиваем практические знания для батарей, систем хранения энергии, электромобилей и других регулируемых грузов.' },
-      { label: '03 / Устойчивость', title: 'Сеть, которая помогает грузу двигаться', body: 'При изменении вместимости, маршрутов или правил мы координируем рабочие альтернативы с перевозчиками и местными партнёрами.' },
+      { label: 'Контроль отправления', title: 'Торговый опыт стал операционной дисциплиной', body: 'С 1997 года мы уделяем внимание поставщикам, документам, погрузке, маршрутам и передаче груза в пункте назначения.' },
+      { label: 'Регулируемые грузы', title: 'Опасные грузы и новая энергетика', body: 'Мы развиваем практические знания для батарей, систем хранения энергии, электромобилей и других регулируемых грузов.' },
+      { label: 'Непрерывность маршрута', title: 'Сеть, которая помогает грузу двигаться', body: 'При изменении вместимости, маршрутов или правил мы координируем рабочие альтернативы с перевозчиками и местными партнёрами.' },
     ],
     facilityLabel: 'Физические операции',
     facilityTitle: 'Собственные складские мощности',
@@ -126,11 +130,12 @@ const COPY: Record<string, Copy> = {
     legalLabel: 'Société de transit',
     legalName: 'Heaven Born International Freight Co., Ltd',
     since: 'En activité depuis 1997',
-    portraitCaption: 'Partis de la coordination des exportations chinoises, nous sommes devenus une équipe de fret international pour les cargaisons complexes.',
+    imageAlt: 'Réception et préparation d’une expédition dans un entrepôt en Chine',
+    portraitCaption: 'Réception, contrôle documentaire et préparation du chargement sont coordonnés ensemble au départ de Chine.',
     story: [
-      { label: '01 / Fondation', title: 'L’expérience du commerce devenue discipline logistique', body: 'Depuis 1997, nous maîtrisons les détails qui comptent: fournisseurs, documents, chargement, itinéraires et relais à destination.' },
-      { label: '02 / Spécialisation', title: 'Marchandises dangereuses et nouvelles énergies', body: 'Nous développons un savoir-faire ciblé pour batteries, systèmes de stockage, véhicules électriques et autres cargaisons réglementées.' },
-      { label: '03 / Résilience', title: 'Un réseau conçu pour maintenir les flux', body: 'Lorsque les capacités, routes ou règles changent, nous coordonnons des solutions concrètes avec transporteurs et partenaires locaux.' },
+      { label: 'Maîtrise à l’origine', title: 'L’expérience du commerce devenue discipline logistique', body: 'Depuis 1997, nous maîtrisons les détails qui comptent: fournisseurs, documents, chargement, itinéraires et relais à destination.' },
+      { label: 'Cargaisons réglementées', title: 'Marchandises dangereuses et nouvelles énergies', body: 'Nous développons un savoir-faire ciblé pour batteries, systèmes de stockage, véhicules électriques et autres cargaisons réglementées.' },
+      { label: 'Continuité des itinéraires', title: 'Un réseau conçu pour maintenir les flux', body: 'Lorsque les capacités, routes ou règles changent, nous coordonnons des solutions concrètes avec transporteurs et partenaires locaux.' },
     ],
     facilityLabel: 'Opérations physiques',
     facilityTitle: 'Capacité d’entreposage en propre',
@@ -148,11 +153,12 @@ const COPY: Record<string, Copy> = {
     legalLabel: 'Empresa de transporte',
     legalName: 'Heaven Born International Freight Co., Ltd',
     since: 'Operamos desde 1997',
-    portraitCaption: 'Desde la coordinación de exportaciones en China evolucionamos hasta ser un equipo internacional para cargas complejas y mercados cambiantes.',
+    imageAlt: 'Recepción y preparación de un envío en un almacén de China',
+    portraitCaption: 'La recepción, la revisión documental y la preparación de carga se coordinan conjuntamente en origen en China.',
     story: [
-      { label: '01 / Origen', title: 'La experiencia comercial se convirtió en disciplina logística', body: 'Desde 1997 trabajamos los detalles que definen un envío: proveedores, documentos, carga, rutas y entrega en destino.' },
-      { label: '02 / Especialización', title: 'Mercancías peligrosas y nueva energía', body: 'Desarrollamos experiencia para baterías, sistemas de almacenamiento, vehículos eléctricos y otras cargas reguladas.' },
-      { label: '03 / Resiliencia', title: 'Una red diseñada para mantener la carga en movimiento', body: 'Cuando cambian la capacidad, las rutas o las normas, coordinamos alternativas viables con transportistas y socios locales.' },
+      { label: 'Control en origen', title: 'La experiencia comercial se convirtió en disciplina logística', body: 'Desde 1997 trabajamos los detalles que definen un envío: proveedores, documentos, carga, rutas y entrega en destino.' },
+      { label: 'Carga regulada', title: 'Mercancías peligrosas y nueva energía', body: 'Desarrollamos experiencia para baterías, sistemas de almacenamiento, vehículos eléctricos y otras cargas reguladas.' },
+      { label: 'Continuidad de rutas', title: 'Una red diseñada para mantener la carga en movimiento', body: 'Cuando cambian la capacidad, las rutas o las normas, coordinamos alternativas viables con transportistas y socios locales.' },
     ],
     facilityLabel: 'Operaciones físicas',
     facilityTitle: 'Capacidad de almacén propio',
@@ -170,11 +176,12 @@ const COPY: Record<string, Copy> = {
     legalLabel: 'شركة الشحن',
     legalName: 'Heaven Born International Freight Co., Ltd',
     since: 'نعمل منذ عام 1997',
-    portraitCaption: 'بدأنا بتنسيق الصادرات من الصين وتطورنا إلى فريق شحن دولي يخدم البضائع المعقدة والأسواق المتغيرة.',
+    imageAlt: 'استلام البضائع والاستعداد للشحن في مستودع بالصين',
+    portraitCaption: 'يتم تنسيق استلام البضائع ومراجعة المستندات والاستعداد للتحميل معاً عند نقطة المنشأ في الصين.',
     story: [
-      { label: '01 / التأسيس', title: 'تحولت خبرة التجارة إلى انضباط تشغيلي', body: 'منذ عام 1997 نهتم بالتفاصيل التي تحرك الشحنة: الموردون والمستندات والتحميل والمسارات والتسليم في الوجهة.' },
-      { label: '02 / التخصص', title: 'البضائع الخطرة والطاقة الجديدة', body: 'طورنا معرفة تشغيلية للبطاريات وأنظمة تخزين الطاقة والمركبات الكهربائية وغيرها من البضائع الخاضعة للتنظيم.' },
-      { label: '03 / المرونة', title: 'شبكة تساعد على استمرار حركة البضائع', body: 'عند تغير السعة أو المسارات أو اللوائح، ننسق بدائل عملية مع الناقلين والشركاء المحليين.' },
+      { label: 'التحكم في المنشأ', title: 'تحولت خبرة التجارة إلى انضباط تشغيلي', body: 'منذ عام 1997 نهتم بالتفاصيل التي تحرك الشحنة: الموردون والمستندات والتحميل والمسارات والتسليم في الوجهة.' },
+      { label: 'البضائع المنظمة', title: 'البضائع الخطرة والطاقة الجديدة', body: 'طورنا معرفة تشغيلية للبطاريات وأنظمة تخزين الطاقة والمركبات الكهربائية وغيرها من البضائع الخاضعة للتنظيم.' },
+      { label: 'استمرارية المسارات', title: 'شبكة تساعد على استمرار حركة البضائع', body: 'عند تغير السعة أو المسارات أو اللوائح، ننسق بدائل عملية مع الناقلين والشركاء المحليين.' },
     ],
     facilityLabel: 'العمليات الميدانية',
     facilityTitle: 'قدرات مستودعات مُدارة ذاتياً',
@@ -227,25 +234,28 @@ export default function WhoWeAre() {
           </div>
         </div>
 
-        <div className="mt-10 overflow-hidden rounded-[24px] bg-[#081D35] shadow-[0_24px_70px_rgba(11,31,58,0.16)] lg:grid lg:grid-cols-[1.25fr_0.75fr]">
-          <figure className="relative min-h-[390px] overflow-hidden lg:min-h-[610px]">
-            <img
-              src={getImgUrl('JOURNEY_2019')}
-              alt="Heaven Born International Freight team meeting"
-              className="absolute inset-0 h-full w-full object-cover"
-              loading="lazy"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#06182d] via-[#06182d]/25 to-transparent" />
-            <figcaption className="absolute inset-x-0 bottom-0 p-6 text-white sm:p-8 md:p-10">
-              <p className="mb-3 text-xs font-black uppercase tracking-[0.18em] text-amber-300">{content.since}</p>
-              <p className="max-w-[54ch] text-base font-semibold leading-7 text-white/90 md:text-lg">{content.portraitCaption}</p>
+        <div className="mt-10 overflow-hidden rounded-[24px] border border-slate-200 bg-[#081D35] shadow-[0_24px_70px_rgba(11,31,58,0.16)] lg:grid lg:grid-cols-[1.08fr_0.92fr]">
+          <figure className="bg-[#06182D]">
+            <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[500px]">
+              <img
+                src={getImgUrl('JOURNEY_2019')}
+                alt={content.imageAlt}
+                className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-[52%_50%]"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-[linear-gradient(100deg,rgba(6,24,45,0.08),rgba(6,24,45,0.24))]" aria-hidden="true" />
+              <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#06182d]/55 to-transparent" aria-hidden="true" />
+            </div>
+            <figcaption className="border-t border-white/10 px-6 py-5 text-white sm:px-8 lg:px-10 lg:py-6">
+              <p className="mb-2 text-xs font-black tracking-[0.1em] text-amber-300">{content.since}</p>
+              <p className="max-w-[58ch] text-sm font-semibold leading-6 text-white/85 md:text-base">{content.portraitCaption}</p>
             </figcaption>
           </figure>
 
-          <div className="px-6 py-3 sm:px-8 lg:px-10 lg:py-7">
+          <div className="px-6 py-3 sm:px-8 lg:px-10 lg:py-5">
             {content.story.map((item) => (
-              <article key={item.label} className="border-b border-white/12 py-7 last:border-b-0">
-                <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-300">{item.label}</p>
+              <article key={item.label} className="border-b border-white/12 py-7 last:border-b-0 lg:py-8">
+                <p className="text-xs font-bold tracking-[0.08em] text-amber-300">{item.label}</p>
                 <h3 className="mt-3 text-xl font-black leading-tight tracking-[-0.02em] text-white md:text-2xl">{item.title}</h3>
                 <p className="mt-3 text-sm font-medium leading-6 text-slate-300">{item.body}</p>
               </article>

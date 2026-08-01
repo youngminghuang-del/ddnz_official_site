@@ -1,27 +1,24 @@
-import { useParams, Link } from 'react-router-dom';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import { ArrowLeft, Calendar, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import {
+  ArrowLeft,
+  ArrowRight,
+  Calendar,
+  CheckCircle2,
+  ChevronRight,
+  Clock3,
+  ShieldCheck,
+  UserRoundCheck,
+} from 'lucide-react';
 import notionBlogPosts from '../data/notionBlogData.json';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
 import SEO from '../components/SEO';
-
-interface BlogPost {
-  id: string;
-  slug?: string;
-  title: string;
-  category: string;
-  date: string;
-  summary: string;
-  content: string;
-  thumbnailUrl: string;
-  language?: string;
-  translationGroup?: string;
-}
+import { trackEvent } from '../lib/analytics';
+import type { BlogPost } from '../types/content';
 
 function normalizeNotionLinks(content: string) {
   return content.replace(
@@ -29,7 +26,8 @@ function normalizeNotionLinks(content: string) {
     (url, encodedPath: string) => {
       try {
         const path = decodeURIComponent(encodedPath);
-        const isInternalRoute = /^(?:\/services\/|\/shipping-from-china-to-|\/insights(?:\/|$))/.test(path);
+        const isInternalRoute =
+          /^(?:\/services\/|\/shipping-from-china-to-|\/insights(?:\/|$)|\/sourcing\/|\/get-a-quote)/.test(path);
         return isInternalRoute ? `https://www.ddnzglobal.com${path}` : url;
       } catch {
         return url;
@@ -38,194 +36,278 @@ function normalizeNotionLinks(content: string) {
   );
 }
 
+function buildPrimaryCta(post: BlogPost) {
+  const isProductSourcing =
+    post.leadGoal === 'Product Sourcing' ||
+    post.primaryCTA === 'Commercial Kitchen Sourcing' ||
+    post.primaryCTA === 'Outdoor Products Sourcing' ||
+    (Boolean(post.productCategory) && post.productCategory !== 'Not Applicable');
+  const params = new URLSearchParams({
+    source: 'article',
+    article: post.slug || post.id,
+    leadGoal: post.leadGoal || (isProductSourcing ? 'Product Sourcing' : 'Freight Export'),
+  });
+  if (post.productCategory && post.productCategory !== 'Not Applicable') {
+    params.set('industry', post.productCategory);
+  }
+  if (post.productSubcategory) params.set('subcategory', post.productSubcategory);
+
+  if (post.primaryCTA === 'Commercial Kitchen Sourcing') {
+    return {
+      label: 'Plan a commercial kitchen sourcing project',
+      href: `/sourcing/commercial-kitchen-equipment-from-china?${params.toString()}`,
+    };
+  }
+  if (post.primaryCTA === 'Outdoor Products Sourcing') {
+    return {
+      label: 'Plan an outdoor product sourcing project',
+      href: `/sourcing/outdoor-products-from-china?${params.toString()}`,
+    };
+  }
+  return {
+    label: 'Request a China export freight plan',
+    href: `/get-a-quote?${params.toString()}`,
+  };
+}
+
 export default function BlogDetail() {
   const { slug } = useParams<{ slug: string }>();
   const [post, setPost] = useState<BlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [isLoading, setIsLoading] = useState(true);
+  const progressSent = useRef(new Set<number>());
   const { language } = useLanguage();
-  const ui = language === 'es'
-    ? { loading: 'Cargando contenido de Notion...', missing: 'Artículo no encontrado', back: 'Volver al inicio' }
-    : language === 'ar'
-    ? { loading: 'جارٍ تحميل محتوى Notion...', missing: 'المقال غير موجود', back: 'العودة إلى الصفحة الرئيسية' }
-    : { loading: 'Fetching secure Notion content...', missing: 'Post Not Found', back: 'Back to Home' };
+  const ui =
+    language === 'es'
+      ? { loading: 'Cargando contenido de Notion...', missing: 'Artículo no encontrado', back: 'Volver al inicio' }
+      : language === 'ar'
+        ? { loading: 'جارٍ تحميل محتوى Notion...', missing: 'المقال غير موجود', back: 'العودة إلى الصفحة الرئيسية' }
+        : { loading: 'Loading verified article...', missing: 'Post Not Found', back: 'Back to Home' };
 
   useEffect(() => {
     if (!slug) return;
-
     setIsLoading(true);
-
-    // Look up in build-time notion blog posts (which holds full HTML content) by slug or ID
-    const found = (notionBlogPosts as any[]).find((p) => p.slug === slug || p.id === slug);
-    if (found) {
-      setPost(found as BlogPost);
-
-      // Tracking
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        (window as any).gtag('event', 'blog_view', {
-          'page_title': found.title,
-          'page_id': found.id,
-          'page_slug': found.slug || ""
-         });
-      }
-    } else {
-      console.warn(`Post with slug/id ${slug} not found in Notion static data.`);
-    }
-
+    const found = (notionBlogPosts as BlogPost[]).find((item) => item.slug === slug || item.id === slug);
+    setPost(found || null);
     setIsLoading(false);
+    progressSent.current.clear();
     window.scrollTo(0, 0);
-  }, [slug, language]);
+
+    if (found) {
+      trackEvent('blog_view', {
+        page_title: found.title,
+        page_id: found.id,
+        page_slug: found.slug || found.id,
+        lead_goal: found.leadGoal,
+        product_category: found.productCategory,
+      });
+    }
+  }, [slug]);
+
+  useEffect(() => {
+    if (!post) return;
+
+    const onScroll = () => {
+      const documentHeight = document.documentElement.scrollHeight - window.innerHeight;
+      if (documentHeight <= 0) return;
+      const progress = Math.min(100, Math.round((window.scrollY / documentHeight) * 100));
+      [25, 50, 75, 100].forEach((threshold) => {
+        if (progress >= threshold && !progressSent.current.has(threshold)) {
+          progressSent.current.add(threshold);
+          trackEvent('article_read_progress', {
+            article_slug: post.slug || post.id,
+            progress_percent: threshold,
+            lead_goal: post.leadGoal,
+            product_category: post.productCategory,
+          });
+        }
+      });
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll();
+    return () => window.removeEventListener('scroll', onScroll);
+  }, [post]);
+
+  const primaryCta = useMemo(() => (post ? buildPrimaryCta(post) : null), [post]);
 
   if (isLoading) {
     return (
       <div className="min-h-screen bg-slate-50 flex items-center justify-center font-sans">
         <div className="text-center">
-          <div className="w-12 h-12 border-4 border-[#4B27B1] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
+          <div className="w-12 h-12 border-4 border-[#0b4f8a] border-t-transparent rounded-full animate-spin mx-auto mb-4" />
           <p className="text-slate-600 font-medium">{ui.loading}</p>
         </div>
       </div>
     );
   }
 
-  if (!post) {
+  if (!post || !primaryCta) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 font-sans">
         <h1 className="text-2xl font-bold text-slate-800 mb-4">{ui.missing}</h1>
-        <Link to="/" className="text-[#4B27B1] font-bold flex items-center hover:underline">
+        <Link to="/" className="text-[#0b4f8a] font-bold flex items-center hover:underline">
           <ArrowLeft className="w-4 h-4 mr-2" /> {ui.back}
         </Link>
       </div>
     );
   }
 
-  // Global Title Automation & Safe Truncation (Max 60 chars)
-  let seoTitle = '';
-  if (post.slug === 'Actionable-insights-for-Eastern-Europe') {
-    seoTitle = 'China Sourcing Alert: July Rate Hikes & Customs Guide';
-  } else if (post.slug === 'high-compliance-new-energy-logistics') {
-    seoTitle = 'New Energy & DG Logistics from China | DDNZ Global Insights';
-  } else {
-    const rawTitle = post.title;
-    const suffix = " | DDNZ Global";
-    const maxTitleLen = 60;
-    if (rawTitle.length + " | DDNZ Global Insights".length > maxTitleLen) {
-      const maxPrefixLen = maxTitleLen - suffix.length - 3; // Subtracting 3 for '...'
-      if (maxPrefixLen > 0) {
-        let truncated = rawTitle.slice(0, maxPrefixLen);
-        const lastSpace = truncated.lastIndexOf(' ');
-        if (lastSpace > 15) {
-          truncated = truncated.slice(0, lastSpace);
-        }
-        seoTitle = truncated.trim() + '...' + suffix;
-      } else {
-        seoTitle = rawTitle.slice(0, maxTitleLen - suffix.length) + suffix;
-      }
-    } else {
-      seoTitle = rawTitle + suffix;
-    }
-  }
-
-  // Global Description Automation (Max 155 chars)
-  const rawDesc = post.summary || post.title || '';
-  const seoDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + '...' : rawDesc;
+  const suffix = ' | DDNZ Global';
+  const maxPrefix = 60 - suffix.length;
+  const seoTitle =
+    post.title.length > maxPrefix
+      ? `${post.title.slice(0, Math.max(20, maxPrefix - 3)).replace(/\s+\S*$/, '')}...${suffix}`
+      : `${post.title}${suffix}`;
+  const rawDesc = post.summary || post.title;
+  const seoDesc = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trim()}...` : rawDesc;
   const postLanguage = post.language || 'en';
   const postPrefix = postLanguage === 'en' ? '' : `/${postLanguage}`;
   const postPath = `${postPrefix}/blog/${post.slug || post.id}`;
+  const showToc = (post.wordCount || 0) > 1200 && Boolean(post.toc?.length);
+  const reviewerText = post.governed
+    ? post.reviewer?.length
+      ? post.reviewer.join(', ')
+      : post.reviewMode === 'delegated-automation'
+        ? 'DDNZ automated research and editorial audit'
+        : 'DDNZ editorial desk'
+    : 'Legacy editorial record';
+  const verifiedDate = post.lastVerified || post.lastEdited?.slice(0, 10) || post.date;
+  const verificationLabel = post.governed ? 'Verified' : 'Updated';
 
   return (
     <div className="min-h-screen bg-white font-sans text-slate-900">
-      <SEO 
-        title={seoTitle} 
-        description={seoDesc} 
-        keywords={`${post.category.toLowerCase()}, global logistics, china freight forwarder, cargo news, ddnz global`}
+      <SEO
+        title={seoTitle}
+        description={seoDesc}
+        keywords={`${post.primaryQuery || post.category}, China sourcing, China freight forwarder, DDNZ Global`}
         canonicalPath={postPath}
         alternateUrls={[{ hrefLang: postLanguage, href: `https://www.ddnzglobal.com${postPath}` }]}
+        image={post.thumbnailUrl}
+        type="article"
+        publishedTime={post.date}
+        modifiedTime={post.lastEdited || verifiedDate}
       />
-      <SchemaMarkup 
-        type="BlogPosting" 
+      <SchemaMarkup
+        type="BlogPosting"
         data={{
           headline: post.title,
           description: post.summary,
           image: post.thumbnailUrl,
           datePublished: post.date,
-          url: `https://www.ddnzglobal.com${postPath}`
-        }} 
+          dateModified: post.lastEdited || verifiedDate,
+          url: `https://www.ddnzglobal.com${postPath}`,
+          governed: Boolean(post.governed),
+        }}
       />
       <Navbar />
-      
-      {/* Breadcrumb Navigation & Hero Banner */}
-      <div className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-gradient-to-br from-[#1E1145] via-[#2D1375] to-[#4B27B1] text-white overflow-hidden">
-        {/* Semi-transparent background photo */}
-        <img 
-          className="absolute inset-0 w-full h-full object-cover opacity-15 pointer-events-none mix-blend-overlay" 
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200&auto=format&fit=crop" 
-          alt="Insights backdrop" 
-          referrerPolicy="no-referrer" 
-        />
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0c_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0c_1px,transparent_1px)] bg-[size:3rem_3rem] opacity-35" />
-        <div className="absolute -top-40 -right-40 w-96 h-96 bg-white/10 rounded-full blur-3xl" />
 
+      <header className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-[#07182d] text-white overflow-hidden">
+        <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_80%_15%,#0b4f8a_0,transparent_38%),radial-gradient(circle_at_15%_80%,#d97706_0,transparent_28%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0b_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0b_1px,transparent_1px)] bg-[size:3rem_3rem]" />
         <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
-          <div className="flex items-center gap-2 text-xs md:text-sm font-medium text-slate-300 mb-6">
-            <Link to="/" className="hover:text-white transition-colors">Home</Link>
-            <ChevronRight className="w-3 h-3 text-slate-400" />
-            <Link to="/insights" className="hover:text-white transition-colors">Insights</Link>
-            <ChevronRight className="w-3 h-3 text-slate-400" />
-            <span className="text-orange-400 font-bold truncate max-w-[200px] md:max-w-none">{post.title}</span>
-          </div>
+          <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs md:text-sm text-slate-300 mb-7">
+            <Link to="/" className="hover:text-white">Home</Link>
+            <ChevronRight className="w-3 h-3" />
+            <Link to="/insights" className="hover:text-white">Insights</Link>
+            <ChevronRight className="w-3 h-3" />
+            <span className="text-amber-400 font-bold truncate">{post.contentType || post.category}</span>
+          </nav>
 
-          <div className="flex flex-wrap items-center gap-4 mb-4">
-            <span className="bg-orange-500/20 text-orange-300 border border-orange-500/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              {post.category}
+          <div className="flex flex-wrap items-center gap-3 mb-5">
+            <span className="bg-amber-400/15 text-amber-300 border border-amber-400/30 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
+              {post.contentType || post.category}
             </span>
-            <div className="flex items-center text-slate-300 text-sm">
-              <Calendar className="w-4 h-4 mr-2 text-orange-400" />
-              {post.date}
-            </div>
+            {post.audienceMarket && (
+              <span className="bg-white/8 text-slate-200 border border-white/15 px-3 py-1 rounded-full text-xs font-semibold">
+                {post.audienceMarket}
+              </span>
+            )}
           </div>
-
-          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight">
-            {post.title}
-          </h1>
+          <h1 className="text-3xl md:text-5xl font-black text-white leading-tight text-balance">{post.title}</h1>
+          {post.summary && <p className="mt-6 max-w-3xl text-lg text-slate-200 leading-relaxed">{post.summary}</p>}
+          <div className="mt-7 flex flex-wrap gap-x-6 gap-y-3 text-sm text-slate-300">
+            <span className="inline-flex items-center gap-2"><Calendar className="w-4 h-4 text-amber-400" />Published {post.date}</span>
+            <span className="inline-flex items-center gap-2"><Clock3 className="w-4 h-4 text-amber-400" />{post.readMinutes || 5} min read</span>
+            <span className="inline-flex items-center gap-2"><ShieldCheck className="w-4 h-4 text-amber-400" />{verificationLabel} {verifiedDate}</span>
+          </div>
         </div>
-      </div>
+      </header>
 
-      <main className="pb-12 md:pb-20 relative z-10">
+      <main className="pb-16 md:pb-24">
         <article className="max-w-4xl mx-auto px-4 md:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden mb-12 shadow-2xl ring-1 ring-slate-200 bg-slate-100 -mt-16 md:-mt-24 z-20">
-              <img 
-                src={post.thumbnailUrl} 
-                alt={post.title}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-            </div>
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}>
+            <figure className="relative aspect-[16/9] rounded-2xl overflow-hidden mb-10 shadow-2xl ring-1 ring-slate-200 bg-slate-100 -mt-16 md:-mt-24 z-20">
+              <img src={post.thumbnailUrl} alt={`${post.title} cover`} className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+            </figure>
 
-            {/* Main Content Area */}
-            <div 
-              className="prose prose-slate lg:prose-lg max-w-none blog-content post-content
-                         prose-headings:font-bold prose-headings:text-[#4B27B1] 
-                         prose-p:text-slate-600 prose-p:leading-relaxed prose-p:mb-4
-                         prose-strong:text-slate-900 prose-strong:font-semibold
-                         prose-a:text-[#FF8A00] prose-a:no-underline hover:prose-a:underline
-                         prose-ul:list-disc prose-ol:list-decimal"
+            <section className="grid sm:grid-cols-3 gap-3 mb-9" aria-label="Article verification">
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <UserRoundCheck className="w-5 h-5 text-[#0b4f8a] mb-2" />
+                <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500">Reviewed by</p>
+                <p className="mt-1 text-sm font-bold text-slate-900">{reviewerText}</p>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <CheckCircle2 className="w-5 h-5 text-[#0b4f8a] mb-2" />
+                <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500">Evidence records</p>
+                <p className="mt-1 text-sm font-bold text-slate-900">{post.governed ? `${post.evidenceCount || 0} linked` : 'Legacy record'}</p>
+              </div>
+              <div className="rounded-xl border border-slate-200 bg-slate-50 p-4">
+                <ShieldCheck className="w-5 h-5 text-[#0b4f8a] mb-2" />
+                <p className="text-[11px] uppercase tracking-wider font-bold text-slate-500">{post.governed ? 'Last verified' : 'Last updated'}</p>
+                <p className="mt-1 text-sm font-bold text-slate-900">{verifiedDate}</p>
+              </div>
+            </section>
+
+            {showToc && (
+              <nav aria-label="Table of contents" className="mb-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+                <p className="text-xs font-black uppercase tracking-[0.18em] text-[#0b4f8a] mb-4">On this page</p>
+                <ol className="space-y-2">
+                  {post.toc?.map((item) => (
+                    <li key={item.id} className={item.level === 3 ? 'pl-5' : ''}>
+                      <a className="text-sm font-semibold text-slate-700 hover:text-amber-700" href={`#${item.id}`}>{item.text}</a>
+                    </li>
+                  ))}
+                </ol>
+              </nav>
+            )}
+
+            <div
+              className="prose prose-slate lg:prose-lg max-w-none blog-content post-content"
               dangerouslySetInnerHTML={{ __html: normalizeNotionLinks(post.content) }}
             />
 
-            {/* Back Button Footer */}
-            <div className="mt-16 pt-8 border-t border-slate-100">
-              <Link
-                to="/insights"
-                className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#4B27B1] transition-all group"
-              >
-                <div className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center group-hover:border-[#4B27B1] group-hover:bg-purple-50 transition-all">
-                  <ArrowLeft className="w-5 h-5" />
-                </div>
-                <span>Back to Insights Hub</span>
+            <section id="article-primary-cta" className="mt-14 rounded-3xl bg-[#07182d] p-7 md:p-10 text-white overflow-hidden relative">
+              <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-amber-500/20 blur-3xl" />
+              <div className="relative">
+                <p className="text-xs font-black uppercase tracking-[0.2em] text-amber-400">Next operational step</p>
+                <h2 className="mt-3 text-2xl md:text-3xl font-black max-w-2xl">
+                  Turn this guidance into a scoped China sourcing or export plan.
+                </h2>
+                <p className="mt-4 text-slate-300 max-w-2xl">
+                  Share the destination market, product scope, quantities, inspection needs, and export requirements. DDNZ will respond against the stated scope rather than with a generic promise.
+                </p>
+                <Link
+                  to={primaryCta.href}
+                  data-analytics-tracked="true"
+                  onClick={() =>
+                    trackEvent('article_cta_click', {
+                      article_slug: post.slug || post.id,
+                      cta_type: post.primaryCTA || 'Freight Quote',
+                      lead_goal: post.leadGoal,
+                      product_category: post.productCategory,
+                    })
+                  }
+                  className="mt-7 inline-flex items-center gap-2 rounded-xl bg-amber-600 px-5 py-3.5 font-extrabold text-white hover:bg-amber-700 transition-colors"
+                >
+                  {primaryCta.label}<ArrowRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </section>
+
+            <div className="mt-12 pt-8 border-t border-slate-200">
+              <Link to="/insights" className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#0b4f8a]">
+                <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center"><ArrowLeft className="w-5 h-5" /></span>
+                Back to Insights Hub
               </Link>
             </div>
           </motion.div>
@@ -233,51 +315,32 @@ export default function BlogDetail() {
       </main>
 
       <Footer />
-      
-      {/* Global Style for HTML content layout */}
+
       <style>{`
-        .prose img, .post-content img, .blog-content img {
-          width: 100% !important;      /* 宽度撑满容器 */
-          height: auto !important;     /* 高度必须全自动等比例缩放，禁止写死固定像素！ */
-          max-width: 100% !important;  /* 防止图片超出容器边界 */
-          object-fit: contain !important; /* 确保图片完整显示，绝对不允许进行上下裁剪或拉伸 */
-          display: block !important;
-          margin: 1.5rem auto !important; /* 上下留白，居中对齐 */
-        }
-        .image-wrapper {
-          height: auto !important; /* 允许容器随图片高度自适应撑开 */
-          width: 100% !important;
-        }
-        .blog-content h2 { margin-top: 2.5rem; margin-bottom: 1.25rem; color: #4B27B1; font-weight: 850; font-size: 1.875rem; line-height: 1.35; border-left: 5px solid #FF8A00; padding-left: 0.75rem; }
-        .blog-content h3 { margin-top: 2rem; margin-bottom: 1rem; color: #1e293b; font-weight: 800; font-size: 1.5rem; }
-        .blog-content h4 { margin-top: 1.5rem; margin-bottom: 0.75rem; color: #334155; font-weight: 700; font-size: 1.25rem; }
-        .blog-content p { margin-bottom: 1.5rem; line-height: 1.8; color: #334155; font-size: 1.1rem; }
-        .blog-content ul { padding-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: disc; }
-        .blog-content ol { padding-left: 1.5rem; margin-bottom: 1.5rem; list-style-type: decimal; }
-        .blog-content li { margin-bottom: 0.55rem; color: #475569; font-size: 1.05rem; }
-        .blog-content table { width: 100%; border-collapse: collapse; margin-top: 1.5rem; margin-bottom: 2rem; background-color: #ffffff; box-shadow: 0 1px 3px rgba(0,0,0,0.05); border-radius: 0.75rem; overflow: hidden; }
-        .blog-content th { background-color: #f8fafc; padding: 1rem 1.25rem; text-align: left; border: 1px solid #e2e8f0; font-weight: 700; color: #4B27B1; font-size: 0.95rem; text-transform: uppercase; tracking-wider: 0.05em; }
-        .blog-content td { padding: 1rem 1.25rem; border: 1px solid #e2e8f0; vertical-align: top; color: #334155; font-size: 0.95rem; }
-        .blog-content pre { background-color: #1e293b; color: #f8fafc; padding: 1.25rem; border-radius: 0.75rem; overflow-x: auto; margin-bottom: 1.5rem; font-family: monospace; }
-        .blog-content strong { color: #0f172a; font-weight: 700; }
-        .blog-content a {
-          color: #FF8A00 !important;
-          font-weight: 700 !important;
-          text-decoration: none !important;
-          transition: all 0.15s ease-in-out !important;
-          border-bottom: 1px solid rgba(255, 138, 0, 0.3) !important;
-        }
-        .blog-content a:hover {
-          color: #FF8A00 !important;
-          text-decoration: underline !important;
-          border-bottom: 1px solid #FF8A00 !important;
-        }
-        @media (max-width: 768px) {
-          .blog-content table { display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
-          .blog-content h1 { font-size: 2rem; }
-          .blog-content h2 { font-size: 1.5rem; margin-top: 2rem; }
-          .blog-content h3 { font-size: 1.25rem; }
-        }
+        .blog-content { color: #334155; font-size: 1.075rem; line-height: 1.82; }
+        .blog-content h2, .blog-content h3, .blog-content h4 { scroll-margin-top: 7rem; color: #0b1f3a; font-weight: 850; line-height: 1.3; }
+        .blog-content h2 { margin: 2.8rem 0 1.1rem; border-left: 5px solid #d97706; padding-left: .9rem; font-size: 1.9rem; }
+        .blog-content h3 { margin: 2.2rem 0 1rem; font-size: 1.5rem; }
+        .blog-content h4 { margin: 1.8rem 0 .8rem; font-size: 1.25rem; }
+        .blog-content p, .blog-content ul, .blog-content ol { margin-bottom: 1.45rem; }
+        .blog-content ul, .blog-content ol { padding-left: 1.6rem; }
+        .blog-content ul { list-style: disc; }
+        .blog-content ol { list-style: decimal; }
+        .blog-content li { margin-bottom: .55rem; }
+        .blog-content a { color: #b45309; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+        .blog-content blockquote { margin: 2rem 0; border-left: 4px solid #0b4f8a; background: #eff6ff; padding: 1.25rem 1.5rem; border-radius: 0 .8rem .8rem 0; }
+        .article-callout { display: flex; gap: .9rem; margin: 2rem 0; padding: 1.25rem; border: 1px solid #fde68a; border-radius: 1rem; background: #fffbeb; }
+        .article-figure { margin: 2.2rem 0; }
+        .article-figure img { width: 100%; height: auto; border-radius: 1rem; border: 1px solid #e2e8f0; }
+        .article-figure figcaption { margin-top: .65rem; color: #64748b; font-size: .875rem; line-height: 1.5; }
+        .article-table-wrap { overflow-x: auto; margin: 2rem 0; border: 1px solid #e2e8f0; border-radius: .9rem; }
+        .blog-content table { width: 100%; min-width: 620px; border-collapse: collapse; background: white; }
+        .blog-content th { background: #0b1f3a; color: white; text-align: left; font-size: .82rem; text-transform: uppercase; letter-spacing: .04em; }
+        .blog-content th, .blog-content td { padding: .9rem 1rem; border-bottom: 1px solid #e2e8f0; vertical-align: top; }
+        .blog-content pre { overflow-x: auto; border-radius: .8rem; background: #0f172a; color: #f8fafc; padding: 1.2rem; }
+        .blog-content details { margin: 1.5rem 0; border: 1px solid #e2e8f0; border-radius: .8rem; padding: 1rem; }
+        .blog-content summary { cursor: pointer; font-weight: 800; color: #0b1f3a; }
+        @media (max-width: 768px) { .blog-content h2 { font-size: 1.5rem; } .blog-content h3 { font-size: 1.28rem; } }
       `}</style>
     </div>
   );

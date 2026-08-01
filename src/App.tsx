@@ -14,6 +14,8 @@ const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-ce
 const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
 const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-latin-america'));
 const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
+const SourcingCategoryPage = lazy(() => import('./pages/SourcingCategory'));
+const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
 
 const SHIPPING_COUNTRIES = [
   'saudi-arabia',
@@ -145,6 +147,12 @@ function AnalyticsRouteTracker() {
   return null;
 }
 
+function RoutedCookieConsent() {
+  const location = useLocation();
+  if (location.pathname === '/content-ops') return null;
+  return <CookieConsent />;
+}
+
 function GlobalConversionTracker() {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -205,6 +213,17 @@ export default function App() {
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/get-a-quote" element={<GetAQuotePage />} />
+            {import.meta.env.DEV ? (
+              <Route path="/content-ops" element={<ContentOpsDashboard />} />
+            ) : null}
+            <Route
+              path="/sourcing/commercial-kitchen-equipment-from-china"
+              element={<SourcingCategoryPage kind="commercial-kitchen" />}
+            />
+            <Route
+              path="/sourcing/outdoor-products-from-china"
+              element={<SourcingCategoryPage kind="outdoor" />}
+            />
 
             {/* Chinese Bundle Router */}
             <Route path="/zh-cn" element={<Home />} />
@@ -277,7 +296,7 @@ export default function App() {
             <Route path="/ar/get-a-quote" element={<GetAQuotePage />} />
           </Routes>
           </Suspense>
-          <CookieConsent />
+          <RoutedCookieConsent />
         </Router>
       </LanguageProvider>
     </HelmetProvider>
