@@ -898,28 +898,36 @@ function run() {
           } else if (post.slug === 'high-compliance-new-energy-logistics') {
             computedTitle = 'New Energy & DG Logistics from China | DDNZ Global Insights';
           } else {
-            const rawTitle = post.title;
+            const rawTitle = post.title.trim();
             const suffix = " | DDNZ Global";
-            const maxTitleLen = 60;
-            if (rawTitle.length + " | DDNZ Global Insights".length > maxTitleLen) {
-              const maxPrefixLen = maxTitleLen - suffix.length - 3;
-              if (maxPrefixLen > 0) {
-                let truncated = rawTitle.slice(0, maxPrefixLen);
-                const lastSpace = truncated.lastIndexOf(' ');
-                if (lastSpace > 15) {
-                  truncated = truncated.slice(0, lastSpace);
-                }
-                computedTitle = truncated.trim() + '...' + suffix;
-              } else {
-                computedTitle = rawTitle.slice(0, maxTitleLen - suffix.length) + suffix;
-              }
-            } else {
+            const maxTitleLen = 65;
+            const titleLead = rawTitle.split(/[:：]/, 1)[0].trim();
+            if (rawTitle.length + suffix.length <= maxTitleLen) {
               computedTitle = rawTitle + suffix;
+            } else if (
+              titleLead.length >= 24 &&
+              titleLead.length + suffix.length <= maxTitleLen
+            ) {
+              // Preserve a complete, descriptive lead instead of publishing a
+              // search title that ends in an ambiguous mechanical ellipsis.
+              computedTitle = titleLead + suffix;
+            } else {
+              const maxPrefixLen = maxTitleLen - suffix.length - 1;
+              const candidate = rawTitle.slice(0, maxPrefixLen);
+              const lastSpace = candidate.lastIndexOf(' ');
+              const completePrefix = lastSpace > maxPrefixLen * 0.72
+                ? candidate.slice(0, lastSpace)
+                : candidate;
+              computedTitle = completePrefix.trim() + '…' + suffix;
             }
           }
 
           const rawDesc = post.summary || post.title || '';
-          const computedDesc = rawDesc.length > 155 ? rawDesc.slice(0, 152).trim() + '...' : rawDesc;
+          const descCandidate = rawDesc.slice(0, 154);
+          const descSpace = descCandidate.lastIndexOf(' ');
+          const computedDesc = rawDesc.length > 155
+            ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
+            : rawDesc;
 
           seo = {
             title: computedTitle,

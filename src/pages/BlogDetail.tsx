@@ -153,13 +153,26 @@ export default function BlogDetail() {
   }
 
   const suffix = ' | DDNZ Global';
-  const maxPrefix = 60 - suffix.length;
-  const seoTitle =
-    post.title.length > maxPrefix
-      ? `${post.title.slice(0, Math.max(20, maxPrefix - 3)).replace(/\s+\S*$/, '')}...${suffix}`
-      : `${post.title}${suffix}`;
+  const rawTitle = post.title.trim();
+  const maxTitleLen = 65;
+  const titleLead = rawTitle.split(/[:：]/, 1)[0].trim();
+  const maxPrefix = maxTitleLen - suffix.length - 1;
+  const prefixCandidate = rawTitle.slice(0, maxPrefix);
+  const prefixSpace = prefixCandidate.lastIndexOf(' ');
+  const completePrefix = prefixSpace > maxPrefix * 0.72
+    ? prefixCandidate.slice(0, prefixSpace)
+    : prefixCandidate;
+  const seoTitle = rawTitle.length + suffix.length <= maxTitleLen
+    ? `${rawTitle}${suffix}`
+    : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
+      ? `${titleLead}${suffix}`
+      : `${completePrefix.trim()}…${suffix}`;
   const rawDesc = post.summary || post.title;
-  const seoDesc = rawDesc.length > 155 ? `${rawDesc.slice(0, 152).trim()}...` : rawDesc;
+  const descCandidate = rawDesc.slice(0, 154);
+  const descSpace = descCandidate.lastIndexOf(' ');
+  const seoDesc = rawDesc.length > 155
+    ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
+    : rawDesc;
   const postLanguage = post.language || 'en';
   const postPrefix = postLanguage === 'en' ? '' : `/${postLanguage}`;
   const postPath = `${postPrefix}/blog/${post.slug || post.id}`;
