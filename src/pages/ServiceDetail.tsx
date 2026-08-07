@@ -12,7 +12,7 @@ import { motion } from 'framer-motion';
 import { 
   Ship, Plane, ShieldAlert, BadgeCheck, CheckCircle2, ArrowRight, 
   Clock, DollarSign, Languages, Landmark, Star, HelpCircle, AlertCircle,
-  Package, ShieldCheck, Thermometer, FileText, Truck, Zap, Globe, MapPin, ClipboardCheck, Boxes, Route
+  Package, ShieldCheck, Thermometer, FileText, Truck, Zap, Globe, MapPin, ClipboardCheck, Boxes, Route, Camera
 } from 'lucide-react';
 import { useForm, ValidationError } from '@formspree/react';
 import { trackEvent } from '../lib/utils';
@@ -743,6 +743,64 @@ const LOCALIZED_SERVICE_PRESENTATION: Record<string, Record<string, Record<strin
     'air-freight': { title: 'الشحن الجوي من الصين', tag: 'حلول جوية سريعة ومرنة', heroSubtitle: 'شحن جوي موثوق للبضائع العاجلة مع استلام وتخليص ومتابعة منسقة.', quickFacts: { title: 'معلومات سريعة', points: ['مسارات سريعة واقتصادية', 'تغطية مطارات عالمية', 'إدارة تصدير احترافية', 'متابعة تشغيلية من البداية للنهاية'] } },
     'amazon-fba': { title: 'لوجستيات Amazon FBA من الصين', tag: 'تجهيز ووسم وتسليم FBA', heroSubtitle: 'نجهز ونوسم ونشحن بضائعكم من الموردين في الصين إلى مراكز Amazon.', quickFacts: { title: 'معلومات سريعة', points: ['وسم وتجهيز FNSKU', 'تجميع عدة موردين', 'حجز مواعيد التسليم', 'تسليم مباشر إلى مستودعات Amazon'] } },
     'warehouse-services': { title: 'التخزين والتجميع في الصين', tag: 'تخزين وتجهيز وتوزيع', heroSubtitle: 'تخزين آمن وتجميع وتجهيز للتصدير من مركزنا في قوانغتشو.', quickFacts: { title: 'معلومات سريعة', points: ['مستودع آمن ومراقب', 'مخزون WMS لحظي', 'فحص وتغليف ووسم', 'شحن متقاطع وتجميع'] } },
+  },
+};
+
+const SEA_FREIGHT_LOADING_PROOF: Record<string, {
+  eyebrow: string;
+  title: string;
+  description: string;
+  privacy: string;
+  captions: string[];
+  alts: string[];
+}> = {
+  en: {
+    eyebrow: 'China origin operations',
+    title: 'Real container loading records',
+    description: 'Operational photos showing cargo staging, forklift loading and completed container utilization before departure from China.',
+    privacy: 'Shipment labels, documents and vehicle identifiers have been removed to protect customer information.',
+    captions: ['Forklift-assisted loading', 'Completed container utilization', 'Wet-weather loading completed'],
+    alts: ['Forklift loading packaged cargo into a shipping container', 'Fully loaded shipping container at a China origin facility', 'Completed container loading during wet-weather operations'],
+  },
+  zh: {
+    eyebrow: '中国始发端实拍',
+    title: '真实装柜作业记录',
+    description: '现场照片展示货物进柜、叉车装载与整柜完成状态，让客户在货物离开中国前看见真实操作过程。',
+    privacy: '客户标签、单据与车辆识别信息均已脱敏处理。',
+    captions: ['叉车辅助装柜', '整柜装载完成', '雨天装柜完成'],
+    alts: ['叉车将包装货物装入海运集装箱', '中国始发端完成装载的海运集装箱', '雨天作业环境下完成集装箱装载'],
+  },
+  ru: {
+    eyebrow: 'Операции в Китае',
+    title: 'Реальные записи загрузки контейнеров',
+    description: 'Рабочие фотографии показывают подготовку груза, погрузку вилочным погрузчиком и заполненный контейнер перед отправкой из Китая.',
+    privacy: 'Этикетки, документы и идентификаторы транспорта удалены для защиты данных клиентов.',
+    captions: ['Погрузка вилочным погрузчиком', 'Контейнер полностью загружен', 'Погрузка завершена в дождливую погоду'],
+    alts: ['Погрузка упакованного груза в контейнер вилочным погрузчиком', 'Полностью загруженный морской контейнер в Китае', 'Завершенная загрузка контейнера в дождливую погоду'],
+  },
+  fr: {
+    eyebrow: 'Opérations au départ de Chine',
+    title: 'Chargements réels de conteneurs',
+    description: 'Des photos opérationnelles montrent la préparation du fret, le chargement au chariot élévateur et le conteneur rempli avant le départ de Chine.',
+    privacy: 'Les étiquettes, documents et identifiants des véhicules ont été retirés afin de protéger les données clients.',
+    captions: ['Chargement au chariot élévateur', 'Conteneur entièrement chargé', 'Chargement terminé par temps humide'],
+    alts: ['Chargement de colis dans un conteneur avec un chariot élévateur', 'Conteneur maritime entièrement chargé en Chine', 'Chargement de conteneur terminé par temps humide'],
+  },
+  es: {
+    eyebrow: 'Operación en origen en China',
+    title: 'Registros reales de carga de contenedores',
+    description: 'Fotografías operativas muestran la preparación, la carga con montacargas y el contenedor completo antes de salir de China.',
+    privacy: 'Se eliminaron etiquetas, documentos e identificadores de vehículos para proteger la información del cliente.',
+    captions: ['Carga asistida con montacargas', 'Contenedor completamente cargado', 'Carga completada con lluvia'],
+    alts: ['Montacargas introduciendo mercancía embalada en un contenedor', 'Contenedor marítimo completamente cargado en China', 'Carga de contenedor completada durante condiciones de lluvia'],
+  },
+  ar: {
+    eyebrow: 'عمليات منشأ الشحنة في الصين',
+    title: 'سجلات حقيقية لتحميل الحاويات',
+    description: 'تُظهر صور التشغيل تجهيز البضائع والتحميل بالرافعة الشوكية والحاوية بعد اكتمال التحميل قبل مغادرتها الصين.',
+    privacy: 'تمت إزالة ملصقات الشحن والمستندات ومعرّفات المركبات لحماية معلومات العملاء.',
+    captions: ['تحميل بمساعدة الرافعة الشوكية', 'اكتمال تحميل الحاوية', 'اكتمال التحميل أثناء الطقس الماطر'],
+    alts: ['رافعة شوكية تحمل بضائع معبأة داخل حاوية شحن', 'حاوية شحن مكتملة التحميل في منشأة صينية', 'اكتمال تحميل الحاوية أثناء الطقس الماطر'],
   },
 };
 
@@ -3022,6 +3080,12 @@ export default function ServiceDetail() {
 
   const heroImgUrl = getHeroImageUrl(currentKey);
   const serviceCtas = sharedServiceLabels;
+  const loadingProof = SEA_FREIGHT_LOADING_PROOF[activeLang] || SEA_FREIGHT_LOADING_PROOF.en;
+  const loadingProofImages = [
+    '/images/operations/container-loading-forklift-anonymized.jpg',
+    '/images/operations/container-loaded-anonymized.jpg',
+    '/images/operations/container-loading-wet-weather-anonymized.jpg',
+  ];
 
   return (
     <div className="min-h-screen hb-page-shell font-sans text-slate-900">
@@ -3102,6 +3166,59 @@ export default function ServiceDetail() {
           </div>
         </div>
       </section>
+
+      {currentKey === 'sea-freight' && (
+        <section className="bg-[var(--hb-navy-deep)] py-16 text-white md:py-24" aria-labelledby="loading-proof-title">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="mb-10 grid gap-7 md:mb-14 md:grid-cols-12 md:items-end">
+              <div className="md:col-span-7">
+                <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-[var(--hb-amber)] sm:text-sm">
+                  <Camera className="h-4 w-4" aria-hidden="true" />
+                  {loadingProof.eyebrow}
+                </p>
+                <h2 id="loading-proof-title" className="max-w-3xl text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
+                  {loadingProof.title}
+                </h2>
+              </div>
+              <div className="md:col-span-5">
+                <p className="text-base font-medium leading-relaxed text-slate-200 md:text-lg">
+                  {loadingProof.description}
+                </p>
+                <p className="mt-4 flex items-start gap-2 border-t border-white/15 pt-4 text-xs font-semibold leading-relaxed text-slate-400 sm:text-sm">
+                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[var(--hb-amber)]" aria-hidden="true" />
+                  {loadingProof.privacy}
+                </p>
+              </div>
+            </div>
+
+            <div className="grid gap-4 md:h-[38rem] md:grid-cols-12">
+              {loadingProofImages.map((src, index) => (
+                <figure
+                  key={src}
+                  className={`${index === 0 ? 'md:col-span-5' : index === 1 ? 'md:col-span-3' : 'md:col-span-4'} group flex min-h-0 flex-col overflow-hidden border border-white/15 bg-white/[0.04]`}
+                >
+                  <div className="relative aspect-[4/5] min-h-0 overflow-hidden md:aspect-auto md:flex-1">
+                    <img
+                      src={src}
+                      alt={loadingProof.alts[index]}
+                      width={index === 0 ? 1600 : 1400}
+                      height={index === 0 ? 2843 : 1866}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-full w-full object-cover transition-transform duration-500 ease-out motion-reduce:transition-none group-hover:scale-[1.025]"
+                    />
+                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06172a]/25 via-transparent to-transparent" aria-hidden="true" />
+                  </div>
+                  <figcaption className="flex min-h-16 items-center border-t border-white/15 px-5 py-4 text-sm font-bold tracking-wide text-slate-100">
+                    <span className="mr-3 text-xs font-black text-[var(--hb-amber)]">0{index + 1}</span>
+                    {loadingProof.captions[index]}
+                  </figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Deep-Dive / Quick Facts Dual Split */}
       <section className="py-16 md:py-20 bg-[var(--hb-surface)]">
