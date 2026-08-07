@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import OriginControlStrip from '../components/OriginControlStrip';
 import WhoWeAre from '../components/WhoWeAre';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
@@ -32,6 +33,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <OriginControlStrip />
         <WhoWeAre />
         <Suspense fallback={<HomeSectionFallback />}>
           <WhatWeDo />

@@ -17,6 +17,7 @@ import {
 import { useForm, ValidationError } from '@formspree/react';
 import { trackEvent } from '../lib/utils';
 import { getImgUrl } from '../constants';
+import { buildAttributedWhatsAppUrl } from '../lib/attribution';
 
 // Multi-language data for the 4 core pillars
 const SERVICES_DATA: Record<string, Record<string, any>> = {
@@ -759,6 +760,7 @@ export default function ServiceDetail() {
   const activeLang = LANGUAGES_SUPPORTED.includes(language) ? language : 'en';
   const baseData = SERVICES_DATA[currentKey]?.[activeLang] || SERVICES_DATA[currentKey]?.['en'];
   const data = { ...baseData, ...(LOCALIZED_SERVICE_PRESENTATION[language]?.[currentKey] || {}) };
+  const attributedWhatsAppUrl = buildAttributedWhatsAppUrl();
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -988,7 +990,7 @@ export default function ServiceDetail() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://wa.me/8613430335022" 
+                  href={attributedWhatsAppUrl}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3.5 rounded-xl border border-white/25 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"
@@ -1715,7 +1717,7 @@ export default function ServiceDetail() {
                   <ArrowRight className="w-5 h-5" />
                 </a>
                 <a 
-                  href="https://wa.me/8613430335022" 
+                  href={attributedWhatsAppUrl}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/15 text-white font-bold px-7 py-3.5 rounded-xl border border-white/25 transition-colors active:scale-[.98] flex items-center justify-center gap-2"
@@ -2564,7 +2566,7 @@ export default function ServiceDetail() {
                   {wh.bottomCta.btn1}
                 </a>
                 <a 
-                  href="https://wa.me/8613430335022" 
+                  href={attributedWhatsAppUrl}
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="bg-white/10 hover:bg-white/20 text-white font-bold px-8 py-4 rounded-xl text-center border border-white/20 backdrop-blur-sm transition-all text-sm"
@@ -3058,7 +3060,7 @@ export default function ServiceDetail() {
                 <ArrowRight className="w-5 h-5" />
               </a>
               <a 
-                href="https://wa.me/8613430335022" 
+                href={attributedWhatsAppUrl}
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="bg-white/10 hover:bg-white/20 text-white font-bold px-7 py-3.5 rounded-xl text-center border border-white/25 transition-colors active:scale-[0.98] flex items-center justify-center gap-2"

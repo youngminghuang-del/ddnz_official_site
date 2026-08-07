@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import CookieConsent from './components/CookieConsent';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
+import { readAttribution, rememberAttribution } from './lib/attribution';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
@@ -147,6 +148,16 @@ function AnalyticsRouteTracker() {
   return null;
 }
 
+function AttributionSessionSync() {
+  const location = useLocation();
+
+  useEffect(() => {
+    rememberAttribution(location.search);
+  }, [location.search]);
+
+  return null;
+}
+
 function RoutedCookieConsent() {
   const location = useLocation();
   if (location.pathname === '/content-ops') return null;
@@ -168,7 +179,13 @@ function GlobalConversionTracker() {
       const ctaLocation = clickable.closest('section')?.id || 'global_navigation';
 
       if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
-        trackEvent('whatsapp_click', { cta_location: ctaLocation });
+        const attribution = readAttribution();
+        trackEvent('whatsapp_click', {
+          cta_location: ctaLocation,
+          utm_source: attribution.utm_source,
+          utm_campaign: attribution.utm_campaign,
+          utm_content: attribution.utm_content,
+        });
       } else if (href.startsWith('tel:')) {
         trackEvent('phone_click', { cta_location: ctaLocation });
       } else if (href.startsWith('mailto:')) {
@@ -196,6 +213,7 @@ export default function App() {
         <Router>
           <LanguageRouteSync />
           <HashScrollHandler />
+          <AttributionSessionSync />
           <AnalyticsRouteTracker />
           <GlobalConversionTracker />
           <Suspense fallback={<RouteLoadingFallback />}>

@@ -1,9 +1,18 @@
 import { useState } from 'react';
-import { Mail, Globe, Clock, FileText, Shield, Linkedin, Phone } from 'lucide-react';
+import { Mail, Globe, Clock, FileText, Shield, Linkedin, Phone, Instagram, MessageCircle, Music2, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
+import { PUBLIC_SOCIAL_CHANNELS } from '../config/socialChannels';
+
+const socialIcons = {
+  linkedin: Linkedin,
+  facebook: Share2,
+  instagram: Instagram,
+  tiktok: Music2,
+  whatsapp: MessageCircle,
+};
 
 export default function Footer() {
   const [legalType, setLegalType] = useState<LegalType>(null);
@@ -14,7 +23,7 @@ export default function Footer() {
       ? 'phone_click'
       : method === 'email'
         ? 'email_click'
-        : 'linkedin_click';
+        : `${method}_click`;
     trackEvent(eventName, { cta_location: 'footer' });
   };
 
@@ -24,6 +33,39 @@ export default function Footer() {
     ru: 'Настройки Cookie',
     fr: 'Paramètres des cookies'
   }[language as 'en' | 'zh' | 'ru' | 'fr'] || 'Cookie Settings';
+
+  const qrCopy = {
+    en: {
+      title: 'Scan to connect',
+      wechatAlt: 'WeChat QR code for contacting DDNZ and Heaven Born',
+      whatsappAlt: 'WhatsApp Business QR code for contacting DDNZ and Heaven Born',
+    },
+    zh: {
+      title: '扫码联系',
+      wechatAlt: '联系 DDNZ 与华正邦泰的微信二维码',
+      whatsappAlt: '联系 DDNZ 与华正邦泰的 WhatsApp Business 二维码',
+    },
+    ru: {
+      title: 'Связаться по QR-коду',
+      wechatAlt: 'QR-код WeChat для связи с DDNZ и Heaven Born',
+      whatsappAlt: 'QR-код WhatsApp Business для связи с DDNZ и Heaven Born',
+    },
+    fr: {
+      title: 'Scanner pour nous contacter',
+      wechatAlt: 'Code QR WeChat pour contacter DDNZ et Heaven Born',
+      whatsappAlt: 'Code QR WhatsApp Business pour contacter DDNZ et Heaven Born',
+    },
+    es: {
+      title: 'Escanee para contactar',
+      wechatAlt: 'Código QR de WeChat para contactar con DDNZ y Heaven Born',
+      whatsappAlt: 'Código QR de WhatsApp Business para contactar con DDNZ y Heaven Born',
+    },
+    ar: {
+      title: 'امسح الرمز للتواصل',
+      wechatAlt: 'رمز WeChat للتواصل مع DDNZ وHeaven Born',
+      whatsappAlt: 'رمز WhatsApp Business للتواصل مع DDNZ وHeaven Born',
+    },
+  }[language];
 
   return (
     <footer className="bg-[#071A33] text-slate-300 py-8 font-sans border-t border-[#12355A]">
@@ -67,6 +109,17 @@ export default function Footer() {
               <p className="text-slate-300 text-xs md:text-sm leading-relaxed max-w-xs italic lg:not-italic font-medium">
                 {t('footer.slogan')}
               </p>
+              <p className="max-w-xs border-l-2 border-[#F59E0B] pl-3 text-[11px] leading-5 text-slate-400">
+                {language === 'zh'
+                  ? 'DDNZ 负责市场内容、产品采购与贸易支持；华正邦泰承接中国始发国际货运操作。'
+                  : language === 'es'
+                    ? 'DDNZ gestiona contenido, abastecimiento y apoyo comercial; Heaven Born ejecuta la logística internacional desde China.'
+                    : language === 'fr'
+                      ? 'DDNZ gère le contenu, le sourcing et l’appui commercial ; Heaven Born exécute le fret international depuis la Chine.'
+                      : language === 'ar'
+                        ? 'تدير DDNZ المحتوى والتوريد والدعم التجاري، بينما تنفذ Heaven Born عمليات الشحن الدولي من الصين.'
+                        : 'DDNZ runs the content, sourcing and trade-support desk; Heaven Born executes international freight operations from China.'}
+              </p>
             </div>
             <div className="pt-1 flex flex-col gap-3">
               <a 
@@ -87,17 +140,59 @@ export default function Footer() {
                 <Mail className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors" />
                 partnership@ddnzglobal.com
               </a>
-              <a 
-                href="https://linkedin.com/company/ddnz-global-logistics-supply-chain" 
-                data-analytics-tracked="true"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => handleContactClick('linkedin')}
-                className="inline-flex items-center text-white hover:text-[#FF8A00] transition-colors group font-medium text-xs md:text-sm animate-pulse-short"
-              >
-                <Linkedin className="w-4 h-4 md:w-4 md:h-4 lg:w-5 lg:h-5 mr-2 lg:mr-3 text-[#FF8A00] group-hover:text-orange-400 transition-colors animate-pulse-short" />
-                LinkedIn: DDNZ Global Logistics &amp; Supply Chain
-              </a>
+              <div className="grid grid-cols-2 gap-2 pt-1" aria-label="DDNZ social channels">
+                {PUBLIC_SOCIAL_CHANNELS.map((channel) => {
+                  const Icon = socialIcons[channel.platform];
+                  return (
+                    <a
+                      key={channel.platform}
+                      href={channel.publicUrl}
+                      data-analytics-tracked="true"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={() => handleContactClick(channel.platform)}
+                      aria-label={`${channel.label}: ${channel.handle}`}
+                      className="inline-flex min-h-10 items-center gap-2 border border-white/10 px-2.5 text-[11px] font-bold text-slate-200 transition-colors hover:border-[#F59E0B]/60 hover:bg-white/5 hover:text-white"
+                    >
+                      <Icon className="h-4 w-4 shrink-0 text-[#F59E0B]" aria-hidden="true" />
+                      <span>{channel.label}</span>
+                    </a>
+                  );
+                })}
+              </div>
+              <div className="border-t border-white/10 pt-4">
+                <p className="mb-3 text-[10px] font-black uppercase tracking-[0.16em] text-slate-400">{qrCopy.title}</p>
+                <div className="grid max-w-[15rem] grid-cols-2 gap-2.5">
+                  <figure className="border border-white/10 bg-[#0A2747]/80 p-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                    <div className="aspect-square overflow-hidden bg-[#F8FAFC] p-1.5">
+                      <img
+                        src="/images/social/wechat-qr.jpg"
+                        alt={qrCopy.wechatAlt}
+                        width={512}
+                        height={512}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <figcaption className="pt-2 text-center text-[10px] font-black tracking-[0.08em] text-slate-200">WECHAT</figcaption>
+                  </figure>
+                  <figure className="border border-white/10 bg-[#0A2747]/80 p-2.5 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                    <div className="aspect-square overflow-hidden bg-[#F8FAFC] p-1.5">
+                      <img
+                        src="/images/social/whatsapp-business-qr.jpg"
+                        alt={qrCopy.whatsappAlt}
+                        width={512}
+                        height={512}
+                        loading="lazy"
+                        decoding="async"
+                        className="h-full w-full object-contain"
+                      />
+                    </div>
+                    <figcaption className="pt-2 text-center text-[10px] font-black tracking-[0.08em] text-slate-200">WHATSAPP</figcaption>
+                  </figure>
+                </div>
+              </div>
             </div>
           </div>
 

@@ -8,7 +8,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,

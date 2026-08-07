@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
+import { Fragment, useCallback, useEffect, useMemo, useState, type ReactNode } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import { Helmet } from 'react-helmet-async';
 import {
@@ -22,6 +22,8 @@ import {
   Gauge,
   History,
   ListChecks,
+  Plus,
+  RadioTower,
   LoaderCircle,
   LockKeyhole,
   RefreshCw,
@@ -29,10 +31,12 @@ import {
   Send,
   ShieldCheck,
   Sparkles,
+  Trash2,
   UserRoundCheck,
   WandSparkles,
   X,
 } from 'lucide-react';
+import ContentWorkflowWizard, { type AiCapabilities } from '../components/content-ops/ContentWorkflowWizard';
 
 type Article = {
   id: string;
@@ -182,6 +186,37 @@ type CandidatePreview = {
   whyNow?: string;
   signalClass?: string;
   signalUrls?: string[];
+  signalPlatform?: string;
+  signalDate?: string;
+  signalCount?: number;
+  scoreBreakdown?: {
+    recency: number;
+    buyerIntent: number;
+    commercialImpact: number;
+    ddnzFit: number;
+    evidenceFeasibility: number;
+    originality: number;
+  };
+};
+
+type SignalLevel = 'low' | 'medium' | 'high';
+
+type SignalCandidateInput = {
+  id: string;
+  platform: string;
+  sourceUrl: string;
+  observedDate: string;
+  category: 'Freight Export' | 'Commercial Kitchen Equipment' | 'Outdoor Products';
+  subcategory: string;
+  market: string;
+  signalType: 'Product spike' | 'Route change' | 'Port disruption' | 'Freight swing' | 'Buyer question' | 'Other market change';
+  title: string;
+  whyNow: string;
+  signalCount: number;
+  buyerIntent: SignalLevel;
+  commercialImpact: SignalLevel;
+  ddnzFit: SignalLevel;
+  evidenceFeasibility: SignalLevel;
 };
 
 type WorkflowStatus = {
@@ -194,6 +229,7 @@ type WorkflowStatus = {
     canPersistTemplateCandidates: boolean;
     modelConnected: boolean;
     modelNotice: string;
+    ai?: AiCapabilities;
   };
   queue: {
     candidateCount: number;
@@ -212,6 +248,20 @@ type ArticleBrief = {
     publishGate: string[];
   };
   automationMaxStatus: string;
+};
+
+type EvidenceAutofillJob = {
+  id: string;
+  status: 'queued' | 'in_progress' | 'completed' | 'failed' | 'cancelled';
+  model: string;
+  error?: string;
+  evidencePersistence?: {
+    created: Array<{ id: string; claim: string; sourceTier: string; publisher: string; url: string }>;
+    skipped: number;
+    qualifyingDraftCount: number;
+    tierADraftCount: number;
+    message: string;
+  };
 };
 
 type TabKey = 'overview' | 'generator' | 'articles' | 'topics' | 'evidence' | 'audits';
@@ -233,7 +283,7 @@ const PIPELINE = [
 
 const tabItems: Array<{ key: TabKey; label: string; icon: typeof Gauge }> = [
   { key: 'overview', label: '控制台', icon: Gauge },
-  { key: 'generator', label: '文章生成器', icon: WandSparkles },
+  { key: 'generator', label: '审核与发布', icon: WandSparkles },
   { key: 'articles', label: '文章流转', icon: FileCheck2 },
   { key: 'topics', label: '选题与查重', icon: ListChecks },
   { key: 'evidence', label: '证据账本', icon: FileSearch },
@@ -295,9 +345,9 @@ const tabGuidance: Record<TabKey, { purpose: string; focus: string; action: stri
     action: '从待处理审计或等待人工判断的文章开始。',
   },
   generator: {
-    purpose: '按六个步骤完成本周选题、研究、写作、预览和人工发布。',
-    focus: '系统先隐藏重复候选并标出近期信号；信号只用于发现角度，专业事实、审核和 Published 必须由你确认。',
-    action: '从当前最靠前、且标记为“可以继续”的步骤开始。',
+    purpose: '在一个界面完成选题、联网研究、生成、审计、人工批准和渠道发布。',
+    focus: '先看任务进度，再处理六项审计阻断；审计通过后才会解锁人工批准。',
+    action: '填写本周重点，生成三个母选题，并按六步向导继续。',
   },
   articles: {
     purpose: '这里只放真正的文章，显示它从想法到发布走到了哪一步。',
@@ -322,12 +372,12 @@ const tabGuidance: Record<TabKey, { purpose: string; focus: string; action: stri
 };
 
 const generatorSteps = [
-  { step: '01', title: '生成候选', owner: '自动化', body: '每周提出 8–12 个未重复候选，显示“为什么现在”；可换一批。' },
-  { step: '02', title: '选择三篇', owner: '你确认', body: '选择货运、商厨、户外各一篇，低于 75 分不进入研究。' },
-  { step: '03', title: '搜集证据', owner: '自动化 + 研究员', body: '创建研究请求，并把每个重要论点分别写入证据账本。' },
-  { step: '04', title: '生成文章', owner: '自动化 + 研究员', body: '按 Brief 完成结构、正文、来源、图片方案和 CTA；未连接可信模型时不会伪造正文。' },
-  { step: '05', title: '网站预览', owner: '你审核', body: '检查标题、格式、图片、专业事实和承接路径。' },
-  { step: '06', title: '一键发布', owner: '你确认', body: '写入人工审核记录，将 Notion 改为 Published，并立即触发 GitHub 网站同步；每日 21:00 仍会备份同步。' },
+  { step: '01', title: '生成母选题', owner: 'Sol', body: '读取本周方向和 Notion 选题库，生成三类各一个、不重复的母选题。' },
+  { step: '02', title: '联网研究', owner: 'Sol', body: '核验重要论点，保存来源、日期、市场范围、限制和未解决问题。' },
+  { step: '03', title: '生成内容包', owner: 'Sol + Terra', body: '生成英文主内容，并按市场输出渠道版本与多语言适配。' },
+  { step: '04', title: '六项审计', owner: 'Sol', body: '逐项检查来源、事实、品牌、语言、敏感信息和平台规范。' },
+  { step: '05', title: '人工批准', owner: '你', body: '实名核对内容并准确输入标题；AI 无权完成这个步骤。' },
+  { step: '06', title: '发布或导出', owner: '你确认', body: '权限可用时直发；否则自动保留文案、素材说明和 UTM 人工发布包。' },
 ];
 
 const glossary = [
@@ -335,7 +385,7 @@ const glossary = [
   ['Topic Key', '选题唯一指纹，用来阻止重复文章。'],
   ['Lead Goal', '文章服务于货运询价还是产品采购询价。'],
   ['Audience Market', '文章适用的国家或地区。'],
-  ['Search Intent', '读者想看新闻、指南、比较、法规还是案例。'],
+  ['Search Intent', '读者想看市场快讯、指南、比较还是案例。法规只在改变实际决策时单独成文。'],
   ['Evidence A / B / C', 'A 为官方或一手来源；B 为权威行业来源；C 只能辅助发现线索。'],
   ['Reviewer', '完成专业审核并对发布负责的人。'],
   ['Last Verified', '资料最后一次核验日期，不等于文章发布日期。'],
@@ -484,6 +534,18 @@ const evidenceDecision = (item: Evidence): { state: UserDecision; reason: string
   return { state: 'pass', reason: '来源、适用市场和有效期均已记录' };
 };
 
+const evidenceQualificationGaps = (item: Evidence) => [
+  item.status !== 'Verified' && '等待人工核验',
+  !['A', 'B', 'First Party'].includes(item.sourceTier) && 'Tier C 不计入最低数量',
+  !item.publisher && '缺发布机构',
+  !item.market && '缺适用市场',
+  !item.summary && '缺证据摘要',
+  !item.accessedDate && '缺访问日期',
+  !item.expires && '缺失效日',
+  !!item.expires && item.expires < new Date().toISOString().slice(0, 10) && '已过期',
+  item.status === 'Verified' && !item.verifiedBy.length && '缺核验人',
+].filter(Boolean) as string[];
+
 const auditDecision = (audit: Audit): { state: UserDecision; reason: string } =>
   audit.result === 'Pass'
     ? { state: 'pass', reason: '本次检查已经完成' }
@@ -552,6 +614,49 @@ function publishedArticleUrl(article: Article) {
   return `https://www.ddnzglobal.com${prefix}/blog/${encodeURIComponent(article.slug || article.id)}`;
 }
 
+const todayString = () => new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+}).format(new Date());
+
+const emptySignalDraft = (): SignalCandidateInput => ({
+  id: typeof crypto !== 'undefined' && 'randomUUID' in crypto ? crypto.randomUUID() : `${Date.now()}-${Math.random()}`,
+  platform: 'Reddit',
+  sourceUrl: '',
+  observedDate: todayString(),
+  category: 'Freight Export',
+  subcategory: '',
+  market: 'Middle East',
+  signalType: 'Freight swing',
+  title: '',
+  whyNow: '',
+  signalCount: 1,
+  buyerIntent: 'high',
+  commercialImpact: 'high',
+  ddnzFit: 'high',
+  evidenceFeasibility: 'medium',
+});
+
+const levelScore = (level: SignalLevel, maximum: number) =>
+  level === 'high' ? maximum : level === 'medium' ? Math.round(maximum * 0.64) : Math.round(maximum * 0.32);
+
+const signalRecencyScore = (date: string) => {
+  const observed = new Date(`${date}T00:00:00Z`).getTime();
+  const today = new Date(`${todayString()}T00:00:00Z`).getTime();
+  const age = Math.max(0, Math.floor((today - observed) / 86_400_000));
+  if (age <= 7) return 25;
+  if (age <= 14) return 18;
+  if (age <= 30) return 10;
+  return 4;
+};
+
+const estimateSignalScore = (signal: SignalCandidateInput) =>
+  signalRecencyScore(signal.observedDate) +
+  levelScore(signal.buyerIntent, 25) +
+  levelScore(signal.commercialImpact, 20) +
+  levelScore(signal.ddnzFit, 15) +
+  levelScore(signal.evidenceFeasibility, 10) +
+  5;
+
 export default function ContentOpsDashboard() {
   const [data, setData] = useState<ContentOpsData | null>(null);
   const [loading, setLoading] = useState(true);
@@ -573,6 +678,10 @@ export default function ContentOpsDashboard() {
   const [candidateWarning, setCandidateWarning] = useState('');
   const [candidateBatch, setCandidateBatch] = useState(0);
   const [candidateHasMore, setCandidateHasMore] = useState(true);
+  const [candidateInputMode, setCandidateInputMode] = useState<'signals' | 'library'>('signals');
+  const [candidatePreviewMode, setCandidatePreviewMode] = useState<'signals' | 'library'>('signals');
+  const [signalDraft, setSignalDraft] = useState<SignalCandidateInput>(() => emptySignalDraft());
+  const [signalQueue, setSignalQueue] = useState<SignalCandidateInput[]>([]);
   const [acknowledgeTemplates, setAcknowledgeTemplates] = useState(false);
   const [selectedCandidateIds, setSelectedCandidateIds] = useState<Record<string, string>>({});
   const [workflowLoading, setWorkflowLoading] = useState('');
@@ -580,6 +689,8 @@ export default function ContentOpsDashboard() {
   const [workflowError, setWorkflowError] = useState('');
   const [articleActionFeedback, setArticleActionFeedback] = useState<Record<string, { tone: 'error' | 'success'; message: string }>>({});
   const [evidenceReviewerId, setEvidenceReviewerId] = useState('');
+  const [expandedEvidenceArticleId, setExpandedEvidenceArticleId] = useState('');
+  const [evidenceAutofillJobs, setEvidenceAutofillJobs] = useState<Record<string, EvidenceAutofillJob>>({});
   const [brief, setBrief] = useState<ArticleBrief | null>(null);
 
   const loadData = useCallback(async (force = false) => {
@@ -649,6 +760,7 @@ export default function ContentOpsDashboard() {
       rejectedCount: number;
     }>('candidate-preview', '/workflow/candidates', { batch: candidateBatch });
     if (!payload) return;
+    setCandidatePreviewMode('library');
     setCandidatePreview(payload.candidates);
     setCandidateWarning(payload.warning);
     setCandidateBatch(payload.nextBatch ?? payload.batch);
@@ -658,6 +770,56 @@ export default function ContentOpsDashboard() {
       ? `已显示 ${payload.candidates.length} 个未被精确查重拦截的候选；另有 ${payload.rejectedCount} 个已存在模板自动隐藏。尚未写入 Notion。`
       : payload.warning);
   }, [candidateBatch, runWorkflowAction]);
+
+  const addSignalToQueue = useCallback(() => {
+    if (signalQueue.length >= 12) {
+      setWorkflowError('一次最多比较 12 条热点线索。请先删除较弱线索或开始查重。');
+      return;
+    }
+    if (!signalDraft.sourceUrl.trim() || !signalDraft.title.trim() || !signalDraft.whyNow.trim()) {
+      setWorkflowError('请补齐线索链接、文章要回答的问题，以及“为什么现在”。');
+      return;
+    }
+    try {
+      const url = new URL(signalDraft.sourceUrl);
+      if (!['http:', 'https:'].includes(url.protocol)) throw new Error('invalid');
+    } catch {
+      setWorkflowError('请粘贴完整的 http(s) 线索链接。');
+      return;
+    }
+    setSignalQueue((current) => [...current, signalDraft]);
+    setSignalDraft((current) => ({
+      ...emptySignalDraft(),
+      platform: current.platform,
+      category: current.category,
+      market: current.market,
+      signalType: current.signalType,
+    }));
+    setCandidatePreview([]);
+    setAcknowledgeTemplates(false);
+    setWorkflowError('');
+    setWorkflowMessage(`已加入第 ${signalQueue.length + 1} 条线索；达到 8 条后即可统一评分和查重。`);
+  }, [signalDraft, signalQueue.length]);
+
+  const previewSignalCandidates = useCallback(async () => {
+    if (signalQueue.length < 8 || signalQueue.length > 12) {
+      setWorkflowError('请先录入 8–12 条市场线索，再统一评分和查重。');
+      return;
+    }
+    const payload = await runWorkflowAction<{
+      warning: string;
+      candidates: CandidatePreview[];
+      rejectedCount: number;
+    }>('signal-candidate-preview', '/workflow/candidates', { mode: 'signals', signals: signalQueue });
+    if (!payload) return;
+    setCandidatePreviewMode('signals');
+    setCandidatePreview(payload.candidates);
+    setCandidateWarning(payload.warning);
+    setCandidateHasMore(false);
+    setAcknowledgeTemplates(false);
+    const qualified = payload.candidates.filter((candidate) => candidate.candidateScore >= 75 && candidate.duplicateDecision === 'Clear').length;
+    setWorkflowMessage(`已完成 ${payload.candidates.length} 条线索的评分与查重；${qualified} 条达到 75 分且无重复。尚未写入 Notion。`);
+  }, [runWorkflowAction, signalQueue]);
 
   const persistCandidates = useCallback(async () => {
     if (!acknowledgeTemplates) {
@@ -669,6 +831,8 @@ export default function ContentOpsDashboard() {
       '/workflow/candidates',
       {
         persist: true,
+        mode: candidatePreviewMode,
+        ...(candidatePreviewMode === 'signals' ? { signals: signalQueue } : {}),
         acknowledgeTemplateCandidates: true,
         candidateTopicKeys: candidatePreview.map((candidate) => candidate.topicKey),
       },
@@ -678,8 +842,9 @@ export default function ContentOpsDashboard() {
     setCandidatePreview([]);
     setCandidateBatch(0);
     setCandidateHasMore(true);
+    if (candidatePreviewMode === 'signals') setSignalQueue([]);
     await Promise.all([loadData(true), loadWorkflowStatus()]);
-  }, [acknowledgeTemplates, candidatePreview, loadData, loadWorkflowStatus, runWorkflowAction]);
+  }, [acknowledgeTemplates, candidatePreview, candidatePreviewMode, loadData, loadWorkflowStatus, runWorkflowAction, signalQueue]);
 
   const selectWeeklyCandidates = useCallback(async () => {
     const topicIds = ['Freight Export', 'Commercial Kitchen Equipment', 'Outdoor Products']
@@ -699,16 +864,6 @@ export default function ContentOpsDashboard() {
     setSelectedCandidateIds({});
     await Promise.all([loadData(true), loadWorkflowStatus()]);
   }, [loadData, loadWorkflowStatus, runWorkflowAction, selectedCandidateIds]);
-
-  const prepareTopic = useCallback(async (topic: Topic) => {
-    const payload = await runWorkflowAction<{ request: { instructions: string }; reusedExistingArticle?: boolean }>(
-      `prepare-${topic.id}`,
-      `/workflow/topic/${topic.id}/prepare`,
-    );
-    if (!payload) return;
-    setWorkflowMessage(payload.reusedExistingArticle ? '该选题已有文章，已保留原文章并提示继续研究。' : payload.request.instructions);
-    await Promise.all([loadData(true), loadWorkflowStatus()]);
-  }, [loadData, loadWorkflowStatus, runWorkflowAction]);
 
   const advanceArticle = useCallback(async (article: Article, action: string) => {
     if (!article.evidenceReady) {
@@ -756,6 +911,59 @@ export default function ContentOpsDashboard() {
     setWorkflowMessage(`${payload.reviewer.name} 已将“${item.claim}”标记为 ${payload.decision}，并写入 Evidence Audit。`);
     await Promise.all([loadData(true), loadWorkflowStatus()]);
   }, [evidenceReviewerId, loadData, loadWorkflowStatus, runWorkflowAction]);
+
+  const startEvidenceAutofill = useCallback(async (article: Article) => {
+    if (!workflowStatus?.capabilities.modelConnected) {
+      setWorkflowError('OPENAI_API_KEY 尚未被工作台识别，不能启动自动补证据。');
+      return;
+    }
+    setExpandedEvidenceArticleId(article.id);
+    const job = await runWorkflowAction<EvidenceAutofillJob>(
+      `evidence-autofill-${article.id}`,
+      `/workflow/article/${article.id}/evidence/autofill`,
+      {},
+      (message) => setArticleActionFeedback((current) => ({ ...current, [article.id]: { tone: 'error', message } })),
+    );
+    if (!job) return;
+    setEvidenceAutofillJobs((current) => ({ ...current, [article.id]: job }));
+    const message = job.status === 'completed'
+      ? job.evidencePersistence?.message || 'AI 研究已完成，正在刷新证据账本。'
+      : 'GPT-5.6 Sol 已开始读取文章和现有证据，并联网补充新的 Evidence Ledger 草稿。';
+    setArticleActionFeedback((current) => ({ ...current, [article.id]: { tone: 'success', message } }));
+    setWorkflowMessage(message);
+    if (job.status === 'completed') await Promise.all([loadData(true), loadWorkflowStatus()]);
+  }, [loadData, loadWorkflowStatus, runWorkflowAction, workflowStatus?.capabilities.modelConnected]);
+
+  useEffect(() => {
+    const active = Object.entries(evidenceAutofillJobs).filter(([, job]) => ['queued', 'in_progress'].includes(job.status));
+    if (!active.length) return;
+    const timer = window.setInterval(() => {
+      active.forEach(([articleId, currentJob]) => {
+        void fetch(`/api/content-ops/ai/jobs/${currentJob.id}`, { cache: 'no-store' })
+          .then(async (response) => {
+            const payload = await response.json();
+            if (!response.ok) throw new Error(payload.error || '无法读取自动补证据任务');
+            const next = payload as EvidenceAutofillJob;
+            setEvidenceAutofillJobs((current) => ({ ...current, [articleId]: next }));
+            if (next.status === 'completed') {
+              const message = next.evidencePersistence?.message || 'AI 研究已完成并同步到证据账本。';
+              setArticleActionFeedback((current) => ({ ...current, [articleId]: { tone: 'success', message } }));
+              setWorkflowMessage(message);
+              await Promise.all([loadData(true), loadWorkflowStatus()]);
+            } else if (['failed', 'cancelled'].includes(next.status)) {
+              const message = next.error || '自动补证据任务未完成；现有内容和证据没有丢失。';
+              setArticleActionFeedback((current) => ({ ...current, [articleId]: { tone: 'error', message } }));
+              setWorkflowError(message);
+            }
+          })
+          .catch((pollError) => {
+            const message = pollError instanceof Error ? pollError.message : '无法读取自动补证据任务';
+            setArticleActionFeedback((current) => ({ ...current, [articleId]: { tone: 'error', message } }));
+          });
+      });
+    }, 2800);
+    return () => window.clearInterval(timer);
+  }, [evidenceAutofillJobs, loadData, loadWorkflowStatus]);
 
   const loadBrief = useCallback(async (article: Article) => {
     setWorkflowLoading(`brief-${article.id}`);
@@ -950,7 +1158,8 @@ export default function ContentOpsDashboard() {
       (topic) =>
         topic.status === 'Candidate' &&
         (topic.candidateScore ?? 0) >= 75 &&
-        topic.duplicateDecision === 'Clear',
+        topic.duplicateDecision === 'Clear' &&
+        topic.searchIntent !== 'Compliance',
     );
     return [
       {
@@ -1186,7 +1395,7 @@ export default function ContentOpsDashboard() {
                   >
                     <span>
                       <span className="block text-[11px] font-black uppercase tracking-[0.16em] text-[#0b4f8a]">第一次使用？从这里开始</span>
-                      <span className="mt-1 block text-sm font-bold text-slate-700">先生成候选，再按“货运 + 商厨 + 户外”各选一篇；最后由你预览和发布。</span>
+                      <span className="mt-1 block text-sm font-bold text-slate-700">进入“审核与发布”，按六步向导完成选题、研究、生成、审计、人工批准与发布。</span>
                     </span>
                     {onboardingOpen ? <ChevronUp className="h-5 w-5 shrink-0" /> : <ChevronDown className="h-5 w-5 shrink-0" />}
                   </button>
@@ -1214,7 +1423,7 @@ export default function ContentOpsDashboard() {
                               onClick={() => setActiveTab('generator')}
                               className="inline-flex min-h-11 items-center gap-2 bg-[#0b4f8a] px-4 text-sm font-black text-white hover:bg-[#083b68]"
                             >
-                              打开文章生成器<ArrowRight className="h-4 w-4" />
+                              打开审核与发布<ArrowRight className="h-4 w-4" />
                             </button>
                             <button
                               type="button"
@@ -1408,32 +1617,14 @@ export default function ContentOpsDashboard() {
                       </div>
                       <DecisionBadge
                         state="continue"
-                        reason={workflowStatus?.capabilities.modelConnected ? '研究模型已连接，可以按闸门继续' : '信号候选模式可继续：发现角度不等于已核验事实'}
+                        reason={workflowStatus?.capabilities.modelConnected ? 'GPT-5.6 已连接，可以按六步向导继续' : 'Notion 治理仍可用；AI 工作台等待服务端密钥'}
                       />
                     </section>
 
-                    <section className="border border-slate-300 bg-[#fffaf0] px-5 py-5">
-                      <div className="grid gap-5 lg:grid-cols-[1fr_1.4fr] lg:items-start">
-                        <div>
-                          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-amber-800">选题雷达 · 先看信号再写标题</p>
-                          <h2 className="mt-1 text-xl font-black text-slate-950">近期关注度来自“变化 + 决策 + 时间窗口”</h2>
-                          <p className="mt-2 text-sm leading-6 text-slate-600">候选卡会说明“为什么现在”。新闻或法规信号只负责发现角度；没有改变成本、流程、风险或产品选择时，应更新旧文，不应新建年份文章。</p>
-                        </div>
-                        <div className="grid gap-3 sm:grid-cols-2">
-                          {[
-                            ['一手需求', 'Search Console 上升查询、询价表、WhatsApp 和报价问题最接近真实客户。'],
-                            ['官方变化', '海关、承运人、港口、SASO/标准机构的新规则与服务变化。'],
-                            ['季节窗口', '海湾高温、户外采购季、酒店项目交付期等会改变选型与采购时间。'],
-                            ['转化判断', '题目必须自然落到运价、采购、验货、集货或出口服务 CTA。'],
-                          ].map(([title, body]) => (
-                            <div key={title} className="border-l-2 border-amber-500 pl-3">
-                              <p className="text-xs font-black text-slate-900">{title}</p>
-                              <p className="mt-1 text-xs leading-5 text-slate-600">{body}</p>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </section>
+                    <ContentWorkflowWizard
+                      modelConnected={Boolean(workflowStatus?.capabilities.modelConnected)}
+                      capabilities={workflowStatus?.capabilities.ai}
+                    />
 
                     {(workflowError || workflowMessage) && (
                       <section className={`border-l-4 bg-white px-5 py-4 ${workflowError ? 'border-rose-600' : 'border-emerald-600'}`} role="status">
@@ -1448,25 +1639,196 @@ export default function ContentOpsDashboard() {
                       </section>
                     )}
 
+                    <details hidden aria-hidden="true" className="border border-slate-300 bg-white">
+                      <summary className="cursor-pointer list-none px-5 py-4 font-black text-slate-800 hover:bg-slate-50">
+                        <span className="inline-flex items-center gap-2"><ChevronRight className="h-4 w-4" />备用工具：手工录入线索与本地候选库</span>
+                        <span className="mt-1 block pl-6 text-xs font-normal leading-5 text-slate-500">只有 GPT 暂时无法使用时才展开；正常流程不需要你填写 8–12 条线索。</span>
+                      </summary>
+                      <div className="space-y-5 border-t border-slate-200 bg-slate-50 p-4 sm:p-5">
                     <section className="border border-slate-300 bg-white">
-                      <div className="grid gap-5 border-b border-slate-200 px-5 py-5 lg:grid-cols-[74px_1fr_auto] lg:items-center">
+                      <div className="grid gap-5 border-b border-slate-200 px-5 py-5 lg:grid-cols-[74px_1fr] lg:items-center">
                         <div className="font-mono text-4xl font-black text-amber-600">01</div>
                         <div>
-                          <h2 className="text-xl font-black">生成并预览 8–12 个候选</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">先隐藏已存在的 Topic Key / Primary Query，再显示未重复候选；只有你确认后才写入 Notion。</p>
+                          <h2 className="text-xl font-black">30 分钟热点扫描与候选查重</h2>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">录入 8–12 条近期市场线索，系统按 100 分制评分并查重。社交帖子只用于发现角度，不会被当作正文证据。</p>
                         </div>
-                        <button
-                          type="button"
-                          onClick={() => void previewCandidates()}
-                          disabled={!!workflowLoading}
-                          className="inline-flex min-h-11 items-center justify-center gap-2 bg-[#0b4f8a] px-4 text-sm font-black text-white hover:bg-[#083b68] disabled:bg-slate-300"
-                        >
-                          {workflowLoading === 'candidate-preview' ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <WandSparkles className="h-4 w-4" />}
-                          {candidatePreview.length
-                            ? candidateHasMore ? '换一批未重复候选' : '重新检查当前批次'
-                            : '预览本周候选'}
-                        </button>
                       </div>
+                      <div className="border-b border-slate-200 bg-slate-50 px-5 py-3">
+                        <div className="inline-flex border border-slate-300 bg-white p-1" aria-label="候选来源">
+                          <button
+                            type="button"
+                            onClick={() => { setCandidateInputMode('signals'); setCandidatePreview([]); setAcknowledgeTemplates(false); }}
+                            className={`min-h-10 px-4 text-sm font-black ${candidateInputMode === 'signals' ? 'bg-[#0b4f8a] text-white' : 'text-slate-600 hover:bg-slate-100'}`}
+                          >
+                            快速热点扫描（默认）
+                          </button>
+                          <button
+                            type="button"
+                            onClick={() => { setCandidateInputMode('library'); setCandidatePreview([]); setAcknowledgeTemplates(false); }}
+                            className={`min-h-10 px-4 text-sm font-black ${candidateInputMode === 'library' ? 'bg-slate-800 text-white' : 'text-slate-600 hover:bg-slate-100'}`}
+                          >
+                            内置候选备用库
+                          </button>
+                        </div>
+                      </div>
+
+                      {candidateInputMode === 'signals' ? (
+                        <div className="border-b border-slate-200 px-5 py-5">
+                          <div className="grid gap-6 xl:grid-cols-[minmax(0,1.35fr)_minmax(320px,.65fr)]">
+                            <div>
+                              <div className="flex items-center justify-between gap-4">
+                                <div>
+                                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#0b4f8a]">录入一条真实线索</p>
+                                  <p className="mt-1 text-sm leading-6 text-slate-600">一条约 1–2 分钟；同一问题在多个平台出现时，把“相似信号数”调高。</p>
+                                </div>
+                                <div className="border-l-2 border-amber-500 pl-3 text-right">
+                                  <p className="font-mono text-2xl font-black text-slate-950">{estimateSignalScore(signalDraft)}</p>
+                                  <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">查重前预估分</p>
+                                </div>
+                              </div>
+
+                              <div className="mt-4 grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+                                <label className="text-xs font-black text-slate-700">
+                                  线索平台
+                                  <select value={signalDraft.platform} onChange={(event) => setSignalDraft((current) => ({ ...current, platform: event.target.value }))} className="mt-1 min-h-11 w-full border border-slate-300 bg-white px-3 text-base font-semibold text-slate-900">
+                                    {['Reddit', 'Facebook', 'LinkedIn', 'TikTok', 'Carrier / Port', 'Other'].map((item) => <option key={item}>{item}</option>)}
+                                  </select>
+                                </label>
+                                <label className="text-xs font-black text-slate-700">
+                                  发现日期
+                                  <input type="date" max={todayString()} value={signalDraft.observedDate} onChange={(event) => setSignalDraft((current) => ({ ...current, observedDate: event.target.value }))} className="mt-1 min-h-11 w-full border border-slate-300 bg-white px-3 text-base font-semibold text-slate-900" />
+                                </label>
+                                <label className="text-xs font-black text-slate-700">
+                                  业务分类
+                                  <select value={signalDraft.category} onChange={(event) => setSignalDraft((current) => {
+                                    const category = event.target.value as SignalCandidateInput['category'];
+                                    const freightOnly = ['Route change', 'Port disruption', 'Freight swing'].includes(current.signalType);
+                                    return {
+                                      ...current,
+                                      category,
+                                      signalType: category === 'Freight Export'
+                                        ? current.signalType === 'Product spike' ? 'Freight swing' : current.signalType
+                                        : freightOnly ? 'Product spike' : current.signalType,
+                                    };
+                                  })} className="mt-1 min-h-11 w-full border border-slate-300 bg-white px-3 text-base font-semibold text-slate-900">
+                                    <option value="Freight Export">货运出口</option>
+                                    <option value="Commercial Kitchen Equipment">商用餐厨设备</option>
+                                    <option value="Outdoor Products">户外用品</option>
+                                  </select>
+                                </label>
+                                <label className="text-xs font-black text-slate-700">
+                                  市场变化
+                                  <select value={signalDraft.signalType} onChange={(event) => setSignalDraft((current) => ({ ...current, signalType: event.target.value as SignalCandidateInput['signalType'] }))} className="mt-1 min-h-11 w-full border border-slate-300 bg-white px-3 text-base font-semibold text-slate-900">
+                                    {signalDraft.category === 'Freight Export' ? (
+                                      <>
+                                        <option value="Route change">航线开通/暂停</option>
+                                        <option value="Port disruption">港口特殊情况</option>
+                                        <option value="Freight swing">运费暴涨/暴跌</option>
+                                      </>
+                                    ) : <option value="Product spike">爆品/需求升温</option>}
+                                    <option value="Buyer question">重复买家问题</option>
+                                    <option value="Other market change">其他市场变化</option>
+                                  </select>
+                                </label>
+                              </div>
+
+                              <div className="mt-3 grid gap-3 md:grid-cols-[1fr_1fr_140px]">
+                                <label className="text-xs font-black text-slate-700">
+                                  目标市场
+                                  <input value={signalDraft.market} onChange={(event) => setSignalDraft((current) => ({ ...current, market: event.target.value }))} placeholder="Middle East / West Africa / Brazil" className="mt-1 min-h-11 w-full border border-slate-300 px-3 text-base font-semibold text-slate-900" />
+                                </label>
+                                <label className="text-xs font-black text-slate-700">
+                                  产品/航线（可选）
+                                  <input value={signalDraft.subcategory} onChange={(event) => setSignalDraft((current) => ({ ...current, subcategory: event.target.value }))} placeholder="Portable refrigerators / China–Brazil" className="mt-1 min-h-11 w-full border border-slate-300 px-3 text-base font-semibold text-slate-900" />
+                                </label>
+                                <label className="text-xs font-black text-slate-700">
+                                  相似信号数
+                                  <input type="number" min="1" max="20" value={signalDraft.signalCount} onChange={(event) => setSignalDraft((current) => ({ ...current, signalCount: Math.max(1, Math.min(20, Number(event.target.value) || 1)) }))} className="mt-1 min-h-11 w-full border border-slate-300 px-3 text-base font-semibold text-slate-900" />
+                                </label>
+                              </div>
+
+                              <label className="mt-3 block text-xs font-black text-slate-700">
+                                线索链接
+                                <input type="url" value={signalDraft.sourceUrl} onChange={(event) => setSignalDraft((current) => ({ ...current, sourceUrl: event.target.value }))} placeholder="https://www.reddit.com/..." className="mt-1 min-h-11 w-full border border-slate-300 px-3 text-base font-semibold text-slate-900" />
+                              </label>
+                              <label className="mt-3 block text-xs font-black text-slate-700">
+                                文章要回答什么（建议直接写英文候选标题）
+                                <input value={signalDraft.title} onChange={(event) => setSignalDraft((current) => ({ ...current, title: event.target.value }))} placeholder="West Africa freight rates jumped: what China exporters should check before booking" className="mt-1 min-h-11 w-full border border-slate-300 px-3 text-base font-semibold text-slate-900" />
+                              </label>
+                              <label className="mt-3 block text-xs font-black text-slate-700">
+                                为什么现在
+                                <textarea value={signalDraft.whyNow} onChange={(event) => setSignalDraft((current) => ({ ...current, whyNow: event.target.value }))} placeholder="说明最近发生了什么，以及它怎样影响成本、交期、航线或产品选择。" rows={2} className="mt-1 w-full border border-slate-300 px-3 py-2 text-base font-semibold leading-6 text-slate-900" />
+                              </label>
+
+                              <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
+                                {[
+                                  ['buyerIntent', '买家意图', '是否接近询价/采购'],
+                                  ['commercialImpact', '商业影响', '是否改变成本/交期/选择'],
+                                  ['ddnzFit', 'DDNZ 匹配', '能否承接报价/采购'],
+                                  ['evidenceFeasibility', '证据可得', '能否找到独立可靠来源'],
+                                ].map(([key, label, hint]) => (
+                                  <label key={key} className="border-l-2 border-slate-300 pl-3 text-xs font-black text-slate-700">
+                                    {label}<span className="mt-0.5 block font-normal text-slate-500">{hint}</span>
+                                    <select value={signalDraft[key as keyof Pick<SignalCandidateInput, 'buyerIntent' | 'commercialImpact' | 'ddnzFit' | 'evidenceFeasibility'>]} onChange={(event) => setSignalDraft((current) => ({ ...current, [key]: event.target.value as SignalLevel }))} className="mt-2 min-h-10 w-full border border-slate-300 bg-white px-2 text-base font-semibold text-slate-900">
+                                      <option value="high">强</option><option value="medium">中</option><option value="low">弱</option>
+                                    </select>
+                                  </label>
+                                ))}
+                              </div>
+                              <button type="button" onClick={addSignalToQueue} className="mt-5 inline-flex min-h-11 items-center gap-2 bg-amber-600 px-4 text-sm font-black text-white hover:bg-amber-700">
+                                <Plus className="h-4 w-4" />加入热点清单
+                              </button>
+                            </div>
+
+                            <aside className="border-l-4 border-[#0b4f8a] bg-slate-50 p-4">
+                              <div className="flex items-start justify-between gap-3">
+                                <div>
+                                  <p className="text-[11px] font-black uppercase tracking-[0.14em] text-[#0b4f8a]">待查重清单</p>
+                                  <p className="mt-1 text-sm text-slate-600">至少 8 条，最多 12 条</p>
+                                </div>
+                                <span className={`font-mono text-3xl font-black ${signalQueue.length >= 8 ? 'text-emerald-700' : 'text-slate-400'}`}>{signalQueue.length}/12</span>
+                              </div>
+                              <div className="mt-4 max-h-[560px] space-y-2 overflow-y-auto pr-1">
+                                {signalQueue.length ? signalQueue.map((signal, index) => (
+                                  <div key={signal.id} className="border-b border-slate-200 bg-white p-3">
+                                    <div className="flex items-start justify-between gap-3">
+                                      <div className="min-w-0">
+                                        <p className="text-[10px] font-black uppercase tracking-wider text-slate-500">{String(index + 1).padStart(2, '0')} · {signal.platform} · {signal.market}</p>
+                                        <p className="mt-1 line-clamp-2 text-xs font-black leading-5 text-slate-900">{signal.title}</p>
+                                      </div>
+                                      <button type="button" onClick={() => { setSignalQueue((current) => current.filter((item) => item.id !== signal.id)); setCandidatePreview([]); }} aria-label={`删除第 ${index + 1} 条线索`} className="p-1 text-slate-400 hover:text-rose-700"><Trash2 className="h-4 w-4" /></button>
+                                    </div>
+                                    <p className="mt-2 font-mono text-xs font-black text-[#0b4f8a]">预估 {estimateSignalScore(signal)}/100 · 相似信号 {signal.signalCount}</p>
+                                  </div>
+                                )) : (
+                                  <div className="border-y border-dashed border-slate-300 py-10 text-center">
+                                    <RadioTower className="mx-auto h-6 w-6 text-slate-400" />
+                                    <p className="mt-2 text-xs leading-5 text-slate-500">先从 Reddit、Facebook、LinkedIn、TikTok 或船公司/港口页面加入第一条线索。</p>
+                                  </div>
+                                )}
+                              </div>
+                              <button type="button" onClick={() => void previewSignalCandidates()} disabled={signalQueue.length < 8 || signalQueue.length > 12 || !!workflowLoading} className="mt-4 inline-flex min-h-11 w-full items-center justify-center gap-2 bg-[#0b4f8a] px-4 text-sm font-black text-white hover:bg-[#083b68] disabled:cursor-not-allowed disabled:bg-slate-300">
+                                {workflowLoading === 'signal-candidate-preview' ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <Search className="h-4 w-4" />}
+                                统一评分并查重
+                              </button>
+                              <p className="mt-3 text-xs leading-5 text-slate-500">评分包括：近期热度 25、买家意图 25、商业影响 20、DDNZ 匹配 15、证据可得 10、原创性 5。</p>
+                            </aside>
+                          </div>
+                        </div>
+                      ) : (
+                        <div className="border-b border-slate-200 px-5 py-5">
+                          <div className="flex flex-wrap items-center justify-between gap-4">
+                            <div>
+                              <p className="text-sm font-black text-slate-900">没有时间收集链接时，可用内置候选作为备用</p>
+                              <p className="mt-1 text-xs leading-5 text-slate-600">备用库不代表当前市场正在升温，仍需在研究阶段核验时效和真实需求。</p>
+                            </div>
+                            <button type="button" onClick={() => void previewCandidates()} disabled={!!workflowLoading} className="inline-flex min-h-11 items-center justify-center gap-2 bg-slate-800 px-4 text-sm font-black text-white hover:bg-slate-950 disabled:bg-slate-300">
+                              {workflowLoading === 'candidate-preview' ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <WandSparkles className="h-4 w-4" />}
+                              {candidatePreview.length ? candidateHasMore ? '换一批未重复候选' : '重新检查当前批次' : '预览内置候选'}
+                            </button>
+                          </div>
+                        </div>
+                      )}
                       {selectedTopics.length === 3 && (
                         <div className="border-b border-sky-200 bg-sky-50 px-5 py-3 text-sm font-bold leading-6 text-sky-900">
                           本周 1 + 1 + 1 已经选完。这里的新候选只作为下周备选，不会替换当前三篇；当前任务请继续第 3 步创建研究文章。
@@ -1493,6 +1855,11 @@ export default function ContentOpsDashboard() {
                                   </div>
                                 )}
                                 <p className="mt-2 text-xs leading-5 text-slate-500">{candidate.duplicateNotes}</p>
+                                {candidate.scoreBreakdown && (
+                                  <p className="mt-2 font-mono text-[10px] leading-5 text-slate-500">
+                                    热度 {candidate.scoreBreakdown.recency} · 意图 {candidate.scoreBreakdown.buyerIntent} · 影响 {candidate.scoreBreakdown.commercialImpact} · 匹配 {candidate.scoreBreakdown.ddnzFit} · 证据 {candidate.scoreBreakdown.evidenceFeasibility} · 原创 {candidate.scoreBreakdown.originality}
+                                  </p>
+                                )}
                                 <details className="mt-3 border-t border-slate-200 pt-3 text-xs text-slate-600">
                                   <summary className="cursor-pointer font-black text-[#0b4f8a]">查看证据计划和引用资产</summary>
                                   <p className="mt-2 leading-5"><strong>证据：</strong>{candidate.evidencePlan}</p>
@@ -1500,7 +1867,7 @@ export default function ContentOpsDashboard() {
                                   {!!candidate.signalUrls?.length && (
                                     <p className="mt-2 leading-5">
                                       <strong>发现信号：</strong>{candidate.signalUrls.map((url, index) => (
-                                        <span key={url}>{index > 0 ? ' · ' : ''}<a href={url} target="_blank" rel="noreferrer" className="font-bold text-[#0b4f8a] underline">官方来源 {index + 1}</a></span>
+                                        <span key={url}>{index > 0 ? ' · ' : ''}<a href={url} target="_blank" rel="noreferrer" className="font-bold text-[#0b4f8a] underline">打开线索 {index + 1}</a></span>
                                       ))}
                                     </p>
                                   )}
@@ -1515,7 +1882,7 @@ export default function ContentOpsDashboard() {
                               onChange={(event) => setAcknowledgeTemplates(event.target.checked)}
                               className="mt-1 h-4 w-4 accent-[#0b4f8a]"
                             />
-                            <span>我确认这些只是未研究的候选模板，不能作为事实、正文或可发布文章；保存后仍要人工选题和逐条补证据。</span>
+                            <span>我确认这些只是未研究的候选线索，社交平台内容不能直接作为事实或正文证据；保存后仍要人工选题，并在 Evidence Ledger 逐条补充可核验来源。</span>
                           </label>
                           <button
                             type="button"
@@ -1535,7 +1902,7 @@ export default function ContentOpsDashboard() {
                         <div className="font-mono text-4xl font-black text-amber-600">02</div>
                         <div>
                           <h2 className="text-xl font-black">选择本周三篇</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">必须恰好选择货运、商厨、户外各一篇；系统只列出评分 ≥75 且查重为 Clear 的候选。</p>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">必须恰好选择货运、商厨、户外各一篇；系统只列出评分 ≥75、查重为 Clear 且不是纯法规概念的候选。</p>
                         </div>
                         <button
                           type="button"
@@ -1566,44 +1933,43 @@ export default function ContentOpsDashboard() {
                         ))}
                       </div>
                     </section>
+                      </div>
+                    </details>
 
+                    <details className="border border-slate-300 bg-white">
+                      <summary className="cursor-pointer list-none px-5 py-4 font-black text-slate-800 hover:bg-slate-50">
+                        <span className="inline-flex items-center gap-2"><ChevronRight className="h-4 w-4" />Notion 治理与官网发布轨道</span>
+                        <span className="mt-1 block pl-6 text-xs font-normal leading-5 text-slate-500">查看已进入 Notion 的文章、证据、人工审核、官网预览和 GitHub 同步；社媒 ContentPackage 使用上方六步向导。</span>
+                      </summary>
+                      <div className="space-y-6 border-t border-slate-200 bg-slate-50 p-4 sm:p-5">
                     <section className="border border-slate-300 bg-white">
                       <div className="grid gap-5 border-b border-slate-200 px-5 py-5 lg:grid-cols-[74px_1fr] lg:items-center">
                         <div className="font-mono text-4xl font-black text-amber-600">03</div>
                         <div>
-                          <h2 className="text-xl font-black">为 Selected 选题创建研究请求</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">这一步会创建或复用 Researching 文章，并记录证据缺口；不会自动写入未经核验的研究结论。</p>
+                          <h2 className="text-xl font-black">读取 Notion 中的治理结果</h2>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">这里显示已经进入 Notion 的 Selected 选题，用于延续现有内容、证据、审批与官网发布流程。</p>
                         </div>
                       </div>
                       {selectedTopics.length ? (
                         <div className="divide-y divide-slate-200">
                           {selectedTopics.map((topic) => (
-                            <div key={topic.id} className="grid gap-4 px-5 py-4 md:grid-cols-[1fr_auto] md:items-center">
+                            <div key={topic.id} className="px-5 py-4">
                               <div>
                                 <ExternalLink href={topic.url}>{topic.title}</ExternalLink>
                                 <p className="mt-1 text-xs text-slate-500">{topic.productCategory || topic.leadGoal} · {topic.audienceMarket}</p>
                               </div>
-                              <button
-                                type="button"
-                                onClick={() => void prepareTopic(topic)}
-                                disabled={!!workflowLoading}
-                                className="inline-flex min-h-10 items-center justify-center gap-2 border border-[#0b4f8a] px-3 text-xs font-black text-[#0b4f8a] hover:bg-sky-50 disabled:opacity-50"
-                              >
-                                {workflowLoading === `prepare-${topic.id}` ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <FileSearch className="h-4 w-4" />}
-                                创建或打开研究文章
-                              </button>
                             </div>
                           ))}
                         </div>
-                      ) : <EmptyState text="还没有 Selected 选题；请先完成上一步三篇选择" />}
+                      ) : <EmptyState text="Notion 中还没有 Selected 选题；可以使用上方六步向导创建内容包，或在 Notion 中选择现有候选" />}
                     </section>
 
                     <section className="border border-slate-300 bg-white">
                       <div className="grid gap-5 border-b border-slate-200 px-5 py-5 lg:grid-cols-[74px_1fr] lg:items-center">
                         <div className="font-mono text-4xl font-black text-amber-600">04</div>
                         <div>
-                          <h2 className="text-xl font-black">研究、起草并送到专业审核</h2>
-                          <p className="mt-1 text-sm leading-6 text-slate-600">“已关联”不等于“已核验”。系统可先建立证据包，但只有经过人工核验、字段完整、未过期的 A/B 级或一手证据才允许推进。</p>
+                          <h2 className="text-xl font-black">审核 Notion 证据与官网正文</h2>
+                          <p className="mt-1 text-sm leading-6 text-slate-600">“已写入 Notion”不等于“可以发布”。这里核验来源、市场范围、产品/运输事实、图片权利和正文格式，再决定是否推进。</p>
                         </div>
                       </div>
                       {productionArticles.length ? (
@@ -1751,7 +2117,7 @@ export default function ContentOpsDashboard() {
                             );
                           })}
                         </div>
-                      ) : <EmptyState text="当前没有正在研究、起草或审核中的文章" />}
+                      ) : <EmptyState text="当前没有等待审核的 Notion 文章" />}
                     </section>
 
                     <section className="grid gap-px border border-slate-300 bg-slate-300 md:grid-cols-2">
@@ -1766,6 +2132,8 @@ export default function ContentOpsDashboard() {
                         <p className="mt-2 text-sm leading-6 text-slate-600">只有 Domain Review、分数和治理字段全部达标时，预览底部才会启用发布按钮。系统会先写入人工审核记录，再更新 Notion。</p>
                       </div>
                     </section>
+                      </div>
+                    </details>
                   </div>
                 )}
 
@@ -1886,15 +2254,20 @@ export default function ContentOpsDashboard() {
                         <table className="min-w-[1520px] w-full text-left">
                         <thead className="bg-[#0b1f3a] text-[11px] uppercase tracking-wider text-slate-300">
                           <tr>
-                            <th className="px-4 py-3">文章</th><th className="px-4 py-3">发布状态</th><th className="px-4 py-3">当前操作</th><th className="px-4 py-3">市场/意图</th><th className="px-4 py-3">治理进度与问题</th><th className="px-4 py-3">证据/审核</th><th className="px-4 py-3">人工 Reviewer / 核验</th><th className="px-4 py-3">CTA</th><th className="px-4 py-3">操作</th>
+                            <th className="sticky left-0 z-20 bg-[#0b1f3a] px-4 py-3">文章</th><th className="px-4 py-3">发布状态</th><th className="px-4 py-3">当前操作</th><th className="px-4 py-3">市场/意图</th><th className="px-4 py-3">治理进度与问题</th><th className="px-4 py-3">证据/审核</th><th className="px-4 py-3">人工 Reviewer / 核验</th><th className="px-4 py-3">CTA</th><th className="sticky right-0 z-20 bg-[#0b1f3a] px-4 py-3">操作</th>
                           </tr>
                         </thead>
                         <tbody className="divide-y divide-slate-200">
                           {filteredArticles.map((article) => {
                             const governance = governanceState(article);
+                            const articleEvidence = data.evidence.filter((item) => item.articleIds.includes(article.id));
+                            const evidenceExpanded = expandedEvidenceArticleId === article.id;
+                            const autofillJob = evidenceAutofillJobs[article.id];
+                            const autofillActive = !!autofillJob && ['queued', 'in_progress'].includes(autofillJob.status);
                             return (
-                            <tr key={article.id} className="align-top hover:bg-slate-50">
-                              <td className="max-w-[370px] px-4 py-4">
+                            <Fragment key={article.id}>
+                            <tr className="align-top hover:bg-slate-50">
+                              <td className="sticky left-0 z-10 max-w-[370px] bg-white px-4 py-4">
                                 <ExternalLink href={article.url}>{article.title}</ExternalLink>
                                 <p className="mt-1 truncate text-xs text-slate-500">{article.primaryQuery || article.topicKey || '缺少 Primary Query / Topic Key'}</p>
                               </td>
@@ -1930,16 +2303,111 @@ export default function ContentOpsDashboard() {
                               <td className="px-4 py-4 text-sm"><p className="font-black">合格 {article.qualifiedEvidenceCount ?? 0}/{article.evidenceMinimum ?? 2} · 关联 {article.relatedEvidenceCount ?? article.evidenceCount}</p><p className="mt-1 text-xs text-slate-500">{article.auditCount} 次审核 · {article.topicCount} 个 Topic</p><p className="mt-1 font-mono text-xs font-black">{article.qualityScore ?? '—'}/100</p></td>
                               <td className="px-4 py-4 text-sm"><p>{reviewerLabel(article)}</p><p className="mt-1 text-xs text-slate-500">{formatDate(article.lastVerified)}</p></td>
                               <td className="px-4 py-4 text-sm">{article.primaryCTA || '未设置'}</td>
-                              <td className="px-4 py-4">
-                                <button
-                                  type="button"
-                                  onClick={() => void openPreview(article.id)}
-                                  className="inline-flex min-h-10 items-center gap-1.5 border border-[#0b4f8a] px-3 text-xs font-black text-[#0b4f8a] hover:bg-sky-50"
-                                >
-                                  <Eye className="h-4 w-4" />网站预览
-                                </button>
+                              <td className="sticky right-0 z-10 bg-white px-4 py-4">
+                                <div className="flex min-w-[170px] flex-col gap-2">
+                                  {!article.evidenceReady && (
+                                    <button
+                                      type="button"
+                                      onClick={() => void startEvidenceAutofill(article)}
+                                      disabled={autofillActive || !!workflowLoading || !workflowStatus?.capabilities.modelConnected}
+                                      className="inline-flex min-h-10 items-center justify-center gap-1.5 bg-amber-500 px-3 text-xs font-black text-slate-950 hover:bg-amber-400 disabled:bg-slate-300"
+                                    >
+                                      {autofillActive ? <LoaderCircle className="h-4 w-4 animate-spin" /> : <WandSparkles className="h-4 w-4" />}
+                                      {autofillActive ? 'AI 正在补证据' : 'AI 自动补证据'}
+                                    </button>
+                                  )}
+                                  <button
+                                    type="button"
+                                    onClick={() => setExpandedEvidenceArticleId(evidenceExpanded ? '' : article.id)}
+                                    aria-expanded={evidenceExpanded}
+                                    aria-controls={`article-evidence-panel-${article.id}`}
+                                    className="inline-flex min-h-10 items-center justify-center gap-1.5 border border-slate-400 px-3 text-xs font-black text-slate-700 hover:bg-slate-50"
+                                  >
+                                    {evidenceExpanded ? <ChevronUp className="h-4 w-4" /> : <FileSearch className="h-4 w-4" />}
+                                    {evidenceExpanded ? '收起证据' : `审核证据 (${articleEvidence.length})`}
+                                  </button>
+                                  <button
+                                    type="button"
+                                    onClick={() => void openPreview(article.id)}
+                                    className="inline-flex min-h-10 items-center justify-center gap-1.5 border border-[#0b4f8a] px-3 text-xs font-black text-[#0b4f8a] hover:bg-sky-50"
+                                  >
+                                    <Eye className="h-4 w-4" />网站预览
+                                  </button>
+                                </div>
                               </td>
                             </tr>
+                            {evidenceExpanded && (
+                              <tr className="bg-amber-50/70">
+                                <td colSpan={9} className="p-0">
+                                  <div id={`article-evidence-panel-${article.id}`} className="sticky left-0 w-[calc(100vw-4rem)] max-w-[1518px] px-5 py-5">
+                                  <div className="border-l-4 border-amber-500 bg-white p-4">
+                                    <div className="flex flex-wrap items-start justify-between gap-4">
+                                      <div>
+                                        <p className="font-black text-slate-900">AI 建档，人工只做核验</p>
+                                        <p className="mt-1 max-w-3xl text-xs leading-5 text-slate-600">证据不足时点击“AI 自动补证据”。Sol 会联网研究、去重、分级并把字段完整的 Unverified 草稿写入 Notion；你不需要新建记录或补字段。AI 无权把来源设为 Verified。</p>
+                                      </div>
+                                      <div className="flex flex-wrap items-center gap-2">
+                                        <label htmlFor={`article-evidence-reviewer-${article.id}`} className="text-xs font-black text-slate-700">本次审核者</label>
+                                        <select
+                                          id={`article-evidence-reviewer-${article.id}`}
+                                          value={evidenceReviewerId}
+                                          onChange={(event) => setEvidenceReviewerId(event.target.value)}
+                                          className="min-h-11 border border-slate-300 bg-white px-3 text-base font-bold text-slate-900"
+                                        >
+                                          <option value="">请选择 Notion 用户</option>
+                                          {(workflowStatus?.reviewers || []).map((reviewer) => (
+                                            <option key={reviewer.id} value={reviewer.id}>{reviewer.name}{reviewer.email ? ` · ${reviewer.email}` : ''}</option>
+                                          ))}
+                                        </select>
+                                      </div>
+                                    </div>
+                                    {!!article.evidenceGateBlockers?.length && (
+                                      <ul className="mt-3 list-disc space-y-1 pl-5 text-xs font-bold text-amber-900">
+                                        {article.evidenceGateBlockers.map((blocker) => <li key={blocker}>{blocker}</li>)}
+                                      </ul>
+                                    )}
+                                    {autofillJob && (
+                                      <p className={`mt-3 border px-3 py-2 text-xs font-bold ${autofillJob.status === 'failed' ? 'border-rose-200 bg-rose-50 text-rose-800' : autofillJob.status === 'completed' ? 'border-emerald-200 bg-emerald-50 text-emerald-800' : 'border-sky-200 bg-sky-50 text-sky-800'}`}>
+                                        {autofillJob.status === 'completed' ? autofillJob.evidencePersistence?.message || '自动研究已完成。' : autofillJob.status === 'failed' ? autofillJob.error || '自动研究失败，原记录未受影响。' : `${autofillJob.model} 正在联网研究，完成后会自动写入这里。`}
+                                      </p>
+                                    )}
+                                    <div className="mt-4 grid gap-3 lg:grid-cols-2">
+                                      {articleEvidence.map((item) => {
+                                        const gaps = evidenceQualificationGaps(item);
+                                        return (
+                                          <article key={item.id} className="border border-slate-200 bg-white p-4">
+                                            <div className="flex flex-wrap items-center gap-2">
+                                              <Pill value={item.status} />
+                                              <span className="font-mono text-[10px] font-black text-slate-600">Tier {item.sourceTier || '—'} · {item.sourceType || '未分类'}</span>
+                                            </div>
+                                            <p className="mt-2 text-sm font-black leading-5 text-slate-900">{item.claim}</p>
+                                            <p className="mt-1 text-xs text-slate-500">{item.publisher || '未填写 Publisher'} · {item.market || '未限定市场'}</p>
+                                            <p className="mt-2 text-xs leading-5 text-slate-600">{item.summary || 'AI 草稿缺少摘要，应拒绝并重新自动研究。'}</p>
+                                            {!!gaps.length && (
+                                              <div className="mt-2 flex flex-wrap gap-1">
+                                                {gaps.map((gap) => <span key={gap} className="border border-amber-200 bg-amber-50 px-1.5 py-0.5 text-[10px] font-bold text-amber-900">{gap}</span>)}
+                                              </div>
+                                            )}
+                                            <div className="mt-3 flex flex-wrap gap-2 border-t border-slate-100 pt-3">
+                                              {item.sourceUrl && <ExternalLink href={item.sourceUrl}>打开原始来源</ExternalLink>}
+                                              {item.status !== 'Verified' && (
+                                                <button type="button" onClick={() => void reviewEvidenceItem(item, 'Verified')} disabled={!!workflowLoading || !evidenceReviewerId} className="inline-flex min-h-9 items-center gap-1 bg-emerald-700 px-3 text-[11px] font-black text-white hover:bg-emerald-800 disabled:bg-slate-300"><Check className="h-3.5 w-3.5" />确认支持 Claim</button>
+                                              )}
+                                              {item.status !== 'Rejected' && (
+                                                <button type="button" onClick={() => void reviewEvidenceItem(item, 'Rejected')} disabled={!!workflowLoading || !evidenceReviewerId} className="inline-flex min-h-9 items-center gap-1 border border-rose-300 px-3 text-[11px] font-black text-rose-800 hover:bg-rose-50 disabled:opacity-40"><X className="h-3.5 w-3.5" />拒绝</button>
+                                              )}
+                                            </div>
+                                          </article>
+                                        );
+                                      })}
+                                    </div>
+                                    {!articleEvidence.length && !autofillActive && <p className="mt-4 text-sm text-slate-600">目前没有关联证据。点击上方“AI 自动补证据”，系统会自行研究并建档。</p>}
+                                  </div>
+                                  </div>
+                                </td>
+                              </tr>
+                            )}
+                            </Fragment>
                           )})}
                         </tbody>
                       </table>
@@ -2083,7 +2551,7 @@ export default function ContentOpsDashboard() {
               <header className="sticky top-0 z-10 flex items-center justify-between gap-4 bg-[#07182d] px-5 py-4 text-white">
                 <div>
                   <p className="text-[10px] font-black uppercase tracking-[0.18em] text-amber-400">DDNZ Content Ops</p>
-                  <h2 id="content-ops-help-title" className="mt-1 text-xl font-black">生成器使用说明</h2>
+                  <h2 id="content-ops-help-title" className="mt-1 text-xl font-black">GPT 协作与审核发布说明</h2>
                 </div>
                 <button type="button" onClick={() => setHelpOpen(false)} aria-label="关闭使用说明" className="flex h-11 w-11 items-center justify-center border border-white/20 hover:bg-white/10">
                   <X className="h-5 w-5" />
@@ -2171,7 +2639,7 @@ export default function ContentOpsDashboard() {
                 <section className="grid gap-px border border-slate-300 bg-slate-300 sm:grid-cols-2">
                   <div className="bg-sky-50 p-5">
                     <p className="text-sm font-black text-[#0b4f8a]">系统可以做</p>
-                    <p className="mt-2 text-sm leading-6 text-slate-700">候选模板、机械查重、研究/起草请求、治理闸门、Notion 网站预览、审计记录，以及 Published 后的即时 GitHub 网站同步；每日 21:00 仍保留备份同步。</p>
+                    <p className="mt-2 text-sm leading-6 text-slate-700">GPT-5.6 在六步工作台中负责选题、联网研究、英文主内容、渠道适配、翻译和终审；本地控制台保存任务，并继续读取 Notion 完成治理、官网预览与同步。</p>
                   </div>
                   <div className="bg-amber-50 p-5">
                     <p className="text-sm font-black text-amber-900">必须由人完成</p>

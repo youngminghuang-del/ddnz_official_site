@@ -1,12 +1,18 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
+import dotenv from 'dotenv';
 import path from 'path';
-import {defineConfig, loadEnv} from 'vite';
+import {defineConfig} from 'vite';
 import { createContentOpsApiPlugin } from './scripts/content-ops-api';
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => {
-  const env = loadEnv(mode, '.', '');
+  dotenv.config({
+    path: [`.env.${mode}.local`, '.env.local', `.env.${mode}`, '.env'],
+    override: false,
+    quiet: true,
+  });
+  const env = process.env;
   return {
     /**
      * 🚀 终极路径优化：
@@ -22,6 +28,16 @@ export default defineConfig(({mode}) => {
         repository: env.GITHUB_REPOSITORY || 'youngminghuang-del/ddnz_official_site',
         workflow: env.GITHUB_DEPLOY_WORKFLOW || 'deploy.yml',
         branch: env.GITHUB_DEPLOY_BRANCH || 'main',
+      }, {
+        openaiApiKey: env.OPENAI_API_KEY,
+        directPublishEnabled: env.SOCIAL_DIRECT_PUBLISH_ENABLED === 'true',
+        linkedinAccessToken: env.LINKEDIN_ACCESS_TOKEN,
+        linkedinOrganizationId: env.LINKEDIN_ORGANIZATION_ID || '103321777',
+        linkedinApiVersion: env.LINKEDIN_API_VERSION,
+        metaPageAccessToken: env.META_PAGE_ACCESS_TOKEN,
+        metaPageId: env.META_PAGE_ID || '61591563495916',
+        metaInstagramUserId: env.META_INSTAGRAM_USER_ID,
+        metaGraphApiVersion: env.META_GRAPH_API_VERSION,
       }),
       {
         name: 'html-hreflang-injector',

@@ -671,18 +671,18 @@ const COUNTRY_CONTENT: Record<
       faqs: [
         {
           id: "sa-1",
-          title: "Expédition Express vs Dédouanement Commercial",
-          desc: "Les cargaisons de marque courent des risques élevés de retour si elles sont envoyées via messagerie standard sans courtier en douane commercial."
+          title: "Express courier vs commercial customs clearance",
+          desc: "Branded, high-value or commercial-volume cargo should be reviewed for importer, document and carrier-acceptance requirements before booking instead of assuming a standard courier route will apply."
         },
         {
           id: "sa-2",
-          title: "Marquage d'origine obligatoire (MADE IN CHINA)",
-          desc: "Tous les colis importés doivent afficher de manière permanente le label d'origine sous peine d'amende et de blocage prolongé."
+          title: "Country-of-origin marking and labels",
+          desc: "Confirm the applicable country-of-origin marking, product labels, manuals and packing information with the importer before shipment. Regulated products may require additional documentation."
         },
         {
           id: "sa-3",
-          title: "Certification SABER Arabie Saoudite",
-          desc: "Nous vous assistons dans l'enregistrement de vos produits sur la plateforme SABER pour assurer un dédouanement fluide."
+          title: "Saudi SABER document preparation",
+          desc: "SABER requirements depend on the product and current conformity route. Confirm the HS code, product scope and required documents before cargo handover."
         }
       ]
     },

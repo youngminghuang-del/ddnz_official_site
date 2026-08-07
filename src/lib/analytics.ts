@@ -11,6 +11,10 @@ type PageContext = {
   page_language: string;
   service?: string;
   country?: string;
+  utm_source?: string;
+  utm_medium?: string;
+  utm_campaign?: string;
+  utm_content?: string;
 };
 
 type ClarityFunction = ((...args: unknown[]) => void) & {
@@ -71,11 +75,18 @@ function getPageContext(): PageContext {
     /shipping-from-china-to-(saudi-arabia|uae|kuwait|qatar|oman|bahrain|kazakhstan|uzbekistan|nigeria|ghana|mexico|brazil|argentina|peru|chile)(?:\/|$)/,
   )?.[1];
   const country = url.searchParams.get('country') || pathCountry;
+  const attribution = {
+    utm_source: url.searchParams.get('utm_source') || undefined,
+    utm_medium: url.searchParams.get('utm_medium') || undefined,
+    utm_campaign: url.searchParams.get('utm_campaign') || undefined,
+    utm_content: url.searchParams.get('utm_content') || undefined,
+  };
 
   return {
     page_language: getPageLanguage(url.pathname),
     ...(service ? { service } : {}),
     ...(country ? { country } : {}),
+    ...attribution,
   };
 }
 

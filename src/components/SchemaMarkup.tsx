@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { PUBLIC_SOCIAL_CHANNELS } from '../config/socialChannels';
 
 interface SchemaProps {
   type: 'Organization' | 'LocalBusiness' | 'Service' | 'BlogPosting' | 'BreadcrumbList';
@@ -49,9 +50,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
             'availableLanguage': ['English', 'Chinese', 'Russian', 'French', 'Spanish', 'Arabic']
           }
         ],
-        'sameAs': [
-          'https://linkedin.com/company/ddnz-global-logistics-supply-chain'
-        ]
+        'sameAs': PUBLIC_SOCIAL_CHANNELS.map((channel) => channel.publicUrl)
       };
     } else if (type === 'LocalBusiness') {
       finalSchema = {

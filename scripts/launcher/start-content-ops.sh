@@ -68,6 +68,10 @@ if ! has_env_value "NOTION_API_KEY" || ! has_env_value "NOTION_DATABASE_ID"; the
   fail ".env.local is missing NOTION_API_KEY or NOTION_DATABASE_ID. Add both values, save the file, then start again."
 fi
 
+if ! has_env_value "OPENAI_API_KEY"; then
+  printf 'Notice: OPENAI_API_KEY is not configured. Notion governance will work, but the GPT-5.6 six-step workflow will remain disabled.\n'
+fi
+
 if ! command -v curl >/dev/null 2>&1 || ! command -v lsof >/dev/null 2>&1; then
   fail "macOS curl or lsof is unavailable, so the launcher cannot safely check the local server."
 fi

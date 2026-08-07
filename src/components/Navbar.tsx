@@ -244,7 +244,7 @@ export default function Navbar() {
             </Link>
           </div>
           
-          <div className="hidden md:flex items-center space-x-2 lg:space-x-4 xl:space-x-6 ml-auto pl-2 md:pl-4">
+          <div className="hidden min-[1360px]:flex items-center space-x-2 lg:space-x-4 xl:space-x-6 ml-auto pl-2 md:pl-4">
             {navKeys.map((item) => {
               if (item.isDropdown) {
                 return (
@@ -323,8 +323,16 @@ export default function Navbar() {
                     className="relative py-2"
                     onMouseEnter={() => setShowMegaMenu(true)}
                     onMouseLeave={() => setShowMegaMenu(false)}
+                    onFocus={() => setShowMegaMenu(true)}
+                    onBlur={(event) => {
+                      if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setShowMegaMenu(false);
+                    }}
                   >
                     <button
+                      type="button"
+                      aria-expanded={showMegaMenu}
+                      aria-haspopup="menu"
+                      onClick={() => setShowMegaMenu((open) => !open)}
                       className={cn(
                         "text-[10px] lg:text-xs xl:text-sm tracking-wider xl:tracking-widest font-black transition-all whitespace-nowrap flex items-center gap-0.5 lg:gap-1 cursor-pointer",
                         scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
@@ -432,6 +440,10 @@ export default function Navbar() {
             <div className="relative ml-1 lg:ml-2">
               <button
                 onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+                type="button"
+                aria-label="Select language"
+                aria-expanded={showLanguageDropdown}
+                aria-haspopup="menu"
                 className={cn(
                    "flex items-center gap-1 text-[10px] lg:text-xs xl:text-sm font-black transition-colors py-2 px-1",
                   scrolled ? "text-slate-700 hover:text-[#0B4F8A]" : "text-white/90 hover:text-white"
@@ -454,11 +466,15 @@ export default function Navbar() {
             </div>
           </div>
 
-          <div className="md:hidden flex items-center gap-4">
+          <div className="min-[1360px]:hidden flex items-center gap-4">
             {/* Mobile Language Switcher */}
             <div className="relative">
               <button
                 onClick={() => setShowLanguageDropdown(!showLanguageDropdown)}
+                type="button"
+                aria-label="Select language"
+                aria-expanded={showLanguageDropdown}
+                aria-haspopup="menu"
                 className={cn(
                   "flex items-center gap-1.5 text-xs font-black transition-colors px-2.5 py-1.5 rounded-full bg-black/10 border border-white/10",
                   scrolled ? "text-slate-700 bg-slate-100 border-slate-200" : "text-white/90"
@@ -479,7 +495,14 @@ export default function Navbar() {
               )}
             </div>
 
-            <button onClick={() => setIsOpen(!isOpen)} className={cn("p-1 focus:outline-none", scrolled ? "text-slate-900" : "text-white")}>
+            <button
+              type="button"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
+              aria-expanded={isOpen}
+              aria-controls="mobile-navigation-menu"
+              className={cn("p-1 focus:outline-none", scrolled ? "text-slate-900" : "text-white")}
+            >
               {isOpen ? <X className="h-6.5 w-6.5" /> : <Menu className="h-6.5 w-6.5" />}
             </button>
           </div>
@@ -488,7 +511,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl overflow-y-auto max-h-[85vh]">
+        <div id="mobile-navigation-menu" className="min-[1360px]:hidden absolute top-full left-0 right-0 bg-white border-t border-slate-100 shadow-xl overflow-y-auto max-h-[85vh]">
           <div className="px-4 pt-2 pb-6 space-y-2">
             {navKeys.map((item) => {
               if (item.isDropdown) {
@@ -539,14 +562,17 @@ export default function Navbar() {
                 return (
                   <div key={item.key} className="space-y-1 block py-1 border-b border-slate-100/60 pb-3">
                     <button 
+                      type="button"
                       onClick={() => setShowMobileRegions(!showMobileRegions)}
+                      aria-expanded={showMobileRegions}
+                      aria-controls="mobile-region-navigation"
                       className="w-full flex items-center justify-between px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 focus:outline-none"
                     >
                       <span>{t(`nav.${item.key}`)}</span>
                       <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-300", showMobileRegions ? "rotate-180" : "")} />
                     </button>
                     {showMobileRegions && (
-                      <div className="pl-4 border-l-2 border-[#FF8A00] ml-4 mt-1.5 space-y-4">
+                      <div id="mobile-region-navigation" className="pl-4 border-l-2 border-[#FF8A00] ml-4 mt-1.5 space-y-4">
                         {regionColumns.map((col) => (
                           <div key={col.key} className="space-y-1.5">
                             <h5 className="text-[11px] font-black text-[#0B4F8A] uppercase tracking-wide">

@@ -2,6 +2,9 @@ import type { IncomingMessage, ServerResponse } from 'node:http';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import type { Plugin } from 'vite';
+import { createContentOpsAiService, type ContentOpsAiConfig } from './content-ops-ai';
+import { planEvidenceDrafts, type AiEvidenceSource } from './content-ops-evidence';
+import type { AiJobStage, ContentOpsAiJob } from '../src/types/contentOps';
 
 const execFileAsync = promisify(execFile);
 
@@ -46,9 +49,40 @@ type CandidateDraft = {
   citationAsset: string;
   primaryCTA: string;
   whyNow?: string;
-  signalClass?: 'Recent official signal' | 'Seasonal buyer intent' | 'Recurring buyer question';
+  signalClass?: string;
   signalUrls?: string[];
   validUntil?: string;
+  signalPlatform?: string;
+  signalDate?: string;
+  signalCount?: number;
+  scoreBreakdown?: {
+    recency: number;
+    buyerIntent: number;
+    commercialImpact: number;
+    ddnzFit: number;
+    evidenceFeasibility: number;
+    originality: number;
+  };
+};
+
+type SignalLevel = 'low' | 'medium' | 'high';
+
+type SignalCandidateInput = {
+  id?: string;
+  platform: string;
+  sourceUrl: string;
+  observedDate: string;
+  category: 'Freight Export' | 'Commercial Kitchen Equipment' | 'Outdoor Products';
+  subcategory?: string;
+  market: string;
+  signalType: 'Product spike' | 'Route change' | 'Port disruption' | 'Freight swing' | 'Buyer question' | 'Other market change';
+  title: string;
+  whyNow: string;
+  signalCount?: number;
+  buyerIntent: SignalLevel;
+  commercialImpact: SignalLevel;
+  ddnzFit: SignalLevel;
+  evidenceFeasibility: SignalLevel;
 };
 
 type WorkflowPayload = Awaited<ReturnType<typeof buildPayload>>;
@@ -71,7 +105,7 @@ let cache: CacheEntry | null = null;
 
 const AUTOMATION_MAX_STATUS = 'Domain Review';
 const WORKFLOW_WRITE_NOTICE =
-  '自动化只会创建候选、研究请求和草稿请求，绝不会设置 Approved、Scheduled 或 Published。';
+  'GPT/Codex 负责研究和写作；本地控制台只负责治理审核、预览和人工推送，绝不会绕过你设置 Approved、Scheduled 或 Published。';
 
 const normalizeForMatch = (value: string) =>
   value
@@ -444,6 +478,143 @@ function evidenceGate(articleId: string, evidence: ReturnType<typeof mapEvidence
   };
 }
 
+type EvidencePersistence = {
+  created: Array<{ id: string; claim: string; sourceTier: string; publisher: string; url: string }>;
+  skipped: number;
+  qualifyingDraftCount: number;
+  tierADraftCount: number;
+  message: string;
+};
+
+function evidenceExpiryDate() {
+  const expires = new Date();
+  expires.setUTCDate(expires.getUTCDate() + 180);
+  return expires.toISOString().slice(0, 10);
+}
+
+async function buildEvidenceAutofillInput(apiKey: string, articleId: string) {
+  const [page, blocks, evidencePages] = await Promise.all([
+    notionFetch(apiKey, `/v1/pages/${articleId}`) as Promise<NotionPage>,
+    fetchBlockChildren(apiKey, articleId),
+    queryDatabase(apiKey, DATABASES.evidence),
+  ]);
+  const evidence = evidencePages.map(mapEvidence);
+  const article = { ...mapArticle(page), ...evidenceGate(articleId, evidence) };
+  const related = evidence.filter((item) => item.articleIds.includes(articleId));
+  const html = await renderPreviewBlocks(apiKey, blocks);
+  const bodyExcerpt = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 28_000);
+  return {
+    workflowMode: 'evidence_autofill',
+    autoPersistEvidence: true,
+    articleId,
+    article: {
+      title: article.title,
+      status: article.status,
+      audienceMarket: article.audienceMarket,
+      productCategory: article.productCategory,
+      productSubcategory: article.productSubcategory,
+      searchIntent: article.searchIntent,
+      primaryQuery: article.primaryQuery,
+      topicKey: article.topicKey,
+      contentType: article.contentType,
+      evidenceGateBlockers: article.evidenceGateBlockers,
+    },
+    bodyExcerpt,
+    existingEvidence: related.map((item) => ({
+      claim: item.claim,
+      status: item.status,
+      sourceTier: item.sourceTier,
+      sourceType: item.sourceType,
+      publisher: item.publisher,
+      url: item.sourceUrl,
+      market: item.market,
+      summary: item.summary,
+    })),
+  };
+}
+
+async function persistAiResearchEvidence(apiKey: string, job: ContentOpsAiJob): Promise<EvidencePersistence> {
+  const articleId = safeText(job.input.articleId, 80);
+  const ledger = (job.result as { sourceLedger?: AiEvidenceSource[] } | undefined)?.sourceLedger;
+  if (job.stage !== 'research' || job.input.autoPersistEvidence !== true || !articleId || !Array.isArray(ledger)) {
+    return { created: [], skipped: 0, qualifyingDraftCount: 0, tierADraftCount: 0, message: '这不是需要写入 Evidence Ledger 的自动补证据任务。' };
+  }
+
+  const [articlePage, evidencePages, evidenceSchema, auditSchema] = await Promise.all([
+    notionFetch(apiKey, `/v1/pages/${articleId}`) as Promise<NotionPage>,
+    queryDatabase(apiKey, DATABASES.evidence),
+    databaseSchema(apiKey, DATABASES.evidence),
+    databaseSchema(apiKey, DATABASES.audits),
+  ]);
+  const existing = evidencePages.map(mapEvidence);
+  const article = mapArticle(articlePage);
+  const topicIds = relationIds(articlePage.properties['Topic Record']);
+  const accessedDate = new Date().toISOString().slice(0, 10);
+  const expires = evidenceExpiryDate();
+  const created: EvidencePersistence['created'] = [];
+  // Evidence records are claim-level. The same canonical source may legitimately
+  // support a different claim in another article, so de-duplicate only against
+  // records already linked to this article. This still makes repeated job polls
+  // idempotent without blocking reuse across the wider content library.
+  const plan = planEvidenceDrafts(
+    ledger,
+    existing.filter((item) => item.articleIds.includes(articleId)),
+    article.audienceMarket,
+  );
+
+  for (const draft of plan.drafts) {
+    const properties = {
+      ...titleProperty(evidenceSchema, 'Claim', draft.claim),
+      Status: selectProperty(evidenceSchema, 'Status', 'Unverified'),
+      'Source Tier': selectProperty(evidenceSchema, 'Source Tier', draft.sourceTier),
+      'Source Type': selectProperty(evidenceSchema, 'Source Type', draft.sourceType),
+      ...textOrSelectProperty(evidenceSchema, 'Source URL', draft.sourceUrl),
+      ...richTextProperty(evidenceSchema, 'Publisher', draft.publisher),
+      ...(evidenceSchema.properties['Applicable Market']?.type === 'multi_select'
+        ? { 'Applicable Market': { multi_select: draft.markets.map((name) => ({ name })) } }
+        : textOrSelectProperty(evidenceSchema, 'Applicable Market', draft.markets.join(', '))),
+      ...richTextProperty(evidenceSchema, 'Evidence Summary', `${draft.evidenceSummary || draft.title}${draft.caveat ? `\n\nScope/caveat: ${draft.caveat}` : ''}`),
+      ...dateProperty(evidenceSchema, 'Accessed Date', accessedDate),
+      ...(draft.publishedDate ? dateProperty(evidenceSchema, 'Published Date', draft.publishedDate) : {}),
+      ...dateProperty(evidenceSchema, 'Expires', expires),
+      ...richTextProperty(evidenceSchema, 'Verification Notes', `AI-discovered evidence draft created by ${job.model} on ${accessedDate}. Not verified. A human reviewer must open the original source and confirm the Claim, market and caveat before this record can count.`),
+      ...relationProperty(evidenceSchema, 'Article', [articleId]),
+      ...relationProperty(evidenceSchema, 'Topic', topicIds),
+      ...(evidenceSchema.properties['First Party']?.type === 'checkbox' ? { 'First Party': { checkbox: false } } : {}),
+    };
+    const page = (await notionFetch(apiKey, '/v1/pages', {
+      method: 'POST',
+      body: { parent: { database_id: DATABASES.evidence }, properties },
+    })) as NotionPage;
+    created.push({ id: page.id, claim: draft.claim, sourceTier: draft.sourceTier, publisher: draft.publisher, url: draft.sourceUrl });
+  }
+
+  if (created.length) {
+    await createAutomationAudit(apiKey, auditSchema, {
+      title: article.title,
+      stage: 'Evidence Audit',
+      result: 'Needs Changes',
+      findings: `${job.model} 自动研究并写入 ${created.length} 条字段完整的 Unverified 证据草稿；没有任何记录被 AI 标记为 Verified。`,
+      blockers: '请人工打开每条原始来源，确认其确实支持 Claim、适用市场和限制后，再执行确认或拒绝。',
+      articleIds: [articleId],
+      topicIds,
+      evidenceIds: created.map((item) => item.id),
+    });
+    cache = null;
+  }
+  const qualifyingDraftCount = created.filter((item) => ['A', 'B'].includes(item.sourceTier)).length;
+  const tierADraftCount = created.filter((item) => item.sourceTier === 'A').length;
+  return {
+    created,
+    skipped: plan.skipped,
+    qualifyingDraftCount,
+    tierADraftCount,
+    message: created.length
+      ? `AI 已自动写入 ${created.length} 条待核验证据草稿，其中 A/B 级 ${qualifyingDraftCount} 条、A级 ${tierADraftCount} 条。你只需审核，不需要新建或补字段。`
+      : '本次没有找到可安全写入的新来源；现有记录和重复 URL 均未改动。',
+  };
+}
+
 function mapAudit(page: NotionPage) {
   const properties = page.properties;
   const articleIds = relationIds(properties.Article);
@@ -749,16 +920,15 @@ const candidateTemplatePool: CandidateDraft[] = [
     signalClass: 'Seasonal buyer intent',
   },
   {
-    title: 'Saudi portable-fridge sourcing: decide household, vehicle or off-grid use before conformity routing',
+    title: 'Portable refrigerators for Brazil outdoor retail: 12 V, compressor and after-sales questions distributors should ask',
     leadGoal: 'Product Sourcing', productCategory: 'Outdoor Products', productSubcategory: 'Outdoor and Portable Refrigeration',
-    audienceMarket: 'Middle East', searchIntent: 'Compliance',
-    primaryQuery: 'Saudi portable refrigerator China Saber household vehicle off grid classification',
-    coreAngle: 'intended-use classification before selecting standards and supplier evidence', contentType: 'Buyer Guide', candidateScore: 86,
-    evidencePlan: 'Current Saudi product classification and Saber sources plus exact-model technical documentation.',
-    citationAsset: 'Portable-fridge intended-use classification flow', primaryCTA: '/sourcing/outdoor-products-from-china',
-    whyNow: 'Saudi conformity routing is product-specific; clarifying intended use before RFQ prevents buyers from requesting the wrong evidence.',
+    audienceMarket: 'Central and South America', searchIntent: 'Buyer Guide',
+    primaryQuery: 'portable refrigerator China Brazil distributor 12V compressor after sales checklist',
+    coreAngle: 'retail use case, power architecture, compressor documentation and spare-parts support before ordering', contentType: 'Buyer Guide', candidateScore: 86,
+    evidencePlan: 'Multiple exact-model supplier records, compressor documentation, packaging data and applicable Brazilian market requirements.',
+    citationAsset: 'Portable-fridge distributor RFQ and spare-parts matrix', primaryCTA: '/sourcing/outdoor-products-from-china',
+    whyNow: 'Distributor questions around vehicle use, delivery damage and after-sales parts create a stronger sourcing angle than a generic product catalogue.',
     signalClass: 'Recurring buyer question',
-    signalUrls: ['https://www.saso.gov.sa/ar/mediacenter/news/Pages/saso-news-1483.aspx'],
   },
   {
     title: 'Insulated cooler boxes for African cold-chain distribution: a payload and test-duration buyer matrix',
@@ -806,6 +976,172 @@ const candidateTemplatePool: CandidateDraft[] = [
   },
 ];
 
+const signalPlatforms = new Set(['Reddit', 'Facebook', 'LinkedIn', 'TikTok', 'Carrier / Port', 'Other']);
+const signalCategories = new Set(['Freight Export', 'Commercial Kitchen Equipment', 'Outdoor Products']);
+const signalTypes = new Set(['Product spike', 'Route change', 'Port disruption', 'Freight swing', 'Buyer question', 'Other market change']);
+const signalLevels = new Set(['low', 'medium', 'high']);
+
+const shanghaiDateString = () => new Intl.DateTimeFormat('en-CA', {
+  timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
+}).format(new Date());
+
+function safeText(value: unknown, maximum = 500) {
+  return typeof value === 'string' ? value.trim().slice(0, maximum) : '';
+}
+
+function assertSignalUrl(value: string) {
+  try {
+    const parsed = new URL(value);
+    if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error('unsupported protocol');
+  } catch {
+    throw new Error(`线索 URL 无效：“${value || '空白'}”。请粘贴完整的 http(s) 链接。`);
+  }
+}
+
+function parseSignalCandidates(value: unknown): SignalCandidateInput[] {
+  if (!Array.isArray(value) || value.length < 8 || value.length > 12) {
+    throw new Error('快速热点扫描需要一次提交 8–12 条线索，才能完成查重和三类选题比较。');
+  }
+  const today = shanghaiDateString();
+  return value.map((raw, index) => {
+    const item = (raw && typeof raw === 'object' ? raw : {}) as Record<string, unknown>;
+    const platform = safeText(item.platform, 40);
+    const sourceUrl = safeText(item.sourceUrl, 1000);
+    const observedDate = safeText(item.observedDate, 10);
+    const category = safeText(item.category, 80);
+    const subcategory = safeText(item.subcategory, 120);
+    const market = safeText(item.market, 120);
+    const signalType = safeText(item.signalType, 80);
+    const title = safeText(item.title, 240);
+    const whyNow = safeText(item.whyNow, 600);
+    const buyerIntent = safeText(item.buyerIntent, 12);
+    const commercialImpact = safeText(item.commercialImpact, 12);
+    const ddnzFit = safeText(item.ddnzFit, 12);
+    const evidenceFeasibility = safeText(item.evidenceFeasibility, 12);
+    const signalCount = Math.max(1, Math.min(20, Math.round(Number(item.signalCount) || 1)));
+
+    if (!signalPlatforms.has(platform)) throw new Error(`第 ${index + 1} 条线索的平台不受支持。`);
+    assertSignalUrl(sourceUrl);
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(observedDate) || observedDate > today) {
+      throw new Error(`第 ${index + 1} 条线索的发现日期无效或晚于今天。`);
+    }
+    if (!signalCategories.has(category)) throw new Error(`第 ${index + 1} 条线索没有选择正确的业务分类。`);
+    if (!market) throw new Error(`第 ${index + 1} 条线索缺少目标市场。`);
+    if (!signalTypes.has(signalType)) throw new Error(`第 ${index + 1} 条线索没有选择市场变化类型。`);
+    if (category === 'Freight Export' && signalType === 'Product spike') {
+      throw new Error(`第 ${index + 1} 条线索的“爆品/需求升温”应归入商厨或户外用品。`);
+    }
+    if (category !== 'Freight Export' && ['Route change', 'Port disruption', 'Freight swing'].includes(signalType)) {
+      throw new Error(`第 ${index + 1} 条产品线索误选了货运市场变化类型。`);
+    }
+    if (title.length < 12) throw new Error(`第 ${index + 1} 条线索的“文章要回答什么”过短。`);
+    if (whyNow.length < 10) throw new Error(`第 ${index + 1} 条线索的“为什么现在”过短。`);
+    [buyerIntent, commercialImpact, ddnzFit, evidenceFeasibility].forEach((level) => {
+      if (!signalLevels.has(level)) throw new Error(`第 ${index + 1} 条线索的评分选项不完整。`);
+    });
+
+    return {
+      id: safeText(item.id, 80), platform, sourceUrl, observedDate,
+      category: category as SignalCandidateInput['category'], subcategory, market,
+      signalType: signalType as SignalCandidateInput['signalType'], title, whyNow, signalCount,
+      buyerIntent: buyerIntent as SignalLevel,
+      commercialImpact: commercialImpact as SignalLevel,
+      ddnzFit: ddnzFit as SignalLevel,
+      evidenceFeasibility: evidenceFeasibility as SignalLevel,
+    };
+  });
+}
+
+function levelPoints(level: SignalLevel, maximum: number) {
+  if (level === 'high') return maximum;
+  if (level === 'medium') return Math.round(maximum * 0.64);
+  return Math.round(maximum * 0.32);
+}
+
+function recencyPoints(observedDate: string) {
+  const observed = new Date(`${observedDate}T00:00:00Z`).getTime();
+  const today = new Date(`${shanghaiDateString()}T00:00:00Z`).getTime();
+  const age = Math.max(0, Math.floor((today - observed) / 86_400_000));
+  if (age <= 7) return 25;
+  if (age <= 14) return 18;
+  if (age <= 30) return 10;
+  return 4;
+}
+
+function signalCoreAngle(type: SignalCandidateInput['signalType'], category: SignalCandidateInput['category']) {
+  const angles: Record<SignalCandidateInput['signalType'], string> = {
+    'Product spike': 'buyer-demand signal, model fit, supplier evidence and shipment readiness',
+    'Route change': 'service scope, first sailing, transit assumptions and fallback checks before booking',
+    'Port disruption': 'cut-off, delay exposure, destination charges and alternate-gateway decisions',
+    'Freight swing': 'quote validity, surcharge scope and booking timing after a rapid rate change',
+    'Buyer question': category === 'Freight Export'
+      ? 'a recurring buyer decision answered with an operational shipping checklist'
+      : 'a recurring buyer decision answered with a sourcing and supplier-comparison checklist',
+    'Other market change': 'what changed, who is affected and the next operational decision',
+  };
+  return angles[type];
+}
+
+function signalEvidencePlan(input: SignalCandidateInput) {
+  if (input.category === 'Freight Export') {
+    return 'Use the social post only to discover the angle. Verify the change with current carrier, port or terminal notices plus one independent authoritative source before drafting.';
+  }
+  return 'Use the social post only to discover buyer demand. Verify product claims with applicable market requirements and multiple current supplier technical records; do not infer sales volume from engagement.';
+}
+
+function signalCitationAsset(input: SignalCandidateInput) {
+  if (input.signalType === 'Freight swing') return 'Lane-specific quote validity and surcharge comparison table';
+  if (input.signalType === 'Route change') return 'Service-change verification and booking decision matrix';
+  if (input.signalType === 'Port disruption') return 'Port disruption response checklist';
+  if (input.signalType === 'Product spike') return 'Buyer-demand-to-specification sourcing matrix';
+  return input.category === 'Freight Export' ? 'Operational shipping decision checklist' : 'Supplier evidence comparison table';
+}
+
+function candidateFromSignal(input: SignalCandidateInput): CandidateDraft {
+  const breakdown = {
+    recency: recencyPoints(input.observedDate),
+    buyerIntent: levelPoints(input.buyerIntent, 25),
+    commercialImpact: levelPoints(input.commercialImpact, 20),
+    ddnzFit: levelPoints(input.ddnzFit, 15),
+    evidenceFeasibility: levelPoints(input.evidenceFeasibility, 10),
+    originality: 5,
+  };
+  const productCategory = input.category === 'Freight Export' ? 'Not Applicable' : input.category;
+  const isMarketUpdate = ['Product spike', 'Route change', 'Port disruption', 'Freight swing', 'Other market change'].includes(input.signalType);
+  return {
+    title: input.title,
+    leadGoal: input.category === 'Freight Export' ? 'Freight Export' : 'Product Sourcing',
+    productCategory,
+    productSubcategory: input.subcategory || '',
+    audienceMarket: input.market,
+    searchIntent: isMarketUpdate ? 'News' : 'Buyer Guide',
+    primaryQuery: input.title,
+    coreAngle: signalCoreAngle(input.signalType, input.category),
+    contentType: isMarketUpdate ? 'Market Update' : 'Buyer Guide',
+    candidateScore: Object.values(breakdown).reduce((total, score) => total + score, 0),
+    evidencePlan: signalEvidencePlan(input),
+    citationAsset: signalCitationAsset(input),
+    primaryCTA: input.category === 'Freight Export'
+      ? '/get-a-quote'
+      : input.category === 'Commercial Kitchen Equipment'
+        ? '/sourcing/commercial-kitchen-equipment-from-china'
+        : '/sourcing/outdoor-products-from-china',
+    whyNow: input.whyNow,
+    signalClass: `${input.platform} · ${input.signalType}`,
+    signalUrls: [input.sourceUrl],
+    signalPlatform: input.platform,
+    signalDate: input.observedDate,
+    signalCount: input.signalCount,
+    scoreBreakdown: breakdown,
+  };
+}
+
+function scoreWithOriginality(candidate: CandidateDraft, originality: number) {
+  if (!candidate.scoreBreakdown) return candidate.candidateScore;
+  const { recency, buyerIntent, commercialImpact, ddnzFit, evidenceFeasibility } = candidate.scoreBreakdown;
+  return recency + buyerIntent + commercialImpact + ddnzFit + evidenceFeasibility + originality;
+}
+
 function wordOverlap(left: string, right: string) {
   const a = new Set(normalizeForMatch(left).split(' ').filter((word) => word.length > 2));
   const b = new Set(normalizeForMatch(right).split(' ').filter((word) => word.length > 2));
@@ -830,7 +1166,8 @@ function auditCandidate(candidate: CandidateDraft, payload: WorkflowPayload) {
     const match = exactTopic || exactQuery!;
     return {
       topicKey,
-      candidateScore: candidate.candidateScore,
+      candidateScore: scoreWithOriginality(candidate, 0),
+      scoreBreakdown: candidate.scoreBreakdown ? { ...candidate.scoreBreakdown, originality: 0 } : undefined,
       duplicateDecision: 'Rejected',
       duplicateNotes: `阻止创建：与现有记录“${match.title}”存在相同 Topic Key 或 Primary Query。应更新、合并或改写搜索意图。`,
       matchedRecord: { id: match.id, title: match.title, kind: exactTopic ? 'topic' : 'article' },
@@ -839,7 +1176,8 @@ function auditCandidate(candidate: CandidateDraft, payload: WorkflowPayload) {
   if (overlap && overlap.score >= 0.72) {
     return {
       topicKey,
-      candidateScore: candidate.candidateScore,
+      candidateScore: scoreWithOriginality(candidate, 2),
+      scoreBreakdown: candidate.scoreBreakdown ? { ...candidate.scoreBreakdown, originality: 2 } : undefined,
       duplicateDecision: 'Needs Review',
       duplicateNotes: `疑似核心答案重叠（与“${overlap.item.title}”词项重合度 ${Math.round(overlap.score * 100)}%）。人工确认有新法规、成本、流程、风险或产品选择价值后才能选择。`,
       matchedRecord: { id: overlap.item.id, title: overlap.item.title, kind: 'article' },
@@ -847,7 +1185,8 @@ function auditCandidate(candidate: CandidateDraft, payload: WorkflowPayload) {
   }
   return {
     topicKey,
-    candidateScore: candidate.candidateScore,
+    candidateScore: scoreWithOriginality(candidate, 5),
+    scoreBreakdown: candidate.scoreBreakdown ? { ...candidate.scoreBreakdown, originality: 5 } : undefined,
     duplicateDecision: 'Clear',
     duplicateNotes: '通过初步机械查重：未发现相同 Primary Query 或 Topic Key。仍需在研究阶段复核章节和核心答案。',
     matchedRecord: null,
@@ -884,6 +1223,20 @@ function candidateBatch(payload: WorkflowPayload, requestedBatch: number) {
     candidates,
     availableCount: available.length,
     rejectedCount: audited.length - available.length,
+  };
+}
+
+function signalCandidateBatch(payload: WorkflowPayload, inputs: SignalCandidateInput[]) {
+  const candidates = inputs
+    .map(candidateFromSignal)
+    .map((candidate) => ({ ...candidate, ...auditCandidate(candidate, payload) }))
+    .sort((left, right) => right.candidateScore - left.candidateScore);
+  return {
+    batch: 0,
+    nextBatch: null,
+    candidates,
+    availableCount: candidates.filter((candidate) => candidate.duplicateDecision !== 'Rejected').length,
+    rejectedCount: candidates.filter((candidate) => candidate.duplicateDecision === 'Rejected').length,
   };
 }
 
@@ -924,7 +1277,10 @@ async function persistCandidates(apiKey: string, payload: WorkflowPayload, candi
 
   for (const candidate of candidates) {
     const outcome = auditCandidate(candidate, payload);
-    const status = outcome.duplicateDecision === 'Rejected' ? 'Rejected' : 'Candidate';
+    const status = outcome.duplicateDecision === 'Rejected' || outcome.candidateScore < 75 ? 'Rejected' : 'Candidate';
+    const signalContext = candidate.signalPlatform
+      ? `\n\n热点线索：${candidate.signalPlatform}｜发现日期 ${candidate.signalDate || '未记录'}｜相似信号 ${candidate.signalCount || 1} 条\n线索 URL：${candidate.signalUrls?.join(' · ') || '未记录'}\n为什么现在：${candidate.whyNow || '未记录'}\n注意：社交平台线索仅用于发现选题，不能作为正文重要结论的证据。`
+      : '';
     const properties = {
       ...titleProperty(topicSchema, 'Topic', candidate.title),
       Status: selectProperty(topicSchema, 'Status', status),
@@ -936,9 +1292,9 @@ async function persistCandidates(apiKey: string, payload: WorkflowPayload, candi
       ...richTextProperty(topicSchema, 'Primary Query', candidate.primaryQuery),
       ...richTextProperty(topicSchema, 'Topic Key', outcome.topicKey),
       ...richTextProperty(topicSchema, 'Core Angle', candidate.coreAngle),
-      ...numberProperty(topicSchema, 'Candidate Score', candidate.candidateScore),
+      ...numberProperty(topicSchema, 'Candidate Score', outcome.candidateScore),
       ...optionalSelectProperty(topicSchema, 'Duplicate Decision', outcome.duplicateDecision),
-      ...richTextProperty(topicSchema, 'Duplicate Notes', `${outcome.duplicateNotes}\n\n模板证据计划：${candidate.evidencePlan}\n可引用资产：${candidate.citationAsset}\n建议 CTA：${candidate.primaryCTA}`),
+      ...richTextProperty(topicSchema, 'Duplicate Notes', `${outcome.duplicateNotes}\n\n证据计划：${candidate.evidencePlan}\n可引用资产：${candidate.citationAsset}\n建议 CTA：${candidate.primaryCTA}${signalContext}`),
       ...dateProperty(topicSchema, 'Week', week),
     };
     const page = (await notionFetch(apiKey, '/v1/pages', {
@@ -947,9 +1303,13 @@ async function persistCandidates(apiKey: string, payload: WorkflowPayload, candi
     await createAutomationAudit(apiKey, auditSchema, {
       title: candidate.title,
       stage: 'Duplicate Check',
-      result: outcome.duplicateDecision === 'Clear' ? 'Pass' : 'Needs Changes',
-      findings: `模板候选已${outcome.duplicateDecision === 'Clear' ? '通过初步查重' : '保留供人工复核'}。${outcome.duplicateNotes}`,
-      blockers: outcome.duplicateDecision === 'Clear' ? '尚未开展研究；不得把模板候选当作已核验事实。' : outcome.duplicateNotes,
+      result: outcome.duplicateDecision === 'Clear' && outcome.candidateScore >= 75 ? 'Pass' : 'Needs Changes',
+      findings: `候选评分 ${outcome.candidateScore}/100；${outcome.duplicateDecision === 'Clear' ? '通过初步查重' : '保留供人工复核'}。${outcome.duplicateNotes}`,
+      blockers: outcome.duplicateDecision === 'Clear' && outcome.candidateScore >= 75
+        ? '尚未开展研究；社交线索不得直接支持正文重要结论。'
+        : outcome.candidateScore < 75
+          ? `热点评分低于 75（${outcome.candidateScore}/100），不能进入研究。`
+          : outcome.duplicateNotes,
       topicIds: [page.id],
     });
     results.push({ title: candidate.title, id: page.id, status, duplicateDecision: outcome.duplicateDecision });
@@ -1408,11 +1768,11 @@ async function buildArticlePreview(apiKey: string, articleId: string) {
   };
 }
 
-async function readJsonBody(request: IncomingMessage) {
+async function readJsonBody(request: IncomingMessage, maximumBytes = 250_000) {
   let body = '';
   for await (const chunk of request) {
     body += chunk;
-    if (body.length > 12_000) throw new Error('Request body is too large');
+    if (body.length > maximumBytes) throw new Error('Request body is too large');
   }
   return body ? JSON.parse(body) : {};
 }
@@ -1608,6 +1968,9 @@ function actionableError(error: unknown) {
   if (message.includes('Notion API 403')) return 'Notion Integration 没有访问该数据库的权限。请在四个数据库中 Share 给 Integration 后重试。';
   if (message.includes('Notion API 404')) return '找不到 Notion 数据库或页面。请检查数据库 ID，并确认 Integration 已被共享。';
   if (message.includes('Notion API 429')) return 'Notion 请求过于频繁。请等待约一分钟后刷新或重试。';
+  if (message.includes('OpenAI API 401')) return 'OpenAI API Key 无效或已失效。请检查 .env.local 的 OPENAI_API_KEY。';
+  if (message.includes('OpenAI API 403')) return 'OpenAI 项目没有调用所选模型的权限。请检查项目权限和模型访问范围。';
+  if (message.includes('OpenAI API 429')) return 'OpenAI 请求达到速率或额度限制。任务和内容已保留，请稍后点击重试。';
   if (message === 'Request body is too large') return '请求内容过大。请减少一次提交的内容后再试。';
   if (message.includes('Unexpected token')) return '请求数据格式无效。请刷新控制台后重新操作。';
   return message;
@@ -1616,7 +1979,9 @@ function actionableError(error: unknown) {
 export function createContentOpsApiPlugin(
   apiKey: string | undefined,
   deployConfig: WebsiteDeployConfig,
+  aiConfig: ContentOpsAiConfig,
 ): Plugin {
+  const aiService = createContentOpsAiService(aiConfig);
   return {
     name: 'ddnz-local-content-ops-api',
     apply: 'serve',
@@ -1645,10 +2010,75 @@ export function createContentOpsApiPlugin(
           const prepareMatch = requestUrl.pathname.match(/^\/workflow\/topic\/([a-f0-9-]+)\/prepare$/i);
           const advanceMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/advance$/i);
           const briefMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/brief$/i);
+          const evidenceAutofillMatch = requestUrl.pathname.match(/^\/workflow\/article\/([a-f0-9-]+)\/evidence\/autofill$/i);
           const evidenceReviewMatch = requestUrl.pathname.match(/^\/workflow\/evidence\/([a-f0-9-]+)\/review$/i);
+          const aiJobMatch = requestUrl.pathname.match(/^\/ai\/jobs\/([A-Za-z0-9_-]+)$/);
+          const publishPlatformMatch = requestUrl.pathname.match(/^\/publish\/(linkedin|facebook|instagram|tiktok)$/);
+
+          if (request.method === 'GET' && aiJobMatch) {
+            const job = await aiService.getJob(aiJobMatch[1]);
+            const evidencePersistence = job.status === 'completed' && job.input.autoPersistEvidence === true
+              ? await persistAiResearchEvidence(apiKey, job)
+              : undefined;
+            sendJson(response, 200, { ...job, ...(evidencePersistence ? { evidencePersistence } : {}) });
+            return;
+          }
+
+          if (request.method === 'POST' && evidenceAutofillMatch) {
+            if (!isLocalOrigin(request)) {
+              sendJson(response, 403, { error: 'AI 自动补证据只允许从本机控制台发起。' });
+              return;
+            }
+            const input = await buildEvidenceAutofillInput(apiKey, evidenceAutofillMatch[1]);
+            const job = await aiService.startJob('research', input);
+            const evidencePersistence = job.status === 'completed'
+              ? await persistAiResearchEvidence(apiKey, job)
+              : undefined;
+            sendJson(response, 202, { ...job, ...(evidencePersistence ? { evidencePersistence } : {}) });
+            return;
+          }
+
+          const aiStageMatch = requestUrl.pathname.match(/^\/ai\/(topics|research|generate|audit|revise)$/);
+          if (request.method === 'POST' && aiStageMatch) {
+            if (!isLocalOrigin(request)) {
+              sendJson(response, 403, { error: 'AI 内容任务只允许从本机控制台发起。' });
+              return;
+            }
+            const body = await readJsonBody(request);
+            if (aiStageMatch[1] === 'topics') {
+              const payload = await buildPayload(apiKey);
+              body.existingTopics = payload.topics.slice(0, 240).map((topic) => ({
+                title: topic.title,
+                topicKey: topic.topicKey,
+                primaryQuery: topic.primaryQuery,
+                audienceMarket: topic.audienceMarket,
+                status: topic.status,
+              }));
+            }
+            sendJson(
+              response,
+              202,
+              await aiService.startJob(aiStageMatch[1] as AiJobStage, body),
+            );
+            return;
+          }
+
+          if (request.method === 'POST' && publishPlatformMatch) {
+            if (!isLocalOrigin(request)) {
+              sendJson(response, 403, { error: '社媒发布只允许从本机控制台发起。' });
+              return;
+            }
+            const body = await readJsonBody(request);
+            sendJson(response, 200, await aiService.publish(publishPlatformMatch[1], body));
+            return;
+          }
 
           if (request.method === 'GET' && requestUrl.pathname === '/workflow/status') {
-            const [payload, reviewers] = await Promise.all([buildPayload(apiKey), workspaceReviewers(apiKey)]);
+            const [payload, reviewers, ai] = await Promise.all([
+              buildPayload(apiKey),
+              workspaceReviewers(apiKey),
+              aiService.capabilities(),
+            ]);
             const selectedTopics = payload.topics.filter((topic) => topic.status === 'Selected');
             const candidates = payload.topics.filter((topic) => topic.status === 'Candidate');
             const articlesAwaitingHuman = payload.articles.filter((article) =>
@@ -1660,10 +2090,13 @@ export function createContentOpsApiPlugin(
               writeNotice: WORKFLOW_WRITE_NOTICE,
               reviewers,
               capabilities: {
-                candidateMode: 'curated-signal-preview',
+                candidateMode: 'gpt-5.6-integrated',
                 canPersistTemplateCandidates: true,
-                modelConnected: false,
-                modelNotice: '候选池会隐藏已存在选题并显示“为什么现在”；近期信号仅用于发现角度，当前仍不会自动伪造研究资料或正文。',
+                modelConnected: ai.modelConnected,
+                modelNotice: ai.modelConnected
+                  ? 'GPT-5.6 已接入：Sol 负责选题、研究、主内容与终审；Terra 负责渠道改写和多语言适配。人工仍是唯一批准与发布主体。'
+                  : '未配置 OPENAI_API_KEY。Notion 治理功能可继续使用；配置密钥并重启后即可启用六步 AI 工作台。',
+                ai,
               },
               queue: {
                 candidateCount: candidates.length,
@@ -1682,12 +2115,18 @@ export function createContentOpsApiPlugin(
             }
             const body = await readJsonBody(request);
             const payload = await buildPayload(apiKey);
-            const preview = candidateBatch(payload, Number(body.batch || 0));
+            const isSignalMode = body.mode === 'signals';
+            const signalInputs = isSignalMode ? parseSignalCandidates(body.signals) : [];
+            const preview = isSignalMode
+              ? signalCandidateBatch(payload, signalInputs)
+              : candidateBatch(payload, Number(body.batch || 0));
             if (!body.persist) {
               sendJson(response, 200, {
                 mode: preview.candidates.length ? 'fresh-candidate-preview' : 'candidate-pool-exhausted',
-                warning: preview.candidates.length
-                  ? `只显示尚未命中 Topic Key / Primary Query 的候选。${preview.rejectedCount} 个已存在模板已自动隐藏；“为什么现在”只用于发现选题，仍不是已核验事实。`
+                warning: isSignalMode
+                  ? `已对 ${preview.candidates.length} 条市场线索完成评分和机械查重，其中 ${preview.rejectedCount} 条重复。社交平台只负责发现角度，正文重要结论仍需 A/B 级证据。`
+                  : preview.candidates.length
+                    ? `只显示尚未命中 Topic Key / Primary Query 的候选。${preview.rejectedCount} 个已存在模板已自动隐藏；“为什么现在”只用于发现选题，仍不是已核验事实。`
                   : '当前候选池没有更多未重复选题。不要通过改年份或换国家制造重复；请等待近期信号扫描，或根据真实询盘、Search Console 和官方变化增加新角度。',
                 requiresAcknowledgement: true,
                 ...preview,
@@ -1701,22 +2140,26 @@ export function createContentOpsApiPlugin(
             const requestedKeys = Array.isArray(body.candidateTopicKeys)
               ? body.candidateTopicKeys.filter((item: unknown): item is string => typeof item === 'string')
               : [];
-            const selectedTemplates = candidateTemplatePool.filter((candidate) =>
-              requestedKeys.includes(stableTopicKey(candidate)),
-            );
+            const selectedTemplates = isSignalMode
+              ? signalInputs.map(candidateFromSignal)
+              : candidateTemplatePool.filter((candidate) => requestedKeys.includes(stableTopicKey(candidate)));
             if (selectedTemplates.length < 8 || selectedTemplates.length > 12 || selectedTemplates.length !== requestedKeys.length) {
               throw new Error('保存批次与刚才预览的 8–12 个候选不一致。请重新预览后再保存。');
             }
-            const rejected = selectedTemplates
-              .map((candidate) => ({ candidate, audit: auditCandidate(candidate, payload) }))
-              .find((item) => item.audit.duplicateDecision === 'Rejected');
+            const keyMismatch = selectedTemplates.some((candidate) => !requestedKeys.includes(stableTopicKey(candidate)));
+            if (keyMismatch) throw new Error('热点线索在预览后发生变化。请重新查重，再保存到 Notion。');
+            const rejected = isSignalMode
+              ? undefined
+              : selectedTemplates
+                .map((candidate) => ({ candidate, audit: auditCandidate(candidate, payload) }))
+                .find((item) => item.audit.duplicateDecision === 'Rejected');
             if (rejected) {
               throw new Error(`“${rejected.candidate.title}”在保存前已出现重复记录。请重新预览未重复候选。`);
             }
             const created = await persistCandidates(apiKey, payload, selectedTemplates);
             sendJson(response, 201, {
-              mode: 'template-persisted', created,
-              warning: '已保存候选和查重审计。它们仍未经过研究；下一步仅能人工选择三篇并创建研究请求。',
+              mode: isSignalMode ? 'signal-candidates-persisted' : 'template-persisted', created,
+              warning: '已保存全部候选、评分和查重审计。低于 75 分或重复项会保留为 Rejected；下一步只能从合格候选中人工选择三篇。',
               automationMaxStatus: AUTOMATION_MAX_STATUS,
             });
             return;

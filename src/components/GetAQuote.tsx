@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'motion/react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Info, 
   ArrowRight, 
@@ -22,6 +22,7 @@ import { useForm, ValidationError } from '@formspree/react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
+import { readAttribution } from '../lib/attribution';
 
 // Multi-language translation map for the interactive funnel
 const funnelTranslations: Record<string, Record<string, string>> = {
@@ -292,11 +293,16 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const location = useLocation();
   const isQuotePage = location.pathname.includes('get-a-quote');
   const attributionParams = new URLSearchParams(location.search);
+  const attribution = readAttribution(location.search);
   const leadGoal = attributionParams.get('leadGoal') || 'Freight Export';
   const attributedCategory = attributionParams.get('industry') || '';
   const attributedSubcategory = attributionParams.get('subcategory') || '';
-  const leadSource = attributionParams.get('source') || (isQuotePage ? 'quote_page' : 'embedded_quote_form');
-  const sourceArticle = attributionParams.get('article') || '';
+  const leadSource = attributionParams.get('source') || attribution.source || attribution.utm_source || (isQuotePage ? 'quote_page' : 'embedded_quote_form');
+  const sourceArticle = attributionParams.get('article') || attribution.article || '';
+  const utmSource = attribution.utm_source || '';
+  const utmMedium = attribution.utm_medium || '';
+  const utmCampaign = attribution.utm_campaign || '';
+  const utmContent = attribution.utm_content || '';
   
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
@@ -411,10 +417,13 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
         lead_goal: leadGoal,
         product_category: product,
         lead_source: leadSource,
+        utm_source: utmSource,
+        utm_campaign: utmCampaign,
+        utm_content: utmContent,
       });
       setIsSubmitted(true);
     }
-  }, [state.succeeded, selectedService, isQuotePage, leadGoal, product, leadSource]);
+  }, [state.succeeded, selectedService, isQuotePage, leadGoal, product, leadSource, utmSource, utmCampaign, utmContent]);
 
   // Navigate forward with sliding transition
   const nextStep = () => {
@@ -426,6 +435,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
           lead_goal: leadGoal,
           product_category: product,
           lead_source: leadSource,
+          utm_source: utmSource,
+          utm_campaign: utmCampaign,
+          utm_content: utmContent,
         });
         hasTrackedFormStart.current = true;
       }
@@ -1061,6 +1073,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <input type="hidden" name="Product_Subcategory" value={attributedSubcategory} />
                             <input type="hidden" name="Lead_Source" value={leadSource} />
                             <input type="hidden" name="Source_Article_Slug" value={sourceArticle} />
+                            <input type="hidden" name="UTM_Source" value={utmSource} />
+                            <input type="hidden" name="UTM_Medium" value={utmMedium} />
+                            <input type="hidden" name="UTM_Campaign" value={utmCampaign} />
+                            <input type="hidden" name="UTM_Content" value={utmContent} />
                             
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}

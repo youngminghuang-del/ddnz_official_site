@@ -9,6 +9,7 @@
     "fetch-notion": "tsx scripts/fetch-notion.ts",
     "build": "npm run fetch-notion && vite build && tsx scripts/generate-static-pages.ts",
     "push:baidu": "node scripts/push-baidu-urls.mjs --sitemap public/sitemap.xml",
+    "push:indexnow": "node scripts/push-indexnow-urls.mjs --sitemap public/sitemap.xml",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit"
   },
@@ -23,7 +24,6 @@
     "express": "^5.2.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^0.546.0",
-    "motion": "^12.23.24",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-helmet-async": "^3.0.0",

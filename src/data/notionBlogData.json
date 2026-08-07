@@ -1,5 +1,79 @@
 [
   {
+    "id": "3afeac33-2618-8165-ada1-cca1545cdf7f",
+    "status": "Published",
+    "slug": "12v-portable-fridge-power-chain-test-hot-markets",
+    "title": "12V Portable Fridges for Hot Off-Grid Markets: Require a Power-Chain Test",
+    "category": "Sourcing",
+    "language": "en",
+    "translationGroup": "",
+    "date": "2026-08-07",
+    "lastEdited": "2026-08-07T03:12:00.000Z",
+    "summary": "Stop guessing portable-fridge runtime from peak watts. Require a 24-hour Wh test covering heat, battery, cable, connector and recharge before sourcing from China.",
+    "thumbnailUrl": "https://www.ddnzglobal.com/images/sourcing/outdoor-portable-refrigerator-catalog.webp",
+    "content": "<aside class=\"article-callout\"><span aria-hidden=\"true\">🔋</span><div><strong>Direct answer:</strong> Importers should buy a 12V portable fridge and its power system as one tested chain: fridge load, battery, cable, connector and recharge source. Peak watts do not tell a buyer how many hot-weather hours the fridge will run. Require a measured 24-hour energy result in Wh at a stated ambient temperature, internal setpoint, load, door-opening cycle and input voltage. Then size autonomy from that measured result and the battery maker’s usable-capacity guidance. Current manufacturer data also shows why test conditions matter: published runtime and daily-consumption claims are commonly tied to 25°C laboratory conditions, not a parked vehicle or outdoor kitchen in Gulf or African heat.</div></aside><h2 id=\"three-points-to-know\">Three points to know</h2><ul><li><strong>Use Wh per 24 hours, not only rated watts.</strong> Rated input is useful for cables and protection; daily Wh is the starting point for runtime.</li><li><strong>Temperature and use must be disclosed.</strong> Ambient heat, freezer setpoint, door openings, food load and ventilation change compressor run time.</li><li><strong>Recharge is part of the product.</strong> A battery that lasts one day is not an off-grid solution unless the available solar, alternator or mains input can restore that energy reliably.</li></ul><h2 id=\"why-catalogue-runtime-can-mislead\">Why catalogue runtime can mislead</h2><p>Dometic’s current CFX5 support pages list 12–24 V DC or 100–240 V AC input and distinguish rated input current from average energy consumption. They tell users to estimate runtime from usable battery capacity divided by average consumption. This is named-product-family guidance, not a hot-climate runtime guarantee.</p><p>EcoFlow publishes unusually useful condition labels for its GLACIER Classic. The 35 L version is listed with a 298 Wh plug-in battery and up to 43 hours of runtime, but the footnote states that the test was at 25°C ambient in Eco mode. Its US specification also publishes 165 Wh/24 h for refrigeration at 4°C and 520 Wh/24 h for freezing at −18°C, again at 25°C ambient. Those figures demonstrate two procurement rules: temperature mode changes consumption, and the test condition must travel with the claim.</p><div class=\"article-table-wrap\"><table><tbody><tr><th>Published example</th><th>Useful disclosed data</th><th>What the importer must not assume</th></tr><tr><td>Dometic CFX5</td><td>12–24 V DC, 100–240 V AC and rated-versus-average consumption guidance</td><td>Maximum current equals average daily consumption</td></tr><tr><td>EcoFlow GLACIER Classic</td><td>Battery capacity, daily Wh by mode, charge-input limits and 25°C test condition</td><td>Published 25°C runtime will be unchanged in a hotter vehicle</td></tr><tr><td>BougeRV CRD2 V2.0</td><td>12/24 V DC, AC input, optional 240 Wh battery and solar-kit offer</td><td>An “up to” runtime applies without the supplier’s exact test method</td></tr></tbody></table></div><p>These are benchmark disclosures from retail brands, not a ranking and not proof that a Chinese OEM offer will match them.</p><h2 id=\"the-24-hour-power-chain-test\">The 24-hour power-chain test</h2><p>Ask each factory to test the exact sample in a controlled but market-relevant setup.</p><ol><li>Record fridge model, sample serial number, internal usable volume and refrigerant.</li><li>State ambient temperature, starting product temperature, target setpoint and whether the unit is in refrigeration or freezing mode.</li><li>State load mass, load material, door-opening schedule and ventilation clearance.</li><li>Power the unit through the offered DC cable and connector at the intended 12 V or 24 V input.</li><li>Measure energy at the input for 24 hours with a Wh meter; record minimum voltage, compressor cycling and any low-voltage cut-out.</li><li>Repeat at the hotter agreed condition if the product is marketed for Gulf, North African or West African use.</li></ol><div class=\"article-table-wrap\"><table><tbody><tr><th>Calculation field</th><th>Buyer input</th><th>Method</th></tr><tr><td>Daily fridge energy</td><td>Measured Wh/24 h</td><td>Use the hot-condition test, not peak watts × 24</td></tr><tr><td>Required autonomy</td><td>Number of days without dependable charging</td><td>Measured daily Wh × autonomy days</td></tr><tr><td>Battery allowance</td><td>Battery maker’s usable-capacity and temperature guidance</td><td>Divide required energy by the approved usable fraction; do not invent one universal percentage</td></tr><tr><td>Daily recharge</td><td>Conservative Wh available from solar, alternator or mains</td><td>Must replace expected daily use plus documented conversion losses</td></tr></tbody></table></div><h2 id=\"inspect-the-weak-links\">Inspect the weak links</h2><p>A strong compressor cannot compensate for a loose vehicle socket, undersized cable or power station whose DC output shuts down. The RFQ should specify cable length and conductor size, connector type, fuse, low-voltage protection levels, reverse-polarity protection and 12/24 V automatic detection. Test the temperature of the plug and cable at sustained operation and record voltage at the fridge while the compressor starts.</p><p>Also check the condenser inlet and outlet. Packaging should not encourage users to push the hot-air outlet against a vehicle wall. For distributor products, request replaceable DC cables, AC adaptors, fuses, handles, hinges and control boards as priced spare parts.</p><h2 id=\"hard-cooler-or-electric-fridge\">Hard cooler or electric fridge?</h2><p>Choose a hard cooler when ice is reliably available, trips are short, power is uncertain and product simplicity matters more than freezing. Choose a 12V compressor fridge when users need repeatable refrigeration or freezing over multiple days and can maintain a dependable power-and-charge chain. This decision box replaces a separate overlapping article; it should be validated against the buyer’s actual trip pattern.</p><h2 id=\"safety-and-the-destination-file\">Safety and the destination file</h2><p>IEC 60335-2-24:2025 includes mobile refrigerating appliances and battery-operated appliances up to 24 V DC within its published scope. This makes the standard a useful scope check, not proof that an offered product conforms. The test report must still identify the exact appliance architecture, regional version and clauses assessed; “IEC 60335-2-24” should not be copied onto every battery-fridge RFQ without technical review.</p><p>If a product includes a lithium battery, battery test documentation, transport classification, packing and destination requirements need a separate evidence check before shipment. This article intentionally does not prescribe one global customs or certification route.</p><aside class=\"article-callout\"><span aria-hidden=\"true\">i</span><div><strong>Minimum approval package:</strong> exact-model specification, 24-hour Wh test, temperature log, DC voltage-drop check, charger-input limits, safety test report scope, battery file if included, spare-parts list and packaging drop/handling plan.</div></aside><p><strong>Need Chinese portable-fridge suppliers compared on one power-chain test?</strong> Send the destination market, target volume, temperature mode and expected charging sources: <a href=\"https://www.ddnzglobal.com/sourcing/outdoor-products-from-china\" target=\"_blank\" rel=\"noopener noreferrer\">Request outdoor-products sourcing support</a></p><h2 id=\"sources-and-verification\">Sources and verification</h2><p>Last verified: <strong>7 August 2026</strong>.</p><ul><li><a href=\"https://webstore.iec.ch/en/publication/75938\" target=\"_blank\" rel=\"noopener noreferrer\">IEC — IEC 60335-2-24:2025 scope for refrigerating and mobile appliances</a></li><li><a href=\"https://support.dometic.com/en/cfx5-coolers/What-type-of-power-does-the-CFX5-need-9a38\" target=\"_blank\" rel=\"noopener noreferrer\">Dometic — CFX5 power requirements</a></li><li><a href=\"https://support.dometic.com/en/cfx5-coolers/How-do-I-calculate-how-much-power-a-CFX5-will-draw-6bf6\" target=\"_blank\" rel=\"noopener noreferrer\">Dometic — how to calculate CFX5 power draw</a></li><li><a href=\"https://us.ecoflow.com/products/ecoflow-glacier-classic-portable-fridge-freezer\" target=\"_blank\" rel=\"noopener noreferrer\">EcoFlow — GLACIER Classic specifications and test conditions</a></li><li><a href=\"https://www.bougerv.com/products/dual-zone-portable-fridge-freezer\" target=\"_blank\" rel=\"noopener noreferrer\">BougeRV — CRD2 V2.0 product specification</a></li></ul><p><em>Editorial note: social discussions were used to identify the buyer question, not to support technical performance claims. No DDNZ field-test result or guaranteed runtime is claimed.</em></p>",
+    "toc": [
+      {
+        "id": "three-points-to-know",
+        "text": "Three points to know",
+        "level": 2
+      },
+      {
+        "id": "why-catalogue-runtime-can-mislead",
+        "text": "Why catalogue runtime can mislead",
+        "level": 2
+      },
+      {
+        "id": "the-24-hour-power-chain-test",
+        "text": "The 24-hour power-chain test",
+        "level": 2
+      },
+      {
+        "id": "inspect-the-weak-links",
+        "text": "Inspect the weak links",
+        "level": 2
+      },
+      {
+        "id": "hard-cooler-or-electric-fridge",
+        "text": "Hard cooler or electric fridge?",
+        "level": 2
+      },
+      {
+        "id": "safety-and-the-destination-file",
+        "text": "Safety and the destination file",
+        "level": 2
+      },
+      {
+        "id": "sources-and-verification",
+        "text": "Sources and verification",
+        "level": 2
+      }
+    ],
+    "wordCount": 1029,
+    "readMinutes": 5,
+    "leadGoal": "Product Sourcing",
+    "productCategory": "Outdoor Products",
+    "productSubcategory": "Outdoor and Portable Refrigeration, Accessories and Power",
+    "audienceMarket": "Middle East, Africa",
+    "searchIntent": "Buyer Guide",
+    "primaryQuery": "12V portable fridge battery solar power test China sourcing hot climate",
+    "topicKey": "Product Sourcing｜Outdoor Products｜Outdoor and Portable Refrigeration｜Middle East and Africa｜Buyer Guide｜measured fridge battery and charging power chain under heat",
+    "contentType": "Buyer Guide",
+    "reviewer": [
+      "Huang Matthew"
+    ],
+    "lastVerified": "2026-08-07",
+    "qualityScore": 91,
+    "primaryCTA": "Outdoor Products Sourcing",
+    "evidenceCount": 5,
+    "topicCount": 1,
+    "auditCount": 4,
+    "canonicalArticleId": "3afeac33-2618-8165-ada1-cca1545cdf7f",
+    "reviewMode": "human",
+    "governed": true,
+    "legacyMigration": false
+  },
+  {
     "id": "3afeac33-2618-8164-be2f-f443fe78b84c",
     "status": "Published",
     "slug": "commercial-ice-machine-hot-kitchen-output-china-sourcing",

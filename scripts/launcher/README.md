@@ -16,8 +16,10 @@ is moved to another folder, run the installer again from its new location.
 ## What it checks
 
 Before starting, it confirms that macOS, Node.js, npm, `node_modules`, `.env.local`,
-`NOTION_API_KEY`, and `NOTION_DATABASE_ID` are available. It does not print or
-read the secret values. It also reuses a working DDNZ server and will not kill
+`NOTION_API_KEY`, and `NOTION_DATABASE_ID` are available. It also checks whether
+`OPENAI_API_KEY` is configured; when it is missing, the launcher keeps the Notion
+governance workspace available and displays a notice that GPT-5.6 is disabled.
+It does not print or read secret values. It also reuses a working DDNZ server and will not kill
 or replace another program using port 3000.
 
 If something is wrong, a macOS dialog gives the next action. Startup logs are
@@ -29,5 +31,8 @@ Run this once from the project folder before installing the launcher:
 
     npm install
 
-Create `.env.local` from `.env.example` and add the Notion credentials. The
+Create `.env.local` from `.env.example`, add the Notion credentials, and add
+`OPENAI_API_KEY` to enable the six-step AI workflow. LinkedIn and Meta tokens are
+optional until their administrator roles and API permissions have been verified;
+direct publishing stays off unless `SOCIAL_DIRECT_PUBLISH_ENABLED="true"`. The
 launcher intentionally does not run `npm install` or create secrets for you.

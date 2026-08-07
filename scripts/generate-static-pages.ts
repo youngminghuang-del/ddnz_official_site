@@ -1038,7 +1038,20 @@ function run() {
   console.log(`✅ Dynamically generated sitemap.xml (with ${urlCount} URLs) at public/sitemap.xml and dist/sitemap.xml`);
 
   // Generate optimized robots.txt
-  const robotsTxt = `User-agent: *
+  const robotsTxt = `# Search and answer-engine crawlers are intentionally allowed.
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: *
 Allow: /
 
 # Sitemap Location
