@@ -897,6 +897,8 @@ function run() {
             computedTitle = 'China Sourcing Alert: July Rate Hikes & Customs Guide';
           } else if (post.slug === 'high-compliance-new-energy-logistics') {
             computedTitle = 'New Energy & DG Logistics from China | DDNZ Global Insights';
+          } else if (post.slug === 'cheap-speakers-china-african-trader-verification') {
+            computedTitle = 'Cheap China Speakers: African Trader Verification | DDNZ Global';
           } else {
             const rawTitle = post.title.trim();
             const suffix = " | DDNZ Global";

@@ -162,11 +162,13 @@ export default function BlogDetail() {
   const completePrefix = prefixSpace > maxPrefix * 0.72
     ? prefixCandidate.slice(0, prefixSpace)
     : prefixCandidate;
-  const seoTitle = rawTitle.length + suffix.length <= maxTitleLen
-    ? `${rawTitle}${suffix}`
-    : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
-      ? `${titleLead}${suffix}`
-      : `${completePrefix.trim()}…${suffix}`;
+  const seoTitle = post.slug === 'cheap-speakers-china-african-trader-verification'
+    ? 'Cheap China Speakers: African Trader Verification | DDNZ Global'
+    : rawTitle.length + suffix.length <= maxTitleLen
+      ? `${rawTitle}${suffix}`
+      : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
+        ? `${titleLead}${suffix}`
+        : `${completePrefix.trim()}…${suffix}`;
   const rawDesc = post.summary || post.title;
   const descCandidate = rawDesc.slice(0, 154);
   const descSpace = descCandidate.lastIndexOf(' ');
