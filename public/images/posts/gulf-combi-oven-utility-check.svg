@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Combi oven utility and clearance checklist</title>
+  <desc id="desc">Diagram showing the power, water, drain, ventilation and service-clearance checks required before releasing a commercial combi oven for a Gulf kitchen project.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f8fafc"/>
+      <stop offset="1" stop-color="#eef3f7"/>
+    </linearGradient>
+    <linearGradient id="steel" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d6dde3"/>
+      <stop offset="0.5" stop-color="#f8fafb"/>
+      <stop offset="1" stop-color="#b8c2ca"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#11253b" flood-opacity="0.16"/>
+    </filter>
+    <marker id="arrow-navy" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#143a5d"/>
+    </marker>
+    <marker id="arrow-orange" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#e47900"/>
+    </marker>
+    <style>
+      .eyebrow { font: 700 18px Arial, sans-serif; letter-spacing: 2.2px; fill: #e47900; }
+      .heading { font: 700 34px Arial, sans-serif; fill: #10263c; }
+      .label { font: 700 22px Arial, sans-serif; fill: #10263c; }
+      .copy { font: 400 18px Arial, sans-serif; fill: #3e566e; }
+      .small { font: 700 16px Arial, sans-serif; fill: #52697d; letter-spacing: 0.6px; }
+      .small-light { font: 700 16px Arial, sans-serif; fill: #ffffff; letter-spacing: 0.6px; }
+      .copy-light { font: 400 18px Arial, sans-serif; fill: #d8e5ef; }
+      .footer { font: 700 14px Arial, sans-serif; fill: #52697d; letter-spacing: 0.5px; }
+      .oven-text { font: 700 14px Arial, sans-serif; fill: #ffffff; }
+    </style>
+  </defs>
+
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <rect x="38" y="34" width="1124" height="732" rx="30" fill="#ffffff" stroke="#dbe4ea"/>
+
+  <text x="84" y="90" class="eyebrow">MODEL-RELEASE CHECK</text>
+  <text x="84" y="129" class="heading">The oven is only one part of the</text>
+  <text x="84" y="170" class="heading">installed system</text>
+  <text x="84" y="207" class="copy">Match every site interface to the exact offered model before production or shipment.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="475" y="240" width="250" height="385" rx="20" fill="url(#steel)" stroke="#738596" stroke-width="2"/>
+    <rect x="510" y="280" width="180" height="245" rx="10" fill="#182b3d"/>
+    <rect x="530" y="300" width="140" height="205" rx="5" fill="#344a5e"/>
+    <line x1="542" y1="334" x2="658" y2="334" stroke="#aab8c3" stroke-width="5"/>
+    <line x1="542" y1="370" x2="658" y2="370" stroke="#aab8c3" stroke-width="5"/>
+    <line x1="542" y1="406" x2="658" y2="406" stroke="#aab8c3" stroke-width="5"/>
+    <line x1="542" y1="442" x2="658" y2="442" stroke="#aab8c3" stroke-width="5"/>
+    <line x1="542" y1="478" x2="658" y2="478" stroke="#aab8c3" stroke-width="5"/>
+    <rect x="493" y="554" width="214" height="46" rx="8" fill="#143a5d"/>
+    <text x="600" y="583" class="oven-text" text-anchor="middle">EXACT MODEL + DATA PLATE</text>
+  </g>
+
+  <g>
+    <rect x="84" y="238" width="300" height="124" rx="18" fill="#edf4fa" stroke="#b9ccda"/>
+    <circle cx="120" cy="278" r="19" fill="#143a5d"/>
+    <path d="M113 266 L126 266 L120 278 L130 278 L112 295 L117 282 L108 282 Z" fill="#ffffff"/>
+    <text x="154" y="277" class="label">POWER</text>
+    <text x="108" y="316" class="copy">Voltage • phase • frequency</text>
+    <text x="108" y="344" class="copy">Maximum input • protection</text>
+    <path d="M384 302 C425 302 432 318 470 330" fill="none" stroke="#143a5d" stroke-width="4" marker-end="url(#arrow-navy)"/>
+  </g>
+
+  <g>
+    <rect x="816" y="238" width="300" height="124" rx="18" fill="#fff5e8" stroke="#f0c28d"/>
+    <circle cx="852" cy="278" r="19" fill="#e47900"/>
+    <path d="M852 262 C840 279 840 284 852 294 C864 284 864 279 852 262 Z" fill="#ffffff"/>
+    <text x="886" y="277" class="label">WATER</text>
+    <text x="840" y="316" class="copy">Pressure • quality • treatment</text>
+    <text x="840" y="344" class="copy">Temperature • connection • flow</text>
+    <path d="M816 302 C775 302 768 318 730 330" fill="none" stroke="#e47900" stroke-width="4" marker-end="url(#arrow-orange)"/>
+  </g>
+
+  <g>
+    <rect x="84" y="430" width="300" height="124" rx="18" fill="#edf4fa" stroke="#b9ccda"/>
+    <circle cx="120" cy="470" r="19" fill="#143a5d"/>
+    <path d="M108 466 H132 M112 474 H128 M117 482 H123" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <text x="154" y="469" class="label">VENTILATION</text>
+    <text x="108" y="508" class="copy">Heat • moisture • combustion</text>
+    <text x="108" y="536" class="copy">Hood or approved ventless route</text>
+    <path d="M384 487 C425 487 438 470 470 455" fill="none" stroke="#143a5d" stroke-width="4" marker-end="url(#arrow-navy)"/>
+  </g>
+
+  <g>
+    <rect x="816" y="430" width="300" height="124" rx="18" fill="#fff5e8" stroke="#f0c28d"/>
+    <circle cx="852" cy="470" r="19" fill="#e47900"/>
+    <path d="M841 460 V474 C841 484 863 484 863 474 V460 M846 460 H858" fill="none" stroke="#ffffff" stroke-width="3" stroke-linecap="round"/>
+    <text x="886" y="469" class="label">DRAIN</text>
+    <text x="840" y="508" class="copy">Diameter • temperature • slope</text>
+    <text x="840" y="536" class="copy">Air gap • floor route • materials</text>
+    <path d="M816 487 C775 487 762 470 730 455" fill="none" stroke="#e47900" stroke-width="4" marker-end="url(#arrow-orange)"/>
+  </g>
+
+  <g>
+    <rect x="352" y="654" width="496" height="68" rx="18" fill="#10263c"/>
+    <text x="600" y="683" class="small-light" text-anchor="middle">SERVICE CLEARANCE</text>
+    <text x="600" y="709" class="copy-light" text-anchor="middle">Door swing • filters • cleaning • component access</text>
+    <path d="M500 654 L500 626" stroke="#143a5d" stroke-width="4" marker-end="url(#arrow-navy)"/>
+    <path d="M700 654 L700 626" stroke="#e47900" stroke-width="4" marker-end="url(#arrow-orange)"/>
+  </g>
+
+  <text x="84" y="744" class="footer">FINAL RELEASE: EXACT MODEL DOCUMENTS + LOCAL PROJECT APPROVAL + MEASURABLE TEST</text>
+</svg>
