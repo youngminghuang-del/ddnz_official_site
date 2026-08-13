@@ -4,6 +4,7 @@ import { promisify } from 'node:util';
 import type { Plugin } from 'vite';
 import { createContentOpsAiService, type ContentOpsAiConfig } from './content-ops-ai';
 import { planEvidenceDrafts, type AiEvidenceSource } from './content-ops-evidence';
+import { downloadNotionImage } from './notion-img-sync';
 import type { AiJobStage, ContentOpsAiJob } from '../src/types/contentOps';
 
 const execFileAsync = promisify(execFile);
@@ -501,7 +502,7 @@ async function buildEvidenceAutofillInput(apiKey: string, articleId: string) {
   const evidence = evidencePages.map(mapEvidence);
   const article = { ...mapArticle(page), ...evidenceGate(articleId, evidence) };
   const related = evidence.filter((item) => item.articleIds.includes(articleId));
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const html = await renderPreviewBlocks(apiKey, blocks, articleId);
   const bodyExcerpt = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 28_000);
   return {
     workflowMode: 'evidence_autofill',
@@ -1419,7 +1420,7 @@ async function prepareResearchArticle(apiKey: string, topicId: string) {
 
 async function bodyTextLength(apiKey: string, articleId: string) {
   const blocks = await fetchBlockChildren(apiKey, articleId);
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const html = await renderPreviewBlocks(apiKey, blocks, articleId);
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
 }
 
@@ -1632,7 +1633,7 @@ async function fetchBlockChildren(apiKey: string, blockId: string) {
   return blocks;
 }
 
-async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<string> {
+async function renderPreviewBlocks(apiKey: string, blocks: any[], pageId = 'article'): Promise<string> {
   let html = '';
   let listType: 'ul' | 'ol' | '' = '';
 
@@ -1650,7 +1651,7 @@ async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<strin
     if (!isList || (listType && listType !== nextListType)) closeList();
     const renderChildren = async () =>
       block.has_children
-        ? renderPreviewBlocks(apiKey, await fetchBlockChildren(apiKey, block.id))
+        ? renderPreviewBlocks(apiKey, await fetchBlockChildren(apiKey, block.id), pageId)
         : '';
 
     if (type === 'paragraph') {
@@ -1671,7 +1672,12 @@ async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<strin
       const imageUrl = image.type === 'external' ? image.external?.url : image.file?.url;
       const caption = plainText(image.caption);
       if (imageUrl) {
-        html += `<figure class="article-figure"><img src="${escapeAttribute(imageUrl)}" alt="${escapeAttribute(
+        const stablePreviewUrl = await downloadNotionImage(
+          imageUrl,
+          `preview-${pageId.replaceAll('-', '').slice(0, 12)}`,
+          block.id.replaceAll('-', '').slice(0, 12),
+        );
+        html += `<figure class="article-figure"><img src="${escapeAttribute(stablePreviewUrl)}" alt="${escapeAttribute(
           caption || 'Article supporting image',
         )}" />${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ''}</figure>`;
       }
@@ -1748,7 +1754,7 @@ async function buildArticlePreview(apiKey: string, articleId: string) {
   ]);
   const evidence = evidencePages.map(mapEvidence);
   const gate = evidenceGate(articleId, evidence);
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const html = await renderPreviewBlocks(apiKey, blocks, articleId);
   // Count the complete rendered body so nested callouts, toggles and table cells
   // contribute to the reading-time estimate.
   const text = html.replace(/<[^>]+>/g, ' ');
