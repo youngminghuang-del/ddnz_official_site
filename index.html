@@ -41,58 +41,79 @@
     })();    
   </script>        
 
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-TZD9QT4W8H"></script>    
-  <script>      
-    window.dataLayer = window.dataLayer || [];      
-    function gtag(){dataLayer.push(arguments);}      
-    window.gtag = gtag;
-    gtag('consent', 'default', {
-      analytics_storage: 'denied',
-      ad_storage: 'denied',
-      ad_user_data: 'denied',
-      ad_personalization: 'denied',
-      wait_for_update: 500
-    });
-    try {
-      var savedCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
-      if (savedCookiePreferences.tracking) {
-        gtag('consent', 'update', {
-          analytics_storage: 'granted',
-          ad_storage: savedCookiePreferences.targeting ? 'granted' : 'denied',
-          ad_user_data: savedCookiePreferences.targeting ? 'granted' : 'denied',
-          ad_personalization: savedCookiePreferences.targeting ? 'granted' : 'denied'
-        });
-      }
-    } catch (e) {
-      console.warn('Could not restore analytics consent preferences', e);
-    }
-    gtag('js', new Date());      
-    gtag('config', 'G-TZD9QT4W8H', { send_page_view: false });
-  </script>
+  <script type="module">
+    const analyticsHostname = window.location.hostname.toLowerCase();
+    const localAnalyticsHostnames = new Set([
+      'localhost',
+      '127.0.0.1',
+      '::1',
+      '[::1]',
+      '0.0.0.0'
+    ]);
+    const analyticsDisabled =
+      import.meta.env.DEV ||
+      import.meta.env.VITE_DISABLE_ANALYTICS === 'true' ||
+      localAnalyticsHostnames.has(analyticsHostname) ||
+      analyticsHostname.endsWith('.localhost') ||
+      analyticsHostname.endsWith('.local');
 
-  <script>
-    (function(c,l,a,r,i,t,y){
-      c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-      var clarityTrackingGranted = false;
-      var clarityTargetingGranted = false;
-      try {
-        var clarityCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
-        clarityTrackingGranted = Boolean(clarityCookiePreferences.tracking);
-        clarityTargetingGranted = Boolean(clarityCookiePreferences.targeting);
-      } catch (e) {
-        console.warn('Could not restore Clarity consent preferences', e);
-      }
-      c[a]('consentv2', {
-        ad_Storage: clarityTargetingGranted ? 'granted' : 'denied',
-        analytics_Storage: clarityTrackingGranted ? 'granted' : 'denied'
+    window.__DDNZ_ANALYTICS_DISABLED__ = analyticsDisabled;
+
+    if (!analyticsDisabled) {
+      const googleAnalyticsScript = document.createElement('script');
+      googleAnalyticsScript.async = true;
+      googleAnalyticsScript.src = 'https://www.googletagmanager.com/gtag/js?id=G-TZD9QT4W8H';
+      document.head.appendChild(googleAnalyticsScript);
+
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){window.dataLayer.push(arguments);}
+      window.gtag = gtag;
+      gtag('consent', 'default', {
+        analytics_storage: 'denied',
+        ad_storage: 'denied',
+        ad_user_data: 'denied',
+        ad_personalization: 'denied',
+        wait_for_update: 500
       });
-      t=l.createElement(r);
-      t.id='microsoft-clarity-script';
-      t.async=1;
-      t.src='https://www.clarity.ms/tag/'+i;
-      y=l.getElementsByTagName(r)[0];
-      y.parentNode.insertBefore(t,y);
-    })(window, document, 'clarity', 'script', 'xswyojgnjd');
+      try {
+        const savedCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+        if (savedCookiePreferences.tracking) {
+          gtag('consent', 'update', {
+            analytics_storage: 'granted',
+            ad_storage: savedCookiePreferences.targeting ? 'granted' : 'denied',
+            ad_user_data: savedCookiePreferences.targeting ? 'granted' : 'denied',
+            ad_personalization: savedCookiePreferences.targeting ? 'granted' : 'denied'
+          });
+        }
+      } catch (e) {
+        console.warn('Could not restore analytics consent preferences', e);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-TZD9QT4W8H', { send_page_view: false });
+
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        let clarityTrackingGranted = false;
+        let clarityTargetingGranted = false;
+        try {
+          const clarityCookiePreferences = JSON.parse(localStorage.getItem('cookiePreferences') || '{}');
+          clarityTrackingGranted = Boolean(clarityCookiePreferences.tracking);
+          clarityTargetingGranted = Boolean(clarityCookiePreferences.targeting);
+        } catch (e) {
+          console.warn('Could not restore Clarity consent preferences', e);
+        }
+        c[a]('consentv2', {
+          ad_Storage: clarityTargetingGranted ? 'granted' : 'denied',
+          analytics_Storage: clarityTrackingGranted ? 'granted' : 'denied'
+        });
+        t=l.createElement(r);
+        t.id='microsoft-clarity-script';
+        t.async=1;
+        t.src='https://www.clarity.ms/tag/'+i;
+        y=l.getElementsByTagName(r)[0];
+        y.parentNode.insertBefore(t,y);
+      })(window, document, 'clarity', 'script', 'xswyojgnjd');
+    }
   </script>
 
   <title>DDNZ & Heaven Born Freight | China Sourcing & Logistics</title>    
