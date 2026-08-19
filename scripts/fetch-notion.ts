@@ -30,6 +30,17 @@ type RenderContext = {
   words: string[];
 };
 
+type LocalArticleAsset = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+type LocalArticleAssets = {
+  cover?: LocalArticleAsset;
+  inline?: Array<LocalArticleAsset & { beforeHeading: string }>;
+};
+
 const escapeHtml = (value: string) =>
   value
     .replaceAll("&", "&amp;")
@@ -39,6 +50,55 @@ const escapeHtml = (value: string) =>
     .replaceAll("'", "&#039;");
 
 const escapeAttribute = (value: string) => escapeHtml(value).replaceAll("`", "&#096;");
+
+const escapeRegExp = (value: string) => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+function loadLocalArticleAssets(slug: string): LocalArticleAssets | null {
+  const safeSlug = slug.toLowerCase().replace(/[^a-z0-9-]/g, "");
+  if (!safeSlug || safeSlug !== slug) return null;
+  const manifestPath = path.join(
+    process.cwd(),
+    "public",
+    "images",
+    "posts",
+    safeSlug,
+    "preview-assets.json",
+  );
+  if (!fs.existsSync(manifestPath)) return null;
+
+  try {
+    const parsed = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as LocalArticleAssets;
+    const allowedPrefix = `/images/posts/${safeSlug}/`;
+    const validAsset = (asset?: LocalArticleAsset) =>
+      !!asset && asset.src.startsWith(allowedPrefix) && !!asset.alt.trim();
+    const cover = validAsset(parsed.cover) ? parsed.cover : undefined;
+    const inline = (parsed.inline || []).filter(
+      (asset) => validAsset(asset) && !!asset.beforeHeading?.trim(),
+    );
+    return cover || inline.length ? { cover, inline } : null;
+  } catch {
+    return null;
+  }
+}
+
+function localArticleFigure(asset: LocalArticleAsset) {
+  return `<figure class="article-figure"><img src="${escapeAttribute(asset.src)}" alt="${escapeAttribute(
+    asset.alt,
+  )}" loading="lazy" decoding="async" />${
+    asset.caption ? `<figcaption>${escapeHtml(asset.caption)}</figcaption>` : ""
+  }</figure>`;
+}
+
+function applyLocalArticleAssets(html: string, assets: LocalArticleAssets | null) {
+  if (!assets?.inline?.length) return html;
+  return assets.inline.reduce((rendered, asset) => {
+    const heading = escapeHtml(asset.beforeHeading);
+    const marker = new RegExp(`<h[23](?:\\s[^>]*)?>${escapeRegExp(heading)}</h[23]>`);
+    return marker.test(rendered)
+      ? rendered.replace(marker, `${localArticleFigure(asset)}$&`)
+      : `${rendered}${localArticleFigure(asset)}`;
+  }, html);
+}
 
 const plainText = (richText: any[] = []) =>
   richText.map((item) => item?.plain_text || "").join("").trim();
@@ -118,22 +178,49 @@ function formatRichText(richText: any): string {
 const formatRichTextArray = (richText: any[] = []) =>
   richText.map((item) => formatRichText(item)).join("");
 
-const fetchNotion = async (endpoint: string, options: Record<string, any> = {}) => {
-  const response = await fetch(`https://api.notion.com${endpoint}`, {
-    method: options.method || "GET",
-    headers: {
-      Authorization: `Bearer ${NOTION_API_KEY}`,
-      "Notion-Version": "2022-06-28",
-      "Content-Type": "application/json",
-      ...options.headers,
-    },
-    body: options.body ? JSON.stringify(options.body) : undefined,
+const wait = (delayMs: number) =>
+  new Promise((resolve) => {
+    setTimeout(resolve, delayMs);
   });
 
-  if (!response.ok) {
-    throw new Error(`Notion API error ${response.status}: ${await response.text()}`);
+const fetchNotion = async (endpoint: string, options: Record<string, any> = {}) => {
+  const maxAttempts = 3;
+  let lastError: unknown;
+
+  for (let attempt = 1; attempt <= maxAttempts; attempt += 1) {
+    let response: Response;
+    try {
+      response = await fetch(`https://api.notion.com${endpoint}`, {
+        method: options.method || "GET",
+        headers: {
+          Authorization: `Bearer ${NOTION_API_KEY}`,
+          "Notion-Version": "2022-06-28",
+          "Content-Type": "application/json",
+          ...options.headers,
+        },
+        body: options.body ? JSON.stringify(options.body) : undefined,
+      });
+    } catch (error) {
+      lastError = error;
+      if (attempt === maxAttempts) throw error;
+      const delayMs = 1_000 * 2 ** (attempt - 1);
+      console.warn(`Notion request failed (attempt ${attempt}/${maxAttempts}); retrying in ${delayMs}ms.`);
+      await wait(delayMs);
+      continue;
+    }
+
+    if (response.ok) return response.json();
+
+    const error = new Error(`Notion API error ${response.status}: ${await response.text()}`);
+    const retryable = response.status === 429 || response.status >= 500;
+    if (!retryable || attempt === maxAttempts) throw error;
+    lastError = error;
+    const delayMs = 1_000 * 2 ** (attempt - 1);
+    console.warn(`Notion request failed (attempt ${attempt}/${maxAttempts}); retrying in ${delayMs}ms.`);
+    await wait(delayMs);
   }
-  return response.json();
+
+  throw lastError instanceof Error ? lastError : new Error("Notion request failed.");
 };
 
 async function fetchAllDatabasePages() {
@@ -323,10 +410,24 @@ function writeFallbackData() {
     throw new Error("Strict Notion sync failed; refusing to deploy stale fallback content.");
   }
 
-  console.warn("Using local fallback blog data because Notion is unavailable.");
+  if (fs.existsSync(outputFilePath)) {
+    try {
+      const existingPosts = JSON.parse(fs.readFileSync(outputFilePath, "utf-8"));
+      if (Array.isArray(existingPosts) && existingPosts.length > 0) {
+        console.warn(
+          `Notion is unavailable; keeping the last successful snapshot of ${existingPosts.length} article(s).`,
+        );
+        return;
+      }
+    } catch (error) {
+      console.warn("The existing Notion snapshot is invalid and cannot be reused:", error);
+    }
+  }
+
+  console.warn("No valid Notion snapshot exists; initializing with local starter blog data.");
   if (!fs.existsSync(fallbackFilePath)) {
     fs.writeFileSync(outputFilePath, "[]", "utf-8");
-    fs.writeFileSync(redirectFilePath, "[]", "utf-8");
+    if (!fs.existsSync(redirectFilePath)) fs.writeFileSync(redirectFilePath, "[]", "utf-8");
     return;
   }
 
@@ -338,7 +439,7 @@ function writeFallbackData() {
     toc: post.toc || [],
   }));
   fs.writeFileSync(outputFilePath, JSON.stringify(fallbackPosts, null, 2), "utf-8");
-  fs.writeFileSync(redirectFilePath, "[]", "utf-8");
+  if (!fs.existsSync(redirectFilePath)) fs.writeFileSync(redirectFilePath, "[]", "utf-8");
 }
 
 function auditGovernedArticle(post: any) {
@@ -422,6 +523,8 @@ async function run() {
           properties.description,
       );
 
+      const localAssets = loadLocalArticleAssets(slug);
+
       let thumbnailUrl = fallbackCover;
       if (page.cover) {
         thumbnailUrl =
@@ -434,13 +537,16 @@ async function run() {
         const file = imageProperty.files[0];
         thumbnailUrl = file.type === "external" ? file.external.url : file.file?.url || thumbnailUrl;
       }
-      if (thumbnailUrl !== fallbackCover) {
+      if (localAssets?.cover) {
+        thumbnailUrl = localAssets.cover.src;
+      } else if (thumbnailUrl !== fallbackCover) {
         thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover");
       }
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
       const rendered = await getPageContentHtml(page.id, slug, title, initialContent);
+      rendered.html = applyLocalArticleAssets(rendered.html, localAssets);
       const canonicalIds = propertyRelationIds(properties["Canonical Article"]);
 
       const post: Record<string, any> = {
