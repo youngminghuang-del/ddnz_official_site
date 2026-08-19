@@ -23,6 +23,7 @@ type ClarityFunction = ((...args: unknown[]) => void) & {
 
 declare global {
   interface Window {
+    __DDNZ_ANALYTICS_DISABLED__?: boolean;
     dataLayer?: unknown[];
     gtag?: (...args: unknown[]) => void;
     clarity?: ClarityFunction;
@@ -30,6 +31,28 @@ declare global {
 }
 
 let analyticsConsentGranted = false;
+
+const LOCAL_ANALYTICS_HOSTNAMES = new Set([
+  'localhost',
+  '127.0.0.1',
+  '::1',
+  '[::1]',
+  '0.0.0.0',
+]);
+
+function isAnalyticsDisabled() {
+  if (typeof window === 'undefined') return true;
+
+  const hostname = window.location.hostname.toLowerCase();
+  return (
+    window.__DDNZ_ANALYTICS_DISABLED__ === true ||
+    import.meta.env.DEV ||
+    import.meta.env.VITE_DISABLE_ANALYTICS === 'true' ||
+    LOCAL_ANALYTICS_HOSTNAMES.has(hostname) ||
+    hostname.endsWith('.localhost') ||
+    hostname.endsWith('.local')
+  );
+}
 
 const SENSITIVE_PARAMETER_KEYS = new Set([
   'name',
@@ -104,7 +127,7 @@ function sanitizeParams(params: AnalyticsParams = {}) {
 }
 
 function ensureClarity() {
-  if (typeof window === 'undefined') return;
+  if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
 
   if (!window.clarity) {
     const clarity: ClarityFunction = (...args: unknown[]) => {
@@ -125,6 +148,11 @@ function ensureClarity() {
 
 export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
   if (typeof window === 'undefined') return;
+
+  if (isAnalyticsDisabled()) {
+    analyticsConsentGranted = false;
+    return;
+  }
 
   analyticsConsentGranted = tracking;
   window.gtag?.('consent', 'update', {
@@ -147,7 +175,11 @@ export function initializeAnalyticsConsent() {
 }
 
 export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
-  if (typeof window === 'undefined' || !analyticsConsentGranted) return;
+  if (
+    typeof window === 'undefined' ||
+    isAnalyticsDisabled() ||
+    !analyticsConsentGranted
+  ) return;
 
   const eventParams = {
     ...getPageContext(),
@@ -159,7 +191,11 @@ export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
 }
 
 export function trackPageView() {
-  if (typeof window === 'undefined' || !analyticsConsentGranted) return;
+  if (
+    typeof window === 'undefined' ||
+    isAnalyticsDisabled() ||
+    !analyticsConsentGranted
+  ) return;
 
   const pageContext = getPageContext();
   window.gtag?.('event', 'page_view', {
