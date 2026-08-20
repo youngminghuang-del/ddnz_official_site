@@ -238,8 +238,10 @@ export default function WhoWeAre() {
           <figure className="bg-[#06182D]">
             <div className="relative aspect-[4/3] overflow-hidden lg:aspect-auto lg:min-h-[500px]">
               <img
-                src={getImgUrl('JOURNEY_2019')}
+                src="/images/operations/container-loading-forklift-wide-v1.webp"
                 alt={content.imageAlt}
+                width="1440"
+                height="810"
                 className="absolute inset-0 h-full w-full scale-[1.02] object-cover object-[52%_50%]"
                 loading="lazy"
               />
@@ -268,6 +270,8 @@ export default function WhoWeAre() {
             <img
               src={getImgUrl('JOURNEY_2004')}
               alt="Heaven Born self-operated warehouse and trade facilities"
+              width="1200"
+              height="800"
               className="absolute inset-0 h-full w-full object-cover"
               loading="lazy"
             />

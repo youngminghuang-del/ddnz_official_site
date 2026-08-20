@@ -1,5 +1,8 @@
 import { ArrowRight, ClipboardCheck, FileCheck2, Factory, ReceiptText } from 'lucide-react';
+import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { buildQuoteHref } from '../lib/quoteLinks';
+import { trackEvent } from '../lib/utils';
 
 const copy = {
   en: {
@@ -57,6 +60,7 @@ const icons = [Factory, ClipboardCheck, FileCheck2, ReceiptText];
 export default function TradeSupport() {
   const { language } = useLanguage();
   const content = copy[language as keyof typeof copy] || copy.en;
+  const quoteHref = buildQuoteHref({ intent: 'Supplier Inspection & Consolidation', language, source: 'homepage_trade_support' });
 
   return (
     <section className="bg-[#F5F8FC] py-16 md:py-24">
@@ -67,9 +71,9 @@ export default function TradeSupport() {
           <h2 className="text-3xl md:text-4xl font-black tracking-tight text-[#0B1F3A] leading-tight">{content.title}</h2>
           <div className="mt-4 h-1 w-12 rounded-full bg-[var(--hb-amber)]" aria-hidden="true" />
           <p className="mt-5 text-slate-600 leading-relaxed max-w-2xl">{content.body}</p>
-          <a href="#get-a-quote" className="inline-flex items-center gap-2 mt-7 font-extrabold text-[#0B4F8A] hover:text-[#EA6A12] transition-colors">
+          <Link to={quoteHref} data-analytics-tracked="true" onClick={() => trackEvent('quote_click', { cta_location: 'homepage_trade_support', lead_goal: 'Supplier Inspection & Consolidation' })} className="inline-flex min-h-11 items-center gap-2 mt-5 rounded-xl bg-[var(--ddnz-purple-strong)] px-5 py-3 font-extrabold text-white hover:bg-[var(--ddnz-purple)] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
             {content.cta}<ArrowRight className="w-4 h-4" />
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {content.items.map((item, index) => {

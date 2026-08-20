@@ -1,0 +1,128 @@
+/* Shared mobile readability pass.
+   This file intentionally changes type size only; approved page structure,
+   content, assets and interaction patterns remain untouched. */
+
+@media (max-width: 700px) {
+  .sourcing-services-page .ss-retail-example a,
+  .sourcing-services-page .ss-footer a,
+  .audio-speakers-page .as-footer a,
+  .outdoor-page .od-footer a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+  }
+
+  /* Outdoor Products */
+  .outdoor-page .od-role,
+  .outdoor-page .od-family-variables span,
+  .outdoor-page .od-comparison-note,
+  .outdoor-page .od-release-card li,
+  .outdoor-page .od-footer > p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  .outdoor-page .od-comparison-row strong {
+    font-size: 15px;
+    line-height: 1.35;
+  }
+
+  .outdoor-page .od-comparison-row:not(.od-comparison-head) span {
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .outdoor-page .od-comparison-row:not(.od-comparison-head) span::before {
+    min-width: 112px;
+    font-size: 9px;
+    line-height: 1.35;
+  }
+
+  .outdoor-page .od-approval-steps p,
+  .outdoor-page .od-evidence-grid p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
+  .outdoor-page .od-approval-steps small {
+    font-size: 11px;
+    line-height: 1.45;
+  }
+
+  /* Product Sourcing category index */
+  .products-index-page .px-other-category p span,
+  .products-index-page .px-capability-grid article > p,
+  .products-index-page .px-capability-grid li,
+  .products-index-page .px-process-records p,
+  .products-index-page .px-process-records li,
+  .products-index-page .px-record-output strong {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Sourcing Services */
+  .sourcing-services-page .ss-path-card li,
+  .sourcing-services-page .ss-retail-example p,
+  .sourcing-services-page .ss-compare-row > *,
+  .sourcing-services-page .ss-fair-note,
+  .sourcing-services-page .ss-gap-list p,
+  .sourcing-services-page .ss-evidence-grid p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Commercial Kitchen */
+  .kitchen-page .k-family-title p,
+  .kitchen-page .k-buying-question,
+  .kitchen-page .k-product-list span,
+  .kitchen-page .k-spec-list li,
+  .kitchen-page .k-boundary-item p,
+  .kitchen-page .k-process-grid p,
+  .kitchen-page .k-control-points article p,
+  .kitchen-page .k-evidence-checks small,
+  .kitchen-page .k-record-strip p,
+  .kitchen-page .k-readiness-card li,
+  .kitchen-page .k-method-grid p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Refrigeration Equipment */
+  .refrigeration-page .refrigeration-family-title p,
+  .refrigeration-page .refrigeration-family-card li,
+  .refrigeration-page .refrigeration-control-grid p,
+  .refrigeration-page .refrigeration-evidence-stage aside > p,
+  .refrigeration-page .refrigeration-readiness li,
+  .refrigeration-page .refrigeration-method-grid p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Mobile Accessories */
+  .mobile-page .family-title p,
+  .mobile-page .price-ladder span,
+  .mobile-page .spec-list li,
+  .mobile-page .process-steps p,
+  .mobile-page .custom-flow small,
+  .mobile-page .control-grid p,
+  .mobile-page .production-checks small,
+  .mobile-page .production-checks li,
+  .mobile-page .evidence-thumbs p,
+  .mobile-page .readiness-card li,
+  .mobile-page .method-grid p {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+
+  /* Audio & Speakers */
+  .audio-speakers-page .as-variable-list span,
+  .audio-speakers-page .as-ledger-grid p,
+  .audio-speakers-page .as-ledger-note,
+  .audio-speakers-page .as-sample-output strong,
+  .audio-speakers-page .as-sample-steps p,
+  .audio-speakers-page .as-factory-grid small,
+  .audio-speakers-page .as-evidence-grid small {
+    font-size: 12px;
+    line-height: 1.55;
+  }
+}

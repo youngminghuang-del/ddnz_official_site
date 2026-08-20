@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import Navbar from '../components/Navbar';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
+import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
@@ -819,7 +820,7 @@ export default function ShippingCentralAsia() {
   const redlines = UNIVERSAL_REDLINES[activeLang] || UNIVERSAL_REDLINES.en;
 
   return (
-    <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -831,20 +832,9 @@ export default function ShippingCentralAsia() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SchemaMarkup
-        type="BreadcrumbList"
-        data={{
-          items: [
-            { name: language === 'zh' ? '首页' : 'Home', url: 'https://www.ddnzglobal.com/' },
-            { name: language === 'zh' ? '按区域运输' : 'Central Asia', url: `https://www.ddnzglobal.com${location.pathname.match(/^\/(zh-cn|ru|fr|es|ar)/)?.[0] || ''}/shipping-from-china-to-central-asia` },
-            { name: countryLabel(selectedCountry), url: `https://www.ddnzglobal.com${location.pathname}` }
-          ]
-        }}
-      />
-      
-      <Navbar />
+      <SourcingHomepageNav showFreightExecutor />
 
-      <main className="pt-20 md:pt-24">
+      <main>
         
         {/* Section 1: Hero Segment */}
         <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
@@ -853,6 +843,8 @@ export default function ShippingCentralAsia() {
             <img 
               src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" 
               alt="Central Asia Railway Port"
+              width="2000"
+              height="1125"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -880,7 +872,7 @@ export default function ShippingCentralAsia() {
                             key={country}
                             type="button"
                             onClick={() => handleCountryTabChange(country)}
-                            className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
+                            className={`min-h-11 px-3 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
                               isActive
                                 ? 'bg-[#d97706] text-white shadow-md shadow-[#d97706]/15'
                                 : 'text-slate-300 hover:bg-white/5 hover:text-white'
@@ -974,6 +966,8 @@ export default function ShippingCentralAsia() {
             </div>
           </div>
         </section>
+
+        <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         {/* Section 2: Border Operational Reality Update (Market Insight Box) */}
         <section className="py-12 bg-[#081E39] border-y border-white/[0.05]">
@@ -1265,7 +1259,7 @@ export default function ShippingCentralAsia() {
                   >
                     <button
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between text-left focus:outline-none"
+                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.q}

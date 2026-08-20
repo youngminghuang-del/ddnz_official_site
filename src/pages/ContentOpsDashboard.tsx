@@ -151,6 +151,11 @@ type ArticlePreview = {
   html: string;
   wordCount: number;
   readMinutes: number;
+  visualAssets?: {
+    source: 'local-staging' | 'notion';
+    coverCount: number;
+    inlineCount: number;
+  };
   eligibility: {
     canPublish: boolean;
     blockers: string[];
@@ -345,9 +350,9 @@ const tabGuidance: Record<TabKey, { purpose: string; focus: string; action: stri
     action: '从待处理审计或等待人工判断的文章开始。',
   },
   generator: {
-    purpose: '在一个界面完成选题、联网研究、生成、审计、人工批准和渠道发布。',
-    focus: '先看任务进度，再处理六项审计阻断；审计通过后才会解锁人工批准。',
-    action: '填写本周重点，生成三个母选题，并按六步向导继续。',
+    purpose: '把 GPT/Codex 已完成并写入 Notion 的文章集中做治理审核、网站预览和人工推送。',
+    focus: '先看今日发布驾驶舱，再核对证据、Reviewer、图片、Notion 状态和 GitHub 同步。',
+    action: '打开当前文章预览；通过后由你一键 Published，再检查正式页面。',
   },
   articles: {
     purpose: '这里只放真正的文章，显示它从想法到发布走到了哪一步。',
@@ -614,6 +619,170 @@ function publishedArticleUrl(article: Article) {
   return `https://www.ddnzglobal.com${prefix}/blog/${encodeURIComponent(article.slug || article.id)}`;
 }
 
+type ReleaseCockpitProps = {
+  article: Article | null;
+  latestPublished: Article | null;
+  onOpenPreview: (articleId: string) => void;
+  onOpenQueue: () => void;
+  compact?: boolean;
+};
+
+function ReleaseCockpit({
+  article,
+  latestPublished,
+  onOpenPreview,
+  onOpenQueue,
+  compact = false,
+}: ReleaseCockpitProps) {
+  if (!article) {
+    return (
+      <section className="border-l-4 border-slate-400 bg-white px-5 py-5">
+        <p className="text-[11px] font-black uppercase tracking-[0.16em] text-slate-500">今日发布驾驶舱</p>
+        <h2 className="mt-1 text-xl font-black text-[#0b1f3a]">当前没有需要处理的文章</h2>
+        <button type="button" onClick={onOpenQueue} className="mt-4 min-h-11 bg-[#0b4f8a] px-4 text-sm font-black text-white hover:bg-[#083b68]">
+          查看文章队列
+        </button>
+      </section>
+    );
+  }
+
+  const isPublished = article.status === 'Published';
+  const isRefresh = article.status === 'Refresh Needed';
+  const governance = governanceState(article);
+  const releaseSteps = [
+    {
+      label: '证据包',
+      done: article.evidenceReady,
+      detail: `${article.qualifiedEvidenceCount ?? 0}/${article.evidenceMinimum ?? 2} 条合格`,
+    },
+    {
+      label: '人工 Reviewer',
+      done: article.reviewers.length > 0,
+      detail: article.reviewers[0] || '尚未指定',
+    },
+    {
+      label: '网站预览',
+      done: isPublished,
+      detail: isPublished ? '发布前已确认' : '检查 H1、图片、正文与 CTA',
+    },
+    {
+      label: 'Notion',
+      done: isPublished,
+      detail: isPublished ? 'Published' : statusLabels[article.status] || article.status,
+    },
+    {
+      label: 'GitHub 同步',
+      done: false,
+      detail: isPublished ? '从预览触发或重试' : '发布后自动触发',
+      waiting: true,
+    },
+    {
+      label: '正式网站',
+      done: false,
+      detail: isPublished ? '打开正式页核对' : '等待前序步骤',
+      waiting: true,
+    },
+  ];
+
+  const nextAction = isPublished
+    ? 'Notion 已发布。现在检查 GitHub 同步和正式网站页面。'
+    : isRefresh
+      ? '先复核过期资料与页面内容；通过后重新发布更新。'
+      : article.status === 'Domain Review'
+        ? '完成专业审核并查看最终网站预览；全部通过后再一键发布。'
+        : article.evidenceReady
+          ? `继续完成“${statusLabels[article.status] || article.status}”阶段，再进入专业审核。`
+          : `先补齐并核验重要论点证据，目前合格 ${article.qualifiedEvidenceCount ?? 0}/${article.evidenceMinimum ?? 2}。`;
+
+  return (
+    <section className="overflow-hidden border border-slate-300 bg-white shadow-[0_8px_30px_rgba(15,23,42,.06)]">
+      <div className="grid lg:grid-cols-[minmax(0,1.5fr)_minmax(280px,.5fr)]">
+        <div className="bg-[#0b1f3a] px-5 py-5 text-white sm:px-6">
+          <div className="flex flex-wrap items-center justify-between gap-3">
+            <div>
+              <p className="text-[11px] font-black uppercase tracking-[0.18em] text-amber-400">今日发布驾驶舱</p>
+              <p className="mt-1 text-sm font-bold text-slate-300">先完成这一篇，再处理数据库和历史记录</p>
+            </div>
+            <Pill value={article.status} />
+          </div>
+          <h2 className={`${compact ? 'mt-4 text-xl' : 'mt-5 text-2xl'} max-w-4xl font-black leading-tight`}>
+            {article.title}
+          </h2>
+          <p className="mt-3 max-w-4xl border-l-2 border-amber-400 pl-3 text-sm font-bold leading-6 text-slate-200">
+            下一步：{nextAction}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-2">
+            <button
+              type="button"
+              onClick={() => onOpenPreview(article.id)}
+              className="inline-flex min-h-11 items-center gap-2 bg-amber-500 px-4 text-sm font-black text-[#07182d] hover:bg-amber-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-300"
+            >
+              <Eye className="h-4 w-4" />{isPublished ? '预览并检查网站同步' : '检查并推进这篇文章'}
+            </button>
+            {isPublished && article.slug && (
+              <a
+                href={publishedArticleUrl(article)}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex min-h-11 items-center gap-2 border border-white/25 px-4 text-sm font-black text-white hover:bg-white/10 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+              >
+                打开正式页<ArrowUpRight className="h-4 w-4" />
+              </a>
+            )}
+            <button
+              type="button"
+              onClick={onOpenQueue}
+              className="min-h-11 px-3 text-sm font-black text-sky-200 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sky-200"
+            >
+              查看全部文章
+            </button>
+          </div>
+        </div>
+
+        <aside className="border-t border-slate-200 bg-[#f8fafc] px-5 py-5 lg:border-l lg:border-t-0">
+          <p className="text-[11px] font-black uppercase tracking-[0.16em] text-[#0b4f8a]">发布闸门摘要</p>
+          <div className="mt-3 grid grid-cols-2 border-y border-slate-200 sm:grid-cols-3 lg:grid-cols-2">
+            {releaseSteps.map((step) => (
+              <div key={step.label} className="min-w-0 border-b border-r border-slate-200 px-3 py-3 last:border-b-0">
+                <p className="flex items-center gap-1.5 text-xs font-black text-slate-900">
+                  {step.done ? (
+                    <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-700" />
+                  ) : step.waiting ? (
+                    <Clock3 className="h-4 w-4 shrink-0 text-slate-400" />
+                  ) : (
+                    <AlertTriangle className="h-4 w-4 shrink-0 text-amber-700" />
+                  )}
+                  {step.label}
+                </p>
+                <p className="mt-1 line-clamp-2 text-[11px] leading-4 text-slate-500">{step.detail}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-4 flex items-start justify-between gap-3 text-xs">
+            <div>
+              <p className="font-black text-slate-900">治理完成度 {governance.percent}%</p>
+              <p className="mt-1 text-slate-500">Quality {article.qualityScore ?? '—'}/100 · 审计 {article.auditCount}</p>
+            </div>
+            {governance.all.length ? (
+              <span className="border border-amber-300 bg-amber-50 px-2 py-1 font-black text-amber-900">{governance.all.length} 项待处理</span>
+            ) : (
+              <span className="border border-emerald-300 bg-emerald-50 px-2 py-1 font-black text-emerald-800">治理字段完整</span>
+            )}
+          </div>
+          {latestPublished && latestPublished.id !== article.id && (
+            <div className="mt-4 border-t border-slate-200 pt-3">
+              <p className="text-[10px] font-black uppercase tracking-[0.14em] text-slate-500">最近一次发布</p>
+              <button type="button" onClick={() => onOpenPreview(latestPublished.id)} className="mt-1 text-left text-xs font-black leading-5 text-[#0b4f8a] hover:text-amber-700">
+                {latestPublished.title}
+              </button>
+            </div>
+          )}
+        </aside>
+      </div>
+    </section>
+  );
+}
+
 const todayString = () => new Intl.DateTimeFormat('en-CA', {
   timeZone: 'Asia/Shanghai', year: 'numeric', month: '2-digit', day: '2-digit',
 }).format(new Date());
@@ -672,7 +841,7 @@ export default function ContentOpsDashboard() {
   const [previewMessage, setPreviewMessage] = useState('');
   const [websiteDeployment, setWebsiteDeployment] = useState<WebsiteDeployment | null>(null);
   const [helpOpen, setHelpOpen] = useState(false);
-  const [onboardingOpen, setOnboardingOpen] = useState(true);
+  const [onboardingOpen, setOnboardingOpen] = useState(false);
   const [workflowStatus, setWorkflowStatus] = useState<WorkflowStatus | null>(null);
   const [candidatePreview, setCandidatePreview] = useState<CandidatePreview[]>([]);
   const [candidateWarning, setCandidateWarning] = useState('');
@@ -1099,18 +1268,66 @@ export default function ContentOpsDashboard() {
     [data],
   );
 
+  const latestPublished = useMemo(
+    () =>
+      [...(data?.articles || [])]
+        .filter((article) => article.status === 'Published')
+        .sort((a, b) => new Date(b.date || b.lastEditedTime || 0).getTime() - new Date(a.date || a.lastEditedTime || 0).getTime())[0] || null,
+    [data],
+  );
+
+  const releaseFocusArticle = useMemo(() => {
+    const priority: Record<string, number> = {
+      'Domain Review': 0,
+      Approved: 1,
+      'Editorial Review': 2,
+      Drafting: 3,
+      'Evidence Ready': 4,
+      Researching: 5,
+      Scheduled: 6,
+      Published: 7,
+      'Refresh Needed': 8,
+    };
+    return [...(data?.articles || [])]
+      .filter((article) => article.status in priority)
+      .sort((a, b) => {
+        const stageDifference = priority[a.status] - priority[b.status];
+        if (stageDifference) return stageDifference;
+        return new Date(b.lastEditedTime || b.createdTime || 0).getTime() - new Date(a.lastEditedTime || a.createdTime || 0).getTime();
+      })[0] || latestPublished;
+  }, [data, latestPublished]);
+
   const unresolvedAudits = useMemo(() => {
     const activeArticleIds = new Set(
       (data?.articles || [])
-        .filter((article) => article.status !== 'Archived')
+        .filter((article) =>
+          ['Researching', 'Evidence Ready', 'Drafting', 'Editorial Review', 'Domain Review', 'Approved', 'Scheduled', 'Refresh Needed'].includes(article.status),
+        )
         .map((article) => article.id),
     );
-    return (data?.audits || []).filter(
+    const latestByGate = new Map<string, Audit>();
+
+    // Audit Runs is an immutable history. A later Pass closes an earlier
+    // Needs Changes/Blocked result for the same article and review stage, so
+    // the dashboard must only surface the latest decision as still pending.
+    (data?.audits || []).forEach((item) => {
+      if (!item.articleIds.length) return;
+      const keys = item.articleIds.map((articleId) => `${articleId}::${item.stage}`);
+      keys.forEach((key) => {
+        if (!latestByGate.has(key)) latestByGate.set(key, item);
+      });
+    });
+
+    return Array.from(new Set(latestByGate.values())).filter(
       (item) =>
-        item.result !== 'Pass' &&
-        (!item.articleIds.length || item.articleIds.some((id) => activeArticleIds.has(id))),
+        item.result !== 'Pass' && item.articleIds.some((id) => activeArticleIds.has(id)),
     );
   }, [data]);
+
+  const blockingArticleCount = useMemo(
+    () => new Set(unresolvedAudits.flatMap((item) => item.articleIds)).size,
+    [unresolvedAudits],
+  );
 
   const expiringEvidence = useMemo(
     () =>
@@ -1386,7 +1603,13 @@ export default function ContentOpsDashboard() {
           <>
             {activeTab === 'overview' && (
               <>
-                <section className="mb-5 border border-[#0b4f8a]/30 bg-[#f4f9fd]">
+                <ReleaseCockpit
+                  article={releaseFocusArticle}
+                  latestPublished={latestPublished}
+                  onOpenPreview={(articleId) => void openPreview(articleId)}
+                  onOpenQueue={() => setActiveTab('articles')}
+                />
+                <section className="mb-5 mt-5 border border-[#0b4f8a]/30 bg-[#f4f9fd]">
                   <button
                     type="button"
                     onClick={() => setOnboardingOpen((value) => !value)}
@@ -1438,13 +1661,18 @@ export default function ContentOpsDashboard() {
                     )}
                   </AnimatePresence>
                 </section>
-                <section className="grid divide-y divide-slate-200 border-y border-slate-300 bg-white sm:grid-cols-2 sm:divide-x sm:divide-y-0 xl:grid-cols-5">
+                <section className="mt-5 grid divide-y divide-slate-200 border-y border-slate-300 bg-white sm:grid-cols-2 sm:divide-x sm:divide-y-0 xl:grid-cols-5">
                   {[
                     { label: '文章总数', value: data.articles.length, note: `${articleCounts.Published || 0} 篇已发布`, icon: BookOpenCheck },
                     { label: '等待人工审核', value: reviewQueue.length, note: 'Domain Review / Refresh', icon: UserRoundCheck },
                     { label: '候选选题', value: data.topics.length, note: `${selectedTopics.length} 已选中`, icon: Sparkles },
                     { label: '证据记录', value: data.evidence.length, note: `${expiringEvidence.length} 即将到期或已过期`, icon: ShieldCheck },
-                    { label: '未通过审计', value: unresolvedAudits.length, note: unresolvedAudits[0]?.result || '没有待处理项', icon: ClipboardCheck },
+                    {
+                      label: '发布阻断',
+                      value: blockingArticleCount,
+                      note: unresolvedAudits.length ? `${unresolvedAudits.length} 条审计需要处理` : '没有关联文章阻断',
+                      icon: ClipboardCheck,
+                    },
                   ].map((item) => {
                     const Icon = item.icon;
                     return (
@@ -1463,13 +1691,13 @@ export default function ContentOpsDashboard() {
                 {unresolvedAudits.length > 0 && (
                   <section className="mt-5 grid gap-4 border-l-4 border-amber-600 bg-[#fff8e8] px-5 py-4 lg:grid-cols-[1fr_auto] lg:items-center">
                     <div>
-                      <p className="text-[11px] font-black uppercase tracking-[0.16em] text-amber-800">待处理审计是什么</p>
+                      <p className="text-[11px] font-black uppercase tracking-[0.16em] text-amber-800">{blockingArticleCount} 篇文章为什么被阻断</p>
                       <p className="mt-1 font-black text-slate-900">{unresolvedAudits[0].title}</p>
                       <p className="mt-2 text-sm leading-6 text-slate-700">
                         {unresolvedAudits[0].blockers || unresolvedAudits[0].findings}
                       </p>
                       <p className="mt-2 text-xs font-bold text-amber-900">
-                        当前：{governanceSummary.governed} 篇已完整治理 · {governanceSummary.metadataPending} 篇缺基础元数据 · {governanceSummary.reviewPending} 篇已补元数据、等待证据或复核。
+                        当前显示其中 1 条；同一批文章另有 {Math.max(0, unresolvedAudits.length - 1)} 条未关闭审计。治理总览：{governanceSummary.governed} 篇完整 · {governanceSummary.metadataPending} 篇缺元数据 · {governanceSummary.reviewPending} 篇等待证据或复核。
                       </p>
                     </div>
                     <div className="flex flex-wrap gap-2">
@@ -1607,6 +1835,13 @@ export default function ContentOpsDashboard() {
               >
                 {activeTab === 'generator' && (
                   <div className="space-y-6">
+                    <ReleaseCockpit
+                      article={releaseFocusArticle}
+                      latestPublished={latestPublished}
+                      onOpenPreview={(articleId) => void openPreview(articleId)}
+                      onOpenQueue={() => setActiveTab('articles')}
+                      compact
+                    />
                     <section className="grid gap-4 border-l-4 border-[#0b4f8a] bg-white px-5 py-4 lg:grid-cols-[1fr_auto] lg:items-center">
                       <div>
                         <p className="text-[11px] font-black uppercase tracking-[0.16em] text-[#0b4f8a]">安全边界</p>
@@ -1617,14 +1852,25 @@ export default function ContentOpsDashboard() {
                       </div>
                       <DecisionBadge
                         state="continue"
-                        reason={workflowStatus?.capabilities.modelConnected ? 'GPT-5.6 已连接，可以按六步向导继续' : 'Notion 治理仍可用；AI 工作台等待服务端密钥'}
+                        reason={workflowStatus?.capabilities.modelConnected ? 'GPT-5.6 已连接；社媒内容包工具可以使用' : '主流程不受影响：研究写作继续在 GPT/Codex 完成，本窗口负责审核与推送'}
                       />
                     </section>
 
-                    <ContentWorkflowWizard
-                      modelConnected={Boolean(workflowStatus?.capabilities.modelConnected)}
-                      capabilities={workflowStatus?.capabilities.ai}
-                    />
+                    <details className="border border-slate-300 bg-white">
+                      <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 font-black text-slate-900 hover:bg-slate-50">
+                        <span>
+                          <span className="block text-[11px] uppercase tracking-[0.16em] text-[#0b4f8a]">可选工具</span>
+                          <span className="mt-1 block text-sm">GPT 社媒内容包与多语言改写</span>
+                        </span>
+                        <ChevronDown className="h-5 w-5 text-slate-500" />
+                      </summary>
+                      <div className="border-t border-slate-200 p-3 sm:p-5">
+                        <ContentWorkflowWizard
+                          modelConnected={Boolean(workflowStatus?.capabilities.modelConnected)}
+                          capabilities={workflowStatus?.capabilities.ai}
+                        />
+                      </div>
+                    </details>
 
                     {(workflowError || workflowMessage) && (
                       <section className={`border-l-4 bg-white px-5 py-4 ${workflowError ? 'border-rose-600' : 'border-emerald-600'}`} role="status">
@@ -2791,6 +3037,12 @@ export default function ContentOpsDashboard() {
                     <span>合格证据 {preview.article.qualifiedEvidenceCount ?? 0}/{preview.article.evidenceMinimum ?? 2}</span>
                     <span>{preview.article.auditCount} 次审核</span>
                     <span>复核方式：{reviewerLabel(preview.article)}</span>
+                    {preview.visualAssets && (
+                      <span>
+                        视觉资产 {preview.visualAssets.coverCount + preview.visualAssets.inlineCount} 张
+                        {preview.visualAssets.source === 'local-staging' ? '（本地预览）' : '（Notion）'}
+                      </span>
+                    )}
                   </div>
                 </div>
               </header>

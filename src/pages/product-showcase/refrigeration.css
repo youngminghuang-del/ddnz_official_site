@@ -1,0 +1,431 @@
+.refrigeration-page {
+  --r-ink: #10233f;
+  --r-muted: #59677a;
+  --r-purple: #71339a;
+  --r-purple-deep: #4d1d70;
+  --r-lilac: #f3edf6;
+  --r-coral: #dc512f;
+  --r-coral-dark: #bd3e22;
+  --r-cyan: #34a7b9;
+  --r-cyan-soft: #e6f6f7;
+  --r-paper: #fffdf9;
+  --r-steel: #eef1f2;
+  --r-line: #e4e2de;
+  min-height: 100vh;
+  overflow-x: hidden;
+  color: var(--r-ink);
+  background: var(--r-paper);
+}
+
+.refrigeration-page h1,
+.refrigeration-page h2,
+.refrigeration-page h3,
+.refrigeration-page p { text-wrap: pretty; }
+
+.refrigeration-page :is(a,button,select,textarea):focus-visible {
+  outline: 3px solid rgba(52,167,185,.42);
+  outline-offset: 3px;
+}
+
+.refrigeration-page :is(#refrigeration-control,#refrigeration-evidence,#refrigeration-rfq,#refrigeration-about) { scroll-margin-top: 86px; }
+
+.refrigeration-header {
+  min-height: 72px;
+  padding: 0 46px;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  border-bottom: 1px solid rgba(16,35,63,.09);
+  background: rgba(255,253,249,.96);
+  backdrop-filter: blur(18px);
+}
+
+.refrigeration-brand { display: inline-flex; align-items: center; gap: 9px; flex: none; color: inherit; text-decoration: none; }
+.refrigeration-brand img { width: 44px; height: 44px; object-fit: contain; }
+.refrigeration-brand>span { display: grid; gap: 2px; }
+.refrigeration-brand strong { font-size: 20px; line-height: 1; letter-spacing: .02em; background: linear-gradient(90deg,#71339a,#a33c83 56%,#dc5c39); -webkit-background-clip: text; color: transparent; }
+.refrigeration-brand small { color: #42536b; font-size: 8px; font-weight: 760; letter-spacing: .13em; }
+.refrigeration-desktop-nav { margin-left: auto; display: flex; align-items: center; gap: 29px; }
+.refrigeration-desktop-nav a { min-height: 40px; position: relative; display: inline-flex; align-items: center; gap: 5px; color: #1b283b; font-size: 12px; font-weight: 720; text-decoration: none; }
+.refrigeration-desktop-nav a::after { content: ""; position: absolute; left: 0; right: 100%; bottom: 3px; height: 2px; border-radius: 2px; background: linear-gradient(90deg,var(--r-purple),var(--r-cyan)); transition: right 170ms ease; }
+.refrigeration-desktop-nav a:hover,
+.refrigeration-desktop-nav a.active { color: var(--r-purple); }
+.refrigeration-desktop-nav a:hover::after,
+.refrigeration-desktop-nav a.active::after { right: 0; }
+.refrigeration-menu-button { width: 44px; height: 44px; margin-left: auto; display: none; place-items: center; border: 0; background: transparent; color: var(--r-ink); cursor: pointer; }
+.refrigeration-drawer { display: none; }
+
+.refrigeration-hero {
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: minmax(0,.93fr) minmax(530px,1.07fr);
+  overflow: hidden;
+  border-bottom: 1px solid var(--r-line);
+  background:
+    radial-gradient(circle at 12% 18%,rgba(113,51,154,.075),transparent 23%),
+    linear-gradient(110deg,#fffdf9 0%,#fffaf5 49.8%,#14243a 50%);
+}
+
+.refrigeration-hero-copy { min-width: 0; min-height: 690px; padding: 82px 40px 58px max(48px,calc((100vw - 1400px)/2)); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+.refrigeration-kicker { margin: 0 0 12px; color: var(--r-purple); font-size: 10px; line-height: 1.4; font-weight: 850; letter-spacing: .18em; text-transform: uppercase; }
+.refrigeration-hero-copy h1 { max-width: 690px; margin: 0; font-size: clamp(52px,5vw,77px); line-height: .98; letter-spacing: -.057em; font-weight: 820; }
+.refrigeration-hero-copy>p:not(.refrigeration-kicker) { max-width: 590px; margin: 23px 0 0; color: var(--r-muted); font-size: 17px; line-height: 1.65; }
+.refrigeration-hero-actions { margin-top: 29px; display: flex; align-items: center; gap: 17px; }
+.refrigeration-primary { min-height: 48px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 11px; border: 1px solid var(--r-coral); border-radius: 7px; color: white; background: var(--r-coral); font-weight: 780; text-decoration: none; cursor: pointer; box-shadow: 0 13px 30px rgba(202,63,30,.17); transition: transform 170ms ease,background 170ms ease,box-shadow 170ms ease; }
+.refrigeration-primary:hover { transform: translateY(-1px); background: var(--r-coral-dark); box-shadow: 0 15px 34px rgba(202,63,30,.23); }
+.refrigeration-link-button { min-height: 44px; padding: 0 5px; display: inline-flex; align-items: center; justify-content: center; gap: 9px; border: 0; border-bottom: 1px solid #738095; color: var(--r-ink); background: transparent; font-weight: 760; cursor: pointer; }
+.refrigeration-link-button:hover { color: var(--r-purple); border-color: var(--r-purple); }
+.refrigeration-proof-row { width: min(600px,100%); margin-top: 53px; display: grid; grid-template-columns: repeat(4,1fr); gap: 17px; }
+.refrigeration-proof-row span { min-width: 0; display: grid; grid-template-columns: 25px 1fr; column-gap: 8px; align-items: start; }
+.refrigeration-proof-row svg { grid-row: 1/3; color: var(--r-purple); }
+.refrigeration-proof-row b { font-size: 10px; line-height: 1.35; }
+.refrigeration-proof-row small { color: var(--r-muted); font-size: 9px; line-height: 1.35; }
+
+.refrigeration-hero-stage { min-width: 0; min-height: 690px; position: relative; isolation: isolate; overflow: hidden; background: #14243a; }
+.refrigeration-hero-stage::before { content: ""; position: absolute; inset: 0; z-index: -2; background: radial-gradient(circle at 47% 34%,rgba(52,167,185,.17),transparent 28%),radial-gradient(circle at 77% 72%,rgba(113,51,154,.24),transparent 35%),linear-gradient(145deg,#1b314a,#0d1928); }
+.refrigeration-hero-stage::after { content: ""; position: absolute; inset: auto 4% 2% 9%; height: 19%; z-index: -1; border-radius: 50%; background: radial-gradient(ellipse,rgba(0,0,0,.55),rgba(0,0,0,.08) 55%,transparent 74%); filter: blur(9px); }
+.refrigeration-stage-grid { position: absolute; inset: 0; z-index: -1; opacity: .28; background-image: linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px); background-size: 54px 54px; mask-image: linear-gradient(145deg,black,transparent 70%); }
+.refrigeration-hero-stage>img { width: min(76%,670px); height: 95%; position: absolute; left: 13%; bottom: -1%; display: block; object-fit: contain; filter: drop-shadow(0 25px 28px rgba(0,0,0,.32)); opacity: 0; animation: refrigeration-arrive 620ms cubic-bezier(.2,.75,.25,1) 70ms forwards; }
+.refrigeration-model-tag { position: absolute; top: 31px; left: 30px; z-index: 3; padding: 9px 11px; display: flex; align-items: baseline; gap: 8px; border: 1px solid rgba(255,255,255,.18); border-radius: 6px; color: #9eb8c7; background: rgba(8,22,36,.72); font-size: 8px; font-weight: 850; letter-spacing: .12em; backdrop-filter: blur(7px); }
+.refrigeration-model-tag b { color: #62cfda; font-size: 11px; letter-spacing: .05em; }
+.refrigeration-spec-callout { position: absolute; z-index: 4; min-width: 130px; padding: 12px 13px; display: grid; gap: 3px; border: 1px solid rgba(255,255,255,.19); border-radius: 7px; color: white; background: rgba(7,19,32,.77); box-shadow: 0 13px 26px rgba(0,0,0,.2); backdrop-filter: blur(9px); }
+.refrigeration-spec-callout::before { content: ""; position: absolute; top: 50%; width: 44px; border-top: 1px solid rgba(98,207,218,.72); }
+.refrigeration-spec-callout strong { color: #f7fbfc; font-size: 16px; line-height: 1; }
+.refrigeration-spec-callout span { color: #aebfca; font-size: 8px; line-height: 1.35; }
+.callout-capacity { top: 27%; left: 4%; }
+.callout-capacity::before { left: 100%; }
+.callout-temp { top: 46%; right: 4%; }
+.callout-temp::before { right: 100%; }
+.callout-cooling { bottom: 19%; left: 3%; }
+.callout-cooling::before { left: 100%; }
+.refrigeration-render-note { max-width: 310px; margin: 0; position: absolute; z-index: 4; right: 24px; bottom: 21px; color: #91a6b4; font-size: 8px; line-height: 1.5; text-align: right; }
+
+@keyframes refrigeration-arrive {
+  from { opacity: 0; transform: translateY(20px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.refrigeration-section { width: min(100%,1320px); margin: 0 auto; padding-inline: 42px; }
+.refrigeration-range { padding-top: 83px; padding-bottom: 77px; }
+.refrigeration-section-head { display: grid; grid-template-columns: minmax(0,1fr) auto; gap: 46px; align-items: end; }
+.refrigeration-section-head h2,
+.refrigeration-brief-copy h2,
+.refrigeration-control-head h2,
+.refrigeration-evidence-head h2,
+.refrigeration-decisions h2,
+.refrigeration-rfq-intro h2 { margin: 0; font-size: clamp(33px,3.4vw,49px); line-height: 1.02; letter-spacing: -.047em; }
+.refrigeration-section-head>div>p:last-child,
+.refrigeration-evidence-head>div>p:last-child { margin: 13px 0 0; color: var(--r-muted); font-size: 14px; line-height: 1.6; }
+.refrigeration-segmented { padding: 4px; display: flex; border: 1px solid #d8d8d5; border-radius: 9px; background: white; }
+.refrigeration-segmented button,
+.refrigeration-tabs button { min-height: 42px; padding: 0 16px; border: 0; border-radius: 6px; color: #59677a; background: transparent; font-size: 11px; font-weight: 750; cursor: pointer; }
+.refrigeration-segmented button.active,
+.refrigeration-tabs button.active { color: #176f7b; background: var(--r-cyan-soft); box-shadow: inset 0 0 0 1px rgba(52,167,185,.28); }
+.refrigeration-family-grid { margin-top: 32px; display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); overflow: hidden; border: 1px solid var(--r-line); border-radius: 17px; background: white; box-shadow: 0 24px 60px rgba(27,35,55,.07); }
+.refrigeration-family-card { min-width: 0; padding: 26px 20px 18px; position: relative; border-right: 1px solid var(--r-line); }
+.refrigeration-family-card:last-child { border-right: 0; }
+.refrigeration-family-title { min-height: 62px; display: grid; grid-template-columns: 36px minmax(0,1fr); gap: 10px; align-items: start; }
+.refrigeration-family-title>span { width: 36px; height: 36px; display: grid; place-items: center; border-radius: 9px; color: #187986; background: var(--r-cyan-soft); }
+.refrigeration-family-title h3 { margin: 0; font-size: 15px; line-height: 1.2; }
+.refrigeration-family-title p { margin: 4px 0 0; color: var(--r-muted); font-size: 10px; line-height: 1.4; }
+.refrigeration-family-card figure { height: 195px; margin: 16px -6px 16px; position: relative; overflow: hidden; border-radius: 10px; background: #dfe5e7; }
+.refrigeration-family-card figure img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.refrigeration-family-card:nth-child(1) figure img { object-position: 50% 48%; }
+.refrigeration-family-card:nth-child(2) figure img { object-position: 52% 48%; }
+.refrigeration-family-card:nth-child(3) figure img { object-position: 48% 48%; }
+.refrigeration-family-card:nth-child(4) figure img { object-position: 50% 26%; }
+.refrigeration-family-card figcaption { position: absolute; left: 9px; bottom: 9px; padding: 6px 8px; border: 1px solid rgba(255,255,255,.45); border-radius: 5px; color: white; background: rgba(16,35,63,.82); font-size: 7px; font-weight: 850; letter-spacing: .11em; backdrop-filter: blur(7px); }
+.refrigeration-family-card ul { min-height: 101px; margin: 0; padding: 0; display: grid; align-content: start; gap: 10px; list-style: none; }
+.refrigeration-family-card li { display: flex; align-items: flex-start; gap: 7px; color: #4a586b; font-size: 10px; line-height: 1.4; }
+.refrigeration-family-card li svg { flex: none; color: var(--r-coral); }
+.refrigeration-family-card dl { min-height: 101px; margin: 0; display: grid; align-content: start; }
+.refrigeration-family-card dl>div { min-height: 25px; display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 5px; border-bottom: 1px solid #efeeeb; }
+.refrigeration-family-card dt { color: #6c7684; font-size: 8px; }
+.refrigeration-family-card dd { margin: 0; color: var(--r-ink); font-size: 8.5px; font-weight: 750; }
+.refrigeration-source { min-height: 37px; margin: 15px -20px -18px; padding: 11px 17px; display: flex; align-items: center; gap: 6px; border-top: 1px solid var(--r-line); color: #697586; font-size: 8px; line-height: 1.35; }
+.refrigeration-source svg { flex: none; color: #187986; }
+.refrigeration-family-index { position: absolute; top: 9px; right: 11px; color: #c8ced0; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.refrigeration-spec-disclaimer { margin: 17px 0 0; display: flex; align-items: flex-start; gap: 8px; color: #687486; font-size: 9px; line-height: 1.5; }
+.refrigeration-spec-disclaimer svg { flex: none; color: var(--r-coral); }
+
+.refrigeration-brief-band { position: relative; overflow: hidden; color: white; background: #132943; }
+.refrigeration-brief-band::before { content: ""; position: absolute; inset: 0; opacity: .34; background-image: linear-gradient(rgba(255,255,255,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.06) 1px,transparent 1px); background-size: 46px 46px; mask-image: linear-gradient(90deg,transparent,black); }
+.refrigeration-brief-grid { padding-top: 66px; padding-bottom: 66px; position: relative; display: grid; grid-template-columns: .65fr 1.35fr; gap: 55px; align-items: center; }
+.refrigeration-brief-copy .refrigeration-kicker { color: #6bd3dc; }
+.refrigeration-brief-copy h2 { font-size: 38px; }
+.refrigeration-brief-copy>p:last-child { margin: 17px 0 0; color: #b8c8d5; font-size: 13px; line-height: 1.65; }
+.refrigeration-brief-steps { display: grid; grid-template-columns: repeat(5,1fr); }
+.refrigeration-brief-steps article { min-width: 0; padding: 0 17px; border-right: 1px solid rgba(255,255,255,.13); }
+.refrigeration-brief-steps article:first-child { padding-left: 0; }
+.refrigeration-brief-steps article:last-child { padding-right: 0; border-right: 0; }
+.refrigeration-brief-steps article>span { color: #6bd3dc; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.refrigeration-brief-steps svg { display: block; margin-top: 18px; color: #f0a38b; }
+.refrigeration-brief-steps h3 { margin: 17px 0 8px; font-size: 12px; line-height: 1.3; }
+.refrigeration-brief-steps p { margin: 0; color: #aebfcd; font-size: 9px; line-height: 1.55; }
+
+.refrigeration-control { padding-top: 79px; padding-bottom: 77px; }
+.refrigeration-control-head { display: grid; grid-template-columns: 1.15fr .85fr; gap: 60px; align-items: end; }
+.refrigeration-control-head>p { margin: 0 0 3px; color: var(--r-muted); font-size: 14px; line-height: 1.65; }
+.refrigeration-control-grid { margin-top: 38px; display: grid; grid-template-columns: repeat(3,1fr); border-block: 1px solid var(--r-line); }
+.refrigeration-control-grid article { min-width: 0; min-height: 194px; padding: 28px 27px 25px; position: relative; border-right: 1px solid var(--r-line); border-bottom: 1px solid var(--r-line); }
+.refrigeration-control-grid article:nth-child(3n) { border-right: 0; }
+.refrigeration-control-grid article:nth-child(n+4) { border-bottom: 0; }
+.refrigeration-control-grid article>span { position: absolute; top: 17px; right: 18px; color: #c9d0d3; font-size: 9px; font-weight: 850; letter-spacing: .12em; }
+.refrigeration-control-grid svg { color: #18818e; }
+.refrigeration-control-grid h3 { margin: 21px 0 8px; font-size: 15px; line-height: 1.3; }
+.refrigeration-control-grid p { margin: 0; color: var(--r-muted); font-size: 10px; line-height: 1.6; }
+
+.refrigeration-evidence { padding-top: 73px; padding-bottom: 58px; border-top: 1px solid var(--r-line); }
+.refrigeration-evidence-head { display: flex; align-items: end; justify-content: space-between; gap: 36px; }
+.refrigeration-evidence-head>div:first-child { max-width: 760px; }
+.refrigeration-tabs { padding: 4px; display: flex; border-radius: 9px; background: #eff3f3; }
+.refrigeration-tabs button { min-width: 155px; }
+.refrigeration-evidence-stage { margin-top: 31px; display: grid; grid-template-columns: minmax(0,1.45fr) minmax(330px,.75fr); overflow: hidden; border: 1px solid var(--r-line); border-radius: 17px; background: white; box-shadow: 0 22px 55px rgba(16,35,63,.09); }
+.refrigeration-evidence-stage>figure { min-width: 0; min-height: 500px; margin: 0; position: relative; overflow: hidden; background: #132943; }
+.refrigeration-evidence-stage>figure img { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: contain; }
+.refrigeration-evidence-stage.is-gap>figure img { object-fit: cover; }
+.refrigeration-evidence-stage>figure::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,transparent 60%,rgba(8,20,34,.67)); }
+.refrigeration-evidence-stage figcaption { position: absolute; z-index: 2; left: 17px; bottom: 16px; padding: 8px 11px; border-radius: 6px; color: white; background: rgba(12,29,47,.86); font-size: 9px; font-weight: 730; }
+.refrigeration-evidence-stage aside { padding: 31px 28px 27px; background: #f6f7f6; }
+.refrigeration-evidence-status { padding: 6px 8px; display: inline-flex; border-radius: 5px; color: #116b75; background: var(--r-cyan-soft); font-size: 8px; font-weight: 850; letter-spacing: .11em; }
+.refrigeration-evidence-stage.is-gap .refrigeration-evidence-status { color: #97502f; background: #fff0e8; }
+.refrigeration-evidence-stage aside h3 { margin: 18px 0 0; font-size: 25px; line-height: 1.13; letter-spacing: -.03em; }
+.refrigeration-evidence-stage aside>p { margin: 12px 0 0; color: var(--r-muted); font-size: 10px; line-height: 1.6; }
+.refrigeration-evidence-stage aside>div { margin-top: 23px; padding-top: 21px; display: grid; gap: 17px; border-top: 1px solid var(--r-line); }
+.refrigeration-evidence-stage aside>div>span { display: grid; grid-template-columns: 21px 1fr; gap: 3px 7px; }
+.refrigeration-evidence-stage aside svg { grid-row: 1/3; color: #18818e; }
+.refrigeration-evidence-stage.is-gap aside svg { color: var(--r-coral); }
+.refrigeration-evidence-stage aside b { font-size: 11px; }
+.refrigeration-evidence-stage aside small { color: var(--r-muted); font-size: 9px; line-height: 1.45; }
+.refrigeration-evidence-thumbs,
+.refrigeration-placeholder-grid { margin-top: 17px; display: grid; grid-template-columns: repeat(4,1fr); gap: 13px; }
+.refrigeration-evidence-thumbs article { min-width: 0; position: relative; }
+.refrigeration-evidence-thumbs article>div { height: 145px; overflow: hidden; border-radius: 10px; background: #e5e8e7; }
+.refrigeration-evidence-thumbs img { width: 100%; height: 100%; display: block; object-fit: cover; }
+.refrigeration-evidence-thumbs article:nth-child(-n+2) img { object-position: 50% 45%; }
+.refrigeration-evidence-thumbs article>span { width: 27px; height: 27px; position: absolute; left: 9px; top: 9px; display: grid; place-items: center; border-radius: 50%; color: white; background: #167b87; font-size: 8px; font-weight: 850; }
+.refrigeration-evidence-thumbs h3 { margin: 10px 0 3px; font-size: 12px; }
+.refrigeration-evidence-thumbs p { margin: 0; color: var(--r-muted); font-size: 9px; }
+.refrigeration-evidence-placeholder { min-height: 165px; padding: 21px 17px 17px; position: relative; border: 1px dashed #c8c4bd; border-radius: 11px; background: #fbfaf7; }
+.refrigeration-evidence-placeholder>span { position: absolute; top: 11px; right: 12px; color: #b4b4b0; font-size: 8px; font-weight: 850; }
+.refrigeration-evidence-placeholder svg { color: #9b8b83; }
+.refrigeration-evidence-placeholder h3 { margin: 16px 0 5px; font-size: 12px; }
+.refrigeration-evidence-placeholder p { margin: 0; color: var(--r-muted); font-size: 9px; line-height: 1.5; }
+.refrigeration-evidence-placeholder small { margin-top: 14px; display: block; color: #a65b38; font-size: 7px; font-weight: 850; letter-spacing: .11em; }
+
+.refrigeration-decisions { padding-top: 34px; padding-bottom: 65px; display: grid; grid-template-columns: .95fr 1.05fr; gap: 16px; }
+.refrigeration-scorecard,
+.refrigeration-readiness { min-width: 0; padding: 30px 28px 27px; overflow: hidden; border: 1px solid var(--r-line); border-radius: 17px; background: white; box-shadow: 0 18px 45px rgba(27,35,55,.055); }
+.refrigeration-decisions h2 { font-size: 29px; }
+.refrigeration-decision-head { display: flex; align-items: start; justify-content: space-between; gap: 16px; }
+.refrigeration-decision-head>span { padding: 6px 8px; border-radius: 5px; color: white; background: #167b87; font-size: 8px; font-weight: 850; letter-spacing: .12em; }
+.refrigeration-supplier-table { margin-top: 22px; border-top: 1px solid var(--r-line); }
+.refrigeration-supplier-row { min-height: 42px; display: grid; grid-template-columns: 1.15fr .45fr repeat(4,.8fr); gap: 7px; align-items: center; border-bottom: 1px solid #eeeae5; }
+.refrigeration-supplier-row>span:first-child { font-size: 9px; font-weight: 760; }
+.refrigeration-supplier-row strong { color: #167b87; font-size: 11px; }
+.refrigeration-supplier-row.heading { min-height: 34px; color: #6d7583; font-size: 7.5px; font-weight: 850; text-transform: uppercase; letter-spacing: .05em; }
+.refrigeration-dots { display: inline-flex; align-items: center; justify-content: center; gap: 3px; }
+.refrigeration-dots i { width: 6px; height: 6px; border-radius: 50%; background: #d9dede; }
+.refrigeration-dots i.filled { background: #18818e; }
+.refrigeration-score-link { margin-top: 16px; color: #126f7a; font-size: 10px; }
+.refrigeration-readiness { background: linear-gradient(145deg,#fff 0%,#edf8f8 100%); }
+.refrigeration-readiness>ul { margin: 22px 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 13px 20px; list-style: none; }
+.refrigeration-readiness li { display: flex; align-items: center; gap: 8px; color: #465268; font-size: 10px; }
+.refrigeration-readiness li svg { flex: none; color: #18818e; }
+.refrigeration-package { margin: 28px -28px -27px; padding: 19px 28px 22px; display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; border-top: 1px solid var(--r-line); background: rgba(255,255,255,.7); }
+.refrigeration-package h3 { grid-column: 1/-1; margin: 0 0 2px; color: #126f7a; font-size: 11px; }
+.refrigeration-package span { display: flex; align-items: center; gap: 7px; color: #4c596e; font-size: 9px; }
+.refrigeration-package svg { flex: none; color: #18818e; }
+
+.refrigeration-rfq { margin-bottom: 62px; padding-top: 45px; padding-bottom: 43px; display: grid; grid-template-columns: .56fr 1.44fr; gap: 42px; border: 1px solid #d5e6e6; border-radius: 20px; background: linear-gradient(135deg,#f1fafa,#fbf4fb); }
+.refrigeration-rfq-intro>p:not(.refrigeration-kicker) { max-width: 390px; margin: 13px 0 0; color: var(--r-muted); font-size: 14px; line-height: 1.6; }
+.refrigeration-rfq-intro>div { margin-top: 31px; display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+.refrigeration-rfq-intro>div span { min-width: 0; display: grid; grid-template-columns: 26px 1fr; gap: 2px 7px; }
+.refrigeration-rfq-intro>div svg { grid-row: 1/3; color: #18818e; }
+.refrigeration-rfq-intro>div b { font-size: 9px; }
+.refrigeration-rfq-intro>div small { color: var(--r-muted); font-size: 8px; }
+.refrigeration-form { display: grid; grid-template-columns: repeat(3,1fr); gap: 15px; }
+.refrigeration-form label { min-width: 0; display: grid; gap: 7px; color: #3e4b5f; font-size: 9px; font-weight: 760; }
+.refrigeration-form select,
+.refrigeration-form textarea { width: 100%; border: 1px solid #d3dcda; border-radius: 7px; color: var(--r-ink); background: rgba(255,255,255,.94); }
+.refrigeration-form select { min-height: 44px; padding: 0 11px; }
+.refrigeration-form textarea { min-height: 82px; padding: 11px 12px; resize: vertical; }
+.refrigeration-notes { grid-column: 1/-1; }
+.refrigeration-submit { width: max-content; min-width: 215px; }
+.refrigeration-response { margin: 0; display: flex; align-items: center; gap: 7px; align-self: center; color: #596476; font-size: 9px; }
+.refrigeration-response svg { color: #18818e; }
+.refrigeration-success { grid-column: 2; padding: 24px; display: grid; grid-template-columns: auto 1fr auto; gap: 16px; align-items: center; border: 1px solid #c9dddd; border-radius: 14px; background: white; }
+.refrigeration-success>svg { color: #18818e; }
+.refrigeration-success .refrigeration-kicker { margin-bottom: 4px; }
+.refrigeration-success h3 { margin: 0; font-size: 21px; }
+.refrigeration-success p:last-child { margin: 5px 0 0; color: var(--r-muted); font-size: 10px; }
+.refrigeration-success .refrigeration-link-button { grid-column: 2; justify-self: start; font-size: 10px; }
+
+.refrigeration-freight { width: min(calc(100% - 48px),1270px); margin: 0 auto 28px; padding: 18px 25px; display: flex; align-items: center; justify-content: space-between; gap: 25px; border-radius: 11px; color: white; background: #112744; }
+.refrigeration-freight>div { display: flex; align-items: center; gap: 13px; }
+.refrigeration-freight svg { color: #64cbd4; }
+.refrigeration-freight p { margin: 0; display: grid; gap: 2px; }
+.refrigeration-freight strong { font-size: 13px; }
+.refrigeration-freight p span,
+.refrigeration-freight>span { color: #bdcad9; font-size: 9px; }
+.refrigeration-footer { padding: 26px 45px; display: grid; grid-template-columns: auto 1fr auto; gap: 31px; align-items: center; border-top: 1px solid var(--r-line); background: #fbf8f3; }
+.refrigeration-footer .refrigeration-brand img { width: 37px; height: 37px; }
+.refrigeration-footer .refrigeration-brand strong { font-size: 16px; }
+.refrigeration-footer p { max-width: 590px; margin: 0; color: var(--r-muted); font-size: 10px; line-height: 1.55; }
+.refrigeration-footer>span { color: #167b87; font-size: 9px; font-weight: 850; letter-spacing: .12em; text-transform: uppercase; }
+
+.refrigeration-modal-backdrop { position: fixed; inset: 0; z-index: 70; padding: 24px; display: grid; place-items: center; background: rgba(12,26,47,.64); backdrop-filter: blur(9px); }
+.refrigeration-modal { width: min(760px,100%); max-height: 92vh; overflow: auto; padding: 37px; position: relative; border-radius: 20px; background: var(--r-paper); box-shadow: 0 28px 90px rgba(5,14,29,.3); }
+.refrigeration-modal-close { width: 44px; height: 44px; position: absolute; top: 16px; right: 16px; display: grid; place-items: center; border: 0; border-radius: 50%; color: var(--r-ink); background: #edf1f1; cursor: pointer; }
+.refrigeration-modal h2 { max-width: 620px; margin: 0; font-size: 36px; line-height: 1.04; letter-spacing: -.045em; }
+.refrigeration-method-grid { margin: 28px 0 23px; display: grid; grid-template-columns: 1fr 1fr; gap: 11px; }
+.refrigeration-method-grid article { padding: 20px; border: 1px solid var(--r-line); border-radius: 12px; background: white; }
+.refrigeration-method-grid span { color: #18818e; font-size: 9px; font-weight: 850; letter-spacing: .1em; }
+.refrigeration-method-grid h3 { margin: 8px 0 6px; font-size: 16px; }
+.refrigeration-method-grid p { margin: 0; color: var(--r-muted); font-size: 10px; line-height: 1.55; }
+.refrigeration-veto { margin-bottom: 24px; padding: 18px; display: flex; flex-wrap: wrap; gap: 8px; border-radius: 11px; color: white; background: var(--r-ink); }
+.refrigeration-veto strong { width: 100%; color: #69ced6; font-size: 10px; letter-spacing: .12em; text-transform: uppercase; }
+.refrigeration-veto span { padding: 7px 9px; border: 1px solid rgba(255,255,255,.15); border-radius: 6px; font-size: 9px; }
+
+@media (max-width: 1180px) {
+  .refrigeration-header { padding-inline: 25px; }
+  .refrigeration-desktop-nav { gap: 15px; }
+  .refrigeration-desktop-nav a { font-size: 11px; }
+  .refrigeration-hero { grid-template-columns: minmax(0,.91fr) minmax(480px,1.09fr); }
+  .refrigeration-hero-copy { padding-left: 30px; }
+  .refrigeration-section { padding-inline: 27px; }
+  .refrigeration-family-grid { grid-template-columns: 1fr 1fr; }
+  .refrigeration-family-card:nth-child(2) { border-right: 0; }
+  .refrigeration-family-card:nth-child(-n+2) { border-bottom: 1px solid var(--r-line); }
+  .refrigeration-family-card figure { height: clamp(240px,34vw,340px); }
+  .refrigeration-brief-grid { grid-template-columns: 1fr; }
+  .refrigeration-rfq { width: calc(100% - 36px); margin-inline: auto; grid-template-columns: 1fr; }
+  .refrigeration-success { grid-column: 1; }
+}
+
+@media (max-width: 930px) {
+  .refrigeration-desktop-nav { display: none; }
+  .refrigeration-menu-button { display: grid; }
+  .refrigeration-drawer { position: fixed; left: 0; right: 0; top: 72px; z-index: 49; padding: 16px 24px 25px; display: grid; border-bottom: 1px solid var(--r-line); background: var(--r-paper); box-shadow: 0 18px 35px rgba(16,35,63,.12); }
+  .refrigeration-drawer a { padding: 13px 2px; color: var(--r-ink); border-bottom: 1px solid #eee8e3; font-weight: 720; text-decoration: none; }
+  .refrigeration-drawer a.active { color: #167b87; }
+  .refrigeration-hero { grid-template-columns: 1fr; background: #fffdf9; }
+  .refrigeration-hero-copy { min-height: 620px; padding: 65px 30px 51px; }
+  .refrigeration-hero-copy h1 { max-width: 760px; }
+  .refrigeration-hero-stage { min-height: 600px; }
+  .refrigeration-hero-stage>img { left: 15%; width: 70%; }
+  .refrigeration-section-head { grid-template-columns: 1fr; gap: 24px; }
+  .refrigeration-segmented { width: max-content; }
+  .refrigeration-brief-steps { grid-template-columns: repeat(5,1fr); }
+  .refrigeration-control-head { grid-template-columns: 1fr; gap: 18px; }
+  .refrigeration-evidence-head { align-items: start; flex-direction: column; }
+  .refrigeration-evidence-stage { grid-template-columns: 1fr; }
+  .refrigeration-evidence-stage>figure { min-height: 520px; }
+  .refrigeration-decisions { grid-template-columns: 1fr; }
+  .refrigeration-form { grid-template-columns: 1fr 1fr; }
+  .refrigeration-notes { grid-column: 1/-1; }
+  .refrigeration-footer { grid-template-columns: 1fr 1fr; }
+  .refrigeration-footer p { grid-column: 1/-1; }
+}
+
+@media (max-width: 620px) {
+  .refrigeration-header { min-height: 67px; padding-inline: 16px; }
+  .refrigeration-header .refrigeration-brand img { width: 40px; height: 40px; }
+  .refrigeration-header .refrigeration-brand strong { font-size: 18px; }
+  .refrigeration-drawer { top: 67px; padding-inline: 17px; }
+  .refrigeration-hero-copy { min-height: 0; padding: 40px 17px 42px; }
+  .refrigeration-kicker { font-size: 8.5px; }
+  .refrigeration-hero-copy h1 { font-size: clamp(40px,11vw,52px); line-height: 1; }
+  .refrigeration-hero-copy>p:not(.refrigeration-kicker) { margin-top: 17px; font-size: 14px; line-height: 1.55; }
+  .refrigeration-hero-actions { width: 100%; margin-top: 20px; flex-direction: column; align-items: stretch; gap: 8px; }
+  .refrigeration-link-button { width: 100%; }
+  .refrigeration-proof-row { margin-top: 29px; grid-template-columns: 1fr 1fr; gap: 13px; }
+  .refrigeration-hero-stage { min-height: 462px; }
+  .refrigeration-hero-stage>img { width: 82%; height: 91%; left: 9%; }
+  .refrigeration-model-tag { top: 17px; left: 16px; }
+  .refrigeration-spec-callout { min-width: 105px; padding: 9px 10px; }
+  .refrigeration-spec-callout::before { width: 20px; }
+  .refrigeration-spec-callout strong { font-size: 13px; }
+  .refrigeration-spec-callout span { font-size: 7px; }
+  .callout-capacity { top: 26%; left: 3%; }
+  .callout-temp { top: 48%; right: 2%; }
+  .callout-cooling { bottom: 18%; left: 2%; }
+  .refrigeration-render-note { max-width: 230px; right: 12px; bottom: 9px; font-size: 7px; }
+  .refrigeration-section { padding-inline: 16px; }
+  .refrigeration-range { padding-top: 61px; padding-bottom: 55px; }
+  .refrigeration-section-head h2,
+  .refrigeration-brief-copy h2,
+  .refrigeration-control-head h2,
+  .refrigeration-evidence-head h2,
+  .refrigeration-decisions h2,
+  .refrigeration-rfq-intro h2 { font-size: 34px; }
+  .refrigeration-segmented { width: 100%; }
+  .refrigeration-segmented button { flex: 1; padding-inline: 8px; }
+  .refrigeration-family-grid { grid-template-columns: 1fr; border-radius: 14px; }
+  .refrigeration-family-card { border-right: 0; border-bottom: 1px solid var(--r-line); }
+  .refrigeration-family-card:last-child { border-bottom: 0; }
+  .refrigeration-family-card figure { height: 300px; }
+  .refrigeration-family-card:nth-child(1) figure img { object-position: 50% 50%; }
+  .refrigeration-family-card:nth-child(4) figure img { object-position: 50% 24%; }
+  .refrigeration-brief-grid { padding-top: 52px; padding-bottom: 52px; gap: 34px; }
+  .refrigeration-brief-steps { grid-template-columns: 1fr 1fr; gap: 27px 0; }
+  .refrigeration-brief-steps article { padding-inline: 15px; }
+  .refrigeration-brief-steps article:nth-child(2n) { border-right: 0; }
+  .refrigeration-brief-steps article:nth-child(odd) { padding-left: 0; }
+  .refrigeration-brief-steps article:last-child { padding-top: 5px; border-top: 1px solid rgba(255,255,255,.13); }
+  .refrigeration-control { padding-top: 55px; padding-bottom: 55px; }
+  .refrigeration-control-grid { grid-template-columns: 1fr 1fr; }
+  .refrigeration-control-grid article { min-height: 220px; padding: 25px 16px 22px; }
+  .refrigeration-control-grid article:nth-child(3n) { border-right: 1px solid var(--r-line); }
+  .refrigeration-control-grid article:nth-child(2n) { border-right: 0; }
+  .refrigeration-control-grid article:nth-child(n+4) { border-bottom: 1px solid var(--r-line); }
+  .refrigeration-control-grid article:nth-child(n+5) { border-bottom: 0; }
+  .refrigeration-evidence { padding-top: 54px; padding-bottom: 45px; }
+  .refrigeration-tabs { width: 100%; }
+  .refrigeration-tabs button { min-width: 0; min-height: 44px; flex: 1; padding-inline: 8px; }
+  .refrigeration-evidence-stage>figure { min-height: 0; aspect-ratio: 4/3; }
+  .refrigeration-evidence-stage aside { padding-inline: 20px; }
+  .refrigeration-evidence-thumbs,
+  .refrigeration-placeholder-grid { grid-template-columns: 1fr; }
+  .refrigeration-evidence-thumbs article>div { height: auto; aspect-ratio: 16/9; }
+  .refrigeration-evidence-thumbs article:nth-child(-n+2) img { object-position: 50% 42%; }
+  .refrigeration-decisions { padding-top: 29px; padding-bottom: 50px; }
+  .refrigeration-scorecard,
+  .refrigeration-readiness { padding: 24px 18px; }
+  .refrigeration-supplier-row { grid-template-columns: 1fr .35fr; padding-block: 8px; }
+  .refrigeration-supplier-row .refrigeration-dots { display: none; }
+  .refrigeration-supplier-row.heading span:nth-child(n+3) { display: none; }
+  .refrigeration-readiness>ul { grid-template-columns: 1fr; }
+  .refrigeration-package { margin: 24px -18px -24px; padding-inline: 18px; grid-template-columns: 1fr 1fr; }
+  .refrigeration-rfq { width: calc(100% - 20px); margin: 0 auto 46px; padding: 34px 18px 26px; gap: 28px; }
+  .refrigeration-rfq-intro>div { gap: 7px; }
+  .refrigeration-rfq-intro>div span { grid-template-columns: 1fr; text-align: center; }
+  .refrigeration-rfq-intro>div svg { grid-row: auto; justify-self: center; }
+  .refrigeration-form { grid-template-columns: 1fr; }
+  .refrigeration-form label { font-size: 10px; }
+  .refrigeration-form select,
+  .refrigeration-form textarea { font-size: 16px; }
+  .refrigeration-form select { min-height: 48px; }
+  .refrigeration-notes { grid-column: 1; }
+  .refrigeration-submit { width: 100%; }
+  .refrigeration-success { padding: 20px; grid-template-columns: 1fr; }
+  .refrigeration-success .refrigeration-link-button { grid-column: 1; }
+  .refrigeration-freight { width: calc(100% - 20px); padding: 18px; display: grid; }
+  .refrigeration-freight>span { padding-top: 13px; border-top: 1px solid rgba(255,255,255,.13); line-height: 1.6; }
+  .refrigeration-footer { padding: 25px 18px; grid-template-columns: 1fr; }
+  .refrigeration-footer p { grid-column: 1; }
+  .refrigeration-modal-backdrop { padding: 12px; }
+  .refrigeration-modal { padding: 30px 20px 22px; }
+  .refrigeration-modal h2 { font-size: 31px; }
+  .refrigeration-method-grid { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .refrigeration-page *,
+  .refrigeration-page *::before,
+  .refrigeration-page *::after { scroll-behavior: auto!important; transition-duration: .01ms!important; }
+  .refrigeration-hero-stage>img { opacity: 1; animation: none; }
+}

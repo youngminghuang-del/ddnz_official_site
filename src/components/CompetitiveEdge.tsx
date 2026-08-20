@@ -2,17 +2,12 @@ import React from 'react';
 import { Award, Warehouse, ClipboardCheck, Coins, ShieldCheck, Clock, ArrowRight, PackageCheck } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getImgUrl } from '../constants';
+import { Link } from 'react-router-dom';
+import { buildQuoteHref } from '../lib/quoteLinks';
 
 const CompetitiveEdge: React.FC = () => {
-  const { t } = useLanguage();
-
-  const scrollToQuote = (e: React.MouseEvent) => {
-    e.preventDefault();
-    const element = document.getElementById('get-a-quote');
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
+  const { t, language } = useLanguage();
+  const freightQuoteHref = buildQuoteHref({ intent: 'Freight Export', language, source: 'homepage_competitive_edge' });
 
   const leftFeatures = [
     {
@@ -83,6 +78,8 @@ const CompetitiveEdge: React.FC = () => {
                 src={getImgUrl('HERO_BG')} 
                 className="h-full w-full object-cover"
                 alt="Container terminal supporting Heaven Born international freight operations"
+                width="1080"
+                height="1440"
                 loading="lazy"
               />
             </div>
@@ -110,14 +107,13 @@ const CompetitiveEdge: React.FC = () => {
             })}
             </div>
 
-            <a
-              href="#get-a-quote"
-              onClick={scrollToQuote}
+            <Link
+              to={freightQuoteHref}
               className="group mt-10 inline-flex items-center gap-3 rounded-full bg-[var(--hb-amber)] px-7 py-3.5 text-base font-extrabold text-white transition-colors hover:bg-[var(--hb-amber-strong)] active:scale-[0.98]"
             >
               <span>{t('nav.get_a_quote')}</span>
               <ArrowRight className="h-5 w-5 transition-transform duration-300 group-hover:translate-x-1" />
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -139,6 +135,8 @@ const CompetitiveEdge: React.FC = () => {
                 <img
                   src={getImgUrl('FACILITY_SCALE')}
                   alt={t('facilities.guangzhou.title')}
+                  width="1536"
+                  height="1024"
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
                 />
@@ -162,6 +160,8 @@ const CompetitiveEdge: React.FC = () => {
                 <img
                   src={getImgUrl('FACILITY_SORT')}
                   alt={t('facilities.systems.title')}
+                  width="1536"
+                  height="1024"
                   loading="lazy"
                   className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.025]"
                 />

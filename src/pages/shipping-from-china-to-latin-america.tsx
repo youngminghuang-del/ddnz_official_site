@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import Navbar from '../components/Navbar';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
+import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
@@ -910,7 +911,7 @@ export default function ShippingLatinAmerica() {
   const redlines = UNIVERSAL_REDLINES[activeLang];
 
   return (
-    <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -922,26 +923,17 @@ export default function ShippingLatinAmerica() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SchemaMarkup
-        type="BreadcrumbList"
-        data={{
-          items: [
-            { name: language === 'zh' ? '首页' : 'Home', url: 'https://www.ddnzglobal.com/' },
-            { name: language === 'zh' ? '按区域运输' : 'Latin America', url: `https://www.ddnzglobal.com${location.pathname.match(/^\/(zh-cn|ru|fr|es|ar)/)?.[0] || ''}/shipping-from-china-to-latin-america` },
-            { name: countryLabel(selectedCountry), url: `https://www.ddnzglobal.com${location.pathname}` }
-          ]
-        }}
-      />
-      
-      <Navbar />
+      <SourcingHomepageNav showFreightExecutor />
 
       {/* Hero Section */}
-      <header className="relative pt-32 pb-24 md:pt-40 md:pb-36 text-white overflow-hidden">
+      <header className="relative overflow-hidden pb-24 pt-16 text-white md:pb-36 md:pt-24">
         {/* Visual shipping backdrop layer */}
         <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
           <img 
             src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=2000" 
             alt="Latin America Ocean Freight"
+            width="2000"
+            height="1125"
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -959,7 +951,7 @@ export default function ShippingLatinAmerica() {
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('mexico')}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'mexico'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
@@ -970,7 +962,7 @@ export default function ShippingLatinAmerica() {
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('brazil')}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'brazil'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
@@ -981,7 +973,7 @@ export default function ShippingLatinAmerica() {
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('argentina')}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'argentina'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
@@ -992,7 +984,7 @@ export default function ShippingLatinAmerica() {
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('peru')}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'peru'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
@@ -1003,7 +995,7 @@ export default function ShippingLatinAmerica() {
                   <button
                     type="button"
                     onClick={() => handleCountryTabChange('chile')}
-                    className={`px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'chile'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
@@ -1114,6 +1106,8 @@ export default function ShippingLatinAmerica() {
 
       {/* Main Content Sections */}
       <main className="relative z-10">
+
+        <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         {/* Section: Compliant Solutions Checklist (3 Columns) */}
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
@@ -1360,7 +1354,7 @@ export default function ShippingLatinAmerica() {
                     <button
                       type="button"
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between text-left focus:outline-none"
+                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.q}

@@ -1,6 +1,5 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
 import { Cookie, X, ShieldCheck, Globe, ChevronDown } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
@@ -9,12 +8,12 @@ import { trackPageView, updateAnalyticsConsent } from '../lib/analytics';
 const cookieTexts = {
   en: {
     bannerTitle: "We value your privacy",
-    bannerDesc: "We use cookies to enhance your browsing experience, serve personalized content, and analyze our traffic. By clicking \"Accept All\", you consent to our use of cookies ensuring the best logistics portal experience.",
+    bannerDesc: "We use optional analytics cookies to understand site usage. Choose Accept All, Decline, or Cookie Settings; you can change your choice later.",
     btnAcceptAll: "Accept All",
     btnDecline: "Decline",
     btnSettings: "Cookie Settings",
     modalTitle: "Cookies Preferences Center",
-    consentBy: "Cookie Consent by Heaven Born",
+    consentBy: "Cookie controls for DDNZ Global",
     btnSave: "Save my preferences",
     activeLabel: "Active",
     inactiveLabel: "Inactive",
@@ -47,7 +46,7 @@ const cookieTexts = {
         title: "Tracking cookies",
         p1: "These cookies are used to collect information to analyze the traffic to our website and how visitors are using our website.",
         p2: "For example, these cookies may track things such as how long you spend on the website or the pages you visit which helps us to understand how we can improve our website for you.",
-        p3: "The information collected through these tracking and performance cookies do not identify any individual visitor."
+        p3: "We do not send contact-form fields to analytics. Analytics providers may still process device and usage identifiers under their own policies."
       },
       targeting: {
         title: "Targeting and advertising cookies",
@@ -63,12 +62,12 @@ const cookieTexts = {
   },
   zh: {
     bannerTitle: "我们重视您的隐私",
-    bannerDesc: "我们使用 Cookie 来提升您的浏览体验、提供个性化内容并分析我们的流量。点击“全部接受”，即表示您同意我们使用 Cookie，以确保您获得最佳的物流门户体验。",
+    bannerDesc: "我们仅在您同意后使用可选统计 Cookie 来了解网站使用情况。您可选择全部接受、拒绝或自定义，并可随时更改。",
     btnAcceptAll: "全部接受",
     btnDecline: "拒绝",
     btnSettings: "Cookie 设置",
     modalTitle: "Cookie 偏好设置中心",
-    consentBy: "由 Heaven Born 提供的 Cookie 同意书",
+    consentBy: "DDNZ Global Cookie 控制",
     btnSave: "保存我的偏好设置",
     activeLabel: "已激活",
     inactiveLabel: "未激活",
@@ -101,7 +100,7 @@ const cookieTexts = {
         title: "追踪性 Cookie",
         p1: "这些 Cookie 用于收集信息以分析网站流量及访客使用网站的情况。",
         p2: "例如，这些 Cookie 可以追踪您在网站上停留的时间或访问的页面，这有助于我们了解如何为您改进网站。",
-        p3: "通过这些追踪和性能 Cookie 收集的信息不会识别任何个人访客的身份。"
+        p3: "我们不会把联系表单字段发送给统计工具；统计服务商仍可能依其政策处理设备与使用标识。"
       },
       targeting: {
         title: "定向与广告 Cookie",
@@ -117,12 +116,12 @@ const cookieTexts = {
   },
   ru: {
     bannerTitle: "Мы ценим вашу конфиденциальность",
-    bannerDesc: "Мы используем файлы cookie для улучшения вашего опыта просмотра, показа персонализированного контента и анализа нашего трафика. Нажимая «Принять все», вы соглашаетесь на использование файлов cookie для обеспечения наилучшего взаимодействия с нашим логистическим порталом.",
+    bannerDesc: "Мы используем необязательные аналитические cookie только с вашего согласия, чтобы понимать, как используется сайт. Вы можете принять, отклонить или настроить их и позднее изменить выбор.",
     btnAcceptAll: "Принять все",
     btnDecline: "Отклонить",
     btnSettings: "Настройки файлов cookie",
     modalTitle: "Центр настроек файлов cookie",
-    consentBy: "Согласие на файлы cookie от Heaven Born",
+    consentBy: "Настройки cookie DDNZ Global",
     btnSave: "Сохранить мои настройки",
     activeLabel: "Активно",
     inactiveLabel: "Неактивно",
@@ -171,12 +170,12 @@ const cookieTexts = {
   },
   fr: {
     bannerTitle: "Nous apprécions votre vie privée",
-    bannerDesc: "Nous utilisons des cookies pour améliorer votre expérience de navigation, diffuser du contenu personnalisé et analyser notre trafic. En cliquant sur « Tout accepter », vous consentez à notre utilisation des cookies pour garantir la meilleure expérience possible sur notre portail.",
+    bannerDesc: "Nous utilisons des cookies analytiques facultatifs uniquement avec votre accord afin de comprendre l’utilisation du site. Vous pouvez accepter, refuser ou personnaliser votre choix, puis le modifier ultérieurement.",
     btnAcceptAll: "Tout accepter",
     btnDecline: "Refuser",
     btnSettings: "Paramètres des cookies",
     modalTitle: "Centre de Préférences des Cookies",
-    consentBy: "Consentement de cookies par Heaven Born",
+    consentBy: "Contrôles des cookies DDNZ Global",
     btnSave: "Enregistrer mes préférences",
     activeLabel: "Actif",
     inactiveLabel: "Inactif",
@@ -228,15 +227,81 @@ const cookieTexts = {
 const cookieTextMap = cookieTexts as Record<string, any>;
 cookieTextMap.es = {
   ...cookieTexts.en,
-  bannerTitle: 'Valoramos su privacidad', bannerDesc: 'Usamos cookies para mejorar su navegación, ofrecer contenido personalizado y analizar nuestro tráfico.',
-  btnAcceptAll: 'Aceptar todas', btnDecline: 'Rechazar', btnSettings: 'Configuración de cookies', modalTitle: 'Centro de preferencias de cookies', consentBy: 'Consentimiento de cookies de Heaven Born', btnSave: 'Guardar preferencias', activeLabel: 'Activo', inactiveLabel: 'Inactivo', alwaysActive: 'Siempre activo',
+  bannerTitle: 'Valoramos su privacidad', bannerDesc: 'Usamos cookies analíticas opcionales solo con su consentimiento para entender el uso del sitio. Puede aceptar, rechazar o personalizar su elección y cambiarla más adelante.',
+  btnAcceptAll: 'Aceptar todas', btnDecline: 'Rechazar', btnSettings: 'Configuración de cookies', modalTitle: 'Centro de preferencias de cookies', consentBy: 'Controles de cookies de DDNZ Global', btnSave: 'Guardar preferencias', activeLabel: 'Activo', inactiveLabel: 'Inactivo', alwaysActive: 'Siempre activo',
   tabs: { privacy: 'Su privacidad', necessary: 'Cookies estrictamente necesarias', functionality: 'Cookies de funcionalidad', tracking: 'Cookies de seguimiento', targeting: 'Cookies de publicidad', more: 'Más información' },
+  content: {
+    privacy: {
+      title: 'Su privacidad es importante para nosotros',
+      p1: 'Las cookies son pequeños archivos de texto que se almacenan en su dispositivo al visitar un sitio web. Las utilizamos para prestar funciones esenciales y, cuando usted lo permite, para comprender y mejorar el uso del sitio.',
+      p2: 'Puede cambiar sus preferencias, rechazar categorías opcionales o eliminar cookies ya almacenadas. La eliminación de cookies necesarias puede afectar algunas funciones del sitio.'
+    },
+    necessary: {
+      title: 'Cookies estrictamente necesarias',
+      p1: 'Estas cookies son imprescindibles para prestar los servicios del sitio y habilitar funciones básicas.',
+      p2: 'Sin ellas no podemos ofrecer correctamente determinados servicios.'
+    },
+    functionality: {
+      title: 'Cookies de funcionalidad',
+      p1: 'Estas cookies permiten recordar elecciones realizadas durante el uso del sitio.',
+      p2: 'Por ejemplo, pueden conservar su preferencia de idioma.'
+    },
+    tracking: {
+      title: 'Cookies de seguimiento',
+      p1: 'Estas cookies recopilan información para analizar el tráfico y la forma en que los visitantes utilizan el sitio.',
+      p2: 'Pueden registrar la duración de la visita o las páginas consultadas para ayudarnos a mejorar la experiencia.',
+      p3: 'No enviamos campos de los formularios de contacto a las herramientas analíticas. Los proveedores pueden procesar identificadores técnicos y de uso conforme a sus propias políticas.'
+    },
+    targeting: {
+      title: 'Cookies de publicidad',
+      p1: 'Estas cookies pueden utilizarse para mostrar publicidad basada en sus hábitos de navegación.',
+      p2: 'Los proveedores de contenido o publicidad pueden combinar información del sitio con datos obtenidos de forma independiente en su red.',
+      p3: 'Si las desactiva, seguirá viendo publicidad, aunque puede resultar menos relevante.'
+    },
+    more: {
+      title: 'Más información',
+      p1: 'Si tiene preguntas sobre nuestra política de cookies o sus opciones, póngase en contacto con nosotros.'
+    }
+  },
 };
 cookieTextMap.ar = {
   ...cookieTexts.en,
-  bannerTitle: 'نحن نقدر خصوصيتكم', bannerDesc: 'نستخدم ملفات تعريف الارتباط لتحسين التصفح وتقديم محتوى مخصص وتحليل حركة الموقع.',
-  btnAcceptAll: 'قبول الكل', btnDecline: 'رفض', btnSettings: 'إعدادات ملفات الارتباط', modalTitle: 'مركز تفضيلات ملفات الارتباط', consentBy: 'موافقة ملفات الارتباط من Heaven Born', btnSave: 'حفظ التفضيلات', activeLabel: 'نشط', inactiveLabel: 'غير نشط', alwaysActive: 'نشط دائماً',
+  bannerTitle: 'نحن نقدر خصوصيتكم', bannerDesc: 'نستخدم ملفات تحليل اختيارية فقط بعد موافقتكم لفهم استخدام الموقع. يمكنكم القبول أو الرفض أو تخصيص الاختيار وتغييره لاحقاً.',
+  btnAcceptAll: 'قبول الكل', btnDecline: 'رفض', btnSettings: 'إعدادات ملفات الارتباط', modalTitle: 'مركز تفضيلات ملفات الارتباط', consentBy: 'عناصر تحكم ملفات الارتباط لدى DDNZ Global', btnSave: 'حفظ التفضيلات', activeLabel: 'نشط', inactiveLabel: 'غير نشط', alwaysActive: 'نشط دائماً',
   tabs: { privacy: 'خصوصيتكم', necessary: 'ملفات الارتباط الضرورية', functionality: 'ملفات الارتباط الوظيفية', tracking: 'ملفات التتبع', targeting: 'ملفات الإعلان', more: 'معلومات إضافية' },
+  content: {
+    privacy: {
+      title: 'خصوصيتكم مهمة بالنسبة لنا',
+      p1: 'ملفات الارتباط هي ملفات نصية صغيرة تُخزّن على جهازكم عند زيارة الموقع. نستخدمها لتشغيل الوظائف الأساسية، وبعد موافقتكم لفهم استخدام الموقع وتحسينه.',
+      p2: 'يمكنكم تغيير التفضيلات أو رفض الفئات الاختيارية أو حذف الملفات المخزنة. وقد يؤثر حذف الملفات الضرورية في بعض وظائف الموقع.'
+    },
+    necessary: {
+      title: 'ملفات الارتباط الضرورية',
+      p1: 'هذه الملفات ضرورية لتقديم خدمات الموقع وتمكين وظائفه الأساسية.',
+      p2: 'لا يمكن تقديم بعض الخدمات بصورة صحيحة من دونها.'
+    },
+    functionality: {
+      title: 'ملفات الارتباط الوظيفية',
+      p1: 'تساعد هذه الملفات على تذكر الاختيارات التي تحددونها أثناء استخدام الموقع.',
+      p2: 'ومن أمثلتها تذكر اللغة المفضلة.'
+    },
+    tracking: {
+      title: 'ملفات التتبع',
+      p1: 'تجمع هذه الملفات معلومات لتحليل حركة الموقع وكيفية استخدام الزوار له.',
+      p2: 'قد تسجل مدة الزيارة أو الصفحات التي تمت مشاهدتها لمساعدتنا على تحسين التجربة.',
+      p3: 'لا نرسل حقول نماذج التواصل إلى أدوات التحليل. وقد يعالج مزودو التحليلات معرفات تقنية ومعرفات استخدام وفق سياساتهم.'
+    },
+    targeting: {
+      title: 'ملفات الإعلان',
+      p1: 'قد تُستخدم هذه الملفات لعرض إعلانات مرتبطة بعادات التصفح.',
+      p2: 'قد يجمع مزودو المحتوى أو الإعلان بيانات الموقع مع معلومات حصلوا عليها بشكل مستقل عبر شبكاتهم.',
+      p3: 'عند تعطيلها ستستمر الإعلانات في الظهور، لكنها قد تكون أقل صلة باهتماماتكم.'
+    },
+    more: {
+      title: 'معلومات إضافية',
+      p1: 'لأي استفسار عن سياسة ملفات الارتباط أو خياراتكم، يرجى التواصل معنا.'
+    }
+  },
 };
 
 const languagesList = [
@@ -248,6 +313,15 @@ const languagesList = [
   ,{ code: 'ar', label: 'العربية' }
 ];
 
+const cookieAriaText: Record<Language, { close: string; categories: string }> = {
+  en: { close: 'Close cookie settings', categories: 'Cookie categories' },
+  zh: { close: '关闭 Cookie 设置', categories: 'Cookie 类别' },
+  ru: { close: 'Закрыть настройки файлов cookie', categories: 'Категории файлов cookie' },
+  fr: { close: 'Fermer les paramètres des cookies', categories: 'Catégories de cookies' },
+  es: { close: 'Cerrar la configuración de cookies', categories: 'Categorías de cookies' },
+  ar: { close: 'إغلاق إعدادات ملفات الارتباط', categories: 'فئات ملفات الارتباط' }
+};
+
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferencesModal, setShowPreferencesModal] = useState(false);
@@ -256,6 +330,7 @@ export default function CookieConsent() {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
   const navigate = useNavigate();
+  const dialogRef = useRef<HTMLDivElement>(null);
 
   const handleLanguageChange = (lang: Language) => {
     setLanguage(lang);
@@ -270,6 +345,10 @@ export default function CookieConsent() {
       currentPath = currentPath.slice(3);
     } else if (currentPath.startsWith('/fr')) {
       currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/es')) {
+      currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/ar')) {
+      currentPath = currentPath.slice(3);
     }
 
     if (currentPath === '') currentPath = '/';
@@ -282,6 +361,10 @@ export default function CookieConsent() {
       targetPath = `/ru${currentPath === '/' ? '' : currentPath}`;
     } else if (lang === 'fr') {
       targetPath = `/fr${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'es') {
+      targetPath = `/es${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'ar') {
+      targetPath = `/ar${currentPath === '/' ? '' : currentPath}`;
     } else {
       targetPath = currentPath;
     }
@@ -316,6 +399,24 @@ export default function CookieConsent() {
   }, []);
 
   useEffect(() => {
+    if (!showPreferencesModal) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const focusTimer = window.setTimeout(() => dialogRef.current?.focus(), 0);
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setShowPreferencesModal(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      window.clearTimeout(focusTimer);
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = previousOverflow;
+    };
+  }, [showPreferencesModal]);
+
+  useEffect(() => {
     const handleOpenSettings = () => {
       setShowPreferencesModal(true);
     };
@@ -326,6 +427,7 @@ export default function CookieConsent() {
   }, []);
 
   const handleAccept = () => {
+    const wasTrackingEnabled = preferences.tracking;
     const fullPrefs = {
       necessary: true,
       functionality: true,
@@ -336,7 +438,8 @@ export default function CookieConsent() {
     localStorage.setItem('cookieConsent', 'accepted');
     localStorage.setItem('cookiePreferences', JSON.stringify(fullPrefs));
     updateAnalyticsConsent(true, true);
-    trackPageView();
+    if (!wasTrackingEnabled) trackPageView();
+    setShowPreferencesModal(false);
     setIsVisible(false);
   };
 
@@ -351,14 +454,22 @@ export default function CookieConsent() {
     localStorage.setItem('cookieConsent', 'declined');
     localStorage.setItem('cookiePreferences', JSON.stringify(declinedPrefs));
     updateAnalyticsConsent(false, false);
+    setShowPreferencesModal(false);
     setIsVisible(false);
   };
 
   const handleSavePreferences = () => {
+    const previouslySaved = (() => {
+      try {
+        return JSON.parse(localStorage.getItem('cookiePreferences') || '{}') as { tracking?: boolean };
+      } catch {
+        return {};
+      }
+    })();
     localStorage.setItem('cookieConsent', 'custom');
     localStorage.setItem('cookiePreferences', JSON.stringify(preferences));
     updateAnalyticsConsent(preferences.tracking, preferences.targeting);
-    if (preferences.tracking) {
+    if (preferences.tracking && !previouslySaved.tracking) {
       trackPageView();
     }
     setShowPreferencesModal(false);
@@ -366,21 +477,30 @@ export default function CookieConsent() {
   };
 
   const togglePreference = (key: 'functionality' | 'tracking' | 'targeting') => {
-    setPreferences(prev => ({
-      ...prev,
-      [key]: !prev[key]
-    }));
+    setPreferences((previous) => {
+      const nextValue = !previous[key];
+      if (key === 'tracking' && !nextValue) {
+        return { ...previous, tracking: false, targeting: false };
+      }
+      if (key === 'targeting' && nextValue) {
+        return { ...previous, tracking: true, targeting: true };
+      }
+      return { ...previous, [key]: nextValue };
+    });
   };
 
   const tLocal = cookieTextMap[language] || cookieTexts.en;
+  const ariaText = cookieAriaText[language] || cookieAriaText.en;
 
-  const Toggle = ({ active, disabled, onChange }: { active: boolean; disabled?: boolean; onChange?: () => void }) => {
+  const Toggle = ({ active, disabled, label, onChange }: { active: boolean; disabled?: boolean; label: string; onChange?: () => void }) => {
     return (
       <div className="flex items-center gap-3 mt-6">
         <button
           type="button"
           disabled={disabled}
           onClick={onChange}
+          aria-label={label}
+          aria-pressed={disabled || active}
           className={`relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-[#4B27B1] focus:ring-offset-2 ${
             disabled ? 'bg-emerald-500 cursor-not-allowed' : active ? 'bg-[#4B27B1]' : 'bg-slate-200'
           }`}
@@ -401,88 +521,72 @@ export default function CookieConsent() {
   return (
     <>
       {/* Cookie Banner */}
-      <AnimatePresence>
-        {isVisible && !showPreferencesModal && (
-          <motion.div
-            initial={{ y: 150, opacity: 0 }}
-            animate={{ y: 0, opacity: 1 }}
-            exit={{ y: 150, opacity: 0 }}
-            transition={{ type: "spring", stiffness: 260, damping: 20 }}
-            className="fixed bottom-0 left-0 right-0 z-[90] p-4 sm:p-6 pointer-events-none"
-          >
-            <div className="max-w-6xl mx-auto pointer-events-auto">
-              <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-2xl shadow-2xl p-6 sm:p-8 flex flex-col md:flex-row items-start md:items-center gap-6 relative overflow-hidden backdrop-blur-md">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-violet-600/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+      {isVisible && !showPreferencesModal && (
+          <div className="fixed bottom-0 left-0 right-0 z-[90] p-2 sm:p-4 pointer-events-none">
+            <div className="max-w-5xl mx-auto pointer-events-auto">
+              <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-xl shadow-2xl p-4 flex flex-col lg:flex-row items-start lg:items-center gap-3 sm:gap-4 relative overflow-hidden backdrop-blur-md">
 
-                <div className="flex-shrink-0 bg-[#4B27B1]/20 p-3 rounded-full relative z-10 border border-[#4B27B1]/40">
-                  <Cookie className="w-8 h-8 text-[#FF8A00]" />
+                <div className="hidden flex-shrink-0 bg-[#4B27B1]/20 p-2 rounded-full relative z-10 border border-[#4B27B1]/40 sm:block">
+                  <Cookie className="w-6 h-6 text-[#FF8A00]" />
                 </div>
                 
-                <div className="flex-1 text-left relative z-10 pr-6 md:pr-0">
-                  <h4 className="text-white font-bold text-lg mb-2">{tLocal.bannerTitle}</h4>
-                  <p className="text-sm leading-relaxed text-slate-400">
+                <div className="flex-1 text-left relative z-10">
+                  <h4 className="text-white font-bold text-base mb-1">{tLocal.bannerTitle}</h4>
+                  <p className="text-xs sm:text-sm leading-relaxed text-slate-400 line-clamp-2">
                     {tLocal.bannerDesc}
                   </p>
                 </div>
 
-                <div className="flex flex-col sm:flex-row w-full md:w-auto gap-3 relative z-10 mt-2 md:mt-0">
+                <div className="grid grid-cols-2 w-full lg:w-auto gap-2 relative z-10 sm:flex">
                   <button 
+                    type="button"
                     onClick={() => setShowPreferencesModal(true)}
-                    className="px-5 py-2.5 text-sm font-bold text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-xl transition-colors border border-slate-700/60"
+                    className="col-span-2 min-h-11 px-3 sm:col-span-1 sm:px-4 py-2 text-xs sm:text-sm font-bold text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg transition-colors border border-slate-700/60"
                   >
                     {tLocal.btnSettings}
                   </button>
                   <button 
+                    type="button"
                     onClick={handleDecline}
-                    className="px-5 py-2.5 text-sm font-semibold text-slate-400 hover:text-white bg-transparent hover:bg-slate-800/40 rounded-xl transition-colors"
+                    className="min-h-11 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white bg-transparent hover:bg-slate-800/40 rounded-lg transition-colors"
                   >
                     {tLocal.btnDecline}
                   </button>
                   <button 
+                    type="button"
                     onClick={handleAccept}
-                    className="px-6 py-2.5 text-sm font-extrabold text-white bg-[#4B27B1] hover:bg-[#3a1d91] rounded-xl shadow-lg shadow-purple-900/40 hover:shadow-purple-900/60 transition-all duration-300 whitespace-nowrap"
+                    className="min-h-11 px-3 sm:px-5 py-2 text-xs sm:text-sm font-extrabold text-white bg-[#4B27B1] hover:bg-[#3a1d91] rounded-lg shadow-lg shadow-purple-900/40 hover:shadow-purple-900/60 transition-all duration-300 whitespace-nowrap"
                   >
                     {tLocal.btnAcceptAll}
                   </button>
                 </div>
 
-                <button 
-                  onClick={handleDecline}
-                  className="absolute top-4 right-4 text-slate-500 hover:text-white transition-colors z-20 pointer-events-auto p-1"
-                  aria-label="Close"
-                >
-                  <X className="w-5 h-5" />
-                </button>
               </div>
             </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+          </div>
+      )}
 
       {/* Preferences Center Modal */}
-      <AnimatePresence>
-        {showPreferencesModal && (
+      {showPreferencesModal && (
           <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             {/* Backdrop overlay */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
+            <div
               onClick={() => setShowPreferencesModal(false)}
               className="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"
             />
 
             {/* Modal Card */}
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: "spring", duration: 0.4 }}
-              className="relative bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden max-w-4xl w-full flex flex-col h-[600px] md:h-[650px] z-10"
+            <div
+              ref={dialogRef}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="cookie-preferences-title"
+              tabIndex={-1}
+              className="relative bg-white rounded-2xl border border-slate-200 shadow-2xl overflow-hidden max-w-4xl w-full flex flex-col h-[min(650px,calc(100dvh-2rem))] z-10"
             >
               {/* Header */}
               <div className="px-6 py-5 border-b border-slate-150 flex items-center justify-between bg-slate-50/50">
-                <h3 className="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
+                <h3 id="cookie-preferences-title" className="text-xl font-extrabold text-slate-900 tracking-tight flex items-center gap-2">
                   <ShieldCheck className="w-6 h-6 text-[#4B27B1]" />
                   {tLocal.modalTitle}
                 </h3>
@@ -506,7 +610,9 @@ export default function CookieConsent() {
 
                   {/* Close Button */}
                   <button
+                    type="button"
                     onClick={() => setShowPreferencesModal(false)}
+                    aria-label={ariaText.close}
                     className="p-1.5 rounded-lg text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-all"
                   >
                     <X className="w-5 h-5" />
@@ -517,7 +623,7 @@ export default function CookieConsent() {
               {/* Central Content Split Panel */}
               <div className="flex-1 flex flex-col md:flex-row overflow-hidden">
                 {/* Left Tabs Column */}
-                <div className="w-full md:w-64 bg-slate-50 border-r border-slate-200 flex-shrink-0 flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible md:overflow-y-auto scrollbar-none border-b md:border-b-0">
+                <div role="tablist" aria-label={ariaText.categories} className="w-full md:w-64 bg-slate-50 border-r border-slate-200 flex-shrink-0 flex flex-row md:flex-col overflow-x-auto md:overflow-x-visible md:overflow-y-auto scrollbar-none border-b md:border-b-0">
                   {[
                     { id: 'privacy', label: tLocal.tabs.privacy },
                     { id: 'necessary', label: tLocal.tabs.necessary },
@@ -529,8 +635,11 @@ export default function CookieConsent() {
                     const isActive = activeTab === tab.id;
                     return (
                       <button
+                        type="button"
                         key={tab.id}
                         onClick={() => setActiveTab(tab.id as any)}
+                        role="tab"
+                        aria-selected={isActive}
                         className={`px-5 py-3 md:py-4 text-left text-xs md:text-sm font-bold tracking-tight border-b md:border-b-0 md:border-l-4 transition-all duration-200 whitespace-nowrap md:whitespace-normal flex-shrink-0 ${
                           isActive
                             ? 'border-[#4B27B1] text-[#4B27B1] bg-purple-50/50 md:bg-purple-50/30'
@@ -544,7 +653,7 @@ export default function CookieConsent() {
                 </div>
 
                 {/* Right Tab Content Pane */}
-                <div className="flex-1 p-6 md:p-10 overflow-y-auto text-left flex flex-col justify-between">
+                <div role="tabpanel" className="flex-1 p-6 md:p-10 overflow-y-auto text-left flex flex-col justify-between">
                   <div className="space-y-4">
                     {activeTab === 'privacy' && (
                       <>
@@ -559,7 +668,7 @@ export default function CookieConsent() {
                         <h4 className="text-xl font-bold text-slate-900 tracking-tight">{tLocal.content.necessary.title}</h4>
                         <p className="text-slate-600 text-sm leading-relaxed">{tLocal.content.necessary.p1}</p>
                         <p className="text-slate-600 text-sm leading-relaxed">{tLocal.content.necessary.p2}</p>
-                        <Toggle active={true} disabled={true} />
+                        <Toggle active={true} disabled={true} label={tLocal.tabs.necessary} />
                       </>
                     )}
 
@@ -570,6 +679,7 @@ export default function CookieConsent() {
                         <p className="text-slate-600 text-sm leading-relaxed">{tLocal.content.functionality.p2}</p>
                         <Toggle
                           active={preferences.functionality}
+                          label={tLocal.tabs.functionality}
                           onChange={() => togglePreference('functionality')}
                         />
                       </>
@@ -583,6 +693,7 @@ export default function CookieConsent() {
                         <p className="text-slate-600 text-sm leading-relaxed">{tLocal.content.tracking.p3}</p>
                         <Toggle
                           active={preferences.tracking}
+                          label={tLocal.tabs.tracking}
                           onChange={() => togglePreference('tracking')}
                         />
                       </>
@@ -596,6 +707,7 @@ export default function CookieConsent() {
                         <p className="text-slate-600 text-sm leading-relaxed">{tLocal.content.targeting.p3}</p>
                         <Toggle
                           active={preferences.targeting}
+                          label={tLocal.tabs.targeting}
                           onChange={() => togglePreference('targeting')}
                         />
                       </>
@@ -620,18 +732,21 @@ export default function CookieConsent() {
 
                 <div className="flex gap-3 w-full sm:w-auto justify-end">
                   <button
+                    type="button"
                     onClick={handleDecline}
                     className="px-5 py-2.5 text-xs md:text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors"
                   >
                     {tLocal.btnDecline}
                   </button>
                   <button
+                    type="button"
                     onClick={handleAccept}
                     className="px-5 py-2.5 text-xs md:text-sm font-bold text-[#4B27B1] hover:text-white bg-purple-50 hover:bg-[#4B27B1] border border-[#4B27B1]/30 hover:border-transparent rounded-lg transition-all"
                   >
                     {tLocal.btnAcceptAll}
                   </button>
                   <button
+                    type="button"
                     onClick={handleSavePreferences}
                     className="px-6 py-2.5 text-xs md:text-sm font-extrabold text-white bg-gradient-to-r from-[#4B27B1] to-[#3a1d91] hover:from-[#FF8A00] hover:to-[#e67c00] rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                   >
@@ -639,10 +754,9 @@ export default function CookieConsent() {
                   </button>
                 </div>
               </div>
-            </motion.div>
+            </div>
           </div>
-        )}
-      </AnimatePresence>
+      )}
     </>
   );
 }

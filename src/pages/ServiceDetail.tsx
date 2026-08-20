@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
-import Navbar from '../components/Navbar';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
@@ -1020,12 +1020,12 @@ export default function ServiceDetail() {
 
   if (currentKey === 'air-freight') {
     return (
-      <div className="min-h-screen hb-page-shell font-sans text-slate-900">
+      <div className="ddnz-home min-h-screen hb-page-shell font-sans text-slate-900">
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
-        <Navbar />
+        <SourcingHomepageNav showFreightExecutor />
 
         {/* Block 1: Hero Banner */}
-        <section className="relative pt-24 bg-gradient-to-br from-[var(--hb-navy-deep)] to-[var(--hb-blue)] text-white overflow-hidden">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[var(--hb-navy-deep)] to-[var(--hb-blue)] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
               <div className="md:col-span-7 lg:col-span-6">
@@ -1747,12 +1747,12 @@ export default function ServiceDetail() {
     };
 
     return (
-      <div className="hb-page-shell min-h-screen font-sans text-slate-900">
+      <div className="ddnz-home hb-page-shell min-h-screen font-sans text-slate-900">
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
-        <Navbar />
+        <SourcingHomepageNav showFreightExecutor />
 
         {/* The FBA template uses the shared Heaven Born navy / amber conversion system. */}
-        <section className="relative pt-24 bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white overflow-hidden">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
               <div className="md:col-span-7 lg:col-span-6">
@@ -2597,12 +2597,12 @@ export default function ServiceDetail() {
     };
 
     return (
-      <div className="min-h-screen hb-page-shell font-sans text-slate-900">
+      <div className="ddnz-home min-h-screen hb-page-shell font-sans text-slate-900">
         <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
-        <Navbar />
+        <SourcingHomepageNav showFreightExecutor />
 
         {/* 1. Hero Banner */}
-        <section className="relative pt-24 bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white overflow-hidden">
+        <section className="relative overflow-hidden bg-gradient-to-br from-[#0b1c2c] via-[#10283d] to-[#1d5274] text-white">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
               <div className="md:col-span-7 lg:col-span-6">
@@ -3088,7 +3088,7 @@ export default function ServiceDetail() {
   ];
 
   return (
-    <div className="min-h-screen hb-page-shell font-sans text-slate-900">
+    <div className="ddnz-home min-h-screen hb-page-shell font-sans text-slate-900">
       <SEO title={currentSEO?.title} description={currentSEO?.desc} keywords={currentSEO?.keywords} />
       <SchemaMarkup 
         type="Service" 
@@ -3098,10 +3098,10 @@ export default function ServiceDetail() {
           serviceType: 'Freight Forwarding and Global Supply Chain'
         }} 
       />
-      <Navbar />
+      <SourcingHomepageNav showFreightExecutor />
 
       {/* Hero Block */}
-      <section className={`relative pt-24 bg-gradient-to-br ${config.bgGrad} text-white overflow-hidden`}>
+      <section className={`relative overflow-hidden bg-gradient-to-br ${config.bgGrad} text-white`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid min-h-[34rem] items-center gap-10 py-12 md:grid-cols-12 md:py-16">
             <div className="md:col-span-7 lg:col-span-6">

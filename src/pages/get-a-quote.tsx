@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import Navbar from '../components/Navbar';
 import GetAQuote from '../components/GetAQuote';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
+import TradeSupportInquiry from '../components/TradeSupportInquiry';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
@@ -11,12 +12,14 @@ import { useLanguage } from '../contexts/LanguageContext';
 export default function GetAQuotePage() {
   const { language } = useLanguage();
   const location = useLocation();
+  const leadGoal = new URLSearchParams(location.search).get('leadGoal') || 'Freight Export';
+  const isTradeSupport = leadGoal === 'Product Sourcing' || leadGoal === 'Supplier Inspection & Consolidation';
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname]);
 
-  const seoTitle = language === 'zh' 
+  const freightSeoTitle = language === 'zh'
     ? '获取专属国际货运报价与航线方案 | 华正邦泰国际货运'
     : language === 'ru'
     ? 'Получить расчет стоимости доставки и логистики | Heaven Born'
@@ -28,7 +31,7 @@ export default function GetAQuotePage() {
     ? 'احصل على عرض سعر للشحن وخطة المسار | Heaven Born'
     : 'Get a Freight Quote & Route Plan | Heaven Born';
 
-  const seoDesc = language === 'zh'
+  const freightSeoDesc = language === 'zh'
     ? '立即提交您的货物尺寸和目的地，华正邦泰资深供应链专家将在 24 小时内为您精算多套最优国际货运与双清包税报价方案。'
     : language === 'ru'
     ? 'Заполните форму, и наши специалисты подготовят расчет стоимости доставки груза из Китая в течение 24 часов.'
@@ -40,16 +43,29 @@ export default function GetAQuotePage() {
     ? 'أدخل تفاصيل شحنتكم للحصول على عرض سعر وخطة مسار مخصصة خلال 24 ساعة.'
     : 'Get an instant, customized shipping quote and route analysis. Our senior logistics specialists will build your custom logistics plan within 24h.';
 
+  const tradeSeo = {
+    en: { title: leadGoal === 'Product Sourcing' ? 'China Product Sourcing Brief | DDNZ Global' : 'China Inspection & Consolidation Brief | DDNZ Global', description: 'Send a focused China sourcing, inspection or consolidation brief to DDNZ Global. A Guangzhou-based team will review your product, supplier and export scope.' },
+    zh: { title: leadGoal === 'Product Sourcing' ? '提交中国采购需求 | DDNZ Global' : '提交验货与集货需求 | DDNZ Global', description: '向 DDNZ Global 提交中国采购、验货或集货需求，由广州团队审核产品、供应商和出口范围。' },
+    ru: { title: 'Заявка на закупку и инспекцию в Китае | DDNZ Global', description: 'Отправьте заявку на поиск поставщиков, инспекцию или консолидацию в Китае.' },
+    fr: { title: 'Brief sourcing, inspection et consolidation en Chine | DDNZ Global', description: 'Envoyez votre besoin de sourcing, inspection ou consolidation à notre équipe de Guangzhou.' },
+    es: { title: 'Solicitud de compra, inspección y consolidación en China | DDNZ Global', description: 'Envíe su solicitud de compra, inspección o consolidación al equipo de DDNZ Global en Guangzhou.' },
+    ar: { title: 'طلب التوريد والفحص والتجميع في الصين | DDNZ Global', description: 'أرسل طلب التوريد أو الفحص أو التجميع إلى فريق DDNZ Global في قوانغتشو.' },
+  }[language];
+
   return (
-    <div className="min-h-screen bg-slate-50 font-sans text-slate-900 overflow-x-hidden">
-      <SEO title={seoTitle} description={seoDesc} />
-      <Navbar />
-      <main className="pt-20 md:pt-24">
-        <GetAQuote />
+    <div className={`${isTradeSupport ? 'bg-[#fffdf9]' : 'bg-slate-50'} ddnz-home min-h-screen overflow-x-hidden font-sans text-slate-900`}>
+      <SEO
+        title={isTradeSupport ? tradeSeo.title : freightSeoTitle}
+        description={isTradeSupport ? tradeSeo.description : freightSeoDesc}
+        canonicalPath={location.pathname}
+      />
+      <SourcingHomepageNav showFreightExecutor={!isTradeSupport} />
+      <main>
+        {isTradeSupport ? <TradeSupportInquiry /> : <GetAQuote />}
       </main>
       <Footer />
-      <WhatsAppFloat />
-      <ScrollToTop />
+      {!isTradeSupport ? <WhatsAppFloat /> : null}
+      {!isTradeSupport ? <ScrollToTop /> : null}
     </div>
   );
 }

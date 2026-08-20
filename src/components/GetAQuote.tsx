@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Info, 
@@ -34,7 +34,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Title: '预估货物重量与体积',
     step3Desc: '拖动滑块或一键选择常见货量预设，实时反馈规格测算',
     step4Title: '留下联系方式获取精确报价',
-    step4Desc: '留下联系方式，我们会根据路线、货物和服务范围核对报价条件',
+    step4Desc: '只需填写姓名，并留下邮箱或电话 / WhatsApp 其中一种联系方式',
     
     origin: '始发港/城市',
     originPlaceholder: '输入或选择始发港/城市，如：广州、深圳、上海...',
@@ -59,10 +59,13 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     summaryRoute: '运输航线',
     summaryCargo: '预估规格',
     
-    phonePlaceholder: '您的电话 / 微信 / WhatsApp (必填)',
+    phonePlaceholder: '电话 / 微信 / WhatsApp（与邮箱二选一）',
     namePlaceholder: '您的姓名 / 公司名称 (必填)',
-    emailPlaceholder: '您的企业邮箱 (必填)',
+    emailPlaceholder: '企业邮箱（与电话二选一）',
     notesPlaceholder: '选填：提供品名、特殊包装、时效要求等，报价更精准...',
+    contactHint: '邮箱或电话 / WhatsApp 填写一项即可',
+    contactRequired: '请至少填写邮箱或电话 / WhatsApp 中的一项',
+    optionalDetails: '补充货物信息（选填）',
     
     seaDesc: '高性价比，适合大宗散货/整箱重载运输',
     airDesc: '极致时效，适合高附加值、紧急空运直飞',
@@ -85,7 +88,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Title: 'Estimated Weight & Volume',
     step3Desc: 'Drag the sliders or select a quick preset for responsive measurements',
     step4Title: 'Get Your Personalized Quote',
-    step4Desc: 'Our senior specialists will build your custom logistics plan within 24h',
+    step4Desc: 'Enter your name and either an email or phone / WhatsApp contact',
     
     origin: 'Origin Port / City',
     originPlaceholder: 'Enter or select origin port, e.g., Guangzhou, Shenzhen...',
@@ -110,10 +113,13 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     summaryRoute: 'Route Details',
     summaryCargo: 'Cargo Size',
     
-    phonePlaceholder: 'Phone / WhatsApp / WeChat (Required)',
+    phonePlaceholder: 'Phone / WhatsApp / WeChat (email alternative)',
     namePlaceholder: 'Your Name / Company (Required)',
-    emailPlaceholder: 'Corporate Email (Required)',
+    emailPlaceholder: 'Corporate Email (phone alternative)',
     notesPlaceholder: 'Optional: Product type, battery contents, packing needs, etc.',
+    contactHint: 'Provide either an email or phone / WhatsApp contact',
+    contactRequired: 'Please provide either an email or phone / WhatsApp contact',
+    optionalDetails: 'Add cargo details (optional)',
     
     seaDesc: 'Cost-effective, best for bulk LCL & FCL logistics',
     airDesc: 'Max speed, perfect for high-value & urgent goods',
@@ -136,7 +142,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Title: 'Вес и объем груза',
     step3Desc: 'Используйте ползунки или пресеты для точной оценки',
     step4Title: 'Получить индивидуальный расчет',
-    step4Desc: 'Наши эксперты составят коммерческое предложение за 24 часа',
+    step4Desc: 'Укажите имя и один способ связи: e-mail или телефон / мессенджер',
     
     origin: 'Пункт отправления',
     originPlaceholder: 'Введите или выберите пункт отправления, например, Гуанчжоу...',
@@ -161,10 +167,13 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     summaryRoute: 'Детали маршрута',
     summaryCargo: 'Параметры груза',
     
-    phonePlaceholder: 'Телефон / WhatsApp / Telegram (Обязательно)',
+    phonePlaceholder: 'Телефон / WhatsApp / Telegram (или e-mail)',
     namePlaceholder: 'Ваше имя / Компания (Обязательно)',
-    emailPlaceholder: 'Рабочий Email (Обязательно)',
+    emailPlaceholder: 'Рабочий e-mail (или телефон)',
     notesPlaceholder: 'Дополнительно: Характер груза, сроки, особые условия...',
+    contactHint: 'Достаточно указать e-mail или телефон / мессенджер',
+    contactRequired: 'Укажите e-mail или телефон / мессенджер',
+    optionalDetails: 'Добавить сведения о грузе (необязательно)',
     
     seaDesc: 'Экономичная доставка сборных и полных контейнеров',
     airDesc: 'Максимальная скорость для ценных и срочных грузов',
@@ -187,7 +196,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Title: 'Poids & Volume du Cargo',
     step3Desc: 'Ajustez les curseurs ou choisissez un modèle prédéfini',
     step4Title: 'Obtenir votre devis personnalisé',
-    step4Desc: 'Nos experts concevront votre plan logistique sous 24h',
+    step4Desc: 'Indiquez votre nom et un moyen de contact : e-mail ou téléphone / WhatsApp',
     
     origin: 'Port d\'origine / Ville',
     originPlaceholder: 'Saisissez ou sélectionnez l\'origine, ex: Guangzhou, Shenzhen...',
@@ -212,10 +221,13 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     summaryRoute: 'Détails de l\'itinéraire',
     summaryCargo: 'Taille du cargo',
     
-    phonePlaceholder: 'Téléphone / WhatsApp / WeChat (Requis)',
+    phonePlaceholder: 'Téléphone / WhatsApp / WeChat (ou e-mail)',
     namePlaceholder: 'Votre nom / Entreprise (Requis)',
-    emailPlaceholder: 'E-mail professionnel (Requis)',
+    emailPlaceholder: 'E-mail professionnel (ou téléphone)',
     notesPlaceholder: 'Optionnel : Nature de marchandise, emballage, urgence...',
+    contactHint: 'Un e-mail ou un téléphone / WhatsApp suffit',
+    contactRequired: 'Veuillez indiquer un e-mail ou un téléphone / WhatsApp',
+    optionalDetails: 'Ajouter les détails du fret (facultatif)',
     
     seaDesc: 'Économique, idéal pour groupages et conteneurs pleins',
     airDesc: 'Vitesse maximale, idéal pour haute valeur ou urgences',
@@ -234,14 +246,15 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step1Title: 'Elija el modo de transporte', step1Desc: 'Seleccione el canal; prepararemos la mejor ruta y tarifa',
     step2Title: 'Origen y destino', step2Desc: 'Tránsito y despacho aduanero desde nuestra sede de Guangzhou',
     step3Title: 'Peso y volumen estimados', step3Desc: 'Use los controles o elija una carga predefinida para calcular medidas',
-    step4Title: 'Obtenga su cotización personalizada', step4Desc: 'Nuestros especialistas prepararán su plan logístico en 24 horas',
+    step4Title: 'Obtenga su cotización personalizada', step4Desc: 'Indique su nombre y un medio de contacto: correo o teléfono / WhatsApp',
     origin: 'Puerto / ciudad de origen', originPlaceholder: 'Escriba o seleccione el origen, p. ej., Guangzhou, Shenzhen...', popularOrigins: 'Orígenes frecuentes',
     destination: 'Puerto / país de destino', destinationPlaceholder: 'Escriba el país, p. ej., México, Brasil, España...', popularDests: 'Destinos frecuentes',
     weight: 'Peso estimado (KG)', volume: 'Volumen estimado (CBM)', presetLabel: 'Cargas predefinidas',
     presetSmall: 'Muestra / paquete exprés (<100 kg)', presetMedium: 'Carga LCL / paletizada (100-1500 kg)', presetLarge: 'Contenedor FCL / envío comercial (>1500 kg)',
     back: 'Atrás', next: 'Siguiente paso', submitQuote: 'Obtener cotización y ruta',
     summaryTitle: 'Resumen de su solicitud', summaryMode: 'Modo de transporte', summaryRoute: 'Detalles de la ruta', summaryCargo: 'Tamaño de la carga',
-    phonePlaceholder: 'Teléfono / WhatsApp (obligatorio)', namePlaceholder: 'Nombre / empresa (obligatorio)', emailPlaceholder: 'Correo corporativo (obligatorio)', notesPlaceholder: 'Opcional: producto, baterías, embalaje u otros requisitos.',
+    phonePlaceholder: 'Teléfono / WhatsApp (o correo)', namePlaceholder: 'Nombre / empresa (obligatorio)', emailPlaceholder: 'Correo corporativo (o teléfono)', notesPlaceholder: 'Opcional: producto, baterías, embalaje u otros requisitos.',
+    contactHint: 'Basta con indicar correo o teléfono / WhatsApp', contactRequired: 'Indique un correo o teléfono / WhatsApp', optionalDetails: 'Añadir detalles de la carga (opcional)',
     seaDesc: 'Económico para carga LCL y FCL', airDesc: 'Máxima velocidad para carga urgente y de alto valor', landDesc: 'Transporte terrestre directo para Asia Central y Rusia', wareDesc: 'Embalaje de madera, almacenamiento y cross-docking',
     mode: 'Modo de transporte', industry: 'Industria / categoría de producto', cargoDesc: 'Detalles y requisitos de la carga', submitting: 'Enviando solicitud...', successHeading: '¡Solicitud enviada!', successText: 'Hemos recibido su solicitud. Un especialista responderá a su correo corporativo en 24 horas.', sendAnother: 'Enviar otra solicitud'
   },
@@ -249,14 +262,15 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step1Title: 'اختر وسيلة النقل', step1Desc: 'اختر قناة النقل وسنقدم أفضل مسار وتسعير',
     step2Title: 'المنشأ والوجهة', step2Desc: 'عبور وتخليص جمركي من مقرنا في قوانغتشو',
     step3Title: 'الوزن والحجم التقديريان', step3Desc: 'استخدم أشرطة التمرير أو اختر حمولة مسبقة لتقدير القياسات',
-    step4Title: 'احصل على عرض سعر مخصص', step4Desc: 'سيبني خبراؤنا خطة الشحن الخاصة بكم خلال 24 ساعة',
+    step4Title: 'احصل على عرض سعر مخصص', step4Desc: 'أدخل الاسم ووسيلة تواصل واحدة: البريد أو الهاتف / واتساب',
     origin: 'ميناء / مدينة المنشأ', originPlaceholder: 'أدخل أو اختر المنشأ، مثل قوانغتشو أو شنتشن...', popularOrigins: 'منافذ منشأ شائعة',
     destination: 'ميناء / دولة الوجهة', destinationPlaceholder: 'أدخل الدولة، مثل السعودية أو الإمارات أو المكسيك...', popularDests: 'وجهات شائعة',
     weight: 'الوزن التقديري (كجم)', volume: 'الحجم التقديري (CBM)', presetLabel: 'حمولات سريعة الإعداد',
     presetSmall: 'عينة / طرد سريع (أقل من 100 كجم)', presetMedium: 'شحنة مجمعة LCL / منصات (100-1500 كجم)', presetLarge: 'حاوية كاملة FCL / شحنة تجارية (أكثر من 1500 كجم)',
     back: 'رجوع', next: 'الخطوة التالية', submitQuote: 'احصل على عرض سعر ومسار',
     summaryTitle: 'ملخص طلبكم', summaryMode: 'وسيلة النقل', summaryRoute: 'تفاصيل المسار', summaryCargo: 'حجم الشحنة',
-    phonePlaceholder: 'الهاتف / واتساب (مطلوب)', namePlaceholder: 'الاسم / الشركة (مطلوب)', emailPlaceholder: 'البريد الإلكتروني للشركة (مطلوب)', notesPlaceholder: 'اختياري: نوع المنتج أو البطاريات أو التغليف أو المتطلبات الخاصة.',
+    phonePlaceholder: 'الهاتف / واتساب (أو البريد)', namePlaceholder: 'الاسم / الشركة (مطلوب)', emailPlaceholder: 'البريد الإلكتروني للشركة (أو الهاتف)', notesPlaceholder: 'اختياري: نوع المنتج أو البطاريات أو التغليف أو المتطلبات الخاصة.',
+    contactHint: 'يكفي إدخال البريد أو الهاتف / واتساب', contactRequired: 'يرجى إدخال البريد أو الهاتف / واتساب', optionalDetails: 'إضافة تفاصيل الشحنة (اختياري)',
     seaDesc: 'اقتصادي للشحنات المجمعة والحاويات الكاملة', airDesc: 'أسرع خيار للبضائع العاجلة وعالية القيمة', landDesc: 'نقل بري مباشر لآسيا الوسطى وروسيا', wareDesc: 'تغليف خشبي وتخزين وتجميع وشحن متقاطع',
     mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيرد عليكم أحد خبراء اللوجستيات عبر البريد خلال 24 ساعة.', sendAnother: 'إرسال طلب آخر'
   }
@@ -394,6 +408,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const [phone, setPhone] = useState('');
   const [product, setProduct] = useState('Other');
   const [notes, setNotes] = useState('');
+  const [contactError, setContactError] = useState(false);
 
   useEffect(() => {
     if (attributedCategory) {
@@ -407,10 +422,32 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     return funnelTranslations[lang]?.[key] || funnelTranslations['en']?.[key] || key;
   };
 
+  const handleQuoteSubmit = (event: FormEvent<HTMLFormElement>) => {
+    if (!email.trim() && !phone.trim()) {
+      event.preventDefault();
+      setContactError(true);
+      return;
+    }
+
+    setContactError(false);
+    handleSubmit(event);
+  };
+
   // Tracking and local success state
   useEffect(() => {
     if (state.succeeded) {
       trackEvent('quote_form_submit', {
+        event_category: 'conversion',
+        form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+        service: selectedService,
+        lead_goal: leadGoal,
+        product_category: product,
+        lead_source: leadSource,
+        utm_source: utmSource,
+        utm_campaign: utmCampaign,
+        utm_content: utmContent,
+      });
+      trackEvent('rfq_submit_success', {
         event_category: 'conversion',
         form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
         service: selectedService,
@@ -1060,7 +1097,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             </div>
                           </div>
 
-                          <form id="quote-form" onSubmit={handleSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
+                          <form id="quote-form" onSubmit={handleQuoteSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
                             {/* Hidden inputs to feed Formspree the multi-step details */}
                             <input type="hidden" name="Inquiry_Type" value="Interactive Funnel (Lead Rate Optimizer)" />
                             <input type="hidden" name="Selected_Service" value={selectedService} />
@@ -1102,10 +1139,18 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   id="quote-contact-email"
                                   type="email"
                                   name="email"
-                                  required
                                   value={email}
-                                  onChange={(e) => setEmail(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
+                                  onChange={(e) => {
+                                    setEmail(e.target.value);
+                                    if (e.target.value.trim()) setContactError(false);
+                                  }}
+                                  aria-describedby="quote-contact-guidance"
+                                  aria-invalid={contactError}
+                                  className={`w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition-all placeholder-slate-400 font-bold text-base ${
+                                    contactError
+                                      ? 'border-red-400 focus:border-red-500 focus:ring-red-100'
+                                      : 'border-slate-200 focus:border-[#0b4f8a] focus:ring-sky-100'
+                                  }`}
                                   placeholder={ft('emailPlaceholder')}
                                 />
                                 <ValidationError prefix="Email" field="email" errors={state.errors} className="text-red-500 text-xs mt-1" />
@@ -1118,49 +1163,71 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   id="quote-contact-phone"
                                   type="text"
                                   name="phone"
-                                  required
                                   value={phone}
-                                  onChange={(e) => setPhone(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none transition-all placeholder-slate-400 font-bold text-base"
+                                  onChange={(e) => {
+                                    setPhone(e.target.value);
+                                    if (e.target.value.trim()) setContactError(false);
+                                  }}
+                                  aria-describedby="quote-contact-guidance"
+                                  aria-invalid={contactError}
+                                  className={`w-full px-4 py-3 rounded-xl border focus:ring-2 outline-none transition-all placeholder-slate-400 font-bold text-base ${
+                                    contactError
+                                      ? 'border-red-400 focus:border-red-500 focus:ring-red-100'
+                                      : 'border-slate-200 focus:border-[#0b4f8a] focus:ring-sky-100'
+                                  }`}
                                   placeholder={ft('phonePlaceholder')}
                                 />
                                 <ValidationError prefix="Phone" field="phone" errors={state.errors} className="text-red-500 text-xs mt-1" />
                               </div>
 
-                              {/* Industry Category */}
-                              <div>
-                                <label htmlFor="quote-industry" className="sr-only">{t('get_a_quote.industry') || 'Industry category'}</label>
-                                <select
-                                  id="quote-industry"
-                                  name="industry"
-                                  required
-                                  value={product}
-                                  onChange={(e) => setProduct(e.target.value)}
-                                  className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none bg-white font-bold text-base transition-all"
-                                >
-                                  <option value="Commercial Kitchen Equipment">Commercial Kitchen Equipment</option>
-                                  <option value="Outdoor Products">Outdoor Products</option>
-                                  <option value="Commercial Furniture">{t('get_a_quote.indFurn') || 'Commercial Furniture'}</option>
-                                  <option value="New Energy / ESS">{t('get_a_quote.indNev') || 'New Energy / ESS'}</option>
-                                  <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject') || 'Project Cargo / Heavy Lift'}</option>
-                                  <option value="Other">{t('get_a_quote.indOther') || 'Other / General'}</option>
-                                </select>
-                              </div>
                             </div>
 
-                            {/* Additional Cargo Notes */}
-                            <div>
-                              <label htmlFor="quote-cargo-notes" className="sr-only">{ft('notesPlaceholder')}</label>
-                              <textarea
-                                id="quote-cargo-notes"
-                                name="message"
-                                rows={2}
-                                value={notes}
-                                onChange={(e) => setNotes(e.target.value)}
-                                className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none resize-none transition-all placeholder-slate-400 font-bold text-base"
-                                placeholder={ft('notesPlaceholder')}
-                              />
+                            <div id="quote-contact-guidance" className="-mt-1 text-xs font-semibold">
+                              {contactError ? (
+                                <p role="alert" className="text-red-600">{ft('contactRequired')}</p>
+                              ) : (
+                                <p className="text-slate-500">{ft('contactHint')}</p>
+                              )}
                             </div>
+
+                            <details className="group rounded-xl border border-slate-200 bg-slate-50/70 open:bg-white">
+                              <summary className="cursor-pointer list-none px-4 py-3 text-sm font-extrabold text-slate-700 flex items-center justify-between gap-3">
+                                {ft('optionalDetails')}
+                                <ChevronRight className="h-4 w-4 text-slate-400 transition-transform group-open:rotate-90" aria-hidden="true" />
+                              </summary>
+                              <div className="grid grid-cols-1 gap-4 border-t border-slate-200 p-4">
+                                <div>
+                                  <label htmlFor="quote-industry" className="sr-only">{t('get_a_quote.industry') || 'Industry category'}</label>
+                                  <select
+                                    id="quote-industry"
+                                    name="industry"
+                                    value={product}
+                                    onChange={(e) => setProduct(e.target.value)}
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none bg-white font-bold text-base transition-all"
+                                  >
+                                    <option value="Commercial Kitchen Equipment">Commercial Kitchen Equipment</option>
+                                    <option value="Outdoor Products">Outdoor Products</option>
+                                    <option value="Commercial Furniture">{t('get_a_quote.indFurn') || 'Commercial Furniture'}</option>
+                                    <option value="New Energy / ESS">{t('get_a_quote.indNev') || 'New Energy / ESS'}</option>
+                                    <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject') || 'Project Cargo / Heavy Lift'}</option>
+                                    <option value="Other">{t('get_a_quote.indOther') || 'Other / General'}</option>
+                                  </select>
+                                </div>
+
+                                <div>
+                                  <label htmlFor="quote-cargo-notes" className="sr-only">{ft('notesPlaceholder')}</label>
+                                  <textarea
+                                    id="quote-cargo-notes"
+                                    name="message"
+                                    rows={2}
+                                    value={notes}
+                                    onChange={(e) => setNotes(e.target.value)}
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none resize-none transition-all placeholder-slate-400 font-bold text-base"
+                                    placeholder={ft('notesPlaceholder')}
+                                  />
+                                </div>
+                              </div>
+                            </details>
 
                             {/* Live Submission Button */}
                             <div className="pt-2">

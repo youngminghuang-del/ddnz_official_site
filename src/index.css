@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
@@ -25,13 +24,150 @@ body {
   background: var(--hb-surface);
 }
 
+.ddnz-skip-link {
+  position: fixed;
+  inset-block-start: 0.75rem;
+  inset-inline-start: 0.75rem;
+  z-index: 100;
+  min-height: 2.75rem;
+  transform: translateY(-160%);
+  border-radius: 0.75rem;
+  background: #ffffff;
+  color: #10243f;
+  padding: 0.75rem 1rem;
+  font-weight: 800;
+  box-shadow: 0 12px 30px rgba(16, 36, 63, 0.2);
+  transition: transform 160ms ease-out;
+}
+
+.ddnz-skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid #763c9c;
+  outline-offset: 2px;
+}
+
+#main-content {
+  scroll-margin-top: 7rem;
+}
+
+.ddnz-home {
+  --ddnz-ink: #10243f;
+  --ddnz-purple: #763c9c;
+  --ddnz-purple-strong: #632b89;
+  --ddnz-purple-soft: #f7f0fb;
+  --ddnz-coral: #c94f2f;
+  --ddnz-coral-strong: #b94625;
+  --ddnz-coral-soft: #fff2ed;
+  --ddnz-action: var(--ddnz-coral);
+  --ddnz-surface: #fffdf9;
+  --ddnz-surface-muted: #f3f5f7;
+  --ddnz-line: #dce3ea;
+  --ddnz-radius-sm: 0.75rem;
+  --ddnz-radius-md: 1rem;
+  --ddnz-radius-lg: 1.5rem;
+  --ddnz-shadow-soft: 0 18px 50px rgba(16, 36, 63, 0.08);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+.ddnz-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-inline-start: 2px solid var(--ddnz-coral);
+  padding-inline-start: 0.75rem;
+  color: var(--ddnz-purple-strong);
+  font-size: 0.75rem;
+  font-weight: 850;
+  line-height: 1.4;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.ddnz-eyebrow-dark {
+  border-inline-start-color: #f08c65;
+  color: #f6b69c;
+}
+
+.ddnz-button {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  border-radius: var(--ddnz-radius-sm);
+  padding: 0.75rem 1.375rem;
+  font-size: 0.875rem;
+  font-weight: 800;
+  line-height: 1.25rem;
+  text-align: center;
+  transition: background-color 180ms ease-out, border-color 180ms ease-out, color 180ms ease-out, transform 180ms ease-out;
+}
+
+.ddnz-button:hover {
+  transform: translateY(-1px);
+}
+
+.ddnz-button:focus-visible {
+  outline: 2px solid var(--ddnz-purple);
+  outline-offset: 3px;
+}
+
+.ddnz-button-primary {
+  background: var(--ddnz-action);
+  color: #fff;
+}
+
+.ddnz-button-primary:hover {
+  background: var(--ddnz-coral-strong);
+}
+
+.ddnz-button-secondary {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+}
+
+.ddnz-card {
+  border: 1px solid var(--ddnz-line);
+  border-radius: var(--ddnz-radius-md);
+  background: #fff;
+  box-shadow: 0 1px 2px rgba(16, 36, 63, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ddnz-button:hover {
+    transform: none;
+  }
+}
+
+.ddnz-home button,
+.ddnz-home a,
+.ddnz-home select {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ddnz-home summary::marker {
+  content: '';
+}
+
+.ddnz-home :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid var(--ddnz-purple);
+  outline-offset: 3px;
+}
+
+.hb-region-shell :is(a, button, input, select, textarea, summary):focus-visible {
+  outline: 3px solid #f59e0b;
+  outline-offset: 3px;
+}
+
 :lang(ar) {
   font-family: 'Noto Sans Arabic', 'Tahoma', sans-serif;
 }
 
 /* Shared B2B surface tokens. Keep the action colour reserved for real conversion actions. */
 .hb-page-shell {
-  background: var(--hb-surface);
+  background: var(--ddnz-surface-muted, var(--hb-surface));
 }
 
 .hb-region-shell {
@@ -42,21 +178,35 @@ body {
 }
 
 .hb-section-title {
-  color: var(--hb-ink);
-  font-weight: 800;
-  letter-spacing: -0.035em;
+  color: var(--ddnz-ink, var(--hb-ink));
+  font-weight: 850;
+  letter-spacing: -0.04em;
 }
 
 .hb-action {
   background: var(--hb-amber);
   color: #fff;
+  min-height: 3rem;
+  border-radius: var(--ddnz-radius-sm, var(--hb-radius));
+  font-weight: 800;
+  transition: background-color 180ms ease-out, transform 180ms ease-out;
 }
 
 .hb-action:hover {
   background: var(--hb-amber-strong);
+  transform: translateY(-1px);
+}
+
+.hb-action:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .hb-action:hover {
+    transform: none;
+  }
+
   *, *::before, *::after {
     scroll-behavior: auto !important;
     transition-duration: 0.01ms !important;

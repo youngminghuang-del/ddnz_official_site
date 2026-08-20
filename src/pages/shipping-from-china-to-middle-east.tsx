@@ -1,13 +1,14 @@
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
-import Navbar from '../components/Navbar';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
+import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
@@ -1395,7 +1396,7 @@ export default function MiddleEastRoute() {
   })();
 
   return (
-    <div className="min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
       <SEO title={countrySeo.title} description={countrySeo.description} />
       <SchemaMarkup
         type="Service"
@@ -1407,20 +1408,9 @@ export default function MiddleEastRoute() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SchemaMarkup
-        type="BreadcrumbList"
-        data={{
-          items: [
-            { name: activeLang === 'zh' ? '首页' : 'Home', url: 'https://www.ddnzglobal.com/' },
-            { name: activeLang === 'zh' ? '按区域运输' : 'Middle East', url: `https://www.ddnzglobal.com${location.pathname.match(/^\/(zh-cn|ru|fr|es|ar)/)?.[0] || ''}/shipping-from-china-to-middle-east` },
-            { name: selectedCountryLabel, url: `https://www.ddnzglobal.com${location.pathname}` }
-          ]
-        }}
-      />
-      
-      <Navbar />
+      <SourcingHomepageNav showFreightExecutor />
 
-      <main className="pt-20 md:pt-24">
+      <main>
         
         {/* Section 1: Hero Segment */}
         <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
@@ -1429,6 +1419,8 @@ export default function MiddleEastRoute() {
             <img 
               src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2000"
               alt="Middle East Container Terminal" 
+              width="2000"
+              height="1125"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -1465,7 +1457,7 @@ export default function MiddleEastRoute() {
                             key={country}
                             type="button"
                             onClick={() => handleCountryTabChange(country)}
-                            className={`px-3 py-1.5 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
+                            className={`min-h-11 px-3 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
                               isActive
                                 ? 'bg-[#d97706] text-white shadow-md shadow-[#d97706]/15'
                                 : 'text-slate-300 hover:bg-white/5 hover:text-white'
@@ -1573,6 +1565,8 @@ export default function MiddleEastRoute() {
             </div>
           </div>
         </section>
+
+        <MarketSourcingHandoff destination={selectedCountryLabel} />
 
         {/* Section 2: Red Sea Operational Reality Update (Market Insight Box) */}
         <section className="py-12 bg-[#081E39] border-y border-white/[0.05]">
@@ -1794,13 +1788,13 @@ export default function MiddleEastRoute() {
                       <div className="flex border-b border-white/[0.08] pb-4 mb-6 gap-4">
                         <button
                           onClick={() => setSpecActiveTab('tab1')}
-                          className={`flex-1 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab1' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab1' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
                         >
                           {spec.tab1Title}
                         </button>
                         <button
                           onClick={() => setSpecActiveTab('tab2')}
-                          className={`flex-1 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab2' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab2' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
                         >
                           {spec.tab2Title}
                         </button>
@@ -1931,7 +1925,7 @@ export default function MiddleEastRoute() {
                   >
                     <button
                       onClick={() => setActiveFaq(isOpen ? null : faq.id)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left focus:outline-none"
+                      className="w-full px-6 py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-inset"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.title}
