@@ -1,0 +1,45 @@
+name: Pull request validation
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+concurrency:
+  group: pr-validation-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Type-check
+        run: npm run lint
+
+      - name: Test Notion publication guards
+        run: npm run test:notion-guards
+
+      - name: Build application from the committed content snapshot
+        run: npm exec -- vite build
+
+      - name: Generate static routes and sitemap
+        run: npm exec -- tsx scripts/generate-static-pages.ts
+
+      - name: Audit generated SEO output
+        run: node scripts/audit-seo-output.mjs
