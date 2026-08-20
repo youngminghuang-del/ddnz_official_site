@@ -5,6 +5,12 @@ import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
 import { appendAttribution } from '../lib/attribution';
 import { trackEvent } from '../lib/utils';
+import notionBlogPosts from '../data/notionBlogData.json';
+import {
+  articleLanguageSwitchPath,
+  findArticleByRoute,
+} from '../lib/notionArticleRouting';
+import type { BlogPost } from '../types/content';
 
 const languageLabels: Record<Language, string> = {
   en: 'EN',
@@ -221,11 +227,29 @@ export default function SourcingHomepageNav({
       .replace(/^\/(ru|fr|es|ar)(?=\/|$)/, '');
     if (!suffix) suffix = '/';
     const nextPrefix = prefixByLanguage[nextLanguage];
+    let destination = `${nextPrefix}${suffix === '/' ? '' : suffix}` || '/';
+
+    const blogMatch = suffix.match(/^\/blog\/([^/]+)\/?$/);
+    if (blogMatch) {
+      const currentArticle = findArticleByRoute(
+        notionBlogPosts as BlogPost[],
+        language,
+        decodeURIComponent(blogMatch[1]),
+      );
+      if (currentArticle) {
+        destination = articleLanguageSwitchPath(
+          currentArticle,
+          notionBlogPosts as BlogPost[],
+          nextLanguage,
+        );
+      }
+    }
+
     setLanguage(nextLanguage);
     setMobileOpen(false);
     setMobileSection(null);
     closeDesktopDropdown();
-    navigate(`${nextPrefix}${suffix === '/' ? '' : suffix}${location.search}${location.hash}` || '/');
+    navigate(`${destination}${location.search}${blogMatch ? '' : location.hash}`);
   };
 
   const closeMobile = () => {

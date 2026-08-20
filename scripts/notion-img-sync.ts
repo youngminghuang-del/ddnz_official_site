@@ -71,11 +71,23 @@ export function generateSlug(title: string, fallbackId: string): string {
 }
 
 /**
- * Checks if URL is a Notion-hosted or AWS S3 temporal image.
+ * Checks whether a remote image is owned by Notion's image delivery path and
+ * therefore must be copied into the production build. This includes both
+ * signed uploads and Notion's stable stock page-cover URLs.
  */
 export function isNotionTemporalUrl(url: string): boolean {
   if (!url) return false;
-  return url.includes("secure.notion-static.com") || url.includes("amazonaws.com");
+  try {
+    const parsed = new URL(url);
+    const hostname = parsed.hostname.toLowerCase();
+    return (
+      hostname === "secure.notion-static.com" ||
+      hostname.endsWith(".amazonaws.com") ||
+      (hostname === "app.notion.com" && parsed.pathname.startsWith("/images/page-cover/"))
+    );
+  } catch {
+    return false;
+  }
 }
 
 /**

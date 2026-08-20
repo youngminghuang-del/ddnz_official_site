@@ -2,6 +2,8 @@ import { ArrowRight, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import notionBlogPosts from '../data/notionBlogData.json';
+import { articleRoutePath, normalizeArticleLocale } from '../lib/notionArticleRouting';
+import type { BlogPost } from '../types/content';
 
 type InterfaceCopy = {
   title: string;
@@ -58,7 +60,7 @@ const copy: Record<string, InterfaceCopy> = {
 
 const languageNames: Record<string, string> = {
   en: 'English',
-  zh: '中文',
+  'zh-cn': '中文',
   ru: 'Русский',
   fr: 'Français',
   es: 'Español',
@@ -77,14 +79,15 @@ export default function Insights() {
   const { language } = useLanguage();
   const content = copy[language] || copy.en;
   const prefix = prefixByLanguage[language] || '';
-  const posts = notionBlogPosts as Array<Record<string, any>>;
+  const posts = notionBlogPosts as BlogPost[];
 
-  const preferredPosts = posts.filter((post) => post.language === language);
-  const otherPosts = posts.filter((post) => post.language !== language);
+  const currentArticleLocale = normalizeArticleLocale(language);
+  const preferredPosts = posts.filter((post) => normalizeArticleLocale(post.language) === currentArticleLocale);
+  const otherPosts = posts.filter((post) => normalizeArticleLocale(post.language) !== currentArticleLocale);
   const displayPosts = [...preferredPosts.slice(0, 3), ...otherPosts].slice(0, 6);
   const [featuredPost, ...secondaryPosts] = displayPosts;
 
-  const blogPath = (post: Record<string, any>) => `${prefix}/blog/${post.slug || post.id}`;
+  const blogPath = (post: BlogPost) => articleRoutePath(post);
 
   if (!featuredPost) return null;
 
@@ -115,7 +118,7 @@ export default function Insights() {
             <div className="p-6 sm:p-8">
               <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-bold text-slate-500">
                 <span className="text-[#D85F0B]">{content.latest}</span>
-                <span>{languageNames[featuredPost.language] || featuredPost.language}</span>
+                <span>{languageNames[normalizeArticleLocale(featuredPost.language)] || normalizeArticleLocale(featuredPost.language)}</span>
                 <span className="inline-flex items-center gap-1.5">
                   <CalendarDays className="h-4 w-4" aria-hidden="true" />
                   {featuredPost.date}
@@ -151,7 +154,7 @@ export default function Insights() {
                 </Link>
                 <div className="min-w-0">
                   <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] font-bold text-slate-500">
-                    <span className="text-[#D85F0B]">{languageNames[post.language] || post.language}</span>
+                    <span className="text-[#D85F0B]">{languageNames[normalizeArticleLocale(post.language)] || normalizeArticleLocale(post.language)}</span>
                     <span>{post.date}</span>
                   </div>
                   <h3 className="mt-2 line-clamp-3 text-base font-black leading-snug text-[#0B1F3A] sm:text-lg">

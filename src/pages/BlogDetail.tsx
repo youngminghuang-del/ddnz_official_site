@@ -18,17 +18,13 @@ import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
 import SEO from '../components/SEO';
 import { trackEvent } from '../lib/analytics';
+import {
+  articleLocalePrefix,
+  articleRoutePath,
+  findArticleByRoute,
+  getArticleHreflangSet,
+} from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
-import type { Language } from '../i18n/translations';
-
-const routePrefix: Record<Language, string> = {
-  en: '',
-  zh: '/zh-cn',
-  ru: '/ru',
-  fr: '/fr',
-  es: '/es',
-  ar: '/ar',
-};
 
 function normalizeNotionLinks(content: string) {
   return content.replace(
@@ -86,7 +82,7 @@ export default function BlogDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const progressSent = useRef(new Set<number>());
   const { language } = useLanguage();
-  const prefix = routePrefix[language];
+  const prefix = articleLocalePrefix(language);
   const ui =
     language === 'es'
       ? { loading: 'Cargando contenido de Notion...', missing: 'Artículo no encontrado', back: 'Volver al inicio' }
@@ -97,7 +93,7 @@ export default function BlogDetail() {
   useEffect(() => {
     if (!slug) return;
     setIsLoading(true);
-    const found = (notionBlogPosts as BlogPost[]).find((item) => item.slug === slug || item.id === slug);
+    const found = findArticleByRoute(notionBlogPosts as BlogPost[], language, slug);
     setPost(found || null);
     setIsLoading(false);
     progressSent.current.clear();
@@ -112,7 +108,7 @@ export default function BlogDetail() {
         product_category: found.productCategory,
       });
     }
-  }, [slug]);
+  }, [language, slug]);
 
   useEffect(() => {
     if (!post) return;
@@ -186,9 +182,8 @@ export default function BlogDetail() {
   const seoDesc = rawDesc.length > 155
     ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
     : rawDesc;
-  const postLanguage = post.language || 'en';
-  const postPrefix = postLanguage === 'en' ? '' : `/${postLanguage}`;
-  const postPath = `${postPrefix}/blog/${post.slug || post.id}`;
+  const postPath = articleRoutePath(post);
+  const articleHreflang = getArticleHreflangSet(post, notionBlogPosts as BlogPost[]);
   const showToc = (post.wordCount || 0) > 1200 && Boolean(post.toc?.length);
   const reviewerText = post.governed
     ? post.reviewer?.length
@@ -207,7 +202,7 @@ export default function BlogDetail() {
         description={seoDesc}
         keywords={`${post.primaryQuery || post.category}, China sourcing, China freight forwarder, DDNZ Global`}
         canonicalPath={postPath}
-        alternateUrls={[{ hrefLang: postLanguage, href: `https://www.ddnzglobal.com${postPath}` }]}
+        alternateUrls={articleHreflang.alternates}
         image={post.thumbnailUrl}
         type="article"
         publishedTime={post.date}

@@ -9,6 +9,7 @@ import { useLanguage } from "../contexts/LanguageContext";
 import SEO from "../components/SEO";
 import type { BlogPost } from "../types/content";
 import { trackEvent } from "../lib/analytics";
+import { articleRoutePath, normalizeArticleLocale } from "../lib/notionArticleRouting";
 import { DdnzEyebrow } from "../components/DdnzUi";
 
 export default function InsightsHub() {
@@ -63,20 +64,20 @@ export default function InsightsHub() {
   }, []);
 
   // Compute unique categories dynamically from database pages
-  const getPostPath = (post: BlogPost) => `${post.language && post.language !== 'en' ? `/${post.language}` : ''}/blog/${post.slug || post.id}`;
+  const getPostPath = (post: BlogPost) => articleRoutePath(post);
   const languageLabels: Record<string, string> = {
     all: language === 'es' ? 'Todos los idiomas' : language === 'ar' ? 'جميع اللغات' : 'All languages',
     en: 'English',
     es: 'Español',
     ar: 'العربية',
     fr: 'Français',
-    'zh-CN': '中文',
+    'zh-cn': '中文',
     ru: 'Русский',
   };
-  const availableLanguages = ['all', ...Array.from(new Set(posts.map((post) => post.language || 'en')))];
+  const availableLanguages = ['all', ...Array.from(new Set(posts.map((post) => normalizeArticleLocale(post.language))))];
   const languageFilteredPosts = selectedLanguage === 'all'
     ? posts
-    : posts.filter((post) => (post.language || 'en') === selectedLanguage);
+    : posts.filter((post) => normalizeArticleLocale(post.language) === selectedLanguage);
   const categories = ["All", ...Array.from(new Set(languageFilteredPosts.map((p) => p.category)))];
 
   // Filter posts based on selected category
@@ -186,7 +187,7 @@ export default function InsightsHub() {
                         <span>{post.contentType || post.category}</span>
                       </div>
                       <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm px-2.5 py-1.5 rounded-lg z-10 text-[10px] font-black text-white tracking-wider">
-                        {languageLabels[post.language || 'en'] || (post.language || 'en').toUpperCase()}
+                        {languageLabels[normalizeArticleLocale(post.language)] || normalizeArticleLocale(post.language).toUpperCase()}
                       </div>
                     </Link>
 

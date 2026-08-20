@@ -1,6 +1,14 @@
 import fs from 'fs';
 import path from 'path';
 import { getLocalizedHomeFaqs, type HomeFaqLanguage } from '../src/data/homeFaqData';
+import {
+  articleAbsoluteUrl,
+  findArticleByRoute,
+  getArticleHreflangSet,
+  localizedSiteUrl,
+  normalizeArticleLocale,
+  type ArticleHreflangSet,
+} from '../src/lib/notionArticleRouting';
 
 // Define the static page configurations mapping language routes to SEO meta headers
 interface SEOItem {
@@ -566,7 +574,13 @@ const distDir = path.resolve(process.cwd(), 'dist');
 const sourceHtmlPath = path.join(distDir, 'index.html');
 
 // Helper to replace or inject tags securely in the HTML string
-function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: SEOItem): string {
+function injectSeoMeta(
+  htmlContent: string,
+  lang: string,
+  relPath: string,
+  seo: SEOItem,
+  articleHreflang?: ArticleHreflangSet,
+): string {
   let output = htmlContent;
 
   // 1. Update <html lang="..."> attribute
@@ -652,15 +666,7 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   if (seo.dateModified) output = setOgMetaTag(output, 'article:modified_time', seo.dateModified);
 
   // 3. Set Canonical Link
-  const getLanguageUrl = (langCode: string) => {
-    const baseUrl = 'https://www.ddnzglobal.com';
-    if (!relPath) {
-      return langCode === 'en' ? `${baseUrl}/` : `${baseUrl}/${langCode}`;
-    }
-    return langCode === 'en' ? `${baseUrl}/${relPath}` : `${baseUrl}/${langCode}/${relPath}`;
-  };
-
-  const canonicalUrl = getLanguageUrl(lang);
+  const canonicalUrl = localizedSiteUrl(lang, relPath);
   output = setOgMetaTag(output, 'og:url', canonicalUrl);
   output = setOgMetaTag(output, 'twitter:url', canonicalUrl);
   const canonRegex = /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/i;
@@ -677,11 +683,16 @@ function injectSeoMeta(htmlContent: string, lang: string, relPath: string, seo: 
   const alternateLanguages = relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'];
-  const defaultUrl = getLanguageUrl(alternateLanguages.includes('en') ? 'en' : lang);
+  const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
+    hrefLang: normalizeArticleLocale(code),
+    href: localizedSiteUrl(code, relPath),
+  }));
+  const defaultUrl = articleHreflang?.xDefaultUrl
+    || localizedSiteUrl(alternateLanguages.includes('en') ? 'en' : lang, relPath);
   const newHreflangTags = `
     <!-- Language alternates -->
     <link rel="alternate" hreflang="x-default" href="${defaultUrl}" />
-${alternateLanguages.map((code) => `    <link rel="alternate" hreflang="${code}" href="${getLanguageUrl(code)}" />`).join('\n')}
+${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate.hrefLang}" href="${alternate.href}" />`).join('\n')}
   `;
 
   // First, strip out any existing hreflang alternate links to avoid duplication
@@ -1430,7 +1441,7 @@ function run() {
         priority: '0.7',
         changefreq: 'weekly',
         lastmod: post.date || today,
-        languages: [post.language || 'en']
+        languages: [normalizeArticleLocale(post.language)]
       });
     }
   });
@@ -1443,6 +1454,7 @@ function run() {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
       let routePost: Record<string, any> | undefined;
+      let articleHreflang: ArticleHreflangSet | undefined;
       const countrySlug = entry.path.replace(/^shipping-from-china-to-/, '');
       if (!seo && countryNames[countrySlug]) {
         seo = buildCountrySeo(countrySlug, lang);
@@ -1451,9 +1463,10 @@ function run() {
       // If it's a blog post, build it dynamically
       if (entry.path.startsWith('blog/')) {
         const postSlugOrId = entry.path.replace('blog/', '');
-        const post = blogPosts.find((p) => p.slug === postSlugOrId || p.id === postSlugOrId);
+        const post = findArticleByRoute(blogPosts, lang, postSlugOrId);
         if (post) {
           routePost = post;
+          articleHreflang = getArticleHreflangSet(post, blogPosts);
           const cat = post.category ? post.category.toLowerCase() : 'global logistics';
           
           let computedTitle = '';
@@ -1540,7 +1553,7 @@ function run() {
         fs.mkdirSync(targetDir, { recursive: true });
       }
 
-      const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo);
+      const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo, articleHreflang);
       const crawlableHtml = injectStaticRouteContent(localizedHtml, lang, entry.path, routePost);
       const targetFilePath = path.join(targetDir, 'index.html');
       fs.writeFileSync(targetFilePath, crawlableHtml, 'utf-8');
@@ -1560,32 +1573,32 @@ function run() {
   // --- 4. Generate Dynamic sitemap.xml and robots.txt ---
   console.log('🌐 Generating dynamic sitemap.xml and robots.txt...');
 
-  const formatUrl = (lang: string, relPath: string): string => {
-    const baseUrl = 'https://www.ddnzglobal.com';
-    if (!relPath) {
-      return lang === 'en' ? `${baseUrl}/` : `${baseUrl}/${lang}`;
-    }
-    return lang === 'en' ? `${baseUrl}/${relPath}` : `${baseUrl}/${lang}/${relPath}`;
-  };
-
   let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
   xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n';
   xml += '        xmlns:xhtml="http://www.w3.org/1999/xhtml">\n\n';
 
   allPaths.forEach((entry) => {
     (entry.languages || languages).forEach((lang) => {
-      const loc = formatUrl(lang, entry.path);
+      const postSlugOrId = entry.path.startsWith('blog/') ? entry.path.replace('blog/', '') : '';
+      const routePost = postSlugOrId ? findArticleByRoute(blogPosts, lang, postSlugOrId) : undefined;
+      const articleHreflang = routePost ? getArticleHreflangSet(routePost, blogPosts) : undefined;
+      const loc = routePost ? articleAbsoluteUrl(routePost) : localizedSiteUrl(lang, entry.path);
       const alternateLanguages = entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
+      const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
+        hrefLang: normalizeArticleLocale(code),
+        href: localizedSiteUrl(code, entry.path),
+      }));
 
       // Determine priority: localized subpages can have slightly lower priority or same
       const priorityVal = lang === 'en' ? entry.priority : (parseFloat(entry.priority) - 0.1).toFixed(1);
 
       xml += '  <url>\n';
       xml += `    <loc>${loc}</loc>\n`;
-      const defaultUrl = formatUrl(alternateLanguages.includes('en') ? 'en' : lang, entry.path);
+      const defaultUrl = articleHreflang?.xDefaultUrl
+        || localizedSiteUrl(alternateLanguages.includes('en') ? 'en' : lang, entry.path);
       xml += `    <xhtml:link rel="alternate" hreflang="x-default" href="${defaultUrl}" />\n`;
-      alternateLanguages.forEach((code) => {
-        xml += `    <xhtml:link rel="alternate" hreflang="${code}" href="${formatUrl(code, entry.path)}" />\n`;
+      alternates.forEach((alternate) => {
+        xml += `    <xhtml:link rel="alternate" hreflang="${alternate.hrefLang}" href="${alternate.href}" />\n`;
       });
       xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
       xml += `    <changefreq>${entry.changefreq}</changefreq>\n`;

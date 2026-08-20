@@ -32,6 +32,9 @@ jobs:
       - name: Type-check
         run: npm run lint
 
+      - name: Test multilingual Notion article routing
+        run: npm run test:notion-routing
+
       - name: Test Notion publication guards
         run: npm run test:notion-guards
 

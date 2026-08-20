@@ -7,6 +7,7 @@
     "dev": "npm run fetch-notion && vite --host 0.0.0.0 --port 3000",
     "dev:content-ops": "vite --host 127.0.0.1 --port 3000",
     "fetch-notion": "tsx scripts/fetch-notion.ts",
+    "test:notion-routing": "tsx scripts/test-notion-article-routing.ts",
     "test:notion-guards": "tsx scripts/test-notion-publishing-guards.ts",
     "build": "npm run fetch-notion && vite build && tsx scripts/generate-static-pages.ts && node scripts/audit-seo-output.mjs",
     "audit:seo": "node scripts/audit-seo-output.mjs",
