@@ -27,6 +27,7 @@ import {
 import "./outdoor-products.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const RANGE_FAMILIES = [
   {
@@ -375,7 +376,14 @@ export function OutdoorProducts() {
         </section>
       </main>
 
-      <footer className="od-footer" id="footer"><Brand /><p>DDNZ Global coordinates product sourcing, supplier comparison, sample evidence and export handoff from China.</p><nav><a href="/products">Products</a><a href="/sourcing-services">Sourcing services</a><a href="#rfq">Start a request</a></nav><small>Outdoor Products representative page · illustrative sourcing workflow</small></footer>
+      <ShowcaseContactFooter
+        footerId="footer"
+        pageKey="outdoor-products"
+        description="DDNZ Global coordinates outdoor-product sourcing, supplier comparison, sample evidence and export handoff from China."
+        tagline="Outdoor product sourcing"
+        links={[{ label: "Products", href: "/products" }, { label: "Sourcing services", href: "/sourcing-services" }, { label: "Start a request", href: "#rfq" }]}
+        note="Outdoor Products representative page · illustrative sourcing workflow"
+      />
     </div>
   );
 }

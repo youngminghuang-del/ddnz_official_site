@@ -32,6 +32,7 @@ import {
 import "./refrigeration.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const A = "/images/product-showcase/refrigeration";
 
@@ -369,7 +370,12 @@ export function RefrigerationEquipment() {
         <section className="refrigeration-freight" id="refrigeration-about"><div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Operating since 1997.</span></p></div><span>Origin control · upright handling · route coordination · export documents · carrier handoff</span></section>
       </main>
 
-      <footer className="refrigeration-footer"><Brand /><p>DDNZ Global coordinates product sourcing, supplier verification, inspection and export handoff from China.</p><span>Commercial cold-side sourcing</span></footer>
+      <ShowcaseContactFooter
+        pageKey="refrigeration-equipment"
+        description="DDNZ Global coordinates commercial cold-side sourcing, supplier verification, inspection and export handoff from China."
+        tagline="Commercial cold-side sourcing"
+        links={[{ label: "Control plan", href: "#refrigeration-control" }, { label: "Evidence", href: "#refrigeration-evidence" }, { label: "Start a brief", href: "#refrigeration-rfq" }]}
+      />
 
       {scoreOpen && (
         <div className="refrigeration-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setScoreOpen(false); }}>

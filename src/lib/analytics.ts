@@ -1,3 +1,5 @@
+import { readAttribution } from './attribution';
+
 const GA_MEASUREMENT_ID = 'G-TZD9QT4W8H';
 const CLARITY_PROJECT_ID = 'xswyojgnjd';
 
@@ -15,6 +17,8 @@ type PageContext = {
   utm_medium?: string;
   utm_campaign?: string;
   utm_content?: string;
+  utm_term?: string;
+  landing_page?: string;
 };
 
 type ClarityFunction = ((...args: unknown[]) => void) & {
@@ -96,18 +100,18 @@ function getPageContext(): PageContext {
     /shipping-from-china-to-(saudi-arabia|uae|kuwait|qatar|oman|bahrain|kazakhstan|uzbekistan|nigeria|ghana|mexico|brazil|argentina|peru|chile)(?:\/|$)/,
   )?.[1];
   const country = url.searchParams.get('country') || pathCountry;
-  const attribution = {
-    utm_source: url.searchParams.get('utm_source') || undefined,
-    utm_medium: url.searchParams.get('utm_medium') || undefined,
-    utm_campaign: url.searchParams.get('utm_campaign') || undefined,
-    utm_content: url.searchParams.get('utm_content') || undefined,
-  };
+  const attribution = readAttribution(url.search);
 
   return {
     page_language: getPageLanguage(url.pathname),
     ...(service ? { service } : {}),
     ...(country ? { country } : {}),
-    ...attribution,
+    ...(attribution.utm_source ? { utm_source: attribution.utm_source } : {}),
+    ...(attribution.utm_medium ? { utm_medium: attribution.utm_medium } : {}),
+    ...(attribution.utm_campaign ? { utm_campaign: attribution.utm_campaign } : {}),
+    ...(attribution.utm_content ? { utm_content: attribution.utm_content } : {}),
+    ...(attribution.utm_term ? { utm_term: attribution.utm_term } : {}),
+    ...(attribution.landing_page ? { landing_page: attribution.landing_page } : {}),
   };
 }
 

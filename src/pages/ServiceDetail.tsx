@@ -1,5 +1,5 @@
 import { useParams, Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
@@ -809,16 +809,73 @@ export default function ServiceDetail() {
   const { language, t } = useLanguage();
   const [selectedService, setSelectedService] = useState('Sea');
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [state, handleSubmit] = useForm("mdabvqbd");
+  const [state, handleSubmit, resetFormspree] = useForm("mdabvqbd");
   const [currentSEO, setCurrentSEO] = useState<{ title: string; desc: string; keywords: string } | null>(null);
 
   // Format valid service key or default to first
   const currentKey = serviceId && SERVICES_DATA[serviceId] ? serviceId : 'sea-freight';
+  const formLifecycleRef = useRef({ started: false, submitted: false, service: currentKey });
+  const successTrackedRef = useRef(false);
+  const formErrorTrackedRef = useRef<unknown>(null);
   // Use current selected language or fallback to 'en'
   const activeLang = LANGUAGES_SUPPORTED.includes(language) ? language : 'en';
   const baseData = SERVICES_DATA[currentKey]?.[activeLang] || SERVICES_DATA[currentKey]?.['en'];
   const data = { ...baseData, ...(LOCALIZED_SERVICE_PRESENTATION[language]?.[currentKey] || {}) };
   const attributedWhatsAppUrl = buildAttributedWhatsAppUrl();
+
+  const markServiceFormStarted = () => {
+    if (formLifecycleRef.current.started) return;
+    formLifecycleRef.current.started = true;
+    formLifecycleRef.current.service = currentKey;
+    trackEvent('quote_form_start', {
+      form_location: 'service_page',
+      service: currentKey,
+    });
+  };
+
+  const handleServiceFormSubmit = (event: FormEvent<HTMLFormElement>) => {
+    markServiceFormStarted();
+    trackEvent('quote_form_submit_attempt', {
+      form_location: 'service_page',
+      service: currentKey,
+    });
+    handleSubmit(event);
+  };
+
+  const resetServiceForm = () => {
+    resetFormspree();
+    setIsFormSubmitted(false);
+    successTrackedRef.current = false;
+    formErrorTrackedRef.current = null;
+    formLifecycleRef.current = { started: false, submitted: false, service: currentKey };
+  };
+
+  useEffect(() => {
+    const lifecycle = formLifecycleRef.current;
+    if (lifecycle.service !== currentKey) {
+      if (lifecycle.started && !lifecycle.submitted) {
+        trackEvent('quote_form_abandon', {
+          form_location: 'service_page',
+          service: lifecycle.service,
+        });
+      }
+      resetFormspree();
+      setIsFormSubmitted(false);
+      successTrackedRef.current = false;
+      formErrorTrackedRef.current = null;
+      formLifecycleRef.current = { started: false, submitted: false, service: currentKey };
+    }
+  }, [currentKey, resetFormspree]);
+
+  useEffect(() => () => {
+    const lifecycle = formLifecycleRef.current;
+    if (lifecycle.started && !lifecycle.submitted) {
+      trackEvent('quote_form_abandon', {
+        form_location: 'service_page',
+        service: lifecycle.service,
+      });
+    }
+  }, []);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -936,15 +993,32 @@ export default function ServiceDetail() {
   }, [serviceId, currentKey, activeLang]);
 
   useEffect(() => {
-    if (state.succeeded) {
+    if (state.succeeded && !successTrackedRef.current) {
+      successTrackedRef.current = true;
+      formLifecycleRef.current.submitted = true;
       trackEvent('quote_form_submit', {
+        event_category: 'conversion',
+        form_location: 'service_page',
+        service: currentKey,
+      });
+      trackEvent('rfq_submit_success', {
         event_category: 'conversion',
         form_location: 'service_page',
         service: currentKey,
       });
       setIsFormSubmitted(true);
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, currentKey]);
+
+  useEffect(() => {
+    if (!state.errors || formErrorTrackedRef.current === state.errors) return;
+    formErrorTrackedRef.current = state.errors;
+    trackEvent('quote_form_error', {
+      form_location: 'service_page',
+      service: currentKey,
+      error_type: 'formspree_submission_error',
+    });
+  }, [state.errors, currentKey]);
 
   // Map serviceId to visual details
   const getServiceConfig = (sid: string) => {
@@ -1250,7 +1324,7 @@ export default function ServiceDetail() {
 
             <div className="bg-white rounded-2xl border border-slate-200 shadow-[0_18px_45px_rgba(11,28,44,0.10)] p-8 sm:p-10 relative overflow-hidden">
               {!isFormSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleServiceFormSubmit} onClick={markServiceFormStarted} onChange={markServiceFormStarted} className="space-y-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">
                       {t('get_a_quote.mode')}
@@ -1394,7 +1468,7 @@ export default function ServiceDetail() {
                     {activeLang === 'zh' ? '我们的空运团队将根据您提交的货物信息确认可用航线、舱位和相关操作要求，并通过您留下的联系方式回复。' : activeLang === 'ru' ? 'Наша команда проверит доступные маршруты, места и операционные требования по данным вашего груза и свяжется с вами.' : activeLang === 'fr' ? 'Notre équipe vérifie les itinéraires, capacités et exigences opérationnelles à partir des informations de votre fret, puis vous contacte.' : 'Our air freight team will review available routes, capacity and operating requirements using your cargo details, then contact you.'}
                   </p>
                   <button 
-                    onClick={() => setIsFormSubmitted(false)}
+                    onClick={resetServiceForm}
                     className="text-[var(--hb-blue)] hover:text-[var(--hb-navy)] font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回提单页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
@@ -1979,7 +2053,7 @@ export default function ServiceDetail() {
 
             <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
               {!isFormSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleServiceFormSubmit} onClick={markServiceFormStarted} onChange={markServiceFormStarted} className="space-y-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">
                       {t('get_a_quote.mode')}
@@ -2121,7 +2195,7 @@ export default function ServiceDetail() {
                     {activeLang === 'zh' ? '我们专业的 FBA 项目主事人将在 2 小时内按您的供应商所在地进行定制航路与备货周期测算，并将最优化的双清方案呈现于您的收件箱。' : activeLang === 'ru' ? 'Наши FBA-специалисты подготовят коммерческое предложение и свяжутся с вами в течение 2 часов.' : activeLang === 'fr' ? 'Nos ingénieurs logistiques analysent votre plan de chargement et vous contacteront avec un devis DDP sous 2 heures.' : 'Our FBA route experts are configuring dynamic transport pathways and will deliver your complete door-to-door FBA strategy within 2 hours.'}
                   </p>
                   <button 
-                    onClick={() => setIsFormSubmitted(false)}
+                    onClick={resetServiceForm}
                     className="text-sky-800 hover:text-sky-950 font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回提单页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
@@ -2900,7 +2974,7 @@ export default function ServiceDetail() {
 
             <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
               {!isFormSubmitted ? (
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleServiceFormSubmit} onClick={markServiceFormStarted} onChange={markServiceFormStarted} className="space-y-6">
                   <div>
                     <label className="block text-sm font-bold text-slate-700 mb-2">
                       {t('get_a_quote.mode')}
@@ -3044,7 +3118,7 @@ export default function ServiceDetail() {
                     {activeLang === 'zh' ? '我们的集货团队将根据您提交的货物信息和操作需求联系您，确认仓储、包装与出运安排。请留意您的邮箱或常用通讯方式。' : activeLang === 'ru' ? 'Наши специалисты свяжутся с вами, чтобы уточнить условия хранения, упаковки и дальнейшей отправки.' : activeLang === 'fr' ? 'Notre équipe vous contactera afin de préciser les besoins de stockage, d’emballage et d’expédition.' : 'Our consolidation team will contact you to confirm the storage, packing, and export requirements for your shipment.'}
                   </p>
                   <button 
-                    onClick={() => setIsFormSubmitted(false)}
+                    onClick={resetServiceForm}
                     className="text-sky-700 hover:text-sky-900 font-bold text-sm underline"
                   >
                     {activeLang === 'zh' ? '返回集运页面' : activeLang === 'ru' ? 'Вернуться назад' : activeLang === 'fr' ? 'Retour aux détails' : 'Go Back to Service Details'}
@@ -3360,7 +3434,7 @@ export default function ServiceDetail() {
 
           <div className="bg-white rounded-[var(--hb-radius)] border border-slate-300 shadow-[0_16px_40px_rgba(16,40,61,.08)] p-6 sm:p-8 relative overflow-hidden">
             {!isFormSubmitted ? (
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form onSubmit={handleServiceFormSubmit} onClick={markServiceFormStarted} onChange={markServiceFormStarted} className="space-y-6">
                 <div>
                   <label className="block text-sm font-bold text-slate-700 mb-2">
                     {t('get_a_quote.mode')}
@@ -3503,7 +3577,7 @@ export default function ServiceDetail() {
                   {t('get_a_quote.alertSuccess')}
                 </p>
                 <button 
-                  onClick={() => setIsFormSubmitted(false)}
+                  onClick={resetServiceForm}
                   className="bg-white hover:bg-slate-100 text-slate-900 border font-bold px-6 py-2.5 rounded-full text-xs transition-colors"
                 >
                   {activeLang === 'zh' ? '再次发送新请求' : 'Send another request'}

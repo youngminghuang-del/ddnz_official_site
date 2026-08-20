@@ -287,6 +287,7 @@ export default function TradeSupportInquiry() {
   const emailRef = useRef<HTMLInputElement>(null);
   const lifecycleRef = useRef({ started: false, submitted: false, step: 1, mode });
   const successTrackedRef = useRef(false);
+  const formErrorTrackedRef = useRef<unknown>(null);
 
   useEffect(() => {
     setStep(1);
@@ -303,6 +304,7 @@ export default function TradeSupportInquiry() {
     setError('');
     setSubmitted(false);
     successTrackedRef.current = false;
+    formErrorTrackedRef.current = null;
     lifecycleRef.current.started = false;
     lifecycleRef.current.submitted = false;
     lifecycleRef.current.mode = mode;
@@ -350,6 +352,17 @@ export default function TradeSupportInquiry() {
       setSubmitted(true);
     }
   }, [formState.succeeded, mode, leadGoal, category, services.length, leadSource]);
+
+  useEffect(() => {
+    if (!formState.errors || formErrorTrackedRef.current === formState.errors) return;
+    formErrorTrackedRef.current = formState.errors;
+    trackEvent('quote_form_error', {
+      form_location: 'trade_support_quote_page',
+      intent: mode,
+      step: 3,
+      error_type: 'formspree_submission_error',
+    });
+  }, [formState.errors, mode]);
 
   const markStarted = () => {
     if (lifecycleRef.current.started) return;

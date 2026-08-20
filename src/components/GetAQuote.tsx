@@ -321,7 +321,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
-  const hasTrackedFormStart = useRef(false);
+  const lifecycleRef = useRef({ started: false, submitted: false, lastStep: 1, service: 'Sea' });
+  const successTrackedRef = useRef(false);
+  const formErrorTrackedRef = useRef<unknown>(null);
   
   // Core Funnel Data
   const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>('Sea');
@@ -422,20 +424,67 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     return funnelTranslations[lang]?.[key] || funnelTranslations['en']?.[key] || key;
   };
 
+  const markQuoteStarted = (service = selectedService) => {
+    if (lifecycleRef.current.started) return;
+    lifecycleRef.current.started = true;
+    lifecycleRef.current.service = service;
+    trackEvent('quote_form_start', {
+      form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+      service,
+      lead_goal: leadGoal,
+      product_category: product,
+      lead_source: leadSource,
+      utm_source: utmSource,
+      utm_campaign: utmCampaign,
+      utm_content: utmContent,
+    });
+  };
+
   const handleQuoteSubmit = (event: FormEvent<HTMLFormElement>) => {
+    markQuoteStarted();
     if (!email.trim() && !phone.trim()) {
       event.preventDefault();
       setContactError(true);
+      trackEvent('quote_form_error', {
+        form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+        service: selectedService,
+        error_type: 'contact_missing',
+      });
       return;
     }
 
     setContactError(false);
+    trackEvent('quote_form_submit_attempt', {
+      form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+      service: selectedService,
+      lead_goal: leadGoal,
+      product_category: product,
+      lead_source: leadSource,
+    });
     handleSubmit(event);
   };
 
+  useEffect(() => {
+    lifecycleRef.current.lastStep = step;
+    lifecycleRef.current.service = selectedService;
+  }, [step, selectedService]);
+
+  useEffect(() => () => {
+    const lifecycle = lifecycleRef.current;
+    if (lifecycle.started && !lifecycle.submitted) {
+      trackEvent('quote_form_abandon', {
+        form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+        service: lifecycle.service,
+        last_step: lifecycle.lastStep,
+      });
+    }
+  }, []);
+
   // Tracking and local success state
   useEffect(() => {
-    if (state.succeeded) {
+    if (state.succeeded && !successTrackedRef.current) {
+      successTrackedRef.current = true;
+      lifecycleRef.current.submitted = true;
       trackEvent('quote_form_submit', {
         event_category: 'conversion',
         form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
@@ -462,22 +511,20 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     }
   }, [state.succeeded, selectedService, isQuotePage, leadGoal, product, leadSource, utmSource, utmCampaign, utmContent]);
 
+  useEffect(() => {
+    if (!state.errors || formErrorTrackedRef.current === state.errors) return;
+    formErrorTrackedRef.current = state.errors;
+    trackEvent('quote_form_error', {
+      form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
+      service: selectedService,
+      error_type: 'formspree_submission_error',
+    });
+  }, [state.errors, isQuotePage, selectedService]);
+
   // Navigate forward with sliding transition
   const nextStep = () => {
     if (step < 4) {
-      if (!hasTrackedFormStart.current) {
-        trackEvent('quote_form_start', {
-          form_location: isQuotePage ? 'quote_page' : 'embedded_quote_form',
-          service: selectedService,
-          lead_goal: leadGoal,
-          product_category: product,
-          lead_source: leadSource,
-          utm_source: utmSource,
-          utm_campaign: utmCampaign,
-          utm_content: utmContent,
-        });
-        hasTrackedFormStart.current = true;
-      }
+      markQuoteStarted();
       setDirection(1);
       setStep(step + 1);
     }
@@ -507,6 +554,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   };
 
   const handleServiceSelect = (service: 'Sea' | 'Land' | 'Air' | 'Warehouse') => {
+    markQuoteStarted(service);
     setSelectedService(service);
     // Tactile delay before auto-advancing to step 2 for unmatched friction-free UX!
     setTimeout(() => {
@@ -533,6 +581,9 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     setProduct(attributedCategory || 'Other');
     setNotes('');
     setIsSubmitted(false);
+    successTrackedRef.current = false;
+    formErrorTrackedRef.current = null;
+    lifecycleRef.current = { started: false, submitted: false, lastStep: 1, service: 'Sea' };
   };
 
   // Framer-motion transition configurations for steps

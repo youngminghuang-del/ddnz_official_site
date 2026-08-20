@@ -8,7 +8,7 @@ export const ATTRIBUTION_KEYS = [
   'article',
 ] as const;
 
-export type Attribution = Partial<Record<typeof ATTRIBUTION_KEYS[number], string>>;
+export type Attribution = Partial<Record<typeof ATTRIBUTION_KEYS[number] | 'landing_page', string>>;
 
 const STORAGE_KEY = 'ddnz_attribution';
 
@@ -41,10 +41,14 @@ export function readAttribution(search = typeof window === 'undefined' ? '' : wi
   return { ...previous, ...current };
 }
 
-export function rememberAttribution(search: string) {
+export function rememberAttribution(
+  search: string,
+  landingPage = typeof window === 'undefined' ? '' : window.location.pathname,
+) {
   const storage = safeSessionStorage();
   if (!storage) return;
   const next = readAttribution(search);
+  if (!next.landing_page && landingPage) next.landing_page = landingPage;
   if (Object.keys(next).length) storage.setItem(STORAGE_KEY, JSON.stringify(next));
 }
 
@@ -55,7 +59,8 @@ export function appendAttribution(href: string, attribution = readAttribution())
     const url = new URL(href, base);
     const isInternal = url.origin === base || url.hostname === 'www.ddnzglobal.com' || url.hostname === 'ddnzglobal.com';
     if (!isInternal) return href;
-    Object.entries(attribution).forEach(([key, value]) => {
+    ATTRIBUTION_KEYS.forEach((key) => {
+      const value = attribution[key];
       if (value && !url.searchParams.has(key)) url.searchParams.set(key, value);
     });
     return href.startsWith('http') ? url.toString() : `${url.pathname}${url.search}${url.hash}`;

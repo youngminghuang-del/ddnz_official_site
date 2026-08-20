@@ -23,6 +23,7 @@ import {
 import "./products-index.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const PRODUCT_CATEGORIES = [
   {
@@ -534,12 +535,12 @@ export function ProductsIndex() {
         </section>
       </main>
 
-      <footer className="px-footer">
-        <Brand />
-        <p>Product sourcing, supplier comparison, approval evidence and export handoff from China.</p>
-        <div><a href="#categories">Categories</a><a href="#compare">Control path</a><a href="#rfq">Start an RFQ</a></div>
-        <small>DDNZ Global · China sourcing and export coordination</small>
-      </footer>
+      <ShowcaseContactFooter
+        pageKey="products"
+        description="Product sourcing, supplier comparison, approval evidence and export handoff from China."
+        tagline="China sourcing and export coordination"
+        links={[{ label: "Categories", href: "#categories" }, { label: "Control path", href: "#compare" }, { label: "Start an RFQ", href: "#rfq" }]}
+      />
     </div>
   );
 }

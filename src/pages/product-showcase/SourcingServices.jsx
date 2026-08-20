@@ -24,6 +24,7 @@ import {
 import "./sourcing-services.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const BUYER_PATHS = [
   {
@@ -457,12 +458,12 @@ export function SourcingServices() {
         </section>
       </main>
 
-      <footer className="ss-footer">
-        <Brand />
-        <p>Flexible retail assortment sourcing and managed project sourcing from China—with comparable inputs, recorded approvals and accountable release coordination.</p>
-        <nav aria-label="Footer navigation"><a href="#paths">Sourcing paths</a><a href="#marketplace">Why control matters</a><a href="#control">Control path</a><a href="#brief">Start a brief</a></nav>
-        <small>DDNZ Global · China sourcing and export coordination</small>
-      </footer>
+      <ShowcaseContactFooter
+        pageKey="sourcing-services"
+        description="Flexible retail assortment sourcing and managed project sourcing from China—with comparable inputs, recorded approvals and accountable release coordination."
+        tagline="China sourcing and export coordination"
+        links={[{ label: "Sourcing paths", href: "#paths" }, { label: "Why control matters", href: "#marketplace" }, { label: "Control path", href: "#control" }, { label: "Start a brief", href: "#brief" }]}
+      />
     </div>
   );
 }

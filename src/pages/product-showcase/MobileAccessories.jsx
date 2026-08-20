@@ -28,6 +28,7 @@ import {
 import "./mobile.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const A = "/images/product-showcase/mobile";
 const H = A;
@@ -485,7 +486,12 @@ export function MobileAccessories() {
         </section>
       </main>
 
-      <footer className="mobile-footer"><Brand /><p>DDNZ Global coordinates product sourcing, supplier verification, inspection and export handoff from China.</p><span>Product sourcing &amp; trade support</span></footer>
+      <ShowcaseContactFooter
+        pageKey="mobile-accessories"
+        description="DDNZ Global coordinates mobile-accessories sourcing, supplier verification, inspection and export handoff from China."
+        tagline="Product sourcing and trade support"
+        links={[{ label: "Control path", href: "#control" }, { label: "Evidence", href: "#evidence" }, { label: "Start a brief", href: "#rfq" }]}
+      />
 
       {scoreOpen && (
         <div className="score-modal-backdrop" role="presentation" onMouseDown={(event) => { if (event.target === event.currentTarget) setScoreOpen(false); }}>

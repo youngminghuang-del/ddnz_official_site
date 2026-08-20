@@ -34,6 +34,7 @@ import {
 import "./kitchen.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
+import ShowcaseContactFooter from "./ShowcaseContactFooter";
 
 const heroSteps = [
   { number: "01", title: "Define range", copy: "Requirements, use cases and target markets.", icon: ClipboardList },
@@ -651,7 +652,12 @@ export function App() {
         <section className="k-freight" aria-label="Freight execution partner"><div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Operating since 1997.</span></p></div><span>Origin control · route coordination · export documents · carrier handoff</span></section>
       </main>
 
-      <footer className="k-footer"><KitchenBrand /><p>DDNZ Global connects operations-led kitchen design with equipment sourcing, supplier verification, inspection and export handoff from China.</p><span>Kitchen design + sourcing</span></footer>
+      <ShowcaseContactFooter
+        pageKey="commercial-kitchen"
+        description="DDNZ Global connects operations-led kitchen design with equipment sourcing, supplier verification, inspection and export handoff from China."
+        tagline="Kitchen design + sourcing"
+        links={[{ label: "Design approach", href: "#design" }, { label: "Equipment families", href: "#families" }, { label: "Start a brief", href: "#rfq" }]}
+      />
       {scoreOpen && <KitchenScoreModal close={() => setScoreOpen(false)} />}
     </div>
   );
