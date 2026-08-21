@@ -176,10 +176,16 @@ export default function InsightsHub() {
                   >
                     <Link to={getPostPath(post)} className="block h-56 overflow-hidden relative bg-slate-100">
                       <img
-                        src={post.thumbnailUrl}
+                        src={post.listingThumbnailUrl || post.thumbnailUrl}
+                        srcSet={post.listingThumbnailSrcSet}
+                        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
                         alt={post.title}
+                        width="960"
+                        height="540"
                         className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        loading="lazy"
+                        loading={index === 0 ? "eager" : "lazy"}
+                        decoding="async"
+                        fetchPriority={index === 0 ? "high" : "auto"}
                         referrerPolicy="no-referrer"
                       />
                       <div className="absolute left-4 top-4 z-10 flex items-center gap-1.5 rounded-xl bg-white/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-[var(--ddnz-purple-strong)] shadow backdrop-blur-sm">

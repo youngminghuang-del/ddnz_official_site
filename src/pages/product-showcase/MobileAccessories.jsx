@@ -113,6 +113,7 @@ const evidenceTracks = {
   cases: {
     label: "Phone Cases",
     video: `${A}/phone-case-factory.mp4`,
+    poster: `${A}/phone-case-machine-proof-v1.webp`,
     caption: "Authorized phone-case production footage · China",
     title: "Production and finish evidence for sample approval.",
     checks: [
@@ -132,6 +133,7 @@ const evidenceTracks = {
   power: {
     label: "Power & Charging",
     video: `${A}/power-bank-factory.mp4`,
+    poster: `${A}/family-power-banks-v1.webp`,
     caption: "Authorized power-bank assembly footage · China",
     title: "Port, assembly and charging evidence for shipment release.",
     checks: [
@@ -143,7 +145,7 @@ const evidenceTracks = {
     evidence: ["Assembly photos", "Port and output record", "Open-item log", "Final packaging photos"],
     thumbs: [
       [`${A}/family-power-banks-v1.webp`, "01", "Port map", "Port configuration and interface"],
-      [`${A}/power-bank-factory.mp4`, "02", "Assembly", "Line-side assembly evidence"],
+      [`${A}/power-bank-factory.mp4`, "02", "Assembly", "Line-side assembly evidence", `${A}/family-power-banks-v1.webp`],
       [`${A}/family-chargers-v1.webp`, "03", "Output test", "Live charger fixture and electrical check"],
       [`${A}/power-bank-final-sample-v1.webp`, "04", "Final sample", "Cabled unit and finish review"],
     ],
@@ -238,8 +240,8 @@ function FamilyCard({ item, index, technical }) {
   );
 }
 
-function VideoThumb({ src, image, alt }) {
-  if (src.endsWith(".mp4")) return <video src={src} muted playsInline preload="metadata" aria-label={alt} />;
+function VideoThumb({ src, image, alt, poster }) {
+  if (src.endsWith(".mp4")) return <video src={src} poster={poster} muted playsInline preload="none" aria-label={alt} />;
   return <img src={src} alt={alt} loading="lazy" decoding="async" style={{ objectPosition: image || "50% 50%" }} />;
 }
 
@@ -274,11 +276,13 @@ export function MobileAccessories() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [technical, setTechnical] = useState(false);
   const [trackKey, setTrackKey] = useState("cases");
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
+  const [videoReady, setVideoReady] = useState(false);
   const [scoreOpen, setScoreOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ category: "Phone cases", market: "", stage: "", price: "", volume: "", timeline: "", notes: "" });
   const videoRef = useRef(null);
+  const productionRef = useRef(null);
   const track = evidenceTracks[trackKey];
 
   useEffect(() => {
@@ -286,6 +290,33 @@ export function MobileAccessories() {
     document.title = "Mobile Accessories Sourcing from China | DDNZ Global";
     return () => { document.title = previousTitle; };
   }, []);
+
+  useEffect(() => {
+    const section = productionRef.current;
+    if (!section || videoReady) return undefined;
+
+    if (!("IntersectionObserver" in window)) {
+      setVideoReady(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setVideoReady(true);
+      observer.disconnect();
+    }, { rootMargin: "300px 0px", threshold: 0.01 });
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [videoReady]);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || !videoReady) return;
+    video.load();
+    const playback = video.play();
+    if (playback) playback.then(() => setPlaying(true)).catch(() => setPlaying(false));
+  }, [track.video, videoReady]);
 
   const quoteUrl = useMemo(() => {
     const params = new URLSearchParams({
@@ -305,6 +336,10 @@ export function MobileAccessories() {
   const toggleVideo = async () => {
     const video = videoRef.current;
     if (!video) return;
+    if (!videoReady) {
+      setVideoReady(true);
+      return;
+    }
     if (video.paused) { await video.play(); setPlaying(true); }
     else { video.pause(); setPlaying(false); }
   };
@@ -385,16 +420,29 @@ export function MobileAccessories() {
           </div>
         </section>
 
-        <section className="mobile-section production-section" id="evidence" aria-labelledby="production-title">
+        <section ref={productionRef} className="mobile-section production-section" id="evidence" aria-labelledby="production-title">
           <div className="production-head">
             <div><p className="mobile-kicker">INSIDE PRODUCTION</p><h2 id="production-title">Evidence before approval.</h2><p>Each factory record maps to a buyer decision, a control point and an approval file.</p></div>
             <div className="track-tabs" role="tablist" aria-label="Production evidence track">
-              {Object.entries(evidenceTracks).map(([key, value]) => <button type="button" role="tab" aria-selected={trackKey === key} className={trackKey === key ? "active" : ""} onClick={() => { setTrackKey(key); setPlaying(true); }} key={key}>{value.label}</button>)}
+              {Object.entries(evidenceTracks).map(([key, value]) => <button type="button" role="tab" aria-selected={trackKey === key} className={trackKey === key ? "active" : ""} onClick={() => setTrackKey(key)} key={key}>{value.label}</button>)}
             </div>
           </div>
           <div className="production-stage">
             <figure className="production-video">
-              <video ref={videoRef} key={track.video} src={track.video} autoPlay muted loop playsInline preload="metadata" />
+              <video
+                ref={videoRef}
+                key={track.video}
+                src={videoReady ? track.video : undefined}
+                poster={track.poster}
+                autoPlay={videoReady}
+                muted
+                loop
+                playsInline
+                preload={videoReady ? "metadata" : "none"}
+                aria-label={track.caption}
+                onPlay={() => setPlaying(true)}
+                onPause={() => setPlaying(false)}
+              />
               <button type="button" className="play-toggle" onClick={toggleVideo} aria-label={playing ? "Pause factory video" : "Play factory video"}>{playing ? <Pause size={24} /> : <Play size={24} />}</button>
               <figcaption>{track.caption}</figcaption>
             </figure>
@@ -406,9 +454,9 @@ export function MobileAccessories() {
             </aside>
           </div>
           <div className="evidence-thumbs">
-            {track.thumbs.map(([src, number, title, copy]) => <article key={`${trackKey}-${number}`}><div><VideoThumb src={src} alt={`${title}: ${copy}`} /></div><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
+            {track.thumbs.map(([src, number, title, copy, poster]) => <article key={`${trackKey}-${number}`}><div><VideoThumb src={src} poster={poster} alt={`${title}: ${copy}`} /></div><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
-          <button type="button" className="track-switch" onClick={() => { setTrackKey(trackKey === "cases" ? "power" : "cases"); setPlaying(true); }}>Switch to {trackKey === "cases" ? "Power & Charging" : "Phone Cases"} evidence <ArrowRight size={16} /></button>
+          <button type="button" className="track-switch" onClick={() => setTrackKey(trackKey === "cases" ? "power" : "cases")}>Switch to {trackKey === "cases" ? "Power & Charging" : "Phone Cases"} evidence <ArrowRight size={16} /></button>
         </section>
 
         <section className="mobile-section decision-section" aria-label="Supplier and destination controls">

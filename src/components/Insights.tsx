@@ -108,10 +108,15 @@ export default function Insights() {
           <article className="overflow-hidden rounded-2xl border border-slate-200 bg-[#F5F8FC] lg:col-span-7">
             <Link to={blogPath(featuredPost)} className="block aspect-[16/9] overflow-hidden bg-slate-100">
               <img
-                src={featuredPost.thumbnailUrl}
+                src={featuredPost.listingThumbnailUrl || featuredPost.thumbnailUrl}
+                srcSet={featuredPost.listingThumbnailSrcSet}
+                sizes="(min-width: 1024px) 58vw, 100vw"
                 alt={featuredPost.title}
+                width="960"
+                height="540"
                 className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.025]"
                 loading="lazy"
+                decoding="async"
                 referrerPolicy="no-referrer"
               />
             </Link>
@@ -145,10 +150,15 @@ export default function Insights() {
               <article key={post.id} className="grid grid-cols-[108px_1fr] gap-4 border-b border-slate-200 py-5 first:pt-0 last:border-b-0 sm:grid-cols-[140px_1fr]">
                 <Link to={blogPath(post)} className="block aspect-[4/3] overflow-hidden rounded-xl bg-slate-100">
                   <img
-                    src={post.thumbnailUrl}
+                    src={post.listingThumbnailUrl || post.thumbnailUrl}
+                    srcSet={post.listingThumbnailSrcSet}
+                    sizes="140px"
                     alt={post.title}
+                    width="480"
+                    height="270"
                     className="h-full w-full object-cover transition-transform duration-500 hover:scale-[1.04]"
                     loading="lazy"
+                    decoding="async"
                     referrerPolicy="no-referrer"
                   />
                 </Link>
