@@ -1380,38 +1380,34 @@ function run() {
   // Read base built HTML
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
-  // Today's date for sitemaps
-  const today = new Date().toISOString().slice(0, 10);
-
   const basePaths = [
-    { path: '', priority: '1.0', changefreq: 'weekly', lastmod: today, languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
-    { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
-    { path: 'insights', priority: '0.8', changefreq: 'weekly', lastmod: today, languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
-    { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'services/warehouse-services', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'shipping-from-china-to-middle-east', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', lastmod: today },
-    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', lastmod: today },
-    { path: 'products', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing-services', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'refrigeration-equipment', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing/commercial-kitchen-equipment-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing/mobile-accessories-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', lastmod: today, languages: ['en'] },
-    { path: 'sourcing-services/supplier-search', priority: '0.9', changefreq: 'monthly', lastmod: today },
-    { path: 'sourcing-services/inspection-quality-control', priority: '0.9', changefreq: 'monthly', lastmod: today },
-    { path: 'sourcing-services/consolidation-export', priority: '0.9', changefreq: 'monthly', lastmod: today }
+    { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
+    { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
+    { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
+    { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly' },
+    { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly' },
+    { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly' },
+    { path: 'services/warehouse-services', priority: '0.9', changefreq: 'weekly' },
+    { path: 'shipping-from-china-to-middle-east', priority: '0.9', changefreq: 'weekly' },
+    { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly' },
+    { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly' },
+    { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly' },
+    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly' },
+    { path: 'products', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing-services', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'refrigeration-equipment', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing/commercial-kitchen-equipment-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing/mobile-accessories-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing-services/supplier-search', priority: '0.9', changefreq: 'monthly' },
+    { path: 'sourcing-services/inspection-quality-control', priority: '0.9', changefreq: 'monthly' },
+    { path: 'sourcing-services/consolidation-export', priority: '0.9', changefreq: 'monthly' }
   ];
   const countryPaths = countryRouteSlugs.map((country) => ({
     path: `shipping-from-china-to-${country}`,
     priority: '0.9',
     changefreq: 'weekly',
-    lastmod: today,
   }));
 
   // Try to load blog posts
@@ -1433,14 +1429,14 @@ function run() {
     }
   }
 
-  const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod: string; languages?: string[] }> = [...basePaths, ...countryPaths];
+  const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod?: string; languages?: string[] }> = [...basePaths, ...countryPaths];
   blogPosts.forEach((post) => {
     if (post && (post.slug || post.id)) {
       allPaths.push({
         path: `blog/${post.slug || post.id}`,
         priority: '0.7',
         changefreq: 'weekly',
-        lastmod: post.date || today,
+        lastmod: post.date || undefined,
         languages: [normalizeArticleLocale(post.language)]
       });
     }
@@ -1600,7 +1596,7 @@ function run() {
       alternates.forEach((alternate) => {
         xml += `    <xhtml:link rel="alternate" hreflang="${alternate.hrefLang}" href="${alternate.href}" />\n`;
       });
-      xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
+      if (entry.lastmod) xml += `    <lastmod>${entry.lastmod}</lastmod>\n`;
       xml += `    <changefreq>${entry.changefreq}</changefreq>\n`;
       xml += `    <priority>${priorityVal}</priority>\n`;
       xml += '  </url>\n';
