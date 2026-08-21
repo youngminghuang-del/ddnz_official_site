@@ -6,6 +6,12 @@ const distDir = path.join(projectRoot, 'dist');
 const sitemapPath = path.join(distDir, 'sitemap.xml');
 const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar'];
 const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar' };
+const expectedShowcaseRedirects = new Map([
+  ['commercial-kitchen', '/sourcing/commercial-kitchen-equipment-from-china'],
+  ['audio-speakers', '/sourcing/audio-speakers-from-china'],
+  ['mobile-accessories', '/sourcing/mobile-accessories-from-china'],
+  ['outdoor-products', '/sourcing/outdoor-products-from-china'],
+]);
 
 const failures = [];
 const notices = [];
@@ -78,9 +84,30 @@ for (const absoluteUrl of urls) {
   if (!jsonLdBlocks.length) notices.push(`${url.pathname}: no static JSON-LD block`);
 }
 
+for (const [sourcePath, targetPath] of expectedShowcaseRedirects) {
+  const htmlPath = path.join(distDir, sourcePath, 'index.html');
+  if (!fs.existsSync(htmlPath)) {
+    failures.push(`Showcase alias redirect missing: /${sourcePath}`);
+    continue;
+  }
+
+  const html = read(htmlPath);
+  const targetUrl = `https://www.ddnzglobal.com${targetPath}`;
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/i)?.[1];
+  const robots = html.match(/<meta\s+name="robots"\s+content="([^"]+)"/i)?.[1];
+  const refresh = html.match(/<meta\s+http-equiv="refresh"\s+content="([^"]+)"/i)?.[1];
+  if (canonical !== targetUrl) failures.push(`/${sourcePath}: redirect canonical is ${canonical || 'missing'}`);
+  if (robots !== 'noindex,follow') failures.push(`/${sourcePath}: redirect robots is ${robots || 'missing'}`);
+  if (refresh !== `0;url=${targetUrl}`) failures.push(`/${sourcePath}: redirect refresh target is ${refresh || 'missing'}`);
+  if (!html.includes(`location.replace(${JSON.stringify(targetUrl)})`)) {
+    failures.push(`/${sourcePath}: JavaScript redirect target is missing`);
+  }
+}
+
 const summary = {
   sitemapUrls: urls.length,
   htmlPagesChecked: urls.length,
+  redirectPagesChecked: expectedShowcaseRedirects.size,
   failures: failures.length,
   notices: notices.length,
 };
