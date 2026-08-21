@@ -40,17 +40,28 @@ async function loadSitemap(source) {
   throw lastError;
 }
 
-function extractSiteUrls(xml, site) {
+function extractSiteUrls(xml, site, recentDays) {
   const siteOrigin = new URL(site).origin;
-  const urls = [...xml.matchAll(/<loc>(.*?)<\/loc>/gs)]
-    .map((match) => match[1].trim().replaceAll('&amp;', '&'))
-    .filter((value) => {
-      try {
-        return new URL(value).origin === siteOrigin;
-      } catch {
-        return false;
-      }
-    });
+  const cutoff = recentDays > 0 ? Date.now() - recentDays * 24 * 60 * 60 * 1000 : null;
+  const urls = [...xml.matchAll(/<url>(.*?)<\/url>/gs)].flatMap((entry) => {
+    const value = entry[1].match(/<loc>(.*?)<\/loc>/s)?.[1]?.trim().replaceAll('&amp;', '&');
+    const lastmod = entry[1].match(/<lastmod>(.*?)<\/lastmod>/s)?.[1]?.trim();
+    if (!value) return [];
+
+    try {
+      if (new URL(value).origin !== siteOrigin) return [];
+    } catch {
+      return [];
+    }
+
+    if (cutoff) {
+      if (!lastmod) return [];
+      const modifiedAt = Date.parse(lastmod);
+      if (!Number.isFinite(modifiedAt) || modifiedAt < cutoff) return [];
+    }
+
+    return [value];
+  });
 
   return [...new Set(urls)];
 }
@@ -64,10 +75,15 @@ async function main() {
 
   const site = readArgument('--site', DEFAULT_SITE);
   const sitemap = readArgument('--sitemap', DEFAULT_SITEMAP);
+  const recentDays = Number(readArgument('--recent-days', '0'));
   const xml = await loadSitemap(sitemap);
-  const urls = extractSiteUrls(xml, site);
+  const urls = extractSiteUrls(xml, site, recentDays);
 
   if (urls.length === 0) {
+    if (recentDays > 0) {
+      console.log(`No sitemap URLs were modified in the last ${recentDays} day(s); skipping Baidu submission.`);
+      return;
+    }
     throw new Error('No valid same-site URLs were found in the sitemap.');
   }
 

@@ -101,7 +101,10 @@ jobs:
         continue-on-error: true
         env:
           BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
-        run: node scripts/push-baidu-urls.mjs --sitemap https://www.ddnzglobal.com/sitemap.xml
+        run: >-
+          node scripts/push-baidu-urls.mjs
+          --sitemap https://www.ddnzglobal.com/sitemap.xml
+          --recent-days ${{ github.event_name == 'schedule' && '2' || '0' }}
       - name: Submit deployed sitemap URLs to IndexNow
         continue-on-error: true
         run: >-
