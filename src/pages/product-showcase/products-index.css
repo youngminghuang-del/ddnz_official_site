@@ -153,6 +153,7 @@
 .px-quote-variables span { color: #536073; font-size: 9px; }
 .px-quote-variables span:not(:last-child)::after { content: "·"; margin-left: 6px; color: #b59d8e; }
 .px-category-actions { margin-top: auto; padding-top: 18px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.px-category-links { min-width: 0; display: flex; flex: 1; flex-wrap: wrap; gap: 0 13px; }
 .px-category-actions a { min-height: 40px; display: inline-flex; align-items: center; gap: 8px; color: var(--px-purple); font-size: 11px; font-weight: 800; text-decoration: none; }
 .px-category-actions button { min-height: 40px; padding: 0; border: 0; border-bottom: 1px solid #9b8ca1; color: #4a5466; background: transparent; font-size: 10px; font-weight: 740; cursor: pointer; }
 .px-category-actions :is(a,button):hover { color: var(--px-coral); border-color: var(--px-coral); }
@@ -341,6 +342,8 @@
   .px-family-list { margin-top: 16px; }
   .px-quote-variables { margin-top: 17px; padding-top: 14px; }
   .px-category-actions { padding-top: 20px; }
+  .px-category-actions { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .px-category-links { width: 100%; }
   .px-category-actions :is(a,button) { min-height: 44px; font-size: 10px; }
   .px-other-category { padding: 20px; align-items: stretch; flex-direction: column; }
   .px-other-category>div { align-items: flex-start; }

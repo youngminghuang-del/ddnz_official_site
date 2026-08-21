@@ -462,6 +462,20 @@ export function App() {
   }, [form]);
 
   const update = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
+  const persistQuoteDraft = () => {
+    try {
+      if (!form.notes.trim()) {
+        window.sessionStorage.removeItem("ddnz_quote_prefill_v1");
+        return;
+      }
+      window.sessionStorage.setItem("ddnz_quote_prefill_v1", JSON.stringify({
+        source: "commercial_kitchen_product",
+        notes: form.notes.trim(),
+      }));
+    } catch {
+      // The secure quote route remains available when browser storage is disabled.
+    }
+  };
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
 
   return (
@@ -643,7 +657,7 @@ export function App() {
             <div className="k-rfq-success" role="status">
               <CheckCircle2 size={42} />
               <div><p className="k-kicker">BRIEF READY</p><h3>{form.need} · {form.market}</h3><p>Your design need, operating context and equipment scope are ready for the secure DDNZ brief.</p></div>
-              <a className="k-primary" href={quoteUrl}>Continue to secure brief <ArrowRight size={17} /></a>
+              <a className="k-primary" href={quoteUrl} onClick={persistQuoteDraft}>Continue to secure brief <ArrowRight size={17} /></a>
               <button className="k-link-button" type="button" onClick={() => setSubmitted(false)}>Edit request</button>
             </div>
           )}

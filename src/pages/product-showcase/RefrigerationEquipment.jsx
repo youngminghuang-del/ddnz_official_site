@@ -215,6 +215,23 @@ export function RefrigerationEquipment() {
     return () => { document.title = previousTitle; };
   }, []);
 
+  useEffect(() => {
+    if (!scoreOpen) return undefined;
+
+    const root = document.documentElement;
+    const body = document.body;
+    const previousRootOverflow = root.style.overflow;
+    const previousBodyOverflow = body.style.overflow;
+
+    root.style.overflow = "hidden";
+    body.style.overflow = "hidden";
+
+    return () => {
+      root.style.overflow = previousRootOverflow;
+      body.style.overflow = previousBodyOverflow;
+    };
+  }, [scoreOpen]);
+
   const quoteUrl = useMemo(() => {
     const params = new URLSearchParams({
       leadGoal: "Product Sourcing",
@@ -228,6 +245,21 @@ export function RefrigerationEquipment() {
     });
     return `/get-a-quote?${params.toString()}`;
   }, [form]);
+
+  const persistQuoteDraft = () => {
+    try {
+      if (!form.notes.trim()) {
+        window.sessionStorage.removeItem("ddnz_quote_prefill_v1");
+        return;
+      }
+      window.sessionStorage.setItem("ddnz_quote_prefill_v1", JSON.stringify({
+        source: "refrigeration_product",
+        notes: form.notes.trim(),
+      }));
+    } catch {
+      // The secure quote route remains available when browser storage is disabled.
+    }
+  };
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
   const update = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));
@@ -334,7 +366,7 @@ export function RefrigerationEquipment() {
 
         <section className="refrigeration-section refrigeration-decisions" aria-label="Supplier and destination controls">
           <article className="refrigeration-scorecard">
-            <div className="refrigeration-decision-head"><div><p className="refrigeration-kicker">SUPPLIER SCORECARD</p><h2>Compare capability after the specification is locked.</h2></div><span>PREVIEW</span></div>
+            <div className="refrigeration-decision-head"><div><p className="refrigeration-kicker">SUPPLIER SCORECARD</p><h2>Compare capability after the specification is locked.</h2></div><span>ILLUSTRATIVE PREVIEW</span></div>
             <div className="refrigeration-supplier-table">
               <div className="refrigeration-supplier-row heading"><span>Supplier</span><span>Overall</span><span>Thermal</span><span>Spec</span><span>Service</span><span>Pack-out</span></div>
               {[["Supplier A", "91", 5, 5, 4, 5], ["Supplier B", "84", 4, 4, 4, 4], ["Supplier C", "77", 4, 3, 4, 3], ["Supplier D", "69", 3, 3, 3, 3]].map(([name, score, ...dots]) => <div className="refrigeration-supplier-row" key={name}><span>{name}</span><strong>{score}</strong>{dots.map((dot, index) => <DotScale value={dot} key={index} />)}</div>)}
@@ -363,7 +395,7 @@ export function RefrigerationEquipment() {
               <p className="refrigeration-response"><ShieldCheck size={16} /> We review the operating scope before requesting sensitive files.</p>
             </form>
           ) : (
-            <div className="refrigeration-success" role="status"><CheckCircle2 size={42} /><div><p className="refrigeration-kicker">SCOPE READY</p><h3>{form.category} · {form.market}</h3><p>Your category, destination and buying stage are ready for the secure DDNZ sourcing brief.</p></div><a className="refrigeration-primary" href={quoteUrl}>Continue to secure brief <ArrowRight size={17} /></a><button className="refrigeration-link-button" type="button" onClick={() => setSubmitted(false)}>Edit request</button></div>
+            <div className="refrigeration-success" role="status"><CheckCircle2 size={42} /><div><p className="refrigeration-kicker">SCOPE READY</p><h3>{form.category} · {form.market}</h3><p>Your category, destination and buying stage are ready for the secure DDNZ sourcing brief.</p></div><a className="refrigeration-primary" href={quoteUrl} onClick={persistQuoteDraft}>Continue to secure brief <ArrowRight size={17} /></a><button className="refrigeration-link-button" type="button" onClick={() => setSubmitted(false)}>Edit request</button></div>
           )}
         </section>
 

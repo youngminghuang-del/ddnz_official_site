@@ -4,7 +4,6 @@ import {
   Box,
   Check,
   CheckCircle2,
-  ChevronDown,
   ClipboardCheck,
   Factory,
   FileCheck2,
@@ -33,6 +32,10 @@ const PRODUCT_CATEGORIES = [
     shortTitle: "Kitchen & Refrigeration",
     eyebrow: "Foodservice equipment & cold-side projects",
     href: "/sourcing/commercial-kitchen-equipment-from-china",
+    links: [
+      { label: "Kitchen equipment", href: "/sourcing/commercial-kitchen-equipment-from-china" },
+      { label: "Refrigeration equipment", href: "/refrigeration-equipment" },
+    ],
     icon: Factory,
     images: [
       {
@@ -236,18 +239,20 @@ function ProductsHeader({ open, onToggle, onClose }) {
     <header className="px-header">
       <Brand />
       <nav className="px-desktop-nav" aria-label="Primary navigation">
-        <a className="active" href="#categories">Product Sourcing <ChevronDown size={14} /></a>
-        <a href="/sourcing/commercial-kitchen-equipment-from-china">Kitchen &amp; Refrigeration</a>
+        <a className="active" href="#categories">Product Sourcing</a>
+        <a href="#commercial-kitchen-refrigeration">Kitchen &amp; Refrigeration</a>
+        <a href="/sourcing-services">Sourcing Services</a>
         <a href="#compare">Our Control Plan</a>
         <a href="#process">How It Works</a>
         <a href="#rfq">Start an RFQ</a>
       </nav>
-      <button className="px-menu-button" type="button" onClick={onToggle} aria-expanded={open} aria-label="Toggle navigation">
+      <button className="px-menu-button" type="button" onClick={onToggle} aria-expanded={open} aria-controls="products-mobile-nav" aria-label="Toggle navigation">
         {open ? <X size={22} /> : <Menu size={22} />}
       </button>
       {open && (
-        <nav className="px-mobile-nav" aria-label="Mobile navigation">
+        <nav className="px-mobile-nav" id="products-mobile-nav" aria-label="Mobile navigation">
           <a href="#categories" onClick={onClose}>Browse categories</a>
+          <a href="/sourcing-services" onClick={onClose}>Sourcing services</a>
           <a href="#compare" onClick={onClose}>Compare sourcing capability</a>
           <a href="#process" onClick={onClose}>How it works</a>
           <a href="#rfq" onClick={onClose}>Start an RFQ</a>
@@ -326,7 +331,11 @@ function CategoryCard({ category, onScope }) {
           <div>{category.quoteVariables.map((variable) => <span key={variable}>{variable}</span>)}</div>
         </div>
         <div className="px-category-actions">
-          <a href={category.href}>Explore category <ArrowRight size={16} /></a>
+          <div className="px-category-links">
+            {(category.links || [{ label: "Explore category", href: category.href }]).map((link) => (
+              <a href={link.href} key={link.href}>{link.label} <ArrowRight size={16} /></a>
+            ))}
+          </div>
           <button type="button" onClick={() => onScope(category.id)}>Scope this range</button>
         </div>
       </div>
@@ -369,11 +378,21 @@ export function ProductsIndex() {
     return () => { document.title = previousTitle; };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
   const quoteUrl = useMemo(() => {
     const category = PRODUCT_CATEGORIES.find((item) => item.id === form.category);
     const params = new URLSearchParams({
       leadGoal: "Product Sourcing",
       industry: category?.title || "Product Sourcing",
+      subcategory: form.scope,
       productScope: form.scope,
       dest: form.destination,
       buyingStage: form.stage,
@@ -399,7 +418,7 @@ export function ProductsIndex() {
   return (
     <div className="products-index-page" id="products-index-top">
       <ShowcaseSEO page="products" />
-      <a className="px-skip-link" href="#products-index-main">Skip to product categories</a>
+      <a className="px-skip-link" href="#categories">Skip to product categories</a>
       <ProductsHeader open={menuOpen} onToggle={() => setMenuOpen((value) => !value)} onClose={() => setMenuOpen(false)} />
 
       <main id="products-index-main">
@@ -539,7 +558,7 @@ export function ProductsIndex() {
         pageKey="products"
         description="Product sourcing, supplier comparison, approval evidence and export handoff from China."
         tagline="China sourcing and export coordination"
-        links={[{ label: "Categories", href: "#categories" }, { label: "Control path", href: "#compare" }, { label: "Start an RFQ", href: "#rfq" }]}
+        links={[{ label: "Categories", href: "#categories" }, { label: "Sourcing services", href: "/sourcing-services" }, { label: "Control path", href: "#compare" }, { label: "Start an RFQ", href: "#rfq" }]}
       />
     </div>
   );

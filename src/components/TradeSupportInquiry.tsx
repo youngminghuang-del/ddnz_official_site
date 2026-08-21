@@ -290,10 +290,39 @@ export default function TradeSupportInquiry() {
   const formErrorTrackedRef = useRef<unknown>(null);
 
   useEffect(() => {
+    let storedProductDetails = '';
+    const storageKey = 'ddnz_quote_prefill_v1';
+    let shouldClearStoredDraft = false;
+    try {
+      const storedDraft = window.sessionStorage.getItem(storageKey);
+      if (storedDraft) {
+        shouldClearStoredDraft = true;
+        const draft = JSON.parse(storedDraft) as { source?: unknown; notes?: unknown };
+        if (
+          (draft.source === 'commercial_kitchen_product' || draft.source === 'refrigeration_product')
+          && typeof draft.notes === 'string'
+        ) {
+          storedProductDetails = draft.notes.slice(0, 5000);
+        }
+      }
+    } catch {
+      // A malformed or unavailable session draft must never block the quote form.
+    }
+
+    if (shouldClearStoredDraft) {
+      window.setTimeout(() => {
+        try {
+          window.sessionStorage.removeItem(storageKey);
+        } catch {
+          // Browser storage can be unavailable in privacy-restricted contexts.
+        }
+      }, 0);
+    }
+
     setStep(1);
     setCategory(initialCategory);
     setDestination(initialDestination);
-    setProductDetails('');
+    setProductDetails(storedProductDetails);
     setServices([]);
     setReadiness('');
     setTimeline('');

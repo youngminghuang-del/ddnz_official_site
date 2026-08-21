@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
@@ -202,22 +202,42 @@ const skipLinkCopy = {
 function SkipToMainContent() {
   const { language } = useLanguage();
   const location = useLocation();
+  const [targetId, setTargetId] = useState('main-content');
 
   useEffect(() => {
-    const timer = window.requestAnimationFrame(() => {
+    let timer = 0;
+    let observer: MutationObserver | null = null;
+
+    const assignTarget = () => {
       const main = document.querySelector<HTMLElement>('main');
-      const target = document.querySelector<HTMLElement>('h1') || main;
-      if (!target) return;
-      target.id = 'main-content';
-      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      if (!main) return false;
+      const nextTargetId = main.id || 'main-content';
+      if (!main.id) main.id = nextTargetId;
+      if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+      setTargetId((current) => current === nextTargetId ? current : nextTargetId);
+      return true;
+    };
+
+    timer = window.requestAnimationFrame(() => {
+      assignTarget();
+      observer = new MutationObserver(assignTarget);
+      observer.observe(document.getElementById('root') || document.body, {
+        attributes: true,
+        attributeFilter: ['id', 'tabindex'],
+        childList: true,
+        subtree: true,
+      });
     });
 
-    return () => window.cancelAnimationFrame(timer);
+    return () => {
+      window.cancelAnimationFrame(timer);
+      observer?.disconnect();
+    };
   }, [location.pathname]);
 
   const focusMainContent = () => {
     window.requestAnimationFrame(() => {
-      const target = document.getElementById('main-content');
+      const target = document.getElementById(targetId);
       if (!target) return;
       if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
       target.focus({ preventScroll: true });
@@ -226,7 +246,7 @@ function SkipToMainContent() {
   };
 
   return (
-    <a className="ddnz-skip-link" href="#main-content" onClick={focusMainContent}>
+    <a className="ddnz-skip-link" href={`#${targetId}`} onClick={focusMainContent}>
       {skipLinkCopy[language] || skipLinkCopy.en}
     </a>
   );

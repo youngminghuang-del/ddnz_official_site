@@ -133,11 +133,11 @@ function Header({ menuOpen, setMenuOpen }) {
         <a href="#control">How We Work</a>
         <a href="#brief">Start a Brief</a>
       </nav>
-      <button className="ss-menu-button" type="button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-label="Toggle navigation">
+      <button className="ss-menu-button" type="button" onClick={() => setMenuOpen((open) => !open)} aria-expanded={menuOpen} aria-controls="sourcing-services-mobile-nav" aria-label="Toggle navigation">
         {menuOpen ? <X size={22} /> : <Menu size={22} />}
       </button>
       {menuOpen && (
-        <nav className="ss-mobile-nav" aria-label="Mobile navigation">
+        <nav className="ss-mobile-nav" id="sourcing-services-mobile-nav" aria-label="Mobile navigation">
           <a href="/products" onClick={close}>Product sourcing</a>
           <a href="#paths" onClick={close}>Choose a sourcing path</a>
           <a href="#marketplace" onClick={close}>Why control matters</a>
@@ -246,9 +246,20 @@ export function SourcingServices() {
     return () => { document.title = previousTitle; };
   }, []);
 
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+    const closeOnEscape = (event) => {
+      if (event.key === "Escape") setMenuOpen(false);
+    };
+    document.addEventListener("keydown", closeOnEscape);
+    return () => document.removeEventListener("keydown", closeOnEscape);
+  }, [menuOpen]);
+
   const quoteUrl = useMemo(() => {
     const params = new URLSearchParams({
-      leadGoal: "Sourcing Services",
+      leadGoal: "Product Sourcing",
+      industry: form.productScope,
+      subcategory: form.productScope,
       buyerType: form.buyerType,
       sourcingPath: buyerPath,
       productScope: form.productScope,
@@ -289,7 +300,7 @@ export function SourcingServices() {
         <section className="ss-hero" aria-labelledby="ss-title">
           <div className="ss-hero-copy">
             <p className="ss-kicker">CHINA SOURCING SERVICES · TWO BUYING PATHS</p>
-            <h1 id="ss-title">Buy closer to China supply. Keep control of what happens next.</h1>
+            <h1 id="ss-title">Source closer to China’s supply base. Keep control of what happens next.</h1>
             <p>For mixed-SKU retail orders and managed sourcing projects, DDNZ turns supplier discovery into a recorded path for comparison, approval, production follow-up and export handoff.</p>
             <div className="ss-hero-actions">
               <button className="ss-primary" type="button" onClick={() => scrollTo("brief")}>Start a sourcing brief <ArrowRight size={17} /></button>
@@ -314,7 +325,7 @@ export function SourcingServices() {
 
         <section className="ss-section ss-paths" id="paths" aria-labelledby="paths-title">
           <div className="ss-split-heading">
-            <div><p className="ss-kicker">CHOOSE THE RIGHT OPERATING MODEL</p><h2 id="paths-title">Not every China order should be managed like wholesale.</h2></div>
+            <div><p className="ss-kicker">CHOOSE THE RIGHT OPERATING MODEL</p><h2 id="paths-title">Not every China order should be managed as a wholesale order.</h2></div>
             <p>The right control path depends on SKU depth, quantity per SKU, replenishment needs, customization and the cost of getting a decision wrong.</p>
           </div>
           <div className="ss-path-grid">
