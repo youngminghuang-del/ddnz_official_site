@@ -14,6 +14,8 @@ export interface BlogPost {
   summary: string;
   content: string;
   thumbnailUrl: string;
+  listingThumbnailUrl?: string;
+  listingThumbnailSrcSet?: string;
   language?: string;
   translationGroup?: string;
   toc?: ArticleTocItem[];
