@@ -46,6 +46,28 @@ const sourcingItems = [
     },
   },
   {
+    href: '/sourcing/audio-speakers-from-china',
+    labels: {
+      en: 'Audio & Speakers',
+      zh: '音响设备',
+      ru: 'Аудио и колонки',
+      fr: 'Audio et enceintes',
+      es: 'Audio y altavoces',
+      ar: 'الصوت ومكبرات الصوت',
+    },
+  },
+  {
+    href: '/sourcing/mobile-accessories-from-china',
+    labels: {
+      en: 'Mobile Accessories',
+      zh: '手机配件',
+      ru: 'Мобильные аксессуары',
+      fr: 'Accessoires mobiles',
+      es: 'Accesorios móviles',
+      ar: 'ملحقات الهاتف',
+    },
+  },
+  {
     href: '/sourcing/outdoor-products-from-china',
     labels: {
       en: 'Outdoor Products',
@@ -121,6 +143,7 @@ export default function Navbar() {
 
   // Helper to resolve localized URL path
   const getLocalizedPath = (path: string) => {
+    if (path.startsWith('/sourcing/')) return path;
     if (path.startsWith('/#')) {
       const hash = path.slice(1);
       if (language === 'zh') return `/zh-cn${hash}`;
@@ -200,8 +223,10 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link to={getLocalizedPath('/')} className="flex items-center gap-3 sm:gap-4 group">
               <img 
-                src="https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/heaven_born_logo_wing_transparent.png" 
+                src="/images/brand/heaven-born-wing-logo-v1.png"
                 alt="Heaven Born International Freight Co., Ltd logo"
+                width="420"
+                height="295"
                 loading="lazy"
                 className="h-10 sm:h-12 md:h-13 lg:h-14 xl:h-16 w-auto transition-transform duration-300 group-hover:scale-105"
               />
@@ -303,7 +328,7 @@ export default function Navbar() {
                         {sourcingItems.map((sub) => (
                           <Link
                             key={sub.href}
-                            to={sub.href}
+                            to={getLocalizedPath(sub.href)}
                             onClick={() => setShowSourcingMenu(false)}
                             className="block px-5 py-3 text-xs font-black text-slate-700 transition-colors hover:bg-sky-50 hover:text-[#0B4F8A]"
                           >
@@ -501,7 +526,7 @@ export default function Navbar() {
               aria-label={isOpen ? 'Close navigation menu' : 'Open navigation menu'}
               aria-expanded={isOpen}
               aria-controls="mobile-navigation-menu"
-              className={cn("p-1 focus:outline-none", scrolled ? "text-slate-900" : "text-white")}
+              className={cn("grid min-h-11 min-w-11 place-items-center rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#763c9c] focus-visible:ring-offset-2", scrolled ? "text-slate-900" : "text-white")}
             >
               {isOpen ? <X className="h-6.5 w-6.5" /> : <Menu className="h-6.5 w-6.5" />}
             </button>
@@ -546,7 +571,7 @@ export default function Navbar() {
                       {sourcingItems.map((sub) => (
                         <Link
                           key={sub.href}
-                          to={sub.href}
+                          to={getLocalizedPath(sub.href)}
                           onClick={closeMenu}
                           className="block px-4 py-2 text-sm font-bold text-slate-700 transition-colors hover:bg-amber-50 hover:text-[#0B4F8A]"
                         >
@@ -566,7 +591,7 @@ export default function Navbar() {
                       onClick={() => setShowMobileRegions(!showMobileRegions)}
                       aria-expanded={showMobileRegions}
                       aria-controls="mobile-region-navigation"
-                      className="w-full flex items-center justify-between px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 focus:outline-none"
+                      className="w-full flex min-h-11 items-center justify-between px-4 py-2 text-xs font-bold uppercase tracking-wider text-slate-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#763c9c] focus-visible:ring-inset"
                     >
                       <span>{t(`nav.${item.key}`)}</span>
                       <ChevronDown className={cn("w-3.5 h-3.5 transition-transform duration-300", showMobileRegions ? "rotate-180" : "")} />

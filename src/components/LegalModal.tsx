@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export type LegalType = 'privacy' | 'terms' | null;
 
@@ -9,9 +10,18 @@ interface LegalModalProps {
 }
 
 export default function LegalModal({ type, onClose }: LegalModalProps) {
+  const { language } = useLanguage();
+  const labels = {
+    en: { back: 'Back to Home', privacy: 'Privacy Policy', terms: 'Terms of Service' },
+    zh: { back: '返回首页', privacy: '隐私政策', terms: '服务条款' },
+    ru: { back: 'На главную', privacy: 'Политика конфиденциальности', terms: 'Условия обслуживания' },
+    fr: { back: 'Retour à l’accueil', privacy: 'Politique de confidentialité', terms: 'Conditions de service' },
+    es: { back: 'Volver al inicio', privacy: 'Política de privacidad', terms: 'Términos de servicio' },
+    ar: { back: 'العودة إلى الصفحة الرئيسية', privacy: 'سياسة الخصوصية', terms: 'شروط الخدمة' },
+  }[language];
   const content = {
     privacy: {
-      title: 'Privacy Policy',
+      title: labels.privacy,
       sections: [
         { title: 'Introduction', text: 'DDNZ Global values your privacy. We collect information (Name, Email, Phone, Company) solely to provide logistics consultancy and quotes.' },
         { title: 'Data Usage', text: 'Your data is never sold to third parties. We use industry-standard encryption to ensure your cargo details and contact info remain confidential.' },
@@ -19,7 +29,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
       ]
     },
     terms: {
-      title: 'Terms of Service',
+      title: labels.terms,
       sections: [
         { title: 'Service Basis', text: 'All quotes provided are based on current market rates and space availability at the time of inquiry.' },
         { title: 'Liabilities', text: 'DDNZ Global operates under standard international freight forwarding conditions. Specific liability limits apply to various modes of transport (Sea/Air/Land).' },
@@ -42,8 +52,8 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
               onClick={onClose}
               className="inline-flex items-center text-gray-400 hover:text-white transition-colors mb-12 group py-2"
             >
-              <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform" />
-              Back to Home
+              <ArrowLeft className="w-5 h-5 mr-2 transform group-hover:-translate-x-1 transition-transform rtl:rotate-180 rtl:mr-0 rtl:ml-2" />
+              {labels.back}
             </button>
 
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight">

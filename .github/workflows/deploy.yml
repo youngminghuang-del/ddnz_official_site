@@ -110,3 +110,6 @@ jobs:
           --recent-days ${{ github.event_name == 'schedule' && '2' || '0' }}
       - name: Verify the deployed sitemap remains reachable
         run: curl --fail --silent --show-error --retry 6 --retry-delay 10 https://www.ddnzglobal.com/sitemap.xml > /dev/null
+      - name: Audit deployed security headers
+        continue-on-error: true
+        run: node scripts/check-security-headers.mjs https://www.ddnzglobal.com/

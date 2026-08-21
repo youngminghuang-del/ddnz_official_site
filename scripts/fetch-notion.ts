@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
 import { downloadNotionImage, generateSlug } from "./notion-img-sync";
+import { auditPublishedArticle } from "./notion-publication-guard";
 
 dotenv.config({ path: ".env.local" });
 
@@ -315,7 +316,9 @@ async function renderBlocks(blocks: any[], context: RenderContext): Promise<stri
       if (imageUrl) {
         const caption = plainText(image.caption);
         const alt = caption || `${context.articleTitle} — supporting image ${context.imageIndex}`;
-        const localUrl = await downloadNotionImage(imageUrl, context.slug, context.imageIndex++);
+        const localUrl = await downloadNotionImage(imageUrl, context.slug, context.imageIndex++, {
+          strict: STRICT_SYNC,
+        });
         html += `<figure class="article-figure"><img src="${escapeAttribute(localUrl)}" alt="${escapeAttribute(alt)}" loading="lazy" referrerpolicy="no-referrer" />${
           caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ""
         }</figure>`;
@@ -442,39 +445,6 @@ function writeFallbackData() {
   if (!fs.existsSync(redirectFilePath)) fs.writeFileSync(redirectFilePath, "[]", "utf-8");
 }
 
-function auditGovernedArticle(post: any) {
-  if (!post.governed) return [];
-
-  const blockers: string[] = [];
-  const delegatedAutomatedApproval =
-    post.status === "Published" &&
-    !post.reviewer?.length &&
-    post.evidenceCount >= 2 &&
-    post.topicCount >= 1 &&
-    post.auditCount >= 1 &&
-    Boolean(post.lastVerified) &&
-    (post.qualityScore ?? 0) >= 85;
-  if (!post.topicKey) blockers.push("Topic Key is missing");
-  if (!post.summary) blockers.push("Excerpt/Summary is missing");
-  if (!post.lastVerified) blockers.push("Last Verified is missing");
-  if (!post.reviewer?.length && !delegatedAutomatedApproval) {
-    blockers.push("Reviewer or delegated automated approval is missing");
-  }
-  if (!post.primaryCTA) blockers.push("Primary CTA is missing");
-  if ((post.qualityScore ?? 0) < 85) blockers.push("Quality Score is below 85");
-  if (post.thumbnailUrl === fallbackCover) blockers.push("A rights-cleared cover image is missing");
-  if (!/<a\s+href="https?:\/\//i.test(post.content)) blockers.push("No external source link appears in the article");
-
-  const minimumEvidence = post.contentType === "Case Study" ? 1 : 2;
-  if (post.evidenceCount < minimumEvidence) {
-    blockers.push(`${minimumEvidence} linked Evidence Ledger record(s) required for ${post.contentType || "this article"}`);
-  }
-  if (post.topicCount < 1) blockers.push("A linked Topic Registry decision is required");
-  if (post.auditCount < 1) blockers.push("Article-linked audit history is required");
-
-  return blockers;
-}
-
 async function run() {
   if (!NOTION_API_KEY || !NOTION_DATABASE_ID) {
     console.warn("NOTION_API_KEY or NOTION_DATABASE_ID is missing.");
@@ -540,7 +510,9 @@ async function run() {
       if (localAssets?.cover) {
         thumbnailUrl = localAssets.cover.src;
       } else if (thumbnailUrl !== fallbackCover) {
-        thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover");
+        thumbnailUrl = await downloadNotionImage(thumbnailUrl, slug, "cover", {
+          strict: STRICT_SYNC,
+        });
       }
 
       const initialContent = propertyText(properties.Content || properties.content);
@@ -596,7 +568,10 @@ async function run() {
       );
       post.legacyMigration = !post.governed && Boolean(post.topicKey || post.primaryCTA);
 
-      const blockers = auditGovernedArticle(post);
+      const blockers = auditPublishedArticle(post, {
+        fallbackCover,
+        strictSync: STRICT_SYNC,
+      });
       if (blockers.length) {
         throw new Error(`Publication blocked for "${title}":\n- ${blockers.join("\n- ")}`);
       }

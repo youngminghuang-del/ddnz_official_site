@@ -1,9 +1,12 @@
 import type { IncomingMessage, ServerResponse } from 'node:http';
 import { execFile } from 'node:child_process';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
 import { promisify } from 'node:util';
 import type { Plugin } from 'vite';
 import { createContentOpsAiService, type ContentOpsAiConfig } from './content-ops-ai';
 import { planEvidenceDrafts, type AiEvidenceSource } from './content-ops-evidence';
+import { downloadNotionImage } from './notion-img-sync';
 import type { AiJobStage, ContentOpsAiJob } from '../src/types/contentOps';
 
 const execFileAsync = promisify(execFile);
@@ -501,7 +504,7 @@ async function buildEvidenceAutofillInput(apiKey: string, articleId: string) {
   const evidence = evidencePages.map(mapEvidence);
   const article = { ...mapArticle(page), ...evidenceGate(articleId, evidence) };
   const related = evidence.filter((item) => item.articleIds.includes(articleId));
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const html = await renderPreviewBlocks(apiKey, blocks, articleId);
   const bodyExcerpt = html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, 28_000);
   return {
     workflowMode: 'evidence_autofill',
@@ -659,7 +662,10 @@ async function buildPayload(apiKey: string) {
     .sort((a, b) => b.lastEditedTime.localeCompare(a.lastEditedTime));
   const audits = auditPages
     .map(mapAudit)
-    .sort((a, b) => (b.runDate || b.createdTime).localeCompare(a.runDate || a.createdTime));
+    .sort((a, b) => {
+      const byRunDate = (b.runDate || b.createdTime).localeCompare(a.runDate || a.createdTime);
+      return byRunDate || b.createdTime.localeCompare(a.createdTime);
+    });
 
   return {
     generatedAt: new Date().toISOString(),
@@ -1419,7 +1425,7 @@ async function prepareResearchArticle(apiKey: string, topicId: string) {
 
 async function bodyTextLength(apiKey: string, articleId: string) {
   const blocks = await fetchBlockChildren(apiKey, articleId);
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const html = await renderPreviewBlocks(apiKey, blocks, articleId);
   return html.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().length;
 }
 
@@ -1600,6 +1606,64 @@ const escapeHtml = (value: string) =>
 
 const escapeAttribute = (value: string) => escapeHtml(value).replaceAll('`', '&#096;');
 
+type LocalPreviewAsset = {
+  src: string;
+  alt: string;
+  caption?: string;
+};
+
+type LocalPreviewAssets = {
+  cover?: LocalPreviewAsset;
+  inline?: Array<LocalPreviewAsset & { beforeHeading: string }>;
+};
+
+async function loadLocalPreviewAssets(slug: string): Promise<LocalPreviewAssets | null> {
+  const safeSlug = slug.toLowerCase().replace(/[^a-z0-9-]/g, '');
+  if (!safeSlug || safeSlug !== slug) return null;
+
+  try {
+    const manifestPath = path.join(
+      process.cwd(),
+      'public',
+      'images',
+      'posts',
+      safeSlug,
+      'preview-assets.json',
+    );
+    const parsed = JSON.parse(await readFile(manifestPath, 'utf8')) as LocalPreviewAssets;
+    const allowedPrefix = `/images/posts/${safeSlug}/`;
+    const validAsset = (asset?: LocalPreviewAsset) =>
+      !!asset && asset.src.startsWith(allowedPrefix) && !!asset.alt.trim();
+    const cover = validAsset(parsed.cover) ? parsed.cover : undefined;
+    const inline = (parsed.inline || []).filter(
+      (asset) => validAsset(asset) && !!asset.beforeHeading?.trim(),
+    );
+    return cover || inline.length ? { cover, inline } : null;
+  } catch {
+    return null;
+  }
+}
+
+function previewFigure(asset: LocalPreviewAsset) {
+  return `<figure class="article-figure"><img src="${escapeAttribute(asset.src)}" alt="${escapeAttribute(
+    asset.alt,
+  )}" loading="lazy" decoding="async" />${
+    asset.caption ? `<figcaption>${escapeHtml(asset.caption)}</figcaption>` : ''
+  }</figure>`;
+}
+
+function applyLocalPreviewAssets(html: string, assets: LocalPreviewAssets | null) {
+  if (!assets?.inline?.length) return html;
+  return assets.inline.reduce((rendered, asset) => {
+    const heading = escapeHtml(asset.beforeHeading);
+    const marker = new RegExp(`<h[23](?:\\s[^>]*)?>${heading.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}</h[23]>`);
+    const figure = previewFigure(asset);
+    return marker.test(rendered)
+      ? rendered.replace(marker, `${figure}$&`)
+      : `${rendered}${figure}`;
+  }, html);
+}
+
 function renderRichTextItem(item: any) {
   if (!item?.plain_text) return '';
   let text = escapeHtml(item.plain_text);
@@ -1632,7 +1696,7 @@ async function fetchBlockChildren(apiKey: string, blockId: string) {
   return blocks;
 }
 
-async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<string> {
+async function renderPreviewBlocks(apiKey: string, blocks: any[], pageId = 'article'): Promise<string> {
   let html = '';
   let listType: 'ul' | 'ol' | '' = '';
 
@@ -1650,7 +1714,7 @@ async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<strin
     if (!isList || (listType && listType !== nextListType)) closeList();
     const renderChildren = async () =>
       block.has_children
-        ? renderPreviewBlocks(apiKey, await fetchBlockChildren(apiKey, block.id))
+        ? renderPreviewBlocks(apiKey, await fetchBlockChildren(apiKey, block.id), pageId)
         : '';
 
     if (type === 'paragraph') {
@@ -1671,7 +1735,12 @@ async function renderPreviewBlocks(apiKey: string, blocks: any[]): Promise<strin
       const imageUrl = image.type === 'external' ? image.external?.url : image.file?.url;
       const caption = plainText(image.caption);
       if (imageUrl) {
-        html += `<figure class="article-figure"><img src="${escapeAttribute(imageUrl)}" alt="${escapeAttribute(
+        const stablePreviewUrl = await downloadNotionImage(
+          imageUrl,
+          `preview-${pageId.replaceAll('-', '').slice(0, 12)}`,
+          block.id.replaceAll('-', '').slice(0, 12),
+        );
+        html += `<figure class="article-figure"><img src="${escapeAttribute(stablePreviewUrl)}" alt="${escapeAttribute(
           caption || 'Article supporting image',
         )}" />${caption ? `<figcaption>${escapeHtml(caption)}</figcaption>` : ''}</figure>`;
       }
@@ -1748,7 +1817,12 @@ async function buildArticlePreview(apiKey: string, articleId: string) {
   ]);
   const evidence = evidencePages.map(mapEvidence);
   const gate = evidenceGate(articleId, evidence);
-  const html = await renderPreviewBlocks(apiKey, blocks);
+  const article = { ...mapArticle(page), ...gate };
+  const localAssets = await loadLocalPreviewAssets(article.slug);
+  const html = applyLocalPreviewAssets(
+    await renderPreviewBlocks(apiKey, blocks, articleId),
+    localAssets,
+  );
   // Count the complete rendered body so nested callouts, toggles and table cells
   // contribute to the reading-time estimate.
   const text = html.replace(/<[^>]+>/g, ' ');
@@ -1758,13 +1832,18 @@ async function buildArticlePreview(apiKey: string, articleId: string) {
     nonCjkText.match(/[\p{L}\p{N}][\p{L}\p{N}'’-]*/gu)?.length || 0;
   const wordCount = nonCjkWords + Math.ceil(cjkCharacters / 2);
   return {
-    article: { ...mapArticle(page), ...gate },
+    article,
     summary: propertyValue(page.properties.Excerpt),
-    coverUrl: coverUrl(page),
+    coverUrl: localAssets?.cover?.src || coverUrl(page),
     html,
     wordCount,
     readMinutes: Math.max(1, Math.ceil(wordCount / 220)),
     eligibility: publishEligibility(page, evidence),
+    visualAssets: {
+      source: localAssets ? 'local-staging' : 'notion',
+      coverCount: localAssets?.cover ? 1 : coverUrl(page) ? 1 : 0,
+      inlineCount: localAssets?.inline?.length || 0,
+    },
   };
 }
 
@@ -1840,8 +1919,15 @@ async function publishArticle(apiKey: string, articleId: string, confirmationTit
     throw new Error(`发布闸门未通过：${eligibility.blockers.join('；')}`);
   }
 
-  await createHumanAudit(apiKey, page, 'Domain Review');
-  await createHumanAudit(apiKey, page, 'Publish Review');
+  const [domainAudit, publishAudit] = await Promise.all([
+    createHumanAudit(apiKey, page, 'Domain Review'),
+    createHumanAudit(apiKey, page, 'Publish Review'),
+  ]) as Array<{ id: string }>;
+  const auditHistory = Array.from(new Set([
+    ...relationIds(page.properties['Audit History']),
+    domainAudit.id,
+    publishAudit.id,
+  ]));
   const today = new Date().toISOString().slice(0, 10);
   const updated = await notionFetch(apiKey, `/v1/pages/${articleId}`, {
     method: 'PATCH',
@@ -1850,6 +1936,7 @@ async function publishArticle(apiKey: string, articleId: string, confirmationTit
         Status: { select: { name: 'Published' } },
         Date: { date: { start: today } },
         'Last Verified': { date: { start: today } },
+        'Audit History': { relation: auditHistory.map((id) => ({ id })) },
       },
     },
   });

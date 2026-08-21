@@ -3,7 +3,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { PUBLIC_SOCIAL_CHANNELS } from '../config/socialChannels';
 
 interface SchemaProps {
-  type: 'Organization' | 'LocalBusiness' | 'Service' | 'BlogPosting' | 'BreadcrumbList';
+  type: 'Organization' | 'LocalBusiness' | 'Service' | 'BlogPosting' | 'BreadcrumbList' | 'FAQPage';
   data: Record<string, any>;
 }
 
@@ -16,6 +16,15 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       ? rawPageUrl
       : rawPageUrl.replace(/\/+$/, '');
     const scriptId = `schema-jsonld-${type.toLowerCase()}`;
+    // The production build injects crawlable JSON-LD into the static HTML. Once
+    // React mounts, replace that snapshot with the route-aware runtime schemas
+    // instead of leaving duplicate Organization, Service or BlogPosting nodes.
+    [
+      'schema-jsonld-static-home',
+      'schema-jsonld-static-page',
+      'schema-jsonld-static-blog'
+    ].forEach((staticScriptId) => document.getElementById(staticScriptId)?.remove());
+
     // Replace only the schema of the same type, so Organization and LocalBusiness
     // can coexist on the homepage.
     const existingScript = document.getElementById(scriptId);
@@ -34,13 +43,14 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = {
         ...baseSchema,
         '@type': 'Organization',
-        'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd',
-        'alternateName': ['Heaven Born', '华正邦泰国际货运', '华正邦泰', 'DDNZ Global'],
+        '@id': 'https://www.ddnzglobal.com/#organization',
+        'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+        'alternateName': ['DDNZ Global', '大递诺展'],
         'url': 'https://www.ddnzglobal.com',
-        'logo': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
+        'logo': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
         'description': language === 'zh' 
-          ? '华正邦泰国际货运代理有限公司专注于全球一站式跨境海运拼箱整柜、空运、Amazon FBA 及广州仓储集拼服务。'
-          : 'Heaven Born International Freight Co., Ltd provides global freight forwarding, sea freight consolidation, air cargo, Amazon FBA preparation, and warehouse services from China.',
+          ? '大递诺展贸易有限公司为国际进口商协调中国采购、供应商验证、质量检验、集货与出口交付。'
+          : 'DDNZ Global Trade Co., Ltd coordinates China sourcing, supplier verification, quality inspection, consolidation and export delivery for international importers.',
         'contactPoint': [
           {
             '@type': 'ContactPoint',
@@ -57,7 +67,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         ...baseSchema,
         '@type': 'LocalBusiness',
         'name': language === 'zh' ? '华正邦泰国际货运代理有限公司（广州总部）' : 'Heaven Born International Freight Co., Ltd (Guangzhou HQ)',
-        'image': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png',
+        'image': 'https://www.ddnzglobal.com/images/brand/heaven-born-wing-logo-v1.png',
         'url': 'https://www.ddnzglobal.com',
         'telephone': '+86-20-3654-6132',
         'email': 'partnership@ddnzglobal.com',
@@ -91,14 +101,21 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         }
       };
     } else if (type === 'Service') {
+      const isDDNZService = data.providerName === 'DDNZ Global Trade Co., Ltd';
+      const defaultOfferUrl = isDDNZService
+        ? 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Product%20Sourcing&source=structured_data'
+        : 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Freight%20Only&source=structured_data';
       finalSchema = {
         ...baseSchema,
         '@type': 'Service',
         '@id': `${pageUrl}#service`,
         'serviceType': data.serviceType || 'Freight Forwarding',
         'provider': {
-          '@type': 'LocalBusiness',
-          'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd'
+          '@type': isDDNZService ? 'Organization' : 'LocalBusiness',
+          'name': isDDNZService
+            ? (language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd')
+            : (language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd'),
+          'url': 'https://www.ddnzglobal.com/'
         },
         'areaServed': data.areaServed || 'Global',
         'description': data.description || 'Global logistics transport and consolidation service',
@@ -106,7 +123,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'offers': {
           '@type': 'Offer',
           'priceCurrency': 'USD',
-          'url': data.offerUrl || 'https://www.ddnzglobal.com/get-a-quote/',
+          'url': data.offerUrl || defaultOfferUrl,
           'description': data.offerDescription || 'Request a route-specific freight quotation based on cargo details and current capacity.'
         }
       };
@@ -122,8 +139,24 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
           'item': item.url
         }))
       };
+    } else if (type === 'FAQPage') {
+      finalSchema = {
+        ...baseSchema,
+        '@type': 'FAQPage',
+        '@id': `${pageUrl}#faq`,
+        'url': pageUrl,
+        'inLanguage': language,
+        'mainEntity': (data.faqs || []).map((faq: { question: string; answer: string }) => ({
+          '@type': 'Question',
+          'name': faq.question,
+          'acceptedAnswer': {
+            '@type': 'Answer',
+            'text': faq.answer
+          }
+        }))
+      };
     } else if (type === 'BlogPosting') {
-      const rawImage = data.image || 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png';
+      const rawImage = data.image || 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png';
       const absoluteImage = rawImage.startsWith('http')
         ? rawImage
         : `https://www.ddnzglobal.com${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`;
@@ -142,11 +175,12 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         },
         'publisher': {
           '@type': 'Organization',
-          'name': language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd',
+          '@id': 'https://www.ddnzglobal.com/#organization',
+          'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
           'url': 'https://www.ddnzglobal.com/',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://raw.githubusercontent.com/youngminghuang-del/ddnz_photo_assets/main/website_logo_ddnzglobal_512x512.png'
+            'url': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png'
           }
         },
         'mainEntityOfPage': {

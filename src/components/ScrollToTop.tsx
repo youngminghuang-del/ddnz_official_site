@@ -1,9 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowUp } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
 
 export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
+  const { language } = useLanguage();
+  const label = {
+    en: 'Scroll to top', zh: '返回顶部', ru: 'Наверх', fr: 'Retour en haut', es: 'Volver arriba', ar: 'العودة إلى الأعلى',
+  }[language];
 
   useEffect(() => {
     const toggleVisibility = () => {
@@ -38,8 +43,8 @@ export default function ScrollToTop() {
         >
           <button
             onClick={scrollToTop}
-            className="flex items-center justify-center w-12 h-12 bg-slate-800/80 backdrop-blur-sm text-white rounded-full shadow-xl hover:bg-violet-600 hover:shadow-2xl transition-all duration-300 focus:outline-none"
-            aria-label="Scroll to top"
+            className="flex items-center justify-center w-12 h-12 bg-slate-800/80 backdrop-blur-sm text-white rounded-full shadow-xl hover:bg-violet-600 hover:shadow-2xl transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet-500 focus-visible:ring-offset-2"
+            aria-label={label}
           >
             <ArrowUp className="w-6 h-6" />
           </button>

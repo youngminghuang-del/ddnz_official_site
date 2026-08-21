@@ -1,3 +1,5 @@
+import { readAttribution } from './attribution';
+
 const GA_MEASUREMENT_ID = 'G-TZD9QT4W8H';
 const CLARITY_PROJECT_ID = 'xswyojgnjd';
 
@@ -15,6 +17,8 @@ type PageContext = {
   utm_medium?: string;
   utm_campaign?: string;
   utm_content?: string;
+  utm_term?: string;
+  landing_page?: string;
 };
 
 type ClarityFunction = ((...args: unknown[]) => void) & {
@@ -30,6 +34,27 @@ declare global {
 }
 
 let analyticsConsentGranted = false;
+let consentQueueInitialized = false;
+
+const LOCAL_ANALYTICS_HOSTNAMES = new Set([
+  'localhost',
+  '127.0.0.1',
+  '::1',
+  '0.0.0.0',
+]);
+
+function isAnalyticsDisabled() {
+  if (typeof window === 'undefined') return true;
+
+  const hostname = window.location.hostname.toLowerCase();
+  return (
+    import.meta.env.DEV ||
+    import.meta.env.VITE_DISABLE_ANALYTICS === 'true' ||
+    LOCAL_ANALYTICS_HOSTNAMES.has(hostname) ||
+    hostname.endsWith('.localhost') ||
+    hostname.endsWith('.local')
+  );
+}
 
 const SENSITIVE_PARAMETER_KEYS = new Set([
   'name',
@@ -75,18 +100,18 @@ function getPageContext(): PageContext {
     /shipping-from-china-to-(saudi-arabia|uae|kuwait|qatar|oman|bahrain|kazakhstan|uzbekistan|nigeria|ghana|mexico|brazil|argentina|peru|chile)(?:\/|$)/,
   )?.[1];
   const country = url.searchParams.get('country') || pathCountry;
-  const attribution = {
-    utm_source: url.searchParams.get('utm_source') || undefined,
-    utm_medium: url.searchParams.get('utm_medium') || undefined,
-    utm_campaign: url.searchParams.get('utm_campaign') || undefined,
-    utm_content: url.searchParams.get('utm_content') || undefined,
-  };
+  const attribution = readAttribution(url.search);
 
   return {
     page_language: getPageLanguage(url.pathname),
     ...(service ? { service } : {}),
     ...(country ? { country } : {}),
-    ...attribution,
+    ...(attribution.utm_source ? { utm_source: attribution.utm_source } : {}),
+    ...(attribution.utm_medium ? { utm_medium: attribution.utm_medium } : {}),
+    ...(attribution.utm_campaign ? { utm_campaign: attribution.utm_campaign } : {}),
+    ...(attribution.utm_content ? { utm_content: attribution.utm_content } : {}),
+    ...(attribution.utm_term ? { utm_term: attribution.utm_term } : {}),
+    ...(attribution.landing_page ? { landing_page: attribution.landing_page } : {}),
   };
 }
 
@@ -103,8 +128,47 @@ function sanitizeParams(params: AnalyticsParams = {}) {
   ) as Record<string, AnalyticsValue>;
 }
 
-function ensureClarity() {
+function ensureGtagQueue() {
   if (typeof window === 'undefined') return;
+
+  window.dataLayer = window.dataLayer || [];
+  if (!window.gtag) {
+    window.gtag = (...args: unknown[]) => {
+      window.dataLayer?.push(args);
+    };
+  }
+
+  if (!consentQueueInitialized) {
+    window.gtag('consent', 'default', {
+      analytics_storage: 'denied',
+      ad_storage: 'denied',
+      ad_user_data: 'denied',
+      ad_personalization: 'denied',
+      wait_for_update: 500,
+    });
+    consentQueueInitialized = true;
+  }
+}
+
+function ensureGoogleAnalytics() {
+  if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
+
+  ensureGtagQueue();
+  if (document.getElementById('google-analytics-script')) return;
+
+  const script = document.createElement('script');
+  script.id = 'google-analytics-script';
+  script.async = true;
+  script.referrerPolicy = 'strict-origin-when-cross-origin';
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+  document.head.appendChild(script);
+
+  window.gtag?.('js', new Date());
+  window.gtag?.('config', GA_MEASUREMENT_ID, { send_page_view: false });
+}
+
+function ensureClarity() {
+  if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
 
   if (!window.clarity) {
     const clarity: ClarityFunction = (...args: unknown[]) => {
@@ -118,6 +182,7 @@ function ensureClarity() {
     const script = document.createElement('script');
     script.id = 'microsoft-clarity-script';
     script.async = true;
+    script.referrerPolicy = 'strict-origin-when-cross-origin';
     script.src = `https://www.clarity.ms/tag/${CLARITY_PROJECT_ID}`;
     document.head.appendChild(script);
   }
@@ -126,18 +191,34 @@ function ensureClarity() {
 export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
   if (typeof window === 'undefined') return;
 
+  if (isAnalyticsDisabled()) {
+    analyticsConsentGranted = false;
+    return;
+  }
+
+  ensureGtagQueue();
   analyticsConsentGranted = tracking;
+  const targetingGranted = tracking && targeting;
   window.gtag?.('consent', 'update', {
     analytics_storage: tracking ? 'granted' : 'denied',
-    ad_storage: targeting ? 'granted' : 'denied',
-    ad_user_data: targeting ? 'granted' : 'denied',
-    ad_personalization: targeting ? 'granted' : 'denied',
+    ad_storage: targetingGranted ? 'granted' : 'denied',
+    ad_user_data: targetingGranted ? 'granted' : 'denied',
+    ad_personalization: targetingGranted ? 'granted' : 'denied',
   });
 
+  if (!tracking) {
+    window.clarity?.('consentv2', {
+      ad_Storage: 'denied',
+      analytics_Storage: 'denied',
+    });
+    return;
+  }
+
+  ensureGoogleAnalytics();
   ensureClarity();
   window.clarity?.('consentv2', {
-    ad_Storage: targeting ? 'granted' : 'denied',
-    analytics_Storage: tracking ? 'granted' : 'denied',
+    ad_Storage: targetingGranted ? 'granted' : 'denied',
+    analytics_Storage: 'granted',
   });
 }
 

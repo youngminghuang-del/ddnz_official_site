@@ -31,34 +31,34 @@ export default function SEO({
   // 1. Define localized metadata dictionaries incorporating dual branding and targeted SEO keywords
   const seoDefaults: Record<string, { title: string; desc: string; keywords: string }> = {
     en: {
-      title: 'Heaven Born | China Freight Forwarding & Logistics',
-      desc: 'Heaven Born International Freight provides freight forwarding from China, with trade support delivered by DDNZ Global Trade Co., Ltd.',
-      keywords: 'Heaven Born International Freight, DDNZ Global Trade, China Cargo Agent, Guangzhou Freight Forwarder, Sea Freight From China, Air Cargo, Amazon FBA Logistics, China Sourcing Agent',
+      title: 'DDNZ Global | China Sourcing, Quality Control & Export Delivery',
+      desc: 'Source commercial products from China with supplier verification, quality control, consolidation and export delivery.',
+      keywords: 'China sourcing agent, China procurement company, supplier inspection China, cargo consolidation China',
     },
     zh: {
-      title: '华正邦泰国际货运 | 广州出口货代、国际海运与空运',
-      desc: '华正邦泰国际货运代理有限公司提供中国出口货运服务，大递诺展贸易有限公司协同提供验厂、验货、代出口与报关等贸易支持。',
-      keywords: '广州货代, 广州出口货运代理, 华正邦泰国际货运, 国际海运, 国际空运, 亚马逊FBA, 中国采购代理, 国际货运代理',
+      title: 'DDNZ Global 大递诺展 | 中国采购、验货与出口交付',
+      desc: 'DDNZ Global 为国际进口商协调中国采购、供应商核验、质量检验、集货与出口交付。',
+      keywords: '中国采购代理, 广州采购公司, 供应商验货, 集货出口, 国际货运代理',
     },
     fr: {
-      title: 'DDNZ & Heaven Born | Transitaire & Logistique en Chine',
-      desc: "Optimisez votre chaîne d'approvisionnement en Chine avec Heaven Born & DDNZ. Services d'approvisionnement, fret maritime/aérien et logistique globale à Guangzhou.",
-      keywords: 'Heaven Born International Freight, DDNZ Global Trade, Transitaire maritime Chine, Fret aérien direct, Commissionnaire de transport Guangzhou, Logistique Chine Europe',
+      title: 'DDNZ Global | Sourcing, contrôle qualité et export Chine',
+      desc: "DDNZ Global coordonne le sourcing, la vérification des fournisseurs, l'inspection, la consolidation et l'export depuis la Chine.",
+      keywords: 'DDNZ Global, agent sourcing Chine, inspection fournisseur Chine, consolidation marchandises Chine',
     },
     ru: {
-      title: 'DDNZ & Heaven Born | Доставка грузов из Китая',
-      desc: 'Оптимизируйте ваши поставки из Китая с Heaven Born и DDNZ. Профессиональный поиск поставщиков, морские/авиаперевозки и сборные грузы из Гуанчжоу.',
-      keywords: 'Heaven Born International Freight, DDNZ Global Trade, Доставка грузов из Китая, Карго Гуанчжоу, Морской фрахт Китай, Авиаперевозки из Китая, Экспортный логистический брокер',
+      title: 'DDNZ Global | Закупки, контроль качества и экспорт из Китая',
+      desc: 'DDNZ Global координирует поиск поставщиков, инспекцию, консолидацию и экспорт коммерческих товаров из Китая.',
+      keywords: 'DDNZ Global, закупки в Китае, поиск поставщиков Китай, инспекция товара, консолидация грузов',
     },
     es: {
-      title: 'Heaven Born | Transporte de carga desde China',
-      desc: 'Heaven Born International Freight coordina transporte marítimo, aéreo, Amazon FBA y consolidación desde China para importadores internacionales.',
-      keywords: 'transitario China, carga desde China, flete marítimo China, flete aéreo China, consolidación de carga, logística internacional',
+      title: 'DDNZ Global | Compras, control de calidad y exportación desde China',
+      desc: 'DDNZ Global coordina proveedores, inspección, consolidación y exportación de productos comerciales desde China.',
+      keywords: 'DDNZ Global, agente de compras China, inspección de proveedores, consolidación de carga China',
     },
     ar: {
-      title: 'Heaven Born | الشحن والخدمات اللوجستية من الصين',
-      desc: 'تنسق Heaven Born International Freight الشحن البحري والجوي وتجميع البضائع من الصين للمستوردين الدوليين.',
-      keywords: 'شحن من الصين, وكيل شحن الصين, شحن بحري من الصين, شحن جوي من الصين, تجميع البضائع, خدمات لوجستية دولية',
+      title: 'DDNZ Global | التوريد وفحص الجودة والتصدير من الصين',
+      desc: 'تنسق DDNZ Global البحث عن الموردين والفحص وتجميع البضائع وتصدير المنتجات التجارية من الصين.',
+      keywords: 'DDNZ Global, وكيل توريد الصين, فحص الموردين, تجميع البضائع من الصين',
     }
   };
 
@@ -109,22 +109,23 @@ export default function SEO({
   // Calculate language-specific absolute URLs
   const getLanguageUrl = (langCode: string) => {
     const baseUrl = 'https://www.ddnzglobal.com';
-    const pathPrefix = langCode === 'zh' ? 'zh-cn' : langCode;
+    const normalizedLangCode = langCode === 'zh-cn' ? 'zh' : langCode;
+    const pathPrefix = normalizedLangCode === 'zh' ? 'zh-cn' : normalizedLangCode;
     const country = new URLSearchParams(location.search).get('country');
     const countryPath = country && cleanSuffix.startsWith('shipping-from-china-to-')
       ? `shipping-from-china-to-${country.toLowerCase()}`
       : cleanSuffix;
     if (!cleanSuffix) {
-      return langCode === 'en' ? `${baseUrl}/` : `${baseUrl}/${pathPrefix}`;
+      return normalizedLangCode === 'en' ? `${baseUrl}/` : `${baseUrl}/${pathPrefix}`;
     }
-    return langCode === 'en'
+    return normalizedLangCode === 'en'
       ? `${baseUrl}/${countryPath}`
       : `${baseUrl}/${pathPrefix}/${countryPath}`;
   };
 
   const canonicalUrl = canonicalPath 
     ? (canonicalPath.startsWith('http') ? canonicalPath : `https://www.ddnzglobal.com${canonicalPath}`)
-    : getLanguageUrl(currentLang === 'zh' ? 'zh-cn' : currentLang);
+    : getLanguageUrl(currentLang);
 
   const defaultAlternates = [
     { hrefLang: 'en', href: getLanguageUrl('en') },
@@ -134,7 +135,7 @@ export default function SEO({
     { hrefLang: 'es', href: getLanguageUrl('es') },
     { hrefLang: 'ar', href: getLanguageUrl('ar') },
   ];
-  const finalAlternates = alternateUrls || defaultAlternates;
+  const finalAlternates = (alternateUrls || defaultAlternates).filter((item) => item.hrefLang !== 'x-default');
   const defaultAlternate = finalAlternates.find((item) => item.hrefLang === 'en') || finalAlternates[0];
 
   const helmetLang = currentLang === 'zh' ? 'zh-CN' : currentLang;

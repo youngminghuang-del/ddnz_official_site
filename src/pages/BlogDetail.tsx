@@ -12,12 +12,18 @@ import {
   UserRoundCheck,
 } from 'lucide-react';
 import notionBlogPosts from '../data/notionBlogData.json';
-import Navbar from '../components/Navbar';
+import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
 import SchemaMarkup from '../components/SchemaMarkup';
 import SEO from '../components/SEO';
 import { trackEvent } from '../lib/analytics';
+import {
+  articleLocalePrefix,
+  articleRoutePath,
+  findArticleByRoute,
+  getArticleHreflangSet,
+} from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
 
 function normalizeNotionLinks(content: string) {
@@ -36,7 +42,7 @@ function normalizeNotionLinks(content: string) {
   );
 }
 
-function buildPrimaryCta(post: BlogPost) {
+function buildPrimaryCta(post: BlogPost, prefix: string) {
   const isProductSourcing =
     post.leadGoal === 'Product Sourcing' ||
     post.primaryCTA === 'Commercial Kitchen Sourcing' ||
@@ -55,18 +61,18 @@ function buildPrimaryCta(post: BlogPost) {
   if (post.primaryCTA === 'Commercial Kitchen Sourcing') {
     return {
       label: 'Plan a commercial kitchen sourcing project',
-      href: `/sourcing/commercial-kitchen-equipment-from-china?${params.toString()}`,
+      href: `${prefix}/sourcing/commercial-kitchen-equipment-from-china?${params.toString()}`,
     };
   }
   if (post.primaryCTA === 'Outdoor Products Sourcing') {
     return {
       label: 'Plan an outdoor product sourcing project',
-      href: `/sourcing/outdoor-products-from-china?${params.toString()}`,
+      href: `${prefix}/sourcing/outdoor-products-from-china?${params.toString()}`,
     };
   }
   return {
-    label: 'Request a China export freight plan',
-    href: `/get-a-quote?${params.toString()}`,
+    label: isProductSourcing ? 'Start a product sourcing brief' : 'Request a China export freight plan',
+    href: `${prefix}/get-a-quote?${params.toString()}`,
   };
 }
 
@@ -76,6 +82,7 @@ export default function BlogDetail() {
   const [isLoading, setIsLoading] = useState(true);
   const progressSent = useRef(new Set<number>());
   const { language } = useLanguage();
+  const prefix = articleLocalePrefix(language);
   const ui =
     language === 'es'
       ? { loading: 'Cargando contenido de Notion...', missing: 'Artículo no encontrado', back: 'Volver al inicio' }
@@ -86,7 +93,7 @@ export default function BlogDetail() {
   useEffect(() => {
     if (!slug) return;
     setIsLoading(true);
-    const found = (notionBlogPosts as BlogPost[]).find((item) => item.slug === slug || item.id === slug);
+    const found = findArticleByRoute(notionBlogPosts as BlogPost[], language, slug);
     setPost(found || null);
     setIsLoading(false);
     progressSent.current.clear();
@@ -101,7 +108,7 @@ export default function BlogDetail() {
         product_category: found.productCategory,
       });
     }
-  }, [slug]);
+  }, [language, slug]);
 
   useEffect(() => {
     if (!post) return;
@@ -128,7 +135,7 @@ export default function BlogDetail() {
     return () => window.removeEventListener('scroll', onScroll);
   }, [post]);
 
-  const primaryCta = useMemo(() => (post ? buildPrimaryCta(post) : null), [post]);
+  const primaryCta = useMemo(() => (post ? buildPrimaryCta(post, prefix) : null), [post, prefix]);
 
   if (isLoading) {
     return (
@@ -145,7 +152,7 @@ export default function BlogDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 font-sans">
         <h1 className="text-2xl font-bold text-slate-800 mb-4">{ui.missing}</h1>
-        <Link to="/" className="text-[#0b4f8a] font-bold flex items-center hover:underline">
+        <Link to={prefix || '/'} className="text-[#0b4f8a] font-bold flex items-center hover:underline">
           <ArrowLeft className="w-4 h-4 mr-2" /> {ui.back}
         </Link>
       </div>
@@ -162,20 +169,21 @@ export default function BlogDetail() {
   const completePrefix = prefixSpace > maxPrefix * 0.72
     ? prefixCandidate.slice(0, prefixSpace)
     : prefixCandidate;
-  const seoTitle = rawTitle.length + suffix.length <= maxTitleLen
-    ? `${rawTitle}${suffix}`
-    : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
-      ? `${titleLead}${suffix}`
-      : `${completePrefix.trim()}…${suffix}`;
+  const seoTitle = post.slug === 'cheap-speakers-china-african-trader-verification'
+    ? 'Cheap China Speakers: African Trader Verification | DDNZ Global'
+    : rawTitle.length + suffix.length <= maxTitleLen
+      ? `${rawTitle}${suffix}`
+      : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
+        ? `${titleLead}${suffix}`
+        : `${completePrefix.trim()}…${suffix}`;
   const rawDesc = post.summary || post.title;
   const descCandidate = rawDesc.slice(0, 154);
   const descSpace = descCandidate.lastIndexOf(' ');
   const seoDesc = rawDesc.length > 155
     ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
     : rawDesc;
-  const postLanguage = post.language || 'en';
-  const postPrefix = postLanguage === 'en' ? '' : `/${postLanguage}`;
-  const postPath = `${postPrefix}/blog/${post.slug || post.id}`;
+  const postPath = articleRoutePath(post);
+  const articleHreflang = getArticleHreflangSet(post, notionBlogPosts as BlogPost[]);
   const showToc = (post.wordCount || 0) > 1200 && Boolean(post.toc?.length);
   const reviewerText = post.governed
     ? post.reviewer?.length
@@ -188,13 +196,13 @@ export default function BlogDetail() {
   const verificationLabel = post.governed ? 'Verified' : 'Updated';
 
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900">
+    <div className="ddnz-home min-h-screen bg-white font-sans text-slate-900">
       <SEO
         title={seoTitle}
         description={seoDesc}
         keywords={`${post.primaryQuery || post.category}, China sourcing, China freight forwarder, DDNZ Global`}
         canonicalPath={postPath}
-        alternateUrls={[{ hrefLang: postLanguage, href: `https://www.ddnzglobal.com${postPath}` }]}
+        alternateUrls={articleHreflang.alternates}
         image={post.thumbnailUrl}
         type="article"
         publishedTime={post.date}
@@ -212,16 +220,16 @@ export default function BlogDetail() {
           governed: Boolean(post.governed),
         }}
       />
-      <Navbar />
+      <SourcingHomepageNav />
 
-      <header className="relative pt-32 pb-24 md:pt-40 md:pb-36 bg-[#07182d] text-white overflow-hidden">
+      <header className="relative overflow-hidden bg-[#07182d] pb-24 pt-16 text-white md:pb-36 md:pt-24">
         <div className="absolute inset-0 opacity-40 bg-[radial-gradient(circle_at_80%_15%,#0b4f8a_0,transparent_38%),radial-gradient(circle_at_15%_80%,#d97706_0,transparent_28%)]" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0b_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0b_1px,transparent_1px)] bg-[size:3rem_3rem]" />
         <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs md:text-sm text-slate-300 mb-7">
-            <Link to="/" className="hover:text-white">Home</Link>
+            <Link to={prefix || '/'} className="hover:text-white">Home</Link>
             <ChevronRight className="w-3 h-3" />
-            <Link to="/insights" className="hover:text-white">Insights</Link>
+            <Link to={`${prefix}/insights`} className="hover:text-white">Insights</Link>
             <ChevronRight className="w-3 h-3" />
             <span className="text-amber-400 font-bold truncate">{post.contentType || post.category}</span>
           </nav>
@@ -318,7 +326,7 @@ export default function BlogDetail() {
             </section>
 
             <div className="mt-12 pt-8 border-t border-slate-200">
-              <Link to="/insights" className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#0b4f8a]">
+              <Link to={`${prefix}/insights`} className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#0b4f8a]">
                 <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center"><ArrowLeft className="w-5 h-5" /></span>
                 Back to Insights Hub
               </Link>

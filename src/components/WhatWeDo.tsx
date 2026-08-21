@@ -159,28 +159,31 @@ export default function WhatWeDo() {
             {businessSectors.map((sector, idx) => {
               const isActive = activeIndex === idx;
               return (
-                <div
+                <article
                   key={sector.id}
-                  onClick={() => {
-                    setActiveIndex(idx);
-                    handleServiceClick(sector.trackEventName, sector.id);
-                  }}
-                  className={`flex-1 h-full flex flex-col justify-end p-6 md:p-8 border-r border-white/10 last:border-r-0 cursor-pointer transition-all duration-700 relative overflow-hidden ${
+                  className={`flex-1 h-full flex flex-col justify-end p-6 md:p-8 border-r border-white/10 last:border-r-0 transition-all duration-700 relative overflow-hidden ${
                     isActive ? 'bg-black/10' : 'bg-black/55 hover:bg-black/40'
                   }`}
                 >
                   <div className="relative z-10 flex flex-col text-left h-full justify-end">
-                    {/* Badge */}
-                    <div className="border border-white/40 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm w-fit mb-3 bg-black/20 backdrop-blur-[2px] leading-none">
-                      {sector.highlights[0] || 'SERVICE'}
-                    </div>
-
-                    {/* Title */}
-                    <h3 className={`text-base md:text-xl lg:text-2xl font-black tracking-tight leading-tight transition-colors duration-500 ${
-                      isActive ? 'text-[#facc15]' : 'text-white'
-                    }`}>
-                      {sector.title}
-                    </h3>
+                    <button
+                      type="button"
+                      aria-pressed={isActive}
+                      onClick={() => {
+                        setActiveIndex(idx);
+                        handleServiceClick(sector.trackEventName, sector.id);
+                      }}
+                      className="rounded-lg text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#facc15] focus-visible:ring-offset-4 focus-visible:ring-offset-black/70"
+                    >
+                      <span className="block border border-white/40 text-white text-[10px] font-black uppercase tracking-widest px-2.5 py-1 rounded-sm w-fit mb-3 bg-black/20 backdrop-blur-[2px] leading-none">
+                        {sector.highlights[0] || 'SERVICE'}
+                      </span>
+                      <span className={`block text-base md:text-xl lg:text-2xl font-black tracking-tight leading-tight transition-colors duration-500 ${
+                        isActive ? 'text-[#facc15]' : 'text-white'
+                      }`}>
+                        {sector.title}
+                      </span>
+                    </button>
 
                     {/* Expanding details for the active card */}
                     <div className={`transition-all duration-700 ease-in-out overflow-hidden ${
@@ -211,7 +214,7 @@ export default function WhatWeDo() {
                       </Link>
                     </div>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
@@ -252,6 +255,7 @@ export default function WhatWeDo() {
           {/* 4. Left and Right Controls */}
           <button
             type="button"
+            aria-label="Show previous logistics service"
             onClick={(e) => {
               e.stopPropagation();
               const nextIndex = activeIndex === 0 ? businessSectors.length - 1 : activeIndex - 1;
@@ -260,10 +264,11 @@ export default function WhatWeDo() {
             }}
             className="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/20 hover:bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
           >
-            <ArrowLeft className="w-5 h-5 stroke-[2.5]" />
+            <ArrowLeft className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
           </button>
           <button
             type="button"
+            aria-label="Show next logistics service"
             onClick={(e) => {
               e.stopPropagation();
               const nextIndex = activeIndex === businessSectors.length - 1 ? 0 : activeIndex + 1;
@@ -272,26 +277,30 @@ export default function WhatWeDo() {
             }}
             className="absolute right-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/20 hover:bg-white/10 backdrop-blur-md border border-white/10 flex items-center justify-center text-white transition-all hover:scale-105 active:scale-95"
           >
-            <ArrowRight className="w-5 h-5 stroke-[2.5]" />
+            <ArrowRight className="w-5 h-5 stroke-[2.5]" aria-hidden="true" />
           </button>
 
 
         </div>
 
         {/* 6. Dot Navigation Indicator */}
-        <div className="flex justify-center items-center gap-2 mt-6">
-          {businessSectors.map((_, idx) => (
+        <div className="flex justify-center items-center gap-1 mt-6" role="group" aria-label={t('services.title')}>
+          {businessSectors.map((sector, idx) => (
             <button 
               key={idx}
               type="button"
+              aria-label={`${idx + 1}: ${sector.title}`}
+              aria-current={activeIndex === idx ? 'true' : undefined}
               onClick={() => {
                 setActiveIndex(idx);
                 handleServiceClick(businessSectors[idx].trackEventName, businessSectors[idx].id);
               }}
-              className={`h-2 transition-all duration-300 rounded-full ${
-                activeIndex === idx ? 'w-8 bg-[#FF8A00]' : 'w-2 bg-slate-200 hover:bg-slate-300'
-              }`}
-            />
+              className="grid h-11 w-11 place-items-center rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#FF8A00] focus-visible:ring-offset-2"
+            >
+              <span aria-hidden="true" className={`h-2 transition-[width,background-color] duration-300 rounded-full ${
+                activeIndex === idx ? 'w-8 bg-[#FF8A00]' : 'w-2 bg-slate-300'
+              }`} />
+            </button>
           ))}
         </div>
       </div>

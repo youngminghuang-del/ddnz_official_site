@@ -1,8 +1,7 @@
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect } from 'react';
+import { lazy, Suspense, useEffect, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
-import CookieConsent from './components/CookieConsent';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { readAttribution, rememberAttribution } from './lib/attribution';
@@ -15,8 +14,18 @@ const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-ce
 const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
 const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-latin-america'));
 const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
-const SourcingCategoryPage = lazy(() => import('./pages/SourcingCategory'));
+const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
+const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
+const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
+const CookieConsent = lazy(() => import('./components/CookieConsent'));
+const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
+const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
+const CommercialKitchen = lazy(() => import('./pages/product-showcase/CommercialKitchen').then((module) => ({ default: module.App })));
+const RefrigerationEquipment = lazy(() => import('./pages/product-showcase/RefrigerationEquipment').then((module) => ({ default: module.RefrigerationEquipment })));
+const MobileAccessories = lazy(() => import('./pages/product-showcase/MobileAccessories').then((module) => ({ default: module.MobileAccessories })));
+const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
+const OutdoorProducts = lazy(() => import('./pages/product-showcase/OutdoorProducts').then((module) => ({ default: module.OutdoorProducts })));
 
 const SHIPPING_COUNTRIES = [
   'saudi-arabia',
@@ -34,6 +43,13 @@ const SHIPPING_COUNTRIES = [
   'argentina',
   'peru',
   'chile',
+] as const;
+
+const SOURCING_CATEGORIES = [
+  { slug: 'commercial-kitchen-equipment-from-china', kind: 'commercial-kitchen' },
+  { slug: 'audio-speakers-from-china', kind: 'audio-speakers' },
+  { slug: 'mobile-accessories-from-china', kind: 'mobile-accessories' },
+  { slug: 'outdoor-products-from-china', kind: 'outdoor' },
 ] as const;
 
 function CountryShippingRoute() {
@@ -54,6 +70,16 @@ function CountryShippingRoute() {
   }
 
   return <Navigate to="/" replace />;
+}
+
+function EnglishSourcingCategoryRedirect({ slug }: { slug: string }) {
+  const location = useLocation();
+  return <Navigate to={`/sourcing/${slug}${location.search}${location.hash}`} replace />;
+}
+
+function EnglishShowcaseRedirect({ path }: { path: string }) {
+  const location = useLocation();
+  return <Navigate to={`${path}${location.search}${location.hash}`} replace />;
 }
 
 function RouteLoadingFallback() {
@@ -164,6 +190,68 @@ function RoutedCookieConsent() {
   return <CookieConsent />;
 }
 
+const skipLinkCopy = {
+  en: 'Skip to main content',
+  zh: '跳到主要内容',
+  ru: 'Перейти к основному содержанию',
+  fr: 'Aller au contenu principal',
+  es: 'Saltar al contenido principal',
+  ar: 'انتقل إلى المحتوى الرئيسي',
+} as const;
+
+function SkipToMainContent() {
+  const { language } = useLanguage();
+  const location = useLocation();
+  const [targetId, setTargetId] = useState('main-content');
+
+  useEffect(() => {
+    let timer = 0;
+    let observer: MutationObserver | null = null;
+
+    const assignTarget = () => {
+      const main = document.querySelector<HTMLElement>('main');
+      if (!main) return false;
+      const nextTargetId = main.id || 'main-content';
+      if (!main.id) main.id = nextTargetId;
+      if (!main.hasAttribute('tabindex')) main.setAttribute('tabindex', '-1');
+      setTargetId((current) => current === nextTargetId ? current : nextTargetId);
+      return true;
+    };
+
+    timer = window.requestAnimationFrame(() => {
+      assignTarget();
+      observer = new MutationObserver(assignTarget);
+      observer.observe(document.getElementById('root') || document.body, {
+        attributes: true,
+        attributeFilter: ['id', 'tabindex'],
+        childList: true,
+        subtree: true,
+      });
+    });
+
+    return () => {
+      window.cancelAnimationFrame(timer);
+      observer?.disconnect();
+    };
+  }, [location.pathname]);
+
+  const focusMainContent = () => {
+    window.requestAnimationFrame(() => {
+      const target = document.getElementById(targetId);
+      if (!target) return;
+      if (!target.hasAttribute('tabindex')) target.setAttribute('tabindex', '-1');
+      target.focus({ preventScroll: true });
+      target.scrollIntoView({ block: 'start' });
+    });
+  };
+
+  return (
+    <a className="ddnz-skip-link" href={`#${targetId}`} onClick={focusMainContent}>
+      {skipLinkCopy[language] || skipLinkCopy.en}
+    </a>
+  );
+}
+
 function GlobalConversionTracker() {
   useEffect(() => {
     const handleClick = (event: MouseEvent) => {
@@ -211,6 +299,7 @@ export default function App() {
     <HelmetProvider>
       <LanguageProvider>
         <Router>
+          <SkipToMainContent />
           <LanguageRouteSync />
           <HashScrollHandler />
           <AttributionSessionSync />
@@ -222,6 +311,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/insights" element={<InsightsHub />} />
+            <Route path="/how-we-work" element={<HowWeWork />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -231,22 +321,32 @@ export default function App() {
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/products" element={<ProductsIndex />} />
+            <Route path="/sourcing-services" element={<SourcingServices />} />
+            <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />
+            <Route path="/sourcing/commercial-kitchen-equipment-from-china" element={<CommercialKitchen />} />
+            <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
+            <Route path="/sourcing/mobile-accessories-from-china" element={<MobileAccessories />} />
+            <Route path="/sourcing/outdoor-products-from-china" element={<OutdoorProducts />} />
+            <Route path="/commercial-kitchen" element={<Navigate to="/sourcing/commercial-kitchen-equipment-from-china" replace />} />
+            <Route path="/audio-speakers" element={<Navigate to="/sourcing/audio-speakers-from-china" replace />} />
+            <Route path="/mobile-accessories" element={<Navigate to="/sourcing/mobile-accessories-from-china" replace />} />
+            <Route path="/outdoor-products" element={<Navigate to="/sourcing/outdoor-products-from-china" replace />} />
             {import.meta.env.DEV ? (
-              <Route path="/content-ops" element={<ContentOpsDashboard />} />
+              <>
+                <Route path="/content-ops" element={<ContentOpsDashboard />} />
+                <Route path="/design-preview/home-v2" element={<HomeV2Preview />} />
+              </>
             ) : null}
-            <Route
-              path="/sourcing/commercial-kitchen-equipment-from-china"
-              element={<SourcingCategoryPage kind="commercial-kitchen" />}
-            />
-            <Route
-              path="/sourcing/outdoor-products-from-china"
-              element={<SourcingCategoryPage kind="outdoor" />}
-            />
+            <Route path="/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
 
             {/* Chinese Bundle Router */}
             <Route path="/zh-cn" element={<Home />} />
             <Route path="/zh-cn/blog/:slug" element={<BlogDetail />} />
             <Route path="/zh-cn/insights" element={<InsightsHub />} />
+            <Route path="/zh-cn/how-we-work" element={<HowWeWork />} />
             <Route path="/zh-cn/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/zh-cn/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -256,11 +356,21 @@ export default function App() {
               <Route key={`zh-${country}`} path={`/zh-cn/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/zh-cn/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/zh-cn/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/zh-cn/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/zh-cn/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`zh-${kind}`} path={`/zh-cn/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/zh-cn/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/zh-cn/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/zh-cn/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
 
             {/* Russian Bundle Router */}
             <Route path="/ru" element={<Home />} />
             <Route path="/ru/blog/:slug" element={<BlogDetail />} />
             <Route path="/ru/insights" element={<InsightsHub />} />
+            <Route path="/ru/how-we-work" element={<HowWeWork />} />
             <Route path="/ru/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ru/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/ru/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -270,11 +380,21 @@ export default function App() {
               <Route key={`ru-${country}`} path={`/ru/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/ru/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/ru/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/ru/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/ru/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`ru-${kind}`} path={`/ru/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/ru/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/ru/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/ru/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
 
             {/* French Bundle Router */}
             <Route path="/fr" element={<Home />} />
             <Route path="/fr/blog/:slug" element={<BlogDetail />} />
             <Route path="/fr/insights" element={<InsightsHub />} />
+            <Route path="/fr/how-we-work" element={<HowWeWork />} />
             <Route path="/fr/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/fr/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/fr/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -284,11 +404,21 @@ export default function App() {
               <Route key={`fr-${country}`} path={`/fr/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/fr/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/fr/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/fr/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/fr/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`fr-${kind}`} path={`/fr/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/fr/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/fr/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/fr/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
 
             {/* Spanish routes */}
             <Route path="/es" element={<Home />} />
             <Route path="/es/blog/:slug" element={<BlogDetail />} />
             <Route path="/es/insights" element={<InsightsHub />} />
+            <Route path="/es/how-we-work" element={<HowWeWork />} />
             <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/es/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/es/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -298,11 +428,21 @@ export default function App() {
               <Route key={`es-${country}`} path={`/es/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/es/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/es/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/es/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/es/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`es-${kind}`} path={`/es/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/es/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/es/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/es/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
 
             {/* Arabic routes */}
             <Route path="/ar" element={<Home />} />
             <Route path="/ar/blog/:slug" element={<BlogDetail />} />
             <Route path="/ar/insights" element={<InsightsHub />} />
+            <Route path="/ar/how-we-work" element={<HowWeWork />} />
             <Route path="/ar/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ar/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
             <Route path="/ar/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
@@ -312,9 +452,20 @@ export default function App() {
               <Route key={`ar-${country}`} path={`/ar/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/ar/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/ar/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/ar/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/ar/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`ar-${kind}`} path={`/ar/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/ar/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/ar/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/ar/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
           </Routes>
           </Suspense>
-          <RoutedCookieConsent />
+          <Suspense fallback={null}>
+            <RoutedCookieConsent />
+          </Suspense>
         </Router>
       </LanguageProvider>
     </HelmetProvider>
