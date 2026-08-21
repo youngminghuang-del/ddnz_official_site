@@ -1640,6 +1640,25 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
   fs.writeFileSync(path.join(distDir, 'robots.txt'), robotsTxt, 'utf-8');
   console.log('✅ Generated optimized robots.txt at public/robots.txt and dist/robots.txt');
 
+  // GitHub Pages serves the SPA fallback with a 404 status for unknown paths.
+  // These short showcase URLs are kept as user-facing aliases in the React
+  // router, so give them real static redirect documents instead of relying on
+  // the 404 fallback. The canonical category URLs remain the only sitemap URLs.
+  const showcaseAliasRedirects = [
+    { from: '/commercial-kitchen', to: '/sourcing/commercial-kitchen-equipment-from-china' },
+    { from: '/audio-speakers', to: '/sourcing/audio-speakers-from-china' },
+    { from: '/mobile-accessories', to: '/sourcing/mobile-accessories-from-china' },
+    { from: '/outdoor-products', to: '/sourcing/outdoor-products-from-china' },
+  ];
+  showcaseAliasRedirects.forEach((redirect) => {
+    const sourceDir = path.join(distDir, redirect.from.replace(/^\/+/, ''));
+    fs.mkdirSync(sourceDir, { recursive: true });
+    const targetUrl = `https://www.ddnzglobal.com${redirect.to}`;
+    const redirectHtml = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${targetUrl}"><meta http-equiv="refresh" content="0;url=${targetUrl}"><script>location.replace(${JSON.stringify(targetUrl)})</script><title>Page moved</title></head><body><p>This page has moved to <a href="${targetUrl}">${targetUrl}</a>.</p></body></html>`;
+    fs.writeFileSync(path.join(sourceDir, 'index.html'), redirectHtml, 'utf-8');
+  });
+  console.log(`✅ Generated ${showcaseAliasRedirects.length} showcase alias redirect page(s).`);
+
   const redirectDataPath = path.resolve(process.cwd(), 'src/data/notionRedirects.json');
   if (fs.existsSync(redirectDataPath)) {
     const redirects = JSON.parse(fs.readFileSync(redirectDataPath, 'utf-8')) as Array<{ from: string; to: string }>;
