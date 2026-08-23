@@ -31,6 +31,8 @@ const sourcingMenuLabels: Record<Language, string> = {
   fr: 'ACHATS PRODUITS',
   es: 'COMPRA DE PRODUCTOS',
   ar: 'توريد المنتجات',
+  pt: 'SOURCING DE PRODUTOS',
+  tr: 'ÜRÜN TEDARİĞİ',
 };
 
 const sourcingItems = [
@@ -43,6 +45,8 @@ const sourcingItems = [
       fr: 'Équipement de cuisine professionnelle',
       es: 'Equipos de cocina comercial',
       ar: 'معدات المطابخ التجارية',
+      pt: 'Equipamentos para cozinha profissional',
+      tr: 'Endüstriyel mutfak ekipmanları',
     },
   },
   {
@@ -54,6 +58,8 @@ const sourcingItems = [
       fr: 'Audio et enceintes',
       es: 'Audio y altavoces',
       ar: 'الصوت ومكبرات الصوت',
+      pt: 'Áudio e caixas de som',
+      tr: 'Ses ve hoparlör',
     },
   },
   {
@@ -65,6 +71,8 @@ const sourcingItems = [
       fr: 'Accessoires mobiles',
       es: 'Accesorios móviles',
       ar: 'ملحقات الهاتف',
+      pt: 'Acessórios para celular',
+      tr: 'Mobil aksesuarlar',
     },
   },
   {
@@ -76,6 +84,8 @@ const sourcingItems = [
       fr: 'Produits de plein air',
       es: 'Productos para exteriores',
       ar: 'المنتجات الخارجية',
+      pt: 'Produtos outdoor',
+      tr: 'Outdoor ürünler',
     },
   },
 ];
@@ -151,6 +161,8 @@ export default function Navbar() {
       if (language === 'fr') return `/fr${hash}`;
       if (language === 'es') return `/es${hash}`;
       if (language === 'ar') return `/ar${hash}`;
+      if (language === 'pt') return `/pt${hash}`;
+      if (language === 'tr') return `/tr${hash}`;
       return path;
     }
     if (language === 'zh') return `/zh-cn${path === '/' ? '' : path}`;
@@ -158,6 +170,8 @@ export default function Navbar() {
     if (language === 'fr') return `/fr${path === '/' ? '' : path}`;
     if (language === 'es') return `/es${path === '/' ? '' : path}`;
     if (language === 'ar') return `/ar${path === '/' ? '' : path}`;
+    if (language === 'pt') return `/pt${path === '/' ? '' : path}`;
+    if (language === 'tr') return `/tr${path === '/' ? '' : path}`;
     return path;
   };
 
@@ -180,6 +194,10 @@ export default function Navbar() {
       currentPath = currentPath.slice(3);
     } else if (currentPath.startsWith('/ar')) {
       currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/pt')) {
+      currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/tr')) {
+      currentPath = currentPath.slice(3);
     }
 
     if (currentPath === '') currentPath = '/';
@@ -196,6 +214,10 @@ export default function Navbar() {
       targetPath = `/es${currentPath === '/' ? '' : currentPath}`;
     } else if (lang === 'ar') {
       targetPath = `/ar${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'pt') {
+      targetPath = `/pt${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'tr') {
+      targetPath = `/tr${currentPath === '/' ? '' : currentPath}`;
     } else {
       targetPath = currentPath;
     }
@@ -209,7 +231,9 @@ export default function Navbar() {
     language === 'zh' ? 'ZH' : 
     language === 'ru' ? 'RU' :
     language === 'fr' ? 'FR' :
-    language === 'es' ? 'ES' : 'AR';
+    language === 'es' ? 'ES' :
+    language === 'ar' ? 'AR' :
+    language === 'pt' ? 'PT' : 'TR';
 
   return (
     <nav className={cn(
@@ -486,6 +510,8 @@ export default function Navbar() {
                   <button onClick={() => handleLanguageChange('fr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Français (FR)</button>
                   <button onClick={() => handleLanguageChange('es')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Español (ES)</button>
                   <button onClick={() => handleLanguageChange('ar')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">العربية (AR)</button>
+                  <button onClick={() => handleLanguageChange('pt')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Português (PT)</button>
+                  <button onClick={() => handleLanguageChange('tr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Türkçe (TR)</button>
                 </div>
               )}
             </div>
@@ -516,6 +542,8 @@ export default function Navbar() {
                   <button onClick={() => handleLanguageChange('fr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Français (FR)</button>
                   <button onClick={() => handleLanguageChange('es')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Español (ES)</button>
                   <button onClick={() => handleLanguageChange('ar')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">العربية (AR)</button>
+                  <button onClick={() => handleLanguageChange('pt')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Português (PT)</button>
+                  <button onClick={() => handleLanguageChange('tr')} className="px-4 py-2 text-xs text-left text-slate-700 hover:bg-sky-50 hover:text-[#0B4F8A] font-bold">Türkçe (TR)</button>
                 </div>
               )}
             </div>

@@ -93,6 +93,14 @@ const HERO_ROUTE_COPY: Record<Language, HeroRouteCopy> = {
     centralAsiaCountries: 'كازاخستان / أوزبكستان / قيرغيزستان / طاجيكستان',
     viewRoutes: 'عرض المسارات',
   },
+  pt: {
+    origin: 'Origem China', latinAmerica: 'América Latina', middleEast: 'Oriente Médio', westAfrica: 'África Ocidental', centralAsia: 'Ásia Central',
+    latinCountries: 'México / Brasil / Peru / Chile', middleEastCountries: 'Arábia Saudita / EAU / Catar / Omã / Bahrein', westAfricaCountries: 'Nigéria / Gana / Costa do Marfim / Senegal', centralAsiaCountries: 'Cazaquistão / Uzbequistão / Quirguistão / Tajiquistão', viewRoutes: 'Ver rotas',
+  },
+  tr: {
+    origin: 'Çin çıkışı', latinAmerica: 'Latin Amerika', middleEast: 'Orta Doğu', westAfrica: 'Batı Afrika', centralAsia: 'Orta Asya',
+    latinCountries: 'Meksika / Brezilya / Peru / Şili', middleEastCountries: 'Suudi Arabistan / BAE / Katar / Umman / Bahreyn', westAfricaCountries: 'Nijerya / Gana / Fildişi Sahili / Senegal', centralAsiaCountries: 'Kazakistan / Özbekistan / Kırgızistan / Tacikistan', viewRoutes: 'Rotaları görüntüle',
+  },
 };
 
 export default function Hero() {

@@ -15,7 +15,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   useEffect(() => {
     try {
       const saved = localStorage.getItem('language') as Language;
-      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ru' || saved === 'fr' || saved === 'es' || saved === 'ar')) {
+      if (saved && (saved === 'en' || saved === 'zh' || saved === 'ru' || saved === 'fr' || saved === 'es' || saved === 'ar' || saved === 'pt' || saved === 'tr')) {
         setLanguageState(saved);
         document.documentElement.lang = saved === 'zh' ? 'zh-CN' : saved;
         document.documentElement.dir = saved === 'ar' ? 'rtl' : 'ltr';

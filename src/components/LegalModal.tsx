@@ -12,12 +12,14 @@ interface LegalModalProps {
 export default function LegalModal({ type, onClose }: LegalModalProps) {
   const { language } = useLanguage();
   const labels = {
-    en: { back: 'Back to Home', privacy: 'Privacy Policy', terms: 'Terms of Service' },
-    zh: { back: '返回首页', privacy: '隐私政策', terms: '服务条款' },
-    ru: { back: 'На главную', privacy: 'Политика конфиденциальности', terms: 'Условия обслуживания' },
-    fr: { back: 'Retour à l’accueil', privacy: 'Politique de confidentialité', terms: 'Conditions de service' },
-    es: { back: 'Volver al inicio', privacy: 'Política de privacidad', terms: 'Términos de servicio' },
-    ar: { back: 'العودة إلى الصفحة الرئيسية', privacy: 'سياسة الخصوصية', terms: 'شروط الخدمة' },
+    en: { back: 'Back to Home', privacy: 'Privacy Policy', terms: 'Terms of Service', officialNote: 'The official legal text is provided in English.' },
+    zh: { back: '返回首页', privacy: '隐私政策', terms: '服务条款', officialNote: '正式法律文本以英文版本为准。' },
+    ru: { back: 'На главную', privacy: 'Политика конфиденциальности', terms: 'Условия обслуживания', officialNote: 'Официальный юридический текст представлен на английском языке.' },
+    fr: { back: 'Retour à l’accueil', privacy: 'Politique de confidentialité', terms: 'Conditions de service', officialNote: 'Le texte juridique officiel est fourni en anglais.' },
+    es: { back: 'Volver al inicio', privacy: 'Política de privacidad', terms: 'Términos de servicio', officialNote: 'El texto jurídico oficial se proporciona en inglés.' },
+    ar: { back: 'العودة إلى الصفحة الرئيسية', privacy: 'سياسة الخصوصية', terms: 'شروط الخدمة', officialNote: 'النص القانوني الرسمي متاح باللغة الإنجليزية.' },
+    pt: { back: 'Voltar ao início', privacy: 'Política de privacidade', terms: 'Termos de serviço', officialNote: 'O texto jurídico oficial é fornecido em inglês.' },
+    tr: { back: 'Ana sayfaya dön', privacy: 'Gizlilik politikası', terms: 'Hizmet şartları', officialNote: 'Resmî hukuki metin İngilizce olarak sunulmaktadır.' },
   }[language];
   const content = {
     privacy: {
@@ -59,6 +61,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
             <h1 className="text-3xl md:text-4xl font-bold text-white mb-12 tracking-tight">
               {content[type].title}
             </h1>
+            <p className="-mt-8 mb-10 text-sm font-semibold text-violet-100">{labels.officialNote}</p>
 
             <div className="space-y-10">
               {content[type].sections.map((section, idx) => (

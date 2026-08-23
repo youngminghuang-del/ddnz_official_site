@@ -1,4 +1,9 @@
 import { readAttribution } from './attribution';
+import {
+  ANALYTICS_TEST_SESSION_KEY,
+  isLocalAnalyticsHostname,
+  resolveAnalyticsTestMode,
+} from './analyticsPolicy';
 
 const GA_MEASUREMENT_ID = 'G-TZD9QT4W8H';
 const CLARITY_PROJECT_ID = 'xswyojgnjd';
@@ -36,23 +41,36 @@ declare global {
 let analyticsConsentGranted = false;
 let consentQueueInitialized = false;
 
-const LOCAL_ANALYTICS_HOSTNAMES = new Set([
-  'localhost',
-  '127.0.0.1',
-  '::1',
-  '0.0.0.0',
-]);
-
 function isAnalyticsDisabled() {
   if (typeof window === 'undefined') return true;
 
-  const hostname = window.location.hostname.toLowerCase();
+  let sessionDisabled = false;
+  try {
+    sessionDisabled = window.sessionStorage.getItem(ANALYTICS_TEST_SESSION_KEY) === 'true';
+  } catch {
+    // Storage can be unavailable in privacy-restricted browsers. URL rules still apply.
+  }
+
+  const testMode = resolveAnalyticsTestMode({
+    search: window.location.search,
+    sessionDisabled,
+  });
+
+  try {
+    if (testMode.persistSessionDisabled) {
+      window.sessionStorage.setItem(ANALYTICS_TEST_SESSION_KEY, 'true');
+    } else {
+      window.sessionStorage.removeItem(ANALYTICS_TEST_SESSION_KEY);
+    }
+  } catch {
+    // The current page is still protected even when the session flag cannot persist.
+  }
+
   return (
     import.meta.env.DEV ||
     import.meta.env.VITE_DISABLE_ANALYTICS === 'true' ||
-    LOCAL_ANALYTICS_HOSTNAMES.has(hostname) ||
-    hostname.endsWith('.localhost') ||
-    hostname.endsWith('.local')
+    isLocalAnalyticsHostname(window.location.hostname) ||
+    testMode.disabled
   );
 }
 
@@ -88,6 +106,8 @@ function getPageLanguage(pathname = window.location.pathname) {
   if (pathname.startsWith('/ar')) return 'ar';
   if (pathname.startsWith('/fr')) return 'fr';
   if (pathname.startsWith('/ru')) return 'ru';
+  if (pathname.startsWith('/pt')) return 'pt';
+  if (pathname.startsWith('/tr')) return 'tr';
   return 'en';
 }
 

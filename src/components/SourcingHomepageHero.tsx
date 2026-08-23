@@ -78,6 +78,12 @@ const HOME_COPY: Record<Language, HomeCopy> = {
   ar: {
     headline: 'اشترِ وافحص واشحن المنتجات التجارية من الصين مع فريق واحد مسؤول.', body: 'معدات المطابخ التجارية والصوت وملحقات الهاتف ومستلزمات الأنشطة الخارجية للمستوردين في الشرق الأوسط وأفريقيا وأمريكا اللاتينية.', primary: 'ابدأ طلب التوريد', freight: 'احصل على عرض شحن', whatsapp: 'واتساب فريق الصين', support: 'فريق مراقبة في قوانغتشو · دعم متعدد اللغات', heritage: 'الشحن الدولي من تنفيذ Heaven Born · منذ 1997.', formTitle: 'ما نوع المساعدة المطلوبة؟', sourcing: 'البحث وشراء المنتجات', sourcingDesc: 'أحتاج إلى العثور على المنتجات وشرائها', existing: 'فحص أو تجميع الطلبات', existingDesc: 'لدي طلبات قائمة لدى الموردين', freightOnly: 'الشحن فقط', freightDesc: 'أحتاج إلى التصدير والشحن فقط', category: 'فئة المنتج', kitchen: 'معدات المطابخ', audio: 'الصوت ومكبرات الصوت', mobile: 'ملحقات الهاتف', outdoor: 'مستلزمات خارجية', selectOne: 'اختر خياراً واحداً', market: 'سوق الوجهة', marketPlaceholder: 'اختر السوق الرئيسي', privacy: 'يتم التعامل مع معلوماتك بسرية.', process: [['الموجز', 'الاحتياجات والمواصفات والسوق.'], ['الموردون', 'البحث والتحقق من المصانع.'], ['العينات', 'الجودة والقدرة والامتثال.'], ['الفحص', 'صور وتقارير من الموقع.'], ['التصدير', 'التجميع والمستندات والشحن.']], categoriesTitle: 'فئاتنا ذات الأولوية', viewAll: 'عرض جميع الفئات',
   },
+  pt: {
+    headline: 'Encontre, inspecione e exporte produtos comerciais da China com uma equipe responsável.', body: 'Equipamentos para cozinha profissional, áudio, acessórios para celular e produtos outdoor para importadores do Oriente Médio, África e América Latina.', primary: 'Iniciar solicitação', freight: 'Solicitar cotação de frete', whatsapp: 'WhatsApp da equipe na China', support: 'Equipe de controle em Guangzhou · Atendimento em português e outros idiomas', heritage: 'Transporte internacional executado pela Heaven Born · Desde 1997.', formTitle: 'Como podemos ajudar?', sourcing: 'Encontrar e comprar produtos', sourcingDesc: 'Preciso localizar e comprar produtos', existing: 'Inspecionar ou consolidar pedidos', existingDesc: 'Já tenho pedidos com fornecedores', freightOnly: 'Somente transporte', freightDesc: 'Preciso apenas de exportação e frete', category: 'Categoria do produto', kitchen: 'Cozinha profissional', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular', outdoor: 'Produtos outdoor', selectOne: 'selecione uma opção', market: 'Mercado de destino', marketPlaceholder: 'Selecione o mercado principal', privacy: 'Suas informações são tratadas com segurança.', process: [['Brief', 'Necessidades, especificações e mercado.'], ['Fornecedores', 'Busca e verificação de fabricantes.'], ['Amostras', 'Qualidade, capacidade e conformidade.'], ['Inspeção', 'Fotos e relatórios no local.'], ['Exportação', 'Consolidação, documentos e envio.']], categoriesTitle: 'Categorias prioritárias', viewAll: 'Ver todas as categorias',
+  },
+  tr: {
+    headline: 'Çin’den ticari ürünleri tek bir sorumlu ekiple bulun, denetleyin ve gönderin.', body: 'Orta Doğu, Afrika ve Latin Amerika ithalatçıları için endüstriyel mutfak, ses, mobil aksesuar ve outdoor ürünleri.', primary: 'Tedarik talebi oluştur', freight: 'Nakliye teklifi al', whatsapp: 'Çin ekibiyle WhatsApp', support: 'Guangzhou kaynak kontrol ekibi · Türkçe ve çok dilli destek', heritage: 'Uluslararası nakliye Heaven Born tarafından yürütülür · 1997’den beri.', formTitle: 'Nasıl yardımcı olabiliriz?', sourcing: 'Ürün bul ve satın al', sourcingDesc: 'Ürün ve tedarikçi bulmak istiyorum', existing: 'Siparişi denetle veya birleştir', existingDesc: 'Tedarikçilerde mevcut siparişlerim var', freightOnly: 'Sadece nakliye', freightDesc: 'Yalnızca ihracat ve taşıma istiyorum', category: 'Ürün kategorisi', kitchen: 'Endüstriyel mutfak', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar', outdoor: 'Outdoor ürünler', selectOne: 'bir seçenek belirleyin', market: 'Varış pazarı', marketPlaceholder: 'Ana pazarı seçin', privacy: 'Bilgileriniz güvenle işlenir.', process: [['Talep', 'İhtiyaçlar, teknik özellikler ve pazar.'], ['Tedarikçiler', 'Üretici arama ve doğrulama.'], ['Numuneler', 'Kalite, kapasite ve uygunluk.'], ['Denetim', 'Saha fotoğrafları ve raporlar.'], ['İhracat', 'Konsolidasyon, belgeler ve sevkiyat.']], categoriesTitle: 'Öncelikli kategoriler', viewAll: 'Tüm kategorileri görüntüle',
+  },
 };
 
 const CATEGORY_TAGLINES: Record<Language, [string, string, string, string]> = {
@@ -92,9 +98,11 @@ const CATEGORY_TAGLINES: Record<Language, [string, string, string, string]> = {
   fr: ['Des équipements performants, sourcés avec méthode.', 'Un son qui se vend, une qualité qui fidélise.', 'Des essentiels à rotation rapide, avec qualité et approvisionnement maîtrisés.', 'Des gammes de plein air conçues pour l’usage réel et le transport.'],
   es: ['Equipamiento por rendimiento, compras con evidencia.', 'Sonido que vende y calidad que fideliza.', 'Productos de alta rotación con calidad y suministro estables.', 'Gamas para actividades al aire libre preparadas para el uso real y el transporte.'],
   ar: ['معدات حسب الأداء وتوريد قائم على الأدلة.', 'صوت يحقق المبيعات وجودة تعزز تكرار الشراء.', 'منتجات سريعة الدوران بجودة وتوريد مستقرين.', 'مستلزمات للأنشطة الخارجية مناسبة للاستخدام الفعلي والنقل.'],
+  pt: ['Equipamentos por desempenho, compras com evidências.', 'Som que vende e qualidade que gera recompra.', 'Itens de giro rápido com qualidade e fornecimento estáveis.', 'Linhas outdoor preparadas para uso real e transporte.'],
+  tr: ['Performansa göre ekipman, kanıta dayalı tedarik.', 'Satan ses, tekrar sipariş getiren kalite.', 'Hızlı dönen ürünlerde istikrarlı kalite ve tedarik.', 'Gerçek kullanım ve taşımaya uygun outdoor ürünleri.'],
 };
 
-const PREFIX: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar' };
+const PREFIX: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 
 const intentIcons: Record<Intent, LucideIcon> = { sourcing: Search, existing: ClipboardCheck, freight: Ship };
 const destinations = ['Saudi Arabia', 'United Arab Emirates', 'Qatar', 'Nigeria', 'Ghana', 'Kenya', 'Mexico', 'Brazil', 'Chile', 'Peru'];
@@ -106,6 +114,8 @@ const destinationLabels: Record<Language, Record<string, string>> = {
   fr: { 'Saudi Arabia': 'Arabie saoudite', 'United Arab Emirates': 'Émirats arabes unis', Qatar: 'Qatar', Nigeria: 'Nigéria', Ghana: 'Ghana', Kenya: 'Kenya', Mexico: 'Mexique', Brazil: 'Brésil', Chile: 'Chili', Peru: 'Pérou' },
   es: { 'Saudi Arabia': 'Arabia Saudí', 'United Arab Emirates': 'Emiratos Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigeria', Ghana: 'Ghana', Kenya: 'Kenia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Perú' },
   ar: { 'Saudi Arabia': 'المملكة العربية السعودية', 'United Arab Emirates': 'الإمارات العربية المتحدة', Qatar: 'قطر', Nigeria: 'نيجيريا', Ghana: 'غانا', Kenya: 'كينيا', Mexico: 'المكسيك', Brazil: 'البرازيل', Chile: 'تشيلي', Peru: 'بيرو' },
+  pt: { 'Saudi Arabia': 'Arábia Saudita', 'United Arab Emirates': 'Emirados Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigéria', Ghana: 'Gana', Kenya: 'Quênia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Peru' },
+  tr: { 'Saudi Arabia': 'Suudi Arabistan', 'United Arab Emirates': 'Birleşik Arap Emirlikleri', Qatar: 'Katar', Nigeria: 'Nijerya', Ghana: 'Gana', Kenya: 'Kenya', Mexico: 'Meksika', Brazil: 'Brezilya', Chile: 'Şili', Peru: 'Peru' },
 };
 
 const heroImageAlts: Record<Language, [string, string, string]> = {
@@ -115,6 +125,8 @@ const heroImageAlts: Record<Language, [string, string, string]> = {
   fr: ['Équipe d’entrepôt contrôlant les cartons à la réception', 'Équipe en gilets DDNZ dans une allée de stockage', 'Employé d’entrepôt en gilet DDNZ traitant un colis'],
   es: ['Equipo de almacén verificando cajas durante la recepción', 'Equipo con chalecos DDNZ recorriendo un pasillo de almacén', 'Empleado de almacén con chaleco DDNZ manipulando un paquete'],
   ar: ['فريق المستودع يتحقق من الصناديق أثناء الاستلام', 'فريق يرتدي سترات DDNZ داخل ممر التخزين', 'موظف مستودع يرتدي سترة DDNZ ويتعامل مع طرد'],
+  pt: ['Equipe do armazém verificando caixas no recebimento', 'Equipe com coletes DDNZ em um corredor do armazém', 'Funcionário do armazém com colete DDNZ manuseando um pacote'],
+  tr: ['Depo ekibi teslim alırken kolileri kontrol ediyor', 'DDNZ yelekli ekip depo koridorunda', 'DDNZ yelekli depo çalışanı paketi işliyor'],
 };
 
 const categoryImageAlts: Record<Language, [string, string, string, string]> = {
@@ -124,6 +136,8 @@ const categoryImageAlts: Record<Language, [string, string, string, string]> = {
   fr: ['Sourcing d’équipements de cuisine professionnelle', 'Sourcing de produits audio et enceintes', 'Batteries magnétiques et accessoires de charge sans marque', 'Gamme sans marque d’énergie portable et de recharge de plein air'],
   es: ['Compra de equipos de cocina comercial', 'Compra de productos de audio y altavoces', 'Baterías magnéticas y accesorios de carga sin marca', 'Gama sin marca de energía portátil y carga para actividades al aire libre'],
   ar: ['توريد معدات المطابخ التجارية', 'توريد منتجات الصوت ومكبرات الصوت', 'بطاريات محمولة مغناطيسية وملحقات شحن بدون علامة تجارية', 'تشكيلة طاقة محمولة وشحن خارجي بدون علامة تجارية'],
+  pt: ['Sourcing de equipamentos para cozinha profissional', 'Sourcing de produtos de áudio e caixas de som', 'Power banks magnéticos e acessórios de carregamento sem marca', 'Linha sem marca de energia portátil e carregamento outdoor'],
+  tr: ['Endüstriyel mutfak ekipmanı tedariği', 'Ses ve hoparlör ürün tedariği', 'Markasız manyetik güç bankaları ve şarj aksesuarları', 'Markasız taşınabilir enerji ve outdoor şarj ürün grubu'],
 };
 
 const heroWhatsappMessages: Record<Language, string> = {
@@ -133,6 +147,8 @@ const heroWhatsappMessages: Record<Language, string> = {
   fr: 'Bonjour DDNZ Global, j’ai besoin d’aide pour sourcer des produits en Chine.',
   es: 'Hola DDNZ Global, necesito ayuda para comprar productos en China.',
   ar: 'مرحباً DDNZ Global، أحتاج إلى مساعدة في توريد منتجات من الصين.',
+  pt: 'Olá DDNZ Global, preciso de ajuda para comprar produtos da China.',
+  tr: 'Merhaba DDNZ Global, Çin’den ürün tedariki için desteğe ihtiyacım var.',
 };
 
 export default function SourcingHomepageHero() {

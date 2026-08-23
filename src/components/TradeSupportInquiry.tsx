@@ -217,6 +217,36 @@ const LOCALIZED_COPY: Record<Language, Partial<InquiryCopy>> = {
     scopeError: 'اختر الفئة، وصف المنتج أو الطلب، وأدخل السوق.', servicesError: 'اختر خدمة واحدة على الأقل وحالة جاهزية.', contactError: 'أدخل الاسم والبريد أو الهاتف / واتساب.', emailError: 'أدخل بريداً إلكترونياً صحيحاً.',
     successTitle: 'تم استلام الموجز', successText: 'تم تحويل الطلب إلى فريق DDNZ في الصين. سنراجع النطاق قبل طلب المعلومات الناقصة.', successNext: 'للطلب العاجل يمكن المتابعة عبر واتساب.', whatsapp: 'المتابعة عبر واتساب',
   },
+  pt: {
+    badgeSourcing: 'Brief de sourcing DDNZ', badgeExisting: 'Brief de inspeção e consolidação DDNZ',
+    headlineSourcing: 'Conte-nos o que você precisa comprar na China', headlineExisting: 'Coloque seus pedidos sob uma equipe responsável na China',
+    introSourcing: 'Informe o produto, destino e objetivo do pedido. Avaliaremos fornecedores, especificações e a rota de exportação.', introExisting: 'Descreva o que já foi pedido e a situação atual. Definiremos inspeção, acompanhamento, consolidação e exportação.',
+    trustOrigin: 'Equipe de controle em Guangzhou', trustReply: 'Análise em 1 dia útil', trustPrivacy: 'Suas informações são privadas',
+    stepLabel: 'Etapa', scopeStep: 'Produto', readinessStep: 'Preparação', contactStep: 'Contato',
+    scopeTitleSourcing: 'O que devemos encontrar?', scopeTitleExisting: 'O que já foi comprado?', scopeDescSourcing: 'Uma descrição curta é suficiente; acrescente especificações se já tiver.', scopeDescExisting: 'Resuma o produto ou pedido. Os documentos podem ser enviados depois da resposta.',
+    category: 'Categoria do produto', destination: 'Mercado de destino', destinationPlaceholder: 'País ou mercado principal', productSourcing: 'Produto ou especificação', productExisting: 'Resumo dos pedidos',
+    servicesTitleSourcing: 'Que apoio você precisa na China?', servicesTitleExisting: 'Quais serviços você precisa?', servicesHint: 'Selecione todas as opções necessárias.', readinessTitleSourcing: 'Volume esperado', readinessTitleExisting: 'Situação atual do pedido',
+    timeline: 'Prazo desejado', timelinePlaceholder: 'Selecione um prazo', timelineFast: 'Em até 30 dias', timelineQuarter: '1–3 meses', timelinePlanning: 'Planejando / comparando', timelineFlexible: 'Ainda não sei',
+    contactTitle: 'Onde devemos enviar a análise?', contactDesc: 'Informe seu nome e uma forma de contato. Confirmaremos depois os detalhes que faltarem.', name: 'Nome / empresa', namePlaceholder: 'Seu nome ou empresa', email: 'E-mail comercial', phone: 'Telefone / WhatsApp', notes: 'Outras informações (opcional)', contactHint: 'E-mail ou telefone / WhatsApp—um é suficiente.',
+    back: 'Voltar', continue: 'Continuar', submitSourcing: 'Enviar brief de sourcing', submitExisting: 'Enviar brief de inspeção', submitting: 'Enviando…',
+    scopeError: 'Selecione uma categoria, descreva o produto ou pedido e informe o mercado.', servicesError: 'Selecione pelo menos um serviço e uma opção de preparação.', contactError: 'Informe seu nome e e-mail ou telefone / WhatsApp.', emailError: 'Informe um e-mail válido.',
+    successTitle: 'Brief recebido', successText: 'Sua solicitação foi encaminhada à equipe DDNZ na China. Avaliaremos o escopo antes de pedir informações adicionais.', successNext: 'Para um pedido urgente, continue pelo WhatsApp.', whatsapp: 'Continuar no WhatsApp',
+  },
+  tr: {
+    badgeSourcing: 'DDNZ tedarik talebi', badgeExisting: 'DDNZ denetim ve konsolidasyon talebi',
+    headlineSourcing: 'Çin’den ne tedarik etmeniz gerektiğini anlatın', headlineExisting: 'Tedarikçi siparişlerinizi Çin’de tek sorumlu ekibe bağlayın',
+    introSourcing: 'Ürünü, varış yerini ve sipariş hedefini paylaşın. Tedarikçi uygunluğunu, özellikleri ve ihracat yolunu inceleyelim.', introExisting: 'Nelerin sipariş edildiğini ve mevcut durumu açıklayın. Denetim, takip, konsolidasyon ve ihracat kapsamını belirleyelim.',
+    trustOrigin: 'Guangzhou kaynak kontrol ekibi', trustReply: '1 iş gününde kapsam incelemesi', trustPrivacy: 'Bilgileriniz gizli kalır',
+    stepLabel: 'Adım', scopeStep: 'Ürün', readinessStep: 'Hazırlık', contactStep: 'İletişim',
+    scopeTitleSourcing: 'Ne tedarik edelim?', scopeTitleExisting: 'Ne sipariş edildi?', scopeDescSourcing: 'Kısa bir ürün açıklaması yeterlidir; varsa teknik özellikleri ekleyin.', scopeDescExisting: 'Ürün veya siparişi özetleyin. Tedarikçi belgeleri yanıtımızdan sonra paylaşılabilir.',
+    category: 'Ürün kategorisi', destination: 'Varış pazarı', destinationPlaceholder: 'Ülke veya ana pazar', productSourcing: 'Ürün veya teknik özellik', productExisting: 'Mevcut sipariş özeti',
+    servicesTitleSourcing: 'Çin ekibinden hangi desteği istiyorsunuz?', servicesTitleExisting: 'Hangi hizmetlere ihtiyacınız var?', servicesHint: 'Uygun olanların tümünü seçin.', readinessTitleSourcing: 'Beklenen sipariş hacmi', readinessTitleExisting: 'Mevcut sipariş durumu',
+    timeline: 'Hedef zaman', timelinePlaceholder: 'Zaman seçin', timelineFast: '30 gün içinde', timelineQuarter: '1–3 ay', timelinePlanning: 'Planlama / karşılaştırma', timelineFlexible: 'Henüz belli değil',
+    contactTitle: 'İncelemeyi nereye gönderelim?', contactDesc: 'Adınızı ve bir iletişim yöntemini ekleyin. Eksik ayrıntıları incelemeden sonra doğrularız.', name: 'Ad / şirket', namePlaceholder: 'Adınız veya şirketiniz', email: 'İş e-postası', phone: 'Telefon / WhatsApp', notes: 'Ek bilgiler (isteğe bağlı)', contactHint: 'E-posta veya telefon / WhatsApp—biri yeterli.',
+    back: 'Geri', continue: 'Devam', submitSourcing: 'Tedarik talebini gönder', submitExisting: 'Denetim talebini gönder', submitting: 'Gönderiliyor…',
+    scopeError: 'Kategori seçin, ürünü veya siparişi açıklayın ve pazarı girin.', servicesError: 'En az bir hizmet ve hazırlık seçeneği belirleyin.', contactError: 'Adınızı ve e-posta veya telefon / WhatsApp bilgisi girin.', emailError: 'Geçerli bir e-posta adresi girin.',
+    successTitle: 'Talep alındı', successText: 'Talebiniz Çin’deki DDNZ ekibine yönlendirildi. Eksik bilgi istemeden önce kapsamı inceleyeceğiz.', successNext: 'Acil sipariş için WhatsApp üzerinden devam edebilirsiniz.', whatsapp: 'WhatsApp ile devam et',
+  },
 };
 
 const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
@@ -226,6 +256,8 @@ const CATEGORY_LABELS: Record<Language, Record<string, string>> = {
   fr: { kitchen: 'Cuisine professionnelle', audio: 'Audio et enceintes', mobile: 'Accessoires mobiles', other: 'Autres produits' },
   es: { kitchen: 'Cocina comercial', audio: 'Audio y altavoces', mobile: 'Accesorios móviles', other: 'Otros productos' },
   ar: { kitchen: 'معدات المطابخ', audio: 'الصوت ومكبرات الصوت', mobile: 'ملحقات الهاتف', other: 'منتجات أخرى' },
+  pt: { kitchen: 'Cozinha profissional', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular', other: 'Outros produtos' },
+  tr: { kitchen: 'Endüstriyel mutfak', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar', other: 'Diğer ürünler' },
 };
 
 const SERVICE_LABELS: Record<Language, { sourcing: Array<[string, string]>; existing: Array<[string, string]> }> = {
@@ -235,6 +267,8 @@ const SERVICE_LABELS: Record<Language, { sourcing: Array<[string, string]>; exis
   fr: { sourcing: [['Sélection fournisseurs', 'Recherche et présélection des usines'], ['Échantillons & specs', 'Coordination et contrôle des spécifications'], ['Comparaison des prix', 'Offres comparables et revue commerciale'], ['Sourcing + export', 'Coordination jusqu’à la livraison groupée']], existing: [['Suivi fournisseur', 'Production et préparation'], ['Inspection sur site', 'Checklist QC, photos et rapport'], ['Consolidation', 'Collecte auprès de plusieurs fournisseurs'], ['Export & fret', 'Documents, réservation et livraison']] },
   es: { sourcing: [['Selección de proveedores', 'Búsqueda y evaluación inicial'], ['Muestras y especificaciones', 'Coordinación y comprobación'], ['Comparación de precios', 'Cotizaciones comparables y revisión'], ['Compra + exportación', 'Coordinación hasta la entrega consolidada']], existing: [['Seguimiento de proveedor', 'Producción y preparación'], ['Inspección en origen', 'Checklist, fotos e informe'], ['Consolidación', 'Recogida de varios proveedores'], ['Exportación y transporte', 'Documentos, reserva y entrega']] },
   ar: { sourcing: [['قائمة الموردين', 'البحث والفحص الأولي للمصانع'], ['العينات والمواصفات', 'تنسيق العينات وفحص المواصفات'], ['مقارنة الأسعار', 'عروض قابلة للمقارنة ومراجعة تجارية'], ['التوريد والتصدير', 'التنسيق حتى التسليم المجمع']], existing: [['متابعة المورد', 'الإنتاج والجاهزية'], ['فحص في الموقع', 'قائمة جودة وصور وتقرير'], ['تجميع الطلبات', 'جمع البضائع من عدة موردين'], ['التصدير والشحن', 'المستندات والحجز والتسليم']] },
+  pt: { sourcing: [['Seleção de fornecedores', 'Busca e avaliação inicial de fábricas'], ['Amostras e especificações', 'Coordenação de amostras e conferência'], ['Comparação de preços', 'Cotações comparáveis e análise comercial'], ['Sourcing + exportação', 'Coordenação até a entrega consolidada']], existing: [['Acompanhamento do fornecedor', 'Produção e preparação'], ['Inspeção no local', 'Checklist de qualidade, fotos e relatório'], ['Consolidação de pedidos', 'Coleta em vários fornecedores'], ['Exportação e transporte', 'Documentos, reserva e entrega']] },
+  tr: { sourcing: [['Tedarikçi kısa listesi', 'Arama ve ilk fabrika taraması'], ['Numune ve özellikler', 'Numune koordinasyonu ve kontroller'], ['Fiyat karşılaştırması', 'Karşılaştırılabilir teklifler ve ticari inceleme'], ['Tam tedarik + ihracat', 'Tedarikçiden konsolide teslimata koordinasyon']], existing: [['Tedarikçi takibi', 'Üretim ve hazırlık koordinasyonu'], ['Yerinde denetim', 'Kalite listesi, fotoğraf ve rapor'], ['Sipariş konsolidasyonu', 'Birden fazla tedarikçiden toplama'], ['İhracat ve nakliye', 'Belgeler, rezervasyon ve teslimat']] },
 };
 
 const READINESS_LABELS: Record<Language, { sourcing: string[]; existing: string[] }> = {
@@ -244,6 +278,8 @@ const READINESS_LABELS: Record<Language, { sourcing: string[]; existing: string[
   fr: { sourcing: ['Échantillon / essai', 'Petite commande mixte', 'Commande en gros / conteneur', 'Conseil sur la quantité'], existing: ['Pas encore commandé', 'En production', 'Prêt pour inspection', 'Prêt à collecter'] },
   es: { sourcing: ['Muestra / pedido de prueba', 'Pedido mixto pequeño', 'Pedido a granel / contenedor', 'Necesito orientación'], existing: ['Aún no pedido', 'En producción', 'Listo para inspección', 'Listo para recogida'] },
   ar: { sourcing: ['عينة / طلب تجريبي', 'طلب مختلط صغير', 'طلب بالجملة / حاوية', 'أحتاج نصيحة للكمية'], existing: ['لم يتم الطلب بعد', 'قيد الإنتاج', 'جاهز للفحص', 'جاهز للاستلام'] },
+  pt: { sourcing: ['Amostra / pedido teste', 'Pedido misto pequeno', 'Pedido a granel / contêiner', 'Preciso de orientação de quantidade'], existing: ['Ainda não comprado', 'Em produção', 'Pronto para inspeção', 'Pronto para coleta'] },
+  tr: { sourcing: ['Numune / deneme siparişi', 'Küçük karma sipariş', 'Toplu / konteyner siparişi', 'Miktar önerisi gerekli'], existing: ['Henüz sipariş verilmedi', 'Üretimde', 'Denetime hazır', 'Teslim almaya hazır'] },
 };
 
 const CATEGORY_OPTIONS: Array<{ value: string; key: string; Icon: LucideIcon }> = [
@@ -410,6 +446,8 @@ export default function TradeSupportInquiry() {
   const categoryOptions = CATEGORY_OPTIONS.some((option) => option.value === category)
     ? CATEGORY_OPTIONS
     : [{ value: category, key: 'other', Icon: Boxes }, ...CATEGORY_OPTIONS];
+  const categoryKey = CATEGORY_OPTIONS.find((option) => option.value === category)?.key;
+  const categoryDisplay = categoryKey ? CATEGORY_LABELS[language][categoryKey] : category;
   const whatsappUrl = buildAttributedWhatsAppUrl(
     `Hi DDNZ Global, I submitted a ${mode === 'sourcing' ? 'product sourcing' : 'supplier inspection and consolidation'} brief. Category: ${category}. Destination: ${destination || 'not confirmed'}.`,
     attribution,
@@ -501,7 +539,7 @@ export default function TradeSupportInquiry() {
               <div className="border-b border-slate-200 px-5 py-5 sm:px-8">
                 <div className="flex items-center justify-between gap-4 text-xs font-bold text-slate-500">
                   <span>{copy.stepLabel} {step} / 3</span>
-                  <span className="max-w-[56%] truncate text-[var(--ddnz-purple-strong)]">{category}{destination ? ` · ${destination}` : ''}</span>
+                  <span className="max-w-[56%] truncate text-[var(--ddnz-purple-strong)]">{categoryDisplay}{destination ? ` · ${destination}` : ''}</span>
                 </div>
                 <ol className="mt-4 grid grid-cols-3 gap-2" aria-label={`${copy.stepLabel} ${step} / 3`}>
                   {stepLabels.map((label, index) => {
@@ -510,7 +548,7 @@ export default function TradeSupportInquiry() {
                     const active = number === step;
                     return (
                       <li key={label}>
-                        <button type="button" disabled={number > step} onClick={() => setStep(number)} className="min-h-11 w-full rounded-lg px-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2 disabled:cursor-not-allowed" aria-current={active ? 'step' : undefined}>
+                        <button type="button" disabled={number > step} onClick={() => setStep(number)} className="min-h-11 w-full rounded-lg px-1 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2 disabled:cursor-not-allowed rtl:text-right" aria-current={active ? 'step' : undefined}>
                           <span className={`block h-1.5 rounded-full ${complete ? 'bg-[var(--ddnz-coral)]' : active ? 'bg-[var(--ddnz-purple)]' : 'bg-slate-200'}`} />
                           <span className={`mt-2 block text-[11px] font-bold sm:text-xs ${active ? 'text-[var(--ddnz-ink)]' : 'text-slate-500'}`}>{label}</span>
                         </button>
@@ -534,7 +572,7 @@ export default function TradeSupportInquiry() {
                         {categoryOptions.map(({ value, key, Icon }, index) => {
                           const selected = category === value;
                           return (
-                            <button key={`${value}-${index}`} type="button" aria-pressed={selected} onClick={() => { markStarted(); setCategory(value); setError(''); }} className={`min-h-[72px] rounded-xl border p-3 text-left text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${selected ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-700 hover:border-slate-300'}`}>
+                            <button key={`${value}-${index}`} type="button" aria-pressed={selected} onClick={() => { markStarted(); setCategory(value); setError(''); }} className={`min-h-[72px] rounded-xl border p-3 text-left text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] rtl:text-right ${selected ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-700 hover:border-slate-300'}`}>
                               <Icon className="mb-2 h-5 w-5" aria-hidden="true" />{value === initialCategory && !CATEGORY_OPTIONS.some((item) => item.value === value) ? value : CATEGORY_LABELS[language][key]}
                             </button>
                           );
@@ -566,7 +604,7 @@ export default function TradeSupportInquiry() {
                         const selected = services.includes(label);
                         const Icon = [SearchCheck, FileCheck2, ClipboardCheck, Boxes][index];
                         return (
-                          <button key={label} type="button" aria-pressed={selected} onClick={() => toggleService(label)} className={`min-h-[92px] rounded-xl border p-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${selected ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)]' : 'border-slate-200 hover:border-slate-300'}`}>
+                          <button key={label} type="button" aria-pressed={selected} onClick={() => toggleService(label)} className={`min-h-[92px] rounded-xl border p-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] rtl:text-right ${selected ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)]' : 'border-slate-200 hover:border-slate-300'}`}>
                             <span className="flex items-start gap-3">
                               <Icon className={`mt-0.5 h-5 w-5 shrink-0 ${selected ? 'text-[var(--ddnz-purple)]' : 'text-slate-500'}`} aria-hidden="true" />
                               <span className="min-w-0"><span className="flex items-center gap-2 text-sm font-extrabold text-[var(--ddnz-ink)]">{label}{selected ? <Check className="h-4 w-4 text-[var(--ddnz-purple)]" aria-hidden="true" /> : null}</span><span className="mt-1 block text-xs leading-5 text-slate-600">{description}</span></span>
@@ -597,7 +635,7 @@ export default function TradeSupportInquiry() {
                     <h2 ref={headingRef} tabIndex={-1} className="text-2xl font-extrabold tracking-[-0.03em] text-[var(--ddnz-ink)] outline-none">{copy.contactTitle}</h2>
                     <p className="mt-2 text-sm leading-6 text-slate-600">{copy.contactDesc}</p>
                     <div className="mt-5 rounded-xl border border-slate-200 bg-slate-50 p-4 text-xs font-semibold leading-5 text-slate-700">
-                      <p>{category} · {destination}</p><p>{services.join(' · ')} · {readiness}{timeline ? ` · ${timeline}` : ''}</p>
+                      <p>{categoryDisplay} · {destination}</p><p>{services.join(' · ')} · {readiness}{timeline ? ` · ${timeline}` : ''}</p>
                     </div>
 
                     <input type="hidden" name="Inquiry_Type" value={mode === 'sourcing' ? 'Product Sourcing Brief' : 'Supplier Inspection & Consolidation Brief'} />

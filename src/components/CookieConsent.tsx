@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { Language } from '../i18n/translations';
 import { trackPageView, updateAnalyticsConsent } from '../lib/analytics';
 
-const cookieTexts = {
+const cookieTextsBase = {
   en: {
     bannerTitle: "We value your privacy",
     bannerDesc: "We use optional analytics cookies to understand site usage. Choose Accept All, Decline, or Cookie Settings; you can change your choice later.",
@@ -224,6 +224,56 @@ const cookieTexts = {
   }
 };
 
+const cookieTexts = {
+  ...cookieTextsBase,
+  pt: {
+    ...cookieTextsBase.en,
+    bannerTitle: 'Valorizamos sua privacidade',
+    bannerDesc: 'Usamos cookies opcionais de análise para entender o uso do site. Você pode aceitar, recusar ou ajustar suas preferências.',
+    btnAcceptAll: 'Aceitar todos',
+    btnDecline: 'Recusar',
+    btnSettings: 'Configurações de cookies',
+    modalTitle: 'Central de preferências de cookies',
+    consentBy: 'Controles de cookies da DDNZ Global',
+    btnSave: 'Salvar preferências',
+    activeLabel: 'Ativo',
+    inactiveLabel: 'Inativo',
+    alwaysActive: 'Sempre ativo',
+    tabs: { privacy: 'Sua privacidade', necessary: 'Cookies estritamente necessários', functionality: 'Cookies de funcionalidade', tracking: 'Cookies de análise', targeting: 'Cookies de publicidade', more: 'Mais informações' },
+    content: {
+      privacy: { title: 'Sua privacidade é importante', p1: 'Cookies são pequenos arquivos armazenados no dispositivo. Usamos cookies necessários para operar o site e, com sua autorização, cookies opcionais para analisar e melhorar a experiência.', p2: 'Você pode mudar suas preferências, recusar categorias opcionais ou apagar cookies armazenados. A remoção de cookies necessários pode afetar algumas funções.' },
+      necessary: { title: 'Cookies estritamente necessários', p1: 'Esses cookies são essenciais para prestar os serviços e habilitar funções básicas do site.', p2: 'Sem eles, algumas funções não podem ser oferecidas corretamente.' },
+      functionality: { title: 'Cookies de funcionalidade', p1: 'Esses cookies lembram escolhas feitas durante o uso do site.', p2: 'Por exemplo, podem manter sua preferência de idioma.' },
+      tracking: { title: 'Cookies de análise', p1: 'Esses cookies ajudam a analisar o tráfego e como os visitantes usam o site.', p2: 'Podem registrar duração da visita e páginas acessadas para orientar melhorias.', p3: 'Não enviamos campos de formulários de contato às ferramentas de análise. Os provedores podem tratar identificadores técnicos conforme suas políticas.' },
+      targeting: { title: 'Cookies de publicidade', p1: 'Esses cookies podem ajudar a apresentar publicidade mais relevante conforme a navegação.', p2: 'Fornecedores de conteúdo ou publicidade podem combinar dados do site com informações coletadas em suas redes.', p3: 'Ao desativá-los, você ainda poderá ver anúncios, porém menos relevantes.' },
+      more: { title: 'Mais informações', p1: 'Para dúvidas sobre cookies e suas escolhas, entre em contato conosco.' },
+    },
+  },
+  tr: {
+    ...cookieTextsBase.en,
+    bannerTitle: 'Gizliliğinize önem veriyoruz',
+    bannerDesc: 'Site kullanımını anlamak için isteğe bağlı analiz çerezleri kullanıyoruz. Kabul edebilir, reddedebilir veya tercihlerinizi ayarlayabilirsiniz.',
+    btnAcceptAll: 'Tümünü kabul et',
+    btnDecline: 'Reddet',
+    btnSettings: 'Çerez ayarları',
+    modalTitle: 'Çerez tercihleri merkezi',
+    consentBy: 'DDNZ Global çerez kontrolleri',
+    btnSave: 'Tercihleri kaydet',
+    activeLabel: 'Etkin',
+    inactiveLabel: 'Devre dışı',
+    alwaysActive: 'Her zaman etkin',
+    tabs: { privacy: 'Gizliliğiniz', necessary: 'Kesinlikle gerekli çerezler', functionality: 'İşlevsel çerezler', tracking: 'Analiz çerezleri', targeting: 'Reklam çerezleri', more: 'Daha fazla bilgi' },
+    content: {
+      privacy: { title: 'Gizliliğiniz bizim için önemlidir', p1: 'Çerezler cihazınızda saklanan küçük dosyalardır. Siteyi çalıştırmak için gerekli çerezleri, onayınızla da deneyimi analiz edip geliştirmek için isteğe bağlı çerezleri kullanırız.', p2: 'Tercihlerinizi değiştirebilir, isteğe bağlı kategorileri reddedebilir veya saklanan çerezleri silebilirsiniz. Gerekli çerezlerin silinmesi bazı işlevleri etkileyebilir.' },
+      necessary: { title: 'Kesinlikle gerekli çerezler', p1: 'Bu çerezler site hizmetlerini sağlamak ve temel işlevleri çalıştırmak için gereklidir.', p2: 'Bunlar olmadan bazı hizmetler doğru şekilde sunulamaz.' },
+      functionality: { title: 'İşlevsel çerezler', p1: 'Bu çerezler siteyi kullanırken yaptığınız seçimleri hatırlar.', p2: 'Örneğin dil tercihinizi saklayabilir.' },
+      tracking: { title: 'Analiz çerezleri', p1: 'Bu çerezler site trafiğini ve ziyaretçilerin siteyi nasıl kullandığını analiz etmeye yardımcı olur.', p2: 'Deneyimi geliştirmek için ziyaret süresi ve görüntülenen sayfalar gibi bilgileri kaydedebilir.', p3: 'İletişim formu alanlarını analiz araçlarına göndermeyiz. Sağlayıcılar teknik tanımlayıcıları kendi politikalarına göre işleyebilir.' },
+      targeting: { title: 'Reklam çerezleri', p1: 'Bu çerezler gezinme davranışınıza göre daha ilgili reklamlar gösterilmesine yardımcı olabilir.', p2: 'İçerik veya reklam sağlayıcıları site verilerini kendi ağlarında topladıkları bilgilerle birleştirebilir.', p3: 'Bunları kapatırsanız reklam görmeye devam edebilirsiniz ancak daha az ilgili olabilir.' },
+      more: { title: 'Daha fazla bilgi', p1: 'Çerez politikamız ve seçimleriniz hakkında sorularınız için bize ulaşın.' },
+    },
+  },
+};
+
 const cookieTextMap = cookieTexts as Record<string, any>;
 cookieTextMap.es = {
   ...cookieTexts.en,
@@ -311,6 +361,8 @@ const languagesList = [
   { code: 'fr', label: 'Français' }
   ,{ code: 'es', label: 'Español' }
   ,{ code: 'ar', label: 'العربية' }
+  ,{ code: 'pt', label: 'Português' }
+  ,{ code: 'tr', label: 'Türkçe' }
 ];
 
 const cookieAriaText: Record<Language, { close: string; categories: string }> = {
@@ -320,6 +372,8 @@ const cookieAriaText: Record<Language, { close: string; categories: string }> = 
   fr: { close: 'Fermer les paramètres des cookies', categories: 'Catégories de cookies' },
   es: { close: 'Cerrar la configuración de cookies', categories: 'Categorías de cookies' },
   ar: { close: 'إغلاق إعدادات ملفات الارتباط', categories: 'فئات ملفات الارتباط' }
+  ,pt: { close: 'Fechar configurações de cookies', categories: 'Categorias de cookies' }
+  ,tr: { close: 'Çerez ayarlarını kapat', categories: 'Çerez kategorileri' }
 };
 
 export default function CookieConsent() {
@@ -349,6 +403,10 @@ export default function CookieConsent() {
       currentPath = currentPath.slice(3);
     } else if (currentPath.startsWith('/ar')) {
       currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/pt')) {
+      currentPath = currentPath.slice(3);
+    } else if (currentPath.startsWith('/tr')) {
+      currentPath = currentPath.slice(3);
     }
 
     if (currentPath === '') currentPath = '/';
@@ -365,6 +423,10 @@ export default function CookieConsent() {
       targetPath = `/es${currentPath === '/' ? '' : currentPath}`;
     } else if (lang === 'ar') {
       targetPath = `/ar${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'pt') {
+      targetPath = `/pt${currentPath === '/' ? '' : currentPath}`;
+    } else if (lang === 'tr') {
+      targetPath = `/tr${currentPath === '/' ? '' : currentPath}`;
     } else {
       targetPath = currentPath;
     }

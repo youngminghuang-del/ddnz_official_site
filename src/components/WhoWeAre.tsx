@@ -192,6 +192,52 @@ const COPY: Record<string, Copy> = {
     servicesCta: 'استكشف خدمات الشحن',
     warehouseCta: 'خدمات المستودعات',
   },
+  pt: {
+    kicker: 'Quem somos',
+    title: 'Uma equipe de frete na China, organizada em torno da carga real.',
+    lead: 'A Heaven Born combina operações na origem, conhecimento especializado em frete e suporte comercial prático para reduzir falhas entre as etapas.',
+    legalLabel: 'Empresa de frete',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: 'Em operação desde 1997',
+    imageAlt: 'Recebimento de carga e preparação de embarque em um armazém na China',
+    portraitCaption: 'Recebimento, conferência documental e preparação de carregamento são coordenados juntos na origem na China.',
+    story: [
+      { label: 'Controle na origem', title: 'Experiência comercial transformada em disciplina operacional', body: 'Desde 1997, cuidamos dos detalhes que movem uma carga: fornecedores, documentos, carregamento, rotas e entrega no destino.' },
+      { label: 'Carga regulamentada', title: 'Mercadorias perigosas e nova energia', body: 'Desenvolvemos conhecimento operacional para baterias, sistemas de armazenamento, veículos elétricos e outras cargas regulamentadas.' },
+      { label: 'Continuidade de rota', title: 'Uma rede que mantém a carga em movimento', body: 'Quando capacidade, rotas ou regras mudam, coordenamos alternativas práticas com transportadores e parceiros locais.' },
+    ],
+    facilityLabel: 'Operações físicas',
+    facilityTitle: 'Capacidade de armazenagem própria',
+    facilityBody: 'Nossas instalações apoiam recebimento, consolidação, coordenação de carregamento, inspeção e preparação para exportação na China.',
+    tradeLabel: 'Marca de suporte comercial',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'A DDNZ Global Trade apoia auditoria de fábrica, inspeção, agência de exportação, declaração aduaneira e coordenação fiscal.',
+    servicesCta: 'Explorar serviços de frete',
+    warehouseCta: 'Ver serviços de armazenagem',
+  },
+  tr: {
+    kicker: 'Biz kimiz',
+    title: 'Gerçek yük ayrıntıları etrafında çalışan Çin merkezli bir lojistik ekibi.',
+    lead: 'Heaven Born, teslim noktaları arasındaki boşlukları azaltmak için çıkış operasyonlarını, uzman navlun bilgisini ve uygulamalı ticaret desteğini birleştirir.',
+    legalLabel: 'Lojistik şirketi',
+    legalName: 'Heaven Born International Freight Co., Ltd',
+    since: '1997’den beri faaliyette',
+    imageAlt: 'Çin’de bir depoda yük kabulü ve sevkiyat hazırlığı',
+    portraitCaption: 'Yük kabulü, belge kontrolü ve yükleme hazırlığı Çin çıkışında birlikte koordine edilir.',
+    story: [
+      { label: 'Çıkış kontrolü', title: 'Ticaret deneyimi operasyon disiplinine dönüştü', body: '1997’den beri tedarikçi, belge, yükleme, rota ve varış teslimi gibi sevkiyatı belirleyen ayrıntılara odaklanıyoruz.' },
+      { label: 'Düzenlemeye tabi yük', title: 'Tehlikeli maddeler ve yeni enerji lojistiği', body: 'Batarya, enerji depolama sistemi, elektrikli araç ve diğer düzenlemeye tabi yükler için operasyon bilgisi geliştirdik.' },
+      { label: 'Rota sürekliliği', title: 'Yükü hareket halinde tutan bir ağ', body: 'Kapasite, rota veya mevzuat değiştiğinde taşıyıcılar ve yerel ortaklarla uygulanabilir alternatifler koordine ederiz.' },
+    ],
+    facilityLabel: 'Fiziksel operasyonlar',
+    facilityTitle: 'Kendi işlettiğimiz depo kapasitesi',
+    facilityBody: 'Tesislerimiz Çin’de kabul, konsolidasyon, yükleme koordinasyonu, denetim devri ve ihracat hazırlığını destekler.',
+    tradeLabel: 'Ticaret destek markası',
+    tradeName: 'DDNZ Global Trade Co., Ltd',
+    tradeBody: 'DDNZ Global Trade; fabrika doğrulama, denetim, ihracat acenteliği, gümrük beyanı ve vergi iadesi koordinasyonunu destekler.',
+    servicesCta: 'Navlun hizmetlerini incele',
+    warehouseCta: 'Depo hizmetlerini gör',
+  },
 };
 
 const prefixByLanguage: Record<string, string> = {
@@ -200,6 +246,8 @@ const prefixByLanguage: Record<string, string> = {
   fr: '/fr',
   es: '/es',
   ar: '/ar',
+  pt: '/pt',
+  tr: '/tr',
 };
 
 export default function WhoWeAre() {

@@ -89,7 +89,7 @@ const processStepMeta = [
   },
 ];
 
-const localePrefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar' };
+const localePrefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 
 const scorecardAsset: Record<Language, { src: string; width: number; height: number }> = {
   en: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-en.webp', width: 1024, height: 1536 },
@@ -98,6 +98,8 @@ const scorecardAsset: Record<Language, { src: string; width: number; height: num
   fr: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-fr.svg', width: 1024, height: 1536 },
   es: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-es.svg', width: 1024, height: 1536 },
   ar: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-ar.svg', width: 1024, height: 1536 },
+  pt: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-en.webp', width: 1024, height: 1536 },
+  tr: { src: '/media/evidence/2026-08-14/supplier-scorecard-criteria-en.webp', width: 1024, height: 1536 },
 };
 
 function localizePath(path: string, language: Language) {

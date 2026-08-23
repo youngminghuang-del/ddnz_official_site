@@ -273,6 +273,38 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     contactHint: 'يكفي إدخال البريد أو الهاتف / واتساب', contactRequired: 'يرجى إدخال البريد أو الهاتف / واتساب', optionalDetails: 'إضافة تفاصيل الشحنة (اختياري)',
     seaDesc: 'اقتصادي للشحنات المجمعة والحاويات الكاملة', airDesc: 'أسرع خيار للبضائع العاجلة وعالية القيمة', landDesc: 'نقل بري مباشر لآسيا الوسطى وروسيا', wareDesc: 'تغليف خشبي وتخزين وتجميع وشحن متقاطع',
     mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيرد عليكم أحد خبراء اللوجستيات عبر البريد خلال 24 ساعة.', sendAnother: 'إرسال طلب آخر'
+  },
+  pt: {
+    step1Title: 'Escolha o modo de transporte', step1Desc: 'Selecione o canal; prepararemos a rota e o preço adequados',
+    step2Title: 'Origem e destino', step2Desc: 'Informe origem e destino para avaliarmos transporte e desembaraço',
+    step3Title: 'Peso e volume estimados', step3Desc: 'Use os controles ou escolha uma carga predefinida',
+    step4Title: 'Receba sua cotação personalizada', step4Desc: 'Informe seu nome e um contato por e-mail ou telefone / WhatsApp',
+    origin: 'Porto / cidade de origem', originPlaceholder: 'Digite ou selecione a origem, por exemplo Guangzhou ou Shenzhen...', popularOrigins: 'Origens frequentes',
+    destination: 'Porto / país de destino', destinationPlaceholder: 'Digite o país de destino...', popularDests: 'Destinos frequentes',
+    weight: 'Peso estimado (KG)', volume: 'Volume estimado (CBM)', presetLabel: 'Cargas predefinidas',
+    presetSmall: 'Amostra / pacote expresso (<100 kg)', presetMedium: 'Carga LCL / paletizada (100–1500 kg)', presetLarge: 'Contêiner FCL / carga comercial (>1500 kg)',
+    back: 'Voltar', next: 'Próxima etapa', submitQuote: 'Receber cotação e rota',
+    summaryTitle: 'Resumo da solicitação', summaryMode: 'Modo de transporte', summaryRoute: 'Detalhes da rota', summaryCargo: 'Dimensão da carga',
+    phonePlaceholder: 'Telefone / WhatsApp (alternativa ao e-mail)', namePlaceholder: 'Nome / empresa (obrigatório)', emailPlaceholder: 'E-mail corporativo (alternativa ao telefone)', notesPlaceholder: 'Opcional: produto, bateria, embalagem e outros requisitos.',
+    contactHint: 'Informe e-mail ou telefone / WhatsApp', contactRequired: 'Informe e-mail ou telefone / WhatsApp', optionalDetails: 'Adicionar detalhes da carga (opcional)',
+    seaDesc: 'Econômico para cargas LCL e FCL', airDesc: 'Máxima velocidade para cargas urgentes e de alto valor', landDesc: 'Transporte rodoviário direto para Ásia Central e Rússia', wareDesc: 'Caixaria, armazenagem, consolidação e cross-docking',
+    mode: 'Modo de transporte', industry: 'Setor / categoria de produto', cargoDesc: 'Detalhes e requisitos da carga', submitting: 'Enviando solicitação...', successHeading: 'Solicitação enviada!', successText: 'Recebemos sua solicitação. Nossa equipe confirmará rota, carga e serviço usando o contato informado.', sendAnother: 'Enviar outra solicitação'
+  },
+  tr: {
+    step1Title: 'Taşıma şeklini seçin', step1Desc: 'Taşıma kanalını seçin; uygun rota ve fiyatı hazırlayalım',
+    step2Title: 'Çıkış ve varış', step2Desc: 'Taşıma ve gümrük planını değerlendirmek için çıkış ve varışı girin',
+    step3Title: 'Tahmini ağırlık ve hacim', step3Desc: 'Kaydırıcıları kullanın veya hızlı yük seçeneği belirleyin',
+    step4Title: 'Kişiselleştirilmiş teklif alın', step4Desc: 'Adınızı ve e-posta ya da telefon / WhatsApp iletişimini girin',
+    origin: 'Çıkış limanı / şehir', originPlaceholder: 'Guangzhou veya Shenzhen gibi bir çıkış noktası girin...', popularOrigins: 'Sık kullanılan çıkışlar',
+    destination: 'Varış limanı / ülke', destinationPlaceholder: 'Varış ülkesini girin...', popularDests: 'Sık kullanılan varışlar',
+    weight: 'Tahmini ağırlık (KG)', volume: 'Tahmini hacim (CBM)', presetLabel: 'Hızlı yük seçenekleri',
+    presetSmall: 'Numune / ekspres paket (<100 kg)', presetMedium: 'LCL / paletli yük (100–1500 kg)', presetLarge: 'FCL / ticari sevkiyat (>1500 kg)',
+    back: 'Geri', next: 'Sonraki adım', submitQuote: 'Teklif ve rota al',
+    summaryTitle: 'Talep özeti', summaryMode: 'Taşıma şekli', summaryRoute: 'Rota bilgileri', summaryCargo: 'Yük boyutu',
+    phonePlaceholder: 'Telefon / WhatsApp (e-posta alternatifi)', namePlaceholder: 'Ad / şirket (zorunlu)', emailPlaceholder: 'Kurumsal e-posta (telefon alternatifi)', notesPlaceholder: 'İsteğe bağlı: ürün, batarya, paketleme ve diğer gereksinimler.',
+    contactHint: 'E-posta veya telefon / WhatsApp girin', contactRequired: 'E-posta veya telefon / WhatsApp girmeniz gerekir', optionalDetails: 'Yük bilgisi ekle (isteğe bağlı)',
+    seaDesc: 'LCL ve FCL yükler için ekonomik', airDesc: 'Acil ve yüksek değerli yükler için en hızlı seçenek', landDesc: 'Orta Asya ve Rusya için doğrudan karayolu', wareDesc: 'Sandıklama, depolama, konsolidasyon ve cross-docking',
+    mode: 'Taşıma şekli', industry: 'Sektör / ürün kategorisi', cargoDesc: 'Yük ayrıntıları ve gereksinimler', submitting: 'Talep gönderiliyor...', successHeading: 'Talep gönderildi!', successText: 'Talebinizi aldık. Ekibimiz verdiğiniz iletişim üzerinden rota, yük ve hizmet gereksinimlerini doğrulayacaktır.', sendAnother: 'Yeni talep gönder'
   }
 };
 
@@ -422,6 +454,27 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const ft = (key: string): string => {
     const lang = funnelTranslations[language] ? language : 'en';
     return funnelTranslations[lang]?.[key] || funnelTranslations['en']?.[key] || key;
+  };
+  const headlineCopy: Record<string, { before: string; accent: string; after: string }> = {
+    en: { before: 'Request a', accent: 'China Export', after: 'Estimate' },
+    zh: { before: '获取', accent: '中国出口物流', after: '初步方案' },
+    ru: { before: 'Расчет', accent: 'логистики', after: 'из Китая' },
+    fr: { before: 'Estimation', accent: 'logistique', after: 'depuis la Chine' },
+    es: { before: 'Solicite una', accent: 'estimación de exportación', after: 'desde China' },
+    ar: { before: 'اطلب', accent: 'تقديراً للتصدير', after: 'من الصين' },
+    pt: { before: 'Solicite uma', accent: 'estimativa de exportação', after: 'a partir da China' },
+    tr: { before: 'Çin ihracatı için', accent: 'ön maliyet', after: 'hesabı alın' },
+  };
+  const quoteHeadline = headlineCopy[language] || headlineCopy.en;
+  const destinationPrefillCopy: Record<string, string> = {
+    en: 'Destination automatically selected and highlighted based on your route',
+    zh: '根据您浏览的航线已为您自动预选和高亮目的地',
+    ru: 'Пункт назначения автоматически выбран и выделен на основе вашего маршрута',
+    fr: 'Destination présélectionnée et mise en évidence en fonction de votre itinéraire',
+    es: 'Destino preseleccionado y destacado según la ruta consultada',
+    ar: 'تم اختيار الوجهة وإبرازها تلقائياً بناءً على المسار الذي شاهدته',
+    pt: 'Destino pré-selecionado e destacado conforme a rota consultada',
+    tr: 'Görüntülediğiniz rotaya göre varış noktası otomatik seçildi ve vurgulandı',
   };
 
   const markQuoteStarted = (service = selectedService) => {
@@ -640,23 +693,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-4 leading-[1.15]"
             >
-              {language === 'zh' ? (
-                <>
-                  获取 <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">中国出口物流</span> 初步方案
-                </>
-              ) : language === 'ru' ? (
-                <>
-                  Расчет <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">логистики</span> из Китая
-                </>
-              ) : language === 'fr' ? (
-                <>
-                  Estimation <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">logistique</span> depuis la Chine
-                </>
-              ) : (
-                <>
-                  Request a <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">China Export</span> Estimate
-                </>
-              )}
+              {quoteHeadline.before} <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">{quoteHeadline.accent}</span> {quoteHeadline.after}
             </motion.h1>
           ) : (
             <motion.h2 
@@ -666,23 +703,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
               transition={{ delay: 0.1 }}
               className="text-3xl sm:text-4xl md:text-5xl font-black text-slate-900 tracking-tight text-center mb-4 leading-[1.15]"
             >
-              {language === 'zh' ? (
-                <>
-                  获取 <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">中国出口物流</span> 初步方案
-                </>
-              ) : language === 'ru' ? (
-                <>
-                  Расчет <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">логистики</span> из Китая
-                </>
-              ) : language === 'fr' ? (
-                <>
-                  Estimation <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">logistique</span> depuis la Chine
-                </>
-              ) : (
-                <>
-                  Request a <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">China Export</span> Estimate
-                </>
-              )}
+              {quoteHeadline.before} <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">{quoteHeadline.accent}</span> {quoteHeadline.after}
             </motion.h2>
           )}
           <div className="h-1 w-12 bg-[#d97706] mx-auto rounded-full mb-6" />
@@ -928,13 +949,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   <p className="text-[11px] font-bold text-[var(--hb-amber)] mt-1.5 flex items-center gap-1">
                                     <Sparkles className="w-3.5 h-3.5" />
                                     <span>
-                                      {language === 'zh' 
-                                        ? '根据您浏览的航线已为您自动预选和高亮目的地' 
-                                        : language === 'ru'
-                                        ? 'Пункт назначения автоматически выбран и выделен на основе вашего маршрута'
-                                        : language === 'fr'
-                                        ? 'Destination présélectionnée et mise en évidence en fonction de votre itinéraire'
-                                        : 'Destination automatically selected and highlighted based on your route'}
+                                      {destinationPrefillCopy[language] || destinationPrefillCopy.en}
                                     </span>
                                   </p>
                                 )}

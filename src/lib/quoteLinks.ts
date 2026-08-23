@@ -10,6 +10,8 @@ const PREFIX_BY_LANGUAGE: Record<Language, string> = {
   fr: '/fr',
   es: '/es',
   ar: '/ar',
+  pt: '/pt',
+  tr: '/tr',
 };
 
 type QuoteLinkOptions = {

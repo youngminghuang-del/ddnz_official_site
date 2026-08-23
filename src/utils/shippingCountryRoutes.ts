@@ -1,4 +1,4 @@
-const LANGUAGE_PREFIX_PATTERN = /^\/(zh-cn|ru|fr|es|ar)(?=\/|$)/;
+const LANGUAGE_PREFIX_PATTERN = /^\/(zh-cn|ru|fr|es|ar|pt|tr)(?=\/|$)/;
 
 export function getShippingCountrySlug(
   pathname: string,

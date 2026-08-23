@@ -60,7 +60,19 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       desc: 'توريد وفحص وتجميع وتصدير معدات المطابخ والصوت وملحقات الهاتف ومستلزمات الأنشطة الخارجية من الصين.',
       keywords: 'وكيل توريد الصين, فحص الموردين, تجميع البضائع من الصين, توريد مستلزمات الأنشطة الخارجية',
       image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
-    }
+    },
+    pt: {
+      title: 'DDNZ Global | Sourcing, inspeção e exportação da China',
+      desc: 'Encontre produtos comerciais na China com verificação de fornecedores, controle de qualidade, consolidação e entrega para exportação.',
+      keywords: 'sourcing na China, agente de compras China, inspeção de fornecedores, consolidação de cargas China',
+      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+    },
+    tr: {
+      title: 'DDNZ Global | Çin’den tedarik, denetim ve ihracat',
+      desc: 'Çin’den ticari ürünleri tedarikçi doğrulama, kalite kontrol, konsolidasyon ve ihracat teslimiyle yönetin.',
+      keywords: 'Çin tedarik, Çin satın alma acentesi, tedarikçi denetimi, Çin yük konsolidasyonu',
+      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+    },
   },
   'how-we-work': {
     en: {
@@ -99,6 +111,18 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'عملية التوريد من الصين, مقارنة الموردين, فحص الجودة, تجميع الشحنات, تسليم التصدير',
       image: '/media/process/brief-spec-discussion-poster.webp',
     },
+    pt: {
+      title: 'Como funciona o sourcing na China | DDNZ Global',
+      desc: 'Seis pontos de controle, do briefing e comparação de fornecedores à aprovação, evidências de QC, consolidação e entrega para exportação.',
+      keywords: 'processo de sourcing na China, comparação de fornecedores, controle de qualidade, consolidação de cargas',
+      image: '/media/process/brief-spec-discussion-poster.webp',
+    },
+    tr: {
+      title: 'Çin tedarik süreci nasıl işler | DDNZ Global',
+      desc: 'Satın alma özetinden tedarikçi karşılaştırmasına, onaya, QC kanıtına, konsolidasyona ve ihracat teslimine altı kontrol noktası.',
+      keywords: 'Çin tedarik süreci, tedarikçi karşılaştırma, kalite kontrol, yük konsolidasyonu',
+      image: '/media/process/brief-spec-discussion-poster.webp',
+    },
   },
   // 2. Insights ("insights")
   'insights': {
@@ -131,7 +155,17 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       title: 'أدلة التوريد والتصدير من الصين | DDNZ Global',
       desc: 'أدلة عملية من DDNZ Global حول الموردين والفحص والتجميع والتصدير والشحن الدولي من الصين.',
       keywords: 'الشحن من الصين، الشحن البحري، الشحن الجوي، التجارة الدولية، سلسلة التوريد'
-    }
+    },
+    pt: {
+      title: 'Guias de sourcing e exportação da China | DDNZ Global',
+      desc: 'Guias práticos sobre fornecedores, inspeção, consolidação, exportação e transporte internacional a partir da China.',
+      keywords: 'sourcing na China, inspeção de fornecedores, consolidação, exportação da China, logística internacional'
+    },
+    tr: {
+      title: 'Çin’den tedarik ve ihracat rehberleri | DDNZ Global',
+      desc: 'Çin’de tedarikçi, denetim, konsolidasyon, ihracat ve uluslararası taşımacılık için uygulamalı rehberler.',
+      keywords: 'Çin tedarik, tedarikçi denetimi, konsolidasyon, Çin ihracat, uluslararası lojistik'
+    },
   },
   // 3. Services - Sea Freight ("services/sea-freight")
   'services/sea-freight': {
@@ -428,7 +462,17 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       title: 'اطلب عرض توريد أو شحن من الصين | DDNZ Global',
       desc: 'أرسل بيانات المنتج أو المورد أو الوجهة أو الشحنة لمراجعة التوريد أو الفحص أو التجميع أو الشحن من الصين.',
       keywords: 'عرض توريد من الصين, طلب فحص الصين, عرض شحن الصين, تجميع الشحنات'
-    }
+    },
+    pt: {
+      title: 'Solicite suporte de sourcing, inspeção ou frete | DDNZ',
+      desc: 'Envie dados do produto, fornecedor, destino ou carga para avaliar sourcing, inspeção, consolidação ou frete internacional da China.',
+      keywords: 'solicitação de sourcing China, cotação de inspeção, consolidação China, cotação de frete China'
+    },
+    tr: {
+      title: 'Çin tedarik, denetim veya navlun desteği talep edin | DDNZ',
+      desc: 'Tedarik, denetim, konsolidasyon veya Çin’den uluslararası taşımayı kapsamlandırmak için ürün, tedarikçi, varış ya da yük bilgilerini gönderin.',
+      keywords: 'Çin tedarik talebi, ürün denetimi teklifi, Çin konsolidasyon, Çin navlun teklifi'
+    },
   },
   'sourcing/commercial-kitchen-equipment-from-china': {
     en: {
@@ -493,6 +537,8 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
     fr: { title: 'Recherche et comparaison fournisseurs en Chine | DDNZ', desc: 'Créez une présélection comparable de fournisseurs chinois à partir d’un brief d’achat commun.', keywords: 'recherche fournisseur Chine, agent sourcing Chine, comparaison fournisseurs', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
     es: { title: 'Búsqueda y comparación de proveedores en China | DDNZ', desc: 'Cree una lista comparable de proveedores chinos a partir de un único brief de compra.', keywords: 'buscar proveedores China, agente compras China, comparar proveedores', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
     ar: { title: 'البحث عن الموردين ومقارنتهم في الصين | DDNZ', desc: 'أنشئ قائمة قابلة للمقارنة من الموردين في الصين انطلاقاً من موجز شراء واحد.', keywords: 'البحث عن موردين الصين, وكيل توريد الصين, مقارنة الموردين', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
+    pt: { title: 'Busca e comparação de fornecedores na China | DDNZ', desc: 'Crie uma lista comparável de fornecedores chineses a partir de um único briefing de compra.', keywords: 'buscar fornecedores China, agente de sourcing China, comparar fornecedores', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
+    tr: { title: 'Çin’de tedarikçi arama ve karşılaştırma | DDNZ', desc: 'Tek bir satın alma özetiyle karşılaştırılabilir bir Çin tedarikçi kısa listesi oluşturun.', keywords: 'Çin tedarikçi arama, Çin satın alma acentesi, tedarikçi karşılaştırma', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
   },
   'sourcing-services/inspection-quality-control': {
     en: { title: 'China Inspection & Quality Control | DDNZ Global', desc: 'Coordinate China product inspection against an agreed model, checklist and quantity, with traceable photo, function, label and packing evidence.', keywords: 'product inspection China, quality control China, pre shipment inspection, supplier QC', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
@@ -501,6 +547,8 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
     fr: { title: 'Inspection et contrôle qualité en Chine | DDNZ', desc: 'Coordonnez l’inspection en Chine selon le modèle, la quantité et la checklist convenus.', keywords: 'inspection produit Chine, contrôle qualité Chine, inspection avant expédition', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
     es: { title: 'Inspección y control de calidad en China | DDNZ', desc: 'Coordine la inspección en China según el modelo, la cantidad y la lista acordados.', keywords: 'inspección producto China, control calidad China, inspección preembarque', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
     ar: { title: 'الفحص ومراقبة الجودة في الصين | DDNZ', desc: 'نسق فحص المنتجات في الصين وفق النموذج والكمية وقائمة الفحص المتفق عليها.', keywords: 'فحص المنتجات الصين, مراقبة الجودة الصين, فحص ما قبل الشحن', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
+    pt: { title: 'Inspeção e controle de qualidade na China | DDNZ', desc: 'Coordene a inspeção na China conforme o modelo, a quantidade e a lista de verificação acordados.', keywords: 'inspeção de produto China, controle de qualidade China, inspeção pré-embarque', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
+    tr: { title: 'Çin’de denetim ve kalite kontrol | DDNZ', desc: 'Ürün denetimini kararlaştırılan model, adet ve kontrol listesine göre Çin’de koordine edin.', keywords: 'Çin ürün denetimi, Çin kalite kontrol, sevkiyat öncesi denetim', image: '/images/operations/warehouse-quality-inspection-candid-v1.webp' },
   },
   'sourcing-services/consolidation-export': {
     en: { title: 'China Order Consolidation & Export | DDNZ Global', desc: 'Coordinate supplier readiness, receiving, carton and document reconciliation, consolidation and a controlled international freight handoff from China.', keywords: 'order consolidation China, cargo consolidation China, export coordination China, multi supplier shipping', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
@@ -509,6 +557,8 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
     fr: { title: 'Consolidation de commandes et export Chine | DDNZ', desc: 'Coordonnez disponibilité fournisseurs, réception, rapprochement cartons et documents et transmission export.', keywords: 'consolidation commandes Chine, groupage Chine, coordination export', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
     es: { title: 'Consolidación de pedidos y exportación desde China | DDNZ', desc: 'Coordine preparación de proveedores, recepción, conciliación de cajas y documentos y entrega de exportación.', keywords: 'consolidación pedidos China, carga consolidada China, coordinación exportación', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
     ar: { title: 'تجميع الطلبات والتصدير من الصين | DDNZ', desc: 'نسق جاهزية الموردين والاستلام ومطابقة الطرود والمستندات وتسليم التصدير من الصين.', keywords: 'تجميع الطلبات الصين, تجميع الشحنات, تنسيق التصدير', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
+    pt: { title: 'Consolidação de pedidos e exportação da China | DDNZ', desc: 'Coordene prontidão dos fornecedores, recebimento, conferência de caixas e documentos e entrega para exportação.', keywords: 'consolidação de pedidos China, carga consolidada China, coordenação de exportação', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
+    tr: { title: 'Çin sipariş konsolidasyonu ve ihracat | DDNZ', desc: 'Tedarikçi hazırlığını, teslim almayı, koli ve belge mutabakatını ve ihracat teslimini koordine edin.', keywords: 'Çin sipariş konsolidasyonu, Çin yük konsolidasyonu, ihracat koordinasyonu', image: '/images/operations/container-loading-forklift-wide-v1.webp' },
   }
 };
 
@@ -590,7 +640,9 @@ function injectSeoMeta(
     'ru': 'ru',
     'fr': 'fr',
     'es': 'es',
-    'ar': 'ar'
+    'ar': 'ar',
+    'pt': 'pt',
+    'tr': 'tr'
   };
   const targetLang = htmlLangMap[lang] || 'en';
   output = output.replace(/<html lang="[^"]*"/i, `<html lang="${targetLang}"`);
@@ -680,9 +732,20 @@ function injectSeoMeta(
   // Service pages have full UI translations. Blog posts only declare their
   // source language until a genuine Translation Group links them together.
   const isEnglishShowcase = relPath === 'products' || relPath === 'sourcing-services' || relPath === 'refrigeration-equipment';
+  const ptTrLocalizedPages = new Set([
+    '',
+    'how-we-work',
+    'insights',
+    'get-a-quote',
+    'sourcing-services/supplier-search',
+    'sourcing-services/inspection-quality-control',
+    'sourcing-services/consolidation-export',
+  ]);
   const alternateLanguages = relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
-    : ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'];
+    : ptTrLocalizedPages.has(relPath)
+      ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
+      : ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'];
   const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
     hrefLang: normalizeArticleLocale(code),
     href: localizedSiteUrl(code, relPath),
@@ -956,7 +1019,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
   }
 
   if (!relPath) {
-    const faqLanguage = (lang === 'zh-cn' ? 'zh' : lang) as HomeFaqLanguage;
+    const faqLanguage = (lang === 'zh-cn' ? 'zh' : lang === 'pt' || lang === 'tr' ? 'en' : lang) as HomeFaqLanguage;
     const homepageSchema = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -984,7 +1047,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
             email: 'partnership@ddnzglobal.com',
             contactType: 'customer service',
             areaServed: 'Global',
-            availableLanguage: ['English', 'Chinese', 'Russian', 'French', 'Spanish', 'Arabic'],
+            availableLanguage: ['English', 'Chinese', 'Russian', 'French', 'Spanish', 'Arabic', 'Portuguese', 'Turkish'],
           },
         },
         {
@@ -1281,6 +1344,18 @@ const howWeWorkStaticCopy: Record<string, { eyebrow: string; title: string; step
     steps: ['تحديد موجز الشراء', 'البحث وتوحيد عروض الموردين', 'اعتماد العينة والمواصفات', 'متابعة الإنتاج', 'جمع أدلة مراقبة الجودة', 'مطابقة البضاعة وتسليم التصدير'],
     cta: 'ابدأ موجز التوريد',
   },
+  pt: {
+    eyebrow: 'Como a DDNZ trabalha',
+    title: 'Um briefing. Seis pontos de controle da busca do fornecedor à entrega para exportação.',
+    steps: ['Definir o briefing de compra', 'Buscar e normalizar ofertas', 'Aprovar amostra e especificações', 'Acompanhar a produção', 'Coletar evidências de QC', 'Conferir a carga e entregar para exportação'],
+    cta: 'Iniciar um briefing de sourcing',
+  },
+  tr: {
+    eyebrow: 'DDNZ nasıl çalışır',
+    title: 'Tek özet. Tedarikçi aramasından ihracat teslimine altı sorumluluk noktası.',
+    steps: ['Satın alma özetini tanımlayın', 'Teklifleri bulun ve standartlaştırın', 'Numune ve şartnameyi onaylayın', 'Üretimi takip edin', 'QC kanıtlarını toplayın', 'Yükü mutabık kılın ve ihracata teslim edin'],
+    cta: 'Tedarik özeti başlat',
+  },
 };
 
 function injectStaticRouteContent(
@@ -1381,9 +1456,9 @@ function run() {
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
   const basePaths = [
-    { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
-    { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
-    { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] },
+    { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly' },
@@ -1392,7 +1467,7 @@ function run() {
     { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly' },
     { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly' },
     { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly' },
-    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly' },
+    { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'products', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'sourcing-services', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'refrigeration-equipment', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
@@ -1400,9 +1475,9 @@ function run() {
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'sourcing/mobile-accessories-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
-    { path: 'sourcing-services/supplier-search', priority: '0.9', changefreq: 'monthly' },
-    { path: 'sourcing-services/inspection-quality-control', priority: '0.9', changefreq: 'monthly' },
-    { path: 'sourcing-services/consolidation-export', priority: '0.9', changefreq: 'monthly' }
+    { path: 'sourcing-services/supplier-search', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'sourcing-services/inspection-quality-control', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'sourcing-services/consolidation-export', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] }
   ];
   const countryPaths = countryRouteSlugs.map((country) => ({
     path: `shipping-from-china-to-${country}`,
@@ -1556,7 +1631,11 @@ function run() {
     });
   });
 
-  console.log(`✅ Pre-rendered static pages for all ${allPaths.length} routes across ${languages.length} languages!`);
+  const staticVariantCount = allPaths.reduce(
+    (total, entry) => total + (entry.languages || languages).length,
+    0,
+  );
+  console.log(`✅ Pre-rendered ${staticVariantCount} configured route-language variants!`);
 
   // --- 3. Generate GitHub Pages fallback 404.html for SPA router redirection support ---
   // To keep canonical and default fallback metadata tidy, we use the root index.html

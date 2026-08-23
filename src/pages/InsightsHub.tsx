@@ -49,7 +49,17 @@ export default function InsightsHub() {
       title: 'أدلة التوريد والتصدير من الصين | DDNZ Global',
       desc: 'أدلة عملية من DDNZ Global حول الموردين والفحص والتجميع والتصدير والشحن الدولي من الصين.',
       keywords: 'الشحن من الصين، الشحن البحري، الشحن الجوي، الخدمات اللوجستية، التجارة الدولية'
-    }
+    },
+    pt: {
+      title: 'Guias de sourcing e exportação da China | DDNZ Global',
+      desc: 'Guias práticos sobre fornecedores, inspeção, consolidação, exportação e transporte internacional a partir da China.',
+      keywords: 'sourcing na China, inspeção de fornecedores, consolidação, exportação da China, logística internacional'
+    },
+    tr: {
+      title: 'Çin’den tedarik ve ihracat rehberleri | DDNZ Global',
+      desc: 'Çin’de tedarikçi, denetim, konsolidasyon, ihracat ve uluslararası taşımacılık için uygulamalı rehberler.',
+      keywords: 'Çin tedarik, tedarikçi denetimi, konsolidasyon, Çin ihracat, uluslararası lojistik'
+    },
   };
 
   const currentSEO = seoMetrics[language] || seoMetrics['en'];
@@ -66,15 +76,35 @@ export default function InsightsHub() {
   // Compute unique categories dynamically from database pages
   const getPostPath = (post: BlogPost) => articleRoutePath(post);
   const languageLabels: Record<string, string> = {
-    all: language === 'es' ? 'Todos los idiomas' : language === 'ar' ? 'جميع اللغات' : 'All languages',
+    all: language === 'es'
+      ? 'Todos los idiomas'
+      : language === 'ar'
+        ? 'جميع اللغات'
+        : language === 'pt'
+          ? 'Todos os idiomas'
+          : language === 'tr'
+            ? 'Tüm diller'
+            : 'All languages',
     en: 'English',
     es: 'Español',
     ar: 'العربية',
     fr: 'Français',
     'zh-cn': '中文',
     ru: 'Русский',
+    pt: 'Português',
+    tr: 'Türkçe',
   };
   const availableLanguages = ['all', ...Array.from(new Set(posts.map((post) => normalizeArticleLocale(post.language))))];
+  const loadingLabel: Record<string, string> = {
+    en: 'Synchronizing items with Notion Engine...',
+    zh: '正在同步 Notion 内容…',
+    ru: 'Синхронизация материалов из Notion…',
+    fr: 'Synchronisation des contenus avec Notion…',
+    es: 'Sincronizando artículos con Notion...',
+    ar: 'جارٍ مزامنة المقالات مع Notion…',
+    pt: 'A sincronizar conteúdos com o Notion…',
+    tr: 'İçerikler Notion ile eşitleniyor…',
+  };
   const languageFilteredPosts = selectedLanguage === 'all'
     ? posts
     : posts.filter((post) => normalizeArticleLocale(post.language) === selectedLanguage);
@@ -159,7 +189,7 @@ export default function InsightsHub() {
           {isLoading && posts.length === 0 ? (
             <div className="py-24 text-center">
               <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-[var(--ddnz-purple-strong)] border-t-transparent" />
-              <p className="text-slate-500 font-bold">{language === 'es' ? 'Sincronizando artículos...' : language === 'ar' ? 'جارٍ مزامنة المقالات...' : 'Synchronizing items with Notion Engine...'}</p>
+              <p className="text-slate-500 font-bold">{loadingLabel[language] || loadingLabel.en}</p>
             </div>
           ) : (
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
