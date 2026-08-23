@@ -56,6 +56,20 @@ const copy: Record<string, InterfaceCopy> = {
     read: 'اقرأ المقال',
     viewAll: 'عرض جميع التحليلات',
   },
+  pt: {
+    title: 'Conhecimento comercial sempre atualizado',
+    subtitle: 'Orientações recentes sobre frete, sourcing, conformidade e mudanças nos mercados internacionais.',
+    latest: 'Análise mais recente',
+    read: 'Ler artigo',
+    viewAll: 'Ver todos os insights',
+  },
+  tr: {
+    title: 'Güncel ticaret bilgisi',
+    subtitle: 'Navlun, tedarik, uyumluluk ve değişen uluslararası pazarlar hakkında güncel rehberler.',
+    latest: 'Son analiz',
+    read: 'Makaleyi oku',
+    viewAll: 'Tüm içgörüleri gör',
+  },
 };
 
 const languageNames: Record<string, string> = {
@@ -65,6 +79,8 @@ const languageNames: Record<string, string> = {
   fr: 'Français',
   es: 'Español',
   ar: 'العربية',
+  pt: 'Português',
+  tr: 'Türkçe',
 };
 
 const prefixByLanguage: Record<string, string> = {
@@ -73,6 +89,8 @@ const prefixByLanguage: Record<string, string> = {
   fr: '/fr',
   es: '/es',
   ar: '/ar',
+  pt: '/pt',
+  tr: '/tr',
 };
 
 export default function Insights() {

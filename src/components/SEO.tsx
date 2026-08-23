@@ -59,7 +59,17 @@ export default function SEO({
       title: 'DDNZ Global | التوريد وفحص الجودة والتصدير من الصين',
       desc: 'تنسق DDNZ Global البحث عن الموردين والفحص وتجميع البضائع وتصدير المنتجات التجارية من الصين.',
       keywords: 'DDNZ Global, وكيل توريد الصين, فحص الموردين, تجميع البضائع من الصين',
-    }
+    },
+    pt: {
+      title: 'DDNZ Global | Sourcing, controle de qualidade e exportação da China',
+      desc: 'A DDNZ Global coordena fornecedores, inspeção, consolidação e exportação de produtos comerciais a partir da China.',
+      keywords: 'DDNZ Global, sourcing na China, inspeção de fornecedores, consolidação de cargas na China',
+    },
+    tr: {
+      title: 'DDNZ Global | Çin’den tedarik, kalite kontrol ve ihracat',
+      desc: 'DDNZ Global, Çin’den ticari ürünlerde tedarikçi bulma, denetim, konsolidasyon ve ihracat teslimatını koordine eder.',
+      keywords: 'DDNZ Global, Çin tedarik, tedarikçi denetimi, Çin yük konsolidasyonu',
+    },
   };
 
   const currentLang = language || 'en';
@@ -89,7 +99,7 @@ export default function SEO({
   if (cleanSuffix.startsWith('/')) {
     cleanSuffix = cleanSuffix.substring(1);
   }
-  const langPrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar'];
+  const langPrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'];
   for (const prefix of langPrefixes) {
     if (cleanSuffix === prefix) {
       cleanSuffix = '';
@@ -127,6 +137,15 @@ export default function SEO({
     ? (canonicalPath.startsWith('http') ? canonicalPath : `https://www.ddnzglobal.com${canonicalPath}`)
     : getLanguageUrl(currentLang);
 
+  const ptTrLocalizedPages = new Set([
+    '',
+    'how-we-work',
+    'insights',
+    'get-a-quote',
+    'sourcing-services/supplier-search',
+    'sourcing-services/inspection-quality-control',
+    'sourcing-services/consolidation-export',
+  ]);
   const defaultAlternates = [
     { hrefLang: 'en', href: getLanguageUrl('en') },
     { hrefLang: 'zh-cn', href: getLanguageUrl('zh') },
@@ -134,6 +153,12 @@ export default function SEO({
     { hrefLang: 'fr', href: getLanguageUrl('fr') },
     { hrefLang: 'es', href: getLanguageUrl('es') },
     { hrefLang: 'ar', href: getLanguageUrl('ar') },
+    ...(ptTrLocalizedPages.has(cleanSuffix)
+      ? [
+          { hrefLang: 'pt', href: getLanguageUrl('pt') },
+          { hrefLang: 'tr', href: getLanguageUrl('tr') },
+        ]
+      : []),
   ];
   const finalAlternates = (alternateUrls || defaultAlternates).filter((item) => item.hrefLang !== 'x-default');
   const defaultAlternate = finalAlternates.find((item) => item.hrefLang === 'en') || finalAlternates[0];

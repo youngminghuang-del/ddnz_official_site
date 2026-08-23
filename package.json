@@ -10,6 +10,7 @@
     "optimize-insights-cards": "tsx scripts/optimize-insights-card-images.ts",
     "test:notion-routing": "tsx scripts/test-notion-article-routing.ts",
     "test:notion-guards": "tsx scripts/test-notion-publishing-guards.ts",
+    "test:analytics-policy": "tsx scripts/test-analytics-policy.ts",
     "build": "npm run fetch-notion && npm run optimize-insights-cards && vite build && tsx scripts/generate-static-pages.ts && node scripts/audit-seo-output.mjs",
     "audit:seo": "node scripts/audit-seo-output.mjs",
     "push:baidu": "node scripts/push-baidu-urls.mjs --sitemap public/sitemap.xml",

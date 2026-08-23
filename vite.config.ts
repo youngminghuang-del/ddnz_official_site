@@ -63,6 +63,8 @@ ${verificationTags}
     <link rel="alternate" hreflang="fr" href="https://www.ddnzglobal.com/fr" />
     <link rel="alternate" hreflang="es" href="https://www.ddnzglobal.com/es" />
     <link rel="alternate" hreflang="ar" href="https://www.ddnzglobal.com/ar" />
+    <link rel="alternate" hreflang="pt" href="https://www.ddnzglobal.com/pt" />
+    <link rel="alternate" hreflang="tr" href="https://www.ddnzglobal.com/tr" />
 `;
           if (!html.includes('hreflang="x-default"')) {
             return html.replace('</head>', `${tags}</head>`);

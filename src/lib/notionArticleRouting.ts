@@ -1,5 +1,5 @@
 export const ARTICLE_SITE_URL = 'https://www.ddnzglobal.com';
-export const ARTICLE_LOCALES = ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar'] as const;
+export const ARTICLE_LOCALES = ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] as const;
 
 export type ArticleLocale = (typeof ARTICLE_LOCALES)[number];
 

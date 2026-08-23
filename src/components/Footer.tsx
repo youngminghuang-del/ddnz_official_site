@@ -34,6 +34,8 @@ const localePrefix: Record<Language, string> = {
   fr: '/fr',
   es: '/es',
   ar: '/ar',
+  pt: '/pt',
+  tr: '/tr',
 };
 
 type FooterCopy = {
@@ -164,6 +166,26 @@ const footerCopy: Record<Language, FooterCopy> = {
     legalNote: 'التوريد والدعم التجاري: DDNZ Global Trade Co., Ltd. · تنفيذ الشحن: Heaven Born International Freight Co., Ltd.',
     socialLabel: 'قنوات DDNZ العامة',
   },
+  pt: {
+    primaryCta: 'Iniciar solicitação de sourcing',
+    brandDescriptor: 'Encontre, inspecione e exporte produtos comerciais da China com uma equipe responsável.',
+    categories: 'Sourcing de produtos', markets: 'Mercados prioritários', contact: 'Fale com a equipe',
+    kitchen: 'Equipamentos para cozinha profissional', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular',
+    middleEast: 'Oriente Médio', westAfrica: 'África Ocidental', latinAmerica: 'América Latina', insights: 'Conteúdos de sourcing',
+    hbLabel: 'Execução do transporte · Desde 1997', hours: 'Seg–Sex, 09:00–18:00 (GMT+8)',
+    legalNote: 'Sourcing e apoio comercial: DDNZ Global Trade Co., Ltd. · Execução do transporte: Heaven Born International Freight Co., Ltd.',
+    socialLabel: 'Canais oficiais da DDNZ',
+  },
+  tr: {
+    primaryCta: 'Tedarik talebi oluştur',
+    brandDescriptor: 'Çin’den ticari ürünleri tek bir sorumlu ekiple bulun, denetleyin ve ihraç edin.',
+    categories: 'Ürün tedariği', markets: 'Öncelikli pazarlar', contact: 'Ekiple görüşün',
+    kitchen: 'Endüstriyel mutfak ekipmanları', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar',
+    middleEast: 'Orta Doğu', westAfrica: 'Batı Afrika', latinAmerica: 'Latin Amerika', insights: 'Tedarik içerikleri',
+    hbLabel: 'Nakliye uygulaması · 1997’den beri', hours: 'Pzt–Cum, 09:00–18:00 (GMT+8)',
+    legalNote: 'Tedarik ve ticari destek: DDNZ Global Trade Co., Ltd. · Nakliye uygulaması: Heaven Born International Freight Co., Ltd.',
+    socialLabel: 'DDNZ resmi kanalları',
+  },
 };
 
 export default function Footer() {
@@ -186,6 +208,8 @@ export default function Footer() {
     fr: 'Paramètres des cookies',
     es: 'Configuración de cookies',
     ar: 'إعدادات ملفات الارتباط',
+    pt: 'Configurações de cookies',
+    tr: 'Çerez ayarları',
   };
 
   const handleContactClick = (method: string) => {
@@ -220,7 +244,7 @@ export default function Footer() {
         <div className="grid gap-x-8 gap-y-9 py-9 md:grid-cols-2 lg:grid-cols-12 lg:py-10">
           <h2 className="sr-only">DDNZ Global sourcing, markets and contact information</h2>
 
-          <div className="md:col-span-2 lg:col-span-3 lg:pr-4">
+          <div className="md:col-span-2 lg:col-span-3 lg:pr-4 rtl:lg:pl-4 rtl:lg:pr-0">
             <Link
               to={prefix || '/'}
               aria-label="DDNZ Global home"
@@ -394,21 +418,21 @@ export default function Footer() {
             <button
               type="button"
               onClick={() => setLegalType('privacy')}
-              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline"
+              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline rtl:text-right"
             >
               {t('footer.privacy')}
             </button>
             <button
               type="button"
               onClick={() => setLegalType('terms')}
-              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline"
+              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline rtl:text-right"
             >
               {t('footer.terms')}
             </button>
             <button
               type="button"
               onClick={() => window.dispatchEvent(new Event('open-cookie-settings'))}
-              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline"
+              className="min-h-11 text-left font-semibold text-slate-300 transition-colors hover:text-white focus-visible:outline-none focus-visible:underline rtl:text-right"
             >
               {cookieLabel[language]}
             </button>

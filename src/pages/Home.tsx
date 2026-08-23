@@ -19,6 +19,8 @@ const loadingCopy: Record<Language, string> = {
   fr: 'Chargement de la section',
   es: 'Cargando sección',
   ar: 'جارٍ تحميل القسم',
+  pt: 'Carregando seção',
+  tr: 'Bölüm yükleniyor',
 };
 
 function HomeSectionFallback({ language }: { language: Language }) {
@@ -31,6 +33,7 @@ function HomeSectionFallback({ language }: { language: Language }) {
 
 export default function Home() {
   const { language } = useLanguage();
+  const schemaFaqLanguage: HomeFaqLanguage = language === 'pt' || language === 'tr' ? 'en' : language;
   const metadata = {
     en: {
       title: 'DDNZ Global | China Sourcing, Quality Control & Export Delivery',
@@ -46,6 +49,8 @@ export default function Home() {
     fr: { title: 'DDNZ Global | Achats, contrôle qualité et export depuis la Chine', description: 'Sourcing, inspection, consolidation et export d’équipements de cuisine, audio, accessoires mobiles et produits de plein air depuis la Chine.', keywords: 'agent sourcing Chine, inspection fournisseur Chine, consolidation marchandises Chine, sourcing produits de plein air Chine' },
     es: { title: 'DDNZ Global | Compras, control de calidad y exportación desde China', description: 'Búsqueda, inspección, consolidación y exportación desde China de cocina comercial, audio, accesorios móviles y productos para actividades al aire libre.', keywords: 'agente de compras China, inspección de proveedores, consolidación de carga China, productos para actividades al aire libre China' },
     ar: { title: 'DDNZ Global | التوريد وفحص الجودة والتصدير من الصين', description: 'توريد وفحص وتجميع وتصدير معدات المطابخ والصوت وملحقات الهاتف ومستلزمات الأنشطة الخارجية من الصين.', keywords: 'وكيل توريد الصين, فحص الموردين, تجميع البضائع من الصين, توريد مستلزمات الأنشطة الخارجية' },
+    pt: { title: 'DDNZ Global | Sourcing, inspeção e exportação da China', description: 'Encontre fornecedores, inspecione, consolide e exporte equipamentos para cozinha, áudio, acessórios móveis e produtos outdoor da China.', keywords: 'agente de sourcing China, compras na China, inspeção de fornecedor, consolidação de carga, exportação da China' },
+    tr: { title: 'DDNZ Global | Çin’den tedarik, kalite kontrol ve ihracat', description: 'Çin’den endüstriyel mutfak, ses, mobil aksesuar ve outdoor ürünleri için tedarikçi arama, denetim, konsolidasyon ve ihracat.', keywords: 'Çin tedarik firması, Çin tedarikçi bulma, ürün denetimi, yük konsolidasyonu, Çin ihracat' },
   }[language];
 
   return (
@@ -57,7 +62,7 @@ export default function Home() {
         type="FAQPage"
         data={{
           url: `https://www.ddnzglobal.com${window.location.pathname}`,
-          faqs: getLocalizedHomeFaqs(language as HomeFaqLanguage),
+          faqs: getLocalizedHomeFaqs(schemaFaqLanguage),
         }}
       />
       <SourcingHomepageNav />

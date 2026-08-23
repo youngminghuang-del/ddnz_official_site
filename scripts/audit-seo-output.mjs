@@ -4,8 +4,8 @@ import path from 'node:path';
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
 const sitemapPath = path.join(distDir, 'sitemap.xml');
-const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar'];
-const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar' };
+const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'];
+const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar', pt: 'pt', tr: 'tr' };
 const expectedShowcaseRedirects = new Map([
   ['commercial-kitchen', '/sourcing/commercial-kitchen-equipment-from-china'],
   ['audio-speakers', '/sourcing/audio-speakers-from-china'],

@@ -29,6 +29,10 @@ export default function GetAQuotePage() {
     ? 'Obtenga una cotización de flete y plan de ruta | Heaven Born'
     : language === 'ar'
     ? 'احصل على عرض سعر للشحن وخطة المسار | Heaven Born'
+    : language === 'pt'
+    ? 'Solicite uma cotação de frete e plano de rota | Heaven Born'
+    : language === 'tr'
+    ? 'Navlun teklifi ve rota planı alın | Heaven Born'
     : 'Get a Freight Quote & Route Plan | Heaven Born';
 
   const freightSeoDesc = language === 'zh'
@@ -41,6 +45,10 @@ export default function GetAQuotePage() {
     ? 'Indique los detalles de su carga para recibir una cotización de flete y una propuesta de ruta personalizada en 24 horas.'
     : language === 'ar'
     ? 'أدخل تفاصيل شحنتكم للحصول على عرض سعر وخطة مسار مخصصة خلال 24 ساعة.'
+    : language === 'pt'
+    ? 'Informe os detalhes da carga para receber uma cotação e um plano de rota personalizado em até 24 horas.'
+    : language === 'tr'
+    ? '24 saat içinde kişiselleştirilmiş navlun teklifi ve rota planı almak için yük bilgilerinizi girin.'
     : 'Get an instant, customized shipping quote and route analysis. Our senior logistics specialists will build your custom logistics plan within 24h.';
 
   const tradeSeo = {
@@ -50,6 +58,8 @@ export default function GetAQuotePage() {
     fr: { title: 'Brief sourcing, inspection et consolidation en Chine | DDNZ Global', description: 'Envoyez votre besoin de sourcing, inspection ou consolidation à notre équipe de Guangzhou.' },
     es: { title: 'Solicitud de compra, inspección y consolidación en China | DDNZ Global', description: 'Envíe su solicitud de compra, inspección o consolidación al equipo de DDNZ Global en Guangzhou.' },
     ar: { title: 'طلب التوريد والفحص والتجميع في الصين | DDNZ Global', description: 'أرسل طلب التوريد أو الفحص أو التجميع إلى فريق DDNZ Global في قوانغتشو.' },
+    pt: { title: leadGoal === 'Product Sourcing' ? 'Briefing de sourcing na China | DDNZ Global' : 'Briefing de inspeção e consolidação na China | DDNZ Global', description: 'Envie seu briefing de sourcing, inspeção ou consolidação para a equipe da DDNZ Global em Guangzhou.' },
+    tr: { title: leadGoal === 'Product Sourcing' ? 'Çin ürün tedarik özeti | DDNZ Global' : 'Çin denetim ve konsolidasyon özeti | DDNZ Global', description: 'Tedarik, denetim veya konsolidasyon özetinizi Guangzhou’daki DDNZ Global ekibine gönderin.' },
   }[language];
 
   return (

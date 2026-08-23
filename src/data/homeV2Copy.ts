@@ -61,7 +61,7 @@ export type HomeV2Copy = {
   };
 };
 
-export const HOME_V2_COPY = {
+const HOME_V2_COPY_BASE = {
   en: {
     accountability: {
       eyebrow: 'Supplier visits that count',
@@ -578,4 +578,70 @@ export const HOME_V2_COPY = {
       whatsappMessage: 'مرحباً DDNZ Global، أود مناقشة طلب توريد منتجات من الصين لسوقي.',
     },
   },
-} satisfies Record<Language, HomeV2Copy>;
+} satisfies Record<Exclude<Language, 'pt' | 'tr'>, HomeV2Copy>;
+
+export const HOME_V2_COPY: Record<Language, HomeV2Copy> = {
+  ...HOME_V2_COPY_BASE,
+  pt: {
+    accountability: {
+      eyebrow: 'Visitas a fornecedores com resultado',
+      title: 'Monte uma linha vendável na China com uma equipe responsável.',
+      body: 'Alinhamos produtos, qualidade e entrega para que sua operação receba o que foi aprovado, com as evidências vinculadas ao pedido.',
+      controls: ['Definir a linha para o mercado de destino', 'Comparar fornecedores com o mesmo brief', 'Fixar especificações, amostras e pendências', 'Verificar produção e qualidade com evidências', 'Consolidar e liberar a carga no prazo acordado'],
+      imageAlt: 'Reunião autorizada para avaliar fornecedor e adequação do produto na China',
+      fieldLabel: 'Material de campo autorizado · Origem China',
+      fieldCaption: 'Avaliação de fornecedor e produto',
+    },
+    process: {
+      eyebrow: 'Uma cadeia controlada', title: 'Do brief do produto ao embarque pronto para o mercado', body: 'Cada etapa tem uma entrega registrada e uma condição de liberação antes de avançar.', releaseGate: 'Condição de liberação', reviewStep: 'Revisar esta etapa',
+      steps: [
+        { title: 'Comparação de fornecedores', output: 'Lista curta com propostas lado a lado.', gate: 'A lista aprovada avança.' },
+        { title: 'Especificação e amostra', output: 'Especificações confirmadas e amostras validadas.', gate: 'Amostra aprovada para produção.' },
+        { title: 'Evidências de qualidade', output: 'Relatórios de inspeção e fotos.', gate: 'Qualidade aprovada antes do embarque.' },
+        { title: 'Consolidação e exportação', output: 'Packing list, documentos e plano de carga.', gate: 'Documentos verificados e carga liberada.' },
+      ],
+    },
+    evidence: {
+      scoreEyebrow: 'Evidências por trás da seleção', scoreTitle: 'Propostas comparáveis. Critérios visíveis.', scoreBody: 'Uma nota numérica nunca esconde falhas de prazo, qualidade ou documentação.',
+      scorePoints: ['Propostas normalizadas antes da comparação de preço', 'Prazo, qualidade, serviço e custo avaliados com o mesmo método', 'Critérios eliminatórios bloqueiam falhas repetidas', 'Pendências de evidência permanecem abertas até a solução'],
+      openScorecard: 'Veja como avaliamos fornecedores', supplierImageAlt: 'Discussão autorizada com fornecedor durante avaliação de produto na China', scorecardPreviewAlt: 'Prévia do scorecard de fornecedores DDNZ',
+      exportEyebrow: 'Evidência de exportação, não foto genérica', exportTitle: 'Uma entrega de origem documentada', exportBody: 'Registros reais de carregamento mostram o que ocorreu na origem, sem sugerir propriedade da instalação ou execução no destino.', exportImageAlt: 'Registro real e anonimizado do carregamento de um embarque de acessórios móveis',
+      exportCheckpoints: [['Recebimento e conferência', 'Comparar quantidade e condição com a packing list.'], ['Embalagem e documentos', 'Revisar acondicionamento e documentos do pedido.'], ['Carregamento do contêiner', 'Registrar o carregamento e o posicionamento da carga.'], ['Lacre e entrega ao transportador', 'Liberar o embarque documentado para o executor do transporte.']],
+      redactionNote: 'Material autorizado e anonimizado · Identificadores de cliente, caixas e veículo removidos',
+    },
+    scorecardDialog: { eyebrow: 'Controle de fornecedores DDNZ', title: 'Método completo de avaliação', closeLabel: 'Fechar método de avaliação', imageAlt: 'Scorecard DDNZ com critérios ponderados e condições eliminatórias' },
+    languages: { eyebrow: 'Atendimento aos mercados', title: 'Os idiomas usados pelos compradores', items: [{ name: 'Português', body: 'Comunicação clara em todas as etapas.' }, { name: 'English', body: 'Clear communication through every step.' }, { name: 'Español', body: 'Soporte claro durante cada etapa.' }, { name: 'Français', body: 'Un accompagnement clair à chaque étape.' }] },
+    freight: { title: 'Transporte internacional executado pela Heaven Born', body: 'Operando desde 1997 · Entra após a liberação de exportação pela DDNZ.', cta: 'Solicitar cotação de frete' },
+    final: { eyebrow: 'Uma equipe responsável na China', title: 'Inicie seu brief de sourcing.', body: 'Informe o produto, o mercado de destino e a fase do pedido. Definiremos o caminho de fornecedor, controle e exportação antes de responder.', sourcingCta: 'Iniciar solicitação', whatsappCta: 'Falar com a equipe na China pelo WhatsApp', freightCta: 'Solicitar cotação de frete', privacy: 'Suas informações são seguras e não são compartilhadas.', whatsappMessage: 'Olá DDNZ Global, gostaria de conversar sobre uma solicitação de sourcing para o meu mercado.' },
+  },
+  tr: {
+    accountability: {
+      eyebrow: 'Sonuç üreten tedarikçi ziyaretleri',
+      title: 'Çin’de satılabilir ürün grubunu tek bir sorumlu ekiple oluşturun.',
+      body: 'Onayladığınız ürün grubunun doğru kalite ve zamanda ulaşması için ürün, kalite ve teslimatı aynı kayıt zincirinde yönetiriz.',
+      controls: ['Varış pazarına uygun ürün grubunu tanımlamak', 'Tedarikçileri aynı talebe göre karşılaştırmak', 'Teknik özellik, numune ve açık kararları sabitlemek', 'Üretim ve kaliteyi kayıtlı kanıtlarla doğrulamak', 'Yükü kararlaştırılan takvimde birleştirmek ve serbest bırakmak'],
+      imageAlt: 'Çin’de yetkili tedarikçi ve ürün uygunluğu görüşmesi', fieldLabel: 'Yetkili saha materyali · Çin çıkışı', fieldCaption: 'Tedarikçi ve ürün uygunluğu incelemesi',
+    },
+    process: {
+      eyebrow: 'Tek kontrollü zincir', title: 'Ürün talebinden pazara hazır sevkiyata', body: 'Sipariş ilerlemeden önce her adımın kayıtlı çıktısı ve serbest bırakma koşulu vardır.', releaseGate: 'Serbest bırakma koşulu', reviewStep: 'Bu adımı incele',
+      steps: [
+        { title: 'Tedarikçi karşılaştırması', output: 'Yan yana teklifler ve kısa liste.', gate: 'Onaylı kısa liste ilerler.' },
+        { title: 'Teknik özellik ve numune', output: 'Özellikler onaylanır, numuneler doğrulanır.', gate: 'Üretim için numune onayı.' },
+        { title: 'Kalite kanıtı', output: 'Denetim raporları ve fotoğraflar.', gate: 'Sevkiyattan önce kalite onayı.' },
+        { title: 'Konsolidasyon ve ihracat', output: 'Çeki listesi, belgeler ve konteyner planı.', gate: 'Belgeler doğrulanır ve yük serbest bırakılır.' },
+      ],
+    },
+    evidence: {
+      scoreEyebrow: 'Her kısa listenin arkasındaki kanıt', scoreTitle: 'Karşılaştırılabilir teklifler. Görünür koşullar.', scoreBody: 'Sayısal puan; teslimat, kalite veya kanıt başarısızlığını gizlemez.',
+      scorePoints: ['Fiyat karşılaştırmasından önce teklifler normalize edilir', 'Teslimat, kalite, hizmet ve maliyet tutarlı biçimde ağırlıklandırılır', 'Tekrarlanan teslimat veya kalite sorunları eleme koşuludur', 'Kanıt açığı çözülene kadar açık kalır'],
+      openScorecard: 'Tedarikçileri nasıl puanladığımızı görün', supplierImageAlt: 'Çin’de ürün incelemesi sırasında yetkili tedarikçi görüşmesi', scorecardPreviewAlt: 'DDNZ tedarikçi puan kartı önizlemesi',
+      exportEyebrow: 'Stok fotoğraf değil, ihracat kanıtı', exportTitle: 'Belgelenmiş Çin çıkış teslimi', exportBody: 'Gerçek yükleme kayıtları kaynakta ne olduğunu gösterir; tesis sahipliği veya varış teslimatı iddiası oluşturmaz.', exportImageAlt: 'Mobil aksesuar sevkiyatına ait anonimleştirilmiş gerçek konteyner yükleme kaydı',
+      exportCheckpoints: [['Teslim alma ve adet kontrolü', 'Miktar ve durumu çeki listesiyle doğrulayın.'], ['Ambalaj ve belge kontrolü', 'Paketleme ve siparişe özel ihracat belgelerini inceleyin.'], ['Konteyner yükleme', 'Kaynak yüklemeyi ve yük yerleşimini kaydedin.'], ['Mühür ve taşıyıcıya teslim', 'Belgelenmiş sevkiyatı nakliye uygulayıcısına bırakın.']],
+      redactionNote: 'Yetkili ve anonimleştirilmiş materyal · Müşteri, koli ve araç kimlikleri kaldırıldı',
+    },
+    scorecardDialog: { eyebrow: 'DDNZ tedarikçi kontrolü', title: 'Tam tedarikçi puanlama yöntemi', closeLabel: 'Puanlama yöntemini kapat', imageAlt: 'Ağırlıklı ölçütler ve eleme koşulları içeren DDNZ tedarikçi puan kartı' },
+    languages: { eyebrow: 'Pazar desteği', title: 'Alıcıların kullandığı diller', items: [{ name: 'Türkçe', body: 'Her aşamada açık iletişim.' }, { name: 'English', body: 'Clear communication through every step.' }, { name: 'Русский', body: 'Понятная коммуникация на каждом этапе.' }, { name: 'العربية', body: 'دعم واضح في كل مرحلة من مراحل العمل.', dir: 'rtl' }] },
+    freight: { title: 'Uluslararası nakliye Heaven Born tarafından yürütülür', body: '1997’den beri · DDNZ ihracat serbest bırakma tesliminden sonra devreye girer.', cta: 'Nakliye teklifi al' },
+    final: { eyebrow: 'Çin’de tek sorumlu ekip', title: 'Tedarik talebinizi bugün başlatın.', body: 'Ürünü, varış pazarını ve sipariş aşamasını paylaşın. Yanıt vermeden önce doğru tedarikçi, kontrol ve ihracat yolunu belirleriz.', sourcingCta: 'Tedarik talebi oluştur', whatsappCta: 'Çin ekibiyle WhatsApp üzerinden görüş', freightCta: 'Nakliye teklifi al', privacy: 'Bilgileriniz güvendedir ve paylaşılmaz.', whatsappMessage: 'Merhaba DDNZ Global, pazarım için bir ürün tedarik talebini görüşmek istiyorum.' },
+  },
+};

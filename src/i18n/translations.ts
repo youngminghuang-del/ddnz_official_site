@@ -1,4 +1,4 @@
-export type Language = 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar';
+export type Language = 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar' | 'pt' | 'tr';
 
 export const translations = {
   en: {
@@ -1293,3 +1293,105 @@ Object.assign(localizedTranslations.ar, {
   },
   partners: { title: 'موثوق به من قادة عالميين', subtitle: 'تكامل سلس مع كبرى خطوط الملاحة والشبكات العالمية', desc: 'تساعد تحالفاتنا مع خطوط الملاحة وشركات الطيران Heaven Born International Freight على تأمين أسعار تنافسية ومساحة أولوية لشحناتكم المهمة.' },
 });
+
+localizedTranslations.pt = {
+  ...translations.en,
+  nav: {
+    ...translations.en.nav,
+    who_we_are: 'QUEM SOMOS', what_we_do: 'O QUE FAZEMOS', why_ddnz: 'POR QUE A DDNZ',
+    services: 'SERVIÇOS', shipping_by_region: 'TRANSPORTE POR REGIÃO', insights: 'CONTEÚDOS', get_a_quote: 'SOLICITAR COTAÇÃO',
+  },
+  hero: {
+    ...translations.en.hero,
+    title1: 'Seu parceiro de sourcing na China', title2: 'com controle do início à entrega',
+    subtitle: 'A DDNZ coordena busca de fornecedores, comparação de propostas, amostras, produção, inspeção e exportação para compradores internacionais.',
+    primary_cta: 'Iniciar solicitação de sourcing', chat: 'Falar pelo WhatsApp',
+    badge_forwarder: 'Coordenação de sourcing na China', alibaba_badge: 'Encontrou no Alibaba? Nós verificamos e acompanhamos',
+  },
+  services: {
+    ...translations.en.services,
+    label: 'O QUE FAZEMOS', title: 'Sourcing e execução de exportação',
+    subtitle: 'Uma equipe responsável coordena fornecedores, qualidade, consolidação e transporte a partir da China.',
+    sea: { ...translations.en.services.sea, title: 'Transporte marítimo', desc: 'Opções FCL e LCL planejadas conforme carga, prazo e destino.' },
+    air: { ...translations.en.services.air, title: 'Transporte aéreo', desc: 'Soluções rápidas para amostras, lotes pequenos e cargas urgentes.' },
+    fba: { ...translations.en.services.fba, title: 'Logística Amazon FBA' },
+    warehouse: { ...translations.en.services.warehouse, title: 'Armazém e consolidação na China' },
+  },
+  who_we_are: { ...translations.en.who_we_are, label: 'SOBRE A DDNZ', title: 'QUEM SOMOS', subtitle: 'Uma equipe na China responsável pelo seu projeto de sourcing' },
+  get_a_quote: { ...translations.en.get_a_quote, estimatorTitle: 'Conte-nos o que você precisa comprar', submitQuote: 'Enviar solicitação', submitting: 'Enviando...', successHeading: 'Solicitação recebida', successText: 'Nossa equipe entrará em contato em até 24 horas úteis.' },
+  footer: {
+    ...translations.en.footer,
+    slogan: 'Sourcing, inspeção e exportação de produtos comerciais da China.', hq: 'Sede em Guangzhou', hk: 'Escritório em Hong Kong', hours: 'Atendimento de segunda a sexta',
+    compliance: 'Conformidade e informações legais', privacy: 'Política de privacidade', terms: 'Termos de serviço', experts: 'Especialistas em sourcing e logística',
+    rights: '© 2026 Heaven Born International Freight Co., Ltd. Todos os direitos reservados. O apoio comercial é prestado pela DDNZ Global Trade Co., Ltd.',
+  },
+  why_ddnz: {
+    ...translations.en.why_ddnz,
+    title: 'Por que compradores internacionais escolhem a DDNZ', subtitle: 'Decisões registradas, fornecedores comparáveis e acompanhamento local', label: 'NOSSO CONTROLE', strength: 'Nosso controle', industry: 'Referência do setor',
+  },
+  facilities: {
+    ...translations.en.facilities,
+    label: 'OPERAÇÃO NA CHINA', title: 'Controle na origem', subtitle: 'Recebimento, consolidação, inspeção e preparação para exportação',
+    guangzhou: { title: 'Guangzhou: seu ponto de controle na China', tag: 'Operação local', desc: 'Coordenamos recebimento de fornecedores, consolidação, conferência e preparação para embarque.' },
+    systems: { title: 'Embalagem para cargas complexas', tag: 'Proteção conforme o produto', desc: 'Planejamos embalagem e manuseio conforme peso, fragilidade e exigências de transporte.' },
+  },
+  insights: {
+    ...translations.en.insights,
+    title: 'GUIAS DE SOURCING E COMÉRCIO COM A CHINA', subtitle: 'Orientações práticas para comparar fornecedores, controlar qualidade e exportar.', label: 'CONTEÚDOS', readMore: 'Ler mais',
+    adviceTitle: 'Precisa de orientação para sua compra?', adviceSubtitle: 'Nossa equipe pode avaliar seu produto, volume e destino.', contactExpert: 'Falar com um especialista',
+    hubLabel: 'CONTEÚDOS DDNZ', hubTitle: 'Guias e análises de sourcing', hubSubtitle: 'Artigos no idioma original sobre fornecedores, qualidade, logística e mercados.',
+    showAll: 'Todas as categorias', deep_dive_read: 'Análise completa', read_time: '4 min', no_articles: 'Nenhum artigo encontrado', no_articles_desc: 'Ainda não há publicações nesta categoria.',
+  },
+  partners: { title: 'Coordenação local, execução global', subtitle: 'Sourcing DDNZ e transporte internacional Heaven Born', desc: 'A estrutura integrada mantém compras, inspeções, consolidação e exportação sob uma linha clara de responsabilidade.' },
+};
+
+localizedTranslations.tr = {
+  ...translations.en,
+  nav: {
+    ...translations.en.nav,
+    who_we_are: 'HAKKIMIZDA', what_we_do: 'NE YAPIYORUZ', why_ddnz: 'NEDEN DDNZ',
+    services: 'HİZMETLER', shipping_by_region: 'BÖLGEYE GÖRE NAKLİYE', insights: 'İÇERİKLER', get_a_quote: 'TEKLİF AL',
+  },
+  hero: {
+    ...translations.en.hero,
+    title1: 'Çin’deki tedarik ortağınız', title2: 'başlangıçtan teslimata kadar kontrol',
+    subtitle: 'DDNZ; uluslararası alıcılar için tedarikçi araştırması, teklif karşılaştırma, numune, üretim, denetim ve ihracat süreçlerini koordine eder.',
+    primary_cta: 'Tedarik talebi oluştur', chat: 'WhatsApp ile görüş',
+    badge_forwarder: 'Çin merkezli tedarik koordinasyonu', alibaba_badge: 'Alibaba’da mı buldunuz? Biz doğrular ve takip ederiz',
+  },
+  services: {
+    ...translations.en.services,
+    label: 'NE YAPIYORUZ', title: 'Tedarik ve ihracat yönetimi',
+    subtitle: 'Tek bir sorumlu ekip; tedarikçileri, kaliteyi, konsolidasyonu ve Çin çıkışlı taşımayı koordine eder.',
+    sea: { ...translations.en.services.sea, title: 'Deniz taşımacılığı', desc: 'Yük, termin ve varış gereksinimlerine göre FCL ve LCL seçenekleri.' },
+    air: { ...translations.en.services.air, title: 'Hava kargo', desc: 'Numuneler, küçük partiler ve acil yükler için hızlı çözümler.' },
+    fba: { ...translations.en.services.fba, title: 'Amazon FBA lojistiği' },
+    warehouse: { ...translations.en.services.warehouse, title: 'Çin depo ve konsolidasyon' },
+  },
+  who_we_are: { ...translations.en.who_we_are, label: 'DDNZ HAKKINDA', title: 'BİZ KİMİZ', subtitle: 'Çin’de tedarik projenizden sorumlu yerel ekip' },
+  get_a_quote: { ...translations.en.get_a_quote, estimatorTitle: 'Satın almak istediğiniz ürünü anlatın', submitQuote: 'Talebi gönder', submitting: 'Gönderiliyor...', successHeading: 'Talebiniz alındı', successText: 'Ekibimiz bir iş günü içinde sizinle iletişime geçecektir.' },
+  footer: {
+    ...translations.en.footer,
+    slogan: 'Çin’den ticari ürün tedariki, denetimi ve ihracatı.', hq: 'Guangzhou merkezi', hk: 'Hong Kong ofisi', hours: 'Pazartesi–Cuma hizmet',
+    compliance: 'Uyum ve yasal bilgiler', privacy: 'Gizlilik politikası', terms: 'Hizmet şartları', experts: 'Tedarik ve lojistik uzmanları',
+    rights: '© 2026 Heaven Born International Freight Co., Ltd. Tüm hakları saklıdır. Ticari destek DDNZ Global Trade Co., Ltd. tarafından sağlanır.',
+  },
+  why_ddnz: {
+    ...translations.en.why_ddnz,
+    title: 'Uluslararası alıcılar neden DDNZ’yi seçiyor', subtitle: 'Kayıtlı kararlar, karşılaştırılabilir tedarikçiler ve yerinde takip', label: 'KONTROL MODELİMİZ', strength: 'Kontrolümüz', industry: 'Sektör ölçütü',
+  },
+  facilities: {
+    ...translations.en.facilities,
+    label: 'ÇİN OPERASYONU', title: 'Kaynakta kontrol', subtitle: 'Teslim alma, konsolidasyon, denetim ve ihracata hazırlık',
+    guangzhou: { title: 'Guangzhou: Çin’deki kontrol noktanız', tag: 'Yerel operasyon', desc: 'Tedarikçi teslimatı, konsolidasyon, kontrol ve sevkiyat hazırlığını koordine ederiz.' },
+    systems: { title: 'Karmaşık yükler için ambalaj', tag: 'Ürüne uygun koruma', desc: 'Ambalaj ve elleçlemeyi ağırlık, hassasiyet ve taşıma gerekliliklerine göre planlarız.' },
+  },
+  insights: {
+    ...translations.en.insights,
+    title: 'ÇİN TEDARİK VE TİCARET REHBERLERİ', subtitle: 'Tedarikçi karşılaştırma, kalite kontrol ve ihracat için pratik bilgiler.', label: 'İÇERİKLER', readMore: 'Devamını oku',
+    adviceTitle: 'Satın alımınız için desteğe mi ihtiyacınız var?', adviceSubtitle: 'Ekibimiz ürününüzü, hacminizi ve varış noktanızı değerlendirebilir.', contactExpert: 'Bir uzmanla görüş',
+    hubLabel: 'DDNZ İÇERİKLERİ', hubTitle: 'Tedarik rehberleri ve analizler', hubSubtitle: 'Tedarikçiler, kalite, lojistik ve pazarlar hakkında özgün dilinde makaleler.',
+    showAll: 'Tüm kategoriler', deep_dive_read: 'Detaylı analiz', read_time: '4 dk', no_articles: 'Makale bulunamadı', no_articles_desc: 'Bu kategoride henüz yayın yok.',
+  },
+  partners: { title: 'Yerel koordinasyon, küresel uygulama', subtitle: 'DDNZ tedarik ve Heaven Born uluslararası nakliye', desc: 'Entegre yapı; satın alma, denetim, konsolidasyon ve ihracatı açık bir sorumluluk çizgisinde tutar.' },
+};

@@ -82,6 +82,12 @@ function EnglishShowcaseRedirect({ path }: { path: string }) {
   return <Navigate to={`${path}${location.search}${location.hash}`} replace />;
 }
 
+function EnglishLocaleFallback({ prefix }: { prefix: '/pt' | '/tr' }) {
+  const location = useLocation();
+  const englishPath = location.pathname.replace(new RegExp(`^${prefix}(?=/|$)`), '') || '/';
+  return <Navigate to={`${englishPath}${location.search}${location.hash}`} replace />;
+}
+
 function RouteLoadingFallback() {
   return (
     <main className="min-h-[70dvh] bg-[#F5F8FC] pt-28" aria-busy="true" aria-live="polite">
@@ -101,7 +107,7 @@ function LanguageRouteSync() {
 
   useEffect(() => {
     const pathname = location.pathname;
-    let targetLang: 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar' = 'en';
+    let targetLang: 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar' | 'pt' | 'tr' = 'en';
 
     if (pathname.startsWith('/zh-cn')) {
       targetLang = 'zh';
@@ -113,6 +119,10 @@ function LanguageRouteSync() {
       targetLang = 'es';
     } else if (pathname.startsWith('/ar')) {
       targetLang = 'ar';
+    } else if (pathname.startsWith('/pt')) {
+      targetLang = 'pt';
+    } else if (pathname.startsWith('/tr')) {
+      targetLang = 'tr';
     }
 
     if (language !== targetLang) {
@@ -197,6 +207,8 @@ const skipLinkCopy = {
   fr: 'Aller au contenu principal',
   es: 'Saltar al contenido principal',
   ar: 'انتقل إلى المحتوى الرئيسي',
+  pt: 'Ir para o conteúdo principal',
+  tr: 'Ana içeriğe geç',
 } as const;
 
 function SkipToMainContent() {
@@ -461,6 +473,54 @@ export default function App() {
             <Route path="/ar/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
             <Route path="/ar/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
             <Route path="/ar/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
+
+            {/* Portuguese routes */}
+            <Route path="/pt" element={<Home />} />
+            <Route path="/pt/blog/:slug" element={<BlogDetail />} />
+            <Route path="/pt/insights" element={<InsightsHub />} />
+            <Route path="/pt/how-we-work" element={<HowWeWork />} />
+            <Route path="/pt/services/:serviceId" element={<EnglishLocaleFallback prefix="/pt" />} />
+            <Route path="/pt/shipping-from-china-to-middle-east" element={<EnglishLocaleFallback prefix="/pt" />} />
+            <Route path="/pt/shipping-from-china-to-central-asia" element={<EnglishLocaleFallback prefix="/pt" />} />
+            <Route path="/pt/shipping-from-china-to-west-africa" element={<EnglishLocaleFallback prefix="/pt" />} />
+            <Route path="/pt/shipping-from-china-to-latin-america" element={<EnglishLocaleFallback prefix="/pt" />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={<EnglishLocaleFallback prefix="/pt" />} />
+            ))}
+            <Route path="/pt/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/pt/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/pt/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/pt/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`pt-${kind}`} path={`/pt/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/pt/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/pt/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/pt/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
+
+            {/* Turkish routes */}
+            <Route path="/tr" element={<Home />} />
+            <Route path="/tr/blog/:slug" element={<BlogDetail />} />
+            <Route path="/tr/insights" element={<InsightsHub />} />
+            <Route path="/tr/how-we-work" element={<HowWeWork />} />
+            <Route path="/tr/services/:serviceId" element={<EnglishLocaleFallback prefix="/tr" />} />
+            <Route path="/tr/shipping-from-china-to-middle-east" element={<EnglishLocaleFallback prefix="/tr" />} />
+            <Route path="/tr/shipping-from-china-to-central-asia" element={<EnglishLocaleFallback prefix="/tr" />} />
+            <Route path="/tr/shipping-from-china-to-west-africa" element={<EnglishLocaleFallback prefix="/tr" />} />
+            <Route path="/tr/shipping-from-china-to-latin-america" element={<EnglishLocaleFallback prefix="/tr" />} />
+            {SHIPPING_COUNTRIES.map((country) => (
+              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={<EnglishLocaleFallback prefix="/tr" />} />
+            ))}
+            <Route path="/tr/get-a-quote" element={<GetAQuotePage />} />
+            <Route path="/tr/products" element={<EnglishShowcaseRedirect path="/products" />} />
+            <Route path="/tr/sourcing-services" element={<EnglishShowcaseRedirect path="/sourcing-services" />} />
+            <Route path="/tr/refrigeration-equipment" element={<EnglishShowcaseRedirect path="/refrigeration-equipment" />} />
+            {SOURCING_CATEGORIES.map(({ slug, kind }) => (
+              <Route key={`tr-${kind}`} path={`/tr/sourcing/${slug}`} element={<EnglishSourcingCategoryRedirect slug={slug} />} />
+            ))}
+            <Route path="/tr/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
+            <Route path="/tr/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
+            <Route path="/tr/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
           </Routes>
           </Suspense>
           <Suspense fallback={null}>

@@ -94,9 +94,27 @@ const copy: Record<Language, MarketHandoffCopy> = {
     processLink: 'عرض المسار الكامل من ست نقاط',
     cta: 'حدد نطاق شحنة من الصين',
   },
+  pt: {
+    eyebrow: 'Do sourcing ao mercado', title: 'A rota de destino começa antes de a carga chegar ao porto.', intro: 'A entrega só é confiável quando produto liberado, caixas, documentos e dados continuam alinhados ao brief. Este ponto conecta o controle DDNZ à execução de frete Heaven Born.',
+    roles: [
+      { label: 'DDNZ · Liberação do produto', title: 'Primeiro, fechamos as evidências', body: 'Modelo, quantidade, embalagem, etiquetas e exceções são registrados antes de avançar.' },
+      { label: 'DDNZ · Entrega para exportação', title: 'Carga e documentos são conciliados', body: 'Entregas, dados das caixas e documentos são comparados ao escopo aprovado.' },
+      { label: 'Heaven Born · Execução do frete', title: 'Depois, a rota confirmada é executada', body: 'Reserva, carregamento e transporte internacional são executados quando incluídos no escopo.' },
+    ],
+    evidence: 'Material autorizado · preparação de carga na China', processLink: 'Ver o fluxo completo em seis pontos', cta: 'Planejar uma remessa da China',
+  },
+  tr: {
+    eyebrow: 'Tedarikten pazara teslim', title: 'Varış rotası, yük limana ulaşmadan önce başlar.', intro: 'Teslimat; serbest bırakılan ürün, koliler, belgeler ve yük verileri satın alma talebiyle eşleştiğinde güvenilirdir. Bu nokta DDNZ kaynak kontrolünü Heaven Born nakliye uygulamasına bağlar.',
+    roles: [
+      { label: 'DDNZ · Ürün serbest bırakma', title: 'Önce sipariş kanıtı kapatılır', body: 'Onaylı model, miktar, ambalaj, etiket ve açık istisnalar ilerlemeden önce kaydedilir.' },
+      { label: 'DDNZ · İhracat teslimi', title: 'Yük ve belgeler uzlaştırılır', body: 'Tedarikçi teslimatları, koli verileri ve sevkiyat belgeleri onaylı kapsamla eşleştirilir.' },
+      { label: 'Heaven Born · Nakliye uygulaması', title: 'Sonra onaylı rota uygulanır', body: 'Kapsama dahilse rezervasyon, yükleme ve uluslararası nakliye Heaven Born tarafından yürütülür.' },
+    ],
+    evidence: 'Yetkili saha materyali · Çin çıkışı yükleme hazırlığı', processLink: 'Altı kontrol noktalı tam süreci görün', cta: 'Çin’den pazara sevkiyat planla',
+  },
 };
 
-const prefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar' };
+const prefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 const icons = [ClipboardCheck, PackageCheck, Ship];
 
 export default function MarketSourcingHandoff({ destination }: { destination?: string }) {

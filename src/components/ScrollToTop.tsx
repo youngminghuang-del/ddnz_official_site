@@ -7,7 +7,7 @@ export default function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
   const { language } = useLanguage();
   const label = {
-    en: 'Scroll to top', zh: '返回顶部', ru: 'Наверх', fr: 'Retour en haut', es: 'Volver arriba', ar: 'العودة إلى الأعلى',
+    en: 'Scroll to top', zh: '返回顶部', ru: 'Наверх', fr: 'Retour en haut', es: 'Volver arriba', ar: 'العودة إلى الأعلى', pt: 'Voltar ao topo', tr: 'Başa dön',
   }[language];
 
   useEffect(() => {
