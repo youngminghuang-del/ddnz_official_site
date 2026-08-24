@@ -6,6 +6,10 @@ const distDir = path.join(projectRoot, 'dist');
 const sitemapPath = path.join(distDir, 'sitemap.xml');
 const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'];
 const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar', pt: 'pt', tr: 'tr' };
+const expectedLocalizedFaqQuestion = {
+  pt: 'Como encontrar e verificar um fornecedor confiável na China antes de pagar o sinal?',
+  tr: 'Kapora ödemeden önce güvenilir bir Çin tedarikçisini nasıl bulup doğrularım?',
+};
 const expectedShowcaseRedirects = new Map([
   ['commercial-kitchen', '/sourcing/commercial-kitchen-equipment-from-china'],
   ['audio-speakers', '/sourcing/audio-speakers-from-china'],
@@ -82,6 +86,27 @@ for (const absoluteUrl of urls) {
     }
   }
   if (!jsonLdBlocks.length) notices.push(`${url.pathname}: no static JSON-LD block`);
+
+  if ((locale === 'pt' || locale === 'tr') && languageSegments.length === 1) {
+    const homepageSchemaSource = html.match(
+      /<script[^>]+id="schema-jsonld-static-home"[^>]*>([\s\S]*?)<\/script>/i,
+    )?.[1];
+    if (!homepageSchemaSource) {
+      failures.push(`${url.pathname}: localized homepage schema is missing`);
+    } else {
+      const homepageSchema = JSON.parse(homepageSchemaSource);
+      const faqSchema = homepageSchema['@graph']?.find((entry) => entry['@type'] === 'FAQPage');
+      if (faqSchema?.inLanguage !== locale) {
+        failures.push(`${url.pathname}: FAQ schema language is ${faqSchema?.inLanguage || 'missing'}, expected ${locale}`);
+      }
+      if (faqSchema?.mainEntity?.length !== 11) {
+        failures.push(`${url.pathname}: FAQ schema should contain 11 visible questions`);
+      }
+      if (faqSchema?.mainEntity?.[0]?.name !== expectedLocalizedFaqQuestion[locale]) {
+        failures.push(`${url.pathname}: FAQ schema does not use the visible ${locale} copy`);
+      }
+    }
+  }
 }
 
 for (const [sourcePath, targetPath] of expectedShowcaseRedirects) {
