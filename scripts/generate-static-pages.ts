@@ -1019,7 +1019,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
   }
 
   if (!relPath) {
-    const faqLanguage = (lang === 'zh-cn' ? 'zh' : lang === 'pt' || lang === 'tr' ? 'en' : lang) as HomeFaqLanguage;
+    const faqLanguage = (lang === 'zh-cn' ? 'zh' : lang) as HomeFaqLanguage;
     const homepageSchema = {
       '@context': 'https://schema.org',
       '@graph': [

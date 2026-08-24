@@ -4,7 +4,7 @@ import SourcingHomepageHero from '../components/SourcingHomepageHero';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { useLanguage } from '../contexts/LanguageContext';
-import { getLocalizedHomeFaqs, type HomeFaqLanguage } from '../data/homeFaqData';
+import { getLocalizedHomeFaqs } from '../data/homeFaqData';
 import type { Language } from '../i18n/translations';
 
 const Insights = lazy(() => import('../components/Insights'));
@@ -33,7 +33,6 @@ function HomeSectionFallback({ language }: { language: Language }) {
 
 export default function Home() {
   const { language } = useLanguage();
-  const schemaFaqLanguage: HomeFaqLanguage = language === 'pt' || language === 'tr' ? 'en' : language;
   const metadata = {
     en: {
       title: 'DDNZ Global | China Sourcing, Quality Control & Export Delivery',
@@ -62,7 +61,7 @@ export default function Home() {
         type="FAQPage"
         data={{
           url: `https://www.ddnzglobal.com${window.location.pathname}`,
-          faqs: getLocalizedHomeFaqs(schemaFaqLanguage),
+          faqs: getLocalizedHomeFaqs(language),
         }}
       />
       <SourcingHomepageNav />

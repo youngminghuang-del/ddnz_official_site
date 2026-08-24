@@ -1,4 +1,6 @@
-export type HomeFaqLanguage = 'zh' | 'en' | 'ru' | 'fr' | 'es' | 'ar';
+export type HomeFaqLanguage = 'zh' | 'en' | 'ru' | 'fr' | 'es' | 'ar' | 'pt' | 'tr';
+
+type BaseHomeFaqLanguage = Exclude<HomeFaqLanguage, 'pt' | 'tr'>;
 
 export type HomeFaqCategory = 'sourcing' | 'shipping' | 'products' | 'quality' | 'compliance';
 
@@ -13,7 +15,7 @@ export type HomeFaqIcon =
   | 'inspection'
   | 'compliance';
 
-type LocalizedFaqText = Record<HomeFaqLanguage, string>;
+type LocalizedFaqText = Record<BaseHomeFaqLanguage, string>;
 
 type HomeFaqTarget =
   | { kind: 'path'; path: string }
@@ -366,9 +368,81 @@ export const HOME_FAQ_ITEMS: HomeFaqItem[] = [
   },
 ];
 
+type SupplementalFaqLanguage = Extract<HomeFaqLanguage, 'pt' | 'tr'>;
+type SupplementalFaqCopy = Record<'question' | 'answer' | 'cta', Record<SupplementalFaqLanguage, string>>;
+
+const supplementalFaqCopy: Record<number, SupplementalFaqCopy> = {
+  1: {
+    question: { pt: 'Como encontrar e verificar um fornecedor confiável na China antes de pagar o sinal?', tr: 'Kapora ödemeden önce güvenilir bir Çin tedarikçisini nasıl bulup doğrularım?' },
+    answer: { pt: 'Verifique razão social, licença, endereço da fábrica e escopo de produtos; depois confronte a cotação com uma visita por vídeo ao vivo ou auditoria local. Aprove a amostra e registre as especificações antes do sinal. A DDNZ também analisa evidências de entrega, qualidade, serviço e custo antes da pré-seleção.', tr: 'Yasal unvanı, işletme ruhsatını, fabrika adresini ve ürün kapsamını doğrulayın; ardından teklifi canlı video veya saha denetimiyle karşılaştırın. Kaporadan önce numuneyi onaylayıp şartnameyi kaydedin. DDNZ ayrıca kısa liste öncesinde teslimat, kalite, hizmet ve maliyet kanıtlarını inceler.' },
+    cta: { pt: 'Ver o processo de verificação', tr: 'Tedarikçi doğrulama sürecini gör' },
+  },
+  2: {
+    question: { pt: 'A DDNZ pode combinar pedidos de várias fábricas chinesas em uma única exportação?', tr: 'DDNZ birden fazla Çin fabrikasından gelen siparişleri tek ihracat sevkiyatında birleştirebilir mi?' },
+    answer: { pt: 'Sim, quando produtos e documentos podem viajar juntos. Alinhamos datas de prontidão, recebemos e contamos caixas, verificamos etiquetas e embalagem, preservamos evidências de QC e comparamos LCL e FCL antes da entrega para exportação. Baterias, líquidos e outras cargas regulamentadas podem exigir tratamento separado.', tr: 'Ürünler ve belgeler birlikte taşınabiliyorsa evet. Fabrika hazır tarihlerini eşleştirir, kolileri teslim alıp sayar, etiket ve paketlemeyi kontrol eder, QC kanıtını korur ve ihracat tesliminden önce LCL ile FCL’yi karşılaştırırız. Batarya, sıvı ve düzenlemeye tabi yükler ayrı işlem gerektirebilir.' },
+    cta: { pt: 'Ver consolidação e entrega para exportação', tr: 'Konsolidasyon ve ihracat teslimini gör' },
+  },
+  3: {
+    question: { pt: 'CIF ou DDP da China: qual é melhor para um primeiro pedido comercial?', tr: 'Çin’den CIF mi DDP mi: ilk ticari sipariş için hangisi daha iyi?' },
+    answer: { pt: 'Nenhum termo é automaticamente mais seguro. No CIF, o vendedor organiza frete e seguro básico até o porto indicado; o comprador normalmente cuida da importação e dos custos no destino. O DDP só simplifica quando o importador oficial é legal e transparente. Compare responsabilidades, provas aduaneiras e custo total posto.', tr: 'Hiçbiri otomatik olarak daha güvenli değildir. CIF’te satıcı navlun ve temel sigortayı belirtilen limana kadar düzenler; ithalat ve varış masrafları genelde alıcıdadır. DDP ancak kayıtlı ithalatçı düzeni yasal ve şeffafsa kolaylık sağlar. Başlık fiyatı değil, sorumluluk, gümrük kanıtı ve toplam maliyeti karşılaştırın.' },
+    cta: { pt: 'Comparar opções para minha carga', tr: 'Sevkiyat seçeneklerimi karşılaştır' },
+  },
+  4: {
+    question: { pt: 'O que uma cotação DDP transparente deve informar sobre importador, impostos e documentos?', tr: 'Şeffaf bir DDP teklifi kayıtlı ithalatçı, vergiler ve gümrük belgeleri hakkında ne göstermeli?' },
+    answer: { pt: 'Peça o nome legal e o registro do importador oficial, código HS e valor declarado, quem paga impostos, quais documentos aduaneiros ou fiscais serão entregues e o escopo exato. Despachante ou agente de carga não é automaticamente o importador. Evite rotas opacas com “impostos incluídos” se precisar de declarações, IVA ou trilha formal de estoque.', tr: 'Kayıtlı ithalatçının yasal adı ve kaydı, HS kodu ve beyan değeri, vergi ödeyen taraf, teslim edilecek gümrük/vergi belgeleri ve kesin teslim kapsamını isteyin. Gümrük müşaviri veya taşıma acentesi otomatik olarak ithalatçı değildir. Beyan, KDV kanıtı veya resmi stok izi gerekiyorsa belirsiz “vergiler dahil” rotalardan kaçının.' },
+    cta: { pt: 'Solicitar revisão DDP transparente', tr: 'Şeffaf DDP incelemesi talep et' },
+  },
+  5: {
+    question: { pt: 'Quais custos costumam ficar fora do CIF e como calculo o custo posto?', tr: 'CIF teklifine genellikle hangi masraflar dahil değildir ve toplam maliyet nasıl hesaplanır?' },
+    answer: { pt: 'O CIF normalmente termina no porto de destino. Considere terminal, manuseio, despacho, impostos, armazenagem ou demurrage, devolução do contêiner, entrega interna, tarifas bancárias e inspeção ou certificação. Calcule por itens com o código HS, volume, porto e dias livres corretos.', tr: 'CIF genellikle varış limanında sona erer. Terminal ve elleçleme, gümrük müşavirliği, vergi, depolama veya demuraj, konteyner iadesi, iç taşıma, banka ve denetim/sertifika giderlerini ekleyin. Doğru HS kodu, yük hacmi, liman ve serbest süreyle kalem bazında hesaplayın.' },
+    cta: { pt: 'Montar meu plano de custo posto', tr: 'Toplam maliyet planımı oluştur' },
+  },
+  6: {
+    question: { pt: 'O que verificar antes de comprar máquina de gelo ou refrigerador inox comercial da China?', tr: 'Çin’den ticari buz makinesi veya paslanmaz çelik buzdolabı almadan önce neyi doğrulamalıyım?' },
+    answer: { pt: 'Compare a produção na temperatura ambiente e de água reais, não apenas kg/dia do catálogo. Confirme classe climática, tensão, frequência, refrigerante, inox, compressor, controlador, limpeza, peças, embalagem e certificação no destino. Para mercados quentes, peça condições de teste e evidências de perda de capacidade com o aumento da temperatura.', tr: 'Katalog kg/gün değeri yerine gerçek ortam ve giriş suyu sıcaklığındaki üretimi karşılaştırın. İklim sınıfı, voltaj, frekans, soğutucu, paslanmaz çelik kalitesi, kompresör, kontrolcü, temizlik, yedek parça, paketleme ve hedef ülke belgesini doğrulayın. Sıcak pazarlar için test koşulu ve sıcaklık arttıkça kapasite değişimi kanıtı isteyin.' },
+    cta: { pt: 'Revisar sourcing de cozinha comercial', tr: 'Ticari mutfak tedarikini incele' },
+  },
+  7: {
+    question: { pt: 'Posso pedir capas, películas, carregadores e power banks mistos com MOQ menor?', tr: 'Karışık telefon kılıfı, ekran koruyucu, şarj cihazı ve powerbank’i daha düşük MOQ ile sipariş edebilir miyim?' },
+    answer: { pt: 'Muitas vezes sim, se o fornecedor aceitar SKUs mistos ou se a DDNZ consolidar fábricas compatíveis. Defina MOQ por modelo e cor, aparelhos compatíveis, mistura por caixa, marca, etiquetas, amostra e critérios de defeito. Power banks podem exigir documentos, embalagem e transportador separados por causa da bateria de lítio.', tr: 'Tedarikçi karışık SKU kabul ederse veya DDNZ uyumlu fabrikaları birleştirirse çoğu zaman evet. Model ve renk bazında MOQ, telefon modelleri, koli karışımı, marka, etiket, numune ve kusur kriterini tanımlayın. Lityum batarya nedeniyle powerbank’ler ayrı belge, paket ve taşıyıcı gerektirebilir.' },
+    cta: { pt: 'Revisar sourcing de acessórios móveis', tr: 'Mobil aksesuar tedarikini incele' },
+  },
+  8: {
+    question: { pt: 'Quais documentos são necessários para enviar power banks e carregadores da China?', tr: 'Çin’den powerbank ve şarj cihazı göndermek için hangi belgeler gerekir?' },
+    answer: { pt: 'Depende do modal, desenho da bateria, transportador e destino. Power banks normalmente exigem resumo UN38.3, SDS/MSDS, declaração de bateria e evidência de embalagem; o transportador pode pedir mais. Para carregadores, confirme plugue, tensão, saída e documentos de conformidade. Valide a aceitação antes de escolher fornecedor ou reservar a carga.', tr: 'Taşıma modu, batarya tasarımı, taşıyıcı ve hedef ülkeye bağlıdır. Powerbank için genellikle UN38.3 test özeti, SDS/MSDS, batarya beyanı ve uygun paket kanıtı gerekir; taşıyıcı ek belge isteyebilir. Şarj cihazında fiş, voltaj, çıkış ve hedef ülke uygunluk belgelerini doğrulayın. Tedarikçi seçimi veya rezervasyondan önce belge kabulünü teyit edin.' },
+    cta: { pt: 'Planejar um envio móvel em conformidade', tr: 'Uyumlu mobil ürün sevkiyatı planla' },
+  },
+  9: {
+    question: { pt: 'Como verificar potência, autonomia da bateria e componentes antes de um pedido de áudio?', tr: 'Ses ürünü siparişinden önce watt, batarya çalışma süresi ve bileşenleri nasıl doğrularım?' },
+    answer: { pt: 'Peça especificação por modelo que separe potência contínua/RMS de pico publicitário. Registre driver, amplificador, célula e controlador; teste autonomia, carga, calor, som e acessórios. A amostra e o método aprovados devem reger a produção, junto com plugue, tensão, rádio e segurança do destino.', tr: 'Sürekli/RMS gücü pazarlama tepe değerinden ayıran model bazlı şartname isteyin. Sürücü, amplifikatör, batarya hücresi ve kontrolcü referansını kaydedin; çalışma süresi, şarj, ısı, ses ve aksesuarları test edin. Onaylı numune ve test yöntemi üretimi, hedef ülke fiş, voltaj, radyo ve güvenlik gerekleriyle birlikte yönetmelidir.' },
+    cta: { pt: 'Revisar sourcing de áudio e caixas de som', tr: 'Ses ve hoparlör tedarikini incele' },
+  },
+  10: {
+    question: { pt: 'Como a DDNZ controla amostras, especificações e qualidade antes do embarque?', tr: 'DDNZ numune, şartname ve sevkiyat öncesi kaliteyi nasıl kontrol eder?' },
+    answer: { pt: 'Transformamos amostra aprovada e requisitos do comprador em especificação versionada e checklist. Conforme o risco, acompanhamos produção, quantidade, embalagem, testes funcionais e amostragem pré-embarque. Fotos, vídeos ou relatórios apoiam a decisão de liberação; inspeção não substitui certificação obrigatória.', tr: 'Onaylı numune ve alıcı şartlarını sürüm kontrollü şartname ve kontrol listesine dönüştürürüz. Ürün riskine göre üretim takibi, adet/paket kontrolü, fonksiyon testi ve sevkiyat öncesi örnekleme yapılır. Fotoğraf, video veya rapor serbest bırakma kararını destekler; denetim zorunlu sertifikanın yerini tutmaz.' },
+    cta: { pt: 'Ver o portão de evidências de QC', tr: 'QC kanıt kapısını gör' },
+  },
+  11: {
+    question: { pt: 'Quais certificações de produto são necessárias no Oriente Médio, África ou América Latina?', tr: 'Orta Doğu, Afrika veya Latin Amerika için hangi ürün sertifikaları gerekir?' },
+    answer: { pt: 'Depende do país, produto, tensão, classificação HS e uso. NOM, Inmetro, RETIQ, SEC, SABER/IECEE, SONCAP ou NRCS podem valer em mercados específicos. Não presuma que CE ou FCC basta. Confirme o modelo exato com importador, despachante e autoridade competente antes da produção.', tr: 'Hedef ülke, ürün, voltaj, HS sınıfı ve kullanıma bağlıdır. NOM, Inmetro, RETIQ, SEC, SABER/IECEE, SONCAP veya NRCS belirli pazar ve ürünlerde geçerli olabilir. CE veya FCC’nin her yerde yeterli olduğunu varsaymayın. Üretimden önce kesin modeli ithalatçı, gümrük müşaviri ve yetkili kurumla doğrulayın.' },
+    cta: { pt: 'Revisar conformidade para meu mercado', tr: 'Pazarım için uyumluluğu incele' },
+  },
+};
+
+export function getLocalizedHomeFaqText(
+  item: HomeFaqItem,
+  field: 'question' | 'answer' | 'cta',
+  language: HomeFaqLanguage,
+) {
+  if (language === 'pt' || language === 'tr') {
+    return supplementalFaqCopy[item.id]?.[field][language] || item[field].en;
+  }
+  return item[field][language];
+}
+
 export function getLocalizedHomeFaqs(language: HomeFaqLanguage) {
   return HOME_FAQ_ITEMS.map((item) => ({
-    question: item.question[language],
-    answer: item.answer[language],
+    question: getLocalizedHomeFaqText(item, 'question', language),
+    answer: getLocalizedHomeFaqText(item, 'answer', language),
   }));
 }
