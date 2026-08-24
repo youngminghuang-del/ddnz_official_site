@@ -23,7 +23,7 @@ import { createLocalizedShippingContent, createLocalizedShippingRedlines } from 
 const CENTRAL_ASIA_DATA = {
   kazakhstan: {
     en: {
-      seoTitle: "China to Central Asia Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Central Asia Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Rail and cross-border trucking from China to Kazakhstan, with support for EAEU document preparation and broad-gauge transfer planning.",
       headline: "China to Kazakhstan Freight: Rail, Trucking & Customs Support",
       subheadline: "Direct block trains and cross-border trucking, with Heaven Born coordination for Horgos/Alashankou transfers and EAEU-ready documentation.",
@@ -179,7 +179,7 @@ const CENTRAL_ASIA_DATA = {
       ]
     },
     ru: {
-      seoTitle: "Доставка из Китая в Казахстан | Heaven Born",
+      seoTitle: "Доставка из Китая в Казахстан | DDNZ Global",
       seoDesc: "Железнодорожная, автомобильная и авиационная доставка из Китая в Казахстан с предварительной проверкой документов ЕАЭС и планированием перегрузки на границе.",
       headline: "Доставка из Китая в Казахстан: железная дорога, авто и таможня",
       subheadline: "Heaven Born координирует автодоставку и контейнерные перевозки в Казахстан и Центральную Азию с подготовкой документов до отправки.",
@@ -259,7 +259,7 @@ const CENTRAL_ASIA_DATA = {
   },
   uzbekistan: {
     en: {
-      seoTitle: "Shipping from China to Uzbekistan | Heaven Born",
+      seoTitle: "Shipping from China to Uzbekistan | DDNZ Global",
       seoDesc: "Rail, multimodal and cross-border trucking from China to Uzbekistan, with support for document preparation, pre-declaration and destination operating requirements.",
       headline: "Rail, multimodal and trucking from China to Uzbekistan",
       subheadline: "Plan transport to Tashkent and industrial destinations around cargo documents, border procedures and destination-side operating scope.",
@@ -405,7 +405,7 @@ const CENTRAL_ASIA_DATA = {
       ]
     },
     ru: {
-      seoTitle: "Доставка из Китая в Узбекистан | Heaven Born",
+      seoTitle: "Доставка из Китая в Узбекистан | DDNZ Global",
       seoDesc: "Железнодорожная, мультимодальная, автомобильная и авиационная доставка из Китая в Узбекистан с подготовкой документов и планированием на границе.",
       headline: "Доставка из Китая в Узбекистан",
       subheadline: "Планируйте автодоставку, железнодорожные и мультимодальные отправки в Ташкент и промышленные регионы с проверкой документов и условий на стороне назначения.",

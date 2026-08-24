@@ -190,12 +190,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'cheap sea freight from china, LCL consolidation container china, door to door ocean freight shipping agent'
     },
     es: {
-      title: 'Flete marítimo desde China | Heaven Born',
+      title: 'Flete marítimo desde China | DDNZ Global',
       desc: 'Servicios FCL y LCL desde China con consolidación, despacho de exportación y opciones coordinadas de entrega puerta a puerta.',
       keywords: 'flete marítimo china, envío FCL LCL, agente de carga china, consolidación de contenedores'
     },
     ar: {
-      title: 'الشحن البحري من الصين | Heaven Born',
+      title: 'الشحن البحري من الصين | DDNZ Global',
       desc: 'خدمات FCL وLCL من الصين مع التجميع وإجراءات التصدير وخيارات منسقة للتسليم من الباب إلى الباب.',
       keywords: 'الشحن البحري من الصين، شحن FCL LCL، وكيل شحن الصين، تجميع الحاويات'
     }
@@ -223,12 +223,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'time-critical air cargo china, international air shipping agent shenzhen, express air freight rate to US'
     },
     es: {
-      title: 'Carga aérea desde China | Heaven Born',
+      title: 'Carga aérea desde China | DDNZ Global',
       desc: 'Carga aérea urgente y económica desde China con recogida, revisión de exportación, planificación de ruta y seguimiento coordinado.',
       keywords: 'carga aérea china, flete aéreo urgente, agente de carga china, transporte aéreo internacional'
     },
     ar: {
-      title: 'الشحن الجوي من الصين | Heaven Born',
+      title: 'الشحن الجوي من الصين | DDNZ Global',
       desc: 'شحن جوي سريع واقتصادي من الصين مع الاستلام ومراجعة التصدير وتخطيط المسار والمتابعة المنسقة.',
       keywords: 'الشحن الجوي من الصين، شحن جوي سريع، وكيل شحن الصين، الشحن الدولي'
     }
@@ -256,12 +256,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'professional FBA prep services china, FNSKU labeling company china, direct delivery to amazon warehouse'
     },
     es: {
-      title: 'Logística Amazon FBA desde China | Heaven Born',
+      title: 'Logística Amazon FBA desde China | DDNZ Global',
       desc: 'Preparación FBA, etiquetado FNSKU, consolidación y entrega coordinada desde China a centros logísticos de Amazon.',
       keywords: 'amazon fba china, preparación fba, etiquetado fnsku, envío a amazon'
     },
     ar: {
-      title: 'لوجستيات Amazon FBA من الصين | Heaven Born',
+      title: 'لوجستيات Amazon FBA من الصين | DDNZ Global',
       desc: 'تجهيز FBA ووسم FNSKU وتجميع البضائع والتسليم المنسق من الصين إلى مراكز Amazon.',
       keywords: 'Amazon FBA الصين، تجهيز FBA، وسم FNSKU، الشحن إلى Amazon'
     }
@@ -289,12 +289,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'secure warehouse storage china, e-commerce order fulfillment warehouse, cheap cross docking service'
     },
     es: {
-      title: 'Almacén y consolidación en China | Heaven Born',
+      title: 'Almacén y consolidación en China | DDNZ Global',
       desc: 'Almacenamiento, recepción, inspección, consolidación y preparación de exportación coordinados en Guangzhou.',
       keywords: 'almacén china, consolidación de carga, logística guangzhou, preparación de exportación'
     },
     ar: {
-      title: 'التخزين والتجميع في الصين | Heaven Born',
+      title: 'التخزين والتجميع في الصين | DDNZ Global',
       desc: 'التخزين والاستلام والفحص وتجميع البضائع وتجهيز التصدير بتنسيق من فريق غوانغتشو.',
       keywords: 'مستودع الصين، تجميع الشحنات، لوجستيات غوانغتشو، تجهيز التصدير'
     }
@@ -302,7 +302,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   // 7. Middle East ("shipping-from-china-to-middle-east")
   'shipping-from-china-to-middle-east': {
     en: {
-      title: 'Freight from China to the Middle East | Heaven Born',
+      title: 'Freight from China to the Middle East | DDNZ Global',
       desc: 'Secure door-to-door (DDP) cargo shipping from China to Middle East hubs. Navigating port congestion & SABER customs compliance since 1999.',
       keywords: 'middle east shipping, saudi arabia freight, uae shipping, kuwait cargo DDP'
     },
@@ -312,22 +312,22 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: '中东双清专线, 沙特海运DDP, 阿联酋空运专线, 中东包税货代, SABER合规'
     },
     ru: {
-      title: 'Доставка грузов из Китая на Ближний Восток | Heaven Born',
+      title: 'Доставка грузов из Китая на Ближний Восток | DDNZ Global',
       desc: 'Надежные грузоперевозки из Китая в Саудовскую Аравию, ОАЭ и Кувейт. Оптимизация маршрутов и полное таможенное оформление с сертификатами SABER.',
       keywords: 'доставка на ближний восток, саудовская аравия карго, доставка оаэ, saber сертификат'
     },
     fr: {
-      title: 'Fret de Chine vers le Moyen-Orient | Heaven Born',
+      title: 'Fret de Chine vers le Moyen-Orient | DDNZ Global',
       desc: "Expéditions sécurisées de Chine vers l'Arabie Saoudite, les EAU et le Koweït. Solutions logistiques optimisées face aux blocages portuaires.",
       keywords: 'fret moyen orient, transport arabie saoudite, logistique emirats, certification saber'
     },
     es: {
-      title: 'Flete de China a Oriente Medio | Heaven Born',
+      title: 'Flete de China a Oriente Medio | DDNZ Global',
       desc: 'Planificación marítima y aérea de China a Arabia Saudita, EAU, Kuwait, Catar, Omán y Baréin con revisión documental previa al embarque.',
       keywords: 'flete oriente medio, transporte arabia saudita, logística emiratos, revisión SABER'
     },
     ar: {
-      title: 'الشحن من الصين إلى الشرق الأوسط | Heaven Born',
+      title: 'الشحن من الصين إلى الشرق الأوسط | DDNZ Global',
       desc: 'تخطيط الشحن البحري والجوي من الصين إلى السعودية والإمارات والكويت وقطر وعُمان والبحرين مع مراجعة المستندات قبل الشحن.',
       keywords: 'الشحن إلى الشرق الأوسط، الشحن إلى السعودية، لوجستيات الإمارات، مراجعة SABER'
     }
@@ -355,12 +355,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'fret asie centrale, transport kazakhstan, rail ouzbekistan, douane eaeu'
     },
     es: {
-      title: 'Transporte de China a Asia Central | Heaven Born',
+      title: 'Transporte de China a Asia Central | DDNZ Global',
       desc: 'Planificación ferroviaria, por carretera y multimodal de China a Kazajistán y Uzbekistán con revisión documental para los corredores de Asia Central.',
       keywords: 'flete asia central, transporte kazajistán, ferrocarril uzbekistán, aduana eaeu'
     },
     ar: {
-      title: 'الشحن من الصين إلى آسيا الوسطى | Heaven Born',
+      title: 'الشحن من الصين إلى آسيا الوسطى | DDNZ Global',
       desc: 'تخطيط النقل بالسكك الحديدية والطرق والوسائط المتعددة من الصين إلى كازاخستان وأوزبكستان مع مراجعة مستندات الممرات.',
       keywords: 'الشحن إلى آسيا الوسطى، النقل إلى كازاخستان، قطار أوزبكستان، جمارك EAEU'
     }
@@ -388,12 +388,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: "transitaire chine, groupage maritime afrique de l'ouest, inspection conteneur, dedouanement fret maritime"
     },
     es: {
-      title: 'Flete de China a África Occidental | Heaven Born',
+      title: 'Flete de China a África Occidental | DDNZ Global',
       desc: 'Planificación marítima y aérea de China a Nigeria, Ghana y África Occidental con consolidación y revisión de documentos antes del embarque.',
       keywords: 'flete áfrica occidental, envío nigeria, carga ghana, transporte desde china'
     },
     ar: {
-      title: 'الشحن من الصين إلى غرب أفريقيا | Heaven Born',
+      title: 'الشحن من الصين إلى غرب أفريقيا | DDNZ Global',
       desc: 'تخطيط الشحن البحري والجوي من الصين إلى نيجيريا وغانا وغرب أفريقيا مع التجميع ومراجعة المستندات قبل الشحن.',
       keywords: 'الشحن إلى غرب أفريقيا، الشحن إلى نيجيريا، شحن غانا، النقل من الصين'
     }
@@ -421,12 +421,12 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       keywords: 'fret amerique latine, douane mexique, CNPJ bresil, logistique argentine'
     },
     es: {
-      title: 'Flete de China a Latinoamérica | Heaven Born',
+      title: 'Flete de China a Latinoamérica | DDNZ Global',
       desc: 'Planificación marítima y aérea de China a México, Brasil, Argentina, Perú y Chile con consolidación y revisión documental previa al embarque.',
       keywords: 'flete latinoamérica, envío méxico, carga brasil, logística argentina, transporte desde china'
     },
     ar: {
-      title: 'الشحن من الصين إلى أمريكا اللاتينية | Heaven Born',
+      title: 'الشحن من الصين إلى أمريكا اللاتينية | DDNZ Global',
       desc: 'تخطيط الشحن البحري والجوي من الصين إلى المكسيك والبرازيل والأرجنتين وبيرو وتشيلي مع التجميع ومراجعة المستندات.',
       keywords: 'الشحن إلى أمريكا اللاتينية، الشحن إلى المكسيك، شحن البرازيل، النقل من الصين'
     }
@@ -586,7 +586,7 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
   const country = countryNames[countrySlug]?.[lang] || countryNames[countrySlug]?.en || countrySlug;
   const templates: Record<string, SEOItem> = {
     en: {
-      title: `Shipping from China to ${country} | Heaven Born`,
+      title: `Shipping from China to ${country} | DDNZ Global`,
       desc: `Plan sea, air and multimodal freight from China to ${country}, with consolidation, export documentation and destination coordination.`,
       keywords: `shipping from China to ${country}, freight forwarder ${country}, China export logistics, sea freight, air freight`,
     },
@@ -596,22 +596,22 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
       keywords: `中国至${country}货运, ${country}海运, ${country}空运, 国际货运代理, 华正邦泰`,
     },
     ru: {
-      title: `Доставка из Китая в ${country} | Heaven Born`,
+      title: `Доставка из Китая в ${country} | DDNZ Global`,
       desc: `Морские, авиационные и мультимодальные перевозки из Китая в ${country}: консолидация, экспортные документы и координация доставки.`,
       keywords: `доставка из Китая в ${country}, грузоперевозки, морской фрахт, авиаперевозки, Heaven Born`,
     },
     fr: {
-      title: `Expédition de Chine vers ${country} | Heaven Born`,
+      title: `Expédition de Chine vers ${country} | DDNZ Global`,
       desc: `Fret maritime, aérien et multimodal de Chine vers ${country}, avec consolidation, documents export et coordination à destination.`,
       keywords: `expédition Chine ${country}, transitaire Chine, fret maritime, fret aérien, Heaven Born`,
     },
     es: {
-      title: `Envíos de China a ${country} | Heaven Born`,
+      title: `Envíos de China a ${country} | DDNZ Global`,
       desc: `Transporte marítimo, aéreo y multimodal de China a ${country}, con consolidación, documentos de exportación y coordinación en destino.`,
       keywords: `envíos de China a ${country}, transitario China, flete marítimo, carga aérea, Heaven Born`,
     },
     ar: {
-      title: `الشحن من الصين إلى ${country} | Heaven Born`,
+      title: `الشحن من الصين إلى ${country} | DDNZ Global`,
       desc: `حلول الشحن البحري والجوي ومتعدد الوسائط من الصين إلى ${country}، مع التجميع ووثائق التصدير والتنسيق في الوجهة.`,
       keywords: `الشحن من الصين إلى ${country}, وكيل شحن الصين, شحن بحري, شحن جوي, Heaven Born`,
     },

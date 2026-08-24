@@ -22,7 +22,7 @@ import { createLocalizedShippingContent, createLocalizedShippingRedlines } from 
 const LATAM_DATA = {
   mexico: {
     en: {
-      seoTitle: "China to Mexico Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Mexico Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Direct FCL/LCL sea and air freight from China to Mexico. Shipping with NOM quality conformance, customs tariff mapping, and robust last-mile delivery.",
       headline: "Freight Forwarding to Mexico | NOM & RFC Documentation Support",
       subheadline: "Ocean and air freight planning from China to Manzanillo, Lazaro Cardenas, and Mexico City, with NOM, RFC, and destination clearance coordination.",
@@ -142,7 +142,7 @@ const LATAM_DATA = {
   },
   brazil: {
     en: {
-      seoTitle: "China to Brazil Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Brazil Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Freight planning from China to Brazil, including ocean and air options plus CNPJ, NCM and import-document coordination.",
       headline: "Shipping to Brazil (Santos) | CNPJ, NCM & Customs Documentation Support",
       subheadline: "Freight planning from China to Santos with CNPJ, NCM, and destination documentation coordination based on the confirmed service scope.",
@@ -262,7 +262,7 @@ const LATAM_DATA = {
   },
   argentina: {
     en: {
-      seoTitle: "China to Argentina Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Argentina Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Ocean and air freight planning from China to Buenos Aires, with CUIT, import-document, and destination-handling coordination.",
       headline: "Logistics to Argentina | CUIT & Import Documentation Support",
       subheadline: "Ocean and air freight planning from China to Buenos Aires, with import-document and destination-handling coordination based on the confirmed service scope.",
@@ -386,7 +386,7 @@ const LATAM_LOCALIZED = LATAM_DATA as Record<string, any>;
 LATAM_LOCALIZED.peru = {
   en: {
     ...LATAM_LOCALIZED.mexico.en,
-    seoTitle: 'Shipping from China to Peru | Freight Forwarding Guide | Heaven Born',
+    seoTitle: 'Shipping from China to Peru | Freight Forwarding Guide | DDNZ Global',
     seoDesc: 'Ocean and air freight planning from China to Callao and Lima, with document review and destination-handling coordination.',
     headline: 'Shipping from China to Peru | Callao and Lima Freight Planning',
     subheadline: 'FCL, LCL, and air freight planning from China to Callao and Lima, with shipment-document and destination-operation coordination.',
@@ -438,7 +438,7 @@ LATAM_LOCALIZED.peru = {
 LATAM_LOCALIZED.chile = {
   en: {
     ...LATAM_LOCALIZED.peru.en,
-    seoTitle: 'Shipping from China to Chile | Freight Forwarding Guide | Heaven Born',
+    seoTitle: 'Shipping from China to Chile | Freight Forwarding Guide | DDNZ Global',
     seoDesc: 'Ocean and air freight planning from China to San Antonio, Valparaíso, and Santiago, with document review and destination coordination.',
     headline: 'Shipping from China to Chile | Port and Destination Planning',
     subheadline: 'FCL, LCL, and air freight planning from China to Chile, with shipment-document and destination-operation coordination.',
@@ -528,7 +528,7 @@ for (const locale of ['ru', 'fr', 'es', 'ar'] as const) {
 
 const PAGE_LANG_DATA = {
   en: {
-    seoTitle: "China to Latin America Freight Forwarding Guide | Heaven Born",
+    seoTitle: "China to Latin America Freight Forwarding Guide | DDNZ Global",
     seoDesc: "Freight planning from China to Mexico, Brazil, and Argentina, with consolidation, document review, and DDP/DDU service coordination.",
     tabMexico: "Mexico (NOM & RFC Solutions)",
     tabBrazil: "Brazil (CNPJ & Santos Gate)",

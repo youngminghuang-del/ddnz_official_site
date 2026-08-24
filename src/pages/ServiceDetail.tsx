@@ -974,16 +974,16 @@ export default function ServiceDetail() {
 
     const localizedSeo: Record<string, Record<string, { title: string; desc: string; keywords: string }>> = {
       es: {
-        'sea-freight': { title: 'Flete marítimo desde China | Heaven Born', desc: 'Servicios FCL y LCL desde China con consolidación, despacho y opciones puerta a puerta.', keywords: 'flete marítimo china, envío FCL LCL, agente de carga china' },
-        'air-freight': { title: 'Carga aérea desde China | Heaven Born', desc: 'Carga aérea urgente y económica desde China con recogida, exportación y seguimiento.', keywords: 'carga aérea china, flete aéreo urgente, agente de carga china' },
-        'amazon-fba': { title: 'Logística Amazon FBA desde China | Heaven Born', desc: 'Preparación FBA, etiquetado FNSKU y entrega desde China a centros Amazon.', keywords: 'amazon fba china, preparación fba, etiquetado fnsku' },
-        'warehouse-services': { title: 'Almacén y consolidación en China | Heaven Born', desc: 'Almacenamiento, inspección, consolidación y preparación de exportación en Guangzhou.', keywords: 'almacén china, consolidación carga, logística guangzhou' },
+        'sea-freight': { title: 'Flete marítimo desde China | DDNZ Global', desc: 'Servicios FCL y LCL desde China con consolidación, despacho y opciones puerta a puerta.', keywords: 'flete marítimo china, envío FCL LCL, agente de carga china' },
+        'air-freight': { title: 'Carga aérea desde China | DDNZ Global', desc: 'Carga aérea urgente y económica desde China con recogida, exportación y seguimiento.', keywords: 'carga aérea china, flete aéreo urgente, agente de carga china' },
+        'amazon-fba': { title: 'Logística Amazon FBA desde China | DDNZ Global', desc: 'Preparación FBA, etiquetado FNSKU y entrega desde China a centros Amazon.', keywords: 'amazon fba china, preparación fba, etiquetado fnsku' },
+        'warehouse-services': { title: 'Almacén y consolidación en China | DDNZ Global', desc: 'Almacenamiento, inspección, consolidación y preparación de exportación en Guangzhou.', keywords: 'almacén china, consolidación carga, logística guangzhou' },
       },
       ar: {
-        'sea-freight': { title: 'الشحن البحري من الصين | Heaven Born', desc: 'خدمات FCL وLCL من الصين مع التجميع والتخليص وخيارات التسليم من الباب إلى الباب.', keywords: 'الشحن البحري من الصين، شحن FCL LCL، وكيل شحن الصين' },
-        'air-freight': { title: 'الشحن الجوي من الصين | Heaven Born', desc: 'شحن جوي سريع واقتصادي من الصين مع الاستلام وإجراءات التصدير والمتابعة.', keywords: 'الشحن الجوي من الصين، شحن جوي سريع، وكيل شحن الصين' },
-        'amazon-fba': { title: 'لوجستيات Amazon FBA من الصين | Heaven Born', desc: 'تجهيز FBA ووسم FNSKU وتسليم من الصين إلى مراكز Amazon.', keywords: 'Amazon FBA الصين، تجهيز FBA، وسم FNSKU' },
-        'warehouse-services': { title: 'التخزين والتجميع في الصين | Heaven Born', desc: 'تخزين وفحص وتجميع وتجهيز للتصدير في قوانغتشو.', keywords: 'مستودع الصين، تجميع الشحنات، لوجستيات قوانغتشو' },
+        'sea-freight': { title: 'الشحن البحري من الصين | DDNZ Global', desc: 'خدمات FCL وLCL من الصين مع التجميع والتخليص وخيارات التسليم من الباب إلى الباب.', keywords: 'الشحن البحري من الصين، شحن FCL LCL، وكيل شحن الصين' },
+        'air-freight': { title: 'الشحن الجوي من الصين | DDNZ Global', desc: 'شحن جوي سريع واقتصادي من الصين مع الاستلام وإجراءات التصدير والمتابعة.', keywords: 'الشحن الجوي من الصين، شحن جوي سريع، وكيل شحن الصين' },
+        'amazon-fba': { title: 'لوجستيات Amazon FBA من الصين | DDNZ Global', desc: 'تجهيز FBA ووسم FNSKU وتسليم من الصين إلى مراكز Amazon.', keywords: 'Amazon FBA الصين، تجهيز FBA، وسم FNSKU' },
+        'warehouse-services': { title: 'التخزين والتجميع في الصين | DDNZ Global', desc: 'تخزين وفحص وتجميع وتجهيز للتصدير في قوانغتشو.', keywords: 'مستودع الصين، تجميع الشحنات، لوجستيات قوانغتشو' },
       },
     };
     const currentSEOVal = localizedSeo[language]?.[currentKey] || seoMeta[currentKey]?.[activeLang] || seoMeta[currentKey]?.['en'];
