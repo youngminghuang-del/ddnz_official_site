@@ -1,0 +1,21 @@
+{
+  "cover": {
+    "src": "/images/posts/flete-china-america-latina-pss-oeste-este-agosto-2026/flete-china-america-latina-pss-cover-v2.webp",
+    "alt": "Flete marítimo China–América Latina con PSS a la baja en el oeste y al alza en el este",
+    "caption": "PSS ↓ OESTE · PSS ↑ ESTE: la cotización debe compararse por puerto, costa y fecha de cálculo."
+  },
+  "inline": [
+    {
+      "src": "/images/posts/flete-china-america-latina-pss-oeste-este-agosto-2026/rutas-pss-costa-oeste-este-v2.webp",
+      "alt": "Dos rutas marítimas desde China hacia las costas oeste y este de América Latina con señales opuestas del PSS",
+      "caption": "Ilustración editorial: en agosto de 2026, los avisos analizados mostraron señales diferentes para las costas oeste y este.",
+      "beforeHeading": "Una región, dos direcciones para el PSS"
+    },
+    {
+      "src": "/images/posts/flete-china-america-latina-pss-oeste-este-agosto-2026/comparacion-cotizacion-flete-v2.webp",
+      "alt": "Importador latinoamericano preocupado y especialista de carga revisando tarifa base, PSS y cargos de destino",
+      "caption": "Una comparación útil separa el flete base, el PSS, otros recargos, gastos locales, vigencia y condiciones operativas.",
+      "beforeHeading": "La información que debe acompañar una solicitud de flete"
+    }
+  ]
+}

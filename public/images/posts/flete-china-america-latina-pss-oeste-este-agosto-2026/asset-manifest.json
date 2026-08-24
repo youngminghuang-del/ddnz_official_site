@@ -1,0 +1,44 @@
+{
+  "articleSlug": "flete-china-america-latina-pss-oeste-este-agosto-2026",
+  "createdOn": "2026-08-24",
+  "generator": "OpenAI built-in image generation",
+  "rights": "AI-generated editorial assets created for DDNZ Global; no carrier logos or third-party trademarks intentionally included.",
+  "assets": [
+    {
+      "file": "flete-china-america-latina-pss-cover-v2.webp",
+      "placement": "active cover",
+      "dimensions": "1200x675",
+      "promptSummary": "Edited photorealistic container-ship cover with exact Spanish title and west-down/east-up PSS symbols."
+    },
+    {
+      "file": "rutas-pss-costa-oeste-este-v2.webp",
+      "placement": "active inline before Una región, dos direcciones para el PSS",
+      "dimensions": "1200x675",
+      "promptSummary": "Edited route map with exact Spanish labels CHINA, COSTA OESTE, COSTA ESTE, PSS arrows and AGOSTO 2026."
+    },
+    {
+      "file": "comparacion-cotizacion-flete-v2.webp",
+      "placement": "active inline before La información que debe acompañar una solicitud de flete",
+      "dimensions": "1200x675",
+      "promptSummary": "Edited B2B quotation review with more natural analytical expressions and a Spanish BASE/PSS/DESTINO checklist."
+    },
+    {
+      "file": "flete-china-america-latina-pss-cover-v1.webp",
+      "placement": "superseded cover",
+      "dimensions": "1200x675",
+      "promptSummary": "Photorealistic unbranded container ship leaving an East Asian terminal at sunrise."
+    },
+    {
+      "file": "rutas-pss-costa-oeste-este-v1.webp",
+      "placement": "superseded inline before Una región, dos direcciones para el PSS",
+      "dimensions": "1200x675",
+      "promptSummary": "Text-free editorial map with two China–Latin America routes and opposite directional arrows."
+    },
+    {
+      "file": "comparacion-cotizacion-flete-v1.webp",
+      "placement": "superseded inline before La información que debe acompañar una solicitud de flete",
+      "dimensions": "1200x675",
+      "promptSummary": "Photorealistic B2B quotation review between a Latin American importer and China freight specialist."
+    }
+  ]
+}
