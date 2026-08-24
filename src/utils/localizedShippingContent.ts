@@ -11,7 +11,7 @@ type ShippingContentInput = {
 
 const copy = {
   ru: {
-    seoTitle: (country: string) => `Доставка из Китая: ${country} | Heaven Born`,
+    seoTitle: (country: string) => `Доставка из Китая: ${country} | DDNZ Global`,
     seoDesc: (country: string, destination: string) => `Морские, авиационные и мультимодальные перевозки из Китая в ${country} через ${destination} с проверкой документов и координацией доставки.`,
     headline: (country: string) => `Доставка грузов из Китая — ${country}`,
     subheadline: (destination: string, compliance: string) => `Планирование FCL, LCL, авиационных и мультимодальных перевозок через ${destination}, включая проверку требований ${compliance} до отправки.`,
@@ -44,7 +44,7 @@ const copy = {
     ],
   },
   fr: {
-    seoTitle: (country: string) => `Expédition de Chine vers ${country} | Heaven Born`,
+    seoTitle: (country: string) => `Expédition de Chine vers ${country} | DDNZ Global`,
     seoDesc: (country: string, destination: string) => `Fret maritime, aérien et multimodal de Chine vers ${country} via ${destination}, avec contrôle documentaire et coordination de la livraison.`,
     headline: (country: string) => `Transport de marchandises de Chine vers ${country}`,
     subheadline: (destination: string, compliance: string) => `Planification FCL, LCL, aérienne et multimodale via ${destination}, avec vérification des exigences ${compliance} avant expédition.`,
@@ -77,7 +77,7 @@ const copy = {
     ],
   },
   es: {
-    seoTitle: (country: string) => `Envíos de China a ${country} | Heaven Born`,
+    seoTitle: (country: string) => `Envíos de China a ${country} | DDNZ Global`,
     seoDesc: (country: string, destination: string) => `Flete marítimo, aéreo y multimodal desde China a ${country} vía ${destination}, con revisión documental y coordinación de entrega.`,
     headline: (country: string) => `Envíos de carga desde China a ${country}`,
     subheadline: (destination: string, compliance: string) => `Planificación FCL, LCL, aérea y multimodal vía ${destination}, con revisión de requisitos ${compliance} antes del embarque.`,
@@ -110,7 +110,7 @@ const copy = {
     ],
   },
   ar: {
-    seoTitle: (country: string) => `الشحن من الصين إلى ${country} | Heaven Born`,
+    seoTitle: (country: string) => `الشحن من الصين إلى ${country} | DDNZ Global`,
     seoDesc: (country: string, destination: string) => `شحن بحري وجوي ومتعدد الوسائط من الصين إلى ${country} عبر ${destination} مع مراجعة المستندات وتنسيق التسليم.`,
     headline: (country: string) => `شحن البضائع من الصين إلى ${country}`,
     subheadline: (destination: string, compliance: string) => `تخطيط FCL وLCL والشحن الجوي والمتعدد الوسائط عبر ${destination} مع مراجعة متطلبات ${compliance} قبل الشحن.`,

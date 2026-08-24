@@ -23,7 +23,7 @@ import { createLocalizedShippingContent, createLocalizedShippingRedlines } from 
 const WEST_AFRICA_DATA = {
   nigeria: {
     en: {
-      seoTitle: "China to Nigeria Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Nigeria Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Sea and air freight planning from China to Lagos, including consolidation and support for Form M, PAAR and SONCAP document coordination.",
       headline: "Sea & Air Freight to Nigeria (Lagos) | SONCAP & Form M Documentation Support",
       subheadline: "Consolidation from China to Lagos Apapa and Tin Can ports, with SONCAP, Form M, and destination clearance coordination based on the confirmed service scope.",
@@ -141,7 +141,7 @@ const WEST_AFRICA_DATA = {
       ]
     },
     fr: {
-      seoTitle: "Fret de Chine vers le Nigeria | Heaven Born",
+      seoTitle: "Fret de Chine vers le Nigeria | DDNZ Global",
       seoDesc: "Planification maritime, aérienne et documentaire de Chine vers le Nigeria, avec vérification préalable des exigences d’importation.",
       headline: "Fret maritime et aérien de Chine vers le Nigeria",
       subheadline: "Planification habituelle de 35–45 jours par mer, avec vérification documentaire Form M, PAAR, SONCAP et ECTN/CTN selon la marchandise et les exigences applicables.",
@@ -202,7 +202,7 @@ const WEST_AFRICA_DATA = {
   },
   ghana: {
     en: {
-      seoTitle: "China to Ghana Freight Forwarding Guide | Heaven Born",
+      seoTitle: "China to Ghana Freight Forwarding Guide | DDNZ Global",
       seoDesc: "Sea and air freight planning from China to Ghana, including consolidation and CoC/CTN document coordination before export.",
       headline: "Shipping to Ghana (Tema/Accra) | CoC & CTN Documentation Support",
       subheadline: "Ocean and air freight planning from China to Tema and Accra, with consolidation, CoC, CTN, and destination clearance coordination.",
@@ -320,7 +320,7 @@ const WEST_AFRICA_DATA = {
       ]
     },
     fr: {
-      seoTitle: "Fret de Chine vers le Ghana | Heaven Born",
+      seoTitle: "Fret de Chine vers le Ghana | DDNZ Global",
       seoDesc: "Planification maritime, aérienne et documentaire de Chine vers le Ghana, avec vérification des exigences d’importation avant expédition.",
       headline: "Fret maritime et aérien de Chine vers le Ghana",
       subheadline: "Planification habituelle de 35–50 jours par mer, avec vérification de l’applicabilité du CoC et des documents d’importation avant expédition.",
@@ -412,7 +412,7 @@ for (const locale of ['ru', 'es', 'ar'] as const) {
 
 const PAGE_LANG_DATA = {
   en: {
-    seoTitle: "China to West Africa Freight Forwarding Guide | Heaven Born",
+    seoTitle: "China to West Africa Freight Forwarding Guide | DDNZ Global",
     seoDesc: "Freight planning from China to West Africa, including Nigeria, Ghana, and French-speaking markets, with consolidation, document review, and DDP/DDU coordination.",
     tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
     tabGhana: "Ghana (Tema / Accra)",
@@ -460,7 +460,7 @@ const PAGE_LANG_DATA = {
     guideSub: "围绕集货、文件与目的地操作，帮助您在出运前完成必要确认。"
   },
   fr: {
-    seoTitle: "Spécialiste du fret en Afrique de l'Ouest | Heaven Born",
+    seoTitle: "Spécialiste du fret en Afrique de l'Ouest | DDNZ Global",
     seoDesc: "Planification de fret depuis la Chine vers l’Afrique de l’Ouest, avec consolidation, vérification documentaire et coordination DDP/DDU.",
     tabNigeria: "Nigeria (Lagos - Apapa/Tin Can)",
     tabGhana: "Ghana (Tema / Accra)",

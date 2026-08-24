@@ -21,7 +21,7 @@ import { buildShippingCountryPath, getShippingCountrySlug } from '../utils/shipp
 // Multi-language strings for this Middle East Route page
 const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
   en: {
-    seoTitle: "China to Middle East Freight Forwarding Guide | Heaven Born",
+    seoTitle: "China to Middle East Freight Forwarding Guide | DDNZ Global",
     seoDesc: "Freight planning from China to Middle East markets, including sea, air, consolidation and export-document coordination. DDP availability depends on the destination and cargo profile.",
     heroHeadline: "Shipping from China to Middle East markets",
     heroSubheadline: "Plan sea or air freight around current route conditions, cargo requirements and destination-side operating scope.",
@@ -211,7 +211,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     insightPortfolio: "华正邦泰物流洞察"
   },
   ru: {
-    seoTitle: "Доставка грузов из Китая на Ближний Восток (ОАЭ, Саудовская Аравия) | Heaven Born",
+    seoTitle: "Доставка грузов из Китая на Ближний Восток (ОАЭ, Саудовская Аравия) | DDNZ Global",
     seoDesc: "Надежные грузоперевозки из Китая в Саудовскую Аравию, ОАЭ и Кувейт. Оптимизация маршрутов и полное таможенное оформление с сертификатами SABER.",
     heroHeadline: "Надежные логистические сети из Китая на Ближний Восток",
     heroSubheadline: "Обход портовых заторов в Красном море с оптимизацией транзита. Полная поддержка по таможенным правилам и SABER.",
@@ -303,7 +303,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     insightPortfolio: "Аналитика Heaven Born по международной логистике"
   },
   fr: {
-    seoTitle: "Fret maritime et aérien de Chine vers le Moyen-Orient | Heaven Born",
+    seoTitle: "Fret maritime et aérien de Chine vers le Moyen-Orient | DDNZ Global",
     seoDesc: "Expéditions sécurisées de Chine vers l'Arabie Saoudite, les EAU et le Koweït. Solutions logistiques optimisées face aux blocages portuaires.",
     heroHeadline: "Réseaux logistiques fiables de Chine vers le Moyen-Orient",
     heroSubheadline: "Naviguer à travers les tensions en mer Rouge grâce à des routes maritimes sécurisées. Gestion des dossiers SABER & dédouanement local.",
@@ -398,7 +398,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
 PAGE_LANG_DATA.es = {
   ...PAGE_LANG_DATA.en,
-  seoTitle: "Flete marítimo y aéreo de China a Oriente Medio | Heaven Born",
+  seoTitle: "Flete marítimo y aéreo de China a Oriente Medio | DDNZ Global",
   seoDesc: "Envíos desde China a Arabia Saudita, EAU, Kuwait, Qatar, Omán y Baréin con planificación documental y aduanera.",
   heroHeadline: "Redes logísticas confiables de China a Oriente Medio",
   heroSubheadline: "Planificación marítima y aérea con revisión SABER, documentos de importación y coordinación de entrega local.",
@@ -458,7 +458,7 @@ PAGE_LANG_DATA.es = {
 
 PAGE_LANG_DATA.ar = {
   ...PAGE_LANG_DATA.en,
-  seoTitle: "الشحن البحري والجوي من الصين إلى الشرق الأوسط | Heaven Born",
+  seoTitle: "الشحن البحري والجوي من الصين إلى الشرق الأوسط | DDNZ Global",
   seoDesc: "الشحن من الصين إلى السعودية والإمارات والكويت وقطر وعُمان والبحرين مع تخطيط المستندات والجمارك.",
   heroHeadline: "شبكات شحن موثوقة من الصين إلى الشرق الأوسط",
   heroSubheadline: "تخطيط بحري وجوي مع مراجعة SABER ومستندات الاستيراد وتنسيق التسليم المحلي.",
@@ -1202,7 +1202,7 @@ const GCC_SPEC_DATA: Record<string, Record<string, any>> = {
 
 PAGE_LANG_DATA.ar = {
   ...PAGE_LANG_DATA.en,
-  seoTitle: 'الشحن من الصين إلى الشرق الأوسط | Heaven Born',
+  seoTitle: 'الشحن من الصين إلى الشرق الأوسط | DDNZ Global',
   seoDesc: 'شحن بحري وجوي من الصين إلى السعودية والإمارات والكويت مع دعم التخليص والامتثال.',
   heroHeadline: 'شبكات شحن موثوقة من الصين إلى مراكز الشرق الأوسط',
   heroSubheadline: 'مسارات محسنة وشحن من الباب إلى الباب للتجار والمستوردين، مع رؤية واضحة للتكلفة والامتثال.',
@@ -1373,12 +1373,12 @@ export default function MiddleEastRoute() {
     }
 
     const titles: Record<string, string> = {
-      en: `Shipping from China to ${selectedCountryLabel} | Freight Forwarding | Heaven Born`,
+      en: `Shipping from China to ${selectedCountryLabel} | Freight Forwarding | DDNZ Global`,
       zh: `中国到${selectedCountryLabel}海运、空运与清关服务 | 华正邦泰国际货运`,
-      es: `Envíos de China a ${selectedCountryLabel} | Heaven Born`,
-      ar: `الشحن من الصين إلى ${selectedCountryLabel} | Heaven Born`,
-      fr: `Fret de Chine vers ${selectedCountryLabel} | Heaven Born`,
-      ru: `Доставка из Китая в ${selectedCountryLabel} | Heaven Born`,
+      es: `Envíos de China a ${selectedCountryLabel} | DDNZ Global`,
+      ar: `الشحن من الصين إلى ${selectedCountryLabel} | DDNZ Global`,
+      fr: `Fret de Chine vers ${selectedCountryLabel} | DDNZ Global`,
+      ru: `Доставка из Китая в ${selectedCountryLabel} | DDNZ Global`,
     };
     const descriptions: Record<string, string> = {
       en: `Sea and air freight planning from China to ${selectedCountryLabel}, with cargo, import-document, customs and destination-delivery coordination.`,
