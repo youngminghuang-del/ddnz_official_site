@@ -35,6 +35,7 @@ import "./kitchen.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const heroSteps = [
   { number: "01", title: "Define range", copy: "Requirements, use cases and target markets.", icon: ClipboardList },
@@ -433,7 +434,6 @@ function LegacyKitchenPage() {
 }
 
 export function App() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [technical, setTechnical] = useState(false);
   const [scoreOpen, setScoreOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -481,7 +481,7 @@ export function App() {
   return (
     <div className="kitchen-page" id="top">
       <ShowcaseSEO page="kitchen" />
-      <KitchenHeader open={menuOpen} setOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main>
         <section className="k-hero" aria-labelledby="kitchen-title">

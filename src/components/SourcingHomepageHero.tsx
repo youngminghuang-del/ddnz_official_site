@@ -229,7 +229,7 @@ export default function SourcingHomepageHero() {
 
   return (
     <>
-      <section className="border-b border-slate-200 bg-[#fffefb]" aria-labelledby="homepage-sourcing-title">
+      <section className="ddnz-ribbon-home-hero border-b border-slate-200" aria-labelledby="homepage-sourcing-title">
         <div className="mx-auto grid max-w-[1536px] lg:min-h-[600px] lg:grid-cols-12">
           <div className="flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-14 lg:col-span-6 lg:px-12 lg:py-6 xl:px-[54px]">
             <h1 id="homepage-sourcing-title" className="max-w-[660px] text-[clamp(2.35rem,3.7vw,3.65rem)] font-extrabold leading-[1.04] tracking-[-0.045em] text-[var(--ddnz-ink)] lg:translate-y-2">
@@ -268,7 +268,7 @@ export default function SourcingHomepageHero() {
             <div className="min-h-0 overflow-hidden"><img src="/images/operations/pexels-wuhan-warehouse-receiving-ddnz-vest-v1.webp" alt={heroImageAlts[language][2]} width="1536" height="1024" loading="lazy" decoding="async" className="h-full min-h-0 w-full scale-[1.08] object-cover object-[58%_43%]" /></div>
           </div>
 
-          <div className="order-2 flex items-center bg-[#fbfaf7] px-4 py-8 sm:px-7 lg:order-none lg:col-span-4 lg:px-5 lg:py-5 xl:px-6">
+          <div className="order-2 flex items-center bg-white/20 px-4 py-8 sm:px-7 lg:order-none lg:col-span-4 lg:px-5 lg:py-5 xl:px-6">
             <form id="sourcing-brief" onSubmit={(event) => { event.preventDefault(); goToQuote(intent); }} className="w-full rounded-xl border border-slate-200 bg-white p-4 shadow-[0_16px_45px_rgba(15,23,42,0.10)] sm:p-5" aria-labelledby="sourcing-brief-title">
               <h2 id="sourcing-brief-title" className="text-[22px] font-extrabold tracking-[-0.025em] text-[var(--ddnz-ink)] sm:text-[24px]">{copy.formTitle}</h2>
               <div className="mt-3 grid gap-2">
