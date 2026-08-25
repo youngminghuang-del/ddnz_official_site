@@ -29,6 +29,7 @@ import "./mobile.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const A = "/images/product-showcase/mobile";
 const H = A;
@@ -273,7 +274,6 @@ function HeroProductStage() {
 }
 
 export function MobileAccessories() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [technical, setTechnical] = useState(false);
   const [trackKey, setTrackKey] = useState("cases");
   const [playing, setPlaying] = useState(false);
@@ -348,7 +348,7 @@ export function MobileAccessories() {
   return (
     <div className="mobile-page">
       <ShowcaseSEO page="mobile" />
-      <Header open={menuOpen} setOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main>
         <section className="mobile-hero" aria-labelledby="mobile-title">

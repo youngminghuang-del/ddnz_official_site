@@ -25,6 +25,7 @@ import "./audio-speakers.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const FAMILIES = [
   {
@@ -69,9 +70,9 @@ const FAMILIES = [
 ];
 
 const NORMALIZATION_FIELDS = [
-  { icon: Volume2, title: "Output declaration", copy: "Record rated/RMS and peak values separately, together with the supplier's stated test basis." },
+  { icon: Volume2, title: "Output declaration", copy: "Record continuous (rated) and peak output separately, together with the supplier's stated measurement basis." },
   { icon: BatteryCharging, title: "Power & battery", copy: "Separate AC input, adapter, charging input, cell/capacity and runtime conditions." },
-  { icon: Bluetooth, title: "Wireless & inputs", copy: "List wireless version, supported playback inputs, pairing behavior and radio-document status." },
+  { icon: Bluetooth, title: "Wireless & inputs", copy: "List the wireless version, supported playback inputs, pairing behavior and available radio and compliance documents." },
   { icon: Mic2, title: "Microphone set", copy: "Confirm wired or wireless microphones, quantity, frequency information and included batteries." },
   { icon: SlidersHorizontal, title: "Functions & controls", copy: "Lock lighting, EQ, recording, priority and control-panel behavior to the exact model." },
   { icon: PackageCheck, title: "Pack-out", copy: "Tie accessories, labels, unit pack, carton quantity and packed dimensions to the approved SKU." },
@@ -160,21 +161,25 @@ function Header({ open, setOpen }) {
 function HeroWall() {
   return (
     <div className="as-hero-wall" aria-label="Audio speaker range examples">
-      <figure className="as-wall-vintage">
-        <img src="/images/product-showcase/audio/vintage-range-hero-v1.webp" width="1000" height="1333" alt="Wood-finish handled speaker in a vintage audio range" />
-        <figcaption><span>02</span><strong>Vintage &amp; lifestyle</strong><small>Material · finish · control layout</small></figcaption>
-      </figure>
-      <figure className="as-wall-party">
-        <img src="/images/product-showcase/index/audio-speakers-category.webp" width="1200" height="800" alt="Unbranded party speakers with microphones and remotes" />
-        <figcaption><span>01</span><strong>Portable &amp; party</strong><small>Output · power · accessory set</small></figcaption>
-      </figure>
-      <figure className="as-wall-mini">
-        <img src="/images/product-showcase/audio/mini-black-product-v1.webp" width="1000" height="1000" alt="Compact unbranded black speaker with a top light chamber" />
-        <figcaption><span>03</span><strong>Mini &amp; giftable</strong></figcaption>
-      </figure>
-      <div className="as-wall-ticket" aria-label="Illustrative range-control record">
-        <span>RANGE FILE</span><strong>Use case before model</strong><small>Illustrative control path</small>
+      <div className="as-wall-heading">
+        <span>CURATED AUDIO RANGE</span>
+        <small>Use case · output · power · pack</small>
       </div>
+      <figure className="as-wall-party as-wall-primary">
+        <img src="/images/product-showcase/index/audio-speakers-category.webp" width="1200" height="800" alt="Unbranded party speakers with microphones and remotes" />
+        <figcaption><span>01</span><div><strong>Portable &amp; party</strong><small>Output · power · accessory set</small></div><em>Lead range</em></figcaption>
+      </figure>
+      <div className="as-wall-support">
+        <figure className="as-wall-vintage">
+          <img src="/images/product-showcase/audio/vintage-range-hero-v1.webp" width="1000" height="1333" alt="Wood-finish handled speaker in a vintage audio range" />
+          <figcaption><span>02</span><div><strong>Vintage &amp; lifestyle</strong><small>Material · finish · controls</small></div></figcaption>
+        </figure>
+        <figure className="as-wall-mini">
+          <img src="/images/product-showcase/audio/mini-black-product-v1.webp" width="1000" height="1000" alt="Compact unbranded black speaker with a top light chamber" />
+          <figcaption><span>03</span><div><strong>Mini &amp; giftable</strong><small>Battery · charge · pack</small></div></figcaption>
+        </figure>
+      </div>
+      <p className="as-wall-record"><span>RANGE CONTROL</span><strong>Use case before model</strong><small>Illustrative buying path</small></p>
     </div>
   );
 }
@@ -201,7 +206,6 @@ function FamilyPanel({ family }) {
 }
 
 export function AudioSpeakers() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeFamily, setActiveFamily] = useState(FAMILIES[0].id);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ family: FAMILIES[0].id, destination: "", scope: "", volume: "", stage: "", notes: "" });
@@ -244,14 +248,14 @@ export function AudioSpeakers() {
     <div className="audio-speakers-page" id="audio-top">
       <ShowcaseSEO page="audio" />
       <a className="as-skip-link" href="#audio-main">Skip to audio sourcing content</a>
-      <Header open={menuOpen} setOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main id="audio-main">
         <section className="as-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
             <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
             <h1 id="audio-title">Build an audio range buyers can hear, compare and reorder.</h1>
-            <p>DDNZ structures portable, party, vintage and compact speaker sourcing around the exact use case, declared output, power path, accessories and retail pack—so a low headline price does not hide a different product.</p>
+            <p>DDNZ structures portable, party, vintage and compact speaker sourcing around the intended use, declared output, power path, included accessories and retail pack—so the quotation, approved sample and shipped configuration stay aligned.</p>
             <div className="as-hero-actions">
               <button className="as-primary" type="button" onClick={() => scrollTo("audio-range")}>Build the range <ArrowRight size={17} /></button>
               <button className="as-secondary" type="button" onClick={() => scrollTo("comparison")}>Review the control fields <ArrowRight size={16} /></button>
@@ -322,8 +326,8 @@ export function AudioSpeakers() {
         <section className="as-factory" id="factory-evidence" aria-labelledby="factory-evidence-title">
           <div className="as-section">
             <div className="as-factory-heading">
-              <div><p className="as-kicker">FACTORY &amp; FUNCTION EVIDENCE</p><h2 id="factory-evidence-title">Use each clip only for the checkpoint it actually shows.</h2></div>
-              <p>The supplied footage is shortened, muted and optimized locally for the web. Clips with visible supplier packaging, loading identifiers or promotional overlays remain excluded from public use.</p>
+              <div><p className="as-kicker">FACTORY &amp; FUNCTION EVIDENCE</p><h2 id="factory-evidence-title">See the checkpoint each factory clip actually documents.</h2></div>
+              <p>Each clip is tied to one production checkpoint. Model-specific results, dates, exceptions and open items remain in the buyer record.</p>
             </div>
             <div className="as-factory-grid">
               {FACTORY_EVIDENCE.map((item) => (
@@ -341,18 +345,18 @@ export function AudioSpeakers() {
 
         <section className="as-evidence" aria-labelledby="evidence-title">
           <div className="as-section">
-            <div className="as-evidence-heading"><div><p className="as-kicker">PRODUCT EVIDENCE DIRECTION</p><h2 id="evidence-title">The image must prove the checkpoint it names.</h2></div><p>Product views are separated from production footage. The new compact-speaker source replaces the earlier packaging crop with a cleaner, unbranded model view.</p></div>
+            <div className="as-evidence-heading"><div><p className="as-kicker">PRODUCT EVIDENCE</p><h2 id="evidence-title">Each image should verify one buying decision.</h2></div><p>Product images are reviewed separately from factory footage so buyers can verify form, finish, controls and the exact supplied configuration.</p></div>
             <div className="as-evidence-grid">
-              <article className="as-evidence-wide"><img src="/images/product-showcase/audio/vintage-range-hero-v1.webp" width="1000" height="1333" alt="Wood-finish speaker with handle and surrounding vintage speaker range" loading="lazy" /><div><span>01</span><p><strong>Range &amp; finish direction</strong><small>Cabinet form, material story and collection fit</small></p></div></article>
-              <article><img src="/images/product-showcase/audio/vintage-gramophone-detail-v1.webp" width="960" height="960" alt="Vintage-style gramophone speaker control and cabinet detail" loading="lazy" /><div><span>02</span><p><strong>Control-layout check</strong><small>Exact front panel, knobs and enclosure details</small></p></div></article>
-              <article><img src="/images/product-showcase/audio/vintage-horn-detail-v1.webp" width="960" height="960" alt="Flower-shaped horn on a compact wood-finish speaker" loading="lazy" /><div><span>03</span><p><strong>Design-detail check</strong><small>Horn form, finish and visible interface</small></p></div></article>
-              <article className="as-evidence-mini as-evidence-product"><img src="/images/product-showcase/audio/mini-black-product-v1.webp" width="1000" height="1000" alt="Compact unbranded black speaker showing its top light chamber and controls" loading="lazy" /><div><span>04</span><p><strong>Compact model view</strong><small>Form, control scale, light chamber and visible charge input</small></p></div></article>
+              <article className="as-evidence-wide"><img src="/images/product-showcase/audio/vintage-range-hero-v1.webp" width="1000" height="1333" alt="Wood-finish speaker with handle and surrounding vintage speaker range" loading="lazy" /><div><span>01</span><p><strong>Range &amp; finish review</strong><small>Cabinet form, finish direction and collection fit</small></p></div></article>
+              <article><img src="/images/product-showcase/audio/vintage-gramophone-detail-v1.webp" width="960" height="960" alt="Vintage-style gramophone speaker horn and wood-finish cabinet detail" loading="lazy" /><div><span>02</span><p><strong>Horn &amp; cabinet detail</strong><small>Horn geometry, grille pattern and wood-finish enclosure</small></p></div></article>
+              <article><img src="/images/product-showcase/audio/vintage-horn-detail-v1.webp" width="960" height="960" alt="Flower-shaped horn on a compact wood-finish speaker" loading="lazy" /><div><span>03</span><p><strong>Horn profile &amp; finish</strong><small>Horn shape, surface finish and cabinet proportion</small></p></div></article>
+              <article className="as-evidence-mini as-evidence-product"><img src="/images/product-showcase/audio/mini-black-product-v1.webp" width="1000" height="1000" alt="Compact unbranded black speaker showing its top light chamber and controls" loading="lazy" /><div><span>04</span><p><strong>Compact model view</strong><small>Form, control scale, light chamber and visible USB-C input</small></p></div></article>
             </div>
           </div>
         </section>
 
         <section className="as-section as-supplier" aria-labelledby="supplier-title">
-          <div className="as-supplier-heading"><div><p className="as-kicker">SUPPLIER DECISION PREVIEW</p><h2 id="supplier-title">Compare completeness before negotiating the headline.</h2></div><p>Illustrative status only. A real shortlist is built from the buyer brief and verified supplier responses.</p></div>
+          <div className="as-supplier-heading"><div><p className="as-kicker">SUPPLIER DECISION PREVIEW</p><h2 id="supplier-title">Compare specification completeness before negotiating price.</h2></div><p>Illustrative status only. A real shortlist is built from the buyer brief and verified supplier responses.</p></div>
           <div className="as-supplier-grid">
             {SUPPLIER_PREVIEW.map((supplier, index) => (
               <article key={supplier.name}>
@@ -361,7 +365,7 @@ export function AudioSpeakers() {
               </article>
             ))}
           </div>
-          <div className="as-supplier-rule"><ShieldCheck size={20} /><p><strong>A low quote with missing fields stays incomplete.</strong><span>DDNZ separates price, configuration, evidence status, exclusions and destination readiness before a commercial decision.</span></p></div>
+          <div className="as-supplier-rule"><ShieldCheck size={20} /><p><strong>A low quote with missing specifications is not yet comparable.</strong><span>DDNZ separates price, configuration, evidence status, exclusions and destination readiness before a commercial decision.</span></p></div>
         </section>
 
         <section className="as-section as-rfq" id="audio-rfq" aria-labelledby="audio-rfq-title">

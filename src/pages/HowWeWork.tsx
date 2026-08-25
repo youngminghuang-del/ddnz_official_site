@@ -546,9 +546,8 @@ export default function HowWeWork() {
       <SourcingHomepageNav />
 
       <main>
-        <header className="relative overflow-hidden border-b border-slate-200 bg-[#fffaf5]">
+        <header className="ddnz-ribbon-surface relative overflow-hidden border-b border-slate-200">
           <div className="absolute inset-x-0 top-0 h-1 bg-[linear-gradient(90deg,var(--ddnz-purple),#a34070_52%,var(--ddnz-coral))]" aria-hidden="true" />
-          <div className="pointer-events-none absolute -left-40 top-16 h-96 w-96 rounded-full bg-[var(--ddnz-purple)]/[0.07] blur-3xl" aria-hidden="true" />
           <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[1.03fr_.82fr] lg:items-center lg:px-8 lg:py-24">
             <div>
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-500">

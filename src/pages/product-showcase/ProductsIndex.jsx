@@ -23,6 +23,7 @@ import "./products-index.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const PRODUCT_CATEGORIES = [
   {
@@ -366,7 +367,6 @@ function CapabilityPanel({ category }) {
 }
 
 export function ProductsIndex() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [activeId, setActiveId] = useState(PRODUCT_CATEGORIES[0].id);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ category: PRODUCT_CATEGORIES[0].id, scope: "", destination: "", stage: "", notes: "" });
@@ -377,15 +377,6 @@ export function ProductsIndex() {
     document.title = "Product Sourcing Categories | DDNZ Global";
     return () => { document.title = previousTitle; };
   }, []);
-
-  useEffect(() => {
-    if (!menuOpen) return undefined;
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") setMenuOpen(false);
-    };
-    document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
-  }, [menuOpen]);
 
   const quoteUrl = useMemo(() => {
     const category = PRODUCT_CATEGORIES.find((item) => item.id === form.category);
@@ -419,7 +410,7 @@ export function ProductsIndex() {
     <div className="products-index-page" id="products-index-top">
       <ShowcaseSEO page="products" />
       <a className="px-skip-link" href="#categories">Skip to product categories</a>
-      <ProductsHeader open={menuOpen} onToggle={() => setMenuOpen((value) => !value)} onClose={() => setMenuOpen(false)} />
+      <SourcingHomepageNav />
 
       <main id="products-index-main">
         <section className="px-hero" aria-labelledby="products-index-title">

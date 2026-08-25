@@ -33,6 +33,7 @@ import "./refrigeration.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const A = "/images/product-showcase/refrigeration";
 
@@ -201,7 +202,6 @@ function EvidencePlaceholder({ index, title, copy }) {
 }
 
 export function RefrigerationEquipment() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [technical, setTechnical] = useState(false);
   const [evidenceKey, setEvidenceKey] = useState("ice");
   const [scoreOpen, setScoreOpen] = useState(false);
@@ -267,7 +267,7 @@ export function RefrigerationEquipment() {
   return (
     <div className="refrigeration-page">
       <ShowcaseSEO page="refrigeration" />
-      <Header open={menuOpen} setOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main>
         <section className="refrigeration-hero" aria-labelledby="refrigeration-title">

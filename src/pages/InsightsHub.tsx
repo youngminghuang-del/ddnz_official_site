@@ -123,9 +123,7 @@ export default function InsightsHub() {
         <SourcingHomepageNav />
 
         {/* Page Header */}
-        <section className="relative overflow-hidden border-b border-slate-200 bg-[#fffdf9] px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_15%,rgba(118,60,156,.12),transparent_34rem),radial-gradient(circle_at_88%_78%,rgba(201,79,47,.09),transparent_30rem)]" aria-hidden="true" />
-
+        <section className="ddnz-ribbon-surface relative overflow-hidden border-b border-slate-200 px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
           <div className="relative z-10 mx-auto max-w-7xl">
             <DdnzEyebrow>{t('insights.hubLabel')}</DdnzEyebrow>
             <h1 className="mt-5 max-w-[16ch] text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[1.03] tracking-[-0.05em] text-[var(--ddnz-ink)]">

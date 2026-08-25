@@ -28,6 +28,7 @@ import "./outdoor-products.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const RANGE_FAMILIES = [
   {
@@ -172,7 +173,6 @@ function Header({ open, setOpen }) {
 }
 
 export function OutdoorProducts() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [familyId, setFamilyId] = useState("coolers");
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({ family: "Mixed outdoor range", market: "", climate: "", useCase: "", stage: "", transport: "", notes: "" });
@@ -205,7 +205,7 @@ export function OutdoorProducts() {
     <div className="outdoor-page">
       <ShowcaseSEO page="outdoor" />
       <a className="od-skip-link" href="#outdoor-main">Skip to outdoor sourcing content</a>
-      <Header open={menuOpen} setOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main id="outdoor-main">
         <section className="od-hero" aria-labelledby="outdoor-title">

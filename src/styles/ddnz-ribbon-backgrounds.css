@@ -1,0 +1,71 @@
+:root {
+  --ddnz-ribbon-desktop: url('/images/brand/backgrounds/ddnz-ribbon-desktop-v1.webp');
+  --ddnz-ribbon-mobile: url('/images/brand/backgrounds/ddnz-ribbon-mobile-v1.webp');
+  --ddnz-ribbon-paper: #fffdfb;
+}
+
+/*
+ * Shared DDNZ background language.
+ * The raster assets preserve a quiet reading field on the left and keep the
+ * brand-colour intersections at the outer edge of conversion surfaces.
+ */
+.ddnz-ribbon-home-hero,
+header.ddnz-ribbon-surface,
+section.ddnz-ribbon-surface {
+  background-color: var(--ddnz-ribbon-paper);
+  background-image: var(--ddnz-ribbon-desktop);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.products-index-page .px-hero::before,
+.sourcing-services-page .ss-hero::before {
+  background-color: var(--ddnz-ribbon-paper);
+  background-image: var(--ddnz-ribbon-desktop);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.products-index-page .px-hero::after,
+.sourcing-services-page .ss-hero::after {
+  opacity: 0;
+}
+
+.kitchen-page .k-hero,
+.refrigeration-page .refrigeration-hero,
+.audio-speakers-page .as-hero,
+.mobile-page .mobile-hero,
+.outdoor-page .od-hero {
+  background-color: var(--ddnz-ribbon-paper);
+  background-image: var(--ddnz-ribbon-desktop);
+  background-repeat: no-repeat;
+  background-position: center top;
+  background-size: cover;
+}
+
+.mobile-page .mobile-hero::before {
+  opacity: 0;
+}
+
+@media (max-width: 900px) {
+  .ddnz-ribbon-home-hero,
+  header.ddnz-ribbon-surface,
+  section.ddnz-ribbon-surface,
+  .kitchen-page .k-hero,
+  .refrigeration-page .refrigeration-hero,
+  .audio-speakers-page .as-hero,
+  .mobile-page .mobile-hero,
+  .outdoor-page .od-hero {
+    background-image: var(--ddnz-ribbon-mobile);
+    background-position: right top;
+  }
+
+  .products-index-page .px-hero::before,
+  .sourcing-services-page .ss-hero::before {
+    background-image: var(--ddnz-ribbon-mobile);
+    background-position: right top;
+  }
+}
+

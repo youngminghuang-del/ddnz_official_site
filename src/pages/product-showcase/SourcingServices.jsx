@@ -25,6 +25,7 @@ import "./sourcing-services.css";
 import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
+import SourcingHomepageNav from "../../components/SourcingHomepageNav";
 
 const BUYER_PATHS = [
   {
@@ -227,7 +228,6 @@ function BuyerPath({ path, active, onSelect }) {
 }
 
 export function SourcingServices() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [buyerPath, setBuyerPath] = useState("retail");
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
@@ -245,15 +245,6 @@ export function SourcingServices() {
     document.title = "China Sourcing Services | DDNZ Global";
     return () => { document.title = previousTitle; };
   }, []);
-
-  useEffect(() => {
-    if (!menuOpen) return undefined;
-    const closeOnEscape = (event) => {
-      if (event.key === "Escape") setMenuOpen(false);
-    };
-    document.addEventListener("keydown", closeOnEscape);
-    return () => document.removeEventListener("keydown", closeOnEscape);
-  }, [menuOpen]);
 
   const quoteUrl = useMemo(() => {
     const params = new URLSearchParams({
@@ -294,7 +285,7 @@ export function SourcingServices() {
     <div className="sourcing-services-page" id="top">
       <ShowcaseSEO page="services" />
       <a className="ss-skip-link" href="#main">Skip to sourcing services</a>
-      <Header menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
+      <SourcingHomepageNav />
 
       <main id="main">
         <section className="ss-hero" aria-labelledby="ss-title">
