@@ -226,6 +226,11 @@ export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
     ad_personalization: targetingGranted ? 'granted' : 'denied',
   });
 
+  // Clarity Consent Mode keeps a limited, cookieless page-view signal when
+  // analytics storage is denied. The project-level Cookies switch must remain
+  // Off so this denied state cannot create first- or third-party cookies.
+  ensureClarity();
+
   if (!tracking) {
     window.clarity?.('consentv2', {
       ad_Storage: 'denied',
@@ -235,7 +240,6 @@ export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
   }
 
   ensureGoogleAnalytics();
-  ensureClarity();
   window.clarity?.('consentv2', {
     ad_Storage: targetingGranted ? 'granted' : 'denied',
     analytics_Storage: 'granted',

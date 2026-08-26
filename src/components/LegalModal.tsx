@@ -27,6 +27,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
       sections: [
         { title: 'Introduction', text: 'DDNZ Global values your privacy. We collect information (Name, Email, Phone, Company) solely to provide logistics consultancy and quotes.' },
         { title: 'Data Usage', text: 'Your data is never sold to third parties. We use industry-standard encryption to ensure your cargo details and contact info remain confidential.' },
+        { title: 'Analytics and cookies', text: 'Before you choose or after you decline, Microsoft Clarity may collect limited page and interaction data in no-consent mode without setting Clarity cookies; it uses a new identifier for each page view. Google Analytics and optional analytics cookies load only when you enable analytics. Targeting consent is separate. We do not send contact-form fields to analytics. You can change or withdraw your choice at any time through Cookie Settings; denied consent metadata is then sent to the providers and optional cookie storage stops.' },
         { title: 'Compliance', text: 'Our data handling complies with global business standards. For inquiries, contact manager@ddnzglobal.com.' }
       ]
     },
