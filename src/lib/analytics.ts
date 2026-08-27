@@ -4,12 +4,16 @@ import {
   isLocalAnalyticsHostname,
   resolveAnalyticsTestMode,
 } from './analyticsPolicy';
+import {
+  AnalyticsParams,
+  getSafeAnalyticsPageFields,
+  sanitizeAnalyticsParams,
+} from './analyticsPayload';
+import { createGtagCommandQueue } from './gtagQueue';
 
 const GA_MEASUREMENT_ID = 'G-TZD9QT4W8H';
 const CLARITY_PROJECT_ID = 'xswyojgnjd';
 
-type AnalyticsValue = string | number | boolean;
-type AnalyticsParams = Record<string, AnalyticsValue | null | undefined>;
 type ConsentPreferences = {
   tracking?: boolean;
   targeting?: boolean;
@@ -74,22 +78,6 @@ function isAnalyticsDisabled() {
   );
 }
 
-const SENSITIVE_PARAMETER_KEYS = new Set([
-  'name',
-  'first_name',
-  'last_name',
-  'fname',
-  'email',
-  'phone',
-  'telephone',
-  'whatsapp',
-  'message',
-  'notes',
-  'goods',
-  'cargo_description',
-  'address',
-]);
-
 function readStoredConsent(): ConsentPreferences {
   if (typeof window === 'undefined') return {};
 
@@ -135,27 +123,12 @@ function getPageContext(): PageContext {
   };
 }
 
-function sanitizeParams(params: AnalyticsParams = {}) {
-  return Object.fromEntries(
-    Object.entries(params).filter(([key, value]) => {
-      const normalizedKey = key.toLowerCase();
-      return (
-        value !== null &&
-        value !== undefined &&
-        !SENSITIVE_PARAMETER_KEYS.has(normalizedKey)
-      );
-    }),
-  ) as Record<string, AnalyticsValue>;
-}
-
 function ensureGtagQueue() {
   if (typeof window === 'undefined') return;
 
-  window.dataLayer = window.dataLayer || [];
+  const dataLayer = (window.dataLayer ||= []);
   if (!window.gtag) {
-    window.gtag = (...args: unknown[]) => {
-      window.dataLayer?.push(args);
-    };
+    window.gtag = createGtagCommandQueue(dataLayer);
   }
 
   if (!consentQueueInitialized) {
@@ -226,6 +199,11 @@ export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
     ad_personalization: targetingGranted ? 'granted' : 'denied',
   });
 
+  // Advanced Consent Mode keeps the Google tag loaded in denied states. The
+  // tag can then send limited cookieless measurement pings and switch to full
+  // analytics storage only after the visitor grants analytics consent.
+  ensureGoogleAnalytics();
+
   // Clarity Consent Mode keeps a limited, cookieless page-view signal when
   // analytics storage is denied. The project-level Cookies switch must remain
   // Off so this denied state cannot create first- or third-party cookies.
@@ -239,7 +217,6 @@ export function updateAnalyticsConsent(tracking: boolean, targeting = false) {
     return;
   }
 
-  ensureGoogleAnalytics();
   window.clarity?.('consentv2', {
     ad_Storage: targetingGranted ? 'granted' : 'denied',
     analytics_Storage: 'granted',
@@ -252,35 +229,55 @@ export function initializeAnalyticsConsent() {
 }
 
 export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
-  if (typeof window === 'undefined' || !analyticsConsentGranted) return;
+  if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
 
-  const eventParams = {
+  ensureGoogleAnalytics();
+
+  const eventParams = sanitizeAnalyticsParams({
+    ...getSafeAnalyticsPageFields(window.location.href),
     ...getPageContext(),
-    ...sanitizeParams(params),
-  };
-
-  window.gtag?.('event', eventName, eventParams);
-  window.clarity?.('event', eventName);
-}
-
-export function trackPageView() {
-  if (typeof window === 'undefined' || !analyticsConsentGranted) return;
-
-  const pageContext = getPageContext();
-  window.gtag?.('event', 'page_view', {
-    page_title: document.title,
-    page_location: window.location.href,
-    page_path: `${window.location.pathname}${window.location.search}`,
-    ...pageContext,
+    ...params,
+    consent_state: analyticsConsentGranted ? 'granted' : 'denied',
   });
 
-  window.clarity?.('set', 'page_language', pageContext.page_language);
+  window.gtag?.('event', eventName, eventParams);
+  if (analyticsConsentGranted) {
+    window.clarity?.('event', eventName);
+  }
+}
+
+export function trackPageView({ sendGooglePageView = true } = {}) {
+  if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
+
+  const pageContext = getPageContext();
+  ensureGoogleAnalytics();
+  const safePageFields = getSafeAnalyticsPageFields(window.location.href);
+  // Enhanced Measurement handles SPA history changes. Set a query-free page
+  // location before its page_view is dispatched so sourcing-brief fields in
+  // the URL cannot be copied into GA request metadata.
+  window.gtag?.('set', safePageFields);
+  if (sendGooglePageView) {
+    window.gtag?.('event', 'page_view', {
+      page_title: document.title,
+      ...safePageFields,
+      ...sanitizeAnalyticsParams(pageContext),
+      consent_state: analyticsConsentGranted ? 'granted' : 'denied',
+    });
+  }
+
+  if (analyticsConsentGranted) {
+    window.clarity?.('set', 'page_language', pageContext.page_language);
+  }
   if ('service' in pageContext) {
-    window.clarity?.('set', 'service', pageContext.service);
+    if (analyticsConsentGranted) {
+      window.clarity?.('set', 'service', pageContext.service);
+    }
     trackEvent('service_page_view', { service: pageContext.service });
   }
   if ('country' in pageContext) {
-    window.clarity?.('set', 'country', pageContext.country);
+    if (analyticsConsentGranted) {
+      window.clarity?.('set', 'country', pageContext.country);
+    }
     trackEvent('country_page_view', { country: pageContext.country });
   }
 }
