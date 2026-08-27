@@ -326,7 +326,7 @@ export default function SourcingCategoryPage({ kind }: { kind: CategoryKind }) {
           offerDescription:
             'Request a market-defined product sourcing, inspection, consolidation and export coordination plan.',
           url: `https://www.ddnzglobal.com${canonicalPath}`,
-          providerName: 'DDNZ Global Trade Co., Ltd',
+          providerName: 'DDNZ Global Trade Co., Ltd.',
         }}
       />
       <SourcingHomepageNav />

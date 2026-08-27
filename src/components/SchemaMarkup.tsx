@@ -44,13 +44,13 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         ...baseSchema,
         '@type': 'Organization',
         '@id': 'https://www.ddnzglobal.com/#organization',
-        'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+        'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
         'alternateName': ['DDNZ Global', '大递诺展'],
         'url': 'https://www.ddnzglobal.com',
         'logo': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
         'description': language === 'zh' 
           ? '大递诺展贸易有限公司为国际进口商协调中国采购、供应商验证、质量检验、集货与出口交付。'
-          : 'DDNZ Global Trade Co., Ltd coordinates China sourcing, supplier verification, quality inspection, consolidation and export delivery for international importers.',
+          : 'DDNZ Global Trade Co., Ltd. coordinates China sourcing, supplier verification, quality inspection, consolidation and export delivery for international importers.',
         'contactPoint': [
           {
             '@type': 'ContactPoint',
@@ -101,7 +101,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         }
       };
     } else if (type === 'Service') {
-      const isDDNZService = data.providerName === 'DDNZ Global Trade Co., Ltd';
+      const isDDNZService = data.providerName === 'DDNZ Global Trade Co., Ltd.';
       const defaultOfferUrl = isDDNZService
         ? 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Product%20Sourcing&source=structured_data'
         : 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Freight%20Only&source=structured_data';
@@ -113,7 +113,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'provider': {
           '@type': isDDNZService ? 'Organization' : 'LocalBusiness',
           'name': isDDNZService
-            ? (language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd')
+            ? (language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.')
             : (language === 'zh' ? '华正邦泰国际货运代理有限公司' : 'Heaven Born International Freight Co., Ltd'),
           'url': 'https://www.ddnzglobal.com/'
         },
@@ -176,7 +176,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'publisher': {
           '@type': 'Organization',
           '@id': 'https://www.ddnzglobal.com/#organization',
-          'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+          'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
           'url': 'https://www.ddnzglobal.com/',
           'logo': {
             '@type': 'ImageObject',

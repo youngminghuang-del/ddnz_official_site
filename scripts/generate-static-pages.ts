@@ -901,7 +901,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           provider: {
             '@type': isSourcingServicePage ? 'Organization' : 'LocalBusiness',
             name: isSourcingServicePage
-              ? 'DDNZ Global Trade Co., Ltd'
+              ? 'DDNZ Global Trade Co., Ltd.'
               : lang === 'zh-cn'
                 ? '华正邦泰国际货运代理有限公司'
                 : 'Heaven Born International Freight Co., Ltd',
@@ -947,7 +947,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
       publisher: {
         '@type': 'Organization',
         '@id': 'https://www.ddnzglobal.com/#organization',
-        name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+        name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
         url: 'https://www.ddnzglobal.com/',
         logo: {
           '@type': 'ImageObject',
@@ -995,7 +995,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           provider: {
             '@type': 'Organization',
             '@id': 'https://www.ddnzglobal.com/#organization',
-            name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+            name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
             url: 'https://www.ddnzglobal.com/',
           },
           areaServed: [
@@ -1034,7 +1034,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         {
           '@type': 'Organization',
           '@id': 'https://www.ddnzglobal.com/#organization',
-          name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+          name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
           alternateName: ['DDNZ Global', '大递诺展'],
           url: 'https://www.ddnzglobal.com/',
           logo: {
@@ -1094,7 +1094,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
       publisher: {
         '@type': 'Organization',
         '@id': 'https://www.ddnzglobal.com/#organization',
-        name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd',
+        name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
         url: 'https://www.ddnzglobal.com/',
         logo: {
           '@type': 'ImageObject',
