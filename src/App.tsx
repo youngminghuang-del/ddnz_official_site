@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
@@ -168,14 +168,17 @@ function HashScrollHandler() {
 
 function AnalyticsRouteTracker() {
   const location = useLocation();
+  const isInitialRoute = useRef(true);
 
   useEffect(() => {
     initializeAnalyticsConsent();
   }, []);
 
   useEffect(() => {
+    const sendGooglePageView = isInitialRoute.current;
+    isInitialRoute.current = false;
     const timer = window.setTimeout(() => {
-      trackPageView();
+      trackPageView({ sendGooglePageView });
     }, 0);
 
     return () => window.clearTimeout(timer);
