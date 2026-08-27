@@ -279,7 +279,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
         offerUrl: `https://www.ddnzglobal.com${quoteHref}`,
         offerDescription: copy.cta,
         url: `https://www.ddnzglobal.com${canonicalPath}`,
-        providerName: 'DDNZ Global Trade Co., Ltd',
+        providerName: 'DDNZ Global Trade Co., Ltd.',
       }} />
       <SchemaMarkup type="BreadcrumbList" data={{ items: [
         { name: shared.home, url: `https://www.ddnzglobal.com${localePrefix[language] || '/'}` },

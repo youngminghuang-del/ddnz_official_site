@@ -29,7 +29,7 @@ export const translations = {
       kicker: 'Global Logistics Excellence Since 1997',
       badge_forwarder: 'Top-Tier China Freight Forwarder',
       alibaba_badge: 'Sourcing from Alibaba? We Inspect & Consolidate',
-      alibaba_cta: 'Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd, coordinates supplier checks, inspections and export support alongside the Heaven Born freight team.',
+      alibaba_cta: 'Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd., coordinates supplier checks, inspections and export support alongside the Heaven Born freight team.',
       services: {
         sea: 'Sea Freight (FCL/LCL)',
         air: 'Air Freight',
@@ -1248,7 +1248,7 @@ localizedTranslations.ar = {
     ...translations.en.footer,
     slogan: 'خدمات شحن دولي موثوقة من الصين لسلاسل التوريد العالمية.', hq: 'مقر قوانغتشو', hk: 'مكتب هونغ كونغ', hours: 'دعم على مدار الساعة',
     compliance: 'الامتثال والشؤون القانونية', privacy: 'سياسة الخصوصية', terms: 'شروط الخدمة', experts: 'خبراء اللوجستيات وسلسلة التوريد',
-    rights: '© 2026 Heaven Born International Freight Co., Ltd. جميع الحقوق محفوظة. تقدم DDNZ Global Trade Co., Ltd خدمات الدعم التجاري.',
+    rights: '© 2026 Heaven Born International Freight Co., Ltd. جميع الحقوق محفوظة. تقدم DDNZ Global Trade Co., Ltd. خدمات الدعم التجاري.',
   },
 };
 

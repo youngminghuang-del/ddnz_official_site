@@ -536,7 +536,7 @@ export default function HowWeWork() {
         offerUrl: `https://www.ddnzglobal.com${quoteHref}`,
         offerDescription: copy.primaryCta,
         url: `https://www.ddnzglobal.com${canonicalPath}`,
-        providerName: 'DDNZ Global Trade Co., Ltd',
+        providerName: 'DDNZ Global Trade Co., Ltd.',
       }} />
       <SchemaMarkup type="BreadcrumbList" data={{ items: [
         { name: copy.home, url: `https://www.ddnzglobal.com${localePrefix[language] || '/'}` },
