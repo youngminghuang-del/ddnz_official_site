@@ -8,7 +8,7 @@ import { trackPageView, updateAnalyticsConsent } from '../lib/analytics';
 const cookieTextsBase = {
   en: {
     bannerTitle: "We value your privacy",
-    bannerDesc: "We use optional analytics cookies to understand site usage. Choose Accept All, Decline, or Cookie Settings; you can change your choice later.",
+    bannerDesc: "Before you choose or after you decline, Microsoft Clarity provides limited site statistics without cookies. Google Analytics and optional analytics cookies run only with your consent. You can change your choice later.",
     btnAcceptAll: "Accept All",
     btnDecline: "Decline",
     btnSettings: "Cookie Settings",
@@ -44,9 +44,9 @@ const cookieTextsBase = {
       },
       tracking: {
         title: "Tracking cookies",
-        p1: "These cookies are used to collect information to analyze the traffic to our website and how visitors are using our website.",
-        p2: "For example, these cookies may track things such as how long you spend on the website or the pages you visit which helps us to understand how we can improve our website for you.",
-        p3: "We do not send contact-form fields to analytics. Analytics providers may still process device and usage identifiers under their own policies."
+        p1: "Before you choose or after you decline, Microsoft Clarity runs in limited no-consent mode. It may receive page and interaction data, but it uses a new identifier for each page view and does not set Clarity cookies.",
+        p2: "If you enable analytics, Google Analytics and Microsoft Clarity may use analytics cookies to measure visits across pages and sessions. Targeting consent remains a separate choice.",
+        p3: "We do not send contact-form fields to analytics. You can withdraw consent at any time; we then send denied consent metadata and the providers stop optional cookie storage."
       },
       targeting: {
         title: "Targeting and advertising cookies",
@@ -62,7 +62,7 @@ const cookieTextsBase = {
   },
   zh: {
     bannerTitle: "我们重视您的隐私",
-    bannerDesc: "我们仅在您同意后使用可选统计 Cookie 来了解网站使用情况。您可选择全部接受、拒绝或自定义，并可随时更改。",
+    bannerDesc: "在您作出选择前或拒绝后，Microsoft Clarity 会以无 Cookie 模式提供有限的网站统计。Google Analytics 与可选统计 Cookie 仅在您同意后启用；您可随时更改选择。",
     btnAcceptAll: "全部接受",
     btnDecline: "拒绝",
     btnSettings: "Cookie 设置",
@@ -98,9 +98,9 @@ const cookieTextsBase = {
       },
       tracking: {
         title: "追踪性 Cookie",
-        p1: "这些 Cookie 用于收集信息以分析网站流量及访客使用网站的情况。",
-        p2: "例如，这些 Cookie 可以追踪您在网站上停留的时间或访问的页面，这有助于我们了解如何为您改进网站。",
-        p3: "我们不会把联系表单字段发送给统计工具；统计服务商仍可能依其政策处理设备与使用标识。"
+        p1: "在您作出选择前或拒绝后，Microsoft Clarity 会在有限的无同意模式下运行。它可能接收页面与交互数据，但每次页面浏览都会使用新的标识，并且不会设置 Clarity Cookie。",
+        p2: "如果您启用统计，Google Analytics 与 Microsoft Clarity 可能使用统计 Cookie 来衡量跨页面和跨会话的访问。定向同意仍是单独的选择。",
+        p3: "我们不会把联系表单字段发送给统计工具。您可随时撤回同意；届时我们会发送拒绝同意的状态信息，服务商将停止可选 Cookie 存储。"
       },
       targeting: {
         title: "定向与广告 Cookie",
@@ -116,7 +116,7 @@ const cookieTextsBase = {
   },
   ru: {
     bannerTitle: "Мы ценим вашу конфиденциальность",
-    bannerDesc: "Мы используем необязательные аналитические cookie только с вашего согласия, чтобы понимать, как используется сайт. Вы можете принять, отклонить или настроить их и позднее изменить выбор.",
+    bannerDesc: "До вашего выбора или после отказа Microsoft Clarity предоставляет ограниченную статистику сайта без cookie. Google Analytics и необязательные аналитические cookie работают только с вашего согласия; выбор можно изменить позднее.",
     btnAcceptAll: "Принять все",
     btnDecline: "Отклонить",
     btnSettings: "Настройки файлов cookie",
@@ -152,9 +152,9 @@ const cookieTextsBase = {
       },
       tracking: {
         title: "Отслеживающие файлы cookie",
-        p1: "Эти файлы cookie используются для сбора информации для анализа трафика на нашем веб-сайте и того, как посетители используют наш сайт.",
-        p2: "Например, эти файлы cookie могут отслеживать такие параметры, как время, проведенное на сайте, или посещенные страницы, что помогает нам понять, как улучшить наш сайт для вас.",
-        p3: "Информация, собранная с помощью этих файлов cookie, не идентифицирует конкретного посетителя."
+        p1: "До вашего выбора или после отказа Microsoft Clarity работает в ограниченном режиме без согласия. Он может получать данные о страницах и взаимодействиях, но использует новый идентификатор для каждого просмотра страницы и не устанавливает cookie Clarity.",
+        p2: "Если вы включите аналитику, Google Analytics и Microsoft Clarity могут использовать аналитические cookie для измерения посещений между страницами и сеансами. Согласие на таргетинг остается отдельным выбором.",
+        p3: "Мы не передаем поля контактных форм в аналитику. Вы можете отозвать согласие в любое время; после этого мы отправим статус отказа, и поставщики прекратят хранение необязательных cookie."
       },
       targeting: {
         title: "Рекламные файлы cookie",
@@ -170,7 +170,7 @@ const cookieTextsBase = {
   },
   fr: {
     bannerTitle: "Nous apprécions votre vie privée",
-    bannerDesc: "Nous utilisons des cookies analytiques facultatifs uniquement avec votre accord afin de comprendre l’utilisation du site. Vous pouvez accepter, refuser ou personnaliser votre choix, puis le modifier ultérieurement.",
+    bannerDesc: "Avant votre choix ou après un refus, Microsoft Clarity fournit des statistiques limitées sans cookies. Google Analytics et les cookies analytiques facultatifs ne fonctionnent qu’avec votre accord, que vous pouvez modifier.",
     btnAcceptAll: "Tout accepter",
     btnDecline: "Refuser",
     btnSettings: "Paramètres des cookies",
@@ -206,9 +206,9 @@ const cookieTextsBase = {
       },
       tracking: {
         title: "Cookies de suivi",
-        p1: "Ces cookies sont utilisés pour collecter des informations afin d'analyser le trafic sur notre site et la façon dont les visiteurs l'utilisent.",
-        p2: "Par exemple, ces cookies peuvent suivre le temps passé ou les pages visitées, ce qui nous aide à comprendre comment améliorer notre site.",
-        p3: "Les informations collectées ne permettent pas d'identifier un visiteur individuel."
+        p1: "Avant votre choix ou après un refus, Microsoft Clarity fonctionne en mode limité sans consentement. Il peut recevoir des données de page et d’interaction, mais utilise un nouvel identifiant à chaque page vue et ne dépose aucun cookie Clarity.",
+        p2: "Si vous activez l’analyse, Google Analytics et Microsoft Clarity peuvent utiliser des cookies analytiques pour mesurer les visites entre les pages et les sessions. Le consentement au ciblage reste un choix distinct.",
+        p3: "Nous n’envoyons aucun champ des formulaires de contact aux outils d’analyse. Vous pouvez retirer votre consentement à tout moment ; nous transmettons alors un statut de refus et les fournisseurs cessent le stockage facultatif de cookies."
       },
       targeting: {
         title: "Cookies de ciblage et de publicité",
@@ -229,7 +229,7 @@ const cookieTexts = {
   pt: {
     ...cookieTextsBase.en,
     bannerTitle: 'Valorizamos sua privacidade',
-    bannerDesc: 'Usamos cookies opcionais de análise para entender o uso do site. Você pode aceitar, recusar ou ajustar suas preferências.',
+    bannerDesc: 'Antes da sua escolha ou após a recusa, o Microsoft Clarity fornece estatísticas limitadas sem cookies. O Google Analytics e os cookies opcionais de análise funcionam somente com seu consentimento, que pode ser alterado depois.',
     btnAcceptAll: 'Aceitar todos',
     btnDecline: 'Recusar',
     btnSettings: 'Configurações de cookies',
@@ -244,7 +244,7 @@ const cookieTexts = {
       privacy: { title: 'Sua privacidade é importante', p1: 'Cookies são pequenos arquivos armazenados no dispositivo. Usamos cookies necessários para operar o site e, com sua autorização, cookies opcionais para analisar e melhorar a experiência.', p2: 'Você pode mudar suas preferências, recusar categorias opcionais ou apagar cookies armazenados. A remoção de cookies necessários pode afetar algumas funções.' },
       necessary: { title: 'Cookies estritamente necessários', p1: 'Esses cookies são essenciais para prestar os serviços e habilitar funções básicas do site.', p2: 'Sem eles, algumas funções não podem ser oferecidas corretamente.' },
       functionality: { title: 'Cookies de funcionalidade', p1: 'Esses cookies lembram escolhas feitas durante o uso do site.', p2: 'Por exemplo, podem manter sua preferência de idioma.' },
-      tracking: { title: 'Cookies de análise', p1: 'Esses cookies ajudam a analisar o tráfego e como os visitantes usam o site.', p2: 'Podem registrar duração da visita e páginas acessadas para orientar melhorias.', p3: 'Não enviamos campos de formulários de contato às ferramentas de análise. Os provedores podem tratar identificadores técnicos conforme suas políticas.' },
+      tracking: { title: 'Cookies de análise', p1: 'Antes da sua escolha ou após a recusa, o Microsoft Clarity funciona em modo limitado sem consentimento. Ele pode receber dados de páginas e interações, mas usa um novo identificador para cada visualização e não define cookies do Clarity.', p2: 'Se você ativar a análise, o Google Analytics e o Microsoft Clarity poderão usar cookies analíticos para medir visitas entre páginas e sessões. O consentimento para segmentação continua sendo uma escolha separada.', p3: 'Não enviamos campos de formulários de contato às ferramentas de análise. Você pode retirar o consentimento a qualquer momento; então enviamos o estado de recusa e os provedores deixam de armazenar cookies opcionais.' },
       targeting: { title: 'Cookies de publicidade', p1: 'Esses cookies podem ajudar a apresentar publicidade mais relevante conforme a navegação.', p2: 'Fornecedores de conteúdo ou publicidade podem combinar dados do site com informações coletadas em suas redes.', p3: 'Ao desativá-los, você ainda poderá ver anúncios, porém menos relevantes.' },
       more: { title: 'Mais informações', p1: 'Para dúvidas sobre cookies e suas escolhas, entre em contato conosco.' },
     },
@@ -252,7 +252,7 @@ const cookieTexts = {
   tr: {
     ...cookieTextsBase.en,
     bannerTitle: 'Gizliliğinize önem veriyoruz',
-    bannerDesc: 'Site kullanımını anlamak için isteğe bağlı analiz çerezleri kullanıyoruz. Kabul edebilir, reddedebilir veya tercihlerinizi ayarlayabilirsiniz.',
+    bannerDesc: 'Seçiminizden önce veya reddetmenizden sonra Microsoft Clarity, çerez kullanmadan sınırlı site istatistikleri sağlar. Google Analytics ve isteğe bağlı analiz çerezleri yalnızca onayınızla çalışır; seçiminizi daha sonra değiştirebilirsiniz.',
     btnAcceptAll: 'Tümünü kabul et',
     btnDecline: 'Reddet',
     btnSettings: 'Çerez ayarları',
@@ -267,7 +267,7 @@ const cookieTexts = {
       privacy: { title: 'Gizliliğiniz bizim için önemlidir', p1: 'Çerezler cihazınızda saklanan küçük dosyalardır. Siteyi çalıştırmak için gerekli çerezleri, onayınızla da deneyimi analiz edip geliştirmek için isteğe bağlı çerezleri kullanırız.', p2: 'Tercihlerinizi değiştirebilir, isteğe bağlı kategorileri reddedebilir veya saklanan çerezleri silebilirsiniz. Gerekli çerezlerin silinmesi bazı işlevleri etkileyebilir.' },
       necessary: { title: 'Kesinlikle gerekli çerezler', p1: 'Bu çerezler site hizmetlerini sağlamak ve temel işlevleri çalıştırmak için gereklidir.', p2: 'Bunlar olmadan bazı hizmetler doğru şekilde sunulamaz.' },
       functionality: { title: 'İşlevsel çerezler', p1: 'Bu çerezler siteyi kullanırken yaptığınız seçimleri hatırlar.', p2: 'Örneğin dil tercihinizi saklayabilir.' },
-      tracking: { title: 'Analiz çerezleri', p1: 'Bu çerezler site trafiğini ve ziyaretçilerin siteyi nasıl kullandığını analiz etmeye yardımcı olur.', p2: 'Deneyimi geliştirmek için ziyaret süresi ve görüntülenen sayfalar gibi bilgileri kaydedebilir.', p3: 'İletişim formu alanlarını analiz araçlarına göndermeyiz. Sağlayıcılar teknik tanımlayıcıları kendi politikalarına göre işleyebilir.' },
+      tracking: { title: 'Analiz çerezleri', p1: 'Seçiminizden önce veya reddetmenizden sonra Microsoft Clarity sınırlı, onaysız modda çalışır. Sayfa ve etkileşim verilerini alabilir; ancak her sayfa görüntülemesinde yeni bir tanımlayıcı kullanır ve Clarity çerezi yerleştirmez.', p2: 'Analizi etkinleştirirseniz Google Analytics ve Microsoft Clarity, sayfalar ve oturumlar arasındaki ziyaretleri ölçmek için analiz çerezleri kullanabilir. Hedefleme onayı ayrı bir seçim olarak kalır.', p3: 'İletişim formu alanlarını analiz araçlarına göndermeyiz. Onayınızı istediğiniz zaman geri çekebilirsiniz; ardından ret durumu gönderilir ve sağlayıcılar isteğe bağlı çerez depolamayı durdurur.' },
       targeting: { title: 'Reklam çerezleri', p1: 'Bu çerezler gezinme davranışınıza göre daha ilgili reklamlar gösterilmesine yardımcı olabilir.', p2: 'İçerik veya reklam sağlayıcıları site verilerini kendi ağlarında topladıkları bilgilerle birleştirebilir.', p3: 'Bunları kapatırsanız reklam görmeye devam edebilirsiniz ancak daha az ilgili olabilir.' },
       more: { title: 'Daha fazla bilgi', p1: 'Çerez politikamız ve seçimleriniz hakkında sorularınız için bize ulaşın.' },
     },
@@ -277,7 +277,7 @@ const cookieTexts = {
 const cookieTextMap = cookieTexts as Record<string, any>;
 cookieTextMap.es = {
   ...cookieTexts.en,
-  bannerTitle: 'Valoramos su privacidad', bannerDesc: 'Usamos cookies analíticas opcionales solo con su consentimiento para entender el uso del sitio. Puede aceptar, rechazar o personalizar su elección y cambiarla más adelante.',
+  bannerTitle: 'Valoramos su privacidad', bannerDesc: 'Antes de elegir o después de rechazar, Microsoft Clarity ofrece estadísticas limitadas sin cookies. Google Analytics y las cookies analíticas opcionales solo funcionan con su consentimiento, que puede cambiar después.',
   btnAcceptAll: 'Aceptar todas', btnDecline: 'Rechazar', btnSettings: 'Configuración de cookies', modalTitle: 'Centro de preferencias de cookies', consentBy: 'Controles de cookies de DDNZ Global', btnSave: 'Guardar preferencias', activeLabel: 'Activo', inactiveLabel: 'Inactivo', alwaysActive: 'Siempre activo',
   tabs: { privacy: 'Su privacidad', necessary: 'Cookies estrictamente necesarias', functionality: 'Cookies de funcionalidad', tracking: 'Cookies de seguimiento', targeting: 'Cookies de publicidad', more: 'Más información' },
   content: {
@@ -298,9 +298,9 @@ cookieTextMap.es = {
     },
     tracking: {
       title: 'Cookies de seguimiento',
-      p1: 'Estas cookies recopilan información para analizar el tráfico y la forma en que los visitantes utilizan el sitio.',
-      p2: 'Pueden registrar la duración de la visita o las páginas consultadas para ayudarnos a mejorar la experiencia.',
-      p3: 'No enviamos campos de los formularios de contacto a las herramientas analíticas. Los proveedores pueden procesar identificadores técnicos y de uso conforme a sus propias políticas.'
+      p1: 'Antes de elegir o después de rechazar, Microsoft Clarity funciona en un modo limitado sin consentimiento. Puede recibir datos de páginas e interacciones, pero usa un identificador nuevo para cada vista de página y no instala cookies de Clarity.',
+      p2: 'Si activa las estadísticas, Google Analytics y Microsoft Clarity pueden usar cookies analíticas para medir visitas entre páginas y sesiones. El consentimiento de segmentación sigue siendo una elección independiente.',
+      p3: 'No enviamos campos de formularios de contacto a las herramientas analíticas. Puede retirar el consentimiento en cualquier momento; entonces enviamos el estado de rechazo y los proveedores dejan de almacenar cookies opcionales.'
     },
     targeting: {
       title: 'Cookies de publicidad',
@@ -316,7 +316,7 @@ cookieTextMap.es = {
 };
 cookieTextMap.ar = {
   ...cookieTexts.en,
-  bannerTitle: 'نحن نقدر خصوصيتكم', bannerDesc: 'نستخدم ملفات تحليل اختيارية فقط بعد موافقتكم لفهم استخدام الموقع. يمكنكم القبول أو الرفض أو تخصيص الاختيار وتغييره لاحقاً.',
+  bannerTitle: 'نحن نقدر خصوصيتكم', bannerDesc: 'قبل اختياركم أو بعد الرفض، يوفر Microsoft Clarity إحصاءات محدودة للموقع من دون ملفات ارتباط. ولا يعمل Google Analytics وملفات التحليل الاختيارية إلا بموافقتكم، ويمكنكم تغيير اختياركم لاحقاً.',
   btnAcceptAll: 'قبول الكل', btnDecline: 'رفض', btnSettings: 'إعدادات ملفات الارتباط', modalTitle: 'مركز تفضيلات ملفات الارتباط', consentBy: 'عناصر تحكم ملفات الارتباط لدى DDNZ Global', btnSave: 'حفظ التفضيلات', activeLabel: 'نشط', inactiveLabel: 'غير نشط', alwaysActive: 'نشط دائماً',
   tabs: { privacy: 'خصوصيتكم', necessary: 'ملفات الارتباط الضرورية', functionality: 'ملفات الارتباط الوظيفية', tracking: 'ملفات التتبع', targeting: 'ملفات الإعلان', more: 'معلومات إضافية' },
   content: {
@@ -337,9 +337,9 @@ cookieTextMap.ar = {
     },
     tracking: {
       title: 'ملفات التتبع',
-      p1: 'تجمع هذه الملفات معلومات لتحليل حركة الموقع وكيفية استخدام الزوار له.',
-      p2: 'قد تسجل مدة الزيارة أو الصفحات التي تمت مشاهدتها لمساعدتنا على تحسين التجربة.',
-      p3: 'لا نرسل حقول نماذج التواصل إلى أدوات التحليل. وقد يعالج مزودو التحليلات معرفات تقنية ومعرفات استخدام وفق سياساتهم.'
+      p1: 'قبل اختياركم أو بعد الرفض، يعمل Microsoft Clarity في وضع محدود من دون موافقة. وقد يتلقى بيانات الصفحات والتفاعل، لكنه يستخدم معرفاً جديداً لكل مشاهدة صفحة ولا يضع ملفات ارتباط خاصة بـ Clarity.',
+      p2: 'إذا فعّلتم التحليلات، فقد يستخدم Google Analytics وMicrosoft Clarity ملفات ارتباط تحليلية لقياس الزيارات عبر الصفحات والجلسات. وتظل موافقة الاستهداف خياراً منفصلاً.',
+      p3: 'لا نرسل حقول نماذج التواصل إلى أدوات التحليل. ويمكنكم سحب الموافقة في أي وقت؛ وعندها نرسل حالة الرفض ويتوقف المزودون عن تخزين ملفات الارتباط الاختيارية.'
     },
     targeting: {
       title: 'ملفات الإعلان',
