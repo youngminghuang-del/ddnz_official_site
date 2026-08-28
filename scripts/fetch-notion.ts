@@ -32,9 +32,11 @@ type RenderContext = {
 };
 
 type LocalArticleAsset = {
+  type?: "image" | "video";
   src: string;
   alt: string;
   caption?: string;
+  poster?: string;
 };
 
 type LocalArticleAssets = {
@@ -71,7 +73,10 @@ function loadLocalArticleAssets(slug: string): LocalArticleAssets | null {
     const parsed = JSON.parse(fs.readFileSync(manifestPath, "utf8")) as LocalArticleAssets;
     const allowedPrefix = `/images/posts/${safeSlug}/`;
     const validAsset = (asset?: LocalArticleAsset) =>
-      !!asset && asset.src.startsWith(allowedPrefix) && !!asset.alt.trim();
+      !!asset &&
+      asset.src.startsWith(allowedPrefix) &&
+      !!asset.alt.trim() &&
+      (asset.type !== "video" || !asset.poster || asset.poster.startsWith(allowedPrefix));
     const cover = validAsset(parsed.cover) ? parsed.cover : undefined;
     const inline = (parsed.inline || []).filter(
       (asset) => validAsset(asset) && !!asset.beforeHeading?.trim(),
@@ -83,9 +88,16 @@ function loadLocalArticleAssets(slug: string): LocalArticleAssets | null {
 }
 
 function localArticleFigure(asset: LocalArticleAsset) {
-  return `<figure class="article-figure"><img src="${escapeAttribute(asset.src)}" alt="${escapeAttribute(
-    asset.alt,
-  )}" loading="lazy" decoding="async" />${
+  const media = asset.type === "video"
+    ? `<video class="article-video" controls preload="metadata" playsinline aria-label="${escapeAttribute(
+        asset.alt,
+      )}"${asset.poster ? ` poster="${escapeAttribute(asset.poster)}"` : ""}><source src="${escapeAttribute(
+        asset.src,
+      )}" type="video/mp4" />Your browser does not support embedded video.</video>`
+    : `<img src="${escapeAttribute(asset.src)}" alt="${escapeAttribute(
+        asset.alt,
+      )}" loading="lazy" decoding="async" />`;
+  return `<figure class="article-figure">${media}${
     asset.caption ? `<figcaption>${escapeHtml(asset.caption)}</figcaption>` : ""
   }</figure>`;
 }

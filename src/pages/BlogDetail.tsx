@@ -405,7 +405,8 @@ export default function BlogDetail() {
         .blog-content blockquote { margin: 2rem 0; border-left: 4px solid #0b4f8a; background: #eff6ff; padding: 1.25rem 1.5rem; border-radius: 0 .8rem .8rem 0; }
         .article-callout { display: flex; gap: .9rem; margin: 2rem 0; padding: 1.25rem; border: 1px solid #fde68a; border-radius: 1rem; background: #fffbeb; }
         .article-figure { margin: 2.2rem 0; }
-        .article-figure img { width: 100%; height: auto; border-radius: 1rem; border: 1px solid #e2e8f0; }
+        .article-figure img, .article-figure video { width: 100%; height: auto; border-radius: 1rem; border: 1px solid #e2e8f0; background: #020617; }
+        .article-figure video { display: block; max-height: 720px; object-fit: contain; }
         .article-figure figcaption { margin-top: .65rem; color: #64748b; font-size: .875rem; line-height: 1.5; }
         .article-table-wrap { overflow-x: auto; margin: 2rem 0; border: 1px solid #e2e8f0; border-radius: .9rem; }
         .blog-content table { width: 100%; min-width: 620px; border-collapse: collapse; background: white; }
