@@ -1,0 +1,35 @@
+{
+  "cover": {
+    "src": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/magsafe-dealer-checklist-cover.webp",
+    "alt": "Türkiye dealer checking a MagSafe-compatible phone case against a metal surface",
+    "caption": "A dealer verification guide for magnet hold, model fit, charging heat and retail-order control."
+  },
+  "inline": [
+    {
+      "beforeHeading": "Start with a dealer specification, not a catalogue image",
+      "src": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/magsafe-sku-product-verification.webp",
+      "alt": "Three supplier-authorized views of a MagSafe-compatible phone case showing its built-in magnet ring, product finish and microfiber lining",
+      "caption": "Use the three views to confirm the built-in magnet-ring layout, intended accessory alignment, exact model and colour, lining, cut-outs and button fit before production. Supplier-authorized visuals; bind approval to the quoted SKU."
+    },
+    {
+      "type": "video",
+      "beforeHeading": "Magnet hold: film the scene, then define the test",
+      "src": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/magsafe-metal-surface-scene-demo.mp4",
+      "poster": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/magsafe-metal-surface-scene-poster.webp",
+      "alt": "Supplier scene demonstration of the article SKU holding a phone against a refrigerator door",
+      "caption": "Supplier scene demonstration using the article SKU; this is not a calibrated pull-force test."
+    },
+    {
+      "beforeHeading": "Charging heat: use thermal images to ask better questions",
+      "src": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/supplier-thermal-test-planning.webp",
+      "alt": "Supplier-submitted thermal camera frames showing heat around phone-case charging areas",
+      "caption": "Supplier-submitted thermal frames used for test planning. Device, charger, ambient conditions and test duration were not standardized."
+    },
+    {
+      "beforeHeading": "A practical approval matrix for Türkiye importers",
+      "src": "/images/posts/magsafe-phone-cases-china-turkiye-dealer-verification/magnetic-ring-dealer-verification.webp",
+      "alt": "Dealer checklist beside a supplier-authorized magnetic-ring phone case SKU",
+      "caption": "Verify ring construction, fixing, model-specific alignment and the sample test record before ordering."
+    }
+  ]
+}
