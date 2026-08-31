@@ -30,10 +30,35 @@ export function articleLocalePrefix(language?: string) {
   return locale === 'en' ? '' : `/${locale}`;
 }
 
+/**
+ * GitHub Pages serves every directory route at its trailing-slash URL. Keep
+ * internal links on that final 200 URL so crawlers and visitors do not have to
+ * pass through a redirect. Query strings and fragments are preserved.
+ */
+export function canonicalSitePath(path = '/') {
+  const match = path.match(/^([^?#]*)([?#].*)?$/);
+  const rawPathname = match?.[1] || '/';
+  const suffix = match?.[2] || '';
+  const pathname = `/${rawPathname}`
+    .replace(/\/{2,}/g, '/')
+    .replace(/\/+$/g, '') || '/';
+  return `${pathname === '/' ? '/' : `${pathname}/`}${suffix}`;
+}
+
+/** Return a canonical, same-origin DDNZ URL without query or fragment data. */
+export function canonicalSiteUrl(pathOrUrl = '/') {
+  if (/^https?:\/\//i.test(pathOrUrl)) {
+    const url = new URL(pathOrUrl);
+    if (url.origin !== ARTICLE_SITE_URL) return pathOrUrl;
+    return `${ARTICLE_SITE_URL}${canonicalSitePath(url.pathname)}`;
+  }
+  return `${ARTICLE_SITE_URL}${canonicalSitePath(pathOrUrl.split(/[?#]/, 1)[0])}`;
+}
+
 export function localizedSitePath(language: string | undefined, relativePath = '') {
   const cleanPath = relativePath.replace(/^\/+|\/+$/g, '');
   const prefix = articleLocalePrefix(language);
-  return cleanPath ? `${prefix}/${cleanPath}` : prefix || '/';
+  return canonicalSitePath(cleanPath ? `${prefix}/${cleanPath}` : prefix || '/');
 }
 
 export function localizedSiteUrl(language: string | undefined, relativePath = '') {

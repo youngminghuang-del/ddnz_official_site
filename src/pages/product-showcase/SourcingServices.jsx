@@ -128,7 +128,7 @@ function Header({ menuOpen, setMenuOpen }) {
     <header className="ss-header">
       <Brand />
       <nav className="ss-desktop-nav" aria-label="Primary navigation">
-        <a href="/products">Product Sourcing</a>
+        <a href="/products/">Product Sourcing</a>
         <a className="active" href="#top">Sourcing Services</a>
         <a href="#marketplace">Why Control Matters</a>
         <a href="#control">How We Work</a>
@@ -139,7 +139,7 @@ function Header({ menuOpen, setMenuOpen }) {
       </button>
       {menuOpen && (
         <nav className="ss-mobile-nav" id="sourcing-services-mobile-nav" aria-label="Mobile navigation">
-          <a href="/products" onClick={close}>Product sourcing</a>
+          <a href="/products/" onClick={close}>Product sourcing</a>
           <a href="#paths" onClick={close}>Choose a sourcing path</a>
           <a href="#marketplace" onClick={close}>Why control matters</a>
           <a href="#control" onClick={close}>How we work</a>
@@ -261,7 +261,7 @@ export function SourcingServices() {
       freightPreference: form.freight,
       source: "sourcing_services",
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [buyerPath, form]);
 
   const scrollTo = (id) => {
@@ -325,7 +325,7 @@ export function SourcingServices() {
           <aside className="ss-retail-example">
             <ShoppingBag size={23} />
             <div><small>REPRESENTATIVE USE CASE</small><strong>Phone cases &amp; screen protectors</strong><p>Multiple styles, lower units per model, fast trend changes and repeat air replenishment can matter more than one large-volume SKU.</p></div>
-            <a href="/sourcing/mobile-accessories-from-china">See the product control model <ArrowRight size={16} /></a>
+            <a href="/sourcing/mobile-accessories-from-china/">See the product control model <ArrowRight size={16} /></a>
           </aside>
         </section>
 

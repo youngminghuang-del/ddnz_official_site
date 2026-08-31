@@ -11,17 +11,25 @@ const expectedLocalizedFaqQuestion = {
   tr: 'Kapora ödemeden önce güvenilir bir Çin tedarikçisini nasıl bulup doğrularım?',
 };
 const expectedShowcaseRedirects = new Map([
-  ['commercial-kitchen', '/sourcing/commercial-kitchen-equipment-from-china'],
-  ['audio-speakers', '/sourcing/audio-speakers-from-china'],
-  ['mobile-accessories', '/sourcing/mobile-accessories-from-china'],
-  ['outdoor-products', '/sourcing/outdoor-products-from-china'],
+  ['commercial-kitchen', '/sourcing/commercial-kitchen-equipment-from-china/'],
+  ['audio-speakers', '/sourcing/audio-speakers-from-china/'],
+  ['mobile-accessories', '/sourcing/mobile-accessories-from-china/'],
+  ['outdoor-products', '/sourcing/outdoor-products-from-china/'],
 ]);
+const requiredStaticH1Paths = new Set(['/fr/', '/ru/insights/']);
 
 const failures = [];
 const notices = [];
 
 const read = (filePath) => fs.readFileSync(filePath, 'utf8');
 const matchAll = (source, pattern) => [...source.matchAll(pattern)].map((match) => match[1]);
+const isFinalIndexableUrl = (absoluteUrl) => {
+  const url = new URL(absoluteUrl);
+  return url.origin === 'https://www.ddnzglobal.com'
+    && !url.search
+    && !url.hash
+    && (url.pathname === '/' || url.pathname.endsWith('/'));
+};
 
 if (!fs.existsSync(sitemapPath)) {
   throw new Error('dist/sitemap.xml is missing. Run the production build first.');
@@ -29,9 +37,12 @@ if (!fs.existsSync(sitemapPath)) {
 
 const sitemap = read(sitemapPath);
 const urls = matchAll(sitemap, /<loc>([^<]+)<\/loc>/g);
+const sitemapAlternates = matchAll(sitemap, /<xhtml:link\s+[^>]*href="([^"]+)"\s*\/>/g);
 const duplicateUrls = urls.filter((url, index) => urls.indexOf(url) !== index);
 
 if (duplicateUrls.length) failures.push(`Duplicate sitemap URLs: ${[...new Set(duplicateUrls)].join(', ')}`);
+urls.filter((url) => !isFinalIndexableUrl(url)).forEach((url) => failures.push(`Sitemap URL is not a final trailing-slash URL: ${url}`));
+sitemapAlternates.filter((url) => !isFinalIndexableUrl(url)).forEach((url) => failures.push(`Sitemap hreflang is not a final trailing-slash URL: ${url}`));
 
 for (const absoluteUrl of urls) {
   const url = new URL(absoluteUrl);
@@ -47,6 +58,9 @@ for (const absoluteUrl of urls) {
   if (canonicals.length !== 1) failures.push(`${url.pathname}: expected 1 canonical, found ${canonicals.length}`);
   if (canonicals[0] && canonicals[0] !== absoluteUrl) {
     failures.push(`${url.pathname}: canonical ${canonicals[0]} does not match sitemap ${absoluteUrl}`);
+  }
+  if (canonicals[0] && !isFinalIndexableUrl(canonicals[0])) {
+    failures.push(`${url.pathname}: canonical is not a final trailing-slash URL`);
   }
 
   const languageSegments = relative.split('/');
@@ -69,6 +83,14 @@ for (const absoluteUrl of urls) {
   }
   if (!alternates.some((alternate) => alternate.href === absoluteUrl)) {
     failures.push(`${url.pathname}: hreflang cluster is missing the self-referencing URL`);
+  }
+  alternates
+    .filter((alternate) => !isFinalIndexableUrl(alternate.href))
+    .forEach((alternate) => failures.push(`${url.pathname}: hreflang ${alternate.language} is not a final trailing-slash URL`));
+
+  if (requiredStaticH1Paths.has(url.pathname)) {
+    const h1Count = (html.match(/<h1\b/gi) || []).length;
+    if (h1Count !== 1) failures.push(`${url.pathname}: expected exactly 1 static H1, found ${h1Count}`);
   }
 
   const descriptions = matchAll(html, /<meta\s+name="description"\s+content="([^"]*)"\s*\/?>(?:\s*)/gi);

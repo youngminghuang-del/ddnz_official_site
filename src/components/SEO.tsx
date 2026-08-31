@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { canonicalSiteUrl, localizedSiteUrl } from '../lib/notionArticleRouting';
 
 interface SEOProps {
   title?: string;
@@ -111,30 +112,24 @@ export default function SEO({
     }
   }
 
-  // Remove any trailing slashes for consistency
+  // Keep a language-agnostic route key for metadata lookup. Canonical URLs
+  // themselves are normalized to the final trailing-slash URL below.
   if (cleanSuffix.endsWith('/')) {
     cleanSuffix = cleanSuffix.substring(0, cleanSuffix.length - 1);
   }
 
   // Calculate language-specific absolute URLs
   const getLanguageUrl = (langCode: string) => {
-    const baseUrl = 'https://www.ddnzglobal.com';
     const normalizedLangCode = langCode === 'zh-cn' ? 'zh' : langCode;
-    const pathPrefix = normalizedLangCode === 'zh' ? 'zh-cn' : normalizedLangCode;
     const country = new URLSearchParams(location.search).get('country');
     const countryPath = country && cleanSuffix.startsWith('shipping-from-china-to-')
       ? `shipping-from-china-to-${country.toLowerCase()}`
       : cleanSuffix;
-    if (!cleanSuffix) {
-      return normalizedLangCode === 'en' ? `${baseUrl}/` : `${baseUrl}/${pathPrefix}`;
-    }
-    return normalizedLangCode === 'en'
-      ? `${baseUrl}/${countryPath}`
-      : `${baseUrl}/${pathPrefix}/${countryPath}`;
+    return localizedSiteUrl(normalizedLangCode, countryPath);
   };
 
   const canonicalUrl = canonicalPath 
-    ? (canonicalPath.startsWith('http') ? canonicalPath : `https://www.ddnzglobal.com${canonicalPath}`)
+    ? canonicalSiteUrl(canonicalPath)
     : getLanguageUrl(currentLang);
 
   const ptTrLocalizedPages = new Set([
@@ -160,7 +155,9 @@ export default function SEO({
         ]
       : []),
   ];
-  const finalAlternates = (alternateUrls || defaultAlternates).filter((item) => item.hrefLang !== 'x-default');
+  const finalAlternates = (alternateUrls || defaultAlternates)
+    .filter((item) => item.hrefLang !== 'x-default')
+    .map((item) => ({ ...item, href: canonicalSiteUrl(item.href) }));
   const defaultAlternate = finalAlternates.find((item) => item.hrefLang === 'en') || finalAlternates[0];
 
   const helmetLang = currentLang === 'zh' ? 'zh-CN' : currentLang;

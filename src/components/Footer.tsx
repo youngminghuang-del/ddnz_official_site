@@ -17,6 +17,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
 import { trackEvent } from '../lib/utils';
 import { buildQuoteHref } from '../lib/quoteLinks';
+import { canonicalSitePath } from '../lib/notionArticleRouting';
 import { PUBLIC_SOCIAL_CHANNELS, SOCIAL_CHANNELS } from '../config/socialChannels';
 
 const socialIcons = {
@@ -193,7 +194,7 @@ export default function Footer() {
   const { t, language } = useLanguage();
   const copy = footerCopy[language];
   const prefix = localePrefix[language];
-  const localizedPath = (path: string) => `${prefix}${path}`;
+  const localizedPath = (path: string) => canonicalSitePath(`${prefix}${path}`);
 
   const quoteHref = buildQuoteHref({
     intent: 'Product Sourcing',
@@ -246,7 +247,7 @@ export default function Footer() {
 
           <div className="md:col-span-2 lg:col-span-3 lg:pr-4 rtl:lg:pl-4 rtl:lg:pr-0">
             <Link
-              to={prefix || '/'}
+              to={localizedPath('/')}
               aria-label="DDNZ Global home"
               className="inline-flex min-h-12 items-center gap-3 rounded-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#D6A4E6] focus-visible:ring-offset-4 focus-visible:ring-offset-[#07182E]"
             >

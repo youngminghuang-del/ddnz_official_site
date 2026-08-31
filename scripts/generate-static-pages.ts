@@ -3,12 +3,14 @@ import path from 'path';
 import { getLocalizedHomeFaqs, type HomeFaqLanguage } from '../src/data/homeFaqData';
 import {
   articleAbsoluteUrl,
+  canonicalSitePath,
   findArticleByRoute,
   getArticleHreflangSet,
   localizedSiteUrl,
   normalizeArticleLocale,
   type ArticleHreflangSet,
 } from '../src/lib/notionArticleRouting';
+import { translations } from '../src/i18n/translations';
 
 // Define the static page configurations mapping language routes to SEO meta headers
 interface SEOItem {
@@ -1307,6 +1309,17 @@ const sourcingStaticContent: Record<string, {
   },
 };
 
+const homeStaticHeadlines: Record<string, string> = {
+  en: 'Source, inspect and ship commercial products from China—with one accountable team.',
+  'zh-cn': '从中国采购、验货并出口商用产品，由一个团队全程负责。',
+  ru: 'Закупайте, проверяйте и отправляйте товары из Китая с одной ответственной командой.',
+  fr: 'Achetez, contrôlez et expédiez vos produits de Chine avec une seule équipe responsable.',
+  es: 'Compre, inspeccione y envíe productos comerciales desde China con un solo equipo responsable.',
+  ar: 'اشترِ وافحص واشحن المنتجات التجارية من الصين مع فريق واحد مسؤول.',
+  pt: 'Encontre, inspecione e exporte produtos comerciais da China com uma equipe responsável.',
+  tr: 'Çin’den ticari ürünleri tek bir sorumlu ekiple bulun, denetleyin ve gönderin.',
+};
+
 const howWeWorkStaticCopy: Record<string, { eyebrow: string; title: string; steps: string[]; cta: string }> = {
   en: {
     eyebrow: 'How DDNZ works',
@@ -1366,7 +1379,23 @@ function injectStaticRouteContent(
 ) {
   let staticBody = '';
 
-  if (relPath.startsWith('blog/') && post) {
+  if (relPath === '' || relPath === 'insights') {
+    const direction = lang === 'ar' ? 'rtl' : 'ltr';
+    const translationKey = lang === 'zh-cn' ? 'zh' : lang;
+    const localizedCopy = translations[translationKey as keyof typeof translations] || translations.en;
+    const heading = relPath === ''
+      ? homeStaticHeadlines[lang] || homeStaticHeadlines.en
+      : localizedCopy.insights.hubTitle;
+    const body = relPath === ''
+      ? seoDataMatrix[''][lang]?.desc || seoDataMatrix[''].en.desc
+      : localizedCopy.insights.hubSubtitle;
+    const fallbackType = relPath === '' ? 'home' : 'insights';
+    staticBody = `
+      <main class="mx-auto max-w-5xl px-4 py-16 sm:px-6" dir="${direction}" data-static-fallback="${fallbackType}">
+        <h1 class="text-4xl font-black leading-tight text-slate-950">${escapeStaticText(heading)}</h1>
+        <p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(body)}</p>
+      </main>`;
+  } else if (relPath.startsWith('blog/') && post) {
     const direction = lang === 'ar' ? 'rtl' : 'ltr';
     const summary = post.summary
       ? `<p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(post.summary)}</p>`
@@ -1401,7 +1430,7 @@ function injectStaticRouteContent(
           <h2 class="text-2xl font-black text-slate-950">${escapeStaticText(processCopy.eyebrow)}</h2>
           <ol class="mt-4 list-decimal space-y-2 pl-6">${processCopy.steps.map((item) => `<li>${escapeStaticText(item)}</li>`).join('')}</ol>
         </section>
-        <p class="mt-8"><a href="${quotePrefix}/get-a-quote?leadGoal=Product+Sourcing&amp;source=how_we_work">${escapeStaticText(processCopy.cta)}</a></p>
+        <p class="mt-8"><a href="${canonicalSitePath(`${quotePrefix}/get-a-quote`)}?leadGoal=Product+Sourcing&amp;source=how_we_work">${escapeStaticText(processCopy.cta)}</a></p>
       </main>`;
   } else {
     const sourcing = sourcingStaticContent[relPath];
@@ -1434,7 +1463,7 @@ function injectStaticRouteContent(
           <section class="mt-10">
             <h2 class="text-2xl font-black text-slate-950">Start with a scoped request</h2>
             <p class="mt-4 leading-7 text-slate-700">${escapeStaticText(sourcing.request)}</p>
-            <p class="mt-6"><a href="${escapeStaticText(sourcing.quoteHref)}">Submit the sourcing brief</a></p>
+            <p class="mt-6"><a href="${escapeStaticText(canonicalSitePath(sourcing.quoteHref))}">Submit the sourcing brief</a></p>
           </section>
         </main>`;
     }
@@ -1728,7 +1757,7 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
   showcaseAliasRedirects.forEach((redirect) => {
     const sourceDir = path.join(distDir, redirect.from.replace(/^\/+/, ''));
     fs.mkdirSync(sourceDir, { recursive: true });
-    const targetUrl = `https://www.ddnzglobal.com${redirect.to}`;
+    const targetUrl = `https://www.ddnzglobal.com${canonicalSitePath(redirect.to)}`;
     const redirectHtml = `<!doctype html><html lang="en"><head><meta charset="UTF-8"><meta name="robots" content="noindex,follow"><link rel="canonical" href="${targetUrl}"><meta http-equiv="refresh" content="0;url=${targetUrl}"><script>location.replace(${JSON.stringify(targetUrl)})</script><title>Page moved</title></head><body><p>This page has moved to <a href="${targetUrl}">${targetUrl}</a>.</p></body></html>`;
     fs.writeFileSync(path.join(sourceDir, 'index.html'), redirectHtml, 'utf-8');
   });

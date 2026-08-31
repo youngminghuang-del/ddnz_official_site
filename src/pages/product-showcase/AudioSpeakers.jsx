@@ -123,7 +123,7 @@ const FACTORY_EVIDENCE = [
 
 function Brand() {
   return (
-    <a className="as-brand" href="/products" aria-label="DDNZ Global product sourcing">
+    <a className="as-brand" href="/products/" aria-label="DDNZ Global product sourcing">
       <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
       <span><strong>DDNZ GLOBAL</strong><small>CHINA SOURCING &amp; EXPORT</small></span>
     </a>
@@ -136,7 +136,7 @@ function Header({ open, setOpen }) {
     <header className="as-header">
       <Brand />
       <nav className="as-desktop-nav" aria-label="Audio and speakers navigation">
-        <a href="/products">Product Sourcing</a>
+        <a href="/products/">Product Sourcing</a>
         <a className="active" href="#audio-range">Audio &amp; Speakers</a>
         <a href="#comparison">Comparison Desk</a>
         <a href="#sample-control">Sample Control</a>
@@ -147,7 +147,7 @@ function Header({ open, setOpen }) {
       </button>
       {open && (
         <nav className="as-mobile-nav" aria-label="Mobile audio and speakers navigation">
-          <a href="/products" onClick={close}>Product sourcing</a>
+          <a href="/products/" onClick={close}>Product sourcing</a>
           <a href="#audio-range" onClick={close}>Audio range</a>
           <a href="#comparison" onClick={close}>Comparison desk</a>
           <a href="#sample-control" onClick={close}>Sample control</a>
@@ -229,7 +229,7 @@ export function AudioSpeakers() {
       notes: form.notes,
       source: "audio_speakers",
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const scrollTo = (id) => {
@@ -400,7 +400,7 @@ export function AudioSpeakers() {
         pageKey="audio-speakers"
         description="Audio-range sourcing, exact-model comparison, sample evidence and export handoff from China."
         tagline="Audio and speaker sourcing"
-        links={[{ label: "Products", href: "/products" }, { label: "Control fields", href: "#comparison" }, { label: "Start a brief", href: "#audio-rfq" }]}
+        links={[{ label: "Products", href: "/products/" }, { label: "Control fields", href: "#comparison" }, { label: "Start a brief", href: "#audio-rfq" }]}
         note="Illustrative records are replaced by order-specific evidence after the buyer brief"
       />
     </div>
