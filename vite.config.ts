@@ -58,13 +58,13 @@ ${verificationTags}
     <!-- Multi-Language SEO hreflang Alternate Links -->
     <link rel="alternate" hreflang="x-default" href="https://www.ddnzglobal.com/" />
     <link rel="alternate" hreflang="en" href="https://www.ddnzglobal.com/" />
-    <link rel="alternate" hreflang="zh-cn" href="https://www.ddnzglobal.com/zh-cn" />
-    <link rel="alternate" hreflang="ru" href="https://www.ddnzglobal.com/ru" />
-    <link rel="alternate" hreflang="fr" href="https://www.ddnzglobal.com/fr" />
-    <link rel="alternate" hreflang="es" href="https://www.ddnzglobal.com/es" />
-    <link rel="alternate" hreflang="ar" href="https://www.ddnzglobal.com/ar" />
-    <link rel="alternate" hreflang="pt" href="https://www.ddnzglobal.com/pt" />
-    <link rel="alternate" hreflang="tr" href="https://www.ddnzglobal.com/tr" />
+    <link rel="alternate" hreflang="zh-cn" href="https://www.ddnzglobal.com/zh-cn/" />
+    <link rel="alternate" hreflang="ru" href="https://www.ddnzglobal.com/ru/" />
+    <link rel="alternate" hreflang="fr" href="https://www.ddnzglobal.com/fr/" />
+    <link rel="alternate" hreflang="es" href="https://www.ddnzglobal.com/es/" />
+    <link rel="alternate" hreflang="ar" href="https://www.ddnzglobal.com/ar/" />
+    <link rel="alternate" hreflang="pt" href="https://www.ddnzglobal.com/pt/" />
+    <link rel="alternate" hreflang="tr" href="https://www.ddnzglobal.com/tr/" />
 `;
           if (!html.includes('hreflang="x-default"')) {
             return html.replace('</head>', `${tags}</head>`);

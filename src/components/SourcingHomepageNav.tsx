@@ -8,6 +8,7 @@ import { trackEvent } from '../lib/utils';
 import notionBlogPosts from '../data/notionBlogData.json';
 import {
   articleLanguageSwitchPath,
+  canonicalSitePath,
   findArticleByRoute,
 } from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
@@ -175,9 +176,9 @@ export default function SourcingHomepageNav({
   const labels = navLabels[language];
   const freightExecutor = freightExecutorLabels[language];
   const prefix = prefixByLanguage[language];
-  const localizedPath = (path: string) => `${prefix}${path}`;
+  const localizedPath = (path: string) => canonicalSitePath(`${prefix}${path}`);
   const processPath = localizedPath('/how-we-work');
-  const quoteHref = appendAttribution(`${prefix}/get-a-quote?leadGoal=Product%20Sourcing&source=homepage_navigation`);
+  const quoteHref = appendAttribution(`${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
   const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
   const isMarketsPage = location.pathname.includes('/shipping-from-china-to-');
@@ -244,7 +245,7 @@ export default function SourcingHomepageNav({
       .replace(/^\/(ru|fr|es|ar|pt|tr)(?=\/|$)/, '');
     if (!suffix) suffix = '/';
     const nextPrefix = prefixByLanguage[nextLanguage];
-    let destination = `${nextPrefix}${suffix === '/' ? '' : suffix}` || '/';
+    let destination = canonicalSitePath(`${nextPrefix}${suffix === '/' ? '' : suffix}` || '/');
 
     const blogMatch = suffix.match(/^\/blog\/([^/]+)\/?$/);
     if (blogMatch) {
@@ -281,7 +282,7 @@ export default function SourcingHomepageNav({
     <header ref={headerRef} className="ddnz-home sticky top-0 z-50 border-b border-slate-200/90 bg-white/96 backdrop-blur-xl">
       <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 xl:gap-6 xl:px-12">
         <Link
-          to={prefix || '/'}
+          to={localizedPath('/')}
           dir="ltr"
           onClick={() => {
             closeDesktopDropdown();
@@ -314,7 +315,7 @@ export default function SourcingHomepageNav({
             onClick={closeDesktopDropdown}
             aria-current={isHomePage ? 'page' : undefined}
             className={`whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold transition-colors hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)]'}`}
-            to={prefix || '/'}
+            to={localizedPath('/')}
           >
             {labels.home}
           </Link>
@@ -333,9 +334,9 @@ export default function SourcingHomepageNav({
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
           </Dropdown>
           <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} onToggle={toggleDesktopDropdown}>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={`${prefix}/shipping-from-china-to-middle-east`}>{labels.middleEast}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={`${prefix}/shipping-from-china-to-west-africa`}>{labels.africa}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={`${prefix}/shipping-from-china-to-latin-america`}>{labels.latinAmerica}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-middle-east')}>{labels.middleEast}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</DropdownLink>
           </Dropdown>
           <Link
             onClick={closeDesktopDropdown}
@@ -349,7 +350,7 @@ export default function SourcingHomepageNav({
             onClick={closeDesktopDropdown}
             aria-current={isInsightsPage ? 'page' : undefined}
             className={`whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)]'}`}
-            to={`${prefix}/insights`}
+            to={localizedPath('/insights')}
           >
             {labels.insights}
           </Link>
@@ -419,7 +420,7 @@ export default function SourcingHomepageNav({
       {mobileOpen ? (
         <nav id="mobile-navigation" className={`${showFreightExecutor ? 'max-h-[calc(100dvh-118px)]' : 'max-h-[calc(100dvh-82px)]'} overflow-y-auto border-t border-slate-200 bg-white px-5 pb-4 pt-2 shadow-xl lg:hidden`} aria-label="Mobile navigation">
           <div className="mx-auto grid max-w-2xl gap-0.5">
-            <Link onClick={closeMobile} aria-current={isHomePage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={prefix || '/'}>{labels.home}</Link>
+            <Link onClick={closeMobile} aria-current={isHomePage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/')}>{labels.home}</Link>
             <div>
               <button type="button" aria-expanded={mobileSection === 'products'} aria-controls="mobile-products-menu" onClick={() => toggleMobileSection('products')} className={`flex min-h-12 w-full items-center justify-between rounded-lg px-3 py-3 text-left font-semibold rtl:text-right ${isProductsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`}>
                 {labels.products}<ChevronDown className={`h-4 w-4 transition-transform ${mobileSection === 'products' ? 'rotate-180' : ''}`} aria-hidden="true" />
@@ -461,7 +462,7 @@ export default function SourcingHomepageNav({
               ) : null}
             </div>
             <Link onClick={closeMobile} aria-current={isProcessPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isProcessPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={processPath}>{labels.process}</Link>
-            <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={`${prefix}/insights`}>{labels.insights}</Link>
+            <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
             <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
               {(Object.keys(languageLabels) as Language[]).map((item) => (
                 <button key={item} type="button" onClick={() => switchLanguage(item)} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>

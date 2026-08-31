@@ -243,7 +243,7 @@ export function RefrigerationEquipment() {
       capacity: form.capacity,
       coolingMethod: form.cooling,
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const persistQuoteDraft = () => {

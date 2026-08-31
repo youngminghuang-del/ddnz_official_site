@@ -4,6 +4,8 @@ import {
   articleAbsoluteUrl,
   articleLanguageSwitchPath,
   articleRoutePath,
+  canonicalSitePath,
+  canonicalSiteUrl,
   findArticleByRoute,
   getArticleHreflangSet,
   localizedSitePath,
@@ -60,8 +62,10 @@ await check('normalizes Notion language variants to site locale paths', () => {
   assert.equal(normalizeArticleLocale('zh'), 'zh-cn');
   assert.equal(normalizeArticleLocale('EN-us'), 'en');
   assert.equal(normalizeArticleLocale('es_ES'), 'es');
-  assert.equal(localizedSitePath('zh-CN', 'blog/example'), '/zh-cn/blog/example');
-  assert.equal(localizedSitePath('en-US', 'blog/example'), '/blog/example');
+  assert.equal(localizedSitePath('zh-CN', 'blog/example'), '/zh-cn/blog/example/');
+  assert.equal(localizedSitePath('en-US', 'blog/example'), '/blog/example/');
+  assert.equal(canonicalSitePath('/fr/get-a-quote?source=test#brief'), '/fr/get-a-quote/?source=test#brief');
+  assert.equal(canonicalSiteUrl('/ru/insights?preview=1'), 'https://www.ddnzglobal.com/ru/insights/');
 });
 
 await check('resolves the same slug by route locale instead of first match', () => {
@@ -73,9 +77,9 @@ await check('resolves the same slug by route locale instead of first match', () 
 
 await check('builds the same complete reciprocal hreflang set for every Published translation', () => {
   const expected = [
-    { hrefLang: 'en', href: 'https://www.ddnzglobal.com/blog/shared-guide' },
-    { hrefLang: 'zh-cn', href: 'https://www.ddnzglobal.com/zh-cn/blog/shared-guide' },
-    { hrefLang: 'es', href: 'https://www.ddnzglobal.com/es/blog/guia-comprador' },
+    { hrefLang: 'en', href: 'https://www.ddnzglobal.com/blog/shared-guide/' },
+    { hrefLang: 'zh-cn', href: 'https://www.ddnzglobal.com/zh-cn/blog/shared-guide/' },
+    { hrefLang: 'es', href: 'https://www.ddnzglobal.com/es/blog/guia-comprador/' },
   ];
   const englishSet = getArticleHreflangSet(translatedPosts[0], translatedPosts);
   const chineseSet = getArticleHreflangSet(translatedPosts[1], translatedPosts);
@@ -96,23 +100,23 @@ await check('keeps an ungrouped article on self plus x-default only', () => {
     status: 'Published',
   };
   const set = getArticleHreflangSet(standalone, [...translatedPosts, standalone]);
-  const url = 'https://www.ddnzglobal.com/ar/blog/standalone-arabic';
+  const url = 'https://www.ddnzglobal.com/ar/blog/standalone-arabic/';
   assert.deepEqual(set.alternates, [{ hrefLang: 'ar', href: url }]);
   assert.equal(set.xDefaultUrl, url);
   assert.equal(
     articleLanguageSwitchPath(standalone, [...translatedPosts, standalone], 'fr'),
-    '/fr/insights',
+    '/fr/insights/',
   );
 });
 
 await check('switches to a real translated route and never invents a missing article URL', () => {
   assert.equal(
     articleLanguageSwitchPath(translatedPosts[0], translatedPosts, 'zh-CN'),
-    '/zh-cn/blog/shared-guide',
+    '/zh-cn/blog/shared-guide/',
   );
   assert.equal(
     articleLanguageSwitchPath(translatedPosts[0], translatedPosts, 'fr'),
-    '/fr/insights',
+    '/fr/insights/',
   );
 });
 

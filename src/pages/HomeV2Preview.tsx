@@ -24,6 +24,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { HOME_V2_COPY, type HomeV2Copy } from '../data/homeV2Copy';
 import type { Language } from '../i18n/translations';
 import { buildAttributedWhatsAppUrl, readAttribution } from '../lib/attribution';
+import { canonicalSitePath } from '../lib/notionArticleRouting';
 import { buildQuoteHref } from '../lib/quoteLinks';
 import { trackEvent } from '../lib/utils';
 
@@ -34,7 +35,7 @@ const categories = [
     control: 'Material grade, heat performance, energy use and factory QC acceptance.',
     image: '/images/sourcing/commercial-kitchen-project-hero.webp',
     alt: 'Commercial kitchen equipment range in a showroom',
-    href: '/sourcing/commercial-kitchen-equipment-from-china',
+    href: '/sourcing/commercial-kitchen-equipment-from-china/',
     icon: Utensils,
   },
   {
@@ -43,7 +44,7 @@ const categories = [
     control: 'Power output, battery safety, Bluetooth stability and functional testing.',
     image: '/images/sourcing/audio-speakers-category.webp',
     alt: 'Portable party speakers and microphones',
-    href: '/sourcing/audio-speakers-from-china',
+    href: '/sourcing/audio-speakers-from-china/',
     icon: Speaker,
   },
   {
@@ -52,7 +53,7 @@ const categories = [
     control: 'Electrical safety, compatibility, durability, packaging and labeling.',
     image: '/images/sourcing/mobile-accessories-powerbank-category-v2.webp',
     alt: 'Unbranded mobile charging accessories and power banks',
-    href: '/sourcing/mobile-accessories-from-china',
+    href: '/sourcing/mobile-accessories-from-china/',
     icon: Smartphone,
   },
   {
@@ -61,7 +62,7 @@ const categories = [
     control: 'Weather resistance, load checks, battery documents, labeling, packing and transport readiness.',
     image: '/images/sourcing/outdoor-portable-energy-brand-neutral-v1.webp',
     alt: 'Brand-neutral portable power stations, solar panels and outdoor charging equipment',
-    href: '/sourcing/outdoor-products-from-china',
+    href: '/sourcing/outdoor-products-from-china/',
     icon: PackageCheck,
   },
 ];
@@ -104,7 +105,7 @@ const scorecardAsset: Record<Language, { src: string; width: number; height: num
 
 function localizePath(path: string, language: Language) {
   const [pathname, hash] = path.split('#');
-  return `${localePrefix[language]}${pathname}${hash ? `#${hash}` : ''}`;
+  return `${canonicalSitePath(`${localePrefix[language]}${pathname}`)}${hash ? `#${hash}` : ''}`;
 }
 
 function ScorecardDialog({ open, onClose, copy, asset }: { open: boolean; onClose: () => void; copy: HomeV2Copy['scorecardDialog']; asset: { src: string; width: number; height: number } }) {
@@ -235,7 +236,7 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-coral-strong)]">Priority product sourcing</p>
                 <h1 className="mt-3 max-w-3xl text-3xl font-extrabold tracking-[-0.04em] text-[var(--ddnz-ink)] sm:text-4xl lg:text-5xl">Explore our priority categories</h1>
               </div>
-              <Link to="/sourcing/outdoor-products-from-china" className="inline-flex min-h-11 items-center gap-2 text-sm font-black text-[var(--ddnz-purple-strong)] hover:text-[var(--ddnz-coral-strong)]">
+              <Link to="/sourcing/outdoor-products-from-china/" className="inline-flex min-h-11 items-center gap-2 text-sm font-black text-[var(--ddnz-purple-strong)] hover:text-[var(--ddnz-coral-strong)]">
                 Explore outdoor products <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>

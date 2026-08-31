@@ -2,7 +2,7 @@ import { ArrowRight, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import notionBlogPosts from '../data/notionBlogData.json';
-import { articleRoutePath, normalizeArticleLocale } from '../lib/notionArticleRouting';
+import { articleRoutePath, canonicalSitePath, normalizeArticleLocale } from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
 
 type InterfaceCopy = {
@@ -193,7 +193,7 @@ export default function Insights() {
             ))}
 
             <Link
-              to={`${prefix}/insights`}
+              to={canonicalSitePath(`${prefix}/insights`)}
               className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#0B4F8A] px-6 py-3 text-sm font-black text-white transition-colors hover:bg-[#083E6D] active:scale-[0.98]"
             >
               {content.viewAll}

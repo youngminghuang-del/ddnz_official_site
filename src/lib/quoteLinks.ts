@@ -1,5 +1,6 @@
 import type { Language } from '../i18n/translations';
 import { appendAttribution, readAttribution, type Attribution } from './attribution';
+import { canonicalSitePath } from './notionArticleRouting';
 
 export type QuoteIntent = 'Product Sourcing' | 'Supplier Inspection & Consolidation' | 'Freight Export';
 
@@ -40,5 +41,6 @@ export function buildQuoteHref({
   if (destination) params.set('dest', destination);
   if (article) params.set('article', article);
   if (subcategory) params.set('subcategory', subcategory);
-  return appendAttribution(`${PREFIX_BY_LANGUAGE[language]}/get-a-quote?${params.toString()}`, attribution);
+  const quotePath = canonicalSitePath(`${PREFIX_BY_LANGUAGE[language]}/get-a-quote`);
+  return appendAttribution(`${quotePath}?${params.toString()}`, attribution);
 }

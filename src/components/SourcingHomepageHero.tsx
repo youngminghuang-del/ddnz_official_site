@@ -18,6 +18,7 @@ import {
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
 import { appendAttribution, buildAttributedWhatsAppUrl, readAttribution } from '../lib/attribution';
+import { canonicalSitePath } from '../lib/notionArticleRouting';
 import { trackEvent } from '../lib/utils';
 
 type Intent = 'sourcing' | 'existing' | 'freight';
@@ -174,7 +175,7 @@ export default function SourcingHomepageHero() {
       source: 'homepage_sourcing_selector',
     });
     if (market) params.set('dest', market);
-    const url = appendAttribution(`${PREFIX[language]}/get-a-quote?${params.toString()}`, attribution);
+    const url = appendAttribution(`${canonicalSitePath(`${PREFIX[language]}/get-a-quote`)}?${params.toString()}`, attribution);
     trackEvent('homepage_intent_submit', { intent: nextIntent, industry: nextCategory, destination: market || 'not_selected' });
     navigate(url);
   };
@@ -199,7 +200,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][0],
       image: '/images/sourcing/commercial-kitchen-project-hero.webp',
       alt: categoryImageAlts[language][0],
-      href: `${PREFIX[language]}/sourcing/commercial-kitchen-equipment-from-china`,
+      href: canonicalSitePath(`${PREFIX[language]}/sourcing/commercial-kitchen-equipment-from-china`),
     },
     {
       industry: 'Audio & Speakers',
@@ -207,7 +208,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][1],
       image: '/images/sourcing/audio-speakers-category.webp',
       alt: categoryImageAlts[language][1],
-      href: `${PREFIX[language]}/sourcing/audio-speakers-from-china`,
+      href: canonicalSitePath(`${PREFIX[language]}/sourcing/audio-speakers-from-china`),
     },
     {
       industry: 'Mobile Accessories',
@@ -215,7 +216,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][2],
       image: '/images/sourcing/mobile-accessories-powerbank-category-v2.webp',
       alt: categoryImageAlts[language][2],
-      href: `${PREFIX[language]}/sourcing/mobile-accessories-from-china`,
+      href: canonicalSitePath(`${PREFIX[language]}/sourcing/mobile-accessories-from-china`),
     },
     {
       industry: 'Outdoor Products',
@@ -223,7 +224,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][3],
       image: '/images/sourcing/outdoor-portable-energy-brand-neutral-v1.webp',
       alt: categoryImageAlts[language][3],
-      href: `${PREFIX[language]}/sourcing/outdoor-products-from-china`,
+      href: canonicalSitePath(`${PREFIX[language]}/sourcing/outdoor-products-from-china`),
     },
   ];
 

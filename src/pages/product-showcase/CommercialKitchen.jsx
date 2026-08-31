@@ -458,7 +458,7 @@ export function App() {
       projectScale: form.volume,
       timeline: form.timeline,
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const update = (event) => setForm((current) => ({ ...current, [event.target.name]: event.target.value }));

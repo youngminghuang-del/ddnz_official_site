@@ -32,10 +32,10 @@ const PRODUCT_CATEGORIES = [
     title: "Commercial Kitchen & Refrigeration",
     shortTitle: "Kitchen & Refrigeration",
     eyebrow: "Foodservice equipment & cold-side projects",
-    href: "/sourcing/commercial-kitchen-equipment-from-china",
+    href: "/sourcing/commercial-kitchen-equipment-from-china/",
     links: [
-      { label: "Kitchen equipment", href: "/sourcing/commercial-kitchen-equipment-from-china" },
-      { label: "Refrigeration equipment", href: "/refrigeration-equipment" },
+      { label: "Kitchen equipment", href: "/sourcing/commercial-kitchen-equipment-from-china/" },
+      { label: "Refrigeration equipment", href: "/refrigeration-equipment/" },
     ],
     icon: Factory,
     images: [
@@ -69,7 +69,7 @@ const PRODUCT_CATEGORIES = [
     title: "Audio & Speakers",
     shortTitle: "Audio & Speakers",
     eyebrow: "Portable, party & professional audio",
-    href: "/sourcing/audio-speakers-from-china",
+    href: "/sourcing/audio-speakers-from-china/",
     icon: Speaker,
     images: [
       {
@@ -95,7 +95,7 @@ const PRODUCT_CATEGORIES = [
     title: "Mobile Accessories",
     shortTitle: "Mobile Accessories",
     eyebrow: "Fast-moving assortment sourcing",
-    href: "/sourcing/mobile-accessories-from-china",
+    href: "/sourcing/mobile-accessories-from-china/",
     icon: Smartphone,
     images: [
       {
@@ -128,7 +128,7 @@ const PRODUCT_CATEGORIES = [
     title: "Outdoor Products",
     shortTitle: "Outdoor Products",
     eyebrow: "Coolers, portable cold & emergency power",
-    href: "/sourcing/outdoor-products-from-china",
+    href: "/sourcing/outdoor-products-from-china/",
     icon: TentTree,
     images: [
       {
@@ -242,7 +242,7 @@ function ProductsHeader({ open, onToggle, onClose }) {
       <nav className="px-desktop-nav" aria-label="Primary navigation">
         <a className="active" href="#categories">Product Sourcing</a>
         <a href="#commercial-kitchen-refrigeration">Kitchen &amp; Refrigeration</a>
-        <a href="/sourcing-services">Sourcing Services</a>
+        <a href="/sourcing-services/">Sourcing Services</a>
         <a href="#compare">Our Control Plan</a>
         <a href="#process">How It Works</a>
         <a href="#rfq">Start an RFQ</a>
@@ -253,7 +253,7 @@ function ProductsHeader({ open, onToggle, onClose }) {
       {open && (
         <nav className="px-mobile-nav" id="products-mobile-nav" aria-label="Mobile navigation">
           <a href="#categories" onClick={onClose}>Browse categories</a>
-          <a href="/sourcing-services" onClick={onClose}>Sourcing services</a>
+          <a href="/sourcing-services/" onClick={onClose}>Sourcing services</a>
           <a href="#compare" onClick={onClose}>Compare sourcing capability</a>
           <a href="#process" onClick={onClose}>How it works</a>
           <a href="#rfq" onClick={onClose}>Start an RFQ</a>
@@ -390,7 +390,7 @@ export function ProductsIndex() {
       notes: form.notes,
       source: "products_index",
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const scrollTo = (id) => {
@@ -549,7 +549,7 @@ export function ProductsIndex() {
         pageKey="products"
         description="Product sourcing, supplier comparison, approval evidence and export handoff from China."
         tagline="China sourcing and export coordination"
-        links={[{ label: "Categories", href: "#categories" }, { label: "Sourcing services", href: "/sourcing-services" }, { label: "Control path", href: "#compare" }, { label: "Start an RFQ", href: "#rfq" }]}
+        links={[{ label: "Categories", href: "#categories" }, { label: "Sourcing services", href: "/sourcing-services/" }, { label: "Control path", href: "#compare" }, { label: "Start an RFQ", href: "#rfq" }]}
       />
     </div>
   );

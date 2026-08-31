@@ -151,8 +151,8 @@ function Header({ open, setOpen }) {
     <header className="od-header">
       <Brand />
       <nav className="od-desktop-nav" aria-label="Primary navigation">
-        <a href="/products">Product Sourcing <ChevronDown size={13} /></a>
-        <a href="/sourcing/commercial-kitchen-equipment-from-china">Commercial Kitchen <ChevronDown size={13} /></a>
+        <a href="/products/">Product Sourcing <ChevronDown size={13} /></a>
+        <a href="/sourcing/commercial-kitchen-equipment-from-china/">Commercial Kitchen <ChevronDown size={13} /></a>
         <a href="#approval">Our Control Plan</a>
         <a href="#evidence">Resources <ChevronDown size={13} /></a>
         <a href="#footer">About DDNZ</a>
@@ -195,7 +195,7 @@ export function OutdoorProducts() {
       useCase: form.useCase,
       transport: form.transport,
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -381,7 +381,7 @@ export function OutdoorProducts() {
         pageKey="outdoor-products"
         description="DDNZ Global coordinates outdoor-product sourcing, supplier comparison, sample evidence and export handoff from China."
         tagline="Outdoor product sourcing"
-        links={[{ label: "Products", href: "/products" }, { label: "Sourcing services", href: "/sourcing-services" }, { label: "Start a request", href: "#rfq" }]}
+        links={[{ label: "Products", href: "/products/" }, { label: "Sourcing services", href: "/sourcing-services/" }, { label: "Start a request", href: "#rfq" }]}
         note="Outdoor Products representative page · illustrative sourcing workflow"
       />
     </div>

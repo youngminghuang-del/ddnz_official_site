@@ -103,8 +103,8 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
     } else if (type === 'Service') {
       const isDDNZService = data.providerName === 'DDNZ Global Trade Co., Ltd.';
       const defaultOfferUrl = isDDNZService
-        ? 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Product%20Sourcing&source=structured_data'
-        : 'https://www.ddnzglobal.com/get-a-quote?leadGoal=Freight%20Only&source=structured_data';
+        ? 'https://www.ddnzglobal.com/get-a-quote/?leadGoal=Product%20Sourcing&source=structured_data'
+        : 'https://www.ddnzglobal.com/get-a-quote/?leadGoal=Freight%20Only&source=structured_data';
       finalSchema = {
         ...baseSchema,
         '@type': 'Service',
@@ -185,7 +185,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         },
         'mainEntityOfPage': {
           '@type': 'WebPage',
-          '@id': data.url || 'https://www.ddnzglobal.com/insights'
+          '@id': data.url || 'https://www.ddnzglobal.com/insights/'
         }
       };
     }

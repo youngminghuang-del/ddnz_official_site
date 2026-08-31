@@ -21,6 +21,7 @@ import { trackEvent } from '../lib/analytics';
 import {
   articleLocalePrefix,
   articleRoutePath,
+  canonicalSitePath,
   findArticleByRoute,
   getArticleHreflangSet,
 } from '../lib/notionArticleRouting';
@@ -92,7 +93,7 @@ function normalizeNotionLinks(content: string) {
         const path = decodeURIComponent(encodedPath);
         const isInternalRoute =
           /^(?:\/services\/|\/shipping-from-china-to-|\/insights(?:\/|$)|\/sourcing\/|\/get-a-quote)/.test(path);
-        return isInternalRoute ? `https://www.ddnzglobal.com${path}` : url;
+        return isInternalRoute ? `https://www.ddnzglobal.com${canonicalSitePath(path)}` : url;
       } catch {
         return url;
       }
@@ -119,18 +120,18 @@ function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
   if (post.primaryCTA === 'Commercial Kitchen Sourcing') {
     return {
       label: ui.commercialCta,
-      href: `${prefix}/sourcing/commercial-kitchen-equipment-from-china?${params.toString()}`,
+      href: `${canonicalSitePath(`${prefix}/sourcing/commercial-kitchen-equipment-from-china`)}?${params.toString()}`,
     };
   }
   if (post.primaryCTA === 'Outdoor Products Sourcing') {
     return {
       label: ui.outdoorCta,
-      href: `${prefix}/sourcing/outdoor-products-from-china?${params.toString()}`,
+      href: `${canonicalSitePath(`${prefix}/sourcing/outdoor-products-from-china`)}?${params.toString()}`,
     };
   }
   return {
     label: isProductSourcing ? ui.sourcingCta : ui.freightCta,
-    href: `${prefix}/get-a-quote?${params.toString()}`,
+    href: `${canonicalSitePath(`${prefix}/get-a-quote`)}?${params.toString()}`,
   };
 }
 
@@ -205,7 +206,7 @@ export default function BlogDetail() {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-slate-50 font-sans">
         <h1 className="text-2xl font-bold text-slate-800 mb-4">{ui.missing}</h1>
-        <Link to={prefix || '/'} className="text-[#0b4f8a] font-bold flex items-center hover:underline">
+        <Link to={canonicalSitePath(prefix || '/')} className="text-[#0b4f8a] font-bold flex items-center hover:underline">
           <ArrowLeft className="mr-2 h-4 w-4 rtl:ml-2 rtl:mr-0 rtl:rotate-180" /> {ui.back}
         </Link>
       </div>
@@ -280,9 +281,9 @@ export default function BlogDetail() {
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff0b_1px,transparent_1px),linear-gradient(to_bottom,#ffffff0b_1px,transparent_1px)] bg-[size:3rem_3rem]" />
         <div className="max-w-4xl mx-auto px-4 md:px-6 relative z-10">
           <nav aria-label="Breadcrumb" className="flex items-center gap-2 text-xs md:text-sm text-slate-300 mb-7">
-            <Link to={prefix || '/'} className="hover:text-white">{ui.home}</Link>
+            <Link to={canonicalSitePath(prefix || '/')} className="hover:text-white">{ui.home}</Link>
             <ChevronRight className="h-3 w-3 rtl:rotate-180" />
-            <Link to={`${prefix}/insights`} className="hover:text-white">{ui.insights}</Link>
+            <Link to={canonicalSitePath(`${prefix}/insights`)} className="hover:text-white">{ui.insights}</Link>
             <ChevronRight className="h-3 w-3 rtl:rotate-180" />
             <span className="text-amber-400 font-bold truncate">{post.contentType || post.category}</span>
           </nav>
@@ -379,7 +380,7 @@ export default function BlogDetail() {
             </section>
 
             <div className="mt-12 pt-8 border-t border-slate-200">
-              <Link to={`${prefix}/insights`} className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#0b4f8a]">
+              <Link to={canonicalSitePath(`${prefix}/insights`)} className="inline-flex items-center gap-3 text-slate-900 font-bold hover:text-[#0b4f8a]">
                 <span className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center"><ArrowLeft className="h-5 w-5 rtl:rotate-180" /></span>
                 {ui.backInsights}
               </Link>

@@ -179,7 +179,7 @@ function Header({ open, setOpen }) {
       <Brand />
       <nav className="mobile-desktop-nav" aria-label="Primary navigation">
         <a href="/">Product Sourcing <ChevronDown size={14} /></a>
-        <a className="active" href="/sourcing/mobile-accessories-from-china">Mobile Accessories <ChevronDown size={14} /></a>
+        <a className="active" href="/sourcing/mobile-accessories-from-china/">Mobile Accessories <ChevronDown size={14} /></a>
         <a href="#control">Our Control Plan</a>
         <a href="#evidence">Resources <ChevronDown size={14} /></a>
         <a href="#about">About DDNZ</a>
@@ -190,7 +190,7 @@ function Header({ open, setOpen }) {
       {open && (
         <nav className="mobile-drawer" aria-label="Mobile navigation">
           <a href="/">Product Sourcing</a>
-          <a className="active" href="/sourcing/mobile-accessories-from-china">Mobile Accessories</a>
+          <a className="active" href="/sourcing/mobile-accessories-from-china/">Mobile Accessories</a>
           <a href="#control" onClick={() => setOpen(false)}>Our Control Plan</a>
           <a href="#evidence" onClick={() => setOpen(false)}>Production Evidence</a>
           <a href="#rfq" onClick={() => setOpen(false)}>Start a Scoped Request</a>
@@ -329,7 +329,7 @@ export function MobileAccessories() {
       monthlyVolume: form.volume,
       timeline: form.timeline,
     });
-    return `/get-a-quote?${params.toString()}`;
+    return `/get-a-quote/?${params.toString()}`;
   }, [form]);
 
   const scrollTo = (id) => document.getElementById(id)?.scrollIntoView({ behavior: "smooth", block: "start" });
