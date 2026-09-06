@@ -1,0 +1,33 @@
+{
+  "cover": {
+    "src": "/images/posts/magsafe-ring-stand-sourcing-four-sample-comparison/magnetic-ring-stand-four-sample-comparison-cover.webp",
+    "alt": "Four anonymous magnetic ring stand samples priced from RMB 15 to RMB 349 in a hands-on comparison using one iPhone 17 Pro Max",
+    "caption": "Four anonymous samples in DDNZ's hands-on comparison. The displayed prices are the amounts paid for these samples, not current quotations."
+  },
+  "inline": [
+    {
+      "beforeHeading": "“Strong magnet” can mean two different things",
+      "src": "/images/posts/magsafe-ring-stand-sourcing-four-sample-comparison/magnetic-ring-stand-sample-weight-comparison.webp",
+      "alt": "Measured weights of four magnetic ring stand samples: 20.5, 23.2, 23.0 and 34.9 grams",
+      "caption": "The RMB 15 sample was the heaviest in this four-sample set; price and weight did not move together."
+    },
+    {
+      "beforeHeading": "A MagSafe label is not enough",
+      "src": "/images/posts/magsafe-ring-stand-sourcing-four-sample-comparison/magnetic-ring-stand-hold-and-metal-attachment.webp",
+      "alt": "Hands-on magnetic ring stand comparison showing Sample 1 with the strongest observed hold among Samples 1 to 3 and direct attachment to the tested metal surface",
+      "caption": "Observed results from this hands-on comparison. Sample 4 used a different support structure and was not treated as a like-for-like magnet comparison."
+    },
+    {
+      "beforeHeading": "The differences were just as obvious in the hand",
+      "src": "/images/posts/magsafe-ring-stand-sourcing-four-sample-comparison/magnetic-ring-stand-tested-charging-compatibility.webp",
+      "alt": "Charging check in which Samples 1, 2 and 3 charged while Sample 4 did not charge with the tested iPhone 17 Pro Max and charger setup",
+      "caption": "Result applies only to the tested iPhone 17 Pro Max and charger setup; it is not a universal compatibility claim."
+    },
+    {
+      "beforeHeading": "Where each sample made sense",
+      "src": "/images/posts/magsafe-ring-stand-sourcing-four-sample-comparison/magnetic-ring-stand-side-profile-hand-feel.webp",
+      "alt": "Side-profile comparison of four magnetic ring stand samples showing different closed profiles on the tested iPhone 17 Pro Max",
+      "caption": "Hand-feel scores are subjective observations from this comparison, not instrumented thickness measurements."
+    }
+  ]
+}
