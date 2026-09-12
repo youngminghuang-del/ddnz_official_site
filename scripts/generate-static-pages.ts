@@ -1,3 +1,6 @@
+import kitchenProducts from '../src/features/commercial-kitchen/data/products.mjs';
+import kitchenLaunch from '../src/features/commercial-kitchen/data/launch.mjs';
+import { renderKitchenStaticContent } from './kitchen-static-content.mjs';
 import fs from 'fs';
 import path from 'path';
 import { getLocalizedHomeFaqs, type HomeFaqLanguage } from '../src/data/homeFaqData';
@@ -31,49 +34,49 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       title: 'DDNZ Global | China Sourcing, Quality Control & Export Delivery',
       desc: 'Source commercial kitchen equipment, audio, mobile accessories and outdoor products from China with supplier verification, QC, consolidation and export delivery.',
       keywords: 'China sourcing agent, China procurement company, supplier inspection China, cargo consolidation China, commercial kitchen equipment sourcing, speaker sourcing China, mobile accessories sourcing, outdoor products sourcing China',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     'zh-cn': {
       title: 'DDNZ Global 大递诺展 | 中国采购、验货、集货与出口交付',
       desc: '为中东、非洲和中南美进口商提供商用餐厨设备、音响、手机配件和户外用品的一站式中国采购、验货、集货与出口服务。',
       keywords: '中国采购代理, 广州采购公司, 供应商验货, 集货出口, 商用餐厨设备采购, 音响采购, 手机配件采购, 户外用品采购',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     ru: {
       title: 'DDNZ Global | Закупки, контроль качества и экспорт из Китая',
       desc: 'Поиск поставщиков, инспекция, консолидация и экспорт кухонного оборудования, аудио, мобильных аксессуаров и товаров для активного отдыха из Китая.',
       keywords: 'закупки в Китае, поиск поставщиков Китай, инспекция товара, консолидация грузов, товары для активного отдыха из Китая',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     fr: {
       title: 'DDNZ Global | Achats, contrôle qualité et export depuis la Chine',
       desc: 'Sourcing, inspection, consolidation et export d’équipements de cuisine, audio, accessoires mobiles et produits de plein air depuis la Chine.',
       keywords: 'agent sourcing Chine, inspection fournisseur Chine, consolidation marchandises Chine, sourcing produits de plein air Chine',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     es: {
       title: 'DDNZ Global | Compras, control de calidad y exportación desde China',
       desc: 'Búsqueda, inspección, consolidación y exportación desde China de cocina comercial, audio, accesorios móviles y productos para actividades al aire libre.',
       keywords: 'agente de compras China, inspección de proveedores, consolidación de carga China, productos para actividades al aire libre China',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     ar: {
       title: 'DDNZ Global | التوريد وفحص الجودة والتصدير من الصين',
       desc: 'توريد وفحص وتجميع وتصدير معدات المطابخ والصوت وملحقات الهاتف ومستلزمات الأنشطة الخارجية من الصين.',
       keywords: 'وكيل توريد الصين, فحص الموردين, تجميع البضائع من الصين, توريد مستلزمات الأنشطة الخارجية',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     pt: {
       title: 'DDNZ Global | Sourcing, inspeção e exportação da China',
       desc: 'Encontre produtos comerciais na China com verificação de fornecedores, controle de qualidade, consolidação e entrega para exportação.',
       keywords: 'sourcing na China, agente de compras China, inspeção de fornecedores, consolidação de cargas China',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
     tr: {
       title: 'DDNZ Global | Çin’den tedarik, denetim ve ihracat',
       desc: 'Çin’den ticari ürünleri tedarikçi doğrulama, kalite kontrol, konsolidasyon ve ihracat teslimiyle yönetin.',
       keywords: 'Çin tedarik, Çin satın alma acentesi, tedarikçi denetimi, Çin yük konsolidasyonu',
-      image: '/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp',
+      image: '/images/operations/supplier-visit-speaker-redacted-v2.webp',
     },
   },
   'how-we-work': {
@@ -478,10 +481,10 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   },
   'sourcing/commercial-kitchen-equipment-from-china': {
     en: {
-      title: 'Commercial Kitchen Equipment Sourcing from China | DDNZ',
-      desc: 'Source commercial kitchen equipment from China with model-level supplier checks, inspection evidence, consolidation and export coordination.',
+      title: kitchenLaunch.meta.title,
+      desc: kitchenLaunch.meta.description,
       keywords: 'commercial kitchen equipment from China, restaurant equipment sourcing China, commercial refrigerator supplier China, kitchen equipment inspection',
-      image: '/images/product-showcase/kitchen/kitchen-operating-sanitized.webp'
+      image: '/commercial-kitchen-media/kitchen-hero.webp'
     }
   },
   'sourcing/audio-speakers-from-china': {
@@ -1413,6 +1416,8 @@ function injectStaticRouteContent(
           <div class="article-body mt-10">${post.content || ''}</div>
         </article>
       </main>`;
+  } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
+    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch);
   } else if (relPath === 'how-we-work') {
     const processCopy = howWeWorkStaticCopy[lang] || howWeWorkStaticCopy.en;
     const processSeo = seoDataMatrix['how-we-work'][lang] || seoDataMatrix['how-we-work'].en;

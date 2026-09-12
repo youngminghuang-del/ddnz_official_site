@@ -1,0 +1,11 @@
+{
+  "heading": "Escanea para contactar",
+  "view": "Ver código QR",
+  "close": "Cerrar",
+  "save": "Guardar código QR",
+  "chat": "Chatear por WhatsApp",
+  "whatsappTitle": "Código QR de WhatsApp",
+  "wechatTitle": "Código QR de WeChat",
+  "whatsappHint": "Escanea con WhatsApp o abre el chat en este dispositivo.",
+  "wechatHint": "Escanea con WeChat. En tu teléfono, guarda la imagen para usarla en WeChat."
+}

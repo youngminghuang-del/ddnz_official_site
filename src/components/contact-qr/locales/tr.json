@@ -1,0 +1,11 @@
+{
+  "heading": "İletişim için kodu tarayın",
+  "view": "QR kodunu göster",
+  "close": "Kapat",
+  "save": "QR kodunu kaydet",
+  "chat": "WhatsApp'tan yazın",
+  "whatsappTitle": "WhatsApp QR kodu",
+  "wechatTitle": "WeChat QR kodu",
+  "whatsappHint": "WhatsApp ile tarayın veya bu cihazda sohbeti açın.",
+  "wechatHint": "WeChat ile tarayın. Telefonunuzda, WeChat'te kullanmak için görseli kaydedin."
+}

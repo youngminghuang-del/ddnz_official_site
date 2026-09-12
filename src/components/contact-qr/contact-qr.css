@@ -1,0 +1,28 @@
+.contact-qr { --cq-ink: #172238; --cq-muted: #53627a; --cq-line: #d3d9e1; --cq-focus: #763c9c; color: var(--cq-ink); min-width: 0; }
+.contact-qr--dark { --cq-ink: #fff; --cq-muted: #cbd5e1; --cq-line: #43516a; --cq-focus: #d6a4e6; }
+.contact-qr .contact-qr__heading { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font: inherit; font-size: 13px; font-weight: 700; color: var(--cq-muted); }
+.contact-qr__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; max-width: 340px; }
+.contact-qr .contact-qr__card { appearance: none; display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 12px 10px; border: 1px solid var(--cq-line); border-radius: 8px; background: transparent; color: var(--cq-ink); cursor: pointer; font: inherit; text-align: center; gap: 8px; }
+.contact-qr .contact-qr__card:hover { border-color: var(--cq-focus); }
+.contact-qr__card:focus-visible { outline: 2px solid var(--cq-focus); outline-offset: 3px; }
+.contact-qr .contact-qr__thumbnail { display: block; width: 128px; max-width: 100%; height: 132px; padding: 4px; background: #fff; object-fit: contain; border-radius: 0; }
+.contact-qr__brand { display: flex; align-items: center; gap: 8px; font-size: 14px; line-height: 1.4; }
+.contact-qr__view { font-size: 12px; line-height: 1.5; color: var(--cq-muted); overflow-wrap: anywhere; }
+.contact-qr__mobile-icon { display: none; }
+.contact-qr__dialog { position: fixed; inset: 0; margin: auto; width: min(400px, calc(100vw - 32px)); max-width: none; max-height: calc(100dvh - 32px); padding: 0; border: 0; border-radius: 14px; background: #fff; color: #172238; box-shadow: 0 20px 70px #0005; overflow: auto; }
+.contact-qr__dialog::backdrop { background: rgb(7 24 46 / 72%); }
+.contact-qr__panel { padding: 20px; }
+.contact-qr__dialog-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.contact-qr__dialog .contact-qr__dialog-heading h2 { margin: 0; font-size: 20px; line-height: 1.4; font-weight: 700; color: #172238; }
+.contact-qr__dialog .contact-qr__close { display: grid; place-items: center; flex: 0 0 44px; width: 44px; height: 44px; padding: 0; border: 1px solid #d3d9e1; border-radius: 8px; background: #fff; color: #172238; cursor: pointer; }
+.contact-qr__dialog .contact-qr__full { display: block; width: min(100%, 280px); height: auto; object-fit: contain; background: #fff; margin: 16px auto; border-radius: 0; }
+.contact-qr__dialog .contact-qr__hint { font-size: 14px; line-height: 1.6; margin: 0 0 14px; color: #53627a; }
+.contact-qr__dialog a { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 10px 12px; border-radius: 8px; font-size: 14px; font-weight: 700; line-height: 1.5; text-align: center; text-decoration: none; }
+.contact-qr__dialog a.contact-qr__chat { background: #14663b; color: #fff; margin-bottom: 8px; }
+.contact-qr__dialog a.contact-qr__save { border: 1px solid #d3d9e1; color: #172238; background: #fff; }
+.contact-qr__dialog :is(a, button):focus-visible { outline: 2px solid #763c9c; outline-offset: 3px; }
+@media (max-width: 767px) {
+  .contact-qr .contact-qr__thumbnail { display: none; }
+  .contact-qr__mobile-icon { display: block; }
+  .contact-qr .contact-qr__card { min-height: 80px; justify-content: center; }
+}

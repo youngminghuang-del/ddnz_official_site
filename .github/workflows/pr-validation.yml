@@ -38,11 +38,20 @@ jobs:
       - name: Test Notion publication guards
         run: npm run test:notion-guards
 
+      - name: Test sourcing tools and release generation
+        run: node --test tests/*.test.mjs tests/kitchen/*.test.mjs
+
+      - name: Test analytics consent and payload safeguards
+        run: npm run test:analytics-policy && npm run test:analytics-runtime
+
       - name: Build application from the committed content snapshot
         run: npm exec -- vite build
 
       - name: Generate static routes and sitemap
         run: npm exec -- tsx scripts/generate-static-pages.ts
+
+      - name: Finalize screen protector routes
+        run: npm run build:screen-protectors
 
       - name: Audit generated SEO output
         run: node scripts/audit-seo-output.mjs

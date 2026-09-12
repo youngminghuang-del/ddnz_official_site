@@ -1,0 +1,11 @@
+{
+  "heading": "امسح الرمز للتواصل",
+  "view": "عرض رمز QR",
+  "close": "إغلاق",
+  "save": "حفظ رمز QR",
+  "chat": "الدردشة عبر WhatsApp",
+  "whatsappTitle": "رمز QR لـ WhatsApp",
+  "wechatTitle": "رمز QR لـ WeChat",
+  "whatsappHint": "امسح الرمز باستخدام WhatsApp أو افتح الدردشة على هذا الجهاز.",
+  "wechatHint": "امسح الرمز باستخدام WeChat. على هاتفك، احفظ الصورة لاستخدامها في WeChat."
+}

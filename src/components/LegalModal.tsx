@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from 'framer-motion';
 import { ArrowLeft } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { COMPANY } from '../config/companyIdentity';
 
 export type LegalType = 'privacy' | 'terms' | null;
 
@@ -63,6 +64,7 @@ export default function LegalModal({ type, onClose }: LegalModalProps) {
               {content[type].title}
             </h1>
             <p className="-mt-8 mb-10 text-sm font-semibold text-violet-100">{labels.officialNote}</p>
+            {language === 'zh' && <p className="mb-8 text-white">{COMPANY.zh}（{COMPANY.en}）</p>}
 
             <div className="space-y-10">
               {content[type].sections.map((section, idx) => (

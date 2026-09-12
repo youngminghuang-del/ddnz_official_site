@@ -30,6 +30,7 @@ import "./mobile-readability.css";
 import ShowcaseSEO from "./ShowcaseSEO";
 import ShowcaseContactFooter from "./ShowcaseContactFooter";
 import SourcingHomepageNav from "../../components/SourcingHomepageNav";
+import ScreenProtectorEntry from "../../features/screen-protectors/ScreenProtectorEntry";
 
 const A = "/images/product-showcase/mobile";
 const H = A;
@@ -134,7 +135,7 @@ const evidenceTracks = {
   power: {
     label: "Power & Charging",
     video: `${A}/power-bank-factory.mp4`,
-    poster: `${A}/family-power-banks-v1.webp`,
+    poster: `${A}/power-bank-assembly-poster-v1.webp`,
     caption: "Authorized power-bank assembly footage · China",
     title: "Port, assembly and charging evidence for shipment release.",
     checks: [
@@ -145,8 +146,8 @@ const evidenceTracks = {
     ],
     evidence: ["Assembly photos", "Port and output record", "Open-item log", "Final packaging photos"],
     thumbs: [
-      [`${A}/family-power-banks-v1.webp`, "01", "Port map", "Port configuration and interface"],
-      [`${A}/power-bank-factory.mp4`, "02", "Assembly", "Line-side assembly evidence", `${A}/family-power-banks-v1.webp`],
+      [`${A}/family-power-banks-v1.webp`, "01", "Port views", "Product views and port layout", undefined, "contain"],
+      [`${A}/power-bank-assembly-poster-v1.webp`, "02", "Assembly", "Frame from the assembly footage above", undefined, "cover", "50% 27%"],
       [`${A}/family-chargers-v1.webp`, "03", "Output test", "Live charger fixture and electrical check"],
       [`${A}/power-bank-final-sample-v1.webp`, "04", "Final sample", "Cabled unit and finish review"],
     ],
@@ -241,9 +242,9 @@ function FamilyCard({ item, index, technical }) {
   );
 }
 
-function VideoThumb({ src, image, alt, poster }) {
+function VideoThumb({ src, image, alt, poster, fit = "cover" }) {
   if (src.endsWith(".mp4")) return <video src={src} poster={poster} muted playsInline preload="none" aria-label={alt} />;
-  return <img src={src} alt={alt} loading="lazy" decoding="async" style={{ objectPosition: image || "50% 50%" }} />;
+  return <img src={src} alt={alt} loading="lazy" decoding="async" style={{ objectPosition: image || "50% 50%", objectFit: fit, ...(fit === "contain" ? { background: "#fff" } : {}) }} />;
 }
 
 function HeroProductStage() {
@@ -372,6 +373,7 @@ export function MobileAccessories() {
           </div>
         </section>
 
+        <div className="mobile-section"><ScreenProtectorEntry /></div>
         <section className="mobile-section assortment-section" aria-labelledby="assortment-title">
           <div className="assortment-head">
             <div><p className="mobile-kicker">ASSORTMENT ARCHITECTURE</p><h2 id="assortment-title">Built around sell-through, not a random catalog.</h2><p>Four buying families. Multiple price ladders. One range built for comparison.</p></div>
@@ -454,7 +456,7 @@ export function MobileAccessories() {
             </aside>
           </div>
           <div className="evidence-thumbs">
-            {track.thumbs.map(([src, number, title, copy, poster]) => <article key={`${trackKey}-${number}`}><div><VideoThumb src={src} poster={poster} alt={`${title}: ${copy}`} /></div><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
+            {track.thumbs.map(([src, number, title, copy, poster, fit, position]) => <article key={`${trackKey}-${number}`}><div><VideoThumb src={src} poster={poster} fit={fit} image={position} alt={`${title}: ${copy}`} /></div><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
           <button type="button" className="track-switch" onClick={() => setTrackKey(trackKey === "cases" ? "power" : "cases")}>Switch to {trackKey === "cases" ? "Power & Charging" : "Phone Cases"} evidence <ArrowRight size={16} /></button>
         </section>

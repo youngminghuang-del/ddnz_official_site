@@ -75,6 +75,7 @@ ${verificationTags}
     ],
     
     define: {
+      __LOCAL_CANDIDATE__: 'false',
       'process.env.GEMINI_API_KEY': JSON.stringify(env.GEMINI_API_KEY),
     },
     

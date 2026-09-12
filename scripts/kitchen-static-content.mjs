@@ -1,0 +1,32 @@
+const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+// Uses the same catalogue as the interactive page, including quotation limits.
+export function renderKitchenStaticContent(products, launch) {
+  const featured = launch.featuredProductIds.map(id => {
+    const product = products.find(p => p.id === id);
+    if (!product?.quote) throw new Error(`Featured kitchen price missing: ${id}`);
+    return product;
+  });
+  return `<main class="mx-auto max-w-5xl px-4 py-16 sm:px-6" data-static-fallback="commercial-kitchen">
+    <p>For importers, wholesalers &amp; distributors</p>
+    <h1>Commercial kitchen equipment from China</h1>
+    <p>A stronger range. A better way to source it. Compare models, explore market prices and bring your next equipment order into one sourcing brief.</p>
+    <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>
+    <h2>Eight featured models. 26 models in the range.</h2>
+    <div>${featured.map(p => `<article><img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
+      <h3>${escape(p.model)} — ${escape(p.name)}</h3><p>${escape(p.metric)} · ${escape(p.dimensions)}</p>
+      <p>Indicative supply price: CNY ${Number(p.quote.price).toFixed(2)} / unit. Reference order quantity: ${Number(p.quote.minUnits)} units.</p>
+      ${p.quote.configurationNote ? `<p>${escape(p.quote.configurationNote)}</p>` : ''}</article>`).join('')}</div>
+    <p>Freight and taxes are extra. Final price, minimum quantities and electrical configuration are confirmed with your quotation.</p>
+    <h2>Choose your market. Build your buying case.</h2>
+    ${launch.markets.map(m => `<section><h3>${escape(m.title)}</h3><p>${escape(m.description)}</p></section>`).join('')}
+    <p>Compare dated retail references with indicative supply prices. Use your own selling price and import costs to estimate gross margin. Retail price differences are not net profit.</p>
+    <h2>Build a working range</h2>
+    ${launch.assortments.map(k => `<h3>${escape(k.name)}</h3><p>${escape(k.description)}</p>`).join('')}
+    <h2>Choose first. Configure with the quote.</h2>
+    <p>Select models, quantity and destination. Voltage, frequency, phase and plug are confirmed for the selected equipment during quotation.</p>
+    <h2>Before you request a quote</h2>
+    ${launch.faq.slice(0,2).map(item => `<details><summary>${escape(item.question)}</summary><p>${escape(item.answer)}</p></details>`).join('')}
+    <p><a href="/get-a-quote/?leadGoal=Product%20Sourcing&amp;industry=Commercial%20Kitchen%20Equipment&amp;source=kitchen_catalogue">Request an equipment quotation</a></p>
+  </main>`;
+}

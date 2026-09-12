@@ -1,0 +1,11 @@
+{
+  "heading": "Scannez pour nous contacter",
+  "view": "Afficher le QR code",
+  "close": "Fermer",
+  "save": "Enregistrer le QR code",
+  "chat": "Discuter sur WhatsApp",
+  "whatsappTitle": "QR code WhatsApp",
+  "wechatTitle": "QR code WeChat",
+  "whatsappHint": "Scannez avec WhatsApp ou ouvrez la discussion sur cet appareil.",
+  "wechatHint": "Scannez avec WeChat. Sur votre téléphone, enregistrez l’image pour l’utiliser dans WeChat."
+}

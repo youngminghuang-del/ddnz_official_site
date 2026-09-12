@@ -1,0 +1,11 @@
+{
+  "heading": "Scan to connect",
+  "view": "View QR code",
+  "close": "Close",
+  "save": "Save QR code",
+  "chat": "Chat on WhatsApp",
+  "whatsappTitle": "WhatsApp QR code",
+  "wechatTitle": "WeChat QR code",
+  "whatsappHint": "Scan with WhatsApp, or open the chat on this device.",
+  "wechatHint": "Scan with WeChat. On your phone, save the image to use in WeChat."
+}

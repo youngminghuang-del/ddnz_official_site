@@ -26,6 +26,11 @@ import type { Language } from '../i18n/translations';
 import { buildAttributedWhatsAppUrl, readAttribution } from '../lib/attribution';
 import { trackEvent } from '../lib/utils';
 import { DdnzEyebrow } from './DdnzUi';
+import InquiryPlanCard from '../features/screen-protectors/InquiryPlanCard';
+import { HANDOFF_KEY, readHandoff } from '../features/screen-protectors/handoff.mjs';
+import { localPreviewCopy } from '../local-preview/locales';
+
+declare const __LOCAL_CANDIDATE__: boolean;
 
 type InquiryMode = 'sourcing' | 'existing';
 
@@ -294,6 +299,8 @@ export default function TradeSupportInquiry() {
   const location = useLocation();
   const [formState, formspreeSubmit] = useForm('mdabvqbd');
   const copy = { ...EN_COPY, ...LOCALIZED_COPY[language] };
+  const isLocalPreview = typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__;
+  const previewCopy = localPreviewCopy[language] || localPreviewCopy.en;
   const params = useMemo(() => new URLSearchParams(location.search), [location.search]);
   const leadGoal = params.get('leadGoal') || 'Product Sourcing';
   const mode: InquiryMode = leadGoal.toLowerCase().includes('inspection') ? 'existing' : 'sourcing';
@@ -316,6 +323,10 @@ export default function TradeSupportInquiry() {
   const [notes, setNotes] = useState('');
   const [error, setError] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const [filmPlan, setFilmPlan] = useState<ReturnType<typeof readHandoff>>(null);
+  const [filmAttachmentRemoved, setFilmAttachmentRemoved] = useState(false);
+  const [localPayload, setLocalPayload] = useState<Record<string, FormDataEntryValue> | null>(null);
+  const localResultRef = useRef<HTMLDivElement>(null);
   const headingRef = useRef<HTMLHeadingElement>(null);
   const destinationRef = useRef<HTMLInputElement>(null);
   const detailsRef = useRef<HTMLTextAreaElement>(null);
@@ -327,6 +338,11 @@ export default function TradeSupportInquiry() {
 
   useEffect(() => {
     let storedProductDetails = '';
+    let incomingFilmPlan: ReturnType<typeof readHandoff> = null;
+    try { incomingFilmPlan = readHandoff(window.sessionStorage, location.search); } catch { /* Optional local storage. */ }
+    setFilmPlan(incomingFilmPlan);
+    setFilmAttachmentRemoved(false);
+    setLocalPayload(null);
     const storageKey = 'ddnz_quote_prefill_v1';
     let shouldClearStoredDraft = false;
     try {
@@ -358,7 +374,7 @@ export default function TradeSupportInquiry() {
     setStep(1);
     setCategory(initialCategory);
     setDestination(initialDestination);
-    setProductDetails(storedProductDetails);
+    setProductDetails(incomingFilmPlan?.brief || storedProductDetails);
     setServices([]);
     setReadiness('');
     setTimeline('');
@@ -378,8 +394,15 @@ export default function TradeSupportInquiry() {
 
   useEffect(() => {
     lifecycleRef.current.step = step;
+    setLocalPayload(null);
     if (step > 1) window.setTimeout(() => headingRef.current?.focus(), 80);
   }, [step]);
+
+  useEffect(() => {
+    if (!localPayload) return;
+    localResultRef.current?.focus({ preventScroll: true });
+    localResultRef.current?.scrollIntoView({ block: 'nearest', behavior: 'auto' });
+  }, [localPayload]);
 
   useEffect(() => () => {
     const lifecycle = lifecycleRef.current;
@@ -459,7 +482,8 @@ export default function TradeSupportInquiry() {
     setServices((current) => current.includes(value) ? current.filter((item) => item !== value) : [...current, value]);
   };
 
-  const nextStep = () => {
+  const nextStep = (event?: { preventDefault: () => void }) => {
+    event?.preventDefault();
     markStarted();
     if (step === 1) {
       if (!category || !destination.trim() || productDetails.trim().length < 3) {
@@ -489,6 +513,8 @@ export default function TradeSupportInquiry() {
   };
 
   const submitForm = (event: FormEvent<HTMLFormElement>) => {
+    setLocalPayload(null);
+    if (step < 3) { event.preventDefault(); nextStep(); return; }
     markStarted();
     const emailIsValid = !email.trim() || /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim());
     if (!name.trim() || (!email.trim() && !phone.trim())) {
@@ -509,6 +535,11 @@ export default function TradeSupportInquiry() {
     trackEvent('quote_form_submit_attempt', {
       form_location: 'trade_support_quote_page', intent: mode, lead_goal: leadGoal, product_category: category, service_count: services.length,
     });
+    if (isLocalPreview) {
+      event.preventDefault();
+      setLocalPayload(Object.fromEntries(new FormData(event.currentTarget)));
+      return;
+    }
     formspreeSubmit(event);
   };
 
@@ -535,7 +566,15 @@ export default function TradeSupportInquiry() {
 
         <div className="overflow-hidden rounded-2xl border border-[var(--ddnz-line)] bg-white shadow-[var(--ddnz-shadow-soft)]">
           {!submitted ? (
-            <form onSubmit={submitForm} noValidate>
+            <form onSubmit={submitForm} onChange={() => { if (isLocalPreview) setLocalPayload(null); }} data-candidate-validated="true" noValidate>
+              {isLocalPreview ? <p role="note" className="border-b border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold leading-6 text-slate-700 sm:px-8">{previewCopy.notice}</p> : null}
+              <InquiryPlanCard plan={filmPlan} missing={leadSource === 'screen_protector_planner' && !filmPlan && !filmAttachmentRemoved} onRemove={() => {
+                try { window.sessionStorage.removeItem(HANDOFF_KEY); } catch { /* Storage may be restricted. */ }
+                if (productDetails === filmPlan?.brief) setProductDetails('');
+                setFilmPlan(null);
+                setFilmAttachmentRemoved(true);
+                setLocalPayload(null);
+              }} />
               <div className="border-b border-slate-200 px-5 py-5 sm:px-8">
                 <div className="flex items-center justify-between gap-4 text-xs font-bold text-slate-500">
                   <span>{copy.stepLabel} {step} / 3</span>
@@ -666,11 +705,16 @@ export default function TradeSupportInquiry() {
                 <div aria-live="polite" className="mt-5 min-h-5">{error ? <p role="alert" className="text-sm font-bold text-red-600">{error}</p> : null}</div>
               </div>
 
+              {isLocalPreview && localPayload ? <div ref={localResultRef} role="status" tabIndex={-1} data-local-submit-result="true" aria-label={previewCopy.resultTitle} className="mx-5 mb-5 scroll-mt-28 rounded-xl border border-emerald-200 bg-emerald-50 p-4 outline-none focus-visible:ring-2 focus-visible:ring-emerald-700 sm:mx-8">
+                <h2 className="flex items-center gap-2 text-base font-bold text-emerald-950"><CheckCircle2 className="h-5 w-5 shrink-0" aria-hidden="true" />{previewCopy.resultTitle}</h2>
+                <p className="mt-2 text-sm leading-6 text-emerald-950">{previewCopy.resultText}</p>
+                <details className="mt-2 text-sm"><summary className="min-h-11 cursor-pointer py-3 font-bold text-emerald-950">{previewCopy.review}</summary><pre dir="ltr" className="mt-2 max-h-80 overflow-auto whitespace-pre-wrap break-all text-left text-xs text-slate-700">{JSON.stringify(localPayload, null, 2)}</pre></details>
+              </div> : null}
               <div className="flex flex-col-reverse gap-3 border-t border-slate-200 bg-slate-50/70 px-5 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
                 {step > 1 ? <button type="button" onClick={previousStep} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl border border-slate-200 bg-white px-5 text-sm font-bold text-slate-700 hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]"><ArrowLeft className="h-4 w-4" aria-hidden="true" />{copy.back}</button> : <span />}
-                {step < 3 ? <button type="button" onClick={nextStep} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--ddnz-action)] px-6 text-sm font-extrabold text-white hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">{copy.continue}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button> : <button type="submit" disabled={formState.submitting} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--ddnz-action)] px-6 text-sm font-extrabold text-white hover:bg-[var(--ddnz-coral-strong)] disabled:cursor-wait disabled:bg-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">{formState.submitting ? copy.submitting : mode === 'sourcing' ? copy.submitSourcing : copy.submitExisting}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
+                {step < 3 ? <button type="button" onClick={nextStep} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--ddnz-action)] px-6 text-sm font-extrabold text-white hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">{copy.continue}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button> : <button type="submit" disabled={formState.submitting} className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[var(--ddnz-action)] px-6 text-sm font-extrabold text-white hover:bg-[var(--ddnz-coral-strong)] disabled:cursor-wait disabled:bg-slate-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">{isLocalPreview ? previewCopy.submit : formState.submitting ? copy.submitting : mode === 'sourcing' ? copy.submitSourcing : copy.submitExisting}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>}
               </div>
-              {step === 3 ? <p className="flex items-center justify-center gap-2 px-5 pb-5 text-center text-xs text-slate-500"><LockKeyhole className="h-4 w-4" aria-hidden="true" />{copy.responseNote}</p> : null}
+              {step === 3 ? <p className="flex items-center justify-center gap-2 px-5 pb-5 text-center text-xs text-slate-500"><LockKeyhole className="h-4 w-4 shrink-0" aria-hidden="true" />{isLocalPreview ? previewCopy.notice : copy.responseNote}</p> : null}
             </form>
           ) : (
             <div className="flex min-h-[560px] flex-col items-center justify-center px-6 py-12 text-center sm:px-12">

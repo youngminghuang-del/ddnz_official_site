@@ -1,0 +1,7 @@
+{
+  "submit": "Probar envío",
+  "notice": "Solo vista previa local. La prueba revisa el formulario sin enviar ninguna solicitud.",
+  "resultTitle": "Prueba completada — no se ha enviado nada",
+  "resultText": "El contenido del formulario está listo para revisar. No se ha enviado ningún correo ni solicitud a DDNZ.",
+  "review": "Revisar el contenido de la prueba"
+}
