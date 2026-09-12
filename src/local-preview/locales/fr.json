@@ -1,0 +1,7 @@
+{
+  "submit": "Tester l’envoi",
+  "notice": "Aperçu local uniquement. Ce test vérifie le formulaire sans envoyer de demande.",
+  "resultTitle": "Test terminé — rien n’a été envoyé",
+  "resultText": "Le contenu du formulaire est prêt à être vérifié. Aucun e-mail ni aucune demande n’a été envoyé à DDNZ.",
+  "review": "Vérifier le contenu du test"
+}

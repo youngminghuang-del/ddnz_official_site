@@ -1,0 +1,7 @@
+{
+  "submit": "Gönderimi test et",
+  "notice": "Yalnızca yerel önizleme. Bu test formu kontrol eder, talep göndermez.",
+  "resultTitle": "Test tamamlandı — hiçbir şey gönderilmedi",
+  "resultText": "Form içeriğiniz incelemeye hazır. DDNZ'ye e-posta veya talep gönderilmedi.",
+  "review": "Test içeriğini incele"
+}

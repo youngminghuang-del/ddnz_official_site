@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">Itemised China to Saudi Arabia freight quote checklist</title>
+  <desc id="desc">Six cost lines and four operating terms that importers should compare across forwarder quotes.</desc>
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f4f8fc"/>
+      <stop offset="1" stop-color="#e4eef8"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0b2f55" flood-opacity=".12"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="675" fill="url(#bg2)"/>
+  <rect x="0" y="0" width="1200" height="138" fill="#071b31"/>
+  <rect x="0" y="130" width="1200" height="8" fill="#f59e0b"/>
+  <text x="60" y="56" fill="#fbbf24" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700" letter-spacing="3">QUOTE NORMALISATION</text>
+  <text x="60" y="103" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="39" font-weight="800">MAKE EVERY FORWARDER QUOTE COMPARABLE</text>
+
+  <g filter="url(#cardShadow)" font-family="Arial, Helvetica, sans-serif">
+    <g transform="translate(60 178)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#e8f4ff"/>
+      <text x="38" y="58" fill="#0b4f81" font-size="25" font-weight="800">1</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">BASE OCEAN FREIGHT</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Origin, destination, container</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">and named service basis</text>
+    </g>
+    <g transform="translate(435 178)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#fff1d7"/>
+      <text x="38" y="58" fill="#9b5600" font-size="25" font-weight="800">2</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">PSS / RATE ADDITIONS</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Effective date, calculation basis</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">and quote validity</text>
+    </g>
+    <g transform="translate(810 178)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#fee2e2"/>
+      <text x="38" y="58" fill="#b42318" font-size="25" font-weight="800">3</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">CONTINGENCY COST</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Emergency routing, storage</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">or temporary handling</text>
+    </g>
+    <g transform="translate(60 338)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#dff7f2"/>
+      <text x="38" y="58" fill="#087764" font-size="25" font-weight="800">4</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">LANDBRIDGE / FEEDER</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Provider, handover point</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">and responsibility</text>
+    </g>
+    <g transform="translate(435 338)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#f3e8ff"/>
+      <text x="38" y="58" fill="#7e22ce" font-size="25" font-weight="800">5</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">DESTINATION CHARGES</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Terminal, documentation</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">and free-time exposure</text>
+    </g>
+    <g transform="translate(810 338)">
+      <rect width="330" height="130" rx="20" fill="#ffffff"/>
+      <circle cx="48" cy="50" r="27" fill="#fce7f3"/>
+      <text x="38" y="58" fill="#9d174d" font-size="25" font-weight="800">6</text>
+      <text x="90" y="47" fill="#0b2f55" font-size="21" font-weight="800">INLAND DELIVERY</text>
+      <text x="90" y="78" fill="#48657f" font-size="16">Final Saudi city, truck terms</text>
+      <text x="90" y="101" fill="#48657f" font-size="16">and delivery scope</text>
+    </g>
+  </g>
+
+  <rect x="60" y="515" width="1080" height="105" rx="20" fill="#0b2f55"/>
+  <text x="90" y="553" fill="#fbbf24" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="800">ALSO LOCK:</text>
+  <g fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="18">
+    <text x="225" y="553">QUOTE VALIDITY</text>
+    <text x="430" y="553">FREE TIME</text>
+    <text x="580" y="553">ROUTING</text>
+    <text x="700" y="553">TRANSSHIPMENT</text>
+    <text x="890" y="553">FALLBACK PLAN</text>
+  </g>
+  <text x="90" y="590" fill="#c8d7e8" font-family="Arial, Helvetica, sans-serif" font-size="16">Compare identical shipment data. A low total without a confirmed route is not a usable offer.</text>
+  <text x="60" y="652" fill="#5d7891" font-family="Arial, Helvetica, sans-serif" font-size="14">DDNZ original quote checklist • Current charges and acceptance must be verified before booking</text>
+</svg>

@@ -1,0 +1,11 @@
+{
+  "heading": "Leia o código para falar conosco",
+  "view": "Ver código QR",
+  "close": "Fechar",
+  "save": "Salvar código QR",
+  "chat": "Conversar pelo WhatsApp",
+  "whatsappTitle": "Código QR do WhatsApp",
+  "wechatTitle": "Código QR do WeChat",
+  "whatsappHint": "Leia com o WhatsApp ou abra a conversa neste dispositivo.",
+  "wechatHint": "Leia com o WeChat. No celular, salve a imagem para usar no WeChat."
+}

@@ -1,0 +1,7 @@
+{
+  "submit": "Testar envio",
+  "notice": "Somente prévia local. O teste verifica o formulário sem enviar uma solicitação.",
+  "resultTitle": "Teste concluído — nada foi enviado",
+  "resultText": "O conteúdo do formulário está pronto para revisão. Nenhum e-mail ou solicitação foi enviado à DDNZ.",
+  "review": "Revisar o conteúdo do teste"
+}

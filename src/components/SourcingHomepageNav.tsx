@@ -12,6 +12,7 @@ import {
   findArticleByRoute,
 } from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
+import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
 
 const languageLabels: Record<Language, string> = {
   en: 'EN',
@@ -162,8 +163,12 @@ function DropdownLink({ to, children, onNavigate }: { to: string; children: Reac
 
 export default function SourcingHomepageNav({
   showFreightExecutor = false,
+  quotePath,
+  supportedLanguages,
 }: {
   showFreightExecutor?: boolean;
+  quotePath?: string;
+  supportedLanguages?: Language[];
 }) {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
@@ -174,12 +179,14 @@ export default function SourcingHomepageNav({
   const headerRef = useRef<HTMLElement>(null);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const labels = navLabels[language];
+  const filmNav = screenProtectorNavigation(language);
   const freightExecutor = freightExecutorLabels[language];
   const prefix = prefixByLanguage[language];
   const localizedPath = (path: string) => canonicalSitePath(`${prefix}${path}`);
   const processPath = localizedPath('/how-we-work');
-  const quoteHref = appendAttribution(`${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
-  const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment');
+  const quoteHref = appendAttribution(quotePath ? canonicalSitePath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
+  const languageOptions = supportedLanguages || (Object.keys(languageLabels) as Language[]);
+  const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || location.pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
   const isMarketsPage = location.pathname.includes('/shipping-from-china-to-');
   const isInsightsPage = /\/insights\/?$/.test(location.pathname);
@@ -325,6 +332,12 @@ export default function SourcingHomepageNav({
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/refrigeration-equipment')}>{labels.refrigeration}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/audio-speakers-from-china')}>{labels.audio}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/mobile-accessories-from-china')}>{labels.mobile}</DropdownLink>
+            <Link onClick={closeDesktopDropdown} to={filmNav.to} data-screen-protector-entry="desktop-nav"
+              aria-current={location.pathname === filmNav.to ? 'page' : undefined}
+              className="mx-3 mb-2 flex min-h-11 flex-col gap-1 border-s-2 border-[var(--ddnz-purple)] py-2 ps-3 pe-2 text-sm text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
+              <span className="font-bold">{filmNav.label}</span>
+              <span className="max-w-56 text-xs leading-5 text-slate-600">{filmNav.description}</span>
+            </Link>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/outdoor-products-from-china')}>{labels.outdoor}</DropdownLink>
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
@@ -369,7 +382,7 @@ export default function SourcingHomepageNav({
               </>
             )}
           >
-            {(Object.keys(languageLabels) as Language[]).map((item) => (
+            {languageOptions.map((item) => (
               <button key={item} type="button" onClick={() => switchLanguage(item)} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
                 {languageLabels[item]}
               </button>
@@ -432,6 +445,12 @@ export default function SourcingHomepageNav({
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/refrigeration-equipment')}>{labels.refrigeration}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/audio-speakers-from-china')}>{labels.audio}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/mobile-accessories-from-china')}>{labels.mobile}</Link>
+                <Link onClick={closeMobile} to={filmNav.to} data-screen-protector-entry="mobile-nav"
+                  aria-current={location.pathname === filmNav.to ? 'page' : undefined}
+                  className="mx-3 mb-2 flex min-h-11 flex-col gap-1 border-s-2 border-[var(--ddnz-purple)] py-2 ps-3 pe-2 text-sm text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
+                  <span className="font-bold">{filmNav.label}</span>
+                  <span className="text-xs leading-5 text-slate-600">{filmNav.description}</span>
+                </Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/outdoor-products-from-china')}>{labels.outdoor}</Link>
               </div>
               ) : null}
@@ -464,7 +483,7 @@ export default function SourcingHomepageNav({
             <Link onClick={closeMobile} aria-current={isProcessPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isProcessPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={processPath}>{labels.process}</Link>
             <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
             <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
-              {(Object.keys(languageLabels) as Language[]).map((item) => (
+              {languageOptions.map((item) => (
                 <button key={item} type="button" onClick={() => switchLanguage(item)} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
                   {languageLabels[item]}
                 </button>

@@ -119,15 +119,15 @@ const destinationLabels: Record<Language, Record<string, string>> = {
   tr: { 'Saudi Arabia': 'Suudi Arabistan', 'United Arab Emirates': 'Birleşik Arap Emirlikleri', Qatar: 'Katar', Nigeria: 'Nijerya', Ghana: 'Gana', Kenya: 'Kenya', Mexico: 'Meksika', Brazil: 'Brezilya', Chile: 'Şili', Peru: 'Peru' },
 };
 
-const heroImageAlts: Record<Language, [string, string, string]> = {
-  en: ['Warehouse workers checking cartons during receiving', 'Warehouse workers in DDNZ field vests moving through a storage aisle', 'Warehouse employee in a DDNZ field vest handling a parcel'],
-  zh: ['仓库团队在收货环节核对纸箱', '穿着 DDNZ 工作马甲的团队在仓储通道巡检', '穿着 DDNZ 工作马甲的仓库员工处理包裹'],
-  ru: ['Сотрудники склада проверяют коробки при приёмке', 'Сотрудники в жилетах DDNZ проходят по складскому проходу', 'Сотрудник склада в жилете DDNZ обрабатывает посылку'],
-  fr: ['Équipe d’entrepôt contrôlant les cartons à la réception', 'Équipe en gilets DDNZ dans une allée de stockage', 'Employé d’entrepôt en gilet DDNZ traitant un colis'],
-  es: ['Equipo de almacén verificando cajas durante la recepción', 'Equipo con chalecos DDNZ recorriendo un pasillo de almacén', 'Empleado de almacén con chaleco DDNZ manipulando un paquete'],
-  ar: ['فريق المستودع يتحقق من الصناديق أثناء الاستلام', 'فريق يرتدي سترات DDNZ داخل ممر التخزين', 'موظف مستودع يرتدي سترة DDNZ ويتعامل مع طرد'],
-  pt: ['Equipe do armazém verificando caixas no recebimento', 'Equipe com coletes DDNZ em um corredor do armazém', 'Funcionário do armazém com colete DDNZ manuseando um pacote'],
-  tr: ['Depo ekibi teslim alırken kolileri kontrol ediyor', 'DDNZ yelekli ekip depo koridorunda', 'DDNZ yelekli depo çalışanı paketi işliyor'],
+const HERO_INTRO: Record<Language, { headline: string; body: string; caption: string; imageAlt: string }> = {
+  en: { headline: 'Your China sourcing team.', body: 'Find suppliers, check products and coordinate export with one team on the ground.', caption: 'Supplier visit · Reviewing products together', imageAlt: 'Buyers reviewing audio products during a supplier showroom visit' },
+  zh: { headline: '在中国采购，让每一步有人负责。', body: '从寻找供应商、核对产品到集货出口，由中国团队衔接。', caption: '供应商走访 · 一起核对产品', imageAlt: '采购人员在供应商展厅现场讨论音响产品' },
+  ru: { headline: 'Ваша команда по закупкам в Китае.', body: 'Поиск поставщиков, проверка товаров и координация экспорта с одной командой на месте.', caption: 'Визит к поставщику · Совместный обзор продукции', imageAlt: 'Покупатели обсуждают аудиопродукцию в шоуруме поставщика' },
+  fr: { headline: 'Votre équipe sourcing en Chine.', body: 'Trouvez des fournisseurs, contrôlez les produits et coordonnez l’export avec une équipe sur place.', caption: 'Visite fournisseur · Examiner les produits ensemble', imageAlt: 'Des acheteurs examinent des produits audio dans le showroom d’un fournisseur' },
+  es: { headline: 'Su equipo de compras en China.', body: 'Encuentre proveedores, revise productos y coordine la exportación con un equipo en origen.', caption: 'Visita al proveedor · Revisamos los productos juntos', imageAlt: 'Compradores revisando productos de audio en la sala de exposición de un proveedor' },
+  ar: { headline: 'فريقك للتوريد من الصين.', body: 'اعثر على الموردين وافحص المنتجات ونسّق التصدير مع فريق واحد على أرض الواقع.', caption: 'زيارة المورد · مراجعة المنتجات معاً', imageAlt: 'مشترون يراجعون المنتجات الصوتية خلال زيارة معرض المورد' },
+  pt: { headline: 'Sua equipe de compras na China.', body: 'Encontre fornecedores, confira produtos e coordene a exportação com uma equipe no local.', caption: 'Visita ao fornecedor · Avaliando produtos juntos', imageAlt: 'Compradores avaliando produtos de áudio no showroom de um fornecedor' },
+  tr: { headline: 'Çin’deki tedarik ekibiniz.', body: 'Sahadaki tek bir ekiple tedarikçi bulun, ürünleri kontrol edin ve ihracatı koordine edin.', caption: 'Tedarikçi ziyareti · Ürünleri birlikte inceliyoruz', imageAlt: 'Alıcılar tedarikçi showroom ziyaretinde ses ürünlerini inceliyor' },
 };
 
 const categoryImageAlts: Record<Language, [string, string, string, string]> = {
@@ -156,6 +156,7 @@ export default function SourcingHomepageHero() {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const copy = HOME_COPY[language];
+  const intro = HERO_INTRO[language];
   const [intent, setIntent] = useState<Intent>('sourcing');
   const [category, setCategory] = useState<Category>('Commercial Kitchen Equipment');
   const [market, setMarket] = useState('');
@@ -164,8 +165,9 @@ export default function SourcingHomepageHero() {
 
   const scrollToBrief = (nextIntent: Intent = 'sourcing') => {
     setIntent(nextIntent);
-    document.getElementById('sourcing-brief')?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    window.setTimeout(() => document.getElementById(`intent-${nextIntent}`)?.focus(), 350);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    document.getElementById('sourcing-brief')?.scrollIntoView({ behavior: reducedMotion ? 'instant' : 'smooth', block: 'start' });
+    document.getElementById(`intent-${nextIntent}`)?.focus({ preventScroll: true });
   };
 
   const goToQuote = (nextIntent: Intent, nextCategory = category) => {
@@ -230,49 +232,63 @@ export default function SourcingHomepageHero() {
 
   return (
     <>
-      <section className="ddnz-ribbon-home-hero border-b border-slate-200" aria-labelledby="homepage-sourcing-title">
-        <div className="mx-auto grid max-w-[1536px] lg:min-h-[600px] lg:grid-cols-12">
-          <div className="flex flex-col justify-center px-5 py-12 sm:px-8 sm:py-14 lg:col-span-6 lg:px-12 lg:py-6 xl:px-[54px]">
-            <h1 id="homepage-sourcing-title" className="max-w-[660px] text-[clamp(2.35rem,3.7vw,3.65rem)] font-extrabold leading-[1.04] tracking-[-0.045em] text-[var(--ddnz-ink)] lg:translate-y-2">
-              {language === 'en' ? (
-                <>
-                  <span className="lg:block lg:whitespace-nowrap">Source, inspect and</span>{' '}
-                  <span className="lg:block lg:whitespace-nowrap">ship commercial products</span>{' '}
-                  <span className="lg:block lg:whitespace-nowrap">from China—with one</span>{' '}
-                  <span className="lg:block lg:whitespace-nowrap">accountable team.</span>
-                </>
-              ) : copy.headline}
-            </h1>
-            <p className="mt-5 max-w-[610px] text-[17px] leading-[1.5] text-[#26364d] sm:text-[18px]">
-              {copy.body}
-            </p>
-            <div className="mt-5 flex flex-col gap-3 sm:flex-row">
-              <button type="button" onClick={() => scrollToBrief('sourcing')} className="inline-flex min-h-[54px] items-center justify-center gap-3 rounded-lg bg-[var(--ddnz-action)] px-6 text-[16px] font-bold text-white shadow-sm transition-all hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
+      <section className="ddnz-ribbon-home-hero home-intro" aria-labelledby="homepage-sourcing-title">
+        <div className="home-intro-grid">
+          <div className="home-intro-copy">
+            <h1 id="homepage-sourcing-title">{intro.headline}</h1>
+            <p className="home-intro-summary">{intro.body}</p>
+            <div className="home-intro-actions">
+              <button type="button" onClick={() => scrollToBrief('sourcing')} className="ddnz-button ddnz-button-primary">
                 {copy.primary}<ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
-              <button type="button" onClick={() => goToQuote('freight')} className="inline-flex min-h-[54px] items-center justify-center rounded-lg border border-[#173252] bg-white px-6 text-[16px] font-bold text-[var(--ddnz-ink)] transition-colors hover:bg-slate-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
-                {copy.freight}
-              </button>
+              <button type="button" onClick={() => goToQuote('freight')} className="ddnz-button ddnz-button-secondary">{copy.freight}</button>
             </div>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" data-analytics-tracked="true" onClick={() => trackEvent('whatsapp_click', { cta_location: 'homepage_hero' })} className="mt-2 inline-flex min-h-11 w-fit items-center gap-2 rounded-md py-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] underline-offset-4 hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
-              <MessageCircle className="h-5 w-5 text-[#21a65a]" aria-hidden="true" />{copy.whatsapp}<ArrowRight className="h-4 w-4" aria-hidden="true" />
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" data-analytics-tracked="true" onClick={() => trackEvent('whatsapp_click', { cta_location: 'homepage_hero' })} className="home-intro-whatsapp">
+              <MessageCircle className="h-5 w-5" aria-hidden="true" />{copy.whatsapp}<ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
-            <div className="mt-3 space-y-2 text-[13px] text-[#42536a] sm:text-sm">
-              <p className="flex items-center gap-2"><UsersRound className="h-5 w-5 shrink-0 text-[#42536a]" aria-hidden="true" />{copy.support}</p>
-              <p className="flex items-center gap-2"><img src="/images/brand/heaven-born-wing-logo-v1.png" alt="" width="420" height="295" className="h-7 w-10 shrink-0 object-contain" aria-hidden="true" />{copy.heritage}</p>
-            </div>
           </div>
+          <figure className="home-intro-photo">
+            <img src="/images/operations/supplier-visit-speaker-redacted-v2.webp" alt={intro.imageAlt} width="1086" height="1448" fetchPriority="high" decoding="async" />
+            <figcaption>{intro.caption}</figcaption>
+          </figure>
+        </div>
+        <div className="home-intro-support">
+          <p><UsersRound className="h-5 w-5 shrink-0" aria-hidden="true" />{copy.support}</p>
+          <p><img src="/images/brand/heaven-born-wing-logo-v1.png" alt="" width="420" height="295" aria-hidden="true" />{copy.heritage}</p>
+        </div>
+      </section>
 
-          <div className="order-3 grid h-[540px] min-h-0 grid-rows-[1.3fr_0.9fr_0.9fr] overflow-hidden bg-slate-100 sm:h-[560px] lg:order-none lg:col-span-2 lg:h-[600px]">
-            <div className="min-h-0 overflow-hidden"><img src="/images/operations/pexels-jakarta-warehouse-loading-ddnz-vest-v2.webp" alt={heroImageAlts[language][0]} width="941" height="1671" loading="lazy" decoding="async" className="h-full min-h-0 w-full object-cover object-[50%_35%]" /></div>
-            <div className="min-h-0 overflow-hidden"><img src="/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp" alt={heroImageAlts[language][1]} width="1536" height="1024" loading="lazy" decoding="async" className="h-full min-h-0 w-full scale-[1.18] object-cover object-[50%_44%]" /></div>
-            <div className="min-h-0 overflow-hidden"><img src="/images/operations/pexels-wuhan-warehouse-receiving-ddnz-vest-v1.webp" alt={heroImageAlts[language][2]} width="1536" height="1024" loading="lazy" decoding="async" className="h-full min-h-0 w-full scale-[1.08] object-cover object-[58%_43%]" /></div>
+      <section id="product-categories" className="home-priority-categories scroll-mt-24 bg-[#fffefb] px-5 pb-14 pt-10 sm:px-8 lg:px-12" aria-labelledby="priority-categories-title">
+        <div className="mx-auto max-w-[1344px]">
+          <div className="flex items-end justify-between gap-4">
+            <h2 id="priority-categories-title" className="text-[28px] font-bold tracking-[-0.025em] text-[var(--ddnz-ink)]">{copy.categoriesTitle}</h2>
+            <Link to={canonicalSitePath('/products')} hrefLang="en" className="hidden min-h-11 items-center gap-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:underline sm:inline-flex">{copy.viewAll}{language !== 'en' && ' (EN)'}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
+          <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+            {categoryCards.map((card) => (
+              <Link key={card.industry} to={card.href} onClick={() => trackEvent('homepage_category_select', { industry: card.industry, cta_location: 'priority_categories' })} className="group overflow-hidden rounded-xl border border-slate-200 bg-white text-start transition-colors hover:border-[var(--ddnz-purple)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
+                <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
+                  <img src={card.image} alt={card.alt} width="1600" height="1000" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover" />
+                </div>
+                <span className="block px-5 pb-5 pt-4">
+                  <span className="flex items-start justify-between gap-3 text-xl font-bold leading-tight text-[var(--ddnz-ink)]">{card.label}<ArrowRight className="h-5 w-5 shrink-0 text-[var(--ddnz-purple-strong)]" aria-hidden="true" /></span>
+                  <span className="mt-3 block text-sm leading-6 text-slate-600">{card.tagline}</span>
+                </span>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <div className="order-2 flex items-center bg-white/20 px-4 py-8 sm:px-7 lg:order-none lg:col-span-4 lg:px-5 lg:py-5 xl:px-6">
-            <form id="sourcing-brief" onSubmit={(event) => { event.preventDefault(); goToQuote(intent); }} className="w-full rounded-xl border border-slate-200 bg-white p-4 shadow-[0_16px_45px_rgba(15,23,42,0.10)] sm:p-5" aria-labelledby="sourcing-brief-title">
-              <h2 id="sourcing-brief-title" className="text-[22px] font-extrabold tracking-[-0.025em] text-[var(--ddnz-ink)] sm:text-[24px]">{copy.formTitle}</h2>
-              <div className="mt-3 grid gap-2">
+      <section className="home-brief-section" aria-labelledby="sourcing-brief-title">
+        <div className="home-brief-layout">
+          <div className="home-brief-intro">
+            <h2 id="sourcing-brief-title">{copy.formTitle}</h2>
+            <p>{copy.body}</p>
+          </div>
+          <div className="min-w-0">
+            <form id="sourcing-brief" data-candidate-validated="true" onSubmit={(event) => { event.preventDefault(); goToQuote(intent); }} className="home-brief-form" aria-labelledby="sourcing-brief-title">
+              <div className="home-brief-intents grid gap-3 sm:grid-cols-3">
                 {intents.map((choice) => {
                   const Icon = intentIcons[choice.id];
                   const selected = intent === choice.id;
@@ -287,7 +303,7 @@ export default function SourcingHomepageHero() {
 
               <fieldset className="mt-4 border-t border-slate-200 pt-3">
                 <legend className="mb-2 text-[13px] font-semibold text-[#26364d]">{copy.category} <span className="font-normal text-slate-500">({copy.selectOne})</span></legend>
-                <div className="grid grid-cols-2 gap-2">
+                <div className="grid grid-cols-2 gap-2 lg:grid-cols-4">
                   {categories.map(({ value, label, Icon }) => {
                     const selected = category === value;
                     return (
@@ -299,49 +315,26 @@ export default function SourcingHomepageHero() {
                 </div>
               </fieldset>
 
+              <div className="home-brief-destination">
+              <div>
               <label htmlFor="destination-market" className="mt-3 block text-[13px] font-semibold text-[#26364d]">{copy.market}</label>
               <select id="destination-market" value={market} onChange={(event) => setMarket(event.target.value)} className="mt-1.5 min-h-11 w-full rounded-lg border border-slate-200 bg-white px-3 text-sm text-[#26364d] outline-none transition focus:border-[var(--ddnz-purple)] focus:ring-2 focus:ring-[var(--ddnz-purple)]/20">
                 <option value="">{copy.marketPlaceholder}</option>
                 {destinations.map((destination) => <option key={destination} value={destination}>{destinationLabels[language][destination]}</option>)}
               </select>
-
+              </div>
+              <div>
               <button type="submit" className="mt-3 inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-lg bg-[var(--ddnz-action)] px-5 text-[16px] font-bold text-white shadow-sm transition-colors hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
                 {intent === 'freight' ? copy.freight : copy.primary}<ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
+              </div>
+              </div>
               <p className="mt-2 flex items-center justify-center gap-2 text-center text-[12px] text-slate-500"><LockKeyhole className="h-4 w-4" aria-hidden="true" />{copy.privacy}</p>
             </form>
           </div>
         </div>
       </section>
 
-      <section id="product-categories" className="scroll-mt-24 bg-[#fffefb] px-5 pb-14 pt-10 sm:px-8 lg:px-12" aria-labelledby="priority-categories-title">
-        <div className="mx-auto max-w-[1436px]">
-          <div className="flex items-end justify-between gap-4">
-            <h2 id="priority-categories-title" className="text-[24px] font-extrabold tracking-[-0.025em] text-[var(--ddnz-ink)]">{copy.categoriesTitle}</h2>
-            <button type="button" onClick={() => scrollToBrief('sourcing')} className="hidden items-center gap-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:underline sm:inline-flex">{copy.viewAll}<ArrowRight className="h-4 w-4" aria-hidden="true" /></button>
-          </div>
-          <div className="mt-5 grid gap-5 md:grid-cols-2">
-            {categoryCards.map((card) => (
-              <Link
-                key={card.industry}
-                to={card.href}
-                onClick={() => trackEvent('homepage_category_select', { industry: card.industry, cta_location: 'priority_categories' })}
-                className="group overflow-hidden rounded-xl border border-slate-200 bg-white text-start shadow-sm transition-[border-color,transform,box-shadow] hover:-translate-y-0.5 hover:border-[var(--ddnz-purple)]/35 hover:shadow-[0_14px_36px_rgba(16,36,63,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2"
-              >
-                <div className="relative aspect-[16/7] overflow-hidden bg-slate-100">
-                  <img src={card.image} alt={card.alt} width="1600" height="1000" loading="lazy" decoding="async" className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]" />
-                  <span className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/5 to-transparent" aria-hidden="true" />
-                  <span className="absolute bottom-5 start-5 max-w-[220px] text-[24px] font-extrabold leading-tight text-white">{card.label}</span>
-                </div>
-                <span className="flex min-h-[84px] items-center justify-between gap-4 px-5 py-4">
-                  <span className="text-sm font-semibold leading-5 text-slate-700">{card.tagline}</span>
-                  <ArrowRight className="h-5 w-5 shrink-0 text-[var(--ddnz-purple-strong)] transition-transform group-hover:translate-x-1" aria-hidden="true" />
-                </span>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }

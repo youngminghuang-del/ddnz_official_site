@@ -1,0 +1,11 @@
+{
+  "heading": "扫码联系",
+  "view": "查看二维码",
+  "close": "关闭",
+  "save": "保存二维码",
+  "chat": "打开 WhatsApp 聊天",
+  "whatsappTitle": "WhatsApp 二维码",
+  "wechatTitle": "微信二维码",
+  "whatsappHint": "用 WhatsApp 扫码，或直接在本机打开聊天。",
+  "wechatHint": "使用微信扫一扫。手机上可先保存图片，再到微信中使用。"
+}

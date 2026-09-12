@@ -17,6 +17,15 @@ const expectedShowcaseRedirects = new Map([
   ['outdoor-products', '/sourcing/outdoor-products-from-china/'],
 ]);
 const requiredStaticH1Paths = new Set(['/fr/', '/ru/insights/']);
+const englishOnlyScreenProtectorPaths = new Set([
+  '/screen-protectors/',
+  '/screen-protectors/compare/',
+  '/screen-protectors/guides/',
+  '/screen-protectors/guides/price-differences/',
+  '/screen-protectors/guides/curved-glass/',
+  '/screen-protectors/videos/',
+  '/screen-protectors/calculator/',
+]);
 
 const failures = [];
 const notices = [];
@@ -78,17 +87,20 @@ for (const absoluteUrl of urls) {
     .map((alternate) => alternate.language)
     .filter((language, index, all) => all.indexOf(language) !== index);
   if (duplicateLanguages.length) failures.push(`${url.pathname}: duplicate hreflang ${[...new Set(duplicateLanguages)].join(', ')}`);
-  if (!alternates.some((alternate) => alternate.language === 'x-default')) {
+  if (englishOnlyScreenProtectorPaths.has(url.pathname) && alternates.length) {
+    failures.push(`${url.pathname}: English-only page must not advertise untranslated alternates`);
+  }
+  if (!englishOnlyScreenProtectorPaths.has(url.pathname) && !alternates.some((alternate) => alternate.language === 'x-default')) {
     failures.push(`${url.pathname}: missing x-default alternate`);
   }
-  if (!alternates.some((alternate) => alternate.href === absoluteUrl)) {
+  if (!englishOnlyScreenProtectorPaths.has(url.pathname) && !alternates.some((alternate) => alternate.href === absoluteUrl)) {
     failures.push(`${url.pathname}: hreflang cluster is missing the self-referencing URL`);
   }
   alternates
     .filter((alternate) => !isFinalIndexableUrl(alternate.href))
     .forEach((alternate) => failures.push(`${url.pathname}: hreflang ${alternate.language} is not a final trailing-slash URL`));
 
-  if (requiredStaticH1Paths.has(url.pathname)) {
+  if (requiredStaticH1Paths.has(url.pathname) || englishOnlyScreenProtectorPaths.has(url.pathname)) {
     const h1Count = (html.match(/<h1\b/gi) || []).length;
     if (h1Count !== 1) failures.push(`${url.pathname}: expected exactly 1 static H1, found ${h1Count}`);
   }

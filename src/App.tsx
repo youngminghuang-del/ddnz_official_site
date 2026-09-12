@@ -14,6 +14,7 @@ const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-ce
 const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
 const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-latin-america'));
 const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
+const ScreenProtectorPage = lazy(() => import('./features/screen-protectors/ScreenProtectorPage'));
 const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
 const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
@@ -21,7 +22,7 @@ const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
 const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
-const CommercialKitchen = lazy(() => import('./pages/product-showcase/CommercialKitchen').then((module) => ({ default: module.App })));
+const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
 const RefrigerationEquipment = lazy(() => import('./pages/product-showcase/RefrigerationEquipment').then((module) => ({ default: module.RefrigerationEquipment })));
 const MobileAccessories = lazy(() => import('./pages/product-showcase/MobileAccessories').then((module) => ({ default: module.MobileAccessories })));
 const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
@@ -336,6 +337,9 @@ export default function App() {
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/get-a-quote" element={<GetAQuotePage />} />
+            {['/screen-protectors', '/screen-protectors/compare', '/screen-protectors/guides', '/screen-protectors/guides/price-differences', '/screen-protectors/guides/curved-glass', '/screen-protectors/videos', '/screen-protectors/calculator', '/screen-protectors/brief'].map(path => (
+              <Route key={path} path={path} element={<ScreenProtectorPage />} />
+            ))}
             <Route path="/products" element={<ProductsIndex />} />
             <Route path="/sourcing-services" element={<SourcingServices />} />
             <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />

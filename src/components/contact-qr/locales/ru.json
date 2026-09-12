@@ -1,0 +1,11 @@
+{
+  "heading": "Связаться по QR-коду",
+  "view": "Показать QR-код",
+  "close": "Закрыть",
+  "save": "Сохранить QR-код",
+  "chat": "Написать в WhatsApp",
+  "whatsappTitle": "QR-код WhatsApp",
+  "wechatTitle": "QR-код WeChat",
+  "whatsappHint": "Сканируйте в WhatsApp или откройте чат на этом устройстве.",
+  "wechatHint": "Сканируйте в WeChat. На телефоне сохраните изображение для использования в WeChat."
+}

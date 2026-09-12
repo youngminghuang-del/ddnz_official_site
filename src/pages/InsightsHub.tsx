@@ -11,6 +11,7 @@ import type { BlogPost } from "../types/content";
 import { trackEvent } from "../lib/analytics";
 import { articleRoutePath, normalizeArticleLocale } from "../lib/notionArticleRouting";
 import { DdnzEyebrow } from "../components/DdnzUi";
+import ScreenProtectorEntry from "../features/screen-protectors/ScreenProtectorEntry";
 
 export default function InsightsHub() {
   const { language, t } = useLanguage();
@@ -137,6 +138,7 @@ export default function InsightsHub() {
 
         {/* Filters and Blog list */}
         <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
+          {language === 'en' && (selectedLanguage === 'all' || selectedLanguage === 'en') && selectedCategory === 'All' ? <ScreenProtectorEntry guides /> : null}
           {/* Language-first discovery makes the active content library visible
               while still helping visitors find a language they can read. */}
           <div className="mb-4 flex flex-wrap items-center gap-2">
