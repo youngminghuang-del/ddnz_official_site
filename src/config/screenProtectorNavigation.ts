@@ -1,6 +1,6 @@
 import type { Language } from '../i18n/translations';
 import { ROUTES } from '../features/screen-protectors/routes.mjs';
-import { canonicalSitePath } from '../lib/notionArticleRouting';
+import { localizedProductPath } from '../lib/productLocalization.mjs';
 import en from './screen-protector-navigation/en.json';
 import zh from './screen-protector-navigation/zh.json';
 import ru from './screen-protector-navigation/ru.json';
@@ -12,6 +12,10 @@ import tr from './screen-protector-navigation/tr.json';
 
 const labels: Record<Language, typeof en> = { en, zh, ru, fr, es, ar, pt, tr };
 
+export const screenProtectorHomeLabels: Record<Language, string> = {
+  en: 'Home', zh: '首页', ru: 'Главная', fr: 'Accueil', es: 'Inicio', ar: 'الرئيسية', pt: 'Início', tr: 'Ana sayfa',
+};
+
 export function screenProtectorNavigation(language: Language) {
-  return { ...labels[language], to: canonicalSitePath(ROUTES.home) };
+  return { ...labels[language], to: localizedProductPath(ROUTES.home, language) };
 }

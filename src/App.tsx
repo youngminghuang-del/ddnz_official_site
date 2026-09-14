@@ -1,10 +1,14 @@
-import { BrowserRouter as Router, Navigate, Routes, Route, useLocation } from 'react-router-dom';
-import { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 import Home from './pages/Home';
+import { kitchenCategoryPaths } from './features/commercial-kitchen/routes.mjs';
+import { buyerGuidePaths, productContentLanguages, localizedProductPath, isLocalizedProductPath, productRouteParts } from './lib/productLocalization.mjs';
+import './features/buyer-guides/buyer-guides.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { readAttribution, rememberAttribution } from './lib/attribution';
+import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
@@ -23,10 +27,15 @@ const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
 const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
+const KitchenCategoryPage = lazy(() => import('./features/commercial-kitchen/KitchenCategoryPage'));
+const LocalizedKitchenPage = lazy(() => import('./features/commercial-kitchen/LocalizedKitchenPage'));
+const LocalizedScreenProtectorPage = lazy(() => import('./features/screen-protectors/LocalizedScreenProtectorPage'));
+const BuyerGuidePage = lazy(() => import('./features/buyer-guides/BuyerGuidePage'));
 const RefrigerationEquipment = lazy(() => import('./pages/product-showcase/RefrigerationEquipment').then((module) => ({ default: module.RefrigerationEquipment })));
-const MobileAccessories = lazy(() => import('./pages/product-showcase/MobileAccessories').then((module) => ({ default: module.MobileAccessories })));
+const MobileAccessories = lazy(() => import('./features/mobile-sourcing/MobileSourcingPage'));
+import { mobilePaths } from './features/mobile-sourcing/routes.mjs';
 const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
-const OutdoorProducts = lazy(() => import('./pages/product-showcase/OutdoorProducts').then((module) => ({ default: module.OutdoorProducts })));
+const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPage'));
 
 const SHIPPING_COUNTRIES = [
   'saudi-arabia',
@@ -75,12 +84,17 @@ function CountryShippingRoute() {
 
 function EnglishSourcingCategoryRedirect({ slug }: { slug: string }) {
   const location = useLocation();
-  return <Navigate to={`/sourcing/${slug}${location.search}${location.hash}`} replace />;
+  if (slug === 'outdoor-products-from-china' && isLocalizedProductPath(location.pathname)) return <OutdoorProducts />;
+  if (slug === 'mobile-accessories-from-china' && isLocalizedProductPath(location.pathname)) return <MobileAccessories />;
+  if (slug === 'commercial-kitchen-equipment-from-china' && isLocalizedProductPath(location.pathname)) return <LocalizedKitchenPage locale={productRouteParts(location.pathname).locale as 'es' | 'ar'} />;
+  return <EnglishShowcaseRedirect path={`/sourcing/${slug}`} />;
 }
 
 function EnglishShowcaseRedirect({ path }: { path: string }) {
   const location = useLocation();
-  return <Navigate to={`${path}${location.search}${location.hash}`} replace />;
+  const { language } = useLanguage();
+  const redirect = englishProductRedirect(`${location.pathname}${location.search}${location.hash}`, language, location.state);
+  return <Navigate to={redirect?.to || `${path}${location.search}${location.hash}`} state={redirect?.state} replace />;
 }
 
 function EnglishLocaleFallback({ prefix }: { prefix: '/pt' | '/tr' }) {
@@ -91,7 +105,7 @@ function EnglishLocaleFallback({ prefix }: { prefix: '/pt' | '/tr' }) {
 
 function RouteLoadingFallback() {
   return (
-    <main className="min-h-[70dvh] bg-[#F5F8FC] pt-28" aria-busy="true" aria-live="polite">
+    <main data-route-loading className="min-h-[70dvh] bg-[#F5F8FC] pt-28" aria-busy="true" aria-live="polite">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="h-7 w-44 rounded-lg bg-slate-200" />
         <div className="mt-6 h-12 max-w-2xl rounded-xl bg-slate-200" />
@@ -106,63 +120,94 @@ function LanguageRouteSync() {
   const { language, setLanguage } = useLanguage();
   const location = useLocation();
 
+  useLayoutEffect(() => {
+    const target = resolveNavigationLanguage(location.pathname, language, location.state);
+    if (language !== target) setLanguage(target);
+  }, [location.pathname, location.state, language, setLanguage]);
+
+  // Remember each product history entry independently, including native-link arrivals.
   useEffect(() => {
-    const pathname = location.pathname;
-    let targetLang: 'en' | 'zh' | 'ru' | 'fr' | 'es' | 'ar' | 'pt' | 'tr' = 'en';
-
-    if (pathname.startsWith('/zh-cn')) {
-      targetLang = 'zh';
-    } else if (pathname.startsWith('/ru')) {
-      targetLang = 'ru';
-    } else if (pathname.startsWith('/fr')) {
-      targetLang = 'fr';
-    } else if (pathname.startsWith('/es')) {
-      targetLang = 'es';
-    } else if (pathname.startsWith('/ar')) {
-      targetLang = 'ar';
-    } else if (pathname.startsWith('/pt')) {
-      targetLang = 'pt';
-    } else if (pathname.startsWith('/tr')) {
-      targetLang = 'tr';
-    }
-
-    if (language !== targetLang) {
-      setLanguage(targetLang);
-    }
-  }, [location.pathname, language, setLanguage]);
+    if (!isEnglishProductPath(location.pathname) || location.state?.navigationLanguage) return;
+    const target = resolveNavigationLanguage(location.pathname, language, location.state);
+    window.history.replaceState({ ...window.history.state, usr: navigationState(location.state, target) }, '');
+  }, [location.pathname, location.state, language]);
 
   return null;
 }
 
 function HashScrollHandler() {
   const location = useLocation();
+  const navigationType = useNavigationType();
+  const positions = useRef(new Map<string, { x: number; y: number }>());
+  const previousPath = useRef<string | undefined>(undefined);
 
   useEffect(() => {
-    if (!location.hash) return;
+    const previous = window.history.scrollRestoration;
+    window.history.scrollRestoration = 'manual';
+    return () => { window.history.scrollRestoration = previous; };
+  }, []);
 
-    const targetId = decodeURIComponent(location.hash.slice(1));
-    let attempts = 0;
-    let retryTimer = 0;
-
-    const scrollToTarget = () => {
-      const target = document.getElementById(targetId);
-      if (target) {
-        target.scrollIntoView({ block: 'start' });
-        return;
-      }
-
-      attempts += 1;
-      if (attempts < 40) {
-        retryTimer = window.setTimeout(scrollToTarget, 50);
+  useLayoutEffect(() => {
+    const positionKey = scrollPositionKey(location);
+    const saved = positions.current.get(positionKey);
+    const action = routeScrollAction({ pathname: location.pathname, previousPathname: previousPath.current,
+      hash: location.hash, navigationType, hasSavedPosition: !!saved });
+    previousPath.current = location.pathname;
+    let frame = 0;
+    let timer = 0;
+    let observer: MutationObserver | undefined;
+    let active = true;
+    const stop = () => {
+      active = false;
+      window.cancelAnimationFrame(frame);
+      window.clearTimeout(timer);
+      observer?.disconnect();
+    };
+    const apply = () => {
+      if (!active || document.querySelector('[data-route-loading]')) return;
+      if (action === 'restore' && saved) {
+        window.scrollTo({ left: saved.x, top: saved.y, behavior: 'instant' });
+        if (Math.abs(window.scrollY - saved.y) < 2) stop();
+      } else if (action === 'hash') {
+        const target = document.getElementById(routeHashId(location.hash) || '');
+        if (target) { target.scrollIntoView({ block: 'start', behavior: 'instant' }); stop(); }
+      } else if (action === 'top') {
+        window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
+        stop();
       }
     };
-
-    scrollToTarget();
-
+    if (action === 'top' || action === 'hash' || action === 'restore') {
+      // Wait until lazy content and page-level controllers have committed.
+      frame = window.requestAnimationFrame(() => { frame = window.requestAnimationFrame(apply); });
+      observer = new MutationObserver(() => {
+        window.cancelAnimationFrame(frame);
+        frame = window.requestAnimationFrame(apply);
+      });
+      observer.observe(document.getElementById('root') || document.body, { childList: true, subtree: true });
+      timer = window.setTimeout(stop, 5000);
+    }
+    const remember = () => {
+      // Native anchors can scroll before React processes hashchange. Do not write
+      // the new anchor's viewport into the entry we just left.
+      if (`${window.location.pathname}${window.location.search}${window.location.hash}` !==
+        `${location.pathname}${location.search}${location.hash}`) return;
+      positions.current.set(positionKey, { x: window.scrollX, y: window.scrollY });
+      if (positions.current.size > 100) positions.current.delete(positions.current.keys().next().value!);
+    };
+    // Capture before the next page's controller changes the viewport; never sample on cleanup.
+    const onScroll = () => { if (!active || action === 'preserve' || action === 'phone') remember(); };
+    const onUserScroll = () => { stop(); remember(); };
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('wheel', onUserScroll, { passive: true });
+    window.addEventListener('touchstart', onUserScroll, { passive: true });
+    if (!saved) positions.current.set(positionKey, { x: 0, y: 0 });
     return () => {
-      window.clearTimeout(retryTimer);
+      stop();
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('wheel', onUserScroll);
+      window.removeEventListener('touchstart', onUserScroll);
     };
-  }, [location.hash, location.pathname]);
+  }, [location.key, location.hash, location.pathname, location.search, navigationType]);
 
   return null;
 }
@@ -337,6 +382,7 @@ export default function App() {
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
             <Route path="/get-a-quote" element={<GetAQuotePage />} />
+            {buyerGuidePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`buyer-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<BuyerGuidePage />} />))}
             {['/screen-protectors', '/screen-protectors/compare', '/screen-protectors/guides', '/screen-protectors/guides/price-differences', '/screen-protectors/guides/curved-glass', '/screen-protectors/videos', '/screen-protectors/calculator', '/screen-protectors/brief'].map(path => (
               <Route key={path} path={path} element={<ScreenProtectorPage />} />
             ))}
@@ -344,13 +390,15 @@ export default function App() {
             <Route path="/sourcing-services" element={<SourcingServices />} />
             <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />
             <Route path="/sourcing/commercial-kitchen-equipment-from-china" element={<CommercialKitchen />} />
+            {kitchenCategoryPaths.map(path => <Route key={path} path={path} element={<KitchenCategoryPage />} />)}
             <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
-            <Route path="/sourcing/mobile-accessories-from-china" element={<MobileAccessories />} />
+            {mobilePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`mobile-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<MobileAccessories />} />))}
             <Route path="/sourcing/outdoor-products-from-china" element={<OutdoorProducts />} />
-            <Route path="/commercial-kitchen" element={<Navigate to="/sourcing/commercial-kitchen-equipment-from-china" replace />} />
-            <Route path="/audio-speakers" element={<Navigate to="/sourcing/audio-speakers-from-china" replace />} />
-            <Route path="/mobile-accessories" element={<Navigate to="/sourcing/mobile-accessories-from-china" replace />} />
-            <Route path="/outdoor-products" element={<Navigate to="/sourcing/outdoor-products-from-china" replace />} />
+            {productContentLanguages.map(locale => <Route key={`power-guide-${locale}`} path={localizedProductPath("/portable-power/selection-guide", locale)} element={<OutdoorProducts guide />} />)}
+            <Route path="/commercial-kitchen" element={<EnglishShowcaseRedirect path="/sourcing/commercial-kitchen-equipment-from-china" />} />
+            <Route path="/audio-speakers" element={<EnglishShowcaseRedirect path="/sourcing/audio-speakers-from-china" />} />
+            <Route path="/mobile-accessories" element={<EnglishShowcaseRedirect path="/sourcing/mobile-accessories-from-china" />} />
+            <Route path="/outdoor-products" element={<EnglishShowcaseRedirect path="/sourcing/outdoor-products-from-china" />} />
             {import.meta.env.DEV ? (
               <>
                 <Route path="/content-ops" element={<ContentOpsDashboard />} />
@@ -360,6 +408,16 @@ export default function App() {
             <Route path="/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
             <Route path="/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
             <Route path="/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
+
+            {/* Compatibility only: localized product aliases retain intent, then use the English URL. */}
+            {Object.values(navigationPrefixes).filter(Boolean).flatMap(prefix => [
+              ...englishProductPaths.filter(path => path.startsWith('/screen-protectors') && !buyerGuidePaths.includes(path)),
+              ...kitchenCategoryPaths,
+              ...(!['/es','/ar'].includes(prefix) ? mobilePaths.filter(path => !path.startsWith('/sourcing/')) : []),
+              '/commercial-kitchen', '/audio-speakers', '/mobile-accessories', '/outdoor-products',
+            ].map(path => (
+              <Route key={`${prefix}${path}`} path={`${prefix}${path}`} element={isLocalizedProductPath(`${prefix}${path}`) && path.startsWith('/screen-protectors') ? <LocalizedScreenProtectorPage /> : <EnglishShowcaseRedirect path={path} />} />
+            )))}
 
             {/* Chinese Bundle Router */}
             <Route path="/zh-cn" element={<Home />} />

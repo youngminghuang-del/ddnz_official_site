@@ -1,7 +1,11 @@
-import { ROUTES, CATEGORY_PATH, pageForPath } from './routes.mjs';
+import { ROUTES, pageForPath } from './routes.mjs';
 import { EN, t } from './locales/en.mjs';
 import { PRODUCTS, cartonFacts, money, number, referenceDate } from './model.mjs';
 import { FACTORY_CLIPS, VIDEO_COPY } from './production.mjs';
+import { escapeHtml, screenProtectorBreadcrumbs, renderScreenProtectorBreadcrumbs, renderScreenProtectorNextSteps } from './browsing.mjs';
+import { phoneAlternates } from './localization.mjs';
+import buyerEnglish from '../buyer-guides/locales/en.json' with { type: 'json' };
+export { escapeHtml } from './browsing.mjs';
 
 export const SITE_ORIGIN = 'https://www.ddnzglobal.com';
 export const PREVIEW_ROBOTS = 'noindex, nofollow, noarchive';
@@ -15,50 +19,50 @@ const media = file => `/screen-protector-media/media/${file}`;
 
 export const SCREEN_PROTECTOR_SEO = Object.freeze({
   home: {
-    title: 'Screen Protectors from China: Compare & Plan | DDNZ Global',
-    description: 'Compare four screen protector options, watch factory footage and plan product quantities, packaging and all-inclusive delivery to Istanbul.',
+    title: 'Wholesale Screen Protectors from China | DDNZ Global',
+    description: 'Source wholesale screen protectors from China. Compare four options, model minimums and retail packaging, then prepare your sourcing brief.',
     image: media('factory-fixture-poster.jpg'),
     imageAlt: 'Glass pieces on a production fixture, filmed by the DDNZ team',
   },
   products: {
-    title: 'Compare Screen Protectors, Prices & Packaging | DDNZ Global',
-    description: 'Compare OG28, 001 and Titan clear or privacy screen protectors by price, installer, retail packaging, model minimums and carton specifications.',
+    title: 'Compare Wholesale Screen Protectors & Prices | DDNZ Global',
+    description: 'Compare OG28, 001 and Titan wholesale screen protectors by reference price, clear or privacy finish, installer, packaging, model minimums and carton size.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },
   guides: {
-    title: 'Screen Protector Buying Guides & Checks | DDNZ Global',
-    description: 'Understand screen protector quote differences, 2.5D and 3D profiles, installation and model fit. Build a practical procurement checklist.',
+    title: 'Screen Protector Specifications & Buying Guides | DDNZ',
+    description: 'Check screen protector specifications before a bulk order: glass shape, adhesive, packaging, installation and model fit. Build your sourcing checklist.',
     image: asset('curved-glass-cover-v1.png'),
     imageAlt: EN.comparisonCoverAlt,
   },
   prices: {
-    title: 'Why Screen Protector Quotes Differ | DDNZ Global',
-    description: 'Compare six specification groups behind screen protector prices: glass, edges, optical finish, adhesive, packaging, quantity and delivery scope.',
+    title: 'Screen Protector Wholesale Price Differences | DDNZ Global',
+    description: 'See why wholesale screen protector prices differ. Align glass, edges, optical finish, adhesive, packaging, quantities and delivery scope when comparing quotes.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },
   curves: {
     title: '2.5D vs 3D Screen Protectors: Shape & Fit | DDNZ Global',
-    description: 'Separate glass shape, hot bending, machining and bonding. Check screen coverage, case clearance and fit on the exact phone model.',
+    description: 'Check 2.5D and curved 3D screen protector specifications: glass shape, edge processes, case clearance and sample fit on your exact phone model.',
     image: asset('curved-glass-cover-v1.png'),
     imageAlt: EN.comparisonCoverAlt,
   },
   videos: {
     title: 'Screen Protector Factory Process Videos | DDNZ Global',
-    description: 'Watch ten screen protector production stages filmed by the DDNZ team, plus installation clips, with practical questions to ask before ordering.',
+    description: 'Watch ten screen protector production stages filmed by DDNZ, plus installation and screen-viewing clips. Check which stages apply to your chosen product.',
     image: media('factory-cutting-poster.jpg'),
     imageAlt: FACTORY_CLIPS[0].description,
   },
   calculator: {
-    title: 'Screen Protector Landed-Cost Planner: Istanbul | DDNZ Global',
-    description: 'Plan screen protector quantities and cartons. Compare sea and air freight to Istanbul using gross weight, dimensional weight and delivery scope.',
+    title: 'Screen Protector Landed Cost Calculator: Istanbul | DDNZ',
+    description: 'Estimate screen protector landed cost using the Istanbul reference. Set model quantities and packing, then compare sea and air freight for your brief.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },
   quote: {
     title: 'Review Your Screen Protector Sourcing Brief | DDNZ Global',
-    description: 'Review your selected products, phone models, quantities, delivery route and procurement checks before adding contact details to your enquiry.',
+    description: 'Review your screen protector models, quantities, Istanbul reference shipment and specification checks before adding contact details to your enquiry.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },
@@ -71,6 +75,7 @@ export function screenProtectorMetadata(pathname, { preview = true } = {}) {
   return {
     ...metadata, page, path: ROUTES[page], canonical: SITE_ORIGIN + screenProtectorCanonicalPath(pathname),
     image: SITE_ORIGIN + metadata.image, language: 'en', type: 'website',
+    alternateUrls: ['home', 'products'].includes(page) ? phoneAlternates(ROUTES[page]) : [],
     robots: preview ? PREVIEW_ROBOTS : page === 'quote' ? BRIEF_ROBOTS : PUBLIC_ROBOTS,
     indexable: !preview && page !== 'quote',
   };
@@ -86,8 +91,6 @@ export function applyScreenProtectorSEO(document, pathname, options) {
     document.head.appendChild(node);
   };
   document.title = meta.title;
-  document.documentElement.lang = 'en';
-  document.documentElement.dir = 'ltr';
   for (const [key, value] of Object.entries({
     title: meta.title, description: meta.description, robots: meta.robots,
     'twitter:card': 'summary_large_image', 'twitter:title': meta.title,
@@ -104,9 +107,45 @@ export function applyScreenProtectorSEO(document, pathname, options) {
   canonical.rel = 'canonical';
   canonical.href = meta.canonical;
   document.head.appendChild(canonical);
+  for (const alternate of meta.alternateUrls) {
+    const node = document.createElement('link');
+    node.rel = 'alternate'; node.hreflang = alternate.hrefLang; node.href = alternate.href;
+    document.head.appendChild(node);
+  }
+  // Replace the static phone schema on SPA navigation; remove it on the private brief.
+  document.head.querySelectorAll('script[data-screen-protector-schema], #schema-jsonld-static-page, #schema-jsonld-static-home, #schema-jsonld-static-blog').forEach(node => node.remove());
+  const schema = screenProtectorSchema(meta.page, options?.breadcrumbs);
+  if (schema) {
+    const node = document.createElement('script');
+    node.type = 'application/ld+json';
+    node.setAttribute('data-screen-protector-schema', '');
+    node.textContent = JSON.stringify(schema);
+    document.head.appendChild(node);
+  }
 }
 
-export const escapeHtml = value => String(value).replace(/[&<>"']/g, char => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[char]));
+export function screenProtectorSchema(page, breadcrumbs) {
+  if (page === 'quote') return null;
+  return {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: screenProtectorBreadcrumbs(page, breadcrumbs).map((item, index) => ({
+      '@type': 'ListItem', position: index + 1, name: item.name, item: SITE_ORIGIN + item.href,
+    })),
+  };
+}
+
+export function removeScreenProtectorSchema(document) {
+  document.head.querySelectorAll('script[data-screen-protector-schema]').forEach(node => node.remove());
+}
+
+function renderEnglishPhoneBuyerLinks(page) {
+  if (!['home', 'products'].includes(page)) return '';
+  const entries = [['phone-stores', '/screen-protectors/wholesale-for-stores/'], ['private-label', '/screen-protectors/private-label/']];
+  return `<section class="buyer-links" lang="en" dir="ltr" aria-label="${escapeHtml(buyerEnglish.entryTitle)}"><h2>${escapeHtml(buyerEnglish.entryTitle)}</h2><p>${escapeHtml(buyerEnglish.entryIntro)}</p><div class="buyer-links-grid">${entries.map(([id, href]) => {
+    const copy = buyerEnglish.guides[id];
+    return `<a class="buyer-link-card" href="${href}"><div><h3>${escapeHtml(copy.card)}</h3><p>${escapeHtml(copy.cardCopy)}</p><span>${escapeHtml(buyerEnglish.open)}</span></div></a>`;
+  }).join('')}</div></section>`;
+}
 const paragraph = value => `<p>${escapeHtml(value)}</p>`;
 const heading = (title, intro) => `<h1>${escapeHtml(title).replaceAll('\n', '<br>')}</h1>${paragraph(intro)}`;
 const section = (title, body) => `<section><h2>${escapeHtml(title)}</h2>${body}</section>`;
@@ -114,7 +153,7 @@ const list = items => `<ul>${items.map(item => `<li>${escapeHtml(item)}</li>`).j
 const link = (page, label = EN.pages[page]) => `<a href="${screenProtectorCanonicalPath(ROUTES[page])}">${escapeHtml(label)}</a>`;
 const image = (src, alt) => `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy">`;
 const pairs = rows => rows.map(([title, body]) => section(title, paragraph(body))).join('');
-const clip = c => `<figure>${image(media(c.poster + '.jpg'), c.title)}<figcaption><h3>${escapeHtml(c.title)}</h3>${paragraph(c.description)}${c.check ? paragraph(c.check) : ''}<p><a href="${media(c.file + '.mp4')}">Watch the ${c.duration}-second clip</a></p></figcaption></figure>`;
+const clip = c => `<figure id="${escapeHtml(c.id)}">${image(media(c.poster + '.jpg'), c.title)}<figcaption><h3>${escapeHtml(c.title)}</h3>${paragraph(c.description)}${c.check ? paragraph(c.check) : ''}<p><a href="${media(c.file + '.mp4')}">Watch ${escapeHtml(c.title)} (${c.duration} seconds)</a></p></figcaption></figure>`;
 const guideLinks = () => section(EN.guides.priceTitle.replaceAll('\n', ' '), paragraph(EN.guides.priceDesc) + link('prices')) + section(EN.guides.curveTitle.replaceAll('\n', ' '), paragraph(EN.guides.curveDesc) + link('curves'));
 const checks = ids => section(EN.guides.checksTitle, list(ids.map(id => EN.requests[id])));
 const productSummary = () => Object.entries(PRODUCTS).map(([id, product]) => section(EN.product.names[id],
@@ -159,7 +198,7 @@ export function renderScreenProtectorBody(page) {
   if (page === 'quote') body = heading(EN.quote.title, EN.quote.intro) + section(EN.quote.confirmTitle, list(EN.quote.confirm))
     + paragraph('Your plan stays in this browser tab. Enable JavaScript to review it. Nothing is sent until you submit the enquiry.') + link('calculator');
   const nav = ['home', 'products', 'guides', 'videos', 'calculator'].map(target => link(target)).join(' · ');
-  return `<div class="phone-film" data-static-fallback="screen-protectors"><nav aria-label="Screen protector navigation">${nav}</nav><main id="main"><p><a href="${CATEGORY_PATH}/">Mobile accessories</a> / ${escapeHtml(EN.pages[page])}</p>${body}</main></div>`;
+  return `<div class="phone-film" lang="en" dir="ltr" data-static-fallback="screen-protectors"><nav aria-label="Screen protector navigation">${nav}</nav><main id="main">${renderScreenProtectorBreadcrumbs(page)}${body}${renderScreenProtectorNextSteps(page)}</main></div>${renderEnglishPhoneBuyerLinks(page)}`;
 }
 
 export function renderScreenProtectorHead(pathname, options) {
@@ -167,14 +206,22 @@ export function renderScreenProtectorHead(pathname, options) {
   const named = { title: m.title, description: m.description, robots: m.robots, 'twitter:card': 'summary_large_image', 'twitter:title': m.title, 'twitter:description': m.description, 'twitter:image': m.image, 'twitter:image:alt': m.imageAlt, 'twitter:url': m.canonical };
   const properties = { 'og:type': m.type, 'og:title': m.title, 'og:description': m.description, 'og:url': m.canonical, 'og:image': m.image, 'og:image:alt': m.imageAlt, 'og:site_name': 'DDNZ Global', 'og:locale': 'en_US' };
   return `<title>${escapeHtml(m.title)}</title>\n<link rel="canonical" href="${m.canonical}">\n`
+    + m.alternateUrls.map(item => `<link rel="alternate" hreflang="${item.hrefLang}" href="${escapeHtml(item.href)}">`).join('\n') + '\n'
     + Object.entries(named).map(([name, content]) => `<meta name="${name}" content="${escapeHtml(content)}">`).join('\n') + '\n'
-    + Object.entries(properties).map(([property, content]) => `<meta property="${property}" content="${escapeHtml(content)}">`).join('\n');
+    + Object.entries(properties).map(([property, content]) => `<meta property="${property}" content="${escapeHtml(content)}">`).join('\n')
+    + (screenProtectorSchema(m.page) ? `\n<script type="application/ld+json" data-screen-protector-schema>${JSON.stringify(screenProtectorSchema(m.page)).replaceAll('<', '\\u003c')}</script>` : '');
 }
 
 export function appendScreenProtectorSitemap(xml) {
   if (!/<urlset\b/.test(xml) || !/<\/urlset>\s*$/.test(xml) || /<sitemapindex\b/.test(xml)) throw new Error('Expected an existing URL-set sitemap; preserve and merge the correct sitemap file.');
   const existing = new Set([...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map(match => match[1].replace(/\/$/, '')));
   const additions = Object.entries(ROUTES).filter(([page, path]) => page !== 'quote' && !existing.has(SITE_ORIGIN + path))
-    .map(([, path]) => `  <url><loc>${SITE_ORIGIN + screenProtectorCanonicalPath(path)}</loc></url>`);
-  return additions.length ? xml.replace(/<\/urlset>/, additions.join('\n') + '\n</urlset>') : xml;
+    .map(([page, path]) => {
+      const alternates = ['home', 'products'].includes(page) ? phoneAlternates(path) : [];
+      return `  <url><loc>${SITE_ORIGIN + screenProtectorCanonicalPath(path)}</loc>${alternates.map(item => `<xhtml:link rel="alternate" hreflang="${item.hrefLang}" href="${escapeHtml(item.href)}" />`).join('')}</url>`;
+    });
+  if (!additions.length) return xml;
+  const withNamespace = additions.some(node => node.includes('<xhtml:link')) && !/xmlns:xhtml=/.test(xml)
+    ? xml.replace(/<urlset\b/, '<urlset xmlns:xhtml="http://www.w3.org/1999/xhtml"') : xml;
+  return withNamespace.replace(/<\/urlset>/, additions.join('\n') + '\n</urlset>');
 }

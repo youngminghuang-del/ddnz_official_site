@@ -22,11 +22,11 @@ export const FACTORY_CLIPS = [
   NEW_FACTORY_CLIPS[5], NEW_FACTORY_CLIPS[6],
 ];
 export const VIDEO_COPY = {
-  page:'Process videos', title:'Follow the process.\nSee the work.',
-  intro:'Choose a production stage to watch its footage and see what to confirm before ordering.',
+  page:'Process videos', title:'Screen protector\nfactory process videos.',
+  intro:'Watch screen protector production footage filmed by the DDNZ team. Choose a stage to see the work and the specifications to confirm before ordering.',
   eyebrow:'DDNZ TEAM / FACTORY FOOTAGE', nav:'Production stages', shown:'In this clip', check:'Ask before ordering',
   scope:'Production stages and packaging vary by product. Confirm the route and specifications for your chosen SKU.',
   library:'Factory process videos', count:'10 production stages · real footage', watch:'Watch the process',
-  installation:'Installation and product handling', installIntro:'Three short demonstrations covering placement, installer operation and viewing direction.',
+  installation:'Installation and screen observation', installIntro:'Watch manual placement, installer operation and a screen-viewing demonstration. The viewing clip is an observation, not an optical test.',
   play:'Play video', loading:'Loading video…', retry:'Retry video',
 };

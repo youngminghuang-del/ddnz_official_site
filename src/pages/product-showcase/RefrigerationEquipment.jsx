@@ -1,22 +1,20 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AlertCircle,
   ArrowRight,
   Box,
   Check,
   CheckCircle2,
-  ChevronDown,
   CircleGauge,
   ClipboardCheck,
   Database,
-  FileCheck2,
   Globe2,
   Image as ImageIcon,
   Layers3,
   LockKeyhole,
-  Menu,
   PackageCheck,
   PlugZap,
+  Play,
   Refrigerator,
   Ruler,
   ScanLine,
@@ -42,12 +40,11 @@ const productFamilies = [
     name: "Upright & reach-in",
     promise: "Hold temperature through a busy service day.",
     image: `${A}/upright-dg860l4-sanitized.webp`,
-    imageAlt: "Sanitized stainless-steel four-door upright commercial refrigerator",
-    imageLabel: "SANITIZED PRODUCT RENDER",
+    imageAlt: "Illustration of a stainless-steel four-door commercial refrigerator",
+    imageLabel: "PRODUCT ILLUSTRATION",
     icon: Refrigerator,
     operating: ["Restaurants & hotels", "Chilled, frozen or dual-zone", "GN-format and solid-door options"],
     specs: [["Capacity", "860 L source model"], ["Temperature", "1–8°C / −5 to −18°C"], ["Cooling", "Direct-cooled, dual-zone"], ["Refrigerant", "R600a / R290 listed"]],
-    source: "DG860L4-A supplier source card",
   },
   {
     name: "Counters & prep",
@@ -58,7 +55,6 @@ const productFamilies = [
     icon: Layers3,
     operating: ["Prep lines & pass stations", "One-, two- and three-door formats", "Worktop and GN-pan configurations"],
     specs: [["Format", "1–3 door workbench"], ["Temperature", "0–10°C source range"], ["Cooling", "Fan-assisted source family"], ["Lock before quote", "Pan layout & worktop depth"]],
-    source: "Product master · KIT-02 family",
   },
   {
     name: "Display refrigeration",
@@ -69,7 +65,6 @@ const productFamilies = [
     icon: ScanLine,
     operating: ["Bakery, retail & beverage display", "Serve-over and glass-door formats", "Sightline, access and loading plan"],
     specs: [["Temperature", "Chilled / frozen by format"], ["Airflow", "Forced-air options"], ["Defrost", "Confirm method & cycle"], ["Lock before quote", "Glass, shelves & lighting"]],
-    source: "Sanitized refrigeration range scene",
   },
   {
     name: "Commercial ice makers",
@@ -80,12 +75,11 @@ const productFamilies = [
     icon: Snowflake,
     operating: ["Bars, cafés & hospitality", "Cube, crescent and other ice formats", "Storage and peak-hour demand"],
     specs: [["Rated output", "25 kg / 24 h example"], ["Storage", "20 kg listed"], ["Cube", "22 × 22 × 22 mm"], ["Condenser", "Air / water listed"]],
-    source: "SD-50F supplier parameter sheet",
   },
 ];
 
 const controlPoints = [
-  [Database, "Model & source-file lock", "The quotation, sample and order retain one model code, configuration and source sheet."],
+  [Database, "Confirm the model", "Match the model and configuration across your quotation, sample and order."],
   [Thermometer, "Pull-down & hold test", "Temperature recovery, set point and test conditions are recorded—not inferred from the display."],
   [Wind, "Ambient & airflow review", "Climate class, ventilation clearance and condenser direction are checked for the destination kitchen."],
   [PlugZap, "Electrical & refrigerant match", "Voltage, frequency, plug, refrigerant and rated power remain visible in the approval file."],
@@ -95,82 +89,65 @@ const controlPoints = [
 
 const evidenceTracks = {
   ice: {
-    label: "Ice-maker records",
-    status: "SOURCE RECORDS AVAILABLE",
-    title: "Real source stills, mapped to a narrow claim.",
-    copy: "These project-held stills document an ice-maker line and pack-out only. They do not prove production capability for upright cabinets or display refrigeration.",
+    label: "Ice maker production",
+    status: "PRODUCTION VIDEO · 9 SECONDS",
+    title: "See the ice-maker line in motion.",
+    copy: "Watch a short clip from an ice-maker production line, then take a closer look at the packing and storage photos below.",
+    video: "/media/process/kitchen-production.mp4",
     visual: `${A}/ice-maker-line-source.webp`,
-    visualAlt: "Vertical source still showing commercial ice makers moving along a production line",
-    caption: "Project-held source still · ice-maker line · capture date not supplied",
+    visualAlt: "Commercial ice makers on a production line",
+    caption: "Ice maker production line · 9-second video",
     checks: [
-      ["Line-side unit", "Product format is visible in the source still."],
-      ["Packed unit", "A separate still records a wrapped unit on a pallet."],
-      ["Warehouse context", "Packed ice-maker cartons are visible in the retained record."],
-      ["Parameter sheet", "Rated values stay linked to the named SD-50F example."],
+      ["Production line", "Ice makers at the assembly stations."],
+      ["Protective packing", "A wrapped unit secured on a pallet."],
+      ["Warehouse storage", "Packed ice makers ready for handling."],
+      ["Model specifications", "The SD-50F sheet below is a separate model example."],
     ],
     thumbs: [
-      [`${A}/ice-maker-line-source.webp`, "01", "Line record", "Source still retained in project"],
-      [`${A}/ice-maker-packout-source.webp`, "02", "Wrapped unit", "Pack-out source still"],
-      [`${A}/ice-maker-warehouse-source.webp`, "03", "Warehouse record", "Packed ice-maker cartons"],
-      [`${A}/ice-maker-sd50f-spec.webp`, "04", "Parameter sheet", "Supplier-listed example values"],
+      [`${A}/ice-maker-line-source.webp`, "01", "Production line", "Ice makers at the assembly stations"],
+      [`${A}/ice-maker-packout-source.webp`, "02", "Protective packing", "Wrapping and pallet support"],
+      [`${A}/ice-maker-warehouse-source.webp`, "03", "Warehouse storage", "Packed ice-maker cartons"],
+      [`${A}/ice-maker-sd50f-spec.webp`, "04", "SD-50F specifications", "Capacity, dimensions and ice output"],
     ],
   },
   cabinet: {
-    label: "Cabinet evidence gaps",
-    status: "EVIDENCE REQUEST OPEN",
-    title: "Cabinet validation stays open until the records arrive.",
-    copy: "The product render and range scene support product selection, not factory proof. The selected cabinet supplier must return model-linked records before approval.",
+    label: "Choosing a cabinet",
+    status: "BEFORE YOU ORDER",
+    title: "Check the fit, cooling and service access.",
+    copy: "Choose a cabinet around your available space and kitchen conditions. We confirm the selected model's details with the supplier when preparing your quote.",
     visual: `${A}/high-ambient-airflow-diagram.webp`,
     visualAlt: "Illustration of condenser airflow and clearance around an upright refrigerator in a hot kitchen",
-    caption: "Control illustration · not a factory record",
+    caption: "Condenser airflow and clearance · Illustration",
     checks: [
-      ["Nameplate photo", "Pending from the selected supplier."],
-      ["Pull-down log", "Pending with ambient and load conditions."],
-      ["Internal build", "Pending evaporator, condenser, gasket and drain photos."],
-      ["Final pack-out", "Pending carton or crate and loading evidence."],
+      ["Model and configuration", "Confirm dimensions, voltage and refrigerant for your selected unit."],
+      ["Cooling performance", "Ask for test readings at the expected room temperature and load."],
+      ["Cleaning and maintenance", "Check condenser access, door seals and drainage."],
+      ["Transport packaging", "Agree protection, packed dimensions and upright handling requirements."],
     ],
     thumbs: [],
   },
 };
 
-function Brand() {
-  return (
-    <a className="refrigeration-brand" href="/" aria-label="DDNZ Global home">
-      <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
-      <span><strong>DDNZ GLOBAL</strong><small>CHINA SOURCING &amp; EXPORT</small></span>
-    </a>
-  );
-}
-
-function Header({ open, setOpen }) {
-  return (
-    <header className="refrigeration-header">
-      <Brand />
-      <nav className="refrigeration-desktop-nav" aria-label="Primary navigation">
-        <a href="/">Product Sourcing <ChevronDown size={14} /></a>
-        <a className="active" href="/refrigeration-equipment">Refrigeration Equipment <ChevronDown size={14} /></a>
-        <a href="#refrigeration-control">Our Control Plan</a>
-        <a href="#refrigeration-evidence">Evidence</a>
-        <a href="#refrigeration-about">About DDNZ</a>
-      </nav>
-      <button className="refrigeration-menu-button" type="button" onClick={() => setOpen(!open)} aria-expanded={open} aria-label="Toggle menu">
-        {open ? <X size={22} /> : <Menu size={22} />}
-      </button>
-      {open && (
-        <nav className="refrigeration-drawer" aria-label="Mobile navigation">
-          <a href="/">Product Sourcing</a>
-          <a className="active" href="/refrigeration-equipment">Refrigeration Equipment</a>
-          <a href="#refrigeration-control" onClick={() => setOpen(false)}>Our Control Plan</a>
-          <a href="#refrigeration-evidence" onClick={() => setOpen(false)}>Evidence status</a>
-          <a href="#refrigeration-rfq" onClick={() => setOpen(false)}>Start a scoped request</a>
-        </nav>
-      )}
-    </header>
-  );
-}
-
 function DotScale({ value }) {
   return <span className="refrigeration-dots" aria-label={`${value} of 5`}>{[1, 2, 3, 4, 5].map((n) => <i className={n <= value ? "filled" : ""} key={n} />)}</span>;
+}
+
+function ProductionVideo({ src, poster }) {
+  const videoRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+  const [unavailable, setUnavailable] = useState(false);
+  const play = () => videoRef.current?.play().catch(() => setUnavailable(true));
+  return <>
+    <video ref={videoRef} controls playsInline preload="none" poster={poster} aria-label="Ice maker production line video"
+      onPlay={() => setPlaying(true)} onPause={() => setPlaying(false)} onEnded={() => setPlaying(false)} onError={() => setUnavailable(true)}>
+      <source src={src} type="video/mp4" />
+      <a href={src}>Open the production video</a>
+    </video>
+    {!playing && !unavailable && <button className="refrigeration-video-play" type="button" onClick={play} aria-label="Play ice maker production video">
+      <Play size={23} fill="currentColor" aria-hidden="true" /><span>Play video<small>9 seconds</small></span>
+    </button>}
+    {unavailable && <p className="refrigeration-video-fallback">The video could not be played. <a href={src}>Open video file</a></p>}
+  </>;
 }
 
 function FamilyCard({ item, index, technical }) {
@@ -187,16 +164,7 @@ function FamilyCard({ item, index, technical }) {
       ) : (
         <ul>{item.operating.map((line) => <li key={line}><Check size={14} />{line}</li>)}</ul>
       )}
-      <p className="refrigeration-source"><FileCheck2 size={13} />{item.source}</p>
       <span className="refrigeration-family-index">0{index + 1}</span>
-    </article>
-  );
-}
-
-function EvidencePlaceholder({ index, title, copy }) {
-  return (
-    <article className="refrigeration-evidence-placeholder">
-      <span>{index}</span><ImageIcon size={25} /><h3>{title}</h3><p>{copy}</p><small>SUPPLIER FILE REQUESTED</small>
     </article>
   );
 }
@@ -290,12 +258,12 @@ export function RefrigerationEquipment() {
           </div>
           <div className="refrigeration-hero-stage">
             <div className="refrigeration-stage-grid" aria-hidden="true" />
-            <img src={`${A}/upright-dg860l4-sanitized.webp`} width="1600" height="1600" alt="Sanitized four-door stainless-steel upright refrigeration cabinet" fetchPriority="high" decoding="async" />
-            <span className="refrigeration-model-tag"><b>DG860L4-A</b> SOURCE-MAPPED EXAMPLE</span>
+            <img src={`${A}/upright-dg860l4-sanitized.webp`} width="1600" height="1600" alt="Illustration of a four-door stainless-steel refrigeration cabinet" fetchPriority="high" decoding="async" />
+            <span className="refrigeration-model-tag"><b>DG860L4-A</b> MODEL EXAMPLE</span>
             <div className="refrigeration-spec-callout callout-capacity"><strong>860 L</strong><span>effective volume</span></div>
             <div className="refrigeration-spec-callout callout-temp"><strong>2 zones</strong><span>1–8°C / −5 to −18°C</span></div>
             <div className="refrigeration-spec-callout callout-cooling"><strong>Direct cool</strong><span>350 W listed</span></div>
-            <p className="refrigeration-render-note">Sanitized product render reconstructed from a supplier source card. Final configuration requires model-linked evidence.</p>
+            <p className="refrigeration-render-note">Product illustration. Confirm the final configuration with your quotation.</p>
           </div>
         </section>
 
@@ -310,7 +278,7 @@ export function RefrigerationEquipment() {
           <div className="refrigeration-family-grid">
             {productFamilies.map((item, index) => <FamilyCard item={item} index={index} technical={technical} key={item.name} />)}
           </div>
-          <p className="refrigeration-spec-disclaimer"><AlertCircle size={15} />Representative values are tied to named source records or source families. Verify the final model sheet, test conditions and destination suitability before order release.</p>
+          <p className="refrigeration-spec-disclaimer"><AlertCircle size={15} />Specifications are examples for the models shown. We confirm the final model, test conditions and destination configuration with your quotation.</p>
         </section>
 
         <section className="refrigeration-brief-band" aria-labelledby="refrigeration-brief-title">
@@ -329,37 +297,34 @@ export function RefrigerationEquipment() {
         </section>
 
         <section className="refrigeration-section refrigeration-control" id="refrigeration-control" aria-labelledby="refrigeration-control-title">
-          <div className="refrigeration-control-head"><div><p className="refrigeration-kicker">REFRIGERATION CONTROL PLAN</p><h2 id="refrigeration-control-title">Release the model only when the cold-chain evidence closes.</h2></div><p>Each checkpoint creates a record that can be traced back to the selected model and destination-market brief.</p></div>
+          <div className="refrigeration-control-head"><div><p className="refrigeration-kicker">BEFORE YOU ORDER</p><h2 id="refrigeration-control-title">Get the details right for your kitchen.</h2></div><p>Start with the equipment you need. Confirm the model, operating conditions and delivery requirements as we prepare your quotation.</p></div>
           <div className="refrigeration-control-grid">
             {controlPoints.map(([Icon, title, copy], index) => <article key={title}><span>0{index + 1}</span><Icon size={27} /><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
         </section>
 
+        <section className="refrigeration-section" aria-label="Compare refrigeration models"><p className="refrigeration-kicker">CHOOSE YOUR EQUIPMENT</p><h2>Find the next model for your range.</h2><div className="flex flex-wrap gap-4 mt-5"><a className="refrigeration-primary" href="/sourcing/commercial-ice-machines-from-china/">Compare six ice machines <ArrowRight size={17}/></a><a className="refrigeration-secondary" href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-equipment">Browse refrigerators &amp; prep counters <ArrowRight size={17}/></a></div></section>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">
           <div className="refrigeration-evidence-head">
-            <div><p className="refrigeration-kicker">EVIDENCE STATUS</p><h2 id="refrigeration-evidence-title">Show what exists. Mark what is still missing.</h2><p>Product imagery supports selection. Only source records mapped to a model support approval.</p></div>
-            <div className="refrigeration-tabs" role="tablist" aria-label="Refrigeration evidence track">
-              {Object.entries(evidenceTracks).map(([key, value]) => <button type="button" role="tab" aria-selected={evidenceKey === key} className={evidenceKey === key ? "active" : ""} onClick={() => setEvidenceKey(key)} key={key}>{value.label}</button>)}
+            <div><p className="refrigeration-kicker">A CLOSER LOOK</p><h2 id="refrigeration-evidence-title">From the production line to the packing floor.</h2><p>Watch ice-maker production, view the packing photos and check what matters for your equipment selection.</p></div>
+            <div className="refrigeration-tabs" role="group" aria-label="Production and equipment checks">
+              {Object.entries(evidenceTracks).map(([key, value]) => <button type="button" aria-pressed={evidenceKey === key} aria-controls="refrigeration-media-panel" className={evidenceKey === key ? "active" : ""} onClick={() => setEvidenceKey(key)} key={key}>{value.label}</button>)}
             </div>
           </div>
-          <div className={`refrigeration-evidence-stage ${evidenceKey === "cabinet" ? "is-gap" : ""}`}>
-            <figure><img key={evidence.visual} src={evidence.visual} alt={evidence.visualAlt} width="1200" height="900" loading="lazy" decoding="async" /><figcaption>{evidence.caption}</figcaption></figure>
+          <div id="refrigeration-media-panel" className={`refrigeration-evidence-stage ${evidenceKey === "cabinet" ? "is-gap" : ""}`}>
+            <figure className={evidence.video ? "has-video" : undefined}>
+              {evidence.video ? <ProductionVideo src={evidence.video} poster={evidence.visual} /> : <img key={evidence.visual} src={evidence.visual} alt={evidence.visualAlt} width="1200" height="900" loading="lazy" decoding="async" />}
+              <figcaption>{evidence.caption}</figcaption>
+            </figure>
             <aside>
               <span className="refrigeration-evidence-status">{evidence.status}</span>
               <h3>{evidence.title}</h3><p>{evidence.copy}</p>
               <div>{evidence.checks.map(([title, copy]) => <span key={title}><CheckCircle2 size={17} /><b>{title}</b><small>{copy}</small></span>)}</div>
             </aside>
           </div>
-          {evidence.thumbs.length ? (
+          {evidence.thumbs.length > 0 && (
             <div className="refrigeration-evidence-thumbs">
               {evidence.thumbs.map(([src, number, title, copy]) => <article key={number}><div><img src={src} alt={`${title}: ${copy}`} width="720" height="720" loading="lazy" decoding="async" /></div><span>{number}</span><h3>{title}</h3><p>{copy}</p></article>)}
-            </div>
-          ) : (
-            <div className="refrigeration-placeholder-grid" aria-label="Pending cabinet evidence">
-              <EvidencePlaceholder index="01" title="Nameplate photo" copy="Model, voltage, frequency, phase and refrigerant visible." />
-              <EvidencePlaceholder index="02" title="Pull-down log" copy="Ambient, load, start temperature and timed readings recorded." />
-              <EvidencePlaceholder index="03" title="Internal build" copy="Condenser, evaporator, drainage, gasket and control details." />
-              <EvidencePlaceholder index="04" title="Final pack-out" copy="Protection, dimensions, handling marks and loading condition." />
             </div>
           )}
         </section>
@@ -406,7 +371,7 @@ export function RefrigerationEquipment() {
         pageKey="refrigeration-equipment"
         description="DDNZ Global coordinates commercial cold-side sourcing, supplier verification, inspection and export handoff from China."
         tagline="Commercial cold-side sourcing"
-        links={[{ label: "Control plan", href: "#refrigeration-control" }, { label: "Evidence", href: "#refrigeration-evidence" }, { label: "Start a brief", href: "#refrigeration-rfq" }]}
+        links={[{ label: "Before you order", href: "#refrigeration-control" }, { label: "Production & packing", href: "#refrigeration-evidence" }, { label: "Start a brief", href: "#refrigeration-rfq" }]}
       />
 
       {scoreOpen && (

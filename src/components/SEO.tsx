@@ -13,6 +13,7 @@ interface SEOProps {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
+  contentLanguage?: 'en' | 'es' | 'ar';
 }
 
 export default function SEO({
@@ -25,6 +26,7 @@ export default function SEO({
   type = 'website',
   publishedTime,
   modifiedTime,
+  contentLanguage,
 }: SEOProps) {
   const { language } = useLanguage();
   const location = useLocation();
@@ -73,7 +75,7 @@ export default function SEO({
     },
   };
 
-  const currentLang = language || 'en';
+  const currentLang = contentLanguage || language || 'en';
   const defaults = seoDefaults[currentLang] || seoDefaults['en'];
 
   // Resolve final SEO fields
@@ -160,7 +162,9 @@ export default function SEO({
     .map((item) => ({ ...item, href: canonicalSiteUrl(item.href) }));
   const defaultAlternate = finalAlternates.find((item) => item.hrefLang === 'en') || finalAlternates[0];
 
-  const helmetLang = currentLang === 'zh' ? 'zh-CN' : currentLang;
+  // The global shell may retain a visitor's language while the product guide
+  // explicitly declares English on its own content region.
+  const helmetLang = language === 'zh' ? 'zh-CN' : language;
   const alternateSignature = JSON.stringify(finalAlternates);
 
   useEffect(() => {
@@ -184,13 +188,14 @@ export default function SEO({
     };
 
     document.documentElement.lang = helmetLang;
-    document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.title = finalTitle;
 
     replaceMeta('name', 'title', finalTitle);
     replaceMeta('name', 'description', finalDesc);
     replaceMeta('name', 'keywords', finalKeywords);
-    replaceMeta('name', 'robots', 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1');
+    const localPreview = ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname);
+    replaceMeta('name', 'robots', localPreview ? 'noindex,nofollow' : 'index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1');
     replaceMeta('property', 'og:type', type);
     replaceMeta('property', 'og:url', canonicalUrl);
     replaceMeta('property', 'og:title', finalTitle);
@@ -252,6 +257,7 @@ export default function SEO({
     finalKeywords,
     finalTitle,
     helmetLang,
+    language,
     image,
     modifiedTime,
     publishedTime,

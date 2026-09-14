@@ -1,0 +1,103 @@
+/* Localized surfaces extend the established kitchen palette without changing English. */
+.ddnz-kitchen.localized-kitchen { text-align:start; }
+.localized-kitchen .localized-product { display:flex; flex-direction:column; }
+.localized-kitchen .localized-product-photo { width:100%; height:auto; aspect-ratio:4/3; object-fit:contain; background:#fff; }
+.localized-kitchen .localized-card-body { padding:22px; display:flex; flex-direction:column; flex:1; gap:12px; }
+.localized-kitchen .localized-card-body .eyebrow { font-size:11px; margin:0; }
+.localized-kitchen .localized-card-body h3 { font-size:22px; margin:0; }
+.localized-kitchen .localized-card-body p { margin:0; }
+.localized-kitchen .localized-model { font-size:13px; }
+.localized-kitchen .localized-metric { font-size:22px; font-weight:600; }
+.localized-kitchen .supply-price { border-block-start:1px solid var(--line); padding-block:15px; }
+.localized-kitchen .localized-specs { border-block:1px solid var(--line); padding-block:12px; }
+.localized-kitchen summary { cursor:pointer; font-weight:600; line-height:1.6; padding-block:8px; }
+.localized-kitchen dl { margin-block:16px; font-size:13px; }
+.localized-kitchen dt { color:var(--muted); margin-block-start:12px; }
+.localized-kitchen dd { margin:4px 0 0; }
+.localized-kitchen dd small { display:block; }
+.localized-kitchen .localized-card-actions { display:grid; gap:12px; margin-block-start:auto; padding-block-start:12px; }
+.localized-kitchen .localized-compare-check { display:flex; align-items:center; gap:10px; font-size:14px; min-height:44px; cursor:pointer; }
+.localized-kitchen .localized-compare-check input { width:19px; height:19px; min-height:19px; accent-color:var(--blue); }
+.localized-kitchen .localized-card-actions .button { width:100%; }
+.localized-kitchen .localized-search { display:grid; gap:8px; max-width:560px; width:100%; font-size:14px; }
+.localized-kitchen .catalog-meta { justify-content:flex-start; gap:8px; }
+.localized-kitchen .localized-notice { position:sticky; bottom:12px; z-index:1; margin-block:16px 0; }
+.localized-kitchen .localized-notice:not(:empty) { padding:12px 20px; background:var(--ink); color:white; }
+.localized-kitchen .localized-empty { background:#fff; padding:28px; border:1px solid var(--line); }
+.localized-kitchen .localized-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+.localized-kitchen .localized-panel { background:#fff; border:1px solid var(--line); padding:28px; min-width:0; }
+.localized-kitchen .localized-panel h4 { font-size:21px; line-height:1.45; margin-block:0 18px; }
+.localized-kitchen .localized-panel ul { padding-inline-start:24px; line-height:1.9; margin-block-end:24px; }
+.localized-kitchen .localized-market { margin-block-start:48px; }
+.localized-kitchen .localized-market>p { max-width:900px; }
+.localized-kitchen .localized-price-explanation { padding:24px; background:#edf1eb; border-inline-start:3px solid var(--blue); margin-block:24px; }
+.localized-kitchen .localized-price-explanation p:last-child { margin-bottom:0; }
+.localized-kitchen .localized-table-scroll { overflow:auto; }
+.localized-kitchen .compare-table { width:100%; border-collapse:collapse; table-layout:fixed; min-width:640px; }
+.localized-kitchen .compare-table caption { text-align:start; padding:12px; font-weight:600; }
+.localized-kitchen .compare-table th,.localized-kitchen .compare-table td { text-align:start; vertical-align:top; padding:18px; border:1px solid var(--line); overflow-wrap:anywhere; }
+.localized-kitchen .compare-table th p { font-weight:400; font-size:14px; margin-block:12px; }
+.localized-kitchen .compare-table .supply-price { border:0; padding-block-start:0; }
+.localized-kitchen .compare-table .button { margin-block-start:16px; }
+.localized-kitchen .localized-selected-row { display:grid; grid-template-columns:100px minmax(0,1fr) 150px auto; gap:20px; align-items:center; padding-block:24px; border-block-end:1px solid var(--line); }
+.localized-kitchen .localized-selected-row img { width:100px; height:75px; object-fit:contain; background:white; }
+.localized-kitchen .localized-selected-row h3 { font-size:20px; margin-block:0 8px; }
+.localized-kitchen .localized-selected-row p { margin-block:0 8px; }
+.localized-kitchen .localized-selected-row label { display:grid; gap:8px; font-size:13px; }
+.localized-kitchen .localized-inquiry { margin-block-start:32px; background:#fff; padding:32px; display:grid; gap:24px; border:1px solid var(--line); }
+.localized-kitchen .localized-inquiry label { display:grid; align-content:start; gap:9px; font-size:14px; }
+.localized-kitchen .localized-inquiry>p { margin:0; }
+.localized-kitchen .localized-request-review { border-block:1px solid var(--line); padding-block:16px; }
+.localized-kitchen .localized-request-review pre { font:inherit; font-size:14px; line-height:1.9; background:var(--paper); padding:24px; white-space:pre-wrap; overflow-wrap:anywhere; }
+.localized-kitchen .localized-error { display:block; color:#a32b21; line-height:1.6; }
+.localized-kitchen [aria-invalid=true] { border-color:#a32b21; }
+.localized-kitchen .localized-status { padding:18px; background:#edf4e2; border-inline-start:3px solid var(--blue); }
+.localized-kitchen .localized-status.is-error { background:#fff0ed; border-color:#a32b21; }
+.localized-kitchen .localized-drafts { display:flex; gap:20px; align-items:center; flex-wrap:wrap; }
+.localized-kitchen .localized-drafts p { flex-basis:100%; margin:0; }
+.localized-kitchen .localized-faq details { padding-block:16px; border-block-end:1px solid var(--line); }
+.localized-kitchen .localized-faq details p { margin-block:16px 0; max-width:900px; }
+.localized-kitchen .localized-margin-form { display:grid; gap:20px; }
+.localized-kitchen .localized-margin-form label { display:grid; gap:9px; font-size:14px; }
+.localized-kitchen .localized-margin-reference { background:var(--paper); padding:18px; border-inline-start:3px solid var(--blue); }
+.localized-kitchen .localized-margin-reference p { margin-block:0 9px; }
+.localized-kitchen .localized-margin-reference p:last-child { margin:0; }
+.localized-kitchen .localized-margin-number strong { display:block; font-size:54px; line-height:1.25; color:var(--blue); }
+.localized-kitchen .localized-margin-number span { display:block; margin-block:12px 24px; }
+.localized-kitchen .localized-margin-result.is-loss .localized-margin-number strong { color:#a32b21; }
+.localized-kitchen .localized-margin-chart p { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px; font-size:13px; margin-block:20px 8px; }
+.localized-kitchen .localized-margin-track { display:flex; height:18px; background:#edf0ee; border-radius:2px; overflow:hidden; }
+.localized-kitchen .localized-margin-sale { background:#80952f; }
+.localized-kitchen .localized-margin-purchase { background:var(--blue); }
+.localized-kitchen .localized-margin-extras { background:#bc8d48; }
+.localized-kitchen .localized-margin-breakdown { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:12px; margin-block:28px; }
+.localized-kitchen .localized-margin-breakdown dt,.localized-kitchen .localized-margin-breakdown dd { margin:0; }
+.localized-kitchen .localized-margin-result>.fine { margin-block:24px 0; }
+.localized-kitchen .kitchen-subnav-list { margin-left:0; margin-inline-start:auto; border-left:0; border-inline-start:1px solid var(--line); }
+.localized-kitchen .kitchen-subnav-list bdi { display:inline-grid; place-items:center; min-width:24px; padding:2px 5px; background:var(--ink); color:white; border-radius:20px; }
+.localized-kitchen bdi { font-variant-numeric:tabular-nums; }
+.localized-kitchen[dir=rtl] { --sans:'Segoe UI',Tahoma,Arial,sans-serif; }
+.localized-kitchen[dir=rtl] h1,.localized-kitchen[dir=rtl] h2,.localized-kitchen[dir=rtl] h3,.localized-kitchen[dir=rtl] .eyebrow,.localized-kitchen[dir=rtl] .markets { letter-spacing:0; }
+.localized-kitchen[dir=rtl] h1 { line-height:1.35; }
+.localized-kitchen[dir=rtl] h1 em { font-family:inherit; font-style:normal; }
+.localized-kitchen[dir=rtl] h2,.localized-kitchen[dir=rtl] h3 { line-height:1.5; }
+.localized-kitchen[dir=rtl] .hero-label { left:auto; right:-27px; }
+.localized-kitchen[dir=rtl] .kitchen-breadcrumb li+li::before { margin-right:0; margin-left:12px; }
+@media(max-width:1000px) {
+  .localized-kitchen .localized-selected-row { grid-template-columns:80px minmax(0,1fr) 120px; }
+  .localized-kitchen .localized-selected-row>button { grid-column:2; justify-self:start; }
+}
+@media(max-width:650px) {
+  .localized-kitchen .localized-two-columns { grid-template-columns:1fr; gap:16px; }
+  .localized-kitchen .localized-panel,.localized-kitchen .localized-inquiry { padding:20px; }
+  .localized-kitchen .localized-selected-row { grid-template-columns:70px minmax(0,1fr); gap:14px; }
+  .localized-kitchen .localized-selected-row img { width:70px; height:auto; }
+  .localized-kitchen .localized-selected-row label { grid-column:2; max-width:180px; }
+  .localized-kitchen .localized-selected-row>button { grid-column:2; }
+  .localized-kitchen .localized-request-review pre { padding:15px; font-size:13px; }
+  .localized-kitchen .localized-drafts { align-items:stretch; flex-direction:column; flex-wrap:nowrap; }
+  .localized-kitchen .localized-drafts p { flex-basis:auto; }
+  .localized-kitchen .localized-drafts a { min-width:0; max-width:100%; }
+  .localized-kitchen .localized-card-body { padding:20px; }
+  .localized-kitchen[dir=rtl] .hero-label { right:0; }
+}

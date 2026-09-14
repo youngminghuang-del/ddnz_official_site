@@ -1,0 +1,22 @@
+import {L} from './catalog.mjs';
+export const launchCopy={
+ restored:L('Your previous setup is restored.','Se ha recuperado su combinación anterior.','تمت استعادة تجهيزاتك السابقة.'),
+ saved:L('Your setup is saved in this tab.','Su combinación se guarda en esta pestaña.','تُحفظ تجهيزاتك في علامة التبويب هذه.'),
+ unavailable:L('Saving is unavailable in this browser. Keep this page open while you plan.','No se puede guardar en este navegador. Mantenga la página abierta mientras planifica.','الحفظ غير متاح في هذا المتصفح. أبقِ الصفحة مفتوحة أثناء التخطيط.'),
+ reset:L('Start again','Empezar de nuevo','ابدأ من جديد'),
+ resetDone:L('Ready for a new setup.','Todo listo para una nueva combinación.','جاهز لتجهيزات جديدة.'),
+ appliances:L('Choose appliances','Elegir aparatos','اختر الأجهزة'),
+ result:L('View my result','Ver mi resultado','عرض نتيجتي'),
+ matches:L('Which models cover your setup?','¿Qué modelos cubren su combinación?','أي الطرازات تلبي تجهيزاتك؟'),
+ matchIntro:L('Compare the entered running load and target duration at your usable-energy assumption. Choose a model to update your plan.','Compare la carga y duración introducidas con su supuesto de energía utilizable. Elija un modelo para actualizar el plan.','قارن حمل التشغيل والمدة المطلوبة وفق افتراض الطاقة القابلة للاستخدام. اختر طرازاً لتحديث خطتك.'),
+ fits:L('Meets the entered power & energy','Cumple la potencia y energía indicadas','يلبي القدرة والطاقة المدخلتين'),
+ insufficient:L('More capacity needed','Se necesita más capacidad','تحتاج إلى سعة إضافية'),
+ powerGap:L('Additional rated power needed','Potencia nominal adicional necesaria','القدرة الاسمية الإضافية المطلوبة'),
+ energyGap:L('Additional usable energy needed','Energía utilizable adicional necesaria','الطاقة القابلة للاستخدام الإضافية المطلوبة'),
+ noMatch:L('No listed model covers both conditions. Reduce the load or duration, or ask us to specify a larger option.','Ningún modelo cubre ambas condiciones. Reduzca carga o duración, o solicite una opción mayor.','لا يلبي أي طراز مدرج الشرطين. قلل الحمل أو المدة أو اطلب منا تحديد خيار أكبر.'),
+ choose:L('Use this model','Usar este modelo','استخدم هذا الطراز'),
+ current:L('Current model','Modelo actual','الطراز الحالي'),
+ comparisonNote:L('This checks running power and estimated energy only. Confirm voltage, ports, starting demand and the measured sample before buying.','Solo se comprueban potencia continua y energía estimada. Confirme tensión, puertos, arranque y muestra medida antes de comprar.','يفحص هذا قدرة التشغيل والطاقة المقدرة فقط. أكد الجهد والمنافذ وحمل بدء التشغيل والعينة المقاسة قبل الشراء.'),
+ comparisonLink:L('Compare models for this setup','Comparar modelos para esta combinación','قارن الطرازات لهذه التجهيزات'),
+ sendingWait:L('Sending is taking longer than expected. Your brief is saved; please try again.','El envío tarda más de lo esperado. Su solicitud está guardada; inténtelo de nuevo.','يستغرق الإرسال وقتاً أطول من المتوقع. موجزك محفوظ؛ يرجى المحاولة مجدداً.'),
+};

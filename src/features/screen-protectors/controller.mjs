@@ -1,17 +1,22 @@
 import { FACTORY_CLIPS, VIDEO_COPY } from './production.mjs';
 import {EN,t} from './locales/en.mjs';
 import {PRODUCTS,BASIS,preset,economics,cartonFacts,money,number,referenceDate,names,estimate,makeBrief,packingLine} from './model.mjs';
-import { ROUTES, CATEGORY_PATH, INQUIRY_PATH, pageForPath } from './routes.mjs';
+import { ROUTES, INQUIRY_PATH, pageForPath } from './routes.mjs';
 import { DRAFT_KEY, saveHandoff } from './handoff.mjs';
+import { renderScreenProtectorBreadcrumbs, renderScreenProtectorNextSteps, isPlainAnchorClick, pageHref } from './browsing.mjs';
+import { createScreenProtectorActionReporter } from './site-analytics.mjs';
 
-export function mountScreenProtectors(root, go) {
+/** @param {(action: string) => void} [onAction] */
+export function mountScreenProtectors(root, go, onAction) {
 const lifecycle=new AbortController();
-const onRoot=(type,handler)=>root.addEventListener(type,handler,{signal:lifecycle.signal});
+const on=(target,type,handler)=>target.addEventListener(type,handler,{signal:lifecycle.signal});
+const onRoot=(type,handler)=>on(root,type,handler);
+const report=createScreenProtectorActionReporter(onAction,lifecycle.signal);
+const playedVideos=new WeakSet();
 const $=s=>s==='#app'?root:root.querySelector(s),all=s=>[...root.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const asset=file=>'/screen-protector-media/assets/'+file;
 const media=file=>'/screen-protector-media/media/'+file;
-const site='https://www.ddnzglobal.com';
 const key=DRAFT_KEY;
 let state={rows:preset(),packing:'product',charging:'shipment',route:'sea',price:'',monthly:'',feeRate:'',requests:[]};
 let storage=true,result,brief='';
@@ -21,16 +26,14 @@ try{const saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved&&Array.
   for(const field of ['price','monthly','feeRate'])if(['string','number'].includes(typeof saved[field]))state[field]=saved[field];
 }}catch{storage=false;}
 const link=(href,label,cls='')=>`<a class="${cls}" href="${href}">${label}</a>`;
-const external=(path,label)=>`<a href="${path}">${label}</a>`;
 const action=(page,label,secondary=false)=>link('#'+page,label+' <span aria-hidden="true">↗</span>',secondary?'button secondary':'button');
 const heading=(tag,title,body)=>`<div class="page-heading"><p class="eyebrow">${tag}</p><h1 tabindex="-1">${title.replaceAll('\n','<br>')}</h1><p class="lede">${body}</p></div>`;
-const crumb=page=>`<nav class="breadcrumbs" aria-label="${t('nav.crumb')}">${external(CATEGORY_PATH,t('nav.mobile'))}<span>/</span>${page==='home'?`<span aria-current="page">${t('pages.home')}</span>`:link('#home',t('pages.home'))}${['prices','curves'].includes(page)?`<span>/</span>${link('#guides',t('pages.guides'))}`:''}${page==='home'?'':`<span>/</span><span aria-current="page">${EN.pages[page]}</span>`}</nav>`;
-const section=(id,html)=>`<section class="view" id="view-${id}" hidden>${crumb(id)}${html}</section>`;
+const section=(id,html)=>`<section class="view" id="view-${id}" hidden>${renderScreenProtectorBreadcrumbs(id)}${html}${renderScreenProtectorNextSteps(id)}</section>`;
 const fields=ids=>`<div class="check-list">${ids.map(id=>`<label><input type="checkbox" data-check="${id}"><span>${EN.requests[id]}</span></label>`).join('')}</div><div class="check-summary"><span data-check-count></span>${link('#quote',t('guides.viewBrief')+' →')}</div>`;
 const cards=()=>`<div class="guide-cards"><a href="#prices" class="guide-card"><img src="${asset('001-kit-photo.jpg')}" width="1280" height="720" loading="lazy" alt="${t('guides.kit001')}"><div><p class="eyebrow">01 / ${t('pages.prices')}</p><h3>${t('guides.priceTitle').replace('\n','<br>')}</h3><p>${t('guides.priceDesc')}</p><b>${t('guides.open')} ↗</b></div></a><a href="#curves" class="guide-card"><img src="${asset('curved-glass-cover-v1.png')}" width="1672" height="941" loading="lazy" alt="${t('comparisonCoverAlt')}"><div><p class="eyebrow">02 / ${t('pages.curves')}</p><h3>${t('guides.curveTitle').replace('\n','<br>')}</h3><p>${t('guides.curveDesc')}</p><b>${t('guides.open')} ↗</b></div></a></div>`;
 const clip=(c,scope='guide')=>`<figure class="clip"><div class="clip-player"><video controls playsinline preload="none" poster="${media(c.poster+'.jpg')}" aria-label="${c.title}" aria-describedby="desc-${scope}-${c.id}"><source src="${media(c.file+'.mp4')}" type="video/mp4"><track kind="captions" src="/screen-protector-media/captions/${c.file}.en.vtt" srclang="en" label="${t('media.captions')}" default></video><button type="button" class="play-clip" aria-label="Play: ${c.title}"><span aria-hidden="true">▶</span> ${VIDEO_COPY.play}</button></div><figcaption><div class="clip-heading"><h3>${c.title}</h3><span>${c.duration}s</span></div><small>${t('media.silent')}</small><p id="desc-${scope}-${c.id}">${c.description}</p><p class="media-error" role="status"></p></figcaption></figure>`;
 const stage=(c)=>`<div class="process-stage-heading"><p class="eyebrow">${VIDEO_COPY.shown}</p><h2>${c.title}</h2></div>${clip(c,'library')}<div class="process-question"><h3>${VIDEO_COPY.check}</h3><p>${c.check}</p></div>`;
-const videos=section('videos',heading(VIDEO_COPY.eyebrow,VIDEO_COPY.title,VIDEO_COPY.intro)+`<p class="process-scope">${VIDEO_COPY.scope}</p><div class="factory-library" id="process-library"><nav class="process-directory" aria-label="${VIDEO_COPY.nav}">${FACTORY_CLIPS.map((c,i)=>`<button type="button" data-process-index="${i}" aria-pressed="${i===0}"><span>${String(i+1).padStart(2,'0')}</span><span>${c.title}<small>${c.duration}s</small></span><b aria-hidden="true">↗</b></button>`).join('')}</nav><section class="process-stage" id="process-stage" aria-label="Selected production stage">${stage(FACTORY_CLIPS[0])}</section></div><section class="installation-library"><h2>${VIDEO_COPY.installation}</h2><p>${VIDEO_COPY.installIntro}</p><div class="clip-grid">${EN.media.clips.slice(0,3).map(c=>clip(c,'library-install')).join('')}</div></section><div class="next-step"><div><h2>${t('guides.checksTitle')}</h2><p>Carry the specifications that matter into your sourcing brief.</p></div>${action('guides',t('pages.guides'))}</div>`);
+const videos=section('videos',heading(VIDEO_COPY.eyebrow,VIDEO_COPY.title,VIDEO_COPY.intro)+`<p class="process-scope">${VIDEO_COPY.scope}</p><div class="factory-library" id="process-library"><nav class="process-directory" aria-label="${VIDEO_COPY.nav}">${FACTORY_CLIPS.map((c,i)=>`<a href="${pageHref('videos')}#${c.id}" data-process-index="${i}"${i===0?' aria-current="true"':''}><span>${String(i+1).padStart(2,'0')}</span><span>${c.title}<small>Watch ${c.duration}s</small></span><b aria-hidden="true">↗</b></a>`).join('')}</nav><section class="process-stage" id="process-stage" aria-label="Selected production stage">${stage(FACTORY_CLIPS[0])}</section></div><section class="process-notes"><h2>Production observations and procurement checks</h2><p>Use these notes to identify what each clip shows and what still needs confirmation for your order.</p><ol>${FACTORY_CLIPS.map(c=>`<li><h3>${c.title}</h3><p>${c.description}</p><p><strong>Ask before ordering:</strong> ${c.check}</p><a href="${pageHref('videos')}#${c.id}">Watch ${c.title.toLowerCase()} (${c.duration} seconds) →</a></li>`).join('')}</ol></section><section class="installation-library"><h2>${VIDEO_COPY.installation}</h2><p>${VIDEO_COPY.installIntro}</p><div class="clip-grid">${EN.media.clips.slice(0,3).map(c=>clip(c,'library-install')).join('')}</div></section><div class="next-step"><div><h2>${t('guides.checksTitle')}</h2><p>Carry the specifications that matter into your sourcing brief.</p></div>${action('guides',t('pages.guides'))}</div>`);
 
 const overview=()=>`<figure class="overview"><video controls playsinline preload="none" poster="${media('factory-fixture-poster.jpg')}" aria-label="${t('home.videoTitle')}" aria-describedby="factory-credit"><source src="/screen-protector-media/media/ddnz-factory-en-720p-v1.mp4" type="video/mp4">${t('media.unavailable')}</video><figcaption><strong>${t('home.videoLabel')}</strong><span id="factory-credit">${t('home.credit')}</span><p class="media-error" role="status"></p></figcaption></figure>`;
 const nav=`<div class="section-nav"><a href="#home" class="section-name">${t('pages.home')}</a><nav aria-label="${t('nav.section')}">${['home','products','guides','videos','calculator'].map(id=>`<a href="#${id}" data-nav="${id}" aria-label="${EN.pages[id]}"><span class="nav-label">${EN.pages[id]}</span><span class="nav-short" aria-hidden="true">${({home:"Overview",products:"Products",guides:"Guides",videos:"Videos",calculator:"Landed cost"})[id]}</span></a>`).join('')}</nav><span class="locale-label">EN</span></div>`;
@@ -78,49 +81,58 @@ function update(){
   all('[data-check]').forEach(i=>i.checked=state.requests.includes(i.dataset.check));
   all('[data-check-count]').forEach(el=>el.textContent=t('guides.selected',{count:state.requests.length}));
 }
-function addRow(product='001'){if(state.rows.length>=BASIS.maxRows)return;state.rows.push({product,model:'',qty:PRODUCTS[product].addQty});renderRows();update();go(ROUTES.calculator);requestAnimationFrame(()=>$('#sku-rows').lastElementChild.querySelector('[data-field="model"]').focus());}
+function addRow(product='001'){if(state.rows.length>=BASIS.maxRows)return;state.rows.push({product,model:'',qty:PRODUCTS[product].addQty});renderRows();update();report('select_configuration');go(ROUTES.calculator);requestAnimationFrame(()=>{if(!lifecycle.signal.aborted)$('#sku-rows').lastElementChild.querySelector('[data-field="model"]').focus();});}
 onRoot('click',e=>{
+  const summary=e.target.closest('summary');
+  if(summary&&!summary.parentElement.open&&!e.defaultPrevented&&e.button===0){
+    if(summary.closest('#product-cards'))report('compare_products');
+    else if(summary.closest('.factor-list'))report('read_guide');
+  }
   const add=e.target.closest('[data-product-add]');if(add)addRow(add.dataset.productAdd);
-  const remove=e.target.closest('[data-remove]');if(remove){const i=Number(remove.dataset.remove);state.rows.splice(i,1);renderRows();update();const next=all('[data-remove]')[Math.min(i,state.rows.length-1)];(next||$('#add-row')).focus();}
-  const chosen=e.target.closest('[data-route]');if(chosen){state.route=chosen.dataset.route;update();$(`[data-route="${state.route}"]`).focus();}
-  const example=e.target.closest('[data-preset]');if(example){state.rows=preset(Number(example.dataset.preset));renderRows();update();}
+  const remove=e.target.closest('[data-remove]');if(remove){const i=Number(remove.dataset.remove);state.rows.splice(i,1);renderRows();update();report('calculator_change');const next=all('[data-remove]')[Math.min(i,state.rows.length-1)];(next||$('#add-row')).focus();}
+  const chosen=e.target.closest('[data-route]');if(chosen){const changed=state.route!==chosen.dataset.route;state.route=chosen.dataset.route;update();if(changed)report('calculator_change');$(`[data-route="${state.route}"]`).focus();}
+  const example=e.target.closest('[data-preset]');if(example){state.rows=preset(Number(example.dataset.preset));renderRows();update();report('calculator_change');}
 });
-$('#sku-rows').addEventListener('input',e=>{const input=e.target;if(!input.dataset.field)return;const i=Number(input.closest('[data-row]').dataset.row);state.rows[i][input.dataset.field]=input.value;if(input.dataset.field==='product'){input.closest('[data-row]').querySelector('.row-summary').textContent=rowSummary(PRODUCTS[input.value]);input.closest('[data-row]').querySelector('[data-field="qty"]').min=PRODUCTS[input.value].minQty;}update();});
-$('#add-row').addEventListener('click',()=>addRow());
-for(const field of ['packing','charging']){$('#'+field).value=state[field];$('#'+field).addEventListener('change',e=>{state[field]=e.target.value;update();});}
-for(const [id,field] of [['sale-price','price'],['monthly','monthly'],['fee-rate','feeRate']]){$('#'+id).value=state[field];$('#'+id).addEventListener('input',e=>{state[field]=e.target.value;update();});}
-all('[data-check]').forEach(el=>el.addEventListener('change',()=>{state.requests=el.checked?[...new Set([...state.requests,el.dataset.check])]:state.requests.filter(x=>x!==el.dataset.check);update();}));
-$('#quote-entry').addEventListener('click',e=>{if(!result.valid){e.preventDefault();$('#input-errors').scrollIntoView({block:'center'});}});
-$('#copy-quote').addEventListener('click',async()=>{if(!result.valid)return;try{await navigator.clipboard.writeText(brief);$('#copy-status').textContent=t('quote.copied');}catch{$('#quote-text').focus();$('#quote-text').select();$('#copy-status').textContent=t('quote.fallback');}});
-$('#download-quote').addEventListener('click',()=>{if(!result.valid)return;const url=URL.createObjectURL(new Blob(['\ufeff'+brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='DDNZ-screen-protector-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);$('#copy-status').textContent=t('quote.downloaded');});
+on($('#sku-rows'),'input',e=>{const input=e.target;if(!input.dataset.field)return;const i=Number(input.closest('[data-row]').dataset.row);state.rows[i][input.dataset.field]=input.value;if(input.dataset.field==='product'){input.closest('[data-row]').querySelector('.row-summary').textContent=rowSummary(PRODUCTS[input.value]);input.closest('[data-row]').querySelector('[data-field="qty"]').min=PRODUCTS[input.value].minQty;}update();});
+// Commit-based analytics: typing still updates the calculator without sending each input.
+on($('#sku-rows'),'change',e=>{
+  if(e.target.dataset.field==='product')report('select_configuration');
+  else if(e.target.dataset.field==='model')report('model_change');
+  else if(e.target.dataset.field==='qty')report('calculator_change');
+});
+on($('#add-row'),'click',()=>addRow());
+for(const field of ['packing','charging']){$('#'+field).value=state[field];on($('#'+field),'change',e=>{state[field]=e.target.value;update();report('calculator_change');});}
+for(const [id,field] of [['sale-price','price'],['monthly','monthly'],['fee-rate','feeRate']]){$('#'+id).value=state[field];on($('#'+id),'input',e=>{state[field]=e.target.value;update();});on($('#'+id),'change',()=>report('calculator_change'));}
+all('[data-check]').forEach(el=>on(el,'change',()=>{state.requests=el.checked?[...new Set([...state.requests,el.dataset.check])]:state.requests.filter(x=>x!==el.dataset.check);update();report('specification_change');}));
+on($('#quote-entry'),'click',e=>{if(isPlainAnchorClick(e,e.currentTarget)&&!result.valid){e.preventDefault();$('#input-errors').scrollIntoView({block:'center'});}});
+on($('#copy-quote'),'click',async()=>{if(!result.valid)return;try{await navigator.clipboard.writeText(brief);if(lifecycle.signal.aborted)return;$('#copy-status').textContent=t('quote.copied');report('copy_brief');}catch{if(lifecycle.signal.aborted)return;$('#quote-text').focus();$('#quote-text').select();$('#copy-status').textContent=t('quote.fallback');}});
+on($('#download-quote'),'click',()=>{if(!result.valid)return;const url=URL.createObjectURL(new Blob(['\ufeff'+brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='DDNZ-screen-protector-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),10000);$('#copy-status').textContent=t('quote.downloaded');report('download_brief');});
 function bindVideos(scope=root) {
   scope.querySelectorAll('video').forEach(video=>{
     if(video.dataset.bound)return;
     video.dataset.bound='true';
     const button=video.parentElement.querySelector('.play-clip');
     const error=video.closest('figure').querySelector('.media-error');
-    video.addEventListener('play',()=>{all('video').forEach(other=>{if(other!==video)other.pause();});if(button)button.hidden=true;error.textContent='';});
-    video.addEventListener('pause',()=>{if(button){button.hidden=false;button.innerHTML='<span aria-hidden="true">▶</span> '+VIDEO_COPY.play;}});
-    video.addEventListener('error',()=>{error.textContent=t('media.unavailable');if(button){button.hidden=false;button.textContent=VIDEO_COPY.retry;}});
+    on(video,'play',()=>{all('video').forEach(other=>{if(other!==video)other.pause();});if(button)button.hidden=true;error.textContent='';if(!playedVideos.has(video)){playedVideos.add(video);report('play_video');}});
+    on(video,'pause',()=>{if(button){button.hidden=false;button.innerHTML='<span aria-hidden="true">▶</span> '+VIDEO_COPY.play;}});
+    on(video,'error',()=>{error.textContent=t('media.unavailable');if(button){button.hidden=false;button.textContent=VIDEO_COPY.retry;}});
   });
 }
 function selectProcess(index,scroll=false) {
   const c=FACTORY_CLIPS[index];if(!c)return;
   $('#process-stage').querySelectorAll('video').forEach(v=>v.pause());
   $('#process-stage').innerHTML=stage(c);
-  all('[data-process-index]').forEach(b=>b.setAttribute('aria-pressed',String(Number(b.dataset.processIndex)===index)));
+  all('[data-process-index]').forEach(a=>{if(Number(a.dataset.processIndex)===index)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');});
   bindVideos($('#process-stage'));
   if(scroll&&window.innerWidth<900)$('#process-stage').scrollIntoView({block:'start',behavior:'instant'});
 }
 bindVideos();
 onRoot('click',async event=>{
-  const step=event.target.closest('[data-process-index]');
-  if(step){selectProcess(Number(step.dataset.processIndex),true);return;}
   const button=event.target.closest('.play-clip');if(!button)return;
   const video=button.closest('.clip-player').querySelector('video');
   button.disabled=true;button.setAttribute('aria-busy','true');button.textContent=VIDEO_COPY.loading;
   try { if(video.error)video.load(); await video.play(); }
-  catch { const error=video.closest('figure').querySelector('.media-error');error.textContent=t('media.unavailable');button.hidden=false;button.textContent=VIDEO_COPY.retry; }
+  catch { if(lifecycle.signal.aborted)return;const error=video.closest('figure').querySelector('.media-error');error.textContent=t('media.unavailable');button.hidden=false;button.textContent=VIDEO_COPY.retry; }
   finally {button.disabled=false;button.removeAttribute('aria-busy');}
 });
 let currentPage='';
@@ -128,9 +140,10 @@ function activate(pathname, hash='') {
   const page=pageForPath(pathname)||'home';
   all('.view').forEach(v=>v.hidden=v.id!=='view-'+page);
   all('[data-nav]').forEach(a=>{if(a.dataset.nav===(['prices','curves'].includes(page)?'guides':page))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
-  document.title=EN.pages[page]+' | DDNZ Global';
   all('video').forEach(v=>{if(v.closest('.view').hidden)v.pause();});
-  if(hash==='#factory-scenes')$('#factory-scenes').scrollIntoView({block:'start'});
+  const processIndex=page==='videos'?FACTORY_CLIPS.findIndex(c=>'#'+c.id===hash):-1;
+  if(processIndex>=0){selectProcess(processIndex);$('#process-stage').scrollIntoView({block:'start'});}
+  else if(page==='curves'&&hash==='#factory-scenes')$('#factory-scenes').scrollIntoView({block:'start'});
   else { window.scrollTo({top:0,behavior:'instant'}); if(currentPage&&page!==currentPage)$('#view-'+page+' h1').focus({preventScroll:true}); }
   currentPage=page;
 }
@@ -148,7 +161,7 @@ all('a[href]').forEach(a=>{
 });
 onRoot('click',e=>{
   const a=e.target.closest('a[href]');
-  if(!a||e.defaultPrevented||e.button!==0||e.metaKey||e.ctrlKey||e.shiftKey||e.altKey||a.target==='_blank'||a.hasAttribute('download'))return;
+  if(!isPlainAnchorClick(e,a))return;
   const url=new URL(a.href,location.href);
   if(url.origin!==location.origin)return;
   e.preventDefault();
@@ -156,8 +169,21 @@ onRoot('click',e=>{
     let saved;
     try{saved=saveHandoff(sessionStorage,state);}catch{saved={ok:false,reason:'storage'};}
     if(!saved.ok){$('#handoff-status').textContent=saved.reason==='invalid'?'Please correct the quantities before continuing.':'Your browser cannot save the plan. Copy or download the brief, then paste it into the enquiry form.';return;}
+    report('continue_inquiry');
+  }else{
+    const targetPage=pageForPath(url.pathname);
+    if(targetPage==='videos'&&FACTORY_CLIPS.some(c=>'#'+c.id===url.hash))report('select_video_stage');
+    else if(targetPage!==currentPage){
+      if(targetPage==='products')report('compare_products');
+      else if(['guides','prices','curves'].includes(targetPage))report('read_guide');
+      else if(targetPage==='videos')report('open_videos');
+      else if(targetPage==='calculator')report('open_calculator');
+      else if(targetPage==='quote'&&result.valid)report('create_brief');
+    }
   }
   go(url.pathname+url.search+url.hash);
 });
-return {activate, destroy(){lifecycle.abort();all('video').forEach(video=>video.pause());root.replaceChildren();}};
+// Mount with the requested view already visible, including direct deep links.
+activate(location.pathname,location.hash);
+return {activate, setBreadcrumbs(options){all('.view').forEach(view=>{view.querySelector('.breadcrumbs').outerHTML=renderScreenProtectorBreadcrumbs(view.id.slice(5),options);});}, destroy(){lifecycle.abort();all('video').forEach(video=>video.pause());root.replaceChildren();}};
 }

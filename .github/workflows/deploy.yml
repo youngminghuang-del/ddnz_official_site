@@ -97,7 +97,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 24
+      - name: Record paused Baidu submission
+        if: vars.BAIDU_HTTP_PUSH_APPROVED != 'true'
+        run: echo "Baidu submission paused pending approval for its HTTP token endpoint." >> "$GITHUB_STEP_SUMMARY"
       - name: Submit deployed sitemap URLs to Baidu
+        if: vars.BAIDU_HTTP_PUSH_APPROVED == 'true'
         continue-on-error: true
         env:
           BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}

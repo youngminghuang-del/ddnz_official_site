@@ -1,3 +1,4 @@
+import ProductDiscoveryLinks from './ProductDiscoveryLinks';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
@@ -106,17 +107,17 @@ const CATEGORY_TAGLINES: Record<Language, [string, string, string, string]> = {
 const PREFIX: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 
 const intentIcons: Record<Intent, LucideIcon> = { sourcing: Search, existing: ClipboardCheck, freight: Ship };
-const destinations = ['Saudi Arabia', 'United Arab Emirates', 'Qatar', 'Nigeria', 'Ghana', 'Kenya', 'Mexico', 'Brazil', 'Chile', 'Peru'];
+const destinations = ['Saudi Arabia', 'United Arab Emirates', 'Singapore', 'Qatar', 'Nigeria', 'Ghana', 'Kenya', 'Mexico', 'Brazil', 'Chile', 'Peru'];
 
 const destinationLabels: Record<Language, Record<string, string>> = {
-  en: { 'Saudi Arabia': 'Saudi Arabia', 'United Arab Emirates': 'United Arab Emirates', Qatar: 'Qatar', Nigeria: 'Nigeria', Ghana: 'Ghana', Kenya: 'Kenya', Mexico: 'Mexico', Brazil: 'Brazil', Chile: 'Chile', Peru: 'Peru' },
-  zh: { 'Saudi Arabia': '沙特阿拉伯', 'United Arab Emirates': '阿联酋', Qatar: '卡塔尔', Nigeria: '尼日利亚', Ghana: '加纳', Kenya: '肯尼亚', Mexico: '墨西哥', Brazil: '巴西', Chile: '智利', Peru: '秘鲁' },
-  ru: { 'Saudi Arabia': 'Саудовская Аравия', 'United Arab Emirates': 'ОАЭ', Qatar: 'Катар', Nigeria: 'Нигерия', Ghana: 'Гана', Kenya: 'Кения', Mexico: 'Мексика', Brazil: 'Бразилия', Chile: 'Чили', Peru: 'Перу' },
-  fr: { 'Saudi Arabia': 'Arabie saoudite', 'United Arab Emirates': 'Émirats arabes unis', Qatar: 'Qatar', Nigeria: 'Nigéria', Ghana: 'Ghana', Kenya: 'Kenya', Mexico: 'Mexique', Brazil: 'Brésil', Chile: 'Chili', Peru: 'Pérou' },
-  es: { 'Saudi Arabia': 'Arabia Saudí', 'United Arab Emirates': 'Emiratos Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigeria', Ghana: 'Ghana', Kenya: 'Kenia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Perú' },
-  ar: { 'Saudi Arabia': 'المملكة العربية السعودية', 'United Arab Emirates': 'الإمارات العربية المتحدة', Qatar: 'قطر', Nigeria: 'نيجيريا', Ghana: 'غانا', Kenya: 'كينيا', Mexico: 'المكسيك', Brazil: 'البرازيل', Chile: 'تشيلي', Peru: 'بيرو' },
-  pt: { 'Saudi Arabia': 'Arábia Saudita', 'United Arab Emirates': 'Emirados Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigéria', Ghana: 'Gana', Kenya: 'Quênia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Peru' },
-  tr: { 'Saudi Arabia': 'Suudi Arabistan', 'United Arab Emirates': 'Birleşik Arap Emirlikleri', Qatar: 'Katar', Nigeria: 'Nijerya', Ghana: 'Gana', Kenya: 'Kenya', Mexico: 'Meksika', Brazil: 'Brezilya', Chile: 'Şili', Peru: 'Peru' },
+  en: { Singapore: 'Singapore', 'Saudi Arabia': 'Saudi Arabia', 'United Arab Emirates': 'United Arab Emirates', Qatar: 'Qatar', Nigeria: 'Nigeria', Ghana: 'Ghana', Kenya: 'Kenya', Mexico: 'Mexico', Brazil: 'Brazil', Chile: 'Chile', Peru: 'Peru' },
+  zh: { Singapore: '新加坡', 'Saudi Arabia': '沙特阿拉伯', 'United Arab Emirates': '阿联酋', Qatar: '卡塔尔', Nigeria: '尼日利亚', Ghana: '加纳', Kenya: '肯尼亚', Mexico: '墨西哥', Brazil: '巴西', Chile: '智利', Peru: '秘鲁' },
+  ru: { Singapore: 'Сингапур', 'Saudi Arabia': 'Саудовская Аравия', 'United Arab Emirates': 'ОАЭ', Qatar: 'Катар', Nigeria: 'Нигерия', Ghana: 'Гана', Kenya: 'Кения', Mexico: 'Мексика', Brazil: 'Бразилия', Chile: 'Чили', Peru: 'Перу' },
+  fr: { Singapore: 'Singapour', 'Saudi Arabia': 'Arabie saoudite', 'United Arab Emirates': 'Émirats arabes unis', Qatar: 'Qatar', Nigeria: 'Nigéria', Ghana: 'Ghana', Kenya: 'Kenya', Mexico: 'Mexique', Brazil: 'Brésil', Chile: 'Chili', Peru: 'Pérou' },
+  es: { Singapore: 'Singapur', 'Saudi Arabia': 'Arabia Saudí', 'United Arab Emirates': 'Emiratos Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigeria', Ghana: 'Ghana', Kenya: 'Kenia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Perú' },
+  ar: { Singapore: 'سنغافورة', 'Saudi Arabia': 'المملكة العربية السعودية', 'United Arab Emirates': 'الإمارات العربية المتحدة', Qatar: 'قطر', Nigeria: 'نيجيريا', Ghana: 'غانا', Kenya: 'كينيا', Mexico: 'المكسيك', Brazil: 'البرازيل', Chile: 'تشيلي', Peru: 'بيرو' },
+  pt: { Singapore: 'Singapura', 'Saudi Arabia': 'Arábia Saudita', 'United Arab Emirates': 'Emirados Árabes Unidos', Qatar: 'Catar', Nigeria: 'Nigéria', Ghana: 'Gana', Kenya: 'Quênia', Mexico: 'México', Brazil: 'Brasil', Chile: 'Chile', Peru: 'Peru' },
+  tr: { Singapore: 'Singapur', 'Saudi Arabia': 'Suudi Arabistan', 'United Arab Emirates': 'Birleşik Arap Emirlikleri', Qatar: 'Katar', Nigeria: 'Nijerya', Ghana: 'Gana', Kenya: 'Kenya', Mexico: 'Meksika', Brazil: 'Brezilya', Chile: 'Şili', Peru: 'Peru' },
 };
 
 const HERO_INTRO: Record<Language, { headline: string; body: string; caption: string; imageAlt: string }> = {
@@ -280,6 +281,7 @@ export default function SourcingHomepageHero() {
         </div>
       </section>
 
+      <ProductDiscoveryLinks source="home" />
       <section className="home-brief-section" aria-labelledby="sourcing-brief-title">
         <div className="home-brief-layout">
           <div className="home-brief-intro">

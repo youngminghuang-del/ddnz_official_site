@@ -91,8 +91,8 @@ export default {
     }
   ],
   "meta": {
-    "title": "Commercial Kitchen Equipment for Importers | DDNZ Global",
-    "description": "Compare eight commercial kitchen equipment models for importers and distributors sourcing for the UAE, Singapore and Mexico. Build a quote-ready list."
+    "title": "Commercial Kitchen Equipment from China | DDNZ Global",
+    "description": "Compare 26 commercial kitchen models, reference supply prices and local retail prices. Plan a wholesale order for the UAE, Singapore or Mexico."
   },
   "faq": [
     {

@@ -1,3 +1,4 @@
+import ProductDiscoveryLinks from '../../components/ProductDiscoveryLinks';
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -34,7 +35,7 @@ const PRODUCT_CATEGORIES = [
     eyebrow: "Foodservice equipment & cold-side projects",
     href: "/sourcing/commercial-kitchen-equipment-from-china/",
     links: [
-      { label: "Kitchen equipment", href: "/sourcing/commercial-kitchen-equipment-from-china/" },
+      { label: "Compare kitchen equipment & prices", href: "/sourcing/commercial-kitchen-equipment-from-china/" },
       { label: "Refrigeration equipment", href: "/refrigeration-equipment/" },
     ],
     icon: Factory,
@@ -96,6 +97,7 @@ const PRODUCT_CATEGORIES = [
     shortTitle: "Mobile Accessories",
     eyebrow: "Fast-moving assortment sourcing",
     href: "/sourcing/mobile-accessories-from-china/",
+    links: [{ label: "Mobile accessories", href: "/sourcing/mobile-accessories-from-china/" }, { label: "Compare screen protectors & packaging", href: "/screen-protectors/compare/" }],
     icon: Smartphone,
     images: [
       {
@@ -127,7 +129,7 @@ const PRODUCT_CATEGORIES = [
     number: "04",
     title: "Outdoor Products",
     shortTitle: "Outdoor Products",
-    eyebrow: "Coolers, portable cold & emergency power",
+    eyebrow: "Power, solar & portable cold",
     href: "/sourcing/outdoor-products-from-china/",
     icon: TentTree,
     images: [
@@ -154,8 +156,8 @@ const PRODUCT_CATEGORIES = [
       },
     ],
     imageLabel: "Coolers, portable cold & power",
-    summary: "Build outdoor assortments across insulated coolers, portable refrigeration and emergency power while keeping runtime, climate and transport requirements explicit.",
-    families: ["Insulated coolers", "Portable refrigeration", "Portable power & solar", "Outdoor cooking & camp systems"],
+    summary: "Compare portable power stations, folding solar panels and vehicle refrigerators with CNY supply references, runtime estimates and trial-order costs.",
+    families: ["Portable power stations", "Folding solar panels", "Vehicle refrigerators", "Supplier & shipment checks"],
     quoteVariables: ["Climate & runtime", "Power chain", "Battery / refrigerant files", "Packed cube"],
     brief: ["Destination climate and use case", "Temperature, runtime or output claim", "Vehicle power, battery and accessory set"],
     normalizes: ["Capacity and tested claim method", "Compressor, cell and component set", "Included accessories, carton and MOQ"],
@@ -431,6 +433,8 @@ export function ProductsIndex() {
           </div>
           <HeroCategoryMap />
         </section>
+
+        <ProductDiscoveryLinks source="products" />
 
         <section className="px-workflow-strip" aria-label="Products index workflow">
           {WORKFLOW_STEPS.map(({ number, title, copy, icon: Icon }) => (

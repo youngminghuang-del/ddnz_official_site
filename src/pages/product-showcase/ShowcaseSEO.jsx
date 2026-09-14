@@ -60,6 +60,8 @@ export default function ShowcaseSEO({ page }) {
       description={config.description}
       keywords={config.keywords}
       canonicalPath={config.path}
+      contentLanguage="en"
+      alternateUrls={[{ hrefLang: 'en', href: `https://www.ddnzglobal.com${config.path}/` }]}
       image={config.image}
     />
   );
