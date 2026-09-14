@@ -8,7 +8,7 @@ test('homepage reads introduction, field photo, products, then brief in DOM orde
   const order = ['className="home-intro-copy"', 'className="home-intro-photo"', 'id="product-categories"', 'id="sourcing-brief"'];
   for (let i=1; i<order.length; i++) assert.ok(hero.indexOf(order[i-1]) < hero.indexOf(order[i]));
   assert.doesNotMatch(hero, /pexels-|lg:whitespace-nowrap/);
-  assert.match(hero, /supplier-visit-speaker-redacted-v2\.webp/);
+  assert.match(hero, /ddnz-team-cutout-20260914\.webp/);
   assert.match(hero, /fetchPriority="high"/);
   assert.equal((hero.match(/id="sourcing-brief-title"/g)||[]).length, 1);
 });
