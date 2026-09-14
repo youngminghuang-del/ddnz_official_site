@@ -1,3 +1,5 @@
+import { renderImpact001 } from './impact001.mjs';
+import { renderPrivacy001 } from './privacy001.mjs';
 import { ROUTES, pageForPath } from './routes.mjs';
 import { EN, t } from './locales/en.mjs';
 import { PRODUCTS, cartonFacts, money, number, referenceDate } from './model.mjs';
@@ -172,7 +174,7 @@ export function renderScreenProtectorBody(page) {
     + guideLinks() + section(EN.home.offersTitle, productSummary())
     + section(EN.home.planTitle, paragraph(EN.home.planBody) + link('calculator'));
   if (page === 'products') body = heading(EN.product.title, EN.product.intro) + paragraph(EN.home.offersBody)
-    + productSummary() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
+    + productSummary() + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
   if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)
     + section(EN.guides.factorsTitle, pairs(EN.guides.factors))
@@ -186,7 +188,7 @@ export function renderScreenProtectorBody(page) {
     + section(EN.guides.processTitle, pairs(EN.guides.processes))
     + `<section id="factory-scenes"><h2>${escapeHtml(EN.guides.factoryTitle)}</h2>${paragraph(EN.factoryCredit)}${paragraph(EN.guides.factoryIntro)}${link('videos', VIDEO_COPY.watch)}${EN.media.clips.slice(3).map(clip).join('')}</section>`
     + section(EN.guides.fitTitle, paragraph(EN.guides.fitBody)) + checks(['phone', 'case', 'touch', 'forming', 'sample']) + link('products');
-  if (page === 'videos') body = heading(VIDEO_COPY.title, VIDEO_COPY.intro) + paragraph(VIDEO_COPY.scope)
+  if (page === 'videos') body = renderImpact001() + heading(VIDEO_COPY.title, VIDEO_COPY.intro) + paragraph(VIDEO_COPY.scope)
     + section(VIDEO_COPY.nav, FACTORY_CLIPS.map(clip).join(''))
     + section(VIDEO_COPY.installation, paragraph(VIDEO_COPY.installIntro) + EN.media.clips.slice(0, 3).map(clip).join('')) + link('guides');
   if (page === 'calculator') body = heading(EN.calc.title, EN.calc.intro) + paragraph(t('calc.basis', { date: referenceDate }))

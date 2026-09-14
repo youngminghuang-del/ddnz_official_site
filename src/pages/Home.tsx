@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffefb] font-sans text-slate-900">
-      <SEO title={metadata.title} description={metadata.description} keywords={metadata.keywords} image="/images/operations/supplier-visit-speaker-redacted-v2.webp" />
+      <SEO title={metadata.title} description={metadata.description} keywords={metadata.keywords} image="/images/operations/ddnz-team-20260914.webp" />
       <SchemaMarkup type="Organization" data={{}} />
       <SchemaMarkup type="LocalBusiness" data={{}} />
       <SchemaMarkup
