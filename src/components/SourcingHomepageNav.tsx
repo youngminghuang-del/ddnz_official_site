@@ -357,6 +357,8 @@ export default function SourcingHomepageNav({
             className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors aria-[current=page]:bg-[var(--ddnz-purple-soft)] aria-[current=page]:text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
             {child.label}
           </Link>
+          {'children' in child && Array.isArray(child.children) && <ul className="ms-4 border-s border-slate-200 ps-2">{child.children.map(guide => <li key={guide.to}><Link onClick={onNavigate} to={localizedPath(guide.to)} aria-current={location.pathname.replace(/\/$/, '') === localizedPath(guide.to).replace(/\/$/, '') ? 'page' : undefined} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:text-purple-800 aria-[current=page]:bg-purple-50 aria-[current=page]:text-purple-800">{guide.label}</Link></li>)}</ul>}
+
         </li>)}</ul>}
       </li>)}</ul>
       <div className="mt-2 border-t border-slate-200 pt-2">

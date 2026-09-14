@@ -340,7 +340,7 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
 
         <section id="preview-evidence" className="border-b border-slate-200 bg-[#f4f6f8] py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <article className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white lg:grid-cols-[0.9fr_0.95fr_0.78fr]">
+            <article className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="p-6 sm:p-8 lg:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-coral-strong)]">{copy.evidence.scoreEyebrow}</p>
                 <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-[var(--ddnz-ink)]">{copy.evidence.scoreTitle}</h2>
@@ -350,16 +350,13 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
                 </ul>
                 <button type="button" onClick={openScorecard} className="mt-5 inline-flex min-h-11 items-center gap-2 text-sm font-black text-[var(--ddnz-purple-strong)] hover:text-[var(--ddnz-coral-strong)]">{copy.evidence.openScorecard} <ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" /></button>
               </div>
-              <figure className="min-h-[20rem] overflow-hidden border-y border-slate-200 lg:border-x lg:border-y-0">
-                <img src="/images/operations/supplier-visit-speaker-redacted-v2.webp" alt={copy.evidence.supplierImageAlt} width="1086" height="1448" loading="lazy" decoding="async" className="h-full w-full object-cover object-center" />
-              </figure>
               <button
                 type="button"
                 onClick={openScorecard}
                 className="group relative min-h-[20rem] overflow-hidden bg-[#fbfaf7] p-4 text-start focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[var(--ddnz-purple)] sm:p-5"
                 aria-label={copy.evidence.openScorecard}
               >
-                <img src={localizedScorecard.src} alt={copy.evidence.scorecardPreviewAlt} width={localizedScorecard.width} height={localizedScorecard.height} loading="lazy" decoding="async" className="h-full max-h-[27rem] w-full rounded-xl border border-slate-200 object-cover object-top transition-transform duration-300 group-hover:scale-[1.01]" />
+                <img src={localizedScorecard.src} alt={copy.evidence.scorecardPreviewAlt} width={localizedScorecard.width} height={localizedScorecard.height} loading="lazy" decoding="async" className="mx-auto block h-auto max-h-[38rem] w-full rounded-xl object-contain transition-transform duration-300 group-hover:scale-[1.01]" />
                 <span className="absolute bottom-7 end-7 grid h-11 w-11 place-items-center rounded-xl bg-white/95 text-[var(--ddnz-purple-strong)] shadow-lg backdrop-blur"><Maximize2 className="h-4 w-4" aria-hidden="true" /></span>
               </button>
             </article>

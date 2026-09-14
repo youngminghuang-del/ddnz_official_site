@@ -1,3 +1,4 @@
+import { renderPrivacy001 } from './privacy001.mjs';
 import React, { useEffect, useRef, useState } from 'react';
 import { BASIS, PRODUCTS } from './calculator.mjs';
 import { saveLocalizedHandoff } from './handoff.mjs';
@@ -118,6 +119,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
             </div>
           </article>;
         })}</div>
+        <div dangerouslySetInnerHTML={{__html:renderPrivacy001(locale)}} />
         <p className="phone-local-fit">{copy.fit}</p>
       </section>
       <section className="phone-local-inquiry" id="phone-inquiry" aria-labelledby="phone-inquiry-title">

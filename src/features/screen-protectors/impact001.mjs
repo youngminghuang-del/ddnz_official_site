@@ -1,0 +1,9 @@
+const copy = {
+ en: ['001 / IMPACT TEST', 'See the drop-ball test.', 'Watch the steel-ball setup, release and final sample inspection in one continuous recording.', '001 drop-ball impact test demonstration', '1 min 46 sec · Full recording', 'Confirm ball mass, drop height, sample support and acceptance criteria for your order. This recording does not establish a certified impact rating.'],
+ es: ['001 / PRUEBA DE IMPACTO', 'Observe la prueba de caída de bola.', 'Vea la preparación de la bola de acero, su liberación y la inspección final de la muestra en una grabación continua.', 'Demostración de impacto por caída de bola de 001', '1 min 46 s · Grabación completa', 'Confirme la masa de la bola, la altura, el soporte de la muestra y los criterios de aceptación. Esta grabación no acredita una clasificación de impacto certificada.'],
+ ar: ['001 / اختبار الصدمات', 'شاهد اختبار سقوط الكرة.', 'شاهد تجهيز الكرة الفولاذية وإطلاقها وفحص العينة النهائي في تسجيل متواصل.', 'عرض اختبار سقوط الكرة على 001', 'دقيقة و46 ثانية · التسجيل الكامل', 'تأكد من كتلة الكرة وارتفاع السقوط ودعم العينة ومعايير القبول لطلبك. هذا التسجيل لا يثبت تصنيف مقاومة صدمات معتمدًا.']
+};
+export function renderImpact001(locale = 'en') {
+ const [label,title,body,alt,duration,note]=copy[locale] || copy.en;
+ return `<section class="impact001"><div><p class="eyebrow">${label}</p><h2>${title}</h2><p>${body}</p><p class="small">${duration}</p><p class="small">${note}</p></div><figure><video controls playsinline preload="none" poster="/screen-protector-media/assets/001-impact-poster.webp" aria-label="${alt}" width="720" height="1280"><source src="/screen-protector-media/media/001-drop-ball-impact.mp4" type="video/mp4"><a href="/screen-protector-media/media/001-drop-ball-impact.mp4">${alt}</a></video></figure></section>`;
+}

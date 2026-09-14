@@ -121,14 +121,14 @@ const destinationLabels: Record<Language, Record<string, string>> = {
 };
 
 const HERO_INTRO: Record<Language, { headline: string; body: string; caption: string; imageAlt: string }> = {
-  en: { headline: 'Your China sourcing team.', body: 'Find suppliers, check products and coordinate export with one team on the ground.', caption: 'Supplier visit · Reviewing products together', imageAlt: 'Buyers reviewing audio products during a supplier showroom visit' },
-  zh: { headline: '在中国采购，让每一步有人负责。', body: '从寻找供应商、核对产品到集货出口，由中国团队衔接。', caption: '供应商走访 · 一起核对产品', imageAlt: '采购人员在供应商展厅现场讨论音响产品' },
-  ru: { headline: 'Ваша команда по закупкам в Китае.', body: 'Поиск поставщиков, проверка товаров и координация экспорта с одной командой на месте.', caption: 'Визит к поставщику · Совместный обзор продукции', imageAlt: 'Покупатели обсуждают аудиопродукцию в шоуруме поставщика' },
-  fr: { headline: 'Votre équipe sourcing en Chine.', body: 'Trouvez des fournisseurs, contrôlez les produits et coordonnez l’export avec une équipe sur place.', caption: 'Visite fournisseur · Examiner les produits ensemble', imageAlt: 'Des acheteurs examinent des produits audio dans le showroom d’un fournisseur' },
-  es: { headline: 'Su equipo de compras en China.', body: 'Encuentre proveedores, revise productos y coordine la exportación con un equipo en origen.', caption: 'Visita al proveedor · Revisamos los productos juntos', imageAlt: 'Compradores revisando productos de audio en la sala de exposición de un proveedor' },
-  ar: { headline: 'فريقك للتوريد من الصين.', body: 'اعثر على الموردين وافحص المنتجات ونسّق التصدير مع فريق واحد على أرض الواقع.', caption: 'زيارة المورد · مراجعة المنتجات معاً', imageAlt: 'مشترون يراجعون المنتجات الصوتية خلال زيارة معرض المورد' },
-  pt: { headline: 'Sua equipe de compras na China.', body: 'Encontre fornecedores, confira produtos e coordene a exportação com uma equipe no local.', caption: 'Visita ao fornecedor · Avaliando produtos juntos', imageAlt: 'Compradores avaliando produtos de áudio no showroom de um fornecedor' },
-  tr: { headline: 'Çin’deki tedarik ekibiniz.', body: 'Sahadaki tek bir ekiple tedarikçi bulun, ürünleri kontrol edin ve ihracatı koordine edin.', caption: 'Tedarikçi ziyareti · Ürünleri birlikte inceliyoruz', imageAlt: 'Alıcılar tedarikçi showroom ziyaretinde ses ürünlerini inceliyor' },
+  en: { headline: 'Your China sourcing team.', body: 'Find suppliers, check products and coordinate export with one team on the ground.', caption: 'DDNZ · Your China sourcing team', imageAlt: 'DDNZ · Your China sourcing team' },
+  zh: { headline: '在中国采购，让每一步有人负责。', body: '从寻找供应商、核对产品到集货出口，由中国团队衔接。', caption: 'DDNZ · 您的中国采购团队', imageAlt: 'DDNZ · 您的中国采购团队' },
+  ru: { headline: 'Ваша команда по закупкам в Китае.', body: 'Поиск поставщиков, проверка товаров и координация экспорта с одной командой на месте.', caption: 'DDNZ · Ваша команда в Китае', imageAlt: 'DDNZ · Ваша команда в Китае' },
+  fr: { headline: 'Votre équipe sourcing en Chine.', body: 'Trouvez des fournisseurs, contrôlez les produits et coordonnez l’export avec une équipe sur place.', caption: 'DDNZ · Votre équipe en Chine', imageAlt: 'DDNZ · Votre équipe en Chine' },
+  es: { headline: 'Su equipo de compras en China.', body: 'Encuentre proveedores, revise productos y coordine la exportación con un equipo en origen.', caption: 'DDNZ · Su equipo en China', imageAlt: 'DDNZ · Su equipo en China' },
+  ar: { headline: 'فريقك للتوريد من الصين.', body: 'اعثر على الموردين وافحص المنتجات ونسّق التصدير مع فريق واحد على أرض الواقع.', caption: 'DDNZ · فريقك في الصين', imageAlt: 'DDNZ · فريقك في الصين' },
+  pt: { headline: 'Sua equipe de compras na China.', body: 'Encontre fornecedores, confira produtos e coordene a exportação com uma equipe no local.', caption: 'DDNZ · Sua equipe na China', imageAlt: 'DDNZ · Sua equipe na China' },
+  tr: { headline: 'Çin’deki tedarik ekibiniz.', body: 'Sahadaki tek bir ekiple tedarikçi bulun, ürünleri kontrol edin ve ihracatı koordine edin.', caption: 'DDNZ · Çin’deki ekibiniz', imageAlt: 'DDNZ · Çin’deki ekibiniz' },
 };
 
 const categoryImageAlts: Record<Language, [string, string, string, string]> = {
@@ -249,8 +249,7 @@ export default function SourcingHomepageHero() {
             </a>
           </div>
           <figure className="home-intro-photo">
-            <img src="/images/operations/supplier-visit-speaker-redacted-v2.webp" alt={intro.imageAlt} width="1086" height="1448" fetchPriority="high" decoding="async" />
-            <figcaption>{intro.caption}</figcaption>
+            <img src="/images/operations/ddnz-team-cutout-20260914.webp" alt={intro.imageAlt} width="1254" height="1254" fetchPriority="high" decoding="async" />
           </figure>
         </div>
         <div className="home-intro-support">
