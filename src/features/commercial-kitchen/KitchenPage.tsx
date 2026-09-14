@@ -7,8 +7,12 @@ import SEO from '../../components/SEO';
 import { trackEvent } from '../../lib/analytics';
 import KitchenContent from './KitchenContent.jsx';
 import launch from './data/launch.mjs';
-import { kitchenInquiryAnalytics } from './site-analytics.mjs';
+import { kitchenInquiryAnalytics, kitchenExplorationAnalytics } from './site-analytics.mjs';
 import { canonicalKitchenHash } from './routes.mjs';
+import { kitchenStructuredData } from './data/discovery.mjs';
+import BuyerGuideLinks from '../buyer-guides/BuyerGuideLinks.jsx';
+import { productAlternates } from '../../lib/productLocalization.mjs';
+import { buyerJourneyAnalytics } from '../buyer-guides/data.mjs';
 
 const route = '/sourcing/commercial-kitchen-equipment-from-china/';
 const canonical = `https://www.ddnzglobal.com${route}`;
@@ -17,6 +21,15 @@ export default function KitchenPage() {
   const [legalType, setLegalType] = useState<LegalType>(null);
   const location = useLocation();
   const navigate = useNavigate();
+  useEffect(() => {
+    document.getElementById('schema-jsonld-static-page')?.remove();
+    const schema = document.createElement('script');
+    schema.id = 'schema-jsonld-kitchen';
+    schema.type = 'application/ld+json';
+    schema.textContent = JSON.stringify(kitchenStructuredData(launch));
+    document.head.appendChild(schema);
+    return () => schema.remove();
+  }, []);
   useEffect(() => {
     const hash = canonicalKitchenHash(location.hash);
     if (hash !== location.hash) navigate(`${location.pathname}${location.search}${hash}`, { replace: true });
@@ -35,11 +48,15 @@ export default function KitchenPage() {
     return () => window.removeEventListener('ddnz:inquiry', onInquiry);
   }, []);
   return <>
-    <SEO title={launch.meta.title} description={launch.meta.description}
-      canonicalPath={route} alternateUrls={[{ hrefLang: 'en', href: canonical }]}
+    <SEO title={launch.meta.title} description={launch.meta.description} contentLanguage="en"
+      canonicalPath={route} alternateUrls={productAlternates(route)}
       image="/commercial-kitchen-media/kitchen-hero.webp" />
-    <SourcingHomepageNav quotePath={`${route}#commercial-kitchen-list`} supportedLanguages={['en']} />
-    <KitchenContent onPrivacy={() => setLegalType('privacy')} />
+    <SourcingHomepageNav quotePath={`${route}#commercial-kitchen-list`} />
+    <KitchenContent onPrivacy={() => setLegalType('privacy')} onExplore={(action: string) => {
+      const payload = kitchenExplorationAnalytics(action);
+      if (payload) trackEvent(payload.event, payload.params);
+    }} />
+    <BuyerGuideLinks group="kitchen" locale="en" onAction={(id: string, action: string) => { const payload = buyerJourneyAnalytics(id, 'en', action); if (payload) trackEvent(payload.event, payload.params); }} />
     <Footer quotePath={`${route}#commercial-kitchen-list`} pageKey="commercial_kitchen"
       description="Commercial kitchen equipment sourcing for importers, wholesalers and distributors."
       pageLinks={[{ href: '#commercial-kitchen-equipment', label: 'Equipment' }, { href: '#commercial-kitchen-benchmarks', label: 'Price references' }, { href: '#commercial-kitchen-list', label: 'Your sourcing list' }]} />

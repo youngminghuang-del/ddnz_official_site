@@ -28,6 +28,7 @@ import { trackEvent } from '../lib/utils';
 import { DdnzEyebrow } from './DdnzUi';
 import InquiryPlanCard from '../features/screen-protectors/InquiryPlanCard';
 import { HANDOFF_KEY, readHandoff } from '../features/screen-protectors/handoff.mjs';
+import { currentHostname, isProductionHost } from '../features/commercial-kitchen/data/inquiry.mjs';
 import { localPreviewCopy } from '../local-preview/locales';
 
 declare const __LOCAL_CANDIDATE__: boolean;
@@ -299,7 +300,8 @@ export default function TradeSupportInquiry() {
   const location = useLocation();
   const [formState, formspreeSubmit] = useForm('mdabvqbd');
   const copy = { ...EN_COPY, ...LOCALIZED_COPY[language] };
-  const isLocalPreview = typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__;
+  const [isLocalPreview, setIsLocalPreview] = useState(typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__);
+  useEffect(() => { if (!isProductionHost(currentHostname())) setIsLocalPreview(true); }, []);
   const previewCopy = localPreviewCopy[language] || localPreviewCopy.en;
   const params = useMemo(() => new URLSearchParams(location.search), [location.search]);
   const leadGoal = params.get('leadGoal') || 'Product Sourcing';
@@ -335,11 +337,32 @@ export default function TradeSupportInquiry() {
   const lifecycleRef = useRef({ started: false, submitted: false, step: 1, mode });
   const successTrackedRef = useRef(false);
   const formErrorTrackedRef = useRef<unknown>(null);
+  const choiceLanguageRef = useRef(language);
+
+  useEffect(() => {
+    const previousLanguage = choiceLanguageRef.current;
+    choiceLanguageRef.current = language;
+    if (previousLanguage === language) return;
+    const previousServices = SERVICE_LABELS[previousLanguage][mode], nextServices = SERVICE_LABELS[language][mode];
+    setServices(current => current.map(value => {
+      const index = previousServices.findIndex(([label]) => label === value);
+      return index < 0 ? value : nextServices[index][0];
+    }));
+    setReadiness(current => {
+      const index = READINESS_LABELS[previousLanguage][mode].indexOf(current);
+      return index < 0 ? current : READINESS_LABELS[language][mode][index];
+    });
+    const previousCopy = { ...EN_COPY, ...LOCALIZED_COPY[previousLanguage] };
+    setTimeline(current => {
+      const key = (['timelineFast', 'timelineQuarter', 'timelinePlanning', 'timelineFlexible'] as const).find(item => previousCopy[item] === current);
+      return key ? copy[key] : current;
+    });
+  }, [language, mode]);
 
   useEffect(() => {
     let storedProductDetails = '';
     let incomingFilmPlan: ReturnType<typeof readHandoff> = null;
-    try { incomingFilmPlan = readHandoff(window.sessionStorage, location.search); } catch { /* Optional local storage. */ }
+    try { incomingFilmPlan = readHandoff(window.sessionStorage, location.search, Date.now(), language); } catch { /* Optional local storage. */ }
     setFilmPlan(incomingFilmPlan);
     setFilmAttachmentRemoved(false);
     setLocalPayload(null);
@@ -391,6 +414,16 @@ export default function TradeSupportInquiry() {
     lifecycleRef.current.mode = mode;
     lifecycleRef.current.step = 1;
   }, [location.search]);
+
+  useEffect(() => {
+    if (!filmPlan || !('locale' in filmPlan) || filmPlan.locale === language || !['es', 'ar'].includes(language)) return;
+    let translated: ReturnType<typeof readHandoff> = null;
+    try { translated = readHandoff(window.sessionStorage, location.search, Date.now(), language); } catch { /* Keep the existing attachment if storage is unavailable. */ }
+    if (!translated) return;
+    const previousBrief = filmPlan.brief, translatedBrief = translated.brief;
+    setFilmPlan(translated);
+    setProductDetails(current => current === previousBrief ? translatedBrief : current);
+  }, [language, filmPlan, location.search]);
 
   useEffect(() => {
     lifecycleRef.current.step = step;
@@ -535,7 +568,7 @@ export default function TradeSupportInquiry() {
     trackEvent('quote_form_submit_attempt', {
       form_location: 'trade_support_quote_page', intent: mode, lead_goal: leadGoal, product_category: category, service_count: services.length,
     });
-    if (isLocalPreview) {
+    if (isLocalPreview || !isProductionHost(currentHostname())) {
       event.preventDefault();
       setLocalPayload(Object.fromEntries(new FormData(event.currentTarget)));
       return;
@@ -568,7 +601,7 @@ export default function TradeSupportInquiry() {
           {!submitted ? (
             <form onSubmit={submitForm} onChange={() => { if (isLocalPreview) setLocalPayload(null); }} data-candidate-validated="true" noValidate>
               {isLocalPreview ? <p role="note" className="border-b border-slate-200 bg-slate-50 px-5 py-3 text-sm font-semibold leading-6 text-slate-700 sm:px-8">{previewCopy.notice}</p> : null}
-              <InquiryPlanCard plan={filmPlan} missing={leadSource === 'screen_protector_planner' && !filmPlan && !filmAttachmentRemoved} onRemove={() => {
+              <InquiryPlanCard plan={filmPlan} missing={['screen_protector_planner', 'screen_protector_localized'].includes(leadSource) && !filmPlan && !filmAttachmentRemoved} onRemove={() => {
                 try { window.sessionStorage.removeItem(HANDOFF_KEY); } catch { /* Storage may be restricted. */ }
                 if (productDetails === filmPlan?.brief) setProductDetails('');
                 setFilmPlan(null);

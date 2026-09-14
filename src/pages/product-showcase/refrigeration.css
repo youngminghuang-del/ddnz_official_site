@@ -186,6 +186,15 @@
 .refrigeration-evidence-stage { margin-top: 31px; display: grid; grid-template-columns: minmax(0,1.45fr) minmax(330px,.75fr); overflow: hidden; border: 1px solid var(--r-line); border-radius: 17px; background: white; box-shadow: 0 22px 55px rgba(16,35,63,.09); }
 .refrigeration-evidence-stage>figure { min-width: 0; min-height: 500px; margin: 0; position: relative; overflow: hidden; background: #132943; }
 .refrigeration-evidence-stage>figure img { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: contain; }
+.refrigeration-evidence-stage>figure video { width: 100%; height: 100%; position: absolute; inset: 0; display: block; object-fit: contain; }
+.refrigeration-evidence-stage>figure.has-video::after { display: none; }
+.refrigeration-evidence-stage>figure.has-video figcaption { top: 16px; bottom: auto; pointer-events: none; }
+.refrigeration-video-play { position: absolute; z-index: 3; top: 50%; left: 50%; transform: translate(-50%,-50%); display: flex; align-items: center; gap: 12px; min-height: 64px; padding: 12px 22px; border: 1px solid rgba(255,255,255,.75); border-radius: 999px; background: rgba(255,255,255,.96); color: #132943; cursor: pointer; box-shadow: 0 8px 28px rgba(0,0,0,.18); font: inherit; font-weight: 750; white-space: nowrap; }
+.refrigeration-video-play small { display: block; font-size: 11px; font-weight: 500; }
+.refrigeration-video-play:hover { background: #e2f5f6; }
+.refrigeration-video-play:focus-visible { outline: 3px solid #41c9d3; outline-offset: 5px; }
+.refrigeration-video-fallback { position: absolute; z-index: 3; inset-inline: 20px; bottom: 50px; margin: 0; padding: 12px; background: #132943; color: white; }
+.refrigeration-video-fallback a { text-decoration: underline; }
 .refrigeration-evidence-stage.is-gap>figure img { object-fit: cover; }
 .refrigeration-evidence-stage>figure::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(180deg,transparent 60%,rgba(8,20,34,.67)); }
 .refrigeration-evidence-stage figcaption { position: absolute; z-index: 2; left: 17px; bottom: 16px; padding: 8px 11px; border-radius: 6px; color: white; background: rgba(12,29,47,.86); font-size: 9px; font-weight: 730; }

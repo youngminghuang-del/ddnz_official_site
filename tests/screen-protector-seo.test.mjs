@@ -8,6 +8,7 @@ import { EN } from '../src/features/screen-protectors/locales/en.mjs';
 import { FACTORY_CLIPS } from '../src/features/screen-protectors/production.mjs';
 import { screenProtectorMetadata, SCREEN_PROTECTOR_SEO, SITE_ORIGIN, renderScreenProtectorBody, appendScreenProtectorSitemap, escapeHtml } from '../src/features/screen-protectors/seo.mjs';
 import { renderScreenProtectorHtml, prepareScreenProtectorSeo, parseArguments } from '../scripts/prepare-screen-protector-seo.mjs';
+import { screenProtectorBreadcrumbs, renderScreenProtectorBreadcrumbs, SCREEN_PROTECTOR_NEXT_STEPS } from '../src/features/screen-protectors/browsing.mjs';
 
 const shell = '<!doctype html><html lang="zh" dir="rtl"><head><meta charset="utf-8"><title>Old home</title><meta name="description" content="Old"><meta name="robots" content="index"><meta property="og:title" content="Old"><link rel="canonical" href="https://wrong.invalid/"><link rel="alternate" hreflang="zh" href="https://wrong.invalid/zh"><script type="application/ld+json">{"@type":"VideoObject"}</script><script type="module" src="/assets/main.js"></script><link rel="stylesheet" href="/assets/main.css"></head><body><div id="root"><div>Old homepage body</div></div></body></html>';
 const baseSitemap = '<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://www.ddnzglobal.com/old-page</loc><lastmod>2026-08-22</lastmod></url></urlset>';
@@ -35,6 +36,38 @@ test('all routes default to noindex, including trailing-slash routes', () => {
   }
 });
 
+test('static breadcrumbs match the only emitted schema, including nested guide hierarchy', () => {
+  for (const [page, route] of Object.entries(ROUTES)) {
+    const html = renderScreenProtectorHtml(shell, route, { preview: false });
+    assert.ok(html.includes(renderScreenProtectorBreadcrumbs(page)));
+    const schemas = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([^]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+    if (page === 'quote') { assert.equal(schemas.length, 0); continue; }
+    assert.equal(schemas.length, 1);
+    assert.equal(schemas[0]['@type'], 'BreadcrumbList');
+    const crumbs = screenProtectorBreadcrumbs(page);
+    assert.deepEqual(schemas[0].itemListElement.map(item => [item.name, item.item]), crumbs.map(item => [item.name, SITE_ORIGIN + item.href]));
+    assert.deepEqual(schemas[0].itemListElement.map(item => item.position), crumbs.map((_, index) => index + 1));
+    assert.equal(crumbs[0].href, '/');
+    assert.equal(crumbs[1].href, '/sourcing/mobile-accessories-from-china/');
+    assert.equal(crumbs.at(-1).href, route + '/');
+    if (['prices', 'curves'].includes(page)) assert.equal(crumbs.at(-2).href, ROUTES.guides + '/');
+  }
+});
+
+test('every static route names the product and exposes contextual sourcing next steps without JavaScript', () => {
+  for (const [page, route] of Object.entries(ROUTES)) {
+    const html = renderScreenProtectorHtml(shell, route);
+    const h1 = html.match(/<h1>([^]*?)<\/h1>/)[1].replace(/<br>/g, ' ');
+    assert.match(h1, /screen\s+protector/i);
+    assert.match(html, /class="phone-film" lang="en" dir="ltr"/);
+    for (const [target, label] of SCREEN_PROTECTOR_NEXT_STEPS[page]) {
+      assert.ok(html.includes(`href="${ROUTES[target]}/">${escapeHtml(label)}`), `${page} links to ${target}`);
+    }
+    assert.doesNotMatch(html, /href="#(?:home|products|guides|prices|curves|videos|calculator|quote)"|kitchen/);
+    assert.equal((html.match(/hreflang=/g) || []).length, ['home','products'].includes(page) ? 4 : 0);
+  }
+});
+
 test('static HTML replaces inherited homepage body and metadata without changing build assets', () => {
   for (const pathname of Object.values(ROUTES)) {
     const html = renderScreenProtectorHtml(shell, pathname, { preview: false });
@@ -44,7 +77,8 @@ test('static HTML replaces inherited homepage body and metadata without changing
     assert.equal((html.match(/name="robots"/g) || []).length, 1);
     assert.match(html, /src="\/assets\/main.js"/);
     assert.match(html, /href="\/assets\/main.css"/);
-    assert.doesNotMatch(html, /Old home|Old homepage body|wrong.invalid|hreflang|VideoObject|display:\s*none/);
+    assert.doesNotMatch(html, /Old home|Old homepage body|wrong.invalid|hreflang="fr"|VideoObject|display:\s*none/);
+    assert.equal((html.match(/hreflang=/g) || []).length, [ROUTES.home,ROUTES.products].includes(pathname) ? 4 : 0);
     assert.match(html, /data-static-fallback="screen-protectors"/);
   }
   assert.throws(() => renderScreenProtectorHtml('<html></html>', ROUTES.home), /complete head/);
@@ -77,7 +111,8 @@ test('sitemap merge is additive, idempotent and preserves every old entry verbat
   const merged = appendScreenProtectorSitemap(baseSitemap);
   assert.ok(merged.includes('<url><loc>https://www.ddnzglobal.com/old-page</loc><lastmod>2026-08-22</lastmod></url>'));
   assert.equal((merged.match(/<loc>/g) || []).length, 8);
-  assert.doesNotMatch(merged, /screen-protectors\/brief|hreflang/);
+  assert.doesNotMatch(merged, /screen-protectors\/brief|hreflang="fr"/);
+  assert.equal((merged.match(/hreflang=/g) || []).length, 8);
   assert.equal(appendScreenProtectorSitemap(merged), merged);
   assert.match(merged, /<loc>https:\/\/www.ddnzglobal.com\/screen-protectors\/videos\/<\/loc>/);
   const oneOldPhoneEntry = baseSitemap.replace('</urlset>', '<url><loc>https://www.ddnzglobal.com/screen-protectors/</loc><lastmod>2026-08-22</lastmod></url></urlset>');

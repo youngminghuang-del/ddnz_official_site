@@ -12,6 +12,8 @@ import {
   UserRoundCheck,
 } from 'lucide-react';
 import notionBlogPosts from '../data/notionBlogData.json';
+import { mobileArticleDiscovery } from '../data/mobileArticleDiscovery.mjs';
+import { kitchenArticleDiscovery } from '../data/kitchenArticleDiscovery.mjs';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -118,9 +120,14 @@ function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
   if (post.productSubcategory) params.set('subcategory', post.productSubcategory);
 
   if (post.primaryCTA === 'Commercial Kitchen Sourcing') {
+    const next = kitchenArticleDiscovery[post.slug || '']?.links[0];
+    if (next) {
+      const [pathname, hash] = next.href.split('#');
+      return { label: next.label, href: `${pathname}?${params.toString()}${hash ? `#${hash}` : ''}` };
+    }
     return {
       label: ui.commercialCta,
-      href: `${canonicalSitePath(`${prefix}/sourcing/commercial-kitchen-equipment-from-china`)}?${params.toString()}`,
+      href: `${canonicalSitePath(`${prefix}/sourcing/commercial-kitchen-equipment-from-china`)}?${params.toString()}#${post.slug?.includes("margin") ? "commercial-kitchen-benchmarks" : "commercial-kitchen-equipment"}`,
     };
   }
   if (post.primaryCTA === 'Outdoor Products Sourcing') {
@@ -223,19 +230,20 @@ export default function BlogDetail() {
   const completePrefix = prefixSpace > maxPrefix * 0.72
     ? prefixCandidate.slice(0, prefixSpace)
     : prefixCandidate;
-  const seoTitle = post.slug === 'cheap-speakers-china-african-trader-verification'
+  const articleDiscovery = kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''];
+  const seoTitle = articleDiscovery?.title || (post.slug === 'cheap-speakers-china-african-trader-verification'
     ? 'Cheap China Speakers: African Trader Verification | DDNZ Global'
     : rawTitle.length + suffix.length <= maxTitleLen
       ? `${rawTitle}${suffix}`
       : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
         ? `${titleLead}${suffix}`
-        : `${completePrefix.trim()}…${suffix}`;
+        : `${completePrefix.trim()}…${suffix}`);
   const rawDesc = post.summary || post.title;
   const descCandidate = rawDesc.slice(0, 154);
   const descSpace = descCandidate.lastIndexOf(' ');
-  const seoDesc = rawDesc.length > 155
+  const seoDesc = articleDiscovery?.description || (rawDesc.length > 155
     ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
-    : rawDesc;
+    : rawDesc);
   const postPath = articleRoutePath(post);
   const articleHreflang = getArticleHreflangSet(post, notionBlogPosts as BlogPost[]);
   const showToc = (post.wordCount || 0) > 1200 && Boolean(post.toc?.length);
@@ -351,6 +359,7 @@ export default function BlogDetail() {
               dangerouslySetInnerHTML={{ __html: normalizeNotionLinks(post.content) }}
             />
 
+            {articleDiscovery && <section lang="en" className="mt-10 border-t border-slate-200 pt-7" aria-label="Related buying guides"><h2 className="text-xl font-bold">{articleDiscovery.heading || 'Compare equipment for your next order'}</h2><div className="mt-3 flex flex-col items-start gap-2">{articleDiscovery.links.map(item => <Link key={item.href} to={item.href} onClick={() => trackEvent('article_equipment_click', { article_slug: post.slug, link_path: item.href })} className="inline-flex min-h-11 items-center font-semibold text-[#633185] underline underline-offset-4">{item.label} <span aria-hidden="true" className="ml-2">→</span></Link>)}</div></section>}
             <section id="article-primary-cta" className="mt-14 rounded-3xl bg-[#07182d] p-7 md:p-10 text-white overflow-hidden relative">
               <div className="absolute right-0 top-0 h-40 w-40 rounded-full bg-amber-500/20 blur-3xl" />
               <div className="relative">

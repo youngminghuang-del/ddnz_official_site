@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { localizableProductPaths, productContentLanguages, localizedProductPath, productAlternates } from '../src/lib/productLocalization.mjs';
 
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
@@ -16,10 +17,9 @@ const expectedShowcaseRedirects = new Map([
   ['mobile-accessories', '/sourcing/mobile-accessories-from-china/'],
   ['outdoor-products', '/sourcing/outdoor-products-from-china/'],
 ]);
-const requiredStaticH1Paths = new Set(['/fr/', '/ru/insights/']);
+const localizedProductRoutes = localizableProductPaths.flatMap(route => productContentLanguages.map(locale => localizedProductPath(route, locale)));
+const requiredStaticH1Paths = new Set(['/fr/', '/ru/insights/', ...localizedProductRoutes]);
 const englishOnlyScreenProtectorPaths = new Set([
-  '/screen-protectors/',
-  '/screen-protectors/compare/',
   '/screen-protectors/guides/',
   '/screen-protectors/guides/price-differences/',
   '/screen-protectors/guides/curved-glass/',
@@ -100,6 +100,16 @@ for (const absoluteUrl of urls) {
     .filter((alternate) => !isFinalIndexableUrl(alternate.href))
     .forEach((alternate) => failures.push(`${url.pathname}: hreflang ${alternate.language} is not a final trailing-slash URL`));
 
+  if (localizedProductRoutes.includes(url.pathname)) {
+    const expected = productAlternates(url.pathname);
+    if (alternates.length !== expected.length + 1) failures.push(`${url.pathname}: expected one en/es/ar cluster and x-default`);
+    for (const alternate of expected) {
+      if (!urls.includes(alternate.href)) failures.push(`${url.pathname}: translated alternate missing from sitemap: ${alternate.href}`);
+      if (!alternates.some(item => item.language === alternate.hrefLang && item.href === alternate.href)) failures.push(`${url.pathname}: missing or incorrect ${alternate.hrefLang} alternate`);
+    }
+    if (!alternates.some(item => item.language === 'x-default' && item.href === expected[0].href)) failures.push(`${url.pathname}: x-default must use matching English page`);
+  }
+
   if (requiredStaticH1Paths.has(url.pathname) || englishOnlyScreenProtectorPaths.has(url.pathname)) {
     const h1Count = (html.match(/<h1\b/gi) || []).length;
     if (h1Count !== 1) failures.push(`${url.pathname}: expected exactly 1 static H1, found ${h1Count}`);
@@ -157,9 +167,9 @@ for (const [sourcePath, targetPath] of expectedShowcaseRedirects) {
   const refresh = html.match(/<meta\s+http-equiv="refresh"\s+content="([^"]+)"/i)?.[1];
   if (canonical !== targetUrl) failures.push(`/${sourcePath}: redirect canonical is ${canonical || 'missing'}`);
   if (robots !== 'noindex,follow') failures.push(`/${sourcePath}: redirect robots is ${robots || 'missing'}`);
-  if (refresh !== `0;url=${targetUrl}`) failures.push(`/${sourcePath}: redirect refresh target is ${refresh || 'missing'}`);
-  if (!html.includes(`location.replace(${JSON.stringify(targetUrl)})`)) {
-    failures.push(`/${sourcePath}: JavaScript redirect target is missing`);
+  if (refresh !== `0;url=${targetPath}`) failures.push(`/${sourcePath}: redirect refresh target is ${refresh || 'missing'}`);
+  if (!html.includes(`location.replace(${JSON.stringify(targetPath)}+location.search+location.hash)`)) {
+    failures.push(`/${sourcePath}: same-origin JavaScript redirect must preserve query and fragment`);
   }
 }
 

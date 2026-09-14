@@ -1,3 +1,9 @@
+export const kitchenCategoryPaths = [
+  '/sourcing/commercial-ice-machines-from-china',
+  '/sourcing/commercial-electric-fryers-from-china',
+  '/sourcing/commercial-electric-griddles-from-china',
+];
+
 const aliases = {
   top: 'top', kitchen: 'top', equipment: 'equipment', range: 'equipment', products: 'equipment', families: 'equipment',
   assortments: 'assortments', benchmarks: 'benchmarks', 'trade-pricing': 'trade-pricing',

@@ -6,8 +6,11 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
 import { buildQuoteHref } from '../lib/quoteLinks';
 import { canonicalSitePath } from '../lib/notionArticleRouting';
+import { navigationPath } from '../lib/productLanguageRouting';
 import { PUBLIC_SOCIAL_CHANNELS, SOCIAL_CHANNELS } from '../config/socialChannels';
 import ContactQrCodes from './contact-qr/ContactQrCodes';
+import { mobileCategoryNavigation } from '../config/mobileCategoryNavigation';
+import { outdoorCategoryNavigation, outdoorOverviewNavigation } from '../config/outdoorCategoryNavigation';
 import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
 import { COMPANY, companyName } from '../config/companyIdentity';
 import { siteFooterCopy } from './site-footer/locales';
@@ -15,22 +18,22 @@ import './site-footer/site-footer.css';
 
 type FooterProps = { quotePath?: string; footerId?: string; pageKey?: string; description?: string; tagline?: string; pageLinks?: {href: string; label: string}[]; note?: string };
 const socialIcons = { linkedin: Linkedin, facebook: Share2, instagram: Instagram, tiktok: Music2, whatsapp: MessageCircle };
-const localePrefix = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 
 export default function Footer({ quotePath, footerId, pageKey = 'site', description, tagline, pageLinks = [], note }: FooterProps = {}) {
   const [legalType, setLegalType] = useState<LegalType>(null);
   const { t, language } = useLanguage();
   const copy = siteFooterCopy[language];
   const id = useId();
-  const prefix = localePrefix[language];
-  const localizedPath = (path: string) => canonicalSitePath(prefix + path);
-  const quoteHref = quotePath ? canonicalSitePath(quotePath) : buildQuoteHref({ intent: 'Product Sourcing', language, source: 'footer_primary' });
+  const localizedPath = (path: string) => navigationPath(path, language);
+  const quoteHref = quotePath ? localizedPath(quotePath) : buildQuoteHref({ intent: 'Product Sourcing', language, source: 'footer_primary' });
   const handleContactClick = (method: string) => trackEvent(method + '_click', { cta_location: 'footer', showcase_page: pageKey });
   const productLinks = [
     { label: copy.kitchen, to: localizedPath('/sourcing/commercial-kitchen-equipment-from-china') },
     { label: copy.audio, to: localizedPath('/sourcing/audio-speakers-from-china') },
     { label: copy.mobile, to: localizedPath('/sourcing/mobile-accessories-from-china') },
+    ...mobileCategoryNavigation(language).slice(0,2).map(item => ({...item,to:localizedPath(item.to)})),
     screenProtectorNavigation(language),
+    ...[outdoorOverviewNavigation(language), outdoorCategoryNavigation(language)[3]].map(item => ({ ...item, to: localizedPath(item.to) })),
   ];
   const marketLinks = [
     { label: copy.middleEast, to: localizedPath('/shipping-from-china-to-middle-east') },
@@ -39,7 +42,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
   ];
   const contextualLinks = language === 'en' ? pageLinks.filter(link => link.href !== '/screen-protectors') : [];
   return (
-    <footer id={footerId} className="showcase-contact-footer ddnz-footer" dir={language === 'ar' ? 'rtl' : 'ltr'} data-site-footer="unified">
+    <footer lang={language === 'zh' ? 'zh-CN' : language} id={footerId} className="showcase-contact-footer ddnz-footer" dir={language === 'ar' ? 'rtl' : 'ltr'} data-site-footer="unified">
       <div className="ddnz-footer__inner">
         <div className="ddnz-footer__top">
           <section className="ddnz-footer__brand">

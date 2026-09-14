@@ -19,6 +19,12 @@ async function fixture() {
   await fs.writeFile(path.join(project, 'package.json'), '{"type":"module"}');
   for (const name of ['finalize-screen-protector-pages.mjs', 'prepare-screen-protector-seo.mjs']) await fs.copyFile(path.join(root, 'scripts', name), path.join(project, 'scripts', name));
   await fs.cp(path.join(root, 'src/features/screen-protectors'), path.join(project, 'src/features/screen-protectors'), { recursive: true });
+  await fs.mkdir(path.join(project, 'src/features/buyer-guides/locales'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/features/buyer-guides/locales/en.json'), path.join(project, 'src/features/buyer-guides/locales/en.json'));
+  await fs.mkdir(path.join(project, 'src/lib'), { recursive: true });
+  await fs.mkdir(path.join(project, 'src/features/mobile-sourcing'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/features/mobile-sourcing/routes.mjs'), path.join(project, 'src/features/mobile-sourcing/routes.mjs'));
+  await fs.copyFile(path.join(root, 'src/lib/productLocalization.mjs'), path.join(project, 'src/lib/productLocalization.mjs'));
   await fs.writeFile(path.join(project, 'dist/index.html'), shell);
   await fs.writeFile(path.join(project, 'dist/sitemap.xml'), sitemap);
   await fs.writeFile(path.join(project, 'public/sitemap.xml'), sitemap);
@@ -28,10 +34,12 @@ async function fixture() {
 function run(project, cwd = project) {
   return spawnSync(process.execPath, [path.join(project, 'scripts/finalize-screen-protector-pages.mjs')], { cwd, encoding: 'utf8', timeout: 10000 });
 }
-test('ordinary npm build keeps its original pipeline and inserts the phone finalizer before SEO audit', async () => {
+test('ordinary npm build preserves its pipeline and finishes with SEO and deployment inventory checks', async () => {
   const pkg = JSON.parse(await fs.readFile(path.join(root, 'package.json'), 'utf8'));
-  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/audit-seo-output.mjs'];
+  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/audit-seo-output.mjs', 'node scripts/audit-deployment-files.mjs'];
   assert.deepEqual(pkg.scripts.build.split(' && '), expected);
+  assert.doesNotMatch(pkg.scripts['build:preview'], /fetch-notion|npm run deploy|deploy-pages|git push|push-indexnow|push-baidu/);
+  assert.ok(pkg.scripts['build:preview'].endsWith('node scripts/audit-deployment-files.mjs && node scripts/stage-local-preview.mjs'));
   assert.equal(pkg.scripts['build:screen-protectors'], 'node scripts/finalize-screen-protector-pages.mjs');
   const source = await fs.readFile(path.join(root, 'scripts/finalize-screen-protector-pages.mjs'), 'utf8');
   assert.doesNotMatch(source, /fetch\(|dotenv|execFile|formspree|deploy-pages|push-indexnow|push-baidu/);

@@ -1,0 +1,61 @@
+/* Scoped additions: the English phone feature keeps its existing styles. */
+.phone-localized { padding-bottom: 64px; }
+.phone-localized[dir="rtl"] { font-family: Tahoma, Arial, sans-serif; }
+.phone-localized[dir="rtl"] :is(h1,h2,h3,.eyebrow) { letter-spacing: normal; }
+.phone-localized .phone-local-nav { display:flex; flex-wrap:wrap; gap:12px 32px; padding:16px max(20px,calc((100vw - 1264px)/2)); border-bottom:1px solid var(--line); background:var(--paper); }
+.phone-localized .phone-local-nav a { min-height:44px; display:flex; align-items:center; font-weight:650; }
+.phone-localized .phone-local-nav a[aria-current="page"] { color:var(--purple-dark); text-decoration:underline; text-underline-offset:8px; }
+.phone-localized .phone-local-hero { display:grid; grid-template-columns:1.2fr 1fr; align-items:center; gap:48px; padding-block:42px 56px; }
+.phone-localized .phone-local-hero-compact { grid-template-columns:1fr; max-width:1000px; }
+.phone-localized .phone-local-hero h1 { font-size:clamp(36px,4vw,56px); }
+.phone-localized .phone-local-hero img { width:100%; border-radius:16px; aspect-ratio:16/10; object-fit:cover; }
+.phone-localized figcaption { padding:14px 0; font-size:13px; color:var(--muted); }
+.phone-localized .actions { margin-top:24px; display:flex; flex-wrap:wrap; gap:16px; }
+.phone-localized .phone-local-steps { margin-bottom:56px; }
+.phone-localized .phone-local-steps ol { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; list-style:none; padding:0; margin:28px 0 0; }
+.phone-localized .phone-local-steps li { border-top:2px solid var(--line); padding-top:16px; }
+.phone-localized .phone-local-steps li>span { color:var(--purple); font-size:22px; }
+.phone-localized .phone-local-steps h3 { margin-block:12px; font-size:22px; }
+.phone-localized .phone-local-steps p,.phone-localized .phone-local-product-body>p:not(.eyebrow):not(.phone-local-price) { color:var(--muted); font-size:15px; }
+.phone-localized .phone-local-price-note { max-width:950px; margin-block:20px 30px; color:var(--muted); }
+.phone-localized .phone-local-products { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; }
+.phone-localized .phone-local-product { min-width:0; border:1px solid var(--line); border-radius:16px; background:white; overflow:hidden; display:flex; flex-direction:column; }
+.phone-localized .phone-local-product figure { background:#f2f2f0; padding:20px; }
+.phone-localized .phone-local-product img { width:100%; height:260px; object-fit:contain; }
+.phone-localized .phone-local-product-body { display:flex; flex:1; flex-direction:column; padding:26px; }
+.phone-localized .phone-local-product h3 { font-size:26px; }
+.phone-localized .phone-local-product .eyebrow { min-height:36px; }
+.phone-localized .phone-local-price { margin-top:20px; font-size:27px; font-weight:750; color:var(--purple-dark); }
+.phone-localized .phone-local-price>span { font-size:14px; font-weight:400; }
+.phone-localized .phone-local-specs { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; margin-block:24px; }
+.phone-localized dt { color:var(--muted); font-size:13px; }
+.phone-localized dd { font-size:17px; font-weight:650; margin:4px 0 0; }
+.phone-localized .phone-local-product .button { margin-top:auto; align-self:start; width:100%; }
+.phone-localized .phone-local-product-body>p:last-of-type { margin-bottom:24px; }
+.phone-localized .phone-local-fit { margin-block:28px 50px; border-inline-start:3px solid var(--purple); padding-inline-start:20px; color:var(--muted); }
+.phone-localized :is(#phone-inquiry,#phone-products,.phone-local-row,input,textarea) { scroll-margin-top:calc(var(--ddnz-header-height,83px) + 28px); }
+.phone-localized .phone-local-inquiry { border:1px solid var(--line); background:white; padding:36px; border-radius:16px; }
+.phone-localized .phone-local-inquiry>p { margin-top:14px; }
+.phone-localized .phone-local-status:empty { display:none; }
+.phone-localized .phone-local-status { color:var(--purple-dark); }
+.phone-localized .phone-local-empty { margin-block:24px; padding:20px; background:var(--soft); }
+.phone-localized .phone-local-row { margin:26px 0; padding:20px; border:1px solid var(--line); border-radius:12px; min-width:0; }
+.phone-localized legend { font-weight:750; padding-inline:8px; }
+.phone-localized .phone-local-fields { display:grid; grid-template-columns:1fr 1.2fr .65fr; gap:18px; }
+.phone-localized label { display:block; font-size:15px; font-weight:650; }
+.phone-localized :is(input,select,textarea) { display:block; width:100%; min-width:0; min-height:48px; border:1px solid #b8c4d2; border-radius:8px; padding:12px; background:white; color:var(--ink); font-size:16px; margin-block:8px; }
+.phone-localized textarea { resize:vertical; }
+.phone-localized [aria-invalid="true"] { border-color:#a52d20; }
+.phone-localized .phone-local-destination { margin-block:28px; }
+.phone-localized form>.button:last-child { margin-top:18px; }
+.phone-localized .phone-local-errors,.phone-localized .phone-local-warning { background:#fff3ed; color:#8c2b18; border-inline-start:3px solid #a52d20; padding:20px; margin-block:20px; }
+.phone-localized .phone-local-errors a { text-decoration:underline; }
+.phone-localized .phone-local-review { margin-top:36px; padding-top:28px; border-top:2px solid var(--purple); }
+.phone-localized .phone-local-review dl { display:flex; flex-wrap:wrap; gap:20px 48px; margin-block:24px; }
+.phone-localized .phone-local-review textarea { font-family:inherit; font-size:14px; line-height:1.8; }
+.phone-localized .phone-local-resources { margin-top:48px; padding-block:32px; border-top:1px solid var(--line); }
+.phone-localized .phone-local-resources ul { padding-inline-start:20px; }
+.phone-localized .phone-local-resources a { display:inline-block; padding-block:10px; text-decoration:underline; text-underline-offset:4px; color:var(--purple-dark); }
+.phone-localized .phone-local-resources p { color:var(--muted); max-width:900px; }
+@media(max-width:900px) { .phone-localized .phone-local-hero { grid-template-columns:1fr; gap:28px; } .phone-localized .phone-local-fields { grid-template-columns:1fr; } }
+@media(max-width:600px) { .phone-localized .phone-local-products,.phone-localized .phone-local-steps ol { grid-template-columns:1fr; } .phone-localized .phone-local-inquiry { padding:22px 16px; } .phone-localized .phone-local-product-body { padding:22px; } .phone-localized .phone-local-nav { gap:8px 20px; } .phone-localized .phone-local-nav a { font-size:13px; } .phone-localized .phone-local-row { padding:16px; } .phone-localized .phone-local-review .button { width:100%; } }

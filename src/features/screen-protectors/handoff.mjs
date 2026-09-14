@@ -1,5 +1,6 @@
 import { BASIS, estimate, makeBrief } from './model.mjs';
 import { EN } from './locales/en.mjs';
+import { LOCALIZED_INQUIRY_SOURCE, validateLocalizedHandoff } from './localization.mjs';
 
 export const HANDOFF_KEY = 'ddnz_screen_protector_inquiry_v1';
 export const DRAFT_KEY = 'ddnz_screen_protector_plan_v1';
@@ -38,9 +39,29 @@ export function saveHandoff(storage, state, now = Date.now()) {
     return { ok: true };
   } catch { return { ok: false, reason: 'storage' }; }
 }
-export function readHandoff(storage, search, now = Date.now()) {
+export function readHandoff(storage, search, now = Date.now(), displayLocale = undefined) {
   const query = new URLSearchParams(search);
+  if (query.get('source') === LOCALIZED_INQUIRY_SOURCE && query.get('leadGoal') === 'Product Sourcing') {
+    try {
+      const raw = storage.getItem(HANDOFF_KEY);
+      const plan = raw && raw.length <= 100_000 ? validateLocalizedHandoff(JSON.parse(raw), now) : null;
+      if (!plan || plan.locale !== query.get('phoneLocale') || plan.state.destination !== query.get('dest')) return null;
+      // Bind the source query to the saved plan first. A quote-page language
+      // change may then translate labels without changing buyer-entered text.
+      return ['es', 'ar'].includes(displayLocale)
+        ? validateLocalizedHandoff({ ...plan, locale: displayLocale }, now) : plan;
+    } catch { return null; }
+  }
   if (query.get('source') !== 'screen_protector_planner' || query.get('leadGoal') !== 'Product Sourcing') return null;
   try { const raw = storage.getItem(HANDOFF_KEY); return raw && raw.length <= 100_000 ? validateHandoff(JSON.parse(raw), now) : null; }
   catch { return null; }
+}
+
+export function saveLocalizedHandoff(storage, locale, state, now = Date.now()) {
+  const plan = validateLocalizedHandoff({ version: 2, source: LOCALIZED_INQUIRY_SOURCE, locale, state, createdAt: now }, now);
+  if (!plan) return { ok: false, reason: 'invalid' };
+  try {
+    storage.setItem(HANDOFF_KEY, JSON.stringify({ version: 2, source: plan.source, locale, state: plan.state, createdAt: now }));
+    return { ok: true };
+  } catch { return { ok: false, reason: 'storage' }; }
 }

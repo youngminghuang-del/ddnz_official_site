@@ -90,14 +90,19 @@ export function formspreeBody(payload){
  return new URLSearchParams({name:payload.name,email:payload.email,_subject:payload.subject,message:payload.message});
 }
 
-export async function submitInquiry(payload,{hostname=currentHostname(),fetchImpl=globalThis.fetch}={}){
+export async function submitInquiry(payload,{hostname=currentHostname(),fetchImpl=globalThis.fetch,timeoutMs=15000}={}){
  if(!isProductionHost(hostname))return {mode:'preview',networked:false};
  if(typeof fetchImpl!=='function')throw new Error('Sending is unavailable in this browser. Please try again or use the email draft.');
- const response=await fetchImpl(FORMSPREE_ENDPOINT,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/x-www-form-urlencoded'},body:formspreeBody(payload)});
+ const controller=new AbortController();let timer;
+ const timeout=new Promise((_,reject)=>{timer=setTimeout(()=>{controller.abort();const error=new Error('Submission could not be confirmed in time.');error.code='TIMEOUT';reject(error);},timeoutMs);});
+ try{
+ const request=(async()=>{const response=await fetchImpl(FORMSPREE_ENDPOINT,{method:'POST',headers:{Accept:'application/json','Content-Type':'application/x-www-form-urlencoded'},body:formspreeBody(payload),signal:controller.signal});
  let data={};
  try{data=await response.json();}catch{}
  if(!response.ok||data.ok===false)throw new Error('We could not submit your enquiry. Please retry or use the email draft.');
- return {mode:'production',networked:true};
+ return {mode:'production',networked:true};})();
+ return await Promise.race([request,timeout]);
+ }finally{clearTimeout(timer);}
 }
 
 export function createInquirySubmitter(send=submitInquiry){

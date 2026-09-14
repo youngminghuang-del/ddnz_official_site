@@ -1,18 +1,22 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, Globe2, Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
+import ProductLanguageNotice from './ProductLanguageNotice';
+import { isEnglishProductPath, navigationPath, navigationPrefixes, navigationState, splitNavigationPath } from '../lib/productLanguageRouting';
 import { appendAttribution } from '../lib/attribution';
 import { trackEvent } from '../lib/utils';
-import notionBlogPosts from '../data/notionBlogData.json';
 import {
   articleLanguageSwitchPath,
-  canonicalSitePath,
   findArticleByRoute,
 } from '../lib/notionArticleRouting';
 import type { BlogPost } from '../types/content';
+import { mobileCategoryNavigation } from '../config/mobileCategoryNavigation';
 import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
+import { kitchenCategoryNavigation } from '../config/kitchenCategoryNavigation';
+import { outdoorCategoryNavigation } from '../config/outdoorCategoryNavigation';
+import { outdoorNavigationCurrent } from '../features/outdoor-sourcing/navigation.mjs';
 
 const languageLabels: Record<Language, string> = {
   en: 'EN',
@@ -47,25 +51,25 @@ const navLabels: Record<Language, {
   openMenu: string;
   closeMenu: string;
 }> = {
-  en: { home: 'Home', products: 'Products', services: 'Sourcing Services', markets: 'Markets', process: 'Process', insights: 'Insights', start: 'Start a sourcing brief', kitchen: 'Commercial kitchen', refrigeration: 'Refrigeration equipment', audio: 'Audio & speakers', mobile: 'Mobile accessories', outdoor: 'Outdoor products', sourcing: 'Supplier search & comparison', qc: 'Inspection & quality control', consolidation: 'Consolidation & export', middleEast: 'Middle East', africa: 'West Africa', latinAmerica: 'Latin America', openMenu: 'Open menu', closeMenu: 'Close menu' },
-  zh: { home: '首页', products: '产品品类', services: '采购服务', markets: '目标市场', process: '服务流程', insights: '行业洞察', start: '提交采购需求', kitchen: '商用餐厨设备', refrigeration: '商用制冷设备', audio: '音响设备', mobile: '手机配件', outdoor: '户外用品', sourcing: '供应商搜索与比价', qc: '验货与质量控制', consolidation: '集货与出口交付', middleEast: '中东', africa: '西非', latinAmerica: '中南美', openMenu: '打开菜单', closeMenu: '关闭菜单' },
-  ru: { home: 'Главная', products: 'Товары', services: 'Закупки', markets: 'Рынки', process: 'Процесс', insights: 'Материалы', start: 'Оставить заявку', kitchen: 'Проф. кухни', refrigeration: 'Холодильное оборудование', audio: 'Аудио и колонки', mobile: 'Мобильные аксессуары', outdoor: 'Товары для отдыха', sourcing: 'Поиск и сравнение поставщиков', qc: 'Инспекция и контроль качества', consolidation: 'Консолидация и экспорт', middleEast: 'Ближний Восток', africa: 'Западная Африка', latinAmerica: 'Латинская Америка', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню' },
-  fr: { home: 'Accueil', products: 'Produits', services: 'Services achats', markets: 'Marchés', process: 'Processus', insights: 'Ressources', start: 'Démarrer un brief', kitchen: 'Cuisine professionnelle', refrigeration: 'Équipement frigorifique', audio: 'Audio et enceintes', mobile: 'Accessoires mobiles', outdoor: 'Produits de plein air', sourcing: 'Recherche et comparaison', qc: 'Inspection et contrôle qualité', consolidation: 'Consolidation et export', middleEast: 'Moyen-Orient', africa: 'Afrique de l’Ouest', latinAmerica: 'Amérique latine', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu' },
-  es: { home: 'Inicio', products: 'Productos', services: 'Servicios de compra', markets: 'Mercados', process: 'Proceso', insights: 'Actualidad', start: 'Iniciar solicitud', kitchen: 'Cocina comercial', refrigeration: 'Equipos de refrigeración', audio: 'Audio y altavoces', mobile: 'Accesorios móviles', outdoor: 'Actividades al aire libre', sourcing: 'Búsqueda y comparación', qc: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', middleEast: 'Oriente Medio', africa: 'África Occidental', latinAmerica: 'América Latina', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
-  ar: { home: 'الرئيسية', products: 'المنتجات', services: 'خدمات التوريد', markets: 'الأسواق', process: 'العملية', insights: 'المعرفة', start: 'ابدأ طلب التوريد', kitchen: 'معدات المطابخ', refrigeration: 'معدات التبريد', audio: 'الصوت ومكبرات الصوت', mobile: 'ملحقات الهاتف', outdoor: 'مستلزمات خارجية', sourcing: 'البحث عن الموردين والمقارنة', qc: 'الفحص ومراقبة الجودة', consolidation: 'التجميع والتصدير', middleEast: 'الشرق الأوسط', africa: 'غرب أفريقيا', latinAmerica: 'أمريكا اللاتينية', openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة' },
-  pt: { home: 'Início', products: 'Produtos', services: 'Serviços de sourcing', markets: 'Mercados', process: 'Processo', insights: 'Conteúdos', start: 'Iniciar solicitação', kitchen: 'Cozinha profissional', refrigeration: 'Equipamentos de refrigeração', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular', outdoor: 'Produtos outdoor', sourcing: 'Busca e comparação de fornecedores', qc: 'Inspeção e controle de qualidade', consolidation: 'Consolidação e exportação', middleEast: 'Oriente Médio', africa: 'África Ocidental', latinAmerica: 'América Latina', openMenu: 'Abrir menu', closeMenu: 'Fechar menu' },
-  tr: { home: 'Ana sayfa', products: 'Ürünler', services: 'Tedarik hizmetleri', markets: 'Pazarlar', process: 'Süreç', insights: 'İçerikler', start: 'Tedarik talebi oluştur', kitchen: 'Endüstriyel mutfak', refrigeration: 'Soğutma ekipmanları', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar', outdoor: 'Outdoor ürünler', sourcing: 'Tedarikçi arama ve karşılaştırma', qc: 'Denetim ve kalite kontrol', consolidation: 'Konsolidasyon ve ihracat', middleEast: 'Orta Doğu', africa: 'Batı Afrika', latinAmerica: 'Latin Amerika', openMenu: 'Menüyü aç', closeMenu: 'Menüyü kapat' },
+  en: { home: 'Home', products: 'Products', services: 'Sourcing Services', markets: 'Freight destinations', process: 'Process', insights: 'Insights', start: 'Start a sourcing brief', kitchen: 'Commercial kitchen', refrigeration: 'Refrigeration equipment', audio: 'Audio & speakers', mobile: 'Mobile accessories', outdoor: 'Outdoor products', sourcing: 'Supplier search & comparison', qc: 'Inspection & quality control', consolidation: 'Consolidation & export', middleEast: 'Middle East', africa: 'West Africa', latinAmerica: 'Latin America', openMenu: 'Open menu', closeMenu: 'Close menu' },
+  zh: { home: '首页', products: '产品品类', services: '采购服务', markets: '货运目的地', process: '服务流程', insights: '行业洞察', start: '提交采购需求', kitchen: '商用餐厨设备', refrigeration: '商用制冷设备', audio: '音响设备', mobile: '手机配件', outdoor: '户外用品', sourcing: '供应商搜索与比价', qc: '验货与质量控制', consolidation: '集货与出口交付', middleEast: '中东', africa: '西非', latinAmerica: '中南美', openMenu: '打开菜单', closeMenu: '关闭菜单' },
+  ru: { home: 'Главная', products: 'Товары', services: 'Закупки', markets: 'Направления доставки', process: 'Процесс', insights: 'Материалы', start: 'Оставить заявку', kitchen: 'Проф. кухни', refrigeration: 'Холодильное оборудование', audio: 'Аудио и колонки', mobile: 'Мобильные аксессуары', outdoor: 'Товары для отдыха', sourcing: 'Поиск и сравнение поставщиков', qc: 'Инспекция и контроль качества', consolidation: 'Консолидация и экспорт', middleEast: 'Ближний Восток', africa: 'Западная Африка', latinAmerica: 'Латинская Америка', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню' },
+  fr: { home: 'Accueil', products: 'Produits', services: 'Services achats', markets: 'Destinations de fret', process: 'Processus', insights: 'Ressources', start: 'Démarrer un brief', kitchen: 'Cuisine professionnelle', refrigeration: 'Équipement frigorifique', audio: 'Audio et enceintes', mobile: 'Accessoires mobiles', outdoor: 'Produits de plein air', sourcing: 'Recherche et comparaison', qc: 'Inspection et contrôle qualité', consolidation: 'Consolidation et export', middleEast: 'Moyen-Orient', africa: 'Afrique de l’Ouest', latinAmerica: 'Amérique latine', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu' },
+  es: { home: 'Inicio', products: 'Productos', services: 'Servicios de compra', markets: 'Destinos de carga', process: 'Proceso', insights: 'Actualidad', start: 'Iniciar solicitud', kitchen: 'Cocina comercial', refrigeration: 'Equipos de refrigeración', audio: 'Audio y altavoces', mobile: 'Accesorios móviles', outdoor: 'Actividades al aire libre', sourcing: 'Búsqueda y comparación', qc: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', middleEast: 'Oriente Medio', africa: 'África Occidental', latinAmerica: 'América Latina', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
+  ar: { home: 'الرئيسية', products: 'المنتجات', services: 'خدمات التوريد', markets: 'وجهات الشحن', process: 'العملية', insights: 'المعرفة', start: 'ابدأ طلب التوريد', kitchen: 'معدات المطابخ', refrigeration: 'معدات التبريد', audio: 'الصوت ومكبرات الصوت', mobile: 'ملحقات الهاتف', outdoor: 'مستلزمات خارجية', sourcing: 'البحث عن الموردين والمقارنة', qc: 'الفحص ومراقبة الجودة', consolidation: 'التجميع والتصدير', middleEast: 'الشرق الأوسط', africa: 'غرب أفريقيا', latinAmerica: 'أمريكا اللاتينية', openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة' },
+  pt: { home: 'Início', products: 'Produtos', services: 'Serviços de sourcing', markets: 'Destinos de carga', process: 'Processo', insights: 'Conteúdos', start: 'Iniciar solicitação', kitchen: 'Cozinha profissional', refrigeration: 'Equipamentos de refrigeração', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular', outdoor: 'Produtos outdoor', sourcing: 'Busca e comparação de fornecedores', qc: 'Inspeção e controle de qualidade', consolidation: 'Consolidação e exportação', middleEast: 'Oriente Médio', africa: 'África Ocidental', latinAmerica: 'América Latina', openMenu: 'Abrir menu', closeMenu: 'Fechar menu' },
+  tr: { home: 'Ana sayfa', products: 'Ürünler', services: 'Tedarik hizmetleri', markets: 'Yük varış noktaları', process: 'Süreç', insights: 'İçerikler', start: 'Tedarik talebi oluştur', kitchen: 'Endüstriyel mutfak', refrigeration: 'Soğutma ekipmanları', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar', outdoor: 'Outdoor ürünler', sourcing: 'Tedarikçi arama ve karşılaştırma', qc: 'Denetim ve kalite kontrol', consolidation: 'Konsolidasyon ve ihracat', middleEast: 'Orta Doğu', africa: 'Batı Afrika', latinAmerica: 'Latin Amerika', openMenu: 'Menüyü aç', closeMenu: 'Menüyü kapat' },
 };
 
-const prefixByLanguage: Record<Language, string> = {
-  en: '',
-  zh: '/zh-cn',
-  ru: '/ru',
-  fr: '/fr',
-  es: '/es',
-  ar: '/ar',
-  pt: '/pt',
-  tr: '/tr',
+const productOverviewLabels: Record<Language, string> = {
+  en: 'View all products',
+  zh: '查看全部产品',
+  ru: 'Все товары',
+  fr: 'Voir tous les produits',
+  es: 'Ver todos los productos',
+  ar: 'عرض جميع المنتجات',
+  pt: 'Ver todos os produtos',
+  tr: 'Tüm ürünleri görüntüle',
 };
 
 const freightExecutorLabels: Record<Language, { desktop: string; mobile: string }> = {
@@ -126,13 +130,25 @@ function Dropdown({
   const panelId = `desktop-${id}-menu`;
 
   return (
-    <div className="relative">
+    <div className="relative" onBlur={(event) => {
+      if (open && !event.currentTarget.contains(event.relatedTarget as Node | null)) onToggle(id);
+    }}>
       <button
         type="button"
         data-dropdown-trigger={id}
         aria-expanded={open}
         aria-controls={panelId}
         onClick={() => onToggle(id)}
+        onKeyDown={(event) => {
+          if (event.key !== 'ArrowDown' && event.key !== 'ArrowUp') return;
+          event.preventDefault();
+          if (!open) onToggle(id);
+          const last = event.key === 'ArrowUp';
+          window.requestAnimationFrame(() => {
+            const items = document.getElementById(panelId)?.querySelectorAll<HTMLElement>('a, button');
+            items?.[last ? items.length - 1 : 0]?.focus();
+          });
+        }}
         className={`flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold outline-none transition-colors hover:text-[var(--ddnz-purple-strong)] focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${active ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)]'}`}
       >
         {label}
@@ -144,7 +160,7 @@ function Dropdown({
           data-desktop-dropdown-panel={id}
           className={`absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
         >
-          <div className="rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)]">
+          <div className="max-h-[calc(100dvh-var(--ddnz-header-height,83px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)]">
             {children}
           </div>
         </div>
@@ -155,7 +171,7 @@ function Dropdown({
 
 function DropdownLink({ to, children, onNavigate }: { to: string; children: React.ReactNode; onNavigate: () => void }) {
   return (
-    <Link onClick={onNavigate} className="block rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)]" to={to}>
+    <Link onClick={onNavigate} hrefLang={isEnglishProductPath(to) ? 'en' : undefined} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]" to={to}>
       {children}
     </Link>
   );
@@ -178,15 +194,20 @@ export default function SourcingHomepageNav({
   const [openDropdown, setOpenDropdown] = useState<DesktopDropdownId | null>(null);
   const headerRef = useRef<HTMLElement>(null);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
+  const collapsedHeaderRef = useRef<HTMLDivElement>(null);
   const labels = navLabels[language];
+  const compactDesktop = ['en', 'zh', 'ar'].includes(language);
+  const desktopVisibility = compactDesktop ? 'xl:flex' : 'min-[1440px]:flex';
+  const mobileVisibility = compactDesktop ? 'xl:hidden' : 'min-[1440px]:hidden';
   const filmNav = screenProtectorNavigation(language);
   const freightExecutor = freightExecutorLabels[language];
-  const prefix = prefixByLanguage[language];
-  const localizedPath = (path: string) => canonicalSitePath(`${prefix}${path}`);
+  const prefix = navigationPrefixes[language];
+  const localizedPath = (path: string) => navigationPath(path, language);
+  const englishProduct = isEnglishProductPath(location.pathname);
   const processPath = localizedPath('/how-we-work');
-  const quoteHref = appendAttribution(quotePath ? canonicalSitePath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
-  const languageOptions = supportedLanguages || (Object.keys(languageLabels) as Language[]);
-  const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || location.pathname.startsWith('/screen-protectors');
+  const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
+  const languageOptions = englishProduct ? (Object.keys(languageLabels) as Language[]) : supportedLanguages || (Object.keys(languageLabels) as Language[]);
+  const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || /^\/(phone-cases|phone-straps-charms|portable-power)/.test(splitNavigationPath(location.pathname).pathname) || splitNavigationPath(location.pathname).pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
   const isMarketsPage = location.pathname.includes('/shipping-from-china-to-');
   const isInsightsPage = /\/insights\/?$/.test(location.pathname);
@@ -199,6 +220,32 @@ export default function SourcingHomepageNav({
   const toggleDesktopDropdown = (id: DesktopDropdownId) => {
     setOpenDropdown((current) => current === id ? null : id);
   };
+
+  useLayoutEffect(() => {
+    const collapsed = collapsedHeaderRef.current;
+    if (!collapsed) return;
+    const root = document.documentElement;
+    const previous = root.style.getPropertyValue('--ddnz-header-height');
+    const measure = () => {
+      const border = headerRef.current ? parseFloat(getComputedStyle(headerRef.current).borderBottomWidth) || 0 : 0;
+      root.style.setProperty('--ddnz-header-height', `${Math.ceil(collapsed.getBoundingClientRect().height + border)}px`);
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(collapsed);
+    return () => {
+      observer.disconnect();
+      if (previous) root.style.setProperty('--ddnz-header-height', previous);
+      else root.style.removeProperty('--ddnz-header-height');
+    };
+  }, []);
+
+  useEffect(() => {
+    const desktop = window.matchMedia(`(min-width: ${compactDesktop ? 1280 : 1440}px)`);
+    const onResize = () => { setMobileOpen(false); setMobileSection(null); closeDesktopDropdown(); };
+    desktop.addEventListener('change', onResize);
+    return () => desktop.removeEventListener('change', onResize);
+  }, [compactDesktop]);
 
   useEffect(() => {
     closeDesktopDropdown();
@@ -232,6 +279,15 @@ export default function SourcingHomepageNav({
 
     const previousOverflow = document.body.style.overflow;
     const closeOnEscape = (event: KeyboardEvent) => {
+      if (event.key === 'Tab') {
+        const items = Array.from(headerRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled])') || [])
+          .filter(item => item.getClientRects().length > 0);
+        const first = items[0];
+        const last = items.at(-1);
+        if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+        else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+        return;
+      }
       if (event.key !== 'Escape') return;
       setMobileOpen(false);
       setMobileSection(null);
@@ -246,27 +302,25 @@ export default function SourcingHomepageNav({
     };
   }, [mobileOpen]);
 
-  const switchLanguage = (nextLanguage: Language) => {
-    let suffix = location.pathname
-      .replace(/^\/zh-cn(?=\/|$)/, '')
-      .replace(/^\/(ru|fr|es|ar|pt|tr)(?=\/|$)/, '');
-    if (!suffix) suffix = '/';
-    const nextPrefix = prefixByLanguage[nextLanguage];
-    let destination = canonicalSitePath(`${nextPrefix}${suffix === '/' ? '' : suffix}` || '/');
+  const switchLanguage = async (nextLanguage: Language) => {
+    const suffix = splitNavigationPath(location.pathname).pathname;
+    let destination = navigationPath(suffix, nextLanguage);
 
     const blogMatch = suffix.match(/^\/blog\/([^/]+)\/?$/);
     if (blogMatch) {
-      const currentArticle = findArticleByRoute(
-        notionBlogPosts as BlogPost[],
-        language,
-        decodeURIComponent(blogMatch[1]),
-      );
-      if (currentArticle) {
-        destination = articleLanguageSwitchPath(
-          currentArticle,
+      destination = navigationPath('/insights', nextLanguage);
+      try {
+        const { default: notionBlogPosts } = await import('../data/notionBlogData.json');
+        const currentArticle = findArticleByRoute(
           notionBlogPosts as BlogPost[],
-          nextLanguage,
+          language,
+          decodeURIComponent(blogMatch[1]),
         );
+        if (currentArticle) {
+          destination = articleLanguageSwitchPath(currentArticle, notionBlogPosts as BlogPost[], nextLanguage);
+        }
+      } catch {
+        // The selected language's Insights hub remains available if the article chunk fails.
       }
     }
 
@@ -274,7 +328,10 @@ export default function SourcingHomepageNav({
     setMobileOpen(false);
     setMobileSection(null);
     closeDesktopDropdown();
-    navigate(`${destination}${location.search}${blogMatch ? '' : location.hash}`);
+    navigate(`${destination}${location.search}${blogMatch ? '' : location.hash}`, {
+      replace: englishProduct,
+      state: navigationState(location.state, nextLanguage),
+    });
   };
 
   const closeMobile = () => {
@@ -285,9 +342,34 @@ export default function SourcingHomepageNav({
     setMobileSection((current) => current === section ? null : section);
   };
 
+  const productMenu = (onNavigate: () => void, variant: 'desktop' | 'mobile') => (
+    <div className={variant === 'desktop' ? 'w-80 max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-120px)] overflow-y-auto' : ''}>
+      <ul>{[
+        { to: '/sourcing/commercial-kitchen-equipment-from-china', label: labels.kitchen, children: [...kitchenCategoryNavigation(language), { to: '/refrigeration-equipment', label: labels.refrigeration }] },
+        { to: '/sourcing/audio-speakers-from-china', label: labels.audio, children: [] },
+        { to: '/sourcing/mobile-accessories-from-china', label: labels.mobile, children: [...mobileCategoryNavigation(language), filmNav] },
+        { to: '/sourcing/outdoor-products-from-china', label: labels.outdoor, children: outdoorCategoryNavigation(language) },
+      ].map(item => <li key={item.to}>
+        <DropdownLink onNavigate={onNavigate} to={localizedPath(item.to)}>{item.label}</DropdownLink>
+        {item.children.length > 0 && <ul className="ms-5 me-2 border-s border-slate-200 ps-2">{item.children.map(child => <li key={child.to}>
+          <Link onClick={onNavigate} to={localizedPath(child.to)} hrefLang={isEnglishProductPath(localizedPath(child.to)) ? 'en' : language} data-screen-protector-entry={child.to === filmNav.to ? `${variant}-nav` : undefined}
+            aria-current={outdoorNavigationCurrent(location.pathname, location.search, localizedPath(child.to)) ? 'page' : undefined}
+            className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors aria-[current=page]:bg-[var(--ddnz-purple-soft)] aria-[current=page]:text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
+            {child.label}
+          </Link>
+        </li>)}</ul>}
+      </li>)}</ul>
+      <div className="mt-2 border-t border-slate-200 pt-2">
+        <DropdownLink onNavigate={onNavigate} to={localizedPath('/products')}>{productOverviewLabels[language]}<span aria-hidden="true" className="ms-2">{language === 'ar' ? '←' : '→'}</span></DropdownLink>
+      </div>
+    </div>
+  );
+
   return (
-    <header ref={headerRef} className="ddnz-home sticky top-0 z-50 border-b border-slate-200/90 bg-white/96 backdrop-blur-xl">
-      <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 xl:gap-6 xl:px-12">
+    <>
+    <header lang={language === 'zh' ? 'zh-CN' : language} dir={language === 'ar' ? 'rtl' : 'ltr'} data-mobile-open={mobileOpen || undefined} ref={headerRef} className="ddnz-home sticky top-0 z-50 border-b border-slate-200/90 bg-white/96 backdrop-blur-xl">
+      <div ref={collapsedHeaderRef}>
+      <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 2xl:gap-6 2xl:px-12">
         <Link
           to={localizedPath('/')}
           dir="ltr"
@@ -308,7 +390,7 @@ export default function SourcingHomepageNav({
             />
           </span>
           <span className="flex min-w-0 flex-col justify-center">
-            <span className="whitespace-nowrap bg-[linear-gradient(100deg,#6b2f8a_0%,#8d397d_42%,#b94750_76%,#b94625_100%)] bg-clip-text text-[22px] font-extrabold leading-[0.88] tracking-[-0.025em] text-transparent xl:text-[26px]">
+            <span className="whitespace-nowrap bg-[linear-gradient(100deg,#6b2f8a_0%,#8d397d_42%,#b94750_76%,#b94625_100%)] bg-clip-text text-[22px] font-extrabold leading-[0.88] tracking-[-0.025em] text-transparent 2xl:text-[26px]">
               DDNZ<span className="ml-[0.32em] font-semibold tracking-[0.045em]">GLOBAL</span>
             </span>
             <span className="mt-[6px] whitespace-nowrap text-[10px] font-semibold leading-none tracking-[0.075em] text-[#40536c] sm:text-[11px]">
@@ -317,7 +399,7 @@ export default function SourcingHomepageNav({
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-0.5 lg:flex xl:gap-2" aria-label="Primary navigation">
+        <nav className={`hidden items-center gap-0.5 ${desktopVisibility} 2xl:gap-2`} aria-label="Primary navigation">
           <Link
             onClick={closeDesktopDropdown}
             aria-current={isHomePage ? 'page' : undefined}
@@ -327,18 +409,7 @@ export default function SourcingHomepageNav({
             {labels.home}
           </Link>
           <Dropdown id="products" label={labels.products} open={openDropdown === 'products'} active={isProductsPage} onToggle={toggleDesktopDropdown}>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/products')}>{labels.products}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/commercial-kitchen-equipment-from-china')}>{labels.kitchen}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/refrigeration-equipment')}>{labels.refrigeration}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/audio-speakers-from-china')}>{labels.audio}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/mobile-accessories-from-china')}>{labels.mobile}</DropdownLink>
-            <Link onClick={closeDesktopDropdown} to={filmNav.to} data-screen-protector-entry="desktop-nav"
-              aria-current={location.pathname === filmNav.to ? 'page' : undefined}
-              className="mx-3 mb-2 flex min-h-11 flex-col gap-1 border-s-2 border-[var(--ddnz-purple)] py-2 ps-3 pe-2 text-sm text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
-              <span className="font-bold">{filmNav.label}</span>
-              <span className="max-w-56 text-xs leading-5 text-slate-600">{filmNav.description}</span>
-            </Link>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing/outdoor-products-from-china')}>{labels.outdoor}</DropdownLink>
+            {productMenu(closeDesktopDropdown, 'desktop')}
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{labels.services}</DropdownLink>
@@ -369,7 +440,7 @@ export default function SourcingHomepageNav({
           </Link>
         </nav>
 
-        <div className="hidden shrink-0 items-center gap-2 lg:flex xl:gap-4">
+        <div className={`hidden shrink-0 items-center gap-2 ${desktopVisibility} 2xl:gap-4`}>
           <Dropdown
             id="language"
             align="right"
@@ -383,7 +454,7 @@ export default function SourcingHomepageNav({
             )}
           >
             {languageOptions.map((item) => (
-              <button key={item} type="button" onClick={() => switchLanguage(item)} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
+              <button key={item} type="button" onClick={() => switchLanguage(item)} lang={item === 'zh' ? 'zh-CN' : item} aria-pressed={item === language} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
                 {languageLabels[item]}
               </button>
             ))}
@@ -395,13 +466,13 @@ export default function SourcingHomepageNav({
               closeDesktopDropdown();
               trackEvent('quote_click', { cta_location: 'homepage_navigation', lead_goal: 'product_sourcing' });
             }}
-            className="inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-[var(--ddnz-action)] px-4 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2 xl:px-5"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-[var(--ddnz-action)] px-4 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2 2xl:px-5"
           >
             {labels.start}
           </Link>
         </div>
 
-        <button ref={mobileTriggerRef} type="button" className="grid h-11 w-11 place-items-center rounded-lg text-[var(--ddnz-ink)] hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] lg:hidden" aria-label={mobileOpen ? labels.closeMenu : labels.openMenu} aria-controls="mobile-navigation" aria-expanded={mobileOpen} onClick={() => { closeDesktopDropdown(); setMobileOpen((value) => !value); }}>
+        <button ref={mobileTriggerRef} type="button" className={`grid h-11 w-11 place-items-center rounded-lg text-[var(--ddnz-ink)] hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${mobileVisibility}`} aria-label={mobileOpen ? labels.closeMenu : labels.openMenu} aria-controls="mobile-navigation" aria-expanded={mobileOpen} onClick={() => { closeDesktopDropdown(); setMobileOpen((value) => !value); }}>
           {mobileOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </button>
       </div>
@@ -430,8 +501,9 @@ export default function SourcingHomepageNav({
         </div>
       ) : null}
 
+      </div>
       {mobileOpen ? (
-        <nav id="mobile-navigation" className={`${showFreightExecutor ? 'max-h-[calc(100dvh-118px)]' : 'max-h-[calc(100dvh-82px)]'} overflow-y-auto border-t border-slate-200 bg-white px-5 pb-4 pt-2 shadow-xl lg:hidden`} aria-label="Mobile navigation">
+        <nav id="mobile-navigation" className={`absolute inset-x-0 top-full max-h-[calc(100dvh-var(--ddnz-header-height,83px))] overscroll-contain overflow-y-auto border-t border-slate-200 bg-white px-5 pb-4 pt-2 shadow-xl ${mobileVisibility}`} aria-label="Mobile navigation">
           <div className="mx-auto grid max-w-2xl gap-0.5">
             <Link onClick={closeMobile} aria-current={isHomePage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/')}>{labels.home}</Link>
             <div>
@@ -440,18 +512,7 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'products' ? (
               <div id="mobile-products-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/products')}>{labels.products}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/commercial-kitchen-equipment-from-china')}>{labels.kitchen}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/refrigeration-equipment')}>{labels.refrigeration}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/audio-speakers-from-china')}>{labels.audio}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/mobile-accessories-from-china')}>{labels.mobile}</Link>
-                <Link onClick={closeMobile} to={filmNav.to} data-screen-protector-entry="mobile-nav"
-                  aria-current={location.pathname === filmNav.to ? 'page' : undefined}
-                  className="mx-3 mb-2 flex min-h-11 flex-col gap-1 border-s-2 border-[var(--ddnz-purple)] py-2 ps-3 pe-2 text-sm text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
-                  <span className="font-bold">{filmNav.label}</span>
-                  <span className="text-xs leading-5 text-slate-600">{filmNav.description}</span>
-                </Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing/outdoor-products-from-china')}>{labels.outdoor}</Link>
+                {productMenu(closeMobile, 'mobile')}
               </div>
               ) : null}
             </div>
@@ -484,7 +545,7 @@ export default function SourcingHomepageNav({
             <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
             <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
               {languageOptions.map((item) => (
-                <button key={item} type="button" onClick={() => switchLanguage(item)} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
+                <button key={item} type="button" onClick={() => switchLanguage(item)} lang={item === 'zh' ? 'zh-CN' : item} aria-pressed={item === language} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
                   {languageLabels[item]}
                 </button>
               ))}
@@ -494,5 +555,7 @@ export default function SourcingHomepageNav({
         </nav>
       ) : null}
     </header>
+    {englishProduct && <ProductLanguageNotice />}
+    </>
   );
 }

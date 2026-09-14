@@ -1,0 +1,47 @@
+import { L } from './catalog.mjs';
+
+// Coordinates refer to the uncropped 1536 × 1024 editorial scene assets.
+export const powerScenes = [
+  { id: 'camp', image: 'scene-camp-v1.webp',
+    title: L('Stay a little longer.','Quédese un poco más.','ابقَ لوقت أطول.'),
+    label: L('An evening outdoors','Una tarde al aire libre','أمسية في الهواء الطلق'),
+    alt: L('Illustrated camping scene with a lantern, phone and unbranded power station at dusk','Escena ilustrativa de camping con farol, teléfono y estación sin marca al atardecer','مشهد توضيحي للتخييم مع مصباح وهاتف ومحطة طاقة بلا علامة عند الغسق'),
+    hotspots: [{ id: 'power', x: 63, y: 78 }, { id: 'light', x: 60, y: 46 }, { id: 'phone', x: 78, y: 57 }] },
+  { id: 'work', image: 'scene-work-v1.webp',
+    title: L('Take your work further.','Lleve su trabajo más lejos.','خذ عملك إلى أبعد.'),
+    label: L('A mobile workday','Trabajo móvil','يوم عمل متنقل'),
+    alt: L('Illustrated mobile office with a laptop, router and unbranded power station beside a forest window','Escena ilustrativa de oficina móvil con portátil, router y estación sin marca junto al bosque','مشهد توضيحي لمكتب متنقل مع حاسوب وجهاز توجيه ومحطة بلا علامة بجانب نافذة تطل على الغابة'),
+    hotspots: [{ id: 'power', x: 63, y: 78 }, { id: 'laptop', x: 71, y: 38 }, { id: 'router', x: 89, y: 41 }] },
+  { id: 'stall', image: 'scene-stall-v1.webp',
+    title: L('Keep your idea in the spotlight.','Dé protagonismo a su idea.','أبقِ فكرتك في دائرة الضوء.'),
+    label: L('An event or small stall','Evento o pequeño puesto','فعالية أو كشك صغير'),
+    alt: L('Illustrated evening stall with a projector, lantern and unbranded power station','Escena ilustrativa de un puesto al anochecer con proyector, farol y estación sin marca','مشهد توضيحي لكشك مسائي مع جهاز عرض ومصباح ومحطة طاقة بلا علامة'),
+    hotspots: [{ id: 'power', x: 67, y: 76 }, { id: 'projector', x: 67, y: 40 }, { id: 'light', x: 91, y: 40 }] },
+];
+export const powerScene = id => powerScenes.find(scene => scene.id === id) || powerScenes[0];
+export const sceneCopy = {
+  heading: L('Picture your day. Find your power.','Imagine su día. Encuentre su energía.','تخيّل يومك. واختر طاقتك.'),
+  intro: L('Explore a scene, choose your appliances and compare six reference models. See what your power station could do for your day.','Explore un escenario, elija sus aparatos y compare seis modelos de referencia. Descubra qué podría hacer su estación por su día.','استكشف مشهداً واختر أجهزتك وقارن ستة طرازات مرجعية. شاهد ما يمكن لمحطة الطاقة أن تقدمه ليومك.'),
+  start: L('Start from a scene','Empiece con un escenario','ابدأ من مشهد'),
+  hint: L('Select a hotspot to explore','Seleccione un punto para explorar','اختر نقطة للاستكشاف'),
+  power: L('Power station','Estación de energía','محطة الطاقة'),
+  setup: L('Your setup','Su combinación','تجهيزاتك'),
+  reference: L('Compare a reference model','Compare un modelo de referencia','قارن طرازاً مرجعياً'),
+  inspect: L('Explore this device','Explore este aparato','استكشف هذا الجهاز'),
+  powerTitle: L('Energy for the day. Power for the moment.','Energía para el día. Potencia para el momento.','طاقة لليوم. وقدرة للحظة.'),
+  powerNote: L('Choose a reference below, then test it against your appliances. Capacity and rated output change together.','Elija una referencia y pruébela con sus aparatos. La capacidad y la potencia nominal cambian juntas.','اختر مرجعاً أدناه ثم اختبره مع أجهزتك. تتغير السعة والقدرة الاسمية معاً.'),
+  deviceNote: L('An editable example load, including the AC adapter. Use the nameplate or a measured value for your own appliance.','Carga de ejemplo editable, incluido el adaptador CA. Use la placa o una medición de su aparato.','حمل مثال قابل للتعديل يشمل محول AC. استخدم لوحة بيانات جهازك أو قيمة مقاسة.'),
+  add: L('Add to my setup','Añadir a mi combinación','أضف إلى تجهيزاتي'),
+  remove: L('Remove from my setup','Quitar de mi combinación','أزل من تجهيزاتي'),
+  edit: L('Edit appliances & runtime','Editar aparatos y autonomía','عدّل الأجهزة ومدة التشغيل'),
+  lab: L('Build your everyday setup.','Prepare su combinación diaria.','جهّز احتياجاتك اليومية.'),
+  labIntro: L('Tap an appliance to include it. Adjust its watts and quantity, then watch your power plan respond.','Pulse un aparato para incluirlo. Ajuste vatios y cantidad y vea cómo responde su plan energético.','اضغط على جهاز لإضافته. عدّل قدرته وعدده وشاهد استجابة خطة الطاقة.'),
+  custom: L('Your own combination','Su combinación personalizada','تجهيزاتك المخصصة'),
+  on: L('Included','Incluido','مضاف'), off: L('Add appliance','Añadir aparato','أضف جهازاً'),
+  selected: L('Selected appliances','Aparatos seleccionados','الأجهزة المختارة'),
+  empty: L('Choose appliances to start','Elija aparatos para empezar','اختر أجهزة للبدء'),
+  stored: L('Stored energy','Energía almacenada','الطاقة المخزنة'),
+  load: L('Running load','Carga en marcha','حمل التشغيل'),
+  overload: L('Too much power for this model','Demasiada potencia para este modelo','الحمل يتجاوز قدرة هذا الطراز'),
+  source: L('Your power source','Su fuente de energía','مصدر طاقتك'),
+};
