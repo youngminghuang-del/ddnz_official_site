@@ -1,11 +1,13 @@
 import { renderPrivacy001 } from './privacy001.mjs';
+import { readMixedDraft, saveMixedDraft, replaceFilms, filmSelection, mixedBriefPath } from '../mobile-sourcing/mixed-storage.mjs';
+import { mixedCopy } from '../mobile-sourcing/mixed-products.mjs';
+import { copyFor } from '../mobile-sourcing/catalog.mjs';
 import React, { useEffect, useRef, useState } from 'react';
 import { BASIS, PRODUCTS } from './calculator.mjs';
-import { saveLocalizedHandoff } from './handoff.mjs';
 import { createScreenProtectorActionReporter } from './site-analytics.mjs';
 import {
-  PHONE_PRODUCT_IDS, emptyPhoneDraft, localText, localizedDraftKey, localizedPhonePath, localizedProduct,
-  localizedInquiryBrief, localizedQuoteHref, phoneCopy, phoneMoney, phoneNumber, phoneReferenceDate, restoreLocalizedDraft, validateLocalizedSelection,
+  PHONE_PRODUCT_IDS, emptyPhoneDraft, localText, localizedPhonePath, localizedProduct,
+  localizedInquiryBrief, localizedQuoteHref, phoneCopy, phoneMoney, phoneNumber, phoneReferenceDate, validateLocalizedSelection,
 } from './localization.mjs';
 
 // SSR contract: locale='es'|'ar', page='home'|'compare'. No router, CSS imports,
@@ -28,17 +30,15 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
   useEffect(() => {
     setDraft(emptyPhoneDraft()); setErrors([]); setReviewing(false); setStatus(''); setStorageFailed(false);
     try {
-      const raw = window.sessionStorage.getItem(localizedDraftKey(locale));
-      if (!raw || raw.length > 100000) return;
-      const restored = restoreLocalizedDraft(JSON.parse(raw), locale);
-      if (restored) { setDraft(restored); setStatus(copy.restored); }
+      const restored=filmSelection(readMixedDraft(window.sessionStorage));
+      setDraft(restored); if(restored.rows.length)setStatus(copy.restored);
     } catch { setStorageFailed(true); }
   }, [locale]);
   useEffect(() => { if (errors.length) errorRef.current?.focus(); }, [errors]);
   function update(next) {
     setDraft(next); setErrors([]); setReviewing(false); setStatus('');
     try {
-      window.sessionStorage.setItem(localizedDraftKey(locale), JSON.stringify({ locale, draft: next }));
+      saveMixedDraft(window.sessionStorage,replaceFilms(readMixedDraft(window.sessionStorage),next,locale));
       setStorageFailed(false);
     } catch { setStorageFailed(true); }
   }
@@ -66,9 +66,9 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
   function continueInquiry() {
     if (!result.valid) { setErrors(result.errors); setReviewing(false); return; }
     let saved;
-    try { saved = saveLocalizedHandoff(window.sessionStorage, locale, result.state); } catch { saved = { ok: false }; }
+    try { saveMixedDraft(window.sessionStorage,replaceFilms(readMixedDraft(window.sessionStorage),draft,locale)); saved={ok:true}; } catch { saved = { ok: false }; }
     if (!saved.ok) { setStorageFailed(true); return; }
-    const href = localizedQuoteHref(locale, result.state.destination);
+    const href = mixedBriefPath(locale);
     reportAction('continue_inquiry');
     if (onNavigate) onNavigate(href); else window.location.assign(href);
   }
@@ -82,7 +82,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
     <nav className="phone-local-nav" aria-label={copy.navigation}>
       <a href={localizedPhonePath(locale)} aria-current={page === 'home' ? 'page' : undefined}>{copy.section}</a>
       <a href={localizedPhonePath(locale, 'compare')} aria-current={page === 'compare' ? 'page' : undefined}>{copy.compare}</a>
-      <a href="#phone-inquiry">{copy.prepare}</a>
+      <a href="#phone-inquiry">{copy.prepare}</a><a href={mixedBriefPath(locale)}>{copyFor(mixedCopy.title,locale)}</a>
     </nav>
     <main>
       <nav className="breadcrumbs" aria-label={copy.breadcrumb}><ol>

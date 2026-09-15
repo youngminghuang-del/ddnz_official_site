@@ -11,3 +11,33 @@
 .ms-brief .ms-inspection-options{border:0;border-top:1px solid #d7d0df;padding:20px 0;margin:0;display:flex;flex-wrap:wrap;gap:8px 22px}.ms-inspection-options legend{font-size:17px;font-weight:650;padding:0 0 12px}.ms-inspection-options label{display:flex;align-items:center;gap:10px;min-height:44px;font-size:16px}.ms-inspection-options input{width:20px;height:20px;accent-color:#733e92}
 @media(max-width:1000px){.ms-dimension-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}.ms-dimension-detail,.ms-stage-panel{gap:24px}.ms-stage-buttons{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:680px){.ms-dimension-detail,.ms-stage-panel{grid-template-columns:1fr}.ms-dimension-detail{padding:18px}.ms-dimension-detail img{height:230px}.ms-dimension-buttons button,.ms-stage-buttons button{padding:13px 10px;font-size:15px;gap:8px;min-height:68px}.ms-stage-panel img,.ms-stage-panel video{height:320px}.ms-dimension-detail h3,.ms-stage-panel h3{font-size:25px}.ms-supplier-product{gap:12px}.ms-supplier-product>img{width:82px;height:104px}.ms-supplier-product h4{font-size:18px}}
+
+.ms-verification-visual{min-height:320px;padding:28px;background:#fff;border:1px solid #ded4e8;border-radius:12px}.ms-verification-visual>p{color:#74428b;font-size:11px;font-weight:700;letter-spacing:.08em}.ms-verification-visual h4{font-size:24px;line-height:1.3;margin:16px 0 24px}.ms-verification-visual ol{list-style:none;padding:0;margin:0;display:grid;gap:15px}.ms-verification-visual li{display:flex;align-items:center;gap:14px;font-size:15px;line-height:1.5}.ms-verification-visual li span{display:grid;place-items:center;flex-shrink:0;width:36px;height:36px;background:#f2edf7;color:#74428b;border-radius:50%;font-weight:700}.ms-verification-visual+figcaption{padding-top:10px}
+
+.ms-product-specs{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:18px 0}.ms-product-specs dt{font-size:11px;color:var(--ms-muted);margin-bottom:5px}.ms-product-specs dd{font-size:14px;line-height:1.5;margin:0;font-weight:600}.ms-order-terms{padding:12px 0;border-top:1px solid var(--ms-line);line-height:1.6}.ms-source-date{display:block;color:var(--ms-muted);font-size:11px}.ms-hub #collection .ms-product-visual img{object-fit:contain;background:#fff}
+
+.ms-selection-group, #film-selection, #power-selection { scroll-margin-top: 110px; }
+.ms-selection-group + .ms-selection-group { margin-top: 48px; }
+.ms-selection-group > h3 { font-size: 1.5rem; margin-bottom: 24px; }
+.ms-category-detail { display: inline-block; margin: 12px 24px 0; }
+
+/* Hub: four initial choices per category; full buying details on demand. */
+.ms-hub .ms-product-grid{align-items:start}
+.ms-compact-product .ms-product-visual{height:270px;min-height:0;padding:16px}
+.ms-compact-product .ms-product-visual img{height:100%;width:100%;object-fit:contain}
+.ms-compact-product .ms-product-body{padding:24px}
+.ms-compact-product .ms-product-body h3{font-size:23px;line-height:1.25;margin:12px 0 18px}
+.ms-compact-product .ms-product-specs{margin:0 0 18px;gap:14px}
+.ms-compact-product .ms-card-price{font-size:22px;font-weight:700;margin:10px 0}
+.ms-compact-product .ms-card-price small{font-size:13px;font-weight:400}
+.ms-compact-product .ms-card-minimum{font-size:14px;line-height:1.6;margin:12px 0}
+.ms-compact-product .ms-card-description{font-size:15px}
+.ms-compact-product .ms-card-details{margin:16px 0 0;padding:14px 0;border-top:1px solid #ddd7e3}
+.ms-compact-product .ms-card-details p{font-size:14px;line-height:1.65}
+.ms-compact-product .ms-card-details a{display:block;margin:10px 0;font-size:14px}
+.ms-compact-product .ms-product-actions{margin-top:8px;padding-top:0}
+.ms-compact-product .ms-product-actions button{width:100%;justify-content:space-between}
+.ms-show-more{display:flex;align-items:center;gap:24px;margin:24px auto 0;padding:13px 22px;border:1px solid #784195;border-radius:8px;color:#70388f;background:#fff;font-weight:600;cursor:pointer}
+.ms-show-more:hover{background:#f4eff8}
+.ms-show-more:focus-visible{outline:3px solid #784195;outline-offset:4px}
+@media(max-width:600px){.ms-compact-product .ms-product-visual{height:240px}.ms-compact-product .ms-product-body{padding:20px}}

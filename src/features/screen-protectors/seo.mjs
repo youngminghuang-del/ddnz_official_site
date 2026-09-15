@@ -64,7 +64,7 @@ export const SCREEN_PROTECTOR_SEO = Object.freeze({
   },
   quote: {
     title: 'Review Your Screen Protector Sourcing Brief | DDNZ Global',
-    description: 'Review your screen protector models, quantities, Istanbul reference shipment and specification checks before adding contact details to your enquiry.',
+    description: 'Review phone cases, screen protectors, model quantities and specification checks. Add your actual destination and contact details to the combined enquiry.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },

@@ -1,9 +1,12 @@
+import { powerProducts } from './power-products.mjs';
+import { alibabaUpdates } from './alibaba-records.mjs';
 import { chainProduct } from './chain.mjs';
 const tri=(en,es,ar)=>({en,es,ar});
 const M='/images/product-showcase/mobile/';
 const Q='/mobile-sourcing-media/';
 export const observedDate='2026-09-13';
 export const mobileProducts=[
+ ...powerProducts,
  chainProduct,
  {id:'color-ring',code:'C01',group:'cases',type:'sample',image:Q+'case-colorways-ddnz-v1.webp',original:M+'family-phone-cases-v1.webp',
   name:tri('Colour frame · ring stand','Marco de color · soporte de anillo','إطار ملون وحامل حلقي'),
@@ -52,6 +55,7 @@ export const mobileProducts=[
   pack:tri('OPP bag · price tiers from 20, supplier MOQ 100 per colour. Logo / packaging from 500 pieces, extra charge.','Bolsa OPP · precio desde 20, mínimo del proveedor 100 por color. Logo / embalaje desde 500, con recargo.','كيس OPP · شرائح السعر من ٢٠ وحد المورد ١٠٠ لكل لون. الشعار والتغليف من ٥٠٠ مع تكلفة إضافية.'),
   check:tri('Confirm the per-colour minimum. Check patch width, closed case bottom, connector access and pull testing on the assembled set.','Confirme mínimo por color. Revise ancho, base cerrada de funda, acceso al conector y tracción del conjunto.','أكد الحد لكل لون. افحص عرض الرقعة وقاعدة الغطاء المغلقة ومنفذ الشحن واختبار الشد للطقم المركّب.')},
 ];
+for(const [id,update] of Object.entries(alibabaUpdates)){const existing=mobileProducts.find(p=>p.id===id);if(existing)Object.assign(existing,update);else mobileProducts.push(update);}
 export const productById=id=>mobileProducts.find(p=>p.id===id);
 export const copyFor=(map,locale='en')=>map?.[locale]??map?.en??'';
 export function referencePrice(product,qty){
