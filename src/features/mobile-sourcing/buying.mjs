@@ -1,18 +1,21 @@
-import { productById, referencePrice, copyFor } from './catalog.mjs';
+import { EN } from '../screen-protectors/locales/en.mjs';
+import { referencePrice, copyFor } from './catalog.mjs';
+import { productById, rowKey, minimumNote, mixedCopy } from './mixed-products.mjs';
 import { ui } from './locales.mjs';
 import { inspectionOptions } from './inspection-content.mjs';
 import { validEmail } from '../commercial-kitchen/data/inquiry.mjs';
 export const MOBILE_DRAFT_KEY='ddnz-mobile-buying-v1';
-export const emptyDraft=()=>({schemaVersion:2,inspectionChecks:[],rows:[],contact:{name:'',email:'',company:'',destination:'',channel:'0',packaging:'',notes:''},comparisonQty:'100',calculator:{id:'folio-bida',quantity:'100',currency:'CNY',rate:'1',freight:'',tax:'',pack:'',other:'',sale:''}});
+export const emptyDraft=()=>({schemaVersion:2,mixedOrderVersion:1,filmChecks:[],inspectionChecks:[],rows:[],contact:{name:'',email:'',company:'',destination:'',channel:'0',packaging:'',notes:''},comparisonQty:'100',calculator:{id:'folio-bida',quantity:'100',currency:'CNY',rate:'1',freight:'',tax:'',pack:'',other:'',sale:''}});
 export const cleanText=(s,n=1500)=>String(s??'').replace(/[\u0000-\u0008\u000b\u000c\u000e-\u001f\u007f]/g,'').slice(0,n);
 export function numericText(value){return String(value??'').trim().replace(/[٠-٩]/g,c=>String(c.charCodeAt(0)-0x660)).replace(/[۰-۹]/g,c=>String(c.charCodeAt(0)-0x6f0)).replace(/٫/g,'.').replace(/,/g,'.');}
 export function parseAmount(value){const s=numericText(value);return /^\d+(?:\.\d+)?$/.test(s)&&Number(s)<=1e9?Number(s):null;}
 export function parseQuantity(value){const s=numericText(value);return /^\d+$/.test(s)&&Number(s)>=1&&Number(s)<=1000000?Number(s):null;}
 export function normalizeDraft(raw){
  const d=emptyDraft();if(!raw||typeof raw!=='object'||Array.isArray(raw))return d;
+ d.filmChecks=Object.keys(EN.requests).filter(key=>Array.isArray(raw.filmChecks)&&raw.filmChecks.includes(key));
  d.inspectionChecks=inspectionOptions.filter(option=>Array.isArray(raw.inspectionChecks)&&raw.inspectionChecks.includes(option.id)).map(option=>option.id);
  const seen=new Set();
- d.rows=(Array.isArray(raw.rows)?raw.rows:[]).filter(r=>r&&productById(r.id)&&!seen.has(r.id)&&seen.add(r.id)).map(r=>({id:r.id,quantity:cleanText(r.quantity,16),model:cleanText(r.model,120),colours:cleanText(r.colours,300)}));
+ d.rows=(Array.isArray(raw.rows)?raw.rows:[]).filter(r=>r&&productById(r.id)&&!seen.has(rowKey(r))&&seen.add(rowKey(r))).slice(0,100).map(r=>({id:r.id,...(r.rowId?{rowId:cleanText(r.rowId,120)}:{}),quantity:cleanText(r.quantity,16),model:cleanText(r.model,120),colours:cleanText(r.colours,300)}));
  for(const key of Object.keys(d.contact)) if(raw.contact&&typeof raw.contact[key]==='string')d.contact[key]=cleanText(raw.contact[key],key==='email'?254:1500);
  if(!['0','1','2','3'].includes(d.contact.channel))d.contact.channel='0';
  if(typeof raw.comparisonQty==='string')d.comparisonQty=cleanText(raw.comparisonQty,16);
@@ -33,7 +36,7 @@ export function validateMobileDraft(draft){
  if(!d.contact.destination.trim())errors.destination='required';
  if(!d.rows.length&&!d.inspectionChecks.length)errors.rows='needStyle';
  if(!d.rows.length&&d.inspectionChecks.length&&!d.contact.notes.trim())errors.notes='required';
- for(const row of d.rows){if(!parseQuantity(row.quantity))errors[row.id+'-quantity']='invalid';if(productById(row.id).group==='cases'&&!row.model.trim())errors[row.id+'-model']='required';if(!row.colours.trim())errors[row.id+'-colours']='required';}
+ for(const row of d.rows){const p=productById(row.id),key=rowKey(row);if(!parseQuantity(row.quantity))errors[key+'-quantity']='invalid';if(['cases','film','power'].includes(p.group)&&!row.model.trim())errors[key+'-model']='required';if(p.group!=='film'&&!row.colours.trim())errors[key+'-colours']='required';}
  return errors;
 }
 export function buyingScenario(input){
@@ -50,13 +53,18 @@ export function buildMobilePayload(draft,locale='en'){
  const d=normalizeDraft(draft),c=key=>copyFor(ui[key],locale);
  const lines=['DDNZ — '+c('brief'),`${c('destination')}: ${d.contact.destination}`,`${c('company')}: ${d.contact.company||'—'}`,`${c('channel')}: ${copyFor(ui.channels[Number(d.contact.channel)],locale)}`,'',c('selected')+':'];
  for(const row of d.rows){const p=productById(row.id),q=parseQuantity(row.quantity),price=referencePrice(p,q);
-  lines.push(`- ${p.code} | ${copyFor(p.name,locale)} | ${c('quantity')}: ${q??'—'}`,`  ${c('model')}: ${row.model||'—'}; ${c('colours')}: ${row.colours||'—'}`);
+  lines.push(`- ${p.code} | ${copyFor(p.name,locale)} | ${c('quantity')}: ${q??'—'}`,`  ${p.group==='power'?copyFor({en:'Plug / output / cable length',es:'Enchufe / potencia / longitud',ar:'القابس / القدرة / طول الكابل'},locale):c('model')}: ${row.model||'—'}; ${c('colours')}: ${row.colours||'—'}`);
+  lines.push('  '+minimumNote(row,d.rows,locale));
+  if(p.group==='film')lines.push('  '+copyFor(mixedCopy.reference,locale));
+  if(p.sourceRecord)lines.push(`  Alibaba.com: ${p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
+  if(p.pack&&!p.assembly)lines.push('  '+copyFor(p.pack,locale));
   if(p.assembly)lines.push(`  ${c(p.assembly)}. ${copyFor(p.pack,locale)}`);
   if(p.url)lines.push(`  ${c('source')}: ${p.url}`,price===null?c('below'):`  ${c('reference')}: CNY ${price.toFixed(2)}`);
   else lines.push(c('onRequest'));
  }
+ if(d.filmChecks.length)lines.push('',...d.filmChecks.map(key=>'- '+EN.requests[key]));
  if(d.inspectionChecks.length)lines.push('',...inspectionOptions.filter(x=>d.inspectionChecks.includes(x.id)).map(x=>'- '+copyFor(x.label,locale)));
- lines.push('',`${c('packaging')}: ${d.contact.packaging||'—'}`,`${c('notes')}: ${d.contact.notes||'—'}`,'',c('scope'),c('quoteNote'));
+ lines.push('',copyFor(mixedCopy.scope,locale),`${c('packaging')}: ${d.contact.packaging||'—'}`,`${c('notes')}: ${d.contact.notes||'—'}`,'',c('scope'),...(d.rows.some(r=>productById(r.id).group!=='film')?[c('cases')+' / '+c('straps')+': '+c('quoteNote')]:[]));
  return {name:cleanText(d.contact.name,100),email:cleanText(d.contact.email,254),subject:`DDNZ — ${c('brief')} — ${d.rows.length}`,message:lines.join('\n')};
 }
 export function mobileJourneyAnalytics(locale,action){if(!['en','es','ar'].includes(locale)||!['add_style','remove_style','compare_quantity','calculate','review_brief','submit_success','submit_error','view_category','play_video'].includes(action))return null;return {event:'mobile_sourcing_journey',params:{content_group:'mobile_accessories',content_language:locale,journey_action:action}};}

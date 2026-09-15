@@ -1,0 +1,144 @@
+{
+  "checkedAt": "2026-09-16",
+  "cable": {
+    "id": "cable-jinen",
+    "code": "P04",
+    "group": "power",
+    "type": "listing",
+    "seller": "Dongguan JinEn Electronics Co., Ltd.",
+    "url": "https://www.alibaba.com/product-detail/3A-USB-Cable-USB-A-to_1601072739429.html",
+    "image": "/mobile-sourcing-media/alibaba-20260915/cable-jinen.jpg",
+    "tiers": [
+      [
+        10,
+        1.57
+      ]
+    ],
+    "addQty": 10,
+    "sourceRecord": {
+      "checkedAt": "2026-09-16",
+      "currency": "JPY",
+      "rawTiers": [
+        [
+          10,
+          36
+        ]
+      ],
+      "rateDate": "2026-09-11",
+      "rate": 0.04354950716845878,
+      "model": "Black / 1 m / USB-A to USB-C"
+    },
+    "name": {
+      "en": "1 m USB-A to USB-C cable",
+      "es": "Cable USB-A a USB-C de 1 m",
+      "ar": "كابل USB-A إلى USB-C بطول متر"
+    },
+    "detail": {
+      "en": "A simple charging and data cable with a PVC jacket. Black and white options are listed; this price is for the black 1 m USB-C version.",
+      "es": "Cable de carga y datos con cubierta PVC. Hay negro y blanco; este precio corresponde a USB-C negro de 1 m.",
+      "ar": "كابل للشحن والبيانات بغلاف PVC. يتوفر الأسود والأبيض؛ السعر للنسخة السوداء USB-C بطول متر."
+    },
+    "orderNote": {
+      "en": "10-piece minimum. Confirm availability for larger orders. Custom logo from 100; custom packaging from 2,000.",
+      "es": "Mínimo 10 unidades. Confirme disponibilidad para pedidos mayores. Logo desde 100; embalaje personalizado desde 2.000.",
+      "ar": "الحد الأدنى 10 قطع. أكد توفر الكميات الأكبر. الشعار من 100 والتغليف المخصص من 2000."
+    },
+    "pack": {
+      "en": "PE bag, bulk and colour-box options. Listed single pack: 12 × 4 × 2.5 cm, 28 g gross. Confirm the included packaging.",
+      "es": "Opciones: bolsa PE, granel y caja. Paquete indicado: 12 × 4 × 2,5 cm, 28 g brutos. Confirme el embalaje incluido.",
+      "ar": "خيارات كيس PE أو بالجملة أو علبة. العبوة المذكورة: 12 × 4 × 2.5 سم، 28 غرامًا إجماليًا. أكد التغليف المشمول."
+    },
+    "check": {
+      "en": "Supplier lists up to 3 A. Confirm current, data transfer and connector fit on the chosen sample; charging speed depends on the charger and phone.",
+      "es": "El proveedor indica hasta 3 A. Compruebe corriente, datos y ajuste con la muestra; la velocidad depende del cargador y móvil.",
+      "ar": "يذكر المورد حتى 3 أمبير. أكد التيار ونقل البيانات وملاءمة الموصلات بعينة؛ تعتمد السرعة على الشاحن والهاتف."
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Connectors",
+          "es": "Conectores",
+          "ar": "الموصلات"
+        },
+        "value": {
+          "en": "USB-A → USB-C",
+          "es": "USB-A → USB-C",
+          "ar": "USB-A → USB-C"
+        }
+      },
+      {
+        "label": {
+          "en": "Length / jacket",
+          "es": "Longitud / cubierta",
+          "ar": "الطول / الغلاف"
+        },
+        "value": {
+          "en": "1 m · PVC",
+          "es": "1 m · PVC",
+          "ar": "متر واحد · PVC"
+        }
+      }
+    ]
+  },
+  "patch": {
+    "addQty": 100,
+    "sample": 34.06,
+    "sourceRecord": {
+      "checkedAt": "2026-09-16",
+      "currency": "JPY",
+      "rawTiers": [
+        [
+          20,
+          133
+        ],
+        [
+          1000,
+          122
+        ],
+        [
+          10000,
+          82
+        ]
+      ],
+      "rateDate": "2026-09-11",
+      "rate": 0.04354950716845878,
+      "model": "TC-IP15-Plus-T001"
+    },
+    "orderNote": {
+      "en": "100 pieces per colour. Listed price tiers start at 20; confirm approval for smaller orders. Logo and custom packaging from 500.",
+      "es": "100 piezas por color. Las tarifas empiezan en 20; confirme pedidos menores. Logo y embalaje personalizado desde 500.",
+      "ar": "100 قطعة لكل لون. تبدأ شرائح السعر من 20؛ أكد قبول الطلبات الأصغر. الشعار والتغليف المخصص من 500."
+    },
+    "specs": [
+      {
+        "label": {
+          "en": "Material",
+          "es": "Material",
+          "ar": "الخامة"
+        },
+        "value": {
+          "en": "TPU",
+          "es": "TPU",
+          "ar": "TPU"
+        }
+      },
+      {
+        "label": {
+          "en": "Size",
+          "es": "Tamaño",
+          "ar": "المقاس"
+        },
+        "value": {
+          "en": "60 × 40 mm",
+          "es": "60 × 40 mm",
+          "ar": "60 × 40 مم"
+        }
+      }
+    ]
+  },
+  "notes": [
+    "Cable Type-C 1M Black JPY36, minimum10; variant dialog showed10 available, larger quantity to confirm. Micro JPY29 and iPhone JPY44 excluded.",
+    "Patch regular tiers retained; temporary10% promotion excluded. Attribute MOQ100/colour takes precedence over tier starting20.",
+    "Two existing sample cases added to hub without invented prices or minimums."
+  ]
+}

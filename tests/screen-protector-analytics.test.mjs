@@ -1,3 +1,5 @@
+import { MOBILE_DRAFT_KEY, emptyDraft } from '../src/features/mobile-sourcing/buying.mjs';
+import { mixedBriefPath } from '../src/features/mobile-sourcing/mixed-storage.mjs';
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { mountScreenProtectors } from '../src/features/screen-protectors/controller.mjs';
@@ -85,8 +87,10 @@ class Control extends EventTarget {
   replaceChildren() { this.children = []; }
 }
 
-function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home } = {}) {
+function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home, savedCalculator = true, savedRequest = false } = {}) {
   const storage = new Map(), actions = [], navigations = [], status = { failHandoff: false, downloads: 0 };
+  if(savedCalculator)storage.set(DRAFT_KEY,JSON.stringify({rows:[{product:'001',qty:500,model:'Test model'}]}));
+  if(savedRequest)storage.set(MOBILE_DRAFT_KEY,JSON.stringify({...emptyDraft(),rows:[{id:'film-001',quantity:'500',model:'Test model',colours:''}]}));
   const replaceGlobal = (key, value) => {
     const descriptor = Object.getOwnPropertyDescriptor(globalThis, key);
     Object.defineProperty(globalThis, key, { configurable: true, writable: true, value });
@@ -97,7 +101,7 @@ function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home } =
   replaceGlobal('sessionStorage', {
     getItem: key => storage.get(key) ?? null,
     setItem(key, value) {
-      if (status.failHandoff && key === HANDOFF_KEY) throw new Error('Storage unavailable');
+      if (status.failHandoff && key === MOBILE_DRAFT_KEY) throw new Error('Storage unavailable');
       storage.set(key, value);
     },
   });
@@ -125,7 +129,7 @@ function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home } =
     return anchor;
   };
   link(ROUTES.quote, { id: 'quote-entry' });
-  link(INQUIRY_PATH, { id: 'continue-inquiry' });
+  link(mixedBriefPath('en'), { id: 'continue-inquiry' });
   const row = new Control('div', { dataset: { row: '0' } }, find('#sku-rows'));
   for (const field of ['product', 'model', 'qty']) new Control('input', { dataset: { field } }, row);
   new Control('p', { className: 'row-summary' }, row);
@@ -224,42 +228,36 @@ test('configuration and calculator buttons report actions without counting an al
     'calculator_change', 'calculator_change', 'calculator_change']);
 });
 
-test('brief actions are non-lead events and inquiry continuation requires a valid saved handoff', async t => {
-  const f = fixture(t);
-  f.fire(f.find('#quote-entry'));
-  f.fire(f.find('#copy-quote'));
-  await Promise.resolve();
-  f.fire(f.find('#download-quote'));
-  f.status.failHandoff = true;
-  const before = f.navigations.length;
-  f.fire(f.find('#continue-inquiry'));
-  assert.equal(f.navigations.length, before);
-  assert.equal(f.storage.has(HANDOFF_KEY), false);
-  f.status.failHandoff = false;
-  f.fire(f.find('#continue-inquiry'));
-  assert.equal(f.storage.has(HANDOFF_KEY), true);
-  assert.match(f.navigations.at(-1), /^\/get-a-quote\//);
-  assert.deepEqual(f.actionNames(), ['create_brief', 'copy_brief', 'download_brief', 'continue_inquiry']);
-  assert.equal(f.status.downloads, 1);
-  assert.ok(f.actions.every(item => item.event === 'screen_protector_journey'));
+test('brief actions remain non-lead events and use the combined request without an Istanbul handoff', async t => {
+ const f=fixture(t);
+ f.fire(f.find('#quote-entry'));
+ f.fire(f.find('#copy-quote')); await Promise.resolve();
+ f.fire(f.find('#download-quote'));
+ f.fire(f.find('#continue-inquiry'));
+ assert.equal(f.storage.has(HANDOFF_KEY),false);
+ assert.ok(f.storage.has(MOBILE_DRAFT_KEY));
+ assert.equal(f.navigations.at(-1),mixedBriefPath('en'));
+ assert.deepEqual(f.actionNames(),['create_brief','copy_brief','download_brief','continue_inquiry']);
+ assert.doesNotMatch(JSON.parse(f.storage.get(MOBILE_DRAFT_KEY)).contact.destination,/Istanbul/);
+ assert.equal(f.status.downloads,1);
 });
 
-test('invalid plans and unsuccessful clipboard operations do not emit brief success actions', async t => {
-  const f = fixture(t);
-  navigator.clipboard.writeText = async () => { throw new Error('Clipboard unavailable'); };
-  f.fire(f.find('#copy-quote'));
-  await Promise.resolve();
-  assert.deepEqual(f.actions, []);
-  f.edit(f.find('[data-field="qty"]'), '1');
-  const before = f.actions.length;
-  f.fire(f.find('#quote-entry'));
-  f.fire(f.find('#copy-quote'));
-  f.fire(f.find('#download-quote'));
-  f.fire(f.find('#continue-inquiry'));
-  assert.equal(f.actions.length, before);
-  assert.equal(f.navigations.length, 0);
-  assert.equal(f.storage.has(HANDOFF_KEY), false);
-  assert.equal(f.status.downloads, 0);
+test('invalid calculator cannot enter the request; empty request offers editing without a success event',async t=>{
+ const f=fixture(t);
+ f.edit(f.find('[data-field="qty"]'),'1');
+ const before=f.actions.length;
+ f.fire(f.find('#quote-entry')); f.fire(f.find('#copy-quote')); f.fire(f.find('#download-quote'));
+ assert.equal(f.actions.length,before); assert.equal(f.navigations.length,0); assert.equal(f.storage.has(HANDOFF_KEY),false);
+ f.fire(f.find('#continue-inquiry'));
+ assert.equal(f.navigations.at(-1),mixedBriefPath('en'));
+ assert.equal(f.actionNames().at(-1),'continue_inquiry'); assert.equal(f.status.downloads,0);
+});
+
+test('storage failure prevents explicit calculator import and does not overwrite the saved request',t=>{
+ const f=fixture(t); f.status.failHandoff=true;
+ f.fire(f.find('#quote-entry'));
+ assert.equal(f.storage.has(MOBILE_DRAFT_KEY),false); assert.equal(f.navigations.length,0);
+ assert.match(f.find('#draft-state').textContent,/Unable to save/);
 });
 
 test('modified, download and external links preserve browser behavior without journey dispatch', t => {
@@ -282,12 +280,13 @@ test('two-argument callers retain calculation and navigation without an analytic
   f.fire(f.find('#continue-inquiry'));
   assert.equal(f.navigations.length, 2);
   assert.equal(JSON.parse(f.storage.get(DRAFT_KEY)).rows[0].model, 'Private phone model');
-  assert.equal(f.storage.has(HANDOFF_KEY), true);
+  assert.equal(f.storage.has(MOBILE_DRAFT_KEY), true);
+  assert.equal(f.storage.has(HANDOFF_KEY), false);
   assert.deepEqual(f.actions, []);
 });
 
 test('destroy removes direct and delegated listeners and suppresses pending clipboard completion', async t => {
-  const f = fixture(t);
+  const f = fixture(t,{savedRequest:true});
   let finishCopy;
   navigator.clipboard.writeText = () => new Promise(resolve => { finishCopy = resolve; });
   f.fire(f.find('#copy-quote'));
@@ -303,3 +302,5 @@ test('destroy removes direct and delegated listeners and suppresses pending clip
   assert.deepEqual(f.actions, []);
   assert.deepEqual(f.navigations, []);
 });
+
+test('fresh calculator starts empty and cannot create an example enquiry',t=>{const f=fixture(t,{savedCalculator:false});assert.deepEqual(JSON.parse(f.storage.get(DRAFT_KEY)).rows,[]);f.fire(f.find('#quote-entry'));assert.equal(f.navigations.length,0);assert.match(f.find('#quote-text').value,/request is empty/);});

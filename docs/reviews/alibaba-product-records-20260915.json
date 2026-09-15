@@ -1,0 +1,402 @@
+{
+  "observedAt": "2026-09-15",
+  "method": "Live Alibaba.com browser product pages; JP locale and JPY prices. Not search snippets.",
+  "rate": {
+    "date": "2026-09-11",
+    "cnyPerJpy": 0.04354950716845878,
+    "source": "https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html",
+    "note": "Existing project reference, not a live settlement rate. Unit prices rounded to cents before multiplying quantities."
+  },
+  "excluded": "Temporary coupons, platform shipping subsidies, unverified performance or certification claims. Chain uses the visible regular tiers, not 50% promotion. No supplier was contacted.",
+  "records": {
+    "silicone-jmetec": {
+      "rawTiers": [
+        [
+          100,
+          268
+        ],
+        [
+          500,
+          251
+        ],
+        [
+          3000,
+          232
+        ],
+        [
+          8000,
+          215
+        ]
+      ],
+      "file": "silicone-jmetec",
+      "model": "JM-MF-1",
+      "custom": "Supplier FAQ: 200 pieces total; 26 per model/colour. Product-specific quote required.",
+      "url": "https://www.alibaba.com/product-detail/Jmetec-Macaron-Inner-Microfiber-Skin-feeling_1601457880520.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H91053f555a1d4cb0b9ab8ad25a6a6d91K.jpg_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          100,
+          11.67
+        ],
+        [
+          500,
+          10.93
+        ],
+        [
+          3000,
+          10.1
+        ],
+        [
+          8000,
+          9.36
+        ]
+      ]
+    },
+    "folio-bida": {
+      "rawTiers": [
+        [
+          5,
+          438
+        ],
+        [
+          100,
+          423
+        ],
+        [
+          500,
+          407
+        ],
+        [
+          1000,
+          391
+        ]
+      ],
+      "file": "folio-bida",
+      "model": null,
+      "custom": "Graphics and packaging: 500 pieces.",
+      "url": "https://www.alibaba.com/product-detail/High-Quality-Business-Retro-Skin-Feel_1601492636282.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/He598b56f61974390ac8ccc44d45e2595U.jpg_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          5,
+          19.07
+        ],
+        [
+          100,
+          18.42
+        ],
+        [
+          500,
+          17.72
+        ],
+        [
+          1000,
+          17.03
+        ]
+      ]
+    },
+    "rope-bintu": {
+      "rawTiers": [
+        [
+          50,
+          229
+        ],
+        [
+          500,
+          224
+        ],
+        [
+          2000,
+          216
+        ]
+      ],
+      "file": "rope-bintu",
+      "model": "W25491",
+      "custom": "OEM/ODM offered; custom minimum not published.",
+      "url": "https://www.alibaba.com/product-detail/Factory-Wholesale-8mm-Polyester-Mobile-Phone_1601263295545.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H7c8151bd6a20497e929b64dbdf6f4bc6G.jpg_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          50,
+          9.97
+        ],
+        [
+          500,
+          9.76
+        ],
+        [
+          2000,
+          9.41
+        ]
+      ]
+    },
+    "chain-trendcomm": {
+      "rawTiers": [
+        [
+          50,
+          884
+        ],
+        [
+          500,
+          837
+        ],
+        [
+          5000,
+          805
+        ],
+        [
+          50000,
+          759
+        ]
+      ],
+      "file": "chain-trendcomm",
+      "model": "TC-ip17-Pro-C013-13",
+      "rawSample": 1563,
+      "promotionalTiers": [
+        [
+          50,
+          441
+        ],
+        [
+          500,
+          418
+        ],
+        [
+          5000,
+          402
+        ],
+        [
+          50000,
+          379
+        ]
+      ],
+      "custom": "Logo, graphics, packaging: 500 pieces.",
+      "url": "https://www.alibaba.com/product-detail/2026-New-Design-Flower-Metal-Phone_1601587314644.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H4883dd997fd943d3821f2cb2baec3f49H.jpg_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          50,
+          38.5
+        ],
+        [
+          500,
+          36.45
+        ],
+        [
+          5000,
+          35.06
+        ],
+        [
+          50000,
+          33.05
+        ]
+      ]
+    },
+    "fabric-feishile": {
+      "rawTiers": [
+        [
+          10,
+          313
+        ],
+        [
+          200,
+          282
+        ],
+        [
+          1000,
+          266
+        ],
+        [
+          3000,
+          251
+        ]
+      ],
+      "rawSample": 469,
+      "file": "fabric-feishile",
+      "model": "for iPhone",
+      "custom": "Logo: 1,000 pieces; listed surcharge from JPY 79/piece.",
+      "url": "https://www.alibaba.com/product-detail/For-iPhone-17-Pro-Max-Case_1601726304818.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/Hdcf5fab7a7f542508a925fb591370399r.png_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          10,
+          13.63
+        ],
+        [
+          200,
+          12.28
+        ],
+        [
+          1000,
+          11.58
+        ],
+        [
+          3000,
+          10.93
+        ]
+      ]
+    },
+    "mesh-longan": {
+      "rawTiers": [
+        [
+          5,
+          294
+        ],
+        [
+          300,
+          282
+        ],
+        [
+          3000,
+          263
+        ]
+      ],
+      "file": "mesh-longan",
+      "model": "26060417",
+      "custom": "Custom minimum not published.",
+      "url": "https://www.alibaba.com/product-detail/Wholesale-Mesh-Hollow-Perforated-Heat-Dissipation_1601817751114.html",
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H5d33d2979f17440ebebaf112243301f3a.jpg_960x960q80.jpg",
+      "cnyTiers": [
+        [
+          5,
+          12.8
+        ],
+        [
+          300,
+          12.28
+        ],
+        [
+          3000,
+          11.45
+        ]
+      ]
+    },
+    "clear-trendcomm": {
+      "url": "https://www.alibaba.com/product-detail/2025-Most-Sell-Product-Wholesale-Newest_1601314270362.html",
+      "rawTiers": [
+        [
+          10,
+          243
+        ],
+        [
+          500,
+          227
+        ],
+        [
+          5000,
+          202
+        ],
+        [
+          80000,
+          79
+        ]
+      ],
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H96fc8b7c13264e78850132888666f5c1K.jpg_960x960q80.jpg",
+      "orderNote": "Price tiers start at 10 pieces, but the supplier states 20 per model. Plan on 20 per model; logo and custom packaging start at 500.",
+      "check": "Confirm the back-panel material and model fit on a sample. No tested drop height or yellowing resistance is stated here.",
+      "sampleJPY": 782
+    },
+    "wrist-zimi": {
+      "url": "https://www.alibaba.com/product-detail/Adjustable-Keychain-Lanyard-Portable-Polyester-Wrist_1600753024298.html",
+      "rawTiers": [
+        [
+          100,
+          118
+        ],
+        [
+          500,
+          113
+        ],
+        [
+          5000,
+          107
+        ],
+        [
+          10000,
+          86
+        ]
+      ],
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H2c451b0d93a84f5fb9a48360a29cca11S.png_960x960q80.jpg",
+      "orderNote": "Stock price starts at 100 pieces. Logo printing is listed from 50; custom packaging from 1,000. Confirm the quantity for your chosen colour.",
+      "check": "The title says polyester; the description says nylon and another field says stone. Confirm the fibre, finished length and hook on a sample.",
+      "sampleJPY": 782,
+      "excludedPromoJPY": [
+        105,
+        101,
+        96,
+        77
+      ]
+    },
+    "beads-zimi": {
+      "url": "https://www.alibaba.com/product-detail/Top-Sell-Color-Different-Material-Acrylic_1600838166685.html",
+      "rawTiers": [
+        [
+          50,
+          235
+        ],
+        [
+          300,
+          188
+        ],
+        [
+          1000,
+          180
+        ],
+        [
+          2000,
+          126
+        ]
+      ],
+      "imageUrl": "https://s.alicdn.com/@sc04/kf/H707da45d907a490cbbd685788a4f8c6dx.png_960x960q80.jpg",
+      "orderNote": "Published prices start at 50 pieces. A separate field says 10; smaller orders need confirmation. Logo from 100, custom packaging from 5,000.",
+      "check": "The title says acrylic while attributes say stone. Confirm bead material, cord and knots before ordering. No load rating is provided.",
+      "sampleJPY": 782,
+      "excludedPromoJPY": [
+        212,
+        169,
+        161,
+        113
+      ]
+    },
+    "cable-orphie": {
+      "url": "https://www.alibaba.it/product-detail/1M-2M-60W-Braided-Charger-Cable_1600952063877.html",
+      "rawTiers": [
+        [
+          2,
+          61
+        ]
+      ],
+      "selectedSpecification": "Grey / 1m / USB-C to USB-C",
+      "orderNote": "2-piece minimum for the grey 1 m version. Other lengths and colours need their own quote. Logo from 500; custom length from 300.",
+      "check": "Confirm charging output, data speed and connector fit on a sample. The page mixes model numbers and weight fields; request the specification for the chosen cable.",
+      "otherVariantJPY": {
+        "grey2m": 104
+      }
+    },
+    "pd30-wzk": {
+      "url": "https://www.alibaba.com/product-detail/Wholesale-30W-12W-Fast-Charger-Adapter_1601020238693.html",
+      "rawTiers": [
+        [
+          50,
+          318
+        ]
+      ],
+      "selectedSpecification": "11-A+C / upgraded 30W / EU or US",
+      "orderNote": "50-piece minimum. Specify 30W, plug and colour on each line. The cheaper 12W version is a different specification; custom logo and packing need a quote.",
+      "check": "Confirm the 30W output profile and power split with both ports in use. Ask for test documents matching the exact model and destination.",
+      "excluded12wJPY": 169
+    },
+    "gan65-toye": {
+      "url": "https://www.alibaba.com/product-detail/Extra-Slim-USB-PD-65W-GaN_1601005689209.html",
+      "rawTiers": [
+        [
+          1000,
+          1507
+        ]
+      ],
+      "selectedSpecification": "TY2253",
+      "orderNote": "1,000-piece minimum; logo and custom packaging also start at 1,000. EU, US, UK and AU plugs are listed. Confirm price for the chosen plug and pack.",
+      "check": "Input listed as 100–240V, 50/60Hz. Confirm simultaneous-port output, temperature rise and documents for the selected plug; 65W and 18W are not additive."
+    }
+  }
+}
