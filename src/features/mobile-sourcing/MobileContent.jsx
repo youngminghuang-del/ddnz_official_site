@@ -38,10 +38,10 @@ function ProductCard({p,locale,selected,onSelect}){
   <div className="ms-product-body"><div className="ms-product-meta"><span>{p.code}</span><span>{c(p.type==='sample'?'style':p.assembly||'listing')}</span></div>
   <h3>{copyFor(p.name,locale)}</h3><p>{copyFor(p.detail,locale)}</p>{p.specs&&<dl className="ms-product-specs">{p.specs.map((spec,i)=><div key={i}><dt>{copyFor(spec.label,locale)}</dt><dd>{copyFor(spec.value,locale)}</dd></div>)}</dl>}
   {p.tiers?<div className="ms-tier-block"><p>{c('reference')}</p><dl>{p.tiers.map(([min,price],i)=><div key={min}><dt>{formatNumber(min,locale)}{i<p.tiers.length-1?`–${formatNumber(p.tiers[i+1][0]-1,locale)}`:'+'}</dt><dd>{money(price,locale)}</dd></div>)}</dl>
-   {p.orderNote&&<p className="ms-order-terms">{copyFor(p.orderNote,locale)}</p>}<p className="ms-seller" dir="auto">{p.seller}</p><p>{copyFor(p.pack,locale)}</p>{p.sample&&<p>{c('sample')}: {money(p.sample,locale)}</p>}</div>:<p className="ms-on-request">{c('onRequest')}</p>}
+   {p.orderNote&&<p className="ms-order-terms">{copyFor(p.orderNote,locale)}</p>}<p>{copyFor(p.pack,locale)}</p>{p.sample&&<p>{c('sample')}: {money(p.sample,locale)}</p>}</div>:<p className="ms-on-request">{c('onRequest')}</p>}
   <details><summary>{c('checks')}</summary><p>{copyFor(p.check,locale)}</p></details>
   <div className="ms-product-actions"><button type="button" className={selected?'ms-added':'ms-button'} onClick={()=>onSelect(p.id)} aria-pressed={selected}>{c(selected?'selected':'select')}<span aria-hidden="true">{selected?'✓':'+'}</span></button>
-  <div>{p.sourceRecord&&<small className="ms-source-date">Alibaba.com · {p.sourceRecord.checkedAt}</small>}{p.url&&<a href={p.url} target="_blank" rel="noopener noreferrer">{c('source')} ↗</a>}{p.original&&<a href={p.original} target="_blank" rel="noopener noreferrer">{c('original')} ↗</a>}</div></div></div>
+  <div>{p.sourceRecord&&<small className="ms-source-date">{copyFor({en:'Reference checked',es:'Referencia revisada',ar:'تاريخ مراجعة المرجع'},locale)} · {p.sourceRecord.checkedAt}</small>}{p.original&&<a href={p.original} target="_blank" rel="noopener noreferrer">{c('original')} ↗</a>}</div></div></div>
  </article>;
 }
 
@@ -60,8 +60,8 @@ function CompactProductCard({p,locale,selected,onSelect}){
  {p.tiers&&<div className="ms-tier-block"><p>{c('reference')}</p><dl>{p.tiers.map(([min,price])=><div key={min}><dt>{formatNumber(min,locale)}+</dt><dd>{money(price,locale)}</dd></div>)}</dl></div>}
  {p.pack&&<p>{copyFor(p.pack,locale)}</p>}{p.sample&&<p>{c('sample')}: {money(p.sample,locale)}</p>}{p.check&&<p>{copyFor(p.check,locale)}</p>}
  {p.group==='film'&&<p>{copyFor(mixedCopy.reference,locale)}</p>}
- {p.seller&&<p className="ms-seller">{p.seller}</p>}{p.sourceRecord&&<small className="ms-source-date">Alibaba.com · {p.sourceRecord.checkedAt}</small>}
- {p.url&&<a href={p.url} target="_blank" rel="noopener noreferrer">{p.group==='film'?text('Specifications & packing','Especificaciones y embalaje','المواصفات والتغليف'):c('source')} ↗</a>}
+ {p.sourceRecord&&<small className="ms-source-date">{copyFor({en:'Reference checked',es:'Referencia revisada',ar:'تاريخ مراجعة المرجع'},locale)} · {p.sourceRecord.checkedAt}</small>}
+ {p.group==='film'&&p.url&&<a href={p.url} target="_blank" rel="noopener noreferrer">{p.group==='film'?text('Specifications & packing','Especificaciones y embalaje','المواصفات والتغليف'):c('source')} ↗</a>}
  {p.original&&<a href={p.original} target="_blank" rel="noopener noreferrer">{c('original')} ↗</a>}</details>
  <div className="ms-product-actions"><button type="button" className={selected?'ms-added':'ms-button'} onClick={()=>onSelect(p.id)} aria-pressed={selected}>{c(selected?'selected':'select')}<span aria-hidden="true">{selected?'✓':'+'}</span></button></div></div></article>;
 }
@@ -73,7 +73,7 @@ function ProductSelection({products,locale,draft,onSelect}){
 function QuoteTable({products,locale,qty,onQuantity}){
  const c=tr(locale),q=parseQuantity(qty);
  return <section className="ms-section" id="price-comparison"><div className="ms-section-head"><div><p className="ms-eyebrow">CNY / {formatNumber(products.length,locale)}</p><h2>{c('comparison')}</h2><p>{c('compareIntro')}</p></div><Field id="ms-comparison-qty" label={c('quantity')} value={qty} onChange={onQuantity} inputMode="numeric" error={q===null?c('invalid'):undefined}/></div>
-  <div className="ms-table-scroll" tabIndex="0" role="region" aria-label={c('comparison')}><table><thead><tr><th scope="col">{c('product')}</th><th scope="col">{c('min')}</th><th scope="col">{c('unit')}</th><th scope="col">{c('total')}</th></tr></thead><tbody>{products.map(p=>{const price=referencePrice(p,q);return <tr key={p.id}><th scope="row"><a href={link(p.group,locale)+'#style-'+p.id}>{copyFor(p.name,locale)}</a><small>{p.seller}</small></th><td>{formatNumber(p.tiers[0][0],locale)}</td><td>{price===null?c('below'):money(price,locale)}</td><td>{price===null?'—':money(price*q,locale)}</td></tr>})}</tbody></table></div><p className="ms-small">{c('note')}</p><p className="ms-small">{c('quoteNote')} <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel="noopener noreferrer">{c('fxSource')} ↗</a></p></section>;
+  <div className="ms-table-scroll" tabIndex="0" role="region" aria-label={c('comparison')}><table><thead><tr><th scope="col">{c('product')}</th><th scope="col">{c('min')}</th><th scope="col">{c('unit')}</th><th scope="col">{c('total')}</th></tr></thead><tbody>{products.map(p=>{const price=referencePrice(p,q);return <tr key={p.id}><th scope="row"><a href={link(p.group,locale)+'#style-'+p.id}>{copyFor(p.name,locale)}</a></th><td>{formatNumber(p.tiers[0][0],locale)}</td><td>{price===null?c('below'):money(price,locale)}</td><td>{price===null?'—':money(price*q,locale)}</td></tr>})}</tbody></table></div><p className="ms-small">{c('note')}</p><p className="ms-small">{c('quoteNote')} <a href="https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html" target="_blank" rel="noopener noreferrer">{c('fxSource')} ↗</a></p></section>;
 }
 function Calculator({locale,input,onChange,onAction}){
  const c=tr(locale),result=buyingScenario(input),products=mobileProducts.filter(p=>p.tiers);
