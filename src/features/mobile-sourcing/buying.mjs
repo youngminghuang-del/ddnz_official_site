@@ -56,10 +56,10 @@ export function buildMobilePayload(draft,locale='en'){
   lines.push(`- ${p.code} | ${copyFor(p.name,locale)} | ${c('quantity')}: ${q??'—'}`,`  ${p.group==='power'?copyFor({en:'Plug / output / cable length',es:'Enchufe / potencia / longitud',ar:'القابس / القدرة / طول الكابل'},locale):c('model')}: ${row.model||'—'}; ${c('colours')}: ${row.colours||'—'}`);
   lines.push('  '+minimumNote(row,d.rows,locale));
   if(p.group==='film')lines.push('  '+copyFor(mixedCopy.reference,locale));
-  if(p.sourceRecord)lines.push(`  Alibaba.com: ${p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
+  if(p.sourceRecord)lines.push(`  Reference checked: ${p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
   if(p.pack&&!p.assembly)lines.push('  '+copyFor(p.pack,locale));
   if(p.assembly)lines.push(`  ${c(p.assembly)}. ${copyFor(p.pack,locale)}`);
-  if(p.url)lines.push(`  ${c('source')}: ${p.url}`,price===null?c('below'):`  ${c('reference')}: CNY ${price.toFixed(2)}`);
+  if(p.tiers)lines.push(price===null?c('below'):`  ${c('reference')}: CNY ${price.toFixed(2)}`);
   else lines.push(c('onRequest'));
  }
  if(d.filmChecks.length)lines.push('',...d.filmChecks.map(key=>'- '+EN.requests[key]));
