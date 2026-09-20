@@ -1,3 +1,4 @@
+import type { Language } from '../i18n/translations';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -13,7 +14,7 @@ interface SEOProps {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
-  contentLanguage?: 'en' | 'es' | 'ar';
+  contentLanguage?: Language;
 }
 
 export default function SEO({

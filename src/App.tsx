@@ -12,6 +12,7 @@ import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navi
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
+const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
 const ShippingMiddleEast = lazy(() => import('./pages/shipping-from-china-to-middle-east'));
 const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-central-asia'));
@@ -368,6 +369,7 @@ export default function App() {
           <GlobalConversionTracker />
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
+            {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => ['sea-freight', 'lcl-shipping-from-china', 'dangerous-goods-shipping-from-china'].map(slug => <Route key={prefix + slug} path={prefix + '/services/' + slug} element={<FreightReleasePage/>}/>))}
             {/* English Default / Fallback Hub */}
             <Route path="/" element={<Home />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />

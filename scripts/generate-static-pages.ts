@@ -1,3 +1,5 @@
+import FreightReleaseContent, { freightReleasePaths, freightReleaseMetadata } from '../src/features/freight/FreightReleaseContent';
+import type { Language } from '../src/i18n/translations';
 import { kitchenStructuredData } from '../src/features/commercial-kitchen/data/discovery.mjs';
 import kitchenProducts from '../src/features/commercial-kitchen/data/products.mjs';
 import kitchenLaunch from '../src/features/commercial-kitchen/data/launch.mjs';
@@ -767,7 +769,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = hasProductTranslation(`/${relPath}`, 'en') ? productContentLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = freightReleasePaths.includes(relPath) ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] : hasProductTranslation(`/${relPath}`, 'en') ? productContentLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1402,6 +1404,12 @@ function injectStaticRouteContent(
   post?: Record<string, any>,
 ) {
   let staticBody = '';
+  if (freightReleasePaths.includes(relPath)) {
+    const language = (lang === 'zh-cn' ? 'zh' : lang) as Language;
+    const body = renderToStaticMarkup(createElement(FreightReleaseContent, {path: relPath, language}));
+    const css = fs.readFileSync(path.resolve('src/features/freight/freight.css'), 'utf8');
+    return htmlContent.replace('</head>', '<style>'+css+'</style></head>').replace('<div id="root"></div>', '<div id="root" dir="'+(lang === 'ar' ? 'rtl' : 'ltr')+'">'+body+'</div>');
+  }
   const buyerGuide = buyerGuideForPath(`/${relPath}`);
 
   const mobilePage = mobilePageForPath(`/${relPath}`);
@@ -1581,7 +1589,7 @@ function run() {
     { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
-    { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly' },
+    ...freightReleasePaths.map(path => ({path, priority: '0.9', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']})),
     { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/warehouse-services', priority: '0.9', changefreq: 'weekly' },
@@ -1646,6 +1654,7 @@ function run() {
     (entry.languages || languages).forEach((lang) => {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
+      if(freightReleasePaths.includes(entry.path)) {const meta=freightReleaseMetadata(entry.path,(lang === 'zh-cn' ? 'zh' : lang) as Language);seo={title:meta.title,desc:meta.desc,keywords:''};}
       const mobilePage = mobilePageForPath(`/${entry.path}`);
       if (mobilePage) {const meta=mobileMetadata(mobilePage.id,lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (['sourcing/outdoor-products-from-china','portable-power/selection-guide'].includes(entry.path)) {const meta=entry.path==='portable-power/selection-guide'?powerGuideMetadata(lang):outdoorMetadata(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}

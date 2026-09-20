@@ -55,3 +55,6 @@ jobs:
 
       - name: Audit generated SEO output
         run: node scripts/audit-seo-output.mjs
+
+      - name: Validate freight pages in all eight languages
+        run: node --import tsx scripts/test-freight-eight-languages.ts
