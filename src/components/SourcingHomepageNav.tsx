@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, Globe2, Menu, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
+import { freightNavCopy } from '../features/freight/freightNavCopy';
 import ProductLanguageNotice from './ProductLanguageNotice';
 import { isEnglishProductPath, navigationPath, navigationPrefixes, navigationState, splitNavigationPath } from '../lib/productLanguageRouting';
 import { appendAttribution } from '../lib/attribution';
@@ -51,11 +52,11 @@ const navLabels: Record<Language, {
   openMenu: string;
   closeMenu: string;
 }> = {
-  en: { home: 'Home', products: 'Products', services: 'Sourcing Services', markets: 'Freight destinations', process: 'Process', insights: 'Insights', start: 'Start a sourcing brief', kitchen: 'Commercial kitchen', refrigeration: 'Refrigeration equipment', audio: 'Audio & speakers', mobile: 'Mobile accessories', outdoor: 'Outdoor products', sourcing: 'Supplier search & comparison', qc: 'Inspection & quality control', consolidation: 'Consolidation & export', middleEast: 'Middle East', africa: 'West Africa', latinAmerica: 'Latin America', openMenu: 'Open menu', closeMenu: 'Close menu' },
-  zh: { home: '首页', products: '产品品类', services: '采购服务', markets: '货运目的地', process: '服务流程', insights: '行业洞察', start: '提交采购需求', kitchen: '商用餐厨设备', refrigeration: '商用制冷设备', audio: '音响设备', mobile: '手机配件', outdoor: '户外用品', sourcing: '供应商搜索与比价', qc: '验货与质量控制', consolidation: '集货与出口交付', middleEast: '中东', africa: '西非', latinAmerica: '中南美', openMenu: '打开菜单', closeMenu: '关闭菜单' },
+  en: { home: 'Home', products: 'Products', services: 'Sourcing Services', markets: 'Freight', process: 'Process', insights: 'Insights', start: 'Start a sourcing brief', kitchen: 'Commercial kitchen', refrigeration: 'Refrigeration equipment', audio: 'Audio & speakers', mobile: 'Mobile accessories', outdoor: 'Outdoor products', sourcing: 'Supplier search & comparison', qc: 'Inspection & quality control', consolidation: 'Consolidation & export', middleEast: 'Middle East', africa: 'West Africa', latinAmerica: 'Latin America', openMenu: 'Open menu', closeMenu: 'Close menu' },
+  zh: { home: '首页', products: '产品品类', services: '采购服务', markets: '国际货运', process: '服务流程', insights: '行业洞察', start: '提交采购需求', kitchen: '商用餐厨设备', refrigeration: '商用制冷设备', audio: '音响设备', mobile: '手机配件', outdoor: '户外用品', sourcing: '供应商搜索与比价', qc: '验货与质量控制', consolidation: '集货与出口交付', middleEast: '中东', africa: '西非', latinAmerica: '中南美', openMenu: '打开菜单', closeMenu: '关闭菜单' },
   ru: { home: 'Главная', products: 'Товары', services: 'Закупки', markets: 'Направления доставки', process: 'Процесс', insights: 'Материалы', start: 'Оставить заявку', kitchen: 'Проф. кухни', refrigeration: 'Холодильное оборудование', audio: 'Аудио и колонки', mobile: 'Мобильные аксессуары', outdoor: 'Товары для отдыха', sourcing: 'Поиск и сравнение поставщиков', qc: 'Инспекция и контроль качества', consolidation: 'Консолидация и экспорт', middleEast: 'Ближний Восток', africa: 'Западная Африка', latinAmerica: 'Латинская Америка', openMenu: 'Открыть меню', closeMenu: 'Закрыть меню' },
   fr: { home: 'Accueil', products: 'Produits', services: 'Services achats', markets: 'Destinations de fret', process: 'Processus', insights: 'Ressources', start: 'Démarrer un brief', kitchen: 'Cuisine professionnelle', refrigeration: 'Équipement frigorifique', audio: 'Audio et enceintes', mobile: 'Accessoires mobiles', outdoor: 'Produits de plein air', sourcing: 'Recherche et comparaison', qc: 'Inspection et contrôle qualité', consolidation: 'Consolidation et export', middleEast: 'Moyen-Orient', africa: 'Afrique de l’Ouest', latinAmerica: 'Amérique latine', openMenu: 'Ouvrir le menu', closeMenu: 'Fermer le menu' },
-  es: { home: 'Inicio', products: 'Productos', services: 'Servicios de compra', markets: 'Destinos de carga', process: 'Proceso', insights: 'Actualidad', start: 'Iniciar solicitud', kitchen: 'Cocina comercial', refrigeration: 'Equipos de refrigeración', audio: 'Audio y altavoces', mobile: 'Accesorios móviles', outdoor: 'Actividades al aire libre', sourcing: 'Búsqueda y comparación', qc: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', middleEast: 'Oriente Medio', africa: 'África Occidental', latinAmerica: 'América Latina', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
+  es: { home: 'Inicio', products: 'Productos', services: 'Servicios de compra', markets: 'Transporte', process: 'Proceso', insights: 'Actualidad', start: 'Iniciar solicitud', kitchen: 'Cocina comercial', refrigeration: 'Equipos de refrigeración', audio: 'Audio y altavoces', mobile: 'Accesorios móviles', outdoor: 'Actividades al aire libre', sourcing: 'Búsqueda y comparación', qc: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', middleEast: 'Oriente Medio', africa: 'África Occidental', latinAmerica: 'América Latina', openMenu: 'Abrir menú', closeMenu: 'Cerrar menú' },
   ar: { home: 'الرئيسية', products: 'المنتجات', services: 'خدمات التوريد', markets: 'وجهات الشحن', process: 'العملية', insights: 'المعرفة', start: 'ابدأ طلب التوريد', kitchen: 'معدات المطابخ', refrigeration: 'معدات التبريد', audio: 'الصوت ومكبرات الصوت', mobile: 'ملحقات الهاتف', outdoor: 'مستلزمات خارجية', sourcing: 'البحث عن الموردين والمقارنة', qc: 'الفحص ومراقبة الجودة', consolidation: 'التجميع والتصدير', middleEast: 'الشرق الأوسط', africa: 'غرب أفريقيا', latinAmerica: 'أمريكا اللاتينية', openMenu: 'فتح القائمة', closeMenu: 'إغلاق القائمة' },
   pt: { home: 'Início', products: 'Produtos', services: 'Serviços de sourcing', markets: 'Destinos de carga', process: 'Processo', insights: 'Conteúdos', start: 'Iniciar solicitação', kitchen: 'Cozinha profissional', refrigeration: 'Equipamentos de refrigeração', audio: 'Áudio e caixas de som', mobile: 'Acessórios para celular', outdoor: 'Produtos outdoor', sourcing: 'Busca e comparação de fornecedores', qc: 'Inspeção e controle de qualidade', consolidation: 'Consolidação e exportação', middleEast: 'Oriente Médio', africa: 'África Ocidental', latinAmerica: 'América Latina', openMenu: 'Abrir menu', closeMenu: 'Fechar menu' },
   tr: { home: 'Ana sayfa', products: 'Ürünler', services: 'Tedarik hizmetleri', markets: 'Yük varış noktaları', process: 'Süreç', insights: 'İçerikler', start: 'Tedarik talebi oluştur', kitchen: 'Endüstriyel mutfak', refrigeration: 'Soğutma ekipmanları', audio: 'Ses ve hoparlör', mobile: 'Mobil aksesuarlar', outdoor: 'Outdoor ürünler', sourcing: 'Tedarikçi arama ve karşılaştırma', qc: 'Denetim ve kalite kontrol', consolidation: 'Konsolidasyon ve ihracat', middleEast: 'Orta Doğu', africa: 'Batı Afrika', latinAmerica: 'Latin Amerika', openMenu: 'Menüyü aç', closeMenu: 'Menüyü kapat' },
@@ -196,6 +197,15 @@ export default function SourcingHomepageNav({
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const collapsedHeaderRef = useRef<HTMLDivElement>(null);
   const labels = navLabels[language];
+  const freightLabels = freightNavCopy[language];
+  const dangerousGoodsPath = `${navigationPrefixes[language]}/services/dangerous-goods-shipping-from-china/`;
+  const dangerousGoodsLabel = freightLabels.dg;
+  const retainedServices = [
+    ['/services/air-freight', freightLabels.air],
+    ['/services/amazon-fba', freightLabels.fba],
+    ['/services/warehouse-services', freightLabels.warehouse],
+  ];
+  const centralAsiaLabel = freightLabels.central;
   const compactDesktop = ['en', 'zh', 'ar'].includes(language);
   const desktopVisibility = compactDesktop ? 'xl:flex' : 'min-[1440px]:flex';
   const mobileVisibility = compactDesktop ? 'xl:hidden' : 'min-[1440px]:hidden';
@@ -205,11 +215,13 @@ export default function SourcingHomepageNav({
   const localizedPath = (path: string) => navigationPath(path, language);
   const englishProduct = isEnglishProductPath(location.pathname);
   const processPath = localizedPath('/how-we-work');
-  const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=Product%20Sourcing&source=homepage_navigation`);
+  const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=${showFreightExecutor ? 'Freight%20Export' : 'Product%20Sourcing'}&source=homepage_navigation`);
+  const freightQuoteLabels: Record<Language, string> = { zh: '提交货运需求', en: 'Request freight quote', es: 'Consultar transporte', fr: 'Demander un devis fret', ru: 'Запросить перевозку', ar: 'اطلب عرض شحن', pt: 'Solicitar frete', tr: 'Navlun teklifi alın' };
+  const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : labels.start;
   const languageOptions = englishProduct ? (Object.keys(languageLabels) as Language[]) : supportedLanguages || (Object.keys(languageLabels) as Language[]);
   const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || /^\/(phone-cases|phone-straps-charms|portable-power)/.test(splitNavigationPath(location.pathname).pathname) || splitNavigationPath(location.pathname).pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
-  const isMarketsPage = location.pathname.includes('/shipping-from-china-to-');
+  const isMarketsPage = location.pathname.includes('/shipping-from-china-to-') || location.pathname.includes('/services/');
   const isInsightsPage = /\/insights\/?$/.test(location.pathname);
   const normalizedPath = location.pathname.replace(/\/+$/, '') || '/';
   const isHomeRoute = normalizedPath === (prefix || '/');
@@ -420,7 +432,14 @@ export default function SourcingHomepageNav({
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
           </Dropdown>
           <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} onToggle={toggleDesktopDropdown}>
+            <p className="px-3 py-2 text-xs font-bold text-slate-500">{{zh:'货运服务',en:'Freight services',es:'Servicios de carga',fr:'Services de fret',ru:'Грузоперевозки',ar:'خدمات الشحن',pt:'Serviços de transporte',tr:'Taşımacılık hizmetleri'}[language]}</p>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/services/sea-freight')}>{freightLabels.sea}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={`${navigationPrefixes[language]}/services/lcl-shipping-from-china/`}>{freightLabels.lcl}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={dangerousGoodsPath}>{dangerousGoodsLabel}</DropdownLink>
+            {retainedServices.map(([path,label]) => <DropdownLink key={path} onNavigate={closeDesktopDropdown} to={localizedPath(path)}>{label}</DropdownLink>)}
+            <p className="mt-2 border-t px-3 py-2 text-xs font-bold text-slate-500">{freightLabels.dest}</p>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-middle-east')}>{labels.middleEast}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-central-asia')}>{centralAsiaLabel}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</DropdownLink>
           </Dropdown>
@@ -470,7 +489,7 @@ export default function SourcingHomepageNav({
             }}
             className="inline-flex min-h-12 shrink-0 items-center justify-center whitespace-nowrap rounded-lg bg-[var(--ddnz-action)] px-4 text-sm font-bold text-white shadow-sm transition-colors hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2 2xl:px-5"
           >
-            {labels.start}
+            {quoteLabel}
           </Link>
         </div>
 
@@ -537,7 +556,13 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'markets' ? (
               <div id="mobile-markets-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath('/services/sea-freight')}>{freightLabels.sea}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={`${navigationPrefixes[language]}/services/lcl-shipping-from-china/`}>{freightLabels.lcl}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={dangerousGoodsPath}>{dangerousGoodsLabel}</Link>
+                {retainedServices.map(([path,label]) => <Link key={path} onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath(path)}>{label}</Link>)}
+                <p className="border-t px-3 py-2 text-xs text-slate-500">{freightLabels.dest}</p>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-middle-east')}>{labels.middleEast}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath('/shipping-from-china-to-central-asia')}>{centralAsiaLabel}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</Link>
               </div>
@@ -552,7 +577,7 @@ export default function SourcingHomepageNav({
                 </button>
               ))}
             </div>
-            <Link onClick={closeMobile} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--ddnz-action)] px-5 font-bold text-white" to={quoteHref}>{labels.start}</Link>
+            <Link onClick={closeMobile} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--ddnz-action)] px-5 font-bold text-white" to={quoteHref}>{quoteLabel}</Link>
           </div>
         </nav>
       ) : null}
