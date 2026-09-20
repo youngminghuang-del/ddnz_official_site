@@ -9,6 +9,7 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { readAttribution, rememberAttribution } from './lib/attribution';
 import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
+import CookieConsent from './components/CookieConsent';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
@@ -24,7 +25,6 @@ const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
 const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
 const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
-const CookieConsent = lazy(() => import('./components/CookieConsent'));
 const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
 const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
