@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
+import CountryRegionLink from '../features/freight/CountryRegionLink';
+import NigeriaInventory from '../features/freight/NigeriaInventory';
+import '../features/freight/freight.css';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
@@ -638,7 +641,6 @@ Object.assign(PAGE_LANG_DATA, {
 
 export default function ShippingWestAfrica() {
   const location = useLocation();
-  const navigate = useNavigate();
   const { language } = useLanguage();
 
   const getCountryFromLocation = () => getShippingCountrySlug(
@@ -668,12 +670,10 @@ export default function ShippingWestAfrica() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
-  const handleCountryTabChange = (country: 'nigeria' | 'ghana') => {
-    setSelectedCountry(country);
-    navigate(buildShippingCountryPath(location.pathname, country));
+  useEffect(() => {
     setActiveTransportMode(0);
     setActiveFaq(null);
-  };
+  }, [location.pathname]);
 
   const activeLang = language === 'zh' ? 'zh' : (language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en');
   
@@ -757,6 +757,7 @@ export default function ShippingWestAfrica() {
         }}
       />
       <SourcingHomepageNav showFreightExecutor />
+      <CountryRegionLink region="west-africa" />
 
       {/* Hero Section */}
       <header className="relative overflow-hidden pb-24 pt-16 text-white md:pb-36 md:pt-24">
@@ -781,9 +782,8 @@ export default function ShippingWestAfrica() {
               {/* Country Selector Tabs */}
               {!isLocked && (
                 <div className="flex flex-wrap gap-2.5 mb-2">
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('nigeria')}
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'nigeria')}
                     className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'nigeria'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
@@ -791,10 +791,9 @@ export default function ShippingWestAfrica() {
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabNigeria')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('ghana')}
+                  </Link>
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'ghana')}
                     className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'ghana'
                         ? 'bg-[#d97706] text-white shadow-lg scale-105'
@@ -802,7 +801,7 @@ export default function ShippingWestAfrica() {
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabGhana')}
-                  </button>
+                  </Link>
                 </div>
               )}
 
@@ -892,7 +891,7 @@ export default function ShippingWestAfrica() {
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
                   <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿克拉海运双清 (Accra / Tema)' : 'Accra / Tema Premium Freight'}</h4>
-                  <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '全程双清、SABER与证书核准托底' : (language === 'fr' ? 'Dédouanement complet Form M & SONCAP' : 'Full Form M & SONCAP Pre-Clearance')}</p>
+                  <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '进口文件、目的港操作与派送范围逐票确认' : language === 'es' ? 'Confirmar documentos, operación en destino y entrega' : language === 'fr' ? 'Documents, opérations portuaires et livraison à confirmer' : 'Confirm import documents, destination handling and delivery scope'}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
                   <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
@@ -908,6 +907,7 @@ export default function ShippingWestAfrica() {
       <main className="relative z-10">
 
         <MarketSourcingHandoff destination={selectedCountry === 'nigeria' ? 'Nigeria' : 'Ghana'} />
+        {selectedCountry === 'nigeria' && ['zh', 'en', 'es'].includes(language) && <NigeriaInventory locale={language as 'zh' | 'en' | 'es'} />}
 
         {/* Section 2: Compliant Solutions Checklist (3 Columns) */}
         <section className="py-16 md:py-24 border-b border-white/[0.05]">

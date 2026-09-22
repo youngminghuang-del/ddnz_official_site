@@ -1,5 +1,3 @@
-import FreightReleaseContent, { freightReleasePaths, freightReleaseMetadata } from '../src/features/freight/FreightReleaseContent';
-import type { Language } from '../src/i18n/translations';
 import { kitchenStructuredData } from '../src/features/commercial-kitchen/data/discovery.mjs';
 import kitchenProducts from '../src/features/commercial-kitchen/data/products.mjs';
 import kitchenLaunch from '../src/features/commercial-kitchen/data/launch.mjs';
@@ -24,6 +22,21 @@ import { mobileMetadata } from '../src/features/mobile-sourcing/seo.mjs';
 import OutdoorContent from '../src/features/outdoor-sourcing/OutdoorContent.jsx';
 import PowerGuideContent from '../src/features/outdoor-sourcing/PowerGuideContent.jsx';
 import { outdoorMetadata, powerGuideMetadata } from '../src/features/outdoor-sourcing/seo.mjs';
+import RegionContent from '../src/features/freight/RegionContent';
+import SeaFreightContent, { seaFreightMetadata } from '../src/features/freight/SeaFreightContent';
+import NewFreightEvidence from '../src/features/freight/NewFreightEvidence';
+import UaeContent, { uaeMetadata } from '../src/features/freight/UaeContent';
+import NigeriaContent, { nigeriaMetadata } from '../src/features/freight/NigeriaContent';
+import MexicoContent, { mexicoMetadata } from '../src/features/freight/MexicoContent';
+import ImportOrderPlanning from '../src/features/freight/ImportOrderPlanning';
+import LclContent, { lclMetadata } from '../src/features/freight/LclContent';
+import LclInternationalContent, { internationalLclMetadata } from '../src/features/freight/LclInternationalContent';
+import type { LclExtraLocale } from '../src/features/freight/lclInternationalCopy';
+import SeaInternationalContent, { internationalSeaMetadata } from '../src/features/freight/SeaInternationalContent';
+import DgInternationalContent, { internationalDgMetadata } from '../src/features/freight/DgInternationalContent';
+import { DangerousGoodsOriginalContent } from '../src/features/freight/DangerousGoodsOriginalContent';
+import GhanaContent, { ghanaMetadata } from '../src/features/freight/GhanaContent';
+import { regions, regionMetadata, type RegionId } from '../src/features/freight/regions';
 import fs from 'fs';
 import path from 'path';
 import { getLocalizedHomeFaqs, type HomeFaqLanguage } from '../src/data/homeFaqData';
@@ -51,6 +64,11 @@ interface SEOItem {
 }
 
 const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
+  'services/dangerous-goods-shipping-from-china': {
+    en: { title: 'Dangerous goods shipping & container securing | DDNZ Global', desc: 'Dangerous goods shipment review and real container loading records, with lashing, bracing and packaging information for freight inquiries.', keywords: 'dangerous goods shipping, container securing, China freight' },
+    'zh-cn': { title: '危险品运输与装柜加固 | DDNZ Global', desc: '了解危险品出运资料核对、包装与装柜加固，查看真实绑扎、支撑和填充作业照片，提交专项运输需求。', keywords: '危险品运输,危险品装柜,绑扎加固' },
+    es: { title: 'Mercancías peligrosas y sujeción de carga | DDNZ Global', desc: 'Revisión de información de carga peligrosa y registros reales de amarre, refuerzo y relleno para preparar tu consulta de transporte.', keywords: 'mercancías peligrosas, sujeción de carga, transporte desde China' },
+  },
   // 1. Home ("")
   '': {
     en: {
@@ -590,6 +608,22 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   }
 };
 
+seoDataMatrix['services/lcl-shipping-from-china'] = {};
+for (const locale of ['ru','fr','ar','pt','tr'] as const) {
+  seoDataMatrix['services/lcl-shipping-from-china'][locale] = internationalLclMetadata(locale);
+  seoDataMatrix['services/sea-freight'][locale] = internationalSeaMetadata(locale);
+  seoDataMatrix['services/dangerous-goods-shipping-from-china'][locale] = internationalDgMetadata(locale);
+}
+for (const locale of ['zh', 'en', 'es'] as const) {
+  seoDataMatrix['services/lcl-shipping-from-china'][locale === 'zh' ? 'zh-cn' : locale] = lclMetadata(locale);
+  seoDataMatrix['services/sea-freight'][locale === 'zh' ? 'zh-cn' : locale] = seaFreightMetadata(locale);
+}
+for (const region of Object.keys(regions) as RegionId[]) {
+  for (const locale of ['zh', 'en', 'es'] as const) {
+    seoDataMatrix[`shipping-from-china-to-${region}`][locale === 'zh' ? 'zh-cn' : locale] = regionMetadata(region, locale);
+  }
+}
+
 const countryNames: Record<string, Record<string, string>> = {
   'saudi-arabia': { en: 'Saudi Arabia', 'zh-cn': '沙特阿拉伯', ru: 'Саудовскую Аравию', fr: "l’Arabie saoudite", es: 'Arabia Saudita', ar: 'السعودية' },
   uae: { en: 'the UAE', 'zh-cn': '阿联酋', ru: 'ОАЭ', fr: 'les Émirats arabes unis', es: 'Emiratos Árabes Unidos', ar: 'الإمارات' },
@@ -611,6 +645,10 @@ const countryNames: Record<string, Record<string, string>> = {
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
+  if (countrySlug === 'uae' && ['en','zh-cn','es'].includes(lang)) return uaeMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');
+  if (countrySlug === 'nigeria' && ['en','zh-cn','es'].includes(lang)) return nigeriaMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');
+  if (countrySlug === 'mexico' && ['en','zh-cn','es'].includes(lang)) return mexicoMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');
+  if (countrySlug === 'ghana' && ['en','zh-cn','es'].includes(lang)) return ghanaMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');
   const country = countryNames[countrySlug]?.[lang] || countryNames[countrySlug]?.en || countrySlug;
   const templates: Record<string, SEOItem> = {
     en: {
@@ -769,7 +807,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = freightReleasePaths.includes(relPath) ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] : hasProductTranslation(`/${relPath}`, 'en') ? productContentLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight'].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? productContentLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1410,10 +1448,33 @@ function injectStaticRouteContent(
     const css = fs.readFileSync(path.resolve('src/features/freight/freight.css'), 'utf8');
     return htmlContent.replace('</head>', '<style>'+css+'</style></head>').replace('<div id="root"></div>', '<div id="root" dir="'+(lang === 'ar' ? 'rtl' : 'ltr')+'">'+body+'</div>');
   }
+  if (relPath === 'services/dangerous-goods-shipping-from-china' || (relPath === 'services/sea-freight' && ['ru','fr','ar','pt','tr'].includes(lang))) {
+    const content = relPath === 'services/sea-freight'
+      ? renderToStaticMarkup(createElement(SeaInternationalContent,{locale:lang as LclExtraLocale}))
+      : ['en','zh-cn','es'].includes(lang)
+        ? renderToStaticMarkup(createElement(DangerousGoodsOriginalContent,{lang:lang === 'zh-cn' ? 'zh' : lang as 'en'|'es'}))
+        : renderToStaticMarkup(createElement(DgInternationalContent,{locale:lang as LclExtraLocale}));
+    const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
+    if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+    return htmlContent.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
+  }
+  if (relPath === 'services/lcl-shipping-from-china' && ['en','zh-cn','ru','fr','es','ar','pt','tr'].includes(lang)) {
+    const content = ['en','zh-cn','es'].includes(lang) ? renderToStaticMarkup(createElement(LclContent, { locale: lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es' })) : renderToStaticMarkup(createElement(LclInternationalContent, {locale: lang as LclExtraLocale}));
+    const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
+    if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+    return htmlContent.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
+  }
+  const freightRegion = relPath.replace('shipping-from-china-to-', '') as RegionId;
+  const isFreightRegion = Object.prototype.hasOwnProperty.call(regions, freightRegion) && ['zh-cn', 'en', 'es'].includes(lang);
   const buyerGuide = buyerGuideForPath(`/${relPath}`);
 
   const mobilePage = mobilePageForPath(`/${relPath}`);
-  if (['sourcing/outdoor-products-from-china','portable-power/selection-guide'].includes(relPath)) {
+  if (isFreightRegion || (relPath === 'services/sea-freight' && ['zh-cn', 'en', 'es'].includes(lang))) {
+    const freightLocale = lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es';
+    staticBody = isFreightRegion ? renderToStaticMarkup(createElement(RegionContent, { region: freightRegion, locale: freightLocale })) : renderToStaticMarkup(createElement(SeaFreightContent, { locale: freightLocale }));
+    const freightCss = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
+    if (freightCss) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${freightCss}"></head>`);
+  } else if (['sourcing/outdoor-products-from-china','portable-power/selection-guide'].includes(relPath)) {
     const guide=relPath==='portable-power/selection-guide';
     staticBody = renderToStaticMarkup(createElement(guide?PowerGuideContent:OutdoorContent, {locale: lang}));
     // Start the route bundle with the document and style the server-rendered
@@ -1545,6 +1606,28 @@ function injectStaticRouteContent(
     }
   }
 
+  if (['shipping-from-china-to-uae','shipping-from-china-to-nigeria','shipping-from-china-to-mexico','shipping-from-china-to-ghana'].includes(relPath) && ['en','zh-cn','es'].includes(lang)) {
+    staticBody = renderToStaticMarkup(createElement(relPath.endsWith('-ghana') ? GhanaContent : relPath.endsWith('-mexico') ? MexicoContent : relPath.endsWith('-nigeria') ? NigeriaContent : UaeContent, {locale:lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es'}));
+    const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
+    if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+  }
+  if (['en', 'zh-cn', 'es'].includes(lang) && relPath === 'services/dangerous-goods-shipping-from-china') {
+    const specialist = relPath.startsWith('services/');
+    const locale = lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es';
+    const evidence = renderToStaticMarkup(createElement(NewFreightEvidence, { locale, specialist, uaeOnly: !specialist }));
+    const meta = seoDataMatrix[relPath]?.[lang];
+    if (staticBody) staticBody = staticBody.replace('</main>', `${evidence}</main>`);
+    else staticBody = `<main><h1>${escapeStaticText(meta?.title || (specialist ? 'Dangerous goods shipping' : 'Shipping from China to UAE'))}</h1>${evidence}</main>`;
+    const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
+    if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+  }
+  if (relPath === 'shipping-from-china-to-brazil' && ['en', 'zh-cn', 'es'].includes(lang)) {
+    const planning = renderToStaticMarkup(createElement(ImportOrderPlanning, { market: 'brazil', locale: lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es' }));
+    const meta = seoDataMatrix[relPath]?.[lang];
+    staticBody = staticBody
+      ? staticBody.replace('</main>', `${planning}</main>`)
+      : `<main><h1>${escapeStaticText(meta?.title || 'Shipping from China to Brazil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
+  }
   const articleDiscovery = lang === 'en' && relPath.startsWith('blog/') ? kitchenArticleDiscovery[relPath.slice(5)] || mobileArticleDiscovery[relPath.slice(5)] : undefined;
   if (articleDiscovery) {
     const links = `<section><h2>${escapeStaticText(articleDiscovery.heading || 'Compare equipment for your next order')}</h2>${articleDiscovery.links.map(item => `<p><a href="${escapeStaticText(item.href)}">${escapeStaticText(item.label)}</a></p>`).join('')}</section>`;
@@ -1556,14 +1639,12 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', '<section><h2>Choose the next model for your range</h2><p><a href="/sourcing/commercial-ice-machines-from-china/">Compare six commercial ice machines</a></p><p><a href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-equipment">Compare refrigerators and prep counters in the equipment catalogue</a></p></section></main>');
   }
   if (lang === 'en' && ['', 'insights', 'products'].includes(relPath)) {
-    const guides = `<section lang="en"><h2>Explore before you order</h2><p>Compare products, understand the price and bring a clearer brief to your supplier.</p><h3>Mobile accessories</h3><p><a href="/sourcing/mobile-accessories-from-china/">Mobile accessories sourcing</a> · <a href="/phone-cases/">Phone cases</a> · <a href="/phone-straps-charms/">Straps and charms</a></p><h3>Commercial kitchen equipment</h3><p><a href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-equipment">Compare equipment</a> · <a href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-benchmarks">Plan your margin</a></p><p><a href="/sourcing/commercial-ice-machines-from-china/">Ice machines</a> · <a href="/sourcing/commercial-electric-fryers-from-china/">Electric fryers</a> · <a href="/sourcing/commercial-electric-griddles-from-china/">Electric griddles</a></p><h3>Screen protectors</h3><p><a href="/screen-protectors/compare/">Compare screen protectors</a> · <a href="/screen-protectors/guides/price-differences/">Why prices differ</a></p></section>`;
+    const guides = `<section lang="en"><h2>Explore before you order</h2><p>Compare products, understand the price and bring a clearer brief to your supplier.</p><h3>Commercial kitchen equipment</h3><p><a href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-equipment">Compare equipment</a> · <a href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-benchmarks">Plan your margin</a></p><h3>Screen protectors</h3><p><a href="/screen-protectors/compare/">Compare screen protectors</a> · <a href="/screen-protectors/guides/price-differences/">Why prices differ</a></p></section>`;
     staticBody = staticBody.replace('</main>', guides + '</main>');
   }
   if (['es', 'ar'].includes(lang) && ['', 'insights'].includes(relPath)) {
     const copy = buyerLocales[lang];
-    const mobileLabels = lang === 'es' ? ['Accesorios para móviles', 'Fundas para móviles', 'Correas y colgantes'] : ['إكسسوارات الهاتف', 'أغطية الهاتف', 'أحزمة وزينة الهاتف'];
-    const mobileEntries = ['/sourcing/mobile-accessories-from-china', '/phone-cases', '/phone-straps-charms'].map((path, i) => `<a href="${localizedProductPath(path, lang)}">${escapeStaticText(mobileLabels[i])}</a>`).join(' · ');
-    const entries = `<section lang="${lang}"><h2>${escapeStaticText(copy.range)}</h2><p><a href="${localizedProductPath('/sourcing/commercial-kitchen-equipment-from-china', lang)}">${escapeStaticText(copy.kitchen)}</a> · <a href="${localizedProductPath('/screen-protectors/compare', lang)}">${escapeStaticText(copy.phone)}</a></p><p>${mobileEntries}</p></section>`;
+    const entries = `<section lang="${lang}"><h2>${escapeStaticText(copy.range)}</h2><p><a href="${localizedProductPath('/sourcing/commercial-kitchen-equipment-from-china', lang)}">${escapeStaticText(copy.kitchen)}</a> · <a href="${localizedProductPath('/screen-protectors/compare', lang)}">${escapeStaticText(copy.phone)}</a></p></section>`;
     staticBody = staticBody.replace('</main>', `${entries}</main>`);
   }
   if (!staticBody) return htmlContent;
@@ -1589,7 +1670,9 @@ function run() {
     { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
-    ...freightReleasePaths.map(path => ({path, priority: '0.9', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']})),
+    { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'services/lcl-shipping-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: 'services/dangerous-goods-shipping-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'services/air-freight', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/amazon-fba', priority: '0.9', changefreq: 'weekly' },
     { path: 'services/warehouse-services', priority: '0.9', changefreq: 'weekly' },
@@ -1654,7 +1737,6 @@ function run() {
     (entry.languages || languages).forEach((lang) => {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
-      if(freightReleasePaths.includes(entry.path)) {const meta=freightReleaseMetadata(entry.path,(lang === 'zh-cn' ? 'zh' : lang) as Language);seo={title:meta.title,desc:meta.desc,keywords:''};}
       const mobilePage = mobilePageForPath(`/${entry.path}`);
       if (mobilePage) {const meta=mobileMetadata(mobilePage.id,lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (['sourcing/outdoor-products-from-china','portable-power/selection-guide'].includes(entry.path)) {const meta=entry.path==='portable-power/selection-guide'?powerGuideMetadata(lang):outdoorMetadata(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
@@ -1903,3 +1985,5 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
 }
 
 run();
+import FreightReleaseContent, { freightReleasePaths } from '../src/features/freight/FreightReleaseContent';
+import type { Language } from '../src/i18n/translations';

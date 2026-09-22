@@ -121,14 +121,14 @@ const destinationLabels: Record<Language, Record<string, string>> = {
 };
 
 const HERO_INTRO: Record<Language, { headline: string; body: string; caption: string; imageAlt: string }> = {
-  en: { headline: 'Your China sourcing team.', body: 'Find suppliers, check products and coordinate export with one team on the ground.', caption: 'DDNZ · Your China sourcing team', imageAlt: 'DDNZ · Your China sourcing team' },
-  zh: { headline: '在中国采购，让每一步有人负责。', body: '从寻找供应商、核对产品到集货出口，由中国团队衔接。', caption: 'DDNZ · 您的中国采购团队', imageAlt: 'DDNZ · 您的中国采购团队' },
-  ru: { headline: 'Ваша команда по закупкам в Китае.', body: 'Поиск поставщиков, проверка товаров и координация экспорта с одной командой на месте.', caption: 'DDNZ · Ваша команда в Китае', imageAlt: 'DDNZ · Ваша команда в Китае' },
-  fr: { headline: 'Votre équipe sourcing en Chine.', body: 'Trouvez des fournisseurs, contrôlez les produits et coordonnez l’export avec une équipe sur place.', caption: 'DDNZ · Votre équipe en Chine', imageAlt: 'DDNZ · Votre équipe en Chine' },
-  es: { headline: 'Su equipo de compras en China.', body: 'Encuentre proveedores, revise productos y coordine la exportación con un equipo en origen.', caption: 'DDNZ · Su equipo en China', imageAlt: 'DDNZ · Su equipo en China' },
-  ar: { headline: 'فريقك للتوريد من الصين.', body: 'اعثر على الموردين وافحص المنتجات ونسّق التصدير مع فريق واحد على أرض الواقع.', caption: 'DDNZ · فريقك في الصين', imageAlt: 'DDNZ · فريقك في الصين' },
-  pt: { headline: 'Sua equipe de compras na China.', body: 'Encontre fornecedores, confira produtos e coordene a exportação com uma equipe no local.', caption: 'DDNZ · Sua equipe na China', imageAlt: 'DDNZ · Sua equipe na China' },
-  tr: { headline: 'Çin’deki tedarik ekibiniz.', body: 'Sahadaki tek bir ekiple tedarikçi bulun, ürünleri kontrol edin ve ihracatı koordine edin.', caption: 'DDNZ · Çin’deki ekibiniz', imageAlt: 'DDNZ · Çin’deki ekibiniz' },
+  en: { headline: 'Source in China. Ship with one accountable team.', body: 'DDNZ coordinates suppliers, product checks and export preparation; Heaven Born connects the international freight execution since 1997.', caption: 'DDNZ + Heaven Born · From source to destination', imageAlt: 'DDNZ and Heaven Born teams connecting sourcing and international freight' },
+  zh: { headline: '中国采购，到目的地交付，一套团队负责到底。', body: 'DDNZ 负责供应商、验货和出口前准备；华正邦泰衔接国际货运执行，始于 1997 年。', caption: 'DDNZ + 华正邦泰 · 从采购源头到目的地', imageAlt: 'DDNZ 与华正邦泰衔接中国采购和国际货运' },
+  ru: { headline: 'Закупки в Китае. Доставка с одной ответственной командой.', body: 'DDNZ координирует поставщиков и экспортную подготовку; Heaven Born выполняет международную перевозку с 1997 года.', caption: 'DDNZ + Heaven Born · От источника до получателя', imageAlt: 'Команды DDNZ и Heaven Born соединяют закупки и международную перевозку' },
+  fr: { headline: 'Sourcer en Chine. Expédier avec une seule équipe responsable.', body: 'DDNZ coordonne les fournisseurs et la préparation export ; Heaven Born assure le fret international depuis 1997.', caption: 'DDNZ + Heaven Born · De la source à la destination', imageAlt: 'Les équipes DDNZ et Heaven Born relient sourcing et fret international' },
+  es: { headline: 'Compre en China. Envíe con un solo equipo responsable.', body: 'DDNZ coordina proveedores y preparación de exportación; Heaven Born ejecuta el transporte internacional desde 1997.', caption: 'DDNZ + Heaven Born · Del origen al destino', imageAlt: 'Los equipos DDNZ y Heaven Born conectan compras y transporte internacional' },
+  ar: { headline: 'توريد من الصين. شحن دولي مع فريق واحد مسؤول.', body: 'تنسق DDNZ الموردين وتجهيز التصدير، بينما تنفذ Heaven Born الشحن الدولي منذ عام 1997.', caption: 'DDNZ + Heaven Born · من المصدر إلى الوجهة', imageAlt: 'فريقا DDNZ وHeaven Born يربطان التوريد والشحن الدولي' },
+  pt: { headline: 'Compre na China. Envie com uma equipe responsável.', body: 'A DDNZ coordena fornecedores e a preparação para exportação; a Heaven Born executa o frete internacional desde 1997.', caption: 'DDNZ + Heaven Born · Da origem ao destino', imageAlt: 'As equipes DDNZ e Heaven Born conectam sourcing e frete internacional' },
+  tr: { headline: 'Çin’den tedarik edin. Tek sorumlu ekiple gönderin.', body: 'DDNZ tedarikçileri ve ihracat hazırlığını koordine eder; Heaven Born, 1997’den beri uluslararası taşımayı yürütür.', caption: 'DDNZ + Heaven Born · Kaynaktan varışa', imageAlt: 'DDNZ ve Heaven Born ekipleri tedarik ile uluslararası taşımayı birleştiriyor' },
 };
 
 const categoryImageAlts: Record<Language, [string, string, string, string]> = {
@@ -236,6 +236,7 @@ export default function SourcingHomepageHero() {
       <section className="ddnz-ribbon-home-hero home-intro" aria-labelledby="homepage-sourcing-title">
         <div className="home-intro-grid">
           <div className="home-intro-copy">
+            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>SOURCING + INTERNATIONAL FREIGHT</em></p>
             <h1 id="homepage-sourcing-title">{intro.headline}</h1>
             <p className="home-intro-summary">{intro.body}</p>
             <div className="home-intro-actions">
