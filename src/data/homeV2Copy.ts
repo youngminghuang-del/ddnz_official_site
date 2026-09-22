@@ -190,9 +190,9 @@ const HOME_V2_COPY_BASE = {
       openScorecard: '查看完整供应商评分方法',
       supplierImageAlt: '中国源头产品核查中的供应商沟通实拍',
       scorecardPreviewAlt: 'DDNZ 供应商评分卡预览',
-      exportEyebrow: '真实出口证据，而非图库照片',
+      exportEyebrow: '中国端装柜现场',
       exportTitle: '有记录的中国源头交接',
-      exportBody: '真实装柜素材用于证明源头实际发生的操作，但不代表仓库所有权、目的港清关或末端配送承诺。',
+      exportBody: '从收货核对、包装检查到装柜，查看货物在中国端的出运准备。',
       exportImageAlt: '已脱敏的手机配件真实装柜证据',
       exportCheckpoints: [
         ['收货与数量核对', '按装箱单核对数量与外观状态。'],
@@ -200,7 +200,7 @@ const HOME_V2_COPY_BASE = {
         ['集装箱装柜', '记录源头装柜过程与货物摆放。'],
         ['封柜并交接承运人', '将有完整记录的货物交给货运执行方。'],
       ],
-      redactionNote: '经授权并已脱敏的实拍素材 · 客户、纸箱与车辆识别信息已移除',
+      redactionNote: '现场记录 · 中国端装柜与货物交接',
     },
     scorecardDialog: {
       eyebrow: 'DDNZ 供应商控制',

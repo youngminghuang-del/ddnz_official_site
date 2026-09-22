@@ -4,6 +4,11 @@ import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
+import OperationsEvidence from '../features/freight/OperationsEvidence';
+import SeaFreightContent, { seaFreightMetadata } from '../features/freight/SeaFreightContent';
+import SeaInternationalContent, { internationalSeaMetadata } from '../features/freight/SeaInternationalContent';
+import type { LclExtraLocale } from '../features/freight/lclInternationalCopy';
+import { freightAlternates, freightLanguagePrefix } from '../features/freight/freightLanguages';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -751,56 +756,120 @@ const SEA_FREIGHT_LOADING_PROOF: Record<string, {
   title: string;
   description: string;
   privacy: string;
+  principlesTitle: string;
+  principles: string[];
   captions: string[];
   alts: string[];
 }> = {
   en: {
-    eyebrow: 'China origin operations',
-    title: 'Real container loading records',
-    description: 'Operational photos showing cargo staging, forklift loading and completed container utilization before departure from China.',
-    privacy: 'Shipment labels, documents and vehicle identifiers have been removed to protect customer information.',
-    captions: ['Forklift-assisted loading', 'Completed container utilization', 'Wet-weather loading completed'],
-    alts: ['Forklift loading packaged cargo into a shipping container', 'Fully loaded shipping container at a China origin facility', 'Completed container loading during wet-weather operations'],
+    eyebrow: 'Dangerous-goods loading · China origin',
+    title: 'Dangerous-goods container loading, lashing & securing',
+    description: 'Four recent loading records show how restraint, blocking and cushioning are adapted to different cargo forms before the container leaves China.',
+    privacy: 'Shipment labels, barcodes, QR codes and vehicle identifiers have been anonymized. Photos document loading methods only; final acceptance depends on cargo classification, packing, documents, carrier and route.',
+    principlesTitle: 'Four loading checks we apply',
+    principles: [
+      'Sequence: follow the approved stowage and unloading plan; where applicable, load compatible general cargo before dangerous goods',
+      'Balance: distribute weight across the container and avoid off-center loading',
+      'Restraint: use lashing, blocking and cushioning suited to the package and void space',
+      'Compatibility: never consolidate incompatible cargo',
+    ],
+    captions: [
+      'Drums: cross-lashing, cargo bars and dunnage cushioning',
+      'Lithium-battery pallets: multi-point cross-lashing and zoned restraint',
+      'Large equipment: timber base, blocking frame, straps and side cushioning',
+      'Cartoned cargo: door-end net restraint and lower reinforcement',
+    ],
+    alts: [
+      'Dangerous-goods drums secured with orange cross-straps, cargo bars and an inflatable dunnage bag',
+      'Lithium-battery pallet cargo secured with green multi-point cross-straps inside a container',
+      'Large equipment crate secured with a timber base, metal blocking frame, green straps and side dunnage bags',
+      'Full wall of cartoned cargo secured at the container door with a white restraint net',
+    ],
   },
   zh: {
-    eyebrow: '中国始发端实拍',
-    title: '真实装柜作业记录',
-    description: '现场照片展示货物进柜、叉车装载与整柜完成状态，让客户在货物离开中国前看见真实操作过程。',
-    privacy: '客户标签、单据与车辆识别信息均已脱敏处理。',
-    captions: ['叉车辅助装柜', '整柜装载完成', '雨天装柜完成'],
-    alts: ['叉车将包装货物装入海运集装箱', '中国始发端完成装载的海运集装箱', '雨天作业环境下完成集装箱装载'],
+    eyebrow: '危险品装柜 · 中国始发端实拍',
+    title: '危险品装柜与绑扎加固实例',
+    description: '以下为近期完成的四组装柜作业，展示针对不同包装和货物形态采用的绑扎、阻挡、衬垫与空隙填充方式。',
+    privacy: '货运标签、条码、二维码及车辆识别信息均已脱敏。照片仅展示装载方法；实际承运须按货物分类、包装、资料、承运人及航线要求逐票确认。',
+    principlesTitle: '装柜时重点核对四项原则',
+    principles: [
+      '装载顺序：按批准的配载和卸货计划执行；适用时先装相容普货、后装危险品',
+      '重量分布：前后左右均衡配载，避免偏载和局部载荷过大',
+      '绑扎加固：根据包装和空隙合理使用绑扎、阻挡与衬垫',
+      '货物相容性：不相容的货物不得混装',
+    ],
+    captions: [
+      '桶装危险品：交叉绑带、横向阻挡与充气袋衬垫',
+      '锂电池托盘：多点交叉绑扎与前后分区固定',
+      '大型设备：木托、金属框架、绑带与侧向衬垫',
+      '整柜纸箱：门口网状拦护与底部加固',
+    ],
+    alts: [
+      '桶装危险品使用橙色交叉绑带、横向阻挡杆和充气袋固定在集装箱内',
+      '锂电池托盘货物使用绿色多点交叉绑带固定在集装箱内',
+      '大型设备使用木托、金属阻挡框架、绿色绑带和侧向充气袋固定',
+      '整柜纸箱货物在集装箱门口使用白色网状拦护加固',
+    ],
   },
   ru: {
-    eyebrow: 'Операции в Китае',
-    title: 'Реальные записи загрузки контейнеров',
-    description: 'Рабочие фотографии показывают подготовку груза, погрузку вилочным погрузчиком и заполненный контейнер перед отправкой из Китая.',
-    privacy: 'Этикетки, документы и идентификаторы транспорта удалены для защиты данных клиентов.',
-    captions: ['Погрузка вилочным погрузчиком', 'Контейнер полностью загружен', 'Погрузка завершена в дождливую погоду'],
-    alts: ['Погрузка упакованного груза в контейнер вилочным погрузчиком', 'Полностью загруженный морской контейнер в Китае', 'Завершенная загрузка контейнера в дождливую погоду'],
+    eyebrow: 'Опасные грузы · операции в Китае',
+    title: 'Погрузка, крепление и фиксация опасных грузов',
+    description: 'Четыре недавних примера показывают, как способы крепления, блокировки и заполнения пустот адаптируются к разным типам груза.',
+    privacy: 'Транспортные этикетки, штрих- и QR-коды, а также номера транспорта обезличены. Фото показывают только способ загрузки; приемка зависит от классификации, упаковки, документов, перевозчика и маршрута.',
+    principlesTitle: 'Четыре проверки при погрузке',
+    principles: [
+      'Порядок: соблюдать утвержденный план размещения и выгрузки; где применимо, сначала загружать совместимый обычный груз',
+      'Баланс: равномерно распределять вес и избегать смещения центра нагрузки',
+      'Фиксация: применять стяжки, блокировку и прокладки с учетом упаковки и пустот',
+      'Совместимость: несовместимые грузы не объединять в одном контейнере',
+    ],
+    captions: ['Бочки: перекрестные стяжки, распорки и воздушная подушка', 'Литиевые батареи: многоточечное перекрестное крепление', 'Оборудование: деревянное основание, рама, стяжки и боковые подушки', 'Коробки: сетчатая защита у дверей и нижнее усиление'],
+    alts: ['Бочки с опасным грузом закреплены оранжевыми стяжками, распорками и воздушной подушкой', 'Паллеты с литиевыми батареями закреплены зелеными перекрестными стяжками', 'Крупное оборудование закреплено на деревянном основании рамой, стяжками и боковыми подушками', 'Коробки у дверей контейнера удерживаются белой защитной сеткой'],
   },
   fr: {
-    eyebrow: 'Opérations au départ de Chine',
-    title: 'Chargements réels de conteneurs',
-    description: 'Des photos opérationnelles montrent la préparation du fret, le chargement au chariot élévateur et le conteneur rempli avant le départ de Chine.',
-    privacy: 'Les étiquettes, documents et identifiants des véhicules ont été retirés afin de protéger les données clients.',
-    captions: ['Chargement au chariot élévateur', 'Conteneur entièrement chargé', 'Chargement terminé par temps humide'],
-    alts: ['Chargement de colis dans un conteneur avec un chariot élévateur', 'Conteneur maritime entièrement chargé en Chine', 'Chargement de conteneur terminé par temps humide'],
+    eyebrow: 'Marchandises dangereuses · départ Chine',
+    title: 'Chargement, arrimage et sécurisation en conteneur',
+    description: 'Quatre opérations récentes montrent comment l’arrimage, le blocage et le calage sont adaptés aux différents formats de fret.',
+    privacy: 'Les étiquettes d’expédition, codes-barres, QR codes et identifiants des véhicules ont été anonymisés. Les photos illustrent uniquement les méthodes; l’acceptation finale dépend de la classification, de l’emballage, des documents, du transporteur et de la route.',
+    principlesTitle: 'Quatre contrôles de chargement',
+    principles: [
+      'Ordre : suivre le plan d’arrimage et de déchargement approuvé; le cas échéant, charger d’abord le fret général compatible',
+      'Équilibre : répartir le poids et éviter une charge décentrée',
+      'Arrimage : adapter sangles, blocage et calage à l’emballage et aux espaces vides',
+      'Compatibilité : ne jamais regrouper des marchandises incompatibles',
+    ],
+    captions: ['Fûts : sangles croisées, barres et coussin de calage', 'Batteries lithium : arrimage croisé multipoint', 'Équipement : base bois, cadre, sangles et coussins latéraux', 'Cartons : filet de retenue aux portes et renfort inférieur'],
+    alts: ['Fûts de marchandises dangereuses fixés par sangles orange, barres et coussin gonflable', 'Palettes de batteries lithium fixées par des sangles vertes croisées', 'Équipement volumineux fixé par une base bois, un cadre métallique, des sangles et des coussins latéraux', 'Mur de cartons retenu aux portes du conteneur par un filet blanc'],
   },
   es: {
-    eyebrow: 'Operación en origen en China',
-    title: 'Registros reales de carga de contenedores',
-    description: 'Fotografías operativas muestran la preparación, la carga con montacargas y el contenedor completo antes de salir de China.',
-    privacy: 'Se eliminaron etiquetas, documentos e identificadores de vehículos para proteger la información del cliente.',
-    captions: ['Carga asistida con montacargas', 'Contenedor completamente cargado', 'Carga completada con lluvia'],
-    alts: ['Montacargas introduciendo mercancía embalada en un contenedor', 'Contenedor marítimo completamente cargado en China', 'Carga de contenedor completada durante condiciones de lluvia'],
+    eyebrow: 'Mercancías peligrosas · origen China',
+    title: 'Carga, trincaje y aseguramiento en contenedor',
+    description: 'Cuatro operaciones recientes muestran cómo adaptamos el trincaje, el bloqueo y el relleno a distintos formatos de carga.',
+    privacy: 'Se anonimizaron etiquetas de envío, códigos de barras, códigos QR e identificadores de vehículos. Las fotos muestran únicamente métodos de carga; la aceptación final depende de la clasificación, el embalaje, los documentos, el transportista y la ruta.',
+    principlesTitle: 'Cuatro controles de carga',
+    principles: [
+      'Secuencia: seguir el plan de estiba y descarga aprobado; cuando corresponda, cargar primero la mercancía general compatible',
+      'Equilibrio: distribuir el peso y evitar cargas descentradas',
+      'Sujeción: adaptar trincaje, bloqueo y relleno al embalaje y a los espacios vacíos',
+      'Compatibilidad: no consolidar mercancías incompatibles',
+    ],
+    captions: ['Bidones: cinchas cruzadas, barras y bolsa de estiba', 'Baterías de litio: trincaje cruzado multipunto', 'Equipo: base de madera, bastidor, cinchas y bolsas laterales', 'Cajas: red de retención en la puerta y refuerzo inferior'],
+    alts: ['Bidones peligrosos sujetos con cinchas naranjas, barras y una bolsa de estiba', 'Palés de baterías de litio sujetos con cinchas verdes cruzadas', 'Equipo grande sujeto con base de madera, bastidor metálico, cinchas y bolsas laterales', 'Pared de cajas retenida en la puerta del contenedor con una red blanca'],
   },
   ar: {
-    eyebrow: 'عمليات منشأ الشحنة في الصين',
-    title: 'سجلات حقيقية لتحميل الحاويات',
-    description: 'تُظهر صور التشغيل تجهيز البضائع والتحميل بالرافعة الشوكية والحاوية بعد اكتمال التحميل قبل مغادرتها الصين.',
-    privacy: 'تمت إزالة ملصقات الشحن والمستندات ومعرّفات المركبات لحماية معلومات العملاء.',
-    captions: ['تحميل بمساعدة الرافعة الشوكية', 'اكتمال تحميل الحاوية', 'اكتمال التحميل أثناء الطقس الماطر'],
-    alts: ['رافعة شوكية تحمل بضائع معبأة داخل حاوية شحن', 'حاوية شحن مكتملة التحميل في منشأة صينية', 'اكتمال تحميل الحاوية أثناء الطقس الماطر'],
+    eyebrow: 'البضائع الخطرة · عمليات المنشأ في الصين',
+    title: 'تحميل وربط وتثبيت البضائع الخطرة في الحاويات',
+    description: 'توضح أربع عمليات حديثة كيفية تكييف الربط والحجز وملء الفراغات مع أشكال الشحن المختلفة.',
+    privacy: 'تم إخفاء ملصقات الشحن والرموز الشريطية ورموز QR ومعرّفات المركبات. توضح الصور طريقة التحميل فقط؛ ويعتمد القبول النهائي على تصنيف البضاعة والتغليف والمستندات والناقل والمسار.',
+    principlesTitle: 'أربعة فحوصات أساسية عند التحميل',
+    principles: [
+      'التسلسل: اتباع خطة الرص والتفريغ المعتمدة، وعند انطباق ذلك تُحمّل البضائع العامة المتوافقة أولاً',
+      'التوازن: توزيع الوزن داخل الحاوية وتجنب التحميل غير المتوازن',
+      'التثبيت: استخدام الربط والحجز والحشو بما يناسب العبوة والفراغات',
+      'التوافق: عدم جمع البضائع غير المتوافقة في حاوية واحدة',
+    ],
+    captions: ['براميل: أحزمة متقاطعة وقضبان ووسادة هوائية', 'بطاريات ليثيوم: ربط متقاطع متعدد النقاط', 'معدات كبيرة: قاعدة خشبية وإطار وأحزمة ووسائد جانبية', 'صناديق: شبكة تثبيت عند الباب وتعزيز سفلي'],
+    alts: ['براميل بضائع خطرة مثبتة بأحزمة برتقالية وقضبان ووسادة هوائية', 'منصات بطاريات ليثيوم مثبتة بأحزمة خضراء متقاطعة', 'معدات كبيرة مثبتة بقاعدة خشبية وإطار معدني وأحزمة ووسائد جانبية', 'جدار من الصناديق مثبت عند باب الحاوية بشبكة بيضاء'],
   },
 };
 
@@ -3153,12 +3222,19 @@ export default function ServiceDetail() {
   };
 
   const heroImgUrl = getHeroImageUrl(currentKey);
+  if (currentKey === 'sea-freight') {
+    const original = language === 'zh' || language === 'en' || language === 'es';
+    const seaMeta = original ? seaFreightMetadata(language) : internationalSeaMetadata(language as LclExtraLocale);
+    const path='/services/sea-freight/';
+    return <div className="ddnz-home" dir={language === 'ar' ? 'rtl' : 'ltr'}><SEO title={seaMeta.title} description={seaMeta.desc} contentLanguage={language} canonicalPath={`${freightLanguagePrefix(language)}${path}`} alternateUrls={freightAlternates(path)}/><SchemaMarkup type="Service" data={{name:seaMeta.title, description:seaMeta.desc, serviceType:'Sea freight'}} /><SourcingHomepageNav showFreightExecutor />{original ? <SeaFreightContent locale={language}/> : <SeaInternationalContent locale={language as LclExtraLocale}/>}<Footer /><WhatsAppFloat /></div>;
+  }
   const serviceCtas = sharedServiceLabels;
   const loadingProof = SEA_FREIGHT_LOADING_PROOF[activeLang] || SEA_FREIGHT_LOADING_PROOF.en;
   const loadingProofImages = [
-    '/images/operations/container-loading-forklift-anonymized.jpg',
-    '/images/operations/container-loaded-anonymized.jpg',
-    '/images/operations/container-loading-wet-weather-anonymized.jpg',
+    '/images/operations/dangerous-goods-drums-lashing-anonymized.webp',
+    '/images/operations/lithium-battery-pallet-lashing-anonymized.webp',
+    '/images/operations/equipment-crate-blocking-anonymized.webp',
+    '/images/operations/carton-cargo-net-restraint-anonymized.webp',
   ];
 
   return (
@@ -3241,58 +3317,8 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {currentKey === 'sea-freight' && (
-        <section className="bg-[var(--hb-navy-deep)] py-16 text-white md:py-24" aria-labelledby="loading-proof-title">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="mb-10 grid gap-7 md:mb-14 md:grid-cols-12 md:items-end">
-              <div className="md:col-span-7">
-                <p className="mb-3 flex items-center gap-2 text-xs font-black uppercase tracking-[0.18em] text-[var(--hb-amber)] sm:text-sm">
-                  <Camera className="h-4 w-4" aria-hidden="true" />
-                  {loadingProof.eyebrow}
-                </p>
-                <h2 id="loading-proof-title" className="max-w-3xl text-3xl font-black tracking-tight sm:text-4xl md:text-5xl">
-                  {loadingProof.title}
-                </h2>
-              </div>
-              <div className="md:col-span-5">
-                <p className="text-base font-medium leading-relaxed text-slate-200 md:text-lg">
-                  {loadingProof.description}
-                </p>
-                <p className="mt-4 flex items-start gap-2 border-t border-white/15 pt-4 text-xs font-semibold leading-relaxed text-slate-400 sm:text-sm">
-                  <ShieldCheck className="mt-0.5 h-4 w-4 shrink-0 text-[var(--hb-amber)]" aria-hidden="true" />
-                  {loadingProof.privacy}
-                </p>
-              </div>
-            </div>
-
-            <div className="grid gap-4 md:h-[38rem] md:grid-cols-12">
-              {loadingProofImages.map((src, index) => (
-                <figure
-                  key={src}
-                  className={`${index === 0 ? 'md:col-span-5' : index === 1 ? 'md:col-span-3' : 'md:col-span-4'} group flex min-h-0 flex-col overflow-hidden border border-white/15 bg-white/[0.04]`}
-                >
-                  <div className="relative aspect-[4/5] min-h-0 overflow-hidden md:aspect-auto md:flex-1">
-                    <img
-                      src={src}
-                      alt={loadingProof.alts[index]}
-                      width={index === 0 ? 1600 : 1400}
-                      height={index === 0 ? 2843 : 1866}
-                      loading="lazy"
-                      decoding="async"
-                      className="h-full w-full object-cover transition-transform duration-500 ease-out motion-reduce:transition-none group-hover:scale-[1.025]"
-                    />
-                    <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#06172a]/25 via-transparent to-transparent" aria-hidden="true" />
-                  </div>
-                  <figcaption className="flex min-h-16 items-center border-t border-white/15 px-5 py-4 text-sm font-bold tracking-wide text-slate-100">
-                    <span className="mr-3 text-xs font-black text-[var(--hb-amber)]">0{index + 1}</span>
-                    {loadingProof.captions[index]}
-                  </figcaption>
-                </figure>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+      {currentKey === 'sea-freight' && <OperationsEvidence locale={language === 'zh' || language === 'es' ? language : 'en'} />}
+      {currentKey === 'sea-freight' && <div className="freight-editorial"><div className="freight-wrap py-8"><Link className="font-bold underline underline-offset-4" to={`${language === 'zh' ? '/zh-cn' : language === 'es' ? '/es' : ''}/services/dangerous-goods-shipping-from-china/`}>{language === 'zh' ? '危险品或锂电货物？查看专项运输与装柜记录 →' : language === 'es' ? '¿Carga peligrosa o baterías? Ver el servicio especializado →' : 'Dangerous goods or lithium cargo? View specialist shipping →'}</Link></div></div>}
 
       {/* Deep-Dive / Quick Facts Dual Split */}
       <section className="py-16 md:py-20 bg-[var(--hb-surface)]">

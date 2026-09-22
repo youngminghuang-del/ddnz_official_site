@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate, Link } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
+import CountryRegionLink from '../features/freight/CountryRegionLink';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
+import LatinAmericaFreightDepth from '../components/LatinAmericaFreightDepth';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
@@ -18,6 +20,44 @@ import {
 import { trackEvent } from '../lib/utils';
 import { buildShippingCountryPath, getShippingCountrySlug } from '../utils/shippingCountryRoutes';
 import { createLocalizedShippingContent, createLocalizedShippingRedlines } from '../utils/localizedShippingContent';
+
+const SHOW_MEDIA_PLANNING = import.meta.env.DEV;
+
+function FreightMediaPlanningSlot({
+  index,
+  title,
+  format,
+  note,
+  dark = false,
+  compact = false,
+}: {
+  index: string;
+  title: string;
+  format: string;
+  note: string;
+  dark?: boolean;
+  compact?: boolean;
+}) {
+  return (
+    <div className={`border border-dashed p-5 ${dark ? 'border-white/25 bg-white/[0.025] text-white' : 'border-[#9eabb8] bg-[#f3f5f7] text-[#10243f]'}`}>
+      <div className="flex items-start justify-between gap-5">
+        <div>
+          <p className={`text-[10px] font-black uppercase tracking-[0.18em] ${dark ? 'text-amber-300' : 'text-[#c94f2f]'}`}>
+            素材位 {index} · 本地预览标记
+          </p>
+          <h3 className={`mt-2 font-black ${compact ? 'text-sm' : 'text-lg'}`}>{title}</h3>
+          <p className={`mt-2 text-xs leading-6 ${dark ? 'text-slate-400' : 'text-slate-600'}`}>{note}</p>
+        </div>
+        <span className={`shrink-0 font-mono text-[10px] font-bold uppercase tracking-wider ${dark ? 'text-slate-500' : 'text-slate-500'}`}>
+          {format}
+        </span>
+      </div>
+      <p className={`mt-4 border-t pt-3 text-[10px] font-bold ${dark ? 'border-white/10 text-slate-500' : 'border-[#d4dce4] text-slate-500'}`}>
+        未提供素材时，正式页面自动隐藏
+      </p>
+    </div>
+  );
+}
 
 const LATAM_DATA = {
   mexico: {
@@ -89,8 +129,8 @@ const LATAM_DATA = {
       transitDays: "海运: 35-50天 | 空运: 5-12工作日",
       complianceRowTitle: "NOM 认证申报与海关预先审单",
       complianceRowVal: "2 - 5 天",
-      solutionsTitle: "墨西哥专线合规解决方案",
-      solutionsSubtitle: "直击拉美口岸特有财税红线，提供集报关、证书预审、仓储装卸于一体的全链条保驾护航。",
+      solutionsTitle: "墨西哥出运前文件核对",
+      solutionsSubtitle: "订舱前把 RFC、产品要求、提单资料和目的港操作逐项确认，减少货到港后补资料。",
       solutions: [
         {
           title: "提单与 RFC 信息核对",
@@ -112,16 +152,16 @@ const LATAM_DATA = {
         {
           mode: "海运整箱/拼箱 (Sea Freight)",
           days: "FCL 整柜 35-50 天 | LCL 拼箱 45-60 天",
-          suitability: "最适合大型汽配、日用百货、建筑建材、重型工业机械及高体积商品。",
+          suitability: "适用于大型汽配、日用百货、建筑建材、重型工业机械及高体积商品。",
           sellingPoint: "可根据船期与舱位情况，规划广州、南沙、深圳、上海至 Manzanillo、Lazaro Cardenas 的海运服务。",
           warning: "太平洋港口查验可能涉及 RFC、发票和装箱资料核对。请确保商业资料如实反映货物情况。"
         },
         {
-          mode: "空运专线/商业快递 (Air Freight)",
-          days: "商业快递 5-7 工作日 | 空运双清专线 8-12 工作日",
-          suitability: "适合急需的汽车模具、高端消费电子、高溢价时尚鞋包、急需零部件样品。",
+          mode: "空运 / 商业快递 (Air Freight)",
+          days: "商业快递 5-7 工作日 | 空运参考 8-12 工作日",
+          suitability: "适合急需的汽车模具、消费电子、时尚商品和零部件样品。",
           sellingPoint: "可依据可用直飞或中转航班，结合货物属性和目的地操作要求规划至 MEX/GDL 的空运路线。",
-          warning: "带有高能锂电池、强磁铁的电子产品必须走专门的危险品或敏感货专线，严查假冒牌、侵权产品，杜绝违法申报。"
+          warning: "带电池、强磁或其他受限属性的货物，应在订舱前提供准确参数，确认承运人是否接受及需要哪些文件。"
         }
       ],
       faqs: [
@@ -130,11 +170,11 @@ const LATAM_DATA = {
           a: "NOM（Norma Oficial Mexicana）适用于部分产品类别，包括部分电子电器、照明和玩具。应在装运前确认产品和进口商是否需要有效的 NOM 文件。"
         },
         {
-          q: "为什么发货时，墨西哥提单上的 RFC 税号这么致命？",
+          q: "为什么墨西哥提单上的 RFC 需要提前核对？",
           a: "RFC 是墨西哥的纳税登记号。建议在出运前核对其与提单、商业发票、装箱单和目的地资料的一致性。"
         },
         {
-          q: "DDNZ 针对曼萨尼约和墨西哥城清关怎么提效？",
+          q: "出运前如何准备曼萨尼约或墨西哥城的目的地操作？",
           a: "请在订舱前确认目的港的单证流程、免箱条款和可用操作安排。具体时效与费用取决于船公司、货物和目的地当时条件。"
         }
       ]
@@ -209,7 +249,7 @@ const LATAM_DATA = {
       transitDays: "海运: 50-80天 | 空运: 15-20工作日",
       complianceRowTitle: "CNPJ 纳税备案核查与 NCM 申报纠错",
       complianceRowVal: "3 - 7 天",
-      solutionsTitle: "巴西专线合规解决方案",
+      solutionsTitle: "巴西出运前文件核对",
       solutionsSubtitle: "围绕 CNPJ、NCM、进口许可及目的地申报要求，提供出运前资料核对与服务协调。",
       solutions: [
         {
@@ -218,7 +258,7 @@ const LATAM_DATA = {
           icon: "FileText"
         },
         {
-          title: "三方行政认证风控防线 (INMETRO/ANATEL)",
+          title: "产品要求核对 (INMETRO/ANATEL/ANVISA)",
           desc: "家电、电子、玩具、通信设备、美妆及医疗相关产品可能涉及 INMETRO、ANATEL 或 ANVISA 等要求。请在装运前确认产品和进口商的适用义务。",
           icon: "ShieldCheck"
         },
@@ -230,14 +270,14 @@ const LATAM_DATA = {
       ],
       multimodalTable: [
         {
-          mode: "经典海运双清 DDP (Santos Direct)",
-          days: "纯海运航程: 约 30 天 | 双清到门(DDP): 全程 50 - 80 天",
-          suitability: "最适合建筑建材、太阳能光伏组件、工业原料、重型电气机械、大型批发电商百货。",
+          mode: "桑托斯海运整箱 / 拼箱",
+          days: "海上运输与目的地操作合计参考: 50 - 80 天",
+          suitability: "适用于建筑建材、太阳能光伏组件、工业原料、重型电气机械及批量百货。",
           sellingPoint: "根据船期、货物资料和目的地服务范围，规划从中国至 Santos 的海运方案。",
           warning: "巴西清关时效会因产品、文件、进口许可和目的地操作而变化。请在出运前确认适用的 LI、税费范围及清关资料。"
         },
         {
-          mode: "空运双清专线 (Air Freight)",
+          mode: "圣保罗空运 (Air Freight)",
           days: "15 - 20 工作日",
           suitability: "适合高附加值精密仪器零配件、移动通讯元器件、化妆品研发样品及高档服装样品。",
           sellingPoint: "可根据可用航班、货物属性与目的地操作要求，规划经适合中转点至圣保罗瓜鲁柳斯机场（GRU）的空运路线。",
@@ -247,15 +287,15 @@ const LATAM_DATA = {
       faqs: [
         {
           q: "为什么巴西出运需要细致的文件准备？",
-          a: "巴西的税制极为严酷，采用了多级流转税叠加（IPI工业税、ICMS流转税、PIS/COFINS社会融合基金），进口商需要极其成熟的清关资质（Radar系统备案）。同时，对产品质量认证、标签、净重、运费申报的要求细致入微，哪怕一个极小的拼箱漏报都会导致整批货物受阻。"
+          a: "巴西进口可能涉及 NCM 分类、进口主体资料、许可、产品要求和多项税费。应由进口商及其当地服务方在装运前确认适用要求，并让提单、发票、装箱单与申报资料保持一致。"
         },
         {
           q: "什么是 NCM 编码，和国内的 HS Code 相比有什么需要注意的？",
-          a: "NCM (Nomenclatura Comum do Mercosul) 是南方共同市场共同命名。它虽然基于 HS 编码，但有着巴西本地的细化延伸。巴西海关对 NCM 的适用性审查极严，错用 NCM 会被罚款多至货值的 10%。"
+          a: "NCM（Nomenclatura Comum do Mercosul）基于 HS 体系，并用于巴西等南共市成员的商品分类。具体编码会影响税费和监管要求，应由进口商或合格的当地专业方确认。"
         },
         {
-          q: "DDNZ 的巴西 DDP 海运服务能帮货主省去哪些麻烦？",
-          a: "我们提供一站式一票到底的包税包清关双清服务，货主无需具备巴西本地复杂的 Radar 清关资质或自办高难度的 LI 进口批件，所有税金申报、清关派送均由我司在巴西的专业进口执照实体来全权承办。"
+          q: "巴西 DDP 或到门报价需要先确认什么？",
+          a: "需要先确认货物、进口主体、NCM、许可、税费口径以及目的地清关和派送责任。可提供的 DDP 或到门范围以单票书面报价为准，不能用一条通用承诺覆盖所有产品。"
         }
       ]
     }
@@ -268,7 +308,7 @@ const LATAM_DATA = {
       subheadline: "Ocean and air freight planning from China to Buenos Aires, with import-document and destination-handling coordination based on the confirmed service scope.",
       transitWindow: "Argentina Transit Windows",
       transitDays: "Sea: 35-50 Days | Air: 12-18 Days",
-      complianceRowTitle: "CUIT Registration & SIRA Approval",
+      complianceRowTitle: "CUIT & Import-Requirement Review",
       complianceRowVal: "4 - 8 Days",
       solutionsTitle: "Argentina SCM Compliance Solutions",
       solutionsSubtitle: "Supporting shipment planning around import documentation, CUIT data, and destination operating requirements.",
@@ -279,7 +319,7 @@ const LATAM_DATA = {
           icon: "ShieldCheck"
         },
         {
-          title: "SIRA / SIs Import License Approval",
+          title: "Current Import-Authorisation Review",
           desc: "Confirm the current import authorisation requirements, NCM classification, and importer CUIT status before loading. Requirements may change and should be checked with the importer and qualified destination advisers.",
           icon: "FileText"
         },
@@ -311,8 +351,8 @@ const LATAM_DATA = {
           a: "Foreign-exchange and payment conditions may affect an importer's ability to complete the transaction. Confirm the commercial terms, banking process, and local import requirements with qualified advisers before dispatching cargo."
         },
         {
-          q: "What is SIRA and why is it needed for Argentine customs?",
-          a: "Import authorisation procedures can apply to specified goods and importers. Confirm the current requirements, timing, and documentation with the importer and qualified local advisers before booking."
+          q: "Which import authorisations should be checked for Argentina?",
+          a: "Procedures can change and may depend on the product and importer. Confirm the current authorisation, timing and document requirements with the importer and qualified local advisers before booking."
         },
         {
           q: "What tax registry must be verified before shipping to Buenos Aires?",
@@ -327,9 +367,9 @@ const LATAM_DATA = {
       subheadline: "提供海运及空运路线规划，并在确认的服务范围内协调 CUIT、进口资料及目的地操作要求。支付与外汇事项请由交易双方及合格专业机构确认。",
       transitWindow: "阿根廷专线预计时效",
       transitDays: "海运: 35-50天 | 空运: 12-18工作日",
-      complianceRowTitle: "CUIT 资质校验与 SIRA 进口批件审核",
+      complianceRowTitle: "CUIT 与当前进口要求核对",
       complianceRowVal: "4 - 8 天",
-      solutionsTitle: "阿根廷专线合规解决方案",
+      solutionsTitle: "阿根廷出运前文件核对",
       solutionsSubtitle: "围绕 CUIT、进口许可、装运文件与目的地操作要求，提供出运前资料核对与服务协调。",
       solutions: [
         {
@@ -338,7 +378,7 @@ const LATAM_DATA = {
           icon: "ShieldCheck"
         },
         {
-          title: "SIRA 进口批件与 CUIT 税号校验",
+          title: "当前进口许可与 CUIT 税号核对",
           desc: "请在装船前确认当前进口许可要求、NCM 编码及进口商 CUIT 状态。相关要求可能调整，应与进口商及目的地合格专业机构复核。",
           icon: "FileText"
         },
@@ -352,12 +392,12 @@ const LATAM_DATA = {
         {
           mode: "海运整箱/拼箱 (Sea Freight)",
           days: "35 - 50 天",
-          suitability: "最适合工业原材料、新能源光伏、重型机械零配件、大宗日用品以及高密度商业库存。",
+          suitability: "适用于工业原材料、新能源光伏、重型机械零配件、大宗日用品及高密度商业库存。",
           sellingPoint: "可按船公司船期、集拼条件和目的地交付要求规划至布宜诺斯艾利斯的海运服务。",
           warning: "布宜诺斯艾利斯的港口拥堵或劳资事件可能影响计划。请确认单证准备情况，并在运输计划中预留合理缓冲。"
         },
         {
-          mode: "空运双清专线/空海联运 (Air Freight)",
+          mode: "空运 / 联运方案 (Air Freight)",
           days: "12 - 18 工作日",
           suitability: "急需的高端电子数码、精密机械模具、高附加值样品及高时效性时尚快消品。",
           sellingPoint: "可根据可用航班、货物属性与目的地操作要求，规划经适合中转点至布宜诺斯艾利斯皮斯塔里尼机场（EZE）的空运路线。",
@@ -370,8 +410,8 @@ const LATAM_DATA = {
           a: "外汇与支付条件可能影响进口商完成交易。建议在货物出运前由交易双方和具备资质的当地专业机构确认付款、银行和进口要求。"
         },
         {
-          q: "什么是 SIRA，对中国出口企业有什么实质性制约？",
-          a: "部分货物或进口商可能涉及进口授权程序。请在订舱前与进口商及目的地合格专业机构确认当前要求、时间和文件。"
+          q: "阿根廷当前有哪些进口许可需要提前确认？",
+          a: "相关程序可能调整，也会因产品与进口主体不同而变化。请在订舱前由进口商及当地合格专业机构确认当前许可、办理时间和文件要求。"
         },
         {
           q: "阿根廷清关还需要准备哪些核心单据？",
@@ -532,7 +572,7 @@ const PAGE_LANG_DATA = {
     seoDesc: "Freight planning from China to Mexico, Brazil, and Argentina, with consolidation, document review, and DDP/DDU service coordination.",
     tabMexico: "Mexico (NOM & RFC Solutions)",
     tabBrazil: "Brazil (CNPJ & Santos Gate)",
-    tabArgentina: "Argentina (SIRA & Forex Escrow)",
+    tabArgentina: "Argentina (CUIT & Import Documents)",
     tabPeru: "Peru (Callao & Lima)",
     tabChile: "Chile (Ports & Santiago)",
     faqHeading: "Latin America SCM Compliance FAQ",
@@ -564,20 +604,20 @@ const PAGE_LANG_DATA = {
     tabChile: "智利（港口 / 圣地亚哥）",
     faqHeading: "拉丁美洲航线通关合规常见问答",
     faqSubheading: "拉美各国的关税、进口文件与港口操作要求可能变化，建议在出运前逐项核对。",
-    formTitle: "立即获取拉美双清方案及报价",
+    formTitle: "提交拉美货运询价",
     formSub: "提交货物信息后，我们将确认路线、文件要求和报价所需资料。",
     formName: "您的姓名 / 企业名称 (必填)",
     formEmail: "您的企业邮箱 (必填)",
     formPhone: "联系电话 / 微信 / WhatsApp (必填)",
     formGoods: "货物详情描述 (如品名、箱数、总重量/立方数、有无电池等)",
-    formSubmit: "立即索取专属 DDP 精算报价",
-    formSuccess: "拉美专线询价提交成功！",
-    formSuccessSub: "拉美大区专线经理正在精算成本，将在 24 小时内向您的邮箱或电话提供详细报价单。",
+    formSubmit: "提交货运询价",
+    formSuccess: "询价已提交",
+    formSuccessSub: "团队会先核对货物、路线和目的地信息，再通过您留下的联系方式确认报价所需资料。",
     formAnother: "发起新的拉美询价",
-    complianceBadge: "合规风控红线",
-    timeBadge: "时效安全测算",
-    actionQuote: "获取本条航线精确预算",
-    actionConsult: "在线对接货代大庄家",
+    complianceBadge: "出运前核对",
+    timeBadge: "参考时效",
+    actionQuote: "获取本条路线报价",
+    actionConsult: "联系路线团队",
     guideHeader: "Heaven Born 拉美出运注意事项",
     guideSub: "围绕集货、进口文件与目的地操作，帮助您在出运前完成必要确认。"
   }
@@ -631,7 +671,7 @@ const UNIVERSAL_REDLINES = {
       },
       {
         id: "04",
-        title: "中国始发本土实地品控验货（货主的眼睛和耳朵）",
+        title: "装运前外观、数量与包装核对",
         desc: "可按约定范围安排装运前核对，例如外观、数量、标签和包装检查；木质包装处理或证书要求应在出运前确认。"
       }
     ]
@@ -751,7 +791,6 @@ Object.assign(PAGE_LANG_DATA, {
 
 export default function ShippingLatinAmerica() {
   const location = useLocation();
-  const navigate = useNavigate();
   const { language } = useLanguage();
   const countryLabel = (country: 'mexico' | 'brazil' | 'argentina' | 'peru' | 'chile') => {
     const names = {
@@ -791,12 +830,10 @@ export default function ShippingLatinAmerica() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
-  const handleCountryTabChange = (country: 'mexico' | 'brazil' | 'argentina' | 'peru' | 'chile') => {
-    setSelectedCountry(country);
-    navigate(buildShippingCountryPath(location.pathname, country));
+  useEffect(() => {
     setActiveTransportMode(0);
     setActiveFaq(null);
-  };
+  }, [location.pathname]);
 
   const activeLang = language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en';
   
@@ -804,6 +841,16 @@ export default function ShippingLatinAmerica() {
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang];
     return data[key] || '';
+  };
+
+  const localText = (copy: { zh: string; en: string; es?: string }) => {
+    if (activeLang === 'zh') return copy.zh;
+    if (activeLang === 'es') return copy.es || copy.en;
+    return copy.en;
+  };
+
+  const scrollToQuote = () => {
+    document.getElementById('latam-quote-form')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const getLocalizedPath = (path: string) => {
@@ -827,27 +874,27 @@ export default function ShippingLatinAmerica() {
         sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
         air: language === 'zh' ? '5 - 12 工作日' : '5 - 12 Days',
         seaLabel: language === 'zh' ? '曼萨尼约 / 拉萨罗卡德纳斯海运整箱 (FCL)' : 'Manzanillo / Lázaro Cárdenas FCL',
-        seaDesc: language === 'zh' ? '一级直航海运服务' : 'Tier-1 Direct Ocean Sailings',
+        seaDesc: localText({ zh: '按可用船期确认直航或中转', en: 'Direct or connecting service, subject to schedule', es: 'Servicio directo o con transbordo, según salida' }),
         airLabel: language === 'zh' ? '墨西哥城 (MEX) 空运专线' : 'Mexico City (MEX) Air Express',
-        airDesc: language === 'zh' ? '自主清关与最后一公里派送' : 'Direct Clearance & Last-Mile Delivery'
+        airDesc: localText({ zh: '按确认的清关与派送范围安排', en: 'Clearance and delivery to the confirmed scope', es: 'Despacho y entrega según el alcance confirmado' })
       };
     } else if (selectedCountry === 'brazil') {
       return {
         sea: language === 'zh' ? '50 - 80 天' : '50 - 80 Days',
         air: language === 'zh' ? '15 - 20 工作日' : '15 - 20 Days',
         seaLabel: language === 'zh' ? '桑托斯海运快线 (Santos Express)' : 'Santos Sea Express',
-        seaDesc: language === 'zh' ? '避开合恩角恶劣气候的优化航线' : 'Optimized Cape Horn Avoidance Routing',
+        seaDesc: localText({ zh: '按可用船期与目的港操作规划', en: 'Planned around available sailings and destination handling', es: 'Planificado según salidas y operación en destino' }),
         airLabel: language === 'zh' ? '圣保罗 (GRU) 空运专线' : 'São Paulo (GRU) Air Express',
-        airDesc: language === 'zh' ? '稳定排舱 DDP 门到门' : 'Stable Space Booking & DDP Door-to-Door'
+        airDesc: localText({ zh: '按货物与进口条件确认服务范围', en: 'Scope confirmed against cargo and import conditions', es: 'Alcance sujeto a carga y condiciones de importación' })
       };
     } else if (selectedCountry === 'argentina') {
       return {
         sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
         air: language === 'zh' ? '12 - 18 工作日' : '12 - 18 Days',
         seaLabel: language === 'zh' ? '布宜诺斯艾利斯海运快线' : 'Buenos Aires Sea Express',
-        seaDesc: language === 'zh' ? '双清包税送货上门' : 'Customs Cleared Door-to-Door',
+        seaDesc: localText({ zh: '按书面确认范围安排清关与派送', en: 'Clearance and delivery to the written scope', es: 'Despacho y entrega según el alcance escrito' }),
         airLabel: language === 'zh' ? '埃塞萨 (EZE) 空运专线' : 'Ezeiza (EZE) Air Express',
-        airDesc: language === 'zh' ? '稳定排舱 DDP 门到门' : 'Stable Space Booking & DDP Door-to-Door'
+        airDesc: localText({ zh: '按货物与进口条件确认服务范围', en: 'Scope confirmed against cargo and import conditions', es: 'Alcance sujeto a carga y condiciones de importación' })
       };
     } else if (selectedCountry === 'peru') {
       return {
@@ -911,7 +958,7 @@ export default function ShippingLatinAmerica() {
   const redlines = UNIVERSAL_REDLINES[activeLang];
 
   return (
-    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffdf9] font-sans text-[#10243f]">
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -923,22 +970,26 @@ export default function ShippingLatinAmerica() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
+      <SchemaMarkup
+        type="FAQPage"
+        data={{
+          url: `https://www.ddnzglobal.com${location.pathname}`,
+          faqs: spec.faqs.map((faq) => ({ question: faq.q, answer: faq.a })),
+        }}
+      />
       <SourcingHomepageNav showFreightExecutor />
+      <CountryRegionLink region="latin-america" />
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden pb-24 pt-16 text-white md:pb-36 md:pt-24">
-        {/* Visual shipping backdrop layer */}
-        <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1494412519320-aa613dfb7738?auto=format&fit=crop&q=80&w=2000" 
-            alt="Latin America Ocean Freight"
-            width="2000"
-            height="1125"
-            className="w-full h-full object-cover"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--hb-navy-deep)] via-[var(--hb-navy-deep)]/80 to-transparent" />
-        </div>
+      <header className="relative overflow-hidden bg-[#0b1c2c] pb-20 pt-16 text-white md:pb-28 md:pt-24">
+        <div
+          className="pointer-events-none absolute inset-0 opacity-20"
+          style={{
+            backgroundImage: 'linear-gradient(rgba(255,255,255,.10) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.08) 1px, transparent 1px)',
+            backgroundSize: '72px 72px',
+            maskImage: 'linear-gradient(to bottom right, black, transparent 72%)',
+          }}
+        />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 pb-16">
@@ -947,62 +998,57 @@ export default function ShippingLatinAmerica() {
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Country Selector Tabs */}
               {!isLocked && (
-                <div className="flex flex-wrap gap-2.5 mb-2">
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('mexico')}
-                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                <div className="mb-2 inline-flex max-w-full flex-wrap overflow-hidden rounded-xl border border-white/[0.14] bg-white/[0.03] p-1">
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'mexico')}
+                    className={`flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-widest transition-colors ${
                       selectedCountry === 'mexico'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
-                        : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
+                        ? 'bg-white text-[#10243f]'
+                        : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabMexico')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('brazil')}
-                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                  </Link>
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'brazil')}
+                    className={`flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-widest transition-colors ${
                       selectedCountry === 'brazil'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
-                        : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
+                        ? 'bg-white text-[#10243f]'
+                        : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabBrazil')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('argentina')}
-                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                  </Link>
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'argentina')}
+                    className={`flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-widest transition-colors ${
                       selectedCountry === 'argentina'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
-                        : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
+                        ? 'bg-white text-[#10243f]'
+                        : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabArgentina')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('peru')}
-                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                  </Link>
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'peru')}
+                    className={`flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-widest transition-colors ${
                       selectedCountry === 'peru'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
-                        : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
+                        ? 'bg-white text-[#10243f]'
+                        : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabPeru')}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => handleCountryTabChange('chile')}
-                    className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
+                  </Link>
+                  <Link
+                    to={buildShippingCountryPath(location.pathname, 'chile')}
+                    className={`flex min-h-11 items-center gap-2 rounded-lg px-4 py-2.5 text-xs font-black uppercase tracking-widest transition-colors ${
                       selectedCountry === 'chile'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
-                        : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
+                        ? 'bg-white text-[#10243f]'
+                        : 'text-slate-300 hover:bg-white/[0.06] hover:text-white'
                     }`}
                   >
                     <Globe className="w-4 h-4" aria-hidden="true" /> {t('tabChile')}
-                  </button>
+                  </Link>
                 </div>
               )}
 
@@ -1014,13 +1060,11 @@ export default function ShippingLatinAmerica() {
                 transition={{ duration: 0.4 }}
                 className="space-y-4"
               >
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#d97706]/10 border border-[#d97706]/30 text-[#d97706] text-xs font-black tracking-widest uppercase">
-                  HEAVEN BORN LATIN AMERICA SHIPPING
+                <span className="inline-flex items-center gap-1.5 border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-[0.18em] text-slate-300">
+                  DDNZ × HEAVEN BORN · LATIN AMERICA FREIGHT
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#d97706]">
-                    {spec.headline}
-                  </span>
+                  {spec.headline}
                 </h1>
                 <div className="space-y-4">
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed font-medium">
@@ -1029,17 +1073,17 @@ export default function ShippingLatinAmerica() {
                   
                   {/* Premium Micro-Badges / Key SCM Highlights */}
                   <div className="flex flex-wrap gap-2.5 pt-1">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
+                    <span className="inline-flex items-center gap-1.5 border-b border-emerald-500/30 px-1 py-1.5 text-xs font-bold text-emerald-300">
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? '进口文件审核支持' : 'Import Documentation Support'}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#d97706]/10 border border-[#d97706]/20 text-xs font-bold text-[#d97706]">
+                    <span className="inline-flex items-center gap-1.5 border-b border-amber-400/30 px-1 py-1.5 text-xs font-bold text-amber-300">
                       <Package className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? '中国集货与拼箱协调' : 'China Consolidation Coordination'}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
+                    <span className="inline-flex items-center gap-1.5 border-b border-sky-400/30 px-1 py-1.5 text-xs font-bold text-sky-300">
                       <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '一站式 DDP / DDU 双清' : 'One-Stop DDP/DDU'}
+                      {localText({ zh: 'DDP / DAP 责任边界核对', en: 'DDP / DAP scope review', es: 'Revisión del alcance DDP / DAP' })}
                     </span>
                   </div>
                 </div>
@@ -1047,7 +1091,7 @@ export default function ShippingLatinAmerica() {
 
               {/* Quick SCM Meta Tags */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8 pt-6 border-t border-white/[0.08]">
-                <div className="bg-white/[0.02] backdrop-blur-sm p-4 rounded-xl border border-white/[0.08]">
+                <div className="border-l-2 border-emerald-400 bg-white/[0.035] p-4">
                   <div className="flex items-center gap-1.5 text-emerald-400 text-xs font-black uppercase mb-1">
                     <ShieldCheck className="w-4 h-4 shrink-0" />
                     <span>{t('complianceBadge')}</span>
@@ -1056,15 +1100,10 @@ export default function ShippingLatinAmerica() {
                   <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : 'Period'}: {spec.complianceRowVal}</div>
                 </div>
 
-                <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center">
+                <div className="flex items-center justify-start border-l-2 border-[#c94f2f] bg-white/[0.035] p-4 text-left sm:justify-center sm:text-center">
                   <button
-                    onClick={() => {
-                      const formElem = document.getElementById('latam-quote-form');
-                      if (formElem) {
-                        formElem.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="text-xs font-black text-white hover:text-[#d97706] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
+                    onClick={scrollToQuote}
+                    className="flex min-h-[44px] h-full w-full cursor-pointer items-center justify-start gap-1.5 text-xs font-black text-white transition-colors hover:text-[#f2a47f] sm:justify-center"
                   >
                     <span>{language === 'zh' ? '立即询价' : 'Inquire Now'}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
@@ -1075,29 +1114,40 @@ export default function ShippingLatinAmerica() {
 
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
             <div className="lg:col-span-5 space-y-4">
-              <h3 className="text-lg font-black tracking-wide text-[#d97706] uppercase mb-2">
-                {language === 'zh' ? '拉美专线真实货运时效' : 'Latin America Fast-Lane Transit Windows'}
+              <h3 className="mb-2 text-sm font-black uppercase tracking-[0.18em] text-amber-300">
+                {localText({ zh: '运输方式与参考时效', en: 'Freight modes and planning windows', es: 'Modalidades y plazos de planificación' })}
               </h3>
               
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
+              <div className="flex items-center justify-between border-y border-white/[0.12] bg-white/[0.035] p-5">
                 <div>
                   <h4 className="text-sm font-black text-white">{getTransitTimes().seaLabel}</h4>
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().seaDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{getTransitTimes().sea}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{getTransitTimes().sea}</span>
                 </div>
               </div>
 
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
+              <div className="flex items-center justify-between border-b border-white/[0.12] bg-white/[0.035] p-5">
                 <div>
                   <h4 className="text-sm font-black text-white">{getTransitTimes().airLabel}</h4>
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().airDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{getTransitTimes().air}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{getTransitTimes().air}</span>
                 </div>
               </div>
+
+              {SHOW_MEDIA_PLANNING && (
+                <FreightMediaPlanningSlot
+                  index="01"
+                  title="首屏线路与操作短片"
+                  format="16:9 · 8–20 秒"
+                  note="建议使用订舱、装柜、仓库或船舶靠港的连续镜头；不要使用通用素材库视频。"
+                  dark
+                  compact
+                />
+              )}
             </div>
 
           </div>
@@ -1109,40 +1159,50 @@ export default function ShippingLatinAmerica() {
 
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
+        <LatinAmericaFreightDepth
+          country={selectedCountry}
+          language={activeLang}
+          onQuote={scrollToQuote}
+        />
+
+
         {/* Section: Compliant Solutions Checklist (3 Columns) */}
-        <section className="py-16 md:py-24 border-b border-white/[0.05]">
+        <section className="border-b border-[#dce3ea] bg-[#fffdf9] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+            <div className="mb-12 max-w-3xl">
+              <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
                 Import Documentation Support
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
+              <h2 className="mb-4 text-2xl font-black leading-tight tracking-tight text-[#10243f] sm:text-3xl md:text-4xl">
                 {spec.solutionsTitle}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm sm:text-base font-medium">
+              <p className="text-sm font-medium leading-7 text-slate-600 sm:text-base">
                 {spec.solutionsSubtitle}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 border-l border-t border-[#dce3ea] md:grid-cols-3">
               {spec.solutions.map((sol: any, idx: number) => (
-                <div key={idx} className="bg-white/[0.02] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.04] flex flex-col justify-between group">
+                <div key={idx} className="group flex flex-col justify-between border-b border-r border-[#dce3ea] bg-white p-6 transition-colors hover:bg-[#f8f5ef] md:p-8">
                   <div>
-                    <div className="bg-[#d97706]/10 p-3 rounded-xl inline-block mb-4">
+                    <div className="mb-4 inline-block border-b-2 border-[#c94f2f] pb-2 text-[#c94f2f]">
                       {getIcon(sol.icon)}
                     </div>
-                    <h3 className="text-lg font-bold text-white mb-3">
+                    <h3 className="mb-3 text-lg font-bold text-[#10243f]">
                       {sol.title}
                     </h3>
-                    <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-medium">
+                    <p className="text-xs font-medium leading-relaxed text-slate-600 sm:text-sm">
                       {sol.desc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#d97706]">
-                    <span>{language === 'zh' ? '申请专项合规备案' : 'Request Registry Pre-Audit'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                  </div>
+                  <details className="mt-6 border-t border-[#dce3ea] pt-4">
+                    <summary className="cursor-pointer text-sm font-bold text-[#c94f2f] focus-visible:outline focus-visible:outline-2">{localText({ zh: '查看需要准备的资料', en: 'See what to prepare', es: 'Ver qué preparar' })}</summary>
+                    <p className="mt-4 text-sm leading-7 text-slate-600">{[
+                      localText({ zh: '准备进口方名称、登记资料与清关联系人，附产品用途及已有商品编码，交由进口方核对。', en: 'Prepare the importer name, registration details and clearance contact, plus product use and any existing commodity code for the importer to review.', es: 'Prepara nombre, registro y contacto de despacho del importador, uso del producto y código disponible para su revisión.' }),
+                      localText({ zh: '准备产品型号、技术参数、标签照片及已有检测或认证文件，按具体产品确认适用要求。', en: 'Prepare model numbers, specifications, label photos and existing test or certification documents for a product-specific review.', es: 'Prepara modelos, especificaciones, fotos de etiquetas y documentos de ensayo o certificación disponibles.' }),
+                      localText({ zh: '准备商业发票、装箱单及包装后的件数、尺寸、毛重，逐项核对品名和收发货信息。', en: 'Prepare the commercial invoice, packing list and final package counts, dimensions and gross weights; reconcile descriptions and shipper/consignee details.', es: 'Prepara factura, lista de empaque, bultos, medidas y pesos brutos finales; coteja descripciones y datos del remitente y destinatario.' }),
+                    ][idx]}</p>
+                  </details>
                 </div>
               ))}
             </div>
@@ -1150,27 +1210,28 @@ export default function ShippingLatinAmerica() {
         </section>
 
         {/* Section: Transit Timelines Dynamic Detail Grid */}
-        <section className="py-16 border-b border-white/[0.05]">
+        <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+            <div className="mb-12 max-w-3xl">
+              <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
                 {language === 'zh' ? '通道时效参考' : 'Transit Time Reference'}
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
+              <h2 className="mb-4 text-2xl font-black leading-tight tracking-tight text-[#10243f] sm:text-3xl md:text-4xl">
                 {{
-                  en: 'Latin America Transit Pathway Specifications',
-                  zh: '拉美双通道精准时效对齐',
+                  en: 'Choose between ocean and air freight',
+                  zh: '海运与空运怎么选',
                   ru: 'Параметры маршрутов в Латинскую Америку',
                   fr: 'Paramètres des itinéraires vers l’Amérique latine',
-                  es: 'Parámetros de rutas hacia Latinoamérica',
+                  es: 'Cómo elegir entre transporte marítimo y aéreo',
                   ar: 'مواصفات مسارات أمريكا اللاتينية',
                 }[activeLang]}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm font-semibold">
-                {language === 'zh' 
-                  ? '对比物理路由、适用场景及老庄家核心卖点，为您规避漫长延误。' 
-                  : 'Compare ocean container and air cargo lanes with exact shipping timelines and direct operations rules.'}
+              <p className="text-sm font-semibold leading-7 text-slate-600">
+                {localText({
+                  zh: '根据货量、时效、货值和目的地操作要求比较运输方式。',
+                  en: 'Compare modes by shipment size, urgency, cargo value and destination requirements.',
+                  es: 'Compara las modalidades según volumen, urgencia, valor y requisitos en destino.',
+                })}
               </p>
             </div>
 
@@ -1186,10 +1247,10 @@ export default function ShippingLatinAmerica() {
                       key={idx}
                       type="button"
                       onClick={() => setActiveTransportMode(idx)}
-                      className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
+                      className={`flex w-full items-center justify-between border p-5 text-left transition-colors ${
                         isSelected 
-                          ? 'bg-gradient-to-r from-[var(--hb-navy)] to-[var(--hb-blue)] text-white border-transparent shadow-xl translate-x-1'
-                          : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
+                          ? 'border-[#10243f] bg-[#10243f] text-white'
+                          : 'border-[#d4dce4] bg-white text-[#10243f] hover:border-[#91a0af]'
                       }`}
                     >
                       <div className="flex items-center gap-3">
@@ -1197,7 +1258,7 @@ export default function ShippingLatinAmerica() {
                           ? <Plane className="w-5 h-5 text-[#d97706]" aria-hidden="true" />
                           : <Ship className="w-5 h-5 text-[#d97706]" aria-hidden="true" />}
                         <div>
-                          <h4 className="text-sm font-black tracking-tight text-white">
+                          <h4 className={`text-sm font-black tracking-tight ${isSelected ? 'text-white' : 'text-[#10243f]'}`}>
                             {row.mode}
                           </h4>
                           <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-slate-200' : 'text-slate-500'}`}>
@@ -1206,7 +1267,7 @@ export default function ShippingLatinAmerica() {
                         </div>
                       </div>
                       <div className="text-right">
-                        <span className="font-mono text-base font-bold text-white">
+                        <span className={`font-mono text-base font-bold ${isSelected ? 'text-white' : 'text-[#10243f]'}`}>
                           {row.days.split('|')[0]}
                         </span>
                       </div>
@@ -1218,22 +1279,22 @@ export default function ShippingLatinAmerica() {
               {/* Right Column: Detailed Blueprint & Diagnostic Card */}
               <div className="lg:col-span-7">
                 {spec.multimodalTable && spec.multimodalTable[activeTransportMode] && (
-                  <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/[0.08] shadow-lg relative overflow-hidden min-h-[380px] flex flex-col justify-between">
+                  <div className="relative flex min-h-[380px] flex-col justify-between overflow-hidden rounded-2xl border border-[#d4dce4] bg-white p-6 md:p-8">
                     {/* Watermark of active mode */}
-                    <div className="absolute -top-12 -right-12 text-white/5 font-black text-9xl select-none pointer-events-none opacity-10">
+                    <div className="pointer-events-none absolute -right-12 -top-12 select-none text-9xl font-black text-[#10243f]/[0.04]">
                       {spec.multimodalTable[activeTransportMode].mode.slice(0, 1)}
                     </div>
 
                     <div className="relative z-10 space-y-6">
                       <div>
-                        <span className="px-2.5 py-1 bg-[#d97706]/10 text-[#d97706] text-[10px] font-black uppercase tracking-wider rounded-lg">
-                          {language === 'zh' ? '深度技术对齐' : 'SCM Detail Panel'}
+                        <span className="border-l-2 border-[#c94f2f] pl-2.5 text-[10px] font-black uppercase tracking-wider text-[#c94f2f]">
+                          {localText({ zh: '运输方式说明', en: 'Mode details', es: 'Detalle de la modalidad' })}
                         </span>
-                        <h3 className="text-xl md:text-2xl font-black text-white mt-2">
+                        <h3 className="mt-2 text-xl font-black text-[#10243f] md:text-2xl">
                           {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
-                        <p className="text-[#d97706] text-sm font-black mt-1">
-                          {language === 'zh' ? '预计运输周期' : 'Estimated Transit Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
+                        <p className="mt-1 text-sm font-black text-[#c94f2f]">
+                          {language === 'zh' ? '预计运输周期' : 'Estimated Transit Window'}: <span className="font-mono text-base font-bold text-[#10243f]">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
 
@@ -1242,46 +1303,45 @@ export default function ShippingLatinAmerica() {
                           <h5 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1.5">
                             {language === 'zh' ? '适用货品场景' : 'Best Suited For'}
                           </h5>
-                          <p className="text-xs text-slate-300 leading-relaxed font-semibold">
+                          <p className="text-xs font-semibold leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].suitability}
                           </p>
                         </div>
                         <div>
-                          <h5 className="text-xs font-black text-[#d97706] uppercase tracking-widest mb-1.5">
+                          <h5 className="mb-1.5 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
                             {language === 'zh' ? 'Heaven Born 操作要点' : 'Heaven Born Operating Notes'}
                           </h5>
-                          <p className="text-xs text-slate-300 leading-relaxed font-semibold">
+                          <p className="text-xs font-semibold leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].sellingPoint}
                           </p>
                         </div>
                       </div>
 
-                      <div className="p-4 bg-amber-500/10 rounded-2xl border border-amber-400/20 flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
+                      <div className="flex items-start gap-3 border-l-2 border-amber-500 bg-amber-50 p-4">
+                        <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
                         <div>
-                          <h5 className="text-xs font-black text-amber-200 uppercase tracking-wider mb-0.5">
+                          <h5 className="mb-0.5 text-xs font-black uppercase tracking-wider text-amber-800">
                             {language === 'zh' ? '查验与操作注意事项' : 'Operation Notes'}
                           </h5>
-                          <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
+                          <p className="text-[11px] font-medium leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].warning}
                           </p>
                         </div>
                       </div>
                     </div>
 
-                    <div className="pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                      <span className="text-xs text-slate-400 font-bold">
-                        * {language === 'zh' ? '上述时效基于我司拉美航线真实货运凭证，清关阶段人工查验容错率极低，请严格对齐。' : 'Lanes are subject to strict regional physical and tax checks. Correct document alignment is mandatory.'}
+                    <div className="relative z-10 flex flex-col justify-between gap-4 border-t border-[#dce3ea] pt-6 sm:flex-row sm:items-center">
+                      <span className="text-xs font-bold text-slate-500">
+                        * {localText({
+                          zh: '时效为规划区间，最终以货好日期、承运人舱位、航线及目的地操作为准。',
+                          en: 'Planning ranges depend on cargo-ready date, carrier space, routing and destination handling.',
+                          es: 'Los plazos dependen de la fecha de carga lista, el espacio, la ruta y la operación en destino.',
+                        })}
                       </span>
                       <button
                         type="button"
-                        onClick={() => {
-                          const quoteForm = document.getElementById('latam-quote-form');
-                          if (quoteForm) {
-                            quoteForm.scrollIntoView({ behavior: 'smooth' });
-                          }
-                        }}
-                        className="px-5 py-2.5 rounded-xl bg-[var(--hb-amber)] hover:bg-[var(--hb-amber-strong)] text-white text-xs font-black tracking-widest uppercase transition-colors active:scale-[0.98] flex items-center justify-center gap-1.5 shadow-sm whitespace-nowrap shrink-0 self-end"
+                        onClick={scrollToQuote}
+                        className="flex shrink-0 items-center justify-center gap-1.5 self-end whitespace-nowrap rounded-xl bg-[#c94f2f] px-5 py-2.5 text-xs font-black uppercase tracking-widest text-white transition-colors hover:bg-[#a84028] active:scale-[0.98]"
                       >
                         <span>{t('actionQuote')}</span>
                         <ArrowRight className="w-3.5 h-3.5" />
@@ -1295,33 +1355,45 @@ export default function ShippingLatinAmerica() {
           </div>
         </section>
 
+        {SHOW_MEDIA_PLANNING && (
+          <section className="border-b border-[#dce3ea] bg-[#fffdf9] py-12" aria-label="Destination proof media planning preview">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <FreightMediaPlanningSlot
+                index="04"
+                title="目的港或末端交付记录"
+                format="16:9 视频 / 横向照片"
+                note="优先补充港口提柜、当地仓库、车辆交接或签收现场；若暂时没有自有素材，这一段不会出现在正式页面。"
+              />
+            </div>
+          </section>
+        )}
+
         {/* Universal LATAM Avoid-Pitfall & SCM Insights */}
-        <section className="py-16 md:py-24 border-b border-white/[0.05] bg-transparent text-white relative">
+        <section className="relative border-b border-[#dce3ea] bg-[#fffdf9] py-16 text-[#10243f] md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 border border-[#d97706]/20 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+            <div className="mb-12 max-w-3xl">
+              <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
                 {language === 'zh' ? '出运注意事项' : 'Shipping Notes'}
               </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight mb-4">
+              <h2 className="mb-4 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">
                 {redlines.title}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm sm:text-base font-semibold">
+              <p className="text-sm font-semibold leading-7 text-slate-600 sm:text-base">
                 {redlines.subtitle}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 border-l border-t border-[#dce3ea] md:grid-cols-2">
               {redlines.items.map((item) => (
-                <div key={item.id} className="bg-white/[0.02] backdrop-blur-md rounded-2xl p-8 border border-white/[0.08] shadow-lg relative overflow-hidden group hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300">
-                  <div className="absolute top-0 right-0 p-4 text-white/5 font-black text-7xl select-none leading-none opacity-40 group-hover:opacity-60 transition-opacity">
+                <div key={item.id} className="group relative overflow-hidden border-b border-r border-[#dce3ea] bg-white p-8 transition-colors hover:bg-[#f8f5ef]">
+                  <div className="absolute right-0 top-0 select-none p-4 text-7xl font-black leading-none text-[#10243f]/[0.04]">
                     {item.id}
                   </div>
-                  <div className="flex items-center gap-2.5 text-[#d97706] font-black mb-4 text-sm sm:text-base">
-                    <ShieldAlert className="w-5.5 h-5.5 text-[#d97706] flex-shrink-0" />
+                  <div className="mb-4 flex items-center gap-2.5 text-sm font-black text-[#c94f2f] sm:text-base">
+                    <ShieldAlert className="w-5.5 h-5.5 flex-shrink-0 text-[#c94f2f]" />
                     <h3>{item.title}</h3>
                   </div>
-                  <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-semibold relative z-10">
+                  <p className="relative z-10 text-xs font-semibold leading-relaxed text-slate-600 sm:text-sm">
                     {item.desc}
                   </p>
                 </div>
@@ -1331,32 +1403,31 @@ export default function ShippingLatinAmerica() {
         </section>
 
         {/* Latin America FAQ */}
-        <section className="py-16 md:py-24 border-b border-white/[0.05]">
+        <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
+            <div className="mb-12">
+              <h2 className="mb-4 text-2xl font-black leading-tight text-[#10243f] sm:text-3xl md:text-4xl">
                 {t('faqHeading')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm font-semibold">
+              <p className="text-sm font-semibold text-slate-600">
                 {t('faqSubheading')}
               </p>
             </div>
 
-            <div className="space-y-4">
+            <div className="border-t border-[#cbd4dd]">
               {spec.faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
                   <div 
                     key={idx} 
-                    className="bg-white/[0.01] border border-white/[0.06] rounded-xl mb-4 px-6 py-4 overflow-hidden"
+                    className="overflow-hidden border-b border-[#cbd4dd] bg-transparent px-1 py-5"
                   >
                     <button
                       type="button"
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
+                      className="flex w-full items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#c94f2f] focus-visible:ring-offset-4 focus-visible:ring-offset-[#f3f5f7]"
                     >
-                      <span className="text-sm md:text-base font-black text-white pr-4">
+                      <span className="pr-4 text-sm font-black text-[#10243f] md:text-base">
                         {faq.q}
                       </span>
                       <ChevronDown className={`w-5 h-5 text-[#d97706] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
@@ -1370,7 +1441,7 @@ export default function ShippingLatinAmerica() {
                           exit={{ height: 0, opacity: 0 }}
                           transition={{ duration: 0.25, ease: "easeInOut" }}
                         >
-                          <div className="px-6 pb-5 text-sm text-slate-400 border-t border-white/[0.08] pt-3 leading-relaxed font-medium">
+                          <div className="pt-4 text-sm font-medium leading-relaxed text-slate-600">
                             {faq.a}
                           </div>
                         </motion.div>
@@ -1384,9 +1455,9 @@ export default function ShippingLatinAmerica() {
         </section>
 
         {/* Lead Generation RFQ Form */}
-        <section id="latam-quote-form" className="py-16 md:py-24 border-t border-white/[0.05]">
+        <section id="latam-quote-form" className="bg-[#0b1c2c] py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="bg-white/[0.03] backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/[0.08] dark-form-container">
+            <div className="rounded-2xl border border-white/[0.1] bg-white/[0.035] p-8 dark-form-container md:p-12">
               <GetAQuote
                 presetDestination={countryLabel(selectedCountry)}
                 presetService="Sea"

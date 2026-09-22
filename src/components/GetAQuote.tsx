@@ -28,12 +28,12 @@ import { readAttribution } from '../lib/attribution';
 const funnelTranslations: Record<string, Record<string, string>> = {
   zh: {
     step1Title: '选择运输方式',
-    step1Desc: '不同的运输方式决定了时效与成本，我们将为您定制最优路由',
+    step1Desc: '运输方式会影响时效、成本与可接货物范围，我们会按本票资料核对可行路线',
     step2Title: '选择始发地与目的地',
     step2Desc: '填写始发地与目的地，便于我们初步判断可行的运输与清关安排',
     step3Title: '预估货物重量与体积',
-    step3Desc: '拖动滑块或一键选择常见货量预设，实时反馈规格测算',
-    step4Title: '留下联系方式获取精确报价',
+    step3Desc: '拖动滑块或选择常见货量，提供初步件重尺信息',
+    step4Title: '留下联系方式获取书面报价',
     step4Desc: '只需填写姓名，并留下邮箱或电话 / WhatsApp 其中一种联系方式',
     
     origin: '始发港/城市',
@@ -52,7 +52,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     
     back: '上一步',
     next: '下一步',
-    submitQuote: '获取专属精确报价',
+    submitQuote: '提交报价资料',
     
     summaryTitle: '您的询盘配置摘要',
     summaryMode: '运输方式',
@@ -62,14 +62,14 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     phonePlaceholder: '电话 / 微信 / WhatsApp（与邮箱二选一）',
     namePlaceholder: '您的姓名 / 公司名称 (必填)',
     emailPlaceholder: '企业邮箱（与电话二选一）',
-    notesPlaceholder: '选填：提供品名、特殊包装、时效要求等，报价更精准...',
+    notesPlaceholder: '选填：提供品名、包装、时效要求和货好日期等...',
     contactHint: '邮箱或电话 / WhatsApp 填写一项即可',
     contactRequired: '请至少填写邮箱或电话 / WhatsApp 中的一项',
     optionalDetails: '补充货物信息（选填）',
     
-    seaDesc: '高性价比，适合大宗散货/整箱重载运输',
-    airDesc: '极致时效，适合高附加值、紧急空运直飞',
-    landDesc: '卡班直达，中亚五国与俄罗斯高性价比专线',
+    seaDesc: '适合大批量、托盘货和整柜运输，时效以船期为准',
+    airDesc: '适合时效要求较高的货物，需先确认航空承运条件',
+    landDesc: '适用于符合线路和口岸条件的中亚及俄罗斯货物',
     wareDesc: '仓储、验货、包装与集运等出口前支持服务',
     
     mode: '运输方式',
@@ -82,7 +82,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
   },
   en: {
     step1Title: 'Select Transport Mode',
-    step1Desc: 'Choose your transport channel; we provide optimal routing and pricing',
+    step1Desc: 'Mode affects timing, cost and cargo acceptance; we review the practical options for this shipment',
     step2Title: 'Origin & Destination',
     step2Desc: 'Transit and customs clearance starting from our Guangzhou HQ',
     step3Title: 'Estimated Weight & Volume',
@@ -428,6 +428,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
       } else if (destParam === 'argentina' || destParam === 'Argentina') {
         const arText = language === 'zh' ? '阿根廷' : 'Argentina';
         setDestination(arText);
+        setIsParamFilled(true);
+      } else {
+        // Region and future port links may provide a descriptive destination.
+        setDestination(destParam.slice(0, 160));
         setIsParamFilled(true);
       }
     }

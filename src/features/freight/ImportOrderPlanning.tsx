@@ -1,0 +1,17 @@
+import { words, type FreightLocale } from './regions';
+
+export default function ImportOrderPlanning({ locale, market }: { locale: FreightLocale; market: 'brazil' | 'mexico' }) {
+  const t = (zh: string, en: string, es: string) => words(zh, en, es)[locale];
+  const brazil = market === 'brazil';
+  const items = brazil ? [
+    [t('不套“货值乘几倍”的公式', 'Start with cost items, not a multiplier', 'Calcula por partidas, no por un multiplicador'), t('把供应商货价、包装、运输及目的地费用拆开。让当地进口方核对税费和清关预算，再核算本批货的总投入，不用别人的进口倍数估算自己的订单。', 'Separate supplier price, packing, transport and destination charges. Have the local importer check the tax and clearance budget before estimating the total outlay for this order; another buyer’s multiplier is not a quotation.', 'Separa precio del proveedor, embalaje, transporte y gastos en destino. El importador local debe revisar impuestos y despacho antes de calcular la inversión total; el multiplicador de otro comprador no es una cotización.')],
+    [t('多种货，保留各自明细', 'Keep mixed-product details separate', 'Conserva el detalle de cada producto'), t('不同产品分别列出用途、数量、货值和包装资料，再汇总供应商与出运安排。采购款、运费及当地费用的支付时间也要纳入补货计划。', 'List use, quantity, value and packing for each product before combining supplier and shipping arrangements. Include payment dates for goods, freight and local charges in the replenishment plan.', 'Detalla uso, cantidad, valor y embalaje de cada producto antes de consolidar proveedores y transporte. Incluye las fechas de pago de mercancía, flete y gastos locales en el plan de reposición.')],
+  ] : [
+    [t('样品运费，不等于补货运费', 'A sample quote is not a replenishment quote', 'El envío de una muestra no cotiza la reposición'), t('批量采购前，让供应商提供本批实际箱数、外箱尺寸和毛重。样品与大货的包装、数量和交付方式可能不同，不能把样品快递费直接按件数放大。', 'Before a bulk order, request the actual carton count, outer dimensions and gross weight. Samples and stock orders may use different packaging and delivery arrangements; do not scale a sample courier price by unit count.', 'Antes de comprar por volumen, pide cajas, medidas exteriores y peso bruto del lote. Las muestras y la reposición pueden llevar embalajes y entregas distintos; no multipliques el courier de una muestra por el número de unidades.')],
+    [t('先说明这批货卖给谁、送到哪', 'Define the receiving point before ordering', 'Define dónde recibirás antes de comprar'), t('门店补货、自有仓和平台仓的收货安排分别确认。若需要标签、预约或分批送货，把要求交给供应商和货代核对，再确定包装与发运时间。', 'Confirm receiving arrangements for a shop, your own warehouse or a marketplace warehouse. Share label, appointment or split-delivery requirements with the supplier and forwarder before finalizing packing and dispatch.', 'Confirma la recepción en tienda, almacén propio o almacén de marketplace. Comunica etiquetas, citas o entregas parciales al proveedor y transitario antes de cerrar embalaje y fecha de salida.')],
+  ];
+  return <section id={`${market}-order-planning`} className="mx-auto max-w-7xl px-6 py-16">
+    <h2 className="mb-8 text-3xl font-bold">{brazil ? t('下采购单前，把总投入算清。', 'Before ordering, budget for the whole shipment.', 'Antes de comprar, calcula el envío completo.') : t('第一次进货，先把样品和补货分开算。', 'First import? Separate samples from stock orders.', '¿Primera importación? Separa muestras y reposición.')}</h2>
+    <div className="grid gap-8 md:grid-cols-2">{items.map(([title, body]) => <article key={title} className="border-t border-purple-300 pt-6"><h3 className="text-xl font-semibold">{title}</h3><p className="mt-4 leading-8">{body}</p></article>)}</div>
+  </section>;
+}

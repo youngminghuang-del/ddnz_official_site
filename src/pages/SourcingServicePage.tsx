@@ -1,3 +1,7 @@
+import './sourcing-service-aligned.css';
+import ServiceVisual from './ServiceVisual';
+import ServiceCaseDetail from './ServiceCaseDetail';
+import SupplierFieldPreview from './SupplierFieldPreview';
 import { Link, useLocation } from 'react-router-dom';
 import {
   BadgeCheck,
@@ -13,6 +17,8 @@ import {
 } from 'lucide-react';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
+import OperationsEvidence from '../features/freight/OperationsEvidence';
+import FclSpeakerCaseZh from '../features/freight/FclSpeakerCaseZh';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { DdnzEyebrow, DdnzPrimaryLink, DdnzSecondaryLink } from '../components/DdnzUi';
@@ -237,6 +243,7 @@ const sequenceIcons = [FileSearch, Factory, Camera, PackageCheck];
 export default function SourcingServicePage({ kind }: { kind: SourcingServiceKind }) {
   const { language } = useLanguage();
   const location = useLocation();
+  const aligned = new URLSearchParams(location.search).get('review') !== 'baseline';
   const copy = serviceCopy[kind][language];
   const shared = sharedCopy[language];
   const config = serviceConfig[kind];
@@ -263,7 +270,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
   const description = copy.intro;
 
   return (
-    <div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fbfaf7] text-[var(--ddnz-ink)]" dir={language === 'ar' ? 'rtl' : undefined}>
+    <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fbfaf7] text-[var(--ddnz-ink)] ${aligned ? 'sd-aligned' : ''}`} dir={language === 'ar' ? 'rtl' : undefined}>
       <SEO
         title={title}
         description={description}
@@ -289,15 +296,19 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
       <SourcingHomepageNav />
 
       <main>
-        <header className="relative overflow-hidden bg-[var(--ddnz-ink)] text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(118,60,156,.34),transparent_35rem),radial-gradient(circle_at_92%_88%,rgba(201,79,47,.24),transparent_28rem)]" aria-hidden="true" />
-          <div className="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_.75fr] lg:items-center lg:px-8 lg:py-24">
+        {import.meta.env.DEV && <div className="sd-review-bar">
+          <span>独立预览 · 三个服务详情页风格统一 · 未上线</span>
+          <Link to={`${location.pathname}${aligned ? '?review=baseline' : '?review=candidate'}`}>{aligned ? '对照原版' : '查看新版'}</Link>
+        </div>}
+        <header className="sd-hero relative overflow-hidden bg-[var(--ddnz-ink)] text-white">
+          <div className="sd-hero-wash absolute inset-0 bg-[radial-gradient(circle_at_18%_8%,rgba(118,60,156,.34),transparent_35rem),radial-gradient(circle_at_92%_88%,rgba(201,79,47,.24),transparent_28rem)]" aria-hidden="true" />
+          <div className="sd-hero-inner relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_.75fr] lg:items-center lg:px-8 lg:py-24">
             <div>
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-300">
                 <Link to={localePrefix[language] || '/'} className="hover:text-white">{shared.home}</Link>
-                <span aria-hidden="true">/</span><span>{shared.services}</span>
+                <span aria-hidden="true">/</span><Link to={`${localePrefix[language]}/sourcing-services/`}>{shared.services}</Link>
               </nav>
-              <div className="mt-8"><DdnzEyebrow icon={ServiceIcon} dark>{copy.eyebrow}</DdnzEyebrow></div>
+              <div className="mt-8"><DdnzEyebrow icon={ServiceIcon} dark={!aligned}>{copy.eyebrow}</DdnzEyebrow></div>
               <h1 className="mt-5 max-w-[18ch] text-[clamp(2.5rem,5.5vw,4.75rem)] font-black leading-[1.02] tracking-[-0.055em] text-balance">{copy.title}</h1>
               <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-200 sm:text-lg">{copy.intro}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -312,16 +323,20 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
               </div>
             </div>
 
-            <figure className="relative overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-[0_24px_70px_rgba(0,0,0,.35)]">
-              <div className="aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5]">
+            {aligned && kind === 'supplier-search' ? <SupplierFieldPreview image={config.image} alt={config.imageAlt} /> : aligned ? <ServiceVisual inspection={kind === 'inspection-quality-control'} /> : <figure className="sd-photo relative overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-[0_24px_70px_rgba(0,0,0,.35)]">
+              <div className="sd-photo-frame aspect-[4/5] sm:aspect-[16/10] lg:aspect-[4/5]">
                 <img src={config.image} alt={config.imageAlt} width="1200" height="1200" fetchPriority="high" className="h-full w-full object-cover" />
               </div>
               <figcaption className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#09182a] via-[#09182a]/78 to-transparent px-5 pb-5 pt-20 text-xs font-semibold leading-5 text-slate-200">
                 {shared.fieldEvidence} · {copy.eyebrow}
               </figcaption>
-            </figure>
+            </figure>}
           </div>
         </header>
+        {aligned && <nav className="sd-service-nav" aria-label={shared.services}>
+          <Link to={`${localePrefix[language]}/sourcing-services/`}>{shared.services} ↗</Link>
+          {(Object.keys(serviceConfig) as SourcingServiceKind[]).map((service) => <Link key={service} aria-current={kind === service ? 'page' : undefined} to={`${localePrefix[language]}/sourcing-services/${service}/`}>{serviceCopy[service][language].eyebrow}</Link>)}
+        </nav>}
 
         <section id="service-scope" className="scroll-mt-24 border-b border-slate-200 bg-white py-16 sm:py-20">
           <div className="mx-auto grid max-w-7xl gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:px-8">
@@ -332,7 +347,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
                 {copy.useCases.map((item) => <li key={item} className="flex gap-3 text-sm font-semibold leading-6 text-slate-700"><CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-[var(--ddnz-purple)]" aria-hidden="true" />{item}</li>)}
               </ul>
             </div>
-            <div className="border-t-4 border-[var(--ddnz-coral)] bg-[#fff8f4] p-6 sm:p-8">
+            <div className="sd-output border-t-4 border-[var(--ddnz-coral)] bg-[#fff8f4] p-6 sm:p-8">
               <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-coral-strong)]">02 · {copy.outputTitle}</p>
               <h2 className="mt-4 text-3xl font-black tracking-[-0.035em]">{copy.outputTitle}</h2>
               <ul className="mt-7 divide-y divide-[#edd8cf]">
@@ -342,7 +357,9 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
-        <section className="bg-[#eef2f6] py-16 sm:py-20">
+        {aligned && (kind === 'consolidation-export' && language === 'zh' ? <FclSpeakerCaseZh quoteHref={quoteHref} /> : <ServiceCaseDetail kind={kind} quoteHref={quoteHref} />)}
+
+        <section className="sd-process bg-[#eef2f6] py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-purple-strong)]">03 · Process</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-black tracking-[-0.035em] sm:text-4xl">{copy.sequenceTitle}</h2>
@@ -382,7 +399,8 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
-        <section className="bg-[var(--ddnz-ink)] py-16 text-white">
+        {kind === 'consolidation-export' && <section className="mx-auto max-w-7xl px-6 py-12"><h2 className="text-2xl font-bold">{language === 'zh' ? '货物已备好，只需要安排拼箱运输？' : language === 'es' ? '¿Carga lista y solo necesitas transporte LCL?' : 'Cargo ready and only need LCL freight?'}</h2><Link className="mt-5 inline-block font-bold underline underline-offset-4" to={`${language === 'zh' ? '/zh-cn' : language === 'es' ? '/es' : ''}/services/lcl-shipping-from-china/`}>{language === 'zh' ? '查看 LCL 拼箱费用、包装与交付 →' : language === 'es' ? 'Ver costos, embalaje y entrega LCL →' : 'Explore LCL costs, packing and delivery →'}</Link></section>}
+        <section className="sd-final bg-[var(--ddnz-ink)] py-16 text-white">
           <div className="mx-auto flex max-w-7xl flex-col gap-7 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
             <div><h2 className="text-3xl font-black tracking-[-0.035em]">{shared.finalTitle}</h2><p className="mt-3 max-w-3xl leading-7 text-slate-300">{shared.finalBody}</p></div>
             <DdnzPrimaryLink
@@ -395,6 +413,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
             </DdnzPrimaryLink>
           </div>
         </section>
+        {kind === 'consolidation-export' && ['zh', 'en', 'es'].includes(language) && <OperationsEvidence receiving locale={language as 'zh' | 'en' | 'es'} />}
       </main>
 
       <Footer />

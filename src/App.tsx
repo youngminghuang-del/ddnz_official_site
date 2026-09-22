@@ -1,7 +1,10 @@
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
-import Home from './pages/Home';
+const Home = lazy(() => import('./pages/Home'));
+import InternalPageNavigation from './components/InternalPageNavigation';
+import CookieConsent from './components/CookieConsent';
+const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
 import { kitchenCategoryPaths } from './features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, productContentLanguages, localizedProductPath, isLocalizedProductPath, productRouteParts } from './lib/productLocalization.mjs';
 import './features/buyer-guides/buyer-guides.css';
@@ -9,12 +12,15 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { readAttribution, rememberAttribution } from './lib/attribution';
 import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
-import CookieConsent from './components/CookieConsent';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
-const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
 const ServiceDetail = lazy(() => import('./pages/ServiceDetail'));
+const FreightRegionPage = lazy(() => import('./pages/FreightRegionPage'));
+const UaeFreightPage = lazy(() => import('./pages/UaeFreightPage'));
+const NigeriaFreightPage = lazy(() => import('./pages/NigeriaFreightPage'));
+const MexicoFreightPage = lazy(() => import('./pages/MexicoFreightPage'));
+const GhanaFreightPage = lazy(() => import('./pages/GhanaFreightPage'));
 const ShippingMiddleEast = lazy(() => import('./pages/shipping-from-china-to-middle-east'));
 const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-central-asia'));
 const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
@@ -67,6 +73,10 @@ function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
+  if (normalizedCountry === 'uae' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <UaeFreightPage />;
+  if (normalizedCountry === 'nigeria' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <NigeriaFreightPage />;
+  if (normalizedCountry === 'mexico' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <MexicoFreightPage />;
+  if (normalizedCountry === 'ghana' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <GhanaFreightPage />;
   if (['saudi-arabia', 'uae', 'kuwait', 'qatar', 'oman', 'bahrain'].includes(normalizedCountry)) {
     return <ShippingMiddleEast />;
   }
@@ -361,6 +371,7 @@ export default function App() {
     <HelmetProvider>
       <LanguageProvider>
         <Router>
+          <InternalPageNavigation />
           <SkipToMainContent />
           <LanguageRouteSync />
           <HashScrollHandler />
@@ -376,10 +387,10 @@ export default function App() {
             <Route path="/insights" element={<InsightsHub />} />
             <Route path="/how-we-work" element={<HowWeWork />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
-            <Route path="/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
+            <Route path="/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
-            <Route path="/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
-            <Route path="/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            <Route path="/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
@@ -427,10 +438,10 @@ export default function App() {
             <Route path="/zh-cn/insights" element={<InsightsHub />} />
             <Route path="/zh-cn/how-we-work" element={<HowWeWork />} />
             <Route path="/zh-cn/services/:serviceId" element={<ServiceDetail />} />
-            <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
+            <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/zh-cn/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
-            <Route path="/zh-cn/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
-            <Route path="/zh-cn/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            <Route path="/zh-cn/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/zh-cn/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`zh-${country}`} path={`/zh-cn/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}
@@ -499,10 +510,10 @@ export default function App() {
             <Route path="/es/insights" element={<InsightsHub />} />
             <Route path="/es/how-we-work" element={<HowWeWork />} />
             <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
-            <Route path="/es/shipping-from-china-to-middle-east" element={<ShippingMiddleEast />} />
+            <Route path="/es/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-central-asia" element={<ShippingCentralAsia />} />
-            <Route path="/es/shipping-from-china-to-west-africa" element={<ShippingWestAfrica />} />
-            <Route path="/es/shipping-from-china-to-latin-america" element={<ShippingLatinAmerica />} />
+            <Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/es/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`es-${country}`} path={`/es/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
             ))}

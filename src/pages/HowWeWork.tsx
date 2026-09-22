@@ -634,7 +634,7 @@ export default function HowWeWork() {
             return (
               <li id={`step-${index + 1}`} key={step.title} className="scroll-mt-24 border-t border-slate-200 bg-[linear-gradient(180deg,#f7f8f8_0%,#eef2f4_100%)] py-16 sm:py-20">
                 <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-12 lg:items-center lg:px-8">
-                  <figure className={`${mediaFirst ? 'lg:col-start-1' : 'lg:col-start-8'} relative overflow-hidden rounded-[1.35rem] bg-[var(--ddnz-ink)] shadow-[0_22px_60px_rgba(16,36,63,.12)] lg:col-span-5 lg:row-start-1`}>
+                  {index > 1 && <figure className={`${mediaFirst ? 'lg:col-start-1' : 'lg:col-start-8'} relative overflow-hidden rounded-[1.35rem] bg-[var(--ddnz-ink)] shadow-[0_22px_60px_rgba(16,36,63,.12)] lg:col-span-5 lg:row-start-1`}>
                     <div className="aspect-[4/5]">
                       {media.type === 'video' ? (
                         <video className="h-full w-full object-cover" src={media.src} poster={media.poster} controls playsInline preload="none" aria-label={step.mediaAlt} />
@@ -646,9 +646,9 @@ export default function HowWeWork() {
                       <p className="text-[10px] font-black uppercase tracking-[0.15em] text-[#f5bea7]">{copy.fieldEvidence}</p>
                       <p className="mt-1 text-sm font-bold">{step.mediaLabel}</p>
                     </figcaption>
-                  </figure>
+                  </figure>}
 
-                  <article className={`${mediaFirst ? 'lg:col-start-7' : 'lg:col-start-1'} lg:col-span-6 lg:row-start-1`}>
+                  <article className={`${index < 2 ? 'lg:col-start-2 lg:col-span-10' : `${mediaFirst ? 'lg:col-start-7' : 'lg:col-start-1'} lg:col-span-6`} lg:row-start-1`}>
                     <div className="flex items-center gap-4">
                       <span className="grid h-12 w-12 place-items-center rounded-xl bg-white text-[var(--ddnz-purple-strong)] shadow-sm"><Icon className="h-6 w-6" aria-hidden="true" /></span>
                       <span className="font-mono text-sm font-black tracking-[0.18em] text-[var(--ddnz-coral-strong)]">0{index + 1}</span>

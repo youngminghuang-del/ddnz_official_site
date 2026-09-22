@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
+import CountryRegionLink from '../features/freight/CountryRegionLink';
+import NewFreightEvidence from '../features/freight/NewFreightEvidence';
+import '../features/freight/freight.css';
 import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
@@ -1233,7 +1236,6 @@ PAGE_LANG_DATA.ru.country_Bahrain = 'Бахрейн';
 
 export default function MiddleEastRoute() {
   const location = useLocation();
-  const navigate = useNavigate();
   const { language } = useLanguage();
 
   type MiddleEastCountry = 'Saudi-Arabia' | 'UAE' | 'Kuwait' | 'Qatar' | 'Oman' | 'Bahrain';
@@ -1284,10 +1286,6 @@ export default function MiddleEastRoute() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
-  const handleCountryTabChange = (country: MiddleEastCountry) => {
-    setSelectedCountry(country);
-    navigate(buildShippingCountryPath(location.pathname, slugByCountry[country]));
-  };
 
   const activeLang = language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en';
 
@@ -1409,6 +1407,7 @@ export default function MiddleEastRoute() {
         }}
       />
       <SourcingHomepageNav showFreightExecutor />
+      <CountryRegionLink region="middle-east" />
 
       <main>
         
@@ -1453,10 +1452,9 @@ export default function MiddleEastRoute() {
                                   ? t('country_Oman')
                                   : t('country_Bahrain');
                         return (
-                          <button
+                          <Link
                             key={country}
-                            type="button"
-                            onClick={() => handleCountryTabChange(country)}
+                            to={buildShippingCountryPath(location.pathname, slugByCountry[country])}
                             className={`min-h-11 px-3 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
                               isActive
                                 ? 'bg-[#d97706] text-white shadow-md shadow-[#d97706]/15'
@@ -1464,7 +1462,7 @@ export default function MiddleEastRoute() {
                             }`}
                           >
                             {label}
-                          </button>
+                          </Link>
                         );
                       })}
                     </div>
@@ -1567,6 +1565,7 @@ export default function MiddleEastRoute() {
         </section>
 
         <MarketSourcingHandoff destination={selectedCountryLabel} />
+        {selectedCountry === 'UAE' && ['zh', 'en', 'es'].includes(activeLang) && <NewFreightEvidence locale={activeLang as 'zh' | 'en' | 'es'} uaeOnly />}
 
         {/* Section 2: Red Sea Operational Reality Update (Market Insight Box) */}
         <section className="py-12 bg-[#081E39] border-y border-white/[0.05]">

@@ -1,3 +1,4 @@
+import RetailCasePreview from "./RetailCasePreview";
 import { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -328,6 +329,8 @@ export function SourcingServices() {
             <a href="/sourcing/mobile-accessories-from-china/">See the product control model <ArrowRight size={16} /></a>
           </aside>
         </section>
+
+        <RetailCasePreview />
 
         <section className="ss-marketplace" id="marketplace" aria-labelledby="marketplace-title">
           <div className="ss-section">

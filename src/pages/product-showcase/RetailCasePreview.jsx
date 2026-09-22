@@ -1,0 +1,23 @@
+import { FieldReveal } from '../ServiceMotion';
+import { ArrowRight, CheckCircle2 } from "lucide-react";
+import "./retail-case-preview.css";
+
+export default function RetailCasePreview() {
+  const baseline = new URLSearchParams(window.location.search).get('review') === 'baseline';
+  return <>
+    <aside className="ddnz-review-switch" aria-label="候选对照" lang="zh-CN">
+      <strong>{baseline ? '官网基线对照' : '独立候选 · 新增零售案例'}</strong>
+      <span>保留现站组件与询价路径 · 未上线</span>
+      <a href={baseline ? '?review=candidate#retail-case' : '?review=baseline#paths'}>{baseline ? '查看新增案例' : '对照原版'}</a>
+    </aside>
+    {!baseline && <FieldReveal />}
+    {!baseline && <section className="ss-section rc-section" id="retail-case" aria-labelledby="rc-title">
+      <div className="ss-split-heading"><div><p className="ss-kicker">RETAIL SOURCING IN PRACTICE · TÜRKİYE</p><h2 id="rc-title">Five buyers. One container.<br />A simpler way to buy again.</h2></div><p>Five friends combined phone-case purchases into one 40HQ. DDNZ coordinated the order from product selection through ocean export.</p></div>
+      <div className="rc-facts" aria-label="Order overview"><div><strong>5 buyers</strong><span>Individual purchasing needs</span></div><div><strong>20+ styles each</strong><span>Multiple phone brands and models</span></div><div><strong>1 × 40HQ</strong><span>Consolidated shipment to Ambarli</span></div></div>
+      <div className="rc-layout"><article className="rc-story"><p className="ss-kicker">FROM PRODUCT CHOICE TO EXPORT</p><h3>One team connected the steps.</h3><p>The customers compared DDNZ’s quotations with their previous Guangzhou wholesalers and found most phone-case prices more competitive. The team also helped source additional products, advised on selection and supported price negotiations.</p><ol><li><b>Agree the products</b><span>Product images, materials, samples, prices and minimum order quantities.</span></li><li><b>Coordinate the order</b><span>Bulk ordering and production, inspection and warehousing.</span></li><li><b>Organize ocean export</b><span>Booking, loading, export customs clearance and sea transport.</span></li></ol><p className="rc-handover"><b>At destination:</b> the customers handled clearance, duties and taxes, and container collection at Ambarli port.</p></article>
+      <aside className="rc-outcome"><p className="ss-kicker">CUSTOMER FEEDBACK SUMMARY</p><h3>Lower total cost.<br />No repeat trip to China.</h3><p>The customers reported a lower total cost for this container than under their previous purchasing arrangement.</p><ul><li><CheckCircle2 size={18} /><span>More competitive quotations for most phone cases</span></li><li><CheckCircle2 size={18} /><span>Help with selection, additional products and negotiation</span></li><li><CheckCircle2 size={18} /><span>Remote replenishment with sourcing and shipping coordinated together</span></li></ul><p>Further purchasing could be arranged without flying to China again.</p></aside></div>
+      <article className="rc-story" style={{marginTop:24}}><p className="ss-kicker">WHEN A BATCH NEEDED REWORK</p><h3>Two days to remake the defective batch before shipment.</h3><p>Checks covered styles and phone models, quantities, appearance and packaging. When defects were found, DDNZ stopped packing, loading and release of the affected goods, separating suspect products from those confirmed acceptable.</p><p>The team established the issue, the affected quantity and the factory’s ability to correct it. After the customer approved the remedy and schedule, DDNZ and the factory completed the remake in two days. The affected goods were not sent overseas with known defects.</p><p>After receiving the goods, the customer expressed satisfaction with the transparent communication and the practical solution carried through to completion.</p><p><b>Keeping five buyers’ orders clear:</b> shipping marks, numbered cartons and separate lists identified each buyer’s goods. The customer and their customs broker confirmed the packing list, invoice and product descriptions before shipment.</p></article>
+      <div className="rc-next"><div><strong>Planning a mixed product order?</strong><p>Start with products, styles, quantities and destination.</p></div><a className="ss-primary" href="/sourcing/mobile-accessories-from-china/">Explore mobile accessories <ArrowRight size={16} /></a><a className="ss-text-button" href="/get-a-quote/?leadGoal=Product+Sourcing&amp;industry=Mobile+Accessories&amp;productScope=Mobile+Accessories&amp;buyerType=Established+%2F+multi-store+retailer&amp;sourcingPath=retail&amp;source=sourcing_services_turkiye_case">Start a sourcing brief <ArrowRight size={16} /></a></div>
+    </section>}
+  </>;
+}
