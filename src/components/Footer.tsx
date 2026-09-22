@@ -14,10 +14,21 @@ import { outdoorCategoryNavigation, outdoorOverviewNavigation } from '../config/
 import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
 import { COMPANY, companyName } from '../config/companyIdentity';
 import { siteFooterCopy } from './site-footer/locales';
+import { siteNavigation } from '../config/siteNavigation';
 import './site-footer/site-footer.css';
 
 type FooterProps = { quotePath?: string; footerId?: string; pageKey?: string; description?: string; tagline?: string; pageLinks?: {href: string; label: string}[]; note?: string };
 const socialIcons = { linkedin: Linkedin, facebook: Share2, instagram: Instagram, tiktok: Music2, whatsapp: MessageCircle };
+const footerServiceCopy = {
+  en: { heading: 'Sourcing services', overview: 'Service overview', supplier: 'Supplier search & comparison', quality: 'Inspection & quality control', consolidation: 'Consolidation & export', process: 'How the process works' },
+  zh: { heading: '采购服务', overview: '服务总览', supplier: '供应商搜索与比价', quality: '验货与质量控制', consolidation: '集货与出口交付', process: '查看完整服务流程' },
+  ru: { heading: 'Услуги закупки', overview: 'Обзор услуг', supplier: 'Поиск и сравнение поставщиков', quality: 'Инспекция и контроль качества', consolidation: 'Консолидация и экспорт', process: 'Как устроен процесс' },
+  fr: { heading: 'Services achats', overview: 'Vue d’ensemble', supplier: 'Recherche et comparaison', quality: 'Inspection et contrôle qualité', consolidation: 'Consolidation et export', process: 'Voir le processus' },
+  es: { heading: 'Servicios de compra', overview: 'Resumen de servicios', supplier: 'Búsqueda y comparación', quality: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', process: 'Cómo funciona el proceso' },
+  ar: { heading: 'خدمات التوريد', overview: 'نظرة عامة على الخدمات', supplier: 'البحث عن الموردين والمقارنة', quality: 'الفحص ومراقبة الجودة', consolidation: 'التجميع والتصدير', process: 'كيف تعمل العملية' },
+  pt: { heading: 'Serviços de sourcing', overview: 'Visão geral', supplier: 'Busca e comparação de fornecedores', quality: 'Inspeção e controle de qualidade', consolidation: 'Consolidação e exportação', process: 'Como funciona o processo' },
+  tr: { heading: 'Tedarik hizmetleri', overview: 'Hizmetlere genel bakış', supplier: 'Tedarikçi arama ve karşılaştırma', quality: 'Denetim ve kalite kontrol', consolidation: 'Konsolidasyon ve ihracat', process: 'Süreç nasıl işler' },
+} as const;
 
 export default function Footer({ quotePath, footerId, pageKey = 'site', description, tagline, pageLinks = [], note }: FooterProps = {}) {
   const [legalType, setLegalType] = useState<LegalType>(null);
@@ -37,8 +48,17 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
   ];
   const marketLinks = [
     { label: copy.middleEast, to: localizedPath('/shipping-from-china-to-middle-east') },
+    { label: copy.centralAsia, to: localizedPath('/shipping-from-china-to-central-asia') },
     { label: copy.westAfrica, to: localizedPath('/shipping-from-china-to-west-africa') },
     { label: copy.latinAmerica, to: localizedPath('/shipping-from-china-to-latin-america') },
+  ];
+  const serviceCopy = footerServiceCopy[language];
+  const serviceLinks = [
+    { label: serviceCopy.overview, to: localizedPath(siteNavigation.sourcingServices[0]) },
+    { label: serviceCopy.supplier, to: localizedPath(siteNavigation.sourcingServices[1]) },
+    { label: serviceCopy.quality, to: localizedPath(siteNavigation.sourcingServices[2]) },
+    { label: serviceCopy.consolidation, to: localizedPath(siteNavigation.sourcingServices[3]) },
+    { label: serviceCopy.process, to: localizedPath(siteNavigation.process) },
   ];
   const contextualLinks = language === 'en' ? pageLinks.filter(link => link.href !== '/screen-protectors') : [];
   return (
@@ -75,6 +95,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
         </div>
         <div className="ddnz-footer__navigation">
           <nav aria-labelledby={id + '-products'}><h3 id={id + '-products'}>{copy.categories}</h3><ul>{productLinks.map(item => <li key={item.to}><Link to={canonicalSitePath(item.to)}>{item.label}</Link></li>)}</ul></nav>
+          <nav aria-labelledby={id + '-services'}><h3 id={id + '-services'}>{serviceCopy.heading}</h3><ul>{serviceLinks.map(item => <li key={item.to}><Link to={item.to}>{item.label}</Link></li>)}</ul></nav>
           <nav aria-labelledby={id + '-markets'}><h3 id={id + '-markets'}>{copy.markets}</h3><ul>{marketLinks.map(item => <li key={item.to}><Link to={item.to}>{item.label}</Link></li>)}</ul></nav>
           <section className="ddnz-footer__operations">
             <h3>{copy.freight}</h3><p>{language === 'zh' ? COMPANY.freightZh : COMPANY.freightEn}</p><p>{copy.hbLabel}</p>

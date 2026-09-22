@@ -115,6 +115,16 @@ const copy: Record<Language, MarketHandoffCopy> = {
 };
 
 const prefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
+const evidenceAlt: Record<Language, string> = {
+  en: 'Wooden-crated cargo moved by pallet jack during loading preparation in China',
+  zh: '中国装货准备现场使用托盘搬运车移动木箱货物',
+  ru: 'Перемещение груза в деревянной обрешетке гидравлической тележкой при подготовке погрузки в Китае',
+  fr: 'Caisse en bois déplacée au transpalette pendant la préparation du chargement en Chine',
+  es: 'Carga en caja de madera movida con transpaleta durante la preparación en China',
+  ar: 'نقل حمولة بصندوق خشبي بعربة منصات أثناء تجهيز التحميل في الصين',
+  pt: 'Carga em caixa de madeira movida com paleteira durante a preparação na China',
+  tr: 'Çin’de yükleme hazırlığı sırasında transpaletle taşınan ahşap kasalı yük',
+};
 const icons = [ClipboardCheck, PackageCheck, Ship];
 
 export default function MarketSourcingHandoff({ destination }: { destination?: string }) {
@@ -166,7 +176,7 @@ export default function MarketSourcingHandoff({ destination }: { destination?: s
           <figure className="mt-4 grid overflow-hidden border border-slate-200 bg-[var(--ddnz-ink)] text-white sm:grid-cols-[220px_1fr] sm:items-center">
             <img
               src="/media/process/export-loading-poster.webp"
-              alt="Wooden-crated cargo being moved by pallet jack during China loading preparation"
+              alt={evidenceAlt[language]}
               width="720"
               height="1280"
               loading="lazy"

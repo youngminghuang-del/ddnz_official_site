@@ -381,19 +381,19 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   // 8. Central Asia ("shipping-from-china-to-central-asia")
   'shipping-from-china-to-central-asia': {
     en: {
-      title: 'Secured Freight Forwarding to Kazakhstan & Uzbekistan | DDNZ',
-      desc: 'Professional road and rail container transportation from China to Kazakhstan, Uzbekistan, and Central Asia. Complete EAEU customs clearance.',
-      keywords: 'central asia freight, shipping to kazakhstan, rail freight to tashkent, almaty truck cargo'
+      title: 'China Freight to Russia and Central Asia | DDNZ',
+      desc: 'Rail, road, multimodal and air freight planning from China to Russia, Kazakhstan, Uzbekistan, Kyrgyzstan, Tajikistan and Turkmenistan.',
+      keywords: 'central asia freight, shipping to russia, shipping to kazakhstan, rail freight to tashkent, china central asia trucking'
     },
     'zh-cn': {
-      title: '中国至中东欧及中亚五国(哈萨克斯坦/乌兹别克斯坦)多式联运 | 华正邦泰 DDNZ Global',
-      desc: '华正邦泰联合 DDNZ 供应链为您提供中国至哈萨克斯坦、乌兹别克斯坦等中亚国家的跨境卡航与多式联运。自营广州集拼仓、高效口岸清关保障。',
-      keywords: '中亚多式联运, 哈萨克斯坦卡航, 乌兹别克斯坦铁路班列, 中亚货代, 跨境卡航'
+      title: '中国至俄罗斯与中亚五国铁路、卡航及多式联运 | 华正邦泰',
+      desc: '规划中国至俄罗斯、哈萨克斯坦、乌兹别克斯坦、吉尔吉斯斯坦、塔吉克斯坦和土库曼斯坦的铁路、公路、多式联运与空运。',
+      keywords: '俄罗斯货运, 中亚五国货运, 哈萨克斯坦卡航, 乌兹别克斯坦铁路, 中亚多式联运'
     },
     ru: {
-      title: 'Доставка из Китая под ключ | Карго и логистика в Казахстан и Узбекистан — DDNZ',
-      desc: 'Надежная доставка из Китая под ключ от DDNZ Global. Собственный склад в Гуанчжоу, бесплатная консолидация, автодоставка и контейнерные перевозки сборных грузов.',
-      keywords: 'доставка из китая под ключ, карго казахстан, логистика узбекистан, автодоставка из гуанчжоу, сборные грузы'
+      title: 'Доставка из Китая в Россию и Центральную Азию | DDNZ',
+      desc: 'Планирование железнодорожных, автомобильных, мультимодальных и авиационных перевозок из Китая в Россию и пять стран Центральной Азии.',
+      keywords: 'доставка из китая в россию, грузоперевозки центральная азия, карго казахстан, логистика узбекистан, сборные грузы'
     },
     fr: {
       title: "Logistique Chine vers l'Asie Centrale | Kazakhstan & Ouzbékistan | DDNZ",
@@ -528,6 +528,14 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
       image: '/commercial-kitchen-media/kitchen-hero.webp'
     }
   },
+  'sourcing/restaurant-kitchen-packages-from-china': {
+    en: {
+      title: 'Restaurant Kitchen Packages from China | Layout + Equipment | DDNZ',
+      desc: 'Plan a quick-service, cafe or casual-dining kitchen with DDNZ layout design, coordinated China equipment sourcing, QC and export handoff.',
+      keywords: 'restaurant kitchen package China, commercial kitchen layout, restaurant equipment package, cafe equipment sourcing China',
+      image: '/images/product-showcase/kitchen/kitchen-operating-sanitized.webp'
+    }
+  },
   'sourcing/audio-speakers-from-china': {
     en: {
       title: 'Audio & Speaker Sourcing from China | DDNZ',
@@ -608,6 +616,25 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   }
 };
 
+const restaurantScenarioSeo = [
+  ['takeaway-qsr', 'Takeaway and QSR Kitchen Package', '/images/restaurant-kitchen-packages/qsr-isometric-concept-v1.webp'],
+  ['cafe-light-meals', 'Cafe and Light Meals Kitchen Package', '/images/restaurant-kitchen-packages/cafe-isometric-concept-v1.webp'],
+  ['casual-dining', 'Casual Dining Kitchen Package', '/images/restaurant-kitchen-packages/casual-isometric-concept-v1.webp'],
+  ['bakery-pastry', 'Bakery and Pastry Kitchen Package', '/images/product-showcase/kitchen/kitchen-configuration-sanitized.webp'],
+  ['pizza-shop', 'Pizza Shop Kitchen Package', '/images/product-showcase/kitchen/kitchen-configuration-sanitized.webp'],
+  ['cloud-kitchen', 'Cloud Kitchen Package', '/images/product-showcase/kitchen/kitchen-configuration-sanitized.webp'],
+] as const;
+for (const [slug, name, image] of restaurantScenarioSeo) {
+  seoDataMatrix[`sourcing/restaurant-kitchen-packages-from-china/${slug}`] = {
+    en: {
+      title: `${name} from China | DDNZ`,
+      desc: `${name} planning brief with workflow, equipment groups, utility checkpoints and coordinated China sourcing handoff.`,
+      keywords: `${name.toLowerCase()}, restaurant kitchen layout, commercial kitchen equipment China`,
+      image,
+    },
+  };
+}
+
 seoDataMatrix['services/lcl-shipping-from-china'] = {};
 for (const locale of ['ru','fr','ar','pt','tr'] as const) {
   seoDataMatrix['services/lcl-shipping-from-china'][locale] = internationalLclMetadata(locale);
@@ -633,6 +660,10 @@ const countryNames: Record<string, Record<string, string>> = {
   bahrain: { en: 'Bahrain', 'zh-cn': '巴林', ru: 'Бахрейн', fr: 'Bahreïn', es: 'Baréin', ar: 'البحرين' },
   kazakhstan: { en: 'Kazakhstan', 'zh-cn': '哈萨克斯坦', ru: 'Казахстан', fr: 'le Kazakhstan', es: 'Kazajistán', ar: 'كازاخستان' },
   uzbekistan: { en: 'Uzbekistan', 'zh-cn': '乌兹别克斯坦', ru: 'Узбекистан', fr: "l’Ouzbékistan", es: 'Uzbekistán', ar: 'أوزبكستان' },
+  kyrgyzstan: { en: 'Kyrgyzstan', 'zh-cn': '吉尔吉斯斯坦', ru: 'Кыргызстан', fr: 'le Kirghizistan', es: 'Kirguistán', ar: 'قيرغيزستان' },
+  tajikistan: { en: 'Tajikistan', 'zh-cn': '塔吉克斯坦', ru: 'Таджикистан', fr: 'le Tadjikistan', es: 'Tayikistán', ar: 'طاجيكستان' },
+  turkmenistan: { en: 'Turkmenistan', 'zh-cn': '土库曼斯坦', ru: 'Туркменистан', fr: 'le Turkménistan', es: 'Turkmenistán', ar: 'تركمانستان' },
+  russia: { en: 'Russia', 'zh-cn': '俄罗斯', ru: 'Россию', fr: 'la Russie', es: 'Rusia', ar: 'روسيا' },
   nigeria: { en: 'Nigeria', 'zh-cn': '尼日利亚', ru: 'Нигерию', fr: 'le Nigeria', es: 'Nigeria', ar: 'نيجيريا' },
   ghana: { en: 'Ghana', 'zh-cn': '加纳', ru: 'Гану', fr: 'le Ghana', es: 'Ghana', ar: 'غانا' },
   mexico: { en: 'Mexico', 'zh-cn': '墨西哥', ru: 'Мексику', fr: 'le Mexique', es: 'México', ar: 'المكسيك' },
@@ -900,6 +931,10 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
       'sourcing/commercial-kitchen-equipment-from-china': {
         industry: 'Commercial Kitchen Equipment',
         serviceType: 'Commercial kitchen equipment sourcing and export coordination from China',
+      },
+      'sourcing/restaurant-kitchen-packages-from-china': {
+        industry: 'Restaurant Kitchen Packages',
+        serviceType: 'Restaurant kitchen layout, equipment package sourcing and export coordination from China',
       },
       'sourcing/audio-speakers-from-china': {
         industry: 'Audio & Speakers',
@@ -1280,6 +1315,36 @@ const sourcingStaticContent: Record<string, {
       'Send the destination country, product list or reference models, estimated quantities, target timing and the services required. The first response will identify missing specifications, the evidence that can be checked and the buyer or local-compliance decisions still required.',
     quoteHref:
       '/get-a-quote?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+Equipment&source=sourcing_landing',
+  },
+  'sourcing/restaurant-kitchen-packages-from-china': {
+    eyebrow: 'Restaurant Kitchen Packages · Layout + Equipment',
+    title: 'Plan the kitchen. Buy from China.',
+    intro:
+      'For first-time restaurant founders, growing food-service brands and equipment distributors. DDNZ connects a dimensioned concept layout, coordinated equipment package and China sourcing plan.',
+    image: '/images/product-showcase/kitchen/kitchen-operating-sanitized.webp',
+    imageAlt: 'Chefs working in a coordinated stainless commercial kitchen',
+    definition:
+      'Choose a quick-service, cafe and light-meal, or casual-dining scenario. Each package connects operating flow, equipment groups, utilities, supplier comparison, inspection and export handoff.',
+    products: [
+      'Quick-service and takeaway packages for compact hot lines.',
+      'Cafe, beverage and light-meal packages with cold prep and service counters.',
+      'Casual-dining packages with receiving, storage, prep, cooking, pass and warewashing zones.',
+      'Lean launch, balanced and high-output configuration options.',
+      'Public marketplace equipment-basket comparison by market, scope and capture date.',
+    ],
+    controls:
+      'DDNZ keeps the concept plan, equipment schedule, utilities basis, supplier quotes, approved models, inspection records and export release connected. Local professionals complete regulated drawings, permits and installation.',
+    workflow: [
+      'Define the menu, site and peak demand.',
+      'Prepare the concept layout and equipment schedule.',
+      'Compare matched China supplier offers.',
+      'Approve models, options and connection points.',
+      'Inspect, consolidate and release for export.',
+    ],
+    request:
+      'Send your menu or concept, approximate floor area, destination market, target opening date and preferred budget level.',
+    quoteHref:
+      '/get-a-quote?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+-+Restaurant+Package&projectNeed=Layout+and+equipment+package&source=restaurant_kitchen_packages',
   },
   'sourcing/audio-speakers-from-china': {
     eyebrow: 'Product Sourcing · Audio & Speakers',
@@ -1685,6 +1750,8 @@ function run() {
     { path: 'sourcing-services', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'refrigeration-equipment', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'sourcing/commercial-kitchen-equipment-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en','es','ar'] },
+    { path: 'sourcing/restaurant-kitchen-packages-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
+    ...restaurantScenarioSeo.map(([slug]) => ({ path: `sourcing/restaurant-kitchen-packages-from-china/${slug}`, priority: '0.8', changefreq: 'monthly', languages: ['en'] })),
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: ['en'] },
     { path: 'portable-power/selection-guide', priority: '0.9', changefreq: 'monthly', languages: [...productContentLanguages] },
     { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', languages: [...productContentLanguages] },

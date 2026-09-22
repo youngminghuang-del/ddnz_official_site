@@ -9,15 +9,34 @@ import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
+import FreightRouteMap from '../components/FreightRouteMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
-  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
-  Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
-  Globe, Clock, HelpCircle, Truck, FileText, Scale, ArrowUpRight, Timer, MapPin, Target, Lightbulb, ChartNoAxesCombined
+  ChevronDown, AlertTriangle, Package, ShieldCheck,
+  Search, ArrowRight, CheckCircle2, ShieldAlert,
+  Globe, HelpCircle, Truck, FileText, Scale, ArrowUpRight, Timer, Target, Lightbulb, TrainFront, Route, Plane
 } from 'lucide-react';
 import { trackEvent } from '../lib/utils';
 import { buildShippingCountryPath, getShippingCountrySlug } from '../utils/shippingCountryRoutes';
-import { createLocalizedShippingContent, createLocalizedShippingRedlines } from '../utils/localizedShippingContent';
+import { createLocalizedShippingRedlines } from '../utils/localizedShippingContent';
+import {
+  buildSupplementalCorridorSpec,
+  EURASIA_CASE_IMAGES,
+  EURASIA_CHEMICAL_CASE,
+  EURASIA_CHEMICAL_CASE_IMAGES,
+  EURASIA_CORRIDORS,
+  EURASIA_COUNTRIES,
+  EURASIA_DELAY_DIAGNOSTIC,
+  EURASIA_UI,
+  EURASIA_WHEEL_HUB_CASE,
+  EURASIA_WHEEL_HUB_DESTINATION,
+  UZBEKISTAN_ROAD_CASE,
+  UZBEKISTAN_ROAD_CASE_IMAGES,
+  type EurasiaCountry,
+  type EurasiaLocale,
+  localizedCorridorProfile,
+  localizedCountryName,
+} from '../features/freight/eurasiaCorridors';
 
 // Multi-language strings for Central Asia countries
 const CENTRAL_ASIA_DATA = {
@@ -197,7 +216,7 @@ const CENTRAL_ASIA_DATA = {
         },
         {
           title: "Перегрузка на широкую колею 1520 мм",
-          desc: "Колея в Китае составляет 1435 мм, а в Казахстане — 1520 мм. Контейнеры проходят перегрузку на пограничных пунктах, включая Хоргос и Алашанькоу; мы координируем план маршрута и документы с учётом работы границы.",
+          desc: "Колея в Китае составляет 1435 мм, а в Казахстане 1520 мм. Контейнеры проходят перегрузку на пограничных пунктах, включая Хоргос и Алашанькоу; мы координируем план маршрута и документы с учётом работы границы.",
           icon: "Scale"
         },
         {
@@ -216,15 +235,15 @@ const CENTRAL_ASIA_DATA = {
           mode: "Авиадоставка (Экспресс)",
           days: "3 - 7 дней",
           suitability: "Идеально подходит для дорогостоящих грузов, образцов и электроники.",
-          sellingPoint: "Самый быстрый способ таможенного оформления с прямыми рейсами в аэропорт Алматы (ALA).",
+          sellingPoint: "Подходит для срочного груза, когда подтверждены рейс, прием товара и условия выдачи в аэропорту Алматы.",
           warning: "Проводится строгая проверка литиевых батарей, жидкостей и порошков."
         },
         {
           mode: "Автоперевозки (Режим перецепки полуприцепов)",
           days: "5 - 12 дней",
           suitability: "Рекомендуется для партий около 5 тонн; высокая гибкость по сравнению с ж/д контейнерами.",
-          sellingPoint: "Используется передовой режим перецепки. Мы меняем тягач на границе, полуприцеп едет дальше. Отсутствие перегрузки гарантирует безопасность хрупких грузов.",
-          warning: "Строгий дорожный контроль осевых нагрузок. Прямой маршрут исключает повреждения."
+          sellingPoint: "Схема перецепки может сократить число операций на подходящих маршрутах. Итоговый план зависит от границы, груза и условий перевозчика.",
+          warning: "Применяются ограничения по осевой нагрузке и дорожные проверки. Погрузку и маршрут следует подтвердить до отправки."
         },
         {
           mode: "Железнодорожные перевозки (Контейнерные поезда)",
@@ -237,7 +256,7 @@ const CENTRAL_ASIA_DATA = {
           mode: "Электронная коммерция и EMS",
           days: "5 - 18 дней",
           suitability: "Для небольших посылок e-commerce и легких потребительских товаров.",
-          sellingPoint: "Специализированные экспресс-маршруты занимают в среднем 5-7 дней.",
+          sellingPoint: "Вариант для легких потребительских отправлений, когда товар принимается выбранным каналом.",
           warning: "Обычная почта EMS идет 15-18 дней с ограничениями на жидкости и аккумуляторы."
         }
       ],
@@ -444,7 +463,7 @@ const CENTRAL_ASIA_DATA = {
           mode: "Автоперевозки (Режим перецепки полуприцепов DDP)",
           days: "6 - 14 дней",
           suitability: "Очень эффективно для тяжелого оборудования, автокомпонентов и срочных заводских грузов.",
-          sellingPoint: "Прямые перевозки через сухопутные порты Синьцзяна. Доставка 'от двери до двери' с готовыми решениями DDP/DDU.",
+          sellingPoint: "Перецепка и доставка до двери оцениваются по выбранной границе, грузу и фактическому объему услуги в пункте назначения.",
           warning: "Потребуется полная подготовка всех документов до того, как автомобиль прибудет на границу."
         },
         {
@@ -458,7 +477,7 @@ const CENTRAL_ASIA_DATA = {
           mode: "Электронная коммерция и EMS",
           days: "7 - 22 дня",
           suitability: "Для легких потребительских товаров и индивидуальных посылок.",
-          sellingPoint: "Прямые экспресс-линии в Ташкент за 7-10 дней в обход общих очередей.",
+          sellingPoint: "Вариант для легких потребительских отправлений при подтвержденном приеме товара перевозчиком и каналом назначения.",
           warning: "Обычная почта EMS идет в среднем 18-22 дня с ограничениями на батареи и жидкости."
         }
       ],
@@ -482,8 +501,8 @@ const CENTRAL_ASIA_DATA = {
 
 const UNIVERSAL_REDLINES = {
   en: {
-    title: "Central Asia Shipment Planning Checklist",
-    subtitle: "Confirm the commercial, loading, and destination-delivery scope before dispatching cross-border cargo.",
+    title: "Russia and Central Asia Shipment Planning Checklist",
+    subtitle: "Confirm the commercial, loading, corridor and destination-delivery scope before dispatching Eurasia cargo.",
     items: [
       {
         id: "01",
@@ -503,8 +522,8 @@ const UNIVERSAL_REDLINES = {
     ]
   },
   zh: {
-    title: "中亚跨境出运操作核对清单",
-    subtitle: "在出运前确认结算、装载和目的地交付边界，有助于规划更清晰的跨境运输安排。",
+    title: "俄罗斯与中亚出运操作核对清单",
+    subtitle: "在出运前确认结算、装载、运输通道和目的地交付边界，有助于规划更清晰的跨境运输安排。",
     items: [
       {
         id: "01",
@@ -547,46 +566,31 @@ const UNIVERSAL_REDLINES = {
 };
 
 const CENTRAL_ASIA_LOCALIZED = CENTRAL_ASIA_DATA as Record<string, any>;
-const centralAsiaLocaleConfig = {
-  fr: {
-    kazakhstan: { country: 'le Kazakhstan', destination: 'Almaty et Astana via Khorgos / Alashankou', compliance: 'UEE et TN VED', transitDays: '15 - 25 jours' },
-    uzbekistan: { country: "l’Ouzbékistan", destination: 'Tachkent et les zones industrielles', compliance: 'douanières ouzbèkes', transitDays: '14 - 28 jours' },
-  },
-  es: {
-    kazakhstan: { country: 'Kazajistán', destination: 'Almaty y Astaná vía Khorgos / Alashankou', compliance: 'UEE y TN VED', transitDays: '15 - 25 días' },
-    uzbekistan: { country: 'Uzbekistán', destination: 'Taskent y las zonas industriales', compliance: 'aduaneros de Uzbekistán', transitDays: '14 - 28 días' },
-  },
-  ar: {
-    kazakhstan: { country: 'كازاخستان', destination: 'ألماتي وأستانا عبر خورغوس / ألاشانكو', compliance: 'للاتحاد الاقتصادي الأوراسي وTN VED', transitDays: '15 - 25 يوماً' },
-    uzbekistan: { country: 'أوزبكستان', destination: 'طشقند والمناطق الصناعية', compliance: 'الجمارك الأوزبكية', transitDays: '14 - 28 يوماً' },
-  },
-} as const;
-
 for (const locale of ['fr', 'es', 'ar'] as const) {
-  CENTRAL_ASIA_LOCALIZED.kazakhstan[locale] = createLocalizedShippingContent({
-    locale,
-    region: 'Central Asia',
-    ...centralAsiaLocaleConfig[locale].kazakhstan,
-  });
-  CENTRAL_ASIA_LOCALIZED.uzbekistan[locale] = createLocalizedShippingContent({
-    locale,
-    region: 'Central Asia',
-    ...centralAsiaLocaleConfig[locale].uzbekistan,
-  });
+  CENTRAL_ASIA_LOCALIZED.kazakhstan[locale] = buildSupplementalCorridorSpec('kazakhstan', locale);
+  CENTRAL_ASIA_LOCALIZED.uzbekistan[locale] = buildSupplementalCorridorSpec('uzbekistan', locale);
   (UNIVERSAL_REDLINES as Record<string, any>)[locale] = createLocalizedShippingRedlines(locale);
+}
+(UNIVERSAL_REDLINES as Record<string, any>).ru = createLocalizedShippingRedlines('ru');
+
+for (const country of ['russia', 'kyrgyzstan', 'tajikistan', 'turkmenistan'] as const) {
+  CENTRAL_ASIA_LOCALIZED[country] = {};
+  for (const locale of ['en', 'zh', 'ru', 'fr', 'es', 'ar'] as const) {
+    CENTRAL_ASIA_LOCALIZED[country][locale] = buildSupplementalCorridorSpec(country, locale);
+  }
 }
 
 const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
   en: {
-    heroTag: "CHINA TO CENTRAL ASIA SCM SPECIALIST",
+    heroTag: "CHINA TO RUSSIA AND CENTRAL ASIA",
     heroCta: "Get Route & Tariff Guidance",
     insureText: "Established in 1997 · China-origin logistics support",
     insightTag: "Border Operational Notice",
     insightTitle: "Horgos & Alashankou Gauge Reloading: Standard to Russian Broad Gauge",
     insightContent: "Central Asia uses a 1520mm broad-gauge railway system, while China uses 1435mm standard gauge. Containers transfer at border ports such as Horgos and Alashankou. Seasonal congestion can affect the schedule, so rail and trucking alternatives should be assessed against the cargo plan.",
-    faqHeading: "Central Asia Clearance Checklist & FAQ",
-    faqSubheading: "Proactive compliance checks to keep your cargo moving securely through Kazakhstan & Uzbekistan customs entry corridors.",
-    formTitle: "Instant Central Asia Shipping Inquiry",
+    faqHeading: "Russia and Central Asia Route Checklist & FAQ",
+    faqSubheading: "Shipment-level document, corridor and delivery checks for Russia and five Central Asian destinations.",
+    formTitle: "Russia and Central Asia Shipping Inquiry",
     formSub: "Submit your cargo details. Our route team will confirm the information needed to prepare a tailored quotation.",
     formLabelName: "Your Name",
     formLabelEmail: "Email Address",
@@ -594,18 +598,18 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     formLabelGoods: "Type of Goods / Volume",
     formLabelDest: "Destination",
     formCta: "Calculate My Shipping Tariff",
-    formSuccess: "Thank you. Our Central Asia route team will review the cargo details and contact you using the information provided."
+    formSuccess: "Thank you. Our Eurasia route team will review the cargo details and contact you using the information provided."
   },
   zh: {
-    heroTag: "中国至中亚跨境物流专家",
+    heroTag: "中国至俄罗斯与中亚五国",
     heroCta: "获取航线与税费规划建议",
     insureText: "中国始发物流协调支持",
     insightTag: "口岸边境换轨通报",
     insightTitle: "硬核科普：1435mm 标准轨 ➔ 1520mm 宽轨物理大换装",
-    insightContent: "由于中亚五国与俄罗斯均采用 1520mm 宽轨，而中国境内使用的是 1435mm 标准轨，因此班列运行到新疆口岸（霍尔果斯/阿拉山口）时必须进行物理‘换轨换装’（通过口岸吊装龙门吊将集装箱整体吊换至哈方的宽轨列车上）。在货运旺季，口岸换装常因拥堵导致集装箱滞留。华正邦泰国际货运团队常驻新疆霍尔果斯，协调换轨优先吊装与运输安排。",
-    faqHeading: "中亚清关合规与常见问题",
-    faqSubheading: "提前排查中哈、中乌陆路和铁路口岸通关红线，确保大货安全顺利通关。",
-    formTitle: "中亚物流专线专属询价",
+    insightContent: "由于中亚五国与俄罗斯普遍采用 1520mm 宽轨，而中国境内使用 1435mm 标准轨，部分铁路通道需要在边境站换装。口岸作业、旺季拥堵和后续编组都可能影响时效，因此铁路与公路备选路线应结合具体货物评估。",
+    faqHeading: "俄罗斯与中亚线路审核及常见问题",
+    faqSubheading: "按具体货物核对俄罗斯及中亚五国的单证、运输通道和交付边界。",
+    formTitle: "俄罗斯与中亚物流询价",
     formSub: "请填写货物信息；我们将根据路线、货物和服务范围准备相应的询价建议。",
     formLabelName: "您的姓名",
     formLabelEmail: "电子邮箱",
@@ -613,41 +617,41 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     formLabelGoods: "货物类型 / 件数 / 重量体积",
     formLabelDest: "目的国",
     formCta: "提交询价",
-    formSuccess: "提交成功。我们的中亚项目团队将核对货物信息，并通过您提供的联系方式回复。"
+    formSuccess: "提交成功。我们的欧亚线路团队将核对货物信息，并通过您提供的联系方式回复。"
   },
   ru: {
-    heroTag: "КИТАЙ - ЦЕНТРАЛЬНАЯ АЗИЯ: ЭКСПЕРТЫ SCM",
-    heroCta: "Получить бесплатный анализ тарифов",
-    insureText: "29+ лет опыта в логистике между Китаем и Центральной Азией",
+    heroTag: "КИТАЙ - РОССИЯ И ЦЕНТРАЛЬНАЯ АЗИЯ",
+    heroCta: "Получить маршрут и тарифный ориентир",
+    insureText: "Координация логистики с отправлением из Китая",
     insightTag: "Пограничное уведомление по операциям",
     insightTitle: "Смена колеи в Хоргосе и Алашанькоу: со стандартной на широкую русскую колею",
-    insightContent: "В Центральной Азии используется широкая колея 1520 мм, а в Китае — стандартная 1435 мм. Из-за этой разницы все контейнеры необходимо перегружать на пограничных станциях (Хоргос и Алашанькоу). В пиковый сезон контейнеры могут простаивать неделями. DDNZ содержит собственные команды на границе, чтобы гарантировать приоритет перегрузки для наших клиентов.",
-    faqHeading: "Комплаенс-контроль и FAQ по Центральной Азии",
-    faqSubheading: "Проверки соответствия для беспрепятственного прохождения таможни в Казахстане и Узбекистане.",
-    formTitle: "Запрос тарифа на доставку в Центральную Азию",
-    formSub: "Заполните данные о вашем грузе. Наши эксперты по маршрутам подготовят тарифный план в течение 2 часов.",
+    insightContent: "В Центральной Азии используется широкая колея 1520 мм, а в Китае стандартная 1435 мм. Из-за этой разницы контейнеры перегружаются на пограничных станциях, включая Хоргос и Алашанькоу. Сезонная загрузка и работа границы учитываются при выборе железнодорожного или автомобильного маршрута.",
+    faqHeading: "Проверка маршрута и FAQ по России и Центральной Азии",
+    faqSubheading: "Проверяем документы, коридор и границы доставки для России и пяти стран Центральной Азии.",
+    formTitle: "Запрос тарифа в Россию и Центральную Азию",
+    formSub: "Заполните данные о грузе. Команда маршрута уточнит информацию, необходимую для подготовки котировки.",
     formLabelName: "Ваше имя",
     formLabelEmail: "Электронная почта",
     formLabelPhone: "WhatsApp / Телефон / Telegram",
     formLabelGoods: "Тип груза / Объем / Вес",
     formLabelDest: "Пункт назначения",
     formCta: "Рассчитать мой тариф на доставку",
-    formSuccess: "Спасибо! Наш менеджер по логистике в Центральной Азии получил ваши данные и свяжется с вами в ближайшее время."
+    formSuccess: "Спасибо. Наша команда по России и Центральной Азии проверит данные и свяжется с вами."
   }
 };
 
 Object.assign(PAGE_LANG_DATA, {
   fr: {
     ...PAGE_LANG_DATA.en,
-    heroTag: "SPÉCIALISTE CHINE–ASIE CENTRALE",
+    heroTag: "SPÉCIALISTE CHINE-ASIE CENTRALE",
     heroCta: "Obtenir une analyse d’itinéraire et de tarif",
     insureText: "Coordination logistique au départ de Chine depuis 1997",
     insightTag: "Alerte opérations frontalières",
     insightTitle: "Khorgos et Alashankou : passage de la voie standard à la voie large",
     insightContent: "La Chine utilise une voie de 1435 mm et l’Asie centrale une voie de 1520 mm. Le transbordement aux postes frontaliers doit être intégré au calendrier, notamment en haute saison.",
-    faqHeading: "Contrôle douanier et FAQ Asie centrale",
-    faqSubheading: "Vérifications documentaires pour les corridors du Kazakhstan et de l’Ouzbékistan.",
-    formTitle: "Demande de cotation Asie centrale",
+    faqHeading: "Revue de route et FAQ Russie-Asie centrale",
+    faqSubheading: "Contrôles des documents, du corridor et de la livraison pour la Russie et cinq pays d’Asie centrale.",
+    formTitle: "Demande de cotation Russie-Asie centrale",
     formSub: "Transmettez les caractéristiques du fret afin de confirmer l’itinéraire et les éléments nécessaires au devis.",
     formLabelName: "Nom",
     formLabelEmail: "E-mail",
@@ -655,19 +659,19 @@ Object.assign(PAGE_LANG_DATA, {
     formLabelGoods: "Type de marchandise / Volume / Poids",
     formLabelDest: "Destination",
     formCta: "Calculer mon tarif",
-    formSuccess: "Merci. Notre équipe Asie centrale examinera les informations et vous contactera.",
+    formSuccess: "Merci. Notre équipe Russie-Asie centrale examinera les informations et vous contactera.",
   },
   es: {
     ...PAGE_LANG_DATA.en,
-    heroTag: "ESPECIALISTA CHINA–ASIA CENTRAL",
+    heroTag: "ESPECIALISTA CHINA-ASIA CENTRAL",
     heroCta: "Obtener análisis de ruta y tarifa",
     insureText: "Coordinación logística desde China desde 1997",
     insightTag: "Aviso de operación fronteriza",
     insightTitle: "Khorgos y Alashankou: cambio de vía estándar a vía ancha",
     insightContent: "China utiliza vía de 1435 mm y Asia Central vía de 1520 mm. El transbordo fronterizo debe incluirse en el calendario, especialmente en temporada alta.",
-    faqHeading: "Control aduanero y preguntas frecuentes de Asia Central",
-    faqSubheading: "Revisiones documentales para los corredores de Kazajistán y Uzbekistán.",
-    formTitle: "Solicitud de cotización para Asia Central",
+    faqHeading: "Revisión de ruta y preguntas frecuentes de Rusia y Asia Central",
+    faqSubheading: "Controles de documentos, corredor y entrega para Rusia y los cinco países de Asia Central.",
+    formTitle: "Solicitud de cotización para Rusia y Asia Central",
     formSub: "Envíe los datos de la carga para confirmar la ruta y la información necesaria para cotizar.",
     formLabelName: "Nombre",
     formLabelEmail: "Correo electrónico",
@@ -675,19 +679,19 @@ Object.assign(PAGE_LANG_DATA, {
     formLabelGoods: "Tipo de mercancía / Volumen / Peso",
     formLabelDest: "Destino",
     formCta: "Calcular mi tarifa",
-    formSuccess: "Gracias. Nuestro equipo de Asia Central revisará los datos y se pondrá en contacto.",
+    formSuccess: "Gracias. Nuestro equipo de Rusia y Asia Central revisará los datos y se pondrá en contacto.",
   },
   ar: {
     ...PAGE_LANG_DATA.en,
-    heroTag: "متخصص الشحن بين الصين وآسيا الوسطى",
+    heroTag: "متخصص الشحن بين الصين وروسيا وآسيا الوسطى",
     heroCta: "الحصول على تحليل المسار والتعرفة",
     insureText: "تنسيق لوجستي من الصين منذ 1997",
     insightTag: "تنبيه العمليات الحدودية",
     insightTitle: "خورغوس وألاشانكو: الانتقال من السكة القياسية إلى السكة العريضة",
     insightContent: "تستخدم الصين سكة بعرض 1435 مم بينما تستخدم آسيا الوسطى 1520 مم. يجب احتساب إعادة التحميل على الحدود ضمن الجدول، خصوصاً في موسم الذروة.",
-    faqHeading: "التخليص والأسئلة الشائعة لآسيا الوسطى",
-    faqSubheading: "مراجعات المستندات لمسارات كازاخستان وأوزبكستان.",
-    formTitle: "طلب عرض شحن إلى آسيا الوسطى",
+    faqHeading: "مراجعة المسار والأسئلة الشائعة لروسيا وآسيا الوسطى",
+    faqSubheading: "مراجعة المستندات والممر ونطاق التسليم لروسيا ودول آسيا الوسطى الخمس.",
+    formTitle: "طلب عرض شحن إلى روسيا وآسيا الوسطى",
     formSub: "أرسل بيانات البضائع لتأكيد المسار والمعلومات المطلوبة للتسعير.",
     formLabelName: "الاسم",
     formLabelEmail: "البريد الإلكتروني",
@@ -695,7 +699,7 @@ Object.assign(PAGE_LANG_DATA, {
     formLabelGoods: "نوع البضائع / الحجم / الوزن",
     formLabelDest: "الوجهة",
     formCta: "حساب التعرفة",
-    formSuccess: "شكراً. سيراجع فريق آسيا الوسطى البيانات ويتواصل معك.",
+    formSuccess: "شكراً. سيراجع فريق روسيا وآسيا الوسطى البيانات ويتواصل معك.",
   },
 });
 
@@ -703,22 +707,17 @@ export default function ShippingCentralAsia() {
   const location = useLocation();
   const navigate = useNavigate();
   const { language } = useLanguage();
-  const countryLabel = (country: 'kazakhstan' | 'uzbekistan') => {
-    const names = {
-      kazakhstan: { en: 'Kazakhstan', zh: '哈萨克斯坦', ru: 'Казахстан', fr: 'Kazakhstan', es: 'Kazajistán', ar: 'كازاخستان' },
-      uzbekistan: { en: 'Uzbekistan', zh: '乌兹别克斯坦', ru: 'Узбекистан', fr: 'Ouzbékistan', es: 'Uzbekistán', ar: 'أوزبكستان' }
-    } as const;
-    return names[country][language];
-  };
+  const activeLang = (language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en') as EurasiaLocale;
+  const countryLabel = (country: EurasiaCountry) => localizedCountryName(country, activeLang);
   
   const getCountryFromLocation = () => getShippingCountrySlug(
     location.pathname,
     location.search,
-    ['kazakhstan', 'uzbekistan'],
+    EURASIA_COUNTRIES,
     'kazakhstan',
-  ) as 'kazakhstan' | 'uzbekistan';
+  ) as EurasiaCountry;
 
-  const [selectedCountry, setSelectedCountry] = useState<'kazakhstan' | 'uzbekistan'>(getCountryFromLocation);
+  const [selectedCountry, setSelectedCountry] = useState<EurasiaCountry>(getCountryFromLocation);
   const [isLocked, setIsLocked] = useState(false);
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
   const [activeTransportMode, setActiveTransportMode] = useState<number>(0);
@@ -744,15 +743,20 @@ export default function ShippingCentralAsia() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
-  const handleCountryTabChange = (country: 'kazakhstan' | 'uzbekistan') => {
+  const handleCountryTabChange = (country: EurasiaCountry) => {
     setSelectedCountry(country);
     navigate(buildShippingCountryPath(location.pathname, country));
   };
 
-  const activeLang = language === 'zh' ? 'zh' : (language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en');
-  const getCountrySpec = (country: 'kazakhstan' | 'uzbekistan') =>
-    CENTRAL_ASIA_DATA[country][activeLang] || CENTRAL_ASIA_DATA[country].en;
+  const getCountrySpec = (country: EurasiaCountry) =>
+    CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
   const spec = getCountrySpec(selectedCountry);
+  const corridor = localizedCorridorProfile(selectedCountry, activeLang);
+  const corridorUi = EURASIA_UI[activeLang];
+  const delayDiagnostic = EURASIA_DELAY_DIAGNOSTIC[activeLang];
+  const caseStudy = EURASIA_WHEEL_HUB_CASE[activeLang];
+  const chemicalCase = EURASIA_CHEMICAL_CASE[activeLang];
+  const uzbekistanRoadCase = UZBEKISTAN_ROAD_CASE[activeLang];
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA.en;
     return data[key] || '';
@@ -766,15 +770,15 @@ export default function ShippingCentralAsia() {
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#d97706] shrink-0" />;
-      case 'Scale': return <Scale className="w-5 h-5 text-[#d97706] shrink-0" />;
-      case 'FileText': return <FileText className="w-5 h-5 text-[#d97706] shrink-0" />;
-      case 'Search': return <Search className="w-5 h-5 text-[#d97706] shrink-0" />;
-      default: return <Package className="w-5 h-5 text-[#d97706] shrink-0" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      case 'Scale': return <Scale className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      case 'FileText': return <FileText className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      case 'Search': return <Search className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      default: return <Package className="w-5 h-5 text-[#c94f2f] shrink-0" />;
     }
   };
 
-  const transportIcons = [Ship, Truck, Package, Package];
+  const transportIcons = [TrainFront, Truck, Route, Plane];
 
   // Form submission state
   const [formData, setFormData] = useState({
@@ -812,7 +816,7 @@ export default function ShippingCentralAsia() {
         email: '',
         phone: '',
         goods: '',
-        destination: selectedCountry === 'kazakhstan' ? 'Kazakhstan' : 'Uzbekistan'
+        destination: countryLabel(selectedCountry)
       });
     }, 1200);
   };
@@ -836,166 +840,182 @@ export default function ShippingCentralAsia() {
 
       <main>
         
-        {/* Section 1: Hero Segment */}
-        <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
-          {/* Visual shipping backdrop layer */}
-          <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-            <img 
-              src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=2000" 
-              alt="Central Asia Railway Port"
-              width="2000"
-              height="1125"
-              className="w-full h-full object-cover"
-              referrerPolicy="no-referrer"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#071A33] via-[#071A33]/80 to-transparent" />
-          </div>
+        <section className="relative min-h-[660px] flex items-center overflow-hidden border-b border-white/[0.08]">
+          <img
+            src="/images/operations/china-eurasia-rail-border-hero-v1.webp"
+            alt=""
+            width="1920"
+            height="1080"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(39,33,47,.98)_0%,rgba(39,33,47,.91)_43%,rgba(39,33,47,.46)_100%)]" />
+          <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#27212f] to-transparent" />
 
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
-            <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 pb-16">
-              
-              {/* 左侧文案区：占据 7 列 */}
-              <div className="lg:col-span-7 space-y-6 text-left">
-                <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#d97706]/10 text-[#d97706] text-xs font-black tracking-widest uppercase self-start">
-                    <span>{t('heroTag')}</span>
-                  </div>
-                  
-                  {/* Dynamic Country Selector Tabs */}
-                  {!isLocked && (
-                    <div className="flex flex-wrap gap-1.5 bg-white/[0.03] p-1 rounded-xl border border-white/[0.08] max-w-fit">
-                      {(['kazakhstan', 'uzbekistan'] as const).map((country) => {
-                        const isActive = selectedCountry === country;
-                        const label = countryLabel(country);
-                        return (
-                          <button
-                            key={country}
-                            type="button"
-                            onClick={() => handleCountryTabChange(country)}
-                            className={`min-h-11 px-3 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
-                              isActive
-                                ? 'bg-[#d97706] text-white shadow-md shadow-[#d97706]/15'
-                                : 'text-slate-300 hover:bg-white/5 hover:text-white'
-                            }`}
-                          >
-                            {label}
-                          </button>
-                        );
-                      })}
-                    </div>
-                  )}
+          <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
+            {!isLocked && (
+              <nav aria-label={corridorUi.selectDestination} className="mb-9 border-y border-white/[0.12] py-3">
+                <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.selectDestination}</span>
+                <div className="flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
+                  {EURASIA_COUNTRIES.map((country) => {
+                    const isActive = selectedCountry === country;
+                    return (
+                      <button
+                        key={country}
+                        type="button"
+                        onClick={() => handleCountryTabChange(country)}
+                        aria-current={isActive ? 'page' : undefined}
+                        className={`min-h-11 shrink-0 px-4 py-2 text-xs font-extrabold transition-colors ${isActive ? 'bg-[#c94f2f] text-white' : 'bg-[#071a33]/72 text-slate-200 hover:bg-white/10 hover:text-white'}`}
+                      >
+                        {countryLabel(country)}
+                      </button>
+                    );
+                  })}
                 </div>
-                
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#d97706]">
-                    {spec.headline}
-                  </span>
+              </nav>
+            )}
+
+            <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]">
+              <div className="max-w-3xl text-left">
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{corridorUi.regionTag}</p>
+                <h1 className="max-w-[16ch] text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
+                  {spec.headline}
                 </h1>
-                
-                <div className="space-y-4">
-                  <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-medium">
-                    {spec.subheadline}
-                  </p>
-                  
-                  <div className="flex flex-wrap gap-2.5 pt-1">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
-                      <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '合规文件审核支持' : 'Compliance Review Support'}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#d97706]/10 border border-[#d97706]/20 text-xs font-bold text-[#d97706]">
-                      <MapPin className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '口岸操作协调' : 'Border Operations Coordination'}
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
-                      <Truck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '一站式 DDP / DDU 双清' : 'One-Stop DDP/DDU'}
-                    </span>
-                  </div>
-                </div>
-
-                <div className="pt-4 flex flex-wrap gap-4">
-                  <button
-                    onClick={() => {
-                      const formElem = document.getElementById('central-asia-quote-form');
-                      if (formElem) {
-                        formElem.scrollIntoView({ behavior: 'smooth' });
-                      }
-                    }}
-                    className="px-6 py-3.5 bg-gradient-to-r from-[#d97706] to-[#ff9f24] hover:from-[#e07a00] hover:to-[#ff8a00] text-white font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-300 flex items-center gap-2"
-                  >
-                    <span>{t('heroCta')}</span>
-                    <ArrowRight className="w-4 h-4" />
-                  </button>
-                </div>
-
-                <div className="flex items-center gap-3 pt-6 border-t border-white/[0.08] max-w-lg">
-                  <Globe className="w-4 h-4 text-sky-300 shrink-0" aria-hidden="true" />
-                  <p className="text-xs text-slate-400 font-medium">
-                    {t('insureText')}
-                  </p>
-                </div>
+                <p className="mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg">
+                  {spec.subheadline}
+                </p>
+                <button
+                  type="button"
+                  onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px"
+                >
+                  <span>{t('heroCta')}</span>
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </button>
               </div>
 
-              {/* 右侧硬核时效侧边栏：占据 5 列 */}
-              <div className="lg:col-span-5 space-y-4">
-                <h3 className="text-lg font-black tracking-wide text-[#d97706] uppercase mb-2">
-                  {language === 'zh' ? '中亚专线真实货运时效' : (language === 'ru' ? 'Сроки доставки в Центральную Азию' : 'Central Asia Express Transit Windows')}
-                </h3>
-                
-                <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
+              <aside className="border border-white/[0.14] bg-[#071a33]/88 p-6 shadow-[0_24px_80px_rgba(2,12,27,.35)] backdrop-blur-md sm:p-7" aria-label={corridorUi.routeBasis}>
+                <div className="flex items-start justify-between gap-5 border-b border-white/[0.12] pb-5">
                   <div>
-                    <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿拉木图铁运双清专线 (霍尔果斯口岸)' : (language === 'ru' ? 'Блок-поезд в Алматы (граница Хоргос)' : 'Almaty Block Train (Horgos Border)')}</h4>
-                    <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '1520mm 宽轨直达铁路，免二次换装' : (language === 'ru' ? 'Прямая широкая колея 1520 мм' : 'Direct Broad Gauge 1520mm Rail')}</p>
+                    <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.routeBasis}</span>
+                    <h2 className="mt-2 text-2xl font-black text-white">{corridor.name}</h2>
                   </div>
-                  <div className="text-right shrink-0 ml-4">
-                    <span className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#FFB55F] whitespace-nowrap"><Timer className="w-4 h-4" aria-hidden="true" />{getCountrySpec('kazakhstan').transitDays}</span>
-                  </div>
+                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{corridor.transitDays}</span>
                 </div>
-
-                <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
-                  <div>
-                    <h4 className="text-sm font-black text-white">{language === 'zh' ? '塔什干公路汽运双清专线 (阿拉山口口岸)' : (language === 'ru' ? 'Трансграничные автоперевозки в Ташкент' : 'Tashkent Cross-Border Trucking')}</h4>
-                    <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '霍尔果斯/阿拉山口极速卡航直达' : (language === 'ru' ? 'Быстрый транзит по шоссе через Алашанькоу' : 'Rapid Highway Transit via Alashankou')}</p>
-                  </div>
-                  <div className="text-right shrink-0 ml-4">
-                    <span className="inline-flex items-center gap-1.5 text-sm font-extrabold text-[#FFB55F] whitespace-nowrap"><Timer className="w-4 h-4" aria-hidden="true" />{getCountrySpec('uzbekistan').transitDays}</span>
-                  </div>
-                </div>
-              </div>
-
+                <dl className="divide-y divide-white/[0.1]">
+                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.entryGateway}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.gateway}</dd></div>
+                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.destinationScope}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.destinations}</dd></div>
+                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.customsFrame}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.customs}</dd></div>
+                </dl>
+                <p className="border-t border-white/[0.12] pt-4 text-[11px] leading-relaxed text-slate-400">{corridorUi.quoteConfirmed}</p>
+              </aside>
             </div>
           </div>
         </section>
 
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
-        {/* Section 2: Border Operational Reality Update (Market Insight Box) */}
-        <section className="py-12 bg-[#081E39] border-y border-white/[0.05]">
-          <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-white/[0.02] rounded-2xl border-l-8 border-[#d97706] p-6 md:p-8 shadow-md border border-white/[0.08]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-[#d97706]/10 text-[#d97706]">
-                  <AlertTriangle className="w-6 h-6" />
+        <FreightRouteMap variant={selectedCountry === 'uzbekistan' ? 'uzbekistan' : 'central-asia'} />
+
+        <section className="border-b border-white/[0.08] bg-[#081e39]/45 py-14 md:py-20" aria-labelledby="eurasia-destinations-title">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="max-w-3xl">
+              <h2 id="eurasia-destinations-title" className="text-3xl font-black tracking-[-0.04em] text-white md:text-4xl">{corridorUi.destinationMatrix}</h2>
+              <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-slate-300 md:text-base">{corridorUi.destinationMatrixIntro}</p>
+            </div>
+            <div className="mt-10 grid border-t border-white/[0.14] md:grid-cols-2">
+              {EURASIA_COUNTRIES.map((country, index) => {
+                const item = localizedCorridorProfile(country, activeLang);
+                const isActive = country === selectedCountry;
+                return (
+                  <button
+                    key={country}
+                    type="button"
+                    onClick={() => handleCountryTabChange(country)}
+                    className={`group grid min-h-32 grid-cols-[minmax(0,1fr)_auto] gap-6 border-b border-white/[0.12] px-1 py-6 text-left transition-colors md:px-6 ${index % 2 === 0 ? 'md:border-r' : ''} ${isActive ? 'bg-[#c94f2f]/12' : 'hover:bg-white/[0.035]'}`}
+                  >
+                    <span>
+                      <span className={`block text-lg font-black ${isActive ? 'text-[#f2a47f]' : 'text-white'}`}>{item.name}</span>
+                      <span className="mt-2 block text-xs leading-relaxed text-slate-400">{item.gateway}</span>
+                    </span>
+                    <span className="flex flex-col items-end justify-between text-right">
+                      <span className="font-mono text-xs font-bold text-slate-200">{item.transitDays}</span>
+                      <ArrowUpRight className={`h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${isActive ? 'text-[#f2a47f]' : 'text-slate-500'}`} aria-hidden="true" />
+                    </span>
+                  </button>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/[0.08] bg-[#081E39] py-16 md:py-24" aria-labelledby="eurasia-delay-title">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,.95fr)] lg:items-end">
+              <div className="max-w-3xl">
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{delayDiagnostic.scope}</p>
+                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{delayDiagnostic.title}</h2>
+                <p className="mt-5 max-w-[66ch] text-sm font-medium leading-relaxed text-slate-300 md:text-base">{delayDiagnostic.intro}</p>
+              </div>
+              <div className="border-y border-white/[0.14] font-mono text-xs font-bold">
+                <div className="grid grid-cols-[32px_1fr] gap-3 border-b border-white/[0.12] py-4 text-emerald-300">
+                  <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
+                  <span>{delayDiagnostic.faster}</span>
                 </div>
-                <div>
-                  <span className="text-[10px] tracking-widest font-black uppercase text-[#d97706]">
-                    {t('insightTag')}
-                  </span>
-                  <h2 className="text-lg md:text-xl font-black text-white leading-tight">
-                    {t('insightTitle')}
-                  </h2>
+                <div className="grid grid-cols-[32px_1fr] gap-3 py-4 text-[#f2a47f]">
+                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+                  <span>{delayDiagnostic.slower}</span>
                 </div>
               </div>
-              
-              <p className="text-sm text-slate-300 leading-relaxed font-semibold mb-2">
-                {t('insightContent')}
-              </p>
-              
-              <div className="mt-4 flex items-center gap-2 text-xs font-black text-slate-400">
-                <Globe className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />
-                <span>Heaven Born Logistics Insight</span>
-                <span>2026</span>
+            </div>
+
+            <div className="mt-12 border-t border-white/[0.16]">
+              {delayDiagnostic.items.map((item, index) => {
+                const DiagnosticIcon = [Scale, TrainFront, FileText, ShieldCheck, Globe][index] || Route;
+                return (
+                  <article key={item.title} className="grid gap-4 border-b border-white/[0.12] py-7 md:grid-cols-[48px_minmax(200px,.65fr)_minmax(0,1.35fr)] md:gap-7">
+                    <DiagnosticIcon className="h-5 w-5 text-[#f2a47f]" aria-hidden="true" />
+                    <h3 className="text-base font-black text-white md:text-lg">{item.title}</h3>
+                    <div>
+                      <p className="text-sm font-medium leading-relaxed text-slate-300">{item.body}</p>
+                      <p className="mt-3 border-l-2 border-[#c94f2f] pl-3 text-xs font-bold leading-relaxed text-slate-400">{item.check}</p>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+
+            <div className="mt-12 bg-[#c94f2f] p-6 text-white md:p-8">
+              <h3 className="max-w-3xl text-xl font-black tracking-[-0.025em] md:text-2xl">{delayDiagnostic.questionsTitle}</h3>
+              <div className="mt-7 grid border-t border-white/35 md:grid-cols-3">
+                {delayDiagnostic.questions.map((question, index) => (
+                  <p key={question} className={`py-5 text-sm font-bold leading-relaxed md:px-6 ${index > 0 ? 'border-t border-white/35 md:border-l md:border-t-0' : ''}`}>{question}</p>
+                ))}
               </div>
+              <p className="border-t border-white/35 pt-5 text-xs font-semibold leading-relaxed text-orange-50">{delayDiagnostic.closing}</p>
+            </div>
+          </div>
+        </section>
+
+        <section className="border-b border-white/[0.08] py-12" aria-labelledby="eurasia-evidence-title">
+          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(250px,.7fr)_minmax(0,1.3fr)] lg:px-8">
+            <div>
+              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{corridorUi.routeEvidence}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-slate-400">{corridorUi.routeEvidenceBody}</p>
+            </div>
+            <div className="divide-y divide-white/[0.12] border-y border-white/[0.12]">
+              {[
+                { label: corridorUi.sourceEaeu, href: 'https://eec.eaeunion.org/en/news/01-01-2015-1/' },
+                { label: corridorUi.sourceTir, href: 'https://unece.org/es/node/350813' },
+                { label: delayDiagnostic.sourceCarec, href: 'https://cpmm.carecprogram.org/2023-report/kazakhstan/' },
+                { label: delayDiagnostic.sourceKazakhstanCustoms, href: 'https://www.gov.kz/services/3635?lang=en' },
+                { label: delayDiagnostic.sourceUzbekistanCustoms, href: 'https://sw2.customs.uz/?lang=en_EN' },
+                { label: corridorUi.sourceRussia, href: 'https://www.bis.gov/licensing/country-guidance' },
+              ].map((source) => (
+                <a key={source.href} href={source.href} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center justify-between gap-4 py-3 text-sm font-bold text-slate-200 transition-colors hover:text-[#f2a47f]">
+                  <span>{source.label}</span>
+                  <ArrowUpRight className="h-4 w-4 text-slate-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#f2a47f]" aria-hidden="true" />
+                </a>
+              ))}
             </div>
           </div>
         </section>
@@ -1003,34 +1023,9 @@ export default function ShippingCentralAsia() {
         {/* Section 2.5: Interactive Lead-Generation Table (核心时效透视数据表) */}
         <section className="py-16 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#FFB55F] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-flex items-center gap-1.5">
-                <ChartNoAxesCombined className="w-3.5 h-3.5" aria-hidden="true" />
-                {{
-                  en: 'SCM Lead-Time Matrix',
-                  zh: '核心时效透视',
-                  ru: 'Матрица сроков доставки',
-                  fr: 'Matrice des délais',
-                  es: 'Matriz de tiempos',
-                  ar: 'مصفوفة المدد',
-                }[activeLang]}
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
-                {{
-                  en: 'Central Asia Multimodal Lead-Time Matrix',
-                  zh: '中亚多式联运全通道时效数据表',
-                  ru: 'Сроки мультимодальных перевозок по Центральной Азии',
-                  fr: 'Délais du transport multimodal en Asie centrale',
-                  es: 'Tiempos del transporte multimodal en Asia Central',
-                  ar: 'مدد النقل متعدد الوسائط في آسيا الوسطى',
-                }[activeLang]}
-              </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm font-semibold">
-                {language === 'zh' 
-                  ? '精细对齐各物理运输通道，深剖各链路核心工艺，帮助您合理配载预算与刚性时效期。' 
-                  : 'Compare transportation pathways with fine alignment on shipping windows, core technical features, and risk pre-warnings.'}
-              </p>
+            <div className="mb-12 max-w-3xl">
+              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{corridorUi.modesTitle}</h2>
+              <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{corridorUi.modesIntro}</p>
             </div>
 
             {/* Interactive Grid & Detail Card */}
@@ -1047,7 +1042,7 @@ export default function ShippingCentralAsia() {
                       onClick={() => setActiveTransportMode(idx)}
                       className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
                         isSelected 
-                          ? 'bg-gradient-to-r from-[#0E4C78] to-[#d97706]/35 text-white border-[#d97706]/30 shadow-xl translate-x-1'
+                          ? 'bg-gradient-to-r from-[#763c9c] to-[#c94f2f]/35 text-white border-[#c94f2f]/30 shadow-xl translate-x-1'
                           : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
                       }`}
                     >
@@ -1057,12 +1052,8 @@ export default function ShippingCentralAsia() {
                           return <ModeIcon className="w-5 h-5 text-sky-300 shrink-0" aria-hidden="true" />;
                         })()}
                         <div>
-                          <h4 className="text-sm font-black tracking-tight text-white">
-                            {row.mode.replace(/^\S+\s+/, '')}
-                          </h4>
-                          <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>
-                            {language === 'zh' ? '预计时效' : 'Transit Window'}
-                          </span>
+                          <h4 className="text-sm font-black tracking-tight text-white">{row.mode}</h4>
+                          <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{corridorUi.planningWindow}</span>
                         </div>
                       </div>
                       <div className="text-right">
@@ -1081,29 +1072,27 @@ export default function ShippingCentralAsia() {
                   <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/[0.08] shadow-lg relative overflow-hidden min-h-[380px] flex flex-col justify-between">
                     <div className="relative z-10 space-y-6">
                       <div>
-                        <span className="px-2.5 py-1 bg-[#d97706]/10 text-[#d97706] text-[10px] font-black uppercase tracking-wider rounded-lg">
-                          {language === 'zh' ? '深度解析' : 'SCM Detail Panel'}
-                        </span>
+                        <span className="text-[10px] font-black uppercase tracking-wider text-[#f2a47f]">{corridorUi.routeDetail}</span>
                         <h3 className="text-xl md:text-2xl font-black text-white mt-2">
-                          {spec.multimodalTable[activeTransportMode].mode.replace(/^\S+\s+/, '')}
+                          {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
-                        <p className="text-[#FFB55F] text-sm font-black mt-1 inline-flex items-center gap-1.5">
-                          <Timer className="w-4 h-4" aria-hidden="true" />{language === 'zh' ? '货主到门时效' : 'Door-to-Door Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
+                        <p className="text-[#F2A47F] text-sm font-black mt-1 inline-flex items-center gap-1.5">
+                          <Timer className="w-4 h-4" aria-hidden="true" />{corridorUi.planningWindow}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                         <div>
                           <h5 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1.5 inline-flex items-center gap-1.5">
-                            <Target className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />{language === 'zh' ? '最适用货品 / 场景' : 'Best Suited For'}
+                            <Target className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />{corridorUi.bestFor}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].suitability}
                           </p>
                         </div>
                         <div>
-                          <h5 className="text-xs font-black text-[#FFB55F] uppercase tracking-widest mb-1.5 inline-flex items-center gap-1.5">
-                            <Lightbulb className="w-3.5 h-3.5" aria-hidden="true" />{language === 'zh' ? '华正邦泰专线技术要点' : 'Heaven Born Route Advantages'}
+                          <h5 className="text-xs font-black text-[#F2A47F] uppercase tracking-widest mb-1.5 inline-flex items-center gap-1.5">
+                            <Lightbulb className="w-3.5 h-3.5" aria-hidden="true" />{corridorUi.operatingPoint}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].sellingPoint}
@@ -1115,7 +1104,7 @@ export default function ShippingCentralAsia() {
                         <ShieldAlert className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
                         <div>
                           <h5 className="text-xs font-black text-rose-200 uppercase tracking-wider mb-0.5">
-                            {language === 'zh' ? '风险提示 & 操作合规' : 'Operation Pre-Warnings'}
+                            {corridorUi.riskControl}
                           </h5>
                           <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
                             {spec.multimodalTable[activeTransportMode].warning}
@@ -1126,7 +1115,7 @@ export default function ShippingCentralAsia() {
 
                     <div className="pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
                       <span className="text-xs text-slate-400 font-bold">
-                        * {language === 'zh' ? '上述时效基于我司真实运输台账，受季节性换装及边境偶发排队影响可能有微调。' : 'Data based on historical shipping registries, subject to seasonal border queue variance.'}
+                        {corridorUi.quoteConfirmed}
                       </span>
                       <button
                         type="button"
@@ -1137,9 +1126,9 @@ export default function ShippingCentralAsia() {
                             trackEvent('lead_table_cta_click', { mode: spec.multimodalTable[activeTransportMode].mode, selectedCountry });
                           }
                         }}
-                        className="px-5 py-2.5 bg-gradient-to-r from-[#0E4C78] to-[#d97706] hover:opacity-90 text-white text-xs font-black tracking-widest uppercase rounded-xl flex items-center gap-1.5 shadow-md shadow-sky-950/30 active:scale-95 transition-all self-start sm:self-center"
+                        className="px-5 py-2.5 bg-gradient-to-r from-[#763c9c] to-[#c94f2f] hover:opacity-90 text-white text-xs font-black tracking-widest uppercase rounded-xl flex items-center gap-1.5 shadow-md shadow-sky-950/30 active:scale-95 transition-all self-start sm:self-center"
                       >
-                        <span>{language === 'zh' ? '获取该渠道即时运价' : 'Get Cost Analysis'}</span>
+                        <span>{corridorUi.requestMode}</span>
                         <ArrowUpRight className="w-3.5 h-3.5" />
                       </button>
                     </div>
@@ -1151,37 +1140,222 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
+        {selectedCountry === 'uzbekistan' && (
+          <section id="uzbekistan-road-loading-case" className="scroll-mt-24 border-b border-[#cfd6dc] bg-[#f3f1eb] py-16 text-[#10243f] md:py-24" aria-labelledby="uzbekistan-road-case-title">
+            <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+              <div className="max-w-4xl">
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#b95732]">{uzbekistanRoadCase.routeLabel}</p>
+                <h2 id="uzbekistan-road-case-title" className="mt-4 max-w-3xl text-3xl font-black leading-[1.05] tracking-[-0.045em] md:text-5xl">{uzbekistanRoadCase.title}</h2>
+                <p className="mt-5 max-w-[68ch] text-base font-semibold leading-7 text-slate-700">{uzbekistanRoadCase.intro}</p>
+                <p className="mt-3 max-w-[72ch] text-xs font-medium leading-6 text-slate-500">{uzbekistanRoadCase.evidenceNote}</p>
+              </div>
+
+              <ol className="mt-10 grid border-y border-[#bac4cc] md:grid-cols-3">
+                {uzbekistanRoadCase.route.map((node, index) => (
+                  <li key={node} className={`relative flex items-center gap-4 py-5 md:px-6 ${index > 0 ? 'border-t border-[#bac4cc] md:border-l md:border-t-0' : ''}`}>
+                    <span className="font-mono text-xs font-black text-[#b95732]">0{index + 1}</span>
+                    <span className="text-sm font-black">{node}</span>
+                    {index < 2 && <ArrowRight className="absolute right-4 hidden h-4 w-4 text-[#b95732] md:block rtl:left-4 rtl:right-auto rtl:rotate-180" aria-hidden="true" />}
+                  </li>
+                ))}
+              </ol>
+
+              <div className="mt-10 grid gap-4 md:grid-cols-12">
+                {UZBEKISTAN_ROAD_CASE_IMAGES.map((image, index) => (
+                  <figure key={image.src} className={`${index === 0 ? 'md:col-span-8' : 'md:col-span-4'} flex flex-col border border-[#c7cfd5] bg-white`}>
+                    <img
+                      src={image.src}
+                      alt={uzbekistanRoadCase.captions[image.key]}
+                      width="1290"
+                      height={index === 0 ? '952' : '1519'}
+                      loading="lazy"
+                      decoding="async"
+                      className="h-[380px] w-full flex-1 object-cover md:h-[560px]"
+                    />
+                    <figcaption className="grid min-h-[74px] grid-cols-[34px_1fr] gap-3 border-t border-[#c7cfd5] px-4 py-4">
+                      <span className="font-mono text-[10px] font-black text-[#b95732]">0{index + 1}</span>
+                      <span className="text-xs font-semibold leading-5 text-slate-600">{uzbekistanRoadCase.captions[image.key]}</span>
+                    </figcaption>
+                  </figure>
+                ))}
+              </div>
+
+              <div className="mt-12 grid gap-10 lg:grid-cols-[minmax(0,.62fr)_minmax(0,1.38fr)] lg:items-start">
+                <div>
+                  <Truck className="h-7 w-7 text-[#b95732]" aria-hidden="true" />
+                  <h3 className="mt-5 text-2xl font-black leading-tight md:text-3xl">{uzbekistanRoadCase.processTitle}</h3>
+                </div>
+                <ol className="border-y border-[#bac4cc]">
+                  {uzbekistanRoadCase.steps.map((step, index) => (
+                    <li key={step} className="grid grid-cols-[42px_1fr] gap-4 border-b border-[#d2d8dd] py-4 last:border-b-0">
+                      <span className="font-mono text-xs font-black text-[#b95732]">0{index + 1}</span>
+                      <span className="text-sm font-bold leading-6 text-slate-700">{step}</span>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+
+              <div className="mt-12 grid bg-[#10243f] text-white lg:grid-cols-[minmax(0,1.35fr)_minmax(260px,.65fr)] lg:items-center">
+                <div className="p-6 md:p-8 lg:p-10">
+                  <h3 className="max-w-3xl text-2xl font-black leading-tight md:text-3xl">{uzbekistanRoadCase.controlTitle}</h3>
+                  <p className="mt-4 max-w-[72ch] text-sm font-semibold leading-7 text-slate-300">{uzbekistanRoadCase.controlBody}</p>
+                </div>
+                <div className="border-t border-white/[0.12] p-6 lg:border-l lg:border-t-0 lg:p-10 rtl:lg:border-l-0 rtl:lg:border-r">
+                  <button type="button" onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })} className="inline-flex min-h-12 w-full items-center justify-center gap-2 bg-[#c94f2f] px-5 py-3 text-sm font-black text-white transition-colors hover:bg-[#b94625] active:scale-[0.98]">
+                    {uzbekistanRoadCase.cta}<ArrowRight className="h-4 w-4 rtl:rotate-180" aria-hidden="true" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {(selectedCountry === 'kazakhstan' || selectedCountry === 'uzbekistan') && (
+        <section className="border-b border-white/[0.08] bg-[#06172e] py-16 md:py-24" aria-labelledby="eurasia-case-title">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,.78fr)_minmax(0,1.22fr)] lg:items-end">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{EURASIA_WHEEL_HUB_DESTINATION[activeLang]}</p>
+                <h2 id="eurasia-case-title" className="mt-4 text-3xl font-black leading-[1.06] tracking-[-0.045em] text-white md:text-5xl">{caseStudy.title}</h2>
+              </div>
+              <div>
+                <p className="max-w-[64ch] text-base font-semibold leading-relaxed text-slate-200">{caseStudy.intro}</p>
+                <p className="mt-3 max-w-[68ch] text-xs leading-relaxed text-slate-500">{caseStudy.evidenceNote}</p>
+              </div>
+            </div>
+
+            <dl className="mt-12 grid border-y border-white/[0.14] sm:grid-cols-2 lg:grid-cols-5">
+              {caseStudy.metrics.map((metric, index) => (
+                <div key={metric.label} className={`py-6 sm:px-5 ${index > 0 ? 'border-t border-white/[0.12] sm:border-l sm:border-t-0' : ''}`}>
+                  <dd className="font-mono text-lg font-black text-white md:text-xl">{metric.value}</dd>
+                  <dt className="mt-2 text-xs font-bold leading-relaxed text-slate-400">{metric.label}</dt>
+                </div>
+              ))}
+            </dl>
+
+            <div className="mt-10 grid gap-4 md:grid-cols-12">
+              {EURASIA_CASE_IMAGES.map((item, index) => (
+                <figure key={item.src} className={`${index === 0 ? 'md:col-span-7 md:row-span-2' : index === 1 || index === 2 ? 'md:col-span-5' : 'md:col-span-6'} border border-white/[0.1] bg-white/[0.025]`}>
+                  <img
+                    src={item.src}
+                    alt={caseStudy.captions[item.key]}
+                    width="1400"
+                    height="1867"
+                    loading="lazy"
+                    className={`w-full object-cover ${index === 0 ? 'h-[520px] md:h-[704px]' : 'h-[330px]'}`}
+                  />
+                  <figcaption className="border-t border-white/[0.1] px-4 py-3 text-xs font-semibold leading-relaxed text-slate-400">{caseStudy.captions[item.key]}</figcaption>
+                </figure>
+              ))}
+            </div>
+
+            <div className="mt-10 grid border border-white/[0.12] bg-[#081E39] lg:grid-cols-[minmax(0,.72fr)_minmax(0,1.28fr)]">
+              <div className="border-b border-white/[0.12] p-6 md:p-8 lg:border-b-0 lg:border-r">
+                <h3 className="text-xl font-black text-white">{caseStudy.serviceTitle}</h3>
+                <p className="mt-5 border-l-2 border-[#c94f2f] pl-4 text-sm font-bold leading-relaxed text-[#f2a47f]">{caseStudy.excluded}</p>
+                <button type="button" onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })} className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-5 py-3 text-sm font-black text-white transition-colors hover:bg-[#b94625]">
+                  {caseStudy.cta}<ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </button>
+              </div>
+              <ol className="divide-y divide-white/[0.1] p-6 md:p-8">
+                {caseStudy.steps.map((step, index) => (
+                  <li key={step} className="grid grid-cols-[44px_1fr] items-center gap-4 py-4 first:pt-0 last:pb-0">
+                    <span className="font-mono text-xs font-black text-[#f2a47f]">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-sm font-bold text-slate-200">{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+        )}
+
+        {selectedCountry === 'kazakhstan' && (
+        <section id="chemical-loading-case" className="border-b border-white/[0.08] bg-[#031225] py-16 md:py-24" aria-labelledby="chemical-case-title">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+            <div className="grid gap-10 lg:grid-cols-[minmax(0,.95fr)_minmax(0,1.05fr)] lg:items-end">
+              <div>
+                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{chemicalCase.destination}</p>
+                <h2 id="chemical-case-title" aria-label={chemicalCase.title} className="mt-4 text-3xl font-black leading-[1.06] tracking-[-0.045em] text-white md:text-[2.25rem]">
+                  {chemicalCase.titleLines.map((line) => <span key={line} className="block">{line}</span>)}
+                </h2>
+              </div>
+              <div>
+                <p className="max-w-[64ch] text-base font-semibold leading-relaxed text-slate-200">{chemicalCase.intro}</p>
+                <p className="mt-3 max-w-[68ch] text-xs leading-relaxed text-slate-500">{chemicalCase.evidenceNote}</p>
+              </div>
+            </div>
+
+            <div className="mt-12 grid border border-[#c94f2f]/60 bg-[#0a1c32] lg:grid-cols-[minmax(0,.72fr)_minmax(0,1.28fr)]">
+              <div className="flex items-start gap-4 border-b border-[#c94f2f]/35 p-6 lg:border-b-0 lg:border-r lg:p-8">
+                <ShieldAlert className="mt-0.5 h-6 w-6 shrink-0 text-[#f2a47f]" aria-hidden="true" />
+                <h3 className="text-xl font-black leading-tight text-white">{chemicalCase.checkpointTitle}</h3>
+              </div>
+              <p className="p-6 text-sm font-semibold leading-7 text-slate-300 lg:p-8">{chemicalCase.checkpointBody}</p>
+            </div>
+
+            <div className="mt-12 flex items-end justify-between gap-6 border-b border-white/[0.14] pb-5">
+              <h3 className="text-xl font-black text-white md:text-2xl">{chemicalCase.sequenceTitle}</h3>
+              <span className="font-mono text-xs font-black text-[#f2a47f]">01 / 07</span>
+            </div>
+
+            <div className="mt-6 grid gap-4 md:grid-cols-12">
+              {EURASIA_CHEMICAL_CASE_IMAGES.map((item, index) => {
+                const spanClass = index === 0 ? 'md:col-span-5' : index === 1 ? 'md:col-span-7' : index === 6 ? 'md:col-span-7' : 'md:col-span-5';
+                const heightClass = index === 1 ? 'h-[360px] md:h-[420px]' : index === 6 ? 'h-[460px]' : 'h-[420px]';
+                return (
+                  <figure key={item.src} className={`${spanClass} border border-white/[0.1] bg-white/[0.025]`}>
+                    <img
+                      src={item.src}
+                      alt={chemicalCase.captions[item.key]}
+                      width="1600"
+                      height="1800"
+                      loading="lazy"
+                      className={`w-full object-cover ${heightClass}`}
+                    />
+                    <figcaption className="grid grid-cols-[34px_1fr] gap-3 border-t border-white/[0.1] px-4 py-4">
+                      <span className="font-mono text-[10px] font-black text-[#f2a47f]">{String(index + 1).padStart(2, '0')}</span>
+                      <span className="text-xs font-semibold leading-relaxed text-slate-400">{chemicalCase.captions[item.key]}</span>
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
+
+            <div className="mt-12 grid border-y border-white/[0.14] lg:grid-cols-[minmax(0,.65fr)_minmax(0,1.35fr)]">
+              <div className="border-b border-white/[0.12] py-8 lg:border-b-0 lg:border-r lg:pr-8">
+                <FileText className="h-6 w-6 text-[#f2a47f]" aria-hidden="true" />
+                <h3 className="mt-5 text-2xl font-black text-white">{chemicalCase.checklistTitle}</h3>
+                <button type="button" onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })} className="mt-7 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-5 py-3 text-sm font-black text-white transition-colors hover:bg-[#b94625]">
+                  {chemicalCase.cta}<ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </button>
+              </div>
+              <ol className="divide-y divide-white/[0.1] py-4 lg:pl-8">
+                {chemicalCase.checkpoints.map((checkpoint, index) => (
+                  <li key={checkpoint} className="grid grid-cols-[38px_1fr] items-start gap-4 py-5">
+                    <span className="font-mono text-xs font-black text-[#f2a47f]">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-sm font-bold leading-relaxed text-slate-200">{checkpoint}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+        )}
+
         {/* Section 3: Compliance & Solutions Grid */}
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                {language === 'zh'
-                  ? `${countryLabel(selectedCountry)}合规`
-                  : language === 'ru'
-                    ? `Соответствие: ${countryLabel(selectedCountry)}`
-                    : language === 'fr'
-                      ? `Conformité : ${countryLabel(selectedCountry)}`
-                      : language === 'es'
-                        ? `Conformidad: ${countryLabel(selectedCountry)}`
-                        : language === 'ar'
-                          ? `الامتثال: ${countryLabel(selectedCountry)}`
-                          : `${countryLabel(selectedCountry)} Compliance`}
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
-                {spec.solutionsTitle}
-              </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm sm:text-base font-medium">
-                {spec.solutionsSubtitle}
-              </p>
+            <div className="mb-12 max-w-3xl">
+              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{spec.solutionsTitle}</h2>
+              <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{spec.solutionsSubtitle}</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 gap-5 lg:grid-cols-12">
               {spec.solutions.map((item, idx) => (
-                <div key={idx} className="bg-white/[0.02] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.04] flex flex-col justify-between group">
+                <article key={idx} className={`border border-white/[0.1] bg-white/[0.025] p-6 transition-colors hover:border-white/[0.18] hover:bg-white/[0.045] md:p-8 ${spec.solutions.length === 3 && idx === 2 ? 'lg:col-span-12' : idx % 4 === 0 || idx % 4 === 3 ? 'lg:col-span-7' : 'lg:col-span-5'}`}>
                   <div>
-                    <div className="bg-[#d97706]/10 p-3 rounded-xl inline-block mb-4">
+                    <div className="mb-4 inline-block bg-[#c94f2f]/10 p-3">
                       {getIcon(item.icon)}
                     </div>
                     <h3 className="text-lg md:text-xl font-bold text-white mb-3">
@@ -1191,11 +1365,7 @@ export default function ShippingCentralAsia() {
                       {item.desc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#d97706]">
-                    <span>{language === 'zh' ? '申请专项预审' : 'Request File Pre-Audit'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                  </div>
-                </div>
+                </article>
               ))}
             </div>
           </div>
@@ -1204,33 +1374,18 @@ export default function ShippingCentralAsia() {
         {/* Section 4: Universal Avoid-Pitfall / Operation Redlines (Persistent Bottom Section) */}
         <section className="py-16 md:py-24 border-b border-white/[0.05] bg-transparent">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                {language === 'zh' ? '避坑指南' : 'SCM Redlines'}
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight mb-4">
-                {redlines.title}
-              </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm sm:text-base font-medium">
-                {redlines.subtitle}
-              </p>
+            <div className="mb-12 max-w-3xl">
+              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{redlines.title}</h2>
+              <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{redlines.subtitle}</p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="border-y border-white/[0.12]">
               {redlines.items.map((item) => (
-                <div key={item.id} className="bg-white/[0.02] backdrop-blur-md rounded-2xl p-8 border border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04] transition-all duration-300 shadow-sm relative overflow-hidden group">
-                  <div className="absolute top-0 right-0 p-4 text-white/5 font-black text-6xl select-none leading-none opacity-40 group-hover:opacity-60 transition-opacity">
-                    {item.id}
-                  </div>
-                  <div className="flex items-center gap-2 text-[#d97706] font-black mb-4 text-sm sm:text-base">
-                    <ShieldAlert className="w-6 h-6 text-[#d97706] flex-shrink-0" />
-                    <h3 className="text-white">{item.title}</h3>
-                  </div>
-                  <p className="text-slate-400 text-sm leading-relaxed font-medium relative z-10">
-                    {item.desc}
-                  </p>
-                </div>
+                <article key={item.id} className="grid gap-4 border-b border-white/[0.12] py-7 last:border-b-0 md:grid-cols-[52px_minmax(220px,.7fr)_minmax(0,1.3fr)] md:items-start md:gap-7">
+                  <ShieldAlert className="h-6 w-6 text-[#c94f2f]" aria-hidden="true" />
+                  <h3 className="text-base font-black text-white md:text-lg">{item.title}</h3>
+                  <p className="text-sm font-medium leading-relaxed text-slate-400">{item.desc}</p>
+                </article>
               ))}
             </div>
           </div>
@@ -1243,7 +1398,7 @@ export default function ShippingCentralAsia() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
                 {t('faqHeading')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm font-medium">
                 {t('faqSubheading')}
               </p>
@@ -1259,12 +1414,12 @@ export default function ShippingCentralAsia() {
                   >
                     <button
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
+                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f08c65] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.q}
                       </span>
-                      <ChevronDown className={`w-5 h-5 text-[#d97706] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-[#c94f2f] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     <AnimatePresence>

@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   englishProductPaths, englishProductRedirect, isEnglishProductPath, isNavigationLanguage,
   navigationPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId,
-  routeScrollAction, scrollPositionKey, splitNavigationPath,
+  routeScrollAction, scrollPositionKey, splitNavigationPath, supportedNavigationLanguages,
 } from '../src/lib/productLanguageRouting.ts';
 import type { Language } from '../src/i18n/translations.ts';
 
@@ -20,6 +20,17 @@ test('all eight navigation languages use only authored product URLs', () => {
     assert.equal(navigationPath('/', language), `${navigationPrefixes[language]}/`);
     assert.equal(navigationPath('/get-a-quote?industry=Mobile%20Accessories#form', language), `${navigationPrefixes[language]}/get-a-quote/?industry=Mobile%20Accessories#form`);
   }
+});
+
+test('language menus only offer authored destinations for freight pages', () => {
+  assert.deepEqual(supportedNavigationLanguages('/shipping-from-china-to-kazakhstan/'), ['en', 'zh', 'ru', 'fr', 'es', 'ar']);
+  assert.deepEqual(supportedNavigationLanguages('/fr/services/air-freight/'), ['en', 'zh', 'ru', 'fr', 'es', 'ar']);
+  assert.deepEqual(supportedNavigationLanguages('/services/sea-freight/'), languages);
+  assert.deepEqual(supportedNavigationLanguages('/tr/services/lcl-shipping-from-china/'), languages);
+  assert.deepEqual(supportedNavigationLanguages('/pt/how-we-work/'), languages);
+  assert.equal(navigationPath('/shipping-from-china-to-kazakhstan/', 'pt'), '/shipping-from-china-to-kazakhstan/');
+  assert.equal(navigationPath('/tr/services/air-freight/', 'tr'), '/services/air-freight/');
+  assert.equal(navigationPath('/services/sea-freight/', 'pt'), '/pt/services/sea-freight/');
 });
 
 test('direct locale prefixes override stored and historical preferences on complete path segments', () => {
@@ -78,6 +89,8 @@ test('authored language URLs take precedence over stale preferences and return t
   for (const path of ['/sourcing/outdoor-products-from-china/', '/sourcing/commercial-kitchen-equipment-from-china/', '/screen-protectors/', '/screen-protectors/compare/', '/sourcing/kitchen-equipment-for-distributors/', '/sourcing/restaurant-project-equipment/', '/screen-protectors/wholesale-for-stores/', '/screen-protectors/private-label/']) {
     assert.equal(resolveNavigationLanguage(path, 'ar', { navigationLanguage: 'ar' }), 'en');
   }
+  assert.equal(isEnglishProductPath('/sourcing/restaurant-kitchen-packages-from-china/'), true);
+  assert.equal(resolveNavigationLanguage('/sourcing/restaurant-kitchen-packages-from-china/', 'ar', { navigationLanguage: 'ar' }), 'ar');
   assert.equal(isEnglishProductPath('/ar/screen-protectors/compare/'), false);
   assert.equal(isEnglishProductPath('/ar/screen-protectors/videos/'), true);
   assert.equal(resolveNavigationLanguage('/es/screen-protectors/compare/', 'ar', { navigationLanguage: 'ar' }), 'es');

@@ -5,7 +5,7 @@ const Home = lazy(() => import('./pages/Home'));
 import InternalPageNavigation from './components/InternalPageNavigation';
 import CookieConsent from './components/CookieConsent';
 const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
-import { kitchenCategoryPaths } from './features/commercial-kitchen/routes.mjs';
+import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from './features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, productContentLanguages, localizedProductPath, isLocalizedProductPath, productRouteParts } from './lib/productLocalization.mjs';
 import './features/buyer-guides/buyer-guides.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
@@ -31,9 +31,12 @@ const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
 const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
 const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
+const FreightMapPreview = lazy(() => import('./pages/FreightMapPreview'));
 const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
 const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
+const RestaurantKitchenPackages = lazy(() => import('./pages/product-showcase/RestaurantKitchenPackages'));
+const RestaurantKitchenScenario = lazy(() => import('./pages/product-showcase/RestaurantKitchenScenario'));
 const KitchenCategoryPage = lazy(() => import('./features/commercial-kitchen/KitchenCategoryPage'));
 const LocalizedKitchenPage = lazy(() => import('./features/commercial-kitchen/LocalizedKitchenPage'));
 const LocalizedScreenProtectorPage = lazy(() => import('./features/screen-protectors/LocalizedScreenProtectorPage'));
@@ -41,33 +44,9 @@ const BuyerGuidePage = lazy(() => import('./features/buyer-guides/BuyerGuidePage
 const RefrigerationEquipment = lazy(() => import('./pages/product-showcase/RefrigerationEquipment').then((module) => ({ default: module.RefrigerationEquipment })));
 const MobileAccessories = lazy(() => import('./features/mobile-sourcing/MobileSourcingPage'));
 import { mobilePaths } from './features/mobile-sourcing/routes.mjs';
+import { shippingCountries as SHIPPING_COUNTRIES, sourcingCategories as SOURCING_CATEGORIES } from './config/siteNavigation';
 const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
 const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPage'));
-
-const SHIPPING_COUNTRIES = [
-  'saudi-arabia',
-  'uae',
-  'kuwait',
-  'qatar',
-  'oman',
-  'bahrain',
-  'kazakhstan',
-  'uzbekistan',
-  'nigeria',
-  'ghana',
-  'mexico',
-  'brazil',
-  'argentina',
-  'peru',
-  'chile',
-] as const;
-
-const SOURCING_CATEGORIES = [
-  { slug: 'commercial-kitchen-equipment-from-china', kind: 'commercial-kitchen' },
-  { slug: 'audio-speakers-from-china', kind: 'audio-speakers' },
-  { slug: 'mobile-accessories-from-china', kind: 'mobile-accessories' },
-  { slug: 'outdoor-products-from-china', kind: 'outdoor' },
-] as const;
 
 function CountryShippingRoute() {
   const location = useLocation();
@@ -80,7 +59,7 @@ function CountryShippingRoute() {
   if (['saudi-arabia', 'uae', 'kuwait', 'qatar', 'oman', 'bahrain'].includes(normalizedCountry)) {
     return <ShippingMiddleEast />;
   }
-  if (['kazakhstan', 'uzbekistan'].includes(normalizedCountry)) {
+  if (['russia', 'kazakhstan', 'uzbekistan', 'kyrgyzstan', 'tajikistan', 'turkmenistan'].includes(normalizedCountry)) {
     return <ShippingCentralAsia />;
   }
   if (['nigeria', 'ghana'].includes(normalizedCountry)) {
@@ -403,6 +382,8 @@ export default function App() {
             <Route path="/sourcing-services" element={<SourcingServices />} />
             <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />
             <Route path="/sourcing/commercial-kitchen-equipment-from-china" element={<CommercialKitchen />} />
+            <Route path={kitchenPackagePath} element={<RestaurantKitchenPackages />} />
+            <Route path={`${kitchenPackagePath}/:scenarioSlug`} element={<RestaurantKitchenScenario />} />
             {kitchenCategoryPaths.map(path => <Route key={path} path={path} element={<KitchenCategoryPage />} />)}
             <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
             {mobilePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`mobile-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<MobileAccessories />} />))}
@@ -418,6 +399,7 @@ export default function App() {
                 <Route path="/design-preview/home-v2" element={<HomeV2Preview />} />
               </>
             ) : null}
+            <Route path="/design-preview/freight-maps" element={<FreightMapPreview />} />
             <Route path="/sourcing-services/supplier-search" element={<SourcingServicePage kind="supplier-search" />} />
             <Route path="/sourcing-services/inspection-quality-control" element={<SourcingServicePage kind="inspection-quality-control" />} />
             <Route path="/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
@@ -425,7 +407,7 @@ export default function App() {
             {/* Compatibility only: localized product aliases retain intent, then use the English URL. */}
             {Object.values(navigationPrefixes).filter(Boolean).flatMap(prefix => [
               ...englishProductPaths.filter(path => path.startsWith('/screen-protectors') && !buyerGuidePaths.includes(path)),
-              ...kitchenCategoryPaths,
+              ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
               ...(!['/es','/ar'].includes(prefix) ? mobilePaths.filter(path => !path.startsWith('/sourcing/')) : []),
               '/commercial-kitchen', '/audio-speakers', '/mobile-accessories', '/outdoor-products',
             ].map(path => (

@@ -11,6 +11,7 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import LatinAmericaFreightDepth from '../components/LatinAmericaFreightDepth';
+import PeruTileFreightCase from '../components/PeruTileFreightCase';
 import { motion, AnimatePresence } from 'framer-motion';
 import { 
   ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
@@ -1164,6 +1165,10 @@ export default function ShippingLatinAmerica() {
           language={activeLang}
           onQuote={scrollToQuote}
         />
+
+        {selectedCountry === 'peru' && (
+          <PeruTileFreightCase locale={activeLang} onQuote={scrollToQuote} />
+        )}
 
 
         {/* Section: Compliant Solutions Checklist (3 Columns) */}

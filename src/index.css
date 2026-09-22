@@ -157,7 +157,7 @@ body {
 }
 
 .hb-region-shell :is(a, button, input, select, textarea, summary):focus-visible {
-  outline: 3px solid #f59e0b;
+  outline: 3px solid var(--ddnz-purple);
   outline-offset: 3px;
 }
 
@@ -171,11 +171,41 @@ body {
 }
 
 .hb-region-shell {
+  --hb-navy: #33293c;
+  --hb-navy-deep: #27212f;
+  --hb-blue: #763c9c;
+  --hb-amber: var(--ddnz-coral);
+  --hb-amber-strong: var(--ddnz-coral-strong);
   background:
-    radial-gradient(circle at 82% 8%, rgba(36, 107, 147, 0.18), transparent 34rem),
-    linear-gradient(180deg, #071a33 0%, #0b2a4a 58%, #071a33 100%);
+    radial-gradient(circle at 82% 8%, rgba(118, 60, 156, 0.22), transparent 34rem),
+    radial-gradient(circle at 12% 72%, rgba(201, 79, 47, 0.10), transparent 30rem),
+    linear-gradient(180deg, #27212f 0%, #33293c 58%, #27212f 100%);
   color: #f8fafc;
 }
+
+/* Brand bridge for the older destination-page templates. These pages keep their
+   evidence-dense dark treatment, but use the same DDNZ purple/coral vocabulary. */
+.hb-region-shell [class~="bg-[#d97706]"] { background-color: var(--ddnz-coral) !important; }
+.hb-region-shell [class~="bg-[#d97706]/10"] { background-color: color-mix(in srgb, var(--ddnz-coral) 10%, transparent) !important; }
+.hb-region-shell [class~="bg-[#d97706]/12"] { background-color: color-mix(in srgb, var(--ddnz-coral) 12%, transparent) !important; }
+.hb-region-shell [class~="text-[#d97706]"],
+.hb-region-shell [class~="text-[#ffb55f]"],
+.hb-region-shell [class~="text-[#FFB55F]"] { color: #f2a47f !important; }
+.hb-region-shell [class~="border-[#d97706]"] { border-color: var(--ddnz-coral) !important; }
+.hb-region-shell [class~="border-[#d97706]/20"] { border-color: color-mix(in srgb, var(--ddnz-coral) 30%, transparent) !important; }
+.hb-region-shell [class~="border-[#d97706]/30"],
+.hb-region-shell [class~="border-[#d97706]/35"] { border-color: color-mix(in srgb, var(--ddnz-coral) 40%, transparent) !important; }
+.hb-region-shell [class~="border-[#d97706]/50"],
+.hb-region-shell [class~="border-[#d97706]/60"] { border-color: color-mix(in srgb, var(--ddnz-coral) 60%, transparent) !important; }
+.hb-region-shell [class~="bg-[#071a33]/72"],
+.hb-region-shell [class~="bg-[#071a33]/88"],
+.hb-region-shell [class~="bg-[#081e39]/45"] { background-color: rgba(39, 33, 47, 0.82) !important; }
+.hb-region-shell [class~="bg-[#081E39]"],
+.hb-region-shell [class~="bg-[#071a33]"],
+.hb-region-shell [class~="bg-[#06172e]"],
+.hb-region-shell [class~="bg-[#031225]"],
+.hb-region-shell [class~="bg-[#0a1c32]"],
+.hb-region-shell [class~="bg-[#0b1c2c]"] { background-color: #27212f !important; }
 
 .hb-section-title {
   color: var(--ddnz-ink, var(--hb-ink));

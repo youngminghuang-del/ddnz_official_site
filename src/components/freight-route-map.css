@@ -1,0 +1,359 @@
+.freight-map-panel {
+  display: grid;
+  grid-template-columns: minmax(16rem, .72fr) minmax(0, 1.55fr);
+  gap: clamp(2rem, 4vw, 4rem);
+  align-items: center;
+  border-block: 1px solid var(--ddnz-line, #dce3ea);
+  background: #fffdf9;
+  padding: clamp(2.5rem, 6vw, 5.5rem) max(1rem, calc((100vw - 80rem) / 2));
+  color: var(--ddnz-ink, #10243f);
+}
+
+.freight-map-panel + .freight-map-panel {
+  border-top: 0;
+}
+
+.freight-map-copy {
+  min-width: 0;
+}
+
+.freight-map-eyebrow {
+  margin: 0;
+  color: var(--ddnz-coral-strong, #b94625);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+}
+
+.freight-map-copy h2 {
+  margin: .9rem 0 0;
+  max-width: 12ch;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-weight: 850;
+  line-height: 1.04;
+  letter-spacing: -.045em;
+}
+
+.freight-map-description {
+  max-width: 34rem;
+  margin: 1.35rem 0 0;
+  color: #56667a;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.freight-map-facts {
+  display: grid;
+  gap: 0;
+  margin: 1.8rem 0 0;
+  border-top: 1px solid var(--ddnz-line, #dce3ea);
+}
+
+.freight-map-facts > div {
+  padding: .9rem 0;
+  border-bottom: 1px solid var(--ddnz-line, #dce3ea);
+}
+
+.freight-map-facts dt {
+  display: flex;
+  align-items: center;
+  gap: .55rem;
+  color: var(--ddnz-purple-strong, #632b89);
+  font-size: .72rem;
+  font-weight: 800;
+}
+
+.freight-map-facts dt svg {
+  width: 1rem;
+  height: 1rem;
+  stroke-width: 1.8;
+}
+
+.freight-map-facts dd {
+  margin: .4rem 0 0;
+  color: #33465d;
+  font-size: .88rem;
+  font-weight: 650;
+  line-height: 1.55;
+}
+
+.freight-map-link {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  gap: .45rem;
+  margin-top: 1.2rem;
+  color: var(--ddnz-purple-strong, #632b89);
+  font-size: .88rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.freight-map-link svg {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 180ms ease-out;
+}
+
+.freight-map-link:hover svg {
+  transform: translate(.12rem, -.12rem);
+}
+
+.freight-map-figure {
+  min-width: 0;
+  margin: 0;
+}
+
+.freight-map-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  border: 1px solid rgba(16, 36, 63, .14);
+  border-radius: 1.5rem;
+  background: #e8eef3;
+  box-shadow: 0 1.5rem 3.5rem rgba(16, 36, 63, .1);
+}
+
+.freight-map-ocean {
+  fill: #e8eef3;
+}
+
+.freight-map-graticule {
+  fill: none;
+  stroke: rgba(16, 36, 63, .075);
+  stroke-width: .8;
+  vector-effect: non-scaling-stroke;
+}
+
+.freight-map-country {
+  fill: #d5dee6;
+  stroke: rgba(255, 255, 255, .9);
+  stroke-width: .85;
+  vector-effect: non-scaling-stroke;
+}
+
+.freight-map-country-focus {
+  fill: #ddd3e5;
+}
+
+.freight-map-country-origin {
+  fill: #efc3b4;
+}
+
+.freight-map-cartouche rect {
+  fill: rgba(255, 253, 249, .92);
+  stroke: rgba(16, 36, 63, .1);
+  stroke-width: 1;
+}
+
+.freight-map-cartouche svg {
+  fill: none;
+  stroke: var(--ddnz-coral, #c94f2f);
+  stroke-width: 2;
+}
+
+.freight-map-cartouche text {
+  fill: var(--ddnz-ink, #10243f);
+  font-size: 12px;
+  font-weight: 850;
+  letter-spacing: .12em;
+}
+
+.freight-region-labels text {
+  fill: rgba(16, 36, 63, .24);
+  font-size: 15px;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-anchor: middle;
+}
+
+.freight-route {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3.5;
+  filter: drop-shadow(0 2px 2px rgba(16, 36, 63, .12));
+  vector-effect: non-scaling-stroke;
+}
+
+.freight-route-sea {
+  stroke: var(--ddnz-purple, #763c9c);
+}
+
+.freight-route-land {
+  stroke: var(--ddnz-coral, #c94f2f);
+}
+
+.freight-route-secondary {
+  stroke: var(--ddnz-purple, #763c9c);
+  stroke-dasharray: 8 9;
+  stroke-width: 2.25;
+}
+
+.freight-map-node circle:first-of-type {
+  fill: #fffdf9;
+  stroke: var(--ddnz-purple, #763c9c);
+  stroke-width: 3;
+  vector-effect: non-scaling-stroke;
+}
+
+.freight-map-node-origin circle:first-of-type {
+  fill: var(--ddnz-coral-soft, #fff2ed);
+  stroke: var(--ddnz-coral, #c94f2f);
+}
+
+.freight-node-core {
+  fill: var(--ddnz-coral, #c94f2f);
+  stroke: none;
+}
+
+.freight-map-node-gateway circle:first-of-type {
+  fill: #f7f0fb;
+  stroke: var(--ddnz-coral, #c94f2f);
+}
+
+.freight-node-leader {
+  stroke: rgba(16, 36, 63, .42);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.freight-node-label {
+  fill: var(--ddnz-ink, #10243f);
+  font-size: 14px;
+  font-weight: 850;
+  paint-order: stroke;
+  stroke: #e8eef3;
+  stroke-linejoin: round;
+  stroke-width: 6px;
+}
+
+.freight-node-code {
+  fill: #52657b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  stroke-width: 5px;
+}
+
+.freight-map-panel-central-asia .freight-node-label {
+  font-size: 13px;
+}
+
+.freight-map-panel-central-asia .freight-node-code {
+  font-size: 9px;
+}
+
+.freight-route-mileposts rect {
+  fill: rgba(255, 253, 249, .94);
+  stroke: rgba(118, 60, 156, .2);
+  stroke-width: 1;
+}
+
+.freight-route-mileposts text {
+  fill: var(--ddnz-purple-strong, #632b89);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-anchor: middle;
+}
+
+.freight-map-figure figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .7rem 1.25rem;
+  margin-top: 1rem;
+  color: #52657b;
+  font-size: .72rem;
+  font-weight: 700;
+}
+
+.freight-map-verified {
+  color: var(--ddnz-purple-strong, #632b89);
+  letter-spacing: .08em;
+}
+
+.freight-map-verified svg {
+  width: .9rem;
+  height: .9rem;
+  color: var(--ddnz-coral, #c94f2f);
+  stroke-width: 2;
+}
+
+.freight-map-figure figcaption span {
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+}
+
+.freight-legend-line {
+  width: 1.6rem;
+  height: 0;
+  border-top: 3px solid var(--ddnz-coral, #c94f2f);
+}
+
+.freight-legend-line-secondary {
+  border-top: 2px dashed var(--ddnz-purple, #763c9c);
+}
+
+.freight-legend-node {
+  width: .65rem;
+  height: .65rem;
+  border: 2px solid var(--ddnz-purple, #763c9c);
+  border-radius: 50%;
+  background: #fffdf9;
+}
+
+.freight-map-note {
+  max-width: 52rem;
+  margin: .7rem 0 0;
+  color: #69788a;
+  font-size: .72rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 1180px) {
+  .freight-map-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .freight-map-copy h2 {
+    max-width: 18ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .freight-map-panel {
+    padding-block: 2.75rem;
+  }
+
+  .freight-map-svg {
+    min-width: 47rem;
+  }
+
+  .freight-map-figure {
+    overflow-x: auto;
+    padding-bottom: .4rem;
+    scrollbar-color: rgba(118, 60, 156, .35) transparent;
+  }
+
+  .freight-map-panel-world .freight-map-figure {
+    direction: rtl;
+  }
+
+  .freight-map-panel-world .freight-map-figure > * {
+    direction: ltr;
+  }
+
+  .freight-map-figure figcaption,
+  .freight-map-note {
+    min-width: 47rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .freight-map-link svg {
+    transition: none;
+  }
+}

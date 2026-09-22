@@ -1,16 +1,24 @@
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 import type { Language } from '../i18n/translations';
 import { canonicalSitePath } from './notionArticleRouting';
-import { kitchenCategoryPaths } from '../features/commercial-kitchen/routes.mjs';
+import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, hasProductTranslation, isLocalizedProductPath, localizedProductPath } from './productLocalization.mjs';
 
 export const navigationPrefixes: Record<Language, string> = {
   en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr',
 };
 
+export const allNavigationLanguages = Object.keys(navigationPrefixes) as Language[];
+export const freightDestinationLanguages: Language[] = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
+const fullyLocalizedFreightServicePaths = new Set([
+  '/services/sea-freight',
+  '/services/lcl-shipping-from-china',
+  '/services/dangerous-goods-shipping-from-china',
+]);
+
 export const englishProductPaths = [
   ...buyerGuidePaths, ...mobilePaths,
-  ...kitchenCategoryPaths,
+  ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
   '/products', '/sourcing-services', '/refrigeration-equipment',
   '/sourcing/commercial-kitchen-equipment-from-china', '/sourcing/audio-speakers-from-china',
   '/sourcing/outdoor-products-from-china',
@@ -29,6 +37,14 @@ const productAliases: Record<string, string> = {
 
 export function isNavigationLanguage(value: unknown): value is Language {
   return typeof value === 'string' && Object.hasOwn(navigationPrefixes, value);
+}
+
+/** Only offer language switches that keep the visitor on the same authored page. */
+export function supportedNavigationLanguages(path: string): Language[] {
+  const route = splitNavigationPath(path).pathname;
+  if (route.startsWith('/shipping-from-china-to-')) return freightDestinationLanguages;
+  if (route.startsWith('/services/') && !fullyLocalizedFreightServicePaths.has(route)) return freightDestinationLanguages;
+  return allNavigationLanguages;
 }
 
 /** Match complete prefix segments: /fridge and /arabic are ordinary English paths. */
@@ -56,7 +72,8 @@ export function navigationPath(path: string, language: Language) {
   const { pathname, suffix } = splitNavigationPath(path);
   const product = englishProductPath(path);
   if (product && hasProductTranslation(product, language)) return localizedProductPath(`${product}${suffix}`, language);
-  return canonicalSitePath(`${product || `${navigationPrefixes[language]}${pathname === '/' ? '' : pathname}` || '/'}${suffix}`);
+  const targetLanguage = supportedNavigationLanguages(pathname).includes(language) ? language : 'en';
+  return canonicalSitePath(`${product || `${navigationPrefixes[targetLanguage]}${pathname === '/' ? '' : pathname}` || '/'}${suffix}`);
 }
 
 export function navigationState(state: unknown, language: Language) {

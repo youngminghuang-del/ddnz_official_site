@@ -4,6 +4,16 @@ export const kitchenCategoryPaths = [
   '/sourcing/commercial-electric-griddles-from-china',
 ];
 
+export const kitchenPackagePath = '/sourcing/restaurant-kitchen-packages-from-china';
+export const kitchenPackageScenarioPaths = [
+  `${kitchenPackagePath}/takeaway-qsr`,
+  `${kitchenPackagePath}/cafe-light-meals`,
+  `${kitchenPackagePath}/casual-dining`,
+  `${kitchenPackagePath}/bakery-pastry`,
+  `${kitchenPackagePath}/pizza-shop`,
+  `${kitchenPackagePath}/cloud-kitchen`,
+];
+
 const aliases = {
   top: 'top', kitchen: 'top', equipment: 'equipment', range: 'equipment', products: 'equipment', families: 'equipment',
   assortments: 'assortments', benchmarks: 'benchmarks', 'trade-pricing': 'trade-pricing',

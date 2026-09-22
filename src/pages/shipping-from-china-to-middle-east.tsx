@@ -1417,13 +1417,14 @@ export default function MiddleEastRoute() {
           <div className="absolute inset-0 z-0 opacity-15">
             <img 
               src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2000"
-              alt="Middle East Container Terminal" 
+              alt=""
+              aria-hidden="true"
               width="2000"
               height="1125"
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-[#071A33] via-[#071A33]/80 to-transparent" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#27212f] via-[#27212f]/85 to-transparent" />
           </div>
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
@@ -1431,7 +1432,7 @@ export default function MiddleEastRoute() {
               
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#d97706]/10 text-[#d97706] text-xs font-black tracking-widest uppercase self-start">
+                  <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-black tracking-widest uppercase self-start">
                     <span>{t('chinaToMiddleEastSpecialist')}</span>
                   </div>
                   
@@ -1457,7 +1458,7 @@ export default function MiddleEastRoute() {
                             to={buildShippingCountryPath(location.pathname, slugByCountry[country])}
                             className={`min-h-11 px-3 py-2 rounded-lg text-xs font-black uppercase tracking-wider transition-all duration-200 ${
                               isActive
-                                ? 'bg-[#d97706] text-white shadow-md shadow-[#d97706]/15'
+                                ? 'bg-[#c94f2f] text-white shadow-md shadow-[#c94f2f]/15'
                                 : 'text-slate-300 hover:bg-white/5 hover:text-white'
                             }`}
                           >
@@ -1470,7 +1471,7 @@ export default function MiddleEastRoute() {
                 </div>
                 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#d97706]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#c94f2f]">
                     {getCountryContent('headline')}
                   </span>
                 </h1>
@@ -1485,7 +1486,7 @@ export default function MiddleEastRoute() {
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? 'SABER / 中东合规核验' : 'SABER & Customs Compliant'}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#d97706]/10 border border-[#d97706]/20 text-xs font-bold text-[#d97706]">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <Ship className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? '自主装箱与直航排舱' : 'Direct LCL/FCL Allocations'}
                     </span>
@@ -1504,7 +1505,7 @@ export default function MiddleEastRoute() {
                         formElem.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="px-6 py-3.5 bg-gradient-to-r from-[#d97706] to-[#ff9f24] hover:from-[#e07a00] hover:to-[#ff8a00] text-white font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-300 flex items-center gap-2"
+                    className="px-6 py-3.5 bg-gradient-to-r from-[#c94f2f] to-[#f2a47f] hover:from-[#b94625] hover:to-[#c94f2f] text-white font-black text-xs sm:text-sm tracking-wider uppercase rounded-xl shadow-lg hover:shadow-orange-500/20 transition-all duration-300 flex items-center gap-2"
                   >
                     <span>{t('heroCta')}</span>
                     <ArrowRight className="w-4 h-4" />
@@ -1521,7 +1522,7 @@ export default function MiddleEastRoute() {
 
               {/* Mini Quick Fact Widget */}
               <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/[0.08] shadow-2xl">
-                <h3 className="text-lg font-black tracking-wide text-[#d97706] uppercase mb-4">
+                <h3 className="text-lg font-black tracking-wide text-[#c94f2f] uppercase mb-4">
                   {t('transitWindowTitle')}
                 </h3>
                 
@@ -1530,7 +1531,7 @@ export default function MiddleEastRoute() {
                     <span className="text-sm font-bold text-slate-300">
                       {t('seaDdpText')}
                     </span>
-                    <span className="text-sm font-extrabold text-[#d97706]">
+                    <span className="text-sm font-extrabold text-[#c94f2f]">
                       {getTransitEstimate('sea')}
                     </span>
                   </div>
@@ -1538,7 +1539,7 @@ export default function MiddleEastRoute() {
                     <span className="text-sm font-bold text-slate-300">
                       {t('airDdpText')}
                     </span>
-                    <span className="text-sm font-extrabold text-[#d97706]">
+                    <span className="text-sm font-extrabold text-[#c94f2f]">
                       {getTransitEstimate('air')}
                     </span>
                   </div>
@@ -1546,14 +1547,14 @@ export default function MiddleEastRoute() {
                     <span className="text-sm font-bold text-slate-300">
                       {getComplianceRow().title}
                     </span>
-                    <span className="text-sm font-extrabold text-[#d97706]">
+                    <span className="text-sm font-extrabold text-[#c94f2f]">
                       {getComplianceRow().val}
                     </span>
                   </div>
                 </div>
 
                 <div className="mt-6 p-3 bg-white/[0.02] rounded-xl border border-white/[0.08] flex items-start gap-2.5">
-                  <CheckCircle2 className="w-4 h-4 text-[#d97706] flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-4 h-4 text-[#c94f2f] flex-shrink-0 mt-0.5" />
                   <p className="text-[11px] text-slate-300 leading-normal font-medium">
                     {t('transitIncludeText')}
                   </p>
@@ -1568,15 +1569,15 @@ export default function MiddleEastRoute() {
         {selectedCountry === 'UAE' && ['zh', 'en', 'es'].includes(activeLang) && <NewFreightEvidence locale={activeLang as 'zh' | 'en' | 'es'} uaeOnly />}
 
         {/* Section 2: Red Sea Operational Reality Update (Market Insight Box) */}
-        <section className="py-12 bg-[#081E39] border-y border-white/[0.05]">
+        <section className="py-12 bg-[#27212f] border-y border-white/[0.05]">
           <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-white/[0.02] rounded-2xl border-l-8 border-[#d97706] p-6 md:p-8 shadow-md border border-white/[0.08]">
+            <div className="bg-white/[0.02] rounded-2xl border-l-8 border-[#c94f2f] p-6 md:p-8 shadow-md border border-white/[0.08]">
               <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-[#d97706]/10 text-[#d97706]">
+                <div className="p-2 rounded-lg bg-[#c94f2f]/10 text-[#c94f2f]">
                   <AlertTriangle className="w-6 h-6" />
                 </div>
                 <div>
-                  <span className="text-[10px] tracking-widest font-black uppercase text-[#d97706]">
+                  <span className="text-[10px] tracking-widest font-black uppercase text-[#c94f2f]">
                     {t('alertTag')}
                   </span>
                   <h2 className="text-lg md:text-xl font-black text-white leading-tight">
@@ -1602,13 +1603,13 @@ export default function MiddleEastRoute() {
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#d97706]/10 text-[#d97706] text-xs font-bold tracking-wider uppercase mb-3">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-bold tracking-wider uppercase mb-3">
                 {t('colSolutions')}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
                 {t('matrixTitle')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm sm:text-base font-medium">
                 {t('matrixSubtitle')}
               </p>
@@ -1645,7 +1646,7 @@ export default function MiddleEastRoute() {
                         <tr key={idx} className="hover:bg-white/[0.02] transition-colors duration-150 group">
                           <td className="px-6 py-5 font-black text-white text-sm sm:text-base">
                             <div className="flex items-center gap-2 transition-transform duration-300 group-hover:translate-x-1">
-                              <span className="w-2.5 h-2.5 rounded-full bg-[#d97706]" />
+                              <span className="w-2.5 h-2.5 rounded-full bg-[#c94f2f]" />
                               {countryLabel}
                             </div>
                           </td>
@@ -1686,7 +1687,7 @@ export default function MiddleEastRoute() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 tracking-tight leading-tight">
                 {t('cardsHeading')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm sm:text-base font-semibold leading-relaxed">
                 {t('cardsSubheading')}
               </p>
@@ -1695,9 +1696,9 @@ export default function MiddleEastRoute() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               
               {/* Card 1 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#d97706]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 text-[#d97706] flex items-center justify-center mb-6 p-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
                     <Ship className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
@@ -1707,16 +1708,16 @@ export default function MiddleEastRoute() {
                     {t('card1Desc')}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#d97706]">
+                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card1Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                 </div>
               </div>
 
               {/* Card 2 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#d97706]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 text-[#d97706] flex items-center justify-center mb-6 p-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
                     <Search className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
@@ -1726,16 +1727,16 @@ export default function MiddleEastRoute() {
                     {t('card2Desc')}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#d97706]">
+                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card2Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                 </div>
               </div>
 
               {/* Card 3 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#d97706]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
+              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#d97706]/10 text-[#d97706] flex items-center justify-center mb-6 p-3">
+                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
@@ -1745,7 +1746,7 @@ export default function MiddleEastRoute() {
                     {getCountryContent('card3Desc')}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#d97706]">
+                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card3Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                 </div>
@@ -1765,13 +1766,13 @@ export default function MiddleEastRoute() {
                 
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
-                  <span className="px-3 py-1 bg-white/[0.05] text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+                  <span className="px-3 py-1 bg-white/[0.05] text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
                     {selectedCountry === 'Saudi-Arabia' ? t('saudiFocus') : selectedCountry === 'UAE' ? t('uaeFocus') : selectedCountry === 'Kuwait' ? t('kuwaitFocus') : getCountryContent('headline')}
                   </span>
                   <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight mb-4">
                     {spec.specTitle}
                   </h2>
-                  <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
+                  <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
                   <p className="text-slate-400 text-sm sm:text-base font-semibold leading-relaxed">
                     {spec.specSub}
                   </p>
@@ -1787,13 +1788,13 @@ export default function MiddleEastRoute() {
                       <div className="flex border-b border-white/[0.08] pb-4 mb-6 gap-4">
                         <button
                           onClick={() => setSpecActiveTab('tab1')}
-                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab1' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab1' ? 'border-[#c94f2f] text-[#c94f2f]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
                         >
                           {spec.tab1Title}
                         </button>
                         <button
                           onClick={() => setSpecActiveTab('tab2')}
-                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab2' ? 'border-[#d97706] text-[#d97706]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
+                          className={`min-h-11 flex-1 px-2 pb-3 text-xs sm:text-sm font-black text-center border-b-2 transition-all ${specActiveTab === 'tab2' ? 'border-[#c94f2f] text-[#c94f2f]' : 'border-transparent text-slate-400 hover:text-slate-300'}`}
                         >
                           {spec.tab2Title}
                         </button>
@@ -1810,7 +1811,7 @@ export default function MiddleEastRoute() {
                             transition={{ duration: 0.2 }}
                             className="space-y-4"
                           >
-                            <div className="flex items-center gap-2 text-[#d97706] font-bold text-sm">
+                            <div className="flex items-center gap-2 text-[#c94f2f] font-bold text-sm">
                               <ShieldCheck className="w-5 h-5 flex-shrink-0" />
                               <span>{spec.tab1Header}</span>
                             </div>
@@ -1840,13 +1841,13 @@ export default function MiddleEastRoute() {
                     </div>
 
                     <div className="mt-8 pt-4 border-t border-white/[0.08] flex items-center justify-between text-xs font-black text-slate-400">
-                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-[#d97706]" />{t('compliantFilingText')}</span>
+                      <span className="inline-flex items-center gap-1.5"><CheckCircle2 className="w-4 h-4 text-[#c94f2f]" />{t('compliantFilingText')}</span>
                       <span>{t('professionalVerificationText')}</span>
                     </div>
                   </div>
 
                   {/* Right part: Redlines (cols 5) */}
-                  <div className="lg:col-span-5 bg-[#0b1c2c] rounded-2xl p-6 md:p-8 border border-amber-400/20 shadow-sm">
+                  <div className="lg:col-span-5 bg-[#27212f] rounded-2xl p-6 md:p-8 border border-amber-400/20 shadow-sm">
                     <div className="flex items-center gap-2 text-amber-300 font-black mb-6 text-sm sm:text-base">
                       <ShieldAlert className="w-6 h-6 text-amber-300 flex-shrink-0" />
                       <h3>{spec.redlinesTitle}</h3>
@@ -1881,8 +1882,8 @@ export default function MiddleEastRoute() {
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {spec.guideCards.map((card: any, idx: number) => {
                       return (
-                        <div key={idx} className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 hover:border-[#d97706]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] transition-all duration-300">
-                          <div className="w-10 h-10 rounded-lg bg-[#d97706]/10 text-[#d97706] flex items-center justify-center mb-4 p-2 font-black">
+                        <div key={idx} className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] transition-all duration-300">
+                          <div className="w-10 h-10 rounded-lg bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-4 p-2 font-black">
                             {idx === 0 ? <AlertTriangle className="w-5 h-5" /> : idx === 1 ? <Package className="w-5 h-5" /> : <Clock className="w-5 h-5" />}
                           </div>
                           <h4 className="text-base font-black text-white mb-2">{card.title}</h4>
@@ -1902,13 +1903,13 @@ export default function MiddleEastRoute() {
         <section className="py-16 md:py-24 border-t border-white/[0.05]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-12">
-              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#d97706]/10 text-[#d97706] text-xs font-bold tracking-wider uppercase mb-3">
+              <span className="inline-flex items-center px-3 py-1 rounded-full bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-bold tracking-wider uppercase mb-3">
                 FAQ
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 leading-tight">
                 {t('faqHeading')}
               </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#d97706] mx-auto rounded-full mb-6" />
+              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm font-medium">
                 {t('faqSubheading')}
               </p>
@@ -1924,12 +1925,12 @@ export default function MiddleEastRoute() {
                   >
                     <button
                       onClick={() => setActiveFaq(isOpen ? null : faq.id)}
-                      className="w-full px-6 py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-inset"
+                      className="w-full px-6 py-5 flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f08c65] focus-visible:ring-inset"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.title}
                       </span>
-                      <ChevronDown className={`w-5 h-5 text-[#d97706] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-[#c94f2f] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     <AnimatePresence>

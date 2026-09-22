@@ -5,7 +5,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
 import { freightNavCopy } from '../features/freight/freightNavCopy';
 import ProductLanguageNotice from './ProductLanguageNotice';
-import { isEnglishProductPath, navigationPath, navigationPrefixes, navigationState, splitNavigationPath } from '../lib/productLanguageRouting';
+import { allNavigationLanguages, isEnglishProductPath, navigationPath, navigationPrefixes, navigationState, splitNavigationPath, supportedNavigationLanguages } from '../lib/productLanguageRouting';
 import { appendAttribution } from '../lib/attribution';
 import { trackEvent } from '../lib/utils';
 import {
@@ -18,6 +18,7 @@ import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
 import { kitchenCategoryNavigation } from '../config/kitchenCategoryNavigation';
 import { outdoorCategoryNavigation } from '../config/outdoorCategoryNavigation';
 import { outdoorNavigationCurrent } from '../features/outdoor-sourcing/navigation.mjs';
+import { siteNavigation } from '../config/siteNavigation';
 
 const languageLabels: Record<Language, string> = {
   en: 'EN',
@@ -73,6 +74,28 @@ const productOverviewLabels: Record<Language, string> = {
   tr: 'Tüm ürünleri görüntüle',
 };
 
+const freightMenuLabels: Record<Language, { services: string; regions: string; routes: string }> = {
+  en: { services: 'Freight services', regions: 'Destination regions', routes: 'Popular country routes' },
+  zh: { services: '货运服务', regions: '目的地区域', routes: '热门国家线路' },
+  ru: { services: 'Грузоперевозки', regions: 'Регионы доставки', routes: 'Популярные маршруты' },
+  fr: { services: 'Services de fret', regions: 'Régions desservies', routes: 'Liaisons pays populaires' },
+  es: { services: 'Servicios de transporte', regions: 'Regiones de destino', routes: 'Rutas por país' },
+  ar: { services: 'خدمات الشحن', regions: 'مناطق الوجهة', routes: 'مسارات الدول الشائعة' },
+  pt: { services: 'Serviços de transporte', regions: 'Regiões de destino', routes: 'Rotas por país' },
+  tr: { services: 'Taşımacılık hizmetleri', regions: 'Varış bölgeleri', routes: 'Popüler ülke rotaları' },
+};
+
+const freightCountryLabels: Record<Language, string[]> = {
+  en: ['United Arab Emirates', 'Saudi Arabia', 'Kazakhstan', 'Uzbekistan', 'Nigeria', 'Mexico', 'Peru'],
+  zh: ['阿联酋', '沙特阿拉伯', '哈萨克斯坦', '乌兹别克斯坦', '尼日利亚', '墨西哥', '秘鲁'],
+  ru: ['ОАЭ', 'Саудовская Аравия', 'Казахстан', 'Узбекистан', 'Нигерия', 'Мексика', 'Перу'],
+  fr: ['Émirats arabes unis', 'Arabie saoudite', 'Kazakhstan', 'Ouzbékistan', 'Nigéria', 'Mexique', 'Pérou'],
+  es: ['Emiratos Árabes Unidos', 'Arabia Saudita', 'Kazajistán', 'Uzbekistán', 'Nigeria', 'México', 'Perú'],
+  ar: ['الإمارات العربية المتحدة', 'السعودية', 'كازاخستان', 'أوزبكستان', 'نيجيريا', 'المكسيك', 'بيرو'],
+  pt: ['Emirados Árabes Unidos', 'Arábia Saudita', 'Cazaquistão', 'Uzbequistão', 'Nigéria', 'México', 'Peru'],
+  tr: ['Birleşik Arap Emirlikleri', 'Suudi Arabistan', 'Kazakistan', 'Özbekistan', 'Nijerya', 'Meksika', 'Peru'],
+};
+
 const freightExecutorLabels: Record<Language, { desktop: string; mobile: string }> = {
   en: {
     desktop: 'International freight executed by Heaven Born · Operating since 1997',
@@ -118,6 +141,7 @@ function Dropdown({
   open,
   active = false,
   align = 'left',
+  panelClassName = '',
   onToggle,
 }: {
   id: DesktopDropdownId;
@@ -126,6 +150,7 @@ function Dropdown({
   open: boolean;
   active?: boolean;
   align?: 'left' | 'right';
+  panelClassName?: string;
   onToggle: (id: DesktopDropdownId) => void;
 }) {
   const panelId = `desktop-${id}-menu`;
@@ -161,7 +186,7 @@ function Dropdown({
           data-desktop-dropdown-panel={id}
           className={`absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
         >
-          <div className="max-h-[calc(100dvh-var(--ddnz-header-height,83px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)]">
+          <div className={`max-h-[calc(100dvh-var(--ddnz-header-height,83px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)] ${panelClassName}`}>
             {children}
           </div>
         </div>
@@ -171,8 +196,9 @@ function Dropdown({
 }
 
 function DropdownLink({ to, children, onNavigate }: { to: string; children: React.ReactNode; onNavigate: () => void }) {
+  const targetLanguage = splitNavigationPath(to).locale || 'en';
   return (
-    <Link onClick={onNavigate} hrefLang={isEnglishProductPath(to) ? 'en' : undefined} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]" to={to}>
+    <Link onClick={onNavigate} hrefLang={isEnglishProductPath(to) ? 'en' : targetLanguage} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-700 transition-colors hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]" to={to}>
       {children}
     </Link>
   );
@@ -218,7 +244,8 @@ export default function SourcingHomepageNav({
   const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=${showFreightExecutor ? 'Freight%20Export' : 'Product%20Sourcing'}&source=homepage_navigation`);
   const freightQuoteLabels: Record<Language, string> = { zh: '提交货运需求', en: 'Request freight quote', es: 'Consultar transporte', fr: 'Demander un devis fret', ru: 'Запросить перевозку', ar: 'اطلب عرض شحن', pt: 'Solicitar frete', tr: 'Navlun teklifi alın' };
   const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : labels.start;
-  const languageOptions = englishProduct ? (Object.keys(languageLabels) as Language[]) : supportedLanguages || (Object.keys(languageLabels) as Language[]);
+  const languageOptions = englishProduct ? allNavigationLanguages : supportedLanguages || supportedNavigationLanguages(location.pathname);
+  const freightMenu = freightMenuLabels[language];
   const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || /^\/(phone-cases|phone-straps-charms|portable-power)/.test(splitNavigationPath(location.pathname).pathname) || splitNavigationPath(location.pathname).pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
   const isMarketsPage = location.pathname.includes('/shipping-from-china-to-') || location.pathname.includes('/services/');
@@ -355,8 +382,8 @@ export default function SourcingHomepageNav({
   };
 
   const productMenu = (onNavigate: () => void, variant: 'desktop' | 'mobile') => (
-    <div className={variant === 'desktop' ? 'w-80 max-w-[calc(100vw-2rem)] max-h-[calc(100dvh-120px)] overflow-y-auto' : ''}>
-      <ul>{[
+    <div className={variant === 'desktop' ? 'w-[min(760px,calc(100vw-2rem))] max-h-[calc(100dvh-120px)] overflow-y-auto' : ''}>
+      <ul className={variant === 'desktop' ? 'grid grid-cols-2 gap-x-4 gap-y-2' : ''}>{[
         { to: '/sourcing/commercial-kitchen-equipment-from-china', label: labels.kitchen, children: [...kitchenCategoryNavigation(language), { to: '/refrigeration-equipment', label: labels.refrigeration }] },
         { to: '/sourcing/audio-speakers-from-china', label: labels.audio, children: [] },
         { to: '/sourcing/mobile-accessories-from-china', label: labels.mobile, children: [...mobileCategoryNavigation(language), filmNav] },
@@ -431,17 +458,29 @@ export default function SourcingHomepageNav({
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
           </Dropdown>
-          <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} onToggle={toggleDesktopDropdown}>
-            <p className="px-3 py-2 text-xs font-bold text-slate-500">{{zh:'货运服务',en:'Freight services',es:'Servicios de carga',fr:'Services de fret',ru:'Грузоперевозки',ar:'خدمات الشحن',pt:'Serviços de transporte',tr:'Taşımacılık hizmetleri'}[language]}</p>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/services/sea-freight')}>{freightLabels.sea}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={`${navigationPrefixes[language]}/services/lcl-shipping-from-china/`}>{freightLabels.lcl}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={dangerousGoodsPath}>{dangerousGoodsLabel}</DropdownLink>
-            {retainedServices.map(([path,label]) => <DropdownLink key={path} onNavigate={closeDesktopDropdown} to={localizedPath(path)}>{label}</DropdownLink>)}
-            <p className="mt-2 border-t px-3 py-2 text-xs font-bold text-slate-500">{freightLabels.dest}</p>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-middle-east')}>{labels.middleEast}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-central-asia')}>{centralAsiaLabel}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</DropdownLink>
+          <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} align="right" panelClassName="w-[min(780px,calc(100vw-2rem))]" onToggle={toggleDesktopDropdown}>
+            <div className="grid grid-cols-3 gap-3">
+              <div>
+                <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.services}</p>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[0])}>{freightLabels.sea}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[1])}>{freightLabels.lcl}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[2])}>{freightLabels.air}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[3])}>{dangerousGoodsLabel}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[4])}>{freightLabels.fba}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightServices[5])}>{freightLabels.warehouse}</DropdownLink>
+              </div>
+              <div className="border-l border-slate-200 pl-2 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-2">
+                <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.regions}</p>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[0])}>{labels.middleEast}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[1])}>{centralAsiaLabel}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[2])}>{labels.africa}</DropdownLink>
+                <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[3])}>{labels.latinAmerica}</DropdownLink>
+              </div>
+              <div className="border-l border-slate-200 pl-2 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-2">
+                <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.routes}</p>
+                {siteNavigation.featuredFreightCountries.map((path, index) => <DropdownLink key={path} onNavigate={closeDesktopDropdown} to={localizedPath(path)}>{freightCountryLabels[language][index]}</DropdownLink>)}
+              </div>
+            </div>
           </Dropdown>
           <Link
             onClick={closeDesktopDropdown}
@@ -556,15 +595,18 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'markets' ? (
               <div id="mobile-markets-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
+                <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.services}</p>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath('/services/sea-freight')}>{freightLabels.sea}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={`${navigationPrefixes[language]}/services/lcl-shipping-from-china/`}>{freightLabels.lcl}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={dangerousGoodsPath}>{dangerousGoodsLabel}</Link>
                 {retainedServices.map(([path,label]) => <Link key={path} onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath(path)}>{label}</Link>)}
-                <p className="border-t px-3 py-2 text-xs text-slate-500">{freightLabels.dest}</p>
+                <p className="mt-2 border-t px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.regions}</p>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-middle-east')}>{labels.middleEast}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath('/shipping-from-china-to-central-asia')}>{centralAsiaLabel}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</Link>
+                <p className="mt-2 border-t px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.routes}</p>
+                {siteNavigation.featuredFreightCountries.map((path, index) => <Link key={path} onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath(path)}>{freightCountryLabels[language][index]}</Link>)}
               </div>
               ) : null}
             </div>

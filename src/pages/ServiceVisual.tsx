@@ -1,32 +1,42 @@
 import { useRef, useState } from 'react';
 import { Maximize2, X } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import type { Language } from '../i18n/translations';
 
-export default function ServiceVisual({inspection}:{inspection:boolean}) {
+type Step = [string, string, string];
+type VisualCopy = {
+  inspection: Step[]; loading: Step[]; inspectionAlt: string; loadingAlt: string;
+  inspectionLabel: string; loadingLabel: string; enlarge: string; workflow: string;
+  inspectionCaption: string; loadingCaption: string; close: string; enlarged: string;
+};
+
+const visualCopy: Record<Language, VisualCopy> = {
+  en: { inspection: [['01','Inspect','Compare the agreed product, quantity, appearance and packing.'],['02','Hold','Separate affected goods and establish the issue and quantity.'],['03','Resolve','Agree a practical remedy and schedule with the customer.'],['04','Release','Confirm the affected goods are ready before moving forward.']], loading: [['01','Identify','Keep the model, part name and batch visible on each carton.'],['02','Count','Record the component quantity so the receiving team can reconcile the parts.'],['03','Plan','Use carton dimensions and weights to organize the loading plan.']], inspectionAlt: 'Hands-on inspection of an opened electronic device', loadingAlt: 'Forklift and packed cargo during container loading', inspectionLabel: 'HANDS-ON PRODUCT CHECKS', loadingLabel: 'FROM APPROVED ORDERS TO EXPORT', enlarge: 'Enlarge field photograph', workflow: 'Explore the workflow', inspectionCaption: 'DDNZ field photo · Electronic device inspection', loadingCaption: 'DDNZ field photo · Container loading', close: 'Close enlarged photograph', enlarged: 'Enlarged DDNZ field photograph' },
+  zh: { inspection: [['01','检查','核对约定产品、数量、外观与包装。'],['02','暂缓','隔离受影响货物，确认问题和数量。'],['03','处理','与客户确认解决方案和时间安排。'],['04','放行','确认受影响货物处理完成，再进入下一环节。']], loading: [['01','核标','核对纸箱上的型号、部件名称与批次。'],['02','点数','记录部件数量，便于收货方逐项核对。'],['03','配载','根据纸箱尺寸与重量规划装载。']], inspectionAlt: '电子设备拆机检查现场', loadingAlt: '叉车与包装货物装柜现场', inspectionLabel: '产品检查现场', loadingLabel: '从订单确认到出口交接', enlarge: '放大现场照片', workflow: '查看操作环节', inspectionCaption: 'DDNZ 现场记录 · 电子设备检查', loadingCaption: 'DDNZ 现场记录 · 集装箱装载', close: '关闭大图', enlarged: 'DDNZ 现场照片大图' },
+  ru: { inspection: [['01','Проверить','Сопоставить товар, количество, внешний вид и упаковку.'],['02','Остановить','Отделить затронутый товар и определить объем проблемы.'],['03','Устранить','Согласовать решение и график с клиентом.'],['04','Разрешить','Подтвердить готовность перед следующим этапом.']], loading: [['01','Идентифицировать','Сохранить модель, название детали и партию на коробке.'],['02','Подсчитать','Зафиксировать количество деталей для приемки.'],['03','Спланировать','Использовать размеры и вес для плана загрузки.']], inspectionAlt: 'Практическая проверка электронного устройства', loadingAlt: 'Погрузчик и упакованный груз при загрузке контейнера', inspectionLabel: 'ПРАКТИЧЕСКАЯ ПРОВЕРКА ТОВАРА', loadingLabel: 'ОТ ПОДТВЕРЖДЕННОГО ЗАКАЗА К ЭКСПОРТУ', enlarge: 'Увеличить фотографию', workflow: 'Этапы операции', inspectionCaption: 'Фото DDNZ · Проверка устройства', loadingCaption: 'Фото DDNZ · Загрузка контейнера', close: 'Закрыть увеличенную фотографию', enlarged: 'Увеличенная фотография DDNZ' },
+  fr: { inspection: [['01','Inspecter','Comparer produit, quantité, aspect et emballage convenus.'],['02','Bloquer','Séparer les produits concernés et établir l’écart.'],['03','Résoudre','Convenir d’une solution et d’un calendrier.'],['04','Libérer','Confirmer la conformité avant l’étape suivante.']], loading: [['01','Identifier','Garder modèle, pièce et lot visibles sur chaque carton.'],['02','Compter','Consigner la quantité pour la réception.'],['03','Planifier','Utiliser dimensions et poids pour le plan de chargement.']], inspectionAlt: 'Inspection pratique d’un appareil électronique ouvert', loadingAlt: 'Chariot et fret emballé pendant le chargement', inspectionLabel: 'CONTRÔLES PRODUIT SUR SITE', loadingLabel: 'DE LA COMMANDE VALIDÉE À L’EXPORT', enlarge: 'Agrandir la photo terrain', workflow: 'Explorer le processus', inspectionCaption: 'Photo DDNZ · Inspection électronique', loadingCaption: 'Photo DDNZ · Chargement conteneur', close: 'Fermer la photo agrandie', enlarged: 'Photo terrain DDNZ agrandie' },
+  es: { inspection: [['01','Inspeccionar','Comparar producto, cantidad, apariencia y embalaje acordados.'],['02','Retener','Separar la mercancía afectada y definir la incidencia.'],['03','Resolver','Acordar solución y plazo con el cliente.'],['04','Liberar','Confirmar que la mercancía está lista.']], loading: [['01','Identificar','Mantener modelo, pieza y lote visibles en cada caja.'],['02','Contar','Registrar cantidades para la recepción.'],['03','Planificar','Usar medidas y pesos para el plan de carga.']], inspectionAlt: 'Inspección práctica de un dispositivo electrónico', loadingAlt: 'Carretilla y carga embalada durante la carga', inspectionLabel: 'CONTROL PRÁCTICO DEL PRODUCTO', loadingLabel: 'DEL PEDIDO APROBADO A LA EXPORTACIÓN', enlarge: 'Ampliar fotografía de campo', workflow: 'Explorar el proceso', inspectionCaption: 'Foto DDNZ · Inspección electrónica', loadingCaption: 'Foto DDNZ · Carga de contenedor', close: 'Cerrar fotografía ampliada', enlarged: 'Fotografía de campo DDNZ ampliada' },
+  ar: { inspection: [['01','الفحص','مقارنة المنتج والكمية والمظهر والتعبئة المتفق عليها.'],['02','الإيقاف','عزل البضائع المتأثرة وتحديد المشكلة.'],['03','المعالجة','الاتفاق على الحل والجدول مع العميل.'],['04','الإفراج','تأكيد الجاهزية قبل المرحلة التالية.']], loading: [['01','التعريف','إظهار الموديل واسم الجزء والدفعة على كل كرتون.'],['02','العد','تسجيل كمية الأجزاء للمطابقة عند الاستلام.'],['03','التخطيط','استخدام الأبعاد والأوزان لخطة التحميل.']], inspectionAlt: 'فحص عملي لجهاز إلكتروني مفتوح', loadingAlt: 'رافعة وبضائع معبأة أثناء تحميل الحاوية', inspectionLabel: 'فحوص المنتج الميدانية', loadingLabel: 'من الطلب المعتمد إلى التصدير', enlarge: 'تكبير الصورة الميدانية', workflow: 'استكشف سير العمل', inspectionCaption: 'صورة DDNZ · فحص جهاز إلكتروني', loadingCaption: 'صورة DDNZ · تحميل الحاوية', close: 'إغلاق الصورة المكبرة', enlarged: 'صورة DDNZ ميدانية مكبرة' },
+  pt: { inspection: [['01','Inspecionar','Comparar produto, quantidade, aparência e embalagem.'],['02','Reter','Separar os itens afetados e definir a ocorrência.'],['03','Resolver','Acordar solução e prazo com o cliente.'],['04','Liberar','Confirmar a prontidão antes de avançar.']], loading: [['01','Identificar','Manter modelo, peça e lote visíveis em cada caixa.'],['02','Contar','Registrar a quantidade para a conferência.'],['03','Planejar','Usar dimensões e pesos no plano de carga.']], inspectionAlt: 'Inspeção prática de um dispositivo eletrônico', loadingAlt: 'Empilhadeira e carga embalada durante o carregamento', inspectionLabel: 'VERIFICAÇÃO PRÁTICA DO PRODUTO', loadingLabel: 'DO PEDIDO APROVADO À EXPORTAÇÃO', enlarge: 'Ampliar foto de campo', workflow: 'Explorar o fluxo', inspectionCaption: 'Foto DDNZ · Inspeção eletrônica', loadingCaption: 'Foto DDNZ · Carregamento do contêiner', close: 'Fechar foto ampliada', enlarged: 'Foto de campo DDNZ ampliada' },
+  tr: { inspection: [['01','İncele','Ürün, miktar, görünüm ve ambalajı karşılaştır.'],['02','Beklet','Etkilenen ürünleri ayır ve sorunu belirle.'],['03','Çöz','Müşteriyle çözüm ve takvimi onayla.'],['04','Serbest bırak','Sonraki aşama öncesi hazır olduğunu doğrula.']], loading: [['01','Tanımla','Model, parça adı ve partiyi her kolide görünür tut.'],['02','Say','Teslim alan ekibin eşleştirmesi için miktarı kaydet.'],['03','Planla','Yükleme planı için ölçü ve ağırlıkları kullan.']], inspectionAlt: 'Açılmış elektronik cihazın saha kontrolü', loadingAlt: 'Konteyner yüklemesinde forklift ve paketli yük', inspectionLabel: 'SAHADA ÜRÜN KONTROLÜ', loadingLabel: 'ONAYLI SİPARİŞTEN İHRACATA', enlarge: 'Saha fotoğrafını büyüt', workflow: 'İş akışını incele', inspectionCaption: 'DDNZ saha fotoğrafı · Cihaz kontrolü', loadingCaption: 'DDNZ saha fotoğrafı · Konteyner yükleme', close: 'Büyük fotoğrafı kapat', enlarged: 'Büyütülmüş DDNZ saha fotoğrafı' },
+};
+
+export default function ServiceVisual({ inspection }: { inspection: boolean }) {
   const { language } = useLanguage();
-  const zh = language === 'zh';
-  const dialog=useRef<HTMLDialogElement>(null);
-  const [active,setActive]=useState(0);
-  const image=inspection ? '/media/process/device-spec-check.webp' : '/images/operations/container-loading-forklift-anonymized.jpg';
-  const items=inspection ? [
-    ['01','Inspect','Compare the agreed product, quantity, appearance and packing.'],
-    ['02','Hold','Separate affected goods and establish the issue and quantity.'],
-    ['03','Resolve','Agree a practical remedy and schedule with the customer.'],
-    ['04','Release','Confirm the affected goods are ready before moving forward.'],
-  ] : [
-    ['01','Identify','Keep the model, part name and batch visible on each carton.'],
-    ['02','Count','Record the component quantity so the receiving team can reconcile the parts.'],
-    ['03','Plan','Use carton dimensions and weights to organize the loading plan.'],
-  ];
-  const localizedItems = zh ? (inspection ? [['01','检查','核对约定产品、数量、外观与包装。'],['02','暂缓','隔离受影响货物，确认问题和数量。'],['03','处理','与客户确认解决方案和时间安排。'],['04','放行','确认受影响货物处理完成，再进入下一环节。']] : [['01','核标','核对纸箱上的型号、部件名称与批次。'],['02','点数','记录部件数量，便于收货方逐项核对。'],['03','配载','根据纸箱尺寸与重量规划装载。']]) : items;
+  const dialog = useRef<HTMLDialogElement>(null);
+  const [active, setActive] = useState(0);
+  const image = inspection ? '/media/process/device-spec-check.webp' : '/images/operations/container-loading-forklift-anonymized.jpg';
+  const t = visualCopy[language];
+  const items = inspection ? t.inspection : t.loading;
+  const imageAlt = inspection ? t.inspectionAlt : t.loadingAlt;
   return <div className="sv-wrap">
-    <div className="sv-photo"><img src={image} alt={zh ? (inspection ? '电子设备拆机检查现场' : '叉车与包装货物装柜现场') : inspection ? 'Hands-on inspection of an opened electronic device' : 'Forklift and packed cargo during container loading'} />
-      <span className="sv-label">{zh ? (inspection ? '产品检查现场' : '从订单确认到出口交接') : inspection?'HANDS-ON PRODUCT CHECKS':'FROM APPROVED ORDERS TO EXPORT'}</span>
-      <button className="sv-zoom" onClick={()=>dialog.current?.showModal()} aria-label={zh ? '放大现场照片' : 'Enlarge field photograph'}><Maximize2 size={17}/></button>
+    <div className="sv-photo"><img src={image} alt={imageAlt} />
+      <span className="sv-label">{inspection ? t.inspectionLabel : t.loadingLabel}</span>
+      <button className="sv-zoom" onClick={() => dialog.current?.showModal()} aria-label={t.enlarge}><Maximize2 size={17} /></button>
     </div>
-    <div className="sv-controls" role="group" aria-label={zh ? '查看操作环节' : 'Explore the workflow'}>{localizedItems.map(([number,title],i)=><button key={title} aria-pressed={active===i} onClick={()=>setActive(i)}><small>{number}</small>{title}</button>)}</div>
-    <div className="sv-detail" aria-live="polite" key={active}><strong>{localizedItems[active][1]}</strong><p>{localizedItems[active][2]}</p></div>
-    <p className="sv-caption">{zh ? (inspection ? 'DDNZ 现场记录 · 电子设备检查' : 'DDNZ 现场记录 · 集装箱装载') : inspection?'DDNZ field photo · Electronic device inspection':'DDNZ field photo · Container loading'}</p>
-    <dialog className="sv-dialog" ref={dialog} onClick={e=>{if(e.target===e.currentTarget)dialog.current?.close();}}><button autoFocus onClick={()=>dialog.current?.close()} aria-label={zh ? '关闭大图' : 'Close enlarged photograph'}><X/></button><img src={image} alt={zh ? 'DDNZ 现场照片大图' : 'Enlarged DDNZ field photograph'}/></dialog>
+    <div className="sv-controls" role="group" aria-label={t.workflow}>{items.map(([number, title], i) => <button key={title} aria-pressed={active === i} onClick={() => setActive(i)}><small>{number}</small>{title}</button>)}</div>
+    <div className="sv-detail" aria-live="polite" key={active}><strong>{items[active][1]}</strong><p>{items[active][2]}</p></div>
+    <p className="sv-caption">{inspection ? t.inspectionCaption : t.loadingCaption}</p>
+    <dialog className="sv-dialog" ref={dialog} onClick={e => { if (e.target === e.currentTarget) dialog.current?.close(); }}><button autoFocus onClick={() => dialog.current?.close()} aria-label={t.close}><X /></button><img src={image} alt={t.enlarged} /></dialog>
   </div>;
 }

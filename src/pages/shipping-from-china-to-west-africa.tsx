@@ -691,10 +691,10 @@ export default function ShippingWestAfrica() {
 
   const getIcon = (iconName: string) => {
     switch (iconName) {
-      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#d97706] shrink-0" />;
-      case 'FileText': return <FileText className="w-5 h-5 text-[#d97706] shrink-0" />;
-      case 'Search': return <Search className="w-5 h-5 text-[#d97706] shrink-0" />;
-      default: return <Package className="w-5 h-5 text-[#d97706] shrink-0" />;
+      case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      case 'FileText': return <FileText className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      case 'Search': return <Search className="w-5 h-5 text-[#c94f2f] shrink-0" />;
+      default: return <Package className="w-5 h-5 text-[#c94f2f] shrink-0" />;
     }
   };
 
@@ -765,7 +765,8 @@ export default function ShippingWestAfrica() {
         <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
           <img 
             src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=2000" 
-            alt="West Africa Port Hub"
+            alt=""
+            aria-hidden="true"
             width="2000"
             height="1125"
             className="w-full h-full object-cover"
@@ -786,7 +787,7 @@ export default function ShippingWestAfrica() {
                     to={buildShippingCountryPath(location.pathname, 'nigeria')}
                     className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'nigeria'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
+                        ? 'bg-[#c94f2f] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
                     }`}
                   >
@@ -796,7 +797,7 @@ export default function ShippingWestAfrica() {
                     to={buildShippingCountryPath(location.pathname, 'ghana')}
                     className={`min-h-11 px-5 py-2.5 rounded-full text-xs font-black tracking-widest uppercase transition-all duration-300 flex items-center gap-2 ${
                       selectedCountry === 'ghana'
-                        ? 'bg-[#d97706] text-white shadow-lg scale-105'
+                        ? 'bg-[#c94f2f] text-white shadow-lg scale-105'
                         : 'bg-white/[0.03] border border-white/[0.08] text-slate-300 hover:bg-white/5'
                     }`}
                   >
@@ -813,11 +814,11 @@ export default function ShippingWestAfrica() {
                 transition={{ duration: 0.4 }}
                 className="space-y-4"
               >
-                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#d97706]/10 border border-[#d97706]/30 text-[#d97706] text-xs font-black tracking-widest uppercase">
+                <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#c94f2f]/10 border border-[#c94f2f]/30 text-[#c94f2f] text-xs font-black tracking-widest uppercase">
                   HEAVEN BORN WEST AFRICA SHIPPING
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#d97706]">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#c94f2f]">
                     {spec.headline}
                   </span>
                 </h1>
@@ -832,7 +833,7 @@ export default function ShippingWestAfrica() {
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? 'SONCAP / CoC 文件支持' : 'SONCAP / CoC Document Support'}
                     </span>
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#d97706]/10 border border-[#d97706]/20 text-xs font-bold text-[#d97706]">
+                    <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <FileText className="w-3.5 h-3.5" aria-hidden="true" />
                       {language === 'zh' ? '目的地单证与清关协调' : 'Destination Clearance Coordination'}
                     </span>
@@ -863,10 +864,10 @@ export default function ShippingWestAfrica() {
                         formElem.scrollIntoView({ behavior: 'smooth' });
                       }
                     }}
-                    className="text-xs font-black text-white hover:text-[#d97706] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
+                    className="text-xs font-black text-white hover:text-[#c94f2f] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
                   >
                     <span>{language === 'zh' ? '立即询价' : 'Inquire Now'}</span>
-                    <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
+                    <ArrowRight className="w-3.5 h-3.5 text-[#c94f2f]" />
                   </button>
                 </div>
               </div>
@@ -874,7 +875,7 @@ export default function ShippingWestAfrica() {
 
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
             <div className="lg:col-span-5 space-y-4">
-              <h3 className="text-lg font-black tracking-wide text-[#d97706] uppercase mb-2">
+              <h3 className="text-lg font-black tracking-wide text-[#c94f2f] uppercase mb-2">
                 {language === 'zh' ? '西非专线真实货运时效' : (language === 'fr' ? 'Délais de Transit en Afrique de l\'Ouest' : 'West Africa Hub Transit Windows')}
               </h3>
               
@@ -884,7 +885,7 @@ export default function ShippingWestAfrica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '广州集拼仓直发整箱/拼箱' : (language === 'fr' ? 'Consolidation directe depuis le hub de Guangzhou' : 'Guangzhou Hub Direct Consolidation')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{WEST_AFRICA_DATA.nigeria[activeLang].transitDays}</span>
+                  <span className="text-sm font-extrabold text-[#c94f2f] whitespace-nowrap">{WEST_AFRICA_DATA.nigeria[activeLang].transitDays}</span>
                 </div>
               </div>
 
@@ -894,7 +895,7 @@ export default function ShippingWestAfrica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '进口文件、目的港操作与派送范围逐票确认' : language === 'es' ? 'Confirmar documentos, operación en destino y entrega' : language === 'fr' ? 'Documents, opérations portuaires et livraison à confirmer' : 'Confirm import documents, destination handling and delivery scope'}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="text-sm font-extrabold text-[#d97706] whitespace-nowrap">{WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
+                  <span className="text-sm font-extrabold text-[#c94f2f] whitespace-nowrap">{WEST_AFRICA_DATA.ghana[activeLang].transitDays}</span>
                 </div>
               </div>
             </div>
@@ -913,7 +914,7 @@ export default function ShippingWestAfrica() {
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+              <span className="px-3 py-1 bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
                 Compliance Support
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
@@ -929,7 +930,7 @@ export default function ShippingWestAfrica() {
               {spec.solutions.map((sol: any, idx: number) => (
                 <div key={idx} className="bg-white/[0.02] backdrop-blur-md border border-white/[0.08] rounded-2xl p-6 md:p-8 transition-all duration-300 hover:border-white/[0.15] hover:bg-white/[0.04] flex flex-col justify-between group">
                   <div>
-                    <div className="bg-[#d97706]/10 p-3 rounded-xl inline-block mb-4">
+                    <div className="bg-[#c94f2f]/10 p-3 rounded-xl inline-block mb-4">
                       {getIcon(sol.icon)}
                     </div>
                     <h3 className="text-lg font-bold text-white mb-3">
@@ -939,7 +940,7 @@ export default function ShippingWestAfrica() {
                       {sol.desc}
                     </p>
                   </div>
-                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#d97706]">
+                  <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                     <span>{language === 'zh' ? '申请专项预审' : 'Request File Pre-Audit'}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                   </div>
@@ -953,7 +954,7 @@ export default function ShippingWestAfrica() {
         <section className="py-16 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <span className="px-3 py-1 bg-[#d97706]/10 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+              <span className="px-3 py-1 bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
                 {language === 'zh' ? '核心时效参考' : 'Transit Time Reference'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
@@ -994,8 +995,8 @@ export default function ShippingWestAfrica() {
                     >
                       <div className="flex items-center gap-3">
                         {row.mode.toLowerCase().includes('air') || row.mode.includes('空运') || row.mode.includes('Aérien')
-                          ? <Plane className="w-5 h-5 text-[#d97706]" aria-hidden="true" />
-                          : <Ship className="w-5 h-5 text-[#d97706]" aria-hidden="true" />}
+                          ? <Plane className="w-5 h-5 text-[#c94f2f]" aria-hidden="true" />
+                          : <Ship className="w-5 h-5 text-[#c94f2f]" aria-hidden="true" />}
                         <div>
                           <h4 className="text-sm font-black tracking-tight text-white">
                             {row.mode}
@@ -1026,13 +1027,13 @@ export default function ShippingWestAfrica() {
 
                     <div className="relative z-10 space-y-6">
                       <div>
-                        <span className="px-2.5 py-1 bg-[#d97706]/10 text-[#d97706] text-[10px] font-black uppercase tracking-wider rounded-lg">
+                        <span className="px-2.5 py-1 bg-[#c94f2f]/10 text-[#c94f2f] text-[10px] font-black uppercase tracking-wider rounded-lg">
                           {language === 'zh' ? '深度解析' : 'SCM Detail Panel'}
                         </span>
                         <h3 className="text-xl md:text-2xl font-black text-white mt-2">
                           {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
-                        <p className="text-[#d97706] text-sm font-black mt-1">
+                        <p className="text-[#c94f2f] text-sm font-black mt-1">
                           {language === 'zh' ? '门到门时效参考' : 'Door-to-Door Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
@@ -1047,7 +1048,7 @@ export default function ShippingWestAfrica() {
                           </p>
                         </div>
                         <div>
-                          <h5 className="text-xs font-black text-[#d97706] uppercase tracking-widest mb-1.5">
+                          <h5 className="text-xs font-black text-[#c94f2f] uppercase tracking-widest mb-1.5">
                             {language === 'zh' ? 'Heaven Born 操作要点' : 'Heaven Born Operating Notes'}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
@@ -1099,7 +1100,7 @@ export default function ShippingWestAfrica() {
         <section className="py-16 md:py-24 border-b border-white/[0.05] bg-transparent text-white relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
-              <span className="px-3 py-1 bg-[#d97706]/10 border border-[#d97706]/20 text-[#d97706] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
+              <span className="px-3 py-1 bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
                 {language === 'zh' ? '出运注意事项' : 'Shipping Notes'}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight mb-4">
@@ -1117,8 +1118,8 @@ export default function ShippingWestAfrica() {
                   <div className="absolute top-0 right-0 p-4 text-white/5 font-black text-7xl select-none leading-none opacity-40 group-hover:opacity-60 transition-opacity">
                     {item.id}
                   </div>
-                  <div className="flex items-center gap-2.5 text-[#d97706] font-black mb-4 text-sm sm:text-base">
-                    <ShieldAlert className="w-5.5 h-5.5 text-[#d97706] flex-shrink-0" />
+                  <div className="flex items-center gap-2.5 text-[#c94f2f] font-black mb-4 text-sm sm:text-base">
+                    <ShieldAlert className="w-5.5 h-5.5 text-[#c94f2f] flex-shrink-0" />
                     <h3>{item.title}</h3>
                   </div>
                   <p className="text-slate-400 text-xs sm:text-sm leading-relaxed font-semibold relative z-10">
@@ -1154,12 +1155,12 @@ export default function ShippingWestAfrica() {
                     <button
                       type="button"
                       onClick={() => setActiveFaq(isOpen ? null : idx)}
-                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f59e0b] focus-visible:ring-offset-4 focus-visible:ring-offset-[#071a33]"
+                      className="w-full flex items-center justify-between text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#f08c65] focus-visible:ring-offset-4 focus-visible:ring-offset-[#27212f]"
                     >
                       <span className="text-sm md:text-base font-black text-white pr-4">
                         {faq.q}
                       </span>
-                      <ChevronDown className={`w-5 h-5 text-[#d97706] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-5 h-5 text-[#c94f2f] transition-transform duration-300 flex-shrink-0 ${isOpen ? 'rotate-180' : ''}`} />
                     </button>
 
                     <AnimatePresence>

@@ -27,6 +27,8 @@ import { readAttribution } from '../lib/attribution';
 // Multi-language translation map for the interactive funnel
 const funnelTranslations: Record<string, Record<string, string>> = {
   zh: {
+    funnelLabel: '询价流程',
+    stepProgress: '第 {step} 步，共 4 步',
     step1Title: '选择运输方式',
     step1Desc: '运输方式会影响时效、成本与可接货物范围，我们会按本票资料核对可行路线',
     step2Title: '选择始发地与目的地',
@@ -81,6 +83,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     sendAnother: '发起新的询价'
   },
   en: {
+    funnelLabel: 'Inquiry flow',
+    stepProgress: 'Step {step} of 4',
     step1Title: 'Select Transport Mode',
     step1Desc: 'Mode affects timing, cost and cargo acceptance; we review the practical options for this shipment',
     step2Title: 'Origin & Destination',
@@ -135,6 +139,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     sendAnother: 'Send another inquiry'
   },
   ru: {
+    funnelLabel: 'Этапы запроса',
+    stepProgress: 'Шаг {step} из 4',
     step1Title: 'Выберите способ доставки',
     step1Desc: 'Оптимальные логистические каналы и индивидуальные маршруты',
     step2Title: 'Пункт отправления и назначения',
@@ -189,6 +195,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     sendAnother: 'Отправить еще один запрос'
   },
   fr: {
+    funnelLabel: 'Parcours de demande',
+    stepProgress: 'Étape {step} sur 4',
     step1Title: 'Choisir le mode de transport',
     step1Desc: 'Canaux logistiques optimaux et itinéraires sur mesure',
     step2Title: 'Origine & Destination',
@@ -231,7 +239,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     
     seaDesc: 'Économique, idéal pour groupages et conteneurs pleins',
     airDesc: 'Vitesse maximale, idéal pour haute valeur ou urgences',
-    landDesc: 'Transport routier direct, idéal pour l\'Asie Centrale & l\'Europe',
+    landDesc: 'Transport routier direct, idéal pour la Russie et l\'Asie centrale',
     wareDesc: 'Emballage caisse bois sur mesure, stockage & tri',
     
     mode: 'Mode de transport',
@@ -243,6 +251,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     sendAnother: 'Envoyer une autre demande'
   },
   es: {
+    funnelLabel: 'Proceso de consulta',
+    stepProgress: 'Paso {step} de 4',
     step1Title: 'Elija el modo de transporte', step1Desc: 'Seleccione el canal; prepararemos la mejor ruta y tarifa',
     step2Title: 'Origen y destino', step2Desc: 'Tránsito y despacho aduanero desde nuestra sede de Guangzhou',
     step3Title: 'Peso y volumen estimados', step3Desc: 'Use los controles o elija una carga predefinida para calcular medidas',
@@ -259,6 +269,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     mode: 'Modo de transporte', industry: 'Industria / categoría de producto', cargoDesc: 'Detalles y requisitos de la carga', submitting: 'Enviando solicitud...', successHeading: '¡Solicitud enviada!', successText: 'Hemos recibido su solicitud. Un especialista responderá a su correo corporativo en 24 horas.', sendAnother: 'Enviar otra solicitud'
   },
   ar: {
+    funnelLabel: 'مسار الاستفسار',
+    stepProgress: 'الخطوة {step} من 4',
     step1Title: 'اختر وسيلة النقل', step1Desc: 'اختر قناة النقل وسنقدم أفضل مسار وتسعير',
     step2Title: 'المنشأ والوجهة', step2Desc: 'عبور وتخليص جمركي من مقرنا في قوانغتشو',
     step3Title: 'الوزن والحجم التقديريان', step3Desc: 'استخدم أشرطة التمرير أو اختر حمولة مسبقة لتقدير القياسات',
@@ -275,6 +287,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيرد عليكم أحد خبراء اللوجستيات عبر البريد خلال 24 ساعة.', sendAnother: 'إرسال طلب آخر'
   },
   pt: {
+    funnelLabel: 'Fluxo da consulta',
+    stepProgress: 'Etapa {step} de 4',
     step1Title: 'Escolha o modo de transporte', step1Desc: 'Selecione o canal; prepararemos a rota e o preço adequados',
     step2Title: 'Origem e destino', step2Desc: 'Informe origem e destino para avaliarmos transporte e desembaraço',
     step3Title: 'Peso e volume estimados', step3Desc: 'Use os controles ou escolha uma carga predefinida',
@@ -291,6 +305,8 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     mode: 'Modo de transporte', industry: 'Setor / categoria de produto', cargoDesc: 'Detalhes e requisitos da carga', submitting: 'Enviando solicitação...', successHeading: 'Solicitação enviada!', successText: 'Recebemos sua solicitação. Nossa equipe confirmará rota, carga e serviço usando o contato informado.', sendAnother: 'Enviar outra solicitação'
   },
   tr: {
+    funnelLabel: 'Talep akışı',
+    stepProgress: '4 adımın {step}. adımı',
     step1Title: 'Taşıma şeklini seçin', step1Desc: 'Taşıma kanalını seçin; uygun rota ve fiyatı hazırlayalım',
     step2Title: 'Çıkış ve varış', step2Desc: 'Taşıma ve gümrük planını değerlendirmek için çıkış ve varışı girin',
     step3Title: 'Tahmini ağırlık ve hacim', step3Desc: 'Kaydırıcıları kullanın veya hızlı yük seçeneği belirleyin',
@@ -732,11 +748,11 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                 <div className="px-5 pt-8 pb-4 sm:px-10 border-b border-slate-100 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
                   <div className="flex items-center gap-1.5">
                     <span className="text-xs font-black text-slate-400 tracking-wider uppercase">
-                      Inquiry Funnel
+                      {ft('funnelLabel')}
                     </span>
                     <span className="w-1.5 h-1.5 rounded-full bg-slate-300" />
                     <span className="text-xs font-extrabold text-[#0b4f8a]">
-                      Step {step} of 4
+                      {ft('stepProgress').replace('{step}', String(step))}
                     </span>
                   </div>
                   
@@ -751,7 +767,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             setDirection(item > step ? 1 : -1);
                             setStep(item);
                           }}
-                          aria-label={`Step ${item} of 4`}
+                          aria-label={ft('stepProgress').replace('{step}', String(item))}
                           aria-current={step === item ? 'step' : undefined}
                           className={`w-10 h-10 sm:w-7 sm:h-7 rounded-full flex items-center justify-center text-xs font-black transition-all disabled:cursor-not-allowed ${
                             step === item

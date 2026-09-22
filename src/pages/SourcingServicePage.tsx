@@ -239,6 +239,17 @@ const serviceConfig: Record<SourcingServiceKind, {
 
 const localePrefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 const sequenceIcons = [FileSearch, Factory, Camera, PackageCheck];
+const processLabels: Record<Language, string> = { en: 'Process', zh: '流程', ru: 'Процесс', fr: 'Processus', es: 'Proceso', ar: 'العملية', pt: 'Processo', tr: 'Süreç' };
+const lclLinks: Record<Language, { title: string; link: string }> = {
+  en: { title: 'Cargo ready and only need LCL freight?', link: 'Explore LCL costs, packing and delivery →' },
+  zh: { title: '货物已备好，只需要安排拼箱运输？', link: '查看 LCL 拼箱费用、包装与交付 →' },
+  ru: { title: 'Груз готов и нужна только сборная перевозка?', link: 'Стоимость, упаковка и доставка LCL →' },
+  fr: { title: 'Fret prêt et besoin uniquement d’un LCL ?', link: 'Voir coûts, emballage et livraison LCL →' },
+  es: { title: '¿Carga lista y solo necesitas transporte LCL?', link: 'Ver costos, embalaje y entrega LCL →' },
+  ar: { title: 'البضاعة جاهزة وتحتاج شحناً مجمعاً فقط؟', link: 'استكشف تكاليف وتعبئة وتسليم LCL ←' },
+  pt: { title: 'Carga pronta e precisa apenas de frete LCL?', link: 'Ver custos, embalagem e entrega LCL →' },
+  tr: { title: 'Yük hazır ve yalnızca LCL taşıma mı gerekiyor?', link: 'LCL maliyet, ambalaj ve teslimatı inceleyin →' },
+};
 
 export default function SourcingServicePage({ kind }: { kind: SourcingServiceKind }) {
   const { language } = useLanguage();
@@ -361,7 +372,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
 
         <section className="sd-process bg-[#eef2f6] py-16 sm:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-purple-strong)]">03 · Process</p>
+            <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-purple-strong)]">03 · {processLabels[language]}</p>
             <h2 className="mt-4 max-w-2xl text-3xl font-black tracking-[-0.035em] sm:text-4xl">{copy.sequenceTitle}</h2>
             <ol className="mt-10 grid gap-px overflow-hidden border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
               {copy.sequence.map((item, index) => {
@@ -399,7 +410,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
-        {kind === 'consolidation-export' && <section className="mx-auto max-w-7xl px-6 py-12"><h2 className="text-2xl font-bold">{language === 'zh' ? '货物已备好，只需要安排拼箱运输？' : language === 'es' ? '¿Carga lista y solo necesitas transporte LCL?' : 'Cargo ready and only need LCL freight?'}</h2><Link className="mt-5 inline-block font-bold underline underline-offset-4" to={`${language === 'zh' ? '/zh-cn' : language === 'es' ? '/es' : ''}/services/lcl-shipping-from-china/`}>{language === 'zh' ? '查看 LCL 拼箱费用、包装与交付 →' : language === 'es' ? 'Ver costos, embalaje y entrega LCL →' : 'Explore LCL costs, packing and delivery →'}</Link></section>}
+        {kind === 'consolidation-export' && <section className="mx-auto max-w-7xl px-6 py-12"><h2 className="text-2xl font-bold">{lclLinks[language].title}</h2><Link className="mt-5 inline-block font-bold underline underline-offset-4" to={`${localePrefix[language]}/services/lcl-shipping-from-china/`}>{lclLinks[language].link}</Link></section>}
         <section className="sd-final bg-[var(--ddnz-ink)] py-16 text-white">
           <div className="mx-auto flex max-w-7xl flex-col gap-7 px-4 sm:px-6 lg:flex-row lg:items-center lg:justify-between lg:px-8">
             <div><h2 className="text-3xl font-black tracking-[-0.035em]">{shared.finalTitle}</h2><p className="mt-3 max-w-3xl leading-7 text-slate-300">{shared.finalBody}</p></div>
@@ -413,7 +424,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
             </DdnzPrimaryLink>
           </div>
         </section>
-        {kind === 'consolidation-export' && ['zh', 'en', 'es'].includes(language) && <OperationsEvidence receiving locale={language as 'zh' | 'en' | 'es'} />}
+        {kind === 'consolidation-export' && <OperationsEvidence receiving locale={language} />}
       </main>
 
       <Footer />

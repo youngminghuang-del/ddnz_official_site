@@ -12,6 +12,7 @@ const Insights = lazy(() => import('../components/Insights'));
 const Partners = lazy(() => import('../components/Partners'));
 const Footer = lazy(() => import('../components/Footer'));
 const HomeV2Preview = lazy(() => import('./HomeV2Preview'));
+const FreightRouteMap = lazy(() => import('../components/FreightRouteMap'));
 
 const loadingCopy: Record<Language, string> = {
   en: 'Loading section',
@@ -69,6 +70,9 @@ export default function Home() {
       <main>
         <SourcingHomepageHero />
         <HomeOneTeamBridge />
+        <Suspense fallback={<HomeSectionFallback language={language} />}>
+          <FreightRouteMap variant="world" />
+        </Suspense>
         <Suspense fallback={<HomeSectionFallback language={language} />}>
           <HomeV2Preview
             embedded

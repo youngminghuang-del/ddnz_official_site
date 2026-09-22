@@ -105,8 +105,12 @@ const regionColumns = [
   {
     key: 'region_central_asia',
     countries: [
+      { en: 'Russia', zh: '俄罗斯', ru: 'Россия', fr: 'Russie', es: 'Rusia', ar: 'روسيا' },
       { en: 'Kazakhstan', zh: '哈萨克斯坦', ru: 'Казахстан', fr: 'Kazakhstan', es: 'Kazajistán', ar: 'كازاخستان' },
       { en: 'Uzbekistan', zh: '乌兹别克斯坦', ru: 'Узбекистан', fr: 'Ouzbékistan', es: 'Uzbekistán', ar: 'أوزبكستان' },
+      { en: 'Kyrgyzstan', zh: '吉尔吉斯斯坦', ru: 'Кыргызстан', fr: 'Kirghizistan', es: 'Kirguistán', ar: 'قيرغيزستان' },
+      { en: 'Tajikistan', zh: '塔吉克斯坦', ru: 'Таджикистан', fr: 'Tadjikistan', es: 'Tayikistán', ar: 'طاجيكستان' },
+      { en: 'Turkmenistan', zh: '土库曼斯坦', ru: 'Туркменистан', fr: 'Turkménistan', es: 'Turkmenistán', ar: 'تركمانستان' },
     ]
   },
   {

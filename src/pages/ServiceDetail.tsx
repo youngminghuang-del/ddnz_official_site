@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '../contexts/LanguageContext';
+import type { Language } from '../i18n/translations';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import OperationsEvidence from '../features/freight/OperationsEvidence';
@@ -3317,8 +3318,17 @@ export default function ServiceDetail() {
         </div>
       </section>
 
-      {currentKey === 'sea-freight' && <OperationsEvidence locale={language === 'zh' || language === 'es' ? language : 'en'} />}
-      {currentKey === 'sea-freight' && <div className="freight-editorial"><div className="freight-wrap py-8"><Link className="font-bold underline underline-offset-4" to={`${language === 'zh' ? '/zh-cn' : language === 'es' ? '/es' : ''}/services/dangerous-goods-shipping-from-china/`}>{language === 'zh' ? '危险品或锂电货物？查看专项运输与装柜记录 →' : language === 'es' ? '¿Carga peligrosa o baterías? Ver el servicio especializado →' : 'Dangerous goods or lithium cargo? View specialist shipping →'}</Link></div></div>}
+      {currentKey === 'sea-freight' && <OperationsEvidence locale={language} />}
+      {currentKey === 'sea-freight' && <div className="freight-editorial"><div className="freight-wrap py-8"><Link className="font-bold underline underline-offset-4" to={`${freightLanguagePrefix(language)}/services/dangerous-goods-shipping-from-china/`}>{({
+        en: 'Dangerous goods or lithium cargo? View specialist shipping →',
+        zh: '危险品或锂电货物？查看专项运输与装柜记录 →',
+        ru: 'Опасные грузы или литиевые батареи? Открыть специализированную перевозку →',
+        fr: 'Marchandises dangereuses ou batteries au lithium ? Voir le service spécialisé →',
+        es: '¿Carga peligrosa o baterías? Ver el servicio especializado →',
+        ar: 'بضائع خطرة أو بطاريات ليثيوم؟ استكشف خدمة الشحن المتخصصة ←',
+        pt: 'Carga perigosa ou baterias de lítio? Ver transporte especializado →',
+        tr: 'Tehlikeli yük veya lityum pil mi? Uzman taşımayı inceleyin →',
+      } as Record<Language, string>)[language]}</Link></div></div>}
 
       {/* Deep-Dive / Quick Facts Dual Split */}
       <section className="py-16 md:py-20 bg-[var(--hb-surface)]">
