@@ -10,5 +10,5 @@ export default function GhanaFreightPage() {
   const {language} = useLanguage();
   const locale = language === 'zh' || language === 'es' ? language : 'en';
   const meta = ghanaMetadata(locale);
-  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc}/><SourcingHomepageNav showFreightExecutor/><GhanaContent locale={locale} preview={import.meta.env.DEV}/><Footer/><WhatsAppFloat/></div>;
+  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc}/><SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'es']}/><GhanaContent locale={locale} preview={import.meta.env.DEV}/><Footer/><WhatsAppFloat/></div>;
 }

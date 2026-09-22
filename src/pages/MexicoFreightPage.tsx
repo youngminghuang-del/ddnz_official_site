@@ -10,5 +10,5 @@ export default function MexicoFreightPage() {
   const {language} = useLanguage();
   const locale = language === 'zh' || language === 'es' ? language : 'en';
   const meta = mexicoMetadata(locale);
-  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc}/><SourcingHomepageNav showFreightExecutor/><MexicoContent locale={locale}/><Footer/><WhatsAppFloat/></div>;
+  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc}/><SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'es']}/><MexicoContent locale={locale}/><Footer/><WhatsAppFloat/></div>;
 }

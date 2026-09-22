@@ -977,7 +977,7 @@ export default function ShippingLatinAmerica() {
           faqs: spec.faqs.map((faq) => ({ question: faq.q, answer: faq.a })),
         }}
       />
-      <SourcingHomepageNav showFreightExecutor />
+      <SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'ru', 'fr', 'es', 'ar']} />
       <CountryRegionLink region="latin-america" />
 
       {/* Hero Section */}
