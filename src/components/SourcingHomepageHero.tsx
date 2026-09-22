@@ -1,5 +1,6 @@
 import ProductDiscoveryLinks from './ProductDiscoveryLinks';
 import { useState } from 'react';
+import type { ReactNode } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import type { LucideIcon } from 'lucide-react';
 import {
@@ -121,8 +122,8 @@ const destinationLabels: Record<Language, Record<string, string>> = {
 };
 
 const HERO_INTRO: Record<Language, { headline: string; body: string; caption: string; imageAlt: string }> = {
-  en: { headline: 'Source in China. Ship with one accountable team.', body: 'DDNZ coordinates suppliers, product checks and export preparation; Heaven Born connects the international freight execution since 1997.', caption: 'DDNZ + Heaven Born · From source to destination', imageAlt: 'DDNZ and Heaven Born teams connecting sourcing and international freight' },
-  zh: { headline: '中国采购，到目的地交付，一套团队负责到底。', body: 'DDNZ 负责供应商、验货和出口前准备；华正邦泰衔接国际货运执行，始于 1997 年。', caption: 'DDNZ + 华正邦泰 · 从采购源头到目的地', imageAlt: 'DDNZ 与华正邦泰衔接中国采购和国际货运' },
+  en: { headline: 'Import from China with one accountable team.', body: 'DDNZ Global coordinates sourcing and export preparation. Heaven Born International Freight executes the confirmed freight scope.', caption: 'DDNZ + Heaven Born · From source to destination', imageAlt: 'DDNZ and Heaven Born teams connecting sourcing and international freight' },
+  zh: { headline: '从中国进口，由责任清晰的团队全程衔接。', body: '大递诺展负责采购与出口前准备；华正邦泰负责经确认范围内的国际货运执行。', caption: 'DDNZ + 华正邦泰 · 从采购源头到目的地', imageAlt: 'DDNZ 与华正邦泰衔接中国采购和国际货运' },
   ru: { headline: 'Закупки в Китае. Доставка с одной ответственной командой.', body: 'DDNZ координирует поставщиков и экспортную подготовку; Heaven Born выполняет международную перевозку с 1997 года.', caption: 'DDNZ + Heaven Born · От источника до получателя', imageAlt: 'Команды DDNZ и Heaven Born соединяют закупки и международную перевозку' },
   fr: { headline: 'Sourcer en Chine. Expédier avec une seule équipe responsable.', body: 'DDNZ coordonne les fournisseurs et la préparation export ; Heaven Born assure le fret international depuis 1997.', caption: 'DDNZ + Heaven Born · De la source à la destination', imageAlt: 'Les équipes DDNZ et Heaven Born relient sourcing et fret international' },
   es: { headline: 'Compre en China. Envíe con un solo equipo responsable.', body: 'DDNZ coordina proveedores y preparación de exportación; Heaven Born ejecuta el transporte internacional desde 1997.', caption: 'DDNZ + Heaven Born · Del origen al destino', imageAlt: 'Los equipos DDNZ y Heaven Born conectan compras y transporte internacional' },
@@ -153,7 +154,7 @@ const heroWhatsappMessages: Record<Language, string> = {
   tr: 'Merhaba DDNZ Global, Çin’den ürün tedariki için desteğe ihtiyacım var.',
 };
 
-export default function SourcingHomepageHero() {
+export default function SourcingHomepageHero({ afterIntro }: { afterIntro?: ReactNode }) {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const copy = HOME_COPY[language];
@@ -237,7 +238,7 @@ export default function SourcingHomepageHero() {
         <div className="home-intro-grid">
           <div className="home-intro-copy">
             <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>SOURCING + INTERNATIONAL FREIGHT</em></p>
-            <h1 id="homepage-sourcing-title">{intro.headline}</h1>
+            <h1 id="homepage-sourcing-title">{language === 'en' ? <>Import from China<br /> <span>with one accountable team.</span></> : intro.headline}</h1>
             <p className="home-intro-summary">{intro.body}</p>
             <div className="home-intro-actions">
               <button type="button" onClick={() => scrollToBrief('sourcing')} className="ddnz-button ddnz-button-primary">
@@ -250,7 +251,10 @@ export default function SourcingHomepageHero() {
             </a>
           </div>
           <figure className="home-intro-photo">
-            <img src="/images/operations/ddnz-team-cutout-20260914.webp" alt={intro.imageAlt} width="1254" height="1254" fetchPriority="high" decoding="async" />
+            <picture>
+              <source media="(max-width: 760px)" srcSet="/images/operations/ddnz-team-cutout-20260914-768.webp" />
+              <img src="/images/operations/ddnz-team-cutout-20260914.webp" alt={intro.imageAlt} width="1254" height="1254" fetchPriority="high" decoding="async" />
+            </picture>
           </figure>
         </div>
         <div className="home-intro-support">
@@ -258,6 +262,8 @@ export default function SourcingHomepageHero() {
           <p><img src="/images/brand/heaven-born-wing-logo-v1.png" alt="" width="420" height="295" aria-hidden="true" />{copy.heritage}</p>
         </div>
       </section>
+
+      {afterIntro}
 
       <section id="product-categories" className="home-priority-categories scroll-mt-24 bg-[#fffefb] px-5 pb-14 pt-10 sm:px-8 lg:px-12" aria-labelledby="priority-categories-title">
         <div className="mx-auto max-w-[1344px]">

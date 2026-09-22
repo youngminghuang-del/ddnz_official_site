@@ -161,7 +161,7 @@ function Dropdown({
           data-desktop-dropdown-panel={id}
           className={`absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
         >
-          <div className="max-h-[calc(100dvh-var(--ddnz-header-height,83px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)]">
+          <div className="max-h-[calc(100dvh-var(--ddnz-header-height,79px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)]">
             {children}
           </div>
         </div>
@@ -218,7 +218,8 @@ export default function SourcingHomepageNav({
   const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=${showFreightExecutor ? 'Freight%20Export' : 'Product%20Sourcing'}&source=homepage_navigation`);
   const freightQuoteLabels: Record<Language, string> = { zh: '提交货运需求', en: 'Request freight quote', es: 'Consultar transporte', fr: 'Demander un devis fret', ru: 'Запросить перевозку', ar: 'اطلب عرض شحن', pt: 'Solicitar frete', tr: 'Navlun teklifi alın' };
   const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : labels.start;
-  const languageOptions = englishProduct ? (Object.keys(languageLabels) as Language[]) : supportedLanguages || (Object.keys(languageLabels) as Language[]);
+  const languageOptions = supportedLanguages || (Object.keys(languageLabels) as Language[]);
+  const discloseFallbackLanguage = (label: string, path: string) => language !== 'en' && isEnglishProductPath(path) ? `${label} (EN)` : label;
   const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || /^\/(phone-cases|phone-straps-charms|portable-power)/.test(splitNavigationPath(location.pathname).pathname) || splitNavigationPath(location.pathname).pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
   const isMarketsPage = location.pathname.includes('/shipping-from-china-to-') || location.pathname.includes('/services/');
@@ -362,19 +363,19 @@ export default function SourcingHomepageNav({
         { to: '/sourcing/mobile-accessories-from-china', label: labels.mobile, children: [...mobileCategoryNavigation(language), filmNav] },
         { to: '/sourcing/outdoor-products-from-china', label: labels.outdoor, children: outdoorCategoryNavigation(language) },
       ].map(item => <li key={item.to}>
-        <DropdownLink onNavigate={onNavigate} to={localizedPath(item.to)}>{item.label}</DropdownLink>
+        <DropdownLink onNavigate={onNavigate} to={localizedPath(item.to)}>{discloseFallbackLanguage(item.label, localizedPath(item.to))}</DropdownLink>
         {item.children.length > 0 && <ul className="ms-5 me-2 border-s border-slate-200 ps-2">{item.children.map(child => <li key={child.to}>
           <Link onClick={onNavigate} to={localizedPath(child.to)} hrefLang={isEnglishProductPath(localizedPath(child.to)) ? 'en' : language} data-screen-protector-entry={child.to === filmNav.to ? `${variant}-nav` : undefined}
             aria-current={outdoorNavigationCurrent(location.pathname, location.search, localizedPath(child.to)) ? 'page' : undefined}
             className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors aria-[current=page]:bg-[var(--ddnz-purple-soft)] aria-[current=page]:text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
-            {child.label}
+            {discloseFallbackLanguage(child.label, localizedPath(child.to))}
           </Link>
-          {'children' in child && Array.isArray(child.children) && <ul className="ms-4 border-s border-slate-200 ps-2">{child.children.map(guide => <li key={guide.to}><Link onClick={onNavigate} to={localizedPath(guide.to)} aria-current={location.pathname.replace(/\/$/, '') === localizedPath(guide.to).replace(/\/$/, '') ? 'page' : undefined} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:text-purple-800 aria-[current=page]:bg-purple-50 aria-[current=page]:text-purple-800">{guide.label}</Link></li>)}</ul>}
+          {'children' in child && Array.isArray(child.children) && <ul className="ms-4 border-s border-slate-200 ps-2">{child.children.map(guide => <li key={guide.to}><Link onClick={onNavigate} to={localizedPath(guide.to)} aria-current={location.pathname.replace(/\/$/, '') === localizedPath(guide.to).replace(/\/$/, '') ? 'page' : undefined} hrefLang={isEnglishProductPath(localizedPath(guide.to)) ? 'en' : language} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:text-purple-800 aria-[current=page]:bg-purple-50 aria-[current=page]:text-purple-800">{discloseFallbackLanguage(guide.label, localizedPath(guide.to))}</Link></li>)}</ul>}
 
         </li>)}</ul>}
       </li>)}</ul>
       <div className="mt-2 border-t border-slate-200 pt-2">
-        <DropdownLink onNavigate={onNavigate} to={localizedPath('/products')}>{productOverviewLabels[language]}<span aria-hidden="true" className="ms-2">{language === 'ar' ? '←' : '→'}</span></DropdownLink>
+        <DropdownLink onNavigate={onNavigate} to={localizedPath('/products')}>{discloseFallbackLanguage(productOverviewLabels[language], localizedPath('/products'))}<span aria-hidden="true" className="ms-2">{language === 'ar' ? '←' : '→'}</span></DropdownLink>
       </div>
     </div>
   );
@@ -383,7 +384,7 @@ export default function SourcingHomepageNav({
     <>
     <header lang={language === 'zh' ? 'zh-CN' : language} dir={language === 'ar' ? 'rtl' : 'ltr'} data-mobile-open={mobileOpen || undefined} ref={headerRef} className="ddnz-home sticky top-0 z-50 border-b border-slate-200/90 bg-white/96 backdrop-blur-xl">
       <div ref={collapsedHeaderRef}>
-      <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 2xl:gap-6 2xl:px-12">
+      <div className="mx-auto flex h-[78px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 2xl:gap-6 2xl:px-12">
         <Link
           to={localizedPath('/')}
           dir="ltr"
@@ -426,7 +427,7 @@ export default function SourcingHomepageNav({
             {productMenu(closeDesktopDropdown, 'desktop')}
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{labels.services}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{discloseFallbackLanguage(labels.services, localizedPath('/sourcing-services'))}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
@@ -524,7 +525,7 @@ export default function SourcingHomepageNav({
 
       </div>
       {mobileOpen ? (
-        <nav id="mobile-navigation" className={`absolute inset-x-0 top-full max-h-[calc(100dvh-var(--ddnz-header-height,83px))] overscroll-contain overflow-y-auto border-t border-slate-200 bg-white px-5 pb-4 pt-2 shadow-xl ${mobileVisibility}`} aria-label="Mobile navigation">
+        <nav id="mobile-navigation" className={`absolute inset-x-0 top-full max-h-[calc(100dvh-var(--ddnz-header-height,79px))] overscroll-contain overflow-y-auto border-t border-slate-200 bg-white px-5 pb-4 pt-2 shadow-xl ${mobileVisibility}`} aria-label="Mobile navigation">
           <div className="mx-auto grid max-w-2xl gap-0.5">
             <Link onClick={closeMobile} aria-current={isHomePage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/')}>{labels.home}</Link>
             <div>
@@ -543,7 +544,7 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'services' ? (
               <div id="mobile-services-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{labels.services}</Link>
+                <Link onClick={closeMobile} hrefLang="en" className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{discloseFallbackLanguage(labels.services, localizedPath('/sourcing-services'))}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</Link>

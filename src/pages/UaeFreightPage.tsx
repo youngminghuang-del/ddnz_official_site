@@ -10,5 +10,5 @@ export default function UaeFreightPage() {
   const {language} = useLanguage();
   const locale = language === 'zh' || language === 'es' ? language : 'en';
   const meta = uaeMetadata(locale);
-  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor /><UaeContent locale={locale} /><Footer /><WhatsAppFloat /></div>;
+  return <div className="ddnz-home"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'es']} /><UaeContent locale={locale} /><Footer /><WhatsAppFloat /></div>;
 }

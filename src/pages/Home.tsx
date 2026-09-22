@@ -67,8 +67,7 @@ export default function Home() {
       />
       <SourcingHomepageNav />
       <main>
-        <SourcingHomepageHero />
-        <HomeOneTeamBridge />
+        <SourcingHomepageHero afterIntro={<HomeOneTeamBridge />} />
         <Suspense fallback={<HomeSectionFallback language={language} />}>
           <HomeV2Preview
             embedded

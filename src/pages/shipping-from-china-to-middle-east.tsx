@@ -1406,7 +1406,7 @@ export default function MiddleEastRoute() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SourcingHomepageNav showFreightExecutor />
+      <SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'ru', 'fr', 'es', 'ar']} />
       <CountryRegionLink region="middle-east" />
 
       <main>

@@ -794,6 +794,17 @@ function injectSeoMeta(
     output = output.replace(/<\/head>/i, `  <link rel="canonical" href="${canonicalUrl}" />\n</head>`);
   }
 
+  // Give the browser the localized homepage LCP image before the React route
+  // chunk runs. Mobile receives a smaller transparent WebP; non-home routes do
+  // not pay for either preload.
+  if (relPath === '') {
+    const heroPreloads = `
+    <link rel="preload" as="image" href="/images/operations/ddnz-team-cutout-20260914-768.webp" media="(max-width: 760px)" fetchpriority="high" />
+    <link rel="preload" as="image" href="/images/operations/ddnz-team-cutout-20260914.webp" media="(min-width: 761px)" fetchpriority="high" />
+`;
+    output = output.replace(/<\/head>/i, `${heroPreloads}</head>`);
+  }
+
   // 4. Set exact page-specific hreflang alternates (replacing any existing ones or rewriting them)
   // Service pages have full UI translations. Blog posts only declare their
   // source language until a genuine Translation Group links them together.

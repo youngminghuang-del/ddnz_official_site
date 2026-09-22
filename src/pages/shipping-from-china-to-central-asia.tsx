@@ -832,7 +832,7 @@ export default function ShippingCentralAsia() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SourcingHomepageNav showFreightExecutor />
+      <SourcingHomepageNav showFreightExecutor supportedLanguages={['en', 'zh', 'ru', 'fr', 'es', 'ar']} />
 
       <main>
         
