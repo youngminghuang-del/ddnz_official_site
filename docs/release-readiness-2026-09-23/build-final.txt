@@ -1,0 +1,237 @@
+
+> react-example@0.0.0 build:preview
+> vite build && node --import tsx scripts/generate-static-pages.ts && node scripts/finalize-screen-protector-pages.mjs && node scripts/prerender-country-pages.mjs && node scripts/prerender-core-pages.mjs && node scripts/check-country-prerender.mjs && node scripts/check-core-prerender.mjs && node scripts/audit-seo-output.mjs && node scripts/audit-deployment-files.mjs && node scripts/stage-local-preview.mjs
+
+vite v6.4.1 building for production...
+transforming...
+✓ 2627 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                                                   3.96 kB │ gzip:   1.37 kB
+dist/assets/KitchenPage-D62woKne.css                              3.04 kB │ gzip:   0.95 kB
+dist/assets/ServiceMotion-mYGI4C7X.css                            5.00 kB │ gzip:   1.67 kB
+dist/assets/phone-localized-CsCJl1gs.css                          6.08 kB │ gzip:   1.52 kB
+dist/assets/category-Cz73g8Z1.css                                 6.55 kB │ gzip:   1.54 kB
+dist/assets/ShowcaseContactFooter-fBxg9zNi.css                    7.00 kB │ gzip:   0.98 kB
+dist/assets/Footer-DyPniztw.css                                   7.25 kB │ gzip:   1.93 kB
+dist/assets/LocalizedKitchenPage-CqGZaXC_.css                     8.71 kB │ gzip:   1.95 kB
+dist/assets/SourcingServicePage-D69cn_o8.css                     11.62 kB │ gzip:   3.20 kB
+dist/assets/food-processing-QvFrZX-C.css                         12.36 kB │ gzip:   3.03 kB
+dist/assets/MobileSourcingPage-BRHC1eRb.css                      20.93 kB │ gzip:   4.77 kB
+dist/assets/ProductsIndex-V4Xa0kWU.css                           27.53 kB │ gzip:   5.95 kB
+dist/assets/SourcingServices-D27-_P3L.css                        28.60 kB │ gzip:   6.26 kB
+dist/assets/AudioSpeakers-oEY2n3k0.css                           29.77 kB │ gzip:   6.10 kB
+dist/assets/RefrigerationEquipment-CyEw7gHQ.css                  33.68 kB │ gzip:   6.85 kB
+dist/assets/screen-protectors-WTFj1Osm.css                       34.57 kB │ gzip:   6.81 kB
+dist/assets/freight-CZKL1WXR.css                                 36.38 kB │ gzip:   7.40 kB
+dist/assets/RestaurantKitchenPackages-CIQbZUyt.css               37.19 kB │ gzip:   7.19 kB
+dist/assets/kitchen-D2KyzxA9.css                                 51.42 kB │ gzip:   9.53 kB
+dist/assets/OutdoorPage-DlJ_ULbI.css                             54.39 kB │ gzip:  10.82 kB
+dist/assets/index-ZY9p9uzX.css                                  231.37 kB │ gzip:  35.82 kB
+dist/assets/check-DpxstfwC.js                                     0.29 kB │ gzip:   0.24 kB
+dist/assets/chevron-right-CrW_3qHx.js                             0.30 kB │ gzip:   0.25 kB
+dist/assets/plus-vDxi92Eh.js                                      0.33 kB │ gzip:   0.25 kB
+dist/assets/thermometer-9sXbAJz8.js                               0.33 kB │ gzip:   0.27 kB
+dist/assets/clock-BCNgmJix.js                                     0.34 kB │ gzip:   0.27 kB
+dist/assets/arrow-right-Cd-HoN-a.js                               0.34 kB │ gzip:   0.27 kB
+dist/assets/arrow-up-right-DxeiaPfp.js                            0.34 kB │ gzip:   0.27 kB
+dist/assets/search-kl9N8fDL.js                                    0.34 kB │ gzip:   0.27 kB
+dist/assets/circle-check-CoPfy-vI.js                              0.35 kB │ gzip:   0.27 kB
+dist/assets/gauge-Bn6PiTuy.js                                     0.35 kB │ gzip:   0.27 kB
+dist/assets/play-Crw3BC3Z.js                                      0.36 kB │ gzip:   0.28 kB
+dist/assets/smartphone-TgleCGpX.js                                0.37 kB │ gzip:   0.29 kB
+dist/assets/info-Ca1JmN6D.js                                      0.37 kB │ gzip:   0.28 kB
+dist/assets/search-check-BUuo4txq.js                              0.39 kB │ gzip:   0.29 kB
+dist/assets/user-round-check-sPd7znzC.js                          0.40 kB │ gzip:   0.31 kB
+dist/assets/maximize-2-2jDF4EF7.js                                0.41 kB │ gzip:   0.30 kB
+dist/assets/message-circle-DaiJD-Yl.js                            0.41 kB │ gzip:   0.32 kB
+dist/assets/circle-question-mark-SPiiC006.js                      0.42 kB │ gzip:   0.31 kB
+dist/assets/users-round-DMtn5kDW.js                               0.42 kB │ gzip:   0.32 kB
+dist/assets/route-BsCAWCMr.js                                     0.42 kB │ gzip:   0.30 kB
+dist/assets/external-link-7D9BJ7MR.js                             0.42 kB │ gzip:   0.30 kB
+dist/assets/lock-keyhole-BXuQYy9C.js                              0.43 kB │ gzip:   0.32 kB
+dist/assets/calendar-BioHuXL2.js                                  0.43 kB │ gzip:   0.31 kB
+dist/assets/file-check-2-DT7UDNYj.js                              0.43 kB │ gzip:   0.30 kB
+dist/assets/refrigerator-BkOQJevt.js                              0.43 kB │ gzip:   0.31 kB
+dist/assets/utensils-DC2e855B.js                                  0.43 kB │ gzip:   0.31 kB
+dist/assets/triangle-alert-CtTII517.js                            0.44 kB │ gzip:   0.32 kB
+dist/assets/speaker-KCORdYPn.js                                   0.45 kB │ gzip:   0.32 kB
+dist/assets/clipboard-check-AJANoELh.js                           0.47 kB │ gzip:   0.33 kB
+dist/assets/plane-CmJTKZyf.js                                     0.47 kB │ gzip:   0.36 kB
+dist/assets/quoteLinks-BlX2XDSY.js                                0.48 kB │ gzip:   0.34 kB
+dist/assets/box-CblKXXHB.js                                       0.48 kB │ gzip:   0.33 kB
+dist/assets/badge-check-CIBLeO_N.js                               0.48 kB │ gzip:   0.32 kB
+dist/assets/languages-C09EqI7m.js                                 0.49 kB │ gzip:   0.32 kB
+dist/assets/file-search-BaHK6eCY.js                               0.50 kB │ gzip:   0.35 kB
+dist/assets/battery-charging-BYT4Z5Il.js                          0.50 kB │ gzip:   0.34 kB
+dist/assets/trash-2-BMqr9F9C.js                                   0.50 kB │ gzip:   0.32 kB
+dist/assets/file-text-CxKrvoLl.js                                 0.51 kB │ gzip:   0.32 kB
+dist/assets/shield-alert-CSE6GugO.js                              0.53 kB │ gzip:   0.37 kB
+dist/assets/tent-tree-DpKXekHX.js                                 0.55 kB │ gzip:   0.34 kB
+dist/assets/warehouse-B5Drvrh-.js                                 0.55 kB │ gzip:   0.36 kB
+dist/assets/truck-BAf6J2-d.js                                     0.57 kB │ gzip:   0.37 kB
+dist/assets/factory-CZYZgurF.js                                   0.58 kB │ gzip:   0.35 kB
+dist/assets/clipboard-list-DkyBNNKr.js                            0.58 kB │ gzip:   0.36 kB
+dist/assets/layers-CR1OW9px.js                                    0.59 kB │ gzip:   0.34 kB
+dist/assets/sliders-horizontal-BGn-xhi0.js                        0.60 kB │ gzip:   0.35 kB
+dist/assets/package-check-CMBbbMZn.js                             0.60 kB │ gzip:   0.40 kB
+dist/assets/ship-CP2GOMwY.js                                      0.65 kB │ gzip:   0.39 kB
+dist/assets/sparkles-f0hKts80.js                                  0.67 kB │ gzip:   0.39 kB
+dist/assets/store-DqBH40NW.js                                     0.67 kB │ gzip:   0.39 kB
+dist/assets/download-CXhj5T2p.js                                  0.70 kB │ gzip:   0.36 kB
+dist/assets/DdnzUi-CXbLoTHv.js                                    0.78 kB │ gzip:   0.41 kB
+dist/assets/snowflake-c1Fvc2Jk.js                                 0.80 kB │ gzip:   0.44 kB
+dist/assets/receipt-text-DDrNWQIX.js                              0.84 kB │ gzip:   0.39 kB
+dist/assets/boxes-mWjUMd-g.js                                     1.02 kB │ gzip:   0.51 kB
+dist/assets/ruler-CyeDruRf.js                                     1.05 kB │ gzip:   0.47 kB
+dist/assets/socialChannels-B012LI58.js                            1.06 kB │ gzip:   0.47 kB
+dist/assets/site-analytics-zbuHG4PI.js                            1.11 kB │ gzip:   0.55 kB
+dist/assets/FreightMapPreview-BwPvYihv.js                         1.53 kB │ gzip:   0.93 kB
+dist/assets/WhatsAppFloat-CFyJq0eD.js                             1.80 kB │ gzip:   1.08 kB
+dist/assets/ScrollToTop-Crg1nXsH.js                               1.99 kB │ gzip:   1.10 kB
+dist/assets/CountryRegionLink-BV2YsIMJ.js                         2.15 kB │ gzip:   1.21 kB
+dist/assets/NigeriaInventory-BxQBw46i.js                          3.52 kB │ gzip:   2.14 kB
+dist/assets/NewFreightEvidence-8ZUO9Q_H.js                        3.64 kB │ gzip:   1.88 kB
+dist/assets/production-DCs8SJqG.js                                3.66 kB │ gzip:   1.54 kB
+dist/assets/ImportOrderPlanning-BpHbHuzK.js                       3.94 kB │ gzip:   2.31 kB
+dist/assets/ShowcaseContactFooter-CyimiWy9.js                     3.99 kB │ gzip:   1.40 kB
+dist/assets/inquiry-DfUFc-t_.js                                   4.47 kB │ gzip:   2.19 kB
+dist/assets/SchemaMarkup-BpvWfRCm.js                              4.91 kB │ gzip:   2.19 kB
+dist/assets/positioning-B8uCdLrZ.js                               5.34 kB │ gzip:   2.12 kB
+dist/assets/regions-DfOh-u9v.js                                   5.80 kB │ gzip:   2.85 kB
+dist/assets/RestaurantKitchenScenario-qBbvrkUv.js                 5.87 kB │ gzip:   2.28 kB
+dist/assets/handoff-CnFykQHX.js                                   6.12 kB │ gzip:   2.69 kB
+dist/assets/SEO-OdhySmrT.js                                       6.32 kB │ gzip:   2.79 kB
+dist/assets/LocalizedCategoryPage-CFhP6cnK.js                     6.76 kB │ gzip:   2.54 kB
+dist/assets/Insights-D5pGef3z.js                                  6.76 kB │ gzip:   3.05 kB
+dist/assets/BuyerGuidePage-DK0aLjny.js                            7.01 kB │ gzip:   2.76 kB
+dist/assets/RefrigerationPage-yVjIIpP7.js                         7.90 kB │ gzip:   2.69 kB
+dist/assets/LocalizedPackagePage-Bw3f_nW9.js                      7.93 kB │ gzip:   2.75 kB
+dist/assets/AudioPage-DOtZ4ab3.js                                 8.02 kB │ gzip:   2.63 kB
+dist/assets/ProductDiscoveryLinks-B_A72VKd.js                     8.11 kB │ gzip:   4.13 kB
+dist/assets/KitchenCategoryPage-Dt9o7Eiq.js                       9.43 kB │ gzip:   3.29 kB
+dist/assets/FoodProcessingPage-CU0fo24n.js                        9.85 kB │ gzip:   3.24 kB
+dist/assets/site-analytics-DzGP-cUd.js                           10.03 kB │ gzip:   5.28 kB
+dist/assets/LocalizedCalculatorPage-D63mXiXw.js                  10.08 kB │ gzip:   3.98 kB
+dist/assets/InsightsHub-Cge-WX15.js                              11.36 kB │ gzip:   4.89 kB
+dist/assets/NigeriaMarketGuide-DrvZSq8L.js                       11.54 kB │ gzip:   5.79 kB
+dist/assets/ServiceMotion-BQn5b0J-.js                            12.34 kB │ gzip:   5.37 kB
+dist/assets/OperationsEvidence-Crd31K6o.js                       12.58 kB │ gzip:   5.86 kB
+dist/assets/model-CWMt62wO.js                                    13.20 kB │ gzip:   5.22 kB
+dist/assets/NigeriaFreightPage-_QsjXrRk.js                       13.61 kB │ gzip:   6.01 kB
+dist/assets/food-processing-Czu58v0h.js                          14.04 kB │ gzip:   4.54 kB
+dist/assets/GhanaFreightPage-8NCjTUIO.js                         14.44 kB │ gzip:   6.41 kB
+dist/assets/UaeFreightPage-CVAJnIju.js                           14.84 kB │ gzip:   6.26 kB
+dist/assets/InternationalCountryPage-Dpt3vQam.js                 14.90 kB │ gzip:   5.64 kB
+dist/assets/LocalizedScreenProtectorPage-BP6wKmdw.js             15.03 kB │ gzip:   4.98 kB
+dist/assets/BrazilPortuguesePage-CfcT1kEV.js                     15.66 kB │ gzip:   5.14 kB
+dist/assets/MexicoFreightPage-CS3a83bM.js                        15.77 kB │ gzip:   7.04 kB
+dist/assets/LocalizedOverviewPage-CTXuX4s7.js                    16.23 kB │ gzip:   4.53 kB
+dist/assets/localizedShippingContent-Py4LLeFH.js                 17.50 kB │ gzip:   5.98 kB
+dist/assets/Partners-CiWjuXOD.js                                 17.51 kB │ gzip:   7.46 kB
+dist/assets/OriginDestinationOpportunities-DR4_7Jrv.js           17.99 kB │ gzip:   7.50 kB
+dist/assets/copy-Bzxu2RjN.js                                     19.22 kB │ gzip:   8.55 kB
+dist/assets/en-Bnl4H3Xu.js                                       20.24 kB │ gzip:   7.80 kB
+dist/assets/CentralAsiaOverviewPage-BZV-_4nz.js                  23.53 kB │ gzip:  10.34 kB
+dist/assets/copy-CgRufh60.js                                     24.18 kB │ gzip:  10.86 kB
+dist/assets/kitchen-BkbWq_Ov.js                                  24.55 kB │ gzip:   6.75 kB
+dist/assets/shippingCountryRoutes-TdfmIfpZ.js                    24.60 kB │ gzip:  10.58 kB
+dist/assets/mixed-storage-C2t4YX7D.js                            24.97 kB │ gzip:  10.30 kB
+dist/assets/ProductsIndex-DehaqwFM.js                            25.37 kB │ gzip:   7.89 kB
+dist/assets/categoryLocalization-BAIYuOtJ.js                     26.33 kB │ gzip:  10.81 kB
+dist/assets/AudioSpeakers-C3G79E0F.js                            26.86 kB │ gzip:   7.99 kB
+dist/assets/BlogDetail-ISsBG7fJ.js                               27.72 kB │ gzip:  10.32 kB
+dist/assets/SourcingServices-B5fQJBvS.js                         29.28 kB │ gzip:   9.15 kB
+dist/assets/RefrigerationEquipment-D8LfUbp8.js                   29.58 kB │ gzip:   9.03 kB
+dist/assets/FreightRegionPage-DtRMyPuH.js                        31.10 kB │ gzip:  12.74 kB
+dist/assets/Footer-DZc6-DJp.js                                   33.34 kB │ gzip:  13.29 kB
+dist/assets/MobileSourcingPage-DdoDfVDI.js                       35.05 kB │ gzip:  11.22 kB
+dist/assets/RestaurantKitchenPackages-D6QxhCOh.js                35.74 kB │ gzip:  10.45 kB
+dist/assets/ScreenProtectorPage-Cv6rofeK.js                      36.13 kB │ gzip:  12.35 kB
+dist/assets/copy-DMx1SF3T.js                                     37.03 kB │ gzip:  12.96 kB
+dist/assets/SourcingHomepageNav-5FqqyjMW.js                      42.65 kB │ gzip:  14.73 kB
+dist/assets/KitchenPage-BWJFYC1t.js                              51.58 kB │ gzip:  15.24 kB
+dist/assets/FreightReleasePage-WGuMLBKB.js                       51.97 kB │ gzip:  18.99 kB
+dist/assets/GetAQuote-CjQlH6mM.js                                53.23 kB │ gzip:  16.67 kB
+dist/assets/shipping-from-china-to-west-africa-DX8Wx3Gj.js       54.75 kB │ gzip:  18.55 kB
+dist/assets/packageLocalization-B-xTi5wV.js                      58.76 kB │ gzip:  22.29 kB
+dist/assets/localization-BdQSSFMw.js                             59.71 kB │ gzip:  22.53 kB
+dist/assets/HomeV2Preview-DC_kW9pG.js                            62.09 kB │ gzip:  20.13 kB
+dist/assets/SourcingServicePage-BZFrqTjn.js                      62.76 kB │ gzip:  23.95 kB
+dist/assets/BuyerDecisionContent-CFpTsyIZ.js                     62.91 kB │ gzip:  23.71 kB
+dist/assets/copy-B8xz9zdS.js                                     64.92 kB │ gzip:  24.81 kB
+dist/assets/get-a-quote-W450OVls.js                              70.69 kB │ gzip:  24.55 kB
+dist/assets/FilmGuidePage-CISJoi71.js                            72.69 kB │ gzip:  25.99 kB
+dist/assets/HowWeWork-DsprVpwS.js                                72.79 kB │ gzip:  25.49 kB
+dist/assets/localization-DwAFJ26_.js                             74.57 kB │ gzip:  26.91 kB
+dist/assets/SeaInternationalContent-CXjtZ1go.js                  74.75 kB │ gzip:  28.07 kB
+dist/assets/StartupBuyingContent-CcOOGIn1.js                     77.37 kB │ gzip:  31.15 kB
+dist/assets/catalog-DPwIN8XH.js                                  80.28 kB │ gzip:  27.60 kB
+dist/assets/translations-Cq9-KiOv.js                             83.83 kB │ gzip:  32.07 kB
+dist/assets/Home-QkjeETJ_.js                                    101.62 kB │ gzip:  39.20 kB
+dist/assets/BuyerGuideLinks-aCbSCPet.js                         106.08 kB │ gzip:  34.55 kB
+dist/assets/shipping-from-china-to-latin-america-CR_iSCpf.js    111.63 kB │ gzip:  37.03 kB
+dist/assets/vendor-motion-BJx78h3z.js                           127.89 kB │ gzip:  42.01 kB
+dist/assets/ContentOpsDashboard-LlS54f5X.js                     147.01 kB │ gzip:  38.91 kB
+dist/assets/OutdoorPage-CB0WI38W.js                             150.93 kB │ gzip:  51.81 kB
+dist/assets/shipping-from-china-to-central-asia-DwEvWRQQ.js     160.03 kB │ gzip:  52.69 kB
+dist/assets/shipping-from-china-to-middle-east-D6MSTsGw.js      163.92 kB │ gzip:  51.17 kB
+dist/assets/index-Cl4NGhZN.js                                   169.53 kB │ gzip:  56.10 kB
+dist/assets/FreightRouteMap-kVD4tAmv.js                         173.84 kB │ gzip:  63.20 kB
+dist/assets/LocalizedKitchenPage-Die-FqSq.js                    183.19 kB │ gzip:  54.56 kB
+dist/assets/ServiceDetail-CUmO1MTq.js                           189.94 kB │ gzip:  63.62 kB
+dist/assets/vendor-react-boxgmnJc.js                            265.68 kB │ gzip:  85.97 kB
+dist/assets/notionBlogData-D7xeu-Go.js                          333.82 kB │ gzip:  90.43 kB
+dist/assets/translate-DfhjNX1c.js                             1,611.09 kB │ gzip: 547.54 kB
+
+(!) Some chunks are larger than 500 kB after minification. Consider:
+- Using dynamic import() to code-split the application
+- Use build.rollupOptions.output.manualChunks to improve chunking: https://rollupjs.org/configuration-options/#output-manualchunks
+- Adjust chunk size limit for this warning via build.chunkSizeWarningLimit.
+✓ built in 3.95s
+🚀 Starting Multilingual SEO static pages compile-time pre-renderer...
+✅ Pre-rendered 652 configured route-language variants!
+✅ Generated GitHub Pages route fallback at: dist/404.html
+🌐 Generating dynamic sitemap.xml and robots.txt...
+✅ Dynamically generated sitemap.xml (with 652 URLs) at public/sitemap.xml and dist/sitemap.xml
+✅ Generated optimized robots.txt at public/robots.txt and dist/robots.txt
+✅ Generated 4 showcase alias redirect page(s).
+✅ Generated 7 canonical article redirect page(s).
+🎉 Multilingual SEO static generation complete!
+{
+  "mode": "static-pages-finalized-not-deployed",
+  "pages": 8,
+  "publicPhonePages": 7,
+  "previousSitemapUrls": 652,
+  "sitemapUrls": 659,
+  "overlay": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/ddnz-screen-protector-seo-zZgrzB"
+}
+Country pre-render: 99 existing routes; client page components and locale data reused.
+Core pre-render: 40 existing pages with buyer questions, process details and article discovery.
+Verified 99 pre-rendered country versions and 184 region/country routes: H1, cargo scope, quote parameters, links and visible static body.
+Verified 40 core pages: visible HTML, unique H1, buyer answers, article discovery and internal links.
+{
+  "sitemapUrls": 659,
+  "htmlPagesChecked": 659,
+  "redirectPagesChecked": 4,
+  "failures": 0,
+  "notices": 0
+}
+{
+  "ok": true,
+  "distDir": "/private/tmp/ddnz-food-processing-20260923/dist",
+  "htmlFiles": 673,
+  "sitemapPages": 659,
+  "explicitArtifacts": 14,
+  "failures": 0
+}
+{
+  "mode": "local-preview-only",
+  "createdAt": "2026-09-23T13:00:27.204Z",
+  "projectRoot": "/private/tmp/ddnz-food-processing-20260923/",
+  "distDir": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/ddnz-preview-EB5bJx/dist",
+  "htmlFiles": 673,
+  "sitemapPages": 659,
+  "explicitArtifacts": 14,
+  "failures": 0
+}

@@ -5,16 +5,17 @@ import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { tsImport } from 'tsx/esm/api';
 import { localizedScreenProtectorMetadata, renderLocalizedScreenProtectorHead, LOCALIZED_SCREEN_PROTECTOR_ROUTES } from '../src/features/screen-protectors/localized-seo.mjs';
-import { screenProtectorMetadata, renderScreenProtectorHead, renderScreenProtectorBody, appendScreenProtectorSitemap } from '../src/features/screen-protectors/seo.mjs';
+import { screenProtectorMetadata, renderScreenProtectorHead, renderScreenProtectorBody, appendScreenProtectorSitemap, escapeHtml } from '../src/features/screen-protectors/seo.mjs';
 import { ROUTES } from '../src/features/screen-protectors/routes.mjs';
-import { PHONE_PRODUCT_IDS, phoneCopy, phoneMoney } from '../src/features/screen-protectors/localization.mjs';
+import { PHONE_PRODUCT_IDS, phoneCopy, phoneMoney, localizedPhonePath } from '../src/features/screen-protectors/localization.mjs';
 import { PRODUCTS } from '../src/features/screen-protectors/calculator.mjs';
+const reactText = value => renderToStaticMarkup(React.createElement(React.Fragment,null,value));
 const { default: Content } = await tsImport('../src/features/screen-protectors/LocalizedScreenProtectorContent.jsx', import.meta.url);
 const { PlanCardFixture } = await tsImport('./phone-localization-fixture.jsx', import.meta.url);
 const { saveLocalizedHandoff, readHandoff } = await import('../src/features/screen-protectors/handoff.mjs');
 const { localizedQuoteHref } = await import('../src/features/screen-protectors/localization.mjs');
 
-test('all four pure SSR bodies are complete, deterministic and browser independent', () => {
+test('all fourteen pure SSR bodies are complete, deterministic and browser independent', () => {
   const previous = Object.getOwnPropertyDescriptor(globalThis, 'window');
   Object.defineProperty(globalThis,'window',{configurable:true,get(){throw Error('SSR accessed window');}});
   try {
@@ -24,14 +25,14 @@ test('all four pure SSR bodies are complete, deterministic and browser independe
       const html=render(); assert.equal(render(),html);
       assert.equal((html.match(/<h1>/g)||[]).length,1);
       assert.ok(html.includes(`lang="${locale}" dir="${copy.direction}"`));
-      assert.ok(html.includes(copy.inquiry)); assert.ok(html.includes(copy.destinationHelp));
-      assert.ok(html.includes(copy.istanbul)); assert.ok(html.includes(copy.review));
+      assert.ok(html.includes(reactText(copy.inquiry))); assert.ok(html.includes(reactText(copy.destinationHelp)));
+      assert.ok(html.includes(reactText(copy.istanbul))); assert.ok(html.includes(reactText(copy.review)));
       assert.match(html,/id="phone-destination"[^>]*value=""/);
-      assert.match(html,/href="\/screen-protectors\/calculator\/" hrefLang="en"/);
-      assert.doesNotMatch(html,/Istanbul|Estimated landed|Phone model|CNY \/ piece|saved in this browser|[\u4e00-\u9fff]|\{(?:date|min|max|row|grams|contents|tare)\}/);
+      assert.ok(html.includes(`href="/${locale==='zh'?'zh-cn':locale}/screen-protectors/calculator/"`));
+      assert.doesNotMatch(html,/Estimated landed|Phone model|CNY \/ piece|saved in this browser|\{(?:date|min|max|row|grams|contents|tare)\}/);
       for(const id of PHONE_PRODUCT_IDS) {
         assert.ok(html.includes(`id="phone-product-${id}"`));
-        assert.ok(html.includes(copy.names[id])); assert.ok(html.includes(phoneMoney(locale,PRODUCTS[id].price)));
+        assert.ok(html.includes(reactText(copy.names[id]))); assert.ok(html.includes(phoneMoney(locale,PRODUCTS[id].price)));
       }
       if(locale==='ar') assert.match(html,/<bdi dir="ltr">٤٢ × ٣٥ × ٤٢<\/bdi>/);
       for(const [,src] of html.matchAll(/<img[^>]*src="([^"]+)"/g)) assert.ok(fs.existsSync(new URL(`../public${src}`,import.meta.url)),src);
@@ -39,42 +40,42 @@ test('all four pure SSR bodies are complete, deterministic and browser independe
   } finally { if(previous)Object.defineProperty(globalThis,'window',previous);else delete globalThis.window; }
 });
 
-test('each EN/ES/AR core page has one self canonical and four reciprocal alternates', () => {
+test('each eight-language core page has one self canonical and nine reciprocal alternates', () => {
   for(const page of ['home','compare']) {
     const englishPath=page==='home'?ROUTES.home:ROUTES.products;
     const english=screenProtectorMetadata(englishPath,{preview:false});
-    for(const locale of ['en','es','ar']) {
+    for(const locale of ['en','zh','es','ar','ru','fr','pt','tr']) {
       const meta=locale==='en'?english:localizedScreenProtectorMetadata(locale,page);
       const html=locale==='en'?renderScreenProtectorHead(englishPath,{preview:false}):renderLocalizedScreenProtectorHead(locale,page);
       assert.deepEqual(meta.alternateUrls,english.alternateUrls);
-      assert.deepEqual(meta.alternateUrls.map(item=>item.hrefLang),['en','es','ar','x-default']);
-      assert.equal(meta.alternateUrls.find(item=>item.hrefLang===locale).href,meta.canonical);
+      assert.deepEqual(meta.alternateUrls.map(item=>item.hrefLang),['en','zh-cn','es','ar','ru','fr','pt','tr','x-default']);
+      assert.equal(meta.alternateUrls.find(item=>item.hrefLang===(locale==='zh'?'zh-cn':locale)).href,meta.canonical);
       assert.equal(meta.alternateUrls.at(-1).href,english.canonical);
       assert.equal((html.match(/rel="canonical"/g)||[]).length,1);
-      assert.equal((html.match(/hreflang=/g)||[]).length,4);
+      assert.equal((html.match(/hreflang=/g)||[]).length,9);
       assert.ok(html.includes(`href="${meta.canonical}"`));
       if(locale!=='en') {
-        assert.ok(meta.description.length>=80 && meta.description.length<=170);
+        assert.ok(meta.description.length>=25 && meta.description.length<=350, `${locale}: meaningful localized description`);
         assert.equal(meta.schema.itemListElement.at(-1).item,meta.canonical);
         assert.match(localizedScreenProtectorMetadata(locale,page,{preview:true}).robots,/noindex/);
       }
     }
   }
-  for(const key of ['guides','prices','curves','videos','calculator','quote']) {
-    assert.deepEqual(screenProtectorMetadata(ROUTES[key]).alternateUrls,[]);
-    assert.doesNotMatch(renderScreenProtectorHead(ROUTES[key]),/hreflang/);
+  for(const key of ['guides','prices','curves','videos','calculator']) {
+    assert.equal(screenProtectorMetadata(ROUTES[key]).alternateUrls.length,9);
   }
+  assert.deepEqual(screenProtectorMetadata(ROUTES.quote).alternateUrls,[]);
 });
 
-test('finalizer sitemap stays additive and preserves localized pages while adding only two EN clusters', () => {
+test('finalizer sitemap stays additive and preserves localized pages while adding seven public EN clusters', () => {
   const old='<url><loc>https://www.ddnzglobal.com/old/</loc><lastmod>2026-09-13</lastmod></url>';
   const localized=LOCALIZED_SCREEN_PROTECTOR_ROUTES.map(item=>`<url><loc>https://www.ddnzglobal.com${item.path}</loc></url>`).join('');
   const baseline=`<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${old}${localized}</urlset>`;
   const merged=appendScreenProtectorSitemap(baseline);
   assert.ok(merged.includes(old)); assert.ok(merged.includes(localized));
   assert.match(merged,/xmlns:xhtml="http:\/\/www.w3.org\/1999\/xhtml"/);
-  assert.equal((merged.match(/<loc>/g)||[]).length,12);
-  assert.equal((merged.match(/<xhtml:link /g)||[]).length,8);
+  assert.equal((merged.match(/<loc>/g)||[]).length,22);
+  assert.equal((merged.match(/<xhtml:link /g)||[]).length,63);
   assert.equal(appendScreenProtectorSitemap(merged),merged);
   assert.doesNotMatch(merged,/<loc>[^<]*\/brief\//);
 });

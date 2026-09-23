@@ -1,0 +1,194 @@
+{
+  "productsTitle": "Compre productos de China y construya una gama comparable.",
+  "productsIntro": "Busque equipos de cocina, maquinaria alimentaria, altavoces, accesorios móviles y productos de exterior en China. Compare modelos y requisitos antes de coordinar proveedores, inspección, consolidación y exportación.",
+  "servicesTitle": "Compras en China: de la búsqueda de proveedores a la exportación.",
+  "servicesIntro": "DDNZ coordina comparación de proveedores, muestras, seguimiento de producción, inspección y preparación para exportar desde China para minoristas, importadores y proyectos. El comprador aprueba las decisiones comerciales; el alcance y las responsabilidades quedan registrados.",
+  "categories": [
+    [
+      "Cocina profesional y refrigeración",
+      "Combine cocción, preparación y frío según menú, capacidad y entorno.",
+      "Cocción · Refrigeración · Mesas de acero inoxidable · Bebidas y hielo",
+      "Suministros y clima · Capacidad · Componentes incluidos · Acceso de mantenimiento"
+    ],
+    [
+      "Audio y altavoces",
+      "Compare configuraciones portátiles, para fiestas y profesionales adecuadas a su canal de venta.",
+      "Altavoces portátiles · Audio profesional · Micrófonos · Embalaje personalizado",
+      "Altavoces y caja · Batería · Conectividad · Accesorios"
+    ],
+    [
+      "Accesorios móviles",
+      "Organice modelos, colores y embalajes para pedidos variados y reposiciones.",
+      "Fundas · Cargadores · Baterías externas · Cables y adaptadores",
+      "Compatibilidad · Protocolos de carga · Material y acabado · Cantidad por referencia"
+    ],
+    [
+      "Productos de exterior",
+      "Compare energía y frío portátil según clima, autonomía y alimentación en destino.",
+      "Estaciones de energía · Paneles solares plegables · Neveras de vehículo · Cajas térmicas",
+      "Autonomía · Cadena eléctrica · Documentos de batería y refrigerante · Volumen embalado"
+    ],
+    [
+      "Maquinaria alimentaria",
+      "Compare precios mayoristas de 16 modelos o empiece con seis combinaciones de equipos.",
+      "Masas y panadería · Carne · Verduras · Granos y zumos",
+      "Ingredientes y lote · Motor y cuchillas · Alimentación · Embalaje y destino"
+    ]
+  ],
+  "packageNames": [
+    "Masas y fideos",
+    "Preparación de panadería",
+    "Preparación de carne",
+    "Preparación de albóndigas",
+    "Preparación de verduras",
+    "Preparación de soja y arroz"
+  ],
+  "packageDescriptions": [
+    "Amasado y laminado; cortador opcional.",
+    "Mezclado y corte de pan horneado; horno aparte.",
+    "Corte y picado; frío y sierra aparte.",
+    "Picado, mezcla y formado; cocción y frío aparte.",
+    "Pelado y corte; seleccione las cuchillas.",
+    "Separación de pulpa y molienda húmeda; remojo, cocción y almacenamiento aparte."
+  ],
+  "priceNote": "Los totales en CNY usan la columna mayorista de la tarifa del proveedor del 8 de mayo de 2026, con una unidad de cada máquina. El embalaje indicado se calcula por separado. Confirme opciones, mejoras de embalaje, transporte, impuestos y servicios. Valide recetas y capacidades antes de confirmar el conjunto.",
+  "paths": [
+    [
+      "Compras para minoristas",
+      "Para probar productos, combinar referencias y reponer varias tiendas. Indique unidades por referencia, colores, embalaje y frecuencia; confirme el mínimo de cada configuración."
+    ],
+    [
+      "Proyectos y personalización",
+      "Para pedidos técnicos o personalizados. Defina especificaciones, muestra, hitos y condiciones de liberación antes de comparar ofertas equivalentes."
+    ]
+  ],
+  "steps": [
+    [
+      "Necesidad",
+      "Registre producto, cantidad, uso y destino."
+    ],
+    [
+      "Proveedor",
+      "Verifique identidad, función y capacidad."
+    ],
+    [
+      "Ofertas",
+      "Alinee especificaciones, cantidades, inclusiones y exclusiones."
+    ],
+    [
+      "Muestra",
+      "Registre modelo, material, color y criterios de aceptación."
+    ],
+    [
+      "Producción",
+      "Siga hitos, cambios y correcciones."
+    ],
+    [
+      "Inspección y embalaje",
+      "Compruebe funciones, cantidades, etiquetas y embalaje."
+    ],
+    [
+      "Exportación",
+      "Confirme liberación, documentos, transporte y responsables."
+    ]
+  ],
+  "marketIntro": "Los anuncios sirven para descubrir proveedores. La compra requiere ofertas comparables, verificación y aprobaciones vinculadas al pedido.",
+  "marketRows": [
+    [
+      "Precio",
+      "Puede corresponder a una configuración o mínimo.",
+      "Alinear modelo, cantidad, accesorios y costes."
+    ],
+    [
+      "Proveedor",
+      "Los datos de la tienda requieren verificación.",
+      "Registrar identidad y función de fabricante o intermediario."
+    ],
+    [
+      "Muestra",
+      "Una muestra no define la aceptación del lote.",
+      "Vincular muestra aprobada, especificación e inspección."
+    ],
+    [
+      "Plazo",
+      "Puede cambiar con alcance y capacidad.",
+      "Registrar hitos, pendientes y excepciones."
+    ],
+    [
+      "Liberación",
+      "Pago, inspección, embalaje y envío deben coordinarse.",
+      "Revisar inspección, embalaje y documentos antes de entregar."
+    ]
+  ],
+  "faqs": [
+    [
+      "¿Necesito compras o transporte?",
+      "Solicite compras si falta definir producto, proveedor o configuración. Con la mercancía definida, evalúe recogida y transporte. Si necesita ambos, acuerde el paso de aprobación de compra a instrucción de envío."
+    ],
+    [
+      "¿Pueden inspeccionar y consolidar mis propios pedidos?",
+      "Envíe proveedores, pedidos, fechas y controles. La revisión define recepción, inspección y consolidación sin asumir una nueva búsqueda de proveedores."
+    ],
+    [
+      "¿Puedo combinar productos en un solo envío?",
+      "Revise cantidades, embalaje, fechas y naturaleza de la carga. Declare baterías y características especiales; la compatibilidad depende del transporte y los documentos."
+    ],
+    [
+      "¿El precio incluye todos los costes hasta la entrega?",
+      "No. Producto, embalaje, compras, inspección, flete y gastos en destino son conceptos distintos. Rige el alcance de la oferta confirmada."
+    ]
+  ],
+  "ui": {
+    "categories": "Categorías de compra",
+    "variables": "Confirmar antes de comparar",
+    "explore": "Ver detalles del producto",
+    "english": "Detalles en inglés",
+    "packages": "Combine máquinas por tarea",
+    "equipment": "Equipos",
+    "packing": "Embalaje indicado",
+    "scope": "Seleccionar para cotizar",
+    "other": "Otro producto",
+    "control": "Siete etapas hasta la liberación",
+    "path": "Elija el modelo de compra",
+    "market": "Del anuncio al pedido documentado",
+    "columns": [
+      "Decisión",
+      "Información inicial",
+      "Registro necesario"
+    ],
+    "services": "Servicios en China",
+    "details": "Ver alcance del servicio",
+    "faq": "Preguntas de compra",
+    "quote": "Prepare su solicitud",
+    "formIntro": "Organice los datos aquí; revíselos en el siguiente paso antes de enviar.",
+    "category": "Categoría",
+    "destination": "País / ciudad de destino",
+    "scopeField": "Productos, modelos y cantidades",
+    "stage": "Etapa de compra",
+    "stages": [
+      "Explorar categorías",
+      "Crear una gama",
+      "Comparar ofertas",
+      "Aprobar muestra o especificación",
+      "Listo para comprar"
+    ],
+    "notes": "Plazo, normas o embalaje",
+    "prepare": "Revisar solicitud",
+    "ready": "Datos preparados; aún no enviados",
+    "continue": "Continuar al formulario de cotización",
+    "edit": "Editar solicitud",
+    "process": "Ver el proceso completo",
+    "freight": "Transporte internacional ejecutado por Heaven Born, en operación desde 1997. DDNZ coordina las compras.",
+    "home": "Inicio",
+    "select": "Seleccione",
+    "retail": "Compra minorista",
+    "project": "Compra de proyecto",
+    "sku": "Número de referencias",
+    "units": "Unidades por referencia",
+    "rhythm": "Reposición / preferencia de transporte",
+    "brief": "Necesidad registrada",
+    "compare": "Comparación de ofertas",
+    "approval": "Registro de aprobación",
+    "handoff": "Entrega para exportación"
+  }
+}

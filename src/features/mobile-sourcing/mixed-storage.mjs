@@ -1,7 +1,8 @@
+import {localePrefix} from '../site-localization/translate.mjs';
 import { normalizeDraft, MOBILE_DRAFT_KEY } from './buying.mjs';
 import { PRODUCTS } from '../screen-protectors/calculator.mjs';
 import { parsePhoneQuantity, restoreLocalizedDraft } from '../screen-protectors/localization.mjs';
-export const mixedBriefPath=locale=>(locale==='es'||locale==='ar'?'/'+locale:'')+'/sourcing/mobile-accessories-from-china/#buying-brief';
+export const mixedBriefPath=locale=>localePrefix(locale)+'/sourcing/mobile-accessories-from-china/#buying-brief';
 export const newRowId=()=> 'line-'+globalThis.crypto.randomUUID();
 export function replaceFilms(draft,selection,locale='en'){
  const d=normalizeDraft(draft);
@@ -18,7 +19,7 @@ export function readMixedDraft(storage){
  // Import the previous localized draft once. The Istanbul calculator is never imported automatically.
  if(!raw?.mixedOrderVersion){
   const old=JSON.parse(storage.getItem('ddnz_phone_localized_draft_v1')||'null');
-  if(old&&['es','ar'].includes(old.locale)){
+  if(old&&['zh','es','ar','ru','fr','pt','tr'].includes(old.locale)){
    const selection=restoreLocalizedDraft(old,old.locale);
    if(selection)draft=replaceFilms(draft,{...selection,destination:draft.contact.destination||selection.destination,notes:[draft.contact.notes,selection.notes].filter(Boolean).join('\n')},old.locale);
   }

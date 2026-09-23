@@ -1,8 +1,9 @@
-export type FreightLocale = 'zh' | 'en' | 'es';
+import type { Language } from '../../i18n/translations';
+export type FreightLocale = Language;
 export type RegionId = 'latin-america' | 'west-africa' | 'middle-east';
-type Words = Record<FreightLocale, string>;
+type Words = Record<'zh' | 'en' | 'es', string>;
 export const words = (zh: string, en: string, es: string): Words => ({ zh, en, es });
-export const freightPrefix = (locale: FreightLocale) => locale === 'zh' ? '/zh-cn' : locale === 'es' ? '/es' : '';
+export const freightPrefix = (locale: FreightLocale) => locale === 'zh' ? '/zh-cn' : locale === 'en' ? '' : `/${locale}`;
 export const regions = {
   'latin-america': {
     name: words('拉美', 'Latin America', 'Latinoamérica'),
@@ -36,12 +37,3 @@ export const regions = {
     ],
   },
 } as const;
-
-export function regionMetadata(region: RegionId, locale: FreightLocale) {
-  const item = regions[region];
-  return {
-    title: words(`中国到${item.name.zh}货运｜国家线路与运输规划 | DDNZ Global`, `Shipping from China to ${item.name.en} | DDNZ Global`, `Envíos de China a ${item.name.es} | DDNZ Global`)[locale],
-    desc: item.intro[locale],
-    keywords: '',
-  };
-}

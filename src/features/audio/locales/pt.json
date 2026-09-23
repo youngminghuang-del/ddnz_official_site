@@ -1,0 +1,38 @@
+{
+  "title": "Compre caixas de som e equipamentos de áudio da China",
+  "intro": "Organize o sourcing de caixas de som da China por uso, potência declarada, alimentação, bateria, acessórios e embalagem. Mantenha proposta, amostra aprovada e configuração embarcada alinhadas.",
+  "families": [
+    [
+      "Portáteis e para festas",
+      "Para varejo de entretenimento, eventos e distribuidores. Confira potência nominal e de pico, rede elétrica, carga, bateria, conexões, microfones, controle remoto e cabos."
+    ],
+    [
+      "Vintage e estilo de vida",
+      "Para decoração, presentes e coleções de varejo. Confira material e acabamento do gabinete, controles, entradas, alto-falantes, cores e embalagem."
+    ],
+    [
+      "Mini e para presentes",
+      "Para conveniência, presentes e pedidos de teste. Defina bateria e entrada de carga, luzes e modos, alça e cabos, embalagem individual e quantidade mínima por mistura de cores."
+    ]
+  ],
+  "checks": [
+    "Registre potência contínua nominal e de pico separadamente, com a base de medição declarada pelo fornecedor.",
+    "Separe rede elétrica, adaptador, entrada de carga, célula, capacidade e condições de autonomia.",
+    "Liste versão sem fio, entradas de reprodução, pareamento e documentos de rádio e conformidade.",
+    "Confirme microfones com ou sem fio, quantidade, frequências e pilhas incluídas.",
+    "Vincule iluminação, equalização, gravação, prioridade e controles ao modelo exato.",
+    "Vincule acessórios, etiquetas, embalagem individual, unidades por caixa e dimensões ao SKU aprovado."
+  ],
+  "steps": [
+    "Brief: registre uso, canal, posição de preço e funções indispensáveis.",
+    "Configuração: fixe modelo, gabinete, alimentação, acessórios e etiquetas.",
+    "Amostra: registre funções, reprodução, carga, acabamento, acessórios e pendências.",
+    "Liberação: associe referências da amostra, embalagem, documentos e exceções ao pedido."
+  ],
+  "evidence": [
+    "Linha e componentes: mostra postos, manuseio e montagem na fábrica.",
+    "Luzes: mostra troca de modos, sem comprovar pressão sonora, autonomia ou certificação.",
+    "Montagem por formato: mostra carcaças, alto-falantes, painéis e unidades prontas em etapas distintas.",
+    "Vídeo não substitui aprovação do pedido: registre modelo, ponto verificado, resultado, data e pendências. Propostas incompletas não são comparáveis; separe preço, configuração, evidências, exclusões e requisitos do destino."
+  ]
+}

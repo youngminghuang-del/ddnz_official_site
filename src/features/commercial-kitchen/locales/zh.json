@@ -1,0 +1,354 @@
+{
+  "locale": "zh",
+  "dir": "ltr",
+  "numberLocale": "zh-CN",
+  "meta": {
+    "title": "中国商用厨房设备采购 | DDNZ Global",
+    "description": "从中国采购商用厨房设备，比较 26 款型号、人民币供货参考价及阿联酋、新加坡和墨西哥零售参考，准备询价清单。"
+  },
+  "ui": {
+    "pageLabel": "商用厨房设备采购",
+    "skip": "跳转至设备目录",
+    "sections": "商用厨房栏目",
+    "equipment": "设备目录",
+    "assortments": "设备组合",
+    "prices": "价格参考",
+    "guide": "采购指南",
+    "list": "设备清单",
+    "compare": "比较",
+    "home": "首页",
+    "products": "产品",
+    "breadcrumb": "当前位置",
+    "audience": "面向进口商、批发商与经销商",
+    "heading": "商用厨房设备。",
+    "emphasis": "从中国采购。",
+    "intro": "从 26 款型号中规划批发组合，比较产能、尺寸、供货参考价和零售参考，再为目标市场申请报价。",
+    "explore": "浏览设备",
+    "startList": "建立清单",
+    "heroAlt": "商用厨房中的设备配置",
+    "heroCaption": "从备餐到出餐",
+    "heroLabel": "下一笔订单，从选择设备开始。",
+    "catalogTitle": "按产能和用途选择。",
+    "catalogHelp": "搜索型号或规格，查看详情，最多同时比较三款型号，并将采购数量加入清单。",
+    "search": "搜索设备",
+    "searchPlaceholder": "型号、设备或产能",
+    "all": "所有设备",
+    "results": "找到的型号",
+    "noResults": "没有找到符合条件的设备。",
+    "reset": "重置筛选",
+    "details": "查看规格",
+    "model": "型号",
+    "variant": "功率选项；具体型号待确认",
+    "dimensions": "外形尺寸",
+    "metric": "产能或主要参数",
+    "add": "加入清单",
+    "added": "已加入您的清单。",
+    "compareLimit": "最多同时比较三款型号。请先移除一款，再添加其他型号。",
+    "compareTitle": "比较所选型号。",
+    "compareHelp": "额定产能与外形尺寸并不代表设备在不同安装条件下具有相同表现。",
+    "compareEmpty": "点击产品卡片中的“比较”，最多同时查看三款型号。",
+    "clearCompare": "清空对比",
+    "removeCompare": "移出对比",
+    "price": "供货参考价",
+    "perUnit": "每台",
+    "referenceTier": "该参考价对应的起始数量",
+    "units": "台",
+    "quotePending": "价格及起订量待报价确认",
+    "pendingHelp": "填写所需数量，申请对应报价。",
+    "quoteOnly": "人民币（CNY）参考价，以正式报价为准，并非保证供货的价格。",
+    "priceScope": "提供 8 项人民币供货参考价，各有对应的起始数量。这些并非零售价或最终到货成本，最终起订量、供货情况和配置须在报价时确认。",
+    "priceCosts": "尚未计入运费、保险、税费、关税和当地服务。请在报价中分别核对，不能将与零售价的差额直接视为利润率。",
+    "belowTier": "所选数量低于参考价对应的起始数量，请申请该数量的报价。",
+    "atTier": "所选数量已达到参考价对应数量，最终价格仍须报价确认。",
+    "electricity": "报价时须按选定型号和目的国确认电压、频率、相数、插头及接线方式。仅凭额定功率不能确认电气兼容性。",
+    "catalogPhoto": "目录图片；询价时请确认最终型号配置。",
+    "assortmentTitle": "从可调整的设备组合开始。",
+    "assortmentHelp": "以下数量仅供规划。混合采购的可行性和起订量须按最终组合确认。",
+    "addAssortment": "加入此组合",
+    "assortmentAdded": "组合已加入，请核对清单中的数量。",
+    "marketTitle": "结合条件理解当地价格。",
+    "marketHelp": "以下为 2026 年 9 月保存的观察记录，并非已核实的当前价格。当地商品的品牌、功率、配置、配送和税费范围可能不同。",
+    "observed": "记录的零售价格",
+    "captured": "记录日期",
+    "source": "查看原始来源",
+    "linkedModel": "对应目录型号",
+    "guideTitle": "确认影响采购的关键条件。",
+    "listTitle": "核对设备清单，申请报价。",
+    "listHelp": "填写型号、数量和目的地。提交前可修改清单；提交询价不会创建采购订单。",
+    "emptyList": "清单为空。请从目录选择设备或加入设备组合。",
+    "quantity": "数量",
+    "remove": "移除",
+    "clearList": "清空清单",
+    "quantityHelp": "请输入 1 至 9999 的整数。点击“移除”可删除该型号。",
+    "quantityError": "请输入 1 至 9999 的整数。",
+    "modelCount": "所选型号数",
+    "unitCount": "设备总数",
+    "storageUnavailable": "当前浏览器无法保存清单，您仍可在本页继续操作。",
+    "country": "目的国",
+    "chooseCountry": "选择目的国",
+    "otherCountry": "其他国家",
+    "destinationDetail": "国家名称",
+    "port": "城市或港口（选填）",
+    "buyerType": "买家类型",
+    "company": "公司名称（选填）",
+    "contact": "电话或首选联系方式（选填）",
+    "notes": "预期用途及要求（选填）",
+    "notesHelp": "说明用途，以及所需选配、备件或文件。能否提供须进一步确认。",
+    "name": "您的姓名",
+    "email": "电子邮箱",
+    "review": "核对询价内容",
+    "reviewHelp": "预览会随清单和填写内容更新。DDNZ 将在报价时确认规格及商业条款。",
+    "send": "发送请求",
+    "sending": "正在发送...",
+    "sent": "询价已发送",
+    "simulate": "本地模拟询价",
+    "simulated": "本地模拟已完成",
+    "productionHelp": "提交后，询价内容和联系方式将发送给 DDNZ；这不会直接购买设备。",
+    "previewHelp": "本地预览仅模拟结果，不通过网络发送询价数据。",
+    "success": "询价已发送给 DDNZ，我们将核对需求并准备报价。",
+    "previewSuccess": "本地模拟完成；未发送询价，DDNZ 尚未收到此请求。",
+    "sendError": "询价发送失败。请重试，或打开邮件草稿。",
+    "nameError": "请输入您的姓名。",
+    "emailError": "请输入有效的电子邮箱地址。",
+    "listError": "请至少加入一款设备，并填写有效数量。",
+    "countryError": "请填写目的国。",
+    "draftHelp": "也可在您自己的应用中核对询价内容后再发送。",
+    "whatsapp": "打开 WhatsApp 草稿",
+    "emailDraft": "打开电子邮件草稿",
+    "privacyTitle": "信息用途",
+    "privacy": "您的信息用于处理询价并准备报价，请在发送前核对内容。",
+    "faq": "询价常见问题",
+    "footerDescription": "为进口商、批发商和经销商提供中国商用厨房设备采购支持。"
+  },
+  "categories": {
+    "Ice making": "制冰设备",
+    "Cold storage": "冷藏与冷冻",
+    "Prep counters": "冷藏工作台",
+    "Display cooling": "冷藏展示柜",
+    "Cooking & baking": "烹饪与烘焙",
+    "Beverage equipment": "饮料设备"
+  },
+  "names": {
+    "Commercial cube ice maker": "商用方冰机",
+    "Single-tank electric fryer": "单缸电炸炉",
+    "Twin-tank electric fryer": "双缸电炸炉",
+    "Upright refrigerator": "立式冷藏柜",
+    "Upright freezer": "立式冷冻柜",
+    "Refrigerated workbench": "冷藏工作台",
+    "Electric flat griddle": "电平扒炉",
+    "Glass-door display cooler": "玻璃门冷藏展示柜",
+    "Countertop convection oven": "台式热风烤箱",
+    "Commercial juice extractor": "商用榨汁机",
+    "Two-group tea & coffee machine": "双头茶咖啡机"
+  },
+  "specLabels": {
+    "Daily output": "日产量",
+    "Cubes / cycle": "每周期冰块数",
+    "Water supply": "供水方式",
+    "Tank volume": "油缸容量",
+    "Rated power": "额定功率",
+    "Tanks": "油缸数量",
+    "Capacity": "容量",
+    "Temperature": "温度",
+    "Cooling": "制冷方式",
+    "Brewing groups": "冲煮头数量",
+    "Steam boiler": "蒸汽锅炉",
+    "Extraction boilers": "萃取锅炉",
+    "Cooking plate": "烹饪板",
+    "Surface": "板面",
+    "Trays": "烤盘",
+    "Configuration": "配置"
+  },
+  "values": {
+    "Rated ice production": "额定制冰产量",
+    "Tap or bottled water": "自来水或桶装水",
+    "Forced air": "风冷",
+    "Flat": "平面",
+    "Independent tanks": "独立油缸",
+    "Juice extraction": "榨汁",
+    "Plug-in variant": "插电式版本",
+    "Confirm with quotation": "报价时确认",
+    "2 brewing groups": "2 个冲煮头",
+    "10 L steam boiler": "10 L 蒸汽锅炉",
+    "8 mm cooking plate": "8 mm 烹饪板",
+    "60 L / 4 trays": "60 L / 4 层烤盘",
+    "90 L / 4 trays": "90 L / 4 层烤盘",
+    "435 × 315 mm trays": "435 × 315 mm 烤盘",
+    "600 × 400 mm trays": "600 × 400 mm 烤盘",
+    "500W variant": "500W 版本",
+    "1200W variant": "1200W 版本"
+  },
+  "notes": {
+    "Electrical configuration will be confirmed during quotation.": "电气配置在报价时确认。",
+    "Final configuration is quoted for your destination.": "最终配置按目的地要求报价确认。",
+    "Boiler and electrical options confirmed for the selected model.": "所选型号的锅炉和电气选项须确认。",
+    "Rated output; test conditions to be confirmed.": "额定产量；测试条件待确认。",
+    "Rated output; test conditions to be confirmed. Image represents the 50/AL–50/AB family.": "额定产量；测试条件待确认。图片展示 50/AL–50/AB 系列。",
+    "Power option shown. Model code and final dimensions will be confirmed during quotation.": "所示为功率选项，具体型号和最终尺寸在报价时确认。",
+    "Final size and refrigeration configuration to confirm.": "最终尺寸和制冷配置待确认。",
+    "Final dimensions, bin capacity and configuration to confirm.": "最终尺寸、储冰量和配置待确认。",
+    "500 W standard version; dimensions and material configuration to confirm.": "500 W 标准版，尺寸和材料配置待确认。"
+  },
+  "countries": {
+    "United Arab Emirates": "阿拉伯联合酋长国",
+    "Singapore": "新加坡",
+    "Mexico": "墨西哥"
+  },
+  "buyerTypes": {
+    "importer": "进口商或批发商",
+    "distributor": "经销商",
+    "restaurant": "餐厅或酒店",
+    "other": "其他"
+  },
+  "assortments": [
+    {
+      "name": "台式烹饪设备入门组合",
+      "description": "三款炸炉及扒炉，涵盖单缸和双缸选项。"
+    },
+    {
+      "name": "制冷与饮料设备入门组合",
+      "description": "两种制冰产能，搭配冷藏柜、冷藏工作台和榨汁设备。"
+    }
+  ],
+  "markets": {
+    "United Arab Emirates": {
+      "title": "为阿联酋市场规划设备组合。",
+      "description": "比较所需型号、产能及占地尺寸，再申请目的地报价。",
+      "note": "HZB-50/AB 零售参考的型号代码和主要尺寸相符。扒炉参考仅属于相同品类，不代表型号或板面配置一致。零售参考不保证实际转售价。"
+    },
+    "Singapore": {
+      "title": "为新加坡规划紧凑的设备组合。",
+      "description": "按工作产能和空间尺寸比较台式、制冷及饮料设备。",
+      "note": "零售参考属于 10 L、3 kW 炸炉，但尺寸与 ZH-101V 不同；品牌、结构、最终价格及保修是否相同均未确认。"
+    },
+    "Mexico": {
+      "title": "比较适合墨西哥市场的产能配置。",
+      "description": "从单缸、双缸炸炉开始，根据客户需求加入制冷、制冰或饮料设备。",
+      "note": "零售参考的容量等级相近，但功率与功能不同，不代表当地配置完全一致。墨西哥市场的电气要求须按所选型号在报价时核对。"
+    }
+  },
+  "benchmarks": {
+    "ae-ice": {
+      "name": "COOLBABY HZB-50/AB",
+      "spec": "55 kg / 24h · 每周期 36 块冰",
+      "match": "型号代码和主要尺寸相符。",
+      "difference": "品牌、零部件及保修是否相同尚未确认。",
+      "context": "迪拜观察记录：页面显示含增值税及免费配送。",
+      "capture": "产品详情页。"
+    },
+    "ae-griddle": {
+      "name": "Grace GR-818 电扒炉",
+      "spec": "台式平面扒炉",
+      "match": "相同设备品类。",
+      "difference": "GR-818 与 ZH-818 型号代码不同，须比较尺寸和板面规格。",
+      "context": "迪拜观察记录：显示配送费 AED 34；税费范围未核实。",
+      "capture": "搜索结果价格；详情待核实。"
+    },
+    "mx-fryer20": {
+      "name": "AuFox 20 L 双缸电炸炉",
+      "spec": "总容量 20 L · 1700 W × 2 · 页面标示 110 V",
+      "match": "油缸容量等级相近。",
+      "difference": "功率不同：供货目录为 3 + 3 kW，零售页面为 1.7 + 1.7 kW。",
+      "context": "墨西哥城邮编 11000 的观察记录：显示免费配送；税费范围未核实。",
+      "capture": "搜索结果价格；详情待核实。"
+    },
+    "mx-fryer10": {
+      "name": "NUPANT 10 L 电炸炉",
+      "spec": "10 L · 带计时器 · 1700 W · 页面标示 110 V",
+      "match": "油缸容量等级相近。",
+      "difference": "计时器及功率与供货目录不同，配置并非完全相同。",
+      "context": "墨西哥城邮编 11000 的观察记录：显示免费配送；税费范围未核实。",
+      "capture": "搜索结果价格；详情待核实。"
+    },
+    "sg-fryer10": {
+      "name": "10 L 单缸电炸炉",
+      "spec": "页面标示 10 L · 3000 W · 500 × 280 × 350 mm",
+      "match": "容量和功率等级相近。",
+      "difference": "零售页面标示长度 500 mm，目录底面为 280 × 470 mm；品牌、结构及保修是否相同尚未确认。",
+      "context": "新加坡观察记录：运费在结账时计算，税费范围未说明。",
+      "capture": "零售页面；结账最终价格未核实。"
+    }
+  },
+  "guides": [
+    {
+      "title": "制冰：产量与储冰量",
+      "copy": "每日公斤数表示额定产量，并非储冰量。请核对测试条件，以及安装现场环境温度和进水温度下的预期表现。"
+    },
+    {
+      "title": "制冷：温度与空间",
+      "copy": "区分冷藏和冷冻，核对所选型号的有效容积、外形尺寸、通风空间、进门条件和制冷配置。"
+    },
+    {
+      "title": "烹饪：工作面与容量",
+      "copy": "比较油缸容量、炸篮、扒炉板面、烤盘尺寸和层数。这些参数本身不能直接推算每小时出餐量。"
+    },
+    {
+      "title": "目的地与报价范围",
+      "copy": "比较报价时，保持型号、数量、目的地和用途一致。逐项确认包装、交期、运费、税费、文件及备件或品牌选项，不预设这些选项均可提供。"
+    }
+  ],
+  "faqs": [
+    {
+      "question": "多款设备一起询价，需要什么信息？",
+      "answer": "请提供各型号、数量、目的国、港口和使用要求。报价须确认混合采购的可行性、起订量、包装及交易条件。"
+    },
+    {
+      "question": "显示的人民币金额是最终价格吗？",
+      "answer": "不是。八项供货参考价各有对应数量条件，所选数量与配置的价格，以及运费和适用税费，均须在正式报价中确认。"
+    },
+    {
+      "question": "同一份清单能用于不同国家吗？",
+      "answer": "可以，但应按目的地分别询价。选定型号和目的国后，再确认电压、频率、相数、插头和接线方式。"
+    },
+    {
+      "question": "设备组合中的数量必须照单采购吗？",
+      "answer": "不必。组合数量用于规划且可修改，供货情况、起订量及混合采购可行性按最终组合确认。"
+    }
+  ],
+  "inquiry": {
+    "heading": "DDNZ — 商用厨房设备询价",
+    "subject": "商用厨房设备询价",
+    "destination": "目的地",
+    "buyer": "买家类型",
+    "products": "型号 / 数量",
+    "company": "公司",
+    "contact": "首选联系方式",
+    "requested": "所需型号",
+    "reference": "供货参考价",
+    "tier": "参考数量",
+    "below": "低于参考数量，请按所需数量报价",
+    "notes": "买方要求",
+    "toConfirm": "待确认",
+    "final": "请确认配置、供货情况、起订量、交期和报价条款。所示价格仅为参考，不保证最终报价；生成询价不会创建订单。"
+  },
+  "margin": {
+    "nav": "毛利估算",
+    "title": "用您的数据估算毛利。",
+    "intro": "从八款带供货参考价的型号中选择，填写人民币销售单价及每台额外费用。此工具不会自动换算币种或计算进口费用。",
+    "model": "带供货参考价的型号",
+    "purchase": "每台采购参考价",
+    "selling": "预计销售单价，不含销售税（CNY）",
+    "landed": "每台额外费用：运费、进口费及其他（CNY）",
+    "quantity": "计算数量",
+    "inputHelp": "不要输入千位分隔符。小数可使用点或逗号，最多两位。仅当您预计没有额外费用时才填写 0。",
+    "calculate": "计算估算值",
+    "empty": "填写销售单价和额外费用后查看结果；未预填示例金额。",
+    "sellingError": "售价须大于 0 且不超过 999999999，最多两位小数。",
+    "landedError": "额外费用须为 0 至 999999999，最多两位小数。",
+    "below": "数量低于参考价对应数量，请先申请该数量报价，或调整计算数量。",
+    "result": "人民币估算结果",
+    "grossMargin": "预计毛利率",
+    "grossProfit": "预计毛利润",
+    "grossLoss": "预计毛亏损",
+    "totalCost": "预计总成本",
+    "sellingLabel": "预计销售单价",
+    "costLabel": "预计每台成本",
+    "extras": "预计额外费用",
+    "perOrder": "按所填数量计算",
+    "loss": "预计成本高于售价，结果为毛亏损。",
+    "formula": "毛利率 =（销售单价 − 采购单价 − 每台额外费用）÷ 销售单价；未扣除运营费用及利润税。",
+    "caution": "本结果为买方根据供货参考价进行的估算，以正式报价为准，不保证利润、最终价格、运费、税费或当地服务。",
+    "useQuantity": "将此数量用于我的清单",
+    "used": "计算数量已保存到清单，请核对询价内容。"
+  }
+}

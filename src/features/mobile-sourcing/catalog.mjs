@@ -1,3 +1,4 @@
+import {translatedText,localeCode} from '../site-localization/translate.mjs';
 import { powerProducts } from './power-products.mjs';
 import { alibabaUpdates } from './alibaba-records.mjs';
 import { chainProduct } from './chain.mjs';
@@ -57,10 +58,10 @@ export const mobileProducts=[
 ];
 for(const [id,update] of Object.entries(alibabaUpdates)){const existing=mobileProducts.find(p=>p.id===id);if(existing)Object.assign(existing,update);else mobileProducts.push(update);}
 export const productById=id=>mobileProducts.find(p=>p.id===id);
-export const copyFor=(map,locale='en')=>map?.[locale]??map?.en??'';
+export const copyFor=(map,locale='en')=>map?.[localeCode(locale)]??translatedText(map?.en??'',locale);
 export function referencePrice(product,qty){
  if(!Number.isInteger(qty)||qty<1||qty>1000000||!product?.tiers)return null;
  return [...product.tiers].reverse().find(([min])=>qty>=min)?.[1]??null;
 }
-export function formatNumber(value,locale='en',digits=0){return new Intl.NumberFormat(locale==='es'?'es-MX':locale==='ar'?'ar-AE':'en-US',{maximumFractionDigits:digits,minimumFractionDigits:digits}).format(value);}
-export function formatMoney(value,locale='en',currency='CNY'){return new Intl.NumberFormat(locale==='es'?'es-MX':locale==='ar'?'ar-AE':'en-US',{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);}
+export function formatNumber(value,locale='en',digits=0){return new Intl.NumberFormat(locale==='zh-cn'?'zh-CN':locale,{maximumFractionDigits:digits,minimumFractionDigits:digits}).format(value);}
+export function formatMoney(value,locale='en',currency='CNY'){return new Intl.NumberFormat(locale==='zh-cn'?'zh-CN':locale,{style:'currency',currency,currencyDisplay:'code',minimumFractionDigits:2,maximumFractionDigits:2}).format(value);}

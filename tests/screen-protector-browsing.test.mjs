@@ -65,8 +65,8 @@ test('SPA metadata preserves the global language and replaces canonical and brea
     assert.equal(nodes.filter(node => node.rel === 'canonical').length, 1);
     assert.equal(nodes.find(node => node.rel === 'canonical').href, SITE_ORIGIN + route + '/');
     const alternates = nodes.filter(node => node.rel === 'alternate');
-    assert.equal(alternates.length, ['home','products'].includes(page) ? 4 : 0);
-    assert.ok(!alternates.some(node => node.hreflang === 'fr'), 'untranslated French alternate is removed');
+    assert.equal(alternates.length, page === 'quote' ? 0 : 9);
+    if (page !== 'quote') assert.equal(alternates.find(node => node.hreflang === 'fr').href, SITE_ORIGIN + '/fr' + route + '/');
     assert.equal(nodes.filter(node => node.attributes.name === 'description').length, 1);
     assert.match(nodes.find(node => node.attributes.name === 'robots').content, /noindex/);
     const schemas = nodes.filter(node => node.tag === 'script');

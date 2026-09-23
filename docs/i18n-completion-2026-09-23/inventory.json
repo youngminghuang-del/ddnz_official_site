@@ -1,0 +1,14 @@
+{
+  "route_topics": 106,
+  "existing_versions": 659,
+  "missing_route_versions": 0,
+  "excluded_article_topics": 27,
+  "groups": {
+    "product": 42,
+    "core": 4,
+    "freight": 29,
+    "sourcing-service": 4,
+    "article": 27
+  },
+  "qualification": "URL-based inventory; translated article groups with different slugs require review; existing route presence is not language-content verification"
+}

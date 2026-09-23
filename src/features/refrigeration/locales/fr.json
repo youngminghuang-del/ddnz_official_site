@@ -1,0 +1,50 @@
+{
+  "title": "Achetez du matériel frigorifique professionnel en Chine",
+  "intro": "Transformez température, capacité utile, climat et exploitation en offres comparables en Chine. Confirmez modèle, essais et emballage export.",
+  "families": [
+    [
+      "Armoires verticales et de stockage",
+      "Pour restaurants et hôtels : froid positif, négatif ou deux zones. Exemple source : 860 L, froid direct, 1–8°C / −5 à −18°C, R600a / R290 mentionnés. Confirmez fluide et configuration par modèle. Illustration du produit."
+    ],
+    [
+      "Tables et préparation réfrigérées",
+      "Pour préparation et passe : une à trois portes, plan et bacs GN. Famille source ventilée, 0–10°C. Confirmez disposition des bacs, profondeur et accès technique. Vue d’application."
+    ],
+    [
+      "Vitrines réfrigérées",
+      "Pour boulangerie, commerce et boissons : portes vitrées ou comptoir. Confirmez froid positif ou négatif, air forcé, méthode et cycle de dégivrage ; vérifiez verre, rayonnages, lumière et chargement. Vue de gamme."
+    ],
+    [
+      "Machines à glaçons",
+      "Dimensionnez selon pointe et stockage. Exemple SD-50F : 25 kg/24 h, bac 20 kg, glaçons 22 × 22 × 22 mm, air / eau mentionnés. La fiche ne prouve pas le modèle filmé ; confirmez la version."
+    ]
+  ],
+  "checks": [
+    "Modèle : alignez offre, échantillon et commande sur la même configuration.",
+    "Température : consignez descente, maintien, reprise, consigne et essais ; l’afficheur ne suffit pas.",
+    "Climat et air : vérifiez température, humidité, classe climatique, condensateur et dégagements.",
+    "Électricité et fluide : confirmez tension, fréquence, fiche, puissance et réfrigérant.",
+    "Porte et dégivrage : contrôlez fermeture, joints, évacuation et cycles.",
+    "Emballage et manutention : confirmez coins, caisse, position verticale, dimensions, accès et limites de chargement."
+  ],
+  "steps": [
+    "30/100 : preuves de refroidissement, maintien, reprise et ambiance chaude.",
+    "25/100 : cohérence modèle, composants, électricité et fluide.",
+    "20/100 : maîtrise de fabrication, traitement des problèmes et pièces.",
+    "15/100 : délai étayé, protection et manutention.",
+    "10/100 : prix, conditions et hypothèses à périmètre égal. Méthode illustrative, pas de notes réelles. Identité non vérifiée, modèle divergent, lacunes électriques ou de fluide et échec thermique bloquent la libération."
+  ],
+  "evidence": [
+    "Ligne de glaçons : vidéo existante d’environ 9 secondes ; ne valide pas les performances du modèle choisi.",
+    "Protection : filmage et palette ; confirmez dimensions et maintien vertical de la commande.",
+    "Stockage : les machines emballées ne remplacent pas le contrôle de quantité et d’expédition.",
+    "Air et accès illustratifs. Demandez des relevés à la température et charge prévues ; confirmez nettoyage, joints et évacuation."
+  ],
+  "labels": [
+    "Température ou production quotidienne de glace",
+    "Capacité, charge ou volume de service",
+    "Méthode frigorifique ou condensation",
+    "Documents de production et d’emballage",
+    "Méthode illustrative d’évaluation des fournisseurs"
+  ]
+}

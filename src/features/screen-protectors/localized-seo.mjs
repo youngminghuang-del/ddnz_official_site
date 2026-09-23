@@ -6,7 +6,7 @@ export function localizedScreenProtectorMetadata(locale, page = 'home', { previe
   const copy = phoneCopy(locale);
   const path = localizedPhonePath(locale, page);
   const canonical = `https://www.ddnzglobal.com${path}`;
-  const trail = [{ name: copy.home, item: `https://www.ddnzglobal.com/${locale}/` }, { name: copy.section, item: `https://www.ddnzglobal.com${localizedPhonePath(locale)}` }];
+  const trail = [{ name: copy.home, item: `https://www.ddnzglobal.com/${locale==='zh' || locale==='zh-cn'?'zh-cn':locale}/` }, { name: copy.section, item: `https://www.ddnzglobal.com${localizedPhonePath(locale)}` }];
   if (page === 'compare') trail.push({ name: copy.compare, item: canonical });
   return {
     ...copy.seo[page], locale, language: locale, dir: copy.direction, page, path, canonical, type: 'website',
@@ -20,7 +20,7 @@ export function localizedScreenProtectorMetadata(locale, page = 'home', { previe
 function metadataEntries(meta) {
   return {
     named: { title: meta.title, description: meta.description, robots: meta.robots, 'twitter:card': 'summary_large_image', 'twitter:title': meta.title, 'twitter:description': meta.description, 'twitter:image': meta.image, 'twitter:image:alt': meta.imageAlt, 'twitter:url': meta.canonical },
-    properties: { 'og:type': 'website', 'og:title': meta.title, 'og:description': meta.description, 'og:url': meta.canonical, 'og:image': meta.image, 'og:image:alt': meta.imageAlt, 'og:site_name': 'DDNZ Global', 'og:locale': meta.locale === 'ar' ? 'ar_AR' : 'es_ES' },
+    properties: { 'og:type': 'website', 'og:title': meta.title, 'og:description': meta.description, 'og:url': meta.canonical, 'og:image': meta.image, 'og:image:alt': meta.imageAlt, 'og:site_name': 'DDNZ Global', 'og:locale': ({zh:'zh_CN','zh-cn':'zh_CN',ar:'ar_AR',es:'es_ES',ru:'ru_RU',fr:'fr_FR',pt:'pt_BR',tr:'tr_TR'})[meta.locale] },
   };
 }
 export function renderLocalizedScreenProtectorHead(locale, page = 'home', options = {}) {

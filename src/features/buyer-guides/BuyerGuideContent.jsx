@@ -1,6 +1,7 @@
+import StartupBuyingContent from '../search-intent/StartupBuyingContent';
 import React, { useState, useRef, useId, useEffect } from 'react';
 import { buyerLocales, buyerLocale, buyerGroupPath, buildBuyerPayload, validateBuyerBrief } from './data.mjs';
-import { localizedProductPath } from '../../lib/productLocalization.mjs';
+import { localizedProductPath, hasProductTranslation } from '../../lib/productLocalization.mjs';
 import { currentHostname, isProductionHost, submitInquiry } from '../commercial-kitchen/data/inquiry.mjs';
 import BuyerGuideLinks from './BuyerGuideLinks.jsx';
 
@@ -51,11 +52,13 @@ export function BuyerBriefForm({ guide, locale = 'en', onPrivacy = () => {}, onA
 export default function BuyerGuideContent({ guide, locale = 'en', onPrivacy = () => {}, onAction = (_action) => {} }) {
   const lang = buyerLocale(locale), copy = buyerLocales[lang], page = copy.guides[guide.id];
   const range = localizedProductPath(buyerGroupPath(guide.group), lang);
-  return <main className="buyer-page" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
-    <nav className="buyer-breadcrumbs" aria-label={copy.home}><a href={lang === 'en' ? '/' : `/${lang}/`}>{copy.home}</a><span aria-hidden="true">/</span><a href={range}>{copy[guide.group]}</a><span aria-hidden="true">/</span><span aria-current="page">{page.card}</span></nav>
-    <section className="buyer-hero"><div><p className="buyer-eyebrow">{page.eyebrow}</p><h1>{page.heading}</h1><p className="buyer-lead">{page.intro}</p><div className="buyer-actions"><a className="buyer-button" href="#buyer-brief" onClick={() => onAction('start_brief')}>{copy.open}<span aria-hidden="true">→</span></a><a className="buyer-secondary" href={range} onClick={() => onAction('view_range')}>{copy.range} ↗</a></div></div><figure><img src={guide.image} alt={copy[guide.group]} width="900" height="675" fetchPriority="high" /></figure></section>
+  const rangeSuffix = hasProductTranslation(buyerGroupPath(guide.group),lang) ? '' : ` (${copy.english})`;
+  return <main id="main-content" className="buyer-page" lang={lang === 'zh' ? 'zh-CN' : lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+    <nav className="buyer-breadcrumbs" aria-label={copy.home}><a href={lang === 'en' ? '/' : `/${lang === 'zh' ? 'zh-cn' : lang}/`}>{copy.home}</a><span aria-hidden="true">/</span><a href={range}>{copy[guide.group]}{rangeSuffix}</a><span aria-hidden="true">/</span><span aria-current="page">{page.card}</span></nav>
+    <section className="buyer-hero"><div><p className="buyer-eyebrow">{page.eyebrow}</p><h1>{page.heading}</h1><p className="buyer-lead">{page.intro}</p><div className="buyer-actions"><a className="buyer-button" href="#buyer-brief" onClick={() => onAction('start_brief')}>{copy.open}<span aria-hidden="true">→</span></a><a className="buyer-secondary" href={range} onClick={() => onAction('view_range')}>{copy.range}{rangeSuffix} ↗</a></div></div><figure><img src={guide.image} alt={copy[guide.group]} width="900" height="675" fetchPriority="high" /></figure></section>
+    <StartupBuyingContent kind={guide.id} locale={lang} />
     <section className="buyer-steps"><h2>{copy.stepsTitle}</h2><div>{page.steps.map(([title, body], index) => <article key={title}><span className="buyer-step-number" aria-hidden="true">{new Intl.NumberFormat(lang).format(index + 1).padStart(2, lang === 'ar' ? '٠' : '0')}</span><h3>{title}</h3><p>{body}</p></article>)}</div></section>
-    <div className="buyer-content-columns"><section className="buyer-faq"><h2>{copy.faqTitle}</h2>{page.faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}<a className="buyer-secondary" href={range + (guide.group === 'kitchen' ? '#commercial-kitchen-equipment' : 'compare/')} onClick={() => onAction('view_range')}>{copy.range} ↗</a></section>
+    <div className="buyer-content-columns"><section className="buyer-faq"><h2>{copy.faqTitle}</h2>{page.faqs.map(([question, answer]) => <details key={question}><summary>{question}</summary><p>{answer}</p></details>)}<a className="buyer-secondary" href={range + (guide.group === 'kitchen' ? '#commercial-kitchen-equipment' : 'compare/')} onClick={() => onAction('view_range')}>{copy.range}{rangeSuffix} ↗</a></section>
       <BuyerBriefForm guide={guide} locale={lang} onPrivacy={onPrivacy} onAction={onAction} /></div>
     <BuyerGuideLinks group={guide.group} locale={lang} exclude={guide.id} />
   </main>;

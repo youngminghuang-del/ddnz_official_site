@@ -1,48 +1,258 @@
 {
-  "home":"Home", "kitchen":"Commercial kitchen equipment", "phone":"Screen protectors",
-  "entryTitle":"What are you buying for?", "entryIntro":"Start with the way you sell or use the products. Build a request around your next order.",
-  "open":"Plan this purchase", "range":"Explore the range", "stepsTitle":"Put your next order together.", "modelsTitle":"Start with these products", "faqTitle":"Before you ask for a quote", "briefTitle":"Tell us about your purchase.", "briefIntro":"Add the details you know. We will review the products and quantities before confirming availability and commercial terms.",
-  "form":{"name":"Your name", "email":"Work email", "company":"Company (optional)", "country":"Destination country", "countryHint":"For example: United Arab Emirates, Singapore or Mexico", "notes":"Anything else to include? (optional)", "review":"Review your request", "send":"Send enquiry", "simulate":"Preview enquiry", "sending":"Sending…", "sent":"Enquiry sent", "previewed":"Preview complete", "required":"Please complete this field.", "invalidEmail":"Enter a valid email address.", "success":"Your enquiry was submitted. Our team will review the brief before preparing a quotation.", "preview":"Preview completed in this browser. No enquiry has been sent.", "error":"We could not send your enquiry. Please try again.", "privacy":"Privacy policy", "privacyCopy":"We use your contact details and buying requirements to respond to your enquiry.", "scope":"Sending a request does not place an order.", "previewScope":"Local preview: this form simulates submission without sending a message.", "request":"Purchase request", "notesLabel":"Additional requirements"},
-  "guides":{
-    "kitchen-distributors":{
-      "title":"Kitchen Equipment for Distributors | China Sourcing | DDNZ",
-      "description":"Plan kitchen equipment for resale: compare models, order quantities, packing and spare-parts requests. Build a distributor sourcing brief with DDNZ.",
-      "eyebrow":"FOR IMPORTERS & EQUIPMENT DEALERS", "heading":"Build a range your customers can buy again.",
-      "intro":"Bring together the equipment your customers ask for, then compare each model on the same purchasing basis. Start with a trial line, a restock or a broader assortment.",
-      "card":"Kitchen equipment distributors", "cardCopy":"Choose your first range, plan repeat orders and ask about packing and spare parts.",
-      "steps":[["Choose the role of each model","Separate an entry model from a larger-capacity option. For ice machines, compare rated daily output and footprint; for fryers, compare each tank. Add expected quantities before judging the price."],["Compare the order behind the price","Reference prices apply to the quantity shown on the product. Ask for the same configuration, packing and delivery scope across suppliers. A mixed sourcing list still needs confirmation of each model’s minimum and availability."],["Prepare for the next sale","Include manuals, carton identification and the spare parts you want quoted. Ask which parts can be ordered again and what the warranty process requires. Local installation and service arrangements belong in your own resale plan."]],
-      "faqs":[["Can I combine ice machines, fryers and refrigeration?","Yes, you can request a mixed selection. Factory minimums, packing, consolidation and shipping are confirmed for the actual combination."],["Are the displayed prices distributor quotations?","They are indicative references with their own order quantities. Your quotation confirms the selected models, quantities, currency and delivery scope."],["Do I need electrical details before making the list?","Start with models, quantities and destination. We confirm voltage, frequency, phase and plug for the selected equipment during quotation."]],
-      "fields":[{"key":"range","label":"Equipment and quantities","hint":"Model codes or equipment types, with units per model"},{"key":"stage","label":"What is this order for?","hint":"Trial order, restock or range expansion"},{"key":"support","label":"Packing and after-sales requests","hint":"Manuals, spare parts or carton labels to include in the quote"}]
+  "home": "Home",
+  "kitchen": "Commercial kitchen equipment",
+  "phone": "Screen protectors",
+  "entryTitle": "What are you buying for?",
+  "entryIntro": "Start with the way you sell or use the products. Build a request around your next order.",
+  "open": "Plan this purchase",
+  "range": "Explore the range",
+  "stepsTitle": "Put your next order together.",
+  "modelsTitle": "Start with these products",
+  "faqTitle": "Before you ask for a quote",
+  "briefTitle": "Tell us about your purchase.",
+  "briefIntro": "Add the details you know. We will review the products and quantities before confirming availability and commercial terms.",
+  "form": {
+    "name": "Your name",
+    "email": "Work email",
+    "company": "Company (optional)",
+    "country": "Destination country",
+    "countryHint": "For example: United Arab Emirates, Singapore or Mexico",
+    "notes": "Anything else to include? (optional)",
+    "review": "Review your request",
+    "send": "Send enquiry",
+    "simulate": "Preview enquiry",
+    "sending": "Sending…",
+    "sent": "Enquiry sent",
+    "previewed": "Preview complete",
+    "required": "Please complete this field.",
+    "invalidEmail": "Enter a valid email address.",
+    "success": "Your enquiry was submitted. Our team will review the brief before preparing a quotation.",
+    "preview": "Preview completed in this browser. No enquiry has been sent.",
+    "error": "We could not send your enquiry. Please try again.",
+    "privacy": "Privacy policy",
+    "privacyCopy": "We use your contact details and buying requirements to respond to your enquiry.",
+    "scope": "Sending a request does not place an order.",
+    "previewScope": "Local preview: this form simulates submission without sending a message.",
+    "request": "Purchase request",
+    "notesLabel": "Additional requirements"
+  },
+  "guides": {
+    "kitchen-distributors": {
+      "title": "Kitchen Equipment for Distributors | China Sourcing | DDNZ",
+      "description": "Plan kitchen equipment for resale: compare models, order quantities, packing and spare-parts requests. Build a distributor sourcing brief with DDNZ.",
+      "eyebrow": "FOR IMPORTERS & EQUIPMENT DEALERS",
+      "heading": "Build a range your customers can buy again.",
+      "intro": "Source wholesale kitchen equipment from China for your distribution range. Bring together the equipment your customers ask for, then compare each model on the same purchasing basis. Start with a trial line, a restock or a broader assortment.",
+      "card": "Kitchen equipment distributors",
+      "cardCopy": "Choose your first range, plan repeat orders and ask about packing and spare parts.",
+      "steps": [
+        [
+          "Choose the role of each model",
+          "Separate an entry model from a larger-capacity option. For ice machines, compare rated daily output and footprint; for fryers, compare each tank. Add expected quantities before judging the price."
+        ],
+        [
+          "Compare the order behind the price",
+          "Reference prices apply to the quantity shown on the product. Ask for the same configuration, packing and delivery scope across suppliers. A mixed sourcing list still needs confirmation of each model’s minimum and availability."
+        ],
+        [
+          "Prepare for the next sale",
+          "Include manuals, carton identification and the spare parts you want quoted. Ask which parts can be ordered again and what the warranty process requires. Local installation and service arrangements belong in your own resale plan."
+        ]
+      ],
+      "faqs": [
+        [
+          "Can I combine ice machines, fryers and refrigeration?",
+          "Yes, you can request a mixed selection. Factory minimums, packing, consolidation and shipping are confirmed for the actual combination."
+        ],
+        [
+          "Are the displayed prices distributor quotations?",
+          "They are indicative references with their own order quantities. Your quotation confirms the selected models, quantities, currency and delivery scope."
+        ],
+        [
+          "Do I need electrical details before making the list?",
+          "Start with models, quantities and destination. We confirm voltage, frequency, phase and plug for the selected equipment during quotation."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "range",
+          "label": "Equipment and quantities",
+          "hint": "Model codes or equipment types, with units per model"
+        },
+        {
+          "key": "stage",
+          "label": "What is this order for?",
+          "hint": "Trial order, restock or range expansion"
+        },
+        {
+          "key": "support",
+          "label": "Packing and after-sales requests",
+          "hint": "Manuals, spare parts or carton labels to include in the quote"
+        }
+      ]
     },
-    "restaurant-projects":{
-      "title":"Restaurant Project Equipment from China | DDNZ Global",
-      "description":"Prepare an equipment sourcing brief for restaurant, café or hotel projects. Compare footprints, list quantities and confirm configurations before ordering.",
-      "eyebrow":"FOR PROJECT BUYERS & KITCHEN CONTRACTORS", "heading":"Turn an equipment list into a coordinated order.",
-      "intro":"Share the project, the spaces and the equipment you need. We help organize sourcing around a defined list so model choices and delivery requirements can be reviewed together.",
-      "card":"Restaurant & hospitality projects", "cardCopy":"Bring a project equipment list, available space and delivery requirements.",
-      "steps":[["Define the work each station does","Group the list into cooking, cold storage, preparation and drinks. Note what is already specified and where you need alternatives. Send equipment quantities and available counter or cabinet space."],["Check the interfaces","Review overall dimensions, door clearance, ventilation, drainage and utility connections for selected models. Site suitability and installation plans should be confirmed with your project team before purchase."],["Agree the order and handover scope","Include the destination, requested delivery window and any need to identify cartons by site or station. Ask which documents and packing details can accompany the shipment. Lead times and coordinated dispatch depend on the selected suppliers."]],
-      "faqs":[["Can you quote against my existing equipment schedule?","Yes. Include model references or descriptions and quantities in the request. Mark items that are fixed and items where alternatives are welcome."],["Can I request a complete kitchen installation?","This page covers equipment sourcing and export coordination. Tell us any installation needs so responsibilities can be clarified in the quotation; local installation is not included by default."],["What if the opening date is already fixed?","Include your requested date and destination. Production, consolidation, transit and local delivery need to be checked before a delivery commitment is made."]],
-      "fields":[{"key":"project","label":"Project and number of sites","hint":"Restaurant, café, hotel or central kitchen; one site or several"},{"key":"equipment","label":"Equipment list and available space","hint":"Equipment, quantity, model references and key dimensions"},{"key":"timing","label":"Requested delivery window","hint":"Target date, receiving location and any staged deliveries"}]
+    "restaurant-projects": {
+      "title": "Restaurant Project Equipment from China | DDNZ Global",
+      "description": "Prepare an equipment sourcing brief for restaurant, café or hotel projects. Compare footprints, list quantities and confirm configurations before ordering.",
+      "eyebrow": "FOR PROJECT BUYERS & KITCHEN CONTRACTORS",
+      "heading": "Turn an equipment list into a coordinated order.",
+      "intro": "Source restaurant project equipment from China against your equipment schedule. Share the project, the spaces and the equipment you need. We help organize sourcing around a defined list so model choices and delivery requirements can be reviewed together.",
+      "card": "Restaurant & hospitality projects",
+      "cardCopy": "Bring a project equipment list, available space and delivery requirements.",
+      "steps": [
+        [
+          "Define the work each station does",
+          "Group the list into cooking, cold storage, preparation and drinks. Note what is already specified and where you need alternatives. Send equipment quantities and available counter or cabinet space."
+        ],
+        [
+          "Check the interfaces",
+          "Review overall dimensions, door clearance, ventilation, drainage and utility connections for selected models. Site suitability and installation plans should be confirmed with your project team before purchase."
+        ],
+        [
+          "Agree the order and handover scope",
+          "Include the destination, requested delivery window and any need to identify cartons by site or station. Ask which documents and packing details can accompany the shipment. Lead times and coordinated dispatch depend on the selected suppliers."
+        ]
+      ],
+      "faqs": [
+        [
+          "Can you quote against my existing equipment schedule?",
+          "Yes. Include model references or descriptions and quantities in the request. Mark items that are fixed and items where alternatives are welcome."
+        ],
+        [
+          "Can I request a complete kitchen installation?",
+          "This page covers equipment sourcing and export coordination. Tell us any installation needs so responsibilities can be clarified in the quotation; local installation is not included by default."
+        ],
+        [
+          "What if the opening date is already fixed?",
+          "Include your requested date and destination. Production, consolidation, transit and local delivery need to be checked before a delivery commitment is made."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "project",
+          "label": "Project and number of sites",
+          "hint": "Restaurant, café, hotel or central kitchen; one site or several"
+        },
+        {
+          "key": "equipment",
+          "label": "Equipment list and available space",
+          "hint": "Equipment, quantity, model references and key dimensions"
+        },
+        {
+          "key": "timing",
+          "label": "Requested delivery window",
+          "hint": "Target date, receiving location and any staged deliveries"
+        }
+      ]
     },
-    "phone-stores":{
-      "title":"Wholesale Screen Protectors for Stores & Chains | DDNZ",
-      "description":"Plan screen protectors for accessory stores and repair chains. Compare phone-model minimums, installation kits and packing before requesting a bulk order.",
-      "eyebrow":"FOR ACCESSORY STORES & REPAIR CHAINS", "heading":"Plan the phone mix before you place the order.",
-      "intro":"Build a replenishment list around the phones your stores actually serve. Compare clear and privacy options, installation methods and quantities per phone model.",
-      "card":"Accessory stores & repair chains", "cardCopy":"Plan model coverage, installation and repeat orders across your stores.",
-      "steps":[["Write down the exact phone models","Include the phone name and generation, then assign a quantity to each protector and phone combination. Avoid treating all variants of one phone series as the same fit. The existing product minimums still apply."],["Match the protector to the sale","Compare a privacy option with a clear option and decide whether store staff or the customer will install it. Confirm the installer, cleaning accessories and retail package against the selected product."],["Plan stock by store or central warehouse","Tell us how you want the shipment allocated. Carton quantities, mixed-model packing and store labels need to be checked before dispatch. Keep a confirmed sample and model list for your next replenishment."]],
-      "faqs":[["Can several stores share one order?","You can submit a combined request. Product and phone-model minimums still apply; store allocation and packing are confirmed with the quotation."],["Can I assume every phone model is available?","No. The exact phone-model list, fit and availability must be confirmed for the products you choose."],["Do the prices include shipping to my country?","Product references do not include a destination quotation. State your country and quantities. The separate English freight calculator uses an Istanbul reference only."]],
-      "fields":[{"key":"stores","label":"Stores and receiving arrangement","hint":"Number of stores; central warehouse or separate allocations"},{"key":"models","label":"Protector types, phone models and quantities","hint":"Clear/privacy, exact phone model and pieces for each combination"},{"key":"packing","label":"Installation and packing needs","hint":"Store installation, customer installation, retail kit or carton labels"}]
+    "phone-stores": {
+      "title": "Wholesale Screen Protectors for Stores & Chains | DDNZ",
+      "description": "Plan screen protectors for accessory stores and repair chains. Compare phone-model minimums, installation kits and packing before requesting a bulk order.",
+      "eyebrow": "FOR ACCESSORY STORES & REPAIR CHAINS",
+      "heading": "Plan the phone mix before you place the order.",
+      "intro": "Buy wholesale screen protectors from China for phone stores and repair chains. Build a replenishment list around the phones your stores actually serve. Compare clear and privacy options, installation methods and quantities per phone model.",
+      "card": "Accessory stores & repair chains",
+      "cardCopy": "Plan model coverage, installation and repeat orders across your stores.",
+      "steps": [
+        [
+          "Write down the exact phone models",
+          "Include the phone name and generation, then assign a quantity to each protector and phone combination. Avoid treating all variants of one phone series as the same fit. The existing product minimums still apply."
+        ],
+        [
+          "Match the protector to the sale",
+          "Compare a privacy option with a clear option and decide whether store staff or the customer will install it. Confirm the installer, cleaning accessories and retail package against the selected product."
+        ],
+        [
+          "Plan stock by store or central warehouse",
+          "Tell us how you want the shipment allocated. Carton quantities, mixed-model packing and store labels need to be checked before dispatch. Keep a confirmed sample and model list for your next replenishment."
+        ]
+      ],
+      "faqs": [
+        [
+          "Can several stores share one order?",
+          "You can submit a combined request. Product and phone-model minimums still apply; store allocation and packing are confirmed with the quotation."
+        ],
+        [
+          "Can I assume every phone model is available?",
+          "No. The exact phone-model list, fit and availability must be confirmed for the products you choose."
+        ],
+        [
+          "Do the prices include shipping to my country?",
+          "Product references do not include a destination quotation. State your country and quantities. The separate English freight calculator uses an Istanbul reference only."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "stores",
+          "label": "Stores and receiving arrangement",
+          "hint": "Number of stores; central warehouse or separate allocations"
+        },
+        {
+          "key": "models",
+          "label": "Protector types, phone models and quantities",
+          "hint": "Clear/privacy, exact phone model and pieces for each combination"
+        },
+        {
+          "key": "packing",
+          "label": "Installation and packing needs",
+          "hint": "Store installation, customer installation, retail kit or carton labels"
+        }
+      ]
     },
-    "private-label":{
-      "title":"Private Label Screen Protector Sourcing | DDNZ Global",
-      "description":"Request screen protectors for your own brand. Define glass, installation kits, packaging, phone models and sample checks before a private label quotation.",
-      "eyebrow":"FOR OWN-BRAND & ONLINE SELLERS", "heading":"Build the product behind your brand.",
-      "intro":"Use the current screen-protector range as a starting point. Describe the product, packaging and customer experience you want, then request a supplier review of the changes.",
-      "card":"Your own screen-protector brand", "cardCopy":"Define the protector, installation kit and packaging you want quoted.",
-      "steps":[["Specify the product first","Choose clear or privacy glass, the intended phone models and the installation format. Use samples to review fit, edge coverage, touch response and case compatibility before approving a production specification."],["Separate product and packaging changes","Describe whether you need a label, printed retail box, instructions or a different accessory set. Branding availability, artwork requirements, setup charges and minimums are confirmed by the selected supplier."],["Approve a repeatable specification","Agree the sample, artwork version, packing list and inspection points. List any barcode or channel-label requirements you need reviewed. Approval for a particular sales platform is not implied by a packaging request."]],
-      "faqs":[["Is custom packaging already included in the reference price?","No. The displayed product references cover the described options. Any custom packaging, printing or tooling requires a separate confirmed quotation."],["Is there a fixed private-label minimum order?","Custom requirements may change minimum quantities. Share the quantity by phone model and the packaging changes so the supplier can review them."],["Can I request a sample before a bulk order?","Yes. Ask for the sample configuration, cost and delivery arrangement. Confirm it against your intended phone models and packaging before approving a larger order."]],
-      "fields":[{"key":"brand","label":"Brand and intended sales channel","hint":"Your brand, stores or online sales channel"},{"key":"product","label":"Product, phone models and quantities","hint":"Clear/privacy, installer type and quantity by exact phone model"},{"key":"customization","label":"Changes and sample requests","hint":"Logo label, retail box, instructions, accessories or approval sample"}]
+    "private-label": {
+      "title": "Private Label Screen Protector Sourcing | DDNZ Global",
+      "description": "Request screen protectors for your own brand. Define glass, installation kits, packaging, phone models and sample checks before a private label quotation.",
+      "eyebrow": "FOR OWN-BRAND & ONLINE SELLERS",
+      "heading": "Build the product behind your brand.",
+      "intro": "Source private-label screen protectors from China with product and packaging specifications for your brand. Use the current screen-protector range as a starting point. Describe the product, packaging and customer experience you want, then request a supplier review of the changes.",
+      "card": "Your own screen-protector brand",
+      "cardCopy": "Define the protector, installation kit and packaging you want quoted.",
+      "steps": [
+        [
+          "Specify the product first",
+          "Choose clear or privacy glass, the intended phone models and the installation format. Use samples to review fit, edge coverage, touch response and case compatibility before approving a production specification."
+        ],
+        [
+          "Separate product and packaging changes",
+          "Describe whether you need a label, printed retail box, instructions or a different accessory set. Branding availability, artwork requirements, setup charges and minimums are confirmed by the selected supplier."
+        ],
+        [
+          "Approve a repeatable specification",
+          "Agree the sample, artwork version, packing list and inspection points. List any barcode or channel-label requirements you need reviewed. Approval for a particular sales platform is not implied by a packaging request."
+        ]
+      ],
+      "faqs": [
+        [
+          "Is custom packaging already included in the reference price?",
+          "No. The displayed product references cover the described options. Any custom packaging, printing or tooling requires a separate confirmed quotation."
+        ],
+        [
+          "Is there a fixed private-label minimum order?",
+          "Custom requirements may change minimum quantities. Share the quantity by phone model and the packaging changes so the supplier can review them."
+        ],
+        [
+          "Can I request a sample before a bulk order?",
+          "Yes. Ask for the sample configuration, cost and delivery arrangement. Confirm it against your intended phone models and packaging before approving a larger order."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "brand",
+          "label": "Brand and intended sales channel",
+          "hint": "Your brand, stores or online sales channel"
+        },
+        {
+          "key": "product",
+          "label": "Product, phone models and quantities",
+          "hint": "Clear/privacy, installer type and quantity by exact phone model"
+        },
+        {
+          "key": "customization",
+          "label": "Changes and sample requests",
+          "hint": "Logo label, retail box, instructions, accessories or approval sample"
+        }
+      ]
     }
-  }
+  },
+  "english": "English"
 }

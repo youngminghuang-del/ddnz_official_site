@@ -11,7 +11,7 @@ import BuyerGuideContent from './BuyerGuideContent.jsx';
 
 export default function BuyerGuidePage() {
   const { pathname } = useLocation();
-  const guide = buyerGuideForPath(pathname), locale = productRouteParts(pathname).locale as 'en' | 'es' | 'ar';
+  const guide = buyerGuideForPath(pathname), locale = productRouteParts(pathname).locale as 'en' | 'es' | 'ar' | 'zh' | 'ru' | 'fr' | 'pt' | 'tr';
   const [legal, setLegal] = useState<LegalType>(null);
   useEffect(() => {
     if (!guide) return;
@@ -24,7 +24,7 @@ export default function BuyerGuidePage() {
   const meta = buyerMeta(guide, locale);
   return <><SEO title={meta.title} description={meta.description} image={meta.image} canonicalPath={meta.path} contentLanguage={locale} alternateUrls={productAlternates(guide.path)} />
     <SourcingHomepageNav quotePath={`${meta.path}#buyer-brief`} />
-    <BuyerGuideContent key={guide.id} guide={guide} locale={locale} onPrivacy={() => setLegal('privacy')} onAction={(action: string) => {
+    <BuyerGuideContent key={`${guide.id}-${locale}`} guide={guide} locale={locale} onPrivacy={() => setLegal('privacy')} onAction={(action: string) => {
       const payload = buyerJourneyAnalytics(guide.id, locale, action); if (payload) trackEvent(payload.event, payload.params);
     }} />
     <Footer quotePath={`${meta.path}#buyer-brief`} pageKey={guide.id} />

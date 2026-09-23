@@ -14,6 +14,7 @@ async function fixture() {
   const project = await fs.mkdtemp(path.join(os.tmpdir(), 'ddnz-build-chain-'));
   await fs.mkdir(path.join(project, 'scripts'));
   await fs.mkdir(path.join(project, 'src/features'), { recursive: true });
+  await fs.cp(path.join(root, 'src/features/site-localization'), path.join(project, 'src/features/site-localization'), { recursive: true });
   await fs.mkdir(path.join(project, 'dist'));
   await fs.mkdir(path.join(project, 'public'));
   await fs.writeFile(path.join(project, 'package.json'), '{"type":"module"}');
@@ -21,6 +22,9 @@ async function fixture() {
   await fs.cp(path.join(root, 'src/features/screen-protectors'), path.join(project, 'src/features/screen-protectors'), { recursive: true });
   await fs.mkdir(path.join(project, 'src/features/buyer-guides/locales'), { recursive: true });
   await fs.copyFile(path.join(root, 'src/features/buyer-guides/locales/en.json'), path.join(project, 'src/features/buyer-guides/locales/en.json'));
+  await fs.mkdir(path.join(project, 'src/features/commercial-kitchen'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/features/commercial-kitchen/routes.mjs'), path.join(project, 'src/features/commercial-kitchen/routes.mjs'));
+  await fs.cp(path.join(root, 'src/features/food-processing'), path.join(project, 'src/features/food-processing'), { recursive: true });
   await fs.mkdir(path.join(project, 'src/lib'), { recursive: true });
   await fs.mkdir(path.join(project, 'src/features/mobile-sourcing'), { recursive: true });
   await fs.copyFile(path.join(root, 'src/features/mobile-sourcing/routes.mjs'), path.join(project, 'src/features/mobile-sourcing/routes.mjs'));
@@ -36,7 +40,7 @@ function run(project, cwd = project) {
 }
 test('ordinary npm build preserves its pipeline and finishes with SEO and deployment inventory checks', async () => {
   const pkg = JSON.parse(await fs.readFile(path.join(root, 'package.json'), 'utf8'));
-  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/audit-seo-output.mjs', 'node scripts/audit-deployment-files.mjs'];
+  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/prerender-country-pages.mjs', 'node scripts/prerender-core-pages.mjs', 'node scripts/check-country-prerender.mjs', 'node scripts/check-core-prerender.mjs', 'node scripts/audit-seo-output.mjs', 'node scripts/audit-deployment-files.mjs'];
   assert.deepEqual(pkg.scripts.build.split(' && '), expected);
   assert.doesNotMatch(pkg.scripts['build:preview'], /fetch-notion|npm run deploy|deploy-pages|git push|push-indexnow|push-baidu/);
   assert.ok(pkg.scripts['build:preview'].endsWith('node scripts/audit-deployment-files.mjs && node scripts/stage-local-preview.mjs'));

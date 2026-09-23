@@ -1,3 +1,4 @@
+import StartupBuyingContent from '../search-intent/StartupBuyingContent';
 import { powerProducts } from './power-products.mjs';
 import { hubProductIds, defaultGroupSize } from './hub-selection.mjs';
 import { productById, filmProducts, rowKey, minimumNote, mixedCopy } from './mixed-products.mjs';
@@ -129,7 +130,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  const requestInspection=id=>setDraft(d=>({...d,inspectionChecks:[...new Set([...d.inspectionChecks,id])]}));
  const add=id=>{if(draft.rows.some(r=>r.id===id)){document.getElementById('buying-brief')?.scrollIntoView({behavior:'smooth'});return;}if(draft.rows.length>=100)return;const p=productById(id);setDraft(d=>({...d,rows:[...d.rows,{id,quantity:String(p.addQty||p.tiers?.[0][0]||100),model:p.group==='power'?p.sourceRecord.model:'',colours:''}]}));onAction('add_style');};
  return <main className={'ms-page ms-'+pageId} lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
- <nav className="ms-breadcrumbs" aria-label={c('home')}><a href={locale==='en'?'/':`/${locale}/`}>{c('home')}</a><span>/</span><a href="/products/">{c('products')}</a>{pageId!=='hub'&&<><span>/</span><a href={link('hub',locale)}>{c('hub')}</a></>}<span>/</span><span aria-current="page">{c(pageId)}</span></nav>
+ <nav className="ms-breadcrumbs" aria-label={c('home')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{c('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{c('products')}</a>{pageId!=='hub'&&<><span>/</span><a href={link('hub',locale)}>{c('hub')}</a></>}<span>/</span><span aria-current="page">{c(pageId)}</span></nav>
  <section className="ms-hero"><div><p className="ms-eyebrow">{copyFor(page.eyebrow,locale)}</p><h1>{copyFor(page.heading,locale)}</h1><p className="ms-lead">{copyFor(page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?copyFor({en:'Build my sourcing request',es:'Preparar mi solicitud',ar:'إعداد طلب التوريد'},locale):c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#collection':'#buying-brief'} className="ms-secondary">{pageId==='hub'?c('comparison'):c('brief')} ↗</a></div></div><figure><img src={page.image} alt={c(pageId==='compare'?'cases':pageId)} width="1200" height="1200" fetchPriority="high"/><figcaption>{c(pageId==='straps'?'set':pageId==='hub'?'cases':pageId==='compare'?'checks':'style')}</figcaption></figure></section>
  <MobileCategoryLinks locale={locale} current={pageId}/>
  {pageId==='hub'&&<section id="categories" className="ms-section"><div className="ms-section-head"><h2>{c('range')}</h2></div><div className="ms-families">{[
@@ -155,5 +156,6 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  <Calculator locale={locale} input={draft.calculator} onChange={v=>setDraft(d=>({...d,calculator:v}))} onAction={onAction}/>
 
  <section className="ms-section ms-related"><h2>{c('related')}</h2><MobileCategoryLinks locale={locale}/><div>{mobileArticleSlugs.map((slug,i)=><a href={'/blog/'+slug+'/'} key={slug}><small>{c('englishArticle')}</small>{['Mixed-SKU cases: MOQ, packing and reorders','Magnetic phone cases: dealer verification','Ring stands: four-sample comparison'][i]} ↗</a>)}</div></section>
+ {['hub','cases'].includes(pageId) && <StartupBuyingContent kind={pageId} locale={locale} />}
  </main>;
 }

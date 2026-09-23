@@ -128,18 +128,18 @@ test('ES/AR switches preserve models, quantities, destination and buyer notes in
   }
 });
 
-test('all four route transitions restore grouped quantities from the saved locale and keep invalid inputs invalid', () => {
+test('all fourteen route transitions restore grouped quantities from the saved locale and keep invalid inputs invalid', () => {
   const expected = { rows:[{product:'001',model:'iPhone 16 Pro',qty:1000}],
     destination:'Ciudad de México, México',notes:'Caja azul\nاختبار العينة' };
   for (const from of LOCALIZED_SCREEN_PROTECTOR_ROUTES) for (const to of LOCALIZED_SCREEN_PROTECTOR_ROUTES) {
     const storage=memory();
-    const draft={...expected,rows:[{...expected.rows[0],qty:from.locale==='es'?'1.000':'١٬٠٠٠'}]};
+    const draft={...expected,rows:[{...expected.rows[0],qty:phoneNumber(from.locale,1000)}]};
     storage.setItem(localizedDraftKey(from.locale),JSON.stringify({locale:from.locale,draft}));
     const restored=restoreLocalizedDraft(JSON.parse(storage.getItem(localizedDraftKey(to.locale))),to.locale);
     assert.deepEqual(validateLocalizedSelection(to.locale,restored).state,expected,`${from.path} → ${to.path}`);
     if(from.locale!==to.locale) assert.equal(restored.rows[0].qty,phoneNumber(to.locale,1000));
 
-    for(const invalid of [from.locale==='es'?'1,000':'1.000','١٢x','一千','500.5']) {
+    for(const invalid of [['es','pt','tr'].includes(from.locale)?'1,000':'1.000','١٢x','一千','500.5']) {
       const input={...draft,rows:[{...draft.rows[0],qty:invalid}]};
       const recovered=restoreLocalizedDraft({locale:from.locale,draft:input},to.locale);
       assert.equal(recovered.destination,expected.destination);
@@ -155,13 +155,13 @@ test('all four route transitions restore grouped quantities from the saved local
 
 test('localized analytics accept only three fixed actions and never forward buyer input', () => {
   const actions=['select_configuration','create_brief','continue_inquiry'];
-  for(const locale of ['es','ar']) for(const action of actions) {
+  for(const locale of ['zh','es','ar','ru','fr','pt','tr']) for(const action of actions) {
     assert.deepEqual(localizedScreenProtectorJourneyAnalytics(locale,action),{
       event:'screen_protector_journey', params:{content_group:'screen_protectors',journey_action:action,content_language:locale},
     });
   }
   for(const action of ['read_guide','calculator_change','select','email@example.com','?source=buyer',{},null,undefined]) assert.equal(localizedScreenProtectorJourneyAnalytics('es',action),null);
-  for(const locale of ['en','fr','buyer@example.com',{},null]) assert.equal(localizedScreenProtectorJourneyAnalytics(locale,actions[0]),null);
+  for(const locale of ['en','de','buyer@example.com',{},null]) assert.equal(localizedScreenProtectorJourneyAnalytics(locale,actions[0]),null);
   const events=[];
   const report=createScreenProtectorActionReporter(action=>{
     const payload=localizedScreenProtectorJourneyAnalytics('ar',action);
@@ -181,11 +181,11 @@ test('English Istanbul plans and their original validation still work unchanged'
   assert.equal('locale' in plan,false);
 });
 
-test('locale dictionaries have matching keys and four exact localized route contracts', () => {
+test('locale dictionaries have matching keys and fourteen exact localized route contracts', () => {
   const keys=(value,prefix='')=>Object.entries(value).flatMap(([key,item])=>typeof item==='object' ? keys(item,`${prefix}${key}.`) : `${prefix}${key}`).sort();
   assert.deepEqual(keys(PHONE_LOCALES.es),keys(PHONE_LOCALES.ar));
-  assert.deepEqual(LOCALIZED_SCREEN_PROTECTOR_ROUTES.map(route=>route.path),['/es/screen-protectors/','/es/screen-protectors/compare/','/ar/screen-protectors/','/ar/screen-protectors/compare/']);
+  assert.deepEqual(LOCALIZED_SCREEN_PROTECTOR_ROUTES.map(route=>route.path),['zh-cn','es','ar','ru','fr','pt','tr'].flatMap(l=>[`/${l}/screen-protectors/`,`/${l}/screen-protectors/compare/`]));
   assert.deepEqual(emptyPhoneDraft(),{rows:[],destination:'',notes:''});
-  assert.throws(()=>localizedPhonePath('fr')); assert.throws(()=>localizedPhonePath('ar','calculator'));
+  assert.throws(()=>localizedPhonePath('de')); assert.throws(()=>localizedPhonePath('ar','calculator'));
   assert.equal(BASIS.seaUsdPerCbm,550); assert.equal(BASIS.airCnyPerKg,130);
 });

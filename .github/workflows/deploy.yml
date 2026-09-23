@@ -45,6 +45,14 @@ jobs:
           cache: 'npm'
       - name: Install dependencies
         run: npm ci
+      - name: Type-check and run release tests
+        run: |
+          npm run lint
+          node --import tsx --test tests/*.test.mjs tests/*.test.ts tests/*.test.tsx tests/kitchen/*.test.mjs
+          npm run test:notion-routing
+          npm run test:notion-guards
+          npm run test:analytics-policy
+          npm run test:analytics-runtime
       - name: Check required Notion secrets
         env:
           NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
@@ -61,6 +69,10 @@ jobs:
           VITE_BING_SITE_VERIFICATION: ${{ secrets.BING_SITE_VERIFICATION }}
           VITE_BAIDU_SITE_VERIFICATION: ${{ secrets.BAIDU_SITE_VERIFICATION }}
         run: npm run build
+      - name: Audit multilingual search intent and freight pages
+        run: |
+          npm run audit:search-intent
+          node --import tsx scripts/test-freight-eight-languages.ts
       - name: Write auditable sync summary
         run: >-
           node --input-type=module -e "import fs from 'node:fs'; const posts=JSON.parse(fs.readFileSync('src/data/notionBlogData.json','utf8')); const lines=['## Notion content sync','','- Trigger: **'+process.env.GITHUB_EVENT_NAME+'**','- Published articles compiled: **'+posts.length+'**','- Build time: **'+new Date().toISOString()+'**','- Strict sync: **enabled**','']; fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,lines.join('\n'));"

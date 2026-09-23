@@ -20,7 +20,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
   const [list, setList] = useState(() => cleanKitchenSelection(initialList));
   const [compared, setCompared] = useState(() => [...new Set(initialCompared)].filter(id => products.some(product => product.id === id)).slice(0, 3));
   const [quantityDrafts, setQuantityDrafts] = useState({}), [quantityErrors, setQuantityErrors] = useState({});
-  const [form, setForm] = useState({ country: locale === 'ar' ? 'United Arab Emirates' : 'Mexico', otherCountry: '', type: 'importer', port: '', company: '', contact: '', notes: '', ...initialForm });
+  const [form, setForm] = useState({ country: locale === 'ar' ? 'United Arab Emirates' : locale === 'es' ? 'Mexico' : 'Other', otherCountry: '', type: 'importer', port: '', company: '', contact: '', notes: '', ...initialForm });
   const [contact, setContact] = useState({ name: '', email: '' }), [errors, setErrors] = useState({});
   const [notice, setNotice] = useState(''), [storageWarning, setStorageWarning] = useState(false), [restored, setRestored] = useState(false);
   // Published SSR starts with visitor-facing submission copy; the actual transport always checks its hostname.

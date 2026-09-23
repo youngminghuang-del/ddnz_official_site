@@ -19,13 +19,7 @@ const expectedShowcaseRedirects = new Map([
 ]);
 const localizedProductRoutes = localizableProductPaths.flatMap(route => productContentLanguages.map(locale => localizedProductPath(route, locale)));
 const requiredStaticH1Paths = new Set(['/fr/', '/ru/insights/', ...localizedProductRoutes]);
-const englishOnlyScreenProtectorPaths = new Set([
-  '/screen-protectors/guides/',
-  '/screen-protectors/guides/price-differences/',
-  '/screen-protectors/guides/curved-glass/',
-  '/screen-protectors/videos/',
-  '/screen-protectors/calculator/',
-]);
+const englishOnlyScreenProtectorPaths = new Set();
 
 const failures = [];
 const notices = [];
@@ -74,7 +68,7 @@ for (const absoluteUrl of urls) {
 
   const languageSegments = relative.split('/');
   const locale = localePrefixes.includes(languageSegments[0]) ? languageSegments[0] : 'en';
-  const expectedLang = locale === 'en' ? 'en' : expectedLanguage[locale];
+  const expectedLang = url.pathname === '/pt/shipping-from-china-to-brazil/' ? 'pt-BR' : locale === 'en' ? 'en' : expectedLanguage[locale];
   const htmlLang = html.match(/<html\s+[^>]*lang="([^"]+)"/i)?.[1];
   if (htmlLang !== expectedLang) failures.push(`${url.pathname}: html lang is ${htmlLang || 'missing'}, expected ${expectedLang}`);
   const htmlDir = html.match(/<html\s+[^>]*dir="([^"]+)"/i)?.[1];

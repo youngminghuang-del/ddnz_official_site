@@ -1,0 +1,194 @@
+{
+  "productsTitle": "Çin’den ürün satın alın, karşılaştırılabilir bir ürün grubu oluşturun.",
+  "productsIntro": "Çin’den ticari mutfak ekipmanı, gıda işleme makineleri, hoparlör, telefon aksesuarı ve açık hava ürünleri tedarik edin. Tedarikçi, denetim, konsolidasyon ve ihracatı planlamadan önce modelleri ve satın alma şartlarını karşılaştırın.",
+  "servicesTitle": "Çin’de tedarik hizmetleri: tedarikçi aramadan ihracata teslime.",
+  "servicesIntro": "DDNZ; perakendeciler, ithalatçılar ve proje alıcıları için Çin’de tedarikçi karşılaştırması, numune onayı, üretim takibi, denetim ve ihracat hazırlığını koordine eder. Ticari kararları alıcı onaylar; kapsam ve sorumluluklar kayda alınır.",
+  "categories": [
+    [
+      "Ticari mutfak ve soğutma",
+      "Pişirme, hazırlık ve soğutmayı menüye, kapasiteye ve çalışma ortamına göre birleştirin.",
+      "Pişirme · Soğutma · Paslanmaz tezgâhlar · İçecek ve buz",
+      "Enerji ve iklim · Kapasite · Dahil parçalar · Servis erişimi"
+    ],
+    [
+      "Ses sistemleri ve hoparlörler",
+      "Satış kanalınıza uygun taşınabilir, parti ve profesyonel ses sistemlerini karşılaştırın.",
+      "Taşınabilir hoparlör · Profesyonel ses · Mikrofon · Özel ambalaj",
+      "Sürücü ve kabin · Batarya · Bağlantı · Aksesuarlar"
+    ],
+    [
+      "Telefon aksesuarları",
+      "Karma siparişler ve stok yenileme için uyumlu model, renk ve ambalajları belirleyin.",
+      "Kılıf · Şarj cihazı · Taşınabilir batarya · Kablo ve adaptör",
+      "Uyumluluk · Şarj protokolleri · Malzeme ve yüzey · Model başına adet"
+    ],
+    [
+      "Açık hava ürünleri",
+      "Taşınabilir enerji ve soğutmayı hedef iklim, çalışma süresi ve besleme sistemiyle karşılaştırın.",
+      "Güç istasyonları · Katlanır güneş panelleri · Araç buzdolapları · Soğutucu kutular",
+      "Çalışma süresi · Güç zinciri · Batarya ve soğutucu belgeleri · Paket hacmi"
+    ],
+    [
+      "Gıda işleme makineleri",
+      "Seçili 16 modelin toptan fiyatlarını karşılaştırın veya altı ekipman kombinasyonundan başlayın.",
+      "Hamur ve fırıncılık · Et · Sebze · Tahıl ve meyve suyu",
+      "Malzeme ve parti · Motor ve bıçaklar · Elektrik · Ambalaj ve varış"
+    ]
+  ],
+  "packageNames": [
+    "Hamur ve erişte hazırlığı",
+    "Fırıncılık hazırlığı",
+    "Et hazırlığı",
+    "Köfte hazırlığı",
+    "Sebze hazırlığı",
+    "Soya ve pirinç hazırlığı"
+  ],
+  "packageDescriptions": [
+    "Yoğurma ve açma; erişte kesici isteğe bağlı.",
+    "Karıştırma ve pişmiş ekmek dilimleme; fırın ayrı.",
+    "Dilimleme ve kıyma; soğutma ve testere ayrı.",
+    "Kıyma, karıştırma ve şekillendirme; pişirme ve soğutma ayrı.",
+    "Soyma ve kesme; uygun bıçakları seçin.",
+    "Posa ayırma ve ıslak öğütme; ıslatma, pişirme ve depolama ayrı."
+  ],
+  "priceNote": "CNY toplamları, tedarikçinin 8 Mayıs 2026 fiyat listesindeki toptan sütununa ve her makineden bir adede dayanır. Listelenen ambalaj bedeli ayrıdır. Seçenekler, ihracat ambalajı iyileştirmeleri, navlun, vergi ve hizmetler ayrıca onaylanır. Tarifleri ve kapasite uyumunu doğrulayın.",
+  "paths": [
+    [
+      "Perakende ürün tedariki",
+      "Ürün denemeleri, karma modeller ve çok mağazalı stok yenileme için. Model başına adet, renk, ambalaj ve sıklığı belirtin; her yapılandırmanın asgari siparişini doğrulayın."
+    ],
+    [
+      "Proje ve özelleştirme",
+      "Teknik veya özel siparişler için. Eşdeğer teklifleri karşılaştırmadan önce şartnameyi, numuneyi, üretim aşamalarını ve sevk onay koşullarını belirleyin."
+    ]
+  ],
+  "steps": [
+    [
+      "İhtiyaç",
+      "Ürün, adet, kullanım ve varışı kaydedin."
+    ],
+    [
+      "Tedarikçi",
+      "Kimliği, rolü ve kapasiteyi doğrulayın."
+    ],
+    [
+      "Teklifler",
+      "Şartname, miktar, dahil ve hariç kalemleri eşitleyin."
+    ],
+    [
+      "Numune",
+      "Model, malzeme, renk ve kabul ölçütlerini kaydedin."
+    ],
+    [
+      "Üretim",
+      "Aşamaları, değişiklikleri ve düzeltmeleri izleyin."
+    ],
+    [
+      "Denetim ve ambalaj",
+      "İşlev, adet, etiket ve paketleme kayıtlarını kontrol edin."
+    ],
+    [
+      "İhracat",
+      "Sevk onayı, belgeler, taşıma ve sorumluları doğrulayın."
+    ]
+  ],
+  "marketIntro": "Pazar yeri ilanları tedarikçi bulmaya yardımcı olur. Satın alma kararı, karşılaştırılabilir tekliflere, doğrulamaya ve siparişe bağlı onaylara dayanmalıdır.",
+  "marketRows": [
+    [
+      "Fiyat",
+      "Belirli bir yapılandırma veya asgari adede ait olabilir.",
+      "Model, adet, aksesuar ve maliyetleri eşitleyin."
+    ],
+    [
+      "Tedarikçi",
+      "Mağaza bilgileri doğrulanmalıdır.",
+      "Kimliği ve üretici veya aracı rolünü kaydedin."
+    ],
+    [
+      "Numune",
+      "Tek numune tüm partinin kabulünü tanımlamaz.",
+      "Onaylı numune, şartname ve denetimi ilişkilendirin."
+    ],
+    [
+      "Süre",
+      "Kapsam ve kapasiteyle değişebilir.",
+      "Aşamaları, açık konuları ve istisnaları kaydedin."
+    ],
+    [
+      "Sevk onayı",
+      "Ödeme, denetim, ambalaj ve taşıma koordine edilmelidir.",
+      "Teslimden önce denetim, ambalaj ve belgeleri inceleyin."
+    ]
+  ],
+  "faqs": [
+    [
+      "Tedarik mi, taşıma hizmeti mi gerekiyor?",
+      "Ürün, tedarikçi veya yapılandırma seçilmediyse tedarik desteği alın. Yük belirlendiyse teslim alma ve navlunu değerlendirin. İkisi de gerekiyorsa satın alma onayından taşıma talimatına geçişi kararlaştırın."
+    ],
+    [
+      "Kendi siparişlerimi denetleyip birleştirebilir misiniz?",
+      "Tedarikçi, sipariş, hazır olma tarihi ve kontrol gereksinimlerini gönderin. İnceleme; yeni tedarikçi aramasını varsaymadan kabul, denetim ve konsolidasyon kapsamını belirler."
+    ],
+    [
+      "Farklı ürünler tek sevkiyatta birleşebilir mi?",
+      "Adet, ambalaj, hazır olma tarihleri ve yük özelliklerini kontrol edin. Bataryaları ve özel nitelikleri bildirin; uyumluluk taşıma şartlarına ve belgelere bağlıdır."
+    ],
+    [
+      "Ürün fiyatı teslimata kadar tüm masrafları içerir mi?",
+      "Hayır. Ürün, ambalaj, tedarik, denetim, navlun ve varış giderleri ayrı kalemlerdir. Onaylanan teklif kapsamı geçerlidir."
+    ]
+  ],
+  "ui": {
+    "categories": "Satın alma kategorileri",
+    "variables": "Karşılaştırmadan önce doğrulayın",
+    "explore": "Ürün ayrıntıları",
+    "english": "İngilizce ayrıntılar",
+    "packages": "Hazırlık adımına göre makine seçin",
+    "equipment": "Ekipman",
+    "packing": "Listelenen ambalaj",
+    "scope": "Teklif için seç",
+    "other": "Başka ürün",
+    "control": "İhtiyaçtan sevk onayına yedi adım",
+    "path": "Satın alma modelini seçin",
+    "market": "İlandan kayıtlı siparişe",
+    "columns": [
+      "Karar",
+      "İlk bilgi",
+      "Gerekli kayıt"
+    ],
+    "services": "Çin’de hizmetler",
+    "details": "Hizmet kapsamını incele",
+    "faq": "Satın alma soruları",
+    "quote": "Satın alma talebinizi hazırlayın",
+    "formIntro": "Bilgileri burada düzenleyin; göndermeden önce sonraki adımda gözden geçirin.",
+    "category": "Ürün kategorisi",
+    "destination": "Varış ülkesi / şehri",
+    "scopeField": "Ürünler, modeller ve adetler",
+    "stage": "Satın alma aşaması",
+    "stages": [
+      "Kategori araştırması",
+      "Ürün grubu oluşturma",
+      "Teklif karşılaştırma",
+      "Numune veya şartname onayı",
+      "Siparişe hazır"
+    ],
+    "notes": "Takvim, standart veya ambalaj",
+    "prepare": "Talebi gözden geçir",
+    "ready": "Bilgiler hazır; henüz gönderilmedi",
+    "continue": "Teklif formuna devam et",
+    "edit": "Talebi düzenle",
+    "process": "Tüm süreci incele",
+    "freight": "Uluslararası taşımayı 1997’den beri faaliyet gösteren Heaven Born yürütür. DDNZ tedariki koordine eder.",
+    "home": "Ana sayfa",
+    "select": "Seçin",
+    "retail": "Perakende tedariki",
+    "project": "Proje tedariki",
+    "sku": "Farklı ürün sayısı",
+    "units": "Ürün başına adet",
+    "rhythm": "Stok yenileme / taşıma tercihi",
+    "brief": "İhtiyaç kaydı",
+    "compare": "Teklif karşılaştırması",
+    "approval": "Onay kaydı",
+    "handoff": "İhracata teslim"
+  }
+}

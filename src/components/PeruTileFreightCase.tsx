@@ -276,7 +276,7 @@ export default function PeruTileFreightCase({ locale, onQuote }: { locale: strin
 
         <div className="mt-4 flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.12em] text-slate-500">
           <ShieldCheck className="h-4 w-4 text-[#e77c4b]" aria-hidden="true" />
-          <span>SUNAT · CHINA-PERU FTA · CARGO DATA REVIEW</span>
+          <span>{({en:'SUNAT · CHINA-PERU FTA · CARGO DATA REVIEW',zh:'SUNAT · 中国—秘鲁自贸协定 · 货物资料审核',es:'SUNAT · TLC CHINA-PERÚ · REVISIÓN DE DATOS DE LA CARGA',ar:'SUNAT · اتفاقية التجارة الحرة بين الصين وبيرو · مراجعة بيانات الشحنة',ru:'SUNAT · СОГЛАШЕНИЕ О СВОБОДНОЙ ТОРГОВЛЕ КИТАЙ–ПЕРУ · ПРОВЕРКА ДАННЫХ О ГРУЗЕ',fr:'SUNAT · ACCORD DE LIBRE-ÉCHANGE CHINE–PÉROU · VÉRIFICATION DES DONNÉES DU FRET',pt:'SUNAT · ACORDO DE LIVRE COMÉRCIO CHINA–PERU · REVISÃO DOS DADOS DA CARGA',tr:'SUNAT · ÇİN–PERU SERBEST TİCARET ANLAŞMASI · YÜK BİLGİLERİNİN KONTROLÜ'} as Record<string,string>)[locale] || 'SUNAT'}</span>
         </div>
       </div>
     </section>

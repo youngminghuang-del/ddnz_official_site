@@ -1,0 +1,109 @@
+# Search-intent audit
+
+Sitemap pages: 332. Results: {'pass': 171, 'context-only': 62, 'review': 99}. Languages: {'en': 102, 'es': 51, 'ar': 50, 'zh-cn': 36, 'ru': 36, 'fr': 37, 'pt': 10, 'tr': 10}.
+
+Scope: local generated HTML, not a production crawl. Navigation, footer, scripts and metadata do not satisfy opening-copy requirements. A pass confirms lexical evidence only; it does not establish search volume, naturalness, translation quality, rankings or complete search-intent coverage.
+
+Products: specific product + purchase/sourcing action + China origin in the opening. Services: service + object/scope + China origin. Freight: preserve shipping origin/destination intent, with no buying phrase requirement. Information and utility pages retain their own intent. Asia sourcing requires separate evidence; Central Asia as a destination is not an Asian supply-origin claim.
+
+## Review queue
+
+- `/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-saudi-arabia/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-uae/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-uae/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-uae/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-kuwait/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-qatar/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-oman/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-bahrain/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-kazakhstan/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-uzbekistan/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-kyrgyzstan/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-tajikistan/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-turkmenistan/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-russia/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-nigeria/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-nigeria/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-nigeria/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-ghana/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-ghana/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-ghana/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-mexico/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-mexico/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-mexico/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-brazil/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-brazil/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-brazil/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-argentina/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-peru/` — No H1/body in static HTML; inspect rendered route
+- `/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route
+- `/zh-cn/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route
+- `/ru/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route
+- `/fr/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route
+- `/es/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route
+- `/ar/shipping-from-china-to-chile/` — No H1/body in static HTML; inspect rendered route

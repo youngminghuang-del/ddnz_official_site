@@ -9,14 +9,20 @@ export const navigationPrefixes: Record<Language, string> = {
 };
 
 export const allNavigationLanguages = Object.keys(navigationPrefixes) as Language[];
-export const freightDestinationLanguages: Language[] = ['en', 'zh', 'ru', 'fr', 'es', 'ar'];
+export const freightDestinationLanguages: Language[] = [...allNavigationLanguages];
 const fullyLocalizedFreightServicePaths = new Set([
   '/services/sea-freight',
+  '/services/air-freight',
+  '/services/amazon-fba',
+  '/services/warehouse-services',
   '/services/lcl-shipping-from-china',
   '/services/dangerous-goods-shipping-from-china',
 ]);
 
+import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
+
 export const englishProductPaths = [
+  ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
   ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
   '/products', '/sourcing-services', '/refrigeration-equipment',

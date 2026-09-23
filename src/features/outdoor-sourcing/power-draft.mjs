@@ -22,7 +22,7 @@ export function comparePowerModels(rows,hours,eff){return powerModels.flatMap(mo
 
 const actions=['scene_select','hotspot_open','device_toggle','model_select','compare_select','result_view','brief_open','draft_reset'];
 export function powerGuideEvent(locale,action,details={}){
- if(!['en','es','ar'].includes(locale)||!actions.includes(action))return null;
+ if(!['en','zh','es','ar','ru','fr','pt','tr'].includes(locale)||!actions.includes(action))return null;
  const params={content_group:'portable_power_guide',content_language:locale,journey_action:action};
  if(powerModels.some(m=>m.id===details.modelId))params.product_id=details.modelId;
  if(presets.some(p=>p.id===details.sceneId))params.scene_id=details.sceneId;

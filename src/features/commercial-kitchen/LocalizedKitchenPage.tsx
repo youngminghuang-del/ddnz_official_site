@@ -1,3 +1,5 @@
+import type {Language} from '../../i18n/translations';
+import {productRouteParts} from '../../lib/productLocalization.mjs';
 import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO';
@@ -15,9 +17,9 @@ import './styles/localized-kitchen.css';
 export { getLocalizedKitchenMetadata } from './data/localization.mjs';
 export { LocalizedKitchenContent } from './LocalizedKitchenContent.jsx';
 
-export default function LocalizedKitchenPage({ locale: providedLocale }: { locale?: 'es' | 'ar' } = {}) {
+export default function LocalizedKitchenPage({ locale: providedLocale }: { locale?: 'zh' | 'es' | 'ar' | 'ru' | 'fr' | 'pt' | 'tr' } = {}) {
   const { pathname } = useLocation();
-  const locale = providedLocale || (pathname.startsWith('/ar/') ? 'ar' : 'es');
+  const locale = providedLocale || productRouteParts(pathname).locale as Language;
   const metadata = useMemo(() => getLocalizedKitchenMetadata(locale), [locale]);
   const copy = kitchenCopy(locale).ui;
   const quotePath = `${metadata.canonicalPath}#commercial-kitchen-list`;

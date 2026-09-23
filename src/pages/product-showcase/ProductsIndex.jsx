@@ -1,3 +1,8 @@
+import { StartupBuyingLinks } from '../../features/search-intent/StartupBuyingContent';
+import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
+import BuyerDecisionContent from '../../features/search-intent/BuyerDecisionContent';
+import { FoodPackageLinks } from "../../features/food-processing/FoodProcessingContent.jsx";
+import "../../features/food-processing/food-processing.css";
 import ProductDiscoveryLinks from '../../components/ProductDiscoveryLinks';
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -164,6 +169,20 @@ const PRODUCT_CATEGORIES = [
     approval: ["Retention, pull-down or output record", "Exact-model power and transport file", "Construction, finish and pack-out checks"],
     handoff: ["Battery and refrigerant label file", "SKU, accessories and packed cube", "Mixed-range consolidation and release"],
   },
+  {
+    id: "food-processing-machinery", number: "05", title: "Food Processing Machinery", shortTitle: "Food Processing",
+    eyebrow: "Individual machines & preparation packages", href: "/sourcing/food-processing-machinery-from-china/", icon: Factory,
+    links: [{ label: "Compare machines & wholesale prices", href: "/sourcing/food-processing-machinery-from-china/" }, { label: "Explore equipment packages", href: "#food-processing-packages" }],
+    images: [{ src: "/food-processing-media/spiral-mixer.webp", alt: "Spiral dough mixer from the supplier catalogue", width: 648, height: 850, position: "50% 50%" }, { src: "/food-processing-media/meat-grinder.webp", alt: "Commercial tabletop meat grinder from the supplier catalogue", width: 746, height: 850, position: "50% 50%" }],
+    imageLabel: "Dough, bakery, meat & vegetable preparation",
+    summary: "Compare 16 selected models using CNY wholesale prices, or build one of six equipment packages with quantities and packing costs itemised for your enquiry.",
+    families: ["Dough & bakery", "Meat preparation", "Vegetables", "Bean, rice, juice & poultry"],
+    quoteVariables: ["Recipe & batch size", "Motor & blades", "Electrical supply", "Packing & destination"],
+    brief: ["Ingredient and preparation step", "Recipe, batch size and output", "Power supply and working space"],
+    normalizes: ["Exact motor and blade configuration", "Wholesale machine price and listed packing", "Attachments, safeguards and exclusions"],
+    approval: ["Model and configuration record", "Ingredient trial and functional checks", "Accessory and packing verification"],
+    handoff: ["Destination and electrical specification", "Packed size, gross weight and documents", "Consolidation and freight quotation"],
+  },
 ];
 
 const CONTROL_STAGES = [
@@ -270,7 +289,7 @@ function HeroCategoryMap() {
     <div className="px-hero-map" aria-label="DDNZ product sourcing categories">
       <div className="px-map-heading">
         <span>PRODUCT SOURCING MAP</span>
-        <small>4 primary categories</small>
+        <small>{PRODUCT_CATEGORIES.length} primary categories</small>
       </div>
       <div className="px-map-grid">
         {PRODUCT_CATEGORIES.map((category) => {
@@ -376,7 +395,7 @@ export function ProductsIndex() {
 
   useEffect(() => {
     const previousTitle = document.title;
-    document.title = "Product Sourcing Categories | DDNZ Global";
+    document.title = "Product Sourcing from China | DDNZ Global";
     return () => { document.title = previousTitle; };
   }, []);
 
@@ -418,8 +437,8 @@ export function ProductsIndex() {
         <section className="px-hero" aria-labelledby="products-index-title">
           <div className="px-hero-copy">
             <p className="px-kicker">PRODUCT SOURCING · CATEGORY INDEX</p>
-            <h1 id="products-index-title">Find the right product range. Keep every sourcing decision comparable.</h1>
-            <p>Browse DDNZ sourcing categories, see the buying variables we control, then submit one structured brief for supplier comparison and export handoff.</p>
+            <h1 id="products-index-title">{entryKeywords.en.productsTitle}</h1>
+            <p>Buy commercial kitchen equipment, food processing machinery, speakers, mobile accessories and outdoor products from China. Compare models and buying requirements, then send one brief for supplier sourcing, inspection and export coordination.</p>
             <div className="px-hero-actions">
               <button className="px-primary" type="button" onClick={() => scrollTo("categories")}>Browse categories <ArrowRight size={17} /></button>
               <button className="px-text-button" type="button" onClick={() => scrollTo("rfq")}>Start a scoped RFQ <ArrowRight size={16} /></button>
@@ -454,6 +473,13 @@ export function ProductsIndex() {
             <div><Box size={22} /><p><strong>Need a category not shown here?</strong><span>Start with the product, destination and buying stage. We will confirm sourcing fit before supplier outreach.</span></p></div>
             <button type="button" onClick={() => scopeCategory("other")}>Submit another category <ArrowRight size={16} /></button>
           </aside>
+        </section>
+
+        <section className="px-section fp-page fp-index-packages" id="food-processing-packages" aria-labelledby="food-packages-title">
+          <p className="px-kicker">FOOD PROCESSING / EQUIPMENT PACKAGES</p><h2 id="food-packages-title" style={{fontSize:32,fontWeight:650,lineHeight:1.2}}>Choose machines around a preparation task.</h2>
+          <p>Six starting combinations. Review the models, adjust quantities and carry the itemised list into your enquiry.</p>
+          <FoodPackageLinks compact />
+          <p className="fp-price-note">CNY equipment totals use the wholesale column in the 8 May 2026 price list. Listed packing, optional parts, freight, tax and service fees are separate.</p>
         </section>
 
         <section className="px-compare" id="compare" aria-labelledby="compare-title">
@@ -547,6 +573,8 @@ export function ProductsIndex() {
           <div><Truck size={27} /><p><strong>International freight executed by Heaven Born</strong><span>Operating since 1997 · engaged after sourcing release</span></p></div>
           <span>DDNZ remains your sourcing coordination team</span>
         </section>
+      <StartupBuyingLinks />
+      <BuyerDecisionContent page="products" />
       </main>
 
       <ShowcaseContactFooter

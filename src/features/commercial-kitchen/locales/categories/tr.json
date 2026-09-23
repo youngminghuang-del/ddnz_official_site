@@ -1,0 +1,44 @@
+{
+  "ui": {
+    "price": "Gösterge tedarik fiyatı",
+    "reference": "Referans sipariş adedi",
+    "request": "Adet ve varış yerine göre fiyat isteyin",
+    "priceNote": "Görseller rötuşludur. Fiyatlar belirtilen adetler için göstergedir; navlun ve vergiler hariçtir. Son fiyat, stok, elektrik yapılandırması ve ambalaj teklifte doğrulanır.",
+    "flat": "Düz",
+    "output": "Nominal günlük üretim",
+    "volume": "Hazne hacmi",
+    "tanks": "Hazne sayısı",
+    "plate": "Pişirme plakası ölçüleri",
+    "surface": "Yüzey",
+    "select": "Model seç ve teklif iste",
+    "english": "İngilizce ayrıntılar",
+    "reading": "Satın alma rehberi yazısı"
+  },
+  "titles": [
+    "Çin’den ticari buz makineleri satın alın",
+    "Çin’den ticari elektrikli fritözler satın alın",
+    "Çin’den ticari elektrikli ızgaralar satın alın"
+  ],
+  "intros": [
+    "Kafe, restoran ve oteller için Çin’den küp buz makinesi tedarik edin. Altı modeli nominal günlük üretim, ölçüler ve kurulum açısından karşılaştırıp pazarınıza uygun yapılandırmayı doğrulayın.",
+    "Profesyonel ürün yelpazeniz için Çin’den elektrikli fritöz tedarik edin. Tek 10 L ve çift 10 L hazneyi, tezgâh alanını, referans adetleri ve pişirme ihtiyacını karşılaştırın.",
+    "Tezgâh üstü pişirme için Çin’den elektrikli düz ızgara tedarik edin. ZH-818 ve ZH-820 modellerini pişirme alanı, dış ölçüler ve güç açısından karşılaştırıp adede göre fiyat isteyin."
+  ],
+  "notes": [
+    [
+      "Günlük üretim ve buz depolama farklıdır. 100 kg/24h nominal üretimdir, hazne kapasitesi değildir. Yoğun servis ihtiyacına göre ikisini de doğrulayın.",
+      "Özellikle sıcak mutfaklarda ortam ve giriş suyu sıcaklığını belirtin. Test koşullarını ve ilgili üretimi isteyin; nominal değer sahadaki performans tahmini değildir.",
+      "55, 80 ve 100 kg modellerinin ölçüleri 448 × 400 × 798 mm olarak listelenir; bu aynı parça veya depo anlamına gelmez. Son ölçüleri, havalandırmayı, servis erişimini, suyu, tahliyeyi ve buz şeklini doğrulayın. Modelleri birleştirip adet, varış yeri, ambalaj ve yedekleri belirtin."
+    ],
+    [
+      "ZH-101V: tek 10 L hazne, 280 mm genişlik. ZH-102V: iki 10 L hazne, 570 mm genişlik; tek 20 L hazne değildir. Her haznenin sepet ve kontrollerini inceleyin.",
+      "Hazne hacmi önerilen yağ dolumu veya saatlik üretim değildir. Yiyeceğe göre sepeti, yağ aralığını, partiyi ve sıcaklık toparlanmasını doğrulayın.",
+      "Tek hazne fiyat referansı 10 adet, çift hazne 1 adettir. Gerçek adedin fiyatını doğrulayın. Tahliye, temizlik, termostat, rezistans, sepet ve yedekleri belirleyin; varış yeri, voltaj, frekans, faz ve fişi bildirin."
+    ],
+    [
+      "ZH-818 yüzeyi 548 × 350 mm, ZH-820 yüzeyi 728 × 400 mm. İkisi de 8 mm düz plaka kullanır; oluklu veya karma yüzeyi ayrıca sorun. Tipik parti yerleşimini planlayın.",
+      "Dış ölçüler sırasıyla 550 × 430 × 220 mm ve 730 × 470 × 220 mm. Pişirme alanını cihaz alanından ayırın; boşlukları, yağ toplamayı ve temizliği doğrulayın.",
+      "3 kW ve 4,4 kW güçler üretim kapasitesini belirlemez. Kontrol, malzeme, ısı toparlanması ve beslemeyi doğrulayın. Yalnız ZH-818 gösterge fiyatlıdır; ZH-820 ayrıca teklif gerektirir. Fritözlerle birleştirerek model, adet, varış yeri, yedek ve taşıma ihtiyacını belirtin."
+    ]
+  ]
+}

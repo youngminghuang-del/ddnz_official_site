@@ -1,3 +1,8 @@
+import zh from '../locales/zh.json' with {type:'json'};
+import ru from '../locales/ru.json' with {type:'json'};
+import fr from '../locales/fr.json' with {type:'json'};
+import pt from '../locales/pt.json' with {type:'json'};
+import tr from '../locales/tr.json' with {type:'json'};
 import catalog from './products.mjs';
 import launch from './launch.mjs';
 import benchmarks from './benchmarks.mjs';
@@ -10,8 +15,9 @@ import ar from '../locales/ar.mjs';
 
 export const LOCALIZED_KITCHEN_PATH = '/sourcing/commercial-kitchen-equipment-from-china/';
 export const KITCHEN_LIST_STORAGE_KEY = 'ddnz-kitchen-list-v1';
-export const kitchenLocales = Object.freeze({ es, ar });
+export const kitchenLocales = Object.freeze({ es, ar, zh, ru, fr, pt, tr });
 export function kitchenCopy(locale) {
+  locale = locale === 'zh-cn' ? 'zh' : locale;
   if (!Object.hasOwn(kitchenLocales, locale)) throw new RangeError(`Unsupported kitchen locale: ${locale}`);
   return kitchenLocales[locale];
 }
@@ -22,7 +28,7 @@ export const localMoney = (value, currency, locale) => `${currency} ${localNumbe
 // Translate human-readable values while retaining the catalogue's numerical basis.
 export function localSpecValue(value, locale) {
   const t = kitchenCopy(locale);
-  const translated = t.values[value] || String(value).replace(/ to /g, locale === 'ar' ? ' إلى ' : ' a ');
+  const translated = t.values[value] || String(value).replace(/ to /g, ({ar:' إلى ',zh:' 至 ','zh-cn':' 至 ',es:' a ',ru:'–',fr:' à ',pt:' a ',tr:'–'})[locale] || '–');
   return translated.replace(/\d+(?:,\d{3})*(?:\.\d+)?/g, number => localNumber(Number(number.replaceAll(',', '')), locale))
     .replace(/(\d|[٠-٩])mm\b/g, '$1 mm');
 }
@@ -59,7 +65,7 @@ export function parseKitchenQuantity(value) {
 export function parseKitchenMoney(value, locale) {
   kitchenCopy(locale);
   let text = normalizeDigits(value).trim().replace('٫', '.');
-  if (locale === 'es') text = text.replace(',', '.');
+  if (['es','ru','fr','pt','tr'].includes(locale)) text = text.replace(',', '.');
   if (!/^\d{1,9}(?:\.\d{1,2})?$/.test(text)) return null;
   const amount = Number(text);
   return amount <= 999999999 ? amount : null;

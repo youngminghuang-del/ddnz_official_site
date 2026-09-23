@@ -10,8 +10,9 @@ type LanguageContextType = {
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
-export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const LanguageProvider: React.FC<{ children: React.ReactNode; initialLanguage?: Language }> = ({ children, initialLanguage }) => {
   const [language, setLanguageState] = useState<Language>(() => {
+    if (initialLanguage) return initialLanguage;
     if (typeof window === 'undefined') return 'en';
     let saved: Language = 'en';
     try {
@@ -40,7 +41,7 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
 
   const t = (path: string): any => {
     const keys = path.split('.');
-    
+
     const getVal = (obj: any, ks: string[]) => {
       let current = obj;
       for (const key of ks) {
@@ -54,17 +55,17 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     };
 
     let result = getVal((translations as Record<string, unknown>)[language] || translations.en, keys);
-    
+
     if (result === undefined && language !== 'en') {
       console.warn(`Translation key missing: ${path} for lang ${language}`);
       result = getVal(translations['en'], keys);
     }
-    
+
     if (result === undefined) {
       if (path.endsWith('.highlights')) return [];
       return path;
     }
-    
+
     return result;
   };
 

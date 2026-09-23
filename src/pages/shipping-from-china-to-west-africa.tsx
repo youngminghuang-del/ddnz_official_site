@@ -1,3 +1,5 @@
+import {translatedText} from '../features/site-localization/translate.mjs';
+import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -13,8 +15,8 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
+import {
+  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck,
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
   Globe, Clock, HelpCircle, Plane, FileText, Scale, ArrowUpRight, Truck
 } from 'lucide-react';
@@ -676,7 +678,7 @@ export default function ShippingWestAfrica() {
   }, [location.pathname]);
 
   const activeLang = language === 'zh' ? 'zh' : (language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en');
-  
+
   const spec = WEST_AFRICA_DATA[selectedCountry][activeLang];
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA.en;
@@ -712,9 +714,9 @@ export default function ShippingWestAfrica() {
   useEffect(() => {
     setFormData(prev => ({
       ...prev,
-      destination: selectedCountry === 'nigeria' 
-        ? (language === 'zh' ? '尼日利亚' : 'Nigeria') 
-        : (language === 'zh' ? '加纳' : 'Ghana')
+      destination: selectedCountry === 'nigeria'
+        ? (language === 'zh' ? '尼日利亚' : translatedText('Nigeria',language))
+        : (language === 'zh' ? '加纳' : translatedText('Ghana',language))
     }));
   }, [selectedCountry, language]);
 
@@ -763,8 +765,8 @@ export default function ShippingWestAfrica() {
       <header className="relative overflow-hidden pb-24 pt-16 text-white md:pb-36 md:pt-24">
         {/* Visual shipping backdrop layer */}
         <div className="absolute inset-0 z-0 opacity-15 pointer-events-none">
-          <img 
-            src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=2000" 
+          <img
+            src="https://images.unsplash.com/photo-1518241353330-0f7941c2d9b5?auto=format&fit=crop&q=80&w=2000"
             alt=""
             aria-hidden="true"
             width="2000"
@@ -777,7 +779,7 @@ export default function ShippingWestAfrica() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 pb-16">
-            
+
             {/* 左侧文案区：占据 7 列 */}
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Country Selector Tabs */}
@@ -826,20 +828,20 @@ export default function ShippingWestAfrica() {
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed font-medium">
                     {spec.subheadline}
                   </p>
-                  
+
                   {/* Premium Micro-Badges / Key SCM Highlights */}
                   <div className="flex flex-wrap gap-2.5 pt-1">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? 'SONCAP / CoC 文件支持' : 'SONCAP / CoC Document Support'}
+                      {language === 'zh' ? 'SONCAP / CoC 文件支持' : translatedText('SONCAP / CoC Document Support',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '目的地单证与清关协调' : 'Destination Clearance Coordination'}
+                      {language === 'zh' ? '目的地单证与清关协调' : translatedText('Destination Clearance Coordination',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
                       <Truck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '一站式西非 DDP / DDU' : 'One-Stop West Africa DDP'}
+                      {language === 'zh' ? '一站式西非 DDP / DDU' : translatedText('One-Stop West Africa DDP',language)}
                     </span>
                   </div>
                 </div>
@@ -853,7 +855,7 @@ export default function ShippingWestAfrica() {
                     <span>{t('complianceBadge')}</span>
                   </div>
                   <div className="text-xs sm:text-sm font-bold text-slate-200">{spec.complianceRowTitle}</div>
-                  <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : 'Period'}: {spec.complianceRowVal}</div>
+                  <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : translatedText('Period',language)}: {spec.complianceRowVal}</div>
                 </div>
 
                 <div className="bg-white/[0.02] hover:bg-white/[0.04] border border-white/[0.08] p-4 rounded-xl flex flex-col justify-center items-center text-center">
@@ -866,7 +868,7 @@ export default function ShippingWestAfrica() {
                     }}
                     className="text-xs font-black text-white hover:text-[#c94f2f] transition-colors flex items-center justify-center gap-1.5 cursor-pointer w-full h-full min-h-[44px]"
                   >
-                    <span>{language === 'zh' ? '立即询价' : 'Inquire Now'}</span>
+                    <span>{language === 'zh' ? '立即询价' : translatedText('Inquire Now',language)}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#c94f2f]" />
                   </button>
                 </div>
@@ -878,10 +880,10 @@ export default function ShippingWestAfrica() {
               <h3 className="text-lg font-black tracking-wide text-[#c94f2f] uppercase mb-2">
                 {language === 'zh' ? '西非专线真实货运时效' : (language === 'fr' ? 'Délais de Transit en Afrique de l\'Ouest' : 'West Africa Hub Transit Windows')}
               </h3>
-              
+
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '拉各斯海运双清 (Apapa / Tin Can)' : 'Lagos (Apapa / Tin Can) Ocean'}</h4>
+                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '拉各斯海运双清 (Apapa / Tin Can)' : translatedText('Lagos (Apapa / Tin Can) Ocean',language)}</h4>
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '广州集拼仓直发整箱/拼箱' : (language === 'fr' ? 'Consolidation directe depuis le hub de Guangzhou' : 'Guangzhou Hub Direct Consolidation')}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
@@ -891,7 +893,7 @@ export default function ShippingWestAfrica() {
 
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] p-5 rounded-2xl flex justify-between items-center">
                 <div>
-                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿克拉海运双清 (Accra / Tema)' : 'Accra / Tema Premium Freight'}</h4>
+                  <h4 className="text-sm font-black text-white">{language === 'zh' ? '阿克拉海运双清 (Accra / Tema)' : translatedText('Accra / Tema Premium Freight',language)}</h4>
                   <p className="text-[11px] text-slate-400 mt-0.5">{language === 'zh' ? '进口文件、目的港操作与派送范围逐票确认' : language === 'es' ? 'Confirmar documentos, operación en destino y entrega' : language === 'fr' ? 'Documents, opérations portuaires et livraison à confirmer' : 'Confirm import documents, destination handling and delivery scope'}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
@@ -941,7 +943,7 @@ export default function ShippingWestAfrica() {
                     </p>
                   </div>
                   <div className="mt-6 pt-4 border-t border-white/[0.05] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
-                    <span>{language === 'zh' ? '申请专项预审' : 'Request File Pre-Audit'}</span>
+                    <span>{language === 'zh' ? '申请专项预审' : translatedText('Request File Pre-Audit',language)}</span>
                     <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
                   </div>
                 </div>
@@ -955,7 +957,7 @@ export default function ShippingWestAfrica() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center max-w-3xl mx-auto mb-12">
               <span className="px-3 py-1 bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                {language === 'zh' ? '核心时效参考' : 'Transit Time Reference'}
+                {language === 'zh' ? '核心时效参考' : translatedText('Transit Time Reference',language)}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight leading-none mb-4">
                 {{
@@ -969,15 +971,15 @@ export default function ShippingWestAfrica() {
               </h2>
               <div className="w-10 h-1 bg-gradient-to-r from-[var(--hb-blue)] to-[var(--hb-amber)] mx-auto rounded-full mb-6" />
               <p className="text-slate-400 text-sm font-semibold">
-                {language === 'zh' 
-                  ? '精细对齐各物理运输通道，深剖西非清关时效落差，帮助您合理配载预算。' 
+                {language === 'zh'
+                  ? '精细对齐各物理运输通道，深剖西非清关时效落差，帮助您合理配载预算。'
                   : 'Compare transportation pathways with fine alignment on shipping windows, core technical features, and risk pre-warnings.'}
               </p>
             </div>
 
             {/* Interactive Grid & Detail Card */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              
+
               {/* Left Column: The Menu of Transport Options */}
               <div className="lg:col-span-5 space-y-3">
                 {spec.multimodalTable && spec.multimodalTable.map((row: any, idx: number) => {
@@ -988,7 +990,7 @@ export default function ShippingWestAfrica() {
                       type="button"
                       onClick={() => setActiveTransportMode(idx)}
                       className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
-                        isSelected 
+                        isSelected
                           ? 'bg-gradient-to-r from-[var(--hb-navy)] to-[var(--hb-blue)] text-white border-transparent shadow-xl translate-x-1'
                           : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
                       }`}
@@ -1002,7 +1004,7 @@ export default function ShippingWestAfrica() {
                             {row.mode}
                           </h4>
                           <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-slate-200' : 'text-slate-500'}`}>
-                            {language === 'zh' ? '预计时效' : 'Transit Window'}
+                            {language === 'zh' ? '预计时效' : translatedText('Transit Window',language)}
                           </span>
                         </div>
                       </div>
@@ -1028,20 +1030,20 @@ export default function ShippingWestAfrica() {
                     <div className="relative z-10 space-y-6">
                       <div>
                         <span className="px-2.5 py-1 bg-[#c94f2f]/10 text-[#c94f2f] text-[10px] font-black uppercase tracking-wider rounded-lg">
-                          {language === 'zh' ? '深度解析' : 'SCM Detail Panel'}
+                          {language === 'zh' ? '深度解析' : translatedText('SCM Detail Panel',language)}
                         </span>
                         <h3 className="text-xl md:text-2xl font-black text-white mt-2">
                           {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
                         <p className="text-[#c94f2f] text-sm font-black mt-1">
-                          {language === 'zh' ? '门到门时效参考' : 'Door-to-Door Window'}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
+                          {language === 'zh' ? '门到门时效参考' : translatedText('Door-to-Door Window',language)}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                         <div>
                           <h5 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1.5">
-                            {language === 'zh' ? '适用货品 / 场景' : 'Best Suited For'}
+                            {language === 'zh' ? '适用货品 / 场景' : translatedText('Best Suited For',language)}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].suitability}
@@ -1049,7 +1051,7 @@ export default function ShippingWestAfrica() {
                         </div>
                         <div>
                           <h5 className="text-xs font-black text-[#c94f2f] uppercase tracking-widest mb-1.5">
-                            {language === 'zh' ? 'Heaven Born 操作要点' : 'Heaven Born Operating Notes'}
+                            {language === 'zh' ? 'Heaven Born 操作要点' : translatedText('Heaven Born Operating Notes',language)}
                           </h5>
                           <p className="text-xs text-slate-300 leading-relaxed font-semibold">
                             {spec.multimodalTable[activeTransportMode].sellingPoint}
@@ -1061,7 +1063,7 @@ export default function ShippingWestAfrica() {
                         <ShieldAlert className="w-5 h-5 text-amber-300 shrink-0 mt-0.5" />
                         <div>
                           <h5 className="text-xs font-black text-amber-200 uppercase tracking-wider mb-0.5">
-                            {language === 'zh' ? '风险提示与操作合规' : 'Operation Notes'}
+                            {language === 'zh' ? '风险提示与操作合规' : translatedText('Operation Notes',language)}
                           </h5>
                           <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
                             {spec.multimodalTable[activeTransportMode].warning}
@@ -1072,7 +1074,7 @@ export default function ShippingWestAfrica() {
 
                     <div className="pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
                       <span className="text-xs text-slate-400 font-bold">
-                        * {language === 'zh' ? '上述时效基于我司真实运输台账，受季节性换装及西非口岸偶发排队影响可能有微调。' : 'Data based on historical shipping registries, subject to seasonal West African port variance.'}
+                        * {language === 'zh' ? '上述时效基于我司真实运输台账，受季节性换装及西非口岸偶发排队影响可能有微调。' : translatedText('Data based on historical shipping registries, subject to seasonal West African port variance.',language)}
                       </span>
                       <button
                         type="button"
@@ -1101,7 +1103,7 @@ export default function ShippingWestAfrica() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="text-center max-w-3xl mx-auto mb-16">
               <span className="px-3 py-1 bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
-                {language === 'zh' ? '出运注意事项' : 'Shipping Notes'}
+                {language === 'zh' ? '出运注意事项' : translatedText('Shipping Notes',language)}
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-black tracking-tight mb-4">
                 {redlines.title}
@@ -1148,8 +1150,8 @@ export default function ShippingWestAfrica() {
               {spec.faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="bg-white/[0.01] border border-white/[0.06] rounded-xl mb-4 px-6 py-4 overflow-hidden"
                   >
                     <button
@@ -1191,8 +1193,8 @@ export default function ShippingWestAfrica() {
               <GetAQuote
                 presetDestination={
                   selectedCountry === 'nigeria'
-                    ? (language === 'zh' ? '尼日利亚' : 'Nigeria')
-                    : (language === 'zh' ? '加纳' : 'Ghana')
+                    ? (language === 'zh' ? '尼日利亚' : translatedText('Nigeria',language))
+                    : (language === 'zh' ? '加纳' : translatedText('Ghana',language))
                 }
                 presetService="Sea"
               />
@@ -1200,6 +1202,7 @@ export default function ShippingWestAfrica() {
           </div>
         </section>
 
+      <CountryCargoPlanning country={selectedCountry} countryName={selectedCountry === 'nigeria' ? ({en:'Nigeria',zh:'尼日利亚',ru:'Нигерия',fr:'Nigéria',es:'Nigeria',ar:'نيجيريا'}[activeLang]) : ({en:'Ghana',zh:'加纳',ru:'Гана',fr:'Ghana',es:'Ghana',ar:'غانا'}[activeLang])} />
       </main>
 
       <Footer />

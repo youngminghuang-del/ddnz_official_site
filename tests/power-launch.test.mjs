@@ -26,7 +26,7 @@ test('model comparison separates power and energy gaps with exact threshold hand
  results=comparePowerModels(rows.map(r=>({...r,watts:'10000'})),'4','85');assert.ok(results.every(r=>!r.fits));assert.deepEqual(comparePowerModels(d.plan.rows,'','85'),[]);
 });
 test('guide analytics carries enum identifiers only, never raw user fields',()=>{
- const e=powerGuideEvent('en','model_select',{modelId:'sanhe-st',sceneId:'camp',deviceId:'phone',email:'private@example.com',watts:'72',notes:'private'});assert.deepEqual(Object.keys(e.params).sort(),['content_group','content_language','device_id','journey_action','product_id','scene_id']);assert.equal(powerGuideEvent('en','raw_input',{}),null);assert.equal(powerGuideEvent('zh','model_select',{}),null);assert.equal(powerGuideEvent('en','model_select',{modelId:'private@example.com'}).params.product_id,undefined);
+ const e=powerGuideEvent('en','model_select',{modelId:'sanhe-st',sceneId:'camp',deviceId:'phone',email:'private@example.com',watts:'72',notes:'private'});assert.deepEqual(Object.keys(e.params).sort(),['content_group','content_language','device_id','journey_action','product_id','scene_id']);assert.equal(powerGuideEvent('en','raw_input',{}),null);assert.equal(powerGuideEvent('de','model_select',{}),null);assert.equal(powerGuideEvent('en','model_select',{modelId:'private@example.com'}).params.product_id,undefined);
 });
 test('inquiry production transport preserves human-readable details and handles timeout, rejection and retry',async()=>{
  const payload={name:'Internal test',email:'qa@example.invalid',subject:'Fixture only',message:'Phone: 20W × 2\nTarget: 3h'};let calls=0;const sent=[];

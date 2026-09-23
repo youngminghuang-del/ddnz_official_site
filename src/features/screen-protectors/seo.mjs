@@ -5,6 +5,7 @@ import { EN, t } from './locales/en.mjs';
 import { PRODUCTS, cartonFacts, money, number, referenceDate } from './model.mjs';
 import { FACTORY_CLIPS, VIDEO_COPY } from './production.mjs';
 import { escapeHtml, screenProtectorBreadcrumbs, renderScreenProtectorBreadcrumbs, renderScreenProtectorNextSteps } from './browsing.mjs';
+import { productAlternates } from '../../lib/productLocalization.mjs';
 import { phoneAlternates } from './localization.mjs';
 import buyerEnglish from '../buyer-guides/locales/en.json' with { type: 'json' };
 export { escapeHtml } from './browsing.mjs';
@@ -77,7 +78,7 @@ export function screenProtectorMetadata(pathname, { preview = true } = {}) {
   return {
     ...metadata, page, path: ROUTES[page], canonical: SITE_ORIGIN + screenProtectorCanonicalPath(pathname),
     image: SITE_ORIGIN + metadata.image, language: 'en', type: 'website',
-    alternateUrls: ['home', 'products'].includes(page) ? phoneAlternates(ROUTES[page]) : [],
+    alternateUrls: ['guides','prices','curves','videos','calculator'].includes(page) ? [...productAlternates(ROUTES[page]), {hrefLang:'x-default',href:'https://www.ddnzglobal.com'+ROUTES[page]+'/'}] : ['home', 'products'].includes(page) ? phoneAlternates(ROUTES[page]) : [],
     robots: preview ? PREVIEW_ROBOTS : page === 'quote' ? BRIEF_ROBOTS : PUBLIC_ROBOTS,
     indexable: !preview && page !== 'quote',
   };
@@ -219,7 +220,7 @@ export function appendScreenProtectorSitemap(xml) {
   const existing = new Set([...xml.matchAll(/<loc>\s*([^<]+?)\s*<\/loc>/g)].map(match => match[1].replace(/\/$/, '')));
   const additions = Object.entries(ROUTES).filter(([page, path]) => page !== 'quote' && !existing.has(SITE_ORIGIN + path))
     .map(([page, path]) => {
-      const alternates = ['home', 'products'].includes(page) ? phoneAlternates(path) : [];
+      const alternates = page!=='quote' ? phoneAlternates(path) : [];
       return `  <url><loc>${SITE_ORIGIN + screenProtectorCanonicalPath(path)}</loc>${alternates.map(item => `<xhtml:link rel="alternate" hreflang="${item.hrefLang}" href="${escapeHtml(item.href)}" />`).join('')}</url>`;
     });
   if (!additions.length) return xml;

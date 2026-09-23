@@ -39,22 +39,16 @@ jobs:
         run: npm run test:notion-guards
 
       - name: Test sourcing tools and release generation
-        run: node --import tsx --test tests/*.test.mjs tests/*.test.ts tests/kitchen/*.test.mjs
+        run: node --import tsx --test tests/*.test.mjs tests/*.test.ts tests/*.test.tsx tests/kitchen/*.test.mjs
 
       - name: Test analytics consent and payload safeguards
         run: npm run test:analytics-policy && npm run test:analytics-runtime
 
-      - name: Build application from the committed content snapshot
-        run: npm exec -- vite build
+      - name: Build and audit the complete release from committed content
+        run: npm run build:preview
 
-      - name: Generate static routes and sitemap
-        run: npm exec -- tsx scripts/generate-static-pages.ts
-
-      - name: Finalize screen protector routes
-        run: npm run build:screen-protectors
-
-      - name: Audit generated SEO output
-        run: node scripts/audit-seo-output.mjs
+      - name: Audit visible purchase and shipping intent
+        run: npm run audit:search-intent
 
       - name: Validate freight pages in all eight languages
         run: node --import tsx scripts/test-freight-eight-languages.ts

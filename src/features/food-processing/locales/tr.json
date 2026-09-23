@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "products": "Ürünler",
+    "title": "Çin’den gıda işleme makineleri satın alın",
+    "intro": "Hamur, fırıncılık, et, sebze ve tahıl hazırlığı için Çin’den makine tedarik edin. Modelleri ve toptan fiyatları tek tek veya paket halinde karşılaştırın; ambalaj ayrı hesaplanır.",
+    "source": "Çin’den tedarik · Gıda hazırlığı",
+    "compare": "Makineleri karşılaştırın",
+    "packages": "Ekipman paketleri",
+    "equipment": "Ekipman",
+    "packing": "Listelenen ambalaj",
+    "list": "Ekipman listeniz",
+    "all": "Tümü",
+    "specs": "Teknik bilgiler ve satın alma notları",
+    "power": "Güç",
+    "size": "Makine ölçüleri",
+    "weight": "Listelenen ağırlık",
+    "quantity": "Adet",
+    "add": "Listeye ekle",
+    "remove": "Kaldır",
+    "clear": "Listeyi temizle",
+    "empty": "Liste boş. Önce makine seçin.",
+    "total": "Ekipman ve listelenen ambalaj toplamı",
+    "destination": "Varış ülkesi / şehri",
+    "requirements": "Malzeme, parti, voltaj, frekans ve aksesuar ihtiyaçları",
+    "continue": "Teklif formuna devam et",
+    "review": "Göndermeden önce formdaki bilgileri gözden geçirin.",
+    "exclude": "Onaylanmamış seçenekler, ihracat ambalajı iyileştirmeleri, navlun, vergiler ve hizmetler hariçtir.",
+    "confirm": "Sevkiyat öncesi voltajı, frekansı, korumaları, paket ölçülerini ve brüt ağırlığı doğrulayın.",
+    "imageNote": "Görseller model ailelerini gösterir; sipariş yapılandırmasını doğrulayın.",
+    "sourcePages": "Kaynak sayfaları",
+    "priceList": "Fiyat listesi",
+    "catalogue": "Katalog",
+    "scope": "Seçim ve kapsam",
+    "related": "İlgili paketler ve kategoriler",
+    "services": "Tedarik ve ihracat hizmetleri",
+    "unit": "makine başına",
+    "added": "Listeye eklendi",
+    "cleared": "Liste temizlendi",
+    "increase": "Adedi artır",
+    "decrease": "Adedi azalt",
+    "selectionNote": "Paket başlangıçta her modelden bir adet içerir. Adetleri değiştirin; süreci onaylamadan önce reçete ve kapasite uyumunu test edin.",
+    "catalogueTitle": "Gıda işleme makineleri kataloğu"
+  },
+  "names": [
+    "Hamur yoğurma makinesi",
+    "Tezgâh tipi hamur açma makinesi",
+    "Spiral hamur yoğurma makinesi",
+    "Planet mikser",
+    "Ekmek dilimleme makinesi",
+    "Tezgâh tipi et dilimleme makinesi",
+    "Tezgâh tipi kıyma makinesi",
+    "Et hamuru karıştırıcı",
+    "Köfte şekillendirme makinesi",
+    "Patates soyma makinesi",
+    "Sebze dilimleme ve şerit kesme makinesi",
+    "Sebze doğrayıcı",
+    "Posa ayırıcı",
+    "Islak pirinç öğütücü",
+    "Şeker kamışı sıkacağı",
+    "Kanatlı tüy yolma makinesi"
+  ],
+  "variants": [
+    "Bakır sargılı motor · 15 kg modeli",
+    "Bakır motor · çelik merdane",
+    "Mekanik hız değişimi",
+    "Kazan korumalı · üç işlev",
+    "31 bıçaklı model",
+    "Sökülebilir paslanmaz bıçak takımı",
+    "Çelik kıyma parçaları · bakır motor",
+    "Devrilebilir çift kazan",
+    "Dikey model · dört kalıp takımı",
+    "Aşındırıcı tambur",
+    "Bakır motor · tek yönlü bıçak",
+    "Çelik mil ve bıçak",
+    "Bakır motor · döküm alüminyum gövde",
+    "Bakır motor · çelik taban",
+    "Şebekeden beslenen tezgâh modeli",
+    "Büyük çelik model · bakır motor"
+  ],
+  "notes": [
+    "Bakır sürüm seçilmiştir; alüminyum sürümün fiyatı farklıdır.",
+    "Erişte kesici dahil değildir. Standart 1,5–6 mm düz kesici: vergi öncesi CNY 150/adet. Paslanmaz merdane: +CNY 180.",
+    "Katalog yüksekliği 860 mm; üretim ölçülerini doğrulayın. H20-B ve H20-T farklı sürümlerdir.",
+    "Korumalı sürüm fiyatı; aksesuarları ve emniyet kilidini doğrulayın.",
+    "Ekmek boyutunu ve dilim kalınlığını doğrulayın.",
+    "Katalog 18 kg, fiyat listesi 20 kg belirtir. Bıçak aralığını ve etin durumunu doğrulayın.",
+    "Sosis doldurma ucu dahil olarak listelenmiştir. JR-G22 farklı yapılandırmadır.",
+    "Parti büyüklüğünü ve karıştırma süresini reçeteye göre ayarlayın.",
+    "Standart sürüm; değişken hızlı CX-LB ayrı fiyatlandırılır.",
+    "Katalog uzunluğu 680 mm, fiyat listesi 660 mm. Su ve tahliye bağlantılarını doğrulayın.",
+    "Bıçak takımını ve kesim ölçülerini doğrulayın. Bakır sürümdür.",
+    "Partiyi ve kesim sonucunu kendi malzemenizle test edin.",
+    "Katalog ölçüleri 250 × 460 × 610 mm olup listeden farklıdır. Yerleşim öncesi model revizyonunu doğrulayın.",
+    "Malzeme hazırlığını, inceliği ve temizlik sürecini doğrulayın.",
+    "Bataryalı GZ-TD ve çift beslemeli GZ-TS farklı yapılandırmalardır.",
+    "Kanatlı türünü, ön hazırlığı ve yedek yolma parmaklarının ölçüsünü doğrulayın."
+  ],
+  "categories": [
+    [
+      "Hamur ve fırıncılık makineleri",
+      "Çin’den hamur ve fırıncılık makineleri satın alın. Yoğurucu, mikser, hamur açıcı ve dilimleyicileri işlev, motor, koruma, emniyet kilidi, hız ve merdane ya da kesiciye göre karşılaştırın. Planet mikser yoğurucudan farklı işlev görür. Kazan hacmi un kapasitesi değildir: H20, 20 L kazan ve en fazla 8 kg un kapasitesiyle listelenir; reçete, parti ve hidrasyonu test edin. YH-GT300 kesici içermez; standart 1,5–6 mm düz kesici vergi öncesi CNY 150, diğerleri ayrı teklif edilir."
+    ],
+    [
+      "Et işleme makineleri",
+      "Çin’den et dilimleyici, kıyma makinesi, et hamuru mikseri ve şekillendirici tedarik edin. Taze, soğutulmuş veya donmuş et ve kemik durumunu belirtin; sıradan dilimleyicinin donmuş blok işlediğini varsaymayın. Bıçak aralığı, ayna, aksesuar ve yedekleri seçin. Reçete ve partileri dengeleyin; paket fiyatı hat kapasitesini belirlemez. JR-GG22 çelik kıyma parçalarıyla CNY 1.120 olup JR-G22’den farklıdır. Köfte paketi pişirme, soğutma, depolama veya ambalajlama içermez."
+    ],
+    [
+      "Sebze hazırlama makineleri",
+      "Çin’den soyma, dilimleme, şerit kesme ve doğrama makineleri satın alın. Kök veya yapraklı sebzeleri, giriş boyutunu ve son kesimi belirtin; numune veya ölçü verin ve dahil bıçakları doğrulayın. DQ-PS300 tek yönlü bıçakla listelenir; tam bıçak seti dahil olduğu varsayılamaz. Su, tahliye, temizlik ve elle aktarmayı planlayın. Üç makine otomatik hat değildir; yıkama ve yerleşim ayrıca tasarlanır."
+    ],
+    [
+      "Soya, pirinç ve meyve suyu makineleri",
+      "Çin’den posa ayırıcı, ıslak pirinç öğütücü ve şeker kamışı sıkacağı tedarik edin. Islatılmış malzemeyi, inceliği, posa yönetimini ve sonraki adımı tanımlayın. Ayırma ve ıslak öğütme birbirinin yerine geçmez. GZ-TC şebekeden çalışır, batarya içermez; GZ-TD bataryalı, GZ-TS çift beslemelidir. Soya-pirinç paketi ıslatma, pişirme, süzme, dolum ve depolama içermez."
+    ]
+  ],
+  "scopes": [
+    "Yoğur → aç → isteğe bağlı kesiciyle kes. Uyumlu kesici ekleyin; standart düz kesici vergi öncesi CNY 150. Pişirme ayrı.",
+    "Spiral karıştır → planet karıştır → pişmiş ekmeği dilimle. Fırın, mayalandırma dolabı, soğutma ve tezgâhlar hariç. Parti uyumunu doğrulayın.",
+    "Dilimle → kıy. Bıçak aralığını ve aynaları seçin. Soğutma, kemik testeresi ve donmuş blok işleme ayrı.",
+    "Kıy → et hamurunu karıştır → şekillendir. Pişirme, soğutma ve ambalajlama ayrı. Reçeteyi ve parti dengesini test edin.",
+    "Kökleri soy → dilimle veya şerit kes → doğra. Bıçakları seçin; evye, tahliye ve tezgâhlar ayrı. Otomatik hat değildir.",
+    "Posa ayırma ve ıslak pirinç öğütme farklı hazırlık işlevleridir. Islatma, pişirme, süzme ve depolama ayrı."
+  ],
+  "families": [
+    "Hamur ve erişte",
+    "Fırıncılık",
+    "Et",
+    "Sebze",
+    "Soya, pirinç ve meyve suyu",
+    "Kanatlı"
+  ],
+  "packingTypes": {
+    "Wood packing": "Ahşap ambalaj",
+    "Wood frame included": "Ahşap çerçeve dahil",
+    "Carton included": "Karton kutu dahil"
+  }
+}

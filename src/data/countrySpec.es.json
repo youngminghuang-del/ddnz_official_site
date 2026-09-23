@@ -1,0 +1,110 @@
+{
+  "Saudi-Arabia": {
+    "specTitle": "Revisión de conformidad SABER para Arabia Saudita",
+    "specSub": "Los productos regulados pueden requerir procesos de conformidad del producto o envío mediante SABER. Confirme los requisitos según código HS, categoría y normativa vigente.",
+    "tab1Title": "Certificado de producto (PC)",
+    "tab1Header": "SABER PC: registro del producto",
+    "tab1Desc": "El alcance, los ensayos, la validez y los plazos dependen del producto y las reglas vigentes de SABER. Confirme con el importador o un proveedor cualificado si se requieren PC y documentos posteriores del envío.",
+    "tab2Title": "Certificado de envío (SC)",
+    "tab2Header": "SABER SC: documentación de cada envío",
+    "tab2Desc": "Cuando corresponda, los documentos del envío deben coincidir con factura, lista de empaque y registros de conformidad. Confirme la documentación del importador, producto y envío antes de reservar.",
+    "redlinesTitle": "Cinco revisiones previas para Arabia Saudita",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Documentos de envío SABER",
+        "desc": "Si se aplica SABER, confirme con el importador o una entidad cualificada qué PC, SC y documentos de envío se requieren. Complete la revisión antes de reservar."
+      },
+      {
+        "id": "②",
+        "title": "Origen e identificación del producto",
+        "desc": "Los requisitos de origen, etiquetado y embalaje varían por producto. Verifique el método de marcado y su coherencia con los documentos comerciales antes de enviar."
+      },
+      {
+        "id": "③",
+        "title": "Información y manuales en árabe",
+        "desc": "Algunos productos de consumo o regulados pueden requerir etiquetas, advertencias o instrucciones en árabe o bilingües. Confírmelo según la categoría y los requisitos vigentes del destino."
+      },
+      {
+        "id": "④",
+        "title": "Productos regulados por la SFDA",
+        "desc": "Alimentos, cosméticos, dispositivos médicos y productos relacionados pueden estar sujetos a procedimientos de la SFDA. El importador debe confirmar la admisión y los documentos antes de reservar."
+      },
+      {
+        "id": "⑤",
+        "title": "Eficiencia energética y conformidad SASO",
+        "desc": "Los equipos de refrigeración, aire acondicionado e iluminación pueden tener requisitos de eficiencia o conformidad. Compruébelos por código HS, especificación y normativa vigente del destino."
+      }
+    ],
+    "guideTitle": "Guía práctica para envíos a Arabia Saudita",
+    "guideSub": "Coordine transporte, documentos y despacho dentro del alcance confirmado.",
+    "guideCards": [
+      {
+        "title": "Reserva y revisión documental",
+        "desc": "Alinee conocimiento de embarque, factura y lista de empaque con los datos del importador y los documentos SABER aplicables. Revise antes de reservar la carga de marca, regulada o de alto valor."
+      },
+      {
+        "title": "Origen y embalaje de madera",
+        "desc": "Verifique la información de origen y los requisitos del embalaje utilizado. La madera generalmente debe cumplir los requisitos fitosanitarios y del transportista aplicables antes de salir."
+      },
+      {
+        "title": "Plazos, retrasos y festivos",
+        "desc": "Use el itinerario reservado para China–Yeda. Conserve fotos del contenedor vacío, carga y precinto. Prevea margen para documentos, puerto y entrega durante Ramadán, Eid y temporadas altas."
+      }
+    ]
+  },
+  "Kuwait": {
+    "specTitle": "Conformidad KUCAS/TABEK y planificación de envíos a Kuwait",
+    "specSub": "Los productos regulados pueden utilizar KUCAS/TABEK para evaluación técnica, inspección o liberación. El importador debe confirmar los procedimientos y documentos según código HS, categoría y reglas vigentes.",
+    "tab1Title": "Evaluación técnica TER: registro del producto",
+    "tab1Header": "Certificado de evaluación técnica para declaraciones posteriores del mismo producto",
+    "tab1Desc": "La Autoridad Pública de Industria puede emitir un certificado de evaluación técnica a partir de un certificado de conformidad ya obtenido por el importador, para declaraciones posteriores del mismo producto. Confirme documentos, alcance y validez según las reglas vigentes.",
+    "tab2Title": "Inspección técnica TIR: liberación del lote",
+    "tab2Header": "Informe técnico TIR y solicitud de liberación",
+    "tab2Desc": "Cuando se aplica una liberación basada en TIR, el importador normalmente presenta datos de declaración aduanera, TIR, producto y compromisos requeridos, y sigue la solicitud en la plataforma. Las inspecciones, ensayos y etiquetas dependen del producto y las reglas aplicables.",
+    "redlinesTitle": "Cinco revisiones antes de enviar a Kuwait",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Confirme si el producto está regulado",
+        "desc": "Use código HS, categoría y reglas vigentes de KUCAS/TABEK para confirmar si hacen falta certificado de conformidad, evaluación técnica, inspección u otros documentos oficiales."
+      },
+      {
+        "id": "②",
+        "title": "Coherencia entre documentos y declaraciones",
+        "desc": "Factura, lista de empaque, conocimiento de embarque, datos del producto y del importador deben ser coherentes entre sí y con los registros de conformidad aplicables."
+      },
+      {
+        "id": "③",
+        "title": "Etiquetas, manuales y especificaciones",
+        "desc": "Los artículos eléctricos, juguetes, materiales de construcción y productos de ahorro de agua pueden tener reglas específicas. El importador debe confirmar idioma, enchufe, voltaje, etiqueta energética y manuales."
+      },
+      {
+        "id": "④",
+        "title": "Origen y mercancías restringidas",
+        "desc": "La aduana kuwaití exige información clara del país de origen. Antes de reservar mercancías prohibidas, restringidas, peligrosas o de marca, confirme permisos y aceptación del transportista."
+      },
+      {
+        "id": "⑤",
+        "title": "Embalaje, peso y operaciones en destino",
+        "desc": "Confirme embalaje de madera, peso del contenedor, embalaje de mercancías peligrosas y restricciones del transporte interior según la carga, el transportista y la operación de destino."
+      }
+    ],
+    "guideTitle": "Lista de planificación de envíos a Kuwait",
+    "guideSub": "Revisiones de conformidad, documentos, aceptación del transportista y operaciones en destino.",
+    "guideCards": [
+      {
+        "title": "Antes de reservar: producto y alcance",
+        "desc": "Confirme regulación, importador, declaración, responsabilidad fiscal y alcance de despacho y entrega. Para mercancías peligrosas, de marca o restringidas, revise primero la aceptación del transportista."
+      },
+      {
+        "title": "Antes de salir: documentos y embalaje",
+        "desc": "Revise con el importador los datos del destinatario, documentos comerciales, producto y documentos oficiales aplicables. Prepare la madera y el embalaje especial según destino y transportista."
+      },
+      {
+        "title": "Tránsito y llegada: plazos y entrega",
+        "desc": "Use el intervalo de tránsito de la página para planificar y añada margen por temporada alta, cambios de itinerario, inspecciones, festivos y entrega. Fotos de carga, precintos y registros de embalaje ayudan a rastrear el estado de la mercancía."
+      }
+    ]
+  }
+}

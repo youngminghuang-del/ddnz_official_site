@@ -1,0 +1,258 @@
+{
+  "home": "Início",
+  "kitchen": "Equipamentos de cozinha profissional",
+  "phone": "Películas de proteção",
+  "entryTitle": "Para qual negócio você compra?",
+  "entryIntro": "Comece pela forma de vender ou usar os produtos e organize seu próximo pedido.",
+  "open": "Planejar esta compra",
+  "range": "Explorar a linha",
+  "stepsTitle": "Organize o próximo pedido",
+  "modelsTitle": "Comece por estes produtos",
+  "faqTitle": "Antes de pedir uma cotação",
+  "briefTitle": "Conte-nos sua necessidade de compra",
+  "briefIntro": "Informe o que já sabe. Revisaremos produtos e quantidades antes de confirmar disponibilidade e condições comerciais.",
+  "form": {
+    "name": "Seu nome",
+    "email": "E-mail profissional",
+    "company": "Empresa (opcional)",
+    "country": "País de destino",
+    "countryHint": "Por exemplo: Brasil, Portugal ou México",
+    "notes": "Outras necessidades (opcional)",
+    "review": "Revisar solicitação",
+    "send": "Enviar consulta",
+    "simulate": "Pré-visualizar consulta",
+    "sending": "Enviando…",
+    "sent": "Consulta enviada",
+    "previewed": "Prévia concluída",
+    "required": "Preencha este campo.",
+    "invalidEmail": "Informe um e-mail válido.",
+    "success": "Sua consulta foi enviada. A equipe revisará os requisitos antes de preparar a cotação.",
+    "preview": "Prévia concluída neste navegador. Nenhuma consulta foi enviada.",
+    "error": "Não foi possível enviar. Tente novamente.",
+    "privacy": "Política de privacidade",
+    "privacyCopy": "Usamos seus contatos e requisitos de compra para responder à consulta.",
+    "scope": "Enviar uma consulta não confirma um pedido.",
+    "previewScope": "Prévia local: o formulário simula o envio sem transmitir uma mensagem.",
+    "request": "Solicitação de compra",
+    "notesLabel": "Requisitos adicionais"
+  },
+  "guides": {
+    "kitchen-distributors": {
+      "title": "Compre equipamentos de cozinha da China para distribuição | DDNZ",
+      "description": "Compre equipamentos de cozinha no atacado da China para sua linha de distribuição. Compare os modelos com a mesma configuração, quantidade e escopo de entrega, seja para testar, repor ou ampliar a linha.",
+      "eyebrow": "Importadores e distribuidores de equipamentos",
+      "heading": "Compre equipamentos de cozinha da China para distribuição",
+      "intro": "Compre equipamentos de cozinha no atacado da China para sua linha de distribuição. Compare os modelos com a mesma configuração, quantidade e escopo de entrega, seja para testar, repor ou ampliar a linha.",
+      "card": "Importadores e distribuidores de equipamentos",
+      "cardCopy": "Planeje a linha inicial, reposições, embalagem e peças.",
+      "steps": [
+        [
+          "Defina o papel de cada modelo",
+          "Separe modelos básicos de opções de maior capacidade. Compare produção diária nominal e dimensões nas máquinas de gelo e cada cuba nas fritadeiras. Defina quantidades antes de avaliar preços."
+        ],
+        [
+          "Compare o pedido incluído no preço",
+          "Preços de referência valem para as quantidades indicadas. Compare fornecedores com a mesma configuração, embalagem e entrega. Uma lista mista ainda exige confirmar mínimos e disponibilidade por modelo."
+        ],
+        [
+          "Prepare a próxima venda",
+          "Inclua manuais, identificação de caixas e peças a cotar. Confirme reposição de peças e procedimento de garantia. Instalação e assistência locais fazem parte do seu plano de revenda."
+        ]
+      ],
+      "faqs": [
+        [
+          "Posso combinar máquinas de gelo, fritadeiras e refrigeração?",
+          "Sim, solicite uma seleção mista. Mínimos de fábrica, embalagem, consolidação e frete dependem da combinação confirmada."
+        ],
+        [
+          "Os preços exibidos são cotações para distribuidores?",
+          "São referências indicativas, com quantidades próprias. A cotação confirma modelos, quantidades, moeda e escopo de entrega."
+        ],
+        [
+          "Preciso dos dados elétricos antes de fazer a lista?",
+          "Comece por modelos, quantidades e destino. Tensão, frequência, fases e plugue serão confirmados para os equipamentos escolhidos na cotação."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "range",
+          "label": "Equipamentos e quantidades",
+          "hint": "Códigos ou tipos de equipamento e unidades por modelo"
+        },
+        {
+          "key": "stage",
+          "label": "Finalidade do pedido",
+          "hint": "Teste, reposição ou ampliação da linha"
+        },
+        {
+          "key": "support",
+          "label": "Embalagem e pós-venda",
+          "hint": "Manuais, peças ou etiquetas de caixa para cotação"
+        }
+      ]
+    },
+    "restaurant-projects": {
+      "title": "Compre equipamentos para projetos de restaurantes da China | DDNZ",
+      "description": "Compre equipamentos da China conforme a lista do seu restaurante, café ou hotel. Informe projeto, espaços e necessidades para avaliar modelos e entrega em conjunto.",
+      "eyebrow": "Projetos de restaurantes e hotelaria",
+      "heading": "Compre equipamentos para projetos de restaurantes da China",
+      "intro": "Compre equipamentos da China conforme a lista do seu restaurante, café ou hotel. Informe projeto, espaços e necessidades para avaliar modelos e entrega em conjunto.",
+      "card": "Projetos de restaurantes e hotelaria",
+      "cardCopy": "Traga a lista de equipamentos, espaço disponível e requisitos de entrega.",
+      "steps": [
+        [
+          "Defina a função de cada estação",
+          "Separe cocção, refrigeração, preparo e bebidas. Indique especificações fixas e itens que aceitam alternativas, quantidades e espaço disponível em bancadas ou armários."
+        ],
+        [
+          "Confira as interfaces",
+          "Revise dimensões, abertura de portas, ventilação, drenagem e conexões dos modelos escolhidos. Sua equipe deve validar adequação ao local e instalação antes da compra."
+        ],
+        [
+          "Combine pedido e entrega",
+          "Informe destino, janela de recebimento e identificação de caixas por local ou estação. Confirme documentos e embalagem. Prazos e expedição coordenada dependem dos fornecedores escolhidos."
+        ]
+      ],
+      "faqs": [
+        [
+          "Vocês cotam com base na minha lista de equipamentos?",
+          "Sim. Inclua referências ou descrições e quantidades. Marque itens fixos e aqueles que aceitam alternativas."
+        ],
+        [
+          "A instalação completa da cozinha está incluída?",
+          "Esta página cobre sourcing de equipamentos e coordenação de exportação. Informe necessidades de instalação para esclarecer responsabilidades; instalação local não está incluída por padrão."
+        ],
+        [
+          "E se a data de abertura já estiver definida?",
+          "Informe data e destino. Produção, consolidação, trânsito e entrega local precisam ser verificados antes de assumir um prazo."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "project",
+          "label": "Projeto e número de locais",
+          "hint": "Restaurante, café, hotel ou cozinha central; um ou vários locais"
+        },
+        {
+          "key": "equipment",
+          "label": "Lista de equipamentos e espaço",
+          "hint": "Equipamentos, quantidades, referências e dimensões principais"
+        },
+        {
+          "key": "timing",
+          "label": "Janela de entrega solicitada",
+          "hint": "Data, local de recebimento e entregas em etapas"
+        }
+      ]
+    },
+    "phone-stores": {
+      "title": "Compre películas da China no atacado para lojas | DDNZ",
+      "description": "Compre películas de proteção da China no atacado para lojas e redes de reparo. Planeje reposição pelos aparelhos atendidos e compare opções transparentes e de privacidade, instalação e quantidades por modelo.",
+      "eyebrow": "Lojas de acessórios e redes de reparo",
+      "heading": "Compre películas da China no atacado para lojas",
+      "intro": "Compre películas de proteção da China no atacado para lojas e redes de reparo. Planeje reposição pelos aparelhos atendidos e compare opções transparentes e de privacidade, instalação e quantidades por modelo.",
+      "card": "Lojas de acessórios e redes de reparo",
+      "cardCopy": "Planeje cobertura de modelos, aplicação e reposição nas lojas.",
+      "steps": [
+        [
+          "Liste os modelos exatos de celular",
+          "Inclua nome e geração, com quantidade por combinação de película e aparelho. Variantes de uma mesma linha não têm necessariamente o mesmo encaixe. Os mínimos existentes continuam válidos."
+        ],
+        [
+          "Relacione película e forma de venda",
+          "Compare transparência e privacidade. Defina aplicação por funcionário ou cliente e confirme aplicador, limpeza e embalagem conforme o produto."
+        ],
+        [
+          "Distribua por loja ou depósito central",
+          "Informe a divisão pretendida. Quantidades por caixa, mistura de modelos e etiquetas de loja precisam ser confirmadas antes do despacho. Guarde amostra aprovada e lista de modelos para reposição."
+        ]
+      ],
+      "faqs": [
+        [
+          "Várias lojas podem reunir um pedido?",
+          "Sim. Os mínimos por produto e aparelho continuam válidos; divisão e embalagem serão confirmadas na cotação."
+        ],
+        [
+          "Todos os modelos de celular estão disponíveis?",
+          "Não presuma isso. Lista exata, encaixe e disponibilidade devem ser confirmados para os produtos escolhidos."
+        ],
+        [
+          "O preço inclui frete até meu país?",
+          "As referências de produto não incluem cotação ao destino. Informe país e quantidade. A calculadora separada em inglês usa somente uma referência para Istambul."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "stores",
+          "label": "Lojas e recebimento",
+          "hint": "Número de lojas; depósito central ou divisão por unidade"
+        },
+        {
+          "key": "models",
+          "label": "Películas, aparelhos e quantidades",
+          "hint": "Transparente/privacidade, modelo exato e peças por combinação"
+        },
+        {
+          "key": "packing",
+          "label": "Aplicação e embalagem",
+          "hint": "Aplicação em loja ou pelo cliente, kit de varejo ou etiquetas"
+        }
+      ]
+    },
+    "private-label": {
+      "title": "Compre películas de marca própria da China | DDNZ",
+      "description": "Compre películas de marca própria da China com especificações de produto e embalagem. Use a linha atual como ponto de partida e descreva alterações e experiência de aplicação para análise do fornecedor.",
+      "eyebrow": "Marcas próprias e vendedores on-line",
+      "heading": "Compre películas de marca própria da China",
+      "intro": "Compre películas de marca própria da China com especificações de produto e embalagem. Use a linha atual como ponto de partida e descreva alterações e experiência de aplicação para análise do fornecedor.",
+      "card": "Marcas próprias e vendedores on-line",
+      "cardCopy": "Defina película, kit de aplicação e embalagem para cotação.",
+      "steps": [
+        [
+          "Especifique primeiro o produto",
+          "Escolha vidro transparente ou de privacidade, aparelhos e formato de aplicação. Avalie encaixe, bordas, toque e compatibilidade com capas em amostras antes de aprovar a produção."
+        ],
+        [
+          "Separe alterações no produto e na embalagem",
+          "Descreva etiqueta, caixa impressa, manual ou acessórios diferentes. Viabilidade da marca, arte, custos de preparação e mínimos dependem do fornecedor escolhido."
+        ],
+        [
+          "Aprove uma especificação repetível",
+          "Confirme amostra, versão da arte, lista de embalagem e inspeções. Indique códigos de barras e etiquetas exigidas pelo canal. Personalização não implica aprovação por uma plataforma de venda."
+        ]
+      ],
+      "faqs": [
+        [
+          "A embalagem personalizada está no preço de referência?",
+          "Não. As referências cobrem as opções descritas; embalagem, impressão ou ferramental personalizados exigem cotação confirmada separada."
+        ],
+        [
+          "Existe mínimo fixo para marca própria?",
+          "A personalização pode alterar mínimos. Informe quantidades por aparelho e mudanças de embalagem para avaliação do fornecedor."
+        ],
+        [
+          "Posso pedir amostra antes do lote?",
+          "Sim. Confirme configuração, custo e entrega da amostra; avalie aparelhos e embalagem pretendidos antes de aprovar o lote."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "brand",
+          "label": "Marca e canal de venda",
+          "hint": "Sua marca, lojas ou canal on-line"
+        },
+        {
+          "key": "product",
+          "label": "Produto, aparelhos e quantidades",
+          "hint": "Transparente/privacidade, aplicador e quantidade por modelo exato"
+        },
+        {
+          "key": "customization",
+          "label": "Personalização e amostras",
+          "hint": "Etiqueta com logotipo, caixa, manual, acessórios ou amostra de aprovação"
+        }
+      ]
+    }
+  },
+  "english": "em inglês"
+}

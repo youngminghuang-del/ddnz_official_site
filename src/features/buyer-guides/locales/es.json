@@ -1,48 +1,258 @@
 {
-  "home":"Inicio", "kitchen":"Equipos de cocina comercial", "phone":"Micas para celular",
-  "entryTitle":"¿Para qué negocio está comprando?", "entryIntro":"Elija la forma en que vende o utiliza los productos y prepare su próximo pedido.",
-  "open":"Preparar esta compra", "range":"Ver los productos", "stepsTitle":"Prepare su próximo pedido.", "modelsTitle":"Productos para empezar", "faqTitle":"Antes de solicitar una cotización", "briefTitle":"Cuéntenos qué necesita comprar.", "briefIntro":"Complete los datos que tenga. Revisaremos productos y cantidades antes de confirmar disponibilidad y condiciones comerciales.",
-  "form":{"name":"Su nombre", "email":"Correo de trabajo", "company":"Empresa (opcional)", "country":"País de destino", "countryHint":"Por ejemplo: México, Emiratos Árabes Unidos o Singapur", "notes":"¿Algo más que debamos incluir? (opcional)", "review":"Revisar la solicitud", "send":"Enviar solicitud", "simulate":"Probar la solicitud", "sending":"Enviando…", "sent":"Solicitud enviada", "previewed":"Prueba completada", "required":"Complete este campo.", "invalidEmail":"Introduzca un correo válido.", "success":"Su solicitud se ha enviado. Revisaremos los requisitos antes de preparar una cotización.", "preview":"Prueba completada en este navegador. No se ha enviado ninguna solicitud.", "error":"No se pudo enviar la solicitud. Inténtelo de nuevo.", "privacy":"Política de privacidad", "privacyCopy":"Utilizamos sus datos de contacto y requisitos de compra para responder a su solicitud.", "scope":"Enviar una solicitud no confirma un pedido.", "previewScope":"Vista previa local: este formulario simula el envío sin enviar mensajes.", "request":"Solicitud de compra", "notesLabel":"Requisitos adicionales"},
-  "guides":{
-    "kitchen-distributors":{
-      "title":"Equipos de cocina para distribuidores desde China | DDNZ",
-      "description":"Prepare su compra de equipos de cocina para reventa: modelos, cantidades, embalaje y refacciones. Solicite una cotización para su distribución.",
-      "eyebrow":"PARA IMPORTADORES Y DISTRIBUIDORES", "heading":"Una línea de equipos que sus clientes puedan volver a comprar.",
-      "intro":"Reúna los equipos que buscan sus clientes y compare cada modelo con las mismas condiciones de compra. Empiece con un pedido de prueba, una reposición o una ampliación de su catálogo.",
-      "card":"Distribuidores de equipos de cocina", "cardCopy":"Seleccione su primera línea, planifique reposiciones y consulte embalaje y refacciones.",
-      "steps":[["Defina la función de cada modelo","Distinga una opción de entrada de otra de mayor capacidad. En máquinas de hielo, compare producción diaria nominal y dimensiones; en freidoras, la capacidad de cada tanque. Añada las cantidades antes de comparar precios."],["Compare lo que incluye cada pedido","Los precios de referencia corresponden a la cantidad indicada en el producto. Solicite la misma configuración, embalaje y alcance de entrega a cada proveedor. Una lista mixta requiere confirmar el mínimo y la disponibilidad de cada modelo."],["Prepare la siguiente venta","Incluya en su solicitud los manuales, etiquetas de caja y refacciones que necesita cotizar. Consulte qué piezas se podrán volver a pedir y cómo se gestiona la garantía. Planifique por separado la instalación y el servicio local que ofrecerá a sus clientes."]],
-      "faqs":[["¿Puedo combinar máquinas de hielo, freidoras y refrigeración?","Puede solicitar una selección mixta. Los mínimos de fábrica, embalaje, consolidación y transporte se confirman para la combinación concreta."],["¿Los precios publicados son cotizaciones para distribuidores?","Son referencias orientativas con sus propias cantidades de compra. La cotización confirma modelos, cantidades, moneda y alcance de entrega."],["¿Necesito definir toda la instalación eléctrica antes de seleccionar?","Empiece con modelos, cantidades y país de destino. Durante la cotización confirmaremos voltaje, frecuencia, fases y conexión de los equipos seleccionados."]],
-      "fields":[{"key":"range","label":"Equipos y cantidades","hint":"Códigos de modelo o tipos de equipo, con unidades por modelo"},{"key":"stage","label":"Objetivo de este pedido","hint":"Prueba, reposición o ampliación del catálogo"},{"key":"support","label":"Embalaje y servicio posventa","hint":"Manuales, refacciones o etiquetas de caja que desea cotizar"}]
+  "home": "Inicio",
+  "kitchen": "Equipos de cocina comercial",
+  "phone": "Micas para celular",
+  "entryTitle": "¿Para qué negocio está comprando?",
+  "entryIntro": "Elija la forma en que vende o utiliza los productos y prepare su próximo pedido.",
+  "open": "Preparar esta compra",
+  "range": "Ver los productos",
+  "stepsTitle": "Prepare su próximo pedido.",
+  "modelsTitle": "Productos para empezar",
+  "faqTitle": "Antes de solicitar una cotización",
+  "briefTitle": "Cuéntenos qué necesita comprar.",
+  "briefIntro": "Complete los datos que tenga. Revisaremos productos y cantidades antes de confirmar disponibilidad y condiciones comerciales.",
+  "form": {
+    "name": "Su nombre",
+    "email": "Correo de trabajo",
+    "company": "Empresa (opcional)",
+    "country": "País de destino",
+    "countryHint": "Por ejemplo: México, Emiratos Árabes Unidos o Singapur",
+    "notes": "¿Algo más que debamos incluir? (opcional)",
+    "review": "Revisar la solicitud",
+    "send": "Enviar solicitud",
+    "simulate": "Probar la solicitud",
+    "sending": "Enviando…",
+    "sent": "Solicitud enviada",
+    "previewed": "Prueba completada",
+    "required": "Complete este campo.",
+    "invalidEmail": "Introduzca un correo válido.",
+    "success": "Su solicitud se ha enviado. Revisaremos los requisitos antes de preparar una cotización.",
+    "preview": "Prueba completada en este navegador. No se ha enviado ninguna solicitud.",
+    "error": "No se pudo enviar la solicitud. Inténtelo de nuevo.",
+    "privacy": "Política de privacidad",
+    "privacyCopy": "Utilizamos sus datos de contacto y requisitos de compra para responder a su solicitud.",
+    "scope": "Enviar una solicitud no confirma un pedido.",
+    "previewScope": "Vista previa local: este formulario simula el envío sin enviar mensajes.",
+    "request": "Solicitud de compra",
+    "notesLabel": "Requisitos adicionales"
+  },
+  "guides": {
+    "kitchen-distributors": {
+      "title": "Equipos de cocina para distribuidores desde China | DDNZ",
+      "description": "Prepare su compra de equipos de cocina para reventa: modelos, cantidades, embalaje y refacciones. Solicite una cotización para su distribución.",
+      "eyebrow": "PARA IMPORTADORES Y DISTRIBUIDORES",
+      "heading": "Una línea de equipos que sus clientes puedan volver a comprar.",
+      "intro": "Compre equipos de cocina al por mayor en China para su catálogo de distribución. Reúna los equipos que buscan sus clientes y compare cada modelo con las mismas condiciones de compra. Empiece con un pedido de prueba, una reposición o una ampliación de su catálogo.",
+      "card": "Distribuidores de equipos de cocina",
+      "cardCopy": "Seleccione su primera línea, planifique reposiciones y consulte embalaje y refacciones.",
+      "steps": [
+        [
+          "Defina la función de cada modelo",
+          "Distinga una opción de entrada de otra de mayor capacidad. En máquinas de hielo, compare producción diaria nominal y dimensiones; en freidoras, la capacidad de cada tanque. Añada las cantidades antes de comparar precios."
+        ],
+        [
+          "Compare lo que incluye cada pedido",
+          "Los precios de referencia corresponden a la cantidad indicada en el producto. Solicite la misma configuración, embalaje y alcance de entrega a cada proveedor. Una lista mixta requiere confirmar el mínimo y la disponibilidad de cada modelo."
+        ],
+        [
+          "Prepare la siguiente venta",
+          "Incluya en su solicitud los manuales, etiquetas de caja y refacciones que necesita cotizar. Consulte qué piezas se podrán volver a pedir y cómo se gestiona la garantía. Planifique por separado la instalación y el servicio local que ofrecerá a sus clientes."
+        ]
+      ],
+      "faqs": [
+        [
+          "¿Puedo combinar máquinas de hielo, freidoras y refrigeración?",
+          "Puede solicitar una selección mixta. Los mínimos de fábrica, embalaje, consolidación y transporte se confirman para la combinación concreta."
+        ],
+        [
+          "¿Los precios publicados son cotizaciones para distribuidores?",
+          "Son referencias orientativas con sus propias cantidades de compra. La cotización confirma modelos, cantidades, moneda y alcance de entrega."
+        ],
+        [
+          "¿Necesito definir toda la instalación eléctrica antes de seleccionar?",
+          "Empiece con modelos, cantidades y país de destino. Durante la cotización confirmaremos voltaje, frecuencia, fases y conexión de los equipos seleccionados."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "range",
+          "label": "Equipos y cantidades",
+          "hint": "Códigos de modelo o tipos de equipo, con unidades por modelo"
+        },
+        {
+          "key": "stage",
+          "label": "Objetivo de este pedido",
+          "hint": "Prueba, reposición o ampliación del catálogo"
+        },
+        {
+          "key": "support",
+          "label": "Embalaje y servicio posventa",
+          "hint": "Manuales, refacciones o etiquetas de caja que desea cotizar"
+        }
+      ]
     },
-    "restaurant-projects":{
-      "title":"Equipos para proyectos de restaurantes desde China | DDNZ",
-      "description":"Prepare equipos para proyectos de restaurantes, cafeterías y hoteles. Compare dimensiones, cantidades y configuraciones antes de comprar en China.",
-      "eyebrow":"PARA COMPRADORES DE PROYECTOS E INTEGRADORES", "heading":"De una lista de equipos a una compra coordinada.",
-      "intro":"Comparta el proyecto, los espacios y los equipos necesarios. Organizamos la búsqueda a partir de una lista definida para revisar modelos y requisitos de entrega de forma conjunta.",
-      "card":"Proyectos de restaurantes y hoteles", "cardCopy":"Prepare la lista de equipos, el espacio disponible y sus requisitos de entrega.",
-      "steps":[["Defina el trabajo de cada estación","Agrupe la lista en cocción, almacenamiento en frío, preparación y bebidas. Indique qué equipos ya están especificados y dónde acepta alternativas. Añada cantidades y espacio disponible para mesas o gabinetes."],["Revise las conexiones con el local","Compruebe dimensiones, apertura de puertas, ventilación, desagüe y conexiones de los modelos elegidos. Antes de comprar, su equipo de proyecto debe confirmar la adecuación al local y el plan de instalación."],["Acuerde el alcance de entrega","Incluya destino, fecha solicitada y si necesita identificar las cajas por local o estación. Consulte qué documentos y detalles de embalaje acompañarán al envío. Los plazos y la salida coordinada dependen de los proveedores seleccionados."]],
-      "faqs":[["¿Pueden cotizar mi lista de equipos?","Sí. Incluya referencias o descripciones y cantidades. Distinga los equipos obligatorios de aquellos para los que acepta alternativas."],["¿La compra incluye la instalación de toda la cocina?","Esta página cubre búsqueda de equipos y coordinación de exportación. Indique sus necesidades de instalación para aclarar responsabilidades en la cotización; la instalación local no está incluida por defecto."],["¿Qué hago si la fecha de apertura ya está fijada?","Indique la fecha solicitada y el destino. Hay que revisar producción, consolidación, tránsito y entrega local antes de comprometer una fecha."]],
-      "fields":[{"key":"project","label":"Proyecto y número de locales","hint":"Restaurante, cafetería, hotel o cocina central; uno o varios locales"},{"key":"equipment","label":"Lista de equipos y espacio disponible","hint":"Equipos, cantidades, referencias y dimensiones importantes"},{"key":"timing","label":"Fecha o periodo de entrega solicitado","hint":"Fecha objetivo, lugar de recepción y entregas por etapas"}]
+    "restaurant-projects": {
+      "title": "Equipos para proyectos de restaurantes desde China | DDNZ",
+      "description": "Prepare equipos para proyectos de restaurantes, cafeterías y hoteles. Compare dimensiones, cantidades y configuraciones antes de comprar en China.",
+      "eyebrow": "PARA COMPRADORES DE PROYECTOS E INTEGRADORES",
+      "heading": "De una lista de equipos a una compra coordinada.",
+      "intro": "Adquiera equipos para proyectos de restaurantes en China según su lista de necesidades. Comparta el proyecto, los espacios y los equipos necesarios. Organizamos la búsqueda a partir de una lista definida para revisar modelos y requisitos de entrega de forma conjunta.",
+      "card": "Proyectos de restaurantes y hoteles",
+      "cardCopy": "Prepare la lista de equipos, el espacio disponible y sus requisitos de entrega.",
+      "steps": [
+        [
+          "Defina el trabajo de cada estación",
+          "Agrupe la lista en cocción, almacenamiento en frío, preparación y bebidas. Indique qué equipos ya están especificados y dónde acepta alternativas. Añada cantidades y espacio disponible para mesas o gabinetes."
+        ],
+        [
+          "Revise las conexiones con el local",
+          "Compruebe dimensiones, apertura de puertas, ventilación, desagüe y conexiones de los modelos elegidos. Antes de comprar, su equipo de proyecto debe confirmar la adecuación al local y el plan de instalación."
+        ],
+        [
+          "Acuerde el alcance de entrega",
+          "Incluya destino, fecha solicitada y si necesita identificar las cajas por local o estación. Consulte qué documentos y detalles de embalaje acompañarán al envío. Los plazos y la salida coordinada dependen de los proveedores seleccionados."
+        ]
+      ],
+      "faqs": [
+        [
+          "¿Pueden cotizar mi lista de equipos?",
+          "Sí. Incluya referencias o descripciones y cantidades. Distinga los equipos obligatorios de aquellos para los que acepta alternativas."
+        ],
+        [
+          "¿La compra incluye la instalación de toda la cocina?",
+          "Esta página cubre búsqueda de equipos y coordinación de exportación. Indique sus necesidades de instalación para aclarar responsabilidades en la cotización; la instalación local no está incluida por defecto."
+        ],
+        [
+          "¿Qué hago si la fecha de apertura ya está fijada?",
+          "Indique la fecha solicitada y el destino. Hay que revisar producción, consolidación, tránsito y entrega local antes de comprometer una fecha."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "project",
+          "label": "Proyecto y número de locales",
+          "hint": "Restaurante, cafetería, hotel o cocina central; uno o varios locales"
+        },
+        {
+          "key": "equipment",
+          "label": "Lista de equipos y espacio disponible",
+          "hint": "Equipos, cantidades, referencias y dimensiones importantes"
+        },
+        {
+          "key": "timing",
+          "label": "Fecha o periodo de entrega solicitado",
+          "hint": "Fecha objetivo, lugar de recepción y entregas por etapas"
+        }
+      ]
     },
-    "phone-stores":{
-      "title":"Micas por mayoreo para tiendas y cadenas | DDNZ Global",
-      "description":"Prepare micas para tiendas de accesorios y cadenas de reparación. Compare mínimos por modelo de celular, instalación y embalaje para su pedido de mayoreo.",
-      "eyebrow":"PARA TIENDAS DE ACCESORIOS Y CADENAS DE REPARACIÓN", "heading":"Defina la mezcla de celulares antes de comprar.",
-      "intro":"Prepare la reposición según los celulares que atienden sus tiendas. Compare opciones transparentes y de privacidad, métodos de instalación y cantidades por modelo de celular.",
-      "card":"Tiendas de accesorios y reparación", "cardCopy":"Planifique modelos de celular, instalación y reposiciones para sus tiendas.",
-      "steps":[["Indique los modelos exactos de celular","Anote nombre y generación y asigne una cantidad a cada combinación de mica y celular. No suponga que todas las variantes de una serie tienen el mismo ajuste. Se mantienen los mínimos de cada producto."],["Elija la mica según la forma de venta","Compare privacidad y transparencia y decida si la instalación la realizará el personal de la tienda o el cliente. Confirme instalador, accesorios de limpieza y presentación comercial del producto seleccionado."],["Planifique la distribución del inventario","Indique si recibirá en un almacén central o necesita asignaciones por tienda. Las cantidades por caja, el embalaje de modelos mixtos y las etiquetas se revisan antes del despacho. Conserve una muestra y la lista aprobada para la próxima reposición."]],
-      "faqs":[["¿Varias tiendas pueden compartir un pedido?","Puede enviar una solicitud conjunta. Se mantienen los mínimos por producto y modelo de celular; la asignación por tienda y el embalaje se confirman en la cotización."],["¿Están disponibles todos los modelos de celular?","No se debe dar por hecho. Hay que confirmar la lista exacta, el ajuste y la disponibilidad de los productos seleccionados."],["¿Los precios incluyen envío a mi país?","Las referencias de producto no incluyen una cotización de transporte al destino. Indique país y cantidades. La calculadora independiente en inglés utiliza únicamente una referencia para Estambul."]],
-      "fields":[{"key":"stores","label":"Tiendas y forma de recepción","hint":"Número de tiendas; almacén central o asignaciones separadas"},{"key":"models","label":"Micas, modelos de celular y cantidades","hint":"Transparente/privacidad, modelo exacto y piezas por combinación"},{"key":"packing","label":"Instalación y embalaje","hint":"Instalación en tienda o por el cliente, kit comercial o etiquetas"}]
+    "phone-stores": {
+      "title": "Micas por mayoreo para tiendas y cadenas | DDNZ Global",
+      "description": "Prepare micas para tiendas de accesorios y cadenas de reparación. Compare mínimos por modelo de celular, instalación y embalaje para su pedido de mayoreo.",
+      "eyebrow": "PARA TIENDAS DE ACCESORIOS Y CADENAS DE REPARACIÓN",
+      "heading": "Defina la mezcla de celulares antes de comprar.",
+      "intro": "Compre protectores de pantalla al por mayor en China para tiendas y cadenas de reparación. Prepare la reposición según los celulares que atienden sus tiendas. Compare opciones transparentes y de privacidad, métodos de instalación y cantidades por modelo de celular.",
+      "card": "Tiendas de accesorios y reparación",
+      "cardCopy": "Planifique modelos de celular, instalación y reposiciones para sus tiendas.",
+      "steps": [
+        [
+          "Indique los modelos exactos de celular",
+          "Anote nombre y generación y asigne una cantidad a cada combinación de mica y celular. No suponga que todas las variantes de una serie tienen el mismo ajuste. Se mantienen los mínimos de cada producto."
+        ],
+        [
+          "Elija la mica según la forma de venta",
+          "Compare privacidad y transparencia y decida si la instalación la realizará el personal de la tienda o el cliente. Confirme instalador, accesorios de limpieza y presentación comercial del producto seleccionado."
+        ],
+        [
+          "Planifique la distribución del inventario",
+          "Indique si recibirá en un almacén central o necesita asignaciones por tienda. Las cantidades por caja, el embalaje de modelos mixtos y las etiquetas se revisan antes del despacho. Conserve una muestra y la lista aprobada para la próxima reposición."
+        ]
+      ],
+      "faqs": [
+        [
+          "¿Varias tiendas pueden compartir un pedido?",
+          "Puede enviar una solicitud conjunta. Se mantienen los mínimos por producto y modelo de celular; la asignación por tienda y el embalaje se confirman en la cotización."
+        ],
+        [
+          "¿Están disponibles todos los modelos de celular?",
+          "No se debe dar por hecho. Hay que confirmar la lista exacta, el ajuste y la disponibilidad de los productos seleccionados."
+        ],
+        [
+          "¿Los precios incluyen envío a mi país?",
+          "Las referencias de producto no incluyen una cotización de transporte al destino. Indique país y cantidades. La calculadora independiente en inglés utiliza únicamente una referencia para Estambul."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "stores",
+          "label": "Tiendas y forma de recepción",
+          "hint": "Número de tiendas; almacén central o asignaciones separadas"
+        },
+        {
+          "key": "models",
+          "label": "Micas, modelos de celular y cantidades",
+          "hint": "Transparente/privacidad, modelo exacto y piezas por combinación"
+        },
+        {
+          "key": "packing",
+          "label": "Instalación y embalaje",
+          "hint": "Instalación en tienda o por el cliente, kit comercial o etiquetas"
+        }
+      ]
     },
-    "private-label":{
-      "title":"Micas de marca propia desde China | DDNZ Global",
-      "description":"Solicite micas para su marca: vidrio, instalación, empaque, modelos de celular y muestras. Defina los cambios antes de cotizar con el proveedor.",
-      "eyebrow":"PARA MARCAS PROPIAS Y VENDEDORES EN LÍNEA", "heading":"Defina el producto que llevará su marca.",
-      "intro":"Use la gama actual de micas como punto de partida. Describa el producto, el empaque y la experiencia de instalación que busca y solicite al proveedor una revisión de los cambios.",
-      "card":"Su propia marca de micas", "cardCopy":"Defina la mica, el instalador y el empaque que desea cotizar.",
-      "steps":[["Primero, especifique el producto","Elija vidrio transparente o de privacidad, los modelos de celular y la forma de instalación. Revise muestras para comprobar ajuste, cobertura de bordes, respuesta táctil y compatibilidad con fundas antes de aprobar la especificación."],["Separe los cambios de producto y empaque","Indique si necesita etiqueta, caja impresa, instrucciones o accesorios diferentes. El proveedor seleccionado confirma la personalización disponible, requisitos de diseño, costos de preparación y mínimos."],["Apruebe una especificación reproducible","Acuerde muestra, versión del diseño, lista de empaque y puntos de inspección. Incluya los códigos de barras o etiquetas de canal que necesita revisar. Solicitar un empaque no implica aprobación para una plataforma de venta."]],
-      "faqs":[["¿El empaque personalizado está incluido en el precio de referencia?","No. Las referencias corresponden a las opciones descritas. Empaque personalizado, impresión o moldes requieren una cotización adicional confirmada."],["¿Hay un mínimo fijo para marca propia?","La personalización puede cambiar las cantidades mínimas. Comparta cantidades por modelo de celular y cambios de empaque para que el proveedor los revise."],["¿Puedo pedir una muestra antes del pedido de mayoreo?","Sí. Solicite configuración, costo y envío de la muestra. Revísela con los celulares y el empaque previstos antes de aprobar una compra mayor."]],
-      "fields":[{"key":"brand","label":"Marca y canal de venta","hint":"Su marca, tiendas o canal de venta en línea"},{"key":"product","label":"Producto, celulares y cantidades","hint":"Transparente/privacidad, instalador y piezas por modelo exacto"},{"key":"customization","label":"Personalización y muestras","hint":"Etiqueta con logo, caja, instrucciones, accesorios o muestra de aprobación"}]
+    "private-label": {
+      "title": "Micas de marca propia desde China | DDNZ Global",
+      "description": "Solicite micas para su marca: vidrio, instalación, empaque, modelos de celular y muestras. Defina los cambios antes de cotizar con el proveedor.",
+      "eyebrow": "PARA MARCAS PROPIAS Y VENDEDORES EN LÍNEA",
+      "heading": "Defina el producto que llevará su marca.",
+      "intro": "Obtenga protectores de pantalla de marca propia de China con especificaciones de producto y embalaje. Use la gama actual de micas como punto de partida. Describa el producto, el empaque y la experiencia de instalación que busca y solicite al proveedor una revisión de los cambios.",
+      "card": "Su propia marca de micas",
+      "cardCopy": "Defina la mica, el instalador y el empaque que desea cotizar.",
+      "steps": [
+        [
+          "Primero, especifique el producto",
+          "Elija vidrio transparente o de privacidad, los modelos de celular y la forma de instalación. Revise muestras para comprobar ajuste, cobertura de bordes, respuesta táctil y compatibilidad con fundas antes de aprobar la especificación."
+        ],
+        [
+          "Separe los cambios de producto y empaque",
+          "Indique si necesita etiqueta, caja impresa, instrucciones o accesorios diferentes. El proveedor seleccionado confirma la personalización disponible, requisitos de diseño, costos de preparación y mínimos."
+        ],
+        [
+          "Apruebe una especificación reproducible",
+          "Acuerde muestra, versión del diseño, lista de empaque y puntos de inspección. Incluya los códigos de barras o etiquetas de canal que necesita revisar. Solicitar un empaque no implica aprobación para una plataforma de venta."
+        ]
+      ],
+      "faqs": [
+        [
+          "¿El empaque personalizado está incluido en el precio de referencia?",
+          "No. Las referencias corresponden a las opciones descritas. Empaque personalizado, impresión o moldes requieren una cotización adicional confirmada."
+        ],
+        [
+          "¿Hay un mínimo fijo para marca propia?",
+          "La personalización puede cambiar las cantidades mínimas. Comparta cantidades por modelo de celular y cambios de empaque para que el proveedor los revise."
+        ],
+        [
+          "¿Puedo pedir una muestra antes del pedido de mayoreo?",
+          "Sí. Solicite configuración, costo y envío de la muestra. Revísela con los celulares y el empaque previstos antes de aprobar una compra mayor."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "brand",
+          "label": "Marca y canal de venta",
+          "hint": "Su marca, tiendas o canal de venta en línea"
+        },
+        {
+          "key": "product",
+          "label": "Producto, celulares y cantidades",
+          "hint": "Transparente/privacidad, instalador y piezas por modelo exacto"
+        },
+        {
+          "key": "customization",
+          "label": "Personalización y muestras",
+          "hint": "Etiqueta con logo, caja, instrucciones, accesorios o muestra de aprobación"
+        }
+      ]
     }
-  }
+  },
+  "english": "inglés"
 }

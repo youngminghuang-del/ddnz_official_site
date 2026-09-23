@@ -47,6 +47,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
     ...[outdoorOverviewNavigation(language), outdoorCategoryNavigation(language)[3]].map(item => ({ ...item, to: localizedPath(item.to) })),
   ];
   const marketLinks = [
+    ...(language === 'pt' ? [{ label: 'Frete da China para o Brasil', to: localizedPath('/shipping-from-china-to-brazil') }] : []),
     { label: copy.middleEast, to: localizedPath('/shipping-from-china-to-middle-east') },
     { label: copy.centralAsia, to: localizedPath('/shipping-from-china-to-central-asia') },
     { label: copy.westAfrica, to: localizedPath('/shipping-from-china-to-west-africa') },

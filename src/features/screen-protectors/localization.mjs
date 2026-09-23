@@ -5,8 +5,9 @@ import { productAlternates } from '../../lib/productLocalization.mjs';
 export const PHONE_PRODUCT_IDS = Object.freeze(['og28', '001', 'titan-hd', 'titan-privacy']);
 export const LOCALIZED_INQUIRY_SOURCE = 'screen_protector_localized';
 export const localizedDraftKey = locale => { phoneCopy(locale); return 'ddnz_phone_localized_draft_v1'; };
-export const LOCALIZED_SCREEN_PROTECTOR_ROUTES = Object.freeze(['es', 'ar'].flatMap(locale => ['home', 'compare'].map(page => ({ locale, page, path: localizedPhonePath(locale, page) }))));
+export const LOCALIZED_SCREEN_PROTECTOR_ROUTES = Object.freeze(['zh','es','ar','ru','fr','pt','tr'].flatMap(locale => ['home', 'compare'].map(page => ({ locale, page, path: localizedPhonePath(locale, page) }))));
 export function phoneCopy(locale) {
+ locale=locale==='zh-cn'?'zh':locale;
   if (!Object.hasOwn(PHONE_LOCALES, locale)) throw new Error(`Unsupported phone locale: ${locale}`);
   return PHONE_LOCALES[locale];
 }
@@ -16,7 +17,7 @@ export function localText(template, values = {}) {
 export function localizedPhonePath(locale, page = 'home') {
   phoneCopy(locale);
   if (!['home', 'compare'].includes(page)) throw new Error(`Unsupported localized phone page: ${page}`);
-  return `/${locale}/screen-protectors/${page === 'compare' ? 'compare/' : ''}`;
+  return `/${locale === 'zh' || locale === 'zh-cn' ? 'zh-cn' : locale}/screen-protectors/${page === 'compare' ? 'compare/' : ''}`;
 }
 export function phoneAlternates(path) {
   const alternates = productAlternates(path);
@@ -44,8 +45,8 @@ export function parsePhoneQuantity(locale, value) {
   phoneCopy(locale);
   if (typeof value === 'number') return Number.isSafeInteger(value) ? value : NaN;
   let text = String(value ?? '').trim().replace(/[٠-٩]/g, char => String(char.charCodeAt(0) - 0x660)).replace(/[۰-۹]/g, char => String(char.charCodeAt(0) - 0x6f0));
-  const grouped = locale === 'es' ? /^\d{1,3}(?:\.\d{3})+$/ : /^\d{1,3}(?:٬\d{3})+$|^\d{1,3}(?:,\d{3})+$/;
-  if (grouped.test(text)) text = text.replace(/[.٬,]/g, '');
+  const grouped = ['es','pt','tr'].includes(locale) ? /^\d{1,3}(?:\.\d{3})+$/ : ['fr','ru'].includes(locale)?/^\d{1,3}(?:[ \u00a0\u202f]\d{3})+$/:/^\d{1,3}(?:٬\d{3})+$|^\d{1,3}(?:,\d{3})+$/;
+  if (grouped.test(text)) text = text.replace(/[.٬, \u00a0\u202f]/g, '');
   return /^\d+$/.test(text) && Number.isSafeInteger(Number(text)) ? Number(text) : NaN;
 }
 export const emptyPhoneDraft = () => ({ rows: [], destination: '', notes: '' });
@@ -55,7 +56,7 @@ export const emptyPhoneDraft = () => ({ rows: [], destination: '', notes: '' });
 export function restoreLocalizedDraft(saved, locale) {
   phoneCopy(locale);
   const draft = saved?.draft;
-  if (!['es', 'ar'].includes(saved?.locale) || !Array.isArray(draft?.rows) || draft.rows.length > BASIS.maxRows
+  if (!['zh','es','ar','ru','fr','pt','tr'].includes(saved?.locale) || !Array.isArray(draft?.rows) || draft.rows.length > BASIS.maxRows
     || !draft.rows.every(row => row && PHONE_PRODUCT_IDS.includes(row.product) && typeof row.model === 'string'
       && row.model.length <= 80 && ['string', 'number'].includes(typeof row.qty))
     || typeof draft.destination !== 'string' || draft.destination.length > 120
@@ -120,10 +121,10 @@ export function localizedQuoteHref(locale, destination = '', { attached = true }
   phoneCopy(locale);
   const params = new URLSearchParams({ leadGoal: 'Product Sourcing', industry: 'Mobile Accessories', subcategory: 'Screen protectors', source: attached ? LOCALIZED_INQUIRY_SOURCE : 'screen_protector_localized_manual', phoneLocale: locale });
   if (destination.trim()) params.set('dest', destination.trim());
-  return `/${locale}/get-a-quote/?${params}`;
+  return `/${locale==='zh'?'zh-cn':locale}/get-a-quote/?${params}`;
 }
 export function validateLocalizedHandoff(value, now = Date.now()) {
-  if (value?.version !== 2 || value.source !== LOCALIZED_INQUIRY_SOURCE || !['es', 'ar'].includes(value.locale)
+  if (value?.version !== 2 || value.source !== LOCALIZED_INQUIRY_SOURCE || !['zh','es','ar','ru','fr','pt','tr'].includes(value.locale)
     || !Number.isFinite(value.createdAt) || now - value.createdAt > 86400000 || value.createdAt > now + 60000) return null;
   const result = validateLocalizedSelection(value.locale, value.state);
   if (!result.valid) return null;

@@ -1,3 +1,5 @@
+import {translatedText} from '../features/site-localization/translate.mjs';
+import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -13,8 +15,8 @@ import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
+import {
+  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck,
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
   Globe, Clock, HelpCircle, Truck
 } from 'lucide-react';
@@ -29,11 +31,11 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     heroHeadline: "Shipping from China to Middle East markets",
     heroSubheadline: "Plan sea or air freight around current route conditions, cargo requirements and destination-side operating scope.",
     heroCta: "Get Free Route & Tariff Analysis",
-    
+
     alertTag: "Operational Update",
     alertTitle: "The Red Sea Shift: From Maritime Risks to Port Bottlenecks",
     alertContent: "On affected Cape-routing sailings, the ocean leg can add roughly 10–14 days. Seasonal demand, carrier rotations, port congestion and destination procedures can also shift the final delivery window.",
-    
+
     matrixTitle: "All-in-One Transit Time & Reference Matrix",
     matrixSubtitle: "Realistic transit durations mapped from China hubs to Middle East regional destinations.",
     colTargetCountries: "Target Countries",
@@ -46,7 +48,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     cardsHeading: "Heaven Born Middle East Advantage",
     cardsSubheading: "Tailored supply chain solutions built for SME traders, e-commerce sellers, and enterprise importers.",
-    
+
     card1Title: "Alibaba/1688 Consolidation Management",
     card1Desc: "Coordinate receiving, inspection and consolidation for cargo from multiple suppliers before export preparation.",
     card1Cta: "View Consolidation Rates",
@@ -56,10 +58,10 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     card3Title: "Local Customs & Compliance Backup",
     card3Desc: "Support document preparation and HS-code review, then coordinate destination clearance partners where the service scope permits.",
     card3Cta: "HS Code Consultation",
-    
+
     faqHeading: "Middle East Shipping Checklist & FAQ",
     faqSubheading: "Proactive compliance checks to keep your cargo moving securely through Middle East customs entry corridors.",
-    
+
     faqs: [
       {
         id: "faq-1",
@@ -124,11 +126,11 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     heroHeadline: "从中国到中东市场的海空运与集货规划",
     heroSubheadline: "根据当前航线、货物资料和目的国操作范围，协调海运、空运、集货及出口文件准备。",
     heroCta: "获取免费航线及运价分析",
-    
+
     alertTag: "红海动态运营通报",
     alertTitle: "中东大实话：红海绕行进入深水区，痛点已变成‘港口挤压’",
     alertContent: "受好望角绕行影响的船期，海运段通常可能增加约 10–14 天。旺季、船公司轮换、港口拥堵、目的港操作和查验，也会影响最终派送周期。",
-    
+
     matrixTitle: "中东海空时效与服务对照矩阵",
     matrixSubtitle: "为您展示真实的中国起运至中东各主要目的国的DDP时效及港到港航程参考。",
     colTargetCountries: "目的国家/地区",
@@ -141,7 +143,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     cardsHeading: "华正邦泰中东专线优势",
     cardsSubheading: "专为跨境中小企业、外贸商家和工厂打造，解决各种杂乱需求及目的港壁垒。",
-    
+
     card1Title: "阿里巴巴/1688 货物集货与拼箱",
     card1Desc: "协调接收、核对并合并来自多个 1688 及阿里巴巴供应商的货物，并按确认范围安排重新包装与出运准备。",
     card1Cta: "了解集拼收费标准",
@@ -151,10 +153,10 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     card3Title: "目的港口岸清关与合规支持 (合规双清与特殊资质协助)",
     card3Desc: "协助整理沙特 SABER 资料、核对商品 HS 编码，并与目的地合作清关代理协调 DDP 服务的适用范围。",
     card3Cta: "预审海关HS编码",
-    
+
     faqHeading: "中东段出货合规排查及常见问题",
     faqSubheading: "建议每一位发货卖家收藏！提前排查合规红线，确保跨境大货顺利通关放行。",
-    
+
     faqs: [
       {
         id: "faq-1",
@@ -219,11 +221,11 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     heroHeadline: "Надежные логистические сети из Китая на Ближний Восток",
     heroSubheadline: "Обход портовых заторов в Красном море с оптимизацией транзита. Полная поддержка по таможенным правилам и SABER.",
     heroCta: "Получить бесплатный расчет тарифа",
-    
+
     alertTag: "Оперативная информация",
     alertTitle: "Сдвиг в Красном море: от морских рисков к заторам в портах",
     alertContent: "Из-за перенаправления судов через мыс Доброй Надежды морская логистика сталкивается с дополнительной нагрузкой. Мы помогаем заранее планировать бронирование, документы и бюджет с учетом ситуации в портах назначения.",
-    
+
     matrixTitle: "Единая матрица транзитных сроков и маршрутов",
     matrixSubtitle: "Реалистичные сроки доставки DDP от складов в Китае до ключевых регионов Ближнего Востока.",
     colTargetCountries: "Целевые страны",
@@ -236,7 +238,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     cardsHeading: "Поддержка Heaven Born на Ближнем Востоке",
     cardsSubheading: "Индивидуальные цепочки поставок для малого и среднего бизнеса, e-commerce и оптовых импортеров.",
-    
+
     card1Title: "Консолидация товаров (Alibaba / 1688)",
     card1Desc: "Прием, инспекция качества и бережная консолидация грузов от множества фабрик на нашем складе в Гуанчжоу для минимизации стоимости.",
     card1Cta: "Посмотреть тарифы консолидации",
@@ -246,10 +248,10 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     card3Title: "Полный таможенный комплаенс и поддержка",
     card3Desc: "Оформление сертификатов SABER, предпроверка кодов ТН ВЭД и оперативная стыковка с местными брокерами в портах назначения.",
     card3Cta: "Консультация по ТН ВЭД",
-    
+
     faqHeading: "Чек-лист по доставке и частые вопросы",
     faqSubheading: "Ключевые рекомендации для беспрепятственного прохождения таможни Ближнего Востока.",
-    
+
     faqs: [
       {
         id: "faq-1",
@@ -311,11 +313,11 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     heroHeadline: "Réseaux logistiques fiables de Chine vers le Moyen-Orient",
     heroSubheadline: "Naviguer à travers les tensions en mer Rouge grâce à des routes maritimes sécurisées. Gestion des dossiers SABER & dédouanement local.",
     heroCta: "Obtenir une étude de route gratuite",
-    
+
     alertTag: "Rapport opérationnel",
     alertTitle: "Le virage de la mer Rouge : des risques maritimes aux goulots d'étranglement portuaires",
     alertContent: "Avec le déroutement de certains navires par le cap de Bonne-Espérance, la logistique maritime subit une charge supplémentaire. Nous aidons à planifier les réservations, les documents et le budget en tenant compte des conditions dans les ports de destination.",
-    
+
     matrixTitle: "Matrice de référence globale des temps de transport",
     matrixSubtitle: "Durées de transit réalistes cartographiées depuis les hubs chinois vers le Moyen-Orient.",
     colTargetCountries: "Pays de destination",
@@ -328,7 +330,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     cardsHeading: "L’accompagnement Heaven Born au Moyen-Orient",
     cardsSubheading: "Des flux logistiques simplifiés pour les e-commerçants, importateurs et PME de tous secteurs.",
-    
+
     card1Title: "Consolidation Alibaba & 1688",
     card1Desc: "Centralisation, contrôle qualité et groupage de vos marchandises de plusieurs fournisseurs dans notre hub de Guangzhou pour économiser.",
     card1Cta: "Voir les tarifs de consolidation",
@@ -338,10 +340,10 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     card3Title: "Accompagnement Douanes et SABER",
     card3Desc: "Assistance au dépôt SABER, pré-audit des codes douaniers HS et relais avec nos agences de dédouanement locales en Arabie Saoudite.",
     card3Cta: "Consultation du code HS",
-    
+
     faqHeading: "Check-list logistique Moyen-Orient & FAQ",
     faqSubheading: "Précautions essentielles pour sécuriser votre dédouanement à destination.",
-    
+
     faqs: [
       {
         id: "faq-1",
@@ -1306,23 +1308,23 @@ export default function MiddleEastRoute() {
   const getComplianceRow = () => {
     if (selectedCountry === 'Saudi-Arabia') {
       return {
-        title: language === 'zh' ? 'SABER 合规资料核对' : 'SABER conformity document review',
-        val: language === 'zh' ? '订舱前核对' : 'Before booking'
+        title: language === 'zh' ? 'SABER 合规资料核对' : translatedText('SABER conformity document review',language),
+        val: language === 'zh' ? '订舱前核对' : translatedText('Before booking',language)
       };
     } else if (selectedCountry === 'UAE') {
       return {
-        title: language === 'zh' ? '进口文件与自贸区服务范围核对' : 'Import documents and free-zone scope review',
-        val: language === 'zh' ? '订舱前核对' : 'Before booking'
+        title: language === 'zh' ? '进口文件与自贸区服务范围核对' : translatedText('Import documents and free-zone scope review',language),
+        val: language === 'zh' ? '订舱前核对' : translatedText('Before booking',language)
       };
     } else if (selectedCountry === 'Kuwait') {
       return {
-        title: language === 'zh' ? 'KUCAS/TABEK 文件核对' : 'KUCAS/TABEK document review',
-        val: language === 'zh' ? '订舱前核对' : 'Before booking'
+        title: language === 'zh' ? 'KUCAS/TABEK 文件核对' : translatedText('KUCAS/TABEK document review',language),
+        val: language === 'zh' ? '订舱前核对' : translatedText('Before booking',language)
       };
     }
     return {
-      title: language === 'zh' ? '进口文件与服务范围核对' : 'Import Document & Scope Review',
-      val: language === 'zh' ? '订舱前确认' : 'Before Booking'
+      title: language === 'zh' ? '进口文件与服务范围核对' : translatedText('Import Document & Scope Review',language),
+      val: language === 'zh' ? '订舱前确认' : translatedText('Before Booking',language)
     };
   };
 
@@ -1410,12 +1412,12 @@ export default function MiddleEastRoute() {
       <CountryRegionLink region="middle-east" />
 
       <main>
-        
+
         {/* Section 1: Hero Segment */}
         <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
           {/* Visual shipping backdrop layer */}
           <div className="absolute inset-0 z-0 opacity-15">
-            <img 
+            <img
               src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?auto=format&fit=crop&q=80&w=2000"
               alt=""
               aria-hidden="true"
@@ -1429,21 +1431,21 @@ export default function MiddleEastRoute() {
 
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-16 md:py-24">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-              
+
               <div className="lg:col-span-7 space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-3">
                   <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#c94f2f]/10 text-[#c94f2f] text-xs font-black tracking-widest uppercase self-start">
                     <span>{t('chinaToMiddleEastSpecialist')}</span>
                   </div>
-                  
+
                   {/* Dynamic Country Selector Tabs */}
                   {!isLocked && (
                     <div className="flex flex-wrap gap-1.5 bg-white/[0.03] p-1 rounded-xl border border-white/[0.08] max-w-fit">
                       {(['Saudi-Arabia', 'UAE', 'Kuwait', 'Qatar', 'Oman', 'Bahrain'] as const).map((country) => {
                         const isActive = selectedCountry === country;
-                        const label = country === 'Saudi-Arabia' 
-                          ? t('country_Saudi_Arabia') 
-                          : country === 'UAE' 
+                        const label = country === 'Saudi-Arabia'
+                          ? t('country_Saudi_Arabia')
+                          : country === 'UAE'
                             ? t('country_UAE')
                             : country === 'Kuwait'
                               ? t('country_Kuwait')
@@ -1469,30 +1471,30 @@ export default function MiddleEastRoute() {
                     </div>
                   )}
                 </div>
-                
+
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#c94f2f]">
                     {getCountryContent('headline')}
                   </span>
                 </h1>
-                
+
                 <div className="space-y-4">
                   <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl font-medium">
                     {getCountryContent('subheadline')}
                   </p>
-                  
+
                   <div className="flex flex-wrap gap-2.5 pt-1">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? 'SABER / 中东合规核验' : 'SABER & Customs Compliant'}
+                      {language === 'zh' ? 'SABER / 中东合规核验' : translatedText('SABER & Customs Compliant',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <Ship className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '自主装箱与直航排舱' : 'Direct LCL/FCL Allocations'}
+                      {language === 'zh' ? '自主装箱与直航排舱' : translatedText('Direct LCL/FCL Allocations',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
                       <Truck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '中东一站式 DDP 双清' : 'One-Stop Middle East DDP'}
+                      {language === 'zh' ? '中东一站式 DDP 双清' : translatedText('One-Stop Middle East DDP',language)}
                     </span>
                   </div>
                 </div>
@@ -1525,7 +1527,7 @@ export default function MiddleEastRoute() {
                 <h3 className="text-lg font-black tracking-wide text-[#c94f2f] uppercase mb-4">
                   {t('transitWindowTitle')}
                 </h3>
-                
+
                 <div className="space-y-4">
                   <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
                     <span className="text-sm font-bold text-slate-300">
@@ -1585,11 +1587,11 @@ export default function MiddleEastRoute() {
                   </h2>
                 </div>
               </div>
-              
+
               <p className="text-sm text-slate-300 leading-relaxed font-semibold mb-2">
                 {t('alertContent')}
               </p>
-              
+
               <div className="mt-4 flex items-center gap-2 text-xs font-black text-slate-400">
                 <Globe className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />
                 <span>{t('insightPortfolio')}</span>
@@ -1694,7 +1696,7 @@ export default function MiddleEastRoute() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              
+
               {/* Card 1 */}
               <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
                 <div>
@@ -1763,7 +1765,7 @@ export default function MiddleEastRoute() {
           return (
             <section className="py-16 border-t border-b border-white/[0.05]">
               <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                
+
                 {/* Header */}
                 <div className="text-center max-w-3xl mx-auto mb-12">
                   <span className="px-3 py-1 bg-white/[0.05] text-[#c94f2f] text-xs font-black uppercase tracking-widest rounded-full mb-3 inline-block">
@@ -1780,7 +1782,7 @@ export default function MiddleEastRoute() {
 
                 {/* Grid for Compliance Guide & Redlines */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-16">
-                  
+
                   {/* Left part: Compliance Tabs / Accordion (cols 7) */}
                   <div className="lg:col-span-7 bg-white/[0.03] rounded-2xl p-6 md:p-8 border border-white/[0.08] shadow-sm flex flex-col justify-between">
                     <div>
@@ -1919,8 +1921,8 @@ export default function MiddleEastRoute() {
               {getFaqs().map((faq: any) => {
                 const isOpen = activeFaq === faq.id;
                 return (
-                  <div 
-                    key={faq.id} 
+                  <div
+                    key={faq.id}
                     className="bg-white/[0.03] backdrop-blur-md rounded-xl border border-white/[0.08] overflow-hidden shadow-sm hover:border-slate-500 transition-colors duration-200"
                   >
                     <button
@@ -1966,6 +1968,7 @@ export default function MiddleEastRoute() {
           </div>
         </section>
 
+      <CountryCargoPlanning country={slugByCountry[selectedCountry]} countryName={selectedCountryLabel} />
       </main>
 
       <Footer />

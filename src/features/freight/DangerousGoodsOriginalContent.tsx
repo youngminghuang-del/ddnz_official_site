@@ -3,7 +3,7 @@ import NewFreightEvidence from './NewFreightEvidence';
 import { freightLanguagePrefix } from './freightLanguages';
 export const copy = {
   zh: {
-    title: '危险品运输与装柜加固',
+    title: '中国危险品出口运输与装柜加固',
     intro: '从货物资料核对到装柜现场，了解危险品出运需要确认的信息，以及不同包装的绑扎、支撑与填充方式。',
     service: '专项货运服务', quote: '提交危险品运输需求',
     heading: '询价时，请一并提供这些资料',
@@ -13,7 +13,7 @@ export const copy = {
     mediaNote: '预留 16:9 视频位置：同一票货的衬垫、绑扎、检查和封柜过程。素材补齐后显示播放器。',
   },
   en: {
-    title: 'Dangerous goods shipping & container securing',
+    title: 'Dangerous goods shipping from China & container securing',
     intro: 'Review the information needed before dispatch and see loading records showing lashing, bracing and void filling for different packaging formats.',
     service: 'Specialist freight services', quote: 'Request dangerous goods shipping',
     heading: 'Include these details with your inquiry',
@@ -23,7 +23,7 @@ export const copy = {
     mediaNote: '16:9 video: dunnage, lashing, inspection and sealing of the same shipment. The player will appear when footage is available.',
   },
   es: {
-    title: 'Transporte de mercancías peligrosas y sujeción de carga',
+    title: 'Transporte de mercancías peligrosas desde China y sujeción de carga',
     intro: 'Consulta la información necesaria antes del embarque y los registros de amarre, refuerzo y relleno para distintos embalajes.',
     service: 'Servicios de carga especializada', quote: 'Consultar transporte de mercancías peligrosas',
     heading: 'Incluye estos datos en tu consulta',

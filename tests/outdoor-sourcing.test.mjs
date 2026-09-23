@@ -73,6 +73,6 @@ test('all authored outdoor pages render readable sources, media and reciprocal m
   assert.doesNotMatch(html,/NaN|undefined|\[object Object\]|Supplier [A-D]|EXW|FOB|formspree\.io/);
   assert.doesNotMatch(html,/<td[^>]*>[^<]*JPY/);assert.doesNotMatch(html,/@3hz|\+86|Victor/);
   for(const [,src]of html.matchAll(/<img[^>]*src="([^"]+)"/g))assert.ok(fs.existsSync(new URL('../public'+src,import.meta.url)),src);
-  const meta=outdoorMetadata(locale);assert.equal(meta.path,localizedProductPath(OUTDOOR_PATH,locale));assert.equal(meta.schema['@graph'][0].inLanguage,locale);assert.equal(productAlternates(OUTDOOR_PATH).length,3);assert.doesNotMatch(JSON.stringify(meta.schema),/AggregateRating|priceCurrency|availability/);
+  const meta=outdoorMetadata(locale);assert.equal(meta.path,localizedProductPath(OUTDOOR_PATH,locale));assert.equal(meta.schema['@graph'][0].inLanguage,locale);assert.equal(productAlternates(OUTDOOR_PATH).length,8);assert.doesNotMatch(JSON.stringify(meta.schema),/AggregateRating|priceCurrency|availability/);
  }
 });

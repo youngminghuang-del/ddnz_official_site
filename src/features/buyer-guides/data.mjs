@@ -1,9 +1,14 @@
+import zh from './locales/zh.json' with { type: 'json' };
+import ru from './locales/ru.json' with { type: 'json' };
+import fr from './locales/fr.json' with { type: 'json' };
+import pt from './locales/pt.json' with { type: 'json' };
+import tr from './locales/tr.json' with { type: 'json' };
 import en from './locales/en.json' with { type: 'json' };
 import es from './locales/es.json' with { type: 'json' };
 import ar from './locales/ar.json' with { type: 'json' };
 import { buyerGuidePaths, localizedProductPath, productRouteParts } from '../../lib/productLocalization.mjs';
 
-export const buyerLocales = { en, es, ar };
+export const buyerLocales = { en, es, ar, zh, ru, fr, pt, tr };
 export const buyerGuides = [
   { id: 'kitchen-distributors', path: buyerGuidePaths[0], group: 'kitchen', image: '/commercial-kitchen-media/ddnz-products/ice-49-ddnz-v1.webp', modelIds: ['ice-49', 'ZH-101V'] },
   { id: 'restaurant-projects', path: buyerGuidePaths[1], group: 'kitchen', image: '/commercial-kitchen-media/kitchen-hero.webp', modelIds: ['cold-7', 'ZH-818'] },
@@ -12,7 +17,7 @@ export const buyerGuides = [
 ];
 export const buyerGroupPath = group => group === 'kitchen' ? '/sourcing/commercial-kitchen-equipment-from-china' : '/screen-protectors';
 export function buyerGuideForPath(path) { return buyerGuides.find(guide => guide.path === productRouteParts(path).path); }
-export function buyerLocale(locale) { return Object.hasOwn(buyerLocales, locale) ? locale : 'en'; }
+export function buyerLocale(locale) { locale = locale === 'zh-cn' ? 'zh' : locale; return Object.hasOwn(buyerLocales, locale) ? locale : 'en'; }
 export function buyerMeta(guide, locale = 'en') {
   const copy = buyerLocales[buyerLocale(locale)].guides[guide.id];
   return { title: copy.title, description: copy.description, image: guide.image, path: localizedProductPath(guide.path, locale) };
@@ -23,10 +28,10 @@ export function buyerSchema(guide, locale = 'en') {
   const origin = 'https://www.ddnzglobal.com';
   const url = origin + meta.path;
   return { '@context': 'https://schema.org', '@graph': [
-    { '@type': 'WebPage', '@id': url, url, name: meta.title, description: meta.description, inLanguage: locale,
+    { '@type': 'WebPage', '@id': url, url, name: meta.title, description: meta.description, inLanguage: buyerLocale(locale) === 'zh' ? 'zh-CN' : buyerLocale(locale),
       breadcrumb: { '@id': `${url}#breadcrumb` }, isPartOf: { '@id': `${origin}/#website` } },
     { '@type': 'BreadcrumbList', '@id': `${url}#breadcrumb`, itemListElement: [
-      { '@type': 'ListItem', position: 1, name: copy.home, item: `${origin}${locale === 'en' ? '/' : `/${locale}/`}` },
+      { '@type': 'ListItem', position: 1, name: copy.home, item: `${origin}${locale === 'en' ? '/' : `/${buyerLocale(locale) === 'zh' ? 'zh-cn' : buyerLocale(locale)}/`}` },
       { '@type': 'ListItem', position: 2, name: copy[guide.group], item: origin + localizedProductPath(buyerGroupPath(guide.group), locale) },
       { '@type': 'ListItem', position: 3, name: copy.guides[guide.id].card, item: url },
     ] },

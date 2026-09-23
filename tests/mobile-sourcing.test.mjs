@@ -81,7 +81,7 @@ test('all twelve SSR pages have complete localized content, valid media and reci
   if(page.id!=='straps')for(const step of orderCheckSteps)assert.ok(html.includes(step.title[locale]));
   for(const [,src] of html.matchAll(/<(?:img|source)[^>]*src="([^"]+)"/g))assert.ok(fs.existsSync(new URL('../public'+src,import.meta.url)),src);
   const meta=mobileMetadata(page.id,locale);assert.equal(meta.path,localizedProductPath(page.path,locale));assert.equal(meta.schema['@graph'][0].inLanguage,locale);
-  assert.equal(productAlternates(page.path).length,3);
+  assert.equal(productAlternates(page.path).length,8);
   assert.ok(productAlternates(page.path).some(x=>x.hrefLang===locale&&x.href==='https://www.ddnzglobal.com'+meta.path));
   assert.doesNotMatch(JSON.stringify(meta.schema),/AggregateRating|priceCurrency|availability/);
  }

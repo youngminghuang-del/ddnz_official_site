@@ -1,3 +1,5 @@
+import es from './countrySpec.es.json';
+import ar from './countrySpec.ar.json';
 export const COUNTRY_SPEC_DATA: Record<
   'Saudi-Arabia' | 'UAE' | 'Kuwait',
   Record<string, {
@@ -431,3 +433,5 @@ export const COUNTRY_SPEC_DATA: Record<
     }
   }
 };
+
+for (const country of ['Saudi-Arabia','Kuwait'] as const) {COUNTRY_SPEC_DATA[country].es=es[country];COUNTRY_SPEC_DATA[country].ar=ar[country];}

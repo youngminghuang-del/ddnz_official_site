@@ -1,3 +1,4 @@
+import {localizedProductPath} from '../../lib/productLocalization.mjs';
 import { renderPrivacy001 } from './privacy001.mjs';
 import { readMixedDraft, saveMixedDraft, replaceFilms, filmSelection, mixedBriefPath } from '../mobile-sourcing/mixed-storage.mjs';
 import { mixedCopy } from '../mobile-sourcing/mixed-products.mjs';
@@ -86,7 +87,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
     </nav>
     <main>
       <nav className="breadcrumbs" aria-label={copy.breadcrumb}><ol>
-        <li><a href={`/${locale}/`}>{copy.home}</a></li>
+        <li><a href={`/${locale==='zh'?'zh-cn':locale}/`}>{copy.home}</a></li>
         <li>{page === 'home' ? <span aria-current="page">{copy.section}</span> : <a href={localizedPhonePath(locale)}>{copy.section}</a>}</li>
         {page === 'compare' && <li><span aria-current="page">{copy.compare}</span></li>}
       </ol></nav>
@@ -159,9 +160,9 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
         <noscript><p>{copy.noScript} <a href={localizedQuoteHref(locale, '', { attached: false })}>{copy.manual}</a></p></noscript>
       </section>
       <aside className="phone-local-resources" aria-labelledby="phone-resources-title"><h2 id="phone-resources-title">{copy.resources}</h2><ul>
-        <li><a href="/screen-protectors/guides/" hrefLang="en">{copy.guidesEnglish}</a></li>
-        <li><a href="/screen-protectors/videos/" hrefLang="en">{copy.videosEnglish}</a></li>
-        <li><a href="/screen-protectors/calculator/" hrefLang="en">{copy.calculatorEnglish}</a></li>
+        <li><a href={localizedProductPath('/screen-protectors/guides',locale)}>{copy.guidesEnglish}</a></li>
+        <li><a href={localizedProductPath('/screen-protectors/videos',locale)}>{copy.videosEnglish}</a></li>
+        <li><a href={localizedProductPath('/screen-protectors/calculator',locale)}>{copy.calculatorEnglish}</a></li>
       </ul><p>{copy.istanbul}</p></aside>
     </main>
   </div>;

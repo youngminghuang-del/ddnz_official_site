@@ -1,0 +1,354 @@
+{
+  "locale": "fr",
+  "dir": "ltr",
+  "numberLocale": "fr-FR",
+  "meta": {
+    "title": "Approvisionnement en équipement de cuisine commerciale de la Chine",
+    "description": "Source d'équipement de cuisine commerciale de la Chine. Comparez 26 modèles, prix indicatifs CNY et références de détail des EAU, Singapour et Mexique. Préparez votre demande de devis."
+  },
+  "ui": {
+    "pageLabel": "Approvisionnement en matériel de cuisine commerciale",
+    "skip": "Aller aux équipements",
+    "sections": "Cuisine commerciale",
+    "equipment": "Matériel",
+    "assortments": "Groupes d'équipements",
+    "prices": "Références des prix",
+    "guide": "Guide d’achat",
+    "list": "Votre liste d'équipements",
+    "compare": "Comparer",
+    "home": "Accueil",
+    "products": "Produits",
+    "breadcrumb": "Fil d’Ariane",
+    "audience": "POUR IMPORTATEURS, GROSSISTES ET DISTRIBUTEURS",
+    "heading": "Équipement de cuisine professionnelle.",
+    "emphasis": "Approvisionnement en Chine.",
+    "intro": "Planifiez un assortiment de gros avec 26 modèles. Comparez les capacités, les dimensions, les prix indicatifs de l'offre et les références de détail avant de demander un devis pour votre marché.",
+    "explore": "Explorez le matériel",
+    "startList": "Construisez une liste",
+    "heroAlt": "Équipement de cuisine commerciale dans une cuisine de travail",
+    "heroCaption": "DE LA PRÉPARATION AU SERVICE",
+    "heroLabel": "Votre prochaine commande commence par une sélection.",
+    "catalogTitle": "Choisissez selon la capacité et l'utilisation.",
+    "catalogHelp": "Rechercher un modèle ou une spécification. Examiner les détails, comparer jusqu'à trois modèles et ajouter des quantités à votre liste.",
+    "search": "Rechercher un équipement",
+    "searchPlaceholder": "Modèle, équipement ou capacité",
+    "all": "Tous les équipements",
+    "results": "Modèles trouvés",
+    "noResults": "Aucun équipement ne correspond à cette recherche.",
+    "reset": "Réinitialiser les filtres",
+    "details": "Afficher les spécifications",
+    "model": "Modèle",
+    "variant": "Option de puissance; code du modèle à confirmer",
+    "dimensions": "Dimensions extérieures",
+    "metric": "Capacité ou mesure principale",
+    "add": "Ajouter à la liste",
+    "added": "Ajouté à votre liste.",
+    "compareLimit": "Comparez jusqu'à trois modèles. Enlevez-en un avant d'en ajouter un autre.",
+    "compareTitle": "Comparer les modèles sélectionnés.",
+    "compareHelp": "Les capacités et dimensions nominales ne garantissent pas les mêmes performances dans chaque installation.",
+    "compareEmpty": "Sélectionnez Comparer sur les cartes produit pour afficher jusqu'à trois modèles ensemble.",
+    "clearCompare": "Vider la comparaison",
+    "removeCompare": "Supprimer de la comparaison",
+    "price": "Prix d’achat indicatif",
+    "perUnit": "par unité",
+    "referenceTier": "Quantité de base pour cette référence",
+    "units": "unités",
+    "quotePending": "Prix et minimum de commande sur devis",
+    "pendingHelp": "Indiquez la quantité souhaitée pour recevoir un devis.",
+    "quoteOnly": "Référence en CNY, à confirmer par devis. Il ne s’agit pas d’une offre garantie.",
+    "priceScope": "Huit prix indicatifs de l'offre sont disponibles en CNY. Chacun a sa propre quantité de base. Ce ne sont pas les prix de détail ou les coûts finals livrés. Les quantités minimales finales, la disponibilité et la configuration doivent être indiquées.",
+    "priceCosts": "Le fret, l’assurance, les taxes, les droits et les services locaux ne sont pas calculés. Comparez-les séparément dans le devis. L’écart avec un prix de détail n’est pas votre marge.",
+    "belowTier": "Votre quantité est inférieure à la base de référence. Demandez un prix pour votre quantité sélectionnée.",
+    "atTier": "La quantité atteint le seuil de référence ; le prix final reste à confirmer par devis.",
+    "electricity": "La tension, la fréquence, les phases, la prise et la connexion doivent être confirmées pour le modèle et la destination sélectionnés lors de la cotation. La puissance nominale seule ne confirme pas la compatibilité électrique.",
+    "catalogPhoto": "Image de catalogue. Confirmez la configuration du modèle final lors de la demande de devis.",
+    "assortmentTitle": "Commencez par un assortiment modifiable.",
+    "assortmentHelp": "Ces quantités sont à planifier. La faisabilité de la commande mixte et les minimums nécessitent une confirmation pour votre combinaison choisie.",
+    "addAssortment": "Ajouter cet assortiment",
+    "assortmentAdded": "Assortiment ajouté. Consultez les quantités de votre liste.",
+    "marketTitle": "Les prix locaux dans leur contexte.",
+    "marketHelp": "Observations enregistrées en septembre 2026, non vérifiées prix courants. Les références locales peuvent différer en termes de marque, de puissance, de configuration, de livraison et de taxes.",
+    "observed": "Prix de détail observé",
+    "captured": "Date d'observation",
+    "source": "Afficher la source originale",
+    "linkedModel": "Modèle de catalogue connexe",
+    "guideTitle": "Confirmez ce qui change l'achat.",
+    "listTitle": "Consultez votre liste et demandez un devis.",
+    "listHelp": "Préciser les modèles, les quantités et la destination. Vous pouvez modifier la liste avant de soumettre la demande. Cela ne fait pas de commande.",
+    "emptyList": "Votre liste est vide. Ajoutez du matériel de catalogue ou un assortiment pour préparer votre demande.",
+    "quantity": "Quantité",
+    "remove": "Supprimer",
+    "clearList": "Vider la liste",
+    "quantityHelp": "Saisissez un entier de 1 à 9999. Utilisez « Supprimer » pour retirer un modèle.",
+    "quantityError": "Entrez un nombre entier de 1 à 9999.",
+    "modelCount": "Modèles sélectionnés",
+    "unitCount": "Total des unités",
+    "storageUnavailable": "Ce navigateur n'a pas pu enregistrer la liste. Vous pouvez continuer à l'utiliser sur cette page.",
+    "country": "Pays de destination",
+    "chooseCountry": "Choisissez la destination",
+    "otherCountry": "Autres pays",
+    "destinationDetail": "Nom du pays",
+    "port": "Ville ou port (facultatif)",
+    "buyerType": "Type d'acheteur",
+    "company": "Société (facultative)",
+    "contact": "Téléphone ou contact privilégié (facultatif)",
+    "notes": "Utilisation prévue et exigences (facultatif)",
+    "notesHelp": "Décrivez l'utilisation prévue et demandez toutes les options, pièces de rechange ou documents dont vous avez besoin. La disponibilité doit être confirmée.",
+    "name": "Votre nom",
+    "email": "E-mail",
+    "review": "Vérifier la demande",
+    "reviewHelp": "L’aperçu suit votre liste et vos informations. DDNZ confirmera les spécifications et conditions commerciales dans le devis.",
+    "send": "Envoyer la demande",
+    "sending": "Envoi…",
+    "sent": "Demande envoyée",
+    "simulate": "Simuler la demande",
+    "simulated": "Aperçu local terminé",
+    "productionHelp": "La soumission envoie cette demande et vos coordonnées à DDNZ. Il ne fait pas d'achat.",
+    "previewHelp": "Cet aperçu local simule le résultat sans envoyer de données sur le réseau.",
+    "success": "La demande est envoyée à DDNZ pour examiner les besoins et préparer un devis.",
+    "previewSuccess": "Simulation locale terminée. Aucune demande n'a été envoyée à DDNZ.",
+    "sendError": "La demande n'a pas pu être envoyée. Veuillez réessayer ou ouvrir une ébauche de courriel.",
+    "nameError": "Entrez votre nom.",
+    "emailError": "Saisissez une adresse email valide.",
+    "listError": "Ajouter au moins un modèle avec une quantité valide.",
+    "countryError": "Indiquez le pays de destination.",
+    "draftHelp": "Vous pouvez également consulter la demande dans votre propre application avant de l'envoyer.",
+    "whatsapp": "Ouvrir le brouillon WhatsApp",
+    "emailDraft": "Ouvrir le brouillon d’e-mail",
+    "privacyTitle": "Utilisation de vos données",
+    "privacy": "Vos informations servent à traiter la demande et préparer le devis. Vérifiez le message avant l’envoi.",
+    "faq": "Questions avant devis",
+    "footerDescription": "Approvisionnement en équipement de cuisine commerciale pour les importateurs, grossistes et distributeurs."
+  },
+  "categories": {
+    "Ice making": "Machines à glaçons",
+    "Cold storage": "Réfrigération et congélation",
+    "Prep counters": "Tables réfrigérées",
+    "Display cooling": "Vitrines réfrigérées",
+    "Cooking & baking": "Cuisson et fours",
+    "Beverage equipment": "Équipements pour boissons"
+  },
+  "names": {
+    "Commercial cube ice maker": "Machine professionnelle à glaçons",
+    "Single-tank electric fryer": "Friteuse électrique à une cuve",
+    "Twin-tank electric fryer": "Friteuse électrique à deux cuves",
+    "Upright refrigerator": "Armoire réfrigérée positive",
+    "Upright freezer": "Armoire de congélation",
+    "Refrigerated workbench": "Table de travail réfrigérée",
+    "Electric flat griddle": "Plancha électrique lisse",
+    "Glass-door display cooler": "Vitrine réfrigérée à porte vitrée",
+    "Countertop convection oven": "Four à convection de comptoir",
+    "Commercial juice extractor": "Extracteur de jus professionnel",
+    "Two-group tea & coffee machine": "Machine à thé et café à deux groupes"
+  },
+  "specLabels": {
+    "Daily output": "Production quotidienne",
+    "Cubes / cycle": "Glaçons par cycle",
+    "Water supply": "Approvisionnement en eau",
+    "Tank volume": "Volume de la cuve",
+    "Rated power": "Puissance nominale",
+    "Tanks": "Cuves",
+    "Capacity": "Capacité",
+    "Temperature": "Température",
+    "Cooling": "Refroidissement",
+    "Brewing groups": "Groupes d’extraction",
+    "Steam boiler": "Chaudière vapeur",
+    "Extraction boilers": "Chaudières d’extraction",
+    "Cooking plate": "Plaque de cuisson",
+    "Surface": "Surface",
+    "Trays": "Plaques",
+    "Configuration": "Configuration"
+  },
+  "values": {
+    "Rated ice production": "Production nominale de glace",
+    "Tap or bottled water": "Eau du réseau ou en bouteille",
+    "Forced air": "Air ventilé",
+    "Flat": "Lisse",
+    "Independent tanks": "Cuves indépendantes",
+    "Juice extraction": "Extraction de jus",
+    "Plug-in variant": "Version à brancher",
+    "Confirm with quotation": "À confirmer dans le devis",
+    "2 brewing groups": "2 groupes d’extraction",
+    "10 L steam boiler": "Chaudière vapeur de 10 L",
+    "8 mm cooking plate": "Plaque de cuisson de 8 mm",
+    "60 L / 4 trays": "60 L / 4 plateaux",
+    "90 L / 4 trays": "90 L / 4 plateaux",
+    "435 × 315 mm trays": "Bacs de 435 × 315 mm",
+    "600 × 400 mm trays": "Plaques de 600 × 400 mm",
+    "500W variant": "Variante 500W",
+    "1200W variant": "Version 1200W"
+  },
+  "notes": {
+    "Electrical configuration will be confirmed during quotation.": "La configuration électrique sera confirmée lors de la cotation.",
+    "Final configuration is quoted for your destination.": "La configuration finale est indiquée pour votre destination.",
+    "Boiler and electrical options confirmed for the selected model.": "Chaudière et options électriques confirmées pour le modèle sélectionné.",
+    "Rated output; test conditions to be confirmed.": "Sortie nominale; conditions d'essai à confirmer.",
+    "Rated output; test conditions to be confirmed. Image represents the 50/AL–50/AB family.": "Sortie nominale; conditions d'essai à confirmer. L'image représente la famille 50/AL–50/AB.",
+    "Power option shown. Model code and final dimensions will be confirmed during quotation.": "Option de puissance affichée. Le code du modèle et les dimensions finales seront confirmés lors de la cotation.",
+    "Final size and refrigeration configuration to confirm.": "Taille finale et configuration de réfrigération à confirmer.",
+    "Final dimensions, bin capacity and configuration to confirm.": "Dimensions finales, capacité du bac et configuration à confirmer.",
+    "500 W standard version; dimensions and material configuration to confirm.": "Version standard 500 W; dimensions et configuration du matériau à confirmer."
+  },
+  "countries": {
+    "United Arab Emirates": "Émirats arabes unis",
+    "Singapore": "Singapour",
+    "Mexico": "Mexique"
+  },
+  "buyerTypes": {
+    "importer": "Importateur ou grossiste",
+    "distributor": "Distributeur",
+    "restaurant": "Restaurant ou hôtel",
+    "other": "Autres"
+  },
+  "assortments": [
+    {
+      "name": "Sélection de départ pour la cuisson de comptoir",
+      "description": "Trois modèles de friteuses et planchas, avec des options à une ou deux cuves."
+    },
+    {
+      "name": "Sélection de départ pour le froid et les boissons",
+      "description": "Deux capacités de production de glace, avec réfrigération, table de préparation et extracteur de jus."
+    }
+  ],
+  "markets": {
+    "United Arab Emirates": {
+      "title": "Préparez une sélection pour les Émirats arabes unis.",
+      "description": "Comparez modèles, capacités et encombrement avant de demander un devis pour votre destination.",
+      "note": "La référence HZB-50/AB correspond au code et aux principales dimensions. La plancha ne correspond qu’à la catégorie ; le modèle et la plaque ne sont pas confirmés équivalents. Aucun prix de revente n’est garanti."
+    },
+    "Singapore": {
+      "title": "Composez une sélection compacte pour Singapour.",
+      "description": "Comparez les équipements de comptoir, de froid et de boissons selon la capacité et les dimensions.",
+      "note": "La référence est une friteuse de 10 L et 3 kW, mais ses dimensions diffèrent de la ZH-101V. La marque, la construction, le prix final et la garantie ne sont pas confirmés identiques."
+    },
+    "Mexico": {
+      "title": "Comparez les capacités pour le marché mexicain.",
+      "description": "Commencez par les friteuses à une et deux cuves, puis ajoutez le froid, la glace ou les boissons selon vos clients.",
+      "note": "Les références ont des capacités proches, mais des puissances et fonctions différentes. Elles ne prouvent pas une configuration identique. Les exigences électriques au Mexique sont vérifiées pour le modèle choisi lors du devis."
+    }
+  },
+  "benchmarks": {
+    "ae-ice": {
+      "name": "COOLBABY HZB-50/AB",
+      "spec": "55 kg / 24h · 36 glaçons par cycle",
+      "match": "Ils correspondent au code modèle et aux principales mesures.",
+      "difference": "Il n'a pas été confirmé que la marque, les composants et la garantie sont identiques.",
+      "context": "Observation de Dubaï: TVA incluse et livraison gratuite dans l'annonce.",
+      "capture": "Page produit."
+    },
+    "ae-griddle": {
+      "name": "Plancha électrique Grace GR-818",
+      "spec": "Plancha lisse de comptoir",
+      "match": "Même catégorie d'équipement.",
+      "difference": "Les GR-818 et ZH-818 sont des codes différents; les mesures et les caractéristiques de la plaque doivent être comparées.",
+      "context": "Dubaï : livraison affichée à AED 34 ; taxes non vérifiées.",
+      "capture": "Prix du résultat de la recherche; détail à vérifier."
+    },
+    "mx-fryer20": {
+      "name": "Friteuse AuFox 20 L à deux cuves",
+      "spec": "20 L au total · 1700 W × 2 · 110 V annoncés",
+      "match": "Même classe de volume de cuves.",
+      "difference": "Puissance différente : catalogue fournisseur 3 + 3 kW ; annonce de détail 1.7 + 1.7 kW.",
+      "context": "Observation à Mexico, 11000: livraison gratuite indiquée; taxes non vérifiées.",
+      "capture": "Prix du résultat de la recherche; détail à vérifier."
+    },
+    "mx-fryer10": {
+      "name": "Friteuse électrique NUPANT 10 L",
+      "spec": "10 L · minuterie · 1700 W · 110 V annoncés",
+      "match": "Même classe de volume de cuve.",
+      "difference": "La minuterie et la puissance diffèrent du catalogue fournisseur ; la configuration n’est pas identique.",
+      "context": "Observation à Mexico, 11000: livraison gratuite indiquée; taxes non vérifiées.",
+      "capture": "Prix du résultat de la recherche; détail à vérifier."
+    },
+    "sg-fryer10": {
+      "name": "Friteuse électrique à une cuve de 10 L",
+      "spec": "Selon l’annonce : 10 L · 3000 W · 500 × 280 × 350 mm",
+      "match": "Même classe de volume et de puissance.",
+      "difference": "L’annonce indique 500 mm de longueur, contre une base de 280 × 470 mm au catalogue. Marque, construction et garantie non confirmées identiques.",
+      "context": "Observation de Singapour: expédition calculée sur paiement; taxes non spécifiées.",
+      "capture": "Page de détail; prix final lors du paiement non vérifié."
+    }
+  },
+  "guides": [
+    {
+      "title": "Glace : production et stockage",
+      "copy": "Les kg par jour indiquent la production nominale, pas la capacité du bac. Demandez les conditions d’essai et les performances attendues aux températures d’air et d’eau de votre installation."
+    },
+    {
+      "title": "Froid : température et espace",
+      "copy": "Distinguez réfrigération et congélation. Vérifiez le volume utile, les dimensions, la ventilation, les accès et la configuration frigorifique du modèle."
+    },
+    {
+      "title": "Cuisson : surface et capacité",
+      "copy": "Comparez le volume des cuves, les paniers, la surface de plancha, la taille et le nombre de plaques. Ces données seules ne déterminent pas le nombre de portions par heure."
+    },
+    {
+      "title": "Destination et périmètre du devis",
+      "copy": "Comparez les offres à modèle, quantité, destination et usage identiques. Confirmez emballage, délais, fret, taxes, documents, pièces et options de marque ; leur disponibilité n’est pas acquise."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Quelles informations fournir pour plusieurs équipements ?",
+      "answer": "Indiquez modèles, quantités, pays, port de destination et usage. Le devis confirmera la possibilité de regrouper la commande, les minimums, l’emballage et les conditions."
+    },
+    {
+      "question": "Les montants en CNY sont-ils définitifs ?",
+      "answer": "Non. Ce sont huit prix indicatifs, chacun lié à une quantité de référence. Le prix de votre quantité et configuration, le fret et les taxes sont à confirmer dans le devis."
+    },
+    {
+      "question": "Puis-je utiliser une liste pour plusieurs pays ?",
+      "answer": "Oui, mais demandez un devis par destination. Tension, fréquence, phases, prise et raccordement sont vérifiés après le choix des modèles et du pays."
+    },
+    {
+      "question": "Les quantités des assortiments sont-elles imposées ?",
+      "answer": "Non. Vous pouvez modifier ces quantités de planification. Disponibilité, minimums et faisabilité de la commande mixte sont confirmés pour la sélection finale."
+    }
+  ],
+  "inquiry": {
+    "heading": "DDNZ — Demande de devis pour équipements de cuisine",
+    "subject": "Demande de devis pour équipements de cuisine",
+    "destination": "Destination",
+    "buyer": "Type d'acheteur",
+    "products": "Modèles / unités",
+    "company": "Entreprise",
+    "contact": "Contact privilégié",
+    "requested": "Modèles demandés",
+    "reference": "Prix indicatif",
+    "tier": "Quantité de référence",
+    "below": "Quantité inférieure au seuil ; prix à confirmer",
+    "notes": "Exigences de l'acheteur",
+    "toConfirm": "À confirmer",
+    "final": "Confirmez la configuration, la disponibilité, le minimum de commande, les délais et les conditions. Les prix sont indicatifs ; l’envoi ne crée pas de commande."
+  },
+  "margin": {
+    "nav": "Estimation de marge",
+    "title": "Estimez la marge avec vos propres chiffres.",
+    "intro": "Choisissez l’un des huit modèles avec un prix d’achat indicatif. Saisissez votre prix de vente et les frais supplémentaires par unité en CNY. Aucune conversion de devise ni estimation automatique des frais d’importation.",
+    "model": "Modèle avec prix indicatif",
+    "purchase": "Prix d’achat indicatif par unité",
+    "selling": "Votre prix de vente par unité, sans taxe de vente (CNY)",
+    "landed": "Ses coûts supplémentaires par unité: fret, importation et autres (CNY)",
+    "quantity": "Quantité pour le calcul",
+    "inputHelp": "Sans séparateur de milliers. Utilisez un point ou une virgule, avec deux décimales au maximum. Saisissez 0 pour les frais supplémentaires uniquement si cela correspond à votre estimation.",
+    "calculate": "Calculer l’estimation",
+    "empty": "Saisissez le prix de vente et les frais supplémentaires. Aucun montant d’exemple n’est prérempli.",
+    "sellingError": "Saisissez un prix supérieur à 0 et inférieur ou égal à 999999999, avec deux décimales au maximum.",
+    "landedError": "Saisissez des frais de 0 à 999999999, avec deux décimales au maximum.",
+    "below": "La quantité est inférieure au seuil du prix indicatif. Demandez un devis pour cette quantité ou ajustez le calcul.",
+    "result": "ESTIMATION EN CNY",
+    "grossMargin": "Taux de marge brute estimé",
+    "grossProfit": "Bénéfice brut estimé",
+    "grossLoss": "Perte brute estimée",
+    "totalCost": "Coût total estimé",
+    "sellingLabel": "Prix de vente prévu par unité",
+    "costLabel": "Coût estimé par unité",
+    "extras": "Frais supplémentaires estimés",
+    "perOrder": "Pour la quantité indiquée",
+    "loss": "Les coûts estimés dépassent le prix de vente : le résultat est une perte brute.",
+    "formula": "Marge brute = (prix de vente − prix d’achat − frais supplémentaires) ÷ prix de vente. Avant frais d’exploitation et impôt sur les bénéfices.",
+    "caution": "Estimation de l’acheteur fondée sur un prix indicatif, sous réserve de devis. Elle ne garantit ni rentabilité, ni prix final, ni fret, taxes ou service local.",
+    "useQuantity": "Appliquer cette quantité à ma liste",
+    "used": "La quantité calculée est enregistrée dans votre liste. Vérifiez la demande de devis."
+  }
+}

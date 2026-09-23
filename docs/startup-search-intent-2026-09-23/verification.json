@@ -1,0 +1,392 @@
+{
+  "sections": 64,
+  "landing_page_versions": 40,
+  "discovery_page_versions": 8,
+  "failed_sections": 0,
+  "results": [
+    {
+      "language": "en",
+      "path": "/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "en",
+      "path": "/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "zh",
+      "path": "/zh-cn/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "es",
+      "path": "/es/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "ar",
+      "path": "/ar/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "ru",
+      "path": "/ru/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "fr",
+      "path": "/fr/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "pt",
+      "path": "/pt/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/restaurant-project-equipment/",
+      "anchor": "restaurant-startup",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/restaurant-project-equipment/",
+      "anchor": "kitchen-budget",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/screen-protectors/wholesale-for-stores/",
+      "anchor": "retail-privacy",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/mobile-accessories-from-china/",
+      "anchor": "accessory-startup",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/restaurant-project-equipment/",
+      "anchor": "small-cafe-budget",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/restaurant-project-equipment/",
+      "anchor": "bar-equipment-budget",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/sourcing/audio-speakers-from-china/",
+      "anchor": "party-speaker-budget",
+      "issues": []
+    },
+    {
+      "language": "tr",
+      "path": "/tr/phone-cases/",
+      "anchor": "marketplace-seller-startup",
+      "issues": []
+    }
+  ]
+}

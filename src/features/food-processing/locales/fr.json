@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "products": "Produits",
+    "title": "Achetez des machines de transformation alimentaire en Chine",
+    "intro": "Sélectionnez des machines en Chine pour les pâtes, la boulangerie, la viande, les légumes et les céréales. Comparez modèles et prix de gros, seuls ou en ensembles, avec emballage chiffré séparément.",
+    "source": "Approvisionnement en Chine · Préparation alimentaire",
+    "compare": "Comparer les machines",
+    "packages": "Ensembles de machines",
+    "equipment": "Machines",
+    "packing": "Emballage indiqué",
+    "list": "Votre liste",
+    "all": "Tout",
+    "specs": "Caractéristiques et conseils d’achat",
+    "power": "Puissance",
+    "size": "Dimensions de la machine",
+    "weight": "Poids indiqué",
+    "quantity": "Quantité",
+    "add": "Ajouter à la liste",
+    "remove": "Retirer",
+    "clear": "Vider la liste",
+    "empty": "La liste est vide. Sélectionnez des machines.",
+    "total": "Machines et emballage indiqué",
+    "destination": "Pays / ville de destination",
+    "requirements": "Ingrédients, lot, tension, fréquence et accessoires",
+    "continue": "Continuer vers le devis",
+    "review": "Vérifiez les détails dans le formulaire avant envoi.",
+    "exclude": "Hors options non confirmées, renforts d’emballage export, transport, taxes et services.",
+    "confirm": "Confirmez tension, fréquence, protections, dimensions emballées et poids brut avant expédition.",
+    "imageNote": "Les images représentent des familles de modèles ; confirmez la configuration commandée.",
+    "sourcePages": "Pages des sources",
+    "priceList": "Tarif",
+    "catalogue": "Catalogue",
+    "scope": "Choix et périmètre",
+    "related": "Ensembles et catégories associés",
+    "services": "Services d’approvisionnement et d’exportation",
+    "unit": "par machine",
+    "added": "Ajouté à la liste",
+    "cleared": "Liste vidée",
+    "increase": "Augmenter la quantité",
+    "decrease": "Réduire la quantité",
+    "selectionNote": "L’ensemble comprend initialement une machine de chaque modèle. Ajustez les quantités et validez recettes et capacités avant de confirmer le procédé.",
+    "catalogueTitle": "Catalogue de machines alimentaires"
+  },
+  "names": [
+    "Pétrin",
+    "Laminoir de table",
+    "Pétrin à spirale",
+    "Batteur mélangeur planétaire",
+    "Trancheuse à pain",
+    "Trancheuse à viande de table",
+    "Hachoir à viande de table",
+    "Mélangeur de pâte de viande",
+    "Formeuse de boulettes",
+    "Éplucheuse de pommes de terre",
+    "Coupe-légumes en tranches et julienne",
+    "Hachoir à légumes",
+    "Séparateur de pulpe",
+    "Broyeur de riz humide",
+    "Presse à canne à sucre",
+    "Plumeuse de volailles"
+  ],
+  "variants": [
+    "Moteur à bobinage cuivre · modèle 15 kg",
+    "Moteur cuivre · rouleaux acier",
+    "Changement mécanique de vitesse",
+    "Protection de cuve · trois fonctions",
+    "Modèle à 31 lames",
+    "Bloc de lames inox amovible",
+    "Éléments de hachage acier · moteur cuivre",
+    "Deux cuves basculantes",
+    "Modèle vertical · quatre jeux de moules",
+    "Tambour abrasif",
+    "Moteur cuivre · lame unidirectionnelle",
+    "Arbre et lame acier",
+    "Moteur cuivre · carter aluminium moulé",
+    "Moteur cuivre · socle acier",
+    "Modèle de table sur secteur",
+    "Grand modèle acier · moteur cuivre"
+  ],
+  "notes": [
+    "Version cuivre sélectionnée ; la version aluminium a un autre prix.",
+    "Coupe-nouilles exclu. Coupeur plat standard 1,5–6 mm : CNY 150 pièce hors taxes. Rouleaux inox : +CNY 180.",
+    "Hauteur du catalogue : 860 mm ; confirmez les dimensions de production. H20-B et H20-T sont des variantes distinctes.",
+    "Prix de la version protégée ; confirmez accessoires et verrouillage de sécurité.",
+    "Confirmez les dimensions du pain et l’épaisseur des tranches.",
+    "Catalogue : 18 kg ; tarif : 20 kg. Confirmez écartement des lames et état de la viande.",
+    "Embout à saucisses indiqué comme inclus. JR-G22 est une autre configuration.",
+    "Adaptez le lot et la durée de mélange à la recette.",
+    "Version standard ; CX-LB à vitesse variable est chiffré séparément.",
+    "Longueur catalogue : 680 mm ; tarif : 660 mm. Confirmez eau et évacuation.",
+    "Confirmez les lames et dimensions de coupe. Version cuivre.",
+    "Validez le lot et la coupe avec vos ingrédients.",
+    "Dimensions du catalogue : 250 × 460 × 610 mm, différentes du tarif. Confirmez la révision avant l’implantation.",
+    "Confirmez préparation des ingrédients, finesse et nettoyage.",
+    "GZ-TD sur batterie et GZ-TS à double alimentation sont d’autres configurations.",
+    "Confirmez espèce de volaille, préparation et dimensions des doigts de rechange."
+  ],
+  "categories": [
+    [
+      "Machines pour pâtes et boulangerie",
+      "Achetez en Chine des pétrins, batteurs, laminoirs et trancheuses à pain. Comparez fonctions, moteurs, protections, verrouillages, vitesses et rouleaux ou coupeurs. Le batteur planétaire remplit une fonction différente du pétrin. Volume de cuve et capacité de farine diffèrent : H20 possède 20 L et accepte au maximum 8 kg de farine ; validez recette, lot et hydratation. YH-GT300 exclut le coupeur ; le plat standard 1,5–6 mm coûte CNY 150 hors taxes, les autres sont chiffrés à part."
+    ],
+    [
+      "Machines de préparation de viande",
+      "Achetez en Chine trancheuses, hachoirs, mélangeurs de pâte et formeuses. Précisez viande fraîche, réfrigérée ou congelée et présence d’os ; ne présumez pas qu’une trancheuse ordinaire traite des blocs congelés. Choisissez écartements, grilles, accessoires et rechanges. Équilibrez recettes et lots : le prix de l’ensemble ne définit pas le débit de ligne. JR-GG22 possède des éléments de hachage acier à CNY 1 120 et diffère de JR-G22. L’ensemble boulettes exclut cuisson, refroidissement, stockage et emballage."
+    ],
+    [
+      "Machines de préparation de légumes",
+      "Achetez en Chine éplucheuses, trancheuses, coupe-légumes et hachoirs. Précisez racines ou feuilles, dimensions d’entrée et coupe finale ; fournissez échantillon ou mesures et confirmez les lames incluses. DQ-PS300 est indiqué avec une lame unidirectionnelle, sans garantie d’un jeu complet. Prévoyez eau, évacuation, nettoyage et transferts manuels. Les trois machines ne forment pas une ligne automatique ; lavage et implantation se planifient séparément."
+    ],
+    [
+      "Machines pour soja, riz et jus",
+      "Achetez en Chine séparateurs de pulpe, broyeurs de riz humide et presses à canne. Précisez ingrédients trempés, finesse, gestion des résidus et étape suivante. Séparation et broyage humide ne sont pas interchangeables. GZ-TC fonctionne sur secteur sans batterie ; GZ-TD est sur batterie et GZ-TS à double alimentation. L’ensemble soja-riz exclut trempage, cuisson, filtration, remplissage et stockage."
+    ]
+  ],
+  "scopes": [
+    "Pétrir → laminer → couper avec le coupeur optionnel. Ajoutez un coupeur compatible ; le plat standard coûte CNY 150 hors taxes. Cuisson séparée.",
+    "Mélange spiral → mélange planétaire → tranchage du pain cuit. Four, étuve, réfrigération et tables exclus. Vérifiez les lots.",
+    "Trancher → hacher. Choisissez écartement des lames et grilles. Réfrigération, scie à os et blocs congelés séparés.",
+    "Hacher → mélanger la pâte → former. Cuisson, refroidissement et emballage séparés. Validez recette et équilibre des lots.",
+    "Éplucher les racines → trancher ou couper en julienne → hacher. Choisissez les lames ; évier, évacuation et tables séparés. Ce n’est pas une ligne automatique.",
+    "Séparation de pulpe et broyage de riz humide sont des fonctions distinctes. Trempage, cuisson, filtration et stockage séparés."
+  ],
+  "families": [
+    "Pâtes et nouilles",
+    "Boulangerie",
+    "Viande",
+    "Légumes",
+    "Soja, riz et jus",
+    "Volailles"
+  ],
+  "packingTypes": {
+    "Wood packing": "Emballage bois",
+    "Wood frame included": "Cadre bois inclus",
+    "Carton included": "Carton inclus"
+  }
+}

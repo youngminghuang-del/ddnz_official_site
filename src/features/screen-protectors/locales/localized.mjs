@@ -1,4 +1,9 @@
-export const PHONE_LOCALES = {
+import zh from './zh.json' with {type:'json'};
+import ru from './ru.json' with {type:'json'};
+import fr from './fr.json' with {type:'json'};
+import pt from './pt.json' with {type:'json'};
+import tr from './tr.json' with {type:'json'};
+export const PHONE_LOCALES = { zh,ru,fr,pt,tr,
   es: {
     language: 'Español', direction: 'ltr', numberLocale: 'es-ES',
     home: 'Inicio', section: 'Protectores de pantalla', compare: 'Comparar productos', breadcrumb: 'Ruta de navegación', navigation: 'Navegación de protectores de pantalla',

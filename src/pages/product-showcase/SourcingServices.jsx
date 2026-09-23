@@ -1,3 +1,5 @@
+import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
+import BuyerDecisionContent from '../../features/search-intent/BuyerDecisionContent';
 import RetailCasePreview from "./RetailCasePreview";
 import { useEffect, useMemo, useState } from "react";
 import {
@@ -292,8 +294,8 @@ export function SourcingServices() {
         <section className="ss-hero" aria-labelledby="ss-title">
           <div className="ss-hero-copy">
             <p className="ss-kicker">CHINA SOURCING SERVICES · TWO BUYING PATHS</p>
-            <h1 id="ss-title">Source closer to China’s supply base. Keep control of what happens next.</h1>
-            <p>For mixed-SKU retail orders and managed sourcing projects, DDNZ turns supplier discovery into a recorded path for comparison, approval, production follow-up and export handoff.</p>
+            <h1 id="ss-title">{entryKeywords.en.servicesTitle}</h1>
+            <p>{entryKeywords.en.servicesIntro}</p>
             <div className="ss-hero-actions">
               <button className="ss-primary" type="button" onClick={() => scrollTo("brief")}>Start a sourcing brief <ArrowRight size={17} /></button>
               <button className="ss-text-button" type="button" onClick={() => scrollTo("control")}>Review the control path <ArrowRight size={16} /></button>
@@ -461,6 +463,7 @@ export function SourcingServices() {
           <div><Globe2 size={24} /><p><strong>DDNZ structures the China-side sourcing file</strong><span>Supplier comparison, approvals, production evidence and release coordination</span></p></div>
           <div><Plane size={21} /><Ship size={21} /><p><strong>Freight begins after sourcing release</strong><span>Air, sea or mixed-mode requirements are captured in the brief</span></p></div>
         </section>
+      <BuyerDecisionContent page="sourcing-services" />
       </main>
 
       <ShowcaseContactFooter

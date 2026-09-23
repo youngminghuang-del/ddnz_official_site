@@ -1,3 +1,4 @@
+import StartupBuyingContent from '../../features/search-intent/StartupBuyingContent';
 import React, { useEffect, useMemo, useState } from "react";
 import {
   ArrowRight,
@@ -254,7 +255,7 @@ export function AudioSpeakers() {
         <section className="as-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
             <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
-            <h1 id="audio-title">Build an audio range buyers can hear, compare and reorder.</h1>
+            <h1 id="audio-title">Source speakers from China. Build a range buyers can compare.</h1>
             <p>DDNZ structures portable, party, vintage and compact speaker sourcing around the intended use, declared output, power path, included accessories and retail pack—so the quotation, approved sample and shipped configuration stay aligned.</p>
             <div className="as-hero-actions">
               <button className="as-primary" type="button" onClick={() => scrollTo("audio-range")}>Build the range <ArrowRight size={17} /></button>
@@ -394,6 +395,7 @@ export function AudioSpeakers() {
         <section className="as-handoff" aria-label="Freight handoff">
           <div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Engaged after the approved sourcing and pack-out file is ready</span></p></div><span>DDNZ remains the sourcing coordination team</span>
         </section>
+        <StartupBuyingContent kind="audio" />
       </main>
 
       <ShowcaseContactFooter

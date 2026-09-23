@@ -1,0 +1,38 @@
+{
+  "title": "Çin’den hoparlör ve ses ekipmanı satın alın",
+  "intro": "Çin’den hoparlör tedarikini kullanım, beyan edilen güç, besleme, batarya, aksesuar ve ambalaja göre düzenleyin. Teklif, onaylı numune ve sevk edilen yapılandırmayı eşleştirin.",
+  "families": [
+    [
+      "Taşınabilir ve parti",
+      "Eğlence perakendesi, etkinlik ve dağıtım için. Nominal ve tepe güç, şebeke, şarj, batarya, girişler, mikrofon, kumanda ve kabloları doğrulayın."
+    ],
+    [
+      "Vintage ve yaşam tarzı",
+      "Dekorasyon, hediye ve koleksiyonlar için. Kabin malzemesi ve yüzeyi, kontroller, girişler, sürücüler, renkler ve ambalajı doğrulayın."
+    ],
+    [
+      "Mini ve hediyelik",
+      "Kolaylık mağazaları, hediyeler ve deneme siparişleri için. Batarya, şarj, ışık ve modlar, askı ve kablo, birim ambalaj ve karışık renk asgari adedini belirleyin."
+    ]
+  ],
+  "checks": [
+    "Sürekli nominal güç ve tepe gücü tedarikçinin ölçüm dayanağıyla ayrı kaydedin.",
+    "Şebeke, adaptör, şarj girişi, hücre, kapasite ve çalışma süresi koşullarını ayırın.",
+    "Kablosuz sürüm, girişler, eşleştirme ve radyo ile uygunluk belgelerini listeleyin.",
+    "Kablolu veya kablosuz mikrofonları, adedi, frekansları ve dahil pilleri doğrulayın.",
+    "Işık, ekolayzır, kayıt, öncelik ve kontrolleri tam modele bağlayın.",
+    "Aksesuar, etiket, birim ambalaj, koli adedi ve paket ölçülerini onaylı ürüne bağlayın."
+  ],
+  "steps": [
+    "İhtiyaç: kullanım, kanal, fiyat konumu ve zorunlu işlevler.",
+    "Yapılandırma: model, kabin, besleme, aksesuar ve etiketleri sabitleyin.",
+    "Numune: işlev, oynatma, şarj, yüzey, aksesuar ve açık konuları kaydedin.",
+    "Sevk onayı: numune, ambalaj, belgeler ve istisnaları siparişe bağlayın."
+  ],
+  "evidence": [
+    "Hat ve parçalar: istasyon, taşıma ve montajı gösterir.",
+    "Işık: mod değişimini gösterir; ses basıncı, çalışma süresi veya sertifika kanıtı değildir.",
+    "Biçime göre montaj: gövde, sürücü, panel ve tamamlanan birimler ayrı aşamalardadır.",
+    "Video sipariş onayı yerine geçmez: model, kontrol, sonuç, tarih ve açık konuları kaydedin. Eksik teklif karşılaştırılamaz; fiyat, yapılandırma, kanıt, kapsam dışı kalemler ve varış koşullarını ayırın."
+  ]
+}

@@ -1,0 +1,107 @@
+base,kind,available_route_count,available_languages,missing_languages,scope,body_review
+/screen-protectors/calculator/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/guides/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/guides/price-differences/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/guides/curved-glass/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/videos/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/dough-and-bakery-machinery/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/meat-processing-machinery/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/vegetable-processing-machinery/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/bean-rice-and-juice-machinery/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/noodles/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/bakery/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/meat-prep/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/meatballs/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/vegetables/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/food-processing-machinery-from-china/packages/bean-rice/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/mobile-accessories-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/phone-cases/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/phone-cases/materials-and-pricing/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/phone-straps-charms/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/compare/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/kitchen-equipment-for-distributors/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-project-equipment/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/wholesale-for-stores/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/screen-protectors/private-label/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/commercial-ice-machines-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/commercial-electric-fryers-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/commercial-electric-griddles-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/,core,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/how-we-work/,core,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/insights/,core,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/sea-freight/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/lcl-shipping-from-china/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/dangerous-goods-shipping-from-china/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/air-freight/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/amazon-fba/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/services/warehouse-services/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-middle-east/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-central-asia/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-west-africa/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-latin-america/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/get-a-quote/,core,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/products/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing-services/,sourcing-service,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/refrigeration-equipment/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/commercial-kitchen-equipment-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/takeaway-qsr/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/cafe-light-meals/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/casual-dining/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/bakery-pastry/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/pizza-shop/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/restaurant-kitchen-packages-from-china/cloud-kitchen/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/audio-speakers-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/portable-power/selection-guide/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing/outdoor-products-from-china/,product,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing-services/supplier-search/,sourcing-service,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing-services/inspection-quality-control/,sourcing-service,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/sourcing-services/consolidation-export/,sourcing-service,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-saudi-arabia/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-uae/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-kuwait/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-qatar/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-oman/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-bahrain/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-kazakhstan/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-uzbekistan/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-kyrgyzstan/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-tajikistan/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-turkmenistan/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-russia/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-nigeria/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-ghana/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-mexico/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-brazil/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-argentina/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-peru/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/shipping-from-china-to-chile/,freight,8,"en,zh-cn,es,ar,ru,fr,pt,tr",,required: eight languages,route inventory only; see rendered-text review and functional verification
+/blog/mixed-sku-phone-cases-china-poland-moq-packing-reorders/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/magsafe-ring-stand-sourcing-four-sample-comparison/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/china-saudi-freight-september-2026-gateway-cargo-acceptance-surcharges/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/magsafe-phone-cases-china-turkiye-dealer-verification/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/commercial-kitchen-equipment-china-nigeria-dealer-first-container/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/portable-power-stations-china-dealer-range-camping-outage-backup/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/turkey-kitchen-equipment-dealers-china-sourcing-margin-checklist/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/insulated-cooler-boxes-africa-china-ice-retention-test/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/combi-ovens-gulf-restaurants-china-sourcing-checklist/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/cheap-speakers-china-african-trader-verification/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/12v-portable-fridge-power-chain-test-hot-markets/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/commercial-ice-machine-hot-kitchen-output-china-sourcing/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/commercial-refrigerators-gulf-kitchens-climate-class-high-ambient/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/commercial-kitchen-equipment-china-saudi-rfq-checklist/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/minimize-alibaba-sourcing-risks/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/high-compliance-new-energy-logistics/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/provide-actionable-strategies/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/puerto-chancay-aranceles-y-rutas-directas-guia-de-compra-para-importadores-latin/,article,1,es,"en,zh-cn,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/protect-orders-against-delays/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/provides-actionable-steps-for-Eastern-European/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/para-evitar-costosas-retenciones-en-puerto./,article,1,es,"en,zh-cn,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/transpacific-shock-rates-surge-over-1000-in-a-single-week-as-msc-relaunches-pear/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/2026-china-railway-express-panorama-guide-comprehensive-analysis-of-193-core-rai/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/regulatory-compliance-alert-complete-sop-and-new-2026-mandates-for-china-nev-exp/,article,1,en,"zh-cn,es,ar,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/saber-2026/,article,1,ar,"en,zh-cn,es,ru,fr,pt,tr",excluded: retain article source language,preserve existing article language
+/blog/guide-dapprovisionnement-chine-reduisez-vos-couts-logistiques-en-afrique-francop/,article,1,fr,"en,zh-cn,es,ar,ru,pt,tr",excluded: retain article source language,preserve existing article language

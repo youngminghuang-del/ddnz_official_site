@@ -1,6 +1,7 @@
+import {translatedText,localeCode} from '../site-localization/translate.mjs';
 export { outdoorPath as OUTDOOR_PATH } from '../../lib/productLocalization.mjs';
 export const L = (en, es, ar) => ({en, es, ar});
-export const copy = (value, locale = 'en') => typeof value === 'string' ? value : value?.[locale] || value?.en || '';
+export const copy = (value, locale = 'en') => typeof value === 'string' ? translatedText(value,locale) : value?.[localeCode(locale)] || translatedText(value?.en || '',locale);
 export const FX = Object.freeze({date:'2026-09-11',cnyPerJpy:7.7762/178.56,cnyPerUsd:7.7762/1.1592,url:'https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html'});
 const cny = value => Math.round((value * FX.cnyPerJpy + Number.EPSILON) * 100) / 100;
 export const sources = {

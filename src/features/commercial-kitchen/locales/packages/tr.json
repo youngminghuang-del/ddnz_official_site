@@ -1,0 +1,187 @@
+{
+  "ui": {
+    "title": "Çin’den restoran mutfağı ekipman paketleri satın alın",
+    "intro": "Satın almayı menü, işletme, alan ve tesisata göre düzenleyin. Model, adet, yerleşim ve ihracatı onaylamadan önce altı senaryoyu karşılaştırın.",
+    "template": "Çin’den {name} için mutfak ekipman paketi satın alın",
+    "scenarios": "Restoran senaryoları",
+    "workflow": "İş akışı",
+    "equipment": "Ekipman grupları",
+    "utilities": "Tesisat ve kurulum",
+    "area": "Referans alan",
+    "aisle": "Referans net geçiş",
+    "crew": "Referans açılış ekibi",
+    "concept": "Kavramsal görsel; saha fotoğrafı veya uygulama projesi değildir.",
+    "boundary": "Ölçüler kavramsal yer rezervidir. Modeller, saha ölçümü, yükler, bağlantılar, yangın ve tesisat projeleri yerel uzman onayı gerektirir. Alan, ekip ve geçişler kapasite taahhüdü veya mevzuat ölçütü değildir.",
+    "pdf": "Tam plan ve PDF talebini aç",
+    "english": "İngilizce sayfa / dosya",
+    "menu": "Menü, yoğun talep, alan ve tesisat",
+    "plan": "Referans yerleşim",
+    "zones": "Çalışma bölgeleri",
+    "scope": "Proje kapsamını doğrulayın; ekipman, ambalaj, kontrol, navlun ve varış giderlerini ayrı belirtin."
+  },
+  "scenarios": [
+    {
+      "name": "paket servis ve hızlı servis",
+      "summary": "Arka kabul, soğuk depoya ve hazırlığa besler. Kızartma ve ızgara tek sıcak hatta, çıkış teslim tarafındadır; kirliler karşı taraftan döner.",
+      "equipment": [
+        "Çift fritöz: bağımsız hazneler",
+        "Elektrikli ızgara: düz yüzey ve sıçrama koruması",
+        "Soğutmalı tezgâh: malzeme rayı ve GN kaplar",
+        "Dik buzdolabı: kabul yanı",
+        "Davlumbaz: fritöz ve ızgara üstü",
+        "Çift evye ve tezgâh: kirli dönüş",
+        "Buz makinesi: teslim içecek noktası"
+      ],
+      "utilities": [
+        "380 V / üç faz pişirme seçeneği",
+        "Yıkama ve hazırlık giderleri",
+        "Egzoz ve taze hava incelemesi",
+        "Yıkama sıcak suyu"
+      ],
+      "zones": [
+        "Kabul ve soğuk",
+        "Hazırlık",
+        "Sıcak hat",
+        "Yıkama",
+        "Çıkış ve teslim"
+      ]
+    },
+    {
+      "name": "kafe ve hafif yemek",
+      "summary": "L bar kahve, buz ve soğuk hazırlığı yaklaştırır. Müşteri teşhir ve ödeme boyunca ilerler; ekip içeride, kabul ve yıkama arkada kalır.",
+      "equipment": [
+        "İki gruplu kahve makinesi: teslim önü",
+        "Buz makinesi: arka içecek noktası",
+        "Tezgâh altı soğutucu: süt ve stok",
+        "Meyve sıkacağı: hazırlık evyesi yanı",
+        "Soğuk teşhir: kuyruk tarafı",
+        "Kompakt fırın: yemek tamamlama",
+        "Bulaşık makinesi ve evye: arka yıkama"
+      ],
+      "utilities": [
+        "220 V ve 380 V elektrik listesi",
+        "İçecek için filtreli su",
+        "Buz makinesi gideri",
+        "Hafif pişirme havalandırması"
+      ],
+      "zones": [
+        "Depo ve kabul",
+        "Arka hazırlık ve yıkama",
+        "İçecek barı",
+        "Müşteri ve oturma",
+        "Teşhir ve kasa"
+      ]
+    },
+    {
+      "name": "günlük servis restoranı",
+      "summary": "Çiğ hazırlık, sıcak üretim ve yıkama ayrılır. Orta koridor soğuk hazırlığı pişirmeye bağlar; kirli dönüş tabak çıkışını kesmez.",
+      "equipment": [
+        "Çift kapılı soğutucu: soğuk depo bağlantısı",
+        "Hazırlık tezgâhı: çiğ ve soğuk ayrı",
+        "Izgara ve ocak hattı: merkezi üretim",
+        "Konveksiyon fırını: hat sonu",
+        "Servis ve sıcak tutma: salon kenarı",
+        "Davlumbaz: yerel hava dengesi",
+        "Bulaşık makinesi ve üç evye: ayrı kirli dönüş"
+      ],
+      "utilities": [
+        "Gaz veya elektrikli pişirme",
+        "Yağ ve gider koordinasyonu",
+        "Egzoz ve taze hava",
+        "Üç faz yük listesi"
+      ],
+      "zones": [
+        "Kabul ve kuru",
+        "Soğuk odalar",
+        "Çiğ ve soğuk hazırlık",
+        "Sıcak üretim",
+        "Yıkama ve atık",
+        "Tabaklama ve servis"
+      ]
+    },
+    {
+      "name": "fırın ve pastane",
+      "summary": "Kabulden kuru ve soğuk depoya, karıştırma, şekillendirme, mayalama, pişirme, soğutma ve süslemeye ilerler. Kirli dönüş bitmiş ürünü kesmez.",
+      "equipment": [
+        "Spiral mikser: parti hacmi",
+        "Bölücü veya açıcı: ürün gamı",
+        "Soğuk mayalandırma: nem ve sıcaklık",
+        "Katlı veya konveksiyon fırını: yakıt ve kapasite",
+        "Şok soğutucu: soğutma ve güvenlik",
+        "Paslanmaz tezgâhlar: şekil ve bitirme",
+        "Araba yıkama ve evyeler: ayrı dönüş"
+      ],
+      "utilities": [
+        "Fırın ve mikser üç faz yükleri",
+        "Mayalama su ve gideri",
+        "Isı atımı ve egzoz",
+        "Araba ve kapı geçişi"
+      ],
+      "zones": [
+        "Kabul ve depo",
+        "Karıştır ve şekillendir",
+        "Mayala",
+        "Pişir",
+        "Soğut ve süsle",
+        "Teşhir ve sevk",
+        "Yıka"
+      ]
+    },
+    {
+      "name": "pizzacı",
+      "summary": "Soğuk ve hamur hazırlığı malzeme hattının arkasındadır. Fırın kesim ve kutulamaya açılır; kirliler karşıdan yıkamaya döner.",
+      "equipment": [
+        "Spiral mikser: günlük hamur",
+        "Hamur bölücü: eşit porsiyon",
+        "Soğutmalı malzeme tezgâhı: hat kapasitesi",
+        "Katlı veya konveyör fırın: menü ve üretim",
+        "Egzoz: seçilen fırına göre",
+        "Dik soğutucu: hamur ve malzeme",
+        "Bulaşık makinesi ve evye: ayrı dönüş"
+      ],
+      "utilities": [
+        "Fırın yakıtı ve elektriği",
+        "Egzoz ve taze hava",
+        "Hamur için filtreli su",
+        "Isı mesafesi ve servis erişimi"
+      ],
+      "zones": [
+        "Kabul ve soğuk",
+        "Hamur hazırla",
+        "Mayala ve beklet",
+        "Malzeme ekle",
+        "Pişir",
+        "Kes ve kutula",
+        "Yıka"
+      ]
+    },
+    {
+      "name": "ortak paket servis mutfağı",
+      "summary": "Üç menü modülü kabul, soğuk depo, yıkama ve kurye çıkışını paylaşır. Her modül bağımsız hazırlık ve sıcak hat tutar.",
+      "equipment": [
+        "Ortak soğuk odalar: toplam stok",
+        "Üç hazırlık modülü: menü riskine göre ayrı",
+        "Üç sıcak hat: bağımsız yükler",
+        "Sıcak tutma: sipariş birleştirme",
+        "Egzoz: bölgesel fan ve kanallar",
+        "Merkezi yıkama: yoğun dönüş",
+        "Sevk rafları: kurye bölgeleri"
+      ],
+      "utilities": [
+        "Eşzamanlılığa göre üç faz yükler",
+        "Bölgesel egzoz ve taze hava",
+        "Yağ, gider ve sıcak su",
+        "Yangın ayrımı ve yerel mevzuat"
+      ],
+      "zones": [
+        "Kabul ve depo",
+        "Ortak soğuk",
+        "Modül A",
+        "Modül B",
+        "Modül C",
+        "Ortak yıkama",
+        "Kurye çıkışı"
+      ]
+    }
+  ]
+}

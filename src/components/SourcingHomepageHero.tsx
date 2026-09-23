@@ -1,3 +1,6 @@
+import {translatedText} from '../features/site-localization/translate.mjs';
+import { navigationPath } from '../lib/productLanguageRouting';
+import { positioning } from '../features/search-intent/positioning.mjs';
 import ProductDiscoveryLinks from './ProductDiscoveryLinks';
 import { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
@@ -157,7 +160,7 @@ export default function SourcingHomepageHero() {
   const { language } = useLanguage();
   const navigate = useNavigate();
   const copy = HOME_COPY[language];
-  const intro = HERO_INTRO[language];
+  const intro = { ...HERO_INTRO[language], headline: positioning[language].homeHeading, body: positioning[language].homeDescription };
   const [intent, setIntent] = useState<Intent>('sourcing');
   const [category, setCategory] = useState<Category>('Commercial Kitchen Equipment');
   const [market, setMarket] = useState('');
@@ -203,7 +206,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][0],
       image: '/images/sourcing/commercial-kitchen-project-hero.webp',
       alt: categoryImageAlts[language][0],
-      href: canonicalSitePath(`${PREFIX[language]}/sourcing/commercial-kitchen-equipment-from-china`),
+      href: navigationPath('/sourcing/commercial-kitchen-equipment-from-china', language),
     },
     {
       industry: 'Audio & Speakers',
@@ -211,7 +214,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][1],
       image: '/images/sourcing/audio-speakers-category.webp',
       alt: categoryImageAlts[language][1],
-      href: canonicalSitePath(`${PREFIX[language]}/sourcing/audio-speakers-from-china`),
+      href: navigationPath('/sourcing/audio-speakers-from-china', language),
     },
     {
       industry: 'Mobile Accessories',
@@ -219,7 +222,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][2],
       image: '/images/sourcing/mobile-accessories-powerbank-category-v2.webp',
       alt: categoryImageAlts[language][2],
-      href: canonicalSitePath(`${PREFIX[language]}/sourcing/mobile-accessories-from-china`),
+      href: navigationPath('/sourcing/mobile-accessories-from-china', language),
     },
     {
       industry: 'Outdoor Products',
@@ -227,7 +230,7 @@ export default function SourcingHomepageHero() {
       tagline: CATEGORY_TAGLINES[language][3],
       image: '/images/sourcing/outdoor-portable-energy-brand-neutral-v1.webp',
       alt: categoryImageAlts[language][3],
-      href: canonicalSitePath(`${PREFIX[language]}/sourcing/outdoor-products-from-china`),
+      href: navigationPath('/sourcing/outdoor-products-from-china', language),
     },
   ];
 
@@ -236,7 +239,7 @@ export default function SourcingHomepageHero() {
       <section className="ddnz-ribbon-home-hero home-intro" aria-labelledby="homepage-sourcing-title">
         <div className="home-intro-grid">
           <div className="home-intro-copy">
-            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>SOURCING + INTERNATIONAL FREIGHT</em></p>
+            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>{translatedText('SOURCING + INTERNATIONAL FREIGHT',language)}</em></p>
             <h1 id="homepage-sourcing-title">{intro.headline}</h1>
             <p className="home-intro-summary">{intro.body}</p>
             <div className="home-intro-actions">

@@ -1,0 +1,44 @@
+{
+  "ui": {
+    "price": "Prix indicatif de fourniture",
+    "reference": "Quantité de référence",
+    "request": "Demandez un prix selon quantité et destination",
+    "priceNote": "Images retouchées. Prix indicatifs pour les quantités précisées, hors transport et taxes. Confirmez prix final, disponibilité, configuration électrique et emballage dans l’offre.",
+    "flat": "Lisse",
+    "output": "Production quotidienne nominale",
+    "volume": "Volume de cuve",
+    "tanks": "Nombre de cuves",
+    "plate": "Dimensions de plaque",
+    "surface": "Surface",
+    "select": "Choisir un modèle et demander un devis",
+    "english": "Détails en anglais",
+    "reading": "Article pour préparer l’achat"
+  },
+  "titles": [
+    "Achetez des machines à glaçons professionnelles en Chine",
+    "Achetez des friteuses électriques professionnelles en Chine",
+    "Achetez des plaques à snacker électriques en Chine"
+  ],
+  "intros": [
+    "Achetez en Chine des machines à glaçons pour cafés, restaurants et hôtels. Comparez six modèles selon production nominale, dimensions et installation, puis confirmez la configuration de votre marché.",
+    "Achetez en Chine des friteuses pour votre gamme professionnelle. Comparez une cuve de 10 L et deux cuves de 10 L, espace de comptoir, quantités de référence et besoins culinaires.",
+    "Achetez en Chine des plaques électriques de comptoir. Comparez ZH-818 et ZH-820 selon surface lisse utile, encombrement et puissance avant de demander un prix par quantité."
+  ],
+  "notes": [
+    [
+      "Production et stockage de glace sont distincts. 100 kg/24h est une production nominale, pas le volume du bac. Confirmez les deux selon le service de pointe.",
+      "Précisez températures ambiante et d’eau entrante, surtout en cuisine chaude. Demandez conditions d’essai et production correspondante ; la valeur nominale ne prédit pas le rendement sur site.",
+      "Les modèles 55, 80 et 100 kg indiquent 448 × 400 × 798 mm, sans garantir composants ou bacs identiques. Confirmez dimensions finales, ventilation, maintenance, eau, évacuation et forme de glace. Combinez des modèles en précisant quantités, destination, emballage et pièces."
+    ],
+    [
+      "ZH-101V : une cuve de 10 L, largeur 280 mm. ZH-102V : deux cuves de 10 L, largeur 570 mm, pas une cuve de 20 L. Vérifiez paniers et commandes par cuve.",
+      "Volume de cuve ne signifie ni remplissage d’huile recommandé ni production horaire. Confirmez panier, plage d’huile, lot et reprise de température pour les aliments.",
+      "Référence simple cuve : 10 unités ; double cuve : 1 unité. Confirmez le prix pour la quantité réelle. Définissez vidange, nettoyage, thermostats, résistances, paniers et pièces ; précisez destination, tension, fréquence, phases et fiche."
+    ],
+    [
+      "ZH-818 : surface 548 × 350 mm. ZH-820 : 728 × 400 mm. Toutes deux ont une plaque lisse de 8 mm ; demandez séparément les surfaces rainurées ou mixtes. Dessinez un lot type.",
+      "Encombrements respectifs : 550 × 430 × 220 mm et 730 × 470 × 220 mm. Distinguez cuisson et encombrement ; confirmez dégagements, récupération de graisse et nettoyage.",
+      "Les puissances de 3 kW et 4,4 kW ne déterminent pas le débit. Confirmez commandes, matériau, reprise thermique et alimentation. Seul ZH-818 a un prix indicatif ; ZH-820 demande son propre devis. Combinez avec des friteuses en précisant modèles, quantités, destination, pièces et transport."
+    ]
+  ]
+}

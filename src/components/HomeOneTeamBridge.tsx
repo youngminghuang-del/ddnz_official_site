@@ -1,3 +1,4 @@
+import { navigationPath } from '../lib/productLanguageRouting';
 import { ArrowRight, CheckCircle2, Container, PackageCheck, ShieldCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -73,7 +74,7 @@ export default function HomeOneTeamBridge() {
         <div className="home-one-team-services">
           {copy.serviceLabels.map((label, index) => {
             const links = [`${prefix}/services/sea-freight/`, `${prefix}/services/lcl-shipping-from-china/`, `${prefix}/services/dangerous-goods-shipping-from-china/`, `${prefix}/services/air-freight/`, `${prefix}/services/amazon-fba/`, `${prefix}/services/warehouse-services/`, `${prefix}/shipping-from-china-to-central-asia/`];
-            return <Link key={label} to={links[index]}>{label}<ArrowRight aria-hidden="true" /></Link>;
+            return <Link key={label} to={navigationPath(links[index], language)}>{label}<ArrowRight aria-hidden="true" /></Link>;
           })}
         </div>
       </div>

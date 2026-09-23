@@ -1,0 +1,258 @@
+{
+  "home": "Accueil",
+  "kitchen": "Équipements de cuisine professionnelle",
+  "phone": "Protections d’écran",
+  "entryTitle": "Pour quelle activité achetez-vous ?",
+  "entryIntro": "Partez de votre mode de vente ou d’utilisation pour préparer la prochaine commande.",
+  "open": "Préparer cet achat",
+  "range": "Découvrir la gamme",
+  "stepsTitle": "Préparez votre prochaine commande",
+  "modelsTitle": "Commencez par ces produits",
+  "faqTitle": "Avant de demander un devis",
+  "briefTitle": "Présentez votre besoin d’achat",
+  "briefIntro": "Indiquez les éléments connus. Nous vérifierons produits et quantités avant de confirmer disponibilité et conditions commerciales.",
+  "form": {
+    "name": "Votre nom",
+    "email": "E-mail professionnel",
+    "company": "Entreprise (facultatif)",
+    "country": "Pays de destination",
+    "countryHint": "Par exemple : France, Sénégal ou Maroc",
+    "notes": "Autres besoins (facultatif)",
+    "review": "Vérifier la demande",
+    "send": "Envoyer la demande",
+    "simulate": "Prévisualiser la demande",
+    "sending": "Envoi en cours…",
+    "sent": "Demande envoyée",
+    "previewed": "Aperçu terminé",
+    "required": "Veuillez remplir ce champ.",
+    "invalidEmail": "Saisissez une adresse e-mail valide.",
+    "success": "Votre demande a été envoyée. Notre équipe la vérifiera avant de préparer un devis.",
+    "preview": "Aperçu terminé dans ce navigateur. Aucune demande n’a été envoyée.",
+    "error": "Échec de l’envoi. Veuillez réessayer.",
+    "privacy": "Politique de confidentialité",
+    "privacyCopy": "Nous utilisons vos coordonnées et besoins d’achat pour répondre à votre demande.",
+    "scope": "Une demande de devis ne constitue pas une commande.",
+    "previewScope": "Aperçu local : ce formulaire simule l’envoi sans transmettre de message.",
+    "request": "Demande d’achat",
+    "notesLabel": "Besoins complémentaires"
+  },
+  "guides": {
+    "kitchen-distributors": {
+      "title": "Acheter en gros des équipements de cuisine en Chine pour la distribution | DDNZ",
+      "description": "Achetez des équipements de cuisine en Chine pour votre réseau de distribution. Comparez modèles, quantités, configurations et livraison sur une même base pour un essai, un réassort ou une extension de gamme.",
+      "eyebrow": "Importateurs et distributeurs d’équipements",
+      "heading": "Acheter en gros des équipements de cuisine en Chine pour la distribution",
+      "intro": "Achetez des équipements de cuisine en Chine pour votre réseau de distribution. Comparez modèles, quantités, configurations et livraison sur une même base pour un essai, un réassort ou une extension de gamme.",
+      "card": "Importateurs et distributeurs d’équipements",
+      "cardCopy": "Préparez gamme initiale, réassort, emballage et pièces.",
+      "steps": [
+        [
+          "Définir le rôle de chaque modèle",
+          "Distinguez entrée de gamme et capacité supérieure. Pour les machines à glaçons, comparez production quotidienne nominale et encombrement ; pour les friteuses, chaque cuve. Fixez les quantités avant de juger le prix."
+        ],
+        [
+          "Comparer le contenu de la commande",
+          "Les prix indicatifs correspondent aux quantités affichées. Comparez la même configuration, le même emballage et le même périmètre de livraison. Une sélection mixte exige toujours de confirmer minimums et disponibilité par modèle."
+        ],
+        [
+          "Préparer les ventes suivantes",
+          "Précisez notices, marquage des cartons et pièces à chiffrer. Vérifiez le réapprovisionnement en pièces et la procédure de garantie. Intégrez installation et service locaux à votre plan de revente."
+        ]
+      ],
+      "faqs": [
+        [
+          "Puis-je combiner machines à glaçons, friteuses et froid ?",
+          "Oui, demandez une sélection mixte. Minimums d’usine, emballage, consolidation et transport seront confirmés selon la combinaison."
+        ],
+        [
+          "Les prix affichés sont-ils des devis distributeur ?",
+          "Ce sont des références indicatives avec leurs quantités applicables. Le devis confirme modèles, quantités, devise et périmètre de livraison."
+        ],
+        [
+          "Faut-il connaître les données électriques avant de lister les produits ?",
+          "Commencez par modèles, quantités et destination. Tension, fréquence, phases et prise seront confirmées pour les équipements retenus au devis."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "range",
+          "label": "Équipements et quantités",
+          "hint": "Références ou types d’équipement et unités par modèle"
+        },
+        {
+          "key": "stage",
+          "label": "Objet de la commande",
+          "hint": "Essai, réassort ou extension de gamme"
+        },
+        {
+          "key": "support",
+          "label": "Emballage et service après-vente",
+          "hint": "Notices, pièces ou étiquettes de carton à chiffrer"
+        }
+      ]
+    },
+    "restaurant-projects": {
+      "title": "Acheter des équipements de projets de restauration en Chine | DDNZ",
+      "description": "Achetez en Chine selon la liste d’équipements de votre restaurant, café ou hôtel. Présentez projet, espaces et besoins pour examiner ensemble choix des modèles et livraison.",
+      "eyebrow": "Projets de restauration et d’hôtellerie",
+      "heading": "Acheter des équipements de projets de restauration en Chine",
+      "intro": "Achetez en Chine selon la liste d’équipements de votre restaurant, café ou hôtel. Présentez projet, espaces et besoins pour examiner ensemble choix des modèles et livraison.",
+      "card": "Projets de restauration et d’hôtellerie",
+      "cardCopy": "Fournissez liste d’équipements, espace disponible et besoins de livraison.",
+      "steps": [
+        [
+          "Définir le travail de chaque poste",
+          "Regroupez cuisson, froid, préparation et boissons. Distinguez références imposées et alternatives possibles ; indiquez quantités et espace de comptoir ou de meuble."
+        ],
+        [
+          "Vérifier les interfaces",
+          "Examinez dimensions, ouverture des portes, ventilation, évacuation et raccordements. Votre équipe projet doit valider adéquation au site et installation avant l’achat."
+        ],
+        [
+          "Préciser commande et réception",
+          "Indiquez destination, créneau de livraison et marquage des cartons par site ou poste. Confirmez documents et emballage. Délais et expédition coordonnée dépendent des fournisseurs retenus."
+        ]
+      ],
+      "faqs": [
+        [
+          "Pouvez-vous chiffrer ma liste existante ?",
+          "Oui. Incluez références ou descriptions et quantités. Identifiez les éléments fixes et ceux ouverts à une alternative."
+        ],
+        [
+          "L’installation complète de la cuisine est-elle incluse ?",
+          "Cette page concerne l’achat d’équipements et la coordination export. Précisez vos besoins d’installation pour clarifier les responsabilités ; l’installation locale n’est pas incluse par défaut."
+        ],
+        [
+          "Que faire si la date d’ouverture est fixée ?",
+          "Indiquez date et destination. Production, consolidation, transport et livraison locale doivent être vérifiés avant tout engagement de délai."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "project",
+          "label": "Projet et nombre de sites",
+          "hint": "Restaurant, café, hôtel ou cuisine centrale ; un ou plusieurs sites"
+        },
+        {
+          "key": "equipment",
+          "label": "Équipements et espace disponible",
+          "hint": "Matériel, quantités, références et dimensions principales"
+        },
+        {
+          "key": "timing",
+          "label": "Période de livraison souhaitée",
+          "hint": "Date, lieu de réception et éventuelles livraisons échelonnées"
+        }
+      ]
+    },
+    "phone-stores": {
+      "title": "Acheter en gros des protections d’écran en Chine pour les magasins | DDNZ",
+      "description": "Achetez des protections d’écran en Chine pour magasins et réseaux de réparation. Organisez le réassort selon les téléphones servis : transparent ou confidentialité, pose et quantité par modèle.",
+      "eyebrow": "Magasins d’accessoires et réseaux de réparation",
+      "heading": "Acheter en gros des protections d’écran en Chine pour les magasins",
+      "intro": "Achetez des protections d’écran en Chine pour magasins et réseaux de réparation. Organisez le réassort selon les téléphones servis : transparent ou confidentialité, pose et quantité par modèle.",
+      "card": "Magasins d’accessoires et réseaux de réparation",
+      "cardCopy": "Planifiez couverture des modèles, pose et réassort des magasins.",
+      "steps": [
+        [
+          "Lister les modèles exacts de téléphone",
+          "Indiquez nom, génération et quantité par combinaison protection/téléphone. Les variantes d’une même série ne sont pas nécessairement compatibles. Les minimums existants restent applicables."
+        ],
+        [
+          "Adapter la protection à la vente",
+          "Comparez transparent et confidentialité, puis définissez la pose par le personnel ou le client. Confirmez applicateur, accessoires de nettoyage et emballage du produit retenu."
+        ],
+        [
+          "Répartir par magasin ou entrepôt central",
+          "Décrivez la répartition. Quantités par carton, mélange des modèles et étiquettes magasin doivent être vérifiés avant départ. Conservez échantillon approuvé et liste pour le réassort."
+        ]
+      ],
+      "faqs": [
+        [
+          "Plusieurs magasins peuvent-ils regrouper leur commande ?",
+          "Oui. Les minimums par produit et téléphone restent applicables ; répartition et emballage sont confirmés au devis."
+        ],
+        [
+          "Tous les modèles de téléphone sont-ils disponibles ?",
+          "Non. Liste exacte, ajustement et disponibilité doivent être confirmés pour les produits choisis."
+        ],
+        [
+          "Les prix comprennent-ils le transport vers mon pays ?",
+          "Les références produits n’incluent pas de devis de destination. Indiquez pays et quantités. Le calculateur séparé en anglais utilise uniquement une référence pour Istanbul."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "stores",
+          "label": "Magasins et réception",
+          "hint": "Nombre de magasins ; entrepôt central ou répartition séparée"
+        },
+        {
+          "key": "models",
+          "label": "Protections, téléphones et quantités",
+          "hint": "Transparent/confidentialité, modèle exact et unités par combinaison"
+        },
+        {
+          "key": "packing",
+          "label": "Pose et emballage",
+          "hint": "Pose en magasin ou par le client, kit de vente ou marquage carton"
+        }
+      ]
+    },
+    "private-label": {
+      "title": "Acheter des protections d’écran de marque propre en Chine | DDNZ",
+      "description": "Achetez en Chine des protections d’écran pour votre marque avec des spécifications de produit et d’emballage. Partez de la gamme actuelle et décrivez les modifications pour examen par le fournisseur.",
+      "eyebrow": "Marques propres et vendeurs en ligne",
+      "heading": "Acheter des protections d’écran de marque propre en Chine",
+      "intro": "Achetez en Chine des protections d’écran pour votre marque avec des spécifications de produit et d’emballage. Partez de la gamme actuelle et décrivez les modifications pour examen par le fournisseur.",
+      "card": "Marques propres et vendeurs en ligne",
+      "cardCopy": "Définissez protection, kit de pose et emballage à chiffrer.",
+      "steps": [
+        [
+          "Spécifier d’abord le produit",
+          "Choisissez verre transparent ou confidentialité, téléphones et mode de pose. Vérifiez sur échantillon ajustement, couverture des bords, réponse tactile et compatibilité coque avant validation de production."
+        ],
+        [
+          "Séparer produit et emballage",
+          "Décrivez étiquette, boîte imprimée, notice ou accessoires différents. Faisabilité, fichiers graphiques, frais de préparation et minimums sont confirmés par le fournisseur retenu."
+        ],
+        [
+          "Valider une spécification reproductible",
+          "Confirmez échantillon, version graphique, liste de colisage et contrôles. Indiquez codes-barres et étiquetage de canal à examiner. Une demande d’emballage ne vaut pas approbation d’une plateforme de vente."
+        ]
+      ],
+      "faqs": [
+        [
+          "L’emballage personnalisé est-il compris dans le prix indicatif ?",
+          "Non. Les références couvrent les options décrites ; emballage, impression et outillage personnalisés nécessitent un devis distinct confirmé."
+        ],
+        [
+          "Existe-t-il un minimum fixe pour la marque propre ?",
+          "La personnalisation peut modifier les minimums. Indiquez quantités par téléphone et changements d’emballage pour examen."
+        ],
+        [
+          "Puis-je demander un échantillon avant la série ?",
+          "Oui. Confirmez configuration, coût et livraison, puis vérifiez téléphones et emballage prévus avant de valider la série."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "brand",
+          "label": "Marque et canal de vente",
+          "hint": "Votre marque, magasins ou canal en ligne"
+        },
+        {
+          "key": "product",
+          "label": "Produit, téléphones et quantités",
+          "hint": "Transparent/confidentialité, applicateur et quantité par modèle exact"
+        },
+        {
+          "key": "customization",
+          "label": "Personnalisation et échantillons",
+          "hint": "Étiquette logo, boîte, notice, accessoires ou échantillon de validation"
+        }
+      ]
+    }
+  },
+  "english": "en anglais"
+}

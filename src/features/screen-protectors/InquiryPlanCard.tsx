@@ -1,3 +1,6 @@
+import {translatedTree,localeCode} from '../site-localization/translate.mjs';
+import {localizedProductPath} from '../../lib/productLocalization.mjs';
+import {EN} from './locales/en.mjs';
 import { Link, useLocation } from 'react-router-dom';
 import { money, number } from './model.mjs';
 import { ROUTES } from './routes.mjs';
@@ -8,8 +11,8 @@ type Plan = NonNullable<ReturnType<typeof readHandoff>>;
 export default function InquiryPlanCard({ plan, missing, onRemove }: { plan: Plan | null; missing: boolean; onRemove: () => void }) {
   const location = useLocation();
   const query = new URLSearchParams(location.search);
-  const locale = /^\/(es|ar)(?:\/|$)/.exec(location.pathname)?.[1]
-    || (['es', 'ar'].includes(query.get('phoneLocale')) ? query.get('phoneLocale') : 'es');
+  const locale = /^\/(zh-cn|es|ar|ru|fr|pt|tr)(?:\/|$)/.exec(location.pathname)?.[1]
+    || (['zh','es','ar','ru','fr','pt','tr'].includes(query.get('phoneLocale')) ? query.get('phoneLocale') : 'es');
   if (!plan && missing && query.get('source') === LOCALIZED_INQUIRY_SOURCE) {
     const copy = phoneCopy(locale);
     return <div lang={locale} dir={copy.direction} role="status" className="mx-5 mt-5 rounded-xl border border-amber-200 bg-amber-50 p-5 text-sm sm:mx-8">
@@ -27,6 +30,17 @@ export default function InquiryPlanCard({ plan, missing, onRemove }: { plan: Pla
       <div className="mt-3 flex flex-wrap items-center gap-5 text-sm font-bold text-[#763c9c]"><Link className="py-2 underline underline-offset-4" to={`${localizedPhonePath(plan.locale, 'compare')}#phone-inquiry`}>{copy.editAttachment}</Link><button type="button" className="py-2 underline underline-offset-4" onClick={onRemove}>{copy.removeAttachment}</button></div>
       <input type="hidden" name="Screen_Protector_Plan_JSON" value={JSON.stringify(plan)} />
       <input type="hidden" name="Screen_Protector_Basis_Date" value={plan.basisDate} />
+    </section>;
+  }
+  if (plan.displayLocale && plan.displayLocale !== 'en') {
+    const lang=localeCode(plan.displayLocale),copy=phoneCopy(lang),text=translatedTree(EN,lang);
+    return <section lang={lang} dir={lang==='ar'?'rtl':'ltr'} aria-label={copy.attachment} className="mx-5 mt-5 rounded-xl border border-purple-200 bg-purple-50/60 p-5 text-[#10243f] sm:mx-8">
+      <h2 className="text-lg font-extrabold">{copy.attachment}</h2>
+      <p>{phoneNumber(lang,plan.summary.pieces)} {copy.pieces} · {text.calc[plan.state.route]} · {text.quote.destination}</p>
+      <p>{text.calc.total}: <bdi>{phoneMoney(lang,plan.summary.landedCny)}</bdi></p>
+      <p>{plan.summary.missingModels?text.calc.missing.replace('{count}',phoneNumber(lang,plan.summary.missingModels)):text.calc.modelsComplete}</p>
+      <div className="mt-3 flex flex-wrap gap-5"><Link className="underline" to={localizedProductPath(ROUTES.calculator,lang)}>{copy.editAttachment}</Link><button type="button" onClick={onRemove}>{copy.removeAttachment}</button></div>
+      <input type="hidden" name="Screen_Protector_Plan_JSON" value={JSON.stringify(plan)}/><input type="hidden" name="Screen_Protector_Basis_Date" value={plan.basisDate}/>
     </section>;
   }
   return <section aria-label="Attached screen protector plan" className="mx-5 mt-5 rounded-xl border border-purple-200 bg-purple-50/60 p-5 text-[#10243f] sm:mx-8">

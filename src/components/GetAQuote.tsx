@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  Info, 
-  ArrowRight, 
-  ArrowLeft, 
-  Ship, 
-  Plane, 
-  Truck, 
-  Package, 
+import {
+  Info,
+  ArrowRight,
+  ArrowLeft,
+  Ship,
+  Plane,
+  Truck,
+  Package,
   Boxes,
-  Globe, 
-  Scale, 
-  CheckCircle2, 
-  Check, 
+  Globe,
+  Scale,
+  CheckCircle2,
+  Check,
   MessageSquare,
   Sparkles,
   ChevronRight,
@@ -37,30 +37,30 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Desc: '拖动滑块或选择常见货量，提供初步件重尺信息',
     step4Title: '留下联系方式获取书面报价',
     step4Desc: '只需填写姓名，并留下邮箱或电话 / WhatsApp 其中一种联系方式',
-    
+
     origin: '始发港/城市',
     originPlaceholder: '输入或选择始发港/城市，如：广州、深圳、上海...',
     popularOrigins: '热门始发地',
     destination: '目的港/国家',
     destinationPlaceholder: '输入目的国，如：美国、俄罗斯、哈萨克斯坦...',
     popularDests: '热门目的地',
-    
+
     weight: '预估重量 (KG)',
     volume: '预估体积 (CBM)',
     presetLabel: '快速货量预设',
     presetSmall: '样品 / 快递包裹 (<100kg)',
     presetMedium: '拼箱 / 托盘拼装 (100-1500kg)',
     presetLarge: '整柜 / 跨国大货 (>1500kg)',
-    
+
     back: '上一步',
     next: '下一步',
     submitQuote: '提交报价资料',
-    
+
     summaryTitle: '您的询盘配置摘要',
     summaryMode: '运输方式',
     summaryRoute: '运输航线',
     summaryCargo: '预估规格',
-    
+
     phonePlaceholder: '电话 / 微信 / WhatsApp（与邮箱二选一）',
     namePlaceholder: '您的姓名 / 公司名称 (必填)',
     emailPlaceholder: '企业邮箱（与电话二选一）',
@@ -68,12 +68,12 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     contactHint: '邮箱或电话 / WhatsApp 填写一项即可',
     contactRequired: '请至少填写邮箱或电话 / WhatsApp 中的一项',
     optionalDetails: '补充货物信息（选填）',
-    
+
     seaDesc: '适合大批量、托盘货和整柜运输，时效以船期为准',
     airDesc: '适合时效要求较高的货物，需先确认航空承运条件',
     landDesc: '适用于符合线路和口岸条件的中亚及俄罗斯货物',
     wareDesc: '仓储、验货、包装与集运等出口前支持服务',
-    
+
     mode: '运输方式',
     industry: '所属行业 / 货物品类',
     cargoDesc: '货物详情描述',
@@ -93,30 +93,30 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Desc: 'Drag the sliders or select a quick preset for responsive measurements',
     step4Title: 'Get Your Personalized Quote',
     step4Desc: 'Enter your name and either an email or phone / WhatsApp contact',
-    
+
     origin: 'Origin Port / City',
     originPlaceholder: 'Enter or select origin port, e.g., Guangzhou, Shenzhen...',
     popularOrigins: 'Popular Origins',
     destination: 'Destination Port / Country',
     destinationPlaceholder: 'Enter country, e.g., United States, Germany, Russia...',
     popularDests: 'Popular Destinations',
-    
+
     weight: 'Estimated Weight (KG)',
     volume: 'Estimated Volume (CBM)',
     presetLabel: 'Quick Cargo Presets',
     presetSmall: 'Sample / Courier Packet (<100kg)',
     presetMedium: 'LCL / Palletized Cargo (100-1500kg)',
     presetLarge: 'FCL / Commercial Shipment (>1500kg)',
-    
+
     back: 'Back',
     next: 'Next Step',
     submitQuote: 'Get Precise Quote & Routing',
-    
+
     summaryTitle: 'Your Inquiry Summary',
     summaryMode: 'Transport Mode',
     summaryRoute: 'Route Details',
     summaryCargo: 'Cargo Size',
-    
+
     phonePlaceholder: 'Phone / WhatsApp / WeChat (email alternative)',
     namePlaceholder: 'Your Name / Company (Required)',
     emailPlaceholder: 'Corporate Email (phone alternative)',
@@ -124,12 +124,12 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     contactHint: 'Provide either an email or phone / WhatsApp contact',
     contactRequired: 'Please provide either an email or phone / WhatsApp contact',
     optionalDetails: 'Add cargo details (optional)',
-    
+
     seaDesc: 'Cost-effective, best for bulk LCL & FCL logistics',
     airDesc: 'Max speed, perfect for high-value & urgent goods',
     landDesc: 'Direct road freight, ideal for Central Asia & Russia',
     wareDesc: 'Custom plywood crating, storage, and cross-docking',
-    
+
     mode: 'Transport Mode',
     industry: 'Industry / Product Category',
     cargoDesc: 'Cargo Details & Requirements',
@@ -149,30 +149,30 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Desc: 'Используйте ползунки или пресеты для точной оценки',
     step4Title: 'Получить индивидуальный расчет',
     step4Desc: 'Укажите имя и один способ связи: e-mail или телефон / мессенджер',
-    
+
     origin: 'Пункт отправления',
     originPlaceholder: 'Введите или выберите пункт отправления, например, Гуанчжоу...',
     popularOrigins: 'Популярные пункты',
     destination: 'Пункт назначения / Страна',
     destinationPlaceholder: 'Введите страну, например, Россия, Узбекистан...',
     popularDests: 'Популярные направления',
-    
+
     weight: 'Оценочный вес (кг)',
     volume: 'Оценочный объем (куб. м)',
     presetLabel: 'Быстрые шаблоны груза',
     presetSmall: 'Образец / Посылка (<100 кг)',
     presetMedium: 'Сборный груз (LCL) (100-1500 кг)',
     presetLarge: 'Полный контейнер (FCL) (>1500 кг)',
-    
+
     back: 'Назад',
     next: 'Далее',
     submitQuote: 'Получить расчет стоимости',
-    
+
     summaryTitle: 'Сводка вашего запроса',
     summaryMode: 'Режим доставки',
     summaryRoute: 'Детали маршрута',
     summaryCargo: 'Параметры груза',
-    
+
     phonePlaceholder: 'Телефон / WhatsApp / Telegram (или e-mail)',
     namePlaceholder: 'Ваше имя / Компания (Обязательно)',
     emailPlaceholder: 'Рабочий e-mail (или телефон)',
@@ -180,12 +180,12 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     contactHint: 'Достаточно указать e-mail или телефон / мессенджер',
     contactRequired: 'Укажите e-mail или телефон / мессенджер',
     optionalDetails: 'Добавить сведения о грузе (необязательно)',
-    
+
     seaDesc: 'Экономичная доставка сборных и полных контейнеров',
     airDesc: 'Максимальная скорость для ценных и срочных грузов',
     landDesc: 'Прямые автоперевозки в Центральную Азию и Россию',
     wareDesc: 'Хранение, консолидация, прочная фанерная обрешетка',
-    
+
     mode: 'Режим доставки',
     industry: 'Отрасль / Категория',
     cargoDesc: 'Детали и требования к грузу',
@@ -205,30 +205,30 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     step3Desc: 'Ajustez les curseurs ou choisissez un modèle prédéfini',
     step4Title: 'Obtenir votre devis personnalisé',
     step4Desc: 'Indiquez votre nom et un moyen de contact : e-mail ou téléphone / WhatsApp',
-    
+
     origin: 'Port d\'origine / Ville',
     originPlaceholder: 'Saisissez ou sélectionnez l\'origine, ex: Guangzhou, Shenzhen...',
     popularOrigins: 'Origines Populaires',
     destination: 'Port de destination / Pays',
     destinationPlaceholder: 'Entrez le pays, ex: France, États-Unis, Allemagne...',
     popularDests: 'Destinations Populaires',
-    
+
     weight: 'Poids estimé (KG)',
     volume: 'Volume estimé (CBM)',
     presetLabel: 'Préréglages de cargaison',
     presetSmall: 'Échantillon / Colis Express (<100kg)',
     presetMedium: 'Groupage (LCL) / Palettes (100-1500kg)',
     presetLarge: 'Conteneur Complet (FCL) (>1500kg)',
-    
+
     back: 'Retour',
     next: 'Étape suivante',
     submitQuote: 'Obtenir mon devis gratuit',
-    
+
     summaryTitle: 'Résumé de votre demande',
     summaryMode: 'Mode de transport',
     summaryRoute: 'Détails de l\'itinéraire',
     summaryCargo: 'Taille du cargo',
-    
+
     phonePlaceholder: 'Téléphone / WhatsApp / WeChat (ou e-mail)',
     namePlaceholder: 'Votre nom / Entreprise (Requis)',
     emailPlaceholder: 'E-mail professionnel (ou téléphone)',
@@ -236,12 +236,12 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     contactHint: 'Un e-mail ou un téléphone / WhatsApp suffit',
     contactRequired: 'Veuillez indiquer un e-mail ou un téléphone / WhatsApp',
     optionalDetails: 'Ajouter les détails du fret (facultatif)',
-    
+
     seaDesc: 'Économique, idéal pour groupages et conteneurs pleins',
     airDesc: 'Vitesse maximale, idéal pour haute valeur ou urgences',
     landDesc: 'Transport routier direct, idéal pour la Russie et l\'Asie centrale',
     wareDesc: 'Emballage caisse bois sur mesure, stockage & tri',
-    
+
     mode: 'Mode de transport',
     industry: 'Secteur d\'activité / Catégorie',
     cargoDesc: 'Détails du cargo et exigences',
@@ -365,14 +365,14 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const utmMedium = attribution.utm_medium || '';
   const utmCampaign = attribution.utm_campaign || '';
   const utmContent = attribution.utm_content || '';
-  
+
   // Funnel Step State: 1 to 4
   const [step, setStep] = useState(1);
   const [direction, setDirection] = useState(1); // 1 = forward, -1 = backward
   const lifecycleRef = useRef({ started: false, submitted: false, lastStep: 1, service: 'Sea' });
   const successTrackedRef = useRef(false);
   const formErrorTrackedRef = useRef<unknown>(null);
-  
+
   // Core Funnel Data
   const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>('Sea');
   const [origin, setOrigin] = useState('');
@@ -392,7 +392,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
       setSelectedService(presetService);
     }
   }, [presetService]);
-  
+
   // Auto-set localized default origin on mount or language change if not already custom filled
   useEffect(() => {
     if (!origin) {
@@ -455,7 +455,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const [weight, setWeight] = useState(350);
   const [volume, setVolume] = useState(2.5);
   const [presetActive, setPresetActive] = useState<'small' | 'medium' | 'large' | null>('medium');
-  
+
   // Step 4 Details
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -696,7 +696,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12 md:mb-20">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -706,7 +706,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
             {t('get_a_quote.estimatorTitle')}
           </motion.div>
           {isQuotePage ? (
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -716,7 +716,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
               {quoteHeadline.before} <span className="bg-gradient-to-r from-[#0b4f8a] to-[#d97706] bg-clip-text text-transparent">{quoteHeadline.accent}</span> {quoteHeadline.after}
             </motion.h1>
           ) : (
-            <motion.h2 
+            <motion.h2
               initial={{ opacity: 0, y: 15 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
@@ -732,7 +732,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
           </p>
           <div className="flex items-center justify-center gap-2 text-[var(--hb-amber)] font-bold text-xs bg-amber-50/70 w-fit mx-auto px-4 py-2 rounded-full border border-amber-100/60 shadow-sm">
             <Info className="w-3.5 h-3.5 shrink-0" />
-            {t('hero.alibaba_cta')}
+            {{es:'¿Compra en Alibaba o 1688? DDNZ Global Trade Co., Ltd. coordina la verificación de proveedores, inspecciones y apoyo a la exportación con el equipo de transporte Heaven Born.',ar:'هل تشتري من Alibaba أو 1688؟ تنسق DDNZ Global Trade Co., Ltd. التحقق من الموردين والفحص ودعم التصدير مع فريق الشحن Heaven Born.'}[language] || t('hero.alibaba_cta')}
           </div>
         </div>
 
@@ -741,7 +741,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
           <div className="bg-white rounded-3xl shadow-xl border border-slate-100 flex flex-col hover:shadow-2xl transition-all duration-300 relative overflow-hidden min-h-[580px] lg:min-h-[550px]">
             {/* Visual top accent gradient strip */}
             <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#0b1f3a] via-[#0b4f8a] to-[#d97706]" />
-            
+
             {!isSubmitted ? (
               <>
                 {/* Visual Step Progress indicator */}
@@ -755,7 +755,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {ft('stepProgress').replace('{step}', String(step))}
                     </span>
                   </div>
-                  
+
                   {/* Step dots with line connector */}
                   <div className="flex items-center justify-center gap-1 sm:gap-3 w-full sm:w-auto">
                     {[1, 2, 3, 4].map((item) => (
@@ -811,31 +811,31 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                           <p className="text-sm text-slate-500 mb-8 font-medium">
                             {ft('step1Desc')}
                           </p>
-                          
+
                           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             {[
-                              { 
-                                id: 'Sea', 
-                                label: t('get_a_quote.modeSea') || 'Sea Freight', 
-                                desc: ft('seaDesc'), 
+                              {
+                                id: 'Sea',
+                                label: t('get_a_quote.modeSea') || 'Sea Freight',
+                                desc: ft('seaDesc'),
                                 icon: <Ship className="w-6 h-6" />
                               },
-                              { 
-                                id: 'Air', 
-                                label: t('get_a_quote.modeAir') || 'Air Freight', 
-                                desc: ft('airDesc'), 
+                              {
+                                id: 'Air',
+                                label: t('get_a_quote.modeAir') || 'Air Freight',
+                                desc: ft('airDesc'),
                                 icon: <Plane className="w-6 h-6" />
                               },
-                              { 
-                                id: 'Land', 
-                                label: t('get_a_quote.modeLand') || 'Land Freight', 
-                                desc: ft('landDesc'), 
+                              {
+                                id: 'Land',
+                                label: t('get_a_quote.modeLand') || 'Land Freight',
+                                desc: ft('landDesc'),
                                 icon: <Truck className="w-6 h-6" />
                               },
-                              { 
-                                id: 'Warehouse', 
-                                label: t('nav.services_warehouse') || 'Warehouse & Fulfillment', 
-                                desc: ft('wareDesc'), 
+                              {
+                                id: 'Warehouse',
+                                label: t('nav.services_warehouse') || 'Warehouse & Fulfillment',
+                                desc: ft('wareDesc'),
                                 icon: <Package className="w-6 h-6" />
                               }
                             ].map((item) => {
@@ -846,7 +846,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   type="button"
                                   onClick={() => handleServiceSelect(item.id as any)}
                                   className={`p-5 rounded-2xl border-2 text-left transition-all duration-300 flex items-start gap-4 cursor-pointer relative overflow-hidden group ${
-                                    isActive 
+                                    isActive
                                       ? 'border-[var(--hb-blue)] bg-sky-50/70 text-[var(--hb-blue)] ring-2 ring-offset-2 ring-sky-200 font-bold scale-[1.01] shadow-lg'
                                       : 'border-slate-200 bg-slate-50/40 text-slate-700 hover:border-[var(--hb-blue)]/45 hover:bg-sky-50/40 hover:scale-[1.01]'
                                   }`}
@@ -860,8 +860,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                     <h4 className="font-extrabold text-slate-900 group-hover:text-[#0b4f8a] transition-colors flex items-center justify-between">
                                       <span>{item.label}</span>
                                       {isActive && (
-                                        <motion.span 
-                                          layoutId="activeTick" 
+                                        <motion.span
+                                          layoutId="activeTick"
                                           className="w-5 h-5 rounded-full bg-[#0b4f8a] text-white flex items-center justify-center"
                                         >
                                           <Check className="w-3 h-3 stroke-[3]" />
@@ -1171,7 +1171,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 </span>
                               </div>
                             </div>
-                            
+
                             {/* Fast route speed indicator tag */}
                             <div className="text-right text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
@@ -1200,7 +1200,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <input type="hidden" name="UTM_Medium" value={utmMedium} />
                             <input type="hidden" name="UTM_Campaign" value={utmCampaign} />
                             <input type="hidden" name="UTM_Content" value={utmContent} />
-                            
+
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}
                               <div>
@@ -1321,8 +1321,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 type="submit"
                                 disabled={state.submitting}
                                 className={`w-full text-white font-extrabold py-4 rounded-xl transition-all flex items-center justify-center shadow-lg hover:-translate-y-0.5 cursor-pointer ${
-                                  state.submitting 
-                                    ? 'bg-slate-500 cursor-not-allowed' 
+                                  state.submitting
+                                    ? 'bg-slate-500 cursor-not-allowed'
                                     : 'bg-[#d97706] hover:bg-[#b45309] hover:shadow-xl shadow-amber-500/10'
                                 }`}
                               >
@@ -1354,7 +1354,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       >
                         <ArrowLeft className="w-4 h-4" /> {ft('back')}
                       </button>
-                      
+
                       {step < 4 && (
                         <button
                           type="button"
@@ -1375,7 +1375,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
               </>
             ) : (
               /* Submission Success View */
-              <motion.div 
+              <motion.div
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 className="flex-1 flex flex-col items-center justify-center text-center bg-[#10283d] p-8 sm:p-12 text-white"
@@ -1383,23 +1383,23 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                 <div className="w-20 h-20 bg-[var(--hb-amber)] rounded-full flex items-center justify-center mb-6 shadow-lg shadow-amber-900/20 ring-8 ring-white/10">
                   <CheckCircle2 className="w-10 h-10 text-white" />
                 </div>
-                
+
                 <h3 className="text-3xl font-black text-white mb-4 tracking-tight">
                   {ft('successHeading')}
                 </h3>
-                
+
                 <p className="text-slate-200 text-base md:text-lg max-w-lg leading-relaxed mb-8 font-medium">
                   {ft('successText')}
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center gap-4">
-                  <button 
+                  <button
                     onClick={resetFunnel}
                     className="text-[#0b4f8a] bg-white hover:bg-slate-50 px-8 py-3.5 rounded-xl text-sm font-black transition-all hover:scale-[1.02] shadow-md cursor-pointer"
                   >
                     {ft('sendAnother')}
                   </button>
-                  <a 
+                  <a
                     href="mailto:partnership@ddnzglobal.com"
                     className="text-white bg-white/10 hover:bg-white/20 border border-white/20 px-8 py-3.5 rounded-xl text-sm font-black transition-all cursor-pointer"
                   >

@@ -1,0 +1,194 @@
+{
+  "productsTitle": "Compre produtos da China e monte uma seleção comparável.",
+  "productsIntro": "Encontre equipamentos de cozinha, máquinas para alimentos, caixas de som, acessórios para celular e produtos para atividades ao ar livre na China. Compare modelos e requisitos antes de coordenar fornecedores, inspeção, consolidação e exportação.",
+  "servicesTitle": "Sourcing na China: da busca de fornecedores à exportação.",
+  "servicesIntro": "Para varejistas, importadores e compradores de projetos, a DDNZ coordena comparação de fornecedores, amostras, acompanhamento da produção, inspeção e preparação para exportação na China. O comprador aprova as decisões comerciais; escopo e responsabilidades ficam registrados.",
+  "categories": [
+    [
+      "Cozinha profissional e refrigeração",
+      "Combine cocção, preparação e refrigeração conforme cardápio, capacidade e ambiente.",
+      "Cocção · Refrigeração · Bancadas em inox · Bebidas e gelo",
+      "Energia e clima · Capacidade · Componentes incluídos · Acesso para manutenção"
+    ],
+    [
+      "Áudio e caixas de som",
+      "Compare configurações portáteis, para festas e profissionais para montar uma linha adequada ao canal de venda.",
+      "Caixas portáteis · Áudio profissional · Microfones · Embalagem personalizada",
+      "Alto-falantes e gabinete · Bateria · Conectividade · Acessórios"
+    ],
+    [
+      "Acessórios para celular",
+      "Organize pedidos de modelos e cores variados, com compatibilidade e embalagem definidas para reposição.",
+      "Capas · Carregadores · Baterias externas · Cabos e adaptadores",
+      "Compatibilidade · Protocolos de carga · Material e acabamento · Quantidade por item"
+    ],
+    [
+      "Produtos para atividades ao ar livre",
+      "Compare energia e refrigeração portátil considerando clima, autonomia e alimentação no destino.",
+      "Estações de energia · Painéis solares dobráveis · Geladeiras veiculares · Caixas térmicas",
+      "Autonomia · Sistema elétrico · Documentos de bateria e refrigerante · Volume embalado"
+    ],
+    [
+      "Máquinas para processamento de alimentos",
+      "Compare preços de atacado de 16 modelos selecionados ou comece por seis combinações de equipamentos.",
+      "Massas e panificação · Carnes · Vegetais · Grãos e sucos",
+      "Ingredientes e lote · Motor e lâminas · Alimentação elétrica · Embalagem e destino"
+    ]
+  ],
+  "packageNames": [
+    "Massas e macarrão",
+    "Preparação para panificação",
+    "Preparação de carnes",
+    "Produção de almôndegas",
+    "Preparação de vegetais",
+    "Preparação de soja e arroz"
+  ],
+  "packageDescriptions": [
+    "Mistura e laminação; cortador de macarrão opcional.",
+    "Mistura e corte de pão assado; forno à parte.",
+    "Fatiamento e moagem; refrigeração e serra à parte.",
+    "Moagem, mistura e formação; cocção e resfriamento à parte.",
+    "Descascamento e corte; selecione as lâminas adequadas.",
+    "Separação de polpa e moagem úmida; molho, cocção e armazenamento à parte."
+  ],
+  "priceNote": "Totais em CNY usam a coluna de atacado da tabela do fornecedor de 8 de maio de 2026, com uma unidade de cada máquina. Embalagens listadas são calculadas separadamente. Opcionais, reforço de embalagem para exportação, frete, tributos e serviços dependem de confirmação. Valide receitas e compatibilidade de capacidade.",
+  "paths": [
+    [
+      "Compras para varejo",
+      "Para testar produtos, combinar modelos e repor estoques de várias lojas. Informe quantidade por item, cores, embalagem e frequência; confirme o pedido mínimo de cada configuração."
+    ],
+    [
+      "Projetos e personalização",
+      "Para pedidos com requisitos técnicos ou personalizados. Defina especificação, amostra, etapas de produção e condições de liberação antes de comparar propostas equivalentes."
+    ]
+  ],
+  "steps": [
+    [
+      "Necessidade",
+      "Registre produto, quantidade, uso e destino."
+    ],
+    [
+      "Fornecedor",
+      "Verifique identidade, papel e capacidade produtiva."
+    ],
+    [
+      "Propostas",
+      "Alinhe especificações, quantidades, inclusões e exclusões."
+    ],
+    [
+      "Amostra",
+      "Registre modelo, material, cor e critérios de aceitação."
+    ],
+    [
+      "Produção",
+      "Acompanhe etapas, alterações e correções."
+    ],
+    [
+      "Inspeção e embalagem",
+      "Confira funções, quantidades, etiquetas e registros de embalagem."
+    ],
+    [
+      "Exportação",
+      "Confirme liberação, documentos, transporte e responsáveis."
+    ]
+  ],
+  "marketIntro": "Anúncios em plataformas ajudam a encontrar fornecedores. A decisão de compra precisa de propostas comparáveis, verificação e aprovações vinculadas ao pedido.",
+  "marketRows": [
+    [
+      "Preço",
+      "Pode representar uma configuração ou quantidade mínima.",
+      "Alinhar modelo, quantidade, acessórios e custos."
+    ],
+    [
+      "Fornecedor",
+      "Os dados da loja precisam de verificação.",
+      "Registrar identidade e função de fabricante ou intermediário."
+    ],
+    [
+      "Amostra",
+      "Uma amostra não define a aceitação do lote.",
+      "Vincular amostra aprovada, especificação e inspeção."
+    ],
+    [
+      "Prazo",
+      "Pode mudar conforme escopo e capacidade.",
+      "Registrar etapas, pendências e exceções."
+    ],
+    [
+      "Liberação",
+      "Pagamento, inspeção, embalagem e transporte precisam se conectar.",
+      "Revisar inspeção, embalagem e documentos antes da entrega."
+    ]
+  ],
+  "faqs": [
+    [
+      "Quando preciso de sourcing ou de frete?",
+      "Use sourcing para definir produto, fornecedor ou configuração. Com a carga definida, avalie coleta e frete. Quando precisar dos dois, combine a passagem da aprovação de compra para a instrução de transporte."
+    ],
+    [
+      "Podem inspecionar e consolidar pedidos dos meus fornecedores?",
+      "Envie fornecedores, pedidos, datas e verificações necessárias. A análise define recebimento, inspeção e consolidação sem presumir uma nova busca de fornecedores."
+    ],
+    [
+      "Posso reunir produtos diferentes no mesmo embarque?",
+      "Confira quantidades, embalagem, datas e características da carga. Declare baterias e outros itens especiais; a compatibilidade depende do transporte e dos documentos."
+    ],
+    [
+      "O preço do produto inclui todos os custos até a entrega?",
+      "Não. Produto, embalagem, sourcing, inspeção, frete e despesas no destino são linhas distintas. Vale o escopo da proposta confirmada."
+    ]
+  ],
+  "ui": {
+    "categories": "Categorias de compra",
+    "variables": "Confirmar antes de comparar",
+    "explore": "Ver detalhes do produto",
+    "english": "Detalhes em inglês",
+    "packages": "Combine máquinas por etapa de preparação",
+    "equipment": "Equipamentos",
+    "packing": "Embalagem listada",
+    "scope": "Selecionar para cotação",
+    "other": "Outro produto",
+    "control": "Sete etapas da necessidade à liberação",
+    "path": "Escolha o modelo de compra",
+    "market": "Do anúncio ao pedido documentado",
+    "columns": [
+      "Decisão",
+      "Informação inicial",
+      "Registro necessário"
+    ],
+    "services": "Serviços na China",
+    "details": "Ver escopo do serviço",
+    "faq": "Perguntas de compra",
+    "quote": "Prepare sua necessidade de compra",
+    "formIntro": "Organize os dados aqui; revise os detalhes na próxima etapa antes de enviar.",
+    "category": "Categoria",
+    "destination": "País / cidade de destino",
+    "scopeField": "Produtos, modelos e quantidades",
+    "stage": "Etapa da compra",
+    "stages": [
+      "Explorar categorias",
+      "Montar uma linha",
+      "Comparar propostas",
+      "Aprovar amostra ou especificação",
+      "Pronto para comprar"
+    ],
+    "notes": "Prazo, normas ou embalagem",
+    "prepare": "Revisar necessidade",
+    "ready": "Dados organizados; ainda não enviados",
+    "continue": "Continuar para o formulário de cotação",
+    "edit": "Editar dados",
+    "process": "Ver o processo completo",
+    "freight": "Frete internacional executado pela Heaven Born, em operação desde 1997. A DDNZ coordena o sourcing.",
+    "home": "Início",
+    "select": "Selecione",
+    "retail": "Compra para varejo",
+    "project": "Compra para projeto",
+    "sku": "Número de itens diferentes",
+    "units": "Unidades por item",
+    "rhythm": "Reposição / preferência de transporte",
+    "brief": "Necessidade registrada",
+    "compare": "Comparação de propostas",
+    "approval": "Registro de aprovação",
+    "handoff": "Entrega para exportação"
+  }
+}

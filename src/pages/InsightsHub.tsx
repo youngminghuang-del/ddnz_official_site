@@ -1,3 +1,5 @@
+import { positioning } from '../features/search-intent/positioning.mjs';
+import BuyerDecisionContent from '../features/search-intent/BuyerDecisionContent';
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
@@ -63,7 +65,7 @@ export default function InsightsHub() {
     },
   };
 
-  const currentSEO = seoMetrics[language] || seoMetrics['en'];
+  const currentSEO = { ...(seoMetrics[language] || seoMetrics.en), title: positioning[language].insightsTitle, desc: positioning[language].insightsDescription };
 
   useEffect(() => {
     trackEvent('insights_hub_view', {
@@ -128,10 +130,10 @@ export default function InsightsHub() {
           <div className="relative z-10 mx-auto max-w-7xl">
             <DdnzEyebrow>{t('insights.hubLabel')}</DdnzEyebrow>
             <h1 className="mt-5 max-w-[16ch] text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[1.03] tracking-[-0.05em] text-[var(--ddnz-ink)]">
-              {t('insights.hubTitle')}
+              {positioning[language].insightsHeading}
             </h1>
             <p className="mt-6 max-w-3xl text-base font-medium leading-8 text-slate-600 md:text-lg">
-              {t('insights.hubSubtitle')}
+              {positioning[language].insightsDescription}
             </p>
           </div>
         </section>
@@ -255,7 +257,7 @@ export default function InsightsHub() {
                           <span>{t('insights.deep_dive_read')}</span>
                           <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1.5 transition-transform" />
                         </Link>
-                        
+
                         <div className="flex items-center gap-1 text-slate-300 text-xs font-mono font-bold">
                           <Clock className="w-3.5 h-3.5" />
                           <span>{post.readMinutes || 5} min</span>
@@ -279,7 +281,8 @@ export default function InsightsHub() {
               </p>
             </div>
           )}
-        </main>
+        <BuyerDecisionContent page="insights" locale={language} />
+      </main>
       </div>
 
       <Footer />

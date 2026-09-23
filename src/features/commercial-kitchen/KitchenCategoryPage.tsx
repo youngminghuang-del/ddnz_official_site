@@ -1,3 +1,4 @@
+import {categoryAlternates} from './categoryLocalization';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import SourcingHomepageNav from '../../components/SourcingHomepageNav';
@@ -31,7 +32,7 @@ export default function KitchenCategoryPage() {
   return <>
     <SEO title={category.title} description={category.description} canonicalPath={category.path} contentLanguage="en"
       image={categoryProducts(category).find(item => item.id === category.heroId)!.image}
-      alternateUrls={[{ hrefLang: 'en', href: `https://www.ddnzglobal.com${category.path}` }]} />
+      alternateUrls={categoryAlternates(category.path)} />
     <SourcingHomepageNav quotePath={quotePath}/>
     <KitchenCategoryContent category={category} homeHref={navigationPath('/', language)} onTrack={(action: string) => {
       const payload = kitchenCategoryAnalytics(category.id, action);

@@ -1,0 +1,258 @@
+{
+  "home": "Ana sayfa",
+  "kitchen": "Endüstriyel mutfak ekipmanları",
+  "phone": "Ekran koruyucular",
+  "entryTitle": "Hangi iş için satın alıyorsunuz?",
+  "entryIntro": "Ürünleri nasıl sattığınızı veya kullandığınızı belirleyerek sonraki siparişinizi hazırlayın.",
+  "open": "Bu alımı planlayın",
+  "range": "Ürün grubunu inceleyin",
+  "stepsTitle": "Sonraki siparişinizi hazırlayın",
+  "modelsTitle": "Bu ürünlerle başlayın",
+  "faqTitle": "Teklif istemeden önce",
+  "briefTitle": "Satın alma ihtiyacınızı anlatın",
+  "briefIntro": "Bildiğiniz bilgileri ekleyin. Stok ve ticari koşulları doğrulamadan önce ürünleri ve miktarları inceleyeceğiz.",
+  "form": {
+    "name": "Adınız",
+    "email": "İş e-postası",
+    "company": "Şirket (isteğe bağlı)",
+    "country": "Varış ülkesi",
+    "countryHint": "Örneğin: Türkiye, Almanya veya Meksika",
+    "notes": "Diğer ihtiyaçlar (isteğe bağlı)",
+    "review": "Talebi gözden geçir",
+    "send": "Talebi gönder",
+    "simulate": "Talebi önizle",
+    "sending": "Gönderiliyor…",
+    "sent": "Talep gönderildi",
+    "previewed": "Önizleme tamamlandı",
+    "required": "Bu alanı doldurun.",
+    "invalidEmail": "Geçerli bir e-posta adresi girin.",
+    "success": "Talebiniz gönderildi. Ekibimiz teklif hazırlamadan önce ihtiyaçları inceleyecek.",
+    "preview": "Bu tarayıcıda önizleme tamamlandı. Talep gönderilmedi.",
+    "error": "Talep gönderilemedi. Tekrar deneyin.",
+    "privacy": "Gizlilik politikası",
+    "privacyCopy": "İletişim bilgilerinizi ve alım ihtiyaçlarınızı talebinizi yanıtlamak için kullanırız.",
+    "scope": "Talep göndermek sipariş vermek değildir.",
+    "previewScope": "Yerel önizleme: form, mesaj göndermeden gönderimi simüle eder.",
+    "request": "Satın alma talebi",
+    "notesLabel": "Ek ihtiyaçlar"
+  },
+  "guides": {
+    "kitchen-distributors": {
+      "title": "Distribütörler için Çin’den toptan mutfak ekipmanı tedariki | DDNZ",
+      "description": "Dağıtım ürün grubunuz için Çin’den toptan mutfak ekipmanı satın alın. Deneme, stok yenileme veya ürün grubu genişletme için modelleri aynı yapılandırma, miktar ve teslimat kapsamıyla karşılaştırın.",
+      "eyebrow": "İthalatçılar ve ekipman distribütörleri",
+      "heading": "Distribütörler için Çin’den toptan mutfak ekipmanı tedariki",
+      "intro": "Dağıtım ürün grubunuz için Çin’den toptan mutfak ekipmanı satın alın. Deneme, stok yenileme veya ürün grubu genişletme için modelleri aynı yapılandırma, miktar ve teslimat kapsamıyla karşılaştırın.",
+      "card": "İthalatçılar ve ekipman distribütörleri",
+      "cardCopy": "İlk ürün grubunu, tekrar alımları, ambalajı ve yedek parçaları planlayın.",
+      "steps": [
+        [
+          "Her modelin görevini belirleyin",
+          "Başlangıç modellerini yüksek kapasiteli seçeneklerden ayırın. Buz makinelerinde nominal günlük üretim ve ölçüleri, fritözlerde her hazneyi karşılaştırın. Fiyatı değerlendirmeden miktarları yazın."
+        ],
+        [
+          "Fiyatın kapsadığı siparişi karşılaştırın",
+          "Referans fiyatlar belirtilen miktarlar içindir. Aynı yapılandırma, ambalaj ve teslimatı karşılaştırın. Karma listelerde de model başına asgari sipariş ve bulunabilirlik doğrulanmalıdır."
+        ],
+        [
+          "Sonraki satışa hazırlanın",
+          "Kılavuz, koli tanımı ve fiyatlandırılacak yedek parçaları belirtin. Tekrar parça siparişi ve garanti sürecini doğrulayın. Yerel kurulum ve servis, yeniden satış planınıza dahildir."
+        ]
+      ],
+      "faqs": [
+        [
+          "Buz makinesi, fritöz ve soğutma ürünlerini birleştirebilir miyim?",
+          "Evet. Fabrika minimumları, ambalaj, konsolidasyon ve taşıma gerçek ürün birleşimi için doğrulanır."
+        ],
+        [
+          "Gösterilen fiyatlar distribütör teklifi midir?",
+          "Kendi miktar koşulları olan gösterge fiyatlardır. Teklif; model, miktar, para birimi ve teslimat kapsamını doğrular."
+        ],
+        [
+          "Liste öncesinde elektrik bilgileri gerekir mi?",
+          "Model, miktar ve varış yeriyle başlayın. Seçilen ekipmanın gerilim, frekans, faz ve fişi teklif sırasında doğrulanır."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "range",
+          "label": "Ekipman ve miktarlar",
+          "hint": "Model kodları veya ekipman türleri; model başına adet"
+        },
+        {
+          "key": "stage",
+          "label": "Siparişin amacı",
+          "hint": "Deneme, stok yenileme veya ürün grubu genişletme"
+        },
+        {
+          "key": "support",
+          "label": "Ambalaj ve satış sonrası ihtiyaçları",
+          "hint": "Teklife eklenecek kılavuz, parça veya koli etiketleri"
+        }
+      ]
+    },
+    "restaurant-projects": {
+      "title": "Restoran projeleri için Çin’den ekipman tedariki | DDNZ",
+      "description": "Restoran, kafe veya otel listenize göre Çin’den ekipman satın alın. Model seçimlerini ve teslimatı birlikte değerlendirmek için proje, alan ve ihtiyaçlarınızı paylaşın.",
+      "eyebrow": "Restoran ve konaklama projeleri",
+      "heading": "Restoran projeleri için Çin’den ekipman tedariki",
+      "intro": "Restoran, kafe veya otel listenize göre Çin’den ekipman satın alın. Model seçimlerini ve teslimatı birlikte değerlendirmek için proje, alan ve ihtiyaçlarınızı paylaşın.",
+      "card": "Restoran ve konaklama projeleri",
+      "cardCopy": "Ekipman listesi, kullanılabilir alan ve teslimat ihtiyaçlarını hazırlayın.",
+      "steps": [
+        [
+          "Her istasyonun işini tanımlayın",
+          "Pişirme, soğuk depolama, hazırlık ve içecek gruplarını ayırın. Sabit şartları ve alternatif kabul edilen ürünleri, adetleri ve tezgâh veya dolap alanını belirtin."
+        ],
+        [
+          "Bağlantıları kontrol edin",
+          "Ölçü, kapı açıklığı, havalandırma, drenaj ve tesisat bağlantılarını inceleyin. Satın almadan önce proje ekibiniz saha uygunluğunu ve kurulumu doğrulamalıdır."
+        ],
+        [
+          "Sipariş ve teslim kapsamını belirleyin",
+          "Varış yeri, teslim aralığı ve saha veya istasyona göre koli işaretlerini ekleyin. Belgeleri ve ambalajı doğrulayın. Termin ve eşgüdümlü sevk seçilen tedarikçilere bağlıdır."
+        ]
+      ],
+      "faqs": [
+        [
+          "Mevcut ekipman listeme göre teklif verebilir misiniz?",
+          "Evet. Referans veya açıklama ve miktarları ekleyin. Sabit ürünleri ve alternatif kabul edilenleri işaretleyin."
+        ],
+        [
+          "Tam mutfak kurulumu dahil mi?",
+          "Bu sayfa ekipman tedariki ve ihracat koordinasyonunu kapsar. Sorumlulukların netleşmesi için kurulum ihtiyacını bildirin; yerel kurulum varsayılan olarak dahil değildir."
+        ],
+        [
+          "Açılış tarihi kesinleştiyse ne yapmalıyım?",
+          "Tarih ve varış yerini bildirin. Teslim sözü öncesi üretim, konsolidasyon, taşıma ve yerel teslim kontrol edilmelidir."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "project",
+          "label": "Proje ve tesis sayısı",
+          "hint": "Restoran, kafe, otel veya merkez mutfak; bir veya çok sayıda tesis"
+        },
+        {
+          "key": "equipment",
+          "label": "Ekipman listesi ve alan",
+          "hint": "Ekipman, miktar, referans model ve önemli ölçüler"
+        },
+        {
+          "key": "timing",
+          "label": "İstenen teslim aralığı",
+          "hint": "Hedef tarih, teslim yeri ve aşamalı teslimler"
+        }
+      ]
+    },
+    "phone-stores": {
+      "title": "Mağazalar için Çin’den toptan ekran koruyucu satın alın | DDNZ",
+      "description": "Telefon mağazaları ve tamir zincirleri için Çin’den toptan ekran koruyucu satın alın. Yenilemeyi hizmet verdiğiniz telefonlara göre planlayın; şeffaf ve gizlilik seçeneklerini, uygulama yöntemini ve model başına adetleri karşılaştırın.",
+      "eyebrow": "Aksesuar mağazaları ve tamir zincirleri",
+      "heading": "Mağazalar için Çin’den toptan ekran koruyucu satın alın",
+      "intro": "Telefon mağazaları ve tamir zincirleri için Çin’den toptan ekran koruyucu satın alın. Yenilemeyi hizmet verdiğiniz telefonlara göre planlayın; şeffaf ve gizlilik seçeneklerini, uygulama yöntemini ve model başına adetleri karşılaştırın.",
+      "card": "Aksesuar mağazaları ve tamir zincirleri",
+      "cardCopy": "Model kapsamını, uygulamayı ve mağaza yenilemelerini planlayın.",
+      "steps": [
+        [
+          "Tam telefon modellerini yazın",
+          "Ad, nesil ve her koruyucu/telefon birleşimi için adet yazın. Aynı serinin varyantları aynı uyuma sahip olmayabilir. Mevcut asgari siparişler geçerlidir."
+        ],
+        [
+          "Koruyucuyu satışa uyarlayın",
+          "Şeffaf ve gizlilik seçeneklerini karşılaştırın; uygulamayı personelin mi müşterinin mi yapacağını belirleyin. Uygulayıcıyı, temizlik aksesuarlarını ve perakende paketini doğrulayın."
+        ],
+        [
+          "Mağaza veya merkez depoya göre dağıtın",
+          "Dağıtım isteğinizi belirtin. Koli adedi, karma model paketleme ve mağaza etiketleri sevkten önce doğrulanır. Yenileme için onaylı numuneyi ve listeyi saklayın."
+        ]
+      ],
+      "faqs": [
+        [
+          "Birkaç mağaza tek sipariş verebilir mi?",
+          "Evet. Ürün ve telefon modeli minimumları geçerlidir; dağıtım ve ambalaj teklifte doğrulanır."
+        ],
+        [
+          "Her telefon modelinin mevcut olduğunu varsayabilir miyim?",
+          "Hayır. Tam model listesi, uyum ve bulunabilirlik seçilen ürünler için doğrulanmalıdır."
+        ],
+        [
+          "Fiyat ülkeme taşımayı içerir mi?",
+          "Ürün referansları varış yeri teklifini içermez. Ülke ve miktarları belirtin. Ayrı İngilizce taşıma hesaplayıcısı yalnızca İstanbul referansını kullanır."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "stores",
+          "label": "Mağazalar ve teslim düzeni",
+          "hint": "Mağaza sayısı; merkez depo veya ayrı dağıtım"
+        },
+        {
+          "key": "models",
+          "label": "Koruyucular, telefonlar ve miktarlar",
+          "hint": "Şeffaf/gizlilik, tam telefon modeli ve her birleşim için adet"
+        },
+        {
+          "key": "packing",
+          "label": "Uygulama ve ambalaj",
+          "hint": "Mağazada veya müşteri uygulaması, perakende kit ya da koli etiketleri"
+        }
+      ]
+    },
+    "private-label": {
+      "title": "Çin’den özel markalı ekran koruyucu tedariki | DDNZ",
+      "description": "Markanız için Çin’den ekran koruyucu satın alın; ürün ve ambalaj şartlarını belirleyin. Mevcut gruptan başlayarak değişiklikleri ve kullanım deneyimini tedarikçi incelemesine sunun.",
+      "eyebrow": "Kendi markasıyla ve çevrim içi satış yapanlar",
+      "heading": "Çin’den özel markalı ekran koruyucu tedariki",
+      "intro": "Markanız için Çin’den ekran koruyucu satın alın; ürün ve ambalaj şartlarını belirleyin. Mevcut gruptan başlayarak değişiklikleri ve kullanım deneyimini tedarikçi incelemesine sunun.",
+      "card": "Kendi markasıyla ve çevrim içi satış yapanlar",
+      "cardCopy": "Koruyucu, uygulama kiti ve teklif alınacak ambalajı tanımlayın.",
+      "steps": [
+        [
+          "Önce ürünü tanımlayın",
+          "Şeffaf veya gizlilik camı, telefonlar ve uygulama biçimini seçin. Üretimi onaylamadan numunede uyumu, kenar kapsamını, dokunmatiği ve kılıf uyumunu kontrol edin."
+        ],
+        [
+          "Ürün ve ambalaj değişikliklerini ayırın",
+          "Etiket, baskılı kutu, kılavuz veya aksesuar değişikliklerini açıklayın. Marka uygulanabilirliği, tasarım dosyaları, hazırlık ücretleri ve minimumlar seçilen tedarikçiyle doğrulanır."
+        ],
+        [
+          "Tekrarlanabilir şartnameyi onaylayın",
+          "Numune, tasarım sürümü, paketleme listesi ve kontrol noktalarını doğrulayın. Barkod ve kanal etiketi şartlarını bildirin. Ambalaj talebi bir satış platformundan onay alındığı anlamına gelmez."
+        ]
+      ],
+      "faqs": [
+        [
+          "Özel ambalaj referans fiyata dahil mi?",
+          "Hayır. Referanslar açıklanan seçenekler içindir; özel ambalaj, baskı veya kalıp ayrıca onaylı teklif gerektirir."
+        ],
+        [
+          "Özel marka için sabit minimum var mı?",
+          "Özelleştirme minimumları değiştirebilir. Tedarikçi incelemesi için telefon başına miktarı ve ambalaj değişikliklerini bildirin."
+        ],
+        [
+          "Toplu siparişten önce numune isteyebilir miyim?",
+          "Evet. Yapılandırma, maliyet ve teslimatı doğrulayın; seri siparişten önce amaçlanan telefonlar ve ambalajla kontrol edin."
+        ]
+      ],
+      "fields": [
+        {
+          "key": "brand",
+          "label": "Marka ve satış kanalı",
+          "hint": "Markanız, mağazalar veya çevrim içi kanal"
+        },
+        {
+          "key": "product",
+          "label": "Ürün, telefonlar ve miktarlar",
+          "hint": "Şeffaf/gizlilik, uygulayıcı ve tam model başına miktar"
+        },
+        {
+          "key": "customization",
+          "label": "Özelleştirme ve numuneler",
+          "hint": "Logo etiketi, kutu, kılavuz, aksesuarlar veya onay numunesi"
+        }
+      ]
+    }
+  },
+  "english": "İngilizce"
+}

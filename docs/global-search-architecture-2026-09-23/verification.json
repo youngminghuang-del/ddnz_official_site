@@ -1,0 +1,37 @@
+{
+  "date": "2026-09-23",
+  "status": "local-preview-only, not deployed",
+  "lint": "passed",
+  "tests": {
+    "passed": 227,
+    "failed": 0
+  },
+  "build": {
+    "htmlFiles": 346,
+    "sitemapPages": 332,
+    "explicitArtifacts": 14,
+    "failures": 0
+  },
+  "prerender": {
+    "countryVersions": 99,
+    "coreVersions": 26
+  },
+  "sitemapInternalPageLinks": {
+    "missingTargets": 0
+  },
+  "browserSpotChecks": [
+    "English homepage visual and DOM",
+    "Insights H1 and five buyer answers",
+    "Products H1, four buyer answers and food processing link",
+    "How-we-work H1 and four buyer answers",
+    "Central Asia regional H1 and three origin plans"
+  ],
+  "preview": "http://127.0.0.1:4188/",
+  "stagedDist": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/ddnz-preview-YewQQ7/dist",
+  "notMeasured": [
+    "search volume",
+    "Google index changes",
+    "organic traffic growth",
+    "lead conversion growth"
+  ]
+}

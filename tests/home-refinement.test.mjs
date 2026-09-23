@@ -17,7 +17,7 @@ test('brief is local navigation with preserved intent, category, destination and
   for (const value of ['Product Sourcing', 'Supplier Inspection & Consolidation', 'Freight Export', 'homepage_sourcing_selector', "params.set('dest', market)", 'appendAttribution', 'homepage_intent_submit', 'homepage_category_select']) assert.ok(hero.includes(value), value);
   assert.doesNotMatch(hero, /fetch\(|formspree|method="post"/);
   assert.match(hero, /<Link to=\{canonicalSitePath\('\/products'\)\} hrefLang="en"/);
-  assert.equal((hero.match(/href: canonicalSitePath\(/g) || []).length, 4);
+  assert.equal((hero.match(/href: navigationPath\(/g) || []).length, 4);
 });
 test('all eight languages have a compact intro and reduced-motion-safe brief focus', () => {
   const intros=hero.split('const HERO_INTRO:')[1].split('const categoryImageAlts:')[0];

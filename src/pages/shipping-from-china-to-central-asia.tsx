@@ -1,3 +1,4 @@
+import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -11,7 +12,7 @@ import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import FreightRouteMap from '../components/FreightRouteMap';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
+import {
   ChevronDown, AlertTriangle, Package, ShieldCheck,
   Search, ArrowRight, CheckCircle2, ShieldAlert,
   Globe, HelpCircle, Truck, FileText, Scale, ArrowUpRight, Timer, Target, Lightbulb, TrainFront, Route, Plane
@@ -709,7 +710,7 @@ export default function ShippingCentralAsia() {
   const { language } = useLanguage();
   const activeLang = (language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en') as EurasiaLocale;
   const countryLabel = (country: EurasiaCountry) => localizedCountryName(country, activeLang);
-  
+
   const getCountryFromLocation = () => getShippingCountrySlug(
     location.pathname,
     location.search,
@@ -839,7 +840,7 @@ export default function ShippingCentralAsia() {
       <SourcingHomepageNav showFreightExecutor />
 
       <main>
-        
+
         <section className="relative min-h-[660px] flex items-center overflow-hidden border-b border-white/[0.08]">
           <img
             src="/images/operations/china-eurasia-rail-border-hero-v1.webp"
@@ -1030,7 +1031,7 @@ export default function ShippingCentralAsia() {
 
             {/* Interactive Grid & Detail Card */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              
+
               {/* Left Column: The Menu of Transport Options */}
               <div className="lg:col-span-5 space-y-3">
                 {spec.multimodalTable && spec.multimodalTable.map((row: any, idx: number) => {
@@ -1041,7 +1042,7 @@ export default function ShippingCentralAsia() {
                       type="button"
                       onClick={() => setActiveTransportMode(idx)}
                       className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
-                        isSelected 
+                        isSelected
                           ? 'bg-gradient-to-r from-[#763c9c] to-[#c94f2f]/35 text-white border-[#c94f2f]/30 shadow-xl translate-x-1'
                           : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
                       }`}
@@ -1408,8 +1409,8 @@ export default function ShippingCentralAsia() {
               {spec.faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="bg-white/[0.01] border border-white/[0.06] rounded-xl mb-4 px-6 py-4 overflow-hidden"
                   >
                     <button
@@ -1457,6 +1458,7 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
+      <CountryCargoPlanning country={selectedCountry} countryName={countryLabel(selectedCountry)} />
       </main>
 
       <Footer />

@@ -13,7 +13,7 @@ export function renderKitchenStaticContent(products, launch) {
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/products/">Products</a> / <span aria-current="page">Commercial kitchen equipment</span></nav>
     <p>For importers, wholesalers &amp; distributors</p>
     <h1>Commercial kitchen equipment. Sourced in China.</h1>
-    <p>Build a wholesale range with 26 equipment models. Compare capacity, indicative supply prices and local retail references, then request a quote for your market.</p>
+    <p>Source commercial kitchen equipment from China for your wholesale range. Compare 26 equipment models. Compare capacity, indicative supply prices and local retail references, then request a quote for your market.</p>
     <nav aria-label="Plan your equipment order">${kitchenJourney.map(item=>`<a href="${item.href}">${escape(item.title)}</a>`).join(" · ")}</nav>
     <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>
     <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>26 models. Eight with indicative reference prices.</p>

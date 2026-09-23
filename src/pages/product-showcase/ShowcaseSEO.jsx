@@ -1,16 +1,20 @@
+import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
+import {refrigerationAlternates} from '../../features/refrigeration/copy';
+import {audioAlternates} from '../../features/audio/copy';
+import { overviewAlternates } from '../../features/overview/copy';
 import SEO from "../../components/SEO";
 
 const pages = {
   products: {
-    title: "Product Sourcing Categories in China | DDNZ Global",
-    description: "Explore DDNZ product sourcing for commercial kitchen equipment, refrigeration, audio, mobile accessories and outdoor products, with supplier comparison, QC and export handoff.",
+    title: entryKeywords.en.productsMetaTitle,
+    description: "Explore DDNZ product sourcing for commercial kitchen equipment, refrigeration, food processing machinery and equipment packages, audio, mobile accessories and outdoor products.",
     keywords: "China product sourcing, commercial kitchen sourcing, speaker sourcing China, mobile accessories sourcing, outdoor products sourcing",
     path: "/products",
     image: "/images/product-showcase/index/audio-speakers-category.webp",
   },
   services: {
-    title: "China Sourcing Services for Retailers & Importers | DDNZ Global",
-    description: "DDNZ manages flexible mixed-SKU retail sourcing and China sourcing projects with comparable offers, recorded approvals, production follow-up and export handoff.",
+    title: entryKeywords.en.servicesMetaTitle,
+    description: entryKeywords.en.servicesIntro,
     keywords: "China sourcing services, sourcing agent China, mixed SKU sourcing, supplier verification, production follow up China",
     path: "/sourcing-services",
     image: "/images/product-showcase/kitchen/kitchen-factory-inspection-sanitized.webp",
@@ -61,7 +65,7 @@ export default function ShowcaseSEO({ page }) {
       keywords={config.keywords}
       canonicalPath={config.path}
       contentLanguage="en"
-      alternateUrls={[{ hrefLang: 'en', href: `https://www.ddnzglobal.com${config.path}/` }]}
+      alternateUrls={page === 'refrigeration' ? refrigerationAlternates() : page === 'audio' ? audioAlternates() : ['products','services'].includes(page) ? overviewAlternates(page === 'products' ? 'products' : 'sourcing-services') : [{ hrefLang: 'en', href: `https://www.ddnzglobal.com${config.path}/` }]}
       image={config.image}
     />
   );

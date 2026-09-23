@@ -1,0 +1,354 @@
+{
+  "locale": "tr",
+  "dir": "ltr",
+  "numberLocale": "tr-TR",
+  "meta": {
+    "title": "Çin'den ticari mutfak ekipmanları | DDNZ Global",
+    "description": "Çin’den endüstriyel mutfak ekipmanı tedarik edin. 26 modeli, CNY referans fiyatlarını ve BAE, Singapur ile Meksika perakende örneklerini karşılaştırıp teklif talebinizi hazırlayın."
+  },
+  "ui": {
+    "pageLabel": "Endüstriyel mutfak ekipmanı tedariki",
+    "skip": "Ekipmanlara geç",
+    "sections": "Mutfak ekipmanı bölümleri",
+    "equipment": "Ekipmanlar",
+    "assortments": "Ekipman çeşitleri",
+    "prices": "Fiyat referansları",
+    "guide": "Satın alma rehberi",
+    "list": "Ekipman listeniz",
+    "compare": "Karşılaştır",
+    "home": "Ana sayfa",
+    "products": "Ürünler",
+    "breadcrumb": "Gezinme yolu",
+    "audience": "İTHALATÇILAR, TOPTANCILAR VE DİSTRİBÜTÖRLER İÇİN",
+    "heading": "Endüstriyel mutfak ekipmanları.",
+    "emphasis": "Çin’den tedarik.",
+    "intro": "26 modelle toptan ürün seçiminizi planlayın. Pazarınız için teklif istemeden önce kapasiteyi, ölçüleri, referans tedarik fiyatlarını ve perakende örneklerini karşılaştırın.",
+    "explore": "Ekipmanı Keşfedin",
+    "startList": "Bir liste oluşturun",
+    "heroAlt": "Çalışır durumdaki profesyonel mutfakta ekipmanlar",
+    "heroCaption": "HAZIRLIKTAN SERVİSE",
+    "heroLabel": "Bir sonraki siparişiniz bir seçimle başlar.",
+    "catalogTitle": "Kapasiteye ve kullanım amacına göre seçin.",
+    "catalogHelp": "Model veya teknik özellik arayın. Ayrıntıları inceleyin, en fazla üç modeli karşılaştırın ve miktarları listenize ekleyin.",
+    "search": "Ekipman ara",
+    "searchPlaceholder": "Model, ekipman veya kapasite",
+    "all": "Tüm ekipman",
+    "results": "Modeller bulundu",
+    "noResults": "Bu aramaya uygun ekipman bulunamadı.",
+    "reset": "Filtreleri sıfırla",
+    "details": "Teknik özellikleri görüntüle",
+    "model": "Model",
+    "variant": "Güç seçeneği; model kodu doğrulanacak",
+    "dimensions": "Dış ölçüler",
+    "metric": "Kapasite veya ana ölçü",
+    "add": "Listeye Ekle",
+    "added": "Listenize eklendi.",
+    "compareLimit": "En fazla üç model karşılaştırabilirsiniz. Başka bir model eklemeden önce birini kaldırın.",
+    "compareTitle": "Seçtiğiniz modelleri karşılaştırın.",
+    "compareHelp": "Nominal kapasite ve ölçüler, her kurulumda aynı performansı garanti etmez.",
+    "compareEmpty": "Birlikte üç modele bakmak için ürün kartlarında Karşılaştırmayı seçin.",
+    "clearCompare": "Karşılaştırmayı temizle",
+    "removeCompare": "Karşılaştırmadan Kaldırın",
+    "price": "Referans tedarik fiyatı",
+    "perUnit": "adet başına",
+    "referenceTier": "Bu referans için temel miktar",
+    "units": "adet",
+    "quotePending": "Fiyat ve minimum sipariş teklifle belirlenir",
+    "pendingHelp": "Teklif almak için istediğiniz miktarı girin.",
+    "quoteOnly": "CNY cinsinden referans fiyattır; teklifle doğrulanır. Garantili bir teklif değildir.",
+    "priceScope": "Her biri kendi temel miktarına bağlı sekiz CNY tedarik referans fiyatı vardır. Bunlar perakende fiyat veya nihai teslim maliyeti değildir. Son asgari miktarlar, stok ve yapılandırma teklifle doğrulanır.",
+    "priceCosts": "Navlun, sigorta, vergiler, gümrük vergileri ve yerel hizmetler hesaplanmamıştır. Bunları teklifte ayrı karşılaştırın. Perakende fiyatıyla fark, kâr marjınız değildir.",
+    "belowTier": "Seçtiğiniz miktar referans seviyesinin altında. Bu miktar için ayrı fiyat teklifi isteyin.",
+    "atTier": "Miktar referans seviyesine ulaşıyor; nihai fiyat yine teklifle doğrulanır.",
+    "electricity": "Seçilen model ve varış ülkesi için gerilim, frekans, faz, fiş ve bağlantı biçimi teklif sırasında doğrulanmalıdır. Nominal güç tek başına elektriksel uyumu göstermez.",
+    "catalogPhoto": "Katalog görüntüsü. Bir teklif talep ederken son model yapılandırmasını onaylayın.",
+    "assortmentTitle": "Düzenlenebilir bir ekipman kombinasyonuyla başlayın.",
+    "assortmentHelp": "Bu miktarlar planlama içindir. Karma sipariş fizibilitesi ve minimumlar seçtiğiniz kombinasyon için onay gerektirir.",
+    "addAssortment": "Bu kombinasyonu ekle",
+    "assortmentAdded": "Kombinasyon eklendi. Listenizdeki miktarları kontrol edin.",
+    "marketTitle": "Yerel fiyatları koşullarıyla birlikte değerlendirin.",
+    "marketHelp": "Kayıtlar Eylül 2026’da alınmıştır; güncel fiyatlar doğrulanmamıştır. Marka, güç, yapılandırma, teslimat ve vergi kapsamı farklı olabilir.",
+    "observed": "Kaydedilen perakende fiyatı",
+    "captured": "Gözlem tarihi",
+    "source": "Orijinal kaynağı görüntüle",
+    "linkedModel": "İlgili katalog modeli",
+    "guideTitle": "Satın almayı neyin değiştirdiğini doğrulayın.",
+    "listTitle": "Listenizi gözden geçirin ve bir teklif talep edin.",
+    "listHelp": "Modelleri, miktarları ve varış yerini belirtin. Göndermeden önce listeyi düzenleyebilirsiniz. Bu işlem satın alma siparişi oluşturmaz.",
+    "emptyList": "Listeniz boş. Talebi hazırlamak için katalogdan ekipman veya bir kombinasyon ekleyin.",
+    "quantity": "Adet",
+    "remove": "Kaldır",
+    "clearList": "Listeyi temizle",
+    "quantityHelp": "1 ile 9999 arasında bir tam sayı girin. Modeli silmek için « Kaldır » seçeneğini kullanın.",
+    "quantityError": "1 ila 9999 arasında bir bütün sayı girin.",
+    "modelCount": "Seçilmiş modeller",
+    "unitCount": "Toplam adet",
+    "storageUnavailable": "Liste bu tarayıcıda kaydedilemedi. Bu sayfada kullanmaya devam edebilirsiniz.",
+    "country": "Varış ülkesi",
+    "chooseCountry": "Hedefi seçin",
+    "otherCountry": "Diğer ülke",
+    "destinationDetail": "Ülke adı",
+    "port": "Şehir veya liman (isteğe bağlı)",
+    "buyerType": "Alıcı türü",
+    "company": "Şirket (isteğe bağlı)",
+    "contact": "Telefon veya tercih edilen iletişim bilgisi (isteğe bağlı)",
+    "notes": "Kullanım amacı ve gereksinimler (isteğe bağlı)",
+    "notesHelp": "Kullanım amacını ve gerekli seçenekleri, yedek parçaları veya belgeleri belirtin. Sağlanabilirlik doğrulanmalıdır.",
+    "name": "Adınız",
+    "email": "E-posta",
+    "review": "Talebi kontrol et",
+    "reviewHelp": "Önizleme listenize ve bilgilerinize göre güncellenir. DDNZ, teknik özellikleri ve ticari koşulları teklifte doğrular.",
+    "send": "Talebi gönder",
+    "sending": "Gönderiliyor…",
+    "sent": "Talep gönderildi",
+    "simulate": "Talebi yerel olarak dene",
+    "simulated": "Yerel deneme tamamlandı",
+    "productionHelp": "Gönderim, bu talebi ve iletişim bilgilerinizi DDNZ’ye iletir. Satın alma işlemi yapmaz.",
+    "previewHelp": "Bu yerel önizleme, sonucu ağ üzerinden veri göndermeden simüle eder.",
+    "success": "Talebiniz, gereksinimlerin incelenmesi ve teklif hazırlanması için DDNZ’ye gönderildi.",
+    "previewSuccess": "Yerel simülasyon tamamlandı. DDNZ'ya hiçbir istek gönderilmedi.",
+    "sendError": "Talep gönderilemedi. Lütfen yeniden deneyin veya e-posta taslağını açın.",
+    "nameError": "Adınızı girin.",
+    "emailError": "Geçerli bir e-posta adresi girin.",
+    "listError": "Geçerli bir miktarla en az bir model ekleyin.",
+    "countryError": "Varış ülkesini girin.",
+    "draftHelp": "Ayrıca, göndermeden önce kendi uygulamanızda isteği gözden geçirebilirsiniz.",
+    "whatsapp": "WhatsApp taslağını aç",
+    "emailDraft": "E-posta taslağını aç",
+    "privacyTitle": "Bilgilerinizin kullanımı",
+    "privacy": "Bilgileriniz talebi işlemek ve teklif hazırlamak için kullanılır. Göndermeden önce mesajı kontrol edin.",
+    "faq": "Teklif öncesi sorular",
+    "footerDescription": "İthalatçılar, toptancılar ve distribütörler için Çin’den endüstriyel mutfak ekipmanı tedariki."
+  },
+  "categories": {
+    "Ice making": "Buz makineleri",
+    "Cold storage": "Soğutma ve dondurma",
+    "Prep counters": "Soğutmalı hazırlık tezgâhları",
+    "Display cooling": "Soğutmalı teşhir dolapları",
+    "Cooking & baking": "Pişirme ve fırınlar",
+    "Beverage equipment": "İçecek ekipmanları"
+  },
+  "names": {
+    "Commercial cube ice maker": "Endüstriyel küp buz makinesi",
+    "Single-tank electric fryer": "Tek hazneli elektrikli fritöz",
+    "Twin-tank electric fryer": "Çift hazneli elektrikli fritöz",
+    "Upright refrigerator": "Dikey buzdolabı",
+    "Upright freezer": "Dikey dondurucu",
+    "Refrigerated workbench": "Soğutmalı çalışma tezgâhı",
+    "Electric flat griddle": "Elektrikli düz ızgara",
+    "Glass-door display cooler": "Cam kapılı soğutmalı teşhir dolabı",
+    "Countertop convection oven": "Tezgâh üstü konveksiyonlu fırın",
+    "Commercial juice extractor": "Endüstriyel meyve suyu sıkacağı",
+    "Two-group tea & coffee machine": "İki gruplu çay ve kahve makinesi"
+  },
+  "specLabels": {
+    "Daily output": "Günlük üretim",
+    "Cubes / cycle": "Çevrim başına buz küpü",
+    "Water supply": "Su tedariki",
+    "Tank volume": "Hazne hacmi",
+    "Rated power": "Nominal güç",
+    "Tanks": "Hazneler",
+    "Capacity": "Kapasite",
+    "Temperature": "Sıcaklık",
+    "Cooling": "Soğutma",
+    "Brewing groups": "Demleme grupları",
+    "Steam boiler": "Buhar kazanı",
+    "Extraction boilers": "Ekstraksiyon kazanları",
+    "Cooking plate": "Pişirme plakası",
+    "Surface": "Yüzey",
+    "Trays": "Tepsiler",
+    "Configuration": "Yapılandırma"
+  },
+  "values": {
+    "Rated ice production": "Nominal buz üretimi",
+    "Tap or bottled water": "Şebeke suyu veya damacana suyu",
+    "Forced air": "Fanlı soğutma",
+    "Flat": "Düz",
+    "Independent tanks": "Bağımsız hazneler",
+    "Juice extraction": "Meyve suyu sıkma",
+    "Plug-in variant": "Fişli sürüm",
+    "Confirm with quotation": "Teklifte doğrulanacak",
+    "2 brewing groups": "2 demleme grubu",
+    "10 L steam boiler": "10 L buhar kazanı",
+    "8 mm cooking plate": "8 mm pişirme plakası",
+    "60 L / 4 trays": "60 L / 4 tepsi",
+    "90 L / 4 trays": "90 L / 4 tepsi",
+    "435 × 315 mm trays": "435 × 315 mm tepsiler",
+    "600 × 400 mm trays": "600 × 400 mm tepsileri",
+    "500W variant": "500W varyant",
+    "1200W variant": "1200W sürümü"
+  },
+  "notes": {
+    "Electrical configuration will be confirmed during quotation.": "Elektrik yapılandırması teklif sırasında doğrulanacaktır.",
+    "Final configuration is quoted for your destination.": "Nihai yapılandırma varış noktanız için tekliflanır.",
+    "Boiler and electrical options confirmed for the selected model.": "Test ve elektrik seçenekleri seçilmiş model için doğrulandı.",
+    "Rated output; test conditions to be confirmed.": "Oylama; doğrulanması gereken test koşulları.",
+    "Rated output; test conditions to be confirmed. Image represents the 50/AL–50/AB family.": "Oylama; doğrulanması gereken test koşulları. Görüntü 50/AL-50/AB ailesini temsil eder.",
+    "Power option shown. Model code and final dimensions will be confirmed during quotation.": "Gösterilen güç seçeneği. Model kodu ve son boyutlar teklif sırasında doğrulanacaktır.",
+    "Final size and refrigeration configuration to confirm.": "Doğrulanması için son boyut ve soğutma yapılandırması.",
+    "Final dimensions, bin capacity and configuration to confirm.": "Final boyutları, bin kapasite ve doğrulama için yapılandırma.",
+    "500 W standard version; dimensions and material configuration to confirm.": "500 W standart versiyon; Boyut ve malzeme yapılandırması doğrulanması."
+  },
+  "countries": {
+    "United Arab Emirates": "Birleşik Arap Emirlikleri",
+    "Singapore": "Singapur",
+    "Mexico": "Meksika"
+  },
+  "buyerTypes": {
+    "importer": "İthalatçı veya toptancı",
+    "distributor": "Distribütör",
+    "restaurant": "Restoran veya otel",
+    "other": "Diğer"
+  },
+  "assortments": [
+    {
+      "name": "Tezgâh üstü pişirme başlangıç seti",
+      "description": "Tek ve çift hazneli seçenekler içeren üç fritöz ve düz ızgara modeli."
+    },
+    {
+      "name": "Soğutma ve içecek başlangıç seti",
+      "description": "İki farklı buz üretim kapasitesi, soğutma dolabı, hazırlık tezgâhı ve meyve suyu sıkacağı."
+    }
+  ],
+  "markets": {
+    "United Arab Emirates": {
+      "title": "BAE pazarı için ekipman seçiminizi hazırlayın.",
+      "description": "Varış yeri için teklif istemeden önce modelleri, kapasiteleri ve gereken alanı karşılaştırın.",
+      "note": "HZB-50/AB örneğinin model kodu ve temel ölçüleri eşleşir. Düz ızgara yalnızca aynı kategoridedir; model ve plaka eşdeğerliği doğrulanmamıştır. Referanslar yeniden satış fiyatını garanti etmez."
+    },
+    "Singapore": {
+      "title": "Singapur için kompakt bir ekipman seçimi yapın.",
+      "description": "Tezgâh üstü ekipmanı, soğutucuları ve içecek makinelerini kapasite ve ölçülerine göre karşılaştırın.",
+      "note": "Referans ürün 10 L ve 3 kW sınıfında bir fritözdür; ölçüleri ZH-101V’den farklıdır. Marka, yapı, nihai fiyat ve garantinin aynı olduğu doğrulanmamıştır."
+    },
+    "Mexico": {
+      "title": "Meksika pazarı için kapasiteleri karşılaştırın.",
+      "description": "Tek ve çift hazneli fritözlerle başlayın; müşterilerinize göre soğutma, buz veya içecek ekipmanı ekleyin.",
+      "note": "Perakende örneklerinin kapasite sınıfı benzerdir, ancak güçleri ve işlevleri farklıdır. Aynı yapılandırmayı doğrulamazlar. Meksika’nın elektrik gereklilikleri seçilen modelin teklifinde kontrol edilir."
+    }
+  },
+  "benchmarks": {
+    "ae-ice": {
+      "name": "COOLBABY HZB-50/AB",
+      "spec": "55 kg / 24h · çevrim başına 36 buz küpü",
+      "match": "Model kodunu ve ana önlemleri eşleştiriyorlar.",
+      "difference": "İşaret, bileşenler ve garantinin aynı olduğu doğrulanmadı.",
+      "context": "Dubai gözlem: KDV reklamda dahil ve ücretsiz teslimat.",
+      "capture": "Ürün sayfası."
+    },
+    "ae-griddle": {
+      "name": "Grace GR-818 elektrikli düz ızgara",
+      "spec": "Tezgâh üstü düz ızgara",
+      "match": "Aynı ekipman kategorisi.",
+      "difference": "GR-818 ve ZH-818 farklı kodlar; plakanın ölçümleri ve özellikleri karşılaştırılmalıdır.",
+      "context": "Dubai: teslimat bedeli AED 34 olarak gösterilmiş; vergiler doğrulanmamış.",
+      "capture": "Arama sonucu fiyatı; doğrulanması ayrıntılı."
+    },
+    "mx-fryer20": {
+      "name": "AuFox 20 L çift hazneli fritöz",
+      "spec": "Toplam 20 L · 1700 W × 2 · ilanda 110 V",
+      "match": "Aynı hazne hacmi sınıfı.",
+      "difference": "Güçler farklıdır: tedarikçi kataloğu 3 + 3 kW, perakende ilanı 1.7 + 1.7 kW.",
+      "context": "Meksika City'de gözlem, 11000: ücretsiz teslimat belirtti; gereksiz vergiler.",
+      "capture": "Arama sonucu fiyatı; doğrulanması ayrıntılı."
+    },
+    "mx-fryer10": {
+      "name": "NUPANT 10 L elektrikli fritöz",
+      "spec": "10 L · zamanlayıcı · 1700 W · ilanda 110 V",
+      "match": "Aynı hazne hacmi sınıfı.",
+      "difference": "Zamanlayıcı ve güç, tedarikçi kataloğundan farklıdır; yapılandırma aynı değildir.",
+      "context": "Meksika City'de gözlem, 11000: ücretsiz teslimat belirtti; gereksiz vergiler.",
+      "capture": "Arama sonucu fiyatı; doğrulanması ayrıntılı."
+    },
+    "sg-fryer10": {
+      "name": "10 L tek hazneli elektrikli fritöz",
+      "spec": "İlanda belirtilen: 10 L · 3000 W · 500 × 280 × 350 mm",
+      "match": "Aynı hacim ve güç sınıfı.",
+      "difference": "İlanda uzunluk 500 mm, katalogdaki taban 280 × 470 mm’dir. Marka, yapı ve garantinin aynı olduğu doğrulanmamıştır.",
+      "context": "Singapur gözlemi: ödemede hesaplanan gönderi; belli olmayan vergiler.",
+      "capture": "Perakende sayfası; öngörülemeyen son fiyat."
+    }
+  },
+  "guides": [
+    {
+      "title": "Buz: üretim ve depolama",
+      "copy": "Günlük kg değeri nominal üretimdir, depolama haznesinin kapasitesi değildir. Test koşullarını ve tesisinizin hava ve su sıcaklıklarındaki beklenen performansı sorun."
+    },
+    {
+      "title": "Soğutma: sıcaklık ve alan",
+      "copy": "Soğutma ile dondurmayı ayırın. Modelin kullanılabilir hacmini, ölçülerini, havalandırmasını, kapılardan geçişini ve soğutma yapılandırmasını kontrol edin."
+    },
+    {
+      "title": "Pişirme: yüzey ve kapasite",
+      "copy": "Hazne hacmini, sepetleri, ızgara yüzeyini, tepsi ölçülerini ve sayısını karşılaştırın. Bu veriler tek başına saatlik porsiyon sayısını göstermez."
+    },
+    {
+      "title": "Varış yeri ve teklif kapsamı",
+      "copy": "Aynı model, miktar, varış yeri ve kullanım amacı için teklifleri karşılaştırın. Ambalaj, süre, navlun, vergi, belgeler, yedek parçalar ve marka seçeneklerini doğrulayın; sağlanabilir olduklarını varsaymayın."
+    }
+  ],
+  "faqs": [
+    {
+      "question": "Birden fazla ekipman için teklif almak üzere ne gerekir?",
+      "answer": "Modelleri, miktarları, varış ülkesini, limanı ve kullanım gereksinimlerini belirtin. Teklifte karma siparişin uygunluğu, minimum miktarlar, ambalaj ve koşullar doğrulanır."
+    },
+    {
+      "question": "CNY tutarları nihai fiyatlar mı?",
+      "answer": "Hayır. Her biri kendi referans miktarına bağlı sekiz fiyat vardır. Seçilen miktar ve yapılandırmanın fiyatı, navlun ve vergiler teklifte doğrulanır."
+    },
+    {
+      "question": "Aynı listeyi farklı ülkeler için kullanabilir miyim?",
+      "answer": "Evet, ancak her varış yeri için ayrı teklif isteyin. Gerilim, frekans, faz, fiş ve bağlantı, modeller ve ülke seçildikten sonra doğrulanır."
+    },
+    {
+      "question": "Kombinasyonlardaki miktarlar zorunlu mu?",
+      "answer": "Hayır. Bu miktarlar planlama içindir ve değiştirilebilir. Stok, minimum miktarlar ve karma siparişin uygunluğu nihai seçime göre doğrulanır."
+    }
+  ],
+  "inquiry": {
+    "heading": "DDNZ — Mutfak ekipmanı teklif talebi",
+    "subject": "Mutfak ekipmanı teklif talebi",
+    "destination": "Varış yeri",
+    "buyer": "Alıcı türü",
+    "products": "Modeller / Birimler",
+    "company": "Şirket",
+    "contact": "Tercih edilen iletişim",
+    "requested": "Talep edilen modeller",
+    "reference": "Referans fiyat",
+    "tier": "Referans miktar",
+    "below": "Referans miktarın altında; ayrı fiyat teklifi gerekli",
+    "notes": "Alıcının gereksinimleri",
+    "toConfirm": "Onaylanmak için",
+    "final": "Yapılandırmayı, stok durumunu, minimum siparişi, süreleri ve koşulları doğrulayın. Fiyatlar referanstır; talep bir satın alma siparişi oluşturmaz."
+  },
+  "margin": {
+    "nav": "Marj tahmini",
+    "title": "Kendi rakamlarınızla marjı hesaplayın.",
+    "intro": "Referans tedarik fiyatı bulunan sekiz modelden birini seçin. Satış fiyatınızı ve adet başına ek maliyetlerinizi CNY olarak girin. Döviz çevrimi ve ithalat maliyeti hesabı otomatik yapılmaz.",
+    "model": "Referans fiyatlı model",
+    "purchase": "Adet başına referans alış fiyatı",
+    "selling": "Satış fiyatınız birim başına, satış vergisi olmadan (CNY)",
+    "landed": "Birim başına ek maliyetler: Yük, ithalat ve diğer (CNY)",
+    "quantity": "Hesaplama için Sayı",
+    "inputHelp": "Binlik ayırıcı kullanmayın. Ondalık ayırıcı olarak nokta veya virgül ve en fazla iki ondalık basamak kullanın. Ek maliyeti yalnızca tahmininiz buysa 0 girin.",
+    "calculate": "Tahmini hesapla",
+    "empty": "Satış fiyatını ve ek maliyetleri girin. Örnek tutarlar önceden doldurulmaz.",
+    "sellingError": "0’dan büyük ve en fazla 999999999 olan bir fiyat girin; en fazla iki ondalık basamak kullanın.",
+    "landedError": "0 ile 999999999 arasında bir maliyet girin; en fazla iki ondalık basamak kullanın.",
+    "below": "Miktar, referans fiyatın geçerli olduğu miktarın altında. Bu miktar için teklif isteyin veya hesaplama miktarını değiştirin.",
+    "result": "TAHMİN · CNY",
+    "grossMargin": "Tahmini brüt marj",
+    "grossProfit": "Tahmini brüt kâr",
+    "grossLoss": "Tahmini brüt zarar",
+    "totalCost": "Tahmini toplam maliyet",
+    "sellingLabel": "Adet başına beklenen satış fiyatı",
+    "costLabel": "Adet başına tahmini maliyet",
+    "extras": "Tahmini ek maliyetler",
+    "perOrder": "Belirtilen miktar için",
+    "loss": "Tahmini maliyetler satış fiyatını aşıyor. Sonuç brüt zarardır.",
+    "formula": "Brüt marj = (satış fiyatı − alış fiyatı − ek maliyetler) ÷ satış fiyatı. İşletme giderleri ve kâr vergisi düşülmeden önce.",
+    "caution": "Alıcının referans fiyata dayalı tahminidir ve teklifle doğrulanmalıdır. Kârlılık, nihai fiyat, navlun, vergiler veya yerel hizmet garanti edilmez.",
+    "useQuantity": "Bu miktarı listemde kullan",
+    "used": "Hesaplama miktarı listenize kaydedildi. Teklif talebini kontrol edin."
+  }
+}

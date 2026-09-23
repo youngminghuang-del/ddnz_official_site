@@ -7,7 +7,7 @@ export const DRAFT_KEY = 'ddnz_screen_protector_plan_v1';
 const MAX_AGE = 24 * 60 * 60 * 1000;
 
 // Only user inputs cross the handoff. Prices and totals are recalculated on arrival.
-export function validateHandoff(value, now = Date.now()) {
+export function validateHandoff(value, now = Date.now(), displayLocale='en') {
   if (!value || value.version !== 1 || value.source !== 'screen_protector_planner'
       || !Number.isFinite(value.createdAt) || now - value.createdAt > MAX_AGE
       || value.createdAt > now + 60_000 || !value.state
@@ -25,7 +25,7 @@ export function validateHandoff(value, now = Date.now()) {
   const selected = result[state.route];
   return {
     version: 1, source: 'screen_protector_planner', createdAt: value.createdAt, basisDate: BASIS.date,
-    state, brief: makeBrief(result, state),
+    state, brief: makeBrief(result, state, displayLocale), displayLocale,
     summary: { pieces: result.qty, goodsCny: result.goods, route: state.route, freightCny: selected.fee,
       landedCny: selected.total, cartons: result.cartons, cbm: result.cbm, actualKg: result.actualKg,
       billableKg: result.chargeKg, missingModels: result.missingModels, checks: state.requests.length },
@@ -48,12 +48,12 @@ export function readHandoff(storage, search, now = Date.now(), displayLocale = u
       if (!plan || plan.locale !== query.get('phoneLocale') || plan.state.destination !== query.get('dest')) return null;
       // Bind the source query to the saved plan first. A quote-page language
       // change may then translate labels without changing buyer-entered text.
-      return ['es', 'ar'].includes(displayLocale)
+      return ['zh','es','ar','ru','fr','pt','tr'].includes(displayLocale)
         ? validateLocalizedHandoff({ ...plan, locale: displayLocale }, now) : plan;
     } catch { return null; }
   }
   if (query.get('source') !== 'screen_protector_planner' || query.get('leadGoal') !== 'Product Sourcing') return null;
-  try { const raw = storage.getItem(HANDOFF_KEY); return raw && raw.length <= 100_000 ? validateHandoff(JSON.parse(raw), now) : null; }
+  try { const raw = storage.getItem(HANDOFF_KEY); return raw && raw.length <= 100_000 ? validateHandoff(JSON.parse(raw), now, displayLocale) : null; }
   catch { return null; }
 }
 

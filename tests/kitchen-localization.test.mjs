@@ -78,12 +78,12 @@ for (const locale of ['es', 'ar']) {
     assert.doesNotMatch(html, /href="\/get-a-quote/);
   });
 
-  test(`${locale}: metadata has self canonical, reciprocal en/es/ar alternates and all model anchors`, () => {
+  test(`${locale}: metadata has self canonical, reciprocal eight-language alternates and all model anchors`, () => {
     const meta = getLocalizedKitchenMetadata(locale);
     assert.equal(meta.canonicalPath, `/${locale}/sourcing/commercial-kitchen-equipment-from-china/`);
     assert.equal(meta.canonicalUrl, `https://www.ddnzglobal.com${meta.canonicalPath}`);
     assert.equal(meta.contentLanguage, locale);
-    assert.deepEqual(meta.alternateUrls.map(item => item.hrefLang), ['en', 'es', 'ar']);
+    assert.deepEqual(meta.alternateUrls.map(item => item.hrefLang), ['en','zh-cn','es','ar','ru','fr','pt','tr']);
     assert.ok(meta.alternateUrls.some(item => item.hrefLang === locale && item.href === meta.canonicalUrl));
     const page = meta.structuredData['@graph'][0];
     assert.equal(page.mainEntity.itemListElement.length, 26);
@@ -206,9 +206,9 @@ test('localized inquiry uses the existing endpoint only through a mocked product
   assert.equal(submitter.pending, false);
 });
 
-test('only es and ar are accepted by the new content helper', () => {
+test('seven localized kitchen languages are supported; English uses its existing view', () => {
   assert.throws(() => kitchenCopy('en'), RangeError);
-  assert.throws(() => render({ locale: 'fr' }), RangeError);
+  assert.throws(() => render({ locale: 'de' }), RangeError);
 });
 
 for (const locale of ['es', 'ar']) {

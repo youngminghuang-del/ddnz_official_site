@@ -1299,7 +1299,7 @@ localizedTranslations.pt = {
   nav: {
     ...translations.en.nav,
     who_we_are: 'QUEM SOMOS', what_we_do: 'O QUE FAZEMOS', why_ddnz: 'POR QUE A DDNZ',
-    services: 'SERVIÇOS', shipping_by_region: 'TRANSPORTE POR REGIÃO', insights: 'CONTEÚDOS', get_a_quote: 'SOLICITAR COTAÇÃO',
+    services: 'SERVIÇOS', shipping_by_region: 'TRANSPORTE POR REGIÃO', services_warehouse: 'Armazenagem e consolidação', insights: 'CONTEÚDOS', get_a_quote: 'SOLICITAR COTAÇÃO',
   },
   hero: {
     ...translations.en.hero,
@@ -1307,6 +1307,7 @@ localizedTranslations.pt = {
     subtitle: 'A DDNZ coordena busca de fornecedores, comparação de propostas, amostras, produção, inspeção e exportação para compradores internacionais.',
     primary_cta: 'Iniciar solicitação de sourcing', chat: 'Falar pelo WhatsApp',
     badge_forwarder: 'Coordenação de sourcing na China', alibaba_badge: 'Encontrou no Alibaba? Nós verificamos e acompanhamos',
+    alibaba_cta: 'Comprando no Alibaba ou no 1688? A DDNZ Global coordena a verificação de fornecedores, inspeções e preparação para exportação em conjunto com a equipe de frete da Heaven Born.',
   },
   services: {
     ...translations.en.services,
@@ -1318,7 +1319,7 @@ localizedTranslations.pt = {
     warehouse: { ...translations.en.services.warehouse, title: 'Armazém e consolidação na China' },
   },
   who_we_are: { ...translations.en.who_we_are, label: 'SOBRE A DDNZ', title: 'QUEM SOMOS', subtitle: 'Uma equipe na China responsável pelo seu projeto de sourcing' },
-  get_a_quote: { ...translations.en.get_a_quote, estimatorTitle: 'Conte-nos o que você precisa comprar', submitQuote: 'Enviar solicitação', submitting: 'Enviando...', successHeading: 'Solicitação recebida', successText: 'Nossa equipe entrará em contato em até 24 horas úteis.' },
+  get_a_quote: { ...translations.en.get_a_quote, modeSea: 'Marítimo', modeAir: 'Aéreo', modeLand: 'Rodoviário', estimatorTitle: 'Conte-nos o que você precisa comprar ou transportar', submitQuote: 'Enviar solicitação', submitting: 'Enviando...', successHeading: 'Solicitação recebida', successText: 'Nossa equipe entrará em contato em até 24 horas úteis.' },
   footer: {
     ...translations.en.footer,
     slogan: 'Sourcing, inspeção e exportação de produtos comerciais da China.', hq: 'Sede em Guangzhou', hk: 'Escritório em Hong Kong', hours: 'Atendimento de segunda a sexta',

@@ -1,0 +1,87 @@
+{
+  "pages": 16,
+  "faq_count": 32,
+  "failed_pages": 0,
+  "results": [
+    {
+      "path": "/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/es/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/es/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ar/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/ar/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ru/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/ru/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/fr/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/fr/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/pt/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/pt/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/tr/products/",
+      "faq_count": 0,
+      "issues": []
+    },
+    {
+      "path": "/tr/sourcing-services/",
+      "faq_count": 4,
+      "issues": []
+    }
+  ]
+}

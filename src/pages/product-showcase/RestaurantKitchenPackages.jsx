@@ -1,3 +1,4 @@
+import {packageAlternates} from '../../features/commercial-kitchen/packageLocalization';
 import { useId, useMemo, useRef, useState } from 'react';
 import {
   ArrowRight,
@@ -36,182 +37,8 @@ import './restaurant-kitchen-packages.css';
 const ROUTE = '/sourcing/restaurant-kitchen-packages-from-china/';
 const QUOTE_BASE = '/get-a-quote/?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+-+Restaurant+Package&projectNeed=Layout+and+equipment+package&source=restaurant_kitchen_packages';
 
-export const scenarios = [
-  {
-    id: 'qsr',
-    tab: 'Takeaway + QSR',
-    eyebrow: '48 sqm / 80 to 140 orders per peak hour',
-    title: 'A straight production line for fried, grilled and delivery-led menus.',
-    summary: 'Receiving stays at the rear, prep feeds one hot line, and the pass faces pickup. Dirty ware returns on the opposite side.',
-    icon: Flame,
-    slug: 'takeaway-qsr',
-    isometric: '/images/restaurant-kitchen-packages/qsr-isometric-concept-v1.webp',
-    facts: [['Footprint', '8,000 x 6,000 mm'], ['Working aisle', '1,200 mm'], ['Opening crew', '5 to 8']],
-    products: [
-      { image: '/commercial-kitchen-media/ZH-102V.webp', name: 'E01 double fryer', size: '800 x 700 mm' },
-      { image: '/commercial-kitchen-media/ZH-820.webp', name: 'E02 double griddle', size: '900 x 700 mm' },
-      { image: '/commercial-kitchen-media/cold-2.webp', name: 'E04 upright chiller', size: '740 x 870 mm' },
-    ],
-    equipment: [
-      ['E01', 'Double fryer', '800 x 700', 'Two independent tanks'],
-      ['E02', 'Electric griddle', '900 x 700', 'Flat top with splash guards'],
-      ['E03', 'Refrigerated prep counter', '1500 x 700', 'Ingredient rail and GN pans'],
-      ['E04', 'Upright chiller', '740 x 870', 'Rear receiving side'],
-      ['E05', 'Extraction hood', '2400 x 1100', 'Above fryer and griddle'],
-      ['E06', 'Two-bowl sink + bench', '1800 x 700', 'Dirty return side'],
-      ['E07', 'Ice machine', '500 x 600', 'Near pickup beverage point'],
-    ],
-    plan: {
-      width: '8,000 mm', depth: '6,000 mm', aisle: '1,200 mm clear', entry: 'DELIVERY', service: 'PICKUP / CUSTOMER SIDE',
-      rooms: [
-        { x: 52, y: 56, w: 160, h: 118, label: 'RECEIVE + COLD' },
-        { x: 52, y: 182, w: 160, h: 218, label: 'PREP' },
-        { x: 220, y: 56, w: 430, h: 205, label: 'COOK LINE' },
-        { x: 466, y: 270, w: 184, h: 130, label: 'WASH' },
-        { x: 220, y: 408, w: 430, h: 78, label: 'PASS + PICKUP' },
-      ],
-      equipment: [
-        { code: 'E04', x: 70, y: 82, w: 68, h: 70, label: '740 x 870' },
-        { code: 'E03', x: 70, y: 220, w: 120, h: 58, label: '1500 x 700' },
-        { code: 'PREP', x: 70, y: 300, w: 120, h: 58, label: '1500 x 700' },
-        { code: 'E01', x: 322, y: 94, w: 64, h: 64, label: '800 x 700' },
-        { code: 'E02', x: 398, y: 94, w: 75, h: 64, label: '900 x 700' },
-        { code: 'E05 HOOD', x: 304, y: 72, w: 190, h: 18, label: '2400 x 1100' },
-        { code: 'E06', x: 486, y: 298, w: 144, h: 58, label: '1800 x 700' },
-        { code: 'E07', x: 576, y: 422, w: 50, h: 46, label: '500 x 600' },
-      ],
-      flows: [
-        { kind: 'food', d: 'M45 88 C120 88 112 240 165 250 S270 255 335 170 S500 160 520 438', label: 'FOOD' },
-        { kind: 'staff', d: 'M275 472 C270 390 280 320 310 260 S360 210 410 205', label: 'STAFF' },
-        { kind: 'ware', d: 'M665 445 C620 440 610 390 560 365', label: 'DIRTY WARE' },
-      ],
-    },
-    utilities: ['380V / 3P cooking option', 'Drain at wash and prep', 'Fresh air and extraction review', 'Hot water at warewash'],
-    packages: [
-      ['Lean launch', 'Core cooking, cold holding, prep and wash'],
-      ['Balanced', 'Adds faster recovery and backup cold capacity'],
-      ['High output', 'Parallel fry and prep capacity for delivery peaks'],
-    ],
-    benchmark: { local: '$31k to $38k', ddnz: '$10k to $13k', ratio: 'About 34%' },
-    download: '/downloads/ddnz-takeaway-qsr-kitchen-package.pdf',
-  },
-  {
-    id: 'cafe',
-    tab: 'Cafe + light meals',
-    eyebrow: '60 sqm / 35 seats / beverage-led service',
-    title: 'An L-shaped service bar that keeps coffee, ice and cold prep within reach.',
-    summary: 'Customers move along display and payment. Staff work inside the bar triangle while receiving and washing stay behind the service line.',
-    icon: Coffee,
-    slug: 'cafe-light-meals',
-    isometric: '/images/restaurant-kitchen-packages/cafe-isometric-concept-v1.webp',
-    facts: [['Footprint', '8,000 x 7,500 mm'], ['Bar aisle', '1,100 mm'], ['Opening crew', '4 to 6']],
-    products: [
-      { image: '/commercial-kitchen-media/CK-136.webp', name: 'E01 two-group coffee machine', size: '860 x 620 mm' },
-      { image: '/commercial-kitchen-media/ice-39.webp', name: 'E02 ice machine', size: '500 x 600 mm' },
-      { image: '/commercial-kitchen-media/juice-1200.webp', name: 'E04 juice extractor', size: '300 x 450 mm' },
-    ],
-    equipment: [
-      ['E01', 'Two-group coffee machine', '860 x 620', 'Facing the pickup counter'],
-      ['E02', 'Ice machine', '500 x 600', 'Under the rear beverage station'],
-      ['E03', 'Under-counter chiller', '1500 x 700', 'Milk and service stock'],
-      ['E04', 'Juice extractor', '300 x 450', 'Next to prep sink'],
-      ['E05', 'Refrigerated display', '1200 x 700', 'Customer queue side'],
-      ['E06', 'Compact oven', '600 x 650', 'Light meal finishing'],
-      ['E07', 'Dishwasher + sink', '1600 x 700', 'Rear wash zone'],
-    ],
-    plan: {
-      width: '8,000 mm', depth: '7,500 mm', aisle: '1,100 mm bar aisle', entry: 'GOODS ENTRY', service: 'CUSTOMER ENTRY / SEATING',
-      rooms: [
-        { x: 52, y: 56, w: 188, h: 136, label: 'STORE + RECEIVE' },
-        { x: 248, y: 56, w: 202, h: 136, label: 'WASH + BACK PREP' },
-        { x: 458, y: 56, w: 192, h: 300, label: 'BEVERAGE BAR' },
-        { x: 52, y: 200, w: 398, h: 286, label: 'CUSTOMER / SEATING' },
-        { x: 458, y: 364, w: 192, h: 122, label: 'DISPLAY + POS' },
-      ],
-      equipment: [
-        { code: 'E07', x: 270, y: 86, w: 150, h: 60, label: '1600 x 700' },
-        { code: 'E03', x: 480, y: 86, w: 140, h: 58, label: '1500 x 700' },
-        { code: 'E02', x: 572, y: 166, w: 48, h: 54, label: '500 x 600' },
-        { code: 'E04', x: 480, y: 166, w: 58, h: 48, label: '300 x 450' },
-        { code: 'E01', x: 480, y: 250, w: 92, h: 58, label: '860 x 620' },
-        { code: 'E06', x: 580, y: 250, w: 52, h: 58, label: '600 x 650' },
-        { code: 'E05', x: 478, y: 390, w: 140, h: 58, label: '1200 x 700' },
-      ],
-      flows: [
-        { kind: 'food', d: 'M44 100 C130 105 165 150 270 164 S430 180 505 245 S545 340 535 390', label: 'PRODUCT' },
-        { kind: 'staff', d: 'M440 330 C500 335 550 320 560 260 S540 170 455 165', label: 'BAR STAFF' },
-        { kind: 'ware', d: 'M455 410 C420 360 440 240 360 165', label: 'USED WARE' },
-      ],
-    },
-    utilities: ['220V and 380V schedule', 'Filtered water for beverage line', 'Ice machine drain', 'Ventilation for light cooking'],
-    packages: [
-      ['Lean launch', 'Cold beverage, display, prep and wash'],
-      ['Balanced', 'Adds light cooking and larger ice capacity'],
-      ['High output', 'Dual cold stations for rush-hour service'],
-    ],
-    benchmark: { local: '$25k to $32k', ddnz: '$8k to $11k', ratio: 'About 34%' },
-    download: '/downloads/ddnz-cafe-light-meals-kitchen-package.pdf',
-  },
-  {
-    id: 'casual',
-    tab: 'Casual dining',
-    eyebrow: '120 sqm / 70 to 90 seats / full service',
-    title: 'A zoned back-of-house with separate raw prep, hot production and warewashing.',
-    summary: 'A central production aisle connects cold prep to the cook line. The dish return reaches wash without crossing the plating pass.',
-    icon: UtensilsCrossed,
-    slug: 'casual-dining',
-    isometric: '/images/restaurant-kitchen-packages/casual-isometric-concept-v1.webp',
-    facts: [['Footprint', '12,000 x 10,000 mm'], ['Main aisle', '1,400 mm'], ['Opening crew', '10 to 16']],
-    products: [
-      { image: '/commercial-kitchen-media/KB-D55-4.webp', name: 'E04 convection oven', size: '900 x 850 mm' },
-      { image: '/commercial-kitchen-media/ZH-818.webp', name: 'E03 commercial griddle', size: '730 x 470 mm' },
-      { image: '/commercial-kitchen-media/cold-5.webp', name: 'E01 double-door chiller', size: '1430 x 870 mm' },
-    ],
-    equipment: [
-      ['E01', 'Double-door chiller', '1430 x 870', 'Cold store interface'],
-      ['E02', 'Prep counter', '1800 x 800', 'Separate raw and cold prep'],
-      ['E03', 'Griddle + range line', '2200 x 900', 'Central hot production'],
-      ['E04', 'Convection oven', '900 x 850', 'End of cook line'],
-      ['E05', 'Pass + hot holding', '2400 x 800', 'Dining room service edge'],
-      ['E06', 'Hood system', '3600 x 1300', 'Local air balance review'],
-      ['E07', 'Dishwasher + three sinks', '2600 x 800', 'Separate dirty return'],
-    ],
-    plan: {
-      width: '12,000 mm', depth: '10,000 mm', aisle: '1,400 mm production aisle', entry: 'RECEIVING DOOR', service: 'DINING ROOM / SERVICE',
-      rooms: [
-        { x: 52, y: 56, w: 180, h: 132, label: 'RECEIVING + DRY' },
-        { x: 240, y: 56, w: 170, h: 132, label: 'COLD ROOMS' },
-        { x: 52, y: 196, w: 358, h: 204, label: 'RAW + COLD PREP' },
-        { x: 420, y: 56, w: 230, h: 270, label: 'HOT PRODUCTION' },
-        { x: 420, y: 334, w: 230, h: 152, label: 'DISH + WASTE' },
-        { x: 52, y: 408, w: 358, h: 78, label: 'PASS + PLATING' },
-      ],
-      equipment: [
-        { code: 'E01', x: 260, y: 84, w: 122, h: 68, label: '1430 x 870' },
-        { code: 'E02 RAW', x: 76, y: 230, w: 138, h: 62, label: '1800 x 800' },
-        { code: 'E02 COLD', x: 240, y: 230, w: 138, h: 62, label: '1800 x 800' },
-        { code: 'E03', x: 454, y: 98, w: 122, h: 66, label: '2200 x 900' },
-        { code: 'E04', x: 586, y: 98, w: 48, h: 66, label: '900 x 850' },
-        { code: 'E06 HOOD', x: 444, y: 76, w: 190, h: 18, label: '3600 x 1300' },
-        { code: 'E05', x: 136, y: 424, w: 198, h: 46, label: '2400 x 800' },
-        { code: 'E07', x: 454, y: 366, w: 170, h: 66, label: '2600 x 800' },
-      ],
-      flows: [
-        { kind: 'food', d: 'M42 90 C125 95 180 145 285 155 S360 235 395 265 S470 240 495 175 S430 150 285 440', label: 'FOOD' },
-        { kind: 'staff', d: 'M385 355 C360 320 390 275 445 260 S540 235 590 255', label: 'STAFF' },
-        { kind: 'ware', d: 'M42 455 C170 500 320 505 435 410 S515 385 600 395', label: 'DIRTY WARE' },
-      ],
-    },
-    utilities: ['Gas or electric cooking basis', 'Grease and drainage coordination', 'Extraction and replacement air', 'Three-phase load schedule'],
-    packages: [
-      ['Lean launch', 'Core line for a focused opening menu'],
-      ['Balanced', 'Adds menu breadth and service resilience'],
-      ['High output', 'Parallel prep and cooking for multiple dayparts'],
-    ],
-    benchmark: { local: '$48k to $62k', ddnz: '$16k to $22k', ratio: 'About 35%' },
-    download: '/downloads/ddnz-casual-dining-kitchen-package.pdf',
-  },
-];
+import { scenarios } from '../../features/commercial-kitchen/data/restaurant-scenarios.mjs';
+export { scenarios };
 
 const buyerModes = [
   [ChefHat, 'Opening your first restaurant', 'Bring the menu, floor plan and destination. Receive one coordinated opening package.'],
@@ -757,9 +584,8 @@ export default function RestaurantKitchenPackages() {
         title="Restaurant Kitchen Packages from China | Layout + Equipment | DDNZ"
         description="Plan a quick-service, cafe or casual-dining kitchen with DDNZ layout design, coordinated China equipment sourcing, QC and export handoff."
         keywords="restaurant kitchen package China, commercial kitchen layout, restaurant equipment package, cafe equipment sourcing China"
-        canonicalPath={ROUTE}
+        canonicalPath={ROUTE} alternateUrls={packageAlternates(ROUTE.replace(/\/$/, ""))}
         contentLanguage="en"
-        alternateUrls={[{ hrefLang: 'en', href: `https://www.ddnzglobal.com${ROUTE}` }]}
         image="/images/product-showcase/kitchen/kitchen-operating-sanitized.webp"
       />
       <SourcingHomepageNav quotePath={QUOTE_BASE} />

@@ -3,13 +3,14 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 import "./retail-case-preview.css";
 
 export default function RetailCasePreview() {
-  const baseline = new URLSearchParams(window.location.search).get('review') === 'baseline';
+  const review = new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search).get('review');
+  const baseline = review === 'baseline';
   return <>
-    <aside className="ddnz-review-switch" aria-label="候选对照" lang="zh-CN">
+    {review && <aside className="ddnz-review-switch" aria-label="候选对照" lang="zh-CN">
       <strong>{baseline ? '官网基线对照' : '独立候选 · 新增零售案例'}</strong>
       <span>保留现站组件与询价路径 · 未上线</span>
       <a href={baseline ? '?review=candidate#retail-case' : '?review=baseline#paths'}>{baseline ? '查看新增案例' : '对照原版'}</a>
-    </aside>
+    </aside>}
     {!baseline && <FieldReveal />}
     {!baseline && <section className="ss-section rc-section" id="retail-case" aria-labelledby="rc-title">
       <div className="ss-split-heading"><div><p className="ss-kicker">RETAIL SOURCING IN PRACTICE · TÜRKİYE</p><h2 id="rc-title">Five buyers. One container.<br />A simpler way to buy again.</h2></div><p>Five friends combined phone-case purchases into one 40HQ. DDNZ coordinated the order from product selection through ocean export.</p></div>

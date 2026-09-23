@@ -1,0 +1,28 @@
+{
+ "shared": {
+  "primary":"Bu hizmeti planlayın","secondary":"Çıkış kayıtlarını inceleyin","chapters":["Hizmet seçimi","Çin’deki kayıtlar","Teklif kontrolleri","Operasyon devri"],
+  "planKicker":"01 / HİZMET SEÇİMİ","planIntro":"Ana navlun ücretini karşılaştırmadan önce operasyon kapsamını belirleyin. Yük, teslim noktası ve varış sorumluluğu planı değiştirir.",
+  "evidenceKicker":"02 / ÇİN ÇIKIŞ KAYITLARI","evidenceTitle":"Uluslararası taşıma öncesindeki çalışma.","evidenceIntro":"Bu kayıtlar Çin’deki kabul, kontrol ve yükleme işlemlerini gösterir. Uçuş, Amazon kabulü veya varışta teslim kanıtı olarak sunulmaz.","evidenceNote":"Çıkış operasyonlarına ilişkin kayıtlar. Sevkiyata özel belgeler, teyit edilen hizmet kapsamında sağlanır.",
+  "controlsKicker":"03 / TEKLİF KONTROLLERİ","controlsTitle":"Yararlı bir teklif doğru bilgilerle başlar.","quoteChecks":"Teklifte teyit edilmesi gerekenler","sendUs":"Bize iletilecek bilgiler",
+  "processKicker":"04 / OPERASYON DEVRİ","processTitle":"Sorumluluğu belirli dört devir aşaması.","steps":[["Talep","Yükü, tedarikçileri, varış yerini ve istenen kapsamı kaydedin."],["Kontrol","Ambalajı, etiketleri, miktarları ve bildirilen özel elleçleme koşullarını inceleyin."],["Teyit","Operasyon planını, istisnaları, belgeleri ve ücretlendirme esasını teklifte teyit edin."],["Çıkış","Sevk bilgilerini kaydedin ve yükü kararlaştırılan sonraki operatöre teslim edin."]],
+  "closeKicker":"GERÇEK YÜK BİLGİLERİYLE BAŞLAYIN","signature":"DDNZ, tedarik ve ihracat devrini koordine eder. Uluslararası taşımayı Heaven Born yürütür.","fieldRecord":"ÇIKIŞ OPERASYONLARI"
+ },
+ "services/air-freight": {
+  "title":"Çin’den hava kargo.","tag":"Acil yükte önce taşıma kabulü kontrol edilir.","intro":"Ekspres, standart veya ekonomik hava kargoyu; ücretlendirilebilir ağırlık, taşıyıcı kabulü ve varıştaki teslim kapsamı netleştikten sonra seçin.","decisionTitle":"Hız bir değişkendir. Taşıma kabulü ön koşuldur.",
+  "decisions":[["Ekspres / öncelikli","Uçuş ve yük kabulü teyit edildikten sonra acil stok tamamlama için."],["Standart hava kargo","Teyit edilmiş kalkış aralığında süre ve maliyeti dengeleyin."],["Ekonomik konsolidasyon","Yük, planlanan birleştirme işlemini bekleyebiliyorsa konsolide hava kargoyu değerlendirin."]],
+  "checks":["Çıkış havalimanı ve mevcut güzergâhlar","Gerçek ve hacimsel ücretlendirilebilir ağırlık","Taşıyıcı kabulü ve ambalaj şartları","Varış, gümrükleme ve son teslim sorumlulukları"],"brief":["Ürün tanımı ve biliniyorsa HS kodu","Koli adedi, ölçüler ve brüt ağırlık","Tedarikçi şehri ve yükün hazır olacağı tarih","Varış havalimanı veya tam teslim adresi"],"close":"Uçuş sözü vermeden önce yük bilgilerini netleştirin.",
+  "media":{"hero":"Hava kargo değerlendirmesinden önce yük kabulü","evidence":["Yük kimliği ve ambalaj kontrolü","Koli işaretleri ve sevkiyat bilgilerinin kontrolü","Çıkış öncesinde yükün sabitlenmesi"]}
+ },
+ "services/amazon-fba": {
+  "title":"Çin’den Amazon FBA lojistiği.","tag":"Satıcının planına uygun hazırlık, etiketleme ve teslim.","intro":"Hazırlık, etiketleme, konsolidasyon ve taşımayı teyit edilmiş FBA gönderim planıyla koordine edin. Stok kimliği ve varıştaki kabul koşulları sevkten önce kontrol edilmelidir.","decisionTitle":"FBA planı doğru stok ve doğru varış noktasıyla başlar.",
+  "decisions":[["Hazırlık ve etiketleme","SKU, FNSKU, ambalaj ve koli etiketlerini satıcının planıyla eşleştirin."],["İhracat konsolidasyonu","Tedarikçi partilerini uzlaştırın ve sevkiyat başına serbest bırakılan miktarları kaydedin."],["Dağıtım merkezine teslim","Varış noktasını, randevuyu ve teslim sorumluluğunu ilgili operatörlerle teyit edin."]],
+  "checks":["Teyit edilmiş gönderim planı ve FBA varış noktası","Gerekli ürün, koli ve palet etiketleri","Koli başına adet, ölçüler ve ağırlık","Kararlaştırılan kapsamda gümrükleme, randevu ve teslim belgesi"],"brief":["Pazaryeri ve satıcının gönderim planı","SKU listesi ve miktarlar","Etiket dosyaları ve hazırlık şartları","Tedarikçiler, hazır olma tarihi ve varış noktası"],"close":"Siparişi, etiketleri ve kabul planını birbiriyle eşleştirin.",
+  "media":{"hero":"Çin’de barkod ve koli işareti kontrolü","evidence":["Kabul sırasında koli sayımı","Görünür durum ve hazırlık kontrolü","İhracat ambalajı ve koruma"]}
+ },
+ "services/warehouse-services": {
+  "title":"Çin’de depolama ve konsolidasyon.","tag":"Birden fazla tedarikçi için tek kontrol noktası.","intro":"İhracattan önce partileri teslim alın, tanımlayın, kontrol edin ve hazırlayın. Gelen, değiştirilen ve serbest bırakılan miktarların kaydını koruyun.","decisionTitle":"Depo yalnızca bekleme alanı değil, kontrol noktasıdır.",
+  "decisions":[["Giriş kontrolü","Koli sayısını, tedarikçi referansını ve ambalajın görünür durumunu kaydedin."],["Tedarikçi konsolidasyonu","Sevkiyatın tamamı uzlaştırılana kadar parti kimliklerini koruyun."],["İhracat hazırlığı","Yeniden paketleme, işaretleme, kontrol ve yüklemeyi çıkış planıyla koordine edin."]],
+  "checks":["Teslim alınan miktar ve görünür durum","Tedarikçi partilerinin kimliği ve istisnalar","Onaylanan yeniden paketleme, etiketleme ve kontrol","Serbest bırakılan miktar, yükleme ve çıkış devri"],"brief":["Tedarikçi listesi ve toplama ya da teslim yerleri","Çeki listeleri ve koli veya palet sayıları","Her tedarikçinin hazır olma tarihi","Kontrol, yeniden paketleme ve sonraki taşıma gereksinimleri"],"close":"Birden fazla tedarikçi teslimini tek ihracat kaydında birleştirin.",
+  "media":{"hero":"Konsolidasyon öncesinde palet partisinin kontrolü","evidence":["Giriş miktarı ve görünür durum","Tedarikçi parti kimliğinin kontrolü","Çıkış ve yükleme devri"]}
+ }
+}

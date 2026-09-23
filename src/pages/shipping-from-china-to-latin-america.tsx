@@ -1,3 +1,5 @@
+import {translatedText} from '../features/site-localization/translate.mjs';
+import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -13,8 +15,8 @@ import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
 import LatinAmericaFreightDepth from '../components/LatinAmericaFreightDepth';
 import PeruTileFreightCase from '../components/PeruTileFreightCase';
 import { motion, AnimatePresence } from 'framer-motion';
-import { 
-  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck, 
+import {
+  ChevronDown, AlertTriangle, Ship, Package, ShieldCheck,
   Search, ArrowRight, CheckCircle2, MessageSquare, ShieldAlert,
   Globe, Clock, HelpCircle, Plane, FileText, Scale, ArrowUpRight
 } from 'lucide-react';
@@ -837,7 +839,7 @@ export default function ShippingLatinAmerica() {
   }, [location.pathname]);
 
   const activeLang = language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en';
-  
+
   const spec = LATAM_LOCALIZED[selectedCountry][activeLang];
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang];
@@ -847,7 +849,7 @@ export default function ShippingLatinAmerica() {
   const localText = (copy: { zh: string; en: string; es?: string }) => {
     if (activeLang === 'zh') return copy.zh;
     if (activeLang === 'es') return copy.es || copy.en;
-    return copy.en;
+    return translatedText(copy.en,activeLang);
   };
 
   const scrollToQuote = () => {
@@ -872,48 +874,48 @@ export default function ShippingLatinAmerica() {
   const getTransitTimes = () => {
     if (selectedCountry === 'mexico') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
-        air: language === 'zh' ? '5 - 12 工作日' : '5 - 12 Days',
-        seaLabel: language === 'zh' ? '曼萨尼约 / 拉萨罗卡德纳斯海运整箱 (FCL)' : 'Manzanillo / Lázaro Cárdenas FCL',
+        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
+        air: language === 'zh' ? '5 - 12 工作日' : translatedText('5 - 12 Days',language),
+        seaLabel: language === 'zh' ? '曼萨尼约 / 拉萨罗卡德纳斯海运整箱 (FCL)' : translatedText('Manzanillo / Lázaro Cárdenas FCL',language),
         seaDesc: localText({ zh: '按可用船期确认直航或中转', en: 'Direct or connecting service, subject to schedule', es: 'Servicio directo o con transbordo, según salida' }),
-        airLabel: language === 'zh' ? '墨西哥城 (MEX) 空运专线' : 'Mexico City (MEX) Air Express',
+        airLabel: language === 'zh' ? '墨西哥城 (MEX) 空运专线' : translatedText('Mexico City (MEX) Air Express',language),
         airDesc: localText({ zh: '按确认的清关与派送范围安排', en: 'Clearance and delivery to the confirmed scope', es: 'Despacho y entrega según el alcance confirmado' })
       };
     } else if (selectedCountry === 'brazil') {
       return {
-        sea: language === 'zh' ? '50 - 80 天' : '50 - 80 Days',
-        air: language === 'zh' ? '15 - 20 工作日' : '15 - 20 Days',
-        seaLabel: language === 'zh' ? '桑托斯海运快线 (Santos Express)' : 'Santos Sea Express',
+        sea: language === 'zh' ? '50 - 80 天' : translatedText('50 - 80 Days',language),
+        air: language === 'zh' ? '15 - 20 工作日' : translatedText('15 - 20 Days',language),
+        seaLabel: language === 'zh' ? '桑托斯海运快线 (Santos Express)' : translatedText('Santos Sea Express',language),
         seaDesc: localText({ zh: '按可用船期与目的港操作规划', en: 'Planned around available sailings and destination handling', es: 'Planificado según salidas y operación en destino' }),
-        airLabel: language === 'zh' ? '圣保罗 (GRU) 空运专线' : 'São Paulo (GRU) Air Express',
+        airLabel: language === 'zh' ? '圣保罗 (GRU) 空运专线' : translatedText('São Paulo (GRU) Air Express',language),
         airDesc: localText({ zh: '按货物与进口条件确认服务范围', en: 'Scope confirmed against cargo and import conditions', es: 'Alcance sujeto a carga y condiciones de importación' })
       };
     } else if (selectedCountry === 'argentina') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
-        air: language === 'zh' ? '12 - 18 工作日' : '12 - 18 Days',
-        seaLabel: language === 'zh' ? '布宜诺斯艾利斯海运快线' : 'Buenos Aires Sea Express',
+        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
+        air: language === 'zh' ? '12 - 18 工作日' : translatedText('12 - 18 Days',language),
+        seaLabel: language === 'zh' ? '布宜诺斯艾利斯海运快线' : translatedText('Buenos Aires Sea Express',language),
         seaDesc: localText({ zh: '按书面确认范围安排清关与派送', en: 'Clearance and delivery to the written scope', es: 'Despacho y entrega según el alcance escrito' }),
-        airLabel: language === 'zh' ? '埃塞萨 (EZE) 空运专线' : 'Ezeiza (EZE) Air Express',
+        airLabel: language === 'zh' ? '埃塞萨 (EZE) 空运专线' : translatedText('Ezeiza (EZE) Air Express',language),
         airDesc: localText({ zh: '按货物与进口条件确认服务范围', en: 'Scope confirmed against cargo and import conditions', es: 'Alcance sujeto a carga y condiciones de importación' })
       };
     } else if (selectedCountry === 'peru') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
-        air: language === 'zh' ? '7 - 14 工作日' : '7 - 14 Days',
-        seaLabel: language === 'zh' ? '卡亚俄（Callao）海运整箱 / 拼箱' : 'Callao FCL / LCL',
-        seaDesc: language === 'zh' ? '按船期与目的地操作规划' : 'Planned against carrier schedules',
-        airLabel: language === 'zh' ? '利马（LIM）空运服务' : 'Lima (LIM) Air Freight',
-        airDesc: language === 'zh' ? '依据承运条件与文件要求安排' : 'Planned to cargo and document requirements'
+        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
+        air: language === 'zh' ? '7 - 14 工作日' : translatedText('7 - 14 Days',language),
+        seaLabel: language === 'zh' ? '卡亚俄（Callao）海运整箱 / 拼箱' : translatedText('Callao FCL / LCL',language),
+        seaDesc: language === 'zh' ? '按船期与目的地操作规划' : translatedText('Planned against carrier schedules',language),
+        airLabel: language === 'zh' ? '利马（LIM）空运服务' : translatedText('Lima (LIM) Air Freight',language),
+        airDesc: language === 'zh' ? '依据承运条件与文件要求安排' : translatedText('Planned to cargo and document requirements',language)
       };
     }
     return {
-      sea: language === 'zh' ? '35 - 50 天' : '35 - 50 Days',
-      air: language === 'zh' ? '7 - 14 工作日' : '7 - 14 Days',
-      seaLabel: language === 'zh' ? '圣安东尼奥 / 瓦尔帕莱索海运整箱 / 拼箱' : 'San Antonio / Valparaíso FCL / LCL',
-      seaDesc: language === 'zh' ? '按船期与目的地操作规划' : 'Planned against carrier schedules',
-      airLabel: language === 'zh' ? '圣地亚哥（SCL）空运服务' : 'Santiago (SCL) Air Freight',
-      airDesc: language === 'zh' ? '依据承运条件与文件要求安排' : 'Planned to cargo and document requirements'
+      sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
+      air: language === 'zh' ? '7 - 14 工作日' : translatedText('7 - 14 Days',language),
+      seaLabel: language === 'zh' ? '圣安东尼奥 / 瓦尔帕莱索海运整箱 / 拼箱' : translatedText('San Antonio / Valparaíso FCL / LCL',language),
+      seaDesc: language === 'zh' ? '按船期与目的地操作规划' : translatedText('Planned against carrier schedules',language),
+      airLabel: language === 'zh' ? '圣地亚哥（SCL）空运服务' : translatedText('Santiago (SCL) Air Freight',language),
+      airDesc: language === 'zh' ? '依据承运条件与文件要求安排' : translatedText('Planned to cargo and document requirements',language)
     };
   };
 
@@ -994,7 +996,7 @@ export default function ShippingLatinAmerica() {
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center pt-8 pb-16">
-            
+
             {/* 左侧文案区：占据 7 列 */}
             <div className="lg:col-span-7 space-y-6 text-left">
               {/* Country Selector Tabs */}
@@ -1062,7 +1064,7 @@ export default function ShippingLatinAmerica() {
                 className="space-y-4"
               >
                 <span className="inline-flex items-center gap-1.5 border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-[0.18em] text-slate-300">
-                  DDNZ × HEAVEN BORN · LATIN AMERICA FREIGHT
+                  {translatedText('DDNZ × HEAVEN BORN · LATIN AMERICA FREIGHT',language)}
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
                   {spec.headline}
@@ -1071,16 +1073,16 @@ export default function ShippingLatinAmerica() {
                   <p className="text-slate-300 text-sm sm:text-base md:text-lg max-w-3xl leading-relaxed font-medium">
                     {spec.subheadline}
                   </p>
-                  
+
                   {/* Premium Micro-Badges / Key SCM Highlights */}
                   <div className="flex flex-wrap gap-2.5 pt-1">
                     <span className="inline-flex items-center gap-1.5 border-b border-emerald-500/30 px-1 py-1.5 text-xs font-bold text-emerald-300">
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '进口文件审核支持' : 'Import Documentation Support'}
+                      {language === 'zh' ? '进口文件审核支持' : translatedText('Import Documentation Support',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 border-b border-amber-400/30 px-1 py-1.5 text-xs font-bold text-amber-300">
                       <Package className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '中国集货与拼箱协调' : 'China Consolidation Coordination'}
+                      {language === 'zh' ? '中国集货与拼箱协调' : translatedText('China Consolidation Coordination',language)}
                     </span>
                     <span className="inline-flex items-center gap-1.5 border-b border-sky-400/30 px-1 py-1.5 text-xs font-bold text-sky-300">
                       <FileText className="w-3.5 h-3.5" aria-hidden="true" />
@@ -1098,7 +1100,7 @@ export default function ShippingLatinAmerica() {
                     <span>{t('complianceBadge')}</span>
                   </div>
                   <div className="text-xs sm:text-sm font-bold text-slate-200">{spec.complianceRowTitle}</div>
-                  <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : 'Period'}: {spec.complianceRowVal}</div>
+                  <div className="text-[10px] text-slate-400 font-bold mt-0.5">{language === 'zh' ? '预审周期' : translatedText('Period',language)}: {spec.complianceRowVal}</div>
                 </div>
 
                 <div className="flex items-center justify-start border-l-2 border-[#c94f2f] bg-white/[0.035] p-4 text-left sm:justify-center sm:text-center">
@@ -1106,7 +1108,7 @@ export default function ShippingLatinAmerica() {
                     onClick={scrollToQuote}
                     className="flex min-h-[44px] h-full w-full cursor-pointer items-center justify-start gap-1.5 text-xs font-black text-white transition-colors hover:text-[#f2a47f] sm:justify-center"
                   >
-                    <span>{language === 'zh' ? '立即询价' : 'Inquire Now'}</span>
+                    <span>{language === 'zh' ? '立即询价' : translatedText('Inquire Now',language)}</span>
                     <ArrowRight className="w-3.5 h-3.5 text-[#d97706]" />
                   </button>
                 </div>
@@ -1118,7 +1120,7 @@ export default function ShippingLatinAmerica() {
               <h3 className="mb-2 text-sm font-black uppercase tracking-[0.18em] text-amber-300">
                 {localText({ zh: '运输方式与参考时效', en: 'Freight modes and planning windows', es: 'Modalidades y plazos de planificación' })}
               </h3>
-              
+
               <div className="flex items-center justify-between border-y border-white/[0.12] bg-white/[0.035] p-5">
                 <div>
                   <h4 className="text-sm font-black text-white">{getTransitTimes().seaLabel}</h4>
@@ -1176,7 +1178,7 @@ export default function ShippingLatinAmerica() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-3xl">
               <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
-                Import Documentation Support
+                {translatedText('Import Documentation Support',language)}
               </span>
               <h2 className="mb-4 text-2xl font-black leading-tight tracking-tight text-[#10243f] sm:text-3xl md:text-4xl">
                 {spec.solutionsTitle}
@@ -1219,7 +1221,7 @@ export default function ShippingLatinAmerica() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-3xl">
               <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
-                {language === 'zh' ? '通道时效参考' : 'Transit Time Reference'}
+                {language === 'zh' ? '通道时效参考' : translatedText('Transit Time Reference',language)}
               </span>
               <h2 className="mb-4 text-2xl font-black leading-tight tracking-tight text-[#10243f] sm:text-3xl md:text-4xl">
                 {{
@@ -1242,7 +1244,7 @@ export default function ShippingLatinAmerica() {
 
             {/* Interactive Grid & Detail Card */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-              
+
               {/* Left Column: Transport Options */}
               <div className="lg:col-span-5 space-y-3">
                 {spec.multimodalTable && spec.multimodalTable.map((row: any, idx: number) => {
@@ -1253,7 +1255,7 @@ export default function ShippingLatinAmerica() {
                       type="button"
                       onClick={() => setActiveTransportMode(idx)}
                       className={`flex w-full items-center justify-between border p-5 text-left transition-colors ${
-                        isSelected 
+                        isSelected
                           ? 'border-[#10243f] bg-[#10243f] text-white'
                           : 'border-[#d4dce4] bg-white text-[#10243f] hover:border-[#91a0af]'
                       }`}
@@ -1267,7 +1269,7 @@ export default function ShippingLatinAmerica() {
                             {row.mode}
                           </h4>
                           <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-slate-200' : 'text-slate-500'}`}>
-                            {language === 'zh' ? '预计周期' : 'Transit Window'}
+                            {language === 'zh' ? '预计周期' : translatedText('Transit Window',language)}
                           </span>
                         </div>
                       </div>
@@ -1299,14 +1301,14 @@ export default function ShippingLatinAmerica() {
                           {spec.multimodalTable[activeTransportMode].mode}
                         </h3>
                         <p className="mt-1 text-sm font-black text-[#c94f2f]">
-                          {language === 'zh' ? '预计运输周期' : 'Estimated Transit Window'}: <span className="font-mono text-base font-bold text-[#10243f]">{spec.multimodalTable[activeTransportMode].days}</span>
+                          {language === 'zh' ? '预计运输周期' : translatedText('Estimated Transit Window',language)}: <span className="font-mono text-base font-bold text-[#10243f]">{spec.multimodalTable[activeTransportMode].days}</span>
                         </p>
                       </div>
 
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
                         <div>
                           <h5 className="text-xs font-black text-slate-500 uppercase tracking-widest mb-1.5">
-                            {language === 'zh' ? '适用货品场景' : 'Best Suited For'}
+                            {language === 'zh' ? '适用货品场景' : translatedText('Best Suited For',language)}
                           </h5>
                           <p className="text-xs font-semibold leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].suitability}
@@ -1314,7 +1316,7 @@ export default function ShippingLatinAmerica() {
                         </div>
                         <div>
                           <h5 className="mb-1.5 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
-                            {language === 'zh' ? 'Heaven Born 操作要点' : 'Heaven Born Operating Notes'}
+                            {language === 'zh' ? 'Heaven Born 操作要点' : translatedText('Heaven Born Operating Notes',language)}
                           </h5>
                           <p className="text-xs font-semibold leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].sellingPoint}
@@ -1326,7 +1328,7 @@ export default function ShippingLatinAmerica() {
                         <ShieldAlert className="mt-0.5 h-5 w-5 shrink-0 text-amber-700" />
                         <div>
                           <h5 className="mb-0.5 text-xs font-black uppercase tracking-wider text-amber-800">
-                            {language === 'zh' ? '查验与操作注意事项' : 'Operation Notes'}
+                            {language === 'zh' ? '查验与操作注意事项' : translatedText('Operation Notes',language)}
                           </h5>
                           <p className="text-[11px] font-medium leading-relaxed text-slate-600">
                             {spec.multimodalTable[activeTransportMode].warning}
@@ -1378,7 +1380,7 @@ export default function ShippingLatinAmerica() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div className="mb-12 max-w-3xl">
               <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
-                {language === 'zh' ? '出运注意事项' : 'Shipping Notes'}
+                {language === 'zh' ? '出运注意事项' : translatedText('Shipping Notes',language)}
               </span>
               <h2 className="mb-4 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">
                 {redlines.title}
@@ -1423,8 +1425,8 @@ export default function ShippingLatinAmerica() {
               {spec.faqs.map((faq, idx) => {
                 const isOpen = activeFaq === idx;
                 return (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className="overflow-hidden border-b border-[#cbd4dd] bg-transparent px-1 py-5"
                   >
                     <button
@@ -1471,6 +1473,7 @@ export default function ShippingLatinAmerica() {
           </div>
         </section>
 
+      <CountryCargoPlanning country={selectedCountry} countryName={countryLabel(selectedCountry)} />
       </main>
 
       <Footer />

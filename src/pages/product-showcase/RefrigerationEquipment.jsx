@@ -241,7 +241,7 @@ export function RefrigerationEquipment() {
         <section className="refrigeration-hero" aria-labelledby="refrigeration-title">
           <div className="refrigeration-hero-copy">
             <p className="refrigeration-kicker">PRODUCT SOURCING · REFRIGERATION EQUIPMENT</p>
-            <h1 id="refrigeration-title">Source the cold side around the operating load.</h1>
+            <h1 id="refrigeration-title">Source commercial refrigeration equipment from China.</h1>
             <p>DDNZ turns temperature, capacity, ambient conditions and service workflow into like-for-like quotations, model-linked approval evidence and export-ready pack-out.</p>
             <div className="refrigeration-hero-actions">
               <button className="refrigeration-primary" type="button" onClick={() => scrollTo("refrigeration-rfq")}>Start a scoped request <ArrowRight size={17} /></button>

@@ -82,7 +82,7 @@ export default function SEO({
   // Resolve final SEO fields
   const finalTitle = title || defaults.title;
   const finalRawDesc = description || defaults.desc;
-  
+
   // Keep the summary concise without cutting a word in half. Search engines
   // may rewrite snippets, but this gives them a complete default description.
   const optimizeDesc = (desc: string, lang: string) => {
@@ -131,7 +131,7 @@ export default function SEO({
     return localizedSiteUrl(normalizedLangCode, countryPath);
   };
 
-  const canonicalUrl = canonicalPath 
+  const canonicalUrl = canonicalPath
     ? canonicalSiteUrl(canonicalPath)
     : getLanguageUrl(currentLang);
 
@@ -151,7 +151,8 @@ export default function SEO({
     { hrefLang: 'fr', href: getLanguageUrl('fr') },
     { hrefLang: 'es', href: getLanguageUrl('es') },
     { hrefLang: 'ar', href: getLanguageUrl('ar') },
-    ...(ptTrLocalizedPages.has(cleanSuffix)
+    ...(cleanSuffix === 'shipping-from-china-to-brazil' ? [{ hrefLang: 'pt-BR', href: getLanguageUrl('pt') },{ hrefLang: 'tr', href: getLanguageUrl('tr') }] : []),
+    ...(ptTrLocalizedPages.has(cleanSuffix) || (cleanSuffix.startsWith('shipping-from-china-to-') && cleanSuffix !== 'shipping-from-china-to-brazil')
       ? [
           { hrefLang: 'pt', href: getLanguageUrl('pt') },
           { hrefLang: 'tr', href: getLanguageUrl('tr') },
@@ -165,7 +166,7 @@ export default function SEO({
 
   // The global shell may retain a visitor's language while the product guide
   // explicitly declares English on its own content region.
-  const helmetLang = language === 'zh' ? 'zh-CN' : language;
+  const helmetLang = language === 'pt' && cleanSuffix === 'shipping-from-china-to-brazil' ? 'pt-BR' : language === 'zh' ? 'zh-CN' : language;
   const alternateSignature = JSON.stringify(finalAlternates);
 
   useEffect(() => {

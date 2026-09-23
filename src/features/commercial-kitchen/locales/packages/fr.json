@@ -1,0 +1,187 @@
+{
+  "ui": {
+    "title": "Achetez des ensembles de cuisine de restaurant en Chine",
+    "intro": "Organisez l’achat selon menu, service, surface et installations. Comparez six scénarios avant de confirmer modèles, quantités, implantation et exportation.",
+    "template": "Achetez un ensemble de cuisine pour {name} en Chine",
+    "scenarios": "Scénarios de restauration",
+    "workflow": "Flux de travail",
+    "equipment": "Groupes d’équipements",
+    "utilities": "Réseaux et installation",
+    "area": "Surface de référence",
+    "aisle": "Passage libre de référence",
+    "crew": "Équipe initiale de référence",
+    "concept": "Visualisation conceptuelle, ni photo du site ni plan d’exécution.",
+    "boundary": "Les dimensions réservent un espace conceptuel. Modèles, relevé réel, charges, raccordements et plans incendie et techniques exigent validation professionnelle locale. Surface, effectif et passages ne garantissent ni débit ni conformité.",
+    "pdf": "Voir le dossier et la demande de PDF",
+    "english": "Page / document en anglais",
+    "menu": "Menu, pointe de service, surface et réseaux",
+    "plan": "Implantation de référence",
+    "zones": "Zones de travail",
+    "scope": "Confirmez le périmètre ; distinguez équipements, emballage, inspection, transport et frais à destination."
+  },
+  "scenarios": [
+    {
+      "name": "vente à emporter et restauration rapide",
+      "summary": "La réception arrière alimente le froid et la préparation. Friture et plaque partagent une ligne chaude face au retrait ; la vaisselle sale revient du côté opposé.",
+      "equipment": [
+        "Friteuse double : cuves indépendantes",
+        "Plaque électrique : lisse avec pare-éclaboussures",
+        "Table réfrigérée : ingrédients et bacs GN",
+        "Armoire froide : réception",
+        "Hotte : au-dessus de friture et plaque",
+        "Évier double et table : retour sale",
+        "Machine à glaçons : boissons au retrait"
+      ],
+      "utilities": [
+        "Option cuisson 380 V / triphasée",
+        "Évacuation lavage et préparation",
+        "Extraction et air neuf",
+        "Eau chaude de lavage"
+      ],
+      "zones": [
+        "Réception et froid",
+        "Préparation",
+        "Ligne chaude",
+        "Lavage",
+        "Passe et retrait"
+      ]
+    },
+    {
+      "name": "café et petite restauration",
+      "summary": "Le bar en L rapproche café, glace et préparation froide. Les clients suivent vitrine et paiement ; le personnel reste à l’intérieur, réception et lavage à l’arrière.",
+      "equipment": [
+        "Machine à café deux groupes : retrait",
+        "Machine à glaçons : poste boissons arrière",
+        "Réfrigérateur sous comptoir : lait et stock",
+        "Extracteur de jus : près de l’évier",
+        "Vitrine froide : côté file",
+        "Four compact : finition des repas",
+        "Lave-vaisselle et évier : arrière"
+      ],
+      "utilities": [
+        "Tableau électrique 220 V et 380 V",
+        "Eau filtrée pour boissons",
+        "Évacuation des glaçons",
+        "Ventilation cuisson légère"
+      ],
+      "zones": [
+        "Stock et réception",
+        "Lavage et préparation arrière",
+        "Bar boissons",
+        "Clients et tables",
+        "Vitrine et caisse"
+      ]
+    },
+    {
+      "name": "restaurant décontracté",
+      "summary": "Séparez préparation crue, production chaude et lavage. Une allée centrale relie froid et cuisson ; le retour sale évite le dressage et le passe.",
+      "equipment": [
+        "Armoire deux portes : interface froide",
+        "Table : cru et froid séparés",
+        "Plaque et fourneau : production centrale",
+        "Four à convection : bout de ligne",
+        "Passe et maintien chaud : salle",
+        "Hotte : équilibrage d’air local",
+        "Lave-vaisselle et trois éviers : retour séparé"
+      ],
+      "utilities": [
+        "Cuisson gaz ou électrique",
+        "Graisses et évacuation",
+        "Extraction et air neuf",
+        "Bilan triphasé"
+      ],
+      "zones": [
+        "Réception et sec",
+        "Chambres froides",
+        "Préparation crue et froide",
+        "Production chaude",
+        "Lavage et déchets",
+        "Dressage et passe"
+      ]
+    },
+    {
+      "name": "boulangerie et pâtisserie",
+      "summary": "La réception mène au sec et au froid, puis mélange, façonnage, pousse, cuisson, refroidissement et décor. Le lavage retourne côté service sans croiser les produits finis.",
+      "equipment": [
+        "Pétrin spiral : volume par lot",
+        "Diviseuse ou laminoir : selon gamme",
+        "Chambre de pousse retardée : humidité et température",
+        "Fours à sole ou convection : énergie et débit",
+        "Cellule de refroidissement : sécurité et refroidissement",
+        "Tables inox : façonnage et finition",
+        "Lavage de chariots et éviers : retour séparé"
+      ],
+      "utilities": [
+        "Charges triphasées fours et pétrins",
+        "Eau et évacuation de pousse",
+        "Chaleur et extraction",
+        "Passage des chariots et portes"
+      ],
+      "zones": [
+        "Réception et stock",
+        "Mélange et façonnage",
+        "Pousse",
+        "Cuisson",
+        "Refroidissement et décor",
+        "Vitrine et expédition",
+        "Lavage"
+      ]
+    },
+    {
+      "name": "pizzeria",
+      "summary": "Froid et pâte sont derrière la ligne de garniture. Le four débouche sur découpe et boîtes ; la vaisselle revient au lavage du côté opposé.",
+      "equipment": [
+        "Pétrin spiral : pâte quotidienne",
+        "Diviseuse : portions régulières",
+        "Table réfrigérée : garniture",
+        "Four à sole ou convoyeur : menu et débit",
+        "Extraction : selon four",
+        "Armoire froide : pâte et ingrédients",
+        "Lave-vaisselle et éviers : retour séparé"
+      ],
+      "utilities": [
+        "Énergie et raccordement du four",
+        "Extraction et air neuf",
+        "Eau filtrée pour pâte",
+        "Dégagement thermique et maintenance"
+      ],
+      "zones": [
+        "Réception et froid",
+        "Préparation pâte",
+        "Pousse et attente",
+        "Garniture",
+        "Cuisson",
+        "Découpe et boîtes",
+        "Lavage"
+      ]
+    },
+    {
+      "name": "cuisine partagée de livraison",
+      "summary": "Trois modules partagent réception, froid, lavage et expédition. Chaque module garde préparation et ligne chaude propres pour fonctionner indépendamment.",
+      "equipment": [
+        "Chambres froides communes : stock total",
+        "Trois modules de préparation : séparation des risques",
+        "Trois lignes chaudes : charges indépendantes",
+        "Maintien chaud : regroupement des commandes",
+        "Extraction : ventilateurs et gaines par zone",
+        "Lavage central : retours de pointe",
+        "Rayonnages : zones livreurs"
+      ],
+      "utilities": [
+        "Bilan triphasé avec simultanéité",
+        "Extraction et air neuf par zone",
+        "Graisses, évacuation et eau chaude",
+        "Compartimentage incendie et règles locales"
+      ],
+      "zones": [
+        "Réception et stock",
+        "Froid commun",
+        "Module A",
+        "Module B",
+        "Module C",
+        "Lavage commun",
+        "Expédition"
+      ]
+    }
+  ]
+}

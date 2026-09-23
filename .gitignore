@@ -1,4 +1,4 @@
-node_modules/
+node_modules
 build/
 dist/
 coverage/
@@ -7,3 +7,6 @@ tmp/
 *.log
 .env*
 !.env.example
+
+# Cloud-sync conflict copies of installed dependencies
+node_modules [0-9]*/

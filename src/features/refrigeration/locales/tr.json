@@ -1,0 +1,50 @@
+{
+  "title": "Çin’den ticari soğutma ekipmanı satın alın",
+  "intro": "Sıcaklık, kullanılabilir kapasite, iklim ve iş akışını Çin’den karşılaştırılabilir tekliflere dönüştürün. Model, çalışma testleri ve ihracat ambalajını doğrulayın.",
+  "families": [
+    [
+      "Dik ve depolama dolapları",
+      "Restoran ve oteller için soğutma, dondurma veya çift bölge. Kaynak örneği: 860 L, doğrudan soğutma, 1–8°C / −5 ila −18°C, R600a / R290 listeli. Akışkanı ve yapılandırmayı model bazında doğrulayın. Ürün çizimidir."
+    ],
+    [
+      "Tezgâh ve soğuk hazırlık",
+      "Hazırlık ve servis için bir ila üç kapı, çalışma yüzeyi ve GN kaplar. Kaynak ailesi fan destekli, 0–10°C. Kap yerleşimi, derinlik ve servis erişimini doğrulayın. Uygulama görselidir."
+    ],
+    [
+      "Soğuk teşhir",
+      "Fırıncılık, perakende ve içecekler için cam kapı veya servis vitrini. Soğutma/dondurma, zorlanmış hava, defrost yöntemi ve çevrimini doğrulayın; cam, raf, ışık ve yüklemeyi inceleyin. Ürün gamı görselidir."
+    ],
+    [
+      "Ticari buz makineleri",
+      "Yoğun talep ve depolamaya göre seçin. SD-50F örneği: 25 kg/24 h, 20 kg depo, 22 × 22 × 22 mm küp, hava/su listeli. Belge videodaki modeli kanıtlamaz; sürümü doğrulayın."
+    ]
+  ],
+  "checks": [
+    "Model: teklif, numune ve siparişi aynı yapılandırmada tutun.",
+    "Sıcaklık: düşüş, koruma, toparlanma, ayar ve test koşullarını kaydedin; gösterge tek başına kanıt değildir.",
+    "İklim ve hava: sıcaklık, nem, iklim sınıfı, kondenser yönü ve boşlukları inceleyin.",
+    "Elektrik ve akışkan: voltaj, frekans, fiş, güç ve soğutucuyu doğrulayın.",
+    "Kapı ve defrost: kapanma, conta, gider ve çevrimleri kontrol edin.",
+    "Ambalaj ve taşıma: köşe koruması, kasa, dik işareti, ölçüler, kapılar ve yükleme sınırlarını doğrulayın."
+  ],
+  "steps": [
+    "30/100: soğuma, koruma, toparlanma ve sıcak ortam testleri.",
+    "25/100: model, parça, elektrik ve akışkan tutarlılığı.",
+    "20/100: üretim kontrolü, sorun yanıtı ve yedekler.",
+    "15/100: dayanaklı süre, koruma ve taşıma.",
+    "10/100: eşit kapsamda fiyat, koşul ve varsayımlar. Örnek yöntemdir, gerçek tedarikçi puanı değildir. Doğrulanmamış kimlik, yanlış model, çözülmeyen elektrik/akışkan eksikleri veya başarısız sıcaklık kanıtı sevki engeller."
+  ],
+  "evidence": [
+    "Buz hattı: yaklaşık 9 saniyelik mevcut video; seçilen modelin performans onayı değildir.",
+    "Koruma: sarma ve palet desteği; sipariş ölçülerini ve dik taşımayı doğrulayın.",
+    "Depolama: paketli makineler adet ve sevk kontrolü yerine geçmez.",
+    "Hava ve erişim çizimseldir. Planlanan ortam ve yükte ölçüm isteyin; temizlik, conta ve gideri doğrulayın."
+  ],
+  "labels": [
+    "Sıcaklık veya günlük buz üretimi",
+    "Kapasite, yük veya servis hacmi",
+    "Soğutma veya kondenser yöntemi",
+    "Üretim ve ambalaj kayıtları",
+    "Örnek tedarikçi değerlendirme yöntemi"
+  ]
+}

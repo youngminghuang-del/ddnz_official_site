@@ -1,0 +1,167 @@
+{
+  "pages": 32,
+  "question_groups": 136,
+  "failed_pages": 0,
+  "results": [
+    {
+      "path": "/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/zh-cn/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/es/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/es/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/es/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/es/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/ar/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ar/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ar/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ar/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/ru/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ru/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ru/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/ru/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/fr/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/fr/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/fr/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/fr/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/pt/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/pt/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/pt/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/pt/insights/",
+      "question_count": 5,
+      "issues": []
+    },
+    {
+      "path": "/tr/sourcing-services/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/tr/products/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/tr/how-we-work/",
+      "question_count": 4,
+      "issues": []
+    },
+    {
+      "path": "/tr/insights/",
+      "question_count": 5,
+      "issues": []
+    }
+  ]
+}

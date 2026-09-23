@@ -1,0 +1,44 @@
+{
+  "ui": {
+    "price": "Preço indicativo de fornecimento",
+    "reference": "Quantidade de referência",
+    "request": "Solicite preço para sua quantidade e destino",
+    "priceNote": "Imagens retocadas. Preços indicativos para as quantidades informadas; frete e tributos à parte. Confirme preço final, disponibilidade, configuração elétrica e embalagem na proposta.",
+    "flat": "Lisa",
+    "output": "Produção diária nominal",
+    "volume": "Volume do tanque",
+    "tanks": "Número de tanques",
+    "plate": "Dimensões da chapa",
+    "surface": "Superfície",
+    "select": "Selecionar modelo e solicitar cotação",
+    "english": "Detalhes em inglês",
+    "reading": "Artigo de apoio à compra"
+  },
+  "titles": [
+    "Compre máquinas de gelo comerciais da China",
+    "Compre fritadeiras elétricas comerciais da China",
+    "Compre chapas elétricas comerciais da China"
+  ],
+  "intros": [
+    "Adquira máquinas de gelo em cubos da China para cafés, restaurantes e hotéis. Compare seis modelos por produção diária nominal, dimensões e instalação; confirme a configuração para seu mercado.",
+    "Adquira fritadeiras elétricas da China para sua linha de equipamentos profissionais. Compare tanque único de 10 L e dois tanques de 10 L, espaço de bancada, quantidades de referência e necessidades de preparo.",
+    "Adquira chapas elétricas da China para cocção de bancada. Compare ZH-818 e ZH-820 por área lisa de cocção, dimensões externas e potência antes de solicitar preço por quantidade."
+  ],
+  "notes": [
+    [
+      "Produção diária e armazenamento de gelo são dados distintos. 100 kg/24h é produção nominal, não capacidade do depósito. Confirme ambos conforme a demanda de pico.",
+      "Informe temperaturas ambiente e de entrada da água, sobretudo em cozinhas quentes. Solicite condições de ensaio e produção correspondente; não trate a classificação como previsão de desempenho no local.",
+      "Os modelos de 55, 80 e 100 kg indicam 448 × 400 × 798 mm, sem comprovar componentes ou depósito iguais. Confirme dimensões finais, ventilação, acesso técnico, água, drenagem e formato do gelo. Combine modelos na solicitação e informe quantidades, destino, embalagem e peças."
+    ],
+    [
+      "ZH-101V: tanque único de 10 L, largura de 280 mm. ZH-102V: dois tanques de 10 L, largura de 570 mm, não um tanque de 20 L. Confira cestos e controles por tanque.",
+      "Volume do tanque não equivale ao enchimento recomendado de óleo nem à produção horária. Confirme cesto, faixa de óleo, lote e recuperação de temperatura para o alimento.",
+      "Referência do tanque único: 10 unidades; do duplo: 1 unidade. Confirme preço para a quantidade real. Defina drenagem, limpeza, termostatos, resistências, cestos e peças; informe destino, tensão, frequência, fases e plugue."
+    ],
+    [
+      "ZH-818: superfície de 548 × 350 mm. ZH-820: 728 × 400 mm. Ambas têm chapa lisa de 8 mm; superfícies estriadas ou mistas exigem consulta. Planeje um lote típico.",
+      "Dimensões externas: 550 × 430 × 220 mm e 730 × 470 × 220 mm, respectivamente. Diferencie área de cocção e espaço ocupado; confirme folgas, coleta de gordura e limpeza.",
+      "Potências de 3 kW e 4,4 kW não determinam produtividade. Confirme controles, material, recuperação térmica e alimentação. Só ZH-818 tem referência de preço; ZH-820 exige cotação própria. Pode combinar com fritadeiras informando modelos, quantidades, destino, peças e transporte."
+    ]
+  ]
+}

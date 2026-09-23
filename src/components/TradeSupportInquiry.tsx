@@ -295,11 +295,22 @@ const CATEGORY_OPTIONS: Array<{ value: string; key: string; Icon: LucideIcon }> 
   { value: 'Other', key: 'other', Icon: Boxes },
 ];
 
+const PRODUCT_EXAMPLES: Partial<Record<Language, [string, string]>> = {
+  es: ['Ejemplo: cocina comercial de seis fuegos, 220–240 V, acero inoxidable, pedido inicial de 20 unidades', 'Ejemplo: tres proveedores de altavoces, producción casi terminada; se requiere inspección antes de la recogida'],
+  ar: ['مثال: موقد تجاري بست شعلات، 220–240 فولت، فولاذ مقاوم للصدأ، طلب أولي من 20 وحدة', 'مثال: ثلاثة موردين للسماعات، الإنتاج على وشك الاكتمال، يلزم الفحص قبل الاستلام'],
+  ru: ['Пример: коммерческая плита на шесть конфорок, 220–240 В, нержавеющая сталь, первый заказ — 20 штук', 'Пример: три поставщика колонок, производство почти завершено, нужна инспекция до забора груза'],
+  fr: ['Exemple : piano de cuisson à six feux, 220–240 V, inox, première commande de 20 unités', 'Exemple : trois fournisseurs d’enceintes, production presque terminée, inspection avant enlèvement'],
+  pt: ['Exemplo: fogão profissional de seis bocas, 220–240 V, aço inoxidável, primeiro pedido de 20 unidades', 'Exemplo: três fornecedores de caixas de som, produção quase concluída, inspeção necessária antes da coleta'],
+  tr: ['Örnek: altı gözlü endüstriyel ocak, 220–240 V, paslanmaz çelik, ilk sipariş 20 adet', 'Örnek: üç hoparlör tedarikçisi, üretim bitmek üzere, teslim almadan önce denetim gerekli'],
+};
+
 export default function TradeSupportInquiry() {
   const { language } = useLanguage();
   const location = useLocation();
   const [formState, formspreeSubmit] = useForm('mdabvqbd');
   const copy = { ...EN_COPY, ...LOCALIZED_COPY[language] };
+  const examples = PRODUCT_EXAMPLES[language];
+  if (examples) { copy.productPlaceholderSourcing = examples[0]; copy.productPlaceholderExisting = examples[1]; }
   const [isLocalPreview, setIsLocalPreview] = useState(typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__);
   useEffect(() => { if (!isProductionHost(currentHostname())) setIsLocalPreview(true); }, []);
   const previewCopy = localPreviewCopy[language] || localPreviewCopy.en;
@@ -397,7 +408,7 @@ export default function TradeSupportInquiry() {
     setStep(1);
     setCategory(initialCategory);
     setDestination(initialDestination);
-    setProductDetails(incomingFilmPlan?.brief || storedProductDetails);
+    setProductDetails(['products_index','sourcing_services','kitchen_category','restaurant_kitchen_package','audio_speakers','refrigeration_equipment_product','film_guide','startup_plan'].includes(leadSource) && params.get('overviewBrief') ? params.get('overviewBrief')!.slice(0, 5000) : leadSource === 'food_processing' ? (params.get('notes') || params.get('productScope') || '').slice(0, 5000) : incomingFilmPlan?.brief || storedProductDetails);
     setServices([]);
     setReadiness('');
     setTimeline('');

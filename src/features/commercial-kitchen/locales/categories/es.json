@@ -1,0 +1,44 @@
+{
+  "ui": {
+    "price": "Precio orientativo de suministro",
+    "reference": "Cantidad de referencia",
+    "request": "Solicite precio según cantidad y destino",
+    "priceNote": "Imágenes retocadas. Precios orientativos para las cantidades indicadas; transporte e impuestos aparte. Confirme precio final, disponibilidad, configuración eléctrica y embalaje en la oferta.",
+    "flat": "Plana",
+    "output": "Producción diaria nominal",
+    "volume": "Volumen del tanque",
+    "tanks": "Número de tanques",
+    "plate": "Dimensiones de la placa",
+    "surface": "Superficie",
+    "select": "Seleccionar modelo y pedir oferta",
+    "english": "Detalles en inglés",
+    "reading": "Artículo de apoyo a la compra"
+  },
+  "titles": [
+    "Compre máquinas de hielo comerciales de China",
+    "Compre freidoras eléctricas comerciales de China",
+    "Compre planchas eléctricas comerciales de China"
+  ],
+  "intros": [
+    "Adquiera máquinas de cubitos de China para cafeterías, restaurantes y hoteles. Compare seis modelos por producción diaria nominal, dimensiones e instalación; confirme la configuración para su mercado.",
+    "Adquiera freidoras eléctricas de China para su gama profesional. Compare un tanque de 10 L y dos de 10 L, espacio de encimera, cantidades de referencia y necesidades de cocina.",
+    "Adquiera planchas eléctricas de China para cocción de sobremesa. Compare ZH-818 y ZH-820 por área plana útil, dimensiones externas y potencia antes de pedir precio por cantidad."
+  ],
+  "notes": [
+    [
+      "Producción diaria y almacenamiento son datos distintos. 100 kg/24h indica producción nominal, no capacidad del depósito. Confirme ambos según la demanda punta.",
+      "Indique temperatura ambiente y del agua entrante, sobre todo en cocinas calientes. Solicite condiciones de ensayo y producción correspondiente; la cifra nominal no es una previsión del rendimiento real.",
+      "Los modelos de 55, 80 y 100 kg indican 448 × 400 × 798 mm; esto no acredita componentes ni depósitos iguales. Confirme dimensiones finales, ventilación, servicio, agua, desagüe y formato del hielo. Puede combinar modelos indicando cantidades, destino, embalaje y repuestos."
+    ],
+    [
+      "ZH-101V: un tanque de 10 L y 280 mm de ancho. ZH-102V: dos tanques de 10 L y 570 mm de ancho, no un tanque de 20 L. Compruebe cestas y controles por tanque.",
+      "Volumen del tanque no equivale al llenado recomendado de aceite ni a producción por hora. Confirme cesta, rango de aceite, lote y recuperación térmica para cada alimento.",
+      "Referencia del tanque único: 10 unidades; del doble: 1 unidad. Confirme precio para su cantidad real. Defina vaciado, limpieza, termostatos, resistencias, cestas y repuestos; indique destino, tensión, frecuencia, fases y enchufe."
+    ],
+    [
+      "ZH-818: superficie de 548 × 350 mm. ZH-820: 728 × 400 mm. Ambas llevan placa plana de 8 mm; consulte superficies acanaladas o mixtas. Planifique un lote típico.",
+      "Dimensiones externas: 550 × 430 × 220 mm y 730 × 470 × 220 mm respectivamente. Distinga superficie útil y ocupación; confirme holguras, recogida de grasa y limpieza.",
+      "Potencias de 3 kW y 4,4 kW no determinan productividad. Confirme controles, material, recuperación de calor y conexión. Sólo ZH-818 tiene precio orientativo; ZH-820 requiere oferta propia. Puede combinar con freidoras indicando modelos, cantidades, destino, repuestos y transporte."
+    ]
+  ]
+}

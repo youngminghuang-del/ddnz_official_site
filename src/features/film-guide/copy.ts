@@ -1,0 +1,11 @@
+import zh from './locales/zh.json';import es from './locales/es.json';import ar from './locales/ar.json';import ru from './locales/ru.json';import fr from './locales/fr.json';import pt from './locales/pt.json';import tr from './locales/tr.json';
+import {foodPrefix,foodLanguages} from '../food-processing/localization';
+export const filmGuideCopy={zh,es,ar,ru,fr,pt,tr};export type FilmGuideLocale=keyof typeof filmGuideCopy;
+export const filmGuidePath='/screen-protectors/guides';
+export type FilmGuideKind='index'|'price-differences'|'curved-glass'|'videos';
+export const filmGuideRoute=(kind:FilmGuideKind='index')=>kind==='videos'?'/screen-protectors/videos':filmGuidePath+(kind==='index'?'':'/'+kind);
+export const filmGuideKind=(path:string):FilmGuideKind=>/(^|\/)screen-protectors\/videos\/?$/.test(path)?'videos':path.includes('/price-differences')?'price-differences':path.includes('/curved-glass')?'curved-glass':'index';
+export const filmGuideText=(locale:FilmGuideLocale,kind:FilmGuideKind='index')=>{const c=filmGuideCopy[locale];if(kind==='videos')return {title:c.video.title,intro:c.video.intro};return {title:kind==='index'?c.title:c.details.heads[kind==='price-differences'?1:3],intro:kind==='index'?c.intro:c.details.heads[kind==='price-differences'?2:4]};};
+export const filmGuideAlternates=(kind:FilmGuideKind='index')=>foodLanguages.map(hrefLang=>({hrefLang,href:`https://www.ddnzglobal.com${foodPrefix(hrefLang)}${filmGuideRoute(kind)}/`}));
+export const filmGuideMeta=(locale:FilmGuideLocale,kind:FilmGuideKind='index')=>({title:`${filmGuideText(locale,kind).title} | DDNZ`,description:filmGuideText(locale,kind).intro});
+export const filmGuideSchema=(locale:FilmGuideLocale,kind:FilmGuideKind='index')=>({'@context':'https://schema.org','@type':kind==='index'?'CollectionPage':'WebPage',url:`https://www.ddnzglobal.com${foodPrefix(locale)}${filmGuideRoute(kind)}/`,name:filmGuideText(locale,kind).title,description:filmGuideText(locale,kind).intro,inLanguage:locale==='zh'?'zh-CN':locale});

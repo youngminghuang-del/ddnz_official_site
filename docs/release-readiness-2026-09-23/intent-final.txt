@@ -1,0 +1,5 @@
+
+> react-example@0.0.0 audit:search-intent
+> python3 scripts/audit-search-intent.py
+
+{"pages": 659, "statuses": {"context-only": 107, "pass": 552}, "locales": {"zh-cn": 79, "es": 81, "ar": 80, "ru": 79, "fr": 80, "pt": 79, "tr": 79, "en": 102}, "report": "audit/search-intent/summary.md"}

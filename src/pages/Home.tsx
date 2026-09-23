@@ -1,3 +1,4 @@
+import { positioning } from '../features/search-intent/positioning.mjs';
 import { lazy, Suspense } from 'react';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import SourcingHomepageHero from '../components/SourcingHomepageHero';
@@ -56,7 +57,7 @@ export default function Home() {
 
   return (
     <div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffefb] font-sans text-slate-900">
-      <SEO title={metadata.title} description={metadata.description} keywords={metadata.keywords} image="/images/operations/ddnz-team-20260914.webp" />
+      <SEO title={positioning[language].homeTitle} description={positioning[language].homeDescription} keywords={metadata.keywords} image="/images/operations/ddnz-team-20260914.webp" />
       <SchemaMarkup type="Organization" data={{}} />
       <SchemaMarkup type="LocalBusiness" data={{}} />
       <SchemaMarkup

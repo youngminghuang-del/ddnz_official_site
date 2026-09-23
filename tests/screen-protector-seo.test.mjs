@@ -64,7 +64,7 @@ test('every static route names the product and exposes contextual sourcing next 
       assert.ok(html.includes(`href="${ROUTES[target]}/">${escapeHtml(label)}`), `${page} links to ${target}`);
     }
     assert.doesNotMatch(html, /href="#(?:home|products|guides|prices|curves|videos|calculator|quote)"|kitchen/);
-    assert.equal((html.match(/hreflang=/g) || []).length, ['home','products'].includes(page) ? 4 : 0);
+    assert.equal((html.match(/hreflang=/g) || []).length, page === 'quote' ? 0 : 9);
   }
 });
 
@@ -77,8 +77,8 @@ test('static HTML replaces inherited homepage body and metadata without changing
     assert.equal((html.match(/name="robots"/g) || []).length, 1);
     assert.match(html, /src="\/assets\/main.js"/);
     assert.match(html, /href="\/assets\/main.css"/);
-    assert.doesNotMatch(html, /Old home|Old homepage body|wrong.invalid|hreflang="fr"|VideoObject|display:\s*none/);
-    assert.equal((html.match(/hreflang=/g) || []).length, [ROUTES.home,ROUTES.products].includes(pathname) ? 4 : 0);
+    assert.doesNotMatch(html, /Old home|Old homepage body|wrong.invalid|VideoObject|display:\s*none/);
+    assert.equal((html.match(/hreflang=/g) || []).length, pathname === ROUTES.quote ? 0 : 9);
     assert.match(html, /data-static-fallback="screen-protectors"/);
   }
   assert.throws(() => renderScreenProtectorHtml('<html></html>', ROUTES.home), /complete head/);
@@ -111,8 +111,8 @@ test('sitemap merge is additive, idempotent and preserves every old entry verbat
   const merged = appendScreenProtectorSitemap(baseSitemap);
   assert.ok(merged.includes('<url><loc>https://www.ddnzglobal.com/old-page</loc><lastmod>2026-08-22</lastmod></url>'));
   assert.equal((merged.match(/<loc>/g) || []).length, 8);
-  assert.doesNotMatch(merged, /screen-protectors\/brief|hreflang="fr"/);
-  assert.equal((merged.match(/hreflang=/g) || []).length, 8);
+  assert.doesNotMatch(merged, /screen-protectors\/brief/);
+  assert.equal((merged.match(/hreflang=/g) || []).length, 63);
   assert.equal(appendScreenProtectorSitemap(merged), merged);
   assert.match(merged, /<loc>https:\/\/www.ddnzglobal.com\/screen-protectors\/videos\/<\/loc>/);
   const oneOldPhoneEntry = baseSitemap.replace('</urlset>', '<url><loc>https://www.ddnzglobal.com/screen-protectors/</loc><lastmod>2026-08-22</lastmod></url></urlset>');

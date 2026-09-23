@@ -15,7 +15,7 @@ export function screenProtectorJourneyAnalytics(action) {
 }
 
 export function localizedScreenProtectorJourneyAnalytics(locale, action) {
-  if (!['es', 'ar'].includes(locale)
+  if (!['zh','es','ar','ru','fr','pt','tr'].includes(locale)
     || !['select_configuration', 'create_brief', 'continue_inquiry'].includes(action)) return null;
   const payload = screenProtectorJourneyAnalytics(action);
   return { event: payload.event, params: { ...payload.params, content_language: locale } };

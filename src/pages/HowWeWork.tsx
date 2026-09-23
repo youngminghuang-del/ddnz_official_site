@@ -1,3 +1,4 @@
+import BuyerDecisionContent from '../features/search-intent/BuyerDecisionContent';
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
@@ -701,6 +702,7 @@ export default function HowWeWork() {
             <DdnzPrimaryLink to={quoteHref} tracking className="shrink-0" onClick={() => trackEvent('quote_click', { cta_location: 'how_we_work_final', lead_goal: 'Product Sourcing', path: location.pathname })}>{copy.primaryCta}</DdnzPrimaryLink>
           </div>
         </section>
+      <BuyerDecisionContent page="how-we-work" locale={language} />
       </main>
 
       <Footer />

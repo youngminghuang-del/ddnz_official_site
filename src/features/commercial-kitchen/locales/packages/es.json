@@ -1,0 +1,187 @@
+{
+  "ui": {
+    "title": "Compre conjuntos de cocina para restaurantes de China",
+    "intro": "Organice la compra por menú, operación, espacio e instalaciones. Compare seis escenarios antes de confirmar modelos, cantidades, distribución y exportación.",
+    "template": "Compre un conjunto de cocina para {name} de China",
+    "scenarios": "Escenarios de restaurante",
+    "workflow": "Flujo de trabajo",
+    "equipment": "Grupos de equipos",
+    "utilities": "Instalaciones y suministros",
+    "area": "Área de referencia",
+    "aisle": "Paso libre de referencia",
+    "crew": "Personal inicial de referencia",
+    "concept": "Visualización conceptual; no es foto del local ni plano de ejecución.",
+    "boundary": "Las dimensiones reservan espacio conceptual. Modelos, medidas reales, cargas, conexiones y planos de incendios e instalaciones requieren confirmación profesional local. Área, personal y pasos no garantizan capacidad ni definen normas.",
+    "pdf": "Ver plano completo y solicitud de PDF",
+    "english": "Página / archivo en inglés",
+    "menu": "Menú, demanda punta, espacio e instalaciones",
+    "plan": "Distribución de referencia",
+    "zones": "Zonas de trabajo",
+    "scope": "Confirme el alcance; desglose equipos, embalaje, inspección, transporte y gastos de destino."
+  },
+  "scenarios": [
+    {
+      "name": "comida para llevar y servicio rápido",
+      "summary": "La recepción trasera alimenta frío y preparación. Fritura y plancha comparten una línea caliente orientada a recogida; los utensilios sucios vuelven por el lado opuesto.",
+      "equipment": [
+        "Freidora doble: tanques independientes",
+        "Plancha eléctrica: lisa con protectores",
+        "Mesa refrigerada: ingredientes y cubetas GN",
+        "Refrigerador vertical: recepción",
+        "Campana: sobre freidora y plancha",
+        "Fregadero doble y mesa: retorno sucio",
+        "Máquina de hielo: bebidas en recogida"
+      ],
+      "utilities": [
+        "Opción 380 V / trifásica",
+        "Desagüe en lavado y preparación",
+        "Extracción y aire de reposición",
+        "Agua caliente de lavado"
+      ],
+      "zones": [
+        "Recibir y refrigerar",
+        "Preparar",
+        "Línea caliente",
+        "Lavar",
+        "Expedir y recoger"
+      ]
+    },
+    {
+      "name": "cafetería y comidas ligeras",
+      "summary": "La barra en L acerca café, hielo y preparación fría. El cliente sigue exposición y pago; el personal trabaja dentro, con recepción y lavado detrás.",
+      "equipment": [
+        "Cafetera de dos grupos: recogida",
+        "Máquina de hielo: estación posterior",
+        "Refrigerador bajo mesa: leche y existencias",
+        "Extractor de jugo: junto al fregadero",
+        "Vitrina refrigerada: lado de la fila",
+        "Horno compacto: acabado de comidas",
+        "Lavavajillas y fregadero: lavado posterior"
+      ],
+      "utilities": [
+        "Lista eléctrica 220 V y 380 V",
+        "Agua filtrada para bebidas",
+        "Desagüe de hielo",
+        "Ventilación de cocción ligera"
+      ],
+      "zones": [
+        "Almacenar y recibir",
+        "Lavado y preparación posterior",
+        "Barra de bebidas",
+        "Clientes y mesas",
+        "Exposición y cobro"
+      ]
+    },
+    {
+      "name": "restaurante informal",
+      "summary": "Separe preparación cruda, producción caliente y lavado. El pasillo central conecta preparación fría y cocina; el retorno sucio evita el pase de platos.",
+      "equipment": [
+        "Refrigerador de dos puertas: zona fría",
+        "Mesa: crudo y frío separados",
+        "Plancha y cocina: producción central",
+        "Horno de convección: final de línea",
+        "Pase y mantenimiento caliente: salón",
+        "Campana: equilibrio de aire local",
+        "Lavavajillas y tres fregaderos: retorno separado"
+      ],
+      "utilities": [
+        "Cocción a gas o eléctrica",
+        "Grasas y desagües",
+        "Extracción y reposición de aire",
+        "Cargas trifásicas"
+      ],
+      "zones": [
+        "Recepción y secos",
+        "Cámaras frías",
+        "Preparación cruda y fría",
+        "Producción caliente",
+        "Lavado y residuos",
+        "Montaje y pase"
+      ]
+    },
+    {
+      "name": "panadería y pastelería",
+      "summary": "De recepción a almacén seco y frío, mezcla, formado, fermentación, horneado, enfriamiento y decoración. El lavado vuelve por servicio sin cruzar producto terminado.",
+      "equipment": [
+        "Amasadora espiral: volumen por lote",
+        "Divisora o laminadora: según productos",
+        "Cámara de fermentación retardada: humedad y temperatura",
+        "Hornos de solera o convección: combustible y producción",
+        "Abatidor: enfriamiento y seguridad",
+        "Mesas inox: formado y acabado",
+        "Lavado de carros y fregaderos: retorno separado"
+      ],
+      "utilities": [
+        "Cargas trifásicas de hornos y amasadoras",
+        "Agua y desagüe de fermentación",
+        "Calor y extracción",
+        "Holguras de carros y puertas"
+      ],
+      "zones": [
+        "Recibir y guardar",
+        "Mezclar y formar",
+        "Fermentar",
+        "Hornear",
+        "Enfriar y decorar",
+        "Exponer y expedir",
+        "Lavar"
+      ]
+    },
+    {
+      "name": "pizzería",
+      "summary": "Frío y masa quedan detrás de montaje. El horno conecta con corte y cajas; el retorno sucio llega al lavado por el lado opuesto.",
+      "equipment": [
+        "Amasadora espiral: masa diaria",
+        "Divisora: porciones uniformes",
+        "Mesa refrigerada: ingredientes",
+        "Horno de solera o cinta: menú y producción",
+        "Extracción: según horno",
+        "Refrigerador vertical: masa e ingredientes",
+        "Lavavajillas y fregaderos: retorno separado"
+      ],
+      "utilities": [
+        "Combustible y conexión del horno",
+        "Extracción y reposición de aire",
+        "Agua filtrada para masa",
+        "Separación térmica y mantenimiento"
+      ],
+      "zones": [
+        "Recibir y refrigerar",
+        "Preparar masa",
+        "Fermentar y guardar",
+        "Añadir ingredientes",
+        "Hornear",
+        "Cortar y encajar",
+        "Lavar"
+      ]
+    },
+    {
+      "name": "cocina compartida de reparto",
+      "summary": "Tres módulos comparten recepción, frío, lavado y expedición. Cada uno conserva preparación y línea caliente propias para marcas independientes.",
+      "equipment": [
+        "Cámaras compartidas: inventario total",
+        "Tres módulos de preparación: separación por riesgo",
+        "Tres líneas calientes: cargas independientes",
+        "Mantenimiento caliente: agrupar pedidos",
+        "Extracción: ventiladores y conductos por zona",
+        "Lavado central: retorno punta",
+        "Estantes de expedición: zonas de repartidores"
+      ],
+      "utilities": [
+        "Cargas trifásicas con simultaneidad",
+        "Extracción y reposición por zona",
+        "Grasas, desagüe y agua caliente",
+        "Separación contra incendios y normativa local"
+      ],
+      "zones": [
+        "Recibir y guardar",
+        "Frío común",
+        "Módulo A",
+        "Módulo B",
+        "Módulo C",
+        "Lavado común",
+        "Expedición"
+      ]
+    }
+  ]
+}

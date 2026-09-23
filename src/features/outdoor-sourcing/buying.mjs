@@ -47,4 +47,4 @@ export function buildOutdoorPayload(input,locale='en'){
  lines.push('',`${t('notes')}: ${d.form.notes||'—'}`,'',t('requestNote'));
  return {name:d.form.name,email:d.form.email,subject:'DDNZ — '+t('brief'),message:lines.join('\n')};
 }
-export function outdoorEvent(locale,action){return ['en','es','ar'].includes(locale)&&['add_product','review_brief','calculate','request_check','submit_success','submit_error'].includes(action)?{event:'outdoor_sourcing_journey',params:{content_group:'outdoor',content_language:locale,journey_action:action}}:null;}
+export function outdoorEvent(locale,action){return ['en','zh','es','ar','ru','fr','pt','tr'].includes(locale)&&['add_product','review_brief','calculate','request_check','submit_success','submit_error'].includes(action)?{event:'outdoor_sourcing_journey',params:{content_group:'outdoor',content_language:locale,journey_action:action}}:null;}

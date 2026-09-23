@@ -6,7 +6,6 @@ import type { GeometryCollection, Topology } from 'topojson-specification';
 import worldAtlas from 'world-atlas/countries-110m.json';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
-import './freight-route-map.css';
 
 type MapVariant = 'world' | 'central-asia' | 'uzbekistan';
 type FreightRouteMapProps = { variant: MapVariant; locale?: Language };
@@ -26,7 +25,7 @@ const mapCopyZh: Record<MapVariant, MapCopy> = {
     routeHref: '/services/sea-freight/', routeLabel: '查看货运服务',
   },
   'central-asia': {
-    eyebrow: 'CENTRAL ASIA CORRIDORS', title: '中亚线路不只是一条线',
+    eyebrow: '中亚运输通道', title: '中亚线路不只是一条线',
     description: '地区页突出霍尔果斯、阿拉山口等关键口岸，并把哈萨克斯坦、乌兹别克斯坦和周边市场放进同一张区域图。',
     routeNote: '城市与口岸按真实经纬度定位；口岸选择仍取决于班列计划、车板、货物属性和目的城市。',
     routeHref: '/shipping-from-china-to-central-asia/', routeLabel: '查看中亚线路',
@@ -251,11 +250,58 @@ const worldNodes: MapNode[] = [
 const worldRoutes: MapRoute[] = [
   { id: 'uae', kind: 'sea', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [55.027, 24.985]] },
   { id: 'khorgos', kind: 'land', coordinates: [[114.26, 22.57], [103.83, 36.06], [87.62, 43.82], [80.411, 44.213]] },
-  { id: 'west-africa', kind: 'sea', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [18.42, -34.25], [3.365, 6.44], [0.015, 5.674]] },
+  { id: 'west-africa', kind: 'sea', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [18.42, -34.25], [3.365, 6.44]] },
+  { id: 'tema', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [18.42, -34.25], [0.015, 5.674]] },
   { id: 'callao', kind: 'sea', coordinates: [[114.26, 22.57], [145, 18], [178, 2], [-135, -7], [-77.147, -12.055]] },
   { id: 'santos', kind: 'sea', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, -5], [18.42, -34.25], [-46.3167, -23.9333]] },
   { id: 'manzanillo', kind: 'secondary', coordinates: [[114.26, 22.57], [150, 30], [-155, 26], [-104.3, 19.05]] },
 ];
+
+type OceanRegion = 'middle-east' | 'west-africa' | 'latin-america';
+// Additional representative gateways checked against UNECE UN/LOCODE coordinates:
+// SAJED 21°28'N 39°10'E; KWSWK 29°21'N 47°56'E.
+const additionalRegionNodes: MapNode[] = [
+  { id: 'ningbo', label: 'Ningbo', code: 'EAST CHINA', coordinates: [121.55, 29.8667], labelDx: 24, labelDy: -15, kind: 'origin' },
+  { id: 'qingdao', label: 'Qingdao', code: 'NORTH CHINA', coordinates: [120.3167, 36.05], labelDx: -38, labelDy: -49, kind: 'origin' },
+  { id: 'jeddah', label: 'Jeddah', code: 'SAJED', coordinates: [39.1667, 21.4667], labelDx: -24, labelDy: 42 },
+  { id: 'shuwaikh', label: 'Shuwaikh', code: 'KWSWK', coordinates: [47.9333, 29.35], labelDx: -25, labelDy: -42 },
+  { id: 'abidjan', label: 'Abidjan', code: 'CIABJ', coordinates: [-4.0167, 5.3333], labelDx: -26, labelDy: -48 },
+];
+const additionalRegionRoutes: MapRoute[] = [
+  { id: 'jeddah', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [45.3, 12.7], [39.1667, 21.4667]] },
+  { id: 'shuwaikh', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [56.6, 25.8], [47.9333, 29.35]] },
+  { id: 'abidjan', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [18.42, -34.25], [-4.0167, 5.3333]] },
+];
+const regionalNetwork: Record<OceanRegion, { nodes: string[]; routes: string[]; countries: string[]; title: string }> = {
+  'middle-east': { nodes: ['south-china', 'ningbo', 'qingdao', 'jebel-ali', 'jeddah', 'shuwaikh'], routes: ['uae', 'jeddah', 'shuwaikh'], countries: ['156', '784', '682', '414'], title: 'China to Middle East sea gateways' },
+  'west-africa': { nodes: ['south-china', 'ningbo', 'qingdao', 'lagos', 'tema', 'abidjan'], routes: ['west-africa', 'tema', 'abidjan'], countries: ['156', '566', '288', '384'], title: 'China to West Africa sea gateways' },
+  'latin-america': { nodes: ['south-china', 'ningbo', 'qingdao', 'callao', 'santos', 'manzanillo'], routes: ['callao', 'santos', 'manzanillo'], countries: ['156', '604', '076', '484'], title: 'China to Latin America sea gateways' },
+};
+const regionalProjections: Record<OceanRegion, GeoProjection> = {
+  'middle-east': geoMercator().fitExtent([[36, 45], [WIDTH - 36, HEIGHT - 45]], extentFeature(28, -12, 128, 48)),
+  'west-africa': geoMercator().fitExtent([[36, 45], [WIDTH - 36, HEIGHT - 45]], extentFeature(-21, -40, 128, 48)),
+  'latin-america': worldProjection,
+};
+
+/** Regional network view: exact port nodes, illustrative corridors, never a sailing schedule. */
+export function RegionalFreightMap({ region, locale = 'en', title, description }: { region: OceanRegion; locale?: Language; title?: string; description?: string }) {
+  const network = regionalNetwork[region];
+  const nodes = [...worldNodes, ...additionalRegionNodes].filter(node => network.nodes.includes(node.id)).map(node => node.id === 'south-china'
+    ? { ...node, label: 'Shenzhen', code: 'SOUTH CHINA', labelDx: 20, labelDy: 34 }
+    : node);
+  const clipId = `regional-${region}-clip`;
+  const projection = regionalProjections[region];
+  return <figure className="freight-regional-map" aria-label={title || network.title}>
+    <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby={`regional-${region}-title regional-${region}-desc`}>
+      <title id={`regional-${region}-title`}>{title || network.title}</title>
+      <desc id={`regional-${region}-desc`}>{description || 'Geolocated ports and illustrative sea corridors. The actual vessel itinerary is confirmed for each shipment.'}</desc>
+      <MapChrome clipId={clipId} />
+      <MapBase projection={projection} highlighted={new Set(network.countries)} clipId={clipId} regional />
+      <MapRoutes routes={[...worldRoutes, ...additionalRegionRoutes].filter(route => network.routes.includes(route.id))} projection={projection} />
+      <MapNodes nodes={nodes} projection={projection} />
+    </svg>
+  </figure>;
+}
 
 function WorldMap({ language }: { language: Language }) {
   const ui = mapSvgUi[language];
@@ -311,7 +357,7 @@ const regionLabels: Array<{ label: string; coordinates: Coordinate }> = [
   { label: 'UZBEKISTAN', coordinates: [61.5, 38.5] }, { label: 'RUSSIA', coordinates: [53, 57] },
 ];
 
-function CentralAsiaMap({ language }: { language: Language }) {
+export function CentralAsiaMap({ language }: { language: Language }) {
   const localized = language === 'zh';
   const ui = mapSvgUi[language];
   const nodeUi = mapNodeUi[language];

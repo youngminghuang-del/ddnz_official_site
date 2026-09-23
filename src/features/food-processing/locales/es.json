@@ -1,0 +1,137 @@
+{
+  "ui": {
+    "products": "Productos",
+    "title": "Compre maquinaria para procesar alimentos de China",
+    "intro": "Seleccione maquinaria de China para masas, panadería, carnes, verduras y granos. Compare modelos y precios mayoristas o forme un conjunto, con el embalaje calculado por separado.",
+    "source": "Sourcing en China · Preparación de alimentos",
+    "compare": "Comparar equipos",
+    "packages": "Conjuntos de equipos",
+    "equipment": "Equipos",
+    "packing": "Embalaje indicado",
+    "list": "Su lista",
+    "all": "Todos",
+    "specs": "Especificaciones y notas de compra",
+    "power": "Potencia",
+    "size": "Dimensiones de la máquina",
+    "weight": "Peso indicado",
+    "quantity": "Cantidad",
+    "add": "Añadir a la lista",
+    "remove": "Eliminar",
+    "clear": "Vaciar lista",
+    "empty": "La lista está vacía. Seleccione equipos primero.",
+    "total": "Equipos y embalaje indicado",
+    "destination": "País / ciudad de destino",
+    "requirements": "Ingredientes, lote, tensión, frecuencia y accesorios",
+    "continue": "Continuar a la cotización",
+    "review": "Revise los detalles en el formulario antes de enviarlo.",
+    "exclude": "No incluye opciones sin confirmar, mejoras de embalaje de exportación, transporte, impuestos ni servicios.",
+    "confirm": "Confirme tensión, frecuencia, protecciones, dimensiones embaladas y peso bruto antes del envío.",
+    "imageNote": "Las imágenes representan familias de modelos; confirme la configuración del pedido.",
+    "sourcePages": "Páginas de las fuentes",
+    "priceList": "Lista de precios",
+    "catalogue": "Catálogo",
+    "scope": "Selección y alcance",
+    "related": "Conjuntos y categorías relacionados",
+    "services": "Servicios de sourcing y exportación",
+    "unit": "por máquina",
+    "added": "Añadido a la lista",
+    "cleared": "Lista vaciada",
+    "increase": "Aumentar cantidad",
+    "decrease": "Reducir cantidad",
+    "selectionNote": "El conjunto parte de una unidad de cada modelo. Ajuste cantidades y valide recetas y capacidades antes de confirmar el proceso.",
+    "catalogueTitle": "Catálogo de maquinaria alimentaria"
+  },
+  "names": [
+    "Amasadora",
+    "Laminadora de masa de sobremesa",
+    "Amasadora espiral",
+    "Batidora planetaria",
+    "Cortadora de pan",
+    "Cortadora de carne de sobremesa",
+    "Picadora de carne de sobremesa",
+    "Mezcladora de pasta de carne",
+    "Formadora de albóndigas",
+    "Peladora de patatas",
+    "Cortadora de verduras en rodajas y tiras",
+    "Picadora de verduras",
+    "Separadora de pulpa",
+    "Molino de arroz húmedo",
+    "Exprimidora de caña",
+    "Desplumadora de aves"
+  ],
+  "variants": [
+    "Motor con bobinado de cobre · modelo de 15 kg",
+    "Motor de cobre · rodillos de acero",
+    "Cambio mecánico de velocidad",
+    "Protección de cuba · tres funciones",
+    "Modelo de 31 cuchillas",
+    "Cuchillas inox desmontables",
+    "Piezas de picado de acero · motor de cobre",
+    "Dos cubas basculantes",
+    "Modelo vertical · cuatro juegos de moldes",
+    "Tambor abrasivo",
+    "Motor de cobre · cuchilla unidireccional",
+    "Eje y cuchilla de acero",
+    "Motor de cobre · carcasa de aluminio fundido",
+    "Motor de cobre · base de acero",
+    "Modelo de sobremesa conectado a la red",
+    "Modelo grande de acero · motor de cobre"
+  ],
+  "notes": [
+    "Versión de cobre; la versión de aluminio tiene otro precio.",
+    "No incluye cortador de fideos. Cortador plano estándar de 1,5–6 mm: CNY 150 por unidad antes de impuestos. Rodillos inox: +CNY 180.",
+    "El catálogo indica 860 mm de altura; confirme las dimensiones de fabricación. H20-B y H20-T son variantes distintas.",
+    "Precio de la versión con protección; confirme accesorios y enclavamiento.",
+    "Confirme tamaño del pan y espesor de corte.",
+    "Catálogo: 18 kg; lista de precios: 20 kg. Confirme separación de cuchillas y estado de la carne.",
+    "Boquilla para embutidos indicada como incluida. JR-G22 es otra configuración.",
+    "Ajuste lote y tiempo de mezcla a la receta.",
+    "Versión estándar; CX-LB de velocidad variable se cotiza aparte.",
+    "Catálogo: 680 mm de longitud; lista: 660 mm. Confirme agua y desagüe.",
+    "Confirme cuchillas y tamaños de corte; versión de cobre.",
+    "Valide lote y corte con sus ingredientes.",
+    "El catálogo indica 250 × 460 × 610 mm, distinto de la lista. Confirme la revisión del modelo antes de planificar el espacio.",
+    "Confirme preparación del ingrediente, finura y limpieza.",
+    "GZ-TD con batería y GZ-TS de doble alimentación son otras configuraciones.",
+    "Confirme tipo de ave, preparación y tamaño de dedos de repuesto."
+  ],
+  "categories": [
+    [
+      "Maquinaria para masas y panadería",
+      "Compre maquinaria para masas y panadería de China. Compare amasadoras, batidoras, laminadoras y cortadoras según función, motor, protección, enclavamiento, velocidad y rodillos o cortadores. La batidora planetaria realiza una función distinta a la amasadora. El volumen de cuba no equivale a capacidad de harina: H20 tiene 20 L y un máximo de 8 kg de harina; valide receta, lote e hidratación. YH-GT300 no incluye cortador; el plano estándar de 1,5–6 mm cuesta CNY 150 antes de impuestos, otros se cotizan aparte."
+    ],
+    [
+      "Maquinaria para procesar carne",
+      "Compre cortadoras, picadoras, mezcladoras de pasta y formadoras de China. Indique carne fresca, refrigerada o congelada y presencia de huesos; no dé por hecho que una cortadora común procesa bloques congelados. Elija separación, discos, accesorios y repuestos. Ajuste lotes y recetas: el precio del conjunto no establece rendimiento de línea. JR-GG22 lleva piezas de picado de acero a CNY 1.120 y difiere de JR-G22. El conjunto de albóndigas no incluye cocción, enfriamiento, almacenamiento ni envasado."
+    ],
+    [
+      "Maquinaria para preparar verduras",
+      "Compre peladoras, cortadoras y picadoras de China. Indique raíces u hojas, tamaño inicial y corte final; aporte muestra o medidas y confirme cuchillas incluidas. DQ-PS300 figura con cuchilla unidireccional, sin acreditar un juego completo. Planifique agua, desagüe, limpieza y transferencias manuales. Las tres máquinas no constituyen una línea automática; lavado y distribución requieren diseño separado."
+    ],
+    [
+      "Maquinaria para soja, arroz y jugos",
+      "Compre separadoras de pulpa, molinos de arroz húmedo y exprimidoras de caña de China. Especifique ingredientes remojados, finura, manejo de residuos y etapa siguiente. Separación y molienda húmeda no son intercambiables. GZ-TC funciona con red eléctrica y no incluye batería; GZ-TD es de batería y GZ-TS de doble alimentación. El conjunto de soja y arroz no incluye remojo, cocción, filtrado, llenado ni almacenamiento."
+    ]
+  ],
+  "scopes": [
+    "Amasar → laminar → cortar con cortador opcional. Añada un cortador compatible; el plano estándar cuesta CNY 150 antes de impuestos. Cocción aparte.",
+    "Mezcla espiral → mezcla planetaria → corte del pan horneado. Horno, fermentadora, refrigeración y mesas no incluidos. Verifique lotes.",
+    "Cortar → picar. Seleccione separación de cuchillas y discos. Refrigeración, sierra de huesos y bloques congelados aparte.",
+    "Picar → mezclar pasta → formar. Cocción, enfriamiento y envasado aparte. Valide receta y equilibrio de lotes.",
+    "Pelar raíces → cortar en rodajas o tiras → picar. Elija cuchillas; fregadero, desagüe y mesas aparte. No es una línea automática.",
+    "Separación de pulpa y molienda húmeda de arroz son funciones distintas. Remojo, cocción, filtrado y almacenamiento aparte."
+  ],
+  "families": [
+    "Masas y fideos",
+    "Panadería",
+    "Carnes",
+    "Verduras",
+    "Soja, arroz y jugos",
+    "Aves"
+  ],
+  "packingTypes": {
+    "Wood packing": "Embalaje de madera",
+    "Wood frame included": "Bastidor de madera incluido",
+    "Carton included": "Caja de cartón incluida"
+  }
+}
