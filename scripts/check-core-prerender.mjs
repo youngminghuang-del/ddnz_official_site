@@ -22,5 +22,11 @@ for(const route of routes){
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
-assert.equal(count,40,'Expected 40 core page versions');
+assert.equal(count,48,'Expected 48 core page versions including eight enquiry pages');
+for (const locale of ['', 'zh-cn/', 'ru/', 'fr/', 'es/', 'ar/', 'pt/', 'tr/']) {
+ const route = `${locale}get-a-quote`;
+ const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');
+ assert(html.includes('data-core-prerender="true"'), `${route}: enquiry content must be pre-rendered`);
+ assert(html.includes('<main>') && html.includes('id="get-a-quote"'), `${route}: missing enquiry body`);
+}
 console.log(`Verified ${count} core pages: visible HTML, unique H1, buyer answers, article discovery and internal links.`);

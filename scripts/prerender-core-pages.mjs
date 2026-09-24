@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 import { createRequire } from 'node:module';
 const root=process.cwd(), dist=path.join(root,'dist');
 const routes=[...fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname)
- .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:insights|how-we-work|products|sourcing-services)\/)?$/.test(p)||['/products/','/sourcing-services/'].includes(p));
+ .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/'].includes(p));
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ddnz-core-ssr-'));
 try {
  const bundle=path.join(temporary,'renderer.cjs');
