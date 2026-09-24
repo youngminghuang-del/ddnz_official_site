@@ -1,3 +1,7 @@
+import restoredBlogRedirects from '../src/data/restoredBlogRedirects.json';
+const preserveRestoredRedirects = (redirects: any[]) => [...redirects, ...restoredBlogRedirects.filter(saved => !redirects.some(row => row.from === saved.from))];
+import restoredBlogPosts from '../src/data/restoredBlogPosts.json';
+const preserveRestoredPosts = (posts: any[]) => [...posts, ...restoredBlogPosts.filter(saved => !posts.some(post => post.slug === saved.slug && post.language === saved.language))];
 import dotenv from "dotenv";
 import fs from "fs";
 import path from "path";
@@ -453,7 +457,7 @@ function writeFallbackData() {
     wordCount: post.wordCount || 0,
     toc: post.toc || [],
   }));
-  fs.writeFileSync(outputFilePath, JSON.stringify(fallbackPosts, null, 2), "utf-8");
+  fs.writeFileSync(outputFilePath, JSON.stringify(preserveRestoredPosts(fallbackPosts), null, 2), "utf-8");
   if (!fs.existsSync(redirectFilePath)) fs.writeFileSync(redirectFilePath, "[]", "utf-8");
 }
 
@@ -611,8 +615,8 @@ async function run() {
       return;
     }
 
-    fs.writeFileSync(outputFilePath, JSON.stringify(posts, null, 2), "utf-8");
-    fs.writeFileSync(redirectFilePath, JSON.stringify(redirects, null, 2), "utf-8");
+    fs.writeFileSync(outputFilePath, JSON.stringify(preserveRestoredPosts(posts), null, 2), "utf-8");
+    fs.writeFileSync(redirectFilePath, JSON.stringify(preserveRestoredRedirects(redirects), null, 2), "utf-8");
     console.log(`Compiled ${posts.length} published article(s) and ${redirects.length} redirect(s).`);
   } catch (error) {
     console.error("Notion build-time sync failed:", error);

@@ -1,0 +1,5 @@
+{
+  "method": "same-language main text, 5-word shingle Jaccard >=0.9; local static build",
+  "pages_examined": 46,
+  "pairs": []
+}

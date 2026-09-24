@@ -180,8 +180,9 @@ function Dropdown({
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
-      {open ? (
+      {(open || id === 'language') ? (
         <div
+          hidden={!open}
           id={panelId}
           data-desktop-dropdown-panel={id}
           className={`absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
@@ -340,6 +341,11 @@ export default function SourcingHomepageNav({
       document.removeEventListener('keydown', closeOnEscape);
     };
   }, [mobileOpen]);
+
+  const languageHref = (nextLanguage: Language) => {
+    const suffix = splitNavigationPath(location.pathname).pathname;
+    return navigationPath(/^\/blog\//.test(suffix) ? '/insights' : suffix, nextLanguage);
+  };
 
   const switchLanguage = async (nextLanguage: Language) => {
     const suffix = splitNavigationPath(location.pathname).pathname;
@@ -515,9 +521,9 @@ export default function SourcingHomepageNav({
             )}
           >
             {languageOptions.map((item) => (
-              <button key={item} type="button" onClick={() => switchLanguage(item)} lang={item === 'zh' ? 'zh-CN' : item} aria-pressed={item === language} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
+              <a key={item} href={languageHref(item)} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) { event.preventDefault(); void switchLanguage(item); } }} lang={item === 'zh' ? 'zh-CN' : item} aria-current={item === language ? 'page' : undefined} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
                 {languageLabels[item]}
-              </button>
+              </a>
             ))}
           </Dropdown>
           <Link
@@ -615,9 +621,9 @@ export default function SourcingHomepageNav({
             <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
             <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
               {languageOptions.map((item) => (
-                <button key={item} type="button" onClick={() => switchLanguage(item)} lang={item === 'zh' ? 'zh-CN' : item} aria-pressed={item === language} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
+                <a key={item} href={languageHref(item)} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) { event.preventDefault(); void switchLanguage(item); } }} lang={item === 'zh' ? 'zh-CN' : item} aria-current={item === language ? 'page' : undefined} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
                   {languageLabels[item]}
-                </button>
+                </a>
               ))}
             </div>
             <Link onClick={closeMobile} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--ddnz-action)] px-5 font-bold text-white" to={quoteHref}>{quoteLabel}</Link>

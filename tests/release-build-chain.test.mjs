@@ -40,7 +40,7 @@ function run(project, cwd = project) {
 }
 test('ordinary npm build preserves its pipeline and finishes with SEO and deployment inventory checks', async () => {
   const pkg = JSON.parse(await fs.readFile(path.join(root, 'package.json'), 'utf8'));
-  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/prerender-country-pages.mjs', 'node scripts/prerender-core-pages.mjs', 'node scripts/check-country-prerender.mjs', 'node scripts/check-core-prerender.mjs', 'node scripts/audit-seo-output.mjs', 'node scripts/audit-deployment-files.mjs'];
+  const expected = ['npm run fetch-notion', 'npm run optimize-insights-cards', 'vite build', 'tsx scripts/generate-static-pages.ts', 'npm run build:screen-protectors', 'node scripts/prerender-country-pages.mjs', 'node scripts/prerender-core-pages.mjs', 'node scripts/finalize-p0-seo.mjs', 'node scripts/check-country-prerender.mjs', 'node scripts/check-core-prerender.mjs', 'node scripts/audit-seo-output.mjs', 'node scripts/audit-deployment-files.mjs'];
   assert.deepEqual(pkg.scripts.build.split(' && '), expected);
   assert.doesNotMatch(pkg.scripts['build:preview'], /fetch-notion|npm run deploy|deploy-pages|git push|push-indexnow|push-baidu/);
   assert.ok(pkg.scripts['build:preview'].endsWith('node scripts/audit-deployment-files.mjs && node scripts/stage-local-preview.mjs'));

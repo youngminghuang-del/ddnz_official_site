@@ -1,3 +1,4 @@
+import CrawlableLanguageLinks from './CrawlableLanguageLinks';
 import { useId, useState } from 'react';
 import { ArrowRight, Clock3, Instagram, Linkedin, Mail, MapPin, MessageCircle, Music2, Phone, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
@@ -116,6 +117,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
         </div>
       </div>
       <LegalModal type={legalType} onClose={() => setLegalType(null)} />
+    <CrawlableLanguageLinks />
     </footer>
   );
 }
