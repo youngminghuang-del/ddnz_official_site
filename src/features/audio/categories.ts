@@ -1,3 +1,4 @@
+import productMedia from './product-media.json';
 import en from './categories-locales/en.json';import zh from './categories-locales/zh.json';import es from './categories-locales/es.json';import ar from './categories-locales/ar.json';import ru from './categories-locales/ru.json';import fr from './categories-locales/fr.json';import pt from './categories-locales/pt.json';import tr from './categories-locales/tr.json';
 import {buyerCopy,criterionIndices} from './buyer-guide';
 import {audioCategoryPaths,audioCategoryRoot} from './category-routes.mjs';
@@ -11,5 +12,5 @@ export function audioCategoryProducts(index:number,locale:CategoryLanguage){cons
 export function audioCategorySchema(index:number,locale:CategoryLanguage){const c=categoryCopy[locale],m=audioCategoryMeta(index,locale),url='https://www.ddnzglobal.com'+m.path;return {'@context':'https://schema.org','@graph':[
  {'@type':'CollectionPage','@id':url,name:m.title,description:m.description,url,inLanguage:locale==='zh'?'zh-CN':locale},
  {'@type':'BreadcrumbList',itemListElement:[{name:c.ui[0],item:'https://www.ddnzglobal.com'+foodPrefix(locale)+audioCategoryRoot+'/'},{name:c.names[index],item:url}].map((x,i)=>({'@type':'ListItem',position:i+1,...x}))},
- {'@type':'ItemList',itemListElement:audioCategoryProducts(index,locale).map(([name],i)=>({'@type':'ListItem',position:i+1,name,url:`${url}#product-${i+1}`}))}
+ {'@type':'ItemList',itemListElement:audioCategoryProducts(index,locale).map(([name],i)=>({'@type':'ListItem',position:i+1,name,image:'https://www.ddnzglobal.com'+productMedia[index][i].image,url:`${url}#product-${i+1}`}))}
 ]};}

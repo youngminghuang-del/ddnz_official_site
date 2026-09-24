@@ -6,3 +6,8 @@ export const audioAlternates=()=>foodLanguages.map(hrefLang=>({hrefLang,href:`ht
 export const audioMeta=(locale:AudioLocale)=>({title:`${audioCopy[locale].title} | DDNZ`,description:audioCopy[locale].intro});
 export const videoHeading={zh:'生产与功能记录',es:'Registros de producción y funciones',ar:'سجلات الإنتاج والوظائف',ru:'Записи производства и функций',fr:'Documents de production et de fonctions',pt:'Registros de produção e funções',tr:'Üretim ve işlev kayıtları'};
 export const audioSchema=(locale:AudioLocale)=>({'@context':'https://schema.org','@type':'CollectionPage',url:`https://www.ddnzglobal.com${foodPrefix(locale)}${audioPath}/`,name:audioCopy[locale].title,description:audioCopy[locale].intro,inLanguage:locale==='zh'?'zh-CN':locale});
+
+export const englishAudioMeta = {
+ title: 'Audio & Speaker Sourcing from China | DDNZ Global',
+ description: 'Source portable, party and specialty speakers from China with exact-model comparison, sample approval, production evidence and export release control.',
+};

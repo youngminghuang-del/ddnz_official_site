@@ -1,3 +1,5 @@
+import AudioSpeakersContent from '../src/pages/product-showcase/AudioSpeakersContent';
+import {englishAudioMeta} from '../src/features/audio/copy';
 import AudioCategoryContent,{AudioCategoryLinks} from '../src/features/audio/AudioCategoryContent';
 import {categoryIndex,audioCategoryPaths,audioCategoryMeta,audioCategorySchema,type CategoryLanguage} from '../src/features/audio/categories';
 import AudioAssortments from '../src/features/audio/AudioAssortments';
@@ -566,8 +568,8 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   },
   'sourcing/audio-speakers-from-china': {
     en: {
-      title: 'Audio & Speaker Sourcing from China | DDNZ',
-      desc: 'Source portable, party and professional speakers from China with configuration comparison, battery and function checks, inspection, consolidation and export support.',
+      title: englishAudioMeta.title,
+      desc: englishAudioMeta.description,
       keywords: 'speaker sourcing China, portable speaker supplier China, party speaker wholesale China, audio equipment inspection, private label speakers China',
       image: '/images/product-showcase/audio/vintage-range-hero-v1.webp'
     }
@@ -1569,6 +1571,10 @@ function injectStaticRouteContent(
     const index=categoryIndex('/'+relPath),locale=(lang==='zh-cn'?'zh':lang) as CategoryLanguage;
     const body=renderToStaticMarkup(createElement(AudioCategoryContent,{index,locale}));
     return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(audioCategorySchema(index,locale)).replace(/</g,'\\u003c')}</script></head>`);
+  }
+  if (lang === 'en' && '/'+relPath===audioPath) {
+    const body=renderToStaticMarkup(createElement(AudioSpeakersContent));
+    return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`);
   }
   if (lang !== 'en' && '/'+relPath===audioPath) {
     const locale=(lang==='zh-cn'?'zh':lang) as AudioLocale;

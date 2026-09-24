@@ -44,3 +44,21 @@ Additional product-family illustrations captured from public Alibaba category li
 - Party speaker: https://www.alibaba.com/wholesale/portable-speaker-system-with-microphone.html (image `H68e49274823c421c837a2f73ddc2aef7o.jpg_300x300.jpg`; listing describes a wheeled 15-inch PA type with two microphones; no power/sales claims carried over)
 
 The rendered gallery labels each image as an example for its family; other listed configurations do not reuse it as if it were their own exact SKU.
+
+
+## Per-product images and assortment previews (2026-09-24)
+
+All 50 configurations now have separate image files mapped to individual public Alibaba listings. All 18 assortment cards use the images of their actual included selections, with links back to those selections. Images and mappings are shared across eight locales; names and alt text follow the locale. Original supplier files are retained. At the user’s request, seven separate -clean.webp derivatives remove marked logos using image editing: audio-1-11 and audio-1-03 remove the displayed brand marks; audio-3-06, audio-4-04, audio-4-03, audio-5-03 and audio-5-08 remove the upper-left logo overlays. Shared mappings update cards and bundles across eight languages. These retouched reference images do not establish availability of an unbranded model. These remain quotation-stage product references, not verified DDNZ inventory or authorization claims. The selected images were visually inspected; rejected mismatches and heavily promotional images were replaced where a better source was available.
+
+Source inventory: `audio-product-media-2026-09-24.csv` (UTF-8 BOM), one row per configuration, including product ID, source URL, original image URL and retrieval date. `src/features/audio/product-media.json` binds the exact source listing to its card. No source-list ranking was interpreted as bestseller rank. No public sales counter or bestseller badge was added.
+
+### Sales signals used to prioritize candidate families
+
+- Z40 in-ear earbuds: public indexed Alibaba country listing showed 1,025 sold; another cached listing showed 1,095. A promotional page showed 1.2K+. These are different snapshots, not a verified live count for the exact selected offer. The selected Z40 offer's title includes “Best Seller”; that wording is a supplier claim, not evidence of a platform-awarded rank.
+  - https://www.alibaba.com/countrysearch/CN/earbud.html
+  - https://www.alibaba.com/countrysearch/CN/china-earbud-headphones.html
+- TG117 portable speaker: indexed Alibaba computer-speakers-2 listing showed 14,948 sold for Shenzhen Ept; a Top Deals snapshot showed 15.1K+. Used to prioritize the model family, not transferred to the selected offer from a different supplier.
+  - https://www.alibaba.com/countrysearch/CN/computer-speakers-2.html
+- K12 mini karaoke: prior recorded listing evidence is above. This run's category page still provides product ID 1601417660479 and its corresponding two-microphone image, but the detail URL could not be fetched through the search tool and a current sales count was not verified.
+
+Search/index snapshots are not live stock, demand forecasts, Amazon/Noon/Jumia rankings or evidence that every configuration is a bestseller. The evidence was checked on 2026-09-24; upstream crawl dates varied. Two overly specific selection names were corrected in all eight languages to match their reference images: shell-design mini karaoke speaker and retro home audio speaker.

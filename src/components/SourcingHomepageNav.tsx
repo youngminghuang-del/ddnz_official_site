@@ -1,3 +1,5 @@
+import { foodCategoryNavigation, foodNavigationLabels } from '../config/foodCategoryNavigation';
+import { audioCategoryNavigation } from '../config/audioCategoryNavigation';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ChevronDown, Globe2, Menu, X } from 'lucide-react';
@@ -391,8 +393,8 @@ export default function SourcingHomepageNav({
     <div className={variant === 'desktop' ? 'w-[min(760px,calc(100vw-2rem))] max-h-[calc(100dvh-120px)] overflow-y-auto' : ''}>
       <ul className={variant === 'desktop' ? 'grid grid-cols-2 gap-x-4 gap-y-2' : ''}>{[
         { to: '/sourcing/commercial-kitchen-equipment-from-china', label: labels.kitchen, children: [...kitchenCategoryNavigation(language), { to: '/refrigeration-equipment', label: labels.refrigeration }] },
-        { to: '/sourcing/food-processing-machinery-from-china', label: language === 'zh' ? '食品加工机械（英文）' : 'Food processing machinery', children: [{ to: '/sourcing/food-processing-machinery-from-china/#packages', label: language === 'zh' ? '场景设备组合' : 'Equipment packages' }] },
-        { to: '/sourcing/audio-speakers-from-china', label: labels.audio, children: [] },
+        { to: '/sourcing/food-processing-machinery-from-china', label: foodNavigationLabels[language], children: foodCategoryNavigation(language) },
+        { to: '/sourcing/audio-speakers-from-china', label: labels.audio, children: audioCategoryNavigation(language) },
         { to: '/sourcing/mobile-accessories-from-china', label: labels.mobile, children: [...mobileCategoryNavigation(language), filmNav] },
         { to: '/sourcing/outdoor-products-from-china', label: labels.outdoor, children: outdoorCategoryNavigation(language) },
       ].map(item => <li key={item.to}>

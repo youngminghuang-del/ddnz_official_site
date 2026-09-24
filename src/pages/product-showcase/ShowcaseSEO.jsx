@@ -1,3 +1,4 @@
+import {englishAudioMeta} from '../../features/audio/copy';
 import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
 import {refrigerationAlternates} from '../../features/refrigeration/copy';
 import {audioAlternates} from '../../features/audio/copy';
@@ -41,8 +42,8 @@ const pages = {
     image: "/images/product-showcase/mobile/family-phone-cases-v1.webp",
   },
   audio: {
-    title: "Audio & Speaker Sourcing from China | DDNZ Global",
-    description: "Source portable, party and specialty speakers from China with exact-model comparison, sample approval, production evidence and export release control.",
+    title: englishAudioMeta.title,
+    description: englishAudioMeta.description,
     keywords: "speaker sourcing China, audio supplier China, Bluetooth speaker manufacturer, speaker quality control China",
     path: "/sourcing/audio-speakers-from-china",
     image: "/images/product-showcase/audio/vintage-range-hero-v1.webp",
