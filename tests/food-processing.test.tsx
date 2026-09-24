@@ -8,15 +8,15 @@ import { foodProcessingRoutes, foodPage, foodPageMeta, foodPageSchema } from '..
 import FoodProcessingContent from '../src/features/food-processing/FoodProcessingContent.jsx';
 import { englishProductRedirect } from '../src/lib/productLanguageRouting';
 
-test('selected wholesale prices and packing match the PDF column, including motor/guard variants',()=>{
+test('display prices are 150% of the PDF wholesale column; packing stays unchanged',()=>{
   const expected = [['hw-j15-copper',1470,40],['yh-gt300',1180,0],['h20',2300,0],['b20-guard',2150,0],['q31b',2150,0],['dq-t',580,0],['jr-gg22',1120,0],['dj-h18',870,40],['cx-l',2560,0],['tp-350',1200,50],['dq-ps300-copper',1150,0],['sc-r22',380,0],['mj-d100',650,0],['mj-h12',780,0],['gz-tc',1370,0],['tm-hl',1380,45]];
-  assert.deepEqual(machines.map(m=>[m.id,m.price,m.packing]),expected);
+  assert.deepEqual(machines.map(m=>[m.id,m.price,m.packing]),expected.map(([id,price,packing])=>[id,Number(price)*1.5,packing]));
   for(const m of machines) assert.ok(fs.existsSync(`public/food-processing-media/${m.image}.webp`));
 });
 test('package totals use one of each machine and keep packing separate',()=>{
   assert.deepEqual(packages.map(p=>selectionTotals(packageSelection(p))),[
-    {equipment:2650,packing:40,units:2},{equipment:6600,packing:0,units:3},{equipment:1700,packing:0,units:2},{equipment:4550,packing:40,units:3},{equipment:2730,packing:50,units:3},{equipment:1430,packing:0,units:2}]);
-  assert.deepEqual(selectionTotals({'hw-j15-copper':2,'yh-gt300':3}),{equipment:6480,packing:80,units:5});
+    {equipment:3975,packing:40,units:2},{equipment:9900,packing:0,units:3},{equipment:2550,packing:0,units:2},{equipment:6825,packing:40,units:3},{equipment:4095,packing:50,units:3},{equipment:2145,packing:0,units:2}]);
+  assert.deepEqual(selectionTotals({'hw-j15-copper':2,'yh-gt300':3}),{equipment:9720,packing:80,units:5});
   assert.deepEqual(selectionTotals({'h20':-1,'cx-l':1.5,'unknown':4,'dq-t':100}),{equipment:0,packing:0,units:0});
 });
 test('quotation preserves model configuration, quantities, packing and destination',()=>{
@@ -25,7 +25,7 @@ test('quotation preserves model configuration, quantities, packing and destinati
   assert.equal(url.searchParams.get('dest'),'Almaty, Kazakhstan');
   const notes=url.searchParams.get('notes')!;
   assert.match(notes,/Copper-core motor · 15 kg model/);assert.match(notes,/With bowl guard/);
-  assert.match(notes,/CNY 5,090/);assert.match(notes,/Listed packing: CNY 80/);assert.match(notes,/220 V; 50 Hz/);
+  assert.match(notes,/CNY 7,635/);assert.match(notes,/Listed packing: CNY 80/);assert.match(notes,/220 V; 50 Hz/);
 });
 test('all 11 landing pages render unique metadata, crawlable products, internal links and breadcrumbs',()=>{
   const titles=new Set();

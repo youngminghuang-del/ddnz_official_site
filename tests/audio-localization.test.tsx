@@ -6,3 +6,16 @@ test('seven audio bodies contain native ranges, six configuration checks, four s
  assert.equal(navigationPath(audioPath,locale),`/${locale==='zh'?'zh-cn':locale}${audioPath}/`);assert.equal(supportedNavigationLanguages(audioPath).length,8);assert.equal(audioAlternates().length,8);
  }
 });
+
+import AudioAssortments from '../src/features/audio/AudioAssortments';
+import assortments from '../src/features/audio/assortments.json';
+test('all eight seller assortments preserve local quotation paths and chosen product scope',()=>{
+ for(const locale of Object.keys(assortments) as (keyof typeof assortments)[]){
+  const html=renderToStaticMarkup(<AudioAssortments locale={locale}/>);
+  assert.equal((html.match(/<article\b/g)||[]).length,12);
+  assert.ok(html.includes('Amazon'));assert.ok(html.includes('Noon'));assert.ok(html.includes('Jumia'));
+  const links=[...html.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://www.ddnzglobal.com'));
+  assert.equal(links.length,9);
+  for(const link of links){assert.equal(link.pathname,`${locale==='en'?'':`/${locale==='zh'?'zh-cn':locale}`}/get-a-quote/`);assert.ok(link.searchParams.get('productScope'));assert.equal(link.searchParams.get('source'),'audio_assortments');}
+ }
+});

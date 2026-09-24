@@ -1,0 +1,133 @@
+{
+  "names": [
+    "Casques et écouteurs",
+    "Enceintes de bureau et PC",
+    "Enceintes portables et extérieures",
+    "Enceintes de fête et karaoké",
+    "Hi-Fi et enceintes bibliothèque"
+  ],
+  "titles": [
+    "Acheter casques et écouteurs en gros en Chine",
+    "Acheter des enceintes PC en gros en Chine",
+    "Acheter des enceintes Bluetooth portables en Chine",
+    "Acheter des enceintes de fête et karaoké en Chine",
+    "Acheter Hi-Fi et enceintes bibliothèque en Chine"
+  ],
+  "intros": [
+    "Pour boutiques, marques propres et vendeurs Amazon : comparez confort, appels et recharge avant de choisir TWS, casques et gaming.",
+    "Pour revendeurs informatiques : comparez paires USB, barres compactes et ensembles actifs selon espace, connectique et emballage.",
+    "Pour voyages et cadeaux : comparez mini, boombox et douche selon autonomie, poids emballé et usage.",
+    "Pour détaillants, Noon et Jumia : comparez coffrets à deux micros et grands modèles selon puissance nominale et accessoires.",
+    "Pour spécialistes : comparez entrées, finition et écoute des échantillons ; le terme premium ne remplace pas la validation."
+  ],
+  "newProducts": [
+    [
+      "Écouteurs TWS avec boîtier",
+      "Comparez maintien, appels, batterie du boîtier et appairages répétés."
+    ],
+    [
+      "Casque sans fil circum-aural",
+      "Vérifiez confort, pliage, coussinets et autonomie ; distinguez ANC et réduction du bruit du micro."
+    ],
+    [
+      "Casque gaming",
+      "Définissez USB, 3,5 mm ou sans fil, appareils, micro et latence."
+    ],
+    [
+      "Paire PC 2.0 alimentée par USB",
+      "Distinguez alimentation et audio USB ; confirmez câble 3,5 mm et longueurs."
+    ],
+    [
+      "Barre de son de bureau compacte",
+      "Mesurez l’espace sous écran et testez entrées et souffle à faible volume."
+    ],
+    [
+      "Paire stéréo active de bureau",
+      "Confirmez adaptateur, câble entre enceintes, entrées et paire de référence."
+    ],
+    [
+      "Paire bibliothèque active",
+      "Vérifiez amplification intégrée, enceinte principale, entrées et télécommande ; écoutez à volume égal."
+    ],
+    [
+      "Enceintes bibliothèque passives",
+      "Amplificateur externe nécessaire : confirmez impédance et prix par enceinte ou paire."
+    ]
+  ],
+  "packNames": [
+    [
+      "Démarrage boutique accessoires",
+      "Lancement sous marque propre"
+    ],
+    [
+      "Assortiment PC économique",
+      "Ensemble audio télétravail"
+    ],
+    [
+      "Première commande portable économique",
+      "Assortiment voyage et extérieur"
+    ],
+    [
+      "Coffret karaoké maison",
+      "Assortiment fête pour revendeurs"
+    ],
+    [
+      "Premier ensemble stéréo actif",
+      "Projet passif avec amplificateur"
+    ]
+  ],
+  "packBodies": [
+    [
+      "Comparez TWS et casques ; précisez couleurs, MOQ et boîtes.",
+      "En marque propre, validez logo, maquette et échantillon avant le lot."
+    ],
+    [
+      "Comparez paire USB et barre avec SKU distincts.",
+      "Pour la paire active, incluez adaptateur, câbles et protection transport."
+    ],
+    [
+      "Comparez mini RGB et douche pour Jumia ; limitez les couleurs.",
+      "Pour extérieur, demandez sangles, câbles et preuves d’autonomie et de résistance à l’eau."
+    ],
+    [
+      "Définissez enceinte, deux micros, câbles et coffret.",
+      "Pour revente, ajoutez grand modèle et chiffrez rechanges et fret séparément."
+    ],
+    [
+      "Pour la paire active, confirmez télécommande et alimentation.",
+      "En passif, précisez ampli, compatibilité, câbles et essai du système."
+    ]
+  ],
+  "questions": [
+    "Peut-on acheter des écouteurs de marque propre pour Amazon ?",
+    "L’USB transporte-t-il toujours le son ?",
+    "Comment comparer les fournisseurs extérieurs économiques ?",
+    "Plus de watts annoncés signifie-t-il un meilleur son ?",
+    "Actif et passif sont-ils interchangeables ?"
+  ],
+  "answers": [
+    "Indiquez pays, modèle, volume et boîte. Vérifiez échantillons, documents batterie et MOQ du logo par SKU.",
+    "Non : certains utilisent l’USB uniquement pour l’alimentation et nécessitent une entrée 3,5 mm. Testez les ports réels.",
+    "Comparez autonomie, accessoires, emballage et fret sur la même base. Exigez des preuves de résistance à l’eau par modèle.",
+    "Non : puissance de crête et nominale diffèrent. Comparez distorsion, batterie et micro dans les mêmes conditions.",
+    "Non : l’actif intègre l’amplification ; le passif exige un ampli et une compatibilité électrique."
+  ],
+  "ui": [
+    "Audio et enceintes",
+    "Comparer les produits",
+    "Composer la commande",
+    "Questions d’achat",
+    "Autres catégories audio",
+    "Demander un devis",
+    "Canal et préparation de commande",
+    "Explorer les catégories"
+  ],
+  "channel": [
+    "Amazon / eBay : TWS de marque propre avec boîtes et configuration du boîtier.",
+    "eBay / Shopee / Mercado Libre : enceintes USB compactes, connectique vérifiée et emballage individuel.",
+    "Jumia / Noon : assortiment Bluetooth économique, couleurs mixtes et groupage depuis la Chine.",
+    "Noon / Jumia / TikTok Shop : karaoké à deux micros et RGB avec vidéos d’échantillons.",
+    "Amazon / boutiques spécialisées : paires actives, compatibilité des entrées et télécommandes de rechange."
+  ],
+  "note": "Sélections à chiffrer. Stock, prix USD ou CNY, MOQ, personnalisation, documents et délais sont confirmés par modèle ; ventes et acceptation des plateformes ne sont pas garanties."
+}

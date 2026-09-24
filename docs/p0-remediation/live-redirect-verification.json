@@ -1,0 +1,112 @@
+{
+  "checked_at": "2026-09-24T08:03:19.737487+00:00",
+  "passed": 7,
+  "total": 7,
+  "rows": [
+    {
+      "from": "/ar/blog/evergreen-saf-china-south-africa-route",
+      "to": "/blog/evergreen-saf-china-south-africa-route/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/evergreen-saf-china-south-africa-route/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/fr/blog/evergreen-saf-china-south-africa-route",
+      "to": "/blog/evergreen-saf-china-south-africa-route/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/evergreen-saf-china-south-africa-route/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/zh-cn/blog/evergreen-saf-china-south-africa-route",
+      "to": "/blog/evergreen-saf-china-south-africa-route/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/evergreen-saf-china-south-africa-route/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/ru/blog/evergreen-saf-china-south-africa-route",
+      "to": "/blog/evergreen-saf-china-south-africa-route/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/evergreen-saf-china-south-africa-route/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/ar/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026",
+      "to": "/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/zh-cn/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026",
+      "to": "/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/coffee-equipment-china-saudi-dealers-sellable-range-2026/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    },
+    {
+      "from": "/ar/blog/insulated-cooler-boxes-africa-china-ice-retention-test",
+      "to": "/blog/insulated-cooler-boxes-africa-china-ice-retention-test/",
+      "source": {
+        "status": 301,
+        "location": "https://www.ddnzglobal.com/blog/insulated-cooler-boxes-africa-china-ice-retention-test/",
+        "error": null
+      },
+      "target": {
+        "status": 200,
+        "location": null,
+        "error": null
+      },
+      "passed": true
+    }
+  ]
+}

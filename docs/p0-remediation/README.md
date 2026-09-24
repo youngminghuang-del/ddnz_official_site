@@ -20,4 +20,4 @@ Local dependencies were missing d3/topojson/world-atlas in the shared node_modul
 
 ## Release state
 
-Local implementation and preview only; production deployment and applying the seven new Cloudflare 301 entries are not represented as completed. `cloudflare-redirects.csv` is UTF-8 with BOM and includes the retained mapping set. Preserve existing Cloudflare normalization and security rules when applying changes. Verify actual source status=301, Location=canonical target, target status=200 after release.
+Production commit `2f30eefa91ba25e4eff2d7f9af9002285e4761d6` was deployed by GitHub run `35970260557` on 2026-09-24. The seven Cloudflare bulk redirects were subsequently applied and all seven source URLs returned a direct HTTP 301 to the canonical English article, whose target returned HTTP 200. Evidence is recorded in `live-redirect-verification.json`; `verify-restored-redirects.py` reproduces the read-only check. The UTF-8-with-BOM `cloudflare-redirects.csv` preserves the complete prior mapping set. Preserve existing Cloudflare normalization and security rules when making later changes.

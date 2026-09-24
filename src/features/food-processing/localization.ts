@@ -6,7 +6,7 @@ import fr from './locales/fr.json';
 import pt from './locales/pt.json';
 import tr from './locales/tr.json';
 import { overviewCopy } from '../overview/copy';
-import { machines, packages, selectionTotals, money, sourceDate } from './catalog.mjs';
+import { machines, packages, selectionTotals, money, displayPriceDate } from './catalog.mjs';
 import { categoryPages, foodPage } from './pages.mjs';
 export const foodLocales = {zh,es,ar,ru,fr,pt,tr};
 export type FoodLocale = keyof typeof foodLocales;
@@ -35,6 +35,6 @@ export function localizedFoodSchema(page:any,locale:FoodLocale) {
 export function localizedFoodInquiry(selection:Record<string,number>,destination:string,requirement:string,locale:FoodLocale) {
  const c=foodLocales[locale], t=selectionTotals(selection);
  const lines=machines.filter(m=>Number.isInteger(selection[m.id])&&selection[m.id]>0&&selection[m.id]<=99).map(m=>{const i=machines.indexOf(m),q=selection[m.id];return `${m.model} · ${c.names[i]} · ${c.variants[i]} × ${q}: ${money(m.price*q)}; ${c.ui.packing}: ${money(m.packing*q)}`;});
- const notes=[`${c.ui.priceList}: ${sourceDate}`, ...lines,`${c.ui.equipment}: ${money(t.equipment)}; ${c.ui.packing}: ${money(t.packing)}`,c.ui.exclude,requirement].filter(Boolean).join('\n');
+ const notes=[`${c.ui.priceList}: ${displayPriceDate}`, ...lines,`${c.ui.equipment}: ${money(t.equipment)}; ${c.ui.packing}: ${money(t.packing)}`,c.ui.exclude,requirement].filter(Boolean).join('\n');
  return `${foodPrefix(locale)}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',industry:c.ui.catalogueTitle,source:'food_processing',productScope:lines.join('\n'),notes,dest:destination});
 }

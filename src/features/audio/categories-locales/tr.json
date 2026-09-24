@@ -1,0 +1,133 @@
+{
+  "names": [
+    "Kulaklıklar ve TWS",
+    "Masaüstü ve PC hoparlörleri",
+    "Taşınabilir ve dış mekân hoparlörleri",
+    "Parti ve karaoke hoparlörleri",
+    "Ev Hi-Fi ve raf hoparlörleri"
+  ],
+  "titles": [
+    "Çin’den toptan kulaklık satın alın",
+    "Çin’den toptan PC hoparlörü satın alın",
+    "Çin’den taşınabilir Bluetooth hoparlör satın alın",
+    "Çin’den parti ve karaoke hoparlörü alın",
+    "Çin’den ev Hi-Fi ve raf hoparlörü alın"
+  ],
+  "intros": [
+    "Mağazalar, özel markalar ve Amazon için: TWS, baş üstü ve oyuncu modellerini seçmeden önce konfor, arama ve şarjı karşılaştırın.",
+    "Bilgisayar mağazaları için: USB çiftleri, küçük soundbar ve aktif setleri alan, bağlantı ve ambalaja göre karşılaştırın.",
+    "Seyahat ve hediyeler için: mini, boombox ve duş modellerini pil süresi, paket ağırlığı ve kullanıma göre seçin.",
+    "Perakende, Noon ve Jumia için: iki mikrofonlu setleri ve büyük modelleri nominal güç ve aksesuarla karşılaştırın.",
+    "Uzman mağazalar için: girişler, kaplama ve numune dinlemesini karşılaştırın; premium etiketi doğrulamanın yerini tutmaz."
+  ],
+  "newProducts": [
+    [
+      "Şarj kutulu TWS kulaklık",
+      "Uyum, arama, kutu pili ve tekrar eşleşmeyi karşılaştırın."
+    ],
+    [
+      "Kablosuz baş üstü kulaklık",
+      "Konfor, katlanma, ped ve pil süresini kontrol edin; ANC ile mikrofon gürültü azaltmayı ayırın."
+    ],
+    [
+      "Oyuncu kulaklığı",
+      "USB, 3,5 mm veya kablosuz bağlantıyı, cihazı, mikrofonu ve gecikmeyi tanımlayın."
+    ],
+    [
+      "USB beslemeli 2.0 PC çifti",
+      "USB güç ve USB sesi ayırın; 3,5 mm kablo ve uzunlukları teyit edin."
+    ],
+    [
+      "Kompakt masaüstü soundbar",
+      "Monitör altını ölçün; girişleri ve düşük sesteki dip gürültüsünü test edin."
+    ],
+    [
+      "Aktif masaüstü stereo çifti",
+      "Adaptör, ara kablo, girişler ve referans numune çiftini onaylayın."
+    ],
+    [
+      "Aktif raf hoparlörü çifti",
+      "Dahili amplifikasyon, ana hoparlör, giriş ve kumandayı kontrol edin; aynı sesle dinleyin."
+    ],
+    [
+      "Pasif raf hoparlörleri",
+      "Harici amplifikatör gerekir; empedansı ve fiyatın tekli mi çift mi olduğunu teyit edin."
+    ]
+  ],
+  "packNames": [
+    [
+      "Aksesuar mağazası başlangıcı",
+      "Özel marka lansmanı"
+    ],
+    [
+      "Ekonomik PC karması",
+      "Ev ofis ses seti"
+    ],
+    [
+      "Düşük maliyetli taşınabilir başlangıç",
+      "Seyahat ve dış mekân karması"
+    ],
+    [
+      "Ev karaoke hediye seti",
+      "Parti ürünleri bayi karması"
+    ],
+    [
+      "Aktif stereo başlangıcı",
+      "Amplifikatörlü pasif sistem"
+    ]
+  ],
+  "packBodies": [
+    [
+      "TWS ve baş üstünü karşılaştırın; renk, MOQ ve kutu belirleyin.",
+      "Özel markada seri üretimden önce logo, tasarım ve numuneyi onaylayın."
+    ],
+    [
+      "USB çiftini ve soundbarı ayrı SKU yapın.",
+      "Aktif sete adaptör, kablo ve taşıma korumasını dahil edin."
+    ],
+    [
+      "Jumia için mini RGB ve duşu karşılaştırın; renkleri sınırlayın.",
+      "Dış mekânda askı, kablo, pil ve su dayanımı kanıtı isteyin."
+    ],
+    [
+      "Hoparlör, iki mikrofon, kablo ve hediye kutusunu belirtin.",
+      "Bayi karmasına büyük model ekleyin; yedek ve navlunu ayrı fiyatlandırın."
+    ],
+    [
+      "Aktif çiftte kumanda ve beslemeyi teyit edin.",
+      "Pasifte amplifikatör, uyum, kablo ve sistem testini tanımlayın."
+    ]
+  ],
+  "questions": [
+    "Amazon için özel markalı TWS alınabilir mi?",
+    "USB her zaman sesi taşır mı?",
+    "Ekonomik dış mekân tedarikçileri nasıl karşılaştırılır?",
+    "Daha yüksek watt daha iyi ses mi demek?",
+    "Aktif ve pasif doğrudan değiştirilebilir mi?"
+  ],
+  "answers": [
+    "Ülke, model, adet ve kutuyu belirtin. Numune, pil belgesi ve logo MOQ değerini SKU bazında kontrol edin.",
+    "Hayır; USB sadece güç sağlayabilir ve ses için 3,5 mm gerekebilir. Gerçek bağlantıları deneyin.",
+    "Pil koşulları, aksesuar, ambalaj ve navlunu eşitleyin. Modelin su dayanımı kanıtını isteyin.",
+    "Hayır; tepe ve nominal güç farklıdır. Bozulma, pil ve mikrofonu aynı koşullarda karşılaştırın.",
+    "Hayır; aktifte amplifikatör vardır, pasif harici amplifikatör ve elektriksel uyum gerektirir."
+  ],
+  "ui": [
+    "Ses ve hoparlörler",
+    "Ürünleri karşılaştırın",
+    "Siparişinizi oluşturun",
+    "Satın alma soruları",
+    "Diğer ses kategorileri",
+    "Tedarik teklifi isteyin",
+    "Kanal ve sipariş planı",
+    "Kategorileri inceleyin"
+  ],
+  "channel": [
+    "Amazon / eBay: perakende kutulu özel markalı TWS ve tanımlı şarj kutusu.",
+    "eBay / Shopee / Mercado Libre: doğrulanmış bağlantılı ve tekli ambalajlı USB hoparlör.",
+    "Jumia / Noon: ekonomik Bluetooth karması, karışık renkler ve Çin’den konsolidasyon.",
+    "Noon / Jumia / TikTok Shop: iki mikrofonlu karaoke ve numune videolu RGB.",
+    "Amazon / uzman mağazalar: aktif çiftler, giriş uyumu ve yedek kumanda planı."
+  ],
+  "note": "Teklif için ürün yönleridir. Stok, USD veya CNY fiyatı, MOQ, marka, belgeler ve süre modele göre teyit edilir; platform satışı veya kabulü garanti edilmez."
+}

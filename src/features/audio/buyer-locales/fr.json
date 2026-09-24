@@ -1,0 +1,198 @@
+{
+  "options": [
+    [
+      "Écouteurs TWS intra-auriculaires",
+      "Écouteurs TWS ouverts",
+      "Écouteurs avec ANC",
+      "Écouteurs avec boîtier à écran",
+      "Écouteurs de sport à arceau",
+      "Écouteurs ouverts à clip",
+      "Casque sans fil pliable",
+      "Casque circum-aural avec ANC",
+      "Écouteurs filaires USB-C",
+      "Casque gaming 3,5 mm",
+      "Casque gaming USB",
+      "Casque gaming sans fil 2,4 GHz"
+    ],
+    [
+      "Enceintes 2.0 alimentées par USB",
+      "Enceintes audio numérique USB",
+      "Barre compacte sous écran",
+      "Paire d’enceintes de bureau RGB",
+      "Paire de bureau Bluetooth",
+      "Système de bureau 2.1",
+      "Paire stéréo active de bureau",
+      "Enceintes avec sortie casque"
+    ],
+    [
+      "Enceinte Bluetooth de poche",
+      "Mini-enceinte RGB",
+      "Enceinte de voyage à clip",
+      "Enceinte de douche à ventouse",
+      "Enceinte extérieure à sangle",
+      "Enceinte portable à poignée",
+      "Enceinte portable à appairage stéréo",
+      "Enceinte portable avec lecture USB",
+      "Enceinte radio et Bluetooth",
+      "Enceinte compacte de camping",
+      "Enceinte portable rétro",
+      "Enceinte portable avec entrée micro"
+    ],
+    [
+      "Mini-karaoké à un micro",
+      "Mini-karaoké à deux micros",
+      "Coffret cadeau karaoké RGB",
+      "Enceinte de fête compacte à poignée",
+      "Enceinte de fête 8 pouces",
+      "Enceinte de fête double 8 pouces",
+      "Enceinte de fête à roulettes",
+      "Enceinte de fête sur secteur",
+      "Enceinte avec entrée instrument",
+      "Ensemble de fête à micro sans fil"
+    ],
+    [
+      "Paire compacte d’enceintes bibliothèque actives",
+      "Paire bibliothèque active Bluetooth",
+      "Paire bibliothèque avec entrée optique",
+      "Paire bibliothèque avec audio USB",
+      "Paire active avec sortie caisson",
+      "Paire compacte d’enceintes bibliothèque passives",
+      "Grande paire d’enceintes bibliothèque passives",
+      "Système stéréo domestique rétro"
+    ]
+  ],
+  "labels": [
+    "Choisir un assortiment initial",
+    "Comparer avant de commander",
+    "Critère de sélection",
+    "Éléments à demander",
+    "Contrôles avant validation des échantillons",
+    "Emballage et marque propre",
+    "Calculer le coût livré",
+    "Préparer des devis comparables",
+    "Sélection incluse",
+    "Planification de commande",
+    "Demander cet assortiment",
+    "Configurations à sourcer",
+    "Exemples de produits",
+    "Configuration, minimum de commande et disponibilité sont confirmés sur devis. Les photos illustrent la famille indiquée, pas chaque configuration.",
+    "Voir la sélection",
+    "Produits",
+    "Assortiments",
+    "Guide d’achat"
+  ],
+  "checks": [
+    [
+      [
+        "Maintien et confort",
+        "Comparer embouts, pression et confort sur un échantillon réel."
+      ],
+      [
+        "Audio et appels",
+        "Demander un enregistrement d’appel et évaluer le micro séparément de l’ANC."
+      ],
+      [
+        "Connexion et charge",
+        "Tester le téléphone ou ordinateur visé, l’entrée de charge et la reconnexion."
+      ]
+    ],
+    [
+      [
+        "Alimentation et audio",
+        "Confirmer si USB transmet l’audio ou seulement l’alimentation et lister les câbles supplémentaires."
+      ],
+      [
+        "Encombrement",
+        "Demander largeur, hauteur, longueur des câbles et position du volume."
+      ],
+      [
+        "Bruit et canaux",
+        "Vérifier le bruit à faible volume et les canaux gauche/droite sur l’ordinateur prévu."
+      ]
+    ],
+    [
+      [
+        "Portage et protection",
+        "Vérifier sangle, clip ou ventouse et demander les preuves de tout indice IP."
+      ],
+      [
+        "Batterie et lecture",
+        "Comparer l’autonomie à volume et éclairage identiques et confirmer l’entrée de charge."
+      ],
+      [
+        "Emballage et commandes",
+        "Vérifier poids emballé, accès aux boutons et modes de lecture."
+      ]
+    ],
+    [
+      [
+        "Puissance et micros",
+        "Comparer la puissance nominale continue et tester tous les micros simultanément."
+      ],
+      [
+        "Alimentation et mobilité",
+        "Confirmer batterie ou secteur, prise, poignée et roulettes."
+      ],
+      [
+        "Entrées et accessoires",
+        "Tester les entrées prévues et relever micros, câbles et télécommandes par carton."
+      ]
+    ],
+    [
+      [
+        "Amplification",
+        "Confirmer conception active ou passive, amplificateur inclus et devis à l’unité ou à la paire."
+      ],
+      [
+        "Connexion de source",
+        "Tester la source réelle et ses entrées ; USB ne signifie pas toujours audio."
+      ],
+      [
+        "Coffret et livraison",
+        "Comparer dimensions de la paire, finition, calage protecteur et poids emballé."
+      ]
+    ]
+  ],
+  "extraPacks": [
+    "Assortiment pour boutique gaming",
+    "Assortiment de casques pour les trajets",
+    "Assortiment pour bureau gaming compact",
+    "Assortiment cadeaux et voyage",
+    "Assortiment portable avec radio",
+    "Assortiment initial d’enceintes de fête",
+    "Commande d’essai pour événements",
+    "Assortiment comparatif audio domestique"
+  ],
+  "packPlan": "Commencer par une sélection d’échantillons. Confirmer quantités, couleurs et minimums par produit ; un assortiment mixte ne supprime pas les minimums de chaque usine. Conserver la configuration validée pour les réassorts.",
+  "packaging": "Préciser logo, dimensions de boîte, code-barres, langue de notice et accessoires. Comparer emballage standard et personnalisé avant validation des maquettes ou moules. Vérifier séparément les autorisations de marque.",
+  "freight": "Envoyer quantités, cartons, dimensions, poids brut et ville de livraison. Pour les modèles à batterie, fournir spécifications et documents de transport disponibles pour examen. Préciser les frais d’origine, fret, destination et taxes inclus.",
+  "brief": "Indiquer produits, canal, marché, quantité initiale, emballage et adresse. Demander les coûts séparés des échantillons, marchandises, personnalisation et transport pour comparer les offres.",
+  "evidence": "Ces contrôles sont à demander avant commande ; ils ne signifient pas que DDNZ a testé toutes les configurations.",
+  "channelTitle": "Préparer la commande pour votre canal",
+  "channels": [
+    [
+      "Amazon / eBay",
+      "Demander photos du modèle, dimensions, variantes et emplacement du code-barres. Vérifier les exigences du marché précis avant validation de l’emballage."
+    ],
+    [
+      "Noon / Jumia",
+      "Définir destination, langue, accessoires de charge et pièces de rechange. Comparer le coût livré par unité vendable."
+    ],
+    [
+      "Shopee / TikTok Shop / Mercado Libre",
+      "Commencer avec peu de produits bien différenciés. Demander démonstrations sur échantillons et dimensions de colis avant de planifier les promotions."
+    ]
+  ],
+  "serviceLinks": [
+    "Recherche de fournisseurs",
+    "Inspection et qualité",
+    "Planification du fret"
+  ],
+  "inspection": [
+    "Comparer embouts, pression et confort sur un échantillon réel. Demander un enregistrement d’appel et évaluer le micro séparément de l’ANC. Tester le téléphone ou ordinateur visé, l’entrée de charge et la reconnexion.",
+    "Confirmer si USB transmet l’audio ou seulement l’alimentation et lister les câbles supplémentaires. Demander largeur, hauteur, longueur des câbles et position du volume. Vérifier le bruit à faible volume et les canaux gauche/droite sur l’ordinateur prévu.",
+    "Vérifier sangle, clip ou ventouse et demander les preuves de tout indice IP. Comparer l’autonomie à volume et éclairage identiques et confirmer l’entrée de charge. Vérifier poids emballé, accès aux boutons et modes de lecture.",
+    "Comparer la puissance nominale continue et tester tous les micros simultanément. Confirmer batterie ou secteur, prise, poignée et roulettes. Tester les entrées prévues et relever micros, câbles et télécommandes par carton.",
+    "Confirmer conception active ou passive, amplificateur inclus et devis à l’unité ou à la paire. Tester la source réelle et ses entrées ; USB ne signifie pas toujours audio. Comparer dimensions de la paire, finition, calage protecteur et poids emballé."
+  ]
+}

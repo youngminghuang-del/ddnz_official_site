@@ -1,0 +1,198 @@
+{
+  "options": [
+    [
+      "Kulak içi TWS kulaklık",
+      "Açık tip TWS kulaklık",
+      "ANC kulaklık",
+      "Ekranlı kutulu kulaklık",
+      "Kulak kancalı spor kulaklık",
+      "Açık kulak klipsli kulaklık",
+      "Katlanabilir kablosuz kulaklık",
+      "Kulak üstü ANC kulaklık",
+      "USB-C kablolu kulaklık",
+      "3,5 mm oyun kulaklığı",
+      "USB oyun kulaklığı",
+      "2,4 GHz kablosuz oyun kulaklığı"
+    ],
+    [
+      "USB beslemeli 2.0 hoparlör",
+      "USB dijital ses hoparlörü",
+      "Monitör altı kompakt soundbar",
+      "RGB masaüstü hoparlör çifti",
+      "Bluetooth masaüstü hoparlör çifti",
+      "2.1 masaüstü sistem",
+      "Aktif masaüstü stereo çift",
+      "Kulaklık çıkışlı masaüstü hoparlör"
+    ],
+    [
+      "Cep tipi Bluetooth hoparlör",
+      "Mini RGB hoparlör",
+      "Klipsli seyahat hoparlörü",
+      "Vantuzlu duş hoparlörü",
+      "Askılı dış mekân hoparlörü",
+      "Tutma kollu taşınabilir hoparlör",
+      "Stereo eşleştirmeli taşınabilir hoparlör",
+      "USB oynatmalı taşınabilir hoparlör",
+      "Radyo ve Bluetooth hoparlör",
+      "Kompakt kamp hoparlörü",
+      "Retro taşınabilir hoparlör",
+      "Mikrofon girişli taşınabilir hoparlör"
+    ],
+    [
+      "Tek mikrofonlu mini karaoke seti",
+      "Çift mikrofonlu mini karaoke seti",
+      "RGB karaoke hediye seti",
+      "Tutma kollu kompakt parti hoparlörü",
+      "Tek 8 inç parti hoparlörü",
+      "Çift 8 inç parti hoparlörü",
+      "Tekerlekli parti hoparlörü",
+      "Şebeke beslemeli parti hoparlörü",
+      "Enstrüman girişli parti hoparlörü",
+      "Kablosuz mikrofonlu parti seti"
+    ],
+    [
+      "Kompakt aktif raf hoparlörü çifti",
+      "Bluetooth aktif raf hoparlörü çifti",
+      "Optik girişli raf hoparlörü çifti",
+      "USB sesli raf hoparlörü çifti",
+      "Subwoofer çıkışlı aktif çift",
+      "Kompakt pasif raf hoparlörü çifti",
+      "Büyük pasif raf hoparlörü çifti",
+      "Retro ev stereo sistemi"
+    ]
+  ],
+  "labels": [
+    "İlk ürün yelpazesini seçin",
+    "Siparişten önce karşılaştırın",
+    "Seçim ölçütü",
+    "İstenecek kanıt",
+    "Numune onay kontrol listesi",
+    "Ambalaj ve özel marka",
+    "Teslim maliyetini planlayın",
+    "Karşılaştırılabilir teklif hazırlayın",
+    "Dahil edilen seçenekler",
+    "Sipariş planlama",
+    "Bu ürün grubuna teklif alın",
+    "Tedarik edilecek yapılandırmalar",
+    "Ürün örnekleri",
+    "Yapılandırma, minimum sipariş ve tedarik teklifle doğrulanır. Fotoğraflar belirtilen ürün ailesini gösterir; her yapılandırmayı temsil etmez.",
+    "Seçimi görüntüle",
+    "Ürünler",
+    "Paketler",
+    "Satın alma rehberi"
+  ],
+  "checks": [
+    [
+      [
+        "Uyum ve konfor",
+        "Gerçek numunede kulak uçlarını, sıkma kuvvetini ve konforu karşılaştırın."
+      ],
+      [
+        "Ses ve aramalar",
+        "Arama kaydı isteyin; mikrofon performansını ANC’den ayrı değerlendirin."
+      ],
+      [
+        "Bağlantı ve şarj",
+        "Hedef telefon veya bilgisayarı, şarj girişini ve yeniden bağlanmayı test edin."
+      ]
+    ],
+    [
+      [
+        "Güç ve ses",
+        "USB’nin ses mi yalnızca güç mü taşıdığını doğrulayın; ek ses kablolarını listeleyin."
+      ],
+      [
+        "Masa alanı",
+        "Genişlik, yükseklik, kablo uzunluğu ve ses düğmesi konumunu isteyin."
+      ],
+      [
+        "Gürültü ve kanallar",
+        "Hedef bilgisayarda düşük sesli dip gürültüsünü ve sağ/sol kanalları kontrol edin."
+      ]
+    ],
+    [
+      [
+        "Taşıma ve koruma",
+        "Askı, klips veya vantuzu kontrol edin; belirtilen IP derecesi için kanıt isteyin."
+      ],
+      [
+        "Pil ve oynatma",
+        "Aynı ses ve ışık ayarlarında çalışma süresini karşılaştırın; şarj girişini doğrulayın."
+      ],
+      [
+        "Ambalaj ve kontroller",
+        "Paketli ağırlığı, tuş erişimini ve oynatma modlarını kontrol edin."
+      ]
+    ],
+    [
+      [
+        "Çıkış ve mikrofonlar",
+        "Sürekli nominal gücü karşılaştırın; tüm mikrofonları birlikte test edin."
+      ],
+      [
+        "Güç ve taşınabilirlik",
+        "Pil veya şebeke kullanımını, fişi, kolu ve tekerlekleri doğrulayın."
+      ],
+      [
+        "Girişler ve aksesuarlar",
+        "Hedef girişleri test edin; kutudaki mikrofon, kablo ve kumandaları kaydedin."
+      ]
+    ],
+    [
+      [
+        "Amplifikasyon",
+        "Aktif veya pasif yapıyı, amplifikatör kapsamını ve fiyatın tekli mi çift mi olduğunu doğrulayın."
+      ],
+      [
+        "Kaynak bağlantısı",
+        "Gerçek kaynak cihazını ve girişlerini test edin; USB her zaman ses değildir."
+      ],
+      [
+        "Kabin ve teslimat",
+        "Çiftin ölçülerini, yüzeyi, koruyucu iç ambalajı ve paketli ağırlığı karşılaştırın."
+      ]
+    ]
+  ],
+  "extraPacks": [
+    "Oyun mağazası kulaklık grubu",
+    "Günlük yolculuk kulaklık grubu",
+    "Kompakt oyun masası grubu",
+    "Hediye ve seyahat grubu",
+    "Taşınabilir radyo grubu",
+    "Başlangıç parti hoparlörü grubu",
+    "Etkinlik ekipmanı deneme grubu",
+    "Ev ses sistemi karşılaştırma grubu"
+  ],
+  "packPlan": "Önce numune listesi olarak kullanın. Her ürün için miktar, renk ve minimum siparişi doğrulayın; karma sipariş her fabrikanın minimumunu otomatik karşılamaz. Onaylanan yapılandırmayı tekrar siparişler için kaydedin.",
+  "packaging": "Logo konumu, kutu ölçüsü, barkod, kılavuz dili ve aksesuarları belirtin. Tasarım veya kalıp onayından önce standart ve özel ambalajı karşılaştırın. Markalı ürünlerde satış yetkisini ayrıca doğrulayın.",
+  "freight": "Miktar, koli sayısı, ölçüler, brüt ağırlık ve teslim şehrini gönderin. Pilli modellerde pil özelliklerini ve mevcut taşıma belgelerini inceleme için ekleyin. Çıkış, navlun, varış masrafları ve vergilerin hangilerinin dahil olduğunu sorun.",
+  "brief": "Ürünleri, satış kanalını, pazarı, ilk miktarı, ambalajı ve adresi belirtin. Teklifleri karşılaştırmak için numune, ürün, özelleştirme ve taşıma maliyetlerini ayrı isteyin.",
+  "evidence": "Bunlar sipariş öncesi istenecek kontrollerdir; DDNZ’nin tüm yapılandırmaları test ettiği anlamına gelmez.",
+  "channelTitle": "Siparişi satış kanalınıza hazırlayın",
+  "channels": [
+    [
+      "Amazon / eBay",
+      "Modele ait görselleri, ölçüleri, varyant eşleştirmesini ve barkod konumunu isteyin. Ambalaj onayından önce ilgili pazarın şartlarını kontrol edin."
+    ],
+    [
+      "Noon / Jumia",
+      "Varış yerini, kılavuz dilini, şarj aksesuarlarını ve yedek parça planını belirleyin. Satılabilir birim başına teslim maliyetini karşılaştırın."
+    ],
+    [
+      "Shopee / TikTok Shop / Mercado Libre",
+      "Az sayıda ve farklı ürünle başlayın. Tanıtımı planlamadan önce numune gösterimlerini ve paket ölçülerini isteyin."
+    ]
+  ],
+  "serviceLinks": [
+    "Tedarikçi bulma",
+    "Denetim ve kalite",
+    "Navlun planlama"
+  ],
+  "inspection": [
+    "Gerçek numunede kulak uçlarını, sıkma kuvvetini ve konforu karşılaştırın. Arama kaydı isteyin; mikrofon performansını ANC’den ayrı değerlendirin. Hedef telefon veya bilgisayarı, şarj girişini ve yeniden bağlanmayı test edin.",
+    "USB’nin ses mi yalnızca güç mü taşıdığını doğrulayın; ek ses kablolarını listeleyin. Genişlik, yükseklik, kablo uzunluğu ve ses düğmesi konumunu isteyin. Hedef bilgisayarda düşük sesli dip gürültüsünü ve sağ/sol kanalları kontrol edin.",
+    "Askı, klips veya vantuzu kontrol edin; belirtilen IP derecesi için kanıt isteyin. Aynı ses ve ışık ayarlarında çalışma süresini karşılaştırın; şarj girişini doğrulayın. Paketli ağırlığı, tuş erişimini ve oynatma modlarını kontrol edin.",
+    "Sürekli nominal gücü karşılaştırın; tüm mikrofonları birlikte test edin. Pil veya şebeke kullanımını, fişi, kolu ve tekerlekleri doğrulayın. Hedef girişleri test edin; kutudaki mikrofon, kablo ve kumandaları kaydedin.",
+    "Aktif veya pasif yapıyı, amplifikatör kapsamını ve fiyatın tekli mi çift mi olduğunu doğrulayın. Gerçek kaynak cihazını ve girişlerini test edin; USB her zaman ses değildir. Çiftin ölçülerini, yüzeyi, koruyucu iç ambalajı ve paketli ağırlığı karşılaştırın."
+  ]
+}

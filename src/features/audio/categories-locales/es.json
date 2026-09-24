@@ -1,0 +1,133 @@
+{
+  "names": [
+    "Auriculares y audífonos",
+    "Altavoces de escritorio y PC",
+    "Altavoces portátiles y exteriores",
+    "Altavoces de fiesta y karaoke",
+    "Hi-Fi y altavoces de estantería"
+  ],
+  "titles": [
+    "Compre auriculares y audífonos al por mayor de China",
+    "Compre altavoces de PC al por mayor de China",
+    "Compre altavoces Bluetooth portátiles de China",
+    "Compre altavoces de fiesta y karaoke de China",
+    "Compre sistemas Hi-Fi y altavoces de estantería de China"
+  ],
+  "intros": [
+    "Para tiendas de accesorios, marcas propias y vendedores Amazon: compare ajuste, llamadas y carga antes de elegir TWS, diadema o gaming.",
+    "Para tiendas informáticas y vendedores online: compare pares USB, barras compactas y conjuntos activos según espacio, puertos y embalaje.",
+    "Para viajes y regalos: compare modelos mini, boombox y ducha por autonomía, peso embalado y uso previsto.",
+    "Para comercios, Noon y Jumia: compare regalos de dos micrófonos y equipos grandes por potencia nominal y accesorios.",
+    "Para tiendas especializadas: compare entradas, acabados y escucha de muestras; una etiqueta premium no sustituye la validación."
+  ],
+  "newProducts": [
+    [
+      "Audífonos TWS con estuche",
+      "Compare ajuste, llamadas, batería del estuche y repetición del emparejamiento."
+    ],
+    [
+      "Auriculares inalámbricos de diadema",
+      "Valide comodidad, plegado, almohadillas y autonomía; distinga ANC de reducción de ruido del micrófono."
+    ],
+    [
+      "Auriculares gaming",
+      "Defina USB, 3,5 mm o inalámbrico, dispositivos, micrófono y latencia."
+    ],
+    [
+      "Par PC 2.0 alimentado por USB",
+      "Distinga alimentación USB de audio USB; confirme cable de 3,5 mm y longitudes."
+    ],
+    [
+      "Barra de sonido compacta",
+      "Mida espacio bajo el monitor y pruebe entradas y ruido a bajo volumen."
+    ],
+    [
+      "Par estéreo activo de escritorio",
+      "Confirme adaptador, cable entre cajas, entradas y muestra de referencia."
+    ],
+    [
+      "Par activo de estantería",
+      "Confirme amplificación integrada, caja principal, entradas y mando; compare a igual volumen."
+    ],
+    [
+      "Altavoces pasivos de estantería",
+      "Necesitan amplificador externo: confirme impedancia y si el precio es por unidad o par."
+    ]
+  ],
+  "packNames": [
+    [
+      "Inicio para tienda de accesorios",
+      "Lanzamiento de marca propia"
+    ],
+    [
+      "Surtido económico de PC",
+      "Audio para oficina doméstica"
+    ],
+    [
+      "Pedido inicial portátil económico",
+      "Surtido de viaje y exterior"
+    ],
+    [
+      "Regalo de karaoke doméstico",
+      "Surtido de fiesta para revendedores"
+    ],
+    [
+      "Inicio estéreo activo",
+      "Sistema pasivo con amplificador"
+    ]
+  ],
+  "packBodies": [
+    [
+      "Compare TWS y diadema; defina cantidades por color, MOQ y cajas.",
+      "Para marca propia, apruebe logo, arte y muestra antes del lote."
+    ],
+    [
+      "Compare par USB y barra con SKU distintos.",
+      "Para el conjunto activo, incluya adaptador, cables y protección de envío."
+    ],
+    [
+      "Compare mini RGB y ducha para Jumia; limite colores.",
+      "Para exterior, pida correas, cables y evidencia de autonomía y agua."
+    ],
+    [
+      "Defina altavoz, dos micrófonos, cables y caja regalo.",
+      "Para reventa, añada gama grande y cotice repuestos y flete por separado."
+    ],
+    [
+      "Para el par activo, confirme mando y adaptador.",
+      "Para pasivos, especifique amplificador, compatibilidad, cables y prueba del sistema."
+    ]
+  ],
+  "questions": [
+    "¿Se pueden comprar audífonos de marca propia para Amazon?",
+    "¿USB siempre transporta el audio?",
+    "¿Cómo comparar proveedores económicos de exterior?",
+    "¿Más vatios anunciados significa mejor sonido?",
+    "¿Se pueden intercambiar modelos activos y pasivos?"
+  ],
+  "answers": [
+    "Indique país, modelo, cantidad y caja. Verifique muestras, documentos de batería y MOQ del logo por SKU.",
+    "No: algunos usan USB solo como alimentación y necesitan entrada de 3,5 mm. Pruebe los puertos reales.",
+    "Iguale condiciones de autonomía, accesorios, embalaje y flete. Exija evidencia del modelo para resistencia al agua.",
+    "No: potencia de pico y nominal difieren. Compare distorsión, batería y micrófono en condiciones equivalentes.",
+    "No: los activos incorporan amplificación; los pasivos requieren amplificador y compatibilidad eléctrica."
+  ],
+  "ui": [
+    "Audio y altavoces",
+    "Comparar productos",
+    "Configurar el pedido",
+    "Preguntas de compra",
+    "Otras categorías de audio",
+    "Solicitar cotización",
+    "Canal y planificación del pedido",
+    "Explorar categorías"
+  ],
+  "channel": [
+    "Amazon / eBay: TWS de marca propia con cajas y especificación del estuche.",
+    "eBay / Shopee / Mercado Libre: altavoces USB compactos con puertos verificados y embalaje individual.",
+    "Jumia / Noon: surtidos Bluetooth económicos, mezcla de colores y consolidación desde China.",
+    "Noon / Jumia / TikTok Shop: karaoke de dos micrófonos y RGB con vídeos de muestra.",
+    "Amazon / tiendas especializadas: pares activos, compatibilidad de entradas y mandos de repuesto."
+  ],
+  "note": "Propuestas para cotización. Stock, precios USD o CNY, MOQ, personalización, documentos y plazos se confirman por modelo; no se garantizan ventas ni admisión en plataformas."
+}

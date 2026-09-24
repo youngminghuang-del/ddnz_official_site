@@ -1,3 +1,6 @@
+import AudioCategoryContent,{AudioCategoryLinks} from '../src/features/audio/AudioCategoryContent';
+import {categoryIndex,audioCategoryPaths,audioCategoryMeta,audioCategorySchema,type CategoryLanguage} from '../src/features/audio/categories';
+import AudioAssortments from '../src/features/audio/AudioAssortments';
 import StartupBuyingContent from '../src/features/search-intent/StartupBuyingContent';
 import { entryKeywords } from '../src/features/search-intent/entry-keywords.mjs';
 import LocalizedCalculator,{calculatorMeta,calculatorSchema} from '../src/features/screen-protectors/LocalizedCalculator.jsx';
@@ -1562,6 +1565,11 @@ function injectStaticRouteContent(
     const body=renderToStaticMarkup(createElement(RefrigerationContent,{locale}));
     return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(refrigerationSchema(locale)).replace(/</g,'\\u003c')}</script></head>`);
   }
+  if(categoryIndex('/'+relPath)>=0){
+    const index=categoryIndex('/'+relPath),locale=(lang==='zh-cn'?'zh':lang) as CategoryLanguage;
+    const body=renderToStaticMarkup(createElement(AudioCategoryContent,{index,locale}));
+    return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(audioCategorySchema(index,locale)).replace(/</g,'\\u003c')}</script></head>`);
+  }
   if (lang !== 'en' && '/'+relPath===audioPath) {
     const locale=(lang==='zh-cn'?'zh':lang) as AudioLocale;
     const body=renderToStaticMarkup(createElement(AudioContent,{locale}));
@@ -1805,7 +1813,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', foodLinks + '</main>');
   }
   if (lang === 'en' && '/'+relPath === audioPath) {
-    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(StartupBuyingContent, {kind:'audio',locale:'en'}))+'</main>');
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(AudioCategoryLinks)) + renderToStaticMarkup(createElement(AudioAssortments)) + renderToStaticMarkup(createElement(StartupBuyingContent, {kind:'audio',locale:'en'}))+'</main>');
   }
   if (!staticBody) return htmlContent;
   return htmlContent.replace('<div id="root"></div>', `<div id="root">${staticBody}</div>`);
@@ -1850,6 +1858,7 @@ function run() {
     { path: 'sourcing/commercial-kitchen-equipment-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     { path: 'sourcing/restaurant-kitchen-packages-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     ...restaurantScenarioSeo.map(([slug]) => ({ path: `sourcing/restaurant-kitchen-packages-from-china/${slug}`, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
+    ...audioCategoryPaths.map(path=>({path:path.slice(1),priority:'0.8',changefreq:'monthly',languages:overviewLanguages})),
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     { path: 'portable-power/selection-guide', priority: '0.9', changefreq: 'monthly', languages: [...overviewLanguages] },
     { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', languages: [...overviewLanguages] },
@@ -1910,6 +1919,7 @@ function run() {
       if (mobilePage) {const meta=mobileMetadata(mobilePage.id,lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (lang !== 'en' && kitchenCategories.some(c=>c.path===`/${entry.path}/`)) { const meta=categoryMeta(kitchenCategories.find(c=>c.path===`/${entry.path}/`), (lang==='zh-cn'?'zh':lang) as CategoryLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && restaurantPackagePaths.includes('/'+entry.path)) { const meta=packageMeta('/'+entry.path,(lang==='zh-cn'?'zh':lang) as PackageLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
+      if(categoryIndex('/'+entry.path)>=0){const meta=audioCategoryMeta(categoryIndex('/'+entry.path),(lang==='zh-cn'?'zh':lang) as CategoryLanguage);seo={title:meta.title,desc:meta.description,keywords:''};}
       if (lang !== 'en' && '/'+entry.path===audioPath) { const meta=audioMeta((lang==='zh-cn'?'zh':lang) as AudioLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && '/'+entry.path===refrigerationPath) { const meta=refrigerationMeta((lang==='zh-cn'?'zh':lang) as RefrigerationLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos')) { const meta=filmGuideMeta((lang==='zh-cn'?'zh':lang) as FilmGuideLocale,filmGuideKind(entry.path)); seo={title:meta.title,desc:meta.description,keywords:''}; }

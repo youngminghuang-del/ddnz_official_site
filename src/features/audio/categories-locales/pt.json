@@ -1,0 +1,133 @@
+{
+  "names": [
+    "Fones e earbuds",
+    "Caixas de som para PC e mesa",
+    "Caixas portáteis e externas",
+    "Caixas de festa e karaokê",
+    "Hi-Fi e caixas bookshelf"
+  ],
+  "titles": [
+    "Compre fones de ouvido da China no atacado",
+    "Compre caixas de som para PC da China no atacado",
+    "Compre caixas Bluetooth portáteis da China",
+    "Compre caixas de festa e karaokê da China",
+    "Compre Hi-Fi e caixas bookshelf da China"
+  ],
+  "intros": [
+    "Para lojas de acessórios, marcas próprias e Amazon: compare conforto, chamadas e carga antes de selecionar TWS, headphones e headsets.",
+    "Para lojas de informática e vendedores online: compare pares USB, soundbars compactas e conjuntos ativos por espaço, entradas e embalagem.",
+    "Para viagens e presentes: compare modelos mini, boombox e banho por autonomia, peso embalado e uso.",
+    "Para varejo, Noon e Jumia: compare kits de dois microfones e caixas maiores pela potência nominal e acessórios.",
+    "Para lojas especializadas: compare entradas, acabamento e audição das amostras; o rótulo premium não substitui a avaliação."
+  ],
+  "newProducts": [
+    [
+      "Earbuds TWS com estojo",
+      "Compare encaixe, chamadas, bateria do estojo e repetição de pareamento."
+    ],
+    [
+      "Headphones sem fio",
+      "Valide conforto, dobra, almofadas e autonomia; diferencie ANC da redução de ruído do microfone."
+    ],
+    [
+      "Headset gamer",
+      "Defina USB, 3,5 mm ou conexão sem fio, dispositivos, microfone e latência."
+    ],
+    [
+      "Par PC 2.0 com alimentação USB",
+      "Diferencie energia USB de áudio USB; confira cabo de 3,5 mm e comprimentos."
+    ],
+    [
+      "Soundbar compacta de mesa",
+      "Meça o espaço sob o monitor e teste entradas e ruído em volume baixo."
+    ],
+    [
+      "Par estéreo ativo de mesa",
+      "Confirme fonte, cabo entre caixas, entradas e amostra de referência."
+    ],
+    [
+      "Par de caixas bookshelf ativas",
+      "Confira amplificação integrada, caixa principal, entradas e controle; compare em volume igual."
+    ],
+    [
+      "Caixas bookshelf passivas",
+      "Exigem amplificador externo: confirme impedância e cotação por unidade ou par."
+    ]
+  ],
+  "packNames": [
+    [
+      "Início para loja de acessórios",
+      "Lançamento de marca própria"
+    ],
+    [
+      "Mix econômico para PC",
+      "Áudio para home office"
+    ],
+    [
+      "Pedido inicial portátil econômico",
+      "Mix para viagem e lazer"
+    ],
+    [
+      "Presente de karaokê doméstico",
+      "Mix de festa para revendedores"
+    ],
+    [
+      "Início com estéreo ativo",
+      "Sistema passivo com amplificador"
+    ]
+  ],
+  "packBodies": [
+    [
+      "Compare TWS e headphones; defina cores, MOQ e caixas.",
+      "Para marca própria, aprove logo, arte e amostra antes do lote."
+    ],
+    [
+      "Compare par USB e soundbar com SKUs distintos.",
+      "No conjunto ativo, inclua fonte, cabos e proteção de transporte."
+    ],
+    [
+      "Compare mini RGB e banho para Jumia; limite cores.",
+      "Para exterior, peça alças, cabos e provas de autonomia e resistência à água."
+    ],
+    [
+      "Defina caixa, dois microfones, cabos e embalagem de presente.",
+      "Para revenda, acrescente modelo maior e cote peças e frete separados."
+    ],
+    [
+      "No par ativo, confirme controle e fonte.",
+      "Para passivos, especifique amplificador, compatibilidade, cabos e teste do sistema."
+    ]
+  ],
+  "questions": [
+    "É possível comprar earbuds de marca própria para Amazon?",
+    "USB sempre transmite o áudio?",
+    "Como comparar fornecedores econômicos para uso externo?",
+    "Mais watts anunciados significam melhor som?",
+    "Caixas ativas e passivas são intercambiáveis?"
+  ],
+  "answers": [
+    "Informe país, modelo, quantidade e embalagem. Confira amostra, documentos da bateria e MOQ do logo por SKU.",
+    "Não: alguns usam USB apenas para energia e exigem entrada de 3,5 mm. Teste as portas reais.",
+    "Compare nas mesmas condições de autonomia, acessórios, embalagem e frete. Exija evidência por modelo para resistência à água.",
+    "Não: potência de pico e nominal são diferentes. Compare distorção, bateria e microfone em condições iguais.",
+    "Não: ativas incluem amplificação; passivas precisam de amplificador e compatibilidade elétrica."
+  ],
+  "ui": [
+    "Áudio e caixas de som",
+    "Comparar produtos",
+    "Montar o pedido",
+    "Perguntas de compra",
+    "Outras categorias de áudio",
+    "Solicitar cotação",
+    "Canal e planejamento do pedido",
+    "Explorar categorias"
+  ],
+  "channel": [
+    "Amazon / eBay: TWS de marca própria com caixas e especificação do estojo.",
+    "eBay / Shopee / Mercado Livre: caixas USB compactas com conexões verificadas e embalagem individual.",
+    "Jumia / Noon: mix Bluetooth econômico, cores variadas e consolidação da China.",
+    "Noon / Jumia / TikTok Shop: karaokê com dois microfones e RGB com vídeos de amostra.",
+    "Amazon / lojas especializadas: pares ativos, entradas compatíveis e controles de reposição."
+  ],
+  "note": "Propostas para cotação. Estoque, preços USD ou CNY, MOQ, personalização, documentos e prazos dependem do modelo; não há garantia de vendas ou aceitação em plataformas."
+}

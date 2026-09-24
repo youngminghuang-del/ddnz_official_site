@@ -1,0 +1,198 @@
+{
+  "options": [
+    [
+      "Auriculares TWS intraaurales",
+      "Auriculares TWS de ajuste abierto",
+      "Auriculares con ANC",
+      "Auriculares con estuche con pantalla",
+      "Auriculares deportivos con gancho",
+      "Auriculares abiertos de pinza",
+      "Auriculares inalámbricos plegables",
+      "Auriculares circumaurales con ANC",
+      "Auriculares con cable USB-C",
+      "Auriculares gaming de 3,5 mm",
+      "Auriculares gaming USB",
+      "Auriculares gaming inalámbricos de 2,4 GHz"
+    ],
+    [
+      "Altavoces 2.0 alimentados por USB",
+      "Altavoces de audio digital USB",
+      "Barra compacta bajo el monitor",
+      "Pareja de altavoces de escritorio RGB",
+      "Pareja de escritorio Bluetooth",
+      "Sistema de escritorio 2.1",
+      "Pareja estéreo activa de escritorio",
+      "Altavoces con salida de auriculares"
+    ],
+    [
+      "Altavoz Bluetooth de bolsillo",
+      "Mini altavoz RGB",
+      "Altavoz de viaje con pinza",
+      "Altavoz de ducha con ventosa",
+      "Altavoz exterior con correa",
+      "Altavoz portátil con asa",
+      "Altavoz portátil con emparejamiento estéreo",
+      "Altavoz portátil con reproducción USB",
+      "Altavoz con radio y Bluetooth",
+      "Altavoz compacto para camping",
+      "Altavoz portátil retro",
+      "Altavoz portátil con entrada de micrófono"
+    ],
+    [
+      "Karaoke mini con un micrófono",
+      "Karaoke mini con dos micrófonos",
+      "Kit de regalo de karaoke RGB",
+      "Altavoz de fiesta compacto con asa",
+      "Altavoz de fiesta de 8 pulgadas",
+      "Altavoz de fiesta de doble 8 pulgadas",
+      "Altavoz de fiesta con ruedas",
+      "Altavoz de fiesta conectado a la red",
+      "Altavoz con entrada de instrumento",
+      "Kit de fiesta con micrófono inalámbrico"
+    ],
+    [
+      "Pareja compacta de estantería activa",
+      "Pareja activa de estantería Bluetooth",
+      "Pareja de estantería con entrada óptica",
+      "Pareja de estantería con audio USB",
+      "Pareja activa con salida de subwoofer",
+      "Pareja compacta de estantería pasiva",
+      "Pareja de estantería pasiva de mayor tamaño",
+      "Sistema estéreo doméstico retro"
+    ]
+  ],
+  "labels": [
+    "Elegir el surtido inicial",
+    "Comparar antes de comprar",
+    "Criterio de selección",
+    "Evidencia que solicitar",
+    "Lista de aprobación de muestras",
+    "Embalaje y marca propia",
+    "Calcular el coste de entrega",
+    "Preparar presupuestos comparables",
+    "Selección incluida",
+    "Planificación del pedido",
+    "Solicitar este surtido",
+    "Configuraciones para abastecimiento",
+    "Ejemplos de producto",
+    "La configuración, el pedido mínimo y el suministro se confirman mediante presupuesto. Las fotos ilustran la familia indicada, no cada configuración.",
+    "Ver selección",
+    "Productos",
+    "Surtidos",
+    "Guía de compra"
+  ],
+  "checks": [
+    [
+      [
+        "Ajuste y comodidad",
+        "Comparar almohadillas, presión y comodidad con una muestra real."
+      ],
+      [
+        "Audio y llamadas",
+        "Solicitar una grabación de llamada y evaluar el micrófono por separado del ANC."
+      ],
+      [
+        "Conexión y carga",
+        "Probar el teléfono u ordenador objetivo, la entrada de carga y la reconexión."
+      ]
+    ],
+    [
+      [
+        "Alimentación y audio",
+        "Confirmar si USB transmite audio o solo energía y enumerar los cables adicionales."
+      ],
+      [
+        "Espacio de escritorio",
+        "Solicitar anchura, altura, longitud de cables y posición del control de volumen."
+      ],
+      [
+        "Ruido y canales",
+        "Comprobar ruido a bajo volumen y reproducción izquierda/derecha en el ordenador previsto."
+      ]
+    ],
+    [
+      [
+        "Transporte y protección",
+        "Revisar correa, pinza o ventosa y solicitar evidencia de cualquier clasificación IP."
+      ],
+      [
+        "Batería y reproducción",
+        "Comparar autonomía con igual volumen e iluminación y confirmar la entrada de carga."
+      ],
+      [
+        "Embalaje y controles",
+        "Comprobar peso embalado, acceso a botones y modos de reproducción."
+      ]
+    ],
+    [
+      [
+        "Potencia y micrófonos",
+        "Comparar potencia nominal continua y probar todos los micrófonos simultáneamente."
+      ],
+      [
+        "Alimentación y movilidad",
+        "Confirmar batería o red eléctrica, enchufe, asa y ruedas."
+      ],
+      [
+        "Entradas y accesorios",
+        "Probar las entradas previstas y registrar micrófonos, cables y mandos por caja."
+      ]
+    ],
+    [
+      [
+        "Amplificación",
+        "Confirmar diseño activo o pasivo, alcance del amplificador y precio por unidad o pareja."
+      ],
+      [
+        "Conexión de la fuente",
+        "Probar la fuente real y sus entradas; USB no implica necesariamente audio."
+      ],
+      [
+        "Caja y entrega",
+        "Comparar dimensiones de la pareja, acabado, protección interior y peso embalado."
+      ]
+    ]
+  ],
+  "extraPacks": [
+    "Surtido para tiendas gaming",
+    "Surtido de auriculares para desplazamientos",
+    "Surtido para escritorio gaming compacto",
+    "Surtido de regalo y viaje",
+    "Surtido portátil con radio",
+    "Surtido inicial de altavoces de fiesta",
+    "Pedido de prueba para eventos",
+    "Surtido comparativo de audio doméstico"
+  ],
+  "packPlan": "Empezar con una selección de muestras. Confirmar cantidades, colores y mínimos por producto; mezclar productos no elimina el mínimo de cada fábrica. Registrar la configuración aprobada para reposiciones.",
+  "packaging": "Definir logo, dimensiones de caja, código de barras, idioma del manual y accesorios. Comparar embalaje estándar y personalizado antes de aprobar diseños o moldes. Verificar por separado la autorización de marcas.",
+  "freight": "Enviar cantidades, bultos, dimensiones, peso bruto y ciudad de entrega. Para modelos con batería, aportar especificaciones y documentos de transporte disponibles para revisión. Aclarar los gastos de origen, flete, destino e impuestos incluidos.",
+  "brief": "Indicar productos, canal, mercado, cantidad inicial, embalaje y dirección. Pedir costes separados de muestras, mercancía, personalización y transporte para comparar ofertas.",
+  "evidence": "Son comprobaciones a solicitar antes del pedido; no afirman que DDNZ haya probado todas las configuraciones.",
+  "channelTitle": "Preparar el pedido para su canal",
+  "channels": [
+    [
+      "Amazon / eBay",
+      "Solicitar imágenes del modelo, dimensiones, variantes y ubicación del código de barras. Verificar los requisitos del mercado concreto antes de aprobar el embalaje."
+    ],
+    [
+      "Noon / Jumia",
+      "Definir destino, idioma, accesorios de carga y repuestos. Comparar coste entregado por unidad vendible."
+    ],
+    [
+      "Shopee / TikTok Shop / Mercado Libre",
+      "Empezar con pocos productos diferenciados. Solicitar demostraciones de muestras y medidas del paquete antes de planificar promociones."
+    ]
+  ],
+  "serviceLinks": [
+    "Búsqueda de proveedores",
+    "Inspección y calidad",
+    "Planificación del transporte"
+  ],
+  "inspection": [
+    "Comparar almohadillas, presión y comodidad con una muestra real. Solicitar una grabación de llamada y evaluar el micrófono por separado del ANC. Probar el teléfono u ordenador objetivo, la entrada de carga y la reconexión.",
+    "Confirmar si USB transmite audio o solo energía y enumerar los cables adicionales. Solicitar anchura, altura, longitud de cables y posición del control de volumen. Comprobar ruido a bajo volumen y reproducción izquierda/derecha en el ordenador previsto.",
+    "Revisar correa, pinza o ventosa y solicitar evidencia de cualquier clasificación IP. Comparar autonomía con igual volumen e iluminación y confirmar la entrada de carga. Comprobar peso embalado, acceso a botones y modos de reproducción.",
+    "Comparar potencia nominal continua y probar todos los micrófonos simultáneamente. Confirmar batería o red eléctrica, enchufe, asa y ruedas. Probar las entradas previstas y registrar micrófonos, cables y mandos por caja.",
+    "Confirmar diseño activo o pasivo, alcance del amplificador y precio por unidad o pareja. Probar la fuente real y sus entradas; USB no implica necesariamente audio. Comparar dimensiones de la pareja, acabado, protección interior y peso embalado."
+  ]
+}

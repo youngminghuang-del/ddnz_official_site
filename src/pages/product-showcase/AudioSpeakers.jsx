@@ -1,3 +1,5 @@
+import {AudioCategoryLinks} from '../../features/audio/AudioCategoryContent';
+import AudioAssortments from '../../features/audio/AudioAssortments';
 import StartupBuyingContent from '../../features/search-intent/StartupBuyingContent';
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -395,6 +397,7 @@ export function AudioSpeakers() {
         <section className="as-handoff" aria-label="Freight handoff">
           <div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Engaged after the approved sourcing and pack-out file is ready</span></p></div><span>DDNZ remains the sourcing coordination team</span>
         </section>
+        <AudioCategoryLinks /><AudioAssortments />
         <StartupBuyingContent kind="audio" />
       </main>
 

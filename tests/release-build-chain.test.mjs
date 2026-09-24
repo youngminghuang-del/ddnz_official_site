@@ -28,6 +28,8 @@ async function fixture() {
   await fs.mkdir(path.join(project, 'src/lib'), { recursive: true });
   await fs.mkdir(path.join(project, 'src/features/mobile-sourcing'), { recursive: true });
   await fs.copyFile(path.join(root, 'src/features/mobile-sourcing/routes.mjs'), path.join(project, 'src/features/mobile-sourcing/routes.mjs'));
+  await fs.mkdir(path.join(project, 'src/features/audio'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/features/audio/category-routes.mjs'), path.join(project, 'src/features/audio/category-routes.mjs'));
   await fs.copyFile(path.join(root, 'src/lib/productLocalization.mjs'), path.join(project, 'src/lib/productLocalization.mjs'));
   await fs.writeFile(path.join(project, 'dist/index.html'), shell);
   await fs.writeFile(path.join(project, 'dist/sitemap.xml'), sitemap);

@@ -1,3 +1,4 @@
+import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 // Only routes with a complete, authored product body belong to this cluster.
 // Other product routes retain their English canonical and the language notice.
@@ -5,7 +6,7 @@ import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 export const powerGuidePath = '/portable-power/selection-guide';
 export const outdoorPath = '/sourcing/outdoor-products-from-china';
-export const overviewProductPaths = Object.freeze(['/products', '/sourcing-services', '/sourcing/audio-speakers-from-china','/refrigeration-equipment','/screen-protectors/guides','/screen-protectors/guides/price-differences','/screen-protectors/guides/curved-glass','/screen-protectors/videos']);
+export const overviewProductPaths = Object.freeze([...audioCategoryPaths,'/products', '/sourcing-services', '/sourcing/audio-speakers-from-china','/refrigeration-equipment','/screen-protectors/guides','/screen-protectors/guides/price-differences','/screen-protectors/guides/curved-glass','/screen-protectors/videos']);
 export const overviewContentLanguages = Object.freeze(['en','zh','es','ar','ru','fr','pt','tr']);
 export const productContentLanguages = Object.freeze(['en','zh','es','ar','ru','fr','pt','tr']);
 export const buyerGuidePaths = Object.freeze([

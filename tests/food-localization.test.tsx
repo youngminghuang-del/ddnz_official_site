@@ -27,6 +27,6 @@ test('localized inquiry preserves selected quantities, configuration, packing an
  for(const locale of Object.keys(foodLocales) as FoodLocale[]){
   const url=new URL(localizedFoodInquiry({'hw-j15-copper':2,'b20-guard':1},'Almaty','220 V; 50 Hz',locale),'https://www.ddnzglobal.com');
   assert.equal(url.pathname,`${foodPrefix(locale)}/get-a-quote/`);assert.equal(url.searchParams.get('dest'),'Almaty');
-  const notes=url.searchParams.get('notes')!;assert.ok(notes.includes(foodLocales[locale].variants[0]));assert.match(notes,/× 2/);assert.match(notes,/CNY 5,090/);assert.match(notes,/CNY 80/);assert.match(notes,/220 V; 50 Hz/);
+  const notes=url.searchParams.get('notes')!;assert.ok(notes.includes(foodLocales[locale].variants[0]));assert.match(notes,/× 2/);assert.match(notes,/CNY 7,635/);assert.match(notes,/CNY 80/);assert.match(notes,/220 V; 50 Hz/);
  }
 });

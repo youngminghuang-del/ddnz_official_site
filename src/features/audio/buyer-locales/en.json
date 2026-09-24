@@ -1,0 +1,198 @@
+{
+  "options": [
+    [
+      "TWS in-ear earbuds",
+      "Open-fit TWS earbuds",
+      "ANC earbuds",
+      "Earbuds with a display case",
+      "Sports ear-hook earbuds",
+      "Open-ear clip earbuds",
+      "Foldable wireless headphones",
+      "Over-ear ANC headphones",
+      "Wired USB-C earbuds",
+      "3.5 mm gaming headset",
+      "USB gaming headset",
+      "2.4 GHz wireless gaming headset"
+    ],
+    [
+      "USB-powered 2.0 speakers",
+      "USB digital-audio speakers",
+      "Compact under-monitor soundbar",
+      "RGB desktop speaker pair",
+      "Bluetooth desktop pair",
+      "2.1 desktop system",
+      "Active desktop stereo pair",
+      "Desktop speakers with headphone output"
+    ],
+    [
+      "Pocket Bluetooth speaker",
+      "Mini RGB speaker",
+      "Clip-on travel speaker",
+      "Suction-cup shower speaker",
+      "Strap-carry outdoor speaker",
+      "Handle-carry boombox",
+      "Stereo-pairing portable speaker",
+      "USB-playback portable speaker",
+      "Radio and Bluetooth speaker",
+      "Compact camping speaker",
+      "Retro portable speaker",
+      "Microphone-ready portable speaker"
+    ],
+    [
+      "Mini single-microphone karaoke set",
+      "Mini two-microphone karaoke set",
+      "RGB karaoke gift set",
+      "Compact handle-carry party speaker",
+      "Single 8-inch party speaker",
+      "Dual 8-inch party speaker",
+      "Trolley party speaker",
+      "Mains-powered party speaker",
+      "Instrument-input party speaker",
+      "Wireless-microphone party set"
+    ],
+    [
+      "Compact active bookshelf pair",
+      "Bluetooth active bookshelf pair",
+      "Optical-input bookshelf pair",
+      "USB-audio bookshelf pair",
+      "Subwoofer-output active pair",
+      "Compact passive bookshelf pair",
+      "Larger passive bookshelf pair",
+      "Retro home stereo system"
+    ]
+  ],
+  "labels": [
+    "Choose an opening range",
+    "Compare before ordering",
+    "Selection criterion",
+    "Ask for this evidence",
+    "Sample approval checklist",
+    "Packaging and private label",
+    "Plan the delivered cost",
+    "Build a comparable quotation",
+    "Included selection",
+    "Order planning",
+    "Request this range",
+    "Product configurations to source",
+    "Photo examples",
+    "Available configurations, MOQ and supply are confirmed by quotation. Photos illustrate the named product family, not every configuration below.",
+    "View the selection",
+    "Products",
+    "Assortments",
+    "Buying guide"
+  ],
+  "checks": [
+    [
+      [
+        "Fit and wear",
+        "Compare ear tips, clamping force and comfort on an actual sample."
+      ],
+      [
+        "Audio and calls",
+        "Request a call recording and check microphone performance separately from ANC."
+      ],
+      [
+        "Connection and charging",
+        "Test the exact phone or computer, charging input and reconnect behaviour."
+      ]
+    ],
+    [
+      [
+        "Power versus audio",
+        "Confirm whether USB carries audio or power only; list any separate audio cable."
+      ],
+      [
+        "Desk footprint",
+        "Request width, height, cable length and volume-control position."
+      ],
+      [
+        "Noise and channels",
+        "Check low-volume noise and left/right playback on the intended computer."
+      ]
+    ],
+    [
+      [
+        "Carry and protection",
+        "Check strap, clip or suction attachment and request evidence for any IP rating."
+      ],
+      [
+        "Battery and playback",
+        "Compare runtime at the same volume and lighting settings; confirm charging input."
+      ],
+      [
+        "Packing and controls",
+        "Check packed weight, button access and the supported playback modes."
+      ]
+    ],
+    [
+      [
+        "Output and microphones",
+        "Compare continuous rated output and test all included microphones together."
+      ],
+      [
+        "Power and portability",
+        "Confirm battery or mains operation, plug type, handle and wheel construction."
+      ],
+      [
+        "Inputs and accessories",
+        "Test intended inputs and record microphones, cables and remote controls per carton."
+      ]
+    ],
+    [
+      [
+        "Amplification",
+        "Confirm active or passive design, amplifier scope and whether the quotation is per unit or pair."
+      ],
+      [
+        "Source connection",
+        "List required inputs and test the actual source device; do not assume USB means audio."
+      ],
+      [
+        "Cabinet and delivery",
+        "Compare pair dimensions, finish sample, protective inserts and packed weight."
+      ]
+    ]
+  ],
+  "inspection": [
+    "Approve fit, call recording, pairing, controls and charging on the chosen configuration. Record firmware and supplied accessories for repeat orders.",
+    "Use the intended laptop or desktop for channel, hum and reconnect checks. Photograph plugs and cable lengths before approving the packing list.",
+    "Record playback volume, lighting mode and test duration. Inspect attachments, charging port and controls; any water-resistance claim needs model-specific evidence.",
+    "Test microphones simultaneously, music playback and separate volume controls. Check charging, carry points and every accessory against the agreed list.",
+    "Compare a matched pair at the same listening level. Check channel balance, idle noise, source inputs, cabinet finish and transit protection; approve the amplifier separately for passive systems."
+  ],
+  "extraPacks": [
+    "Gaming accessory shop range",
+    "Commuter headphone range",
+    "Compact gaming desk range",
+    "Gift and travel range",
+    "Portable radio range",
+    "Entry party retailer range",
+    "Event equipment trial range",
+    "Home audio retailer comparison range"
+  ],
+  "packPlan": "Use this as a sample shortlist first. Confirm quantity, colour split and MOQ for each selection; a mixed assortment does not automatically meet each factory’s minimum. Keep the approved configuration on the repeat-order record.",
+  "packaging": "Specify logo position, retail-box dimensions, barcode placement, instruction language and the complete accessory list. Compare standard packaging with a custom box before committing to artwork or tooling. Confirm brand authorization separately for branded products.",
+  "freight": "Send quantities, cartons, carton dimensions, gross weight and the destination city. For battery models, include battery specifications and available transport documents for review. Ask which origin handling, freight, destination charges and taxes are included in the estimate.",
+  "brief": "Choose products below and include your sales channel, target market, first-order quantity, packaging and delivery address in the enquiry. Request separate sample, product, customization and freight costs so that supplier offers can be compared.",
+  "evidence": "These are checks to request before ordering, not claims that DDNZ has already tested every listed configuration.",
+  "channelTitle": "Prepare the order for your selling channel",
+  "channels": [
+    [
+      "Amazon / eBay",
+      "Ask for model-specific images, dimensions, variation mapping and barcode placement. Confirm the exact marketplace requirements before approving packaging."
+    ],
+    [
+      "Noon / Jumia",
+      "Define the destination, instruction language, included charging accessories and replacement-parts plan. Compare delivered cost per sellable unit."
+    ],
+    [
+      "Shopee / TikTok Shop / Mercado Libre",
+      "Start with a small range of clearly differentiated products. Request sample-based demonstration media and parcel dimensions before planning promotions."
+    ]
+  ],
+  "serviceLinks": [
+    "Supplier sourcing",
+    "Inspection and quality control",
+    "Freight planning"
+  ]
+}

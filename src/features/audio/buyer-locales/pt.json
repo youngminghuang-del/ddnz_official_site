@@ -1,0 +1,198 @@
+{
+  "options": [
+    [
+      "Fones TWS intra-auriculares",
+      "Fones TWS de encaixe aberto",
+      "Fones com ANC",
+      "Fones com estojo com visor",
+      "Fones esportivos com gancho",
+      "Fones abertos com presilha",
+      "Fones sem fio dobráveis",
+      "Fones circum-aurais com ANC",
+      "Fones com fio USB-C",
+      "Headset gamer de 3,5 mm",
+      "Headset gamer USB",
+      "Headset gamer sem fio de 2,4 GHz"
+    ],
+    [
+      "Caixas 2.0 alimentadas por USB",
+      "Caixas com áudio digital USB",
+      "Soundbar compacta para monitor",
+      "Par de caixas de mesa RGB",
+      "Par de caixas de mesa Bluetooth",
+      "Sistema de mesa 2.1",
+      "Par estéreo ativo de mesa",
+      "Caixas de mesa com saída para fones"
+    ],
+    [
+      "Caixa Bluetooth de bolso",
+      "Mini caixa RGB",
+      "Caixa de viagem com presilha",
+      "Caixa de banho com ventosa",
+      "Caixa externa com alça de tecido",
+      "Boombox portátil com alça",
+      "Caixa portátil com pareamento estéreo",
+      "Caixa portátil com reprodução USB",
+      "Caixa com rádio e Bluetooth",
+      "Caixa compacta para camping",
+      "Caixa portátil retrô",
+      "Caixa portátil com entrada de microfone"
+    ],
+    [
+      "Karaokê mini com um microfone",
+      "Karaokê mini com dois microfones",
+      "Kit de presente de karaokê RGB",
+      "Caixa de festa compacta com alça",
+      "Caixa de festa de 8 polegadas",
+      "Caixa de festa com dois falantes de 8 polegadas",
+      "Caixa de festa com rodas",
+      "Caixa de festa ligada à rede elétrica",
+      "Caixa com entrada para instrumento",
+      "Kit de festa com microfone sem fio"
+    ],
+    [
+      "Par compacto de caixas bookshelf ativas",
+      "Par de caixas bookshelf ativas Bluetooth",
+      "Par bookshelf com entrada óptica",
+      "Par bookshelf com áudio USB",
+      "Par ativo com saída para subwoofer",
+      "Par compacto de caixas bookshelf passivas",
+      "Par de caixas bookshelf passivas maiores",
+      "Sistema estéreo doméstico retrô"
+    ]
+  ],
+  "labels": [
+    "Escolha o mix inicial",
+    "Compare antes de comprar",
+    "Critério de seleção",
+    "Evidência a solicitar",
+    "Checklist de aprovação da amostra",
+    "Embalagem e marca própria",
+    "Calcule o custo de entrega",
+    "Prepare cotações comparáveis",
+    "Seleção incluída",
+    "Planejamento do pedido",
+    "Cotar este mix",
+    "Configurações para aquisição",
+    "Exemplos de produto",
+    "Configuração, pedido mínimo e fornecimento são confirmados na cotação. As fotos ilustram a família indicada, não cada configuração.",
+    "Ver seleção",
+    "Produtos",
+    "Combinações",
+    "Guia de compra"
+  ],
+  "checks": [
+    [
+      [
+        "Encaixe e conforto",
+        "Compare ponteiras, pressão e conforto em uma amostra real."
+      ],
+      [
+        "Áudio e chamadas",
+        "Solicite gravação de chamada e avalie o microfone separadamente do ANC."
+      ],
+      [
+        "Conexão e carga",
+        "Teste no celular ou computador escolhido, verificando entrada de carga e reconexão."
+      ]
+    ],
+    [
+      [
+        "Energia e áudio",
+        "Confirme se USB transmite áudio ou somente energia e liste cabos adicionais."
+      ],
+      [
+        "Espaço na mesa",
+        "Solicite largura, altura, comprimento dos cabos e posição do volume."
+      ],
+      [
+        "Ruído e canais",
+        "Verifique ruído em baixo volume e canais esquerdo/direito no computador previsto."
+      ]
+    ],
+    [
+      [
+        "Transporte e proteção",
+        "Confira alça, presilha ou ventosa e solicite evidência para qualquer classificação IP."
+      ],
+      [
+        "Bateria e reprodução",
+        "Compare autonomia com o mesmo volume e iluminação e confirme a entrada de carga."
+      ],
+      [
+        "Embalagem e controles",
+        "Confira peso embalado, acesso aos botões e modos de reprodução."
+      ]
+    ],
+    [
+      [
+        "Potência e microfones",
+        "Compare potência nominal contínua e teste todos os microfones juntos."
+      ],
+      [
+        "Energia e mobilidade",
+        "Confirme bateria ou rede elétrica, plugue, alça e rodas."
+      ],
+      [
+        "Entradas e acessórios",
+        "Teste as entradas previstas e registre microfones, cabos e controles por caixa."
+      ]
+    ],
+    [
+      [
+        "Amplificação",
+        "Confirme sistema ativo ou passivo, amplificador incluído e cotação por unidade ou par."
+      ],
+      [
+        "Conexão da fonte",
+        "Teste a fonte real e suas entradas; USB nem sempre significa áudio."
+      ],
+      [
+        "Gabinete e entrega",
+        "Compare dimensões do par, acabamento, proteção interna e peso embalado."
+      ]
+    ]
+  ],
+  "extraPacks": [
+    "Mix para loja gamer",
+    "Mix de fones para deslocamentos",
+    "Mix para mesa gamer compacta",
+    "Mix para presentes e viagens",
+    "Mix portátil com rádio",
+    "Mix inicial de caixas de festa",
+    "Pedido piloto para eventos",
+    "Mix comparativo de áudio doméstico"
+  ],
+  "packPlan": "Comece com uma seleção de amostras. Confirme quantidade, cores e pedido mínimo de cada produto; um mix não elimina o mínimo de cada fábrica. Registre a configuração aprovada para reposição.",
+  "packaging": "Defina logo, dimensões da caixa, código de barras, idioma do manual e acessórios. Compare embalagem padrão e personalizada antes de aprovar arte ou moldes. Verifique separadamente a autorização de marcas.",
+  "freight": "Envie quantidades, volumes, dimensões, peso bruto e cidade de entrega. Para modelos com bateria, envie especificações e documentos de transporte disponíveis para análise. Confirme despesas de origem, frete, destino e tributos incluídos.",
+  "brief": "Informe produtos, canal, mercado, quantidade inicial, embalagem e endereço. Solicite custos separados de amostras, mercadoria, personalização e frete para comparar propostas.",
+  "evidence": "São verificações a solicitar antes do pedido; não indicam que a DDNZ já testou todas as configurações.",
+  "channelTitle": "Prepare o pedido para seu canal",
+  "channels": [
+    [
+      "Amazon / eBay",
+      "Solicite imagens do modelo, dimensões, mapa de variantes e posição do código de barras. Verifique as exigências do marketplace específico antes de aprovar a embalagem."
+    ],
+    [
+      "Noon / Jumia",
+      "Defina destino, idioma, acessórios de carga e reposição de peças. Compare o custo entregue por unidade vendável."
+    ],
+    [
+      "Shopee / TikTok Shop / Mercado Livre",
+      "Comece com poucos produtos distintos. Solicite demonstrações das amostras e medidas da embalagem antes de planejar promoções."
+    ]
+  ],
+  "serviceLinks": [
+    "Busca de fornecedores",
+    "Inspeção e qualidade",
+    "Planejamento de frete"
+  ],
+  "inspection": [
+    "Compare ponteiras, pressão e conforto em uma amostra real. Solicite gravação de chamada e avalie o microfone separadamente do ANC. Teste no celular ou computador escolhido, verificando entrada de carga e reconexão.",
+    "Confirme se USB transmite áudio ou somente energia e liste cabos adicionais. Solicite largura, altura, comprimento dos cabos e posição do volume. Verifique ruído em baixo volume e canais esquerdo/direito no computador previsto.",
+    "Confira alça, presilha ou ventosa e solicite evidência para qualquer classificação IP. Compare autonomia com o mesmo volume e iluminação e confirme a entrada de carga. Confira peso embalado, acesso aos botões e modos de reprodução.",
+    "Compare potência nominal contínua e teste todos os microfones juntos. Confirme bateria ou rede elétrica, plugue, alça e rodas. Teste as entradas previstas e registre microfones, cabos e controles por caixa.",
+    "Confirme sistema ativo ou passivo, amplificador incluído e cotação por unidade ou par. Teste a fonte real e suas entradas; USB nem sempre significa áudio. Compare dimensões do par, acabamento, proteção interna e peso embalado."
+  ]
+}

@@ -11,7 +11,7 @@ export function FoodPackageLinks({ compact = false }) {
     </a>;})}
   </div>;
 }
-function PriceNote(){return <p className="fp-price-note">Prices in CNY use the supplier’s wholesale column, dated <time dateTime={sourceDate}>8 May 2026</time>. Equipment and listed packing are shown separately. Confirm current availability, tax treatment, optional parts, export packing, freight and service fees in your quotation. Catalogue images represent model families.</p>;}
+function PriceNote(){return <p className="fp-price-note">DDNZ indicative supply prices in CNY, updated <time dateTime="2026-09-24">24 September 2026</time>. Equipment and listed packing are shown separately. Confirm current availability, tax treatment, optional parts, export packing, freight and service fees in your quotation. Catalogue images represent model families.</p>;}
 export default function FoodProcessingContent({ page }) {
   const [family,setFamily]=useState('all');
   const [selection,setSelection]=useState(()=>page.bundle?packageSelection(page.bundle):{});

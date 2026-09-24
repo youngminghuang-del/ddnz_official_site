@@ -1,3 +1,4 @@
+import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 import type { Language } from '../i18n/translations';
 import { canonicalSitePath } from './notionArticleRouting';
@@ -22,6 +23,7 @@ const fullyLocalizedFreightServicePaths = new Set([
 import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
 
 export const englishProductPaths = [
+  ...audioCategoryPaths,
   ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
   ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,

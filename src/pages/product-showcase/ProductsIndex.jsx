@@ -479,7 +479,7 @@ export function ProductsIndex() {
           <p className="px-kicker">FOOD PROCESSING / EQUIPMENT PACKAGES</p><h2 id="food-packages-title" style={{fontSize:32,fontWeight:650,lineHeight:1.2}}>Choose machines around a preparation task.</h2>
           <p>Six starting combinations. Review the models, adjust quantities and carry the itemised list into your enquiry.</p>
           <FoodPackageLinks compact />
-          <p className="fp-price-note">CNY equipment totals use the wholesale column in the 8 May 2026 price list. Listed packing, optional parts, freight, tax and service fees are separate.</p>
+          <p className="fp-price-note">CNY equipment totals use DDNZ indicative supply prices updated 24 September 2026. Listed packing, optional parts, freight, tax and service fees are separate.</p>
         </section>
 
         <section className="px-compare" id="compare" aria-labelledby="compare-title">

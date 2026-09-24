@@ -1,3 +1,4 @@
+import {audioCategoryPaths} from './features/audio/category-routes.mjs';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
@@ -56,6 +57,7 @@ import { mobilePaths } from './features/mobile-sourcing/routes.mjs';
 import { shippingCountries as SHIPPING_COUNTRIES, sourcingCategories as SOURCING_CATEGORIES } from './config/siteNavigation';
 const LocalizedFilmGuidePage = lazy(() => import('./features/film-guide/FilmGuidePage'));
 const LocalizedRefrigerationPage = lazy(() => import('./features/refrigeration/RefrigerationPage'));
+const AudioCategoryPage = lazy(() => import('./features/audio/AudioCategoryPage'));
 const LocalizedAudioPage = lazy(() => import('./features/audio/AudioPage'));
 const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
 const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPage'));
@@ -404,6 +406,7 @@ export default function App() {
             <Route path={`${kitchenPackagePath}/:scenarioSlug`} element={<RestaurantKitchenScenario />} />
             {kitchenCategoryPaths.flatMap(path => Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={prefix?<LocalizedCategoryPage/>:<KitchenCategoryPage/>}/>))}
             {Object.values(navigationPrefixes).filter(Boolean).map(prefix=><Route key={prefix+'audio'} path={prefix+'/sourcing/audio-speakers-from-china'} element={<LocalizedAudioPage/>}/>)}
+            {audioCategoryPaths.flatMap(path=>Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={<AudioCategoryPage/>}/>))}
             <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
             {mobilePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`mobile-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<MobileAccessories />} />))}
             <Route path="/sourcing/outdoor-products-from-china" element={<OutdoorProducts />} />
