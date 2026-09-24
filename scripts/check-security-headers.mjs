@@ -35,7 +35,7 @@ const frameProtection = Boolean(response.headers.get('x-frame-options')) ||
   /frame-ancestors/i.test(response.headers.get('content-security-policy') || '');
 results.push({
   header: 'frame protection',
-  value: response.headers.get('x-frame-options') || 'No X-Frame-Options or CSP frame-ancestors directive',
+  value: response.headers.get('x-frame-options') || response.headers.get('content-security-policy')?.match(/frame-ancestors[^;]*/i)?.[0] || 'No X-Frame-Options or CSP frame-ancestors directive',
   passed: frameProtection,
   remediation: 'Set CSP frame-ancestors (preferred) or X-Frame-Options.',
 });
