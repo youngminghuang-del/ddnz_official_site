@@ -15,6 +15,7 @@ async function fixture() {
   await fs.mkdir(path.join(project, 'scripts'));
   await fs.mkdir(path.join(project, 'src/features'), { recursive: true });
   await fs.cp(path.join(root, 'src/features/site-localization'), path.join(project, 'src/features/site-localization'), { recursive: true });
+  await fs.cp(path.join(root, 'src/features/buyer-entry'), path.join(project, 'src/features/buyer-entry'), { recursive: true });
   await fs.mkdir(path.join(project, 'dist'));
   await fs.mkdir(path.join(project, 'public'));
   await fs.writeFile(path.join(project, 'package.json'), '{"type":"module"}');
