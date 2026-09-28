@@ -1,3 +1,4 @@
+import quoteLinkPlugin from './scripts/quote-link-babel-plugin.mjs';
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import dotenv from 'dotenv';
@@ -22,7 +23,7 @@ export default defineConfig(({mode}) => {
     base: '/', 
     
     plugins: [
-      react(),
+      react({ babel: { plugins: [quoteLinkPlugin] } }),
       tailwindcss(),
       createContentOpsApiPlugin(env.NOTION_API_KEY, {
         repository: env.GITHUB_REPOSITORY || 'youngminghuang-del/ddnz_official_site',

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import GetAQuote from '../components/GetAQuote';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
@@ -9,10 +9,13 @@ import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import { quoteParamsForLocation } from '../lib/quoteLinkPolicy.mjs';
+
 export default function GetAQuotePage() {
   const { language } = useLanguage();
   const location = useLocation();
-  const leadGoal = new URLSearchParams(location.search).get('leadGoal') || 'Freight Export';
+  const params = useMemo(() => quoteParamsForLocation(location.search, location.pathname), [location.search, location.pathname, location.key]);
+  const leadGoal = params.get('leadGoal') || 'Freight Export';
   const isTradeSupport = leadGoal === 'Product Sourcing' || leadGoal === 'Supplier Inspection & Consolidation';
 
   useEffect(() => {

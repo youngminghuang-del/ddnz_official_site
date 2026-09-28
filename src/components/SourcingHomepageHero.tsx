@@ -1,3 +1,4 @@
+import { navigateQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import {translatedText} from '../features/site-localization/translate.mjs';
 import { navigationPath } from '../lib/productLanguageRouting';
 import { positioning } from '../features/search-intent/positioning.mjs';
@@ -183,7 +184,7 @@ export default function SourcingHomepageHero() {
     if (market) params.set('dest', market);
     const url = appendAttribution(`${canonicalSitePath(`${PREFIX[language]}/get-a-quote`)}?${params.toString()}`, attribution);
     trackEvent('homepage_intent_submit', { intent: nextIntent, industry: nextCategory, destination: market || 'not_selected' });
-    navigate(url);
+    navigate(navigateQuoteContext(url));
   };
 
   const intents: Array<{ id: Intent; label: string; description: string }> = [
