@@ -83,7 +83,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
             <p className="ddnz-footer__eyebrow">{copy.official}</p>
             <h2 id={id + '-contact'}>{copy.talk}</h2>
             <div className="ddnz-footer__direct">
-              <a href="mailto:partnership@ddnzglobal.com" data-analytics-tracked="true" onClick={() => handleContactClick('email')}><Mail size={19} aria-hidden="true"/><span>partnership@ddnzglobal.com</span></a>
+              <span className="flex items-center gap-3"><Mail size={19} aria-hidden="true"/><span data-contact-email="partnership@ddnzglobal.com">partnership<span>@</span>ddnzglobal.com</span></span>
               <a href="tel:+862036546132" data-analytics-tracked="true" onClick={() => handleContactClick('phone')}><Phone size={19} aria-hidden="true"/><bdi>{language === 'zh' ? '020 3654 6132' : '+86 20 3654 6132'}</bdi></a>
               <a href={SOCIAL_CHANNELS.whatsapp.publicUrl} target="_blank" rel="noopener noreferrer" data-analytics-tracked="true" onClick={() => handleContactClick('whatsapp')}><MessageCircle size={19} aria-hidden="true"/><span>WhatsApp <bdi>{SOCIAL_CHANNELS.whatsapp.handle}</bdi></span></a>
             </div>

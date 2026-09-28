@@ -16,7 +16,7 @@ export default function PowerSceneHero({ locale, sceneId, model, rows, onScenari
   const name = id => id === 'power' ? t('power') : c(devices.find(d => d.id === id).name);
   return <section className="opg-scene-hero">
     <div className="opg-scene-heading"><div><p className="ods-eyebrow">DDNZ / {g('eyebrow')}</p><h1>{t('heading')}</h1></div><div><p>{t('intro')}</p><a className="ods-button" href="#appliance-plan">{g('plan')} <ArrowDown size={18}/></a></div></div>
-    <div className="opg-scene-tabs" role="group" aria-label={t('start')}>{powerScenes.map((s, i) => <button type="button" key={s.id} aria-pressed={scene.id === s.id} onClick={() => { setSpot('power'); onScenario(s.id); }} data-power-scene={s.id}><img src={media + s.image.replace('.webp', '-thumb.webp')} alt="" width="78" height="52" loading="lazy"/><span><small>0{i + 1}</small>{c(s.label)}</span><ArrowUpRight size={18} aria-hidden="true"/></button>)}</div>
+    <div className="opg-scene-tabs" role="group" aria-label={t('start')}>{powerScenes.map((s, i) => <button type="button" key={s.id} aria-pressed={scene.id === s.id} onClick={() => { setSpot('power'); onScenario(s.id); }} data-power-scene={s.id}><img src={media + s.image.replace('.webp', '-thumb.webp')} alt="" aria-hidden="true" width="78" height="52" loading="lazy"/><span><small>0{i + 1}</small>{c(s.label)}</span><ArrowUpRight size={18} aria-hidden="true"/></button>)}</div>
     <div className="opg-scene-grid">
       <div className="opg-scene-canvas">
         <img className="opg-scene-photo" src={media + scene.image} srcSet={`${media + scene.image.replace('.webp', '-768.webp')} 768w, ${media + scene.image} 1536w`} sizes="(max-width: 900px) 100vw, 850px" alt={c(scene.alt)} width="1536" height="1024" fetchPriority="high"/>

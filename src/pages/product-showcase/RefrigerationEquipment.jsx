@@ -177,11 +177,6 @@ export function RefrigerationEquipment() {
   const [form, setForm] = useState({ category: "Upright & reach-in", market: "", stage: "", temperature: "", capacity: "", cooling: "", notes: "" });
   const evidence = evidenceTracks[evidenceKey];
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Commercial Refrigeration Equipment Sourcing | DDNZ Global";
-    return () => { document.title = previousTitle; };
-  }, []);
 
   useEffect(() => {
     if (!scoreOpen) return undefined;

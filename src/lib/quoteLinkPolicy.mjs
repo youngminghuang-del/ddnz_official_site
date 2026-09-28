@@ -1,3 +1,4 @@
+import { repairedInternalHref } from './retiredRoutes.mjs';
 import { QUOTE_ENUMS } from './quoteLinkEnums.mjs';
 const BASE = 'https://www.ddnzglobal.com';
 const PATH = /^\/(?:zh-cn\/|es\/|ar\/|ru\/|fr\/|pt\/|tr\/)?get-a-quote\/?$/;
@@ -36,8 +37,9 @@ export function quoteLinkProps(value, prop = 'href') {
     const target = new URL(result[prop], baseUrl());
     return { ...result, [prop]: { ...value, pathname: target.pathname, search: '', hash: target.hash } };
   }
-  const u = quoteUrl(value);
-  if (!u) return { [prop]: value };
+  const repaired = repairedInternalHref(value, baseUrl());
+  const u = quoteUrl(repaired);
+  if (!u) return { [prop]: repaired };
   const href = u.pathname.replace(/\/?$/, '/') + u.hash;
   if (!u.search) return { [prop]: href };
   return { [prop]: href, 'data-quote-context': JSON.stringify(sanitizeQuoteContext(Object.fromEntries(u.searchParams))) };

@@ -26,6 +26,9 @@ async function fixture() {
   await fs.copyFile(path.join(root, 'src/features/commercial-kitchen/routes.mjs'), path.join(project, 'src/features/commercial-kitchen/routes.mjs'));
   await fs.cp(path.join(root, 'src/features/food-processing'), path.join(project, 'src/features/food-processing'), { recursive: true });
   await fs.mkdir(path.join(project, 'src/lib'), { recursive: true });
+  await fs.mkdir(path.join(project, 'src/data'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/lib/seoTitle.mjs'), path.join(project, 'src/lib/seoTitle.mjs'));
+  await fs.copyFile(path.join(root, 'src/data/seoTitleOverrides.json'), path.join(project, 'src/data/seoTitleOverrides.json'));
   await fs.mkdir(path.join(project, 'src/features/mobile-sourcing'), { recursive: true });
   await fs.copyFile(path.join(root, 'src/features/mobile-sourcing/routes.mjs'), path.join(project, 'src/features/mobile-sourcing/routes.mjs'));
   await fs.mkdir(path.join(project, 'src/features/audio'), { recursive: true });

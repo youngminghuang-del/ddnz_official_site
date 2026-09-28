@@ -1,3 +1,4 @@
+import { railTerminalAlt } from '../lib/operationalImageAlt';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -844,7 +845,7 @@ export default function ShippingCentralAsia() {
         <section className="relative min-h-[660px] flex items-center overflow-hidden border-b border-white/[0.08]">
           <img
             src="/images/operations/china-eurasia-rail-border-hero-v1.webp"
-            alt=""
+            alt={railTerminalAlt[language]}
             width="1920"
             height="1080"
             className="absolute inset-0 h-full w-full object-cover object-center"

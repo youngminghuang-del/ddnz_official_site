@@ -129,7 +129,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
       <a href="#commercial-kitchen-guide">{u.guide}</a><a className="kitchen-subnav-list" href="#commercial-kitchen-list">{u.list} <bdi dir="ltr">{localNumber(count, locale)}</bdi></a>
     </nav>
     <main id="commercial-kitchen-top">
-      <nav className="kitchen-breadcrumb wrap" aria-label={u.breadcrumb}><ol><li><a href={`/${locale}/`}>{u.home}</a></li><li aria-current="page">{u.pageLabel}</li></ol></nav>
+      <nav className="kitchen-breadcrumb wrap" aria-label={u.breadcrumb}><ol><li><a href={`/${locale === 'zh' ? 'zh-cn' : locale}/`}>{u.home}</a></li><li aria-current="page">{u.pageLabel}</li></ol></nav>
       <section className="hero wrap">
         <div className="hero-copy"><p className="eyebrow">{u.audience}</p><h1>{u.heading}<br/><em>{u.emphasis}</em></h1><p className="hero-description"><IsolatedText>{u.intro}</IsolatedText></p><div className="actions"><a className="button primary" href="#commercial-kitchen-equipment">{u.explore}<Arrow locale={locale}/></a><a className="text-link" href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div><div className="markets">{Object.values(t.countries).map(country => <span key={country}>{country}</span>)}</div></div>
         <div className="hero-visual"><img src="/commercial-kitchen-media/kitchen-hero.webp" alt={u.heroAlt} fetchPriority="high" width="1200" height="900"/><div className="image-caption">{u.heroCaption}</div><div className="hero-label"><strong>{u.heroLabel}</strong><a href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div></div>

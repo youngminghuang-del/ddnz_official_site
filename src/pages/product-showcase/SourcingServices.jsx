@@ -243,11 +243,6 @@ export function SourcingServices() {
     freight: "Not decided",
   });
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "China Sourcing Services | DDNZ Global";
-    return () => { document.title = previousTitle; };
-  }, []);
 
   const quoteUrl = useMemo(() => {
     const params = new URLSearchParams({

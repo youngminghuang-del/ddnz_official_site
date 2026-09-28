@@ -84,7 +84,18 @@ class Control extends EventTarget {
   select() {}
   scrollIntoView() {}
   pause() { this.dispatchEvent(new Event('pause')); }
-  replaceChildren() { this.children = []; }
+  append(...nodes) {
+    for (const node of nodes) {
+      if (node.parentElement) node.parentElement.children = node.parentElement.children.filter(child => child !== node);
+      node.parentElement = this;
+      this.children.push(node);
+    }
+  }
+  replaceChildren(...nodes) {
+    for (const child of this.children) child.parentElement = null;
+    this.children = [];
+    this.append(...nodes);
+  }
 }
 
 function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home, savedCalculator = true, savedRequest = false } = {}) {
@@ -107,14 +118,16 @@ function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home, sa
   });
   replaceGlobal('requestAnimationFrame', callback => callback());
   replaceGlobal('navigator', { clipboard: { writeText: async () => {} } });
-  replaceGlobal('document', { createElement: () => ({ click() { status.downloads++; } }) });
+  const fragment = new Control('fragment');
+  replaceGlobal('document', { createDocumentFragment: () => fragment, createElement: () => ({ click() { status.downloads++; } }) });
   t.mock.method(URL, 'createObjectURL', () => 'blob:local-test');
   t.mock.method(URL, 'revokeObjectURL', () => {});
   t.mock.method(globalThis, 'setTimeout', callback => { callback(); return 0; });
 
   const root = new Control(), views = {};
+  const main = new Control('main', { id: 'main' }, root);
   for (const page of Object.keys(ROUTES)) {
-    views[page] = new Control('section', { id: `view-${page}`, className: 'view' }, root);
+    views[page] = new Control('section', { id: `view-${page}`, className: 'view' }, main);
     new Control('h1', {}, views[page]);
   }
   const ids = ['product-cards', 'sku-rows', 'add-row', 'packing', 'charging', 'sale-price', 'monthly',
@@ -122,7 +135,7 @@ function fixture(t, { callback, omitCallback = false, pathname = ROUTES.home, sa
     'packing-summary', 'carton-detail', 'route-results', 'sales-results', 'quote-text', 'copy-status',
     'handoff-status', 'process-stage'];
   for (const id of ids) new Control('div', { id }, views.calculator);
-  const find = selector => root.querySelector(selector);
+  const find = selector => root.querySelector(selector) || fragment.querySelector(selector);
   const link = (href, options = {}) => {
     const anchor = new Control('a', options, root);
     anchor.setAttribute('href', href);
@@ -199,6 +212,7 @@ test('comparison, guide and video events follow explicit engagement, not initial
   const f = fixture(t);
   f.fire(f.link(ROUTES.products + '?model=private&email=buyer%40example.com'));
   f.fire(f.link(ROUTES.products)); // Already on compare.
+  f.controller.activate(ROUTES.calculator);
   f.fire(f.productSummary);
   f.productSummary.parentElement.open = true; f.fire(f.productSummary); // Closing is silent.
   f.fire(f.link(ROUTES.prices));

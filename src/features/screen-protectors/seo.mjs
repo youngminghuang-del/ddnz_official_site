@@ -1,3 +1,5 @@
+import { renderPageEvidence } from './page-evidence.mjs';
+import { resolveSeoTitle } from '../../lib/seoTitle.mjs';
 import { renderImpact001 } from './impact001.mjs';
 import { renderPrivacy001 } from './privacy001.mjs';
 import { ROUTES, pageForPath } from './routes.mjs';
@@ -76,7 +78,7 @@ export function screenProtectorMetadata(pathname, { preview = true } = {}) {
   if (!page) throw new Error(`Unknown screen protector path: ${pathname}`);
   const metadata = SCREEN_PROTECTOR_SEO[page];
   return {
-    ...metadata, page, path: ROUTES[page], canonical: SITE_ORIGIN + screenProtectorCanonicalPath(pathname),
+    ...metadata, title: resolveSeoTitle(pathname, metadata.title), page, path: ROUTES[page], canonical: SITE_ORIGIN + screenProtectorCanonicalPath(pathname),
     image: SITE_ORIGIN + metadata.image, language: 'en', type: 'website',
     alternateUrls: ['guides','prices','curves','videos','calculator'].includes(page) ? [...productAlternates(ROUTES[page]), {hrefLang:'x-default',href:'https://www.ddnzglobal.com'+ROUTES[page]+'/'}] : ['home', 'products'].includes(page) ? phoneAlternates(ROUTES[page]) : [],
     robots: preview ? PREVIEW_ROBOTS : page === 'quote' ? BRIEF_ROBOTS : PUBLIC_ROBOTS,
@@ -201,7 +203,7 @@ export function renderScreenProtectorBody(page) {
   if (page === 'quote') body = heading(EN.quote.title, EN.quote.intro) + section(EN.quote.confirmTitle, list(EN.quote.confirm))
     + paragraph('Your plan stays in this browser tab. Enable JavaScript to review it. Nothing is sent until you submit the enquiry.') + link('calculator');
   const nav = ['home', 'products', 'guides', 'videos', 'calculator'].map(target => link(target)).join(' · ');
-  return `<div class="phone-film" lang="en" dir="ltr" data-static-fallback="screen-protectors"><nav aria-label="Screen protector navigation">${nav}</nav><main id="main">${renderScreenProtectorBreadcrumbs(page)}${body}${renderScreenProtectorNextSteps(page)}</main></div>${renderEnglishPhoneBuyerLinks(page)}`;
+  return `<div class="phone-film" lang="en" dir="ltr" data-static-fallback="screen-protectors"><nav aria-label="Screen protector navigation">${nav}</nav><main id="main">${renderScreenProtectorBreadcrumbs(page)}${body}${renderPageEvidence(page)}${renderScreenProtectorNextSteps(page)}</main></div>${renderEnglishPhoneBuyerLinks(page)}`;
 }
 
 export function renderScreenProtectorHead(pathname, options) {
