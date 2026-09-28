@@ -1,3 +1,7 @@
+# Display withdrawn at owner request — 2026-09-28
+
+The owner requested removal of the added specification displays, model lists and verification commentary because the presentation felt too AI-written. The compare, guides and curved-glass pages now retain their original product and buying content without the appended evidence sections. The following is a historical source review, not a description of currently displayed content. These displays should not be restored merely to satisfy the earlier audit checklist.
+
 # Screen-protector catalogue content review — 2026-09-28
 
 Existing English compare, specification-guide and curved-glass pages now use the supplied Hanshang catalogue (slides 6–7 and 16) and separate OG28 model records dated 2026-08-28. Static fallback and the active JavaScript view share the same content renderer.
