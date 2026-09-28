@@ -1,3 +1,4 @@
+import { renderFilmEntry } from '../buyer-entry/content.mjs';
 import { renderPageEvidence } from './page-evidence.mjs';
 import { resolveSeoTitle } from '../../lib/seoTitle.mjs';
 import { renderImpact001 } from './impact001.mjs';
@@ -176,7 +177,7 @@ export function renderScreenProtectorBody(page) {
     + EN.home.journey.map(([, title, description, target]) => section(title, paragraph(description) + link(target))).join('')
     + guideLinks() + section(EN.home.offersTitle, productSummary())
     + section(EN.home.planTitle, paragraph(EN.home.planBody) + link('calculator'));
-  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + paragraph(EN.home.offersBody)
+  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderFilmEntry() + paragraph(EN.home.offersBody)
     + productSummary() + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
   if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)

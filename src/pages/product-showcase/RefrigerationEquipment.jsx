@@ -1,3 +1,4 @@
+import { renderRefrigerationEntry } from '../../features/buyer-entry/kitchen.mjs';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   AlertCircle,
@@ -298,7 +299,7 @@ export function RefrigerationEquipment() {
           </div>
         </section>
 
-        <section className="refrigeration-section" aria-label="Compare refrigeration models"><p className="refrigeration-kicker">CHOOSE YOUR EQUIPMENT</p><h2>Find the next model for your range.</h2><div className="flex flex-wrap gap-4 mt-5"><a className="refrigeration-primary" href="/sourcing/commercial-ice-machines-from-china/">Compare six ice machines <ArrowRight size={17}/></a><a className="refrigeration-secondary" href="/sourcing/commercial-kitchen-equipment-from-china/#commercial-kitchen-equipment">Browse refrigerators &amp; prep counters <ArrowRight size={17}/></a></div></section>
+        <div dangerouslySetInnerHTML={{__html:renderRefrigerationEntry()}}/>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">
           <div className="refrigeration-evidence-head">
             <div><p className="refrigeration-kicker">A CLOSER LOOK</p><h2 id="refrigeration-evidence-title">From the production line to the packing floor.</h2><p>Watch ice-maker production, view the packing photos and check what matters for your equipment selection.</p></div>

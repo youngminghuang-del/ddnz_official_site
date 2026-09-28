@@ -1,3 +1,4 @@
+import { renderCaseEntry } from '../buyer-entry/content.mjs';
 import StartupBuyingContent from '../search-intent/StartupBuyingContent';
 import { powerProducts } from './power-products.mjs';
 import { hubProductIds, defaultGroupSize } from './hub-selection.mjs';
@@ -133,6 +134,13 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  <nav className="ms-breadcrumbs" aria-label={c('home')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{c('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{c('products')}</a>{pageId!=='hub'&&<><span>/</span><a href={link('hub',locale)}>{c('hub')}</a></>}<span>/</span><span aria-current="page">{c(pageId)}</span></nav>
  <section className="ms-hero"><div><p className="ms-eyebrow">{copyFor(page.eyebrow,locale)}</p><h1>{copyFor(page.heading,locale)}</h1><p className="ms-lead">{copyFor(page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?copyFor({en:'Build my sourcing request',es:'Preparar mi solicitud',ar:'إعداد طلب التوريد'},locale):c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#collection':'#buying-brief'} className="ms-secondary">{pageId==='hub'?c('comparison'):c('brief')} ↗</a></div></div><figure><img src={page.image} alt={c(pageId==='compare'?'cases':pageId)} width="1200" height="1200" fetchPriority="high"/><figcaption>{c(pageId==='straps'?'set':pageId==='hub'?'cases':pageId==='compare'?'checks':'style')}</figcaption></figure></section>
  <MobileCategoryLinks locale={locale} current={pageId}/>
+ {pageId==='cases'&&locale==='en'&&<div onClick={event=>{
+   const brand=event.target.closest('[data-case-brand]')?.dataset.caseBrand;
+   if(!brand||event.ctrlKey||event.metaKey||event.shiftKey||event.altKey)return;
+   const note=`Phone case request: ${brand}.`;
+   setDraft(d=>({...d,contact:{...d.contact,notes:d.contact.notes.includes(note)?d.contact.notes:[d.contact.notes,note].filter(Boolean).join('\n')}}));
+   onAction('request_case_brand');
+ }} dangerouslySetInnerHTML={{__html:renderCaseEntry()}}/>}
  {pageId==='hub'&&<section id="categories" className="ms-section"><div className="ms-section-head"><h2>{c('range')}</h2></div><div className="ms-families">{[
  {id:'cases',target:'case-selection',image:pages.cases.image,title:ui.cases,body:{en:'Choose a case, phone model and colour. Add the quantities to your order.',es:'Elija funda, modelo y color. Añada las cantidades al pedido.',ar:'اختر الغطاء وطراز الهاتف واللون، ثم أضف الكميات إلى الطلب.'}},
  {id:'straps',target:'strap-selection',image:pages.straps.image,title:ui.straps,body:{en:'Crossbody cords, wrist loops and bead charms. Choose each part or set.',es:'Cordones, correas de muñeca y colgantes. Elija cada pieza o conjunto.',ar:'أحبال وحلقات معصم وزينة خرز. اختر القطع أو الأطقم.'}},

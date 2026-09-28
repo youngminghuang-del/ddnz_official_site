@@ -1,3 +1,4 @@
+import { renderKitchenEntry } from '../../features/buyer-entry/kitchen.mjs';
 import {packageAlternates} from '../../features/commercial-kitchen/packageLocalization';
 import { useId, useMemo, useRef, useState } from 'react';
 import {
@@ -479,6 +480,7 @@ export function RestaurantKitchenPackagesContent() {
         </div>
       </section>
 
+      <div dangerouslySetInnerHTML={{__html:renderKitchenEntry(scenarios)}}/>
       <section className="rkp-buyer-strip" aria-labelledby="rkp-buyers-title">
         <div className="rkp-strip-heading"><h2 id="rkp-buyers-title">Buy a working restaurant package, not seven disconnected machines.</h2></div>
         <div className="rkp-buyer-list">
