@@ -1,0 +1,13 @@
+{
+  "sourceCommit": "593f463b475fff3006d1e9b124901ebecb4fb226",
+  "reason": "Published screen-protector content and active-view rendering repair (PR 38). Dates record publication, never build time.",
+  "pages": {
+    "/screen-protectors/": "2026-09-28",
+    "/screen-protectors/compare/": "2026-09-28",
+    "/screen-protectors/guides/": "2026-09-28",
+    "/screen-protectors/guides/price-differences/": "2026-09-28",
+    "/screen-protectors/guides/curved-glass/": "2026-09-28",
+    "/screen-protectors/videos/": "2026-09-28",
+    "/screen-protectors/calculator/": "2026-09-28"
+  }
+}

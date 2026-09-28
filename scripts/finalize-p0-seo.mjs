@@ -1,4 +1,6 @@
 import { resolveSeoTitle } from '../src/lib/seoTitle.mjs';
+import { applyContentLastmod } from './lib/content-lastmod.mjs';
+import contentUpdates from '../src/data/contentUpdates.json' with { type: 'json' };
 import fs from 'node:fs';
 import path from 'node:path';
 const root=process.cwd(),dist=path.join(root,'dist');
@@ -22,3 +24,8 @@ for(const route of routes){
  fs.writeFileSync(file,html);
 }
 console.log(`P0: ${titles} curated title overrides; ${navs} static language navigations added; ${routes.length} routes checked.`);
+const sitemapFile = path.join(dist, 'sitemap.xml');
+const sitemap = applyContentLastmod(fs.readFileSync(sitemapFile, 'utf8'), contentUpdates.pages);
+fs.writeFileSync(sitemapFile, sitemap);
+fs.writeFileSync(path.join(root, 'public/sitemap.xml'), sitemap);
+console.log(`Recorded verified content dates for ${Object.keys(contentUpdates.pages).length} routes.`);
