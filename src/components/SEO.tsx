@@ -1,4 +1,4 @@
-import seoTitleOverrides from '../data/seoTitleOverrides.json';
+import { resolveSeoTitle } from '../lib/seoTitle.mjs';
 import type { Language } from '../i18n/translations';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -82,7 +82,7 @@ export default function SEO({
 
   // Resolve final SEO fields
   const titlePath = '/' + location.pathname.split('/').filter(Boolean).join('/') + (location.pathname === '/' ? '' : '/');
-  const finalTitle = (seoTitleOverrides as Record<string, string>)[titlePath] || title || defaults.title;
+  const finalTitle = resolveSeoTitle(titlePath, title || defaults.title);
   const finalRawDesc = description || defaults.desc;
 
   // Keep the summary concise without cutting a word in half. Search engines

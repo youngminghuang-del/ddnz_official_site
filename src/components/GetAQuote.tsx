@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, type FormEvent } from 'react';
+import { useState, useEffect, useRef, useMemo, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Info,
@@ -23,6 +23,8 @@ import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
 import { readAttribution } from '../lib/attribution';
+
+import { quoteParamsForLocation, clearQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 
 // Multi-language translation map for the interactive funnel
 const funnelTranslations: Record<string, Record<string, string>> = {
@@ -354,8 +356,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   const { language, t } = useLanguage();
   const location = useLocation();
   const isQuotePage = location.pathname.includes('get-a-quote');
-  const attributionParams = new URLSearchParams(location.search);
-  const attribution = readAttribution(location.search);
+  const attributionParams = useMemo(() => quoteParamsForLocation(location.search, location.pathname), [location.search, location.pathname, location.key]);
+  const attribution = readAttribution(attributionParams.toString());
   const leadGoal = attributionParams.get('leadGoal') || 'Freight Export';
   const attributedCategory = attributionParams.get('industry') || '';
   const attributedSubcategory = attributionParams.get('subcategory') || '';
@@ -400,10 +402,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     }
   }, [language]);
 
-  // Scan URL parameters for auto-fill on initial render
+  // Preserve legacy URL and local handoff destination prefill.
   useEffect(() => {
-    const params = new URLSearchParams(window.location.search);
-    const destParam = params.get('dest') || params.get('country');
+    const params = attributionParams;
+    const destParam = params.get('dest') || params.get('country') || params.get('destinationText');
     if (destParam) {
       if (destParam === 'Saudi-Arabia' || destParam === 'Saudi_Arabia' || destParam === 'saudi-arabia' || destParam === 'Middle-East') {
         const saudiText = language === 'zh' ? '沙特阿拉伯' : 'Saudi Arabia';
@@ -451,7 +453,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
         setIsParamFilled(true);
       }
     }
-  }, [language]);
+  }, [language, attributionParams]);
   const [weight, setWeight] = useState(350);
   const [volume, setVolume] = useState(2.5);
   const [presetActive, setPresetActive] = useState<'small' | 'medium' | 'large' | null>('medium');
@@ -556,6 +558,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   // Tracking and local success state
   useEffect(() => {
     if (state.succeeded && !successTrackedRef.current) {
+      clearQuoteContext(location.pathname);
       successTrackedRef.current = true;
       lifecycleRef.current.submitted = true;
       trackEvent('quote_form_submit', {

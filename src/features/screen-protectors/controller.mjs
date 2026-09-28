@@ -1,3 +1,4 @@
+import { renderPageEvidence } from './page-evidence.mjs';
 import { renderImpact001 } from './impact001.mjs';
 import { renderPrivacy001 } from './privacy001.mjs';
 import { readMixedDraft, saveMixedDraft, mixedBriefPath, addFilm, importCalculator } from '../mobile-sourcing/mixed-storage.mjs';
@@ -17,7 +18,9 @@ const on=(target,type,handler)=>target.addEventListener(type,handler,{signal:lif
 const onRoot=(type,handler)=>on(root,type,handler);
 const report=createScreenProtectorActionReporter(onAction,lifecycle.signal);
 const playedVideos=new WeakSet();
-const $=s=>s==='#app'?root:root.querySelector(s),all=s=>[...root.querySelectorAll(s)];
+// Keep inactive views outside the document, preserving form state and listeners.
+const inactiveViews=document.createDocumentFragment();
+const $=s=>s==='#app'?root:root.querySelector(s)||inactiveViews.querySelector(s),all=s=>[...root.querySelectorAll(s),...inactiveViews.querySelectorAll(s)];
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const asset=file=>'/screen-protector-media/assets/'+file;
 const media=file=>'/screen-protector-media/media/'+file;
@@ -32,7 +35,7 @@ try{const saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved&&Array.
 const link=(href,label,cls='')=>`<a class="${cls}" href="${href}">${label}</a>`;
 const action=(page,label,secondary=false)=>link('#'+page,label+' <span aria-hidden="true">↗</span>',secondary?'button secondary':'button');
 const heading=(tag,title,body)=>`<div class="page-heading"><p class="eyebrow">${tag}</p><h1 tabindex="-1">${title.replaceAll('\n','<br>')}</h1><p class="lede">${body}</p></div>`;
-const section=(id,html)=>`<section class="view" id="view-${id}" hidden>${renderScreenProtectorBreadcrumbs(id)}${html}${renderScreenProtectorNextSteps(id)}</section>`;
+const section=(id,html)=>`<section class="view" id="view-${id}" hidden>${renderScreenProtectorBreadcrumbs(id)}${html}${renderPageEvidence(id)}${renderScreenProtectorNextSteps(id)}</section>`;
 const fields=ids=>`<div class="check-list">${ids.map(id=>`<label><input type="checkbox" data-check="${id}"><span>${EN.requests[id]}</span></label>`).join('')}</div><div class="check-summary"><span data-check-count></span>${link('#quote',t('guides.viewBrief')+' →')}</div>`;
 const cards=()=>`<div class="guide-cards"><a href="#prices" class="guide-card"><img src="${asset('001-kit-photo.jpg')}" width="1280" height="720" loading="lazy" alt="${t('guides.kit001')}"><div><p class="eyebrow">01 / ${t('pages.prices')}</p><h3>${t('guides.priceTitle').replace('\n','<br>')}</h3><p>${t('guides.priceDesc')}</p><b>${t('guides.open')} ↗</b></div></a><a href="#curves" class="guide-card"><img src="${asset('curved-glass-cover-v1.png')}" width="1672" height="941" loading="lazy" alt="${t('comparisonCoverAlt')}"><div><p class="eyebrow">02 / ${t('pages.curves')}</p><h3>${t('guides.curveTitle').replace('\n','<br>')}</h3><p>${t('guides.curveDesc')}</p><b>${t('guides.open')} ↗</b></div></a></div>`;
 const clip=(c,scope='guide')=>`<figure class="clip"><div class="clip-player"><video controls playsinline preload="none" poster="${media(c.poster+'.jpg')}" aria-label="${c.title}" aria-describedby="desc-${scope}-${c.id}"><source src="${media(c.file+'.mp4')}" type="video/mp4"><track kind="captions" src="/screen-protector-media/captions/${c.file}.en.vtt" srclang="en" label="${t('media.captions')}" default></video><button type="button" class="play-clip" aria-label="Play: ${c.title}"><span aria-hidden="true">▶</span> ${VIDEO_COPY.play}</button></div><figcaption><div class="clip-heading"><h3>${c.title}</h3><span>${c.duration}s</span></div><small>${t('media.silent')}</small><p id="desc-${scope}-${c.id}">${c.description}</p><p class="media-error" role="status"></p></figcaption></figure>`;
@@ -41,7 +44,7 @@ const videos=section('videos',heading(VIDEO_COPY.eyebrow,VIDEO_COPY.title,VIDEO_
 
 const overview=()=>`<figure class="overview"><video controls playsinline preload="none" poster="${media('factory-fixture-poster.jpg')}" aria-label="${t('home.videoTitle')}" aria-describedby="factory-credit"><source src="/screen-protector-media/media/ddnz-factory-en-720p-v1.mp4" type="video/mp4">${t('media.unavailable')}</video><figcaption><strong>${t('home.videoLabel')}</strong><span id="factory-credit">${t('home.credit')}</span><p class="media-error" role="status"></p></figcaption></figure>`;
 const nav=`<div class="section-nav"><a href="#home" class="section-name">${t('pages.home')}</a><nav aria-label="${t('nav.section')}">${['home','products','guides','videos','calculator'].map(id=>`<a href="#${id}" data-nav="${id}" aria-label="${EN.pages[id]}"><span class="nav-label">${EN.pages[id]}</span><span class="nav-short" aria-hidden="true">${({home:"Overview",products:"Products",guides:"Guides",videos:"Videos",calculator:"Landed cost"})[id]}</span></a>`).join('')}</nav><span class="locale-label">EN</span></div>`;
-const home=section('home',`<div class="hero"><div>${heading(t('home.eyebrow'),t('home.title'),t('home.intro'))}<div class="actions">${action('products',t('home.compare'))}<a href="#videos" class="factory-cta"><span class="factory-cta-play" aria-hidden="true">▶</span><span><strong>${VIDEO_COPY.watch}</strong><small>${VIDEO_COPY.count}</small></span><b aria-hidden="true">↗</b></a></div></div><div>${overview()}<details class="transcript"><summary>${t('home.transcriptTitle')}</summary><p>${t('home.transcript')}</p></details></div></div><div class="journey">${EN.home.journey.map(([tag,title,body,page])=>`<a href="#${page}"><span class="eyebrow">${tag}</span><h3>${title}</h3><p>${body}</p><span aria-hidden="true">↗</span></a>`).join('')}</div><div class="section-heading"><p class="eyebrow">${t('home.notes')}</p><h2>${t('home.notesTitle')}</h2></div>${cards()}<div class="product-teaser"><div><p class="eyebrow">${t('home.offers')}</p><h2>${t('home.offersTitle')}</h2><p>${t('home.offersBody')}</p>${action('products',t('pages.products'),true)}</div><div class="price-list">${Object.entries(PRODUCTS).map(([id,p])=>`<a href="#products"><img loading="lazy" src="${asset(p.image)}" width="100" height="100" alt=""><span>${names[id]}</span><b>${money(p.price)}</b></a>`).join('')}</div></div><div class="next-step"><div><h2>${t('home.planTitle')}</h2><p>${t('home.planBody')}</p></div>${action('calculator',t('home.planCta'))}</div>`);
+const home=section('home',`<div class="hero"><div>${heading(t('home.eyebrow'),t('home.title'),t('home.intro'))}<div class="actions">${action('products',t('home.compare'))}<a href="#videos" class="factory-cta"><span class="factory-cta-play" aria-hidden="true">▶</span><span><strong>${VIDEO_COPY.watch}</strong><small>${VIDEO_COPY.count}</small></span><b aria-hidden="true">↗</b></a></div></div><div>${overview()}<details class="transcript"><summary>${t('home.transcriptTitle')}</summary><p>${t('home.transcript')}</p></details></div></div><div class="journey">${EN.home.journey.map(([tag,title,body,page])=>`<a href="#${page}"><span class="eyebrow">${tag}</span><h3>${title}</h3><p>${body}</p><span aria-hidden="true">↗</span></a>`).join('')}</div><div class="section-heading"><p class="eyebrow">${t('home.notes')}</p><h2>${t('home.notesTitle')}</h2></div>${cards()}<div class="product-teaser"><div><p class="eyebrow">${t('home.offers')}</p><h2>${t('home.offersTitle')}</h2><p>${t('home.offersBody')}</p>${action('products',t('pages.products'),true)}</div><div class="price-list">${Object.entries(PRODUCTS).map(([id,p])=>`<a href="#products"><img loading="lazy" src="${asset(p.image)}" width="100" height="100" alt="${esc(names[id])}"><span>${names[id]}</span><b>${money(p.price)}</b></a>`).join('')}</div></div><div class="next-step"><div><h2>${t('home.planTitle')}</h2><p>${t('home.planBody')}</p></div>${action('calculator',t('home.planCta'))}</div>`);
 const products=section('products',heading(t('home.offers'),t('product.title'),t('product.intro'))+`<p class="notice">${t('home.offersBody')}</p><div id="product-cards"></div><div class="next-step"><div><h2>${t('home.planTitle')}</h2><p>${t('home.planBody')}</p></div>${action('calculator',t('home.planCta'))}</div>`);
 const guides=section('guides',heading(t('home.notes'),t('guides.title'),t('guides.intro'))+cards()+fields(Object.keys(EN.requests)));
 const prices=section('prices',heading('01 / '+t('pages.prices'),t('guides.priceTitle'),t('guides.priceIntro'))+`<div class="article"><h2>${t('guides.factorsTitle')}</h2><div class="factor-list">${EN.guides.factors.map(([title,body],i)=>`<details ${i===0?'open':''}><summary><span>0${i+1}</span>${title}</summary><p>${body}</p></details>`).join('')}</div><h2>${t('guides.configuration')}</h2><div class="configuration"><figure><img src="${asset('001-kit-photo.jpg')}" width="1280" height="720" loading="lazy" alt="${t('guides.kit001')}"><figcaption>${t('guides.kit001')}</figcaption></figure><figure><img src="${asset('titan-kit.jpg')}" width="2000" height="2000" loading="lazy" alt="${t('guides.kitTitan')}"><figcaption>${t('guides.kitTitan')}</figcaption></figure></div><h2>${t('guides.actions')}</h2><div class="clip-grid">${EN.media.clips.slice(0,2).map(clip).join('')}</div><p class="notice">${t('guides.sampleAdvice')}</p><h2>${t('guides.observing')}</h2><p>${t('guides.observation')}</p>${clip(EN.media.clips[2])}<h2>${t('guides.checksTitle')}</h2>${fields(['material','edge','optical','adhesive','kit','repeat'])}<div class="actions">${action('products',t('pages.products'))}${action('curves',t('pages.curves'),true)}</div></div>`);
@@ -146,7 +149,9 @@ let currentPage='';
 function activate(pathname, hash='') {
   const page=pageForPath(pathname)||'home';
   if(page==='quote')refreshBrief();
-  all('.view').forEach(v=>v.hidden=v.id!=='view-'+page);
+  const active=$('#view-'+page);
+  all('.view').forEach(v=>{v.hidden=v!==active;if(v!==active)inactiveViews.append(v);});
+  $('#main').replaceChildren(active);
   all('[data-nav]').forEach(a=>{if(a.dataset.nav===(['prices','curves'].includes(page)?'guides':page))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current');});
   all('video').forEach(v=>{if(v.closest('.view').hidden)v.pause();});
   const processIndex=page==='videos'?FACTORY_CLIPS.findIndex(c=>'#'+c.id===hash):-1;
@@ -163,7 +168,7 @@ all('a[href]').forEach(a=>{
   const target=a.getAttribute('href');
   if(target.startsWith('/')&&!target.startsWith('//')){
     const url=new URL(target,location.origin);
-    url.pathname=url.pathname.replace(/\/+$/,'')+'/';
+    if(!/\.[a-z0-9]{2,5}$/i.test(url.pathname))url.pathname=url.pathname.replace(/\/+$/,'')+'/';
     a.setAttribute('href',url.pathname+url.search+url.hash);
   }
 });
@@ -171,7 +176,7 @@ onRoot('click',e=>{
   const a=e.target.closest('a[href]');
   if(!isPlainAnchorClick(e,a))return;
   const url=new URL(a.href,location.href);
-  if(url.origin!==location.origin)return;
+  if(url.origin!==location.origin||/\.[a-z0-9]{2,5}$/i.test(url.pathname))return;
   e.preventDefault();
   if(a.id==='continue-inquiry'){
     report('continue_inquiry');
@@ -190,5 +195,5 @@ onRoot('click',e=>{
 });
 // Mount with the requested view already visible, including direct deep links.
 activate(location.pathname,location.hash);
-return {activate, setBreadcrumbs(options){all('.view').forEach(view=>{view.querySelector('.breadcrumbs').outerHTML=renderScreenProtectorBreadcrumbs(view.id.slice(5),options);});}, destroy(){lifecycle.abort();all('video').forEach(video=>video.pause());root.replaceChildren();}};
+return {activate, setBreadcrumbs(options){all('.view').forEach(view=>{view.querySelector('.breadcrumbs').outerHTML=renderScreenProtectorBreadcrumbs(view.id.slice(5),options);});}, destroy(){lifecycle.abort();all('video').forEach(video=>video.pause());root.replaceChildren();inactiveViews.replaceChildren();}};
 }

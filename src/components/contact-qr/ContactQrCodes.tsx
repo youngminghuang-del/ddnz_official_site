@@ -46,7 +46,7 @@ export default function ContactQrCodes({
               aria-label={titleFor(channel)} aria-haspopup="dialog" aria-controls={id + '-dialog'}
               data-analytics-tracked="true"
               onClick={() => { setSelected(channel); track(channel, 'open'); }}>
-              <img className="contact-qr__thumbnail" src={item.image} alt=""
+              <img className="contact-qr__thumbnail" src={item.image} alt={titleFor(channel)}
                 width={item.width} height={item.height} loading="lazy" decoding="async" />
               <span className="contact-qr__brand"><QrCode className="contact-qr__mobile-icon" size={18} aria-hidden="true" /><b>{item.label}</b></span>
               <span className="contact-qr__view">{copy.view}</span>

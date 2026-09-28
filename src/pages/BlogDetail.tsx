@@ -1,3 +1,4 @@
+import { normalizeQuoteHtml, sanitizeQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -114,10 +115,9 @@ function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
     article: post.slug || post.id,
     leadGoal: post.leadGoal || (isProductSourcing ? 'Product Sourcing' : 'Freight Export'),
   });
-  if (post.productCategory && post.productCategory !== 'Not Applicable') {
-    params.set('industry', post.productCategory);
-  }
-  if (post.productSubcategory) params.set('subcategory', post.productSubcategory);
+  // Discovery links keep only a fixed subcategory identifier, never free text.
+  const subcategory = sanitizeQuoteContext({ subcategory: post.productSubcategory || '' }).subcategory;
+  if (subcategory) params.set('subcategory', subcategory);
 
   if (post.primaryCTA === 'Commercial Kitchen Sourcing') {
     const next = kitchenArticleDiscovery[post.slug || '']?.links[0];
@@ -136,6 +136,9 @@ function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
       href: `${canonicalSitePath(`${prefix}/sourcing/outdoor-products-from-china`)}?${params.toString()}`,
     };
   }
+  // Quote context is moved out of href at the link-emission boundary.
+  if (post.productCategory && post.productCategory !== 'Not Applicable') params.set('industry', post.productCategory);
+  if (post.productSubcategory) params.set('subcategory', post.productSubcategory);
   return {
     label: isProductSourcing ? ui.sourcingCta : ui.freightCta,
     href: `${canonicalSitePath(`${prefix}/get-a-quote`)}?${params.toString()}`,
@@ -356,7 +359,7 @@ export default function BlogDetail() {
 
             <div
               className="prose prose-slate lg:prose-lg max-w-none blog-content post-content"
-              dangerouslySetInnerHTML={{ __html: normalizeNotionLinks(post.content) }}
+              dangerouslySetInnerHTML={{ __html: normalizeQuoteHtml(normalizeNotionLinks(post.content)) }}
             />
 
             {articleDiscovery && <section lang="en" className="mt-10 border-t border-slate-200 pt-7" aria-label="Related buying guides"><h2 className="text-xl font-bold">{articleDiscovery.heading || 'Compare equipment for your next order'}</h2><div className="mt-3 flex flex-col items-start gap-2">{articleDiscovery.links.map(item => <Link key={item.href} to={item.href} onClick={() => trackEvent('article_equipment_click', { article_slug: post.slug, link_path: item.href })} className="inline-flex min-h-11 items-center font-semibold text-[#633185] underline underline-offset-4">{item.label} <span aria-hidden="true" className="ml-2">→</span></Link>)}</div></section>}
@@ -372,6 +375,7 @@ export default function BlogDetail() {
                 </p>
                 <Link
                   to={primaryCta.href}
+                  rel={primaryCta.href.includes('/get-a-quote') ? undefined : 'nofollow'}
                   data-analytics-tracked="true"
                   onClick={() =>
                     trackEvent('article_cta_click', {

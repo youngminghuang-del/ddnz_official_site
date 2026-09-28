@@ -1,3 +1,4 @@
+import { resolveSeoTitle } from '../../lib/seoTitle.mjs';
 import { phoneCopy, localizedPhonePath, phoneAlternates, LOCALIZED_SCREEN_PROTECTOR_ROUTES } from './localization.mjs';
 import { escapeHtml } from './browsing.mjs';
 export { LOCALIZED_SCREEN_PROTECTOR_ROUTES };
@@ -9,7 +10,7 @@ export function localizedScreenProtectorMetadata(locale, page = 'home', { previe
   const trail = [{ name: copy.home, item: `https://www.ddnzglobal.com/${locale==='zh' || locale==='zh-cn'?'zh-cn':locale}/` }, { name: copy.section, item: `https://www.ddnzglobal.com${localizedPhonePath(locale)}` }];
   if (page === 'compare') trail.push({ name: copy.compare, item: canonical });
   return {
-    ...copy.seo[page], locale, language: locale, dir: copy.direction, page, path, canonical, type: 'website',
+    ...copy.seo[page], title: resolveSeoTitle(path, copy.seo[page].title), locale, language: locale, dir: copy.direction, page, path, canonical, type: 'website',
     image: 'https://www.ddnzglobal.com/screen-protector-media/assets/001-kit-photo.jpg', imageAlt: copy.imageAlt,
     robots: preview ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1',
     indexable: !preview, alternateUrls: phoneAlternates(path),

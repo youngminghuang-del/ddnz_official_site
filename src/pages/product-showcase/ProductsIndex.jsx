@@ -393,11 +393,6 @@ export function ProductsIndex() {
   const [form, setForm] = useState({ category: PRODUCT_CATEGORIES[0].id, scope: "", destination: "", stage: "", notes: "" });
   const activeCategory = PRODUCT_CATEGORIES.find((category) => category.id === activeId) || PRODUCT_CATEGORIES[0];
 
-  useEffect(() => {
-    const previousTitle = document.title;
-    document.title = "Product Sourcing from China | DDNZ Global";
-    return () => { document.title = previousTitle; };
-  }, []);
 
   const quoteUrl = useMemo(() => {
     const category = PRODUCT_CATEGORIES.find((item) => item.id === form.category);

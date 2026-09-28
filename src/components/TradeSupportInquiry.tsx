@@ -1,3 +1,4 @@
+import { quoteParamsForLocation, clearQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 import { useLocation } from 'react-router-dom';
@@ -314,13 +315,13 @@ export default function TradeSupportInquiry() {
   const [isLocalPreview, setIsLocalPreview] = useState(typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__);
   useEffect(() => { if (!isProductionHost(currentHostname())) setIsLocalPreview(true); }, []);
   const previewCopy = localPreviewCopy[language] || localPreviewCopy.en;
-  const params = useMemo(() => new URLSearchParams(location.search), [location.search]);
+  const params = useMemo(() => quoteParamsForLocation(location.search, location.pathname), [location.search, location.pathname, location.key]);
   const leadGoal = params.get('leadGoal') || 'Product Sourcing';
   const mode: InquiryMode = leadGoal.toLowerCase().includes('inspection') ? 'existing' : 'sourcing';
   const initialCategory = params.get('industry') || 'Commercial Kitchen Equipment';
-  const initialDestination = params.get('dest') || params.get('country') || '';
+  const initialDestination = params.get('dest') || params.get('destinationText') || params.get('country') || '';
   const attributedSubcategory = params.get('subcategory') || '';
-  const attribution = readAttribution(location.search);
+  const attribution = readAttribution(params.toString());
   const leadSource = params.get('source') || attribution.source || attribution.utm_source || 'quote_page';
 
   const [step, setStep] = useState(1);
@@ -373,7 +374,7 @@ export default function TradeSupportInquiry() {
   useEffect(() => {
     let storedProductDetails = '';
     let incomingFilmPlan: ReturnType<typeof readHandoff> = null;
-    try { incomingFilmPlan = readHandoff(window.sessionStorage, location.search, Date.now(), language); } catch { /* Optional local storage. */ }
+    try { incomingFilmPlan = readHandoff(window.sessionStorage, params.toString(), Date.now(), language); } catch { /* Optional local storage. */ }
     setFilmPlan(incomingFilmPlan);
     setFilmAttachmentRemoved(false);
     setLocalPayload(null);
@@ -408,7 +409,7 @@ export default function TradeSupportInquiry() {
     setStep(1);
     setCategory(initialCategory);
     setDestination(initialDestination);
-    setProductDetails(['products_index','sourcing_services','kitchen_category','restaurant_kitchen_package','audio_speakers','refrigeration_equipment_product','film_guide','startup_plan'].includes(leadSource) && params.get('overviewBrief') ? params.get('overviewBrief')!.slice(0, 5000) : leadSource === 'food_processing' ? (params.get('notes') || params.get('productScope') || '').slice(0, 5000) : incomingFilmPlan?.brief || storedProductDetails);
+    setProductDetails(params.get('_ddnz_handoff') ? (incomingFilmPlan?.brief || params.get('overviewBrief') || params.get('productScope') || params.get('notes') || storedProductDetails).slice(0, 5000) : ['products_index','sourcing_services','kitchen_category','restaurant_kitchen_package','audio_speakers','refrigeration_equipment_product','film_guide','startup_plan'].includes(leadSource) && params.get('overviewBrief') ? params.get('overviewBrief')!.slice(0, 5000) : leadSource === 'food_processing' ? (params.get('notes') || params.get('productScope') || '').slice(0, 5000) : incomingFilmPlan?.brief || storedProductDetails);
     setServices([]);
     setReadiness('');
     setTimeline('');
@@ -424,12 +425,12 @@ export default function TradeSupportInquiry() {
     lifecycleRef.current.submitted = false;
     lifecycleRef.current.mode = mode;
     lifecycleRef.current.step = 1;
-  }, [location.search]);
+  }, [location.search, location.key]);
 
   useEffect(() => {
     if (!filmPlan || !('locale' in filmPlan) || filmPlan.locale === language || !['es', 'ar'].includes(language)) return;
     let translated: ReturnType<typeof readHandoff> = null;
-    try { translated = readHandoff(window.sessionStorage, location.search, Date.now(), language); } catch { /* Keep the existing attachment if storage is unavailable. */ }
+    try { translated = readHandoff(window.sessionStorage, params.toString(), Date.now(), language); } catch { /* Keep the existing attachment if storage is unavailable. */ }
     if (!translated) return;
     const previousBrief = filmPlan.brief, translatedBrief = translated.brief;
     setFilmPlan(translated);
@@ -482,6 +483,7 @@ export default function TradeSupportInquiry() {
         lead_source: leadSource,
       });
       setSubmitted(true);
+      clearQuoteContext(location.pathname);
     }
   }, [formState.succeeded, mode, leadGoal, category, services.length, leadSource]);
 
