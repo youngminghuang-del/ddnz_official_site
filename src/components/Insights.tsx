@@ -1,3 +1,4 @@
+import { latestHomepagePosts } from '../lib/homepageArticles';
 import { ArrowRight, CalendarDays } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -99,10 +100,7 @@ export default function Insights() {
   const prefix = prefixByLanguage[language] || '';
   const posts = notionBlogPosts as BlogPost[];
 
-  const currentArticleLocale = normalizeArticleLocale(language);
-  const preferredPosts = posts.filter((post) => normalizeArticleLocale(post.language) === currentArticleLocale);
-  const otherPosts = posts.filter((post) => normalizeArticleLocale(post.language) !== currentArticleLocale);
-  const displayPosts = [...preferredPosts.slice(0, 3), ...otherPosts].slice(0, 6);
+  const displayPosts = latestHomepagePosts(posts, language);
   const [featuredPost, ...secondaryPosts] = displayPosts;
 
   const blogPath = (post: BlogPost) => articleRoutePath(post);

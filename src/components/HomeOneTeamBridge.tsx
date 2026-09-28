@@ -34,6 +34,17 @@ const COPY: Record<Language, BridgeCopy> = {
   tr: { eyebrow: 'TEK EKİP · KAYNAKTAN VARIŞA', title: 'Çin tedariki ve nakliye tek zincirde.', intro: 'DDNZ tedarikçileri ve ihracat hazırlığını koordine eder. Heaven Born, 1997’den beri uluslararası taşımayı yürütür.', sourcing: 'DDNZ Global · tedarik ve ihracat koordinasyonu', sourcingBody: 'Tedarikçi arama, teklif eşleştirme, denetim, konsolidasyon ve belgeler.', freight: 'Heaven Born · uluslararası nakliye yürütümü', freightBody: 'FCL, LCL, tehlikeli yükler ve varış koordinasyonu.', handoff: 'Altı sorumluluk noktası', steps: ['Talep', 'Tedarikçi', 'Kalite kanıtı', 'Konsolidasyon', 'HB nakliye', 'Varış'], proof: 'Kanıt yükle birlikte ilerler.', proofBody: 'Tedarikçi kararı, ambalaj, yükleme planı ve teslim tek bir doğrulanabilir zincirdedir.', sourcingCta: 'Tedarik talebi oluştur', freightCta: 'Nakliye hizmetlerini incele', serviceLabels: ['FCL', 'LCL', 'Tehlikeli yük', 'Hava kargo', 'FBA', 'Depolama', 'Orta Asya'] },
 };
 
+const VISUAL_ALT: Record<Language, string> = {
+  en: 'Concept illustration of product sourcing, warehouse consolidation and container shipping.',
+  zh: '产品采购、仓库集货与集装箱运输衔接的概念视觉。',
+  ru: 'Концептуальное изображение закупок, консолидации на складе и контейнерной перевозки.',
+  fr: 'Illustration conceptuelle du sourcing, de la consolidation en entrepôt et du transport maritime.',
+  es: 'Ilustración conceptual de compras, consolidación en almacén y transporte marítimo.',
+  ar: 'صورة مفاهيمية تربط توريد المنتجات والتجميع في المستودع وشحن الحاويات.',
+  pt: 'Ilustração conceitual de compras, consolidação em armazém e transporte marítimo.',
+  tr: 'Ürün tedariki, depoda konsolidasyon ve konteyner taşımacılığını birleştiren kavramsal görsel.',
+};
+
 export default function HomeOneTeamBridge() {
   const { language } = useLanguage();
   const copy = COPY[language];
@@ -46,6 +57,18 @@ export default function HomeOneTeamBridge() {
           <h2 id="one-team-title">{copy.title}</h2>
           <p className="home-one-team-intro">{copy.intro}</p>
         </div>
+        <figure className="home-one-team-visual">
+          <img
+            src="/images/home/source-to-destination-v1-1600.webp"
+            srcSet="/images/home/source-to-destination-v1-800.webp 800w, /images/home/source-to-destination-v1-1600.webp 1600w"
+            sizes="(max-width: 640px) calc(100vw - 40px), (max-width: 1344px) calc(100vw - 96px), 1248px"
+            width="1600"
+            height="667"
+            alt={VISUAL_ALT[language]}
+            loading="lazy"
+            decoding="async"
+          />
+        </figure>
         <div className="home-one-team-roles">
           <article className="home-one-team-role home-one-team-role--sourcing">
             <div className="home-one-team-role-icon"><PackageCheck aria-hidden="true" /></div>

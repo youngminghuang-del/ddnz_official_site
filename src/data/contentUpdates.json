@@ -1,6 +1,6 @@
 {
   "sourceCommit": "593f463b475fff3006d1e9b124901ebecb4fb226",
-  "reason": "Published screen-protector content repair (PR 38) and five reviewed English title updates (2026-09-28). Dates record publication, never build time. Approved English purchase-navigation improvements for five existing pages (2026-09-28).",
+  "reason": "Published screen-protector content repair (PR 38) and five reviewed English title updates (2026-09-28). Dates record publication, never build time. Approved English purchase-navigation improvements for five existing pages (2026-09-28). Homepage brand visual and publication-date-first blog discovery (2026-09-28).",
   "pages": {
     "/screen-protectors/": "2026-09-28",
     "/screen-protectors/compare/": "2026-09-28",
@@ -13,6 +13,14 @@
     "/phone-cases/": "2026-09-28",
     "/refrigeration-equipment/": "2026-09-28",
     "/sourcing/food-processing-machinery-from-china/vegetable-processing-machinery/": "2026-09-28",
-    "/sourcing/restaurant-kitchen-packages-from-china/": "2026-09-28"
+    "/sourcing/restaurant-kitchen-packages-from-china/": "2026-09-28",
+    "/": "2026-09-28",
+    "/zh-cn/": "2026-09-28",
+    "/ru/": "2026-09-28",
+    "/fr/": "2026-09-28",
+    "/es/": "2026-09-28",
+    "/ar/": "2026-09-28",
+    "/pt/": "2026-09-28",
+    "/tr/": "2026-09-28"
   }
 }

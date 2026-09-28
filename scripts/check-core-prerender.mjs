@@ -20,6 +20,10 @@ for(const route of routes){
   if(!href.startsWith('/')||href.startsWith('//')||path.extname(href))continue;
   assert(fs.existsSync(path.join(root,href,'index.html')),`${route}: broken internal link ${href}`);
  }
+ if(/^\/(?:zh-cn\/|ru\/|fr\/|es\/|ar\/|pt\/|tr\/)?$/.test(route)) {
+  assert(html.includes('id="insights"') && html.includes('/blog/'), `${route}: homepage latest articles missing from initial HTML`);
+  assert(html.includes('source-to-destination-v1-1600.webp'), `${route}: sourcing-to-freight visual missing`);
+ }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
 assert.equal(count,48,'Expected 48 core page versions including eight enquiry pages');
