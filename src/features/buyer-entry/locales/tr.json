@@ -1,0 +1,130 @@
+{
+  "view": "{name} ürününü inceleyin",
+  "larger": "Daha büyük modeli inceleyin: {name}",
+  "concept": "Mutfak konseptini inceleyin",
+  "brief": "İşletme türüne ait özeti okuyun",
+  "briefLabel": "İşletme türüne ait özet",
+  "planner": "Etkileşimli mutfak yerleşimini açın",
+  "individualTitle": "Tekil ekipman mı arıyorsunuz?",
+  "individualBody": "Ekipman yenilemek veya toptan ürün yelpazenizi oluşturmak için kategorileri inceleyin.",
+  "individualLinks": [
+    "Elektrikli fritözler",
+    "Elektrikli ızgaralar",
+    "Buzdolapları, dondurucular ve buz makineleri",
+    "Gıda hazırlama makineleri"
+  ],
+  "cases": {
+    "title": "Malzemeyi seçin, telefon modellerini birlikte planlayın.",
+    "intro": "Çin’den toptan telefon kılıfı alırken malzemeye, yüzeye ve müşterilerinizin telefonlarına göre seçim yapın. Mevcut tasarımları inceleyip adetleri tek talepte birleştirin.",
+    "names": [
+      "Silikon kılıflar",
+      "Şeffaf TPU kılıflar",
+      "PC kılıflar",
+      "PU ve deri görünümlü kılıflar"
+    ],
+    "texts": [
+      "İç astarlı, yumuşak dokulu tasarım.",
+      "Günlük perakende satışı için şeffaf bir tasarım.",
+      "Samsung için delikli PC kılıf.",
+      "Cüzdan tipi kapaklı veya dokulu arka yüzeyli model seçin."
+    ],
+    "links": [
+      "Silikon kılıf",
+      "Şeffaf TPU kılıf",
+      "PC kılıf",
+      "Cüzdan tipi kılıf",
+      "Dokulu PU kılıf"
+    ],
+    "request": [
+      "Farklı model veya tasarım mı gerekiyor?",
+      "iPhone, Samsung, Xiaomi / Redmi, OPPO veya vivo kılıfları için telefon modellerini, istediğiniz tasarımları ve adetleri paylaşın.",
+      "Uyumlu kılıf talep edin"
+    ],
+    "scope": "Telefon kılıfları"
+  },
+  "films": {
+    "title": "Görüntü özelliğini veya uygulama kitini seçin.",
+    "intro": "Mağazanızın stoğu veya kendi markanız için Çin’den ekran koruyucu tedarik edin. Şeffaf, gizlilik özellikli ve uygulama aparatlı ürünleri inceleyin.",
+    "names": [
+      "HD şeffaf ekran koruyucular",
+      "Gizlilik özellikli ekran koruyucular",
+      "Ekran koruyucu uygulama kitleri"
+    ],
+    "texts": [
+      "Titan HD, şeffaf koruyucuyu kapalı uygulama aparatıyla birleştirir.",
+      "OG28, tekli ambalajlı 001 ve uygulama aparatlı Titan gizlilik modelini karşılaştırın.",
+      "Titan serisi şeffaf ve gizlilik özellikli kitler sunar."
+    ],
+    "edges": [
+      "Camı ve kenar kaplamasını seçme",
+      "9H temperli cam veya 2.5D / 3D kavisli ekran koruyucu mu arıyorsunuz? Telefon modelini, görüntü özelliğini ve kenar kaplama ihtiyacını belirtin. Şeffaflık veya gizlilik görüntüyü tanımlar; kenar şekli ayrı bir seçimdir.",
+      "2.5D ve 3D rehberini okuyun",
+      "Ürün gösterimlerini izleyin"
+    ],
+    "request": [
+      "Farklı modeller veya kendi ambalajınız mı gerekiyor?",
+      "iPhone, Samsung, Xiaomi / Redmi, OPPO veya vivo için modelleri, koruyucu türlerini, adetleri ve logo ya da ambalaj ihtiyaçlarını paylaşın.",
+      "Uyumlu ekran koruyucu talep edin"
+    ],
+    "scope": "Ekran koruyucular"
+  },
+  "vegetables": {
+    "title": "Hazırlık aşamasına göre makine seçin.",
+    "intro": "Patates soyma, dilimleme, jülyen kesim ve doğrama için Çin’den sebze hazırlama makinelerini karşılaştırın. Tek makine veya bir set seçin.",
+    "names": [
+      "Patates soyma makineleri",
+      "Sebze dilimleme ve jülyen kesme makineleri",
+      "Sebze doğrama makineleri"
+    ],
+    "texts": [
+      "Kök sebzeleri soymak için TP-350.",
+      "İstenen kesime göre dilimleme veya jülyen için DQ-PS300.",
+      "Malzeme doğrama aşaması için SC-R22."
+    ],
+    "set": [
+      "Bir hazırlık alanı mı kuruyorsunuz?",
+      "Üç makineli set soyma, kesme ve doğrama işlerini kapsar. Her makine ayrı çalışır; adetleri mutfağınıza göre seçin.",
+      "Üç makineli hazırlık setini inceleyin"
+    ],
+    "request": [
+      "Başka malzemeler veya kesimler mi gerekiyor?",
+      "Malzemeleri, kesim şeklini, gerekli kapasiteyi ve adetleri paylaşın. Tek makine veya bir set talebini değerlendirebiliriz.",
+      "Hazırlık ekipmanı talep edin"
+    ],
+    "scope": "Sebze hazırlama makineleri"
+  },
+  "refrigeration": {
+    "title": "Soğutma ekipmanını kullanımına göre seçin.",
+    "intro": "Soğuk depolama, dondurma, hazırlık, teşhir veya buz üretimi için Çin’den ticari soğutma ekipmanı tedarik edin. Modelleri inceleyip ekipman listenize ekleyin.",
+    "names": [
+      "Ticari buzdolapları",
+      "Ticari dondurucular",
+      "Soğutmalı hazırlık tezgâhları",
+      "Soğutmalı teşhir dolapları",
+      "Ticari buz makineleri"
+    ],
+    "texts": [
+      "Soğuk ürünler için karşılaştırılabilir iki dikey dolap modeli.",
+      "Donmuş ürünler için karşılaştırılabilir iki dikey dolap modeli.",
+      "Altında soğuk depolama alanı bulunan çalışma tezgâhı.",
+      "Soğuk ürünlerin teşhiri için cam kapılı dolaplar.",
+      "İçecek ve servis için buz makinelerini inceleyin."
+    ],
+    "request": [
+      "Farklı ölçüler veya karma sipariş mi gerekiyor?",
+      "Soğutulacak, dondurulacak veya sergilenecek ürünleri; dolap ölçülerini, adetleri ve varış yerini belirtin.",
+      "Soğutma ekipmanı talep edin"
+    ],
+    "scope": "Ticari soğutma ekipmanı"
+  },
+  "kitchen": {
+    "title": "Restoranınızın işletme türüyle başlayın.",
+    "intro": "Menünüze, alanınıza ve servis akışınıza göre Çin’den restoran mutfak paketi tedarik edin. Mevcut konseptleri ve özetleri inceleyin.",
+    "request": [
+      "Komple bir mutfak mı planlıyorsunuz?",
+      "Ekipman ihtiyacını tek proje olarak ele alabilmek için restoran türünü, menüyü, kat planını ve varış yerini paylaşın.",
+      "Mutfak paketi talep edin"
+    ],
+    "scope": "Restoran mutfak ekipmanı paketi"
+  }
+}

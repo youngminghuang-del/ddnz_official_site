@@ -1,0 +1,130 @@
+{
+  "view": "Ver {name}",
+  "larger": "Ver modelo de mayor tamaño: {name}",
+  "concept": "Explorar el concepto de cocina",
+  "brief": "Leer la propuesta del formato",
+  "briefLabel": "Propuesta del formato",
+  "planner": "Explorar una distribución de cocina interactiva",
+  "individualTitle": "¿Busca equipos individuales?",
+  "individualBody": "Explore las categorías para reponer equipos o ampliar su oferta mayorista.",
+  "individualLinks": [
+    "Freidoras eléctricas",
+    "Planchas eléctricas",
+    "Refrigeradores, congeladores y máquinas de hielo",
+    "Maquinaria de preparación de alimentos"
+  ],
+  "cases": {
+    "title": "Elija el material y combine los modelos de teléfono.",
+    "intro": "Compre fundas al por mayor desde China según el material, el acabado y los teléfonos de sus clientes. Explore los diseños y reúna las cantidades en una solicitud.",
+    "names": [
+      "Fundas de silicona",
+      "Fundas transparentes de TPU",
+      "Fundas de PC",
+      "Fundas de PU y estilo piel"
+    ],
+    "texts": [
+      "Tacto suave con revestimiento interior.",
+      "Un diseño transparente para la venta diaria.",
+      "Una funda de PC con malla para Samsung.",
+      "Elija una funda tipo cartera o una trasera texturizada."
+    ],
+    "links": [
+      "fundas de silicona",
+      "fundas transparentes de TPU",
+      "fundas de PC",
+      "fundas tipo cartera",
+      "fundas de PU texturizado"
+    ],
+    "request": [
+      "¿Necesita otro modelo o diseño?",
+      "Para fundas de iPhone, Samsung, Xiaomi / Redmi, OPPO o vivo, indique los modelos de teléfono, diseños y cantidades que necesita.",
+      "Solicitar fundas compatibles"
+    ],
+    "scope": "Fundas para teléfonos"
+  },
+  "films": {
+    "title": "Elija el acabado de visión o el kit de instalación.",
+    "intro": "Compre protectores de pantalla desde China para reponer su tienda o desarrollar su marca. Explore los productos transparentes, de privacidad y con herramienta de instalación.",
+    "names": [
+      "Protectores transparentes HD",
+      "Protectores de privacidad / antiespía",
+      "Kits de instalación de protectores"
+    ],
+    "texts": [
+      "Titan HD incluye un protector transparente y una herramienta de instalación cerrada.",
+      "Compare OG28, 001 con embalaje individual y Titan de privacidad con herramienta de instalación.",
+      "La gama Titan ofrece kits transparentes y de privacidad."
+    ],
+    "edges": [
+      "Elegir el vidrio y la cobertura de los bordes",
+      "¿Busca vidrio templado 9H o un protector curvo 2.5D / 3D? Indique el teléfono, el acabado de visión y la cobertura deseada. Transparencia o privacidad describen la visión; la forma del borde se elige por separado.",
+      "Leer la guía de 2.5D y 3D",
+      "Ver demostraciones"
+    ],
+    "request": [
+      "¿Busca otros modelos o embalaje propio?",
+      "Para iPhone, Samsung, Xiaomi / Redmi, OPPO o vivo, indique modelos, tipos de protector y cantidades, junto con los requisitos de logotipo o embalaje.",
+      "Solicitar protectores compatibles"
+    ],
+    "scope": "Protectores de pantalla"
+  },
+  "vegetables": {
+    "title": "Elija la máquina según la tarea de preparación.",
+    "intro": "Compare maquinaria de preparación de verduras desde China para pelar patatas, cortar en rodajas o tiras y picar. Elija una máquina o un conjunto.",
+    "names": [
+      "Peladoras de patatas",
+      "Cortadoras de verduras en rodajas y tiras",
+      "Picadoras de verduras"
+    ],
+    "texts": [
+      "TP-350 para pelar tubérculos.",
+      "DQ-PS300 para rodajas o juliana, según el corte que necesite.",
+      "SC-R22 para la fase de picado."
+    ],
+    "set": [
+      "¿Está equipando una zona de preparación?",
+      "El conjunto de tres máquinas reúne pelado, corte y picado. Cada equipo funciona por separado; elija las cantidades para su cocina.",
+      "Ver el conjunto de tres máquinas"
+    ],
+    "request": [
+      "¿Trabaja con otros ingredientes o cortes?",
+      "Indique los ingredientes, el corte, la producción requerida y las cantidades. Podemos revisar una máquina individual o un conjunto.",
+      "Solicitar equipos de preparación"
+    ],
+    "scope": "Maquinaria de preparación de verduras"
+  },
+  "refrigeration": {
+    "title": "Elija la refrigeración según su uso.",
+    "intro": "Compre refrigeración comercial desde China para conservar, congelar, preparar, exponer o producir hielo. Abra un modelo y añádalo a su lista de equipos.",
+    "names": [
+      "Refrigeradores comerciales",
+      "Congeladores comerciales",
+      "Mesas refrigeradas de preparación",
+      "Vitrinas refrigeradas",
+      "Máquinas de hielo comerciales"
+    ],
+    "texts": [
+      "Armarios verticales para productos refrigerados, con dos modelos para comparar.",
+      "Armarios verticales para productos congelados, con dos modelos para comparar.",
+      "Una superficie de trabajo con refrigeración debajo.",
+      "Refrigeración con puerta de vidrio para exponer productos.",
+      "Explore las máquinas de hielo para bebidas y servicio."
+    ],
+    "request": [
+      "¿Necesita otros tamaños o un pedido combinado?",
+      "Indique qué necesita refrigerar, congelar o exponer, las dimensiones, cantidades y destino.",
+      "Solicitar equipos de refrigeración"
+    ],
+    "scope": "Equipos de refrigeración comercial"
+  },
+  "kitchen": {
+    "title": "Empiece por el formato de su restaurante.",
+    "intro": "Compre un conjunto de cocina desde China según su menú, espacio y flujo de servicio. Explore los conceptos y propuestas disponibles.",
+    "request": [
+      "¿Está planificando una cocina completa?",
+      "Comparta el formato de restaurante, menú, plano y destino para coordinar la selección de equipos como un solo proyecto.",
+      "Solicitar un conjunto de cocina"
+    ],
+    "scope": "Conjunto de cocina para restaurante"
+  }
+}
