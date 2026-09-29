@@ -1,0 +1,90 @@
+import type { Language } from '../../i18n/translations';
+
+type Copy = {
+  eyebrow: string; title: string; intro: string; ddnz: string; hb: string;
+  registered: string; capital: string; name: string; code: string; records: string;
+  source: string; note: string; verify: string; instructions: string; contract: string; image: string;
+};
+export const companyCopy: Record<Language, Copy> = {
+  en: {
+    eyebrow: 'OUR COMPANIES', title: 'The companies behind DDNZ.',
+    intro: 'DDNZ Global is the international trading brand of DDNZ Global Trade Co., Ltd. Two generations coordinate the trading and freight businesses, connecting your product requirements with shipment planning.',
+    ddnz: "DDNZ Global is an integrated manufacturing and trading company based in Guangzhou, China. We help overseas importers, wholesalers and brands source commercial kitchen equipment, food-processing machinery, audio products, mobile accessories and outdoor products. Our work covers supplier selection, samples, production follow-up, quality checks and export preparation, with HB coordinating cargo consolidation and international freight.",
+    hb: 'HB (Heaven Born) is the freight brand of Heaven Born International Freight (Guangzhou) Co., Ltd., coordinating international freight and import–export logistics. The team’s freight experience dates back to 1997.',
+    registered: 'Incorporated', capital: 'Registered capital', name: 'Registered name in China', code: 'Unified Social Credit Code', records: 'View company registration information',
+    source: 'Source: China’s National Enterprise Credit Information Publicity System · Screenshot date: 29 September 2026.',
+    note: 'Cropped registration extracts; personal details and the full address are omitted or masked. Translations are for reference; the Chinese record prevails.',
+    verify: 'Open the official registry', instructions: 'Search using the Chinese company name or credit code shown above. The registry may require verification. Consult the official record for current information.',
+    contract: 'The contracting company, payment arrangements and service scope are specified in your quotation and contract.', image: 'Watermarked Chinese company registration extract',
+  },
+  zh: {
+    eyebrow: '认识我们的公司', title: 'DDNZ 背后的公司。',
+    intro: 'DDNZ Global 是大递诺展（广州）商业贸易有限公司面向国际客户的业务品牌。两代人分别负责贸易与货运业务，把产品需求和出运安排衔接起来。',
+    ddnz: "DDNZ 是一家位于中国广州的工贸一体企业，为海外进口商、批发商和品牌客户衔接产品采购、生产与出口。业务涵盖商用餐厨设备、食品加工机械、音响、手机配件及户外用品，服务贯穿供应商筛选、样品确认、生产跟进、质量检查与出口准备，并与 HB 协同安排集货和国际运输。", hb: 'HB（Heaven Born）是广州华正邦泰国际货运代理有限公司的货运品牌，协调国际货运与进出口物流。团队的货运从业经历始于 1997 年。',
+    registered: '公司成立日期', capital: '注册资本', name: '中国登记名称', code: '统一社会信用代码', records: '查看公司登记信息',
+    source: '来源：中国国家企业信用信息公示系统 · 截图日期：2026 年 9 月 29 日。',
+    note: '截图已裁剪，个人信息和详细地址已省略或遮挡。外文说明仅供参考，以中文登记信息为准。',
+    verify: '前往官方公示系统', instructions: '使用上方中文公司名称或统一社会信用代码查询。系统可能需要完成验证，最新登记信息以官方查询结果为准。',
+    contract: '具体订单的签约主体、付款安排与服务范围，将在报价及合同中明确。', image: '带水印的企业登记公示信息摘录',
+  },
+  es: {
+    eyebrow: 'NUESTRAS EMPRESAS', title: 'Las empresas detrás de DDNZ.',
+    intro: 'DDNZ Global es la marca de comercio internacional de DDNZ Global Trade Co., Ltd. Dos generaciones coordinan las actividades comerciales y de transporte, conectando sus necesidades de productos con la planificación del envío.',
+    ddnz: "DDNZ Global es una empresa que integra fabricación y comercio, con sede en Guangzhou, China. Ayudamos a importadores, mayoristas y marcas a adquirir equipos de cocina comercial, maquinaria alimentaria, productos de audio, accesorios móviles y artículos para exteriores. Coordinamos la selección de proveedores, muestras, seguimiento de producción, controles de calidad y preparación de exportación, junto con HB para la consolidación y el transporte internacional.", hb: 'HB (Heaven Born) es la marca de transporte de Heaven Born International Freight (Guangzhou) Co., Ltd., que coordina el transporte internacional y la logística de importación y exportación. La experiencia del equipo en transporte se remonta a 1997.',
+    registered: 'Fecha de constitución', capital: 'Capital social registrado', name: 'Nombre registrado en China', code: 'Código unificado de crédito social', records: 'Ver información del registro mercantil',
+    source: 'Fuente: Sistema Nacional de Publicidad de Información Crediticia Empresarial de China · Captura: 29 de septiembre de 2026.',
+    note: 'Extractos recortados; se han omitido u ocultado datos personales y la dirección completa. Traducciones orientativas; prevalece el registro chino.',
+    verify: 'Abrir el registro oficial', instructions: 'Busque por el nombre chino o el código indicado arriba. El sistema puede solicitar una verificación. Consulte el registro oficial para obtener información actualizada.',
+    contract: 'La empresa contratante, las condiciones de pago y el alcance del servicio se especifican en la cotización y el contrato.', image: 'Extracto del registro empresarial chino con marca de agua',
+  },
+  fr: {
+    eyebrow: 'NOS ENTREPRISES', title: 'Les entreprises derrière DDNZ.',
+    intro: 'DDNZ Global est la marque de commerce international de DDNZ Global Trade Co., Ltd. Deux générations coordonnent les activités commerciales et le transport, reliant vos besoins en produits à la préparation des expéditions.',
+    ddnz: "DDNZ Global associe fabrication et commerce depuis Guangzhou, en Chine. Nous accompagnons les importateurs, grossistes et marques dans leurs achats d’équipements de cuisine professionnelle, de machines agroalimentaires, de produits audio, d’accessoires mobiles et d’articles de plein air. Nous coordonnons la sélection des fournisseurs, les échantillons, le suivi de production, les contrôles qualité et la préparation export, avec HB pour la consolidation et le transport international.", hb: 'HB (Heaven Born) est la marque de transport de Heaven Born International Freight (Guangzhou) Co., Ltd., qui coordonne le fret international et la logistique import-export. L’expérience de l’équipe dans le transport remonte à 1997.',
+    registered: 'Date de constitution', capital: 'Capital social enregistré', name: 'Dénomination enregistrée en Chine', code: 'Code unifié de crédit social', records: 'Consulter les informations d’immatriculation',
+    source: 'Source : système national chinois de publicité des informations de crédit des entreprises · Capture du 29 septembre 2026.',
+    note: 'Extraits recadrés ; les données personnelles et l’adresse complète sont omises ou masquées. Traductions indicatives ; le registre chinois fait foi.',
+    verify: 'Ouvrir le registre officiel', instructions: 'Recherchez le nom chinois ou le code indiqué ci-dessus. Une vérification peut être demandée. Consultez le registre officiel pour les informations à jour.',
+    contract: 'La société contractante, les modalités de paiement et le périmètre du service sont précisés dans le devis et le contrat.', image: 'Extrait du registre chinois des entreprises avec filigrane',
+  },
+  pt: {
+    eyebrow: 'NOSSAS EMPRESAS', title: 'As empresas por trás da DDNZ.',
+    intro: 'DDNZ Global é a marca de comércio internacional de DDNZ Global Trade Co., Ltd. Duas gerações coordenam as atividades comerciais e de transporte, ligando suas necessidades de produtos ao planejamento dos embarques.',
+    ddnz: "A DDNZ Global integra fabricação e comércio em Guangzhou, China. Apoiamos importadores, atacadistas e marcas na compra de equipamentos de cozinha comercial, máquinas para processamento de alimentos, produtos de áudio, acessórios para celulares e artigos para atividades ao ar livre. Coordenamos a seleção de fornecedores, amostras, acompanhamento da produção, verificações de qualidade e preparação para exportação, junto à HB para consolidação de cargas e frete internacional.", hb: 'HB (Heaven Born) é a marca de transporte de Heaven Born International Freight (Guangzhou) Co., Ltd., que coordena o frete internacional e a logística de importação e exportação. A experiência da equipe em transporte remonta a 1997.',
+    registered: 'Data de constituição', capital: 'Capital social registrado', name: 'Nome registrado na China', code: 'Código unificado de crédito social', records: 'Ver informações do registro empresarial',
+    source: 'Fonte: Sistema Nacional de Publicidade de Informações de Crédito Empresarial da China · Captura: 29 de setembro de 2026.',
+    note: 'Extratos recortados; dados pessoais e o endereço completo foram omitidos ou ocultados. Traduções de referência; prevalece o registro em chinês.',
+    verify: 'Abrir o registro oficial', instructions: 'Pesquise pelo nome chinês ou pelo código acima. O sistema pode exigir uma verificação. Consulte o registro oficial para informações atualizadas.',
+    contract: 'A empresa contratante, as condições de pagamento e o escopo do serviço são definidos na cotação e no contrato.', image: 'Extrato do registro empresarial chinês com marca-d’água',
+  },
+  ru: {
+    eyebrow: 'НАШИ КОМПАНИИ', title: 'Компании, стоящие за DDNZ.',
+    intro: 'DDNZ Global — международный торговый бренд компании DDNZ Global Trade Co., Ltd. Два поколения координируют торговлю и перевозки, связывая ваши потребности в продукции с планированием отправки.',
+    ddnz: "DDNZ Global — производственно-торговая компания из Гуанчжоу, Китай. Мы помогаем импортёрам, оптовикам и брендам закупать оборудование для профессиональных кухонь, пищевого производства, аудиотехнику, мобильные аксессуары и товары для отдыха на природе. Координируем подбор поставщиков, согласование образцов, сопровождение производства, проверку качества и подготовку к экспорту, а совместно с HB — консолидацию грузов и международные перевозки.", hb: 'HB (Heaven Born) — транспортный бренд компании Heaven Born International Freight (Guangzhou) Co., Ltd., координирующей международные грузоперевозки и импортно-экспортную логистику. Опыт команды в грузоперевозках ведёт отсчёт с 1997 года.',
+    registered: 'Дата регистрации', capital: 'Зарегистрированный уставный капитал', name: 'Название в китайском реестре', code: 'Единый код общественной кредитоспособности', records: 'Посмотреть регистрационные сведения',
+    source: 'Источник: Национальная система раскрытия кредитной информации о предприятиях Китая · Снимок от 29 сентября 2026 г.',
+    note: 'Фрагменты снимков экрана; персональные данные и полный адрес исключены или скрыты. Перевод справочный; приоритет имеет китайская запись.',
+    verify: 'Открыть официальный реестр', instructions: 'Для поиска используйте китайское название или код выше. Система может запросить проверку. Актуальные сведения доступны в официальном реестре.',
+    contract: 'Компания — сторона договора, порядок оплаты и объём услуг указываются в коммерческом предложении и договоре.', image: 'Фрагмент китайского реестра предприятий с водяным знаком',
+  },
+  tr: {
+    eyebrow: 'ŞİRKETLERİMİZ', title: 'DDNZ’nin arkasındaki şirketler.',
+    intro: 'DDNZ Global, DDNZ Global Trade Co., Ltd. şirketinin uluslararası ticaret markasıdır. İki nesil, ticaret ve taşımacılık faaliyetlerini koordine ederek ürün ihtiyaçlarınızı sevkiyat planlamasına bağlar.',
+    ddnz: "DDNZ Global, Çin’in Guangzhou kentinde üretim ve ticareti bir araya getiren bir şirkettir. İthalatçılara, toptancılara ve markalara ticari mutfak ekipmanları, gıda işleme makineleri, ses ürünleri, telefon aksesuarları ve açık hava ürünleri tedarikinde yardımcı oluruz. Tedarikçi seçimi, numune onayı, üretim takibi, kalite kontrolleri ve ihracat hazırlığını; HB ile birlikte yük konsolidasyonu ve uluslararası taşımayı koordine ederiz.", hb: 'HB (Heaven Born), uluslararası yük taşımacılığı ve ithalat-ihracat lojistiğini koordine eden Heaven Born International Freight (Guangzhou) Co., Ltd. şirketinin taşımacılık markasıdır. Ekibin taşımacılık deneyimi 1997 yılına uzanır.',
+    registered: 'Kuruluş tarihi', capital: 'Tescilli sermaye', name: 'Çin’deki tescilli unvan', code: 'Birleşik sosyal kredi kodu', records: 'Şirket tescil bilgilerini görüntüle',
+    source: 'Kaynak: Çin Ulusal İşletme Kredi Bilgileri İlan Sistemi · Ekran görüntüsü: 29 Eylül 2026.',
+    note: 'Kırpılmış kayıt görüntüleri; kişisel bilgiler ve tam adres çıkarılmış veya gizlenmiştir. Çeviriler bilgi amaçlıdır; Çince kayıt esas alınır.',
+    verify: 'Resmî sicili aç', instructions: 'Yukarıdaki Çince unvan veya kod ile arama yapın. Sistem doğrulama isteyebilir. Güncel bilgiler için resmî sicile başvurun.',
+    contract: 'Sözleşmenin tarafı olan şirket, ödeme düzenlemeleri ve hizmet kapsamı teklifinizde ve sözleşmenizde belirtilir.', image: 'Filigranlı Çin şirket sicili alıntısı',
+  },
+  ar: {
+    eyebrow: 'شركاتنا', title: 'الشركات وراء DDNZ.',
+    intro: 'DDNZ Global هي العلامة التجارية الدولية لشركة DDNZ Global Trade Co., Ltd. ينسّق جيلان أعمال التجارة والشحن، لربط احتياجاتكم من المنتجات بخطط الشحن.',
+    ddnz: "DDNZ Global شركة تجمع بين التصنيع والتجارة، مقرها قوانغتشو في الصين. نساعد المستوردين وتجار الجملة والعلامات التجارية في توريد معدات المطابخ التجارية وآلات تجهيز الأغذية والمنتجات الصوتية وإكسسوارات الهواتف ومنتجات الأنشطة الخارجية. ننسّق اختيار الموردين والعينات ومتابعة الإنتاج وفحوص الجودة والتحضير للتصدير، ونعمل مع HB على تجميع البضائع والشحن الدولي.", hb: 'HB (Heaven Born) هي العلامة التجارية للشحن التابعة لشركة Heaven Born International Freight (Guangzhou) Co., Ltd.، التي تنسّق الشحن الدولي والخدمات اللوجستية للاستيراد والتصدير. تعود خبرة الفريق في الشحن إلى عام 1997.',
+    registered: 'تاريخ التأسيس', capital: 'رأس المال المسجل', name: 'الاسم المسجل في الصين', code: 'رمز الائتمان الاجتماعي الموحد', records: 'عرض معلومات تسجيل الشركات',
+    source: 'المصدر: النظام الوطني الصيني لنشر معلومات ائتمان الشركات · تاريخ لقطة الشاشة: 29 سبتمبر 2026.',
+    note: 'مقتطفات مقصوصة؛ حُذفت أو حُجبت البيانات الشخصية والعنوان الكامل. الترجمات للاستئناس، ويُعتد بالسجل الصيني.',
+    verify: 'فتح السجل الرسمي', instructions: 'ابحث باستخدام الاسم الصيني أو الرمز الموضح أعلاه. قد يطلب النظام إجراء تحقق. يُرجى الرجوع إلى السجل الرسمي للحصول على أحدث المعلومات.',
+    contract: 'تُحدَّد الشركة المتعاقدة وترتيبات الدفع ونطاق الخدمة في عرض السعر والعقد.', image: 'مقتطف من سجل الشركات الصيني بعلامة مائية',
+  },
+};

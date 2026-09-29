@@ -1,3 +1,4 @@
+import SourcingTrust from '../company-identity/SourcingTrust';
 import { StartupBuyingLinks } from '../search-intent/StartupBuyingContent';
 import { useState } from 'react';
 import BuyerDecisionContent from '../search-intent/BuyerDecisionContent';
@@ -76,6 +77,7 @@ export default function LocalizedOverviewContent({kind,locale}: {kind:OverviewKi
         </form>:<div className="mt-7 space-y-5" role="status"><h3 className="text-xl font-bold">{u.ready}</h3><dl className="space-y-3">{[[u.category,c.categories[categories.findIndex(cat=>cat.id===form.category)]?.[0]||u.other],[u.destination,form.destination],[u.scopeField,form.scope],[u.stage,u.stages[stages.indexOf(form.stage)]],[u.notes,form.notes],...(!product?[[u.path,buyerPath==='retail'?u.retail:u.project],[u.sku,form.skuCount],[u.units,form.quantityPerSku],[u.rhythm,form.rhythm]]:[])].filter(([,v])=>v).map(([label,value])=><div key={label}><dt className="font-bold">{label}</dt><dd className="whitespace-pre-wrap break-words leading-7">{value}</dd></div>)}</dl><div className="flex flex-wrap gap-5"><a className={button} href={`${prefix}/get-a-quote/?${query}`}>{u.continue}</a><button className="font-bold text-purple-800 underline" type="button" onClick={()=>setReady(false)}>{u.edit}</button></div></div>}
       </section>
       {product && <StartupBuyingLinks locale={locale} />}
+      {!product && <SourcingTrust/>}
       <BuyerDecisionContent page={kind} locale={locale} />
       <p className="border-t border-slate-200 pt-8 leading-7">{u.freight}</p>
     </div>

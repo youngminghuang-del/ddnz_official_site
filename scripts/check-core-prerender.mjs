@@ -22,11 +22,11 @@ for(const route of routes){
  }
  if(/^\/(?:zh-cn\/|ru\/|fr\/|es\/|ar\/|pt\/|tr\/)?$/.test(route)) {
   assert(html.includes('id="insights"') && html.includes('/blog/'), `${route}: homepage latest articles missing from initial HTML`);
-  assert(html.includes('source-to-destination-v1-1600.webp'), `${route}: sourcing-to-freight visual missing`);
+  assert(html.includes('office/entrance-1600.webp') && html.includes('home-one-team-backdrop'), `${route}: sourcing-to-freight visual missing`);
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
-assert.equal(count,48,'Expected 48 core page versions including eight enquiry pages');
+assert.equal(count,56,'Expected 56 core page versions including eight company pages');
 for (const locale of ['', 'zh-cn/', 'ru/', 'fr/', 'es/', 'ar/', 'pt/', 'tr/']) {
  const route = `${locale}get-a-quote`;
  const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');

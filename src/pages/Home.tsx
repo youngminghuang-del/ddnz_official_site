@@ -3,6 +3,7 @@ import { lazy, Suspense } from 'react';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import SourcingHomepageHero from '../components/SourcingHomepageHero';
 import HomeOneTeamBridge from '../components/HomeOneTeamBridge';
+import CompanyIdentity from '../features/company-identity/CompanyIdentity';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -71,6 +72,7 @@ export default function Home() {
       <main>
         <SourcingHomepageHero />
         <HomeOneTeamBridge />
+        <CompanyIdentity compact />
         <Suspense fallback={<HomeSectionFallback language={language} />}>
           <FreightRouteMap variant="world" />
         </Suspense>

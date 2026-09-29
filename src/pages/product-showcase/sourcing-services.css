@@ -15,7 +15,7 @@
   overflow: clip;
   color: var(--ss-ink);
   background: var(--ss-paper);
-  font-family: "Avenir Next", "Trebuchet MS", sans-serif;
+  font-family: inherit;
 }
 
 .sourcing-services-page * { box-sizing: border-box; }
@@ -331,3 +331,24 @@
 @media (prefers-reduced-motion: reduce) {
   .sourcing-services-page * { scroll-behavior: auto!important; animation-duration: .01ms!important; animation-iteration-count: 1!important; transition-duration: .01ms!important; }
 }
+
+/* Shared site typography and restrained service-page surfaces. */
+.sourcing-services-page .ss-hero { min-height:0; padding-block:64px; }
+.sourcing-services-page .ss-hero::before { background:#f8f7f3; }
+.sourcing-services-page .ss-hero::after { display:none; }
+.sourcing-services-page .ss-hero h1 { font-size:clamp(34px,4.2vw,58px); font-weight:750; line-height:1.12; letter-spacing:-.035em; }
+.sourcing-services-page h2 { font-weight:700; line-height:1.2; letter-spacing:-.025em; }
+.sourcing-services-page h3 { font-weight:650; line-height:1.35; }
+.sourcing-services-page .ss-kicker { font-weight:700; font-size:12px; letter-spacing:.1em; }
+.sourcing-services-page .ss-control-desk { border-radius:12px; background:#fff; border-color:#dde2e5; box-shadow:none; }
+.sourcing-services-page .ss-primary { font-weight:650; border-radius:6px; box-shadow:none; }
+@media(max-width:700px) { .sourcing-services-page .ss-hero { padding-block:40px; } .sourcing-services-page .ss-hero h1 { font-size:36px; } }
+
+/* Align overview and detail hero grids at the same viewport breakpoints. */
+.sourcing-services-page .ss-hero { width:min(100%,1320px); padding:56px 42px 64px; gap:64px; grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr); align-items:center; }
+.sourcing-services-page .ss-control-desk { min-width:0; }
+.sourcing-services-page .ss-hero h1 { max-width:19ch; }
+.sourcing-services-page .ss-hero-actions { flex-wrap:wrap; }
+@media(max-width:1000px) { .sourcing-services-page .ss-hero { gap:32px; padding:40px 24px 48px; } .sourcing-services-page .ss-hero h1 { font-size:44px; } }
+@media(max-width:767px) { .sourcing-services-page .ss-hero { grid-template-columns:1fr; padding:30px 20px 36px; gap:32px; } .sourcing-services-page .ss-hero h1 { font-size:36px; max-width:none; } }
+@media(min-width:768px) and (max-width:1000px) { .sourcing-services-page .ss-hero { grid-template-columns:1fr; } .sourcing-services-page .ss-control-desk { width:100%; max-width:680px; } }
