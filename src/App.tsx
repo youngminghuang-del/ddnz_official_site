@@ -191,7 +191,17 @@ function HashScrollHandler() {
         frame = window.requestAnimationFrame(apply);
       });
       observer.observe(document.getElementById('root') || document.body, { childList: true, subtree: true });
-      timer = window.setTimeout(stop, 5000);
+      const expire = () => {
+        // A slow lazy route has no anchor yet. Keep observing until its body
+        // commits; user interaction and route cleanup can still cancel it.
+        if (document.querySelector('[data-route-loading]')) {
+          timer = window.setTimeout(expire, 5000);
+          return;
+        }
+        apply();
+        stop();
+      };
+      timer = window.setTimeout(expire, 5000);
     }
     const remember = () => {
       // Native anchors can scroll before React processes hashchange. Do not write
