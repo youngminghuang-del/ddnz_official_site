@@ -162,10 +162,10 @@ const pairs = rows => rows.map(([title, body]) => section(title, paragraph(body)
 const clip = c => `<figure id="${escapeHtml(c.id)}">${image(media(c.poster + '.jpg'), c.title)}<figcaption><h3>${escapeHtml(c.title)}</h3>${paragraph(c.description)}${c.check ? paragraph(c.check) : ''}<p><a href="${media(c.file + '.mp4')}">Watch ${escapeHtml(c.title)} (${c.duration} seconds)</a></p></figcaption></figure>`;
 const guideLinks = () => section(EN.guides.priceTitle.replaceAll('\n', ' '), paragraph(EN.guides.priceDesc) + link('prices')) + section(EN.guides.curveTitle.replaceAll('\n', ' '), paragraph(EN.guides.curveDesc) + link('curves'));
 const checks = ids => section(EN.guides.checksTitle, list(ids.map(id => EN.requests[id])));
-const productSummary = () => Object.entries(PRODUCTS).map(([id, product]) => section(EN.product.names[id],
+const productSummary = (anchors = false) => Object.entries(PRODUCTS).map(([id, product]) => section(EN.product.names[id],
   image(asset(product.image), EN.product.names[id]) + paragraph(`${money(product.price)} / piece. ${EN.product.notes[id]}`)
   + paragraph(`${EN.product.box}: ${number(product.unitsPerCarton)}. ${EN.product.dimensions}: ${product.cartonCm.join(' × ')} cm. ${EN.product.weight}: ${number(cartonFacts(product).fullKg, 3)} kg.`)
-  + paragraph(EN.product.packing[id]))).join('');
+  + paragraph(EN.product.packing[id])).replace('<section>', anchors ? `<section id="film-product-${id}">` : '<section>')).join('');
 
 // This is visible fallback content, replaced by the existing React entry on load.
 // It reads public copy and product data only, never sessionStorage or an enquiry draft.
@@ -178,7 +178,7 @@ export function renderScreenProtectorBody(page) {
     + guideLinks() + section(EN.home.offersTitle, productSummary())
     + section(EN.home.planTitle, paragraph(EN.home.planBody) + link('calculator'));
   if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderFilmEntry() + paragraph(EN.home.offersBody)
-    + productSummary() + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
+    + productSummary(true) + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
   if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)
     + section(EN.guides.factorsTitle, pairs(EN.guides.factors))

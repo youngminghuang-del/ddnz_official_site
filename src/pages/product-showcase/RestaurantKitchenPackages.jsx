@@ -154,35 +154,6 @@ function PackageOptions({ packages }) {
   );
 }
 
-const scenarioLibrary = [
-  ['takeaway-qsr', 'Takeaway + QSR', '48 sqm', 'Complete concept and PDF'],
-  ['cafe-light-meals', 'Cafe + light meals', '60 sqm', 'Complete concept and PDF'],
-  ['casual-dining', 'Casual dining', '120 sqm', 'Complete concept and PDF'],
-  ['bakery-pastry', 'Bakery + pastry', '80 sqm', 'Scenario brief'],
-  ['pizza-shop', 'Pizza shop', '72 sqm', 'Scenario brief'],
-  ['cloud-kitchen', 'Cloud kitchen', '150 sqm', 'Scenario brief'],
-];
-
-function ScenarioLibrary() {
-  return (
-    <section className="rkp-library" aria-labelledby="rkp-library-title">
-      <div className="rkp-section-head">
-        <div><p className="rkp-kicker">SIX OPERATING MODELS</p><h2 id="rkp-library-title">One decision page, separate working briefs.</h2></div>
-        <p>Compare formats here, then open only the scenario that matches your menu, service model and floor area.</p>
-      </div>
-      <div className="rkp-library-grid">
-        {scenarioLibrary.map(([slug, title, size, status], index) => (
-          <a href={`${ROUTE}${slug}/`} key={slug}>
-            <span>0{index + 1}</span>
-            <div><h3>{title}</h3><p>{size} reference footprint</p></div>
-            <div><small>{status}</small><ArrowRight size={17} /></div>
-          </a>
-        ))}
-      </div>
-    </section>
-  );
-}
-
 function FourLayerEvidence({ scenario }) {
   return (
     <section className="rkp-evidence" id="evidence-chain" aria-labelledby="rkp-evidence-title">
@@ -469,7 +440,7 @@ export function RestaurantKitchenPackagesContent() {
           <h1 id="rkp-title">Plan the kitchen. Buy from China.</h1>
           <p>DDNZ combines layout, equipment and export handoff, with sample China baskets near one-third of local marketplace list prices.</p>
           <div className="rkp-hero-actions">
-            <a className="rkp-primary" href="#scenario-planner">Choose your restaurant format <ArrowRight size={18} /></a>
+            <a className="rkp-primary" href="#kitchen-buying-paths">Choose your restaurant format <ArrowRight size={18} /></a>
             <a className="rkp-secondary" href={quoteUrl}>Request a matched package</a>
           </div>
         </div>
@@ -480,7 +451,7 @@ export function RestaurantKitchenPackagesContent() {
         </div>
       </section>
 
-      <div dangerouslySetInnerHTML={{__html:renderKitchenEntry(scenarios)}}/>
+      <div dangerouslySetInnerHTML={{__html:renderKitchenEntry()}}/>
       <section className="rkp-buyer-strip" aria-labelledby="rkp-buyers-title">
         <div className="rkp-strip-heading"><h2 id="rkp-buyers-title">Buy a working restaurant package, not seven disconnected machines.</h2></div>
         <div className="rkp-buyer-list">
@@ -490,7 +461,7 @@ export function RestaurantKitchenPackagesContent() {
         </div>
       </section>
 
-      <section className="rkp-scenarios" id="scenario-planner" aria-labelledby="rkp-scenarios-title">
+      <details className="rkp-planner-details" id="scenario-planner"><summary>Explore an interactive kitchen layout</summary><section className="rkp-scenarios" aria-labelledby="rkp-scenarios-title">
         <div className="rkp-section-head">
           <div><p className="rkp-kicker">SCENARIO PLANNER</p><h2 id="rkp-scenarios-title">Choose the operating model before choosing machines.</h2></div>
           <p>Each concept starts with flow, peak demand and utilities. The list changes only after those inputs are clear.</p>
@@ -522,7 +493,7 @@ export function RestaurantKitchenPackagesContent() {
         </div>
       </section>
 
-      <ScenarioLibrary />
+      </details>
 
       <PlanDownloadGate scenario={scenario} />
 

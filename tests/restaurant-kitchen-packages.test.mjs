@@ -1,6 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 import test from 'node:test';
+import { renderKitchenEntry } from '../src/features/buyer-entry/kitchen.mjs';
 import { kitchenPackagePath, kitchenPackageScenarioPaths } from '../src/features/commercial-kitchen/routes.mjs';
 
 const pagePath = new URL('../src/pages/product-showcase/RestaurantKitchenPackages.jsx', import.meta.url);
@@ -32,7 +33,12 @@ test('page contains three scenario plans, scoped pricing and local responsibilit
 
 test('scenario breadth is split into six standalone working briefs', async () => {
   const [page, scenarioPage] = await Promise.all([readFile(pagePath, 'utf8'), readFile(scenarioPagePath, 'utf8')]);
-  for (const phrase of ['Bakery + pastry', 'Pizza shop', 'Cloud kitchen']) assert.match(page + scenarioPage, new RegExp(phrase.replace(/[+]/g, '\\+')));
+  for (const phrase of ['Bakery + pastry', 'Pizza shop', 'Cloud kitchen']) assert.match(renderKitchenEntry(), new RegExp(phrase.replace(/[+]/g, '\\+')));
+  const directory = renderKitchenEntry();
+  for (const path of kitchenPackageScenarioPaths) assert.ok(directory.includes(path), path);
+  assert.equal((directory.match(/<article>/g) || []).length, 6);
+  assert.equal((directory.match(/class="entry-media"/g) || []).length, 3);
+  assert.match(page, /renderKitchenEntry\(\)/);
   assert.match(scenarioPage, /DIMENSIONED CONCEPT/);
   assert.match(scenarioPage, /BUY FROM CHINA|SOURCING BRIEF|Source a /);
   assert.doesNotMatch(scenarioPage, /[—–]/);
