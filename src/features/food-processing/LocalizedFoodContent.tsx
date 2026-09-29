@@ -1,3 +1,4 @@
+import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
 import React, { useState } from 'react';
 import { machines, packages, machineById, money, selectionTotals, packageSelection, foodProcessingPath } from './catalog.mjs';
 import { categoryPages, categoryPath, packagePath } from './pages.mjs';
@@ -19,6 +20,7 @@ export default function LocalizedFoodContent({page,locale}:{page:any;locale:Food
  return <main id="main-content" className="fp-page" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}><div className="fp-wrap">
  <nav className="fp-breadcrumb" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a><span>/</span><a href={localLink(foodProcessingPath)}>{u.catalogueTitle}</a></nav>
  <section className="fp-hero"><div><p className="fp-overline">{u.source}</p><h1>{page.title}</h1><p className="fp-lead">{page.intro}</p><div className="fp-actions"><a className="fp-primary" href="#equipment">{u.compare}</a><a className="fp-secondary" href="#your-list">{u.list}</a></div></div><div className="fp-hero-media"><div className="fp-machine-stage">{page.machines.slice(0,3).map((m:any)=><img key={m.id} src={`/food-processing-media/${m.image}.webp`} alt={`${c.names[machines.indexOf(m)]} ${m.model}`} width="500" height="500"/>)}</div><p>{u.imageNote}</p></div></section>
+ {page.category?.slug==='vegetable-processing-machinery'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('vegetables',locale)}}/>}
  <p className="fp-price-note">{o.priceNote}</p>
  {page.kind==='hub'&&<section className="fp-section"><h2>{u.catalogueTitle}</h2><div className="fp-family-grid">{categoryPages.map((category,i)=><a key={category.slug} href={localLink(categoryPath(category))}><h3>{c.categories[i][0]}</h3><p>{c.categories[i][1]}</p></a>)}</div></section>}
  {page.bundle&&<section className="fp-section fp-workflow"><h2>{u.scope}</h2><p>{c.scopes[page.bundleIndex]}</p><p>{u.selectionNote}</p></section>}

@@ -1,3 +1,4 @@
+import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
 import {localizedProductPath} from '../../lib/productLocalization.mjs';
 import { renderPrivacy001 } from './privacy001.mjs';
 import { readMixedDraft, saveMixedDraft, replaceFilms, filmSelection, mixedBriefPath } from '../mobile-sourcing/mixed-storage.mjs';
@@ -99,6 +100,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
         {page === 'home' && <figure><img src="/screen-protector-media/assets/001-kit-photo.jpg" alt={copy.imageAlt} width="1672" height="941" fetchPriority="high" /><figcaption>{copy.heroCaption}</figcaption></figure>}
       </header>
       {page === 'home' && <section className="phone-local-steps" aria-labelledby="phone-steps-title"><h2 id="phone-steps-title">{copy.stepsTitle}</h2><ol>{copy.steps.map(([title, text], i) => <li key={title}><span aria-hidden="true">{phoneNumber(locale, i + 1)}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
+      {page==='compare'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('films',locale)}}/>}
       <section id="phone-products" aria-labelledby="phone-products-title">
         <h2 id="phone-products-title">{page === 'home' ? copy.productsTitle : copy.compare}</h2>
         <p className="phone-local-price-note">{localText(copy.reference, { date: phoneReferenceDate(locale) })}<br />{copy.priceScope}</p>

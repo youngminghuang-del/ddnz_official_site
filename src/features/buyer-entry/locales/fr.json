@@ -1,0 +1,130 @@
+{
+  "view": "Voir {name}",
+  "larger": "Voir le grand modèle : {name}",
+  "concept": "Découvrir le concept de cuisine",
+  "brief": "Lire la fiche du concept",
+  "briefLabel": "Fiche du concept",
+  "planner": "Explorer un plan de cuisine interactif",
+  "individualTitle": "Vous cherchez des équipements individuels ?",
+  "individualBody": "Consultez les catégories pour remplacer un équipement ou composer une gamme de gros.",
+  "individualLinks": [
+    "Friteuses électriques",
+    "Plaques à snacker électriques",
+    "Réfrigérateurs, congélateurs et machines à glaçons",
+    "Machines de préparation alimentaire"
+  ],
+  "cases": {
+    "title": "Choisissez la matière, puis les modèles de téléphone.",
+    "intro": "Achetez des coques en gros depuis la Chine selon la matière, la finition et les téléphones de vos clients. Consultez les modèles et regroupez vos quantités dans une demande.",
+    "names": [
+      "Coques en silicone",
+      "Coques transparentes en TPU",
+      "Coques en PC",
+      "Coques en PU et aspect cuir"
+    ],
+    "texts": [
+      "Toucher doux avec doublure intérieure.",
+      "Un modèle transparent pour la vente au quotidien.",
+      "Une coque en PC ajourée pour Samsung.",
+      "Choisissez un étui portefeuille ou un dos texturé."
+    ],
+    "links": [
+      "les coques en silicone",
+      "les coques transparentes en TPU",
+      "les coques en PC",
+      "les étuis portefeuille",
+      "les coques en PU texturé"
+    ],
+    "request": [
+      "Un autre modèle ou style ?",
+      "Pour des coques iPhone, Samsung, Xiaomi / Redmi, OPPO ou vivo, indiquez les téléphones, les styles et les quantités souhaités.",
+      "Demander des coques adaptées"
+    ],
+    "scope": "Coques de téléphone"
+  },
+  "films": {
+    "title": "Choisissez le rendu visuel ou le kit de pose.",
+    "intro": "Achetez des protections d’écran depuis la Chine pour votre boutique ou votre marque. Découvrez les versions transparentes, anti-espion et avec outil de pose.",
+    "names": [
+      "Protections transparentes HD",
+      "Protections de confidentialité / anti-espion",
+      "Kits de pose de protections d’écran"
+    ],
+    "texts": [
+      "Titan HD associe une protection transparente à un outil de pose fermé.",
+      "Comparez OG28, 001 en emballage individuel et Titan anti-espion avec outil de pose.",
+      "La gamme Titan propose des kits transparents et anti-espion."
+    ],
+    "edges": [
+      "Choisir le verre et la couverture des bords",
+      "Vous recherchez du verre trempé 9H ou une protection incurvée 2.5D / 3D ? Précisez le téléphone, le rendu visuel et la couverture souhaitée. La transparence ou la confidentialité concerne la vision ; la forme du bord est un choix distinct.",
+      "Lire le guide 2.5D et 3D",
+      "Voir les démonstrations"
+    ],
+    "request": [
+      "D’autres téléphones ou votre propre emballage ?",
+      "Pour iPhone, Samsung, Xiaomi / Redmi, OPPO ou vivo, précisez les modèles, les protections, les quantités et vos besoins de logo ou d’emballage.",
+      "Demander des protections adaptées"
+    ],
+    "scope": "Protections d’écran"
+  },
+  "vegetables": {
+    "title": "Choisissez la machine selon l’étape de préparation.",
+    "intro": "Achetez des machines de préparation de légumes depuis la Chine pour éplucher, trancher, couper en julienne ou hacher. Choisissez une machine ou un ensemble.",
+    "names": [
+      "Éplucheuses de pommes de terre",
+      "Coupe-légumes pour tranches et julienne",
+      "Hachoirs à légumes"
+    ],
+    "texts": [
+      "TP-350 pour éplucher les légumes-racines.",
+      "DQ-PS300 pour les tranches ou la julienne, selon la coupe souhaitée.",
+      "SC-R22 pour le hachage des ingrédients."
+    ],
+    "set": [
+      "Vous équipez un espace de préparation ?",
+      "L’ensemble de trois machines couvre l’épluchage, la découpe et le hachage. Chaque appareil fonctionne séparément ; adaptez les quantités à votre cuisine.",
+      "Voir l’ensemble de trois machines"
+    ],
+    "request": [
+      "D’autres ingrédients ou types de coupe ?",
+      "Indiquez les ingrédients, la coupe, le débit souhaité et les quantités. La demande peut porter sur une machine ou un ensemble.",
+      "Demander des équipements de préparation"
+    ],
+    "scope": "Machines de préparation de légumes"
+  },
+  "refrigeration": {
+    "title": "Choisissez le froid selon son usage.",
+    "intro": "Achetez du matériel frigorifique professionnel depuis la Chine pour le stockage, la congélation, la préparation, la présentation ou les glaçons. Consultez les modèles et composez votre liste.",
+    "names": [
+      "Réfrigérateurs professionnels",
+      "Congélateurs professionnels",
+      "Tables de préparation réfrigérées",
+      "Vitrines réfrigérées",
+      "Machines à glaçons professionnelles"
+    ],
+    "texts": [
+      "Armoires verticales pour produits frais, avec deux modèles à comparer.",
+      "Armoires verticales pour produits surgelés, avec deux modèles à comparer.",
+      "Un plan de travail avec du stockage réfrigéré en dessous.",
+      "Des portes vitrées pour présenter les produits au frais.",
+      "Découvrez les machines à glaçons pour les boissons et le service."
+    ],
+    "request": [
+      "D’autres dimensions ou une commande mixte ?",
+      "Précisez les produits à réfrigérer, congeler ou présenter, les dimensions, les quantités et la destination.",
+      "Demander du matériel frigorifique"
+    ],
+    "scope": "Matériel frigorifique professionnel"
+  },
+  "kitchen": {
+    "title": "Commencez par votre type de restaurant.",
+    "intro": "Achetez un ensemble de cuisine depuis la Chine selon votre menu, votre espace et le flux de service. Découvrez les concepts et fiches disponibles.",
+    "request": [
+      "Vous préparez une cuisine complète ?",
+      "Partagez le type de restaurant, le menu, le plan et la destination pour coordonner les équipements dans un même projet.",
+      "Demander un ensemble de cuisine"
+    ],
+    "scope": "Ensemble de cuisine pour restaurant"
+  }
+}
