@@ -56,7 +56,7 @@ const quote=section('quote',heading('YOUR SOURCING REQUEST','Phone cases & scree
 root.innerHTML=nav+`<main id="main" tabindex="-1">${home+products+guides+videos+prices+curves+calculator+quote}</main>`;
 
 function renderProducts(){
-  $('#product-cards').innerHTML=Object.entries(PRODUCTS).map(([id,p])=>`<article class="product-row"><figure><img src="${asset(p.image)}" width="1000" height="1000" alt="${names[id]}" loading="lazy"></figure><div><p class="eyebrow">${EN.product.labels[id]}</p><div class="product-top"><h2>${names[id]}</h2><div class="product-price">${money(p.price)}<small>${t('product.perPiece')}</small></div></div><p>${EN.product.notes[id]}</p><dl class="spec-grid">${[[t('product.min'),number(p.minQty)],[t('product.box'),number(p.unitsPerCarton)],[t('product.weight'),number(cartonFacts(p).fullKg,3)+' kg']].map(([label,value])=>`<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl><p class="small">${t('product.dimensions')}: ${p.cartonCm.join(' × ')} cm. ${EN.product.packing[id]}</p><button class="button secondary" data-product-add="${id}">Add to combined request +</button><details><summary>${t('product.details')}</summary><p>${t('product.detailNote')} ${t('product.priceNote')}</p></details></div></article>${id==='001'?renderPrivacy001():''}`).join('');
+  $('#product-cards').innerHTML=Object.entries(PRODUCTS).map(([id,p])=>`<article class="product-row" id="film-product-${id}"><figure><img src="${asset(p.image)}" width="1000" height="1000" alt="${names[id]}" loading="lazy"></figure><div><p class="eyebrow">${EN.product.labels[id]}</p><div class="product-top"><h2>${names[id]}</h2><div class="product-price">${money(p.price)}<small>${t('product.perPiece')}</small></div></div><p>${EN.product.notes[id]}</p><dl class="spec-grid">${[[t('product.min'),number(p.minQty)],[t('product.box'),number(p.unitsPerCarton)],[t('product.weight'),number(cartonFacts(p).fullKg,3)+' kg']].map(([label,value])=>`<div><dt>${label}</dt><dd>${value}</dd></div>`).join('')}</dl><p class="small">${t('product.dimensions')}: ${p.cartonCm.join(' × ')} cm. ${EN.product.packing[id]}</p><button class="button secondary" data-product-add="${id}">Add to combined request +</button><details><summary>${t('product.details')}</summary><p>${t('product.detailNote')} ${t('product.priceNote')}</p></details></div></article>${id==='001'?renderPrivacy001():''}`).join('');
 }
 const rowSummary=p=>t('calc.rowSummary',{price:money(p.price),qty:number(p.unitsPerCarton),min:number(p.minQty)});
 function renderRows(){
@@ -157,6 +157,7 @@ function activate(pathname, hash='') {
   all('video').forEach(v=>{if(v.closest('.view').hidden)v.pause();});
   const processIndex=page==='videos'?FACTORY_CLIPS.findIndex(c=>'#'+c.id===hash):-1;
   if(processIndex>=0){selectProcess(processIndex);$('#process-stage').scrollIntoView({block:'start'});}
+  else if(page==='products'&&Object.hasOwn(PRODUCTS,hash.replace('#film-product-',''))&&hash.startsWith('#film-product-')) $(hash)?.scrollIntoView({block:'start'});
   else if(page==='curves'&&hash==='#factory-scenes')$('#factory-scenes').scrollIntoView({block:'start'});
   else { window.scrollTo({top:0,behavior:'instant'}); if(currentPage&&page!==currentPage)$('#view-'+page+' h1').focus({preventScroll:true}); }
   currentPage=page;

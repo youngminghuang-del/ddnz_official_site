@@ -1,4 +1,3 @@
-import { scenarios as buyerEntryScenarios } from '../src/features/commercial-kitchen/data/restaurant-scenarios.mjs';
 import { renderRefrigerationEntry, renderKitchenEntry } from '../src/features/buyer-entry/kitchen.mjs';
 import AudioSpeakersContent from '../src/pages/product-showcase/AudioSpeakersContent';
 import {englishAudioMeta} from '../src/features/audio/copy';
@@ -1825,7 +1824,7 @@ function injectStaticRouteContent(
   }
   if (!staticBody) return htmlContent;
   if (lang === 'en' && relPath === 'sourcing/restaurant-kitchen-packages-from-china') {
-    staticBody = staticBody.replace('</main>', renderKitchenEntry(buyerEntryScenarios) + '</main>');
+    staticBody = staticBody.replace('</main>', renderKitchenEntry() + '</main>');
   }
   return htmlContent.replace('<div id="root"></div>', `<div id="root">${staticBody}</div>`);
 }
