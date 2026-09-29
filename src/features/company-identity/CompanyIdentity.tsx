@@ -5,8 +5,8 @@ import { companyCopy } from './copy';
 import { aboutCopy } from './aboutCopy';
 import { navigationPath } from '../../lib/productLanguageRouting';
 const companies = [
- { id: 'ddnz', brand: 'DDNZ Global', name: COMPANY.zh, code: '91440111679736793B', date: '2008-09-16', capital: 500000 },
- { id: 'hb', brand: 'HB · Heaven Born', name: COMPANY.freightZh, code: '91440111778389280U', date: '2005-09-13', capital: 5000000 },
+ { id: 'ddnz', logo: '/images/brand/ddnz-global-mark-v1.png', brand: 'DDNZ Global', name: COMPANY.zh, code: '91440111679736793B', date: '2008-09-16', capital: 500000 },
+ { id: 'hb', logo: '/images/brand/heaven-born-wing-logo-v1.png', brand: 'HB · Heaven Born', name: COMPANY.freightZh, code: '91440111778389280U', date: '2005-09-13', capital: 5000000 },
 ] as const;
 export default function CompanyIdentity({compact=false}: {compact?:boolean}) {
  const { language } = useLanguage();
@@ -18,7 +18,7 @@ export default function CompanyIdentity({compact=false}: {compact?:boolean}) {
   <div className="company-identity__inner">
    <header className="company-identity__heading"><p className="company-identity__eyebrow">{c.eyebrow}</p><h2 id="company-identity-title">{c.title}</h2><p>{c.intro}</p></header>
    <div className="company-identity__cards">{companies.map(company => <article className="company-identity__card" key={company.id}>
-    <h3>{company.brand}</h3><p className="company-identity__role">{c[company.id]}</p>
+    <div className="company-identity__brand"><img src={company.logo} alt="" width="64" height="56" loading="lazy" decoding="async"/><h3>{company.brand}</h3></div><p className="company-identity__role">{c[company.id]}</p>
     <dl className="company-identity__facts"><div><dt>{c.registered}</dt><dd><time dateTime={company.date}>{dateFormat.format(new Date(`${company.date}T00:00:00Z`))}</time></dd></div><div><dt>{c.capital}</dt><dd>{moneyFormat.format(company.capital)}</dd></div></dl>
     
    </article>)}</div>
