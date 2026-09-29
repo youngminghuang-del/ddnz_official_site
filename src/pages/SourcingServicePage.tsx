@@ -1,3 +1,4 @@
+import SupplierBuyingGuide from '../features/sourcing-services/SupplierBuyingGuide';
 import './sourcing-service-aligned.css';
 import ServiceVisual from './ServiceVisual';
 import ServiceCaseDetail from './ServiceCaseDetail';
@@ -244,6 +245,8 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
             </div>
           </div>
         </section>
+
+        {kind === 'supplier-search' && <SupplierBuyingGuide quoteHref={quoteHref} />}
 
         {aligned && (kind === 'consolidation-export' && language === 'zh' ? <FclSpeakerCaseZh quoteHref={quoteHref} /> : <ServiceCaseDetail kind={kind} quoteHref={quoteHref} />)}
 
