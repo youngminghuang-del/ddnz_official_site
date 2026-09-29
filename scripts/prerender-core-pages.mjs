@@ -21,6 +21,7 @@ try {
   let output=html.replace(rootPattern,`<div id="root" data-core-prerender="true">${body}</div>`);
   // Core routes use their existing page CSS; bundle filenames vary by build.
   const cssPrefixes=route==='/products/'?['ProductsIndex-','food-processing-','ShowcaseContactFooter-']:route==='/sourcing-services/'?['SourcingServices-','ServiceMotion-','ShowcaseContactFooter-']:/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?$/.test(route)?['Footer-','Home-']:['Footer-'];
+  if (/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing-services\/$/.test(route)) cssPrefixes.push('SourcingLocations-');
   for(const css of fs.readdirSync(path.join(dist,'assets')).filter(f=>f.endsWith('.css')&&cssPrefixes.some(prefix=>f.startsWith(prefix)))){
    if(!output.includes(`/assets/${css}`))output=output.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
   }

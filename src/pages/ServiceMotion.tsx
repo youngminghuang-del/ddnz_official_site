@@ -71,7 +71,7 @@ export function FieldReveal() {
     return () => { cancelAnimationFrame(frame); window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); };
   }, []);
   return <section ref={root} className="fm-reveal" aria-label={t.revealAria}>
-    <figure><img src="/media/process/export-loading-poster.webp" alt={t.revealAlt} loading="lazy" /><figcaption><small>{t.revealKicker}</small><h2>{t.revealTitle}</h2><p>{t.revealBody}</p><a href="#retail-case">{t.revealLink} ↗</a></figcaption></figure>
+    <figure><img src="/media/freight-20260918/mixed-cargo-loading.jpg" alt={t.revealAlt} loading="lazy" /><figcaption><small>{t.revealKicker}</small><h2>{t.revealTitle}</h2><p>{t.revealBody}</p><a href="#retail-case">{t.revealLink} ↗</a></figcaption></figure>
   </section>;
 }
 export function FieldGallery() {
