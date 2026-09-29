@@ -1,3 +1,4 @@
+import SourcingTrust from '../../features/company-identity/SourcingTrust';
 import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
 import BuyerDecisionContent from '../../features/search-intent/BuyerDecisionContent';
 import RetailCasePreview from "./RetailCasePreview";
@@ -458,6 +459,7 @@ export function SourcingServices() {
           <div><Globe2 size={24} /><p><strong>DDNZ structures the China-side sourcing file</strong><span>Supplier comparison, approvals, production evidence and release coordination</span></p></div>
           <div><Plane size={21} /><Ship size={21} /><p><strong>Freight begins after sourcing release</strong><span>Air, sea or mixed-mode requirements are captured in the brief</span></p></div>
         </section>
+      <SourcingTrust/>
       <BuyerDecisionContent page="sourcing-services" />
       </main>
 

@@ -13,6 +13,7 @@ import ContactQrCodes from './contact-qr/ContactQrCodes';
 import { mobileCategoryNavigation } from '../config/mobileCategoryNavigation';
 import { outdoorCategoryNavigation, outdoorOverviewNavigation } from '../config/outdoorCategoryNavigation';
 import { screenProtectorNavigation } from '../config/screenProtectorNavigation';
+import { aboutCopy } from '../features/company-identity/aboutCopy';
 import { COMPANY, companyName } from '../config/companyIdentity';
 import { siteFooterCopy } from './site-footer/locales';
 import { siteNavigation } from '../config/siteNavigation';
@@ -109,6 +110,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
         <div className="ddnz-footer__bottom">
           <div><p>{copy.legalNote}</p><p>© 2026 {companyName(language)} · {copy.rights}</p>{language === 'en' && note && <p>{note}</p>}</div>
           <div className="ddnz-footer__legal">
+            <a href={localizedPath('/about/')}>{aboutCopy[language].nav}</a>
             <Link to={localizedPath('/insights')}>{copy.insights}</Link>
             <button type="button" onClick={() => setLegalType('privacy')}>{t('footer.privacy')}</button>
             <button type="button" onClick={() => setLegalType('terms')}>{t('footer.terms')}</button>

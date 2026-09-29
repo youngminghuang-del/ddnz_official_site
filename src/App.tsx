@@ -32,6 +32,7 @@ const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-l
 const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
 const ScreenProtectorPage = lazy(() => import('./features/screen-protectors/ScreenProtectorPage'));
 const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
+const About = lazy(() => import('./pages/About'));
 const HowWeWork = lazy(() => import('./pages/HowWeWork'));
 const ContentOpsDashboard = lazy(() => import('./pages/ContentOpsDashboard'));
 const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
@@ -393,6 +394,7 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogDetail />} />
             <Route path="/insights" element={<InsightsHub />} />
             <Route path="/how-we-work" element={<HowWeWork />} />
+            <Route path="/about" element={<About />} />
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -450,6 +452,7 @@ export default function App() {
             <Route path="/zh-cn/blog/:slug" element={<BlogDetail />} />
             <Route path="/zh-cn/insights" element={<InsightsHub />} />
             <Route path="/zh-cn/how-we-work" element={<HowWeWork />} />
+            <Route path="/zh-cn/about" element={<About />} />
             <Route path="/zh-cn/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/zh-cn/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -474,6 +477,7 @@ export default function App() {
             <Route path="/ru/blog/:slug" element={<BlogDetail />} />
             <Route path="/ru/insights" element={<InsightsHub />} />
             <Route path="/ru/how-we-work" element={<HowWeWork />} />
+            <Route path="/ru/about" element={<About />} />
             <Route path="/ru/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ru/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/ru/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -498,6 +502,7 @@ export default function App() {
             <Route path="/fr/blog/:slug" element={<BlogDetail />} />
             <Route path="/fr/insights" element={<InsightsHub />} />
             <Route path="/fr/how-we-work" element={<HowWeWork />} />
+            <Route path="/fr/about" element={<About />} />
             <Route path="/fr/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/fr/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/fr/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -522,6 +527,7 @@ export default function App() {
             <Route path="/es/blog/:slug" element={<BlogDetail />} />
             <Route path="/es/insights" element={<InsightsHub />} />
             <Route path="/es/how-we-work" element={<HowWeWork />} />
+            <Route path="/es/about" element={<About />} />
             <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/es/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -546,6 +552,7 @@ export default function App() {
             <Route path="/ar/blog/:slug" element={<BlogDetail />} />
             <Route path="/ar/insights" element={<InsightsHub />} />
             <Route path="/ar/how-we-work" element={<HowWeWork />} />
+            <Route path="/ar/about" element={<About />} />
             <Route path="/ar/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ar/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/ar/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -570,6 +577,7 @@ export default function App() {
             <Route path="/pt/blog/:slug" element={<BlogDetail />} />
             <Route path="/pt/insights" element={<InsightsHub />} />
             <Route path="/pt/how-we-work" element={<HowWeWork />} />
+            <Route path="/pt/about" element={<About />} />
             <Route path="/pt/services/:serviceId" element={<EnglishLocaleFallback prefix="/pt" />} />
             <Route path="/pt/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
@@ -594,6 +602,7 @@ export default function App() {
             <Route path="/tr/blog/:slug" element={<BlogDetail />} />
             <Route path="/tr/insights" element={<InsightsHub />} />
             <Route path="/tr/how-we-work" element={<HowWeWork />} />
+            <Route path="/tr/about" element={<About />} />
             <Route path="/tr/services/:serviceId" element={<EnglishLocaleFallback prefix="/tr" />} />
             <Route path="/tr/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />

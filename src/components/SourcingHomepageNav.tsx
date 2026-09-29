@@ -1,3 +1,4 @@
+import { aboutCopy } from '../features/company-identity/aboutCopy';
 import { foodCategoryNavigation, foodNavigationLabels } from '../config/foodCategoryNavigation';
 import { audioCategoryNavigation } from '../config/audioCategoryNavigation';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -507,6 +508,7 @@ export default function SourcingHomepageNav({
           >
             {labels.insights}
           </Link>
+          <Link onClick={closeDesktopDropdown} to={localizedPath('/about/')} aria-current={/\/about\/?$/.test(location.pathname) ? 'page' : undefined} className="whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold text-[var(--ddnz-ink)] hover:text-[var(--ddnz-purple-strong)]">{aboutCopy[language].nav}</Link>
         </nav>
 
         <div className={`hidden shrink-0 items-center gap-2 ${desktopVisibility} 2xl:gap-4`}>
@@ -620,6 +622,7 @@ export default function SourcingHomepageNav({
               ) : null}
             </div>
             <Link onClick={closeMobile} aria-current={isProcessPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isProcessPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={processPath}>{labels.process}</Link>
+            <Link onClick={closeMobile} className="rounded-lg px-3 py-3 font-semibold text-[var(--ddnz-ink)]" to={localizedPath('/about/')}>{aboutCopy[language].nav}</Link>
             <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
             <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
               {languageOptions.map((item) => (

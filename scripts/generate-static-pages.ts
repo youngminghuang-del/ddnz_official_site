@@ -1,3 +1,4 @@
+import { aboutMeta, aboutLanguages } from '../src/features/company-identity/aboutCopy';
 import { renderRefrigerationEntry, renderKitchenEntry } from '../src/features/buyer-entry/kitchen.mjs';
 import AudioSpeakersContent from '../src/pages/product-showcase/AudioSpeakersContent';
 import {englishAudioMeta} from '../src/features/audio/copy';
@@ -753,6 +754,7 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
   return templates[lang] || templates.en;
 }
 
+seoDataMatrix.about = Object.fromEntries(aboutLanguages.map(locale => [locale === 'zh' ? 'zh-cn' : locale, aboutMeta(locale)]));
 const distDir = path.resolve(process.cwd(), 'dist');
 for (const [locale, copy] of Object.entries(positioning)) {
   const lang = locale === 'zh' ? 'zh-cn' : locale;
@@ -871,6 +873,7 @@ function injectSeoMeta(
   // source language until a genuine Translation Group links them together.
   const isEnglishShowcase = relPath === 'products' || relPath === 'sourcing-services' || relPath === 'refrigeration-equipment';
   const ptTrLocalizedPages = new Set([
+    'about',
     '',
     'how-we-work',
     'insights',
@@ -1841,6 +1844,7 @@ function run() {
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
   const basePaths = [
+    { path: 'about', priority: '0.7', changefreq: 'monthly', languages: ['en','zh-cn','es','fr','pt','ru','tr','ar'] },
     {path:'screen-protectors/calculator',priority:'0.8',changefreq:'monthly',languages:overviewLanguages.filter(l=>l!=='en')},
     ...['screen-protectors/guides','screen-protectors/guides/price-differences','screen-protectors/guides/curved-glass','screen-protectors/videos'].map(path=>({path,priority:'0.8',changefreq:'monthly',languages:overviewLanguages.filter(l=>l!=='en')})),
     ...foodProcessingRoutes.map(route => ({path:route.slice(1),priority:'0.8',changefreq:'monthly',languages:foodLanguages})),
