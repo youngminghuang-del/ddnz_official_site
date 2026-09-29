@@ -1,0 +1,13 @@
+.sourcing-locations { max-width: 1320px; margin-inline: auto; padding: 80px 42px; display: grid; grid-template-columns: minmax(0,1.45fr) minmax(0,1fr); gap: clamp(40px,7vw,96px); align-items: center; color: #173047; scroll-margin-top: 100px; }
+.sourcing-locations .sourcing-locations__eyebrow { margin: 0 0 14px; color: #79378d; font-size: 12px; font-weight: 650; letter-spacing: .08em; }
+.sourcing-locations h2 { margin: 0 0 22px; font-size: clamp(28px,3vw,40px); font-weight: 650; line-height: 1.18; letter-spacing: -.025em; text-wrap: pretty; }
+.sourcing-locations p { margin: 16px 0 0; color: #526176; font-size: 16px; line-height: 1.8; }
+.sourcing-locations .sourcing-locations__intro { color: #173047; font-size: 18px; line-height: 1.65; }
+.sourcing-locations__links { margin: 0; padding: 0; list-style: none; }
+.sourcing-locations__links li { padding-block: 24px; border-bottom: 1px solid #dce0e3; }
+.sourcing-locations__links li:first-child { border-top: 1px solid #dce0e3; }
+.sourcing-locations__links a { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding-block: 5px; color: #173047; font-size: 19px; font-weight: 650; text-decoration: none; line-height: 1.5; }
+.sourcing-locations__links a:hover { color: #79378d; text-decoration: underline; text-underline-offset: 5px; }
+.sourcing-locations__links a:focus-visible { outline: 2px solid #79378d; outline-offset: 5px; }
+.sourcing-locations__links p { margin-top: 8px; font-size: 15px; }
+@media (max-width: 760px) { .sourcing-locations { grid-template-columns: 1fr; gap: 30px; padding: 52px 22px; } }

@@ -1,3 +1,4 @@
+import SourcingLocations from '../../features/sourcing-locations/SourcingLocations';
 import SourcingTrust from '../../features/company-identity/SourcingTrust';
 import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
 import BuyerDecisionContent from '../../features/search-intent/BuyerDecisionContent';
@@ -350,23 +351,7 @@ export function SourcingServices() {
           </div>
         </section>
 
-        <section className="ss-section ss-presence" aria-labelledby="presence-title">
-          <div className="ss-presence-copy">
-            <p className="ss-kicker">LOCAL PRESENCE ≠ ORDER CONTROL</p>
-            <h2 id="presence-title">Being in China does not automatically make an order visible.</h2>
-            <p>A buyer visit or a trusted local contact can help communication. It still needs a defined method for supplier verification, specification control, inspection, issue escalation and export readiness.</p>
-            <div className="ss-presence-note"><Users size={21} /><span><strong>People support the process.</strong> A recorded control system makes the process reviewable.</span></div>
-          </div>
-          <div className="ss-gap-list">
-            {[
-              ["Supplier identity", "Who manufactures, who trades and who is accountable for the offer?"],
-              ["Specification control", "What exact model, material, components and inclusions must bulk production match?"],
-              ["Inspection method", "Which order-specific checks define acceptance before release?"],
-              ["Issue escalation", "Who records exceptions, corrective action and the buyer's decision?"],
-              ["Export readiness", "Are labels, documents, packing and freight conditions ready together?"],
-            ].map(([title, copy], index) => <article key={title}><small>0{index + 1}</small><div><strong>{title}</strong><p>{copy}</p></div></article>)}
-          </div>
-        </section>
+        <SourcingLocations />
 
         <section className="ss-control" id="control" aria-labelledby="control-title">
           <div className="ss-section">
