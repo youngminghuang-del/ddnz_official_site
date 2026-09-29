@@ -1,3 +1,4 @@
+import InspectionEvidence from '../features/sourcing-services/InspectionEvidence';
 import SupplierBuyingGuide from '../features/sourcing-services/SupplierBuyingGuide';
 import './sourcing-service-aligned.css';
 import ServiceVisual from './ServiceVisual';
@@ -246,6 +247,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
+        {kind === 'inspection-quality-control' && <InspectionEvidence quoteHref={quoteHref} />}
         {kind === 'supplier-search' && <SupplierBuyingGuide quoteHref={quoteHref} />}
 
         {aligned && (kind === 'consolidation-export' && language === 'zh' ? <FclSpeakerCaseZh quoteHref={quoteHref} /> : <ServiceCaseDetail kind={kind} quoteHref={quoteHref} />)}
