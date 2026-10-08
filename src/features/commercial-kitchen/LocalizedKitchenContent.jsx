@@ -1,3 +1,4 @@
+import GulfKitchenPlanning, { GulfKitchenEntry } from './components/GulfKitchenPlanning.jsx';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
   KITCHEN_LIST_STORAGE_KEY, addKitchenSelection, buildLocalizedKitchenInquiry, cleanKitchenSelection,
@@ -116,7 +117,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
     } finally { setPending(false); }
   }
   const fieldError = (field, id) => errors[field] ? <small className="localized-error" id={id} role="alert">{errors[field]}</small> : null;
-  return <section className="ddnz-kitchen localized-kitchen" lang={locale} dir={t.dir} aria-label={u.pageLabel} onClick={event => {
+  return <section className="ddnz-kitchen kitchen-brand localized-kitchen" lang={locale} dir={t.dir} aria-label={u.pageLabel} onClick={event => {
     const href = event.target.closest?.('a')?.getAttribute('href');
     if (href === '#commercial-kitchen-list') onAction('start_brief');
     if (href === '#commercial-kitchen-margin') onAction('plan_margin');
@@ -131,7 +132,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
     <main id="commercial-kitchen-top">
       <nav className="kitchen-breadcrumb wrap" aria-label={u.breadcrumb}><ol><li><a href={`/${locale === 'zh' ? 'zh-cn' : locale}/`}>{u.home}</a></li><li aria-current="page">{u.pageLabel}</li></ol></nav>
       <section className="hero wrap">
-        <div className="hero-copy"><p className="eyebrow">{u.audience}</p><h1>{u.heading}<br/><em>{u.emphasis}</em></h1><p className="hero-description"><IsolatedText>{u.intro}</IsolatedText></p><div className="actions"><a className="button primary" href="#commercial-kitchen-equipment">{u.explore}<Arrow locale={locale}/></a><a className="text-link" href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div><div className="markets">{Object.values(t.countries).map(country => <span key={country}>{country}</span>)}</div></div>
+        <div className="hero-copy"><p className="eyebrow">{u.audience}</p><h1>{u.heading}<br/><em>{u.emphasis}</em></h1><p className="hero-description"><IsolatedText>{u.intro}</IsolatedText></p><div className="actions"><a className="button primary" href="#commercial-kitchen-equipment">{u.explore}<Arrow locale={locale}/></a><a className="text-link" href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div><div className="markets">{Object.values(t.countries).map(country => <span key={country}>{country}</span>)}</div><GulfKitchenEntry locale={locale}/></div>
         <div className="hero-visual"><img src="/commercial-kitchen-media/kitchen-hero.webp" alt={u.heroAlt} fetchPriority="high" width="1200" height="900"/><div className="image-caption">{u.heroCaption}</div><div className="hero-label"><strong>{u.heroLabel}</strong><a href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div></div>
       </section>
       <section className="section wrap" id="commercial-kitchen-equipment" tabIndex={-1} aria-labelledby="localized-catalog-title">
@@ -159,6 +160,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
         <p className="fine">{u.electricity}</p>
       </section>
       <section className="section wrap" id="commercial-kitchen-assortments" aria-labelledby="localized-assortment-title"><h2 id="localized-assortment-title">{u.assortmentTitle}</h2><p>{u.assortmentHelp}</p><div className="localized-two-columns">{assortments.map(assortment => <article className="localized-panel" key={assortment.name}><h3>{assortment.name}</h3><p>{assortment.description}</p><ul>{assortment.items.map(item => <li key={item.productId}><IsolatedText>{products.find(product => product.id === item.productId).displayModel}</IsolatedText> × <bdi dir="ltr">{localNumber(item.defaultQty, locale)}</bdi> {u.units}</li>)}</ul><button type="button" className="button primary" onClick={() => add(assortment.selection, u.assortmentAdded, 'add_assortment')}>{u.addAssortment}</button></article>)}</div></section>
+      <GulfKitchenPlanning locale={locale}/>
       <section className="section wrap" id="commercial-kitchen-benchmarks" aria-labelledby="localized-prices-title"><p className="eyebrow">{u.prices}</p><h2 id="localized-prices-title">{u.marketTitle}</h2><div className="localized-price-explanation" id="commercial-kitchen-trade-pricing"><p><IsolatedText>{u.priceScope}</IsolatedText></p><p>{u.priceCosts}</p><p><IsolatedText>{u.marketHelp}</IsolatedText></p></div>
         {Object.entries(t.markets).map(([country, market]) => <section className="localized-market" key={country} aria-label={t.countries[country]}><h3>{market.title}</h3><p>{market.description}</p><p className="fine"><IsolatedText>{market.note}</IsolatedText></p><div className="localized-two-columns">{benchmarks.filter(reference => reference.country === country).map(reference => <article className="localized-panel" key={reference.id}><p className="eyebrow">{reference.countryLabel} · <bdi dir="ltr">{reference.site}</bdi></p><h4><IsolatedText>{reference.name}</IsolatedText></h4><p className="fine">{u.linkedModel}: <IsolatedText>{products.find(product => product.id === reference.productId).displayModel}</IsolatedText></p><p>{u.observed}: <strong><bdi dir="ltr">{localMoney(reference.price, reference.currency, locale)}</bdi></strong></p><p><IsolatedText>{reference.spec}</IsolatedText></p><p>{reference.match}</p><p><IsolatedText>{reference.difference}</IsolatedText></p><p className="fine"><IsolatedText>{reference.context}</IsolatedText></p><p className="fine">{u.captured}: <time dateTime={reference.date}><bdi dir="ltr">{reference.date}</bdi></time>. {reference.capture}</p><a className="text-link" href={reference.url} target="_blank" rel="noopener noreferrer">{u.source}<span aria-hidden="true">↗</span></a></article>)}</div></section>)}
       </section>

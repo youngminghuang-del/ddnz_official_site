@@ -457,3 +457,129 @@
  .ddnz-kitchen .value-strip>a small { font-size:12px; }
  .ddnz-kitchen .kitchen-reading-grid article { padding:24px; }
 }
+
+/* Regional buying context: shared English / Arabic editorial layout. */
+.ddnz-kitchen .gulf-kitchen-entry{display:inline-block;margin-top:22px;font-size:15px;line-height:1.6;font-weight:600;color:var(--blue);text-underline-offset:5px}
+.ddnz-kitchen .gulf-kitchen{scroll-margin-top:130px;border-bottom:1px solid #dbe1e5}
+.ddnz-kitchen .gulf-kitchen-heading{max-width:920px;margin-bottom:46px}
+.ddnz-kitchen .gulf-kitchen-heading>p:last-child{font-size:18px;color:#4d6070}
+.ddnz-kitchen .gulf-kitchen-layout{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:64px;align-items:start}
+.ddnz-kitchen .gulf-kitchen-visual{margin:0;background:#f0f2f2;padding:28px;min-width:0}
+.ddnz-kitchen .gulf-kitchen-visual img{width:100%;height:440px;object-fit:contain;mix-blend-mode:multiply}
+.ddnz-kitchen .gulf-kitchen-visual figcaption{font-size:13px;color:#53616e;line-height:1.6;margin:22px 0 16px}
+.ddnz-kitchen .gulf-kitchen-origin{padding-bottom:10px}
+.ddnz-kitchen .gulf-kitchen-origin h3{font-size:25px}
+.ddnz-kitchen .gulf-kitchen-steps{list-style:none;margin:0;padding:0}
+.ddnz-kitchen .gulf-kitchen-steps li{display:grid;grid-template-columns:32px minmax(0,1fr);gap:18px;border-top:1px solid #d6dfe3;padding:23px 0 0}
+.ddnz-kitchen .gulf-step-number{color:#7e398d;font-size:14px;padding-top:5px}
+.ddnz-kitchen .gulf-kitchen-steps h3{font-size:21px;margin-bottom:10px}
+.ddnz-kitchen .gulf-kitchen-steps p{color:#4d6070}
+.ddnz-kitchen .gulf-kitchen-brief{display:flex;align-items:center;gap:32px;justify-content:space-between;background:#f3eff5;padding:32px;margin-top:40px}
+.ddnz-kitchen .gulf-kitchen-brief>div{max-width:720px}
+.ddnz-kitchen .gulf-kitchen-brief p{margin-bottom:0}
+.ddnz-kitchen .gulf-kitchen-brief .button{flex-shrink:0}
+.ddnz-kitchen .gulf-kitchen-related{display:flex;flex-wrap:wrap;gap:20px 38px;padding-top:24px;font-size:15px;text-underline-offset:5px}
+.ddnz-kitchen[dir="rtl"] .gulf-kitchen h2,.ddnz-kitchen[dir="rtl"] .gulf-kitchen h3{letter-spacing:normal;line-height:1.5}
+@media(max-width:800px){.ddnz-kitchen .gulf-kitchen-layout{grid-template-columns:1fr;gap:30px}.ddnz-kitchen .gulf-kitchen-visual img{height:320px}.ddnz-kitchen .gulf-kitchen-brief{display:block;padding:24px}.ddnz-kitchen .gulf-kitchen-brief .button{margin-top:22px;white-space:normal}.ddnz-kitchen .gulf-kitchen-heading{margin-bottom:28px}}
+
+/* Align the equipment overview with the shared DDNZ sourcing-service design.
+   Scope to the overview so specialist category layouts remain independent. */
+.ddnz-kitchen.kitchen-brand{--ink:#10233f;--muted:#596678;--blue:#71339a;--accent:#e8d8f0;--paper:#f8f7f3;--line:#dce2e8;--sans:inherit;--serif:inherit;font-family:inherit;background:#fffdf9}
+.ddnz-kitchen.kitchen-brand .wrap{max-width:1236px;width:calc(100% - 84px)}
+.ddnz-kitchen.kitchen-brand h1,.ddnz-kitchen.kitchen-brand h2,.ddnz-kitchen.kitchen-brand h3{font-weight:750}
+.ddnz-kitchen.kitchen-brand h1{font-size:clamp(34px,4.2vw,58px);line-height:1.12;letter-spacing:-.035em;margin:20px 0 24px}
+.ddnz-kitchen.kitchen-brand h1 em{font-family:inherit;font-style:normal;font-weight:inherit;color:var(--ink)}
+.ddnz-kitchen.kitchen-brand h2{font-size:clamp(28px,3.2vw,42px);line-height:1.18;letter-spacing:-.03em}
+.ddnz-kitchen.kitchen-brand h3{letter-spacing:-.015em}
+.ddnz-kitchen.kitchen-brand .section{padding-block:72px}
+.ddnz-kitchen.kitchen-brand .hero{gap:56px;min-height:0;padding-block:48px 64px;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}
+.ddnz-kitchen.kitchen-brand .hero-description{font-size:17px;line-height:1.65;max-width:590px;margin:24px 0}
+.ddnz-kitchen.kitchen-brand .eyebrow{color:var(--blue);font-size:11px;letter-spacing:.13em}
+.ddnz-kitchen.kitchen-brand .markets{margin-top:26px;letter-spacing:.06em;line-height:1.7}
+.ddnz-kitchen.kitchen-brand .hero-visual{height:460px;margin:0;border-radius:16px;overflow:hidden;background:var(--paper)}
+.ddnz-kitchen.kitchen-brand .image-caption{inset:16px 16px auto;background:#10233fa6;border-radius:6px;letter-spacing:.07em}
+.ddnz-kitchen.kitchen-brand .hero-label{inset:auto 16px 16px;min-width:0;border-radius:10px;padding:20px 24px;background:#10233fe8;color:white}
+.ddnz-kitchen.kitchen-brand .hero-label strong{font-size:25px;font-weight:650;letter-spacing:-.02em}
+.ddnz-kitchen.kitchen-brand .hero-label a{border-color:#ffffff55;color:white;min-height:40px}
+.ddnz-kitchen.kitchen-brand .button{border-radius:7px;font-weight:650;gap:16px;min-height:46px}
+.ddnz-kitchen.kitchen-brand .primary{background:#df4c2c;border-color:#df4c2c;color:white}
+.ddnz-kitchen.kitchen-brand .primary:hover{background:#c73d20;border-color:#c73d20;color:white}
+.ddnz-kitchen.kitchen-brand .outline{background:white;border-color:var(--line);color:var(--ink)}
+.ddnz-kitchen.kitchen-brand .outline:hover{border-color:var(--blue);background:#f4edf8;color:var(--blue)}
+.ddnz-kitchen.kitchen-brand :is(input,textarea,select){border-radius:7px;border-color:#cbd5e1}
+.ddnz-kitchen.kitchen-brand :is(button,a,input,select,textarea,summary):focus-visible{outline-color:var(--blue)}
+.ddnz-kitchen.kitchen-brand .kitchen-subnav{padding-inline:max(20px,calc((100% - 1236px)/2));background:#fffdf9f5}
+.ddnz-kitchen.kitchen-brand .kitchen-subnav a{border-radius:6px}
+.ddnz-kitchen.kitchen-brand .kitchen-subnav a:hover{background:#f4edf8;color:var(--blue)}
+.ddnz-kitchen.kitchen-brand :is(.filters button,.priority-markets button,.category-entry-links a){border-radius:7px}
+.ddnz-kitchen.kitchen-brand .filters button.active{background:#71339a;color:white}
+.ddnz-kitchen.kitchen-brand :is(.product,.localized-panel,.benchmark,.brief-form,.localized-inquiry,.kitchen-reading-grid article){border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ddnz-kitchen.kitchen-brand .product-image,.ddnz-kitchen.kitchen-brand .localized-product-photo{background:#f5f6f8}
+.ddnz-kitchen.kitchen-brand .product-bottom button:not(.estimate-price){background:#71339a;border-radius:6px}
+.ddnz-kitchen.kitchen-brand .product-bottom button.added{background:#f4edf8;color:#71339a}
+.ddnz-kitchen.kitchen-brand :is(.assortment-section,.planner-section,.market-empty){background:#f5f2f7}
+.ddnz-kitchen.kitchen-brand :is(.configuration-note,.localized-price-explanation,.localized-status){background:#f4edf8}
+.ddnz-kitchen.kitchen-brand .localized-status.is-error{background:#fff0ed}
+.ddnz-kitchen.kitchen-brand :is(.kit-number,.process-row>span,.value-strip>div>span){font-family:inherit;font-style:normal;color:var(--blue)}
+.ddnz-kitchen.kitchen-brand .guide-section{background:#342443}
+.ddnz-kitchen.kitchen-brand .guide-section .eyebrow{color:#e8d8f0}
+.ddnz-kitchen.kitchen-brand .guide-tabs button[aria-pressed=true]{background:#71339a;color:white;border-color:#71339a;border-radius:7px}
+.ddnz-kitchen.kitchen-brand .localized-margin-sale{background:#a28aad}
+.ddnz-kitchen.kitchen-brand .localized-margin-extras{background:#df4c2c}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-heading{max-width:880px;margin-bottom:36px}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-heading>p:last-child{font-size:17px;color:var(--muted)}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-layout{gap:48px}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-visual{border-radius:12px;border:1px solid var(--line);background:#f5f6f8}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-brief{border-radius:12px;background:#f4edf8}
+.ddnz-kitchen.kitchen-brand .gulf-kitchen-related a{color:var(--blue);font-weight:600}
+.ddnz-kitchen.kitchen-brand[dir=rtl]{font-family:'Noto Sans Arabic','Tahoma',sans-serif}
+.ddnz-kitchen.kitchen-brand[dir=rtl] :is(h1,h2,h3,.eyebrow,.markets){letter-spacing:0}
+.ddnz-kitchen.kitchen-brand[dir=rtl] h1{line-height:1.35}
+.ddnz-kitchen.kitchen-brand[dir=rtl] :is(h2,h3){line-height:1.5}
+.ddnz-kitchen.kitchen-brand[dir=rtl] .hero-label{inset:auto 16px 16px}
+@media(max-width:1000px){
+ .ddnz-kitchen.kitchen-brand .wrap{width:calc(100% - 48px)}
+ .ddnz-kitchen.kitchen-brand .hero{gap:32px}
+ .ddnz-kitchen.kitchen-brand .hero-visual{height:420px}
+ .ddnz-kitchen.kitchen-brand .gulf-kitchen-layout{gap:30px}
+}
+@media(max-width:767px){
+ .ddnz-kitchen.kitchen-brand .wrap{width:calc(100% - 40px)}
+ .ddnz-kitchen.kitchen-brand .hero{grid-template-columns:1fr;padding-block:30px 40px;gap:30px}
+ .ddnz-kitchen.kitchen-brand h1{font-size:36px}
+ .ddnz-kitchen.kitchen-brand h2,.ddnz-kitchen.kitchen-brand .section-heading h2{font-size:30px;letter-spacing:-.025em}
+ .ddnz-kitchen.kitchen-brand[dir=rtl] .section-heading h2{letter-spacing:0}
+ .ddnz-kitchen.kitchen-brand .hero-description{font-size:16px}
+ .ddnz-kitchen.kitchen-brand .hero-visual{height:360px}
+ .ddnz-kitchen.kitchen-brand .section{padding-block:48px}
+ .ddnz-kitchen.kitchen-brand .gulf-kitchen-heading>p:last-child{font-size:16px}
+ .ddnz-kitchen.kitchen-brand .filters button{min-height:44px;font-size:12px}
+ .ddnz-kitchen.kitchen-brand .gulf-kitchen-visual img{height:280px}
+}
+@media(max-width:520px){
+ .ddnz-kitchen.kitchen-brand .product-grid{grid-template-columns:1fr}
+ .ddnz-kitchen.kitchen-brand .localized-product-photo{height:240px;aspect-ratio:auto}
+ .ddnz-kitchen.kitchen-brand .product-image{height:260px}
+ .ddnz-kitchen.kitchen-brand .hero-label strong{font-size:23px}
+ .ddnz-kitchen.kitchen-brand .gulf-kitchen-related{gap:18px}
+}
+
+/* Full-width photographic hero with the established DDNZ ribbon artwork. */
+.ddnz-kitchen.kitchen-brand .hero.wrap{position:relative;isolation:isolate;display:block;width:100%;max-width:none;min-height:650px;padding:64px max(42px,calc((100% - 1236px)/2)) 72px;overflow:hidden;background:#f8f7f3}
+.ddnz-kitchen.kitchen-brand .hero .hero-copy{position:relative;z-index:2;width:54%;max-width:650px;padding:0}
+.ddnz-kitchen.kitchen-brand .hero .hero-visual{position:absolute;inset:0;z-index:0;height:auto;border-radius:0;margin:0;pointer-events:none}
+.ddnz-kitchen.kitchen-brand .hero .hero-visual>img{width:100%;height:100%;object-fit:cover;object-position:70% center}
+.ddnz-kitchen.kitchen-brand .hero .hero-visual::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#f8f7f3 0%,#f8f7f3fc 30%,#f8f7f3ee 43%,#f8f7f3ad 57%,#f8f7f32b 78%),linear-gradient(0deg,#f8f7f3 0%,#f8f7f300 27%)}
+.ddnz-kitchen.kitchen-brand .hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:url('/commercial-kitchen-media/ddnz-ribbon-desktop-v1.webp') right bottom / 100% 100% no-repeat;mix-blend-mode:multiply;opacity:1;mask-image:linear-gradient(180deg,#0005 0%,#000 80%)}
+.ddnz-kitchen.kitchen-brand .hero :is(.hero-label,.image-caption){display:none}
+.ddnz-kitchen.kitchen-brand[dir=rtl] .hero .hero-visual>img{object-position:30% center}
+.ddnz-kitchen.kitchen-brand[dir=rtl] .hero .hero-visual::after{background:linear-gradient(270deg,#f8f7f3 0%,#f8f7f3fc 30%,#f8f7f3ee 43%,#f8f7f3ad 57%,#f8f7f32b 78%),linear-gradient(0deg,#f8f7f3 0%,#f8f7f300 27%)}
+.ddnz-kitchen.kitchen-brand[dir=rtl] .hero::after{transform:scaleX(-1)}
+@media(max-width:1000px){.ddnz-kitchen.kitchen-brand .hero.wrap{padding-inline:24px;min-height:600px}.ddnz-kitchen.kitchen-brand .hero .hero-copy{width:62%}}
+@media(max-width:767px){
+ .ddnz-kitchen.kitchen-brand .hero.wrap{padding:36px 20px 56px;min-height:0}
+ .ddnz-kitchen.kitchen-brand .hero .hero-copy{width:100%;max-width:none}
+ .ddnz-kitchen.kitchen-brand .hero .hero-visual>img{object-position:65% center}
+ .ddnz-kitchen.kitchen-brand .hero .hero-visual::after,.ddnz-kitchen.kitchen-brand[dir=rtl] .hero .hero-visual::after{background:linear-gradient(180deg,#f8f7f3f7 0%,#f8f7f3ef 60%,#f8f7f3d9 85%,#f8f7f3 100%)}
+ .ddnz-kitchen.kitchen-brand .hero::after{background-size:auto 100%;opacity:.5}
+}
