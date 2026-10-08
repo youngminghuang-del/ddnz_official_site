@@ -1,3 +1,6 @@
+import { newAccessories } from './new-accessories/products.mjs';
+import { accessoryCopy } from './new-accessories/copy.mjs';
+import {privacy28} from './privacy28.mjs';
 import { EN } from '../screen-protectors/locales/en.mjs';
 import { PHONE_LOCALES } from '../screen-protectors/locales/localized.mjs';
 import { productById as mobileProductById, copyFor } from './catalog.mjs';
@@ -15,11 +18,13 @@ export const mixedCopy={
  storage:t('Your browser could not save this request. Keep this page open and copy the preview before leaving.','El navegador no pudo guardar la solicitud. Mantenga esta página abierta y copie la vista previa antes de salir.','تعذر على المتصفح حفظ الطلب. أبق هذه الصفحة مفتوحة وانسخ المعاينة قبل المغادرة.'),
 };
 export const filmProducts=Object.entries(PRODUCTS).map(([key,p])=>({...p,id:'film-'+key,filmId:key,code:key.toUpperCase(),group:'film',name:{en:EN.product.names[key],es:PHONE_LOCALES.es.names[key],ar:PHONE_LOCALES.ar.names[key]},image:'/screen-protector-media/assets/'+p.image,tiers:[[p.minQty,p.price]],url:'https://www.ddnzglobal.com/screen-protectors/compare/'}));
-export const productById=id=>mobileProductById(id)||filmProducts.find(p=>p.id===id);
+export const productById=id=>mobileProductById(id)||newAccessories.find(p=>p.id===id)||(id===privacy28.id?privacy28:null)||filmProducts.find(p=>p.id===id);
 export const rowKey=row=>row.rowId||row.id;
 const quantityNumber=value=>Number(String(value??'').replace(/[٠-٩]/g,c=>String(c.charCodeAt(0)-0x660)).replace(/[۰-۹]/g,c=>String(c.charCodeAt(0)-0x6f0)));
 export function minimumNote(row,rows,locale='en'){
  const p=productById(row.id);if(!p)return '';
+ if(p.convertedReference)return `${p.addQty}+ · `+copyFor(accessoryCopy.orderNote,locale);
+ if(p.mixedModels){const total=rows.filter(r=>r.id===row.id).reduce((n,r)=>n+(quantityNumber(r.quantity)||0),0);return copyFor(p.orderNote,locale)+(total<p.minOrderQty?' — '+copyFor(mixedCopy.below,locale):'');}
  if(p.orderNote)return copyFor(p.orderNote,locale);
  if(p.group!=='film')return (p.tiers?`${p.tiers[0][0]}+ · `:'')+copyFor(mixedCopy.pending,locale);
  const total=rows.filter(r=>r.id===row.id).reduce((n,r)=>n+(quantityNumber(r.quantity)||0),0);

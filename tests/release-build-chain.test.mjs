@@ -21,6 +21,8 @@ async function fixture() {
   await fs.writeFile(path.join(project, 'package.json'), '{"type":"module"}');
   for (const name of ['finalize-screen-protector-pages.mjs', 'prepare-screen-protector-seo.mjs']) await fs.copyFile(path.join(root, 'scripts', name), path.join(project, 'scripts', name));
   await fs.cp(path.join(root, 'src/features/screen-protectors'), path.join(project, 'src/features/screen-protectors'), { recursive: true });
+  await fs.mkdir(path.join(project, 'src/features/mobile-sourcing'), { recursive: true });
+  await fs.copyFile(path.join(root, 'src/features/mobile-sourcing/privacy28.mjs'), path.join(project, 'src/features/mobile-sourcing/privacy28.mjs'));
   await fs.mkdir(path.join(project, 'src/features/buyer-guides/locales'), { recursive: true });
   await fs.copyFile(path.join(root, 'src/features/buyer-guides/locales/en.json'), path.join(project, 'src/features/buyer-guides/locales/en.json'));
   await fs.mkdir(path.join(project, 'src/features/commercial-kitchen'), { recursive: true });

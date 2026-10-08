@@ -1,3 +1,4 @@
+import {renderPrivacy28Showcase} from './privacy28-showcase.mjs';
 import { renderFilmEntry } from '../buyer-entry/content.mjs';
 import { renderPageEvidence } from './page-evidence.mjs';
 import { resolveSeoTitle } from '../../lib/seoTitle.mjs';
@@ -26,7 +27,7 @@ const media = file => `/screen-protector-media/media/${file}`;
 export const SCREEN_PROTECTOR_SEO = Object.freeze({
   home: {
     title: 'Wholesale Screen Protectors from China | DDNZ Global',
-    description: 'Source wholesale screen protectors from China. Compare four options, model minimums and retail packaging, then prepare your sourcing brief.',
+    description: 'Source wholesale screen protectors from China. Compare product options, model minimums and retail packaging, then prepare your sourcing brief.',
     image: media('factory-fixture-poster.jpg'),
     imageAlt: 'Glass pieces on a production fixture, filmed by the DDNZ team',
   },
@@ -172,12 +173,12 @@ const productSummary = (anchors = false) => Object.entries(PRODUCTS).map(([id, p
 export function renderScreenProtectorBody(page) {
   if (!Object.hasOwn(ROUTES, page)) throw new Error(`Unknown screen protector page: ${page}`);
   let body;
-  if (page === 'home') body = heading(EN.home.title, EN.home.intro)
+  if (page === 'home') body = heading(EN.home.title, EN.home.intro) + image('/images/product-showcase/mobile/privacy28-product.jpg', '28° HD privacy tempered glass') + renderPrivacy28Showcase()
     + paragraph(EN.home.offersBody) + section(EN.home.videoLabel, paragraph(EN.home.credit) + paragraph(EN.home.transcript) + link('videos', VIDEO_COPY.watch))
     + EN.home.journey.map(([, title, description, target]) => section(title, paragraph(description) + link(target))).join('')
     + guideLinks() + section(EN.home.offersTitle, productSummary())
     + section(EN.home.planTitle, paragraph(EN.home.planBody) + link('calculator'));
-  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderFilmEntry() + paragraph(EN.home.offersBody)
+  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderPrivacy28Showcase() + renderFilmEntry() + paragraph(EN.home.offersBody)
     + productSummary(true) + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
   if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)
