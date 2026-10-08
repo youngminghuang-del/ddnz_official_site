@@ -1,3 +1,4 @@
+import {accessoryCopy} from './new-accessories/copy.mjs';
 const t=(en,es,ar)=>({en,es,ar});
 export const ui={
  home:t('Home','Inicio','الرئيسية'),products:t('Products','Productos','المنتجات'),hub:t('Mobile accessories','Accesorios móviles','ملحقات الهاتف'),cases:t('Phone cases','Fundas para móvil','أغطية الهواتف'),straps:t('Straps & charms','Correas y adornos','الأحزمة والزينة'),compare:t('Materials & pricing','Materiales y precios','المواد والأسعار'),film:t('Screen protectors','Protectores de pantalla','واقيات الشاشة'),
@@ -76,3 +77,8 @@ export const supplierRows=[
  ['Guangzhou Trend Comm Electronic Company Limited',t('Tether patch / flower chain','Parche / cadena floral','رقعة تثبيت وسلسلة زهور'),t('Different minimums by component; logo and packaging from 500.','Mínimos distintos por componente; logo y embalaje desde 500.','حدود مختلفة حسب المكوّن؛ الشعار والتغليف من ٥٠٠.'),t('Resolve patch colour minimum; approve chain material and full-set test.','Resuelva mínimo por color; apruebe material de cadena y prueba del conjunto.','أكد حد لون الرقعة ومادة السلسلة واختبار الطقم.')],
  ['Hangzhou Zimi Gift Co., Ltd.',t('Wrist strap / bead charm','Correa de muñeca / cuentas','سوار وزينة خرز'),t('Logo minimum differs from stock minimum; packaging MOQ varies by style.','Mínimo de logo distinto del estándar; embalaje varía por modelo.','حد الشعار يختلف عن الجاهز؛ حد التغليف يختلف حسب التصميم.'),t('Confirm fibre / bead composition and finished size in writing.','Confirme por escrito fibra / cuentas y tamaño final.','أكد كتابةً تركيب الألياف والخرز والمقاس النهائي.')],
 ];
+
+// Keep the hub title and opening aligned with the complete assortment.
+pages.hub.heading=accessoryCopy.heroHeading;
+pages.hub.intro=accessoryCopy.heroIntro;
+pages.hub.desc=accessoryCopy.heroIntro;

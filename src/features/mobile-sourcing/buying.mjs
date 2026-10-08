@@ -1,3 +1,4 @@
+import { accessoryCopy } from './new-accessories/copy.mjs';
 import { EN } from '../screen-protectors/locales/en.mjs';
 import { referencePrice, copyFor } from './catalog.mjs';
 import { productById, rowKey, minimumNote, mixedCopy } from './mixed-products.mjs';
@@ -52,19 +53,20 @@ export function buyingScenario(input){
 export function buildMobilePayload(draft,locale='en'){
  const d=normalizeDraft(draft),c=key=>copyFor(ui[key],locale);
  const lines=['DDNZ — '+c('brief'),`${c('destination')}: ${d.contact.destination}`,`${c('company')}: ${d.contact.company||'—'}`,`${c('channel')}: ${copyFor(ui.channels[Number(d.contact.channel)],locale)}`,'',c('selected')+':'];
- for(const row of d.rows){const p=productById(row.id),q=parseQuantity(row.quantity),price=referencePrice(p,q);
+ for(const row of d.rows){const p=productById(row.id),q=parseQuantity(row.quantity),price=referencePrice(p,p.mixedModels?d.rows.filter(r=>r.id===p.id).reduce((n,r)=>n+(parseQuantity(r.quantity)||0),0):q);
   lines.push(`- ${p.code} | ${copyFor(p.name,locale)} | ${c('quantity')}: ${q??'—'}`,`  ${p.group==='power'?copyFor({en:'Plug / output / cable length',es:'Enchufe / potencia / longitud',ar:'القابس / القدرة / طول الكابل'},locale):c('model')}: ${row.model||'—'}; ${c('colours')}: ${row.colours||'—'}`);
   lines.push('  '+minimumNote(row,d.rows,locale));
-  if(p.group==='film')lines.push('  '+copyFor(mixedCopy.reference,locale));
-  if(p.sourceRecord)lines.push(`  Reference checked: ${p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
+  if(p.group==='film'&&!p.mixedModels)lines.push('  '+copyFor(mixedCopy.reference,locale));
+  if(p.sourceRecord)lines.push(`  ${p.convertedReference?copyFor(accessoryCopy.note,locale).replace('{date}',p.sourceRecord.checkedAt):'Reference checked: '+p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
   if(p.pack&&!p.assembly)lines.push('  '+copyFor(p.pack,locale));
   if(p.assembly)lines.push(`  ${c(p.assembly)}. ${copyFor(p.pack,locale)}`);
-  if(p.tiers)lines.push(price===null?c('below'):`  ${c('reference')}: CNY ${price.toFixed(2)}`);
+  if(p.tiers)lines.push(price===null?c('below'):`  ${p.convertedReference?copyFor(accessoryCopy.price,locale):c('reference')}: ${p.currency||'CNY'} ${price.toFixed(2)}`);
+  else if(p.priceRange)lines.push(`  ${copyFor(accessoryCopy.price,locale)}: ${p.currency} ${p.priceRange.map(v=>v.toFixed(2)).join('–')}`);
   else lines.push(c('onRequest'));
  }
  if(d.filmChecks.length)lines.push('',...d.filmChecks.map(key=>'- '+EN.requests[key]));
  if(d.inspectionChecks.length)lines.push('',...inspectionOptions.filter(x=>d.inspectionChecks.includes(x.id)).map(x=>'- '+copyFor(x.label,locale)));
- lines.push('',copyFor(mixedCopy.scope,locale),`${c('packaging')}: ${d.contact.packaging||'—'}`,`${c('notes')}: ${d.contact.notes||'—'}`,'',c('scope'),...(d.rows.some(r=>productById(r.id).group!=='film')?[c('cases')+' / '+c('straps')+': '+c('quoteNote')]:[]));
+ lines.push('',copyFor(mixedCopy.scope,locale),`${c('packaging')}: ${d.contact.packaging||'—'}`,`${c('notes')}: ${d.contact.notes||'—'}`,'',c('scope'),...(d.rows.some(r=>productById(r.id).group!=='film'&&!productById(r.id).convertedReference)?[c('cases')+' / '+c('straps')+': '+c('quoteNote')]:[]));
  return {name:cleanText(d.contact.name,100),email:cleanText(d.contact.email,254),subject:`DDNZ — ${c('brief')} — ${d.rows.length}`,message:lines.join('\n')};
 }
 export function mobileJourneyAnalytics(locale,action){if(!['en','zh','es','ar','ru','fr','pt','tr'].includes(locale)||!['add_style','remove_style','compare_quantity','calculate','review_brief','submit_success','submit_error','view_category','play_video'].includes(action))return null;return {event:'mobile_sourcing_journey',params:{content_group:'mobile_accessories',content_language:locale,journey_action:action}};}

@@ -1,3 +1,5 @@
+import {renderPrivacy28Showcase, privacyPageCopy} from './privacy28-showcase.mjs';
+import {privacyCopy} from '../mobile-sourcing/privacy28.mjs';
 import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
 import {localizedProductPath} from '../../lib/productLocalization.mjs';
 import { renderPrivacy001 } from './privacy001.mjs';
@@ -17,7 +19,10 @@ import {
 // onNavigate is optional; parent can use React Router, otherwise normal navigation.
 // onAction receives only select_configuration, create_brief, continue_inquiry.
 export default function LocalizedScreenProtectorContent({ locale, page = 'home', onNavigate = undefined, onAction = undefined }) {
-  const copy = phoneCopy(locale);
+  const originalCopy = phoneCopy(locale);
+  const lang=locale==='zh-cn'?'zh':locale;
+  const newCopy=privacyPageCopy[lang];
+  const copy = {...originalCopy,intro:newCopy[1],compareIntro:newCopy[1],explore:newCopy[2],productsTitle:newCopy[3],heroCaption:privacyCopy[lang][1],imageAlt:privacyCopy[lang][1]};
   const reportAction = createScreenProtectorActionReporter(onAction);
   localizedPhonePath(locale, page); // Validate both SSR props before rendering.
   const [draft, setDraft] = useState(emptyPhoneDraft);
@@ -97,8 +102,9 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
           <p className="lede">{page === 'home' ? copy.intro : copy.compareIntro}</p>
           <div className="actions"><a className="button primary" href={page === 'home' ? `${localizedPhonePath(locale, 'compare')}#phone-products` : '#phone-inquiry'}>{page === 'home' ? copy.explore : copy.prepare}</a></div>
         </div>
-        {page === 'home' && <figure><img src="/screen-protector-media/assets/001-kit-photo.jpg" alt={copy.imageAlt} width="1672" height="941" fetchPriority="high" /><figcaption>{copy.heroCaption}</figcaption></figure>}
+        {page === 'home' && <figure><img src="/images/product-showcase/mobile/privacy28-product.jpg" alt={copy.imageAlt} width="790" height="911" fetchPriority="high" /><figcaption>{copy.heroCaption}</figcaption></figure>}
       </header>
+      <div dangerouslySetInnerHTML={{__html:renderPrivacy28Showcase(locale)}}/>
       {page === 'home' && <section className="phone-local-steps" aria-labelledby="phone-steps-title"><h2 id="phone-steps-title">{copy.stepsTitle}</h2><ol>{copy.steps.map(([title, text], i) => <li key={title}><span aria-hidden="true">{phoneNumber(locale, i + 1)}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
       {page==='compare'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('films',locale)}}/>}
       <section id="phone-products" aria-labelledby="phone-products-title">
