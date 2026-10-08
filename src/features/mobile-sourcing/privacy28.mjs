@@ -131,3 +131,14 @@ export const privacy28 = {
   "addQty": 5000,
   "mixedModels": true
 };
+
+export const privacy28OrderNotes = {
+ en: 'Before ordering, confirm which packaging and accessories are included in ¥4.80 per piece. Ask how the advertised 28° angle is defined and check a sample on the intended phone model.',
+ zh: '下单前请确认 ¥4.80/片包含的包装与配件，并向供应商确认28°的角度定义，在对应手机型号上检查样品效果。',
+ es: 'Antes de comprar, confirme qué embalaje y accesorios incluye el precio de ¥4,80 por unidad. Pida la definición del ángulo anunciado de 28° y pruebe una muestra en el modelo de teléfono previsto.',
+ fr: 'Avant de commander, confirmez l’emballage et les accessoires inclus dans les 4,80 CNY par pièce. Demandez comment l’angle annoncé de 28° est défini et vérifiez un échantillon sur le modèle de téléphone prévu.',
+ pt: 'Antes de comprar, confirme quais embalagens e acessórios estão incluídos nos CNY 4,80 por peça. Peça a definição do ângulo anunciado de 28° e confira uma amostra no modelo de celular desejado.',
+ ru: 'Перед заказом уточните, какая упаковка и аксессуары входят в цену 4,80 CNY за штуку. Запросите определение заявленного угла 28° и проверьте образец на нужной модели телефона.',
+ tr: 'Siparişten önce adet başına 4,80 CNY fiyatına hangi ambalaj ve aksesuarların dahil olduğunu doğrulayın. Belirtilen 28° açının nasıl tanımlandığını sorun ve numuneyi ilgili telefon modelinde kontrol edin.',
+ ar: 'قبل الطلب، أكد التغليف والملحقات المشمولة في سعر 4.80 يوان للقطعة. اسأل عن تعريف زاوية 28° المعلنة وافحص عينة على طراز الهاتف المطلوب.'
+};
