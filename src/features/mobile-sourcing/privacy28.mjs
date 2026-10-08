@@ -73,10 +73,10 @@ export const privacyCopy = {
   ],
   "ru": [
     "Новинка",
-    "Защитное HD-стекло с приватностью 28°",
+    "Антишпионское защитное HD-стекло 28°",
     "Чёткое изображение спереди и защита от боковых взглядов. Выберите модели телефонов для следующего заказа.",
     "за штуку",
-    "Минимум 5 000 штук · Можно смешивать модели телефонов",
+    "Минимум 5 000 штук · Разные модели телефонов в одной партии",
     "Добавить в заявку",
     "Добавлено — открыть заявку",
     "Товар",
@@ -107,7 +107,7 @@ export const privacy28 = {
     "fr": "Verre trempé HD de confidentialité à 28°",
     "pt": "Película de vidro temperado HD com privacidade de 28°",
     "tr": "28° HD gizlilik temperli camı",
-    "ru": "Защитное HD-стекло с приватностью 28°",
+    "ru": "Антишпионское защитное HD-стекло 28°",
     "ar": "زجاج مقسّى عالي الوضوح للخصوصية بزاوية 28°"
   },
   "orderNote": {
@@ -117,7 +117,7 @@ export const privacy28 = {
     "fr": "Minimum : 5 000 pièces · Modèles de téléphones panachables",
     "pt": "Mínimo de 5.000 unidades · Permite combinar modelos",
     "tr": "Minimum 5.000 adet · Farklı telefon modelleri birleştirilebilir",
-    "ru": "Минимум 5 000 штук · Можно смешивать модели телефонов",
+    "ru": "Минимум 5 000 штук · Разные модели телефонов в одной партии",
     "ar": "الحد الأدنى 5,000 قطعة · يمكن خلط طرازات هواتف مختلفة"
   },
   "image": "/images/product-showcase/mobile/privacy28-product.jpg",

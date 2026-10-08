@@ -100,7 +100,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
       <header className={`phone-local-hero ${page === 'compare' ? 'phone-local-hero-compact' : ''}`}>
         <div><p className="eyebrow">{copy.eyebrow}</p><h1>{page === 'home' ? copy.title : copy.compareTitle}</h1>
           <p className="lede">{page === 'home' ? copy.intro : copy.compareIntro}</p>
-          <div className="actions"><a className="button primary" href={page === 'home' ? `${localizedPhonePath(locale, 'compare')}#phone-products` : '#phone-inquiry'}>{page === 'home' ? copy.explore : copy.prepare}</a></div>
+          <div className="actions"><a className="button primary" href={page === 'home' ? `${localizedPhonePath(locale, 'compare')}#phone-products` : '#phone-inquiry'}>{page === 'home' ? copy.explore : copy.prepare}</a>{locale === 'ru' && page === 'home' && <a className="button secondary" href="#phone-inquiry">{copy.prepare}</a>}</div>
         </div>
         {page === 'home' && <figure><img src="/images/product-showcase/mobile/privacy28-product.jpg" alt={copy.imageAlt} width="790" height="911" fetchPriority="high" /><figcaption>{copy.heroCaption}</figcaption></figure>}
       </header>
