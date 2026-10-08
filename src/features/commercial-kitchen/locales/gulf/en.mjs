@@ -1,0 +1,21 @@
+export default {
+  entry: 'Buying for Saudi Arabia or the Gulf? Plan your equipment order',
+  eyebrow: 'CHINA SOURCING · SAUDI ARABIA & THE GULF',
+  title: 'Choose for the kitchen. Quote for the destination.',
+  intro: 'Sourcing commercial kitchen equipment from China for a Saudi or Gulf restaurant, café or wholesale range? Start with what the equipment must do and where it will work. DDNZ brings your model selection, supplier quotations and shipment planning into one buying brief.',
+  originTitle: 'From a Foshan supplier to your equipment list',
+  origin: 'When comparing equipment from Foshan and other Chinese suppliers, specify the same capacity, components, finish and packing. A useful factory-price comparison also sets out the order quantity, spare parts and service scope.',
+  imageAlt: 'GN650TNPro upright refrigerator from the equipment catalogue',
+  caption: 'Catalogue example · GN650TNPro. Confirm the selected configuration for your site.',
+  equipment: 'Compare equipment',
+  points: [
+    { title: 'Start with service and space', text: 'Share your menu or resale range, peak demand and available space. Compare ice production, chilled storage and cooking capacity with the equipment you already use.' },
+    { title: 'Confirm the working conditions', text: 'For ice makers and refrigeration, request performance data for the expected room and water temperatures. Record voltage, frequency, phase, connections and ventilation for each selected model.' },
+    { title: 'Bring the order together', text: 'List quantities, crate dimensions, access for delivery and the destination city or port. Agree spare parts, packing and product documents with the supplier and importer before arranging shipment.' },
+  ],
+  briefTitle: 'Have a shortlist or a kitchen plan?',
+  brief: 'Add your models to the list below. Include the destination, menu or business type, site requirements and target delivery date in your request.',
+  request: 'Build my equipment brief',
+  package: 'Explore restaurant kitchen packages',
+  freight: 'Plan shipping to Saudi Arabia',
+};
