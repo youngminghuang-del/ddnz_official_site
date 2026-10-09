@@ -1,5 +1,5 @@
 import { navigateQuoteContext } from '../lib/quoteLinkPolicy.mjs';
-import {translatedText} from '../features/site-localization/translate.mjs';
+import { homeSourcingLabel } from '../data/homeSourcingLabel.mjs';
 import { navigationPath } from '../lib/productLanguageRouting';
 import { positioning } from '../features/search-intent/positioning.mjs';
 import ProductDiscoveryLinks from './ProductDiscoveryLinks';
@@ -240,7 +240,7 @@ export default function SourcingHomepageHero() {
       <section className="ddnz-ribbon-home-hero home-intro" aria-labelledby="homepage-sourcing-title">
         <div className="home-intro-grid">
           <div className="home-intro-copy">
-            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>{translatedText('SOURCING + INTERNATIONAL FREIGHT',language)}</em></p>
+            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>{homeSourcingLabel[language]}</em></p>
             <h1 id="homepage-sourcing-title">{intro.headline}</h1>
             <p className="home-intro-summary">{intro.body}</p>
             <div className="home-intro-actions">

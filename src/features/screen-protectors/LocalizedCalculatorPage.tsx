@@ -4,7 +4,7 @@ import SEO from '../../components/SEO';
 import SourcingHomepageNav from '../../components/SourcingHomepageNav';
 import Footer from '../../components/Footer';
 import {productRouteParts} from '../../lib/productLocalization.mjs';
-import {localePrefix} from '../site-localization/translate.mjs';
+import {localePrefix} from '../site-localization/locale.mjs';
 import LocalizedCalculator,{calculatorMeta,calculatorSchema} from './LocalizedCalculator.jsx';
 import './screen-protectors.css';
 import './phone-localized.css';

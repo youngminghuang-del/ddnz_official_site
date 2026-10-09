@@ -6,8 +6,8 @@ import tr from './locales/tr.json' with {type:'json'};
 import es from './locales/es.json' with {type:'json'};
 import ar from './locales/ar.json' with {type:'json'};
 export const translations={zh,ru,fr,pt,tr,es,ar};
-export const localeCode=l=>l==='zh-cn'?'zh':l;
-export const localePrefix=l=>localeCode(l)==='en'?'':`/${localeCode(l)==='zh'?'zh-cn':localeCode(l)}`;
+import { localeCode } from './locale.mjs';
+export { localeCode, localePrefix } from './locale.mjs';
 const patternCache=new Map();
 const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 export function translatedText(value,locale='en'){

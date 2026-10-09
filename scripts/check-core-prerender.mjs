@@ -22,7 +22,7 @@ for(const route of routes){
  }
  if(/^\/(?:zh-cn\/|ru\/|fr\/|es\/|ar\/|pt\/|tr\/)?$/.test(route)) {
   assert(html.includes('id="insights"') && html.includes('/blog/'), `${route}: homepage latest articles missing from initial HTML`);
-  assert(html.includes('office/entrance-1600.webp') && html.includes('home-one-team-backdrop'), `${route}: sourcing-to-freight visual missing`);
+  assert(html.includes('office/entrance-1600.webp') && html.includes('home-company-photo'), `${route}: sourcing-to-freight visual missing`);
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }

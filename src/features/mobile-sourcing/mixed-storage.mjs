@@ -1,4 +1,4 @@
-import {localePrefix} from '../site-localization/translate.mjs';
+import {localePrefix} from '../site-localization/locale.mjs';
 import { normalizeDraft, MOBILE_DRAFT_KEY } from './buying.mjs';
 import { PRODUCTS } from '../screen-protectors/calculator.mjs';
 import { parsePhoneQuantity, restoreLocalizedDraft } from '../screen-protectors/localization.mjs';
