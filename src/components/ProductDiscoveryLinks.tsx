@@ -1,5 +1,4 @@
-import { ui, pages } from '../features/mobile-sourcing/locales.mjs';
-import { copyFor } from '../features/mobile-sourcing/catalog.mjs';
+import { mobileDiscoveryCopy } from '../data/mobileDiscoveryCopy.mjs';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/analytics';
@@ -22,12 +21,12 @@ export default function ProductDiscoveryLinks({ source = 'home' }: { source?: 'h
   const { language } = useLanguage();
   const t = copy[language];
   const kitchen = navigationPath('/sourcing/commercial-kitchen-equipment-from-china/', language);
-  const mobileLocale=language;
+  const mobile = mobileDiscoveryCopy[language];
   const outdoor = outdoorOverviewNavigation(language);
   const powerGuide = outdoorCategoryNavigation(language)[3];
   const outdoorDescription = {"en": "Compare power stations, solar panels and vehicle fridges. Explore capacity, runtime and charging in the visual guide.", "zh": "比较户外电源、太阳能板与车载冰箱，了解容量、续航和充电方式。", "es": "Compare estaciones de energía, paneles solares y neveras. Revise capacidad, autonomía y carga en la guía visual.", "ar": "قارن محطات الطاقة والألواح الشمسية وثلاجات المركبات. استكشف السعة ومدة التشغيل والشحن في الدليل المرئي.", "ru": "Сравните электростанции, солнечные панели и автохолодильники. Изучите ёмкость, время работы и зарядку в наглядном руководстве.", "fr": "Comparez stations d’énergie, panneaux solaires et réfrigérateurs de véhicule. Consultez le guide visuel sur la capacité, l’autonomie et la recharge.", "pt": "Compare estações de energia, painéis solares e geladeiras veiculares. Veja capacidade, autonomia e carregamento no guia visual.", "tr": "Güç istasyonlarını, güneş panellerini ve araç buzdolaplarını karşılaştırın. Görsel rehberde kapasiteyi, çalışma süresini ve şarjı inceleyin."}[language];
   const paths = [
-    {name:language === 'zh' ? '手机配件' : copyFor(ui.hub,mobileLocale),description:language === 'zh' ? '按机型、颜色与材质搭配手机壳款式。比较采购成本，确认样品后再安排批量订单。' : copyFor(pages.cases.intro,mobileLocale),image:'/mobile-sourcing-media/case-colorways-ddnz-v1.webp',group:'mobile_accessories',links:[['/phone-cases',language === 'zh' ? '手机壳' : copyFor(ui.cases,mobileLocale)],['/phone-straps-charms',language === 'zh' ? '挂绳与挂饰' : copyFor(ui.straps,mobileLocale)]].map(([to,label])=>[navigationPath(to,language),label])},
+    {name:mobile.name,description:mobile.description,image:'/mobile-sourcing-media/case-colorways-ddnz-v1.webp',group:'mobile_accessories',links:[['/phone-cases',mobile.cases],['/phone-straps-charms',mobile.straps]].map(([to,label])=>[navigationPath(to,language),label])},
     { name: t[2], description: t[3], image: '/commercial-kitchen-media/kitchen-hero.webp', group: 'commercial_kitchen', links: [[kitchen + '#commercial-kitchen-equipment', t[6]], [kitchen + '#commercial-kitchen-benchmarks', t[7]]] },
     { name: outdoor.label, description: outdoorDescription, image: '/outdoor-sourcing-media/outdoor-camp.webp', group: 'outdoor_products', links: [outdoor, powerGuide].map(item => [navigationPath(item.to, language), item.label]) },
     { name: t[4], description: t[5], image: '/screen-protector-media/assets/001-kit-photo.jpg', group: 'screen_protectors', links: [[navigationPath('/screen-protectors/compare/', language), t[8]], [navigationPath('/screen-protectors/guides/price-differences/', language), t[9]]] },

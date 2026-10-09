@@ -1,5 +1,8 @@
 import { navigationPath } from '../lib/productLanguageRouting';
-import { ArrowRight, CheckCircle2, Container, PackageCheck, ShieldCheck } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
+import { companyCopy } from '../features/company-identity/copy';
+import { aboutCopy } from '../features/company-identity/aboutCopy';
+import './home-company-bridge.css';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
@@ -21,7 +24,6 @@ type BridgeCopy = {
   serviceLabels: string[];
 };
 
-const PREFIX: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
 
 const COPY: Record<Language, BridgeCopy> = {
   en: { eyebrow: 'ONE TEAM · FROM SOURCE TO DESTINATION', title: 'Sourcing in China and freight execution, connected.', intro: 'DDNZ handles the commercial and supplier-side work. Heaven Born coordinates the international freight execution. You get one clear handoff from purchase brief to export delivery.', sourcing: 'DDNZ Global · sourcing & export coordination', sourcingBody: 'Supplier search, quotation alignment, inspection evidence, consolidation and export-ready documentation.', freight: 'Heaven Born · international freight execution', freightBody: 'FCL, LCL, dangerous goods and destination coordination with team experience dating back to 1997.', handoff: 'Six accountable handoffs', steps: ['Brief', 'Supplier match', 'QC evidence', 'Consolidate & load', 'HB freight execution', 'Destination handoff'], proof: 'The evidence travels with the cargo.', proofBody: 'A useful shipment record is not just a tracking number: it is the supplier decision, packing condition, loading plan and handoff evidence in one chain.', sourcingCta: 'Start a sourcing brief', freightCta: 'Explore freight services', serviceLabels: ['FCL', 'LCL', 'Dangerous goods', 'Air freight', 'FBA', 'Warehouse', 'Central Asia'] },
@@ -35,51 +37,32 @@ const COPY: Record<Language, BridgeCopy> = {
 };
 
 
+const compactCopy: Record<Language, {title: string; steps: string[]; process: string}> = {
+ en: {title:'Two specialist teams. Connected from sourcing to shipping.',steps:['Confirm the purchase','Inspect & consolidate','International freight'],process:'See how we work'},
+ zh: {title:'两个专业团队，衔接采购与国际运输。',steps:['采购确认','验货与集货','国际运输'],process:'查看服务流程'},
+ ar: {title:'فريقان متخصصان يربطان التوريد بالشحن الدولي.',steps:['تأكيد الشراء','الفحص وتجميع البضائع','الشحن الدولي'],process:'تعرّف على خطوات العمل'},
+ ru: {title:'Две профильные команды — от закупки до международной перевозки.',steps:['Согласование закупки','Проверка и консолидация','Международная перевозка'],process:'Как мы работаем'},
+ fr: {title:'Deux équipes spécialisées, des achats au transport international.',steps:['Confirmer les achats','Contrôler et consolider','Transport international'],process:'Notre méthode de travail'},
+ es: {title:'Dos equipos especializados, de las compras al transporte internacional.',steps:['Confirmar la compra','Inspeccionar y consolidar','Transporte internacional'],process:'Cómo trabajamos'},
+ pt: {title:'Duas equipes especializadas, da compra ao transporte internacional.',steps:['Confirmar a compra','Inspecionar e consolidar','Transporte internacional'],process:'Como trabalhamos'},
+ tr: {title:'Tedarikten uluslararası taşımaya, iki uzman ekip.',steps:['Satın alma onayı','Denetim ve konsolidasyon','Uluslararası taşıma'],process:'Nasıl çalışıyoruz'},
+};
 export default function HomeOneTeamBridge() {
-  const { language } = useLanguage();
-  const copy = COPY[language];
-  const prefix = PREFIX[language];
-  return (
-    <section id="one-team" className="home-one-team" aria-labelledby="one-team-title" dir={language === 'ar' ? 'rtl' : 'ltr'}>
-      <div className="home-one-team-inner">
-        <div className="home-one-team-heading">
-          <img className="home-one-team-backdrop" src="/images/company/office/entrance-1600.webp" srcSet="/images/company/office/entrance-800.webp 800w, /images/company/office/entrance-1600.webp 1600w" sizes="100vw" alt="" width="1600" height="877" loading="lazy" decoding="async"/>
-          <p className="home-one-team-eyebrow">{copy.eyebrow}</p>
-          <h2 id="one-team-title">{copy.title}</h2>
-          <p className="home-one-team-intro">{copy.intro}</p>
-        </div>
-        <div className="home-one-team-roles">
-          <article className="home-one-team-role home-one-team-role--sourcing">
-            <div className="home-one-team-role-icon"><PackageCheck aria-hidden="true" /></div>
-            <p className="home-one-team-role-label">01 · DDNZ GLOBAL</p>
-            <h3>{copy.sourcing}</h3>
-            <p>{copy.sourcingBody}</p>
-            <Link to={`${prefix}/sourcing-services/consolidation-export/`} className="home-one-team-link">{copy.sourcingCta}<ArrowRight aria-hidden="true" /></Link>
-          </article>
-          <article className="home-one-team-role home-one-team-role--freight">
-            <div className="home-one-team-role-icon"><Container aria-hidden="true" /></div>
-            <p className="home-one-team-role-label">02 · HEAVEN BORN</p>
-            <h3>{copy.freight}</h3>
-            <p>{copy.freightBody}</p>
-            <Link to={`${prefix}/services/sea-freight/`} className="home-one-team-link">{copy.freightCta}<ArrowRight aria-hidden="true" /></Link>
-          </article>
-        </div>
-        <div className="home-one-team-handoff">
-          <div className="home-one-team-handoff-heading">
-            <p className="home-one-team-eyebrow">{copy.handoff}</p>
-            <div className="home-one-team-proof"><ShieldCheck aria-hidden="true" /><span>{copy.proof}</span><small>{copy.proofBody}</small></div>
-          </div>
-          <ol className="home-one-team-steps">
-            {copy.steps.map((step, index) => <li key={step}><span>{String(index + 1).padStart(2, '0')}</span><CheckCircle2 aria-hidden="true" /><strong>{step}</strong></li>)}
-          </ol>
-        </div>
-        <div className="home-one-team-services">
-          {copy.serviceLabels.map((label, index) => {
-            const links = [`${prefix}/services/sea-freight/`, `${prefix}/services/lcl-shipping-from-china/`, `${prefix}/services/dangerous-goods-shipping-from-china/`, `${prefix}/services/air-freight/`, `${prefix}/services/amazon-fba/`, `${prefix}/services/warehouse-services/`, `${prefix}/shipping-from-china-to-central-asia/`];
-            return <Link key={label} to={navigationPath(links[index], language)}>{label}<ArrowRight aria-hidden="true" /></Link>;
-          })}
-        </div>
-      </div>
-    </section>
-  );
+ const {language} = useLanguage();
+ const copy = COPY[language], compact = compactCopy[language];
+ const dateFormat = new Intl.DateTimeFormat(language === 'zh' ? 'zh-CN' : language, {year:'numeric',month:'long',timeZone:'UTC'});
+ const brands = [
+  {name:'DDNZ Global',logo:'/images/brand/ddnz-global-mark-v1.png',date:'2008-09',body:copy.sourcingBody},
+  {name:'HB · Heaven Born',logo:'/images/brand/heaven-born-wing-logo-v1.png',date:'2005-09',body:copy.freightBody},
+ ];
+ return <section id="one-team" className="home-company-bridge" aria-labelledby="one-team-title" dir={language === 'ar' ? 'rtl' : 'ltr'}>
+  <div className="home-company-inner">
+   <header className="home-company-heading"><div><p className="home-company-eyebrow">DDNZ GLOBAL × HEAVEN BORN</p><h2 id="one-team-title">{compact.title}</h2><p>{language === 'zh' ? 'DDNZ 协调中国采购与出口准备，HB 承接国际货运，让产品要求、验货记录和出运安排顺畅衔接。' : copy.intro}</p></div>
+    <figure className="home-company-photo"><img src="/images/company/office/entrance-1600.webp" srcSet="/images/company/office/entrance-800.webp 800w, /images/company/office/entrance-1600.webp 1600w" sizes="(max-width: 700px) 90vw, 32vw" alt="DDNZ Global · Heaven Born" width="1600" height="877" loading="lazy" decoding="async"/></figure>
+   </header>
+   <div id="company-identity" className="home-company-brands">{brands.map(brand=><article key={brand.name}><div className="home-company-brand"><img src={brand.logo} alt="" width="56" height="48" loading="lazy"/><div><h3>{brand.name}</h3><p>{companyCopy[language].registered} · <time dateTime={brand.date}>{dateFormat.format(new Date(brand.date+'-01T00:00:00Z'))}</time></p></div></div><p>{brand.body}</p></article>)}</div>
+   <div className="home-company-process"><ol>{compact.steps.map((step,index)=><li key={step}><span aria-hidden="true">0{index+1}</span>{step}</li>)}</ol><Link to={navigationPath('/how-we-work/',language)}>{compact.process}<ArrowRight aria-hidden="true"/></Link></div>
+   <div className="home-company-actions"><Link className="home-company-primary" to={navigationPath('/get-a-quote/',language)}>{copy.sourcingCta}<ArrowRight aria-hidden="true"/></Link><Link to={navigationPath('/services/sea-freight/',language)}>{copy.freightCta}<ArrowRight aria-hidden="true"/></Link><Link to={navigationPath('/about/',language)}>{aboutCopy[language].nav}<ArrowRight aria-hidden="true"/></Link></div>
+  </div>
+ </section>;
 }
