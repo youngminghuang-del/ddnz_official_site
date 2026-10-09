@@ -1,3 +1,4 @@
+import RouteRecovery, { RouteLoadingFallback } from './components/RouteRecovery';
 import {audioCategoryPaths} from './features/audio/category-routes.mjs';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
@@ -14,7 +15,7 @@ import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { readAttribution, rememberAttribution } from './lib/attribution';
 import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
-import { modernizedFreightServicePaths } from './features/freight/ModernFreightServiceContent';
+import { modernizedFreightServicePaths } from './features/freight/modernServiceRoutes';
 
 const BlogDetail = lazy(() => import('./pages/BlogDetail'));
 const InsightsHub = lazy(() => import('./pages/InsightsHub'));
@@ -111,18 +112,6 @@ function EnglishLocaleFallback({ prefix }: { prefix: '/pt' | '/tr' }) {
   return <Navigate to={`${englishPath}${location.search}${location.hash}`} replace />;
 }
 
-function RouteLoadingFallback() {
-  return (
-    <main data-route-loading className="min-h-[70dvh] bg-[#F5F8FC] pt-28" aria-busy="true" aria-live="polite">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="h-7 w-44 rounded-lg bg-slate-200" />
-        <div className="mt-6 h-12 max-w-2xl rounded-xl bg-slate-200" />
-        <div className="mt-5 h-5 max-w-xl rounded-lg bg-slate-200" />
-        <span className="sr-only">Loading page</span>
-      </div>
-    </main>
-  );
-}
 
 function LanguageRouteSync() {
   const { language, setLanguage } = useLanguage();
@@ -385,6 +374,7 @@ export default function App() {
           <AttributionSessionSync />
           <AnalyticsRouteTracker />
           <GlobalConversionTracker />
+          <RouteRecovery>
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => ['sea-freight', 'lcl-shipping-from-china', 'dangerous-goods-shipping-from-china'].map(slug => <Route key={prefix + slug} path={prefix + '/services/' + slug} element={<FreightReleasePage/>}/>))}
@@ -623,6 +613,7 @@ export default function App() {
             <Route path="/tr/sourcing-services/consolidation-export" element={<SourcingServicePage kind="consolidation-export" />} />
           </Routes>
           </Suspense>
+          </RouteRecovery>
           <Suspense fallback={null}>
             <RoutedCookieConsent />
           </Suspense>
