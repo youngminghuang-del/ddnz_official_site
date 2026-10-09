@@ -3,13 +3,9 @@ import trCopy from './locales/modern-tr.json';
 import type { Language } from '../../i18n/translations';
 import { freightLanguagePrefix } from './freightLanguages';
 
-export const modernizedFreightServicePaths = [
-  'services/air-freight',
-  'services/amazon-fba',
-  'services/warehouse-services',
-] as const;
-
-export type ModernFreightServicePath = typeof modernizedFreightServicePaths[number];
+import { modernizedFreightServicePaths, type ModernFreightServicePath } from './modernServiceRoutes';
+export { modernizedFreightServicePaths } from './modernServiceRoutes';
+export type { ModernFreightServicePath } from './modernServiceRoutes';
 type ModernServiceLocale = Language;
 
 type ServiceCopy = {
