@@ -1,4 +1,5 @@
 import test from 'node:test';
+import {additionalCookingModels} from '../src/features/commercial-kitchen/data/additionalCookingModels.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import { kitchenCategories, categoryProducts, kitchenModelHref, requestedKitchenModel, kitchenCategorySchema } from '../src/features/commercial-kitchen/data/categories.mjs';
@@ -17,7 +18,8 @@ test('each published category has distinct inventory, matching route and complet
     for (const p of items) assert.ok(fs.existsSync(`public${p.image}`), p.image);
     const schema = kitchenCategorySchema(c);
     assert.doesNotMatch(JSON.stringify(schema), /"Offer"|"aggregateRating"|"Product"/);
-    assert.equal(schema['@graph'][0].mainEntity.itemListElement.length, items.length);
+    const listed = [...items, ...(additionalCookingModels[c.id] || [])];
+    assert.deepEqual(schema['@graph'][0].mainEntity.itemListElement.map(p => p.url.split('#model-')[1]), listed.map(p => p.id));
   }
 });
 

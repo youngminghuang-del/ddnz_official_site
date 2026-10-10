@@ -1,0 +1,104 @@
+{
+  "eyebrow": "CAFÉ Y COMIDAS LIGERAS · DISEÑO Y COMPRA",
+  "title": "Una buena barra de café empieza por el flujo de trabajo.",
+  "intro": "Compra en China un conjunto de equipos para cafetería adaptado al menú, la demanda máxima y el espacio. Reúne máquinas espresso, molinos, máquinas de hielo, refrigeración bajo mostrador y vitrinas de pastelería en una solicitud, con DDNZ coordinando configuración, cotizaciones y exportación.",
+  "cta": "Preparar mi proyecto de barra",
+  "explore": "Ver distribución y equipos",
+  "gallery": "La barra desde seis perspectivas",
+  "galleryIntro": "Explora la relación entre barra frontal, zona posterior y equipos. Abre cualquier imagen para ampliarla.",
+  "tabs": [
+    "Concepto 3D",
+    "Plano",
+    "Flujo de trabajo",
+    "Estación espresso",
+    "Barra posterior",
+    "Equipamiento"
+  ],
+  "captions": [
+    "Distribución conceptual de las barras frontal y posterior",
+    "Posición de mostradores, lavado y circulación interior",
+    "Preparación de café, exposición y trabajo posterior",
+    "Máquina espresso, molinos, vasos y refrigeración bajo mostrador",
+    "Equipos sobre encimera y muebles inferiores",
+    "Equipos para café, bebidas frías, comidas ligeras y pastelería"
+  ],
+  "note": "Se conservan medidas, líneas de cota y distribución originales; las anotaciones chinas se han sustituido por inglés. Los valores poco claros o incoherentes se mantienen y deben contrastarse con medidas del local antes de comprar o fabricar.",
+  "zonesTitle": "Organiza los equipos alrededor del servicio",
+  "zones": [
+    [
+      "Preparación y entrega de café",
+      "Agrupa máquina espresso, molinos, cajón de posos, enjuagador y vasos alrededor del barista. Define grupos y molinos según los pedidos máximos y el acceso a la leche."
+    ],
+    [
+      "Hielo y almacenamiento refrigerado",
+      "Comprueba producción de hielo, capacidad de almacenamiento y uso del depósito por separado. Selecciona refrigeración de leche, congelación de ingredientes y almacenamiento de hielo con ventilación y acceso de mantenimiento."
+    ],
+    [
+      "Comidas ligeras, exposición y cobro",
+      "Define si el menú requiere recalentar, hornear o preparar antes de elegir horno y mesa. Adapta la temperatura de la vitrina a los alimentos y separa el cobro de la zona de preparación."
+    ],
+    [
+      "Lavado, reposición y barra posterior",
+      "Define el uso de fregaderos, enjuagadores y lavavajillas; sitúa tratamiento de agua, suministro, desagüe y electricidad. Revisa retorno de vajilla, reposición y circulación."
+    ]
+  ],
+  "rows": [
+    [
+      "Máquina espresso y molinos",
+      "Menú, tazas por hora en momentos de máxima demanda, número de grupos de extracción, electricidad y agua",
+      "Modelos, cantidad de molinos, filtración y conexiones"
+    ],
+    [
+      "Máquina de hielo y depósito",
+      "Tipo de hielo, temperatura ambiente y del agua de entrada, producción diaria y capacidad de almacenamiento",
+      "Máquina, depósito o cuba y accesorios de desagüe"
+    ],
+    [
+      "Refrigerador y congelador bajo mostrador",
+      "Temperatura, capacidad, apertura de puertas y mantenimiento",
+      "Zonas térmicas, dimensiones, encimera y embalaje"
+    ],
+    [
+      "Vitrina refrigerada de pastelería",
+      "Alimentos, temperatura de conservación, visibilidad y reposición",
+      "Medidas, estantes, iluminación y embalaje"
+    ],
+    [
+      "Horno compacto y mesa de preparación",
+      "Proceso, formato de bandejas, electricidad y ventilación",
+      "Aparato, mesa y accesorios necesarios"
+    ],
+    [
+      "Lavado y barra a medida",
+      "Posición de fregaderos y enjuagadores, demanda y medidas",
+      "Materiales, huecos, conexiones y responsabilidades de instalación"
+    ]
+  ],
+  "scheduleTitle": "Una lista de equipos de cafetería para cotizar con precisión",
+  "headers": [
+    "Grupo de equipos",
+    "Qué confirmar",
+    "Alcance de la cotización"
+  ],
+  "procureTitle": "Coordina los equipos y la barra a medida antes de comprar",
+  "procure": "Una barra puede requerir varios proveedores. DDNZ ayuda a comparar modelos, medidas, materiales, plazos y embalajes, coordinar planos y huecos antes de fabricar y seguir producción, inspección y exportación consolidada. La cotización define el alcance acordado.",
+  "briefTitle": "Empieza por tu menú y las medidas reales",
+  "brief": "Comparte destino, medidas de barra, menú, tazas por hora punta, electricidad y equipos existentes. Servirán para definir el conjunto y las conexiones, desglosando equipos, mobiliario a medida y transporte.",
+  "requirements": "Menú, medidas, demanda máxima y suministros",
+  "related": "Consulta los equipos relacionados",
+  "links": [
+    "Comparar máquinas de hielo",
+    "Ver refrigeración comercial",
+    "Inspección y control de calidad"
+  ],
+  "boundary": "Confirma modelos, medidas, cargas, agua y separaciones con mediciones y documentación del fabricante. Los profesionales locales deben revisar la instalación y los permisos.",
+  "destination": "País / ciudad de destino",
+  "next": "Continuar con esta solicitud",
+  "review": "Revisa los datos y añade tu información de contacto en el siguiente paso. Aquí no se envía nada.",
+  "parent": "Conjuntos de equipos para restaurantes",
+  "industry": "Equipos para cafeterías",
+  "meta": {
+    "title": "Diseño de barra de café y equipos de China | DDNZ",
+    "description": "Compra en China equipos para cafeterías: diseño de barra, estación espresso, máquinas de hielo y refrigeración. Prepara tu solicitud con DDNZ."
+  }
+}

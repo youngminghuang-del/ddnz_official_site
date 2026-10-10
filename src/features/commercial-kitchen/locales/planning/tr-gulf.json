@@ -1,0 +1,31 @@
+{
+  "entry": "Suudi Arabistan veya Körfez için mi alıyorsunuz? Siparişinizi planlayın",
+  "eyebrow": "ÇİN’DEN TEDARİK · SUUDİ ARABİSTAN VE KÖRFEZ",
+  "title": "Mutfağa göre seçin. Varış noktasına göre teklif alın.",
+  "intro": "Suudi Arabistan veya Körfez’deki restoran, kafe ya da toptan satışınız için Çin’den ekipman mı alıyorsunuz? Önce kullanım ve kurulacağı yeri belirleyin. DDNZ model seçimi, tedarikçi teklifleri ve sevkiyat planını tek talepte birleştirir.",
+  "originTitle": "Foshan’daki tedarikçiden ekipman listenize",
+  "origin": "Foshan ve diğer Çin bölgelerindeki tedarikçileri aynı kapasite, bileşen, yüzey ve ambalaj şartlarıyla karşılaştırın. Fabrika fiyatı kıyasına miktarı, yedek parçaları ve hizmet kapsamını da ekleyin.",
+  "imageAlt": "Katalogdaki GN650TNPro dik buzdolabı",
+  "caption": "Katalog örneği · GN650TNPro. Konfigürasyonu mekânınıza göre teyit edin.",
+  "equipment": "Ekipmanları karşılaştırın",
+  "points": [
+    {
+      "title": "Servis ve alanla başlayın",
+      "text": "Menü veya satış yelpazenizi, yoğun talebi ve alanı paylaşın. Buz üretimi, soğuk depolama ve pişirme kapasitesini mevcut cihazlarla birlikte değerlendirin."
+    },
+    {
+      "title": "Çalışma koşullarını teyit edin",
+      "text": "Buz ve soğutma cihazları için beklenen ortam ve su sıcaklıklarındaki performans verilerini isteyin. Her modelin voltaj, frekans, faz, bağlantı ve havalandırmasını kaydedin."
+    },
+    {
+      "title": "Siparişi bir bütün olarak hazırlayın",
+      "text": "Miktarları, sandık ölçülerini, teslimat erişimini ve varış şehri ya da limanını belirtin. Sevkiyattan önce yedek parça, ambalaj ve belgeleri tedarikçi ve ithalatçıyla kararlaştırın."
+    }
+  ],
+  "briefTitle": "Bir model listeniz veya mutfak planınız var mı?",
+  "brief": "Modelleri aşağıdaki listeye ekleyin. Varış noktası, menü veya iş türü, saha şartları ve hedef teslim tarihini belirtin.",
+  "request": "Ekipman talebimi hazırlayın",
+  "package": "Restoran mutfağı paketlerini inceleyin",
+  "freight": "Suudi Arabistan sevkiyatını planlayın",
+  "ice": "Buz makinelerini karşılaştırın"
+}

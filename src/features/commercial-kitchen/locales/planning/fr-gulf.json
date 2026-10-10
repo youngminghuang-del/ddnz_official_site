@@ -1,0 +1,31 @@
+{
+  "entry": "Vous achetez pour l’Arabie saoudite ou le Golfe ? Préparez votre commande",
+  "eyebrow": "ACHATS EN CHINE · ARABIE SAOUDITE ET GOLFE",
+  "title": "Choisir pour la cuisine. Chiffrer pour la destination.",
+  "intro": "Vous achetez des équipements de cuisine en Chine pour un restaurant, un café ou une activité de vente en gros en Arabie saoudite ou dans le Golfe ? Précisez l’usage et le lieu d’installation. DDNZ réunit sélection des modèles, devis fournisseurs et préparation du transport dans un même dossier.",
+  "originTitle": "Du fournisseur de Foshan à votre liste d’équipements",
+  "origin": "Comparez les fournisseurs de Foshan et d’autres régions chinoises sur les mêmes capacités, composants, finitions et emballages. Pour comparer les prix départ usine, précisez aussi quantités, pièces de rechange et services inclus.",
+  "imageAlt": "Armoire réfrigérée GN650TNPro du catalogue",
+  "caption": "Exemple du catalogue · GN650TNPro. Configuration à confirmer pour votre site.",
+  "equipment": "Comparer les équipements",
+  "points": [
+    {
+      "title": "Commencer par le service et l’espace",
+      "text": "Indiquez carte ou gamme de revente, demande de pointe et espace disponible. Comparez production de glace, stockage froid et cuisson avec les appareils déjà utilisés."
+    },
+    {
+      "title": "Confirmer les conditions d’utilisation",
+      "text": "Pour le froid et les machines à glaçons, demandez les performances aux températures ambiantes et d’eau prévues. Notez tension, fréquence, phases, raccordements et ventilation pour chaque modèle."
+    },
+    {
+      "title": "Préparer l’ensemble de la commande",
+      "text": "Listez quantités, dimensions des caisses, accès de livraison et ville ou port de destination. Convenez des pièces, emballages et documents avec le fournisseur et l’importateur avant expédition."
+    }
+  ],
+  "briefTitle": "Vous avez une présélection ou un plan ?",
+  "brief": "Ajoutez les modèles à la liste ci-dessous. Précisez destination, carte ou activité, contraintes du site et date de livraison souhaitée.",
+  "request": "Préparer ma demande d’équipements",
+  "package": "Voir les ensembles pour restaurants",
+  "freight": "Préparer le transport vers l’Arabie saoudite",
+  "ice": "Comparer les machines à glaçons"
+}

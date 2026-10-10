@@ -1,0 +1,10 @@
+import en from './en-small.json';
+import zh from './zh-small.json';
+import ar from './ar-small.json';
+import fr from './fr-small.json';
+import es from './es-small.json';
+import pt from './pt-small.json';
+import ru from './ru-small.json';
+import tr from './tr-small.json';
+const copies:Record<string,typeof en>={en,zh,ar,fr,es,pt,ru,tr};
+export default copies;

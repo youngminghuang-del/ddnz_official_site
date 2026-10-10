@@ -583,3 +583,32 @@
  .ddnz-kitchen.kitchen-brand .hero .hero-visual::after,.ddnz-kitchen.kitchen-brand[dir=rtl] .hero .hero-visual::after{background:linear-gradient(180deg,#f8f7f3f7 0%,#f8f7f3ef 60%,#f8f7f3d9 85%,#f8f7f3 100%)}
  .ddnz-kitchen.kitchen-brand .hero::after{background-size:auto 100%;opacity:.5}
 }
+
+.ddnz-kitchen .factory-production{display:grid;grid-template-columns:1fr 1.15fr;gap:48px;align-items:center;border-top:1px solid #e7dcec}
+.ddnz-kitchen .factory-production-copy h2{color:#492452}
+.ddnz-kitchen .factory-production-copy>p:not(.eyebrow){color:#62596a;line-height:1.8}
+.ddnz-kitchen .factory-production-clips{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.ddnz-kitchen .factory-production-clips figure{margin:0;min-width:0}
+.ddnz-kitchen .factory-production-clips video{display:block;width:100%;height:auto;max-height:400px;aspect-ratio:9/16;object-fit:contain;border-radius:12px;background:#2c2430}
+.ddnz-kitchen .factory-production-clips figcaption{padding:16px 0 0;font-size:13px;line-height:1.7;color:#65586c}
+.ddnz-kitchen .factory-production-clips strong{display:block;color:#492452;font-size:16px}
+.ddnz-kitchen .factory-production-clips figcaption p{margin:8px 0 0}
+@media(max-width:760px){.ddnz-kitchen .factory-production{grid-template-columns:1fr;gap:24px}.ddnz-kitchen .factory-production-clips{gap:14px}.ddnz-kitchen .factory-production-clips video{max-height:340px}}
+
+/* Shared destination configuration: preserve the DDNZ purple/light palette. */
+.ddnz-kitchen .equipment-config{color:#35233e}
+.ddnz-kitchen .equipment-config h2{margin-bottom:24px}
+.ddnz-kitchen .equipment-config-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin:24px 0}
+.ddnz-kitchen .equipment-config-grid article{border-block-start:2px solid #dbc3e5;padding-block-start:18px}
+.ddnz-kitchen .equipment-config-grid a{color:#803c98}
+.ddnz-kitchen .equipment-config-fields{min-width:0;border:1px solid #e5dce9;border-radius:12px;background:#faf6fc;padding:24px;margin:28px 0}
+.ddnz-kitchen .equipment-config-fields legend{font-size:22px;font-weight:700;padding-inline:8px}
+.ddnz-kitchen .equipment-config-grid label{display:block;font-weight:600;min-width:0}
+.ddnz-kitchen .equipment-config-grid :is(input,select,textarea){display:block;width:100%;min-width:0;box-sizing:border-box;margin-block-start:10px;padding:12px;border:1px solid #b9a8c2;border-radius:6px;background:white;color:#35233e;font:inherit}
+.ddnz-kitchen .equipment-config-grid small{display:block;font-weight:400;margin-block-start:8px;line-height:1.6}
+.ddnz-kitchen .equipment-spec-scroll{overflow-x:auto;border-block:1px solid #e5dce9}
+.ddnz-kitchen .equipment-spec-scroll table{width:100%;border-collapse:collapse;min-width:640px}
+.ddnz-kitchen .equipment-spec-scroll :is(th,td){padding:16px;text-align:start;border-bottom:1px solid #e5dce9}
+.ddnz-kitchen .equipment-spec-scroll thead{background:#faf6fc}
+.ddnz-kitchen .equipment-spec-scroll a{color:#803c98;text-decoration:underline}
+@media(max-width:760px){.ddnz-kitchen .equipment-config-grid{grid-template-columns:1fr}.ddnz-kitchen .equipment-config-fields{padding:18px}}

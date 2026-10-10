@@ -1,3 +1,4 @@
+import {additionalCookingModels} from './additionalCookingModels.mjs';
 import products from './products.mjs';
 import { KITCHEN_PATH } from './discovery.mjs';
 
@@ -43,11 +44,11 @@ export const kitchenCategories = [
   },
   {
     id: 'electric-fryers', path: '/sourcing/commercial-electric-fryers-from-china/', label: 'Electric fryers',
-    title: 'Commercial Electric Fryers from China: 10L & Twin Tank | DDNZ',
-    description: 'Compare 10 L and twin 10 L commercial electric fryers from China. Check tank layout, dimensions, reference prices and wholesale order quantities.',
+    title: 'Commercial Electric Fryers from China: 4–11L & Twin Tank | DDNZ',
+    description: 'Compare commercial electric fryers from China with 4–11 L per tank, single and twin tanks, and an 8 L drain-valve option. Request wholesale pricing.',
     heading: 'Commercial electric fryers.', emphasis: 'Choose the tank layout.',
-    intro: 'Buy commercial electric fryers from China for your restaurant equipment range. Compare a compact single-tank model with a twin-tank option. See the listed capacity, counter space and starting order quantities side by side.',
-    productIds: ['ZH-101V', 'ZH-102V'], heroId: 'ZH-102V', statistic: '10 L / 2 × 10 L', statisticLabel: 'Single and twin tank options',
+    intro: 'Buy commercial electric fryers from China. Compare 11 models with single or twin tanks, 4–11 L per tank and an 8 L drain-valve option. Check the counter space and electrical configuration before requesting a quote.',
+    productIds: ['ZH-101V', 'ZH-102V'], heroId: 'ZH-102V', statistic: '4–11 L', statisticLabel: 'Listed capacity per tank',
     comparisonKeys: ['Tank volume', 'Tanks', 'Rated power'], comparisonTitle: 'One tank or two?',
     comparisonCopy: 'Compare capacity per tank, the number of tanks and the counter width. A twin-tank unit has two separate 10 L tanks; it is not a single 20 L tank.',
     buyingTitle: 'Match the fryer to the menu and counter.',
@@ -68,10 +69,10 @@ export const kitchenCategories = [
   {
     id: 'electric-griddles', path: '/sourcing/commercial-electric-griddles-from-china/', label: 'Electric griddles',
     title: 'Commercial Electric Griddles from China: Compare Sizes | DDNZ',
-    description: 'Compare ZH-818 and ZH-820 electric griddles from China: cooking area, 8 mm plate, counter footprint and wholesale quotation options.',
+    description: 'Compare nine commercial electric griddles from China with 8, 12 and 16 mm plates. Review cooking surfaces, control groups and wholesale quotation options.',
     heading: 'Commercial electric griddles.', emphasis: 'Make the surface count.',
-    intro: 'Source commercial electric griddles from China for your countertop cooking range. Choose between two flat-plate sizes. Compare the usable cooking surface, overall footprint and listed power before requesting your order price.',
-    productIds: ['ZH-818', 'ZH-820'], heroId: 'ZH-818', statistic: '548 / 728 mm', statisticLabel: 'Listed cooking-plate widths',
+    intro: 'Source commercial electric griddles from China. Compare nine models with 8, 12 and 16 mm plates, cooking surfaces and up to four control groups. Request a configuration for your destination.',
+    productIds: ['ZH-818', 'ZH-820'], heroId: 'ZH-818', statistic: '540–1210 mm', statisticLabel: 'Listed cooking-plate widths',
     comparisonKeys: ['Cooking plate', 'Rated power', 'Surface'], comparisonTitle: 'Cooking area and counter space.',
     comparisonCopy: 'The cooking plate is smaller than the full appliance. Use plate dimensions to plan the food layout and overall dimensions to check the counter.',
     buyingTitle: 'Start with what goes on the plate.',
@@ -115,7 +116,7 @@ export function kitchenCategorySchema(category) {
   const url = origin + category.path;
   return { '@context': 'https://schema.org', '@graph': [
     { '@type': 'CollectionPage', '@id': url, url, name: category.title, description: category.description, inLanguage: 'en',
-      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: categoryProducts(category).map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.model} ${p.name}`, url: `${url}#model-${p.id}` })) } },
+      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: [...categoryProducts(category), ...(additionalCookingModels[category.id] || [])].map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.model} ${p.name}`, url: `${url}#model-${p.id}` })) } },
     { '@type': 'BreadcrumbList', itemListElement: [ ['Home', '/'], ['Products', '/products/'], ['Commercial kitchen equipment', KITCHEN_PATH], [category.label, category.path] ].map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: origin + href })) },
   ] };
 }

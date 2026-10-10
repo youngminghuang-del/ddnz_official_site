@@ -1,3 +1,5 @@
+import SmallKitchenPlanningContent from './SmallKitchenPlanningContent';
+import CafePlanningContent from './CafePlanningContent';
 import { renderLocalizedEntry, buyerEntryCopy } from '../buyer-entry/localized.mjs';
 import React,{useState} from 'react';
 import {packageCopy,packageInquiry,type PackageLocale} from './packageLocalization';
@@ -11,6 +13,8 @@ export default function LocalizedPackageContent({locale,slug}:{locale:PackageLoc
  const c=packageCopy[locale],u=foodLocales[locale].ui,o=overviewCopy[locale],prefix=foodPrefix(locale),[selected,setSelected]=useState(slug||libraryOrder[0]),[destination,setDestination]=useState(''),[requirements,setRequirements]=useState('');
  const index=libraryOrder.indexOf(selected),s=c.scenarios[index],base=allScenarios[selected],heading=slug?c.ui.template.replace('{name}',s.name):c.ui.title;
  const numeric=(value:string)=>value.match(/\d[\d,]*/g)?.join('–')||value;
+ if(slug==='casual-dining') return <SmallKitchenPlanningContent locale={locale}/>;
+ if(slug==='cafe-light-meals') return <CafePlanningContent locale={locale}/>;
  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="bg-slate-50 text-slate-900"><div className="mx-auto max-w-7xl space-y-16 px-6 py-12">
  <header className="grid items-center gap-10 lg:grid-cols-2"><div><nav className="mb-6 flex flex-wrap gap-4"><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.products}</a>{slug&&<a className="text-purple-800 underline" href={`${prefix}${kitchenPackagePath}/`}>{c.ui.scenarios}</a>}</nav><h1 className="text-4xl font-bold leading-tight md:text-5xl">{heading}</h1><p className="mt-6 text-lg leading-8">{slug?s.summary:c.ui.intro}</p><a className="mt-6 inline-block rounded-xl bg-purple-800 px-5 py-3 font-bold text-white" href="#package-rfq">{o.ui.quote}</a></div>{base.isometric?<figure><img src={base.isometric} alt={`${s.name} · ${c.ui.concept}`} width="1200" height="900" className="w-full rounded-2xl"/><figcaption className="mt-3 text-sm text-slate-600">{c.ui.concept}</figcaption></figure>:<div className="rounded-2xl bg-slate-900 p-10 text-white"><p>{c.ui.plan}</p><p className="mt-5 text-3xl" dir="ltr">{base.size}</p><p className="mt-5">{c.ui.concept}</p></div>}</header>
  {!slug?<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('kitchen',locale,c.scenarios)}}/>:(<section aria-labelledby="package-scenarios"><h2 id="package-scenarios" className="text-3xl font-bold">{c.ui.scenarios}</h2><div className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{libraryOrder.map((key:string,i:number)=><a className="rounded-2xl border border-slate-200 bg-white p-6" key={key} href={`${prefix}${kitchenPackagePath}/${key}/`}><h3 className="text-xl font-bold text-purple-800">{c.scenarios[i].name}</h3><p className="mt-3 leading-7">{c.scenarios[i].summary}</p></a>)}</div></section>)}

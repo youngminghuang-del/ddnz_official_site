@@ -1,3 +1,5 @@
+import SmallKitchenPlanningContent, {smallKitchenMeta} from '../../features/commercial-kitchen/SmallKitchenPlanningContent';
+import CafePlanningContent, {cafeMeta} from '../../features/commercial-kitchen/CafePlanningContent';
 import {packageAlternates} from '../../features/commercial-kitchen/packageLocalization';
 import { allScenarios, libraryOrder } from '../../features/commercial-kitchen/data/restaurant-scenarios.mjs';
 import { ArrowLeft, ArrowRight, Check, ClipboardList, Download, PlugZap, Ruler } from 'lucide-react';
@@ -22,6 +24,9 @@ export default function RestaurantKitchenScenario() {
   const complete = Boolean(scenario.plan);
   const route = `${BASE}/${scenarioSlug}/`;
   const quote = `/get-a-quote/?leadGoal=Product+Sourcing&industry=Commercial+Kitchen+-+Restaurant+Package&projectNeed=${encodeURIComponent(scenario.tab)}&source=restaurant_kitchen_scenario`;
+
+  if(scenarioSlug==='casual-dining') return <><SEO title={smallKitchenMeta.en.title} description={smallKitchenMeta.en.description} canonicalPath={route} alternateUrls={packageAlternates(route.replace(/\/$/, ""))} contentLanguage="en" image="/images/small-kitchen/rendering.webp"/><SourcingHomepageNav quotePath={route+"#package-rfq"}/><SmallKitchenPlanningContent locale="en"/><Footer quotePath={route+"#package-rfq"} description={smallKitchenMeta.en.description}/></>;
+  if(scenarioSlug==='cafe-light-meals') return <><SEO title={cafeMeta.en.title} description={cafeMeta.en.description} canonicalPath={route} alternateUrls={packageAlternates(route.replace(/\/$/, ""))} contentLanguage="en" image="/images/cafe-planning/3d-concept.webp"/><SourcingHomepageNav quotePath={route+"#package-rfq"}/><CafePlanningContent locale="en"/><Footer quotePath={route+"#package-rfq"} description={cafeMeta.en.description}/></>;
 
   return (
     <>

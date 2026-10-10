@@ -25,3 +25,65 @@
 @media(min-width:1200px){.kitchen-category .category-model-grid:has(>article:nth-child(3)){grid-template-columns:repeat(3,minmax(0,1fr))}.kitchen-category .category-model-copy{padding:26px}}
 @media(max-width:760px){.kitchen-category .category-hero{grid-template-columns:1fr;padding-top:22px;gap:22px;padding-bottom:32px}.kitchen-category .category-hero>div{display:contents}.kitchen-category .category-hero h1{font-size:38px;letter-spacing:-1.5px;margin:0}.kitchen-category .category-hero>.category-hero-photo{grid-row:3;padding:0}.kitchen-category .category-hero-photo img{height:auto}.kitchen-category .category-hero-photo figcaption{padding:20px}.kitchen-category .category-hero .hero-description{font-size:16px;margin:0}.kitchen-category .category-hero .category-market-note{margin:0}.kitchen-category .category-model-grid,.kitchen-category .category-buying-grid,.kitchen-category .category-brief-layout,.kitchen-category .category-reading>div{grid-template-columns:1fr}.kitchen-category .category-model-copy{padding:24px}.kitchen-category .category-brief-layout{gap:30px;padding-top:48px;padding-bottom:48px}.kitchen-category .category-navigation a{padding:11px 12px}.kitchen-category .category-model-photo img{height:auto}.kitchen-category .category-buying-grid{gap:26px}.kitchen-category .category-reading{padding-bottom:45px}}
 .kitchen-category[dir="rtl"]{text-align:right}.kitchen-category[dir="rtl"] .category-model-copy dd{text-align:end}.kitchen-category .category-model-copy{min-width:0;overflow-wrap:anywhere}#category-rfq{scroll-margin-top:7rem}
+/* All equipment categories share DDNZ's purple-led product system. */
+.ddnz-kitchen.category-brand{--ink:#38253f;--muted:#65596b;--blue:#803c98;--accent:#ecdff2;--paper:#fffdf9;--line:#e5dce9;font-family:inherit;background-color:#fffdf9;background-image:linear-gradient(100deg,#fffdf9eb,#faf4f9d9),url('/commercial-kitchen-media/ddnz-ribbon-desktop-v1.webp')}
+.ddnz-kitchen.category-brand .category-hero h1{font-family:inherit;font-size:clamp(34px,4.3vw,56px);line-height:1.14;letter-spacing:-.035em;font-weight:750;color:#452450}
+.ddnz-kitchen.category-brand h1 em{font-family:inherit;font-style:normal;color:#803c98}
+.ddnz-kitchen.category-brand .category-hero-photo{border:1px solid #e5dce9;border-radius:14px;background:#fff}
+.ddnz-kitchen.category-brand .category-hero-photo figcaption{background:linear-gradient(110deg,#f2e8f7,#fff2e8);color:#492452}
+.ddnz-kitchen.category-brand .category-hero-photo span{color:#65596b}
+.ddnz-kitchen.category-brand .category-navigation a{border-radius:7px}
+.ddnz-kitchen.category-brand .category-navigation a[aria-current]{background:#803c98;color:white}
+.ddnz-kitchen.category-brand .category-model{border-radius:12px;overflow:hidden}
+.ddnz-kitchen.category-brand .button.primary{background:#803c98;color:white;border-radius:7px}
+.ddnz-kitchen.category-brand .category-model-copy h3{font-family:inherit;font-size:22px}
+.ddnz-kitchen.category-brand .category-model-metric{color:#803c98}
+.ddnz-kitchen.category-brand .category-buying-grid article{border-top:2px solid #dbc3e5;padding-top:18px}
+.ddnz-kitchen.category-brand .category-brief-band{background:#f6eff8;color:#452450;border-block:1px solid #e5dce9}
+.ddnz-kitchen.category-brand .category-brief-band p{color:#65596b}
+.ddnz-kitchen.category-brand .category-brief-band :is(.eyebrow,.text-link){color:#803c98}
+.ddnz-kitchen.category-brand .category-brief-band li{border-color:#e5dce9}
+.ddnz-kitchen.category-brand #category-rfq{background:#f6eff8;border-radius:12px;padding:32px;margin-bottom:40px}
+.ddnz-kitchen.category-brand[dir=rtl] .category-hero h1{letter-spacing:0;line-height:1.5}
+.ddnz-kitchen.category-brand .category-market-note a{color:#803c98;text-decoration:underline;text-underline-offset:4px}
+@media(max-width:760px){.ddnz-kitchen.category-brand .category-hero h1{font-size:34px}.ddnz-kitchen.category-brand #category-rfq{padding:24px}.ddnz-kitchen.category-brand #category-rfq input{max-width:100%}}
+
+.ddnz-kitchen.category-brand .button.primary{border-color:#803c98}
+.ddnz-kitchen.category-brand .button.primary:hover{background:#69307e;border-color:#69307e}
+.ddnz-kitchen.category-brand .category-navigation a:not([aria-current]):hover{background:#f2e8f7;color:#803c98}
+.ddnz-kitchen.category-brand :is(input,textarea,select){border-color:#d8c7df}
+
+.ddnz-kitchen .cooking-model-group { margin-block: 2rem; }
+.ddnz-kitchen .cooking-model-group h3 { margin-bottom: 1rem; }
+.ddnz-kitchen .cooking-selection table { min-width: 850px; }
+.ddnz-kitchen .cooking-selection td, .ddnz-kitchen .cooking-selection th { white-space: nowrap; }
+.ddnz-kitchen .cooking-selected-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; margin-block: 1rem; }
+.ddnz-kitchen .cooking-selected-row input { width: 6rem; margin-inline: .75rem; padding: .5rem; border: 1px solid #cdb8d5; border-radius: .5rem; }
+
+.ddnz-kitchen .cooking-visuals h2 { margin-block: 2.5rem 1.25rem; }
+.ddnz-kitchen .cooking-photo-window { position: relative; overflow: hidden; width: 100%; background: #f4f2f0; }
+.ddnz-kitchen .cooking-photo-window img { position: absolute; height: auto; display: block; }
+.ddnz-kitchen .cooking-product-gallery { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); gap: 20px; }
+.ddnz-kitchen .cooking-product-tile { overflow: hidden; border: 1px solid #e4d9e9; border-radius: 16px; background: white; text-decoration: none; }
+.ddnz-kitchen .cooking-product-tile > div:last-child { padding: 20px; }
+.ddnz-kitchen .cooking-product-tile h3 { font-size: 1rem; overflow-wrap: anywhere; }
+.ddnz-kitchen .cooking-product-tile span { display: block; margin-top: 12px; color: #803c98; font-weight: 600; }
+.ddnz-kitchen .cooking-scene-grid,.ddnz-kitchen .cooking-detail-grid { display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px; }
+.ddnz-kitchen .cooking-scene-grid figure,.ddnz-kitchen .cooking-detail-grid figure { margin:0;background:#fff;border:1px solid #e4d9e9;border-radius:16px;overflow:hidden; }
+.ddnz-kitchen .cooking-visuals figcaption { padding:20px;font-size:1.1rem;font-weight:600; }
+.ddnz-kitchen .cooking-visuals figcaption span { display:block;font-size:.8rem;margin-top:8px;color:#765681; }
+.ddnz-kitchen .cooking-source-materials { margin-top:32px;border-top:1px solid #e4d9e9;padding-block:20px; }
+.ddnz-kitchen .cooking-source-materials summary { cursor:pointer;font-weight:600; }
+.ddnz-kitchen .cooking-source-materials > div { display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:20px; }
+.ddnz-kitchen .cooking-source-materials img { width:100%;height:180px;object-fit:contain;background:#fff; }
+@media(max-width:760px){.ddnz-kitchen .cooking-product-gallery{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.ddnz-kitchen .cooking-scene-grid,.ddnz-kitchen .cooking-detail-grid{grid-template-columns:1fr}.ddnz-kitchen .cooking-source-materials > div{grid-template-columns:repeat(3,minmax(0,1fr))}.ddnz-kitchen .cooking-product-tile > div:last-child{padding:12px}}
+
+.ddnz-kitchen .cooking-paired-details { display: grid; grid-template-columns: 1fr 1fr; align-items: center; min-height: 300px; background: #fff; }
+
+/* Source-sheet thumbnails stay within their native crop resolution. */
+.ddnz-kitchen .cooking-griddle-gallery { grid-template-columns: repeat(4,minmax(0,1fr)); }
+.ddnz-kitchen .cooking-griddle-thumbnail { width:100%; margin-inline:auto; background:#35373b; }
+.ddnz-kitchen .cooking-griddle-gallery .cooking-product-tile { display:flex; flex-direction:column; background:#35373b; }
+.ddnz-kitchen .cooking-griddle-gallery .cooking-product-tile > div:last-child { flex:1; background:#fff; }
+.ddnz-kitchen .cooking-scene-grid, .ddnz-kitchen .cooking-detail-grid { align-items:start; }
+@media(max-width:960px){.ddnz-kitchen .cooking-griddle-gallery{grid-template-columns:repeat(2,minmax(0,1fr))}}
