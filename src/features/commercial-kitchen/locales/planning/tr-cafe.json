@@ -1,0 +1,104 @@
+{
+  "eyebrow": "KAFE VE HAFİF YEMEKLER · YERLEŞİM VE TEDARİK",
+  "title": "İyi bir kahve barı, doğru iş akışıyla başlar.",
+  "intro": "Menünüze, yoğun saatlere ve alanınıza uygun kafe ekipmanlarını Çin’den tedarik edin. Espresso makineleri, değirmenler, buz makineleri, tezgâh altı soğutma ve pasta teşhir dolaplarını tek talepte birleştirin. DDNZ konfigürasyon, teklifler ve ihracat hazırlığını koordine eder.",
+  "cta": "Kahve barı talebimi hazırlayın",
+  "explore": "Yerleşimi ve ekipmanları inceleyin",
+  "gallery": "Kahve barına altı farklı açıdan bakın",
+  "galleryIntro": "Ön bar, arka bar ve ekipman ilişkisini inceleyin. Büyütmek için bir görsele tıklayın.",
+  "tabs": [
+    "3B konsept",
+    "Plan",
+    "İş akışı",
+    "Espresso istasyonu",
+    "Arka bar",
+    "Ekipman yerleşimi"
+  ],
+  "captions": [
+    "Ön ve arka tezgâh yerleşim konsepti",
+    "Tezgâh, yıkama alanı ve iç dolaşım",
+    "Kahve hazırlama, teşhir ve arka bar çalışması",
+    "Espresso makinesi, değirmenler, bardaklar ve tezgâh altı soğutma",
+    "Tezgâh üstü cihazlar ve alt dolaplar",
+    "Kahve, soğuk içecek, hafif yemek ve pasta teşhir ekipmanları"
+  ],
+  "note": "Orijinal ölçüler, ölçü çizgileri ve ekipman yerleşimi korunmuştur; Çince açıklamalar İngilizceye çevrilmiştir. Belirsiz veya tutarsız değerler değiştirilmemiştir; sipariş veya imalattan önce yerinde ölçümle kontrol edilmelidir.",
+  "zonesTitle": "Ekipmanları servis akışına göre düzenleyin",
+  "zones": [
+    [
+      "Espresso hazırlama ve teslim",
+      "Makine, değirmen, posa kutusu, bardak durulayıcı ve bardakları baristanın çevresinde toplayın. Grup ve değirmen sayısını yoğun siparişlere ve süte erişime göre belirleyin."
+    ],
+    [
+      "Buz ve soğuk depolama",
+      "Buz üretimi, depolama kapasitesi ve buz haznesinin kullanımını ayrı değerlendirin. Süt, donmuş malzeme ve buz için uygun sıcaklıkları seçin; havalandırma ve bakım erişimi bırakın."
+    ],
+    [
+      "Hafif yemek, teşhir ve ödeme",
+      "Fırın ve hazırlık tezgâhından önce menünün ısıtma, pişirme veya hazırlık ihtiyacını belirleyin. Teşhir sıcaklığını ürüne göre seçin, kasayı hazırlık alanından ayırın."
+    ],
+    [
+      "Yıkama, ikmal ve arka bar",
+      "Evye, bardak durulayıcı ve bulaşık makinesinin görevlerini tanımlayın; arıtma, su, gider ve elektrik noktalarını belirleyin. Kirli kap dönüşünü, ikmali ve personel dolaşımını değerlendirin."
+    ]
+  ],
+  "rows": [
+    [
+      "Espresso makinesi ve değirmenler",
+      "Menü, yoğun saatlerde saatte fincan sayısı, demleme grubu sayısı, elektrik ve su",
+      "Modeller, değirmen sayısı, filtreleme ve bağlantılar"
+    ],
+    [
+      "Buz makinesi ve depolama",
+      "Buz tipi, hava ve su sıcaklığı, günlük üretim ve depolama",
+      "Makine, depo veya buz haznesi, gider aksesuarları"
+    ],
+    [
+      "Tezgâh altı buzdolabı ve dondurucu",
+      "Gıda sıcaklığı, hacim, kapı yönü ve servis erişimi",
+      "Sıcaklık bölgeleri, ölçüler, tabla ve ambalaj"
+    ],
+    [
+      "Soğutmalı pasta teşhir dolabı",
+      "Ürün, saklama sıcaklığı, görünürlük ve ikmal",
+      "Ölçüler, raflar, aydınlatma ve ambalaj"
+    ],
+    [
+      "Kompakt fırın ve hazırlık tezgâhı",
+      "İşlem, tepsi ölçüsü, elektrik ve havalandırma",
+      "Cihaz, tezgâh ve gerekli aksesuarlar"
+    ],
+    [
+      "Yıkama ve özel üretim bar",
+      "Evye ve durulayıcı konumu, yıkama talebi ve ölçüler",
+      "Malzemeler, kesimler, bağlantılar ve kurulum sorumluluğu"
+    ]
+  ],
+  "scheduleTitle": "Tedarikçilerin teklif verebileceği bir kafe ekipman listesi",
+  "headers": [
+    "Ekipman grubu",
+    "Seçimde sorulacaklar",
+    "Teklif kapsamı"
+  ],
+  "procureTitle": "Siparişten önce ekipman ile özel barı uyumlu hale getirin",
+  "procure": "Bir kahve barı birden fazla tedarikçi gerektirebilir. DDNZ model, ölçü, malzeme, termin ve ambalajları karşılaştırmaya; imalat öncesi çizim ve kesimleri, ardından üretim, kontrol ve toplu ihracatı koordine etmeye yardımcı olur. Kapsam teklifte belirlenir.",
+  "briefTitle": "Menünüz ve ölçülmüş alanınızla başlayın",
+  "brief": "Varış noktası, bar ölçüleri, menü, yoğun saatte fincan sayısı, elektrik ve mevcut cihazları paylaşın. Paket ve bağlantıları bu bilgilerle görüşün; ekipman, özel dolap ve taşıma ayrı kalemler olsun.",
+  "requirements": "Menü, ölçüler, yoğun talep ve altyapı",
+  "related": "İlgili ekipmanları inceleyin",
+  "links": [
+    "Buz makinelerini karşılaştırın",
+    "Ticari soğutmayı inceleyin",
+    "Kontrol ve kalite denetimi"
+  ],
+  "boundary": "Nihai model, ölçü, yük, su bağlantısı ve mesafeleri saha ölçümleri ve üretici belgeleriyle teyit edin. Kurulum ve izin şartları yerel uzmanlarca kontrol edilmelidir.",
+  "destination": "Varış ülkesi / şehir",
+  "next": "Bu taleple devam edin",
+  "review": "Sonraki adımda talebi kontrol edip iletişim bilgilerinizi ekleyin. Buradan gönderim yapılmaz.",
+  "parent": "Restoran mutfağı ekipman paketleri",
+  "industry": "Kafe ekipmanları",
+  "meta": {
+    "title": "Kahve Barı Yerleşimi ve Çin’den Ekipman Tedariki | DDNZ",
+    "description": "Kafe ekipmanlarını Çin’den tedarik edin. Kahve barı yerleşimi, espresso istasyonu, buz makineleri ve soğutma ekipmanları için DDNZ ile talep hazırlayın."
+  }
+}

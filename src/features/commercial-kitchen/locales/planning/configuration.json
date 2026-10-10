@@ -1,0 +1,322 @@
+{
+  "en": {
+    "title": "Configure for your destination",
+    "intro": "European and US electrical configurations are available by model. Specify the installation requirements; confirm the final configuration and available certification documents in the quotation.",
+    "standard": "Requested electrical configuration",
+    "options": [
+      "To confirm",
+      "European configuration",
+      "US configuration",
+      "Other / site-specific"
+    ],
+    "electrical": "Voltage, frequency, phase & plug",
+    "electricalHint": "Enter the site requirements, or state that they are not yet confirmed.",
+    "documents": "Certification or document requirements",
+    "documentsHint": "List the documents required by your buyer or importer; availability is confirmed for the selected model.",
+    "model": "Model(s) & quantity",
+    "destination": "Destination country / city",
+    "needs": "Operating conditions & package scope",
+    "next": "Review my configuration request",
+    "review": "Review the request and add contact details next. Nothing is sent here.",
+    "compare": "Compare the catalogue specifications",
+    "headers": [
+      "Model",
+      "Rated output / 24 h",
+      "Overall dimensions",
+      "Bin capacity / ice format / test conditions"
+    ],
+    "pending": "Confirm for selected model",
+    "note": "Rated output is not bin capacity. Confirm ice size, storage, cooling method, output at ambient/inlet-water temperatures and electrical configuration before ordering.",
+    "scenarios": "Choose your procurement scenario",
+    "sceneNames": [
+      "Cafe & drinks",
+      "Bistro & restaurant",
+      "Wholesale & distribution"
+    ],
+    "sceneTexts": [
+      "Coordinate ice, milk refrigeration and display equipment with peak drink orders and bar space.",
+      "Coordinate chilled preparation, cooking and warewashing with the menu and measured kitchen layout.",
+      "Specify models, quantities, electrical configurations, spare parts, packing and destination documents for a comparable quotation."
+    ]
+  },
+  "zh": {
+    "title": "按目的地配置设备",
+    "intro": "可按型号提供欧标或美标电气配置。请填写现场安装要求，最终配置及可提供的认证文件在报价时确认。",
+    "standard": "所需电气配置",
+    "options": [
+      "待确认",
+      "欧标配置",
+      "美标配置",
+      "其他／按现场要求"
+    ],
+    "electrical": "电压、频率、相数与插头",
+    "electricalHint": "填写现场要求；尚未确定的项目可注明待确认。",
+    "documents": "认证或文件要求",
+    "documentsHint": "填写买方或进口商要求的文件，按所选型号确认是否可提供。",
+    "model": "型号与数量",
+    "destination": "目的地国家／城市",
+    "needs": "使用条件与配套范围",
+    "next": "核对配置并继续询价",
+    "review": "下一步核对需求并填写联系方式，此处不会发送。",
+    "compare": "目录规格对照",
+    "headers": [
+      "型号",
+      "额定日产量",
+      "外形尺寸",
+      "储冰量／冰型／测试条件"
+    ],
+    "pending": "按所选型号确认",
+    "note": "额定日产量不等于储冰量。采购前核对冰块尺寸、储冰量、散热方式、环境及进水温度下的产量，以及电气配置。",
+    "scenarios": "按采购场景开始",
+    "sceneNames": [
+      "咖啡店与饮品",
+      "西餐厅与餐饮厨房",
+      "批发与经销采购"
+    ],
+    "sceneTexts": [
+      "结合高峰饮品量和吧台空间，配齐制冰、牛奶冷藏与展示设备。",
+      "围绕菜单与实测布局，协调冷藏备料、烹饪及餐具清洗设备。",
+      "列明型号、数量、电气配置、备件、包装和目的地文件要求，便于比较完整报价。"
+    ]
+  },
+  "ar": {
+    "title": "جهّز المعدات وفق متطلبات وجهتك",
+    "intro": "تتوفر تجهيزات كهربائية أوروبية وأمريكية بحسب الطراز. حدّد متطلبات موقع التركيب؛ ويُؤكَّد التجهيز النهائي ووثائق الاعتماد المتاحة في عرض السعر.",
+    "standard": "التجهيز الكهربائي المطلوب",
+    "options": [
+      "يُحدَّد لاحقًا",
+      "تجهيز أوروبي",
+      "تجهيز أمريكي",
+      "أخرى / حسب الموقع"
+    ],
+    "electrical": "الجهد والتردد وعدد الأطوار ونوع القابس",
+    "electricalHint": "اذكر متطلبات الموقع، أو وضّح البنود التي لم تُحدَّد بعد.",
+    "documents": "متطلبات الشهادات أو الوثائق",
+    "documentsHint": "اذكر الوثائق التي يطلبها المشتري أو المستورد؛ ويُؤكَّد توفرها للطراز المختار.",
+    "model": "الطرازات والكميات",
+    "destination": "بلد / مدينة الوجهة",
+    "needs": "ظروف التشغيل ونطاق التجهيز",
+    "next": "راجع طلب التجهيز وتابع",
+    "review": "راجع الطلب وأضف بيانات التواصل في الخطوة التالية. لن يُرسل شيء هنا.",
+    "compare": "قارن مواصفات الكتالوج",
+    "headers": [
+      "الطراز",
+      "الإنتاج اليومي المعلن",
+      "الأبعاد الخارجية",
+      "سعة تخزين الثلج / نوعه / ظروف الاختبار"
+    ],
+    "pending": "تُؤكَّد للطراز المختار",
+    "note": "الإنتاج اليومي لا يساوي سعة التخزين. أكّد حجم الثلج وسعة التخزين وطريقة التبريد والإنتاج عند درجات حرارة المكان ومياه التغذية، إضافة إلى التجهيز الكهربائي.",
+    "scenarios": "ابدأ حسب نوع مشروعك",
+    "sceneNames": [
+      "المقاهي والمشروبات",
+      "المطاعم والمطابخ",
+      "البيع بالجملة والتوزيع"
+    ],
+    "sceneTexts": [
+      "نسّق صانعة الثلج وثلاجات الحليب ومعدات العرض وفق الطلب وقت الذروة ومساحة الكاونتر.",
+      "نسّق معدات التحضير المبرد والطهي وغسل الأواني وفق قائمة الطعام وقياسات المطبخ.",
+      "حدّد الطرازات والكميات والتجهيز الكهربائي وقطع الغيار والتغليف ووثائق الوجهة لمقارنة عروض متكافئة."
+    ]
+  },
+  "fr": {
+    "title": "Configurez les équipements pour votre destination",
+    "intro": "Des configurations électriques européennes et américaines sont proposées selon le modèle. Précisez les besoins du site ; la configuration finale et les documents de certification disponibles sont confirmés au devis.",
+    "standard": "Configuration électrique souhaitée",
+    "options": [
+      "À confirmer",
+      "Configuration européenne",
+      "Configuration américaine",
+      "Autre / selon le site"
+    ],
+    "electrical": "Tension, fréquence, nombre de phases et prise",
+    "electricalHint": "Indiquez les besoins du site ou les points restant à confirmer.",
+    "documents": "Certifications ou documents demandés",
+    "documentsHint": "Précisez les documents exigés par l’acheteur ou l’importateur ; leur disponibilité dépend du modèle retenu.",
+    "model": "Modèles et quantités",
+    "destination": "Pays / ville de destination",
+    "needs": "Conditions d’utilisation et équipements inclus",
+    "next": "Vérifier ma demande de configuration",
+    "review": "Vérifiez la demande et ajoutez vos coordonnées à l’étape suivante. Aucun envoi ici.",
+    "compare": "Comparer les caractéristiques du catalogue",
+    "headers": [
+      "Modèle",
+      "Production nominale / 24 h",
+      "Dimensions hors tout",
+      "Stockage de glace / forme / conditions d’essai"
+    ],
+    "pending": "À confirmer selon le modèle",
+    "note": "La production quotidienne n’est pas la capacité de stockage. Confirmez la taille des glaçons, le stockage, le refroidissement, les performances aux températures ambiantes et d’eau prévues, ainsi que la configuration électrique.",
+    "scenarios": "Choisissez votre projet",
+    "sceneNames": [
+      "Café et boissons",
+      "Bistrot et restaurant",
+      "Vente en gros et distribution"
+    ],
+    "sceneTexts": [
+      "Coordonnez glace, conservation du lait et vitrines selon le débit de pointe et l’espace du comptoir.",
+      "Coordonnez préparation réfrigérée, cuisson et plonge selon la carte et le plan coté.",
+      "Précisez modèles, quantités, configurations électriques, pièces, emballages et documents de destination pour comparer les devis."
+    ]
+  },
+  "es": {
+    "title": "Configura los equipos para tu destino",
+    "intro": "Hay configuraciones eléctricas europeas y estadounidenses según el modelo. Indica los requisitos del local; la configuración final y los documentos de certificación disponibles se confirman en la cotización.",
+    "standard": "Configuración eléctrica solicitada",
+    "options": [
+      "Por confirmar",
+      "Configuración europea",
+      "Configuración estadounidense",
+      "Otra / según el local"
+    ],
+    "electrical": "Tensión, frecuencia, fases y enchufe",
+    "electricalHint": "Indica los requisitos del local o los puntos pendientes de confirmar.",
+    "documents": "Certificaciones o documentos requeridos",
+    "documentsHint": "Enumera los documentos que pide tu comprador o importador; su disponibilidad se confirma para el modelo elegido.",
+    "model": "Modelos y cantidades",
+    "destination": "País / ciudad de destino",
+    "needs": "Condiciones de uso y alcance del suministro",
+    "next": "Revisar mi solicitud de configuración",
+    "review": "Revisa la solicitud y añade tus datos de contacto en el siguiente paso. Aquí no se envía nada.",
+    "compare": "Compara las especificaciones del catálogo",
+    "headers": [
+      "Modelo",
+      "Producción nominal / 24 h",
+      "Dimensiones exteriores",
+      "Depósito / tipo de hielo / condiciones de ensayo"
+    ],
+    "pending": "Confirmar según el modelo",
+    "note": "La producción diaria no equivale a la capacidad del depósito. Confirma tamaño del hielo, almacenamiento, refrigeración, producción a las temperaturas previstas del ambiente y del agua de entrada, y configuración eléctrica.",
+    "scenarios": "Elige tu proyecto",
+    "sceneNames": [
+      "Cafetería y bebidas",
+      "Bistró y restaurante",
+      "Venta mayorista y distribución"
+    ],
+    "sceneTexts": [
+      "Coordina hielo, refrigeración de leche y vitrinas según la demanda máxima y el espacio de la barra.",
+      "Coordina preparación refrigerada, cocción y lavado de vajilla según el menú y las medidas del local.",
+      "Indica modelos, cantidades, configuración eléctrica, repuestos, embalaje y documentos de destino para comparar cotizaciones."
+    ]
+  },
+  "pt": {
+    "title": "Configure os equipamentos para o destino",
+    "intro": "Estão disponíveis configurações elétricas europeias e americanas consoante o modelo. Indique os requisitos do local; a configuração final e os documentos de certificação disponíveis são confirmados na proposta.",
+    "standard": "Configuração elétrica pretendida",
+    "options": [
+      "A confirmar",
+      "Configuração europeia",
+      "Configuração americana",
+      "Outra / conforme o local"
+    ],
+    "electrical": "Tensão, frequência, fases e ficha",
+    "electricalHint": "Indique os requisitos do local ou os pontos ainda por confirmar.",
+    "documents": "Certificações ou documentos necessários",
+    "documentsHint": "Liste os documentos pedidos pelo comprador ou importador; a disponibilidade é confirmada para o modelo escolhido.",
+    "model": "Modelos e quantidades",
+    "destination": "País / cidade de destino",
+    "needs": "Condições de utilização e âmbito do fornecimento",
+    "next": "Rever o pedido de configuração",
+    "review": "Reveja o pedido e acrescente os contactos no passo seguinte. Nada é enviado aqui.",
+    "compare": "Compare as especificações do catálogo",
+    "headers": [
+      "Modelo",
+      "Produção nominal / 24 h",
+      "Dimensões exteriores",
+      "Reserva / tipo de gelo / condições de ensaio"
+    ],
+    "pending": "Confirmar para o modelo escolhido",
+    "note": "A produção diária não é a capacidade de armazenamento. Confirme tamanho do gelo, armazenamento, arrefecimento, produção às temperaturas previstas do ar e da água de entrada e configuração elétrica.",
+    "scenarios": "Escolha o seu projeto",
+    "sceneNames": [
+      "Café e bebidas",
+      "Bistro e restaurante",
+      "Venda grossista e distribuição"
+    ],
+    "sceneTexts": [
+      "Coordene gelo, conservação do leite e vitrinas segundo a procura máxima e o espaço do balcão.",
+      "Coordene preparação refrigerada, confeção e lavagem de loiça segundo o menu e a planta medida.",
+      "Indique modelos, quantidades, configurações elétricas, peças, embalagem e documentos de destino para comparar propostas."
+    ]
+  },
+  "ru": {
+    "title": "Подберите исполнение для страны назначения",
+    "intro": "Для отдельных моделей доступны европейские и американские варианты электрического исполнения. Укажите требования объекта; итоговое исполнение и доступные документы о сертификации подтверждаются в предложении.",
+    "standard": "Требуемое электрическое исполнение",
+    "options": [
+      "Уточнить",
+      "Европейское исполнение",
+      "Американское исполнение",
+      "Другое / по требованиям объекта"
+    ],
+    "electrical": "Напряжение, частота, число фаз и вилка",
+    "electricalHint": "Укажите требования объекта или параметры, которые ещё нужно уточнить.",
+    "documents": "Требования к сертификатам и документам",
+    "documentsHint": "Перечислите документы, необходимые покупателю или импортёру; наличие уточняется для выбранной модели.",
+    "model": "Модели и количество",
+    "destination": "Страна / город назначения",
+    "needs": "Условия эксплуатации и состав поставки",
+    "next": "Проверить запрос на комплектацию",
+    "review": "На следующем шаге проверьте запрос и добавьте контакты. Здесь ничего не отправляется.",
+    "compare": "Сравните характеристики каталога",
+    "headers": [
+      "Модель",
+      "Номинальная выработка / 24 ч",
+      "Габариты",
+      "Запас льда / форма / условия испытаний"
+    ],
+    "pending": "Уточнить для выбранной модели",
+    "note": "Суточная выработка не равна вместимости бункера. Уточните размер льда, запас, способ охлаждения, выработку при ожидаемой температуре воздуха и входящей воды, а также электрическое исполнение.",
+    "scenarios": "Выберите тип закупки",
+    "sceneNames": [
+      "Кофейня и напитки",
+      "Бистро и ресторан",
+      "Оптовая закупка и дистрибуция"
+    ],
+    "sceneTexts": [
+      "Согласуйте льдогенератор, хранение молока и витрины с пиковой нагрузкой и площадью стойки.",
+      "Согласуйте охлаждаемую подготовку, приготовление и мойку посуды с меню и замерами кухни.",
+      "Укажите модели, количество, электрическое исполнение, запчасти, упаковку и документы для страны назначения, чтобы сопоставить предложения."
+    ]
+  },
+  "tr": {
+    "title": "Ekipmanı varış noktasına göre yapılandırın",
+    "intro": "Modele göre Avrupa ve ABD elektrik konfigürasyonları sunulabilir. Saha gereksinimlerini belirtin; nihai konfigürasyon ve mevcut sertifika belgeleri teklifte teyit edilir.",
+    "standard": "İstenen elektrik konfigürasyonu",
+    "options": [
+      "Teyit edilecek",
+      "Avrupa konfigürasyonu",
+      "ABD konfigürasyonu",
+      "Diğer / sahaya özel"
+    ],
+    "electrical": "Voltaj, frekans, faz sayısı ve fiş",
+    "electricalHint": "Saha gereksinimlerini veya henüz netleşmeyen noktaları belirtin.",
+    "documents": "Sertifika veya belge gereksinimleri",
+    "documentsHint": "Alıcı veya ithalatçının istediği belgeleri yazın; seçilen model için mevcut olup olmadığı teyit edilir.",
+    "model": "Modeller ve miktarlar",
+    "destination": "Varış ülkesi / şehir",
+    "needs": "Çalışma koşulları ve tedarik kapsamı",
+    "next": "Konfigürasyon talebimi kontrol et",
+    "review": "Sonraki adımda talebi kontrol edip iletişim bilgilerinizi ekleyin. Buradan gönderim yapılmaz.",
+    "compare": "Katalog özelliklerini karşılaştırın",
+    "headers": [
+      "Model",
+      "Nominal üretim / 24 saat",
+      "Dış ölçüler",
+      "Buz deposu / buz tipi / test koşulları"
+    ],
+    "pending": "Seçilen model için teyit edilecek",
+    "note": "Günlük üretim, depolama kapasitesi değildir. Buz boyutunu, depolamayı, soğutma yöntemini, ortam ve giriş suyu sıcaklıklarındaki üretimi ve elektrik konfigürasyonunu teyit edin.",
+    "scenarios": "Proje türünü seçin",
+    "sceneNames": [
+      "Kafe ve içecek",
+      "Bistro ve restoran",
+      "Toptan satış ve dağıtım"
+    ],
+    "sceneTexts": [
+      "Buz, süt soğutma ve teşhir ekipmanlarını yoğun talep ve bar alanıyla birlikte planlayın.",
+      "Soğutmalı hazırlık, pişirme ve bulaşık yıkamayı menü ve ölçülmüş mutfak planıyla uyumlu hale getirin.",
+      "Karşılaştırılabilir teklifler için model, miktar, elektrik konfigürasyonu, yedek parça, ambalaj ve varış belgelerini belirtin."
+    ]
+  }
+}

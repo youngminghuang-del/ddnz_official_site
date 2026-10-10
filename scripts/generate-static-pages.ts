@@ -1,3 +1,6 @@
+import GulfKitchenPlanning from '../src/features/commercial-kitchen/components/GulfKitchenPlanning.jsx';
+import SmallKitchenPlanningContent, {smallKitchenMeta,smallKitchenPath} from '../src/features/commercial-kitchen/SmallKitchenPlanningContent';
+import CafePlanningContent, {cafeMeta,cafePath} from '../src/features/commercial-kitchen/CafePlanningContent';
 import { aboutMeta, aboutLanguages } from '../src/features/company-identity/aboutCopy';
 import { renderRefrigerationEntry, renderKitchenEntry } from '../src/features/buyer-entry/kitchen.mjs';
 import AudioSpeakersContent from '../src/pages/product-showcase/AudioSpeakersContent';
@@ -667,6 +670,8 @@ for (const [slug, name, image] of restaurantScenarioSeo) {
   };
 }
 
+seoDataMatrix[cafePath.slice(1,-1)].en={title:cafeMeta.en.title,desc:cafeMeta.en.description,keywords:'cafe equipment packages China, coffee bar layout, espresso workstation, undercounter refrigeration',image:'/images/cafe-planning/3d-concept.webp'};
+seoDataMatrix[smallKitchenPath.slice(1,-1)].en={title:smallKitchenMeta.en.title,desc:smallKitchenMeta.en.description,keywords:'small restaurant kitchen layout, bistro kitchen equipment, restaurant equipment package China',image:'/images/small-kitchen/rendering.webp'};
 seoDataMatrix['services/lcl-shipping-from-china'] = {};
 for (const locale of ['ru','fr','ar','pt','tr'] as const) {
   seoDataMatrix['services/lcl-shipping-from-china'][locale] = internationalLclMetadata(locale);
@@ -1550,6 +1555,8 @@ function injectStaticRouteContent(
   relPath: string,
   post?: Record<string, any>,
 ) {
+  if(lang==='en' && '/'+relPath+'/'===smallKitchenPath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(SmallKitchenPlanningContent,{locale:'en'}))}</div>`);
+  if(lang==='en' && '/'+relPath+'/'===cafePath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CafePlanningContent,{locale:'en'}))}</div>`);
   let staticBody = '';
   const serviceKind = relPath.startsWith('sourcing-services/') ? relPath.split('/')[1] : '';
   const service = serviceCopy[serviceKind as keyof typeof serviceCopy]?.[(lang === 'zh-cn' ? 'zh' : lang) as Language];
@@ -1711,7 +1718,7 @@ function injectStaticRouteContent(
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(meta.schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
-    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch);
+    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch).replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
     staticBody += renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: 'en' }));
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
   } else if (kitchenCategories.some(category => category.path === `/${relPath}/`)) {

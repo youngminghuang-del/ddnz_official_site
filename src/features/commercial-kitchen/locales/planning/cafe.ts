@@ -1,0 +1,10 @@
+import en from './en-cafe.json';
+import zh from './zh-cafe.json';
+import ar from './ar-cafe.json';
+import fr from './fr-cafe.json';
+import es from './es-cafe.json';
+import pt from './pt-cafe.json';
+import ru from './ru-cafe.json';
+import tr from './tr-cafe.json';
+const copies:Record<string,typeof en>={en,zh,ar,fr,es,pt,ru,tr};
+export default copies;

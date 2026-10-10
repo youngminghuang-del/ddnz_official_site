@@ -1,0 +1,8 @@
+{
+  "headings": [
+    "Producción diaria y reserva",
+    "Temperatura ambiente y del agua",
+    "Instalación y espacio disponible"
+  ],
+  "brief": "Añade modelos, cantidades y destino. Indica demanda máxima, reserva de hielo, temperaturas, electricidad y espacio. Estos datos pasarán a la solicitud de cotización."
+}

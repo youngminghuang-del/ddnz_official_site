@@ -1,3 +1,4 @@
+import RefrigerationStyleGallery from '../../features/refrigeration/RefrigerationStyleGallery';
 import { renderRefrigerationEntry } from '../../features/buyer-entry/kitchen.mjs';
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
@@ -300,6 +301,7 @@ export function RefrigerationEquipment() {
         </section>
 
         <div dangerouslySetInnerHTML={{__html:renderRefrigerationEntry()}}/>
+        <RefrigerationStyleGallery/>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">
           <div className="refrigeration-evidence-head">
             <div><p className="refrigeration-kicker">A CLOSER LOOK</p><h2 id="refrigeration-evidence-title">From the production line to the packing floor.</h2><p>Watch ice-maker production, view the packing photos and check what matters for your equipment selection.</p></div>
