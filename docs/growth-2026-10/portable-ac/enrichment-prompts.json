@@ -1,0 +1,41 @@
+{
+  "tool": "built-in imagegen",
+  "jobs": [
+    {
+      "key": "hero-wide",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_1DV5lx/Screenshot 2026-10-12 at 16.38.49.png",
+      "prompt": "Edit supplied SOG-1 product poster into a premium wide website hero, landscape 2.4:1. Preserve exact black appliance design and blue accent, handle, grilles. Remove all lettering and logos. Large product occupying right 48%, fully visible, soft studio grey-blue background and subtle grounding shadow; left 50% pale near-white clean negative space for HTML heading. No words, no extra objects, no pedestal. Commercial product photography.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-cef70258-d6e6-40db-87ef-a78117be1ebb.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "key": "climate",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_jvnkn8/Screenshot 2026-10-12 at 16.39.39.png",
+      "prompt": "Edit this supplier condensation illustration into a landscape editorial image. Preserve khaki appliance and blue heat exchanger with water evaporation arrows, remove ALL Chinese, English and logos including footnote. Recompose cleanly as product left and exchanger right, soft pale blue background, restrained visual arrows. No new text. Preserve device and coil geometry. Illustration of condensate evaporation for product webpage.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-8ec02f25-228c-4a1e-88d7-f6bc0556f28f.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "key": "controls",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_mNs0sx/Screenshot 2026-10-12 at 16.40.31.png",
+      "prompt": "Edit supplier product details sheet into a clean landscape 2x2 photographic detail grid, equal rectangular panels: digital control panel, carry handle, front adjustable air outlet, rear exhaust outlet. Extract those actual four detail photos from reference, preserve geometry. Remove Chinese labels, headings, all logos and main whole-product photo. No added text. Neutral pale grey gutters, tidy close crops.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-f8b4cd5e-5aaa-4765-8814-e220c904dae9.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "key": "scenes",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_uauj2T/Screenshot 2026-10-12 at 16.40.21.png",
+      "prompt": "Edit supplier application collage. Produce landscape three-panel photographic strip, equal panels showing existing camping/vehicle exterior black air conditioner scene, parked vehicle cabin unit with visible exhaust hose, and indoor living-room unit. Use exactly the three product scenes from reference, preserve appliances and hoses. Remove fourth outdoor-condenser-wall photo, all Chinese and English text and logos. Clean small white gutters. Do not invent new installations or objects.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-627c89b3-dbd0-4b4e-b909-eb73c99d9af6.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "key": "custom",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_n2jCLy/Screenshot 2026-10-12 at 16.38.36.png",
+      "prompt": "Edit supplier customization sheet into compact landscape 3x2 visual grid. Preserve the six actual subjects: colour housings, front branding area, control panel, phone controls illustration, plug assortment, retail carton. Remove ALL Chinese and existing English advertising and brand logos. Place only these exact short English labels beneath respective photos: 'Shell & colour', 'Branding', 'Control panel', 'Connectivity options', 'Power plugs', 'Retail packaging'. Clean white background, dark navy readable labels, equal tiles, no other text. Preserve product geometries; connectivity is an option.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-ad7d8936-b0cd-4719-abdd-0a044ba41561.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    },
+    {
+      "key": "filter",
+      "source": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/TemporaryItems/NSIRD_screencaptureui_1x32cB/Screenshot 2026-10-12 at 16.40.05.png",
+      "prompt": "Edit supplier dust-filter illustration into landscape product close-up. Preserve black appliance and the hand pulling off the front filter exactly. Remove all text, logos, header and pedestal if unnecessary; retain device details. Crop to appliance front, hand and detachable filter on a muted blue-grey background. No added wording or objects.",
+      "output": "Generated images are saved to /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a as /Users/huangyangming/.codex/generated_images/01a12e23-7c13-7e02-b098-a7942d56883a/exec-b6041f62-1d2d-463c-93a4-b03bb10566be.png by default.\nIf you need to use a generated image at another path, copy it and leave the original in place unless the user explicitly asks you to delete it.\nThe generated image is already displayed to the user. There is no need to render it in the final response as a Markdown image or file link."
+    }
+  ]
+}
