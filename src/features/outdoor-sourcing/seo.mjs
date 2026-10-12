@@ -24,3 +24,8 @@ export function fridgeMetadata(){
  const title='Portable Compressor Fridges from China | Wholesale Sourcing | DDNZ',description='Compare portable compressor fridges from China, including 15–100 L catalogue options and UOG-30 wholesale price tiers. Build a mixed-model wholesale request with quantities, power, packaging and inspection requirements.',image='/outdoor-sourcing-media/colku-20.webp',url='https://www.ddnzglobal.com'+FRIDGE_PATH;
  return {path:FRIDGE_PATH,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url,name:title,description,inLanguage:'en'}};
 }
+
+export function acMetadata(){
+ const path='/sourcing/portable-air-conditioners-from-china/',title='Portable Air Conditioners from China | Wholesale Prices & OEM | DDNZ',description='Compare SOG-1, SOG-2 and IOG-1+ portable air conditioners from China. Twelve 110V/220V wholesale configurations, cooling and heating options, from 20 units.',image='/outdoor-sourcing-media/ac/sog1.webp';
+ return {path,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url:'https://www.ddnzglobal.com'+path,name:title,description,inLanguage:'en'}};
+}

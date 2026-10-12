@@ -411,6 +411,7 @@ export default function App() {
             {audioCategoryPaths.flatMap(path=>Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={<AudioCategoryPage/>}/>))}
             <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
             {mobilePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`mobile-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<MobileAccessories />} />))}
+            <Route path="/sourcing/portable-air-conditioners-from-china" element={<OutdoorProducts ac />} />
             <Route path="/sourcing/portable-compressor-fridges-from-china" element={<OutdoorProducts fridge />} />
             <Route path="/sourcing/outdoor-products-from-china" element={<OutdoorProducts />} />
             {productContentLanguages.map(locale => <Route key={`power-guide-${locale}`} path={localizedProductPath("/portable-power/selection-guide", locale)} element={<OutdoorProducts guide />} />)}

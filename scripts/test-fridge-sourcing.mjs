@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import {fridgeProducts,fridgeUnitPrice,validFridgeLine,validFridgeQuantity,normalizeFridgeDraft,fridgeLoad,buildFridgeBrief} from '../src/features/outdoor-sourcing/fridge-catalog.mjs';
 import {quoteLinkProps,sanitizeQuoteContext} from '../src/lib/quoteLinkPolicy.mjs';
-assert.equal(new Set(fridgeProducts.map(p=>p.id)).size,9);
+assert.equal(new Set(fridgeProducts.map(p=>p.id)).size,10);
 for(const value of ['0','-1','1.5','1e3','', '100001'])assert.equal(validFridgeQuantity(value),false,`reject ${value}`);
 for(const value of ['1','20','100000'])assert.equal(validFridgeQuantity(value),true);
 const draft=normalizeFridgeDraft({destination:'Kenya',rows:[{id:'gf45',quantity:'10',notes:'neutral carton'},{id:'tf36d',quantity:'5'},{id:'gf45',quantity:'999'},{id:'unknown',quantity:'200'}]});
@@ -23,7 +23,7 @@ assert.equal(context.overviewBrief,brief);
 assert.equal(context.source,'portable_fridge_sourcing');
 assert.equal(context.industry,'Other');
 assert.equal(sanitizeQuoteContext({source:'portable_fridge_sourcing'}).source,'portable_fridge_sourcing');
-console.log('Fridge sourcing: 9-model integrity, quantity validation, partial packing totals, saved-draft cleanup and quote handoff passed.');
+console.log('Fridge sourcing: 10-configuration integrity, quantity validation, partial packing totals, saved-draft cleanup and quote handoff passed.');
 
 const aluminium=normalizeFridgeDraft({destination:'UAE',rows:[{id:'al34',quantity:'10',notes:'Green; private-label nameplate; market stall'}]});
 const aluLoad=fridgeLoad(aluminium.rows);
@@ -44,3 +44,6 @@ const uog=buildFridgeBrief(normalizeFridgeDraft({destination:'UAE',rows:[{id:'uo
 assert.ok(uog.includes('CNY 859/unit; line CNY 430359'));
 assert.ok(!uog.includes('null L'));
 console.log('UOG-30: 299/300/500/501 boundaries, final CNY prices and brief totals passed.');
+
+for(const id of ["al34","al34-vip"]){assert.equal(validFridgeLine({id,quantity:"299"}),false);assert.equal(validFridgeLine({id,quantity:"300"}),true);}
+assert.equal(fridgeUnitPrice("al34",300),2230);assert.equal(fridgeUnitPrice("al34-vip",300),2330);

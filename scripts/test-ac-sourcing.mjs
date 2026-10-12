@@ -1,0 +1,15 @@
+import assert from 'node:assert/strict';
+import {acProducts,acVariants,acVariant,validAcQuantity,acBrief} from '../src/features/outdoor-sourcing/ac-catalog.mjs';
+import {quoteLinkProps} from '../src/lib/quoteLinkPolicy.mjs';
+assert.equal(acProducts.length,3);assert.equal(acVariants.length,12);
+assert.deepEqual(acVariants.map(v=>v.cny),[715,765,840,890,685,735,810,860,1296,1326,1431,1460]);
+for(const q of ['19','0','-20','20.5','2e2','100001'])assert.equal(validAcQuantity(q),false);
+for(const q of ['20','21','100000'])assert.equal(validAcQuantity(q),true);
+assert.equal(acVariant('sog2-0').btu,1900);assert.equal(acVariant('iog1plus-3').watts,450);
+const brief=acBrief([{id:'sog1-0',quantity:'20'},{id:'sog1-3',quantity:'21'},{id:'iog1plus-3',quantity:'20'}],'UAE','UK plugs');
+assert.ok(brief.includes('AC 220 V | Cooling only | 20 units | CNY 715/unit | Line CNY 14300'));
+assert.ok(brief.includes('AC 110 V | Cooling & heating | 21 units | CNY 890/unit | Line CNY 18690'));
+assert.ok(brief.includes('Line CNY 29200'));
+const props=quoteLinkProps('/get-a-quote/?'+new URLSearchParams({source:'portable_ac_sourcing',leadGoal:'Product Sourcing',industry:'Other',overviewBrief:brief,dest:'UAE'}));
+assert.equal(props.href,'/get-a-quote/');assert.equal(JSON.parse(props['data-quote-context']).overviewBrief,brief);
+console.log('AC: 12 exact prices, mode/voltage separation, MOQ boundaries and quote handoff passed.');
