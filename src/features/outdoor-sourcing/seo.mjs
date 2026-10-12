@@ -21,6 +21,6 @@ export function powerGuideMetadata(locale='en'){
 
 export const FRIDGE_PATH='/sourcing/portable-compressor-fridges-from-china/';
 export function fridgeMetadata(){
- const title='Portable Compressor Fridges from China | Wholesale Sourcing | DDNZ',description='Compare seven portable compressor fridge models from China, 15–100 L. Build a mixed-model wholesale request with quantities, power, packaging and inspection requirements.',image='/outdoor-sourcing-media/colku-20.webp',url='https://www.ddnzglobal.com'+FRIDGE_PATH;
+ const title='Portable Compressor Fridges from China | Wholesale Sourcing | DDNZ',description='Compare eight portable compressor fridge models from China, 15–100 L. Build a mixed-model wholesale request with quantities, power, packaging and inspection requirements.',image='/outdoor-sourcing-media/colku-20.webp',url='https://www.ddnzglobal.com'+FRIDGE_PATH;
  return {path:FRIDGE_PATH,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url,name:title,description,inLanguage:'en'}};
 }
