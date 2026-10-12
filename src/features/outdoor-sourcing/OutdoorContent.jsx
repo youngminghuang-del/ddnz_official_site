@@ -36,7 +36,7 @@ export default function OutdoorContent({locale='en',category='all',onCategoryCha
  return <main id="main-content" className="ods" lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
   <div className="ods-wrap">
    <nav className="ods-breadcrumb" aria-label={tr('Breadcrumb','Ruta de navegación','مسار التصفح')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{t('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{t('products')}</a><span>/</span><span>{tr('Outdoor sourcing','Compras outdoor','توريد المنتجات الخارجية')}</span></nav>
-   <section className="ods-hero">
+   <section className="ods-hero ods-hero-wide">
     <div className="ods-hero-copy"><p className="ods-eyebrow">{t('eyebrow')}</p><h1>{t('heading')}</h1><p className="ods-lead">{t('intro')}</p><div className="ods-actions"><a className="ods-button" href="#outdoor-range">{t('browse')}<ArrowDown size={18}/></a><a className="ods-text-link" href="#buying-brief">{t('brief')}<ArrowUpRight size={18}/></a></div></div>
     <figure className="ods-hero-image"><img src={media+'outdoor-camp.webp'} alt={tr('A power station and folding solar panel in a mountain campsite catalogue scene','Estación de energía y panel plegable en una escena de camping del catálogo','محطة طاقة ولوح قابل للطي في مشهد تخييم جبلي من الكتالوج')} width="1356" height="763" fetchPriority="high"/></figure>
    </section>
