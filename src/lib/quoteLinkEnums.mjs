@@ -8,6 +8,7 @@ export const QUOTE_ENUMS = Object.freeze({
     "Supplier Inspection & Consolidation"
   ],
   "source": [
+    "portable_fridge_sourcing",
     "air_freight",
     "amazon_fba",
     "article",

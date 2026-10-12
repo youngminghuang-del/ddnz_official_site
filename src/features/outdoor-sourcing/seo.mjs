@@ -18,3 +18,9 @@ export function powerGuideMetadata(locale='en'){
   {'@type':'BreadcrumbList',itemListElement:[{name:copy(ui.home,locale),item:base+(locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`)},{name:copy(ui.heading,locale),item:base+localizedProductPath(OUTDOOR_PATH,locale)},{name:copy(guideUI.eyebrow,locale),item:base+path}].map((item,i)=>({'@type':'ListItem',position:i+1,...item}))},
  ]}};
 }
+
+export const FRIDGE_PATH='/sourcing/portable-compressor-fridges-from-china/';
+export function fridgeMetadata(){
+ const title='Portable Compressor Fridges from China | Wholesale Sourcing | DDNZ',description='Source portable compressor fridges from China. Compare a 20 L Colku TF20 reference, vehicle power, camping requirements and wholesale order details.',image='/outdoor-sourcing-media/colku-20.webp',url='https://www.ddnzglobal.com'+FRIDGE_PATH;
+ return {path:FRIDGE_PATH,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url,name:title,description,inLanguage:'en'}};
+}

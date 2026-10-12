@@ -1,3 +1,4 @@
+import IceBuyingChecklist from './components/IceBuyingChecklist.jsx';
 import CookingVisuals from './components/CookingVisuals';
 import CookingModelSelection from './components/CookingModelSelection';
 import EquipmentConfiguration, {IceSpecificationComparison} from './components/EquipmentConfiguration';
@@ -21,7 +22,7 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
       <figure className="category-hero-photo"><img src={hero.image} srcSet={`${hero.imageSmall} 600w, ${hero.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), 46vw" alt={`${hero.model} ${hero.name}`} width="1200" height="900" fetchPriority="high"/><figcaption><strong>{category.statistic}</strong><span>{category.statisticLabel}</span></figcaption></figure>
     </section>
     <nav className="category-navigation wrap" aria-label="Commercial kitchen categories">{kitchenCategories.map(item => <a key={item.id} href={item.path} aria-current={item.id === category.id ? 'page' : undefined}>{item.label}</a>)}<a href="/refrigeration-equipment/">Refrigeration</a><a href={KITCHEN_PATH}>All equipment <span aria-hidden="true">↗</span></a></nav>
-    {category.id === 'ice-machines' && <IceSpecificationComparison/>}
+    {category.id === 'ice-machines' && <><IceSpecificationComparison/><IceBuyingChecklist/></>}
     <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{category.comparisonTitle}</h2></div><p>{category.comparisonCopy}</p></div>
       <div className="category-model-grid">{products.map(p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
         <div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>
