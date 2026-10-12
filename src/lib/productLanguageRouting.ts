@@ -30,7 +30,7 @@ export const englishProductPaths = [
   '/products', '/sourcing-services', '/refrigeration-equipment',
   '/sourcing/commercial-kitchen-equipment-from-china', '/sourcing/audio-speakers-from-china',
   '/sourcing/outdoor-products-from-china',
-  '/portable-power/selection-guide',
+  '/portable-power/selection-guide', '/sourcing/portable-compressor-fridges-from-china', '/sourcing/portable-air-conditioners-from-china',
   '/screen-protectors', '/screen-protectors/compare', '/screen-protectors/guides',
   '/screen-protectors/guides/price-differences', '/screen-protectors/guides/curved-glass',
   '/screen-protectors/videos', '/screen-protectors/calculator', '/screen-protectors/brief',
@@ -50,8 +50,6 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
-  if (route === '/sourcing/portable-air-conditioners-from-china') return ['en'];
-  if (route === '/sourcing/portable-compressor-fridges-from-china') return ['en'];
   if (route.startsWith('/shipping-from-china-to-')) return freightDestinationLanguages;
   if (route.startsWith('/services/') && !fullyLocalizedFreightServicePaths.has(route)) return freightDestinationLanguages;
   return allNavigationLanguages;

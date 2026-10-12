@@ -56,6 +56,7 @@ import { mobileMetadata } from '../src/features/mobile-sourcing/seo.mjs';
 import OutdoorContent from '../src/features/outdoor-sourcing/OutdoorContent.jsx';
 import PortableFridgeContent from '../src/features/outdoor-sourcing/PortableFridgeContent.jsx';
 import PortableAcContent from '../src/features/outdoor-sourcing/PortableAcContent.jsx';
+import LocalizedCoolingContent from '../src/features/outdoor-sourcing/LocalizedCoolingContent.jsx';
 import PowerGuideContent from '../src/features/outdoor-sourcing/PowerGuideContent.jsx';
 import { outdoorMetadata, powerGuideMetadata, fridgeMetadata, acMetadata } from '../src/features/outdoor-sourcing/seo.mjs';
 import RegionContent, { regionPageMetadata } from '../src/features/freight/RegionContent';
@@ -1655,7 +1656,7 @@ function injectStaticRouteContent(
     if (stylesheetLinks) htmlContent = htmlContent.replace('</head>', `${stylesheetLinks}</head>`);
   } else if (['sourcing/outdoor-products-from-china','portable-power/selection-guide','sourcing/portable-compressor-fridges-from-china','sourcing/portable-air-conditioners-from-china'].includes(relPath)) {
     const ac=relPath==='sourcing/portable-air-conditioners-from-china',guide=relPath==='portable-power/selection-guide',fridge=relPath==='sourcing/portable-compressor-fridges-from-china';
-    staticBody = renderToStaticMarkup(createElement(ac?PortableAcContent:fridge?PortableFridgeContent:guide?PowerGuideContent:OutdoorContent, {locale: lang}));
+    staticBody = renderToStaticMarkup(createElement((ac||fridge)&&lang!=='en'?LocalizedCoolingContent:ac?PortableAcContent:fridge?PortableFridgeContent:guide?PowerGuideContent:OutdoorContent, {locale: lang,kind:ac?'ac':'fridge'}));
     // Start the route bundle with the document and style the server-rendered
     // content before the client router mounts the interactive page.
     const routeAssets = fs.readdirSync(path.resolve('dist/assets'))
@@ -1665,7 +1666,7 @@ function injectStaticRouteContent(
       : `<link rel="modulepreload" crossorigin href="/assets/${name}">`).join('\n');
     htmlContent = htmlContent.replace('</head>', `${routeLinks}\n</head>`);
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
-    htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify((ac?acMetadata():fridge?fridgeMetadata():guide?powerGuideMetadata(lang):outdoorMetadata(lang)).schema).replace(/</g, '\\u003c')}</script></head>`);
+    htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify((ac?acMetadata(lang):fridge?fridgeMetadata(lang):guide?powerGuideMetadata(lang):outdoorMetadata(lang)).schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (mobilePage) {
     staticBody = renderToStaticMarkup(createElement(MobileContent, {pageId: mobilePage.id, locale: lang}));
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
@@ -1883,8 +1884,8 @@ function run() {
     ...restaurantScenarioSeo.map(([slug]) => ({ path: `sourcing/restaurant-kitchen-packages-from-china/${slug}`, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
     ...audioCategoryPaths.map(path=>({path:path.slice(1),priority:'0.8',changefreq:'monthly',languages:overviewLanguages})),
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
-    { path: 'sourcing/portable-air-conditioners-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en'] },
-    { path: 'sourcing/portable-compressor-fridges-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en'] },
+    { path: 'sourcing/portable-air-conditioners-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
+    { path: 'sourcing/portable-compressor-fridges-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
     { path: 'portable-power/selection-guide', priority: '0.9', changefreq: 'monthly', languages: [...overviewLanguages] },
     { path: 'sourcing/outdoor-products-from-china', priority: '0.9', changefreq: 'monthly', languages: [...overviewLanguages] },
     { path: 'sourcing-services/supplier-search', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
@@ -1949,7 +1950,7 @@ function run() {
       if (lang !== 'en' && '/'+entry.path===refrigerationPath) { const meta=refrigerationMeta((lang==='zh-cn'?'zh':lang) as RefrigerationLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos')) { const meta=filmGuideMeta((lang==='zh-cn'?'zh':lang) as FilmGuideLocale,filmGuideKind(entry.path)); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (foodProcessingRoutes.includes('/'+entry.path)) { const locale = (lang === 'zh-cn' ? 'zh' : lang) as FoodLocale; const meta = lang === 'en' ? foodPageMeta(foodPage('/'+entry.path)) : localizedFoodMeta(localizedFoodPage('/'+entry.path,locale),locale); seo = {title:meta.title,desc:meta.description,keywords:'',image:meta.image}; }
-      if (['sourcing/outdoor-products-from-china','portable-power/selection-guide','sourcing/portable-compressor-fridges-from-china','sourcing/portable-air-conditioners-from-china'].includes(entry.path)) {const meta=entry.path==='sourcing/portable-air-conditioners-from-china'?acMetadata():entry.path==='sourcing/portable-compressor-fridges-from-china'?fridgeMetadata():entry.path==='portable-power/selection-guide'?powerGuideMetadata(lang):outdoorMetadata(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
+      if (['sourcing/outdoor-products-from-china','portable-power/selection-guide','sourcing/portable-compressor-fridges-from-china','sourcing/portable-air-conditioners-from-china'].includes(entry.path)) {const meta=entry.path==='sourcing/portable-air-conditioners-from-china'?acMetadata(lang):entry.path==='sourcing/portable-compressor-fridges-from-china'?fridgeMetadata(lang):entry.path==='portable-power/selection-guide'?powerGuideMetadata(lang):outdoorMetadata(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (entry.path === 'sourcing/commercial-kitchen-equipment-from-china' && lang !== 'en') {
         const meta = getLocalizedKitchenMetadata(lang);
         seo = { title: meta.title, desc: meta.description, keywords: '', image: meta.image };
