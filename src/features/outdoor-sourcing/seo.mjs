@@ -29,7 +29,7 @@ export function fridgeMetadata(locale='en'){
 
 export function acMetadata(locale='en'){
  if(coolingLocale(locale)!=='en')return coolingMetadata(locale,'ac');
- const path='/sourcing/portable-air-conditioners-from-china/',title='Portable Air Conditioners from China | Wholesale Prices & OEM | DDNZ',description='Compare SOG-1, SOG-2 and IOG-1+ portable air conditioners from China. Twelve 110V/220V wholesale configurations, cooling and heating options, from 20 units.',image='/outdoor-sourcing-media/ac/sog1.webp';
+ const path='/sourcing/portable-air-conditioners-from-china/',title='Portable Camping Air Conditioners from China | Wholesale & OEM | DDNZ',description='Compare SOG-1, SOG-2 and IOG-1+ portable air conditioners from China. Twelve 110V/220V wholesale configurations, cooling and heating options, from 20 units.',image='/outdoor-sourcing-media/ac/sog1.webp';
  return {path,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url:'https://www.ddnzglobal.com'+path,name:title,description,inLanguage:'en'}};
 }
 
