@@ -1,0 +1,19 @@
+.cooling-localized{overflow-wrap:anywhere}.cooling-localized .ac-price small{display:block;font-size:13px}.cooling-localized .ac-card .ods-button{margin-block:20px 0;max-width:100%}.cooling-localized .ac-order label{min-width:0}.cooling-localized .ac-feature-visuals article>img{object-fit:contain}.cooling-localized dl>div{gap:12px}.cooling-localized dd{text-align:end}.cooling-brief{margin-block:24px}.cooling-brief pre{white-space:pre-wrap;font:inherit;padding:20px;background:#eef2ed}.cooling-related{display:flex;flex-wrap:wrap;gap:24px}.cooling-localized [dir=ltr],.cooling-localized bdi{unicode-bidi:isolate}.cooling-localized[dir=rtl]{text-align:right}.cooling-localized[dir=rtl] ul{padding-inline-start:24px;padding-inline-end:0}.cooling-localized[dir=rtl] .ods-eyebrow{letter-spacing:0}.cooling-localized[dir=rtl] .ac-jump{direction:rtl}.cooling-localized .ac-form{margin-block:24px}.cooling-localized .ods-button:disabled{white-space:normal}@media(max-width:760px){.cooling-related{flex-direction:column}.cooling-localized .ac-grid{grid-template-columns:1fr}.cooling-localized .ac-order{grid-template-columns:1fr}.cooling-localized .ac-price strong{font-size:26px}}
+
+/* Share the English wide-image composition; localize typography without shrinking the artwork. */
+.cooling-localized .cooling-hero{direction:ltr}
+.cooling-localized .cooling-hero h1{max-width:none;letter-spacing:-.025em;overflow-wrap:normal;hyphens:auto}
+.cooling-localized .cooling-hero .ods-button{margin-top:24px;white-space:normal}
+.cooling-localized[dir=rtl] .cooling-hero :is(.ac-hero-copy,.fridge-hero-copy){direction:rtl;text-align:right}
+.cooling-localized[dir=rtl] .cooling-hero h1{letter-spacing:0;line-height:1.3}
+.cooling-localized[dir=rtl] .ac-dehumidify{border-left:0;border-right:4px solid #a7c6cb}
+.cooling-localized .ac-feature-visuals article:first-child>img{padding:0}
+@media(max-width:760px){
+ .cooling-localized .ac-hero-wide{padding:28px 22px 260px;min-height:0}
+ .cooling-localized .ac-hero-copy{width:100%;max-width:none}
+ .cooling-localized .ac-hero-wide .ac-hero-backdrop{inset:auto 16px 12px;height:235px;z-index:0}
+ .cooling-localized .ac-hero-wide .ac-hero-backdrop img{object-fit:contain;height:100%}
+ .cooling-localized .ac-hero-wide:after{display:none}
+ .cooling-localized .cooling-hero h1{font-size:clamp(30px,7.5vw,40px);line-height:1.16}
+ .cooling-localized .cooling-hero .ods-lead{font-size:17px}
+}

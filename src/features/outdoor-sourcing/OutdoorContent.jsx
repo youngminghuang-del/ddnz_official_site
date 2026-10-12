@@ -5,6 +5,7 @@ import { readGuideHandoff, POWER_HANDOFF_KEYS } from './power-guide.mjs';
 import { outdoorCategories } from './navigation.mjs';
 import { localizedProductPath, powerGuidePath } from '../../lib/productLocalization.mjs';
 import { ui } from './copy.mjs';
+import {coolingCopy} from './cooling-copy.mjs';
 import { runtime, numberInput, quantityInput, trialDefaults, changeCurrency, referenceInCurrency, trialEconomics, emptyBrief, normalizeBrief, validBrief, buildOutdoorPayload } from './buying.mjs';
 import { submitInquiry } from '../commercial-kitchen/data/inquiry.mjs';
 
@@ -35,7 +36,7 @@ export default function OutdoorContent({locale='en',category='all',onCategoryCha
  return <main id="main-content" className="ods" lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
   <div className="ods-wrap">
    <nav className="ods-breadcrumb" aria-label={tr('Breadcrumb','Ruta de navegación','مسار التصفح')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{t('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{t('products')}</a><span>/</span><span>{tr('Outdoor sourcing','Compras outdoor','توريد المنتجات الخارجية')}</span></nav>
-   <section className="ods-hero">
+   <section className="ods-hero ods-hero-wide">
     <div className="ods-hero-copy"><p className="ods-eyebrow">{t('eyebrow')}</p><h1>{t('heading')}</h1><p className="ods-lead">{t('intro')}</p><div className="ods-actions"><a className="ods-button" href="#outdoor-range">{t('browse')}<ArrowDown size={18}/></a><a className="ods-text-link" href="#buying-brief">{t('brief')}<ArrowUpRight size={18}/></a></div></div>
     <figure className="ods-hero-image"><img src={media+'outdoor-camp.webp'} alt={tr('A power station and folding solar panel in a mountain campsite catalogue scene','Estación de energía y panel plegable en una escena de camping del catálogo','محطة طاقة ولوح قابل للطي في مشهد تخييم جبلي من الكتالوج')} width="1356" height="763" fetchPriority="high"/></figure>
    </section>
@@ -54,6 +55,8 @@ export default function OutdoorContent({locale='en',category='all',onCategoryCha
       <div className="ods-product-body"><div className="ods-product-code"><span>{p.model}</span><span>{t(p.category)}</span></div><h3>{c(p.name)}</h3><p className="ods-use">{c(p.use)}</p><ul className="ods-metrics">{p.metrics.map((v,i)=><li key={v} dir="ltr">{v==='3 options'?tr('3 capacity options','3 capacidades','3 خيارات سعة'):v}</li>)}</ul>
        <div className="ods-price"><span>{t(p.priceKind==='reference'?'reference':p.priceKind==='listing'?'listing':'quoteOnly')}</span>{firstPrice!==undefined?<strong><bdi>{money(firstPrice)}</bdi><small> / {t('unit')}</small></strong>:<p>{t('quoteOnlyNote')}</p>}{p.tiers?<small>{p.tiers[0][0]}+ {tr('units at this tier','unidades en este tramo','وحدات في هذه الشريحة')}</small>:p.priceKind==='reference'?<small>{t('referenceBasis')}</small>:null}</div>
        <details><summary>{t('details')}</summary><div className="ods-detail-copy"><p>{c(p.shared)}</p><h4>{t('charging')}</h4><p>{c(p.charging)}</p><h4>{t('pack')}</h4><p>{c(p.packing)}</p>{p.conditions?<><h4>{tr('Quotation conditions','Condiciones de oferta','شروط العرض')}</h4><p>{c(p.conditions)}</p></>:null}{p.tiers?<dl className="ods-tier-list">{p.tiers.map(([min,price],i)=><React.Fragment key={min}><dt>{min}{p.tiers[i+1]?'–'+(p.tiers[i+1][0]-1):'+'}</dt><dd><bdi>{money(price)}</bdi></dd></React.Fragment>)}</dl>:null}{p.sample?<p>{t('sample')}: <bdi>{money(p.sample)}</bdi></p>:null}<p className="ods-source">{t('source')}: {p.source==='sanhe'?c(sources.sanhe):p.source==='tieding'?`${c(sources.tieding)} · p.${p.page}`:<a href={sources[p.source]} target="_blank" rel="noopener noreferrer">{p.source.startsWith('ecoflow')||p.source==='eboom20'?tr('View catalogue specifications','Ver especificaciones del catálogo','عرض مواصفات الكتالوج'):t('viewSource')} ↗</a>}<br/>{p.supplier}</p></div></details>
+       {p.id==='colku-20'&&<a className="ods-model-guide" href={localizedProductPath('/sourcing/portable-air-conditioners-from-china/',locale)}>{coolingCopy(locale).ac} ↗</a>}
+       {p.id==='colku-20'&&<a className="ods-model-guide" href={localizedProductPath('/sourcing/portable-compressor-fridges-from-china/',locale)}>{coolingCopy(locale).fridge} ↗</a>}
        {p.wh&&p.watts?<a className="ods-model-guide" href={localizedProductPath(powerGuidePath,locale)+'?model='+p.id}>{tr('Explore power & runtime','Explore potencia y autonomía','استكشف القدرة ومدة التشغيل')} ↗</a>:null}<button type="button" className={'ods-add' +(selected?' is-added':'')} onClick={()=>addProduct(p.id)} aria-pressed={selected}>{selected?<Check size={18}/>:<Plus size={18}/>} {t(selected?'added':'add')}</button>
       </div>
      </article>;

@@ -1,0 +1,8 @@
+{
+  "tool": "built-in imagegen",
+  "prompts": {
+    "sog1": "Use case: background-extraction. Edit target: supplied product sheet. Extract ONLY the single black SOG-1 air conditioner, remove all surrounding Chinese and English advertising, brand logos, background and pedestal. Preserve exact appliance geometry, black finish, blue accent, grille, handle, feet and control panel, camera angle. Center complete appliance large on a genuinely transparent alpha background, product catalogue cutout. No added objects, no text, no invented features.",
+    "sog2": "Use case: background-extraction. Edit target: supplied SOG-2 product sheet. Extract only the khaki rectangular SOG-2 portable air conditioner shown, retaining precise square grille, handle, shell details, proportions, feet, finish and camera angle. Remove ALL background, Chinese labels, English labels, dimensions and branding. Output large centered complete appliance on true transparent alpha background, clean ecommerce cutout. No text, no new features.",
+    "iogFamily": "Use case: background-extraction. Edit target: supplied IOG-1 family product sheet. Extract only the silver portable air conditioner. Preserve its exact geometry, black front grille, handle, feet, side panel, materials, camera angle and proportions. Remove ALL background, dimensions, advertising, Chinese and English labels and logos. Complete product centered large on genuine transparent alpha background. No text and no changes to the device. This is a housing reference, do not alter to invent another model."
+  }
+}

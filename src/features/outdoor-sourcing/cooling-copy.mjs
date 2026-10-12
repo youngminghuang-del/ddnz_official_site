@@ -1,0 +1,13 @@
+import en from './locales/en.json' with {type:'json'};
+import zh from './locales/zh.json' with {type:'json'};
+import es from './locales/es.json' with {type:'json'};
+import fr from './locales/fr.json' with {type:'json'};
+import pt from './locales/pt.json' with {type:'json'};
+import tr from './locales/tr.json' with {type:'json'};
+import ru from './locales/ru.json' with {type:'json'};
+import ar from './locales/ar.json' with {type:'json'};
+export const coolingLocales={en,zh,es,fr,pt,tr,ru,ar};
+export const coolingLocale=locale=>locale==='zh-cn'?'zh':Object.hasOwn(coolingLocales,locale)?locale:'en';
+export const coolingCopy=locale=>coolingLocales[coolingLocale(locale)];
+export const coolingNumber=(locale,value)=>new Intl.NumberFormat(coolingLocale(locale)==='zh'?'zh-CN':coolingLocale(locale),{maximumFractionDigits:3}).format(value);
+export const coolingCurrency=(locale,value)=>new Intl.NumberFormat(coolingLocale(locale)==='zh'?'zh-CN':coolingLocale(locale),{style:'currency',currency:'CNY',currencyDisplay:'code',maximumFractionDigits:0}).format(value);

@@ -1,3 +1,4 @@
+import SpanishRestock from './SpanishRestock.jsx';
 import FactorySourcing from './new-accessories/FactorySourcing.jsx';
 import {newAccessories} from './new-accessories/products.mjs';
 import AccessoryShowcase from './new-accessories/AccessoryShowcase.jsx';
@@ -149,6 +150,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  {pageId==='hub'&&<AccessoryShowcase locale={locale} draft={draft} onSelect={add}/>}
  {pageId==='hub'&&<FactorySourcing locale={locale}/>}
  {pageId==='cases'&&<div dangerouslySetInnerHTML={{__html:locale==='en'?renderCaseEntry():renderLocalizedEntry('cases',locale)}}/>}
+ {pageId==='cases'&&locale==='es'&&<SpanishRestock onApply={note=>setDraft(d=>({...d,contact:{...d.contact,notes:d.contact.notes.includes(note)?d.contact.notes:[d.contact.notes,note].filter(Boolean).join('\n')}}))}/>}
  {pageId==='compare'&&<section className="ms-section ms-editorial"><h2>{c('checks')}</h2><div>{editorial.compare.map(([title,body],i)=><article key={i}><span className="ms-step">0{i+1}</span><h3>{copyFor(title,locale)}</h3><p>{copyFor(body,locale)}</p></article>)}</div><a className="ms-secondary" href={link('cases',locale)}>{c('cases')} ↗</a></section>}
  {pageId!=='compare'&&<section className="ms-section" id="collection"><span id="assortment"/><div className="ms-section-head"><div><p className="ms-eyebrow">{c('products')}</p><h2>{pageId==='hub'?copyFor(accessoryCopy.catalogTitle,locale):c('range')}</h2>{pageId==='hub'&&<p>{copyFor(accessoryCopy.rangeIntro,locale)}</p>}</div><a href="#buying-brief" className="ms-brief-count" aria-live="polite">{c('brief')} · {formatNumber(draft.rows.length,locale)} ↓</a></div>
  {pageId!=='hub'&&<div className="ms-filters" role="group" aria-label={c('filters')}>{(pageId==='straps'?['all','set','strap','chain','charm','component']:['all','sample','listing']).map(key=><button type="button" key={key} aria-pressed={filter===key} onClick={()=>setFilter(key)}>{c(key==='sample'?'samples':key==='listing'?'priced':key)}</button>)}</div>}

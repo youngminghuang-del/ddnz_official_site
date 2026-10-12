@@ -17,7 +17,7 @@ export const buyerGuidePaths = Object.freeze([
 ]);
 export const localizableProductPaths = Object.freeze([
   '/sourcing/commercial-kitchen-equipment-from-china',
-  '/screen-protectors', '/screen-protectors/compare', '/screen-protectors/calculator', ...buyerGuidePaths, ...mobilePaths, outdoorPath, powerGuidePath,
+  '/screen-protectors', '/screen-protectors/compare', '/screen-protectors/calculator', ...buyerGuidePaths, ...mobilePaths, outdoorPath, powerGuidePath, '/sourcing/portable-compressor-fridges-from-china', '/sourcing/portable-air-conditioners-from-china',
 ]);
 export function productRouteParts(path = '/') {
   const [, raw, suffix = ''] = String(path).match(/^([^?#]*)([?#].*)?$/s);

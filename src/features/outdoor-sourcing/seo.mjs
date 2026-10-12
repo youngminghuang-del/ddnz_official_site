@@ -1,4 +1,5 @@
 import { OUTDOOR_PATH, outdoorProducts, copy } from './catalog.mjs';
+import {coolingCopy,coolingLocale} from './cooling-copy.mjs';
 import { ui } from './copy.mjs';
 import { guideUI } from './guide-copy.mjs';
 import { localizedProductPath, powerGuidePath } from '../../lib/productLocalization.mjs';
@@ -17,4 +18,22 @@ export function powerGuideMetadata(locale='en'){
   {'@type':'WebPage','@id':base+path+'#webpage',url:base+path,name:title,description,inLanguage:locale},
   {'@type':'BreadcrumbList',itemListElement:[{name:copy(ui.home,locale),item:base+(locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`)},{name:copy(ui.heading,locale),item:base+localizedProductPath(OUTDOOR_PATH,locale)},{name:copy(guideUI.eyebrow,locale),item:base+path}].map((item,i)=>({'@type':'ListItem',position:i+1,...item}))},
  ]}};
+}
+
+export const FRIDGE_PATH='/sourcing/portable-compressor-fridges-from-china/';
+export function fridgeMetadata(locale='en'){
+ if(coolingLocale(locale)!=='en')return coolingMetadata(locale,'fridge');
+ const title='Portable Compressor Fridges from China | Wholesale Sourcing | DDNZ',description='Compare portable compressor fridges from China, including 15–100 L catalogue options and UOG-30 wholesale price tiers. Build a mixed-model wholesale request with quantities, power, packaging and inspection requirements.',image='/outdoor-sourcing-media/colku-20.webp',url='https://www.ddnzglobal.com'+FRIDGE_PATH;
+ return {path:FRIDGE_PATH,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url,name:title,description,inLanguage:'en'}};
+}
+
+export function acMetadata(locale='en'){
+ if(coolingLocale(locale)!=='en')return coolingMetadata(locale,'ac');
+ const path='/sourcing/portable-air-conditioners-from-china/',title='Portable Camping Air Conditioners from China | Wholesale & OEM | DDNZ',description='Compare SOG-1, SOG-2 and IOG-1+ portable air conditioners from China. Twelve 110V/220V wholesale configurations, cooling and heating options, from 20 units.',image='/outdoor-sourcing-media/ac/sog1.webp';
+ return {path,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url:'https://www.ddnzglobal.com'+path,name:title,description,inLanguage:'en'}};
+}
+
+function coolingMetadata(locale,kind){
+ const lang=coolingLocale(locale),t=coolingCopy(lang),path=localizedProductPath(kind==='ac'?'/sourcing/portable-air-conditioners-from-china/':FRIDGE_PATH,lang),title=t[kind+'Title']+' | DDNZ',description=t[kind]+'. '+t.intro,image=kind==='ac'?'/outdoor-sourcing-media/ac/sog1.webp':'/outdoor-sourcing-media/fridges/al34-card.webp',url='https://www.ddnzglobal.com'+path;
+ return {path,title,description,image,schema:{'@context':'https://schema.org','@type':'WebPage',url,name:title,description,inLanguage:lang==='zh'?'zh-CN':lang}};
 }
