@@ -88,7 +88,7 @@ export const kitchenCategories = [
       { question: 'Does the larger plate guarantee higher output?', answer: 'It provides more listed cooking area. Actual output depends on the food, batch layout, heat recovery and working method. Discuss a representative batch when requesting a sample or performance check.' },
       { question: 'Can I combine griddles with fryers?', answer: 'Yes. Use the shared equipment list to select both types, then request prices, packing and shipment coordination for the combination.' },
     ],
-    reading: [{ slug: 'turkey-kitchen-equipment-dealers-china-sourcing-margin-checklist', title: 'Build a dealer margin calculation', copy: 'Include the purchase price, import costs and local selling costs.' }],
+    reading: [{ slug: 'commercial-kitchen-equipment-china-saudi-rfq-checklist', title: 'Prepare a kitchen equipment RFQ', copy: 'List models, quantities, electrical configurations and destination requirements.' }],
   },
 ];
 
