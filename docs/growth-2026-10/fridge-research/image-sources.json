@@ -1,0 +1,80 @@
+[
+  {
+    "model": "GF45",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 3,
+    "imageObject": "Im1.jp2",
+    "originalSize": [
+      209,
+      192
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/gf45.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "3dfbba79b5fbd38727cdb013bec4563ba0b8b5451a3c5547a9b7e324af2c74ed"
+  },
+  {
+    "model": "GF65D",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 3,
+    "imageObject": "Im2.jp2",
+    "originalSize": [
+      249,
+      210
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/gf65d.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "c5fdf1a08109b69402ab5e24c217918ed55dad027cac5a10ab8f22fca983dc5b"
+  },
+  {
+    "model": "GF100D",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 3,
+    "imageObject": "Im3.jp2",
+    "originalSize": [
+      287,
+      205
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/gf100d.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "0c7547ede3b16668b4de2f69e0f1b20d16c90e64f15c72587e115f604949ce70"
+  },
+  {
+    "model": "GC15",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 4,
+    "imageObject": "Im2.jp2",
+    "originalSize": [
+      276,
+      255
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/gc15.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "6257738eaecd1821f9660a0745517d51deb9a52d5d0fe88dd9f2748da062d9fb"
+  },
+  {
+    "model": "TF36D",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 6,
+    "imageObject": "Im4.jp2",
+    "originalSize": [
+      259,
+      234
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/tf36d.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "5fc02e36fa3d1addd1fcb36b25563c2419334477aaf1a1e1d22728452e160874"
+  },
+  {
+    "model": "GC26P",
+    "source": "https://file.globalso.com/file_manage/622/20250521/colku-car-refrigerator-2.pdf",
+    "pdfPage": 8,
+    "imageObject": "Im1.jp2",
+    "originalSize": [
+      234,
+      189
+    ],
+    "asset": "public/outdoor-sourcing-media/fridges/gc26p.webp",
+    "processing": "Extract original embedded image; lossless WebP, no generated content or upscaling",
+    "sha256": "d79ddce5aad90307b799a41613c22fbfff0c1bd9f0d7d17b1bfbdb8e758da88c"
+  }
+]

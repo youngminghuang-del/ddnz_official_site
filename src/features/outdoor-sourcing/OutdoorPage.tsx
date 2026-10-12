@@ -15,6 +15,7 @@ import OutdoorContent from './OutdoorContent.jsx';
 import PowerGuideContent from './PowerGuideContent.jsx';
 import PortableFridgeContent from './PortableFridgeContent.jsx';
 import './outdoor.css';
+import './fridge.css';
 import './power-guide.css';
 export default function OutdoorPage({guide=false,fridge=false}:{guide?:boolean,fridge?:boolean}){
  const location=useLocation(),navigate=useNavigate();
