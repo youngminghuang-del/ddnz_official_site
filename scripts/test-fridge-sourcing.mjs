@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
-import {fridgeProducts,validFridgeQuantity,normalizeFridgeDraft,fridgeLoad,buildFridgeBrief} from '../src/features/outdoor-sourcing/fridge-catalog.mjs';
+import {fridgeProducts,fridgeUnitPrice,validFridgeLine,validFridgeQuantity,normalizeFridgeDraft,fridgeLoad,buildFridgeBrief} from '../src/features/outdoor-sourcing/fridge-catalog.mjs';
 import {quoteLinkProps,sanitizeQuoteContext} from '../src/lib/quoteLinkPolicy.mjs';
-assert.equal(new Set(fridgeProducts.map(p=>p.id)).size,8);
+assert.equal(new Set(fridgeProducts.map(p=>p.id)).size,9);
 for(const value of ['0','-1','1.5','1e3','', '100001'])assert.equal(validFridgeQuantity(value),false,`reject ${value}`);
 for(const value of ['1','20','100000'])assert.equal(validFridgeQuantity(value),true);
 const draft=normalizeFridgeDraft({destination:'Kenya',rows:[{id:'gf45',quantity:'10',notes:'neutral carton'},{id:'tf36d',quantity:'5'},{id:'gf45',quantity:'999'},{id:'unknown',quantity:'200'}]});
@@ -23,7 +23,7 @@ assert.equal(context.overviewBrief,brief);
 assert.equal(context.source,'portable_fridge_sourcing');
 assert.equal(context.industry,'Other');
 assert.equal(sanitizeQuoteContext({source:'portable_fridge_sourcing'}).source,'portable_fridge_sourcing');
-console.log('Fridge sourcing: 8-model integrity, quantity validation, partial packing totals, saved-draft cleanup and quote handoff passed.');
+console.log('Fridge sourcing: 9-model integrity, quantity validation, partial packing totals, saved-draft cleanup and quote handoff passed.');
 
 const aluminium=normalizeFridgeDraft({destination:'UAE',rows:[{id:'al34',quantity:'10',notes:'Green; private-label nameplate; market stall'}]});
 const aluLoad=fridgeLoad(aluminium.rows);
@@ -35,3 +35,12 @@ assert.ok(!aluBrief.includes('Colku AL34'));
 assert.ok(aluBrief.includes('Green; private-label nameplate; market stall'));
 assert.equal(fridgeProducts.find(p=>p.id==='al34').weight,14);
 console.log('AL34 supplier separation, packing totals and customization handoff passed.');
+
+for(const [quantity,price] of [[299,null],[300,889],[500,889],[501,859],[1000,859]])assert.equal(fridgeUnitPrice('uog30',quantity),price);
+assert.equal(validFridgeLine({id:'uog30',quantity:'299'}),false);
+assert.equal(validFridgeLine({id:'uog30',quantity:'300'}),true);
+assert.equal(fridgeUnitPrice('uog30','1e3'),null);
+const uog=buildFridgeBrief(normalizeFridgeDraft({destination:'UAE',rows:[{id:'uog30',quantity:'501'}]}));
+assert.ok(uog.includes('CNY 859/unit; line CNY 430359'));
+assert.ok(!uog.includes('null L'));
+console.log('UOG-30: 299/300/500/501 boundaries, final CNY prices and brief totals passed.');
