@@ -200,9 +200,15 @@ export default function BlogDetail() {
     return () => window.removeEventListener('scroll', onScroll);
   }, [post]);
 
+  // Keep the HTML prop stable across hash-navigation/context renders so native
+  // form nodes, input values and their listeners are not replaced.
+  const articleHtml = useMemo(() => ({
+    __html: normalizeQuoteHtml(normalizeNotionLinks(post?.content || '')),
+  }), [post?.content]);
+
   useEffect(() => {
-    if (post?.slug === 'top-10-privacy-screen-protector-manufacturers-china') return bindPrivacyWorksheet();
-  }, [post]);
+    if (!isLoading && post?.slug === 'top-10-privacy-screen-protector-manufacturers-china') return bindPrivacyWorksheet();
+  }, [post, isLoading]);
 
   const primaryCta = useMemo(() => (post ? buildPrimaryCta(post, prefix, ui) : null), [post, prefix, ui]);
 
@@ -364,7 +370,7 @@ export default function BlogDetail() {
 
             <div
               className="prose prose-slate lg:prose-lg max-w-none blog-content post-content"
-              dangerouslySetInnerHTML={{ __html: normalizeQuoteHtml(normalizeNotionLinks(post.content)) }}
+              dangerouslySetInnerHTML={articleHtml}
             />
 
             {articleDiscovery && <section lang="en" className="mt-10 border-t border-slate-200 pt-7" aria-label="Related buying guides"><h2 className="text-xl font-bold">{articleDiscovery.heading || 'Compare equipment for your next order'}</h2><div className="mt-3 flex flex-col items-start gap-2">{articleDiscovery.links.map(item => <Link key={item.href} to={item.href} onClick={() => trackEvent('article_equipment_click', { article_slug: post.slug, link_path: item.href })} className="inline-flex min-h-11 items-center font-semibold text-[#633185] underline underline-offset-4">{item.label} <span aria-hidden="true" className="ml-2">→</span></Link>)}</div></section>}
