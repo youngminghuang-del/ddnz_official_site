@@ -1,3 +1,4 @@
+import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml, sanitizeQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -197,6 +198,10 @@ export default function BlogDetail() {
     window.addEventListener('scroll', onScroll, { passive: true });
     onScroll();
     return () => window.removeEventListener('scroll', onScroll);
+  }, [post]);
+
+  useEffect(() => {
+    if (post?.slug === 'top-10-privacy-screen-protector-manufacturers-china') return bindPrivacyWorksheet();
   }, [post]);
 
   const primaryCta = useMemo(() => (post ? buildPrimaryCta(post, prefix, ui) : null), [post, prefix, ui]);
@@ -405,6 +410,7 @@ export default function BlogDetail() {
       <Footer />
 
       <style>{`
+        .lead-box{scroll-margin-top:110px;padding:24px;background:#edf5f4;border:1px solid #b9d5cc;border-radius:14px}.lead-box label{display:block;font-size:15px;margin:12px 0}.lead-box input,.lead-box select,.lead-box textarea{width:100%;padding:12px;border:1px solid #9cbbb7;border-radius:6px;background:white;font:inherit}.lead-box textarea{min-height:84px}.lead-box .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.lead-box button,.lead-box .download-button{background:#155f52;color:white;padding:13px 22px;border:0;border-radius:7px;font-weight:600;cursor:pointer;display:inline-block}.lead-box button:disabled{opacity:.65;cursor:wait}.lead-box .privacy-note{font-size:13px}.lead-box .hp{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden}.lead-box .form-status{font-weight:600}.lead-box [hidden]{display:none}.lead-box :focus-visible{outline:3px solid #df9e3c;outline-offset:3px}@media(max-width:640px){.lead-box .form-grid{grid-template-columns:1fr;gap:0}}
         .blog-content { color: #334155; font-size: 1.075rem; line-height: 1.82; }
         .blog-content h2, .blog-content h3, .blog-content h4 { scroll-margin-top: 7rem; color: #0b1f3a; font-weight: 850; line-height: 1.3; }
         .blog-content h2 { margin: 2.8rem 0 1.1rem; border-left: 5px solid #d97706; padding-left: .9rem; font-size: 1.9rem; }

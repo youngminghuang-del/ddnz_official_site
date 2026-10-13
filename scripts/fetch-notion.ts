@@ -1,3 +1,4 @@
+import { preparePrivacyArticle, privacyArticleSlug } from './privacy-article';
 import restoredBlogRedirects from '../src/data/restoredBlogRedirects.json';
 const preserveRestoredRedirects = (redirects: any[]) => [...redirects, ...restoredBlogRedirects.filter(saved => !redirects.some(row => row.from === saved.from))];
 import restoredBlogPosts from '../src/data/restoredBlogPosts.json';
@@ -534,7 +535,11 @@ async function run() {
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
       const rendered = await getPageContentHtml(page.id, slug, title, initialContent);
-      rendered.html = applyLocalArticleAssets(rendered.html, localAssets);
+      rendered.html = preparePrivacyArticle(slug, applyLocalArticleAssets(rendered.html, localAssets));
+      if (slug === privacyArticleSlug) rendered.toc = rendered.toc.map(item => {
+        const number = item.level === 2 && item.text.match(/^(\d+)\. /)?.[1];
+        return number ? {...item, id: `supplier-${number}`} : item;
+      });
       const canonicalIds = propertyRelationIds(properties["Canonical Article"]);
 
       const post: Record<string, any> = {
@@ -561,7 +566,9 @@ async function run() {
         primaryQuery: propertyText(properties["Primary Query"]),
         topicKey: propertyText(properties["Topic Key"]),
         contentType: propertyText(properties["Content Type"]),
-        reviewer: propertyPeople(properties.Reviewer),
+        // QI YANG approved this article in the owner review on 2026-10-13.
+        // No matching Notion account exists; retain the confirmed display name.
+        reviewer: slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
