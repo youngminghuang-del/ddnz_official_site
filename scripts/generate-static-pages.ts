@@ -1705,6 +1705,7 @@ function injectStaticRouteContent(
           <p class="text-xs font-black uppercase tracking-wider text-amber-700">DDNZ Global Insights</p>
           <h1 class="mt-4 text-4xl font-black leading-tight text-slate-950">${escapeStaticText(post.title)}</h1>
           ${summary}
+          ${post.reviewer?.length ? `<p>Reviewed by ${post.reviewer.map(escapeStaticText).join(", ")}</p>` : ""}
           ${cover}
           <div class="article-body mt-10">${post.content || ''}</div>
         </article>
