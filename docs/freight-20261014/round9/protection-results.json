@@ -1,0 +1,20 @@
+{
+  "baseline": "f8d91899f90d4c4dfb9c1f969b8438b8bb06a12b",
+  "protectedFiles": [
+    "src/features/freight/QatarCargoGallery.tsx",
+    "src/features/freight/qatarCargoGallery.json",
+    "src/features/freight/OmanCargoGallery.tsx",
+    "src/features/freight/omanCargoGallery.json",
+    "src/components/GetAQuote.tsx",
+    "src/features/freight/GulfDestinationMap.tsx",
+    "src/features/freight/GulfChapters.tsx",
+    "src/features/freight/GulfCargoJourney.tsx",
+    "src/features/freight/gulfStories.json",
+    "src/features/freight/gulfRegionalMaps.json",
+    "src/data/notionBlogData.json"
+  ],
+  "unchangedMediaFiles": 38,
+  "omanMainIdentical": true,
+  "qatarMainOnlySectionClassChanged": true,
+  "sitemap": 733
+}

@@ -293,9 +293,9 @@
 .qatar-gallery-thumbnails button:hover { border-color:#a37abf; }
 .qatar-gallery-thumbnails button[aria-pressed=true] { border-color:#763c9c; box-shadow:0 0 0 2px #763c9c30; }
 .qatar-gallery-thumbnails button:focus-visible { outline:3px solid #763c9c; outline-offset:3px; }
-.qatar-gallery-style { display:grid; grid-template-columns:1fr 1.3fr; gap:40px; align-items:center; }
+.qatar-gallery-style { display:block; max-width:860px; margin-inline:auto; }
 .qatar-gallery-style .qatar-gallery-thumbnails { grid-template-columns:repeat(2,80px); }
-.qatar-gallery-style .qatar-gallery-frame { height:280px; }
+
 .qatar-style-section { padding-block:30px; }
 .qatar-packing-section { min-width:0; }
 .qatar-packing-section .gulf-distinction { margin-top:22px; padding:20px; }
@@ -305,7 +305,7 @@
 @media(max-width:640px) {
  .qatar-gallery-style { display:block; }
  .qatar-gallery-frame { height:270px; }
- .qatar-gallery-style .qatar-gallery-frame { height:250px; }
+
  .qatar-gallery-thumbnails { gap:6px; }
  .qatar-gallery-thumbnails button { height:60px; }
  .qatar-packing-data>div { gap:8px; }
@@ -313,3 +313,25 @@
 }
 
 .qatar-gallery-full { display:inline-flex; align-items:center; min-height:44px; padding-block:10px; color:#632b89; font-size:.85rem; font-weight:650; text-decoration:underline; text-underline-offset:3px; }
+
+/* Keep Qatar explanatory artwork below its introduction at every width. */
+.qatar-style-section,.qatar-consolidation-section { padding-block:36px; }
+.qatar-consolidation-section { display:block; }
+.qatar-consolidation-section>.gulf-copy { max-width:800px; margin-bottom:24px; }
+.qatar-consolidation-section .qatar-packing-section { max-width:760px; margin-inline:auto; }
+.qatar-gallery-style .qatar-gallery-frame,.qatar-gallery-packing .qatar-gallery-frame { height:auto; background:#fffdf8; }
+.qatar-gallery-style .qatar-gallery-frame>img,.qatar-gallery-packing .qatar-gallery-frame>img { display:block; height:auto; width:100%; }
+.qatar-gallery-style figcaption { min-height:0; }
+.qatar-packing-section .gulf-distinction { display:grid; grid-template-columns:1fr 1fr; column-gap:24px; margin-top:18px; }
+.qatar-packing-section .gulf-distinction hr { display:none; }
+.qatar-packing-section .gulf-distinction p:first-child { grid-column:1; grid-row:1; }
+.qatar-packing-section .gulf-distinction span:nth-child(2) { grid-column:1; grid-row:2; }
+.qatar-packing-section .gulf-distinction p:nth-child(4) { grid-column:2; grid-row:1; }
+.qatar-packing-section .gulf-distinction span:last-child { grid-column:2; grid-row:2; }
+@media(max-width:820px) {
+ .gulf-qatar .gulf-cargo-intro { display:flex; flex-direction:column; gap:20px; }
+ .gulf-qatar .gulf-cargo-intro .gulf-cargo-references { align-self:stretch; }
+ .qatar-style-section,.qatar-consolidation-section { padding-block:28px; }
+ .qatar-packing-section .gulf-distinction p { font-size:20px; overflow-wrap:anywhere; }
+ .qatar-packing-section .gulf-distinction span { font-size:14px; }
+}
