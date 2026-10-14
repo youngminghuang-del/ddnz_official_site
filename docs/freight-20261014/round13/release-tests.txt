@@ -1,0 +1,1626 @@
+TAP version 13
+# Subtest: featured products match live recorded sources, images and rounded CNY tiers
+ok 1 - featured products match live recorded sources, images and rounded CNY tiers
+  ---
+  duration_ms: 0.79925
+  ...
+# Subtest: new listings have their own identity and keep existing sample drafts intact
+ok 2 - new listings have their own identity and keep existing sample drafts intact
+  ---
+  duration_ms: 0.618542
+  ...
+# Subtest: stock tier and custom minimum remain distinct in order notes
+ok 3 - stock tier and custom minimum remain distinct in order notes
+  ---
+  duration_ms: 0.061458
+  ...
+# Subtest: 40 category pages render unique titles, useful products, bundles and local links
+ok 4 - 40 category pages render unique titles, useful products, bundles and local links
+  ---
+  duration_ms: 857.258125
+  ...
+# Subtest: seven audio bodies contain native ranges, six configuration checks, four sample steps and real media
+ok 5 - seven audio bodies contain native ranges, six configuration checks, four sample steps and real media
+  ---
+  duration_ms: 141.621625
+  ...
+# Subtest: all eight seller assortments preserve local quotation paths and chosen product scope
+ok 6 - all eight seller assortments preserve local quotation paths and chosen product scope
+  ---
+  duration_ms: 36.104708
+  ...
+# Subtest: Brazil has Portuguese navigation alongside translated Portuguese country routes
+ok 7 - Brazil has Portuguese navigation alongside translated Portuguese country routes
+  ---
+  duration_ms: 0.624625
+  ...
+# Subtest: Brazil Portuguese body carries destination, buying questions and scoped Portuguese quote
+ok 8 - Brazil Portuguese body carries destination, buying questions and scoped Portuguese quote
+  ---
+  duration_ms: 8.344167
+  ...
+# Subtest: four distinct purchasing needs have complete equivalent copy and real media in all eight languages
+ok 9 - four distinct purchasing needs have complete equivalent copy and real media in all eight languages
+  ---
+  duration_ms: 1.312542
+  ...
+# Subtest: buyer routes have reciprocal eight-language canonicals and correct breadcrumb parents
+ok 10 - buyer routes have reciprocal eight-language canonicals and correct breadcrumb parents
+  ---
+  duration_ms: 2.638125
+  ...
+# Subtest: buyer briefs retain destination and buyer-specific requirements without adding prices, freight or capabilities
+ok 11 - buyer briefs retain destination and buyer-specific requirements without adding prices, freight or capabilities
+  ---
+  duration_ms: 1.582083
+  ...
+# Subtest: local buyer enquiries never call the network; analytics contain only bounded classifications
+ok 12 - local buyer enquiries never call the network; analytics contain only bounded classifications
+  ---
+  duration_ms: 0.194584
+  ...
+# Subtest: dates only reviewed pages, preserves unrelated nodes and is repeatable
+ok 13 - dates only reviewed pages, preserves unrelated nodes and is repeatable
+  ---
+  duration_ms: 1.616292
+  ...
+# Subtest: updates stale dates without backdating later CMS changes
+ok 14 - updates stale dates without backdating later CMS changes
+  ---
+  duration_ms: 0.106
+  ...
+# Subtest: rejects missing routes, duplicate routes and invalid calendar dates
+ok 15 - rejects missing routes, duplicate routes and invalid calendar dates
+  ---
+  duration_ms: 0.239583
+  ...
+# Subtest: owner-confirmed Titan prices updated without changing other products
+ok 16 - owner-confirmed Titan prices updated without changing other products
+  ---
+  duration_ms: 0.505458
+  ...
+# Subtest: 10k revised baseline without duplicate taxes
+ok 17 - 10k revised baseline without duplicate taxes
+  ---
+  duration_ms: 0.499417
+  ...
+# Subtest: all presets respect minimum and total
+ok 18 - all presets respect minimum and total
+  ---
+  duration_ms: 0.376
+  ...
+# Subtest: MOQ is not a multiple of 500
+ok 19 - MOQ is not a multiple of 500
+  ---
+  duration_ms: 0.153583
+  ...
+# Subtest: single 001 MOQ and conservative tail gross
+ok 20 - single 001 MOQ and conservative tail gross
+  ---
+  duration_ms: 0.075
+  ...
+# Subtest: tail carton uses full volume, actual unit weight
+ok 21 - tail carton uses full volume, actual unit weight
+  ---
+  duration_ms: 0.049625
+  ...
+# Subtest: per-carton charge includes tail dimensional weight
+ok 22 - per-carton charge includes tail dimensional weight
+  ---
+  duration_ms: 0.092041
+  ...
+# Subtest: packing comparison changes cartons and cost
+ok 23 - packing comparison changes cartons and cost
+  ---
+  duration_ms: 0.055167
+  ...
+# Subtest: different products cannot share cartons
+ok 24 - different products cannot share cartons
+  ---
+  duration_ms: 0.184875
+  ...
+# Subtest: duplicate concrete model normalization
+ok 25 - duplicate concrete model normalization
+  ---
+  duration_ms: 0.270625
+  ...
+# Subtest: missing models are scenarios, not confirmed orders
+ok 26 - missing models are scenarios, not confirmed orders
+  ---
+  duration_ms: 0.059875
+  ...
+# Subtest: invalid quantities never produce stale/zero costs
+ok 27 - invalid quantities never produce stale/zero costs
+  ---
+  duration_ms: 0.071166
+  ...
+# Subtest: invalid rows/products/modes bounded safely
+ok 28 - invalid rows/products/modes bounded safely
+  ---
+  duration_ms: 2.139583
+  ...
+# Subtest: sales blanks unknown rather than zero
+ok 29 - sales blanks unknown rather than zero
+  ---
+  duration_ms: 0.125333
+  ...
+# Subtest: sales zero and negative margin allowed, not guaranteed profit
+ok 30 - sales zero and negative margin allowed, not guaranteed profit
+  ---
+  duration_ms: 0.059458
+  ...
+# Subtest: missing fee rate leaves contribution unknown
+ok 31 - missing fee rate leaves contribution unknown
+  ---
+  duration_ms: 0.047959
+  ...
+# Subtest: invalid sales numbers not silently accepted
+ok 32 - invalid sales numbers not silently accepted
+  ---
+  duration_ms: 0.041292
+  ...
+# Subtest: packing rounding invariant over multiple valid quantities
+ok 33 - packing rounding invariant over multiple valid quantities
+  ---
+  duration_ms: 0.166292
+  ...
+# Subtest: OG28 full cartons have separate dimensions and tare
+ok 34 - OG28 full cartons have separate dimensions and tare
+  ---
+  duration_ms: 1.106542
+  ...
+# Subtest: OG28 confirmed MOQ separates product total and model minimum
+ok 35 - OG28 confirmed MOQ separates product total and model minimum
+  ---
+  duration_ms: 0.136334
+  ...
+# Subtest: OG28 tail adds one full outer carton tare and volume
+ok 36 - OG28 tail adds one full outer carton tare and volume
+  ---
+  duration_ms: 0.061333
+  ...
+# Subtest: OG28 independent model packing counts additional tare
+ok 37 - OG28 independent model packing counts additional tare
+  ---
+  duration_ms: 0.107167
+  ...
+# Subtest: different box dimensions are summed per product
+ok 38 - different box dimensions are summed per product
+  ---
+  duration_ms: 0.046875
+  ...
+# Subtest: 001 confirmed carton capacity dimensions and inclusive gross
+ok 39 - 001 confirmed carton capacity dimensions and inclusive gross
+  ---
+  duration_ms: 0.329458
+  ...
+# Subtest: OG28 cannot invalidate existing presets
+ok 40 - OG28 cannot invalidate existing presets
+  ---
+  duration_ms: 0.071458
+  ...
+# Subtest: mixed carton invariants across all four products
+ok 41 - mixed carton invariants across all four products
+  ---
+  duration_ms: 0.189708
+  ...
+# Subtest: OG28 960-piece carton alone does not meet 1000-piece MOQ
+ok 42 - OG28 960-piece carton alone does not meet 1000-piece MOQ
+  ---
+  duration_ms: 11.970208
+  ...
+# Subtest: OG28 total cannot be made up by another product
+ok 43 - OG28 total cannot be made up by another product
+  ---
+  duration_ms: 0.087125
+  ...
+# Subtest: OG28 model minimum is checked even if total exceeds 1000
+ok 44 - OG28 model minimum is checked even if total exceeds 1000
+  ---
+  duration_ms: 0.048833
+  ...
+# Subtest: OG28 sum across models is independent of packing mode
+ok 45 - OG28 sum across models is independent of packing mode
+  ---
+  duration_ms: 0.07475
+  ...
+# Subtest: complete finished output passes API and CLI with exact artifact owners and no writes
+ok 46 - complete finished output passes API and CLI with exact artifact owners and no writes
+  ---
+  duration_ms: 256.348417
+  ...
+# Subtest: literal and escaped HTML attribute ampersands pass for the actual fallback and brief shapes
+ok 47 - literal and escaped HTML attribute ampersands pass for the actual fallback and brief shapes
+  ---
+  duration_ms: 701.402916
+  ...
+# Subtest: HTML attribute ampersands do not bypass canonical, noindex or fallback-root requirements
+ok 48 - HTML attribute ampersands do not bypass canonical, noindex or fallback-root requirements
+  ---
+  duration_ms: 129.78375
+  ...
+# Subtest: sitemap ampersands still require XML escaping in both loc text and attributes
+ok 49 - sitemap ampersands still require XML escaping in both loc text and attributes
+  ---
+  duration_ms: 0.568458
+  ...
+# Subtest: all 19 previously observed index copies fail deterministically, regardless of robots
+ok 50 - all 19 previously observed index copies fail deterministically, regardless of robots
+  ---
+  duration_ms: 382.115833
+  ...
+# Subtest: hidden HTML, uppercase extensions, flat files and noindex orphans are all inventoried
+ok 51 - hidden HTML, uppercase extensions, flat files and noindex orphans are all inventoried
+  ---
+  duration_ms: 114.90875
+  ...
+# Subtest: copy spellings cannot be legitimized even by a sitemap entry
+ok 52 - copy spellings cannot be legitimized even by a sitemap entry
+  ---
+  duration_ms: 68.25125
+  ...
+# Subtest: URL normalization preserves path case and safely decodes Unicode and XML paths
+ok 53 - URL normalization preserves path case and safely decodes Unicode and XML paths
+  ---
+  duration_ms: 0.500667
+  ...
+# Subtest: unsafe origins and paths fail before URL normalization can hide them
+ok 54 - unsafe origins and paths fail before URL normalization can hide them
+  ---
+  duration_ms: 0.403833
+  ...
+# Subtest: normalized URL collisions and unsafe URLs fail in the actual inventory audit
+ok 55 - normalized URL collisions and unsafe URLs fail in the actual inventory audit
+  ---
+  duration_ms: 98.872167
+  ...
+# Subtest: comments and hreflang links do not grant HTML ownership
+ok 56 - comments and hreflang links do not grant HTML ownership
+  ---
+  duration_ms: 82.002042
+  ...
+# Subtest: malformed, empty, foreign-namespace and non-URL-set XML fail closed
+ok 57 - malformed, empty, foreign-namespace and non-URL-set XML fail closed
+  ---
+  duration_ms: 99.478791
+  ...
+# Subtest: missing sitemap pages and required generator artifacts are reported
+ok 58 - missing sitemap pages and required generator artifacts are reported
+  ---
+  duration_ms: 64.105625
+  ...
+# Subtest: missing dist and missing sitemap fail without creating either
+ok 59 - missing dist and missing sitemap fail without creating either
+  ---
+  duration_ms: 129.297958
+  ...
+# Subtest: brief and redirect noindex must be real metadata, not comments or script strings
+ok 60 - brief and redirect noindex must be real metadata, not comments or script strings
+  ---
+  duration_ms: 98.12
+  ...
+# Subtest: redirect targets, fallback canonical and exact verification bytes constrain exceptions
+ok 61 - redirect targets, fallback canonical and exact verification bytes constrain exceptions
+  ---
+  duration_ms: 63.037083
+  ...
+# Subtest: noindex-only exceptions cannot also be sitemap pages
+ok 62 - noindex-only exceptions cannot also be sitemap pages
+  ---
+  duration_ms: 80.379166
+  ...
+# Subtest: redirects require current manifest ownership and sitemap-owned destinations
+ok 63 - redirects require current manifest ownership and sitemap-owned destinations
+  ---
+  duration_ms: 137.2545
+  ...
+# Subtest: an absent optional redirect manifest passes only when no old redirect outputs remain
+ok 64 - an absent optional redirect manifest passes only when no old redirect outputs remain
+  ---
+  duration_ms: 104.784417
+  ...
+# Subtest: file, directory, dangling, sitemap and root symlinks fail without being followed
+ok 65 - file, directory, dangling, sitemap and root symlinks fail without being followed
+  ---
+  duration_ms: 164.932708
+  ...
+# Subtest: case-sensitive sitemap ownership never silently folds URL paths
+ok 66 - case-sensitive sitemap ownership never silently folds URL paths
+  ---
+  duration_ms: 58.304584
+  ...
+# Subtest: standalone CLI defaults to its own project, supports output copies, and rejects mutation flags
+ok 67 - standalone CLI defaults to its own project, supports output copies, and rejects mutation flags
+  ---
+  duration_ms: 392.407667
+  ...
+# Subtest: Russia and all five Central Asian destinations have complete localized route briefs
+ok 68 - Russia and all five Central Asian destinations have complete localized route briefs
+  ---
+  duration_ms: 1.275375
+  ...
+# Subtest: delay diagnostic and wheel-hub case stay complete in every supported locale
+ok 69 - delay diagnostic and wheel-hub case stay complete in every supported locale
+  ---
+  duration_ms: 0.386833
+  ...
+# Subtest: regulated chemical loading case keeps evidence and controls complete in every locale
+ok 70 - regulated chemical loading case keeps evidence and controls complete in every locale
+  ---
+  duration_ms: 0.330959
+  ...
+# Subtest: Uzbekistan road-loading case keeps route evidence complete and destination-specific
+ok 71 - Uzbekistan road-loading case keeps route evidence complete and destination-specific
+  ---
+  duration_ms: 0.574834
+  ...
+# Subtest: routing, static generation and navigation expose all six Eurasia destinations
+ok 72 - routing, static generation and navigation expose all six Eurasia destinations
+  ---
+  duration_ms: 2.120333
+  ...
+# Subtest: seven guides render eleven selectable specifications, two localized guide links and eight alternates
+ok 73 - seven guides render eleven selectable specifications, two localized guide links and eight alternates
+  ---
+  duration_ms: 47.847208
+  ...
+# Subtest: fourteen detail bodies preserve cost factors, process explanations, media and relevant checks
+ok 74 - fourteen detail bodies preserve cost factors, process explanations, media and relevant checks
+  ---
+  duration_ms: 58.1105
+  ...
+# Subtest: seven video pages retain all fourteen media and ten native stage links
+ok 75 - seven video pages retain all fourteen media and ten native stage links
+  ---
+  duration_ms: 111.723917
+  ...
+# Subtest: video kind resolves localized browser and static paths
+ok 76 - video kind resolves localized browser and static paths
+  ---
+  duration_ms: 0.212833
+  ...
+# Subtest: all 77 food translations render native text, matching data, and reciprocal language URLs
+ok 77 - all 77 food translations render native text, matching data, and reciprocal language URLs
+  ---
+  duration_ms: 838.119417
+  ...
+# Subtest: localized inquiry preserves selected quantities, configuration, packing and destination
+ok 78 - localized inquiry preserves selected quantities, configuration, packing and destination
+  ---
+  duration_ms: 3.025375
+  ...
+# Subtest: display prices are 150% of the PDF wholesale column; packing stays unchanged
+ok 79 - display prices are 150% of the PDF wholesale column; packing stays unchanged
+  ---
+  duration_ms: 18.208208
+  ...
+# Subtest: package totals use one of each machine and keep packing separate
+ok 80 - package totals use one of each machine and keep packing separate
+  ---
+  duration_ms: 0.2205
+  ...
+# Subtest: quotation preserves model configuration, quantities, packing and destination
+ok 81 - quotation preserves model configuration, quantities, packing and destination
+  ---
+  duration_ms: 60.859792
+  ...
+# Subtest: all 11 landing pages render unique metadata, crawlable products, internal links and breadcrumbs
+ok 82 - all 11 landing pages render unique metadata, crawlable products, internal links and breadcrumbs
+  ---
+  duration_ms: 125.717625
+  ...
+# Subtest: Portuguese and Turkish country routes tolerate previous language context during navigation
+ok 83 - Portuguese and Turkish country routes tolerate previous language context during navigation
+  ---
+  duration_ms: 1963.186583
+  ...
+# Subtest: modern freight services render complete authored pages in eight languages
+ok 84 - modern freight services render complete authored pages in eight languages
+  ---
+  duration_ms: 161.492083
+  ...
+# Subtest: regional freight hubs have one H1, a geolocated gateway map and country navigation in each authored language
+ok 85 - regional freight hubs have one H1, a geolocated gateway map and country navigation in each authored language
+  ---
+  duration_ms: 1386.661916
+  ...
+# Subtest: Central Asia hub does not silently choose Kazakhstan and keeps destination links independent
+ok 86 - Central Asia hub does not silently choose Kazakhstan and keeps destination links independent
+  ---
+  duration_ms: 54.668167
+  ...
+# Subtest: Nigeria country guide replaces generic unloading films with sourced market planning
+ok 87 - Nigeria country guide replaces generic unloading films with sourced market planning
+  ---
+  duration_ms: 8.3425
+  ...
+# Subtest: origin-to-destination content is unique to each freight hub and only rendered in authored languages
+ok 88 - origin-to-destination content is unique to each freight hub and only rendered in authored languages
+  ---
+  duration_ms: 321.634334
+  ...
+# Subtest: eight Gulf routes round-trip locale prefixes including zh-cn
+ok 89 - eight Gulf routes round-trip locale prefixes including zh-cn
+  ---
+  duration_ms: 2.046459
+  ...
+# Subtest: every bilingual content object has all eight locale keys
+ok 90 - every bilingual content object has all eight locale keys
+  ---
+  duration_ms: 4.383875
+  ...
+# Subtest: every country translation retains seven story sections and five journey stages
+ok 91 - every country translation retains seven story sections and five journey stages
+  ---
+  duration_ms: 0.442542
+  ...
+# Subtest: homepage reads introduction, field photo, products, then brief in DOM order
+ok 92 - homepage reads introduction, field photo, products, then brief in DOM order
+  ---
+  duration_ms: 1.23675
+  ...
+# Subtest: brief is local navigation with preserved intent, category, destination and attribution
+ok 93 - brief is local navigation with preserved intent, category, destination and attribution
+  ---
+  duration_ms: 0.454917
+  ...
+# Subtest: all eight languages have a compact intro and reduced-motion-safe brief focus
+ok 94 - all eight languages have a compact intro and reduced-motion-safe brief focus
+  ---
+  duration_ms: 1.11075
+  ...
+# Subtest: homepage label preserves reviewed text in every language
+ok 95 - homepage label preserves reviewed text in every language
+  ---
+  duration_ms: 0.406833
+  ...
+# Subtest: lightweight URL helpers preserve language routes including Chinese aliases
+ok 96 - lightweight URL helpers preserve language routes including Chinese aliases
+  ---
+  duration_ms: 0.131375
+  ...
+# Subtest: homepage label and URL helpers stay independent of full dictionaries
+ok 97 - homepage label and URL helpers stay independent of full dictionaries
+  ---
+  duration_ms: 0.561625
+  ...
+# Subtest: compact product discovery preserves every existing non-Chinese translation
+ok 98 - compact product discovery preserves every existing non-Chinese translation
+  ---
+  duration_ms: 79.942166
+  ...
+# Subtest: latest publication leads even when an older article matches the page language
+ok 99 - latest publication leads even when an older article matches the page language
+  ---
+  duration_ms: 0.687167
+  ...
+# Subtest: same-date language preference, publication status and card limit are respected
+ok 100 - same-date language preference, publication status and card limit are respected
+  ---
+  duration_ms: 0.107792
+  ...
+# Subtest: exploration telemetry accepts only predefined actions without buyer-entered text
+ok 101 - exploration telemetry accepts only predefined actions without buyer-entered text
+  ---
+  duration_ms: 0.621209
+  ...
+# Subtest: kitchen lead events require tracking consent and production submission
+ok 102 - kitchen lead events require tracking consent and production submission
+  ---
+  duration_ms: 0.088292
+  ...
+# Subtest: only aggregate inquiry data is forwarded and malformed counts are rejected
+ok 103 - only aggregate inquiry data is forwarded and malformed counts are rejected
+  ---
+  duration_ms: 0.076125
+  ...
+# Subtest: each published category has distinct inventory, matching route and complete short metadata
+ok 104 - each published category has distinct inventory, matching route and complete short metadata
+  ---
+  duration_ms: 1.084458
+  ...
+# Subtest: model links preserve identity and initialize the existing order tier; unknown models never acquire a quote
+ok 105 - model links preserve identity and initialize the existing order tier; unknown models never acquire a quote
+  ---
+  duration_ms: 0.479708
+  ...
+# Subtest: category telemetry rejects arbitrary actions and never includes buyer-entered details
+ok 106 - category telemetry rejects arbitrary actions and never includes buyer-entered details
+  ---
+  duration_ms: 0.082792
+  ...
+# Subtest: article metadata overrides reference real articles and existing or new category destinations
+ok 107 - article metadata overrides reference real articles and existing or new category destinations
+  ---
+  duration_ms: 2.681708
+  ...
+# Subtest: 21 category translations have native content, exact reference prices and authored language destinations
+ok 108 - 21 category translations have native content, exact reference prices and authored language destinations
+  ---
+  duration_ms: 382.747375
+  ...
+# Subtest: configuration requests retain exact electrical and document requirements in every locale
+ok 109 - configuration requests retain exact electrical and document requirements in every locale
+  ---
+  duration_ms: 27.187125
+  ...
+# Subtest: comparison uses catalogue output and dimensions without inventing missing storage figures
+ok 110 - comparison uses catalogue output and dimensions without inventing missing storage figures
+  ---
+  duration_ms: 1.366542
+  ...
+# Subtest: supplier specifications preserve capacity, controls and separate dimensions
+ok 111 - supplier specifications preserve capacity, controls and separate dimensions
+  ---
+  duration_ms: 0.420792
+  ...
+# Subtest: all languages render new model anchors and localized request controls
+ok 112 - all languages render new model anchors and localized request controls
+  ---
+  duration_ms: 251.373459
+  ...
+# Subtest: quote handoff preserves model, quantity, destination and electrical requirements
+ok 113 - quote handoff preserves model, quantity, destination and electrical requirements
+  ---
+  duration_ms: 0.303542
+  ...
+# Subtest: discovery links remain in the crawlable HTML and every journey has a target
+ok 114 - discovery links remain in the crawlable HTML and every journey has a target
+  ---
+  duration_ms: 0.86425
+  ...
+# Subtest: recommended guides refer to real published English articles
+ok 115 - recommended guides refer to real published English articles
+  ---
+  duration_ms: 5.95275
+  ...
+# Subtest: collection schema agrees with the visible breadcrumb and does not invent product offers or ratings
+ok 116 - collection schema agrees with the visible breadcrumb and does not invent product offers or ratings
+  ---
+  duration_ms: 2.751125
+  ...
+# Subtest: factory clips wait for user playback and use lightweight posters in both languages
+ok 117 - factory clips wait for user playback and use lightweight posters in both languages
+  ---
+  duration_ms: 70.001042
+  ...
+# Subtest: Gulf planning links directly to same-language ice selection
+ok 118 - Gulf planning links directly to same-language ice selection
+  ---
+  duration_ms: 10.938
+  ...
+# Subtest: es: all 26 records, eight exact CNY prices and per-model quantity tiers survive localization
+ok 119 - es: all 26 records, eight exact CNY prices and per-model quantity tiers survive localization
+  ---
+  duration_ms: 20.243417
+  ...
+# Subtest: es: initial SSR contains the full localized catalogue, specifications, references and quotation UI
+ok 120 - es: initial SSR contains the full localized catalogue, specifications, references and quotation UI
+  ---
+  duration_ms: 363.986708
+  ...
+# Subtest: es: metadata has self canonical, reciprocal eight-language alternates and all model anchors
+ok 121 - es: metadata has self canonical, reciprocal eight-language alternates and all model anchors
+  ---
+  duration_ms: 22.445084
+  ...
+# Subtest: es: market facts and editable assortment quantities retain their source basis
+ok 122 - es: market facts and editable assortment quantities retain their source basis
+  ---
+  duration_ms: 0.223834
+  ...
+# Subtest: es: selection and all quantity tiers carry into a translated inquiry and both draft links
+ok 123 - es: selection and all quantity tiers carry into a translated inquiry and both draft links
+  ---
+  duration_ms: 145.4125
+  ...
+# Subtest: es: below-tier request never quotes the ten-unit reference as its unit price
+ok 124 - es: below-tier request never quotes the ten-unit reference as its unit price
+  ---
+  duration_ms: 61.748875
+  ...
+# Subtest: es: contact, destination and empty-list validation uses localized errors
+ok 125 - es: contact, destination and empty-list validation uses localized errors
+  ---
+  duration_ms: 0.250833
+  ...
+# Subtest: ar: all 26 records, eight exact CNY prices and per-model quantity tiers survive localization
+ok 126 - ar: all 26 records, eight exact CNY prices and per-model quantity tiers survive localization
+  ---
+  duration_ms: 4.270583
+  ...
+# Subtest: ar: initial SSR contains the full localized catalogue, specifications, references and quotation UI
+ok 127 - ar: initial SSR contains the full localized catalogue, specifications, references and quotation UI
+  ---
+  duration_ms: 107.668208
+  ...
+# Subtest: ar: metadata has self canonical, reciprocal eight-language alternates and all model anchors
+ok 128 - ar: metadata has self canonical, reciprocal eight-language alternates and all model anchors
+  ---
+  duration_ms: 10.46875
+  ...
+# Subtest: ar: market facts and editable assortment quantities retain their source basis
+ok 129 - ar: market facts and editable assortment quantities retain their source basis
+  ---
+  duration_ms: 0.154167
+  ...
+# Subtest: ar: selection and all quantity tiers carry into a translated inquiry and both draft links
+ok 130 - ar: selection and all quantity tiers carry into a translated inquiry and both draft links
+  ---
+  duration_ms: 102.802417
+  ...
+# Subtest: ar: below-tier request never quotes the ten-unit reference as its unit price
+ok 131 - ar: below-tier request never quotes the ten-unit reference as its unit price
+  ---
+  duration_ms: 4.21975
+  ...
+# Subtest: ar: contact, destination and empty-list validation uses localized errors
+ok 132 - ar: contact, destination and empty-list validation uses localized errors
+  ---
+  duration_ms: 0.085792
+  ...
+# Subtest: Spanish and Arabic searches match translated names, accent-insensitive categories, model IDs and either numeral script
+ok 133 - Spanish and Arabic searches match translated names, accent-insensitive categories, model IDs and either numeral script
+  ---
+  duration_ms: 29.205
+  ...
+# Subtest: quantities accept Western, Arabic and Persian integer input; reject blank, fractional, grouped and out-of-range values
+ok 134 - quantities accept Western, Arabic and Persian integer input; reject blank, fractional, grouped and out-of-range values
+  ---
+  duration_ms: 0.31025
+  ...
+# Subtest: comparison enforces three valid unique models and permits removal before another addition
+ok 135 - comparison enforces three valid unique models and permits removal before another addition
+  ---
+  duration_ms: 0.115167
+  ...
+# Subtest: Arabic bidi isolates complete model codes, negative temperatures and numeric measurements
+ok 136 - Arabic bidi isolates complete model codes, negative temperatures and numeric measurements
+  ---
+  duration_ms: 0.407209
+  ...
+# Subtest: localized inquiry uses the existing endpoint only through a mocked production transport; preview stays offline
+ok 137 - localized inquiry uses the existing endpoint only through a mocked production transport; preview stays offline
+  ---
+  duration_ms: 4.195584
+  ...
+# Subtest: seven localized kitchen languages are supported; English uses its existing view
+ok 138 - seven localized kitchen languages are supported; English uses its existing view
+  ---
+  duration_ms: 0.31775
+  ...
+# Subtest: es: margin uses all eight original references, explicit CNY, blank buyer inputs and no example
+ok 139 - es: margin uses all eight original references, explicit CNY, blank buyer inputs and no example
+  ---
+  duration_ms: 7.119083
+  ...
+# Subtest: es: margin rejects missing inputs and below-tier quantities, including partial decimals
+ok 140 - es: margin rejects missing inputs and below-tier quantities, including partial decimals
+  ---
+  duration_ms: 0.112083
+  ...
+# Subtest: es: margin computes profit, loss, zero extra costs, per-order totals and cents consistently
+ok 141 - es: margin computes profit, loss, zero extra costs, per-order totals and cents consistently
+  ---
+  duration_ms: 0.163833
+  ...
+# Subtest: ar: margin uses all eight original references, explicit CNY, blank buyer inputs and no example
+ok 142 - ar: margin uses all eight original references, explicit CNY, blank buyer inputs and no example
+  ---
+  duration_ms: 3.5755
+  ...
+# Subtest: ar: margin rejects missing inputs and below-tier quantities, including partial decimals
+ok 143 - ar: margin rejects missing inputs and below-tier quantities, including partial decimals
+  ---
+  duration_ms: 36.349708
+  ...
+# Subtest: ar: margin computes profit, loss, zero extra costs, per-order totals and cents consistently
+ok 144 - ar: margin computes profit, loss, zero extra costs, per-order totals and cents consistently
+  ---
+  duration_ms: 0.126709
+  ...
+# Subtest: localized money parsing supports explicit decimal forms without silently interpreting thousands separators
+ok 145 - localized money parsing supports explicit decimal forms without silently interpreting thousands separators
+  ---
+  duration_ms: 0.148583
+  ...
+# Subtest: localized action contract covers comparison and list entry without PII or preview lead events
+ok 146 - localized action contract covers comparison and list entry without PII or preview lead events
+  ---
+  duration_ms: 74.644041
+  ...
+# Subtest: previous kitchen catalogue and quote fragments keep reaching their replacement sections
+ok 147 - previous kitchen catalogue and quote fragments keep reaching their replacement sections
+  ---
+  duration_ms: 0.412041
+  ...
+# Subtest: static kitchen HTML contains 26 models and only the eight supported indicative quotes
+ok 148 - static kitchen HTML contains 26 models and only the eight supported indicative quotes
+  ---
+  duration_ms: 1.294375
+  ...
+# Subtest: static generation fails if a featured product loses its price, rather than publishing stale data
+ok 149 - static generation fails if a featured product loses its price, rather than publishing stale data
+  ---
+  duration_ms: 0.206917
+  ...
+# Subtest: keeps all 26 catalog SKUs
+ok 150 - keeps all 26 catalog SKUs
+  ---
+  duration_ms: 1.400791
+  ...
+# Subtest: keeps exactly eight indicative supply references
+ok 151 - keeps exactly eight indicative supply references
+  ---
+  duration_ms: 0.164083
+  ...
+# Subtest: preserves approved indicative prices, currencies and reference quantities
+ok 152 - preserves approved indicative prices, currencies and reference quantities
+  ---
+  duration_ms: 0.44825
+  ...
+# Subtest: every product image is an actually copied commercial-kitchen media file
+ok 153 - every product image is an actually copied commercial-kitchen media file
+  ---
+  duration_ms: 0.417
+  ...
+# Subtest: the public product data excludes source and supplier metadata
+ok 154 - the public product data excludes source and supplier metadata
+  ---
+  duration_ms: 0.084209
+  ...
+# Subtest: the eight featured IDs exist and lead the feature data
+ok 155 - the eight featured IDs exist and lead the feature data
+  ---
+  duration_ms: 0.062292
+  ...
+# Subtest: every assortment item refers to a catalog product
+ok 156 - every assortment item refers to a catalog product
+  ---
+  duration_ms: 0.052916
+  ...
+# Subtest: retail references preserve external HTTPS links and catalog matches
+ok 157 - retail references preserve external HTTPS links and catalog matches
+  ---
+  duration_ms: 0.376375
+  ...
+# Subtest: quantity sanitisation retains the established 0 to 9999 bounds
+ok 158 - quantity sanitisation retains the established 0 to 9999 bounds
+  ---
+  duration_ms: 0.226167
+  ...
+# Subtest: cleanList drops unknown and empty entries
+ok 159 - cleanList drops unknown and empty entries
+  ---
+  duration_ms: 0.399292
+  ...
+# Subtest: addItems preserves the established list merge behavior
+ok 160 - addItems preserves the established list merge behavior
+  ---
+  duration_ms: 0.095292
+  ...
+# Subtest: a valid fryer reference retains its 10-unit basis
+ok 161 - a valid fryer reference retains its 10-unit basis
+  ---
+  duration_ms: 0.197625
+  ...
+# Subtest: a fryer below ten units cannot assert the indicative unit reference
+ok 162 - a fryer below ten units cannot assert the indicative unit reference
+  ---
+  duration_ms: 0.046583
+  ...
+# Subtest: the brief asks for a quote when a saved fryer reference is below its basis
+ok 163 - the brief asks for a quote when a saved fryer reference is below its basis
+  ---
+  duration_ms: 1.081375
+  ...
+# Subtest: the concise enquiry includes optional company and preferred contact
+ok 164 - the concise enquiry includes optional company and preferred contact
+  ---
+  duration_ms: 13.057166
+  ...
+# Subtest: local enquiry simulation does not invoke fetch
+ok 165 - local enquiry simulation does not invoke fetch
+  ---
+  duration_ms: 0.460625
+  ...
+# Subtest: production sending remains restricted to the two approved hostnames
+ok 166 - production sending remains restricted to the two approved hostnames
+  ---
+  duration_ms: 0.121917
+  ...
+# Subtest: the module has explicit kitchen prefixes, no preview shell, and accepts the privacy callback
+ok 167 - the module has explicit kitchen prefixes, no preview shell, and accepts the privacy callback
+  ---
+  duration_ms: 1.374667
+  ...
+# Subtest: all seven buying-entry translations cover the same complete content without English fallback
+ok 168 - all seven buying-entry translations cover the same complete content without English fallback
+  ---
+  duration_ms: 7.164042
+  ...
+# Subtest: case and multiple film models survive page and locale transitions with actual destination
+ok 169 - case and multiple film models survive page and locale transitions with actual destination
+  ---
+  duration_ms: 4.744041
+  ...
+# Subtest: fresh request is empty; old Istanbul calculator is never imported automatically
+ok 170 - fresh request is empty; old Istanbul calculator is never imported automatically
+  ---
+  duration_ms: 0.172542
+  ...
+# Subtest: a case quantity does not satisfy the OG28 product minimum
+ok 171 - a case quantity does not satisfy the OG28 product minimum
+  ---
+  duration_ms: 0.200084
+  ...
+# Subtest: localized migration happens once and deletion is not resurrected
+ok 172 - localized migration happens once and deletion is not resurrected
+  ---
+  duration_ms: 0.168709
+  ...
+# Subtest: explicit calculator import retains selected cases and films and is idempotent
+ok 173 - explicit calculator import retains selected cases and films and is idempotent
+  ---
+  duration_ms: 0.295334
+  ...
+# Subtest: invalid localized input remains editable and combined limit cannot silently discard rows
+ok 174 - invalid localized input remains editable and combined limit cannot silently discard rows
+  ---
+  duration_ms: 0.164917
+  ...
+# Subtest: film editor roundtrip preserves variant identity and extra specifications
+ok 175 - film editor roundtrip preserves variant identity and extra specifications
+  ---
+  duration_ms: 0.135084
+  ...
+# Subtest: supplier tiers switch at exact minimums and never quote samples or invalid quantities
+ok 176 - supplier tiers switch at exact minimums and never quote samples or invalid quantities
+  ---
+  duration_ms: 0.822375
+  ...
+# Subtest: localized numeric inputs reject malformed and negative values
+ok 177 - localized numeric inputs reject malformed and negative values
+  ---
+  duration_ms: 0.203625
+  ...
+# Subtest: cost model requires explicit costs, uses entered FX and shows losses as gross margin
+ok 178 - cost model requires explicit costs, uses entered FX and shows losses as gross margin
+  ---
+  duration_ms: 0.246375
+  ...
+# Subtest: draft restores only known products and preserves buyer data across languages
+ok 179 - draft restores only known products and preserves buyer data across languages
+  ---
+  duration_ms: 1.169375
+  ...
+# Subtest: old currency drafts retain buyer details without relabelling saved costs or FX
+ok 180 - old currency drafts retain buyer details without relabelling saved costs or FX
+  ---
+  duration_ms: 0.162958
+  ...
+# Subtest: inspection requests work without a catalogue selection and carry localized scope
+ok 181 - inspection requests work without a catalogue selection and carry localized scope
+  ---
+  duration_ms: 0.141208
+  ...
+# Subtest: local simulation sends nothing and analytics accepts no free-form payload
+ok 182 - local simulation sends nothing and analytics accepts no free-form payload
+  ---
+  duration_ms: 0.266208
+  ...
+# Subtest: all twelve SSR pages have complete localized content, valid media and reciprocal URLs
+ok 183 - all twelve SSR pages have complete localized content, valid media and reciprocal URLs
+  ---
+  duration_ms: 343.9275
+  ...
+# Subtest: each freight context has three distinct crawlable origin plans in authored languages
+ok 184 - each freight context has three distinct crawlable origin plans in authored languages
+  ---
+  duration_ms: 52.831459
+  ...
+# Subtest: origin plans retain their own destination and do not claim an unrelated shipment
+ok 185 - origin plans retain their own destination and do not claim an unrelated shipment
+  ---
+  duration_ms: 0.71275
+  ...
+# Subtest: category URLs preserve attribution, validate unknown values and reset to all
+ok 186 - category URLs preserve attribution, validate unknown values and reset to all
+  ---
+  duration_ms: 0.547959
+  ...
+# Subtest: every navigation language reaches authored category content and the standalone guide
+ok 187 - every navigation language reaches authored category content and the standalone guide
+  ---
+  duration_ms: 1.185833
+  ...
+# Subtest: filtered product views expose only the chosen family without removing purchasing tools
+ok 188 - filtered product views expose only the chosen family without removing purchasing tools
+  ---
+  duration_ms: 56.150416
+  ...
+# Subtest: outdoor prices use the user-approved CNY amount and convert actual source tiers
+ok 189 - outdoor prices use the user-approved CNY amount and convert actual source tiers
+  ---
+  duration_ms: 0.883125
+  ...
+# Subtest: numeric entry supports Spanish and Arabic decimals without accepting malformed costs
+ok 190 - numeric entry supports Spanish and Arabic decimals without accepting malformed costs
+  ---
+  duration_ms: 0.261875
+  ...
+# Subtest: runtime separates stored energy from continuous inverter limit
+ok 191 - runtime separates stored energy from continuous inverter limit
+  ---
+  duration_ms: 0.114125
+  ...
+# Subtest: trial economics allocates batch fees and separates recoverable tax cash from margin
+ok 192 - trial economics allocates batch fees and separates recoverable tax cash from margin
+  ---
+  duration_ms: 0.253834
+  ...
+# Subtest: currency changes clear entered values and USD references divide by CNY per USD
+ok 193 - currency changes clear entered values and USD references divide by CNY per USD
+  ---
+  duration_ms: 0.090375
+  ...
+# Subtest: brief carries chosen model, quantities and verification scope in every language
+ok 194 - brief carries chosen model, quantities and verification scope in every language
+  ---
+  duration_ms: 0.539666
+  ...
+# Subtest: local outdoor enquiries never transmit and analytics excludes free text
+ok 195 - local outdoor enquiries never transmit and analytics excludes free text
+  ---
+  duration_ms: 0.139125
+  ...
+# Subtest: all authored outdoor pages render readable sources, media and reciprocal metadata
+ok 196 - all authored outdoor pages render readable sources, media and reciprocal metadata
+  ---
+  duration_ms: 81.677834
+  ...
+# Subtest: seven authored overview dictionaries have complete matching content shapes
+ok 197 - seven authored overview dictionaries have complete matching content shapes
+  ---
+  duration_ms: 5.58025
+  ...
+# Subtest: Peru tile case has complete localized decision content
+ok 198 - Peru tile case has complete localized decision content
+  ---
+  duration_ms: 0.542625
+  ...
+# Subtest: Peru tile case image exists and the module is limited to the Peru route
+ok 199 - Peru tile case image exists and the module is limited to the Peru route
+  ---
+  duration_ms: 1.092917
+  ...
+# Subtest: all fourteen pure SSR bodies are complete, deterministic and browser independent
+ok 200 - all fourteen pure SSR bodies are complete, deterministic and browser independent
+  ---
+  duration_ms: 117.828666
+  ...
+# Subtest: each eight-language core page has one self canonical and nine reciprocal alternates
+ok 201 - each eight-language core page has one self canonical and nine reciprocal alternates
+  ---
+  duration_ms: 3.770458
+  ...
+# Subtest: finalizer sitemap stays additive and preserves localized pages while adding seven public EN clusters
+ok 202 - finalizer sitemap stays additive and preserves localized pages while adding seven public EN clusters
+  ---
+  duration_ms: 0.519625
+  ...
+# Subtest: English home and comparison SSR include the exact shared buyer copy and real guide links
+ok 203 - English home and comparison SSR include the exact shared buyer copy and real guide links
+  ---
+  duration_ms: 2.07175
+  ...
+# Subtest: the existing quote attachment renders localized product totals and edit links without Istanbul
+ok 204 - the existing quote attachment renders localized product totals and edit links without Istanbul
+  ---
+  duration_ms: 5.199208
+  ...
+# Subtest: missing localized attachments recover via the current-language comparison page, never Istanbul
+ok 205 - missing localized attachments recover via the current-language comparison page, never Istanbul
+  ---
+  duration_ms: 1.413084
+  ...
+# Subtest: both locales use the same four authentic product records without mutating inputs
+ok 206 - both locales use the same four authentic product records without mutating inputs
+  ---
+  duration_ms: 7.799208
+  ...
+# Subtest: quantities accept localized whole numbers and reject ambiguous decimals or coercion
+ok 207 - quantities accept localized whole numbers and reject ambiguous decimals or coercion
+  ---
+  duration_ms: 0.708542
+  ...
+# Subtest: model minimums, OG28 combined minimum, exact models and duplicate rows remain enforced
+ok 208 - model minimums, OG28 combined minimum, exact models and duplicate rows remain enforced
+  ---
+  duration_ms: 7.352833
+  ...
+# Subtest: UAE, Singapore and Mexico handoffs retain buyer destination with product-only pricing
+ok 209 - UAE, Singapore and Mexico handoffs retain buyer destination with product-only pricing
+  ---
+  duration_ms: 32.912041
+  ...
+# Subtest: localized handoff is recalculated, expires, and cannot attach to another locale or destination
+ok 210 - localized handoff is recalculated, expires, and cannot attach to another locale or destination
+  ---
+  duration_ms: 5.228958
+  ...
+# Subtest: ES/AR switches preserve models, quantities, destination and buyer notes in drafts and handoffs
+ok 211 - ES/AR switches preserve models, quantities, destination and buyer notes in drafts and handoffs
+  ---
+  duration_ms: 13.5115
+  ...
+# Subtest: all fourteen route transitions restore grouped quantities from the saved locale and keep invalid inputs invalid
+ok 212 - all fourteen route transitions restore grouped quantities from the saved locale and keep invalid inputs invalid
+  ---
+  duration_ms: 114.876
+  ...
+# Subtest: localized analytics accept only three fixed actions and never forward buyer input
+ok 213 - localized analytics accept only three fixed actions and never forward buyer input
+  ---
+  duration_ms: 0.343459
+  ...
+# Subtest: English Istanbul plans and their original validation still work unchanged
+ok 214 - English Istanbul plans and their original validation still work unchanged
+  ---
+  duration_ms: 12.2655
+  ...
+# Subtest: locale dictionaries have matching keys and fourteen exact localized route contracts
+ok 215 - locale dictionaries have matching keys and fourteen exact localized route contracts
+  ---
+  duration_ms: 0.745333
+  ...
+# Subtest: catalogue variants have specific energy/output pairs without invented prices or boost substitutions
+ok 216 - catalogue variants have specific energy/output pairs without invented prices or boost substitutions
+  ---
+  duration_ms: 0.442334
+  ...
+# Subtest: simultaneous power and duration energy are tested independently
+ok 217 - simultaneous power and duration energy are tested independently
+  ---
+  duration_ms: 0.692625
+  ...
+# Subtest: invalid, empty, extreme and localized user inputs do not create false estimates
+ok 218 - invalid, empty, extreme and localized user inputs do not create false estimates
+  ---
+  duration_ms: 0.298416
+  ...
+# Subtest: capacity chart uses a common linear scale and solar estimates respect input caps
+ok 219 - capacity chart uses a common linear scale and solar estimates respect input caps
+  ---
+  duration_ms: 0.09575
+  ...
+# Subtest: brief handoff carries only a known model and validated load/duration
+ok 220 - brief handoff carries only a known model and validated load/duration
+  ---
+  duration_ms: 0.575584
+  ...
+# Subtest: guide SSR, assets, language alternates and catalogue links exist in three languages
+ok 221 - guide SSR, assets, language alternates and catalogue links exist in three languages
+  ---
+  duration_ms: 59.116542
+  ...
+# Subtest: load-plan notes persist separately without truncating existing buyer notes
+ok 222 - load-plan notes persist separately without truncating existing buyer notes
+  ---
+  duration_ms: 0.325583
+  ...
+# Subtest: every photographed scene offers the same appliances as its load preset and a responsive asset
+ok 223 - every photographed scene offers the same appliances as its load preset and a responsive asset
+  ---
+  duration_ms: 0.434709
+  ...
+# Subtest: appliance cards expose checked state and editable values for the supplied custom plan in every language
+ok 224 - appliance cards expose checked state and editable values for the supplied custom plan in every language
+  ---
+  duration_ms: 4.853916
+  ...
+# Subtest: draft round-trip retains edits, blank invalid fields and charging settings without arbitrary data
+ok 225 - draft round-trip retains edits, blank invalid fields and charging settings without arbitrary data
+  ---
+  duration_ms: 0.61875
+  ...
+# Subtest: detailed handoff recomputes from whitelisted rows and preserves every device in all languages
+ok 226 - detailed handoff recomputes from whitelisted rows and preserves every device in all languages
+  ---
+  duration_ms: 1.615042
+  ...
+# Subtest: model comparison separates power and energy gaps with exact threshold handling
+ok 227 - model comparison separates power and energy gaps with exact threshold handling
+  ---
+  duration_ms: 0.468625
+  ...
+# Subtest: guide analytics carries enum identifiers only, never raw user fields
+ok 228 - guide analytics carries enum identifiers only, never raw user fields
+  ---
+  duration_ms: 0.144083
+  ...
+# Subtest: inquiry production transport preserves human-readable details and handles timeout, rejection and retry
+ok 229 - inquiry production transport preserves human-readable details and handles timeout, rejection and retry
+  ---
+  duration_ms: 23.565375
+  ...
+# Subtest: all guide languages share the new scene cover as a real local asset
+ok 230 - all guide languages share the new scene cover as a real local asset
+  ---
+  duration_ms: 0.639375
+  ...
+# Subtest: power references use selected variants, not cheaper unrelated variants
+ok 231 - power references use selected variants, not cheaper unrelated variants
+  ---
+  duration_ms: 0.742084
+  ...
+# Subtest: power, cases, straps and film retain all rows and specifications in one request
+ok 232 - power, cases, straps and film retain all rows and specifications in one request
+  ---
+  duration_ms: 1.230459
+  ...
+# PASS: success-only unlock; HTTP/application/network failures stay locked; local preview sends nothing; invalid contacts rejected; email mapped. No network requests were made.
+# Subtest: privacy worksheet unlocks only after accepted lead submission
+ok 233 - privacy worksheet unlocks only after accepted lead submission
+  ---
+  duration_ms: 5.504167
+  ...
+# Subtest: all eight navigation languages use only authored product URLs
+ok 234 - all eight navigation languages use only authored product URLs
+  ---
+  duration_ms: 5.960542
+  ...
+# Subtest: language menus only offer authored destinations for freight pages
+ok 235 - language menus only offer authored destinations for freight pages
+  ---
+  duration_ms: 0.439292
+  ...
+# Subtest: direct locale prefixes override stored and historical preferences on complete path segments
+ok 236 - direct locale prefixes override stored and historical preferences on complete path segments
+  ---
+  duration_ms: 0.190833
+  ...
+# Subtest: legacy aliases reach the available translation with query/hash and requested locale intact
+ok 237 - legacy aliases reach the available translation with query/hash and requested locale intact
+  ---
+  duration_ms: 0.706292
+  ...
+# Subtest: SPA, reload and native product arrivals preserve preference; explicit English home resets it
+ok 238 - SPA, reload and native product arrivals preserve preference; explicit English home resets it
+  ---
+  duration_ms: 0.082875
+  ...
+# Subtest: authored language URLs take precedence over stale preferences and return to the matching English page
+ok 239 - authored language URLs take precedence over stale preferences and return to the matching English page
+  ---
+  duration_ms: 0.129417
+  ...
+# Subtest: malformed stored state cannot select a bogus locale or poison internal URLs
+ok 240 - malformed stored state cannot select a bogus locale or poison internal URLs
+  ---
+  duration_ms: 0.113583
+  ...
+# Subtest: normal navigation starts at top, respects hashes and leaves same-page state untouched
+ok 241 - normal navigation starts at top, respects hashes and leaves same-page state untouched
+  ---
+  duration_ms: 0.065583
+  ...
+# Subtest: Back/Forward positions win over hashes and phone controller scrolling
+ok 242 - Back/Forward positions win over hashes and phone controller scrolling
+  ---
+  duration_ms: 0.186083
+  ...
+# Subtest: native hash links sharing a history key scroll to a new anchor, then restore on Back
+ok 243 - native hash links sharing a history key scroll to a new anchor, then restore on Back
+  ---
+  duration_ms: 0.347417
+  ...
+# Subtest: unknown measurements are explicit and never silently become sample cargo
+ok 244 - unknown measurements are explicit and never silently become sample cargo
+  ---
+  duration_ms: 0.688458
+  ...
+# Subtest: customer estimates retain existing receiver field units including decimals
+ok 245 - customer estimates retain existing receiver field units including decimals
+  ---
+  duration_ms: 0.079167
+  ...
+# Subtest: zero, negative and non-finite inputs cannot become positive estimates or unknown
+ok 246 - zero, negative and non-finite inputs cannot become positive estimates or unknown
+  ---
+  duration_ms: 0.139958
+  ...
+# Subtest: eight languages emit plain links and retain multilingual briefs outside href
+ok 247 - eight languages emit plain links and retain multilingual briefs outside href
+  ---
+  duration_ms: 1.038584
+  ...
+# Subtest: external links, hashes, downloads and non-quote parameters are unchanged
+ok 248 - external links, hashes, downloads and non-quote parameters are unchanged
+  ---
+  duration_ms: 0.400875
+  ...
+# Subtest: unknown enum identifiers are rejected; free destination text stays in local brief
+ok 249 - unknown enum identifiers are rejected; free destination text stays in local brief
+  ---
+  duration_ms: 0.06525
+  ...
+# Subtest: HTML processing is escaped and idempotent without modifying title, body text or script strings
+ok 250 - HTML processing is escaped and idempotent without modifying title, body text or script strings
+  ---
+  duration_ms: 0.522
+  ...
+# Subtest: handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+ok 251 - handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+  ---
+  duration_ms: 0.316375
+  ...
+# Subtest: expired and malformed storage never blocks the form
+ok 252 - expired and malformed storage never blocks the form
+  ---
+  duration_ms: 0.182708
+  ...
+# Subtest: compiler applies policy to anchors and router links before React creates DOM
+ok 253 - compiler applies policy to anchors and router links before React creates DOM
+  ---
+  duration_ms: 48.555833
+  ...
+# Subtest: React Router path objects retain hashes while removing quote queries
+ok 254 - React Router path objects retain hashes while removing quote queries
+  ---
+  duration_ms: 0.132125
+  ...
+# Subtest: same-tab handoff works when both browser storage APIs are blocked
+ok 255 - same-tab handoff works when both browser storage APIs are blocked
+  ---
+  duration_ms: 0.2445
+  ...
+# Subtest: seven refrigeration bodies contain native ranges, six configuration checks, five scoring steps and real media
+ok 256 - seven refrigeration bodies contain native ranges, six configuration checks, five scoring steps and real media
+  ---
+  duration_ms: 42.506417
+  ...
+# Subtest: ordinary npm build preserves its pipeline and finishes with SEO and deployment inventory checks
+ok 257 - ordinary npm build preserves its pipeline and finishes with SEO and deployment inventory checks
+  ---
+  duration_ms: 4.288542
+  ...
+# Subtest: CI finalizer adds eight HTML pages, syncs both sitemaps and preserves old entries and unrelated files
+ok 258 - CI finalizer adds eight HTML pages, syncs both sitemaps and preserves old entries and unrelated files
+  ---
+  duration_ms: 424.95875
+  ...
+# Subtest: CI finalizer rejects the wrong working directory and symlinked output without writing outside the project
+ok 259 - CI finalizer rejects the wrong working directory and symlinked output without writing outside the project
+  ---
+  duration_ms: 297.101208
+  ...
+# Subtest: zh: complete templates, static calculator, valid language cluster
+ok 260 - zh: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 15.7905
+  ...
+# Subtest: zh: calculator handoff retains 100 rows and recalculates every amount
+ok 261 - zh: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 79.865958
+  ...
+# Subtest: zh: shared modules have body text and stable destination slugs
+ok 262 - zh: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 3.104333
+  ...
+# Subtest: ru: complete templates, static calculator, valid language cluster
+ok 263 - ru: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 5.009209
+  ...
+# Subtest: ru: calculator handoff retains 100 rows and recalculates every amount
+ok 264 - ru: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 69.417
+  ...
+# Subtest: ru: shared modules have body text and stable destination slugs
+ok 265 - ru: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 10.62925
+  ...
+# Subtest: fr: complete templates, static calculator, valid language cluster
+ok 266 - fr: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 4.697625
+  ...
+# Subtest: fr: calculator handoff retains 100 rows and recalculates every amount
+ok 267 - fr: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 34.149083
+  ...
+# Subtest: fr: shared modules have body text and stable destination slugs
+ok 268 - fr: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 2.648042
+  ...
+# Subtest: pt: complete templates, static calculator, valid language cluster
+ok 269 - pt: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 12.354875
+  ...
+# Subtest: pt: calculator handoff retains 100 rows and recalculates every amount
+ok 270 - pt: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 49.173792
+  ...
+# Subtest: pt: shared modules have body text and stable destination slugs
+ok 271 - pt: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 4.073875
+  ...
+# Subtest: tr: complete templates, static calculator, valid language cluster
+ok 272 - tr: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 4.69375
+  ...
+# Subtest: tr: calculator handoff retains 100 rows and recalculates every amount
+ok 273 - tr: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 39.206833
+  ...
+# Subtest: tr: shared modules have body text and stable destination slugs
+ok 274 - tr: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 2.268375
+  ...
+# Subtest: es: complete templates, static calculator, valid language cluster
+ok 275 - es: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 3.279541
+  ...
+# Subtest: es: calculator handoff retains 100 rows and recalculates every amount
+ok 276 - es: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 47.877125
+  ...
+# Subtest: es: shared modules have body text and stable destination slugs
+ok 277 - es: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 2.312958
+  ...
+# Subtest: ar: complete templates, static calculator, valid language cluster
+ok 278 - ar: complete templates, static calculator, valid language cluster
+  ---
+  duration_ms: 8.52725
+  ...
+# Subtest: ar: calculator handoff retains 100 rows and recalculates every amount
+ok 279 - ar: calculator handoff retains 100 rows and recalculates every amount
+  ---
+  duration_ms: 24.518541
+  ...
+# Subtest: ar: shared modules have body text and stable destination slugs
+ok 280 - ar: shared modules have body text and stable destination slugs
+  ---
+  duration_ms: 2.213875
+  ...
+# Subtest: every localized phone selection survives all language switches without translating buyer data
+ok 281 - every localized phone selection survives all language switches without translating buyer data
+  ---
+  duration_ms: 3.529833
+  ...
+# Subtest: kitchen and phone catalogues retain complete field contracts and reference prices
+ok 282 - kitchen and phone catalogues retain complete field contracts and reference prices
+  ---
+  duration_ms: 31.564083
+  ...
+# Subtest: reviewed purchasing copy preserves margin division, input limits and destination labels
+ok 283 - reviewed purchasing copy preserves margin division, input limits and destination labels
+  ---
+  duration_ms: 4.610792
+  ...
+# Subtest: restaurant kitchen package route is canonical and wired into the SPA and static build
+ok 284 - restaurant kitchen package route is canonical and wired into the SPA and static build
+  ---
+  duration_ms: 8.424708
+  ...
+# Subtest: page contains three scenario plans, scoped pricing and local responsibility boundaries
+ok 285 - page contains three scenario plans, scoped pricing and local responsibility boundaries
+  ---
+  duration_ms: 3.623042
+  ...
+# Subtest: scenario breadth is split into six standalone working briefs
+ok 286 - scenario breadth is split into six standalone working briefs
+  ---
+  duration_ms: 1.459
+  ...
+# Subtest: page presents four clearly labelled evidence layers
+ok 287 - page presents four clearly labelled evidence layers
+  ---
+  duration_ms: 3.44425
+  ...
+# Subtest: each scenario has distinct dimensions, placed equipment and three visible route types
+ok 288 - each scenario has distinct dimensions, placed equipment and three visible route types
+  ---
+  duration_ms: 1.037333
+  ...
+# Subtest: page CSS includes responsive and reduced-motion treatments
+ok 289 - page CSS includes responsive and reduced-motion treatments
+  ---
+  duration_ms: 1.360583
+  ...
+# Subtest: complete plan downloads are gated by a qualified two-step lead form
+ok 290 - complete plan downloads are gated by a qualified two-step lead form
+  ---
+  duration_ms: 1.928417
+  ...
+# Subtest: each scenario has a real eight-page quasi-engineering PDF asset
+ok 291 - each scenario has a real eight-page quasi-engineering PDF asset
+  ---
+  duration_ms: 5.436792
+  ...
+# Subtest: 49 restaurant package pages have complete native schedules, utilities, paths and metadata alternates
+ok 292 - 49 restaurant package pages have complete native schedules, utilities, paths and metadata alternates
+  ---
+  duration_ms: 170.318083
+  ...
+# Subtest: scenario brief preserves chosen equipment, utilities, destination and user requirements
+ok 293 - scenario brief preserves chosen equipment, utilities, destination and user requirements
+  ---
+  duration_ms: 6.498709
+  ...
+# Subtest: failed route offers a visible manual recovery in each supported language
+ok 294 - failed route offers a visible manual recovery in each supported language
+  ---
+  duration_ms: 5.953708
+  ...
+# Subtest: slow route recovery is a status, not a claim that loading failed
+ok 295 - slow route recovery is a status, not a claim that loading failed
+  ---
+  duration_ms: 0.693875
+  ...
+# Subtest: initial pending route retains its loading placeholder without a premature failure
+ok 296 - initial pending route retains its loading placeholder without a premature failure
+  ---
+  duration_ms: 1.410542
+  ...
+# Subtest: boundary renders successful content and switches to recovery for a rejected route
+ok 297 - boundary renders successful content and switches to recovery for a rejected route
+  ---
+  duration_ms: 0.269666
+  ...
+# Subtest: journey payloads contain only fixed actions and never promote a brief to a lead
+ok 298 - journey payloads contain only fixed actions and never promote a brief to a lead
+  ---
+  duration_ms: 1.052334
+  ...
+# Subtest: optional action callbacks are whitelisted, isolated from failures and stopped by abort
+ok 299 - optional action callbacks are whitelisted, isolated from failures and stopped by abort
+  ---
+  duration_ms: 0.276375
+  ...
+# Subtest: mount, draft recalculation and programmatic activation are silent; committed inputs are aggregate only
+ok 300 - mount, draft recalculation and programmatic activation are silent; committed inputs are aggregate only
+  ---
+  duration_ms: 30.317875
+  ...
+# Subtest: comparison, guide and video events follow explicit engagement, not initial disclosure or repeated play
+ok 301 - comparison, guide and video events follow explicit engagement, not initial disclosure or repeated play
+  ---
+  duration_ms: 10.044833
+  ...
+# Subtest: configuration and calculator buttons report actions without counting an already-selected route
+ok 302 - configuration and calculator buttons report actions without counting an already-selected route
+  ---
+  duration_ms: 9.081542
+  ...
+# Subtest: brief actions remain non-lead events and use the combined request without an Istanbul handoff
+ok 303 - brief actions remain non-lead events and use the combined request without an Istanbul handoff
+  ---
+  duration_ms: 7.631417
+  ...
+# Subtest: invalid calculator cannot enter the request; empty request offers editing without a success event
+ok 304 - invalid calculator cannot enter the request; empty request offers editing without a success event
+  ---
+  duration_ms: 2.7245
+  ...
+# Subtest: storage failure prevents explicit calculator import and does not overwrite the saved request
+ok 305 - storage failure prevents explicit calculator import and does not overwrite the saved request
+  ---
+  duration_ms: 2.585375
+  ...
+# Subtest: modified, download and external links preserve browser behavior without journey dispatch
+ok 306 - modified, download and external links preserve browser behavior without journey dispatch
+  ---
+  duration_ms: 8.529625
+  ...
+# Subtest: two-argument callers retain calculation and navigation without an analytics callback
+ok 307 - two-argument callers retain calculation and navigation without an analytics callback
+  ---
+  duration_ms: 5.120167
+  ...
+# Subtest: destroy removes direct and delegated listeners and suppresses pending clipboard completion
+ok 308 - destroy removes direct and delegated listeners and suppresses pending clipboard completion
+  ---
+  duration_ms: 4.064708
+  ...
+# Subtest: fresh calculator starts empty and cannot create an example enquiry
+ok 309 - fresh calculator starts empty and cannot create an example enquiry
+  ---
+  duration_ms: 4.295166
+  ...
+# Subtest: SPA interception preserves modifier keys, new tabs, named targets and downloads
+ok 310 - SPA interception preserves modifier keys, new tabs, named targets and downloads
+  ---
+  duration_ms: 0.387333
+  ...
+# Subtest: SPA metadata preserves the global language and replaces canonical and breadcrumb per route
+ok 311 - SPA metadata preserves the global language and replaces canonical and breadcrumb per route
+  ---
+  duration_ms: 3.8135
+  ...
+# Subtest: all eight exact routes have unique English metadata and canonical URLs
+ok 312 - all eight exact routes have unique English metadata and canonical URLs
+  ---
+  duration_ms: 1.757875
+  ...
+# Subtest: all routes default to noindex, including trailing-slash routes
+ok 313 - all routes default to noindex, including trailing-slash routes
+  ---
+  duration_ms: 0.459208
+  ...
+# Subtest: static breadcrumbs match the only emitted schema, including nested guide hierarchy
+ok 314 - static breadcrumbs match the only emitted schema, including nested guide hierarchy
+  ---
+  duration_ms: 7.266625
+  ...
+# Subtest: every static route names the product and exposes contextual sourcing next steps without JavaScript
+ok 315 - every static route names the product and exposes contextual sourcing next steps without JavaScript
+  ---
+  duration_ms: 2.273166
+  ...
+# Subtest: static HTML replaces inherited homepage body and metadata without changing build assets
+ok 316 - static HTML replaces inherited homepage body and metadata without changing build assets
+  ---
+  duration_ms: 1.93475
+  ...
+# Subtest: static body derives actual product prices, all eleven checks and ten stage descriptions
+ok 317 - static body derives actual product prices, all eleven checks and ten stage descriptions
+  ---
+  duration_ms: 0.904209
+  ...
+# Subtest: every metadata image refers to an existing approved local asset
+ok 318 - every metadata image refers to an existing approved local asset
+  ---
+  duration_ms: 7.800667
+  ...
+# Subtest: sitemap merge is additive, idempotent and preserves every old entry verbatim
+ok 319 - sitemap merge is additive, idempotent and preserves every old entry verbatim
+  ---
+  duration_ms: 0.773917
+  ...
+# Subtest: CLI defaults to isolated noindex output without mutating source sitemap
+ok 320 - CLI defaults to isolated noindex output without mutating source sitemap
+  ---
+  duration_ms: 9.694208
+  ...
+# Subtest: production overlay requires a reviewed build and leaves all its input files untouched
+ok 321 - production overlay requires a reviewed build and leaves all its input files untouched
+  ---
+  duration_ms: 7.745458
+  ...
+# Subtest: global navigation has unique routes and a clear six-item primary hierarchy
+ok 322 - global navigation has unique routes and a clear six-item primary hierarchy
+  ---
+  duration_ms: 0.473541
+  ...
+# Subtest: featured freight countries are real country routes and all category slugs are unique
+ok 323 - featured freight countries are real country routes and all category slugs are unique
+  ---
+  duration_ms: 0.082458
+  ...
+1..323
+# tests 323
+# suites 0
+# pass 323
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 24353.576

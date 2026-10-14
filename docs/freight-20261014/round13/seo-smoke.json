@@ -1,0 +1,146 @@
+[
+  {
+    "route": "/",
+    "canonical": "https://www.ddnzglobal.com/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/zh-cn/",
+    "canonical": "https://www.ddnzglobal.com/zh-cn/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/zh-cn/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/zh-cn/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ru/",
+    "canonical": "https://www.ddnzglobal.com/ru/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ru/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/ru/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ru/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/ru/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/fr/",
+    "canonical": "https://www.ddnzglobal.com/fr/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/fr/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/fr/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/fr/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/fr/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/es/",
+    "canonical": "https://www.ddnzglobal.com/es/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/es/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/es/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/es/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/es/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ar/",
+    "canonical": "https://www.ddnzglobal.com/ar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ar/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/ar/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/ar/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/ar/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/pt/",
+    "canonical": "https://www.ddnzglobal.com/pt/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/pt/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/pt/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/pt/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/pt/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/tr/",
+    "canonical": "https://www.ddnzglobal.com/tr/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/tr/shipping-from-china-to-qatar/",
+    "canonical": "https://www.ddnzglobal.com/tr/shipping-from-china-to-qatar/",
+    "h1": 1,
+    "alternates": 9
+  },
+  {
+    "route": "/tr/shipping-from-china-to-oman/",
+    "canonical": "https://www.ddnzglobal.com/tr/shipping-from-china-to-oman/",
+    "h1": 1,
+    "alternates": 9
+  }
+]

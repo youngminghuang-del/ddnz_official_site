@@ -1,0 +1,15 @@
+{
+  "status": "No verified local binary archive",
+  "downloadAttempt": "Interrupted after prolonged download without a completed local output; no archive claimed",
+  "productionRun": 38456135838,
+  "productionCommit": "b4156a7938672a7ebf3130285cc9d3e135a64880",
+  "pagesArtifactId": 11844250379,
+  "remoteArtifactExpiresAt": "2026-10-14T19:38:38Z",
+  "retainedLocally": [
+    "Git commit b4156a7938672a7ebf3130285cc9d3e135a64880",
+    "production-cms/src/data/notionBlogData.json",
+    "production-cms/src/data/notionRedirects.json",
+    "production-sitemap.xml"
+  ],
+  "fallback": "Rebuild b4156a7 with retained exact production CMS and validate all 733 routes before an authorized rollback. Do not equate the commit-only 36-post snapshot with production 37-post state."
+}

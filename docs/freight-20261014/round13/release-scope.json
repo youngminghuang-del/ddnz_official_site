@@ -1,0 +1,47 @@
+{
+  "primaryContentRoutes": [
+    "/",
+    "/shipping-from-china-to-qatar/",
+    "/shipping-from-china-to-oman/",
+    "/zh-cn/",
+    "/zh-cn/shipping-from-china-to-qatar/",
+    "/zh-cn/shipping-from-china-to-oman/",
+    "/ru/",
+    "/ru/shipping-from-china-to-qatar/",
+    "/ru/shipping-from-china-to-oman/",
+    "/fr/",
+    "/fr/shipping-from-china-to-qatar/",
+    "/fr/shipping-from-china-to-oman/",
+    "/es/",
+    "/es/shipping-from-china-to-qatar/",
+    "/es/shipping-from-china-to-oman/",
+    "/ar/",
+    "/ar/shipping-from-china-to-qatar/",
+    "/ar/shipping-from-china-to-oman/",
+    "/pt/",
+    "/pt/shipping-from-china-to-qatar/",
+    "/pt/shipping-from-china-to-oman/",
+    "/tr/",
+    "/tr/shipping-from-china-to-qatar/",
+    "/tr/shipping-from-china-to-oman/"
+  ],
+  "existingRouteCount": 733,
+  "newRoutes": [],
+  "removedRoutes": [],
+  "sharedScope": [
+    "App public-page WhatsApp mounting",
+    "mobile multilingual SourcingHomepageNav",
+    "shared GetAQuote unknown cargo, translated display and validation",
+    "footer freight-role labels in eight languages",
+    "localized embedded quote CSS"
+  ],
+  "earlyTargetedScope": [
+    "Middle East legacy template fact labels and real RFQ card targets",
+    "Central Asia legacy coordination label",
+    "PT/TR country language transition guard"
+  ],
+  "cms": "37 production articles and redirects byte-identical to latest successful deployment",
+  "dependenciesChanged": false,
+  "workflowChanged": false,
+  "deploymentUnit": "complete audited dist, not only the 24 primary routes"
+}

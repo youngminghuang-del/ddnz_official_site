@@ -1,0 +1,20 @@
+[
+  {
+    "path": "public/media/freight-20261014-round5/caps-product-reference.webp",
+    "sha256": "76fe78bed70558e57dc5113961227cc580ba12a35311e0aadf87c74a33088780",
+    "archiveCommit": "e25a17ba6f7d2614cbd6159d305430a6a5907619",
+    "reason": "Obsolete third-party reference; superseded by user-provided photos; not used in rendered pages"
+  },
+  {
+    "path": "src/features/freight/GulfCargoReferences.tsx",
+    "sha256": "008788689db5c258bf9f55fedcb683e291dd03b6a17e9093b8e1a2542418dc83",
+    "archiveCommit": "e25a17ba6f7d2614cbd6159d305430a6a5907619",
+    "reason": "Obsolete third-party reference; superseded by user-provided photos; not used in rendered pages"
+  },
+  {
+    "path": "src/features/freight/gulfCargoReferences.json",
+    "sha256": "0e8cd61ac76cc926bbb6ca0c5bad024ad4c6740f9d15ac88228b690e213b4295",
+    "archiveCommit": "e25a17ba6f7d2614cbd6159d305430a6a5907619",
+    "reason": "Obsolete third-party reference; superseded by user-provided photos; not used in rendered pages"
+  }
+]

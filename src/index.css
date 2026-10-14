@@ -283,3 +283,5 @@ html {
 body:has([data-cookie-preferences]) .ddnz-whatsapp-float{visibility:hidden;pointer-events:none}
 @media(max-width:767px){body:has(input:focus,textarea:focus,select:focus) .ddnz-whatsapp-float{visibility:hidden;pointer-events:none}}
 @media(prefers-reduced-motion:reduce){.ddnz-whatsapp-float button{transition:none}}
+
+.ddnz-whatsapp-float[data-gallery-blocked]{visibility:hidden;pointer-events:none}

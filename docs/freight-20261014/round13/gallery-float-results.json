@@ -1,0 +1,86 @@
+[
+  {
+    "country": "qatar",
+    "width": 390,
+    "gallery": 0,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 390,
+    "gallery": 1,
+    "overlap": false,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 390,
+    "gallery": 2,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 390,
+    "floatRestored": true
+  },
+  {
+    "country": "oman",
+    "width": 390,
+    "gallery": 0,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "oman",
+    "width": 390,
+    "floatRestored": true
+  },
+  {
+    "country": "qatar",
+    "width": 745,
+    "gallery": 0,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 745,
+    "gallery": 1,
+    "overlap": false,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 745,
+    "gallery": 2,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "qatar",
+    "width": 745,
+    "floatRestored": true
+  },
+  {
+    "country": "oman",
+    "width": 745,
+    "gallery": 0,
+    "overlap": true,
+    "buttonHit": true,
+    "selected": true
+  },
+  {
+    "country": "oman",
+    "width": 745,
+    "floatRestored": true
+  }
+]

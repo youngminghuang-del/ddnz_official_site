@@ -1,0 +1,52 @@
+{
+  "verdict": "Local pre-release acceptance passed; eligible for publication approval, not deployed",
+  "candidateStage": "/var/folders/qf/5ks5mmp12118_4y0794wl6dc0000gn/T/ddnz-preview-PtenH6/dist",
+  "candidateEntry": "index-BauLSYrp.js",
+  "remoteMain": "b4156a7938672a7ebf3130285cc9d3e135a64880",
+  "productionRun": 38456135838,
+  "cmsByteEqual": true,
+  "sitemapRoutes": 733,
+  "missingProductionRoutes": 0,
+  "extraRoutes": 0,
+  "releaseTestsBeforeFinalVisibilityFix": {
+    "passed": 323,
+    "failed": 0,
+    "node": "22.14.0"
+  },
+  "finalChecks": {
+    "lint": "passed",
+    "build": "passed",
+    "html": 754,
+    "seoTargets": 24,
+    "unchangedMainBodies": 734,
+    "galleryLastItemChecks": 8,
+    "floatRestoreChecks": 4,
+    "whatsappEventsPerClick": 1,
+    "whatsappOpensInterceptedPerClick": 1
+  },
+  "priorCandidateSmoke": {
+    "languageSwitches": 24,
+    "rfqPaths": 3,
+    "pageErrors": 0
+  },
+  "closedFindings": [
+    "Obsolete third-party public asset removed",
+    "Mobile WhatsApp/gallery control collision fixed"
+  ],
+  "publicationConditions": [
+    "Explicit publication authorization",
+    "Latest main/CMS/production route recheck",
+    "Remote Node24 CI and STRICT_NOTION_SYNC build pass",
+    "Confirm usable rollback artifact or verified rebuild package before deployment"
+  ],
+  "notPerformed": [
+    "push",
+    "PR",
+    "merge",
+    "deployment",
+    "real inquiry submission",
+    "WhatsApp message",
+    "production analytics validation"
+  ],
+  "offlineBinaryRollbackArchiveVerified": false
+}

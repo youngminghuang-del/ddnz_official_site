@@ -1,0 +1,186 @@
+{
+  "results": [
+    {
+      "country": "home",
+      "rfqHandoff": true,
+      "whatsappIntercepted": true
+    },
+    {
+      "country": "home",
+      "locale": "zh",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "ru",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "fr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "es",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "ar",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "pt",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "tr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "home",
+      "locale": "en",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "rfqUnknown": true
+    },
+    {
+      "country": "qatar",
+      "locale": "zh",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "ru",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "fr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "es",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "ar",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "pt",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "tr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "en",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "rfqUnknown": true
+    },
+    {
+      "country": "oman",
+      "locale": "zh",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "ru",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "fr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "es",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "ar",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "pt",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "tr",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "en",
+      "switch": true,
+      "noOverflow": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

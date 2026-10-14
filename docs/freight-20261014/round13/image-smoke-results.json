@@ -1,0 +1,16 @@
+[
+  {
+    "country": "qatar",
+    "src": "http://127.0.0.1:4187/media/freight-20261014-round7/5_hat_factory.jpg",
+    "complete": true,
+    "width": 1290,
+    "height": 1515
+  },
+  {
+    "country": "oman",
+    "src": "http://127.0.0.1:4187/media/freight-20261014-round6/1_billiard_factory.jpg",
+    "complete": true,
+    "width": 1290,
+    "height": 1602
+  }
+]
