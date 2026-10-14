@@ -1,0 +1,20 @@
+{
+  "productionCommit": "e4522899313cf17b79d5ce507a76597ab741d9c9",
+  "productionEntry": "index-DiCXCsm7.js",
+  "realSubmissionSent": false,
+  "backendReceiptVerified": false,
+  "localFixes": [
+    "Reset Formspree state for another freight inquiry",
+    "Remove unsupported quote response deadlines"
+  ],
+  "liveInterceptedPosts": 11,
+  "localInterceptedPosts": 12,
+  "otherFormInterceptedPosts": 4,
+  "targetedTests": 31,
+  "build": {
+    "html": 754,
+    "sitemap": 733,
+    "failures": 0
+  },
+  "published": false
+}

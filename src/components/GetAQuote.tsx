@@ -83,7 +83,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     cargoDesc: '货物详情描述',
     submitting: '正在提交询盘...',
     successHeading: '提交成功！',
-    successText: '我们已收到您的估价申请，将通过您提交的联系方式确认路线、货物与服务要求。',
+    successText: '我们已收到您的需求，将通过您提交的联系方式确认路线、货物与服务要求。',
     sendAnother: '发起新的询价'
   },
   en: {
@@ -195,7 +195,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     cargoDesc: 'Детали и требования к грузу',
     submitting: 'Отправка запроса...',
     successHeading: 'Запрос успешно отправлен!',
-    successText: 'Ваш запрос получен. Старший специалист по логистике ответит на ваш рабочий e-mail в течение 24 часов.',
+    successText: 'Ваш запрос получен. Мы свяжемся с вами по указанным контактным данным, чтобы уточнить маршрут, груз и необходимые услуги.',
     sendAnother: 'Отправить еще один запрос'
   },
   fr: {
@@ -251,7 +251,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     cargoDesc: 'Détails du cargo et exigences',
     submitting: 'Envoi en cours...',
     successHeading: 'Soumis avec succès !',
-    successText: 'Votre demande a bien été reçue. Un spécialiste logistique principal vous répondra par e-mail sous 24 heures.',
+    successText: 'Votre demande a bien été reçue. Notre équipe utilisera les coordonnées fournies pour confirmer le trajet, la cargaison et les services nécessaires.',
     sendAnother: 'Envoyer une autre demande'
   },
   es: {
@@ -270,7 +270,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     phonePlaceholder: 'Teléfono / WhatsApp (o correo)', namePlaceholder: 'Nombre / empresa (obligatorio)', emailPlaceholder: 'Correo corporativo (o teléfono)', notesPlaceholder: 'Opcional: producto, baterías, embalaje u otros requisitos.',
     contactHint: 'Basta con indicar correo o teléfono / WhatsApp', contactRequired: 'Indique un correo o teléfono / WhatsApp', optionalDetails: 'Añadir detalles de la carga (opcional)',
     seaDesc: 'Económico para carga LCL y FCL', airDesc: 'Máxima velocidad para carga urgente y de alto valor', landDesc: 'Transporte terrestre directo para Asia Central y Rusia', wareDesc: 'Embalaje de madera, almacenamiento y cross-docking',
-    mode: 'Modo de transporte', industry: 'Industria / categoría de producto', cargoDesc: 'Detalles y requisitos de la carga', submitting: 'Enviando solicitud...', successHeading: '¡Solicitud enviada!', successText: 'Hemos recibido su solicitud. Un especialista responderá a su correo corporativo en 24 horas.', sendAnother: 'Enviar otra solicitud'
+    mode: 'Modo de transporte', industry: 'Industria / categoría de producto', cargoDesc: 'Detalles y requisitos de la carga', submitting: 'Enviando solicitud...', successHeading: '¡Solicitud enviada!', successText: 'Hemos recibido su solicitud. Nuestro equipo utilizará los datos de contacto facilitados para confirmar la ruta, la carga y los servicios necesarios.', sendAnother: 'Enviar otra solicitud'
   },
   ar: {
     funnelLabel: 'مسار الاستفسار',
@@ -288,7 +288,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
     phonePlaceholder: 'الهاتف / واتساب (أو البريد)', namePlaceholder: 'الاسم / الشركة (مطلوب)', emailPlaceholder: 'البريد الإلكتروني للشركة (أو الهاتف)', notesPlaceholder: 'اختياري: نوع المنتج أو البطاريات أو التغليف أو المتطلبات الخاصة.',
     contactHint: 'يكفي إدخال البريد أو الهاتف / واتساب', contactRequired: 'يرجى إدخال البريد أو الهاتف / واتساب', optionalDetails: 'إضافة تفاصيل الشحنة (اختياري)',
     seaDesc: 'اقتصادي للشحنات المجمعة والحاويات الكاملة', airDesc: 'أسرع خيار للبضائع العاجلة وعالية القيمة', landDesc: 'نقل بري مباشر لآسيا الوسطى وروسيا', wareDesc: 'تغليف خشبي وتخزين وتجميع وشحن متقاطع',
-    mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيرد عليكم أحد خبراء اللوجستيات عبر البريد خلال 24 ساعة.', sendAnother: 'إرسال طلب آخر'
+    mode: 'وسيلة النقل', industry: 'القطاع / فئة المنتج', cargoDesc: 'تفاصيل ومتطلبات الشحنة', submitting: 'جارٍ إرسال الطلب...', successHeading: 'تم إرسال الطلب بنجاح!', successText: 'تم استلام طلبكم. سيستخدم فريقنا بيانات الاتصال المقدمة لتأكيد المسار والشحنة والخدمات المطلوبة.', sendAnother: 'إرسال طلب آخر'
   },
   pt: {
     funnelLabel: 'Fluxo da consulta',
@@ -354,7 +354,7 @@ interface GetAQuoteProps {
 }
 
 export default function GetAQuote({ presetDestination, presetService, hideLandRecommendation = false }: GetAQuoteProps = {}) {
-  const [state, handleSubmit] = useForm("mdabvqbd");
+  const [state, handleSubmit, resetFormspree] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const quoteSectionRef = useRef<HTMLElement>(null);
   useEffect(() => {
@@ -644,6 +644,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   };
 
   const resetFunnel = () => {
+    resetFormspree();
     setStep(1);
     setDestination('');
     setOrigin('');
