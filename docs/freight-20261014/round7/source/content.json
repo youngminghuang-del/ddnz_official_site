@@ -1,0 +1,331 @@
+{
+  "country": "qatar",
+  "source": "User-supplied originals; preserve Chinese labels and original image pixels.",
+  "groups": [
+    {
+      "id": "production",
+      "imageIds": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "defaultImageId": 5,
+      "heading": {
+        "en": "Production & sorting details",
+        "ar": "تفاصيل الإنتاج والفرز"
+      },
+      "intro": {
+        "en": "Use these photos to discuss embroidery, finishing and grouping with your supplier before packing.",
+        "ar": "استخدم هذه الصور لمناقشة التطريز والتشطيب وتجميع القبعات مع المورد قبل التعبئة."
+      }
+    },
+    {
+      "id": "style",
+      "imageIds": [
+        11,
+        12
+      ],
+      "defaultImageId": 11,
+      "heading": {
+        "en": "Confirm the cap style",
+        "ar": "تأكيد طراز القبعة"
+      },
+      "intro": {
+        "en": "Match the crown shape and brim details to your chosen reference before requesting a quote.",
+        "ar": "طابق شكل القبعة وتفاصيل الحافة مع النموذج المرجعي المختار قبل طلب عرض السعر."
+      }
+    },
+    {
+      "id": "packing",
+      "imageIds": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "defaultImageId": 6,
+      "heading": {
+        "en": "Packing examples",
+        "ar": "أمثلة على التعبئة"
+      },
+      "intro": {
+        "en": "The figures shown are examples, not standard packing specifications. A freight quote needs the final carton dimensions and gross weight.",
+        "ar": "الأرقام المعروضة أمثلة وليست مواصفات تعبئة موحدة. يتطلب عرض سعر الشحن أبعاد الصناديق النهائية والوزن الإجمالي."
+      }
+    }
+  ],
+  "images": [
+    {
+      "id": 1,
+      "sourceFile": "1_hat_factory.jpg",
+      "group": "production",
+      "title": {
+        "en": "Embroidery machine",
+        "ar": "ماكينة التطريز"
+      },
+      "alt": {
+        "en": "Multi-head embroidery machine with brown fabric pieces and a worker alongside.",
+        "ar": "ماكينة تطريز متعددة الرؤوس مع قطع قماش بنية وعامل بجانبها."
+      },
+      "caption": {
+        "en": "Confirm the artwork, placement and thread colours with your supplier.",
+        "ar": "أكد التصميم وموضع التطريز وألوان الخيوط مع المورد."
+      }
+    },
+    {
+      "id": 2,
+      "sourceFile": "2_hat_factory.jpg",
+      "group": "production",
+      "title": {
+        "en": "Trimming & finishing",
+        "ar": "التشذيب والتشطيب"
+      },
+      "alt": {
+        "en": "Workers handling stacks of coloured caps at workshop tables, with scissors visible in the foreground.",
+        "ar": "عمال يتعاملون مع مجموعات من القبعات الملونة على طاولات الورشة، مع مقص ظاهر في المقدمة."
+      },
+      "caption": {
+        "en": "Agree on finishing details and quantities by colour before grouping the caps.",
+        "ar": "اتفق على تفاصيل التشطيب والكميات حسب اللون قبل تجميع القبعات."
+      }
+    },
+    {
+      "id": 3,
+      "sourceFile": "3_hat_factory.jpg",
+      "group": "production",
+      "title": {
+        "en": "Cap shaping",
+        "ar": "تشكيل القبعات"
+      },
+      "alt": {
+        "en": "Worker at a shaping press with yellow caps on moulds and more yellow caps nearby.",
+        "ar": "عامل عند مكبس تشكيل مع قبعات صفراء على قوالب وقبعات صفراء أخرى بجانبها."
+      },
+      "caption": {
+        "en": "Confirm the required crown shape before packing.",
+        "ar": "أكد الشكل المطلوب للجزء العلوي من القبعة قبل التعبئة."
+      }
+    },
+    {
+      "id": 4,
+      "sourceFile": "4_hat_factory.jpg",
+      "group": "production",
+      "title": {
+        "en": "Inner support",
+        "ar": "الدعامة الداخلية"
+      },
+      "alt": {
+        "en": "Worker placing a white shaped support inside a yellow cap beside stacks of yellow caps.",
+        "ar": "عامل يضع دعامة بيضاء مشكلة داخل قبعة صفراء بجانب مجموعات من القبعات الصفراء."
+      },
+      "caption": {
+        "en": "Agree on the inner support needed to help retain the cap shape during packing.",
+        "ar": "اتفق على الدعامة الداخلية اللازمة للمساعدة في الحفاظ على شكل القبعة أثناء التعبئة."
+      }
+    },
+    {
+      "id": 5,
+      "sourceFile": "5_hat_factory.jpg",
+      "group": "production",
+      "title": {
+        "en": "Grouped & bagged caps",
+        "ar": "قبعات مجمعة داخل أكياس"
+      },
+      "alt": {
+        "en": "Groups of caps in clear bags across a sorting area, with cartons and workers in the background.",
+        "ar": "مجموعات من القبعات داخل أكياس شفافة في منطقة فرز، مع صناديق وعمال في الخلفية."
+      },
+      "caption": {
+        "en": "Match the style and colour groups to the order and packing list.",
+        "ar": "طابق المجموعات حسب الطراز واللون مع الطلب وقائمة التعبئة."
+      }
+    },
+    {
+      "id": 6,
+      "sourceFile": "6_hat_factory.jpg",
+      "group": "packing",
+      "title": {
+        "en": "1-cap packing example",
+        "ar": "مثال تعبئة: 1 قبعة"
+      },
+      "alt": {
+        "en": "Chinese packing diagram for 1 cap, showing bagged caps and cartons; outer carton 23 × 13 × 16 cm and product weight 0.2 kg.",
+        "ar": "مخطط تعبئة بتسميات صينية لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم."
+      },
+      "caption": {
+        "en": "Shown: 1 cap; outer carton 23 × 13 × 16 cm; product weight 0.2 kg.",
+        "ar": "الموضح: 1 قبعة؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم؛ وزن المنتجات 0.2 كجم."
+      },
+      "packingData": {
+        "quantity": 1,
+        "outerCartonCm": [
+          23,
+          13,
+          16
+        ],
+        "productWeightKg": "0.2",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      }
+    },
+    {
+      "id": 7,
+      "sourceFile": "7_hat_factory.jpg",
+      "group": "packing",
+      "title": {
+        "en": "25-cap packing example",
+        "ar": "مثال تعبئة: 25 قبعة"
+      },
+      "alt": {
+        "en": "Chinese packing diagram for 25 caps, showing bagged caps and cartons; outer carton 61 × 23 × 18 cm and product weight 3.2 kg.",
+        "ar": "مخطط تعبئة بتسميات صينية لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم."
+      },
+      "caption": {
+        "en": "Shown: 25 caps; outer carton 61 × 23 × 18 cm; product weight 3.2 kg.",
+        "ar": "الموضح: 25 قبعة؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم؛ وزن المنتجات 3.2 كجم."
+      },
+      "packingData": {
+        "quantity": 25,
+        "outerCartonCm": [
+          61,
+          23,
+          18
+        ],
+        "productWeightKg": "3.2",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      }
+    },
+    {
+      "id": 8,
+      "sourceFile": "8_hat_factory.jpg",
+      "group": "packing",
+      "title": {
+        "en": "100-cap packing example",
+        "ar": "مثال تعبئة: 100 قبعة"
+      },
+      "alt": {
+        "en": "Chinese packing diagram for 100 caps, showing bagged caps and cartons; outer carton 64 × 45 × 40 cm and product weight 13.1 kg.",
+        "ar": "مخطط تعبئة بتسميات صينية لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم."
+      },
+      "caption": {
+        "en": "Shown: 100 caps; outer carton 64 × 45 × 40 cm; product weight 13.1 kg.",
+        "ar": "الموضح: 100 قبعة؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم؛ وزن المنتجات 13.1 كجم."
+      },
+      "packingData": {
+        "quantity": 100,
+        "outerCartonCm": [
+          64,
+          45,
+          40
+        ],
+        "productWeightKg": "13.1",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      }
+    },
+    {
+      "id": 9,
+      "sourceFile": "9_hat_factory.jpg",
+      "group": "packing",
+      "title": {
+        "en": "150-cap packing example",
+        "ar": "مثال تعبئة: 150 قبعة"
+      },
+      "alt": {
+        "en": "Chinese packing diagram for 150 caps, showing bagged caps and cartons; outer carton 60 × 45 × 53 cm and product weight 19.4 kg.",
+        "ar": "مخطط تعبئة بتسميات صينية لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم."
+      },
+      "caption": {
+        "en": "Shown: 150 caps; outer carton 60 × 45 × 53 cm; product weight 19.4 kg.",
+        "ar": "الموضح: 150 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم؛ وزن المنتجات 19.4 كجم."
+      },
+      "packingData": {
+        "quantity": 150,
+        "outerCartonCm": [
+          60,
+          45,
+          53
+        ],
+        "productWeightKg": "19.4",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      }
+    },
+    {
+      "id": 10,
+      "sourceFile": "10_hat_factory.jpg",
+      "group": "packing",
+      "title": {
+        "en": "200-cap packing example",
+        "ar": "مثال تعبئة: 200 قبعة"
+      },
+      "alt": {
+        "en": "Chinese packing diagram for 200 caps, showing bagged caps and cartons; outer carton 60 × 45 × 80 cm and product weight 24.8 kg.",
+        "ar": "مخطط تعبئة بتسميات صينية لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم."
+      },
+      "caption": {
+        "en": "Shown: 200 caps; outer carton 60 × 45 × 80 cm; product weight 24.8 kg.",
+        "ar": "الموضح: 200 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم؛ وزن المنتجات 24.8 كجم."
+      },
+      "packingData": {
+        "quantity": 200,
+        "outerCartonCm": [
+          60,
+          45,
+          80
+        ],
+        "productWeightKg": "24.8",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      }
+    },
+    {
+      "id": 11,
+      "sourceFile": "11_hat_factory.jpg",
+      "group": "style",
+      "title": {
+        "en": "Cap & hat shapes",
+        "ar": "أشكال القبعات"
+      },
+      "alt": {
+        "en": "Chinese-labelled illustration comparing hat shapes, including baseball caps, a bucket hat and a visor.",
+        "ar": "رسم توضيحي بتسميات صينية يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي."
+      },
+      "caption": {
+        "en": "Choose a reference shape and confirm the crown and panel details with your supplier.",
+        "ar": "اختر شكلاً مرجعياً وأكد تفاصيل الجزء العلوي والألواح مع المورد."
+      }
+    },
+    {
+      "id": 12,
+      "sourceFile": "12_hat_factory.jpg",
+      "group": "style",
+      "title": {
+        "en": "Brim details",
+        "ar": "تفاصيل حافة القبعة"
+      },
+      "alt": {
+        "en": "Chinese-labelled grid illustrating short, long, flat and decorated cap brims.",
+        "ar": "شبكة صور بتسميات صينية توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة."
+      },
+      "caption": {
+        "en": "Confirm brim length, profile and edge details against the chosen reference.",
+        "ar": "أكد طول الحافة وشكلها وتفاصيل أطرافها وفق النموذج المرجعي المختار."
+      }
+    }
+  ]
+}

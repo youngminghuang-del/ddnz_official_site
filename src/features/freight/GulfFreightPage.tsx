@@ -7,8 +7,7 @@ import SchemaMarkup from '../../components/SchemaMarkup';
 import GetAQuote from '../../components/GetAQuote';
 import WhatsAppFloat from '../../components/WhatsAppFloat';
 import OmanCargoGallery from './OmanCargoGallery';
-import GulfCargoReferences from './GulfCargoReferences';
-import cargoReferences from './gulfCargoReferences.json';
+import QatarCargoGallery from './QatarCargoGallery';
 import GulfDeliveryChecklist from './GulfDeliveryChecklist';
 import GulfCustomsResources from './GulfCustomsResources';
 import GulfChapters from './GulfChapters';
@@ -86,9 +85,10 @@ export default function GulfFreightPage() {
         </header>
         <GulfChapters country={country} locale={locale} />
         {country === 'qatar' ? <>
-          {section(0, <GulfCargoReferences images={cargoReferences.qatar} country={country} locale={locale} />, 'gulf-cargo-intro')}
+          {section(0, <QatarCargoGallery key={`production-${locale}`} group="production" locale={locale} />, 'gulf-cargo-intro')}
+          <section className="gulf-section qatar-style-section"><QatarCargoGallery key={`style-${locale}`} group="style" locale={locale} /></section>
           {section(1, <Media country={country} locale={locale} />, 'gulf-media-section')}
-          {section(2, <aside className="gulf-distinction"><p>{ar ? 'التجميع' : 'Consolidation'}</p><span>{ar ? 'تنظيم طرود الموردين' : 'Organise supplier packages'}</span><hr /><p dir="ltr">LCL</p><span>{ar ? 'مشاركة مساحة الحاوية' : 'Share container space'}</span></aside>)}
+          {section(2, <div className="qatar-packing-section"><QatarCargoGallery key={`packing-${locale}`} group="packing" locale={locale} /><aside className="gulf-distinction"><p>{ar ? 'التجميع' : 'Consolidation'}</p><span>{ar ? 'تنظيم طرود الموردين' : 'Organise supplier packages'}</span><hr /><p dir="ltr">LCL</p><span>{ar ? 'مشاركة مساحة الحاوية' : 'Share container space'}</span></aside></div>)}
           <GulfCargoJourney data={journeys[country][locale]} locale={locale} country={country} />
           {section(3, <GulfDestinationMap map={map} locale={locale} />, 'gulf-destination gulf-map-section')}
           {section(4, undefined, 'gulf-scope')}

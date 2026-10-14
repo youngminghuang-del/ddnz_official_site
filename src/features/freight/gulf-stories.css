@@ -274,3 +274,40 @@
 .oman-gallery-thumbnails button[aria-pressed=true] { border-color:#763c9c; box-shadow:0 0 0 2px #763c9c30; }
 .oman-gallery-thumbnails button:focus-visible { outline:3px solid #763c9c; outline-offset:3px; }
 @media(max-width:640px) { .oman-gallery-frame { height:410px; } .oman-gallery-thumbnails { gap:6px; } .oman-gallery-thumbnails button { height:66px; } .oman-cargo-gallery figcaption { min-height:96px; padding:14px; } }
+
+/* Qatar user originals grouped by the buyer's preparation step. */
+.qatar-cargo-gallery { width:100%; min-width:0; }
+.qatar-gallery-intro h3 { font-size:1.12rem; font-weight:700; color:#632b89; line-height:1.4; margin:0 0 8px; }
+.qatar-gallery-intro p { font-size:.9rem; line-height:1.6; margin:0 0 16px; }
+.qatar-cargo-gallery figure { margin:0; border:1px solid #dfd7e5; border-radius:12px; overflow:hidden; background:#fff; }
+.qatar-gallery-title { display:flex; gap:12px; align-items:baseline; padding:12px 16px; color:#402352; font-size:.88rem; line-height:1.5; }
+.qatar-gallery-title>span { font-size:.75rem; white-space:nowrap; }
+.qatar-gallery-frame { height:310px; background:#f2eee8; }
+.qatar-gallery-frame>img { width:100%; height:100%; object-fit:contain; }
+.qatar-cargo-gallery figcaption { padding:14px 16px; min-height:80px; }
+.qatar-cargo-gallery figcaption p { margin:0; font-size:.9rem; line-height:1.6; }
+.qatar-gallery-thumbnails { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:8px; margin-top:10px; }
+.qatar-gallery-thumbnails button { position:relative; min-width:0; height:66px; padding:3px; border:2px solid #dcd3e2; border-radius:8px; background:#eeeae5; cursor:pointer; }
+.qatar-gallery-thumbnails img { width:100%; height:100%; object-fit:contain; }
+.qatar-gallery-thumbnails button span { position:absolute; bottom:3px; inset-inline-end:3px; background:#fff; border-radius:3px; color:#4c2e60; padding:0 4px; font-size:11px; }
+.qatar-gallery-thumbnails button:hover { border-color:#a37abf; }
+.qatar-gallery-thumbnails button[aria-pressed=true] { border-color:#763c9c; box-shadow:0 0 0 2px #763c9c30; }
+.qatar-gallery-thumbnails button:focus-visible { outline:3px solid #763c9c; outline-offset:3px; }
+.qatar-gallery-style { display:grid; grid-template-columns:1fr 1.3fr; gap:40px; align-items:center; }
+.qatar-gallery-style .qatar-gallery-thumbnails { grid-template-columns:repeat(2,80px); }
+.qatar-gallery-style .qatar-gallery-frame { height:280px; }
+.qatar-style-section { padding-block:30px; }
+.qatar-packing-section { min-width:0; }
+.qatar-packing-section .gulf-distinction { margin-top:22px; padding:20px; }
+.qatar-packing-data { margin:0; font-size:.88rem; line-height:1.5; }
+.qatar-packing-data>div { display:flex; justify-content:space-between; gap:16px; padding:5px 0; }
+.qatar-packing-data dd { margin:0; white-space:nowrap; font-weight:650; }
+@media(max-width:640px) {
+ .qatar-gallery-style { display:block; }
+ .qatar-gallery-frame { height:270px; }
+ .qatar-gallery-style .qatar-gallery-frame { height:250px; }
+ .qatar-gallery-thumbnails { gap:6px; }
+ .qatar-gallery-thumbnails button { height:60px; }
+ .qatar-packing-data>div { gap:8px; }
+ .qatar-packing-data { font-size:.83rem; }
+}
