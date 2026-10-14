@@ -1,0 +1,112 @@
+{
+  "results": [
+    {
+      "kind": "trade",
+      "locale": "en",
+      "goal": "Product Sourcing",
+      "payload": {
+        "Inquiry_Type": "Product Sourcing Brief",
+        "Lead_Goal": "Product Sourcing",
+        "Product_Category": "Commercial Furniture",
+        "Product_Subcategory": "",
+        "Destination": "Oman",
+        "Product_or_Order_Details": "Six tables, separate packing count to confirm",
+        "Requested_Services": "Supplier shortlist",
+        "Order_Readiness": "Need quantity advice",
+        "Target_Timing": "Planning / comparing",
+        "Lead_Source": "round15_audit",
+        "UTM_Source": "qa_source",
+        "UTM_Medium": "test",
+        "UTM_Campaign": "round15",
+        "name": "DDNZ isolated QA",
+        "email": "qa@example.invalid",
+        "phone": "",
+        "message": ""
+      }
+    },
+    {
+      "kind": "trade",
+      "locale": "ar",
+      "goal": "Supplier Inspection & Consolidation",
+      "payload": {
+        "Inquiry_Type": "Supplier Inspection & Consolidation Brief",
+        "Lead_Goal": "Supplier Inspection & Consolidation",
+        "Product_Category": "Commercial Furniture",
+        "Product_Subcategory": "",
+        "Destination": "Oman",
+        "Product_or_Order_Details": "Six tables, separate packing count to confirm",
+        "Requested_Services": "متابعة المورد",
+        "Order_Readiness": "جاهز للاستلام",
+        "Target_Timing": "تخطيط / مقارنة",
+        "Lead_Source": "round15_audit",
+        "UTM_Source": "qa_source",
+        "UTM_Medium": "test",
+        "UTM_Campaign": "round15",
+        "name": "DDNZ isolated QA",
+        "email": "qa@example.invalid",
+        "phone": "",
+        "message": ""
+      }
+    },
+    {
+      "kind": "modern-service-quote-handoff",
+      "service": "air-freight",
+      "payload": {
+        "Inquiry_Type": "Interactive Funnel (Lead Rate Optimizer)",
+        "Selected_Service": "Sea",
+        "Origin": "Guangzhou",
+        "Destination": "Oman",
+        "Estimated_Weight_KG": "Unknown — awaiting cargo details",
+        "Estimated_Volume_CBM": "Unknown — awaiting cargo details",
+        "Weight_Status": "unknown",
+        "Volume_Status": "unknown",
+        "Lead_Goal": "Freight Export",
+        "Product_Category": "Other",
+        "Product_Subcategory": "",
+        "Lead_Source": "air_freight",
+        "Source_Article_Slug": "qa-article",
+        "UTM_Source": "qa_source",
+        "UTM_Medium": "test",
+        "UTM_Campaign": "round15",
+        "UTM_Content": "card",
+        "name": "DDNZ isolated QA",
+        "email": "qa@example.invalid",
+        "phone": "",
+        "industry": "Other",
+        "message": ""
+      }
+    },
+    {
+      "kind": "modern-service-quote-handoff",
+      "service": "warehouse-services",
+      "payload": {
+        "Inquiry_Type": "Interactive Funnel (Lead Rate Optimizer)",
+        "Selected_Service": "Sea",
+        "Origin": "Guangzhou",
+        "Destination": "Oman",
+        "Estimated_Weight_KG": "Unknown — awaiting cargo details",
+        "Estimated_Volume_CBM": "Unknown — awaiting cargo details",
+        "Weight_Status": "unknown",
+        "Volume_Status": "unknown",
+        "Lead_Goal": "Freight Export",
+        "Product_Category": "Other",
+        "Product_Subcategory": "",
+        "Lead_Source": "warehouse_services",
+        "Source_Article_Slug": "qa-article",
+        "UTM_Source": "qa_source",
+        "UTM_Medium": "test",
+        "UTM_Campaign": "round15",
+        "UTM_Content": "card",
+        "name": "DDNZ isolated QA",
+        "email": "qa@example.invalid",
+        "phone": "",
+        "industry": "Other",
+        "message": ""
+      }
+    }
+  ],
+  "errors": [],
+  "interceptedRequests": 4,
+  "unexpectedPostsBlocked": 0,
+  "realFormspreeRequests": 0
+}

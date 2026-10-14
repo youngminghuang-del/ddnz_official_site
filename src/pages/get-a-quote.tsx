@@ -37,21 +37,16 @@ export default function GetAQuotePage() {
     ? 'Navlun teklifi ve rota planı alın | DDNZ Global'
     : 'Get a Freight Quote & Route Plan | DDNZ Global';
 
-  const freightSeoDesc = language === 'zh'
-    ? '立即提交您的货物尺寸和目的地，华正邦泰资深供应链专家将在 24 小时内为您精算多套最优国际货运与双清包税报价方案。'
-    : language === 'ru'
-    ? 'Заполните форму, и наши специалисты подготовят расчет стоимости доставки груза из Китая в течение 24 часов.'
-    : language === 'fr'
-    ? 'Saisissez les détails de votre cargaison pour recevoir une proposition tarifaire optimisée sous 24 heures.'
-    : language === 'es'
-    ? 'Indique los detalles de su carga para recibir una cotización de flete y una propuesta de ruta personalizada en 24 horas.'
-    : language === 'ar'
-    ? 'أدخل تفاصيل شحنتكم للحصول على عرض سعر وخطة مسار مخصصة خلال 24 ساعة.'
-    : language === 'pt'
-    ? 'Informe os detalhes da carga para receber uma cotação e um plano de rota personalizado em até 24 horas.'
-    : language === 'tr'
-    ? '24 saat içinde kişiselleştirilmiş navlun teklifi ve rota planı almak için yük bilgilerinizi girin.'
-    : 'Get an instant, customized shipping quote and route analysis. Our senior logistics specialists will build your custom logistics plan within 24h.';
+  const freightSeoDesc = {
+    en: 'Share your cargo details and destination for a freight estimate and route review. Our team will confirm the required information and service scope with you.',
+    zh: '提交货物情况与目的地，申请国际货运估价与路线评估。团队将与您确认所需资料及服务范围。',
+    ru: 'Укажите данные груза и пункт назначения для оценки стоимости перевозки и маршрута. Команда уточнит необходимые сведения и объем услуг.',
+    fr: 'Indiquez votre cargaison et sa destination pour une estimation du transport et une étude du trajet. Notre équipe confirmera les informations et services nécessaires.',
+    es: 'Indique su carga y destino para solicitar una estimación de flete y una revisión de ruta. Nuestro equipo confirmará la información y los servicios necesarios.',
+    ar: 'أرسل تفاصيل الشحنة والوجهة لطلب تقدير تكلفة الشحن ومراجعة المسار. سيؤكد فريقنا المعلومات المطلوبة ونطاق الخدمات معكم.',
+    pt: 'Informe a carga e o destino para solicitar uma estimativa de frete e uma análise da rota. Nossa equipe confirmará os dados necessários e o escopo do serviço.',
+    tr: 'Navlun tahmini ve rota değerlendirmesi için yük ve varış bilgilerini paylaşın. Ekibimiz gerekli bilgileri ve hizmet kapsamını sizinle doğrulayacaktır.',
+  }[language];
 
   const tradeSeo = {
     en: { title: leadGoal === 'Product Sourcing' ? 'China Product Sourcing Brief | DDNZ Global' : 'China Inspection & Consolidation Brief | DDNZ Global', description: 'Send a focused China sourcing, inspection or consolidation brief to DDNZ Global. A Guangzhou-based team will review your product, supplier and export scope.' },
