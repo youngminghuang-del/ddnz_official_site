@@ -1,0 +1,16 @@
+[
+  {
+    "reducedMotion": "reduce",
+    "hoverChanges": true,
+    "transition": "1e-05s",
+    "scroll": "auto",
+    "anchorCurrent": true
+  },
+  {
+    "reducedMotion": "no-preference",
+    "hoverChanges": true,
+    "transition": "0.18s, 0.18s, 0.18s",
+    "scroll": "smooth",
+    "anchorCurrent": true
+  }
+]
