@@ -1,0 +1,7 @@
+import { chromium } from '/Users/huangyangming/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.mjs';
+import fs from 'node:fs';import assert from 'node:assert/strict';
+const base='http://127.0.0.1:4189',out='docs/freight-20261014/round5';const b=await chromium.launch({headless:true,executablePath:'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'}),ctx=await b.newContext({reducedMotion:'reduce'}),results=[];
+await ctx.route('**/*',r=>new URL(r.request().url()).origin===base?r.continue():r.abort());await ctx.addInitScript(()=>localStorage.setItem('cookieConsent','declined'));const p=await ctx.newPage();
+try{for(const locale of ['en','ar'])for(const width of [390,1536]){
+ await p.setViewportSize({width,height:960});await p.goto(base+(locale==='ar'?'/ar':'')+'/shipping-from-china-to-oman/?ddnz_test=1');const list=p.locator('[data-delivery-checklist]');await list.waitFor();assert.equal(await list.locator('li').count(),4);assert.ok((await list.innerText()).includes(locale==='en'?'Installation':'التركيب'));assert.ok(await p.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1));await list.screenshot({path:`${out}/screenshots/preliminary-oman-${locale}-${width}-checklist.png`});results.push({locale,width,separateResponsibilities:4,noOverflow:true,passed:true});
+}}finally{fs.writeFileSync(`${out}/preliminary-checklist-results.json`,JSON.stringify({stage:'3yZZvo',status:'partial; no new cargo photos',results},null,2));await b.close();}

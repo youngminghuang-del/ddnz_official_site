@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 360,
+      "sectionHeight": 1447,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 360,
+      "sectionHeight": 1232,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 360,
+      "sectionHeight": 1535,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 360,
+      "sectionHeight": 1403,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 390,
+      "sectionHeight": 1383,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 390,
+      "sectionHeight": 1223,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 390,
+      "sectionHeight": 1489,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 390,
+      "sectionHeight": 1411,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": false,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "sectionHeight": 869,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": true,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "sectionHeight": 749,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": true,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 1536,
+      "sectionHeight": 767,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": true,
+      "smallImageCap": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 1536,
+      "sectionHeight": 730,
+      "singleImageDOM": true,
+      "naturalOrder": true,
+      "twoColumns": true,
+      "smallImageCap": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

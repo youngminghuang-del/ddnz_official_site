@@ -1,0 +1,227 @@
+{
+  "version": 2,
+  "date": "2026-10-14",
+  "status": "3 verified external reference files ready for local integration; not published",
+  "authorization": "User directly authorized Google image searches for hats, pool tables and packaging and delivery to engineering for local preview; external images must not impersonate HB photography",
+  "code_head_checked": "11d780e1fee191b1a4e5f000c143680f194500eb",
+  "assets": [
+    {
+      "id": "caps-product-reference",
+      "country_context": "qatar",
+      "source_identity": "external supplier/packaging reference; not HB photography",
+      "source_owner": "Via Trading",
+      "source_url": "https://www.viatrading.com/product/blank-caps",
+      "original_url": "https://www.viatrading.com/images/AUCO-LN-HATSCS/ml/wholesale-new-overstock-assorted-case-packs-of-blank-hats-1764973410.webp?v=1767615191",
+      "source_html": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/viatrading-source.html",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/caps-product-reference.webp",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/caps-product-reference.webp",
+      "sha256": "76fe78bed70558e57dc5113961227cc580ba12a35311e0aadf87c74a33088780",
+      "bytes": 28280,
+      "mime": "image/webp",
+      "width": 1014,
+      "height": 676,
+      "srcset": null,
+      "recommended_max_css_width": 500,
+      "caption": {
+        "en": "Caps: product example",
+        "ar": "قبعات: مثال على المنتج"
+      },
+      "alt": {
+        "en": "Red, yellow and camouflage mesh-back caps on a display surface",
+        "ar": "قبعات حمراء وصفراء ومموّهة بظهر شبكي على سطح عرض"
+      },
+      "usage_scope": "User-authorized local preview, goods/packing reference only; no HB shipment/ownership or country delivery claim",
+      "rights_status": "External source retains rights; no open license or separate publication permission verified. User scope is local preview.",
+      "visual_check": "Original downloaded image viewed and decoded; photo-like product/packing scene, no AI label found in source; camera authenticity not independently forensically verified",
+      "transformation": "Unchanged source bytes, no crop/recolor/AI",
+      "restrictions": []
+    },
+    {
+      "id": "billiard-table-reference",
+      "country_context": "oman",
+      "source_identity": "external supplier/packaging reference; not HB photography",
+      "source_owner": "Rebul Packaging",
+      "source_url": "https://rebul.com.au/pool-table-crate/",
+      "original_url": "https://rebul.com.au/wp-content/uploads/2025/02/d1ddbf_765cdd130d254ea89db49587444391ecmv2.webp",
+      "source_html": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/rebul-source.html",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/billiard-table-reference.webp",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/billiard-table-reference.webp",
+      "sha256": "20ae466045588dd3f177ac5aff09fbd9f28ef9faf6ce7efc09c3d8accd809903",
+      "bytes": 43176,
+      "mime": "image/webp",
+      "width": 925,
+      "height": 616,
+      "srcset": null,
+      "recommended_max_css_width": 460,
+      "caption": {
+        "en": "Billiard table: product example",
+        "ar": "طاولة بلياردو: مثال على المنتج"
+      },
+      "alt": {
+        "en": "Green-cloth billiard table beneath overhead lights",
+        "ar": "طاولة بلياردو بسطح أخضر تحت مصابيح علوية"
+      },
+      "usage_scope": "User-authorized local preview, goods/packing reference only; no HB shipment/ownership or country delivery claim",
+      "rights_status": "External source retains rights; no open license or separate publication permission verified. User scope is local preview.",
+      "visual_check": "Original downloaded image viewed and decoded; photo-like product/packing scene, no AI label found in source; camera authenticity not independently forensically verified",
+      "transformation": "Unchanged source bytes, no crop/recolor/AI",
+      "restrictions": []
+    },
+    {
+      "id": "table-packing-reference",
+      "country_context": "oman",
+      "source_identity": "external supplier/packaging reference; not HB photography",
+      "source_owner": "Rebul Packaging",
+      "source_url": "https://rebul.com.au/pool-table-crate/",
+      "original_url": "https://rebul.com.au/wp-content/uploads/2025/02/d1ddbf_9e47d47adda14ee8b9d492216cfb9b2emv2.webp",
+      "source_html": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/rebul-source.html",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/table-packing-reference.webp",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/table-packing-reference.webp",
+      "sha256": "4632bbea1e41b04ab860d5e9d739ba62225f6dc524558cd3a2b76d2ef8625367",
+      "bytes": 15068,
+      "mime": "image/webp",
+      "width": 473,
+      "height": 514,
+      "srcset": null,
+      "recommended_max_css_width": 236,
+      "caption": {
+        "en": "Table packing: reference example",
+        "ar": "تعبئة الطاولة: مثال مرجعي"
+      },
+      "alt": {
+        "en": "Tall transport crate beside a billiard table",
+        "ar": "صندوق نقل قائم بجانب طاولة بلياردو"
+      },
+      "usage_scope": "User-authorized local preview, goods/packing reference only; no HB shipment/ownership or country delivery claim",
+      "rights_status": "External source retains rights; no open license or separate publication permission verified. User scope is local preview.",
+      "visual_check": "Original downloaded image viewed and decoded; photo-like product/packing scene, no AI label found in source; camera authenticity not independently forensically verified",
+      "transformation": "Unchanged source bytes, no crop/recolor/AI",
+      "restrictions": [
+        "Do not call crate wooden or depict final securing; do not enlarge beyond small supporting card"
+      ]
+    }
+  ],
+  "fallback_assets": [
+    {
+      "id": "receiving-cartons",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/receiving-cartons.jpg",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/receiving-cartons.jpg",
+      "sha256": "42eafecfd244a2e14430ec868db30335ed37ab629c145f4787db90fed29e160a",
+      "bytes": 42428,
+      "width": 540,
+      "height": 756,
+      "srcset": null,
+      "source_material_id": "M049",
+      "source_local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving-poster.jpg",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/manifest.json",
+      "caption": {
+        "en": "Cartons on arrival",
+        "ar": "كراتين عند الاستلام"
+      },
+      "alt": {
+        "en": "Palletised cartons during receiving in China",
+        "ar": "كراتين على منصة أثناء الاستلام في الصين"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    },
+    {
+      "id": "crates-and-pallets",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/crates-and-pallets.webp",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/crates-and-pallets.webp",
+      "sha256": "c31a44ff6cd8688e58d393f6ca6e2c3e5daad8d56137fbf951a31a3388cc4d90",
+      "bytes": 130408,
+      "width": 1200,
+      "height": 1328,
+      "srcset": null,
+      "source_material_id": "M066",
+      "source_local_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/lcl-20260920/crates-and-pallets.webp",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/ddnz-site-aligned-preview-20260917/docs/lcl-photo-use-2026-09-20.md",
+      "caption": {
+        "en": "Crates and palletised cartons",
+        "ar": "صناديق خشبية وكراتين على منصات"
+      },
+      "alt": {
+        "en": "Wooden crates and wrapped cartons inside a container",
+        "ar": "صناديق خشبية وكراتين مغلّفة داخل حاوية"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    },
+    {
+      "id": "loading-in-progress",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/loading-in-progress.webp",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/loading-in-progress.webp",
+      "sha256": "522a1027701d2f8df1e4230c160ad29bcb2633a96526cdb2f034f00759cd2077",
+      "bytes": 127284,
+      "width": 1200,
+      "height": 1547,
+      "srcset": null,
+      "source_material_id": "M067",
+      "source_local_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/lcl-20260920/loading-in-progress.webp",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/ddnz-site-aligned-preview-20260917/docs/lcl-photo-use-2026-09-20.md",
+      "caption": {
+        "en": "Cargo during loading",
+        "ar": "البضائع أثناء التحميل"
+      },
+      "alt": {
+        "en": "Crated and palletised cargo inside a container during loading",
+        "ar": "بضائع داخل صناديق خشبية وعلى منصات أثناء تحميل الحاوية"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    }
+  ],
+  "google_searches": [
+    {
+      "url": "https://www.google.com/search?tbm=isch&q=ViaTrading+hats+casepack",
+      "verified": "Chrome native UI showed Images selected and product links; opened ViaTrading original listing"
+    },
+    {
+      "url": "https://www.google.com/search?tbm=isch&q=DoubleStar+pool+table+packing+wooden+crate",
+      "verified": "Chrome native UI showed Images selected, Rebul packaging and DoubleStar product links"
+    }
+  ],
+  "exclusions": [
+    {
+      "id": "hats-1",
+      "reason": "Promotional title graphic; prefer actual product photo"
+    },
+    {
+      "id": "hats-3",
+      "reason": "Similar composition, retained candidate not necessary to fill count"
+    },
+    {
+      "id": "pool-table",
+      "reason": "DoubleStar downloaded original reference resolved to 100×100 thumbnail; too small"
+    },
+    {
+      "id": "M047",
+      "reason": "General cargo, not goods-specific; visible labels/worker"
+    }
+  ],
+  "checks": {
+    "file_decode_dimensions_sha256": "passed for all 3",
+    "visual_inspection": "all 6 downloaded candidates viewed",
+    "live_page_integration": "engineering pending"
+  },
+  "pending": [
+    "Final ENAR layout and caption review in engineering preview",
+    "No publication or effect verification"
+  ]
+}

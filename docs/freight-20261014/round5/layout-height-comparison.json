@@ -1,0 +1,58 @@
+[
+  {
+    "route": "/shipping-from-china-to-qatar/",
+    "width": 360,
+    "before": 1572,
+    "after": 1447,
+    "change": -125
+  },
+  {
+    "route": "/ar/shipping-from-china-to-qatar/",
+    "width": 360,
+    "before": 1357,
+    "after": 1232,
+    "change": -125
+  },
+  {
+    "route": "/shipping-from-china-to-oman/",
+    "width": 360,
+    "before": 1351,
+    "after": 1535,
+    "change": 184
+  },
+  {
+    "route": "/ar/shipping-from-china-to-oman/",
+    "width": 360,
+    "before": 1219,
+    "after": 1403,
+    "change": 184
+  },
+  {
+    "route": "/shipping-from-china-to-qatar/",
+    "width": 1536,
+    "before": 907,
+    "after": 869,
+    "change": -38
+  },
+  {
+    "route": "/ar/shipping-from-china-to-qatar/",
+    "width": 1536,
+    "before": 787,
+    "after": 749,
+    "change": -38
+  },
+  {
+    "route": "/shipping-from-china-to-oman/",
+    "width": 1536,
+    "before": 805,
+    "after": 767,
+    "change": -38
+  },
+  {
+    "route": "/ar/shipping-from-china-to-oman/",
+    "width": 1536,
+    "before": 757,
+    "after": 730,
+    "change": -27
+  }
+]

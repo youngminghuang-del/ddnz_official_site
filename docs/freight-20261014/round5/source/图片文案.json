@@ -1,0 +1,45 @@
+{
+  "status": "Final captions after independent local-image inspection; local preview only",
+  "images": [
+    {
+      "id": "caps-product-reference",
+      "caption": {
+        "en": "Caps · product reference",
+        "ar": "قبعات · مثال للمنتج"
+      },
+      "alt": {
+        "en": "Red, yellow and camouflage caps with white mesh backs",
+        "ar": "قبعات حمراء وصفراء ومموّهة بظهر شبكي أبيض"
+      },
+      "sourceLabel": "Via Trading",
+      "sourceUrl": "https://www.viatrading.com/product/blank-caps"
+    },
+    {
+      "id": "billiard-table-reference",
+      "caption": {
+        "en": "Billiard table · product reference",
+        "ar": "طاولة بلياردو · مثال للمنتج"
+      },
+      "alt": {
+        "en": "Green-cloth billiard table beneath overhead lamps",
+        "ar": "طاولة بلياردو بسطح أخضر تحت مصابيح علوية"
+      },
+      "sourceLabel": "Rebul Packaging",
+      "sourceUrl": "https://rebul.com.au/pool-table-crate/"
+    },
+    {
+      "id": "table-packing-reference",
+      "caption": {
+        "en": "Transport crate · packing reference",
+        "ar": "صندوق نقل · مثال للتعبئة"
+      },
+      "alt": {
+        "en": "Tall transport crate with an upward arrow beside a billiard table",
+        "ar": "صندوق نقل قائم يحمل سهماً إلى الأعلى بجانب طاولة بلياردو"
+      },
+      "sourceLabel": "Rebul Packaging",
+      "sourceUrl": "https://rebul.com.au/pool-table-crate/",
+      "maxCssWidth": 236
+    }
+  ]
+}

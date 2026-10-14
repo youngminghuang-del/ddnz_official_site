@@ -1,0 +1,75 @@
+{
+  "unchangedSourceFiles": [
+    "src/features/freight/GulfChapters.tsx",
+    "src/features/freight/GulfDestinationMap.tsx",
+    "src/features/freight/gulfMaps.json",
+    "src/features/freight/gulfRegionalMaps.json",
+    "src/features/freight/gulfStories.json",
+    "src/features/freight/GulfCargoJourney.tsx",
+    "src/features/freight/gulfJourneys.json",
+    "src/features/freight/GulfCustomsResources.tsx",
+    "src/features/freight/gulfCustoms.json"
+  ],
+  "results": [
+    {
+      "country": "qatar",
+      "locale": "en",
+      "keyboardAnchors": 4,
+      "mapNotMirrored": true,
+      "sourceImages": [
+        {
+          "width": 348,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/caps-product-reference.webp"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "country": "qatar",
+      "locale": "ar",
+      "keyboardAnchors": 4,
+      "mapNotMirrored": true,
+      "sourceImages": [
+        {
+          "width": 348,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/caps-product-reference.webp"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "en",
+      "keyboardAnchors": 4,
+      "mapNotMirrored": true,
+      "sourceImages": [
+        {
+          "width": 348,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/billiard-table-reference.webp"
+        },
+        {
+          "width": 146.15625,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/table-packing-reference.webp"
+        }
+      ],
+      "passed": true
+    },
+    {
+      "country": "oman",
+      "locale": "ar",
+      "keyboardAnchors": 4,
+      "mapNotMirrored": true,
+      "sourceImages": [
+        {
+          "width": 348,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/billiard-table-reference.webp"
+        },
+        {
+          "width": 146.15625,
+          "src": "http://127.0.0.1:4187/media/freight-20261014-round5/table-packing-reference.webp"
+        }
+      ],
+      "passed": true
+    }
+  ]
+}

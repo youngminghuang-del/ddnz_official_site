@@ -6,6 +6,9 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import GetAQuote from '../../components/GetAQuote';
 import WhatsAppFloat from '../../components/WhatsAppFloat';
+import GulfCargoReferences from './GulfCargoReferences';
+import cargoReferences from './gulfCargoReferences.json';
+import GulfDeliveryChecklist from './GulfDeliveryChecklist';
 import GulfCustomsResources from './GulfCustomsResources';
 import GulfChapters from './GulfChapters';
 import GulfDestinationMap, { GulfCountryMark, type GulfMapData } from './GulfDestinationMap';
@@ -45,25 +48,6 @@ function Media({ country, locale }: { country: Country; locale: Locale }) {
     <figcaption>{caption} <span>{locale === 'ar' ? 'مقطع صامت مع تعليق نصي.' : 'Silent footage with context captions.'}</span></figcaption>
   </figure>;
 }
-function Diagram({ country, locale }: { country: Country; locale: Locale }) {
-  const ar = locale === 'ar';
-  return <figure className="gulf-diagram"><img src={`/media/freight-20261014/${country}-explainer.${locale}.svg`} width="720" height="960" loading="lazy" alt={country === 'qatar' ? ar ? 'ربط المورد ومرجع الطلب بعدد الطرود وأبعادها، ثم اتخاذ قرار الإرسال أو الانتظار.' : 'Identify supplier and order, record package count and size, then decide to ship, wait or clarify.' : ar ? 'تأكيد مسؤولية النقل والتفريغ والإدخال والتركيب كلّاً على حدة.' : 'Confirm responsibility for delivery, unloading, indoor movement and installation separately.'} /></figure>;
-}
-function PackedPiece({ ar }: { ar: boolean }) {
-  return <figure className="gulf-package">
-    <svg viewBox="0 0 520 350" role="img" aria-label={ar ? 'قياس الطرد بعد التعبئة: الطول والعرض والارتفاع.' : 'Measure external length, width and height after packing.'}>
-      <path d="M100 115 310 65 426 145 216 200Z" fill="#e8d7f2" stroke="#763c9c" strokeWidth="2" />
-      <path d="M100 115 216 200 216 299 100 213Z" fill="#d2b4e5" stroke="#763c9c" strokeWidth="2" />
-      <path d="M216 200 426 145 426 243 216 299Z" fill="#f6eefb" stroke="#763c9c" strokeWidth="2" />
-      <path d="m100 242 115 84m16 0 208-54m-358-159v101" fill="none" stroke="#c94f2f" strokeWidth="2" />
-      <text x="264" y="238" fill="#632b89" fontSize="24" fontWeight="700" direction="ltr">01</text>
-      <text x="310" y="326" textAnchor="middle" fill="#632b89" fontSize="18">{ar ? 'الطول' : 'Length'}</text>
-      <text x="112" y="303" textAnchor="middle" fill="#632b89" fontSize="18">{ar ? 'العرض' : 'Width'}</text>
-      <text x="72" y="84" textAnchor="middle" fill="#632b89" fontSize="18">{ar ? 'الارتفاع' : 'Height'}</text>
-    </svg>
-    <figcaption>{ar ? 'الأبعاد الخارجية بعد التعبئة + الوزن الإجمالي لكل طرد' : 'External packed dimensions + gross weight for each piece'}</figcaption>
-  </figure>;
-}
 export default function GulfFreightPage() {
   // Read the route directly so an in-app language switch never paints stale copy.
   const { pathname } = useLocation();
@@ -77,7 +61,11 @@ export default function GulfFreightPage() {
   const prefix = ar ? '/ar' : '';
   const heroId = country === 'qatar' ? 'qatar-receiving' : 'oman-loading';
   const cta = (secondary = false) => <a className={secondary ? 'gulf-secondary' : 'gulf-cta'} href="#gulf-quote">{data.buttons[secondary ? 1 : 0]}<span aria-hidden="true">{ar ? '←' : '→'}</span></a>;
-  const section = (index: number, visual?: ReactNode, className = '') => className.includes('gulf-map-section') ? <section className="gulf-section gulf-arrival-section" aria-labelledby={`gulf-section-${index}`}>
+  const section = (index: number, visual?: ReactNode, className = '') => index === 0 ? <section className="gulf-section gulf-cargo-intro" aria-labelledby="gulf-section-0">
+    <div className="gulf-copy gulf-cargo-summary"><span className="gulf-index" aria-hidden="true">01</span><h2 id="gulf-section-0" tabIndex={-1}>{sections[0].heading}</h2><Blocks blocks={sections[0].blocks.slice(0, 1)} /></div>
+    {visual}
+    <div className="gulf-copy gulf-cargo-details"><Blocks blocks={sections[0].blocks.slice(1)} /></div>
+  </section> : className.includes('gulf-map-section') ? <section className="gulf-section gulf-arrival-section" aria-labelledby={`gulf-section-${index}`}>
     <span className="gulf-index" aria-hidden="true">04</span><h2 id={`gulf-section-${index}`} tabIndex={-1}>{sections[index].heading}</h2>
     <div className="gulf-arrival-layout">{visual}<div className="gulf-copy"><Blocks blocks={country === 'qatar' ? sections[index].blocks.slice(2) : sections[index].blocks.slice(0, 1)} /><GulfCustomsResources country={country} locale={locale} />{country === 'oman' && <Blocks blocks={sections[index].blocks.slice(1, 2)} />}</div></div>
   </section> : <section className={`gulf-section ${visual ? 'gulf-split' : ''} ${className}`} aria-labelledby={`gulf-section-${index}`}>
@@ -97,16 +85,16 @@ export default function GulfFreightPage() {
         </header>
         <GulfChapters country={country} locale={locale} />
         {country === 'qatar' ? <>
-          {section(0, <Diagram country={country} locale={locale} />)}
+          {section(0, <GulfCargoReferences images={cargoReferences[country]} country={country} locale={locale} />, 'gulf-cargo-intro')}
           {section(1, <Media country={country} locale={locale} />, 'gulf-media-section')}
           {section(2, <aside className="gulf-distinction"><p>{ar ? 'التجميع' : 'Consolidation'}</p><span>{ar ? 'تنظيم طرود الموردين' : 'Organise supplier packages'}</span><hr /><p dir="ltr">LCL</p><span>{ar ? 'مشاركة مساحة الحاوية' : 'Share container space'}</span></aside>)}
           <GulfCargoJourney data={journeys[country][locale]} locale={locale} country={country} />
           {section(3, <GulfDestinationMap map={map} locale={locale} />, 'gulf-destination gulf-map-section')}
           {section(4, undefined, 'gulf-scope')}
         </> : <>
-          {section(0, <PackedPiece ar={ar} />)}
+          {section(0, <GulfCargoReferences images={cargoReferences[country]} country={country} locale={locale} />, 'gulf-cargo-intro')}
           {section(1, <Media country={country} locale={locale} />, 'gulf-media-section')}
-          {section(4, <Diagram country={country} locale={locale} />, 'gulf-handover')}
+          {section(4, <GulfDeliveryChecklist locale={locale} />, 'gulf-handover')}
           <GulfCargoJourney data={journeys[country][locale]} locale={locale} country={country} />
           {section(2, <GulfDestinationMap map={map} locale={locale} />, 'gulf-destination gulf-map-section')}
           {section(3, undefined, 'gulf-scope')}

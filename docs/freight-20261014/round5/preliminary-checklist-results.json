@@ -1,0 +1,34 @@
+{
+  "stage": "3yZZvo",
+  "status": "partial; no new cargo photos",
+  "results": [
+    {
+      "locale": "en",
+      "width": 390,
+      "separateResponsibilities": 4,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "width": 1536,
+      "separateResponsibilities": 4,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 390,
+      "separateResponsibilities": 4,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 1536,
+      "separateResponsibilities": 4,
+      "noOverflow": true,
+      "passed": true
+    }
+  ]
+}

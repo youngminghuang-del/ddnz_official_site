@@ -1,0 +1,43 @@
+{
+  "results": [
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "singleH1": true,
+      "canonical": true,
+      "alternates": 9,
+      "sourceLinks": true,
+      "countryIntent": true,
+      "media": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "singleH1": true,
+      "canonical": true,
+      "alternates": 9,
+      "sourceLinks": true,
+      "countryIntent": true,
+      "media": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "singleH1": true,
+      "canonical": true,
+      "alternates": 9,
+      "sourceLinks": true,
+      "countryIntent": true,
+      "media": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "singleH1": true,
+      "canonical": true,
+      "alternates": 9,
+      "sourceLinks": true,
+      "countryIntent": true,
+      "media": true
+    }
+  ],
+  "assets": 12,
+  "sitemap": 733,
+  "cmsUnchanged": true
+}
