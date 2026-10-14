@@ -1,0 +1,10 @@
+{
+  "src/features/freight/GulfFreightPage.tsx": "6408c319a0b819d404904e9d7e65b5b2f29505590e7b984c76ef8e60ec8db07f",
+  "src/features/freight/GulfCargoJourney.tsx": "86ae8ab7396056d38284c720b52e7d107fad538867694d02cec842bf9cacef52",
+  "src/features/freight/GulfChapters.tsx": "c4d0232f039bb33bd4cf794164285d49676d445cc19c5b77362f59722d635cf3",
+  "src/features/freight/GulfDestinationMap.tsx": "8da85ad1ba0367d74a3566e5b5a7480eca83634a968c98416c71c65e4525dddf",
+  "src/features/freight/gulf-stories.css": "6af7d28fd55f0b05b006f8758dbd6c259bdf4b210576d5e753cadb6ced83b7de",
+  "src/features/freight/gulfMaps.json": "92e7c06b6158d7230392201331682aa362ccae7c674dd0ad37e1064c563c6e60",
+  "src/features/freight/gulfJourneys.json": "c8ae7d39be8f21510705b7bad4bbfba1ee351566e3f43e0dffef69ca749cefba",
+  "src/data/notionBlogData.json": "9cfcbabfe182e4b99ef1757e922c10110214da0e8b4f5ee2ef5a48c7352189a0"
+}

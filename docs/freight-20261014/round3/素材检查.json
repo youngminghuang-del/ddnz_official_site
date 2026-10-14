@@ -1,0 +1,38 @@
+{
+  "status": "passed",
+  "checks": [
+    "asset path and SHA256",
+    "SVG XML",
+    "closed country rings",
+    "coordinate bounds",
+    "projected node within viewbox"
+  ],
+  "countries": [
+    {
+      "country": "OMN",
+      "rings": 7,
+      "points": 1033,
+      "closed_rings": true,
+      "bounds": [
+        51.97861495000012,
+        16.642401434000078,
+        59.84457441500007,
+        26.385972398000035
+      ]
+    },
+    {
+      "country": "QAT",
+      "rings": 1,
+      "points": 241,
+      "closed_rings": true,
+      "bounds": [
+        50.750987175000034,
+        24.559871521000062,
+        51.61654707100007,
+        26.160101630000042
+      ]
+    }
+  ],
+  "note": "Not an official boundary or navigation accuracy certification",
+  "visual_check": "Both SVG country outlines viewed in in-app browser; Oman separated northern region retained; labels not part of outline asset."
+}

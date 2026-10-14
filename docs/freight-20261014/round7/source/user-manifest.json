@@ -1,0 +1,74 @@
+[
+  {
+    "file": "1_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/1_hat_factory.jpg",
+    "bytes": 416210,
+    "sha256": "24521ef2a6a653eca136842141b86408a603c67c3b6e7d0f11bb0339171ae16e"
+  },
+  {
+    "file": "2_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/2_hat_factory.jpg",
+    "bytes": 627708,
+    "sha256": "3347297c559b0822f632d6f7e0e3ae18ece7d373495b3140bfc5bfc1fffb580a"
+  },
+  {
+    "file": "3_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/3_hat_factory.jpg",
+    "bytes": 331533,
+    "sha256": "6582060091bb2e9800d3c00150c8378ba89d660d2fa1a4392d94229bfc69c1f1"
+  },
+  {
+    "file": "4_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/4_hat_factory.jpg",
+    "bytes": 485490,
+    "sha256": "ef75279459e4fc126f8d63a272d31d5633d151e52423a3400d470579a2efa1a6"
+  },
+  {
+    "file": "5_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/5_hat_factory.jpg",
+    "bytes": 594440,
+    "sha256": "63452a30152c9f803670bb56c0c8981eaaff1030590310e45a4cd274ed36d390"
+  },
+  {
+    "file": "6_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/6_hat_factory.jpg",
+    "bytes": 139727,
+    "sha256": "a7951c5e098ef289babf1edae9a4af58b4872beb56582af5cb578e940d8f88eb"
+  },
+  {
+    "file": "7_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/7_hat_factory.jpg",
+    "bytes": 146452,
+    "sha256": "ca5c1fea8a37eab1f03bdd2be0f67f2527b10b0b31a1b11960675558d7276ad6"
+  },
+  {
+    "file": "8_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/8_hat_factory.jpg",
+    "bytes": 159150,
+    "sha256": "c74ff56577ca4e5810cc20afbef69126f38f45b98a4231a67cf83028a9b1ae34"
+  },
+  {
+    "file": "9_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/9_hat_factory.jpg",
+    "bytes": 157044,
+    "sha256": "e9651a5f975246164673d7f26243cfb034412b2fa08690a8ffcadedd09faff31"
+  },
+  {
+    "file": "10_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/10_hat_factory.jpg",
+    "bytes": 155473,
+    "sha256": "0dff8135996f9b19f027d5f024f744ff53e78533d0ef83cc205d106920438a8a"
+  },
+  {
+    "file": "11_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/11_hat_factory.jpg",
+    "bytes": 161061,
+    "sha256": "934efe7d61dc232f62a3e5f0a2c0afe2bc0a975f7955dd7b10b83f4c59d1a74a"
+  },
+  {
+    "file": "12_hat_factory.jpg",
+    "source": "/Users/huangyangming/Downloads/12_hat_factory.jpg",
+    "bytes": 245316,
+    "sha256": "c107cceb34ea2dad3fe0af9ad196bb8e8228f3ca76a38884dd2519bcc97af8f8"
+  }
+]

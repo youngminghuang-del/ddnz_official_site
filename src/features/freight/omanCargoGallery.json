@@ -1,0 +1,252 @@
+{
+  "galleryTitle": {
+    "en": "Table details & packing preparation",
+    "ar": "تفاصيل الطاولة والتحضير للتعبئة",
+    "zh": "球桌细节与包装准备",
+    "ru": "Детали столов и подготовка упаковки",
+    "fr": "Détails des tables et préparation de l’emballage",
+    "es": "Detalles de las mesas y preparación del embalaje",
+    "pt": "Detalhes das mesas e preparação da embalagem",
+    "tr": "Masa ayrıntıları ve ambalaj hazırlığı"
+  },
+  "galleryIntro": {
+    "en": "Review separate components, packed dimensions and weights, surface protection and handling before arranging transport.",
+    "ar": "راجع الأجزاء المنفصلة والأبعاد والأوزان بعد التغليف وحماية الأسطح وطريقة المناولة قبل ترتيب النقل.",
+    "zh": "安排运输前，核对拆分部件、包装尺寸与重量、表面保护和搬运方式。",
+    "ru": "До организации перевозки проверьте отдельные компоненты, размеры и вес упаковок, защиту поверхностей и способы обработки.",
+    "fr": "Vérifiez les composants séparés, les dimensions et poids emballés, la protection des surfaces et la manutention avant d’organiser le transport.",
+    "es": "Antes de organizar el transporte, revise los componentes separados, las dimensiones y pesos embalados, la protección de superficies y la manipulación.",
+    "pt": "Antes de organizar o transporte, reveja os componentes separados, as dimensões e pesos embalados, a proteção das superfícies e o manuseamento.",
+    "tr": "Taşımayı düzenlemeden önce ayrı parçaları, ambalajlı ölçü ve ağırlıkları, yüzey korumasını ve elleçlemeyi gözden geçirin."
+  },
+  "images": [
+    {
+      "id": "billiard-factory-1",
+      "sourceFile": "1_billiard_factory.jpg",
+      "title": {
+        "en": "Complete table",
+        "ar": "الطاولة كاملة",
+        "zh": "整桌展示",
+        "ru": "Стол в сборе",
+        "fr": "Table complète",
+        "es": "Mesa completa",
+        "pt": "Mesa completa",
+        "tr": "Tam masa"
+      },
+      "caption": {
+        "en": "Check which parts travel separately.",
+        "ar": "حدّد الأجزاء التي ستُشحن منفصلة.",
+        "zh": "确认哪些部件需要分开发运。",
+        "ru": "Уточните, какие части перевозятся отдельно.",
+        "fr": "Vérifiez les pièces qui voyagent séparément.",
+        "es": "Compruebe qué piezas viajan por separado.",
+        "pt": "Confirme que peças seguem separadamente.",
+        "tr": "Hangi parçaların ayrı taşınacağını kontrol edin."
+      },
+      "alt": {
+        "en": "Billiard table with a grey playing surface and transparent-looking legs beside a wood-panelled wall",
+        "ar": "طاولة بلياردو بسطح رمادي وأرجل تبدو شفافة بجانب جدار مكسو بألواح خشبية",
+        "zh": "木饰面墙旁的台球桌，灰色台面，桌腿外观看似透明。",
+        "ru": "Бильярдный стол с серой игровой поверхностью и внешне прозрачными ножками рядом со стеной с деревянными панелями.",
+        "fr": "Table de billard à surface de jeu grise et pieds d’aspect transparent près d’un mur à panneaux de bois.",
+        "es": "Mesa de billar con superficie de juego gris y patas de aspecto transparente junto a una pared revestida de madera.",
+        "pt": "Mesa de bilhar com superfície de jogo cinzenta e pernas de aspeto transparente junto de uma parede revestida a madeira.",
+        "tr": "Ahşap kaplı duvar yanında gri oyun yüzeyli ve şeffaf görünümlü ayaklara sahip bilardo masası."
+      },
+      "src": "/media/freight-20261014-round6/1_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-1_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1602
+    },
+    {
+      "id": "billiard-factory-2",
+      "sourceFile": "2_billiard_factory.jpg",
+      "title": {
+        "en": "Table from another angle",
+        "ar": "الطاولة من زاوية أخرى",
+        "zh": "球桌另一角度",
+        "ru": "Стол с другого ракурса",
+        "fr": "Table sous un autre angle",
+        "es": "Mesa desde otro ángulo",
+        "pt": "Mesa de outro ângulo",
+        "tr": "Başka açıdan masa"
+      },
+      "caption": {
+        "en": "Record overall dimensions before planning disassembly.",
+        "ar": "سجّل الأبعاد الكلية قبل التخطيط للفك.",
+        "zh": "规划拆装前记录整体尺寸。",
+        "ru": "Зафиксируйте общие размеры до планирования разборки.",
+        "fr": "Relevez les dimensions hors tout avant de planifier le démontage.",
+        "es": "Registre las dimensiones totales antes de planificar el desmontaje.",
+        "pt": "Registe as dimensões totais antes de planear a desmontagem.",
+        "tr": "Sökümü planlamadan önce genel ölçüleri kaydedin."
+      },
+      "alt": {
+        "en": "Billiard table with a grey surface and dark pockets, viewed diagonally in an indoor display area",
+        "ar": "طاولة بلياردو بسطح رمادي وجيوب داكنة، من زاوية مائلة في مساحة عرض داخلية",
+        "zh": "从斜侧方拍摄的室内展示区台球桌，灰色台面配深色袋口。",
+        "ru": "Бильярдный стол с серой поверхностью и тёмными лузами, снятый по диагонали в выставочном помещении.",
+        "fr": "Table de billard à surface grise et poches sombres, vue en diagonale dans un espace d’exposition intérieur.",
+        "es": "Mesa de billar con superficie gris y troneras oscuras, vista en diagonal en una zona de exposición interior.",
+        "pt": "Mesa de bilhar com superfície cinzenta e bolsas escuras, vista na diagonal numa área de exposição interior.",
+        "tr": "İç mekân sergileme alanında çapraz açıdan görülen, gri yüzeyli ve koyu cepli bilardo masası."
+      },
+      "src": "/media/freight-20261014-round6/2_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-2_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1575
+    },
+    {
+      "id": "billiard-factory-3",
+      "sourceFile": "3_billiard_factory.jpg",
+      "title": {
+        "en": "Wrapped frame components",
+        "ar": "أجزاء إطار مغلّفة",
+        "zh": "包裹后的框架部件",
+        "ru": "Упакованные рамные компоненты",
+        "fr": "Éléments de cadre emballés",
+        "es": "Componentes de bastidor envueltos",
+        "pt": "Componentes de estrutura envolvidos",
+        "tr": "Sarılmış çerçeve parçaları"
+      },
+      "caption": {
+        "en": "Match each separate component to the packing list.",
+        "ar": "طابق كل جزء منفصل مع قائمة التعبئة.",
+        "zh": "将每个独立部件与包装清单对应。",
+        "ru": "Сопоставьте каждый отдельный компонент с упаковочным листом.",
+        "fr": "Rapprochez chaque composant séparé de la liste de colisage.",
+        "es": "Relacione cada componente separado con la lista de embalaje.",
+        "pt": "Associe cada componente separado à lista de embalagem.",
+        "tr": "Her ayrı parçayı ambalaj listesiyle eşleştirin."
+      },
+      "alt": {
+        "en": "Stacks of frame-shaped components covered in grey wrapping, with upright packages behind them",
+        "ar": "أكوام من أجزاء على شكل إطارات مغطاة بتغليف رمادي، وخلفها عبوات قائمة",
+        "zh": "成摞框架状部件覆有灰色包装，后方有竖放的包装件。",
+        "ru": "Стопки рамных компонентов в серой обёртке с вертикальными упаковками позади.",
+        "fr": "Piles d’éléments en forme de cadre sous emballage gris, avec des colis verticaux derrière.",
+        "es": "Pilas de componentes con forma de bastidor envueltos en gris, con bultos verticales detrás.",
+        "pt": "Pilhas de componentes em forma de estrutura cobertos por envoltório cinzento, com volumes verticais atrás.",
+        "tr": "Gri ambalajla kaplı çerçeve biçimli parça yığınları ve arkalarında dik ambalajlar."
+      },
+      "src": "/media/freight-20261014-round6/3_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-3_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1678
+    },
+    {
+      "id": "billiard-factory-4",
+      "sourceFile": "4_billiard_factory.jpg",
+      "title": {
+        "en": "Tabletop edge wrapping",
+        "ar": "تغليف حواف أسطح الطاولات",
+        "zh": "台面边缘包装",
+        "ru": "Обёртка краёв столешниц",
+        "fr": "Protection des bords des plateaux",
+        "es": "Protección de bordes de los tableros",
+        "pt": "Proteção dos bordos dos tampos",
+        "tr": "Masa tablası kenar ambalajı"
+      },
+      "caption": {
+        "en": "Confirm surface and corner protection before handling.",
+        "ar": "أكّد حماية الأسطح والزوايا قبل المناولة.",
+        "zh": "搬运前确认表面与边角保护。",
+        "ru": "Перед обработкой подтвердите защиту поверхностей и углов.",
+        "fr": "Confirmez la protection des surfaces et des angles avant la manutention.",
+        "es": "Confirme la protección de superficies y esquinas antes de manipular.",
+        "pt": "Confirme a proteção das superfícies e dos cantos antes do manuseamento.",
+        "tr": "Elleçlemeden önce yüzey ve köşe korumasını teyit edin."
+      },
+      "alt": {
+        "en": "Large rectangular table sections with brown edge wrapping and white ties, including a visible green section",
+        "ar": "أجزاء طاولات مستطيلة كبيرة بحواف مغلّفة باللون البني وأربطة بيضاء، بينها جزء أخضر ظاهر",
+        "zh": "大型矩形台面部件以棕色材料包边并用白色绑带固定，其中可见绿色部件。",
+        "ru": "Крупные прямоугольные секции столов с коричневой обёрткой краёв и белыми стяжками; видна зелёная секция.",
+        "fr": "Grandes sections de table rectangulaires aux bords enveloppés de brun et maintenues par des liens blancs, dont une section verte visible.",
+        "es": "Grandes secciones rectangulares de mesa con bordes envueltos en marrón y ataduras blancas, incluida una sección verde visible.",
+        "pt": "Grandes secções retangulares de mesa com bordos envolvidos em castanho e cintas brancas, incluindo uma secção verde visível.",
+        "tr": "Kahverengi kenar ambalajı ve beyaz bağları olan büyük dikdörtgen masa bölümleri; yeşil bir bölüm de görülüyor."
+      },
+      "src": "/media/freight-20261014-round6/4_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-4_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1575
+    },
+    {
+      "id": "billiard-factory-5",
+      "sourceFile": "5_billiard_factory.jpg",
+      "title": {
+        "en": "Packed frame stack",
+        "ar": "رصة إطارات مغلّفة",
+        "zh": "包装框架堆放",
+        "ru": "Стопка упакованных рам",
+        "fr": "Pile de cadres emballés",
+        "es": "Pila de bastidores embalados",
+        "pt": "Pilha de estruturas embaladas",
+        "tr": "Ambalajlı çerçeve istifi"
+      },
+      "caption": {
+        "en": "Check packed dimensions, weight and stacking limits.",
+        "ar": "تحقّق من الأبعاد والوزن بعد التغليف وحدود التكديس.",
+        "zh": "核对包装尺寸、重量与堆码限制。",
+        "ru": "Проверьте размеры, вес и ограничения штабелирования упакованного груза.",
+        "fr": "Vérifiez les dimensions, le poids et les limites de gerbage après emballage.",
+        "es": "Compruebe las dimensiones embaladas, el peso y los límites de apilado.",
+        "pt": "Verifique dimensões embaladas, peso e limites de empilhamento.",
+        "tr": "Ambalajlı ölçüleri, ağırlığı ve istif sınırlarını kontrol edin."
+      },
+      "alt": {
+        "en": "A side view of stacked frame-shaped components covered in light-grey wrapping",
+        "ar": "منظر جانبي لأجزاء على شكل إطارات مكدّسة ومغطاة بتغليف رمادي فاتح",
+        "zh": "浅灰色包装覆盖的框架状部件堆叠侧视图。",
+        "ru": "Вид сбоку на сложенные рамные компоненты в светло-серой обёртке.",
+        "fr": "Vue latérale d’éléments de cadre empilés sous un emballage gris clair.",
+        "es": "Vista lateral de componentes de bastidor apilados y cubiertos con envoltura gris clara.",
+        "pt": "Vista lateral de componentes de estrutura empilhados e cobertos por envoltório cinzento-claro.",
+        "tr": "Açık gri ambalajla kaplı, istiflenmiş çerçeve biçimli parçaların yandan görünümü."
+      },
+      "src": "/media/freight-20261014-round6/5_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-5_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1577
+    },
+    {
+      "id": "billiard-factory-6",
+      "sourceFile": "6_billiard_factory.jpg",
+      "title": {
+        "en": "Upright tabletop packages",
+        "ar": "عبوات أسطح طاولات قائمة",
+        "zh": "竖放台面包装件",
+        "ru": "Вертикальные упаковки столешниц",
+        "fr": "Plateaux emballés à la verticale",
+        "es": "Tableros embalados en vertical",
+        "pt": "Tampos embalados na vertical",
+        "tr": "Dik masa tablası ambalajları"
+      },
+      "caption": {
+        "en": "Agree on lifting points and unloading equipment.",
+        "ar": "اتفق على نقاط الرفع ومعدات التفريغ.",
+        "zh": "约定起吊位置与卸货设备。",
+        "ru": "Согласуйте точки подъёма и оборудование для разгрузки.",
+        "fr": "Convenez des points de levage et du matériel de déchargement.",
+        "es": "Acuerde los puntos de elevación y los equipos de descarga.",
+        "pt": "Acorde os pontos de elevação e os equipamentos de descarga.",
+        "tr": "Kaldırma noktalarını ve boşaltma ekipmanını kararlaştırın."
+      },
+      "alt": {
+        "en": "A row of upright rectangular table sections with blue and green surfaces, brown edge wrapping and white ties",
+        "ar": "صف من أجزاء طاولات مستطيلة قائمة بأسطح زرقاء وخضراء وحواف مغلّفة باللون البني وأربطة بيضاء",
+        "zh": "一排竖放的矩形台面部件，表面为蓝色和绿色，棕色包边并有白色绑带。",
+        "ru": "Ряд вертикальных прямоугольных секций столов с синими и зелёными поверхностями, коричневой обёрткой краёв и белыми стяжками.",
+        "fr": "Rangée de sections de table rectangulaires verticales, à surfaces bleues et vertes, bords enveloppés de brun et liens blancs.",
+        "es": "Fila de secciones rectangulares de mesa verticales con superficies azules y verdes, bordes envueltos en marrón y ataduras blancas.",
+        "pt": "Fila de secções retangulares de mesa na vertical, com superfícies azuis e verdes, bordos envolvidos em castanho e cintas brancas.",
+        "tr": "Mavi ve yeşil yüzeyli, kahverengi kenar ambalajlı ve beyaz bağlı dikdörtgen masa bölümlerinden oluşan dik sıra."
+      },
+      "src": "/media/freight-20261014-round6/6_billiard_factory.jpg",
+      "thumbnail": "/media/freight-20261014-round6/thumb-6_billiard_factory.jpg",
+      "width": 1290,
+      "height": 1596
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "qatar": {
+    "en": [
+      "Supplier orders",
+      "Consolidation",
+      "Qatar arrival",
+      "Questions"
+    ],
+    "ar": [
+      "طلبات الموردين",
+      "تجميع الشحنات",
+      "الوصول إلى قطر",
+      "أسئلة"
+    ],
+    "zh": [
+      "供应商订单",
+      "集货",
+      "抵达卡塔尔",
+      "常见问题"
+    ],
+    "ru": [
+      "Заказы поставщикам",
+      "Консолидация",
+      "Прибытие в Катар",
+      "Вопросы"
+    ],
+    "fr": [
+      "Commandes fournisseurs",
+      "Regroupement",
+      "Arrivée au Qatar",
+      "Questions"
+    ],
+    "es": [
+      "Pedidos a proveedores",
+      "Consolidación",
+      "Llegada a Catar",
+      "Preguntas"
+    ],
+    "pt": [
+      "Encomendas a fornecedores",
+      "Consolidação",
+      "Chegada ao Catar",
+      "Perguntas"
+    ],
+    "tr": [
+      "Tedarikçi siparişleri",
+      "Konsolidasyon",
+      "Katar’a varış",
+      "Sorular"
+    ]
+  },
+  "oman": {
+    "en": [
+      "Packed cargo",
+      "Freight options",
+      "Oman arrival",
+      "Questions"
+    ],
+    "ar": [
+      "البضاعة المعبأة",
+      "خيارات الشحن",
+      "الوصول إلى عُمان",
+      "أسئلة"
+    ],
+    "zh": [
+      "包装后货物",
+      "运输方案",
+      "抵达阿曼",
+      "常见问题"
+    ],
+    "ru": [
+      "Упакованный груз",
+      "Варианты перевозки",
+      "Прибытие в Оман",
+      "Вопросы"
+    ],
+    "fr": [
+      "Marchandises emballées",
+      "Options de transport",
+      "Arrivée à Oman",
+      "Questions"
+    ],
+    "es": [
+      "Mercancía embalada",
+      "Opciones de transporte",
+      "Llegada a Omán",
+      "Preguntas"
+    ],
+    "pt": [
+      "Mercadoria embalada",
+      "Opções de transporte",
+      "Chegada a Omã",
+      "Perguntas"
+    ],
+    "tr": [
+      "Ambalajlı yük",
+      "Taşıma seçenekleri",
+      "Umman’a varış",
+      "Sorular"
+    ]
+  }
+}

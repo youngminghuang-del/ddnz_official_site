@@ -241,9 +241,9 @@
   "/shipping-from-china-to-kazakhstan/": "Freight from China to Kazakhstan | DDNZ",
   "/shipping-from-china-to-kuwait/": "Shipping from China to Kuwait | Freight Forwarding | DDNZ",
   "/shipping-from-china-to-kyrgyzstan/": "Freight from China to Kyrgyzstan | DDNZ",
-  "/shipping-from-china-to-oman/": "Shipping from China to Oman | Freight Forwarding | DDNZ",
+  "/shipping-from-china-to-oman/": "Shipping from China to Oman | Large Commercial Cargo | DDNZ",
   "/shipping-from-china-to-peru/": "Shipping from China to Peru | DDNZ",
-  "/shipping-from-china-to-qatar/": "Shipping from China to Qatar | Freight Forwarding | DDNZ",
+  "/shipping-from-china-to-qatar/": "Shipping from China to Qatar | Supplier Consolidation | DDNZ",
   "/shipping-from-china-to-russia/": "Freight from China to Russia | DDNZ",
   "/shipping-from-china-to-saudi-arabia/": "Shipping from China to Saudi Arabia | DDNZ",
   "/shipping-from-china-to-tajikistan/": "Freight from China to Tajikistan | DDNZ",
@@ -300,5 +300,7 @@
   "/zh-cn/sourcing/restaurant-kitchen-packages-from-china/cafe-light-meals/": "咖啡吧台布局与设备组合采购｜中国货源 | DDNZ",
   "/ar/sourcing/restaurant-kitchen-packages-from-china/casual-dining/": "مخطط مطبخ مطعم صغير ومعدات من الصين | DDNZ",
   "/ar/sourcing/restaurant-kitchen-packages-from-china/cafe-light-meals/": "تصميم كاونتر قهوة ومعدات من الصين  |  DDNZ",
-  "/ru/sourcing/restaurant-kitchen-packages-from-china/cafe-light-meals/": "Кофейная стойка и оборудование из Китая  |  DDNZ"
+  "/ru/sourcing/restaurant-kitchen-packages-from-china/cafe-light-meals/": "Кофейная стойка и оборудование из Китая  |  DDNZ",
+  "/ar/shipping-from-china-to-qatar/": "الشحن من الصين إلى قطر | تجميع بضائع الموردين | DDNZ",
+  "/ar/shipping-from-china-to-oman/": "الشحن من الصين إلى عُمان | البضائع التجارية الكبيرة | DDNZ"
 }

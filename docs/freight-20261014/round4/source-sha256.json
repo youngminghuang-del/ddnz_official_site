@@ -1,0 +1,18 @@
+{
+  "src/features/freight/GulfFreightPage.tsx": "57d2149cd88d2311b3b35bde75833c1ea304947b3ae32c27aae4a36475524bc4",
+  "src/features/freight/GulfCargoJourney.tsx": "86ae8ab7396056d38284c720b52e7d107fad538867694d02cec842bf9cacef52",
+  "src/features/freight/GulfCustomsResources.tsx": "d32110e670c843d2d81f9e7a62a33ce5b43d393a4c518a67e0c71da571b3b9c9",
+  "src/features/freight/GulfChapters.tsx": "c4d0232f039bb33bd4cf794164285d49676d445cc19c5b77362f59722d635cf3",
+  "src/features/freight/GulfDestinationMap.tsx": "a0d438e71e04414c99c1080122220a2694939cf596c73a09a63cc6bf21ad5de0",
+  "src/features/freight/gulfJourneys.json": "c8ae7d39be8f21510705b7bad4bbfba1ee351566e3f43e0dffef69ca749cefba",
+  "src/features/freight/gulfRegionalMaps.json": "683bce1c6d29bca5ba794eecb9e117d9ad3b2dbf036bad504c5e0da7e63dc45e",
+  "src/features/freight/gulfStories.json": "d48c202f2e1cc8218b80c48f4a99b6be0e51799f3f092b0ec87d926db4225489",
+  "src/features/freight/gulfCustoms.json": "aededffaf6fd644bc070f24f9e4b1f4ed20caf3d729d1498a890b14d7b612342",
+  "src/features/freight/gulfMaps.json": "92e7c06b6158d7230392201331682aa362ccae7c674dd0ad37e1064c563c6e60",
+  "src/features/freight/gulf-stories.css": "0e07be2afc87b0cde73a1217a7d5482571f0caaff6e5cfcbf4dbfec0da060be9",
+  "public/media/freight-20261014-round4/qatar-regional.svg": "ea5c04cc0b5cf2c6c184aa605e9d80fdd04007b37b57d3c46b3f97b68ee4d8b1",
+  "public/media/freight-20261014-round4/oman-regional.svg": "2541e6c44f99c837496f9ba6f9ddc6769c48e92ca302414f490ba50620c870bb",
+  "public/media/freight-20261014-round4/oman-customs-official.png": "61f0f0f10868f89d10e19353350ed4b19d5891f93cabdefb1b1c0d902bb68863",
+  "public/media/freight-20261014-round4/qatar-customs-official.png": "3e16b2e311ff142a3dc6f22d0f81ab7c3db58801329cdca43a93b8b2d6f7d804",
+  "src/data/notionBlogData.json": "9cfcbabfe182e4b99ef1757e922c10110214da0e8b4f5ee2ef5a48c7352189a0"
+}

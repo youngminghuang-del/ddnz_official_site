@@ -1,0 +1,271 @@
+{
+  "status": "copy approved; edited artwork and integrated preview review pending",
+  "images": [
+    {
+      "id": 6,
+      "group": "packing",
+      "title": {
+        "en": "1-cap packing example",
+        "ar": "مثال تعبئة: 1 قبعة"
+      },
+      "alt": {
+        "en": "Packing illustration for 1 cap, showing bagged caps and cartons; outer carton 23 × 13 × 16 cm and product weight 0.2 kg.",
+        "ar": "مخطط تعبئة لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم."
+      },
+      "caption": {
+        "en": "Shown: 1 cap; outer carton 23 × 13 × 16 cm; product weight 0.2 kg.",
+        "ar": "الموضح: 1 قبعة؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم؛ وزن المنتجات 0.2 كجم."
+      },
+      "packingData": {
+        "quantity": 1,
+        "outerCartonCm": [
+          23,
+          13,
+          16
+        ],
+        "productWeightKg": "0.2",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      },
+      "originalSourceFile": "6_hat_factory.jpg"
+    },
+    {
+      "id": 7,
+      "group": "packing",
+      "title": {
+        "en": "25-cap packing example",
+        "ar": "مثال تعبئة: 25 قبعة"
+      },
+      "alt": {
+        "en": "Packing illustration for 25 caps, showing bagged caps and cartons; outer carton 61 × 23 × 18 cm and product weight 3.2 kg.",
+        "ar": "مخطط تعبئة لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم."
+      },
+      "caption": {
+        "en": "Shown: 25 caps; outer carton 61 × 23 × 18 cm; product weight 3.2 kg.",
+        "ar": "الموضح: 25 قبعة؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم؛ وزن المنتجات 3.2 كجم."
+      },
+      "packingData": {
+        "quantity": 25,
+        "outerCartonCm": [
+          61,
+          23,
+          18
+        ],
+        "productWeightKg": "3.2",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      },
+      "originalSourceFile": "7_hat_factory.jpg"
+    },
+    {
+      "id": 8,
+      "group": "packing",
+      "title": {
+        "en": "100-cap packing example",
+        "ar": "مثال تعبئة: 100 قبعة"
+      },
+      "alt": {
+        "en": "Packing illustration for 100 caps, showing bagged caps and cartons; outer carton 64 × 45 × 40 cm and product weight 13.1 kg.",
+        "ar": "مخطط تعبئة لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم."
+      },
+      "caption": {
+        "en": "Shown: 100 caps; outer carton 64 × 45 × 40 cm; product weight 13.1 kg.",
+        "ar": "الموضح: 100 قبعة؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم؛ وزن المنتجات 13.1 كجم."
+      },
+      "packingData": {
+        "quantity": 100,
+        "outerCartonCm": [
+          64,
+          45,
+          40
+        ],
+        "productWeightKg": "13.1",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      },
+      "originalSourceFile": "8_hat_factory.jpg"
+    },
+    {
+      "id": 9,
+      "group": "packing",
+      "title": {
+        "en": "150-cap packing example",
+        "ar": "مثال تعبئة: 150 قبعة"
+      },
+      "alt": {
+        "en": "Packing illustration for 150 caps, showing bagged caps and cartons; outer carton 60 × 45 × 53 cm and product weight 19.4 kg.",
+        "ar": "مخطط تعبئة لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم."
+      },
+      "caption": {
+        "en": "Shown: 150 caps; outer carton 60 × 45 × 53 cm; product weight 19.4 kg.",
+        "ar": "الموضح: 150 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم؛ وزن المنتجات 19.4 كجم."
+      },
+      "packingData": {
+        "quantity": 150,
+        "outerCartonCm": [
+          60,
+          45,
+          53
+        ],
+        "productWeightKg": "19.4",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      },
+      "originalSourceFile": "9_hat_factory.jpg"
+    },
+    {
+      "id": 10,
+      "group": "packing",
+      "title": {
+        "en": "200-cap packing example",
+        "ar": "مثال تعبئة: 200 قبعة"
+      },
+      "alt": {
+        "en": "Packing illustration for 200 caps, showing bagged caps and cartons; outer carton 60 × 45 × 80 cm and product weight 24.8 kg.",
+        "ar": "مخطط تعبئة لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم."
+      },
+      "caption": {
+        "en": "Shown: 200 caps; outer carton 60 × 45 × 80 cm; product weight 24.8 kg.",
+        "ar": "الموضح: 200 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم؛ وزن المنتجات 24.8 كجم."
+      },
+      "packingData": {
+        "quantity": 200,
+        "outerCartonCm": [
+          60,
+          45,
+          80
+        ],
+        "productWeightKg": "24.8",
+        "weightLabel": {
+          "en": "Product weight shown",
+          "ar": "وزن المنتجات المذكور في الصورة"
+        }
+      },
+      "originalSourceFile": "10_hat_factory.jpg"
+    },
+    {
+      "id": 11,
+      "group": "style",
+      "title": {
+        "en": "Cap & hat shapes",
+        "ar": "أشكال القبعات"
+      },
+      "alt": {
+        "en": "Illustrated guide comparing hat shapes, including baseball caps, a bucket hat and a visor.",
+        "ar": "رسم توضيحي يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي."
+      },
+      "caption": {
+        "en": "Choose a reference shape and confirm the crown and panel details with your supplier.",
+        "ar": "اختر شكلاً مرجعياً وأكد تفاصيل الجزء العلوي والألواح مع المورد."
+      },
+      "originalSourceFile": "11_hat_factory.jpg"
+    },
+    {
+      "id": 12,
+      "group": "style",
+      "title": {
+        "en": "Brim details",
+        "ar": "تفاصيل حافة القبعة"
+      },
+      "alt": {
+        "en": "Grid of examples illustrating short, long, flat and decorated cap brims.",
+        "ar": "شبكة صور توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة."
+      },
+      "caption": {
+        "en": "Confirm brim length, profile and edge details against the chosen reference.",
+        "ar": "أكد طول الحافة وشكلها وتفاصيل أطرافها وفق النموذج المرجعي المختار."
+      },
+      "originalSourceFile": "12_hat_factory.jpg"
+    }
+  ],
+  "artworkEnglish": {
+    "11": {
+      "heading": "Cap & hat shapes",
+      "order": "left to right, top to bottom; 2 rows × 4",
+      "labels": [
+        "6-panel baseball cap",
+        "5-panel baseball cap",
+        "Flat-brim cap",
+        "Bucket hat",
+        "Flat-top cap",
+        "Visor",
+        "5-panel camp cap",
+        "Brimless cap"
+      ]
+    },
+    "12": {
+      "heading": "Brim details",
+      "order": "left to right, top to bottom; 3 rows × 4",
+      "labels": [
+        "5 cm short brim",
+        "Standard brim",
+        "11 cm long brim",
+        "Hook detail",
+        "Bound edge",
+        "Embroidered sandwich brim",
+        "Flat brim",
+        "Reflective sandwich brim",
+        "Printed sandwich brim",
+        "Woven detail",
+        "Wide brim",
+        "Distressed brim"
+      ]
+    },
+    "6": {
+      "heading": "1-cap packing example",
+      "labels": [
+        "Inner bag",
+        "Outer carton",
+        "Outer carton: 23 × 13 × 16 cm",
+        "Product weight: 0.2 kg"
+      ]
+    },
+    "7": {
+      "heading": "25-cap packing example",
+      "labels": [
+        "Inner bag",
+        "Outer carton",
+        "Outer carton: 61 × 23 × 18 cm",
+        "Product weight: 3.2 kg"
+      ]
+    },
+    "8": {
+      "heading": "100-cap packing example",
+      "labels": [
+        "Inner bag (25 caps)",
+        "Inner carton (25 caps)",
+        "Outer carton",
+        "Outer carton: 64 × 45 × 40 cm",
+        "Product weight: 13.1 kg"
+      ]
+    },
+    "9": {
+      "heading": "150-cap packing example",
+      "labels": [
+        "Inner bag (25 caps)",
+        "Inner carton (25 caps)",
+        "Outer carton",
+        "Outer carton: 60 × 45 × 53 cm",
+        "Product weight: 19.4 kg"
+      ]
+    },
+    "10": {
+      "heading": "200-cap packing example",
+      "labels": [
+        "Inner bag (25 caps)",
+        "Inner carton (25 caps)",
+        "Outer carton",
+        "Outer carton: 60 × 45 × 80 cm",
+        "Product weight: 24.8 kg"
+      ]
+    }
+  }
+}

@@ -1,0 +1,93 @@
+{
+  "status": "editorial inputs; no native-speaker review; use only in applicable components",
+  "locales": {
+    "en": {
+      "importPlanning": "Import document planning",
+      "saudiSaber": "Saudi SABER document review",
+      "serviceScope": "Service scope",
+      "consolidationCta": "Discuss consolidation",
+      "inspectionCta": "Discuss inspection",
+      "documentsCta": "Review shipment documents",
+      "freightExecutor": "Freight by Heaven Born",
+      "freightFooter": "Freight execution",
+      "originCoordination": "China-origin freight coordination"
+    },
+    "zh": {
+      "importPlanning": "进口文件规划",
+      "saudiSaber": "沙特 SABER 文件核对",
+      "serviceScope": "服务范围",
+      "consolidationCta": "咨询集货方案",
+      "inspectionCta": "咨询验货安排",
+      "documentsCta": "核对出运文件",
+      "freightExecutor": "货运由华正邦泰执行",
+      "freightFooter": "货运执行",
+      "originCoordination": "中国始发货运协调"
+    },
+    "ar": {
+      "importPlanning": "تخطيط مستندات الاستيراد",
+      "saudiSaber": "مراجعة مستندات SABER للسعودية",
+      "serviceScope": "نطاق الخدمة",
+      "consolidationCta": "ناقش تجميع البضائع",
+      "inspectionCta": "ناقش ترتيبات الفحص",
+      "documentsCta": "راجع مستندات الشحنة",
+      "freightExecutor": "الشحن عبر Heaven Born",
+      "freightFooter": "تنفيذ الشحن",
+      "originCoordination": "تنسيق الشحن من الصين"
+    },
+    "es": {
+      "importPlanning": "Planificación de documentos de importación",
+      "saudiSaber": "Revisión de documentos SABER para Arabia Saudita",
+      "serviceScope": "Alcance del servicio",
+      "consolidationCta": "Consultar consolidación",
+      "inspectionCta": "Consultar inspección",
+      "documentsCta": "Revisar documentos del envío",
+      "freightExecutor": "Transporte por Heaven Born",
+      "freightFooter": "Ejecución del transporte",
+      "originCoordination": "Coordinación de transporte desde China"
+    },
+    "fr": {
+      "importPlanning": "Préparation des documents d’importation",
+      "saudiSaber": "Vérification des documents SABER pour l’Arabie saoudite",
+      "serviceScope": "Périmètre du service",
+      "consolidationCta": "Discuter de la consolidation",
+      "inspectionCta": "Discuter de l’inspection",
+      "documentsCta": "Vérifier les documents d’expédition",
+      "freightExecutor": "Fret par Heaven Born",
+      "freightFooter": "Exécution du transport",
+      "originCoordination": "Coordination du fret au départ de Chine"
+    },
+    "ru": {
+      "importPlanning": "Подготовка импортных документов",
+      "saudiSaber": "Проверка документов SABER для Саудовской Аравии",
+      "serviceScope": "Объём услуг",
+      "consolidationCta": "Обсудить консолидацию",
+      "inspectionCta": "Обсудить инспекцию",
+      "documentsCta": "Проверить документы на груз",
+      "freightExecutor": "Перевозки Heaven Born",
+      "freightFooter": "Организация перевозки",
+      "originCoordination": "Координация перевозок из Китая"
+    },
+    "pt": {
+      "importPlanning": "Preparação de documentos de importação",
+      "saudiSaber": "Revisão de documentos SABER para a Arábia Saudita",
+      "serviceScope": "Âmbito do serviço",
+      "consolidationCta": "Consultar consolidação",
+      "inspectionCta": "Consultar inspeção",
+      "documentsCta": "Rever documentos da remessa",
+      "freightExecutor": "Transporte pela Heaven Born",
+      "freightFooter": "Execução do transporte",
+      "originCoordination": "Coordenação de transporte a partir da China"
+    },
+    "tr": {
+      "importPlanning": "İthalat belgesi planlaması",
+      "saudiSaber": "Suudi Arabistan için SABER belge incelemesi",
+      "serviceScope": "Hizmet kapsamı",
+      "consolidationCta": "Yük birleştirmeyi görüşün",
+      "inspectionCta": "Denetimi görüşün",
+      "documentsCta": "Sevkiyat belgelerini inceleyin",
+      "freightExecutor": "Heaven Born ile taşımacılık",
+      "freightFooter": "Taşımacılık hizmeti",
+      "originCoordination": "Çin çıkışlı taşıma koordinasyonu"
+    }
+  }
+}

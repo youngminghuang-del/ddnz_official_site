@@ -4,7 +4,6 @@ import GetAQuote from '../components/GetAQuote';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import TradeSupportInquiry from '../components/TradeSupportInquiry';
 import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -77,7 +76,7 @@ export default function GetAQuotePage() {
         {isTradeSupport ? <TradeSupportInquiry /> : <GetAQuote />}
       </main>
       <Footer />
-      {!isTradeSupport ? <WhatsAppFloat /> : null}
+
       {!isTradeSupport ? <ScrollToTop /> : null}
     </div>
   );

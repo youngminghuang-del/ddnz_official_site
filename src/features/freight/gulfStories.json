@@ -1,0 +1,2310 @@
+{
+  "qatar": {
+    "en": {
+      "title": "Shipping from China to Qatar | Supplier Consolidation | DDNZ",
+      "desc": "Coordinate supplier deliveries in China, prepare a clear consolidation list and review the full freight and delivery scope for your Qatar shipment.",
+      "heading": "Shipping from China to Qatar, with your supplier orders brought together",
+      "intro": "Coordinate supplier deliveries, receiving checks and consolidation planning with DDNZ before your goods leave China. Bring your supplier list and Qatar delivery address together in one brief, so the cargo, transport options and delivery costs can be reviewed as a whole.",
+      "buttons": [
+        "Request a Qatar shipping quote",
+        "Still buying? Plan your shipment"
+      ],
+      "sections": [
+        {
+          "heading": "Turn several supplier orders into one clear shipment list",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "For hats, accessories or other commercial goods bought from several suppliers, a shared list keeps each delivery connected to its order. Confirm the receiving instructions before suppliers dispatch, then record what has arrived and what is still due."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Prepare for each supplier",
+                  "Use it to confirm"
+                ],
+                [
+                  "Order reference and goods description",
+                  "Which products belong to each order"
+                ],
+                [
+                  "Carton marks and expected package count",
+                  "Which deliveries have arrived and whether there are differences"
+                ],
+                [
+                  "Ready date and delivery location in China",
+                  "Whether to wait for all goods or review separate dispatches"
+                ],
+                [
+                  "Packed dimensions and gross weight",
+                  "The final cargo data used to review transport options"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If one supplier is ready earlier, compare waiting and storage with the cost of separate shipments. Keep the supplier and product references when packages are combined."
+            }
+          ]
+        },
+        {
+          "heading": "Agree the checks your order needs",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Start with package counts, carton marks and visible packing condition. Add opening, item counts, product checks or photographs where your order needs them, and confirm the scope and charges before receiving begins."
+            }
+          ]
+        },
+        {
+          "heading": "Match consolidation to the packaging",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Consolidation brings supplier packages into an agreed shipping plan; LCL shares container space with other cargo. The two can work together. Review the final dimensions, gross weights and stacking restrictions after any repacking so the transport comparison uses the actual cargo."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare the Qatar delivery side early",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Confirm the importer’s customs-code arrangements and keep mixed products separately identifiable in the packing information. This helps connect your supplier list to the import documents. [Qatar Customs guidance](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb offers trader and customs-broker guidance. Agree who handles the declaration and which importer details they need. [Al Nadeeb guides](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Hamad Port handles containers and general cargo. For a sea-freight quotation, identify the arrival point and final receiving address separately, then confirm the onward delivery arrangements. [Mwani Qatar: Hamad Port](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Compare quotes against the same delivery scope",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Review these items together: collection from suppliers, receiving, storage, inspection or repacking, export handling, international freight, destination handling, clearance, duties and taxes, final delivery and insurance. The quotation should identify what is included, excluded or still to be confirmed, with the responsible party for each item."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordinates the agreed sourcing and export handover. Heaven Born handles booking, loading and international freight within the confirmed service scope."
+            }
+          ]
+        },
+        {
+          "heading": "Questions before you ship",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Can several 1688 suppliers send goods for one shipment?**\nStart with each supplier’s location, ready date and packing details. Confirm the receiving address, carton marks and checking or repacking services, then decide which goods will ship together."
+            },
+            {
+              "type": "text",
+              "text": "**Will a receiving check cover every item inside the cartons?**\nChoose the inspection level your order needs. Package counts and label checks cover the receiving step; opening cartons, counting items and testing products should be specified separately."
+            },
+            {
+              "type": "text",
+              "text": "**Does door delivery include every charge?**\nCompare the named delivery point, import handling, taxes and final delivery against the quotation. If you need a DDP arrangement, include it in your brief so it can be reviewed for the goods and importing party."
+            },
+            {
+              "type": "text",
+              "text": "**My order is small or the measurements are not ready. Can I start?**\nSend the information you have, including the purchasing stage. Ask how minimum charges affect the shipment; final packing data can be added when available."
+            }
+          ]
+        },
+        {
+          "heading": "Start with what you know",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Share the delivery city in Qatar, goods, supplier count, purchasing stage, ready date and contact channel. Add package counts, dimensions and gross weights when available; mark missing details as awaiting the supplier."
+            },
+            {
+              "type": "text",
+              "text": "**Request a Qatar shipping quote**"
+            },
+            {
+              "type": "text",
+              "text": "[Explore LCL shipping](/services/lcl-shipping-from-china/) · [Sea freight from China](/services/sea-freight/) · [Middle East routes](/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Destination sources checked 14 October 2026. Confirm requirements for the actual goods before booking."
+            }
+          ]
+        }
+      ]
+    },
+    "ar": {
+      "title": "الشحن من الصين إلى قطر | تجميع بضائع الموردين | DDNZ",
+      "desc": "نسّق تسليم بضائع الموردين في الصين، وجهّز قائمة واضحة للتجميع، وراجع نطاق الشحن والتسليم الكامل لشحنتك إلى قطر.",
+      "heading": "الشحن من الصين إلى قطر بخطة تجمع طلبات مورديك",
+      "intro": "نسّق مع DDNZ تسليم بضائع الموردين ومراجعة الاستلام وتخطيط التجميع قبل مغادرة البضائع الصين. اجمع قائمة الموردين وعنوان التسليم في قطر في طلب واحد، لمراجعة البضاعة وخيارات النقل وتكاليف التسليم معاً.",
+      "buttons": [
+        "اطلب عرض شحن إلى قطر",
+        "ما زلت تشتري؟ خطّط لشحنتك"
+      ],
+      "sections": [
+        {
+          "heading": "حوّل طلبات الموردين إلى قائمة شحن واضحة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "عند شراء القبعات أو الإكسسوارات أو غيرها من البضائع التجارية من عدة موردين، تربط القائمة المشتركة كل دفعة بطلبها. أكّد تعليمات الاستلام قبل إرسال البضائع، ثم سجّل ما وصل وما يزال متوقعاً."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "جهّز لكل مورد",
+                  "للتأكد من"
+                ],
+                [
+                  "مرجع الطلب ووصف البضاعة",
+                  "المنتجات المرتبطة بكل طلب"
+                ],
+                [
+                  "علامات الكراتين وعدد الطرود المتوقع",
+                  "الدفعات المستلمة وأي فروقات"
+                ],
+                [
+                  "تاريخ الجاهزية وموقع التسليم في الصين",
+                  "الانتظار لاكتمال البضائع أو دراسة إرسالها على دفعات"
+                ],
+                [
+                  "الأبعاد بعد التعبئة والوزن الإجمالي",
+                  "بيانات الشحنة النهائية لمراجعة خيارات النقل"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "إذا جهزت بضائع مورد مبكراً، فقارن تكلفة الانتظار والتخزين بتكلفة الشحن المنفصل. احتفظ بمراجع الموردين والمنتجات عند جمع الطرود."
+            }
+          ]
+        },
+        {
+          "heading": "اتفق على الفحوص التي يحتاج إليها طلبك",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "ابدأ بعدد الطرود وعلامات الكراتين وحالة التغليف الظاهرة. أضف فتح العبوات أو عدّ القطع أو فحص المنتجات أو التصوير حسب حاجة الطلب، وأكّد نطاق العمل والرسوم قبل بدء الاستلام."
+            }
+          ]
+        },
+        {
+          "heading": "خطّط للتجميع وفق التعبئة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يربط التجميع طرود الموردين بخطة شحن متفق عليها، بينما يتيح الشحن الجزئي LCL مشاركة مساحة الحاوية مع بضائع أخرى. يمكن الجمع بينهما. راجع الأبعاد والأوزان الإجمالية وقيود التكديس بعد أي إعادة تعبئة، لتستند مقارنة النقل إلى البضاعة الفعلية."
+            }
+          ]
+        },
+        {
+          "heading": "جهّز ترتيبات التسليم في قطر مبكراً",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "أكّد ترتيبات الرمز الجمركي للمستورد، وأبقِ الأصناف المختلفة واضحة في بيانات التعبئة، لربط قائمة الموردين بوثائق الاستيراد. [إرشادات الجمارك القطرية](https://www.customs.gov.qa/Arabic/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "يوفّر نظام النديب إرشادات للتاجر والمخلص الجمركي. اتفق على الجهة التي تتولى البيان الجمركي وبيانات المستورد المطلوبة. [أدلة نظام النديب](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "يتعامل ميناء حمد مع الحاويات والبضائع العامة. حدّد نقطة الوصول وعنوان الاستلام النهائي بشكل منفصل في عرض الشحن البحري، ثم أكّد ترتيبات التوصيل اللاحق. [موانئ قطر: ميناء حمد](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "قارن العروض ضمن نطاق تسليم واحد",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "راجع معاً الاستلام من الموردين، والاستلام في المستودع، والتخزين، والفحص أو إعادة التعبئة، وإجراءات التصدير، والشحن الدولي، ومناولة الوجهة، والتخليص، والرسوم والضرائب، والتسليم النهائي والتأمين. ينبغي أن يوضح العرض المشمول والمستثنى وما ينتظر التأكيد، مع تحديد المسؤول عن كل بند."
+            },
+            {
+              "type": "text",
+              "text": "تنسّق DDNZ تسليم ملف التوريد والتصدير المتفق عليه. وتتولى Heaven Born الحجز والتحميل والشحن الدولي ضمن نطاق الخدمة المؤكد."
+            }
+          ]
+        },
+        {
+          "heading": "أسئلة قبل الشحن",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**هل يمكن جمع بضائع عدة موردين من 1688 في شحنة واحدة؟**\nابدأ بموقع كل مورد وموعد الجاهزية وبيانات التعبئة. أكّد عنوان الاستلام وعلامات الكراتين وخدمات الفحص أو إعادة التعبئة، ثم حدّد البضائع التي ستُشحن معاً."
+            },
+            {
+              "type": "text",
+              "text": "**هل تشمل مراجعة الاستلام كل قطعة داخل الكراتين؟**\nاختر مستوى الفحص الذي يحتاج إليه طلبك. يشمل الاستلام عدّ الطرود ومراجعة الملصقات؛ ويُحدَّد فتح الكراتين وعدّ القطع واختبار المنتجات بشكل منفصل."
+            },
+            {
+              "type": "text",
+              "text": "**هل يشمل التسليم إلى الباب جميع الرسوم؟**\nراجع نقطة التسليم وإجراءات الاستيراد والضرائب والتوصيل النهائي مقابل العرض. إذا احتجت إلى ترتيب DDP، فاذكره في الطلب لمراجعة ملاءمته للبضاعة والجهة المستوردة."
+            },
+            {
+              "type": "text",
+              "text": "**طلبي صغير أو لم تجهز القياسات بعد، هل يمكنني البدء؟**\nأرسل المعلومات المتاحة، بما فيها مرحلة الشراء. اسأل عن أثر الحد الأدنى للرسوم على الشحنة، وأضف بيانات التعبئة النهائية عند توفرها."
+            }
+          ]
+        },
+        {
+          "heading": "ابدأ بالمعلومات المتاحة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "شارك مدينة التسليم في قطر والبضاعة وعدد الموردين ومرحلة الشراء وتاريخ الجاهزية ووسيلة التواصل. أضف عدد الطرود وأبعادها وأوزانها الإجمالية عند توفرها، وحدّد البيانات الناقصة بأنها بانتظار المورد."
+            },
+            {
+              "type": "text",
+              "text": "**اطلب عرض شحن إلى قطر**"
+            },
+            {
+              "type": "text",
+              "text": "[استكشف الشحن الجزئي](/ar/services/lcl-shipping-from-china/) · [الشحن البحري من الصين](/ar/services/sea-freight/) · [مسارات الشرق الأوسط](/ar/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "رُوجعت مصادر الوجهة في 14 أكتوبر 2026. أكّد المتطلبات الخاصة بالبضاعة الفعلية قبل الحجز."
+            }
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "title": "中国到卡塔尔运输 | 多供应商集货 | DDNZ",
+      "desc": "协调供应商在中国的交货，整理清晰的集货清单，并核对卡塔尔货运与末端交付的完整服务范围。",
+      "heading": "中国到卡塔尔运输，统筹多家供应商订单",
+      "intro": "货物离开中国前，与DDNZ协调供应商交货、收货核对和集货计划。将供应商清单与卡塔尔收货地址放入同一份需求说明，整体评估货物、运输方案与交付费用。",
+      "buttons": [
+        "获取卡塔尔运输报价",
+        "还在采购？先规划运输"
+      ],
+      "sections": [
+        {
+          "heading": "将多家供应商订单整理成一份清晰的发货清单",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "从多家供应商采购帽子、配饰或其他商业货物时，共用清单能让每批到货对应到具体订单。供应商发货前先确认收货要求，再记录已到与待到货物。"
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "每家供应商需准备",
+                  "用于确认"
+                ],
+                [
+                  "订单编号与货物描述",
+                  "各订单对应哪些产品"
+                ],
+                [
+                  "箱唛与预计包装件数",
+                  "哪些货已到，是否存在差异"
+                ],
+                [
+                  "备货完成日期与中国交货地点",
+                  "等齐货物，还是评估分批发运"
+                ],
+                [
+                  "包装后尺寸与毛重",
+                  "用于评估运输方案的最终货物数据"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "若一家供应商提前备好货，比较等待与仓储费用和分批发运成本。合并包装时保留供应商与产品对应编号。"
+            }
+          ]
+        },
+        {
+          "heading": "约定订单需要哪些检查",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "先核对包装件数、箱唛和可见包装状况。按订单需要增加开箱、点数、产品检查或拍照，并在开始收货前确认范围和费用。"
+            }
+          ]
+        },
+        {
+          "heading": "根据包装安排集货",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "集货将供应商的包装件纳入约定运输计划；LCL拼箱则与其他货物共用集装箱空间。两者可以结合。重新包装后应复核最终尺寸、毛重和堆码限制，按实际货物比较运输方案。"
+            }
+          ]
+        },
+        {
+          "heading": "提前准备卡塔尔交付安排",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "确认进口方的海关登记编码安排，并在包装资料中清楚区分混装产品，以便将供应商清单与进口文件对应。[卡塔尔海关指引](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb提供贸易商和报关代理指引。约定由谁申报，以及所需进口方资料。[Al Nadeeb指南](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "哈马德港处理集装箱及普通货物。海运询价时分别列明到港地点和最终收货地址，再确认后续配送安排。[Mwani Qatar：哈马德港](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "按相同交付范围比较报价",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "一并核对供应商提货、收货、仓储、检验或重新包装、出口操作、国际运输、目的地操作、清关、关税及税费、最终配送和保险。报价应列明包含、不包含及待确认项目，并明确每项责任方。"
+            },
+            {
+              "type": "text",
+              "text": "DDNZ协调约定的采购与出口交接；Heaven Born在已确认的服务范围内负责订舱、装载和国际运输。"
+            }
+          ]
+        },
+        {
+          "heading": "发货前常见问题",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**可以把多家1688供应商的货合并发运吗？**\n先整理各供应商地点、备货日期和包装资料。确认收货地址、箱唛以及检查或重新包装服务，再决定哪些货一起发。"
+            },
+            {
+              "type": "text",
+              "text": "**收货核对会检查箱内每件商品吗？**\n按订单选择检查程度。收货环节包含包装件数与标签核对；开箱、逐件点数和产品测试需单独约定。"
+            },
+            {
+              "type": "text",
+              "text": "**送货到门是否包含所有费用？**\n将约定交付地点、进口操作、税费和最终配送与报价逐项对照。如需DDP安排，请在需求中说明，以便针对货物和进口方评估。"
+            },
+            {
+              "type": "text",
+              "text": "**订单很小或尺寸还没确定，可以开始吗？**\n先发送已有资料，包括采购阶段。询问最低收费对该票货的影响，最终包装数据可在取得后补充。"
+            }
+          ]
+        },
+        {
+          "heading": "从已有信息开始",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "提供卡塔尔收货城市、货物、供应商数量、采购阶段、备货日期及联系方式。有包装件数、尺寸和毛重后再补充；缺失资料标注为等待供应商确认。"
+            },
+            {
+              "type": "text",
+              "text": "**获取卡塔尔运输报价**"
+            },
+            {
+              "type": "text",
+              "text": "[了解LCL拼箱](/zh-cn/services/lcl-shipping-from-china/) · [中国出口海运](/zh-cn/services/sea-freight/) · [中东航线](/zh-cn/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "目的地资料核查日期为2026年10月14日。订舱前请确认实际货物的适用要求。"
+            }
+          ]
+        }
+      ]
+    },
+    "ru": {
+      "title": "Доставка из Китая в Катар | Консолидация заказов | DDNZ",
+      "desc": "Согласуйте поставки от поставщиков в Китае, подготовьте перечень для консолидации и уточните полный объём перевозки и доставки в Катар.",
+      "heading": "Доставка из Китая в Катар с объединением заказов поставщиков",
+      "intro": "До отправки товаров из Китая согласуйте с DDNZ поставки, приёмочные проверки и консолидацию. Объедините список поставщиков и адрес доставки в Катаре в одной заявке, чтобы совместно оценить груз, варианты перевозки и расходы на доставку.",
+      "buttons": [
+        "Запросить расчёт доставки в Катар",
+        "Ещё закупаете товар? Спланируйте перевозку"
+      ],
+      "sections": [
+        {
+          "heading": "Объедините заказы поставщиков в понятный перечень груза",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "При закупке головных уборов, аксессуаров или других коммерческих товаров у нескольких поставщиков общий перечень связывает каждую поставку с её заказом. До отгрузки подтвердите инструкции по приёмке, затем отмечайте поступившие и ожидаемые товары."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Подготовьте по каждому поставщику",
+                  "Что это позволяет проверить"
+                ],
+                [
+                  "Номер заказа и описание товара",
+                  "Какие товары относятся к каждому заказу"
+                ],
+                [
+                  "Маркировка коробок и ожидаемое число грузовых мест",
+                  "Какие поставки поступили и есть ли расхождения"
+                ],
+                [
+                  "Дата готовности и место передачи в Китае",
+                  "Ждать ли весь товар или рассмотреть отдельные отправки"
+                ],
+                [
+                  "Размеры после упаковки и вес брутто",
+                  "Окончательные данные груза для оценки вариантов перевозки"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Если один поставщик готов раньше, сравните расходы на ожидание и хранение со стоимостью отдельных отправок. При объединении упаковок сохраняйте привязку к поставщикам и товарам."
+            }
+          ]
+        },
+        {
+          "heading": "Согласуйте необходимые проверки заказа",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Начните с количества грузовых мест, маркировки коробок и видимого состояния упаковки. При необходимости добавьте вскрытие, пересчёт изделий, проверку товара или фотографии; согласуйте объём и стоимость до начала приёмки."
+            }
+          ]
+        },
+        {
+          "heading": "Планируйте консолидацию с учётом упаковки",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Консолидация объединяет отправления поставщиков в согласованный план перевозки; LCL позволяет делить контейнер с другими грузами. Эти решения можно сочетать. После переупаковки уточните итоговые размеры, вес брутто и ограничения штабелирования, чтобы сравнивать варианты по фактическому грузу."
+            }
+          ]
+        },
+        {
+          "heading": "Заранее подготовьте доставку в Катаре",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Уточните оформление таможенного кода импортёра и обеспечьте раздельную идентификацию разных товаров в упаковочных данных. Это связывает список поставщиков с импортными документами. [Рекомендации таможни Катара](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb публикует руководства для участников торговли и таможенных брокеров. Согласуйте, кто подаёт декларацию и какие данные импортёра нужны. [Руководства Al Nadeeb](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Порт Хамад обрабатывает контейнеры и генеральные грузы. При расчёте морской перевозки отдельно укажите пункт прибытия и конечный адрес получения, затем согласуйте дальнейшую доставку. [Mwani Qatar: порт Хамад](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Сравнивайте предложения с одинаковым объёмом услуг",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Рассматривайте вместе забор у поставщиков, приёмку, хранение, проверку или переупаковку, экспортные операции, международную перевозку, обработку в пункте назначения, оформление, пошлины и налоги, конечную доставку и страхование. В предложении должны быть указаны включённые, исключённые и требующие уточнения позиции, а также ответственный за каждую из них."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ координирует согласованную передачу по закупке и экспорту. Heaven Born выполняет бронирование, погрузку и международную перевозку в рамках подтверждённого объёма услуг."
+            }
+          ]
+        },
+        {
+          "heading": "Вопросы перед отправкой",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Можно ли объединить товары нескольких поставщиков 1688 в одну отправку?**\nНачните с местонахождения, даты готовности и упаковочных данных каждого поставщика. Подтвердите адрес приёмки, маркировку коробок и услуги проверки или переупаковки, затем определите, какие товары отправлять вместе."
+            },
+            {
+              "type": "text",
+              "text": "**Включает ли приёмочная проверка каждое изделие внутри коробок?**\nВыберите необходимый уровень проверки. Подсчёт грузовых мест и сверка маркировки относятся к приёмке; вскрытие коробок, пересчёт изделий и испытания товаров согласовываются отдельно."
+            },
+            {
+              "type": "text",
+              "text": "**Включает ли доставка до двери все расходы?**\nСопоставьте указанный пункт доставки, импортные операции, налоги и конечную доставку с предложением. Если требуется DDP, укажите это в заявке для оценки применительно к товару и импортёру."
+            },
+            {
+              "type": "text",
+              "text": "**Можно ли начать, если заказ небольшой или размеры ещё неизвестны?**\nПришлите имеющиеся сведения, включая стадию закупки. Уточните влияние минимальных сборов на отправку; окончательные упаковочные данные можно добавить позже."
+            }
+          ]
+        },
+        {
+          "heading": "Начните с имеющихся данных",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Укажите город доставки в Катаре, товары, число поставщиков, стадию закупки, дату готовности и способ связи. Добавьте число грузовых мест, размеры и вес брутто, когда они появятся; отсутствующие данные отметьте как ожидаемые от поставщика."
+            },
+            {
+              "type": "text",
+              "text": "**Запросить расчёт доставки в Катар**"
+            },
+            {
+              "type": "text",
+              "text": "[Перевозки LCL](/ru/services/lcl-shipping-from-china/) · [Морские перевозки из Китая](/ru/services/sea-freight/) · [Маршруты на Ближний Восток](/ru/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Источники по стране назначения проверены 14 октября 2026 года. До бронирования уточните требования к фактическому товару."
+            }
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "title": "Expédition de Chine vers le Qatar | Groupage fournisseurs | DDNZ",
+      "desc": "Coordonnez les livraisons des fournisseurs en Chine, préparez une liste de groupage claire et vérifiez le périmètre complet du transport et de la livraison au Qatar.",
+      "heading": "Expédition de Chine vers le Qatar, en regroupant les commandes de vos fournisseurs",
+      "intro": "Avant le départ de Chine, coordonnez avec DDNZ les livraisons fournisseurs, les contrôles à réception et le groupage. Réunissez la liste des fournisseurs et l’adresse de livraison au Qatar dans une même demande pour examiner ensemble la marchandise, les solutions de transport et les frais de livraison.",
+      "buttons": [
+        "Demander un devis de transport vers le Qatar",
+        "Achats en cours ? Planifiez l’expédition"
+      ],
+      "sections": [
+        {
+          "heading": "Réunissez plusieurs commandes dans une liste d’expédition claire",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Pour des casquettes, accessoires ou autres marchandises commerciales achetés auprès de plusieurs fournisseurs, une liste commune rattache chaque livraison à sa commande. Confirmez les consignes de réception avant l’envoi, puis notez les marchandises reçues et celles encore attendues."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "À préparer pour chaque fournisseur",
+                  "Pour vérifier"
+                ],
+                [
+                  "Référence de commande et description des marchandises",
+                  "Les produits rattachés à chaque commande"
+                ],
+                [
+                  "Marquage des cartons et nombre de colis prévu",
+                  "Les livraisons reçues et les éventuels écarts"
+                ],
+                [
+                  "Date de disponibilité et lieu de remise en Chine",
+                  "S’il faut attendre tous les produits ou envisager des envois séparés"
+                ],
+                [
+                  "Dimensions emballées et poids brut",
+                  "Les données finales du fret pour comparer les solutions de transport"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Si un fournisseur est prêt plus tôt, comparez l’attente et le stockage au coût d’envois séparés. Conservez les références fournisseurs et produits lors du regroupement des colis."
+            }
+          ]
+        },
+        {
+          "heading": "Convenez des contrôles nécessaires à votre commande",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Commencez par le nombre de colis, le marquage des cartons et l’état visible de l’emballage. Ajoutez si nécessaire ouverture, comptage des articles, contrôles produit ou photos, et confirmez le périmètre et les frais avant la réception."
+            }
+          ]
+        },
+        {
+          "heading": "Adaptez le groupage à l’emballage",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Le groupage intègre les colis des fournisseurs à un plan d’expédition convenu ; le LCL partage l’espace d’un conteneur avec d’autres marchandises. Ces approches peuvent se combiner. Après tout réemballage, vérifiez les dimensions finales, les poids bruts et les restrictions de gerbage pour comparer les transports sur la base du fret réel."
+            }
+          ]
+        },
+        {
+          "heading": "Préparez tôt la livraison au Qatar",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Confirmez les dispositions relatives au code douanier de l’importateur et identifiez séparément les produits mélangés dans les données d’emballage. Cela relie la liste des fournisseurs aux documents d’importation. [Conseils des douanes du Qatar](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb propose des guides aux opérateurs commerciaux et aux représentants en douane. Convenez du déclarant et des informations requises sur l’importateur. [Guides Al Nadeeb](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Le port Hamad traite les conteneurs et les marchandises diverses. Pour un devis maritime, distinguez le point d’arrivée de l’adresse finale de réception, puis confirmez l’acheminement ultérieur. [Mwani Qatar : port Hamad](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Comparez les devis sur un même périmètre de livraison",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Examinez ensemble l’enlèvement chez les fournisseurs, la réception, le stockage, l’inspection ou le réemballage, les opérations export, le transport international, les opérations à destination, le dédouanement, les droits et taxes, la livraison finale et l’assurance. Le devis doit préciser les postes inclus, exclus ou à confirmer, ainsi que le responsable de chacun."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordonne la passation convenue pour les achats et l’exportation. Heaven Born prend en charge la réservation, le chargement et le transport international dans le périmètre confirmé."
+            }
+          ]
+        },
+        {
+          "heading": "Questions avant l’expédition",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Peut-on réunir les marchandises de plusieurs fournisseurs 1688 dans un même envoi ?**\nCommencez par le lieu, la date de disponibilité et les données d’emballage de chaque fournisseur. Confirmez l’adresse de réception, le marquage des cartons et les prestations de contrôle ou de réemballage, puis décidez des marchandises à expédier ensemble."
+            },
+            {
+              "type": "text",
+              "text": "**Le contrôle à réception couvre-t-il chaque article dans les cartons ?**\nChoisissez le niveau de contrôle adapté à votre commande. Le comptage des colis et la vérification des étiquettes relèvent de la réception ; l’ouverture, le comptage des articles et les essais produit doivent être définis séparément."
+            },
+            {
+              "type": "text",
+              "text": "**La livraison à domicile inclut-elle tous les frais ?**\nVérifiez dans le devis le point de livraison indiqué, les opérations import, les taxes et la livraison finale. Si vous souhaitez une solution DDP, précisez-le pour qu’elle soit étudiée selon les marchandises et l’importateur."
+            },
+            {
+              "type": "text",
+              "text": "**Puis-je commencer si ma commande est petite ou si les dimensions ne sont pas prêtes ?**\nEnvoyez les informations disponibles, y compris l’étape des achats. Demandez l’incidence des frais minimums ; les données d’emballage finales pourront être ajoutées ensuite."
+            }
+          ]
+        },
+        {
+          "heading": "Commencez avec les informations disponibles",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indiquez la ville de livraison au Qatar, les marchandises, le nombre de fournisseurs, l’étape des achats, la date de disponibilité et le moyen de contact. Ajoutez le nombre de colis, leurs dimensions et poids bruts dès qu’ils sont disponibles ; signalez les données en attente du fournisseur."
+            },
+            {
+              "type": "text",
+              "text": "**Demander un devis de transport vers le Qatar**"
+            },
+            {
+              "type": "text",
+              "text": "[Découvrir le LCL](/fr/services/lcl-shipping-from-china/) · [Fret maritime depuis la Chine](/fr/services/sea-freight/) · [Liaisons vers le Moyen-Orient](/fr/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Sources concernant la destination vérifiées le 14 octobre 2026. Confirmez les exigences applicables aux marchandises réelles avant la réservation."
+            }
+          ]
+        }
+      ]
+    },
+    "es": {
+      "title": "Envíos de China a Catar | Consolidación de proveedores | DDNZ",
+      "desc": "Coordine las entregas de proveedores en China, prepare una lista clara de consolidación y revise el alcance completo del transporte y la entrega en Catar.",
+      "heading": "Envíos de China a Catar, reuniendo los pedidos de sus proveedores",
+      "intro": "Antes de que la mercancía salga de China, coordine con DDNZ las entregas de proveedores, las comprobaciones de recepción y la consolidación. Reúna la lista de proveedores y la dirección de entrega en Catar en una sola solicitud para evaluar conjuntamente la carga, las opciones de transporte y los costes de entrega.",
+      "buttons": [
+        "Solicitar una cotización de envío a Catar",
+        "¿Sigue comprando? Planifique el envío"
+      ],
+      "sections": [
+        {
+          "heading": "Reúna varios pedidos en una lista de envío clara",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Para gorras, accesorios u otras mercancías comerciales compradas a varios proveedores, una lista común vincula cada entrega con su pedido. Confirme las instrucciones de recepción antes del despacho y registre lo recibido y lo pendiente."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Prepare por cada proveedor",
+                  "Permite confirmar"
+                ],
+                [
+                  "Referencia del pedido y descripción de la mercancía",
+                  "Qué productos corresponden a cada pedido"
+                ],
+                [
+                  "Marcas de las cajas y número previsto de bultos",
+                  "Qué entregas han llegado y si hay diferencias"
+                ],
+                [
+                  "Fecha de disponibilidad y lugar de entrega en China",
+                  "Si conviene esperar toda la mercancía o evaluar envíos separados"
+                ],
+                [
+                  "Dimensiones embaladas y peso bruto",
+                  "Los datos finales de la carga para evaluar el transporte"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Si un proveedor termina antes, compare la espera y el almacenamiento con el coste de envíos separados. Mantenga las referencias de proveedores y productos al agrupar los bultos."
+            }
+          ]
+        },
+        {
+          "heading": "Acuerde las comprobaciones que necesita su pedido",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Empiece por el número de bultos, las marcas de las cajas y el estado visible del embalaje. Añada apertura, recuento de artículos, revisiones de producto o fotografías según las necesidades del pedido, y confirme el alcance y los cargos antes de la recepción."
+            }
+          ]
+        },
+        {
+          "heading": "Adapte la consolidación al embalaje",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "La consolidación incorpora los bultos de proveedores a un plan de envío acordado; LCL comparte espacio de contenedor con otras cargas. Ambas opciones pueden combinarse. Tras cualquier reembalaje, revise las dimensiones finales, los pesos brutos y las restricciones de apilado para comparar el transporte según la carga real."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare con antelación la entrega en Catar",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Confirme la gestión del código aduanero del importador y mantenga identificados por separado los distintos productos en los datos de embalaje. Esto permite relacionar la lista de proveedores con los documentos de importación. [Orientación de Aduanas de Catar](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb ofrece guías para comerciantes y agentes de aduanas. Acuerde quién presenta la declaración y qué datos del importador necesita. [Guías de Al Nadeeb](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "El puerto de Hamad maneja contenedores y carga general. Para una cotización marítima, indique por separado el punto de llegada y la dirección final de recepción; después confirme el transporte posterior. [Mwani Qatar: puerto de Hamad](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Compare cotizaciones con el mismo alcance de entrega",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Revise conjuntamente la recogida en proveedores, recepción, almacenamiento, inspección o reembalaje, operaciones de exportación, transporte internacional, operaciones en destino, despacho aduanero, aranceles e impuestos, entrega final y seguro. La cotización debe identificar lo incluido, excluido o pendiente de confirmar, con un responsable para cada concepto."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordina la entrega acordada de las operaciones de compra y exportación. Heaven Born gestiona la reserva, la carga y el transporte internacional dentro del alcance confirmado."
+            }
+          ]
+        },
+        {
+          "heading": "Preguntas antes del envío",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**¿Pueden varios proveedores de 1688 enviar mercancías en un solo embarque?**\nEmpiece por la ubicación, fecha de disponibilidad y datos de embalaje de cada proveedor. Confirme la dirección de recepción, las marcas de las cajas y los servicios de comprobación o reembalaje; después decida qué mercancías viajarán juntas."
+            },
+            {
+              "type": "text",
+              "text": "**¿La comprobación de recepción incluye todos los artículos de las cajas?**\nElija el nivel de inspección que necesita el pedido. El recuento de bultos y la revisión de etiquetas corresponden a la recepción; la apertura de cajas, el recuento de artículos y las pruebas de productos deben acordarse por separado."
+            },
+            {
+              "type": "text",
+              "text": "**¿La entrega a domicilio incluye todos los cargos?**\nContraste el punto de entrega indicado, las operaciones de importación, los impuestos y la entrega final con la cotización. Si necesita una modalidad DDP, indíquelo para evaluar su viabilidad según la mercancía y el importador."
+            },
+            {
+              "type": "text",
+              "text": "**¿Puedo empezar si mi pedido es pequeño o aún no tengo las medidas?**\nEnvíe los datos disponibles, incluida la fase de compra. Pregunte cómo afectan los cargos mínimos al envío; podrá añadir los datos definitivos de embalaje cuando estén disponibles."
+            }
+          ]
+        },
+        {
+          "heading": "Empiece con la información disponible",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indique la ciudad de entrega en Catar, la mercancía, el número de proveedores, la fase de compra, la fecha de disponibilidad y el canal de contacto. Añada número de bultos, dimensiones y pesos brutos cuando estén disponibles; marque los datos pendientes del proveedor."
+            },
+            {
+              "type": "text",
+              "text": "**Solicitar una cotización de envío a Catar**"
+            },
+            {
+              "type": "text",
+              "text": "[Conocer el transporte LCL](/es/services/lcl-shipping-from-china/) · [Transporte marítimo desde China](/es/services/sea-freight/) · [Rutas a Oriente Medio](/es/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Fuentes del destino revisadas el 14 de octubre de 2026. Confirme los requisitos de la mercancía real antes de reservar."
+            }
+          ]
+        }
+      ]
+    },
+    "pt": {
+      "title": "Envios da China para o Catar | Consolidação de fornecedores | DDNZ",
+      "desc": "Coordene entregas de fornecedores na China, prepare uma lista clara de consolidação e analise o âmbito completo do transporte e da entrega no Catar.",
+      "heading": "Envios da China para o Catar, reunindo os pedidos dos seus fornecedores",
+      "intro": "Antes de a mercadoria sair da China, coordene com a DDNZ as entregas dos fornecedores, as verificações na receção e a consolidação. Reúna a lista de fornecedores e o endereço de entrega no Catar num único pedido para avaliar em conjunto a carga, as opções de transporte e os custos de entrega.",
+      "buttons": [
+        "Pedir uma cotação de envio para o Catar",
+        "Ainda está a comprar? Planeie o envio"
+      ],
+      "sections": [
+        {
+          "heading": "Reúna vários pedidos numa lista de expedição clara",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Para bonés, acessórios ou outras mercadorias comerciais compradas a vários fornecedores, uma lista comum associa cada entrega ao respetivo pedido. Confirme as instruções de receção antes do envio e registe o que chegou e o que continua pendente."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Prepare para cada fornecedor",
+                  "Permite confirmar"
+                ],
+                [
+                  "Referência do pedido e descrição da mercadoria",
+                  "Que produtos pertencem a cada pedido"
+                ],
+                [
+                  "Marcações das caixas e número previsto de volumes",
+                  "Que entregas chegaram e se existem diferenças"
+                ],
+                [
+                  "Data de disponibilidade e local de entrega na China",
+                  "Se deve esperar por tudo ou avaliar envios separados"
+                ],
+                [
+                  "Dimensões embaladas e peso bruto",
+                  "Os dados finais da carga para avaliar o transporte"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Se um fornecedor estiver pronto mais cedo, compare a espera e o armazenamento com o custo de envios separados. Mantenha as referências dos fornecedores e produtos ao agrupar volumes."
+            }
+          ]
+        },
+        {
+          "heading": "Acorde as verificações necessárias ao pedido",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Comece pelo número de volumes, marcações das caixas e estado visível da embalagem. Acrescente abertura, contagem de artigos, verificações de produtos ou fotografias conforme necessário e confirme o âmbito e os custos antes da receção."
+            }
+          ]
+        },
+        {
+          "heading": "Adapte a consolidação à embalagem",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "A consolidação integra os volumes dos fornecedores num plano de envio acordado; o LCL partilha espaço de contentor com outras cargas. As duas soluções podem combinar-se. Após qualquer reembalagem, reveja dimensões finais, pesos brutos e restrições de empilhamento para comparar o transporte com base na carga real."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare antecipadamente a entrega no Catar",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Confirme os procedimentos relativos ao código aduaneiro do importador e mantenha os diferentes produtos identificáveis nos dados de embalagem. Isto permite relacionar a lista de fornecedores com os documentos de importação. [Orientações da Alfândega do Catar](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "O Al Nadeeb disponibiliza guias para comerciantes e despachantes aduaneiros. Acorde quem apresenta a declaração e quais os dados necessários do importador. [Guias Al Nadeeb](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "O porto de Hamad movimenta contentores e carga geral. Para uma cotação marítima, indique separadamente o ponto de chegada e o endereço final de receção, depois confirme o transporte subsequente. [Mwani Qatar: porto de Hamad](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Compare cotações com o mesmo âmbito de entrega",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Analise em conjunto a recolha nos fornecedores, receção, armazenamento, inspeção ou reembalagem, operações de exportação, transporte internacional, operações no destino, desalfandegamento, direitos e impostos, entrega final e seguro. A cotação deve identificar o que está incluído, excluído ou por confirmar, com o responsável por cada item."
+            },
+            {
+              "type": "text",
+              "text": "A DDNZ coordena a passagem acordada das operações de compra e exportação. A Heaven Born trata da reserva, carregamento e transporte internacional dentro do âmbito confirmado."
+            }
+          ]
+        },
+        {
+          "heading": "Perguntas antes do envio",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**É possível reunir mercadorias de vários fornecedores 1688 num único envio?**\nComece pela localização, data de disponibilidade e dados de embalagem de cada fornecedor. Confirme o endereço de receção, marcações das caixas e serviços de verificação ou reembalagem, depois decida que mercadorias seguem juntas."
+            },
+            {
+              "type": "text",
+              "text": "**A verificação na receção abrange todos os artigos dentro das caixas?**\nEscolha o nível de inspeção necessário. A contagem de volumes e a verificação de etiquetas fazem parte da receção; a abertura das caixas, a contagem de artigos e os testes de produtos devem ser definidos separadamente."
+            },
+            {
+              "type": "text",
+              "text": "**A entrega à porta inclui todos os custos?**\nCompare o ponto de entrega indicado, operações de importação, impostos e entrega final com a cotação. Se precisar de uma solução DDP, indique-o no pedido para avaliação em função da mercadoria e do importador."
+            },
+            {
+              "type": "text",
+              "text": "**Posso começar com um pedido pequeno ou sem medidas definitivas?**\nEnvie os dados disponíveis, incluindo a fase da compra. Pergunte como os encargos mínimos afetam o envio; os dados finais de embalagem podem ser acrescentados posteriormente."
+            }
+          ]
+        },
+        {
+          "heading": "Comece com a informação disponível",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indique a cidade de entrega no Catar, mercadorias, número de fornecedores, fase da compra, data de disponibilidade e meio de contacto. Acrescente número de volumes, dimensões e pesos brutos quando disponíveis; assinale os dados pendentes do fornecedor."
+            },
+            {
+              "type": "text",
+              "text": "**Pedir uma cotação de envio para o Catar**"
+            },
+            {
+              "type": "text",
+              "text": "[Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Transporte marítimo da China](/pt/services/sea-freight/) · [Rotas para o Médio Oriente](/pt/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Fontes sobre o destino verificadas em 14 de outubro de 2026. Confirme os requisitos aplicáveis à mercadoria real antes da reserva."
+            }
+          ]
+        }
+      ]
+    },
+    "tr": {
+      "title": "Çin’den Katar’a Nakliye | Tedarikçi Siparişlerini Birleştirme | DDNZ",
+      "desc": "Çin’deki tedarikçi teslimatlarını koordine edin, açık bir konsolidasyon listesi hazırlayın ve Katar sevkiyatınızın tüm taşıma ve teslimat kapsamını inceleyin.",
+      "heading": "Tedarikçi siparişleriniz bir araya getirilerek Çin’den Katar’a nakliye",
+      "intro": "Mallar Çin’den ayrılmadan önce tedarikçi teslimatlarını, kabul kontrollerini ve konsolidasyonu DDNZ ile planlayın. Yükü, taşıma seçeneklerini ve teslimat maliyetlerini birlikte değerlendirmek için tedarikçi listesini ve Katar teslimat adresini tek bir talepte toplayın.",
+      "buttons": [
+        "Katar nakliye teklifi isteyin",
+        "Alımlar sürüyor mu? Sevkiyatı planlayın"
+      ],
+      "sections": [
+        {
+          "heading": "Birden fazla siparişi açık bir sevkiyat listesinde toplayın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Birden fazla tedarikçiden alınan şapka, aksesuar veya diğer ticari mallar için ortak liste, her teslimatı ilgili siparişe bağlar. Tedarikçiler göndermeden önce kabul talimatlarını teyit edin; ardından gelen ve beklenen malları kaydedin."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Her tedarikçi için hazırlayın",
+                  "Neyi teyit etmeye yarar"
+                ],
+                [
+                  "Sipariş referansı ve mal tanımı",
+                  "Her siparişe ait ürünler"
+                ],
+                [
+                  "Koli işaretleri ve beklenen ambalajlı birim sayısı",
+                  "Hangi teslimatların geldiği ve fark olup olmadığı"
+                ],
+                [
+                  "Hazır olma tarihi ve Çin’deki teslim yeri",
+                  "Tüm malların beklenmesi mi, ayrı sevkiyatların değerlendirilmesi mi gerektiği"
+                ],
+                [
+                  "Ambalajlı ölçüler ve brüt ağırlık",
+                  "Taşıma seçeneklerini değerlendirmek için nihai yük verileri"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Bir tedarikçi daha erken hazırsa bekleme ve depolamayı ayrı sevkiyat maliyetleriyle karşılaştırın. Ambalajlar birleştirilirken tedarikçi ve ürün referanslarını koruyun."
+            }
+          ]
+        },
+        {
+          "heading": "Siparişin gerektirdiği kontrolleri kararlaştırın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Ambalajlı birim sayısı, koli işaretleri ve ambalajın görünen durumuyla başlayın. Gerektiğinde açma, ürün sayımı, ürün kontrolü veya fotoğrafları ekleyin; kabul başlamadan önce kapsamı ve ücretleri teyit edin."
+            }
+          ]
+        },
+        {
+          "heading": "Konsolidasyonu ambalaja göre planlayın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Konsolidasyon, tedarikçi yüklerini kararlaştırılan sevkiyat planında birleştirir; LCL ise konteyner alanını diğer yüklerle paylaşır. İkisi birlikte kullanılabilir. Yeniden ambalajlamadan sonra nihai ölçüleri, brüt ağırlıkları ve istif kısıtlarını gözden geçirerek gerçek yüke göre karşılaştırma yapın."
+            }
+          ]
+        },
+        {
+          "heading": "Katar’daki teslimat düzenlemelerini erken hazırlayın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "İthalatçının gümrük koduna ilişkin düzenlemelerini teyit edin ve farklı ürünleri ambalaj bilgilerinde ayrı ayrı tanımlanabilir tutun. Böylece tedarikçi listesi ithalat belgeleriyle eşleştirilebilir. [Katar Gümrüğü rehberi](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb, tüccarlar ve gümrük müşavirleri için rehberler sunar. Beyanı kimin yapacağını ve hangi ithalatçı bilgilerinin gerektiğini kararlaştırın. [Al Nadeeb rehberleri](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Hamad Limanı konteyner ve genel yük elleçler. Deniz yolu teklifi için varış noktasını ve son teslim adresini ayrı belirtin; ardından devam taşımasını teyit edin. [Mwani Qatar: Hamad Limanı](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Teklifleri aynı teslimat kapsamıyla karşılaştırın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Tedarikçiden alım, kabul, depolama, kontrol veya yeniden ambalajlama, ihracat işlemleri, uluslararası taşıma, varış işlemleri, gümrükleme, vergi ve harçlar, son teslimat ve sigortayı birlikte değerlendirin. Teklif, dahil olan, olmayan ve teyit bekleyen kalemleri ve her birinin sorumlusunu belirtmelidir."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ, kararlaştırılan tedarik ve ihracat devir sürecini koordine eder. Heaven Born, teyit edilen hizmet kapsamında rezervasyon, yükleme ve uluslararası taşımayı yürütür."
+            }
+          ]
+        },
+        {
+          "heading": "Sevkiyat öncesi sorular",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Birden fazla 1688 tedarikçisinin malları tek sevkiyatta gönderilebilir mi?**\nHer tedarikçinin konumu, hazır olma tarihi ve ambalaj bilgileriyle başlayın. Kabul adresini, koli işaretlerini ve kontrol veya yeniden ambalajlama hizmetlerini teyit ettikten sonra hangi malların birlikte gönderileceğini belirleyin."
+            },
+            {
+              "type": "text",
+              "text": "**Kabul kontrolü kolilerin içindeki her ürünü kapsar mı?**\nSiparişinizin gerektirdiği kontrol seviyesini seçin. Ambalajlı birim sayımı ve etiket kontrolü kabul aşamasına aittir; koli açma, ürün sayımı ve ürün testleri ayrıca belirlenmelidir."
+            },
+            {
+              "type": "text",
+              "text": "**Kapıya teslim tüm ücretleri kapsar mı?**\nBelirtilen teslim noktasını, ithalat işlemlerini, vergileri ve son teslimatı teklifle karşılaştırın. DDP düzenlemesi gerekiyorsa mal ve ithalatçı açısından değerlendirilmesi için talebinizde belirtin."
+            },
+            {
+              "type": "text",
+              "text": "**Siparişim küçükse veya ölçüler hazır değilse başlayabilir miyim?**\nSatın alma aşaması dahil mevcut bilgileri gönderin. Asgari ücretlerin sevkiyata etkisini sorun; nihai ambalaj verileri daha sonra eklenebilir."
+            }
+          ]
+        },
+        {
+          "heading": "Elinizdeki bilgilerle başlayın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Katar’daki teslim şehrini, malları, tedarikçi sayısını, satın alma aşamasını, hazır olma tarihini ve iletişim kanalını paylaşın. Mevcut olduğunda ambalajlı birim sayısını, ölçüleri ve brüt ağırlıkları ekleyin; eksik bilgileri tedarikçiden bekleniyor olarak işaretleyin."
+            },
+            {
+              "type": "text",
+              "text": "**Katar nakliye teklifi isteyin**"
+            },
+            {
+              "type": "text",
+              "text": "[LCL taşımayı inceleyin](/tr/services/lcl-shipping-from-china/) · [Çin’den deniz yolu taşımacılığı](/tr/services/sea-freight/) · [Orta Doğu rotaları](/tr/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Varış ülkesine ilişkin kaynaklar 14 Ekim 2026’da kontrol edildi. Rezervasyondan önce gerçek mallar için geçerli gereklilikleri teyit edin."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "oman": {
+    "en": {
+      "title": "Shipping from China to Oman | Large Commercial Cargo | DDNZ",
+      "desc": "Prepare large commercial cargo for Oman with package-level dimensions, freight options and a delivery plan that accounts for access and unloading.",
+      "heading": "Shipping from China to Oman, from packed cargo to delivery planning",
+      "intro": "Plan large commercial shipments with DDNZ around the details that affect the move: packed dimensions, handling requirements and the receiving site. Bring the supplier’s packing information into the freight review so loading in China and unloading in Oman are considered together.",
+      "buttons": [
+        "Request an Oman shipping quote",
+        "Packing still in progress? Plan the shipment"
+      ],
+      "sections": [
+        {
+          "heading": "List every packed piece",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Planning scenario: six pool tables and accessories from Guangzhou.** Start with the supplier’s package list. Record how the tables and accessories are packed, whether components travel separately, and the handling instructions for each unit."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Ask the supplier for",
+                  "Why it helps"
+                ],
+                [
+                  "Numbered packages and external length × width × height",
+                  "Shows the space required after crates or pallets are added"
+                ],
+                [
+                  "Gross weight of each package",
+                  "Supports the loading and equipment review"
+                ],
+                [
+                  "Stacking limits and required orientation",
+                  "Keeps the plan aligned with the packaging"
+                ],
+                [
+                  "Handling instructions and packing photographs",
+                  "Identifies support points and any protection needed"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Use the finished package measurements, including the crate or pallet. Confirm fragile components and safe handling with the supplier before booking."
+            }
+          ]
+        },
+        {
+          "heading": "Compare LCL and FCL using the actual cargo",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL shares container space; FCL uses a dedicated container. Compare them using the package list, stacking restrictions, handling needs and complete delivery cost. A total volume is useful, but the largest package can determine which equipment and loading arrangement are feasible."
+            },
+            {
+              "type": "text",
+              "text": "For cargo outside standard equipment limits, send the largest package details for a separate review. If timing is critical, include the required arrival date so any feasible air option can also be considered."
+            }
+          ]
+        },
+        {
+          "heading": "Connect the arrival point to the Oman import arrangements",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR lists container and general-cargo facilities. Use the proposed arrival point together with the final receiving city and site when reviewing the route. [SOHAR port facilities](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Oman Customs uses Bayan for declarations. Prepare invoices, origin documents and the export-country declaration listed in its English service guidance, with permits where applicable; confirm the final document list with the importer. [Oman Customs declaration service](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "The official requirements search covers permits, restrictions and approvals. Check against the actual goods and classification as part of the import preparation. [Oman Customs requirements search](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Make the delivered cost clear",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Compare collection and packing in China, export handling, freight, destination handling, clearance, applicable duties and taxes, transport to site, unloading and insurance. Identify each included or excluded item, the responsible party, and how waiting or storage would be charged if needed."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordinates the agreed product and export handover. Heaven Born’s booking, loading and international freight role follows the confirmed service scope."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare the receiving site before dispatch",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Tell us whether the truck can reach the unloading point, what equipment is available and who will receive the goods. Include door widths, floor level or access restrictions when the goods need to move indoors."
+            },
+            {
+              "type": "text",
+              "text": "Agree separately on unloading, movement inside the building, unpacking and installation. This gives the receiving team a clear plan for the work after the vehicle arrives."
+            }
+          ]
+        },
+        {
+          "heading": "Questions before booking",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Can six pool tables fit in one container?**\nUse the supplier’s final package list and loading constraints to answer this. Confirm the number of packed units, their external dimensions and whether they can be stacked."
+            },
+            {
+              "type": "text",
+              "text": "**What should the supplier confirm about a wooden crate?**\nAsk about internal support, restraint, moisture protection where needed and safe lifting points. Confirm the packaging material and any applicable import requirements with the parties preparing the shipment."
+            },
+            {
+              "type": "text",
+              "text": "**What should I check about insurance and damage records?**\nShare the cargo value and review coverage, exclusions, deductible and the claims process before dispatch. Keep packing photographs and package-condition records so any reported damage can be assessed."
+            },
+            {
+              "type": "text",
+              "text": "**Can I start before the packing details are final?**\nYes. Send the product list, supplier location, delivery city and purchasing stage. Mark missing weights and dimensions as awaiting the supplier, then update them when the packaging is ready."
+            }
+          ]
+        },
+        {
+          "heading": "Send your Oman cargo brief",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Include the goods and quantity, supplier location, package dimensions and gross weights, ready date, receiving city and site access. State the importer/document status and whether you want port collection or a delivery arrangement reviewed."
+            },
+            {
+              "type": "text",
+              "text": "**Request an Oman shipping quote**"
+            },
+            {
+              "type": "text",
+              "text": "[Sea freight from China](/services/sea-freight/) · [Explore LCL shipping](/services/lcl-shipping-from-china/) · [Middle East routes](/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Destination sources checked 14 October 2026. Confirm requirements for the actual goods before booking."
+            }
+          ]
+        }
+      ]
+    },
+    "ar": {
+      "title": "الشحن من الصين إلى عُمان | البضائع التجارية الكبيرة | DDNZ",
+      "desc": "جهّز البضائع التجارية الكبيرة للشحن إلى عُمان بأبعاد كل طرد، وخيارات النقل وخطة تسليم تراعي الوصول إلى الموقع والتفريغ.",
+      "heading": "الشحن من الصين إلى عُمان، من بيانات الطرود إلى خطة التسليم",
+      "intro": "خطّط مع DDNZ للشحنات التجارية الكبيرة وفق التفاصيل المؤثرة في النقل: الأبعاد بعد التعبئة، ومتطلبات المناولة وموقع الاستلام. أدرج بيانات التعبئة من المورد في مراجعة الشحن، للنظر في التحميل بالصين والتفريغ في عُمان معاً.",
+      "buttons": [
+        "اطلب عرض شحن إلى عُمان",
+        "التعبئة لم تكتمل؟ خطّط للشحنة"
+      ],
+      "sections": [
+        {
+          "heading": "أدرج كل طرد بعد التعبئة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**سيناريو للتخطيط: ست طاولات بلياردو وملحقاتها من قوانغتشو.** ابدأ بقائمة الطرود من المورد. سجّل طريقة تعبئة الطاولات والملحقات، وما إذا كانت المكونات تُشحن منفصلة، وتعليمات مناولة كل طرد."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "اطلب من المورد",
+                  "الفائدة"
+                ],
+                [
+                  "طرود مرقمة وأبعاد خارجية: الطول × العرض × الارتفاع",
+                  "توضيح المساحة المطلوبة بعد إضافة الصناديق أو المنصات"
+                ],
+                [
+                  "الوزن الإجمالي لكل طرد",
+                  "دعم مراجعة التحميل والمعدات"
+                ],
+                [
+                  "قيود التكديس واتجاه الوضع المطلوب",
+                  "مواءمة الخطة مع التعبئة"
+                ],
+                [
+                  "تعليمات المناولة وصور التعبئة",
+                  "تحديد نقاط الدعم والحماية المطلوبة"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "استخدم أبعاد الطرد النهائي، بما فيه الصندوق أو المنصة. أكّد الأجزاء القابلة للكسر وطريقة المناولة الآمنة مع المورد قبل الحجز."
+            }
+          ]
+        },
+        {
+          "heading": "قارن الشحن الجزئي والحاوية الكاملة وفق البضاعة الفعلية",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يتيح الشحن الجزئي LCL مشاركة مساحة الحاوية، بينما يستخدم FCL حاوية مخصصة. قارن بينهما وفق قائمة الطرود وقيود التكديس والمناولة وتكلفة التسليم الكاملة. الحجم الإجمالي مفيد، لكن أكبر طرد قد يحدد المعدات وترتيب التحميل الممكنين."
+            },
+            {
+              "type": "text",
+              "text": "للبضائع التي تتجاوز حدود المعدات القياسية، أرسل بيانات أكبر طرد لمراجعة منفصلة. وإذا كان الوقت مهماً، فاذكر موعد الوصول المطلوب لدراسة أي خيار جوي ممكن أيضاً."
+            }
+          ]
+        },
+        {
+          "heading": "اربط نقطة الوصول بترتيبات الاستيراد في عُمان",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يدرج ميناء صحار مرافق للحاويات والبضائع العامة. راجع نقطة الوصول المقترحة مع مدينة الاستلام النهائية والموقع عند دراسة المسار. [مرافق ميناء صحار](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "تستخدم الجمارك العُمانية نظام بيان للإقرارات الجمركية. جهّز الفواتير ووثائق المنشأ وبيان بلد التصدير المذكور في صفحة الخدمة الإنجليزية، مع التصاريح عند انطباقها، وأكّد القائمة النهائية مع المستورد. [خدمة البيان الجمركي](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/) · [صفحة الخدمة العربية](https://www.customs.gov.om/ar/business-services/create-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "يشمل البحث الرسمي عن المتطلبات التصاريح والقيود والموافقات. راجعها وفق البضاعة الفعلية وتصنيفها ضمن التحضير للاستيراد. [البحث عن متطلبات الاستيراد](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "وضّح التكلفة حتى التسليم",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "قارن الاستلام والتعبئة في الصين، وإجراءات التصدير، والشحن، ومناولة الوجهة، والتخليص، والرسوم والضرائب المطبقة، والنقل إلى الموقع، والتفريغ والتأمين. حدّد البنود المشمولة والمستثناة والمسؤول عن كل منها، وطريقة احتساب الانتظار أو التخزين عند الحاجة."
+            },
+            {
+              "type": "text",
+              "text": "تنسّق DDNZ تسليم بيانات المنتج والتصدير المتفق عليها. ويتحدد دور Heaven Born في الحجز والتحميل والشحن الدولي وفق نطاق الخدمة المؤكد."
+            }
+          ]
+        },
+        {
+          "heading": "جهّز موقع الاستلام قبل الإرسال",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "وضّح إمكانية وصول الشاحنة إلى نقطة التفريغ والمعدات المتاحة ومن سيتولى الاستلام. أضف عرض الأبواب والطابق أو قيود الوصول إذا كانت البضاعة ستُنقل إلى داخل المبنى."
+            },
+            {
+              "type": "text",
+              "text": "اتفق بشكل منفصل على التفريغ والنقل داخل المبنى وفك التغليف والتركيب. يوفّر ذلك لفريق الاستلام خطة واضحة للعمل بعد وصول المركبة."
+            }
+          ]
+        },
+        {
+          "heading": "أسئلة قبل الحجز",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**هل تتسع حاوية واحدة لست طاولات بلياردو؟**\nاستند إلى قائمة الطرود النهائية وقيود التحميل من المورد. أكّد عدد الطرود وأبعادها الخارجية وإمكانية تكديسها."
+            },
+            {
+              "type": "text",
+              "text": "**ما الذي يؤكده المورد بخصوص الصندوق الخشبي؟**\nاسأل عن الدعم الداخلي والتثبيت والحماية من الرطوبة عند الحاجة ونقاط الرفع الآمنة. أكّد مادة التغليف ومتطلبات الاستيراد المنطبقة مع الأطراف التي تجهّز الشحنة."
+            },
+            {
+              "type": "text",
+              "text": "**ما الذي أراجعه بشأن التأمين وسجلات التلف؟**\nشارك قيمة البضاعة وراجع التغطية والاستثناءات ومبلغ التحمل وإجراءات المطالبة قبل الإرسال. احتفظ بصور التعبئة وسجلات حالة الطرود لتقييم أي تلف يُبلّغ عنه."
+            },
+            {
+              "type": "text",
+              "text": "**هل يمكنني البدء قبل اكتمال بيانات التعبئة؟**\nنعم. أرسل قائمة المنتجات وموقع المورد ومدينة التسليم ومرحلة الشراء. حدّد الأوزان والأبعاد الناقصة بأنها بانتظار المورد، ثم حدّثها عندما تجهز التعبئة."
+            }
+          ]
+        },
+        {
+          "heading": "أرسل ملخص شحنتك إلى عُمان",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "أدرج البضاعة والكمية وموقع المورد وأبعاد الطرود وأوزانها الإجمالية وتاريخ الجاهزية ومدينة الاستلام وظروف الوصول إلى الموقع. وضّح وضع المستورد والوثائق، وما إذا كنت تريد الاستلام من الميناء أو مراجعة ترتيب للتسليم."
+            },
+            {
+              "type": "text",
+              "text": "**اطلب عرض شحن إلى عُمان**"
+            },
+            {
+              "type": "text",
+              "text": "[الشحن البحري من الصين](/ar/services/sea-freight/) · [استكشف الشحن الجزئي](/ar/services/lcl-shipping-from-china/) · [مسارات الشرق الأوسط](/ar/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "رُوجعت مصادر الوجهة في 14 أكتوبر 2026. أكّد المتطلبات الخاصة بالبضاعة الفعلية قبل الحجز."
+            }
+          ]
+        }
+      ]
+    },
+    "zh": {
+      "title": "中国到阿曼运输 | 大件商业货物 | DDNZ",
+      "desc": "为阿曼大件商业货物准备逐件包装尺寸、运输选项及考虑场地通行和卸货的交付计划。",
+      "heading": "中国到阿曼运输，从包装资料到交付计划",
+      "intro": "与DDNZ围绕影响大件运输的细节制定计划：包装后尺寸、搬运要求和收货场地。将供应商包装资料纳入运输评估，同时考虑中国装货与阿曼卸货。",
+      "buttons": [
+        "获取阿曼运输报价",
+        "还在包装？先规划运输"
+      ],
+      "sections": [
+        {
+          "heading": "逐一列出每个包装件",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**规划场景：从广州采购六张台球桌及配件。** 从供应商包装清单开始，记录球桌与配件的包装方式、部件是否分开发运，以及每个包装件的搬运要求。"
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "向供应商索取",
+                  "作用"
+                ],
+                [
+                  "包装件编号及外部长×宽×高",
+                  "反映加装木箱或托盘后的实际占用空间"
+                ],
+                [
+                  "每个包装件的毛重",
+                  "用于评估装载与设备需求"
+                ],
+                [
+                  "堆码限制及摆放方向要求",
+                  "让运输计划与包装条件一致"
+                ],
+                [
+                  "搬运说明与包装照片",
+                  "明确支撑位置及所需防护"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "使用完成包装后的尺寸，计入木箱或托盘。订舱前与供应商确认易碎部件及安全搬运方式。"
+            }
+          ]
+        },
+        {
+          "heading": "按实际货物比较LCL拼箱与FCL整箱",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL与其他货物共用集装箱空间，FCL使用专用整箱。根据包装清单、堆码限制、搬运需求及完整交付成本比较。总体积有参考价值，但最大包装件可能决定可用设备及装载方式。"
+            },
+            {
+              "type": "text",
+              "text": "超出标准设备限制的货物，应提供最大包装件资料单独评估。若时间紧迫，请说明要求到货日期，以便同时考虑可行的空运选项。"
+            }
+          ]
+        },
+        {
+          "heading": "将到港地点与阿曼进口安排衔接",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR公布有集装箱及普通货物设施。评估路线时，将拟定到港地点与最终收货城市、场地一并考虑。[SOHAR港口设施](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "阿曼海关通过Bayan办理申报。准备其英文服务指引列明的发票、原产地文件及出口国报关单，适用时提供许可证；与进口方确认最终文件清单。[阿曼海关申报服务](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "官方要求查询涵盖许可、限制和批准事项。进口准备时，按实际货物及其归类核查。[阿曼海关要求查询](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "明确交付到位的费用",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "比较中国提货与包装、出口操作、运费、目的地操作、清关、适用关税及税费、运至现场、卸货和保险。明确每项是否包含、责任方，以及需要时等待或仓储如何收费。"
+            },
+            {
+              "type": "text",
+              "text": "DDNZ协调约定的产品与出口交接；Heaven Born的订舱、装载和国际运输职责以已确认的服务范围为准。"
+            }
+          ]
+        },
+        {
+          "heading": "发货前准备好收货场地",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "说明货车能否到达卸货点、现场有哪些设备、由谁收货。需要搬入室内时，提供门宽、楼层或通行限制。"
+            },
+            {
+              "type": "text",
+              "text": "卸货、楼内搬运、拆包和安装应分别约定，让收货团队清楚车辆到达后的工作安排。"
+            }
+          ]
+        },
+        {
+          "heading": "订舱前常见问题",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**六张台球桌能装进一个集装箱吗？**\n需根据供应商最终包装清单及装载限制判断。确认包装件数、外部尺寸以及能否堆码。"
+            },
+            {
+              "type": "text",
+              "text": "**木箱包装需要向供应商确认什么？**\n询问内部支撑、固定方式、必要时的防潮措施及安全起吊位置。与备货各方确认包装材料和适用进口要求。"
+            },
+            {
+              "type": "text",
+              "text": "**保险与货损记录需要核对什么？**\n提供货值，发货前核对保障范围、除外责任、免赔额及理赔流程。保留包装照片和包装状况记录，便于评估申报的损坏。"
+            },
+            {
+              "type": "text",
+              "text": "**包装资料未最终确定，可以先开始吗？**\n可以。先提供产品清单、供应商地点、收货城市和采购阶段。缺失的重量与尺寸标注为等待供应商确认，包装完成后再更新。"
+            }
+          ]
+        },
+        {
+          "heading": "发送阿曼货运需求",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "提供货物与数量、供应商地点、包装尺寸和毛重、备货日期、收货城市及场地通行情况。说明进口方及文件准备状态，以及希望评估港口自提还是配送安排。"
+            },
+            {
+              "type": "text",
+              "text": "**获取阿曼运输报价**"
+            },
+            {
+              "type": "text",
+              "text": "[中国出口海运](/zh-cn/services/sea-freight/) · [了解LCL拼箱](/zh-cn/services/lcl-shipping-from-china/) · [中东航线](/zh-cn/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "目的地资料核查日期为2026年10月14日。订舱前请确认实际货物的适用要求。"
+            }
+          ]
+        }
+      ]
+    },
+    "ru": {
+      "title": "Доставка из Китая в Оман | Крупные коммерческие грузы | DDNZ",
+      "desc": "Подготовьте крупный коммерческий груз для Омана: размеры каждого места, варианты перевозки и план доставки с учётом подъезда и разгрузки.",
+      "heading": "Доставка из Китая в Оман: от упаковочных данных к плану доставки",
+      "intro": "Планируйте крупные коммерческие отправки с DDNZ с учётом размеров упакованного груза, требований к обработке и места приёмки. Включите упаковочные данные поставщика в оценку перевозки, чтобы одновременно учесть погрузку в Китае и разгрузку в Омане.",
+      "buttons": [
+        "Запросить расчёт доставки в Оман",
+        "Упаковка ещё не готова? Спланируйте перевозку"
+      ],
+      "sections": [
+        {
+          "heading": "Перечислите каждое упакованное место",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Пример планирования: шесть бильярдных столов и аксессуары из Гуанчжоу.** Начните с упаковочного листа поставщика. Укажите, как упакованы столы и аксессуары, перевозятся ли компоненты отдельно и какие инструкции действуют для каждого места."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Запросите у поставщика",
+                  "Для чего это нужно"
+                ],
+                [
+                  "Номера мест и внешние длина × ширина × высота",
+                  "Показывают необходимое пространство с учётом ящиков или поддонов"
+                ],
+                [
+                  "Вес брутто каждого места",
+                  "Помогает оценить погрузку и оборудование"
+                ],
+                [
+                  "Ограничения штабелирования и требуемая ориентация",
+                  "Позволяют согласовать план с упаковкой"
+                ],
+                [
+                  "Инструкции по обработке и фотографии упаковки",
+                  "Определяют точки опоры и необходимую защиту"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Используйте окончательные размеры упаковки, включая ящик или поддон. До бронирования уточните у поставщика хрупкие компоненты и безопасные способы обращения."
+            }
+          ]
+        },
+        {
+          "heading": "Сравните LCL и FCL по фактическому грузу",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL использует общую контейнерную ёмкость, FCL — отдельный контейнер. Сравнивайте их по упаковочному листу, ограничениям штабелирования, требованиям к обработке и полной стоимости доставки. Общий объём полезен, но крупнейшее место может определять доступное оборудование и способ погрузки."
+            },
+            {
+              "type": "text",
+              "text": "Для груза, выходящего за ограничения стандартного оборудования, направьте данные крупнейшего места на отдельную оценку. Если сроки критичны, укажите требуемую дату прибытия, чтобы также рассмотреть возможную авиаперевозку."
+            }
+          ]
+        },
+        {
+          "heading": "Свяжите пункт прибытия с импортными процедурами Омана",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR указывает наличие контейнерных и грузовых терминалов. При оценке маршрута учитывайте предлагаемый пункт прибытия вместе с конечным городом и местом приёмки. [Инфраструктура порта SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Таможня Омана использует Bayan для декларирования. Подготовьте счета, документы о происхождении и декларацию страны экспорта, перечисленные в англоязычном руководстве, а при необходимости — разрешения; окончательный перечень согласуйте с импортёром. [Услуга декларирования таможни Омана](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "Официальный поиск требований охватывает разрешения, ограничения и согласования. При подготовке импорта проверяйте их для фактического товара и его классификации. [Поиск требований таможни Омана](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Уточните полную стоимость доставки",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Сравните забор и упаковку в Китае, экспортные операции, перевозку, обработку в пункте назначения, оформление, применимые пошлины и налоги, доставку на объект, разгрузку и страхование. Укажите включённые и исключённые позиции, ответственных и порядок оплаты ожидания или хранения при необходимости."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ координирует согласованную передачу товара и экспортных операций. Роль Heaven Born в бронировании, погрузке и международной перевозке определяется подтверждённым объёмом услуг."
+            }
+          ]
+        },
+        {
+          "heading": "Подготовьте место приёмки до отправки",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Сообщите, сможет ли грузовик подъехать к точке разгрузки, какое оборудование доступно и кто примет груз. Если товар нужно занести внутрь, укажите ширину дверей, этаж и ограничения доступа."
+            },
+            {
+              "type": "text",
+              "text": "Отдельно согласуйте разгрузку, перемещение внутри здания, распаковку и установку. Тогда принимающая сторона получит понятный план действий после прибытия автомобиля."
+            }
+          ]
+        },
+        {
+          "heading": "Вопросы перед бронированием",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Поместятся ли шесть бильярдных столов в один контейнер?**\nЭто определяется окончательным упаковочным листом и ограничениями погрузки. Уточните число упакованных мест, их внешние размеры и возможность штабелирования."
+            },
+            {
+              "type": "text",
+              "text": "**Что следует уточнить у поставщика о деревянном ящике?**\nСпросите о внутренних опорах, фиксации, защите от влаги при необходимости и безопасных точках подъёма. Согласуйте упаковочный материал и применимые импортные требования с участниками подготовки отправки."
+            },
+            {
+              "type": "text",
+              "text": "**Что проверить в страховании и документах о повреждениях?**\nСообщите стоимость груза и до отправки изучите покрытие, исключения, франшизу и порядок предъявления требований. Сохраняйте фотографии упаковки и записи о её состоянии для оценки заявленных повреждений."
+            },
+            {
+              "type": "text",
+              "text": "**Можно ли начать до окончательного согласования упаковки?**\nДа. Пришлите перечень товаров, местонахождение поставщика, город доставки и стадию закупки. Отметьте недостающие размеры и вес как ожидаемые от поставщика и обновите данные после упаковки."
+            }
+          ]
+        },
+        {
+          "heading": "Пришлите данные груза для Омана",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Укажите товар и количество, местонахождение поставщика, размеры и вес брутто упаковок, дату готовности, город получения и доступ на объект. Сообщите статус импортёра и документов, а также нужно ли оценить получение в порту или доставку."
+            },
+            {
+              "type": "text",
+              "text": "**Запросить расчёт доставки в Оман**"
+            },
+            {
+              "type": "text",
+              "text": "[Морские перевозки из Китая](/ru/services/sea-freight/) · [Перевозки LCL](/ru/services/lcl-shipping-from-china/) · [Маршруты на Ближний Восток](/ru/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Источники по стране назначения проверены 14 октября 2026 года. До бронирования уточните требования к фактическому товару."
+            }
+          ]
+        }
+      ]
+    },
+    "fr": {
+      "title": "Expédition de Chine vers Oman | Marchandises commerciales volumineuses | DDNZ",
+      "desc": "Préparez vos marchandises volumineuses pour Oman avec les dimensions de chaque colis, les options de transport et un plan tenant compte de l’accès et du déchargement.",
+      "heading": "Expédition de Chine vers Oman, de l’emballage au plan de livraison",
+      "intro": "Planifiez avec DDNZ les envois commerciaux volumineux selon les dimensions emballées, les besoins de manutention et le site de réception. Intégrez les informations d’emballage du fournisseur à l’étude du transport pour considérer ensemble le chargement en Chine et le déchargement à Oman.",
+      "buttons": [
+        "Demander un devis de transport vers Oman",
+        "Emballage en cours ? Planifiez l’expédition"
+      ],
+      "sections": [
+        {
+          "heading": "Répertoriez chaque colis",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Scénario de planification : six tables de billard et accessoires depuis Guangzhou.** Commencez par la liste de colisage du fournisseur. Notez l’emballage des tables et accessoires, les composants transportés séparément et les consignes de manutention de chaque unité."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "À demander au fournisseur",
+                  "Utilité"
+                ],
+                [
+                  "Colis numérotés et longueur × largeur × hauteur extérieures",
+                  "Indiquent l’espace nécessaire avec les caisses ou palettes"
+                ],
+                [
+                  "Poids brut de chaque colis",
+                  "Aide à étudier le chargement et les équipements"
+                ],
+                [
+                  "Limites de gerbage et orientation requise",
+                  "Maintiennent la cohérence entre le plan et l’emballage"
+                ],
+                [
+                  "Consignes de manutention et photos de l’emballage",
+                  "Identifient les points d’appui et les protections nécessaires"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Utilisez les dimensions finales de l’emballage, caisse ou palette comprise. Avant la réservation, confirmez les composants fragiles et les méthodes de manutention sûres avec le fournisseur."
+            }
+          ]
+        },
+        {
+          "heading": "Comparez LCL et FCL selon le fret réel",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Le LCL partage un conteneur ; le FCL utilise un conteneur dédié. Comparez-les selon la liste de colisage, les limites de gerbage, les besoins de manutention et le coût complet de livraison. Le volume total est utile, mais le plus grand colis peut déterminer les équipements et le chargement possibles."
+            },
+            {
+              "type": "text",
+              "text": "Pour les marchandises dépassant les limites des équipements standard, envoyez les données du plus grand colis pour une étude distincte. Si le délai est critique, indiquez la date d’arrivée requise afin d’examiner aussi toute solution aérienne réalisable."
+            }
+          ]
+        },
+        {
+          "heading": "Reliez le point d’arrivée aux formalités d’importation à Oman",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR présente des installations pour conteneurs et marchandises diverses. Étudiez le point d’arrivée envisagé avec la ville et le site de réception finale lors du choix de l’itinéraire. [Installations du port SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Les douanes d’Oman utilisent Bayan pour les déclarations. Préparez factures, documents d’origine et déclaration du pays exportateur mentionnés dans leur guide de service en anglais, ainsi que les autorisations applicables ; confirmez la liste finale avec l’importateur. [Service de déclaration des douanes d’Oman](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "L’outil officiel de recherche des exigences couvre les permis, restrictions et autorisations. Vérifiez les marchandises réelles et leur classement dans le cadre de la préparation de l’importation. [Recherche des exigences douanières d’Oman](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Clarifiez le coût rendu",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Comparez l’enlèvement et l’emballage en Chine, les opérations export, le fret, les opérations à destination, le dédouanement, les droits et taxes applicables, le transport sur site, le déchargement et l’assurance. Identifiez les postes inclus ou exclus, les responsables et la facturation éventuelle de l’attente ou du stockage."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordonne la passation convenue des produits et de l’exportation. La réservation, le chargement et le transport international assurés par Heaven Born suivent le périmètre confirmé."
+            }
+          ]
+        },
+        {
+          "heading": "Préparez le site de réception avant le départ",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Précisez si le camion peut atteindre le point de déchargement, les équipements disponibles et la personne chargée de la réception. Pour une entrée dans le bâtiment, indiquez la largeur des portes, l’étage et les restrictions d’accès."
+            },
+            {
+              "type": "text",
+              "text": "Convenez séparément du déchargement, du déplacement dans le bâtiment, du déballage et de l’installation. L’équipe de réception disposera ainsi d’un plan clair après l’arrivée du véhicule."
+            }
+          ]
+        },
+        {
+          "heading": "Questions avant la réservation",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Six tables de billard peuvent-elles tenir dans un conteneur ?**\nLa réponse dépend de la liste de colisage finale et des contraintes de chargement. Confirmez le nombre de colis, leurs dimensions extérieures et leur gerbabilité."
+            },
+            {
+              "type": "text",
+              "text": "**Que faut-il confirmer avec le fournisseur pour une caisse en bois ?**\nDemandez les détails des appuis internes, de l’immobilisation, de la protection contre l’humidité si nécessaire et des points de levage sûrs. Confirmez le matériau d’emballage et les exigences d’importation applicables avec les intervenants."
+            },
+            {
+              "type": "text",
+              "text": "**Que vérifier concernant l’assurance et les constats de dommages ?**\nCommuniquez la valeur du fret et examinez la couverture, les exclusions, la franchise et la procédure de réclamation avant le départ. Conservez des photos d’emballage et des relevés de son état afin d’évaluer les dommages signalés."
+            },
+            {
+              "type": "text",
+              "text": "**Puis-je commencer avant de finaliser l’emballage ?**\nOui. Envoyez la liste des produits, le lieu du fournisseur, la ville de livraison et l’étape des achats. Indiquez que les poids et dimensions manquants sont attendus du fournisseur, puis actualisez-les une fois l’emballage prêt."
+            }
+          ]
+        },
+        {
+          "heading": "Envoyez votre demande de transport vers Oman",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indiquez les marchandises et quantités, le lieu du fournisseur, les dimensions et poids bruts des colis, la date de disponibilité, la ville de réception et les accès au site. Précisez la situation de l’importateur et des documents, et si vous souhaitez étudier un retrait au port ou une livraison."
+            },
+            {
+              "type": "text",
+              "text": "**Demander un devis de transport vers Oman**"
+            },
+            {
+              "type": "text",
+              "text": "[Fret maritime depuis la Chine](/fr/services/sea-freight/) · [Découvrir le LCL](/fr/services/lcl-shipping-from-china/) · [Liaisons vers le Moyen-Orient](/fr/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Sources concernant la destination vérifiées le 14 octobre 2026. Confirmez les exigences applicables aux marchandises réelles avant la réservation."
+            }
+          ]
+        }
+      ]
+    },
+    "es": {
+      "title": "Envíos de China a Omán | Carga comercial voluminosa | DDNZ",
+      "desc": "Prepare su carga comercial voluminosa para Omán con dimensiones por bulto, opciones de transporte y un plan que contemple el acceso y la descarga.",
+      "heading": "Envíos de China a Omán, del embalaje a la planificación de la entrega",
+      "intro": "Planifique con DDNZ los envíos comerciales voluminosos a partir de las dimensiones embaladas, las necesidades de manipulación y el lugar de recepción. Incorpore los datos de embalaje del proveedor al estudio del transporte para considerar conjuntamente la carga en China y la descarga en Omán.",
+      "buttons": [
+        "Solicitar una cotización de envío a Omán",
+        "¿Embalaje en curso? Planifique el envío"
+      ],
+      "sections": [
+        {
+          "heading": "Enumere cada bulto embalado",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Escenario de planificación: seis mesas de billar y accesorios desde Guangzhou.** Empiece por la lista de bultos del proveedor. Registre cómo se embalan las mesas y los accesorios, si los componentes viajan por separado y las instrucciones de manipulación de cada unidad."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Solicite al proveedor",
+                  "Para qué sirve"
+                ],
+                [
+                  "Bultos numerados y largo × ancho × alto exteriores",
+                  "Indican el espacio necesario tras añadir cajones o palés"
+                ],
+                [
+                  "Peso bruto de cada bulto",
+                  "Ayuda a evaluar la carga y los equipos"
+                ],
+                [
+                  "Límites de apilado y orientación requerida",
+                  "Permiten adaptar el plan al embalaje"
+                ],
+                [
+                  "Instrucciones de manipulación y fotografías del embalaje",
+                  "Identifican puntos de apoyo y protecciones necesarias"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Use las medidas finales del embalaje, incluido el cajón o palé. Antes de reservar, confirme con el proveedor los componentes frágiles y la manipulación segura."
+            }
+          ]
+        },
+        {
+          "heading": "Compare LCL y FCL según la carga real",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL comparte espacio de contenedor; FCL utiliza un contenedor exclusivo. Compárelos según la lista de bultos, las restricciones de apilado, las necesidades de manipulación y el coste total de entrega. El volumen total es útil, pero el bulto más grande puede determinar los equipos y la disposición de carga viables."
+            },
+            {
+              "type": "text",
+              "text": "Para cargas que superen los límites de los equipos estándar, envíe los datos del bulto más grande para una revisión específica. Si el plazo es crítico, indique la fecha de llegada requerida para considerar también cualquier opción aérea viable."
+            }
+          ]
+        },
+        {
+          "heading": "Vincule el punto de llegada con los trámites de importación en Omán",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR dispone de instalaciones publicadas para contenedores y carga general. Al evaluar la ruta, considere el punto de llegada propuesto junto con la ciudad y el lugar final de recepción. [Instalaciones del puerto SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Aduanas de Omán utiliza Bayan para las declaraciones. Prepare las facturas, los documentos de origen y la declaración del país exportador indicados en su guía de servicios en inglés, además de los permisos aplicables; confirme la lista definitiva con el importador. [Servicio de declaración de Aduanas de Omán](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "El buscador oficial de requisitos incluye permisos, restricciones y autorizaciones. Compruébelos según la mercancía real y su clasificación durante la preparación de la importación. [Consulta de requisitos de Aduanas de Omán](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Aclare el coste hasta la entrega",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Compare recogida y embalaje en China, operaciones de exportación, transporte, operaciones en destino, despacho, aranceles e impuestos aplicables, transporte al lugar, descarga y seguro. Identifique cada concepto incluido o excluido, su responsable y cómo se cobrarían la espera o el almacenamiento si fueran necesarios."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordina la entrega acordada del producto y las operaciones de exportación. Las funciones de Heaven Born en reserva, carga y transporte internacional se ajustan al alcance confirmado."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare el lugar de recepción antes del despacho",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indique si el camión puede acceder al punto de descarga, qué equipos hay disponibles y quién recibirá la mercancía. Si debe trasladarse al interior, incluya el ancho de puertas, la planta y las restricciones de acceso."
+            },
+            {
+              "type": "text",
+              "text": "Acuerde por separado la descarga, el traslado dentro del edificio, el desembalaje y la instalación. Así, el equipo receptor tendrá un plan claro tras la llegada del vehículo."
+            }
+          ]
+        },
+        {
+          "heading": "Preguntas antes de reservar",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**¿Caben seis mesas de billar en un contenedor?**\nLa respuesta depende de la lista final de bultos y de las limitaciones de carga. Confirme el número de unidades embaladas, sus dimensiones exteriores y si pueden apilarse."
+            },
+            {
+              "type": "text",
+              "text": "**¿Qué debe confirmar el proveedor sobre un cajón de madera?**\nPregunte por los apoyos interiores, la sujeción, la protección contra la humedad cuando sea necesaria y los puntos seguros de elevación. Confirme el material del embalaje y los requisitos de importación aplicables con quienes preparan el envío."
+            },
+            {
+              "type": "text",
+              "text": "**¿Qué debo comprobar sobre el seguro y los registros de daños?**\nIndique el valor de la carga y revise la cobertura, exclusiones, franquicia y proceso de reclamación antes del despacho. Conserve fotografías del embalaje y registros de su estado para evaluar los daños comunicados."
+            },
+            {
+              "type": "text",
+              "text": "**¿Puedo empezar antes de cerrar los detalles del embalaje?**\nSí. Envíe la lista de productos, ubicación del proveedor, ciudad de entrega y fase de compra. Marque los pesos y dimensiones pendientes del proveedor y actualícelos cuando el embalaje esté listo."
+            }
+          ]
+        },
+        {
+          "heading": "Envíe los datos de su carga para Omán",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Incluya mercancías y cantidades, ubicación del proveedor, dimensiones y pesos brutos de los bultos, fecha de disponibilidad, ciudad de recepción y acceso al lugar. Indique la situación del importador y los documentos, y si desea evaluar la recogida en puerto o la entrega."
+            },
+            {
+              "type": "text",
+              "text": "**Solicitar una cotización de envío a Omán**"
+            },
+            {
+              "type": "text",
+              "text": "[Transporte marítimo desde China](/es/services/sea-freight/) · [Conocer el transporte LCL](/es/services/lcl-shipping-from-china/) · [Rutas a Oriente Medio](/es/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Fuentes del destino revisadas el 14 de octubre de 2026. Confirme los requisitos de la mercancía real antes de reservar."
+            }
+          ]
+        }
+      ]
+    },
+    "pt": {
+      "title": "Envios da China para Omã | Carga comercial volumosa | DDNZ",
+      "desc": "Prepare a carga comercial volumosa para Omã com dimensões por volume, opções de transporte e um plano de entrega que considere o acesso e a descarga.",
+      "heading": "Envios da China para Omã, da embalagem ao plano de entrega",
+      "intro": "Planeie envios comerciais volumosos com a DDNZ tendo em conta as dimensões embaladas, as necessidades de manuseamento e o local de receção. Inclua os dados de embalagem do fornecedor na análise do transporte para considerar em conjunto o carregamento na China e a descarga em Omã.",
+      "buttons": [
+        "Pedir uma cotação de envio para Omã",
+        "Embalagem em curso? Planeie o envio"
+      ],
+      "sections": [
+        {
+          "heading": "Liste cada volume embalado",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Cenário de planeamento: seis mesas de bilhar e acessórios de Guangzhou.** Comece pela lista de volumes do fornecedor. Registe como as mesas e acessórios são embalados, se os componentes seguem separados e as instruções de manuseamento de cada unidade."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Peça ao fornecedor",
+                  "Utilidade"
+                ],
+                [
+                  "Volumes numerados e comprimento × largura × altura exteriores",
+                  "Indicam o espaço necessário com caixas de madeira ou paletes"
+                ],
+                [
+                  "Peso bruto de cada volume",
+                  "Ajuda a avaliar o carregamento e os equipamentos"
+                ],
+                [
+                  "Limites de empilhamento e orientação necessária",
+                  "Mantêm o plano alinhado com a embalagem"
+                ],
+                [
+                  "Instruções de manuseamento e fotografias da embalagem",
+                  "Identificam pontos de apoio e proteções necessárias"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Use as medidas finais da embalagem, incluindo a caixa ou palete. Antes da reserva, confirme com o fornecedor os componentes frágeis e o manuseamento seguro."
+            }
+          ]
+        },
+        {
+          "heading": "Compare LCL e FCL com base na carga real",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "O LCL partilha espaço de contentor; o FCL utiliza um contentor exclusivo. Compare-os com base na lista de volumes, restrições de empilhamento, necessidades de manuseamento e custo total de entrega. O volume total é útil, mas a maior embalagem pode determinar o equipamento e a disposição de carga viáveis."
+            },
+            {
+              "type": "text",
+              "text": "Para cargas que ultrapassem os limites dos equipamentos padrão, envie os dados do maior volume para uma análise específica. Se o prazo for crítico, indique a data de chegada pretendida para considerar também opções aéreas viáveis."
+            }
+          ]
+        },
+        {
+          "heading": "Relacione o ponto de chegada com os procedimentos de importação em Omã",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "A SOHAR apresenta instalações para contentores e carga geral. Ao avaliar a rota, considere o ponto de chegada proposto em conjunto com a cidade e o local de receção final. [Instalações do porto SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "A Alfândega de Omã utiliza o Bayan para declarações. Prepare faturas, documentos de origem e a declaração do país exportador indicados no guia de serviço em inglês, bem como as licenças aplicáveis; confirme a lista final com o importador. [Serviço de declaração da Alfândega de Omã](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "A pesquisa oficial de requisitos abrange licenças, restrições e autorizações. Verifique-os de acordo com a mercadoria real e a sua classificação durante a preparação da importação. [Pesquisa de requisitos da Alfândega de Omã](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Clarifique o custo até à entrega",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Compare recolha e embalagem na China, operações de exportação, frete, operações no destino, desalfandegamento, direitos e impostos aplicáveis, transporte até ao local, descarga e seguro. Identifique cada item incluído ou excluído, o responsável e a forma de cobrança de eventuais esperas ou armazenamento."
+            },
+            {
+              "type": "text",
+              "text": "A DDNZ coordena a passagem acordada do produto e das operações de exportação. O papel da Heaven Born na reserva, carregamento e transporte internacional segue o âmbito confirmado."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare o local de receção antes da expedição",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Indique se o camião consegue chegar ao ponto de descarga, os equipamentos disponíveis e quem recebe a mercadoria. Se for necessário levá-la para o interior, inclua a largura das portas, o piso e as restrições de acesso."
+            },
+            {
+              "type": "text",
+              "text": "Acorde separadamente a descarga, a movimentação no edifício, a desembalagem e a instalação. Assim, a equipa de receção terá um plano claro após a chegada do veículo."
+            }
+          ]
+        },
+        {
+          "heading": "Perguntas antes da reserva",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Cabem seis mesas de bilhar num contentor?**\nA resposta depende da lista final de volumes e das restrições de carregamento. Confirme o número de unidades embaladas, as dimensões exteriores e a possibilidade de empilhamento."
+            },
+            {
+              "type": "text",
+              "text": "**O que deve o fornecedor confirmar sobre uma caixa de madeira?**\nPergunte pelos apoios internos, fixação, proteção contra humidade quando necessária e pontos de elevação seguros. Confirme o material da embalagem e os requisitos de importação aplicáveis com os intervenientes na preparação do envio."
+            },
+            {
+              "type": "text",
+              "text": "**O que devo verificar sobre o seguro e os registos de danos?**\nComunique o valor da carga e reveja a cobertura, exclusões, franquia e processo de reclamação antes da expedição. Guarde fotografias da embalagem e registos do seu estado para permitir a avaliação de danos comunicados."
+            },
+            {
+              "type": "text",
+              "text": "**Posso começar antes de finalizar os dados da embalagem?**\nSim. Envie a lista de produtos, localização do fornecedor, cidade de entrega e fase da compra. Assinale pesos e dimensões em falta como pendentes do fornecedor e atualize-os quando a embalagem estiver pronta."
+            }
+          ]
+        },
+        {
+          "heading": "Envie os dados da carga para Omã",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Inclua mercadorias e quantidades, localização do fornecedor, dimensões e pesos brutos dos volumes, data de disponibilidade, cidade de receção e acesso ao local. Indique o estado do importador e dos documentos, e se pretende avaliar recolha no porto ou entrega."
+            },
+            {
+              "type": "text",
+              "text": "**Pedir uma cotação de envio para Omã**"
+            },
+            {
+              "type": "text",
+              "text": "[Transporte marítimo da China](/pt/services/sea-freight/) · [Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Rotas para o Médio Oriente](/pt/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Fontes sobre o destino verificadas em 14 de outubro de 2026. Confirme os requisitos aplicáveis à mercadoria real antes da reserva."
+            }
+          ]
+        }
+      ]
+    },
+    "tr": {
+      "title": "Çin’den Umman’a Nakliye | Hacimli Ticari Yükler | DDNZ",
+      "desc": "Umman’a gidecek hacimli ticari yükler için birim bazında ambalaj ölçülerini, taşıma seçeneklerini ve erişim ile boşaltmayı dikkate alan teslimat planını hazırlayın.",
+      "heading": "Çin’den Umman’a nakliye: ambalajlı yükten teslimat planına",
+      "intro": "DDNZ ile hacimli ticari sevkiyatları ambalajlı ölçüler, elleçleme gereksinimleri ve kabul sahasına göre planlayın. Çin’de yükleme ile Umman’da boşaltmanın birlikte değerlendirilmesi için tedarikçinin ambalaj bilgilerini taşıma incelemesine dahil edin.",
+      "buttons": [
+        "Umman nakliye teklifi isteyin",
+        "Ambalajlama sürüyor mu? Sevkiyatı planlayın"
+      ],
+      "sections": [
+        {
+          "heading": "Her ambalajlı birimi listeleyin",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Planlama senaryosu: Guangzhou’dan altı bilardo masası ve aksesuarları.** Tedarikçinin ambalaj listesiyle başlayın. Masaların ve aksesuarların nasıl ambalajlandığını, parçaların ayrı taşınıp taşınmadığını ve her birimin elleçleme talimatlarını kaydedin."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Tedarikçiden isteyin",
+                  "Neden gerekli"
+                ],
+                [
+                  "Numaralandırılmış ambalajlar ve dış uzunluk × genişlik × yükseklik",
+                  "Sandık veya palet eklendikten sonraki alan ihtiyacını gösterir"
+                ],
+                [
+                  "Her ambalajın brüt ağırlığı",
+                  "Yükleme ve ekipman değerlendirmesine yardımcı olur"
+                ],
+                [
+                  "İstif sınırları ve gerekli duruş yönü",
+                  "Planın ambalajla uyumlu kalmasını sağlar"
+                ],
+                [
+                  "Elleçleme talimatları ve ambalaj fotoğrafları",
+                  "Destek noktalarını ve gerekli korumayı belirler"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Sandık veya palet dahil tamamlanmış ambalaj ölçülerini kullanın. Rezervasyondan önce kırılgan parçaları ve güvenli elleçlemeyi tedarikçiyle teyit edin."
+            }
+          ]
+        },
+        {
+          "heading": "LCL ve FCL’yi gerçek yüke göre karşılaştırın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL konteyner alanını paylaşır; FCL özel bir konteyner kullanır. Ambalaj listesi, istif kısıtları, elleçleme ihtiyaçları ve toplam teslimat maliyetine göre karşılaştırın. Toplam hacim yararlıdır; ancak en büyük ambalaj, kullanılabilecek ekipmanı ve yükleme düzenini belirleyebilir."
+            },
+            {
+              "type": "text",
+              "text": "Standart ekipman sınırları dışındaki yükler için en büyük ambalajın bilgilerini ayrı değerlendirme amacıyla gönderin. Zaman kritikse uygulanabilir hava yolu seçeneklerinin de değerlendirilmesi için gerekli varış tarihini belirtin."
+            }
+          ]
+        },
+        {
+          "heading": "Varış noktasını Umman ithalat düzenlemeleriyle eşleştirin",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR, konteyner ve genel yük tesislerini listeler. Rotayı değerlendirirken önerilen varış noktasını nihai teslim şehri ve sahasıyla birlikte ele alın. [SOHAR liman tesisleri](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Umman Gümrüğü beyanlar için Bayan’ı kullanır. İngilizce hizmet rehberindeki faturaları, menşe belgelerini ve ihracat ülkesi beyannamesini, gerektiğinde izinlerle birlikte hazırlayın; nihai belge listesini ithalatçıyla teyit edin. [Umman Gümrüğü beyan hizmeti](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "Resmî gereklilik araması izinleri, kısıtlamaları ve onayları kapsar. İthalat hazırlığında gerçek mallara ve sınıflandırmalarına göre kontrol edin. [Umman Gümrüğü gereklilik araması](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Teslimata kadar olan maliyeti netleştirin",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Çin’de alım ve ambalajlama, ihracat işlemleri, navlun, varış işlemleri, gümrükleme, geçerli vergi ve harçlar, sahaya taşıma, boşaltma ve sigortayı karşılaştırın. Dahil olan ve olmayan kalemleri, sorumluları ve gerekirse bekleme veya depolamanın nasıl ücretlendirileceğini belirtin."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ, kararlaştırılan ürün ve ihracat devir sürecini koordine eder. Heaven Born’un rezervasyon, yükleme ve uluslararası taşıma rolü teyit edilen hizmet kapsamına bağlıdır."
+            }
+          ]
+        },
+        {
+          "heading": "Sevkiyattan önce kabul sahasını hazırlayın",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Kamyonun boşaltma noktasına erişip erişemediğini, mevcut ekipmanı ve malları kimin teslim alacağını belirtin. Mallar içeri taşınacaksa kapı genişliklerini, katı ve erişim kısıtlarını ekleyin."
+            },
+            {
+              "type": "text",
+              "text": "Boşaltma, bina içi taşıma, ambalaj açma ve kurulumu ayrı ayrı kararlaştırın. Böylece kabul ekibi araç geldikten sonra yapılacak işler için açık bir plana sahip olur."
+            }
+          ]
+        },
+        {
+          "heading": "Rezervasyon öncesi sorular",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Altı bilardo masası tek konteynere sığar mı?**\nBunu tedarikçinin nihai ambalaj listesi ve yükleme kısıtları belirler. Ambalajlı birim sayısını, dış ölçülerini ve istiflenebilirliğini teyit edin."
+            },
+            {
+              "type": "text",
+              "text": "**Ahşap sandık hakkında tedarikçi neyi teyit etmeli?**\nİç destekleri, sabitlemeyi, gerektiğinde nem korumasını ve güvenli kaldırma noktalarını sorun. Ambalaj malzemesini ve geçerli ithalat gerekliliklerini sevkiyatı hazırlayan taraflarla teyit edin."
+            },
+            {
+              "type": "text",
+              "text": "**Sigorta ve hasar kayıtlarında neyi kontrol etmeliyim?**\nYük değerini paylaşın; sevkiyat öncesinde teminatı, istisnaları, muafiyeti ve tazminat sürecini inceleyin. Bildirilen hasarın değerlendirilebilmesi için ambalaj fotoğraflarını ve durum kayıtlarını saklayın."
+            },
+            {
+              "type": "text",
+              "text": "**Ambalaj bilgileri kesinleşmeden başlayabilir miyim?**\nEvet. Ürün listesini, tedarikçinin konumunu, teslim şehrini ve satın alma aşamasını gönderin. Eksik ağırlık ve ölçüleri tedarikçiden bekleniyor olarak işaretleyin; ambalaj hazır olduğunda güncelleyin."
+            }
+          ]
+        },
+        {
+          "heading": "Umman yük bilgilerinizi gönderin",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Mal ve miktarı, tedarikçi konumunu, ambalaj ölçülerini ve brüt ağırlıkları, hazır olma tarihini, kabul şehrini ve saha erişimini belirtin. İthalatçı ve belgelerin durumunu, limandan alım mı yoksa teslimat düzenlemesi mi değerlendirilmesini istediğinizi ekleyin."
+            },
+            {
+              "type": "text",
+              "text": "**Umman nakliye teklifi isteyin**"
+            },
+            {
+              "type": "text",
+              "text": "[Çin’den deniz yolu taşımacılığı](/tr/services/sea-freight/) · [LCL taşımayı inceleyin](/tr/services/lcl-shipping-from-china/) · [Orta Doğu rotaları](/tr/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Varış ülkesine ilişkin kaynaklar 14 Ekim 2026’da kontrol edildi. Rezervasyondan önce gerçek mallar için geçerli gereklilikleri teyit edin."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

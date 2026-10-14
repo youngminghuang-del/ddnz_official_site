@@ -1,0 +1,108 @@
+{
+  "galleryTitle": {
+    "en": "Table details & packing preparation",
+    "ar": "تفاصيل الطاولة والتحضير للتعبئة"
+  },
+  "galleryIntro": {
+    "en": "Review separate components, packed dimensions and weights, surface protection and handling before arranging transport.",
+    "ar": "راجع الأجزاء المنفصلة والأبعاد والأوزان بعد التغليف وحماية الأسطح وطريقة المناولة قبل ترتيب النقل."
+  },
+  "images": [
+    {
+      "id": "billiard-factory-1",
+      "sourceFile": "1_billiard_factory.jpg",
+      "title": {
+        "en": "Complete table",
+        "ar": "الطاولة كاملة"
+      },
+      "caption": {
+        "en": "Check which parts travel separately.",
+        "ar": "حدّد الأجزاء التي ستُشحن منفصلة."
+      },
+      "alt": {
+        "en": "Billiard table with a grey playing surface and transparent-looking legs beside a wood-panelled wall",
+        "ar": "طاولة بلياردو بسطح رمادي وأرجل تبدو شفافة بجانب جدار مكسو بألواح خشبية"
+      }
+    },
+    {
+      "id": "billiard-factory-2",
+      "sourceFile": "2_billiard_factory.jpg",
+      "title": {
+        "en": "Table from another angle",
+        "ar": "الطاولة من زاوية أخرى"
+      },
+      "caption": {
+        "en": "Record overall dimensions before planning disassembly.",
+        "ar": "سجّل الأبعاد الكلية قبل التخطيط للفك."
+      },
+      "alt": {
+        "en": "Billiard table with a grey surface and dark pockets, viewed diagonally in an indoor display area",
+        "ar": "طاولة بلياردو بسطح رمادي وجيوب داكنة، من زاوية مائلة في مساحة عرض داخلية"
+      }
+    },
+    {
+      "id": "billiard-factory-3",
+      "sourceFile": "3_billiard_factory.jpg",
+      "title": {
+        "en": "Wrapped frame components",
+        "ar": "أجزاء إطار مغلّفة"
+      },
+      "caption": {
+        "en": "Match each separate component to the packing list.",
+        "ar": "طابق كل جزء منفصل مع قائمة التعبئة."
+      },
+      "alt": {
+        "en": "Stacks of frame-shaped components covered in grey wrapping, with upright packages behind them",
+        "ar": "أكوام من أجزاء على شكل إطارات مغطاة بتغليف رمادي، وخلفها عبوات قائمة"
+      }
+    },
+    {
+      "id": "billiard-factory-4",
+      "sourceFile": "4_billiard_factory.jpg",
+      "title": {
+        "en": "Tabletop edge wrapping",
+        "ar": "تغليف حواف أسطح الطاولات"
+      },
+      "caption": {
+        "en": "Confirm surface and corner protection before handling.",
+        "ar": "أكّد حماية الأسطح والزوايا قبل المناولة."
+      },
+      "alt": {
+        "en": "Large rectangular table sections with brown edge wrapping and white ties, including a visible green section",
+        "ar": "أجزاء طاولات مستطيلة كبيرة بحواف مغلّفة باللون البني وأربطة بيضاء، بينها جزء أخضر ظاهر"
+      }
+    },
+    {
+      "id": "billiard-factory-5",
+      "sourceFile": "5_billiard_factory.jpg",
+      "title": {
+        "en": "Packed frame stack",
+        "ar": "رصة إطارات مغلّفة"
+      },
+      "caption": {
+        "en": "Check packed dimensions, weight and stacking limits.",
+        "ar": "تحقّق من الأبعاد والوزن بعد التغليف وحدود التكديس."
+      },
+      "alt": {
+        "en": "A side view of stacked frame-shaped components covered in light-grey wrapping",
+        "ar": "منظر جانبي لأجزاء على شكل إطارات مكدّسة ومغطاة بتغليف رمادي فاتح"
+      }
+    },
+    {
+      "id": "billiard-factory-6",
+      "sourceFile": "6_billiard_factory.jpg",
+      "title": {
+        "en": "Upright tabletop packages",
+        "ar": "عبوات أسطح طاولات قائمة"
+      },
+      "caption": {
+        "en": "Agree on lifting points and unloading equipment.",
+        "ar": "اتفق على نقاط الرفع ومعدات التفريغ."
+      },
+      "alt": {
+        "en": "A row of upright rectangular table sections with blue and green surfaces, brown edge wrapping and white ties",
+        "ar": "صف من أجزاء طاولات مستطيلة قائمة بأسطح زرقاء وخضراء وحواف مغلّفة باللون البني وأربطة بيضاء"
+      }
+    }
+  ]
+}

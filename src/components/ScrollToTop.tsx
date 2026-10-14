@@ -39,6 +39,8 @@ export default function ScrollToTop() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           exit={{ opacity: 0, y: 20, scale: 0.8 }}
           transition={{ duration: 0.2 }}
+          data-floating-control
+          data-scroll-top
           className="fixed bottom-32 md:bottom-28 right-6 z-40"
         >
           <button

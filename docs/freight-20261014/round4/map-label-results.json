@@ -1,0 +1,72 @@
+[
+  {
+    "locale": "en",
+    "width": 360,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "en",
+    "width": 390,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "en",
+    "width": 430,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "en",
+    "width": 1110,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "en",
+    "width": 1536,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "ar",
+    "width": 360,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "ar",
+    "width": 390,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "ar",
+    "width": 430,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "ar",
+    "width": 1110,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  },
+  {
+    "locale": "ar",
+    "width": 1536,
+    "seaLabelEntireBoundingBoxInWater": true,
+    "noPointLabelOverlap": true,
+    "noLabelMarkerCollision": true
+  }
+]

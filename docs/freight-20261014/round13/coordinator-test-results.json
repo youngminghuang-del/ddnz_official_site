@@ -1,0 +1,15 @@
+{
+  "nodeVersion": "22.14.0",
+  "ciNodeVersion": "24",
+  "releaseTests": {
+    "tests": 323,
+    "pass": 323,
+    "fail": 0,
+    "exitCode": 0
+  },
+  "notionRouting": "passed",
+  "notionGuards": "passed",
+  "analyticsPolicy": "passed",
+  "analyticsRuntime": "passed",
+  "runnerNote": "npm tsx CLI hit sandbox IPC EPERM; equivalent node --import tsx scripts passed. CI Node24 remains a publication gate."
+}

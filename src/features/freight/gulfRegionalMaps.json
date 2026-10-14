@@ -1,0 +1,240 @@
+{
+  "qatar": {
+    "nodes": [
+      {
+        "id": "hamad-port",
+        "coordinates": [
+          51.59334166666667,
+          25.029966666666667
+        ],
+        "x": 410.11,
+        "y": 356.4,
+        "labelX": 550,
+        "labelY": 405
+      },
+      {
+        "id": "doha",
+        "coordinates": [
+          51.5329679,
+          25.286556
+        ],
+        "x": 403.57,
+        "y": 325.61,
+        "labelX": 530,
+        "labelY": 290
+      }
+    ],
+    "labels": [
+      {
+        "x": 220,
+        "y": 460,
+        "name": {
+          "en": "Saudi Arabia",
+          "ar": "السعودية",
+          "zh": "沙特阿拉伯",
+          "ru": "Саудовская Аравия",
+          "fr": "Arabie saoudite",
+          "es": "Arabia Saudí",
+          "pt": "Arábia Saudita",
+          "tr": "Suudi Arabistan"
+        }
+      },
+      {
+        "x": 685,
+        "y": 530,
+        "name": {
+          "en": "UAE",
+          "ar": "الإمارات",
+          "zh": "阿联酋",
+          "ru": "ОАЭ",
+          "fr": "EAU",
+          "es": "EAU",
+          "pt": "EAU",
+          "tr": "BAE"
+        }
+      },
+      {
+        "x": 665,
+        "y": 85,
+        "name": {
+          "en": "Iran",
+          "ar": "إيران",
+          "zh": "伊朗",
+          "ru": "Иран",
+          "fr": "Iran",
+          "es": "Irán",
+          "pt": "Irão",
+          "tr": "İran"
+        }
+      },
+      {
+        "x": 235,
+        "y": 215,
+        "name": {
+          "en": "Bahrain",
+          "ar": "البحرين",
+          "zh": "巴林",
+          "ru": "Бахрейн",
+          "fr": "Bahreïn",
+          "es": "Baréin",
+          "pt": "Barém",
+          "tr": "Bahreyn"
+        }
+      },
+      {
+        "x": 335,
+        "y": 285,
+        "name": {
+          "en": "Qatar",
+          "ar": "قطر",
+          "zh": "卡塔尔",
+          "ru": "Катар",
+          "fr": "Qatar",
+          "es": "Catar",
+          "pt": "Catar",
+          "tr": "Katar"
+        }
+      },
+      {
+        "x": 575,
+        "y": 210,
+        "name": {
+          "en": "Gulf",
+          "ar": "الخليج",
+          "zh": "海湾",
+          "ru": "Залив",
+          "fr": "Golfe",
+          "es": "Golfo",
+          "pt": "Golfo",
+          "tr": "Körfez"
+        }
+      }
+    ]
+  },
+  "oman": {
+    "nodes": [
+      {
+        "id": "sohar-port",
+        "coordinates": [
+          56.63,
+          24.511666666666667
+        ],
+        "x": 452.57,
+        "y": 149.42,
+        "labelX": 665,
+        "labelY": 225
+      },
+      {
+        "id": "muscat",
+        "coordinates": [
+          58.37831058458708,
+          23.58517901476684
+        ],
+        "x": 533.9,
+        "y": 195.74,
+        "labelX": 670,
+        "labelY": 280
+      }
+    ],
+    "labels": [
+      {
+        "x": 245,
+        "y": 295,
+        "name": {
+          "en": "Saudi Arabia",
+          "ar": "السعودية",
+          "zh": "沙特阿拉伯",
+          "ru": "Саудовская Аравия",
+          "fr": "Arabie saoudite",
+          "es": "Arabia Saudí",
+          "pt": "Arábia Saudita",
+          "tr": "Suudi Arabistan"
+        }
+      },
+      {
+        "x": 375,
+        "y": 170,
+        "name": {
+          "en": "UAE",
+          "ar": "الإمارات",
+          "zh": "阿联酋",
+          "ru": "ОАЭ",
+          "fr": "EAU",
+          "es": "EAU",
+          "pt": "EAU",
+          "tr": "BAE"
+        }
+      },
+      {
+        "x": 495,
+        "y": 30,
+        "name": {
+          "en": "Iran",
+          "ar": "إيران",
+          "zh": "伊朗",
+          "ru": "Иран",
+          "fr": "Iran",
+          "es": "Irán",
+          "pt": "Irão",
+          "tr": "İran"
+        }
+      },
+      {
+        "x": 190,
+        "y": 490,
+        "name": {
+          "en": "Yemen",
+          "ar": "اليمن",
+          "zh": "也门",
+          "ru": "Йемен",
+          "fr": "Yémen",
+          "es": "Yemen",
+          "pt": "Iémen",
+          "tr": "Yemen"
+        }
+      },
+      {
+        "x": 450,
+        "y": 345,
+        "name": {
+          "en": "Oman",
+          "ar": "عُمان",
+          "zh": "阿曼",
+          "ru": "Оман",
+          "fr": "Oman",
+          "es": "Omán",
+          "pt": "Omã",
+          "tr": "Umman"
+        }
+      },
+      {
+        "x": 660,
+        "y": 170,
+        "name": {
+          "en": "Sea of Oman",
+          "ar": "بحر عُمان",
+          "zh": "阿曼湾",
+          "ru": "Оманский залив",
+          "fr": "Golfe d’Oman",
+          "es": "Golfo de Omán",
+          "pt": "Golfo de Omã",
+          "tr": "Umman Körfezi"
+        }
+      },
+      {
+        "x": 615,
+        "y": 465,
+        "name": {
+          "en": "Arabian Sea",
+          "ar": "بحر العرب",
+          "zh": "阿拉伯海",
+          "ru": "Аравийское море",
+          "fr": "Mer d’Arabie",
+          "es": "Mar Arábigo",
+          "pt": "Mar Arábico",
+          "tr": "Arap Denizi"
+        }
+      }
+    ]
+  }
+}

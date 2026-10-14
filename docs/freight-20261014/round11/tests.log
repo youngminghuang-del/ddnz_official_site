@@ -1,0 +1,55 @@
+TAP version 13
+# Subtest: eight languages emit plain links and retain multilingual briefs outside href
+ok 1 - eight languages emit plain links and retain multilingual briefs outside href
+  ---
+  duration_ms: 1.536375
+  ...
+# Subtest: external links, hashes, downloads and non-quote parameters are unchanged
+ok 2 - external links, hashes, downloads and non-quote parameters are unchanged
+  ---
+  duration_ms: 0.553375
+  ...
+# Subtest: unknown enum identifiers are rejected; free destination text stays in local brief
+ok 3 - unknown enum identifiers are rejected; free destination text stays in local brief
+  ---
+  duration_ms: 0.083792
+  ...
+# Subtest: HTML processing is escaped and idempotent without modifying title, body text or script strings
+ok 4 - HTML processing is escaped and idempotent without modifying title, body text or script strings
+  ---
+  duration_ms: 0.583792
+  ...
+# Subtest: handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+ok 5 - handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+  ---
+  duration_ms: 0.348625
+  ...
+# Subtest: expired and malformed storage never blocks the form
+ok 6 - expired and malformed storage never blocks the form
+  ---
+  duration_ms: 0.1905
+  ...
+# Subtest: compiler applies policy to anchors and router links before React creates DOM
+ok 7 - compiler applies policy to anchors and router links before React creates DOM
+  ---
+  duration_ms: 37.44275
+  ...
+# Subtest: React Router path objects retain hashes while removing quote queries
+ok 8 - React Router path objects retain hashes while removing quote queries
+  ---
+  duration_ms: 0.13225
+  ...
+# Subtest: same-tab handoff works when both browser storage APIs are blocked
+ok 9 - same-tab handoff works when both browser storage APIs are blocked
+  ---
+  duration_ms: 0.247584
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 390.757292

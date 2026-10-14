@@ -1,0 +1,15 @@
+{
+  "assets": 12,
+  "bytes_total": 2806302,
+  "path_sha_svg_vtt_checks": "passed",
+  "source_review": "Full source decoding into 1fps contact sheets: M049 36 frames; M046 38 frames; representative native-resolution frames reviewed. Not every original frame visually inspected.",
+  "output_review": "Both outputs fully decoded with FFmpeg exit 0. Chrome playback reached 4/4 and 10/10; English and Arabic captions visually confirmed for both clips.",
+  "diagrams": "Final 720x960 layout: EN Qatar/Oman and AR Qatar/Oman browser visual review; XML parses; final integrated mobile page check remains with engineering.",
+  "known_limits": [
+    "Arabic native linguistic review pending",
+    "Mobile integrated page review pending",
+    "Copyright / filming permission not independently verified",
+    "No destination-delivery proof"
+  ],
+  "issues": []
+}

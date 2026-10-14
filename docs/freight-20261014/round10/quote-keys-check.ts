@@ -1,0 +1,6 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import {translations} from '../../../src/i18n/translations';import {quoteSummaryCopy} from '../../../src/features/freight/quoteSummaryCopy';
+const source=fs.readFileSync('src/components/GetAQuote.tsx','utf8'),keys=[...new Set([...source.matchAll(/\bt\('([^']+)'\)/g)].map(m=>m[1]))],rows=[];
+for(const key of keys){const get=(l:string)=>key.split('.').reduce((v,k)=>v?.[k],translations[l]);const en=get('en');for(const l of Object.keys(translations)){const value=get(l),localOverride=key==='hero.alibaba_cta'&&['es','ar','tr'].includes(l);rows.push({key,locale:l,missing:value===undefined,equalsEnglish:l!=='en'&&value===en,localOverride,value});}}
+const actionable=rows.filter(x=>(x.missing||x.equalsEnglish)&&!x.localOverride);assert.deepEqual(actionable,[]);
+for(const [l,copy] of Object.entries(quoteSummaryCopy))for(const key of Object.keys(quoteSummaryCopy.en))assert.ok(copy[key]?.trim(),l+'.'+key);
+fs.writeFileSync('docs/freight-20261014/round10/quote-keys-results.json',JSON.stringify({rows,actionable,displayDictionaryLocales:8,displayDictionaryFields:Object.keys(quoteSummaryCopy.en)},null,2)+'\n');console.log('All consumed t keys and eight display dictionaries covered; existing local overrides accounted for.');

@@ -1,0 +1,54 @@
+{
+  "results": [
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 360,
+      "sectionHeight": 1572,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 360,
+      "sectionHeight": 1357,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 360,
+      "sectionHeight": 1351,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 360,
+      "sectionHeight": 1219,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "sectionHeight": 907,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "sectionHeight": 787,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 1536,
+      "sectionHeight": 805,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 1536,
+      "sectionHeight": 757,
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "blockedExternal": 8
+}

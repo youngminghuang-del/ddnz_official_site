@@ -1,0 +1,26 @@
+{
+  "baseline": "e9fe6d7008725e6caf25eb08cc338bea8abe4570",
+  "localeCount": 8,
+  "strings": 224,
+  "regions": 7,
+  "nodes": 12,
+  "schema": "pass",
+  "coordinateRanges": "pass",
+  "uniqueIdsAndCompleteLabels": "pass",
+  "nativeReview": false,
+  "browserReview": "complete; version-specific scope in 集成复核.md",
+  "published": false,
+  "sha256": {
+    "worldFreightCopy.json": "3be8a37e962a577e6f95bd34d7dfdec310ddab8e97ea54bb306a4407ee07d02e",
+    "worldFreightNodes.json": "a040787794f296d3c8bba44158b9d971f20a1e6f09128a0165ed23948e451404"
+  },
+  "sourceMerge": "matches",
+  "finalStage": "AcN5Ax",
+  "finalBundle": "index-Gqk9PUJ7.js",
+  "actualFilterStates": 64,
+  "finalMobileDefaultPages": 8,
+  "actualQuoteHandoffs": 4,
+  "submitted": false,
+  "latestStage": "AcN5Ax",
+  "finalOverviewLabelReview": "AR745 all regions and Europe visual pass"
+}

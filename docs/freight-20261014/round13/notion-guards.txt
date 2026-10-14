@@ -1,0 +1,33 @@
+PASS strict sync rejects an ungoverned Published article
+PASS non-strict local sync preserves legacy article compatibility
+PASS all current Published articles satisfy the strict publication guard
+PASS Notion stock page covers are classified for local production storage
+Downloading Notion image: stock-cover-test-cover.jpg
+Successfully localized current Notion image: /images/posts/stock-cover-test-cover.jpg
+PASS a Notion stock page cover is localized like a signed upload
+Downloading Notion image: guard-test-cover.png
+Successfully localized current Notion image: /images/posts/guard-test-cover.png
+PASS a changed source refreshes an existing same-name local image
+Downloading Notion image: guard-test-cover.png
+Retrying Notion image guard-test-cover after attempt 1/2.
+Successfully localized current Notion image: /images/posts/guard-test-cover.png
+PASS strict image localization retries a transient network failure
+Downloading Notion image: guard-test-cover.png
+Error downloading image for guard-test-cover: Error: Failed to fetch image: 503 Unavailable
+    at fetchNotionImageWithRetry (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/notion-img-sync.ts:32:21)
+    at async downloadNotionImage (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/notion-img-sync.ts:126:22)
+    at async waitForActual (node:assert:875:5)
+    at async Function.rejects (node:assert:996:25)
+    at async <anonymous> (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:117:5)
+    at async check (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:14:5)
+    at async <anonymous> (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:115:3)
+PASS strict image localization rejects a failed download
+Downloading Notion image: guard-test-cover.png
+Error downloading image for guard-test-cover: Error: Failed to fetch image: 503 Unavailable
+    at fetchNotionImageWithRetry (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/notion-img-sync.ts:32:21)
+    at async downloadNotionImage (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/notion-img-sync.ts:126:22)
+    at async <anonymous> (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:130:20)
+    at async check (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:14:5)
+    at async <anonymous> (/Users/huangyangming/Documents/New project/ddnz-freight-engineering-20261014/scripts/test-notion-publishing-guards.ts:129:3)
+PASS non-strict failure never silently returns a stale local image
+Validated 37 current articles and both strict failure contracts.

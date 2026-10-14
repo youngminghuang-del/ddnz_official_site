@@ -1,0 +1,7 @@
+PASS normalizes Notion language variants to site locale paths
+PASS resolves the same slug by route locale instead of first match
+PASS builds the same complete reciprocal hreflang set for every Published translation
+PASS keeps an ungrouped article on self plus x-default only
+PASS switches to a real translated route and never invents a missing article URL
+PASS current 21-article snapshot produces no invented translation alternates
+Validated locale routing and hreflang behavior against 37 current articles.

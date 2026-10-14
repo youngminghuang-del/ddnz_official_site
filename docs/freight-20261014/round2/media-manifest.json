@@ -1,0 +1,335 @@
+{
+  "version": 1,
+  "created": "2026-10-14",
+  "status": "local integration package; no publication",
+  "assets": [
+    {
+      "id": "qatar-receiving.en",
+      "type": "text/vtt",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving.en.vtt",
+      "suggested_web_path": "/media/freight-20261014/qatar-receiving.en.vtt",
+      "sha256": "676929f89f4c8c4269b09f802c3a4724e4bc2c92499c1820e3873019714313f4",
+      "bytes": 67,
+      "source_material_ids": [
+        "M049"
+      ],
+      "caption": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "alt": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "note": "Editorial context caption, not spoken transcript; source has no audio.",
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "qatar-receiving.ar",
+      "type": "text/vtt",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving.ar.vtt",
+      "suggested_web_path": "/media/freight-20261014/qatar-receiving.ar.vtt",
+      "sha256": "7c99f474d042c22a9eac287213ce1bdd17db03e3e7a70f51864735d59618db21",
+      "bytes": 75,
+      "source_material_ids": [
+        "M049"
+      ],
+      "caption": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "alt": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "note": "Editorial context caption, not spoken transcript; source has no audio.",
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "qatar-receiving",
+      "type": "video/mp4",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving.mp4",
+      "suggested_web_path": "/media/freight-20261014/qatar-receiving.mp4",
+      "sha256": "fab9ad4da81f323337085b9b20ea629885c514143f428ef9b897c133bc6278af",
+      "bytes": 770086,
+      "source_material_ids": [
+        "M049"
+      ],
+      "caption": {
+        "en": "Receiving record from China. For Qatar: prepare a supplier list and package counts. General reference; not proof of delivery in Qatar or Oman.",
+        "ar": "سجل استلام من الصين. للشحن إلى قطر: جهّز قائمة المورّدين وعدد الطرود. مرجع عام، وليس إثباتاً للتسليم في قطر أو عُمان."
+      },
+      "alt": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "duration_seconds": 4,
+      "width": 540,
+      "height": 756,
+      "subtitle_tracks": {
+        "en": "/media/freight-20261014/qatar-receiving.en.vtt",
+        "ar": "/media/freight-20261014/qatar-receiving.ar.vtt"
+      },
+      "poster": "/media/freight-20261014/qatar-receiving-poster.jpg",
+      "silent": true,
+      "source_note": "User-supplied China-origin candidate, mapped in historical 2026-09-18 import record; date/operator ownership not independently established.",
+      "playback_validation": {
+        "full_decode": "passed: FFmpeg -xerror full decode, exit 0",
+        "browser": "Chrome: played to duration; English captions visible",
+        "arabic_track": "Switched and visually confirmed in Chrome for both clips",
+        "responsive": "final site mobile test owned by engineering"
+      },
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "qatar-receiving-poster",
+      "type": "image/jpeg",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving-poster.jpg",
+      "suggested_web_path": "/media/freight-20261014/qatar-receiving-poster.jpg",
+      "sha256": "42eafecfd244a2e14430ec868db30335ed37ab629c145f4787db90fed29e160a",
+      "bytes": 42428,
+      "source_material_ids": [
+        "M049"
+      ],
+      "caption": {
+        "en": "Receiving record from China.",
+        "ar": "سجل استلام من الصين."
+      },
+      "alt": {
+        "en": "Palletised cartons during receiving in China",
+        "ar": "كراتين على منصة أثناء الاستلام في الصين"
+      },
+      "source_note": "Frame at 1 second of derived video; same source provenance.",
+      "width": 540,
+      "height": 756,
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "oman-loading.en",
+      "type": "text/vtt",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-loading.en.vtt",
+      "suggested_web_path": "/media/freight-20261014/oman-loading.en.vtt",
+      "sha256": "d71e7f26dcba8cbbe11df33c50cc7b148f722af8e64bde257599e1232af08ecf",
+      "bytes": 65,
+      "source_material_ids": [
+        "M046"
+      ],
+      "caption": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "alt": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "note": "Editorial context caption, not spoken transcript; source has no audio.",
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "oman-loading.ar",
+      "type": "text/vtt",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-loading.ar.vtt",
+      "suggested_web_path": "/media/freight-20261014/oman-loading.ar.vtt",
+      "sha256": "a07c8b3f0e0fdb8e609f7a8312818364fedc281e7eb637f5db195b13846bd26a",
+      "bytes": 73,
+      "source_material_ids": [
+        "M046"
+      ],
+      "caption": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "alt": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "note": "Editorial context caption, not spoken transcript; source has no audio.",
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "oman-loading",
+      "type": "video/mp4",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-loading.mp4",
+      "suggested_web_path": "/media/freight-20261014/oman-loading.mp4",
+      "sha256": "e7dfc488bf9ecd64282a059aa4a766df9d73a28e55bb0240fd7f9dea3093d473",
+      "bytes": 1936604,
+      "source_material_ids": [
+        "M046"
+      ],
+      "caption": {
+        "en": "Loading record from China. For Oman: confirm packed dimensions and unloading responsibilities. General reference; not proof of delivery in Qatar or Oman.",
+        "ar": "سجل تحميل من الصين. للشحن إلى عُمان: أكّد أبعاد الطرود ومسؤوليات التفريغ. مرجع عام، وليس إثباتاً للتسليم في قطر أو عُمان."
+      },
+      "alt": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "duration_seconds": 10,
+      "width": 540,
+      "height": 984,
+      "subtitle_tracks": {
+        "en": "/media/freight-20261014/oman-loading.en.vtt",
+        "ar": "/media/freight-20261014/oman-loading.ar.vtt"
+      },
+      "poster": "/media/freight-20261014/oman-loading-poster.jpg",
+      "silent": true,
+      "source_note": "User-supplied China-origin candidate, mapped in historical 2026-09-18 import record; date/operator ownership not independently established.",
+      "playback_validation": {
+        "full_decode": "passed: FFmpeg -xerror full decode, exit 0",
+        "browser": "Chrome: played to duration; English captions visible",
+        "arabic_track": "Switched and visually confirmed in Chrome for both clips",
+        "responsive": "final site mobile test owned by engineering"
+      },
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "oman-loading-poster",
+      "type": "image/jpeg",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-loading-poster.jpg",
+      "suggested_web_path": "/media/freight-20261014/oman-loading-poster.jpg",
+      "sha256": "b25057d944c29b18dc84d222d6ca8386e3db145bdfa4ce4fdae10c58ab5f2d5b",
+      "bytes": 48302,
+      "source_material_ids": [
+        "M046"
+      ],
+      "caption": {
+        "en": "Loading record from China.",
+        "ar": "سجل تحميل من الصين."
+      },
+      "alt": {
+        "en": "Cartons at a container during loading in China",
+        "ar": "كراتين عند حاوية أثناء التحميل في الصين"
+      },
+      "source_note": "Frame at 1 second of derived video; same source provenance.",
+      "width": 540,
+      "height": 984,
+      "privacy_review": "Selected short clips and derived covers avoid later close-ups; full source sampled at 1 fps; no legible private contact/address observed in selected range. Not a pixel-by-pixel privacy certification."
+    },
+    {
+      "id": "qatar-explainer.en",
+      "type": "image/svg+xml",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-explainer.en.svg",
+      "suggested_web_path": "/media/freight-20261014/qatar-explainer.en.svg",
+      "sha256": "f4112f2e3d73922ac29ee938c84497cce82dd220ffa016e071f77a41878e7664",
+      "bytes": 2117,
+      "source_material_ids": [],
+      "caption": {
+        "en": "Several suppliers. One clear record.",
+        "ar": "عدة مورّدين، وسجل واضح واحد."
+      },
+      "alt": {
+        "en": "Several suppliers. One clear record. Confirm repacking and delivery scope before comparing quotes.",
+        "ar": "عدة مورّدين، وسجل واضح واحد. أكّد نطاق إعادة التعبئة والتسليم قبل مقارنة عروض الأسعار."
+      },
+      "source_note": "Original instructional diagram by project; no third-party visual asset.",
+      "language": "en",
+      "arabic_review": null,
+      "width": 720,
+      "height": 960,
+      "privacy_review": "Original diagram, no personal or shipment data."
+    },
+    {
+      "id": "qatar-explainer.ar",
+      "type": "image/svg+xml",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-explainer.ar.svg",
+      "suggested_web_path": "/media/freight-20261014/qatar-explainer.ar.svg",
+      "sha256": "f1703ec252aec8d64edeed8c2440e571bd4080b529cf620f9cf60dbeff70d50f",
+      "bytes": 2200,
+      "source_material_ids": [],
+      "caption": {
+        "en": "Several suppliers. One clear record.",
+        "ar": "عدة مورّدين، وسجل واضح واحد."
+      },
+      "alt": {
+        "en": "Several suppliers. One clear record. Confirm repacking and delivery scope before comparing quotes.",
+        "ar": "عدة مورّدين، وسجل واضح واحد. أكّد نطاق إعادة التعبئة والتسليم قبل مقارنة عروض الأسعار."
+      },
+      "source_note": "Original instructional diagram by project; no third-party visual asset.",
+      "language": "ar",
+      "arabic_review": "draft; native review pending",
+      "width": 720,
+      "height": 960,
+      "privacy_review": "Original diagram, no personal or shipment data."
+    },
+    {
+      "id": "oman-explainer.en",
+      "type": "image/svg+xml",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-explainer.en.svg",
+      "suggested_web_path": "/media/freight-20261014/oman-explainer.en.svg",
+      "sha256": "bad35175f0720e9b218de607c4cfa343501075cf5bfcb38dd1291314920d4349",
+      "bytes": 2149,
+      "source_material_ids": [],
+      "caption": {
+        "en": "Define the handover before the quote.",
+        "ar": "حدّد نقطة التسليم قبل طلب السعر."
+      },
+      "alt": {
+        "en": "Define the handover before the quote. Confirm each responsibility with the service provider.",
+        "ar": "حدّد نقطة التسليم قبل طلب السعر. أكّد كل مسؤولية مع مقدّم الخدمة."
+      },
+      "source_note": "Original instructional diagram by project; no third-party visual asset.",
+      "language": "en",
+      "arabic_review": null,
+      "width": 720,
+      "height": 960,
+      "privacy_review": "Original diagram, no personal or shipment data."
+    },
+    {
+      "id": "oman-explainer.ar",
+      "type": "image/svg+xml",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/oman-explainer.ar.svg",
+      "suggested_web_path": "/media/freight-20261014/oman-explainer.ar.svg",
+      "sha256": "a3353adc567634d58833f9395ae01218c36488419655c418d4fb2c7bc0a45665",
+      "bytes": 2136,
+      "source_material_ids": [],
+      "caption": {
+        "en": "Define the handover before the quote.",
+        "ar": "حدّد نقطة التسليم قبل طلب السعر."
+      },
+      "alt": {
+        "en": "Define the handover before the quote. Confirm each responsibility with the service provider.",
+        "ar": "حدّد نقطة التسليم قبل طلب السعر. أكّد كل مسؤولية مع مقدّم الخدمة."
+      },
+      "source_note": "Original instructional diagram by project; no third-party visual asset.",
+      "language": "ar",
+      "arabic_review": "draft; native review pending",
+      "width": 720,
+      "height": 960,
+      "privacy_review": "Original diagram, no personal or shipment data."
+    }
+  ],
+  "integration": {
+    "video": "controls playsInline preload=\"none\"; no autoplay; include poster, EN/AR tracks and adjacent caption; preserve aspect ratio",
+    "arabic": "Use Arabic SVG for AR routes, dir=rtl for surrounding copy; VTT is contextual text, not dialogue. Native review pending.",
+    "copy_policy": "Copy only assets/ files; inspection frames and logs are internal and must not be published."
+  },
+  "limitations": [
+    "Footage demonstrates general China-origin operations, not Qatar/Oman delivery or self-owned premises.",
+    "Historical source mapping does not independently establish copyright permission.",
+    "No actual billiard-table shipment shown."
+  ],
+  "source_edits": [
+    {
+      "name": "qatar-receiving",
+      "source_id": "M049",
+      "source_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/freight-20260918/receiving-silent.mp4",
+      "source_sha256": "aa24c1df49266d932bd3a0b4d51d07ad0ae4afd6da2f43b3edbabad38aff1e0e",
+      "start": 0,
+      "duration": 4,
+      "filter": "crop=540:756:0:206",
+      "reason": "保留开头连续动作，避开后段正脸、近距箱唛/清单；只裁原有黑边"
+    },
+    {
+      "name": "oman-loading",
+      "source_id": "M046",
+      "source_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/freight-20260918/loading-02.mp4",
+      "source_sha256": "93cc37793d3708ab79cc7abe8d404e9e2b3b8367aaa79e816aea4323d18e5eb7",
+      "start": 0,
+      "duration": 10,
+      "filter": "crop=540:984:0:92",
+      "reason": "保留开头连续动作，避开后段正脸、近距箱唛/清单；只裁原有黑边"
+    }
+  ],
+  "source_record": "/Users/huangyangming/Documents/New project/ddnz-site-aligned-preview-20260917/docs/freight-material-use-plan-2026-09-18.md",
+  "validation_report": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/验收.json"
+}

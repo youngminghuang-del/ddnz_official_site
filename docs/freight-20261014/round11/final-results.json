@@ -1,0 +1,165 @@
+{
+  "results": [
+    {
+      "locale": "en",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 390,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 745,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "width": 1082,
+      "labelCollisionFree": true,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "jebel-ali",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "khorgos",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "rotterdam",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "hamburg",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "los-angeles",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "vancouver",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "callao",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "santos",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "lagos",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "mombasa",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "sydney",
+      "quoteHandoff": true,
+      "passed": true
+    },
+    {
+      "node": "melbourne",
+      "quoteHandoff": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

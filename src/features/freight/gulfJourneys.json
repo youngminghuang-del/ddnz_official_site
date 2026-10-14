@@ -1,0 +1,470 @@
+{
+  "qatar": {
+    "en": {
+      "label": "YOUR CARGO JOURNEY",
+      "title": "From supplier orders to receiving in Qatar",
+      "intro": "Planning example based on an enquiry for hats and accessories from several 1688 suppliers. Doha is the example delivery city.",
+      "steps": [
+        {
+          "title": "Quote brief",
+          "detail": "Bring the supplier orders, available packing details and Qatar delivery address together. Ask for the charges and services included."
+        },
+        {
+          "title": "Cargo preparation",
+          "detail": "Reconcile the arrivals against each supplier order. Agree on photos and consolidation, then keep item and carton references together."
+        },
+        {
+          "title": "Transport planning",
+          "detail": "For a sea freight option, discuss Hamad Port as the entry point and confirm the route in the booking plan."
+        },
+        {
+          "title": "Customs preparation",
+          "detail": "Check importer details and align the invoice, item list and origin documents before submission in Qatar."
+        },
+        {
+          "title": "Delivery handover",
+          "detail": "For the Doha example, confirm the exact address, vehicle access and receiving contact; check the carton count at handover."
+        }
+      ],
+      "cta": "Plan my Qatar shipment",
+      "note": "Planning illustration · Activities can overlap; prepare import documents before dispatch."
+    },
+    "ar": {
+      "label": "رحلة بضاعتك",
+      "title": "من طلبات الموردين إلى الاستلام في قطر",
+      "intro": "مثال تخطيطي يستند إلى استفسار عن شحن قبعات وإكسسوارات من عدة موردين على منصة 1688. الدوحة هي مدينة التسليم في هذا المثال.",
+      "steps": [
+        {
+          "title": "طلب عرض السعر",
+          "detail": "اجمع طلبات الموردين وبيانات التغليف المتاحة وعنوان التسليم في قطر. اطلب توضيح الرسوم والخدمات المشمولة."
+        },
+        {
+          "title": "تجهيز البضاعة",
+          "detail": "طابق البضائع الواردة مع طلبات كل مورّد. اتفق على التصوير وتجميع الطرود، مع الحفاظ على الربط بين الأصناف وأرقام الطرود."
+        },
+        {
+          "title": "تخطيط النقل",
+          "detail": "عند دراسة الشحن البحري، ناقش ميناء حمد بوصفه نقطة دخول وأكّد المسار ضمن خطة الحجز."
+        },
+        {
+          "title": "التحضير للتخليص",
+          "detail": "تحقّق من بيانات المستورد وتطابق الفاتورة وقائمة الأصناف ومستندات المنشأ قبل تقديمها في قطر."
+        },
+        {
+          "title": "تسليم الشحنة",
+          "detail": "في مثال الدوحة، أكّد العنوان الدقيق وإمكانية وصول المركبة وبيانات مسؤول الاستلام، وتحقّق من عدد الطرود عند التسليم."
+        }
+      ],
+      "cta": "خطّط لشحنتي إلى قطر",
+      "note": "مخطط تخطيطي · قد تتداخل المراحل؛ جهّز مستندات الاستيراد قبل الإرسال."
+    },
+    "zh": {
+      "label": "货物运输流程",
+      "title": "从供应商订单到卡塔尔收货",
+      "intro": "基于多家1688供应商帽子及配饰询盘的规划示例。多哈为示例收货城市。",
+      "steps": [
+        {
+          "title": "报价需求",
+          "detail": "汇总供应商订单、已有包装资料及卡塔尔收货地址，询问包含的费用与服务。"
+        },
+        {
+          "title": "货物准备",
+          "detail": "按各供应商订单核对到货。约定拍照与集货，并保留产品与箱号对应关系。"
+        },
+        {
+          "title": "运输规划",
+          "detail": "评估海运时，可讨论以哈马德港作为入境点，并在订舱计划中确认路线。"
+        },
+        {
+          "title": "清关准备",
+          "detail": "在卡塔尔申报前，核查进口方资料，使发票、货物清单与原产地文件相互一致。"
+        },
+        {
+          "title": "交付交接",
+          "detail": "以多哈为例，确认详细地址、车辆通行及收货联系人，交接时核对箱数。"
+        }
+      ],
+      "cta": "规划卡塔尔运输",
+      "note": "规划示意 · 各环节可交叉进行；发货前准备进口文件。"
+    },
+    "ru": {
+      "label": "ПУТЬ ВАШЕГО ГРУЗА",
+      "title": "От заказов поставщиков до приёмки в Катаре",
+      "intro": "Пример планирования по запросу на головные уборы и аксессуары у нескольких поставщиков 1688. Доха — пример города доставки.",
+      "steps": [
+        {
+          "title": "Данные для расчёта",
+          "detail": "Соберите заказы поставщиков, имеющиеся упаковочные данные и адрес доставки в Катаре. Уточните включённые расходы и услуги."
+        },
+        {
+          "title": "Подготовка груза",
+          "detail": "Сверьте поступления с заказами поставщиков. Согласуйте фотографии и консолидацию, сохраняя связь между изделиями и коробками."
+        },
+        {
+          "title": "Планирование перевозки",
+          "detail": "Для морской перевозки обсудите порт Хамад как пункт ввоза и подтвердите маршрут в плане бронирования."
+        },
+        {
+          "title": "Подготовка к таможне",
+          "detail": "До подачи в Катаре проверьте данные импортёра и согласованность счёта, перечня товаров и документов о происхождении."
+        },
+        {
+          "title": "Передача при доставке",
+          "detail": "Для примера с Дохой уточните адрес, подъезд и контакт получателя; при передаче проверьте число коробок."
+        }
+      ],
+      "cta": "Спланировать отправку в Катар",
+      "note": "Пример планирования · Этапы могут пересекаться; подготовьте импортные документы до отправки."
+    },
+    "fr": {
+      "label": "LE PARCOURS DE VOTRE FRET",
+      "title": "Des commandes fournisseurs à la réception au Qatar",
+      "intro": "Exemple de planification fondé sur une demande de casquettes et accessoires auprès de plusieurs fournisseurs 1688. Doha sert d’exemple de ville de livraison.",
+      "steps": [
+        {
+          "title": "Demande de devis",
+          "detail": "Réunissez les commandes fournisseurs, les données d’emballage disponibles et l’adresse de livraison au Qatar. Demandez quels frais et services sont inclus."
+        },
+        {
+          "title": "Préparation du fret",
+          "detail": "Rapprochez les arrivages de chaque commande fournisseur. Convenez des photos et du groupage, puis conservez les correspondances entre articles et cartons."
+        },
+        {
+          "title": "Planification du transport",
+          "detail": "Pour une solution maritime, envisagez le port Hamad comme point d’entrée et confirmez l’itinéraire dans le plan de réservation."
+        },
+        {
+          "title": "Préparation douanière",
+          "detail": "Avant le dépôt au Qatar, vérifiez les données de l’importateur et la cohérence de la facture, de la liste des articles et des documents d’origine."
+        },
+        {
+          "title": "Remise à destination",
+          "detail": "Pour l’exemple de Doha, confirmez l’adresse exacte, l’accès des véhicules et le contact de réception ; vérifiez le nombre de cartons lors de la remise."
+        }
+      ],
+      "cta": "Planifier mon envoi au Qatar",
+      "note": "Illustration de planification · Les étapes peuvent se chevaucher ; préparez les documents d’importation avant le départ."
+    },
+    "es": {
+      "label": "EL RECORRIDO DE SU CARGA",
+      "title": "De los pedidos de proveedores a la recepción en Catar",
+      "intro": "Ejemplo de planificación basado en una consulta de gorras y accesorios de varios proveedores 1688. Doha es la ciudad de entrega del ejemplo.",
+      "steps": [
+        {
+          "title": "Solicitud de cotización",
+          "detail": "Reúna los pedidos, los datos de embalaje disponibles y la dirección de entrega en Catar. Pregunte qué cargos y servicios se incluyen."
+        },
+        {
+          "title": "Preparación de la carga",
+          "detail": "Contraste las llegadas con cada pedido. Acuerde las fotografías y la consolidación, manteniendo la relación entre artículos y cajas."
+        },
+        {
+          "title": "Planificación del transporte",
+          "detail": "Para una opción marítima, valore el puerto de Hamad como punto de entrada y confirme la ruta en el plan de reserva."
+        },
+        {
+          "title": "Preparación aduanera",
+          "detail": "Antes de presentar la declaración en Catar, compruebe los datos del importador y la coherencia de factura, lista de artículos y documentos de origen."
+        },
+        {
+          "title": "Entrega y recepción",
+          "detail": "Para el ejemplo de Doha, confirme dirección exacta, acceso de vehículos y contacto receptor; compruebe el número de cajas en la entrega."
+        }
+      ],
+      "cta": "Planificar mi envío a Catar",
+      "note": "Ejemplo de planificación · Las etapas pueden solaparse; prepare los documentos de importación antes del despacho."
+    },
+    "pt": {
+      "label": "O PERCURSO DA SUA CARGA",
+      "title": "Dos pedidos aos fornecedores à receção no Catar",
+      "intro": "Exemplo de planeamento baseado num pedido de informação sobre bonés e acessórios de vários fornecedores 1688. Doha é a cidade de entrega do exemplo.",
+      "steps": [
+        {
+          "title": "Pedido de cotação",
+          "detail": "Reúna os pedidos aos fornecedores, os dados de embalagem disponíveis e o endereço de entrega no Catar. Pergunte quais os custos e serviços incluídos."
+        },
+        {
+          "title": "Preparação da carga",
+          "detail": "Compare as chegadas com cada pedido. Acorde as fotografias e a consolidação, mantendo a correspondência entre artigos e caixas."
+        },
+        {
+          "title": "Planeamento do transporte",
+          "detail": "Para uma solução marítima, considere o porto de Hamad como ponto de entrada e confirme a rota no plano de reserva."
+        },
+        {
+          "title": "Preparação aduaneira",
+          "detail": "Antes da apresentação no Catar, verifique os dados do importador e a coerência da fatura, lista de artigos e documentos de origem."
+        },
+        {
+          "title": "Entrega e receção",
+          "detail": "No exemplo de Doha, confirme o endereço exato, o acesso dos veículos e o contacto de receção; verifique o número de caixas na entrega."
+        }
+      ],
+      "cta": "Planear o meu envio para o Catar",
+      "note": "Exemplo de planeamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
+    },
+    "tr": {
+      "label": "YÜKÜNÜZÜN YOLCULUĞU",
+      "title": "Tedarikçi siparişlerinden Katar’da teslime",
+      "intro": "Birden fazla 1688 tedarikçisinden şapka ve aksesuar talebine dayanan planlama örneği. Örnek teslim şehri Doha’dır.",
+      "steps": [
+        {
+          "title": "Teklif bilgileri",
+          "detail": "Tedarikçi siparişlerini, mevcut ambalaj bilgilerini ve Katar teslimat adresini bir araya getirin. Dahil olan ücret ve hizmetleri sorun."
+        },
+        {
+          "title": "Yük hazırlığı",
+          "detail": "Gelen malları her tedarikçi siparişiyle karşılaştırın. Fotoğraf ve konsolidasyonu kararlaştırın; ürün ve koli referanslarını birlikte tutun."
+        },
+        {
+          "title": "Taşıma planı",
+          "detail": "Deniz yolu seçeneğinde Hamad Limanı’nı giriş noktası olarak değerlendirin ve rezervasyon planında rotayı teyit edin."
+        },
+        {
+          "title": "Gümrük hazırlığı",
+          "detail": "Katar’da beyan öncesinde ithalatçı bilgilerini kontrol edin; fatura, ürün listesi ve menşe belgelerini tutarlı hale getirin."
+        },
+        {
+          "title": "Teslimat ve devir",
+          "detail": "Doha örneğinde açık adresi, araç erişimini ve teslim alacak kişinin iletişimini teyit edin; teslim sırasında koli sayısını kontrol edin."
+        }
+      ],
+      "cta": "Katar sevkiyatımı planla",
+      "note": "Planlama örneği · Aşamalar örtüşebilir; ithalat belgelerini sevkiyat öncesinde hazırlayın."
+    }
+  },
+  "oman": {
+    "en": {
+      "label": "YOUR CARGO JOURNEY",
+      "title": "Six pool tables: from Guangzhou to an Oman delivery plan",
+      "intro": "Planning example based on an enquiry for six pool tables and accessories from Guangzhou. Muscat is the example delivery city.",
+      "steps": [
+        {
+          "title": "Quote brief",
+          "detail": "Request the supplier’s packing list, with dimensions and gross weight for every package. Six tables may travel as a different number of packages."
+        },
+        {
+          "title": "Cargo preparation",
+          "detail": "Confirm how the tables and accessories are packed, whether packages can be stacked, and where lifting or forklift handling is allowed."
+        },
+        {
+          "title": "Transport planning",
+          "detail": "Compare shared-container and full-container options. Consider SOHAR as one sea freight entry option, then confirm the port and route for the shipment."
+        },
+        {
+          "title": "Customs preparation",
+          "detail": "Review the commercial invoice, origin documents and any additional requirements with the importer before the Bayan declaration."
+        },
+        {
+          "title": "Delivery handover",
+          "detail": "For the Muscat example, check vehicle access and unloading equipment. Agree separately on moving the tables indoors and assembly."
+        }
+      ],
+      "cta": "Plan my Oman shipment",
+      "note": "Planning illustration · Activities can overlap; prepare import documents before dispatch."
+    },
+    "ar": {
+      "label": "رحلة بضاعتك",
+      "title": "ست طاولات بلياردو: من قوانغتشو إلى خطة تسليم في عُمان",
+      "intro": "مثال تخطيطي يستند إلى استفسار عن شحن ست طاولات بلياردو وملحقاتها من قوانغتشو. مسقط هي مدينة التسليم في هذا المثال.",
+      "steps": [
+        {
+          "title": "طلب عرض السعر",
+          "detail": "اطلب قائمة التعبئة من المورّد، متضمنة أبعاد كل طرد ووزنه الإجمالي. قد يختلف عدد الطرود عن عدد الطاولات الست."
+        },
+        {
+          "title": "تجهيز البضاعة",
+          "detail": "أكّد طريقة تغليف الطاولات والملحقات، وإمكانية تكديس الطرود، ونقاط الرفع أو المناولة بالرافعة الشوكية."
+        },
+        {
+          "title": "تخطيط النقل",
+          "detail": "قارن بين الشحن الجزئي والحاوية الكاملة. ادرس ميناء صحار بوصفه أحد خيارات الدخول البحري، ثم أكّد الميناء والمسار لهذه الشحنة."
+        },
+        {
+          "title": "التحضير للتخليص",
+          "detail": "راجع الفاتورة التجارية ومستندات المنشأ وأي متطلبات إضافية مع المستورد قبل تقديم البيان عبر نظام بيان."
+        },
+        {
+          "title": "تسليم الشحنة",
+          "detail": "في مثال مسقط، تحقّق من إمكانية وصول المركبة ومعدات التفريغ. اتفق بصورة منفصلة على نقل الطاولات إلى الداخل وتجميعها."
+        }
+      ],
+      "cta": "خطّط لشحنتي إلى عُمان",
+      "note": "مخطط تخطيطي · قد تتداخل المراحل؛ جهّز مستندات الاستيراد قبل الإرسال."
+    },
+    "zh": {
+      "label": "货物运输流程",
+      "title": "六张台球桌：从广州备货到阿曼交付规划",
+      "intro": "基于广州六张台球桌及配件询盘的规划示例。马斯喀特为示例收货城市。",
+      "steps": [
+        {
+          "title": "报价需求",
+          "detail": "向供应商索取包装清单，列明每个包装件的尺寸和毛重。六张桌子不一定对应六个包装件。"
+        },
+        {
+          "title": "货物准备",
+          "detail": "确认球桌与配件的包装方式、能否堆码，以及允许起吊或叉车搬运的位置。"
+        },
+        {
+          "title": "运输规划",
+          "detail": "比较拼箱与整箱方案。将SOHAR作为海运入境选项之一，再确认本票货的港口与路线。"
+        },
+        {
+          "title": "清关准备",
+          "detail": "通过Bayan申报前，与进口方核对商业发票、原产地文件及其他适用要求。"
+        },
+        {
+          "title": "交付交接",
+          "detail": "以马斯喀特为例，核查车辆通行与卸货设备；搬入室内和组装需分别约定。"
+        }
+      ],
+      "cta": "规划阿曼运输",
+      "note": "规划示意 · 各环节可交叉进行；发货前准备进口文件。"
+    },
+    "ru": {
+      "label": "ПУТЬ ВАШЕГО ГРУЗА",
+      "title": "Шесть бильярдных столов: от Гуанчжоу до плана доставки в Оман",
+      "intro": "Пример планирования по запросу на шесть бильярдных столов и аксессуары из Гуанчжоу. Маскат — пример города доставки.",
+      "steps": [
+        {
+          "title": "Данные для расчёта",
+          "detail": "Запросите упаковочный лист с размерами и весом брутто каждого места. Шесть столов могут перевозиться в другом количестве упаковок."
+        },
+        {
+          "title": "Подготовка груза",
+          "detail": "Уточните упаковку столов и аксессуаров, возможность штабелирования и разрешённые точки подъёма или захвата погрузчиком."
+        },
+        {
+          "title": "Планирование перевозки",
+          "detail": "Сравните сборный и полный контейнер. Рассмотрите SOHAR как один из морских пунктов ввоза, затем подтвердите порт и маршрут отправки."
+        },
+        {
+          "title": "Подготовка к таможне",
+          "detail": "До подачи декларации Bayan согласуйте с импортёром коммерческий счёт, документы о происхождении и дополнительные требования."
+        },
+        {
+          "title": "Передача при доставке",
+          "detail": "Для примера с Маскатом проверьте подъезд и разгрузочное оборудование. Отдельно согласуйте перенос столов внутрь и сборку."
+        }
+      ],
+      "cta": "Спланировать отправку в Оман",
+      "note": "Пример планирования · Этапы могут пересекаться; подготовьте импортные документы до отправки."
+    },
+    "fr": {
+      "label": "LE PARCOURS DE VOTRE FRET",
+      "title": "Six tables de billard : de Guangzhou au plan de livraison à Oman",
+      "intro": "Exemple de planification fondé sur une demande de six tables de billard et accessoires depuis Guangzhou. Mascate sert d’exemple de ville de livraison.",
+      "steps": [
+        {
+          "title": "Demande de devis",
+          "detail": "Demandez la liste de colisage avec dimensions et poids brut de chaque colis. Six tables peuvent représenter un nombre différent de colis."
+        },
+        {
+          "title": "Préparation du fret",
+          "detail": "Confirmez l’emballage des tables et accessoires, la gerbabilité et les points autorisés de levage ou de prise au chariot élévateur."
+        },
+        {
+          "title": "Planification du transport",
+          "detail": "Comparez groupage et conteneur complet. Envisagez SOHAR comme l’une des options d’entrée maritime, puis confirmez le port et l’itinéraire de l’envoi."
+        },
+        {
+          "title": "Préparation douanière",
+          "detail": "Vérifiez avec l’importateur la facture commerciale, les documents d’origine et les exigences complémentaires avant la déclaration Bayan."
+        },
+        {
+          "title": "Remise à destination",
+          "detail": "Pour l’exemple de Mascate, vérifiez les accès et le matériel de déchargement. Convenez séparément du déplacement des tables à l’intérieur et du montage."
+        }
+      ],
+      "cta": "Planifier mon envoi à Oman",
+      "note": "Illustration de planification · Les étapes peuvent se chevaucher ; préparez les documents d’importation avant le départ."
+    },
+    "es": {
+      "label": "EL RECORRIDO DE SU CARGA",
+      "title": "Seis mesas de billar: de Guangzhou al plan de entrega en Omán",
+      "intro": "Ejemplo de planificación basado en una consulta de seis mesas de billar y accesorios desde Guangzhou. Mascate es la ciudad de entrega del ejemplo.",
+      "steps": [
+        {
+          "title": "Solicitud de cotización",
+          "detail": "Solicite la lista de embalaje con dimensiones y peso bruto de cada bulto. Seis mesas pueden transportarse en un número diferente de bultos."
+        },
+        {
+          "title": "Preparación de la carga",
+          "detail": "Confirme el embalaje de mesas y accesorios, si pueden apilarse y dónde se permite elevarlos o manipularlos con carretilla."
+        },
+        {
+          "title": "Planificación del transporte",
+          "detail": "Compare contenedor compartido y completo. Considere SOHAR como una opción de entrada marítima y confirme después el puerto y la ruta del envío."
+        },
+        {
+          "title": "Preparación aduanera",
+          "detail": "Revise con el importador la factura comercial, los documentos de origen y los requisitos adicionales antes de la declaración Bayan."
+        },
+        {
+          "title": "Entrega y recepción",
+          "detail": "Para el ejemplo de Mascate, compruebe el acceso y los equipos de descarga. Acuerde por separado el traslado de las mesas al interior y su montaje."
+        }
+      ],
+      "cta": "Planificar mi envío a Omán",
+      "note": "Ejemplo de planificación · Las etapas pueden solaparse; prepare los documentos de importación antes del despacho."
+    },
+    "pt": {
+      "label": "O PERCURSO DA SUA CARGA",
+      "title": "Seis mesas de bilhar: de Guangzhou ao plano de entrega em Omã",
+      "intro": "Exemplo de planeamento baseado num pedido de informação sobre seis mesas de bilhar e acessórios de Guangzhou. Mascate é a cidade de entrega do exemplo.",
+      "steps": [
+        {
+          "title": "Pedido de cotação",
+          "detail": "Peça a lista de embalagem do fornecedor, com dimensões e peso bruto de cada volume. Seis mesas podem ser transportadas num número diferente de volumes."
+        },
+        {
+          "title": "Preparação da carga",
+          "detail": "Confirme a embalagem das mesas e acessórios, a possibilidade de empilhamento e os pontos permitidos de elevação ou manuseamento com empilhador."
+        },
+        {
+          "title": "Planeamento do transporte",
+          "detail": "Compare contentor partilhado e completo. Considere SOHAR como uma das opções de entrada marítima, depois confirme o porto e a rota do envio."
+        },
+        {
+          "title": "Preparação aduaneira",
+          "detail": "Reveja com o importador a fatura comercial, os documentos de origem e quaisquer requisitos adicionais antes da declaração Bayan."
+        },
+        {
+          "title": "Entrega e receção",
+          "detail": "No exemplo de Mascate, verifique o acesso e o equipamento de descarga. Acorde separadamente a movimentação das mesas para o interior e a montagem."
+        }
+      ],
+      "cta": "Planear o meu envio para Omã",
+      "note": "Exemplo de planeamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
+    },
+    "tr": {
+      "label": "YÜKÜNÜZÜN YOLCULUĞU",
+      "title": "Altı bilardo masası: Guangzhou’dan Umman teslimat planına",
+      "intro": "Guangzhou’dan altı bilardo masası ve aksesuar talebine dayanan planlama örneği. Örnek teslim şehri Maskat’tır.",
+      "steps": [
+        {
+          "title": "Teklif bilgileri",
+          "detail": "Her ambalajın ölçüsü ve brüt ağırlığı bulunan ambalaj listesini isteyin. Altı masa farklı sayıda ambalajla taşınabilir."
+        },
+        {
+          "title": "Yük hazırlığı",
+          "detail": "Masa ve aksesuarların ambalajını, istiflenebilirliği ve kaldırma veya forkliftle elleçleme yapılabilecek noktaları teyit edin."
+        },
+        {
+          "title": "Taşıma planı",
+          "detail": "Paylaşımlı ve tam konteyner seçeneklerini karşılaştırın. SOHAR’ı deniz yolu giriş seçeneklerinden biri olarak değerlendirin; sonra sevkiyatın limanını ve rotasını teyit edin."
+        },
+        {
+          "title": "Gümrük hazırlığı",
+          "detail": "Bayan beyanından önce ticari faturayı, menşe belgelerini ve ek gereklilikleri ithalatçıyla gözden geçirin."
+        },
+        {
+          "title": "Teslimat ve devir",
+          "detail": "Maskat örneğinde araç erişimini ve boşaltma ekipmanını kontrol edin. Masaların içeri taşınmasını ve montajını ayrı kararlaştırın."
+        }
+      ],
+      "cta": "Umman sevkiyatımı planla",
+      "note": "Planlama örneği · Aşamalar örtüşebilir; ithalat belgelerini sevkiyat öncesinde hazırlayın."
+    }
+  }
+}

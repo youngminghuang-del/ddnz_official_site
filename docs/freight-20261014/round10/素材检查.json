@@ -1,0 +1,38 @@
+{
+  "baseline": "b5ab8fbb2cc4f5a689e1a0267063a27db5b89acc",
+  "checks": [
+    {
+      "check": "6 locales × 30 UI string fields; exact engineering schema and separators",
+      "result": "passed"
+    },
+    {
+      "check": "2 countries × 6 locales × 4 chapter labels",
+      "result": "passed"
+    },
+    {
+      "check": "gulfMaps: EN/AR and all original geometry, coordinates, URLs and nonlanguage data unchanged; 6-language coverage",
+      "result": "passed"
+    },
+    {
+      "check": "gulfRegionalMaps: EN/AR and all original geometry, coordinates, URLs and nonlanguage data unchanged; 6-language coverage",
+      "result": "passed"
+    },
+    {
+      "check": "gulfCustoms: EN/AR and all original geometry, coordinates, URLs and nonlanguage data unchanged; 6-language coverage",
+      "result": "passed"
+    },
+    {
+      "check": "24 official links reuse existing EN URLs with localized English-page note",
+      "result": "passed"
+    },
+    {
+      "check": "12 UTF-8 WebVTT tracks match original 4s/10s timing and localized video captions",
+      "result": "passed"
+    }
+  ],
+  "limits": [
+    "Language text reviewed by author, not independent native-speaker certification",
+    "Live integrated 16-page layout, map label overlap and browser subtitle playback owned by engineering",
+    "Existing artwork English retained per user approval"
+  ]
+}

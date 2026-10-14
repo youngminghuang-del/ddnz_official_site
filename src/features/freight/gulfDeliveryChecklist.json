@@ -1,0 +1,82 @@
+{
+  "en": {
+    "title": "Delivery planning checklist",
+    "items": [
+      "Delivery to the agreed address",
+      "Unloading from the vehicle",
+      "Moving goods indoors",
+      "Installation"
+    ],
+    "note": "Confirm the scope and responsible party for each step."
+  },
+  "ar": {
+    "title": "قائمة مراجعة تخطيط التسليم",
+    "items": [
+      "التوصيل إلى العنوان المتفق عليه",
+      "التفريغ من المركبة",
+      "نقل البضاعة إلى الداخل",
+      "التركيب"
+    ],
+    "note": "أكّد نطاق العمل والجهة المسؤولة عن كل خطوة."
+  },
+  "zh": {
+    "title": "交付规划清单",
+    "items": [
+      "送至约定地址",
+      "从车辆卸货",
+      "搬入室内",
+      "安装"
+    ],
+    "note": "确认每个环节的工作范围和责任方。"
+  },
+  "ru": {
+    "title": "Планирование доставки: контрольный список",
+    "items": [
+      "Доставка по согласованному адресу",
+      "Разгрузка с автомобиля",
+      "Перемещение товара внутрь помещения",
+      "Установка"
+    ],
+    "note": "Уточните объём работ и ответственного на каждом этапе."
+  },
+  "fr": {
+    "title": "Liste de contrôle pour la livraison",
+    "items": [
+      "Livraison à l’adresse convenue",
+      "Déchargement du véhicule",
+      "Déplacement des marchandises à l’intérieur",
+      "Installation"
+    ],
+    "note": "Confirmez le périmètre et le responsable de chaque étape."
+  },
+  "es": {
+    "title": "Lista de comprobación de la entrega",
+    "items": [
+      "Entrega en la dirección acordada",
+      "Descarga del vehículo",
+      "Traslado de mercancías al interior",
+      "Instalación"
+    ],
+    "note": "Confirme el alcance y el responsable de cada paso."
+  },
+  "pt": {
+    "title": "Lista de verificação da entrega",
+    "items": [
+      "Entrega no endereço acordado",
+      "Descarga do veículo",
+      "Movimentação da mercadoria para o interior",
+      "Instalação"
+    ],
+    "note": "Confirme o âmbito e o responsável por cada etapa."
+  },
+  "tr": {
+    "title": "Teslimat planlama kontrol listesi",
+    "items": [
+      "Kararlaştırılan adrese teslimat",
+      "Araçtan boşaltma",
+      "Malların içeri taşınması",
+      "Kurulum"
+    ],
+    "note": "Her adımın kapsamını ve sorumlu tarafını teyit edin."
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "src/features/freight/GulfFreightPage.tsx": "231045e9fd321d8fd1356d6825db11b648792a8f74a8ba2b001fd1046973cbf4",
+  "src/features/freight/GulfCargoJourney.tsx": "86ae8ab7396056d38284c720b52e7d107fad538867694d02cec842bf9cacef52",
+  "src/features/freight/GulfDeliveryChecklist.tsx": "65560931a017ef8c2aa38b7912e0481ca67348f85277d924210eaba4bfed34b3",
+  "src/features/freight/GulfCargoReferences.tsx": "008788689db5c258bf9f55fedcb683e291dd03b6a17e9093b8e1a2542418dc83",
+  "src/features/freight/GulfCustomsResources.tsx": "d32110e670c843d2d81f9e7a62a33ce5b43d393a4c518a67e0c71da571b3b9c9",
+  "src/features/freight/GulfChapters.tsx": "c4d0232f039bb33bd4cf794164285d49676d445cc19c5b77362f59722d635cf3",
+  "src/features/freight/GulfDestinationMap.tsx": "a0d438e71e04414c99c1080122220a2694939cf596c73a09a63cc6bf21ad5de0",
+  "src/features/freight/gulfJourneys.json": "c8ae7d39be8f21510705b7bad4bbfba1ee351566e3f43e0dffef69ca749cefba",
+  "src/features/freight/gulfRegionalMaps.json": "683bce1c6d29bca5ba794eecb9e117d9ad3b2dbf036bad504c5e0da7e63dc45e",
+  "src/features/freight/gulfStories.json": "d48c202f2e1cc8218b80c48f4a99b6be0e51799f3f092b0ec87d926db4225489",
+  "src/features/freight/gulfCustoms.json": "aededffaf6fd644bc070f24f9e4b1f4ed20caf3d729d1498a890b14d7b612342",
+  "src/features/freight/gulfMaps.json": "92e7c06b6158d7230392201331682aa362ccae7c674dd0ad37e1064c563c6e60",
+  "src/features/freight/gulfCargoReferences.json": "b344bbc79a9e5ebb07ed5fcb7a9cbbdca44a4af7469160ce5a2f793585bb588f",
+  "src/features/freight/gulf-stories.css": "d1dce615105e5b2d664bb3887b3a2edddcd00f656358b66ddf1861b503db8a00",
+  "public/media/freight-20261014-round5/caps-product-reference.webp": "76fe78bed70558e57dc5113961227cc580ba12a35311e0aadf87c74a33088780",
+  "public/media/freight-20261014-round5/table-packing-reference.webp": "4632bbea1e41b04ab860d5e9d739ba62225f6dc524558cd3a2b76d2ef8625367",
+  "public/media/freight-20261014-round5/billiard-table-reference.webp": "20ae466045588dd3f177ac5aff09fbd9f28ef9faf6ce7efc09c3d8accd809903",
+  "src/data/notionBlogData.json": "9cfcbabfe182e4b99ef1757e922c10110214da0e8b4f5ee2ef5a48c7352189a0"
+}

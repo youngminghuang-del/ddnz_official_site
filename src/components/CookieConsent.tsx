@@ -572,7 +572,7 @@ export default function CookieConsent() {
     <>
       {/* Cookie Banner */}
       {isVisible && !showPreferencesModal && (
-          <div className="fixed bottom-0 left-0 right-0 z-[90] p-2 sm:p-4 pointer-events-none">
+          <div data-cookie-banner className="fixed bottom-0 left-0 right-0 z-[90] p-2 sm:p-4 pointer-events-none">
             <div className="max-w-5xl mx-auto pointer-events-auto">
               <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-xl shadow-2xl p-4 flex flex-col lg:flex-row items-start lg:items-center gap-3 sm:gap-4 relative overflow-hidden backdrop-blur-md">
 
@@ -618,7 +618,7 @@ export default function CookieConsent() {
 
       {/* Preferences Center Modal */}
       {showPreferencesModal && (
-          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+          <div data-cookie-preferences className="fixed inset-0 z-[100] flex items-center justify-center p-4">
             {/* Backdrop overlay */}
             <div
               onClick={() => setShowPreferencesModal(false)}

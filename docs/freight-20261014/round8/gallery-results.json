@@ -1,0 +1,125 @@
+{
+  "results": [
+    {
+      "width": 360,
+      "locale": "en",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 360,
+      "locale": "ar",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "ar",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 430,
+      "locale": "en",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 430,
+      "locale": "ar",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 1110,
+      "locale": "en",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 1110,
+      "locale": "ar",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 1536,
+      "locale": "en",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    },
+    {
+      "width": 1536,
+      "locale": "ar",
+      "imagesViewed": 12,
+      "keyboard": true,
+      "packingData": true,
+      "pressedState": true,
+      "contain": true,
+      "lazy": true,
+      "navigationAnchors": 4,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

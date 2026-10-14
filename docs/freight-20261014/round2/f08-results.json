@@ -1,0 +1,45 @@
+{
+  "results": [
+    {
+      "lang": "en",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "zh",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "ar",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "es",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "fr",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "ru",
+      "footerAndNavYearRemoved": true,
+      "realCards": true
+    },
+    {
+      "lang": "pt",
+      "footerAndNavYearRemoved": true,
+      "realCards": false
+    },
+    {
+      "lang": "tr",
+      "footerAndNavYearRemoved": true,
+      "realCards": false
+    }
+  ],
+  "errors": []
+}

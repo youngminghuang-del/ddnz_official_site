@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-14",
+  "code_head": "11d780e1fee191b1a4e5f000c143680f194500eb",
+  "status": "partial; local fallback candidates only; not published",
+  "assets": [
+    {
+      "id": "receiving-cartons",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/receiving-cartons.jpg",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/receiving-cartons.jpg",
+      "sha256": "42eafecfd244a2e14430ec868db30335ed37ab629c145f4787db90fed29e160a",
+      "bytes": 42428,
+      "width": 540,
+      "height": 756,
+      "srcset": null,
+      "source_material_id": "M049",
+      "source_local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/assets/qatar-receiving-poster.jpg",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第二轮/manifest.json",
+      "caption": {
+        "en": "Cartons on arrival",
+        "ar": "كراتين عند الاستلام"
+      },
+      "alt": {
+        "en": "Palletised cartons during receiving in China",
+        "ar": "كراتين على منصة أثناء الاستلام في الصين"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    },
+    {
+      "id": "crates-and-pallets",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/crates-and-pallets.webp",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/crates-and-pallets.webp",
+      "sha256": "c31a44ff6cd8688e58d393f6ca6e2c3e5daad8d56137fbf951a31a3388cc4d90",
+      "bytes": 130408,
+      "width": 1200,
+      "height": 1328,
+      "srcset": null,
+      "source_material_id": "M066",
+      "source_local_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/lcl-20260920/crates-and-pallets.webp",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/ddnz-site-aligned-preview-20260917/docs/lcl-photo-use-2026-09-20.md",
+      "caption": {
+        "en": "Crates and palletised cartons",
+        "ar": "صناديق خشبية وكراتين على منصات"
+      },
+      "alt": {
+        "en": "Wooden crates and wrapped cartons inside a container",
+        "ar": "صناديق خشبية وكراتين مغلّفة داخل حاوية"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    },
+    {
+      "id": "loading-in-progress",
+      "local_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/loading-in-progress.webp",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第五轮/assets/loading-in-progress.webp",
+      "sha256": "522a1027701d2f8df1e4230c160ad29bcb2633a96526cdb2f034f00759cd2077",
+      "bytes": 127284,
+      "width": 1200,
+      "height": 1547,
+      "srcset": null,
+      "source_material_id": "M067",
+      "source_local_path": "/Users/huangyangming/Documents/New project/ddnz-growth-b1-20261012/public/media/lcl-20260920/loading-in-progress.webp",
+      "source_url": null,
+      "source_identity": "User-supplied operations photo candidate; prior import records map to original file",
+      "source_record": "/Users/huangyangming/Documents/New project/ddnz-site-aligned-preview-20260917/docs/lcl-photo-use-2026-09-20.md",
+      "caption": {
+        "en": "Cargo during loading",
+        "ar": "البضائع أثناء التحميل"
+      },
+      "alt": {
+        "en": "Crated and palletised cargo inside a container during loading",
+        "ar": "بضائع داخل صناديق خشبية وعلى منصات أثناء تحميل الحاوية"
+      },
+      "scope": "General operations/packaging illustration only; contents unknown, NOT a hats or pool-table photo",
+      "hb_attribution": "Specific operator/HB ownership not independently verified. Do not invent HB attribution.",
+      "restrictions": "No Qatar/Oman delivery, same-shipment sequence, final securing compliance, or contents claim",
+      "transformation": "byte-identical local copy; no image editing",
+      "adoption_status": "fallback candidate; not goods-specific replacement"
+    }
+  ],
+  "external_search": {
+    "attempted_url": "https://www.google.com/search?tbm=isch&q=ViaTrading+hats+casepack",
+    "result": "Automatic approval review denied: current direct user request concerns Reddit; delegated image search not accepted as authorization. No workaround attempted.",
+    "fetched_candidates": 0
+  },
+  "excluded": [
+    {
+      "id": "M047",
+      "reason": "Visible worker and labels; not preferred pending closer privacy review"
+    }
+  ],
+  "pending": [
+    "Google image search and hats/pool-table source verification",
+    "Specific HB attribution",
+    "Engineering integration and Arabic review"
+  ]
+}

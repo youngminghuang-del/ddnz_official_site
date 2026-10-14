@@ -1,0 +1,30 @@
+{
+  "pages": [
+    {
+      "locale": "en",
+      "galleryButtons": 12,
+      "omanMainIdentical": true
+    },
+    {
+      "locale": "ar",
+      "galleryButtons": 12,
+      "omanMainIdentical": true
+    }
+  ],
+  "factoryImagesUnchanged": 5,
+  "packingDataUnchanged": 5,
+  "originalArchivePreserved": true,
+  "protectedFiles": [
+    "src/features/freight/GulfFreightPage.tsx",
+    "src/features/freight/OmanCargoGallery.tsx",
+    "src/features/freight/omanCargoGallery.json",
+    "src/components/GetAQuote.tsx",
+    "src/features/freight/GulfDestinationMap.tsx",
+    "src/features/freight/GulfChapters.tsx",
+    "src/features/freight/GulfCargoJourney.tsx",
+    "src/features/freight/gulfStories.json",
+    "src/features/freight/gulfRegionalMaps.json",
+    "src/data/notionBlogData.json"
+  ],
+  "sitemap": 733
+}

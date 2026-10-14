@@ -12,14 +12,19 @@ for(const route of routes){
  rendered++;
  assert.equal((html.match(/<h1\b/g)||[]).length,1,`${route}: one H1 required`);
  assert(html.includes('data-country-cargo-planning'),`${route}: cargo planning missing`);
+ const gulfStory = html.includes('data-country-cargo-planning="gulf-story"');
  const scoped=[...html.matchAll(/<a\b[^>]*data-quote-context="([^"]+)"[^>]*>/g)].some(([tag,encoded])=>{
   const context=JSON.parse(encoded.replaceAll('&quot;','"').replaceAll('&amp;','&').replaceAll('&lt;','<').replaceAll('&gt;','>'));
   return /href="\/(?:zh-cn\/|ru\/|fr\/|es\/|ar\/|pt\/|tr\/)?get-a-quote\/"/.test(tag) && context.source==='country_cargo_planning' && context.leadGoal==='Freight Export' && QUOTE_ENUMS.dest.includes(context.dest);
  });
- assert(scoped,`${route}: query-free scoped freight CTA or enum destination missing`);
+ if(gulfStory) {
+  assert(/data-destination="(?:Qatar|Oman)"/.test(html), `${route}: story destination missing`);
+  assert(html.includes('href="#gulf-quote"') && html.includes('id="gulf-quote"') && html.includes('id="get-a-quote"'), `${route}: embedded freight quote missing`);
+  assert(html.includes('<video') && html.includes('kind="captions"'), `${route}: accessible media missing`);
+ } else assert(scoped,`${route}: query-free scoped freight CTA or enum destination missing`);
  assert(!/opacity:0(?=[;" ])/.test(html),`${route}: hidden animation initial state`);
- assert(html.includes('/sourcing/food-processing-machinery-from-china/'),`${route}: equipment link missing`);
- assert(html.includes('/sourcing-services/consolidation-export/'),`${route}: service link missing`);
+ if(!gulfStory) assert(html.includes('/sourcing/food-processing-machinery-from-china/'),`${route}: equipment link missing`);
+ if(!gulfStory) assert(html.includes('/sourcing-services/consolidation-export/'),`${route}: service link missing`);
  for(const match of html.matchAll(/href="([^"?#]+)[^\"]*"/g)){
   const href=match[1];
   if(!href.startsWith('/')||href.startsWith('//')||path.extname(href))continue;

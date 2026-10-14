@@ -1,0 +1,33 @@
+{
+  "assets": [
+    {
+      "id": "caps-product-reference",
+      "width": 1014,
+      "height": 676,
+      "bytes": 28280,
+      "sha256": "76fe78bed70558e57dc5113961227cc580ba12a35311e0aadf87c74a33088780",
+      "decode": "passed",
+      "visual": "passed"
+    },
+    {
+      "id": "billiard-table-reference",
+      "width": 925,
+      "height": 616,
+      "bytes": 43176,
+      "sha256": "20ae466045588dd3f177ac5aff09fbd9f28ef9faf6ce7efc09c3d8accd809903",
+      "decode": "passed",
+      "visual": "passed"
+    },
+    {
+      "id": "table-packing-reference",
+      "width": 473,
+      "height": 514,
+      "bytes": 15068,
+      "sha256": "4632bbea1e41b04ab860d5e9d739ba62225f6dc524558cd3a2b76d2ef8625367",
+      "decode": "passed",
+      "visual": "passed"
+    }
+  ],
+  "google_search": "2 queries visibly opened in Chrome Images",
+  "publication": false
+}

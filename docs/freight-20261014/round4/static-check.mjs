@@ -1,0 +1,12 @@
+import fs from 'node:fs';import assert from 'node:assert/strict';import crypto from 'node:crypto';
+const out='docs/freight-20261014/round4',manifest=JSON.parse(fs.readFileSync(`${out}/source/media-manifest.json`)),geo=JSON.parse(fs.readFileSync(`${out}/source/regional-geometry.json`)),regions=JSON.parse(fs.readFileSync('src/features/freight/gulfRegionalMaps.json')),cards=JSON.parse(fs.readFileSync('src/features/freight/gulfCustoms.json')).cards,results=[];
+for(const a of manifest.logos.filter(a=>a.absolute_path)){assert.equal(crypto.createHash('sha256').update(fs.readFileSync(`public${a.suggested_web_path}`)).digest('hex'),a.sha256);}
+assert.equal(geo.features.find(f=>f.id==='OMN').rings.length,7);
+for(const country of ['qatar','oman']){
+ const r=geo.regions.find(r=>r.id===country),p=r.projection;
+ const svg=fs.readFileSync(`public/media/freight-20261014-round4/${country}-regional.svg`,'utf8');assert.ok(svg.includes('fill="#e4f1f6"'));assert.equal((svg.match(/<path /g)||[]).length,r.country_ids.length);
+ for(const point of regions[country].nodes){const original=geo.nodes.find(n=>n.id===point.id);assert.deepEqual(point.coordinates,original.coordinates);const [lon,lat]=point.coordinates;assert.equal(point.x,Number(((lon-r.extent[0])*p.cos_mid_latitude*p.scale+p.offset[0]).toFixed(2)));assert.equal(point.y,Number(((r.extent[3]-lat)*p.scale+p.offset[1]).toFixed(2)));}
+ for(const locale of ['en','ar']){const route=(locale==='ar'?'/ar':'')+`/shipping-from-china-to-${country}/`,html=fs.readFileSync(`dist${route}index.html`,'utf8');assert.equal((html.match(/<h1\b/g)||[]).length,1);assert.equal((html.match(/rel="alternate"/g)||[]).length,9);assert.ok(html.includes(`data-regional-map="${country}"`));assert.equal((html.match(/data-official-resource=/g)||[]).length,2);for(const card of cards.filter(c=>c.country===country)){assert.ok(html.includes(card.entityName[locale]));assert.ok(html.includes(card.officialUrl[locale]));}assert.equal((html.match(/data-map-node=/g)||[]).length,2);assert.ok(!html.includes('masthead: Bayan'));results.push({route,resources:2,coordinateLinks:2,northUp:true,originalLogo:true,passed:true});}
+}
+assert.equal((fs.readFileSync('dist/sitemap.xml','utf8').match(/<loc>/g)||[]).length,733);
+fs.writeFileSync(`${out}/static-results.json`,JSON.stringify({results,omanRings:7,originalLogos:2,systemTextFallbacks:2,sitemap:733},null,2));console.log('4 pages, 2 original logo hashes, 4 coordinate projections, Oman 7 rings, 733 sitemap URLs passed');

@@ -1,0 +1,98 @@
+[
+  {
+    "country": "qatar",
+    "locale": "zh",
+    "route": "http://127.0.0.1:4187/zh-cn/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "ru",
+    "route": "http://127.0.0.1:4187/ru/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "fr",
+    "route": "http://127.0.0.1:4187/fr/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "es",
+    "route": "http://127.0.0.1:4187/es/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "ar",
+    "route": "http://127.0.0.1:4187/ar/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "pt",
+    "route": "http://127.0.0.1:4187/pt/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "tr",
+    "route": "http://127.0.0.1:4187/tr/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "qatar",
+    "locale": "en",
+    "route": "http://127.0.0.1:4187/shipping-from-china-to-qatar/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "zh",
+    "route": "http://127.0.0.1:4187/zh-cn/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "ru",
+    "route": "http://127.0.0.1:4187/ru/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "fr",
+    "route": "http://127.0.0.1:4187/fr/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "es",
+    "route": "http://127.0.0.1:4187/es/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "ar",
+    "route": "http://127.0.0.1:4187/ar/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "pt",
+    "route": "http://127.0.0.1:4187/pt/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "tr",
+    "route": "http://127.0.0.1:4187/tr/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  },
+  {
+    "country": "oman",
+    "locale": "en",
+    "route": "http://127.0.0.1:4187/shipping-from-china-to-oman/?ddnz_test=1",
+    "passed": true
+  }
+]

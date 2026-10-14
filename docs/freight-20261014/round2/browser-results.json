@@ -1,0 +1,484 @@
+{
+  "results": [
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 360,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.409449,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 360,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.422076,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 360,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.415066,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 360,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.413895,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 14,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 390,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.418351,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 390,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.422402,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 390,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.41511,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 390,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.417168,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 14,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 430,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.407891,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 430,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.40764,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 430,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.415792,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 430,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.418834,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 14,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.409589,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "width": 1536,
+      "media": {
+        "duration": 4,
+        "width": 540,
+        "height": 756,
+        "time": 0.413854,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "width": 1536,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.422126,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "showing",
+            "cues": 1
+          },
+          {
+            "language": "ar",
+            "mode": "disabled"
+          }
+        ]
+      },
+      "anchors": 13,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "width": 1536,
+      "media": {
+        "duration": 10,
+        "width": 540,
+        "height": 984,
+        "time": 0.418486,
+        "tracks": [
+          {
+            "language": "en",
+            "mode": "disabled"
+          },
+          {
+            "language": "ar",
+            "mode": "showing",
+            "cues": 1
+          }
+        ]
+      },
+      "anchors": 14,
+      "form": "unknown values and country retained",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "en",
+      "mode": "Sea",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "en",
+      "mode": "Air",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "en",
+      "mode": "Warehouse",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "ar",
+      "mode": "Sea",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "ar",
+      "mode": "Air",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "qatar",
+      "lang": "ar",
+      "mode": "Warehouse",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "en",
+      "mode": "Sea",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "en",
+      "mode": "Air",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "en",
+      "mode": "Warehouse",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "ar",
+      "mode": "Sea",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "ar",
+      "mode": "Air",
+      "pass": true
+    },
+    {
+      "check": "mode-contract",
+      "country": "oman",
+      "lang": "ar",
+      "mode": "Warehouse",
+      "pass": true
+    },
+    {
+      "check": "eight-language-round-trip",
+      "country": "qatar",
+      "pass": true
+    },
+    {
+      "check": "eight-language-round-trip",
+      "country": "oman",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "blockedExternal": 12
+}

@@ -1,0 +1,18 @@
+[
+  "src/features/freight/GulfFreightPage.tsx",
+  "src/pages/UaeFreightPage.tsx",
+  "src/pages/FreightReleasePage.tsx",
+  "src/pages/shipping-from-china-to-west-africa.tsx",
+  "src/pages/GhanaFreightPage.tsx",
+  "src/pages/LclFreightPage.tsx",
+  "src/pages/shipping-from-china-to-latin-america.tsx",
+  "src/pages/MexicoFreightPage.tsx",
+  "src/pages/ServiceDetail.tsx",
+  "src/pages/CentralAsiaOverviewPage.tsx",
+  "src/pages/shipping-from-china-to-middle-east.tsx",
+  "src/pages/NigeriaFreightPage.tsx",
+  "src/pages/get-a-quote.tsx",
+  "src/pages/DangerousGoodsShipping.tsx",
+  "src/pages/shipping-from-china-to-central-asia.tsx",
+  "src/pages/FreightRegionPage.tsx"
+]

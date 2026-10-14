@@ -1,0 +1,146 @@
+[
+  {
+    "file": "1_hat_factory.jpg",
+    "bytes": 416210,
+    "sha256": "24521ef2a6a653eca136842141b86408a603c67c3b6e7d0f11bb0339171ae16e",
+    "transformation": "none"
+  },
+  {
+    "file": "1_hat_factory-thumb.jpg",
+    "bytes": 9833,
+    "sha256": "07fde82b6114fb067377c675f33e17e429703711213c5b5abc3a54a671a2a5da",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "2_hat_factory.jpg",
+    "bytes": 627708,
+    "sha256": "3347297c559b0822f632d6f7e0e3ae18ece7d373495b3140bfc5bfc1fffb580a",
+    "transformation": "none"
+  },
+  {
+    "file": "2_hat_factory-thumb.jpg",
+    "bytes": 13553,
+    "sha256": "4d16d34207c1dc2a5d57532e4a0c5b539f1944d548aa90ee6974d14593244daa",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "3_hat_factory.jpg",
+    "bytes": 331533,
+    "sha256": "6582060091bb2e9800d3c00150c8378ba89d660d2fa1a4392d94229bfc69c1f1",
+    "transformation": "none"
+  },
+  {
+    "file": "3_hat_factory-thumb.jpg",
+    "bytes": 8656,
+    "sha256": "776bf95c70d0a6a4677d8a585df18d8866605167781f217721d20e949672d34b",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "4_hat_factory.jpg",
+    "bytes": 485490,
+    "sha256": "ef75279459e4fc126f8d63a272d31d5633d151e52423a3400d470579a2efa1a6",
+    "transformation": "none"
+  },
+  {
+    "file": "4_hat_factory-thumb.jpg",
+    "bytes": 12362,
+    "sha256": "350e2b0936d4e648995a6600ff893412986315d9be357c47a434c4e4a69becac",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "5_hat_factory.jpg",
+    "bytes": 594440,
+    "sha256": "63452a30152c9f803670bb56c0c8981eaaff1030590310e45a4cd274ed36d390",
+    "transformation": "none"
+  },
+  {
+    "file": "5_hat_factory-thumb.jpg",
+    "bytes": 12077,
+    "sha256": "8ea3d805d97c6cebe1a47e027c969b3e9d0a98a539841ceb14b1a7e201c8f29b",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "6_hat_factory.jpg",
+    "bytes": 139727,
+    "sha256": "a7951c5e098ef289babf1edae9a4af58b4872beb56582af5cb578e940d8f88eb",
+    "transformation": "none"
+  },
+  {
+    "file": "6_hat_factory-thumb.jpg",
+    "bytes": 7091,
+    "sha256": "e98bcc6623f1aaabe0a79d1474061b22d15326eeec2fffd094a26546e0b08285",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "7_hat_factory.jpg",
+    "bytes": 146452,
+    "sha256": "ca5c1fea8a37eab1f03bdd2be0f67f2527b10b0b31a1b11960675558d7276ad6",
+    "transformation": "none"
+  },
+  {
+    "file": "7_hat_factory-thumb.jpg",
+    "bytes": 7741,
+    "sha256": "ba954d14eeefb90cc118cfc0e34e63847ffcdac242e7072b92c3c3b3440605aa",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "8_hat_factory.jpg",
+    "bytes": 159150,
+    "sha256": "c74ff56577ca4e5810cc20afbef69126f38f45b98a4231a67cf83028a9b1ae34",
+    "transformation": "none"
+  },
+  {
+    "file": "8_hat_factory-thumb.jpg",
+    "bytes": 7723,
+    "sha256": "2d608118c68ee9636c63e2752497abd79b77176fd4579646cc79924095c5707a",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "9_hat_factory.jpg",
+    "bytes": 157044,
+    "sha256": "e9651a5f975246164673d7f26243cfb034412b2fa08690a8ffcadedd09faff31",
+    "transformation": "none"
+  },
+  {
+    "file": "9_hat_factory-thumb.jpg",
+    "bytes": 7394,
+    "sha256": "7830a7ec5f643ec9f21ea99ffd62ffceaeb87d350ed7aa3b6d6d8197ccba3880",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "10_hat_factory.jpg",
+    "bytes": 155473,
+    "sha256": "0dff8135996f9b19f027d5f024f744ff53e78533d0ef83cc205d106920438a8a",
+    "transformation": "none"
+  },
+  {
+    "file": "10_hat_factory-thumb.jpg",
+    "bytes": 7664,
+    "sha256": "1ef127ffdde9b469a1a3771ad3352ccdecba604952a64e4a2d9565e9a8419ec8",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "11_hat_factory.jpg",
+    "bytes": 161061,
+    "sha256": "934efe7d61dc232f62a3e5f0a2c0afe2bc0a975f7955dd7b10b83f4c59d1a74a",
+    "transformation": "none"
+  },
+  {
+    "file": "11_hat_factory-thumb.jpg",
+    "bytes": 6808,
+    "sha256": "41061d8462eb1e18df1a93f5085074062849eea20b8440ae820dd932687bd240",
+    "transformation": "sips proportional 160px thumbnail"
+  },
+  {
+    "file": "12_hat_factory.jpg",
+    "bytes": 245316,
+    "sha256": "c107cceb34ea2dad3fe0af9ad196bb8e8228f3ca76a38884dd2519bcc97af8f8",
+    "transformation": "none"
+  },
+  {
+    "file": "12_hat_factory-thumb.jpg",
+    "bytes": 10532,
+    "sha256": "21189fed245699455689009e81d2b2bdd11710dd2ad47bbf2549f50223c1bf70",
+    "transformation": "sips proportional 160px thumbnail"
+  }
+]

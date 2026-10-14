@@ -1,0 +1,33 @@
+/shipping-from-china-to-qatar/ 360 pass
+/ar/shipping-from-china-to-qatar/ 360 pass
+/shipping-from-china-to-oman/ 360 pass
+/ar/shipping-from-china-to-oman/ 360 pass
+/shipping-from-china-to-qatar/ 390 pass
+/ar/shipping-from-china-to-qatar/ 390 pass
+/shipping-from-china-to-oman/ 390 pass
+/ar/shipping-from-china-to-oman/ 390 pass
+/shipping-from-china-to-qatar/ 430 pass
+/ar/shipping-from-china-to-qatar/ 430 pass
+/shipping-from-china-to-oman/ 430 pass
+/ar/shipping-from-china-to-oman/ 430 pass
+/shipping-from-china-to-qatar/ 1536 pass
+/ar/shipping-from-china-to-qatar/ 1536 pass
+/shipping-from-china-to-oman/ 1536 pass
+/ar/shipping-from-china-to-oman/ 1536 pass
+node:internal/modules/run_main:122
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+0 !== 1
+
+    at file:///Users/huangyangming/Documents/New%20project/ddnz-freight-engineering-20261014/docs/freight-20261014/round2/browser-check.mjs:67:42 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 0,
+  expected: 1,
+  operator: 'strictEqual'
+}
+
+Node.js v22.14.0

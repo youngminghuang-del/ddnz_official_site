@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "created": "2026-10-14",
+  "status": "ready_for_map_integration; photo_candidates_are_links_only",
+  "assets": [
+    {
+      "id": "country-rings",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/country-rings.json",
+      "suggested_web_path": "/media/freight-20261014-round3/country-rings.json",
+      "sha256": "882093247975883c8b18bdaa15e80ae286f103176fd2984d891c9c515d8097fe",
+      "bytes": 26425,
+      "adoption": "ready: public-domain derived geographic data",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
+      "license": "Public domain",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/"
+    },
+    {
+      "id": "qatar-outline",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/qatar-outline.svg",
+      "suggested_web_path": "/media/freight-20261014-round3/qatar-outline.svg",
+      "sha256": "d2c5422ff7241631c3463d16dc7da4e2db92f42ec41e126c2441147a2b94641c",
+      "bytes": 3757,
+      "adoption": "ready: public-domain derived geographic data",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
+      "license": "Public domain",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/"
+    },
+    {
+      "id": "oman-outline",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/oman-outline.svg",
+      "suggested_web_path": "/media/freight-20261014-round3/oman-outline.svg",
+      "sha256": "ce7bb2b8c144efee7ac1644ea959ff7a22be5edb62aceb58c011b841c11722b7",
+      "bytes": 15292,
+      "adoption": "ready: public-domain derived geographic data",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
+      "license": "Public domain",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/"
+    },
+    {
+      "id": "city-points",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/city-points.json",
+      "suggested_web_path": "/media/freight-20261014-round3/city-points.json",
+      "sha256": "3c7c739cdd869790c664239f9732eacb7f968092823956b73422b8b5070e3473",
+      "bytes": 1844,
+      "adoption": "ready: public-domain derived geographic data",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/",
+      "license": "Public domain",
+      "license_url": "https://www.naturalearthdata.com/about/terms-of-use/"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "hamad-port",
+      "country": "QAT",
+      "label": {
+        "en": "Hamad Port",
+        "ar": "ميناء حمد"
+      },
+      "coordinates": [
+        51.59334166666667,
+        25.029966666666667
+      ],
+      "kind": "port_reference",
+      "source": "https://www.mwani.com.qa/English/AboutUs/PublishingImages/Pages/QatarPortsRegulations/Mwani%20Qatar%20Ports%20Regulations.pdf",
+      "source_location": "Schedule 1, printed p46",
+      "original_coordinate": "25°01′47.88″ N, 051°35′36.03″ E",
+      "verification": "Official PDF indexed table read; direct PDF fetch timed out. Primary published reference, not surveyed by project.",
+      "meaning": "Published port reference; not terminal gate, warehouse or receiving address.",
+      "svg_xy": [
+        411.02,
+        398.99
+      ]
+    },
+    {
+      "id": "sohar-port",
+      "country": "OMN",
+      "label": {
+        "en": "Sohar Port",
+        "ar": "ميناء صحار"
+      },
+      "coordinates": [
+        56.63,
+        24.511666666666667
+      ],
+      "kind": "port_reference",
+      "source": "https://soharportandfreezone.om/wp-content/uploads/2025/04/SOHAR-Port-Information-Guide.pdf",
+      "source_location": "PDF page20 (zero-index19), sections4.1/4.3",
+      "original_coordinate": "24°30.7′ N, 56°37.8′ E",
+      "verification": "Official PDF body read; independently matched by content team",
+      "meaning": "Between breakwaters; not Sohar city centre or delivery address.",
+      "svg_xy": [
+        332.93,
+        152.33
+      ]
+    },
+    {
+      "id": "doha",
+      "country": "QAT",
+      "label": {
+        "en": "Doha",
+        "ar": "الدوحة"
+      },
+      "coordinates": [
+        51.5329679,
+        25.286556
+      ],
+      "kind": "illustrative_receiving_city",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/",
+      "verification": "Extracted from Natural Earth populated places simple v5.1.2 point geometry",
+      "meaning": "City reference only; an illustrative receiving city, not an established customer destination or DDNZ service guarantee.",
+      "svg_xy": [
+        394.65,
+        322.03
+      ]
+    },
+    {
+      "id": "muscat",
+      "country": "OMN",
+      "label": {
+        "en": "Muscat",
+        "ar": "مسقط"
+      },
+      "coordinates": [
+        58.37831058458708,
+        23.58517901476684
+      ],
+      "kind": "illustrative_receiving_city",
+      "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/",
+      "verification": "Extracted from Natural Earth populated places simple v5.1.2 point geometry",
+      "meaning": "City reference only; an illustrative receiving city, not an established customer destination or DDNZ service guarantee.",
+      "svg_xy": [
+        413.05,
+        197.98
+      ]
+    }
+  ],
+  "photo_candidates": [
+    {
+      "id": "QA-P01",
+      "country": "QAT",
+      "location": "Hamad Port, Container Terminal1, Qatar",
+      "source_page": "https://qterminals.com/our-business/",
+      "original_image_url": "https://qterminals.com/wp-content/uploads/2019/08/qterminals-our-business-CT1.jpg",
+      "dimensions": [
+        1000,
+        667
+      ],
+      "verification": "Original image visually inspected in browser; section CT1 on terminal operator page confirms attribution.",
+      "visible": "Quayside cranes, container ship, terminal vehicles, workers walking away.",
+      "proves": "Official depiction of CT1 port environment; geography/context only.",
+      "does_not_prove": "DDNZ handled any shown cargo; present condition; clearance or delivery result.",
+      "status": "reference_link_only; reuse_permission_not_established",
+      "local_file": null,
+      "caption": {
+        "en": "Hamad Port CT1 — official terminal context, QTerminals.",
+        "ar": "محطة الحاويات الأولى بميناء حمد — سياق رسمي للمحطة، كيوترمنلز."
+      },
+      "alt": {
+        "en": "Cranes and container ship at Hamad Port CT1",
+        "ar": "رافعات وسفينة حاويات في المحطة الأولى بميناء حمد"
+      }
+    },
+    {
+      "id": "OM-P01",
+      "country": "OMN",
+      "location": "Sohar Port, Oman — publisher attribution",
+      "source_page": "https://soharportandfreezone.om/wp-content/uploads/2025/04/SOHAR-Port-Information-Guide.pdf",
+      "original_image_url": null,
+      "original_document_url": "https://soharportandfreezone.om/wp-content/uploads/2025/04/SOHAR-Port-Information-Guide.pdf#page=1",
+      "verification": "Official port guide accessible as parsed PDF; cover photo identified in search extraction. Browser PDF did not render, so not independently visually confirmed.",
+      "visible": "Indexed cover description: port, container ship and cranes at sunset/sunrise.",
+      "proves": "Candidate official port-context illustration, subject to direct visual confirmation.",
+      "does_not_prove": "Any DDNZ activity, current operating state or customer delivery.",
+      "status": "document_reference_only; image_extract_and_permission_pending",
+      "local_file": null,
+      "caption": {
+        "en": "Sohar Port — official port-guide visual reference.",
+        "ar": "ميناء صحار — مرجع بصري من دليل الميناء الرسمي."
+      },
+      "alt": {
+        "en": "Port scene from the official Sohar Port Information Guide",
+        "ar": "مشهد للميناء من دليل معلومات ميناء صحار الرسمي"
+      }
+    }
+  ],
+  "stage_visual_mapping": [
+    {
+      "stage": "quote",
+      "QAT": "Use Doha example city dot + supplier/order/count form illustration; no real consignee data.",
+      "OMN": "Use Muscat example city dot + packed dimensions/weight/access form illustration."
+    },
+    {
+      "stage": "prepare",
+      "QAT": "Reuse round2 M049 short China-origin receiving record; supplier list illustration, not Qatar footage.",
+      "OMN": "Reuse round2 M046 China-origin loading record; dimensions/packing illustration, not Oman footage."
+    },
+    {
+      "stage": "transport",
+      "QAT": "Qatar outline + Hamad node; QA-P01 is a reference link until reuse permission exists.",
+      "OMN": "Oman outline + Sohar node; OM-P01 is a source-document link only.",
+      "rule": "No shipping-lane geometry, transit duration, vessel tracking or direct-service claim."
+    },
+    {
+      "stage": "customs",
+      "QAT": "Original document/checkpoint illustration with Hamad label; Mwani CCIA page is context, not an image license.",
+      "OMN": "Original Bayan/document handover illustration; do not fabricate customs screens or release stamps."
+    },
+    {
+      "stage": "receive",
+      "QAT": "Hamad port and Doha illustrative city as separate nodes; confirm delivery address and responsibility.",
+      "OMN": "Sohar port and Muscat illustrative city as separate nodes; confirm access/unloading.",
+      "rule": "No local last-mile photo verified; use honest diagram, not another country photo."
+    }
+  ],
+  "map_rules": {
+    "orientation": "north up; never mirror geography for RTL",
+    "coordinate_order": "[longitude,latitude] WGS84",
+    "scope": "Country silhouettes include all supplied parts; Oman retains Musandam and separated parts. Borders generalized at 1:10m, not cadastral or navigational.",
+    "routes": "No actual sea/road route data supplied. Do not draw a curve through land as a sailing route. A separate linear process timeline may say schematic.",
+    "node_precision": "Rounded display markers; source precision is not an accuracy guarantee; do not snap sea-port point to simplified coastline.",
+    "svg": "600x600 viewBox; map and labels in separate layers; svg_xy included; labels may move but points must not. Use country-rings if reprojecting."
+  },
+  "source_archives": [
+    {
+      "path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/ne_10m_populated_places_simple.zip",
+      "sha256": "2963ee08f7743f13f37d5243acd77a2f7a510e26a36c7e04b920f1b381f2b251",
+      "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_populated_places_simple.zip",
+      "version_files": {
+        "ne_10m_populated_places_simple.VERSION.txt": "5.1.2"
+      }
+    },
+    {
+      "path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/ne_10m_admin_0_countries.zip",
+      "sha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6",
+      "url": "https://naciscdn.org/naturalearth/10m/cultural/ne_10m_admin_0_countries.zip",
+      "version_files": {
+        "ne_10m_admin_0_countries.VERSION.txt": "5.1.1"
+      }
+    }
+  ]
+}

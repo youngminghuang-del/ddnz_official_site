@@ -1,0 +1,40 @@
+{
+  "results": [
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "resources": 2,
+      "coordinateLinks": 2,
+      "northUp": true,
+      "originalLogo": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-qatar/",
+      "resources": 2,
+      "coordinateLinks": 2,
+      "northUp": true,
+      "originalLogo": true,
+      "passed": true
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "resources": 2,
+      "coordinateLinks": 2,
+      "northUp": true,
+      "originalLogo": true,
+      "passed": true
+    },
+    {
+      "route": "/ar/shipping-from-china-to-oman/",
+      "resources": 2,
+      "coordinateLinks": 2,
+      "northUp": true,
+      "originalLogo": true,
+      "passed": true
+    }
+  ],
+  "omanRings": 7,
+  "originalLogos": 2,
+  "systemTextFallbacks": 2,
+  "sitemap": 733
+}

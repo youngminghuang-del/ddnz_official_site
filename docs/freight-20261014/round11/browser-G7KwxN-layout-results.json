@@ -1,0 +1,261 @@
+{
+  "results": [
+    {
+      "locale": "en",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "en",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "zh",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ru",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "fr",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "es",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "ar",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "pt",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "width": 390,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "width": 745,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "width": 1082,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    },
+    {
+      "locale": "tr",
+      "width": 1440,
+      "regionsKeyboard": 8,
+      "maxLines": 2,
+      "noOverflow": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

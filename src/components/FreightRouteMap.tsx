@@ -1,3 +1,4 @@
+import WorldFreightMap from './WorldFreightMap';
 import { geoGraticule, geoMercator, geoNaturalEarth1, geoPath, type GeoProjection } from 'd3-geo';
 import { ArrowUpRight, MapPinned, Ship, TrainFront, Truck } from 'lucide-react';
 import { feature } from 'topojson-client';
@@ -139,7 +140,6 @@ const WIDTH = 1200;
 const HEIGHT = 580;
 const topology = worldAtlas as unknown as Topology;
 const countries = feature(topology, topology.objects.countries as GeometryCollection) as unknown as FeatureCollection<Geometry, { name?: string }>;
-const focusCountryIds = new Set(['076', '156', '288', '398', '484', '566', '604', '784']);
 const centralCountryIds = new Set(['156', '398', '417', '643', '762', '795', '860']);
 const worldProjection = geoNaturalEarth1().fitExtent([[30, 40], [WIDTH - 30, HEIGHT - 42]], countries);
 
@@ -301,23 +301,6 @@ export function RegionalFreightMap({ region, locale = 'en', title, description }
       <MapNodes nodes={nodes} projection={projection} />
     </svg>
   </figure>;
-}
-
-function WorldMap({ language }: { language: Language }) {
-  const ui = mapSvgUi[language];
-  const nodeUi = mapNodeUi[language];
-  const nodes = worldNodes.map(node => node.id === 'south-china' ? { ...node, label: nodeUi.southChina, code: nodeUi.origin } : node.id === 'khorgos' ? { ...node, code: nodeUi.roadRail } : node);
-  return (
-    <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby="freight-world-title freight-world-desc">
-      <title id="freight-world-title">{ui.worldTitle}</title>
-      <desc id="freight-world-desc">{ui.worldDesc}</desc>
-      <MapChrome clipId="world-map-clip" />
-      <MapBase projection={worldProjection} highlighted={focusCountryIds} clipId="world-map-clip" />
-      <MapCartouche label={ui.worldCartouche} />
-      <MapRoutes routes={worldRoutes} projection={worldProjection} />
-      <MapNodes nodes={nodes} projection={worldProjection} />
-    </svg>
-  );
 }
 
 const centralNodes: MapNode[] = [
@@ -486,6 +469,7 @@ const modeRowsInternational: Record<Exclude<Language, 'en' | 'zh'>, Record<MapVa
 export default function FreightRouteMap({ variant, locale }: FreightRouteMapProps) {
   const { language } = useLanguage();
   const activeLanguage = locale || language;
+  if (variant === 'world') return <WorldFreightMap language={activeLanguage} />;
   const copy = activeLanguage === 'zh' ? mapCopyZh[variant] : activeLanguage === 'en' ? mapCopyEn[variant] : mapCopyInternational[activeLanguage][variant];
   const modeRows = activeLanguage === 'zh' ? modeRowsZh : activeLanguage === 'en' ? modeRowsEn : modeRowsInternational[activeLanguage];
   const ui = mapUi[activeLanguage];
@@ -502,7 +486,7 @@ export default function FreightRouteMap({ variant, locale }: FreightRouteMapProp
         <a className="freight-map-link" href={`${prefix}${copy.routeHref}`}>{copy.routeLabel}<ArrowUpRight aria-hidden="true" /></a>
       </div>
       <figure className="freight-map-figure">
-        {variant === 'world' ? <WorldMap language={activeLanguage} /> : variant === 'central-asia' ? <CentralAsiaMap language={activeLanguage} /> : <UzbekistanMap language={activeLanguage} />}
+        {variant === 'central-asia' ? <CentralAsiaMap language={activeLanguage} /> : <UzbekistanMap language={activeLanguage} />}
         <figcaption>
           <span><i className="freight-legend-line freight-legend-line-primary" />{ui.primary}</span>
           <span><i className="freight-legend-line freight-legend-line-secondary" />{ui.secondary}</span>

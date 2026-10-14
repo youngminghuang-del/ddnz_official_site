@@ -1,3 +1,5 @@
+import WorldFreightMap from '../src/components/WorldFreightMap';
+import GulfFreightPage from '../src/features/freight/GulfFreightPage';
 import About from '../src/pages/About';
 import Insights from '../src/components/Insights';
 import React from 'react';
@@ -14,7 +16,7 @@ export function renderCountryPage(route: string) {
   const country = parts.at(-1)!.replace('shipping-from-china-to-', '');
   if (!['saudi-arabia','uae','kuwait','qatar','oman','bahrain','kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia','nigeria','ghana','mexico','brazil','argentina','peru','chile'].includes(country)) throw new Error(`Unsupported country: ${country}`);
   const language = parts.length === 1 ? 'en' : parts[0] === 'zh-cn' ? 'zh' : parts[0];
-  const Component = ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
+  const Component = ['qatar','oman'].includes(country) ? GulfFreightPage : ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
     : ['kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia'].includes(country) ? CentralAsia
     : ['nigeria','ghana'].includes(country) ? WestAfrica : LatinAmerica;
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language as any}><Component /></LanguageProvider></MemoryRouter></HelmetProvider>);
@@ -36,7 +38,7 @@ export function renderCorePage(route: string) {
   const match=route.match(/^\/(zh-cn|ru|fr|es|ar|pt|tr)(?=\/|$)/);
   const language=(match?.[1]==='zh-cn'?'zh':match?.[1] || 'en') as any;
   const relative=(match?route.slice(match[0].length):route).replace(/^\/+|\/+$/g,'');
-  const home=<><SourcingHomepageNav/><main><SourcingHomepageHero/><HomeOneTeamBridge/><Insights/><section className="mx-auto max-w-7xl px-6 py-16">{getLocalizedHomeFaqs(language).map(f=><article className="border-t py-6" key={f.question}><h2 className="text-xl font-bold">{f.question}</h2><p className="mt-3 leading-7">{f.answer}</p></article>)}</section></main></>;
+  const home=<><SourcingHomepageNav/><main><SourcingHomepageHero/><HomeOneTeamBridge/><WorldFreightMap language={language}/><Insights/><section className="mx-auto max-w-7xl px-6 py-16">{getLocalizedHomeFaqs(language).map(f=><article className="border-t py-6" key={f.question}><h2 className="text-xl font-bold">{f.question}</h2><p className="mt-3 leading-7">{f.answer}</p></article>)}</section></main></>;
   const content=relative===''?home:relative==='about'?<About/>:relative==='get-a-quote'?<GetAQuotePage/>:relative==='insights'?<InsightsHub/>:relative==='how-we-work'?<HowWeWork/>:relative==='products'?(language==='en'?<ProductsIndex/>:<LocalizedOverviewPage kind="products"/>):relative==='sourcing-services'?(language==='en'?<SourcingServices/>:<LocalizedOverviewPage kind="sourcing-services"/>):null;
   if(!content)throw new Error(`Unsupported core page ${route}`);
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language}>{content}</LanguageProvider></MemoryRouter></HelmetProvider>);
