@@ -1,0 +1,110 @@
+[
+  {
+    "id": "jebel-ali",
+    "region": "middle-east",
+    "coordinates": [
+      55.027,
+      24.985
+    ],
+    "destination": "United Arab Emirates"
+  },
+  {
+    "id": "khorgos",
+    "region": "central-asia",
+    "coordinates": [
+      80.483333,
+      44.233333
+    ],
+    "destination": "Kazakhstan"
+  },
+  {
+    "id": "rotterdam",
+    "region": "europe",
+    "coordinates": [
+      4.5,
+      51.916667
+    ],
+    "destination": "Netherlands"
+  },
+  {
+    "id": "hamburg",
+    "region": "europe",
+    "coordinates": [
+      10,
+      53.55
+    ],
+    "destination": "Germany"
+  },
+  {
+    "id": "los-angeles",
+    "region": "north-america",
+    "coordinates": [
+      -118.25,
+      34.05
+    ],
+    "destination": "USA"
+  },
+  {
+    "id": "vancouver",
+    "region": "north-america",
+    "coordinates": [
+      -123.113889,
+      49.261111
+    ],
+    "destination": "Canada"
+  },
+  {
+    "id": "callao",
+    "region": "latin-america",
+    "coordinates": [
+      -77.133333,
+      -12.05
+    ],
+    "destination": "Peru"
+  },
+  {
+    "id": "santos",
+    "region": "latin-america",
+    "coordinates": [
+      -46.310278,
+      -23.956667
+    ],
+    "destination": "Brazil"
+  },
+  {
+    "id": "lagos",
+    "region": "africa",
+    "coordinates": [
+      3.383333,
+      6.45
+    ],
+    "destination": "Nigeria"
+  },
+  {
+    "id": "mombasa",
+    "region": "africa",
+    "coordinates": [
+      39.65,
+      -4.05
+    ],
+    "destination": "Kenya"
+  },
+  {
+    "id": "sydney",
+    "region": "oceania",
+    "coordinates": [
+      151.2,
+      -33.85
+    ],
+    "destination": "Australia"
+  },
+  {
+    "id": "melbourne",
+    "region": "oceania",
+    "coordinates": [
+      144.966667,
+      -37.816667
+    ],
+    "destination": "Australia"
+  }
+]

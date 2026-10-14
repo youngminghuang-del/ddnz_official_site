@@ -1,0 +1,14 @@
+{
+  "changedMain": [
+    "index.html",
+    "ru/index.html",
+    "zh-cn/index.html",
+    "pt/index.html",
+    "ar/index.html",
+    "fr/index.html",
+    "es/index.html",
+    "tr/index.html"
+  ],
+  "unchangedMainCount": 726,
+  "sitemapUnchanged": true
+}

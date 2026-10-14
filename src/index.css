@@ -1,3 +1,4 @@
+@import './components/world-freight-map.css';
 @import "tailwindcss";
 @plugin "@tailwindcss/typography";
 
