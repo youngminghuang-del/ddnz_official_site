@@ -1,0 +1,182 @@
+{
+  "galleryTitle": {
+    "zh": "球桌细节与包装准备",
+    "ru": "Детали столов и подготовка упаковки",
+    "fr": "Détails des tables et préparation de l’emballage",
+    "es": "Detalles de las mesas y preparación del embalaje",
+    "pt": "Detalhes das mesas e preparação da embalagem",
+    "tr": "Masa ayrıntıları ve ambalaj hazırlığı"
+  },
+  "galleryIntro": {
+    "zh": "安排运输前，核对拆分部件、包装尺寸与重量、表面保护和搬运方式。",
+    "ru": "До организации перевозки проверьте отдельные компоненты, размеры и вес упаковок, защиту поверхностей и способы обработки.",
+    "fr": "Vérifiez les composants séparés, les dimensions et poids emballés, la protection des surfaces et la manutention avant d’organiser le transport.",
+    "es": "Antes de organizar el transporte, revise los componentes separados, las dimensiones y pesos embalados, la protección de superficies y la manipulación.",
+    "pt": "Antes de organizar o transporte, reveja os componentes separados, as dimensões e pesos embalados, a proteção das superfícies e o manuseamento.",
+    "tr": "Taşımayı düzenlemeden önce ayrı parçaları, ambalajlı ölçü ve ağırlıkları, yüzey korumasını ve elleçlemeyi gözden geçirin."
+  },
+  "images": [
+    {
+      "id": "billiard-factory-1",
+      "title": {
+        "zh": "整桌展示",
+        "ru": "Стол в сборе",
+        "fr": "Table complète",
+        "es": "Mesa completa",
+        "pt": "Mesa completa",
+        "tr": "Tam masa"
+      },
+      "alt": {
+        "zh": "木饰面墙旁的台球桌，灰色台面，桌腿外观看似透明。",
+        "ru": "Бильярдный стол с серой игровой поверхностью и внешне прозрачными ножками рядом со стеной с деревянными панелями.",
+        "fr": "Table de billard à surface de jeu grise et pieds d’aspect transparent près d’un mur à panneaux de bois.",
+        "es": "Mesa de billar con superficie de juego gris y patas de aspecto transparente junto a una pared revestida de madera.",
+        "pt": "Mesa de bilhar com superfície de jogo cinzenta e pernas de aspeto transparente junto de uma parede revestida a madeira.",
+        "tr": "Ahşap kaplı duvar yanında gri oyun yüzeyli ve şeffaf görünümlü ayaklara sahip bilardo masası."
+      },
+      "caption": {
+        "zh": "确认哪些部件需要分开发运。",
+        "ru": "Уточните, какие части перевозятся отдельно.",
+        "fr": "Vérifiez les pièces qui voyagent séparément.",
+        "es": "Compruebe qué piezas viajan por separado.",
+        "pt": "Confirme que peças seguem separadamente.",
+        "tr": "Hangi parçaların ayrı taşınacağını kontrol edin."
+      }
+    },
+    {
+      "id": "billiard-factory-2",
+      "title": {
+        "zh": "球桌另一角度",
+        "ru": "Стол с другого ракурса",
+        "fr": "Table sous un autre angle",
+        "es": "Mesa desde otro ángulo",
+        "pt": "Mesa de outro ângulo",
+        "tr": "Başka açıdan masa"
+      },
+      "alt": {
+        "zh": "从斜侧方拍摄的室内展示区台球桌，灰色台面配深色袋口。",
+        "ru": "Бильярдный стол с серой поверхностью и тёмными лузами, снятый по диагонали в выставочном помещении.",
+        "fr": "Table de billard à surface grise et poches sombres, vue en diagonale dans un espace d’exposition intérieur.",
+        "es": "Mesa de billar con superficie gris y troneras oscuras, vista en diagonal en una zona de exposición interior.",
+        "pt": "Mesa de bilhar com superfície cinzenta e bolsas escuras, vista na diagonal numa área de exposição interior.",
+        "tr": "İç mekân sergileme alanında çapraz açıdan görülen, gri yüzeyli ve koyu cepli bilardo masası."
+      },
+      "caption": {
+        "zh": "规划拆装前记录整体尺寸。",
+        "ru": "Зафиксируйте общие размеры до планирования разборки.",
+        "fr": "Relevez les dimensions hors tout avant de planifier le démontage.",
+        "es": "Registre las dimensiones totales antes de planificar el desmontaje.",
+        "pt": "Registe as dimensões totais antes de planear a desmontagem.",
+        "tr": "Sökümü planlamadan önce genel ölçüleri kaydedin."
+      }
+    },
+    {
+      "id": "billiard-factory-3",
+      "title": {
+        "zh": "包裹后的框架部件",
+        "ru": "Упакованные рамные компоненты",
+        "fr": "Éléments de cadre emballés",
+        "es": "Componentes de bastidor envueltos",
+        "pt": "Componentes de estrutura envolvidos",
+        "tr": "Sarılmış çerçeve parçaları"
+      },
+      "alt": {
+        "zh": "成摞框架状部件覆有灰色包装，后方有竖放的包装件。",
+        "ru": "Стопки рамных компонентов в серой обёртке с вертикальными упаковками позади.",
+        "fr": "Piles d’éléments en forme de cadre sous emballage gris, avec des colis verticaux derrière.",
+        "es": "Pilas de componentes con forma de bastidor envueltos en gris, con bultos verticales detrás.",
+        "pt": "Pilhas de componentes em forma de estrutura cobertos por envoltório cinzento, com volumes verticais atrás.",
+        "tr": "Gri ambalajla kaplı çerçeve biçimli parça yığınları ve arkalarında dik ambalajlar."
+      },
+      "caption": {
+        "zh": "将每个独立部件与包装清单对应。",
+        "ru": "Сопоставьте каждый отдельный компонент с упаковочным листом.",
+        "fr": "Rapprochez chaque composant séparé de la liste de colisage.",
+        "es": "Relacione cada componente separado con la lista de embalaje.",
+        "pt": "Associe cada componente separado à lista de embalagem.",
+        "tr": "Her ayrı parçayı ambalaj listesiyle eşleştirin."
+      }
+    },
+    {
+      "id": "billiard-factory-4",
+      "title": {
+        "zh": "台面边缘包装",
+        "ru": "Обёртка краёв столешниц",
+        "fr": "Protection des bords des plateaux",
+        "es": "Protección de bordes de los tableros",
+        "pt": "Proteção dos bordos dos tampos",
+        "tr": "Masa tablası kenar ambalajı"
+      },
+      "alt": {
+        "zh": "大型矩形台面部件以棕色材料包边并用白色绑带固定，其中可见绿色部件。",
+        "ru": "Крупные прямоугольные секции столов с коричневой обёрткой краёв и белыми стяжками; видна зелёная секция.",
+        "fr": "Grandes sections de table rectangulaires aux bords enveloppés de brun et maintenues par des liens blancs, dont une section verte visible.",
+        "es": "Grandes secciones rectangulares de mesa con bordes envueltos en marrón y ataduras blancas, incluida una sección verde visible.",
+        "pt": "Grandes secções retangulares de mesa com bordos envolvidos em castanho e cintas brancas, incluindo uma secção verde visível.",
+        "tr": "Kahverengi kenar ambalajı ve beyaz bağları olan büyük dikdörtgen masa bölümleri; yeşil bir bölüm de görülüyor."
+      },
+      "caption": {
+        "zh": "搬运前确认表面与边角保护。",
+        "ru": "Перед обработкой подтвердите защиту поверхностей и углов.",
+        "fr": "Confirmez la protection des surfaces et des angles avant la manutention.",
+        "es": "Confirme la protección de superficies y esquinas antes de manipular.",
+        "pt": "Confirme a proteção das superfícies e dos cantos antes do manuseamento.",
+        "tr": "Elleçlemeden önce yüzey ve köşe korumasını teyit edin."
+      }
+    },
+    {
+      "id": "billiard-factory-5",
+      "title": {
+        "zh": "包装框架堆放",
+        "ru": "Стопка упакованных рам",
+        "fr": "Pile de cadres emballés",
+        "es": "Pila de bastidores embalados",
+        "pt": "Pilha de estruturas embaladas",
+        "tr": "Ambalajlı çerçeve istifi"
+      },
+      "alt": {
+        "zh": "浅灰色包装覆盖的框架状部件堆叠侧视图。",
+        "ru": "Вид сбоку на сложенные рамные компоненты в светло-серой обёртке.",
+        "fr": "Vue latérale d’éléments de cadre empilés sous un emballage gris clair.",
+        "es": "Vista lateral de componentes de bastidor apilados y cubiertos con envoltura gris clara.",
+        "pt": "Vista lateral de componentes de estrutura empilhados e cobertos por envoltório cinzento-claro.",
+        "tr": "Açık gri ambalajla kaplı, istiflenmiş çerçeve biçimli parçaların yandan görünümü."
+      },
+      "caption": {
+        "zh": "核对包装尺寸、重量与堆码限制。",
+        "ru": "Проверьте размеры, вес и ограничения штабелирования упакованного груза.",
+        "fr": "Vérifiez les dimensions, le poids et les limites de gerbage après emballage.",
+        "es": "Compruebe las dimensiones embaladas, el peso y los límites de apilado.",
+        "pt": "Verifique dimensões embaladas, peso e limites de empilhamento.",
+        "tr": "Ambalajlı ölçüleri, ağırlığı ve istif sınırlarını kontrol edin."
+      }
+    },
+    {
+      "id": "billiard-factory-6",
+      "title": {
+        "zh": "竖放台面包装件",
+        "ru": "Вертикальные упаковки столешниц",
+        "fr": "Plateaux emballés à la verticale",
+        "es": "Tableros embalados en vertical",
+        "pt": "Tampos embalados na vertical",
+        "tr": "Dik masa tablası ambalajları"
+      },
+      "alt": {
+        "zh": "一排竖放的矩形台面部件，表面为蓝色和绿色，棕色包边并有白色绑带。",
+        "ru": "Ряд вертикальных прямоугольных секций столов с синими и зелёными поверхностями, коричневой обёрткой краёв и белыми стяжками.",
+        "fr": "Rangée de sections de table rectangulaires verticales, à surfaces bleues et vertes, bords enveloppés de brun et liens blancs.",
+        "es": "Fila de secciones rectangulares de mesa verticales con superficies azules y verdes, bordes envueltos en marrón y ataduras blancas.",
+        "pt": "Fila de secções retangulares de mesa na vertical, com superfícies azuis e verdes, bordos envolvidos em castanho e cintas brancas.",
+        "tr": "Mavi ve yeşil yüzeyli, kahverengi kenar ambalajlı ve beyaz bağlı dikdörtgen masa bölümlerinden oluşan dik sıra."
+      },
+      "caption": {
+        "zh": "约定起吊位置与卸货设备。",
+        "ru": "Согласуйте точки подъёма и оборудование для разгрузки.",
+        "fr": "Convenez des points de levage et du matériel de déchargement.",
+        "es": "Acuerde los puntos de elevación y los equipos de descarga.",
+        "pt": "Acorde os pontos de elevação e os equipamentos de descarga.",
+        "tr": "Kaldırma noktalarını ve boşaltma ekipmanını kararlaştırın."
+      }
+    }
+  ]
+}

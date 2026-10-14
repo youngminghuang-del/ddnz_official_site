@@ -1,3 +1,4 @@
+import type { GulfLocale } from './gulfLocale';
 function JourneyIllustration({ stage, country }: { stage: number; country: 'qatar' | 'oman' }) {
  const artwork = [
   country === 'qatar' ? <><path d="M12 37c0-7 12-11 27-11s27 4 27 11-12 11-27 11-27-4-27-11Z M23 32l4-17q12-9 24 0l5 17 M26 25q13 7 27 0" /><path d="m56 45 13-4 5 12-13 4Z" /></> : <><path d="m10 22 41-11 21 12-42 13Z M10 22v7l20 14 42-13v-7 M18 34v15 M35 42v14 M64 32v15" /><circle cx="39" cy="23" r="2" /><path d="m9 10 60 37" /></>,
@@ -16,7 +17,7 @@ export interface CargoJourneyData {
  note: string;
  cta: string;
 }
-export default function GulfCargoJourney({ data, locale, country }: { data: CargoJourneyData; locale: 'en' | 'ar'; country: 'qatar' | 'oman' }) {
+export default function GulfCargoJourney({ data, locale, country }: { data: CargoJourneyData; locale: GulfLocale; country: 'qatar' | 'oman' }) {
  return <section className="gulf-journey" data-cargo-journey aria-labelledby="gulf-journey-heading">
   <div className="gulf-journey-intro"><p className="gulf-eyebrow">{data.label}</p><h2 id="gulf-journey-heading">{data.title}</h2><p>{data.intro}</p></div>
   <ol>{data.steps.map((step,index) => <li key={step.title}><div className="gulf-journey-symbol"><JourneyIllustration stage={index} country={country} /><span aria-hidden="true">0{index+1}</span></div><h3>{step.title}</h3><p>{step.detail}</p></li>)}</ol>

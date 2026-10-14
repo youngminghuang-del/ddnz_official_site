@@ -73,7 +73,7 @@ function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
-  if (['qatar', 'oman'].includes(normalizedCountry) && !/^\/(zh-cn|ru|fr|es|pt|tr)\//.test(location.pathname)) return <GulfFreightPage />;
+  if (['qatar', 'oman'].includes(normalizedCountry)) return <GulfFreightPage />;
   if (normalizedCountry === 'uae' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <UaeFreightPage />;
   if (normalizedCountry === 'nigeria' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <NigeriaFreightPage />;
   if (normalizedCountry === 'mexico' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <MexicoFreightPage />;
@@ -579,7 +579,7 @@ export default function App() {
             <Route path="/pt/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
+              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/pt/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/pt/products" element={<LocalizedOverviewPage kind="products" />} />
@@ -604,7 +604,7 @@ export default function App() {
             <Route path="/tr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={<InternationalCountryPage />} />
+              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/tr/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/tr/products" element={<LocalizedOverviewPage kind="products" />} />

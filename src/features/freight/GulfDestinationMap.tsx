@@ -1,3 +1,5 @@
+import ui from './gulfUi.json';
+import type { GulfLocale, Localized } from './gulfLocale';
 import { useId } from 'react';
 import regions from './gulfRegionalMaps.json';
 
@@ -8,27 +10,27 @@ export interface GulfMapNode {
  y: number;
  labelX: number;
  labelY: number;
- name: { en: string; ar: string };
- role: { en: string; ar: string };
+ name: Localized;
+ role: Localized;
  source: string;
 }
 export interface GulfMapData {
- country: { en: string; ar: string };
+ country: Localized;
  outline: string;
  nodes: GulfMapNode[];
  source: { title: string; url: string };
- note: { en: string; ar: string };
+ note: Localized;
 }
-export function GulfCountryMark({ map, locale }: { map: GulfMapData; locale: 'en' | 'ar' }) {
- return <div className="gulf-country-mark"><svg viewBox="0 0 600 600" aria-hidden="true"><path d={map.outline} fill="currentColor" fillRule="evenodd" /></svg><span><small>{locale === 'ar' ? 'الوجهة' : 'DESTINATION'}</small><strong>{map.country[locale]}</strong></span></div>;
+export function GulfCountryMark({ map, locale }: { map: GulfMapData; locale: GulfLocale }) {
+ return <div className="gulf-country-mark"><svg viewBox="0 0 600 600" aria-hidden="true"><path d={map.outline} fill="currentColor" fillRule="evenodd" /></svg><span><small>{ui[locale].destination}</small><strong>{map.country[locale]}</strong></span></div>;
 }
-export default function GulfDestinationMap({ map, locale }: { map: GulfMapData; locale: 'en' | 'ar' }) {
+export default function GulfDestinationMap({ map, locale }: { map: GulfMapData; locale: GulfLocale }) {
  const id = useId();
  const country = map.country.en.toLowerCase() as 'qatar' | 'oman';
  const region = regions[country];
  const locationUrl = (coordinates: number[]) => `https://www.google.com/maps/search/?${new URLSearchParams({ api: '1', query: `${coordinates[1]},${coordinates[0]}` })}`;
  return <figure className="gulf-map gulf-regional-map" data-destination-map data-regional-map={country}>
-  <div className="gulf-map-heading"><span>{locale === 'ar' ? 'الموقع الإقليمي' : 'REGIONAL CONTEXT'}</span><strong>{map.country[locale]}</strong></div>
+  <div className="gulf-map-heading"><span>{ui[locale].regionalContext}</span><strong>{map.country[locale]}</strong></div>
   <svg viewBox="0 0 800 600" role="img" aria-labelledby={`${id}-title ${id}-desc`}>
    <title id={`${id}-title`}>{map.country[locale]}</title><desc id={`${id}-desc`}>{map.nodes.map(node => `${node.name[locale]}: ${node.role[locale]}`).join('. ')}. {map.note[locale]}</desc>
    <image href={`/media/freight-20261014-round4/${country}-regional.svg`} width="800" height="600" />
@@ -43,7 +45,7 @@ export default function GulfDestinationMap({ map, locale }: { map: GulfMapData; 
     </g>;
    })}
   </svg>
-  <ol className="gulf-map-nodes">{map.nodes.map((node,index) => <li key={node.id}><span className="gulf-map-number" aria-hidden="true">0{index+1}</span><div><strong>{node.name[locale]}</strong><span>{node.role[locale]}</span><a data-map-node={node.id} href={locationUrl(region.nodes.find(point => point.id === node.id)!.coordinates)} target="_blank" rel="noopener noreferrer">{locale === 'ar' ? 'افتح خريطة الموقع' : 'Open location map'} ↗</a></div></li>)}</ol>
-  <figcaption>{map.note[locale]} <a href={map.source.url}>{locale === 'ar' ? 'مصدر الحدود: ' : 'Boundaries: '}{map.source.title}</a></figcaption>
+  <ol className="gulf-map-nodes">{map.nodes.map((node,index) => <li key={node.id}><span className="gulf-map-number" aria-hidden="true">0{index+1}</span><div><strong>{node.name[locale]}</strong><span>{node.role[locale]}</span><a data-map-node={node.id} href={locationUrl(region.nodes.find(point => point.id === node.id)!.coordinates)} target="_blank" rel="noopener noreferrer">{ui[locale].openLocationMap} ↗</a></div></li>)}</ol>
+  <figcaption>{map.note[locale]} <a href={map.source.url}>{ui[locale].boundaries}{map.source.title}</a></figcaption>
  </figure>;
 }

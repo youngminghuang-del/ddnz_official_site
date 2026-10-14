@@ -1,10 +1,10 @@
+import type { GulfLocale } from './gulfLocale';
 import { useEffect, useState } from 'react';
 
-type Props = { country: 'qatar' | 'oman'; locale: 'en' | 'ar' };
-export const gulfChapterLabels = {
- qatar: { en: ['Supplier orders', 'Consolidation', 'Qatar arrival', 'Questions'], ar: ['طلبات الموردين', 'تجميع الشحنات', 'الوصول إلى قطر', 'أسئلة'] },
- oman: { en: ['Packed cargo', 'Freight options', 'Oman arrival', 'Questions'], ar: ['البضاعة المعبأة', 'خيارات الشحن', 'الوصول إلى عُمان', 'أسئلة'] },
-};
+type Props = { country: 'qatar' | 'oman'; locale: GulfLocale };
+import gulfChapterLabels from './gulfChapterLabels.json';
+import ui from './gulfUi.json';
+export { gulfChapterLabels };
 export function ChapterIcon({ index }: { index: number }) {
  const paths = [
   <><path d="m4 7 8-4 8 4v10l-8 4-8-4Z M4 7l8 4 8-4 M12 11v10 M8 5l8 4v5" /></>,
@@ -31,12 +31,12 @@ export default function GulfChapters({ country, locale }: Props) {
   schedule();
   return () => { window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); cancelAnimationFrame(frame); };
  }, [country]);
- return <nav className="gulf-chapters" aria-label={locale === 'ar' ? 'أقسام هذه الصفحة' : 'Explore this shipment'}>
+ return <nav className="gulf-chapters" aria-label={ui[locale].chaptersAria}>
   {ids.map((id, index) => <a key={id} href={`#gulf-section-${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => {
    setActive(id);
    document.getElementById(`gulf-section-${id}`)?.focus({ preventScroll: true });
   }}>
-   <span className="gulf-chapter-top"><ChapterIcon index={index} /><span className="gulf-chapter-number" aria-hidden="true">{active === id ? locale === 'ar' ? 'تقرأ الآن · ' : 'Reading · ' : ''}0{index + 1}</span></span>
+   <span className="gulf-chapter-top"><ChapterIcon index={index} /><span className="gulf-chapter-number" aria-hidden="true">{active === id ? ui[locale].reading : ''}0{index + 1}</span></span>
    <span className="gulf-chapter-bottom"><span>{gulfChapterLabels[country][locale][index]}</span><svg className="gulf-chapter-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M5 5 19 19 M7 19h12V7" /></svg></span>
   </a>)}
  </nav>;

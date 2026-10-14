@@ -1,8 +1,10 @@
+import ui from './gulfUi.json';
+import type { GulfLocale } from './gulfLocale';
 import { useId, useRef, useState, type KeyboardEvent } from 'react';
 import content from './omanCargoGallery.json';
 const photos = content.images;
 
-export default function OmanCargoGallery({ locale }: { locale: 'en' | 'ar' }) {
+export default function OmanCargoGallery({ locale }: { locale: GulfLocale }) {
  const [selected, setSelected] = useState(0);
  const buttons = useRef<(HTMLButtonElement | null)[]>([]);
  const id = useId();
@@ -23,7 +25,7 @@ export default function OmanCargoGallery({ locale }: { locale: 'en' | 'ar' }) {
    <div className="oman-gallery-frame"><img key={photo.id} data-gallery-main src={photo.src} width={photo.width} height={photo.height} alt={photo.alt[locale]} loading="lazy" decoding="async" /><span className="oman-gallery-overlay">{photo.title[locale]}</span></div>
    <figcaption aria-live="polite" aria-atomic="true"><span className="oman-gallery-count" dir="ltr">{selected+1} / {photos.length}</span><p>{photo.caption[locale]}</p></figcaption>
   </figure>
-  <div className="oman-gallery-thumbnails" role="group" aria-label={ar ? 'اختر صورة البضاعة أو التعبئة' : 'Choose a cargo or packing photo'}>
+  <div className="oman-gallery-thumbnails" role="group" aria-label={ui[locale].choosePhoto}>
    {photos.map((item,index) => <button key={item.id} type="button" ref={element => { buttons.current[index] = element; }} aria-controls={`${id}-image`} aria-pressed={selected === index} aria-label={`${index+1}: ${item.title[locale]}`} onClick={() => setSelected(index)} onKeyDown={event => selectWithKey(event,index)}>
     <img src={item.thumbnail} width={item.width} height={item.height} alt="" loading="lazy" decoding="async" /><span aria-hidden="true">{index+1}</span>
    </button>)}

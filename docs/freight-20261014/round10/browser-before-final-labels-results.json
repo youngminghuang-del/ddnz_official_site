@@ -1,0 +1,192 @@
+{
+  "results": [
+    {
+      "width": 390,
+      "locale": "en",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "en",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "zh",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "ru",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "ru",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "fr",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "fr",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "es",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "ar",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "ar",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "pt",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "tr",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "locale": "tr",
+      "country": "oman",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": true,
+      "passed": true
+    },
+    {
+      "width": 745,
+      "locale": "en",
+      "country": "qatar",
+      "galleryKeyboard": true,
+      "anchors": 4,
+      "mapLabelsWithinBounds": true,
+      "noOverflow": true,
+      "rfqUnknown": false,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

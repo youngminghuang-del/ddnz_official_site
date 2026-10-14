@@ -1,7 +1,13 @@
 {
   "sectionHeading": {
     "en": "Customs preparation & official resources",
-    "ar": "التحضير للتخليص والمصادر الرسمية"
+    "ar": "التحضير للتخليص والمصادر الرسمية",
+    "zh": "清关准备与官方资料",
+    "ru": "Подготовка к таможне и официальные ресурсы",
+    "fr": "Préparation douanière et ressources officielles",
+    "es": "Preparación aduanera y recursos oficiales",
+    "pt": "Preparação aduaneira e recursos oficiais",
+    "tr": "Gümrük hazırlığı ve resmî kaynaklar"
   },
   "logoIdNote": "Map to materials final manifest; null is not authorization to invent a mark.",
   "cards": [
@@ -10,26 +16,63 @@
       "country": "qatar",
       "entityName": {
         "en": "Qatar Customs",
-        "ar": "الجمارك القطرية"
+        "ar": "الجمارك القطرية",
+        "zh": "卡塔尔海关",
+        "ru": "Таможня Катара",
+        "fr": "Douanes du Qatar",
+        "es": "Aduanas de Catar",
+        "pt": "Alfândegas do Catar",
+        "tr": "Katar Gümrüğü"
       },
       "role": {
         "en": "General Authority of Customs",
-        "ar": "الهيئة العامة للجمارك"
+        "ar": "الهيئة العامة للجمارك",
+        "zh": "海关总署",
+        "ru": "Главное таможенное управление",
+        "fr": "Autorité générale des douanes",
+        "es": "Autoridad General de Aduanas",
+        "pt": "Autoridade Geral das Alfândegas",
+        "tr": "Gümrük Genel İdaresi"
       },
       "prepare": {
         "en": "Confirm the importer’s customs-code arrangements and prepare itemised invoice and packing details for the goods.",
-        "ar": "أكّد ترتيبات الرمز الجمركي للمستورد وجهّز بيانات الفاتورة والتعبئة المفصّلة للبضائع."
+        "ar": "أكّد ترتيبات الرمز الجمركي للمستورد وجهّز بيانات الفاتورة والتعبئة المفصّلة للبضائع.",
+        "zh": "确认进口商的海关登记编码办理安排，并准备逐项发票及货物装箱明细。",
+        "ru": "Уточните порядок оформления таможенного кода импортёра и подготовьте подробный инвойс и упаковочные данные по товарам.",
+        "fr": "Confirmez les modalités relatives au code douanier de l’importateur et préparez une facture détaillée ainsi que les données d’emballage des marchandises.",
+        "es": "Confirme las gestiones relativas al código aduanero del importador y prepare la factura desglosada y los datos de embalaje de la mercancía.",
+        "pt": "Confirme os procedimentos relativos ao código aduaneiro do importador e prepare a fatura discriminada e os dados de embalagem das mercadorias.",
+        "tr": "İthalatçının gümrük koduna ilişkin düzenlemeleri doğrulayın; kalem bazında fatura ve yükün ambalaj bilgilerini hazırlayın."
       },
       "linkLabel": {
         "en": "Import guidance",
-        "ar": "إرشادات الاستيراد"
+        "ar": "إرشادات الاستيراد",
+        "zh": "进口指引",
+        "ru": "Руководство по импорту",
+        "fr": "Guide d’importation",
+        "es": "Guía de importación",
+        "pt": "Guia de importação",
+        "tr": "İthalat rehberi"
       },
       "officialUrl": {
         "en": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
-        "ar": "https://www.customs.gov.qa/Arabic/Procedures/UnifiedGuide/Pages/Importation.aspx"
+        "ar": "https://www.customs.gov.qa/Arabic/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "zh": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "ru": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "fr": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "es": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "pt": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "tr": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx"
       },
       "linkNote": {
-        "ar": ""
+        "ar": "",
+        "zh": "链接页面为英文",
+        "ru": "Страница на английском",
+        "fr": "Page en anglais",
+        "es": "Página en inglés",
+        "pt": "Página em inglês",
+        "tr": "Sayfa İngilizcedir",
+        "en": ""
       },
       "logoId": null
     },
@@ -38,26 +81,63 @@
       "country": "qatar",
       "entityName": {
         "en": "Al Nadeeb",
-        "ar": "النديب"
+        "ar": "النديب",
+        "zh": "Al Nadeeb",
+        "ru": "Al Nadeeb",
+        "fr": "Al Nadeeb",
+        "es": "Al Nadeeb",
+        "pt": "Al Nadeeb",
+        "tr": "Al Nadeeb"
       },
       "role": {
         "en": "Qatar’s customs single-window system",
-        "ar": "نظام النافذة الواحدة للتخليص الجمركي في قطر"
+        "ar": "نظام النافذة الواحدة للتخليص الجمركي في قطر",
+        "zh": "卡塔尔海关单一窗口系统",
+        "ru": "Таможенная система «единого окна» Катара",
+        "fr": "Guichet unique douanier du Qatar",
+        "es": "Sistema de ventanilla única aduanera de Catar",
+        "pt": "Sistema de janela única aduaneira do Catar",
+        "tr": "Katar’ın tek pencere gümrük sistemi"
       },
       "prepare": {
         "en": "Confirm who will submit the declaration and review the relevant importer or customs-broker guidance.",
-        "ar": "حدّد الجهة التي ستقدّم البيان الجمركي وراجع إرشادات المستورد أو المخلّص الجمركي ذات الصلة."
+        "ar": "حدّد الجهة التي ستقدّم البيان الجمركي وراجع إرشادات المستورد أو المخلّص الجمركي ذات الصلة.",
+        "zh": "确认由谁提交报关单，并查阅适用的进口商或报关代理指引。",
+        "ru": "Уточните, кто подаёт декларацию, и ознакомьтесь с соответствующими инструкциями для импортёра или таможенного представителя.",
+        "fr": "Confirmez qui déposera la déclaration et consultez les guides applicables à l’importateur ou au représentant en douane.",
+        "es": "Confirme quién presentará la declaración y consulte las guías pertinentes para el importador o el agente de aduanas.",
+        "pt": "Confirme quem apresenta a declaração e consulte as orientações aplicáveis ao importador ou ao despachante aduaneiro.",
+        "tr": "Beyannameyi kimin sunacağını doğrulayın ve ilgili ithalatçı veya gümrük müşaviri rehberlerini inceleyin."
       },
       "linkLabel": {
         "en": "Official user guides",
-        "ar": "أدلة المستخدم الرسمية"
+        "ar": "أدلة المستخدم الرسمية",
+        "zh": "官方用户指南",
+        "ru": "Официальные руководства пользователя",
+        "fr": "Guides d’utilisation officiels",
+        "es": "Guías oficiales de usuario",
+        "pt": "Guias oficiais do utilizador",
+        "tr": "Resmî kullanıcı kılavuzları"
       },
       "officialUrl": {
         "en": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
-        "ar": "https://www.customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx"
+        "ar": "https://www.customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx",
+        "zh": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "ru": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "fr": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "es": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "pt": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "tr": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx"
       },
       "linkNote": {
-        "ar": ""
+        "ar": "",
+        "zh": "链接页面为英文",
+        "ru": "Страница на английском",
+        "fr": "Page en anglais",
+        "es": "Página en inglés",
+        "pt": "Página em inglês",
+        "tr": "Sayfa İngilizcedir",
+        "en": ""
       },
       "logoId": null
     },
@@ -66,26 +146,63 @@
       "country": "oman",
       "entityName": {
         "en": "Oman Customs",
-        "ar": "الجمارك العُمانية"
+        "ar": "الجمارك العُمانية",
+        "zh": "阿曼海关",
+        "ru": "Таможня Омана",
+        "fr": "Douanes d’Oman",
+        "es": "Aduanas de Omán",
+        "pt": "Alfândegas de Omã",
+        "tr": "Umman Gümrüğü"
       },
       "role": {
         "en": "Royal Oman Police · Directorate General of Customs",
-        "ar": "شرطة عُمان السلطانية · الإدارة العامة للجمارك"
+        "ar": "شرطة عُمان السلطانية · الإدارة العامة للجمارك",
+        "zh": "阿曼皇家警察 · 海关总局",
+        "ru": "Королевская полиция Омана · Главное таможенное управление",
+        "fr": "Police royale d’Oman · Direction générale des douanes",
+        "es": "Real Policía de Omán · Dirección General de Aduanas",
+        "pt": "Polícia Real de Omã · Direção-Geral das Alfândegas",
+        "tr": "Umman Kraliyet Polisi · Gümrük Genel Müdürlüğü"
       },
       "prepare": {
         "en": "Check the permits, restrictions and approvals that apply to the actual goods before dispatch.",
-        "ar": "راجع التصاريح والقيود والموافقات التي تنطبق على البضاعة الفعلية قبل الإرسال."
+        "ar": "راجع التصاريح والقيود والموافقات التي تنطبق على البضاعة الفعلية قبل الإرسال.",
+        "zh": "发货前核对实际货物适用的许可证、限制及审批要求。",
+        "ru": "До отправки проверьте разрешения, ограничения и согласования, применимые к фактическому грузу.",
+        "fr": "Avant l’expédition, vérifiez les permis, restrictions et autorisations applicables aux marchandises concernées.",
+        "es": "Antes del envío, compruebe los permisos, las restricciones y las autorizaciones aplicables a la mercancía concreta.",
+        "pt": "Antes da expedição, verifique as licenças, restrições e autorizações aplicáveis à mercadoria concreta.",
+        "tr": "Sevkiyattan önce ilgili mallar için geçerli izinleri, kısıtlamaları ve onayları kontrol edin."
       },
       "linkLabel": {
         "en": "Import requirements",
-        "ar": "متطلبات الاستيراد"
+        "ar": "متطلبات الاستيراد",
+        "zh": "进口要求",
+        "ru": "Требования к импорту",
+        "fr": "Exigences d’importation",
+        "es": "Requisitos de importación",
+        "pt": "Requisitos de importação",
+        "tr": "İthalat gereklilikleri"
       },
       "officialUrl": {
         "en": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
-        "ar": "https://www.customs.gov.om/en/search-import-and-export-requirements/"
+        "ar": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "zh": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "ru": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "fr": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "es": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "pt": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "tr": "https://www.customs.gov.om/en/search-import-and-export-requirements/"
       },
       "linkNote": {
-        "ar": "الصفحة بالإنجليزية"
+        "ar": "الصفحة بالإنجليزية",
+        "zh": "链接页面为英文",
+        "ru": "Страница на английском",
+        "fr": "Page en anglais",
+        "es": "Página en inglés",
+        "pt": "Página em inglês",
+        "tr": "Sayfa İngilizcedir",
+        "en": ""
       },
       "logoId": null
     },
@@ -94,26 +211,63 @@
       "country": "oman",
       "entityName": {
         "en": "Bayan",
-        "ar": "بيان"
+        "ar": "بيان",
+        "zh": "Bayan",
+        "ru": "Bayan",
+        "fr": "Bayan",
+        "es": "Bayan",
+        "pt": "Bayan",
+        "tr": "Bayan"
       },
       "role": {
         "en": "Oman Customs’ electronic declaration system",
-        "ar": "نظام الجمارك العُمانية لتقديم البيانات الجمركية إلكترونياً"
+        "ar": "نظام الجمارك العُمانية لتقديم البيانات الجمركية إلكترونياً",
+        "zh": "阿曼海关电子申报系统",
+        "ru": "Электронная система декларирования таможни Омана",
+        "fr": "Système de déclaration électronique des douanes d’Oman",
+        "es": "Sistema de declaración electrónica de Aduanas de Omán",
+        "pt": "Sistema de declaração eletrónica das Alfândegas de Omã",
+        "tr": "Umman Gümrüğünün elektronik beyanname sistemi"
       },
       "prepare": {
         "en": "Confirm the declaration documents with the importer, including invoices, origin documents and any required permits.",
-        "ar": "أكّد مستندات البيان مع المستورد، بما فيها الفواتير ومستندات المنشأ وأي تصاريح مطلوبة."
+        "ar": "أكّد مستندات البيان مع المستورد، بما فيها الفواتير ومستندات المنشأ وأي تصاريح مطلوبة.",
+        "zh": "与进口商核对申报文件，包括发票、原产地文件和所需许可证。",
+        "ru": "Согласуйте с импортёром документы для декларации, включая инвойсы, документы о происхождении и необходимые разрешения.",
+        "fr": "Confirmez avec l’importateur les documents de déclaration, notamment les factures, les documents d’origine et les permis requis.",
+        "es": "Confirme con el importador los documentos de la declaración, incluidas las facturas, los documentos de origen y los permisos necesarios.",
+        "pt": "Confirme com o importador os documentos da declaração, incluindo faturas, documentos de origem e eventuais licenças exigidas.",
+        "tr": "Beyanname belgelerini ithalatçıyla doğrulayın; faturalar, menşe belgeleri ve gerekli izinleri buna dahil edin."
       },
       "linkLabel": {
         "en": "Declaration guidance",
-        "ar": "إرشادات البيان الجمركي"
+        "ar": "إرشادات البيان الجمركي",
+        "zh": "申报指引",
+        "ru": "Руководство по декларированию",
+        "fr": "Guide de déclaration",
+        "es": "Guía de declaración",
+        "pt": "Guia de declaração",
+        "tr": "Beyanname rehberi"
       },
       "officialUrl": {
         "en": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
-        "ar": "https://customs.gov.om/ar/business-services/procedural_services/request-to-apply-a-custom-declaration/"
+        "ar": "https://customs.gov.om/ar/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "zh": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "ru": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "fr": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "es": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "pt": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "tr": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/"
       },
       "linkNote": {
-        "ar": ""
+        "ar": "",
+        "zh": "链接页面为英文",
+        "ru": "Страница на английском",
+        "fr": "Page en anglais",
+        "es": "Página en inglés",
+        "pt": "Página em inglês",
+        "tr": "Sayfa İngilizcedir",
+        "en": ""
       },
       "logoId": null
     }

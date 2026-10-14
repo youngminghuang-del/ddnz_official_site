@@ -1,0 +1,85 @@
+TAP version 13
+# Subtest: eight Gulf routes round-trip locale prefixes including zh-cn
+ok 1 - eight Gulf routes round-trip locale prefixes including zh-cn
+  ---
+  duration_ms: 0.387625
+  ...
+# Subtest: every bilingual content object has all eight locale keys
+ok 2 - every bilingual content object has all eight locale keys
+  ---
+  duration_ms: 1.296875
+  ...
+# Subtest: every country translation retains seven story sections and five journey stages
+ok 3 - every country translation retains seven story sections and five journey stages
+  ---
+  duration_ms: 0.145458
+  ...
+# Subtest: unknown measurements are explicit and never silently become sample cargo
+ok 4 - unknown measurements are explicit and never silently become sample cargo
+  ---
+  duration_ms: 0.605458
+  ...
+# Subtest: customer estimates retain existing receiver field units including decimals
+ok 5 - customer estimates retain existing receiver field units including decimals
+  ---
+  duration_ms: 0.069708
+  ...
+# Subtest: zero, negative and non-finite inputs cannot become positive estimates or unknown
+ok 6 - zero, negative and non-finite inputs cannot become positive estimates or unknown
+  ---
+  duration_ms: 2.290917
+  ...
+# Subtest: eight languages emit plain links and retain multilingual briefs outside href
+ok 7 - eight languages emit plain links and retain multilingual briefs outside href
+  ---
+  duration_ms: 1.118917
+  ...
+# Subtest: external links, hashes, downloads and non-quote parameters are unchanged
+ok 8 - external links, hashes, downloads and non-quote parameters are unchanged
+  ---
+  duration_ms: 0.390833
+  ...
+# Subtest: unknown enum identifiers are rejected; free destination text stays in local brief
+ok 9 - unknown enum identifiers are rejected; free destination text stays in local brief
+  ---
+  duration_ms: 0.060875
+  ...
+# Subtest: HTML processing is escaped and idempotent without modifying title, body text or script strings
+ok 10 - HTML processing is escaped and idempotent without modifying title, body text or script strings
+  ---
+  duration_ms: 0.484917
+  ...
+# Subtest: handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+ok 11 - handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+  ---
+  duration_ms: 0.299167
+  ...
+# Subtest: expired and malformed storage never blocks the form
+ok 12 - expired and malformed storage never blocks the form
+  ---
+  duration_ms: 0.165458
+  ...
+# Subtest: compiler applies policy to anchors and router links before React creates DOM
+ok 13 - compiler applies policy to anchors and router links before React creates DOM
+  ---
+  duration_ms: 37.135083
+  ...
+# Subtest: React Router path objects retain hashes while removing quote queries
+ok 14 - React Router path objects retain hashes while removing quote queries
+  ---
+  duration_ms: 0.115167
+  ...
+# Subtest: same-tab handoff works when both browser storage APIs are blocked
+ok 15 - same-tab handoff works when both browser storage APIs are blocked
+  ---
+  duration_ms: 0.219875
+  ...
+1..15
+# tests 15
+# suites 0
+# pass 15
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 401.998875

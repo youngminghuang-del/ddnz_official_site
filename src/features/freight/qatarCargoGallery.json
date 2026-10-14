@@ -14,11 +14,23 @@
       "defaultImageId": 5,
       "heading": {
         "en": "Production & sorting details",
-        "ar": "تفاصيل الإنتاج والفرز"
+        "ar": "تفاصيل الإنتاج والفرز",
+        "zh": "生产与整理细节",
+        "ru": "Производство и сортировка",
+        "fr": "Détails de production et de tri",
+        "es": "Detalles de producción y clasificación",
+        "pt": "Detalhes de produção e separação",
+        "tr": "Üretim ve ayırma ayrıntıları"
       },
       "intro": {
         "en": "Use these photos to discuss embroidery, finishing and grouping with your supplier before packing.",
-        "ar": "استخدم هذه الصور لمناقشة التطريز والتشطيب وتجميع القبعات مع المورد قبل التعبئة."
+        "ar": "استخدم هذه الصور لمناقشة التطريز والتشطيب وتجميع القبعات مع المورد قبل التعبئة.",
+        "zh": "包装前，可参照这些照片与供应商讨论刺绣、修整和分组方式。",
+        "ru": "Используйте эти фотографии для обсуждения вышивки, отделки и группировки с поставщиком до упаковки.",
+        "fr": "Utilisez ces photos pour discuter de la broderie, des finitions et du regroupement avec votre fournisseur avant l’emballage.",
+        "es": "Use estas fotos para comentar el bordado, los acabados y la agrupación con su proveedor antes del embalaje.",
+        "pt": "Use estas fotografias para discutir bordados, acabamentos e agrupamento com o fornecedor antes da embalagem.",
+        "tr": "Ambalajlamadan önce nakış, son işlemler ve gruplamayı tedarikçinizle görüşmek için bu fotoğrafları kullanın."
       }
     },
     {
@@ -30,11 +42,23 @@
       "defaultImageId": 11,
       "heading": {
         "en": "Confirm the cap style",
-        "ar": "تأكيد طراز القبعة"
+        "ar": "تأكيد طراز القبعة",
+        "zh": "确认帽子款式",
+        "ru": "Уточните фасон головного убора",
+        "fr": "Confirmez le modèle de casquette",
+        "es": "Confirme el modelo de gorra",
+        "pt": "Confirme o modelo do boné",
+        "tr": "Şapka modelini teyit edin"
       },
       "intro": {
         "en": "Match the crown shape and brim details to your chosen reference before requesting a quote.",
-        "ar": "طابق شكل القبعة وتفاصيل الحافة مع النموذج المرجعي المختار قبل طلب عرض السعر."
+        "ar": "طابق شكل القبعة وتفاصيل الحافة مع النموذج المرجعي المختار قبل طلب عرض السعر.",
+        "zh": "询价前，将帽冠形状与帽檐细节对应到选定的参考款式。",
+        "ru": "Перед запросом расчёта сопоставьте форму тульи и детали козырька с выбранным образцом.",
+        "fr": "Avant de demander un devis, comparez la forme de la calotte et les détails de la visière au modèle de référence choisi.",
+        "es": "Antes de solicitar una cotización, contraste la forma de la copa y los detalles de la visera con la referencia elegida.",
+        "pt": "Antes de pedir uma cotação, compare o formato da copa e os detalhes da pala com a referência escolhida.",
+        "tr": "Teklif istemeden önce tepe şeklini ve siperlik ayrıntılarını seçtiğiniz referansla karşılaştırın."
       }
     },
     {
@@ -49,11 +73,23 @@
       "defaultImageId": 6,
       "heading": {
         "en": "Packing examples",
-        "ar": "أمثلة على التعبئة"
+        "ar": "أمثلة على التعبئة",
+        "zh": "包装示例",
+        "ru": "Примеры упаковки",
+        "fr": "Exemples d’emballage",
+        "es": "Ejemplos de embalaje",
+        "pt": "Exemplos de embalagem",
+        "tr": "Ambalaj örnekleri"
       },
       "intro": {
         "en": "The figures shown are examples, not standard packing specifications. A freight quote needs the final carton dimensions and gross weight.",
-        "ar": "الأرقام المعروضة أمثلة وليست مواصفات تعبئة موحدة. يتطلب عرض سعر الشحن أبعاد الصناديق النهائية والوزن الإجمالي."
+        "ar": "الأرقام المعروضة أمثلة وليست مواصفات تعبئة موحدة. يتطلب عرض سعر الشحن أبعاد الصناديق النهائية والوزن الإجمالي.",
+        "zh": "图示数据仅为示例，并非通用包装规格。货运报价需要最终箱尺寸和毛重。",
+        "ru": "Указанные значения — примеры, а не стандартные требования к упаковке. Для расчёта перевозки нужны окончательные размеры коробок и вес брутто.",
+        "fr": "Les données illustrées sont des exemples, pas des spécifications d’emballage standard. Le devis de transport nécessite les dimensions finales des cartons et le poids brut.",
+        "es": "Las cifras mostradas son ejemplos, no especificaciones estándar. La cotización de transporte requiere las dimensiones finales de las cajas y el peso bruto.",
+        "pt": "Os valores apresentados são exemplos, não especificações padrão de embalagem. A cotação de transporte exige as dimensões finais das caixas e o peso bruto.",
+        "tr": "Gösterilen değerler örnektir, standart ambalaj özellikleri değildir. Nakliye teklifi için nihai koli ölçüleri ve brüt ağırlık gerekir."
       }
     }
   ],
@@ -64,15 +100,33 @@
       "group": "production",
       "title": {
         "en": "Embroidery machine",
-        "ar": "ماكينة التطريز"
+        "ar": "ماكينة التطريز",
+        "zh": "刺绣设备",
+        "ru": "Вышивальная машина",
+        "fr": "Machine à broder",
+        "es": "Máquina de bordado",
+        "pt": "Máquina de bordar",
+        "tr": "Nakış makinesi"
       },
       "alt": {
         "en": "Multi-head embroidery machine with brown fabric pieces and a worker alongside.",
-        "ar": "ماكينة تطريز متعددة الرؤوس مع قطع قماش بنية وعامل بجانبها."
+        "ar": "ماكينة تطريز متعددة الرؤوس مع قطع قماش بنية وعامل بجانبها.",
+        "zh": "多头刺绣机上放有棕色布片，旁边有工作人员。",
+        "ru": "Многоголовочная вышивальная машина с коричневыми деталями ткани и работником рядом.",
+        "fr": "Machine à broder multitête avec des pièces de tissu brun et un opérateur à côté.",
+        "es": "Máquina de bordado multicabezal con piezas de tela marrón y un operario al lado.",
+        "pt": "Máquina de bordar de várias cabeças com peças de tecido castanho e um trabalhador ao lado.",
+        "tr": "Üzerinde kahverengi kumaş parçaları bulunan çok kafalı nakış makinesi ve yanında bir çalışan."
       },
       "caption": {
         "en": "Confirm the artwork, placement and thread colours with your supplier.",
-        "ar": "أكد التصميم وموضع التطريز وألوان الخيوط مع المورد."
+        "ar": "أكد التصميم وموضع التطريز وألوان الخيوط مع المورد.",
+        "zh": "与供应商确认刺绣图案、位置和线色。",
+        "ru": "Согласуйте с поставщиком рисунок, расположение вышивки и цвета нитей.",
+        "fr": "Confirmez le motif, l’emplacement et les couleurs des fils avec le fournisseur.",
+        "es": "Confirme el diseño, la posición y los colores de hilo con su proveedor.",
+        "pt": "Confirme o desenho, a posição e as cores das linhas com o fornecedor.",
+        "tr": "Deseni, yerleşimi ve iplik renklerini tedarikçinizle teyit edin."
       },
       "src": "/media/freight-20261014-round7/1_hat_factory.jpg",
       "thumbnail": "/media/freight-20261014-round7/1_hat_factory-thumb.jpg",
@@ -85,15 +139,33 @@
       "group": "production",
       "title": {
         "en": "Trimming & finishing",
-        "ar": "التشذيب والتشطيب"
+        "ar": "التشذيب والتشطيب",
+        "zh": "修整与整理",
+        "ru": "Подрезка и отделка",
+        "fr": "Ébarbage et finitions",
+        "es": "Recorte y acabados",
+        "pt": "Aparo e acabamentos",
+        "tr": "Temizleme ve son işlemler"
       },
       "alt": {
         "en": "Workers handling stacks of coloured caps at workshop tables, with scissors visible in the foreground.",
-        "ar": "عمال يتعاملون مع مجموعات من القبعات الملونة على طاولات الورشة، مع مقص ظاهر في المقدمة."
+        "ar": "عمال يتعاملون مع مجموعات من القبعات الملونة على طاولات الورشة، مع مقص ظاهر في المقدمة.",
+        "zh": "工作人员在车间台面旁整理成摞的彩色帽子，前景可见剪刀。",
+        "ru": "Работники сортируют стопки разноцветных кепок за столами в цехе; на переднем плане видны ножницы.",
+        "fr": "Des opérateurs manipulent des piles de casquettes colorées sur des tables d’atelier, avec des ciseaux visibles au premier plan.",
+        "es": "Operarios manipulan pilas de gorras de colores en mesas de taller, con unas tijeras visibles en primer plano.",
+        "pt": "Trabalhadores manuseiam pilhas de bonés coloridos em mesas de oficina, com uma tesoura visível em primeiro plano.",
+        "tr": "Atölye masalarında renkli şapka yığınlarıyla çalışan işçiler; ön planda makas görülüyor."
       },
       "caption": {
         "en": "Agree on finishing details and quantities by colour before grouping the caps.",
-        "ar": "اتفق على تفاصيل التشطيب والكميات حسب اللون قبل تجميع القبعات."
+        "ar": "اتفق على تفاصيل التشطيب والكميات حسب اللون قبل تجميع القبعات.",
+        "zh": "帽子分组前，约定修整细节及各颜色数量。",
+        "ru": "До группировки кепок согласуйте детали отделки и количество по цветам.",
+        "fr": "Convenez des finitions et des quantités par couleur avant de regrouper les casquettes.",
+        "es": "Acuerde los acabados y las cantidades por color antes de agrupar las gorras.",
+        "pt": "Acorde os acabamentos e as quantidades por cor antes de agrupar os bonés.",
+        "tr": "Şapkaları gruplamadan önce son işlem ayrıntılarını ve renge göre adetleri kararlaştırın."
       },
       "src": "/media/freight-20261014-round7/2_hat_factory.jpg",
       "thumbnail": "/media/freight-20261014-round7/2_hat_factory-thumb.jpg",
@@ -106,15 +178,33 @@
       "group": "production",
       "title": {
         "en": "Cap shaping",
-        "ar": "تشكيل القبعات"
+        "ar": "تشكيل القبعات",
+        "zh": "帽子定型",
+        "ru": "Формование кепок",
+        "fr": "Mise en forme des casquettes",
+        "es": "Moldeado de gorras",
+        "pt": "Modelação dos bonés",
+        "tr": "Şapka şekillendirme"
       },
       "alt": {
         "en": "Worker at a shaping press with yellow caps on moulds and more yellow caps nearby.",
-        "ar": "عامل عند مكبس تشكيل مع قبعات صفراء على قوالب وقبعات صفراء أخرى بجانبها."
+        "ar": "عامل عند مكبس تشكيل مع قبعات صفراء على قوالب وقبعات صفراء أخرى بجانبها.",
+        "zh": "工作人员在定型设备旁操作，模具上及附近放有黄色帽子。",
+        "ru": "Работник у формовочного пресса с жёлтыми кепками на формах и рядом с ними.",
+        "fr": "Un opérateur à une presse de mise en forme, avec des casquettes jaunes sur des moules et à proximité.",
+        "es": "Operario en una prensa de moldeado con gorras amarillas sobre moldes y otras gorras amarillas cerca.",
+        "pt": "Trabalhador junto de uma prensa de modelação com bonés amarelos sobre moldes e outros bonés amarelos próximos.",
+        "tr": "Şekillendirme presinde çalışan bir işçi; kalıplarda ve yakınında sarı şapkalar bulunuyor."
       },
       "caption": {
         "en": "Confirm the required crown shape before packing.",
-        "ar": "أكد الشكل المطلوب للجزء العلوي من القبعة قبل التعبئة."
+        "ar": "أكد الشكل المطلوب للجزء العلوي من القبعة قبل التعبئة.",
+        "zh": "包装前确认所需帽冠形状。",
+        "ru": "До упаковки подтвердите требуемую форму тульи.",
+        "fr": "Confirmez la forme de calotte souhaitée avant l’emballage.",
+        "es": "Confirme la forma requerida de la copa antes de embalar.",
+        "pt": "Confirme o formato pretendido da copa antes de embalar.",
+        "tr": "Ambalajlamadan önce istenen tepe şeklini teyit edin."
       },
       "src": "/media/freight-20261014-round7/3_hat_factory.jpg",
       "thumbnail": "/media/freight-20261014-round7/3_hat_factory-thumb.jpg",
@@ -127,15 +217,33 @@
       "group": "production",
       "title": {
         "en": "Inner support",
-        "ar": "الدعامة الداخلية"
+        "ar": "الدعامة الداخلية",
+        "zh": "内部支撑",
+        "ru": "Внутренняя поддержка",
+        "fr": "Support intérieur",
+        "es": "Soporte interior",
+        "pt": "Suporte interior",
+        "tr": "İç destek"
       },
       "alt": {
         "en": "Worker placing a white shaped support inside a yellow cap beside stacks of yellow caps.",
-        "ar": "عامل يضع دعامة بيضاء مشكلة داخل قبعة صفراء بجانب مجموعات من القبعات الصفراء."
+        "ar": "عامل يضع دعامة بيضاء مشكلة داخل قبعة صفراء بجانب مجموعات من القبعات الصفراء.",
+        "zh": "工作人员在成摞黄色帽子旁，将白色成型支撑放入一顶黄色帽子内。",
+        "ru": "Работник вставляет белую формованную опору в жёлтую кепку рядом со стопками жёлтых кепок.",
+        "fr": "Un opérateur place un support blanc formé dans une casquette jaune, à côté de piles de casquettes jaunes.",
+        "es": "Operario colocando un soporte blanco moldeado dentro de una gorra amarilla junto a pilas de gorras amarillas.",
+        "pt": "Trabalhador a colocar um suporte branco moldado dentro de um boné amarelo junto de pilhas de bonés amarelos.",
+        "tr": "Sarı şapka yığınları yanında, sarı bir şapkanın içine şekillendirilmiş beyaz destek yerleştiren çalışan."
       },
       "caption": {
         "en": "Agree on the inner support needed to help retain the cap shape during packing.",
-        "ar": "اتفق على الدعامة الداخلية اللازمة للمساعدة في الحفاظ على شكل القبعة أثناء التعبئة."
+        "ar": "اتفق على الدعامة الداخلية اللازمة للمساعدة في الحفاظ على شكل القبعة أثناء التعبئة.",
+        "zh": "约定包装时帮助保持帽子形状所需的内部支撑。",
+        "ru": "Согласуйте внутреннюю поддержку для сохранения формы кепки при упаковке.",
+        "fr": "Convenez du support intérieur nécessaire pour aider à préserver la forme pendant l’emballage.",
+        "es": "Acuerde el soporte interior necesario para ayudar a mantener la forma durante el embalaje.",
+        "pt": "Acorde o suporte interior necessário para ajudar a manter o formato durante a embalagem.",
+        "tr": "Ambalajlama sırasında şekli korumaya yardımcı olacak iç desteği kararlaştırın."
       },
       "src": "/media/freight-20261014-round7/4_hat_factory.jpg",
       "thumbnail": "/media/freight-20261014-round7/4_hat_factory-thumb.jpg",
@@ -148,15 +256,33 @@
       "group": "production",
       "title": {
         "en": "Grouped & bagged caps",
-        "ar": "قبعات مجمعة داخل أكياس"
+        "ar": "قبعات مجمعة داخل أكياس",
+        "zh": "分组袋装帽子",
+        "ru": "Кепки, сгруппированные в пакеты",
+        "fr": "Casquettes regroupées en sachets",
+        "es": "Gorras agrupadas en bolsas",
+        "pt": "Bonés agrupados em sacos",
+        "tr": "Gruplanmış ve poşetlenmiş şapkalar"
       },
       "alt": {
         "en": "Groups of caps in clear bags across a sorting area, with cartons and workers in the background.",
-        "ar": "مجموعات من القبعات داخل أكياس شفافة في منطقة فرز، مع صناديق وعمال في الخلفية."
+        "ar": "مجموعات من القبعات داخل أكياس شفافة في منطقة فرز، مع صناديق وعمال في الخلفية.",
+        "zh": "整理区域内摆放着分装于透明袋中的帽子，背景有纸箱和工作人员。",
+        "ru": "Группы кепок в прозрачных пакетах в зоне сортировки; на заднем плане коробки и работники.",
+        "fr": "Groupes de casquettes en sachets transparents dans une zone de tri, avec cartons et opérateurs à l’arrière-plan.",
+        "es": "Grupos de gorras en bolsas transparentes en una zona de clasificación, con cajas y operarios al fondo.",
+        "pt": "Grupos de bonés em sacos transparentes numa zona de separação, com caixas e trabalhadores ao fundo.",
+        "tr": "Ayırma alanındaki şeffaf poşetlerde şapka grupları; arka planda koliler ve çalışanlar bulunuyor."
       },
       "caption": {
         "en": "Match the style and colour groups to the order and packing list.",
-        "ar": "طابق المجموعات حسب الطراز واللون مع الطلب وقائمة التعبئة."
+        "ar": "طابق المجموعات حسب الطراز واللون مع الطلب وقائمة التعبئة.",
+        "zh": "按款式与颜色，将各组帽子与订单及装箱清单对应。",
+        "ru": "Сопоставьте группы по фасону и цвету с заказом и упаковочным листом.",
+        "fr": "Rapprochez les groupes par modèle et couleur de la commande et de la liste de colisage.",
+        "es": "Contraste los grupos por modelo y color con el pedido y la lista de embalaje.",
+        "pt": "Compare os grupos por modelo e cor com o pedido e a lista de embalagem.",
+        "tr": "Model ve renk gruplarını sipariş ve ambalaj listesiyle eşleştirin."
       },
       "src": "/media/freight-20261014-round7/5_hat_factory.jpg",
       "thumbnail": "/media/freight-20261014-round7/5_hat_factory-thumb.jpg",
@@ -169,15 +295,33 @@
       "group": "packing",
       "title": {
         "en": "1-cap packing example",
-        "ar": "مثال تعبئة: 1 قبعة"
+        "ar": "مثال تعبئة: 1 قبعة",
+        "zh": "1顶帽子包装示例",
+        "ru": "Пример упаковки: 1 шт.",
+        "fr": "Exemple d’emballage : 1 casquette",
+        "es": "Ejemplo de embalaje: 1 gorra",
+        "pt": "Exemplo de embalagem: 1 boné",
+        "tr": "1 şapka için ambalaj örneği"
       },
       "alt": {
         "en": "Packing illustration for 1 cap, showing bagged caps and cartons; outer carton 23 × 13 × 16 cm and product weight 0.2 kg.",
-        "ar": "مخطط تعبئة لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم."
+        "ar": "مخطط تعبئة لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم.",
+        "zh": "1顶帽子的包装示意，展示袋装帽子及纸箱；外箱23 × 13 × 16 cm，产品重量0.2 kg。",
+        "ru": "Схема упаковки кепок (1 шт.) с пакетами и коробками; внешняя коробка 23 × 13 × 16 см, вес изделий 0,2 кг.",
+        "fr": "Illustration d’emballage pour 1 casquette, avec sachets et cartons ; carton extérieur 23 × 13 × 16 cm et poids des produits 0,2 kg.",
+        "es": "Ilustración de embalaje para 1 gorra, con bolsas y cajas; caja exterior de 23 × 13 × 16 cm y peso del producto de 0,2 kg.",
+        "pt": "Ilustração de embalagem para 1 boné, com sacos e caixas; caixa exterior de 23 × 13 × 16 cm e peso dos produtos de 0,2 kg.",
+        "tr": "1 şapka için poşetleri ve kolileri gösteren ambalaj örneği; dış koli 23 × 13 × 16 cm ve ürün ağırlığı 0,2 kg."
       },
       "caption": {
         "en": "Shown: 1 cap; outer carton 23 × 13 × 16 cm; product weight 0.2 kg.",
-        "ar": "الموضح: 1 قبعة؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم؛ وزن المنتجات 0.2 كجم."
+        "ar": "الموضح: 1 قبعة؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم؛ وزن المنتجات 0.2 كجم.",
+        "zh": "图示：1顶帽子；外箱23 × 13 × 16 cm；产品重量0.2 kg。",
+        "ru": "Показано: 1 шт.; внешняя коробка 23 × 13 × 16 см; вес изделий 0,2 кг.",
+        "fr": "Illustration : 1 casquette ; carton extérieur 23 × 13 × 16 cm ; poids des produits 0,2 kg.",
+        "es": "Se muestra: 1 gorra; caja exterior de 23 × 13 × 16 cm; peso del producto de 0,2 kg.",
+        "pt": "Exemplo: 1 boné; caixa exterior de 23 × 13 × 16 cm; peso dos produtos de 0,2 kg.",
+        "tr": "Gösterilen: 1 şapka; dış koli 23 × 13 × 16 cm; ürün ağırlığı 0,2 kg."
       },
       "packingData": {
         "quantity": 1,
@@ -189,7 +333,13 @@
         "productWeightKg": "0.2",
         "weightLabel": {
           "en": "Product weight shown",
-          "ar": "وزن المنتجات المذكور في الصورة"
+          "ar": "وزن المنتجات المذكور في الصورة",
+          "zh": "图示产品重量",
+          "ru": "Указанный вес изделий",
+          "fr": "Poids des produits illustrés",
+          "es": "Peso del producto mostrado",
+          "pt": "Peso dos produtos apresentado",
+          "tr": "Gösterilen ürün ağırlığı"
         }
       },
       "src": "/media/freight-20261014-round8/6_hat_factory_en.webp",
@@ -203,15 +353,33 @@
       "group": "packing",
       "title": {
         "en": "25-cap packing example",
-        "ar": "مثال تعبئة: 25 قبعة"
+        "ar": "مثال تعبئة: 25 قبعة",
+        "zh": "25顶帽子包装示例",
+        "ru": "Пример упаковки: 25 шт.",
+        "fr": "Exemple d’emballage : 25 casquettes",
+        "es": "Ejemplo de embalaje: 25 gorras",
+        "pt": "Exemplo de embalagem: 25 bonés",
+        "tr": "25 şapka için ambalaj örneği"
       },
       "alt": {
         "en": "Packing illustration for 25 caps, showing bagged caps and cartons; outer carton 61 × 23 × 18 cm and product weight 3.2 kg.",
-        "ar": "مخطط تعبئة لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم."
+        "ar": "مخطط تعبئة لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم.",
+        "zh": "25顶帽子的包装示意，展示袋装帽子及纸箱；外箱61 × 23 × 18 cm，产品重量3.2 kg。",
+        "ru": "Схема упаковки кепок (25 шт.) с пакетами и коробками; внешняя коробка 61 × 23 × 18 см, вес изделий 3,2 кг.",
+        "fr": "Illustration d’emballage pour 25 casquettes, avec sachets et cartons ; carton extérieur 61 × 23 × 18 cm et poids des produits 3,2 kg.",
+        "es": "Ilustración de embalaje para 25 gorras, con bolsas y cajas; caja exterior de 61 × 23 × 18 cm y peso del producto de 3,2 kg.",
+        "pt": "Ilustração de embalagem para 25 bonés, com sacos e caixas; caixa exterior de 61 × 23 × 18 cm e peso dos produtos de 3,2 kg.",
+        "tr": "25 şapka için poşetleri ve kolileri gösteren ambalaj örneği; dış koli 61 × 23 × 18 cm ve ürün ağırlığı 3,2 kg."
       },
       "caption": {
         "en": "Shown: 25 caps; outer carton 61 × 23 × 18 cm; product weight 3.2 kg.",
-        "ar": "الموضح: 25 قبعة؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم؛ وزن المنتجات 3.2 كجم."
+        "ar": "الموضح: 25 قبعة؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم؛ وزن المنتجات 3.2 كجم.",
+        "zh": "图示：25顶帽子；外箱61 × 23 × 18 cm；产品重量3.2 kg。",
+        "ru": "Показано: 25 шт.; внешняя коробка 61 × 23 × 18 см; вес изделий 3,2 кг.",
+        "fr": "Illustration : 25 casquettes ; carton extérieur 61 × 23 × 18 cm ; poids des produits 3,2 kg.",
+        "es": "Se muestra: 25 gorras; caja exterior de 61 × 23 × 18 cm; peso del producto de 3,2 kg.",
+        "pt": "Exemplo: 25 bonés; caixa exterior de 61 × 23 × 18 cm; peso dos produtos de 3,2 kg.",
+        "tr": "Gösterilen: 25 şapka; dış koli 61 × 23 × 18 cm; ürün ağırlığı 3,2 kg."
       },
       "packingData": {
         "quantity": 25,
@@ -223,7 +391,13 @@
         "productWeightKg": "3.2",
         "weightLabel": {
           "en": "Product weight shown",
-          "ar": "وزن المنتجات المذكور في الصورة"
+          "ar": "وزن المنتجات المذكور في الصورة",
+          "zh": "图示产品重量",
+          "ru": "Указанный вес изделий",
+          "fr": "Poids des produits illustrés",
+          "es": "Peso del producto mostrado",
+          "pt": "Peso dos produtos apresentado",
+          "tr": "Gösterilen ürün ağırlığı"
         }
       },
       "src": "/media/freight-20261014-round8/7_hat_factory_en.webp",
@@ -237,15 +411,33 @@
       "group": "packing",
       "title": {
         "en": "100-cap packing example",
-        "ar": "مثال تعبئة: 100 قبعة"
+        "ar": "مثال تعبئة: 100 قبعة",
+        "zh": "100顶帽子包装示例",
+        "ru": "Пример упаковки: 100 шт.",
+        "fr": "Exemple d’emballage : 100 casquettes",
+        "es": "Ejemplo de embalaje: 100 gorras",
+        "pt": "Exemplo de embalagem: 100 bonés",
+        "tr": "100 şapka için ambalaj örneği"
       },
       "alt": {
         "en": "Packing illustration for 100 caps, showing bagged caps and cartons; outer carton 64 × 45 × 40 cm and product weight 13.1 kg.",
-        "ar": "مخطط تعبئة لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم."
+        "ar": "مخطط تعبئة لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم.",
+        "zh": "100顶帽子的包装示意，展示袋装帽子及纸箱；外箱64 × 45 × 40 cm，产品重量13.1 kg。",
+        "ru": "Схема упаковки кепок (100 шт.) с пакетами и коробками; внешняя коробка 64 × 45 × 40 см, вес изделий 13,1 кг.",
+        "fr": "Illustration d’emballage pour 100 casquettes, avec sachets et cartons ; carton extérieur 64 × 45 × 40 cm et poids des produits 13,1 kg.",
+        "es": "Ilustración de embalaje para 100 gorras, con bolsas y cajas; caja exterior de 64 × 45 × 40 cm y peso del producto de 13,1 kg.",
+        "pt": "Ilustração de embalagem para 100 bonés, com sacos e caixas; caixa exterior de 64 × 45 × 40 cm e peso dos produtos de 13,1 kg.",
+        "tr": "100 şapka için poşetleri ve kolileri gösteren ambalaj örneği; dış koli 64 × 45 × 40 cm ve ürün ağırlığı 13,1 kg."
       },
       "caption": {
         "en": "Shown: 100 caps; outer carton 64 × 45 × 40 cm; product weight 13.1 kg.",
-        "ar": "الموضح: 100 قبعة؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم؛ وزن المنتجات 13.1 كجم."
+        "ar": "الموضح: 100 قبعة؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم؛ وزن المنتجات 13.1 كجم.",
+        "zh": "图示：100顶帽子；外箱64 × 45 × 40 cm；产品重量13.1 kg。",
+        "ru": "Показано: 100 шт.; внешняя коробка 64 × 45 × 40 см; вес изделий 13,1 кг.",
+        "fr": "Illustration : 100 casquettes ; carton extérieur 64 × 45 × 40 cm ; poids des produits 13,1 kg.",
+        "es": "Se muestra: 100 gorras; caja exterior de 64 × 45 × 40 cm; peso del producto de 13,1 kg.",
+        "pt": "Exemplo: 100 bonés; caixa exterior de 64 × 45 × 40 cm; peso dos produtos de 13,1 kg.",
+        "tr": "Gösterilen: 100 şapka; dış koli 64 × 45 × 40 cm; ürün ağırlığı 13,1 kg."
       },
       "packingData": {
         "quantity": 100,
@@ -257,7 +449,13 @@
         "productWeightKg": "13.1",
         "weightLabel": {
           "en": "Product weight shown",
-          "ar": "وزن المنتجات المذكور في الصورة"
+          "ar": "وزن المنتجات المذكور في الصورة",
+          "zh": "图示产品重量",
+          "ru": "Указанный вес изделий",
+          "fr": "Poids des produits illustrés",
+          "es": "Peso del producto mostrado",
+          "pt": "Peso dos produtos apresentado",
+          "tr": "Gösterilen ürün ağırlığı"
         }
       },
       "src": "/media/freight-20261014-round8/8_hat_factory_en.webp",
@@ -271,15 +469,33 @@
       "group": "packing",
       "title": {
         "en": "150-cap packing example",
-        "ar": "مثال تعبئة: 150 قبعة"
+        "ar": "مثال تعبئة: 150 قبعة",
+        "zh": "150顶帽子包装示例",
+        "ru": "Пример упаковки: 150 шт.",
+        "fr": "Exemple d’emballage : 150 casquettes",
+        "es": "Ejemplo de embalaje: 150 gorras",
+        "pt": "Exemplo de embalagem: 150 bonés",
+        "tr": "150 şapka için ambalaj örneği"
       },
       "alt": {
         "en": "Packing illustration for 150 caps, showing bagged caps and cartons; outer carton 60 × 45 × 53 cm and product weight 19.4 kg.",
-        "ar": "مخطط تعبئة لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم."
+        "ar": "مخطط تعبئة لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم.",
+        "zh": "150顶帽子的包装示意，展示袋装帽子及纸箱；外箱60 × 45 × 53 cm，产品重量19.4 kg。",
+        "ru": "Схема упаковки кепок (150 шт.) с пакетами и коробками; внешняя коробка 60 × 45 × 53 см, вес изделий 19,4 кг.",
+        "fr": "Illustration d’emballage pour 150 casquettes, avec sachets et cartons ; carton extérieur 60 × 45 × 53 cm et poids des produits 19,4 kg.",
+        "es": "Ilustración de embalaje para 150 gorras, con bolsas y cajas; caja exterior de 60 × 45 × 53 cm y peso del producto de 19,4 kg.",
+        "pt": "Ilustração de embalagem para 150 bonés, com sacos e caixas; caixa exterior de 60 × 45 × 53 cm e peso dos produtos de 19,4 kg.",
+        "tr": "150 şapka için poşetleri ve kolileri gösteren ambalaj örneği; dış koli 60 × 45 × 53 cm ve ürün ağırlığı 19,4 kg."
       },
       "caption": {
         "en": "Shown: 150 caps; outer carton 60 × 45 × 53 cm; product weight 19.4 kg.",
-        "ar": "الموضح: 150 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم؛ وزن المنتجات 19.4 كجم."
+        "ar": "الموضح: 150 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم؛ وزن المنتجات 19.4 كجم.",
+        "zh": "图示：150顶帽子；外箱60 × 45 × 53 cm；产品重量19.4 kg。",
+        "ru": "Показано: 150 шт.; внешняя коробка 60 × 45 × 53 см; вес изделий 19,4 кг.",
+        "fr": "Illustration : 150 casquettes ; carton extérieur 60 × 45 × 53 cm ; poids des produits 19,4 kg.",
+        "es": "Se muestra: 150 gorras; caja exterior de 60 × 45 × 53 cm; peso del producto de 19,4 kg.",
+        "pt": "Exemplo: 150 bonés; caixa exterior de 60 × 45 × 53 cm; peso dos produtos de 19,4 kg.",
+        "tr": "Gösterilen: 150 şapka; dış koli 60 × 45 × 53 cm; ürün ağırlığı 19,4 kg."
       },
       "packingData": {
         "quantity": 150,
@@ -291,7 +507,13 @@
         "productWeightKg": "19.4",
         "weightLabel": {
           "en": "Product weight shown",
-          "ar": "وزن المنتجات المذكور في الصورة"
+          "ar": "وزن المنتجات المذكور في الصورة",
+          "zh": "图示产品重量",
+          "ru": "Указанный вес изделий",
+          "fr": "Poids des produits illustrés",
+          "es": "Peso del producto mostrado",
+          "pt": "Peso dos produtos apresentado",
+          "tr": "Gösterilen ürün ağırlığı"
         }
       },
       "src": "/media/freight-20261014-round8/9_hat_factory_en.webp",
@@ -305,15 +527,33 @@
       "group": "packing",
       "title": {
         "en": "200-cap packing example",
-        "ar": "مثال تعبئة: 200 قبعة"
+        "ar": "مثال تعبئة: 200 قبعة",
+        "zh": "200顶帽子包装示例",
+        "ru": "Пример упаковки: 200 шт.",
+        "fr": "Exemple d’emballage : 200 casquettes",
+        "es": "Ejemplo de embalaje: 200 gorras",
+        "pt": "Exemplo de embalagem: 200 bonés",
+        "tr": "200 şapka için ambalaj örneği"
       },
       "alt": {
         "en": "Packing illustration for 200 caps, showing bagged caps and cartons; outer carton 60 × 45 × 80 cm and product weight 24.8 kg.",
-        "ar": "مخطط تعبئة لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم."
+        "ar": "مخطط تعبئة لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم.",
+        "zh": "200顶帽子的包装示意，展示袋装帽子及纸箱；外箱60 × 45 × 80 cm，产品重量24.8 kg。",
+        "ru": "Схема упаковки кепок (200 шт.) с пакетами и коробками; внешняя коробка 60 × 45 × 80 см, вес изделий 24,8 кг.",
+        "fr": "Illustration d’emballage pour 200 casquettes, avec sachets et cartons ; carton extérieur 60 × 45 × 80 cm et poids des produits 24,8 kg.",
+        "es": "Ilustración de embalaje para 200 gorras, con bolsas y cajas; caja exterior de 60 × 45 × 80 cm y peso del producto de 24,8 kg.",
+        "pt": "Ilustração de embalagem para 200 bonés, com sacos e caixas; caixa exterior de 60 × 45 × 80 cm e peso dos produtos de 24,8 kg.",
+        "tr": "200 şapka için poşetleri ve kolileri gösteren ambalaj örneği; dış koli 60 × 45 × 80 cm ve ürün ağırlığı 24,8 kg."
       },
       "caption": {
         "en": "Shown: 200 caps; outer carton 60 × 45 × 80 cm; product weight 24.8 kg.",
-        "ar": "الموضح: 200 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم؛ وزن المنتجات 24.8 كجم."
+        "ar": "الموضح: 200 قبعة؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم؛ وزن المنتجات 24.8 كجم.",
+        "zh": "图示：200顶帽子；外箱60 × 45 × 80 cm；产品重量24.8 kg。",
+        "ru": "Показано: 200 шт.; внешняя коробка 60 × 45 × 80 см; вес изделий 24,8 кг.",
+        "fr": "Illustration : 200 casquettes ; carton extérieur 60 × 45 × 80 cm ; poids des produits 24,8 kg.",
+        "es": "Se muestra: 200 gorras; caja exterior de 60 × 45 × 80 cm; peso del producto de 24,8 kg.",
+        "pt": "Exemplo: 200 bonés; caixa exterior de 60 × 45 × 80 cm; peso dos produtos de 24,8 kg.",
+        "tr": "Gösterilen: 200 şapka; dış koli 60 × 45 × 80 cm; ürün ağırlığı 24,8 kg."
       },
       "packingData": {
         "quantity": 200,
@@ -325,7 +565,13 @@
         "productWeightKg": "24.8",
         "weightLabel": {
           "en": "Product weight shown",
-          "ar": "وزن المنتجات المذكور في الصورة"
+          "ar": "وزن المنتجات المذكور في الصورة",
+          "zh": "图示产品重量",
+          "ru": "Указанный вес изделий",
+          "fr": "Poids des produits illustrés",
+          "es": "Peso del producto mostrado",
+          "pt": "Peso dos produtos apresentado",
+          "tr": "Gösterilen ürün ağırlığı"
         }
       },
       "src": "/media/freight-20261014-round8/10_hat_factory_en.webp",
@@ -339,15 +585,33 @@
       "group": "style",
       "title": {
         "en": "Cap & hat shapes",
-        "ar": "أشكال القبعات"
+        "ar": "أشكال القبعات",
+        "zh": "帽型参考",
+        "ru": "Формы головных уборов",
+        "fr": "Formes de casquettes et chapeaux",
+        "es": "Formas de gorras y sombreros",
+        "pt": "Formatos de bonés e chapéus",
+        "tr": "Şapka biçimleri"
       },
       "alt": {
         "en": "Illustrated guide comparing hat shapes, including baseball caps, a bucket hat and a visor.",
-        "ar": "رسم توضيحي يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي."
+        "ar": "رسم توضيحي يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي.",
+        "zh": "帽型对比示意，包括棒球帽、渔夫帽和空顶帽。",
+        "ru": "Иллюстрированное сравнение форм головных уборов, включая бейсболки, панаму и открытый козырёк.",
+        "fr": "Guide illustré comparant des formes de couvre-chefs, notamment des casquettes de baseball, un bob et une visière.",
+        "es": "Guía ilustrada que compara formas de sombreros y gorras, incluidas gorras de béisbol, un sombrero de pescador y una visera.",
+        "pt": "Guia ilustrado que compara formatos de chapéus e bonés, incluindo bonés de basebol, um chapéu de pescador e uma viseira.",
+        "tr": "Beyzbol şapkaları, balıkçı şapkası ve üstü açık siperlik dahil şapka biçimlerini karşılaştıran görsel rehber."
       },
       "caption": {
         "en": "Choose a reference shape and confirm the crown and panel details with your supplier.",
-        "ar": "اختر شكلاً مرجعياً وأكد تفاصيل الجزء العلوي والألواح مع المورد."
+        "ar": "اختر شكلاً مرجعياً وأكد تفاصيل الجزء العلوي والألواح مع المورد.",
+        "zh": "选定参考帽型，与供应商确认帽冠及拼片细节。",
+        "ru": "Выберите образец формы и уточните у поставщика детали тульи и клиньев.",
+        "fr": "Choisissez une forme de référence et confirmez les détails de la calotte et des panneaux avec le fournisseur.",
+        "es": "Elija una forma de referencia y confirme con el proveedor los detalles de la copa y los paneles.",
+        "pt": "Escolha um formato de referência e confirme os detalhes da copa e dos painéis com o fornecedor.",
+        "tr": "Referans biçimi seçin; tepe ve panel ayrıntılarını tedarikçinizle teyit edin."
       },
       "src": "/media/freight-20261014-round8/11_hat_factory_en.webp",
       "thumbnail": "/media/freight-20261014-round8/11_hat_factory_en-thumb.webp",
@@ -360,15 +624,33 @@
       "group": "style",
       "title": {
         "en": "Brim details",
-        "ar": "تفاصيل حافة القبعة"
+        "ar": "تفاصيل حافة القبعة",
+        "zh": "帽檐细节",
+        "ru": "Детали козырька",
+        "fr": "Détails de visière",
+        "es": "Detalles de la visera",
+        "pt": "Detalhes da pala",
+        "tr": "Siperlik ayrıntıları"
       },
       "alt": {
         "en": "Grid of examples illustrating short, long, flat and decorated cap brims.",
-        "ar": "شبكة صور توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة."
+        "ar": "شبكة صور توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة.",
+        "zh": "短帽檐、长帽檐、平帽檐及装饰帽檐的网格示例图。",
+        "ru": "Сетка примеров коротких, длинных, плоских и декорированных козырьков.",
+        "fr": "Grille d’exemples de visières courtes, longues, plates et décorées.",
+        "es": "Cuadrícula de ejemplos de viseras cortas, largas, planas y decoradas.",
+        "pt": "Grelha de exemplos de palas curtas, compridas, planas e decoradas.",
+        "tr": "Kısa, uzun, düz ve süslemeli siperlikleri gösteren örnekler tablosu."
       },
       "caption": {
         "en": "Confirm brim length, profile and edge details against the chosen reference.",
-        "ar": "أكد طول الحافة وشكلها وتفاصيل أطرافها وفق النموذج المرجعي المختار."
+        "ar": "أكد طول الحافة وشكلها وتفاصيل أطرافها وفق النموذج المرجعي المختار.",
+        "zh": "按选定参考款式确认帽檐长度、形状及边缘细节。",
+        "ru": "Сверьте длину, профиль и обработку края козырька с выбранным образцом.",
+        "fr": "Confirmez la longueur, le profil et les finitions du bord selon la référence choisie.",
+        "es": "Confirme la longitud, el perfil y los detalles del borde según la referencia elegida.",
+        "pt": "Confirme o comprimento, o perfil e os detalhes do rebordo segundo a referência escolhida.",
+        "tr": "Siperlik uzunluğunu, profilini ve kenar ayrıntılarını seçilen referansa göre teyit edin."
       },
       "src": "/media/freight-20261014-round8/12_hat_factory_en.webp",
       "thumbnail": "/media/freight-20261014-round8/12_hat_factory_en-thumb.webp",

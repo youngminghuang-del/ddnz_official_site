@@ -1,0 +1,42 @@
+{
+  "baseline": "b5ab8fbb2cc4f5a689e1a0267063a27db5b89acc",
+  "checks": [
+    {
+      "name": "gulfStories: 12 complete objects, matching structure, no English fallback/placeholders/literal newlines",
+      "status": "pass"
+    },
+    {
+      "name": "gulfJourneys: 12 complete objects, matching structure, no English fallback/placeholders/literal newlines",
+      "status": "pass"
+    },
+    {
+      "name": "48 FAQs retain bold question + real newline + answer; 36 internal links localized; external URLs unchanged",
+      "status": "pass"
+    },
+    {
+      "name": "qatarCargoGallery: complete six-locale text maps; ids match; no image/numeric mutations; packing values match originals",
+      "status": "pass"
+    },
+    {
+      "name": "omanCargoGallery: complete six-locale text maps; ids match; no image/numeric mutations; packing values match originals",
+      "status": "pass"
+    },
+    {
+      "name": "Checklist: six locales, four distinct responsibilities and scope/owner note",
+      "status": "pass"
+    },
+    {
+      "name": "All 18 unique localized reading-link routes exist in App.tsx (service prefix expansion and explicit region paths)",
+      "status": "pass"
+    }
+  ],
+  "nativeReview": false,
+  "previewReview": "pending",
+  "files": {
+    "omanCargoGallery.patch.json": "48f531e724e961e52052df4693d9b34614dad597010cdf476ff03d2f4c6cf160",
+    "gulfJourneys.patch.json": "89d67d9f5fda10343605224ebce7a638a3b52e408cda5c81bde2ec284895c7c7",
+    "gulfStories.patch.json": "81417297a419cc0a8e62b1ec3ad19bb53304725aac35ba1521330d9d2cd18e4f",
+    "gulfDeliveryChecklist.json": "25c2f56d95952fb690b3db99d4c39ddef21e258bbac682242be9b0d8afc09907",
+    "qatarCargoGallery.patch.json": "296614215d5801ce716149eb9ba88f479ecc24e17026efd1ae48d19393091037"
+  }
+}

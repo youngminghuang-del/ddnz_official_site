@@ -1,0 +1,130 @@
+[
+  {
+    "locale": "en",
+    "country": "qatar",
+    "language": "en",
+    "text": "Receiving record from China.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "en",
+    "country": "oman",
+    "language": "en",
+    "text": "Loading record from China.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "zh",
+    "country": "qatar",
+    "language": "zh-CN",
+    "text": "中国收货记录。",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "zh",
+    "country": "oman",
+    "language": "zh-CN",
+    "text": "中国装货记录。",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "ru",
+    "country": "qatar",
+    "language": "ru",
+    "text": "Запись приёмки груза в Китае.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "ru",
+    "country": "oman",
+    "language": "ru",
+    "text": "Запись погрузки в Китае.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "fr",
+    "country": "qatar",
+    "language": "fr",
+    "text": "Images de réception en Chine.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "fr",
+    "country": "oman",
+    "language": "fr",
+    "text": "Images de chargement en Chine.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "es",
+    "country": "qatar",
+    "language": "es",
+    "text": "Registro de recepción en China.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "es",
+    "country": "oman",
+    "language": "es",
+    "text": "Registro de carga en China.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "ar",
+    "country": "qatar",
+    "language": "ar",
+    "text": "سجل استلام من الصين.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "ar",
+    "country": "oman",
+    "language": "ar",
+    "text": "سجل تحميل من الصين.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "pt",
+    "country": "qatar",
+    "language": "pt",
+    "text": "Registo de receção na China.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "pt",
+    "country": "oman",
+    "language": "pt",
+    "text": "Registo de carregamento na China.",
+    "start": 0,
+    "end": 10
+  },
+  {
+    "locale": "tr",
+    "country": "qatar",
+    "language": "tr",
+    "text": "Çin’de mal kabul kaydı.",
+    "start": 0,
+    "end": 4
+  },
+  {
+    "locale": "tr",
+    "country": "oman",
+    "language": "tr",
+    "text": "Çin’de yükleme kaydı.",
+    "start": 0,
+    "end": 10
+  }
+]

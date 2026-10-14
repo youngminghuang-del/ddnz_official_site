@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "en",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Submit RFQ"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "ru",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Отправить запрос (RFQ)"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "fr",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Envoyer une demande (RFQ)"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "zh",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "提交正式 RFQ"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "es",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Obtenga una cotización de flete"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "ar",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "احصل على عرض سعر للشحن"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "pt",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Conte-nos o que você precisa comprar ou transportar"
+    },
+    {
+      "key": "get_a_quote.estimatorTitle",
+      "locale": "tr",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Satın almak istediğiniz ürünü anlatın"
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "en",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd., coordinates supplier checks, inspections and export support alongside the Heaven Born freight team."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "ru",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Закупаете на Alibaba? Мы предлагаем комплексные решения по логистике и инспекции."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "fr",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Vous approvisionnez-vous sur Alibaba ? Nous offrons des solutions logistiques et d'inspection intégrées."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "zh",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "从阿里巴巴采购？我们提供一站式物流与验货解决方案。"
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "es",
+      "missing": false,
+      "equalsEnglish": true,
+      "localOverride": true,
+      "value": "Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd., coordinates supplier checks, inspections and export support alongside the Heaven Born freight team."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "ar",
+      "missing": false,
+      "equalsEnglish": true,
+      "localOverride": true,
+      "value": "Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd., coordinates supplier checks, inspections and export support alongside the Heaven Born freight team."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "pt",
+      "missing": false,
+      "equalsEnglish": false,
+      "localOverride": false,
+      "value": "Comprando no Alibaba ou no 1688? A DDNZ Global coordena a verificação de fornecedores, inspeções e preparação para exportação em conjunto com a equipe de frete da Heaven Born."
+    },
+    {
+      "key": "hero.alibaba_cta",
+      "locale": "tr",
+      "missing": false,
+      "equalsEnglish": true,
+      "localOverride": true,
+      "value": "Sourcing from Alibaba or 1688? Our trade-support brand, DDNZ Global Trade Co., Ltd., coordinates supplier checks, inspections and export support alongside the Heaven Born freight team."
+    }
+  ],
+  "actionable": [],
+  "displayDictionaryLocales": 8,
+  "displayDictionaryFields": [
+    "sea",
+    "air",
+    "land",
+    "warehouse",
+    "industry",
+    "furniture",
+    "energy",
+    "project",
+    "other",
+    "kitchen",
+    "outdoor",
+    "review",
+    "scope"
+  ]
+}

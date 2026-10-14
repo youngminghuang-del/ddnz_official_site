@@ -335,3 +335,14 @@
  .qatar-packing-section .gulf-distinction p { font-size:20px; overflow-wrap:anywhere; }
  .qatar-packing-section .gulf-distinction span { font-size:14px; }
 }
+
+/* Keep six Oman controls touchable inside the narrow tablet column. */
+@media(min-width:641px) and (max-width:820px) {
+ .oman-gallery-thumbnails { grid-template-columns:repeat(3,minmax(0,1fr)); }
+}
+@media(max-width:640px) {
+ .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction { display:block; }
+ .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction p { overflow-wrap:normal; }
+ .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction p:nth-child(4) { margin-top:16px; }
+ .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction span { display:block; }
+}

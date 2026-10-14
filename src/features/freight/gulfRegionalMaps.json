@@ -30,7 +30,13 @@
         "y": 460,
         "name": {
           "en": "Saudi Arabia",
-          "ar": "السعودية"
+          "ar": "السعودية",
+          "zh": "沙特阿拉伯",
+          "ru": "Саудовская Аравия",
+          "fr": "Arabie saoudite",
+          "es": "Arabia Saudí",
+          "pt": "Arábia Saudita",
+          "tr": "Suudi Arabistan"
         }
       },
       {
@@ -38,7 +44,13 @@
         "y": 530,
         "name": {
           "en": "UAE",
-          "ar": "الإمارات"
+          "ar": "الإمارات",
+          "zh": "阿联酋",
+          "ru": "ОАЭ",
+          "fr": "EAU",
+          "es": "EAU",
+          "pt": "EAU",
+          "tr": "BAE"
         }
       },
       {
@@ -46,7 +58,13 @@
         "y": 85,
         "name": {
           "en": "Iran",
-          "ar": "إيران"
+          "ar": "إيران",
+          "zh": "伊朗",
+          "ru": "Иран",
+          "fr": "Iran",
+          "es": "Irán",
+          "pt": "Irão",
+          "tr": "İran"
         }
       },
       {
@@ -54,7 +72,13 @@
         "y": 215,
         "name": {
           "en": "Bahrain",
-          "ar": "البحرين"
+          "ar": "البحرين",
+          "zh": "巴林",
+          "ru": "Бахрейн",
+          "fr": "Bahreïn",
+          "es": "Baréin",
+          "pt": "Barém",
+          "tr": "Bahreyn"
         }
       },
       {
@@ -62,7 +86,13 @@
         "y": 285,
         "name": {
           "en": "Qatar",
-          "ar": "قطر"
+          "ar": "قطر",
+          "zh": "卡塔尔",
+          "ru": "Катар",
+          "fr": "Qatar",
+          "es": "Catar",
+          "pt": "Catar",
+          "tr": "Katar"
         }
       },
       {
@@ -70,7 +100,13 @@
         "y": 210,
         "name": {
           "en": "Gulf",
-          "ar": "الخليج"
+          "ar": "الخليج",
+          "zh": "海湾",
+          "ru": "Залив",
+          "fr": "Golfe",
+          "es": "Golfo",
+          "pt": "Golfo",
+          "tr": "Körfez"
         }
       }
     ]
@@ -106,7 +142,13 @@
         "y": 295,
         "name": {
           "en": "Saudi Arabia",
-          "ar": "السعودية"
+          "ar": "السعودية",
+          "zh": "沙特阿拉伯",
+          "ru": "Саудовская Аравия",
+          "fr": "Arabie saoudite",
+          "es": "Arabia Saudí",
+          "pt": "Arábia Saudita",
+          "tr": "Suudi Arabistan"
         }
       },
       {
@@ -114,7 +156,13 @@
         "y": 170,
         "name": {
           "en": "UAE",
-          "ar": "الإمارات"
+          "ar": "الإمارات",
+          "zh": "阿联酋",
+          "ru": "ОАЭ",
+          "fr": "EAU",
+          "es": "EAU",
+          "pt": "EAU",
+          "tr": "BAE"
         }
       },
       {
@@ -122,7 +170,13 @@
         "y": 30,
         "name": {
           "en": "Iran",
-          "ar": "إيران"
+          "ar": "إيران",
+          "zh": "伊朗",
+          "ru": "Иран",
+          "fr": "Iran",
+          "es": "Irán",
+          "pt": "Irão",
+          "tr": "İran"
         }
       },
       {
@@ -130,7 +184,13 @@
         "y": 490,
         "name": {
           "en": "Yemen",
-          "ar": "اليمن"
+          "ar": "اليمن",
+          "zh": "也门",
+          "ru": "Йемен",
+          "fr": "Yémen",
+          "es": "Yemen",
+          "pt": "Iémen",
+          "tr": "Yemen"
         }
       },
       {
@@ -138,7 +198,13 @@
         "y": 345,
         "name": {
           "en": "Oman",
-          "ar": "عُمان"
+          "ar": "عُمان",
+          "zh": "阿曼",
+          "ru": "Оман",
+          "fr": "Oman",
+          "es": "Omán",
+          "pt": "Omã",
+          "tr": "Umman"
         }
       },
       {
@@ -146,7 +212,13 @@
         "y": 170,
         "name": {
           "en": "Sea of Oman",
-          "ar": "بحر عُمان"
+          "ar": "بحر عُمان",
+          "zh": "阿曼湾",
+          "ru": "Оманский залив",
+          "fr": "Golfe d’Oman",
+          "es": "Golfo de Omán",
+          "pt": "Golfo de Omã",
+          "tr": "Umman Körfezi"
         }
       },
       {
@@ -154,7 +226,13 @@
         "y": 465,
         "name": {
           "en": "Arabian Sea",
-          "ar": "بحر العرب"
+          "ar": "بحر العرب",
+          "zh": "阿拉伯海",
+          "ru": "Аравийское море",
+          "fr": "Mer d’Arabie",
+          "es": "Mar Arábigo",
+          "pt": "Mar Arábico",
+          "tr": "Arap Denizi"
         }
       }
     ]

@@ -18,6 +18,7 @@ import {
   MapPin
 } from 'lucide-react';
 import { cargoMeasurement, isValidCargoMeasurement } from '../lib/quoteCargo';
+import { quoteSummaryCopy } from '../features/freight/quoteSummaryCopy';
 import { quoteCargoCopy } from '../features/freight/quoteCargoCopy';
 import { useForm, ValidationError } from '@formspree/react';
 import { useLocation } from 'react-router-dom';
@@ -732,7 +733,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
           </p>
           <div className="flex items-center justify-center gap-2 text-[var(--hb-amber)] font-bold text-xs bg-amber-50/70 w-fit mx-auto px-4 py-2 rounded-full border border-amber-100/60 shadow-sm">
             <Info className="w-3.5 h-3.5 shrink-0" />
-            {{es:'¿Compra en Alibaba o 1688? DDNZ Global Trade Co., Ltd. coordina la verificación de proveedores, inspecciones y apoyo a la exportación con el equipo de transporte Heaven Born.',ar:'هل تشتري من Alibaba أو 1688؟ تنسق DDNZ Global Trade Co., Ltd. التحقق من الموردين والفحص ودعم التصدير مع فريق الشحن Heaven Born.'}[language] || t('hero.alibaba_cta')}
+            {{tr:'Alibaba veya 1688’den tedarik mi yapıyorsunuz? DDNZ Global Trade Co., Ltd., Heaven Born taşıma ekibiyle birlikte tedarikçi kontrollerini, denetimleri ve ihracat desteğini koordine eder.',es:'¿Compra en Alibaba o 1688? DDNZ Global Trade Co., Ltd. coordina la verificación de proveedores, inspecciones y apoyo a la exportación con el equipo de transporte Heaven Born.',ar:'هل تشتري من Alibaba أو 1688؟ تنسق DDNZ Global Trade Co., Ltd. التحقق من الموردين والفحص ودعم التصدير مع فريق الشحن Heaven Born.'}[language] || t('hero.alibaba_cta')}
           </div>
         </div>
 
@@ -816,25 +817,25 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                             {[
                               {
                                 id: 'Sea',
-                                label: language === 'ar' ? 'الشحن البحري' : t('get_a_quote.modeSea') || 'Sea Freight',
+                                label: quoteSummaryCopy[language].sea,
                                 desc: ft('seaDesc'),
                                 icon: <Ship className="w-6 h-6" />
                               },
                               {
                                 id: 'Air',
-                                label: language === 'ar' ? 'الشحن الجوي' : t('get_a_quote.modeAir') || 'Air Freight',
+                                label: quoteSummaryCopy[language].air,
                                 desc: ft('airDesc'),
                                 icon: <Plane className="w-6 h-6" />
                               },
                               {
                                 id: 'Land',
-                                label: language === 'ar' ? 'النقل البري' : t('get_a_quote.modeLand') || 'Land Freight',
+                                label: quoteSummaryCopy[language].land,
                                 desc: hideLandRecommendation ? ft('step1Desc') : ft('landDesc'),
                                 icon: <Truck className="w-6 h-6" />
                               },
                               {
                                 id: 'Warehouse',
-                                label: language === 'ar' ? 'خدمات المستودعات' : t('nav.services_warehouse') || 'Warehouse & Fulfillment',
+                                label: quoteSummaryCopy[language].warehouse,
                                 desc: ft('wareDesc'),
                                 icon: <Package className="w-6 h-6" />
                               }
@@ -1059,7 +1060,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               </span>
                               <div className="flex flex-wrap items-center gap-2 text-slate-700 text-xs font-extrabold">
                                 <span className="bg-white border border-sky-100 px-2.5 py-1 rounded-lg text-[#0b4f8a] flex items-center gap-1 shadow-sm">
-                                  {selectedService === 'Sea' ? <Ship className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Air' ? <Plane className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Land' ? <Truck className="w-3.5 h-3.5" aria-hidden="true" /> : <Package className="w-3.5 h-3.5" aria-hidden="true" />} {language === 'ar' ? ({ Sea: 'الشحن البحري', Air: 'الشحن الجوي', Land: 'النقل البري', Warehouse: 'خدمات المستودعات' }[selectedService]) : selectedService}
+                                  {selectedService === 'Sea' ? <Ship className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Air' ? <Plane className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Land' ? <Truck className="w-3.5 h-3.5" aria-hidden="true" /> : <Package className="w-3.5 h-3.5" aria-hidden="true" />} {language === 'en' ? selectedService : ({ Sea: quoteSummaryCopy[language].sea, Air: quoteSummaryCopy[language].air, Land: quoteSummaryCopy[language].land, Warehouse: quoteSummaryCopy[language].warehouse }[selectedService])}
                                 </span>
                                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
@@ -1067,7 +1068,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                                 </span>
                                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
-                                  <Globe className="w-3.5 h-3.5 text-sky-700" aria-hidden="true" /> {destination || 'Global Dest.'}
+                                  <Globe className="w-3.5 h-3.5 text-sky-700" aria-hidden="true" /> {language === 'zh' && destination === 'Qatar' ? '卡塔尔' : language === 'zh' && destination === 'Oman' ? '阿曼' : destination || 'Global Dest.'}
                                 </span>
                                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm text-amber-700 min-w-0 break-words">
@@ -1079,10 +1080,10 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                             {/* Fast route speed indicator tag */}
                             <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
-                                <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> {language === 'ar' ? 'مراجعة المسار' : 'Route review'}
+                                <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> {quoteSummaryCopy[language].review}
                               </span>
                               <span className="font-bold text-slate-600">
-                                {language === 'ar' ? 'تُؤكّد تفاصيل العرض وفق نطاق الخدمة' : 'Quote details confirmed by scope'}
+                                {quoteSummaryCopy[language].scope}
                               </span>
                             </div>
                           </div>
@@ -1189,7 +1190,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               </summary>
                               <div className="grid grid-cols-1 gap-4 border-t border-slate-200 p-4">
                                 <div>
-                                  <label htmlFor="quote-industry" className="mb-2 block text-sm font-semibold text-slate-700">{t('get_a_quote.industry') || 'Industry category'}</label>
+                                  <label htmlFor="quote-industry" className="mb-2 block text-sm font-semibold text-slate-700">{quoteSummaryCopy[language].industry}</label>
                                   <select
                                     id="quote-industry"
                                     name="industry"
@@ -1197,12 +1198,12 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                                     onChange={(e) => setProduct(e.target.value)}
                                     className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none bg-white font-bold text-base transition-all"
                                   >
-                                    <option value="Commercial Kitchen Equipment">Commercial Kitchen Equipment</option>
-                                    <option value="Outdoor Products">Outdoor Products</option>
-                                    <option value="Commercial Furniture">{t('get_a_quote.indFurn') || 'Commercial Furniture'}</option>
-                                    <option value="New Energy / ESS">{t('get_a_quote.indNev') || 'New Energy / ESS'}</option>
-                                    <option value="Project Cargo / Heavy Lift">{t('get_a_quote.indProject') || 'Project Cargo / Heavy Lift'}</option>
-                                    <option value="Other">{t('get_a_quote.indOther') || 'Other / General'}</option>
+                                    <option value="Commercial Kitchen Equipment">{quoteSummaryCopy[language].kitchen}</option>
+                                    <option value="Outdoor Products">{quoteSummaryCopy[language].outdoor}</option>
+                                    <option value="Commercial Furniture">{quoteSummaryCopy[language].furniture}</option>
+                                    <option value="New Energy / ESS">{quoteSummaryCopy[language].energy}</option>
+                                    <option value="Project Cargo / Heavy Lift">{quoteSummaryCopy[language].project}</option>
+                                    <option value="Other">{quoteSummaryCopy[language].other}</option>
                                   </select>
                                 </div>
 

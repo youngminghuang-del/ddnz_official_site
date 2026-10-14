@@ -1,0 +1,137 @@
+{
+  "pages": [
+    {
+      "locale": "en",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "en",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "zh",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "zh",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "ru",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "ru",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "fr",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "fr",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "es",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "es",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "ar",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "ar",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "pt",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "pt",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "tr",
+      "country": "qatar",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    },
+    {
+      "locale": "tr",
+      "country": "oman",
+      "story": true,
+      "canonical": true,
+      "alternates": 9,
+      "tracks": 8
+    }
+  ],
+  "oldMediaUnchanged": 67,
+  "oldLocaleAndGeographyPreserved": true,
+  "enArMainIdenticalExceptTracks": true,
+  "cmsUnchanged": true,
+  "sitemap": 733
+}
