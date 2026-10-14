@@ -1,0 +1,74 @@
+[
+  {
+    "path": "public/media/freight-20261014-round6/5_billiard_factory.jpg",
+    "bytes": 439766,
+    "sha256": "9448e0f6bf76bd71b86b41d1aa98dc467b8a297bdd74b55b600ece98e1fe8ac3",
+    "transformation": "original bytes unchanged"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-5_billiard_factory.jpg",
+    "bytes": 9485,
+    "sha256": "50f96ecfcab8d3466828a8aa291a0b06dc9402dbdbc6578bf2ab6cb750b72990",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/4_billiard_factory.jpg",
+    "bytes": 508196,
+    "sha256": "408d17bcfb5673df13eec9f0987d3b2298a40c73a57f4fc85284845cf54f6242",
+    "transformation": "original bytes unchanged"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-1_billiard_factory.jpg",
+    "bytes": 7346,
+    "sha256": "d86d8552d199cbdf99893cfc31f58969df49c2102ceeeb4f06c437f2a6e76488",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/1_billiard_factory.jpg",
+    "bytes": 323180,
+    "sha256": "992a9b51338b76a30cdf5ffb9ed8199db69e616a534eea0861645167a298d61b",
+    "transformation": "original bytes unchanged"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-4_billiard_factory.jpg",
+    "bytes": 11291,
+    "sha256": "8cc5f1ae5a26f0c9dc1b84a0e8bd1ef9769cef46746ee0ea99bcfc67d7e69785",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/2_billiard_factory.jpg",
+    "bytes": 417165,
+    "sha256": "f2f913f1e89fcbba2ee88af23d18cc2f0246fef9a6ae6619f471766f93c143b1",
+    "transformation": "original bytes unchanged"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-2_billiard_factory.jpg",
+    "bytes": 8174,
+    "sha256": "faff576e782f9826584fdef629121ab3676a069b4d3661156bc65169b10f99ed",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-6_billiard_factory.jpg",
+    "bytes": 10097,
+    "sha256": "b78673923bfc2e1309b1a3fabe4f9e307b744de9ea8f07bee57ba9462654ed03",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/3_billiard_factory.jpg",
+    "bytes": 685691,
+    "sha256": "54c09cfb8abcb38f261eab73d0d4c8cea5a1cab651bd49a314c9e980bb006218",
+    "transformation": "original bytes unchanged"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/thumb-3_billiard_factory.jpg",
+    "bytes": 11615,
+    "sha256": "d7186c0e90924b7f49fb6cea1c1fc6a0c1f7cb5a0f43a8ead8544c34b5d01b51",
+    "transformation": "sips max dimension 160px thumbnail only"
+  },
+  {
+    "path": "public/media/freight-20261014-round6/6_billiard_factory.jpg",
+    "bytes": 516382,
+    "sha256": "9d37529b058f95de4e6866aff423516c1905e57aeeb60d1a271779933dfdea97",
+    "transformation": "original bytes unchanged"
+  }
+]

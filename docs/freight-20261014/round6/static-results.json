@@ -1,0 +1,28 @@
+{
+  "pages": [
+    {
+      "locale": "en",
+      "galleryButtons": 6,
+      "noRebul": true,
+      "qatarMainIdentical": true
+    },
+    {
+      "locale": "ar",
+      "galleryButtons": 6,
+      "noRebul": true,
+      "qatarMainIdentical": true
+    }
+  ],
+  "originalPhotoHashes": 6,
+  "unchangedFiles": [
+    "src/components/GetAQuote.tsx",
+    "src/features/freight/GulfDestinationMap.tsx",
+    "src/features/freight/GulfChapters.tsx",
+    "src/features/freight/GulfCargoJourney.tsx",
+    "src/features/freight/GulfCargoReferences.tsx",
+    "src/features/freight/gulfStories.json",
+    "src/features/freight/gulfRegionalMaps.json",
+    "src/data/notionBlogData.json"
+  ],
+  "sitemap": 733
+}

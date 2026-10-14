@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import GetAQuote from '../../components/GetAQuote';
 import WhatsAppFloat from '../../components/WhatsAppFloat';
+import OmanCargoGallery from './OmanCargoGallery';
 import GulfCargoReferences from './GulfCargoReferences';
 import cargoReferences from './gulfCargoReferences.json';
 import GulfDeliveryChecklist from './GulfDeliveryChecklist';
@@ -85,14 +86,14 @@ export default function GulfFreightPage() {
         </header>
         <GulfChapters country={country} locale={locale} />
         {country === 'qatar' ? <>
-          {section(0, <GulfCargoReferences images={cargoReferences[country]} country={country} locale={locale} />, 'gulf-cargo-intro')}
+          {section(0, <GulfCargoReferences images={cargoReferences.qatar} country={country} locale={locale} />, 'gulf-cargo-intro')}
           {section(1, <Media country={country} locale={locale} />, 'gulf-media-section')}
           {section(2, <aside className="gulf-distinction"><p>{ar ? 'التجميع' : 'Consolidation'}</p><span>{ar ? 'تنظيم طرود الموردين' : 'Organise supplier packages'}</span><hr /><p dir="ltr">LCL</p><span>{ar ? 'مشاركة مساحة الحاوية' : 'Share container space'}</span></aside>)}
           <GulfCargoJourney data={journeys[country][locale]} locale={locale} country={country} />
           {section(3, <GulfDestinationMap map={map} locale={locale} />, 'gulf-destination gulf-map-section')}
           {section(4, undefined, 'gulf-scope')}
         </> : <>
-          {section(0, <GulfCargoReferences images={cargoReferences[country]} country={country} locale={locale} />, 'gulf-cargo-intro')}
+          {section(0, <OmanCargoGallery key={locale} locale={locale} />, 'gulf-cargo-intro')}
           {section(1, <Media country={country} locale={locale} />, 'gulf-media-section')}
           {section(4, <GulfDeliveryChecklist locale={locale} />, 'gulf-handover')}
           <GulfCargoJourney data={journeys[country][locale]} locale={locale} country={country} />
