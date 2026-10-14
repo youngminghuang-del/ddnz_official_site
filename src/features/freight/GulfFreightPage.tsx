@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import GetAQuote from '../../components/GetAQuote';
-import WhatsAppFloat from '../../components/WhatsAppFloat';
 import OmanCargoGallery from './OmanCargoGallery';
 import QatarCargoGallery from './QatarCargoGallery';
 import GulfDeliveryChecklist from './GulfDeliveryChecklist';
@@ -109,6 +108,6 @@ export default function GulfFreightPage() {
       </div>
       <div className="gulf-form"><GetAQuote key={`${country}-${locale}`} presetDestination={destination} hideLandRecommendation /></div>
       <div className="gulf-wrap gulf-reading">{sections[6].blocks.slice(2).map((b,i)=><Fragment key={i}>{b.text && <p><Inline text={b.text} /></p>}</Fragment>)}</div>
-    </main><Footer /><WhatsAppFloat />
+    </main><Footer />
   </div>;
 }

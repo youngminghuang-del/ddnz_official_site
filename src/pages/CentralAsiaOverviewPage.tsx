@@ -2,7 +2,6 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import CentralAsiaOverviewContent, { centralAsiaMetadata } from '../features/freight/CentralAsiaOverviewContent';
 import { freightPrefix } from '../features/freight/regions';
@@ -22,5 +21,5 @@ export default function CentralAsiaOverviewPage() {
     return <Navigate replace to={`${countryPrefix}/shipping-from-china-to-${requestedCountry}/${params.size ? `?${params}` : ''}`} />;
   }
   const meta = centralAsiaMetadata(language);
-  return <div className="ddnz-home freight-editorial"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor /><CentralAsiaOverviewContent locale={language} /><Footer /><WhatsAppFloat /></div>;
+  return <div className="ddnz-home freight-editorial"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor /><CentralAsiaOverviewContent locale={language} /><Footer /></div>;
 }

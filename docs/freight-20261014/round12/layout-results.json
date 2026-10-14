@@ -1,0 +1,127 @@
+{
+  "results": [
+    {
+      "route": "/zh-cn/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/products/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/sourcing/commercial-kitchen-equipment-from-china/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/portable-power/selection-guide/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/shipping-from-china-to-qatar/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/shipping-from-china-to-middle-east/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/get-a-quote/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/about/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/services/sea-freight/",
+      "width": 390,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/products/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/sourcing/commercial-kitchen-equipment-from-china/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/portable-power/selection-guide/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/shipping-from-china-to-qatar/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/shipping-from-china-to-middle-east/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/zh-cn/get-a-quote/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/about/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/services/sea-freight/",
+      "width": 1082,
+      "unique": true,
+      "passed": true
+    },
+    {
+      "route": "/content-ops/",
+      "excluded": true,
+      "passed": true
+    },
+    {
+      "route": "/design-preview/home-v2/",
+      "excluded": true,
+      "passed": true
+    },
+    {
+      "cookieAvoidance": true,
+      "passed": true
+    }
+  ],
+  "errors": []
+}

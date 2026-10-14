@@ -6,7 +6,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import CountryRegionLink from '../features/freight/CountryRegionLink';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -1477,7 +1476,7 @@ export default function ShippingLatinAmerica() {
       </main>
 
       <Footer />
-      <WhatsAppFloat />
+
       <ScrollToTop />
     </div>
   );

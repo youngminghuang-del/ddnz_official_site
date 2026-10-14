@@ -1,0 +1,31 @@
+{
+  "baseline": "60356fcb4abd77d806d88133ec7432541696ccb7",
+  "stage": "JsUm7C",
+  "bundle": "index-B_DtiFh6.js",
+  "fourPageViewportCases": 8,
+  "languageHomeChecks": 8,
+  "singleInstance": "pass",
+  "buttonSize": [
+    56,
+    56
+  ],
+  "localizedAriaAndTitle": "pass",
+  "mobileQuoteHidden": "pass",
+  "fixedCtaGapPx": 16,
+  "inputFocusHideRestore": "pass",
+  "cookieDialogHideRestore": "pass",
+  "phoneSourceVerified": "85261077362",
+  "actualWhatsAppClick": false,
+  "messagesSent": false,
+  "avatarChosen": false,
+  "published": false,
+  "nativeReview": false,
+  "engineeringEvidenceReviewed": {
+    "eightLocaleOpenIntercept": "pass",
+    "singleAnalyticsEvent": "pass",
+    "singleOpen": "pass",
+    "productionNetworkRequests": 0,
+    "source": "docs/freight-20261014/round12/analytics-results.json + browser-results.json",
+    "method": "engineering isolated local response test; read by content reviewer"
+  }
+}

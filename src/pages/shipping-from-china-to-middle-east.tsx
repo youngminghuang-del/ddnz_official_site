@@ -9,7 +9,6 @@ import Footer from '../components/Footer';
 import CountryRegionLink from '../features/freight/CountryRegionLink';
 import NewFreightEvidence from '../features/freight/NewFreightEvidence';
 import '../features/freight/freight.css';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -1976,7 +1975,7 @@ export default function MiddleEastRoute() {
       </main>
 
       <Footer />
-      <WhatsAppFloat />
+
       <ScrollToTop />
     </div>
   );

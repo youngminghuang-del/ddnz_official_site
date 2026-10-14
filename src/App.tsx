@@ -1,3 +1,4 @@
+import WhatsAppFloat from './components/WhatsAppFloat';
 import RouteRecovery, { RouteLoadingFallback } from './components/RouteRecovery';
 import {audioCategoryPaths} from './features/audio/category-routes.mjs';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
@@ -377,6 +378,7 @@ export default function App() {
           <AttributionSessionSync />
           <AnalyticsRouteTracker />
           <GlobalConversionTracker />
+          <WhatsAppFloat />
           <RouteRecovery>
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>

@@ -2,7 +2,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import { useLocation, Navigate } from 'react-router-dom';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import SEO from '../components/SEO';
 import RegionContent, { regionPageMetadata } from '../features/freight/RegionContent';
 import { regions, freightPrefix, type RegionId } from '../features/freight/regions';
@@ -22,5 +21,5 @@ export default function FreightRegionPage() {
     const countryPrefix = freightPrefix(locale);
     return <Navigate replace to={`${countryPrefix}/shipping-from-china-to-${legacyCountry}/${params.size ? `?${params}` : ''}`} />;
   }
-  return <div className="ddnz-home freight-editorial"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor /><RegionContent region={region} locale={locale} /><Footer /><WhatsAppFloat /></div>;
+  return <div className="ddnz-home freight-editorial"><SEO title={meta.title} description={meta.desc} /><SourcingHomepageNav showFreightExecutor /><RegionContent region={region} locale={locale} /><Footer /></div>;
 }

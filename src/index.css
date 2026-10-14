@@ -274,3 +274,12 @@ html {
     pointer-events: none;
   }
 }
+
+/* One shared public-page contact control, clear of consent and bottom action bars. */
+.ddnz-whatsapp-float{position:fixed;right:max(20px,env(safe-area-inset-right));z-index:50;display:flex}
+.ddnz-whatsapp-float button{width:56px;height:56px;display:flex;align-items:center;justify-content:center;border:0;border-radius:50%;background:#168a4b;color:#fff;box-shadow:0 5px 20px #10243f30;cursor:pointer;transition:background .15s}
+.ddnz-whatsapp-float button:hover{background:#10753f}.ddnz-whatsapp-float button:focus-visible{outline:3px solid #763c9c;outline-offset:4px}
+[data-scroll-top]{bottom:calc(var(--contact-clearance,32px) + 72px)!important}
+body:has([data-cookie-preferences]) .ddnz-whatsapp-float{visibility:hidden;pointer-events:none}
+@media(max-width:767px){body:has(input:focus,textarea:focus,select:focus) .ddnz-whatsapp-float{visibility:hidden;pointer-events:none}}
+@media(prefers-reduced-motion:reduce){.ddnz-whatsapp-float button{transition:none}}

@@ -10,7 +10,6 @@ import SeaFreightContent, { seaFreightMetadata } from '../features/freight/SeaFr
 import SeaInternationalContent, { internationalSeaMetadata } from '../features/freight/SeaInternationalContent';
 import type { LclExtraLocale } from '../features/freight/lclInternationalCopy';
 import { freightAlternates, freightLanguagePrefix } from '../features/freight/freightLanguages';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SchemaMarkup from '../components/SchemaMarkup';
 import SEO from '../components/SEO';
@@ -2277,7 +2276,7 @@ export default function ServiceDetail() {
         </section>
 
         <Footer />
-        <WhatsAppFloat />
+
         <ScrollToTop />
       </div>
     );
@@ -3200,7 +3199,7 @@ export default function ServiceDetail() {
         </section>
 
         <Footer />
-        <WhatsAppFloat />
+
         <ScrollToTop />
       </div>
     );
@@ -3227,7 +3226,7 @@ export default function ServiceDetail() {
     const original = language === 'zh' || language === 'en' || language === 'es';
     const seaMeta = original ? seaFreightMetadata(language) : internationalSeaMetadata(language as LclExtraLocale);
     const path='/services/sea-freight/';
-    return <div className="ddnz-home" dir={language === 'ar' ? 'rtl' : 'ltr'}><SEO title={seaMeta.title} description={seaMeta.desc} contentLanguage={language} canonicalPath={`${freightLanguagePrefix(language)}${path}`} alternateUrls={freightAlternates(path)}/><SchemaMarkup type="Service" data={{name:seaMeta.title, description:seaMeta.desc, serviceType:'Sea freight'}} /><SourcingHomepageNav showFreightExecutor />{original ? <SeaFreightContent locale={language}/> : <SeaInternationalContent locale={language as LclExtraLocale}/>}<Footer /><WhatsAppFloat /></div>;
+    return <div className="ddnz-home" dir={language === 'ar' ? 'rtl' : 'ltr'}><SEO title={seaMeta.title} description={seaMeta.desc} contentLanguage={language} canonicalPath={`${freightLanguagePrefix(language)}${path}`} alternateUrls={freightAlternates(path)}/><SchemaMarkup type="Service" data={{name:seaMeta.title, description:seaMeta.desc, serviceType:'Sea freight'}} /><SourcingHomepageNav showFreightExecutor />{original ? <SeaFreightContent locale={language}/> : <SeaInternationalContent locale={language as LclExtraLocale}/>}<Footer /></div>;
   }
   const serviceCtas = sharedServiceLabels;
   const loadingProof = SEA_FREIGHT_LOADING_PROOF[activeLang] || SEA_FREIGHT_LOADING_PROOF.en;
@@ -3625,7 +3624,7 @@ export default function ServiceDetail() {
       </section>
 
       <Footer />
-      <WhatsAppFloat />
+
       <ScrollToTop />
     </div>
   );

@@ -2,7 +2,6 @@ import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
 import SEO from '../components/SEO';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import DgInternationalContent, { internationalDgMetadata } from '../features/freight/DgInternationalContent';
 import type { LclExtraLocale } from '../features/freight/lclInternationalCopy';
 import { freightAlternates, freightLanguagePrefix } from '../features/freight/freightLanguages';
@@ -15,7 +14,7 @@ export default function DangerousGoodsShipping() {
   const path = '/services/dangerous-goods-shipping-from-china/';
   if (language !== 'zh' && language !== 'en' && language !== 'es') {
     const meta = internationalDgMetadata(language as LclExtraLocale);
-    return <div className="ddnz-home" dir={language === 'ar' ? 'rtl' : 'ltr'}><SEO title={meta.title} description={meta.desc} contentLanguage={language} canonicalPath={`${freightLanguagePrefix(language)}${path}`} alternateUrls={freightAlternates(path)}/><SourcingHomepageNav showFreightExecutor/><DgInternationalContent locale={language as LclExtraLocale}/><Footer/><WhatsAppFloat/></div>;
+    return <div className="ddnz-home" dir={language === 'ar' ? 'rtl' : 'ltr'}><SEO title={meta.title} description={meta.desc} contentLanguage={language} canonicalPath={`${freightLanguagePrefix(language)}${path}`} alternateUrls={freightAlternates(path)}/><SourcingHomepageNav showFreightExecutor/><DgInternationalContent locale={language as LclExtraLocale}/><Footer/></div>;
   }
   const lang = language === 'zh' || language === 'es' ? language : 'en';
   const text = copy[lang];
@@ -26,7 +25,7 @@ export default function DangerousGoodsShipping() {
       <SourcingHomepageNav showFreightExecutor />
       <DangerousGoodsOriginalContent lang={lang}/>
       <Footer />
-      <WhatsAppFloat />
+
     </div>
   );
 }

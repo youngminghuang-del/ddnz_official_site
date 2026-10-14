@@ -6,7 +6,6 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
-import WhatsAppFloat from '../components/WhatsAppFloat';
 import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
@@ -1465,7 +1464,7 @@ export default function ShippingCentralAsia() {
       </main>
 
       <Footer />
-      <WhatsAppFloat />
+
       <ScrollToTop />
     </div>
   );
