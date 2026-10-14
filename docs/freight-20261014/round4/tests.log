@@ -1,0 +1,75 @@
+TAP version 13
+# Subtest: Portuguese and Turkish country routes tolerate previous language context during navigation
+ok 1 - Portuguese and Turkish country routes tolerate previous language context during navigation
+  ---
+  duration_ms: 804.89075
+  ...
+# Subtest: unknown measurements are explicit and never silently become sample cargo
+ok 2 - unknown measurements are explicit and never silently become sample cargo
+  ---
+  duration_ms: 0.938375
+  ...
+# Subtest: customer estimates retain existing receiver field units including decimals
+ok 3 - customer estimates retain existing receiver field units including decimals
+  ---
+  duration_ms: 0.089416
+  ...
+# Subtest: zero, negative and non-finite inputs cannot become positive estimates or unknown
+ok 4 - zero, negative and non-finite inputs cannot become positive estimates or unknown
+  ---
+  duration_ms: 0.339167
+  ...
+# Subtest: eight languages emit plain links and retain multilingual briefs outside href
+ok 5 - eight languages emit plain links and retain multilingual briefs outside href
+  ---
+  duration_ms: 1.19825
+  ...
+# Subtest: external links, hashes, downloads and non-quote parameters are unchanged
+ok 6 - external links, hashes, downloads and non-quote parameters are unchanged
+  ---
+  duration_ms: 0.449459
+  ...
+# Subtest: unknown enum identifiers are rejected; free destination text stays in local brief
+ok 7 - unknown enum identifiers are rejected; free destination text stays in local brief
+  ---
+  duration_ms: 0.075667
+  ...
+# Subtest: HTML processing is escaped and idempotent without modifying title, body text or script strings
+ok 8 - HTML processing is escaped and idempotent without modifying title, body text or script strings
+  ---
+  duration_ms: 0.544542
+  ...
+# Subtest: handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+ok 9 - handoffs survive same-tab and new-tab storage contexts; old query URLs preserve behavior
+  ---
+  duration_ms: 0.337208
+  ...
+# Subtest: expired and malformed storage never blocks the form
+ok 10 - expired and malformed storage never blocks the form
+  ---
+  duration_ms: 0.433042
+  ...
+# Subtest: compiler applies policy to anchors and router links before React creates DOM
+ok 11 - compiler applies policy to anchors and router links before React creates DOM
+  ---
+  duration_ms: 43.823959
+  ...
+# Subtest: React Router path objects retain hashes while removing quote queries
+ok 12 - React Router path objects retain hashes while removing quote queries
+  ---
+  duration_ms: 0.169458
+  ...
+# Subtest: same-tab handoff works when both browser storage APIs are blocked
+ok 13 - same-tab handoff works when both browser storage APIs are blocked
+  ---
+  duration_ms: 0.278958
+  ...
+1..13
+# tests 13
+# suites 0
+# pass 13
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1004.556084

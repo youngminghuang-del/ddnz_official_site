@@ -1,0 +1,109 @@
+{
+  "version": 1,
+  "date": "2026-10-14",
+  "status": "local_assets_ready_no_deployment",
+  "logos": [
+    {
+      "id": "qatar-customs",
+      "country": "QAT",
+      "entity": "General Authority of Customs",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/qatar-customs-official.png",
+      "suggested_web_path": "/media/freight-20261014-round4/qatar-customs-official.png",
+      "sha256": "3e16b2e311ff142a3dc6f22d0f81ab7c3db58801329cdca43a93b8b2d6f7d804",
+      "bytes": 116756,
+      "mime": "image/png",
+      "width": 2218,
+      "height": 1422,
+      "source_url": "https://customs.gov.qa/Style%20Library/Portal_Images/CustomsLog.png",
+      "source_page": "https://customs.gov.qa/Arabic/AlNadeeb/Pages/default.aspx",
+      "adoption_status": "official_reference_identity_only",
+      "usage": "Current official header asset; preserve all content and transparent margins. White background, object-fit:contain; no recolour, crop, distortion or partner/certification claims.",
+      "rights": "Official brand identity, not a public-domain license; used as an identifying reference to the official resource under user-authorized scope. No endorsement implied."
+    },
+    {
+      "id": "oman-customs",
+      "country": "OMN",
+      "entity": "Royal Oman Police · Directorate General of Customs (combined masthead)",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/oman-customs-official.png",
+      "suggested_web_path": "/media/freight-20261014-round4/oman-customs-official.png",
+      "sha256": "61f0f0f10868f89d10e19353350ed4b19d5891f93cabdefb1b1c0d902bb68863",
+      "bytes": 116144,
+      "mime": "image/png",
+      "width": 709,
+      "height": 174,
+      "source_url": "https://www.customs.gov.om/img/dgc-arabic-logo.jpg.png",
+      "source_page": "https://www.customs.gov.om/",
+      "adoption_status": "official_reference_identity_only",
+      "usage": "Official combined masthead includes Oman Vision 2040, customs text and Royal Oman Police emblem. Do not crop into independent logos. White background, object-fit:contain; no recolour, crop, distortion or partner/certification claims.",
+      "rights": "Official brand identity, not a public-domain license; used as an identifying reference to the official resource under user-authorized scope. No endorsement implied."
+    },
+    {
+      "id": "al-nadeeb",
+      "country": "QAT",
+      "entity": "Al Nadeeb",
+      "absolute_path": null,
+      "adoption_status": "text_fallback",
+      "reason": "No standalone current original logo was verified. Public application endpoint timed out. Use plain entity title; do not redraw or crop combined masthead.",
+      "fallback": "text"
+    },
+    {
+      "id": "bayan",
+      "country": "OMN",
+      "entity": "Bayan",
+      "absolute_path": null,
+      "adoption_status": "text_fallback",
+      "reason": "No standalone current original logo was verified. Public application endpoint timed out. Use plain entity title; do not redraw or crop combined masthead.",
+      "fallback": "text"
+    }
+  ],
+  "map_assets": [
+    {
+      "id": "oman-regional-reference",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/oman-regional-reference.svg",
+      "suggested_web_path": "/media/freight-20261014-round4/oman-regional-reference.svg",
+      "sha256": "10cd9cc8daf7e46a56afb341831140f2bcadb3e3bb21674f3489cd6e1dd72f0a",
+      "bytes": 84422,
+      "mime": "image/svg+xml"
+    },
+    {
+      "id": "qatar-regional-reference",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/qatar-regional-reference.svg",
+      "suggested_web_path": "/media/freight-20261014-round4/qatar-regional-reference.svg",
+      "sha256": "e308564470ecef8482e72b20192ebcd66d88551fae026d0519ebc0f7eef970a0",
+      "bytes": 51621,
+      "mime": "image/svg+xml"
+    },
+    {
+      "id": "regional-geometry",
+      "absolute_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/regional-geometry.json",
+      "suggested_web_path": "/media/freight-20261014-round4/regional-geometry.json",
+      "sha256": "cd5c780f803a6562f915e4e246791755c53d6d46bbc094ab6bbda22ea6fb0fd5",
+      "bytes": 112678,
+      "mime": "application/json"
+    }
+  ],
+  "geometry_path": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第四轮/assets/regional-geometry.json",
+  "map_source": {
+    "name": "Natural Earth10m Admin0 Countries5.1.1",
+    "page": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-admin-0-countries/",
+    "license": "Public Domain",
+    "license_url": "https://www.naturalearthdata.com/about/terms-of-use/",
+    "original_archive": "/Users/huangyangming/Documents/New project/业务与网站总控台/2026-10增长计划/货运专项/团队/素材/第三轮/data/ne_10m_admin_0_countries.zip",
+    "sha256": "ce1ac7036499a0edd641fbc093cd209a98f96a49d2eca8480aaacad35138a7f6"
+  },
+  "map_rules": [
+    "North up; no geographic mirroring in RTL",
+    "Same projection for all land and points within each region; engineering should project nodes from coordinates",
+    "No invented shipping or road routes",
+    "Sea canvas is water surrounding land polygons, not a legal maritime boundary",
+    "Neighbor labels EN/AR in geometry are draft identifiers; use content team final labels",
+    "SVGs are visual references with no country/city labels; place final accessible labels in engineering UI",
+    "Do not call this a Google map or imply Google tiles; optional outbound Google Maps link is separate",
+    "Keep all Oman components and evenodd fills; do not treat each exterior component as a hole"
+  ],
+  "reference_preview": "http://localhost:8768/preview.html",
+  "limitations": [
+    "Two standalone system logos unavailable; plain text fallbacks provided",
+    "Final integrated mobile/AR label review by engineering"
+  ]
+}

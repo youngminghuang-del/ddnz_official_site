@@ -6,6 +6,7 @@ import SEO from '../../components/SEO';
 import SchemaMarkup from '../../components/SchemaMarkup';
 import GetAQuote from '../../components/GetAQuote';
 import WhatsAppFloat from '../../components/WhatsAppFloat';
+import GulfCustomsResources from './GulfCustomsResources';
 import GulfChapters from './GulfChapters';
 import GulfDestinationMap, { GulfCountryMark, type GulfMapData } from './GulfDestinationMap';
 import GulfCargoJourney from './GulfCargoJourney';
@@ -78,7 +79,7 @@ export default function GulfFreightPage() {
   const cta = (secondary = false) => <a className={secondary ? 'gulf-secondary' : 'gulf-cta'} href="#gulf-quote">{data.buttons[secondary ? 1 : 0]}<span aria-hidden="true">{ar ? '←' : '→'}</span></a>;
   const section = (index: number, visual?: ReactNode, className = '') => className.includes('gulf-map-section') ? <section className="gulf-section gulf-arrival-section" aria-labelledby={`gulf-section-${index}`}>
     <span className="gulf-index" aria-hidden="true">04</span><h2 id={`gulf-section-${index}`} tabIndex={-1}>{sections[index].heading}</h2>
-    <div className="gulf-arrival-layout">{visual}<div className="gulf-copy"><Blocks blocks={sections[index].blocks} /></div></div>
+    <div className="gulf-arrival-layout">{visual}<div className="gulf-copy"><Blocks blocks={country === 'qatar' ? sections[index].blocks.slice(2) : sections[index].blocks.slice(0, 1)} /><GulfCustomsResources country={country} locale={locale} />{country === 'oman' && <Blocks blocks={sections[index].blocks.slice(1, 2)} />}</div></div>
   </section> : <section className={`gulf-section ${visual ? 'gulf-split' : ''} ${className}`} aria-labelledby={`gulf-section-${index}`}>
     <div className="gulf-copy"><span className="gulf-index" aria-hidden="true">{String(country === 'oman' ? [1, 2, 4, 5, 3][index] : index + 1).padStart(2, '0')}</span><h2 id={`gulf-section-${index}`} tabIndex={-1}>{sections[index].heading}</h2><Blocks blocks={sections[index].blocks} /></div>{visual}
   </section>;

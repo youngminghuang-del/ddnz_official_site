@@ -1,0 +1,121 @@
+{
+  "sectionHeading": {
+    "en": "Customs preparation & official resources",
+    "ar": "التحضير للتخليص والمصادر الرسمية"
+  },
+  "logoIdNote": "Map to materials final manifest; null is not authorization to invent a mark.",
+  "cards": [
+    {
+      "id": "qatar-customs",
+      "country": "qatar",
+      "entityName": {
+        "en": "Qatar Customs",
+        "ar": "الجمارك القطرية"
+      },
+      "role": {
+        "en": "General Authority of Customs",
+        "ar": "الهيئة العامة للجمارك"
+      },
+      "prepare": {
+        "en": "Confirm the importer’s customs-code arrangements and prepare itemised invoice and packing details for the goods.",
+        "ar": "أكّد ترتيبات الرمز الجمركي للمستورد وجهّز بيانات الفاتورة والتعبئة المفصّلة للبضائع."
+      },
+      "linkLabel": {
+        "en": "Import guidance",
+        "ar": "إرشادات الاستيراد"
+      },
+      "officialUrl": {
+        "en": "https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx",
+        "ar": "https://www.customs.gov.qa/Arabic/Procedures/UnifiedGuide/Pages/Importation.aspx"
+      },
+      "linkNote": {
+        "ar": ""
+      },
+      "logoId": null
+    },
+    {
+      "id": "al-nadeeb",
+      "country": "qatar",
+      "entityName": {
+        "en": "Al Nadeeb",
+        "ar": "النديب"
+      },
+      "role": {
+        "en": "Qatar’s customs single-window system",
+        "ar": "نظام النافذة الواحدة للتخليص الجمركي في قطر"
+      },
+      "prepare": {
+        "en": "Confirm who will submit the declaration and review the relevant importer or customs-broker guidance.",
+        "ar": "حدّد الجهة التي ستقدّم البيان الجمركي وراجع إرشادات المستورد أو المخلّص الجمركي ذات الصلة."
+      },
+      "linkLabel": {
+        "en": "Official user guides",
+        "ar": "أدلة المستخدم الرسمية"
+      },
+      "officialUrl": {
+        "en": "https://www.customs.gov.qa/English/AlNadeeb/Pages/UserManual.aspx",
+        "ar": "https://www.customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx"
+      },
+      "linkNote": {
+        "ar": ""
+      },
+      "logoId": null
+    },
+    {
+      "id": "oman-customs",
+      "country": "oman",
+      "entityName": {
+        "en": "Oman Customs",
+        "ar": "الجمارك العُمانية"
+      },
+      "role": {
+        "en": "Royal Oman Police · Directorate General of Customs",
+        "ar": "شرطة عُمان السلطانية · الإدارة العامة للجمارك"
+      },
+      "prepare": {
+        "en": "Check the permits, restrictions and approvals that apply to the actual goods before dispatch.",
+        "ar": "راجع التصاريح والقيود والموافقات التي تنطبق على البضاعة الفعلية قبل الإرسال."
+      },
+      "linkLabel": {
+        "en": "Import requirements",
+        "ar": "متطلبات الاستيراد"
+      },
+      "officialUrl": {
+        "en": "https://www.customs.gov.om/en/search-import-and-export-requirements/",
+        "ar": "https://www.customs.gov.om/en/search-import-and-export-requirements/"
+      },
+      "linkNote": {
+        "ar": "الصفحة بالإنجليزية"
+      },
+      "logoId": null
+    },
+    {
+      "id": "bayan",
+      "country": "oman",
+      "entityName": {
+        "en": "Bayan",
+        "ar": "بيان"
+      },
+      "role": {
+        "en": "Oman Customs’ electronic declaration system",
+        "ar": "نظام الجمارك العُمانية لتقديم البيانات الجمركية إلكترونياً"
+      },
+      "prepare": {
+        "en": "Confirm the declaration documents with the importer, including invoices, origin documents and any required permits.",
+        "ar": "أكّد مستندات البيان مع المستورد، بما فيها الفواتير ومستندات المنشأ وأي تصاريح مطلوبة."
+      },
+      "linkLabel": {
+        "en": "Declaration guidance",
+        "ar": "إرشادات البيان الجمركي"
+      },
+      "officialUrl": {
+        "en": "https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/",
+        "ar": "https://customs.gov.om/ar/business-services/procedural_services/request-to-apply-a-custom-declaration/"
+      },
+      "linkNote": {
+        "ar": ""
+      },
+      "logoId": null
+    }
+  ]
+}

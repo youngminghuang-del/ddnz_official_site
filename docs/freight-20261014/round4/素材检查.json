@@ -1,0 +1,10 @@
+{
+  "asset_count": 5,
+  "png_decode": "passed",
+  "svg_xml": "passed",
+  "source_file_sha256": true,
+  "rings_closed": true,
+  "oman_rings": 7,
+  "browser_preview": "Passed white-background logo review and regional geography overview. Oman left symbol identified as Oman Vision 2040, not Bayan; metadata corrected.",
+  "no_network_image_edit": "Original PNG bytes retained; no generated/recoloured/cropped logos"
+}

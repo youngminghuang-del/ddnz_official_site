@@ -208,3 +208,24 @@
 .gulf-arrival-layout .gulf-copy { padding-block:12px; }
 @media(max-width:900px) { .gulf-arrival-layout { gap:30px; } }
 @media(max-width:640px) { .gulf-arrival-layout { display:flex; flex-direction:column; gap:26px; margin-top:25px; } .gulf-arrival-layout .gulf-map { width:100%; } }
+
+/* Official references and independently sourced regional geography. */
+.gulf-regional-map { background:#fff; align-self:start; overflow:hidden; }
+.gulf-regional-map>svg { background:#e4f1f6; direction:ltr; }
+.gulf-region-label { font-size:28px; fill:#5c6d75; paint-order:stroke; stroke:#ffffff80; stroke-width:4px; stroke-linejoin:round; }
+.gulf-point-label { font-size:32px; font-weight:750; fill:#632b89; paint-order:stroke; stroke:#fff; stroke-width:7px; stroke-linejoin:round; }
+.gulf-regional-map .gulf-map-nodes a { display:inline-block; padding:10px 0; font-size:.85rem; }
+.gulf-customs { margin:26px 0; }
+.gulf-customs h3 { font-size:1.2rem; line-height:1.4; margin-bottom:16px; }
+.gulf-official-mark { background:#fff; border:1px solid #e1dde5; padding:16px; border-radius:10px 10px 0 0; }
+.gulf-official-mark img { width:190px; height:122px; object-fit:contain; margin:auto; }
+.gulf-official-mark-wide img { width:100%; max-width:440px; height:auto; aspect-ratio:709/174; }
+.gulf-customs-cards { display:grid; grid-template-columns:1fr; border:1px solid #e1dde5; border-top:0; border-radius:0 0 10px 10px; overflow:hidden; }
+.gulf-customs-cards article { padding:22px; background:#fff; }
+.gulf-customs-cards article+article { border-top:1px solid #e1dde5; }
+.gulf-customs-cards h4 { font-size:1.15rem; font-weight:700; margin:0 0 6px; }
+.gulf-customs-cards .gulf-customs-role { font-size:.83rem; line-height:1.5; color:#6d6277; margin:0 0 13px; }
+.gulf-customs-cards p { font-size:.95rem; line-height:1.65; margin:0 0 12px; }
+.gulf-customs-cards a { display:inline-block; min-height:44px; padding:10px 0; color:#632b89; font-weight:650; text-decoration:underline; text-underline-offset:4px; }
+.gulf-customs-cards small { display:block; color:#665c6e; }
+@media(min-width:901px) { .gulf-arrival-layout { grid-template-columns:1.15fr 1fr; gap:40px; } }
