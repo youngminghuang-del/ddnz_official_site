@@ -274,7 +274,7 @@ const funnelTranslations: Record<string, Record<string, string>> = {
   ar: {
     funnelLabel: 'مسار الاستفسار',
     stepProgress: 'الخطوة {step} من 4',
-    step1Title: 'اختر وسيلة النقل', step1Desc: 'اختر قناة النقل وسنقدم أفضل مسار وتسعير',
+    step1Title: 'اختر وسيلة النقل', step1Desc: 'تؤثر وسيلة النقل في الوقت والتكلفة وقبول البضاعة؛ نراجع الخيارات المناسبة لهذه الشحنة.',
     step2Title: 'المنشأ والوجهة', step2Desc: 'عبور وتخليص جمركي من مقرنا في قوانغتشو',
     step3Title: 'الوزن والحجم التقديريان', step3Desc: 'استخدم أشرطة التمرير أو اختر حمولة مسبقة لتقدير القياسات',
     step4Title: 'احصل على عرض سعر مخصص', step4Desc: 'أدخل الاسم ووسيلة تواصل واحدة: البريد أو الهاتف / واتساب',
@@ -348,10 +348,11 @@ const popularOriginOptions = [
 
 interface GetAQuoteProps {
   presetDestination?: string;
+  hideLandRecommendation?: boolean;
   presetService?: 'Sea' | 'Land' | 'Air' | 'Warehouse';
 }
 
-export default function GetAQuote({ presetDestination, presetService }: GetAQuoteProps = {}) {
+export default function GetAQuote({ presetDestination, presetService, hideLandRecommendation = false }: GetAQuoteProps = {}) {
   const [state, handleSubmit] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const quoteSectionRef = useRef<HTMLElement>(null);
@@ -815,29 +816,30 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             {[
                               {
                                 id: 'Sea',
-                                label: t('get_a_quote.modeSea') || 'Sea Freight',
+                                label: language === 'ar' ? 'الشحن البحري' : t('get_a_quote.modeSea') || 'Sea Freight',
                                 desc: ft('seaDesc'),
                                 icon: <Ship className="w-6 h-6" />
                               },
                               {
                                 id: 'Air',
-                                label: t('get_a_quote.modeAir') || 'Air Freight',
+                                label: language === 'ar' ? 'الشحن الجوي' : t('get_a_quote.modeAir') || 'Air Freight',
                                 desc: ft('airDesc'),
                                 icon: <Plane className="w-6 h-6" />
                               },
                               {
                                 id: 'Land',
-                                label: t('get_a_quote.modeLand') || 'Land Freight',
-                                desc: ft('landDesc'),
+                                label: language === 'ar' ? 'النقل البري' : t('get_a_quote.modeLand') || 'Land Freight',
+                                desc: hideLandRecommendation ? ft('step1Desc') : ft('landDesc'),
                                 icon: <Truck className="w-6 h-6" />
                               },
                               {
                                 id: 'Warehouse',
-                                label: t('nav.services_warehouse') || 'Warehouse & Fulfillment',
+                                label: language === 'ar' ? 'خدمات المستودعات' : t('nav.services_warehouse') || 'Warehouse & Fulfillment',
                                 desc: ft('wareDesc'),
                                 icon: <Package className="w-6 h-6" />
                               }
-                            ].map((item) => {
+                            // Keep an explicitly selected/preset mode visible; never silently remap it.
+                            ].filter(item => item.id !== 'Land' || !hideLandRecommendation || selectedService === 'Land').map((item) => {
                               const isActive = selectedService === item.id;
                               return (
                                 <button
@@ -1057,7 +1059,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                               </span>
                               <div className="flex flex-wrap items-center gap-2 text-slate-700 text-xs font-extrabold">
                                 <span className="bg-white border border-sky-100 px-2.5 py-1 rounded-lg text-[#0b4f8a] flex items-center gap-1 shadow-sm">
-                                  {selectedService === 'Sea' ? <Ship className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Air' ? <Plane className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Land' ? <Truck className="w-3.5 h-3.5" aria-hidden="true" /> : <Package className="w-3.5 h-3.5" aria-hidden="true" />} {selectedService}
+                                  {selectedService === 'Sea' ? <Ship className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Air' ? <Plane className="w-3.5 h-3.5" aria-hidden="true" /> : selectedService === 'Land' ? <Truck className="w-3.5 h-3.5" aria-hidden="true" /> : <Package className="w-3.5 h-3.5" aria-hidden="true" />} {language === 'ar' ? ({ Sea: 'الشحن البحري', Air: 'الشحن الجوي', Land: 'النقل البري', Warehouse: 'خدمات المستودعات' }[selectedService]) : selectedService}
                                 </span>
                                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
                                 <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm">
@@ -1077,10 +1079,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             {/* Fast route speed indicator tag */}
                             <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
-                                <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> Route review
+                                <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> {language === 'ar' ? 'مراجعة المسار' : 'Route review'}
                               </span>
                               <span className="font-bold text-slate-600">
-                                Quote details confirmed by scope
+                                {language === 'ar' ? 'تُؤكّد تفاصيل العرض وفق نطاق الخدمة' : 'Quote details confirmed by scope'}
                               </span>
                             </div>
                           </div>

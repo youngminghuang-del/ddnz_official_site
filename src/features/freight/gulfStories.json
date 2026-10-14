@@ -1,0 +1,582 @@
+{
+  "qatar": {
+    "en": {
+      "title": "Shipping from China to Qatar | Supplier Consolidation | DDNZ",
+      "desc": "Coordinate supplier deliveries in China, prepare a clear consolidation list and review the full freight and delivery scope for your Qatar shipment.",
+      "heading": "Shipping from China to Qatar, with your supplier orders brought together",
+      "intro": "Coordinate supplier deliveries, receiving checks and consolidation planning with DDNZ before your goods leave China. Bring your supplier list and Qatar delivery address together in one brief, so the cargo, transport options and delivery costs can be reviewed as a whole.",
+      "buttons": [
+        "Request a Qatar shipping quote",
+        "Still buying? Plan your shipment"
+      ],
+      "sections": [
+        {
+          "heading": "Turn several supplier orders into one clear shipment list",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "For hats, accessories or other commercial goods bought from several suppliers, a shared list keeps each delivery connected to its order. Confirm the receiving instructions before suppliers dispatch, then record what has arrived and what is still due."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Prepare for each supplier",
+                  "Use it to confirm"
+                ],
+                [
+                  "Order reference and goods description",
+                  "Which products belong to each order"
+                ],
+                [
+                  "Carton marks and expected package count",
+                  "Which deliveries have arrived and whether there are differences"
+                ],
+                [
+                  "Ready date and delivery location in China",
+                  "Whether to wait for all goods or review separate dispatches"
+                ],
+                [
+                  "Packed dimensions and gross weight",
+                  "The final cargo data used to review transport options"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "If one supplier is ready earlier, compare waiting and storage with the cost of separate shipments. Keep the supplier and product references when packages are combined."
+            }
+          ]
+        },
+        {
+          "heading": "Agree the checks your order needs",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Start with package counts, carton marks and visible packing condition. Add opening, item counts, product checks or photographs where your order needs them, and confirm the scope and charges before receiving begins."
+            }
+          ]
+        },
+        {
+          "heading": "Match consolidation to the packaging",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Consolidation brings supplier packages into an agreed shipping plan; LCL shares container space with other cargo. The two can work together. Review the final dimensions, gross weights and stacking restrictions after any repacking so the transport comparison uses the actual cargo."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare the Qatar delivery side early",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Confirm the importer’s customs-code arrangements and keep mixed products separately identifiable in the packing information. This helps connect your supplier list to the import documents. [Qatar Customs guidance](https://www.customs.gov.qa/English/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Al Nadeeb offers trader and customs-broker guidance. Agree who handles the declaration and which importer details they need. [Al Nadeeb guides](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "Hamad Port handles containers and general cargo. For a sea-freight quotation, identify the arrival point and final receiving address separately, then confirm the onward delivery arrangements. [Mwani Qatar: Hamad Port](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "Compare quotes against the same delivery scope",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Review these items together: collection from suppliers, receiving, storage, inspection or repacking, export handling, international freight, destination handling, clearance, duties and taxes, final delivery and insurance. The quotation should identify what is included, excluded or still to be confirmed, with the responsible party for each item."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordinates the agreed sourcing and export handover. Heaven Born handles booking, loading and international freight within the confirmed service scope."
+            }
+          ]
+        },
+        {
+          "heading": "Questions before you ship",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Can several 1688 suppliers send goods for one shipment?**\nStart with each supplier’s location, ready date and packing details. Confirm the receiving address, carton marks and checking or repacking services, then decide which goods will ship together."
+            },
+            {
+              "type": "text",
+              "text": "**Will a receiving check cover every item inside the cartons?**\nChoose the inspection level your order needs. Package counts and label checks cover the receiving step; opening cartons, counting items and testing products should be specified separately."
+            },
+            {
+              "type": "text",
+              "text": "**Does door delivery include every charge?**\nCompare the named delivery point, import handling, taxes and final delivery against the quotation. If you need a DDP arrangement, include it in your brief so it can be reviewed for the goods and importing party."
+            },
+            {
+              "type": "text",
+              "text": "**My order is small or the measurements are not ready. Can I start?**\nSend the information you have, including the purchasing stage. Ask how minimum charges affect the shipment; final packing data can be added when available."
+            }
+          ]
+        },
+        {
+          "heading": "Start with what you know",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Share the delivery city in Qatar, goods, supplier count, purchasing stage, ready date and contact channel. Add package counts, dimensions and gross weights when available; mark missing details as awaiting the supplier."
+            },
+            {
+              "type": "text",
+              "text": "**Request a Qatar shipping quote**"
+            },
+            {
+              "type": "text",
+              "text": "[Explore LCL shipping](/services/lcl-shipping-from-china/) · [Sea freight from China](/services/sea-freight/) · [Middle East routes](/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Destination sources checked 14 October 2026. Confirm requirements for the actual goods before booking."
+            }
+          ]
+        }
+      ]
+    },
+    "ar": {
+      "title": "الشحن من الصين إلى قطر | تجميع بضائع الموردين | DDNZ",
+      "desc": "نسّق تسليم بضائع الموردين في الصين، وجهّز قائمة واضحة للتجميع، وراجع نطاق الشحن والتسليم الكامل لشحنتك إلى قطر.",
+      "heading": "الشحن من الصين إلى قطر بخطة تجمع طلبات مورديك",
+      "intro": "نسّق مع DDNZ تسليم بضائع الموردين ومراجعة الاستلام وتخطيط التجميع قبل مغادرة البضائع الصين. اجمع قائمة الموردين وعنوان التسليم في قطر في طلب واحد، لمراجعة البضاعة وخيارات النقل وتكاليف التسليم معاً.",
+      "buttons": [
+        "اطلب عرض شحن إلى قطر",
+        "ما زلت تشتري؟ خطّط لشحنتك"
+      ],
+      "sections": [
+        {
+          "heading": "حوّل طلبات الموردين إلى قائمة شحن واضحة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "عند شراء القبعات أو الإكسسوارات أو غيرها من البضائع التجارية من عدة موردين، تربط القائمة المشتركة كل دفعة بطلبها. أكّد تعليمات الاستلام قبل إرسال البضائع، ثم سجّل ما وصل وما يزال متوقعاً."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "جهّز لكل مورد",
+                  "للتأكد من"
+                ],
+                [
+                  "مرجع الطلب ووصف البضاعة",
+                  "المنتجات المرتبطة بكل طلب"
+                ],
+                [
+                  "علامات الكراتين وعدد الطرود المتوقع",
+                  "الدفعات المستلمة وأي فروقات"
+                ],
+                [
+                  "تاريخ الجاهزية وموقع التسليم في الصين",
+                  "الانتظار لاكتمال البضائع أو دراسة إرسالها على دفعات"
+                ],
+                [
+                  "الأبعاد بعد التعبئة والوزن الإجمالي",
+                  "بيانات الشحنة النهائية لمراجعة خيارات النقل"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "إذا جهزت بضائع مورد مبكراً، فقارن تكلفة الانتظار والتخزين بتكلفة الشحن المنفصل. احتفظ بمراجع الموردين والمنتجات عند جمع الطرود."
+            }
+          ]
+        },
+        {
+          "heading": "اتفق على الفحوص التي يحتاج إليها طلبك",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "ابدأ بعدد الطرود وعلامات الكراتين وحالة التغليف الظاهرة. أضف فتح العبوات أو عدّ القطع أو فحص المنتجات أو التصوير حسب حاجة الطلب، وأكّد نطاق العمل والرسوم قبل بدء الاستلام."
+            }
+          ]
+        },
+        {
+          "heading": "خطّط للتجميع وفق التعبئة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يربط التجميع طرود الموردين بخطة شحن متفق عليها، بينما يتيح الشحن الجزئي LCL مشاركة مساحة الحاوية مع بضائع أخرى. يمكن الجمع بينهما. راجع الأبعاد والأوزان الإجمالية وقيود التكديس بعد أي إعادة تعبئة، لتستند مقارنة النقل إلى البضاعة الفعلية."
+            }
+          ]
+        },
+        {
+          "heading": "جهّز ترتيبات التسليم في قطر مبكراً",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "أكّد ترتيبات الرمز الجمركي للمستورد، وأبقِ الأصناف المختلفة واضحة في بيانات التعبئة، لربط قائمة الموردين بوثائق الاستيراد. [إرشادات الجمارك القطرية](https://www.customs.gov.qa/Arabic/Procedures/UnifiedGuide/Pages/Importation.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "يوفّر نظام النديب إرشادات للتاجر والمخلص الجمركي. اتفق على الجهة التي تتولى البيان الجمركي وبيانات المستورد المطلوبة. [أدلة نظام النديب](https://customs.gov.qa/Arabic/AlNadeeb/Pages/UserManual.aspx)"
+            },
+            {
+              "type": "text",
+              "text": "يتعامل ميناء حمد مع الحاويات والبضائع العامة. حدّد نقطة الوصول وعنوان الاستلام النهائي بشكل منفصل في عرض الشحن البحري، ثم أكّد ترتيبات التوصيل اللاحق. [موانئ قطر: ميناء حمد](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+            }
+          ]
+        },
+        {
+          "heading": "قارن العروض ضمن نطاق تسليم واحد",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "راجع معاً الاستلام من الموردين، والاستلام في المستودع، والتخزين، والفحص أو إعادة التعبئة، وإجراءات التصدير، والشحن الدولي، ومناولة الوجهة، والتخليص، والرسوم والضرائب، والتسليم النهائي والتأمين. ينبغي أن يوضح العرض المشمول والمستثنى وما ينتظر التأكيد، مع تحديد المسؤول عن كل بند."
+            },
+            {
+              "type": "text",
+              "text": "تنسّق DDNZ تسليم ملف التوريد والتصدير المتفق عليه. وتتولى Heaven Born الحجز والتحميل والشحن الدولي ضمن نطاق الخدمة المؤكد."
+            }
+          ]
+        },
+        {
+          "heading": "أسئلة قبل الشحن",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**هل يمكن جمع بضائع عدة موردين من 1688 في شحنة واحدة؟**\nابدأ بموقع كل مورد وموعد الجاهزية وبيانات التعبئة. أكّد عنوان الاستلام وعلامات الكراتين وخدمات الفحص أو إعادة التعبئة، ثم حدّد البضائع التي ستُشحن معاً."
+            },
+            {
+              "type": "text",
+              "text": "**هل تشمل مراجعة الاستلام كل قطعة داخل الكراتين؟**\nاختر مستوى الفحص الذي يحتاج إليه طلبك. يشمل الاستلام عدّ الطرود ومراجعة الملصقات؛ ويُحدَّد فتح الكراتين وعدّ القطع واختبار المنتجات بشكل منفصل."
+            },
+            {
+              "type": "text",
+              "text": "**هل يشمل التسليم إلى الباب جميع الرسوم؟**\nراجع نقطة التسليم وإجراءات الاستيراد والضرائب والتوصيل النهائي مقابل العرض. إذا احتجت إلى ترتيب DDP، فاذكره في الطلب لمراجعة ملاءمته للبضاعة والجهة المستوردة."
+            },
+            {
+              "type": "text",
+              "text": "**طلبي صغير أو لم تجهز القياسات بعد، هل يمكنني البدء؟**\nأرسل المعلومات المتاحة، بما فيها مرحلة الشراء. اسأل عن أثر الحد الأدنى للرسوم على الشحنة، وأضف بيانات التعبئة النهائية عند توفرها."
+            }
+          ]
+        },
+        {
+          "heading": "ابدأ بالمعلومات المتاحة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "شارك مدينة التسليم في قطر والبضاعة وعدد الموردين ومرحلة الشراء وتاريخ الجاهزية ووسيلة التواصل. أضف عدد الطرود وأبعادها وأوزانها الإجمالية عند توفرها، وحدّد البيانات الناقصة بأنها بانتظار المورد."
+            },
+            {
+              "type": "text",
+              "text": "**اطلب عرض شحن إلى قطر**"
+            },
+            {
+              "type": "text",
+              "text": "[استكشف الشحن الجزئي](/ar/services/lcl-shipping-from-china/) · [الشحن البحري من الصين](/ar/services/sea-freight/) · [مسارات الشرق الأوسط](/ar/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "رُوجعت مصادر الوجهة في 14 أكتوبر 2026. أكّد المتطلبات الخاصة بالبضاعة الفعلية قبل الحجز."
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "oman": {
+    "en": {
+      "title": "Shipping from China to Oman | Large Commercial Cargo | DDNZ",
+      "desc": "Prepare large commercial cargo for Oman with package-level dimensions, freight options and a delivery plan that accounts for access and unloading.",
+      "heading": "Shipping from China to Oman, from packed cargo to delivery planning",
+      "intro": "Plan large commercial shipments with DDNZ around the details that affect the move: packed dimensions, handling requirements and the receiving site. Bring the supplier’s packing information into the freight review so loading in China and unloading in Oman are considered together.",
+      "buttons": [
+        "Request an Oman shipping quote",
+        "Packing still in progress? Plan the shipment"
+      ],
+      "sections": [
+        {
+          "heading": "List every packed piece",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Planning scenario: six pool tables and accessories from Guangzhou.** Start with the supplier’s package list. Record how the tables and accessories are packed, whether components travel separately, and the handling instructions for each unit."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "Ask the supplier for",
+                  "Why it helps"
+                ],
+                [
+                  "Numbered packages and external length × width × height",
+                  "Shows the space required after crates or pallets are added"
+                ],
+                [
+                  "Gross weight of each package",
+                  "Supports the loading and equipment review"
+                ],
+                [
+                  "Stacking limits and required orientation",
+                  "Keeps the plan aligned with the packaging"
+                ],
+                [
+                  "Handling instructions and packing photographs",
+                  "Identifies support points and any protection needed"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "Use the finished package measurements, including the crate or pallet. Confirm fragile components and safe handling with the supplier before booking."
+            }
+          ]
+        },
+        {
+          "heading": "Compare LCL and FCL using the actual cargo",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "LCL shares container space; FCL uses a dedicated container. Compare them using the package list, stacking restrictions, handling needs and complete delivery cost. A total volume is useful, but the largest package can determine which equipment and loading arrangement are feasible."
+            },
+            {
+              "type": "text",
+              "text": "For cargo outside standard equipment limits, send the largest package details for a separate review. If timing is critical, include the required arrival date so any feasible air option can also be considered."
+            }
+          ]
+        },
+        {
+          "heading": "Connect the arrival point to the Oman import arrangements",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "SOHAR lists container and general-cargo facilities. Use the proposed arrival point together with the final receiving city and site when reviewing the route. [SOHAR port facilities](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "Oman Customs uses Bayan for declarations. Prepare invoices, origin documents and the export-country declaration listed in its English service guidance, with permits where applicable; confirm the final document list with the importer. [Oman Customs declaration service](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "The official requirements search covers permits, restrictions and approvals. Check against the actual goods and classification as part of the import preparation. [Oman Customs requirements search](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "Make the delivered cost clear",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Compare collection and packing in China, export handling, freight, destination handling, clearance, applicable duties and taxes, transport to site, unloading and insurance. Identify each included or excluded item, the responsible party, and how waiting or storage would be charged if needed."
+            },
+            {
+              "type": "text",
+              "text": "DDNZ coordinates the agreed product and export handover. Heaven Born’s booking, loading and international freight role follows the confirmed service scope."
+            }
+          ]
+        },
+        {
+          "heading": "Prepare the receiving site before dispatch",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Tell us whether the truck can reach the unloading point, what equipment is available and who will receive the goods. Include door widths, floor level or access restrictions when the goods need to move indoors."
+            },
+            {
+              "type": "text",
+              "text": "Agree separately on unloading, movement inside the building, unpacking and installation. This gives the receiving team a clear plan for the work after the vehicle arrives."
+            }
+          ]
+        },
+        {
+          "heading": "Questions before booking",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**Can six pool tables fit in one container?**\nUse the supplier’s final package list and loading constraints to answer this. Confirm the number of packed units, their external dimensions and whether they can be stacked."
+            },
+            {
+              "type": "text",
+              "text": "**What should the supplier confirm about a wooden crate?**\nAsk about internal support, restraint, moisture protection where needed and safe lifting points. Confirm the packaging material and any applicable import requirements with the parties preparing the shipment."
+            },
+            {
+              "type": "text",
+              "text": "**What should I check about insurance and damage records?**\nShare the cargo value and review coverage, exclusions, deductible and the claims process before dispatch. Keep packing photographs and package-condition records so any reported damage can be assessed."
+            },
+            {
+              "type": "text",
+              "text": "**Can I start before the packing details are final?**\nYes. Send the product list, supplier location, delivery city and purchasing stage. Mark missing weights and dimensions as awaiting the supplier, then update them when the packaging is ready."
+            }
+          ]
+        },
+        {
+          "heading": "Send your Oman cargo brief",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "Include the goods and quantity, supplier location, package dimensions and gross weights, ready date, receiving city and site access. State the importer/document status and whether you want port collection or a delivery arrangement reviewed."
+            },
+            {
+              "type": "text",
+              "text": "**Request an Oman shipping quote**"
+            },
+            {
+              "type": "text",
+              "text": "[Sea freight from China](/services/sea-freight/) · [Explore LCL shipping](/services/lcl-shipping-from-china/) · [Middle East routes](/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "Destination sources checked 14 October 2026. Confirm requirements for the actual goods before booking."
+            }
+          ]
+        }
+      ]
+    },
+    "ar": {
+      "title": "الشحن من الصين إلى عُمان | البضائع التجارية الكبيرة | DDNZ",
+      "desc": "جهّز البضائع التجارية الكبيرة للشحن إلى عُمان بأبعاد كل طرد، وخيارات النقل وخطة تسليم تراعي الوصول إلى الموقع والتفريغ.",
+      "heading": "الشحن من الصين إلى عُمان، من بيانات الطرود إلى خطة التسليم",
+      "intro": "خطّط مع DDNZ للشحنات التجارية الكبيرة وفق التفاصيل المؤثرة في النقل: الأبعاد بعد التعبئة، ومتطلبات المناولة وموقع الاستلام. أدرج بيانات التعبئة من المورد في مراجعة الشحن، للنظر في التحميل بالصين والتفريغ في عُمان معاً.",
+      "buttons": [
+        "اطلب عرض شحن إلى عُمان",
+        "التعبئة لم تكتمل؟ خطّط للشحنة"
+      ],
+      "sections": [
+        {
+          "heading": "أدرج كل طرد بعد التعبئة",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**سيناريو للتخطيط: ست طاولات بلياردو وملحقاتها من قوانغتشو.** ابدأ بقائمة الطرود من المورد. سجّل طريقة تعبئة الطاولات والملحقات، وما إذا كانت المكونات تُشحن منفصلة، وتعليمات مناولة كل طرد."
+            },
+            {
+              "type": "table",
+              "rows": [
+                [
+                  "اطلب من المورد",
+                  "الفائدة"
+                ],
+                [
+                  "طرود مرقمة وأبعاد خارجية: الطول × العرض × الارتفاع",
+                  "توضيح المساحة المطلوبة بعد إضافة الصناديق أو المنصات"
+                ],
+                [
+                  "الوزن الإجمالي لكل طرد",
+                  "دعم مراجعة التحميل والمعدات"
+                ],
+                [
+                  "قيود التكديس واتجاه الوضع المطلوب",
+                  "مواءمة الخطة مع التعبئة"
+                ],
+                [
+                  "تعليمات المناولة وصور التعبئة",
+                  "تحديد نقاط الدعم والحماية المطلوبة"
+                ]
+              ]
+            },
+            {
+              "type": "text",
+              "text": "استخدم أبعاد الطرد النهائي، بما فيه الصندوق أو المنصة. أكّد الأجزاء القابلة للكسر وطريقة المناولة الآمنة مع المورد قبل الحجز."
+            }
+          ]
+        },
+        {
+          "heading": "قارن الشحن الجزئي والحاوية الكاملة وفق البضاعة الفعلية",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يتيح الشحن الجزئي LCL مشاركة مساحة الحاوية، بينما يستخدم FCL حاوية مخصصة. قارن بينهما وفق قائمة الطرود وقيود التكديس والمناولة وتكلفة التسليم الكاملة. الحجم الإجمالي مفيد، لكن أكبر طرد قد يحدد المعدات وترتيب التحميل الممكنين."
+            },
+            {
+              "type": "text",
+              "text": "للبضائع التي تتجاوز حدود المعدات القياسية، أرسل بيانات أكبر طرد لمراجعة منفصلة. وإذا كان الوقت مهماً، فاذكر موعد الوصول المطلوب لدراسة أي خيار جوي ممكن أيضاً."
+            }
+          ]
+        },
+        {
+          "heading": "اربط نقطة الوصول بترتيبات الاستيراد في عُمان",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "يدرج ميناء صحار مرافق للحاويات والبضائع العامة. راجع نقطة الوصول المقترحة مع مدينة الاستلام النهائية والموقع عند دراسة المسار. [مرافق ميناء صحار](https://soharportandfreezone.om/stevedoring-services/)"
+            },
+            {
+              "type": "text",
+              "text": "تستخدم الجمارك العُمانية نظام بيان للإقرارات الجمركية. جهّز الفواتير ووثائق المنشأ وبيان بلد التصدير المذكور في صفحة الخدمة الإنجليزية، مع التصاريح عند انطباقها، وأكّد القائمة النهائية مع المستورد. [خدمة البيان الجمركي](https://www.customs.gov.om/en/business-services/procedural_services/request-to-apply-a-custom-declaration/) · [صفحة الخدمة العربية](https://www.customs.gov.om/ar/business-services/create-custom-declaration/)"
+            },
+            {
+              "type": "text",
+              "text": "يشمل البحث الرسمي عن المتطلبات التصاريح والقيود والموافقات. راجعها وفق البضاعة الفعلية وتصنيفها ضمن التحضير للاستيراد. [البحث عن متطلبات الاستيراد](https://www.customs.gov.om/en/search-import-and-export-requirements/)"
+            }
+          ]
+        },
+        {
+          "heading": "وضّح التكلفة حتى التسليم",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "قارن الاستلام والتعبئة في الصين، وإجراءات التصدير، والشحن، ومناولة الوجهة، والتخليص، والرسوم والضرائب المطبقة، والنقل إلى الموقع، والتفريغ والتأمين. حدّد البنود المشمولة والمستثناة والمسؤول عن كل منها، وطريقة احتساب الانتظار أو التخزين عند الحاجة."
+            },
+            {
+              "type": "text",
+              "text": "تنسّق DDNZ تسليم بيانات المنتج والتصدير المتفق عليها. ويتحدد دور Heaven Born في الحجز والتحميل والشحن الدولي وفق نطاق الخدمة المؤكد."
+            }
+          ]
+        },
+        {
+          "heading": "جهّز موقع الاستلام قبل الإرسال",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "وضّح إمكانية وصول الشاحنة إلى نقطة التفريغ والمعدات المتاحة ومن سيتولى الاستلام. أضف عرض الأبواب والطابق أو قيود الوصول إذا كانت البضاعة ستُنقل إلى داخل المبنى."
+            },
+            {
+              "type": "text",
+              "text": "اتفق بشكل منفصل على التفريغ والنقل داخل المبنى وفك التغليف والتركيب. يوفّر ذلك لفريق الاستلام خطة واضحة للعمل بعد وصول المركبة."
+            }
+          ]
+        },
+        {
+          "heading": "أسئلة قبل الحجز",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "**هل تتسع حاوية واحدة لست طاولات بلياردو؟**\nاستند إلى قائمة الطرود النهائية وقيود التحميل من المورد. أكّد عدد الطرود وأبعادها الخارجية وإمكانية تكديسها."
+            },
+            {
+              "type": "text",
+              "text": "**ما الذي يؤكده المورد بخصوص الصندوق الخشبي؟**\nاسأل عن الدعم الداخلي والتثبيت والحماية من الرطوبة عند الحاجة ونقاط الرفع الآمنة. أكّد مادة التغليف ومتطلبات الاستيراد المنطبقة مع الأطراف التي تجهّز الشحنة."
+            },
+            {
+              "type": "text",
+              "text": "**ما الذي أراجعه بشأن التأمين وسجلات التلف؟**\nشارك قيمة البضاعة وراجع التغطية والاستثناءات ومبلغ التحمل وإجراءات المطالبة قبل الإرسال. احتفظ بصور التعبئة وسجلات حالة الطرود لتقييم أي تلف يُبلّغ عنه."
+            },
+            {
+              "type": "text",
+              "text": "**هل يمكنني البدء قبل اكتمال بيانات التعبئة؟**\nنعم. أرسل قائمة المنتجات وموقع المورد ومدينة التسليم ومرحلة الشراء. حدّد الأوزان والأبعاد الناقصة بأنها بانتظار المورد، ثم حدّثها عندما تجهز التعبئة."
+            }
+          ]
+        },
+        {
+          "heading": "أرسل ملخص شحنتك إلى عُمان",
+          "blocks": [
+            {
+              "type": "text",
+              "text": "أدرج البضاعة والكمية وموقع المورد وأبعاد الطرود وأوزانها الإجمالية وتاريخ الجاهزية ومدينة الاستلام وظروف الوصول إلى الموقع. وضّح وضع المستورد والوثائق، وما إذا كنت تريد الاستلام من الميناء أو مراجعة ترتيب للتسليم."
+            },
+            {
+              "type": "text",
+              "text": "**اطلب عرض شحن إلى عُمان**"
+            },
+            {
+              "type": "text",
+              "text": "[الشحن البحري من الصين](/ar/services/sea-freight/) · [استكشف الشحن الجزئي](/ar/services/lcl-shipping-from-china/) · [مسارات الشرق الأوسط](/ar/shipping-from-china-to-middle-east/)"
+            },
+            {
+              "type": "text",
+              "text": "رُوجعت مصادر الوجهة في 14 أكتوبر 2026. أكّد المتطلبات الخاصة بالبضاعة الفعلية قبل الحجز."
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,2 @@
+Final: 16 route/viewport media and RFQ cases + 12 mode-contract cases + 2 eight-language round trips = 30 passed, zero page errors.
+The 28 matrix/mode cases passed before the initial route-switch assertion ran before the lazy component rendered. SWITCH_ONLY reran both country language trips with an H1-ready wait; results merged without changing source. See browser-results.json, language-roundtrip.log and browser-initial-language-timing.log.

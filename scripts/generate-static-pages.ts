@@ -1,3 +1,4 @@
+import gulfStories from '../src/features/freight/gulfStories.json';
 import GulfKitchenPlanning from '../src/features/commercial-kitchen/components/GulfKitchenPlanning.jsx';
 import SmallKitchenPlanningContent, {smallKitchenMeta,smallKitchenPath} from '../src/features/commercial-kitchen/SmallKitchenPlanningContent';
 import CafePlanningContent, {cafeMeta,cafePath} from '../src/features/commercial-kitchen/CafePlanningContent';
@@ -719,6 +720,7 @@ const countryNames: Record<string, Record<string, string>> = {
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
+  if ((countrySlug === 'qatar' || countrySlug === 'oman') && (lang === 'en' || lang === 'ar')) return { title: gulfStories[countrySlug][lang].title, desc: gulfStories[countrySlug][lang].desc, keywords: '' };
   if (countrySlug === 'brazil' && lang === 'pt') return brazilPortugueseMeta;
   if (lang === 'pt' || lang === 'tr') return internationalCountryMeta(countrySlug,lang);
   if (countrySlug === 'uae' && ['en','zh-cn','es'].includes(lang)) return uaeMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');

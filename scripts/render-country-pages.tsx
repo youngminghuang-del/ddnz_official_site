@@ -1,3 +1,4 @@
+import GulfFreightPage from '../src/features/freight/GulfFreightPage';
 import About from '../src/pages/About';
 import Insights from '../src/components/Insights';
 import React from 'react';
@@ -14,7 +15,7 @@ export function renderCountryPage(route: string) {
   const country = parts.at(-1)!.replace('shipping-from-china-to-', '');
   if (!['saudi-arabia','uae','kuwait','qatar','oman','bahrain','kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia','nigeria','ghana','mexico','brazil','argentina','peru','chile'].includes(country)) throw new Error(`Unsupported country: ${country}`);
   const language = parts.length === 1 ? 'en' : parts[0] === 'zh-cn' ? 'zh' : parts[0];
-  const Component = ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
+  const Component = ['qatar','oman'].includes(country) && ['en','ar'].includes(language) ? GulfFreightPage : ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
     : ['kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia'].includes(country) ? CentralAsia
     : ['nigeria','ghana'].includes(country) ? WestAfrica : LatinAmerica;
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language as any}><Component /></LanguageProvider></MemoryRouter></HelmetProvider>);

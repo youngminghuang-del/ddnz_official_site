@@ -104,36 +104,36 @@ const freightCountryLabels: Record<Language, string[]> = {
 
 const freightExecutorLabels: Record<Language, { desktop: string; mobile: string }> = {
   en: {
-    desktop: 'International freight executed by Heaven Born · Operating since 1997',
-    mobile: 'Freight by Heaven Born · Since 1997',
+    desktop: "Freight by Heaven Born",
+    mobile: "Freight by Heaven Born",
   },
   zh: {
-    desktop: '国际货运由华正邦泰执行 · 始于 1997 年',
-    mobile: '华正邦泰执行货运 · 始于 1997 年',
+    desktop: "货运由华正邦泰执行",
+    mobile: "货运由华正邦泰执行",
   },
   ru: {
-    desktop: 'Международные перевозки выполняет Heaven Born · Работаем с 1997 года',
-    mobile: 'Перевозки Heaven Born · С 1997 года',
+    desktop: "Перевозки Heaven Born",
+    mobile: "Перевозки Heaven Born",
   },
   fr: {
-    desktop: 'Fret international exécuté par Heaven Born · En activité depuis 1997',
-    mobile: 'Fret par Heaven Born · Depuis 1997',
+    desktop: "Fret par Heaven Born",
+    mobile: "Fret par Heaven Born",
   },
   es: {
-    desktop: 'Transporte internacional ejecutado por Heaven Born · Operando desde 1997',
-    mobile: 'Transporte por Heaven Born · Desde 1997',
+    desktop: "Transporte por Heaven Born",
+    mobile: "Transporte por Heaven Born",
   },
   ar: {
-    desktop: 'تنفيذ الشحن الدولي بواسطة Heaven Born · نعمل منذ 1997',
-    mobile: 'الشحن بواسطة Heaven Born · منذ 1997',
+    desktop: "الشحن عبر Heaven Born",
+    mobile: "الشحن عبر Heaven Born",
   },
   pt: {
-    desktop: 'Transporte internacional executado pela Heaven Born · Operando desde 1997',
-    mobile: 'Transporte Heaven Born · Desde 1997',
+    desktop: "Transporte pela Heaven Born",
+    mobile: "Transporte pela Heaven Born",
   },
   tr: {
-    desktop: 'Uluslararası nakliye Heaven Born tarafından yürütülür · 1997’den beri',
-    mobile: 'Heaven Born nakliye · 1997’den beri',
+    desktop: "Heaven Born ile taşımacılık",
+    mobile: "Heaven Born ile taşımacılık",
   },
 };
 

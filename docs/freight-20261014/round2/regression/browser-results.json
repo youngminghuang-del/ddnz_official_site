@@ -1,0 +1,43 @@
+{
+  "base": "http://127.0.0.1:4187",
+  "browserVersion": "155.0.8059.40",
+  "mode": "handoff-only",
+  "results": [
+    {
+      "check": "keyboard-arrow-tab-escape-and-scroll-restoration",
+      "passed": true
+    },
+    {
+      "check": "invalid-contact-failure-retry-partial-cargo-mocked-success",
+      "passed": true
+    },
+    {
+      "check": "known-values-back-and-explicit-clear",
+      "passed": true
+    },
+    {
+      "check": "uae-route-destination-handoff",
+      "passed": true
+    },
+    {
+      "check": "product-model-voltage-quantity-destination-handoff",
+      "passed": true
+    },
+    {
+      "check": "pr64-65-article-and-form-retained",
+      "passed": true
+    }
+  ],
+  "mockRequests": [
+    {
+      "url": "https://formspree.io/f/mdabvqbd",
+      "body": "------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Inquiry_Type\"\r\n\r\nInteractive Funnel (Lead Rate Optimizer)\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Selected_Service\"\r\n\r\nSea\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Origin\"\r\n\r\nGuangzhou\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Destination\"\r\n\r\nQatar\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Estimated_Weight_KG\"\r\n\r\n35.5 KG\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Estimated_Volume_CBM\"\r\n\r\nUnknown — awaiting cargo details\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Weight_Status\"\r\n\r\ncustomer_estimate\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Volume_Status\"\r\n\r\nunknown\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Lead_Goal\"\r\n\r\nFreight Export\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Product_Category\"\r\n\r\nOther\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Product_Subcategory\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Lead_Source\"\r\n\r\nembedded_quote_form\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"Source_Article_Slug\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"UTM_Source\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"UTM_Medium\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"UTM_Campaign\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"UTM_Content\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"name\"\r\n\r\nIsolated Validation\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\nisolated-validation@example.invalid\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"phone\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"industry\"\r\n\r\nOther\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA\r\nContent-Disposition: form-data; name=\"message\"\r\n\r\n\r\n------WebKitFormBoundaryEw6VFEcYuKM6DvPA--\r\n"
+    },
+    {
+      "url": "https://formspree.io/f/mdabvqbd",
+      "body": "------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Inquiry_Type\"\r\n\r\nInteractive Funnel (Lead Rate Optimizer)\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Selected_Service\"\r\n\r\nSea\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Origin\"\r\n\r\nGuangzhou\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Destination\"\r\n\r\nQatar\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Estimated_Weight_KG\"\r\n\r\n35.5 KG\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Estimated_Volume_CBM\"\r\n\r\nUnknown — awaiting cargo details\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Weight_Status\"\r\n\r\ncustomer_estimate\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Volume_Status\"\r\n\r\nunknown\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Lead_Goal\"\r\n\r\nFreight Export\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Product_Category\"\r\n\r\nOther\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Product_Subcategory\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Lead_Source\"\r\n\r\nembedded_quote_form\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"Source_Article_Slug\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"UTM_Source\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"UTM_Medium\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"UTM_Campaign\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"UTM_Content\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"name\"\r\n\r\nIsolated Validation\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"email\"\r\n\r\nisolated-validation@example.invalid\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"phone\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"industry\"\r\n\r\nOther\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1\r\nContent-Disposition: form-data; name=\"message\"\r\n\r\n\r\n------WebKitFormBoundaryP0xyqBAmVy9mL0l1--\r\n"
+    }
+  ],
+  "externalRequestsBlocked": 6,
+  "errors": []
+}

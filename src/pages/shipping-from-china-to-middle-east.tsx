@@ -1,3 +1,4 @@
+import freightFactLabels from '../features/freight/freightFactLabels.json';
 import {translatedText} from '../features/site-localization/translate.mjs';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
@@ -1346,7 +1347,10 @@ export default function MiddleEastRoute() {
     return `${value} Days`;
   };
 
+  const factLabels = freightFactLabels[activeLang as keyof typeof freightFactLabels] || freightFactLabels.en;
   const t = (key: string) => {
+    const revised: Record<string, string> = { experienceBadge: factLabels.originCoordination, colSolutions: factLabels.serviceScope, card1Cta: factLabels.consolidationCta, card2Cta: factLabels.inspectionCta, card3Cta: factLabels.documentsCta };
+    if (revised[key]) return revised[key];
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA['en'];
     return data[key] || '';
   };
@@ -1486,7 +1490,7 @@ export default function MiddleEastRoute() {
                   <div className="flex flex-wrap gap-2.5 pt-1">
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs font-bold text-emerald-400">
                       <ShieldCheck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? 'SABER / 中东合规核验' : translatedText('SABER & Customs Compliant',language)}
+                      {selectedCountry === 'Saudi-Arabia' ? factLabels.saudiSaber : factLabels.importPlanning}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <Ship className="w-3.5 h-3.5" aria-hidden="true" />
@@ -1710,10 +1714,10 @@ export default function MiddleEastRoute() {
                     {t('card1Desc')}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
+                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card1Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </div>
+                </button>
               </div>
 
               {/* Card 2 */}
@@ -1729,10 +1733,10 @@ export default function MiddleEastRoute() {
                     {t('card2Desc')}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
+                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card2Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </div>
+                </button>
               </div>
 
               {/* Card 3 */}
@@ -1745,13 +1749,13 @@ export default function MiddleEastRoute() {
                     {getCountryContent('card3Title')}
                   </h3>
                   <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                    {getCountryContent('card3Desc')}
+                    {selectedCountry === 'Saudi-Arabia' ? factLabels.saudiSaber : factLabels.importPlanning}
                   </p>
                 </div>
-                <div className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
+                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
                   <span>{t('card3Cta')}</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </div>
+                </button>
               </div>
             </div>
           </div>
@@ -1957,7 +1961,7 @@ export default function MiddleEastRoute() {
         </section>
 
         {/* Formspree-ready Styled Lead Capture Container */}
-        <section id="middle-east-quote-form" className="py-16 md:py-24 border-t border-white/[0.05]">
+        <section id="middle-east-quote-form" tabIndex={-1} style={{ scrollMarginTop: '110px' }} className="py-16 md:py-24 border-t border-white/[0.05]">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="bg-white/[0.03] backdrop-blur-md rounded-3xl p-8 md:p-12 shadow-2xl border border-white/[0.08] dark-form-container">
               <GetAQuote

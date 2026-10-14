@@ -22,7 +22,7 @@ try {
   const visible=rendered.replace(/opacity:0(?=[;" ])/g,'opacity:1');
   const original=html.replace(/<div id="root" data-country-prerender="true">[\s\S]*<\/div>(?=\s*<\/body>)/,'<div id="root"></div>');
   let output=original.replace('<div id="root"></div>',`<div id="root" data-country-prerender="true">${visible}</div>`);
-  for(const css of fs.readdirSync(path.join(root,'dist/assets')).filter(f=>/^freight-.*\.css$/.test(f))){
+  for(const css of fs.readdirSync(path.join(root,'dist/assets')).filter(f=>/^(freight|GulfFreightPage)-.*\.css$/.test(f))){
    if(!output.includes(`/assets/${css}`))output=output.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
   outputs.push([file,output]);

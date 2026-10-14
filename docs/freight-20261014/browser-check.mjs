@@ -25,7 +25,7 @@ async function widthCheck(label){const v=await page.evaluate(()=>({width:innerWi
 async function shot(name,el){await page.waitForTimeout(650);await (el||page).screenshot({path:`${out}/${name}.png`});}
 async function next(l='en'){await page.locator('#get-a-quote').getByRole('button',{name:nextNames[langs.indexOf(l)],exact:true}).click();await page.waitForTimeout(650);}
 async function cargo(l='en',path=prefix(l)+'/shipping-from-china-to-qatar/'){
- await go(['pt','tr'].includes(l)&&path.includes('shipping-from-china-to-qatar')?prefix(l)+'/get-a-quote/?dest=Qatar':path);await page.locator('#get-a-quote button').nth(4).click();await next(l);await page.locator('#quote-cargo-weight').waitFor();await page.waitForTimeout(650);
+ await go(['pt','tr'].includes(l)&&path.includes('shipping-from-china-to-qatar')?prefix(l)+'/get-a-quote/?dest=Qatar':path);await page.locator('#get-a-quote button').filter({has:page.locator('h4')}).first().click();await next(l);await page.locator('#quote-cargo-weight').waitFor();await page.waitForTimeout(650);
 }
 try {
  for(const width of (process.env.HANDOFF_ONLY ? [] : [360,390,430,1536])){
@@ -103,7 +103,7 @@ try {
  assert.equal(await page.locator('[name="Weight_Status"]').inputValue(),'unknown');assert.equal(await page.locator('[name="Volume_Status"]').inputValue(),'unknown');
  results.push({check:'known-values-back-and-explicit-clear',passed:true});
  await go('/shipping-from-china-to-uae/');
- const uaeQuote=page.locator('a[href*="get-a-quote"]:visible').filter({hasText:/quote/i}).first();await uaeQuote.click();await page.waitForURL(/get-a-quote/);await page.locator('#get-a-quote button').nth(4).click();await next();await next();
+ const uaeQuote=page.locator('a[href*="get-a-quote"]:visible').filter({hasText:/quote/i}).first();await uaeQuote.click();await page.waitForURL(/get-a-quote/);await page.locator('#get-a-quote button').filter({has:page.locator('h4')}).first().click();await next();await next();
  assert.match(await page.locator('[name="Destination"]').inputValue(),/UAE|Emirates/);results.push({check:'uae-route-destination-handoff',passed:true});
  await go('/sourcing/portable-air-conditioners-from-china/');await page.getByRole('button',{name:/Add.*configuration/i}).first().click();
  await page.getByLabel('Destination country or port',{exact:true}).fill('UAE');await page.getByRole('link',{name:/Review air conditioner request/}).click();await page.waitForURL(/get-a-quote/);

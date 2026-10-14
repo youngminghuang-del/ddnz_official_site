@@ -1,3 +1,4 @@
+import freightFactLabels from '../features/freight/freightFactLabels.json';
 import { railTerminalAlt } from '../lib/operationalImageAlt';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
@@ -760,6 +761,7 @@ export default function ShippingCentralAsia() {
   const chemicalCase = EURASIA_CHEMICAL_CASE[activeLang];
   const uzbekistanRoadCase = UZBEKISTAN_ROAD_CASE[activeLang];
   const t = (key: string) => {
+    if (key === 'insureText') return (freightFactLabels[activeLang as keyof typeof freightFactLabels] || freightFactLabels.en).originCoordination;
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA.en;
     return data[key] || '';
   };

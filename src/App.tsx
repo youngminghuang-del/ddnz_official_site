@@ -67,10 +67,13 @@ const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPa
 const InternationalCountryPage = lazy(() => import('./pages/InternationalCountryPage'));
 const BrazilPortuguesePage = lazy(() => import('./pages/BrazilPortuguesePage'));
 
+const GulfFreightPage = lazy(() => import('./features/freight/GulfFreightPage'));
+
 function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
+  if (['qatar', 'oman'].includes(normalizedCountry) && !/^\/(zh-cn|ru|fr|es|pt|tr)\//.test(location.pathname)) return <GulfFreightPage />;
   if (normalizedCountry === 'uae' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <UaeFreightPage />;
   if (normalizedCountry === 'nigeria' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <NigeriaFreightPage />;
   if (normalizedCountry === 'mexico' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <MexicoFreightPage />;
