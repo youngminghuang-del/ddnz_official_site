@@ -34,6 +34,9 @@ const languageLabels: Record<Language, string> = {
   tr: 'TR',
 };
 
+const languageNames: Record<Language, string> = { en: 'English', zh: '中文', ru: 'Русский', fr: 'Français', es: 'Español', ar: 'العربية', pt: 'Português', tr: 'Türkçe' };
+const languagePrompts: Record<Language, string> = { en: 'Choose language', zh: '选择语言', ru: 'Выбрать язык', fr: 'Choisir la langue', es: 'Elegir idioma', ar: 'اختر اللغة', pt: 'Escolher idioma', tr: 'Dil seçin' };
+
 const navLabels: Record<Language, {
   home: string;
   products: string;
@@ -221,6 +224,9 @@ export default function SourcingHomepageNav({
   const location = useLocation();
   const navigate = useNavigate();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [mobileLanguageOpen, setMobileLanguageOpen] = useState(false);
+  const mobileLanguageRef = useRef<HTMLDivElement>(null);
+  const mobileLanguageTriggerRef = useRef<HTMLButtonElement>(null);
   const [mobileSection, setMobileSection] = useState<MobileSectionId | null>(null);
   const [openDropdown, setOpenDropdown] = useState<DesktopDropdownId | null>(null);
   const headerRef = useRef<HTMLElement>(null);
@@ -285,13 +291,14 @@ export default function SourcingHomepageNav({
 
   useEffect(() => {
     const desktop = window.matchMedia(`(min-width: ${compactDesktop ? 1280 : 1440}px)`);
-    const onResize = () => { setMobileOpen(false); setMobileSection(null); closeDesktopDropdown(); };
+    const onResize = () => { setMobileLanguageOpen(false); setMobileOpen(false); setMobileSection(null); closeDesktopDropdown(); };
     desktop.addEventListener('change', onResize);
     return () => desktop.removeEventListener('change', onResize);
   }, [compactDesktop]);
 
   useEffect(() => {
     closeDesktopDropdown();
+    setMobileLanguageOpen(false);
     setMobileOpen(false);
     setMobileSection(null);
   }, [location.pathname, location.search, location.hash]);
@@ -345,9 +352,28 @@ export default function SourcingHomepageNav({
     };
   }, [mobileOpen]);
 
+  useEffect(() => {
+    if (!mobileLanguageOpen) return;
+    mobileLanguageRef.current?.querySelector<HTMLAnchorElement>('a[aria-current="page"], a')?.focus();
+    const onPointer = (event: PointerEvent) => {
+      if (!mobileLanguageRef.current?.contains(event.target as Node)) setMobileLanguageOpen(false);
+    };
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key !== 'Escape') return;
+      setMobileLanguageOpen(false);
+      mobileLanguageTriggerRef.current?.focus();
+    };
+    document.addEventListener('pointerdown', onPointer);
+    document.addEventListener('keydown', onKey);
+    return () => {
+      document.removeEventListener('pointerdown', onPointer);
+      document.removeEventListener('keydown', onKey);
+    };
+  }, [mobileLanguageOpen]);
+
   const languageHref = (nextLanguage: Language) => {
     const suffix = splitNavigationPath(location.pathname).pathname;
-    return navigationPath(/^\/blog\//.test(suffix) ? '/insights' : suffix, nextLanguage);
+    return navigationPath(/^\/blog\//.test(suffix) ? '/insights' : suffix, nextLanguage) + location.search + (/^\/blog\//.test(suffix) ? '' : location.hash);
   };
 
   const switchLanguage = async (nextLanguage: Language) => {
@@ -372,6 +398,7 @@ export default function SourcingHomepageNav({
       }
     }
 
+    setMobileLanguageOpen(false);
     setLanguage(nextLanguage);
     setMobileOpen(false);
     setMobileSection(null);
@@ -383,6 +410,7 @@ export default function SourcingHomepageNav({
   };
 
   const closeMobile = () => {
+    setMobileLanguageOpen(false);
     setMobileOpen(false);
     setMobileSection(null);
   };
@@ -420,7 +448,7 @@ export default function SourcingHomepageNav({
     <>
     <header lang={language === 'zh' ? 'zh-CN' : language} dir={language === 'ar' ? 'rtl' : 'ltr'} data-mobile-open={mobileOpen || undefined} ref={headerRef} className="ddnz-home sticky top-0 z-50 border-b border-slate-200/90 bg-white/96 backdrop-blur-xl">
       <div ref={collapsedHeaderRef}>
-      <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-3 px-5 sm:px-8 lg:px-7 2xl:gap-6 2xl:px-12">
+      <div className="mx-auto flex h-[82px] max-w-[1536px] items-center justify-between gap-2 px-4 sm:px-8 lg:px-7 2xl:gap-6 2xl:px-12">
         <Link
           to={localizedPath('/')}
           dir="ltr"
@@ -431,7 +459,7 @@ export default function SourcingHomepageNav({
           className="group flex shrink-0 items-center gap-2.5 rounded-md py-1 pr-1 text-[var(--ddnz-ink)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-4 rtl:pl-1 rtl:pr-0 sm:gap-3"
           aria-label={`DDNZ Global — ${labels.home}`}
         >
-          <span className="grid h-10 w-10 shrink-0 place-items-center sm:h-[46px] sm:w-[46px]" aria-hidden="true">
+          <span className="grid h-8 w-8 shrink-0 place-items-center min-[400px]:h-10 min-[400px]:w-10 sm:h-[46px] sm:w-[46px]" aria-hidden="true">
             <img
               src="/images/brand/ddnz-global-mark-v1.png"
               alt=""
@@ -441,10 +469,10 @@ export default function SourcingHomepageNav({
             />
           </span>
           <span className="flex min-w-0 flex-col justify-center">
-            <span className="whitespace-nowrap bg-[linear-gradient(100deg,#6b2f8a_0%,#8d397d_42%,#b94750_76%,#b94625_100%)] bg-clip-text text-[22px] font-extrabold leading-[0.88] tracking-[-0.025em] text-transparent 2xl:text-[26px]">
+            <span className="whitespace-nowrap bg-[linear-gradient(100deg,#6b2f8a_0%,#8d397d_42%,#b94750_76%,#b94625_100%)] bg-clip-text text-[18px] min-[400px]:text-[22px] font-extrabold leading-[0.88] tracking-[-0.025em] text-transparent 2xl:text-[26px]">
               DDNZ<span className="ml-[0.32em] font-semibold tracking-[0.045em]">GLOBAL</span>
             </span>
-            <span className="mt-[6px] whitespace-nowrap text-[10px] font-semibold leading-none tracking-[0.075em] text-[#40536c] sm:text-[11px]">
+            <span className="mt-[6px] whitespace-nowrap text-[8px] min-[400px]:text-[10px] font-semibold leading-none tracking-[0.075em] text-[#40536c] sm:text-[11px]">
               CHINA SOURCING <span className="text-[#b94625]">&amp;</span> EXPORT
             </span>
           </span>
@@ -526,7 +554,7 @@ export default function SourcingHomepageNav({
           >
             {languageOptions.map((item) => (
               <a key={item} href={languageHref(item)} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) { event.preventDefault(); void switchLanguage(item); } }} lang={item === 'zh' ? 'zh-CN' : item} aria-current={item === language ? 'page' : undefined} className="block w-full rounded-lg px-3 py-2 text-left text-sm font-medium text-slate-700 hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] rtl:text-right">
-                {languageLabels[item]}
+                {languageNames[item]}
               </a>
             ))}
           </Dropdown>
@@ -543,9 +571,26 @@ export default function SourcingHomepageNav({
           </Link>
         </div>
 
-        <button ref={mobileTriggerRef} type="button" className={`grid h-11 w-11 place-items-center rounded-lg text-[var(--ddnz-ink)] hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${mobileVisibility}`} aria-label={mobileOpen ? labels.closeMenu : labels.openMenu} aria-controls="mobile-navigation" aria-expanded={mobileOpen} onClick={() => { closeDesktopDropdown(); setMobileOpen((value) => !value); }}>
+        <div className={`flex shrink-0 items-center gap-1 ${mobileVisibility}`}>
+          <div ref={mobileLanguageRef} className="relative" onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setMobileLanguageOpen(false);
+          }}>
+            <button ref={mobileLanguageTriggerRef} type="button" aria-label={languagePrompts[language]} aria-controls="mobile-language-menu" aria-expanded={mobileLanguageOpen}
+              className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-slate-200 px-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]"
+              onClick={() => { closeDesktopDropdown(); setMobileOpen(false); setMobileLanguageOpen(value => !value); }}
+              onKeyDown={event => { if (event.key === 'ArrowDown') { event.preventDefault(); setMobileOpen(false); setMobileLanguageOpen(true); } }}>
+              <Globe2 className="h-4 w-4 shrink-0" aria-hidden="true" /><span>{languageLabels[language]}</span>
+            </button>
+            {mobileLanguageOpen && <div id="mobile-language-menu" className="absolute end-0 top-full z-50 mt-3 grid max-h-[calc(100dvh-100px)] w-64 max-w-[calc(100vw-2rem)] grid-cols-2 gap-1 overflow-y-auto rounded-xl border border-slate-200 bg-white p-2 shadow-xl" aria-label={languagePrompts[language]}>
+              {languageOptions.map(item => <a key={item} href={languageHref(item)} lang={item === 'zh' ? 'zh-CN' : item} dir={item === 'ar' ? 'rtl' : 'ltr'} aria-current={item === language ? 'page' : undefined}
+                onClick={event => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) { event.preventDefault(); void switchLanguage(item); } }}
+                className="flex min-h-11 items-center rounded-lg px-3 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)] aria-[current=page]:bg-[var(--ddnz-purple-soft)] aria-[current=page]:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">{languageNames[item]}</a>)}
+            </div>}
+          </div>
+        <button ref={mobileTriggerRef} type="button" className={`grid h-11 w-11 place-items-center rounded-lg text-[var(--ddnz-ink)] hover:bg-slate-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${mobileVisibility}`} aria-label={mobileOpen ? labels.closeMenu : labels.openMenu} aria-controls="mobile-navigation" aria-expanded={mobileOpen} onClick={() => { setMobileLanguageOpen(false); closeDesktopDropdown(); setMobileOpen((value) => !value); }}>
           {mobileOpen ? <X className="h-6 w-6" aria-hidden="true" /> : <Menu className="h-6 w-6" aria-hidden="true" />}
         </button>
+        </div>
       </div>
 
       {showFreightExecutor ? (
@@ -624,13 +669,6 @@ export default function SourcingHomepageNav({
             <Link onClick={closeMobile} aria-current={isProcessPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isProcessPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={processPath}>{labels.process}</Link>
             <Link onClick={closeMobile} className="rounded-lg px-3 py-3 font-semibold text-[var(--ddnz-ink)]" to={localizedPath('/about/')}>{aboutCopy[language].nav}</Link>
             <Link onClick={closeMobile} aria-current={isInsightsPage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isInsightsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/insights')}>{labels.insights}</Link>
-            <div className="mt-1 flex flex-wrap gap-2 border-t border-slate-200 pt-3">
-              {languageOptions.map((item) => (
-                <a key={item} href={languageHref(item)} onClick={(event) => { if (!event.metaKey && !event.ctrlKey && !event.shiftKey && !event.altKey && event.button === 0) { event.preventDefault(); void switchLanguage(item); } }} lang={item === 'zh' ? 'zh-CN' : item} aria-current={item === language ? 'page' : undefined} className={`min-h-11 rounded-lg border px-3 text-sm font-semibold ${item === language ? 'border-[var(--ddnz-purple)] bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'border-slate-200 text-slate-600'}`}>
-                  {languageLabels[item]}
-                </a>
-              ))}
-            </div>
             <Link onClick={closeMobile} className="mt-2 inline-flex min-h-12 items-center justify-center rounded-lg bg-[var(--ddnz-action)] px-5 font-bold text-white" to={quoteHref}>{quoteLabel}</Link>
           </div>
         </nav>

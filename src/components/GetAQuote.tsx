@@ -8,7 +8,6 @@ import {
   Plane,
   Truck,
   Package,
-  Boxes,
   Globe,
   Scale,
   CheckCircle2,
@@ -18,6 +17,8 @@ import {
   ChevronRight,
   MapPin
 } from 'lucide-react';
+import { cargoMeasurement, isValidCargoMeasurement } from '../lib/quoteCargo';
+import { quoteCargoCopy } from '../features/freight/quoteCargoCopy';
 import { useForm, ValidationError } from '@formspree/react';
 import { useLocation } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -353,6 +354,16 @@ interface GetAQuoteProps {
 export default function GetAQuote({ presetDestination, presetService }: GetAQuoteProps = {}) {
   const [state, handleSubmit] = useForm("mdabvqbd");
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const quoteSectionRef = useRef<HTMLElement>(null);
+  useEffect(() => {
+    const section = quoteSectionRef.current;
+    if (!section) return;
+    const observer = new IntersectionObserver(([entry]) => {
+      section.toggleAttribute('data-quote-visible', entry.isIntersecting);
+    });
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
   const { language, t } = useLanguage();
   const location = useLocation();
   const isQuotePage = location.pathname.includes('get-a-quote');
@@ -454,9 +465,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
       }
     }
   }, [language, attributionParams]);
-  const [weight, setWeight] = useState(350);
-  const [volume, setVolume] = useState(2.5);
-  const [presetActive, setPresetActive] = useState<'small' | 'medium' | 'large' | null>('medium');
+  const [weight, setWeight] = useState('');
+  const [volume, setVolume] = useState('');
+  const cargoCopy = quoteCargoCopy[language];
+  const cargoValid = isValidCargoMeasurement(weight) && isValidCargoMeasurement(volume);
 
   // Step 4 Details
   const [name, setName] = useState('');
@@ -599,7 +611,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
   // Navigate forward with sliding transition
   const nextStep = () => {
-    if (step < 4) {
+    if (step < 4 && (step !== 3 || cargoValid)) {
       markQuoteStarted();
       setDirection(1);
       setStep(step + 1);
@@ -611,21 +623,6 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     if (step > 1) {
       setDirection(-1);
       setStep(step - 1);
-    }
-  };
-
-  // Set preset cargo dimensions
-  const handlePresetSelect = (preset: 'small' | 'medium' | 'large') => {
-    setPresetActive(preset);
-    if (preset === 'small') {
-      setWeight(45);
-      setVolume(0.3);
-    } else if (preset === 'medium') {
-      setWeight(480);
-      setVolume(3.2);
-    } else if (preset === 'large') {
-      setWeight(12500);
-      setVolume(68);
     }
   };
 
@@ -648,9 +645,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
     setStep(1);
     setDestination('');
     setOrigin('');
-    setWeight(350);
-    setVolume(2.5);
-    setPresetActive('medium');
+    setWeight('');
+    setVolume('');
     setName('');
     setEmail('');
     setPhone('');
@@ -692,7 +688,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
   };
 
   return (
-    <section id="get-a-quote" className="scroll-mt-24 py-16 md:py-28 bg-[#fafafc] font-sans relative overflow-hidden">
+    <section ref={quoteSectionRef} id="get-a-quote" dir={language === 'ar' ? 'rtl' : 'ltr'} className="scroll-mt-24 py-16 md:py-28 bg-[#fafafc] font-sans relative overflow-hidden">
       {/* Background ambient mesh gradients */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none translate-x-1/3 translate-y-1/3" />
@@ -793,7 +789,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                 </div>
 
                 {/* Main animated multi-step container */}
-                <div className="p-6 sm:p-10 flex-1 flex flex-col justify-between overflow-hidden">
+                <div className="p-4 sm:p-8 flex-1 flex flex-col justify-between overflow-hidden">
                   <AnimatePresence initial={false} custom={direction} mode="wait">
                     <motion.div
                       key={step}
@@ -808,7 +804,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 1 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">1</span>
+                            <span className="flex items-center justify-center w-8 h-8 shrink-0 rounded-lg bg-sky-50 text-[#0b4f8a]">1</span>
                             {ft('step1Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-8 font-medium">
@@ -848,7 +844,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   key={item.id}
                                   type="button"
                                   onClick={() => handleServiceSelect(item.id as any)}
-                                  className={`p-5 rounded-2xl border-2 text-left transition-all duration-300 flex items-start gap-4 cursor-pointer relative overflow-hidden group ${
+                                  className={`p-5 rounded-2xl border-2 text-start transition-all duration-300 flex items-start gap-4 cursor-pointer relative overflow-hidden group ${
                                     isActive
                                       ? 'border-[var(--hb-blue)] bg-sky-50/70 text-[var(--hb-blue)] ring-2 ring-offset-2 ring-sky-200 font-bold scale-[1.01] shadow-lg'
                                       : 'border-slate-200 bg-slate-50/40 text-slate-700 hover:border-[var(--hb-blue)]/45 hover:bg-sky-50/40 hover:scale-[1.01]'
@@ -886,7 +882,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 2 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">2</span>
+                            <span className="flex items-center justify-center w-8 h-8 shrink-0 rounded-lg bg-sky-50 text-[#0b4f8a]">2</span>
                             {ft('step2Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-6 font-medium">
@@ -1010,132 +1006,35 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                         </div>
                       )}
 
-                      {/* STEP 3: Weight and Volume Sliders */}
+                      {/* STEP 3: Customer estimates or explicitly unknown cargo */}
                       {step === 3 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">3</span>
-                            {ft('step3Title')}
+                            <span className="flex items-center justify-center w-8 h-8 shrink-0 rounded-lg bg-sky-50 text-[#0b4f8a]">3</span>
+                            {cargoCopy.title}
                           </h3>
-                          <p className="text-sm text-slate-500 mb-6 font-medium">
-                            {ft('step3Desc')}
+                          <p id="quote-cargo-help" className="text-sm text-slate-500 mb-6 font-medium">
+                            {cargoCopy.help}
                           </p>
 
-                          {/* Quick Presets */}
-                          <div className="mb-6">
-                            <span className="block text-xs font-black text-slate-400 uppercase tracking-widest mb-3">
-                              {ft('presetLabel')}
-                            </span>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
-                              {[
-                                { id: 'small', label: ft('presetSmall'), icon: Package },
-                                { id: 'medium', label: ft('presetMedium'), icon: Boxes },
-                                { id: 'large', label: ft('presetLarge'), icon: Truck }
-                              ].map((preset) => {
-                                const isActive = presetActive === preset.id;
-                                const PresetIcon = preset.icon;
-                                return (
-                                  <button
-                                    key={preset.id}
-                                    type="button"
-                                    onClick={() => handlePresetSelect(preset.id as any)}
-                                    className={`py-3 px-4 rounded-xl border text-left transition-all duration-300 flex items-center gap-2.5 ${
-                                      isActive
-                                        ? 'border-[var(--hb-amber)] bg-amber-50/50 text-[var(--hb-amber)] font-bold ring-2 ring-amber-100'
-                                        : 'border-slate-200 bg-white hover:border-[var(--hb-amber)]/50 text-slate-700 hover:bg-slate-50'
-                                    }`}
-                                  >
-                                    <PresetIcon className="w-5 h-5 text-[#0b4f8a]" aria-hidden="true" />
-                                    <span className="text-xs font-bold leading-tight">{preset.label}</span>
-                                  </button>
-                                );
-                              })}
-                            </div>
+                          <div className="grid grid-cols-1 gap-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 sm:grid-cols-2 sm:p-6" aria-describedby="quote-cargo-help">
+                            {([
+                              { id: 'weight', label: ft('weight'), unit: 'KG', value: weight, set: setWeight, example: '350' },
+                              { id: 'volume', label: ft('volume'), unit: 'CBM', value: volume, set: setVolume, example: '2.5' },
+                            ] as const).map(field => <div key={field.id} className="min-w-0">
+                              <label htmlFor={`quote-cargo-${field.id}`} className="mb-2 block text-sm font-bold text-slate-700">{field.label}</label>
+                              <div className="flex items-center gap-3">
+                                <input id={`quote-cargo-${field.id}`} type="text" inputMode="decimal" dir="ltr"
+                                  value={field.value} placeholder={field.example}
+                                  onChange={event => field.set(event.target.value)}
+                                  aria-invalid={!isValidCargoMeasurement(field.value)} aria-describedby={`quote-cargo-${field.id}-status quote-cargo-help`}
+                                  className="min-h-12 w-full min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-base font-semibold text-slate-900 placeholder:text-slate-400 focus:border-[var(--ddnz-purple)] focus:outline-none focus:ring-2 focus:ring-[var(--ddnz-purple-soft)]" />
+                                <span className="shrink-0 text-sm font-semibold text-slate-600">{field.unit}</span>
+                              </div>
+                              <p id={`quote-cargo-${field.id}-status`} className="mt-2 text-sm text-slate-600">{!field.value ? cargoCopy.unknown : !isValidCargoMeasurement(field.value) ? cargoCopy.invalid : field.value + ' ' + field.unit}</p>
+                            </div>)}
                           </div>
-
-                          {/* Interactive Sliders */}
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 bg-slate-50 p-5 sm:p-6 rounded-2xl border border-slate-100">
-                            {/* Weight Slider */}
-                            <div className="space-y-3">
-                              <div className="flex items-center justify-between">
-                                <span className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                                  <Scale className="w-3.5 h-3.5 text-[#0b4f8a]" />
-                                  {ft('weight')}
-                                </span>
-                                <div className="flex items-center gap-1">
-                                  <input
-                                    type="number"
-                                    value={weight}
-                                    onChange={(e) => {
-                                      setWeight(Math.max(0, parseInt(e.target.value) || 0));
-                                      setPresetActive(null);
-                                    }}
-                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-base font-black text-slate-800 focus:border-[#0b4f8a] focus:ring-1 focus:ring-[#0b4f8a] outline-none"
-                                  />
-                                  <span className="text-xs font-bold text-slate-500">KG</span>
-                                </div>
-                              </div>
-                              <input
-                                type="range"
-                                min="10"
-                                max="25000"
-                                step={weight > 1000 ? 250 : weight > 100 ? 25 : 5}
-                                value={weight}
-                                onChange={(e) => {
-                                  setWeight(parseInt(e.target.value));
-                                  setPresetActive(null);
-                                }}
-                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0b4f8a]"
-                              />
-                              <div className="flex justify-between text-[10px] font-bold text-slate-400">
-                                <span>10 KG</span>
-                                <span>5,000 KG</span>
-                                <span>15,000 KG</span>
-                                <span>25,000+ KG</span>
-                              </div>
-                            </div>
-
-                            {/* Volume Slider */}
-                            <div className="space-y-3">
-                              <div className="flex items-center justify-between">
-                                <span className="text-xs font-black text-slate-400 uppercase tracking-wider flex items-center gap-1.5">
-                                  <Package className="w-3.5 h-3.5 text-[var(--hb-amber)]" />
-                                  {ft('volume')}
-                                </span>
-                                <div className="flex items-center gap-1">
-                                  <input
-                                    type="number"
-                                    value={volume}
-                                    step="0.1"
-                                    onChange={(e) => {
-                                      setVolume(Math.max(0, parseFloat(e.target.value) || 0));
-                                      setPresetActive(null);
-                                    }}
-                                    className="w-20 text-right px-2 py-1 rounded border border-slate-200 text-base font-black text-slate-800 focus:border-[#0b4f8a] focus:ring-1 focus:ring-[#0b4f8a] outline-none"
-                                  />
-                                  <span className="text-xs font-bold text-slate-500">CBM</span>
-                                </div>
-                              </div>
-                              <input
-                                type="range"
-                                min="0.1"
-                                max="100"
-                                step="0.1"
-                                value={volume}
-                                onChange={(e) => {
-                                  setVolume(parseFloat(e.target.value));
-                                  setPresetActive(null);
-                                }}
-                                className="w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[var(--hb-amber)]"
-                              />
-                              <div className="flex justify-between text-[10px] font-bold text-slate-400">
-                                <span>0.1 CBM</span>
-                                <span>25 CBM</span>
-                                <span>50 CBM</span>
-                                <span>100+ CBM</span>
-                              </div>
-                            </div>
-                          </div>
+                          <button type="button" onClick={() => { setWeight(''); setVolume(''); }} className="mt-4 min-h-11 self-start rounded-lg border border-slate-300 px-4 py-2 text-start text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)]">{cargoCopy.clear}</button>
                         </div>
                       )}
 
@@ -1143,7 +1042,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                       {step === 4 && (
                         <div className="flex-1 flex flex-col">
                           <h3 className="text-xl sm:text-2xl font-black text-slate-900 mb-2 flex items-center gap-2">
-                            <span className="flex items-center justify-center w-8 h-8 rounded-lg bg-sky-50 text-[#0b4f8a]">4</span>
+                            <span className="flex items-center justify-center w-8 h-8 shrink-0 rounded-lg bg-sky-50 text-[#0b4f8a]">4</span>
                             {ft('step4Title')}
                           </h3>
                           <p className="text-sm text-slate-500 mb-6 font-medium">
@@ -1169,14 +1068,14 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                   <Globe className="w-3.5 h-3.5 text-sky-700" aria-hidden="true" /> {destination || 'Global Dest.'}
                                 </span>
                                 <ArrowRight className="w-3.5 h-3.5 text-slate-400" aria-hidden="true" />
-                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm text-amber-700">
-                                  <Scale className="w-3.5 h-3.5" aria-hidden="true" /> {weight} KG / {volume} CBM
+                                <span className="bg-white border border-slate-200 px-2.5 py-1 rounded-lg flex items-center gap-1 shadow-sm text-amber-700 min-w-0 break-words">
+                                  <Scale className="w-3.5 h-3.5 shrink-0" aria-hidden="true" /> {ft('weight')}: {weight ? `${weight} KG` : cargoCopy.unknown} · {ft('volume')}: {volume ? `${volume} CBM` : cargoCopy.unknown}
                                 </span>
                               </div>
                             </div>
 
                             {/* Fast route speed indicator tag */}
-                            <div className="text-right text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
+                            <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
                                 <Sparkles className="w-3 h-3 text-[var(--hb-amber)]" /> Route review
                               </span>
@@ -1192,8 +1091,10 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <input type="hidden" name="Selected_Service" value={selectedService} />
                             <input type="hidden" name="Origin" value={origin} />
                             <input type="hidden" name="Destination" value={destination} />
-                            <input type="hidden" name="Estimated_Weight_KG" value={`${weight} KG`} />
-                            <input type="hidden" name="Estimated_Volume_CBM" value={`${volume} CBM`} />
+                            <input type="hidden" name="Estimated_Weight_KG" value={cargoMeasurement(weight, 'KG').value} />
+                            <input type="hidden" name="Estimated_Volume_CBM" value={cargoMeasurement(volume, 'CBM').value} />
+                            <input type="hidden" name="Weight_Status" value={cargoMeasurement(weight, 'KG').status} />
+                            <input type="hidden" name="Volume_Status" value={cargoMeasurement(volume, 'CBM').status} />
                             <input type="hidden" name="Lead_Goal" value={leadGoal} />
                             <input type="hidden" name="Product_Category" value={product} />
                             <input type="hidden" name="Product_Subcategory" value={attributedSubcategory} />
@@ -1207,7 +1108,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}
                               <div>
-                                <label htmlFor="quote-contact-name" className="sr-only">{ft('namePlaceholder')}</label>
+                                <label htmlFor="quote-contact-name" className="mb-2 block text-sm font-semibold text-slate-700">{ft('namePlaceholder')}</label>
                                 <input
                                   id="quote-contact-name"
                                   type="text"
@@ -1223,7 +1124,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                               {/* Contact Email */}
                               <div>
-                                <label htmlFor="quote-contact-email" className="sr-only">{ft('emailPlaceholder')}</label>
+                                <label htmlFor="quote-contact-email" className="mb-2 block text-sm font-semibold text-slate-700">{ft('emailPlaceholder')}</label>
                                 <input
                                   id="quote-contact-email"
                                   type="email"
@@ -1247,7 +1148,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                               {/* Phone / WeChat / WhatsApp */}
                               <div>
-                                <label htmlFor="quote-contact-phone" className="sr-only">{ft('phonePlaceholder')}</label>
+                                <label htmlFor="quote-contact-phone" className="mb-2 block text-sm font-semibold text-slate-700">{ft('phonePlaceholder')}</label>
                                 <input
                                   id="quote-contact-phone"
                                   type="text"
@@ -1286,7 +1187,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                               </summary>
                               <div className="grid grid-cols-1 gap-4 border-t border-slate-200 p-4">
                                 <div>
-                                  <label htmlFor="quote-industry" className="sr-only">{t('get_a_quote.industry') || 'Industry category'}</label>
+                                  <label htmlFor="quote-industry" className="mb-2 block text-sm font-semibold text-slate-700">{t('get_a_quote.industry') || 'Industry category'}</label>
                                   <select
                                     id="quote-industry"
                                     name="industry"
@@ -1304,7 +1205,7 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 </div>
 
                                 <div>
-                                  <label htmlFor="quote-cargo-notes" className="sr-only">{ft('notesPlaceholder')}</label>
+                                  <label htmlFor="quote-cargo-notes" className="mb-2 block text-sm font-semibold text-slate-700">{ft('notesPlaceholder')}</label>
                                   <textarea
                                     id="quote-cargo-notes"
                                     name="message"
@@ -1317,6 +1218,8 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
                                 </div>
                               </div>
                             </details>
+
+                            <ValidationError errors={state.errors} className="text-sm font-semibold text-red-700" />
 
                             {/* Live Submission Button */}
                             <div className="pt-2">
@@ -1349,27 +1252,27 @@ export default function GetAQuote({ presetDestination, presetService }: GetAQuot
 
                   {/* Navigation Footer for Wizard (Steps 2, 3) */}
                   {step > 1 && (
-                    <div className="flex items-center justify-between border-t border-slate-100 pt-6 mt-6">
+                    <div className="flex flex-wrap items-center justify-between gap-3 border-t border-slate-100 pt-6 mt-6">
                       <button
                         type="button"
                         onClick={prevStep}
                         className="px-5 py-2.5 min-h-11 rounded-xl text-slate-500 hover:text-slate-800 bg-slate-50 hover:bg-slate-100 border border-slate-200 transition-colors flex items-center gap-2 font-bold text-xs cursor-pointer"
                       >
-                        <ArrowLeft className="w-4 h-4" /> {ft('back')}
+                        <ArrowLeft className="w-4 h-4 shrink-0 rtl:rotate-180" /> {ft('back')}
                       </button>
 
                       {step < 4 && (
                         <button
                           type="button"
-                          disabled={step === 2 && !destination}
+                          disabled={(step === 2 && !destination) || (step === 3 && !cargoValid)}
                           onClick={nextStep}
                           className={`px-6 py-2.5 min-h-11 rounded-xl font-extrabold text-xs flex items-center gap-1.5 transition-all cursor-pointer ${
-                            step === 2 && !destination
+                            ((step === 2 && !destination) || (step === 3 && !cargoValid))
                               ? 'bg-slate-100 text-slate-400 border border-slate-200 cursor-not-allowed'
                               : 'bg-[#0b4f8a] text-white hover:bg-[#082f55] shadow-sm hover:shadow-md'
                           }`}
                         >
-                          {ft('next')} <ChevronRight className="w-4 h-4" />
+                          {ft('next')} <ChevronRight className="w-4 h-4 shrink-0 rtl:rotate-180" />
                         </button>
                       )}
                     </div>

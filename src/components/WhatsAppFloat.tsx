@@ -27,7 +27,7 @@ export default function WhatsAppFloat() {
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-center justify-center rtl:left-6 rtl:right-auto md:bottom-10">
+    <div data-floating-control className="fixed bottom-6 right-6 z-50 flex items-center justify-center rtl:left-6 rtl:right-auto md:bottom-10">
       {/* 脉冲动画背景，增加“活人感” */}
       <div className="absolute inset-0 rounded-full bg-[#25D366] animate-[ping_2s_cubic-bezier(0,0,0.2,1)_infinite] opacity-40"></div>
       

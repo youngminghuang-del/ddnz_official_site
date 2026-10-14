@@ -1,0 +1,2239 @@
+{
+  "routes": [
+    "/shipping-from-china-to-middle-east/",
+    "/shipping-from-china-to-central-asia/",
+    "/shipping-from-china-to-west-africa/",
+    "/shipping-from-china-to-latin-america/",
+    "/shipping-from-china-to-saudi-arabia/",
+    "/shipping-from-china-to-uae/",
+    "/shipping-from-china-to-kuwait/",
+    "/shipping-from-china-to-qatar/",
+    "/shipping-from-china-to-oman/",
+    "/shipping-from-china-to-bahrain/",
+    "/shipping-from-china-to-kazakhstan/",
+    "/shipping-from-china-to-uzbekistan/",
+    "/shipping-from-china-to-kyrgyzstan/",
+    "/shipping-from-china-to-tajikistan/",
+    "/shipping-from-china-to-turkmenistan/",
+    "/shipping-from-china-to-russia/",
+    "/shipping-from-china-to-nigeria/",
+    "/shipping-from-china-to-ghana/",
+    "/shipping-from-china-to-mexico/",
+    "/shipping-from-china-to-brazil/",
+    "/shipping-from-china-to-argentina/",
+    "/shipping-from-china-to-peru/",
+    "/shipping-from-china-to-chile/"
+  ],
+  "routeCount": 23,
+  "checks": [
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-middle-east/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-middle-east/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-central-asia/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-central-asia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-west-africa/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-west-africa/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-latin-america/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-latin-america/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-saudi-arabia/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-saudi-arabia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uae/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-uae/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kuwait/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-kuwait/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-qatar/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-qatar/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-oman/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-oman/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-bahrain/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-bahrain/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kazakhstan/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-kazakhstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-uzbekistan/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-uzbekistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-kyrgyzstan/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-kyrgyzstan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-tajikistan/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-tajikistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-turkmenistan/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-turkmenistan/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-russia/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-russia/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-nigeria/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-nigeria/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-ghana/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-ghana/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-mexico/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-mexico/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-brazil/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-brazil/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-argentina/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-argentina/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-peru/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-peru/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "en",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "zh-cn",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/zh-cn/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "ru",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ru/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "fr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/fr/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "es",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/es/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "ar",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/ar/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "pt",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/pt/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    },
+    {
+      "route": "/shipping-from-china-to-chile/",
+      "locale": "tr",
+      "productionSitemap": true,
+      "built": true,
+      "h1Count": 1,
+      "canonicalPresent": true,
+      "canonical": [
+        "https://www.ddnzglobal.com/tr/shipping-from-china-to-chile/"
+      ],
+      "alternateCount": 9
+    }
+  ],
+  "issues": []
+}
