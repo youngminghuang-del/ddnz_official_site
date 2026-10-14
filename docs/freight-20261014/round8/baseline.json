@@ -1,0 +1,19 @@
+{
+  "localHead": "a079b18ebd1d01f5c008923b4cd33db11beee5e1",
+  "remoteMain": "b4156a7938672a7ebf3130285cc9d3e135a64880",
+  "lastSuccessfulDeploy": 38456135838,
+  "protectedFiles": {
+    "src/features/freight/GulfFreightPage.tsx": "1494d33dc1829867866cf78928d4cbcfb9506cb265a1bda1566408ab44d75358",
+    "src/features/freight/gulf-stories.css": "43d32993714b738d66f2cc1533ac9b100083a55fb796214fa09c033c339cf6b9",
+    "src/features/freight/QatarCargoGallery.tsx": "6819c1ae75e80dad0a59678684f6b4699f289c56b4c35b74eae3d0ca562c27a3",
+    "src/features/freight/OmanCargoGallery.tsx": "231e52d9f986a9a663196b59908271eeca92d287f67bc765738b1f41960c8d3e",
+    "src/features/freight/omanCargoGallery.json": "3574c5f778747cfe1dd32d91767524e8bb658e69a704137518beca0e588019a3",
+    "src/components/GetAQuote.tsx": "50c497ba0921d8ad7f849fa99b09cb38e43cd224e571b6443d90be1c102f4bd9",
+    "src/features/freight/GulfDestinationMap.tsx": "a0d438e71e04414c99c1080122220a2694939cf596c73a09a63cc6bf21ad5de0",
+    "src/features/freight/GulfChapters.tsx": "c4d0232f039bb33bd4cf794164285d49676d445cc19c5b77362f59722d635cf3",
+    "src/features/freight/GulfCargoJourney.tsx": "86ae8ab7396056d38284c720b52e7d107fad538867694d02cec842bf9cacef52",
+    "src/features/freight/gulfStories.json": "d48c202f2e1cc8218b80c48f4a99b6be0e51799f3f092b0ec87d926db4225489",
+    "src/features/freight/gulfRegionalMaps.json": "683bce1c6d29bca5ba794eecb9e117d9ad3b2dbf036bad504c5e0da7e63dc45e",
+    "src/data/notionBlogData.json": "9cfcbabfe182e4b99ef1757e922c10110214da0e8b4f5ee2ef5a48c7352189a0"
+  }
+}

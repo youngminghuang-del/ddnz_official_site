@@ -29,7 +29,7 @@ export default function QatarCargoGallery({ locale, group }: { locale: 'en' | 'a
     <div><dt>{ar ? 'عدد القبعات' : 'Caps shown'}</dt><dd><bdi dir="ltr">{packing.quantity}</bdi></dd></div>
     <div><dt>{ar ? 'أبعاد الصندوق الخارجي' : 'Outer carton'}</dt><dd><bdi dir="ltr">{packing.outerCartonCm.join(' × ')} {ar ? 'سم' : 'cm'}</bdi></dd></div>
     <div><dt>{packing.weightLabel[locale]}</dt><dd><bdi dir="ltr">{packing.productWeightKg} {ar ? 'كجم' : 'kg'}</bdi></dd></div>
-   </dl> : <p>{photo.caption[locale]}</p>}</figcaption>
+   </dl> : <p>{photo.caption[locale]}</p>}{group !== 'production' && <a className="qatar-gallery-full" href={photo.src} target="_blank" rel="noopener noreferrer">{ar ? 'عرض الصورة بالحجم الكامل' : 'View full image'}<span aria-hidden="true"> ↗</span></a>}</figcaption>
   </figure>
   <div className="qatar-gallery-thumbnails" role="group" aria-label={config.heading[locale]}>
    {photos.map((item,index) => <button key={item.id} type="button" ref={element => { buttons.current[index] = element; }} aria-controls={`${id}-image`} aria-pressed={selected === index} aria-label={`${index+1}: ${item.title[locale]}`} onClick={() => setSelected(index)} onKeyDown={event => selectWithKey(event,index)}>

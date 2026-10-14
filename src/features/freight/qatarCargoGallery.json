@@ -1,6 +1,6 @@
 {
   "country": "qatar",
-  "source": "User-supplied originals; preserve Chinese labels and original image pixels.",
+  "source": "User-supplied originals 1–5; user-requested English artwork edits 6–12. Original source images retained in the round 7 archive.",
   "groups": [
     {
       "id": "production",
@@ -172,8 +172,8 @@
         "ar": "مثال تعبئة: 1 قبعة"
       },
       "alt": {
-        "en": "Chinese packing diagram for 1 cap, showing bagged caps and cartons; outer carton 23 × 13 × 16 cm and product weight 0.2 kg.",
-        "ar": "مخطط تعبئة بتسميات صينية لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم."
+        "en": "Packing illustration for 1 cap, showing bagged caps and cartons; outer carton 23 × 13 × 16 cm and product weight 0.2 kg.",
+        "ar": "مخطط تعبئة لعدد 1 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 23 × 13 × 16 سم ووزن المنتجات 0.2 كجم."
       },
       "caption": {
         "en": "Shown: 1 cap; outer carton 23 × 13 × 16 cm; product weight 0.2 kg.",
@@ -192,10 +192,10 @@
           "ar": "وزن المنتجات المذكور في الصورة"
         }
       },
-      "src": "/media/freight-20261014-round7/6_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/6_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 1029
+      "src": "/media/freight-20261014-round8/6_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/6_hat_factory_en-thumb.webp",
+      "width": 1404,
+      "height": 1120
     },
     {
       "id": 7,
@@ -206,8 +206,8 @@
         "ar": "مثال تعبئة: 25 قبعة"
       },
       "alt": {
-        "en": "Chinese packing diagram for 25 caps, showing bagged caps and cartons; outer carton 61 × 23 × 18 cm and product weight 3.2 kg.",
-        "ar": "مخطط تعبئة بتسميات صينية لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم."
+        "en": "Packing illustration for 25 caps, showing bagged caps and cartons; outer carton 61 × 23 × 18 cm and product weight 3.2 kg.",
+        "ar": "مخطط تعبئة لعدد 25 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 61 × 23 × 18 سم ووزن المنتجات 3.2 كجم."
       },
       "caption": {
         "en": "Shown: 25 caps; outer carton 61 × 23 × 18 cm; product weight 3.2 kg.",
@@ -226,10 +226,10 @@
           "ar": "وزن المنتجات المذكور في الصورة"
         }
       },
-      "src": "/media/freight-20261014-round7/7_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/7_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 1023
+      "src": "/media/freight-20261014-round8/7_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/7_hat_factory_en-thumb.webp",
+      "width": 1408,
+      "height": 1117
     },
     {
       "id": 8,
@@ -240,8 +240,8 @@
         "ar": "مثال تعبئة: 100 قبعة"
       },
       "alt": {
-        "en": "Chinese packing diagram for 100 caps, showing bagged caps and cartons; outer carton 64 × 45 × 40 cm and product weight 13.1 kg.",
-        "ar": "مخطط تعبئة بتسميات صينية لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم."
+        "en": "Packing illustration for 100 caps, showing bagged caps and cartons; outer carton 64 × 45 × 40 cm and product weight 13.1 kg.",
+        "ar": "مخطط تعبئة لعدد 100 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 64 × 45 × 40 سم ووزن المنتجات 13.1 كجم."
       },
       "caption": {
         "en": "Shown: 100 caps; outer carton 64 × 45 × 40 cm; product weight 13.1 kg.",
@@ -260,10 +260,10 @@
           "ar": "وزن المنتجات المذكور في الصورة"
         }
       },
-      "src": "/media/freight-20261014-round7/8_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/8_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 952
+      "src": "/media/freight-20261014-round8/8_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/8_hat_factory_en-thumb.webp",
+      "width": 1460,
+      "height": 1077
     },
     {
       "id": 9,
@@ -274,8 +274,8 @@
         "ar": "مثال تعبئة: 150 قبعة"
       },
       "alt": {
-        "en": "Chinese packing diagram for 150 caps, showing bagged caps and cartons; outer carton 60 × 45 × 53 cm and product weight 19.4 kg.",
-        "ar": "مخطط تعبئة بتسميات صينية لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم."
+        "en": "Packing illustration for 150 caps, showing bagged caps and cartons; outer carton 60 × 45 × 53 cm and product weight 19.4 kg.",
+        "ar": "مخطط تعبئة لعدد 150 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 53 سم ووزن المنتجات 19.4 كجم."
       },
       "caption": {
         "en": "Shown: 150 caps; outer carton 60 × 45 × 53 cm; product weight 19.4 kg.",
@@ -294,10 +294,10 @@
           "ar": "وزن المنتجات المذكور في الصورة"
         }
       },
-      "src": "/media/freight-20261014-round7/9_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/9_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 955
+      "src": "/media/freight-20261014-round8/9_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/9_hat_factory_en-thumb.webp",
+      "width": 1457,
+      "height": 1079
     },
     {
       "id": 10,
@@ -308,8 +308,8 @@
         "ar": "مثال تعبئة: 200 قبعة"
       },
       "alt": {
-        "en": "Chinese packing diagram for 200 caps, showing bagged caps and cartons; outer carton 60 × 45 × 80 cm and product weight 24.8 kg.",
-        "ar": "مخطط تعبئة بتسميات صينية لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم."
+        "en": "Packing illustration for 200 caps, showing bagged caps and cartons; outer carton 60 × 45 × 80 cm and product weight 24.8 kg.",
+        "ar": "مخطط تعبئة لعدد 200 قبعة، يعرض القبعات داخل أكياس وصناديق؛ أبعاد الصندوق الخارجي 60 × 45 × 80 سم ووزن المنتجات 24.8 كجم."
       },
       "caption": {
         "en": "Shown: 200 caps; outer carton 60 × 45 × 80 cm; product weight 24.8 kg.",
@@ -328,10 +328,10 @@
           "ar": "وزن المنتجات المذكور في الصورة"
         }
       },
-      "src": "/media/freight-20261014-round7/10_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/10_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 969
+      "src": "/media/freight-20261014-round8/10_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/10_hat_factory_en-thumb.webp",
+      "width": 1447,
+      "height": 1087
     },
     {
       "id": 11,
@@ -342,17 +342,17 @@
         "ar": "أشكال القبعات"
       },
       "alt": {
-        "en": "Chinese-labelled illustration comparing hat shapes, including baseball caps, a bucket hat and a visor.",
-        "ar": "رسم توضيحي بتسميات صينية يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي."
+        "en": "Illustrated guide comparing hat shapes, including baseball caps, a bucket hat and a visor.",
+        "ar": "رسم توضيحي يقارن أشكال القبعات، بما فيها قبعات البيسبول وقبعة الدلو والواقي الشمسي."
       },
       "caption": {
         "en": "Choose a reference shape and confirm the crown and panel details with your supplier.",
         "ar": "اختر شكلاً مرجعياً وأكد تفاصيل الجزء العلوي والألواح مع المورد."
       },
-      "src": "/media/freight-20261014-round7/11_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/11_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 745
+      "src": "/media/freight-20261014-round8/11_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/11_hat_factory_en-thumb.webp",
+      "width": 1651,
+      "height": 953
     },
     {
       "id": 12,
@@ -363,17 +363,17 @@
         "ar": "تفاصيل حافة القبعة"
       },
       "alt": {
-        "en": "Chinese-labelled grid illustrating short, long, flat and decorated cap brims.",
-        "ar": "شبكة صور بتسميات صينية توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة."
+        "en": "Grid of examples illustrating short, long, flat and decorated cap brims.",
+        "ar": "شبكة صور توضح حواف قبعات قصيرة وطويلة ومسطحة ومزخرفة."
       },
       "caption": {
         "en": "Confirm brim length, profile and edge details against the chosen reference.",
         "ar": "أكد طول الحافة وشكلها وتفاصيل أطرافها وفق النموذج المرجعي المختار."
       },
-      "src": "/media/freight-20261014-round7/12_hat_factory.jpg",
-      "thumbnail": "/media/freight-20261014-round7/12_hat_factory-thumb.jpg",
-      "width": 1290,
-      "height": 1020
+      "src": "/media/freight-20261014-round8/12_hat_factory_en.webp",
+      "thumbnail": "/media/freight-20261014-round8/12_hat_factory_en-thumb.webp",
+      "width": 1410,
+      "height": 1115
     }
   ]
 }

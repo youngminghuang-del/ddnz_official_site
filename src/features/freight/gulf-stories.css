@@ -311,3 +311,5 @@
  .qatar-packing-data>div { gap:8px; }
  .qatar-packing-data { font-size:.83rem; }
 }
+
+.qatar-gallery-full { display:inline-flex; align-items:center; min-height:44px; padding-block:10px; color:#632b89; font-size:.85rem; font-weight:650; text-decoration:underline; text-underline-offset:3px; }
