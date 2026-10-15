@@ -12,7 +12,7 @@
       "Sorting & preparation",
       "Packing & loading",
       "Import & handover",
-      "Prepare your quote"
+      "Prepare your quote request"
     ],
     "ui": {
       "china": "China",
@@ -22,11 +22,11 @@
       "record": "China-side operation records",
       "full": "View full image",
       "choose": "Choose a photo",
-      "silent": "Silent footage with text context.",
+      "silent": "Silent footage with explanatory captions.",
       "gross": "Gross weight per bale",
       "container": "Container type",
       "total": "Cargo gross weight",
-      "bales": "Indicative bale count",
+      "bales": "Recorded bale count",
       "packing": "Historical loading example",
       "destination": "Destination planning",
       "official": "Official import resources",
@@ -50,25 +50,25 @@
     "paras": [
       "We have shipped used clothing, shoes and bags to this destination. These photographs and videos show sorting, packing and loading preparation in China.",
       "Separate clothing, footwear and bags in the goods description. Agree the grade, condition, quantities and bale identification with the buyer, then match the packing list to the actual goods.",
-      "The recorded example is 80 kg gross per bale and approximately 28,000 kg cargo gross in a 40HQ, both including packaging. Dividing these figures gives approximately 350 bales.",
-      "Before collection, identify the importer and clearance contact, check the precise product category and agree who arranges destination handling and unloading. Historical shipments do not establish current import eligibility.",
+      "The historical loading example is 352 bales in a 40HQ, with a gross weight of 80 kg per bale and 28 metric tonnes (MT) of cargo, including packaging.",
+      "Before collection, identify the importer and customs clearance contact, check the precise product category and agree who arranges destination handling and unloading. Historical shipments do not establish current import eligibility.",
       "Send the goods categories, bale count, gross weights, dimensions, supplier city, cargo-ready date, destination city and requested handover. If a detail is unknown, say so; the historical example is not a preset shipment quantity."
     ],
     "notes": [
       "Historical shipment reference for clothing and shoes; confirm packing details for bags separately.",
-      "28,000 kg excludes the container tare. Actual loading depends on the packing list, container payload and transport conditions; it is not a guaranteed capacity on every route.",
+      "The 28 MT excludes the container tare. Actual loading depends on the packing list, container payload and transport conditions; it is not a guaranteed capacity on every route.",
       "Official links identify the relevant authority and information source, not a partnership or endorsement."
     ],
     "questions": [
       "Can clothing, bags and shoes share one packing figure?",
       "Is 80 kg the net weight?",
-      "Does 40HQ always mean 350 bales?",
+      "Does a 40HQ always hold 352 bales?",
       "What does the freight quote cover?"
     ],
     "answers": [
       "No. Describe and list each category separately. The 80 kg example is confirmed for clothing and shoes; confirm bags independently.",
-      "It is the gross weight including packaging. The approximately 28 tonnes also includes packaging but excludes the container itself.",
-      "350 is an arithmetic illustration from this historical example. Confirm the actual bale sizes, weights and permissible load before booking.",
+      "It is the gross weight including packaging. The 28 MT also includes packaging but excludes the container itself.",
+      "352 bales is the recorded quantity for this historical example, not a fixed capacity. Confirm the actual bale sizes, weights and permissible load before booking.",
       "Agree whether the quotation ends at the port, warehouse or delivery address, and identify clearance, destination charges and unloading responsibilities."
     ],
     "focus": [
@@ -105,7 +105,7 @@
       "gross": "单包毛重",
       "container": "柜型",
       "total": "货物总毛重",
-      "bales": "参考包数",
+      "bales": "历史装载包数",
       "packing": "历史装载示例",
       "destination": "目的地准备",
       "official": "官方进口资料",
@@ -129,25 +129,25 @@
     "paras": [
       "我们曾向该目的国发运二手服装、鞋子及箱包。以下实拍展示中国端的分拣、打包与装柜准备。",
       "在货物描述中区分服装、鞋子与箱包。与买家明确等级、状态、数量和货包标识，再让装箱清单对应实物。",
-      "已记录的装载示例为每包毛重80 kg，40HQ柜约28,000 kg货物毛重，两者均包含包装。按此换算约350包。",
-      "收货前明确进口方与清关联系人，核对具体产品类别，并约定目的地操作和卸货由谁负责。历史出运不等于当前具备进口资格。",
+      "历史装载示例为40HQ柜装352包，单包毛重80 kg，货物总毛重28 MT，均包含包装。",
+      "提货前明确进口方与清关联系人，核对具体产品类别，并约定目的地操作和卸货由谁负责。历史出运不等于当前具备进口资格。",
       "提供货类、包数、毛重、尺寸、供应商城市、备货日期、目的地城市与期望交接范围。未知项可注明待确认，历史示例不自动作为本次货量。"
     ],
     "notes": [
       "服装与鞋子历史发运参考；箱包打包数据另行确认。",
-      "28,000 kg不含集装箱自重。实际装载以装箱清单、箱体允许载荷和运输条件为准，不保证所有线路均能这样装载。",
+      "28 MT不含集装箱自重。实际装载以装箱清单、箱体允许载荷和运输条件为准，不保证所有线路均能这样装载。",
       "官方链接用于识别主管机构及资料来源，不表示合作或背书。"
     ],
     "questions": [
       "服装、箱包和鞋子能否共用同一组打包数据？",
       "80 kg是净重吗？",
-      "40HQ是否固定装350包？",
+      "40HQ是否固定装352包？",
       "货运报价包括哪些环节？"
     ],
     "answers": [
       "应分品类描述和列单。80 kg示例已确认适用于服装和鞋子，箱包需独立确认。",
-      "是含包装毛重。约28吨同样包含包装，但不包含集装箱本身。",
-      "350包是根据历史示例换算的参考。订舱前仍需确认货包尺寸、实际重量与允许载荷。",
+      "不是净重，而是含包装毛重。28 MT同样包含包装，但不包含集装箱本身。",
+      "352包是该历史示例的实际装载数量，不是每柜固定容量。订舱前仍需确认货包尺寸、实际重量与允许载荷。",
       "明确报价止于港口、仓库还是送货地址，并约定清关、目的地费用与卸货责任。"
     ],
     "focus": [
@@ -180,13 +180,13 @@
       "record": "Operaciones registradas en China",
       "full": "Ver imagen completa",
       "choose": "Elegir foto",
-      "silent": "Vídeo sin sonido con contexto escrito.",
+      "silent": "Vídeo sin sonido, con subtítulos descriptivos.",
       "gross": "Peso bruto por fardo",
       "container": "Tipo de contenedor",
-      "total": "Peso bruto de mercancía",
+      "total": "Peso bruto de la mercancía",
       "bales": "Número orientativo de fardos",
       "packing": "Ejemplo histórico de carga",
-      "destination": "Planificar destino",
+      "destination": "Preparación en destino",
       "official": "Fuentes oficiales de importación",
       "guidance": "Consultar guía oficial",
       "map": "Ver destino en Google Maps",
@@ -208,32 +208,32 @@
     "paras": [
       "Hemos enviado ropa, calzado y bolsos usados a este destino. Estas fotos y vídeos muestran la clasificación, el embalaje y la preparación de la carga en China.",
       "Distinga ropa, calzado y bolsos en la descripción. Acuerde calidad, estado, cantidades e identificación de los fardos con el comprador y haga coincidir la lista de empaque con la mercancía.",
-      "El ejemplo registrado indica 80 kg brutos por fardo y aproximadamente 28.000 kg brutos de mercancía en un 40HQ, incluido el embalaje. El cálculo equivale a unos 350 fardos.",
-      "Antes de recoger, identifique al importador y al responsable del despacho, compruebe la categoría exacta y acuerde quién gestiona las operaciones y la descarga en destino. Los envíos anteriores no acreditan admisibilidad actual.",
-      "Envíe categorías, número de fardos, pesos brutos, dimensiones, ciudad del proveedor, fecha de disponibilidad, ciudad de destino y entrega solicitada. Indique los datos desconocidos; el ejemplo histórico no fija su cantidad."
+      "En este ejemplo de envío, un contenedor 40HQ lleva 352 fardos de 80 kg brutos cada uno, incluido el embalaje. El peso bruto de la carga es de 28 MT, sin incluir la tara del contenedor.",
+      "Antes de recoger la mercancía, identifique al importador y al responsable del despacho aduanero, compruebe la categoría exacta del producto y acuerde quién gestiona las operaciones y la descarga en destino. Los envíos anteriores no garantizan que la importación esté autorizada actualmente.",
+      "Envíe las categorías de productos, el número de fardos, los pesos brutos, las dimensiones, la ciudad del proveedor, la fecha de disponibilidad, la ciudad de destino y el alcance de entrega solicitado. Indique qué datos quedan por confirmar; las cantidades del ejemplo no se aplican a su solicitud."
     ],
     "notes": [
       "Referencia de envíos anteriores de ropa y calzado; confirme por separado los datos de embalaje de los bolsos.",
-      "Los 28.000 kg excluyen la tara del contenedor. La carga real depende de la lista, la carga útil permitida y las condiciones de transporte; no es una capacidad garantizada en todas las rutas.",
+      "Las 28 MT excluyen la tara del contenedor. La carga real depende de la lista, la carga útil permitida y las condiciones de transporte; no es una capacidad garantizada en todas las rutas.",
       "Los enlaces oficiales identifican autoridades y fuentes; no indican colaboración ni respaldo."
     ],
     "questions": [
       "¿Sirven las mismas cifras para las tres categorías?",
       "¿80 kg es peso neto?",
-      "¿Un 40HQ siempre lleva 350 fardos?",
+      "¿Un 40HQ siempre lleva 352 fardos?",
       "¿Qué incluye la cotización?"
     ],
     "answers": [
       "Describa y enumere cada categoría por separado. El ejemplo de 80 kg se confirmó para ropa y calzado; confirme los bolsos aparte.",
-      "Es peso bruto con embalaje. Las 28 toneladas también incluyen embalaje, pero no el contenedor.",
-      "350 es un cálculo ilustrativo del ejemplo histórico. Confirme dimensiones, pesos y carga permitida antes de reservar.",
-      "Acuerde si termina en puerto, almacén o dirección final y asigne despacho, gastos en destino y descarga."
+      "Es el peso bruto, incluido el embalaje. Las 28 toneladas también incluyen el embalaje, pero excluyen la tara del contenedor.",
+      "352 fardos es la cantidad cargada en este envío anterior, no una capacidad garantizada para cada contenedor. Confirme las dimensiones de los fardos, sus pesos reales y la carga permitida antes de reservar.",
+      "Acuerde si la cotización cubre la entrega en puerto, almacén o dirección final y quién se responsabiliza del despacho aduanero, los gastos en destino y la descarga."
     ],
     "focus": [
       "Empiece por clasificar: una descripción clara permite al importador de Ghana comprobar la categoría exacta antes de cargar.",
-      "Empiece por el embalaje: para India, confirme la clasificación y los permisos aplicables antes de considerar el fardo listo para embarcar.",
+      "Empiece por el embalaje: para la India, confirme la clasificación arancelaria y los permisos de importación aplicables antes de preparar el envío.",
       "Empiece por las existencias: para Bangladés, prepare los detalles de los fardos y del comprador mientras el importador confirma la política y la elegibilidad vigentes.",
-      "Empiece por la manipulación: para Pakistán, vincule identificaciones y registros de carga con la clasificación del importador y la entrega acordada."
+      "Empiece por la manipulación: para Pakistán, relacione las identificaciones de los fardos y los registros de carga con la clasificación arancelaria confirmada por el importador y la entrega acordada."
     ]
   },
   "fr": {
@@ -244,11 +244,11 @@
       "Pakistan"
     ],
     "heading": "Transport de Chine vers {country}",
-    "intro": "Préparez le transport selon la marchandise réelle, la liste de colisage et la remise convenue. Vêtements, sacs et chaussures d’occasion illustrent les contrôles avant réservation.",
+    "intro": "Préparez le transport en fonction des marchandises, de la liste de colisage et des modalités de livraison convenues. Les vêtements, sacs et chaussures d’occasion illustrent les vérifications à effectuer avant de réserver le transport.",
     "chapters": [
       "Tri et préparation",
       "Emballage et chargement",
-      "Importation et remise",
+      "Importation et livraison",
       "Préparer le devis"
     ],
     "ui": {
@@ -259,7 +259,7 @@
       "record": "Opérations documentées en Chine",
       "full": "Voir l’image complète",
       "choose": "Choisir une photo",
-      "silent": "Vidéo sans son avec contexte écrit.",
+      "silent": "Vidéo sans son, accompagnée de sous-titres descriptifs.",
       "gross": "Poids brut par balle",
       "container": "Type de conteneur",
       "total": "Poids brut des marchandises",
@@ -272,7 +272,7 @@
       "mapNote": "Repère géographique uniquement. Aucun itinéraire réservé, port ou lieu de livraison n’est indiqué.",
       "prepare": "Préparer votre dossier",
       "faq": "Questions avant réservation",
-      "scope": "Définir la remise",
+      "scope": "Définir les modalités de livraison",
       "categories": "Vêtements · sacs · chaussures d’occasion",
       "sorting": "Tri des articles d’occasion",
       "packingVideo": "Compression et emballage",
@@ -287,32 +287,32 @@
     "paras": [
       "Nous avons expédié des vêtements, chaussures et sacs d’occasion vers cette destination. Ces photos et vidéos montrent le tri, l’emballage et la préparation du chargement en Chine.",
       "Distinguez vêtements, chaussures et sacs. Convenez avec l’acheteur de la qualité, de l’état, des quantités et de l’identification des balles, puis faites correspondre la liste de colisage aux marchandises.",
-      "L’exemple enregistré représente 80 kg bruts par balle et environ 28 000 kg bruts de marchandises dans un 40HQ, emballage compris. Le calcul correspond à environ 350 balles.",
-      "Avant l’enlèvement, identifiez l’importateur et le contact douanier, vérifiez la catégorie précise et attribuez les opérations et le déchargement à destination. Une expédition passée ne prouve pas l’admissibilité actuelle.",
-      "Transmettez catégories, nombre de balles, poids bruts, dimensions, ville du fournisseur, date de disponibilité, destination et remise souhaitée. Signalez les informations inconnues ; cet exemple ne fixe pas votre volume."
+      "Dans cet exemple d’expédition, un conteneur 40HQ contient 352 balles de 80 kg brut chacune, emballage compris. Le poids brut de la cargaison est de 28 MT, hors tare du conteneur.",
+      "Avant l’enlèvement, identifiez l’importateur et le responsable du dédouanement, vérifiez la catégorie exacte du produit et convenez des responsabilités pour les opérations à destination et le déchargement. Une expédition antérieure ne garantit pas que l’importation soit actuellement autorisée.",
+      "Indiquez les catégories de produits, le nombre de balles, les poids bruts, les dimensions, la ville du fournisseur, la date de disponibilité, la destination et les modalités de livraison souhaitées. Signalez les données encore inconnues ; les quantités de l’exemple ne sont pas appliquées à votre demande."
     ],
     "notes": [
       "Référence d’expéditions antérieures de vêtements et chaussures ; confirmez séparément les données d’emballage des sacs.",
-      "Les 28 000 kg excluent la tare du conteneur. Le chargement réel dépend de la liste, de la charge utile et des conditions de transport, sans garantie pour chaque itinéraire.",
+      "Le poids de 28 MT exclut la tare du conteneur. Le chargement réel dépend de la liste de colisage, de la charge utile autorisée et des conditions de transport ; cette quantité n’est pas garantie sur tous les itinéraires.",
       "Les liens officiels identifient les autorités et sources, sans partenariat ni approbation."
     ],
     "questions": [
-      "Les trois catégories partagent-elles les mêmes chiffres ?",
-      "80 kg correspond-il au poids net ?",
-      "Un 40HQ contient-il toujours 350 balles ?",
+      "Les mêmes données d’emballage s’appliquent-elles aux trois catégories ?",
+      "Les 80 kg correspondent-ils au poids net ?",
+      "Un 40HQ contient-il toujours 352 balles ?",
       "Que couvre le devis ?"
     ],
     "answers": [
       "Décrivez chaque catégorie séparément. L’exemple de 80 kg concerne les vêtements et chaussures ; confirmez les sacs à part.",
-      "Il s’agit du poids brut avec emballage. Les 28 tonnes comprennent aussi l’emballage, mais pas le conteneur.",
-      "350 est un calcul illustratif. Confirmez dimensions, poids et charge autorisée avant réservation.",
-      "Précisez si le devis s’arrête au port, à l’entrepôt ou à l’adresse finale, et attribuez dédouanement, frais locaux et déchargement."
+      "Il s’agit du poids brut, emballage compris. Les 28 tonnes comprennent également l’emballage, mais excluent la tare du conteneur.",
+      "352 balles correspond au chargement de cet exemple antérieur, et non à une capacité garantie pour chaque conteneur. Confirmez les dimensions des balles, leur poids réel et la charge autorisée avant réservation.",
+      "Précisez si le devis couvre la livraison au port, à l’entrepôt ou à l’adresse finale, puis convenez de la prise en charge du dédouanement, des frais à destination et du déchargement."
     ],
     "focus": [
       "Commencez par le tri : une description précise aide l’importateur au Ghana à vérifier la catégorie avant chargement.",
-      "Commencez par l’emballage : pour l’Inde, confirmez le classement et les autorisations avant de considérer la balle comme prête à expédier.",
-      "Commencez par le stock : pour le Bangladesh, préparez les données des balles et de l’acheteur pendant que l’importateur vérifie la politique et l’admissibilité actuelles.",
-      "Commencez par la manutention : pour le Pakistan, reliez l’identification des balles et le chargement au classement de l’importateur et à la remise convenue."
+      "Commencez par l’emballage : pour l’Inde, confirmez le classement tarifaire du produit et les autorisations d’importation applicables avant de préparer l’expédition.",
+      "Commencez par la préparation du stock : pour le Bangladesh, rassemblez les données des balles et de l’acheteur pendant que l’importateur vérifie les règles en vigueur et son admissibilité.",
+      "Commencez par la manutention : pour le Pakistan, faites correspondre les identifiants des balles et les relevés de chargement au classement tarifaire confirmé par l’importateur et aux modalités de livraison convenues."
     ]
   },
   "pt": {
@@ -338,7 +338,7 @@
       "record": "Operações registradas na China",
       "full": "Ver imagem completa",
       "choose": "Escolher foto",
-      "silent": "Vídeo sem som com contexto escrito.",
+      "silent": "Vídeo sem som, com legendas descritivas.",
       "gross": "Peso bruto por fardo",
       "container": "Tipo de contêiner",
       "total": "Peso bruto da carga",
@@ -366,32 +366,32 @@
     "paras": [
       "Já enviamos roupas, calçados e bolsas usados para este destino. Estas fotos e vídeos mostram a triagem, a embalagem e a preparação do carregamento na China.",
       "Separe roupas, calçados e bolsas na descrição. Combine qualidade, estado, quantidades e identificação dos fardos com o comprador e confira a lista de embalagem com a carga.",
-      "O exemplo registrado apresenta 80 kg brutos por fardo e aproximadamente 28.000 kg brutos de mercadorias em um 40HQ, com embalagem. O cálculo resulta em cerca de 350 fardos.",
-      "Antes da coleta, identifique o importador e o contato de desembaraço, confirme a categoria exata e defina quem organiza operações e descarga no destino. Envios anteriores não comprovam elegibilidade atual.",
-      "Envie categorias, número de fardos, pesos brutos, dimensões, cidade do fornecedor, data de disponibilidade, destino e entrega desejada. Informe o que ainda não sabe; o exemplo histórico não define sua quantidade."
+      "Neste exemplo de envio, um contêiner 40HQ leva 352 fardos de 80 kg brutos cada um, incluindo a embalagem. O peso bruto da carga é de 28 MT, sem incluir a tara do contêiner.",
+      "Antes da coleta, identifique o importador e o responsável pelo desembaraço aduaneiro, confirme a categoria exata do produto e defina quem organiza as operações e a descarga no destino. Envios anteriores não garantem que a importação esteja autorizada atualmente.",
+      "Envie as categorias de produtos, o número de fardos, os pesos brutos, as dimensões, a cidade do fornecedor, a data de disponibilidade, o destino e o escopo de entrega desejado. Indique os dados ainda não confirmados; as quantidades do exemplo não são aplicadas à sua solicitação."
     ],
     "notes": [
       "Referência de envios anteriores de roupas e calçados; confirme separadamente os dados de embalagem das bolsas.",
-      "Os 28.000 kg excluem a tara do contêiner. A carga real depende da lista, da carga útil permitida e das condições de transporte; não é garantia para todas as rotas.",
+      "As 28 MT excluem a tara do contêiner. A carga real depende da lista, da carga útil permitida e das condições de transporte; não é garantia para todas as rotas.",
       "Os links oficiais identificam autoridades e fontes, sem indicar parceria ou endosso."
     ],
     "questions": [
       "As três categorias usam os mesmos dados?",
       "80 kg é peso líquido?",
-      "Um 40HQ sempre leva 350 fardos?",
+      "Um 40HQ sempre leva 352 fardos?",
       "O que a cotação inclui?"
     ],
     "answers": [
       "Descreva cada categoria separadamente. O exemplo de 80 kg foi confirmado para roupas e calçados; confirme bolsas à parte.",
-      "É peso bruto com embalagem. As 28 toneladas também incluem embalagem, mas não o contêiner.",
-      "350 é um cálculo ilustrativo do exemplo histórico. Confirme dimensões, pesos e carga permitida antes da reserva.",
-      "Defina se termina no porto, armazém ou endereço final e atribua desembaraço, despesas no destino e descarga."
+      "É o peso bruto, incluindo a embalagem. As 28 toneladas também incluem a embalagem, mas excluem a tara do contêiner.",
+      "352 fardos é a quantidade carregada neste envio anterior, não uma capacidade garantida para cada contêiner. Confirme as dimensões dos fardos, os pesos reais e a carga permitida antes da reserva.",
+      "Defina se a cotação cobre a entrega no porto, no armazém ou no endereço final e quem assume o desembaraço aduaneiro, as despesas no destino e a descarga."
     ],
     "focus": [
       "Comece pela triagem: uma descrição clara ajuda o importador em Gana a conferir a categoria antes do carregamento.",
-      "Comece pela embalagem: para a Índia, confirme a classificação e as permissões antes de considerar o fardo pronto para envio.",
+      "Comece pela embalagem: para a Índia, confirme a classificação fiscal e as autorizações de importação aplicáveis antes de preparar o envio.",
       "Comece pelo estoque: para Bangladesh, prepare os dados dos fardos e do comprador enquanto o importador confirma a política e a elegibilidade atuais.",
-      "Comece pela movimentação: para o Paquistão, relacione identificação e carregamento à classificação do importador e à entrega acordada."
+      "Comece pela movimentação: para o Paquistão, relacione a identificação dos fardos e os registros de carregamento à classificação fiscal confirmada pelo importador e à entrega acordada."
     ]
   },
   "tr": {
@@ -402,7 +402,7 @@
       "Pakistan"
     ],
     "heading": "Çin’den {country} ülkesine nakliye",
-    "intro": "Sevkiyatı gerçek eşya, paketleme listesi ve kararlaştırılan teslim kapsamına göre planlayın. İkinci el giysi, çanta ve ayakkabılar rezervasyon öncesi hazırlığı gösterir.",
+    "intro": "Sevkiyatı gerçek yük, paketleme listesi ve kararlaştırılan teslim kapsamına göre planlayın. İkinci el giysi, çanta ve ayakkabı sevkiyatları üzerinden rezervasyon öncesi hazırlığı inceleyin.",
     "chapters": [
       "Ayırma ve hazırlık",
       "Paketleme ve yükleme",
@@ -445,25 +445,25 @@
     "paras": [
       "Bu ülkeye ikinci el giysi, ayakkabı ve çanta gönderdik. Bu fotoğraf ve videolar Çin’deki ayırma, paketleme ve yükleme hazırlığını gösterir.",
       "Açıklamada giysi, ayakkabı ve çantaları ayırın. Alıcıyla kalite, durum, miktar ve balya işaretlerini belirleyip paketleme listesini gerçek yükle eşleştirin.",
-      "Kayıtlı örnek, ambalaj dahil balya başına 80 kg brüt ve 40HQ içinde yaklaşık 28.000 kg brüt yük gösterir. Bu hesap yaklaşık 350 balyaya karşılık gelir.",
-      "Toplamadan önce ithalatçıyı ve gümrük yetkilisini belirleyin, kesin ürün kategorisini kontrol edin, varış işlemleri ve boşaltma sorumluluğunu kararlaştırın. Geçmiş sevkiyatlar güncel ithalat uygunluğunu kanıtlamaz.",
+      "Geçmiş yükleme örneğinde 40HQ konteynere 352 balya yüklenmiştir. Balya başına brüt ağırlık 80 kg, toplam yükün brüt ağırlığı 28 MT’dir; her iki ağırlık da ambalajı içerir.",
+      "Yükü teslim almadan önce ithalatçıyı ve gümrükleme için irtibat kişisini belirleyin, ürün kategorisini netleştirin ve varış işlemleri ile boşaltmadan kimin sorumlu olacağını kararlaştırın. Geçmiş sevkiyatlar güncel ithalat uygunluğunu kanıtlamaz.",
       "Ürün kategorileri, balya sayısı, brüt ağırlıklar, ölçüler, tedarikçi şehri, hazır olma tarihi, varış şehri ve teslim kapsamını gönderin. Bilinmeyen bilgileri belirtin; geçmiş örnek sizin yük miktarınız değildir."
     ],
     "notes": [
       "Giysi ve ayakkabıların geçmiş sevkiyat örneğidir; çantaların paketleme verilerini ayrıca doğrulayın.",
-      "28.000 kg konteyner darasını içermez. Gerçek yükleme listeye, izin verilen taşıma kapasitesine ve koşullara bağlıdır; her rota için garanti değildir.",
+      "28 MT yük ağırlığı ambalajı içerir, konteyner darasını içermez. Gerçek yükleme paketleme listesine, izin verilen taşıma kapasitesine ve koşullara bağlıdır; her rota için garanti değildir.",
       "Resmî bağlantılar kurum ve kaynakları tanımlar; ortaklık veya onay ifade etmez."
     ],
     "questions": [
       "Üç kategori aynı paketleme verilerini kullanabilir mi?",
       "80 kg net ağırlık mı?",
-      "40HQ her zaman 350 balya mı alır?",
+      "40HQ her zaman 352 balya mı alır?",
       "Navlun teklifi neleri kapsar?"
     ],
     "answers": [
       "Her kategoriyi ayrı tanımlayın. 80 kg örneği giysi ve ayakkabılar için doğrulanmıştır; çantaları ayrıca kontrol edin.",
-      "Ambalaj dahil brüt ağırlıktır. Yaklaşık 28 ton da ambalajı içerir, konteyneri içermez.",
-      "350, geçmiş örneğin hesaplanan sayısıdır. Rezervasyondan önce ölçü, ağırlık ve izin verilen yükü doğrulayın.",
+      "Ambalaj dahil brüt ağırlıktır. 28 MT de ambalajı içerir, konteyneri içermez.",
+      "352, bu geçmiş sevkiyatta yüklenen balya sayısıdır; her konteyner için garanti edilen miktar değildir. Rezervasyondan önce balya ölçülerini, ağırlıkları ve izin verilen yükü doğrulayın.",
       "Teklifin limanda, depoda veya son adreste bittiğini belirleyin; gümrükleme, varış masrafları ve boşaltma sorumluluğunu tanımlayın."
     ],
     "focus": [
@@ -481,7 +481,7 @@
       "Пакистан"
     ],
     "heading": "Перевозки из Китая в {country}",
-    "intro": "Планируйте отправку по фактическому грузу, упаковочному листу и согласованной передаче. Подержанные одежда, сумки и обувь показывают подготовку до бронирования.",
+    "intro": "Планируйте перевозку с учётом фактического груза, упаковочного листа и согласованных условий передачи. Посмотрите, как подготовить бывшие в употреблении одежду, сумки и обувь к отправке до бронирования перевозки.",
     "chapters": [
       "Сортировка и подготовка",
       "Упаковка и загрузка",
@@ -509,8 +509,8 @@
       "mapNote": "Только расположение страны. Не обозначает забронированный маршрут, порт или адрес доставки.",
       "prepare": "Подготовьте сведения о грузе",
       "faq": "Вопросы до бронирования",
-      "scope": "Согласуйте границы передачи",
-      "categories": "Подержанные одежда · сумки · обувь",
+      "scope": "Согласуйте условия передачи груза",
+      "categories": "Одежда, сумки и обувь, бывшие в употреблении",
       "sorting": "Сортировка подержанных товаров",
       "packingVideo": "Прессование и упаковка",
       "cargoVideo": "Кипы на складе",
@@ -522,34 +522,34 @@
       "related": "Другие направления"
     },
     "paras": [
-      "Мы отправляли подержанные одежду, обувь и сумки в эту страну. Эти фото и видео показывают сортировку, упаковку и подготовку к загрузке в Китае.",
+      "Мы отправляли в эту страну одежду, обувь и сумки, бывшие в употреблении. Эти фото и видео показывают сортировку, упаковку и подготовку к загрузке в Китае.",
       "Отдельно опишите одежду, обувь и сумки. Согласуйте с покупателем сорт, состояние, количество и маркировку кип, затем сверьте упаковочный лист с грузом.",
-      "В приведённом примере вес брутто кипы составляет 80 кг, а груза в 40HQ — около 28 000 кг, включая упаковку. Расчёт даёт примерно 350 кип.",
-      "До забора определите импортёра и контакт по оформлению, проверьте точную категорию товара и распределите операции и разгрузку в пункте назначения. Прошлые отправки не подтверждают текущую допустимость импорта.",
-      "Укажите категории, число кип, вес брутто, размеры, город поставщика, дату готовности, город назначения и нужную передачу. Неизвестные данные отметьте отдельно; исторический пример не задаёт ваш объём."
+      "В примере предыдущей отправки в контейнер 40HQ загрузили 352 кипы. Вес брутто одной кипы — 80 кг, общий вес брутто груза — 28 MT; оба показателя включают упаковку.",
+      "До забора груза определите импортёра и контактное лицо по таможенному оформлению, уточните категорию товара и согласуйте ответственность за операции и разгрузку в пункте назначения. Прошлые отправки не подтверждают текущую допустимость импорта.",
+      "Укажите категории товаров, число кип, вес брутто, размеры, город поставщика, дату готовности, город назначения и требуемые условия передачи груза. Неизвестные данные отметьте отдельно; объём вашей отправки рассчитывается по фактическому грузу, а не по этому примеру."
     ],
     "notes": [
       "Пример предыдущих отправок одежды и обуви; параметры упаковки сумок уточняются отдельно.",
-      "28 000 кг не включают тару контейнера. Фактическая загрузка зависит от списка, допустимой грузоподъёмности и условий перевозки; это не гарантия для всех маршрутов.",
+      "Вес груза 28 MT включает упаковку, но не собственный вес контейнера. Фактическая загрузка зависит от упаковочного листа, допустимой грузоподъёмности и условий перевозки; это не гарантия для всех маршрутов.",
       "Официальные ссылки указывают органы и источники, а не партнёрство или одобрение."
     ],
     "questions": [
       "Подходят ли одинаковые цифры всем трём категориям?",
       "80 кг — это вес нетто?",
-      "Всегда ли 40HQ вмещает 350 кип?",
+      "Всегда ли 40HQ вмещает 352 кипы?",
       "Что включает расчёт перевозки?"
     ],
     "answers": [
       "Описывайте каждую категорию отдельно. Пример 80 кг подтверждён для одежды и обуви; сумки проверяются отдельно.",
-      "Это вес брутто с упаковкой. Около 28 тонн также включают упаковку, но не контейнер.",
-      "350 — расчёт по историческому примеру. До бронирования проверьте размеры кип, вес и разрешённую загрузку.",
+      "Это вес брутто с упаковкой. Вес груза 28 MT также включает упаковку, но не контейнер.",
+      "352 кипы — фактическое количество в этой предыдущей отправке, а не гарантированная загрузка каждого контейнера. До бронирования проверьте размеры кип, вес и допустимую загрузку.",
       "Уточните передачу в порту, на складе или по адресу и ответственность за оформление, местные расходы и разгрузку."
     ],
     "focus": [
       "Начните с сортировки: точное описание поможет импортёру в Гане проверить категорию до загрузки.",
       "Начните с упаковки: для Индии проверьте классификацию и разрешения, прежде чем считать кипу готовой к отправке.",
-      "Начните с запасов: для Бангладеш подготовьте сведения о кипах и покупателе, пока импортёр проверяет текущую политику и допуск.",
-      "Начните с перемещения: для Пакистана свяжите маркировку и записи загрузки с классификацией импортёра и согласованной передачей."
+      "Начните с подготовки груза: для Бангладеш подготовьте сведения о кипах и покупателе, пока импортёр проверяет действующие правила и возможность ввоза.",
+      "Начните с погрузочных операций: для Пакистана сверьте маркировку кип и записи о загрузке с классификацией товара, подтверждённой импортёром, и согласованными условиями передачи."
     ]
   },
   "ar": {
@@ -569,7 +569,7 @@
     ],
     "ui": {
       "china": "الصين",
-      "request": "اطلب عرض شحن",
+      "request": "اطلب عرض سعر للشحن",
       "chapters": "في هذه الصفحة",
       "reading": "تقرأ الآن",
       "record": "سجلات العمليات في الصين",
@@ -603,26 +603,26 @@
     "paras": [
       "سبق أن شحنّا ملابس وأحذية وحقائب مستعملة إلى هذه الوجهة. تعرض هذه الصور ومقاطع الفيديو عمليات الفرز والتعبئة والتحضير للتحميل في الصين.",
       "افصل الملابس والأحذية والحقائب في وصف البضاعة. اتفق مع المشتري على الدرجة والحالة والكميات وعلامات البالات، ثم طابق قائمة التعبئة مع البضائع الفعلية.",
-      "يوضح المثال المسجل وزناً إجمالياً قدره 80 كغ للبالة وحوالي 28,000 كغ للبضاعة داخل حاوية 40HQ، وكلاهما شامل التغليف. تعادل القسمة حوالي 350 بالة.",
-      "قبل الاستلام، حدد المستورد ومسؤول التخليص وتحقق من فئة المنتج بدقة واتفق على مسؤولية عمليات الوجهة والتفريغ. الشحنات السابقة لا تثبت أهلية الاستيراد الحالية.",
+      "في مثال الشحنة السابقة، حُمّلت 352 بالة في حاوية 40HQ. بلغ الوزن الإجمالي للبالة 80 كغ، والوزن الإجمالي للبضاعة 28 MT؛ وكلاهما شامل التغليف.",
+      "قبل استلام البضاعة، حدد المستورد وجهة الاتصال المعنية بالتخليص الجمركي، وتحقق من فئة المنتج بدقة واتفق على المسؤوليات عن العمليات في الوجهة والتفريغ. الشحنات السابقة لا تثبت أهلية الاستيراد الحالية.",
       "أرسل فئات البضائع وعدد البالات والأوزان الإجمالية والأبعاد ومدينة المورد وتاريخ الجاهزية ومدينة الوجهة ونطاق التسليم. وضح البيانات غير المعروفة؛ المثال السابق لا يحدد كمية شحنتك."
     ],
     "notes": [
       "مرجع لشحنات سابقة من الملابس والأحذية؛ تُؤكد بيانات تعبئة الحقائب بشكل منفصل.",
-      "لا تشمل 28,000 كغ وزن الحاوية الفارغة. يعتمد التحميل الفعلي على القائمة والحمولة المسموحة وظروف النقل، وليس ضماناً لكل المسارات.",
+      "يشمل وزن البضاعة البالغ 28 MT التغليف، ولا يشمل وزن الحاوية الفارغة. يعتمد التحميل الفعلي على قائمة التعبئة والحمولة المسموحة وظروف النقل، وليس ضماناً لكل المسارات.",
       "تحدد الروابط الرسمية الجهات ومصادر المعلومات، ولا تعني شراكة أو اعتماداً."
     ],
     "questions": [
       "هل تصلح بيانات التعبئة نفسها للفئات الثلاث؟",
       "هل 80 كغ وزن صافٍ؟",
-      "هل تعني 40HQ دائماً 350 بالة؟",
-      "ماذا يشمل عرض الشحن؟"
+      "هل تستوعب حاوية 40HQ دائماً 352 بالة؟",
+      "ماذا يشمل عرض سعر الشحن؟"
     ],
     "answers": [
       "صف كل فئة على حدة. تم تأكيد مثال 80 كغ للملابس والأحذية؛ تحقق من الحقائب بشكل مستقل.",
-      "إنه الوزن الإجمالي مع التغليف. وتشمل 28 طناً تقريباً التغليف أيضاً ولكنها لا تشمل الحاوية نفسها.",
-      "350 نتيجة حسابية لهذا المثال السابق. تحقق من أبعاد البالات وأوزانها والحمولة المسموحة قبل الحجز.",
-      "اتفق على انتهاء العرض في الميناء أو المخزن أو عنوان التسليم، وحدد مسؤولية التخليص ورسوم الوجهة والتفريغ."
+      "إنه الوزن الإجمالي مع التغليف. ويشمل وزن البضاعة البالغ 28 MT التغليف أيضاً، لكنه لا يشمل وزن الحاوية الفارغة.",
+      "352 هو عدد البالات التي حُمّلت في هذه الشحنة السابقة، وليس كمية مضمونة لكل حاوية. تحقق من أبعاد البالات وأوزانها والحمولة المسموحة قبل الحجز.",
+      "حدد ما إذا كانت الخدمة المشمولة بعرض السعر تنتهي في الميناء أو المستودع أو عنوان التسليم، واتفق على المسؤولية عن التخليص الجمركي ورسوم الوجهة والتفريغ."
     ],
     "focus": [
       "ابدأ بالفرز: يساعد الوصف الواضح مستورد غانا على التحقق من الفئة الدقيقة قبل التحميل.",

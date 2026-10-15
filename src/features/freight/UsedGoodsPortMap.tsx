@@ -5,12 +5,12 @@ import mapData from './usedGoodsPortMaps.json';
 const translations={
  en:{title:'Ports for destination planning',note:'Major ports for reference. Confirm the actual receiving port before booking.',map:'Open port on Google Maps',official:'Port authority',source:'Map source'},
  zh:{title:'目的港规划参考',note:'主要港口位置参考，实际接货港口在订舱前确认。',map:'在 Google 地图查看港口',official:'港口官方资料',source:'地图来源'},
- es:{title:'Puertos para planificar el destino',note:'Puertos principales de referencia. Confirme el puerto de recepción antes de reservar.',map:'Ver puerto en Google Maps',official:'Autoridad portuaria',source:'Fuente del mapa'},
- fr:{title:'Ports pour préparer la destination',note:'Principaux ports à titre de référence. Confirmez le port de réception avant réservation.',map:'Voir le port sur Google Maps',official:'Autorité portuaire',source:'Source de la carte'},
- pt:{title:'Portos para planejar o destino',note:'Principais portos de referência. Confirme o porto de recebimento antes da reserva.',map:'Ver porto no Google Maps',official:'Autoridade portuária',source:'Fonte do mapa'},
- tr:{title:'Varış planlaması için limanlar',note:'Başlıca limanlar referans olarak gösterilir. Gerçek varış limanını rezervasyondan önce doğrulayın.',map:'Limanı Google Maps’te açın',official:'Liman idaresi',source:'Harita kaynağı'},
- ru:{title:'Порты для планирования доставки',note:'Основные порты для справки. Подтвердите фактический порт приёма до бронирования.',map:'Открыть порт в Google Maps',official:'Портовая администрация',source:'Источник карты'},
- ar:{title:'موانئ لتخطيط الوجهة',note:'الموانئ الرئيسية مرجع للتخطيط. أكد ميناء الاستلام الفعلي قبل الحجز.',map:'عرض الميناء على خرائط Google',official:'هيئة الميناء',source:'مصدر الخريطة'},
+ es:{title:'Puertos de referencia en destino',note:'Puertos principales de referencia. Confirme el puerto de descarga antes de reservar.',map:'Ver puerto en Google Maps',official:'Autoridad portuaria',source:'Fuente del mapa'},
+ fr:{title:'Ports de référence à destination',note:'Principaux ports à titre de référence. Confirmez le port de déchargement avant réservation.',map:'Voir le port sur Google Maps',official:'Autorité portuaire',source:'Source de la carte'},
+ pt:{title:'Portos de referência no destino',note:'Principais portos de referência. Confirme o porto de descarga antes da reserva.',map:'Ver porto no Google Maps',official:'Autoridade portuária',source:'Fonte do mapa'},
+ tr:{title:'Varış planlaması için limanlar',note:'Başlıca limanlar referans olarak gösterilir. Taşıma rezervasyonundan önce gerçek boşaltma limanını doğrulayın.',map:'Limanı Google Maps’te açın',official:'Liman idaresi',source:'Harita kaynağı'},
+ ru:{title:'Порты для планирования доставки',note:'Основные порты показаны для справки. Уточните фактический порт выгрузки до бронирования перевозки.',map:'Открыть порт в Google Maps',official:'Портовая администрация',source:'Источник карты'},
+ ar:{title:'موانئ مرجعية لتخطيط الشحن',note:'تُعرض الموانئ الرئيسية كمرجع للتخطيط. تحقق من ميناء التفريغ الفعلي قبل حجز الشحنة.',map:'عرض الميناء على خرائط Google',official:'هيئة الميناء',source:'مصدر الخريطة'},
 };
 export default function UsedGoodsPortMap({country,locale}:{country:UsedGoodsCountry;locale:GulfLocale}){
  const id=useId(),d=mapData[country],t=translations[locale];
