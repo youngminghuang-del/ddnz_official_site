@@ -1,0 +1,197 @@
+[
+  {
+    "file": "ceramic-tiles-1.jpg",
+    "bytes": 602533,
+    "sha256": "39eb881133889c85503b956a8fa3be71f5a07522f7f086db84a9c5849d8fe411"
+  },
+  {
+    "file": "ceramic-tiles-2.jpg",
+    "bytes": 273806,
+    "sha256": "161acf080bcb470d9195a173fd0512f9a8b6db942a5e55c4037309b6598488cb"
+  },
+  {
+    "file": "ceramic-tiles-3.jpg",
+    "bytes": 679867,
+    "sha256": "8f8835bfc7b6de67fa935736dab2398e8c82cedb6182a504e21a5f160aecfc76"
+  },
+  {
+    "file": "chancay.jpeg",
+    "bytes": 73412,
+    "sha256": "7022160f9c3bea252b4e3f851cd704759742fe7c41bb52ff139778fd7b5c87ef"
+  },
+  {
+    "file": "lagos-collection.ar.vtt",
+    "bytes": 171,
+    "sha256": "6f47b22d594b7c1c83dff6de5306648677e68159deea1d9fa523b7ad3623e507"
+  },
+  {
+    "file": "lagos-collection.en.vtt",
+    "bytes": 124,
+    "sha256": "a7b7468c165d8cc7d66d443b577be3dabfe2454b093b87ad490fab045be23cc9"
+  },
+  {
+    "file": "lagos-collection.es.vtt",
+    "bytes": 129,
+    "sha256": "1593b9bce15a11f9a9d470368ae03848eee4c4cf28009788fab658bd323ee87f"
+  },
+  {
+    "file": "lagos-collection.fr.vtt",
+    "bytes": 142,
+    "sha256": "4673ae8705c17f4d45e3e4607378df0d5fbcc0136f9203e11b423261b12d45b0"
+  },
+  {
+    "file": "lagos-collection.jpg",
+    "bytes": 103657,
+    "sha256": "1c44c7d36201862ac3e5d4a65018186341a779a1a5d781e7d4e5b173f18c1a8a"
+  },
+  {
+    "file": "lagos-collection.mp4",
+    "bytes": 4717930,
+    "sha256": "8aa51b53a9f2468363fa19f8b6479ece09a46c4031c3657298bf2dff7813d42b"
+  },
+  {
+    "file": "lagos-collection.pt.vtt",
+    "bytes": 128,
+    "sha256": "07332cf7f461869fc6c9a6ad47935549b25d5df17e6de6cf773f2c4d9e7e8e13"
+  },
+  {
+    "file": "lagos-collection.ru.vtt",
+    "bytes": 197,
+    "sha256": "2667b6117cda4196088861040c947b72e917f2038d73c212b15da97f8738152e"
+  },
+  {
+    "file": "lagos-collection.tr.vtt",
+    "bytes": 139,
+    "sha256": "6a7575d1be045e0e7318eec2f9aa6235276b603fbed8cdb8312481945dc1b428"
+  },
+  {
+    "file": "lagos-collection.zh.vtt",
+    "bytes": 139,
+    "sha256": "f37dae837bfe6620a5233229957065fc7cf6b31c752ac545cc0e89bf503ee917"
+  },
+  {
+    "file": "lagos-transfer.ar.vtt",
+    "bytes": 179,
+    "sha256": "444b3d5a936ef5ba944d667df4cf3dbbd1e966facf0a0668fddb925c286ca7d7"
+  },
+  {
+    "file": "lagos-transfer.en.vtt",
+    "bytes": 102,
+    "sha256": "cacb4a9eed22cfcf5c4e4b68ddee8f4fc9e9a624dc7abb14ed4110861c7008b1"
+  },
+  {
+    "file": "lagos-transfer.es.vtt",
+    "bytes": 155,
+    "sha256": "706cb76f1a8d76b1bca74a9bbf1cee2ebc9e7b979ee10911dc2359cd3568db4c"
+  },
+  {
+    "file": "lagos-transfer.fr.vtt",
+    "bytes": 157,
+    "sha256": "2d8219a69f7503d31af4493b7601516c5a42ae34f21ccbe45bb76196b6c4836a"
+  },
+  {
+    "file": "lagos-transfer.jpg",
+    "bytes": 95193,
+    "sha256": "5fb02634d65d56bc2a401ac85698612eb51e81d6564f7beacb4ead3275e8f42c"
+  },
+  {
+    "file": "lagos-transfer.mp4",
+    "bytes": 4638275,
+    "sha256": "072d4a72092d2b2eeb081ff9d0de95464b6d1905929310693e1d9ddea5be133d"
+  },
+  {
+    "file": "lagos-transfer.pt.vtt",
+    "bytes": 157,
+    "sha256": "cc862013dcfc355f8d0b35858773a7c76c1e1e708c205a3fce1207deeff91305"
+  },
+  {
+    "file": "lagos-transfer.ru.vtt",
+    "bytes": 221,
+    "sha256": "7c7be2562168891bf7d9cd4612c1696a497f92cfef2af0e3c016439d86446576"
+  },
+  {
+    "file": "lagos-transfer.tr.vtt",
+    "bytes": 146,
+    "sha256": "594c07434fb478a3c952531ff64d441a1610be4a72fa538929bda3e97f9e4efa"
+  },
+  {
+    "file": "lagos-transfer.zh.vtt",
+    "bytes": 151,
+    "sha256": "18678f4b46d6597de0e7c66f00f08b41343aaffbb436b17e548a6d21d69ecc05"
+  },
+  {
+    "file": "lagos-unloading.ar.vtt",
+    "bytes": 200,
+    "sha256": "a2204f3b77f5e5bf94bfc320ac247e24b87e99d9f1869a66f3932d5f16a66ce1"
+  },
+  {
+    "file": "lagos-unloading.en.vtt",
+    "bytes": 131,
+    "sha256": "bbd7ea095dd761459e2840cc195df06084cd5b1317ba3fc29de3ced3a6fd8a23"
+  },
+  {
+    "file": "lagos-unloading.es.vtt",
+    "bytes": 160,
+    "sha256": "0206833af05efb41ebe379c1e21bfc0779fa9c9cd0ae4bccebc3df06f3c92df6"
+  },
+  {
+    "file": "lagos-unloading.fr.vtt",
+    "bytes": 179,
+    "sha256": "1514514c909af00bc331b4c17dff6d326adde2cfb8e043e04f5d39b44368e83d"
+  },
+  {
+    "file": "lagos-unloading.jpg",
+    "bytes": 59682,
+    "sha256": "5f86692f6322bf0d5efac25811a8ebcb34dc6ce6833bd14dec1b53c8778428e7"
+  },
+  {
+    "file": "lagos-unloading.mp4",
+    "bytes": 4062781,
+    "sha256": "5fac2e181f4f42a9add416391323be80d1d37f5eb66a613ca11e0dc345a10ce0"
+  },
+  {
+    "file": "lagos-unloading.pt.vtt",
+    "bytes": 166,
+    "sha256": "453ce336f5bd386c59e440e95c87c1ead2dffbf0e2d0c9fef93d62a53132d81b"
+  },
+  {
+    "file": "lagos-unloading.ru.vtt",
+    "bytes": 245,
+    "sha256": "bbd0a0e3a3a8c79fbcbcd112200bbe04ac7aedbca4fa6e214eb0e3e37139b9ca"
+  },
+  {
+    "file": "lagos-unloading.tr.vtt",
+    "bytes": 163,
+    "sha256": "1833cf914461aa88f44a810feedcac26bfef465cd7674c6e86d4edcc941ff0ec"
+  },
+  {
+    "file": "lagos-unloading.zh.vtt",
+    "bytes": 139,
+    "sha256": "63a1ff9da1c6997664022af618bba7e7e5f4addcc0546d433bbe6ee49d6c55ba"
+  },
+  {
+    "file": "nigeria-map.svg",
+    "bytes": 122495,
+    "sha256": "9ae43789c622ac7a9d6cea808db5661c884f720c5b3b0c95bdda972e15202115"
+  },
+  {
+    "file": "npa.png",
+    "bytes": 44930,
+    "sha256": "40c6a8e33863a5dddf27b7d3ad1df7b3d0b157dec21e72eb216993468c78c4c4"
+  },
+  {
+    "file": "peru-map.svg",
+    "bytes": 114088,
+    "sha256": "9231ac8d16a9911e7b97f22c55464337fad0602b0c8054be0299104d4a2574b1"
+  },
+  {
+    "file": "son.png",
+    "bytes": 128327,
+    "sha256": "fa94505063f7457aeb8e74645c1e80b14ab0b49d49750172aa4cfd3e02245030"
+  },
+  {
+    "file": "sunat.gif",
+    "bytes": 5736,
+    "sha256": "6b497b4eeb7ec69138e11a2c327bb561cf4f15bc60fb6fe9b680303336c22866"
+  }
+]

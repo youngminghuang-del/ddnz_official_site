@@ -1,0 +1,190 @@
+{
+  "ui": {
+    "backWest": "Fret vers l’Afrique de l’Ouest",
+    "backLatin": "Fret vers l’Amérique latine",
+    "before": "AVANT LE DEVIS",
+    "briefHeading": "Une liste de marchandises, une remise convenue.",
+    "cargo": "Marchandises",
+    "importer": "Importateur",
+    "receiving": "Réception",
+    "cargoNG": "Fournisseurs, nombre de colis et dates de disponibilité.",
+    "cargoPE": "Dimensions, poids brut et empilabilité des palettes.",
+    "importHint": "Informations produit et contact pour le dédouanement.",
+    "receivingHint": "Adresse exacte, accès du véhicule et déchargement.",
+    "prepare": "Préparer les informations d’expédition",
+    "chapters": "Sur cette page",
+    "reading": "Lecture",
+    "full": "Voir l’image complète",
+    "choose": "Choisir une vue de la cargaison ou de la destination",
+    "silent": "Vidéo sans son · Sous-titres descriptifs",
+    "official": "Ressources officielles : importation et ports",
+    "guidance": "Consulter le guide officiel",
+    "customs": "Douanes du Nigeria · Formalités d’importation",
+    "mapHeading": "LOCALISATION À DESTINATION",
+    "mapIntro": "Repérez le port, puis confirmez le lieu d’enlèvement ou l’adresse finale.",
+    "mapNote": "Repère géographique, sans engagement sur l’itinéraire maritime.",
+    "source": "Source",
+    "related": "Vous recherchez aussi des équipements ?",
+    "kitchen": "Équipements de cuisine professionnelle de Chine",
+    "food": "Machines agroalimentaires de Chine",
+    "send": "Envoyer les informations de ma cargaison",
+    "request": "Demander une étude d’expédition",
+    "china": "Chine",
+    "packingExample": "EXEMPLE DE PLANIFICATION",
+    "unitNote": "Uniquement pour un devis comparant 1 m³ à 1 tonne métrique. Vérifiez minimums, arrondis et frais locaux.",
+    "caseLabel": "NIGERIA · CAS DE CARRELAGE",
+    "caseHeading": "Trois points à vérifier avant un premier envoi en Afrique",
+    "caseIntro": "Un client expédiant du carrelage au Nigeria pensait retrouver les conditions de l’Asie du Sud-Est. L’étude a porté sur la tarification au poids, la certification et la protection des marchandises."
+  },
+  "nigeria": {
+    "title": "Transport de Chine au Nigeria | Groupage et réception | DDNZ",
+    "desc": "Préparez le groupage fournisseurs, les documents d’importation et la réception à Lagos ou dans l’intérieur selon votre cargaison.",
+    "heading": "De Chine au Nigeria : plusieurs fournisseurs, un plan de réception",
+    "intro": "Avant de comparer les prix, coordonnez disponibilité, importateur nigérian, adresse et déchargement. DDNZ organise les achats et la remise pour exportation en Chine ; Heaven Born assure le fret dans le périmètre confirmé. Itinéraire, services et frais sont à valider pour chaque envoi.",
+    "sections": [
+      {
+        "heading": "Planifier les marchandises de plusieurs fournisseurs avant l’enlèvement",
+        "body": "Exemple de préparation : coques de téléphone sans composants électriques et accessoires de présentation destinés à un acheteur de Lagos. Comparez attente pour groupage et départs séparés. Par produit et fournisseur, indiquez description, matière, quantité, cartons, dimensions, poids brut et disponibilité, ainsi que batteries, liquides ou composants électriques. Convenez du traitement des manquants, dommages et différences d’étiquetage. Après reconditionnement, utilisez la liste définitive pour comparer FCL et LCL, frais de groupage et de destination compris."
+      },
+      {
+        "heading": "Définir le lieu de réception avant le véhicule",
+        "body": "Arrivée au port, retrait en entrepôt et livraison à une adresse sont des remises différentes. Précisez adresse à Lagos, contact, horaires et déchargement. Pour Onitsha, Kano ou l’intérieur, séparez mainlevée, enlèvement, transport et livraison ; identifiez responsables et frais d’attente, de stockage ou d’échec de livraison. Les acheteurs d’Alaba, Computer Village ou Ladipo doivent aussi donner l’adresse exacte. Un nom de ville ne confirme pas un service."
+      },
+      {
+        "heading": "Vérifier la préparation à l’importation avant le départ",
+        "body": "Identifiez importateur et contact douanier, puis vérifiez usage, classement et documents du produit. Pour les biens réglementés par SONCAP, préparez la certification avant expédition : PC pour Form M et SC pour le dédouanement. L’importateur confirme les procédures Form M, PAAR et les autres exigences applicables. Harmonisez facture, liste de colisage, données produit et destinataire ; résolvez les documents manquants avant le départ."
+      },
+      {
+        "heading": "Comparer le périmètre complet et les responsabilités",
+        "body": "Distinguez enlèvement, réception, groupage, reconditionnement et exportation en Chine ; fret, route, validité du devis et disponibilité ; manutention, documents, dégroupage et stockage à destination ; déclaration, droits et taxes ; enlèvement, transport intérieur et déchargement. Indiquez qui organise, qui paie et les preuves de remise, avec exclusions et frais d’inspection, d’attente ou de stockage. Comparez uniquement des périmètres équivalents."
+      },
+      {
+        "heading": "Organiser les stocks selon les commandes",
+        "body": "Avant de répartir les stocks entre Lagos et l’intérieur, examinez villes de commande, références principales, réachats et besoins de réassort. Comparez transport, manutention, visibilité du stock et retours ; un loyer inférieur ne garantit pas un coût livré moindre. Si la demande justifie un essai, comparez un petit réassort et une livraison depuis le premier point de réception, en confirmant opérateur, lieu, accès et frais."
+      },
+      {
+        "heading": "Questions des acheteurs",
+        "body": "**Peut-on grouper plusieurs fournisseurs ?** Fournissez lieux, dates et emballages ; compatibilité, manutention et documents doivent être validés. Un retard peut changer la solution.\n\n**Le devis Lagos comprend-il la livraison au magasin ?** Seulement si l’adresse et le service figurent au devis ; vérifiez enlèvement, transport, déchargement et attente.\n\n**Peut-on déjà fixer délai et prix toutes taxes comprises ?** Il faut connaître cargaison, importateur, itinéraire et réception. Confirmez hypothèses, inclusions et validité : arrivée au port et livraison finale diffèrent."
+      },
+      {
+        "heading": "Transmettre une demande exploitable pour le Nigeria",
+        "body": "Envoyez liste produit, photos, quantités, dimensions emballées, poids bruts, villes et dates des fournisseurs, adresse nigériane et contact importateur/douane. Signalez batteries, liquides et caractéristiques particulières, date souhaitée et acceptation de départs ou livraisons partiels."
+      }
+    ],
+    "country": "Nigeria"
+  },
+  "peru": {
+    "title": "Transport de Chine au Pérou | Marchandises lourdes et livraison | DDNZ",
+    "desc": "Fournissez poids emballé, informations importateur et adresse de réception pour comparer le coût complet du transport de Chine au Pérou.",
+    "heading": "De Chine au Pérou : coordonner cargaison, importateur et livraison",
+    "intro": "Communiquez les données après emballage pour comparer enlèvement, fret, opérations à destination et livraison sur une même base. DDNZ coordonne achats et exportation en Chine ; Heaven Born exécute le périmètre confirmé. Callao, Chancay et une adresse intérieure correspondent à des demandes distinctes à vérifier.",
+    "sections": [
+      {
+        "heading": "Carrelage : vérifier le poids avant de comparer le LCL",
+        "body": "Le carrelage peut être compact et lourd. Donnez dimensions et poids brut final de chaque palette, protection comprise, et confirmez empilabilité et moyens de chargement. Pour un devis W/M comparant 1 m³ et 1 tonne, retenez le plus élevé entre volume et kg bruts/1000. L’exemple hypothétique de 3 m³ et 4500 kg donne 4,5 unités, pas un prix. Vérifiez minimums, arrondis, limites de densité et frais aux deux extrémités. Comparez FCL et LCL avec la même liste et contrôlez charge utile et manutention."
+      },
+      {
+        "heading": "Préparer l’importateur péruvien et les informations produit",
+        "body": "Pour l’importation ordinaire à la consommation, SUNAT exige un RUC actif et l’absence de statut « no habido ». Les exceptions limitées ne doivent pas être présumées pour un envoi commercial. Importateur et représentant vérifient classement et restrictions. Pour le carrelage : matière, usage, dimensions, finition et fiche technique. Préparez documents commerciaux, transport, assurance, contrôle ou origine selon le cas. Un tarif préférentiel suppose éligibilité et preuve d’origine ; acheter en Chine ne suffit pas."
+      },
+      {
+        "heading": "Chiffrer six étapes avant de comparer le total",
+        "body": "1. Enlèvement en Chine : adresses, nombre de collectes, accès et levage.\n2. Origine : réception, groupage, export, terminal/CFS et emballage.\n3. Fret principal : mode, route, calendrier, base de calcul et validité.\n4. Destination : terminal, dégroupage, documents, entrepôt et tiers.\n5. Douane et taxes : importateur, déclarant, inclusions et exclusions.\n6. Livraison : adresse, accès, rendez-vous, déchargement et attente.\n\nEn LCL, demandez explicitement les frais à destination. Une prestation « porte à porte » nécessite adresse et responsabilités précises."
+      },
+      {
+        "heading": "Préparer la remise du port au site de réception",
+        "body": "Indiquez si la prestation s’arrête à Callao, au port proposé de Chancay, dans un entrepôt ou à l’adresse finale. Validez départ disponible et réception avant réservation. Pour Lima ou l’intérieur : quartier, code postal s’il existe, adresse, horaires et restrictions de circulation ; précisez chariot élévateur ou autre équipement et fournisseur. Distinguez départ, arrivée, mainlevée et livraison. Convenez du suivi des changements et des frais de stockage ou d’attente en cas de retard."
+      },
+      {
+        "heading": "Conserver des dossiers utiles de groupage et de chargement",
+        "body": "Consignez arrivées fournisseurs, colis et état apparent. Réglez manquants et dommages avant de fermer la liste ; après reconditionnement, rapprochez identifiants de palettes, quantités, poids et dimensions. Convenez des protections de bord, de l’arrimage et de l’empilage avant chargement. Reliez documents et photos à la référence d’envoi : une photo ne prouve pas seule destination, dédouanement ou livraison."
+      },
+      {
+        "heading": "Questions des acheteurs",
+        "body": "**Le tarif au m³ le plus bas est-il le moins cher pour le carrelage ?** Pas forcément : vérifiez W/M, minimums, manutention et destination avec la liste finale.\n\n**Peut-on passer par Chancay plutôt que Callao ?** Faites examiner route, acceptation des marchandises, importateur et coût final.\n\n**La livraison inclut-elle taxes et déchargement ?** Vérifiez les inclusions écrites, le déclarant, les frais locaux et la personne chargée de décharger."
+      },
+      {
+        "heading": "Fournir les données pour un devis Pérou",
+        "body": "Précisez produit, usage, HS proposé si connu, quantité, colis/palettes, dimensions, poids brut, photos, valeur, Incoterm, fournisseurs et dates. Signalez batteries, liquides ou aimants éventuels. Pour le carrelage : matière, dimensions, poids par palette, empilabilité, statut RUC, contact douanier, port, adresse, moyens de déchargement et flexibilité de date."
+      }
+    ],
+    "country": "Pérou"
+  },
+  "chaptersNG": [
+    "Grouper les fournisseurs",
+    "Coûts et responsabilités",
+    "Réception au Nigeria",
+    "Questions avant le départ"
+  ],
+  "chaptersPE": [
+    "Préparer la charge lourde",
+    "Coûts et responsabilités",
+    "Réception au Pérou",
+    "Questions avant le départ"
+  ],
+  "journeyNG": [
+    "Lister les commandes",
+    "Rapprocher les arrivées",
+    "Préparer l’importation",
+    "Convenir de la remise"
+  ],
+  "journeyPE": [
+    "Vérifier les palettes",
+    "Confirmer l’importateur",
+    "Examiner fret et port",
+    "Organiser le déchargement"
+  ],
+  "media": [
+    {
+      "heading": "Déchargement d’un conteneur à Lagos",
+      "body": "Scène de déchargement et d’entrée en entrepôt : rapprochez colis et état visible de la liste."
+    },
+    {
+      "heading": "Transfert de marchandises à Lagos",
+      "body": "Confirmez véhicule, manutention et point de réception suivant avant le transfert."
+    },
+    {
+      "heading": "Enregistrement du retrait à Lagos",
+      "body": "Convenez de la référence de retrait et du contact avant la remise."
+    },
+    {
+      "heading": "Palettes et arrimage",
+      "body": "Référence de chargement : palettes, film et cerclage. Utilisez dimensions et poids brut mesurés."
+    },
+    {
+      "heading": "Port de Chancay, Pérou",
+      "body": "Contexte à destination ; port et réception à confirmer pour l’envoi. Photo : ministère péruvien des Transports et des Communications."
+    },
+    {
+      "heading": "Cartons de carrelage avant renforcement",
+      "body": "Vérifiez état des cartons, dimensions des carreaux et protection des bords avant l’emballage export."
+    },
+    {
+      "heading": "Carreaux de grand format",
+      "body": "Contrôlez dimensions et manutention ; mesurez encombrement et poids brut après renforcement."
+    },
+    {
+      "heading": "Marchandises filmées et renforcées",
+      "body": "Film, cerclage, cadres et marquages fragiles. Confirmez palettes ou caisses et manutention avant enlèvement."
+    }
+  ],
+  "resources": [
+    "Vérifiez l’application de SONCAP au produit et préparez la certification avant expédition.",
+    "Consultez les informations portuaires officielles ; convenez séparément de la manutention, de la mainlevée et du retrait.",
+    "Vérifiez RUC, classement et documents commerciaux et de transport avec l’importateur."
+  ],
+  "case": [
+    {
+      "heading": "Base de calcul des marchandises lourdes",
+      "body": "Cet envoi : 4719 kg et 3,5 m³. Le devis retenait 500 kg par unité : 4719 ÷ 500 = 9,438, soit environ 9,44 unités, 2,70 fois le volume seul de 3,5. Cette condition n’est pas une règle maritime universelle. Confirmez conversion, arrondis, minimums et frais locaux par écrit."
+    },
+    {
+      "heading": "Préparer SONCAP avant expédition",
+      "body": "Vérifiez spécifications et code HS avec importateur et certificateur. Pour les produits réglementés, préparez essais et PC applicables, puis SC de l’envoi. Assurez la cohérence des coordonnées de l’importateur dans certificats et documents de transport."
+    },
+    {
+      "heading": "Protéger le carrelage pendant la manutention",
+      "body": "Vérifiez palettes ou caisses, angles et bords, film et cerclage. Confirmez accès de levage, limites d’empilage et déchargement ; photographiez l’emballage terminé avant le départ."
+    }
+  ]
+}

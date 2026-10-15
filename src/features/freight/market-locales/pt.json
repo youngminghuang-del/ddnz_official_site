@@ -1,0 +1,190 @@
+{
+  "ui": {
+    "backWest": "Frete para a África Ocidental",
+    "backLatin": "Frete para a América Latina",
+    "before": "ANTES DA COTAÇÃO",
+    "briefHeading": "Uma lista de carga, uma entrega acordada.",
+    "cargo": "Carga",
+    "importer": "Importador",
+    "receiving": "Recebimento",
+    "cargoNG": "Fornecedores, volumes e datas de disponibilidade.",
+    "cargoPE": "Dimensões, peso bruto e empilhamento dos paletes.",
+    "importHint": "Dados do produto e contato para desembaraço.",
+    "receivingHint": "Endereço, acesso do veículo e descarga.",
+    "prepare": "Preparar os dados do envio",
+    "chapters": "Nesta página",
+    "reading": "Lendo",
+    "full": "Ver imagem completa",
+    "choose": "Escolher imagem da carga ou do destino",
+    "silent": "Vídeo sem áudio · Legendas de contexto",
+    "official": "Fontes oficiais de importação e portos",
+    "guidance": "Orientação oficial",
+    "customs": "Alfândega da Nigéria · Procedimentos de importação",
+    "mapHeading": "LOCALIZAÇÃO NO DESTINO",
+    "mapIntro": "Localize o porto e confirme o ponto de retirada ou endereço final.",
+    "mapNote": "Referência geográfica, não um itinerário marítimo.",
+    "source": "Fonte",
+    "related": "Também precisa comprar equipamentos?",
+    "kitchen": "Equipamentos de cozinha comercial da China",
+    "food": "Máquinas para processamento de alimentos da China",
+    "send": "Enviar os dados da carga",
+    "request": "Solicitar análise do envio",
+    "china": "China",
+    "packingExample": "EXEMPLO DE PLANEJAMENTO",
+    "unitNote": "Somente para cotação que compara 1 m³ com 1 tonelada métrica. Confira mínimos, arredondamento e despesas locais.",
+    "caseLabel": "NIGÉRIA · CASO DE REVESTIMENTOS CERÂMICOS",
+    "caseHeading": "Três verificações antes do primeiro envio à África",
+    "caseIntro": "Um cliente enviando revestimentos cerâmicos à Nigéria esperava condições parecidas com as do Sudeste Asiático. A análise destacou cobrança por peso, certificação e embalagem."
+  },
+  "nigeria": {
+    "title": "Frete da China para a Nigéria | Consolidação e recebimento | DDNZ",
+    "desc": "Planeje consolidação, documentos de importação e recebimento em Lagos ou no interior com os dados reais da carga.",
+    "heading": "Da China à Nigéria: vários fornecedores, um plano de recebimento",
+    "intro": "Antes de comparar preços, alinhe disponibilidade dos fornecedores, importador nigeriano, endereço e descarga. A DDNZ coordena compras e entrega para exportação na China; a Heaven Born executa o frete no escopo confirmado. Rotas, serviços e despesas devem ser definidos por envio.",
+    "sections": [
+      {
+        "heading": "Planejar vários fornecedores antes da coleta",
+        "body": "Exemplo de planejamento: capas de celular sem componentes elétricos e acessórios de exposição para um comprador de Lagos. Compare aguardar a consolidação com embarques separados. Liste por produto e fornecedor descrição, material, quantidade, caixas, dimensões, peso bruto e disponibilidade; indique baterias, líquidos ou componentes elétricos. Combine tratamento de faltas, avarias e etiquetas divergentes. Após reembalagem, compare FCL e LCL com a lista final, incluindo consolidação e despesas no destino."
+      },
+      {
+        "heading": "Definir o recebimento antes do veículo",
+        "body": "Chegada ao porto, retirada em armazém e entrega ao comprador são etapas distintas. Informe endereço em Lagos, contato, horário e descarga. Para Onitsha, Kano ou o interior, separe liberação, retirada, transporte e descarga, com responsáveis e custos de espera, armazenagem ou entrega frustrada. Alaba, Computer Village e Ladipo também exigem endereço exato. O nome da cidade não confirma disponibilidade do serviço."
+      },
+      {
+        "heading": "Verificar a preparação da importação antes do embarque",
+        "body": "Identifique importador e contato aduaneiro; confira uso, classificação e documentos do produto. Mercadorias reguladas pelo SONCAP precisam da certificação antes do embarque: PC para Form M e SC para desembaraço. O importador deve conferir procedimentos atuais de Form M, PAAR e demais órgãos. Mantenha fatura, packing list, produto e destinatário consistentes; resolva documentos pendentes antes de despachar."
+      },
+      {
+        "heading": "Comparar todo o escopo e as responsabilidades",
+        "body": "Separe coleta, recebimento, consolidação, reembalagem e exportação na China; frete, rota, validade e disponibilidade; movimentação, documentos, desconsolidação e armazenagem no destino; declaração, direitos e impostos; retirada, transporte interno e descarga. Registre quem organiza e paga cada etapa, comprovantes de entrega, exclusões e despesas de inspeção, espera ou armazenagem. Compare totais com escopos equivalentes."
+      },
+      {
+        "heading": "Distribuir estoque conforme os pedidos",
+        "body": "Antes de dividir estoque entre Lagos e o interior, analise cidades dos pedidos, SKUs principais, recompra e reposição. Compare transporte, manuseio, visibilidade do estoque e devoluções; aluguel menor não garante custo entregue menor. Se houver demanda recorrente, compare um pequeno reabastecimento com entrega a partir do primeiro ponto e confirme operador, localização, acesso e tarifas."
+      },
+      {
+        "heading": "Perguntas dos compradores",
+        "body": "**É possível consolidar vários fornecedores?** Envie locais, datas e embalagens; confirme compatibilidade, manuseio e documentos. Atrasos podem mudar a solução.\n\n**A cotação para Lagos inclui entrega na loja?** Apenas se endereço e escopo estiverem por escrito; confira retirada, transporte, descarga e espera.\n\n**Já é possível fixar prazo e preço com impostos?** É preciso conhecer carga, importador, rota e recebimento. Confira premissas, inclusões e validade; chegar ao porto não é entregar ao endereço."
+      },
+      {
+        "heading": "Enviar uma solicitação útil para a Nigéria",
+        "body": "Forneça produtos, fotos, quantidades, dimensões embaladas, pesos brutos, cidades e datas dos fornecedores, endereço nigeriano e contato de importação/desembaraço. Informe baterias, líquidos e outras características, data desejada e aceitação de embarques ou entregas parciais."
+      }
+    ],
+    "country": "Nigéria"
+  },
+  "peru": {
+    "title": "Frete da China para o Peru | Carga pesada e entrega | DDNZ",
+    "desc": "Informe peso embalado, dados do importador e endereço para comparar o custo completo do envio da China ao Peru.",
+    "heading": "Da China ao Peru: alinhe carga, importador e entrega",
+    "intro": "Apresente os dados após embalagem para comparar coleta, frete, operações no destino e entrega na mesma base. A DDNZ coordena compras e exportação na China; a Heaven Born executa o escopo confirmado. Callao, Chancay e um endereço no interior são solicitações distintas, sujeitas à análise do envio.",
+    "sections": [
+      {
+        "heading": "Cerâmica: verificar peso antes de comparar LCL",
+        "body": "Caixas de revestimentos podem ser compactas e pesadas. Informe dimensões e peso bruto final de cada palete com proteção, empilhamento e meios de carga/descarga. Se a cotação W/M compara 1 m³ e 1 tonelada, use o maior entre volume e kg brutos/1000. O exemplo hipotético de 3 m³ e 4500 kg resulta em 4,5 unidades, não em preço. Confira mínimos, arredondamento, densidade e despesas nas duas pontas. Compare FCL e LCL com a mesma lista e respeite limites de peso e manuseio."
+      },
+      {
+        "heading": "Preparar o importador peruano e os dados do produto",
+        "body": "Na importação ordinária para consumo, a SUNAT exige RUC ativo e situação diferente de “no habido”. Exceções limitadas não devem ser presumidas para cargas comerciais. Importador e representante verificam classificação e restrições. Para cerâmica, envie material, uso, medidas, acabamento e ficha técnica. Prepare documentos comerciais, transporte e, quando aplicáveis, seguro, controle e origem. Benefício tarifário depende de elegibilidade e prova de origem; comprar na China não basta."
+      },
+      {
+        "heading": "Cotar seis etapas antes de comparar o total",
+        "body": "1. Coleta na China: endereços, número de coletas, acesso e içamento.\n2. Origem: recebimento, consolidação, exportação, terminal/CFS e embalagem.\n3. Frete principal: modalidade, rota, premissas de prazo, base de cobrança e validade.\n4. Destino: terminal, desconsolidação, documentos, armazém e terceiros.\n5. Aduana e tributos: importador, declarante, inclusões e exclusões.\n6. Entrega final: endereço, acesso, agendamento, descarga e espera.\n\nNo LCL, solicite expressamente despesas de destino. “Porta a porta” exige endereço e responsabilidades definidos."
+      },
+      {
+        "heading": "Planejar a passagem do porto ao recebimento",
+        "body": "Defina se o escopo termina em Callao, no porto proposto de Chancay, em armazém ou no endereço final. Confirme saída disponível e recebimento antes da reserva. Para Lima ou o interior, informe distrito, código postal quando houver, endereço, horários e restrições; confirme empilhadeira ou outro equipamento e seu responsável. Diferencie saída, chegada, liberação e entrega. Combine acompanhamento de mudanças e custos de espera ou armazenagem por atrasos."
+      },
+      {
+        "heading": "Manter registros úteis de consolidação e carregamento",
+        "body": "Registre chegadas, volumes e condição aparente da embalagem. Resolva faltas e danos antes da lista final; após reembalar, concilie IDs de paletes, quantidades, pesos e medidas. Defina proteção de bordas, amarração e empilhamento antes de carregar. Vincule lista e fotos à referência do envio: uma foto não comprova sozinha destino, desembaraço ou entrega."
+      },
+      {
+        "heading": "Perguntas dos compradores",
+        "body": "**O menor preço por m³ é o menor custo para cerâmica?** Nem sempre: confira W/M, mínimos, manuseio e destino com a lista final.\n\n**Pode entrar por Chancay em vez de Callao?** Solicite análise da rota, aceitação da carga, importador e custo final.\n\n**Entrega inclui impostos e descarga?** Verifique inclusões por escrito, declarante, despesas locais e responsável pela descarga."
+      },
+      {
+        "heading": "Enviar os dados para cotar ao Peru",
+        "body": "Informe produto, uso, HS proposto se conhecido, quantidades, volumes/paletes, dimensões e peso bruto final, fotos, valor, Incoterm, fornecedores e datas. Declare baterias, líquidos ou ímãs quando presentes. Para cerâmica acrescente material, tamanho, peso por palete e empilhamento; confirme RUC, contato aduaneiro, porto, endereço, equipamentos de descarga e flexibilidade da data."
+      }
+    ],
+    "country": "Peru"
+  },
+  "chaptersNG": [
+    "Consolidar fornecedores",
+    "Custos e responsabilidades",
+    "Recebimento na Nigéria",
+    "Perguntas antes de enviar"
+  ],
+  "chaptersPE": [
+    "Planejar carga pesada",
+    "Custos e responsabilidades",
+    "Recebimento no Peru",
+    "Perguntas antes de enviar"
+  ],
+  "journeyNG": [
+    "Listar pedidos",
+    "Conferir chegadas",
+    "Preparar importação",
+    "Acordar a entrega"
+  ],
+  "journeyPE": [
+    "Revisar cada palete",
+    "Confirmar importador",
+    "Revisar frete e porto",
+    "Organizar descarga"
+  ],
+  "media": [
+    {
+      "heading": "Descarga de contêiner em Lagos",
+      "body": "Registro de descarga e entrada em armazém: conferir volumes e condição visível com a lista."
+    },
+    {
+      "heading": "Transferência de carga em Lagos",
+      "body": "Confirmar veículo, manuseio e próximo ponto de recebimento antes da transferência."
+    },
+    {
+      "heading": "Registro de retirada em Lagos",
+      "body": "Acordar referência da retirada e contato antes da entrega."
+    },
+    {
+      "heading": "Paletes e fixação da carga",
+      "body": "Referência de carregamento: paletes, filme e cintas. Use medidas e peso bruto verificados."
+    },
+    {
+      "heading": "Porto de Chancay, Peru",
+      "body": "Contexto de destino; confirme porto e recebimento por envio. Foto: Ministério dos Transportes e Comunicações do Peru."
+    },
+    {
+      "heading": "Caixas de cerâmica antes do reforço",
+      "body": "Verificar caixas, tamanho das peças e proteção de bordas antes da embalagem de exportação."
+    },
+    {
+      "heading": "Peças cerâmicas de grande formato",
+      "body": "Conferir medidas e manuseio; medir embalagem e peso bruto após o reforço."
+    },
+    {
+      "heading": "Carga envolvida e reforçada",
+      "body": "Filme, cintas, estruturas protetoras e sinais de fragilidade. Acordar paletes ou caixas e manuseio antes da coleta."
+    }
+  ],
+  "resources": [
+    "Confira a aplicação do SONCAP ao produto e prepare a certificação antes do embarque.",
+    "Consulte informações portuárias oficiais e combine separadamente movimentação, liberação e retirada.",
+    "Confira RUC, classificação e documentos comerciais e de transporte com o importador."
+  ],
+  "case": [
+    {
+      "heading": "Base de cobrança da carga pesada",
+      "body": "Este envio: 4719 kg e 3,5 m³. A cotação usou 500 kg por unidade: 4719 ÷ 500 = 9,438, aproximadamente 9,44 unidades, cerca de 2,70 vezes o volume isolado de 3,5. É condição desta cotação, não regra marítima universal. Confirme conversão, arredondamento, mínimos e despesas locais por escrito."
+    },
+    {
+      "heading": "SONCAP antes do embarque",
+      "body": "Confira especificações e HS com importador e certificador. Para produtos regulados, prepare ensaios e PC aplicáveis, depois o SC do envio. Mantenha dados do importador consistentes nos certificados e documentos de transporte."
+    },
+    {
+      "heading": "Proteger a cerâmica no manuseio",
+      "body": "Confira paletes ou caixas, proteção de cantos e bordas, filme e cintas. Confirme acesso para elevação, limites de empilhamento e descarga; fotografe a embalagem concluída antes de despachar."
+    }
+  ]
+}

@@ -36,7 +36,7 @@ export default function WhatsAppFloat() {
           }
         });
         const floating = document.querySelector('[data-whatsapp-float]')?.getBoundingClientRect();
-        const overlapsGallery = window.innerWidth <= 820 && !!floating && [...document.querySelectorAll('.qatar-gallery-thumbnails, .oman-gallery-thumbnails')].some(element => {
+        const overlapsGallery = window.innerWidth <= 820 && !!floating && [...document.querySelectorAll('.qatar-gallery-thumbnails, .oman-gallery-thumbnails, .market-gallery-controls, .market-gallery video, .market-gallery figcaption a')].some(element => {
           const rect = element.getBoundingClientRect();
           return rect.width > 0 && rect.height > 0 && rect.left < floating.right + 8 && rect.right > floating.left - 8 && rect.top < floating.bottom + 8 && rect.bottom > floating.top - 8;
         });

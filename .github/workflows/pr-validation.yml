@@ -51,4 +51,6 @@ jobs:
         run: npm run audit:search-intent
 
       - name: Validate freight pages in all eight languages
-        run: node --import tsx scripts/test-freight-eight-languages.ts
+        run: |
+          node --import tsx scripts/test-freight-eight-languages.ts
+          node scripts/test-market-static.mjs

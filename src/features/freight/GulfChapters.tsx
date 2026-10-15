@@ -14,30 +14,27 @@ export function ChapterIcon({ index }: { index: number }) {
  ];
  return <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[index]}</svg>;
 }
-export default function GulfChapters({ country, locale }: Props) {
- const ids = country === 'qatar' ? [0, 2, 3, 5] : [0, 1, 2, 5];
- const [active, setActive] = useState<number | null>(null);
+export function FreightChapters({items, ariaLabel = 'On this page', reading = 'Reading '}: {items: {id:string;label:string}[]; ariaLabel?:string; reading?:string}) {
+ const [active, setActive] = useState<string | null>(null);
+ const key = items.map(item=>item.id).join('|');
  useEffect(() => {
   let frame = 0;
   const update = () => {
    frame = 0;
    const top = (document.querySelector('header')?.getBoundingClientRect().bottom || 120) + 40;
-   const ordered = ids.map(id => ({ id, y: document.getElementById(`gulf-section-${id}`)?.getBoundingClientRect().top ?? Infinity }));
-   setActive(ordered.filter(item => item.y <= top).at(-1)?.id ?? null);
+   const ordered = key.split('|').map(id => ({id, y:document.getElementById(id)?.getBoundingClientRect().top ?? Infinity}));
+   setActive(ordered.filter(item=>item.y<=top).sort((a,b)=>a.y-b.y).at(-1)?.id ?? null);
   };
-  const schedule = () => { if (!frame) frame = requestAnimationFrame(update); };
-  window.addEventListener('scroll', schedule, { passive: true });
-  window.addEventListener('resize', schedule);
-  schedule();
-  return () => { window.removeEventListener('scroll', schedule); window.removeEventListener('resize', schedule); cancelAnimationFrame(frame); };
- }, [country]);
- return <nav className="gulf-chapters" aria-label={ui[locale].chaptersAria}>
-  {ids.map((id, index) => <a key={id} href={`#gulf-section-${id}`} aria-current={active === id ? 'location' : undefined} onClick={() => {
-   setActive(id);
-   document.getElementById(`gulf-section-${id}`)?.focus({ preventScroll: true });
-  }}>
-   <span className="gulf-chapter-top"><ChapterIcon index={index} /><span className="gulf-chapter-number" aria-hidden="true">{active === id ? ui[locale].reading : ''}0{index + 1}</span></span>
-   <span className="gulf-chapter-bottom"><span>{gulfChapterLabels[country][locale][index]}</span><svg className="gulf-chapter-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M5 5 19 19 M7 19h12V7" /></svg></span>
-  </a>)}
- </nav>;
+  const schedule=()=>{if(!frame)frame=requestAnimationFrame(update);};
+  window.addEventListener('scroll',schedule,{passive:true}); window.addEventListener('resize',schedule); schedule();
+  return ()=>{window.removeEventListener('scroll',schedule);window.removeEventListener('resize',schedule);cancelAnimationFrame(frame);};
+ },[key]);
+ return <nav className="gulf-chapters" aria-label={ariaLabel}>{items.map((item,index)=><a key={item.id} href={`#${item.id}`} aria-current={active===item.id?'location':undefined} onClick={()=>{setActive(item.id);document.getElementById(item.id)?.focus({preventScroll:true});}}>
+  <span className="gulf-chapter-top"><ChapterIcon index={index}/><span className="gulf-chapter-number" aria-hidden="true">{active===item.id?reading:''}0{index+1}</span></span>
+  <span className="gulf-chapter-bottom"><span>{item.label}</span><svg className="gulf-chapter-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" aria-hidden="true"><path d="M5 5 19 19 M7 19h12V7"/></svg></span>
+ </a>)}</nav>;
+}
+export default function GulfChapters({country,locale}:Props) {
+ const ids=country==='qatar'?[0,2,3,5]:[0,1,2,5];
+ return <FreightChapters items={ids.map((id,i)=>({id:`gulf-section-${id}`,label:gulfChapterLabels[country][locale][i]}))} ariaLabel={ui[locale].chaptersAria} reading={ui[locale].reading}/>;
 }
