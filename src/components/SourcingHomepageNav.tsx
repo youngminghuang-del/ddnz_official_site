@@ -92,15 +92,16 @@ const freightMenuLabels: Record<Language, { services: string; regions: string; r
 };
 
 const freightCountryLabels: Record<Language, string[]> = {
-  en: ['United Arab Emirates', 'Saudi Arabia', 'Kazakhstan', 'Uzbekistan', 'Nigeria', 'Mexico', 'Peru'],
-  zh: ['阿联酋', '沙特阿拉伯', '哈萨克斯坦', '乌兹别克斯坦', '尼日利亚', '墨西哥', '秘鲁'],
-  ru: ['ОАЭ', 'Саудовская Аравия', 'Казахстан', 'Узбекистан', 'Нигерия', 'Мексика', 'Перу'],
-  fr: ['Émirats arabes unis', 'Arabie saoudite', 'Kazakhstan', 'Ouzbékistan', 'Nigéria', 'Mexique', 'Pérou'],
-  es: ['Emiratos Árabes Unidos', 'Arabia Saudita', 'Kazajistán', 'Uzbekistán', 'Nigeria', 'México', 'Perú'],
-  ar: ['الإمارات العربية المتحدة', 'السعودية', 'كازاخستان', 'أوزبكستان', 'نيجيريا', 'المكسيك', 'بيرو'],
-  pt: ['Emirados Árabes Unidos', 'Arábia Saudita', 'Cazaquistão', 'Uzbequistão', 'Nigéria', 'México', 'Peru'],
-  tr: ['Birleşik Arap Emirlikleri', 'Suudi Arabistan', 'Kazakistan', 'Özbekistan', 'Nijerya', 'Meksika', 'Peru'],
+  en: ['United Arab Emirates', 'Saudi Arabia', 'Kazakhstan', 'Uzbekistan', 'Nigeria', 'Ghana', 'India', 'Bangladesh', 'Pakistan', 'Mexico', 'Peru'],
+  zh: ['阿联酋', '沙特阿拉伯', '哈萨克斯坦', '乌兹别克斯坦', '尼日利亚', '加纳', '印度', '孟加拉国', '巴基斯坦', '墨西哥', '秘鲁'],
+  ru: ['ОАЭ', 'Саудовская Аравия', 'Казахстан', 'Узбекистан', 'Нигерия', 'Гана', 'Индия', 'Бангладеш', 'Пакистан', 'Мексика', 'Перу'],
+  fr: ['Émirats arabes unis', 'Arabie saoudite', 'Kazakhstan', 'Ouzbékistan', 'Nigéria', 'Ghana', 'Inde', 'Bangladesh', 'Pakistan', 'Mexique', 'Pérou'],
+  es: ['Emiratos Árabes Unidos', 'Arabia Saudita', 'Kazajistán', 'Uzbekistán', 'Nigeria', 'Ghana', 'India', 'Bangladés', 'Pakistán', 'México', 'Perú'],
+  ar: ['الإمارات العربية المتحدة', 'السعودية', 'كازاخستان', 'أوزبكستان', 'نيجيريا', 'غانا', 'الهند', 'بنغلاديش', 'باكستان', 'المكسيك', 'بيرو'],
+  pt: ['Emirados Árabes Unidos', 'Arábia Saudita', 'Cazaquistão', 'Uzbequistão', 'Nigéria', 'Gana', 'Índia', 'Bangladesh', 'Paquistão', 'México', 'Peru'],
+  tr: ['Birleşik Arap Emirlikleri', 'Suudi Arabistan', 'Kazakistan', 'Özbekistan', 'Nijerya', 'Gana', 'Hindistan', 'Bangladeş', 'Pakistan', 'Meksika', 'Peru'],
 };
+
 
 const freightExecutorLabels: Record<Language, { desktop: string; mobile: string }> = {
   en: {
@@ -191,7 +192,7 @@ function Dropdown({
           hidden={!open}
           id={panelId}
           data-desktop-dropdown-panel={id}
-          className={`absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
+          className={id === 'markets' ? 'fixed left-1/2 top-[82px] z-50 min-w-64 -translate-x-1/2 pt-3' : `absolute top-full z-50 min-w-64 pt-3 ${align === 'right' ? 'right-0 rtl:left-0 rtl:right-auto' : 'left-0 rtl:left-auto rtl:right-0'}`}
         >
           <div className={`max-h-[calc(100dvh-var(--ddnz-header-height,83px)-24px)] overflow-y-auto overscroll-contain rounded-xl border border-slate-200 bg-white p-2 shadow-[0_18px_45px_rgba(15,23,42,0.14)] ${panelClassName}`}>
             {children}
