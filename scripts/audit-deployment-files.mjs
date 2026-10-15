@@ -230,7 +230,7 @@ export async function auditDeploymentFiles({ projectRoot = defaultProjectRoot, d
     if (!Array.isArray(redirects)) throw new Error('Expected a JSON array.');
     for (const [index, redirect] of redirects.entries()) {
       try {
-        const articlePath = /^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?blog\/[^/%?#]+\/?$/;
+        const articlePath = /^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr|id)\/)?blog\/[^/%?#]+\/?$/;
         if (!articlePath.test(redirect?.from) || !articlePath.test(redirect?.to)) throw new Error('Expected explicit same-origin article route paths.');
         const file = sitemapLocationToFile(origin + redirect.from.replace(/\/?$/, '/'));
         const target = sitemapLocationToFile(origin + redirect.to.replace(/\/?$/, '/'));

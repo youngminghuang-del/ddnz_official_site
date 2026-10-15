@@ -598,6 +598,7 @@ export default function App() {
 
             {/* Turkish routes */}
             <Route path="/tr" element={<Home />} />
+            <Route path="/id/blog/:slug" element={<BlogDetail />} />
             <Route path="/tr/blog/:slug" element={<BlogDetail />} />
             <Route path="/tr/insights" element={<InsightsHub />} />
             <Route path="/tr/how-we-work" element={<HowWeWork />} />

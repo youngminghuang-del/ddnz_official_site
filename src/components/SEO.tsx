@@ -15,7 +15,7 @@ interface SEOProps {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
-  contentLanguage?: Language;
+  contentLanguage?: Language | 'id';
 }
 
 export default function SEO({
@@ -105,7 +105,7 @@ export default function SEO({
   if (cleanSuffix.startsWith('/')) {
     cleanSuffix = cleanSuffix.substring(1);
   }
-  const langPrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'];
+  const langPrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr', 'id'];
   for (const prefix of langPrefixes) {
     if (cleanSuffix === prefix) {
       cleanSuffix = '';
@@ -168,7 +168,7 @@ export default function SEO({
 
   // The global shell may retain a visitor's language while the product guide
   // explicitly declares English on its own content region.
-  const helmetLang = language === 'pt' && cleanSuffix === 'shipping-from-china-to-brazil' ? 'pt-BR' : language === 'zh' ? 'zh-CN' : language;
+  const helmetLang = currentLang === 'pt' && cleanSuffix === 'shipping-from-china-to-brazil' ? 'pt-BR' : currentLang === 'zh' ? 'zh-CN' : currentLang;
   const alternateSignature = JSON.stringify(finalAlternates);
 
   useEffect(() => {
