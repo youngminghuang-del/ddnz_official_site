@@ -1,0 +1,46 @@
+[
+  {
+    "file": "gsa.png",
+    "institution": "Ghana Standards Authority",
+    "source": "https://gsa.gov.gh/wp-content/uploads/2018/04/cropped-GSA-Logo.png",
+    "resource": "https://gsa.gov.gh/import-inspection/",
+    "checked": "2026-10-15",
+    "bytes": 77821,
+    "sha256": "83ff812c104d817b5aa2c5713846cfb8254c2ed865bc369658698ceb2eaad897",
+    "contentType": "image/png",
+    "purpose": "Official resource identification; no partnership or endorsement implied"
+  },
+  {
+    "file": "india-customs.png",
+    "institution": "India Customs",
+    "source": "https://gujaratcustoms.gov.in/wp-content/uploads/2024/03/Customs-logo.png",
+    "resource": "https://gujaratcustoms.gov.in/",
+    "checked": "2026-10-15",
+    "bytes": 29212,
+    "sha256": "00f9e610270f54c8dd3f51b933f393a15605897698f62bdac4593c6af41f3496",
+    "contentType": "image/png",
+    "purpose": "Official resource identification; no partnership or endorsement implied"
+  },
+  {
+    "file": "bangladesh-nbr.jpeg",
+    "institution": "Bangladesh National Board of Revenue",
+    "source": "https://nbr.gov.bd/uploads/logo.jpeg",
+    "resource": "https://nbr.gov.bd/",
+    "checked": "2026-10-15",
+    "bytes": 15625,
+    "sha256": "a057962591d9704f9a3ca98e6e516b2ad756dc8f5242588d8c1ccdc3b67b8b45",
+    "contentType": "image/jpeg",
+    "purpose": "Official resource identification; no partnership or endorsement implied"
+  },
+  {
+    "file": "pakistan-fbr.png",
+    "institution": "Pakistan Federal Board of Revenue",
+    "source": "https://download1.fbr.gov.pk/MediaManager/english/images/FBR-Logo.png",
+    "resource": "https://www.fbr.gov.pk/",
+    "checked": "2026-10-15",
+    "bytes": 8582,
+    "sha256": "a0d2fa369ad9f8cb02b5819eaa35ff7ce3042861c08cc0cbaa330390ed2f103f",
+    "contentType": "image/png",
+    "purpose": "Official resource identification; no partnership or endorsement implied"
+  }
+]

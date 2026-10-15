@@ -64,6 +64,9 @@ export const QUOTE_ENUMS = Object.freeze({
     "warehouse_services"
   ],
   "dest": [
+    "India",
+    "Bangladesh",
+    "Pakistan",
     "Arabia Saudita",
     "Arabie Saoudite",
     "Argentina",

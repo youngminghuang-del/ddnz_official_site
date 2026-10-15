@@ -1,0 +1,226 @@
+[
+  {
+    "country": "ghana",
+    "locale": "en",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "zh-cn",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "ru",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "fr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "es",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "ar",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "pt",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "ghana",
+    "locale": "tr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "en",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "zh-cn",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "ru",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "fr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "es",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "ar",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "pt",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "india",
+    "locale": "tr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "en",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "zh-cn",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "ru",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "fr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "es",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "ar",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "pt",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "bangladesh",
+    "locale": "tr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "en",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "zh-cn",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "ru",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "fr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "es",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "ar",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "pt",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  },
+  {
+    "country": "pakistan",
+    "locale": "tr",
+    "assets": 8,
+    "ports": 2,
+    "pass": true
+  }
+]

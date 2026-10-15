@@ -1,0 +1,145 @@
+sorting duration 32.166666666666664 playable true size (720.0, 1280.0) format [<CMVideoFormatDescription 0x792b936490 [0x1f8ec2f70]> {
+	mediaType:'vide' 
+	mediaSubType:'avc1' 
+	mediaSpecific: {
+		codecType: 'avc1'		dimensions: 720 x 1280 
+	} 
+	extensions: {{
+    CVFieldCount = 1;
+    CVImageBufferChromaLocationBottomField = Left;
+    CVImageBufferChromaLocationTopField = Left;
+    CVImageBufferColorPrimaries = "ITU_R_709_2";
+    CVImageBufferTransferFunction = "ITU_R_709_2";
+    CVImageBufferYCbCrMatrix = "ITU_R_709_2";
+    Depth = 24;
+    FormatName = "'avc1'";
+    FullRangeVideo = 0;
+    RevisionLevel = 0;
+    SampleDescriptionExtensionAtoms =     {
+        avcC = {length = 29, bytes = 0x0142001f ffe1000e 2742001f ab405a05 ... 02010004 28ce3c80 };
+    };
+    SpatialQuality = 0;
+    TemporalQuality = 0;
+    VerbatimISOSampleEntry = {length = 162, bytes = 0x000000a2 61766331 00000000 00000001 ... 000a6368 726d0000 };
+    Version = 0;
+}}
+}]
+DECODE 0.0 360 640
+DECODE 0.5 360 640
+DECODE 0.95 360 640
+packing duration 42.2 playable true size (720.0, 1280.0) format [<CMVideoFormatDescription 0x792b9373c0 [0x1f8ec2f70]> {
+	mediaType:'vide' 
+	mediaSubType:'avc1' 
+	mediaSpecific: {
+		codecType: 'avc1'		dimensions: 720 x 1280 
+	} 
+	extensions: {{
+    CVFieldCount = 1;
+    CVImageBufferChromaLocationBottomField = Left;
+    CVImageBufferChromaLocationTopField = Left;
+    CVImageBufferColorPrimaries = "ITU_R_709_2";
+    CVImageBufferTransferFunction = "ITU_R_709_2";
+    CVImageBufferYCbCrMatrix = "ITU_R_709_2";
+    Depth = 24;
+    FormatName = "'avc1'";
+    FullRangeVideo = 0;
+    RevisionLevel = 0;
+    SampleDescriptionExtensionAtoms =     {
+        avcC = {length = 29, bytes = 0x0142001f ffe1000e 2742001f ab405a05 ... 02010004 28ce3c80 };
+    };
+    SpatialQuality = 0;
+    TemporalQuality = 0;
+    VerbatimISOSampleEntry = {length = 162, bytes = 0x000000a2 61766331 00000000 00000001 ... 000a6368 726d0000 };
+    Version = 0;
+}}
+}]
+DECODE 0.0 360 640
+DECODE 0.5 360 640
+DECODE 0.95 360 640
+cargo duration 13.533333333333333 playable true size (720.0, 1280.0) format [<CMVideoFormatDescription 0x792b9357a0 [0x1f8ec2f70]> {
+	mediaType:'vide' 
+	mediaSubType:'avc1' 
+	mediaSpecific: {
+		codecType: 'avc1'		dimensions: 720 x 1280 
+	} 
+	extensions: {{
+    CVFieldCount = 1;
+    CVImageBufferChromaLocationBottomField = Left;
+    CVImageBufferChromaLocationTopField = Left;
+    CVImageBufferColorPrimaries = "ITU_R_709_2";
+    CVImageBufferTransferFunction = "ITU_R_709_2";
+    CVImageBufferYCbCrMatrix = "ITU_R_709_2";
+    Depth = 24;
+    FormatName = "'avc1'";
+    FullRangeVideo = 0;
+    RevisionLevel = 0;
+    SampleDescriptionExtensionAtoms =     {
+        avcC = {length = 29, bytes = 0x0142001f ffe1000e 2742001f ab405a05 ... 02010004 28ce3c80 };
+    };
+    SpatialQuality = 0;
+    TemporalQuality = 0;
+    VerbatimISOSampleEntry = {length = 162, bytes = 0x000000a2 61766331 00000000 00000001 ... 000a6368 726d0000 };
+    Version = 0;
+}}
+}]
+DECODE 0.0 360 640
+DECODE 0.5 360 640
+DECODE 0.95 360 640
+handling duration 4.766666666666667 playable true size (720.0, 1280.0) format [<CMVideoFormatDescription 0x792b937db0 [0x1f8ec2f70]> {
+	mediaType:'vide' 
+	mediaSubType:'avc1' 
+	mediaSpecific: {
+		codecType: 'avc1'		dimensions: 720 x 1280 
+	} 
+	extensions: {{
+    CVFieldCount = 1;
+    CVImageBufferChromaLocationBottomField = Left;
+    CVImageBufferChromaLocationTopField = Left;
+    CVImageBufferColorPrimaries = "ITU_R_709_2";
+    CVImageBufferTransferFunction = "ITU_R_709_2";
+    CVImageBufferYCbCrMatrix = "ITU_R_709_2";
+    Depth = 24;
+    FormatName = "'avc1'";
+    FullRangeVideo = 0;
+    RevisionLevel = 0;
+    SampleDescriptionExtensionAtoms =     {
+        avcC = {length = 29, bytes = 0x0142001f ffe1000e 2742001f ab405a05 ... 02010004 28ce3c80 };
+    };
+    SpatialQuality = 0;
+    TemporalQuality = 0;
+    VerbatimISOSampleEntry = {length = 162, bytes = 0x000000a2 61766331 00000000 00000001 ... 000a6368 726d0000 };
+    Version = 0;
+}}
+}]
+DECODE 0.0 360 640
+DECODE 0.5 360 640
+DECODE 0.95 360 640
+warehouse duration 28.733333333333334 playable true size (720.0, 1280.0) format [<CMVideoFormatDescription 0x792a8b43f0 [0x1f8ec2f70]> {
+	mediaType:'vide' 
+	mediaSubType:'avc1' 
+	mediaSpecific: {
+		codecType: 'avc1'		dimensions: 720 x 1280 
+	} 
+	extensions: {{
+    CVFieldCount = 1;
+    CVImageBufferChromaLocationBottomField = Left;
+    CVImageBufferChromaLocationTopField = Left;
+    CVImageBufferColorPrimaries = "ITU_R_709_2";
+    CVImageBufferTransferFunction = "ITU_R_709_2";
+    CVImageBufferYCbCrMatrix = "ITU_R_709_2";
+    Depth = 24;
+    FormatName = "'avc1'";
+    FullRangeVideo = 0;
+    RevisionLevel = 0;
+    SampleDescriptionExtensionAtoms =     {
+        avcC = {length = 29, bytes = 0x0142001f ffe1000e 2742001f ab405a05 ... 02010004 28ce3c80 };
+    };
+    SpatialQuality = 0;
+    TemporalQuality = 0;
+    VerbatimISOSampleEntry = {length = 162, bytes = 0x000000a2 61766331 00000000 00000001 ... 000a6368 726d0000 };
+    Version = 0;
+}}
+}]
+DECODE 0.0 360 640
+DECODE 0.5 360 640
+DECODE 0.95 360 640
