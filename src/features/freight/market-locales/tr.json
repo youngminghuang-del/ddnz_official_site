@@ -1,0 +1,190 @@
+{
+  "ui": {
+    "backWest": "Batı Afrika taşımacılığı",
+    "backLatin": "Latin Amerika taşımacılığı",
+    "before": "TEKLİF ÖNCESİ",
+    "briefHeading": "Tek yük listesi, mutabık kalınan teslim kapsamı.",
+    "cargo": "Yük",
+    "importer": "İthalatçı",
+    "receiving": "Teslim alma",
+    "cargoNG": "Tedarikçiler, koli sayıları ve hazır olma tarihleri.",
+    "cargoPE": "Palet ölçüleri, brüt ağırlık ve istiflenebilirlik.",
+    "importHint": "Ürün bilgileri ve gümrükleme irtibatı.",
+    "receivingHint": "Açık adres, araç erişimi ve boşaltma düzeni.",
+    "prepare": "Sevkiyat bilgilerini hazırlayın",
+    "chapters": "Bu sayfada",
+    "reading": "Okunan bölüm",
+    "full": "Görselin tamamını aç",
+    "choose": "Yük veya varış görseli seçin",
+    "silent": "Sessiz video · Açıklayıcı altyazılar",
+    "official": "Resmî ithalat ve liman kaynakları",
+    "guidance": "Resmî rehber",
+    "customs": "Nijerya Gümrüğü · İthalat işlemleri",
+    "mapHeading": "VARIŞ KONUMU",
+    "mapIntro": "Önce limanı, ardından teslim alma noktasını veya son adresi doğrulayın.",
+    "mapNote": "Coğrafi referanstır; gemi güzergâhı değildir.",
+    "source": "Kaynak",
+    "related": "Ekipman da mı tedarik ediyorsunuz?",
+    "kitchen": "Çin’den ticari mutfak ekipmanı",
+    "food": "Çin’den gıda işleme makineleri",
+    "send": "Yük bilgilerimi gönder",
+    "request": "Sevkiyat değerlendirmesi iste",
+    "china": "Çin",
+    "packingExample": "PLANLAMA ÖRNEĞİ",
+    "unitNote": "Yalnızca 1 m³ ile 1 metrik tonu karşılaştıran teklif için. Asgari ücret, yuvarlama ve yerel masrafları kontrol edin.",
+    "caseLabel": "NİJERYA · SERAMİK KARO VAKASI",
+    "caseHeading": "Afrika’ya ilk sevkiyattan önce üç kontrol",
+    "caseIntro": "Nijerya’ya seramik karo gönderen bir müşteri, Güneydoğu Asya’ya benzer koşullar bekliyordu. İncelemede ağır yük ücretlendirmesi, belgelendirme ve ambalaj öne çıktı."
+  },
+  "nigeria": {
+    "title": "Çin’den Nijerya’ya Nakliye | Konsolidasyon ve Teslim | DDNZ",
+    "desc": "Gerçek yük bilgileriyle tedarikçi konsolidasyonunu, ithalat belgelerini ve Lagos veya iç bölge teslimini planlayın.",
+    "heading": "Çin’den Nijerya’ya: birden çok tedarikçi, tek teslim planı",
+    "intro": "Fiyat karşılaştırmadan önce tedarikçilerin hazır olma tarihlerini, Nijeryalı ithalatçıyı, adresi ve boşaltmayı netleştirin. DDNZ Çin’de tedarik ve ihracat teslimini koordine eder; Heaven Born onaylanan kapsamda taşımayı yürütür. Güzergâh, hizmet ve ücretler sevkiyat bazında doğrulanır.",
+    "sections": [
+      {
+        "heading": "Birden çok tedarikçiyi yük alınmadan önce planlayın",
+        "body": "Planlama örneği: Lagos’taki alıcı için elektrikli bileşen içermeyen telefon kılıfları ve teşhir aksesuarları. Birleştirmek için beklemeyi ayrı sevkiyatla karşılaştırın. Ürün ve tedarikçi bazında tanım, malzeme, adet, koli, ölçüler, brüt ağırlık ve hazır olma tarihi yazın; pil, sıvı veya elektrikli parçaları belirtin. Eksik, hasarlı veya farklı etiketli yükün nasıl ele alınacağını kararlaştırın. Yeniden ambalajlama sonrası son listeyle FCL/LCL karşılaştırın; konsolidasyon ve varış ücretlerini dahil edin."
+      },
+      {
+        "heading": "Araçtan önce teslim noktasını seçin",
+        "body": "Limana varış, depodan alma ve alıcı adresine teslim farklı kapsamlardır. Lagos için açık adres, kişi, saat ve boşaltma yöntemini verin. Onitsha, Kano veya iç bölgelerde serbest bırakma, alma, ana taşıma ve boşaltmayı ayrı tanımlayın; sorumlularla bekleme, depolama ve başarısız teslim ücretlerini belirleyin. Alaba, Computer Village veya Ladipo için de tam adres gerekir. Şehir adı hizmetin mevcut olduğunu kanıtlamaz."
+      },
+      {
+        "heading": "Sevkten önce ithalat hazırlığını kontrol edin",
+        "body": "İthalatçı ve gümrük irtibatını belirleyin; kullanım, sınıflandırma ve belgeleri gerçek ürünle kontrol edin. SONCAP kapsamındaki mallar için sevkten önce sertifikasyon hazırlayın: Form M için PC, gümrükleme için SC. İthalatçı güncel Form M, PAAR ve diğer kurum gerekliliklerini doğrulamalıdır. Fatura, çeki listesi, ürün ve alıcı bilgileri tutarlı olmalı; eksik belgeler sevkten önce çözülmelidir."
+      },
+      {
+        "heading": "Tüm kapsamı ve sorumluları karşılaştırın",
+        "body": "Çin’de alma, kabul, konsolidasyon, ambalaj ve ihracat; navlun, rota, geçerlilik ve hazır olma varsayımları; varışta elleçleme, belge, ayrıştırma ve depolama; ithalat beyanı ve vergiler; teslim alma, iç taşıma ve boşaltmayı ayrı gösterin. Her aşamayı kimin düzenlediğini ve ödediğini, teslim kayıtlarını, istisnaları ve muayene/bekleme/depolama ücretlerini yazın. Toplamları eşit kapsamla karşılaştırın."
+      },
+      {
+        "heading": "Stoğu siparişlere göre konumlandırın",
+        "body": "Lagos ile iç bölgeler arasında stok bölmeden önce sipariş şehirleri, ana SKU’lar, tekrar sipariş ve ikmal ihtiyaçlarını inceleyin. Taşıma, elleçleme, stok görünürlüğü ve iadeyi birlikte hesaplayın; düşük depo kirası düşük teslim maliyeti değildir. Talep denemeyi destekliyorsa küçük ikmal ile ilk kabul noktasından dağıtımı karşılaştırın; işletmeci, yer, erişim ve ücretleri doğrulayın."
+      },
+      {
+        "heading": "Alıcıların soruları",
+        "body": "**Birden çok tedarikçi birleştirilebilir mi?** Konum, tarih ve ambalaj verilerini gönderin; uyumluluk, elleçleme ve belgeler kontrol edilir. Gecikmeler seçeneği değiştirebilir.\n\n**Lagos teklifi mağazama teslimi içerir mi?** Yalnızca adres ve kapsam yazılıysa; alma, taşıma, boşaltma ve beklemeyi kontrol edin.\n\n**Sabit süre veya tüm vergiler dahil fiyat verilebilir mi?** Yük, ithalatçı, rota ve teslim kapsamı gerekir. Takvim varsayımlarını, dahil kalemleri ve geçerliliği kontrol edin; limana varış son teslim değildir."
+      },
+      {
+        "heading": "Nijerya için kullanılabilir yük bilgisi gönderin",
+        "body": "Ürün listesi, fotoğraf, adet, ambalaj ölçüsü, brüt ağırlık, tedarikçi şehirleri ve tarihleri, Nijerya adresi ve ithalat/gümrük irtibatını iletin. Pil, sıvı ve özel özellikleri, hedef tarihi ve kısmi sevkiyat veya teslim kabulünü belirtin."
+      }
+    ],
+    "country": "Nijerya"
+  },
+  "peru": {
+    "title": "Çin’den Peru’ya Nakliye | Ağır Yük ve Teslim Planı | DDNZ",
+    "desc": "Çin’den Peru’ya toplam maliyeti karşılaştırmak için ambalajlı ağırlık, ithalatçı ve teslim adresini bildirin.",
+    "heading": "Çin’den Peru’ya: yük, ithalatçı ve teslim planını eşleştirin",
+    "intro": "Çin’de teslim alma, ana taşıma, varış işlemleri ve teslimi aynı temelde karşılaştırmak için ambalaj sonrası verileri sağlayın. DDNZ tedarik ve ihracatı koordine eder; Heaven Born onaylı kapsamı yürütür. Callao, Chancay ve iç bölge adresi farklı taleplerdir; her sevkiyat için değerlendirilir.",
+    "sections": [
+      {
+        "heading": "Seramik karo: LCL fiyatından önce ağırlığı kontrol edin",
+        "body": "Karo kolileri az hacimli ama ağır olabilir. Koruma dahil her paletin son ölçüsü ve brüt ağırlığını, istiflenebilirliği ve yükleme/boşaltma yöntemini verin. Teklif W/M’de 1 m³ ile 1 tonu karşılaştırıyorsa hacim ve brüt kg/1000 değerinin büyüğü esas alınır. Varsayımsal 3 m³ ve 4500 kg, 4,5 birimdir; fiyat değildir. Asgari ücret, yuvarlama, yoğunluk sınırı ve iki uçtaki masrafları kontrol edin. FCL/LCL’yi aynı listeyle karşılaştırıp taşıma kapasitesini doğrulayın."
+      },
+      {
+        "heading": "Perulu ithalatçıyı ve ürün bilgilerini hazırlayın",
+        "body": "Olağan tüketim amaçlı ithalatta SUNAT aktif RUC ve “no habido” dışında bir durum ister. Sınırlı istisnaları ticari sevkiyat için varsaymayın. İthalatçı ve temsilcisi sınıflandırma ve kısıtları inceler. Karo için malzeme, kullanım, ölçü, yüzey ve teknik bilgileri verin. Ticari/taşıma belgeleri ile gerektiğinde sigorta, kontrol ve menşe belgelerini hazırlayın. Tercihli tarife uygunluk ve menşe kanıtı gerektirir; Çin’den satın almak tek başına yeterli değildir."
+      },
+      {
+        "heading": "Altı aşamayı fiyatlandırın, sonra toplamı karşılaştırın",
+        "body": "1. Çin’de alma: adresler, toplama sayısı, erişim ve kaldırma.\n2. Çıkış: kabul, konsolidasyon, ihracat, terminal/CFS ve ambalaj.\n3. Ana taşıma: yöntem, rota, takvim, ücret esası ve geçerlilik.\n4. Varış: terminal, ayrıştırma, belge, depo ve üçüncü taraflar.\n5. Gümrük ve vergiler: ithalatçı, beyan sahibi, dahil/hariç kalemler.\n6. Son teslim: adres, erişim, randevu, boşaltma ve bekleme.\n\nLCL’de varış masraflarını açıkça isteyin. Kapı teslimi için de adres ve sorumluluk listesi gerekir."
+      },
+      {
+        "heading": "Limandan teslim yerine geçişi planlayın",
+        "body": "Kapsamın Callao, önerilen Chancay, depo veya son adreste bittiğini belirtin. Rezervasyondan önce sefer ve kabul planını doğrulayın. Lima veya iç bölgeler için ilçe, varsa posta kodu, adres, saat ve araç kısıtlarını verin; forklift veya diğer ekipmanı kimin sağladığını belirtin. Çıkış, varış, serbest bırakma ve son teslimi ayırın. Değişiklik takibi ile gecikme halinde depo/bekleme sorumluluğunu kararlaştırın."
+      },
+      {
+        "heading": "Konsolidasyon ve yükleme kayıtlarını kullanışlı tutun",
+        "body": "Tedarikçi varışlarını, koli sayısını ve görünen ambalaj durumunu kaydedin. Son liste öncesi eksik ve hasarı çözün; yeniden ambalajlamada palet kimliği, adet, ağırlık ve ölçüyü uzlaştırın. Kenar koruması, sabitleme ve istifi yükleme öncesi belirleyin. Liste ve fotoğrafları sevkiyat referansına bağlayın; fotoğraf tek başına varış ülkesini, gümrüklemeyi veya teslimi kanıtlamaz."
+      },
+      {
+        "heading": "Alıcıların soruları",
+        "body": "**En düşük m³ fiyatı karo için en ucuz seçenek mi?** Her zaman değil; son liste üzerinden W/M, asgari tutar, elleçleme ve varış giderlerini kontrol edin.\n\n**Callao yerine Chancay kullanılabilir mi?** Rotayı, yük kabulünü, ithalatçıyı ve son maliyeti değerlendirmeye sunun.\n\n**Teslim vergiler ve boşaltmayı içerir mi?** Yazılı kapsamı, beyan sahibini, yerel giderleri ve boşaltma sorumlusunu kontrol edin."
+      },
+      {
+        "heading": "Peru teklifi için bilgileri gönderin",
+        "body": "Ürün, kullanım, biliniyorsa önerilen HS, adet, koli/palet sayısı, son ölçüler, brüt ağırlık, fotoğraf, değer, Incoterm, tedarikçiler ve tarihleri verin. Pil, sıvı veya mıknatıs varsa belirtin. Karo için malzeme, boyut, palet ağırlığı, istif durumu, RUC, gümrük irtibatı, liman, adres, boşaltma ve tarih esnekliğini ekleyin."
+      }
+    ],
+    "country": "Peru"
+  },
+  "chaptersNG": [
+    "Tedarikçileri birleştirin",
+    "Maliyet ve sorumluluklar",
+    "Nijerya’da teslim alma",
+    "Sevk öncesi sorular"
+  ],
+  "chaptersPE": [
+    "Ağır yükü planlayın",
+    "Maliyet ve sorumluluklar",
+    "Peru’da teslim alma",
+    "Sevk öncesi sorular"
+  ],
+  "journeyNG": [
+    "Siparişleri listeleyin",
+    "Varışları kontrol edin",
+    "İthalatı hazırlayın",
+    "Teslimi kararlaştırın"
+  ],
+  "journeyPE": [
+    "Her paleti kontrol edin",
+    "İthalatçıyı doğrulayın",
+    "Navlun ve limanı inceleyin",
+    "Boşaltmayı düzenleyin"
+  ],
+  "media": [
+    {
+      "heading": "Lagos’ta konteyner boşaltma",
+      "body": "Boşaltma ve depoya giriş kaydı: kolileri ve görünür durumu listeyle karşılaştırın."
+    },
+    {
+      "heading": "Lagos’ta yük transferi",
+      "body": "Transfer öncesi aracı, elleçlemeyi ve sonraki teslim noktasını doğrulayın."
+    },
+    {
+      "heading": "Lagos’ta teslim alma kaydı",
+      "body": "Devir öncesi teslim alma referansını ve irtibatı kararlaştırın."
+    },
+    {
+      "heading": "Paletler ve yük sabitleme",
+      "body": "Yükleme referansı: palet, film ve çemberler. Ölçülmüş ebat ve brüt ağırlık kullanın."
+    },
+    {
+      "heading": "Chancay Limanı, Peru",
+      "body": "Varış bağlamı; liman ve kabulü sevkiyat için doğrulayın. Fotoğraf: Peru Ulaştırma ve Haberleşme Bakanlığı."
+    },
+    {
+      "heading": "Güçlendirme öncesi karo kolileri",
+      "body": "İhracat ambalajı öncesi koli, karo ölçüsü ve kenar korumasını kontrol edin."
+    },
+    {
+      "heading": "Büyük ebatlı seramik karolar",
+      "body": "Boyut ve elleçlemeyi inceleyin; güçlendirme sonrası ölçü ve brüt ağırlığı doğrulayın."
+    },
+    {
+      "heading": "Sarılmış ve güçlendirilmiş yük",
+      "body": "Film, çember, koruyucu çerçeve ve kırılabilir işaretleri. Alma öncesi palet/sandık ve elleçlemeyi kararlaştırın."
+    }
+  ],
+  "resources": [
+    "Ürünün SONCAP kapsamını kontrol edin ve sevkten önce uygun sertifikasyonu hazırlayın.",
+    "Resmî liman bilgilerini kullanın; elleçleme, serbest bırakma ve yerel almayı ayrı kararlaştırın.",
+    "RUC, sınıflandırma, ticari ve taşıma belgelerini ithalatçıyla kontrol edin."
+  ],
+  "case": [
+    {
+      "heading": "Ağır yük ücretlendirme esası",
+      "body": "Bu sevkiyat: 4719 kg ve 3,5 m³. Teklif birim başına 500 kg kullanıyordu: 4719 ÷ 500 = 9,438, yaklaşık 9,44 birim; yalnız hacim olan 3,5’in yaklaşık 2,70 katı. Bu, genel denizyolu kuralı değil bu teklifin koşuludur. Dönüşüm, yuvarlama, asgari tutar ve yerel masrafları yazılı doğrulayın."
+    },
+    {
+      "heading": "SONCAP’ı sevkten önce hazırlayın",
+      "body": "Karo özellikleri ve HS kodunu ithalatçı/sertifikacıyla doğrulayın. Düzenlemeye tabi ürünler için uygun test ve PC, ardından sevkiyat SC belgesini hazırlayın. Sertifika ve taşıma belgelerindeki ithalatçı bilgilerini tutarlı tutun."
+    },
+    {
+      "heading": "Karoları elleçlemeye karşı koruyun",
+      "body": "Palet/sandık, köşe ve kenar koruması, film ve çemberi kontrol edin. Kaldırma erişimi, istif sınırı ve boşaltmayı doğrulayın; sevkten önce bitmiş ambalajı fotoğraflayın."
+    }
+  ]
+}

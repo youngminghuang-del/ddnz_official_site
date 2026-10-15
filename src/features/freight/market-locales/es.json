@@ -1,0 +1,190 @@
+{
+  "ui": {
+    "backWest": "Transporte a África Occidental",
+    "backLatin": "Transporte a Latinoamérica",
+    "before": "ANTES DE COTIZAR",
+    "briefHeading": "Una lista de carga y una entrega acordada.",
+    "cargo": "Carga",
+    "importer": "Importador",
+    "receiving": "Recepción",
+    "cargoNG": "Proveedores, bultos y fechas de disponibilidad.",
+    "cargoPE": "Dimensiones, peso bruto y apilabilidad de cada palé.",
+    "importHint": "Datos del producto y contacto de despacho aduanero.",
+    "receivingHint": "Dirección, acceso del vehículo y medios de descarga.",
+    "prepare": "Preparar los datos del envío",
+    "chapters": "En esta página",
+    "reading": "Leyendo",
+    "full": "Ver imagen completa",
+    "choose": "Elegir imagen de carga o destino",
+    "silent": "Vídeo sin sonido · Subtítulos de contexto",
+    "official": "Fuentes oficiales de importación y puertos",
+    "guidance": "Guía oficial",
+    "customs": "Aduanas de Nigeria · Trámites de importación",
+    "mapHeading": "UBICACIÓN DEL DESTINO",
+    "mapIntro": "Ubique el puerto y confirme el punto de recogida o la dirección final.",
+    "mapNote": "Referencia geográfica, no un itinerario marítimo.",
+    "source": "Fuente",
+    "related": "¿También necesita comprar equipos?",
+    "kitchen": "Equipos de cocina comercial de China",
+    "food": "Maquinaria alimentaria de China",
+    "send": "Enviar los datos de mi carga",
+    "request": "Solicitar una revisión del envío",
+    "china": "China",
+    "packingExample": "EJEMPLO DE PLANIFICACIÓN",
+    "unitNote": "Solo para una cotización que compara 1 m³ con 1 tonelada métrica. Verifique mínimos, redondeo y cargos locales.",
+    "caseLabel": "NIGERIA · CASO DE BALDOSAS",
+    "caseHeading": "Tres comprobaciones antes del primer envío a África",
+    "caseIntro": "Un cliente que enviaba baldosas a Nigeria esperaba condiciones similares a las del Sudeste Asiático. La revisión se centró en la tarificación por peso, la certificación y el embalaje."
+  },
+  "nigeria": {
+    "title": "Envíos de China a Nigeria | Consolidación y recepción | DDNZ",
+    "desc": "Planifique la consolidación, los documentos de importación y la recepción en Lagos o el interior con los datos reales de su carga.",
+    "heading": "De China a Nigeria: varios proveedores, un plan de recepción",
+    "intro": "Antes de comparar precios, coordine las fechas de los proveedores, el importador nigeriano, la dirección y la descarga. DDNZ coordina las compras y la entrega para exportación en China; Heaven Born ejecuta el transporte dentro del alcance confirmado. Rutas, servicios y cargos se revisan para cada envío.",
+    "sections": [
+      {
+        "heading": "Planificar la carga de varios proveedores antes de recoger",
+        "body": "Ejemplo de planificación: fundas de teléfono sin componentes eléctricos y accesorios de exposición para un comprador de Lagos. Compare esperar a reunir la mercancía con enviar lotes separados. Registre por producto y proveedor descripción, material, cantidad, cajas, dimensiones, peso bruto y fecha de disponibilidad; indique baterías, líquidos o componentes eléctricos. Acuerde cómo tratar faltantes, daños o etiquetas distintas. Tras reembalar, compare FCL y LCL con la lista final, incluyendo consolidación y cargos de destino."
+      },
+      {
+        "heading": "Definir la recepción antes de contratar el vehículo",
+        "body": "Llegada al puerto, recogida en almacén y entrega a una dirección son servicios diferentes. Indique dirección en Lagos, contacto, horario y descarga. Para Onitsha, Kano u otra ciudad interior, separe liberación, recogida, transporte y descarga; identifique responsables y costes de espera, almacenamiento o entrega fallida. Para Alaba, Computer Village o Ladipo también se necesita la dirección exacta. El nombre de una ciudad no confirma disponibilidad del servicio."
+      },
+      {
+        "heading": "Comprobar la preparación de importación antes de embarcar",
+        "body": "Confirme importador y contacto aduanero, clasificación, uso y documentos del producto. Para mercancías reguladas por SONCAP, prepare la certificación antes del embarque: PC para Form M y SC para el despacho. El importador debe verificar el proceso vigente de Form M, PAAR y otras entidades. Mantenga coherentes factura, lista de empaque, producto y destinatario; resuelva los documentos pendientes antes de despachar."
+      },
+      {
+        "heading": "Comparar el alcance completo y sus responsables",
+        "body": "Separe recogida, recepción, consolidación, reembalaje y exportación en China; flete, ruta, vigencia y disponibilidad; manipulación, documentos, desconsolidación y almacén en destino; declaración, derechos e impuestos; recogida, transporte interior y descarga. Identifique quién organiza y paga cada etapa, las pruebas de entrega, exclusiones y cargos por inspección, espera o almacenamiento. Compare totales solo con alcances equivalentes."
+      },
+      {
+        "heading": "Organizar existencias según pedidos",
+        "body": "Antes de repartir existencias entre Lagos y el interior, revise ciudades de venta, referencias principales, frecuencia de recompra y reposición. Compare transporte, manipulación, visibilidad del inventario y devoluciones; un almacén barato no garantiza menor coste entregado. Si la demanda permite una prueba, compare reposición pequeña con distribución desde el primer punto de recepción y confirme operador, ubicación, acceso y tarifas."
+      },
+      {
+        "heading": "Preguntas de compradores",
+        "body": "**¿Se pueden consolidar varios proveedores?** Envíe ubicación, fechas y datos de embalaje; confirme compatibilidad, manipulación y documentos. Los retrasos pueden cambiar la solución.\n\n**¿La cotización de Lagos incluye entrega a mi tienda?** Solo si dirección y alcance figuran por escrito; verifique recogida, transporte, descarga y espera.\n\n**¿Puede fijarse ya el plazo o un precio con todos los impuestos?** Hace falta conocer carga, importador, ruta y recepción. Confirme supuestos, inclusiones y vigencia; llegada al puerto no equivale a entrega final."
+      },
+      {
+        "heading": "Preparar una solicitud útil para Nigeria",
+        "body": "Envíe productos, fotos, cantidades, dimensiones embaladas, pesos brutos, ciudades y fechas de cada proveedor, dirección nigeriana y contacto del importador o agente. Señale baterías, líquidos y otras características, fecha deseada y aceptación de envíos o entregas parciales."
+      }
+    ],
+    "country": "Nigeria"
+  },
+  "peru": {
+    "title": "Envíos de China a Perú | Carga pesada y entrega | DDNZ",
+    "desc": "Prepare peso embalado, datos del importador y dirección de recepción para comparar el coste completo de su envío de China a Perú.",
+    "heading": "De China a Perú: carga, importador y entrega coordinados",
+    "intro": "Facilite primero los datos de la carga embalada y compare recogida, transporte, gastos de destino y entrega sobre la misma base. DDNZ coordina las compras y la exportación en China; Heaven Born ejecuta el alcance confirmado. Callao, Chancay y una dirección interior son solicitudes distintas que requieren revisión.",
+    "sections": [
+      {
+        "heading": "Baldosas: comprobar el peso antes de comparar LCL",
+        "body": "Las baldosas ocupan poco volumen pero pesan mucho. Indique dimensiones y peso bruto final de cada palé, incluida la protección, y confirme apilabilidad y carga/descarga. Si la cotización W/M compara 1 m³ con 1 tonelada, utilice el mayor entre volumen y kg brutos/1000. Un ejemplo hipotético de 3 m³ y 4500 kg da 4,5 unidades, no un precio. Revise mínimos, redondeo, densidad y cargos de ambos extremos. Compare FCL y LCL con la misma lista y respete límites de carga y manipulación."
+      },
+      {
+        "heading": "Preparar al importador peruano y los datos del producto",
+        "body": "En la importación ordinaria para consumo, SUNAT exige RUC activo y condición distinta de “no habido”; las excepciones limitadas no deben asumirse para un envío comercial. El importador y su representante revisan clasificación y restricciones. Para baldosas, facilite material, uso, dimensiones, acabado y ficha técnica. Prepare documentos comerciales y de transporte, y seguro, control u origen cuando corresponda. La preferencia arancelaria requiere comprobar requisitos y prueba de origen; comprar en China no la determina por sí solo."
+      },
+      {
+        "heading": "Cotizar seis etapas y comparar el total",
+        "body": "1. Recogida en China: direcciones, número de recogidas, acceso y elevación.\n2. Origen: recepción, consolidación, exportación, terminal/CFS y embalaje.\n3. Flete principal: modo, ruta, supuestos de calendario, base de cálculo y vigencia.\n4. Destino: terminal, desconsolidación, documentos, almacén y terceros.\n5. Aduana e impuestos: importador, declarante, inclusiones y exclusiones.\n6. Entrega final: dirección, acceso, cita, descarga y espera.\n\nEn LCL pida los cargos de destino explícitamente. “Puerta a puerta” necesita una dirección y responsabilidades definidas."
+      },
+      {
+        "heading": "Planificar del puerto al lugar de recepción",
+        "body": "Defina si el alcance termina en Callao, el puerto propuesto de Chancay, un almacén o la dirección final. Confirme salida disponible y recepción antes de reservar. Para Lima o el interior, indique distrito, código postal si existe, dirección, horario y restricciones; confirme carretilla elevadora u otro equipo y quién lo aporta. Distinga salida, llegada, liberación y entrega final. Acuerde seguimiento de cambios y costes de espera o almacenamiento por retrasos."
+      },
+      {
+        "heading": "Mantener registros útiles de consolidación y carga",
+        "body": "Registre llegadas por proveedor, bultos y estado visible. Resuelva faltantes y daños antes de cerrar la lista; tras reembalar, concilie referencias de palés, cantidades, pesos y dimensiones. Acuerde protección de bordes, sujeción y apilamiento antes de cargar. Vincule lista y fotos a la referencia del envío: una foto de carga no demuestra por sí sola destino, despacho o entrega."
+      },
+      {
+        "heading": "Preguntas de compradores",
+        "body": "**¿La tarifa por m³ más baja es la más económica para baldosas?** No necesariamente: revise W/M, mínimos, manipulación y destino con los palés finales.\n\n**¿Puede usarse Chancay en lugar de Callao?** Solicite revisión de ruta, aceptación de carga, importador y coste final.\n\n**¿La entrega incluye impuestos y descarga?** Verifique inclusiones escritas, importador, declarante, cargos locales y responsable de descargar."
+      },
+      {
+        "heading": "Enviar los datos para cotizar a Perú",
+        "body": "Facilite producto, uso, HS propuesto si se conoce, cantidad, bultos o palés, dimensiones y peso bruto final, fotos, valor, Incoterm, proveedores y fechas. Indique baterías, líquidos o imanes cuando existan. Para baldosas añada material, tamaño, peso de palé y apilabilidad; confirme RUC, contacto aduanero, puerto, dirección, medios de descarga y flexibilidad de fecha."
+      }
+    ],
+    "country": "Perú"
+  },
+  "chaptersNG": [
+    "Consolidar proveedores",
+    "Costes y responsabilidades",
+    "Recepción en Nigeria",
+    "Preguntas antes de enviar"
+  ],
+  "chaptersPE": [
+    "Planificar carga pesada",
+    "Costes y responsabilidades",
+    "Recepción en Perú",
+    "Preguntas antes de enviar"
+  ],
+  "journeyNG": [
+    "Listar pedidos",
+    "Conciliar llegadas",
+    "Preparar la importación",
+    "Acordar la entrega"
+  ],
+  "journeyPE": [
+    "Revisar cada palé",
+    "Confirmar importador",
+    "Revisar flete y puerto",
+    "Organizar descarga"
+  ],
+  "media": [
+    {
+      "heading": "Descarga de contenedor en Lagos",
+      "body": "Registro de descarga y entrada en almacén: cotejar bultos y estado visible con la lista."
+    },
+    {
+      "heading": "Traslado de carga en Lagos",
+      "body": "Registro de traslado: confirmar vehículo de recogida, manipulación y siguiente destino."
+    },
+    {
+      "heading": "Registro de recogida en Lagos",
+      "body": "Acordar referencia de recogida y contacto antes de entregar."
+    },
+    {
+      "heading": "Palés y sujeción de la carga",
+      "body": "Referencia de carga: palés, film y flejes. Cotice con dimensiones y peso bruto medidos."
+    },
+    {
+      "heading": "Puerto de Chancay, Perú",
+      "body": "Contexto de destino; confirme puerto y recepción por envío. Foto: Ministerio de Transportes y Comunicaciones del Perú."
+    },
+    {
+      "heading": "Cajas de baldosas antes del refuerzo",
+      "body": "Revisar cajas, tamaño de baldosas y protección de bordes antes de acordar el embalaje."
+    },
+    {
+      "heading": "Baldosas de gran formato",
+      "body": "Comprobar tamaño y manipulación; medir dimensiones y peso bruto tras reforzar."
+    },
+    {
+      "heading": "Carga envuelta y reforzada",
+      "body": "Film, flejes, bastidores y señales de fragilidad. Acordar palés o cajones y manipulación antes de recoger."
+    }
+  ],
+  "resources": [
+    "Revise el alcance SONCAP del producto y prepare la certificación aplicable antes del embarque.",
+    "Consulte información portuaria oficial; acuerde por separado manipulación, liberación y recogida local.",
+    "Revise RUC, clasificación y documentos comerciales y de transporte con el importador."
+  ],
+  "case": [
+    {
+      "heading": "Base de tarificación para carga pesada",
+      "body": "Este envío: 4719 kg y 3,5 m³. La cotización convertía 500 kg por unidad: 4719 ÷ 500 = 9,438, aproximadamente 9,44 unidades, unas 2,70 veces el volumen de 3,5. Es una condición de esta cotización, no una regla marítima universal. Confirme conversión, redondeo, mínimos y cargos locales por escrito."
+    },
+    {
+      "heading": "SONCAP antes del embarque",
+      "body": "Revise especificación y HS de las baldosas con importador y certificador. Para productos regulados, prepare ensayos y PC aplicables y después el SC del envío. Mantenga consistentes los datos del importador en certificados y documentos de transporte."
+    },
+    {
+      "heading": "Proteger las baldosas durante la manipulación",
+      "body": "Revise palés o cajones, protección de esquinas y bordes, film y flejes. Confirme acceso para elevación, límites de apilamiento y descarga; fotografíe el embalaje terminado antes de despachar."
+    }
+  ]
+}

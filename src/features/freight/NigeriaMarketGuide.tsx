@@ -50,13 +50,13 @@ const copy: Record<Language, { kicker: string; title: string; intro: string; pho
   tr: { kicker: 'LAGOS / TOPTAN PAZARLAR', title: 'Liman, pazar değildir.', intro: 'Lagos’a varış yalnızca bir aşamadır. Teklifleri karşılaştırmadan önce pazarı, yük türünü ve teslim noktasını belirleyin.', photo: 'Bağımsız pazar fotoğrafı; DDNZ teslimat kaydı değildir', note: 'Pazarlar planlama bilgisidir, teslimat vaadi değildir. Gümrük, alma, yerel taşıma ve boşaltma yazılı teklife bağlıdır.', next: 'Nijerya sevkiyatını planlayın', source: 'Fotoğraf kaynağı', context: 'Pazar bilgisi' },
 };
 
-export default function NigeriaMarketGuide({ locale, compact = false }: { locale: Language; compact?: boolean }) {
+export default function NigeriaMarketGuide({ locale, compact = false, sectionNumber = "03" }: { locale: Language; compact?: boolean; sectionNumber?: string }) {
   const c = copy[locale];
   const prefix = freightPrefix(locale);
   const countryHref = `${locale === 'pt' || locale === 'tr' ? '' : prefix}/shipping-from-china-to-nigeria/`;
   return <section className={`freight-nigeria-markets${compact ? ' freight-nigeria-markets-compact' : ''}`} id={compact ? 'west-africa-markets' : 'nigeria-markets'} aria-labelledby={compact ? 'west-africa-markets-title' : 'nigeria-markets-title'}>
     <div className="freight-wrap freight-section">
-      <div className="freight-market-heading"><div><p className="freight-kicker">03 / {c.kicker}</p><h2 id={compact ? 'west-africa-markets-title' : 'nigeria-markets-title'}>{c.title}</h2></div><p>{c.intro}</p></div>
+      <div className="freight-market-heading"><div><p className="freight-kicker">{sectionNumber} / {c.kicker}</p><h2 id={compact ? 'west-africa-markets-title' : 'nigeria-markets-title'}>{c.title}</h2></div><p>{c.intro}</p></div>
       <div className="freight-market-grid">{markets.map((market, index) => <article key={market.name}>
         <div className="freight-market-photo"><img src={market.image} alt={`${market.name}, ${market.area.toLowerCase().replace(' · ', ', ')}`} loading="lazy" decoding="async" referrerPolicy="no-referrer"/><span>{String(index + 1).padStart(2, '0')} / {market.area}</span></div>
         <div className="freight-market-copy"><h3>{market.name}</h3><strong>{market.focus[locale]}</strong><p>{market.check[locale]}</p></div>

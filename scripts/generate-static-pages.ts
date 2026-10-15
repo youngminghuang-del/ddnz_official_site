@@ -1,3 +1,4 @@
+import {MarketFreightContent, marketMetadata} from '../src/features/freight/MarketFreightContent';
 import gulfStories from '../src/features/freight/gulfStories.json';
 import GulfKitchenPlanning from '../src/features/commercial-kitchen/components/GulfKitchenPlanning.jsx';
 import SmallKitchenPlanningContent, {smallKitchenMeta,smallKitchenPath} from '../src/features/commercial-kitchen/SmallKitchenPlanningContent';
@@ -720,6 +721,7 @@ const countryNames: Record<string, Record<string, string>> = {
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
+  if (countrySlug === 'nigeria' || countrySlug === 'peru') return marketMetadata(countrySlug,(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]);
   if ((countrySlug === 'qatar' || countrySlug === 'oman')) return { title: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].title, desc: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].desc, keywords: '' };
   if (countrySlug === 'brazil' && lang === 'pt') return brazilPortugueseMeta;
   if (lang === 'pt' || lang === 'tr') return internationalCountryMeta(countrySlug,lang);
@@ -1640,7 +1642,7 @@ function injectStaticRouteContent(
   if (relPath === 'shipping-from-china-to-brazil' && lang === 'pt') {
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+renderToStaticMarkup(createElement(BrazilPortugueseContent))+'</div>');
   }
-  if (relPath.startsWith('shipping-from-china-to-') && !['shipping-from-china-to-qatar','shipping-from-china-to-oman'].includes(relPath) && countryNames[relPath.replace('shipping-from-china-to-','')] && (lang === 'pt' || lang === 'tr')) {
+  if (relPath.startsWith('shipping-from-china-to-') && !['shipping-from-china-to-qatar','shipping-from-china-to-oman','shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath) && countryNames[relPath.replace('shipping-from-china-to-','')] && (lang === 'pt' || lang === 'tr')) {
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+renderToStaticMarkup(createElement(InternationalCountryContent,{country:relPath.replace('shipping-from-china-to-',''),locale:lang}))+'</div>');
   }
   const freightRegion = relPath.replace('shipping-from-china-to-', '') as RegionId;
@@ -1794,6 +1796,10 @@ function injectStaticRouteContent(
     staticBody = renderToStaticMarkup(createElement(relPath.endsWith('-ghana') ? GhanaContent : relPath.endsWith('-mexico') ? MexicoContent : relPath.endsWith('-nigeria') ? NigeriaContent : UaeContent, {locale:lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es'}));
     const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+  }
+  if (['shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath)) {
+    staticBody = renderToStaticMarkup(createElement(MarketFreightContent, {country: relPath.endsWith('-peru') ? 'peru' : 'nigeria',locale:(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]}));
+    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file => /^(freight|MarketFreightPage)-.*\.css$/.test(file))) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
   if (['en', 'zh-cn', 'es'].includes(lang) && relPath === 'services/dangerous-goods-shipping-from-china') {
     const specialist = relPath.startsWith('services/');
