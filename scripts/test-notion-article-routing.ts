@@ -68,6 +68,16 @@ await check('normalizes Notion language variants to site locale paths', () => {
   assert.equal(canonicalSiteUrl('/ru/insights?preview=1'), 'https://www.ddnzglobal.com/ru/insights/');
 });
 
+await check('keeps Indonesian articles distinct from English routes', () => {
+  const post = {id: 'id-kitchen', slug: 'dapur', language: 'id', status: 'Published'};
+  assert.equal(normalizeArticleLocale('id-ID'), 'id');
+  assert.equal(articleRoutePath(post), '/id/blog/dapur/');
+  assert.equal(findArticleByRoute([post], 'en', 'dapur'), undefined);
+  assert.equal(findArticleByRoute([post], 'id', 'dapur')?.id, 'id-kitchen');
+  assert.deepEqual(getArticleHreflangSet(post, [post]).alternates,
+    [{hrefLang: 'id', href: 'https://www.ddnzglobal.com/id/blog/dapur/'}]);
+});
+
 await check('resolves the same slug by route locale instead of first match', () => {
   assert.equal(findArticleByRoute(translatedPosts, 'en', 'shared-guide')?.id, 'en-id');
   assert.equal(findArticleByRoute(translatedPosts, 'zh', 'shared-guide')?.id, 'zh-id');

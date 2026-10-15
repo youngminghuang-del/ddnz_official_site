@@ -5,8 +5,8 @@ import { localizableProductPaths, productContentLanguages, localizedProductPath,
 const projectRoot = process.cwd();
 const distDir = path.join(projectRoot, 'dist');
 const sitemapPath = path.join(distDir, 'sitemap.xml');
-const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'];
-const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar', pt: 'pt', tr: 'tr' };
+const localePrefixes = ['zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr', 'id'];
+const expectedLanguage = { 'zh-cn': 'zh-CN', ru: 'ru', fr: 'fr', es: 'es', ar: 'ar', pt: 'pt', tr: 'tr', id: 'id' };
 const expectedLocalizedFaqQuestion = {
   pt: 'Como encontrar e verificar um fornecedor confiável na China antes de pagar o sinal?',
   tr: 'Kapora ödemeden önce güvenilir bir Çin tedarikçisini nasıl bulup doğrularım?',

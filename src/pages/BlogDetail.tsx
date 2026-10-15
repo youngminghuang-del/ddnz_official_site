@@ -1,7 +1,7 @@
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml, sanitizeQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useParams, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import {
   ArrowLeft,
@@ -62,7 +62,10 @@ type ArticleUi = {
   freightCta: string;
 };
 
-const articleUi: Record<Language, ArticleUi> = {
+const articleUi: Record<Language | 'id', ArticleUi> = {
+  id: {
+    loading: 'Memuat artikel...', missing: 'Artikel tidak ditemukan', back: 'Kembali ke beranda', home: 'Beranda', insights: 'Artikel', published: 'Diterbitkan', minRead: 'menit baca', verified: 'Diperiksa', updated: 'Diperbarui', reviewedBy: 'Ditinjau oleh', evidenceRecords: 'Sumber pendukung', linked: 'terkait', legacyRecord: 'Arsip', lastVerified: 'Terakhir diperiksa', lastUpdated: 'Terakhir diperbarui', onThisPage: 'Daftar isi', nextStep: 'Rencanakan dapur Anda', ctaTitle: 'Mulai dari denah, menu, dan anggaran.', ctaBody: 'Kirim denah, konsep menu, kota tujuan, dan target pembukaan kepada DDNZ. Kami membantu desain layout, pembagian fungsi, pemilihan peralatan, dan pengadaan dari China. Satu outlet pun dapat ditangani.', backInsights: 'Kembali ke artikel', automatedReview: 'Tinjauan editorial DDNZ', editorialDesk: 'Tim editorial DDNZ', legacyEditorial: 'Arsip editorial', commercialCta: 'Diskusikan desain dapur dengan DDNZ', outdoorCta: 'Diskusikan pengadaan', sourcingCta: 'Diskusikan pengadaan', freightCta: 'Diskusikan pengiriman',
+  },
   en: {
     loading: 'Loading verified article...', missing: 'Post Not Found', back: 'Back to Home', home: 'Home', insights: 'Insights', published: 'Published', minRead: 'min read', verified: 'Verified', updated: 'Updated', reviewedBy: 'Reviewed by', evidenceRecords: 'Evidence records', linked: 'linked', legacyRecord: 'Legacy record', lastVerified: 'Last verified', lastUpdated: 'Last updated', onThisPage: 'On this page', nextStep: 'Next operational step', ctaTitle: 'Turn this guidance into a scoped China sourcing or export plan.', ctaBody: 'Share the destination market, product scope, quantities, inspection needs, and export requirements. DDNZ will respond against the stated scope rather than with a generic promise.', backInsights: 'Back to Insights Hub', automatedReview: 'DDNZ automated research and editorial audit', editorialDesk: 'DDNZ editorial desk', legacyEditorial: 'Legacy editorial record', commercialCta: 'Plan a commercial kitchen sourcing project', outdoorCta: 'Plan an outdoor product sourcing project', sourcingCta: 'Start a product sourcing brief', freightCta: 'Request a China export freight plan',
   },
@@ -106,6 +109,10 @@ function normalizeNotionLinks(content: string) {
 }
 
 function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
+  if (post.language === 'id' && post.productCategory === 'Commercial Kitchen Equipment') return {
+    href: 'https://wa.me/85261077362?text=Saya%20ingin%20merencanakan%20dapur%20restoran%20di%20Indonesia.%20Kota%3A%20%20Menu%3A%20%20Anggaran%3A',
+    label: ui.commercialCta,
+  };
   const isProductSourcing =
     post.leadGoal === 'Product Sourcing' ||
     post.primaryCTA === 'Commercial Kitchen Sourcing' ||
@@ -151,8 +158,11 @@ export default function BlogDetail() {
   const [post, setPost] = useState<BlogPost | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const progressSent = useRef(new Set<number>());
-  const { language } = useLanguage();
-  const prefix = articleLocalePrefix(language);
+  const { language: navigationLanguage } = useLanguage();
+  const location = useLocation();
+  const language = location.pathname.startsWith('/id/blog/') ? 'id' : navigationLanguage;
+  // Indonesian is authored for articles; the rest of the site retains its existing navigation.
+  const prefix = language === 'id' ? '' : articleLocalePrefix(language);
   const ui = articleUi[language];
 
   useEffect(() => {
@@ -277,6 +287,7 @@ export default function BlogDetail() {
         title={seoTitle}
         description={seoDesc}
         keywords={`${post.primaryQuery || post.category}, China sourcing, China freight forwarder, DDNZ Global`}
+        contentLanguage={language}
         canonicalPath={postPath}
         alternateUrls={articleHreflang.alternates}
         image={post.thumbnailUrl}
@@ -288,6 +299,7 @@ export default function BlogDetail() {
         type="BlogPosting"
         data={{
           headline: post.title,
+          inLanguage: language,
           description: post.summary,
           image: post.thumbnailUrl,
           datePublished: post.date,

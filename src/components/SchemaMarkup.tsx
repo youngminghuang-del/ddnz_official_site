@@ -145,7 +145,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         '@type': 'FAQPage',
         '@id': `${pageUrl}#faq`,
         'url': pageUrl,
-        'inLanguage': language,
+        'inLanguage': data.inLanguage || language,
         'mainEntity': (data.faqs || []).map((faq: { question: string; answer: string }) => ({
           '@type': 'Question',
           'name': faq.question,

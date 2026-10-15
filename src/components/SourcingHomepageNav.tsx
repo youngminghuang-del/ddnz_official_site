@@ -372,12 +372,12 @@ export default function SourcingHomepageNav({
   }, [mobileLanguageOpen]);
 
   const languageHref = (nextLanguage: Language) => {
-    const suffix = splitNavigationPath(location.pathname).pathname;
+    const suffix = splitNavigationPath(location.pathname).pathname.replace(/^\/id(?=\/blog\/)/, "");
     return navigationPath(/^\/blog\//.test(suffix) ? '/insights' : suffix, nextLanguage) + location.search + (/^\/blog\//.test(suffix) ? '' : location.hash);
   };
 
   const switchLanguage = async (nextLanguage: Language) => {
-    const suffix = splitNavigationPath(location.pathname).pathname;
+    const suffix = splitNavigationPath(location.pathname).pathname.replace(/^\/id(?=\/blog\/)/, "");
     let destination = navigationPath(suffix, nextLanguage);
 
     const blogMatch = suffix.match(/^\/blog\/([^/]+)\/?$/);
@@ -387,7 +387,7 @@ export default function SourcingHomepageNav({
         const { default: notionBlogPosts } = await import('../data/notionBlogData.json');
         const currentArticle = findArticleByRoute(
           notionBlogPosts as BlogPost[],
-          language,
+          location.pathname.startsWith("/id/blog/") ? "id" : language,
           decodeURIComponent(blogMatch[1]),
         );
         if (currentArticle) {

@@ -15,7 +15,7 @@ for(const route of routes){
  const title=resolveSeoTitle(route,decoded);
  if(title){html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(title)}</title>`).replace(/(<meta\s+(?:property|name)="(?:og:title|twitter:title)"\s+content=")[^"]*("[^>]*>)/g,(_,a,b)=>a+esc(title)+b);titles++;}
  if(!html.includes('data-crawlable-languages="true"')){
-  const suffix=route.replace(/^\/(zh-cn|es|ar|ru|fr|pt|tr)(?=\/)/,'');
+  const suffix=route.replace(/^\/(zh-cn|es|ar|ru|fr|pt|tr|id)(?=\/)/,'');
   const links=locales.map((lang,i)=>{const desired=(lang?'/'+lang:'')+suffix;const target=available.has(desired)?desired:(lang?'/'+lang:'')+'/insights/';if(!available.has(target))throw new Error(`Language destination missing ${target}`);return `<a href="${target}" lang="${lang||'en'}" style="text-decoration:underline">${names[i]}</a>`;}).join('');
   const nav=`<nav data-crawlable-languages="true" aria-label="Languages" style="display:flex;flex-wrap:wrap;justify-content:center;gap:20px;padding:24px">${links}</nav>`;
   // Keep SSR navigation inside the React root so mounting the real footer replaces it.

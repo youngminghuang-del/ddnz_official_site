@@ -794,7 +794,8 @@ function injectSeoMeta(
     'es': 'es',
     'ar': 'ar',
     'pt': 'pt',
-    'tr': 'tr'
+    'tr': 'tr',
+    'id': 'id'
   };
   const targetLang = lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'pt-BR' : htmlLangMap[lang] || 'en';
   output = output.replace(/<html lang="[^"]*"/i, `<html lang="${targetLang}"`);
@@ -1709,7 +1710,7 @@ function injectStaticRouteContent(
           <p class="text-xs font-black uppercase tracking-wider text-amber-700">DDNZ Global Insights</p>
           <h1 class="mt-4 text-4xl font-black leading-tight text-slate-950">${escapeStaticText(post.title)}</h1>
           ${summary}
-          ${post.reviewer?.length ? `<p>Reviewed by ${post.reviewer.map(escapeStaticText).join(", ")}</p>` : ""}
+          ${post.reviewer?.length ? `<p>${lang === 'id' ? 'Ditinjau oleh' : 'Reviewed by'} ${post.reviewer.map(escapeStaticText).join(", ")}</p>` : ""}
           ${cover}
           <div class="article-body mt-10">${post.content || ''}</div>
         </article>
@@ -1728,6 +1729,7 @@ function injectStaticRouteContent(
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
     staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch).replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
     staticBody += renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: 'en' }));
+    staticBody += '<aside lang="id"><h2>Merencanakan restoran di Indonesia?</h2><p><a href="/id/blog/desain-dapur-restoran-pengadaan-peralatan-china/">Desain dapur restoran kecil, biaya peralatan, dan pengadaan dari China</a></p></aside>';
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
   } else if (kitchenCategories.some(category => category.path === `/${relPath}/`)) {
     const category = kitchenCategories.find(category => category.path === `/${relPath}/`)!;
