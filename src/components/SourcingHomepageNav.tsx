@@ -103,6 +103,9 @@ const freightCountryLabels: Record<Language, string[]> = {
 };
 
 
+const southAsiaLabels: Record<Language,string> = {en:'South Asia',zh:'南亚',ru:'Южная Азия',fr:'Asie du Sud',es:'Asia del Sur',ar:'جنوب آسيا',pt:'Ásia do Sul',tr:'Güney Asya'};
+const southAsiaCountryIndexes = [6,7,8] as const;
+
 const freightExecutorLabels: Record<Language, { desktop: string; mobile: string }> = {
   en: {
     desktop: "Freight by Heaven Born",
@@ -514,6 +517,8 @@ export default function SourcingHomepageNav({
                 <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[1])}>{centralAsiaLabel}</DropdownLink>
                 <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[2])}>{labels.africa}</DropdownLink>
                 <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.freightRegions[3])}>{labels.latinAmerica}</DropdownLink>
+                <p className="mt-2 border-t border-slate-200 px-3 pt-3 pb-1 text-sm font-semibold text-slate-700">{southAsiaLabels[language]}</p>
+                <div className="ms-3 border-s border-slate-200 ps-2">{southAsiaCountryIndexes.map(index => <DropdownLink key={index} onNavigate={closeDesktopDropdown} to={localizedPath(siteNavigation.featuredFreightCountries[index])}>{freightCountryLabels[language][index]}</DropdownLink>)}</div>
               </div>
               <div className="border-l border-slate-200 pl-2 rtl:border-l-0 rtl:border-r rtl:pl-0 rtl:pr-2">
                 <p className="px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.routes}</p>
@@ -662,6 +667,8 @@ export default function SourcingHomepageNav({
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700" to={localizedPath('/shipping-from-china-to-central-asia')}>{centralAsiaLabel}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-west-africa')}>{labels.africa}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/shipping-from-china-to-latin-america')}>{labels.latinAmerica}</Link>
+                <p className="mt-2 px-3 py-2 text-sm font-semibold text-slate-700">{southAsiaLabels[language]}</p>
+                <div className="ms-3 grid border-s border-slate-200 ps-2">{southAsiaCountryIndexes.map(index => <Link key={index} onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath(siteNavigation.featuredFreightCountries[index])}>{freightCountryLabels[language][index]}</Link>)}</div>
                 <p className="mt-2 border-t px-3 py-2 text-xs font-bold uppercase tracking-[0.08em] text-slate-500">{freightMenu.routes}</p>
                 {siteNavigation.featuredFreightCountries.map((path, index) => <Link key={path} onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath(path)}>{freightCountryLabels[language][index]}</Link>)}
               </div>
