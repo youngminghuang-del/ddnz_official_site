@@ -1,3 +1,4 @@
+import UsedGoodsContent, {usedGoodsMetadata, type UsedGoodsCountry} from '../src/features/freight/UsedGoodsContent';
 import {MarketFreightContent, marketMetadata} from '../src/features/freight/MarketFreightContent';
 import gulfStories from '../src/features/freight/gulfStories.json';
 import GulfKitchenPlanning from '../src/features/commercial-kitchen/components/GulfKitchenPlanning.jsx';
@@ -697,6 +698,9 @@ for (const locale of ['zh', 'en', 'es', 'ru', 'fr', 'ar', 'pt', 'tr'] as const) 
 }
 
 const countryNames: Record<string, Record<string, string>> = {
+ india: {en:'India', 'zh-cn':'印度', es:'India', fr:'Inde', pt:'Índia', tr:'Hindistan', ru:'Индию', ar:'الهند'},
+ bangladesh: {en:'Bangladesh', 'zh-cn':'孟加拉国', es:'Bangladés', fr:'Bangladesh', pt:'Bangladesh', tr:'Bangladeş', ru:'Бангладеш', ar:'بنغلاديش'},
+ pakistan: {en:'Pakistan', 'zh-cn':'巴基斯坦', es:'Pakistán', fr:'Pakistan', pt:'Paquistão', tr:'Pakistan', ru:'Пакистан', ar:'باكستان'},
   'saudi-arabia': { en: 'Saudi Arabia', 'zh-cn': '沙特阿拉伯', ru: 'Саудовскую Аравию', fr: "l’Arabie saoudite", es: 'Arabia Saudita', ar: 'السعودية' },
   uae: { en: 'the UAE', 'zh-cn': '阿联酋', ru: 'ОАЭ', fr: 'les Émirats arabes unis', es: 'Emiratos Árabes Unidos', ar: 'الإمارات' },
   kuwait: { en: 'Kuwait', 'zh-cn': '科威特', ru: 'Кувейт', fr: 'le Koweït', es: 'Kuwait', ar: 'الكويت' },
@@ -721,6 +725,7 @@ const countryNames: Record<string, Record<string, string>> = {
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
+ if (['ghana','india','bangladesh','pakistan'].includes(countrySlug)) {const m=usedGoodsMetadata(countrySlug as UsedGoodsCountry,(lang==='zh-cn'?'zh':lang) as Parameters<typeof usedGoodsMetadata>[1]);return {title:m.title,desc:m.description,keywords:''};}
   if (countrySlug === 'nigeria' || countrySlug === 'peru') return marketMetadata(countrySlug,(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]);
   if ((countrySlug === 'qatar' || countrySlug === 'oman')) return { title: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].title, desc: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].desc, keywords: '' };
   if (countrySlug === 'brazil' && lang === 'pt') return brazilPortugueseMeta;
@@ -1643,7 +1648,7 @@ function injectStaticRouteContent(
   if (relPath === 'shipping-from-china-to-brazil' && lang === 'pt') {
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+renderToStaticMarkup(createElement(BrazilPortugueseContent))+'</div>');
   }
-  if (relPath.startsWith('shipping-from-china-to-') && !['shipping-from-china-to-qatar','shipping-from-china-to-oman','shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath) && countryNames[relPath.replace('shipping-from-china-to-','')] && (lang === 'pt' || lang === 'tr')) {
+  if (relPath.startsWith('shipping-from-china-to-') && !['shipping-from-china-to-ghana','shipping-from-china-to-india','shipping-from-china-to-bangladesh','shipping-from-china-to-pakistan','shipping-from-china-to-qatar','shipping-from-china-to-oman','shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath) && countryNames[relPath.replace('shipping-from-china-to-','')] && (lang === 'pt' || lang === 'tr')) {
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+renderToStaticMarkup(createElement(InternationalCountryContent,{country:relPath.replace('shipping-from-china-to-',''),locale:lang}))+'</div>');
   }
   const freightRegion = relPath.replace('shipping-from-china-to-', '') as RegionId;
@@ -1798,6 +1803,10 @@ function injectStaticRouteContent(
     staticBody = renderToStaticMarkup(createElement(relPath.endsWith('-ghana') ? GhanaContent : relPath.endsWith('-mexico') ? MexicoContent : relPath.endsWith('-nigeria') ? NigeriaContent : UaeContent, {locale:lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es'}));
     const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+  }
+  if (['ghana','india','bangladesh','pakistan'].some(c=>relPath===`shipping-from-china-to-${c}`)) {
+    staticBody=renderToStaticMarkup(createElement(UsedGoodsContent,{country:relPath.replace('shipping-from-china-to-','') as UsedGoodsCountry,locale:(lang==='zh-cn'?'zh':lang) as Parameters<typeof usedGoodsMetadata>[1]}));
+    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file=>/^(freight|UsedGoodsPage)-.*\.css$/.test(file))) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
   if (['shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath)) {
     staticBody = renderToStaticMarkup(createElement(MarketFreightContent, {country: relPath.endsWith('-peru') ? 'peru' : 'nigeria',locale:(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]}));

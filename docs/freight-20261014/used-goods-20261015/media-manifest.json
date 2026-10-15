@@ -1,0 +1,381 @@
+{
+  "status": "prepared_not_published",
+  "source": "User-provided used clothes factory folder; originals retained in workspace archive.",
+  "processing": "Unchanged-content JPEG re-encoding for photos. AVFoundation MP4/H264 Baseline 3.1, 30 fps, no B frames, fast-start at target 1.8 Mbps. Entire frame aspect retained with centering in 720×1280, audio omitted. Initial Main-profile output failed browser playback; Baseline sorting was verified by root agent in IAB through end of playback, then all clips normalized to Baseline. Posters extracted at 15% timestamp. No generative image edits.",
+  "review": "All four selected photos and five posters visually reviewed. Video source contact sheets reviewed at 15/50/85 percent. All five final Baseline MP4s actually decoded at beginning/middle/end using AVFoundation; 15 frame checks pass. No frame-by-frame review claimed.",
+  "excluded": [
+    "Photos 3 and 6 have visible vehicle plates; not copied to public assets.",
+    "Customer visit video and poster retained internally, not public."
+  ],
+  "caption_note": "Eight-language contextual captions describe visible operations, not speech transcription or specific destination evidence.",
+  "files": [
+    {
+      "file": "cargo-poster.jpg",
+      "bytes": 285606,
+      "sha256": "a18f591752535cdb8d29244f60f65b1ff6fc066d9deae15d2998cbcd074283ce",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "cargo.ar.vtt",
+      "bytes": 181,
+      "sha256": "5e373f522a3458e735dc26d640550455489abfb86a40b447ce27feeab6c75d29"
+    },
+    {
+      "file": "cargo.en.vtt",
+      "bytes": 158,
+      "sha256": "630fbf67ac2dcd581e9123c1ed07866a3acc9a38efc76b35baefa1e39ce5349d"
+    },
+    {
+      "file": "cargo.es.vtt",
+      "bytes": 153,
+      "sha256": "a3f9079a5c3c098dab0ad05c26f2ae5d9fd159511cd10a4652ae195714c27477"
+    },
+    {
+      "file": "cargo.fr.vtt",
+      "bytes": 157,
+      "sha256": "ec3f5ecdda12904d494fb93cfa5f389f903bb329fba68224ad56f56bc083837f"
+    },
+    {
+      "file": "cargo.mp4",
+      "bytes": 3129681,
+      "sha256": "36e00e2afa1b2a254713595e9f5237b4f29d155c5429b04d94c11f6cdf33c521",
+      "duration": 13.533333333333333,
+      "codec": "avc1",
+      "profile": "Baseline 3.1",
+      "fps": 30,
+      "b_frames": false,
+      "fast_start": true,
+      "audio_tracks": 0,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "cargo.pt.vtt",
+      "bytes": 151,
+      "sha256": "d934f493a1483e0b82345b86a23c532b92d06cce16088ee9e04e1c6a16f10514"
+    },
+    {
+      "file": "cargo.ru.vtt",
+      "bytes": 187,
+      "sha256": "011c4153fac85b04139d02bce089a37a118359b18e9793e97a76f65c00c6d5f4"
+    },
+    {
+      "file": "cargo.tr.vtt",
+      "bytes": 160,
+      "sha256": "d1904adbd924227ce8461656bd35309686a3e63cef683f17277d68982192f399"
+    },
+    {
+      "file": "cargo.zh.vtt",
+      "bytes": 147,
+      "sha256": "5a1ca0daf74f2c97aea987fa09165a7d7d4f5ceb94d3ee75975eb8227cd69877"
+    },
+    {
+      "file": "handling-poster.jpg",
+      "bytes": 158582,
+      "sha256": "e681c077365687c6b3c7b06852b0e3bb85012d5a937482c4c3f8b73da1703645",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "handling.ar.vtt",
+      "bytes": 181,
+      "sha256": "c03c6e1846948f54ababecebd046f7acfe46d4c7a55867a1f42e175d8b5dce57"
+    },
+    {
+      "file": "handling.en.vtt",
+      "bytes": 152,
+      "sha256": "3476f694c3a147eb392ee7ff2147e4381f147e2c6307b440fa1cd2349684aff8"
+    },
+    {
+      "file": "handling.es.vtt",
+      "bytes": 151,
+      "sha256": "71373b7c2988717ed27600cad1749ca421c2369c86cc61a175e77fd9651714c1"
+    },
+    {
+      "file": "handling.fr.vtt",
+      "bytes": 154,
+      "sha256": "ec6d0f5b15397fbd219671f9c307364f90bdb65d21024ae45ef1cc31064debc9"
+    },
+    {
+      "file": "handling.mp4",
+      "bytes": 1136439,
+      "sha256": "098bf0ea0492bf810fb27d96d7ecbc7fc6dd8bfca04fab8352146891c6c4f7ea",
+      "duration": 4.766666666666667,
+      "codec": "avc1",
+      "profile": "Baseline 3.1",
+      "fps": 30,
+      "b_frames": false,
+      "fast_start": true,
+      "audio_tracks": 0,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "handling.pt.vtt",
+      "bytes": 159,
+      "sha256": "860e7529b5dd5fc45b2e18e30806694483c75861583a6732601c989cec8e8b30"
+    },
+    {
+      "file": "handling.ru.vtt",
+      "bytes": 182,
+      "sha256": "2057bdc8119d41b4119c410969afc6c756882c0b958f026a837469c831060990"
+    },
+    {
+      "file": "handling.tr.vtt",
+      "bytes": 165,
+      "sha256": "81f77ba7e921b37f38668c99c09c9400f1fa1e52f1954a5f57808581c44b1305"
+    },
+    {
+      "file": "handling.zh.vtt",
+      "bytes": 147,
+      "sha256": "0204d9d40db6505a185721e0d781ce7abb5f4a1261a124c2dc18d0ff63f0e9ba"
+    },
+    {
+      "file": "loading-1-thumb.jpg",
+      "bytes": 8607,
+      "sha256": "c12b7f394ed8f4160984f0e59ccf4fa61e33f93f737cb9148c51b0f207ceed49",
+      "width": 112,
+      "height": 160
+    },
+    {
+      "file": "loading-1.jpg",
+      "bytes": 397611,
+      "sha256": "a530243af4aec8a333424e5b5b4717bf6e674f8a1a9cebf559b28ae6f357b95a",
+      "width": 1142,
+      "height": 1620
+    },
+    {
+      "file": "loading-2-thumb.jpg",
+      "bytes": 7883,
+      "sha256": "acfaf3c6e1e2b1fec164b16522dd1cfe33afe0bf49a4a55d3e2a4771acde5f4d",
+      "width": 121,
+      "height": 160
+    },
+    {
+      "file": "loading-2.jpg",
+      "bytes": 312226,
+      "sha256": "070dc7a37fc5c93e2ef6b269d83263747055d922e722d88321002a2a5ca96e4e",
+      "width": 1240,
+      "height": 1638
+    },
+    {
+      "file": "loading-4-thumb.jpg",
+      "bytes": 8148,
+      "sha256": "8db21118f9d6cb997c99e8dd7e44cc9e284a752a90776dfa8874280159a25ed7",
+      "width": 111,
+      "height": 160
+    },
+    {
+      "file": "loading-4.jpg",
+      "bytes": 294367,
+      "sha256": "3552fefb74510604d9270acb3295fb0faf42521712548c1c45474515733a918f",
+      "width": 980,
+      "height": 1404
+    },
+    {
+      "file": "loading-5-thumb.jpg",
+      "bytes": 10012,
+      "sha256": "d50c4481b49830954037a491ded1a12b5ac4636fd22f83a32bbb84bfa8f112d6",
+      "width": 121,
+      "height": 160
+    },
+    {
+      "file": "loading-5.jpg",
+      "bytes": 575440,
+      "sha256": "8297420031299e6137bddbf8141d9a4f6ac286a7355f4b39d37421eaaf632c79",
+      "width": 1348,
+      "height": 1774
+    },
+    {
+      "file": "packing-poster.jpg",
+      "bytes": 278504,
+      "sha256": "0c76e6a324d45411f95b7466b7fff9a86e0dd13de5ca0dea990fea4c4264953f",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "packing.ar.vtt",
+      "bytes": 173,
+      "sha256": "a78288832f0a49f38efff80e8187f622bc4fb31833751a8177c00a44e17265b7"
+    },
+    {
+      "file": "packing.en.vtt",
+      "bytes": 153,
+      "sha256": "776e8be0e0cb1f96cd7a55ee5d208621bfe29aa2d2f89f96d2e1b0031926a1ea"
+    },
+    {
+      "file": "packing.es.vtt",
+      "bytes": 158,
+      "sha256": "d5224e419b5a20015ca761d03a402b19e6230c05db780d00ba215f0bfb33054a"
+    },
+    {
+      "file": "packing.fr.vtt",
+      "bytes": 158,
+      "sha256": "37e784ef52edecbcbf3998d5f18886c7ecc80f94294959ec0c0eac8b40d72430"
+    },
+    {
+      "file": "packing.mp4",
+      "bytes": 9609758,
+      "sha256": "e081f3ce48f5dc237a741e60a8035d60664559022061f601582c954a6d0772b6",
+      "duration": 42.2,
+      "codec": "avc1",
+      "profile": "Baseline 3.1",
+      "fps": 30,
+      "b_frames": false,
+      "fast_start": true,
+      "audio_tracks": 0,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "packing.pt.vtt",
+      "bytes": 156,
+      "sha256": "d38d7ac42b16ed1c26558401e1f8a5d0fb0fa4499b81f37be393f3e512059f87"
+    },
+    {
+      "file": "packing.ru.vtt",
+      "bytes": 185,
+      "sha256": "9702944cc6801a4f159e23c3d144fcf4d11a8f099f408756faa387b1ba853600"
+    },
+    {
+      "file": "packing.tr.vtt",
+      "bytes": 172,
+      "sha256": "11c42ca0251815abc00a5921063080e228535808bdde45fd7e34a866e25cffdf"
+    },
+    {
+      "file": "packing.zh.vtt",
+      "bytes": 150,
+      "sha256": "04b99dc6c528d64ad7cd6cf1e63a64ebe6423667bed121e0d7b5ba6eb5f99eaa"
+    },
+    {
+      "file": "sorting-poster.jpg",
+      "bytes": 140750,
+      "sha256": "643d239a0fac3952f01013ad6aad4081634c876f2048bae9b6efdddc8e291e91",
+      "width": 720,
+      "height": 1270
+    },
+    {
+      "file": "sorting.ar.vtt",
+      "bytes": 171,
+      "sha256": "c48256f1a3030290ae8d5d19772ec09c16891855c505683dbf29d4e3f327c852"
+    },
+    {
+      "file": "sorting.en.vtt",
+      "bytes": 148,
+      "sha256": "4339d0217a035fa51e5e72b29ed84ea5234b0e7e88040c269ebb246b9cddf7c7"
+    },
+    {
+      "file": "sorting.es.vtt",
+      "bytes": 152,
+      "sha256": "d00aa3b887e56ab4e6491d4cbd5fb4c1659d006805b9e3a7b7e6a284ee5ccaf6"
+    },
+    {
+      "file": "sorting.fr.vtt",
+      "bytes": 149,
+      "sha256": "4896b14a616c20ce7cbc45fe64fac0b7e329d9da0412dfe39171682ebd127d44"
+    },
+    {
+      "file": "sorting.mp4",
+      "bytes": 7279290,
+      "sha256": "6b0009f77b4c58fb0fbb9ad2d3f534ce9e211d6f2df43ed3d4bf6cc2fac1d7c1",
+      "duration": 32.166666666666664,
+      "codec": "avc1",
+      "profile": "Baseline 3.1",
+      "fps": 30,
+      "b_frames": false,
+      "fast_start": true,
+      "audio_tracks": 0,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "sorting.pt.vtt",
+      "bytes": 148,
+      "sha256": "804de8b29afff69481a9216377a2343137581084f2cfce4dbc278abcf7bbe52e"
+    },
+    {
+      "file": "sorting.ru.vtt",
+      "bytes": 185,
+      "sha256": "5a6ae496df5bab21bb42b239ce76633ca1d2221646f994953870475112532ec2"
+    },
+    {
+      "file": "sorting.tr.vtt",
+      "bytes": 157,
+      "sha256": "5791f56a635a4dec93c0a312874809955ffe23161c8d7511fe7ab252ec2acc7c"
+    },
+    {
+      "file": "sorting.zh.vtt",
+      "bytes": 150,
+      "sha256": "080c3fa1095d38cd50a65d4c8c8e1c53775382237c44735ae1ff407e6fdc62b5"
+    },
+    {
+      "file": "warehouse-poster.jpg",
+      "bytes": 165192,
+      "sha256": "e3d5eff7b4ee75d57c87219235ab9ce71d8e831493463b9c9504e518fcf7ec76",
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "warehouse-thumb.jpg",
+      "bytes": 6848,
+      "sha256": "5814bb7bf419647aca2d2ee4cc3a46a6a20913122a5fc0785201008757b44aed",
+      "width": 90,
+      "height": 160
+    },
+    {
+      "file": "warehouse.ar.vtt",
+      "bytes": 158,
+      "sha256": "e6c46efff0480ed6bd61bc77bb3ea1d94eb5a25766d2003fc6a64497dfa0d93f"
+    },
+    {
+      "file": "warehouse.en.vtt",
+      "bytes": 154,
+      "sha256": "c44d731b64d24868bfda30b926f8b6efc07d75e3330637816deaee9f34aa09e2"
+    },
+    {
+      "file": "warehouse.es.vtt",
+      "bytes": 156,
+      "sha256": "1b1f23f5a52d63cbc93421e94595ad2cc3309516a3e40d8a5269ff0128d9094f"
+    },
+    {
+      "file": "warehouse.fr.vtt",
+      "bytes": 152,
+      "sha256": "4850b747c083df76620527b7f2f1f42016ba72b7953105f43858d4e6582c6a20"
+    },
+    {
+      "file": "warehouse.mp4",
+      "bytes": 6526228,
+      "sha256": "53ab3b9f661d95a297379f6607487341b2b745ac170ac142ba956749e9ad32cd",
+      "duration": 28.733333333333334,
+      "codec": "avc1",
+      "profile": "Baseline 3.1",
+      "fps": 30,
+      "b_frames": false,
+      "fast_start": true,
+      "audio_tracks": 0,
+      "width": 720,
+      "height": 1280
+    },
+    {
+      "file": "warehouse.pt.vtt",
+      "bytes": 157,
+      "sha256": "c3cc9d16fa1944da935e948f66f8d03e741ce225fb53b12fbb10cd40d93d79d9"
+    },
+    {
+      "file": "warehouse.ru.vtt",
+      "bytes": 172,
+      "sha256": "edaf9f0fb386a577f314e494743e53a01d39a1de7226cb5f55e119419294252b"
+    },
+    {
+      "file": "warehouse.tr.vtt",
+      "bytes": 159,
+      "sha256": "98e9482302ed946818b99c01db28d2be338191304d425564b7fe27d9e1347ae9"
+    },
+    {
+      "file": "warehouse.zh.vtt",
+      "bytes": 147,
+      "sha256": "5b41ef3ab49ebd2be99989ade06b7d025e0f2cd470e84574ed9f18a1bd1d9c9c"
+    }
+  ]
+}

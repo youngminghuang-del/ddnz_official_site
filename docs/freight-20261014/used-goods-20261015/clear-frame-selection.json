@@ -1,0 +1,60 @@
+{
+  "method": "Original MOV AVFoundation extraction after reviewing 30 candidate frames across five videos. Original sources retained. No generative edits, sharpening, or content synthesis. Native frame dimensions, JPEG quality 0.94; only warehouse black bars cropped as authorized. Thumbnails preserve proportions.",
+  "files": [
+    {
+      "file": "sorting-clear.jpg",
+      "source_original": "used_clothes_sorting.mov",
+      "actual_frame_seconds": 12.2166666667,
+      "width": 1080,
+      "height": 1906,
+      "sha256": "825311bf6ba2ee9d74cb2cd09fe86b4f93881dcbeed4b87e1ad2e64fa94c6ebd",
+      "bytes": 421736,
+      "thumbnail": "sorting-clear-thumb.jpg",
+      "visual_review": "Full sorting-floor view; static scene selected rather than blurred hands."
+    },
+    {
+      "file": "packing-clear.jpg",
+      "source_original": "used_clothes_factory_packing.mov",
+      "actual_frame_seconds": 37.9666666667,
+      "width": 1080,
+      "height": 1920,
+      "sha256": "07126ad7f2f2a5cda5bcd27112e39e502842aaf6a184f23e691808da3f192165",
+      "bytes": 759548,
+      "thumbnail": "packing-clear-thumb.jpg",
+      "visual_review": "Pressed bale revealed inside press; machinery and textile layers visible."
+    },
+    {
+      "file": "cargo-clear.jpg",
+      "source_original": "used_clothes_factory_cargo.mov",
+      "actual_frame_seconds": 5.1333333333,
+      "width": 1080,
+      "height": 1920,
+      "sha256": "587c47076ab6b4d4893c6afa383a6bf40f3b57d943dc80108c908e54959980bf",
+      "bytes": 659160,
+      "thumbnail": "cargo-clear-thumb.jpg",
+      "visual_review": "Worker arranging bales; background bale detail visible, some worker motion remains."
+    },
+    {
+      "file": "handling-clear.jpg",
+      "source_original": "used_clothes_factory_handling_cargo.mov",
+      "actual_frame_seconds": 1.8,
+      "width": 1080,
+      "height": 1920,
+      "sha256": "e89ff052f084b8582a99afaff886d397217959397b49babc561d103fcd40174e",
+      "bytes": 528850,
+      "thumbnail": "handling-clear-thumb.jpg",
+      "visual_review": "Clamp attachment and yellow bale; visually steadier frame than earlier poster."
+    },
+    {
+      "file": "warehouse-clear.jpg",
+      "source_original": "used_clothes_loading_cargo.mov",
+      "actual_frame_seconds": 25.8333333333,
+      "width": 1080,
+      "height": 1448,
+      "sha256": "0e0d182c2eccff900360257c19953cf6c344d815ba6faa09018e2f241a82aaa0",
+      "bytes": 372951,
+      "thumbnail": "warehouse-clear-thumb.jpg",
+      "visual_review": "Stacked wrapped bales; native letterbox removed using centered 1080×1448 crop only."
+    }
+  ]
+}

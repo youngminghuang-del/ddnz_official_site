@@ -1,0 +1,87 @@
+{
+  "checkedAt": "2026-10-15",
+  "purpose": "Country-page port-reference maps",
+  "scope": "Approximate port-area reference points; not terminal gates, berth positions, navigation instructions, verified historical shipment ports or guaranteed current service availability.",
+  "ports": [
+    {
+      "country": "ghana",
+      "name": "Tema",
+      "latitude": 5.616667,
+      "longitude": 0,
+      "officialUrl": "https://www.ghanaports.gov.gh/",
+      "coordinateSource": "https://www.ghanaports.gov.gh/page/index/7/9YTNXVYZ/Navigation-Information",
+      "sourceDescription": "GPHA official navigation page",
+      "sourceCoordinate": "05°37′N, 000°00′"
+    },
+    {
+      "country": "ghana",
+      "name": "Takoradi",
+      "latitude": 4.883333,
+      "longitude": -1.75,
+      "officialUrl": "https://www.ghanaports.gov.gh/",
+      "coordinateSource": "https://www.ghanaports.gov.gh/page/index/16/PT3S2U2Y/Navigation-Information",
+      "sourceDescription": "GPHA official navigation page",
+      "sourceCoordinate": "04°53′N, 001°45′W"
+    },
+    {
+      "country": "india",
+      "name": "Mundra",
+      "latitude": 22.733333,
+      "longitude": 69.7,
+      "officialUrl": "https://www.adaniports.com/Ports-and-Terminals/Mundra-Port",
+      "coordinateSource": "https://msi.nga.mil/api/publications/download?key=16694491/SFH00000/Pub173bk.pdf",
+      "sourceDescription": "US NGA Sailing Directions Pub.173 section1.14 PDFpage23",
+      "sourceCoordinate": "22°44′N, 69°42′E"
+    },
+    {
+      "country": "india",
+      "name": "JNPA / Nhava Sheva",
+      "latitude": 18.945278,
+      "longitude": 72.94,
+      "officialUrl": "https://www.jnport.gov.in/",
+      "coordinateSource": "https://www.jnport.gov.in/page/location/TUMya080UGZqZWl3bVFjV0JZc3NpQT09",
+      "sourceDescription": "JNPA official Location page",
+      "sourceCoordinate": "18°56′43″N, 72°56′24″E"
+    },
+    {
+      "country": "bangladesh",
+      "name": "Chattogram",
+      "latitude": 22.268889,
+      "longitude": 91.831111,
+      "officialUrl": "https://cpa.gov.bd/",
+      "coordinateSource": "https://wbmsmeefc.wb.gov.in/documents/country_profiles/EFC_Country_Profiling_Bangladesh.pdf",
+      "sourceDescription": "Government of West Bengal EFC country profile, Port of Chittagong",
+      "sourceCoordinate": "22°16′08″N, 91°49′52″E"
+    },
+    {
+      "country": "bangladesh",
+      "name": "Mongla",
+      "latitude": 22.488889,
+      "longitude": 89.595278,
+      "officialUrl": "https://mpa.gov.bd/",
+      "coordinateSource": "https://www.bsaa.com.bd/page.php?slug=mongla-port",
+      "sourceDescription": "Bangladesh Shipping Agents Association official port profile (industry association, not government)",
+      "sourceCoordinate": "22°29′20″N, 89°35′43″E"
+    },
+    {
+      "country": "pakistan",
+      "name": "Karachi",
+      "latitude": 24.783333,
+      "longitude": 66.983333,
+      "officialUrl": "https://www.kpt.gov.pk/",
+      "coordinateSource": "https://msi.nga.mil/api/publications/download?key=16694491/SFH00000/Pub173bk.pdf",
+      "sourceDescription": "US NGA Sailing Directions Pub.173 section1.3 PDFpage11",
+      "sourceCoordinate": "24°47′N, 66°59′E"
+    },
+    {
+      "country": "pakistan",
+      "name": "Port Qasim",
+      "latitude": 24.766667,
+      "longitude": 67.35,
+      "officialUrl": "https://www.pqa.gov.pk/",
+      "coordinateSource": "https://msi.nga.mil/api/publications/download?key=16694491/SFH00000/Pub173bk.pdf",
+      "sourceDescription": "US NGA Sailing Directions Pub.173 section1.5 PDFpage16",
+      "sourceCoordinate": "24°46′N, 67°21′E"
+    }
+  ]
+}

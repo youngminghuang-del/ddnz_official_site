@@ -68,6 +68,7 @@ const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPa
 const InternationalCountryPage = lazy(() => import('./pages/InternationalCountryPage'));
 const BrazilPortuguesePage = lazy(() => import('./pages/BrazilPortuguesePage'));
 
+const UsedGoodsPage = lazy(() => import('./features/freight/UsedGoodsPage'));
 const MarketFreightPage = lazy(() => import('./features/freight/MarketFreightPage'));
 const GulfFreightPage = lazy(() => import('./features/freight/GulfFreightPage'));
 
@@ -75,6 +76,7 @@ function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
+  if (['ghana','india','bangladesh','pakistan'].includes(normalizedCountry)) return <UsedGoodsPage />;
   if (/^\/(?:(?:zh-cn|es|fr|pt|tr|ru|ar)\/)?shipping-from-china-to-(nigeria|peru)\/?$/.test(location.pathname)) return <MarketFreightPage />;
   if (['qatar', 'oman'].includes(normalizedCountry)) return <GulfFreightPage />;
   if (normalizedCountry === 'uae' && !/^\/(ar|fr|ru|pt|tr)\//.test(location.pathname)) return <UaeFreightPage />;
@@ -583,7 +585,7 @@ export default function App() {
             <Route path="/pt/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
+              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/pt/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/pt/products" element={<LocalizedOverviewPage kind="products" />} />
@@ -609,7 +611,7 @@ export default function App() {
             <Route path="/tr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />
+              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/tr/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/tr/products" element={<LocalizedOverviewPage kind="products" />} />

@@ -1,6 +1,6 @@
 # Search-intent audit
 
-Sitemap pages: 733. Results: {'pass': 610, 'context-only': 117, 'review': 6}. Languages: {'en': 112, 'zh-cn': 87, 'es': 96, 'fr': 88, 'pt': 87, 'ru': 87, 'tr': 87, 'ar': 89}.
+Sitemap pages: 757. Results: {'pass': 634, 'context-only': 117, 'review': 6}. Languages: {'en': 115, 'zh-cn': 90, 'es': 99, 'fr': 91, 'pt': 90, 'ru': 90, 'tr': 90, 'ar': 92}.
 
 Scope: local generated HTML, not a production crawl. Navigation, footer, scripts and metadata do not satisfy opening-copy requirements. A pass confirms lexical evidence only; it does not establish search volume, naturalness, translation quality, rankings or complete search-intent coverage.
 
