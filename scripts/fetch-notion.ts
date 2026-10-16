@@ -1,3 +1,4 @@
+import hayaletApproval from '../src/data/hayaletArticleApproval.json';
 import kitchenApproval from '../src/data/kitchenArticleApproval.json';
 import { preparePrivacyArticle, privacyArticleSlug } from './privacy-article';
 import restoredBlogRedirects from '../src/data/restoredBlogRedirects.json';
@@ -481,7 +482,7 @@ async function run() {
       const titleProperty = Object.values(properties).find((property: any) => property.type === "title") as any;
       const title = propertyText(titleProperty) || "Untitled";
       const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
-      const language = slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
+      const language = slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
       pageMetadata.set(page.id, {
         slug,
         language,
@@ -499,7 +500,7 @@ async function run() {
       const title = propertyText(titleProperty) || "Untitled";
       const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
       const category = propertyText(properties.Category || properties.category) || "Logistics";
-      const language = slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
+      const language = slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
       const translationGroup = propertyText(properties["Translation Group"] || properties.translationGroup);
       const date = propertyDate(properties.Date || properties.date) || page.created_time.split("T")[0];
       const summary = propertyText(
@@ -570,7 +571,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
