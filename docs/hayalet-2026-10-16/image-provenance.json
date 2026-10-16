@@ -1,0 +1,47 @@
+[
+  {
+    "file": "images/privacy-demo.jpg",
+    "source": "https://www.youtube.com/watch?v=JLGMbf7BtrE",
+    "description": "Video frame at 00:06; physical protector handled on camera",
+    "publisher": "LITO",
+    "source_validation": "Linked from manufacturer litoscreen.com video page",
+    "rights": "Public manufacturer social content; user requested editorial use; independent reuse license not verified",
+    "limitations": "Not DDNZ testing, stock or measured privacy-angle evidence; original brand graphics retained"
+  },
+  {
+    "file": "images/privacy-viewing-demo.jpg",
+    "source": "https://www.youtube.com/watch?v=JLGMbf7BtrE",
+    "description": "Video frame at 00:25; phone display and touch demonstration",
+    "publisher": "LITO",
+    "source_validation": "Linked from manufacturer litoscreen.com video page",
+    "rights": "Public manufacturer social content; user requested editorial use; independent reuse license not verified",
+    "limitations": "Not DDNZ testing, stock or measured privacy-angle evidence; original brand graphics retained"
+  },
+  {
+    "file": "images/lito-clear-social.jpg",
+    "source": "https://www.youtube.com/watch?v=2pza4VdT6xQ",
+    "description": "Public YouTube thumbnail; real phone demonstration surrounded by brand graphics",
+    "publisher": "LITO",
+    "source_validation": "Linked from manufacturer litoscreen.com video page",
+    "rights": "Public manufacturer social content; user requested editorial use; independent reuse license not verified",
+    "limitations": "Not DDNZ testing, stock or measured privacy-angle evidence; original brand graphics retained"
+  },
+  {
+    "file": "images/alibaba-privacy-pack.png",
+    "source": "https://www.alibaba.com/showroom/360-screen-protector.html",
+    "original_image": "https://s.alicdn.com/%40sc04/kf/H37891a83330c44eb956918e1e2808535M/OG-360-Anti-Shock-Anti-Spy-Anti-Peep-ESD-Tempered-Glass-Privacy-Screen-Protector-Film-for-iphone-17-Pro-Max-15-XS-XR-14Plus-Air.png",
+    "description": "Supplier marketing image of privacy protector and retail packaging",
+    "publisher": "Alibaba.com supplier listing",
+    "rights": "Public supplier marketing content; user requested editorial use; independent reuse license not verified",
+    "limitations": "Illustration only; not evidence of DDNZ stock, tests or verified specifications. Original artwork retained; no visible caption."
+  },
+  {
+    "file": "images/alibaba-custom-pack.jpg",
+    "source": "https://www.alibaba.com/showroom/private-label-screen-protector.html",
+    "original_image": "https://s.alicdn.com/%40sc04/kf/H18b2a11a6a3448ffb163a19b76885770Y/3-Pack-Custom-logo-Screen-Protector-Custom-Screen-Protector-Packaging-Mobile-Screen-Protector.jpg",
+    "description": "Supplier marketing image of glass protectors and customizable retail packaging",
+    "publisher": "Alibaba.com supplier listing",
+    "rights": "Public supplier marketing content; user requested editorial use; independent reuse license not verified",
+    "limitations": "Illustration only; not evidence of DDNZ stock, tests or verified specifications. Original artwork retained; no visible caption."
+  }
+]
