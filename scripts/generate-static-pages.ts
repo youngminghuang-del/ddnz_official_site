@@ -1,3 +1,4 @@
+import homeStorageMarketSchema from '../src/data/home-storage-market-schema.json';
 import UsedGoodsContent, {usedGoodsMetadata, type UsedGoodsCountry} from '../src/features/freight/UsedGoodsContent';
 import {MarketFreightContent, marketMetadata} from '../src/features/freight/MarketFreightContent';
 import gulfStories from '../src/features/freight/gulfStories.json';
@@ -1268,7 +1269,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
