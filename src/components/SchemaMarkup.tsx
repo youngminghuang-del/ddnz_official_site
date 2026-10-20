@@ -1,3 +1,4 @@
+import homeStorageMarketSchema from '../data/home-storage-market-schema.json';
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
 import { PUBLIC_SOCIAL_CHANNELS } from '../config/socialChannels';
@@ -188,6 +189,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
           '@id': data.url || 'https://www.ddnzglobal.com/insights/'
         }
       };
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '')) {
+      finalSchema = { ...finalSchema, ...homeStorageMarketSchema };
     }
 
     // Create script tag and append to head
