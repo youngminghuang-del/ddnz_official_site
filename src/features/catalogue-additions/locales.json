@@ -1,0 +1,514 @@
+{
+  "en": {
+    "choose": "Select supply configuration",
+    "values": [
+      "Confirm configuration",
+      "Metal frame · 600D Oxford fabric",
+      "Removable battery · capacity and supply scope to confirm",
+      "Brushless DC hub motor",
+      "Drum brake",
+      "Tyre included",
+      "Motor only · tyre excluded"
+    ],
+    "wagon": {
+      "heading": "Electric camping wagon wholesale from China",
+      "intro": "Move camping equipment with a folding electric-assist wagon. Compare the frame, folding size, rear opening and battery arrangement before planning a bulk order.",
+      "name": "24 V folding electric camping wagon",
+      "label": "Camping equipment transport",
+      "note": "Confirm the working load, net/gross weight, packed dimensions, battery capacity, charger and delivery scope. Camping equipment shown in scene photos is not included. This catalogue is for goods transport.",
+      "fields": [
+        "Motor configuration",
+        "Operating voltage",
+        "Body dimensions",
+        "Folded dimensions",
+        "Cargo volume",
+        "Frame and fabric",
+        "Battery arrangement",
+        "Working load",
+        "Net weight",
+        "Packed dimensions"
+      ],
+      "images": [
+        "Wagon overall view",
+        "Rear opening · equipment not included",
+        "Folding and boot storage",
+        "Battery installation and removal",
+        "Wheel and folding-frame detail"
+      ],
+      "nav": "Electric camping wagon"
+    },
+    "motor": {
+      "heading": "Replacement hub motors for electric scooter orders",
+      "intro": "Source a 10-inch drum-brake hub motor from China for assembly or spare-parts orders. Select voltage, power and tyre scope separately; wheel diameter alone does not establish compatibility.",
+      "name": "10-inch drum-brake hub motor",
+      "note": "Send the existing motor label, axle drawing, fork opening, controller voltage/current and connector pinout. Confirm cable length, net weight and packing for the selected SKU; photos show the product family, not guaranteed fitment to the scooters above.",
+      "fields": [
+        "Rated voltage",
+        "Rated power",
+        "Motor type",
+        "Brake type",
+        "Wheel size class",
+        "Supply scope",
+        "Controller matching",
+        "Axle and thread",
+        "Cable and connector",
+        "Net weight / packing"
+      ],
+      "images": [
+        "Hub motor with tyre · assembly example",
+        "Motor without tyre",
+        "Tyre and drum-brake side view",
+        "Phase/Hall connectors and tyre detail"
+      ],
+      "nav": "Hub motors"
+    }
+  },
+  "zh": {
+    "choose": "选择供货配置",
+    "values": [
+      "按配置确认",
+      "金属车架 · 600D牛津布",
+      "可拆电池 · 容量与供货范围待确认",
+      "直流无刷轮毂电机",
+      "鼓刹",
+      "含轮胎",
+      "单电机 · 不含轮胎"
+    ],
+    "wagon": {
+      "heading": "中国电动露营推车批发",
+      "intro": "以折叠电动助力推车搬运露营装备，批量采购前比较车架、折叠尺寸、尾板开启和电池结构。",
+      "name": "24 V折叠电动露营推车",
+      "label": "露营装备搬运",
+      "note": "工作载荷、净毛重、包装尺寸、电池容量、充电器与交付范围需确认。场景图中的露营装备不随车提供，本目录按货物搬运用途选型。",
+      "fields": [
+        "电机配置",
+        "工作电压",
+        "车身尺寸",
+        "折叠尺寸",
+        "车厢容量",
+        "车架与布料",
+        "电池结构",
+        "工作载荷",
+        "净重",
+        "包装尺寸"
+      ],
+      "images": [
+        "推车整车外观",
+        "尾板开启（不含场景装备）",
+        "折叠与后备厢收纳",
+        "电池安装与拆卸",
+        "轮组与折叠车架细节"
+      ],
+      "nav": "电动露营推车"
+    },
+    "motor": {
+      "heading": "电动滑板车配套与维修轮毂电机",
+      "intro": "从中国采购10寸鼓刹轮毂电机，用于整车装配或备件订单。分别选择电压、功率和轮胎供货范围，不能仅凭轮径判断能否替换。",
+      "name": "10寸鼓刹轮毂电机",
+      "note": "提供原电机铭牌、轴位图、前叉开档、控制器电压电流及接线定义。线长、净重与包装按所选SKU确认；图片展示该产品系列，不代表保证适配上方所有滑板车。",
+      "fields": [
+        "额定电压",
+        "额定功率",
+        "电机类型",
+        "制动类型",
+        "轮径规格",
+        "供货范围",
+        "控制器匹配",
+        "轴位与螺纹",
+        "线长与接头",
+        "净重与包装"
+      ],
+      "images": [
+        "含轮胎轮毂总成示例",
+        "不含轮胎的电机",
+        "轮胎与鼓刹侧面",
+        "三相线、霍尔接口与轮胎细节"
+      ],
+      "nav": "轮毂电机"
+    }
+  },
+  "ru": {
+    "choose": "Выберите комплект поставки",
+    "values": [
+      "Уточнить комплектацию",
+      "Металлическая рама · ткань Oxford 600D",
+      "Съёмный аккумулятор · ёмкость и комплект уточняются",
+      "Бесщёточный мотор-колесо постоянного тока",
+      "Барабанный тормоз",
+      "С шиной",
+      "Только мотор · без шины"
+    ],
+    "wagon": {
+      "heading": "Электрические тележки для кемпинга оптом из Китая",
+      "intro": "Складная тележка с электроприводом для перевозки туристического снаряжения. Перед оптовым заказом сравните раму, размеры в сложенном виде, задний борт и аккумулятор.",
+      "name": "Складная электрическая тележка 24 В",
+      "label": "Перевозка туристического снаряжения",
+      "note": "Уточните рабочую нагрузку, массу нетто/брутто, упаковку, ёмкость аккумулятора, зарядное устройство и комплект. Снаряжение на фотографиях не входит в поставку. Подбор предназначен для перевозки грузов.",
+      "fields": [
+        "Моторы",
+        "Рабочее напряжение",
+        "Размеры корпуса",
+        "Размеры в сложенном виде",
+        "Объём кузова",
+        "Рама и ткань",
+        "Аккумулятор",
+        "Рабочая нагрузка",
+        "Масса нетто",
+        "Размеры упаковки"
+      ],
+      "images": [
+        "Общий вид тележки",
+        "Открытый задний борт · без снаряжения",
+        "Складывание и хранение в багажнике",
+        "Установка и снятие аккумулятора",
+        "Колесо и складная рама"
+      ],
+      "nav": "Электрическая тележка"
+    },
+    "motor": {
+      "heading": "Запасные мотор-колёса для электросамокатов",
+      "intro": "Закупайте в Китае 10-дюймовые мотор-колёса с барабанным тормозом для сборки и запасных частей. Отдельно выбирайте напряжение, мощность и наличие шины; одного диаметра недостаточно для проверки совместимости.",
+      "name": "Мотор-колесо 10 дюймов с барабанным тормозом",
+      "note": "Пришлите шильдик старого мотора, чертёж оси, ширину вилки, напряжение и ток контроллера, распиновку разъёмов. Длину кабеля, массу и упаковку уточните по выбранному артикулу. Фото серии не гарантируют совместимость со всеми самокатами выше.",
+      "fields": [
+        "Номинальное напряжение",
+        "Номинальная мощность",
+        "Тип мотора",
+        "Тормоз",
+        "Размер колеса",
+        "Комплект поставки",
+        "Подбор контроллера",
+        "Ось и резьба",
+        "Кабель и разъём",
+        "Масса и упаковка"
+      ],
+      "images": [
+        "Мотор-колесо с шиной · пример сборки",
+        "Мотор без шины",
+        "Шина и барабанный тормоз сбоку",
+        "Фазные провода, разъём Холла и шина"
+      ],
+      "nav": "Мотор-колёса"
+    }
+  },
+  "fr": {
+    "choose": "Choisir la configuration livrée",
+    "values": [
+      "Configuration à confirmer",
+      "Châssis métallique · tissu Oxford 600D",
+      "Batterie amovible · capacité et fourniture à confirmer",
+      "Moteur-roue CC sans balais",
+      "Frein à tambour",
+      "Pneu inclus",
+      "Moteur seul · pneu exclu"
+    ],
+    "wagon": {
+      "heading": "Chariots électriques de camping en gros de Chine",
+      "intro": "Transportez le matériel de camping avec un chariot pliant à assistance électrique. Comparez châssis, encombrement plié, ouverture arrière et batterie avant la commande en gros.",
+      "name": "Chariot électrique pliant de camping 24 V",
+      "label": "Transport de matériel de camping",
+      "note": "Confirmez la charge utile, les poids net/brut, les dimensions emballées, la capacité de batterie, le chargeur et la fourniture. Le matériel montré en situation est exclu. Sélection pour le transport de marchandises.",
+      "fields": [
+        "Motorisation",
+        "Tension de fonctionnement",
+        "Dimensions du chariot",
+        "Dimensions pliées",
+        "Volume du bac",
+        "Châssis et tissu",
+        "Batterie",
+        "Charge utile",
+        "Poids net",
+        "Dimensions emballées"
+      ],
+      "images": [
+        "Vue générale du chariot",
+        "Ouverture arrière · matériel exclu",
+        "Pliage et rangement dans le coffre",
+        "Installation et retrait de batterie",
+        "Roue et châssis pliant"
+      ],
+      "nav": "Chariot électrique de camping"
+    },
+    "motor": {
+      "heading": "Moteurs-roues de rechange pour trottinettes électriques",
+      "intro": "Achetez en Chine un moteur-roue de 10 pouces à frein à tambour pour assemblage ou pièces détachées. Choisissez séparément tension, puissance et pneu ; le diamètre ne suffit pas à établir la compatibilité.",
+      "name": "Moteur-roue 10 pouces à frein à tambour",
+      "note": "Envoyez la plaque du moteur existant, le plan de l’axe, l’entraxe de fourche, la tension et le courant du contrôleur et le brochage. Câble, poids et emballage à confirmer par référence. Les photos de la série ne garantissent pas la compatibilité avec toutes les trottinettes ci-dessus.",
+      "fields": [
+        "Tension nominale",
+        "Puissance nominale",
+        "Type de moteur",
+        "Frein",
+        "Dimension de roue",
+        "Fourniture",
+        "Contrôleur",
+        "Axe et filetage",
+        "Câble et connecteur",
+        "Poids et emballage"
+      ],
+      "images": [
+        "Moteur avec pneu · exemple d’ensemble",
+        "Moteur sans pneu",
+        "Pneu et frein à tambour de côté",
+        "Connexions phases/Hall et pneu"
+      ],
+      "nav": "Moteurs-roues"
+    }
+  },
+  "es": {
+    "choose": "Elegir configuración de suministro",
+    "values": [
+      "Confirmar configuración",
+      "Bastidor metálico · tejido Oxford 600D",
+      "Batería extraíble · confirmar capacidad y suministro",
+      "Motor de buje CC sin escobillas",
+      "Freno de tambor",
+      "Neumático incluido",
+      "Solo motor · neumático excluido"
+    ],
+    "wagon": {
+      "heading": "Carros eléctricos de camping al por mayor desde China",
+      "intro": "Transporte equipo de camping con un carro plegable con asistencia eléctrica. Compare bastidor, tamaño plegado, apertura trasera y batería antes del pedido mayorista.",
+      "name": "Carro eléctrico plegable de camping de 24 V",
+      "label": "Transporte de equipo de camping",
+      "note": "Confirme carga útil, pesos neto/bruto, embalaje, capacidad de batería, cargador y suministro. El equipo de camping mostrado no está incluido. Selección destinada al transporte de mercancías.",
+      "fields": [
+        "Motores",
+        "Tensión de trabajo",
+        "Dimensiones del carro",
+        "Dimensiones plegado",
+        "Volumen de carga",
+        "Bastidor y tejido",
+        "Batería",
+        "Carga útil",
+        "Peso neto",
+        "Dimensiones embalado"
+      ],
+      "images": [
+        "Vista general del carro",
+        "Apertura trasera · equipo excluido",
+        "Plegado y almacenamiento en maletero",
+        "Instalación y extracción de batería",
+        "Rueda y bastidor plegable"
+      ],
+      "nav": "Carro eléctrico de camping"
+    },
+    "motor": {
+      "heading": "Motores de buje de repuesto para patinetes eléctricos",
+      "intro": "Compre en China motores de buje de 10 pulgadas con freno de tambor para montaje o repuestos. Elija tensión, potencia y neumático por separado; el diámetro no basta para comprobar compatibilidad.",
+      "name": "Motor de buje de 10 pulgadas con freno de tambor",
+      "note": "Envíe placa del motor, plano del eje, apertura de horquilla, tensión y corriente del controlador y esquema de conexiones. Confirme cable, peso y embalaje por referencia. Las fotos de la familia no garantizan compatibilidad con todos los patinetes anteriores.",
+      "fields": [
+        "Tensión nominal",
+        "Potencia nominal",
+        "Tipo de motor",
+        "Freno",
+        "Tamaño de rueda",
+        "Suministro",
+        "Controlador",
+        "Eje y rosca",
+        "Cable y conector",
+        "Peso y embalaje"
+      ],
+      "images": [
+        "Motor con neumático · ejemplo de conjunto",
+        "Motor sin neumático",
+        "Vista lateral de neumático y freno",
+        "Conectores de fases/Hall y neumático"
+      ],
+      "nav": "Motores de buje"
+    }
+  },
+  "ar": {
+    "choose": "اختر تجهيزات التوريد",
+    "values": [
+      "يُرجى تأكيد التجهيز",
+      "هيكل معدني · قماش أكسفورد 600D",
+      "بطارية قابلة للإزالة · تُؤكد السعة ونطاق التوريد",
+      "محرك محور تيار مستمر بدون فُرش",
+      "فرامل أسطوانية",
+      "الإطار المطاطي مشمول",
+      "المحرك فقط · دون إطار مطاطي"
+    ],
+    "wagon": {
+      "heading": "عربات تخييم كهربائية بالجملة من الصين",
+      "intro": "انقل معدات التخييم بعربة قابلة للطي بمساعدة كهربائية. قارن الهيكل وحجم الطي والفتحة الخلفية وترتيب البطارية قبل طلب الجملة.",
+      "name": "عربة تخييم كهربائية قابلة للطي 24 فولت",
+      "label": "نقل معدات التخييم",
+      "note": "تُؤكد الحمولة والوزن الصافي والإجمالي وأبعاد التغليف وسعة البطارية والشاحن ونطاق التوريد. معدات التخييم الظاهرة غير مشمولة. الاختيار هنا مخصص لنقل البضائع.",
+      "fields": [
+        "المحركات",
+        "جهد التشغيل",
+        "أبعاد العربة",
+        "الأبعاد بعد الطي",
+        "حجم حوض الحمولة",
+        "الهيكل والقماش",
+        "البطارية",
+        "حمولة التشغيل",
+        "الوزن الصافي",
+        "أبعاد التغليف"
+      ],
+      "images": [
+        "منظر عام للعربة",
+        "الفتحة الخلفية · المعدات غير مشمولة",
+        "الطي والتخزين في صندوق السيارة",
+        "تركيب البطارية وإزالتها",
+        "العجلة والهيكل القابل للطي"
+      ],
+      "nav": "عربة تخييم كهربائية"
+    },
+    "motor": {
+      "heading": "محركات محور بديلة للسكوترات الكهربائية",
+      "intro": "اشترِ من الصين محركات محور بقياس 10 بوصات وفرامل أسطوانية للتجميع أو قطع الغيار. اختر الجهد والقدرة ونطاق توريد الإطار كلًا على حدة؛ قطر العجلة وحده لا يثبت التوافق.",
+      "name": "محرك محور 10 بوصات بفرامل أسطوانية",
+      "note": "أرسل لوحة بيانات المحرك ورسم المحور وعرض فتحة الشوكة وجهد وتيار وحدة التحكم وتوزيع أطراف الموصل. يُؤكد طول الكابل والوزن والتغليف حسب الطراز. صور السلسلة لا تضمن التوافق مع جميع السكوترات أعلاه.",
+      "fields": [
+        "الجهد المقنن",
+        "القدرة المقننة",
+        "نوع المحرك",
+        "الفرامل",
+        "مقاس العجلة",
+        "نطاق التوريد",
+        "وحدة التحكم",
+        "المحور والقلاوظ",
+        "الكابل والموصل",
+        "الوزن والتغليف"
+      ],
+      "images": [
+        "محرك مع إطار · مثال للتجميع",
+        "المحرك دون إطار مطاطي",
+        "منظر جانبي للإطار والفرامل",
+        "موصلات الأطوار وهول وتفاصيل الإطار"
+      ],
+      "nav": "محركات المحور"
+    }
+  },
+  "pt": {
+    "choose": "Selecionar configuração de fornecimento",
+    "values": [
+      "Confirmar configuração",
+      "Estrutura metálica · tecido Oxford 600D",
+      "Bateria amovível · capacidade e fornecimento a confirmar",
+      "Motor de cubo CC sem escovas",
+      "Travão de tambor",
+      "Pneu incluído",
+      "Apenas motor · pneu excluído"
+    ],
+    "wagon": {
+      "heading": "Carrinhos elétricos de campismo por grosso da China",
+      "intro": "Transporte equipamento de campismo com um carrinho dobrável de assistência elétrica. Compare estrutura, dimensões dobradas, abertura traseira e bateria antes da encomenda por grosso.",
+      "name": "Carrinho elétrico dobrável de campismo de 24 V",
+      "label": "Transporte de equipamento de campismo",
+      "note": "Confirme carga útil, pesos líquido/bruto, embalagem, capacidade da bateria, carregador e fornecimento. O equipamento de campismo nas fotografias não está incluído. Seleção para transporte de mercadorias.",
+      "fields": [
+        "Motores",
+        "Tensão de funcionamento",
+        "Dimensões do carrinho",
+        "Dimensões dobrado",
+        "Volume de carga",
+        "Estrutura e tecido",
+        "Bateria",
+        "Carga útil",
+        "Peso líquido",
+        "Dimensões embalado"
+      ],
+      "images": [
+        "Vista geral do carrinho",
+        "Abertura traseira · equipamento excluído",
+        "Dobragem e arrumação na bagageira",
+        "Instalação e remoção da bateria",
+        "Roda e estrutura dobrável"
+      ],
+      "nav": "Carrinho elétrico de campismo"
+    },
+    "motor": {
+      "heading": "Motores de cubo de substituição para trotinetes elétricas",
+      "intro": "Compre na China motores de cubo de 10 polegadas com travão de tambor para montagem ou peças. Selecione tensão, potência e pneu separadamente; o diâmetro não comprova compatibilidade.",
+      "name": "Motor de cubo de 10 polegadas com travão de tambor",
+      "note": "Envie a chapa do motor existente, desenho do eixo, abertura da forqueta, tensão e corrente do controlador e pinagem. Confirme cabo, peso e embalagem por referência. As fotos da família não garantem compatibilidade com todas as trotinetes acima.",
+      "fields": [
+        "Tensão nominal",
+        "Potência nominal",
+        "Tipo de motor",
+        "Travão",
+        "Tamanho de roda",
+        "Fornecimento",
+        "Controlador",
+        "Eixo e rosca",
+        "Cabo e conector",
+        "Peso e embalagem"
+      ],
+      "images": [
+        "Motor com pneu · exemplo de conjunto",
+        "Motor sem pneu",
+        "Vista lateral do pneu e travão",
+        "Ligações de fases/Hall e pneu"
+      ],
+      "nav": "Motores de cubo"
+    }
+  },
+  "tr": {
+    "choose": "Tedarik donanımını seçin",
+    "values": [
+      "Donanımı teyit edin",
+      "Metal şasi · 600D Oxford kumaş",
+      "Çıkarılabilir akü · kapasite ve tedarik kapsamı teyit edilmeli",
+      "Fırçasız DC göbek motoru",
+      "Kampana fren",
+      "Lastik dahil",
+      "Yalnız motor · lastik hariç"
+    ],
+    "wagon": {
+      "heading": "Çin’den toptan elektrikli kamp arabaları",
+      "intro": "Kamp ekipmanlarını katlanır elektrik destekli arabayla taşıyın. Toptan sipariş öncesinde şasiyi, katlanmış ölçüleri, arka kapağı ve akü düzenini karşılaştırın.",
+      "name": "24 V katlanır elektrikli kamp arabası",
+      "label": "Kamp ekipmanı taşıma",
+      "note": "Çalışma yükünü, net/brüt ağırlığı, paket ölçülerini, akü kapasitesini, şarj cihazını ve teslim kapsamını teyit edin. Fotoğraflardaki kamp ekipmanları dahil değildir. Bu seçim yük taşımaya yöneliktir.",
+      "fields": [
+        "Motor düzeni",
+        "Çalışma gerilimi",
+        "Araba ölçüleri",
+        "Katlanmış ölçüler",
+        "Yük hacmi",
+        "Şasi ve kumaş",
+        "Akü",
+        "Çalışma yükü",
+        "Net ağırlık",
+        "Paket ölçüleri"
+      ],
+      "images": [
+        "Arabanın genel görünümü",
+        "Arka kapak · ekipman dahil değil",
+        "Katlama ve bagajda saklama",
+        "Akü takma ve çıkarma",
+        "Tekerlek ve katlanır şasi"
+      ],
+      "nav": "Elektrikli kamp arabası"
+    },
+    "motor": {
+      "heading": "Elektrikli scooter siparişleri için yedek göbek motorları",
+      "intro": "Montaj veya yedek parça siparişleri için Çin’den 10 inç kampana frenli göbek motoru tedarik edin. Gerilim, güç ve lastik kapsamını ayrı seçin; yalnız çap uyumluluğu kanıtlamaz.",
+      "name": "10 inç kampana frenli göbek motoru",
+      "note": "Mevcut motor etiketini, aks çizimini, maşa açıklığını, kontrolcü gerilimi/akımını ve soket pin dizilimini gönderin. Kablo, ağırlık ve ambalaj seçilen ürün koduna göre teyit edilir. Seri fotoğrafları yukarıdaki tüm scooterlara uyum garantisi değildir.",
+      "fields": [
+        "Anma gerilimi",
+        "Anma gücü",
+        "Motor türü",
+        "Fren",
+        "Tekerlek ölçüsü",
+        "Tedarik kapsamı",
+        "Kontrolcü eşleşmesi",
+        "Aks ve diş",
+        "Kablo ve soket",
+        "Ağırlık ve ambalaj"
+      ],
+      "images": [
+        "Lastikli göbek motoru · montaj örneği",
+        "Lastiksiz motor",
+        "Lastik ve kampana frenin yan görünümü",
+        "Faz/Hall soketleri ve lastik detayı"
+      ],
+      "nav": "Göbek motorları"
+    }
+  }
+}

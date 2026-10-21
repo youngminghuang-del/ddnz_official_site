@@ -157,7 +157,8 @@
     "Cooking plate": "Plaque de cuisson",
     "Surface": "Surface",
     "Trays": "Plaques",
-    "Configuration": "Configuration"
+    "Configuration": "Configuration",
+    "Ice mold cells": "Nombre d’alvéoles à glaçons"
   },
   "values": {
     "Rated ice production": "Production nominale de glace",
@@ -176,7 +177,8 @@
     "435 × 315 mm trays": "Bacs de 435 × 315 mm",
     "600 × 400 mm trays": "Plaques de 600 × 400 mm",
     "500W variant": "Variante 500W",
-    "1200W variant": "Version 1200W"
+    "1200W variant": "Version 1200W",
+    "Tap water": "Eau du réseau"
   },
   "notes": {
     "Electrical configuration will be confirmed during quotation.": "La configuration électrique sera confirmée lors de la cotation.",

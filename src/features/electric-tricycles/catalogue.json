@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "code": "ET-F01",
+    "category": "pedal",
+    "values": [
+      "@0",
+      "48 V",
+      "30.5 Ah",
+      "20 in",
+      "@1",
+      "150 kg",
+      "@3",
+      "63.5 kg",
+      "113 × 79 × 78 cm",
+      "@6"
+    ],
+    "gallery": [
+      [
+        "fat-main",
+        "0"
+      ],
+      [
+        "fat-prepared",
+        "1"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "code": "ET-F02",
+    "category": "pedal",
+    "values": [
+      "750 W",
+      "48 V",
+      "@6",
+      "20 in",
+      "@1",
+      "@6",
+      "@4",
+      "49 kg",
+      "@6",
+      "@6"
+    ],
+    "gallery": [
+      [
+        "wide-main",
+        "0"
+      ],
+      [
+        "wide-rear",
+        "2"
+      ],
+      [
+        "wide-front",
+        "0"
+      ],
+      [
+        "wide-rack",
+        "2"
+      ],
+      [
+        "wide-controls",
+        "3"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "code": "ET-C01",
+    "category": "cargo",
+    "values": [
+      "800 W",
+      "@6",
+      "@6",
+      "@6",
+      "@2",
+      "300 kg",
+      "@5",
+      "225 kg",
+      "312 × 118 × 138 cm",
+      "@6"
+    ],
+    "gallery": [
+      [
+        "cargo-main",
+        "4"
+      ],
+      [
+        "cargo-bed",
+        "5"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "code": "ET-C02",
+    "category": "box",
+    "values": [
+      "1200 W",
+      "60 V",
+      "@6",
+      "@6",
+      "@2",
+      "250 kg",
+      "@5",
+      "230 kg",
+      "296 × 102 × 168 cm",
+      "@6"
+    ],
+    "gallery": [
+      [
+        "box-main",
+        "6"
+      ],
+      [
+        "box-rear",
+        "7"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "code": "ET-M01",
+    "category": "compact",
+    "values": [
+      "350 W",
+      "36 V",
+      "@6",
+      "@6",
+      "@9",
+      "@6",
+      "@7",
+      "@6",
+      "@6",
+      "@8"
+    ],
+    "gallery": [
+      [
+        "compact-main",
+        "8"
+      ],
+      [
+        "compact-controls",
+        "9"
+      ]
+    ]
+  }
+]

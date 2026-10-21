@@ -1,3 +1,5 @@
+import SdIceSeries from './components/SdIceSeries';
+import {IceModelDetails,IceModelPhoto} from './components/IceModelDetails';
 import IceBuyingChecklist from './components/IceBuyingChecklist.jsx';
 import CookingVisuals from './components/CookingVisuals';
 import CookingModelSelection from './components/CookingModelSelection';
@@ -25,9 +27,9 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
     {category.id === 'ice-machines' && <><IceSpecificationComparison/><IceBuyingChecklist/></>}
     <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{category.comparisonTitle}</h2></div><p>{category.comparisonCopy}</p></div>
       <div className="category-model-grid">{products.map(p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
-        <div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>
+        {category.id==='ice-machines'?<IceModelPhoto src={p.image} alt={`${p.model} ${p.name}`} model={p.model}/>:(<div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>)}
         <div className="category-model-copy"><p className="model">{p.model}</p><h3>{p.name}</h3><strong className="category-model-metric">{p.metric}</strong><dl>{category.comparisonKeys.filter(key => p.specs[key]).map(key => <div key={key}><dt>{key}</dt><dd>{p.specs[key]}</dd></div>)}<div><dt>Overall dimensions</dt><dd>{p.dimensions}</dd></div></dl>
-          <div className="category-price">{p.quote ? <><span>Indicative supply price</span><strong>CNY {currency(p.quote.price)} <small>/ unit</small></strong><span>Reference quantity: {p.quote.minUnits} {p.quote.minUnits === 1 ? 'unit' : 'units'}</span></> : <><span>Wholesale pricing</span><strong>Request a quote</strong><span>For your quantity and destination</span></>}</div>
+          <IceModelDetails id={p.id}/><div className="category-price">{p.quote ? <><span>Indicative supply price</span><strong>CNY {currency(p.quote.price)} <small>/ unit</small></strong><span>Reference quantity: {p.quote.minUnits} {p.quote.minUnits === 1 ? 'unit' : 'units'}</span></> : <><span>Wholesale pricing</span><strong>Request a quote</strong><span>For your quantity and destination</span></>}</div>
           <a className="button primary" href={kitchenModelHref(p.id)} data-category-action="select_model">Plan an order for {p.model} <span aria-hidden="true">→</span></a>
           {p.imageNote && <p className="fine">{p.imageNote}</p>}
           {p.quote?.configurationNote && <p className="fine">{p.quote.configurationNote}</p>}
@@ -35,6 +37,7 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
       </article>)}</div>
       <p className="fine category-price-note">Product images are retouched. Prices are indicative for the stated reference quantities. Freight and taxes are extra. Final price, availability and electrical configuration are confirmed with your quotation.{category.id === 'ice-machines' && ' Ice output figures are rated values; test conditions and bin capacity will be confirmed.'}</p>
     </section>
+    {category.id==='ice-machines'&&<SdIceSeries/>}
     <CookingVisuals category={category}/>
  <CookingModelSelection category={category}/>
     <section id="category-buying" className="section wrap category-buying"><p className="eyebrow">BEFORE YOU BUY</p><h2>{category.buyingTitle}</h2><div className="category-buying-grid">{category.buying.map((item, i) => <article key={item.title}><span className="category-step">0{i + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></section>

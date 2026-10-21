@@ -1,3 +1,4 @@
+import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import ProductDirectoryMenu from './ProductDirectoryMenu';
 import { aboutCopy } from '../features/company-identity/aboutCopy';
 import { foodCategoryNavigation, foodNavigationLabels } from '../config/foodCategoryNavigation';
@@ -272,7 +273,8 @@ export default function SourcingHomepageNav({
   const headerRef = useRef<HTMLElement>(null);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const collapsedHeaderRef = useRef<HTMLDivElement>(null);
-  const labels = navLabels[language];
+  const serviceLabels = serviceNavigationLabels[language];
+  const labels = {...navLabels[language], services: serviceLabels.heading};
   const freightLabels = freightNavCopy[language];
   const dangerousGoodsPath = `${navigationPrefixes[language]}/services/dangerous-goods-shipping-from-china/`;
   const dangerousGoodsLabel = freightLabels.dg;
@@ -292,7 +294,7 @@ export default function SourcingHomepageNav({
   const processPath = localizedPath('/how-we-work');
   const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=${showFreightExecutor ? 'Freight%20Export' : 'Product%20Sourcing'}&source=homepage_navigation`);
   const freightQuoteLabels: Record<Language, string> = { zh: '提交货运需求', en: 'Request freight quote', es: 'Consultar transporte', fr: 'Demander un devis fret', ru: 'Запросить перевозку', ar: 'اطلب عرض شحن', pt: 'Solicitar frete', tr: 'Navlun teklifi alın' };
-  const productSurface=['/','/about'].includes(splitNavigationPath(location.pathname).pathname)||(!showFreightExecutor&&splitNavigationPath(location.pathname).pathname==='/get-a-quote') || /\/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(location.pathname);
+  const productSurface=['/','/about'].includes(splitNavigationPath(location.pathname).pathname)||(!showFreightExecutor&&splitNavigationPath(location.pathname).pathname==='/get-a-quote') || /\/sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(location.pathname);
   const wholesaleLabels:Record<Language,string>={en:'Get a wholesale quote',zh:'获取批发报价',fr:'Demander un devis de gros',es:'Cotizar al por mayor',pt:'Solicitar cotação por atacado',ru:'Запросить оптовую цену',tr:'Toptan fiyat teklifi alın',ar:'اطلب عرض سعر بالجملة'};
   const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : productSurface ? wholesaleLabels[language] : labels.start;
   const languageOptions = supportedLanguages || (englishProduct ? allNavigationLanguages : supportedNavigationLanguages(location.pathname));
@@ -508,10 +510,10 @@ export default function SourcingHomepageNav({
             {productMenu(closeDesktopDropdown, 'desktop')}
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{labels.services}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{serviceLabels.overview}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</DropdownLink>
           </Dropdown>
           <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} align="right" panelClassName="w-[min(780px,calc(100vw-2rem))]" onToggle={toggleDesktopDropdown}>
             <div className="grid grid-cols-3 gap-3">
@@ -652,10 +654,10 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'services' ? (
               <div id="mobile-services-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{labels.services}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{serviceLabels.overview}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</Link>
               </div>
               ) : null}
             </div>

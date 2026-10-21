@@ -1,0 +1,682 @@
+{
+  "en": {
+    "title": "Wholesale Four-Wheel Electric Vehicles from China | DDNZ",
+    "heading": "Four-wheel electric vehicles. Wholesale from China.",
+    "summary": "Compare enclosed delivery vehicles and seated four-wheel electric scooters for wholesale orders. Confirm the load, seat arrangement, battery and body configuration for the intended use.",
+    "nav": "Four-wheel electric vehicles",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "Delivery work or seated mobility?",
+    "intro": "Filter by delivery work or seating style, then compare load, vehicle width and battery supply for each configuration.",
+    "categories": [
+      "All vehicles",
+      "Delivery vehicles",
+      "Seated vehicles"
+    ],
+    "quote": "Request a vehicle wholesale quote",
+    "orderTitle": "Match the vehicle, battery and delivery scope",
+    "order": [
+      [
+        "Use and load",
+        "Send the intended use, load, operating site and destination. Confirm dimensions and manoeuvring space before choosing the vehicle."
+      ],
+      [
+        "Battery and sample",
+        "Specify battery chemistry, voltage, capacity, charger and plug. Some configurations exclude batteries or cells. Agree a sample and configuration list before the bulk order."
+      ],
+      [
+        "Body and export",
+        "Confirm cargo-bed size, assembly level, spare parts and packed dimensions. Branding, order quantities and delivery dates are quoted for the selected configuration."
+      ]
+    ],
+    "names": [
+      "48 V enclosed electric delivery vehicle",
+      "60 V padded-seat electric four-wheeler",
+      "500 W bench-seat electric four-wheeler"
+    ],
+    "labels": [
+      "Enclosed cab and cargo box",
+      "Padded seat and rear storage",
+      "Bare vehicle · battery and charger excluded"
+    ],
+    "fields": [
+      "Motor power",
+      "System voltage",
+      "Battery capacity",
+      "Seats, including driver",
+      "Load rating",
+      "Body configuration",
+      "Vehicle dimensions",
+      "Vehicle weight",
+      "Braking",
+      "Battery scope"
+    ],
+    "values": [
+      "Confirm configuration",
+      "Enclosed delivery box",
+      "Padded seat & rear storage",
+      "Bench seat & front basket",
+      "Electromagnetic braking",
+      "Lead-acid configuration",
+      "Battery and charger excluded"
+    ],
+    "notes": [
+      "Confirm the cargo-box interior, temperature-control requirements, loading method and battery configuration for the delivery order.",
+      "Selected 60 V configuration. Confirm the actual battery capacity, vehicle dimensions and load for the chosen seat configuration.",
+      "Bare vehicle excludes battery and charger. Specify voltage, capacity, seat arrangement and intended number of occupants in the quotation."
+    ],
+    "images": [
+      "Delivery vehicle overall view",
+      "Cab and cargo-box details",
+      "Padded-seat vehicle",
+      "Instrument panel and controls",
+      "Bench-seat vehicle",
+      "Front and rear views",
+      "Front, rear and side views",
+      "Mirror, dashboard, cargo box, lights and wheel",
+      "Front, under-seat and rear storage",
+      "Front and rear lighting views",
+      "Headlamp, padded seat, rear wheel and footboard",
+      "On-vehicle suspension closeup",
+      "Seat sections and armrests · confirm configuration",
+      "Handlebar controls, headlamp and armrest",
+      "Storage compartment and front/rear wheels",
+      "Additional front and three-quarter views"
+    ],
+    "back": "Electric tricycles"
+  },
+  "zh": {
+    "title": "中国四轮电动车批发与出口 | DDNZ",
+    "heading": "中国四轮电动车批发与出口",
+    "summary": "比较封闭式配送车和座椅式四轮电动车，面向经销与批量订单，按用途确认载荷、座椅、电池与车身配置。",
+    "nav": "四轮电动车",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "配送工作与座椅出行，分用途比较",
+    "intro": "先按配送或座椅形式筛选，再逐款核对载荷、车身宽度与电池供货范围。",
+    "categories": [
+      "全部车型",
+      "配送工作车",
+      "座椅式车型"
+    ],
+    "quote": "获取四轮车批发报价",
+    "orderTitle": "把车型、电池和交付范围一起确认",
+    "order": [
+      [
+        "用途与载荷",
+        "提供使用场景、载荷、作业地点与目的市场，选车前确认车辆尺寸及转向空间。"
+      ],
+      [
+        "电池与样车",
+        "明确电池类型、电压、容量、充电器与插头。部分配置不含电池或电芯，批量下单前确认样车与配置清单。"
+      ],
+      [
+        "货斗与出口",
+        "确认货斗尺寸、装配程度、备件及包装尺寸。品牌定制、订单数量与交期按所选配置报价。"
+      ]
+    ],
+    "names": [
+      "48 V封闭式电动配送车",
+      "60 V软座椅式四轮电动车",
+      "500 W长座椅式四轮电动车"
+    ],
+    "labels": [
+      "封闭驾驶室与货箱",
+      "软座椅与后储物箱",
+      "裸车 · 不含电池及充电器"
+    ],
+    "fields": [
+      "电机功率",
+      "系统电压",
+      "电池容量",
+      "座位数（含驾驶员）",
+      "标称载荷",
+      "车身结构",
+      "整车尺寸",
+      "整车重量",
+      "制动方式",
+      "电池供货范围"
+    ],
+    "values": [
+      "按配置确认",
+      "封闭式配送货箱",
+      "软座椅与后储物箱",
+      "长座椅与前车篮",
+      "电磁制动",
+      "铅酸电池配置",
+      "不含电池及充电器"
+    ],
+    "notes": [
+      "配送订单先确认货箱内尺寸、温控需求、装卸方式与电池配置。",
+      "所选为60 V配置；报价前确认电池实际容量、车身尺寸及对应座椅配置的载荷。",
+      "裸车不含电池与充电器，询价时分别说明电压、容量、座椅形式与计划乘坐人数。"
+    ],
+    "images": [
+      "配送整车外观",
+      "驾驶室与货箱细节",
+      "软座椅车型",
+      "仪表与控制",
+      "长座椅车型",
+      "前后多角度",
+      "车头、车尾与侧面视角",
+      "后视镜、驾驶台、货厢、灯具与车轮",
+      "前部、座下与后部储物空间",
+      "前后灯具视角",
+      "前灯、软座、后轮与脚踏",
+      "车上减震结构近景",
+      "座椅组合与扶手（配置需确认）",
+      "车把控制、前灯与扶手",
+      "储物舱与前后车轮",
+      "车头与斜侧面补充视角"
+    ],
+    "back": "电动三轮车"
+  },
+  "fr": {
+    "title": "Véhicules électriques à quatre roues de Chine | DDNZ",
+    "heading": "Véhicules électriques à quatre roues. Vente en gros depuis la Chine.",
+    "summary": "Comparez véhicules de livraison fermés et scooters électriques à quatre roues avec siège. Pour vos commandes en gros, précisez charge, sièges, batterie et carrosserie selon l’usage.",
+    "nav": "Véhicules électriques à quatre roues",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "Livraison ou déplacement avec siège ?",
+    "intro": "Filtrez par livraison ou type de siège, puis comparez charge, largeur et fourniture de batterie pour chaque configuration.",
+    "categories": [
+      "Tous les véhicules",
+      "Véhicules de livraison",
+      "Véhicules avec siège"
+    ],
+    "quote": "Demander un devis de gros",
+    "orderTitle": "Préciser véhicule, batterie et livraison",
+    "order": [
+      [
+        "Usage et charge",
+        "Indiquez usage, charge, site et destination. Vérifiez les dimensions et l’espace de manœuvre avant de choisir."
+      ],
+      [
+        "Batterie et échantillon",
+        "Précisez chimie, tension, capacité, chargeur et prise. Certaines configurations excluent batterie ou cellules. Validez un échantillon et sa configuration."
+      ],
+      [
+        "Benne et export",
+        "Confirmez benne, niveau de montage, pièces et dimensions emballées. Marquage, quantités et délais sont chiffrés selon la configuration."
+      ]
+    ],
+    "names": [
+      "Véhicule électrique de livraison fermé de 48 V",
+      "Véhicule quatre roues à siège rembourré de 60 V",
+      "Véhicule quatre roues à banquette de 500 W"
+    ],
+    "labels": [
+      "Cabine fermée et caisse",
+      "Siège rembourré et coffre arrière",
+      "Sans batterie ni chargeur"
+    ],
+    "fields": [
+      "Puissance moteur",
+      "Tension du système",
+      "Capacité batterie",
+      "Places, conducteur compris",
+      "Charge nominale",
+      "Carrosserie",
+      "Dimensions du véhicule",
+      "Poids du véhicule",
+      "Freinage",
+      "Fourniture batterie"
+    ],
+    "values": [
+      "Configuration à confirmer",
+      "Caisse de livraison fermée",
+      "Siège rembourré et coffre arrière",
+      "Banquette et panier avant",
+      "Freinage électromagnétique",
+      "Configuration plomb-acide",
+      "Batterie et chargeur exclus"
+    ],
+    "notes": [
+      "Précisez dimensions intérieures, besoins de température, chargement et batterie pour la livraison.",
+      "Configuration choisie : 60 V. Confirmer capacité réelle, dimensions et charge pour le siège sélectionné.",
+      "Batterie et chargeur exclus. Indiquez tension, capacité, sièges et nombre prévu d’occupants au devis."
+    ],
+    "images": [
+      "Vue générale du véhicule de livraison",
+      "Cabine et caisse",
+      "Modèle à siège rembourré",
+      "Tableau de bord et commandes",
+      "Modèle à banquette",
+      "Vues avant et arrière",
+      "Vues avant, arrière et latérale",
+      "Rétroviseur, tableau de bord, caisse, feux et roue",
+      "Rangements avant, sous le siège et arrière",
+      "Vues des éclairages avant et arrière",
+      "Phare, siège rembourré, roue arrière et repose-pieds",
+      "Gros plan de la suspension montée",
+      "Éléments de siège et accoudoirs · configuration à confirmer",
+      "Commandes au guidon, phare et accoudoir",
+      "Coffre et roues avant et arrière",
+      "Vues supplémentaires de face et de trois quarts"
+    ],
+    "back": "Tricycles électriques"
+  },
+  "es": {
+    "title": "Vehículos eléctricos de cuatro ruedas de China | DDNZ",
+    "heading": "Vehículos eléctricos de cuatro ruedas. Venta al por mayor desde China.",
+    "summary": "Compare vehículos cerrados de reparto y vehículos eléctricos de cuatro ruedas con asiento. Para pedidos mayoristas, defina carga, asientos, batería y carrocería según el uso.",
+    "nav": "Vehículos eléctricos de cuatro ruedas",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "¿Reparto o movilidad con asiento?",
+    "intro": "Filtre por reparto o tipo de asiento y compare carga, anchura y suministro de batería de cada configuración.",
+    "categories": [
+      "Todos los vehículos",
+      "Vehículos de reparto",
+      "Vehículos con asiento"
+    ],
+    "quote": "Solicitar presupuesto mayorista",
+    "orderTitle": "Defina vehículo, batería y entrega",
+    "order": [
+      [
+        "Uso y carga",
+        "Indique uso, carga, lugar de operación y destino. Confirme dimensiones y espacio de maniobra antes de elegir."
+      ],
+      [
+        "Batería y muestra",
+        "Especifique química, tensión, capacidad, cargador y enchufe. Algunas configuraciones excluyen batería o celdas. Apruebe muestra y configuración."
+      ],
+      [
+        "Caja y exportación",
+        "Confirme caja, grado de montaje, repuestos y dimensiones embaladas. Marca, cantidad y plazo se cotizan según configuración."
+      ]
+    ],
+    "names": [
+      "Vehículo eléctrico cerrado de reparto de 48 V",
+      "Vehículo de cuatro ruedas con asiento acolchado de 60 V",
+      "Vehículo de cuatro ruedas con asiento largo de 500 W"
+    ],
+    "labels": [
+      "Cabina cerrada y caja de carga",
+      "Asiento acolchado y baúl trasero",
+      "Sin batería ni cargador"
+    ],
+    "fields": [
+      "Potencia del motor",
+      "Tensión del sistema",
+      "Capacidad de batería",
+      "Plazas, incluido conductor",
+      "Carga nominal",
+      "Carrocería",
+      "Dimensiones del vehículo",
+      "Peso del vehículo",
+      "Frenos",
+      "Suministro de batería"
+    ],
+    "values": [
+      "Confirmar configuración",
+      "Caja cerrada de reparto",
+      "Asiento acolchado y baúl trasero",
+      "Asiento largo y cesta delantera",
+      "Frenado electromagnético",
+      "Configuración de plomo-ácido",
+      "Batería y cargador no incluidos"
+    ],
+    "notes": [
+      "Defina interior de la caja, control de temperatura, carga y batería para el reparto.",
+      "Configuración elegida: 60 V. Confirmar capacidad real, dimensiones y carga para el asiento seleccionado.",
+      "Batería y cargador no incluidos. Indique tensión, capacidad, asientos y número previsto de ocupantes."
+    ],
+    "images": [
+      "Vista del vehículo de reparto",
+      "Cabina y caja",
+      "Modelo con asiento acolchado",
+      "Panel y controles",
+      "Modelo con asiento largo",
+      "Vistas delanteras y traseras",
+      "Vistas frontal, trasera y lateral",
+      "Espejo, tablero, caja de carga, luces y rueda",
+      "Almacenamiento delantero, bajo el asiento y trasero",
+      "Vistas de las luces delanteras y traseras",
+      "Faro, asiento acolchado, rueda trasera y plataforma",
+      "Detalle de la suspensión montada",
+      "Secciones del asiento y reposabrazos · confirmar configuración",
+      "Mandos del manillar, faro y reposabrazos",
+      "Compartimento y ruedas delanteras y traseras",
+      "Vistas adicionales frontal y de tres cuartos"
+    ],
+    "back": "Triciclos eléctricos"
+  },
+  "pt": {
+    "title": "Veículos elétricos de quatro rodas da China | DDNZ",
+    "heading": "Veículos elétricos de quatro rodas. Atacado da China.",
+    "summary": "Compare veículos fechados de entrega e veículos elétricos de quatro rodas com assento. Para pedidos de atacado, defina carga, assentos, bateria e carroceria conforme o uso.",
+    "nav": "Veículos elétricos de quatro rodas",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "Entrega ou mobilidade com assento?",
+    "intro": "Filtre por entrega ou tipo de assento e compare carga, largura e fornecimento de bateria de cada configuração.",
+    "categories": [
+      "Todos os veículos",
+      "Veículos de entrega",
+      "Veículos com assento"
+    ],
+    "quote": "Solicitar cotação de atacado",
+    "orderTitle": "Defina veículo, bateria e entrega",
+    "order": [
+      [
+        "Uso e carga",
+        "Informe uso, carga, local de operação e destino. Confirme dimensões e espaço de manobra antes da escolha."
+      ],
+      [
+        "Bateria e amostra",
+        "Especifique química, tensão, capacidade, carregador e tomada. Algumas configurações excluem bateria ou células. Aprove amostra e configuração."
+      ],
+      [
+        "Caçamba e exportação",
+        "Confirme caçamba, montagem, peças e dimensões embaladas. Marca, quantidade e prazo são cotados conforme a configuração."
+      ]
+    ],
+    "names": [
+      "Veículo elétrico fechado de entrega de 48 V",
+      "Veículo de quatro rodas com assento acolchoado de 60 V",
+      "Veículo de quatro rodas com banco longo de 500 W"
+    ],
+    "labels": [
+      "Cabine fechada e compartimento de carga",
+      "Assento acolchoado e baú traseiro",
+      "Sem bateria nem carregador"
+    ],
+    "fields": [
+      "Potência do motor",
+      "Tensão do sistema",
+      "Capacidade da bateria",
+      "Lugares, incluindo condutor",
+      "Carga nominal",
+      "Carroceria",
+      "Dimensões do veículo",
+      "Peso do veículo",
+      "Frenagem",
+      "Fornecimento da bateria"
+    ],
+    "values": [
+      "Confirmar configuração",
+      "Compartimento fechado de entrega",
+      "Assento acolchoado e baú traseiro",
+      "Banco longo e cesta dianteira",
+      "Freio eletromagnético",
+      "Configuração de chumbo-ácido",
+      "Bateria e carregador não incluídos"
+    ],
+    "notes": [
+      "Defina interior do compartimento, controle de temperatura, carregamento e bateria para a entrega.",
+      "Configuração escolhida: 60 V. Confirmar capacidade real, dimensões e carga para o assento selecionado.",
+      "Bateria e carregador não incluídos. Informe tensão, capacidade, assentos e número previsto de ocupantes."
+    ],
+    "images": [
+      "Vista do veículo de entrega",
+      "Cabine e compartimento",
+      "Modelo com assento acolchoado",
+      "Painel e controles",
+      "Modelo com banco longo",
+      "Vistas dianteiras e traseiras",
+      "Vistas frontal, traseira e lateral",
+      "Espelho, painel, caixa de carga, luzes e roda",
+      "Arrumação dianteira, sob o assento e traseira",
+      "Vistas das luzes dianteiras e traseiras",
+      "Farol, assento acolchoado, roda traseira e plataforma",
+      "Pormenor da suspensão instalada",
+      "Secções do assento e apoios de braços · confirmar configuração",
+      "Comandos do guiador, farol e apoio de braço",
+      "Compartimento e rodas dianteiras e traseiras",
+      "Vistas adicionais frontal e de três quartos"
+    ],
+    "back": "Triciclos elétricos"
+  },
+  "ru": {
+    "title": "Четырёхколёсный электротранспорт из Китая оптом | DDNZ",
+    "heading": "Четырёхколёсный электротранспорт. Оптовые поставки из Китая.",
+    "summary": "Сравните закрытые развозные электромобили и четырёхколёсные электроскутеры с сиденьем. Для оптового заказа согласуйте нагрузку, сиденья, аккумулятор и кузов по назначению.",
+    "nav": "Четырёхколёсный электротранспорт",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "Доставка или поездки с сиденьем?",
+    "intro": "Выберите доставку или тип сиденья, затем сравните нагрузку, ширину машины и комплектность аккумулятора.",
+    "categories": [
+      "Все модели",
+      "Развозные машины",
+      "Модели с сиденьем"
+    ],
+    "quote": "Запросить оптовое предложение",
+    "orderTitle": "Согласуйте модель, аккумулятор и поставку",
+    "order": [
+      [
+        "Применение и нагрузка",
+        "Укажите назначение, нагрузку, площадку и страну. До выбора проверьте габариты и пространство для манёвра."
+      ],
+      [
+        "Аккумулятор и образец",
+        "Уточните тип, напряжение, ёмкость, зарядное устройство и вилку. Некоторые комплектации не включают аккумулятор или ячейки. Согласуйте образец и спецификацию."
+      ],
+      [
+        "Кузов и экспорт",
+        "Уточните кузов, степень сборки, запчасти и упаковочные размеры. Маркировка, количество и сроки рассчитываются по комплектации."
+      ]
+    ],
+    "names": [
+      "Закрытый развозной электромобиль 48 В",
+      "Четырёхколёсный электроскутер 60 В с мягким креслом",
+      "Четырёхколёсный электроскутер 500 Вт с длинным сиденьем"
+    ],
+    "labels": [
+      "Закрытая кабина и грузовой кузов",
+      "Мягкое кресло и задний кофр",
+      "Без аккумулятора и зарядного устройства"
+    ],
+    "fields": [
+      "Мощность двигателя",
+      "Напряжение системы",
+      "Ёмкость аккумулятора",
+      "Места, включая водителя",
+      "Номинальная нагрузка",
+      "Кузов",
+      "Габариты машины",
+      "Масса машины",
+      "Тормоза",
+      "Комплектность аккумулятора"
+    ],
+    "values": [
+      "Уточнить комплектацию",
+      "Закрытый развозной кузов",
+      "Мягкое кресло и задний кофр",
+      "Длинное сиденье и передняя корзина",
+      "Электромагнитный тормоз",
+      "Свинцово-кислотная комплектация",
+      "Без аккумулятора и зарядного устройства"
+    ],
+    "notes": [
+      "Согласуйте внутренние размеры, температурные требования, погрузку и аккумулятор для доставки.",
+      "Выбрана версия 60 В. Уточните фактическую ёмкость, габариты и нагрузку для выбранного сиденья.",
+      "Аккумулятор и зарядное устройство не включены. Укажите напряжение, ёмкость, сиденья и планируемое число пассажиров."
+    ],
+    "images": [
+      "Общий вид развозной машины",
+      "Кабина и кузов",
+      "Модель с мягким креслом",
+      "Приборная панель и управление",
+      "Модель с длинным сиденьем",
+      "Виды спереди и сзади",
+      "Вид спереди, сзади и сбоку",
+      "Зеркало, панель, грузовой отсек, фары и колесо",
+      "Передний, подседельный и задний отсеки",
+      "Передние и задние световые приборы",
+      "Фара, мягкое сиденье, заднее колесо и площадка",
+      "Подвеска на автомобиле крупным планом",
+      "Секции сиденья и подлокотники · уточните комплектацию",
+      "Органы управления на руле, фара и подлокотник",
+      "Отсек хранения, переднее и заднее колёса",
+      "Дополнительные виды спереди и под углом"
+    ],
+    "back": "Электротрициклы"
+  },
+  "tr": {
+    "title": "Çin’den Toptan Dört Tekerlekli Elektrikli Araçlar | DDNZ",
+    "heading": "Dört tekerlekli elektrikli araçlar. Çin’den toptan tedarik.",
+    "summary": "Kapalı teslimat araçlarını ve koltuklu dört tekerlekli elektrikli araçları karşılaştırın. Toptan sipariş için yük, koltuk, akü ve gövdeyi kullanım amacına göre belirleyin.",
+    "nav": "Dört tekerlekli elektrikli araçlar",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "Teslimat işi mi, koltuklu ulaşım mı?",
+    "intro": "Teslimat veya koltuk tipine göre filtreleyin; ardından her seçeneğin yükünü, genişliğini ve akü kapsamını karşılaştırın.",
+    "categories": [
+      "Tüm araçlar",
+      "Teslimat araçları",
+      "Koltuklu araçlar"
+    ],
+    "quote": "Toptan fiyat teklifi isteyin",
+    "orderTitle": "Araç, akü ve teslimat kapsamını belirleyin",
+    "order": [
+      [
+        "Kullanım ve yük",
+        "Kullanım, yük, çalışma alanı ve varış ülkesini belirtin. Seçimden önce ölçüleri ve manevra alanını kontrol edin."
+      ],
+      [
+        "Akü ve numune",
+        "Akü kimyası, voltaj, kapasite, şarj cihazı ve fişi belirtin. Bazı seçeneklerde akü veya hücreler dahil değildir. Numuneyi ve konfigürasyonu onaylayın."
+      ],
+      [
+        "Kasa ve ihracat",
+        "Kasa, montaj seviyesi, yedek parçalar ve ambalaj ölçülerini netleştirin. Marka, miktar ve süre seçilen konfigürasyona göre fiyatlandırılır."
+      ]
+    ],
+    "names": [
+      "48 V kapalı elektrikli teslimat aracı",
+      "60 V yumuşak koltuklu dört tekerlekli elektrikli araç",
+      "500 W uzun koltuklu dört tekerlekli elektrikli araç"
+    ],
+    "labels": [
+      "Kapalı kabin ve yük kasası",
+      "Yumuşak koltuk ve arka saklama kutusu",
+      "Akü ve şarj cihazı hariç"
+    ],
+    "fields": [
+      "Motor gücü",
+      "Sistem voltajı",
+      "Akü kapasitesi",
+      "Sürücü dahil koltuk sayısı",
+      "Nominal yük",
+      "Gövde",
+      "Araç ölçüleri",
+      "Araç ağırlığı",
+      "Frenleme",
+      "Akü kapsamı"
+    ],
+    "values": [
+      "Konfigürasyonu teyit edin",
+      "Kapalı teslimat kasası",
+      "Yumuşak koltuk ve arka saklama kutusu",
+      "Uzun koltuk ve ön sepet",
+      "Elektromanyetik fren",
+      "Kurşun-asit konfigürasyon",
+      "Akü ve şarj cihazı hariç"
+    ],
+    "notes": [
+      "Teslimat için kasa iç ölçülerini, sıcaklık ihtiyacını, yüklemeyi ve aküyü netleştirin.",
+      "Seçilen konfigürasyon 60 V’tur. Gerçek kapasiteyi, ölçüleri ve seçilen koltuğun yükünü teyit edin.",
+      "Akü ve şarj cihazı dahil değildir. Voltaj, kapasite, koltuk ve planlanan kişi sayısını belirtin."
+    ],
+    "images": [
+      "Teslimat aracının genel görünümü",
+      "Kabin ve kasa detayları",
+      "Yumuşak koltuklu model",
+      "Gösterge ve kumandalar",
+      "Uzun koltuklu model",
+      "Ön ve arka görünümler",
+      "Ön, arka ve yan görünümler",
+      "Ayna, gösterge paneli, yük kasası, farlar ve tekerlek",
+      "Ön, koltuk altı ve arka saklama alanları",
+      "Ön ve arka aydınlatma görünümleri",
+      "Far, dolgulu koltuk, arka tekerlek ve ayak platformu",
+      "Araca takılı süspansiyonun yakın görünümü",
+      "Koltuk bölümleri ve kolçaklar · donanımı teyit edin",
+      "Gidon kumandaları, far ve kolçak",
+      "Saklama bölmesi ve ön/arka tekerlekler",
+      "Ek ön ve çapraz görünümler"
+    ],
+    "back": "Elektrikli üç tekerlekli araçlar"
+  },
+  "ar": {
+    "title": "مركبات كهربائية بأربع عجلات بالجملة من الصين | DDNZ",
+    "heading": "مركبات كهربائية بأربع عجلات. بالجملة من الصين.",
+    "summary": "قارن مركبات التوصيل المغلقة والمركبات الكهربائية ذات الأربع عجلات والمقعد. لطلبات الجملة، حدد الحمولة والمقاعد والبطارية والهيكل بحسب الاستخدام.",
+    "nav": "مركبات كهربائية بأربع عجلات",
+    "eyebrow": "DDNZ GLOBAL",
+    "catalogue": "التوصيل أم التنقل بمقعد؟",
+    "intro": "رشّح بحسب التوصيل أو نوع المقعد، ثم قارن الحمولة وعرض المركبة ونطاق توريد البطارية لكل تجهيز.",
+    "categories": [
+      "جميع المركبات",
+      "مركبات توصيل",
+      "مركبات بمقعد"
+    ],
+    "quote": "اطلب عرض سعر بالجملة",
+    "orderTitle": "حدد المركبة والبطارية ونطاق التسليم",
+    "order": [
+      [
+        "الاستخدام والحمولة",
+        "أرسل الاستخدام والحمولة وموقع العمل وبلد الوجهة. تحقق من الأبعاد ومساحة المناورة قبل الاختيار."
+      ],
+      [
+        "البطارية والعينة",
+        "حدد كيمياء البطارية والجهد والسعة والشاحن والقابس. بعض التجهيزات لا تشمل البطارية أو الخلايا. اعتمد العينة وقائمة التجهيزات."
+      ],
+      [
+        "الصندوق والتصدير",
+        "أكد أبعاد الصندوق ومستوى التجميع وقطع الغيار وأبعاد التغليف. تسعّر العلامة والكمية وموعد التسليم بحسب التجهيز."
+      ]
+    ],
+    "names": [
+      "مركبة توصيل كهربائية مغلقة 48 فولت",
+      "مركبة كهربائية بأربع عجلات ومقعد مبطن 60 فولت",
+      "مركبة كهربائية بأربع عجلات ومقعد طويل 500 واط"
+    ],
+    "labels": [
+      "مقصورة مغلقة وصندوق شحن",
+      "مقعد مبطن وصندوق خلفي",
+      "دون بطارية أو شاحن"
+    ],
+    "fields": [
+      "قدرة المحرك",
+      "جهد النظام",
+      "سعة البطارية",
+      "المقاعد بما فيها السائق",
+      "الحمولة الاسمية",
+      "الهيكل",
+      "أبعاد المركبة",
+      "وزن المركبة",
+      "الفرامل",
+      "نطاق توريد البطارية"
+    ],
+    "values": [
+      "يؤكد حسب التجهيز",
+      "صندوق توصيل مغلق",
+      "مقعد مبطن وصندوق خلفي",
+      "مقعد طويل وسلة أمامية",
+      "فرامل كهرومغناطيسية",
+      "تجهيز ببطارية رصاص حمضية",
+      "البطارية والشاحن غير مشمولين"
+    ],
+    "notes": [
+      "حدد أبعاد الصندوق الداخلية ومتطلبات الحرارة والتحميل والبطارية لطلب التوصيل.",
+      "التجهيز المختار 60 فولت. أكد السعة الفعلية والأبعاد والحمولة للمقعد المختار.",
+      "البطارية والشاحن غير مشمولين. حدد الجهد والسعة والمقاعد وعدد الركاب المخطط له."
+    ],
+    "images": [
+      "المظهر العام لمركبة التوصيل",
+      "تفاصيل المقصورة والصندوق",
+      "مركبة بمقعد مبطن",
+      "لوحة العدادات وأدوات التحكم",
+      "مركبة بمقعد طويل",
+      "مناظر أمامية وخلفية",
+      "مناظر أمامية وخلفية وجانبية",
+      "المرآة ولوحة القيادة وصندوق الحمولة والمصابيح والعجلة",
+      "مساحات التخزين الأمامية وتحت المقعد والخلفية",
+      "مناظر الإضاءة الأمامية والخلفية",
+      "المصباح والمقعد المبطن والعجلة الخلفية ومسند القدمين",
+      "لقطة قريبة لنظام التعليق المثبت",
+      "أجزاء المقعد ومساند الذراعين · يُرجى تأكيد التجهيز",
+      "مفاتيح المقود والمصباح ومسند الذراع",
+      "حجرة التخزين والعجلات الأمامية والخلفية",
+      "مناظر إضافية أمامية ومن زاوية مائلة"
+    ],
+    "back": "دراجات كهربائية ثلاثية العجلات"
+  }
+}

@@ -1,3 +1,5 @@
+import utilityVehicleCopies from '../src/features/electric-utility-vehicles/locales.json';
+import tricycleCopies from '../src/features/electric-tricycles/locales.json';
 import cairoMobileWholesaleSchema from '../src/data/cairo-mobile-wholesale-schema.json';
 import scooterCatalogueLocales from '../src/features/electric-mobility/locales.json';
 import powerCatalogueLocales from '../src/features/portable-power-catalogue/locales.json';
@@ -908,7 +910,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1678,7 +1680,7 @@ function injectStaticRouteContent(
     // Start the route bundle with the document and style the server-rendered
     // content before the client router mounts the interactive page.
     const routeAssets = fs.readdirSync(path.resolve('dist/assets'))
-      .filter(name => /^OutdoorPage-[\w-]+\.(js|css)$/.test(name));
+      .filter(name => /^(?:OutdoorPage-[\w-]+\.(?:js|css)|(?:supplements|electric-mobility)-[\w-]+\.css)$/.test(name));
     const routeLinks = routeAssets.map(name => name.endsWith('.css')
       ? `<link rel="stylesheet" crossorigin href="/assets/${name}">`
       : `<link rel="modulepreload" crossorigin href="/assets/${name}">`).join('\n');
@@ -1885,6 +1887,8 @@ function run() {
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
   const basePaths = [
+    {path:'sourcing/electric-utility-vehicles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
+    {path:'sourcing/electric-tricycles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     {path:'sourcing/portable-power-stations-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     {path:'sourcing/electric-bicycles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     {path:'sourcing/home-energy-storage-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
@@ -1986,6 +1990,8 @@ function run() {
       if (lang !== 'en' && ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos')) { const meta=filmGuideMeta((lang==='zh-cn'?'zh':lang) as FilmGuideLocale,filmGuideKind(entry.path)); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if(entry.path==='sourcing/portable-power-stations-from-china') seo={title:lang==='zh-cn'?'中国便携电源批发与OEM定制 | DDNZ Global':'Wholesale Portable Power Stations from China | DDNZ Global',desc:lang==='zh-cn'?'比较300W、500W和1200W便携电源的储电容量、输出波形、接口及充电配置，询问中国批发与OEM出口订单。':'Compare 300W, 500W and 1200W portable power stations from China. Explore capacity, waveform, ports and charging for wholesale and OEM orders.',keywords:'',image:'/images/portable-power-catalogue/h1-main.webp'};
       if(entry.path==='sourcing/portable-power-stations-from-china' && Object.hasOwn(powerCatalogueLocales,lang)){const copy=powerCatalogueLocales[lang as keyof typeof powerCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/portable-power-catalogue/h1-main.webp'};}
+      if(entry.path==='sourcing/electric-utility-vehicles-from-china'){const copy=utilityVehicleCopies[(lang==='zh-cn'?'zh':lang) as keyof typeof utilityVehicleCopies];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/electric-utility-vehicles/delivery-main.webp'};}
+      if(entry.path==='sourcing/electric-tricycles-from-china'){const copy=tricycleCopies[(lang==='zh-cn'?'zh':lang) as keyof typeof tricycleCopies];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/electric-tricycles/wide-main.webp'};}
       if(entry.path==='sourcing/electric-bicycles-from-china') seo={title:lang==='zh-cn'?'中国电动单车批发与OEM定制 | DDNZ Global':'Wholesale Electric Bicycles from China | DDNZ Global',desc:lang==='zh-cn'?'比较折叠、胖胎和26英寸电助力单车，按电池、制动与车架配置询问中国批发与OEM出口订单。':'Compare folding, fat-tyre and trekking electric bicycles from China. Request model-specific wholesale and OEM configurations.',keywords:'',image:'/images/electric-bicycles/b1-hero.webp'};
       if(entry.path==='sourcing/electric-bicycles-from-china' && Object.hasOwn(bicycleCatalogueLocales,lang)){const copy=bicycleCatalogueLocales[lang as keyof typeof bicycleCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/electric-bicycles/b1-hero.webp'};}
       if(entry.path==='sourcing/home-energy-storage-from-china') seo={title:lang==='zh-cn'?'中国家庭储能电池批发与OEM定制 | DDNZ Global':'Wholesale Home Energy Storage Batteries from China | DDNZ Global',desc:lang==='zh-cn'?'比较壁挂、机柜与高压堆叠式磷酸铁锂储能电池，按电压、容量与逆变器匹配询问批发和OEM配置。':'Compare wall-mounted, rack and high-voltage LiFePO4 home storage batteries from China. Request wholesale and OEM configurations.',keywords:'',image:'/images/home-storage/hv-modules.webp'};
@@ -2146,7 +2152,7 @@ function run() {
       const routePost = postSlugOrId ? findArticleByRoute(blogPosts, lang, postSlugOrId) : undefined;
       const articleHreflang = routePost ? getArticleHreflangSet(routePost, blogPosts) : undefined;
       const loc = routePost ? articleAbsoluteUrl(routePost) : localizedSiteUrl(lang, entry.path);
-      const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
+      const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
       const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
         hrefLang: code === 'pt' && entry.path === 'shipping-from-china-to-brazil' ? 'pt-BR' : normalizeArticleLocale(code),
         href: localizedSiteUrl(code, entry.path),

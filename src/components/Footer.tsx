@@ -1,3 +1,6 @@
+import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
+import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
+import tricycleCopies from '../features/electric-tricycles/locales.json';
 import {supplyPositioning,roleExtras} from '../features/product-positioning/ProductSupply';
 import {splitNavigationPath} from '../lib/productLanguageRouting';
 import CrawlableLanguageLinks from './CrawlableLanguageLinks';
@@ -23,22 +26,13 @@ import './site-footer/site-footer.css';
 
 type FooterProps = { quotePath?: string; footerId?: string; pageKey?: string; description?: string; tagline?: string; pageLinks?: {href: string; label: string}[]; note?: string };
 const socialIcons = { linkedin: Linkedin, facebook: Share2, instagram: Instagram, tiktok: Music2, whatsapp: MessageCircle };
-const footerServiceCopy = {
-  en: { heading: 'Sourcing services', overview: 'Service overview', supplier: 'Supplier search & comparison', quality: 'Inspection & quality control', consolidation: 'Consolidation & export', process: 'How the process works' },
-  zh: { heading: '采购服务', overview: '服务总览', supplier: '供应商搜索与比价', quality: '验货与质量控制', consolidation: '集货与出口交付', process: '查看完整服务流程' },
-  ru: { heading: 'Услуги закупки', overview: 'Обзор услуг', supplier: 'Поиск и сравнение поставщиков', quality: 'Инспекция и контроль качества', consolidation: 'Консолидация и экспорт', process: 'Как устроен процесс' },
-  fr: { heading: 'Services achats', overview: 'Vue d’ensemble', supplier: 'Recherche et comparaison', quality: 'Inspection et contrôle qualité', consolidation: 'Consolidation et export', process: 'Voir le processus' },
-  es: { heading: 'Servicios de compra', overview: 'Resumen de servicios', supplier: 'Búsqueda y comparación', quality: 'Inspección y control de calidad', consolidation: 'Consolidación y exportación', process: 'Cómo funciona el proceso' },
-  ar: { heading: 'خدمات التوريد', overview: 'نظرة عامة على الخدمات', supplier: 'البحث عن الموردين والمقارنة', quality: 'الفحص ومراقبة الجودة', consolidation: 'التجميع والتصدير', process: 'كيف تعمل العملية' },
-  pt: { heading: 'Serviços de sourcing', overview: 'Visão geral', supplier: 'Busca e comparação de fornecedores', quality: 'Inspeção e controle de qualidade', consolidation: 'Consolidação e exportação', process: 'Como funciona o processo' },
-  tr: { heading: 'Tedarik hizmetleri', overview: 'Hizmetlere genel bakış', supplier: 'Tedarikçi arama ve karşılaştırma', quality: 'Denetim ve kalite kontrol', consolidation: 'Konsolidasyon ve ihracat', process: 'Süreç nasıl işler' },
-} as const;
+
 
 export default function Footer({ quotePath, footerId, pageKey = 'site', description, tagline, pageLinks = [], note }: FooterProps = {}) {
   const [legalType, setLegalType] = useState<LegalType>(null);
   const { t, language } = useLanguage();
   const {pathname}=useLocation();
-  const productSurface=['/','/about'].includes(splitNavigationPath(pathname).pathname)||/\/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(pathname);
+  const productSurface=['/','/about'].includes(splitNavigationPath(pathname).pathname)||/\/sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(pathname);
   const supply=supplyPositioning[language];
   const copy=productSurface?{...siteFooterCopy[language],brandLine:supply.eyebrow,brandDescriptor:roleExtras[language]?roleExtras[language]!.scopeBody.split('.')[0]+'.':language==='zh'?'制造并出口中国产品，为进口商、批发商与经销商提供OEM/ODM定制与批量供货。':'Manufacturing and export from China. OEM/ODM products for importers, wholesalers and distributors.',primaryCta:supply.primary}:siteFooterCopy[language];
   const id = useId();
@@ -46,6 +40,8 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
   const quoteHref = quotePath ? localizedPath(quotePath) : buildQuoteHref({ intent: 'Product Sourcing', language, source: 'footer_primary' });
   const handleContactClick = (method: string) => trackEvent(method + '_click', { cta_location: 'footer', showcase_page: pageKey });
   const productLinks = [
+    {label:utilityVehicleCopies[language].nav,to:localizedPath('/sourcing/electric-utility-vehicles-from-china')},
+    {label:tricycleCopies[language].nav,to:localizedPath('/sourcing/electric-tricycles-from-china')},
     ...[{index:2,path:'/sourcing/portable-power-stations-from-china',en:'Portable power stations',zh:'便携电源'},{index:4,path:'/sourcing/electric-bicycles-from-china',en:'Electric bicycles',zh:'电动单车'},{index:3,path:'/sourcing/home-energy-storage-from-china',en:'Home storage batteries',zh:'家庭储能电池'},{index:5,path:'/sourcing/electric-scooters-from-china',en:'Electric scooters',zh:'电动滑板车'}].map(item=>({label:roleExtras[language]?.products[item.index][0]||(language==='zh'?item.zh:item.en),to:localizedPath(item.path)})),
     { label: copy.kitchen, to: localizedPath('/sourcing/commercial-kitchen-equipment-from-china') },
     { label: copy.audio, to: localizedPath('/sourcing/audio-speakers-from-china') },
@@ -61,12 +57,12 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
     { label: copy.westAfrica, to: localizedPath('/shipping-from-china-to-west-africa') },
     { label: copy.latinAmerica, to: localizedPath('/shipping-from-china-to-latin-america') },
   ];
-  const serviceCopy = footerServiceCopy[language];
+  const serviceCopy = serviceNavigationLabels[language];
   const serviceLinks = [
     { label: serviceCopy.overview, to: localizedPath(siteNavigation.sourcingServices[0]) },
-    { label: serviceCopy.supplier, to: localizedPath(siteNavigation.sourcingServices[1]) },
     { label: serviceCopy.quality, to: localizedPath(siteNavigation.sourcingServices[2]) },
     { label: serviceCopy.consolidation, to: localizedPath(siteNavigation.sourcingServices[3]) },
+    { label: serviceCopy.supplier, to: localizedPath(siteNavigation.sourcingServices[1]) },
     { label: serviceCopy.process, to: localizedPath(siteNavigation.process) },
   ];
   const contextualLinks = language === 'en' ? pageLinks.filter(link => link.href !== '/screen-protectors') : [];
@@ -80,8 +76,8 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
               <span><strong>{COMPANY.brand}</strong><small>{copy.brandLine}</small></span>
             </Link>
             {language === 'zh' && <p className="ddnz-footer__company">{COMPANY.zh}</p>}
-            <p>{!productSurface && language === 'en' && description ? description : copy.brandDescriptor}</p>
-            {language === 'en' && tagline && <span className="ddnz-footer__tagline">{tagline}</span>}
+            <p>{copy.brandDescriptor}</p>
+            {language === 'en' && tagline && <span className="ddnz-footer__tagline">{copy.brandLine}</span>}
             <Link to={quoteHref} className="ddnz-footer__cta" onClick={() => trackEvent('cta_click', { cta_location: 'footer', cta_type: 'sourcing_brief' })}>
               {copy.primaryCta}<ArrowRight size={17} aria-hidden="true" />
             </Link>

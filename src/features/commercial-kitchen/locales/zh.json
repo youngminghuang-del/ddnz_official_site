@@ -157,7 +157,8 @@
     "Cooking plate": "烹饪板",
     "Surface": "板面",
     "Trays": "烤盘",
-    "Configuration": "配置"
+    "Configuration": "配置",
+    "Ice mold cells": "冰格数"
   },
   "values": {
     "Rated ice production": "额定制冰产量",
@@ -176,7 +177,8 @@
     "435 × 315 mm trays": "435 × 315 mm 烤盘",
     "600 × 400 mm trays": "600 × 400 mm 烤盘",
     "500W variant": "500W 版本",
-    "1200W variant": "1200W 版本"
+    "1200W variant": "1200W 版本",
+    "Tap water": "自来水"
   },
   "notes": {
     "Electrical configuration will be confirmed during quotation.": "电气配置在报价时确认。",

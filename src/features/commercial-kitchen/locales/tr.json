@@ -157,7 +157,8 @@
     "Cooking plate": "Pişirme plakası",
     "Surface": "Yüzey",
     "Trays": "Tepsiler",
-    "Configuration": "Yapılandırma"
+    "Configuration": "Yapılandırma",
+    "Ice mold cells": "Buz kalıbı göz sayısı"
   },
   "values": {
     "Rated ice production": "Nominal buz üretimi",
@@ -176,7 +177,8 @@
     "435 × 315 mm trays": "435 × 315 mm tepsiler",
     "600 × 400 mm trays": "600 × 400 mm tepsileri",
     "500W variant": "500W varyant",
-    "1200W variant": "1200W sürümü"
+    "1200W variant": "1200W sürümü",
+    "Tap water": "Şebeke suyu"
   },
   "notes": {
     "Electrical configuration will be confirmed during quotation.": "Elektrik yapılandırması teklif sırasında doğrulanacaktır.",

@@ -1,0 +1,90 @@
+{
+  "en": {
+    "heading": "Commercial cube ice machines · SD series",
+    "intro": "Compare production, storage and installation space. Three configurations share a 20 kg storage bin, with different rated daily output and power. Rated output uses 15°C ambient and 10°C inlet water; check output separately for a hot kitchen.",
+    "caption": "Front, rear and side views of the SD series · product illustration",
+    "model": "Model",
+    "output": "Rated daily output",
+    "storage": "Ice storage",
+    "power": "Rated power",
+    "size": "Listed dimensions",
+    "views": "Front, rear and side views"
+  },
+  "zh": {
+    "heading": "商用方冰机 · SD 系列",
+    "intro": "同时比较日产量、储冰量和安装空间。三种配置均列有 20 kg 储冰量，额定日产量和功率各有不同。 额定产冰量对应室温 15°C、进水 10°C；高温厨房另核实际产量。",
+    "caption": "SD 系列正面、背面与侧面（外形示意）",
+    "model": "型号",
+    "output": "额定日产量",
+    "storage": "储冰量",
+    "power": "额定功率",
+    "size": "所列外形尺寸",
+    "views": "正面、背面与侧面"
+  },
+  "fr": {
+    "heading": "Machines à glaçons professionnelles · série SD",
+    "intro": "Comparez production, stockage et espace d’installation. Les trois configurations disposent d’un bac de 20 kg, avec des productions journalières et puissances nominales différentes. La production nominale correspond à 15°C ambiants et une eau à 10°C ; vérifiez la production pour une cuisine chaude.",
+    "caption": "Vues avant, arrière et latérale de la série SD · illustration du produit",
+    "model": "Modèle",
+    "output": "Production quotidienne nominale",
+    "storage": "Stockage de glace",
+    "power": "Puissance nominale",
+    "size": "Dimensions indiquées",
+    "views": "Vues avant, arrière et latérale"
+  },
+  "es": {
+    "heading": "Máquinas de cubitos comerciales · serie SD",
+    "intro": "Compare producción, almacenamiento y espacio de instalación. Las tres configuraciones indican un depósito de 20 kg, con distinta producción diaria y potencia nominal. La producción nominal corresponde a 15°C de ambiente y agua de entrada a 10°C; confirme el rendimiento para cocinas calientes.",
+    "caption": "Vistas frontal, trasera y lateral de la serie SD · ilustración del producto",
+    "model": "Modelo",
+    "output": "Producción diaria nominal",
+    "storage": "Almacenamiento de hielo",
+    "power": "Potencia nominal",
+    "size": "Dimensiones indicadas",
+    "views": "Vistas frontal, trasera y lateral"
+  },
+  "pt": {
+    "heading": "Máquinas comerciais de gelo em cubos · série SD",
+    "intro": "Compare produção, armazenamento e espaço de instalação. As três configurações indicam um depósito de 20 kg, com produção diária e potência nominal diferentes. A produção nominal considera ambiente a 15°C e água de entrada a 10°C; confirme o rendimento para cozinhas quentes.",
+    "caption": "Vistas frontal, traseira e lateral da série SD · ilustração do produto",
+    "model": "Modelo",
+    "output": "Produção diária nominal",
+    "storage": "Armazenamento de gelo",
+    "power": "Potência nominal",
+    "size": "Dimensões indicadas",
+    "views": "Vistas frontal, traseira e lateral"
+  },
+  "ru": {
+    "heading": "Профессиональные кубиковые льдогенераторы · серия SD",
+    "intro": "Сравните производство льда, объём бункера и место для установки. У трёх конфигураций указан бункер на 20 kg, но различаются номинальная суточная производительность и мощность. Номинальная производительность указана при температуре воздуха 15°C и воды 10°C; для жаркой кухни уточните производительность отдельно.",
+    "caption": "Виды серии SD спереди, сзади и сбоку · иллюстрация конструкции",
+    "model": "Модель",
+    "output": "Номинальная суточная производительность",
+    "storage": "Вместимость бункера",
+    "power": "Номинальная мощность",
+    "size": "Указанные размеры",
+    "views": "Виды спереди, сзади и сбоку"
+  },
+  "ar": {
+    "heading": "آلات مكعبات الثلج التجارية · سلسلة SD",
+    "intro": "قارن الإنتاج والتخزين ومساحة التركيب. تتضمن التجهيزات الثلاثة خزان ثلج بسعة 20 kg، مع اختلاف الإنتاج اليومي والقدرة الاسمية. الإنتاج الاسمي محسوب عند حرارة محيطة 15°C ومياه داخلة 10°C؛ تُراجع الإنتاجية للمطابخ الحارة بشكل منفصل.",
+    "caption": "مناظر أمامية وخلفية وجانبية لسلسلة SD · رسم توضيحي للمنتج",
+    "model": "الطراز",
+    "output": "الإنتاج اليومي الاسمي",
+    "storage": "سعة تخزين الثلج",
+    "power": "القدرة الاسمية",
+    "size": "الأبعاد المذكورة",
+    "views": "مناظر أمامية وخلفية وجانبية"
+  },
+  "tr": {
+    "heading": "Ticari küp buz makineleri · SD serisi",
+    "intro": "Üretim, depolama ve kurulum alanını karşılaştırın. Üç yapılandırmada da 20 kg buz haznesi belirtilir; nominal günlük üretim ve güç değerleri farklıdır. Nominal üretim 15°C ortam ve 10°C giriş suyu içindir; sıcak mutfaklar için üretimi ayrıca teyit edin.",
+    "caption": "SD serisinin ön, arka ve yan görünümleri · ürün çizimi",
+    "model": "Model",
+    "output": "Nominal günlük üretim",
+    "storage": "Buz depolama kapasitesi",
+    "power": "Nominal güç",
+    "size": "Belirtilen ölçüler",
+    "views": "Ön, arka ve yan görünümler"
+  }
+}

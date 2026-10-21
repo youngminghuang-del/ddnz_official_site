@@ -1,4 +1,5 @@
-import HomeProductFaqs from '../src/components/HomeProductFaqs';
+import ElectricUtilityVehiclesPage from '../src/features/electric-utility-vehicles/ElectricUtilityVehiclesPage';
+import ElectricTricyclesPage from '../src/features/electric-tricycles/ElectricTricyclesPage';
 import HomeV2Preview from '../src/pages/HomeV2Preview';
 import PortablePowerPage from '../src/features/portable-power-catalogue/PortablePowerPage';
 import ElectricBicyclesPage from '../src/features/electric-bicycles/ElectricBicyclesPage';
@@ -47,8 +48,8 @@ export function renderCorePage(route: string) {
   const match=route.match(/^\/(zh-cn|ru|fr|es|ar|pt|tr)(?=\/|$)/);
   const language=(match?.[1]==='zh-cn'?'zh':match?.[1] || 'en') as any;
   const relative=(match?route.slice(match[0].length):route).replace(/^\/+|\/+$/g,'');
-  const home=<div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffefb] font-sans text-slate-900"><SourcingHomepageNav/><main><SourcingHomepageHero/><HomeOneTeamBridge/><WorldFreightMap language={language}/><HomeV2Preview embedded beforeFinal={<><Insights/><Partners/><HomeProductFaqs/></>}/></main><Footer/></div>;
-  const content=relative==='sourcing/portable-power-stations-from-china'?<PortablePowerPage/>:relative==='sourcing/electric-bicycles-from-china'?<ElectricBicyclesPage/>:relative==='sourcing/home-energy-storage-from-china'?<HomeStoragePage/>:relative==='sourcing/electric-scooters-from-china'?<ElectricScootersPage/>:relative===''?home:relative==='about'?<About/>:relative==='get-a-quote'?<GetAQuotePage/>:relative==='insights'?<InsightsHub/>:relative==='how-we-work'?<HowWeWork/>:relative==='products'?(language==='en'?<ProductsIndex/>:<LocalizedOverviewPage kind="products"/>):relative==='sourcing-services'?(language==='en'?<SourcingServices/>:<LocalizedOverviewPage kind="sourcing-services"/>):null;
+  const home=<div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffefb] font-sans text-slate-900"><SourcingHomepageNav/><main><SourcingHomepageHero/><HomeOneTeamBridge/><WorldFreightMap language={language}/><HomeV2Preview embedded beforeFinal={<><Insights/><Partners/></>}/></main><Footer/></div>;
+  const content=relative==='sourcing/electric-utility-vehicles-from-china'?<ElectricUtilityVehiclesPage/>:relative==='sourcing/electric-tricycles-from-china'?<ElectricTricyclesPage/>:relative==='sourcing/portable-power-stations-from-china'?<PortablePowerPage/>:relative==='sourcing/electric-bicycles-from-china'?<ElectricBicyclesPage/>:relative==='sourcing/home-energy-storage-from-china'?<HomeStoragePage/>:relative==='sourcing/electric-scooters-from-china'?<ElectricScootersPage/>:relative===''?home:relative==='about'?<About/>:relative==='get-a-quote'?<GetAQuotePage/>:relative==='insights'?<InsightsHub/>:relative==='how-we-work'?<HowWeWork/>:relative==='products'?(language==='en'?<ProductsIndex/>:<LocalizedOverviewPage kind="products"/>):relative==='sourcing-services'?(language==='en'?<SourcingServices/>:<LocalizedOverviewPage kind="sourcing-services"/>):null;
   if(!content)throw new Error(`Unsupported core page ${route}`);
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language}>{content}</LanguageProvider></MemoryRouter></HelmetProvider>);
 }

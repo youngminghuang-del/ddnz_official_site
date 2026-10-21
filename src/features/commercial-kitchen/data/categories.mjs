@@ -20,12 +20,12 @@ export const kitchenCategories = [
   {
     id: 'ice-machines', path: '/sourcing/commercial-ice-machines-from-china/', label: 'Ice machines',
     title: 'Commercial Ice Machines from China: Compare Models | DDNZ',
-    description: 'Compare six commercial cube ice machines from China, rated 50–250 kg/day. Review sizes, reference prices and questions for your wholesale order.',
+    description: 'Compare HZB and SD commercial cube ice machines from China, rated 25–250 kg/day. Review output, storage, dimensions and wholesale order requirements.',
     heading: 'Commercial ice machines.', emphasis: 'Find your output range.',
-    intro: 'Source commercial ice machines from China for cafés, restaurants and hospitality buyers. Compare six models by rated daily output and footprint, then request a configuration for your market.',
+    intro: 'Source commercial ice machines from China for cafés, restaurants and hospitality buyers. Compare the HZB and SD ranges by rated output, ice storage and installation space, then request a configuration for your market.',
     productIds: ['ice-39', 'ice-49', 'ice-58', 'ice-61', 'ice-64', 'ice-69'],
-    heroId: 'ice-49', statistic: '50–250 kg', statisticLabel: 'Rated daily output across six models',
-    comparisonKeys: ['Daily output'], comparisonTitle: 'Compare output and space together.',
+    heroId: 'ice-49', statistic: '25–250 kg', statisticLabel: 'Rated daily output across the HZB and SD ranges',
+    comparisonKeys: ['Daily output', 'Ice mold cells', 'Water supply'], comparisonTitle: 'Compare output and space together.',
     comparisonCopy: 'Several models share similar outer dimensions but list different daily output. Ask about the storage bin and operating conditions when narrowing the range.',
     buyingTitle: 'Plan for the busiest part of the day.',
     buying: [

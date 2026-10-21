@@ -1,3 +1,5 @@
+import '../electric-mobility/electric-mobility.css';
+import '../catalogue-additions/supplements.css';
 import { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import SEO from '../../components/SEO';

@@ -9,8 +9,8 @@ export default [
     "dimensions": "448 × 400 × 798 mm",
     "specs": {
       "Daily output": "55 kg / 24h",
-      "Cubes / cycle": "36",
-      "Water supply": "Tap or bottled water"
+      "Water supply": "Tap or bottled water",
+      "Ice mold cells": "36"
     },
     "image": "/commercial-kitchen-media/ice-49-studio-v2.png",
     "imageNote": "Retouched model-family image. Final configuration may vary.",
@@ -179,7 +179,9 @@ export default [
     "detail": "Rated ice production",
     "dimensions": "345 × 339 × 602 mm",
     "specs": {
-      "Daily output": "50 kg / 24h"
+      "Daily output": "50 kg / 24h",
+      "Ice mold cells": "40",
+      "Water supply": "Tap water"
     },
     "image": "/commercial-kitchen-media/ice-39.webp",
     "imageNote": "",
@@ -195,7 +197,9 @@ export default [
     "detail": "Rated ice production",
     "dimensions": "448 × 400 × 798 mm",
     "specs": {
-      "Daily output": "80 kg / 24h"
+      "Daily output": "80 kg / 24h",
+      "Ice mold cells": "55",
+      "Water supply": "Tap water"
     },
     "image": "/commercial-kitchen-media/ice-58.webp",
     "imageNote": "",
@@ -211,7 +215,9 @@ export default [
     "detail": "Rated ice production",
     "dimensions": "448 × 400 × 798 mm",
     "specs": {
-      "Daily output": "100 kg / 24h"
+      "Daily output": "100 kg / 24h",
+      "Ice mold cells": "78",
+      "Water supply": "Tap water"
     },
     "image": "/commercial-kitchen-media/ice-61.webp",
     "imageNote": "",
@@ -233,7 +239,9 @@ export default [
     "detail": "Rated ice production",
     "dimensions": "556 × 435 × 832 mm",
     "specs": {
-      "Daily output": "120 kg / 24h"
+      "Daily output": "120 kg / 24h",
+      "Ice mold cells": "90",
+      "Water supply": "Tap water"
     },
     "image": "/commercial-kitchen-media/ice-64.webp",
     "imageNote": "",
@@ -249,7 +257,9 @@ export default [
     "detail": "Rated ice production",
     "dimensions": "580 × 665 × 1635 mm",
     "specs": {
-      "Daily output": "250 kg / 24h"
+      "Daily output": "250 kg / 24h",
+      "Ice mold cells": "160",
+      "Water supply": "Tap water"
     },
     "image": "/commercial-kitchen-media/ice-69.webp",
     "imageNote": "",

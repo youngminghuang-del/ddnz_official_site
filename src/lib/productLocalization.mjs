@@ -16,6 +16,7 @@ export const buyerGuidePaths = Object.freeze([
   '/screen-protectors/private-label',
 ]);
 export const localizableProductPaths = Object.freeze([
+  '/sourcing/electric-tricycles-from-china','/sourcing/electric-utility-vehicles-from-china',
   '/sourcing/commercial-kitchen-equipment-from-china',
   '/screen-protectors', '/screen-protectors/compare', '/screen-protectors/calculator', ...buyerGuidePaths, ...mobilePaths, outdoorPath, powerGuidePath, '/sourcing/portable-compressor-fridges-from-china', '/sourcing/portable-air-conditioners-from-china',
 ]);

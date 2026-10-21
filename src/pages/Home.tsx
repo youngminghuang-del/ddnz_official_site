@@ -1,4 +1,3 @@
-import HomeProductFaqs from '../components/HomeProductFaqs';
 import { positioning } from '../features/search-intent/positioning.mjs';
 import {supplyPositioning} from '../features/product-positioning/ProductSupply';
 import { lazy, Suspense } from 'react';
@@ -66,7 +65,6 @@ export default function Home() {
               <>
               <Insights />
               <Partners />
-              <HomeProductFaqs/>
               </>
             )}
           />
