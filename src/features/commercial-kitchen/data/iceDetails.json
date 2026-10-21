@@ -1,0 +1,41 @@
+{
+  "ice-39": {
+    "panel": "plastic",
+    "display": "blue"
+  },
+  "ice-49": {
+    "panel": "stainless",
+    "display": "blue"
+  },
+  "ice-58": {
+    "panel": "stainless",
+    "display": "lcdBlue",
+    "power": "260 W",
+    "storage": "18 kg",
+    "weight": "26.5 kg",
+    "cycle": "10–20 min"
+  },
+  "ice-61": {
+    "panel": "stainless",
+    "display": "lcdBlue",
+    "power": "330 W",
+    "storage": "18 kg",
+    "weight": "30.3 kg",
+    "cycle": "10–20 min"
+  },
+  "ice-64": {
+    "panel": "stainless",
+    "power": "400 W",
+    "storage": "40 kg",
+    "cycle": "10–20 min",
+    "heightConflict": true
+  },
+  "ice-69": {
+    "panel": "stainless",
+    "power": "750 W",
+    "storage": "220 kg",
+    "weight": "63.1 kg",
+    "cycle": "12–20 min",
+    "construction": "split"
+  }
+}

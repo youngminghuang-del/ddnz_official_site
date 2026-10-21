@@ -157,7 +157,8 @@
     "Cooking plate": "Жарочная плита",
     "Surface": "Поверхность",
     "Trays": "Противни",
-    "Configuration": "Комплектация"
+    "Configuration": "Комплектация",
+    "Ice mold cells": "Количество ячеек для льда"
   },
   "values": {
     "Rated ice production": "Номинальная производительность по льду",
@@ -176,7 +177,8 @@
     "435 × 315 mm trays": "435 × 315 мм лотки",
     "600 × 400 mm trays": "600 × 400 мм лотки",
     "500W variant": "Вариант 500W",
-    "1200W variant": "Версия 1200W"
+    "1200W variant": "Версия 1200W",
+    "Tap water": "Водопроводная вода"
   },
   "notes": {
     "Electrical configuration will be confirmed during quotation.": "Электрическая конфигурация будет подтверждена во время котировки.",

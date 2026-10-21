@@ -1,3 +1,4 @@
+import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import ProductDirectoryMenu from './ProductDirectoryMenu';
 import { aboutCopy } from '../features/company-identity/aboutCopy';
 import { foodCategoryNavigation, foodNavigationLabels } from '../config/foodCategoryNavigation';
@@ -272,7 +273,8 @@ export default function SourcingHomepageNav({
   const headerRef = useRef<HTMLElement>(null);
   const mobileTriggerRef = useRef<HTMLButtonElement>(null);
   const collapsedHeaderRef = useRef<HTMLDivElement>(null);
-  const labels = navLabels[language];
+  const serviceLabels = serviceNavigationLabels[language];
+  const labels = {...navLabels[language], services: serviceLabels.heading};
   const freightLabels = freightNavCopy[language];
   const dangerousGoodsPath = `${navigationPrefixes[language]}/services/dangerous-goods-shipping-from-china/`;
   const dangerousGoodsLabel = freightLabels.dg;
@@ -508,10 +510,10 @@ export default function SourcingHomepageNav({
             {productMenu(closeDesktopDropdown, 'desktop')}
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{labels.services}</DropdownLink>
-            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services')}>{serviceLabels.overview}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</DropdownLink>
             <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</DropdownLink>
+            <DropdownLink onNavigate={closeDesktopDropdown} to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</DropdownLink>
           </Dropdown>
           <Dropdown id="markets" label={labels.markets} open={openDropdown === 'markets'} active={isMarketsPage} align="right" panelClassName="w-[min(780px,calc(100vw-2rem))]" onToggle={toggleDesktopDropdown}>
             <div className="grid grid-cols-3 gap-3">
@@ -652,10 +654,10 @@ export default function SourcingHomepageNav({
               </button>
               {mobileSection === 'services' ? (
               <div id="mobile-services-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{labels.services}</Link>
-                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services')}>{serviceLabels.overview}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/inspection-quality-control')}>{labels.qc}</Link>
                 <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/consolidation-export')}>{labels.consolidation}</Link>
+                <Link onClick={closeMobile} className="rounded-lg px-3 py-2.5 text-sm font-semibold text-slate-700 hover:bg-[var(--ddnz-purple-soft)]" to={localizedPath('/sourcing-services/supplier-search')}>{labels.sourcing}</Link>
               </div>
               ) : null}
             </div>

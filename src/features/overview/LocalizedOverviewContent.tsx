@@ -1,3 +1,4 @@
+import {supplyPositioning} from '../product-positioning/ProductSupply';
 import PortablePowerEntry from '../portable-power-catalogue/PortablePowerEntry';
 import ElectricBicyclesEntry from '../electric-bicycles/ElectricBicyclesEntry';
 import HomeStorageEntry from '../home-storage/HomeStorageEntry';
@@ -47,7 +48,7 @@ export default function LocalizedOverviewContent({kind,locale}: {kind:OverviewKi
       <p className="mb-4 text-sm font-bold tracking-widest text-purple-800">DDNZ GLOBAL · {product?u.categories:u.services}</p>
       <h1 className="max-w-5xl text-[clamp(2rem,4.4vw,3.5rem)] font-bold leading-tight">{product?c.productsTitle:c.servicesTitle}</h1>
       <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">{product?c.productsIntro:c.servicesIntro}</p>
-      <div className="mt-8 flex flex-wrap gap-5"><a href={product?'#categories':'#paths'} className="inline-flex min-h-11 items-center rounded-lg border border-purple-200 bg-white/80 px-5 py-3 font-bold text-purple-900">{product?u.categories:u.path}</a><a href="#rfq" className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ddnz-coral)] px-5 py-3 font-bold text-white">{u.quote}</a></div>
+      <div className="mt-8 flex flex-wrap gap-5">{!product&&<a className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ddnz-coral)] px-5 py-3 font-bold text-white" href={`${prefix}/get-a-quote/?leadGoal=Product+Sourcing&source=services_product`}>{supplyPositioning[locale].primary}</a>}<a href={product?'#categories':'#paths'} className="inline-flex min-h-11 items-center rounded-lg border border-purple-200 bg-white/80 px-5 py-3 font-bold text-purple-900">{product?u.categories:u.path}</a>{product&&<a href="#rfq" className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ddnz-coral)] px-5 py-3 font-bold text-white">{u.quote}</a>}</div>
     </div></header>
     <div className="mx-auto max-w-7xl space-y-16 px-6 py-16">
       {product && locale==='zh' && <><PortablePowerEntry zh/><ElectricBicyclesEntry zh/><HomeStorageEntry zh/><ScooterCatalogueEntry zh/></>}

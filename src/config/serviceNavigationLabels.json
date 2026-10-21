@@ -1,0 +1,66 @@
+{
+  "en": {
+    "heading": "Sourcing & export",
+    "overview": "Service overview",
+    "supplier": "Supplier search & comparison",
+    "quality": "Inspection & quality control",
+    "consolidation": "Consolidation & export",
+    "process": "How the process works"
+  },
+  "zh": {
+    "heading": "采购与出口支持",
+    "overview": "服务总览",
+    "supplier": "供应商搜索与比价",
+    "quality": "验货与质量控制",
+    "consolidation": "集货与出口交付",
+    "process": "查看完整服务流程"
+  },
+  "fr": {
+    "heading": "Achats et export",
+    "overview": "Vue d’ensemble",
+    "supplier": "Recherche et comparaison",
+    "quality": "Inspection et contrôle qualité",
+    "consolidation": "Consolidation et export",
+    "process": "Voir le processus"
+  },
+  "es": {
+    "heading": "Compras y exportación",
+    "overview": "Resumen de servicios",
+    "supplier": "Búsqueda y comparación",
+    "quality": "Inspección y control de calidad",
+    "consolidation": "Consolidación y exportación",
+    "process": "Cómo funciona el proceso"
+  },
+  "ru": {
+    "heading": "Закупки и экспорт",
+    "overview": "Обзор услуг",
+    "supplier": "Поиск и сравнение поставщиков",
+    "quality": "Инспекция и контроль качества",
+    "consolidation": "Консолидация и экспорт",
+    "process": "Как устроен процесс"
+  },
+  "pt": {
+    "heading": "Compras e exportação",
+    "overview": "Visão geral",
+    "supplier": "Busca e comparação de fornecedores",
+    "quality": "Inspeção e controle de qualidade",
+    "consolidation": "Consolidação e exportação",
+    "process": "Como funciona o processo"
+  },
+  "ar": {
+    "heading": "دعم الشراء والتصدير",
+    "overview": "نظرة عامة على الخدمات",
+    "supplier": "البحث عن الموردين والمقارنة",
+    "quality": "الفحص ومراقبة الجودة",
+    "consolidation": "التجميع والتصدير",
+    "process": "كيف تعمل العملية"
+  },
+  "tr": {
+    "heading": "Tedarik ve ihracat",
+    "overview": "Hizmetlere genel bakış",
+    "supplier": "Tedarikçi arama ve karşılaştırma",
+    "quality": "Denetim ve kalite kontrol",
+    "consolidation": "Konsolidasyon ve ihracat",
+    "process": "Süreç nasıl işler"
+  }
+}

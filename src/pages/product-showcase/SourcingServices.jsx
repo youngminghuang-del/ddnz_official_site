@@ -290,12 +290,12 @@ export function SourcingServices() {
       <main id="main">
         <section className="ss-hero" aria-labelledby="ss-title">
           <div className="ss-hero-copy">
-            <p className="ss-kicker">CHINA SOURCING SERVICES · TWO BUYING PATHS</p>
+            <p className="ss-kicker">MANUFACTURING · OEM/ODM · EXPORT SUPPORT</p>
             <h1 id="ss-title">{entryKeywords.en.servicesTitle}</h1>
             <p>{entryKeywords.en.servicesIntro}</p>
             <div className="ss-hero-actions">
-              <button className="ss-primary" type="button" onClick={() => scrollTo("brief")}>Start a sourcing brief <ArrowRight size={17} /></button>
-              <button className="ss-text-button" type="button" onClick={() => scrollTo("control")}>Review the control path <ArrowRight size={16} /></button>
+              <a className="ss-primary" href="/get-a-quote/?leadGoal=Product+Sourcing&source=services_product">Get a wholesale quote <ArrowRight size={17} /></a>
+              <button className="ss-text-button" type="button" onClick={() => scrollTo("paths")}>Existing supplier support <ArrowRight size={16} /></button>
             </div>
             <div className="ss-proof-row" aria-label="DDNZ sourcing service principles">
               <span><Boxes size={20} /><b>Mixed-SKU</b><small>retail flexibility</small></span>
@@ -451,7 +451,7 @@ export function SourcingServices() {
       <ShowcaseContactFooter
         pageKey="sourcing-services"
         description="Flexible retail assortment sourcing and managed project sourcing from China—with comparable inputs, recorded approvals and accountable release coordination."
-        tagline="China sourcing and export coordination"
+        tagline="Manufacturing, sourcing support and export"
         links={[{ label: "Sourcing paths", href: "#paths" }, { label: "Why control matters", href: "#marketplace" }, { label: "Control path", href: "#control" }, { label: "Start a brief", href: "#brief" }]}
       />
     </div>
