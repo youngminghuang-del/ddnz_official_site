@@ -199,5 +199,9 @@
     "src/features/product-positioning/product-supply.css",
     "src/features/search-intent/insight-product-links.mjs"
   ],
-  "skippedConflictCopies": []
+  "skippedConflictCopies": [],
+  "releaseBase": "05464da973bf044637bceb51109c666b29880dbc",
+  "latestCmsRun": 39530306968,
+  "releaseScope": "Eight-language product catalogues, manufacturing identity, shared navigation and approved freight refinements",
+  "cmsArticles": 43
 }
