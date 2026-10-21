@@ -42,6 +42,8 @@ const FreightMapPreview = lazy(() => import('./pages/FreightMapPreview'));
 import { foodProcessingRoutes } from './features/food-processing/pages.mjs';
 const FoodProcessingPage = lazy(() => import('./features/food-processing/FoodProcessingPage'));
 const PortablePowerPage = lazy(() => import('./features/portable-power-catalogue/PortablePowerPage'));
+const ElectricUtilityVehiclesPage = lazy(() => import('./features/electric-utility-vehicles/ElectricUtilityVehiclesPage'));
+const ElectricTricyclesPage = lazy(() => import('./features/electric-tricycles/ElectricTricyclesPage'));
 const ElectricBicyclesPage = lazy(() => import('./features/electric-bicycles/ElectricBicyclesPage'));
 const HomeStoragePage = lazy(() => import('./features/home-storage/HomeStoragePage'));
 const ElectricScootersPage = lazy(() => import('./features/electric-mobility/ElectricScootersPage'));
@@ -415,6 +417,8 @@ export default function App() {
             ))}
             <Route path="/products" element={<ProductsIndex />} />
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'portable-power'} path={prefix+'/sourcing/portable-power-stations-from-china'} element={<PortablePowerPage/>}/>)}
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-utility-vehicles'} path={prefix+'/sourcing/electric-utility-vehicles-from-china'} element={<ElectricUtilityVehiclesPage/>}/>)}
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-tricycles'} path={prefix+'/sourcing/electric-tricycles-from-china'} element={<ElectricTricyclesPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-bicycles'} path={prefix+'/sourcing/electric-bicycles-from-china'} element={<ElectricBicyclesPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'home-storage'} path={prefix+'/sourcing/home-energy-storage-from-china'} element={<HomeStoragePage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-scooters'} path={prefix+'/sourcing/electric-scooters-from-china'} element={<ElectricScootersPage/>}/>)}

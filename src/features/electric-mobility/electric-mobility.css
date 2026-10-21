@@ -4,3 +4,5 @@
 .mobility-page[dir=rtl] figcaption>span:last-child,.mobility-page[dir=rtl] .mobility-dialog-tools>span{direction:ltr;unicode-bidi:isolate}
 
 .scooter-page h1,.scooter-page h2,.scooter-page a,.scooter-page button{overflow-wrap:anywhere}.scooter-page[dir=rtl] .mobility-code,.scooter-page[dir=rtl] dd{unicode-bidi:plaintext}
+
+.utility-vehicle-page .mobility-hero h1{text-wrap:balance}

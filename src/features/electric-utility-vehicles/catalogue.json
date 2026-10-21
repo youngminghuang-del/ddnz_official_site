@@ -1,0 +1,123 @@
+[
+  {
+    "id": 1,
+    "code": "FW-D01",
+    "category": "delivery",
+    "values": [
+      "5000 W",
+      "48 V",
+      "@0",
+      "2",
+      "1000 kg",
+      "@1",
+      "@0",
+      "@0",
+      "@0",
+      "@0"
+    ],
+    "gallery": [
+      [
+        "delivery-main",
+        "0"
+      ],
+      [
+        "delivery-detail",
+        "1"
+      ],
+      [
+        "delivery-angles",
+        "6"
+      ],
+      [
+        "delivery-components",
+        "7"
+      ]
+    ]
+  },
+  {
+    "id": 2,
+    "code": "FW-S01",
+    "category": "seated",
+    "values": [
+      "500 W",
+      "60 V",
+      "@0",
+      "1",
+      "@0",
+      "@2",
+      "@0",
+      "130 kg",
+      "@4",
+      "@5"
+    ],
+    "gallery": [
+      [
+        "comfort-main",
+        "2"
+      ],
+      [
+        "comfort-controls",
+        "3"
+      ],
+      [
+        "comfort-storage",
+        "8"
+      ],
+      [
+        "comfort-lights",
+        "9"
+      ],
+      [
+        "comfort-details",
+        "10"
+      ]
+    ]
+  },
+  {
+    "id": 3,
+    "code": "FW-S02",
+    "category": "seated",
+    "values": [
+      "500 W",
+      "@0",
+      "@0",
+      "@0",
+      "140 kg",
+      "@3",
+      "175 × 70 × 103 cm",
+      "@0",
+      "@0",
+      "@6"
+    ],
+    "gallery": [
+      [
+        "bench-main",
+        "4"
+      ],
+      [
+        "bench-views",
+        "5"
+      ],
+      [
+        "bench-suspension",
+        "11"
+      ],
+      [
+        "bench-seating",
+        "12"
+      ],
+      [
+        "bench-controls",
+        "13"
+      ],
+      [
+        "bench-storage-wheels",
+        "14"
+      ],
+      [
+        "bench-extra-views",
+        "15"
+      ]
+    ]
+  }
+]

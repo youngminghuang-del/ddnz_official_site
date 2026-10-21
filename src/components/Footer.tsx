@@ -1,3 +1,5 @@
+import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
+import tricycleCopies from '../features/electric-tricycles/locales.json';
 import {supplyPositioning,roleExtras} from '../features/product-positioning/ProductSupply';
 import {splitNavigationPath} from '../lib/productLanguageRouting';
 import CrawlableLanguageLinks from './CrawlableLanguageLinks';
@@ -38,7 +40,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
   const [legalType, setLegalType] = useState<LegalType>(null);
   const { t, language } = useLanguage();
   const {pathname}=useLocation();
-  const productSurface=['/','/about'].includes(splitNavigationPath(pathname).pathname)||/\/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(pathname);
+  const productSurface=['/','/about'].includes(splitNavigationPath(pathname).pathname)||/\/sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(pathname);
   const supply=supplyPositioning[language];
   const copy=productSurface?{...siteFooterCopy[language],brandLine:supply.eyebrow,brandDescriptor:roleExtras[language]?roleExtras[language]!.scopeBody.split('.')[0]+'.':language==='zh'?'制造并出口中国产品，为进口商、批发商与经销商提供OEM/ODM定制与批量供货。':'Manufacturing and export from China. OEM/ODM products for importers, wholesalers and distributors.',primaryCta:supply.primary}:siteFooterCopy[language];
   const id = useId();
@@ -46,6 +48,8 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
   const quoteHref = quotePath ? localizedPath(quotePath) : buildQuoteHref({ intent: 'Product Sourcing', language, source: 'footer_primary' });
   const handleContactClick = (method: string) => trackEvent(method + '_click', { cta_location: 'footer', showcase_page: pageKey });
   const productLinks = [
+    {label:utilityVehicleCopies[language].nav,to:localizedPath('/sourcing/electric-utility-vehicles-from-china')},
+    {label:tricycleCopies[language].nav,to:localizedPath('/sourcing/electric-tricycles-from-china')},
     ...[{index:2,path:'/sourcing/portable-power-stations-from-china',en:'Portable power stations',zh:'便携电源'},{index:4,path:'/sourcing/electric-bicycles-from-china',en:'Electric bicycles',zh:'电动单车'},{index:3,path:'/sourcing/home-energy-storage-from-china',en:'Home storage batteries',zh:'家庭储能电池'},{index:5,path:'/sourcing/electric-scooters-from-china',en:'Electric scooters',zh:'电动滑板车'}].map(item=>({label:roleExtras[language]?.products[item.index][0]||(language==='zh'?item.zh:item.en),to:localizedPath(item.path)})),
     { label: copy.kitchen, to: localizedPath('/sourcing/commercial-kitchen-equipment-from-china') },
     { label: copy.audio, to: localizedPath('/sourcing/audio-speakers-from-china') },

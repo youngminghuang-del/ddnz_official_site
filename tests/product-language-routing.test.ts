@@ -154,14 +154,14 @@ test('native hash links sharing a history key scroll to a new anchor, then resto
   assert.notEqual(scrollPositionKey(page), scrollPositionKey({ ...page, pathname: '/products/' }));
 });
 
-test('all four product catalogues preserve their eight authored locale routes',()=>{
+test('all six product catalogues preserve their eight authored locale routes',()=>{
  assert.deepEqual(supportedNavigationLanguages('/ar/sourcing/home-energy-storage-from-china/'),languages);
  assert.deepEqual(supportedNavigationLanguages('/ru/sourcing/electric-bicycles-from-china/'),languages);
  assert.deepEqual(supportedNavigationLanguages('/es/sourcing/portable-power-stations-from-china/'),languages);
  for(const locale of languages) assert.equal(navigationPath('/sourcing/portable-power-stations-from-china/',locale),`${navigationPrefixes[locale]}/sourcing/portable-power-stations-from-china/`);
  for(const locale of languages) assert.equal(navigationPath('/sourcing/electric-bicycles-from-china/',locale),`${navigationPrefixes[locale]}/sourcing/electric-bicycles-from-china/`);
  for(const locale of languages) assert.equal(navigationPath('/sourcing/home-energy-storage-from-china/',locale),`${navigationPrefixes[locale]}/sourcing/home-energy-storage-from-china/`);
- for(const name of ['electric-scooters','electric-bicycles','home-energy-storage','portable-power-stations']){
+ for(const name of ['electric-utility-vehicles','electric-tricycles','electric-scooters','electric-bicycles','home-energy-storage','portable-power-stations']){
   assert.deepEqual(supportedNavigationLanguages(`/sourcing/${name}-from-china/`),languages);
   for(const locale of languages) assert.equal(navigationPath(`/sourcing/${name}-from-china/`,locale),`${navigationPrefixes[locale]}/sourcing/${name}-from-china/`);
  }

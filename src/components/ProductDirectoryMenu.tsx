@@ -1,3 +1,6 @@
+import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
+import tricycleCopies from '../features/electric-tricycles/locales.json';
+import supplementCopies from '../features/catalogue-additions/locales.json';
 import {Link} from 'react-router-dom';
 import {ChevronDown} from 'lucide-react';
 import type {Language} from '../i18n/translations';
@@ -27,8 +30,8 @@ export function productDirectoryGroups(language:Language){
  return [
   {label:c[0],to:'/sourcing/commercial-kitchen-equipment-from-china',children:[...kitchenCategoryNavigation(language),{label:c[19],to:'/refrigeration-equipment'}]},
   {label:c[1],to:'/sourcing/food-processing-machinery-from-china',children:foodCategoryNavigation(language)},
-  {label:c[2],to:'/sourcing/outdoor-products-from-china',children:[{label:powerLabels[language],to:'/sourcing/portable-power-stations-from-china'},{...outdoor[3],label:language==='zh'?'便携电源选型指南':outdoor[3].label},outdoor[1],{label:c[6],to:'/sourcing/home-energy-storage-from-china'},{label:c[7],to:'/sourcing/portable-air-conditioners-from-china'},{label:c[8],to:'/sourcing/portable-compressor-fridges-from-china'},{label:c[9],to:'/sourcing/outdoor-products-from-china'}]},
-  {label:c[3],to:'/products',children:[{label:c[10],to:'/sourcing/electric-bicycles-from-china'},{label:c[11],to:scooter,children:[{label:c[15],to:scooter+'/#sc-a01'},{label:c[16],to:scooter+'/#sc-k01'}]},{label:c[12],to:scooter+'/#sc-b01'}]},
+  {label:c[2],to:'/sourcing/outdoor-products-from-china',children:[{label:powerLabels[language],to:'/sourcing/portable-power-stations-from-china'},{...outdoor[3],label:language==='zh'?'便携电源选型指南':outdoor[3].label},outdoor[1],{label:c[6],to:'/sourcing/home-energy-storage-from-china'},{label:c[7],to:'/sourcing/portable-air-conditioners-from-china'},{label:c[8],to:'/sourcing/portable-compressor-fridges-from-china'},{label:supplementCopies[language].wagon.nav,to:'/sourcing/outdoor-products-from-china/#camping-wagon'},{label:c[9],to:'/sourcing/outdoor-products-from-china'}]},
+  {label:c[3],to:'/products',children:[{label:c[10],to:'/sourcing/electric-bicycles-from-china'},{label:tricycleCopies[language].nav,to:'/sourcing/electric-tricycles-from-china'},{label:utilityVehicleCopies[language].nav,to:'/sourcing/electric-utility-vehicles-from-china'},{label:c[11],to:scooter,children:[{label:c[15],to:scooter+'/#sc-a01'},{label:c[16],to:scooter+'/#sc-k01'}]},{label:c[12],to:scooter+'/#sc-b01'},{label:supplementCopies[language].motor.nav,to:scooter+'/#scooter-hub-motors'}]},
   {label:c[4],to:'/products',children:[{label:c[13],to:'/sourcing/mobile-accessories-from-china',children:[...mobileCategoryNavigation(language),screenProtectorNavigation(language)]},{label:c[14],to:'/sourcing/audio-speakers-from-china',children:audioCategoryNavigation(language)}]},
  ] satisfies Entry[];
 }

@@ -1,0 +1,23 @@
+# Product catalogue integration — 2026-10-21
+
+Status: locally validated; prepared for a draft pull request. Not deployed.
+Base: PR77 / 0cf952558067c627a64c5c1c23cbb5a773545753.
+
+Integrates the previously reviewed F61–F65 previews:
+- Five electric tricycles with 13 image groups, distinguishing pedal, cargo, box-delivery and compact models.
+- Three electric utility vehicles with 16 image groups, split by delivery and seating use.
+- Electric camping wagon on the existing outdoor page; five motor supply configurations on the existing scooter page.
+- Eight authored languages: EN, zh-CN, RU, FR, ES, AR, PT, TR. Catalogue filters, galleries, quote details, canonical URLs and language routes are included.
+
+The global product menu includes tricycles and utility vehicles, plus direct existing-page anchors for the wagon and hub motors. No extra nesting or separate wagon/motor URLs. Final integration removes duplicate trailing slashes in tricycle cross-links and new-page SEO alternates.
+
+Source material: prior 50-PDF batch, folder material IDs 02/07/11/29/30/31/33/38/42/45. Original material and full image-processing records remain in the local catalogue audit archive. Today's alibaba 02 PDFs are not adopted in this change. Fuel ATVs are excluded; fuel motocross and the wheelchair are deferred. Unknown/conflicting specifications remain unconfirmed and are not turned into performance, approval or compatibility promises.
+
+Validation:
+- Final TypeScript lint passes; 16 navigation/locale tests pass. Complete 340-test suite passed for F65 before these navigation/URL adjustments; not represented as rerun here.
+- Final preview build: 832 HTML files, 811 sitemap URLs, 104 core SSR routes, zero deployment-file failures.
+- 32-page static integration audit: one H1, self-canonical, localized menu routes (outdoor header checked in browser), new image resources, new-page language alternates, and no duplicate-slash internal links. All 795 prior production sitemap URLs retained; 16 added locale URLs.
+- Search intent: 682 pass, 123 context-only, 6 existing review cases. This is a structural check, not a ranking or translation-quality guarantee.
+- F65 already verified galleries, quotation presets and 32 desktop/mobile layouts. Final integration checked the folded product menu and direct navigation to the hub-motor section in the browser. No external enquiry submitted.
+
+Remaining: PR validation, merge/deployment and online verification; parameter confirmation (94 prior fields); separate preparation of the newly audited 13 PDFs. Production and traffic results are not inferred from local checks.

@@ -1,0 +1,722 @@
+{
+  "en": {
+    "title": "Wholesale Electric Tricycles from China | DDNZ Global",
+    "heading": "Electric tricycles. Wholesale from China.",
+    "summary": "Compare pedal-style fat-tyre tricycles and electric cargo tricycles for distributor and fleet orders. Specify the battery, load, cargo body and export packaging for your market.",
+    "nav": "Electric tricycles",
+    "eyebrow": "THREE WHEELS · DIFFERENT JOBS",
+    "catalogue": "Choose the vehicle around the load",
+    "intro": "A shopping basket and an open cargo bed serve different orders. Compare each vehicle separately; battery inclusion is shown for the selected configuration.",
+    "categories": [
+      "All vehicles",
+      "Pedal-style tricycles",
+      "Open-bed cargo",
+      "Box-body delivery",
+      "Compact seated"
+    ],
+    "quote": "Request a tricycle wholesale quote",
+    "orderTitle": "Match the vehicle, battery and delivery scope",
+    "order": [
+      [
+        "Use and load",
+        "Send the intended use, load, operating site and destination. Confirm dimensions and manoeuvring space before choosing the vehicle."
+      ],
+      [
+        "Battery and sample",
+        "Specify battery chemistry, voltage, capacity, charger and plug. Some configurations exclude batteries or cells. Agree a sample and configuration list before the bulk order."
+      ],
+      [
+        "Body and export",
+        "Confirm cargo-bed size, assembly level, spare parts and packed dimensions. Branding, order quantities and delivery dates are quoted for the selected configuration."
+      ]
+    ],
+    "names": [
+      "20-inch dual-battery fat-tyre tricycle",
+      "750 W fat-tyre electric tricycle",
+      "800 W open-bed electric cargo tricycle",
+      "1200 W box-body delivery tricycle",
+      "350 W compact seated electric tricycle"
+    ],
+    "labels": [
+      "Basket and rear rack",
+      "Battery cells excluded",
+      "1.5 m / 1.6 m bed options",
+      "1.5 m box · battery excluded",
+      "36 V lead-acid configuration"
+    ],
+    "fields": [
+      "Motor power",
+      "Battery voltage",
+      "Battery capacity",
+      "Wheel size",
+      "Drive",
+      "Load rating",
+      "Battery scope",
+      "Packed weight",
+      "Packed dimensions",
+      "Brakes"
+    ],
+    "values": [
+      "Confirm configuration",
+      "Differential drive",
+      "Brushless differential drive",
+      "Battery included in selected configuration",
+      "Battery cells excluded",
+      "Battery excluded",
+      "Confirm for order",
+      "Lead-acid battery in selected configuration",
+      "Front & rear brakes",
+      "Single-motor drive"
+    ],
+    "notes": [
+      "Confirm the motor rating and speed configuration. The battery capacity shown corresponds to the selected 48 V configuration.",
+      "Battery cells are excluded. Confirm the complete pack, charger and load rating in the quotation.",
+      "Both bed options are supplied without a battery. Select the 1.5 m bed or 1.6 m raised-side bed before quotation.",
+      "Packing figures refer to the 1.5 m box without battery. The 1.8 m box and battery-equipped versions are quoted separately.",
+      "The selected configuration is 36 V / 350 W with a lead-acid battery. Confirm battery capacity, rider/load rating and packing data before ordering."
+    ],
+    "images": [
+      "Overall view",
+      "Prepared tricycles",
+      "Rear and cargo rack",
+      "Display and controls",
+      "Cargo vehicle overall view",
+      "Cargo-bed detail",
+      "Box-body side view",
+      "Rear doors and cargo box",
+      "Compact vehicle overall view",
+      "Handlebar and seating detail"
+    ],
+    "back": "Compare two-wheel electric bicycles"
+  },
+  "zh": {
+    "title": "中国电动三轮车批发与货运车型 | DDNZ Global",
+    "heading": "中国电动三轮车批发与出口",
+    "summary": "面向经销与车队订单，比较胖胎脚踏式、敞口货斗、厢式配送和小型座椅式电动三轮车，按用途、载荷、电池与出口包装确认供货配置。",
+    "nav": "电动三轮车",
+    "eyebrow": "三轮结构 · 按用途选型",
+    "catalogue": "先看用途，再比较车型",
+    "intro": "车篮、敞口货斗和厢式货箱对应不同用途。每款单独列出配置，电池是否包含按所选车型说明。",
+    "categories": [
+      "全部车型",
+      "脚踏式三轮车",
+      "敞口货斗车",
+      "厢式配送车",
+      "小型座椅式"
+    ],
+    "quote": "获取三轮车批发报价",
+    "orderTitle": "把车型、电池和交付范围一起确认",
+    "order": [
+      [
+        "用途与载荷",
+        "提供使用场景、载荷、作业地点与目的市场，选车前确认车辆尺寸及转向空间。"
+      ],
+      [
+        "电池与样车",
+        "明确电池类型、电压、容量、充电器与插头。部分配置不含电池或电芯，批量下单前确认样车与配置清单。"
+      ],
+      [
+        "货斗与出口",
+        "确认货斗尺寸、装配程度、备件及包装尺寸。品牌定制、订单数量与交期按所选配置报价。"
+      ]
+    ],
+    "names": [
+      "20英寸双电池胖胎电动三轮车",
+      "750 W胖胎电动三轮车",
+      "800 W敞口货斗电动三轮车",
+      "1200 W厢式配送电动三轮车",
+      "350 W小型座椅式电动三轮车"
+    ],
+    "labels": [
+      "前篮与后货架",
+      "不含电芯配置",
+      "1.5米／1.6米货斗选项",
+      "1.5米货箱 · 不含电池",
+      "36 V铅酸电池配置"
+    ],
+    "fields": [
+      "电机功率",
+      "电池电压",
+      "电池容量",
+      "轮胎尺寸",
+      "驱动形式",
+      "标称载荷",
+      "电池供货范围",
+      "包装毛重",
+      "包装尺寸",
+      "制动方式"
+    ],
+    "values": [
+      "按配置确认",
+      "差速驱动",
+      "无刷差速驱动",
+      "所选配置含电池",
+      "不含电芯",
+      "不含电池",
+      "订货时确认",
+      "所选配置配铅酸电池",
+      "前后制动",
+      "单电机驱动"
+    ],
+    "notes": [
+      "电机额定功率与车速配置需确认。所列电池容量对应所选48 V配置。",
+      "配置不含电芯，报价时确认完整电池组、充电器及载荷。",
+      "两种货斗配置均不含电池，报价前选择1.5米货斗或1.6米加高货斗。",
+      "包装参数对应1.5米货箱、无电池裸车；1.8米货箱和带电池版本另行报价。",
+      "所选配置为36 V／350 W，配铅酸电池。订货前确认电池容量、骑行者与载荷范围及包装数据。"
+    ],
+    "images": [
+      "整车外观",
+      "成车备货",
+      "后部与货架",
+      "仪表与控制",
+      "货运整车外观",
+      "货斗细节",
+      "厢式车侧面",
+      "后门与货箱",
+      "小型三轮车外观",
+      "车把与座椅细节"
+    ],
+    "back": "比较两轮电动单车"
+  },
+  "fr": {
+    "title": "Tricycles électriques en gros de Chine | DDNZ Global",
+    "heading": "Tricycles électriques. Vente en gros depuis la Chine.",
+    "summary": "Comparez les tricycles à pédales à pneus larges et les véhicules électriques de livraison pour distributeurs et flottes. Précisez batterie, charge, carrosserie et emballage export.",
+    "nav": "Tricycles électriques",
+    "eyebrow": "TROIS ROUES · PLUSIEURS USAGES",
+    "catalogue": "Choisir le véhicule selon la charge",
+    "intro": "Un panier de courses et une benne ouverte répondent à des besoins différents. Chaque configuration précise si la batterie est incluse.",
+    "categories": [
+      "Tous les véhicules",
+      "Tricycles à pédales",
+      "Benne ouverte",
+      "Livraison à caisse fermée",
+      "Compact à siège"
+    ],
+    "quote": "Demander un devis de gros",
+    "orderTitle": "Préciser véhicule, batterie et livraison",
+    "order": [
+      [
+        "Usage et charge",
+        "Indiquez usage, charge, site et destination. Vérifiez les dimensions et l’espace de manœuvre avant de choisir."
+      ],
+      [
+        "Batterie et échantillon",
+        "Précisez chimie, tension, capacité, chargeur et prise. Certaines configurations excluent batterie ou cellules. Validez un échantillon et sa configuration."
+      ],
+      [
+        "Benne et export",
+        "Confirmez benne, niveau de montage, pièces et dimensions emballées. Marquage, quantités et délais sont chiffrés selon la configuration."
+      ]
+    ],
+    "names": [
+      "Tricycle à pneus larges de 20 pouces à deux batteries",
+      "Tricycle électrique à pneus larges de 750 W",
+      "Tricycle cargo à benne ouverte de 800 W",
+      "Tricycle de livraison à caisse fermée de 1200 W",
+      "Tricycle électrique compact à siège de 350 W"
+    ],
+    "labels": [
+      "Panier avant et porte-bagages arrière",
+      "Cellules de batterie exclues",
+      "Benne de 1,5 m / 1,6 m",
+      "Caisse de 1,5 m · sans batterie",
+      "Configuration plomb-acide de 36 V"
+    ],
+    "fields": [
+      "Puissance moteur",
+      "Tension batterie",
+      "Capacité batterie",
+      "Roues",
+      "Transmission",
+      "Charge nominale",
+      "Fourniture batterie",
+      "Poids brut emballé",
+      "Dimensions emballées",
+      "Freins"
+    ],
+    "values": [
+      "À confirmer selon configuration",
+      "Transmission différentielle",
+      "Transmission différentielle sans balais",
+      "Batterie incluse dans la configuration choisie",
+      "Cellules exclues",
+      "Batterie exclue",
+      "À confirmer à la commande",
+      "Batterie plomb-acide dans la configuration choisie",
+      "Freins avant et arrière",
+      "Un seul moteur"
+    ],
+    "notes": [
+      "Puissance nominale et réglage de vitesse à confirmer. La capacité indiquée correspond à la configuration 48 V choisie.",
+      "Cellules exclues. Confirmer pack complet, chargeur et charge nominale au devis.",
+      "Les deux bennes sont fournies sans batterie. Choisir 1,5 m ou 1,6 m à ridelles rehaussées.",
+      "Les données d’emballage concernent la caisse de 1,5 m sans batterie. La caisse de 1,8 m et les versions avec batterie sont chiffrées séparément.",
+      "Configuration choisie : 36 V / 350 W avec batterie plomb-acide. Confirmer capacité, charge avec conducteur et emballage avant commande."
+    ],
+    "images": [
+      "Vue générale",
+      "Véhicules préparés",
+      "Arrière et porte-bagages",
+      "Afficheur et commandes",
+      "Vue générale du cargo",
+      "Détail de la benne",
+      "Vue latérale de la caisse",
+      "Portes arrière et caisse",
+      "Vue générale du modèle compact",
+      "Guidon et siège"
+    ],
+    "back": "Comparer les vélos électriques à deux roues"
+  },
+  "es": {
+    "title": "Triciclos eléctricos de China al por mayor | DDNZ Global",
+    "heading": "Triciclos eléctricos. Venta al por mayor desde China.",
+    "summary": "Compare triciclos de pedales con neumáticos anchos y vehículos eléctricos de carga para distribuidores y flotas. Defina batería, carga, carrocería y embalaje de exportación.",
+    "nav": "Triciclos eléctricos",
+    "eyebrow": "TRES RUEDAS · DISTINTOS USOS",
+    "catalogue": "Elija el vehículo según la carga",
+    "intro": "Una cesta de compra y una caja abierta responden a pedidos distintos. Cada configuración indica si incluye batería.",
+    "categories": [
+      "Todos los vehículos",
+      "Triciclos de pedales",
+      "Caja de carga abierta",
+      "Reparto con caja cerrada",
+      "Compacto con asiento"
+    ],
+    "quote": "Solicitar presupuesto mayorista",
+    "orderTitle": "Defina vehículo, batería y entrega",
+    "order": [
+      [
+        "Uso y carga",
+        "Indique uso, carga, lugar de operación y destino. Confirme dimensiones y espacio de maniobra antes de elegir."
+      ],
+      [
+        "Batería y muestra",
+        "Especifique química, tensión, capacidad, cargador y enchufe. Algunas configuraciones excluyen batería o celdas. Apruebe muestra y configuración."
+      ],
+      [
+        "Caja y exportación",
+        "Confirme caja, grado de montaje, repuestos y dimensiones embaladas. Marca, cantidad y plazo se cotizan según configuración."
+      ]
+    ],
+    "names": [
+      "Triciclo de neumáticos anchos de 20 pulgadas y doble batería",
+      "Triciclo eléctrico de neumáticos anchos de 750 W",
+      "Triciclo de carga con caja abierta de 800 W",
+      "Triciclo de reparto con caja cerrada de 1200 W",
+      "Triciclo eléctrico compacto con asiento de 350 W"
+    ],
+    "labels": [
+      "Cesta y portaequipajes trasero",
+      "Celdas no incluidas",
+      "Caja de 1,5 m / 1,6 m",
+      "Caja de 1,5 m · sin batería",
+      "Configuración de plomo-ácido de 36 V"
+    ],
+    "fields": [
+      "Potencia del motor",
+      "Tensión de batería",
+      "Capacidad de batería",
+      "Ruedas",
+      "Transmisión",
+      "Carga nominal",
+      "Suministro de batería",
+      "Peso bruto embalado",
+      "Dimensiones embaladas",
+      "Frenos"
+    ],
+    "values": [
+      "Confirmar configuración",
+      "Transmisión diferencial",
+      "Transmisión diferencial sin escobillas",
+      "Batería incluida en la configuración elegida",
+      "Celdas no incluidas",
+      "Batería no incluida",
+      "Confirmar al pedir",
+      "Batería de plomo-ácido en la configuración elegida",
+      "Frenos delanteros y traseros",
+      "Un solo motor"
+    ],
+    "notes": [
+      "Confirmar potencia nominal y ajuste de velocidad. La capacidad corresponde a la configuración elegida de 48 V.",
+      "Celdas no incluidas. Confirmar batería completa, cargador y carga nominal en la cotización.",
+      "Ambas cajas se suministran sin batería. Elegir 1,5 m o 1,6 m con laterales elevados.",
+      "Los datos de embalaje corresponden a la caja de 1,5 m sin batería. La caja de 1,8 m y las versiones con batería se cotizan por separado.",
+      "Configuración elegida: 36 V / 350 W con batería de plomo-ácido. Confirmar capacidad, carga con conductor y embalaje antes del pedido."
+    ],
+    "images": [
+      "Vista general",
+      "Vehículos preparados",
+      "Parte trasera y portaequipajes",
+      "Pantalla y controles",
+      "Vista general del vehículo de carga",
+      "Detalle de la caja",
+      "Vista lateral de la caja",
+      "Puertas traseras y caja",
+      "Vista general del modelo compacto",
+      "Manillar y asiento"
+    ],
+    "back": "Comparar bicicletas eléctricas de dos ruedas"
+  },
+  "pt": {
+    "title": "Triciclos elétricos da China no atacado | DDNZ Global",
+    "heading": "Triciclos elétricos. Atacado da China.",
+    "summary": "Compare triciclos com pedais e pneus largos e veículos elétricos de carga para distribuidores e frotas. Defina bateria, carga, carroceria e embalagem de exportação.",
+    "nav": "Triciclos elétricos",
+    "eyebrow": "TRÊS RODAS · DIFERENTES USOS",
+    "catalogue": "Escolha o veículo conforme a carga",
+    "intro": "Uma cesta de compras e uma caçamba aberta atendem a pedidos diferentes. Cada configuração indica se a bateria está incluída.",
+    "categories": [
+      "Todos os veículos",
+      "Triciclos com pedais",
+      "Caçamba aberta",
+      "Entrega com baú",
+      "Compacto com assento"
+    ],
+    "quote": "Solicitar cotação de atacado",
+    "orderTitle": "Defina veículo, bateria e entrega",
+    "order": [
+      [
+        "Uso e carga",
+        "Informe uso, carga, local de operação e destino. Confirme dimensões e espaço de manobra antes da escolha."
+      ],
+      [
+        "Bateria e amostra",
+        "Especifique química, tensão, capacidade, carregador e tomada. Algumas configurações excluem bateria ou células. Aprove amostra e configuração."
+      ],
+      [
+        "Caçamba e exportação",
+        "Confirme caçamba, montagem, peças e dimensões embaladas. Marca, quantidade e prazo são cotados conforme a configuração."
+      ]
+    ],
+    "names": [
+      "Triciclo de pneus largos de 20 polegadas com duas baterias",
+      "Triciclo elétrico de pneus largos de 750 W",
+      "Triciclo de carga com caçamba aberta de 800 W",
+      "Triciclo de entrega com baú de 1200 W",
+      "Triciclo elétrico compacto com assento de 350 W"
+    ],
+    "labels": [
+      "Cesta dianteira e bagageiro traseiro",
+      "Células da bateria não incluídas",
+      "Caçamba de 1,5 m / 1,6 m",
+      "Baú de 1,5 m · sem bateria",
+      "Configuração de chumbo-ácido de 36 V"
+    ],
+    "fields": [
+      "Potência do motor",
+      "Tensão da bateria",
+      "Capacidade da bateria",
+      "Rodas",
+      "Transmissão",
+      "Carga nominal",
+      "Fornecimento da bateria",
+      "Peso bruto embalado",
+      "Dimensões embaladas",
+      "Freios"
+    ],
+    "values": [
+      "Confirmar configuração",
+      "Transmissão diferencial",
+      "Transmissão diferencial sem escovas",
+      "Bateria incluída na configuração escolhida",
+      "Células não incluídas",
+      "Bateria não incluída",
+      "Confirmar no pedido",
+      "Bateria de chumbo-ácido na configuração escolhida",
+      "Freios dianteiros e traseiros",
+      "Um motor"
+    ],
+    "notes": [
+      "Confirmar potência nominal e ajuste de velocidade. A capacidade corresponde à configuração escolhida de 48 V.",
+      "Células não incluídas. Confirmar conjunto completo, carregador e carga nominal na cotação.",
+      "As duas caçambas são fornecidas sem bateria. Escolher 1,5 m ou 1,6 m com laterais elevadas.",
+      "Os dados de embalagem correspondem ao baú de 1,5 m sem bateria. O baú de 1,8 m e versões com bateria são cotados separadamente.",
+      "Configuração escolhida: 36 V / 350 W com bateria de chumbo-ácido. Confirmar capacidade, carga com condutor e embalagem antes do pedido."
+    ],
+    "images": [
+      "Vista geral",
+      "Veículos preparados",
+      "Traseira e bagageiro",
+      "Visor e controles",
+      "Vista geral do veículo de carga",
+      "Detalhe da caçamba",
+      "Vista lateral do baú",
+      "Portas traseiras e baú",
+      "Vista geral do modelo compacto",
+      "Guidão e assento"
+    ],
+    "back": "Comparar bicicletas elétricas de duas rodas"
+  },
+  "ru": {
+    "title": "Электротрициклы оптом из Китая | DDNZ Global",
+    "heading": "Электротрициклы. Оптовые поставки из Китая.",
+    "summary": "Сравните педальные трициклы с широкими шинами и грузовые электротрициклы для дилеров и автопарков. Уточните аккумулятор, нагрузку, кузов и экспортную упаковку.",
+    "nav": "Электротрициклы",
+    "eyebrow": "ТРИ КОЛЕСА · РАЗНЫЕ ЗАДАЧИ",
+    "catalogue": "Подберите транспорт под груз",
+    "intro": "Корзина для покупок и открытый кузов решают разные задачи. Для каждой комплектации указано, входит ли аккумулятор.",
+    "categories": [
+      "Все модели",
+      "Педальные трициклы",
+      "Открытый кузов",
+      "Закрытый грузовой кузов",
+      "Компактный с сиденьем"
+    ],
+    "quote": "Запросить оптовое предложение",
+    "orderTitle": "Согласуйте модель, аккумулятор и поставку",
+    "order": [
+      [
+        "Применение и нагрузка",
+        "Укажите назначение, нагрузку, площадку и страну. До выбора проверьте габариты и пространство для манёвра."
+      ],
+      [
+        "Аккумулятор и образец",
+        "Уточните тип, напряжение, ёмкость, зарядное устройство и вилку. Некоторые комплектации не включают аккумулятор или ячейки. Согласуйте образец и спецификацию."
+      ],
+      [
+        "Кузов и экспорт",
+        "Уточните кузов, степень сборки, запчасти и упаковочные размеры. Маркировка, количество и сроки рассчитываются по комплектации."
+      ]
+    ],
+    "names": [
+      "20-дюймовый трицикл с широкими шинами и двумя аккумуляторами",
+      "Электротрицикл 750 Вт с широкими шинами",
+      "Грузовой электротрицикл 800 Вт с открытым кузовом",
+      "Грузовой электротрицикл 1200 Вт с закрытым кузовом",
+      "Компактный электротрицикл 350 Вт с сиденьем"
+    ],
+    "labels": [
+      "Передняя корзина и задний багажник",
+      "Без аккумуляторных ячеек",
+      "Кузов 1,5 м / 1,6 м",
+      "Кузов 1,5 м · без аккумулятора",
+      "Комплектация 36 В со свинцово-кислотным аккумулятором"
+    ],
+    "fields": [
+      "Мощность двигателя",
+      "Напряжение аккумулятора",
+      "Ёмкость аккумулятора",
+      "Колёса",
+      "Привод",
+      "Номинальная нагрузка",
+      "Комплектность аккумулятора",
+      "Масса брутто",
+      "Размеры упаковки",
+      "Тормоза"
+    ],
+    "values": [
+      "Уточнить комплектацию",
+      "Дифференциальный привод",
+      "Бесщёточный дифференциальный привод",
+      "Аккумулятор включён в выбранную комплектацию",
+      "Без аккумуляторных ячеек",
+      "Без аккумулятора",
+      "Уточнить при заказе",
+      "Свинцово-кислотный аккумулятор в выбранной версии",
+      "Передние и задние тормоза",
+      "Один двигатель"
+    ],
+    "notes": [
+      "Номинальная мощность и настройка скорости требуют уточнения. Ёмкость относится к выбранной комплектации 48 В.",
+      "Ячейки не включены. Уточните полный аккумулятор, зарядное устройство и нагрузку в предложении.",
+      "Оба кузова поставляются без аккумулятора. Выберите 1,5 м или 1,6 м с повышенными бортами.",
+      "Упаковочные данные относятся к кузову 1,5 м без аккумулятора. Кузов 1,8 м и версии с аккумулятором рассчитываются отдельно.",
+      "Выбрана версия 36 В / 350 Вт со свинцово-кислотным аккумулятором. До заказа уточните ёмкость, нагрузку с водителем и упаковку."
+    ],
+    "images": [
+      "Общий вид",
+      "Подготовленные машины",
+      "Задняя часть и багажник",
+      "Дисплей и органы управления",
+      "Общий вид грузовой модели",
+      "Деталь кузова",
+      "Кузов сбоку",
+      "Задние двери и кузов",
+      "Общий вид компактной модели",
+      "Руль и сиденье"
+    ],
+    "back": "Сравнить двухколёсные электровелосипеды"
+  },
+  "tr": {
+    "title": "Çin’den Toptan Elektrikli Üç Tekerlekli Araçlar | DDNZ Global",
+    "heading": "Elektrikli üç tekerlekli araçlar. Çin’den toptan tedarik.",
+    "summary": "Bayi ve filo siparişleri için kalın lastikli pedallı üç tekerlekli bisikletleri ve elektrikli yük araçlarını karşılaştırın. Akü, yük, kasa ve ihracat ambalajını belirleyin.",
+    "nav": "Elektrikli üç tekerlekli araçlar",
+    "eyebrow": "ÜÇ TEKERLEK · FARKLI İŞLER",
+    "catalogue": "Aracı yüke göre seçin",
+    "intro": "Alışveriş sepeti ve açık yük kasası farklı ihtiyaçlara yöneliktir. Her konfigürasyonda akünün dahil olup olmadığı belirtilir.",
+    "categories": [
+      "Tüm araçlar",
+      "Pedallı üç tekerlekliler",
+      "Açık yük kasası",
+      "Kapalı kasalı teslimat",
+      "Kompakt koltuklu"
+    ],
+    "quote": "Toptan fiyat teklifi isteyin",
+    "orderTitle": "Araç, akü ve teslimat kapsamını belirleyin",
+    "order": [
+      [
+        "Kullanım ve yük",
+        "Kullanım, yük, çalışma alanı ve varış ülkesini belirtin. Seçimden önce ölçüleri ve manevra alanını kontrol edin."
+      ],
+      [
+        "Akü ve numune",
+        "Akü kimyası, voltaj, kapasite, şarj cihazı ve fişi belirtin. Bazı seçeneklerde akü veya hücreler dahil değildir. Numuneyi ve konfigürasyonu onaylayın."
+      ],
+      [
+        "Kasa ve ihracat",
+        "Kasa, montaj seviyesi, yedek parçalar ve ambalaj ölçülerini netleştirin. Marka, miktar ve süre seçilen konfigürasyona göre fiyatlandırılır."
+      ]
+    ],
+    "names": [
+      "20 inç çift akülü kalın lastikli üç tekerlekli bisiklet",
+      "750 W kalın lastikli elektrikli üç tekerlekli bisiklet",
+      "800 W açık kasalı elektrikli yük üç tekerleklisi",
+      "1200 W kapalı kasalı elektrikli teslimat üç tekerleklisi",
+      "350 W kompakt koltuklu elektrikli üç tekerlekli araç"
+    ],
+    "labels": [
+      "Ön sepet ve arka taşıyıcı",
+      "Akü hücreleri dahil değil",
+      "1,5 m / 1,6 m kasa",
+      "1,5 m kasa · akü hariç",
+      "36 V kurşun-asit akülü seçenek"
+    ],
+    "fields": [
+      "Motor gücü",
+      "Akü voltajı",
+      "Akü kapasitesi",
+      "Tekerlek ölçüsü",
+      "Tahrik",
+      "Nominal yük",
+      "Akü kapsamı",
+      "Ambalajlı brüt ağırlık",
+      "Ambalaj ölçüleri",
+      "Frenler"
+    ],
+    "values": [
+      "Konfigürasyonu teyit edin",
+      "Diferansiyel tahrik",
+      "Fırçasız diferansiyel tahrik",
+      "Seçilen konfigürasyonda akü dahil",
+      "Akü hücreleri hariç",
+      "Akü hariç",
+      "Siparişte teyit edin",
+      "Seçilen konfigürasyonda kurşun-asit akü",
+      "Ön ve arka frenler",
+      "Tek motorlu tahrik"
+    ],
+    "notes": [
+      "Motor nominal gücü ve hız ayarını teyit edin. Kapasite, seçilen 48 V konfigürasyona aittir.",
+      "Hücreler dahil değildir. Teklifte tam akü paketi, şarj cihazı ve yükü teyit edin.",
+      "Her iki kasa da aküsüz tedarik edilir. 1,5 m veya yüksek yan panelli 1,6 m kasayı seçin.",
+      "Ambalaj verileri aküsüz 1,5 m kasaya aittir. 1,8 m kasa ve akülü seçenekler ayrı fiyatlandırılır.",
+      "Seçilen konfigürasyon kurşun-asit akülü 36 V / 350 W modeldir. Siparişten önce kapasiteyi, sürücü dahil yükü ve ambalajı teyit edin."
+    ],
+    "images": [
+      "Genel görünüm",
+      "Hazırlanan araçlar",
+      "Arka bölüm ve taşıyıcı",
+      "Ekran ve kumandalar",
+      "Yük aracının genel görünümü",
+      "Kasa detayı",
+      "Kapalı kasanın yan görünümü",
+      "Arka kapılar ve kasa",
+      "Kompakt aracın genel görünümü",
+      "Gidon ve koltuk detayı"
+    ],
+    "back": "İki tekerlekli elektrikli bisikletleri karşılaştırın"
+  },
+  "ar": {
+    "title": "دراجات كهربائية ثلاثية العجلات بالجملة من الصين | DDNZ Global",
+    "heading": "دراجات كهربائية ثلاثية العجلات. بالجملة من الصين.",
+    "summary": "قارن دراجات الدواسات ذات الإطارات العريضة ومركبات الشحن الكهربائية لطلبات الموزعين والأساطيل. حدد البطارية والحمولة والصندوق وتغليف التصدير.",
+    "nav": "دراجات كهربائية ثلاثية العجلات",
+    "eyebrow": "ثلاث عجلات · استخدامات مختلفة",
+    "catalogue": "اختر المركبة بحسب الحمولة",
+    "intro": "سلة التسوق وصندوق الشحن المفتوح يلبيان احتياجات مختلفة. يوضح كل تجهيز ما إذا كانت البطارية مشمولة.",
+    "categories": [
+      "جميع المركبات",
+      "دراجات ثلاثية بدواسات",
+      "صندوق شحن مفتوح",
+      "توصيل بصندوق مغلق",
+      "مدمجة بمقعد"
+    ],
+    "quote": "اطلب عرض سعر بالجملة",
+    "orderTitle": "حدد المركبة والبطارية ونطاق التسليم",
+    "order": [
+      [
+        "الاستخدام والحمولة",
+        "أرسل الاستخدام والحمولة وموقع العمل وبلد الوجهة. تحقق من الأبعاد ومساحة المناورة قبل الاختيار."
+      ],
+      [
+        "البطارية والعينة",
+        "حدد كيمياء البطارية والجهد والسعة والشاحن والقابس. بعض التجهيزات لا تشمل البطارية أو الخلايا. اعتمد العينة وقائمة التجهيزات."
+      ],
+      [
+        "الصندوق والتصدير",
+        "أكد أبعاد الصندوق ومستوى التجميع وقطع الغيار وأبعاد التغليف. تسعّر العلامة والكمية وموعد التسليم بحسب التجهيز."
+      ]
+    ],
+    "names": [
+      "دراجة ثلاثية بإطارات عريضة 20 بوصة وبطاريتين",
+      "دراجة كهربائية ثلاثية بإطارات عريضة 750 واط",
+      "دراجة شحن كهربائية ثلاثية بصندوق مفتوح 800 واط",
+      "دراجة توصيل كهربائية ثلاثية بصندوق مغلق 1200 واط",
+      "دراجة كهربائية ثلاثية مدمجة بمقعد 350 واط"
+    ],
+    "labels": [
+      "سلة أمامية وحامل خلفي",
+      "خلايا البطارية غير مشمولة",
+      "صندوق 1.5 م / 1.6 م",
+      "صندوق 1.5 م · دون بطارية",
+      "تجهيز 36 فولت ببطارية رصاص حمضية"
+    ],
+    "fields": [
+      "قدرة المحرك",
+      "جهد البطارية",
+      "سعة البطارية",
+      "مقاس العجلات",
+      "نظام الدفع",
+      "الحمولة الاسمية",
+      "نطاق توريد البطارية",
+      "الوزن الإجمالي بالتغليف",
+      "أبعاد التغليف",
+      "الفرامل"
+    ],
+    "values": [
+      "يؤكد حسب التجهيز",
+      "دفع تفاضلي",
+      "دفع تفاضلي دون فرش",
+      "البطارية مشمولة في التجهيز المختار",
+      "خلايا البطارية غير مشمولة",
+      "البطارية غير مشمولة",
+      "يؤكد عند الطلب",
+      "بطارية رصاص حمضية في التجهيز المختار",
+      "فرامل أمامية وخلفية",
+      "دفع بمحرك واحد"
+    ],
+    "notes": [
+      "تؤكد القدرة الاسمية وإعداد السرعة. السعة المذكورة تخص تجهيز 48 فولت المختار.",
+      "الخلايا غير مشمولة. أكد الحزمة الكاملة والشاحن والحمولة في العرض.",
+      "كلا الصندوقين يورد دون بطارية. اختر صندوق 1.5 م أو 1.6 م بجوانب مرتفعة.",
+      "بيانات التغليف تخص صندوق 1.5 م دون بطارية. يسعّر صندوق 1.8 م والإصدارات المزودة ببطارية بشكل منفصل.",
+      "التجهيز المختار 36 فولت / 350 واط ببطارية رصاص حمضية. أكد السعة والحمولة مع السائق وبيانات التغليف قبل الطلب."
+    ],
+    "images": [
+      "المظهر العام",
+      "مركبات مجهزة",
+      "الجزء الخلفي والحامل",
+      "الشاشة وأدوات التحكم",
+      "المظهر العام لمركبة الشحن",
+      "تفاصيل الصندوق",
+      "منظر جانبي للصندوق",
+      "الأبواب الخلفية والصندوق",
+      "المظهر العام للمركبة المدمجة",
+      "تفاصيل المقود والمقعد"
+    ],
+    "back": "قارن الدراجات الكهربائية ذات العجلتين"
+  }
+}
