@@ -21,3 +21,11 @@ Validation:
 - F65 already verified galleries, quotation presets and 32 desktop/mobile layouts. Final integration checked the folded product menu and direct navigation to the hub-motor section in the browser. No external enquiry submitted.
 
 Remaining: PR validation, merge/deployment and online verification; parameter confirmation (94 prior fields); separate preparation of the newly audited 13 PDFs. Production and traffic results are not inferred from local checks.
+
+## Review corrections — homepage FAQ and consumer navigation
+
+The homepage rendered the same 11 FAQ entries twice: once through the searchable Partners component, and again through HomeProductFaqs. Remove the second rendering in both Home.tsx and the static renderer. Preserve the shared FAQ data, original search/filter/answer links and FAQPage schema.
+
+Within Consumer electronics & accessories, mobile accessories and audio are now labeled groups rather than further disclosure controls. Mobile links go directly to the overview, phone cases, straps/charms and screen protectors. Audio offers its overview and five existing categories. Explicit overview labels replace ambiguous "View category" labels; materials/pricing remains within the phone-case page rather than another global disclosure. No route or redirect is removed.
+
+Final local checks pass: TypeScript; 21 related homepage/navigation tests; preview build (832 HTML / 811 sitemap / 104 core SSR); eight homepage static checks (one FAQ module, 11 unique questions and matching schema each); 32 catalogue integration checks and 795 production URL preservation. Search intent stays 682/123/6. Browser checks: zh-CN and Arabic at 390px, zh-CN at 1440px; no horizontal page overflow, direct mobile screen-protector link, two labeled menu groups without nested disclosures, and FAQ answer/search interaction. No external enquiry submitted. New HEAD requires its own PR check; previous 7a3db6b passed run 39565207134.
