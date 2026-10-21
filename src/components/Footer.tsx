@@ -1,7 +1,9 @@
+import {supplyPositioning,roleExtras} from '../features/product-positioning/ProductSupply';
+import {splitNavigationPath} from '../lib/productLanguageRouting';
 import CrawlableLanguageLinks from './CrawlableLanguageLinks';
 import { useId, useState } from 'react';
 import { ArrowRight, Clock3, Instagram, Linkedin, Mail, MapPin, MessageCircle, Music2, Phone, Share2 } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import LegalModal, { LegalType } from './LegalModal';
 import { useLanguage } from '../contexts/LanguageContext';
 import { trackEvent } from '../lib/utils';
@@ -35,12 +37,16 @@ const footerServiceCopy = {
 export default function Footer({ quotePath, footerId, pageKey = 'site', description, tagline, pageLinks = [], note }: FooterProps = {}) {
   const [legalType, setLegalType] = useState<LegalType>(null);
   const { t, language } = useLanguage();
-  const copy = siteFooterCopy[language];
+  const {pathname}=useLocation();
+  const productSurface=['/','/about'].includes(splitNavigationPath(pathname).pathname)||/\/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(pathname);
+  const supply=supplyPositioning[language];
+  const copy=productSurface?{...siteFooterCopy[language],brandLine:supply.eyebrow,brandDescriptor:roleExtras[language]?roleExtras[language]!.scopeBody.split('.')[0]+'.':language==='zh'?'制造并出口中国产品，为进口商、批发商与经销商提供OEM/ODM定制与批量供货。':'Manufacturing and export from China. OEM/ODM products for importers, wholesalers and distributors.',primaryCta:supply.primary}:siteFooterCopy[language];
   const id = useId();
   const localizedPath = (path: string) => navigationPath(path, language);
   const quoteHref = quotePath ? localizedPath(quotePath) : buildQuoteHref({ intent: 'Product Sourcing', language, source: 'footer_primary' });
   const handleContactClick = (method: string) => trackEvent(method + '_click', { cta_location: 'footer', showcase_page: pageKey });
   const productLinks = [
+    ...[{index:2,path:'/sourcing/portable-power-stations-from-china',en:'Portable power stations',zh:'便携电源'},{index:4,path:'/sourcing/electric-bicycles-from-china',en:'Electric bicycles',zh:'电动单车'},{index:3,path:'/sourcing/home-energy-storage-from-china',en:'Home storage batteries',zh:'家庭储能电池'},{index:5,path:'/sourcing/electric-scooters-from-china',en:'Electric scooters',zh:'电动滑板车'}].map(item=>({label:roleExtras[language]?.products[item.index][0]||(language==='zh'?item.zh:item.en),to:localizedPath(item.path)})),
     { label: copy.kitchen, to: localizedPath('/sourcing/commercial-kitchen-equipment-from-china') },
     { label: copy.audio, to: localizedPath('/sourcing/audio-speakers-from-china') },
     { label: copy.mobile, to: localizedPath('/sourcing/mobile-accessories-from-china') },
@@ -74,7 +80,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
               <span><strong>{COMPANY.brand}</strong><small>{copy.brandLine}</small></span>
             </Link>
             {language === 'zh' && <p className="ddnz-footer__company">{COMPANY.zh}</p>}
-            <p>{language === 'en' && description ? description : copy.brandDescriptor}</p>
+            <p>{!productSurface && language === 'en' && description ? description : copy.brandDescriptor}</p>
             {language === 'en' && tagline && <span className="ddnz-footer__tagline">{tagline}</span>}
             <Link to={quoteHref} className="ddnz-footer__cta" onClick={() => trackEvent('cta_click', { cta_location: 'footer', cta_type: 'sourcing_brief' })}>
               {copy.primaryCta}<ArrowRight size={17} aria-hidden="true" />

@@ -126,7 +126,7 @@ function Brand() {
   return (
     <a className="brand" href="#top" aria-label="DDNZ Global home">
       <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
-      <span className="brand-copy"><strong>DDNZ GLOBAL</strong><small>CHINA SOURCING &amp; EXPORT</small></span>
+      <span className="brand-copy"><strong>DDNZ GLOBAL</strong><small>MANUFACTURING &amp; EXPORT</small></span>
     </a>
   );
 }
@@ -286,7 +286,7 @@ function KitchenBrand() {
   return (
     <a className="k-brand" href="#top" aria-label="DDNZ Global home">
       <img src={BRAND_ASSET} width="256" height="228" alt="" />
-      <span><strong>DDNZ GLOBAL</strong><small>CHINA SOURCING &amp; EXPORT</small></span>
+      <span><strong>DDNZ GLOBAL</strong><small>MANUFACTURING &amp; EXPORT</small></span>
     </a>
   );
 }

@@ -41,6 +41,10 @@ const HomeV2Preview = lazy(() => import('./pages/HomeV2Preview'));
 const FreightMapPreview = lazy(() => import('./pages/FreightMapPreview'));
 import { foodProcessingRoutes } from './features/food-processing/pages.mjs';
 const FoodProcessingPage = lazy(() => import('./features/food-processing/FoodProcessingPage'));
+const PortablePowerPage = lazy(() => import('./features/portable-power-catalogue/PortablePowerPage'));
+const ElectricBicyclesPage = lazy(() => import('./features/electric-bicycles/ElectricBicyclesPage'));
+const HomeStoragePage = lazy(() => import('./features/home-storage/HomeStoragePage'));
+const ElectricScootersPage = lazy(() => import('./features/electric-mobility/ElectricScootersPage'));
 const LocalizedOverviewPage = lazy(() => import('./pages/LocalizedOverviewPage'));
 const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
@@ -66,6 +70,7 @@ const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'
 const OutdoorProducts = lazy(() => import('./features/outdoor-sourcing/OutdoorPage'));
 
 const InternationalCountryPage = lazy(() => import('./pages/InternationalCountryPage'));
+const BrazilCountryPage = lazy(() => import('./features/freight/BrazilCountryPage'));
 const BrazilPortuguesePage = lazy(() => import('./pages/BrazilPortuguesePage'));
 
 const UsedGoodsPage = lazy(() => import('./features/freight/UsedGoodsPage'));
@@ -76,6 +81,7 @@ function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
+  if (normalizedCountry==='brazil' && /^\/(?:zh-cn\/)?shipping-from-china-to-brazil\/?$/.test(location.pathname)) return <BrazilCountryPage />;
   if (['ghana','india','bangladesh','pakistan'].includes(normalizedCountry)) return <UsedGoodsPage />;
   if (/^\/(?:(?:zh-cn|es|fr|pt|tr|ru|ar)\/)?shipping-from-china-to-(nigeria|peru)\/?$/.test(location.pathname)) return <MarketFreightPage />;
   if (['qatar', 'oman'].includes(normalizedCountry)) return <GulfFreightPage />;
@@ -408,6 +414,10 @@ export default function App() {
               <Route key={path} path={path} element={<ScreenProtectorPage />} />
             ))}
             <Route path="/products" element={<ProductsIndex />} />
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'portable-power'} path={prefix+'/sourcing/portable-power-stations-from-china'} element={<PortablePowerPage/>}/>)}
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-bicycles'} path={prefix+'/sourcing/electric-bicycles-from-china'} element={<ElectricBicyclesPage/>}/>)}
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'home-storage'} path={prefix+'/sourcing/home-energy-storage-from-china'} element={<HomeStoragePage/>}/>)}
+            {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-scooters'} path={prefix+'/sourcing/electric-scooters-from-china'} element={<ElectricScootersPage/>}/>)}
             {foodProcessingRoutes.flatMap(path => Object.values(navigationPrefixes).map(prefix => <Route key={prefix+path} path={prefix+path} element={<FoodProcessingPage />} />))}
             <Route path="/sourcing-services" element={<SourcingServices />} />
             <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />

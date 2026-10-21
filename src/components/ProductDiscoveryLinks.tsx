@@ -31,6 +31,13 @@ export default function ProductDiscoveryLinks({ source = 'home' }: { source?: 'h
     { name: outdoor.label, description: outdoorDescription, image: '/outdoor-sourcing-media/outdoor-camp.webp', group: 'outdoor_products', links: [outdoor, powerGuide].map(item => [navigationPath(item.to, language), item.label]) },
     { name: t[4], description: t[5], image: '/screen-protector-media/assets/001-kit-photo.jpg', group: 'screen_protectors', links: [[navigationPath('/screen-protectors/compare/', language), t[8]], [navigationPath('/screen-protectors/guides/price-differences/', language), t[9]]] },
   ];
+  if (source === 'insights') {
+    const heading = {zh:'产品与选型工具',en:'Products & selection tools',es:'Productos y herramientas de selección',fr:'Produits et outils de sélection',pt:'Produtos e ferramentas de seleção',ru:'Товары и инструменты подбора',tr:'Ürünler ve seçim araçları',ar:'المنتجات وأدوات الاختيار'}[language];
+    return <aside lang={language === 'zh' ? 'zh-CN' : language} dir={language === 'ar' ? 'rtl' : 'ltr'} aria-label={heading} className="mt-12 border-t border-slate-200 pt-6">
+      <h2 className="text-lg font-bold text-[#13243b]">{heading}</h2>
+      <div className="mt-3 flex flex-wrap gap-x-6 gap-y-1">{paths.flatMap(item => item.links.map(([to,label]) => <Link key={to} to={to} onClick={() => trackEvent('sourcing_guide_click', { source_location: source, content_group: item.group, link_path: to })} className="inline-flex min-h-11 items-center text-sm font-semibold text-[#763c9c] underline underline-offset-4">{label}<span aria-hidden="true" className="ms-2">↗</span></Link>))}</div>
+    </aside>;
+  }
   return <section lang={language === 'zh' ? 'zh-CN' : language} dir={language === 'ar' ? 'rtl' : 'ltr'} aria-label={t[0]} className="mx-auto my-10 max-w-7xl px-5 sm:px-8">
     <div className="mb-6 flex flex-wrap items-end justify-between gap-3"><div><h2 className="text-2xl font-bold tracking-tight text-[#13243b]">{t[0]}</h2><p className="mt-2 max-w-3xl text-sm leading-6 text-slate-600">{t[1]}</p></div></div>
     <div className="grid gap-5 md:grid-cols-2">{paths.map(item => <article key={item.group} className="grid min-w-0 grid-cols-[92px_1fr] gap-5 border border-slate-200 bg-white p-5 sm:grid-cols-[120px_1fr] sm:p-6">

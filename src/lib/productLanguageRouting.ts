@@ -23,6 +23,8 @@ const fullyLocalizedFreightServicePaths = new Set([
 import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
 
 export const englishProductPaths = [
+  '/sourcing/portable-power-stations-from-china','/sourcing/electric-bicycles-from-china','/sourcing/home-energy-storage-from-china',
+  '/sourcing/electric-scooters-from-china',
   ...audioCategoryPaths,
   ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
@@ -50,6 +52,7 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
+  if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(route)) return allNavigationLanguages;
   if (route.startsWith('/shipping-from-china-to-')) return freightDestinationLanguages;
   if (route.startsWith('/services/') && !fullyLocalizedFreightServicePaths.has(route)) return freightDestinationLanguages;
   return allNavigationLanguages;

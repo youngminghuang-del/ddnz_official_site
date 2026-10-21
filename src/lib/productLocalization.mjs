@@ -27,6 +27,7 @@ export function productRouteParts(path = '/') {
 }
 export function hasProductTranslation(path, locale) {
   const base = productRouteParts(path).path;
+  if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(base)) return overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale);
   return (buyerGuidePaths.includes(base) || overviewProductPaths.includes(base) || foodProcessingRoutes.includes(base) || [...kitchenCategoryPaths,kitchenPackagePath,...kitchenPackageScenarioPaths].includes(base)) ? overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) : productContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) && localizableProductPaths.includes(base);
 }
 export function localizedProductPath(path, locale = 'en') {

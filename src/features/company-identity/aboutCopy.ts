@@ -1,3 +1,4 @@
+import roleLocales from '../product-positioning/locales.json';
 import type { Language } from '../../i18n/translations';
 export type AboutCopy = {
  nav: string; title: string; description: string; heading: string; intro: string;
@@ -78,3 +79,17 @@ export const aboutCopy: Record<Language, AboutCopy> = {
 export const aboutLanguages = ['en','zh','es','fr','pt','ru','tr','ar'] as const;
 const seoTitles: Record<Language,string> = {en:'About Us | China Sourcing & Freight Team',zh:'关于我们 | 中国采购与国际货运团队',es:'Quiénes somos | Compras y transporte en China',fr:'À propos | Achats et transport en Chine',pt:'Sobre nós | Compras e transporte na China',ru:'О нас | Закупки и перевозки из Китая',tr:'Hakkımızda | Çin Tedarik ve Taşımacılık Ekibi',ar:'من نحن | فريق التوريد والشحن من الصين'};
 export const aboutMeta = (language: Language) => ({title:seoTitles[language],desc:aboutCopy[language].description,image:'/images/company/office/workspace-1600.webp',keywords:''});
+
+// Product-led EN/ZH copy; legal registration and historical case facts remain in their source records.
+Object.assign(aboutCopy.en,{
+ title:'About DDNZ Global | China Manufacturing & Export',description:'DDNZ Global manufactures and exports products from Guangzhou, China. OEM/ODM, production and quality control for importers, wholesalers and distributors.',heading:'A manufacturing and export business, based in China.',intro:'DDNZ Global is a manufacturer and export trading business based in Guangzhou, China. We manufacture and export products for overseas importers, wholesalers and distributors, with OEM/ODM development, production and quality control built into the order. Specialist manufacturing partners extend our product capabilities; Heaven Born executes international freight.',contact:'Get a wholesale quote',final:'Let’s plan your next product order.',trust:'What goes into your product quotation?',trustIntro:'Start with the model, quantity and destination. Agree product details and order terms before arranging production and export.',checks:[['Models, MOQ and unit pricing','Compare the selected configuration, order quantity, included accessories and packaging.'],['Samples and OEM options','Agree the sample, branding and packaging for the selected range, with timing and costs in the quotation.'],['Quality and shipment preparation','Connect inspection, carton quantities, gross weights and documents with the export plan.']],visitBody:'Reviewing speaker products with buyers and manufacturing partners. On-site discussion helps define the model, features and packaging for an order.'});
+Object.assign(aboutCopy.zh,{
+ title:'关于DDNZ Global | 中国制造与出口',description:'DDNZ Global立足中国广州，集制造与出口贸易于一体，面向进口商、批发商和经销商提供OEM/ODM定制、生产与质量控制。',heading:'立足中国广州，集制造与出口贸易于一体。',intro:'DDNZ Global是一家位于中国广州的制造与出口贸易企业。我们面向海外进口商、批发商与经销商制造并出口产品，提供OEM/ODM开发、生产与质量控制。专业制造伙伴补充不同品类的生产能力，长期物流合作伙伴Heaven Born执行国际运输。',contact:'获取产品批发报价',final:'一起准备您的下一批产品订单。',trust:'一份产品报价，需要明确什么？',trustIntro:'从型号、数量与目的地开始，在安排生产和出口前，确认产品明细与订单条款。',checks:[['型号、MOQ与单价','比较所选配置、订单数量、随附配件和包装，明确本批供货条件。'],['样品与OEM方案','按所选品类确认样品、品牌及包装要求，在报价中写清时间和费用。'],['质量与出运准备','把验货、箱数、毛重及文件衔接到出口计划。']],visitBody:'与采购客户和合作制造商讨论音响产品，通过现场交流明确订单的型号、功能及包装。'});
+seoTitles.en='About DDNZ Global | China Manufacturing & Export';
+seoTitles.zh='关于DDNZ Global | 中国制造与出口';
+
+for(const [key,c] of Object.entries(roleLocales)){
+ const locale=key as keyof typeof roleLocales;
+ Object.assign(aboutCopy[locale],{title:c.aboutTitle,description:c.supply.bridgeIntro,heading:c.aboutHeading,intro:c.supply.bridgeIntro+' '+c.supply.freightBody,contact:c.supply.primary,final:c.aboutFinal,trust:c.trustTitle,trustIntro:c.trustIntro,checks:c.checks});
+ seoTitles[locale]=c.aboutTitle;
+}

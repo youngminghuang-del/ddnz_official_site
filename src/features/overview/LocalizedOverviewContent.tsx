@@ -1,3 +1,7 @@
+import PortablePowerEntry from '../portable-power-catalogue/PortablePowerEntry';
+import ElectricBicyclesEntry from '../electric-bicycles/ElectricBicyclesEntry';
+import HomeStorageEntry from '../home-storage/HomeStorageEntry';
+import ScooterCatalogueEntry from '../electric-mobility/ScooterCatalogueEntry';
 import SourcingLocations from '../sourcing-locations/SourcingLocations';
 import SourcingTrust from '../company-identity/SourcingTrust';
 import { StartupBuyingLinks } from '../search-intent/StartupBuyingContent';
@@ -37,15 +41,16 @@ export default function LocalizedOverviewContent({kind,locale}: {kind:OverviewKi
     const href=navigationPath(path,locale), english=!splitNavigationPath(href).locale;
     return <a className="font-bold text-purple-800 underline underline-offset-4" href={href} hrefLang={english?'en':locale==='zh'?'zh-CN':locale}>{label}{english?` · ${u.english}`:''} <span aria-hidden="true">↗</span></a>;
   };
-  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="bg-slate-50 text-slate-900">
-    <header className="bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
+  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="ddnz-home bg-[var(--ddnz-surface)] text-[var(--ddnz-ink)]">
+    <header className="ddnz-ribbon-surface relative overflow-hidden border-b border-purple-100 text-[var(--ddnz-ink)]"><div className="relative z-10 mx-auto max-w-7xl px-6 py-12 lg:py-20">
       <nav aria-label={u.home} className="mb-7 flex flex-wrap gap-4 text-sm"><a href={`${prefix}/`}>{u.home}</a><a href={`${prefix}/${product?'sourcing-services':'products'}/`}>{product?u.services:u.categories}</a></nav>
-      <p className="mb-4 text-sm font-bold tracking-widest text-orange-300">DDNZ GLOBAL · {product?u.categories:u.services}</p>
-      <h1 className="max-w-5xl text-4xl font-bold leading-tight md:text-6xl">{product?c.productsTitle:c.servicesTitle}</h1>
-      <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-200">{product?c.productsIntro:c.servicesIntro}</p>
-      <div className="mt-8 flex flex-wrap gap-5"><a href={product?'#categories':'#paths'} className="rounded-xl bg-white px-5 py-3 font-bold text-purple-900">{product?u.categories:u.path}</a><a href="#rfq" className="rounded-xl bg-orange-700 px-5 py-3 font-bold">{u.quote}</a></div>
+      <p className="mb-4 text-sm font-bold tracking-widest text-purple-800">DDNZ GLOBAL · {product?u.categories:u.services}</p>
+      <h1 className="max-w-5xl text-[clamp(2rem,4.4vw,3.5rem)] font-bold leading-tight">{product?c.productsTitle:c.servicesTitle}</h1>
+      <p className="mt-6 max-w-4xl text-lg leading-8 text-slate-600">{product?c.productsIntro:c.servicesIntro}</p>
+      <div className="mt-8 flex flex-wrap gap-5"><a href={product?'#categories':'#paths'} className="inline-flex min-h-11 items-center rounded-lg border border-purple-200 bg-white/80 px-5 py-3 font-bold text-purple-900">{product?u.categories:u.path}</a><a href="#rfq" className="inline-flex min-h-11 items-center rounded-lg bg-[var(--ddnz-coral)] px-5 py-3 font-bold text-white">{u.quote}</a></div>
     </div></header>
     <div className="mx-auto max-w-7xl space-y-16 px-6 py-16">
+      {product && locale==='zh' && <><PortablePowerEntry zh/><ElectricBicyclesEntry zh/><HomeStorageEntry zh/><ScooterCatalogueEntry zh/></>}
       {product ? <>
         <section id="categories" aria-labelledby="overview-categories"><h2 id="overview-categories" className="text-3xl font-bold">{u.categories}</h2><div className="mt-8 grid gap-7 md:grid-cols-2">
           {categories.map((category,i)=><article key={category.id} id={category.id} className="overflow-hidden rounded-2xl border border-slate-200 bg-white">

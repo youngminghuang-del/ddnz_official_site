@@ -1,3 +1,4 @@
+import roleLocales from '../product-positioning/locales.json';
 import type { Language } from '../../i18n/translations';
 
 type Copy = {
@@ -88,3 +89,11 @@ export const companyCopy: Record<Language, Copy> = {
     contract: 'تُحدَّد الشركة المتعاقدة وترتيبات الدفع ونطاق الخدمة في عرض السعر والعقد.', image: 'مقتطف من سجل الشركات الصيني بعلامة مائية',
   },
 };
+
+Object.assign(companyCopy.en,{eyebrow:'MANUFACTURING & EXPORT',title:'DDNZ Global, supported by an experienced freight partner.',intro:'DDNZ Global is the international trading brand of DDNZ Global Trade Co., Ltd., based in Guangzhou. Manufacturing, OEM/ODM and export are led by DDNZ; international transport is executed by Heaven Born.',ddnz:'DDNZ manufactures and exports mobile accessories, kitchen equipment, food machinery, audio and outdoor products. We work with manufacturing partners on product specifications, sample approval, production follow-up, quality checks and export preparation.'});
+Object.assign(companyCopy.zh,{eyebrow:'制造与出口贸易',title:'DDNZ制造与出口，专业物流伙伴支持。',intro:'DDNZ Global是大递诺展（广州）商业贸易有限公司面向国际客户的业务品牌。DDNZ负责制造、OEM/ODM与出口，Heaven Born执行国际运输。',ddnz:'DDNZ集制造与贸易于一体，制造并出口手机配件、餐厨设备、食品机械、音响及户外用品，与合作制造商共同落实产品规格、样品确认、生产跟进、质量检查和出口准备。'});
+
+for(const [key,c] of Object.entries(roleLocales)){
+ const locale=key as keyof typeof roleLocales;
+ Object.assign(companyCopy[locale],{eyebrow:c.supply.eyebrow,title:c.supply.bridgeTitle,intro:c.supply.bridgeIntro,ddnz:c.scopeBody});
+}

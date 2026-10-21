@@ -1,0 +1,1338 @@
+[
+  {
+    "id": 1,
+    "code": "SC-A01",
+    "title": "8.5英寸成人折叠滑板车",
+    "category": "adult",
+    "label": "成人滑板车",
+    "specs": [
+      [
+        "电机功率",
+        "350 W"
+      ],
+      [
+        "电池电压",
+        "36 V"
+      ],
+      [
+        "电池容量",
+        "7.8 / 10.5 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "8.5英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "前电子刹车＋后鼓刹"
+      ],
+      [
+        "充电时间",
+        "3–4小时"
+      ],
+      [
+        "整车净重",
+        "待确认"
+      ],
+      [
+        "包装尺寸",
+        "109 × 15 × 50 cm"
+      ],
+      [
+        "包装毛重",
+        "15.5 / 16 kg"
+      ]
+    ],
+    "images": [
+      "clean-assets/p1-hero.png"
+    ],
+    "description": "适合进口批发与经销选品，可沟通电池配置、充电器制式及包装要求。",
+    "gallery": [
+      {
+        "title": "整车外观",
+        "kind": "产品外观",
+        "web": "/images/electric-mobility/p1-hero.webp",
+        "thumb": "/images/electric-mobility/p1-hero-thumb.webp",
+        "enTitle": "Overall view"
+      },
+      {
+        "title": "城市使用场景",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-18.webp",
+        "thumb": "/images/electric-mobility/p1-detail-18-thumb.webp",
+        "enTitle": "Urban riding scene"
+      },
+      {
+        "title": "前轮电机结构示意",
+        "kind": "结构示意",
+        "web": "/images/electric-mobility/p1-detail-19.webp",
+        "thumb": "/images/electric-mobility/p1-detail-19-thumb.webp",
+        "enTitle": "Front motor illustration"
+      },
+      {
+        "title": "踏板与电池布局示意",
+        "kind": "结构示意",
+        "web": "/images/electric-mobility/p1-detail-20.webp",
+        "thumb": "/images/electric-mobility/p1-detail-20-thumb.webp",
+        "enTitle": "Deck and battery layout illustration"
+      },
+      {
+        "title": "蜂窝轮胎细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-21.webp",
+        "thumb": "/images/electric-mobility/p1-detail-21-thumb.webp",
+        "enTitle": "Honeycomb tyre detail"
+      },
+      {
+        "title": "制动部件与使用场景",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-22.webp",
+        "thumb": "/images/electric-mobility/p1-detail-22-thumb.webp",
+        "enTitle": "Brake details and riding scene"
+      },
+      {
+        "title": "前后灯光细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-23.webp",
+        "thumb": "/images/electric-mobility/p1-detail-23-thumb.webp",
+        "enTitle": "Front and rear lights"
+      },
+      {
+        "title": "踏板与把手细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-24.webp",
+        "thumb": "/images/electric-mobility/p1-detail-24-thumb.webp",
+        "enTitle": "Deck and handlebar details"
+      },
+      {
+        "title": "折叠与收纳",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-29.webp",
+        "thumb": "/images/electric-mobility/p1-detail-29-thumb.webp",
+        "enTitle": "Folding and storage"
+      },
+      {
+        "title": "折叠携带场景",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p1-detail-30.webp",
+        "thumb": "/images/electric-mobility/p1-detail-30-thumb.webp",
+        "enTitle": "Folded carrying scene"
+      }
+    ],
+    "enTitle": "8.5-inch folding adult electric scooter",
+    "enSpecs": [
+      [
+        "Motor power",
+        "350 W"
+      ],
+      [
+        "Battery voltage",
+        "36 V"
+      ],
+      [
+        "Battery capacity",
+        "7.8 / 10.5 Ah"
+      ],
+      [
+        "Wheel size",
+        "8.5 in"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for target market"
+      ],
+      [
+        "Brakes",
+        "Front electronic + rear drum brake"
+      ],
+      [
+        "Charging time",
+        "3–4 h"
+      ],
+      [
+        "Net weight",
+        "To confirm"
+      ],
+      [
+        "Package dimensions",
+        "109 × 15 × 50 cm"
+      ],
+      [
+        "Gross package weight",
+        "15.5 / 16 kg"
+      ]
+    ]
+  },
+  {
+    "id": 5,
+    "code": "SC-A02",
+    "title": "10英寸减震成人滑板车",
+    "category": "adult",
+    "label": "成人滑板车",
+    "specs": [
+      [
+        "电机功率",
+        "350 W"
+      ],
+      [
+        "电池电压",
+        "36 V"
+      ],
+      [
+        "电池容量",
+        "6.0 / 7.8 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "10英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "电子刹车＋碟刹"
+      ],
+      [
+        "充电时间",
+        "4–6小时"
+      ],
+      [
+        "整车净重",
+        "14.8 kg"
+      ],
+      [
+        "包装尺寸",
+        "110 × 14.5 × 54 cm"
+      ],
+      [
+        "包装毛重",
+        "约16.9 kg"
+      ]
+    ],
+    "images": [
+      "clean-assets/p5-hero.png"
+    ],
+    "description": "适合进口批发与经销选品，可沟通电池配置、充电器制式及包装要求。",
+    "gallery": [
+      {
+        "title": "整车外观",
+        "kind": "产品外观",
+        "web": "/images/electric-mobility/p5-hero.webp",
+        "thumb": "/images/electric-mobility/p5-hero-thumb.webp",
+        "enTitle": "Overall view"
+      },
+      {
+        "title": "整车与部件细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p5-detail-10.webp",
+        "thumb": "/images/electric-mobility/p5-detail-10-thumb.webp",
+        "enTitle": "Scooter and component details"
+      },
+      {
+        "title": "城市使用场景",
+        "kind": "外观 / 场景",
+        "web": "/images/electric-mobility/p5-photo-1.webp",
+        "thumb": "/images/electric-mobility/p5-photo-1-thumb.webp",
+        "enTitle": "Urban riding scene"
+      },
+      {
+        "title": "折叠携带场景",
+        "kind": "外观 / 场景",
+        "web": "/images/electric-mobility/p5-photo-2.webp",
+        "thumb": "/images/electric-mobility/p5-photo-2-thumb.webp",
+        "enTitle": "Folded carrying scene"
+      },
+      {
+        "title": "户外使用场景",
+        "kind": "外观 / 场景",
+        "web": "/images/electric-mobility/p5-photo-3.webp",
+        "thumb": "/images/electric-mobility/p5-photo-3-thumb.webp",
+        "enTitle": "Outdoor riding scene"
+      }
+    ],
+    "enTitle": "10-inch adult electric scooter with suspension",
+    "enSpecs": [
+      [
+        "Motor power",
+        "350 W"
+      ],
+      [
+        "Battery voltage",
+        "36 V"
+      ],
+      [
+        "Battery capacity",
+        "6.0 / 7.8 Ah"
+      ],
+      [
+        "Wheel size",
+        "10 in"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for target market"
+      ],
+      [
+        "Brakes",
+        "Electronic + disc brake"
+      ],
+      [
+        "Charging time",
+        "4–6 h"
+      ],
+      [
+        "Net weight",
+        "14.8 kg"
+      ],
+      [
+        "Package dimensions",
+        "110 × 14.5 × 54 cm"
+      ],
+      [
+        "Gross package weight",
+        "Approx. 16.9 kg"
+      ]
+    ]
+  },
+  {
+    "id": 6,
+    "code": "SC-A03",
+    "title": "8.5英寸双驱折叠滑板车",
+    "enTitle": "8.5-inch dual-motor folding electric scooter",
+    "category": "adult",
+    "label": "成人双驱款",
+    "enLabel": "Adult dual-motor model",
+    "specs": [
+      [
+        "电机功率",
+        "双电机，额定功率待确认"
+      ],
+      [
+        "电池电压",
+        "标称电压待确认"
+      ],
+      [
+        "电池容量",
+        "15 / 20 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "8.5英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "后轮碟刹；前制动配置确认"
+      ],
+      [
+        "充电时间",
+        "15 / 20 Ah配置：9–10小时"
+      ],
+      [
+        "整车净重",
+        "按所选配置确认"
+      ],
+      [
+        "包装尺寸",
+        "114 × 18 × 53 cm"
+      ],
+      [
+        "包装毛重",
+        "按所选配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Dual motor; confirm rated power"
+      ],
+      [
+        "Battery voltage",
+        "Confirm nominal voltage"
+      ],
+      [
+        "Battery capacity",
+        "15 / 20 Ah"
+      ],
+      [
+        "Wheel size",
+        "8.5 inches"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for destination market"
+      ],
+      [
+        "Brakes",
+        "Rear disc; confirm front braking configuration"
+      ],
+      [
+        "Charging time",
+        "15 / 20 Ah configuration: 9–10 hours"
+      ],
+      [
+        "Net weight",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Package dimensions",
+        "114 × 18 × 53 cm"
+      ],
+      [
+        "Gross package weight",
+        "Confirm for selected configuration"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "展开与折叠结构",
+        "enTitle": "Upright and folded views",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a3-main.webp",
+        "thumb": "/images/electric-mobility/extra-a3-main-thumb.webp"
+      },
+      {
+        "title": "后轮与碟刹细节",
+        "enTitle": "Rear wheel and disc brake",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a3-brake.webp",
+        "thumb": "/images/electric-mobility/extra-a3-brake-thumb.webp"
+      },
+      {
+        "title": "仪表与操控细节",
+        "enTitle": "Display and handlebar controls",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a3-controls.webp",
+        "thumb": "/images/electric-mobility/extra-a3-controls-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "code": "SC-A04",
+    "title": "10英寸带座椅双碟刹滑板车",
+    "enTitle": "10-inch seated electric scooter with dual disc brakes",
+    "category": "adult",
+    "label": "成人座椅与双减震款",
+    "enLabel": "Adult seated dual-suspension model",
+    "specs": [
+      [
+        "电机功率",
+        "按所选配置确认"
+      ],
+      [
+        "电池电压",
+        "按所选配置确认"
+      ],
+      [
+        "电池容量",
+        "按订单配置"
+      ],
+      [
+        "轮胎尺寸",
+        "10英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "前后双碟刹"
+      ],
+      [
+        "充电时间",
+        "5–8小时"
+      ],
+      [
+        "整车净重",
+        "按所选配置确认"
+      ],
+      [
+        "包装尺寸",
+        "按所选配置确认"
+      ],
+      [
+        "包装毛重",
+        "按所选配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Battery voltage",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Battery capacity",
+        "Configured for the order"
+      ],
+      [
+        "Wheel size",
+        "10 inches"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for destination market"
+      ],
+      [
+        "Brakes",
+        "Front and rear disc brakes"
+      ],
+      [
+        "Charging time",
+        "5–8 hours"
+      ],
+      [
+        "Net weight",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Package dimensions",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Gross package weight",
+        "Confirm for selected configuration"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "带座椅整车",
+        "enTitle": "Complete seated scooter",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a4-main.webp",
+        "thumb": "/images/electric-mobility/extra-a4-main-thumb.webp"
+      },
+      {
+        "title": "座椅立柱与发光踏板",
+        "enTitle": "Seat post and illuminated deck",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a4-seat.webp",
+        "thumb": "/images/electric-mobility/extra-a4-seat-thumb.webp"
+      },
+      {
+        "title": "后轮碟刹与减震连接",
+        "enTitle": "Rear disc brake and suspension linkage",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a4-brake.webp",
+        "thumb": "/images/electric-mobility/extra-a4-brake-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "code": "SC-A05",
+    "title": "8.5英寸前后减震折叠滑板车",
+    "enTitle": "8.5-inch folding electric scooter with front and rear suspension",
+    "category": "adult",
+    "label": "350W减震配置款",
+    "enLabel": "350W suspension configuration",
+    "specs": [
+      [
+        "电机功率",
+        "350 W"
+      ],
+      [
+        "电池电压",
+        "36 V"
+      ],
+      [
+        "电池容量",
+        "4 / 6 / 7.8 / 13.5 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "8.5英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "后轮碟刹；电子制动按配置确认"
+      ],
+      [
+        "充电时间",
+        "3–6小时"
+      ],
+      [
+        "整车净重",
+        "约14 kg"
+      ],
+      [
+        "包装尺寸",
+        "111 × 16 × 56.5 cm"
+      ],
+      [
+        "包装毛重",
+        "约19 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "350 W"
+      ],
+      [
+        "Battery voltage",
+        "36 V"
+      ],
+      [
+        "Battery capacity",
+        "4 / 6 / 7.8 / 13.5 Ah"
+      ],
+      [
+        "Wheel size",
+        "8.5 inches"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for destination market"
+      ],
+      [
+        "Brakes",
+        "Rear disc; confirm electronic braking configuration"
+      ],
+      [
+        "Charging time",
+        "3–6 hours"
+      ],
+      [
+        "Net weight",
+        "Approx. 14 kg"
+      ],
+      [
+        "Package dimensions",
+        "111 × 16 × 56.5 cm"
+      ],
+      [
+        "Gross package weight",
+        "Approx. 19 kg"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "减震车架与整车侧面",
+        "enTitle": "Suspension frame and side view",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a5-main.webp",
+        "thumb": "/images/electric-mobility/extra-a5-main-thumb.webp"
+      },
+      {
+        "title": "圆形仪表与刹把",
+        "enTitle": "Round display and brake lever",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a5-controls.webp",
+        "thumb": "/images/electric-mobility/extra-a5-controls-thumb.webp"
+      },
+      {
+        "title": "后轮刹车与减震连杆",
+        "enTitle": "Rear brake and suspension linkage",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a5-wheel.webp",
+        "thumb": "/images/electric-mobility/extra-a5-wheel-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 9,
+    "code": "SC-A06",
+    "title": "10英寸立杆电池减震滑板车",
+    "enTitle": "10-inch suspension electric scooter with stem-mounted battery",
+    "category": "adult",
+    "label": "400W立杆电池款",
+    "enLabel": "400W stem-battery model",
+    "specs": [
+      [
+        "电机功率",
+        "400 W"
+      ],
+      [
+        "电池电压",
+        "36 V"
+      ],
+      [
+        "电池容量",
+        "13 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "10英寸"
+      ],
+      [
+        "最高时速",
+        "按目的市场确认"
+      ],
+      [
+        "制动方式",
+        "后轮碟刹；前制动配置确认"
+      ],
+      [
+        "充电时间",
+        "按所选配置确认"
+      ],
+      [
+        "整车净重",
+        "按所选配置确认"
+      ],
+      [
+        "包装尺寸",
+        "113 × 17 × 60 cm"
+      ],
+      [
+        "包装毛重",
+        "按所选配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "400 W"
+      ],
+      [
+        "Battery voltage",
+        "36 V"
+      ],
+      [
+        "Battery capacity",
+        "13 Ah"
+      ],
+      [
+        "Wheel size",
+        "10 inches"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for destination market"
+      ],
+      [
+        "Brakes",
+        "Rear disc; confirm front braking configuration"
+      ],
+      [
+        "Charging time",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Net weight",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Package dimensions",
+        "113 × 17 × 60 cm"
+      ],
+      [
+        "Gross package weight",
+        "Confirm for selected configuration"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "展开与折叠结构",
+        "enTitle": "Upright and folded views",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a6-main.webp",
+        "thumb": "/images/electric-mobility/extra-a6-main-thumb.webp"
+      },
+      {
+        "title": "控制器与前悬架结构示意",
+        "enTitle": "Controller and front suspension illustration",
+        "kind": "结构示意",
+        "web": "/images/electric-mobility/extra-a6-suspension.webp",
+        "thumb": "/images/electric-mobility/extra-a6-suspension-thumb.webp"
+      },
+      {
+        "title": "显示屏与操控开关",
+        "enTitle": "Display and control switches",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-a6-controls.webp",
+        "thumb": "/images/electric-mobility/extra-a6-controls-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "code": "SC-K01",
+    "title": "6.5英寸儿童滑板车",
+    "category": "kids",
+    "label": "儿童滑板车",
+    "specs": [
+      [
+        "电机功率",
+        "150 W（待确认）"
+      ],
+      [
+        "电池电压",
+        "待确认"
+      ],
+      [
+        "电池容量",
+        "待确认"
+      ],
+      [
+        "轮胎尺寸",
+        "6.5英寸"
+      ],
+      [
+        "最高时速",
+        "15 km/h"
+      ],
+      [
+        "制动方式",
+        "待确认"
+      ],
+      [
+        "充电时间",
+        "4–6小时"
+      ],
+      [
+        "整车净重",
+        "7.8 kg"
+      ],
+      [
+        "包装尺寸",
+        "待确认"
+      ],
+      [
+        "包装毛重",
+        "待确认"
+      ]
+    ],
+    "images": [
+      "clean-assets/p3-hero.png"
+    ],
+    "description": "儿童产品单独选型，按车型确认适用范围、电池和包装要求。",
+    "gallery": [
+      {
+        "title": "整车外观",
+        "kind": "产品外观",
+        "web": "/images/electric-mobility/p3-hero.webp",
+        "thumb": "/images/electric-mobility/p3-hero-thumb.webp",
+        "enTitle": "Overall view"
+      },
+      {
+        "title": "蓝色整车外观",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-13.webp",
+        "thumb": "/images/electric-mobility/p3-detail-13-thumb.webp",
+        "enTitle": "Blue colour option"
+      },
+      {
+        "title": "折叠关节与前轮细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-14.webp",
+        "thumb": "/images/electric-mobility/p3-detail-14-thumb.webp",
+        "enTitle": "Folding joint and front wheel"
+      },
+      {
+        "title": "电池与灯光示意",
+        "kind": "结构示意",
+        "web": "/images/electric-mobility/p3-detail-15.webp",
+        "thumb": "/images/electric-mobility/p3-detail-15-thumb.webp",
+        "enTitle": "Battery and lighting illustration"
+      },
+      {
+        "title": "使用场景与踏板灯光",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-16.webp",
+        "thumb": "/images/electric-mobility/p3-detail-16-thumb.webp",
+        "enTitle": "Riding scene and deck lighting"
+      },
+      {
+        "title": "前轮细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-17.webp",
+        "thumb": "/images/electric-mobility/p3-detail-17-thumb.webp",
+        "enTitle": "Front wheel detail"
+      },
+      {
+        "title": "折叠收纳与使用场景",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-18.webp",
+        "thumb": "/images/electric-mobility/p3-detail-18-thumb.webp",
+        "enTitle": "Folded view and riding scene"
+      },
+      {
+        "title": "仪表把手与踏板细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p3-detail-19.webp",
+        "thumb": "/images/electric-mobility/p3-detail-19-thumb.webp",
+        "enTitle": "Display, handlebar and deck"
+      }
+    ],
+    "enTitle": "6.5-inch children’s electric scooter",
+    "enSpecs": [
+      [
+        "Motor power",
+        "150 W (to confirm)"
+      ],
+      [
+        "Battery voltage",
+        "To confirm"
+      ],
+      [
+        "Battery capacity",
+        "To confirm"
+      ],
+      [
+        "Wheel size",
+        "6.5 in"
+      ],
+      [
+        "Maximum speed",
+        "15 km/h"
+      ],
+      [
+        "Brakes",
+        "To confirm"
+      ],
+      [
+        "Charging time",
+        "4–6 h"
+      ],
+      [
+        "Net weight",
+        "7.8 kg"
+      ],
+      [
+        "Package dimensions",
+        "To confirm"
+      ],
+      [
+        "Gross package weight",
+        "To confirm"
+      ]
+    ]
+  },
+  {
+    "id": 4,
+    "code": "SC-K02",
+    "title": "6.5英寸儿童减震滑板车",
+    "category": "kids",
+    "label": "儿童滑板车",
+    "specs": [
+      [
+        "电机功率",
+        "130 W"
+      ],
+      [
+        "电池电压",
+        "24 V"
+      ],
+      [
+        "电池容量",
+        "2.5 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "6.5英寸"
+      ],
+      [
+        "最高时速",
+        "15 km/h"
+      ],
+      [
+        "制动方式",
+        "待确认"
+      ],
+      [
+        "充电时间",
+        "4–6小时"
+      ],
+      [
+        "整车净重",
+        "待确认"
+      ],
+      [
+        "包装尺寸",
+        "82.5 × 15.5 × 35.5 cm"
+      ],
+      [
+        "包装毛重",
+        "待确认"
+      ]
+    ],
+    "images": [
+      "clean-assets/p4-hero.png"
+    ],
+    "description": "儿童产品单独选型，按车型确认适用范围、电池和包装要求。",
+    "gallery": [
+      {
+        "title": "整车外观",
+        "kind": "产品外观",
+        "web": "/images/electric-mobility/p4-hero.webp",
+        "thumb": "/images/electric-mobility/p4-hero-thumb.webp",
+        "enTitle": "Overall view"
+      },
+      {
+        "title": "灯光外观",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-11.webp",
+        "thumb": "/images/electric-mobility/p4-detail-11-thumb.webp",
+        "enTitle": "Lighting detail"
+      },
+      {
+        "title": "前轮减震结构",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-13.webp",
+        "thumb": "/images/electric-mobility/p4-detail-13-thumb.webp",
+        "enTitle": "Front suspension detail"
+      },
+      {
+        "title": "后轮与挡泥板细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-14.webp",
+        "thumb": "/images/electric-mobility/p4-detail-14-thumb.webp",
+        "enTitle": "Rear wheel and mudguard"
+      },
+      {
+        "title": "折叠与车载收纳",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-15.webp",
+        "thumb": "/images/electric-mobility/p4-detail-15-thumb.webp",
+        "enTitle": "Folding and car storage"
+      },
+      {
+        "title": "把手与控制区域",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-16.webp",
+        "thumb": "/images/electric-mobility/p4-detail-16-thumb.webp",
+        "enTitle": "Handlebar and controls"
+      },
+      {
+        "title": "车架、踏板与挡泥板",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p4-detail-17.webp",
+        "thumb": "/images/electric-mobility/p4-detail-17-thumb.webp",
+        "enTitle": "Frame, deck and mudguard"
+      }
+    ],
+    "enTitle": "6.5-inch children’s electric scooter with suspension",
+    "enSpecs": [
+      [
+        "Motor power",
+        "130 W"
+      ],
+      [
+        "Battery voltage",
+        "24 V"
+      ],
+      [
+        "Battery capacity",
+        "2.5 Ah"
+      ],
+      [
+        "Wheel size",
+        "6.5 in"
+      ],
+      [
+        "Maximum speed",
+        "15 km/h"
+      ],
+      [
+        "Brakes",
+        "To confirm"
+      ],
+      [
+        "Charging time",
+        "4–6 h"
+      ],
+      [
+        "Net weight",
+        "To confirm"
+      ],
+      [
+        "Package dimensions",
+        "82.5 × 15.5 × 35.5 cm"
+      ],
+      [
+        "Gross package weight",
+        "To confirm"
+      ]
+    ]
+  },
+  {
+    "id": 10,
+    "code": "SC-K03",
+    "title": "三轮带座椅儿童电动滑板车",
+    "enTitle": "Three-wheel seated children’s electric scooter",
+    "category": "kids",
+    "label": "24V电动三轮款",
+    "enLabel": "24V powered three-wheel model",
+    "specs": [
+      [
+        "电机功率",
+        "无刷电机；功率按配置确认"
+      ],
+      [
+        "电池电压",
+        "24 V"
+      ],
+      [
+        "电池容量",
+        "2 Ah"
+      ],
+      [
+        "轮胎尺寸",
+        "三轮；轮径待确认"
+      ],
+      [
+        "最高时速",
+        "按年龄与目的市场配置确认"
+      ],
+      [
+        "制动方式",
+        "按所选配置确认"
+      ],
+      [
+        "充电时间",
+        "按所选配置确认"
+      ],
+      [
+        "整车净重",
+        "按所选配置确认"
+      ],
+      [
+        "包装尺寸",
+        "62 × 30 × 86 cm"
+      ],
+      [
+        "包装毛重",
+        "约5 kg（配置确认）"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Brushless motor; confirm power rating"
+      ],
+      [
+        "Battery voltage",
+        "24 V"
+      ],
+      [
+        "Battery capacity",
+        "2 Ah"
+      ],
+      [
+        "Wheel size",
+        "Three wheels; confirm wheel diameter"
+      ],
+      [
+        "Maximum speed",
+        "Confirm for age group and destination"
+      ],
+      [
+        "Brakes",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Charging time",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Net weight",
+        "Confirm for selected configuration"
+      ],
+      [
+        "Package dimensions",
+        "62 × 30 × 86 cm"
+      ],
+      [
+        "Gross package weight",
+        "Approx. 5 kg; confirm configuration"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "带座椅与折叠结构",
+        "enTitle": "Seated and folded views",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-k3-main.webp",
+        "thumb": "/images/electric-mobility/extra-k3-main-thumb.webp"
+      },
+      {
+        "title": "立杆折叠关节",
+        "enTitle": "Stem folding joint",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-k3-hinge.webp",
+        "thumb": "/images/electric-mobility/extra-k3-hinge-thumb.webp"
+      },
+      {
+        "title": "车把与电动模式开关",
+        "enTitle": "Handlebar and power-mode switch",
+        "kind": "产品细节",
+        "web": "/images/electric-mobility/extra-k3-controls.webp",
+        "thumb": "/images/electric-mobility/extra-k3-controls-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "code": "SC-B01",
+    "title": "双轮电动平衡车",
+    "category": "balance",
+    "label": "平衡车 · 独立品类",
+    "specs": [
+      [
+        "电机功率",
+        "按轮径配置确认"
+      ],
+      [
+        "电池电压",
+        "36 V（待确认）"
+      ],
+      [
+        "电池容量",
+        "待确认"
+      ],
+      [
+        "轮胎尺寸",
+        "7 / 8 / 10英寸"
+      ],
+      [
+        "最高时速",
+        "待确认"
+      ],
+      [
+        "制动方式",
+        "待确认"
+      ],
+      [
+        "充电时间",
+        "待确认"
+      ],
+      [
+        "整车净重",
+        "待确认"
+      ],
+      [
+        "包装尺寸",
+        "按轮径配置确认"
+      ],
+      [
+        "包装毛重",
+        "待确认"
+      ]
+    ],
+    "images": [
+      "clean-assets/p2-hero.png"
+    ],
+    "description": "双轮自平衡产品，独立于站杆滑板车；按轮径和完整配置询价。",
+    "gallery": [
+      {
+        "title": "整车外观",
+        "kind": "产品外观",
+        "web": "/images/electric-mobility/p2-hero.webp",
+        "thumb": "/images/electric-mobility/p2-hero-thumb.webp",
+        "enTitle": "Overall view"
+      },
+      {
+        "title": "轮胎与外壳细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p2-detail-14.webp",
+        "thumb": "/images/electric-mobility/p2-detail-14-thumb.webp",
+        "enTitle": "Tyre and shell detail"
+      },
+      {
+        "title": "轮胎纹路与轮径对比",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p2-detail-16.webp",
+        "thumb": "/images/electric-mobility/p2-detail-16-thumb.webp",
+        "enTitle": "Tyre tread and wheel comparison"
+      },
+      {
+        "title": "轮毂电机结构示意",
+        "kind": "结构示意",
+        "web": "/images/electric-mobility/p2-detail-18.webp",
+        "thumb": "/images/electric-mobility/p2-detail-18-thumb.webp",
+        "enTitle": "Hub motor illustration"
+      },
+      {
+        "title": "灯光与提手细节",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p2-detail-22.webp",
+        "thumb": "/images/electric-mobility/p2-detail-22-thumb.webp",
+        "enTitle": "Lights and carrying handle"
+      },
+      {
+        "title": "脚踏板与电量显示",
+        "kind": "产品细节 / 场景",
+        "web": "/images/electric-mobility/p2-detail-23.webp",
+        "thumb": "/images/electric-mobility/p2-detail-23-thumb.webp",
+        "enTitle": "Footpads and battery indicator"
+      },
+      {
+        "title": "多配色外观实拍",
+        "kind": "外观 / 场景",
+        "web": "/images/electric-mobility/p2-photo-1.webp",
+        "thumb": "/images/electric-mobility/p2-photo-1-thumb.webp",
+        "enTitle": "Colour options"
+      },
+      {
+        "title": "提手与外壳实拍",
+        "kind": "外观 / 场景",
+        "web": "/images/electric-mobility/p2-photo-2.webp",
+        "thumb": "/images/electric-mobility/p2-photo-2-thumb.webp",
+        "enTitle": "Carrying handle and shell"
+      }
+    ],
+    "enTitle": "Two-wheel self-balancing scooter",
+    "enSpecs": [
+      [
+        "Motor power",
+        "Confirm by wheel configuration"
+      ],
+      [
+        "Battery voltage",
+        "36 V (to confirm)"
+      ],
+      [
+        "Battery capacity",
+        "To confirm"
+      ],
+      [
+        "Wheel size",
+        "7 / 8 / 10 in"
+      ],
+      [
+        "Maximum speed",
+        "To confirm"
+      ],
+      [
+        "Brakes",
+        "To confirm"
+      ],
+      [
+        "Charging time",
+        "To confirm"
+      ],
+      [
+        "Net weight",
+        "To confirm"
+      ],
+      [
+        "Package dimensions",
+        "Confirm by wheel configuration"
+      ],
+      [
+        "Gross package weight",
+        "To confirm"
+      ]
+    ]
+  }
+]

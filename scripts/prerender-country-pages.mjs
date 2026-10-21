@@ -6,6 +6,15 @@ import os from 'node:os';
 const root=process.cwd();
 const sitemap=fs.readFileSync(path.join(root,'dist/sitemap.xml'),'utf8');
 const candidates=[...sitemap.matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname).filter(p=>/\/shipping-from-china-to-[^/]+\/$/.test(p));
+// Shared freight styles may be split into their own chunks as country templates reuse them.
+// Keep static HTML styled before JavaScript loads, including specialized country bodies.
+const sharedStyles=fs.readdirSync(path.join(root,'dist/assets')).filter(f=>/^(freight|gulf-stories|market-stories)-.*\.css$/.test(f));
+for (const route of candidates) {
+ const file=path.join(root,'dist',route,'index.html');
+ let html=fs.readFileSync(file,'utf8');
+ for (const css of sharedStyles) if(!html.includes(`/assets/${css}`))html=html.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+ fs.writeFileSync(file,html);
+}
 const targets=candidates.filter(p=>/<div id="root">\s*<\/div>|data-country-prerender="true"/.test(fs.readFileSync(path.join(root,'dist',p,'index.html'),'utf8')));
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ddnz-country-ssr-'));
 const bundle=path.join(temporary,'renderer.cjs');

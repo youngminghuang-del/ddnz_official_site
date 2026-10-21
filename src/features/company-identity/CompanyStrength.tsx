@@ -1,3 +1,4 @@
+import {roleExtras} from '../product-positioning/ProductSupply';
 import { useLanguage } from '../../contexts/LanguageContext';
 export const strengthCopy = {
   "en": [
@@ -12,8 +13,8 @@ export const strengthCopy = {
       "The contracting company and agreed services are identified in your quotation and contract. Company registration records are available below."
     ],
     [
-      "Sourcing, production and export together",
-      "DDNZ combines manufacturing and trade, coordinating samples, production follow-up, quality checks and export preparation for overseas buyers."
+      "Manufacturing, OEM/ODM and export",
+      "DDNZ combines manufacturing and trade to deliver product development, OEM/ODM, production, quality control and export for overseas buyers."
     ],
     [
       "Trade and freight working together",
@@ -32,8 +33,8 @@ export const strengthCopy = {
       "报价及合同明确签约公司与约定的服务范围，公司登记信息可在下方查看。"
     ],
     [
-      "采购、生产与出口协同",
-      "DDNZ 结合制造与贸易，为海外客户协调样品确认、生产跟进、质量检查及出口准备。"
+      "制造、OEM/ODM与出口",
+      "DDNZ集制造与贸易于一体，为海外客户提供产品开发、OEM/ODM、生产、质量控制与出口交付。"
     ],
     [
       "贸易与货运协作",
@@ -163,5 +164,5 @@ export const strengthCopy = {
 } as const;
 export default function CompanyStrength() {
  const {language}=useLanguage(); const c=strengthCopy[language];
- return <section className="about-strength"><div className="about-inner"><h2>{c[0]}</h2><div className="about-strength-grid">{[c[6],c[7],c[8]].map((item,i)=><article key={item[0]}><span className="about-eyebrow">0{i+1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div></section>;
+ return <section className="about-strength"><div className="about-inner"><h2>{c[0]}</h2><div className="about-strength-grid">{[c[6],roleExtras[language]?.supply.pillars[0]||c[7],c[8]].map((item,i)=><article key={item[0]}><span className="about-eyebrow">0{i+1}</span><h3>{item[0]}</h3><p>{item[1]}</p></article>)}</div></div></section>;
 }

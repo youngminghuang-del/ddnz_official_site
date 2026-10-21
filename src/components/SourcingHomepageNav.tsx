@@ -1,3 +1,4 @@
+import ProductDirectoryMenu from './ProductDirectoryMenu';
 import { aboutCopy } from '../features/company-identity/aboutCopy';
 import { foodCategoryNavigation, foodNavigationLabels } from '../config/foodCategoryNavigation';
 import { audioCategoryNavigation } from '../config/audioCategoryNavigation';
@@ -216,8 +217,8 @@ function Dropdown({
           if (!open) onToggle(id);
           const last = event.key === 'ArrowUp';
           window.requestAnimationFrame(() => {
-            const items = document.getElementById(panelId)?.querySelectorAll<HTMLElement>('a, button');
-            items?.[last ? items.length - 1 : 0]?.focus();
+            const items = Array.from(document.getElementById(panelId)?.querySelectorAll<HTMLElement>('a, button, summary') || []).filter(item=>item.getClientRects().length>0);
+            items[last ? items.length - 1 : 0]?.focus();
           });
         }}
         className={`flex items-center gap-1.5 whitespace-nowrap rounded-lg px-2 py-2 text-sm font-semibold outline-none transition-colors hover:text-[var(--ddnz-purple-strong)] focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${active ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)]'}`}
@@ -225,7 +226,7 @@ function Dropdown({
         {label}
         <ChevronDown className={`h-4 w-4 transition-transform ${open ? 'rotate-180' : ''}`} aria-hidden="true" />
       </button>
-      {(open || id === 'language') ? (
+      {(open || id === 'language' || id === 'products') ? (
         <div
           hidden={!open}
           id={panelId}
@@ -291,8 +292,10 @@ export default function SourcingHomepageNav({
   const processPath = localizedPath('/how-we-work');
   const quoteHref = appendAttribution(quotePath ? localizedPath(quotePath) : `${localizedPath('/get-a-quote')}?leadGoal=${showFreightExecutor ? 'Freight%20Export' : 'Product%20Sourcing'}&source=homepage_navigation`);
   const freightQuoteLabels: Record<Language, string> = { zh: '提交货运需求', en: 'Request freight quote', es: 'Consultar transporte', fr: 'Demander un devis fret', ru: 'Запросить перевозку', ar: 'اطلب عرض شحن', pt: 'Solicitar frete', tr: 'Navlun teklifi alın' };
-  const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : labels.start;
-  const languageOptions = englishProduct ? allNavigationLanguages : supportedLanguages || supportedNavigationLanguages(location.pathname);
+  const productSurface=['/','/about'].includes(splitNavigationPath(location.pathname).pathname)||(!showFreightExecutor&&splitNavigationPath(location.pathname).pathname==='/get-a-quote') || /\/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(location.pathname);
+  const wholesaleLabels:Record<Language,string>={en:'Get a wholesale quote',zh:'获取批发报价',fr:'Demander un devis de gros',es:'Cotizar al por mayor',pt:'Solicitar cotação por atacado',ru:'Запросить оптовую цену',tr:'Toptan fiyat teklifi alın',ar:'اطلب عرض سعر بالجملة'};
+  const quoteLabel = showFreightExecutor ? freightQuoteLabels[language] : productSurface ? wholesaleLabels[language] : labels.start;
+  const languageOptions = supportedLanguages || (englishProduct ? allNavigationLanguages : supportedNavigationLanguages(location.pathname));
   const freightMenu = freightMenuLabels[language];
   const isProductsPage = /\/products\/?$/.test(location.pathname) || location.pathname.includes('/sourcing/') || location.pathname.includes('/refrigeration-equipment') || /^\/(phone-cases|phone-straps-charms|portable-power)/.test(splitNavigationPath(location.pathname).pathname) || splitNavigationPath(location.pathname).pathname.startsWith('/screen-protectors');
   const isServicesPage = /\/sourcing-services\/?$/.test(location.pathname) || location.pathname.includes('/sourcing-services/');
@@ -456,31 +459,7 @@ export default function SourcingHomepageNav({
     setMobileSection((current) => current === section ? null : section);
   };
 
-  const productMenu = (onNavigate: () => void, variant: 'desktop' | 'mobile') => (
-    <div className={variant === 'desktop' ? 'w-[min(760px,calc(100vw-2rem))] max-h-[calc(100dvh-120px)] overflow-y-auto' : ''}>
-      <ul className={variant === 'desktop' ? 'grid grid-cols-2 gap-x-4 gap-y-2' : ''}>{[
-        { to: '/sourcing/commercial-kitchen-equipment-from-china', label: labels.kitchen, children: [...kitchenCategoryNavigation(language), { to: '/refrigeration-equipment', label: labels.refrigeration }] },
-        { to: '/sourcing/food-processing-machinery-from-china', label: foodNavigationLabels[language], children: foodCategoryNavigation(language) },
-        { to: '/sourcing/audio-speakers-from-china', label: labels.audio, children: audioCategoryNavigation(language) },
-        { to: '/sourcing/mobile-accessories-from-china', label: labels.mobile, children: [...mobileCategoryNavigation(language), filmNav] },
-        { to: '/sourcing/outdoor-products-from-china', label: labels.outdoor, children: outdoorCategoryNavigation(language) },
-      ].map(item => <li key={item.to}>
-        <DropdownLink onNavigate={onNavigate} to={localizedPath(item.to)}>{item.label}</DropdownLink>
-        {item.children.length > 0 && <ul className="ms-5 me-2 border-s border-slate-200 ps-2">{item.children.map(child => <li key={child.to}>
-          <Link onClick={onNavigate} to={localizedPath(child.to)} hrefLang={isEnglishProductPath(localizedPath(child.to)) ? 'en' : language} data-screen-protector-entry={child.to === filmNav.to ? `${variant}-nav` : undefined}
-            aria-current={outdoorNavigationCurrent(location.pathname, location.search, localizedPath(child.to)) ? 'page' : undefined}
-            className="block min-h-11 rounded-lg px-3 py-2.5 text-sm font-medium text-slate-600 transition-colors aria-[current=page]:bg-[var(--ddnz-purple-soft)] aria-[current=page]:text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)] hover:text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]">
-            {child.label}
-          </Link>
-          {'children' in child && Array.isArray(child.children) && <ul className="ms-4 border-s border-slate-200 ps-2">{child.children.map(guide => <li key={guide.to}><Link onClick={onNavigate} to={localizedPath(guide.to)} aria-current={location.pathname.replace(/\/$/, '') === localizedPath(guide.to).replace(/\/$/, '') ? 'page' : undefined} className="block min-h-11 rounded-lg px-3 py-2.5 text-sm text-slate-600 hover:text-purple-800 aria-[current=page]:bg-purple-50 aria-[current=page]:text-purple-800">{guide.label}</Link></li>)}</ul>}
-
-        </li>)}</ul>}
-      </li>)}</ul>
-      <div className="mt-2 border-t border-slate-200 pt-2">
-        <DropdownLink onNavigate={onNavigate} to={localizedPath('/products')}>{productOverviewLabels[language]}<span aria-hidden="true" className="ms-2">{language === 'ar' ? '←' : '→'}</span></DropdownLink>
-      </div>
-    </div>
-  );
+  const productMenu = (onNavigate: () => void, variant: 'desktop' | 'mobile') => <ProductDirectoryMenu language={language} onNavigate={onNavigate} variant={variant}/>;
 
   return (
     <>
@@ -511,7 +490,7 @@ export default function SourcingHomepageNav({
               DDNZ<span className="ml-[0.32em] font-semibold tracking-[0.045em]">GLOBAL</span>
             </span>
             <span className="mt-[6px] whitespace-nowrap text-[8px] min-[400px]:text-[10px] font-semibold leading-none tracking-[0.075em] text-[#40536c] sm:text-[11px]">
-              CHINA SOURCING <span className="text-[#b94625]">&amp;</span> EXPORT
+              MANUFACTURING <span className="text-[#b94625]">&amp;</span> EXPORT
             </span>
           </span>
         </Link>
@@ -525,7 +504,7 @@ export default function SourcingHomepageNav({
           >
             {labels.home}
           </Link>
-          <Dropdown id="products" label={labels.products} open={openDropdown === 'products'} active={isProductsPage} onToggle={toggleDesktopDropdown}>
+          <Dropdown id="products" label={language==='zh'?'产品目录':language==='en'?'Products':labels.products} open={openDropdown === 'products'} active={isProductsPage} onToggle={toggleDesktopDropdown}>
             {productMenu(closeDesktopDropdown, 'desktop')}
           </Dropdown>
           <Dropdown id="services" label={labels.services} open={openDropdown === 'services'} active={isServicesPage} onToggle={toggleDesktopDropdown}>
@@ -659,7 +638,7 @@ export default function SourcingHomepageNav({
             <Link onClick={closeMobile} aria-current={isHomePage ? 'page' : undefined} className={`rounded-lg px-3 py-3 font-semibold ${isHomePage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`} to={localizedPath('/')}>{labels.home}</Link>
             <div>
               <button type="button" aria-expanded={mobileSection === 'products'} aria-controls="mobile-products-menu" onClick={() => toggleMobileSection('products')} className={`flex min-h-12 w-full items-center justify-between rounded-lg px-3 py-3 text-left font-semibold rtl:text-right ${isProductsPage ? 'bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]' : 'text-[var(--ddnz-ink)] hover:bg-[var(--ddnz-purple-soft)]'}`}>
-                {labels.products}<ChevronDown className={`h-4 w-4 transition-transform ${mobileSection === 'products' ? 'rotate-180' : ''}`} aria-hidden="true" />
+                {language==='zh'?'产品目录':language==='en'?'Products':labels.products}<ChevronDown className={`h-4 w-4 transition-transform ${mobileSection === 'products' ? 'rotate-180' : ''}`} aria-hidden="true" />
               </button>
               {mobileSection === 'products' ? (
               <div id="mobile-products-menu" className="mb-1 ml-3 grid border-l-2 border-[var(--ddnz-purple)] pl-2 rtl:ml-0 rtl:mr-3 rtl:border-l-0 rtl:border-r-2 rtl:pl-0 rtl:pr-2">

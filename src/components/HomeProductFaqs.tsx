@@ -1,0 +1,4 @@
+import {useLanguage} from '../contexts/LanguageContext';
+import {getLocalizedHomeFaqs} from '../data/homeFaqData';
+const headings={en:'Product orders and export: common questions',zh:'产品采购与出口常见问题',fr:'Commandes et export : questions fréquentes',es:'Pedidos y exportación: preguntas frecuentes',pt:'Pedidos e exportação: dúvidas frequentes',tr:'Ürün siparişleri ve ihracat: sık sorulanlar',ru:'Заказы и экспорт: частые вопросы',ar:'أسئلة شائعة عن طلب المنتجات والتصدير'};
+export default function HomeProductFaqs(){const {language}=useLanguage();return <section className="supply-bridge home-product-faq" aria-labelledby="home-product-faq-title" dir={language==='ar'?'rtl':'ltr'}><div className="supply-inner"><h2 id="home-product-faq-title">{headings[language]}</h2>{getLocalizedHomeFaqs(language).map(f=><details key={f.question}><summary>{f.question}</summary><p>{f.answer}</p></details>)}</div></section>;}

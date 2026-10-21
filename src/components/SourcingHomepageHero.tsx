@@ -1,3 +1,4 @@
+import {ProductSupplyRange,supplyPositioning,roleExtras,productSelectorCopy} from '../features/product-positioning/ProductSupply';
 import { navigateQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { homeSourcingLabel } from '../data/homeSourcingLabel.mjs';
 import { navigationPath } from '../lib/productLanguageRouting';
@@ -160,13 +161,16 @@ const heroWhatsappMessages: Record<Language, string> = {
 export default function SourcingHomepageHero() {
   const { language } = useLanguage();
   const navigate = useNavigate();
-  const copy = HOME_COPY[language];
+  const productLed = true;
+  const supply = supplyPositioning[language];
+  const selector=productSelectorCopy[language];
+  const copy={...HOME_COPY[language],primary:supply.primary,whatsapp:supply.whatsapp,support:supply.support,formTitle:selector.title,body:selector.body,sourcing:selector.sourcing,sourcingDesc:selector.sourcingDesc,existing:selector.existing,existingDesc:selector.existingDesc};
   const intro = { ...HERO_INTRO[language], headline: positioning[language].homeHeading, body: positioning[language].homeDescription };
   const [intent, setIntent] = useState<Intent>('sourcing');
   const [category, setCategory] = useState<Category>('Commercial Kitchen Equipment');
   const [market, setMarket] = useState('');
   const attribution = readAttribution();
-  const whatsappUrl = buildAttributedWhatsAppUrl(heroWhatsappMessages[language], attribution);
+  const whatsappUrl = buildAttributedWhatsAppUrl(supply?.whatsappMessage || heroWhatsappMessages[language], attribution);
 
   const scrollToBrief = (nextIntent: Intent = 'sourcing') => {
     setIntent(nextIntent);
@@ -237,24 +241,24 @@ export default function SourcingHomepageHero() {
 
   return (
     <>
-      <section className="ddnz-ribbon-home-hero home-intro" aria-labelledby="homepage-sourcing-title">
+      <section className={`ddnz-ribbon-home-hero home-intro ${productLed?'product-led-hero':''}`} aria-labelledby="homepage-sourcing-title">
         <div className="home-intro-grid">
           <div className="home-intro-copy">
-            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span><b>×</b><span>HEAVEN BORN</span><em>{homeSourcingLabel[language]}</em></p>
+            <p className="home-intro-kicker"><span>DDNZ GLOBAL</span>{supply?<em>{supply.eyebrow}</em>:<><b>×</b><span>HEAVEN BORN</span><em>{homeSourcingLabel[language]}</em></>}</p>
             <h1 id="homepage-sourcing-title">{intro.headline}</h1>
-            <p className="home-intro-summary">{intro.body}</p>
+            <p className="home-intro-summary">{intro.body}</p>{productLed&&<ul className="home-product-points">{(roleExtras[language]?.points||(language==='zh'?['工贸一体','OEM/ODM定制','质量控制与出口']:['Manufacturing & export','OEM/ODM production','Quality at the source'])).map(point=><li key={point}>{point}</li>)}</ul>}
             <div className="home-intro-actions">
               <button type="button" onClick={() => scrollToBrief('sourcing')} className="ddnz-button ddnz-button-primary">
                 {copy.primary}<ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
-              <button type="button" onClick={() => goToQuote('freight')} className="ddnz-button ddnz-button-secondary">{copy.freight}</button>
+              <>{supply?<a href={navigationPath('/products/',language)} className="ddnz-button ddnz-button-secondary">{supply.catalogue}</a>:<button type="button" onClick={() => goToQuote('freight')} className="ddnz-button ddnz-button-secondary">{copy.freight}</button>}</>
             </div>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" data-analytics-tracked="true" onClick={() => trackEvent('whatsapp_click', { cta_location: 'homepage_hero' })} className="home-intro-whatsapp">
               <MessageCircle className="h-5 w-5" aria-hidden="true" />{copy.whatsapp}<ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
           <figure className="home-intro-photo">
-            <img src="/images/operations/ddnz-team-cutout-20260914.webp" alt={intro.imageAlt} width="1254" height="1254" fetchPriority="high" decoding="async" />
+            <img src="/images/operations/ddnz-team-cutout-20260914.webp" alt={roleExtras[language]?.imageAlt||(language==='zh'?'广州产品与出口团队':'Product and export team in Guangzhou')} width="1254" height="1254" fetchPriority="high" decoding="async" />
           </figure>
         </div>
         <div className="home-intro-support">
@@ -263,11 +267,11 @@ export default function SourcingHomepageHero() {
         </div>
       </section>
 
-      <section id="product-categories" className="home-priority-categories scroll-mt-24 bg-[#fffefb] px-5 pb-14 pt-10 sm:px-8 lg:px-12" aria-labelledby="priority-categories-title">
+      {productLed?<ProductSupplyRange/>:<section id="product-categories" className="home-priority-categories scroll-mt-24 bg-[#fffefb] px-5 pb-14 pt-10 sm:px-8 lg:px-12" aria-labelledby="priority-categories-title">
         <div className="mx-auto max-w-[1344px]">
           <div className="flex items-end justify-between gap-4">
             <h2 id="priority-categories-title" className="text-[28px] font-bold tracking-[-0.025em] text-[var(--ddnz-ink)]">{copy.categoriesTitle}</h2>
-            <Link to={canonicalSitePath('/products')} hrefLang="en" className="hidden min-h-11 items-center gap-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:underline sm:inline-flex">{copy.viewAll}{language !== 'en' && ' (EN)'}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
+            <Link to={canonicalSitePath('/products')} hrefLang="en" className="hidden min-h-11 items-center gap-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:underline sm:inline-flex">{copy.viewAll}{' (EN)'}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Link>
           </div>
           <div className="mt-6 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
             {categoryCards.map((card) => (
@@ -285,7 +289,8 @@ export default function SourcingHomepageHero() {
         </div>
       </section>
 
-      <ProductDiscoveryLinks source="home" />
+      }
+      {!productLed && <ProductDiscoveryLinks source="home" />}
       <section className="home-brief-section" aria-labelledby="sourcing-brief-title">
         <div className="home-brief-layout">
           <div className="home-brief-intro">
@@ -331,7 +336,7 @@ export default function SourcingHomepageHero() {
               </div>
               <div>
               <button type="submit" className="mt-3 inline-flex min-h-[48px] w-full items-center justify-center gap-3 rounded-lg bg-[var(--ddnz-action)] px-5 text-[16px] font-bold text-white shadow-sm transition-colors hover:bg-[var(--ddnz-coral-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-2">
-                {intent === 'freight' ? copy.freight : copy.primary}<ArrowRight className="h-5 w-5" aria-hidden="true" />
+                {intent === 'existing' && productLed ? selector.existingCta : intent === 'freight' ? copy.freight : copy.primary}<ArrowRight className="h-5 w-5" aria-hidden="true" />
               </button>
               </div>
               </div>

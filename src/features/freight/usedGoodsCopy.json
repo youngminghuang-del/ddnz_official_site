@@ -50,7 +50,7 @@
     "paras": [
       "We have shipped used clothing, shoes and bags to this destination. These photographs and videos show sorting, packing and loading preparation in China.",
       "Separate clothing, footwear and bags in the goods description. Agree the grade, condition, quantities and bale identification with the buyer, then match the packing list to the actual goods.",
-      "The historical loading example is 352 bales in a 40HQ, with a gross weight of 80 kg per bale and 28 metric tonnes (MT) of cargo, including packaging.",
+      "The historical loading example is 352 bales in a 45HC, with a gross weight of 80 kg per bale and 28 metric tonnes (MT) of cargo, including packaging.",
       "Before collection, identify the importer and customs clearance contact, check the precise product category and agree who arranges destination handling and unloading. Historical shipments do not establish current import eligibility.",
       "Send the goods categories, bale count, gross weights, dimensions, supplier city, cargo-ready date, destination city and requested handover. If a detail is unknown, say so; the historical example is not a preset shipment quantity."
     ],
@@ -62,7 +62,7 @@
     "questions": [
       "Can clothing, bags and shoes share one packing figure?",
       "Is 80 kg the net weight?",
-      "Does a 40HQ always hold 352 bales?",
+      "Does a 45HC always hold 352 bales?",
       "What does the freight quote cover?"
     ],
     "answers": [
@@ -129,7 +129,7 @@
     "paras": [
       "我们曾向该目的国发运二手服装、鞋子及箱包。以下实拍展示中国端的分拣、打包与装柜准备。",
       "在货物描述中区分服装、鞋子与箱包。与买家明确等级、状态、数量和货包标识，再让装箱清单对应实物。",
-      "历史装载示例为40HQ柜装352包，单包毛重80 kg，货物总毛重28 MT，均包含包装。",
+      "历史装载示例为45HC柜装352包，单包毛重80 kg，货物总毛重28 MT，均包含包装。",
       "提货前明确进口方与清关联系人，核对具体产品类别，并约定目的地操作和卸货由谁负责。历史出运不等于当前具备进口资格。",
       "提供货类、包数、毛重、尺寸、供应商城市、备货日期、目的地城市与期望交接范围。未知项可注明待确认，历史示例不自动作为本次货量。"
     ],
@@ -141,7 +141,7 @@
     "questions": [
       "服装、箱包和鞋子能否共用同一组打包数据？",
       "80 kg是净重吗？",
-      "40HQ是否固定装352包？",
+      "45HC是否固定装352包？",
       "货运报价包括哪些环节？"
     ],
     "answers": [
@@ -208,7 +208,7 @@
     "paras": [
       "Hemos enviado ropa, calzado y bolsos usados a este destino. Estas fotos y vídeos muestran la clasificación, el embalaje y la preparación de la carga en China.",
       "Distinga ropa, calzado y bolsos en la descripción. Acuerde calidad, estado, cantidades e identificación de los fardos con el comprador y haga coincidir la lista de empaque con la mercancía.",
-      "En este ejemplo de envío, un contenedor 40HQ lleva 352 fardos de 80 kg brutos cada uno, incluido el embalaje. El peso bruto de la carga es de 28 MT, sin incluir la tara del contenedor.",
+      "En este ejemplo de envío, un contenedor 45HC lleva 352 fardos de 80 kg brutos cada uno, incluido el embalaje. El peso bruto de la carga es de 28 MT, sin incluir la tara del contenedor.",
       "Antes de recoger la mercancía, identifique al importador y al responsable del despacho aduanero, compruebe la categoría exacta del producto y acuerde quién gestiona las operaciones y la descarga en destino. Los envíos anteriores no garantizan que la importación esté autorizada actualmente.",
       "Envíe las categorías de productos, el número de fardos, los pesos brutos, las dimensiones, la ciudad del proveedor, la fecha de disponibilidad, la ciudad de destino y el alcance de entrega solicitado. Indique qué datos quedan por confirmar; las cantidades del ejemplo no se aplican a su solicitud."
     ],
@@ -220,7 +220,7 @@
     "questions": [
       "¿Sirven las mismas cifras para las tres categorías?",
       "¿80 kg es peso neto?",
-      "¿Un 40HQ siempre lleva 352 fardos?",
+      "¿Un 45HC siempre lleva 352 fardos?",
       "¿Qué incluye la cotización?"
     ],
     "answers": [
@@ -287,7 +287,7 @@
     "paras": [
       "Nous avons expédié des vêtements, chaussures et sacs d’occasion vers cette destination. Ces photos et vidéos montrent le tri, l’emballage et la préparation du chargement en Chine.",
       "Distinguez vêtements, chaussures et sacs. Convenez avec l’acheteur de la qualité, de l’état, des quantités et de l’identification des balles, puis faites correspondre la liste de colisage aux marchandises.",
-      "Dans cet exemple d’expédition, un conteneur 40HQ contient 352 balles de 80 kg brut chacune, emballage compris. Le poids brut de la cargaison est de 28 MT, hors tare du conteneur.",
+      "Dans cet exemple d’expédition, un conteneur 45HC contient 352 balles de 80 kg brut chacune, emballage compris. Le poids brut de la cargaison est de 28 MT, hors tare du conteneur.",
       "Avant l’enlèvement, identifiez l’importateur et le responsable du dédouanement, vérifiez la catégorie exacte du produit et convenez des responsabilités pour les opérations à destination et le déchargement. Une expédition antérieure ne garantit pas que l’importation soit actuellement autorisée.",
       "Indiquez les catégories de produits, le nombre de balles, les poids bruts, les dimensions, la ville du fournisseur, la date de disponibilité, la destination et les modalités de livraison souhaitées. Signalez les données encore inconnues ; les quantités de l’exemple ne sont pas appliquées à votre demande."
     ],
@@ -299,7 +299,7 @@
     "questions": [
       "Les mêmes données d’emballage s’appliquent-elles aux trois catégories ?",
       "Les 80 kg correspondent-ils au poids net ?",
-      "Un 40HQ contient-il toujours 352 balles ?",
+      "Un 45HC contient-il toujours 352 balles ?",
       "Que couvre le devis ?"
     ],
     "answers": [
@@ -366,7 +366,7 @@
     "paras": [
       "Já enviamos roupas, calçados e bolsas usados para este destino. Estas fotos e vídeos mostram a triagem, a embalagem e a preparação do carregamento na China.",
       "Separe roupas, calçados e bolsas na descrição. Combine qualidade, estado, quantidades e identificação dos fardos com o comprador e confira a lista de embalagem com a carga.",
-      "Neste exemplo de envio, um contêiner 40HQ leva 352 fardos de 80 kg brutos cada um, incluindo a embalagem. O peso bruto da carga é de 28 MT, sem incluir a tara do contêiner.",
+      "Neste exemplo de envio, um contêiner 45HC leva 352 fardos de 80 kg brutos cada um, incluindo a embalagem. O peso bruto da carga é de 28 MT, sem incluir a tara do contêiner.",
       "Antes da coleta, identifique o importador e o responsável pelo desembaraço aduaneiro, confirme a categoria exata do produto e defina quem organiza as operações e a descarga no destino. Envios anteriores não garantem que a importação esteja autorizada atualmente.",
       "Envie as categorias de produtos, o número de fardos, os pesos brutos, as dimensões, a cidade do fornecedor, a data de disponibilidade, o destino e o escopo de entrega desejado. Indique os dados ainda não confirmados; as quantidades do exemplo não são aplicadas à sua solicitação."
     ],
@@ -378,7 +378,7 @@
     "questions": [
       "As três categorias usam os mesmos dados?",
       "80 kg é peso líquido?",
-      "Um 40HQ sempre leva 352 fardos?",
+      "Um 45HC sempre leva 352 fardos?",
       "O que a cotação inclui?"
     ],
     "answers": [
@@ -445,7 +445,7 @@
     "paras": [
       "Bu ülkeye ikinci el giysi, ayakkabı ve çanta gönderdik. Bu fotoğraf ve videolar Çin’deki ayırma, paketleme ve yükleme hazırlığını gösterir.",
       "Açıklamada giysi, ayakkabı ve çantaları ayırın. Alıcıyla kalite, durum, miktar ve balya işaretlerini belirleyip paketleme listesini gerçek yükle eşleştirin.",
-      "Geçmiş yükleme örneğinde 40HQ konteynere 352 balya yüklenmiştir. Balya başına brüt ağırlık 80 kg, toplam yükün brüt ağırlığı 28 MT’dir; her iki ağırlık da ambalajı içerir.",
+      "Geçmiş yükleme örneğinde 45HC konteynere 352 balya yüklenmiştir. Balya başına brüt ağırlık 80 kg, toplam yükün brüt ağırlığı 28 MT’dir; her iki ağırlık da ambalajı içerir.",
       "Yükü teslim almadan önce ithalatçıyı ve gümrükleme için irtibat kişisini belirleyin, ürün kategorisini netleştirin ve varış işlemleri ile boşaltmadan kimin sorumlu olacağını kararlaştırın. Geçmiş sevkiyatlar güncel ithalat uygunluğunu kanıtlamaz.",
       "Ürün kategorileri, balya sayısı, brüt ağırlıklar, ölçüler, tedarikçi şehri, hazır olma tarihi, varış şehri ve teslim kapsamını gönderin. Bilinmeyen bilgileri belirtin; geçmiş örnek sizin yük miktarınız değildir."
     ],
@@ -457,7 +457,7 @@
     "questions": [
       "Üç kategori aynı paketleme verilerini kullanabilir mi?",
       "80 kg net ağırlık mı?",
-      "40HQ her zaman 352 balya mı alır?",
+      "45HC her zaman 352 balya mı alır?",
       "Navlun teklifi neleri kapsar?"
     ],
     "answers": [
@@ -524,7 +524,7 @@
     "paras": [
       "Мы отправляли в эту страну одежду, обувь и сумки, бывшие в употреблении. Эти фото и видео показывают сортировку, упаковку и подготовку к загрузке в Китае.",
       "Отдельно опишите одежду, обувь и сумки. Согласуйте с покупателем сорт, состояние, количество и маркировку кип, затем сверьте упаковочный лист с грузом.",
-      "В примере предыдущей отправки в контейнер 40HQ загрузили 352 кипы. Вес брутто одной кипы — 80 кг, общий вес брутто груза — 28 MT; оба показателя включают упаковку.",
+      "В примере предыдущей отправки в контейнер 45HC загрузили 352 кипы. Вес брутто одной кипы — 80 кг, общий вес брутто груза — 28 MT; оба показателя включают упаковку.",
       "До забора груза определите импортёра и контактное лицо по таможенному оформлению, уточните категорию товара и согласуйте ответственность за операции и разгрузку в пункте назначения. Прошлые отправки не подтверждают текущую допустимость импорта.",
       "Укажите категории товаров, число кип, вес брутто, размеры, город поставщика, дату готовности, город назначения и требуемые условия передачи груза. Неизвестные данные отметьте отдельно; объём вашей отправки рассчитывается по фактическому грузу, а не по этому примеру."
     ],
@@ -536,7 +536,7 @@
     "questions": [
       "Подходят ли одинаковые цифры всем трём категориям?",
       "80 кг — это вес нетто?",
-      "Всегда ли 40HQ вмещает 352 кипы?",
+      "Всегда ли 45HC вмещает 352 кипы?",
       "Что включает расчёт перевозки?"
     ],
     "answers": [
@@ -603,7 +603,7 @@
     "paras": [
       "سبق أن شحنّا ملابس وأحذية وحقائب مستعملة إلى هذه الوجهة. تعرض هذه الصور ومقاطع الفيديو عمليات الفرز والتعبئة والتحضير للتحميل في الصين.",
       "افصل الملابس والأحذية والحقائب في وصف البضاعة. اتفق مع المشتري على الدرجة والحالة والكميات وعلامات البالات، ثم طابق قائمة التعبئة مع البضائع الفعلية.",
-      "في مثال الشحنة السابقة، حُمّلت 352 بالة في حاوية 40HQ. بلغ الوزن الإجمالي للبالة 80 كغ، والوزن الإجمالي للبضاعة 28 MT؛ وكلاهما شامل التغليف.",
+      "في مثال الشحنة السابقة، حُمّلت 352 بالة في حاوية 45HC. بلغ الوزن الإجمالي للبالة 80 كغ، والوزن الإجمالي للبضاعة 28 MT؛ وكلاهما شامل التغليف.",
       "قبل استلام البضاعة، حدد المستورد وجهة الاتصال المعنية بالتخليص الجمركي، وتحقق من فئة المنتج بدقة واتفق على المسؤوليات عن العمليات في الوجهة والتفريغ. الشحنات السابقة لا تثبت أهلية الاستيراد الحالية.",
       "أرسل فئات البضائع وعدد البالات والأوزان الإجمالية والأبعاد ومدينة المورد وتاريخ الجاهزية ومدينة الوجهة ونطاق التسليم. وضح البيانات غير المعروفة؛ المثال السابق لا يحدد كمية شحنتك."
     ],
@@ -615,7 +615,7 @@
     "questions": [
       "هل تصلح بيانات التعبئة نفسها للفئات الثلاث؟",
       "هل 80 كغ وزن صافٍ؟",
-      "هل تستوعب حاوية 40HQ دائماً 352 بالة؟",
+      "هل تستوعب حاوية 45HC دائماً 352 بالة؟",
       "ماذا يشمل عرض سعر الشحن؟"
     ],
     "answers": [
