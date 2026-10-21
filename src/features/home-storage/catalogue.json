@@ -1,0 +1,877 @@
+[
+  {
+    "id": 1,
+    "code": "HS-W01",
+    "title": "5.12 kWh壁挂式储能电池",
+    "enTitle": "5.12 kWh wall-mounted storage battery",
+    "category": "storage",
+    "label": "壁挂式磷酸铁锂电池",
+    "enLabel": "Wall-mounted LiFePO₄ battery",
+    "specs": [
+      [
+        "额定电压",
+        "51.2 V"
+      ],
+      [
+        "额定容量",
+        "100 Ah"
+      ],
+      [
+        "标称能量",
+        "5.12 kWh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "外形尺寸",
+        "650 × 560 × 160 mm"
+      ],
+      [
+        "电池净重",
+        "52 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Nominal voltage",
+        "51.2 V"
+      ],
+      [
+        "Capacity",
+        "100 Ah"
+      ],
+      [
+        "Nominal energy",
+        "5.12 kWh"
+      ],
+      [
+        "Chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "Dimensions",
+        "650 × 560 × 160 mm"
+      ],
+      [
+        "Battery net weight",
+        "52 kg"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "正面与侧面外观",
+        "enTitle": "Front and side views",
+        "kind": "产品细节",
+        "web": "/images/home-storage/wall.webp",
+        "thumb": "/images/home-storage/wall-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "code": "HS-R01",
+    "title": "低压机柜／堆叠式储能电池",
+    "enTitle": "Low-voltage rack / stackable battery range",
+    "category": "storage",
+    "label": "按容量选择单模块",
+    "enLabel": "Select individual modules by capacity",
+    "specs": [
+      [
+        "额定电压",
+        "48 V / 51.2 V"
+      ],
+      [
+        "模块容量",
+        "100 / 200 / 314 Ah"
+      ],
+      [
+        "标称能量范围",
+        "4.8–16.07 kWh / 模块"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "防护等级",
+        "IP21"
+      ],
+      [
+        "安装形式",
+        "机柜、立式支架或堆叠"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Nominal voltage",
+        "48 V / 51.2 V"
+      ],
+      [
+        "Module capacity",
+        "100 / 200 / 314 Ah"
+      ],
+      [
+        "Nominal energy range",
+        "4.8–16.07 kWh per module"
+      ],
+      [
+        "Chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "Enclosure rating",
+        "IP21"
+      ],
+      [
+        "Installation",
+        "Rack, upright bracket or stacked"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "三种规格外观",
+        "enTitle": "Three module formats",
+        "kind": "产品细节",
+        "web": "/images/home-storage/rack.webp",
+        "thumb": "/images/home-storage/rack-thumb.webp"
+      },
+      {
+        "title": "提手、端子与堆叠结构",
+        "enTitle": "Handles, terminals and stacking details",
+        "kind": "产品细节",
+        "web": "/images/home-storage/rack-detail.webp",
+        "thumb": "/images/home-storage/rack-detail-thumb.webp"
+      }
+    ],
+    "variants": [
+      {
+        "code": "R1",
+        "label": "48 V · 100 Ah · 4.8 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "48 V"
+          ],
+          [
+            "额定容量",
+            "100 Ah"
+          ],
+          [
+            "标称能量",
+            "4.8 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 300 × 155.5 mm"
+          ],
+          [
+            "电池重量",
+            "43.5 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "48 V"
+          ],
+          [
+            "Capacity",
+            "100 Ah"
+          ],
+          [
+            "Nominal energy",
+            "4.8 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 300 × 155.5 mm"
+          ],
+          [
+            "Battery weight",
+            "43.5 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      },
+      {
+        "code": "R2",
+        "label": "51.2 V · 100 Ah · 5.12 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "51.2 V"
+          ],
+          [
+            "额定容量",
+            "100 Ah"
+          ],
+          [
+            "标称能量",
+            "5.12 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 300 × 155.5 mm"
+          ],
+          [
+            "电池重量",
+            "45.5 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "51.2 V"
+          ],
+          [
+            "Capacity",
+            "100 Ah"
+          ],
+          [
+            "Nominal energy",
+            "5.12 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 300 × 155.5 mm"
+          ],
+          [
+            "Battery weight",
+            "45.5 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      },
+      {
+        "code": "R3",
+        "label": "48 V · 200 Ah · 9.6 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "48 V"
+          ],
+          [
+            "额定容量",
+            "200 Ah"
+          ],
+          [
+            "标称能量",
+            "9.6 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 580 × 235 mm"
+          ],
+          [
+            "电池重量",
+            "86 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "48 V"
+          ],
+          [
+            "Capacity",
+            "200 Ah"
+          ],
+          [
+            "Nominal energy",
+            "9.6 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 580 × 235 mm"
+          ],
+          [
+            "Battery weight",
+            "86 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      },
+      {
+        "code": "R4",
+        "label": "51.2 V · 200 Ah · 10.24 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "51.2 V"
+          ],
+          [
+            "额定容量",
+            "200 Ah"
+          ],
+          [
+            "标称能量",
+            "10.24 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 580 × 235 mm"
+          ],
+          [
+            "电池重量",
+            "90 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "51.2 V"
+          ],
+          [
+            "Capacity",
+            "200 Ah"
+          ],
+          [
+            "Nominal energy",
+            "10.24 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 580 × 235 mm"
+          ],
+          [
+            "Battery weight",
+            "90 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      },
+      {
+        "code": "R5",
+        "label": "48 V · 314 Ah · 15.07 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "48 V"
+          ],
+          [
+            "额定容量",
+            "314 Ah"
+          ],
+          [
+            "标称能量",
+            "15.07 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 710 × 235 mm"
+          ],
+          [
+            "电池重量",
+            "107.5 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "48 V"
+          ],
+          [
+            "Capacity",
+            "314 Ah"
+          ],
+          [
+            "Nominal energy",
+            "15.07 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 710 × 235 mm"
+          ],
+          [
+            "Battery weight",
+            "107.5 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      },
+      {
+        "code": "R6",
+        "label": "51.2 V · 314 Ah · 16.07 kWh",
+        "specs": [
+          [
+            "额定电压",
+            "51.2 V"
+          ],
+          [
+            "额定容量",
+            "314 Ah"
+          ],
+          [
+            "标称能量",
+            "16.07 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "外形尺寸",
+            "482 × 710 × 235 mm"
+          ],
+          [
+            "电池重量",
+            "113 kg"
+          ],
+          [
+            "防护等级",
+            "IP21"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Nominal voltage",
+            "51.2 V"
+          ],
+          [
+            "Capacity",
+            "314 Ah"
+          ],
+          [
+            "Nominal energy",
+            "16.07 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Dimensions",
+            "482 × 710 × 235 mm"
+          ],
+          [
+            "Battery weight",
+            "113 kg"
+          ],
+          [
+            "Enclosure rating",
+            "IP21"
+          ]
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "code": "HS-H01",
+    "title": "高压模块化堆叠储能电池",
+    "enTitle": "High-voltage modular storage battery",
+    "category": "storage",
+    "label": "3–6模块配置",
+    "enLabel": "3–6 battery-module configurations",
+    "specs": [
+      [
+        "模块数量",
+        "3 / 4 / 5 / 6"
+      ],
+      [
+        "系统标称电压",
+        "153.6 / 204.8 / 256 / 307.2 V"
+      ],
+      [
+        "标称能量",
+        "7.68 / 10.24 / 12.8 / 15.36 kWh"
+      ],
+      [
+        "单模块规格",
+        "51.2 V · 50 Ah · 2.56 kWh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "通信接口",
+        "CAN / RS485"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Battery modules",
+        "3 / 4 / 5 / 6"
+      ],
+      [
+        "Nominal system voltage",
+        "153.6 / 204.8 / 256 / 307.2 V"
+      ],
+      [
+        "Nominal energy",
+        "7.68 / 10.24 / 12.8 / 15.36 kWh"
+      ],
+      [
+        "Per battery module",
+        "51.2 V · 50 Ah · 2.56 kWh"
+      ],
+      [
+        "Chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "Communication",
+        "CAN / RS485"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "堆叠式外观",
+        "enTitle": "Stacked enclosure",
+        "kind": "产品细节",
+        "web": "/images/home-storage/hv.webp",
+        "thumb": "/images/home-storage/hv-thumb.webp"
+      },
+      {
+        "title": "侧面接口与提手",
+        "enTitle": "Side connectors and handle",
+        "kind": "产品细节",
+        "web": "/images/home-storage/hv-detail.webp",
+        "thumb": "/images/home-storage/hv-detail-thumb.webp"
+      },
+      {
+        "title": "模块数量与扩展结构",
+        "enTitle": "Module configurations and assembly",
+        "kind": "产品细节",
+        "web": "/images/home-storage/hv-modules.webp",
+        "thumb": "/images/home-storage/hv-modules-thumb.webp"
+      }
+    ],
+    "variants": [
+      {
+        "code": "H3",
+        "label": "3 modules · 153.6 V · 7.68 kWh",
+        "specs": [
+          [
+            "电池模块数量",
+            "3"
+          ],
+          [
+            "系统标称电压",
+            "153.6 V"
+          ],
+          [
+            "系统容量",
+            "50 Ah"
+          ],
+          [
+            "标称能量",
+            "7.68 kWh"
+          ],
+          [
+            "单模块规格",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "通信接口",
+            "CAN / RS485"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Battery modules",
+            "3"
+          ],
+          [
+            "Nominal system voltage",
+            "153.6 V"
+          ],
+          [
+            "System capacity",
+            "50 Ah"
+          ],
+          [
+            "Nominal energy",
+            "7.68 kWh"
+          ],
+          [
+            "Per battery module",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Communication",
+            "CAN / RS485"
+          ]
+        ]
+      },
+      {
+        "code": "H4",
+        "label": "4 modules · 204.8 V · 10.24 kWh",
+        "specs": [
+          [
+            "电池模块数量",
+            "4"
+          ],
+          [
+            "系统标称电压",
+            "204.8 V"
+          ],
+          [
+            "系统容量",
+            "50 Ah"
+          ],
+          [
+            "标称能量",
+            "10.24 kWh"
+          ],
+          [
+            "单模块规格",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "通信接口",
+            "CAN / RS485"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Battery modules",
+            "4"
+          ],
+          [
+            "Nominal system voltage",
+            "204.8 V"
+          ],
+          [
+            "System capacity",
+            "50 Ah"
+          ],
+          [
+            "Nominal energy",
+            "10.24 kWh"
+          ],
+          [
+            "Per battery module",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Communication",
+            "CAN / RS485"
+          ]
+        ]
+      },
+      {
+        "code": "H5",
+        "label": "5 modules · 256.0 V · 12.8 kWh",
+        "specs": [
+          [
+            "电池模块数量",
+            "5"
+          ],
+          [
+            "系统标称电压",
+            "256.0 V"
+          ],
+          [
+            "系统容量",
+            "50 Ah"
+          ],
+          [
+            "标称能量",
+            "12.8 kWh"
+          ],
+          [
+            "单模块规格",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "通信接口",
+            "CAN / RS485"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Battery modules",
+            "5"
+          ],
+          [
+            "Nominal system voltage",
+            "256.0 V"
+          ],
+          [
+            "System capacity",
+            "50 Ah"
+          ],
+          [
+            "Nominal energy",
+            "12.8 kWh"
+          ],
+          [
+            "Per battery module",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Communication",
+            "CAN / RS485"
+          ]
+        ]
+      },
+      {
+        "code": "H6",
+        "label": "6 modules · 307.2 V · 15.36 kWh",
+        "specs": [
+          [
+            "电池模块数量",
+            "6"
+          ],
+          [
+            "系统标称电压",
+            "307.2 V"
+          ],
+          [
+            "系统容量",
+            "50 Ah"
+          ],
+          [
+            "标称能量",
+            "15.36 kWh"
+          ],
+          [
+            "单模块规格",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "电池类型",
+            "磷酸铁锂（LiFePO₄）"
+          ],
+          [
+            "通信接口",
+            "CAN / RS485"
+          ]
+        ],
+        "enSpecs": [
+          [
+            "Battery modules",
+            "6"
+          ],
+          [
+            "Nominal system voltage",
+            "307.2 V"
+          ],
+          [
+            "System capacity",
+            "50 Ah"
+          ],
+          [
+            "Nominal energy",
+            "15.36 kWh"
+          ],
+          [
+            "Per battery module",
+            "51.2 V · 50 Ah · 2.56 kWh"
+          ],
+          [
+            "Chemistry",
+            "LiFePO₄"
+          ],
+          [
+            "Communication",
+            "CAN / RS485"
+          ]
+        ]
+      }
+    ]
+  }
+]

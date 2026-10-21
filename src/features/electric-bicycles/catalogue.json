@@ -1,0 +1,662 @@
+[
+  {
+    "id": 1,
+    "sourceId": 18,
+    "code": "EB-L01",
+    "title": "20英寸长座胖胎电动单车",
+    "enTitle": "20-inch long-seat fat-tyre e-bike",
+    "category": "fat",
+    "label": "胖胎长座款",
+    "enLabel": "Long-seat fat-tyre bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "订货时确认"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "订货时确认"
+      ],
+      [
+        "轮胎规格",
+        "20英寸"
+      ],
+      [
+        "车架材质",
+        "钢架"
+      ],
+      [
+        "制动方式",
+        "前后碟刹"
+      ],
+      [
+        "变速系统",
+        "按配置确认"
+      ],
+      [
+        "减震结构",
+        "前叉＋后减震"
+      ],
+      [
+        "折叠结构",
+        "不可折叠"
+      ],
+      [
+        "包装尺寸",
+        "订货时确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Confirm for order"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "Confirm for order"
+      ],
+      [
+        "Tyres",
+        "20-inch"
+      ],
+      [
+        "Frame",
+        "Steel"
+      ],
+      [
+        "Brakes",
+        "Front & rear disc brakes"
+      ],
+      [
+        "Gearing",
+        "Confirm configuration"
+      ],
+      [
+        "Suspension",
+        "Front fork & rear shocks"
+      ],
+      [
+        "Folding",
+        "Non-folding"
+      ],
+      [
+        "Packed dimensions",
+        "Confirm for order"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "整车侧面",
+        "enTitle": "Side view",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b1-hero.webp",
+        "thumb": "/images/electric-bicycles/b1-hero-thumb.webp"
+      },
+      {
+        "title": "仪表与控制",
+        "enTitle": "Display and controls",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b1-controls.webp",
+        "thumb": "/images/electric-bicycles/b1-controls-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "sourceId": 19,
+    "code": "EB-L02",
+    "title": "20英寸胖胎双减震电动单车",
+    "enTitle": "20-inch dual-suspension fat-tyre e-bike",
+    "category": "fat",
+    "label": "胖胎双减震款",
+    "enLabel": "Dual-suspension fat-tyre bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "订货时确认"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "15.6 Ah"
+      ],
+      [
+        "轮胎规格",
+        "20 × 4.0英寸"
+      ],
+      [
+        "车架材质",
+        "钢架"
+      ],
+      [
+        "制动方式",
+        "前后碟刹"
+      ],
+      [
+        "变速系统",
+        "7速"
+      ],
+      [
+        "减震结构",
+        "前叉＋后减震"
+      ],
+      [
+        "折叠结构",
+        "不可折叠"
+      ],
+      [
+        "包装尺寸",
+        "订货时确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Confirm for order"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "15.6 Ah"
+      ],
+      [
+        "Tyres",
+        "20 × 4.0 inches"
+      ],
+      [
+        "Frame",
+        "Steel"
+      ],
+      [
+        "Brakes",
+        "Front & rear disc brakes"
+      ],
+      [
+        "Gearing",
+        "7-speed"
+      ],
+      [
+        "Suspension",
+        "Front fork & rear shocks"
+      ],
+      [
+        "Folding",
+        "Non-folding"
+      ],
+      [
+        "Packed dimensions",
+        "Confirm for order"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "整车外观",
+        "enTitle": "Overall view",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b2-hero.webp",
+        "thumb": "/images/electric-bicycles/b2-hero-thumb.webp"
+      },
+      {
+        "title": "前后减震细节",
+        "enTitle": "Front and rear suspension",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b2-suspension.webp",
+        "thumb": "/images/electric-bicycles/b2-suspension-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "sourceId": 27,
+    "code": "EB-T01",
+    "title": "26英寸电助力单车",
+    "enTitle": "26-inch trekking e-bike",
+    "category": "trekking",
+    "label": "26英寸电助力款",
+    "enLabel": "26-inch trekking bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "500 W"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "10.4 Ah"
+      ],
+      [
+        "轮胎规格",
+        "26 × 2.1英寸"
+      ],
+      [
+        "车架材质",
+        "碳钢"
+      ],
+      [
+        "制动方式",
+        "前后碟刹"
+      ],
+      [
+        "变速系统",
+        "7速"
+      ],
+      [
+        "减震结构",
+        "前叉减震"
+      ],
+      [
+        "折叠结构",
+        "不可折叠"
+      ],
+      [
+        "包装尺寸",
+        "140 × 22 × 70 cm"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "500 W"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "10.4 Ah"
+      ],
+      [
+        "Tyres",
+        "26 × 2.1 inches"
+      ],
+      [
+        "Frame",
+        "Carbon steel"
+      ],
+      [
+        "Brakes",
+        "Front & rear disc brakes"
+      ],
+      [
+        "Gearing",
+        "7-speed"
+      ],
+      [
+        "Suspension",
+        "Front suspension fork"
+      ],
+      [
+        "Folding",
+        "Non-folding"
+      ],
+      [
+        "Packed dimensions",
+        "140 × 22 × 70 cm"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "整车与前后货架",
+        "enTitle": "Bicycle with front and rear racks",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b3-hero.webp",
+        "thumb": "/images/electric-bicycles/b3-hero-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "sourceId": 28,
+    "code": "EB-F01",
+    "title": "20英寸折叠电动单车",
+    "enTitle": "20-inch folding e-bike",
+    "category": "folding",
+    "label": "紧凑折叠款",
+    "enLabel": "Compact folding bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "订货时确认"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "7.8 Ah"
+      ],
+      [
+        "轮胎规格",
+        "20英寸；胎宽按配置确认"
+      ],
+      [
+        "车架材质",
+        "按配置确认"
+      ],
+      [
+        "制动方式",
+        "前后碟刹"
+      ],
+      [
+        "变速系统",
+        "按配置确认"
+      ],
+      [
+        "减震结构",
+        "前叉减震"
+      ],
+      [
+        "折叠结构",
+        "可折叠"
+      ],
+      [
+        "包装尺寸",
+        "订货时确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "Confirm for order"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "7.8 Ah"
+      ],
+      [
+        "Tyres",
+        "20-inch; width by configuration"
+      ],
+      [
+        "Frame",
+        "Confirm configuration"
+      ],
+      [
+        "Brakes",
+        "Front & rear disc brakes"
+      ],
+      [
+        "Gearing",
+        "Confirm configuration"
+      ],
+      [
+        "Suspension",
+        "Front suspension fork"
+      ],
+      [
+        "Folding",
+        "Folding frame"
+      ],
+      [
+        "Packed dimensions",
+        "Confirm for order"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "整车与折叠外观",
+        "enTitle": "Overall and folded views",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b4-hero.webp",
+        "thumb": "/images/electric-bicycles/b4-hero-thumb.webp"
+      },
+      {
+        "title": "轮胎与前叉细节",
+        "enTitle": "Tyre and front fork details",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b4-tyre.webp",
+        "thumb": "/images/electric-bicycles/b4-tyre-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "sourceId": 41,
+    "code": "EB-F02",
+    "title": "20英寸双电池折叠胖胎单车",
+    "enTitle": "20-inch dual-battery folding fat-tyre e-bike",
+    "category": "folding",
+    "label": "双电池折叠款",
+    "enLabel": "Dual-battery folding bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "750 W"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "14.4 Ah＋7.8 Ah"
+      ],
+      [
+        "轮胎规格",
+        "20 × 4.0英寸"
+      ],
+      [
+        "车架材质",
+        "6061铝合金"
+      ],
+      [
+        "制动方式",
+        "前后液压碟刹"
+      ],
+      [
+        "变速系统",
+        "8速"
+      ],
+      [
+        "减震结构",
+        "前叉＋后减震"
+      ],
+      [
+        "折叠结构",
+        "可折叠"
+      ],
+      [
+        "包装尺寸",
+        "152 × 32 × 73 cm"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "750 W"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "14.4 Ah + 7.8 Ah"
+      ],
+      [
+        "Tyres",
+        "20 × 4.0 inches"
+      ],
+      [
+        "Frame",
+        "6061 aluminium alloy"
+      ],
+      [
+        "Brakes",
+        "Front & rear hydraulic disc brakes"
+      ],
+      [
+        "Gearing",
+        "8-speed"
+      ],
+      [
+        "Suspension",
+        "Front fork & rear shocks"
+      ],
+      [
+        "Folding",
+        "Folding frame"
+      ],
+      [
+        "Packed dimensions",
+        "152 × 32 × 73 cm"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "车架与整车外观",
+        "enTitle": "Frame and overall view",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b5-hero.webp",
+        "thumb": "/images/electric-bicycles/b5-hero-thumb.webp"
+      },
+      {
+        "title": "制动系统细节",
+        "enTitle": "Brake system detail",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b5-brakes.webp",
+        "thumb": "/images/electric-bicycles/b5-brakes-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "sourceId": 43,
+    "code": "EB-L03",
+    "title": "20英寸750 W胖胎电动单车",
+    "enTitle": "20-inch 750 W fat-tyre e-bike",
+    "category": "fat",
+    "label": "750 W胖胎款",
+    "enLabel": "750 W fat-tyre bicycle",
+    "specs": [
+      [
+        "电机功率",
+        "750 W"
+      ],
+      [
+        "电池电压",
+        "48 V"
+      ],
+      [
+        "电池容量",
+        "13 Ah"
+      ],
+      [
+        "轮胎规格",
+        "20英寸"
+      ],
+      [
+        "车架材质",
+        "钢架"
+      ],
+      [
+        "制动方式",
+        "前后碟刹"
+      ],
+      [
+        "变速系统",
+        "7速"
+      ],
+      [
+        "减震结构",
+        "前叉＋后减震"
+      ],
+      [
+        "折叠结构",
+        "不可折叠"
+      ],
+      [
+        "包装尺寸",
+        "147 × 36 × 85 cm"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Motor power",
+        "750 W"
+      ],
+      [
+        "Battery voltage",
+        "48 V"
+      ],
+      [
+        "Battery capacity",
+        "13 Ah"
+      ],
+      [
+        "Tyres",
+        "20-inch"
+      ],
+      [
+        "Frame",
+        "Steel"
+      ],
+      [
+        "Brakes",
+        "Front & rear disc brakes"
+      ],
+      [
+        "Gearing",
+        "7-speed"
+      ],
+      [
+        "Suspension",
+        "Front fork & rear shocks"
+      ],
+      [
+        "Folding",
+        "Non-folding"
+      ],
+      [
+        "Packed dimensions",
+        "147 × 36 × 85 cm"
+      ]
+    ],
+    "gallery": [
+      {
+        "title": "整车后侧视角",
+        "enTitle": "Rear three-quarter view",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b6-hero.webp",
+        "thumb": "/images/electric-bicycles/b6-hero-thumb.webp"
+      },
+      {
+        "title": "前后减震细节",
+        "enTitle": "Front and rear suspension",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b6-suspension.webp",
+        "thumb": "/images/electric-bicycles/b6-suspension-thumb.webp"
+      },
+      {
+        "title": "碟刹细节",
+        "enTitle": "Disc brake detail",
+        "kind": "产品细节",
+        "web": "/images/electric-bicycles/b6-brakes.webp",
+        "thumb": "/images/electric-bicycles/b6-brakes-thumb.webp"
+      }
+    ]
+  }
+]

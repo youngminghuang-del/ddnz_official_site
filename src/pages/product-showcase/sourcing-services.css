@@ -352,3 +352,6 @@
 @media(max-width:1000px) { .sourcing-services-page .ss-hero { gap:32px; padding:40px 24px 48px; } .sourcing-services-page .ss-hero h1 { font-size:44px; } }
 @media(max-width:767px) { .sourcing-services-page .ss-hero { grid-template-columns:1fr; padding:30px 20px 36px; gap:32px; } .sourcing-services-page .ss-hero h1 { font-size:36px; max-width:none; } }
 @media(min-width:768px) and (max-width:1000px) { .sourcing-services-page .ss-hero { grid-template-columns:1fr; } .sourcing-services-page .ss-control-desk { width:100%; max-width:680px; } }
+
+/* Same light ribbon surface used by the main DDNZ site. */
+.sourcing-services-page .ss-hero::before{background:linear-gradient(90deg,rgba(255,253,249,.94),rgba(255,253,249,.7)),url('/images/brand/backgrounds/ddnz-ribbon-desktop-v1.webp') center/cover}.sourcing-services-page .ss-hero{border-bottom:1px solid #e6ddeb}

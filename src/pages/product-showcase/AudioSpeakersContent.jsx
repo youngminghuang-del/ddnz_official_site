@@ -123,7 +123,7 @@ function Brand() {
   return (
     <a className="as-brand" href="/products/" aria-label="DDNZ Global product sourcing">
       <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
-      <span><strong>DDNZ GLOBAL</strong><small>CHINA SOURCING &amp; EXPORT</small></span>
+      <span><strong>DDNZ GLOBAL</strong><small>MANUFACTURING &amp; EXPORT</small></span>
     </a>
   );
 }

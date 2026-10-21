@@ -1,3 +1,4 @@
+import {supplyPositioning} from '../features/product-positioning/ProductSupply';
 import { useEffect, useMemo } from 'react';
 import { useLocation } from 'react-router-dom';
 import GetAQuote from '../components/GetAQuote';
@@ -58,6 +59,8 @@ export default function GetAQuotePage() {
     pt: { title: leadGoal === 'Product Sourcing' ? 'Briefing de sourcing na China | DDNZ Global' : 'Briefing de inspeção e consolidação na China | DDNZ Global', description: 'Envie seu briefing de sourcing, inspeção ou consolidação para a equipe da DDNZ Global em Guangzhou.' },
     tr: { title: leadGoal === 'Product Sourcing' ? 'Çin ürün tedarik özeti | DDNZ Global' : 'Çin denetim ve konsolidasyon özeti | DDNZ Global', description: 'Tedarik, denetim veya konsolidasyon özetinizi Guangzhou’daki DDNZ Global ekibine gönderin.' },
   }[language];
+
+  if(leadGoal==='Product Sourcing')Object.assign(tradeSeo,{title:supplyPositioning[language].primary+' | DDNZ Global',description:supplyPositioning[language].description});
 
   return (
     <div className={`${isTradeSupport ? 'bg-[#fffdf9]' : 'bg-slate-50'} ddnz-home min-h-screen overflow-x-hidden font-sans text-slate-900`}>

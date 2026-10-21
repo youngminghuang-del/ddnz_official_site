@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 import { createRequire } from 'node:module';
 const root=process.cwd(), dist=path.join(root,'dist');
 const routes=[...fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname)
- .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/'].includes(p));
+ .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china\/$/.test(p)||/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/'].includes(p));
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ddnz-core-ssr-'));
 try {
  const bundle=path.join(temporary,'renderer.cjs');
@@ -21,6 +21,7 @@ try {
   let output=html.replace(rootPattern,`<div id="root" data-core-prerender="true">${body}</div>`);
   // Core routes use their existing page CSS; bundle filenames vary by build.
   const cssPrefixes=route==='/products/'?['ProductsIndex-','food-processing-','ShowcaseContactFooter-']:route==='/sourcing-services/'?['SourcingServices-','ServiceMotion-','ShowcaseContactFooter-']:/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?$/.test(route)?['Footer-','Home-']:['Footer-'];
+  if(/sourcing\/(?:electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(route))cssPrefixes.push('PortablePowerPage-','ElectricScootersPage-','ElectricBicyclesPage-','HomeStoragePage-','electric-mobility-');
   if (/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing-services\/$/.test(route)) cssPrefixes.push('SourcingLocations-');
   for(const css of fs.readdirSync(path.join(dist,'assets')).filter(f=>f.endsWith('.css')&&cssPrefixes.some(prefix=>f.startsWith(prefix)))){
    if(!output.includes(`/assets/${css}`))output=output.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);

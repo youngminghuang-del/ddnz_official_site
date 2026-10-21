@@ -1,3 +1,5 @@
+import '../features/freight/freight.css';
+import RoutePlanningDepth from '../features/freight/RoutePlanningDepth';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
 import { railTerminalAlt } from '../lib/operationalImageAlt';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
@@ -288,21 +290,21 @@ const CENTRAL_ASIA_DATA = {
       transitDays: "18 - 28 Days",
       complianceRowTitle: "GOST-UZ & HS Code Review",
       complianceRowVal: "Before Booking",
-      solutionsTitle: "Uzbekistan compliance and routing planning",
+      solutionsTitle: "Before you book your Uzbekistan shipment",
       solutionsSubtitle: "Review document, valuation and route requirements before cargo moves toward a double-landlocked destination.",
       solutions: [
         {
-          title: "1-Hour Digital Pre-Declaration Redline",
+          title: "Prepare cargo details before dispatch",
           desc: "Electronic pre-declaration timing and required data should be confirmed with the carrier and destination clearance party before shipment. We help prepare and review the cargo information in advance.",
           icon: "ShieldCheck"
         },
         {
-          title: "CIF Tax Nesting & Cube Optimization",
+          title: "Plan the landed cost",
           desc: "Duties and VAT can be assessed using CIF value. The applicable formula, rates and product classification should be checked against current destination requirements before shipment.",
           icon: "Scale"
         },
         {
-          title: "GOST-UZ & HS Code Alignment",
+          title: "Product details and import documents",
           desc: "Some machinery, electronics and chemical products may require GOST-UZ conformity documentation. Check certification and HS-code alignment before cargo is released for export.",
           icon: "FileText"
         }
@@ -339,11 +341,11 @@ const CENTRAL_ASIA_DATA = {
       ],
       faqs: [
         {
-          q: "What is the 1-hour digital pre-declaration rule in Uzbekistan?",
+          q: "When should the cargo details be ready?",
           a: "Electronic pre-declaration requirements can vary by transport mode and current destination rules. Confirm the required data, filing party and timing before the cargo moves to the border or airport.",
         },
         {
-          q: "How does the Uzbek 'CIF tax-on-tax' formula work, and how can we mitigate it?",
+          q: "What should the destination-cost budget include?",
           a: "Duties and VAT may be based on CIF value. Confirm the current tariff, valuation method and HS classification with the destination clearance party before booking; packing and freight planning can then be assessed against that scope.",
         },
         {
@@ -361,21 +363,21 @@ const CENTRAL_ASIA_DATA = {
       transitDays: "18 - 28 天",
       complianceRowTitle: "乌兹别克斯坦 GOST-UZ 与 HS 资料核对",
       complianceRowVal: "订舱前核对",
-      solutionsTitle: "乌兹别克斯坦路线与合规规划",
+      solutionsTitle: "发往乌兹别克斯坦，订舱前准备什么？",
       solutionsSubtitle: "针对双重内陆运输、资料申报和税费核对，在出运前确认所需文件与服务范围。",
       solutions: [
         {
-          title: "到关前线上申报（1小时红线）",
+          title: "出运前准备好货物资料",
           desc: "电子预申报的资料、申报方与时点需在出运前与承运方及目的地清关方确认；我们可协助提前整理和核对货物资料。",
           icon: "ShieldCheck"
         },
         {
-          title: "CIF 叠加“税中税”算法规避",
+          title: "提前核算到货总成本",
           desc: "税费可能以 CIF 价值为基础计算。适用公式、税率与商品归类应以目的地当期要求为准，并在出运前核对。",
           icon: "Scale"
         },
         {
-          title: "GOST-UZ 认证与单证错位风控",
+          title: "产品资料与进口文件",
           desc: "部分机械、电子和化工产品可能需要 GOST-UZ 合规资料；建议在出运前核对认证范围与 HS 编码的一致性。",
           icon: "FileText"
         }
@@ -412,11 +414,11 @@ const CENTRAL_ASIA_DATA = {
       ],
       faqs: [
         {
-          q: "乌兹别克斯坦的‘1小时线上预申报’红线是指什么？",
+          q: "货物资料应在什么时候准备好？",
           a: "电子预申报要求会随运输方式和目的地规则变化。建议在货物进场或到达边境前，确认所需数据、申报方及相应时点。"
         },
         {
-          q: "什么是乌国的‘CIF税中税’陷阱？如何规避？",
+          q: "目的地费用预算需要包含哪些项目？",
           a: "税费可能以 CIF 价值为基础计算。应在订舱前向目的地清关方确认适用税率、计价方法和 HS 编码；包装与运输方案可在此基础上评估。"
         },
         {
@@ -752,6 +754,7 @@ export default function ShippingCentralAsia() {
 
   const getCountrySpec = (country: EurasiaCountry) =>
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
+  const routeDepthPreview = selectedCountry === 'uzbekistan' && ['en','zh'].includes(activeLang);
   const spec = getCountrySpec(selectedCountry);
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
   const corridorUi = EURASIA_UI[activeLang];
@@ -902,7 +905,7 @@ export default function ShippingCentralAsia() {
                     <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.routeBasis}</span>
                     <h2 className="mt-2 text-2xl font-black text-white">{corridor.name}</h2>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{corridor.transitDays}</span>
+                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{routeDepthPreview ? (activeLang==='zh'?'按具体路线安排':'Route-specific timing') : corridor.transitDays}</span>
                 </div>
                 <dl className="divide-y divide-white/[0.1]">
                   <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.entryGateway}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.gateway}</dd></div>
@@ -915,6 +918,7 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
+        {routeDepthPreview && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <FreightRouteMap variant={selectedCountry === 'uzbekistan' ? 'uzbekistan' : 'central-asia'} />
@@ -941,7 +945,7 @@ export default function ShippingCentralAsia() {
                       <span className="mt-2 block text-xs leading-relaxed text-slate-400">{item.gateway}</span>
                     </span>
                     <span className="flex flex-col items-end justify-between text-right">
-                      <span className="font-mono text-xs font-bold text-slate-200">{item.transitDays}</span>
+                      <span className="font-mono text-xs font-bold text-slate-200">{routeDepthPreview && country==='uzbekistan' ? (activeLang==='zh'?'铁路 / 公路':'Rail / road') : item.transitDays}</span>
                       <ArrowUpRight className={`h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${isActive ? 'text-[#f2a47f]' : 'text-slate-500'}`} aria-hidden="true" />
                     </span>
                   </button>
@@ -956,7 +960,7 @@ export default function ShippingCentralAsia() {
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,.95fr)] lg:items-end">
               <div className="max-w-3xl">
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{delayDiagnostic.scope}</p>
-                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{delayDiagnostic.title}</h2>
+                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{routeDepthPreview ? (activeLang==='zh'?'哪些环节会影响到塔什干的交货时间？':'What affects the delivery date in Tashkent?') : delayDiagnostic.title}</h2>
                 <p className="mt-5 max-w-[66ch] text-sm font-medium leading-relaxed text-slate-300 md:text-base">{delayDiagnostic.intro}</p>
               </div>
               <div className="border-y border-white/[0.14] font-mono text-xs font-bold">
@@ -1002,7 +1006,7 @@ export default function ShippingCentralAsia() {
         <section className="border-b border-white/[0.08] py-12" aria-labelledby="eurasia-evidence-title">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(250px,.7fr)_minmax(0,1.3fr)] lg:px-8">
             <div>
-              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{corridorUi.routeEvidence}</h2>
+              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{routeDepthPreview ? (activeLang==='zh'?'订舱前的路线与文件准备':'Route and document preparation') : corridorUi.routeEvidence}</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">{corridorUi.routeEvidenceBody}</p>
             </div>
             <div className="divide-y divide-white/[0.12] border-y border-white/[0.12]">
@@ -1024,7 +1028,7 @@ export default function ShippingCentralAsia() {
         </section>
 
         {/* Section 2.5: Interactive Lead-Generation Table (核心时效透视数据表) */}
-        <section className="py-16 border-b border-white/[0.05]">
+        {!routeDepthPreview && <section className="py-16 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-3xl">
               <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{corridorUi.modesTitle}</h2>
@@ -1141,7 +1145,7 @@ export default function ShippingCentralAsia() {
 
             </div>
           </div>
-        </section>
+        </section>}
 
         {selectedCountry === 'uzbekistan' && (
           <section id="uzbekistan-road-loading-case" className="scroll-mt-24 border-b border-[#cfd6dc] bg-[#f3f1eb] py-16 text-[#10243f] md:py-24" aria-labelledby="uzbekistan-road-case-title">

@@ -1,0 +1,782 @@
+{
+  "fr": {
+    "supply": {
+      "title": "Fabricant et exportateur chinois | DDNZ Global",
+      "heading": "Direct usine. Expédié dans le monde entier.",
+      "description": "Nous fabriquons et exportons depuis la Chine des équipements de cuisine professionnelle, des machines agroalimentaires, des stations d’énergie portables, des systèmes de stockage résidentiel, des vélos électriques, des trottinettes électriques et des accessoires mobiles. Nous proposons OEM/ODM, contrôle qualité et livraison export aux importateurs, grossistes et distributeurs.",
+      "primary": "Demander un devis de gros",
+      "catalogue": "Voir le catalogue produits",
+      "eyebrow": "FABRICATION · OEM/ODM · EXPORTATION",
+      "support": "Équipe de fabrication et d’export à Guangzhou, Chine · Importateurs, grossistes et distributeurs",
+      "whatsapp": "WhatsApp : équipe produits",
+      "whatsappMessage": "Bonjour DDNZ Global, je souhaite un devis de gros. Je peux préciser le produit, la quantité et la destination.",
+      "range": "Nos principales gammes",
+      "rangeIntro": "Des produits pour les commandes de gros et de distribution, avec configurations par modèle, options OEM et emballage export.",
+      "bridgeTitle": "Fabrication et exportation. Une équipe pour votre commande.",
+      "bridgeIntro": "DDNZ Global associe fabrication et commerce d’exportation à Guangzhou, en Chine. Du développement produit et de l’OEM/ODM à la production, au contrôle qualité et à l’expédition, nous réalisons des produits adaptés à votre marché.",
+      "pillars": [
+        [
+          "Fabrication et OEM/ODM",
+          "Définissez la configuration, le marquage et l’emballage selon votre marché et votre quantité."
+        ],
+        [
+          "Qualité à la source",
+          "Validez l’échantillon et les exigences de production, puis contrôlez les produits finis avant l’expédition."
+        ],
+        [
+          "Commandes prêtes pour l’export",
+          "Rassemblez quantités, listes de colisage et documents export pour la livraison internationale."
+        ]
+      ],
+      "freightTitle": "Fret international exécuté par Heaven Born",
+      "freightBody": "Notre partenaire logistique de longue date exécute le transport international. L’expérience de son équipe remonte à 1997. Le trajet et le périmètre de livraison sont convenus pour chaque expédition.",
+      "freightLink": "Voir les services de fret",
+      "aboutLink": "Découvrir DDNZ Global"
+    },
+    "points": [
+      "Fabrication et exportation",
+      "Production OEM/ODM",
+      "Qualité à la source"
+    ],
+    "imageAlt": "Équipe produits et export à Guangzhou",
+    "officeAlt": "Entrée des bureaux DDNZ à Guangzhou",
+    "explore": "Voir les produits",
+    "products": [
+      [
+        "Équipement de cuisine professionnelle",
+        "Équipements pour restaurants, hôtels et restauration collective, configurés selon le projet et les conditions d’installation."
+      ],
+      [
+        "Machines agroalimentaires",
+        "Équipements de production définis par procédé, capacité et alimentation électrique."
+      ],
+      [
+        "Stations d’énergie portables",
+        "Puissance et recharge pour le travail en extérieur, les déplacements et l’alimentation de secours."
+      ],
+      [
+        "Stockage d’énergie résidentiel",
+        "Précisez les charges domestiques, le besoin de stockage et le marché d’installation pour un devis système."
+      ],
+      [
+        "Vélos électriques",
+        "Précisez la configuration, la batterie, la quantité et le marché de destination."
+      ],
+      [
+        "Trottinettes électriques",
+        "Préparez le devis selon le modèle, la batterie, l’emballage et les besoins de distribution."
+      ],
+      [
+        "Accessoires mobiles",
+        "Coques, protections d’écran et accessoires de charge pour les commandes de gros et de marque."
+      ]
+    ],
+    "links": [
+      "Catalogue d’équipements",
+      "Coûts et marges",
+      "Guide de sélection électrique",
+      "Solaire et accessoires",
+      "Coques de téléphone",
+      "Protections d’écran",
+      "Dragonnes et breloques"
+    ],
+    "form": {
+      "title": "Quels produits souhaitez-vous importer ?",
+      "body": "Choisissez une gamme et un marché pour préparer votre devis de gros. Les commandes déjà passées à des fournisseurs peuvent aussi être inspectées, regroupées et préparées pour l’export.",
+      "sourcing": "Je souhaite un devis usine",
+      "sourcingDesc": "Caractéristiques, quantité et besoins OEM/ODM",
+      "existing": "J’ai déjà un fournisseur",
+      "existingDesc": "Inspection, regroupement ou export",
+      "existingCta": "Demander inspection et regroupement"
+    },
+    "aboutTitle": "À propos de DDNZ Global | Fabrication et exportation de Chine",
+    "aboutHeading": "Fabrication et commerce d’exportation à Guangzhou, en Chine.",
+    "scopeHeading": "Des produits pour votre marché. Des commandes préparées pour l’export.",
+    "scopeBody": "Nous fabriquons et exportons des produits pour les importateurs, grossistes et distributeurs. Notre modèle associe capacités de production et partenaires fabricants spécialisés. Chaque devis précise le modèle, le périmètre OEM/ODM, la quantité, le délai de production et les conditions de livraison.",
+    "aboutFinal": "Préparons votre prochaine commande de produits.",
+    "trustTitle": "Que doit préciser un devis produit ?",
+    "trustIntro": "Commencez par le modèle, la quantité et la destination, puis confirmez les détails et conditions avant la production et l’export.",
+    "checks": [
+      [
+        "Modèle, quantité minimale et prix unitaire",
+        "Comparez configuration, quantité, accessoires et emballage pour définir les conditions de cette commande."
+      ],
+      [
+        "Échantillon et OEM",
+        "Confirmez l’échantillon, la marque et l’emballage ; le devis précise les délais et les coûts."
+      ],
+      [
+        "Qualité et préparation export",
+        "Reliez les contrôles, le nombre de colis, le poids brut et les documents au plan d’expédition."
+      ]
+    ],
+    "controls": [
+      "Définir les fonctions, la configuration et le marché",
+      "Chiffrer modèles, quantité minimale, prix unitaire et délai",
+      "Développer échantillons, marque et emballage OEM/ODM",
+      "Contrôler la production et les produits finis selon les spécifications",
+      "Préparer colisage, documents export et livraison"
+    ],
+    "processTitle": "Du devis usine à la production et à l’export",
+    "processBody": "Confirmez successivement configuration, échantillon, qualité et exigences d’expédition.",
+    "quoteStep": [
+      "Devis usine",
+      "Modèles, quantités, configurations et conditions de fourniture.",
+      "Accord sur le devis et le périmètre de commande."
+    ],
+    "faq": [
+      "Comment demander un devis de gros à DDNZ ?",
+      "Indiquez le produit ou modèle, la quantité et le marché de destination. Ajoutez les besoins de tension, d’emballage ou d’OEM. Le devis précise la configuration, la quantité minimale, le prix unitaire et le délai de la commande."
+    ]
+  },
+  "es": {
+    "supply": {
+      "title": "Fabricante chino y exportador mayorista | DDNZ Global",
+      "heading": "Directo de fábrica. Envíos a todo el mundo.",
+      "description": "Fabricamos y exportamos desde China equipos de cocina comercial, maquinaria alimentaria, estaciones de energía portátiles, sistemas de almacenamiento doméstico, bicicletas eléctricas, patinetes eléctricos y accesorios móviles. Ofrecemos OEM/ODM, control de calidad y entrega de exportación para importadores, mayoristas y distribuidores.",
+      "primary": "Cotizar al por mayor",
+      "catalogue": "Ver catálogo de productos",
+      "eyebrow": "FABRICACIÓN · OEM/ODM · EXPORTACIÓN",
+      "support": "Equipo de fabricación y exportación en Guangzhou, China · Importadores, mayoristas y distribuidores",
+      "whatsapp": "WhatsApp al equipo de productos",
+      "whatsappMessage": "Hola DDNZ Global, quisiera una cotización mayorista. Puedo indicar el producto, la cantidad y el destino.",
+      "range": "Nuestras principales gamas",
+      "rangeIntro": "Productos para pedidos mayoristas y de distribución, con configuraciones por modelo, opciones OEM y embalaje de exportación.",
+      "bridgeTitle": "Fabricación y exportación. Un equipo para su pedido.",
+      "bridgeIntro": "DDNZ Global integra fabricación y comercio de exportación en Guangzhou, China. Del desarrollo de producto y OEM/ODM a la producción, el control de calidad y el envío, preparamos productos para su mercado.",
+      "pillars": [
+        [
+          "Fabricación y OEM/ODM",
+          "Defina la configuración, la marca y el embalaje según su mercado y cantidad."
+        ],
+        [
+          "Calidad en origen",
+          "Apruebe la muestra y los requisitos de producción; después compruebe los productos terminados antes del envío."
+        ],
+        [
+          "Pedidos preparados para exportar",
+          "Reúna cantidades, listas de empaque y documentos de exportación para la entrega internacional."
+        ]
+      ],
+      "freightTitle": "Transporte internacional ejecutado por Heaven Born",
+      "freightBody": "Nuestro socio logístico de larga trayectoria ejecuta el transporte internacional. La experiencia de su equipo se remonta a 1997. La ruta y el alcance de entrega se acuerdan para cada envío.",
+      "freightLink": "Ver servicios de transporte",
+      "aboutLink": "Conocer DDNZ Global"
+    },
+    "points": [
+      "Fabricación y exportación",
+      "Producción OEM/ODM",
+      "Calidad en origen"
+    ],
+    "imageAlt": "Equipo de productos y exportación en Guangzhou",
+    "officeAlt": "Entrada de las oficinas DDNZ en Guangzhou",
+    "explore": "Ver productos",
+    "products": [
+      [
+        "Equipos de cocina comercial",
+        "Equipos para restaurantes, hoteles y catering, configurados según el proyecto y las condiciones de instalación."
+      ],
+      [
+        "Maquinaria alimentaria",
+        "Equipos de producción definidos según proceso, capacidad y alimentación eléctrica."
+      ],
+      [
+        "Estaciones de energía portátiles",
+        "Potencia y carga para trabajo exterior, viajes y alimentación de respaldo."
+      ],
+      [
+        "Almacenamiento de energía doméstico",
+        "Indique cargas domésticas, almacenamiento requerido y mercado de instalación para cotizar el sistema."
+      ],
+      [
+        "Bicicletas eléctricas",
+        "Defina configuración, batería, cantidad y mercado de destino."
+      ],
+      [
+        "Patinetes eléctricos",
+        "Prepare la cotización según el vehículo, la batería, el embalaje y las necesidades del distribuidor."
+      ],
+      [
+        "Accesorios móviles",
+        "Fundas, protectores de pantalla y accesorios de carga para pedidos mayoristas y de marca."
+      ]
+    ],
+    "links": [
+      "Catálogo de equipos",
+      "Costes y márgenes",
+      "Guía de selección de energía",
+      "Solar y accesorios",
+      "Fundas de teléfono",
+      "Protectores de pantalla",
+      "Correas y colgantes"
+    ],
+    "form": {
+      "title": "¿Qué productos desea importar?",
+      "body": "Elija una gama y un mercado para preparar su cotización mayorista. También podemos inspeccionar, consolidar y preparar para exportación pedidos ya realizados a proveedores.",
+      "sourcing": "Necesito cotización de fábrica",
+      "sourcingDesc": "Especificaciones, cantidad y requisitos OEM/ODM",
+      "existing": "Ya tengo proveedor",
+      "existingDesc": "Inspección, consolidación o exportación",
+      "existingCta": "Solicitar inspección y consolidación"
+    },
+    "aboutTitle": "Sobre DDNZ Global | Fabricación y exportación desde China",
+    "aboutHeading": "Fabricación y comercio de exportación desde Guangzhou, China.",
+    "scopeHeading": "Productos para su mercado. Pedidos preparados para exportar.",
+    "scopeBody": "Fabricamos y exportamos productos para importadores, mayoristas y distribuidores. Nuestro modelo combina capacidad de producción y fabricantes especializados. Cada cotización especifica modelo, alcance OEM/ODM, cantidad, plazo de producción y condiciones de entrega.",
+    "aboutFinal": "Preparemos su próximo pedido de productos.",
+    "trustTitle": "¿Qué debe definir una cotización de producto?",
+    "trustIntro": "Empiece por modelo, cantidad y destino; confirme los detalles y las condiciones antes de producir y exportar.",
+    "checks": [
+      [
+        "Modelo, cantidad mínima y precio unitario",
+        "Compare configuración, cantidad, accesorios y embalaje para definir las condiciones del pedido."
+      ],
+      [
+        "Muestra y OEM",
+        "Confirme muestra, marca y embalaje; la cotización detalla plazos y costes."
+      ],
+      [
+        "Calidad y preparación del envío",
+        "Vincule inspecciones, número de bultos, peso bruto y documentos con el plan de exportación."
+      ]
+    ],
+    "controls": [
+      "Definir funciones, configuración y mercado",
+      "Cotizar modelos, cantidad mínima, precio y producción",
+      "Desarrollar muestras, marca y embalaje OEM/ODM",
+      "Comprobar producción y productos según las especificaciones",
+      "Preparar embalaje, documentos y entrega internacional"
+    ],
+    "processTitle": "De la cotización de fábrica a la producción y exportación",
+    "processBody": "Confirme por orden configuración, muestra, calidad y requisitos de envío.",
+    "quoteStep": [
+      "Cotización de fábrica",
+      "Modelos, cantidades, configuraciones y condiciones de suministro.",
+      "Confirmar cotización y alcance del pedido."
+    ],
+    "faq": [
+      "¿Cómo solicitar una cotización mayorista a DDNZ?",
+      "Indique el producto o modelo, la cantidad y el mercado de destino. Añada tensión, embalaje o requisitos OEM cuando corresponda. La cotización confirma configuración, cantidad mínima, precio unitario y plazo del pedido."
+    ]
+  },
+  "pt": {
+    "supply": {
+      "title": "Fabricante chinês e exportador por atacado | DDNZ Global",
+      "heading": "Direto da fábrica. Entregas para todo o mundo.",
+      "description": "Fabricamos e exportamos da China equipamentos de cozinha comercial, máquinas de processamento de alimentos, estações de energia portáteis, sistemas de armazenamento residencial, bicicletas elétricas, patinetes elétricos e acessórios para celulares. Oferecemos OEM/ODM, controle de qualidade e entrega de exportação para importadores, atacadistas e distribuidores.",
+      "primary": "Solicitar cotação por atacado",
+      "catalogue": "Ver catálogo de produtos",
+      "eyebrow": "FABRICAÇÃO · OEM/ODM · EXPORTAÇÃO",
+      "support": "Equipe de fabricação e exportação em Guangzhou, China · Importadores, atacadistas e distribuidores",
+      "whatsapp": "WhatsApp da equipe de produtos",
+      "whatsappMessage": "Olá DDNZ Global, gostaria de uma cotação por atacado. Posso informar o produto, a quantidade e o destino.",
+      "range": "Nossas principais linhas",
+      "rangeIntro": "Produtos para pedidos de atacado e distribuição, com configurações por modelo, opções OEM e embalagem de exportação.",
+      "bridgeTitle": "Fabricação e exportação. Uma equipe para seu pedido.",
+      "bridgeIntro": "A DDNZ Global integra fabricação e comércio de exportação em Guangzhou, China. Do desenvolvimento e OEM/ODM à produção, ao controle de qualidade e ao embarque, entregamos produtos para seu mercado.",
+      "pillars": [
+        [
+          "Fabricação e OEM/ODM",
+          "Defina configuração, marca e embalagem conforme seu mercado e quantidade."
+        ],
+        [
+          "Qualidade na origem",
+          "Aprove a amostra e os requisitos de produção; depois verifique os produtos acabados antes do embarque."
+        ],
+        [
+          "Pedidos prontos para exportar",
+          "Reúna quantidades, listas de embalagem e documentos para a entrega internacional."
+        ]
+      ],
+      "freightTitle": "Frete internacional executado pela Heaven Born",
+      "freightBody": "Nosso parceiro logístico de longa data executa o transporte internacional. A experiência da equipe remonta a 1997. A rota e o escopo da entrega são acordados por embarque.",
+      "freightLink": "Ver serviços de frete",
+      "aboutLink": "Conhecer a DDNZ Global"
+    },
+    "points": [
+      "Fabricação e exportação",
+      "Produção OEM/ODM",
+      "Qualidade na origem"
+    ],
+    "imageAlt": "Equipe de produtos e exportação em Guangzhou",
+    "officeAlt": "Entrada dos escritórios DDNZ em Guangzhou",
+    "explore": "Ver produtos",
+    "products": [
+      [
+        "Equipamentos de cozinha comercial",
+        "Equipamentos para restaurantes, hotéis e catering, configurados conforme o projeto e as condições de instalação."
+      ],
+      [
+        "Máquinas para processamento de alimentos",
+        "Equipamentos definidos por processo, capacidade de produção e alimentação elétrica."
+      ],
+      [
+        "Estações de energia portáteis",
+        "Potência e recarga para trabalho ao ar livre, viagens e alimentação de reserva."
+      ],
+      [
+        "Armazenamento de energia residencial",
+        "Informe cargas domésticas, necessidade de armazenamento e mercado de instalação para cotar o sistema."
+      ],
+      [
+        "Bicicletas elétricas",
+        "Defina configuração, bateria, quantidade e mercado de destino."
+      ],
+      [
+        "Patinetes elétricos",
+        "Prepare a cotação conforme veículo, bateria, embalagem e requisitos do distribuidor."
+      ],
+      [
+        "Acessórios para celulares",
+        "Capas, películas e acessórios de recarga para pedidos por atacado e de marca."
+      ]
+    ],
+    "links": [
+      "Catálogo de equipamentos",
+      "Custos e margens",
+      "Guia de seleção de energia",
+      "Solar e acessórios",
+      "Capas de celular",
+      "Películas de proteção",
+      "Alças e pingentes"
+    ],
+    "form": {
+      "title": "Quais produtos você deseja importar?",
+      "body": "Escolha uma linha e um mercado para preparar a cotação por atacado. Pedidos já feitos a fornecedores também podem ser inspecionados, consolidados e preparados para exportação.",
+      "sourcing": "Preciso de cotação de fábrica",
+      "sourcingDesc": "Especificações, quantidade e requisitos OEM/ODM",
+      "existing": "Já tenho fornecedor",
+      "existingDesc": "Inspeção, consolidação ou exportação",
+      "existingCta": "Solicitar inspeção e consolidação"
+    },
+    "aboutTitle": "Sobre a DDNZ Global | Fabricação e exportação da China",
+    "aboutHeading": "Fabricação e comércio de exportação em Guangzhou, China.",
+    "scopeHeading": "Produtos para seu mercado. Pedidos preparados para exportar.",
+    "scopeBody": "Fabricamos e exportamos produtos para importadores, atacadistas e distribuidores. Nosso modelo combina capacidade de produção e fabricantes especializados. Cada cotação define modelo, escopo OEM/ODM, quantidade, prazo de produção e condições de entrega.",
+    "aboutFinal": "Vamos preparar seu próximo pedido de produtos.",
+    "trustTitle": "O que uma cotação de produto deve definir?",
+    "trustIntro": "Comece pelo modelo, quantidade e destino; confirme detalhes e condições antes da produção e exportação.",
+    "checks": [
+      [
+        "Modelo, quantidade mínima e preço unitário",
+        "Compare configuração, quantidade, acessórios e embalagem para definir as condições do pedido."
+      ],
+      [
+        "Amostra e OEM",
+        "Confirme amostra, marca e embalagem; a cotação detalha prazos e custos."
+      ],
+      [
+        "Qualidade e preparação do embarque",
+        "Relacione inspeções, número de volumes, peso bruto e documentos ao plano de exportação."
+      ]
+    ],
+    "controls": [
+      "Definir funções, configuração e mercado",
+      "Cotar modelos, quantidade mínima, preços e produção",
+      "Desenvolver amostras, marca e embalagem OEM/ODM",
+      "Verificar produção e produtos conforme especificações",
+      "Preparar embalagem, documentos e entrega internacional"
+    ],
+    "processTitle": "Da cotação de fábrica à produção e exportação",
+    "processBody": "Confirme em sequência configuração, amostra, qualidade e requisitos de embarque.",
+    "quoteStep": [
+      "Cotação de fábrica",
+      "Modelos, quantidades, configurações e condições de fornecimento.",
+      "Confirmar cotação e escopo do pedido."
+    ],
+    "faq": [
+      "Como solicitar uma cotação por atacado à DDNZ?",
+      "Informe produto ou modelo, quantidade e mercado de destino. Inclua tensão, embalagem ou requisitos OEM quando necessário. A cotação confirma configuração, quantidade mínima, preço unitário e prazo do pedido."
+    ]
+  },
+  "tr": {
+    "supply": {
+      "title": "Çinli Üretici ve Toptan İhracatçı | DDNZ Global",
+      "heading": "Fabrikadan doğrudan. Dünyaya teslimat.",
+      "description": "Çin’den ticari mutfak ekipmanları, gıda işleme makineleri, taşınabilir güç istasyonları, ev tipi enerji depolama sistemleri, elektrikli bisikletler, elektrikli scooter modelleri ve mobil aksesuarlar üretiyor ve ihraç ediyoruz. İthalatçı, toptancı ve distribütörlere OEM/ODM, kalite kontrol ve ihracat teslimatı sunuyoruz.",
+      "primary": "Toptan fiyat teklifi alın",
+      "catalogue": "Ürün kataloğunu inceleyin",
+      "eyebrow": "ÜRETİM · OEM/ODM · İHRACAT",
+      "support": "Guangzhou, Çin’de üretim ve ihracat ekibi · İthalatçılar, toptancılar ve distribütörler",
+      "whatsapp": "Ürün ekibiyle WhatsApp",
+      "whatsappMessage": "Merhaba DDNZ Global, toptan ürün teklifi istiyorum. Ürün, adet ve varış yerini paylaşabilirim.",
+      "range": "Ana ürün gruplarımız",
+      "rangeIntro": "Toptan ve distribütör siparişleri için modele özgü yapılandırma, OEM seçenekleri ve ihracat ambalajı.",
+      "bridgeTitle": "Üretim ve ihracat. Siparişiniz için tek ekip.",
+      "bridgeIntro": "DDNZ Global, Guangzhou, Çin’de üretim ile ihracat ticaretini birleştirir. Ürün geliştirme ve OEM/ODM’den üretim, kalite kontrol ve sevkiyata kadar pazarınıza uygun ürünler hazırlarız.",
+      "pillars": [
+        [
+          "Üretim ve OEM/ODM",
+          "Yapılandırma, markalama ve ambalajı pazarınıza ve miktarınıza göre geliştirin."
+        ],
+        [
+          "Kaynakta kalite",
+          "Numuneyi ve üretim gereksinimlerini onaylayın; sevkiyattan önce bitmiş ürünleri kontrol edin."
+        ],
+        [
+          "İhracata hazır siparişler",
+          "Uluslararası teslimat için miktarları, koli listesini ve ihracat belgelerini bir araya getirin."
+        ]
+      ],
+      "freightTitle": "Uluslararası taşımayı Heaven Born yürütür",
+      "freightBody": "Uzun süreli lojistik ortağımız uluslararası taşımayı yürütür. Ekibin deneyimi 1997’ye uzanır. Güzergâh ve teslimat kapsamı her sevkiyat için belirlenir.",
+      "freightLink": "Taşıma hizmetlerini inceleyin",
+      "aboutLink": "DDNZ Global’i tanıyın"
+    },
+    "points": [
+      "Üretim ve ihracat",
+      "OEM/ODM üretimi",
+      "Kaynakta kalite"
+    ],
+    "imageAlt": "Guangzhou’daki ürün ve ihracat ekibi",
+    "officeAlt": "DDNZ Guangzhou ofis girişi",
+    "explore": "Ürünleri inceleyin",
+    "products": [
+      [
+        "Ticari mutfak ekipmanları",
+        "Restoran, otel ve toplu yemek projeleri için kurulum koşullarına uygun ekipman."
+      ],
+      [
+        "Gıda işleme makineleri",
+        "İşlem, üretim kapasitesi ve elektrik beslemesine göre belirlenen ekipman."
+      ],
+      [
+        "Taşınabilir güç istasyonları",
+        "Dış mekân çalışması, seyahat ve yedek güç için çıkış ve şarj yapılandırmaları."
+      ],
+      [
+        "Ev tipi enerji depolama sistemleri",
+        "Sistem teklifi için ev yüklerini, depolama ihtiyacını ve kurulum pazarını paylaşın."
+      ],
+      [
+        "Elektrikli bisikletler",
+        "Araç yapılandırması, batarya, miktar ve hedef pazarı belirleyin."
+      ],
+      [
+        "Elektrikli scooter modelleri",
+        "Araç, batarya, ambalaj ve distribütör gereksinimlerine göre teklif hazırlayın."
+      ],
+      [
+        "Mobil aksesuarlar",
+        "Toptan ve markalı siparişler için telefon kılıfları, ekran koruyucular ve şarj aksesuarları."
+      ]
+    ],
+    "links": [
+      "Ekipman kataloğu",
+      "Maliyet ve kâr marjı",
+      "Güç seçim kılavuzu",
+      "Güneş ve aksesuarlar",
+      "Telefon kılıfları",
+      "Ekran koruyucular",
+      "Askılar ve süsler"
+    ],
+    "form": {
+      "title": "Hangi ürünleri ithal etmek istiyorsunuz?",
+      "body": "Toptan teklif için ürün grubunu ve pazarı seçin. Mevcut tedarikçi siparişleri de denetlenebilir, birleştirilebilir ve ihracata hazırlanabilir.",
+      "sourcing": "Fabrika fiyat teklifi istiyorum",
+      "sourcingDesc": "Özellikler, miktar ve OEM/ODM gereksinimleri",
+      "existing": "Mevcut tedarikçim var",
+      "existingDesc": "Denetim, konsolidasyon veya ihracat",
+      "existingCta": "Denetim ve konsolidasyon isteyin"
+    },
+    "aboutTitle": "DDNZ Global Hakkında | Çin’de Üretim ve İhracat",
+    "aboutHeading": "Guangzhou, Çin’de üretim ve ihracat ticareti.",
+    "scopeHeading": "Pazarınız için ürünler. İhracata hazır siparişler.",
+    "scopeBody": "İthalatçı, toptancı ve distribütörler için ürün üretiyor ve ihraç ediyoruz. İş modelimiz üretim kapasitesini uzman üretici ortaklarla birleştirir. Her teklif model, OEM/ODM kapsamı, miktar, üretim süresi ve teslimat koşullarını belirtir.",
+    "aboutFinal": "Bir sonraki ürün siparişinizi birlikte hazırlayalım.",
+    "trustTitle": "Ürün fiyat teklifinde neler belirtilmeli?",
+    "trustIntro": "Model, miktar ve varış yeriyle başlayın; üretim ve ihracattan önce ayrıntıları ve koşulları doğrulayın.",
+    "checks": [
+      [
+        "Model, asgari miktar ve birim fiyat",
+        "Sipariş koşulları için yapılandırma, miktar, aksesuar ve ambalajı karşılaştırın."
+      ],
+      [
+        "Numune ve OEM",
+        "Numune, marka ve ambalajı belirleyin; süre ve maliyetler teklifte yer alsın."
+      ],
+      [
+        "Kalite ve sevkiyat hazırlığı",
+        "Denetim, koli sayısı, brüt ağırlık ve belgeleri ihracat planıyla eşleştirin."
+      ]
+    ],
+    "controls": [
+      "Ürün işlevlerini, yapılandırmayı ve pazarı belirleyin",
+      "Model, asgari miktar, fiyat ve üretim süresini teklif edin",
+      "Numune, marka ve OEM/ODM ambalaj geliştirin",
+      "Üretimi ve bitmiş ürünü özelliklere göre kontrol edin",
+      "Ambalaj, ihracat belgeleri ve teslimatı hazırlayın"
+    ],
+    "processTitle": "Fabrika teklifinden üretim ve ihracata",
+    "processBody": "Yapılandırma, numune, kalite ve sevkiyat gereksinimlerini sırayla belirleyin.",
+    "quoteStep": [
+      "Fabrika teklifi",
+      "Modeller, miktarlar, yapılandırmalar ve tedarik koşulları.",
+      "Teklifi ve sipariş kapsamını onaylayın."
+    ],
+    "faq": [
+      "DDNZ’den nasıl toptan ürün teklifi alabilirim?",
+      "Ürün veya modeli, miktarı ve hedef pazarı paylaşın. Gerektiğinde gerilim, ambalaj veya OEM gereksinimlerini ekleyin. Teklifte yapılandırma, asgari sipariş miktarı, birim fiyat ve sipariş süresi belirtilir."
+    ]
+  },
+  "ru": {
+    "supply": {
+      "title": "Китайский производитель и оптовый экспортёр | DDNZ Global",
+      "heading": "Напрямую с производства. Поставки по всему миру.",
+      "description": "Мы производим и экспортируем из Китая оборудование для профессиональных кухонь, пищевые машины, портативные электростанции, домашние системы хранения энергии, электровелосипеды, электросамокаты и мобильные аксессуары. Предлагаем OEM/ODM, контроль качества и экспортную доставку импортёрам, оптовикам и дистрибьюторам.",
+      "primary": "Запросить оптовую цену",
+      "catalogue": "Открыть каталог продукции",
+      "eyebrow": "ПРОИЗВОДСТВО · OEM/ODM · ЭКСПОРТ",
+      "support": "Производство и экспорт из Гуанчжоу, Китай · Импортёрам, оптовикам и дистрибьюторам",
+      "whatsapp": "WhatsApp команде по продукции",
+      "whatsappMessage": "Здравствуйте, DDNZ Global. Хочу получить оптовое предложение. Могу указать продукт, количество и место назначения.",
+      "range": "Наши основные группы продукции",
+      "rangeIntro": "Продукция для оптовых и дистрибьюторских заказов с комплектациями по модели, OEM и экспортной упаковкой.",
+      "bridgeTitle": "Производство и экспорт. Одна команда для вашего заказа.",
+      "bridgeIntro": "DDNZ Global объединяет производство и экспортную торговлю в Гуанчжоу, Китай. От разработки и OEM/ODM до производства, контроля качества и отправки мы готовим продукцию для вашего рынка.",
+      "pillars": [
+        [
+          "Производство и OEM/ODM",
+          "Разработайте комплектацию, маркировку и упаковку под ваш рынок и объём заказа."
+        ],
+        [
+          "Качество у источника",
+          "Согласуйте образец и требования производства; проверьте готовую продукцию до отправки."
+        ],
+        [
+          "Заказы, готовые к экспорту",
+          "Сведите количество, упаковочные листы и документы для международной доставки."
+        ]
+      ],
+      "freightTitle": "Международные перевозки выполняет Heaven Born",
+      "freightBody": "Наш многолетний логистический партнёр выполняет международные перевозки. Опыт команды ведёт отсчёт с 1997 года. Маршрут и объём доставки согласуются для каждой отправки.",
+      "freightLink": "Посмотреть услуги перевозки",
+      "aboutLink": "Познакомиться с DDNZ Global"
+    },
+    "points": [
+      "Производство и экспорт",
+      "Производство OEM/ODM",
+      "Качество у источника"
+    ],
+    "imageAlt": "Команда по продукции и экспорту в Гуанчжоу",
+    "officeAlt": "Вход в офис DDNZ в Гуанчжоу",
+    "explore": "Посмотреть продукцию",
+    "products": [
+      [
+        "Оборудование для профессиональных кухонь",
+        "Оборудование для ресторанов, гостиниц и кейтеринга под проект и условия установки."
+      ],
+      [
+        "Пищевое оборудование",
+        "Производственные машины по процессу, производительности и электропитанию."
+      ],
+      [
+        "Портативные электростанции",
+        "Мощность и зарядка для работы на улице, поездок и резервного питания."
+      ],
+      [
+        "Домашние системы хранения энергии",
+        "Укажите домашние нагрузки, запас энергии и рынок установки для расчёта системы."
+      ],
+      [
+        "Электровелосипеды",
+        "Согласуйте комплектацию, аккумулятор, количество и рынок назначения."
+      ],
+      [
+        "Электросамокаты",
+        "Подготовьте предложение по модели, аккумулятору, упаковке и требованиям дистрибьютора."
+      ],
+      [
+        "Мобильные аксессуары",
+        "Чехлы, защитные стёкла и зарядные аксессуары для оптовых и брендированных заказов."
+      ]
+    ],
+    "links": [
+      "Каталог оборудования",
+      "Затраты и маржа",
+      "Руководство по подбору питания",
+      "Солнечные панели и принадлежности",
+      "Чехлы для телефонов",
+      "Защита экрана",
+      "Ремешки и подвески"
+    ],
+    "form": {
+      "title": "Какие продукты вы хотите импортировать?",
+      "body": "Выберите группу продукции и рынок для оптового предложения. Уже размещённые у поставщиков заказы также можно проверить, консолидировать и подготовить к экспорту.",
+      "sourcing": "Нужно предложение производителя",
+      "sourcingDesc": "Характеристики, количество и требования OEM/ODM",
+      "existing": "У меня уже есть поставщик",
+      "existingDesc": "Проверка, консолидация или экспорт",
+      "existingCta": "Заказать проверку и консолидацию"
+    },
+    "aboutTitle": "О DDNZ Global | Производство и экспорт из Китая",
+    "aboutHeading": "Производство и экспортная торговля из Гуанчжоу, Китай.",
+    "scopeHeading": "Продукция для вашего рынка. Заказы, готовые к экспорту.",
+    "scopeBody": "Мы производим и экспортируем продукцию для импортёров, оптовиков и дистрибьюторов. Наша модель объединяет производственные возможности и профильных партнёров-производителей. Каждое предложение определяет модель, объём OEM/ODM, количество, срок производства и условия доставки.",
+    "aboutFinal": "Подготовим ваш следующий заказ продукции.",
+    "trustTitle": "Что должно быть в предложении на продукцию?",
+    "trustIntro": "Начните с модели, количества и назначения; подтвердите детали и условия до производства и экспорта.",
+    "checks": [
+      [
+        "Модель, минимальный заказ и цена единицы",
+        "Сравните комплектацию, количество, принадлежности и упаковку, определив условия заказа."
+      ],
+      [
+        "Образец и OEM",
+        "Подтвердите образец, маркировку и упаковку; сроки и стоимость укажите в предложении."
+      ],
+      [
+        "Качество и подготовка отправки",
+        "Свяжите инспекцию, число мест, массу брутто и документы с планом экспорта."
+      ]
+    ],
+    "controls": [
+      "Определить функции, комплектацию и рынок",
+      "Рассчитать модели, минимальный заказ, цены и производство",
+      "Разработать образцы, маркировку и упаковку OEM/ODM",
+      "Проверить производство и продукцию по спецификации",
+      "Подготовить упаковку, документы и международную доставку"
+    ],
+    "processTitle": "От предложения производителя к производству и экспорту",
+    "processBody": "Последовательно согласуйте комплектацию, образец, качество и требования к отправке.",
+    "quoteStep": [
+      "Предложение производителя",
+      "Модели, количество, комплектации и условия поставки.",
+      "Согласовать предложение и объём заказа."
+    ],
+    "faq": [
+      "Как запросить оптовое предложение у DDNZ?",
+      "Сообщите продукт или модель, количество и рынок назначения. При необходимости добавьте напряжение, упаковку или требования OEM. В предложении подтверждаются комплектация, минимальный заказ, цена единицы и срок заказа."
+    ]
+  },
+  "ar": {
+    "supply": {
+      "title": "مصنّع صيني ومصدّر بالجملة | DDNZ Global",
+      "heading": "مباشرة من المصنع. شحن إلى أنحاء العالم.",
+      "description": "نصنّع ونصدّر من الصين معدات المطابخ التجارية وآلات تجهيز الأغذية ومحطات الطاقة المحمولة وأنظمة التخزين المنزلية والدراجات الكهربائية والسكوترات الكهربائية وملحقات الهاتف. نقدم تخصيص OEM/ODM وضبط الجودة وتسليم الصادرات للمستوردين وتجار الجملة والموزعين.",
+      "primary": "اطلب عرض سعر بالجملة",
+      "catalogue": "استعرض كتالوج المنتجات",
+      "eyebrow": "التصنيع · OEM/ODM · التصدير",
+      "support": "فريق التصنيع والتصدير في قوانغتشو، الصين · للمستوردين وتجار الجملة والموزعين",
+      "whatsapp": "واتساب فريق المنتجات",
+      "whatsappMessage": "مرحبًا DDNZ Global، أود عرض سعر بالجملة. يمكنني تحديد المنتج والكمية والوجهة.",
+      "range": "فئات منتجاتنا الرئيسية",
+      "rangeIntro": "منتجات لطلبات الجملة والتوزيع، مع تجهيزات حسب الطراز وخيارات OEM وتغليف للتصدير.",
+      "bridgeTitle": "التصنيع والتصدير. فريق واحد لطلبك.",
+      "bridgeIntro": "تجمع DDNZ Global بين التصنيع وتجارة التصدير في قوانغتشو، الصين. من تطوير المنتجات وOEM/ODM إلى الإنتاج وضبط الجودة والشحن، نجهّز منتجات لسوقك.",
+      "pillars": [
+        [
+          "التصنيع وOEM/ODM",
+          "حدد التجهيز والعلامة والتغليف حسب سوقك وكمية الطلب."
+        ],
+        [
+          "الجودة في المصدر",
+          "اعتمد العينة ومتطلبات الإنتاج، ثم افحص المنتجات النهائية قبل الشحن."
+        ],
+        [
+          "طلبات جاهزة للتصدير",
+          "اجمع الكميات وقوائم التعبئة ومستندات التصدير للتسليم الدولي."
+        ]
+      ],
+      "freightTitle": "الشحن الدولي من تنفيذ Heaven Born",
+      "freightBody": "ينفّذ شريكنا اللوجستي طويل الأمد النقل الدولي. تعود خبرة الفريق إلى عام 1997. يُتفق على المسار ونطاق التسليم لكل شحنة.",
+      "freightLink": "استعرض خدمات الشحن",
+      "aboutLink": "تعرّف على DDNZ Global"
+    },
+    "points": [
+      "التصنيع والتصدير",
+      "إنتاج OEM/ODM",
+      "الجودة في المصدر"
+    ],
+    "imageAlt": "فريق المنتجات والتصدير في قوانغتشو",
+    "officeAlt": "مدخل مكتب DDNZ في قوانغتشو",
+    "explore": "استعرض المنتجات",
+    "products": [
+      [
+        "معدات المطابخ التجارية",
+        "معدات للمطاعم والفنادق والتموين حسب المشروع وظروف التركيب."
+      ],
+      [
+        "آلات تجهيز الأغذية",
+        "معدات إنتاج تُحدد حسب العملية والطاقة الإنتاجية ومصدر الكهرباء."
+      ],
+      [
+        "محطات الطاقة المحمولة",
+        "تجهيزات قدرة وشحن للعمل الخارجي والسفر والطاقة الاحتياطية."
+      ],
+      [
+        "أنظمة تخزين الطاقة المنزلية",
+        "أرسل الأحمال المنزلية واحتياج التخزين وسوق التركيب لعرض سعر النظام."
+      ],
+      [
+        "الدراجات الكهربائية",
+        "حدد تجهيز المركبة والبطارية والكمية وسوق الوجهة."
+      ],
+      [
+        "السكوترات الكهربائية",
+        "جهّز عرض السعر حسب المركبة والبطارية والتغليف ومتطلبات الموزع."
+      ],
+      [
+        "ملحقات الهاتف",
+        "أغطية وواقيات شاشة وملحقات شحن لطلبات الجملة والعلامات التجارية."
+      ]
+    ],
+    "links": [
+      "كتالوج المعدات",
+      "التكاليف وهوامش الربح",
+      "دليل اختيار الطاقة",
+      "الطاقة الشمسية والملحقات",
+      "أغطية الهاتف",
+      "واقيات الشاشة",
+      "أحزمة وتعليقات"
+    ],
+    "form": {
+      "title": "ما المنتجات التي ترغب في استيرادها؟",
+      "body": "اختر فئة المنتج والسوق لبدء عرض سعر بالجملة. يمكن أيضًا فحص الطلبات القائمة لدى الموردين وتجميعها وتجهيزها للتصدير.",
+      "sourcing": "أحتاج عرض سعر من المصنع",
+      "sourcingDesc": "المواصفات والكمية ومتطلبات OEM/ODM",
+      "existing": "لدي مورد بالفعل",
+      "existingDesc": "الفحص أو التجميع أو التصدير",
+      "existingCta": "اطلب الفحص وتجميع البضائع"
+    },
+    "aboutTitle": "عن DDNZ Global | التصنيع والتصدير من الصين",
+    "aboutHeading": "التصنيع وتجارة التصدير من قوانغتشو، الصين.",
+    "scopeHeading": "منتجات لسوقك. طلبات جاهزة للتصدير.",
+    "scopeBody": "نصنّع ونصدّر منتجات للمستوردين وتجار الجملة والموزعين. يجمع نموذجنا بين قدرات الإنتاج وشركاء تصنيع متخصصين. يحدد كل عرض سعر الطراز ونطاق OEM/ODM والكمية ومدة الإنتاج وشروط التسليم.",
+    "aboutFinal": "لنجهّز طلب منتجاتك القادم.",
+    "trustTitle": "ماذا يجب أن يوضح عرض سعر المنتج؟",
+    "trustIntro": "ابدأ بالطراز والكمية والوجهة، ثم أكد التفاصيل والشروط قبل الإنتاج والتصدير.",
+    "checks": [
+      [
+        "الطراز والحد الأدنى وسعر الوحدة",
+        "قارن التجهيز والكمية والملحقات والتغليف لتحديد شروط الطلب."
+      ],
+      [
+        "العينة وOEM",
+        "أكد العينة والعلامة والتغليف، وحدد الوقت والتكلفة في العرض."
+      ],
+      [
+        "الجودة وتجهيز الشحن",
+        "اربط الفحص وعدد الطرود والوزن الإجمالي والمستندات بخطة التصدير."
+      ]
+    ],
+    "controls": [
+      "تحديد وظائف المنتج والتجهيز والسوق",
+      "تسعير الطرازات والحد الأدنى وسعر الوحدة ومدة الإنتاج",
+      "تطوير العينات والعلامة وتغليف OEM/ODM",
+      "فحص الإنتاج والمنتجات حسب المواصفات",
+      "تجهيز التعبئة والمستندات والتسليم الدولي"
+    ],
+    "processTitle": "من عرض سعر المصنع إلى الإنتاج والتصدير",
+    "processBody": "أكد التجهيز والعينة والجودة ومتطلبات الشحن بالتتابع.",
+    "quoteStep": [
+      "عرض سعر المصنع",
+      "الطرازات والكميات والتجهيزات وشروط التوريد.",
+      "تأكيد العرض ونطاق الطلب."
+    ],
+    "faq": [
+      "كيف أطلب عرض سعر بالجملة من DDNZ؟",
+      "أرسل المنتج أو الطراز والكمية وسوق الوجهة، وأضف الجهد أو التغليف أو متطلبات OEM عند الحاجة. يؤكد عرض السعر التجهيز والحد الأدنى للطلب وسعر الوحدة ومدة الطلب."
+    ]
+  }
+}

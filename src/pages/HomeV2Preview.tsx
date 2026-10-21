@@ -318,7 +318,7 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
                 const Icon = meta.icon;
                 return (
                   <li key={meta.number}>
-                    <Link to={localizePath(meta.path, language)} className="group block h-full rounded-2xl border border-slate-200 bg-white p-5 transition-[border-color,box-shadow] hover:border-[var(--ddnz-purple)]/40 hover:shadow-[0_12px_35px_rgba(16,36,63,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] sm:p-6">
+                    <Link to={localizePath(index===0&&['en','zh'].includes(language)?'/#sourcing-brief':meta.path, language)} className="group block h-full rounded-2xl border border-slate-200 bg-white p-5 transition-[border-color,box-shadow] hover:border-[var(--ddnz-purple)]/40 hover:shadow-[0_12px_35px_rgba(16,36,63,0.08)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] sm:p-6">
                       <div className="flex items-center justify-between gap-4">
                         <span className="grid h-11 w-11 place-items-center rounded-xl bg-[var(--ddnz-purple-soft)] text-[var(--ddnz-purple-strong)]"><Icon className="h-6 w-6" aria-hidden="true" /></span>
                         <span className="font-mono text-xs font-black tracking-[0.16em] text-[var(--ddnz-coral-strong)]">{meta.number}</span>
@@ -340,7 +340,7 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
 
         <section id="preview-evidence" className="border-b border-slate-200 bg-[#f4f6f8] py-14 sm:py-16 lg:py-20">
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <article className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+            {!['en','zh'].includes(language) && (            <article className="grid overflow-hidden rounded-2xl border border-slate-200 bg-white lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
               <div className="p-6 sm:p-8 lg:p-9">
                 <p className="text-xs font-black uppercase tracking-[0.18em] text-[var(--ddnz-coral-strong)]">{copy.evidence.scoreEyebrow}</p>
                 <h2 className="mt-3 text-3xl font-extrabold tracking-[-0.04em] text-[var(--ddnz-ink)]">{copy.evidence.scoreTitle}</h2>
@@ -359,7 +359,7 @@ export default function HomeV2Preview({ embedded = false, beforeFinal }: HomeV2P
                 <img src={localizedScorecard.src} alt={copy.evidence.scorecardPreviewAlt} width={localizedScorecard.width} height={localizedScorecard.height} loading="lazy" decoding="async" className="mx-auto block h-auto max-h-[38rem] w-full rounded-xl object-contain transition-transform duration-300 group-hover:scale-[1.01]" />
                 <span className="absolute bottom-7 end-7 grid h-11 w-11 place-items-center rounded-xl bg-white/95 text-[var(--ddnz-purple-strong)] shadow-lg backdrop-blur"><Maximize2 className="h-4 w-4" aria-hidden="true" /></span>
               </button>
-            </article>
+            </article>)}
 
             <article className="mt-8 grid overflow-hidden rounded-2xl border border-slate-200 bg-white lg:grid-cols-[1.05fr_0.95fr]">
               <figure className="overflow-hidden border-b border-slate-200 lg:border-b-0 lg:border-e">

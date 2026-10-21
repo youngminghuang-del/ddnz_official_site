@@ -1,4 +1,5 @@
 import cairoMobileWholesaleSchema from '../data/cairo-mobile-wholesale-schema.json';
+import {positioning} from '../features/search-intent/positioning.mjs';
 import homeStorageMarketSchema from '../data/home-storage-market-schema.json';
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -50,9 +51,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'alternateName': ['DDNZ Global', '大递诺展'],
         'url': 'https://www.ddnzglobal.com',
         'logo': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
-        'description': language === 'zh' 
-          ? '大递诺展贸易有限公司为国际进口商协调中国采购、供应商验证、质量检验、集货与出口交付。'
-          : 'DDNZ Global Trade Co., Ltd. coordinates China sourcing, supplier verification, quality inspection, consolidation and export delivery for international importers.',
+        'description': positioning[language].homeDescription,
         'contactPoint': [
           {
             '@type': 'ContactPoint',

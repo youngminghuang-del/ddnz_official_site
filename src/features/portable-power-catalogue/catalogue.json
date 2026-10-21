@@ -1,0 +1,585 @@
+[
+  {
+    "id": 1,
+    "code": "PP-C01",
+    "category": "compact",
+    "title": "300W纯正弦波便携电源",
+    "enTitle": "300W pure sine wave portable power station",
+    "label": "小型多接口款",
+    "enLabel": "Compact multi-output model",
+    "specs": [
+      [
+        "AC额定输出",
+        "300 W"
+      ],
+      [
+        "储电容量",
+        "230.4 Wh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "220 V / 50 Hz"
+      ],
+      [
+        "USB输出",
+        "USB-C PD 100 W；USB-A QC 3.0及2×5 V/2.4 A"
+      ],
+      [
+        "市电／USB-C充电",
+        "USB-C PD输入最高100 W；适配器另确认"
+      ],
+      [
+        "太阳能／DC输入",
+        "11–28 V；最高50 W"
+      ],
+      [
+        "机身尺寸",
+        "216 × 138 × 152 mm"
+      ],
+      [
+        "净重",
+        "约5 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "300 W"
+      ],
+      [
+        "Stored energy",
+        "230.4 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "220 V / 50 Hz"
+      ],
+      [
+        "USB outputs",
+        "USB-C PD 100 W; USB-A QC 3.0 and 2 × 5 V/2.4 A"
+      ],
+      [
+        "Mains / USB-C charging",
+        "USB-C PD input up to 100 W; confirm mains adapter"
+      ],
+      [
+        "Solar / DC input",
+        "11–28 V; up to 50 W"
+      ],
+      [
+        "Unit dimensions",
+        "216 × 138 × 152 mm"
+      ],
+      [
+        "Net weight",
+        "Approx. 5 kg"
+      ]
+    ],
+    "note": "USB-C输入与输出额定值分别确认。太阳能板、车充线和市电适配器是否随箱供货，列入具体配置。",
+    "enNote": "Confirm USB-C input and output ratings separately. The configuration lists whether solar panels, vehicle cables and mains adapters are included.",
+    "gallery": [
+      {
+        "title": "正面接口",
+        "enTitle": "Front ports",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/c1-main.webp",
+        "thumb": "/images/portable-power-catalogue/c1-main-thumb.webp"
+      },
+      {
+        "title": "机身与散热侧面",
+        "enTitle": "Body and vented side",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/c1-side.webp",
+        "thumb": "/images/portable-power-catalogue/c1-side-thumb.webp"
+      },
+      {
+        "title": "户外使用场景",
+        "enTitle": "Outdoor application",
+        "kind": "场景",
+        "web": "/images/portable-power-catalogue/c1-solar.webp",
+        "thumb": "/images/portable-power-catalogue/c1-solar-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "code": "PP-C02",
+    "category": "compact",
+    "title": "300W轻型便携电源",
+    "enTitle": "300W lightweight portable power station",
+    "label": "轻型提手款",
+    "enLabel": "Lightweight carry-handle model",
+    "specs": [
+      [
+        "AC额定输出",
+        "300 W"
+      ],
+      [
+        "储电容量",
+        "230.4 Wh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "AC输出波形",
+        "修正波"
+      ],
+      [
+        "AC电压与频率",
+        "按目标市场确认电压与频率"
+      ],
+      [
+        "USB输出",
+        "USB-C 5 V/3 A；3×USB-A 5 V/2.4 A"
+      ],
+      [
+        "市电／USB-C充电",
+        "AC最高50 W；AC+DC合计最高90 W"
+      ],
+      [
+        "太阳能／DC输入",
+        "11–28 V；最高40 W"
+      ],
+      [
+        "机身尺寸",
+        "217 × 131 × 147 mm"
+      ],
+      [
+        "净重",
+        "3.2 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "300 W"
+      ],
+      [
+        "Stored energy",
+        "230.4 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Modified sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "Confirm voltage and frequency for the destination"
+      ],
+      [
+        "USB outputs",
+        "USB-C 5 V/3 A; 3 × USB-A 5 V/2.4 A"
+      ],
+      [
+        "Mains / USB-C charging",
+        "AC up to 50 W; combined AC + DC up to 90 W"
+      ],
+      [
+        "Solar / DC input",
+        "11–28 V; up to 40 W"
+      ],
+      [
+        "Unit dimensions",
+        "217 × 131 × 147 mm"
+      ],
+      [
+        "Net weight",
+        "3.2 kg"
+      ]
+    ],
+    "note": "此款为修正波输出。对波形有要求的电器应单独确认适配性；所需AC电压、频率及插座在订单中写明。",
+    "enNote": "This model has a modified sine wave output. Check compatibility with appliances that require a specific waveform; state AC voltage, frequency and outlets in the order.",
+    "gallery": [
+      {
+        "title": "提手与侧面接口",
+        "enTitle": "Handle and side ports",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/c2-main.webp",
+        "thumb": "/images/portable-power-catalogue/c2-main-thumb.webp"
+      },
+      {
+        "title": "机身与接口细节",
+        "enTitle": "Body and port details",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/c2-side.webp",
+        "thumb": "/images/portable-power-catalogue/c2-side-thumb.webp"
+      },
+      {
+        "title": "桌面使用场景",
+        "enTitle": "Desktop application",
+        "kind": "场景",
+        "web": "/images/portable-power-catalogue/c2-scene.webp",
+        "thumb": "/images/portable-power-catalogue/c2-scene-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "code": "PP-M01",
+    "category": "capacity",
+    "title": "500W金属机身大容量电源",
+    "enTitle": "500W high-capacity metal-body power station",
+    "label": "1004.8Wh金属机身款",
+    "enLabel": "1004.8Wh metal-body model",
+    "specs": [
+      [
+        "AC额定输出",
+        "500 W"
+      ],
+      [
+        "储电容量",
+        "1004.8 Wh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "230 V / 50 Hz（欧规配置）"
+      ],
+      [
+        "USB输出",
+        "USB-C 5 V/3 A（15 W）；USB-A 5 V/3 A（15 W）"
+      ],
+      [
+        "市电／USB-C充电",
+        "AC输入最高500 W"
+      ],
+      [
+        "太阳能／DC输入",
+        "12–55 V；最高400 W"
+      ],
+      [
+        "机身尺寸",
+        "215.6 × 315 × 176.9 mm"
+      ],
+      [
+        "净重",
+        "10.8 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "500 W"
+      ],
+      [
+        "Stored energy",
+        "1004.8 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "230 V / 50 Hz (European configuration)"
+      ],
+      [
+        "USB outputs",
+        "USB-C 5 V/3 A (15 W); USB-A 5 V/3 A (15 W)"
+      ],
+      [
+        "Mains / USB-C charging",
+        "AC input up to 500 W"
+      ],
+      [
+        "Solar / DC input",
+        "12–55 V; up to 400 W"
+      ],
+      [
+        "Unit dimensions",
+        "215.6 × 315 × 176.9 mm"
+      ],
+      [
+        "Net weight",
+        "10.8 kg"
+      ]
+    ],
+    "note": "此处列出欧规配置。美规版本单独确认AC参数与插座；1004.8Wh是储电量，AC额定输出仍为500W。",
+    "enNote": "Specifications here describe the European configuration. Agree AC parameters and outlets separately for the US version. Stored energy is 1004.8Wh; rated AC output remains 500W.",
+    "gallery": [
+      {
+        "title": "机身与正面接口",
+        "enTitle": "Body and front ports",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/m1-main.webp",
+        "thumb": "/images/portable-power-catalogue/m1-main-thumb.webp"
+      },
+      {
+        "title": "多角度与散热细节",
+        "enTitle": "Multiple views and ventilation",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/m1-views.webp",
+        "thumb": "/images/portable-power-catalogue/m1-views-thumb.webp"
+      },
+      {
+        "title": "LCD显示界面示意",
+        "enTitle": "LCD display illustration",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/m1-display.webp",
+        "thumb": "/images/portable-power-catalogue/m1-display-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "code": "PP-H01",
+    "category": "fast",
+    "title": "1200W快充便携电源",
+    "enTitle": "1200W fast-charging portable power station",
+    "label": "1120Wh多接口款",
+    "enLabel": "1120Wh multi-output model",
+    "specs": [
+      [
+        "AC额定输出",
+        "1200 W（峰值2400 W）"
+      ],
+      [
+        "储电容量",
+        "1120 Wh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "按目标市场配置电压、频率及插座"
+      ],
+      [
+        "USB输出",
+        "USB-C：100 W + 30 W + 30 W；USB-A：22.5 W及2×5 V/2.4 A"
+      ],
+      [
+        "市电／USB-C充电",
+        "AC输入800 W；USB-C PD双向100 W"
+      ],
+      [
+        "太阳能／DC输入",
+        "11–50 V；XT60；MPPT最高300 W"
+      ],
+      [
+        "机身尺寸",
+        "按样品配置确认"
+      ],
+      [
+        "净重",
+        "按样品配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "1200 W (2400 W peak)"
+      ],
+      [
+        "Stored energy",
+        "1120 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "Specify voltage, frequency and outlets for the market"
+      ],
+      [
+        "USB outputs",
+        "USB-C: 100 W + 30 W + 30 W; USB-A: 22.5 W and 2 × 5 V/2.4 A"
+      ],
+      [
+        "Mains / USB-C charging",
+        "800 W AC input; 100 W bidirectional USB-C PD"
+      ],
+      [
+        "Solar / DC input",
+        "11–50 V; XT60; MPPT up to 300 W"
+      ],
+      [
+        "Unit dimensions",
+        "Confirm for sample configuration"
+      ],
+      [
+        "Net weight",
+        "Confirm for sample configuration"
+      ]
+    ],
+    "note": "各接口额定值不代表可以无条件叠加。按同时使用的设备确认总负载；充电时间取决于输入方式与起始电量。",
+    "enNote": "Individual port ratings do not define an unrestricted combined output. Agree total demand for simultaneous devices. Charging time depends on input method and starting charge.",
+    "gallery": [
+      {
+        "title": "正面输出与提手",
+        "enTitle": "Front outputs and handle",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/h1-main.webp",
+        "thumb": "/images/portable-power-catalogue/h1-main-thumb.webp"
+      },
+      {
+        "title": "侧面充电接口",
+        "enTitle": "Side charging inputs",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/h1-side.webp",
+        "thumb": "/images/portable-power-catalogue/h1-side-thumb.webp"
+      },
+      {
+        "title": "户外使用场景",
+        "enTitle": "Outdoor application",
+        "kind": "场景",
+        "web": "/images/portable-power-catalogue/h1-scene.webp",
+        "thumb": "/images/portable-power-catalogue/h1-scene-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "code": "PP-S01",
+    "category": "capacity",
+    "title": "300W大容量手提备用电源",
+    "enTitle": "300W high-capacity carry-handle backup power station",
+    "label": "1004.8Wh低功率备用款",
+    "enLabel": "1004.8Wh lower-power backup model",
+    "specs": [
+      [
+        "AC额定输出",
+        "300 W"
+      ],
+      [
+        "储电容量",
+        "1004.8 Wh"
+      ],
+      [
+        "电池类型",
+        "磷酸铁锂（LiFePO₄）"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "220 V / 50 Hz"
+      ],
+      [
+        "USB输出",
+        "USB-A与USB-C；端口功率按配置确认"
+      ],
+      [
+        "市电／USB-C充电",
+        "支持市电充电；输入功率按配置确认"
+      ],
+      [
+        "太阳能／DC输入",
+        "支持太阳能输入；电压与功率按配置确认"
+      ],
+      [
+        "机身尺寸",
+        "按样品配置确认"
+      ],
+      [
+        "净重",
+        "按样品配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "300 W"
+      ],
+      [
+        "Stored energy",
+        "1004.8 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "220 V / 50 Hz"
+      ],
+      [
+        "USB outputs",
+        "USB-A and USB-C; confirm port ratings"
+      ],
+      [
+        "Mains / USB-C charging",
+        "Mains charging; confirm input rating"
+      ],
+      [
+        "Solar / DC input",
+        "Solar input; confirm voltage and power limits"
+      ],
+      [
+        "Unit dimensions",
+        "Confirm for sample configuration"
+      ],
+      [
+        "Net weight",
+        "Confirm for sample configuration"
+      ]
+    ],
+    "note": "容量与输出功率分开选：此配置储电量约1kWh，AC额定输出300W。太阳能板及连接线按订单配置。",
+    "enNote": "Choose capacity and output power separately: this configuration stores about 1kWh and supplies 300W rated AC output. Solar panels and connection cables are configured for the order.",
+    "gallery": [
+      {
+        "title": "手提机身与正面",
+        "enTitle": "Carry-handle body and front",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/s1-main.webp",
+        "thumb": "/images/portable-power-catalogue/s1-main-thumb.webp"
+      },
+      {
+        "title": "侧面插座与双风扇",
+        "enTitle": "Side socket and twin fans",
+        "kind": "产品细节",
+        "web": "/images/portable-power-catalogue/s1-side.webp",
+        "thumb": "/images/portable-power-catalogue/s1-side-thumb.webp"
+      }
+    ]
+  }
+]

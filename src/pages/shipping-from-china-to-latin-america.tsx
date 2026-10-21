@@ -1,3 +1,5 @@
+import '../features/freight/freight.css';
+import RoutePlanningDepth from '../features/freight/RoutePlanningDepth';
 import {translatedText} from '../features/site-localization/translate.mjs';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
@@ -1126,7 +1128,7 @@ export default function ShippingLatinAmerica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().seaDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{getTransitTimes().sea}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' && ['en','zh'].includes(activeLang) ? (activeLang==='zh'?'按具体班次报价':'Quote by departure') : getTransitTimes().sea}</span>
                 </div>
               </div>
 
@@ -1136,7 +1138,7 @@ export default function ShippingLatinAmerica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().airDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{getTransitTimes().air}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' && ['en','zh'].includes(activeLang) ? (activeLang==='zh'?'按具体班次报价':'Quote by departure') : getTransitTimes().air}</span>
                 </div>
               </div>
 
@@ -1159,6 +1161,7 @@ export default function ShippingLatinAmerica() {
       {/* Main Content Sections */}
       <main className="relative z-10">
 
+        {selectedCountry==='brazil' && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <LatinAmericaFreightDepth

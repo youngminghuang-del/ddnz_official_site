@@ -1,5 +1,10 @@
 import cairoMobileWholesaleSchema from '../src/data/cairo-mobile-wholesale-schema.json';
+import scooterCatalogueLocales from '../src/features/electric-mobility/locales.json';
+import powerCatalogueLocales from '../src/features/portable-power-catalogue/locales.json';
+import bicycleCatalogueLocales from '../src/features/electric-bicycles/locales.json';
+import storageCatalogueLocales from '../src/features/home-storage/locales.json';
 import homeStorageMarketSchema from '../src/data/home-storage-market-schema.json';
+import BrazilCountryContent, {brazilCountryMetadata} from '../src/features/freight/BrazilCountryContent';
 import UsedGoodsContent, {usedGoodsMetadata, type UsedGoodsCountry} from '../src/features/freight/UsedGoodsContent';
 import {MarketFreightContent, marketMetadata} from '../src/features/freight/MarketFreightContent';
 import gulfStories from '../src/features/freight/gulfStories.json';
@@ -730,6 +735,7 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
  if (['ghana','india','bangladesh','pakistan'].includes(countrySlug)) {const m=usedGoodsMetadata(countrySlug as UsedGoodsCountry,(lang==='zh-cn'?'zh':lang) as Parameters<typeof usedGoodsMetadata>[1]);return {title:m.title,desc:m.description,keywords:''};}
   if (countrySlug === 'nigeria' || countrySlug === 'peru') return marketMetadata(countrySlug,(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]);
   if ((countrySlug === 'qatar' || countrySlug === 'oman')) return { title: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].title, desc: gulfStories[countrySlug][lang === 'zh-cn' ? 'zh' : lang].desc, keywords: '' };
+  if (countrySlug === 'brazil' && ['en','zh-cn'].includes(lang)) {const m=brazilCountryMetadata(lang==='zh-cn'?'zh':'en');return {title:m.title,desc:m.description,keywords:''};}
   if (countrySlug === 'brazil' && lang === 'pt') return brazilPortugueseMeta;
   if (lang === 'pt' || lang === 'tr') return internationalCountryMeta(countrySlug,lang);
   if (countrySlug === 'uae' && ['en','zh-cn','es'].includes(lang)) return uaeMetadata(lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es');
@@ -777,7 +783,7 @@ seoDataMatrix.about = Object.fromEntries(aboutLanguages.map(locale => [locale ==
 const distDir = path.resolve(process.cwd(), 'dist');
 for (const [locale, copy] of Object.entries(positioning)) {
   const lang = locale === 'zh' ? 'zh-cn' : locale;
-  Object.assign(seoDataMatrix[''][lang], { title: copy.homeTitle, desc: copy.homeDescription });
+  Object.assign(seoDataMatrix[''][lang], { title: copy.homeTitle, desc: copy.homeDescription, keywords: copy.homeTitle+', OEM, ODM' });
   Object.assign(seoDataMatrix.insights[lang], { title: copy.insightsTitle, desc: copy.insightsDescription });
 }
 const sourceHtmlPath = path.join(distDir, 'index.html');
@@ -902,7 +908,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = (['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1808,11 +1814,11 @@ function injectStaticRouteContent(
   }
   if (['ghana','india','bangladesh','pakistan'].some(c=>relPath===`shipping-from-china-to-${c}`)) {
     staticBody=renderToStaticMarkup(createElement(UsedGoodsContent,{country:relPath.replace('shipping-from-china-to-','') as UsedGoodsCountry,locale:(lang==='zh-cn'?'zh':lang) as Parameters<typeof usedGoodsMetadata>[1]}));
-    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file=>/^(freight|UsedGoodsPage)-.*\.css$/.test(file))) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file=>/^(freight|gulf-stories|UsedGoodsPage)-.*\.css$/.test(file))) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
   if (['shipping-from-china-to-nigeria','shipping-from-china-to-peru'].includes(relPath)) {
     staticBody = renderToStaticMarkup(createElement(MarketFreightContent, {country: relPath.endsWith('-peru') ? 'peru' : 'nigeria',locale:(lang==='zh-cn'?'zh':lang) as Parameters<typeof marketMetadata>[1]}));
-    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file => /^(freight|MarketFreightPage)-.*\.css$/.test(file))) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
+    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file => /^(freight|gulf-stories|market-stories|MarketFreightPage)-.*\.css$/.test(file))) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
   if (['en', 'zh-cn', 'es'].includes(lang) && relPath === 'services/dangerous-goods-shipping-from-china') {
     const specialist = relPath.startsWith('services/');
@@ -1824,12 +1830,15 @@ function injectStaticRouteContent(
     const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
   }
-  if (relPath === 'shipping-from-china-to-brazil' && ['en', 'zh-cn', 'es'].includes(lang)) {
-    const planning = renderToStaticMarkup(createElement(ImportOrderPlanning, { market: 'brazil', locale: lang === 'zh-cn' ? 'zh' : lang as 'en' | 'es' }));
-    const meta = seoDataMatrix[relPath]?.[lang];
-    staticBody = staticBody
-      ? staticBody.replace('</main>', `${planning}</main>`)
-      : `<main><h1>${escapeStaticText(meta?.title || ({ en: 'Shipping from China to Brazil', 'zh-cn': '中国至巴西国际货运', es: 'Envíos de China a Brasil' }[lang]))}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
+  if (relPath === 'shipping-from-china-to-brazil' && ['en','zh-cn'].includes(lang)) {
+    staticBody = renderToStaticMarkup(createElement(BrazilCountryContent,{locale:lang==='zh-cn'?'zh':'en'}));
+    for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file=>/^(freight|gulf-stories|market-stories|MarketFreightPage|BrazilCountryPage)-.*\.css$/.test(file))) {
+      if (!htmlContent.includes(`/assets/${css}`)) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+    }
+  } else if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') {
+    const planning=renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
+    const meta=seoDataMatrix[relPath]?.[lang];
+    staticBody=staticBody?staticBody.replace('</main>',`${planning}</main>`):`<main><h1>${escapeStaticText(meta?.title || 'Envíos de China a Brasil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
   }
   const articleDiscovery = lang === 'en' && relPath.startsWith('blog/') ? kitchenArticleDiscovery[relPath.slice(5)] || mobileArticleDiscovery[relPath.slice(5)] : undefined;
   if (articleDiscovery) {
@@ -1876,6 +1885,10 @@ function run() {
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
 
   const basePaths = [
+    {path:'sourcing/portable-power-stations-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
+    {path:'sourcing/electric-bicycles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
+    {path:'sourcing/home-energy-storage-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
+    {path:'sourcing/electric-scooters-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     { path: 'about', priority: '0.7', changefreq: 'monthly', languages: ['en','zh-cn','es','fr','pt','ru','tr','ar'] },
     {path:'screen-protectors/calculator',priority:'0.8',changefreq:'monthly',languages:overviewLanguages.filter(l=>l!=='en')},
     ...['screen-protectors/guides','screen-protectors/guides/price-differences','screen-protectors/guides/curved-glass','screen-protectors/videos'].map(path=>({path,priority:'0.8',changefreq:'monthly',languages:overviewLanguages.filter(l=>l!=='en')})),
@@ -1971,6 +1984,14 @@ function run() {
       if (lang !== 'en' && '/'+entry.path===audioPath) { const meta=audioMeta((lang==='zh-cn'?'zh':lang) as AudioLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && '/'+entry.path===refrigerationPath) { const meta=refrigerationMeta((lang==='zh-cn'?'zh':lang) as RefrigerationLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }
       if (lang !== 'en' && ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos')) { const meta=filmGuideMeta((lang==='zh-cn'?'zh':lang) as FilmGuideLocale,filmGuideKind(entry.path)); seo={title:meta.title,desc:meta.description,keywords:''}; }
+      if(entry.path==='sourcing/portable-power-stations-from-china') seo={title:lang==='zh-cn'?'中国便携电源批发与OEM定制 | DDNZ Global':'Wholesale Portable Power Stations from China | DDNZ Global',desc:lang==='zh-cn'?'比较300W、500W和1200W便携电源的储电容量、输出波形、接口及充电配置，询问中国批发与OEM出口订单。':'Compare 300W, 500W and 1200W portable power stations from China. Explore capacity, waveform, ports and charging for wholesale and OEM orders.',keywords:'',image:'/images/portable-power-catalogue/h1-main.webp'};
+      if(entry.path==='sourcing/portable-power-stations-from-china' && Object.hasOwn(powerCatalogueLocales,lang)){const copy=powerCatalogueLocales[lang as keyof typeof powerCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/portable-power-catalogue/h1-main.webp'};}
+      if(entry.path==='sourcing/electric-bicycles-from-china') seo={title:lang==='zh-cn'?'中国电动单车批发与OEM定制 | DDNZ Global':'Wholesale Electric Bicycles from China | DDNZ Global',desc:lang==='zh-cn'?'比较折叠、胖胎和26英寸电助力单车，按电池、制动与车架配置询问中国批发与OEM出口订单。':'Compare folding, fat-tyre and trekking electric bicycles from China. Request model-specific wholesale and OEM configurations.',keywords:'',image:'/images/electric-bicycles/b1-hero.webp'};
+      if(entry.path==='sourcing/electric-bicycles-from-china' && Object.hasOwn(bicycleCatalogueLocales,lang)){const copy=bicycleCatalogueLocales[lang as keyof typeof bicycleCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/electric-bicycles/b1-hero.webp'};}
+      if(entry.path==='sourcing/home-energy-storage-from-china') seo={title:lang==='zh-cn'?'中国家庭储能电池批发与OEM定制 | DDNZ Global':'Wholesale Home Energy Storage Batteries from China | DDNZ Global',desc:lang==='zh-cn'?'比较壁挂、机柜与高压堆叠式磷酸铁锂储能电池，按电压、容量与逆变器匹配询问批发和OEM配置。':'Compare wall-mounted, rack and high-voltage LiFePO4 home storage batteries from China. Request wholesale and OEM configurations.',keywords:'',image:'/images/home-storage/hv-modules.webp'};
+      if(entry.path==='sourcing/home-energy-storage-from-china' && Object.hasOwn(storageCatalogueLocales,lang)){const copy=storageCatalogueLocales[lang as keyof typeof storageCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/home-storage/hv-modules.webp'};}
+      if(entry.path==='sourcing/electric-scooters-from-china') seo={title:lang==='zh-cn'?'中国电动滑板车批发与OEM定制 | DDNZ Global':'Wholesale Electric Scooters from China | DDNZ Global',desc:lang==='zh-cn'?'比较成人与儿童电动滑板车、折叠结构、电池配置及出口包装，咨询批发与OEM定制。':'Compare adult and children’s electric scooters, battery options and export packaging. Request wholesale and OEM configurations from China.',keywords:'',image:'/images/electric-mobility/p1-hero.webp'};
+      if(entry.path==='sourcing/electric-scooters-from-china' && Object.hasOwn(scooterCatalogueLocales,lang)){const copy=scooterCatalogueLocales[lang as keyof typeof scooterCatalogueLocales];seo={title:copy.title,desc:copy.summary,keywords:'',image:'/images/electric-mobility/p1-hero.webp'};}
       if (foodProcessingRoutes.includes('/'+entry.path)) { const locale = (lang === 'zh-cn' ? 'zh' : lang) as FoodLocale; const meta = lang === 'en' ? foodPageMeta(foodPage('/'+entry.path)) : localizedFoodMeta(localizedFoodPage('/'+entry.path,locale),locale); seo = {title:meta.title,desc:meta.description,keywords:'',image:meta.image}; }
       if (['sourcing/outdoor-products-from-china','portable-power/selection-guide','sourcing/portable-compressor-fridges-from-china','sourcing/portable-air-conditioners-from-china'].includes(entry.path)) {const meta=entry.path==='sourcing/portable-air-conditioners-from-china'?acMetadata(lang):entry.path==='sourcing/portable-compressor-fridges-from-china'?fridgeMetadata(lang):entry.path==='portable-power/selection-guide'?powerGuideMetadata(lang):outdoorMetadata(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (entry.path === 'sourcing/commercial-kitchen-equipment-from-china' && lang !== 'en') {
@@ -2125,7 +2146,7 @@ function run() {
       const routePost = postSlugOrId ? findArticleByRoute(blogPosts, lang, postSlugOrId) : undefined;
       const articleHreflang = routePost ? getArticleHreflangSet(routePost, blogPosts) : undefined;
       const loc = routePost ? articleAbsoluteUrl(routePost) : localizedSiteUrl(lang, entry.path);
-      const alternateLanguages = (['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
+      const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
       const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
         hrefLang: code === 'pt' && entry.path === 'shipping-from-china-to-brazil' ? 'pt-BR' : normalizeArticleLocale(code),
         href: localizedSiteUrl(code, entry.path),

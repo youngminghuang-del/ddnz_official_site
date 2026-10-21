@@ -1,8 +1,12 @@
+import PortablePowerEntry from '../../features/portable-power-catalogue/PortablePowerEntry';
 import { StartupBuyingLinks } from '../../features/search-intent/StartupBuyingContent';
 import { entryKeywords } from '../../features/search-intent/entry-keywords.mjs';
 import BuyerDecisionContent from '../../features/search-intent/BuyerDecisionContent';
 import { FoodPackageLinks } from "../../features/food-processing/FoodProcessingContent.jsx";
 import "../../features/food-processing/food-processing.css";
+import ElectricBicyclesEntry from '../../features/electric-bicycles/ElectricBicyclesEntry';
+import HomeStorageEntry from '../../features/home-storage/HomeStorageEntry';
+import ScooterCatalogueEntry from '../../features/electric-mobility/ScooterCatalogueEntry';
 import ProductDiscoveryLinks from '../../components/ProductDiscoveryLinks';
 import React, { useEffect, useMemo, useState } from "react";
 import {
@@ -250,7 +254,7 @@ function Brand() {
       <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
       <span>
         <strong>DDNZ GLOBAL</strong>
-        <small>CHINA SOURCING &amp; EXPORT</small>
+        <small>MANUFACTURING &amp; EXPORT</small>
       </span>
     </a>
   );
@@ -448,6 +452,10 @@ export function ProductsIndex() {
           <HeroCategoryMap />
         </section>
 
+        <PortablePowerEntry/>
+        <ElectricBicyclesEntry/>
+        <HomeStorageEntry/>
+        <ScooterCatalogueEntry/>
         <ProductDiscoveryLinks source="products" />
 
         <section className="px-workflow-strip" aria-label="Products index workflow">

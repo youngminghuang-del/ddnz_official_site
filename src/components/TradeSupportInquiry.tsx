@@ -1,3 +1,5 @@
+import {roleExtras,productSelectorCopy} from '../features/product-positioning/ProductSupply';
+import {getLocalizedHomeFaqs} from '../data/homeFaqData';
 import { quoteParamsForLocation, clearQuoteContext } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState, type FormEvent } from 'react';
 import { useForm, ValidationError } from '@formspree/react';
@@ -310,6 +312,11 @@ export default function TradeSupportInquiry() {
   const location = useLocation();
   const [formState, formspreeSubmit] = useForm('mdabvqbd');
   const copy = { ...EN_COPY, ...LOCALIZED_COPY[language] };
+  copy.badgeSourcing=roleExtras[language]?.quoteStep[0]||(language==='zh'?'产品批发与OEM报价':'Wholesale & OEM product quotation');
+  copy.headlineSourcing=productSelectorCopy[language].title;
+  copy.introSourcing=getLocalizedHomeFaqs(language)[0].answer;
+  copy.scopeTitleSourcing=productSelectorCopy[language].sourcingDesc;
+  copy.scopeDescSourcing=roleExtras[language]?.quoteStep[1]||(language==='zh'?'提供产品型号、数量、配置与供货要求。':'Share models, quantities, configurations and supply requirements.');
   const examples = PRODUCT_EXAMPLES[language];
   if (examples) { copy.productPlaceholderSourcing = examples[0]; copy.productPlaceholderExisting = examples[1]; }
   const [isLocalPreview, setIsLocalPreview] = useState(typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__);

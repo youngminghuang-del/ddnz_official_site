@@ -124,8 +124,8 @@ const sectionCopy = {
     tr: 'Ürün, uyumluluk veya toplam maliyet planına mı ihtiyacınız var?',
   },
   ctaDesc: {
-    en: 'Share the product, target market and order stage. Our Guangzhou team will define the supplier, QC, consolidation and export questions that must be resolved before you commit.',
-    zh: '告诉我们产品、目标市场和订单阶段。广州团队会在您投入采购前，明确供应商、质检、集货和出口环节必须解决的问题。',
+    en: 'Send your product specifications, quantity and target market. Our Guangzhou manufacturing and export team will prepare the configuration, OEM/ODM options and quotation.',
+    zh: '提供产品规格、数量及目标市场，广州制造与出口团队将为您准备配置、OEM/ODM方案与报价。',
     ru: 'Укажите товар, рынок и стадию заказа. Команда в Гуанчжоу определит вопросы поставщика, QC, консолидации и экспорта до принятия обязательств.',
     fr: 'Indiquez le produit, le marché et l’étape de commande. Notre équipe de Guangzhou définira les points fournisseur, QC, consolidation et export à résoudre avant engagement.',
     es: 'Comparta producto, mercado y etapa del pedido. Nuestro equipo de Guangzhou definirá los puntos de proveedor, QC, consolidación y exportación antes de que se comprometa.',
@@ -134,8 +134,8 @@ const sectionCopy = {
     tr: 'Ürünü, hedef pazarı ve sipariş aşamasını paylaşın. Guangzhou ekibimiz taahhütten önce çözülmesi gereken tedarikçi, QC, konsolidasyon ve ihracat konularını belirler.',
   },
   ctaButton: {
-    en: 'Start a sourcing brief',
-    zh: '开始采购需求简报',
+    en: 'Get a wholesale quote',
+    zh: '获取批发报价',
     ru: 'Начать бриф по закупке',
     fr: 'Démarrer un brief sourcing',
     es: 'Iniciar solicitud de compra',

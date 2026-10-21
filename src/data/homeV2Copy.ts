@@ -1,3 +1,4 @@
+import roleLocales from '../features/product-positioning/locales.json';
 import type { Language } from '../i18n/translations';
 
 export type HomeV2Copy = {
@@ -645,3 +646,23 @@ export const HOME_V2_COPY: Record<Language, HomeV2Copy> = {
     final: { eyebrow: 'Çin’de tek sorumlu ekip', title: 'Tedarik talebinizi bugün başlatın.', body: 'Ürünü, varış pazarını ve sipariş aşamasını paylaşın. Yanıt vermeden önce doğru tedarikçi, kontrol ve ihracat yolunu belirleriz.', sourcingCta: 'Tedarik talebi oluştur', whatsappCta: 'Çin ekibiyle WhatsApp üzerinden görüş', freightCta: 'Nakliye teklifi al', privacy: 'Bilgileriniz güvendedir ve paylaşılmaz.', whatsappMessage: 'Merhaba DDNZ Global, pazarım için bir ürün tedarik talebini görüşmek istiyorum.' },
   },
 };
+
+// Keep the supporting process and final CTA aligned with the product-led home preview.
+for(const locale of ['en','zh'] as const){
+ const c=HOME_V2_COPY[locale],zh=locale==='zh';
+ Object.assign(c.accountability,{eyebrow:zh?'从产品要求开始':'START WITH THE PRODUCT',title:zh?'按您的市场需求，开发与生产产品。':'Develop and manufacture products for your market.',body:zh?'从功能配置、样品和品牌包装，到批量生产与出运前检查，为进口商和经销商交付可销售的产品。':'From functional specifications, samples and branded packaging to batch production and pre-shipment checks, we deliver products for importers and distributors.'});
+ c.accountability.controls=zh?['明确产品功能、配置和目的市场要求','提供型号、MOQ、单价和生产交期','开发样品、品牌与OEM/ODM包装','按约定标准检查生产质量和成品','完成装箱、出口文件与国际交付']:['Define product functions, configuration and market requirements','Quote models, MOQ, unit prices and production lead time','Develop samples, branding and OEM/ODM packaging','Check production quality and finished goods against the specification','Prepare packing, export documents and international delivery'];
+ Object.assign(c.process,{title:zh?'从工厂报价，到生产与出口':'From factory quotation to production and export',body:zh?'依次确认配置、样品、质量与出运要求，让订单各环节顺畅衔接。':'Agree the configuration, sample, quality checks and shipping requirements in sequence.'});
+ c.process.steps[0]={title:zh?'工厂报价':'Factory quotation',output:zh?'确认型号、数量、配置与供货条件。':'Models, quantities, configurations and supply terms.',gate:zh?'确认报价与订单范围。':'Agree the quotation and order scope.'};
+ Object.assign(c.freight,{body:zh?'长期物流合作伙伴 · 团队货运从业经历始于1997年。':'Long-term logistics partner · Team freight experience dating back to 1997.'});
+ Object.assign(c.final,{whatsappMessage:zh?'您好DDNZ Global，我想获取产品批发或OEM/ODM报价。':'Hi DDNZ Global, I would like a wholesale or OEM/ODM product quotation.',eyebrow:zh?'准备您的下一批产品订单':'PLAN YOUR NEXT PRODUCT ORDER',title:zh?'您要进口什么产品？':'What would you like to import?',body:zh?'提供产品、型号、数量和目标市场，开始准备批发或OEM供货报价。':'Share the product, model, quantity and target market to start a wholesale or OEM quotation.',sourcingCta:zh?'获取批发报价':'Get a wholesale quote',whatsappCta:zh?'联系产品团队':'WhatsApp our product team'});
+}
+
+for(const [key,c] of Object.entries(roleLocales)){
+ const locale=key as keyof typeof roleLocales,copy=HOME_V2_COPY[locale];
+ Object.assign(copy.accountability,{eyebrow:c.supply.eyebrow,title:c.scopeHeading,body:c.scopeBody,controls:c.controls});
+ Object.assign(copy.process,{title:c.processTitle,body:c.processBody});
+ copy.process.steps[0]={title:c.quoteStep[0],output:c.quoteStep[1],gate:c.quoteStep[2]};
+ copy.freight.body=c.supply.freightBody;
+ Object.assign(copy.final,{eyebrow:c.supply.eyebrow,title:c.form.title,body:c.form.body,sourcingCta:c.supply.primary,whatsappCta:c.supply.whatsapp,whatsappMessage:c.supply.whatsappMessage});
+}

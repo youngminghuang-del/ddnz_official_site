@@ -1,3 +1,4 @@
+import roleLocales from '../features/product-positioning/locales.json';
 export type HomeFaqLanguage = 'zh' | 'en' | 'ru' | 'fr' | 'es' | 'ar' | 'pt' | 'tr';
 
 type BaseHomeFaqLanguage = Exclude<HomeFaqLanguage, 'pt' | 'tr'>;
@@ -446,3 +447,12 @@ export function getLocalizedHomeFaqs(language: HomeFaqLanguage) {
     answer: getLocalizedHomeFaqText(item, 'answer', language),
   }));
 }
+
+// Home/About product-positioning preview: retain the existing FAQ destinations and enums.
+const productQuoteFaq=HOME_FAQ_ITEMS.find(item=>item.id===1)!;
+productQuoteFaq.question.en='How do I request a wholesale product quote from DDNZ?';
+productQuoteFaq.question.zh='如何向DDNZ获取产品批发报价？';
+productQuoteFaq.answer.en='Send the product or model, order quantity and destination market. Include voltage, packaging or OEM requirements where relevant. We confirm the configuration, MOQ, unit price and order lead time in the quotation.';
+productQuoteFaq.answer.zh='提供产品或型号、订单数量及目标市场，并补充电压、包装或OEM要求。我们会在报价中明确配置、MOQ、单价和订单交期。';
+
+for(const [key,c] of Object.entries(roleLocales)){const locale=key as keyof typeof roleLocales;productQuoteFaq.question[locale]=c.faq[0];productQuoteFaq.answer[locale]=c.faq[1];}
