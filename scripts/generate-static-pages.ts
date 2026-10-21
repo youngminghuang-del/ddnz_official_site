@@ -1,3 +1,4 @@
+import cairoMobileWholesaleSchema from '../src/data/cairo-mobile-wholesale-schema.json';
 import homeStorageMarketSchema from '../src/data/home-storage-market-schema.json';
 import UsedGoodsContent, {usedGoodsMetadata, type UsedGoodsCountry} from '../src/features/freight/UsedGoodsContent';
 import {MarketFreightContent, marketMetadata} from '../src/features/freight/MarketFreightContent';
@@ -1269,7 +1270,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
