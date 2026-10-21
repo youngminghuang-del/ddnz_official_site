@@ -1,3 +1,4 @@
+import cairoMobileWholesaleSchema from '../data/cairo-mobile-wholesale-schema.json';
 import homeStorageMarketSchema from '../data/home-storage-market-schema.json';
 import { useEffect } from 'react';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -193,6 +194,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '')) {
       finalSchema = { ...finalSchema, ...homeStorageMarketSchema };
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '')) {
+      finalSchema = { ...finalSchema, ...cairoMobileWholesaleSchema };
     }
 
     // Create script tag and append to head
