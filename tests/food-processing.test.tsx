@@ -24,6 +24,7 @@ test('quotation preserves model configuration, quantities, packing and destinati
   assert.equal(url.searchParams.get('source'),'food_processing');
   assert.equal(url.searchParams.get('dest'),'Almaty, Kazakhstan');
   const notes=url.searchParams.get('notes')!;
+  assert.equal(url.searchParams.get('overviewBrief'),notes);
   assert.match(notes,/Copper-core motor · 15 kg model/);assert.match(notes,/With bowl guard/);
   assert.match(notes,/CNY 7,635/);assert.match(notes,/Listed packing: CNY 80/);assert.match(notes,/220 V; 50 Hz/);
 });

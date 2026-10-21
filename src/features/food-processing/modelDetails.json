@@ -1,0 +1,302 @@
+{
+  "hw-j15-copper": {
+    "page": 10,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "bowl",
+        "43 L"
+      ],
+      [
+        "flour",
+        "15 kg"
+      ]
+    ]
+  },
+  "yh-gt300": {
+    "page": 9,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "rollerLength",
+        "300 mm"
+      ],
+      [
+        "rollerDiameter",
+        "75 mm"
+      ],
+      [
+        "rollerSpeed",
+        "40 r/min"
+      ],
+      [
+        "ratedOutput",
+        "34–40 kg/h"
+      ]
+    ]
+  },
+  "h20": {
+    "page": 6,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "bowl",
+        "20 L"
+      ],
+      [
+        "flour",
+        "8 kg"
+      ],
+      [
+        "mixSpeed",
+        "130 / 200 r/min"
+      ],
+      [
+        "bowlSpeed",
+        "13 / 20 r/min"
+      ],
+      [
+        "catalogueSize",
+        "750 × 400 × 860 mm"
+      ]
+    ]
+  },
+  "b20-guard": {
+    "page": 5,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "bowl",
+        "20 L"
+      ],
+      [
+        "flour",
+        "5 kg"
+      ],
+      [
+        "mixSpeed",
+        "105 / 162 / 395 r/min"
+      ],
+      [
+        "catalogueWeight",
+        "61 kg"
+      ]
+    ]
+  },
+  "q31b": {
+    "page": 11,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "slices",
+        "31"
+      ],
+      [
+        "sliceThickness",
+        "12 mm"
+      ]
+    ]
+  },
+  "dq-t": {
+    "page": 14,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "ratedOutput",
+        "120 kg/h"
+      ],
+      [
+        "bladeDiameter",
+        "80 mm"
+      ],
+      [
+        "bladeThickness",
+        "0.9 mm"
+      ],
+      [
+        "catalogueWeight",
+        "18 kg"
+      ]
+    ]
+  },
+  "jr-gg22": {
+    "page": 12,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "ratedOutput",
+        "220 kg/h"
+      ]
+    ]
+  },
+  "dj-h18": {
+    "page": 22,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "bowl",
+        "11 L"
+      ],
+      [
+        "batch",
+        "1–1.5 kg"
+      ],
+      [
+        "innerDiameter",
+        "180 mm"
+      ]
+    ]
+  },
+  "cx-l": {
+    "page": 22,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ]
+    ]
+  },
+  "tp-350": {
+    "page": 25,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "batch",
+        "8 kg"
+      ],
+      [
+        "ratedOutput",
+        "240 kg/h"
+      ],
+      [
+        "catalogueSize",
+        "680 × 410 × 830 mm"
+      ]
+    ]
+  },
+  "dq-ps300-copper": {
+    "page": 27,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "sliceOutput",
+        "300 kg/h"
+      ],
+      [
+        "shredOutput",
+        "300 kg/h"
+      ],
+      [
+        "discDiameter",
+        "280 mm"
+      ]
+    ]
+  },
+  "sc-r22": {
+    "page": 27,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "ratedOutput",
+        "30–50 kg/h"
+      ]
+    ]
+  },
+  "mj-d100": {
+    "page": 23,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "wheelDiameter",
+        "96 mm"
+      ],
+      [
+        "ratedOutput",
+        "40 kg/h"
+      ],
+      [
+        "catalogueWeight",
+        "19 kg"
+      ],
+      [
+        "catalogueSize",
+        "250 × 460 × 610 mm"
+      ]
+    ]
+  },
+  "mj-h12": {
+    "page": 24,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "wheelDiameter",
+        "120 mm"
+      ],
+      [
+        "ratedOutput",
+        "20–25 kg/h"
+      ],
+      [
+        "catalogueWeight",
+        "31 kg"
+      ]
+    ]
+  },
+  "gz-tc": {
+    "page": 31,
+    "rows": [
+      [
+        "electrical",
+        "220 V / 50 Hz"
+      ],
+      [
+        "ratedOutput",
+        "300 kg/h"
+      ]
+    ]
+  },
+  "tm-hl": {
+    "page": 30,
+    "rows": [],
+    "unmatched": true
+  }
+}
