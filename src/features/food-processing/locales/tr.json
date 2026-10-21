@@ -26,7 +26,7 @@
     "review": "Göndermeden önce formdaki bilgileri gözden geçirin.",
     "exclude": "Onaylanmamış seçenekler, ihracat ambalajı iyileştirmeleri, navlun, vergiler ve hizmetler hariçtir.",
     "confirm": "Sevkiyat öncesi voltajı, frekansı, korumaları, paket ölçülerini ve brüt ağırlığı doğrulayın.",
-    "imageNote": "Görseller model ailelerini gösterir; sipariş yapılandırmasını doğrulayın.",
+    "imageNote": "Model ailesi görselleridir; sipariş yapılandırmasını doğrulayın.",
     "sourcePages": "Kaynak sayfaları",
     "priceList": "Fiyat listesi",
     "catalogue": "Katalog",
