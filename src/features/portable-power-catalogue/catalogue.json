@@ -581,5 +581,247 @@
         "thumb": "/images/portable-power-catalogue/s1-side-thumb.webp"
       }
     ]
+  },
+  {
+    "id": 6,
+    "code": "PP-H02",
+    "category": "fast",
+    "title": "BP120B 1200W便携电源 · 1120Wh · 欧规230V",
+    "enTitle": "BP120B 1200W portable power station · 1120Wh · 230V / 50Hz",
+    "label": "欧规配置 · 多接口",
+    "enLabel": "European configuration · multiple outputs",
+    "specs": [
+      [
+        "AC额定输出",
+        "1200 W"
+      ],
+      [
+        "储电容量",
+        "1120 Wh"
+      ],
+      [
+        "电池类型",
+        "LiFePO₄"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "230 V / 50 Hz（欧规配置）"
+      ],
+      [
+        "USB输出",
+        "USB-C: 100 W + 30 W + 30 W; USB-A: 22.5 W and 2 × 5 V/2.4 A"
+      ],
+      [
+        "AC充电输入",
+        "≤ 800 W"
+      ],
+      [
+        "太阳能／DC输入",
+        "11–50 V; ≤ 300 W; ≤ 8.5 A"
+      ],
+      [
+        "机身尺寸",
+        "按样品配置确认"
+      ],
+      [
+        "重量",
+        "按样品配置确认"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "1200 W"
+      ],
+      [
+        "Stored energy",
+        "1120 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "230 V / 50 Hz (European configuration)"
+      ],
+      [
+        "USB outputs",
+        "USB-C: 100 W + 30 W + 30 W; USB-A: 22.5 W and 2 × 5 V/2.4 A"
+      ],
+      [
+        "AC input",
+        "≤ 800 W"
+      ],
+      [
+        "Solar / DC input",
+        "11–50 V; ≤ 300 W; ≤ 8.5 A"
+      ],
+      [
+        "Unit dimensions",
+        "Confirm for sample configuration"
+      ],
+      [
+        "Listed weight",
+        "Confirm for sample configuration"
+      ]
+    ],
+    "note": "所列230V/50Hz为欧规配置。图片用于查看机身与接口布局，实际插座以订单配置为准。确认尺寸、重量与光伏接线；太阳能板、线缆和充电配件按报价列明。",
+    "enNote": "The listed 230V / 50Hz supply is the European configuration. Images illustrate body and port layout; the order specifies the outlets. Confirm dimensions, weight and PV connection. Panels, cables and charging accessories are itemised in the quotation.",
+    "gallery": [
+      {
+        "title": "正面接口布局示意",
+        "enTitle": "Front output layout illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp120b-1.webp",
+        "thumb": "/images/portable-power-catalogue/bp120b-1-thumb.webp"
+      },
+      {
+        "title": "侧面充电与散热示意",
+        "enTitle": "Side charging and ventilation illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp120b-2.webp",
+        "thumb": "/images/portable-power-catalogue/bp120b-2-thumb.webp"
+      },
+      {
+        "title": "后部灯面示意",
+        "enTitle": "Rear lighting panel illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp120b-3.webp",
+        "thumb": "/images/portable-power-catalogue/bp120b-3-thumb.webp"
+      },
+      {
+        "title": "桌面应用示意",
+        "enTitle": "Desktop application illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp120b-4.webp",
+        "thumb": "/images/portable-power-catalogue/bp120b-4-thumb.webp"
+      }
+    ]
+  },
+  {
+    "id": 7,
+    "code": "PP-W01",
+    "category": "capacity",
+    "title": "BP360H 3600W带轮电源 · 5120Wh",
+    "enTitle": "BP360H 3600W wheeled power station · 5120Wh",
+    "label": "带轮大容量款",
+    "enLabel": "Wheeled high-capacity model",
+    "specs": [
+      [
+        "AC额定输出",
+        "3600 W"
+      ],
+      [
+        "储电容量",
+        "5120 Wh"
+      ],
+      [
+        "电池类型",
+        "LiFePO₄"
+      ],
+      [
+        "AC输出波形",
+        "纯正弦波"
+      ],
+      [
+        "AC电压与频率",
+        "按目的市场确认电压、频率和插座"
+      ],
+      [
+        "AC充电输入",
+        "≤ 860 W"
+      ],
+      [
+        "太阳能／DC输入",
+        "12–60 V; ≤ 600 W; ≤ 10 A"
+      ],
+      [
+        "机身尺寸",
+        "595.5 × 550 × 498.2 mm"
+      ],
+      [
+        "重量",
+        "约85 kg"
+      ]
+    ],
+    "enSpecs": [
+      [
+        "Rated AC output",
+        "3600 W"
+      ],
+      [
+        "Stored energy",
+        "5120 Wh"
+      ],
+      [
+        "Battery chemistry",
+        "LiFePO₄"
+      ],
+      [
+        "AC waveform",
+        "Pure sine wave"
+      ],
+      [
+        "AC voltage & frequency",
+        "Confirm voltage, frequency and outlet configuration"
+      ],
+      [
+        "AC input",
+        "≤ 860 W"
+      ],
+      [
+        "Solar / DC input",
+        "12–60 V; ≤ 600 W; ≤ 10 A"
+      ],
+      [
+        "Unit dimensions",
+        "595.5 × 550 × 498.2 mm"
+      ],
+      [
+        "Listed weight",
+        "Approx. 85 kg"
+      ]
+    ],
+    "note": "3600W是额定输出功率，峰值不作为持续带载能力。约85kg，先核对场地搬运与运输包装。按目的市场确认电压、频率、插座及工具启动负载；未确认防护等级前不安排雨中使用。场景图为应用示意，太阳能板另列配置。",
+    "enNote": "3600W is rated output; peak power is not continuous-load capability. At approximately 85kg, check site handling and transport packing. Confirm voltage, frequency, outlets and tool startup demand for the market. Do not plan use in rain before the protection rating is confirmed. Application images are illustrative; solar panels are specified separately.",
+    "gallery": [
+      {
+        "title": "带轮机身示意",
+        "enTitle": "Wheeled body illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp360h-1.webp",
+        "thumb": "/images/portable-power-catalogue/bp360h-1-thumb.webp"
+      },
+      {
+        "title": "正面输出面板示意",
+        "enTitle": "Front output panel illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp360h-2.webp",
+        "thumb": "/images/portable-power-catalogue/bp360h-2-thumb.webp"
+      },
+      {
+        "title": "侧面输入与散热示意",
+        "enTitle": "Side inputs and ventilation illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp360h-3.webp",
+        "thumb": "/images/portable-power-catalogue/bp360h-3-thumb.webp"
+      },
+      {
+        "title": "露营应用示意",
+        "enTitle": "Camping application illustration",
+        "kind": "外形示意",
+        "web": "/images/portable-power-catalogue/bp360h-4.webp",
+        "thumb": "/images/portable-power-catalogue/bp360h-4-thumb.webp"
+      }
+    ]
   }
 ]
