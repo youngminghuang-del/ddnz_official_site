@@ -1,5 +1,5 @@
 /* Shared product composition; editorial and freight heroes retain their own layouts. */
-.catalogue-hero {position:relative;isolation:isolate;column-gap:clamp(28px,4vw,68px);align-items:center}
+.catalogue-hero {display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);position:relative;isolation:isolate;column-gap:clamp(28px,4vw,68px);align-items:center}
 .catalogue-hero>div{min-width:0}
 .catalogue-hero h1{text-wrap:balance;letter-spacing:-.035em}
 .catalogue-hero-media{min-width:0;position:relative;border:1px solid #e3dce8;background:#fff;border-radius:16px;overflow:hidden;color:#10243f}
@@ -23,5 +23,11 @@
 @media(max-width:480px){.catalogue-hero-media{border-radius:10px}.catalogue-hero-stage{padding:16px 12px 8px}.catalogue-hero .catalogue-hero-stage>img{height:240px}.catalogue-hero-rail{padding:12px}.catalogue-hero-tiles{gap:7px}.catalogue-hero .catalogue-hero-tiles img{height:65px}.catalogue-hero-tiles a>span{padding:6px;font-size:10px}.catalogue-hero .catalogue-hero-rail-title{font-size:11px}}
 @media(prefers-reduced-motion:reduce){.catalogue-hero-tiles>a{transition:none}}
 /* The kitchen's previous full-bleed scene used block layout and a positioned visual. */
-.ddnz-kitchen .hero.catalogue-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;min-height:0;padding-block:48px}
-@media(max-width:1000px){.ddnz-kitchen .hero.catalogue-hero{grid-template-columns:1fr;gap:26px;padding-block:32px}}
+.ddnz-kitchen.kitchen-brand .hero.wrap.catalogue-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;min-height:0;padding-block:48px}
+@media(max-width:1000px){.ddnz-kitchen.kitchen-brand .hero.wrap.catalogue-hero{grid-template-columns:1fr;gap:26px;padding-block:32px}}
+
+.catalogue-hero-model{position:absolute;inset-inline-end:18px;bottom:14px;padding:5px 9px;background:#ffffffde;border:1px solid #e3dce8;border-radius:4px;font-size:11px;font-weight:700;color:#52647c}
+/* Keep a selected model clear of the sticky global header after an in-page jump. */
+.mobility-page .mobility-card[id],.fp-page .fp-machine[id]{scroll-margin-block-start:120px}
+.ddnz-kitchen.kitchen-brand .hero.wrap.catalogue-hero>.hero-copy{width:100%;max-width:none}
+.catalogue-hero>.catalogue-hero-media{z-index:1}
