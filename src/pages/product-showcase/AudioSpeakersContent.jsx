@@ -1,3 +1,4 @@
+import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import {AudioCategoryLinks} from '../../features/audio/AudioCategoryContent';
 import AudioAssortments from '../../features/audio/AudioAssortments';
 import StartupBuyingContent from '../../features/search-intent/StartupBuyingContent';
@@ -244,7 +245,7 @@ export function AudioSpeakersContent() {
 
       <main id="audio-main">
         <AudioCategoryLinks />
-        <section className="as-hero" aria-labelledby="audio-title">
+        <section className="as-hero catalogue-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
             <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
             <h1 id="audio-title">Source speakers from China. Build a range buyers can compare.</h1>
@@ -260,7 +261,7 @@ export function AudioSpeakersContent() {
               <span><PackageCheck size={20} /><b>Accountable</b><small>pack-out</small></span>
             </div>
           </div>
-          <HeroWall />
+          <CatalogueHeroMedia src={FAMILIES[0].image} alt={FAMILIES[0].alt} items={FAMILIES.map(item=>({src:item.image,label:item.title,href:"#audio-range"}))}/>
         </section>
 
         <section className="as-control-strip" aria-label="Audio buying variables">

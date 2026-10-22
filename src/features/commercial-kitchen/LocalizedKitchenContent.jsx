@@ -1,3 +1,4 @@
+import CatalogueHeroMedia, { kitchenHeroLabels } from '../../components/catalogue-hero/CatalogueHeroMedia';
 import GulfKitchenPlanning, { GulfKitchenEntry } from './components/GulfKitchenPlanning.jsx';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
 import {
@@ -131,10 +132,10 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
     </nav>
     <main id="commercial-kitchen-top">
       <nav className="kitchen-breadcrumb wrap" aria-label={u.breadcrumb}><ol><li><a href={`/${locale === 'zh' ? 'zh-cn' : locale}/`}>{u.home}</a></li><li aria-current="page">{u.pageLabel}</li></ol></nav>
-      <section className="hero wrap">
+      <section className="hero wrap catalogue-hero">
         <div className="hero-copy"><p className="eyebrow">{u.audience}</p><h1>{u.heading}<br/><em>{u.emphasis}</em></h1><p className="hero-description"><IsolatedText>{u.intro}</IsolatedText></p><div className="actions"><a className="button primary" href="#commercial-kitchen-equipment">{u.explore}<Arrow locale={locale}/></a><a className="text-link" href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div><div className="markets">{Object.values(t.countries).map(country => <span key={country}>{country}</span>)}</div><GulfKitchenEntry locale={locale}/></div>
-        <div className="hero-visual"><img src="/commercial-kitchen-media/kitchen-hero.webp" alt={u.heroAlt} fetchPriority="high" width="1200" height="900"/><div className="image-caption">{u.heroCaption}</div><div className="hero-label"><strong>{u.heroLabel}</strong><a href="#commercial-kitchen-list">{u.startList}<Arrow locale={locale}/></a></div></div>
-      </section>
+        <CatalogueHeroMedia src="/commercial-kitchen-media/kitchen-hero.webp" alt={u.heroAlt} scene language={locale} items={['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels[locale==='zh-cn'?'zh':locale][i],href:'#commercial-kitchen-equipment'}))}/>
+ </section>
       <section className="section wrap" id="commercial-kitchen-equipment" tabIndex={-1} aria-labelledby="localized-catalog-title">
         <div className="section-heading"><div><p className="eyebrow">{u.equipment}</p><h2 id="localized-catalog-title">{u.catalogTitle}</h2></div><p>{u.catalogHelp}</p></div>
         <div className="catalog-tools"><label className="localized-search">{u.search}<input type="search" value={search} onChange={event => setSearch(event.target.value)} placeholder={u.searchPlaceholder}/></label><div className="filters" aria-label={u.equipment}><button type="button" className={!category ? 'active' : ''} aria-pressed={!category} onClick={() => setCategory('')}>{u.all}</button>{Object.entries(t.categories).map(([key, label]) => <button type="button" key={key} className={category === key ? 'active' : ''} aria-pressed={category === key} onClick={() => setCategory(key)}>{label}</button>)}</div></div>

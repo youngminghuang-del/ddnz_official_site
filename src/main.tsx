@@ -16,3 +16,5 @@ createRoot(document.getElementById('root')!).render(
     <App />
   </StrictMode>,
 );
+
+import './components/catalogue-hero/catalogue-hero.css';
