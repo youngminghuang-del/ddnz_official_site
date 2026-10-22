@@ -1,3 +1,4 @@
+import indonesiaKitchenCostSchema from '../data/indonesia-kitchen-cost-schema.json';
 import cairoMobileWholesaleSchema from '../data/cairo-mobile-wholesale-schema.json';
 import {positioning} from '../features/search-intent/positioning.mjs';
 import homeStorageMarketSchema from '../data/home-storage-market-schema.json';
@@ -197,6 +198,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '')) {
       finalSchema = { ...finalSchema, ...cairoMobileWholesaleSchema };
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '')) {
+      finalSchema = { ...finalSchema, ...indonesiaKitchenCostSchema };
     }
 
     // Create script tag and append to head
