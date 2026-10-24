@@ -1,3 +1,4 @@
+import CatalogueHeroMedia, { kitchenHeroLabels } from '../src/components/catalogue-hero/CatalogueHeroMedia';
 import indonesiaKitchenCostSchema from '../src/data/indonesia-kitchen-cost-schema.json';
 import utilityVehicleCopies from '../src/features/electric-utility-vehicles/locales.json';
 import tricycleCopies from '../src/features/electric-tricycles/locales.json';
@@ -1743,7 +1744,7 @@ function injectStaticRouteContent(
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(meta.schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
-    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch).replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
+    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch, renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',alt:'Commercial kitchen application',scene:true,items:['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels.en[i],href:'#commercial-kitchen-equipment'}))}))).replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
     staticBody += renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: 'en' }));
     staticBody += '<aside lang="id"><h2>Merencanakan restoran di Indonesia?</h2><p><a href="/id/blog/desain-dapur-restoran-pengadaan-peralatan-china/">Desain dapur restoran kecil, biaya peralatan, dan pengadaan dari China</a></p></aside>';
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
