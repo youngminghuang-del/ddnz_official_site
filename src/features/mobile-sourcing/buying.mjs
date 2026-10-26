@@ -1,7 +1,7 @@
 import { accessoryCopy } from './new-accessories/copy.mjs';
 import { EN } from '../screen-protectors/locales/en.mjs';
 import { referencePrice, copyFor } from './catalog.mjs';
-import { productById, rowKey, minimumNote, mixedCopy } from './mixed-products.mjs';
+import { productById, samePricingGroup, rowKey, minimumNote, mixedCopy } from './mixed-products.mjs';
 import { ui } from './locales.mjs';
 import { inspectionOptions } from './inspection-content.mjs';
 import { validEmail } from '../commercial-kitchen/data/inquiry.mjs';
@@ -53,14 +53,14 @@ export function buyingScenario(input){
 export function buildMobilePayload(draft,locale='en'){
  const d=normalizeDraft(draft),c=key=>copyFor(ui[key],locale);
  const lines=['DDNZ — '+c('brief'),`${c('destination')}: ${d.contact.destination}`,`${c('company')}: ${d.contact.company||'—'}`,`${c('channel')}: ${copyFor(ui.channels[Number(d.contact.channel)],locale)}`,'',c('selected')+':'];
- for(const row of d.rows){const p=productById(row.id),q=parseQuantity(row.quantity),price=referencePrice(p,p.mixedModels?d.rows.filter(r=>r.id===p.id).reduce((n,r)=>n+(parseQuantity(r.quantity)||0),0):q);
+ for(const row of d.rows){const p=productById(row.id),q=parseQuantity(row.quantity),price=referencePrice(p,p.mixedModels?d.rows.filter(r=>samePricingGroup(p,productById(r.id))).reduce((n,r)=>n+(parseQuantity(r.quantity)||0),0):q);
   lines.push(`- ${p.code} | ${copyFor(p.name,locale)} | ${c('quantity')}: ${q??'—'}`,`  ${p.group==='power'?copyFor({en:'Plug / output / cable length',es:'Enchufe / potencia / longitud',ar:'القابس / القدرة / طول الكابل'},locale):c('model')}: ${row.model||'—'}; ${c('colours')}: ${row.colours||'—'}`);
   lines.push('  '+minimumNote(row,d.rows,locale));
   if(p.group==='film'&&!p.mixedModels)lines.push('  '+copyFor(mixedCopy.reference,locale));
   if(p.sourceRecord)lines.push(`  ${p.convertedReference?copyFor(accessoryCopy.note,locale).replace('{date}',p.sourceRecord.checkedAt):copyFor({en:'Reference checked'},locale)+': '+p.sourceRecord.checkedAt}`,...(p.sourceRecord.model?[`  SKU: ${p.sourceRecord.model}`]:[]));
   if(p.pack&&!p.assembly)lines.push('  '+copyFor(p.pack,locale));
   if(p.assembly)lines.push(`  ${c(p.assembly)}. ${copyFor(p.pack,locale)}`);
-  if(p.tiers)lines.push(price===null?c('below'):`  ${p.convertedReference?copyFor(accessoryCopy.price,locale):c('reference')}: ${p.currency||'CNY'} ${price.toFixed(2)}`);
+  if(p.tiers)lines.push(price===null?c('below'):`  ${p.priceLabel?copyFor(p.priceLabel,locale):p.convertedReference?copyFor(accessoryCopy.price,locale):c('reference')}: ${p.currency||'CNY'} ${price.toFixed(2)}`);
   else if(p.priceRange)lines.push(`  ${copyFor(accessoryCopy.price,locale)}: ${p.currency} ${p.priceRange.map(v=>v.toFixed(2)).join('–')}`);
   else lines.push(c('onRequest'));
  }

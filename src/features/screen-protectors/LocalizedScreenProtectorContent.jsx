@@ -1,3 +1,8 @@
+import BearFeature from '../mobile-sourcing/BearFeature.jsx';
+import {renderFilmNavigator} from '../mobile-sourcing/bear-gallery.mjs';
+import OFoldFeature from '../mobile-sourcing/OFoldFeature.jsx';
+import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
+import { filmHeroConfig } from './catalogue-hero.mjs';
 import {renderPrivacy28Showcase, privacyPageCopy} from './privacy28-showcase.mjs';
 import {privacyCopy} from '../mobile-sourcing/privacy28.mjs';
 import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
@@ -97,14 +102,14 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
         <li>{page === 'home' ? <span aria-current="page">{copy.section}</span> : <a href={localizedPhonePath(locale)}>{copy.section}</a>}</li>
         {page === 'compare' && <li><span aria-current="page">{copy.compare}</span></li>}
       </ol></nav>
-      <header className={`phone-local-hero ${page === 'compare' ? 'phone-local-hero-compact' : ''}`}>
+      <header className={`phone-local-hero ${page === 'compare' ? 'phone-local-hero-compact' : 'catalogue-hero'}`}>
         <div><p className="eyebrow">{copy.eyebrow}</p><h1>{page === 'home' ? copy.title : copy.compareTitle}</h1>
           <p className="lede">{page === 'home' ? copy.intro : copy.compareIntro}</p>
           <div className="actions"><a className="button primary" href={page === 'home' ? `${localizedPhonePath(locale, 'compare')}#phone-products` : '#phone-inquiry'}>{page === 'home' ? copy.explore : copy.prepare}</a>{locale === 'ru' && page === 'home' && <a className="button secondary" href="#phone-inquiry">{copy.prepare}</a>}</div>
         </div>
-        {page === 'home' && <figure><img src="/images/product-showcase/mobile/privacy28-product.jpg" alt={copy.imageAlt} width="790" height="911" fetchPriority="high" /><figcaption>{copy.heroCaption}</figcaption></figure>}
+        {page === 'home' && <CatalogueHeroMedia {...filmHeroConfig(locale)}/>}
       </header>
-      <div dangerouslySetInnerHTML={{__html:renderPrivacy28Showcase(locale)}}/>
+      <div dangerouslySetInnerHTML={{__html:renderFilmNavigator(locale)}}/><BearFeature locale={locale}/><OFoldFeature locale={locale}/><div dangerouslySetInnerHTML={{__html:renderPrivacy28Showcase(locale)}}/>
       {page === 'home' && <section className="phone-local-steps" aria-labelledby="phone-steps-title"><h2 id="phone-steps-title">{copy.stepsTitle}</h2><ol>{copy.steps.map(([title, text], i) => <li key={title}><span aria-hidden="true">{phoneNumber(locale, i + 1)}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
       {page==='compare'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('films',locale)}}/>}
       <section id="phone-products" aria-labelledby="phone-products-title">
