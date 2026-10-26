@@ -1,3 +1,7 @@
+import type { BlogPost } from '../src/types/content';
+import { normalizeQuoteHtml } from '../src/lib/quoteLinkPolicy.mjs';
+import ArticleReadingContent from '../src/features/article-reading/ArticleReadingContent';
+import { articleUi, readingLocale, buildPrimaryCta, normalizeNotionLinks } from '../src/features/article-reading/model';
 import egyptLclSchema from '../src/data/egypt-lcl-schema.json';
 import solarCableSchema from '../src/data/solar-cable-schema.json';
 import CatalogueHeroMedia, { kitchenHeroLabels } from '../src/components/catalogue-hero/CatalogueHeroMedia';
@@ -1716,24 +1720,16 @@ function injectStaticRouteContent(
         <p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(body)}</p>
       </main>`;
   } else if (relPath.startsWith('blog/') && post) {
-    const direction = lang === 'ar' ? 'rtl' : 'ltr';
-    const summary = post.summary
-      ? `<p class="mt-5 text-lg leading-8 text-slate-700">${escapeStaticText(post.summary)}</p>`
-      : '';
-    const cover = post.thumbnailUrl
-      ? `<figure class="mt-8"><img src="${escapeStaticText(post.thumbnailUrl)}" alt="${escapeStaticText(post.title)}" width="1200" height="675" /></figure>`
-      : '';
-    staticBody = `
-      <main class="mx-auto max-w-4xl px-4 py-16 sm:px-6" dir="${direction}" data-static-fallback="article">
-        <article>
-          <p class="text-xs font-black uppercase tracking-wider text-amber-700">DDNZ Global Insights</p>
-          <h1 class="mt-4 text-4xl font-black leading-tight text-slate-950">${escapeStaticText(post.title)}</h1>
-          ${summary}
-          ${post.reviewer?.length ? `<p>${lang === 'id' ? 'Ditinjau oleh' : 'Reviewed by'} ${post.reviewer.map(escapeStaticText).join(", ")}</p>` : ""}
-          ${cover}
-          <div class="article-body mt-10">${post.content || ''}</div>
-        </article>
-      </main>`;
+    const article = post as BlogPost;
+    const locale = readingLocale(lang);
+    const ui = articleUi[locale as keyof typeof articleUi] || articleUi.en;
+    const prefix = locale === 'en' || locale === 'id' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
+    staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
+      post: article, language: locale,
+      articleHtml: { __html: normalizeQuoteHtml(normalizeNotionLinks(post.content || '')) },
+      primaryCta: buildPrimaryCta(article, prefix, ui),
+      discovery: kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''],
+    }));
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang !== 'en') {
     const meta = getLocalizedKitchenMetadata(lang);
     staticBody = renderToStaticMarkup(createElement(LocalizedKitchenContent, { locale: lang })) + renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: lang }));
