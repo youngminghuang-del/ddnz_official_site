@@ -1,0 +1,309 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#article",
+      "headline": "الشحن الجزئي LCL من الصين إلى مصر: التكلفة وACID وتجهيز الشحنة قبل التحميل",
+      "description": "دليل الشحن الجزئي من الصين إلى مصر: التكلفة وACID والمستندات قبل التحميل. جهز بيانات البضاعة واطلب عرضاً مفصلاً حتى الميناء أو المخزن.",
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#webpage"
+      },
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "المستوردون وتجار الجملة في مصر"
+      },
+      "articleSection": [
+        "هل الشحن الجزئي مناسب لأول طلب استيراد من الصين؟",
+        "كم تبلغ تكلفة الشحن البحري الجزئي من الصين إلى مصر؟",
+        "ACI وACID: ماذا يجهز المستورد المصري قبل الشحن؟",
+        "قائمة مراجعة قبل إدخال البضاعة إلى حاوية التجميع",
+        "ماذا يحدث إذا خضعت شحنة أخرى في الحاوية للفحص؟",
+        "اطلب عرض LCL إلى مصر ببيانات يمكن تسعيرها",
+        "أسئلة المستوردين عن الشحن الجزئي إلى مصر"
+      ],
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "China to Egypt LCL imports"
+        },
+        {
+          "@type": "Thing",
+          "name": "Pre-shipment document review and ACID"
+        }
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-cover"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-E"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-dimensions"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-acid"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-F"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#webpage",
+      "name": "الشحن الجزئي LCL من الصين إلى مصر: التكلفة وACID وتجهيز الشحنة قبل التحميل",
+      "inLanguage": "ar",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-cover"
+      },
+      "url": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/ar/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "الشحن الجزئي LCL من الصين إلى مصر: التكلفة وACID وتجهيز الشحنة قبل التحميل",
+          "item": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "عندي بضعة كراتين فقط؛ هل أحتاج إلى حاوية كاملة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. الشحن الجزئي LCL يجمع البضائع التي لا تملأ حاوية مع شحنات أخرى في الحاوية نفسها. أرسل اسم البضاعة وعدد الكراتين وطول كل كرتونة وعرضها وارتفاعها ووزنها الإجمالي، ثم قارن التكلفة الكاملة. اطلب توضيح الحد الأدنى للفوترة ورسوم التشغيل الثابتة؛ عدد الكراتين وحده لا يحدد أجرة الشحن."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل سعر الشحن للمتر المكعب هو إجمالي التوصيل إلى مخزني؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. اسأل أولًا: هل السعر لأجرة البحر فقط، أم يشمل الاستلام في الصين ومصروفات الوصول في مصر والتخليص والتوصيل؟ اطلب مبلغ كل بند والمصروفات غير المشمولة. وإذا أردت التسليم إلى مخزن في القاهرة، فاكتب عنوانه ونطاق التسليم في العرض؛ عبارة «إلى مصر» وحدها لا تحدد ذلك."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن أن تبحر الشحنة ثم أستخرج ACID؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. يجب الحصول على ACID قبل شحن الواردات البحرية إلى مصر. يتولى المستورد المصري أو مخلصه المفوض طلب الرقم، ثم يرسله إلى المصدر ووكيل الشحن لمطابقة المستندات مع الشحنة. وصول البضاعة إلى مخزن التجميع في الصين لا يعني السماح بتحميلها على السفينة قبل استكمال هذه الخطوة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل ACID هو علامة الشحن التي أكتبها على الكرتونة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. ACID هو الرقم التعريفي لشحنة الاستيراد، ويجب إثباته على مستندات الشحنة، ومنها الفاتورة التجارية وقائمة التعبئة وبوليصة الشحن. أما علامات الكراتين فتستخدم للتعرف على البضاعة وأرقام الطرود، وتجهز وفق النموذج المتفق عليه مع العميل والمخلص ووكيل الشحن. كتابة ACID على الكرتونة لا تغني عن استخراجه ومطابقة المستندات."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل نستخدم رقم ACID واحدًا لأن بضائعنا في الحاوية نفسها؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "وجود البضائع في حاوية واحدة ليس أساسًا لاستخدام رقم واحد. عند اختلاف بيانات المصدر والمستورد على البوالص المجمعة، تشترط نافذة أرقامًا مستقلة للبوالص الفرعية المعنية. قبل الشحن، اطلب من المخلص ووكيل الشحن قائمة تربط كل بوليصة فرعية بالمصدر والمستورد ورقم ACID الخاص بها."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "إذا فُحصت بضاعة مستورد آخر في الحاوية، هل قد أنتظر معه؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، هذا ممكن. إذا تأثرت عمليات الحاوية المشتركة فقد يتأثر ترتيب استلامك أيضًا؛ سلامة مستنداتك لا تضمن ألا تتأثر مطلقًا. حدد قبل الحجز من يبلغك بالمشكلة، ومن يجهز المستندات المطلوبة، وكيف تعتمد المصروفات الإضافية. تسليم ملف شحنتك كاملًا مبكرًا يقلل الحاجة إلى طلب أوراق منك في اللحظة الأخيرة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "أريد عرضًا حتى القاهرة؛ ماذا أرسل إلى DDNZ في أول تواصل؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أرسل اسم البضاعة وصورها وعناوين الموردين وعدد الكراتين وأبعاد كل كرتونة ووزنها الإجمالي وموعد جاهزية البضاعة، ثم عنوان الاستلام في القاهرة. وضح هل عينت مخلصًا مصريًا وهل صدر ACID. أرسل «LCL EGYPT» وهذه البيانات عبر WhatsApp، وحدد الاستلام من الميناء أو التوصيل إلى المخزن؛ عدد الكراتين والوزن الكلي لا يغنيان عن المقاسات."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-cover",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-d.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-d.jpg",
+      "name": "كراتين وأكياس وبضائع مغلفة مجمعة داخل حاوية",
+      "description": "كراتين وأكياس وبضائع مغلفة مجمعة داخل حاوية",
+      "width": 1290,
+      "height": 1490,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": true,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/media/freight-20260918/mixed-cargo-loading.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-E",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-e.webp",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-e.webp",
+      "name": "كراتين وأكياس مرصوصة داخل حاوية شحن",
+      "description": "كراتين وأكياس مرصوصة داخل حاوية شحن",
+      "width": 1200,
+      "height": 2145,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": false,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/media/lcl-20260920/bags-and-cartons.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-b.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-b.jpg",
+      "name": "منظر الحاوية من الباب مع بضائع مغلفة بالداخل",
+      "description": "منظر الحاوية من الباب مع بضائع مغلفة بالداخل",
+      "width": 1400,
+      "height": 1866,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": false,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/images/operations/container-loaded-anonymized.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-dimensions",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/carton-dimensions.ar.png",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/carton-dimensions.ar.png",
+      "name": "رسم يوضح طول الطرد وعرضه وارتفاعه والبيانات اللازمة لطلب عرض شحن",
+      "description": "رسم يوضح طول الطرد وعرضه وارتفاعه والبيانات اللازمة لطلب عرض شحن",
+      "width": 1200,
+      "height": 740,
+      "inLanguage": "ar",
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-acid",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/acid-vs-marks.ar.png",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/acid-vs-marks.ar.png",
+      "name": "رسم يميز بين رقم ACID على مستندات الشحنة وعلامات الكراتين",
+      "description": "رسم يميز بين رقم ACID على مستندات الشحنة وعلامات الكراتين",
+      "width": 1200,
+      "height": 740,
+      "inLanguage": "ar",
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-a.webp",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-a.webp",
+      "name": "منظر أفقي لعملية إدخال بضائع مغلفة إلى الحاوية",
+      "description": "منظر أفقي لعملية إدخال بضائع مغلفة إلى الحاوية",
+      "width": 1440,
+      "height": 810,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": false,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/images/operations/container-loading-forklift-wide-v1.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-c.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-c.jpg",
+      "name": "عاملون يضعون كراتين على طبالي داخل حاوية",
+      "description": "عاملون يضعون كراتين على طبالي داخل حاوية",
+      "width": 540,
+      "height": 1170,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": false,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/media/freight-20260918/loading-01-poster.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/#image-photo-F",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-f.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/china-egypt-lcl-cost-acid/lcl-choice-f.jpg",
+      "name": "منظر رأسي لعملية إدخال بضائع مغلفة إلى الحاوية",
+      "description": "منظر رأسي لعملية إدخال بضائع مغلفة إلى الحاوية",
+      "width": 1600,
+      "height": 2843,
+      "inLanguage": "ar",
+      "encodingFormat": "image/webp",
+      "representativeOfPage": false,
+      "creditText": "Owner-provided LCL operations photograph",
+      "isBasedOn": "https://www.ddnzglobal.com/images/operations/container-loading-forklift-anonymized.jpg"
+    }
+  ],
+  "url": "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/"
+}
