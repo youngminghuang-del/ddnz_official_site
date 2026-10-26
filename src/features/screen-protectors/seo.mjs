@@ -1,3 +1,4 @@
+import { renderEnglishFilmHeroMedia } from './catalogue-hero.mjs';
 import {renderPrivacy28Showcase} from './privacy28-showcase.mjs';
 import { renderFilmEntry } from '../buyer-entry/content.mjs';
 import { renderPageEvidence } from './page-evidence.mjs';
@@ -173,7 +174,7 @@ const productSummary = (anchors = false) => Object.entries(PRODUCTS).map(([id, p
 export function renderScreenProtectorBody(page) {
   if (!Object.hasOwn(ROUTES, page)) throw new Error(`Unknown screen protector page: ${page}`);
   let body;
-  if (page === 'home') body = heading(EN.home.title, EN.home.intro) + image('/images/product-showcase/mobile/privacy28-product.jpg', '28° HD privacy tempered glass') + renderPrivacy28Showcase()
+  if (page === 'home') body = '<header class="hero catalogue-hero"><div>' + heading(EN.home.title, EN.home.intro) + '<div class="actions">' + link('products', EN.home.compare) + '</div></div>' + renderEnglishFilmHeroMedia() + '</header>' + renderPrivacy28Showcase()
     + paragraph(EN.home.offersBody) + section(EN.home.videoLabel, paragraph(EN.home.credit) + paragraph(EN.home.transcript) + link('videos', VIDEO_COPY.watch))
     + EN.home.journey.map(([, title, description, target]) => section(title, paragraph(description) + link(target))).join('')
     + guideLinks() + section(EN.home.offersTitle, productSummary())
