@@ -36,5 +36,5 @@ export function localizedFoodInquiry(selection:Record<string,number>,destination
  const c=foodLocales[locale], t=selectionTotals(selection);
  const lines=machines.filter(m=>Number.isInteger(selection[m.id])&&selection[m.id]>0&&selection[m.id]<=99).map(m=>{const i=machines.indexOf(m),q=selection[m.id];return `${m.model} · ${c.names[i]} · ${c.variants[i]} × ${q}: ${money(m.price*q)}; ${c.ui.packing}: ${money(m.packing*q)}`;});
  const notes=[`${c.ui.priceList}: ${displayPriceDate}`, ...lines,`${c.ui.equipment}: ${money(t.equipment)}; ${c.ui.packing}: ${money(t.packing)}`,c.ui.exclude,requirement].filter(Boolean).join('\n');
- return `${foodPrefix(locale)}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',industry:c.ui.catalogueTitle,source:'food_processing',productScope:lines.join('\n'),notes,dest:destination});
+ return `${foodPrefix(locale)}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',industry:c.ui.catalogueTitle,source:'food_processing',overviewBrief:notes,productScope:lines.join('\n'),notes,dest:destination});
 }

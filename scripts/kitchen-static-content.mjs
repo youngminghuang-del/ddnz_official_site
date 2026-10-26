@@ -3,7 +3,7 @@ import { kitchenCategories, kitchenModelHref } from '../src/features/commercial-
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
 // Uses the same catalogue as the interactive page, including quotation limits.
-export function renderKitchenStaticContent(products, launch) {
+export function renderKitchenStaticContent(products, launch, heroMedia = '') {
   const featured = launch.featuredProductIds.map(id => {
     const product = products.find(p => p.id === id);
     if (!product?.quote) throw new Error(`Featured kitchen price missing: ${id}`);
@@ -11,11 +11,11 @@ export function renderKitchenStaticContent(products, launch) {
   });
   return `<main class="mx-auto max-w-5xl px-4 py-16 sm:px-6" data-static-fallback="commercial-kitchen" lang="en" dir="ltr" id="commercial-kitchen-top">
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/products/">Products</a> / <span aria-current="page">Commercial kitchen equipment</span></nav>
-    <p>For importers, wholesalers &amp; distributors</p>
+    ${heroMedia?'<section class="catalogue-hero"><div>':''}<p>For importers, wholesalers &amp; distributors</p>
     <h1>Commercial kitchen equipment. Sourced in China.</h1>
     <p>Source commercial kitchen equipment from China for your wholesale range. Compare 26 equipment models. Compare capacity, indicative supply prices and local retail references, then request a quote for your market.</p>
     <nav aria-label="Plan your equipment order">${kitchenJourney.map(item=>`<a href="${item.href}">${escape(item.title)}</a>`).join(" · ")}</nav>
-    <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>
+    <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>${heroMedia?'</div>'+heroMedia+'</section>':''}
     <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>26 models. Eight with indicative reference prices.</p>
     <nav aria-label="Equipment buying guides">${kitchenCategories.map(item => `<a href="${item.path}">${escape(item.label)} · Compare models</a>`).join(' · ')} · <a href="/refrigeration-equipment/">Refrigeration selection guide</a></nav>
     <div>${[...featured, ...products.filter(p => !launch.featuredProductIds.includes(p.id))].map(p => `<article><img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
