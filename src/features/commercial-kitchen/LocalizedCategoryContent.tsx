@@ -1,3 +1,4 @@
+import IceUseSeries from './components/IceUseSeries';
 import SdIceSeries from './components/SdIceSeries';
 import {IceModelDetails,IceModelPhoto} from './components/IceModelDetails';
 import {kitchenCopy, localSpecValue} from './data/localization.mjs';
@@ -35,7 +36,7 @@ export default function LocalizedCategoryContent({category,locale}:{category:any
  <nav className="category-navigation wrap" aria-label={u.related}>{kitchenCategories.map((cat,index)=><a key={cat.id} href={`${prefix}${cat.path}`} aria-current={index===i?'page':undefined}>{c.titles[index]}</a>)}</nav>
  {i===0&&<IceSpecificationComparison locale={locale}/>}
  <section id="category-models" className="section wrap"><h2>{u.compare}</h2><div className="category-model-grid">{products.map(p=><article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><h3><bdi>{p.model}</bdi></h3><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/><div className="category-price">{p.quote?<><span>{c.ui.price}</span><strong dir="ltr">CNY {p.quote.price.toFixed(2)}</strong><span>{u.unit} · {c.ui.reference}: {p.quote.minUnits}</span></>:<strong>{c.ui.request}</strong>}</div><button type="button" className="button primary" onClick={()=>{amount(p.id,(selection[p.id]||0)+1);document.getElementById('category-rfq')?.scrollIntoView();}}>{u.add}</button></div></article>)}</div><p className="fine category-price-note">{c.ui.priceNote}</p></section>
- {i===0&&<SdIceSeries locale={locale}/>}
+ {i===0&&<><SdIceSeries locale={locale}/><IceUseSeries locale={locale}/></>}
  <CookingVisuals category={category} locale={locale}/>
  <CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)}/>
  <section id="category-buying" className="section wrap category-buying"><h2>{u.scope}</h2><div className="category-buying-grid">{c.notes[i].map((text,j)=><article key={j}><span className="category-step">0{j+1}</span>{i===0&&<h3>{iceCopy[locale].headings[j]}</h3>}<p>{text}</p></article>)}</div></section>

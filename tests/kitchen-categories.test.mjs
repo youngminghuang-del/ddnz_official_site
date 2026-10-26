@@ -1,3 +1,4 @@
+import {iceUseModels} from '../src/features/commercial-kitchen/data/iceUseModels.mjs';
 import test from 'node:test';
 import {additionalCookingModels} from '../src/features/commercial-kitchen/data/additionalCookingModels.mjs';
 import assert from 'node:assert/strict';
@@ -18,8 +19,12 @@ test('each published category has distinct inventory, matching route and complet
     for (const p of items) assert.ok(fs.existsSync(`public${p.image}`), p.image);
     const schema = kitchenCategorySchema(c);
     assert.doesNotMatch(JSON.stringify(schema), /"Offer"|"aggregateRating"|"Product"/);
-    const listed = [...items, ...(additionalCookingModels[c.id] || [])];
+    const listed = [...items, ...(additionalCookingModels[c.id] || []), ...(c.id === 'ice-machines' ? iceUseModels : [])];
     assert.deepEqual(schema['@graph'][0].mainEntity.itemListElement.map(p => p.url.split('#model-')[1]), listed.map(p => p.id));
+    for (const model of c.id === 'ice-machines' ? iceUseModels : []) {
+      const item = schema['@graph'][0].mainEntity.itemListElement.find(p => p.url.endsWith('#model-' + model.id));
+      assert.equal(item.name, model.model);
+    }
   }
 });
 

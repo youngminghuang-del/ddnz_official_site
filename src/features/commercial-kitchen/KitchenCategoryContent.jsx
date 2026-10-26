@@ -1,3 +1,4 @@
+import IceUseSeries from './components/IceUseSeries';
 import SdIceSeries from './components/SdIceSeries';
 import {IceModelDetails,IceModelPhoto} from './components/IceModelDetails';
 import IceBuyingChecklist from './components/IceBuyingChecklist.jsx';
@@ -37,7 +38,7 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
       </article>)}</div>
       <p className="fine category-price-note">Product images are retouched. Prices are indicative for the stated reference quantities. Freight and taxes are extra. Final price, availability and electrical configuration are confirmed with your quotation.{category.id === 'ice-machines' && ' Ice output figures are rated values; test conditions and bin capacity will be confirmed.'}</p>
     </section>
-    {category.id==='ice-machines'&&<SdIceSeries/>}
+    {category.id==='ice-machines'&&<><SdIceSeries/><IceUseSeries/></>}
     <CookingVisuals category={category}/>
  <CookingModelSelection category={category}/>
     <section id="category-buying" className="section wrap category-buying"><p className="eyebrow">BEFORE YOU BUY</p><h2>{category.buyingTitle}</h2><div className="category-buying-grid">{category.buying.map((item, i) => <article key={item.title}><span className="category-step">0{i + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></section>

@@ -1,3 +1,4 @@
+import {iceUseModels} from './iceUseModels.mjs';
 import {additionalCookingModels} from './additionalCookingModels.mjs';
 import products from './products.mjs';
 import { KITCHEN_PATH } from './discovery.mjs';
@@ -20,9 +21,9 @@ export const kitchenCategories = [
   {
     id: 'ice-machines', path: '/sourcing/commercial-ice-machines-from-china/', label: 'Ice machines',
     title: 'Commercial Ice Machines from China: Compare Models | DDNZ',
-    description: 'Compare HZB and SD commercial cube ice machines from China, rated 25–250 kg/day. Review output, storage, dimensions and wholesale order requirements.',
+    description: 'Source commercial ice machines from China: compare cube, crescent and granular ice configurations, rated output, storage and installation requirements.',
     heading: 'Commercial ice machines.', emphasis: 'Find your output range.',
-    intro: 'Source commercial ice machines from China for cafés, restaurants and hospitality buyers. Compare the HZB and SD ranges by rated output, ice storage and installation space, then request a configuration for your market.',
+    intro: 'Source commercial ice machines from China for cafés, restaurants and hospitality buyers. Compare cube, crescent and granular ice configurations by rated output, storage and installation space, then request a configuration for your market.',
     productIds: ['ice-39', 'ice-49', 'ice-58', 'ice-61', 'ice-64', 'ice-69'],
     heroId: 'ice-49', statistic: '25–250 kg', statisticLabel: 'Rated daily output across the HZB and SD ranges',
     comparisonKeys: ['Daily output', 'Ice mold cells', 'Water supply'], comparisonTitle: 'Compare output and space together.',
@@ -116,7 +117,7 @@ export function kitchenCategorySchema(category) {
   const url = origin + category.path;
   return { '@context': 'https://schema.org', '@graph': [
     { '@type': 'CollectionPage', '@id': url, url, name: category.title, description: category.description, inLanguage: 'en',
-      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: [...categoryProducts(category), ...(additionalCookingModels[category.id] || [])].map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.model} ${p.name}`, url: `${url}#model-${p.id}` })) } },
+      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: [...categoryProducts(category), ...(additionalCookingModels[category.id] || []), ...(category.id === 'ice-machines' ? iceUseModels : [])].map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: [p.model, p.name].filter(Boolean).join(' '), url: `${url}#model-${p.id}` })) } },
     { '@type': 'BreadcrumbList', itemListElement: [ ['Home', '/'], ['Products', '/products/'], ['Commercial kitchen equipment', KITCHEN_PATH], [category.label, category.path] ].map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: origin + href })) },
   ] };
 }
