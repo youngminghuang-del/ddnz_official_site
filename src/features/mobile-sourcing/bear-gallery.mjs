@@ -8,7 +8,7 @@ export function renderBear(locale='en',{selectable=false}={}){
 }
 export function renderFilmNavigator(locale='en'){
  const c=bearCopy[locale==='zh-cn'?'zh':locale]||bearCopy.en;
- return `<nav class="film-type-nav" aria-label="${esc(c[12])}"><div><p>${esc(c[12])}</p><span>${esc(c[13])}</span></div>${['#bear-glass','#privacy-o-fold','#phone-products'].map((href,i)=>`<a href="${href}"><small>0${i+1}</small><strong>${esc(c[14+i])}</strong><span aria-hidden="true">↘</span></a>`).join('')}</nav>`;
+ return `<nav class="film-type-nav" aria-label="${esc(c[12])}"><div><p>${esc(c[12])}</p><span>${esc(c[13])}</span></div>${['#bear-glass','#privacy-o-fold',locale==='en'?'/screen-protectors/compare/#film-product-titan-hd':'#phone-products'].map((href,i)=>`<a href="${href}"><small>0${i+1}</small><strong>${esc(c[14+i])}</strong><span aria-hidden="true">↘</span></a>`).join('')}</nav>`;
 }
 export function mountBearGallery(root,onSelect){
  const selectVariant=(s,b)=>{s.dataset.bearVariant=b.dataset.bearVariant;s.querySelectorAll('[data-bear-variant]').forEach(x=>x.setAttribute('aria-pressed',String(x===b)));s.querySelector('[data-bear-version]').textContent=b.querySelector('span').textContent;const link=s.querySelector('[data-bear-link]');if(link)link.href=link.href.replace(/filmVariant=(hd|privacy)/,'filmVariant='+(b.dataset.bearVariant.endsWith('privacy')?'privacy':'hd'));change(s,b.dataset.bearVariant.endsWith('privacy')?2:0);};
