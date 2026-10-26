@@ -1,0 +1,441 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#article",
+      "headline": "Cables de carga solar al por mayor desde China: conectores, calibre y surtido para importadores",
+      "description": "Guía visual de cables solares al por mayor desde China: identifica conectores, calibre y longitud para preparar un pedido de prueba a precio de fábrica.",
+      "inLanguage": "es",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Solar charging cables for portable power stations"
+        },
+        {
+          "@type": "Thing",
+          "name": "China wholesale sourcing"
+        }
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-P01"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D01"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-P02"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-Y"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-F"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-E"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D02"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D03"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D04"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D05"
+        }
+      ],
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Importadores y mayoristas de energía portátil"
+      },
+      "articleSection": [
+        "Paso 1. ¿Qué lado se conecta al panel y cuál a la estación?",
+        "Paso 2. Reconoce XT60, XT60i y DC7909 sin comprar por apariencia",
+        "Paso 3. Confirma el modelo y la polaridad antes de comparar precios",
+        "Paso 4. Entiende el calibre: qué significan 4 mm² y 6 mm²",
+        "Paso 5. Escribe la longitud de cada conductor",
+        "Paso 6. Convierte las imágenes y medidas en un pedido pequeño",
+        "Cómo comparar el precio de fábrica y seguir tu pedido",
+        "Preguntas de importadores y mayoristas",
+        "Solicita tu ficha SOLARCABLE"
+      ],
+      "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/",
+      "datePublished": "2026-10-26",
+      "dateModified": "2026-10-26",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#webpage",
+      "name": "Cables de carga solar al por mayor desde China: conectores, calibre y surtido para importadores",
+      "inLanguage": "es",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-A"
+      },
+      "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/es/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/es/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cables de carga solar al por mayor desde China: conectores, calibre y surtido para importadores",
+          "item": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#faq",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo pedir cotización sin conocimientos eléctricos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. Envía país, modelo de estación, fotos de ambos conectores, distancia y cantidad. Solicita al proveedor la identificación técnica y una propuesta por escrito antes de aprobar la muestra."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Un cable MC4 a XT60 sirve para todas las estaciones?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Debe coincidir con el modelo, la variante de entrada, la polaridad y los límites eléctricos del conjunto."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿El color distingue siempre XT60 de XT60i?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No debes comprar solo por color. Pide la referencia exacta del conector y la confirmación de compatibilidad con tu estación."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿4 mm² significa que el cable mide 4 mm de diámetro?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. mm² expresa el área del conductor metálico. Solicita por separado la sección del conductor y el diámetro exterior del cable."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿6 mm² siempre es la mejor compra?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Elige la sección que cumpla la aplicación y admita el conector. Compara distancia, corriente, caída de tensión, montaje y costo."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Un adaptador permite conectar un panel de mayor voltaje?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Un adaptador pasivo no convierte el voltaje. El panel y su configuración deben permanecer dentro de los límites admitidos por la estación en las condiciones de uso previstas."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿DDNZ puede preparar una prueba con bajo MOQ y mi marca?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Puedes solicitar esa propuesta. DDNZ confirmará el mínimo de cada referencia y el mínimo de personalización con tus modelos, cantidades y requisitos de empaque."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-A",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-xt60i-overview.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-xt60i-overview.png",
+      "name": "Cable de carga solar EcoFlow con conectores fotovoltaicos y XT60i",
+      "description": "Cable de carga solar EcoFlow con conectores fotovoltaicos y XT60i",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1500,
+      "encodingFormat": "image/png",
+      "representativeOfPage": true,
+      "creditText": "EcoFlow · product image reference",
+      "isBasedOn": "https://us.ecoflow.com/products/solar-charging-cable?variant=40337525375049",
+      "creator": {
+        "@type": "Organization",
+        "name": "EcoFlow"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-P01",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/panel160-product-2.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/panel160-product-2.png",
+      "name": "Panel EcoFlow de 160 W desplegado con sus dos conectores fotovoltaicos a la derecha",
+      "description": "Panel EcoFlow de 160 W desplegado con sus dos conectores fotovoltaicos a la derecha",
+      "inLanguage": "es",
+      "width": 2034,
+      "height": 2034,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "EcoFlow · original educational illustration",
+      "isBasedOn": "https://jp.ecoflow.com/products/160w-solar-panel",
+      "creator": {
+        "@type": "Organization",
+        "name": "EcoFlow"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D01",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-connection.es.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-connection.es.png",
+      "name": "Esquema de las dos uniones del panel al cable y del enchufe XT60i a la entrada XT60 de la estación",
+      "description": "Esquema de las dos uniones del panel al cable y del enchufe XT60i a la entrada XT60 de la estación",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 2380,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "DDNZ Global Trade Co., Ltd. · original educational illustration",
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-B",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-use.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-use.png",
+      "name": "Detalle de los extremos fotovoltaicos y XT60i de un cable EcoFlow",
+      "description": "Detalle de los extremos fotovoltaicos y XT60i de un cable EcoFlow",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1500,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "EcoFlow · product image reference",
+      "isBasedOn": "https://us.ecoflow.com/products/solar-charging-cable?variant=40337525375049",
+      "creator": {
+        "@type": "Organization",
+        "name": "EcoFlow"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-P02",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/delta2-solar-input-real.jpg",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/delta2-solar-input-real.jpg",
+      "name": "Fotografía de un enchufe solar naranja frente a la entrada DC de una EcoFlow DELTA 2",
+      "description": "Fotografía de un enchufe solar naranja frente a la entrada DC de una EcoFlow DELTA 2",
+      "inLanguage": "es",
+      "width": 2000,
+      "height": 1125,
+      "encodingFormat": "image/jpeg",
+      "representativeOfPage": false,
+      "creditText": "GearJunkie · original educational illustration",
+      "isBasedOn": "https://gearjunkie.com/technology/best-portable-solar-chargers",
+      "creator": {
+        "@type": "Organization",
+        "name": "GearJunkie"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-Y",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-detail.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-detail.png",
+      "name": "Vista frontal de un conector XT60 amarillo en el catálogo EcoFlow",
+      "description": "Vista frontal de un conector XT60 amarillo en el catálogo EcoFlow",
+      "inLanguage": "es",
+      "width": 2034,
+      "height": 2034,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "EcoFlow · product image reference",
+      "isBasedOn": "https://us.ecoflow.com/products/solar-charging-cable?variant=40337525375049",
+      "creator": {
+        "@type": "Organization",
+        "name": "EcoFlow"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-F",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-closeup.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/ecoflow-solar-cable-closeup.png",
+      "name": "Detalle del extremo XT60i y alivio de tensión en un cable EcoFlow",
+      "description": "Detalle del extremo XT60i y alivio de tensión en un cable EcoFlow",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1500,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "EcoFlow · product image reference",
+      "isBasedOn": "https://us.ecoflow.com/products/solar-charging-cable?variant=40337525375049",
+      "creator": {
+        "@type": "Organization",
+        "name": "EcoFlow"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-E",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/bluetti-dc7909-cable.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/bluetti-dc7909-cable.png",
+      "name": "Cable de carga solar a DC7909 publicado por BLUETTI",
+      "description": "Cable de carga solar a DC7909 publicado por BLUETTI",
+      "inLanguage": "es",
+      "width": 2000,
+      "height": 2000,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "BLUETTI · product image reference",
+      "isBasedOn": "https://www.bluettipower.com/products/eb3a-solar-charging-cable",
+      "creator": {
+        "@type": "Organization",
+        "name": "BLUETTI"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-C",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/pntech-copper-wire.jpg",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/pntech-copper-wire.jpg",
+      "name": "Bobinas de cable fotovoltaico rojo y negro publicadas por PNTECH",
+      "description": "Bobinas de cable fotovoltaico rojo y negro publicadas por PNTECH",
+      "inLanguage": "es",
+      "width": 1000,
+      "height": 1000,
+      "encodingFormat": "image/jpeg",
+      "representativeOfPage": false,
+      "creditText": "PNTECH · product image reference",
+      "isBasedOn": "https://www.pncables.com/h1z2z2-k-1-6mm-solar-cable-durable-dc-pv-cable-from-china-suppliers-and-factory-for-efficient-solar-installations-product/",
+      "creator": {
+        "@type": "Organization",
+        "name": "PNTECH"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D02",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-wire-section.es.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-wire-section.es.png",
+      "name": "Ilustración de la sección metálica de 4 y 6 mm² y la funda exterior",
+      "description": "Ilustración de la sección metálica de 4 y 6 mm² y la funda exterior",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1360,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "DDNZ Global Trade Co., Ltd. · original educational illustration",
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D03",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-loop-length.es.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-loop-length.es.png",
+      "name": "Ejemplo: 5 m de conductor positivo más 5 m de negativo suman 10 m",
+      "description": "Ejemplo: 5 m de conductor positivo más 5 m de negativo suman 10 m",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1180,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "DDNZ Global Trade Co., Ltd. · original educational illustration",
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D04",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-voltage-drop.es.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-voltage-drop.es.png",
+      "name": "Comparación calculada de caída de tensión para conductores de 4 y 6 mm²",
+      "description": "Comparación calculada de caída de tensión para conductores de 4 y 6 mm²",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1380,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "DDNZ Global Trade Co., Ltd. · original educational illustration",
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-D05",
+      "url": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-rfq-fields.es.png",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cables-carga-solar-mayoreo-china/diagram-rfq-fields.es.png",
+      "name": "Cinco datos para solicitar una propuesta de cables solares a DDNZ",
+      "description": "Cinco datos para solicitar una propuesta de cables solares a DDNZ",
+      "inLanguage": "es",
+      "width": 1500,
+      "height": 1510,
+      "encodingFormat": "image/png",
+      "representativeOfPage": false,
+      "creditText": "DDNZ Global Trade Co., Ltd. · original educational illustration",
+      "creator": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    }
+  ],
+  "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/"
+}

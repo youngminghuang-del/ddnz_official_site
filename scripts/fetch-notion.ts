@@ -1,3 +1,4 @@
+import solarCableRelease from '../src/data/solarCableRelease.json';
 import indonesiaKitchenCostApproval from '../src/data/indonesiaKitchenCostApproval.json';
 import hayaletApproval from '../src/data/hayaletArticleApproval.json';
 import kitchenApproval from '../src/data/kitchenArticleApproval.json';
@@ -537,7 +538,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = await getPageContentHtml(page.id, slug, title, initialContent);
+      const rendered = slug === solarCableRelease.slug
+        ? { html: solarCableRelease.content, toc: solarCableRelease.toc, wordCount: solarCableRelease.wordCount, readMinutes: solarCableRelease.readMinutes }
+        : await getPageContentHtml(page.id, slug, title, initialContent);
       rendered.html = preparePrivacyArticle(slug, applyLocalArticleAssets(rendered.html, localAssets));
       if (slug === privacyArticleSlug) rendered.toc = rendered.toc.map(item => {
         const number = item.level === 2 && item.text.match(/^(\d+)\. /)?.[1];
