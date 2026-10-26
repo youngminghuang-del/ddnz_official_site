@@ -1,3 +1,4 @@
+import egyptLclRelease from '../src/data/egyptLclRelease.json';
 import solarCableRelease from '../src/data/solarCableRelease.json';
 import indonesiaKitchenCostApproval from '../src/data/indonesiaKitchenCostApproval.json';
 import hayaletApproval from '../src/data/hayaletArticleApproval.json';
@@ -538,7 +539,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === solarCableRelease.slug
+      const rendered = slug === egyptLclRelease.slug
+        ? { html: egyptLclRelease.content, toc: egyptLclRelease.toc, wordCount: egyptLclRelease.wordCount, readMinutes: egyptLclRelease.readMinutes }
+        : slug === solarCableRelease.slug
         ? { html: solarCableRelease.content, toc: solarCableRelease.toc, wordCount: solarCableRelease.wordCount, readMinutes: solarCableRelease.readMinutes }
         : await getPageContentHtml(page.id, slug, title, initialContent);
       rendered.html = preparePrivacyArticle(slug, applyLocalArticleAssets(rendered.html, localAssets));
