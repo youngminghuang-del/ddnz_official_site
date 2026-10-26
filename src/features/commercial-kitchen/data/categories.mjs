@@ -117,7 +117,7 @@ export function kitchenCategorySchema(category) {
   const url = origin + category.path;
   return { '@context': 'https://schema.org', '@graph': [
     { '@type': 'CollectionPage', '@id': url, url, name: category.title, description: category.description, inLanguage: 'en',
-      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: [...categoryProducts(category), ...(additionalCookingModels[category.id] || []), ...(category.id === 'ice-machines' ? iceUseModels.map(p=>({...p,name:p.model})) : [])].map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: `${p.model} ${p.name}`, url: `${url}#model-${p.id}` })) } },
+      isPartOf: { '@id': origin + KITCHEN_PATH }, mainEntity: { '@type': 'ItemList', itemListElement: [...categoryProducts(category), ...(additionalCookingModels[category.id] || []), ...(category.id === 'ice-machines' ? iceUseModels : [])].map((p, i) => ({ '@type': 'ListItem', position: i + 1, name: [p.model, p.name].filter(Boolean).join(' '), url: `${url}#model-${p.id}` })) } },
     { '@type': 'BreadcrumbList', itemListElement: [ ['Home', '/'], ['Products', '/products/'], ['Commercial kitchen equipment', KITCHEN_PATH], [category.label, category.path] ].map(([name, href], i) => ({ '@type': 'ListItem', position: i + 1, name, item: origin + href })) },
   ] };
 }
