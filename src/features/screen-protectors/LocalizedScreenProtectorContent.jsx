@@ -1,3 +1,6 @@
+import BearFeature from '../mobile-sourcing/BearFeature.jsx';
+import {renderFilmNavigator} from '../mobile-sourcing/bear-gallery.mjs';
+import OFoldFeature from '../mobile-sourcing/OFoldFeature.jsx';
 import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import { filmHeroConfig } from './catalogue-hero.mjs';
 import {renderPrivacy28Showcase, privacyPageCopy} from './privacy28-showcase.mjs';
@@ -106,7 +109,7 @@ export default function LocalizedScreenProtectorContent({ locale, page = 'home',
         </div>
         {page === 'home' && <CatalogueHeroMedia {...filmHeroConfig(locale)}/>}
       </header>
-      <div dangerouslySetInnerHTML={{__html:renderPrivacy28Showcase(locale)}}/>
+      <div dangerouslySetInnerHTML={{__html:renderFilmNavigator(locale)}}/><BearFeature locale={locale}/><OFoldFeature locale={locale}/><div dangerouslySetInnerHTML={{__html:renderPrivacy28Showcase(locale)}}/>
       {page === 'home' && <section className="phone-local-steps" aria-labelledby="phone-steps-title"><h2 id="phone-steps-title">{copy.stepsTitle}</h2><ol>{copy.steps.map(([title, text], i) => <li key={title}><span aria-hidden="true">{phoneNumber(locale, i + 1)}</span><h3>{title}</h3><p>{text}</p></li>)}</ol></section>}
       {page==='compare'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('films',locale)}}/>}
       <section id="phone-products" aria-labelledby="phone-products-title">

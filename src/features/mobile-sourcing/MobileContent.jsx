@@ -1,3 +1,5 @@
+import BearFeature from './BearFeature.jsx';
+import OFoldFeature from './OFoldFeature.jsx';
 import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import SpanishRestock from './SpanishRestock.jsx';
 import FactorySourcing from './new-accessories/FactorySourcing.jsx';
@@ -146,6 +148,8 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  {pageId!=='hub'&&<MobileCategoryLinks locale={locale} current={pageId}/>}
  {pageId==='hub'&&<nav id="categories" className="ms-range-nav" aria-label={copyFor(accessoryCopy.browse,locale)}><span className="ms-range-nav-label">{copyFor(accessoryCopy.browse,locale)}</span>{[['case-selection',ui.cases],['strap-selection',ui.straps],['film-selection',ui.film],['audio-selection',accessoryCopy.audio],['power-selection',accessoryCopy.gear]].map(([target,label])=><a href={'#'+target} key={target}>{copyFor(label,locale)} ↓</a>)}</nav>}
 
+ {pageId==='hub'&&<BearFeature locale={locale} onSelect={add}/>}
+ {pageId==='hub'&&<OFoldFeature locale={locale} selected={draft.rows.some(r=>r.id==='privacy-o-fold')} onSelect={add}/>}
  {pageId==='hub'&&<Privacy28Feature locale={locale} selected={draft.rows.some(r=>r.id==='privacy28-hd')} onSelect={add}/>}
  {pageId==='hub'&&<ShenzhenSourcing locale={locale}/>}
  {pageId==='hub'&&<AccessoryShowcase locale={locale} draft={draft} onSelect={add}/>}

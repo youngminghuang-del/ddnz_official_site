@@ -77,7 +77,7 @@
 
 /* Product entry composition; comparison and guide pages retain their own layouts. */
 .phone-film .hero.catalogue-hero,.phone-film .phone-local-hero.catalogue-hero{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:40px;align-items:center}
-.phone-film .catalogue-hero .catalogue-hero-stage>img{aspect-ratio:auto;background:transparent}
+.phone-film .catalogue-hero .catalogue-hero-stage>img{aspect-ratio:auto;background:transparent;object-fit:contain}
 .phone-film .catalogue-hero .catalogue-hero-tiles img{aspect-ratio:auto;object-fit:contain;border-radius:0;background:#faf9fb}
 .phone-film .catalogue-hero .catalogue-hero-rail-title{margin:0 0 12px;line-height:1.5}
 .phone-film .phone-new28,.phone-film [id^="film-product-"],.phone-film .phone-local-product[id],.ms-straps .ms-product[id]{scroll-margin-block-start:120px}

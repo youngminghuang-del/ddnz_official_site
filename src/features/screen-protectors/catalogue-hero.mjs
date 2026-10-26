@@ -1,3 +1,5 @@
+import {bearProducts,bearCopy} from '../mobile-sourcing/bear-glass.mjs';
+import {privacyOFold} from '../mobile-sourcing/privacy-o-fold.mjs';
 import { privacyCopy } from '../mobile-sourcing/privacy28.mjs';
 import { localizedProduct, localizedPhonePath } from './localization.mjs';
 import { EN } from './locales/en.mjs';
@@ -9,12 +11,12 @@ export function filmHeroConfig(locale = 'en') {
   const compare = lang === 'en' ? '/screen-protectors/compare/' : localizedPhonePath(lang, 'compare');
   const target = id => compare + (lang === 'en' ? '#film-product-' : '#phone-product-') + id;
   return {
-    src: '/images/product-showcase/mobile/privacy28-product.jpg',
-    alt: privacyCopy[lang][1],
+    src: bearProducts[0].image,
+    alt: bearProducts[0].name[lang],
     language: lang,
     items: [
-      { src: '/images/product-showcase/mobile/privacy28-packaging.jpg', label: privacyCopy[lang][1], href: '#privacy28-new' },
-      { src: '/screen-protector-media/assets/001-pack-ddnz.webp', label: name('001'), href: target('001') },
+      {src:bearProducts[1].image,label:bearCopy[lang][14],href:'#bear-glass'},
+      { src: privacyOFold.image, label: privacyOFold.name[lang], href: '#privacy-o-fold' },
       { src: '/screen-protector-media/assets/titan-kit.jpg', label: name('titan-hd'), href: target('titan-hd') },
     ],
   };

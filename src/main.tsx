@@ -1,3 +1,4 @@
+import './features/mobile-sourcing/bear-glass.css';
 import './features/product-positioning/product-supply.css';
 import './features/company-identity/about.css';
 import './features/company-identity/company-identity.css';
@@ -18,3 +19,5 @@ createRoot(document.getElementById('root')!).render(
 );
 
 import './components/catalogue-hero/catalogue-hero.css';
+
+import './features/mobile-sourcing/privacy-o-fold.css';
