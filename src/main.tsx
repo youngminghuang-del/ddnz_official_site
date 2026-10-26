@@ -1,3 +1,4 @@
+import './features/refrigeration/catalogue.css';
 import './features/article-reading/article-reading.css';
 import './features/article-reading/worksheet.css';
 import './features/mobile-sourcing/bear-glass.css';

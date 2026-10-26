@@ -1,3 +1,4 @@
+import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
 import type { BlogPost } from '../src/types/content';
 import { normalizeQuoteHtml } from '../src/lib/quoteLinkPolicy.mjs';
 import ArticleReadingContent from '../src/features/article-reading/ArticleReadingContent';
@@ -1848,6 +1849,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', `${links}</main>`);
   }
   if (lang === 'en' && relPath === 'refrigeration-equipment') {
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + '</main>');
     const production = `<section id="refrigeration-evidence" class="mt-10"><h2>From the production line to the packing floor.</h2><p>Watch a short clip from an ice-maker production line.</p><figure><video controls playsinline preload="none" poster="/images/product-showcase/refrigeration/ice-maker-line-source.webp" aria-label="Ice maker production line video" style="width:100%;max-height:500px;background:#132943"><source src="/media/process/kitchen-production.mp4" type="video/mp4"><a href="/media/process/kitchen-production.mp4">Open the production video</a></video><figcaption>Ice maker production line · 9-second video</figcaption></figure><h3>Choosing a cabinet</h3><p>Confirm the selected model, cooling performance, service access and transport packaging with your quotation.</p></section>`;
     staticBody = staticBody.replace('</main>', production + '</main>');
     staticBody = staticBody.replace('</main>', renderRefrigerationEntry() + '</main>');
