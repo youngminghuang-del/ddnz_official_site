@@ -16,7 +16,7 @@
     "ru": "До организации перевозки проверьте отдельные компоненты, размеры и вес упаковок, защиту поверхностей и способы обработки.",
     "fr": "Vérifiez les composants séparés, les dimensions et poids emballés, la protection des surfaces et la manutention avant d’organiser le transport.",
     "es": "Antes de organizar el transporte, revise los componentes separados, las dimensiones y pesos embalados, la protección de superficies y la manipulación.",
-    "pt": "Antes de organizar o transporte, reveja os componentes separados, as dimensões e pesos embalados, a proteção das superfícies e o manuseamento.",
+    "pt": "Antes de organizar o transporte, reveja os componentes separados, as dimensões e pesos embalados, a proteção das superfícies e o manuseio.",
     "tr": "Taşımayı düzenlemeden önce ayrı parçaları, ambalajlı ölçü ve ağırlıkları, yüzey korumasını ve elleçlemeyi gözden geçirin."
   },
   "images": [
@@ -78,7 +78,7 @@
         "ru": "Зафиксируйте общие размеры до планирования разборки.",
         "fr": "Relevez les dimensions hors tout avant de planifier le démontage.",
         "es": "Registre las dimensiones totales antes de planificar el desmontaje.",
-        "pt": "Registe as dimensões totais antes de planear a desmontagem.",
+        "pt": "Registe as dimensões totais antes de planejar a desmontagem.",
         "tr": "Sökümü planlamadan önce genel ölçüleri kaydedin."
       },
       "alt": {
@@ -154,7 +154,7 @@
         "ru": "Перед обработкой подтвердите защиту поверхностей и углов.",
         "fr": "Confirmez la protection des surfaces et des angles avant la manutention.",
         "es": "Confirme la protección de superficies y esquinas antes de manipular.",
-        "pt": "Confirme a proteção das superfícies e dos cantos antes do manuseamento.",
+        "pt": "Confirme a proteção das superfícies e dos cantos antes do manuseio.",
         "tr": "Elleçlemeden önce yüzey ve köşe korumasını teyit edin."
       },
       "alt": {

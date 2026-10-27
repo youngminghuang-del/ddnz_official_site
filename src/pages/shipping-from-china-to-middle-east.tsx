@@ -1,3 +1,4 @@
+import {reviewedMiddleEastFaqs} from '../features/freight/reviewedMiddleEastFaqs';
 import {reviewedMiddleEastIntro,reviewedMiddleEastLabel} from '../features/freight/reviewedMiddleEastCopy';
 import {freightPageInfo} from '../features/freight/freightPageSchema';
 import freightClaimCopy from '../features/freight/freightClaimCopy.json';
@@ -638,7 +639,7 @@ const MATRIX_ROWS = [
     solutions: {
       en: "KUCAS / TIR Audit Assistance, British Standard Packing Support",
       zh: "科威特 KUCAS / TIR 认证商检协助、英标外箱整改",
-      ru: "Сопровождение KUCAS / TIR, Подготовка英标упаковок",
+      ru: "Проверка документов KUCAS/TABEK и требований к упаковке",
       fr: "Assistance KUCAS / TIR, Contrôle normes britanniques"
     }
   }
@@ -1306,6 +1307,7 @@ export default function MiddleEastRoute() {
   };
 
   const getFaqs = () => {
+    const reviewed=reviewedMiddleEastFaqs(selectedCountry,activeLang);if(reviewed)return reviewed;
     const countryData = COUNTRY_CONTENT[selectedCountry];
     if (!countryData) return [];
     const langData = countryData[activeLang] || countryData['en'];

@@ -1,0 +1,164 @@
+{
+  "Saudi-Arabia": {
+    "specTitle": "Arabie saoudite : documents produit et expédition SABER",
+    "specSub": "Faites confirmer par l’importateur les procédures SABER applicables au code SH, au produit et à la réglementation en vigueur.",
+    "tab1Title": "Certificat produit (PC)",
+    "tab1Header": "SABER PC : documents du produit",
+    "tab1Desc": "Confirmez avec l’importateur ou un organisme qualifié les rapports, la validité et les documents nécessaires pour le produit concerné.",
+    "tab2Title": "Certificat d’expédition (SC)",
+    "tab2Header": "SABER SC : documents de l’expédition",
+    "tab2Desc": "Vérifiez la cohérence entre facture, liste de colisage et documents de conformité applicables avant réservation.",
+    "redlinesTitle": "Cinq vérifications avant un envoi en Arabie saoudite",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Documents d’expédition SABER",
+        "desc": "Faites préciser les documents PC, SC ou autres qui s’appliquent au produit et leur calendrier de préparation."
+      },
+      {
+        "id": "②",
+        "title": "Origine et marquage du produit",
+        "desc": "Confirmez les exigences de marquage et d’emballage selon le produit, puis rapprochez-les des documents commerciaux."
+      },
+      {
+        "id": "③",
+        "title": "Informations et notices en arabe",
+        "desc": "Demandez à l’importateur si le produit nécessite des étiquettes, avertissements ou notices en arabe ou bilingues."
+      },
+      {
+        "id": "④",
+        "title": "Produits relevant de la SFDA",
+        "desc": "Pour les produits concernés, faites confirmer l’admissibilité et les documents nécessaires avant réservation."
+      },
+      {
+        "id": "⑤",
+        "title": "Exigences SASO et efficacité énergétique",
+        "desc": "Vérifiez avec l’importateur les exigences applicables au code SH et aux caractéristiques du produit."
+      }
+    ],
+    "guideTitle": "Préparer une expédition vers l’Arabie saoudite",
+    "guideSub": "Clarifiez les documents, l’emballage et les responsabilités de livraison avant réservation.",
+    "guideCards": [
+      {
+        "title": "Réservation et documents",
+        "desc": "Rapprochez connaissement, facture, liste de colisage, coordonnées de l’importateur et documents SABER applicables."
+      },
+      {
+        "title": "Origine et emballages en bois",
+        "desc": "Confirmez les informations d’origine et les exigences applicables aux emballages en bois avec l’importateur et le transporteur."
+      },
+      {
+        "title": "Calendrier et état du chargement",
+        "desc": "Utilisez l’horaire du transporteur réservé. Conservez les photos du chargement et du scellé ; prévoyez une marge pour les formalités et la livraison pendant les fêtes et les périodes de pointe."
+      }
+    ]
+  },
+  "UAE": {
+    "specTitle": "EAU : préparation des cargaisons spéciales et de la livraison",
+    "specSub": "Pour Dubaï ou Jebel Ali, faites examiner les caractéristiques du produit, les batteries éventuelles et le point de réception avant de choisir le service.",
+    "tab1Title": "Charges lourdes et projets",
+    "tab1Header": "Évaluer l’équipement de transport adapté",
+    "tab1Desc": "Communiquez dimensions, poids, points de levage et contraintes de manutention. L’usage d’un conteneur flat rack ou open top dépend de la validation du transporteur.",
+    "tab2Title": "Zone franche de Jebel Ali (JAFZA)",
+    "tab2Header": "Confirmer la remise en zone franche",
+    "tab2Desc": "Précisez le destinataire, l’entrepôt et les opérations demandées. Faites confirmer les procédures et le traitement fiscal applicables ; l’adresse en zone franche ne garantit pas une exonération.",
+    "redlinesTitle": "Cinq vérifications avant un envoi aux EAU",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Origine et marquage du produit",
+        "desc": "Confirmez marquage, origine et documents selon le produit et l’importateur, puis vérifiez leur cohérence."
+      },
+      {
+        "id": "②",
+        "title": "Batteries et marchandises dangereuses",
+        "desc": "Faites examiner les batteries et autres marchandises soumises à restrictions par le transporteur avant réservation. Les rapports et documents dépendent de la cargaison."
+      },
+      {
+        "id": "③",
+        "title": "Poids et transport routier final",
+        "desc": "Validez le véhicule, l’itinéraire et les conditions de déchargement pour la charge et l’adresse concernées."
+      },
+      {
+        "id": "④",
+        "title": "Réception dans les entrepôts e-commerce",
+        "desc": "Confirmez directement les consignes de palettes, d’étiquetage, de cartons et de rendez-vous de l’entrepôt destinataire."
+      },
+      {
+        "id": "⑤",
+        "title": "Code SH et cohérence déclarative",
+        "desc": "Rapprochez facture, liste de colisage, code SH et description du fret. Faites examiner les produits de marque ou réglementés avant expédition."
+      }
+    ],
+    "guideTitle": "Préparer la remise et la livraison aux EAU",
+    "guideSub": "Confirmez les opérations locales et les responsabilités pour chaque expédition.",
+    "guideCards": [
+      {
+        "title": "Documents de dédouanement et bon de livraison",
+        "desc": "Vérifiez le destinataire sur le bon de livraison (D/O) et le périmètre de dédouanement convenu. Le délai dépend du fret, des documents et de la procédure applicable."
+      },
+      {
+        "title": "Emballage et arrimage des cargaisons spéciales",
+        "desc": "Faites valider les documents, l’arrimage et le plan de chargement par le transporteur pour les batteries, charges hors gabarit ou autres cargaisons particulières."
+      },
+      {
+        "title": "Livraison locale et calendrier",
+        "desc": "Utilisez l’horaire du transporteur réservé et prévoyez une marge pour les opérations à destination, les grands salons, le Ramadan et les jours fériés."
+      }
+    ]
+  },
+  "Kuwait": {
+    "specTitle": "Koweït : documents KUCAS/TABEK et préparation de l’envoi",
+    "specSub": "Faites confirmer par l’importateur les procédures applicables au code SH, au produit et aux règles KUCAS/TABEK en vigueur.",
+    "tab1Title": "Évaluation technique (TER)",
+    "tab1Header": "Confirmer les documents d’évaluation du produit",
+    "tab1Desc": "Demandez à l’importateur quels certificats et justificatifs sont requis, ainsi que leur portée et leur validité pour le produit.",
+    "tab2Title": "Inspection technique (TIR)",
+    "tab2Header": "Rapport d’inspection et demande de mainlevée",
+    "tab2Desc": "Si une procédure TIR s’applique, faites confirmer les informations de déclaration, les documents produit et les étapes à accomplir avant l’expédition.",
+    "redlinesTitle": "Cinq vérifications avant un envoi au Koweït",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Statut réglementaire du produit",
+        "desc": "Vérifiez avec l’importateur les certificats, évaluations ou inspections requis pour le code SH et le produit."
+      },
+      {
+        "id": "②",
+        "title": "Cohérence des documents",
+        "desc": "Rapprochez facture, liste de colisage, connaissement, informations produit, importateur et documents de conformité applicables."
+      },
+      {
+        "id": "③",
+        "title": "Étiquettes, notices et caractéristiques techniques",
+        "desc": "Faites confirmer les exigences de langue, prise, tension, étiquetage énergétique ou notice pour chaque produit concerné."
+      },
+      {
+        "id": "④",
+        "title": "Origine et marchandises soumises à restrictions",
+        "desc": "Confirmez l’origine, les autorisations éventuelles et l’acceptation du transporteur avant réservation. Ne présumez pas qu’un produit est admissible."
+      },
+      {
+        "id": "⑤",
+        "title": "Emballage, poids et opérations à destination",
+        "desc": "Vérifiez les emballages en bois, le poids du conteneur, les cargaisons particulières et les contraintes de transport intérieur."
+      }
+    ],
+    "guideTitle": "Préparer une expédition vers le Koweït",
+    "guideSub": "Vérifiez documents, acceptation du fret et opérations à destination avant de confirmer le service.",
+    "guideCards": [
+      {
+        "title": "Avant réservation : produit et périmètre",
+        "desc": "Confirmez importateur, procédure déclarative, responsabilités fiscales, dédouanement et livraison. Faites valider les marchandises soumises à restrictions par le transporteur."
+      },
+      {
+        "title": "Avant départ : documents et emballage",
+        "desc": "Vérifiez avec l’importateur le destinataire, les documents commerciaux et les justificatifs requis. Adaptez l’emballage aux exigences de destination et du transporteur."
+      },
+      {
+        "title": "En transit et à l’arrivée",
+        "desc": "Utilisez l’itinéraire confirmé pour cette expédition, avec une marge pour les inspections, les fêtes et la livraison locale. Conservez les photos, scellés et relevés d’emballage pour suivre l’état du fret."
+      }
+    ]
+  }
+}

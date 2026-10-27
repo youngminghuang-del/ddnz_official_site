@@ -842,12 +842,12 @@
     },
     "pt": {
       "title": "Envios da China para o Catar | Consolidação de fornecedores | DDNZ",
-      "desc": "Coordene entregas de fornecedores na China, prepare uma lista clara de consolidação e analise o âmbito completo do transporte e da entrega no Catar.",
+      "desc": "Coordene entregas de fornecedores na China, prepare uma lista clara de consolidação e analise o escopo completo do transporte e da entrega no Catar.",
       "heading": "Envios da China para o Catar, reunindo os pedidos dos seus fornecedores",
-      "intro": "Antes de a mercadoria sair da China, coordene com a DDNZ as entregas dos fornecedores, as verificações na receção e a consolidação. Reúna a lista de fornecedores e o endereço de entrega no Catar num único pedido para avaliar em conjunto a carga, as opções de transporte e os custos de entrega.",
+      "intro": "Antes de a mercadoria sair da China, coordene com a DDNZ as entregas dos fornecedores, as verificações na recebimento e a consolidação. Reúna a lista de fornecedores e o endereço de entrega no Catar num único pedido para avaliar em conjunto a carga, as opções de transporte e os custos de entrega.",
       "buttons": [
         "Pedir uma cotação de envio para o Catar",
-        "Ainda está a comprar? Planeie o envio"
+        "Ainda está a comprar? Planeje o envio"
       ],
       "sections": [
         {
@@ -855,7 +855,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "Para bonés, acessórios ou outras mercadorias comerciais compradas a vários fornecedores, uma lista comum associa cada entrega ao respetivo pedido. Confirme as instruções de receção antes do envio e registe o que chegou e o que continua pendente."
+              "text": "Para bonés, acessórios ou outras mercadorias comerciais compradas a vários fornecedores, uma lista comum associa cada entrega ao respetivo pedido. Confirme as instruções de recebimento antes do envio e registe o que chegou e o que continua pendente."
             },
             {
               "type": "table",
@@ -893,7 +893,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "Comece pelo número de volumes, marcações das caixas e estado visível da embalagem. Acrescente abertura, contagem de artigos, verificações de produtos ou fotografias conforme necessário e confirme o âmbito e os custos antes da receção."
+              "text": "Comece pelo número de volumes, marcações das caixas e estado visível da embalagem. Acrescente abertura, contagem de artigos, verificações de produtos ou fotografias conforme necessário e confirme o escopo e os custos antes da recebimento."
             }
           ]
         },
@@ -902,7 +902,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "A consolidação integra os volumes dos fornecedores num plano de envio acordado; o LCL partilha espaço de contentor com outras cargas. As duas soluções podem combinar-se. Após qualquer reembalagem, reveja dimensões finais, pesos brutos e restrições de empilhamento para comparar o transporte com base na carga real."
+              "text": "A consolidação integra os volumes dos fornecedores num plano de envio acordado; o LCL compartilha espaço de contêiner com outras cargas. As duas soluções podem combinar-se. Após qualquer reembalagem, reveja dimensões finais, pesos brutos e restrições de empilhamento para comparar o transporte com base na carga real."
             }
           ]
         },
@@ -919,20 +919,20 @@
             },
             {
               "type": "text",
-              "text": "O porto de Hamad movimenta contentores e carga geral. Para uma cotação marítima, indique separadamente o ponto de chegada e o endereço final de receção, depois confirme o transporte subsequente. [Mwani Qatar: porto de Hamad](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
+              "text": "O porto de Hamad movimenta contêineres e carga geral. Para uma cotação marítima, indique separadamente o ponto de chegada e o endereço final de recebimento, depois confirme o transporte subsequente. [Mwani Qatar: porto de Hamad](https://www.mwani.com.qa/English/Ports/HamadPort/Pages/default.aspx)"
             }
           ]
         },
         {
-          "heading": "Compare cotações com o mesmo âmbito de entrega",
+          "heading": "Compare cotações com o mesmo escopo de entrega",
           "blocks": [
             {
               "type": "text",
-              "text": "Analise em conjunto a recolha nos fornecedores, receção, armazenamento, inspeção ou reembalagem, operações de exportação, transporte internacional, operações no destino, desalfandegamento, direitos e impostos, entrega final e seguro. A cotação deve identificar o que está incluído, excluído ou por confirmar, com o responsável por cada item."
+              "text": "Analise em conjunto a coleta nos fornecedores, recebimento, armazenamento, inspeção ou reembalagem, operações de exportação, transporte internacional, operações no destino, desalfandegamento, direitos e impostos, entrega final e seguro. A cotação deve identificar o que está incluído, excluído ou por confirmar, com o responsável por cada item."
             },
             {
               "type": "text",
-              "text": "A DDNZ coordena a passagem acordada das operações de compra e exportação. A Heaven Born trata da reserva, carregamento e transporte internacional dentro do âmbito confirmado."
+              "text": "A DDNZ coordena a passagem acordada das operações de compra e exportação. A Heaven Born trata da reserva, carregamento e transporte internacional dentro do escopo confirmado."
             }
           ]
         },
@@ -941,11 +941,11 @@
           "blocks": [
             {
               "type": "text",
-              "text": "**É possível reunir mercadorias de vários fornecedores 1688 num único envio?**\nComece pela localização, data de disponibilidade e dados de embalagem de cada fornecedor. Confirme o endereço de receção, marcações das caixas e serviços de verificação ou reembalagem, depois decida que mercadorias seguem juntas."
+              "text": "**É possível reunir mercadorias de vários fornecedores 1688 num único envio?**\nComece pela localização, data de disponibilidade e dados de embalagem de cada fornecedor. Confirme o endereço de recebimento, marcações das caixas e serviços de verificação ou reembalagem, depois decida que mercadorias seguem juntas."
             },
             {
               "type": "text",
-              "text": "**A verificação na receção abrange todos os artigos dentro das caixas?**\nEscolha o nível de inspeção necessário. A contagem de volumes e a verificação de etiquetas fazem parte da receção; a abertura das caixas, a contagem de artigos e os testes de produtos devem ser definidos separadamente."
+              "text": "**A verificação na recebimento abrange todos os artigos dentro das caixas?**\nEscolha o nível de inspeção necessário. A contagem de volumes e a verificação de etiquetas fazem parte da recebimento; a abertura das caixas, a contagem de artigos e os testes de produtos devem ser definidos separadamente."
             },
             {
               "type": "text",
@@ -962,7 +962,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "Indique a cidade de entrega no Catar, mercadorias, número de fornecedores, fase da compra, data de disponibilidade e meio de contacto. Acrescente número de volumes, dimensões e pesos brutos quando disponíveis; assinale os dados pendentes do fornecedor."
+              "text": "Indique a cidade de entrega no Catar, mercadorias, número de fornecedores, fase da compra, data de disponibilidade e meio de contato. Acrescente número de volumes, dimensões e pesos brutos quando disponíveis; assinale os dados pendentes do fornecedor."
             },
             {
               "type": "text",
@@ -970,7 +970,7 @@
             },
             {
               "type": "text",
-              "text": "[Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Transporte marítimo da China](/pt/services/sea-freight/) · [Rotas para o Médio Oriente](/pt/shipping-from-china-to-middle-east/)"
+              "text": "[Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Transporte marítimo da China](/pt/services/sea-freight/) · [Rotas para o Oriente Médio](/pt/shipping-from-china-to-middle-east/)"
             },
             {
               "type": "text",
@@ -2014,10 +2014,10 @@
       "title": "Envios da China para Omã | Carga comercial volumosa | DDNZ",
       "desc": "Prepare a carga comercial volumosa para Omã com dimensões por volume, opções de transporte e um plano de entrega que considere o acesso e a descarga.",
       "heading": "Envios da China para Omã, da embalagem ao plano de entrega",
-      "intro": "Planeie envios comerciais volumosos com a DDNZ tendo em conta as dimensões embaladas, as necessidades de manuseamento e o local de receção. Inclua os dados de embalagem do fornecedor na análise do transporte para considerar em conjunto o carregamento na China e a descarga em Omã.",
+      "intro": "Planeje envios comerciais volumosos com a DDNZ tendo em conta as dimensões embaladas, as necessidades de manuseio e o local de recebimento. Inclua os dados de embalagem do fornecedor na análise do transporte para considerar em conjunto o carregamento na China e a descarga em Omã.",
       "buttons": [
         "Pedir uma cotação de envio para Omã",
-        "Embalagem em curso? Planeie o envio"
+        "Embalagem em curso? Planeje o envio"
       ],
       "sections": [
         {
@@ -2025,7 +2025,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "**Cenário de planeamento: seis mesas de bilhar e acessórios de Guangzhou.** Comece pela lista de volumes do fornecedor. Registe como as mesas e acessórios são embalados, se os componentes seguem separados e as instruções de manuseamento de cada unidade."
+              "text": "**Cenário de planejamento: seis mesas de bilhar e acessórios de Guangzhou.** Comece pela lista de volumes do fornecedor. Registe como as mesas e acessórios são embalados, se os componentes seguem separados e as instruções de manuseio de cada unidade."
             },
             {
               "type": "table",
@@ -2047,14 +2047,14 @@
                   "Mantêm o plano alinhado com a embalagem"
                 ],
                 [
-                  "Instruções de manuseamento e fotografias da embalagem",
+                  "Instruções de manuseio e fotografias da embalagem",
                   "Identificam pontos de apoio e proteções necessárias"
                 ]
               ]
             },
             {
               "type": "text",
-              "text": "Use as medidas finais da embalagem, incluindo a caixa ou palete. Antes da reserva, confirme com o fornecedor os componentes frágeis e o manuseamento seguro."
+              "text": "Use as medidas finais da embalagem, incluindo a caixa ou palete. Antes da reserva, confirme com o fornecedor os componentes frágeis e o manuseio seguro."
             }
           ]
         },
@@ -2063,7 +2063,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "O LCL partilha espaço de contentor; o FCL utiliza um contentor exclusivo. Compare-os com base na lista de volumes, restrições de empilhamento, necessidades de manuseamento e custo total de entrega. O volume total é útil, mas a maior embalagem pode determinar o equipamento e a disposição de carga viáveis."
+              "text": "O LCL compartilha espaço de contêiner; o FCL utiliza um contêiner exclusivo. Compare-os com base na lista de volumes, restrições de empilhamento, necessidades de manuseio e custo total de entrega. O volume total é útil, mas a maior embalagem pode determinar o equipamento e a disposição de carga viáveis."
             },
             {
               "type": "text",
@@ -2076,7 +2076,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "A SOHAR apresenta instalações para contentores e carga geral. Ao avaliar a rota, considere o ponto de chegada proposto em conjunto com a cidade e o local de receção final. [Instalações do porto SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
+              "text": "A SOHAR apresenta instalações para contêineres e carga geral. Ao avaliar a rota, considere o ponto de chegada proposto em conjunto com a cidade e o local de recebimento final. [Instalações do porto SOHAR](https://soharportandfreezone.om/stevedoring-services/)"
             },
             {
               "type": "text",
@@ -2093,24 +2093,24 @@
           "blocks": [
             {
               "type": "text",
-              "text": "Compare recolha e embalagem na China, operações de exportação, frete, operações no destino, desalfandegamento, direitos e impostos aplicáveis, transporte até ao local, descarga e seguro. Identifique cada item incluído ou excluído, o responsável e a forma de cobrança de eventuais esperas ou armazenamento."
+              "text": "Compare coleta e embalagem na China, operações de exportação, frete, operações no destino, desalfandegamento, direitos e impostos aplicáveis, transporte até ao local, descarga e seguro. Identifique cada item incluído ou excluído, o responsável e a forma de cobrança de eventuais esperas ou armazenamento."
             },
             {
               "type": "text",
-              "text": "A DDNZ coordena a passagem acordada do produto e das operações de exportação. O papel da Heaven Born na reserva, carregamento e transporte internacional segue o âmbito confirmado."
+              "text": "A DDNZ coordena a passagem acordada do produto e das operações de exportação. O papel da Heaven Born na reserva, carregamento e transporte internacional segue o escopo confirmado."
             }
           ]
         },
         {
-          "heading": "Prepare o local de receção antes da expedição",
+          "heading": "Prepare o local de recebimento antes da expedição",
           "blocks": [
             {
               "type": "text",
-              "text": "Indique se o camião consegue chegar ao ponto de descarga, os equipamentos disponíveis e quem recebe a mercadoria. Se for necessário levá-la para o interior, inclua a largura das portas, o piso e as restrições de acesso."
+              "text": "Indique se o caminhão consegue chegar ao ponto de descarga, os equipamentos disponíveis e quem recebe a mercadoria. Se for necessário levá-la para o interior, inclua a largura das portas, o piso e as restrições de acesso."
             },
             {
               "type": "text",
-              "text": "Acorde separadamente a descarga, a movimentação no edifício, a desembalagem e a instalação. Assim, a equipa de receção terá um plano claro após a chegada do veículo."
+              "text": "Acorde separadamente a descarga, a movimentação no edifício, a desembalagem e a instalação. Assim, a equipa de recebimento terá um plano claro após a chegada do veículo."
             }
           ]
         },
@@ -2119,7 +2119,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "**Cabem seis mesas de bilhar num contentor?**\nA resposta depende da lista final de volumes e das restrições de carregamento. Confirme o número de unidades embaladas, as dimensões exteriores e a possibilidade de empilhamento."
+              "text": "**Cabem seis mesas de bilhar num contêiner?**\nA resposta depende da lista final de volumes e das restrições de carregamento. Confirme o número de unidades embaladas, as dimensões exteriores e a possibilidade de empilhamento."
             },
             {
               "type": "text",
@@ -2127,7 +2127,7 @@
             },
             {
               "type": "text",
-              "text": "**O que devo verificar sobre o seguro e os registos de danos?**\nComunique o valor da carga e reveja a cobertura, exclusões, franquia e processo de reclamação antes da expedição. Guarde fotografias da embalagem e registos do seu estado para permitir a avaliação de danos comunicados."
+              "text": "**O que devo verificar sobre o seguro e os registros de danos?**\nComunique o valor da carga e reveja a cobertura, exclusões, franquia e processo de reclamação antes da expedição. Guarde fotografias da embalagem e registros do seu estado para permitir a avaliação de danos comunicados."
             },
             {
               "type": "text",
@@ -2140,7 +2140,7 @@
           "blocks": [
             {
               "type": "text",
-              "text": "Inclua mercadorias e quantidades, localização do fornecedor, dimensões e pesos brutos dos volumes, data de disponibilidade, cidade de receção e acesso ao local. Indique o estado do importador e dos documentos, e se pretende avaliar recolha no porto ou entrega."
+              "text": "Inclua mercadorias e quantidades, localização do fornecedor, dimensões e pesos brutos dos volumes, data de disponibilidade, cidade de recebimento e acesso ao local. Indique o estado do importador e dos documentos, e se pretende avaliar coleta no porto ou entrega."
             },
             {
               "type": "text",
@@ -2148,7 +2148,7 @@
             },
             {
               "type": "text",
-              "text": "[Transporte marítimo da China](/pt/services/sea-freight/) · [Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Rotas para o Médio Oriente](/pt/shipping-from-china-to-middle-east/)"
+              "text": "[Transporte marítimo da China](/pt/services/sea-freight/) · [Conhecer o transporte LCL](/pt/services/lcl-shipping-from-china/) · [Rotas para o Oriente Médio](/pt/shipping-from-china-to-middle-east/)"
             },
             {
               "type": "text",

@@ -288,7 +288,9 @@ export function RegionalFreightMap({ region, locale = 'en', title, description }
   const network = regionalNetwork[region];
   const nodes = [...worldNodes, ...additionalRegionNodes].filter(node => network.nodes.includes(node.id)).map(node => node.id === 'south-china'
     ? { ...node, label: 'Shenzhen', code: 'SOUTH CHINA', labelDx: 20, labelDy: 34 }
-    : node);
+    : {...node});
+  const originCodes: Record<Language,string[]> = {en:['SOUTH CHINA','EAST CHINA','NORTH CHINA'],zh:['华南','华东','华北'],es:['SUR DE CHINA','ESTE DE CHINA','NORTE DE CHINA'],pt:['SUL DA CHINA','LESTE DA CHINA','NORTE DA CHINA'],fr:['SUD DE LA CHINE','EST DE LA CHINE','NORD DE LA CHINE'],ru:['ЮГ КИТАЯ','ВОСТОК КИТАЯ','СЕВЕР КИТАЯ'],ar:['جنوب الصين','شرق الصين','شمال الصين'],tr:['GÜNEY ÇİN','DOĞU ÇİN','KUZEY ÇİN']};
+  for (const node of nodes) { const index=['south-china','ningbo','qingdao'].indexOf(node.id); if(index>=0)node.code=originCodes[locale][index]; }
   const clipId = `regional-${region}-clip`;
   const projection = regionalProjections[region];
   return <figure className="freight-regional-map" aria-label={title || network.title}>

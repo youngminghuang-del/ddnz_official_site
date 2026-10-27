@@ -1,10 +1,66 @@
 {
-"en":["Confirm for the proposed route","Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately.","Confirm DDP availability, importer responsibilities, duties, taxes and exclusions in writing before booking.","Sea freight · delivery scope to confirm","Air freight · delivery scope to confirm","Delivery scope to confirm"],
-"zh":["按具体行程确认","按明确的起运地、目的地及当次班期确认运输时间；提货、清关衔接和末段配送另行约定。","订舱前书面确认 DDP 是否适用、进口方责任、税费及除外项目。","海运 · 交付范围待确认","空运 · 交付范围待确认","交付范围待确认"],
-"es":["Confirmar según el itinerario","Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado.","Confirme por escrito la viabilidad de DDP, responsabilidades del importador, derechos, impuestos y exclusiones antes de reservar.","Marítimo · alcance de entrega por confirmar","Aéreo · alcance de entrega por confirmar","Alcance de entrega por confirmar"],
-"pt":["Confirmar para o itinerário proposto","Confirme o prazo para a origem, destino e partida previstos. Acorde recolha, procedimentos aduaneiros e entrega final separadamente.","Confirme por escrito a viabilidade de DDP, responsabilidades do importador, direitos, impostos e exclusões antes da reserva.","Marítimo · âmbito de entrega a confirmar","Aéreo · âmbito de entrega a confirmar","Âmbito de entrega a confirmar"],
-"fr":["À confirmer pour l’itinéraire proposé","Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale.","Confirmez par écrit la faisabilité du DDP, les responsabilités de l’importateur, droits, taxes et exclusions avant réservation.","Maritime · périmètre de livraison à confirmer","Aérien · périmètre de livraison à confirmer","Périmètre de livraison à confirmer"],
-"ru":["Уточнить для выбранного маршрута","Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса.","До бронирования письменно подтвердите возможность DDP, обязанности импортёра, пошлины, налоги и исключения.","Море · условия доставки уточняются","Авиа · условия доставки уточняются","Условия доставки уточняются"],
-"ar":["يُؤكد حسب المسار المقترح","أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل.","أكد كتابياً إمكانية DDP ومسؤوليات المستورد والرسوم والضرائب والاستثناءات قبل الحجز.","بحري · نطاق التسليم يحتاج تأكيداً","جوي · نطاق التسليم يحتاج تأكيداً","نطاق التسليم يحتاج تأكيداً"],
-"tr":["Önerilen güzergâha göre doğrulanır","Süreyi belirli çıkış noktası, varış noktası ve sefer için doğrulayın. Toplama, gümrük işlemleri ve son teslimatı ayrı kararlaştırın.","Rezervasyondan önce DDP uygunluğunu, ithalatçı sorumluluklarını, vergi ve harçları ve istisnaları yazılı doğrulayın.","Deniz · teslim kapsamı doğrulanmalı","Hava · teslim kapsamı doğrulanmalı","Teslim kapsamı doğrulanmalı"]
+  "en": [
+    "Confirm for the proposed route",
+    "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately.",
+    "Confirm DDP availability, importer responsibilities, duties, taxes and exclusions in writing before booking.",
+    "Sea freight · delivery scope to confirm",
+    "Air freight · delivery scope to confirm",
+    "Delivery scope to confirm"
+  ],
+  "zh": [
+    "按具体行程确认",
+    "按明确的起运地、目的地及当次班期确认运输时间；提货、清关衔接和末段配送另行约定。",
+    "订舱前书面确认 DDP 是否适用、进口方责任、税费及除外项目。",
+    "海运 · 交付范围待确认",
+    "空运 · 交付范围待确认",
+    "交付范围待确认"
+  ],
+  "es": [
+    "Confirmar según el itinerario",
+    "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado.",
+    "Confirme por escrito la viabilidad de DDP, responsabilidades del importador, derechos, impuestos y exclusiones antes de reservar.",
+    "Marítimo · alcance de entrega por confirmar",
+    "Aéreo · alcance de entrega por confirmar",
+    "Alcance de entrega por confirmar"
+  ],
+  "pt": [
+    "Confirmar para o itinerário proposto",
+    "Confirme o prazo para a origem, destino e partida previstos. Acorde coleta, procedimentos aduaneiros e entrega final separadamente.",
+    "Confirme por escrito a viabilidade de DDP, responsabilidades do importador, direitos, impostos e exclusões antes da reserva.",
+    "Marítimo · escopo de entrega a confirmar",
+    "Aéreo · escopo de entrega a confirmar",
+    "Âmbito de entrega a confirmar"
+  ],
+  "fr": [
+    "À confirmer pour l’itinéraire proposé",
+    "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale.",
+    "Confirmez par écrit la faisabilité du DDP, les responsabilités de l’importateur, droits, taxes et exclusions avant réservation.",
+    "Maritime · périmètre de livraison à confirmer",
+    "Aérien · périmètre de livraison à confirmer",
+    "Périmètre de livraison à confirmer"
+  ],
+  "ru": [
+    "Уточнить для выбранного маршрута",
+    "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса.",
+    "До бронирования письменно подтвердите возможность DDP, обязанности импортёра, пошлины, налоги и исключения.",
+    "Море · условия доставки уточняются",
+    "Авиа · условия доставки уточняются",
+    "Условия доставки уточняются"
+  ],
+  "ar": [
+    "يُؤكد حسب المسار المقترح",
+    "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل.",
+    "أكد كتابياً إمكانية DDP ومسؤوليات المستورد والرسوم والضرائب والاستثناءات قبل الحجز.",
+    "بحري · نطاق التسليم يحتاج تأكيداً",
+    "جوي · نطاق التسليم يحتاج تأكيداً",
+    "نطاق التسليم يحتاج تأكيداً"
+  ],
+  "tr": [
+    "Önerilen güzergâha göre doğrulanır",
+    "Süreyi belirli çıkış noktası, varış noktası ve sefer için doğrulayın. Toplama, gümrük işlemleri ve son teslimatı ayrı kararlaştırın.",
+    "Rezervasyondan önce DDP uygunluğunu, ithalatçı sorumluluklarını, vergi ve harçları ve istisnaları yazılı doğrulayın.",
+    "Deniz · teslim kapsamı doğrulanmalı",
+    "Hava · teslim kapsamı doğrulanmalı",
+    "Teslim kapsamı doğrulanmalı"
+  ]
 }

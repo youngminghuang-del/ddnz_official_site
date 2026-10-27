@@ -13,7 +13,7 @@ const labels: Record<string, string[]> = {
  en:['Continue planning your shipment','Related destinations','Regional overviews','Freight services','Latin America','West Africa','Middle East','Central Asia','Sea freight from China','LCL shipping from China','Back to the regional overview'],
  zh:['继续规划您的货运线路','同地区国家线路','地区货运总览','货运服务','拉丁美洲','西非','中东','中亚','中国出发海运','中国出发拼箱','返回地区总览'],
  es:['Continúe planificando su envío','Destinos relacionados','Guías regionales','Servicios de transporte','América Latina','África Occidental','Oriente Medio','Asia Central','Transporte marítimo desde China','Envíos LCL desde China','Volver a la guía regional'],
- pt:['Continue a planear o seu envio','Destinos relacionados','Guias regionais','Serviços de transporte','América Latina','África Ocidental','Médio Oriente','Ásia Central','Transporte marítimo da China','Envios LCL da China','Voltar ao guia regional'],
+ pt:["Continue a planejar o seu envio",'Destinos relacionados','Guias regionais','Serviços de transporte','América Latina','África Ocidental',"Oriente Médio",'Ásia Central','Transporte marítimo da China','Envios LCL da China','Voltar ao guia regional'],
  fr:['Poursuivez la préparation de votre expédition','Destinations associées','Guides régionaux','Services de transport','Amérique latine','Afrique de l’Ouest','Moyen-Orient','Asie centrale','Fret maritime depuis la Chine','Groupage maritime depuis la Chine','Retour au guide régional'],
  ru:['Продолжите планирование перевозки','Другие направления региона','Обзоры регионов','Грузоперевозки','Латинская Америка','Западная Африка','Ближний Восток','Центральная Азия','Морские перевозки из Китая','Сборные морские грузы из Китая','Вернуться к обзору региона'],
  ar:['تابع التخطيط لشحنتك','وجهات ذات صلة','أدلة المناطق','خدمات الشحن','أمريكا اللاتينية','غرب أفريقيا','الشرق الأوسط','آسيا الوسطى','الشحن البحري من الصين','شحن الحاويات الجزئي من الصين','العودة إلى دليل المنطقة'],
@@ -29,7 +29,7 @@ export default function FreightRelatedLinks({country,region,locale}: {country?:s
  const names = new Intl.DisplayNames([lang==='zh'?'zh-CN':lang], {type:'region'});
  const href = (slug:string)=>`${prefix}/shipping-from-china-to-${slug}/`;
  return <section id="freight-related-routes" className="freight-related-links" lang={lang==='zh'?'zh-CN':lang} dir={lang==='ar'?'rtl':'ltr'} data-related-country={country} data-related-region={region} aria-labelledby="freight-related-heading">
-  <div className="freight-related-inner"><p className="freight-related-kicker">DDNZ · FREIGHT</p><h2 id="freight-related-heading">{c[0]}</h2>
+  <div className="freight-related-inner"><p className="freight-related-kicker">DDNZ · {c[3]}</p><h2 id="freight-related-heading">{c[0]}</h2>
   {country && regions.includes(parent) && <a className="freight-related-parent" href={href(parent)}>{c[10]} · {c[4+regions.indexOf(parent)]} <span aria-hidden="true">↗</span></a>}
   <div className="freight-related-grid">
    {country && <nav aria-label={c[1]}><h3>{c[1]}</h3>{Object.entries(groups[parent]).filter(([slug])=>slug!==country).map(([slug,iso])=><a key={slug} href={href(slug)}>{names.of(iso)} <span aria-hidden="true">↗</span></a>)}</nav>}

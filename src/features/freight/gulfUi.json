@@ -217,7 +217,7 @@
   },
   "pt": {
     "breadcrumb": "Navegação estrutural",
-    "middleEastRoutes": "Rotas para o Médio Oriente",
+    "middleEastRoutes": "Rotas para o Oriente Médio",
     "nextStep": "O próximo passo",
     "destination": "Destino",
     "regionalContext": "Localização regional",
@@ -232,22 +232,22 @@
     "cm": "cm",
     "kg": "kg",
     "silentVideo": "Vídeo sem som com legendas explicativas.",
-    "chinaRecord": "Registo na China",
+    "chinaRecord": "Registro na China",
     "consolidation": "Consolidação",
     "organisePackages": "Organizar os volumes dos fornecedores",
-    "shareSpace": "Partilhar espaço no contentor",
+    "shareSpace": "Partilhar espaço no contêiner",
     "qatar": {
       "heroEyebrow": "CHINA → CATAR · ENCOMENDAS A VÁRIOS FORNECEDORES",
-      "posterAlt": "Caixas numa palete durante a receção na China",
-      "heroCaption": "Da encomenda ao fornecedor ao registo de receção",
-      "videoCaption": "Registo de receção na China.",
+      "posterAlt": "Caixas numa palete durante a recebimento na China",
+      "heroCaption": "Da pedido ao fornecedor ao registro de recebimento",
+      "videoCaption": "Registro de recebimento na China.",
       "customsAlt": "Autoridade Geral das Alfândegas do Catar"
     },
     "oman": {
       "heroEyebrow": "CHINA → OMÃ · MERCADORIAS COMERCIAIS VOLUMOSAS",
-      "posterAlt": "Caixas junto a um contentor durante o carregamento na China",
+      "posterAlt": "Caixas junto a um contêiner durante o carregamento na China",
       "heroCaption": "Da embalagem ao plano de movimentação",
-      "videoCaption": "Registo de carregamento na China.",
+      "videoCaption": "Registro de carregamento na China.",
       "customsAlt": "Cabeçalho oficial das Alfândegas de Omã"
     }
   },

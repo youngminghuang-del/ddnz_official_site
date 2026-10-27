@@ -106,5 +106,59 @@
         "desc": "Use el intervalo de tránsito de la página para planificar y añada margen por temporada alta, cambios de itinerario, inspecciones, festivos y entrega. Fotos de carga, precintos y registros de embalaje ayudan a rastrear el estado de la mercancía."
       }
     ]
+  },
+  "UAE": {
+    "specTitle": "EAU: preparación de cargas especiales y entrega",
+    "specSub": "Para Dubái o Jebel Ali, revise el producto, las baterías si las hay y el punto de recepción antes de elegir el servicio.",
+    "tab1Title": "Cargas pesadas y proyectos",
+    "tab1Header": "Evaluar el equipo de transporte adecuado",
+    "tab1Desc": "Indique dimensiones, peso, puntos de elevación y restricciones de manipulación. El uso de flat rack u open top depende de la aceptación del transportista.",
+    "tab2Title": "Zona franca de Jebel Ali (JAFZA)",
+    "tab2Header": "Confirmar la entrega en zona franca",
+    "tab2Desc": "Identifique destinatario, almacén y operaciones solicitadas. Confirme los trámites y el tratamiento fiscal aplicables; una dirección en zona franca no garantiza exención.",
+    "redlinesTitle": "Cinco revisiones antes de enviar a EAU",
+    "redlines": [
+      {
+        "id": "①",
+        "title": "Origen y marcado del producto",
+        "desc": "Confirme marcado, origen y documentos según producto e importador, y compruebe su coherencia."
+      },
+      {
+        "id": "②",
+        "title": "Baterías y mercancías peligrosas",
+        "desc": "Solicite revisión del transportista para baterías y mercancías restringidas antes de reservar. Los informes y documentos dependen de la carga."
+      },
+      {
+        "id": "③",
+        "title": "Peso y transporte terrestre final",
+        "desc": "Confirme vehículo, ruta y medios de descarga para la carga y dirección indicadas."
+      },
+      {
+        "id": "④",
+        "title": "Recepción en almacenes de comercio electrónico",
+        "desc": "Revise los requisitos del almacén receptor sobre palés, etiquetas, cajas y citas."
+      },
+      {
+        "id": "⑤",
+        "title": "Código HS y coherencia de la declaración",
+        "desc": "Concilie factura, lista de empaque, código HS y descripción. Revise productos de marca o regulados antes del envío."
+      }
+    ],
+    "guideTitle": "Preparar la retirada y entrega en EAU",
+    "guideSub": "Defina operaciones locales y responsables para cada envío.",
+    "guideCards": [
+      {
+        "title": "Documentos de despacho y orden de entrega",
+        "desc": "Compruebe el destinatario de la orden de entrega (D/O) y el alcance del despacho acordado. El plazo depende de carga, documentos y procedimiento."
+      },
+      {
+        "title": "Embalaje y sujeción de cargas especiales",
+        "desc": "Para baterías, cargas sobredimensionadas u otras cargas especiales, confirme documentos, sujeción y plan de estiba con el transportista."
+      },
+      {
+        "title": "Entrega local y calendario",
+        "desc": "Use el horario del transportista reservado y prevea margen para operaciones en destino, grandes ferias, Ramadán y festivos."
+      }
+    ]
   }
 }
