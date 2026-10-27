@@ -23,7 +23,8 @@
       "zone": "Heating-zone diameter",
       "pan": "Listed wok diameter",
       "total": "Total rated power",
-      "zones": "Cooking zones"
+      "zones": "Cooking zones",
+      "doors": "Doors"
     },
     "details": "Configuration details",
     "quote": "Request a model quotation",
@@ -43,7 +44,22 @@
       "Four cooking zones in an 800 mm-wide cabinet unit. Plan separate pots for sauces, soups or small-batch cooking.",
       "Six cooking zones in a 1100 mm-wide cabinet unit. Compare the extra cooking positions with counter space and the available electrical supply."
     ],
-    "multiNav": "Multi-zone ranges"
+    "multiNav": "Multi-zone ranges",
+    "steamHeading": "Steam cabinets. Match the batch and the space.",
+    "steamIntro": "Source commercial induction-heated steam cabinets from China. Compare single- and double-door layouts, power configurations and installation space for restaurant or catering orders.",
+    "steamNames": [
+      "Single-door induction steam cabinet",
+      "Double-door induction steam cabinet"
+    ],
+    "steamBodies": [
+      "A 650 mm-wide cabinet with one door and base controls. Start with the food, batch size and tray requirements before selecting the power option.",
+      "A 1150 mm-wide cabinet with two doors and two heating groups. Plan access to both doors and confirm the selected power of each group."
+    ],
+    "steamNav": "Steam cabinets",
+    "steamPower": "Power configurations",
+    "steamDoors": "Doors",
+    "steamCaption": "Cabinet appearance and base controls.",
+    "steamConfiguration": "Confirm tray quantity and size, food load per batch, cycle requirements, water supply, drainage and ventilation. 15 / 20 kW denotes alternative configurations; for the double-door model the catalogue lists two groups. Confirm the chosen configuration, electrical connection, packing and destination in the quotation."
   },
   "zh": {
     "heading": "电磁烹饪设备，按工位选择。",
@@ -69,7 +85,8 @@
       "zone": "加热区域直径",
       "pan": "手册配锅直径",
       "total": "额定总功率",
-      "zones": "加热工位数量"
+      "zones": "加热工位数量",
+      "doors": "柜门数量"
     },
     "details": "展开配置详情",
     "quote": "询问此型号报价",
@@ -89,7 +106,22 @@
       "800 mm宽柜体内配置四个加热工位，便于安排酱汁、汤品或小份量烹饪。按实际锅具尺寸规划同时使用的位置。",
       "1100 mm宽柜体内配置六个加热工位。结合同时烹饪需求、可用操作宽度和现场供电条件选择。"
     ],
-    "multiNav": "多头煲仔炉"
+    "multiNav": "多头煲仔炉",
+    "steamHeading": "单门还是双门，按每批用量与空间选择。",
+    "steamIntro": "从中国采购商用电磁蒸柜，为餐厅和餐饮订单比较单门、双门结构、功率配置与安装空间。",
+    "steamNames": [
+      "单门电磁蒸柜",
+      "双门电磁蒸柜"
+    ],
+    "steamBodies": [
+      "650 mm宽单门柜体，底部配置控制面板。先列明食品、每批用量和托盘需求，再选择功率配置。",
+      "1150 mm宽双门柜体，配两组加热配置。一起核对两扇门的开门空间及各组所选功率。"
+    ],
+    "steamNav": "电磁蒸柜",
+    "steamPower": "可选功率配置",
+    "steamDoors": "柜门数量",
+    "steamCaption": "蒸柜柜体与底部控制布局。",
+    "steamConfiguration": "请确认托盘数量与尺寸、每批食品装载量、周期要求、供水、排水与通风。15 / 20 kW表示备选配置，双门款手册列示两组；报价时确认所选组合、电气连接、包装与目的地。"
   },
   "es": {
     "heading": "Cocción por inducción. Tres puestos de trabajo.",
@@ -115,7 +147,8 @@
       "zone": "Diámetro de calentamiento",
       "pan": "Diámetro del wok indicado",
       "total": "Potencia nominal total",
-      "zones": "Zonas de cocción"
+      "zones": "Zonas de cocción",
+      "doors": "Puertas"
     },
     "details": "Ver configuración",
     "quote": "Solicitar cotización del modelo",
@@ -135,7 +168,22 @@
       "Cuatro zonas en un mueble de 800 mm de ancho. Planifique recipientes para salsas, sopas y pequeñas tandas.",
       "Seis zonas en un mueble de 1100 mm de ancho. Compare los puestos adicionales con el espacio y la alimentación disponibles."
     ],
-    "multiNav": "Cocinas multizona"
+    "multiNav": "Cocinas multizona",
+    "steamHeading": "Armarios de vapor. Compare carga y espacio.",
+    "steamIntro": "Compre armarios de vapor comerciales calentados por inducción de China. Compare puertas, configuraciones de potencia y espacio para restaurantes y catering.",
+    "steamNames": [
+      "Armario de vapor de una puerta por inducción",
+      "Armario de vapor de dos puertas por inducción"
+    ],
+    "steamBodies": [
+      "Armario de 650 mm de ancho con una puerta y controles inferiores. Defina alimentos, carga y bandejas antes de elegir la potencia.",
+      "Armario de 1150 mm de ancho con dos puertas y dos grupos de calentamiento. Revise el acceso y la potencia elegida para cada grupo."
+    ],
+    "steamNav": "Armarios de vapor",
+    "steamPower": "Configuraciones de potencia",
+    "steamDoors": "Puertas",
+    "steamCaption": "Estructura del armario y controles inferiores.",
+    "steamConfiguration": "Confirme número y tamaño de bandejas, carga por tanda, ciclo, agua, desagüe y ventilación. 15 / 20 kW indica opciones alternativas; el modelo de dos puertas tiene dos grupos. Confirme configuración, conexión, embalaje y destino en la cotización."
   },
   "ar": {
     "heading": "الطهي بالحث. ثلاثة تصاميم لمحطات العمل.",
@@ -161,7 +209,8 @@
       "zone": "قطر منطقة التسخين",
       "pan": "قطر الووك المذكور",
       "total": "إجمالي القدرة الاسمية",
-      "zones": "عدد مناطق الطهي"
+      "zones": "عدد مناطق الطهي",
+      "doors": "عدد الأبواب"
     },
     "details": "تفاصيل التكوين",
     "quote": "اطلب عرض سعر للطراز",
@@ -181,7 +230,22 @@
       "أربع مناطق تسخين ضمن خزانة بعرض 800 مم. خطط لأوانٍ منفصلة للصلصات والحساء والدفعات الصغيرة.",
       "ست مناطق تسخين ضمن خزانة بعرض 1100 مم. قارن مواقع الطهي الإضافية بالمساحة والتغذية الكهربائية المتاحتين."
     ],
-    "multiNav": "مواقد متعددة المناطق"
+    "multiNav": "مواقد متعددة المناطق",
+    "steamHeading": "خزائن الطهي بالبخار. اختر حسب الدفعة والمساحة.",
+    "steamIntro": "اشترِ خزائن بخار تجارية بتسخين حثي من الصين. قارن تصميم الباب الواحد والبابين وخيارات القدرة ومساحة التركيب للمطاعم والتموين.",
+    "steamNames": [
+      "خزانة بخار حثية بباب واحد",
+      "خزانة بخار حثية ببابين"
+    ],
+    "steamBodies": [
+      "خزانة بعرض 650 مم وباب واحد وتحكم سفلي. حدد الطعام وحجم الدفعة ومتطلبات الصواني قبل اختيار القدرة.",
+      "خزانة بعرض 1150 مم وبابين ومجموعتي تسخين. خطط لفتح البابين وأكد قدرة كل مجموعة."
+    ],
+    "steamNav": "خزائن البخار",
+    "steamPower": "خيارات القدرة",
+    "steamDoors": "عدد الأبواب",
+    "steamCaption": "هيكل الخزانة وأجهزة التحكم السفلية.",
+    "steamConfiguration": "أكد عدد الصواني ومقاساتها وحمولة الدفعة والدورة والماء والصرف والتهوية. تشير 15 / 20 kW إلى خيارات بديلة؛ يسرد الكتالوج مجموعتين لطراز البابين. أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر."
   },
   "fr": {
     "heading": "Cuisson à induction. Trois postes de travail.",
@@ -207,7 +271,8 @@
       "zone": "Diamètre de chauffe",
       "pan": "Diamètre du wok indiqué",
       "total": "Puissance nominale totale",
-      "zones": "Nombre de zones"
+      "zones": "Nombre de zones",
+      "doors": "Nombre de portes"
     },
     "details": "Détails de configuration",
     "quote": "Demander un devis pour ce modèle",
@@ -227,7 +292,22 @@
       "Quatre zones de chauffe sur un meuble de 800 mm de large. Répartissez sauces, soupes et petites préparations entre les récipients.",
       "Six zones de chauffe sur un meuble de 1100 mm de large. Comparez les postes supplémentaires avec la place et l’alimentation disponibles."
     ],
-    "multiNav": "Fourneaux multizones"
+    "multiNav": "Fourneaux multizones",
+    "steamHeading": "Armoires vapeur. Comparez charge et espace.",
+    "steamIntro": "Achetez des armoires vapeur professionnelles à chauffage par induction en Chine. Comparez une ou deux portes, les puissances et l’espace pour la restauration.",
+    "steamNames": [
+      "Armoire vapeur à induction une porte",
+      "Armoire vapeur à induction deux portes"
+    ],
+    "steamBodies": [
+      "Armoire de 650 mm de large avec une porte et commandes en partie basse. Définissez aliments, charge et plateaux avant de choisir la puissance.",
+      "Armoire de 1150 mm de large avec deux portes et deux groupes de chauffe. Vérifiez l’ouverture et la puissance choisie pour chaque groupe."
+    ],
+    "steamNav": "Armoires vapeur",
+    "steamPower": "Configurations de puissance",
+    "steamDoors": "Nombre de portes",
+    "steamCaption": "Corps de l’armoire et commandes inférieures.",
+    "steamConfiguration": "Confirmez nombre et dimensions des plateaux, charge par cycle, durée, eau, évacuation et ventilation. 15 / 20 kW désigne des configurations alternatives ; le modèle deux portes comporte deux groupes. Précisez configuration, raccordement, emballage et destination dans le devis."
   },
   "pt": {
     "heading": "Cozinha por indução. Três postos de trabalho.",
@@ -253,7 +333,8 @@
       "zone": "Diâmetro de aquecimento",
       "pan": "Diâmetro do wok indicado",
       "total": "Potência nominal total",
-      "zones": "Número de zonas"
+      "zones": "Número de zonas",
+      "doors": "Número de portas"
     },
     "details": "Detalhes da configuração",
     "quote": "Solicitar cotação do modelo",
@@ -273,7 +354,22 @@
       "Quatro zonas de aquecimento em gabinete de 800 mm de largura. Planeje panelas separadas para molhos, sopas e pequenas porções.",
       "Seis zonas de aquecimento em gabinete de 1100 mm de largura. Compare as posições adicionais com o espaço e a alimentação disponíveis."
     ],
-    "multiNav": "Fogões multizona"
+    "multiNav": "Fogões multizona",
+    "steamHeading": "Armários a vapor. Compare carga e espaço.",
+    "steamIntro": "Compre armários comerciais a vapor com aquecimento por indução da China. Compare uma ou duas portas, opções de potência e espaço de instalação para restaurantes e catering.",
+    "steamNames": [
+      "Armário a vapor de indução com uma porta",
+      "Armário a vapor de indução com duas portas"
+    ],
+    "steamBodies": [
+      "Armário de 650 mm de largura com uma porta e controles inferiores. Defina alimento, carga e bandejas antes de escolher a potência.",
+      "Armário de 1150 mm de largura com duas portas e dois grupos de aquecimento. Confira abertura das portas e potência escolhida de cada grupo."
+    ],
+    "steamNav": "Armários a vapor",
+    "steamPower": "Configurações de potência",
+    "steamDoors": "Número de portas",
+    "steamCaption": "Corpo do armário e controles inferiores.",
+    "steamConfiguration": "Confirme número e tamanho das bandejas, carga por ciclo, tempo, água, drenagem e ventilação. 15 / 20 kW indica opções alternativas; o modelo de duas portas lista dois grupos. Confirme configuração, ligação, embalagem e destino na cotação."
   },
   "ru": {
     "heading": "Индукционное оборудование. Три рабочих поста.",
@@ -299,7 +395,8 @@
       "zone": "Диаметр зоны нагрева",
       "pan": "Указанный диаметр вока",
       "total": "Общая номинальная мощность",
-      "zones": "Количество зон"
+      "zones": "Количество зон",
+      "doors": "Количество дверей"
     },
     "details": "Подробности комплектации",
     "quote": "Запросить цену модели",
@@ -319,7 +416,22 @@
       "Четыре зоны нагрева на шкафу шириной 800 мм. Планируйте отдельную посуду для соусов, супов и небольших партий.",
       "Шесть зон нагрева на шкафу шириной 1100 мм. Сопоставьте дополнительные посты с доступной площадью и электропитанием."
     ],
-    "multiNav": "Многозонные плиты"
+    "multiNav": "Многозонные плиты",
+    "steamHeading": "Пароварочные шкафы. Сравните загрузку и место.",
+    "steamIntro": "Закупайте коммерческие пароварочные шкафы с индукционным нагревом из Китая. Сравните одно- и двухдверные модели, варианты мощности и место установки.",
+    "steamNames": [
+      "Однодверный шкаф с индукционным нагревом",
+      "Двухдверный шкаф с индукционным нагревом"
+    ],
+    "steamBodies": [
+      "Шкаф шириной 650 мм с одной дверью и нижним управлением. Укажите продукт, загрузку и требования к противням до выбора мощности.",
+      "Шкаф шириной 1150 мм с двумя дверями и двумя группами нагрева. Проверьте открывание дверей и мощность каждой группы."
+    ],
+    "steamNav": "Пароварочные шкафы",
+    "steamPower": "Варианты мощности",
+    "steamDoors": "Количество дверей",
+    "steamCaption": "Корпус шкафа и нижние органы управления.",
+    "steamConfiguration": "Уточните число и размер противней, загрузку, цикл, водоснабжение, слив и вентиляцию. 15 / 20 kW — альтернативные варианты; для двухдверного шкафа указаны две группы. Подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены."
   },
   "tr": {
     "heading": "İndüksiyonla pişirme. Üç çalışma düzeni.",
@@ -345,7 +457,8 @@
       "zone": "Isıtma alanı çapı",
       "pan": "Belirtilen wok çapı",
       "total": "Toplam anma gücü",
-      "zones": "Pişirme bölgesi sayısı"
+      "zones": "Pişirme bölgesi sayısı",
+      "doors": "Kapı sayısı"
     },
     "details": "Yapılandırma ayrıntıları",
     "quote": "Bu model için fiyat isteyin",
@@ -365,6 +478,21 @@
       "800 mm genişliğinde dolap üzerinde dört ısıtma bölgesi. Sos, çorba ve küçük partiler için ayrı tencereler planlayın.",
       "1100 mm genişliğinde dolap üzerinde altı ısıtma bölgesi. Ek pişirme noktalarını kullanılabilir alan ve elektrik beslemesiyle karşılaştırın."
     ],
-    "multiNav": "Çok bölgeli ocaklar"
+    "multiNav": "Çok bölgeli ocaklar",
+    "steamHeading": "Buharlı pişirme dolapları. Parti ve alanı karşılaştırın.",
+    "steamIntro": "Çin’den ticari indüksiyonla ısıtılan buharlı pişirme dolapları satın alın. Restoran ve toplu yemek siparişleri için tek ve çift kapıyı, güç seçeneklerini ve alanı karşılaştırın.",
+    "steamNames": [
+      "Tek kapılı indüksiyonlu buharlı pişirme dolabı",
+      "Çift kapılı indüksiyonlu buharlı pişirme dolabı"
+    ],
+    "steamBodies": [
+      "Tek kapılı ve alt kumandalı, 650 mm genişliğinde dolap. Gücü seçmeden önce gıdayı, parti miktarını ve tepsi ihtiyacını belirtin.",
+      "İki kapılı ve iki ısıtma gruplu, 1150 mm genişliğinde dolap. Kapı açıklığını ve her grubun seçilen gücünü teyit edin."
+    ],
+    "steamNav": "Buharlı pişirme dolapları",
+    "steamPower": "Güç seçenekleri",
+    "steamDoors": "Kapı sayısı",
+    "steamCaption": "Dolap gövdesi ve alt kontrol düzeni.",
+    "steamConfiguration": "Tepsi sayısını ve ölçüsünü, parti yükünü, çevrimi, suyu, gideri ve havalandırmayı teyit edin. 15 / 20 kW alternatif yapılandırmaları belirtir; çift kapılı modelde iki grup listelenir. Teklifte yapılandırmayı, bağlantıyı, ambalajı ve varış yerini doğrulayın."
   }
 }

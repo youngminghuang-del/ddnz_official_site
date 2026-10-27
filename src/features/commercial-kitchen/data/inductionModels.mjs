@@ -67,3 +67,29 @@ export const multiZoneModels = [
     "image": "/commercial-kitchen-media/induction/z-bzl02h.webp"
   }
 ];
+
+export const steamModels = [
+  {
+    "id": "yst-zfg12x",
+    "model": "YST-ZFG12X",
+    "kind": "steam",
+    "power": "15 / 20 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "650 × 900 mm",
+    "dimensions": "650 × 900 × 1850 mm",
+    "doors": "1",
+    "image": "/commercial-kitchen-media/induction/yst-zfg12x.webp"
+  },
+  {
+    "id": "yst-zfg24x",
+    "model": "YST-ZFG24X",
+    "kind": "steam",
+    "power": "2 × (15 / 20 kW)",
+    "total": "30 / 40 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "1150 × 800 mm",
+    "dimensions": "1150 × 800 × 1850 mm",
+    "doors": "2",
+    "image": "/commercial-kitchen-media/induction/yst-zfg24x.webp"
+  }
+];
