@@ -110,6 +110,12 @@ export function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
       href: `${canonicalSitePath(`${prefix}/sourcing/commercial-kitchen-equipment-from-china`)}?${params.toString()}#${post.slug?.includes("margin") ? "commercial-kitchen-benchmarks" : "commercial-kitchen-equipment"}`,
     };
   }
+  if (post.slug === 'electric-scooter-manufacturers-china-egypt') {
+    return {
+      label: 'اطلب خطة توريد سكوتر كهربائي من الصين',
+      href: `${canonicalSitePath(`${prefix}/sourcing/electric-scooters-from-china`)}?${params.toString()}`,
+    };
+  }
   if (post.primaryCTA === 'Outdoor Products Sourcing') {
     return {
       label: ui.outdoorCta,
