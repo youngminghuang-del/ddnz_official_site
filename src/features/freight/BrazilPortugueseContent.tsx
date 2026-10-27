@@ -1,3 +1,4 @@
+import RoutePlanningDepth from './RoutePlanningDepth';
 import { buildQuoteHref } from '../../lib/quoteLinks';
 import BrazilPortGallery from './BrazilPortGallery';
 
@@ -31,6 +32,7 @@ export default function BrazilPortugueseContent() {
    <a href={quote} className="mt-8 inline-block rounded-xl bg-orange-700 px-6 py-4 font-bold text-white">Solicitar cotação para o Brasil →</a>
    <p className="mt-5 text-sm text-slate-300">Da coleta no fornecedor ao porto, aeroporto ou endereço combinado com o importador.</p>
   </div></header>
+  <RoutePlanningDepth country="brazil" locale="pt"/>
   <div className="mx-auto max-w-7xl space-y-16 px-6 py-16">
    <section aria-labelledby="br-modes"><h2 id="br-modes" className="text-3xl font-bold">Frete marítimo FCL, LCL ou aéreo?</h2><p className="mt-4 max-w-3xl leading-7">A modalidade depende do pedido e da entrega necessária. Compare o custo de toda a operação e as etapas de manuseio.</p><div className="mt-7 grid gap-5 md:grid-cols-3">{modes.map(([h,p])=><article className={card} key={h}><h3 className="text-xl font-bold">{h}</h3><p className="mt-4 leading-7">{p}</p></article>)}</div></section>
    <BrazilPortGallery/>

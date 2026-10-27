@@ -1,3 +1,4 @@
+import '../features/freight/freight.css';
 import SEO from '../components/SEO';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';

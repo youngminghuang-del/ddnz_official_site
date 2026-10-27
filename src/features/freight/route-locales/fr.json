@@ -1,0 +1,98 @@
+{
+  "bangladesh": {
+    "title": "Transport maritime vers Chattogram ou aérien vers Dacca ?",
+    "intro": "Choisissez le point d’arrivée avec l’adresse finale. Le transit maritime s’arrête au port ; une livraison à Dacca nécessite dédouanement et transport routier.",
+    "routes": [
+      [
+        "Ningbo → Chattogram",
+        "Environ 9 jours · de port à port",
+        "L’itinéraire CCE de PIL indique neuf jours. Comparez le départ disponible avec la date de disponibilité des marchandises."
+      ],
+      [
+        "FCL ou LCL → Chattogram",
+        "FCL : 15–30 jours · LCL : 19–36 jours",
+        "Fourchettes générales pour l’Asie du Sud ; le CCE de Ningbo constitue une référence spécifique plus rapide. Confirmez le port de départ et la date limite de réception du groupage."
+      ],
+      [
+        "Fret aérien → Dacca",
+        "Environ 4–9 jours",
+        "Fourchette indicative pour l’Asie du Sud. Comparez vols, poids taxable et date de réception ; enlèvement, dédouanement et livraison sont prévus séparément."
+      ]
+    ],
+    "arrivalTitle": "De Chattogram à l’entrepôt destinataire",
+    "arrival": "Pour Dacca, indiquez l’adresse, le contact de l’importateur et les moyens de déchargement. Chiffrez les opérations portuaires, le dédouanement et le trajet routier en précisant les responsabilités.",
+    "cargo": "Pour les coques et protections d’écran, précisez cartons, dimensions emballées et poids brut. Distinguez les produits avec batterie et les machines sur la liste de colisage."
+  },
+  "uzbekistan": {
+    "title": "Comparez rail et route selon la ville de départ",
+    "intro": "Le train depuis Xi’an et le camion enlevé à Jiaozhou ne partent pas du même point. Comparez le parcours complet jusqu’au lieu convenu à Tachkent.",
+    "routes": [
+      [
+        "Xi’an → Khorgos → Tachkent",
+        "5–6 jours · trajet ferroviaire publié",
+        "Le service express lancé en janvier 2025 annonçait ce trajet via le Kazakhstan, au départ de Xi’an. L’enlèvement en usine et la livraison finale sont des étapes distinctes."
+      ],
+      [
+        "Jiaozhou → Khorgos → Tachkent",
+        "Route · dossier de chargement existant",
+        "Le dossier ci-dessous montre des cartons arrimés pour ce trajet, avec retrait à l’entrepôt de destination. Il s’agit d’un autre envoi que l’exemple ferroviaire."
+      ],
+      [
+        "Groupage ou camion dédié",
+        "Camion dédié : 7–10 jours · groupage : 22–30 jours",
+        "Fourchettes initiales depuis le départ en Chine vers Tachkent. Confirmez ville, poste-frontière et lieu de remise ; enlèvement et attente du groupage influent sur le délai global."
+      ]
+    ],
+    "arrivalTitle": "Arrivée en gare, retrait en entrepôt ou livraison ?",
+    "arrival": "Indiquez l’adresse et si l’importateur retire les marchandises dans un entrepôt douanier. Intégrez opérations frontalières, dédouanement et livraison locale à la date convenue.",
+    "cargo": "Pour les équipements de cuisine, machines alimentaires et pièces automobiles, précisez dimensions emballées, poids brut, points de levage et gerbabilité. Identifiez séparément les batteries."
+  },
+  "peru": {
+    "title": "Chancay ou Callao : comparez aussi le trajet vers Lima",
+    "intro": "Choisissez le port selon l’adresse et le coût total à destination. La traversée maritime n’est qu’une étape de la réception d’un chargement lourd.",
+    "routes": [
+      [
+        "Shanghai → Chancay",
+        "Environ 23 jours · traversée maritime",
+        "Les informations publiées en 2025 sur ce corridor direct indiquent environ 23 jours. Cette référence concerne ce trajet, hors dédouanement et livraison au Pérou."
+      ],
+      [
+        "FCL ou LCL → Callao / Chancay",
+        "FCL : 25–50 jours · LCL : 30–58 jours",
+        "Fourchettes générales pour l’Amérique latine selon le port chinois et le départ. Le corridor direct Shanghai–Chancay est une référence distincte plus rapide. Pour le carrelage, comparez poids/volume et frais à destination."
+      ],
+      [
+        "Fret aérien → Lima",
+        "Environ 4–11 jours",
+        "Fourchette initiale pour l’Amérique latine. Comparez vol et poids taxable ; ajoutez séparément libération et transport de l’aéroport à l’entrepôt."
+      ]
+    ],
+    "arrivalTitle": "Du port à l’entrepôt ou au chantier à Lima",
+    "arrival": "Avant réservation, confirmez adresse, accès des camions, moyens de déchargement et rendez-vous. Comparez ces coûts pour les deux ports avec l’importateur.",
+    "cargo": "Pour le carrelage, indiquez dimensions et poids brut des palettes ainsi que leur gerbabilité. Pour les équipements de cuisine, ajoutez points de levage et emballages à maintenir debout."
+  },
+  "brazil": {
+    "title": "Brésil par mer ou par air : prévoyez la livraison intérieure",
+    "intro": "Partez du port chinois, de l’importateur brésilien et de la ville destinataire. Comparez le transport jusqu’au point de remise convenu.",
+    "routes": [
+      [
+        "Chine → Santos → São Paulo",
+        "Shanghai : environ 37 jours · Shekou : environ 33 jours",
+        "Références port à port du plan ASAS2 de Maersk de 2025. Comparez le départ retenu, puis ajoutez dédouanement, terminal et trajet routier jusqu’à l’adresse finale."
+      ],
+      [
+        "Groupage en Chine → Santos",
+        "LCL : environ 30–58 jours",
+        "Fourchette générale pour l’Amérique latine. Regroupez les commandes avec une liste de colisage et convenez de la date limite de réception et de la libération à destination."
+      ],
+      [
+        "Fret aérien → São Paulo",
+        "Environ 4–11 jours",
+        "Fourchette générale pour l’Amérique latine. Comparez vols, poids taxable et modalités de libération de l’importateur ; convenez de la livraison intérieure avant expédition."
+      ]
+    ],
+    "arrivalTitle": "Où va la marchandise après Santos ?",
+    "arrival": "Entrepôts, distributeurs et sites d’installation peuvent avoir des conditions de réception différentes. Indiquez adresse, horaires et moyens de déchargement pour chiffrer le bon trajet routier.",
+    "cargo": "Séparez accessoires de téléphone, produits électriques et machines alimentaires ou de cuisine. Précisez modèles, quantités, dimensions emballées, poids bruts et batteries, le cas échéant."
+  }
+}

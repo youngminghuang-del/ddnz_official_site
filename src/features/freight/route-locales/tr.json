@@ -1,0 +1,98 @@
+{
+  "bangladesh": {
+    "title": "Chattogram’a denizyolu mu, Dakka’ya havayolu mu?",
+    "intro": "Varış noktasını son teslimat adresiyle birlikte seçin. Deniz transit süresi limanda biter; Dakka teslimatı için gümrükleme ve karayolu taşıması gerekir.",
+    "routes": [
+      [
+        "Ningbo → Chattogram",
+        "Yaklaşık 9 gün · limandan limana",
+        "PIL’in CCE programında dokuz gün belirtilir. Uygun seferi yükün hazır olacağı tarihle karşılaştırın."
+      ],
+      [
+        "FCL veya LCL → Chattogram",
+        "FCL: 15–30 gün · LCL: 19–36 gün",
+        "Güney Asya için genel planlama aralıklarıdır; Ningbo CCE seferi daha hızlı, belirli bir güzergâh örneğidir. Çıkış limanını ve parsiyel yük kabul son tarihini teklifte doğrulayın."
+      ],
+      [
+        "Havayolu → Dakka",
+        "Yaklaşık 4–9 gün",
+        "Güney Asya için planlama aralığıdır. Uçuş, ücretlendirilebilir ağırlık ve teslim tarihini karşılaştırın; alım, gümrükleme ve dağıtım ayrı planlanır."
+      ]
+    ],
+    "arrivalTitle": "Chattogram’dan alıcı deposuna",
+    "arrival": "Dakka teslimatı için depo adresini, ithalatçı irtibatını ve boşaltma imkânlarını paylaşın. Liman işlemleri, gümrükleme ve karayolunu sorumluları belirleyerek birlikte fiyatlandırın.",
+    "cargo": "Telefon kılıfı ve ekran koruyucularda koli sayısı, ambalajlı ölçüler ve brüt ağırlığı belirtin. Bataryalı ürünleri ve makineleri çeki listesinde ayrı gösterin."
+  },
+  "uzbekistan": {
+    "title": "Demiryolu ve karayolunu çıkış şehrine göre karşılaştırın",
+    "intro": "Xi’an’dan kalkan tren ile Jiaozhou’dan alınan kamyon yükünün başlangıç noktaları farklıdır. Taşkent’teki teslim noktasına kadar tüm yolculuğu karşılaştırın.",
+    "routes": [
+      [
+        "Xi’an → Horgos → Taşkent",
+        "5–6 gün · yayımlanan demiryolu süresi",
+        "Ocak 2025’te başlatılan ekspres hizmette, Xi’an’dan Kazakistan üzerinden bu süre bildirilmiştir. Fabrikadan alım ve son teslimat ayrı aşamalardır."
+      ],
+      [
+        "Jiaozhou → Horgos → Taşkent",
+        "Karayolu · mevcut yükleme kaydı",
+        "Aşağıdaki kayıt, bu yolculuk için sabitlenen kolileri ve varış deposundan teslim almayı gösterir. Demiryolu örneğinden ayrı bir sevkiyattır."
+      ],
+      [
+        "Parsiyel yük veya komple araç",
+        "Komple araç: 7–10 gün · parsiyel: 22–30 gün",
+        "Çin’deki çıkıştan Taşkent’e ilk planlama aralıklarıdır. Şehir, sınır kapısı ve teslim noktasını doğrulayın; alım ve parsiyel seferi bekleme toplam süreyi etkiler."
+      ]
+    ],
+    "arrivalTitle": "İstasyona varış, depodan teslim alma veya adrese teslim?",
+    "arrival": "Adresi ve ithalatçının gümrüklü depodan teslim alıp almayacağını belirtin. Teslim tarihini belirlerken sınır işlemlerini, gümrüklemeyi ve yerel dağıtımı ekleyin.",
+    "cargo": "Mutfak ekipmanı, gıda makineleri ve araç parçalarında ambalajlı ölçü, brüt ağırlık, kaldırma noktaları ve istiflenebilirliği bildirin. Bataryaları ayrıca belirtin."
+  },
+  "peru": {
+    "title": "Chancay mı Callao mu? Lima’ya devam eden yolu da karşılaştırın",
+    "intro": "Limanı, teslimat adresi ve varıştaki toplam maliyetle birlikte seçin. Ağır yükün tesliminde deniz yolculuğu yalnızca bir aşamadır.",
+    "routes": [
+      [
+        "Şanghay → Chancay",
+        "Yaklaşık 23 gün · deniz yolculuğu",
+        "2025’te bu doğrudan hat için yaklaşık 23 gün bildirilmiştir. Belirli bir güzergâh referansıdır; Peru’da gümrükleme ve teslimatı kapsamaz."
+      ],
+      [
+        "FCL veya LCL → Callao / Chancay",
+        "FCL: 25–50 gün · LCL: 30–58 gün",
+        "Latin Amerika için genel aralıklar Çin limanına ve sefere göre değişir. Doğrudan Şanghay–Chancay hattı ayrı ve daha hızlı bir referanstır. Seramikte ağırlık/hacim esasını ve varış masraflarını karşılaştırın."
+      ],
+      [
+        "Havayolu → Lima",
+        "Yaklaşık 4–11 gün",
+        "Latin Amerika için ilk planlama aralığıdır. Uçuş ve ücretlendirilebilir ağırlığı karşılaştırın; yükün serbest bırakılması ve havalimanı-depo taşımasını ayrı değerlendirin."
+      ]
+    ],
+    "arrivalTitle": "Limandan Lima’daki depoya veya şantiyeye",
+    "arrival": "Rezervasyondan önce adresi, kamyon erişimini, boşaltma ekipmanını ve randevuyu doğrulayın. İki limanın bu maliyetlerini ithalatçıyla karşılaştırın.",
+    "cargo": "Seramikte palet ölçülerini, brüt ağırlığı ve istiflenebilirliği belirtin. Mutfak ekipmanında kaldırma noktalarını ve dik tutulması gereken ambalajları ekleyin."
+  },
+  "brazil": {
+    "title": "Brezilya’ya deniz veya hava: varış sonrası teslimatı planlayın",
+    "intro": "Çin çıkış limanı, Brezilyalı ithalatçı ve alıcı şehriyle başlayın. Taşımayı kararlaştırılan teslim noktasına kadar karşılaştırın.",
+    "routes": [
+      [
+        "Çin → Santos → São Paulo",
+        "Şanghay: yaklaşık 37 gün · Shekou: yaklaşık 33 gün",
+        "Maersk’in 2025 ASAS2 planındaki limandan limana referanslardır. Seferi karşılaştırın; gümrükleme, terminal ve son adrese karayolunu ekleyin."
+      ],
+      [
+        "Çin’de konsolidasyon → Santos",
+        "LCL: yaklaşık 30–58 gün",
+        "Latin Amerika için genel aralıktır. Siparişleri tek çeki listesiyle birleştirin; depo kabul son tarihini ve varışta serbest bırakma işlemlerini belirleyin."
+      ],
+      [
+        "Havayolu → São Paulo",
+        "Yaklaşık 4–11 gün",
+        "Latin Amerika için genel aralıktır. Uçuşları, ücretlendirilebilir ağırlığı ve ithalatçının işlemlerini karşılaştırın; sevkten önce iç teslimatı kararlaştırın."
+      ]
+    ],
+    "arrivalTitle": "Yük Santos’tan sonra nereye gidiyor?",
+    "arrival": "Depo, distribütör ve kurulum alanlarının teslim alma koşulları farklı olabilir. Doğru karayolu ayağını fiyatlandırmak için adres, saatler ve boşaltma ihtiyaçlarını bildirin.",
+    "cargo": "Telefon aksesuarlarını, elektrikli ürünleri, gıda ve mutfak makinelerini ayrı listeleyin. Model, adet, ambalajlı ölçü, brüt ağırlık ve varsa batarya bilgilerini ekleyin."
+  }
+}

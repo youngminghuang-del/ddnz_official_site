@@ -1,5 +1,5 @@
 import '../features/freight/freight.css';
-import RoutePlanningDepth from '../features/freight/RoutePlanningDepth';
+import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import {translatedText} from '../features/site-localization/translate.mjs';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
@@ -1128,7 +1128,7 @@ export default function ShippingLatinAmerica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().seaDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' && ['en','zh'].includes(activeLang) ? (activeLang==='zh'?'按具体班次报价':'Quote by departure') : getTransitTimes().sea}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' ? routePlanningUi(activeLang)[2] : getTransitTimes().sea}</span>
                 </div>
               </div>
 
@@ -1138,7 +1138,7 @@ export default function ShippingLatinAmerica() {
                   <p className="text-[11px] text-slate-400 mt-0.5">{getTransitTimes().airDesc}</p>
                 </div>
                 <div className="text-right shrink-0 ml-4">
-                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' && ['en','zh'].includes(activeLang) ? (activeLang==='zh'?'按具体班次报价':'Quote by departure') : getTransitTimes().air}</span>
+                  <span className="whitespace-nowrap font-mono text-sm font-extrabold text-amber-300">{selectedCountry==='brazil' ? routePlanningUi(activeLang)[2] : getTransitTimes().air}</span>
                 </div>
               </div>
 
@@ -1219,7 +1219,7 @@ export default function ShippingLatinAmerica() {
         </section>
 
         {/* Section: Transit Timelines Dynamic Detail Grid */}
-        <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
+        {selectedCountry !== 'brazil' && <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-3xl">
               <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
@@ -1362,7 +1362,7 @@ export default function ShippingLatinAmerica() {
 
             </div>
           </div>
-        </section>
+        </section>}
 
         {SHOW_MEDIA_PLANNING && (
           <section className="border-b border-[#dce3ea] bg-[#fffdf9] py-12" aria-label="Destination proof media planning preview">
