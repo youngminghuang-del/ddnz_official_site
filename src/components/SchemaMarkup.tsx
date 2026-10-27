@@ -1,3 +1,4 @@
+import egyptScooterSchema from '../data/egypt-scooter-schema.json';
 import egyptLclSchema from '../data/egypt-lcl-schema.json';
 import solarCableSchema from '../data/solar-cable-schema.json';
 import indonesiaKitchenCostSchema from '../data/indonesia-kitchen-cost-schema.json';
@@ -212,6 +213,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '')) {
       finalSchema = egyptLclSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '')) {
+      finalSchema = egyptScooterSchema;
     }
 
     // Create script tag and append to head
