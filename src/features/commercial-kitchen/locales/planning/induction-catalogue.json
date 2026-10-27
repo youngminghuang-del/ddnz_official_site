@@ -21,7 +21,9 @@
       "net": "Net weight",
       "gross": "Gross weight",
       "zone": "Heating-zone diameter",
-      "pan": "Listed wok diameter"
+      "pan": "Listed wok diameter",
+      "total": "Total rated power",
+      "zones": "Cooking zones"
     },
     "details": "Configuration details",
     "quote": "Request a model quotation",
@@ -30,7 +32,18 @@
     "configuration": "Confirm phase, connection, cookware, packing, quantity and destination with your order. Height and backsplash dimensions require the final outline drawing.",
     "seriesCaption": "Z-DCL series appearance; dimensions refer to the selected Z-DCL02H.",
     "caption": "Catalogue appearance; countertop and controls retained.",
-    "nav": "Induction cooking"
+    "nav": "Induction cooking",
+    "multiHeading": "Four or six zones. Plan parallel cooking.",
+    "multiIntro": "Source cabinet-base induction ranges from China for restaurants and catering kitchens. Compare the number of cooking zones, electrical load and working width.",
+    "multiNames": [
+      "Four-zone cabinet induction range",
+      "Six-zone cabinet induction range"
+    ],
+    "multiBodies": [
+      "Four cooking zones in an 800 mm-wide cabinet unit. Plan separate pots for sauces, soups or small-batch cooking.",
+      "Six cooking zones in a 1100 mm-wide cabinet unit. Compare the extra cooking positions with counter space and the available electrical supply."
+    ],
+    "multiNav": "Multi-zone ranges"
   },
   "zh": {
     "heading": "电磁烹饪设备，按工位选择。",
@@ -54,7 +67,9 @@
       "net": "净重",
       "gross": "毛重",
       "zone": "加热区域直径",
-      "pan": "手册配锅直径"
+      "pan": "手册配锅直径",
+      "total": "额定总功率",
+      "zones": "加热工位数量"
     },
     "details": "展开配置详情",
     "quote": "询问此型号报价",
@@ -63,7 +78,18 @@
     "configuration": "订货时一起确认相数、接线、锅具、包装、数量和目的地。高度与背板尺寸以最终外形图确认。",
     "seriesCaption": "Z-DCL系列外形；参数对应所选Z-DCL02H。",
     "caption": "手册产品外形，保留原台面与控制布局。",
-    "nav": "电磁烹饪设备"
+    "nav": "电磁烹饪设备",
+    "multiHeading": "四眼还是六眼，按同时烹饪需求选择。",
+    "multiIntro": "从中国采购柜式多头电磁煲仔炉，为餐厅和餐饮厨房比较灶头数量、用电负荷与工位宽度。",
+    "multiNames": [
+      "柜式四眼电磁煲仔炉",
+      "柜式六眼电磁煲仔炉"
+    ],
+    "multiBodies": [
+      "800 mm宽柜体内配置四个加热工位，便于安排酱汁、汤品或小份量烹饪。按实际锅具尺寸规划同时使用的位置。",
+      "1100 mm宽柜体内配置六个加热工位。结合同时烹饪需求、可用操作宽度和现场供电条件选择。"
+    ],
+    "multiNav": "多头煲仔炉"
   },
   "es": {
     "heading": "Cocción por inducción. Tres puestos de trabajo.",
@@ -87,7 +113,9 @@
       "net": "Peso neto",
       "gross": "Peso bruto",
       "zone": "Diámetro de calentamiento",
-      "pan": "Diámetro del wok indicado"
+      "pan": "Diámetro del wok indicado",
+      "total": "Potencia nominal total",
+      "zones": "Zonas de cocción"
     },
     "details": "Ver configuración",
     "quote": "Solicitar cotización del modelo",
@@ -96,7 +124,18 @@
     "configuration": "Confirme fases, conexión, recipientes, embalaje, cantidad y destino. La altura y el respaldo se verifican con el plano final.",
     "seriesCaption": "Imagen de la serie Z-DCL; los datos corresponden al Z-DCL02H.",
     "caption": "Aspecto del catálogo con encimera y controles conservados.",
-    "nav": "Cocción por inducción"
+    "nav": "Cocción por inducción",
+    "multiHeading": "Cuatro o seis zonas para cocinar en paralelo.",
+    "multiIntro": "Compre cocinas de inducción sobre mueble de China. Compare zonas, carga eléctrica y anchura para restaurantes y cocinas de catering.",
+    "multiNames": [
+      "Cocina de inducción de cuatro zonas sobre mueble",
+      "Cocina de inducción de seis zonas sobre mueble"
+    ],
+    "multiBodies": [
+      "Cuatro zonas en un mueble de 800 mm de ancho. Planifique recipientes para salsas, sopas y pequeñas tandas.",
+      "Seis zonas en un mueble de 1100 mm de ancho. Compare los puestos adicionales con el espacio y la alimentación disponibles."
+    ],
+    "multiNav": "Cocinas multizona"
   },
   "ar": {
     "heading": "الطهي بالحث. ثلاثة تصاميم لمحطات العمل.",
@@ -120,7 +159,9 @@
       "net": "الوزن الصافي",
       "gross": "الوزن الإجمالي",
       "zone": "قطر منطقة التسخين",
-      "pan": "قطر الووك المذكور"
+      "pan": "قطر الووك المذكور",
+      "total": "إجمالي القدرة الاسمية",
+      "zones": "عدد مناطق الطهي"
     },
     "details": "تفاصيل التكوين",
     "quote": "اطلب عرض سعر للطراز",
@@ -129,7 +170,18 @@
     "configuration": "أكد عدد الأطوار والتوصيلات والأواني والتغليف والكمية والوجهة عند الطلب. تُراجع أبعاد الارتفاع واللوحة الخلفية في الرسم النهائي.",
     "seriesCaption": "مظهر سلسلة Z-DCL؛ البيانات تخص Z-DCL02H المحدد.",
     "caption": "مظهر الكتالوج مع الحفاظ على السطح وأجهزة التحكم.",
-    "nav": "الطهي بالحث"
+    "nav": "الطهي بالحث",
+    "multiHeading": "أربع أو ست مناطق للطهي المتزامن.",
+    "multiIntro": "اشترِ مواقد حث على خزانة من الصين للمطاعم ومطابخ التموين. قارن عدد المناطق والحمل الكهربائي وعرض محطة العمل.",
+    "multiNames": [
+      "موقد حث بأربع مناطق على خزانة",
+      "موقد حث بست مناطق على خزانة"
+    ],
+    "multiBodies": [
+      "أربع مناطق تسخين ضمن خزانة بعرض 800 مم. خطط لأوانٍ منفصلة للصلصات والحساء والدفعات الصغيرة.",
+      "ست مناطق تسخين ضمن خزانة بعرض 1100 مم. قارن مواقع الطهي الإضافية بالمساحة والتغذية الكهربائية المتاحتين."
+    ],
+    "multiNav": "مواقد متعددة المناطق"
   },
   "fr": {
     "heading": "Cuisson à induction. Trois postes de travail.",
@@ -153,7 +205,9 @@
       "net": "Poids net",
       "gross": "Poids brut",
       "zone": "Diamètre de chauffe",
-      "pan": "Diamètre du wok indiqué"
+      "pan": "Diamètre du wok indiqué",
+      "total": "Puissance nominale totale",
+      "zones": "Nombre de zones"
     },
     "details": "Détails de configuration",
     "quote": "Demander un devis pour ce modèle",
@@ -162,7 +216,18 @@
     "configuration": "Confirmez phases, raccordement, récipients, emballage, quantité et destination. Vérifiez hauteur et dosseret sur le plan définitif.",
     "seriesCaption": "Aspect de la série Z-DCL ; données du Z-DCL02H sélectionné.",
     "caption": "Aspect du catalogue ; surface et commandes conservées.",
-    "nav": "Cuisson à induction"
+    "nav": "Cuisson à induction",
+    "multiHeading": "Quatre ou six zones pour cuisiner en parallèle.",
+    "multiIntro": "Achetez des fourneaux à induction sur meuble en Chine. Comparez zones, charge électrique et largeur pour restaurants et cuisines de restauration.",
+    "multiNames": [
+      "Fourneau à induction quatre zones sur meuble",
+      "Fourneau à induction six zones sur meuble"
+    ],
+    "multiBodies": [
+      "Quatre zones de chauffe sur un meuble de 800 mm de large. Répartissez sauces, soupes et petites préparations entre les récipients.",
+      "Six zones de chauffe sur un meuble de 1100 mm de large. Comparez les postes supplémentaires avec la place et l’alimentation disponibles."
+    ],
+    "multiNav": "Fourneaux multizones"
   },
   "pt": {
     "heading": "Cozinha por indução. Três postos de trabalho.",
@@ -186,7 +251,9 @@
       "net": "Peso líquido",
       "gross": "Peso bruto",
       "zone": "Diâmetro de aquecimento",
-      "pan": "Diâmetro do wok indicado"
+      "pan": "Diâmetro do wok indicado",
+      "total": "Potência nominal total",
+      "zones": "Número de zonas"
     },
     "details": "Detalhes da configuração",
     "quote": "Solicitar cotação do modelo",
@@ -195,7 +262,18 @@
     "configuration": "Confirme fases, ligação, panelas, embalagem, quantidade e destino. Altura e espelho traseiro devem ser verificados no desenho final.",
     "seriesCaption": "Aparência da série Z-DCL; dados do Z-DCL02H selecionado.",
     "caption": "Aparência do catálogo com superfície e comandos preservados.",
-    "nav": "Cozinha por indução"
+    "nav": "Cozinha por indução",
+    "multiHeading": "Quatro ou seis zonas para cozinhar em paralelo.",
+    "multiIntro": "Compre fogões de indução com gabinete da China para restaurantes e cozinhas de catering. Compare zonas, carga elétrica e largura de trabalho.",
+    "multiNames": [
+      "Fogão de indução de quatro zonas com gabinete",
+      "Fogão de indução de seis zonas com gabinete"
+    ],
+    "multiBodies": [
+      "Quatro zonas de aquecimento em gabinete de 800 mm de largura. Planeje panelas separadas para molhos, sopas e pequenas porções.",
+      "Seis zonas de aquecimento em gabinete de 1100 mm de largura. Compare as posições adicionais com o espaço e a alimentação disponíveis."
+    ],
+    "multiNav": "Fogões multizona"
   },
   "ru": {
     "heading": "Индукционное оборудование. Три рабочих поста.",
@@ -219,7 +297,9 @@
       "net": "Масса нетто",
       "gross": "Масса брутто",
       "zone": "Диаметр зоны нагрева",
-      "pan": "Указанный диаметр вока"
+      "pan": "Указанный диаметр вока",
+      "total": "Общая номинальная мощность",
+      "zones": "Количество зон"
     },
     "details": "Подробности комплектации",
     "quote": "Запросить цену модели",
@@ -228,7 +308,18 @@
     "configuration": "При заказе уточните число фаз, подключение, посуду, упаковку, количество и пункт назначения. Высоту и задний борт сверяйте с окончательным чертежом.",
     "seriesCaption": "Внешний вид серии Z-DCL; параметры выбранной модели Z-DCL02H.",
     "caption": "Изображение из каталога с сохранением поверхности и органов управления.",
-    "nav": "Индукционные плиты"
+    "nav": "Индукционные плиты",
+    "multiHeading": "Четыре или шесть зон для параллельного приготовления.",
+    "multiIntro": "Закупайте индукционные плиты на шкафу из Китая для ресторанов и кейтеринга. Сравните число зон, электрическую нагрузку и ширину поста.",
+    "multiNames": [
+      "Четырёхзонная индукционная плита на шкафу",
+      "Шестизонная индукционная плита на шкафу"
+    ],
+    "multiBodies": [
+      "Четыре зоны нагрева на шкафу шириной 800 мм. Планируйте отдельную посуду для соусов, супов и небольших партий.",
+      "Шесть зон нагрева на шкафу шириной 1100 мм. Сопоставьте дополнительные посты с доступной площадью и электропитанием."
+    ],
+    "multiNav": "Многозонные плиты"
   },
   "tr": {
     "heading": "İndüksiyonla pişirme. Üç çalışma düzeni.",
@@ -252,7 +343,9 @@
       "net": "Net ağırlık",
       "gross": "Brüt ağırlık",
       "zone": "Isıtma alanı çapı",
-      "pan": "Belirtilen wok çapı"
+      "pan": "Belirtilen wok çapı",
+      "total": "Toplam anma gücü",
+      "zones": "Pişirme bölgesi sayısı"
     },
     "details": "Yapılandırma ayrıntıları",
     "quote": "Bu model için fiyat isteyin",
@@ -261,6 +354,17 @@
     "configuration": "Siparişte faz, bağlantı, tencere, ambalaj, miktar ve varış yerini teyit edin. Yükseklik ve arkalık ölçülerini son çizimle kontrol edin.",
     "seriesCaption": "Z-DCL seri görünümü; veriler seçilen Z-DCL02H içindir.",
     "caption": "Katalog görünümü; yüzey ve kontrol düzeni korunmuştur.",
-    "nav": "İndüksiyonla pişirme"
+    "nav": "İndüksiyonla pişirme",
+    "multiHeading": "Dört veya altı bölgeyle eş zamanlı pişirme.",
+    "multiIntro": "Restoran ve toplu yemek mutfakları için Çin’den dolaplı indüksiyon ocakları satın alın. Bölge sayısını, elektrik yükünü ve çalışma genişliğini karşılaştırın.",
+    "multiNames": [
+      "Dört bölgeli dolaplı indüksiyon ocağı",
+      "Altı bölgeli dolaplı indüksiyon ocağı"
+    ],
+    "multiBodies": [
+      "800 mm genişliğinde dolap üzerinde dört ısıtma bölgesi. Sos, çorba ve küçük partiler için ayrı tencereler planlayın.",
+      "1100 mm genişliğinde dolap üzerinde altı ısıtma bölgesi. Ek pişirme noktalarını kullanılabilir alan ve elektrik beslemesiyle karşılaştırın."
+    ],
+    "multiNav": "Çok bölgeli ocaklar"
   }
 }

@@ -40,3 +40,30 @@ export const inductionModels = [
     "source": "04 PDF 7"
   }
 ];
+
+export const multiZoneModels = [
+  {
+    "id": "z-bzl01h",
+    "model": "Z-BZL01H",
+    "kind": "multi",
+    "power": "4 × 3.5 kW",
+    "total": "14 kW",
+    "zones": "4",
+    "supply": "380 V · 50 Hz",
+    "footprint": "800 × 800 mm",
+    "dimensions": "800 × 800 × 800 (120) mm",
+    "image": "/commercial-kitchen-media/induction/z-bzl01h.webp"
+  },
+  {
+    "id": "z-bzl02h",
+    "model": "Z-BZL02H",
+    "kind": "multi",
+    "power": "6 × 3.5 kW",
+    "total": "21 kW",
+    "zones": "6",
+    "supply": "380 V · 50 Hz",
+    "footprint": "1100 × 800 mm",
+    "dimensions": "1100 × 800 × 800 (120) mm",
+    "image": "/commercial-kitchen-media/induction/z-bzl02h.webp"
+  }
+];

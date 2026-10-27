@@ -20,3 +20,9 @@ test('eight locales hand off the complete selected model without implying price 
 });
 
 test("Chinese hub accepts its existing zh-cn route locale",()=>{assert.ok(renderToStaticMarkup(<InductionCatalogue locale="zh-cn"/>).includes(copies.zh.heading));});
+
+test('multi-zone models preserve per-zone load, total load and model-specific footprint', async()=>{
+ const {multiZoneModels}=await import('../src/features/commercial-kitchen/data/inductionModels.mjs');
+ assert.deepEqual(multiZoneModels.map(p=>[p.model,p.power,p.total,p.footprint]),[['Z-BZL01H','4 × 3.5 kW','14 kW','800 × 800 mm'],['Z-BZL02H','6 × 3.5 kW','21 kW','1100 × 800 mm']]);
+ for(const locale of Object.keys(copies) as (keyof typeof copies)[]){const html=renderToStaticMarkup(<><InductionCatalogue locale={locale}/><InductionCatalogue locale={locale} group="multi"/></>);assert.equal((html.match(/class="induction-card"/g)||[]).length,5);assert.equal((html.match(/id="multi-zone-cooking"/g)||[]).length,1);assert.ok(html.includes(copies[locale].multiHeading));assert.doesNotMatch(html,/63A|100A|"Offer"/);for(const p of multiZoneModels){assert.ok(fs.existsSync('public'+p.image));const urls=[...html.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://www.ddnzglobal.com'));const q=urls.find(u=>u.searchParams.get('subcategory')?.startsWith(p.model));assert.ok(q);for(const k of ['power','total','zones','dimensions','supply'])assert.ok(q.searchParams.get('subcategory')!.includes(p[k]));}}
+});
