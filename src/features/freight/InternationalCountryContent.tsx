@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import { countryBuyerBriefs } from './countryBuyerBriefs';
 import { buildQuoteHref } from '../../lib/quoteLinks';
@@ -42,5 +43,5 @@ export default function InternationalCountryContent({country,locale}:{country:st
  <section id="country-cargo-planning" className={card}><h2 className="text-3xl font-bold">{c.equipment}</h2><p className="mt-5 max-w-4xl leading-7">{c.equipmentBody}</p><div className="mt-6 flex flex-wrap gap-6 font-semibold text-purple-800 underline"><a href="/sourcing/food-processing-machinery-from-china/" hrefLang="en">{c.equipmentLink}</a><a href={`${prefix}/sourcing-services/consolidation-export/`}>{c.consolidation}</a><a href={`${prefix}/sourcing-services/inspection-quality-control/`}>{c.inspection}</a></div></section>
  <section><h2 className="text-3xl font-bold">{c.faqTitle}</h2><div className="mt-7 grid gap-6 md:grid-cols-2">{c.faqs.map(([q,a])=><article className={card} key={q}><h3 className="text-xl font-bold">{q}</h3><p className="mt-4 leading-7">{a}</p></article>)}</div></section>
  <section className="rounded-2xl bg-slate-900 p-8 text-white"><h2 className="text-3xl font-bold">{c.next}</h2><p className="mt-5 max-w-4xl leading-7">{c.brief}</p><a className="mt-6 inline-block rounded-xl bg-orange-700 px-6 py-4 font-bold" href={quote}>{c.quote} →</a></section>
- </div></main>;
+ </div><FreightRelatedLinks country={country} locale={locale}/></main>;
 }

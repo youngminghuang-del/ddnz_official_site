@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import {useId,useState} from 'react';
 import ReactMarkdown from 'react-markdown';
@@ -44,5 +45,5 @@ export default function MarketLocalizedContent({country,locale}:{country:MarketC
  {i===(peru?1:2)&&<Resources locale={locale} country={country}/>}{i===(peru?3:1)&&<DestinationMap locale={locale} country={country}/>}{i===6&&<a className="freight-cta" href={quote}>{u.send} ↗</a>}
  </div></section>)}</div>
  {!peru&&<NigeriaMarketGuide locale={locale} sectionNumber="08"/>}{peru&&<div className="market-wrap market-related"><h2>{u.related}</h2><a href={`${prefix}/sourcing/commercial-kitchen-equipment-from-china/`}>{u.kitchen} →</a><a href={`${prefix}/sourcing/food-processing-machinery-from-china/`}>{u.food} →</a></div>}
- </main>;
+ <FreightRelatedLinks country={country} locale={locale}/></main>;
 }

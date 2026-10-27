@@ -1,3 +1,4 @@
+import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import {translatedText} from '../features/site-localization/translate.mjs';
@@ -1476,7 +1477,7 @@ export default function ShippingLatinAmerica() {
         </section>
 
       <CountryCargoPlanning country={selectedCountry} countryName={countryLabel(selectedCountry)} />
-      </main>
+      <FreightRelatedLinks country={selectedCountry} locale={activeLang}/></main>
 
       <Footer />
 

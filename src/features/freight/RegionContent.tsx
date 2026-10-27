@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import type { Language } from '../../i18n/translations';
 import { RegionalFreightMap } from '../../components/FreightRouteMap';
 import { freightPrefix, regions, type RegionId } from './regions';
@@ -64,7 +65,7 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
   const displayNames = new Intl.DisplayNames([languageTag[locale]], { type: 'region' });
   const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=freight_region_${region}&dest=${encodeURIComponent(name)}`;
   const originImage = region === 'latin-america' ? '/images/operations/peru-tile-loading-case.webp' : region === 'west-africa' ? '/media/freight-20260918/mixed-cargo-loading.jpg' : '/media/freight-20260918/factory-container.jpg';
-  return <main id="main-content" className="freight-editorial freight-next freight-region-stage">
+  return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-region-stage">
     <header className="freight-region-intro"><div className="freight-wrap">
       <nav className="freight-region-breadcrumb" aria-label="Breadcrumb"><a href={`${prefix}/`}>{c.home}</a><span>/</span><a href={`${prefix}/services/sea-freight/`}>{c.freight}</a><span>/</span><span aria-current="page">{name}</span></nav>
       <p className="freight-kicker">{c.eyebrow}</p><h1>{heading} <em>{name}.</em></h1>
@@ -97,5 +98,5 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
       <div className="freight-steps">{[[c.cargo, c.cargoBody], [c.import, c.importBody], [c.scope, c.scopeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
       <a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
-  </main>;
+  <FreightRelatedLinks region={region} locale={locale}/></main>;
 }

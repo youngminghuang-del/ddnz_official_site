@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import { buildQuoteHref } from '../../lib/quoteLinks';
 import BrazilPortGallery from './BrazilPortGallery';
@@ -46,5 +47,5 @@ export default function BrazilPortugueseContent() {
    <section aria-labelledby="br-faq"><h2 id="br-faq" className="text-3xl font-bold">Perguntas sobre envio da China para o Brasil</h2><div className="mt-7 grid gap-5 md:grid-cols-2">{brazilPortugueseFaqs.map(([q,a])=><article className={card} key={q}><h3 className="text-xl font-bold">{q}</h3><p className="mt-4 leading-7">{a}</p></article>)}</div></section>
    <section className="rounded-2xl bg-slate-900 p-8 text-white" aria-labelledby="br-quote"><h2 id="br-quote" className="text-3xl font-bold">Prepare uma cotação comparável</h2><p className="mt-4 max-w-3xl leading-7">Envie mercadoria e modelo, fornecedores e pontos de coleta, quantidade de volumes, dimensões, peso bruto, data de disponibilidade, destino final e serviços necessários. Se ainda faltarem dados, indique o que precisa ser confirmado.</p><a href={quote} className="mt-6 inline-block rounded-xl bg-orange-700 px-6 py-4 font-bold">Pedir cotação de frete China–Brasil →</a><div className="mt-6 flex flex-wrap gap-6"><a className="underline" href="/pt/services/lcl-shipping-from-china/">Conhecer o serviço LCL</a><a className="underline" href="/pt/how-we-work/">Como funciona o processo</a><a className="underline" href="/pt/sourcing-services/supplier-search/">Busca de fornecedores na China</a></div></section>
   </div>
- </main>;
+ <FreightRelatedLinks country="brazil" locale="pt"/></main>;
 }

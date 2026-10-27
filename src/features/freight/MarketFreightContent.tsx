@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import MarketLocalizedContent from './MarketLocalizedContent';
 import {marketLocaleData} from './marketLocaleData';
@@ -47,5 +48,5 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
     </section>)}</div>
     {!peru && <NigeriaMarketGuide locale="en" sectionNumber="08"/>}
     {peru && <div className="market-wrap market-related"><h2>Also sourcing equipment?</h2><a href="/sourcing/commercial-kitchen-equipment-from-china/">Commercial kitchen equipment from China →</a><a href="/sourcing/food-processing-machinery-from-china/">Food processing machinery from China →</a></div>}
-  </main>;
+  <FreightRelatedLinks country={country} locale={locale}/></main>;
 }

@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import {useId, useState} from 'react';
 import {FreightChapters} from './GulfChapters';
@@ -69,5 +70,5 @@ export default function UsedGoodsContent({country,locale='en',resources=usedGood
  <UsedGoodsPortMap country={country} locale={locale}/></section>
  <section id="used-section-4" className="used-section" tabIndex={-1} aria-labelledby="used-heading-4"><span className="used-kicker">04 / {u.prepare}</span><h2 id="used-heading-4">{d.chapters[3]}</h2><p>{d.paras[4]}</p><h3>{u.faq}</h3><div className="used-faq">{d.questions.map((q,n)=><details key={q}><summary>{q}</summary><p>{d.answers[n]}</p></details>)}</div><a className="used-cta" href={quote}>{u.request} ↗</a></section>
  <nav className="used-related" aria-label={u.related}><h2>{u.related}</h2><div>{usedGoodsCountries.filter(c=>c!==country).map(c=><a key={c} href={`${gulfLanguagePrefix(locale)}/shipping-from-china-to-${c}/`}>{d.heading.replace('{country}',destinationName(c,locale))} →</a>)}</div></nav>
- </div></main>;
+ </div><FreightRelatedLinks country={country} locale={locale}/></main>;
 }

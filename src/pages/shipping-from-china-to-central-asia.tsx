@@ -1,3 +1,4 @@
+import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
@@ -1465,7 +1466,7 @@ export default function ShippingCentralAsia() {
         </section>
 
       <CountryCargoPlanning country={selectedCountry} countryName={countryLabel(selectedCountry)} />
-      </main>
+      <FreightRelatedLinks country={selectedCountry} locale={activeLang}/></main>
 
       <Footer />
 

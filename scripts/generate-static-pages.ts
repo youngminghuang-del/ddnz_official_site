@@ -1,3 +1,4 @@
+import FreightRelatedLinks from '../src/features/freight/FreightRelatedLinks';
 import RoutePlanningDepth from '../src/features/freight/RoutePlanningDepth';
 import InductionCatalogue from '../src/features/commercial-kitchen/components/InductionCatalogue';
 import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
@@ -1846,7 +1847,7 @@ function injectStaticRouteContent(
       if (!htmlContent.includes(`/assets/${css}`)) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
     }
   } else if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') {
-    const planning=renderToStaticMarkup(createElement(RoutePlanningDepth,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
+    const planning=renderToStaticMarkup(createElement(FreightRelatedLinks,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(RoutePlanningDepth,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
     const meta=seoDataMatrix[relPath]?.[lang];
     staticBody=staticBody?staticBody.replace('</main>',`${planning}</main>`):`<main><h1>${escapeStaticText(meta?.title || 'Envíos de China a Brasil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
   }

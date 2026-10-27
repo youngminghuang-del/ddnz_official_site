@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import { Fragment, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
 import SourcingHomepageNav from '../../components/SourcingHomepageNav';
@@ -108,6 +109,6 @@ export default function GulfFreightPage() {
       </div>
       <div className="gulf-form"><GetAQuote key={`${country}-${locale}`} presetDestination={destination} hideLandRecommendation /></div>
       <div className="gulf-wrap gulf-reading">{sections[6].blocks.slice(2).map((b,i)=><Fragment key={i}>{b.text && <p><Inline text={b.text} /></p>}</Fragment>)}</div>
-    </main><Footer />
+    <FreightRelatedLinks country={country} locale={locale}/></main><Footer />
   </div>;
 }

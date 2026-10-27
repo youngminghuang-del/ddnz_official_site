@@ -1,3 +1,4 @@
+import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import '../features/freight/freight.css';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
@@ -1975,7 +1976,7 @@ export default function MiddleEastRoute() {
         </section>
 
       <CountryCargoPlanning country={slugByCountry[selectedCountry]} countryName={selectedCountryLabel} />
-      </main>
+      <FreightRelatedLinks country={slugByCountry[selectedCountry]} locale={activeLang}/></main>
 
       <Footer />
 

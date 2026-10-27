@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import { useState } from 'react';
 import type { Language } from '../../i18n/translations';
 import { CentralAsiaMap } from '../../components/FreightRouteMap';
@@ -62,7 +63,7 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
   const [mode, setMode] = useState('0');
   const names = new Intl.DisplayNames([locale === 'zh' ? 'zh-CN' : locale], { type: 'region' });
   const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region)}&cargo=${encodeURIComponent(c.cargoOptions[Number(cargo)])}&mode=${encodeURIComponent(c.modeOptions[Number(mode)])}`;
-  return <main id="main-content" className="freight-editorial freight-next freight-central-overview">
+  return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-central-overview">
     <header className="freight-region-intro"><div className="freight-wrap">
       <nav className="freight-region-breadcrumb" aria-label="Breadcrumb"><a href={`${prefix}/`}>{c.home}</a><span>/</span><a href={`${prefix}/services/sea-freight/`}>{c.freight}</a><span>/</span><span aria-current="page">{overview.region}</span></nav>
       <p className="freight-kicker">{overview.region}</p><h1>{headline[locale]}</h1><p className="freight-intro">{c.intro}</p>
@@ -85,5 +86,5 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
       <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
-  </main>;
+  <FreightRelatedLinks region="central-asia" locale={locale}/></main>;
 }

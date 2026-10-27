@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import { freightPrefix, words, type FreightLocale } from './regions';
 import ImportOrderPlanning from './ImportOrderPlanning';
@@ -38,5 +39,5 @@ export default function MexicoContent({locale}: {locale: FreightLocale}) {
     ].map(([id,title])=><figure key={id}><video controls playsInline muted preload="none" src={`/media/freight-20260919/mexico-${id}.mp4`} poster={`/media/freight-20260919/mexico-${id}.jpg`} aria-label={title}/><figcaption>{title}</figcaption></figure>)}</div></section>
     <ImportOrderPlanning locale={locale} market="mexico" />
     <section className="freight-destination-band" id="mexico-quote"><div className="freight-wrap freight-section"><p className="freight-kicker">{t("04 / 您的货运需求","04 / YOUR SHIPMENT BRIEF","04 / DATOS DE SU ENVÍO")}</p><h2>{t('货物、地址、进口方。\n从这三项开始。','Cargo. Address. Importer.\nStart here.','Carga, dirección e importador.\nEmpecemos por ahí.')}</h2><ul className="uae-brief">{[t('品名、用途、型号及包装照片','Product, use, model and packing photos','Producto, uso, modelo y fotos'),t('件数、单件尺寸、毛重与总货量','Package count, dimensions, gross weights and total volume','Bultos, medidas, pesos y volumen total'),t('中国提货地点、货好时间与供应商数量','China pickup locations, ready dates and supplier count','Recogida en China, fechas y número de proveedores'),t('墨西哥收货地址、邮编、进口方与清关联系人','Mexico address, postcode, importer and clearance contact','Dirección, código postal, importador y contacto de despacho'),t('到港还是到门、卸货条件与期望收货时间','Port or door scope, unloading conditions and target receiving date','Puerto o domicilio, descarga y fecha prevista')].map(item=><li key={item}>{item}</li>)}</ul><a className="freight-cta" href={quote}>{t('提交墨西哥货运需求','Send your Mexico freight inquiry','Consultar envío a México')} ↗</a></div></section>
-  </main>;
+  <FreightRelatedLinks country="mexico" locale={locale}/></main>;
 }
