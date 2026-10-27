@@ -5,8 +5,8 @@ import {handbookProducts} from '../src/features/commercial-kitchen/data/handbook
 import {getLocalizedKitchenProducts,filterKitchenProducts,cleanKitchenSelection,addKitchenSelection,toggleKitchenComparison,buildLocalizedKitchenInquiry} from '../src/features/commercial-kitchen/data/localization.mjs';
 import {buildInquiryPayload} from '../src/features/commercial-kitchen/data/inquiry.mjs';
 import {makeBrief} from '../src/features/commercial-kitchen/data/model.mjs';
-test('eleven handbook records extend the original catalogue without invented prices or duplicated identities',()=>{
- assert.equal(catalog.length,37);assert.equal(handbookProducts.length,11);assert.equal(new Set(catalog.map(p=>p.id)).size,37);
+test('fourteen handbook records extend the original catalogue without invented prices or duplicated identities',()=>{
+ assert.equal(catalog.length,40);assert.equal(handbookProducts.length,14);assert.equal(new Set(catalog.map(p=>p.id)).size,40);
  assert.equal(catalog.filter(p=>!p.handbookGroup).length,26);assert.equal(catalog.filter(p=>p.quote).length,8);
  assert.ok(handbookProducts.every(p=>p.quote===null));
  assert.equal(catalog.find(p=>p.id==='yst-zfg24x').power,'2 × (15 / 20 kW)');

@@ -1,6 +1,6 @@
 import {kitchenLocales} from '../data/localization.mjs';
 import {useRef} from 'react';
-import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels} from '../data/inductionModels.mjs';
+import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels,largeWokModels} from '../data/inductionModels.mjs';
 import copies from '../locales/planning/induction-catalogue.json';
 import {buildQuoteHref} from '../../../lib/quoteLinks';
 import {foodPrefix} from '../../food-processing/localization';
@@ -9,10 +9,11 @@ function Photo({src,model,caption,locale}:{src:string;model:string;caption:strin
  const dialog=useRef<HTMLDialogElement>(null),c=copies[locale];
  return <figure className="induction-photo"><button type="button" aria-label={`${c.enlarge}: ${model}`} onClick={()=>dialog.current?.showModal()}><img src={src} alt={`${model} · ${caption}`} width="1536" height="1024" loading="lazy"/><span>{c.enlarge} ↗</span></button><figcaption>{caption}</figcaption><dialog ref={dialog} aria-label={`${c.enlarge}: ${model}`} onClick={e=>{if(e.target===dialog.current)dialog.current.close();}}><header><strong><bdi>{model}</bdi></strong><button type="button" onClick={()=>dialog.current?.close()} aria-label={c.close}>×</button></header><img src={src} alt={`${model} · ${caption}`} width="1536" height="1024"/></dialog></figure>;
 }
-export default function InductionCatalogue({locale:language='en',group='single',onAdd,onCompare,isCompared}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round';onAdd?:(id:string)=>void;onCompare?:(id:string)=>void;isCompared?:(id:string)=>boolean}){
+export default function InductionCatalogue({locale:language='en',group='single',onAdd,onCompare,isCompared}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round'|'large';onAdd?:(id:string)=>void;onCompare?:(id:string)=>void;isCompared?:(id:string)=>boolean}){
  const locale=language==='zh-cn'?'zh':language;
  const base=copies[locale];
  const groups={
+  large:{models:largeWokModels,id:'large-wok-cookers',copy:{...base,heading:base.largeHeading,intro:base.largeIntro,names:base.largeNames,bodies:base.largeBodies,caption:base.largeCaption,configuration:base.largeConfiguration}},
   round:{models:roundCookerModels,id:'soup-bun-cookers',copy:{...base,heading:base.roundHeading,intro:base.roundIntro,names:base.roundNames,bodies:base.roundBodies,caption:base.roundCaption,configuration:base.roundConfiguration,fields:{...base.fields,power:base.roundPower}}},
   single:{models:inductionModels,id:'induction-cooking',copy:base},
   multi:{models:multiZoneModels,id:'multi-zone-cooking',copy:{...base,heading:base.multiHeading,intro:base.multiIntro,names:base.multiNames,bodies:base.multiBodies}},
@@ -29,4 +30,4 @@ export default function InductionCatalogue({locale:language='en',group='single',
  })}</div></section>;
 }
 
-export function InductionEntry({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round'}){const locale=language==='zh-cn'?'zh':language;return <a href={group==='multi'?'#multi-zone-cooking':group==='steam'?'#steam-cabinets':group==='noodle'?'#noodle-cookers':group==='round'?'#soup-bun-cookers':'#induction-cooking'}>{group==='multi'?copies[locale].multiNav:group==='steam'?copies[locale].steamNav:group==='noodle'?copies[locale].noodleNav:group==='round'?copies[locale].roundNav:copies[locale].nav}</a>;}
+export function InductionEntry({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round'|'large'}){const locale=language==='zh-cn'?'zh':language;return <a href={group==='large'?'#large-wok-cookers':group==='multi'?'#multi-zone-cooking':group==='steam'?'#steam-cabinets':group==='noodle'?'#noodle-cookers':group==='round'?'#soup-bun-cookers':'#induction-cooking'}>{group==='large'?copies[locale].largeNav:group==='multi'?copies[locale].multiNav:group==='steam'?copies[locale].steamNav:group==='noodle'?copies[locale].noodleNav:group==='round'?copies[locale].roundNav:copies[locale].nav}</a>;}

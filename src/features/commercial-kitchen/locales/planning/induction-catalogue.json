@@ -26,7 +26,8 @@
       "zones": "Cooking zones",
       "doors": "Doors",
       "baskets": "Basket positions",
-      "openings": "Steamer opening options"
+      "openings": "Steamer opening options",
+      "diameter": "Listed bowl diameter"
     },
     "details": "Configuration details",
     "quote": "Request a model quotation",
@@ -89,7 +90,22 @@
     "roundNav": "Soup & bun steamers",
     "roundPower": "Power options",
     "roundCaption": "Round working surface, faucet and front controls.",
-    "roundConfiguration": "Choose one 12, 15 or 20 kW configuration when requesting a quotation. Confirm vessel dimensions, usable capacity, heating or steaming time, water and drain arrangements. Automatic water filling can be requested as a configuration option; confirm the final equipment, electrical connection, packing and destination."
+    "roundConfiguration": "Choose one 12, 15 or 20 kW configuration when requesting a quotation. Confirm vessel dimensions, usable capacity, heating or steaming time, water and drain arrangements. Automatic water filling can be requested as a configuration option; confirm the final equipment, electrical connection, packing and destination.",
+    "largeHeading": "Large-wok induction cooking, sized for your kitchen.",
+    "largeIntro": "Source commercial large-wok induction cookers from China. Compare 900, 1000 and 1200 mm listed bowl diameters, power and kitchen footprint before selecting a configuration.",
+    "largeNames": [
+      "900 mm large-wok induction cooker",
+      "1000 mm large-wok induction cooker",
+      "1200 mm large-wok induction cooker"
+    ],
+    "largeBodies": [
+      "A 25 kW configuration with a listed 900 mm bowl diameter and 1100 × 1200 mm footprint. Plan the cooking task and serving flow around the available space.",
+      "A 30 kW configuration with a listed 1000 mm bowl diameter and 1200 × 1300 mm footprint. Check working clearance and access before choosing the larger station.",
+      "A 35 kW configuration with a listed 1200 mm bowl diameter and 1400 × 1470 mm footprint. Compare the required workspace and vessel handling for your batch-cooking process."
+    ],
+    "largeNav": "Large-wok cookers",
+    "largeCaption": "Shared series appearance. Bowl diameter and cabinet dimensions depend on the selected model.",
+    "largeConfiguration": "Confirm usable vessel volume, vessel supply scope, food load, cooking cycle, cleaning access and drainage. Bowl diameter and power alone do not establish litres or portions per hour. Confirm the final model, electrical supply and connection, packing and destination when requesting a quotation."
   },
   "zh": {
     "heading": "电磁烹饪设备，按工位选择。",
@@ -118,7 +134,8 @@
       "zones": "加热工位数量",
       "doors": "柜门数量",
       "baskets": "煮面篮位",
-      "openings": "蒸包孔位选项"
+      "openings": "蒸包孔位选项",
+      "diameter": "标注锅径"
     },
     "details": "展开配置详情",
     "quote": "询问此型号报价",
@@ -181,7 +198,22 @@
     "roundNav": "汤炉与蒸包炉",
     "roundPower": "可选功率配置",
     "roundCaption": "圆形操作面、水龙头与前置控制布局。",
-    "roundConfiguration": "询价时选择12、15或20 kW配置之一，并确认锅体或蒸具尺寸、可用容量、加热或蒸制时间、供水和排水。自动加水可作为选配需求提出；具体配置、电气连接、包装和目的地在报价中确认。"
+    "roundConfiguration": "询价时选择12、15或20 kW配置之一，并确认锅体或蒸具尺寸、可用容量、加热或蒸制时间、供水和排水。自动加水可作为选配需求提出；具体配置、电气连接、包装和目的地在报价中确认。",
+    "largeHeading": "商用大锅灶，按锅径与占地选配置。",
+    "largeIntro": "从中国采购商用电磁大锅灶，比较900、1000和1200 mm标注锅径、功率及厨房占地，再选择适合烹饪工序的配置。",
+    "largeNames": [
+      "900 mm锅径电磁大锅灶",
+      "1000 mm锅径电磁大锅灶",
+      "1200 mm锅径电磁大锅灶"
+    ],
+    "largeBodies": [
+      "25 kW配置，标注锅径900 mm，占地1100 × 1200 mm。结合烹饪工序和配餐动线规划操作空间。",
+      "30 kW配置，标注锅径1000 mm，占地1200 × 1300 mm。选择更大工位前，先核对操作间距及进场通道。",
+      "35 kW配置，标注锅径1200 mm，占地1400 × 1470 mm。按批量烹饪需求，比较工作空间与锅体搬运条件。"
+    ],
+    "largeNav": "电磁大锅灶",
+    "largeCaption": "大锅灶系列外观图，锅径与机身尺寸按所选型号确认。",
+    "largeConfiguration": "请确认锅体有效容量、锅体供货范围、食品装载量、烹饪周期、清洗空间及排水。锅径与功率本身不能推算升数或每小时出餐量；询价时核对最终型号、供电接线、包装及目的地。"
   },
   "es": {
     "heading": "Cocción por inducción. Tres puestos de trabajo.",
@@ -210,7 +242,8 @@
       "zones": "Zonas de cocción",
       "doors": "Puertas",
       "baskets": "Posiciones para cestas",
-      "openings": "Opciones de aberturas"
+      "openings": "Opciones de aberturas",
+      "diameter": "Diámetro indicado del recipiente"
     },
     "details": "Ver configuración",
     "quote": "Solicitar cotización del modelo",
@@ -273,7 +306,22 @@
     "roundNav": "Sopas y vaporeras",
     "roundPower": "Opciones de potencia",
     "roundCaption": "Superficie redonda, grifo y controles frontales.",
-    "roundConfiguration": "Elija una configuración de 12, 15 o 20 kW. Confirme recipientes, capacidad útil, tiempo de calentamiento o vapor, agua y desagüe. Puede solicitar llenado automático como opción; confirme configuración, conexión, embalaje y destino en la cotización."
+    "roundConfiguration": "Elija una configuración de 12, 15 o 20 kW. Confirme recipientes, capacidad útil, tiempo de calentamiento o vapor, agua y desagüe. Puede solicitar llenado automático como opción; confirme configuración, conexión, embalaje y destino en la cotización.",
+    "largeHeading": "Cocción por inducción con wok grande, según el espacio de su cocina.",
+    "largeIntro": "Compre cocinas de inducción con wok grande de China. Compare diámetros indicados de 900, 1000 y 1200 mm, potencia y espacio ocupado antes de elegir.",
+    "largeNames": [
+      "Cocina de inducción con wok de 900 mm",
+      "Cocina de inducción con wok de 1000 mm",
+      "Cocina de inducción con wok de 1200 mm"
+    ],
+    "largeBodies": [
+      "Configuración de 25 kW, diámetro indicado de 900 mm y base de 1100 × 1200 mm. Planifique la tarea de cocción y el flujo de servicio.",
+      "Configuración de 30 kW, diámetro indicado de 1000 mm y base de 1200 × 1300 mm. Compruebe los espacios de trabajo y los accesos.",
+      "Configuración de 35 kW, diámetro indicado de 1200 mm y base de 1400 × 1470 mm. Compare el espacio y la manipulación del recipiente para cocinar por lotes."
+    ],
+    "largeNav": "Cocinas con wok grande",
+    "largeCaption": "Imagen común de la serie. El diámetro y las dimensiones del mueble dependen del modelo elegido.",
+    "largeConfiguration": "Confirme el volumen útil, si se incluye el recipiente, la carga de alimentos, el ciclo de cocción, el acceso para limpieza y el desagüe. El diámetro y la potencia no determinan litros ni raciones por hora. Confirme modelo, alimentación y conexión eléctrica, embalaje y destino al solicitar la cotización."
   },
   "ar": {
     "heading": "الطهي بالحث. ثلاثة تصاميم لمحطات العمل.",
@@ -302,7 +350,8 @@
       "zones": "عدد مناطق الطهي",
       "doors": "عدد الأبواب",
       "baskets": "مواضع السلال",
-      "openings": "خيارات فتحات البخار"
+      "openings": "خيارات فتحات البخار",
+      "diameter": "قطر الوعاء المدرج"
     },
     "details": "تفاصيل التكوين",
     "quote": "اطلب عرض سعر للطراز",
@@ -365,7 +414,22 @@
     "roundNav": "مواقد الحساء والبخار",
     "roundPower": "خيارات القدرة",
     "roundCaption": "سطح دائري وصنبور وتحكم أمامي.",
-    "roundConfiguration": "اختر تكويناً بقدرة 12 أو 15 أو 20 kW. أكد أبعاد الأواني والسعة الفعلية ووقت التسخين أو البخار والماء والصرف. يمكن طلب تعبئة ماء آلية كخيار؛ أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر."
+    "roundConfiguration": "اختر تكويناً بقدرة 12 أو 15 أو 20 kW. أكد أبعاد الأواني والسعة الفعلية ووقت التسخين أو البخار والماء والصرف. يمكن طلب تعبئة ماء آلية كخيار؛ أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر.",
+    "largeHeading": "طهي بالحث بأوعية كبيرة، حسب مساحة مطبخك.",
+    "largeIntro": "توريد مواقد حث تجارية بأوعية كبيرة من الصين. قارن الأقطار المدرجة 900 و1000 و1200 مم والقدرة والمساحة المطلوبة قبل اختيار التجهيز.",
+    "largeNames": [
+      "موقد حث بوعاء قطره المدرج 900 مم",
+      "موقد حث بوعاء قطره المدرج 1000 مم",
+      "موقد حث بوعاء قطره المدرج 1200 مم"
+    ],
+    "largeBodies": [
+      "تجهيز بقدرة 25 كيلوواط وقطر مدرج 900 مم ومساحة 1100 × 1200 مم. خطط للطهي ومسار تقديم الطعام.",
+      "تجهيز بقدرة 30 كيلوواط وقطر مدرج 1000 مم ومساحة 1200 × 1300 مم. تحقق من فراغ العمل وممرات الإدخال.",
+      "تجهيز بقدرة 35 كيلوواط وقطر مدرج 1200 مم ومساحة 1400 × 1470 مم. قارن مساحة التشغيل ومناولة الوعاء للطهي على دفعات."
+    ],
+    "largeNav": "مواقد الأوعية الكبيرة",
+    "largeCaption": "صورة مشتركة للسلسلة؛ يعتمد قطر الوعاء وأبعاد الهيكل على الطراز المختار.",
+    "largeConfiguration": "أكد الحجم القابل للاستخدام وما إذا كان الوعاء ضمن التوريد وحمولة الطعام ودورة الطهي ومساحة التنظيف والصرف. لا يحدد القطر والقدرة وحدهما السعة باللتر أو الحصص في الساعة. أكد الطراز والتغذية والتوصيل الكهربائي والتغليف والوجهة عند طلب السعر."
   },
   "fr": {
     "heading": "Cuisson à induction. Trois postes de travail.",
@@ -394,7 +458,8 @@
       "zones": "Nombre de zones",
       "doors": "Nombre de portes",
       "baskets": "Emplacements pour paniers",
-      "openings": "Options d’ouvertures"
+      "openings": "Options d’ouvertures",
+      "diameter": "Diamètre de cuve indiqué"
     },
     "details": "Détails de configuration",
     "quote": "Demander un devis pour ce modèle",
@@ -457,7 +522,22 @@
     "roundNav": "Soupes et vapeur",
     "roundPower": "Puissances proposées",
     "roundCaption": "Surface ronde, robinet et commandes avant.",
-    "roundConfiguration": "Choisissez une configuration de 12, 15 ou 20 kW. Confirmez dimensions des récipients, volume utile, durée de chauffe ou vapeur, eau et évacuation. Le remplissage automatique peut être demandé en option ; validez configuration, raccordement, emballage et destination au devis."
+    "roundConfiguration": "Choisissez une configuration de 12, 15 ou 20 kW. Confirmez dimensions des récipients, volume utile, durée de chauffe ou vapeur, eau et évacuation. Le remplissage automatique peut être demandé en option ; validez configuration, raccordement, emballage et destination au devis.",
+    "largeHeading": "Cuisson à induction en grande cuve, selon votre cuisine.",
+    "largeIntro": "Achetez des cuisinières professionnelles à induction en grande cuve depuis la Chine. Comparez les diamètres indiqués de 900, 1000 et 1200 mm, la puissance et l’encombrement.",
+    "largeNames": [
+      "Cuisinière à induction, cuve de 900 mm",
+      "Cuisinière à induction, cuve de 1000 mm",
+      "Cuisinière à induction, cuve de 1200 mm"
+    ],
+    "largeBodies": [
+      "Configuration de 25 kW, diamètre indiqué de 900 mm et emprise de 1100 × 1200 mm. Organisez la cuisson et le service selon l’espace disponible.",
+      "Configuration de 30 kW, diamètre indiqué de 1000 mm et emprise de 1200 × 1300 mm. Vérifiez les dégagements et les accès.",
+      "Configuration de 35 kW, diamètre indiqué de 1200 mm et emprise de 1400 × 1470 mm. Comparez l’espace de travail et la manutention de la cuve pour la cuisson par lots."
+    ],
+    "largeNav": "Cuisson en grande cuve",
+    "largeCaption": "Vue commune de la série. Le diamètre de cuve et les dimensions du meuble dépendent du modèle choisi.",
+    "largeConfiguration": "Confirmez le volume utile, la fourniture de la cuve, la charge alimentaire, le cycle de cuisson, l’accès au nettoyage et la vidange. Diamètre et puissance ne déterminent pas à eux seuls les litres ou portions par heure. Précisez modèle, alimentation et raccordement électrique, emballage et destination dans la demande de devis."
   },
   "pt": {
     "heading": "Cozinha por indução. Três postos de trabalho.",
@@ -486,7 +566,8 @@
       "zones": "Número de zonas",
       "doors": "Número de portas",
       "baskets": "Posições para cestos",
-      "openings": "Opções de aberturas"
+      "openings": "Opções de aberturas",
+      "diameter": "Diâmetro indicado da cuba"
     },
     "details": "Detalhes da configuração",
     "quote": "Solicitar cotação do modelo",
@@ -549,7 +630,22 @@
     "roundNav": "Sopas e vaporizadores",
     "roundPower": "Opções de potência",
     "roundCaption": "Superfície redonda, torneira e controles frontais.",
-    "roundConfiguration": "Escolha uma configuração de 12, 15 ou 20 kW. Confirme recipientes, volume útil, tempo de aquecimento ou vapor, água e drenagem. Pode solicitar abastecimento automático de água como opção; confirme configuração, ligação, embalagem e destino na cotação."
+    "roundConfiguration": "Escolha uma configuração de 12, 15 ou 20 kW. Confirme recipientes, volume útil, tempo de aquecimento ou vapor, água e drenagem. Pode solicitar abastecimento automático de água como opção; confirme configuração, ligação, embalagem e destino na cotação.",
+    "largeHeading": "Cocção por indução em cuba grande, conforme sua cozinha.",
+    "largeIntro": "Compre fogões comerciais de indução com cuba grande da China. Compare os diâmetros indicados de 900, 1000 e 1200 mm, potência e espaço ocupado.",
+    "largeNames": [
+      "Fogão de indução com cuba de 900 mm",
+      "Fogão de indução com cuba de 1000 mm",
+      "Fogão de indução com cuba de 1200 mm"
+    ],
+    "largeBodies": [
+      "Configuração de 25 kW, diâmetro indicado de 900 mm e base de 1100 × 1200 mm. Planeje a cocção e o fluxo de serviço conforme o espaço.",
+      "Configuração de 30 kW, diâmetro indicado de 1000 mm e base de 1200 × 1300 mm. Confira as folgas de operação e os acessos.",
+      "Configuração de 35 kW, diâmetro indicado de 1200 mm e base de 1400 × 1470 mm. Compare o espaço e o manuseio da cuba para produção em lotes."
+    ],
+    "largeNav": "Fogões de cuba grande",
+    "largeCaption": "Imagem comum da série. O diâmetro da cuba e as dimensões do gabinete dependem do modelo escolhido.",
+    "largeConfiguration": "Confirme volume útil, inclusão da cuba no fornecimento, carga de alimentos, ciclo de cocção, acesso para limpeza e drenagem. Diâmetro e potência não determinam litros ou porções por hora. Confirme modelo, alimentação e conexão elétrica, embalagem e destino ao solicitar a cotação."
   },
   "ru": {
     "heading": "Индукционное оборудование. Три рабочих поста.",
@@ -578,7 +674,8 @@
       "zones": "Количество зон",
       "doors": "Количество дверей",
       "baskets": "Места для корзин",
-      "openings": "Варианты отверстий"
+      "openings": "Варианты отверстий",
+      "diameter": "Указанный диаметр чаши"
     },
     "details": "Подробности комплектации",
     "quote": "Запросить цену модели",
@@ -641,7 +738,22 @@
     "roundNav": "Суповые котлы и пароварки",
     "roundPower": "Варианты мощности",
     "roundCaption": "Круглая рабочая поверхность, кран и переднее управление.",
-    "roundConfiguration": "Выберите комплектацию 12, 15 или 20 kW. Уточните размеры ёмкостей, полезный объём, время нагрева или приготовления, воду и слив. Автоматическое наполнение водой можно запросить как опцию; подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены."
+    "roundConfiguration": "Выберите комплектацию 12, 15 или 20 kW. Уточните размеры ёмкостей, полезный объём, время нагрева или приготовления, воду и слив. Автоматическое наполнение водой можно запросить как опцию; подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены.",
+    "largeHeading": "Индукционные котловые плиты по размерам вашей кухни.",
+    "largeIntro": "Закупайте коммерческие индукционные плиты с большой чашей из Китая. Сравните указанные диаметры 900, 1000 и 1200 мм, мощность и занимаемую площадь.",
+    "largeNames": [
+      "Индукционная плита с чашей 900 мм",
+      "Индукционная плита с чашей 1000 мм",
+      "Индукционная плита с чашей 1200 мм"
+    ],
+    "largeBodies": [
+      "Конфигурация 25 кВт: указанный диаметр 900 мм, основание 1100 × 1200 мм. Планируйте приготовление и выдачу с учетом доступного места.",
+      "Конфигурация 30 кВт: указанный диаметр 1000 мм, основание 1200 × 1300 мм. Проверьте рабочие зазоры и пути заноса.",
+      "Конфигурация 35 кВт: указанный диаметр 1200 мм, основание 1400 × 1470 мм. Сравните рабочую площадь и условия обращения с чашей для приготовления партиями."
+    ],
+    "largeNav": "Плиты с большой чашей",
+    "largeCaption": "Общий вид серии. Диаметр чаши и размеры корпуса зависят от выбранной модели.",
+    "largeConfiguration": "Уточните полезный объем, входит ли чаша в поставку, загрузку продуктов, цикл приготовления, доступ для очистки и слив. Диаметр и мощность сами по себе не определяют литры или порции в час. При запросе цены согласуйте модель, питание и подключение, упаковку и место доставки."
   },
   "tr": {
     "heading": "İndüksiyonla pişirme. Üç çalışma düzeni.",
@@ -670,7 +782,8 @@
       "zones": "Pişirme bölgesi sayısı",
       "doors": "Kapı sayısı",
       "baskets": "Sepet konumları",
-      "openings": "Açıklık seçenekleri"
+      "openings": "Açıklık seçenekleri",
+      "diameter": "Belirtilen kazan çapı"
     },
     "details": "Yapılandırma ayrıntıları",
     "quote": "Bu model için fiyat isteyin",
@@ -733,6 +846,21 @@
     "roundNav": "Çorba ve buharlı pişiriciler",
     "roundPower": "Güç seçenekleri",
     "roundCaption": "Yuvarlak çalışma yüzeyi, musluk ve ön kumandalar.",
-    "roundConfiguration": "12, 15 veya 20 kW yapılandırmalarından birini seçin. Kap ölçüsünü, kullanılabilir hacmi, ısıtma veya buhar süresini, suyu ve gideri teyit edin. Otomatik su dolumu seçenek olarak istenebilir; yapılandırmayı, bağlantıyı, ambalajı ve varış yerini teklifte doğrulayın."
+    "roundConfiguration": "12, 15 veya 20 kW yapılandırmalarından birini seçin. Kap ölçüsünü, kullanılabilir hacmi, ısıtma veya buhar süresini, suyu ve gideri teyit edin. Otomatik su dolumu seçenek olarak istenebilir; yapılandırmayı, bağlantıyı, ambalajı ve varış yerini teklifte doğrulayın.",
+    "largeHeading": "Mutfağınıza uygun büyük kazanlı indüksiyon pişirme.",
+    "largeIntro": "Çin’den ticari büyük kazanlı indüksiyon ocakları tedarik edin. Seçim öncesinde belirtilen 900, 1000 ve 1200 mm çapları, gücü ve kapladığı alanı karşılaştırın.",
+    "largeNames": [
+      "900 mm kazanlı indüksiyon ocağı",
+      "1000 mm kazanlı indüksiyon ocağı",
+      "1200 mm kazanlı indüksiyon ocağı"
+    ],
+    "largeBodies": [
+      "25 kW yapılandırma, belirtilen 900 mm çap ve 1100 × 1200 mm taban. Pişirme işini ve servis akışını alana göre planlayın.",
+      "30 kW yapılandırma, belirtilen 1000 mm çap ve 1200 × 1300 mm taban. Çalışma boşluklarını ve giriş yollarını kontrol edin.",
+      "35 kW yapılandırma, belirtilen 1200 mm çap ve 1400 × 1470 mm taban. Toplu pişirme için çalışma alanını ve kazan taşıma koşullarını karşılaştırın."
+    ],
+    "largeNav": "Büyük kazanlı ocaklar",
+    "largeCaption": "Serinin ortak görünümü. Kazan çapı ve gövde ölçüleri seçilen modele bağlıdır.",
+    "largeConfiguration": "Kullanılabilir hacmi, kazanın teslimata dahil olup olmadığını, gıda yükünü, pişirme çevrimini, temizlik erişimini ve tahliyeyi teyit edin. Çap ve güç tek başına litre veya saatlik porsiyon miktarını belirlemez. Teklifte modeli, elektrik beslemesi ve bağlantısını, ambalajı ve varış yerini netleştirin."
   }
 }

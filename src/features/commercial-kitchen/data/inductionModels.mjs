@@ -142,3 +142,40 @@ export const roundCookerModels = [
     "image": "/commercial-kitchen-media/induction/yst-zbl150x.webp"
   }
 ];
+
+// The shared codes 01–03 are intentionally excluded pending supplier clarification.
+export const largeWokModels = [
+  {
+    "id": "z-scd04h",
+    "model": "Z-SCD04H",
+    "kind": "large",
+    "power": "25 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "1100 × 1200 mm",
+    "dimensions": "1100 × 1200 × 800 (400) mm",
+    "diameter": "Ø 900 mm",
+    "image": "/commercial-kitchen-media/induction/large-wok-series.webp"
+  },
+  {
+    "id": "z-scd05h",
+    "model": "Z-SCD05H",
+    "kind": "large",
+    "power": "30 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "1200 × 1300 mm",
+    "dimensions": "1200 × 1300 × 800 (400) mm",
+    "diameter": "Ø 1000 mm",
+    "image": "/commercial-kitchen-media/induction/large-wok-series.webp"
+  },
+  {
+    "id": "z-scd06h",
+    "model": "Z-SCD06H",
+    "kind": "large",
+    "power": "35 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "1400 × 1470 mm",
+    "dimensions": "1400 × 1470 × 800 (400) mm",
+    "diameter": "Ø 1200 mm",
+    "image": "/commercial-kitchen-media/induction/large-wok-series.webp"
+  }
+];

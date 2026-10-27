@@ -1,6 +1,6 @@
-import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels} from './inductionModels.mjs';
+import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels,largeWokModels} from './inductionModels.mjs';
 import copies from '../locales/planning/induction-catalogue.json' with {type:'json'};
-const groups={single:inductionModels,multi:multiZoneModels,steam:steamModels,noodle:noodleModels,round:roundCookerModels};
+const groups={single:inductionModels,multi:multiZoneModels,steam:steamModels,noodle:noodleModels,round:roundCookerModels,large:largeWokModels};
 export function handbookCopy(product,locale='en') {
  const base=copies[locale==='zh-cn'?'zh':locale],group=product.handbookGroup;
  if(!base||!group)return null;

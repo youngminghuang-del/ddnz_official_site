@@ -23,9 +23,9 @@ const textOnly = html => html.replace(/<[^>]+>/g, '').replaceAll('&amp;', '&');
 const allSelected = Object.fromEntries(catalog.map(product => [product.id, product.quote?.minUnits || 2]));
 
 for (const locale of ['es', 'ar']) {
-  test(`${locale}: all 37 records, eight exact CNY prices and per-model quantity tiers survive localization`, () => {
+  test(`${locale}: all 40 records, eight exact CNY prices and per-model quantity tiers survive localization`, () => {
     const products = getLocalizedKitchenProducts(locale);
-    assert.equal(products.length, 37);
+    assert.equal(products.length, 40);
     assert.deepEqual(new Set(products.map(product => product.id)), new Set(catalog.map(product => product.id)));
     assert.deepEqual(products.slice(0, 8).map(product => product.id), launch.featuredProductIds);
     assert.equal(products.filter(product => product.quote).length, 8);
@@ -50,7 +50,7 @@ for (const locale of ['es', 'ar']) {
 
   test(`${locale}: initial SSR contains the full localized catalogue, specifications, references and quotation UI`, () => {
     const html = render({ locale }), text = textOnly(html), t = kitchenCopy(locale);
-    assert.equal((html.match(/data-product-id=/g) || []).length, 37);
+    assert.equal((html.match(/data-product-id=/g) || []).length, 40);
     assert.equal((html.match(/data-reference-cny=/g) || []).length, 8);
     assert.equal((html.match(/<h1>/g) || []).length, 1);
     assert.match(html, new RegExp(`lang="${locale}" dir="${t.dir}"`));
@@ -86,7 +86,7 @@ for (const locale of ['es', 'ar']) {
     assert.deepEqual(meta.alternateUrls.map(item => item.hrefLang), ['en','zh-cn','es','ar','ru','fr','pt','tr']);
     assert.ok(meta.alternateUrls.some(item => item.hrefLang === locale && item.href === meta.canonicalUrl));
     const page = meta.structuredData['@graph'][0];
-    assert.equal(page.mainEntity.itemListElement.length, 37);
+    assert.equal(page.mainEntity.itemListElement.length, 40);
     assert.ok(page.mainEntity.itemListElement.every(item => item.url.startsWith(`${meta.canonicalUrl}#model-`)));
     assert.doesNotMatch(JSON.stringify(meta.structuredData), /"Offer"|priceCurrency|availability/);
   });
@@ -120,7 +120,7 @@ for (const locale of ['es', 'ar']) {
     assert.equal(new URL(links.email).searchParams.get('body'), payload.message);
     assert.equal(new URL(links.email).searchParams.get('subject'), payload.subject);
     const seeded = render({ locale, initialList: allSelected, initialCompared: ['ZH-101V', 'ZH-102V'], initialForm: form });
-    assert.equal((seeded.match(/data-selected-id=/g) || []).length, 37);
+    assert.equal((seeded.match(/data-selected-id=/g) || []).length, 40);
     assert.match(seeded, /<table class="compare-table">/);
     assert.doesNotMatch(seeded, /<script>/);
   });
