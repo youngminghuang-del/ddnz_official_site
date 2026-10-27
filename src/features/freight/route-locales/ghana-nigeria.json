@@ -1,0 +1,418 @@
+{
+  "en": {
+    "ghana": {
+      "title": "Tema arrival or delivery beyond Accra?",
+      "intro": "Compare the complete handover, using the same cargo list and receiving address.",
+      "routes": [
+        [
+          "China → Tema",
+          "FCL / LCL",
+          "Ask for the Chinese departure port, any transshipment and the discharge terminal. For LCL, include unpacking and collection charges."
+        ],
+        [
+          "Tema → Accra / Kumasi",
+          "Road delivery",
+          "Quote the actual address. Agree truck access, unloading, appointments and who pays waiting or storage charges."
+        ],
+        [
+          "Urgent samples → Accra",
+          "Air quotation",
+          "Separate samples from bulk stock. Compare chargeable weight, flight availability and airport release before arranging local delivery."
+        ]
+      ],
+      "arrivalTitle": "For sorted or used goods",
+      "arrival": "Keep category, condition, packing and quantities separate. Have the importer confirm acceptance before loading; a sea quotation does not establish import eligibility.",
+      "cargo": "Send supplier locations, ready dates, bale or carton dimensions, gross weights and the importer’s contact. Identify batteries and mixed categories.",
+      "note": "Confirm the schedule, release point and delivery scope with the quotation. No fixed door-delivery time is assumed."
+    },
+    "nigeria": {
+      "title": "Which Lagos port, and which receiving point?",
+      "intro": "“Lagos” alone does not identify the terminal or include delivery to a market.",
+      "routes": [
+        [
+          "China → named Lagos gateway",
+          "Apapa / Tin Can / Lekki",
+          "Compare the carrier’s available discharge port and terminal, destination charges and onward road leg for the same cargo."
+        ],
+        [
+          "LCL → release warehouse",
+          "Consolidated cargo",
+          "Confirm the unpacking location, release documents, storage terms and collection contact. Warehouse pickup and market delivery are different scopes."
+        ],
+        [
+          "Urgent stock → Lagos",
+          "Air quotation",
+          "Price urgent cartons separately from bulky stock. Confirm chargeable weight, battery acceptance, airport release and last-mile delivery."
+        ]
+      ],
+      "arrivalTitle": "Market delivery or an inland warehouse?",
+      "arrival": "For Alaba, Computer Village or Ladipo, give the actual receiving address, contact and vehicle access. For Abuja or another inland city, request a separate road leg.",
+      "cargo": "List suppliers and ready dates; separate phone accessories, powered electronics and vehicle parts by packing, weights and condition. Agree unloading and container return responsibilities.",
+      "note": "Compare total cost to the same handover point. Transit, clearance and delivery dates are confirmed separately."
+    }
+  },
+  "zh": {
+    "ghana": {
+      "title": "到特马港，还是继续送往阿克拉或内陆？",
+      "intro": "用同一份货单和实际收货地址，比较完整交接安排。",
+      "routes": [
+        [
+          "中国 → 特马",
+          "整柜 / 拼箱",
+          "确认中国起运港、是否中转及卸货码头。拼箱同时列明拆箱和提货费用。"
+        ],
+        [
+          "特马 → 阿克拉 / 库马西",
+          "公路配送",
+          "按实际地址报价，约定车辆进出、卸货、预约，以及等待或仓储费用由谁承担。"
+        ],
+        [
+          "急需样品 → 阿克拉",
+          "单独比较空运",
+          "样品与大货分开；比较计费重量、可订航班和机场放货，再安排当地配送。"
+        ]
+      ],
+      "arrivalTitle": "分拣货或二手货，先核具体品类",
+      "arrival": "品类、成色、包装和数量分别列明。装柜前请进口方核对能否进口；海运报价不等于进口资格确认。",
+      "cargo": "提供供应商位置、货好日期、包块或纸箱尺寸、毛重及进口方联系人。含电池货物和混装品类单独说明。",
+      "note": "班次、放货地点和配送范围随报价确认，不预设固定到门天数。"
+    },
+    "nigeria": {
+      "title": "拉各斯哪个港，交到哪个收货点？",
+      "intro": "只写“拉各斯”不能明确码头，也不代表包含送到市场。",
+      "routes": [
+        [
+          "中国 → 指定拉各斯港口",
+          "阿帕帕 / 廷坎 / 莱基",
+          "对同一批货比较承运人可提供的卸货港、码头、目的地费用及后续公路段。"
+        ],
+        [
+          "拼箱 → 放货仓库",
+          "集货拼箱",
+          "确认拆箱地点、放货文件、仓储条件和提货联系人。仓库自提与送到市场分别报价。"
+        ],
+        [
+          "急需补货 → 拉各斯",
+          "单独比较空运",
+          "急需纸箱货与大体积库存分开核算，确认计费重量、电池承运条件、机场放货和末端配送。"
+        ]
+      ],
+      "arrivalTitle": "送市场，还是内陆仓库？",
+      "arrival": "Alaba、Computer Village、Ladipo须提供实际地址、联系人和车辆进出条件；阿布贾等内陆城市另列公路段。",
+      "cargo": "列明供应商与货好日期；手机配件、带电电子产品和车辆配件按包装、重量和成色分列，并约定卸货与还箱责任。",
+      "note": "以同一交接点比较总费用；运输、清关和配送日期分别确认。"
+    }
+  },
+  "es": {
+    "ghana": {
+      "title": "¿Llegada a Tema o entrega más allá de Acra?",
+      "intro": "Comparar la entrega completa con la misma carga y dirección.",
+      "routes": [
+        [
+          "China → Tema",
+          "FCL / LCL",
+          "Confirmar puerto chino, transbordos y terminal. En LCL, incluir desconsolidación y recogida."
+        ],
+        [
+          "Tema → Acra / Kumasi",
+          "Transporte por carretera",
+          "Cotizar la dirección real; acordar acceso, descarga, cita y responsables de esperas o almacenaje."
+        ],
+        [
+          "Muestras urgentes → Acra",
+          "Cotización aérea",
+          "Separar muestras del pedido grande; comparar peso facturable, vuelo y liberación antes de la entrega local."
+        ]
+      ],
+      "arrivalTitle": "Mercancías clasificadas o usadas",
+      "arrival": "Separar categoría, estado, embalaje y cantidad. El importador debe confirmar admisibilidad antes de cargar; cotizar flete no confirma permiso de importación.",
+      "cargo": "Enviar proveedores, fechas, medidas de fardos o cajas, pesos y contacto del importador. Identificar baterías y categorías mezcladas.",
+      "note": "Confirmar salida, lugar de liberación y alcance en el presupuesto; no se presupone un plazo fijo hasta la puerta."
+    },
+    "nigeria": {
+      "title": "¿Qué puerto de Lagos y qué punto de recepción?",
+      "intro": "«Lagos» no identifica la terminal ni incluye entrega al mercado.",
+      "routes": [
+        [
+          "China → puerto definido en Lagos",
+          "Apapa / Tin Can / Lekki",
+          "Comparar puerto y terminal disponibles, gastos de destino y tramo por carretera para la misma carga."
+        ],
+        [
+          "LCL → almacén de liberación",
+          "Carga consolidada",
+          "Confirmar desconsolidación, documentos, almacenaje y contacto. Recogida en almacén y entrega al mercado son alcances distintos."
+        ],
+        [
+          "Reposición urgente → Lagos",
+          "Cotización aérea",
+          "Separar cajas urgentes de carga voluminosa; confirmar peso facturable, aceptación de baterías, liberación y entrega."
+        ]
+      ],
+      "arrivalTitle": "¿Mercado o almacén interior?",
+      "arrival": "Para Alaba, Computer Village o Ladipo, indicar dirección, contacto y acceso. Para Abuya u otra ciudad interior, cotizar el tramo por separado.",
+      "cargo": "Listar proveedores y fechas; separar accesorios móviles, electrónica con batería y repuestos por embalaje, peso y estado. Acordar descarga y devolución del contenedor.",
+      "note": "Comparar el coste hasta el mismo punto; confirmar por separado transporte, despacho y fecha de entrega."
+    }
+  },
+  "pt": {
+    "ghana": {
+      "title": "Chegada a Tema ou entrega além de Acra?",
+      "intro": "Compare a entrega completa para a mesma carga e endereço.",
+      "routes": [
+        [
+          "China → Tema",
+          "FCL / LCL",
+          "Confirme porto chinês, transbordos e terminal. No LCL, inclua desconsolidação e retirada."
+        ],
+        [
+          "Tema → Acra / Kumasi",
+          "Transporte rodoviário",
+          "Cote o endereço real; combine acesso, descarga, agendamento e responsabilidade por espera ou armazenagem."
+        ],
+        [
+          "Amostras urgentes → Acra",
+          "Cotação aérea",
+          "Separe amostras do lote; compare peso tarifável, voo e liberação antes da entrega local."
+        ]
+      ],
+      "arrivalTitle": "Mercadorias separadas ou usadas",
+      "arrival": "Separe categoria, estado, embalagem e quantidade. O importador confirma a admissibilidade antes do embarque; cotação de frete não confirma autorização de importação.",
+      "cargo": "Envie fornecedores, datas, medidas dos fardos ou caixas, pesos e contato do importador. Identifique baterias e categorias misturadas.",
+      "note": "Confirme saída, ponto de liberação e escopo na cotação; não se presume prazo fixo até a porta."
+    },
+    "nigeria": {
+      "title": "Qual porto de Lagos e qual ponto de recebimento?",
+      "intro": "“Lagos” não identifica o terminal nem inclui entrega ao mercado.",
+      "routes": [
+        [
+          "China → porto definido em Lagos",
+          "Apapa / Tin Can / Lekki",
+          "Compare porto e terminal disponíveis, custos no destino e trecho rodoviário para a mesma carga."
+        ],
+        [
+          "LCL → armazém de liberação",
+          "Carga consolidada",
+          "Confirme desconsolidação, documentos, armazenagem e contato. Retirada e entrega ao mercado têm escopos distintos."
+        ],
+        [
+          "Reposição urgente → Lagos",
+          "Cotação aérea",
+          "Separe caixas urgentes da carga volumosa; confirme peso tarifável, aceitação de baterias, liberação e entrega."
+        ]
+      ],
+      "arrivalTitle": "Mercado ou armazém no interior?",
+      "arrival": "Para Alaba, Computer Village ou Ladipo, informe endereço, contato e acesso. Para Abuja ou outra cidade interior, cote o trecho separadamente.",
+      "cargo": "Liste fornecedores e datas; separe acessórios móveis, eletrônicos com bateria e peças por embalagem, peso e estado. Combine descarga e devolução do contêiner.",
+      "note": "Compare o custo até o mesmo ponto; confirme separadamente transporte, desembaraço e entrega."
+    }
+  },
+  "fr": {
+    "ghana": {
+      "title": "Arrivée à Tema ou livraison au-delà d’Accra ?",
+      "intro": "Comparez la remise complète pour un même chargement et une même adresse.",
+      "routes": [
+        [
+          "Chine → Tema",
+          "FCL / LCL",
+          "Confirmez port chinois, transbordements et terminal. En LCL, incluez dégroupage et enlèvement."
+        ],
+        [
+          "Tema → Accra / Kumasi",
+          "Transport routier",
+          "Chiffrez l’adresse réelle ; convenez de l’accès, du déchargement, du rendez-vous et des frais d’attente ou de stockage."
+        ],
+        [
+          "Échantillons urgents → Accra",
+          "Devis aérien",
+          "Séparez échantillons et stock ; comparez poids taxable, vol et mainlevée avant la livraison locale."
+        ]
+      ],
+      "arrivalTitle": "Marchandises triées ou d’occasion",
+      "arrival": "Distinguez catégorie, état, emballage et quantité. L’importateur confirme l’admissibilité avant chargement ; un devis maritime ne valide pas le droit d’importer.",
+      "cargo": "Envoyez fournisseurs, dates, dimensions des balles ou cartons, poids et contact importateur. Signalez batteries et catégories mélangées.",
+      "note": "Confirmez départ, point de mainlevée et périmètre au devis ; aucun délai fixe porte-à-porte n’est présumé."
+    },
+    "nigeria": {
+      "title": "Quel port de Lagos et quel lieu de réception ?",
+      "intro": "« Lagos » ne désigne pas le terminal et n’inclut pas la livraison au marché.",
+      "routes": [
+        [
+          "Chine → port désigné à Lagos",
+          "Apapa / Tin Can / Lekki",
+          "Comparez port et terminal disponibles, frais à destination et trajet routier pour la même cargaison."
+        ],
+        [
+          "LCL → entrepôt de remise",
+          "Groupage",
+          "Confirmez dégroupage, documents, stockage et contact. Enlèvement à l’entrepôt et livraison au marché sont distincts."
+        ],
+        [
+          "Stock urgent → Lagos",
+          "Devis aérien",
+          "Séparez cartons urgents et stock volumineux ; confirmez poids taxable, acceptation des batteries, mainlevée et livraison."
+        ]
+      ],
+      "arrivalTitle": "Marché ou entrepôt intérieur ?",
+      "arrival": "Pour Alaba, Computer Village ou Ladipo, indiquez adresse, contact et accès. Pour Abuja ou une autre ville intérieure, demandez un trajet distinct.",
+      "cargo": "Listez fournisseurs et dates ; séparez accessoires mobiles, électronique avec batterie et pièces selon emballage, poids et état. Convenez du déchargement et du retour du conteneur.",
+      "note": "Comparez le coût jusqu’au même point ; confirmez séparément transport, douane et livraison."
+    }
+  },
+  "ru": {
+    "ghana": {
+      "title": "Прибытие в Тему или доставка дальше Аккры?",
+      "intro": "Сравнивайте передачу одного и того же груза по одному адресу.",
+      "routes": [
+        [
+          "Китай → Тема",
+          "FCL / LCL",
+          "Уточните китайский порт, перегрузки и терминал. Для LCL включите расформирование и получение груза."
+        ],
+        [
+          "Тема → Аккра / Кумаси",
+          "Автодоставка",
+          "Рассчитайте фактический адрес; согласуйте подъезд, разгрузку, время приёмки и оплату ожидания или хранения."
+        ],
+        [
+          "Срочные образцы → Аккра",
+          "Расчёт авиадоставки",
+          "Отделите образцы от партии; сравните оплачиваемый вес, рейс и выпуск до местной доставки."
+        ]
+      ],
+      "arrivalTitle": "Сортированные или бывшие в употреблении товары",
+      "arrival": "Укажите категорию, состояние, упаковку и количество отдельно. Импортёр проверяет допустимость до погрузки; расчёт фрахта не подтверждает право ввоза.",
+      "cargo": "Передайте поставщиков, даты, размеры тюков или коробок, вес и контакт импортёра. Укажите батареи и смешанные категории.",
+      "note": "Отправление, место выпуска и объём доставки подтверждаются в предложении; фиксированный срок до двери не предполагается."
+    },
+    "nigeria": {
+      "title": "Какой порт Лагоса и какое место получения?",
+      "intro": "«Лагос» не определяет терминал и не означает доставку на рынок.",
+      "routes": [
+        [
+          "Китай → согласованный порт Лагоса",
+          "Апапа / Тин-Кан / Лекки",
+          "Сравните доступный порт, терминал, расходы назначения и автодоставку для одного груза."
+        ],
+        [
+          "LCL → склад выдачи",
+          "Сборный груз",
+          "Уточните расформирование, документы, хранение и контакт. Самовывоз и доставка на рынок — разные условия."
+        ],
+        [
+          "Срочное пополнение → Лагос",
+          "Расчёт авиадоставки",
+          "Отделите срочные коробки от объёмного груза; уточните вес, приём батарей, выпуск и доставку."
+        ]
+      ],
+      "arrivalTitle": "Рынок или внутренний склад?",
+      "arrival": "Для Alaba, Computer Village или Ladipo укажите адрес, контакт и подъезд. Для Абуджи или другого города отдельно рассчитайте автодоставку.",
+      "cargo": "Укажите поставщиков и даты; разделите аксессуары, электронику с батареями и запчасти по упаковке, весу и состоянию. Согласуйте выгрузку и возврат контейнера.",
+      "note": "Сравнивайте расходы до одной точки; сроки перевозки, оформления и доставки подтверждайте отдельно."
+    }
+  },
+  "tr": {
+    "ghana": {
+      "title": "Tema’ya varış mı, Akra ötesine teslimat mı?",
+      "intro": "Aynı yük ve adres için tüm teslim sürecini karşılaştırın.",
+      "routes": [
+        [
+          "Çin → Tema",
+          "FCL / LCL",
+          "Çin limanını, aktarmaları ve terminali doğrulayın. LCL için ayrıştırma ve teslim alma ücretlerini ekleyin."
+        ],
+        [
+          "Tema → Akra / Kumasi",
+          "Kara taşıması",
+          "Gerçek adresi fiyatlandırın; erişim, boşaltma, randevu ve bekleme veya depolama sorumluluğunu belirleyin."
+        ],
+        [
+          "Acil numuneler → Akra",
+          "Hava kargo teklifi",
+          "Numuneleri stoktan ayırın; yerel teslimattan önce ücretlendirilen ağırlık, uçuş ve çıkışı karşılaştırın."
+        ]
+      ],
+      "arrivalTitle": "Ayrıştırılmış veya ikinci el mallar",
+      "arrival": "Kategori, durum, ambalaj ve miktarı ayırın. İthalatçı yükleme öncesi kabul koşullarını doğrular; navlun teklifi ithalat izni değildir.",
+      "cargo": "Tedarikçi, tarih, balya veya koli ölçüleri, ağırlık ve ithalatçı iletişimini gönderin. Bataryaları ve karışık kategorileri belirtin.",
+      "note": "Sefer, çıkış noktası ve teslim kapsamı teklifte doğrulanır; sabit kapıya teslim süresi varsayılmaz."
+    },
+    "nigeria": {
+      "title": "Hangi Lagos limanı ve hangi teslim noktası?",
+      "intro": "“Lagos” terminali belirtmez ve pazara teslimatı içermez.",
+      "routes": [
+        [
+          "Çin → belirlenen Lagos limanı",
+          "Apapa / Tin Can / Lekki",
+          "Aynı yük için mevcut limanı, terminali, varış ücretlerini ve kara etabını karşılaştırın."
+        ],
+        [
+          "LCL → teslim deposu",
+          "Konsolide yük",
+          "Ayrıştırma, belgeler, depolama ve irtibatı doğrulayın. Depodan alım ile pazara teslim farklı kapsamlardır."
+        ],
+        [
+          "Acil stok → Lagos",
+          "Hava kargo teklifi",
+          "Acil kolileri hacimli stoktan ayırın; ağırlık, batarya kabulü, çıkış ve teslimatı doğrulayın."
+        ]
+      ],
+      "arrivalTitle": "Pazar mı, iç bölgedeki depo mu?",
+      "arrival": "Alaba, Computer Village veya Ladipo için adres, irtibat ve araç erişimini belirtin. Abuja veya başka bir iç şehir için ayrı kara etabı isteyin.",
+      "cargo": "Tedarikçi ve tarihleri listeleyin; aksesuarları, bataryalı elektroniği ve parçaları ambalaj, ağırlık ve duruma göre ayırın. Boşaltma ve konteyner iadesini kararlaştırın.",
+      "note": "Aynı noktaya kadar maliyeti karşılaştırın; taşıma, gümrük ve teslim tarihlerini ayrı doğrulayın."
+    }
+  },
+  "ar": {
+    "ghana": {
+      "title": "الوصول إلى تيما أم التسليم بعد أكرا؟",
+      "intro": "قارن التسليم الكامل للشحنة نفسها وعنوان الاستلام نفسه.",
+      "routes": [
+        [
+          "الصين ← تيما",
+          "حاوية كاملة / شحن جزئي",
+          "أكد ميناء الصين ومحطات النقل وميناء التفريغ. للشحن الجزئي أدرج رسوم فك التجميع والاستلام."
+        ],
+        [
+          "تيما ← أكرا / كوماسي",
+          "نقل بري",
+          "اطلب السعر للعنوان الفعلي؛ اتفق على دخول المركبات والتفريغ والموعد ومسؤولية الانتظار والتخزين."
+        ],
+        [
+          "عينات عاجلة ← أكرا",
+          "عرض شحن جوي",
+          "افصل العينات عن المخزون؛ قارن الوزن المحتسب والرحلة والإفراج قبل التسليم المحلي."
+        ]
+      ],
+      "arrivalTitle": "البضائع المفروزة أو المستعملة",
+      "arrival": "افصل الفئة والحالة والتغليف والكمية. يؤكد المستورد أهلية الاستيراد قبل التحميل؛ عرض الشحن لا يثبت السماح بالاستيراد.",
+      "cargo": "أرسل الموردين والمواعيد وأبعاد البالات أو الكراتين والأوزان وبيانات المستورد. حدد البطاريات والفئات المختلطة.",
+      "note": "يُؤكد موعد الرحلة ومكان الإفراج ونطاق التسليم في العرض؛ لا يُفترض موعد ثابت للتسليم إلى الباب."
+    },
+    "nigeria": {
+      "title": "أي ميناء في لاغوس وأي نقطة استلام؟",
+      "intro": "اسم لاغوس وحده لا يحدد المحطة ولا يشمل التسليم إلى السوق.",
+      "routes": [
+        [
+          "الصين ← ميناء محدد في لاغوس",
+          "أبابا / تين كان / ليكي",
+          "قارن الميناء والمحطة المتاحين ورسوم الوجهة والمسار البري للشحنة نفسها."
+        ],
+        [
+          "شحن جزئي ← مستودع التسليم",
+          "شحنة مجمعة",
+          "أكد مكان فك التجميع والمستندات والتخزين وبيانات الاتصال. الاستلام من المستودع والتسليم للسوق نطاقان مختلفان."
+        ],
+        [
+          "مخزون عاجل ← لاغوس",
+          "عرض شحن جوي",
+          "افصل الكراتين العاجلة عن المخزون الكبير؛ أكد الوزن وقبول البطاريات والإفراج والتسليم."
+        ]
+      ],
+      "arrivalTitle": "سوق أم مستودع داخلي؟",
+      "arrival": "لسوق Alaba أو Computer Village أو Ladipo، أرسل العنوان وجهة الاتصال وإمكانية دخول المركبات. لأبوجا أو مدينة داخلية اطلب مساراً برياً منفصلاً.",
+      "cargo": "اذكر الموردين والمواعيد؛ افصل الملحقات والإلكترونيات بالبطاريات وقطع الغيار حسب التغليف والوزن والحالة. اتفق على التفريغ وإعادة الحاوية.",
+      "note": "قارن التكلفة حتى نقطة التسليم نفسها؛ أكد مواعيد النقل والتخليص والتسليم كلّاً على حدة."
+    }
+  }
+}

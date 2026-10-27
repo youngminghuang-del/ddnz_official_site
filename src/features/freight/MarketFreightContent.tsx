@@ -27,7 +27,7 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
         <li><b>03 / Receiving</b><span>The exact address, access and unloading arrangements.</span></li>
       </ol><a href="#market-section-7">Prepare your shipment brief ↓</a></aside>
     </header>
-    {peru && <RoutePlanningDepth country={country} locale={locale}/>}
+    <RoutePlanningDepth country={country} locale={locale}/>
     <div className="market-wrap"><FreightChapters items={[
       {id:'market-section-1',label:peru?'Plan the heavy cargo':'Bring supplier orders together'},
       {id:'market-section-'+(peru?3:4),label:'Compare costs and responsibilities'},

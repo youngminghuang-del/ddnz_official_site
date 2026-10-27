@@ -1,3 +1,4 @@
+import westAfricaCopy from './route-locales/ghana-nigeria.json';
 import destinationCopy from './route-locales/mexico-uae.json';
 import es from './route-locales/es.json';
 import pt from './route-locales/pt.json';
@@ -37,7 +38,8 @@ const ui: Record<string, string[]> = {
 export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
 export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
  const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
- const c = extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
+ const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
+ const c = west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
  if (!c) return null;
  const labels=routePlanningUi(locale);
 
