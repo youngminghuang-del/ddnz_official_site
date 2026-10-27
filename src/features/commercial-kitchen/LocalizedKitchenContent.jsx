@@ -1,3 +1,4 @@
+import InductionCatalogue, {InductionEntry} from './components/InductionCatalogue';
 import CatalogueHeroMedia, { kitchenHeroLabels } from '../../components/catalogue-hero/CatalogueHeroMedia';
 import GulfKitchenPlanning, { GulfKitchenEntry } from './components/GulfKitchenPlanning.jsx';
 import React, { useEffect, useMemo, useRef, useState } from 'react';
@@ -126,7 +127,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
     <a className="skip" href="#commercial-kitchen-equipment">{u.skip}</a>
     <nav className="kitchen-subnav" aria-label={u.sections}>
       <a href="#commercial-kitchen-equipment">{u.equipment}</a><a href="#commercial-kitchen-compare">{u.compare}</a>
-      <a href="#commercial-kitchen-assortments">{u.assortments}</a><a href="#commercial-kitchen-benchmarks">{u.prices}</a>
+      <InductionEntry locale={locale}/><a href="#commercial-kitchen-assortments">{u.assortments}</a><a href="#commercial-kitchen-benchmarks">{u.prices}</a>
       <a href="#commercial-kitchen-margin">{t.margin.nav}</a>
       <a href="#commercial-kitchen-guide">{u.guide}</a><a className="kitchen-subnav-list" href="#commercial-kitchen-list">{u.list} <bdi dir="ltr">{localNumber(count, locale)}</bdi></a>
     </nav>
@@ -160,6 +161,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
         </tbody></table></div><button className="text-link" type="button" onClick={() => setCompared([])}>{u.clearCompare}</button></>}
         <p className="fine">{u.electricity}</p>
       </section>
+      <InductionCatalogue locale={locale}/>
       <section className="section wrap" id="commercial-kitchen-assortments" aria-labelledby="localized-assortment-title"><h2 id="localized-assortment-title">{u.assortmentTitle}</h2><p>{u.assortmentHelp}</p><div className="localized-two-columns">{assortments.map(assortment => <article className="localized-panel" key={assortment.name}><h3>{assortment.name}</h3><p>{assortment.description}</p><ul>{assortment.items.map(item => <li key={item.productId}><IsolatedText>{products.find(product => product.id === item.productId).displayModel}</IsolatedText> × <bdi dir="ltr">{localNumber(item.defaultQty, locale)}</bdi> {u.units}</li>)}</ul><button type="button" className="button primary" onClick={() => add(assortment.selection, u.assortmentAdded, 'add_assortment')}>{u.addAssortment}</button></article>)}</div></section>
       <GulfKitchenPlanning locale={locale}/>
       <section className="section wrap" id="commercial-kitchen-benchmarks" aria-labelledby="localized-prices-title"><p className="eyebrow">{u.prices}</p><h2 id="localized-prices-title">{u.marketTitle}</h2><div className="localized-price-explanation" id="commercial-kitchen-trade-pricing"><p><IsolatedText>{u.priceScope}</IsolatedText></p><p>{u.priceCosts}</p><p><IsolatedText>{u.marketHelp}</IsolatedText></p></div>

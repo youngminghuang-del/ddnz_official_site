@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import React from 'react';
+import {renderToStaticMarkup} from 'react-dom/server';
+import InductionCatalogue from '../src/features/commercial-kitchen/components/InductionCatalogue';
+import {inductionModels} from '../src/features/commercial-kitchen/data/inductionModels.mjs';
+import copies from '../src/features/commercial-kitchen/locales/planning/induction-catalogue.json';
+test('induction catalogue keeps source configurations, electrical ratings and dimensions distinct',()=>{
+ assert.deepEqual(inductionModels.map(p=>[p.model,p.power,p.supply,p.dimensions]),[['YST-K8C','5 kW','220 V · 50 Hz','405 × 510 × 180 mm'],['Z-DCL02H','15 kW','380 V · 50 Hz','1000 × 900 × 800 (400) mm'],['YJ-0020','15 kW','380 V · 50 Hz','650 × 750 × 500 + 700 × 70 mm']]);
+ for(const p of inductionModels){assert.ok(fs.existsSync('public'+p.image));assert.equal(p.price,undefined);assert.equal(p.moq,undefined);}
+});
+test('eight locales hand off the complete selected model without implying price or installation instructions',()=>{
+ for(const locale of Object.keys(copies) as (keyof typeof copies)[]){
+  const c=copies[locale],html=renderToStaticMarkup(<InductionCatalogue locale={locale}/>);
+  assert.ok(html.includes(c.heading));assert.ok(html.includes(c.seriesCaption));assert.ok(html.includes(`dir="${locale==='ar'?'rtl':'ltr'}"`));assert.equal((html.match(/class="induction-card"/g)||[]).length,3);assert.doesNotMatch(html,/<h1\b|"Offer"|CNY|63A|40A|CE certified/);
+  const links=[...html.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://www.ddnzglobal.com'));
+  for(const p of inductionModels){assert.ok(html.includes(`id="model-${p.id}"`));const q=links.find(u=>u.searchParams.get('subcategory')?.startsWith(p.model));assert.ok(q);assert.equal(q.searchParams.get('industry'),'Commercial Kitchen Equipment');for(const k of ['power','supply','footprint','dimensions','packing','net','gross','zone','pan'])if(p[k])assert.ok(q.searchParams.get('subcategory')!.includes(p[k]),`${p.model} ${k}`);}
+ }
+});
+
+test("Chinese hub accepts its existing zh-cn route locale",()=>{assert.ok(renderToStaticMarkup(<InductionCatalogue locale="zh-cn"/>).includes(copies.zh.heading));});
