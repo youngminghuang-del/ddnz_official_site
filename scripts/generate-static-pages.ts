@@ -1,3 +1,4 @@
+import {freightPageInfo,freightPageSchema} from '../src/features/freight/freightPageSchema';
 import FreightRelatedLinks from '../src/features/freight/FreightRelatedLinks';
 import RoutePlanningDepth from '../src/features/freight/RoutePlanningDepth';
 import InductionCatalogue from '../src/features/commercial-kitchen/components/InductionCatalogue';
@@ -811,6 +812,8 @@ function injectSeoMeta(
   seo: SEOItem,
   articleHreflang?: ArticleHreflangSet,
 ): string {
+  const freightInfo=freightPageInfo('/'+relPath,lang);
+  if(freightInfo) seo={...seo,title:freightInfo.title,desc:freightInfo.description};
   let output = htmlContent;
 
   // 1. Update <html lang="..."> attribute
@@ -876,7 +879,7 @@ function injectSeoMeta(
     return `${completeText.trim()}…`;
   };
 
-  const optimizedDesc = optimizeDesc(seo.desc, lang);
+  const optimizedDesc = freightInfo?.description || optimizeDesc(seo.desc, lang);
 
   output = setMetaTag(output, 'title', seo.title);
   output = setMetaTag(output, 'description', optimizedDesc);
@@ -1111,7 +1114,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         }
       ]
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
@@ -1145,7 +1148,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         },
       },
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
@@ -1201,7 +1204,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         },
       ],
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`

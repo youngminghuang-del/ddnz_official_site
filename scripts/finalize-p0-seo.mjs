@@ -12,7 +12,8 @@ for(const route of routes){
  const file=path.join(dist,route,'index.html');let html=fs.readFileSync(file,'utf8');
  const rawTitle=html.match(/<title>([\s\S]*?)<\/title>/i)?.[1]||'';
  const decoded=rawTitle.replace(/&(?:amp|quot|apos|lt|gt|#39);/g,m=>({'&amp;':'&','&quot;':'\"','&apos;':"'",'&#39;':"'",'&lt;':'<','&gt;':'>'}[m]));
- const title=resolveSeoTitle(route,decoded);
+ // Freight metadata is generated with the same reviewed data as its JSON-LD.
+ const title=/\/shipping-from-china-to-[^/]+\/$/.test(route)?decoded:resolveSeoTitle(route,decoded);
  if(title){html=html.replace(/<title>[\s\S]*?<\/title>/i,`<title>${esc(title)}</title>`).replace(/(<meta\s+(?:property|name)="(?:og:title|twitter:title)"\s+content=")[^"]*("[^>]*>)/g,(_,a,b)=>a+esc(title)+b);titles++;}
  if(!html.includes('data-crawlable-languages="true"')){
   const suffix=route.replace(/^\/(zh-cn|es|ar|ru|fr|pt|tr|id)(?=\/)/,'');

@@ -1,3 +1,4 @@
+import freightClaimCopy from '../freight/freightClaimCopy.json' with {type:'json'};
 import zh from './locales/zh.json' with {type:'json'};
 import ru from './locales/ru.json' with {type:'json'};
 import fr from './locales/fr.json' with {type:'json'};
@@ -12,6 +13,8 @@ const patternCache=new Map();
 const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&');
 export function translatedText(value,locale='en'){
  if(typeof value!=='string')return value;
+ const claimIndex=freightClaimCopy.en.indexOf(value);
+ if(claimIndex>=0 && freightClaimCopy[localeCode(locale)])return freightClaimCopy[localeCode(locale)][claimIndex];
  const lang=localeCode(locale),dict=translations[lang];if(!dict)return value;
  if(Object.hasOwn(dict,value))return dict[value];
  // Interpolate after translating the original template; never translate user input.

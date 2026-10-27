@@ -1,8 +1,11 @@
+import {reviewedMiddleEastIntro,reviewedMiddleEastLabel} from '../features/freight/reviewedMiddleEastCopy';
+import {freightPageInfo} from '../features/freight/freightPageSchema';
+import freightClaimCopy from '../features/freight/freightClaimCopy.json';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import '../features/freight/freight.css';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
-import {translatedText} from '../features/site-localization/translate.mjs';
+import {translatedText,translatedTree} from '../features/site-localization/translate.mjs';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect } from 'react';
 import { useLocation, Link } from 'react-router-dom';
@@ -37,7 +40,7 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     alertTag: "Operational Update",
     alertTitle: "The Red Sea Shift: From Maritime Risks to Port Bottlenecks",
-    alertContent: "On affected Cape-routing sailings, the ocean leg can add roughly 10–14 days. Seasonal demand, carrier rotations, port congestion and destination procedures can also shift the final delivery window.",
+    alertContent: "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately. Seasonal demand, carrier rotations, port congestion and destination procedures can also shift the final delivery window.",
 
     matrixTitle: "All-in-One Transit Time & Reference Matrix",
     matrixSubtitle: "Realistic transit durations mapped from China hubs to Middle East regional destinations.",
@@ -105,8 +108,8 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     chinaToMiddleEastSpecialist: "CHINA–MIDDLE EAST SPECIALIST",
     experienceBadge: "Established in 1997 · China-origin logistics support",
     transitWindowTitle: "Middle East Transit Windows",
-    seaDdpText: "Sea Freight DDP (Door to Door)",
-    airDdpText: "Air Freight DDP (Door to Door)",
+    seaDdpText: "Sea freight · delivery scope to confirm",
+    airDdpText: "Air freight · delivery scope to confirm",
     seaDaysText: "Typical planning range",
     airDaysText: "Typical planning range",
     transitIncludeText: "General planning ranges only. Add buffer time for peak seasons, carrier schedule changes, port congestion, customs inspection, public holidays and route disruptions.",
@@ -132,14 +135,14 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
 
     alertTag: "红海动态运营通报",
     alertTitle: "中东大实话：红海绕行进入深水区，痛点已变成‘港口挤压’",
-    alertContent: "受好望角绕行影响的船期，海运段通常可能增加约 10–14 天。旺季、船公司轮换、港口拥堵、目的港操作和查验，也会影响最终派送周期。",
+    alertContent: "按明确的起运地、目的地及当次班期确认运输时间；提货、清关衔接和末段配送另行约定。旺季、船公司轮换、港口拥堵、目的港操作和查验，也会影响最终派送周期。",
 
     matrixTitle: "中东海空时效与服务对照矩阵",
-    matrixSubtitle: "为您展示真实的中国起运至中东各主要目的国的DDP时效及港到港航程参考。",
+    matrixSubtitle: "交付范围待确认",
     colTargetCountries: "目的国家/地区",
-    colAirFreight: "空运 DDP 双清门到门",
-    colOceanFcl: "海运整箱 FCL DDP 门到门",
-    colOceanLcl: "海运拼箱 LCL DDP 门到门",
+    colAirFreight: "空运 · 交付范围待确认",
+    colOceanFcl: "海运 · 交付范围待确认",
+    colOceanLcl: "海运 · 交付范围待确认",
     colPortToPort: "起运港至目的港海运航程",
     colSolutions: "定制化物流解决方案",
     matrixFootnote: "时效备注：以下为常规航线的计划参考区间。旺季、船公司班期调整、港口拥堵、查验、节假日及航线变化均可能延长周期；以实际订舱后的承运人船期为准。",
@@ -153,12 +156,12 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     card2Title: "中国本土装运前检验 (出货前本土实地品控验货)",
     card2Desc: "作为您在中国的眼睛和耳朵，我们在装箱前对货物进行外观质检、数量核对和包装加固确认，把质量纠纷解决在国门之内。",
     card2Cta: "了解验货服务",
-    card3Title: "目的港口岸清关与合规支持 (合规双清与特殊资质协助)",
+    card3Title: "交付范围待确认",
     card3Desc: "协助整理沙特 SABER 资料、核对商品 HS 编码，并与目的地合作清关代理协调 DDP 服务的适用范围。",
     card3Cta: "预审海关HS编码",
 
     faqHeading: "中东段出货合规排查及常见问题",
-    faqSubheading: "建议每一位发货卖家收藏！提前排查合规红线，确保跨境大货顺利通关放行。",
+    faqSubheading: "订舱前由进口方与承运方核对文件、货物可接条件和交付范围。",
 
     faqs: [
       {
@@ -200,13 +203,13 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     chinaToMiddleEastSpecialist: "中国–中东货运专家",
     experienceBadge: "29年中国至中东跨境物流经验",
     transitWindowTitle: "中东专线预计时效",
-    seaDdpText: "海运门到门 (双清DDP)",
-    airDdpText: "空运双清包税 (DDP)",
+    seaDdpText: "海运 · 交付范围待确认",
+    airDdpText: "空运 · 交付范围待确认",
     seaDaysText: "常规计划参考",
     airDaysText: "常规计划参考",
     transitIncludeText: "以下为常规计划参考区间。建议为旺季、船期调整、港口拥堵、查验、节假日及航线变化预留缓冲时间。",
     compliantFilingText: "合规文件审核支持",
-    professionalVerificationText: "高效专业审核核发",
+    professionalVerificationText: "文件准备与核对",
     saudiFocus: "沙特专区",
     uaeFocus: "阿联酋专区",
     kuwaitFocus: "科威特专区",
@@ -230,11 +233,11 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     alertContent: "Из-за перенаправления судов через мыс Доброй Надежды морская логистика сталкивается с дополнительной нагрузкой. Мы помогаем заранее планировать бронирование, документы и бюджет с учетом ситуации в портах назначения.",
 
     matrixTitle: "Единая матрица транзитных сроков и маршрутов",
-    matrixSubtitle: "Реалистичные сроки доставки DDP от складов в Китае до ключевых регионов Ближнего Востока.",
+    matrixSubtitle: "Условия доставки уточняются",
     colTargetCountries: "Целевые страны",
-    colAirFreight: "Авиадоставка DDP (Дверь-Дверь)",
-    colOceanFcl: "Морской контейнер FCL DDP (Дверь-Дверь)",
-    colOceanLcl: "Морская сборная LCL DDP (Дверь-Дверь)",
+    colAirFreight: "Авиа · условия доставки уточняются",
+    colOceanFcl: "Море · условия доставки уточняются",
+    colOceanLcl: "Море · условия доставки уточняются",
     colPortToPort: "Морской рейс порт-порт (Справочно)",
     colSolutions: "Индивидуальные решения",
     matrixFootnote: "Диапазоны приведены для обычных маршрутов и планирования. Закладывайте дополнительное время на пиковый сезон, изменения расписаний перевозчиков, перегруженность портов, досмотр, праздники и изменения маршрута; приоритет имеет расписание подтверждённого бронирования.",
@@ -295,8 +298,8 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     chinaToMiddleEastSpecialist: "СПЕЦИАЛИСТ ПО НАПРАВЛЕНИЮ КИТАЙ–БЛИЖНИЙ ВОСТОК",
     experienceBadge: "Опыт организации перевозок Китай–Ближний Восток",
     transitWindowTitle: "Ориентировочные сроки доставки на Ближний Восток",
-    seaDdpText: "Морской фрахт DDP (от двери до двери)",
-    airDdpText: "Авиафрахт DDP (от двери до двери)",
+    seaDdpText: "Море · условия доставки уточняются",
+    airDdpText: "Авиа · условия доставки уточняются",
     seaDaysText: "Обычный диапазон планирования",
     airDaysText: "Обычный диапазон планирования",
     transitIncludeText: "Это диапазоны для планирования. Оставляйте запас на высокий сезон, изменение расписания, перегрузку портов, досмотр, праздники и изменения маршрута.",
@@ -324,9 +327,9 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     matrixTitle: "Matrice de référence globale des temps de transport",
     matrixSubtitle: "Durées de transit réalistes cartographiées depuis les hubs chinois vers le Moyen-Orient.",
     colTargetCountries: "Pays de destination",
-    colAirFreight: "Fret aérien DDP (Porte-à-Porte)",
-    colOceanFcl: "Fret maritime FCL DDP (Porte-à-Porte)",
-    colOceanLcl: "Fret maritime LCL DDP (Porte-à-Porte)",
+    colAirFreight: "Périmètre de livraison à confirmer",
+    colOceanFcl: "Maritime · périmètre de livraison à confirmer",
+    colOceanLcl: "Maritime · périmètre de livraison à confirmer",
     colPortToPort: "Voyage maritime Port-à-Port (Réf)",
     colSolutions: "Solutions sur mesure",
     matrixFootnote: "Ces fourchettes correspondent aux itinéraires habituels et servent à la planification. Prévoyez une marge en haute saison, lors des changements de rotation, de congestion portuaire, d’inspections, de jours fériés ou de modifications d’itinéraire ; l’horaire de la réservation confirmée prévaut.",
@@ -387,8 +390,8 @@ const PAGE_LANG_DATA: Record<string, Record<string, any>> = {
     chinaToMiddleEastSpecialist: "SPÉCIALISTE CHINE–MOYEN-ORIENT",
     experienceBadge: "Expérience de coordination Chine–Moyen-Orient",
     transitWindowTitle: "Délais indicatifs vers le Moyen-Orient",
-    seaDdpText: "Fret maritime DDP (porte-à-porte)",
-    airDdpText: "Fret aérien DDP (porte-à-porte)",
+    seaDdpText: "Maritime · périmètre de livraison à confirmer",
+    airDdpText: "Périmètre de livraison à confirmer",
     seaDaysText: "Fourchette habituelle de planification",
     airDaysText: "Fourchette habituelle de planification",
     transitIncludeText: "Ces fourchettes servent à la planification. Prévoyez une marge pour la haute saison, les changements d’horaires, la congestion portuaire, les inspections, les jours fériés et les modifications d’itinéraire.",
@@ -417,9 +420,9 @@ PAGE_LANG_DATA.es = {
   matrixTitle: "Matriz de tiempos de tránsito",
   matrixSubtitle: "Rangos habituales desde centros de China hacia Oriente Medio.",
   colTargetCountries: "País de destino",
-  colAirFreight: "Flete aéreo DDP",
-  colOceanFcl: "Flete marítimo FCL DDP",
-  colOceanLcl: "Flete marítimo LCL DDP",
+  colAirFreight: "Delivery scope to confirm",
+  colOceanFcl: "Sea freight · delivery scope to confirm",
+  colOceanLcl: "Sea freight · delivery scope to confirm",
   colPortToPort: "Puerto a puerto",
   colSolutions: "Soluciones",
   matrixFootnote: "Son rangos de planificación. Añada margen por temporada alta, cambios de horario, congestión, inspecciones, festivos o desvíos.",
@@ -448,8 +451,8 @@ PAGE_LANG_DATA.es = {
   chinaToMiddleEastSpecialist: "ESPECIALISTA CHINA–ORIENTE MEDIO",
   experienceBadge: "Coordinación desde China desde 1997",
   transitWindowTitle: "Tiempos estimados hacia Oriente Medio",
-  seaDdpText: "Flete marítimo DDP",
-  airDdpText: "Flete aéreo DDP",
+  seaDdpText: "Delivery scope to confirm",
+  airDdpText: "Delivery scope to confirm",
   seaDaysText: "Rango habitual",
   airDaysText: "Rango habitual",
   transitIncludeText: "Añada margen por temporada alta, cambios de horario, congestión, inspecciones, festivos y desvíos.",
@@ -477,9 +480,9 @@ PAGE_LANG_DATA.ar = {
   matrixTitle: "جدول المدد التقديرية",
   matrixSubtitle: "نطاقات معتادة من مراكز الصين إلى الشرق الأوسط.",
   colTargetCountries: "بلد الوجهة",
-  colAirFreight: "الشحن الجوي DDP",
-  colOceanFcl: "الشحن البحري FCL DDP",
-  colOceanLcl: "الشحن البحري LCL DDP",
+  colAirFreight: "جوي · نطاق التسليم يحتاج تأكيداً",
+  colOceanFcl: "بحري · نطاق التسليم يحتاج تأكيداً",
+  colOceanLcl: "بحري · نطاق التسليم يحتاج تأكيداً",
   colPortToPort: "من ميناء إلى ميناء",
   colSolutions: "الحلول",
   matrixFootnote: "هذه نطاقات للتخطيط. أضف هامشاً لموسم الذروة وتغييرات الجداول والازدحام والتفتيش والعطلات والتحويلات.",
@@ -508,8 +511,8 @@ PAGE_LANG_DATA.ar = {
   chinaToMiddleEastSpecialist: "متخصص الشحن بين الصين والشرق الأوسط",
   experienceBadge: "تنسيق من الصين منذ 1997",
   transitWindowTitle: "المدة التقديرية إلى الشرق الأوسط",
-  seaDdpText: "الشحن البحري DDP",
-  airDdpText: "الشحن الجوي DDP",
+  seaDdpText: "بحري · نطاق التسليم يحتاج تأكيداً",
+  airDdpText: "جوي · نطاق التسليم يحتاج تأكيداً",
   seaDaysText: "النطاق المعتاد",
   airDaysText: "النطاق المعتاد",
   transitIncludeText: "أضف هامشاً لموسم الذروة وتغييرات الجداول والازدحام والتفتيش والعطلات والتحويلات.",
@@ -533,34 +536,34 @@ const MATRIX_ROWS = [
       fr: "Arabie Saoudite (Djeddah/Riyad)"
     },
     air: {
-      en: "5 - 12 Days\nDDP Door-to-Door",
-      zh: "5 - 12 天\n双清 DDP 派送到门",
-      ru: "5 - 12 дней\nDDP до двери",
-      fr: "5 - 12 Jours\nDDP Porte-à-Porte"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     fcl: {
-      en: "25 - 32 Days",
-      zh: "25 - 32 天",
-      ru: "25 - 32 дней",
-      fr: "25 - 32 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     lcl: {
-      en: "28 - 35 Days",
-      zh: "28 - 35 天",
-      ru: "28 - 35 дней",
-      fr: "28 - 35 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     portToPort: {
-      en: "18 - 25 Days",
-      zh: "18 - 25 天",
-      ru: "18 - 25 дней",
-      fr: "18 - 25 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     solutions: {
       en: "SABER Registration Support, Duty-Paid Commercial Clearance",
-      zh: "沙特 SABER 证书协助、自营关税实报实销双清",
-      ru: "Поддержка SABER, DDP с уплатой пошлин",
-      fr: "Enregistrement SABER, dédouanement commercial DDP"
+      zh: "订舱前书面确认 DDP 是否适用、进口方责任、税费及除外项目。",
+      ru: "До бронирования письменно подтвердите возможность DDP, обязанности импортёра, пошлины, налоги и исключения.",
+      fr: "Confirmez par écrit la faisabilité du DDP, les responsabilités de l’importateur, droits, taxes et exclusions avant réservation."
     }
   },
   {
@@ -571,34 +574,34 @@ const MATRIX_ROWS = [
       fr: "Émirats Arabes Unis (Dubaï/Jebel Ali)"
     },
     air: {
-      en: "4 - 8 Days\nDDP Door-to-Door",
-      zh: "4 - 8 天\n双清 DDP 包税到门",
-      ru: "4 - 8 дней\nDDP до двери",
-      fr: "4 - 8 Jours\nDDP Porte-à-Porte"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     fcl: {
-      en: "18 - 24 Days",
-      zh: "18 - 24 天",
-      ru: "18 - 24 дней",
-      fr: "18 - 24 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     lcl: {
-      en: "20 - 28 Days",
-      zh: "20 - 28 天",
-      ru: "20 - 28 дней",
-      fr: "20 - 28 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     portToPort: {
-      en: "12 - 16 Days",
-      zh: "12 - 16 天",
-      ru: "12 - 16 дней",
-      fr: "12 - 16 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     solutions: {
-      en: "Dubai Freezone JAFZA Direct Entry, E-Commerce Fulfillment",
-      zh: "杰贝阿里自由区 JAFZA 直派、自营海外仓电商一件代发",
-      ru: "Свободная зона СЭЗ JAFZA, Склады e-commerce",
-      fr: "Zone Franche JAFZA Direct, Logistique E-Commerce"
+      en: "Review JAFZA entry and fulfilment requirements for the cargo and consignee",
+      zh: "JAFZA 入仓与仓储履约需求按货物、收货方及报价范围评估",
+      ru: "Согласование требований JAFZA и складской передачи для конкретного груза",
+      fr: "Étude des conditions JAFZA et de remise en entrepôt selon la marchandise"
     }
   },
   {
@@ -609,28 +612,28 @@ const MATRIX_ROWS = [
       fr: "Koweït (Shuaiba/Koweït City)"
     },
     air: {
-      en: "6 - 12 Days\nDDP Door-to-Door",
-      zh: "6 - 12 天\n双清 DDP 派送到门",
-      ru: "6 - 12 дней\nDDP до двери",
-      fr: "6 - 12 Jours\nDDP Porte-à-Porte"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     fcl: {
-      en: "28 - 35 Days",
-      zh: "28 - 35 天",
-      ru: "28 - 35 дней",
-      fr: "28 - 35 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     lcl: {
-      en: "32 - 40 Days",
-      zh: "32 - 40 天",
-      ru: "32 - 40 дней",
-      fr: "32 - 40 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     portToPort: {
-      en: "20 - 28 Days",
-      zh: "20 - 28 天",
-      ru: "20 - 28 дней",
-      fr: "20 - 28 Jours"
+      en: "Confirm for the proposed route",
+      zh: "按具体行程确认",
+      ru: "Уточнить для выбранного маршрута",
+      fr: "À confirmer pour l’itinéraire proposé"
     },
     solutions: {
       en: "KUCAS / TIR Audit Assistance, British Standard Packing Support",
@@ -674,7 +677,7 @@ const COUNTRY_CONTENT: Record<
   'Saudi-Arabia': {
     en: {
       headline: "Reliable Shipping Networks from China to Saudi Arabia",
-      subheadline: "China-to-Saudi sea and air freight with 25–32 day ocean and 5–12 day air planning windows, plus SABER document pre-review and destination clearance coordination.",
+      subheadline: "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately.",
       card3Title: "SABER Compliance & Customs Clearance",
       card3Desc: "SABER document pre-review, HS-code checks and destination clearance coordination for qualifying commercial shipments; brand, DG and regulated cargo are reviewed before booking.",
       faqs: [
@@ -696,31 +699,31 @@ const COUNTRY_CONTENT: Record<
       ]
     },
     zh: {
-      headline: "安全、合规、稳健的中国到沙特阿拉伯海运/空运双清门到门专线",
-      subheadline: "中国至沙特海运 DDP 常规 25–32 天、空运 5–12 天；提供 SABER 文件预审、HS 编码核对与目的地清关衔接。",
-      card3Title: "沙特 SABER 合规申报与代办",
+      headline: "海运 · 交付范围待确认",
+      subheadline: "按具体行程确认",
+      card3Title: "沙特 SABER 文件准备与核对",
       card3Desc: "面向符合条件的商业普货，提供 SABER 文件预审、HS 编码核对与目的地清关衔接；品牌货、危险品及受监管产品先做资料预审。",
       faqs: [
         {
           id: "sa-1",
-          title: "商业快递清关与大宗商业双清清关的红线对比",
+          title: "交付范围待确认",
           desc: "高价值货、品牌货和大宗货建议采用商业清关路径。订舱前完成进口商、文件和承运条件预审，可减少到港补件与临时改方案的风险。"
         },
         {
           id: "sa-2",
-          title: "外箱及产品雕刻‘Made in China’原产地硬性要求",
+          title: "原产地标记、产品标签与包装核对",
           desc: "我们会在出运前核对适用的原产地标记、标签、说明书与包装资料；受监管产品按进口规则补充对应文件。"
         },
         {
           id: "sa-3",
-          title: "海运及空运直航吉达/利雅得时效锁定",
-          desc: "海运 DDP 常规计划 25–32 天，空运 5–12 天。斋月、旺季、查验或航线调整可能延长，因此我们会在报价前同步确认可用班期与服务范围。"
+          title: "吉达/利雅得海运与空运行程确认",
+          desc: "按明确的起运地、目的地及当次班期确认运输时间；提货、清关衔接和末段配送另行约定。斋月、旺季、查验或航线调整可能延长，因此我们会在报价前同步确认可用班期与服务范围。"
         }
       ]
     },
     ru: {
       headline: "Надежная доставка грузов из Китая в Саудовскую Аравию",
-      subheadline: "Плановый срок морского DDP — 25–32 дня, авиационного — 5–12 дней; предварительная проверка документов SABER и координация оформления в пункте назначения.",
+      subheadline: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса.",
       card3Title: "Таможенный комплаенс SABER",
       card3Desc: "Предварительная проверка документов SABER и кодов ТН ВЭД, а также координация оформления для подходящих коммерческих отправок.",
       faqs: [
@@ -743,7 +746,7 @@ const COUNTRY_CONTENT: Record<
     },
     fr: {
       headline: "Réseaux logistiques de Chine vers l'Arabie Saoudite",
-      subheadline: "Fenêtre de planification de 25–32 jours par mer et 5–12 jours par air, avec pré-vérification SABER et coordination du dédouanement à destination.",
+      subheadline: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale.",
       card3Title: "Douanes et certification SABER",
       card3Desc: "Pré-vérification des documents SABER et des codes HS, avec coordination du dédouanement pour les expéditions commerciales éligibles.",
       faqs: [
@@ -768,7 +771,7 @@ const COUNTRY_CONTENT: Record<
   'UAE': {
     en: {
       headline: "Specialized SCM & Freight Forwarding from China to UAE (Dubai/Jebel Ali)",
-      subheadline: "China-to-Dubai/Jebel Ali sea and air planning with 18–24 day ocean and 4–8 day air windows, plus free-zone and destination delivery coordination.",
+      subheadline: "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately.",
       card3Title: "Dubai Free Zone & Last Mile Logistics",
       card3Desc: "Jebel Ali free-zone delivery, local warehousing coordination and destination trucking options for qualifying commercial shipments.",
       faqs: [
@@ -785,20 +788,20 @@ const COUNTRY_CONTENT: Record<
         {
           id: "ae-3",
           title: "Avoiding Unreasonable Courier Surcharges",
-          desc: "Commercial customs clearance via direct DDP line protects you from high destination airport storage fees compared to standard courier channels."
+          desc: "Confirm DDP availability, importer responsibilities, duties, taxes and exclusions in writing before booking."
         }
       ]
     },
     zh: {
       headline: "中国始发至阿联酋（迪拜/杰贝阿里）大宗货与新能源项目物流专家",
-      subheadline: "中国至迪拜/杰贝阿里海运常规 18–24 天、空运 4–8 天，覆盖自贸区入仓、仓储衔接与目的地派送规划。",
+      subheadline: "按具体行程确认",
       card3Title: "迪拜自贸区与最后一公里派送",
       card3Desc: "依托中国端自营集货能力，提供 JAFZA 入仓衔接、仓储履约与目的地派送方案；新能源、品牌货和受监管产品先做资料预审。",
       faqs: [
         {
           id: "ae-1",
           title: "迪拜自由贸易枢纽港极速清关与电商痛点",
-          desc: "提示：迪拜作为中东最大自由贸易枢纽港，清关效率极高（通常24小时内），但务必注意高退货率电商件的目的地仓储履约优化。"
+          desc: "按具体行程确认"
         },
         {
           id: "ae-2",
@@ -807,14 +810,14 @@ const COUNTRY_CONTENT: Record<
         },
         {
           id: "ae-3",
-          title: "自营双清通道与规避快递机场拆单费",
+          title: "交付范围待确认",
           desc: "大货进口可根据货物与目的地条件评估 Heaven Born 的海空 DDP 服务范围，并提前确认可能涉及的机场、清关与仓储费用。"
         }
       ]
     },
     ru: {
       headline: "Специализированная доставка из Китая в ОАЭ (Дубай/Джебель-Али)",
-      subheadline: "Плановый срок морской доставки — 18–24 дня, авиационной — 4–8 дней; координация свободной зоны, склада и местной доставки.",
+      subheadline: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса.",
       card3Title: "Доставка в СЭЗ Дубая и дистрибуция",
       card3Desc: "Ввод в свободную зону Джебель-Али, складская координация и варианты местной доставки для подходящих коммерческих отправок.",
       faqs: [
@@ -830,14 +833,14 @@ const COUNTRY_CONTENT: Record<
         },
         {
           id: "ae-3",
-          title: "Собственные каналы DDP без посредников",
+          title: "Условия доставки уточняются",
           desc: "Heaven Born уточняет известные аэропортовые и терминальные расходы в соответствии с подтвержденным маршрутом и объемом услуг."
         }
       ]
     },
     fr: {
       headline: "Fret et logistique de Chine vers les EAU (Dubaï/Jebel Ali)",
-      subheadline: "Fenêtre de planification de 18–24 jours par mer et 4–8 jours par air, avec coordination zone franche, entrepôt et livraison locale.",
+      subheadline: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale.",
       card3Title: "Logistique Zone Franche de Dubaï",
       card3Desc: "Entrée en zone franche Jebel Ali, coordination d’entreposage et options de livraison locale pour les expéditions commerciales éligibles.",
       faqs: [
@@ -854,7 +857,7 @@ const COUNTRY_CONTENT: Record<
         {
           id: "ae-3",
           title: "Éviter les frais de transporteur excessifs",
-          desc: "Le dédouanement commercial direct par notre ligne DDP vous évite les frais élevés de stockage à l'aéroport de destination par rapport aux courriers standards."
+          desc: "Confirmez par écrit la faisabilité du DDP, les responsabilités de l’importateur, droits, taxes et exclusions avant réservation."
         }
       ]
     }
@@ -885,7 +888,7 @@ const COUNTRY_CONTENT: Record<
     },
     zh: {
       headline: "中国至科威特海运与空运：KUCAS 文件支持与目的地交付协调",
-      subheadline: "海运常规计划 28–35 天、空运 6–12 天；针对受管制货物提供 KUCAS/TABEK 文件核对，并协调目的地清关与派送。",
+      subheadline: "按具体行程确认",
       card3Title: "科威特 KUCAS 认证与末端派送",
       card3Desc: "为符合条件的商业货物核对 KUCAS/TABEK 文件、协调目的地清关及当地派送选项。",
       faqs: [
@@ -908,7 +911,7 @@ const COUNTRY_CONTENT: Record<
     },
     ru: {
       headline: "Доставка из Китая в Кувейт | Поддержка по документам KUCAS",
-      subheadline: "Плановый срок морской доставки — 28–35 дней, авиационной — 6–12 дней; проверка документов KUCAS/TABEK и координация доставки в пункте назначения.",
+      subheadline: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса.",
       card3Title: "Соответствие KUCAS и доставка до двери",
       card3Desc: "Проверка документов KUCAS/TABEK, координация оформления и варианты локальной доставки для подходящих коммерческих отправок.",
       faqs: [
@@ -931,7 +934,7 @@ const COUNTRY_CONTENT: Record<
     },
     fr: {
       headline: "Transport de fret sécurisé de Chine vers le Koweït | Conformité KUCAS",
-      subheadline: "Planification habituelle de 28–35 jours par mer et 6–12 jours par air, avec vérification documentaire KUCAS/TABEK et coordination du dédouanement à destination.",
+      subheadline: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale.",
       card3Title: "Conformité KUCAS et logistique du dernier kilomètre",
       card3Desc: "Vérification des documents KUCAS/TABEK, coordination du dédouanement et options de livraison locale pour les expéditions commerciales admissibles.",
       faqs: [
@@ -956,69 +959,69 @@ const COUNTRY_CONTENT: Record<
 };
 
 COUNTRY_CONTENT['Saudi-Arabia'].es = {
-  headline: 'Envíos de China a Arabia Saudí con planificación DDP',
-  subheadline: 'Planificación habitual de 25–32 días por mar y 5–12 días por aire, con pre-revisión de documentos SABER y coordinación de despacho en destino.',
+  headline: "Delivery scope to confirm",
+  subheadline: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado.",
   card3Title: 'SABER y coordinación de despacho',
   card3Desc: 'Pre-revisamos documentación SABER y códigos HS, y coordinamos el despacho en destino para envíos comerciales que cumplan las condiciones aplicables.',
   faqs: [
     { id: 'sa-es-1', title: 'Carga comercial y despacho', desc: 'Para carga de marca, alto valor o gran volumen, revisamos antes de reservar al importador, documentos y condiciones de aceptación del transportista.' },
     { id: 'sa-es-2', title: 'Etiquetas y documentos', desc: 'Revisamos marcado de origen, etiquetas, manuales y embalaje aplicables antes de la salida.' },
-    { id: 'sa-es-3', title: 'Plazos de planificación', desc: 'El DDP marítimo suele planificarse en 25–32 días y el aéreo en 5–12 días; temporada alta, inspecciones y cambios de ruta pueden ampliar el plazo.' }
+    { id: 'sa-es-3', title: 'Plazos de planificación', desc: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado." }
   ]
 };
 COUNTRY_CONTENT['Saudi-Arabia'].ar = {
-  headline: 'الشحن من الصين إلى السعودية مع تخطيط DDP',
-  subheadline: 'تخطيط بحري معتاد خلال 25–32 يوماً وجوي خلال 5–12 يوماً، مع مراجعة مستندات SABER وتنسيق التخليص في الوجهة.',
+  headline: "نطاق التسليم يحتاج تأكيداً",
+  subheadline: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل.",
   card3Title: 'SABER وتنسيق التخليص',
   card3Desc: 'نراجع مستندات SABER ورموز HS وننسق التخليص في الوجهة للشحنات التجارية المؤهلة.',
   faqs: [
     { id: 'sa-ar-1', title: 'الشحن التجاري والتخليص', desc: 'للبضائع ذات العلامات التجارية أو القيمة العالية أو الأحجام الكبيرة، نراجع المستورد والمستندات وشروط قبول الناقل قبل الحجز.' },
     { id: 'sa-ar-2', title: 'الملصقات والمستندات', desc: 'نراجع متطلبات بلد المنشأ والملصقات والكتيبات والتعبئة قبل المغادرة.' },
-    { id: 'sa-ar-3', title: 'أوقات التخطيط', desc: 'التخطيط البحري DDP عادة 25–32 يوماً والجوي 5–12 يوماً؛ وقد تمدد المواسم والفحص وتغيرات المسار المدة.' }
+    { id: 'sa-ar-3', title: 'أوقات التخطيط', desc: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل." }
   ]
 };
 COUNTRY_CONTENT.UAE.es = {
   headline: 'Envíos de China a Dubái y Jebel Ali',
-  subheadline: 'Planificación marítima habitual de 18–24 días y aérea de 4–8 días, con coordinación para zona franca, almacén y entrega local.',
+  subheadline: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado.",
   card3Title: 'Zona franca y entrega local en Dubái',
   card3Desc: 'Coordinamos la entrada en JAFZA, opciones de almacenamiento y entrega final para envíos comerciales elegibles.',
   faqs: [
     { id: 'ae-es-1', title: 'Zona franca y despacho', desc: 'Los requisitos de zona franca y despacho dependen del producto, importador y documentos. Confirmamos el alcance antes de reservar.' },
     { id: 'ae-es-2', title: 'Marcado y embalaje', desc: 'Revisamos los requisitos aplicables de origen, etiquetado, paletización y embalaje antes de la salida.' },
-    { id: 'ae-es-3', title: 'Planificación de entrega', desc: 'La planificación marítima habitual es de 18–24 días y la aérea de 4–8 días; se añade margen para temporada alta y operaciones de destino.' }
+    { id: 'ae-es-3', title: 'Planificación de entrega', desc: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado." }
   ]
 };
 COUNTRY_CONTENT.UAE.ar = {
   headline: 'الشحن من الصين إلى دبي وجبل علي',
-  subheadline: 'تخطيط بحري معتاد خلال 18–24 يوماً وجوي خلال 4–8 أيام، مع تنسيق المنطقة الحرة والتخزين والتسليم المحلي.',
+  subheadline: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل.",
   card3Title: 'المنطقة الحرة والتسليم المحلي في دبي',
   card3Desc: 'ننسق دخول JAFZA وخيارات التخزين والتسليم النهائي للشحنات التجارية المؤهلة.',
   faqs: [
     { id: 'ae-ar-1', title: 'المنطقة الحرة والتخليص', desc: 'تعتمد المتطلبات على المنتج والمستورد والمستندات. نؤكد نطاق الخدمة قبل الحجز.' },
     { id: 'ae-ar-2', title: 'المنشأ والتعبئة', desc: 'نراجع متطلبات بلد المنشأ والملصقات والطبليات والتعبئة قبل المغادرة.' },
-    { id: 'ae-ar-3', title: 'تخطيط التسليم', desc: 'التخطيط البحري المعتاد 18–24 يوماً والجوي 4–8 أيام، مع هامش للمواسم وعمليات الوجهة.' }
+    { id: 'ae-ar-3', title: 'تخطيط التسليم', desc: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل." }
   ]
 };
 COUNTRY_CONTENT.Kuwait.es = {
   headline: 'Envíos de China a Kuwait con revisión KUCAS/TABEK',
-  subheadline: 'Planificación marítima habitual de 28–35 días y aérea de 6–12 días, con revisión documental y coordinación de entrega en destino.',
+  subheadline: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado.",
   card3Title: 'Documentos KUCAS/TABEK y entrega local',
   card3Desc: 'Revisamos documentos, requisitos del producto y alcance de despacho antes de reservar para cargas comerciales elegibles.',
   faqs: [
     { id: 'kw-es-1', title: 'Productos regulados', desc: 'La aplicación de KUCAS/TABEK depende del producto y de la norma vigente; confirmamos la documentación antes del envío.' },
     { id: 'kw-es-2', title: 'Etiquetado y embalaje', desc: 'Los requisitos de inspección, etiquetado, voltaje, enchufe y embalaje dependen del producto y deben confirmarse con el importador.' },
-    { id: 'kw-es-3', title: 'Planificación del tránsito', desc: 'El tránsito marítimo habitual es de 28–35 días y el aéreo de 6–12 días; reserve margen para inspección, festivos y entrega local.' }
+    { id: 'kw-es-3', title: 'Planificación del tránsito', desc: "Confirme el plazo para el punto de salida, destino y salida previstos. Acuerde recogida, gestión aduanera y entrega final por separado." }
   ]
 };
 COUNTRY_CONTENT.Kuwait.ar = {
   headline: 'الشحن من الصين إلى الكويت مع مراجعة KUCAS/TABEK',
-  subheadline: 'تخطيط بحري معتاد خلال 28–35 يوماً وجوي خلال 6–12 يوماً، مع مراجعة المستندات وتنسيق التسليم في الوجهة.',
+  subheadline: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل.",
   card3Title: 'مستندات KUCAS/TABEK والتسليم المحلي',
   card3Desc: 'نراجع المستندات ومتطلبات المنتج ونطاق التخليص قبل الحجز للشحنات التجارية المؤهلة.',
   faqs: [
     { id: 'kw-ar-1', title: 'المنتجات الخاضعة للرقابة', desc: 'يعتمد تطبيق KUCAS/TABEK على المنتج والقاعدة الحالية؛ نؤكد المستندات قبل الشحن.' },
     { id: 'kw-ar-2', title: 'الوسم والتعبئة', desc: 'تعتمد متطلبات الفحص والملصقات والجهد الكهربائي والقابس والتعبئة على المنتج ويجب تأكيدها مع المستورد.' },
-    { id: 'kw-ar-3', title: 'تخطيط العبور', desc: 'التخطيط البحري المعتاد 28–35 يوماً والجوي 6–12 يوماً؛ خصص وقتاً للفحص والعطلات والتسليم المحلي.' }
+    { id: 'kw-ar-3', title: 'تخطيط العبور', desc: "أكد مدة النقل لنقطة الانطلاق والوجهة وموعد المغادرة المحددة. اتفق على الاستلام والتنسيق الجمركي والتسليم النهائي بشكل منفصل." }
   ]
 };
 
@@ -1060,7 +1063,7 @@ const createGccCountryContent = (
     faqs: [
       { id: 'gcc-1', title: `ما الذي يجب مراجعته قبل الشحن إلى ${nameAr}؟`, desc: 'راجع بيانات المستلم ووصف المنتجات والكميات والقيم وأي متطلبات خاصة بالمنتج مع المستورد قبل الإرسال.' },
       { id: 'gcc-2', title: 'كيف يتم التخطيط للتخليص في الوجهة؟', desc: 'أكد متطلبات المستورد والمستندات وعمليات الوجهة الحالية مع جهات محلية مؤهلة قبل الحجز.' },
-      { id: 'gcc-3', title: 'هل يمكن ترتيب خدمة DDP؟', desc: 'تعتمد إمكانية DDP على المنتج والمستورد وظروف الوجهة. أكد النطاق والضرائب والاستثناءات كتابياً قبل الحجز.' }
+      { id: 'gcc-3', title: "نطاق التسليم يحتاج تأكيداً", desc: 'تعتمد إمكانية DDP على المنتج والمستورد وظروف الوجهة. أكد النطاق والضرائب والاستثناءات كتابياً قبل الحجز.' }
     ]
   },
   es: {
@@ -1223,10 +1226,10 @@ PAGE_LANG_DATA.ar = {
   cardsHeading: 'ميزة Heaven Born في الشرق الأوسط', cardsSubheading: 'حلول سلسلة توريد مصممة للتجار والشركات والمستوردين.',
   card1Title: 'إدارة تجميع مشتريات Alibaba و1688', card1Desc: 'نستلم ونفحص ونجمع بضائع عدة موردين في مستودعنا في قوانغتشو لتخفيض التكلفة الإجمالية للشحن.', card1Cta: 'اطلب تفاصيل التجميع',
   card2Title: 'فحص ما قبل الشحن في الصين', card2Desc: 'فحص الجودة والكمية والتغليف قبل إغلاق الحاوية؛ نكون عيونكم وآذانكم في الصين.', card2Cta: 'اطلب تفاصيل الفحص',
-  card3Title: 'دعم الجمارك والامتثال المحلي', card3Desc: 'دعم شهادات SABER ومراجعة رموز HS والتنسيق مع الوسطاء الجمركيين لتسليم DDP سلس.', card3Cta: 'استشارة رمز HS',
+  card3Title: 'دعم الجمارك والامتثال المحلي', card3Desc: "أكد كتابياً إمكانية DDP ومسؤوليات المستورد والرسوم والضرائب والاستثناءات قبل الحجز.", card3Cta: 'استشارة رمز HS',
   faqHeading: 'قائمة شحن الشرق الأوسط والأسئلة الشائعة', faqSubheading: 'فحوصات امتثال استباقية للحفاظ على حركة بضائعكم عبر ممرات الجمارك في الشرق الأوسط.',
   formTitle: 'استفسار فوري عن الشحن إلى الشرق الأوسط', formSub: 'أرسل تفاصيل شحنتكم وسيعد خبراؤنا عرضاً مخصصاً خلال ساعتين.', formLabelName: 'الاسم', formLabelEmail: 'البريد الإلكتروني', formLabelPhone: 'واتساب / هاتف', formLabelGoods: 'نوع البضائع / الحجم', formLabelDest: 'الوجهة', formCta: 'احسب تعرفة الشحن', formSuccess: 'شكراً لكم! يعمل خبيرنا الإقليمي على مساركم وسيتواصل معكم قريباً.',
-  chinaToMiddleEastSpecialist: 'متخصص الصين إلى الشرق الأوسط', experienceBadge: '29+ عاماً من الخبرة · تخليص مباشر في الخليج', transitWindowTitle: 'أوقات العبور إلى الشرق الأوسط', seaDdpText: 'شحن بحري DDP من الباب إلى الباب', airDdpText: 'شحن جوي DDP من الباب إلى الباب', transitIncludeText: 'هذه نطاقات عامة للتخطيط. أضف وقتاً احتياطياً لمواسم الذروة وتغيّر الجداول وازدحام الموانئ والفحص والعطلات وتغيرات المسار.', compliantFilingText: 'إجراءات متوافقة بالكامل', professionalVerificationText: 'تحقق احترافي', saudiFocus: 'التركيز على السعودية', uaeFocus: 'التركيز على الإمارات', kuwaitFocus: 'التركيز على الكويت', country_Saudi_Arabia: 'السعودية', country_UAE: 'الإمارات', country_Kuwait: 'الكويت', insightPortfolio: 'مكتبة رؤى Heaven Born اللوجستية',
+  chinaToMiddleEastSpecialist: 'متخصص الصين إلى الشرق الأوسط', experienceBadge: '29+ عاماً من الخبرة · تخليص مباشر في الخليج', transitWindowTitle: 'أوقات العبور إلى الشرق الأوسط', seaDdpText: "بحري · نطاق التسليم يحتاج تأكيداً", airDdpText: "جوي · نطاق التسليم يحتاج تأكيداً", transitIncludeText: 'هذه نطاقات عامة للتخطيط. أضف وقتاً احتياطياً لمواسم الذروة وتغيّر الجداول وازدحام الموانئ والفحص والعطلات وتغيرات المسار.', compliantFilingText: 'إجراءات متوافقة بالكامل', professionalVerificationText: 'تحقق احترافي', saudiFocus: 'التركيز على السعودية', uaeFocus: 'التركيز على الإمارات', kuwaitFocus: 'التركيز على الكويت', country_Saudi_Arabia: 'السعودية', country_UAE: 'الإمارات', country_Kuwait: 'الكويت', insightPortfolio: 'مكتبة رؤى Heaven Born اللوجستية',
 };
 
 PAGE_LANG_DATA.ar.country_Qatar = 'قطر';
@@ -1295,17 +1298,18 @@ export default function MiddleEastRoute() {
   const activeLang = language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en';
 
   const getCountryContent = (key: string) => {
+    if(key==='subheadline'){const intro=reviewedMiddleEastIntro(selectedCountry,activeLang);if(intro)return intro;}
     const countryData = COUNTRY_CONTENT[selectedCountry];
     if (!countryData) return '';
     const langData = countryData[activeLang] || countryData['en'];
-    return langData?.[key] || '';
+    return translatedText(langData?.[key] || '',activeLang);
   };
 
   const getFaqs = () => {
     const countryData = COUNTRY_CONTENT[selectedCountry];
     if (!countryData) return [];
     const langData = countryData[activeLang] || countryData['en'];
-    return langData?.faqs || [];
+    return translatedTree(langData?.faqs || [],activeLang);
   };
 
   const getComplianceRow = () => {
@@ -1331,30 +1335,15 @@ export default function MiddleEastRoute() {
     };
   };
 
-  const getTransitEstimate = (mode: 'sea' | 'air') => {
-    const ranges: Record<typeof selectedCountry, { sea: string; air: string }> = {
-      'Saudi-Arabia': { sea: '25–32', air: '5–12' },
-      UAE: { sea: '18–24', air: '4–8' },
-      Kuwait: { sea: '28–35', air: '6–12' },
-      Qatar: { sea: '22–30', air: '5–10' },
-      Oman: { sea: '22–30', air: '5–10' },
-      Bahrain: { sea: '24–32', air: '5–10' }
-    };
-    const value = ranges[selectedCountry][mode];
-
-    if (language === 'zh') return `${value} 天`;
-    if (language === 'ru') return `${value} дней`;
-    if (language === 'fr') return `${value} jours`;
-    if (language === 'ar') return `${value} أيام`;
-    return `${value} Days`;
-  };
+  const getTransitEstimate = (_mode: 'sea' | 'air') => freightClaimCopy[activeLang as keyof typeof freightClaimCopy][0];
 
   const factLabels = freightFactLabels[activeLang as keyof typeof freightFactLabels] || freightFactLabels.en;
   const t = (key: string) => {
+    const label=reviewedMiddleEastLabel(key,activeLang);if(label)return label;
     const revised: Record<string, string> = { experienceBadge: factLabels.originCoordination, colSolutions: factLabels.serviceScope, card1Cta: factLabels.consolidationCta, card2Cta: factLabels.inspectionCta, card3Cta: factLabels.documentsCta };
     if (revised[key]) return revised[key];
     const data = PAGE_LANG_DATA[activeLang] || PAGE_LANG_DATA['en'];
-    return data[key] || '';
+    return translatedText(data[key] || '',activeLang);
   };
 
   const countryLabelKey: Record<MiddleEastCountry, string> = {
@@ -1480,7 +1469,7 @@ export default function MiddleEastRoute() {
 
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-black tracking-tight leading-tight">
                   <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-100 to-[#c94f2f]">
-                    {getCountryContent('headline')}
+                    {freightPageInfo(location.pathname)?.title.replace(' | DDNZ','')}
                   </span>
                 </h1>
 
@@ -1496,11 +1485,11 @@ export default function MiddleEastRoute() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-[#c94f2f]/10 border border-[#c94f2f]/20 text-xs font-bold text-[#c94f2f]">
                       <Ship className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '自主装箱与直航排舱' : translatedText('Direct LCL/FCL Allocations',language)}
+                      {factLabels.originCoordination}
                     </span>
                     <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-500/20 text-xs font-bold text-blue-400">
                       <Truck className="w-3.5 h-3.5" aria-hidden="true" />
-                      {language === 'zh' ? '中东一站式 DDP 双清' : translatedText('One-Stop Middle East DDP',language)}
+                      {freightClaimCopy[activeLang as keyof typeof freightClaimCopy][5]}
                     </span>
                   </div>
                 </div>
@@ -1660,16 +1649,16 @@ export default function MiddleEastRoute() {
                             </div>
                           </td>
                           <td className="px-6 py-5 text-sm text-slate-300 whitespace-pre-line font-bold">
-                            {airText}
+                            {translatedText(airText,activeLang)}
                           </td>
                           <td className="px-6 py-5 text-sm text-slate-300 font-semibold">
-                            {fclText}
+                            {translatedText(fclText,activeLang)}
                           </td>
                           <td className="px-6 py-5 text-sm text-slate-300 font-semibold">
-                            {lclText}
+                            {translatedText(lclText,activeLang)}
                           </td>
                           <td className="px-6 py-5 text-sm text-slate-400 font-semibold font-mono">
-                            {portToPortText}
+                            {translatedText(portToPortText,activeLang)}
                           </td>
                           <td className="px-6 py-5 text-sm text-slate-300 font-semibold text-right max-w-xs truncate">
                             {solutionsText}
@@ -1767,7 +1756,7 @@ export default function MiddleEastRoute() {
         {/* Country-Specific Compliance & Operation Section */}
         {(() => {
           const countrySpecs = COUNTRY_SPEC_DATA as Record<string, Record<string, any>>;
-          const spec = countrySpecs[selectedCountry]?.[activeLang] || GCC_SPEC_DATA[selectedCountry]?.[activeLang] || countrySpecs[selectedCountry]?.['en'] || GCC_SPEC_DATA[selectedCountry]?.['en'];
+          const spec = translatedTree(countrySpecs[selectedCountry]?.[activeLang] || GCC_SPEC_DATA[selectedCountry]?.[activeLang] || countrySpecs[selectedCountry]?.['en'] || GCC_SPEC_DATA[selectedCountry]?.['en'],activeLang);
           if (!spec) return null;
           return (
             <section className="py-16 border-t border-b border-white/[0.05]">

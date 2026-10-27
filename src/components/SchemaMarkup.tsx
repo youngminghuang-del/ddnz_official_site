@@ -1,3 +1,4 @@
+import {freightPageInfo} from '../features/freight/freightPageSchema';
 import egyptScooterSchema from '../data/egypt-scooter-schema.json';
 import egyptLclSchema from '../data/egypt-lcl-schema.json';
 import solarCableSchema from '../data/solar-cable-schema.json';
@@ -18,6 +19,8 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
   const { language } = useLanguage();
 
   useEffect(() => {
+    // Destination graph is shared by static generation and SEO; avoid competing nodes.
+    if (freightPageInfo(window.location.pathname)) return;
     const rawPageUrl = data.url || `https://www.ddnzglobal.com${window.location.pathname}`;
     const pageUrl = rawPageUrl === 'https://www.ddnzglobal.com/'
       ? rawPageUrl

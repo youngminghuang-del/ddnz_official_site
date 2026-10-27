@@ -72,7 +72,7 @@ const LATAM_DATA = {
       headline: "Freight Forwarding to Mexico | NOM & RFC Documentation Support",
       subheadline: "Ocean and air freight planning from China to Manzanillo, Lazaro Cardenas, and Mexico City, with NOM, RFC, and destination clearance coordination.",
       transitWindow: "Mexico Transit Windows",
-      transitDays: "Sea: 35-50 Days | Air: 5-12 Days",
+      transitDays: "Confirm for the proposed route",
       complianceRowTitle: "NOM & Import Document Review",
       complianceRowVal: "Before Booking",
       solutionsTitle: "Mexico SCM Compliance Solutions",
@@ -97,14 +97,14 @@ const LATAM_DATA = {
       multimodalTable: [
         {
           mode: "Sea Freight (FCL/LCL)",
-          days: "35 - 50 Days (FCL) | 45 - 60 Days (LCL)",
+          days: "Confirm for the proposed route",
           suitability: "Highly optimized for heavy auto components, retail commodities, structural materials, and manufacturing equipment.",
           sellingPoint: "POL: Guangzhou, Shenzhen, Shanghai to POD: Manzanillo, Lazaro Cardenas. High frequency ocean carrier booking.",
           warning: "Pacific-port inspections can require close review of RFC, invoice, and packing details. Use accurate declared values and confirm the document set before sailing."
         },
         {
           mode: "Air Freight (Express / Tax-Inclusive)",
-          days: "5 - 7 Days (Express) | 8 - 12 Days (Tax-Inclusive)",
+          days: "Confirm for the proposed route",
           suitability: "Ideal for urgent automotive tooling, electronics parts, high-value consumer stock, and medical devices.",
           sellingPoint: "Direct cargo air lift to Mexico City (MEX) or Guadalajara (GDL) airports. Efficient security handling.",
           warning: "Lithium products and branded goods may require additional review by the carrier or customs. Confirm commodity acceptance and documentation before shipping."
@@ -126,14 +126,14 @@ const LATAM_DATA = {
       ]
     },
     zh: {
-      seoTitle: "中国到墨西哥海运整柜拼箱与空运 DDP | NOM 文件支持 | 华正邦泰国际货运",
+      seoTitle: "海运 · 交付范围待确认",
       seoDesc: "中国至墨西哥的海运、空运与 DDP 服务协调，支持 NOM、RFC 等进口文件的出运前核对。",
       headline: "中国到墨西哥海运/空运：NOM 与 RFC 文件协调支持",
       subheadline: "提供中国集货、起运资料核对以及与目的地清关合作方的服务衔接，协助进口商确认 NOM 与 RFC 要求。",
       transitWindow: "墨西哥专线预计时效",
-      transitDays: "海运: 35-50天 | 空运: 5-12工作日",
+      transitDays: "按具体行程确认",
       complianceRowTitle: "NOM 认证申报与海关预先审单",
-      complianceRowVal: "2 - 5 天",
+      complianceRowVal: "按具体行程确认",
       solutionsTitle: "墨西哥出运前文件核对",
       solutionsSubtitle: "订舱前把 RFC、产品要求、提单资料和目的港操作逐项确认，减少货到港后补资料。",
       solutions: [
@@ -156,14 +156,14 @@ const LATAM_DATA = {
       multimodalTable: [
         {
           mode: "海运整箱/拼箱 (Sea Freight)",
-          days: "FCL 整柜 35-50 天 | LCL 拼箱 45-60 天",
+          days: "按具体行程确认",
           suitability: "适用于大型汽配、日用百货、建筑建材、重型工业机械及高体积商品。",
           sellingPoint: "可根据船期与舱位情况，规划广州、南沙、深圳、上海至 Manzanillo、Lazaro Cardenas 的海运服务。",
           warning: "太平洋港口查验可能涉及 RFC、发票和装箱资料核对。请确保商业资料如实反映货物情况。"
         },
         {
           mode: "空运 / 商业快递 (Air Freight)",
-          days: "商业快递 5-7 工作日 | 空运参考 8-12 工作日",
+          days: "按具体行程确认",
           suitability: "适合急需的汽车模具、消费电子、时尚商品和零部件样品。",
           sellingPoint: "可依据可用直飞或中转航班，结合货物属性和目的地操作要求规划至 MEX/GDL 的空运路线。",
           warning: "带电池、强磁或其他受限属性的货物，应在订舱前提供准确参数，确认承运人是否接受及需要哪些文件。"
@@ -192,7 +192,7 @@ const LATAM_DATA = {
       headline: "Shipping to Brazil (Santos) | CNPJ, NCM & Customs Documentation Support",
       subheadline: "Freight planning from China to Santos with CNPJ, NCM, and destination documentation coordination based on the confirmed service scope.",
       transitWindow: "Brazil Transit Windows",
-      transitDays: "Sea: 50-80 Days | Air: 15-20 Days",
+      transitDays: "Confirm for the proposed route",
       complianceRowTitle: "Importer Registration & NCM Review",
       complianceRowVal: "Before Booking",
       solutionsTitle: "Brazil SCM Compliance Solutions",
@@ -216,15 +216,15 @@ const LATAM_DATA = {
       ],
       multimodalTable: [
         {
-          mode: "Sea Freight (DDP / FCL / LCL)",
-          days: "Direct Voyage: 30-35 Days | Complete DDP: 50-80 Days",
+          mode: "Sea freight · delivery scope to confirm",
+          days: "Confirm for the proposed route",
           suitability: "Highly suitable for structural steel, solar panels, heavy electrical equipment, cosmetics packaging, and wholesale e-commerce inventories.",
           sellingPoint: "Routes from China to Santos are planned around carrier schedules, cargo requirements and the confirmed destination service scope.",
           warning: "Brazilian clearance timelines can vary. Confirm applicable import licences, tax scope, and destination handling requirements before shipment."
         },
         {
           mode: "Air Freight (Indirect Hub Consolidation)",
-          days: "15 - 20 Working Days",
+          days: "Confirm for the proposed route",
           suitability: "Recommended for high-value mobile components, semiconductor electronics, precision mechanical spare parts, and cosmetic prototypes.",
           sellingPoint: "Plan available direct or connecting air options to São Paulo (GRU) around carrier schedules, cargo acceptance and destination requirements.",
           warning: "Confirm carrier routing, commodity acceptance, NCM classification and destination documentation before shipment."
@@ -246,14 +246,14 @@ const LATAM_DATA = {
       ]
     },
     zh: {
-      seoTitle: "中国到巴西（圣保罗/桑托斯）海运 DDP 与空运服务 | 华正邦泰国际货运",
+      seoTitle: "海运 · 交付范围待确认",
       seoDesc: "中国至巴西圣保罗、桑托斯的海运、空运与 DDP 服务协调，支持 CNPJ、NCM 和进口文件的出运前核对。",
       headline: "中国到巴西（桑托斯 Santos）海运/空运：CNPJ、NCM 与进口文件协调支持",
       subheadline: "提供中国至桑托斯的运输规划，并在确认的服务范围内协调 CNPJ、NCM、进口许可和目的地清关资料。",
       transitWindow: "巴西专线预计时效",
-      transitDays: "海运: 50-80天 | 空运: 15-20工作日",
+      transitDays: "按具体行程确认",
       complianceRowTitle: "CNPJ 纳税备案核查与 NCM 申报纠错",
-      complianceRowVal: "3 - 7 天",
+      complianceRowVal: "按具体行程确认",
       solutionsTitle: "巴西出运前文件核对",
       solutionsSubtitle: "围绕 CNPJ、NCM、进口许可及目的地申报要求，提供出运前资料核对与服务协调。",
       solutions: [
@@ -276,14 +276,14 @@ const LATAM_DATA = {
       multimodalTable: [
         {
           mode: "桑托斯海运整箱 / 拼箱",
-          days: "海上运输与目的地操作合计参考: 50 - 80 天",
+          days: "按具体行程确认",
           suitability: "适用于建筑建材、太阳能光伏组件、工业原料、重型电气机械及批量百货。",
           sellingPoint: "根据船期、货物资料和目的地服务范围，规划从中国至 Santos 的海运方案。",
           warning: "巴西清关时效会因产品、文件、进口许可和目的地操作而变化。请在出运前确认适用的 LI、税费范围及清关资料。"
         },
         {
           mode: "圣保罗空运 (Air Freight)",
-          days: "15 - 20 工作日",
+          days: "按具体行程确认",
           suitability: "适合高附加值精密仪器零配件、移动通讯元器件、化妆品研发样品及高档服装样品。",
           sellingPoint: "可根据可用航班、货物属性与目的地操作要求，规划经适合中转点至圣保罗瓜鲁柳斯机场（GRU）的空运路线。",
           warning: "空运货物的发票、收货人 CNPJ/CPF、NCM 和产品资料应在出运前核对一致。"
@@ -312,9 +312,9 @@ const LATAM_DATA = {
       headline: "Logistics to Argentina | CUIT & Import Documentation Support",
       subheadline: "Ocean and air freight planning from China to Buenos Aires, with import-document and destination-handling coordination based on the confirmed service scope.",
       transitWindow: "Argentina Transit Windows",
-      transitDays: "Sea: 35-50 Days | Air: 12-18 Days",
+      transitDays: "Confirm for the proposed route",
       complianceRowTitle: "CUIT & Import-Requirement Review",
-      complianceRowVal: "4 - 8 Days",
+      complianceRowVal: "Confirm for the proposed route",
       solutionsTitle: "Argentina SCM Compliance Solutions",
       solutionsSubtitle: "Supporting shipment planning around import documentation, CUIT data, and destination operating requirements.",
       solutions: [
@@ -337,14 +337,14 @@ const LATAM_DATA = {
       multimodalTable: [
         {
           mode: "Sea Freight (FCL / LCL)",
-          days: "35 - 50 Days",
+          days: "Confirm for the proposed route",
           suitability: "Optimized for raw industrial materials, energy components, high-density manufacturing parts, and general retail stock.",
           sellingPoint: "Available sailings and consolidation options are planned against carrier schedules and destination delivery requirements.",
           warning: "Port congestion and labour disruptions can affect Buenos Aires schedules. Confirm document readiness and include a contingency buffer in the shipment plan."
         },
         {
           mode: "Air Freight (Indirect Air Bridge)",
-          days: "12 - 18 Working Days",
+          days: "Confirm for the proposed route",
           suitability: "Best suited for critical machinery spare parts, high-end mobile devices, pharmaceutical devices, and fast-moving retail samples.",
           sellingPoint: "Consolidation via US Miami (MIA) or European hubs to Buenos Aires Ministro Pistarini (EZE) Airport.",
           warning: "Airport cargo screening can require a confirmed CUIT, product classification, and document set. Review destination requirements before dispatch."
@@ -371,9 +371,9 @@ const LATAM_DATA = {
       headline: "中国到阿根廷（布宜诺斯艾利斯）项目货运：CUIT 与进口文件协调支持",
       subheadline: "提供海运及空运路线规划，并在确认的服务范围内协调 CUIT、进口资料及目的地操作要求。支付与外汇事项请由交易双方及合格专业机构确认。",
       transitWindow: "阿根廷专线预计时效",
-      transitDays: "海运: 35-50天 | 空运: 12-18工作日",
+      transitDays: "按具体行程确认",
       complianceRowTitle: "CUIT 与当前进口要求核对",
-      complianceRowVal: "4 - 8 天",
+      complianceRowVal: "按具体行程确认",
       solutionsTitle: "阿根廷出运前文件核对",
       solutionsSubtitle: "围绕 CUIT、进口许可、装运文件与目的地操作要求，提供出运前资料核对与服务协调。",
       solutions: [
@@ -396,14 +396,14 @@ const LATAM_DATA = {
       multimodalTable: [
         {
           mode: "海运整箱/拼箱 (Sea Freight)",
-          days: "35 - 50 天",
+          days: "按具体行程确认",
           suitability: "适用于工业原材料、新能源光伏、重型机械零配件、大宗日用品及高密度商业库存。",
           sellingPoint: "可按船公司船期、集拼条件和目的地交付要求规划至布宜诺斯艾利斯的海运服务。",
           warning: "布宜诺斯艾利斯的港口拥堵或劳资事件可能影响计划。请确认单证准备情况，并在运输计划中预留合理缓冲。"
         },
         {
           mode: "空运 / 联运方案 (Air Freight)",
-          days: "12 - 18 工作日",
+          days: "按具体行程确认",
           suitability: "急需的高端电子数码、精密机械模具、高附加值样品及高时效性时尚快消品。",
           sellingPoint: "可根据可用航班、货物属性与目的地操作要求，规划经适合中转点至布宜诺斯艾利斯皮斯塔里尼机场（EZE）的空运路线。",
           warning: "机场货物筛查可能需要确认 CUIT、产品分类和文件完整性。请在出运前与进口商及目的地合格专业机构核对要求。"
@@ -435,7 +435,7 @@ LATAM_LOCALIZED.peru = {
     seoDesc: 'Ocean and air freight planning from China to Callao and Lima, with document review and destination-handling coordination.',
     headline: 'Shipping from China to Peru | Callao and Lima Freight Planning',
     subheadline: 'FCL, LCL, and air freight planning from China to Callao and Lima, with shipment-document and destination-operation coordination.',
-    transitWindow: 'Peru Transit Windows', transitDays: 'Sea: 35-50 Days | Air: 7-14 Days',
+    transitWindow: 'Peru Transit Windows', transitDays: "Confirm for the proposed route",
     complianceRowTitle: 'Import Document Review', complianceRowVal: 'Before Booking',
     solutionsTitle: 'Peru Freight and Import-Document Planning',
     solutionsSubtitle: 'Plan cargo data, product classification, and destination handling requirements before the shipment moves.',
@@ -445,8 +445,8 @@ LATAM_LOCALIZED.peru = {
       { title: 'Callao Destination Planning', desc: 'Confirm carrier terms, document readiness, and the destination handling plan before departure; port conditions can change.', icon: 'Clock' }
     ],
     multimodalTable: [
-      { mode: 'Sea Freight (FCL / LCL)', days: '35 - 50 Days (FCL) | 45 - 60 Days (LCL)', suitability: 'Suitable for commercial inventory, machinery, building materials, and consolidated cargo.', sellingPoint: 'Plan available sailings from China ports to Callao against carrier schedules and destination delivery requirements.', warning: 'Confirm accurate commercial documents and destination requirements before sailing.' },
-      { mode: 'Air Freight', days: '7 - 14 Working Days', suitability: 'Suitable for samples, parts, high-value cargo, and time-sensitive replenishment.', sellingPoint: 'Plan direct or connecting air options to Lima (LIM) according to cargo acceptance and destination operations.', warning: 'Carrier acceptance and destination documentation should be confirmed before dispatch.' }
+      { mode: 'Sea Freight (FCL / LCL)', days: "Confirm for the proposed route", suitability: 'Suitable for commercial inventory, machinery, building materials, and consolidated cargo.', sellingPoint: 'Plan available sailings from China ports to Callao against carrier schedules and destination delivery requirements.', warning: 'Confirm accurate commercial documents and destination requirements before sailing.' },
+      { mode: 'Air Freight', days: "Confirm for the proposed route", suitability: 'Suitable for samples, parts, high-value cargo, and time-sensitive replenishment.', sellingPoint: 'Plan direct or connecting air options to Lima (LIM) according to cargo acceptance and destination operations.', warning: 'Carrier acceptance and destination documentation should be confirmed before dispatch.' }
     ],
     faqs: [
       { q: 'Which documents should be reviewed before shipping to Peru?', a: 'Review the Bill of Lading, commercial invoice, packing list, consignee information, product description, and any product-specific documents with the importer before shipment.' },
@@ -460,7 +460,7 @@ LATAM_LOCALIZED.peru = {
     seoDesc: '中国至秘鲁 Callao、利马的海运、空运与集货规划，支持进口文件及目的地操作的出运前协调。',
     headline: '中国到秘鲁（Callao / 利马）海运与空运：进口文件与路线协调支持',
     subheadline: '提供中国始发至 Callao、利马的整柜、拼箱与空运规划，并在确认的服务范围内协调出运文件与目的地操作。',
-    transitWindow: '秘鲁专线预计时效', transitDays: '海运: 35-50天 | 空运: 7-14工作日',
+    transitWindow: '秘鲁专线预计时效', transitDays: "按具体行程确认",
     complianceRowTitle: '进口文件出运前核对', complianceRowVal: '订舱前确认',
     solutionsTitle: '秘鲁货运与进口文件规划',
     solutionsSubtitle: '围绕货物资料、产品归类和目的地操作要求，在出运前完成必要核对。',
@@ -470,8 +470,8 @@ LATAM_LOCALIZED.peru = {
       { title: 'Callao 目的港操作规划', desc: '请在出运前确认船公司条款、单证准备情况和目的港操作计划；港口条件可能变化。', icon: 'Clock' }
     ],
     multimodalTable: [
-      { mode: '海运整箱/拼箱 (Sea Freight)', days: 'FCL 整柜 35-50 天 | LCL 拼箱 45-60 天', suitability: '适合商业库存、机械设备、建材和集货拼箱货物。', sellingPoint: '可根据船公司船期和目的地交付要求，规划中国港口至 Callao 的海运服务。', warning: '请在开船前确认商业资料准确性和目的地文件要求。' },
-      { mode: '空运服务 (Air Freight)', days: '7-14 工作日', suitability: '适合样品、零配件、高货值货物和时效敏感补货。', sellingPoint: '可按货物承运条件和目的地操作要求，规划直飞或中转至利马（LIM）的空运服务。', warning: '请在起运前确认航空公司收货要求和目的地文件。' }
+      { mode: '海运整箱/拼箱 (Sea Freight)', days: "按具体行程确认", suitability: '适合商业库存、机械设备、建材和集货拼箱货物。', sellingPoint: '可根据船公司船期和目的地交付要求，规划中国港口至 Callao 的海运服务。', warning: '请在开船前确认商业资料准确性和目的地文件要求。' },
+      { mode: '空运服务 (Air Freight)', days: "按具体行程确认", suitability: '适合样品、零配件、高货值货物和时效敏感补货。', sellingPoint: '可按货物承运条件和目的地操作要求，规划直飞或中转至利马（LIM）的空运服务。', warning: '请在起运前确认航空公司收货要求和目的地文件。' }
     ],
     faqs: [
       { q: '发往秘鲁前应核对哪些文件？', a: '建议与进口商在出运前核对提单、商业发票、装箱单、收货人信息、产品描述及可能适用的产品文件。' },
@@ -487,7 +487,7 @@ LATAM_LOCALIZED.chile = {
     seoDesc: 'Ocean and air freight planning from China to San Antonio, Valparaíso, and Santiago, with document review and destination coordination.',
     headline: 'Shipping from China to Chile | Port and Destination Planning',
     subheadline: 'FCL, LCL, and air freight planning from China to Chile, with shipment-document and destination-operation coordination.',
-    transitWindow: 'Chile Transit Windows', transitDays: 'Sea: 35-50 Days | Air: 7-14 Days',
+    transitWindow: 'Chile Transit Windows', transitDays: "Confirm for the proposed route",
     solutionsTitle: 'Chile Freight and Import-Document Planning',
     solutionsSubtitle: 'Plan cargo data, product classification, and destination handling requirements before shipment.',
     solutions: [
@@ -496,8 +496,8 @@ LATAM_LOCALIZED.chile = {
       { title: 'Port and Inland Delivery Planning', desc: 'Confirm carrier terms, destination handling, and inland delivery scope for the selected Chilean port or final destination.', icon: 'Clock' }
     ],
     multimodalTable: [
-      { mode: 'Sea Freight (FCL / LCL)', days: '35 - 50 Days (FCL) | 45 - 60 Days (LCL)', suitability: 'Suitable for commercial inventory, equipment, consumer goods, and consolidated cargo.', sellingPoint: 'Plan available sailings from China ports to San Antonio or Valparaíso against carrier schedules and destination needs.', warning: 'Confirm accurate commercial documents and destination requirements before sailing.' },
-      { mode: 'Air Freight', days: '7 - 14 Working Days', suitability: 'Suitable for samples, spare parts, high-value goods, and time-sensitive cargo.', sellingPoint: 'Plan direct or connecting air options to Santiago (SCL) according to cargo acceptance and destination operations.', warning: 'Carrier acceptance and destination documentation should be confirmed before dispatch.' }
+      { mode: 'Sea Freight (FCL / LCL)', days: "Confirm for the proposed route", suitability: 'Suitable for commercial inventory, equipment, consumer goods, and consolidated cargo.', sellingPoint: 'Plan available sailings from China ports to San Antonio or Valparaíso against carrier schedules and destination needs.', warning: 'Confirm accurate commercial documents and destination requirements before sailing.' },
+      { mode: 'Air Freight', days: "Confirm for the proposed route", suitability: 'Suitable for samples, spare parts, high-value goods, and time-sensitive cargo.', sellingPoint: 'Plan direct or connecting air options to Santiago (SCL) according to cargo acceptance and destination operations.', warning: 'Carrier acceptance and destination documentation should be confirmed before dispatch.' }
     ],
     faqs: [
       { q: 'Which Chilean port should be used for freight from China?', a: 'The right port depends on the carrier schedule, cargo, consignee location, and destination delivery plan. Confirm the available routing before booking.' },
@@ -511,7 +511,7 @@ LATAM_LOCALIZED.chile = {
     seoDesc: '中国至智利的海运、空运与集货规划，支持进口文件及目的地操作的出运前协调。',
     headline: '中国到智利海运与空运：港口、文件与目的地操作协调支持',
     subheadline: '提供中国始发至智利的整柜、拼箱与空运规划，并在确认的服务范围内协调出运文件、港口与目的地操作。',
-    transitWindow: '智利专线预计时效', transitDays: '海运: 35-50天 | 空运: 7-14工作日',
+    transitWindow: '智利专线预计时效', transitDays: "按具体行程确认",
     solutionsTitle: '智利货运与进口文件规划',
     solutionsSubtitle: '围绕货物资料、产品归类和目的地操作要求，在出运前完成必要核对。',
     solutions: [
@@ -520,8 +520,8 @@ LATAM_LOCALIZED.chile = {
       { title: '港口与内陆交付规划', desc: '请针对选定的智利港口或最终目的地，确认船公司条款、目的港操作与内陆配送范围。', icon: 'Clock' }
     ],
     multimodalTable: [
-      { mode: '海运整箱/拼箱 (Sea Freight)', days: 'FCL 整柜 35-50 天 | LCL 拼箱 45-60 天', suitability: '适合商业库存、设备、消费品和集货拼箱货物。', sellingPoint: '可根据船公司船期与目的地需要，规划中国港口至 San Antonio 或 Valparaíso 的海运服务。', warning: '请在开船前确认商业资料准确性和目的地要求。' },
-      { mode: '空运服务 (Air Freight)', days: '7-14 工作日', suitability: '适合样品、零配件、高货值货物和时效敏感货物。', sellingPoint: '可按货物承运条件和目的地操作要求，规划直飞或中转至圣地亚哥（SCL）的空运服务。', warning: '请在起运前确认航空公司收货要求和目的地文件。' }
+      { mode: '海运整箱/拼箱 (Sea Freight)', days: "按具体行程确认", suitability: '适合商业库存、设备、消费品和集货拼箱货物。', sellingPoint: '可根据船公司船期与目的地需要，规划中国港口至 San Antonio 或 Valparaíso 的海运服务。', warning: '请在开船前确认商业资料准确性和目的地要求。' },
+      { mode: '空运服务 (Air Freight)', days: "按具体行程确认", suitability: '适合样品、零配件、高货值货物和时效敏感货物。', sellingPoint: '可按货物承运条件和目的地操作要求，规划直飞或中转至圣地亚哥（SCL）的空运服务。', warning: '请在起运前确认航空公司收货要求和目的地文件。' }
     ],
     faqs: [
       { q: '从中国发往智利应选择哪个港口？', a: '合适的港口取决于船期、货物、收货人所在地及目的地交付计划；请在订舱前确认可用路线。' },
@@ -532,32 +532,32 @@ LATAM_LOCALIZED.chile = {
 };
 const latinAmericaLocaleConfig = {
   ru: {
-    mexico: { country: 'Мексика', destination: 'Мансанильо, Ласаро-Карденас и Мехико', compliance: 'NOM, RFC и реестра импортёров', transitDays: 'Море: 25 - 40 дней | Авиа: 5 - 12 дней' },
-    brazil: { country: 'Бразилия', destination: 'Сантус и Сан-Паулу', compliance: 'NCM, SISCOMEX и требований Бразилии', transitDays: 'Море: 35 - 50 дней | Авиа: 6 - 14 дней' },
-    argentina: { country: 'Аргентина', destination: 'Буэнос-Айрес и EZE', compliance: 'таможни и импортёра Аргентины', transitDays: 'Море: 40 - 55 дней | Авиа: 7 - 14 дней' },
-    peru: { country: 'Перу', destination: 'Кальяо и Лиму', compliance: 'SUNAT и разрешений на продукцию', transitDays: 'Море: 35 - 50 дней | Авиа: 7 - 14 дней' },
-    chile: { country: 'Чили', destination: 'Сан-Антонио, Вальпараисо и Сантьяго', compliance: 'таможни и сертификатов Чили', transitDays: 'Море: 35 - 50 дней | Авиа: 7 - 14 дней' },
+    mexico: { country: 'Мексика', destination: 'Мансанильо, Ласаро-Карденас и Мехико', compliance: 'NOM, RFC и реестра импортёров', transitDays: "Уточнить для выбранного маршрута" },
+    brazil: { country: 'Бразилия', destination: 'Сантус и Сан-Паулу', compliance: 'NCM, SISCOMEX и требований Бразилии', transitDays: "Уточнить для выбранного маршрута" },
+    argentina: { country: 'Аргентина', destination: 'Буэнос-Айрес и EZE', compliance: 'таможни и импортёра Аргентины', transitDays: "Уточнить для выбранного маршрута" },
+    peru: { country: 'Перу', destination: 'Кальяо и Лиму', compliance: 'SUNAT и разрешений на продукцию', transitDays: "Уточнить для выбранного маршрута" },
+    chile: { country: 'Чили', destination: 'Сан-Антонио, Вальпараисо и Сантьяго', compliance: 'таможни и сертификатов Чили', transitDays: "Уточнить для выбранного маршрута" },
   },
   fr: {
-    mexico: { country: 'le Mexique', destination: 'Manzanillo, Lázaro Cárdenas et Mexico', compliance: 'NOM, RFC et registre des importateurs', transitDays: 'Mer : 25 - 40 jours | Air : 5 - 12 jours' },
-    brazil: { country: 'le Brésil', destination: 'Santos et São Paulo', compliance: 'NCM, SISCOMEX et règles brésiliennes', transitDays: 'Mer : 35 - 50 jours | Air : 6 - 14 jours' },
-    argentina: { country: "l’Argentine", destination: 'Buenos Aires et EZE', compliance: "douanières et de l’importateur argentin", transitDays: 'Mer : 40 - 55 jours | Air : 7 - 14 jours' },
-    peru: { country: 'le Pérou', destination: 'Callao et Lima', compliance: 'SUNAT et permis produit', transitDays: 'Mer : 35 - 50 jours | Air : 7 - 14 jours' },
-    chile: { country: 'le Chili', destination: 'San Antonio, Valparaíso et Santiago', compliance: 'douanières et certificats chiliens', transitDays: 'Mer : 35 - 50 jours | Air : 7 - 14 jours' },
+    mexico: { country: 'le Mexique', destination: 'Manzanillo, Lázaro Cárdenas et Mexico', compliance: 'NOM, RFC et registre des importateurs', transitDays: "À confirmer pour l’itinéraire proposé" },
+    brazil: { country: 'le Brésil', destination: 'Santos et São Paulo', compliance: 'NCM, SISCOMEX et règles brésiliennes', transitDays: "À confirmer pour l’itinéraire proposé" },
+    argentina: { country: "l’Argentine", destination: 'Buenos Aires et EZE', compliance: "douanières et de l’importateur argentin", transitDays: "À confirmer pour l’itinéraire proposé" },
+    peru: { country: 'le Pérou', destination: 'Callao et Lima', compliance: 'SUNAT et permis produit', transitDays: "À confirmer pour l’itinéraire proposé" },
+    chile: { country: 'le Chili', destination: 'San Antonio, Valparaíso et Santiago', compliance: 'douanières et certificats chiliens', transitDays: "À confirmer pour l’itinéraire proposé" },
   },
   es: {
-    mexico: { country: 'México', destination: 'Manzanillo, Lázaro Cárdenas y Ciudad de México', compliance: 'NOM, RFC y padrón de importadores', transitDays: 'Marítimo: 25 - 40 días | Aéreo: 5 - 12 días' },
-    brazil: { country: 'Brasil', destination: 'Santos y São Paulo', compliance: 'NCM, SISCOMEX y requisitos brasileños', transitDays: 'Marítimo: 35 - 50 días | Aéreo: 6 - 14 días' },
-    argentina: { country: 'Argentina', destination: 'Buenos Aires y EZE', compliance: 'aduaneros y del importador argentino', transitDays: 'Marítimo: 40 - 55 días | Aéreo: 7 - 14 días' },
-    peru: { country: 'Perú', destination: 'Callao y Lima', compliance: 'SUNAT y permisos de producto', transitDays: 'Marítimo: 35 - 50 días | Aéreo: 7 - 14 días' },
-    chile: { country: 'Chile', destination: 'San Antonio, Valparaíso y Santiago', compliance: 'aduaneros y certificados chilenos', transitDays: 'Marítimo: 35 - 50 días | Aéreo: 7 - 14 días' },
+    mexico: { country: 'México', destination: 'Manzanillo, Lázaro Cárdenas y Ciudad de México', compliance: 'NOM, RFC y padrón de importadores', transitDays: "Confirmar según el itinerario" },
+    brazil: { country: 'Brasil', destination: 'Santos y São Paulo', compliance: 'NCM, SISCOMEX y requisitos brasileños', transitDays: "Confirmar según el itinerario" },
+    argentina: { country: 'Argentina', destination: 'Buenos Aires y EZE', compliance: 'aduaneros y del importador argentino', transitDays: "Confirmar según el itinerario" },
+    peru: { country: 'Perú', destination: 'Callao y Lima', compliance: 'SUNAT y permisos de producto', transitDays: "Confirmar según el itinerario" },
+    chile: { country: 'Chile', destination: 'San Antonio, Valparaíso y Santiago', compliance: 'aduaneros y certificados chilenos', transitDays: "Confirmar según el itinerario" },
   },
   ar: {
-    mexico: { country: 'المكسيك', destination: 'مانزانيلو ولازارو كارديناس ومكسيكو سيتي', compliance: 'NOM وRFC وسجل المستوردين', transitDays: 'بحري: 25 - 40 يوماً | جوي: 5 - 12 يوماً' },
-    brazil: { country: 'البرازيل', destination: 'سانتوس وساو باولو', compliance: 'NCM وSISCOMEX والمتطلبات البرازيلية', transitDays: 'بحري: 35 - 50 يوماً | جوي: 6 - 14 يوماً' },
-    argentina: { country: 'الأرجنتين', destination: 'بوينس آيرس وEZE', compliance: 'الجمارك ومتطلبات المستورد الأرجنتيني', transitDays: 'بحري: 40 - 55 يوماً | جوي: 7 - 14 يوماً' },
-    peru: { country: 'بيرو', destination: 'كالاو وليما', compliance: 'SUNAT وتصاريح المنتجات', transitDays: 'بحري: 35 - 50 يوماً | جوي: 7 - 14 يوماً' },
-    chile: { country: 'تشيلي', destination: 'سان أنطونيو وفالبارايسو وسانتياغو', compliance: 'الجمارك والشهادات التشيلية', transitDays: 'بحري: 35 - 50 يوماً | جوي: 7 - 14 يوماً' },
+    mexico: { country: 'المكسيك', destination: 'مانزانيلو ولازارو كارديناس ومكسيكو سيتي', compliance: 'NOM وRFC وسجل المستوردين', transitDays: "يُؤكد حسب المسار المقترح" },
+    brazil: { country: 'البرازيل', destination: 'سانتوس وساو باولو', compliance: 'NCM وSISCOMEX والمتطلبات البرازيلية', transitDays: "يُؤكد حسب المسار المقترح" },
+    argentina: { country: 'الأرجنتين', destination: 'بوينس آيرس وEZE', compliance: 'الجمارك ومتطلبات المستورد الأرجنتيني', transitDays: "يُؤكد حسب المسار المقترح" },
+    peru: { country: 'بيرو', destination: 'كالاو وليما', compliance: 'SUNAT وتصاريح المنتجات', transitDays: "يُؤكد حسب المسار المقترح" },
+    chile: { country: 'تشيلي', destination: 'سان أنطونيو وفالبارايسو وسانتياغو', compliance: 'الجمارك والشهادات التشيلية', transitDays: "يُؤكد حسب المسار المقترح" },
   },
 } as const;
 
@@ -574,7 +574,7 @@ for (const locale of ['ru', 'fr', 'es', 'ar'] as const) {
 const PAGE_LANG_DATA = {
   en: {
     seoTitle: "China to Latin America Freight Forwarding Guide | DDNZ Global",
-    seoDesc: "Freight planning from China to Mexico, Brazil, and Argentina, with consolidation, document review, and DDP/DDU service coordination.",
+    seoDesc: "Confirm DDP availability, importer responsibilities, duties, taxes and exclusions in writing before booking.",
     tabMexico: "Mexico (NOM & RFC Solutions)",
     tabBrazil: "Brazil (CNPJ & Santos Gate)",
     tabArgentina: "Argentina (CUIT & Import Documents)",
@@ -588,7 +588,7 @@ const PAGE_LANG_DATA = {
     formEmail: "Corporate Email Address",
     formPhone: "Mobile / WhatsApp / WeChat",
     formGoods: "Cargo Details (Item Type, Total Weight/CBM, etc.)",
-    formSubmit: "Get Precise DDP Quote",
+    formSubmit: "Confirm DDP availability, importer responsibilities, duties, taxes and exclusions in writing before booking.",
     formSuccess: "Inquiry Submitted Successfully!",
     formSuccessSub: "Our Latin America route team will use your submitted contact details to confirm the information needed for the quotation.",
     formAnother: "Submit Another Quote Request",
@@ -600,8 +600,8 @@ const PAGE_LANG_DATA = {
     guideSub: "Practical points for planning cargo, documents, and destination operations."
   },
   zh: {
-    seoTitle: "中国到拉美（墨西哥/巴西/阿根廷）海运整柜拼箱与 DDP 服务 | 华正邦泰国际货运",
-    seoDesc: "中国至墨西哥、巴西、阿根廷的海运、空运与集货服务，支持进口文件的出运前核对并协调 DDP/DDU 服务范围。",
+    seoTitle: "海运 · 交付范围待确认",
+    seoDesc: "中国至墨西哥、巴西、阿根廷的海运、空运与集货服务，支持进口文件的出运前核对并协调 DDP/DAP 服务范围。",
     tabMexico: "墨西哥（NOM与RFC合规专区）",
     tabBrazil: "巴西（CNPJ 与桑托斯港文件支持）",
     tabArgentina: "阿根廷（进口文件与路线支持）",
@@ -876,8 +876,8 @@ export default function ShippingLatinAmerica() {
   const getTransitTimes = () => {
     if (selectedCountry === 'mexico') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
-        air: language === 'zh' ? '5 - 12 工作日' : translatedText('5 - 12 Days',language),
+        sea: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
+        air: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
         seaLabel: language === 'zh' ? '曼萨尼约 / 拉萨罗卡德纳斯海运整箱 (FCL)' : translatedText('Manzanillo / Lázaro Cárdenas FCL',language),
         seaDesc: localText({ zh: '按可用船期确认直航或中转', en: 'Direct or connecting service, subject to schedule', es: 'Servicio directo o con transbordo, según salida' }),
         airLabel: language === 'zh' ? '墨西哥城 (MEX) 空运专线' : translatedText('Mexico City (MEX) Air Express',language),
@@ -885,8 +885,8 @@ export default function ShippingLatinAmerica() {
       };
     } else if (selectedCountry === 'brazil') {
       return {
-        sea: language === 'zh' ? '50 - 80 天' : translatedText('50 - 80 Days',language),
-        air: language === 'zh' ? '15 - 20 工作日' : translatedText('15 - 20 Days',language),
+        sea: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
+        air: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
         seaLabel: language === 'zh' ? '桑托斯海运快线 (Santos Express)' : translatedText('Santos Sea Express',language),
         seaDesc: localText({ zh: '按可用船期与目的港操作规划', en: 'Planned around available sailings and destination handling', es: 'Planificado según salidas y operación en destino' }),
         airLabel: language === 'zh' ? '圣保罗 (GRU) 空运专线' : translatedText('São Paulo (GRU) Air Express',language),
@@ -894,8 +894,8 @@ export default function ShippingLatinAmerica() {
       };
     } else if (selectedCountry === 'argentina') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
-        air: language === 'zh' ? '12 - 18 工作日' : translatedText('12 - 18 Days',language),
+        sea: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
+        air: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
         seaLabel: language === 'zh' ? '布宜诺斯艾利斯海运快线' : translatedText('Buenos Aires Sea Express',language),
         seaDesc: localText({ zh: '按书面确认范围安排清关与派送', en: 'Clearance and delivery to the written scope', es: 'Despacho y entrega según el alcance escrito' }),
         airLabel: language === 'zh' ? '埃塞萨 (EZE) 空运专线' : translatedText('Ezeiza (EZE) Air Express',language),
@@ -903,8 +903,8 @@ export default function ShippingLatinAmerica() {
       };
     } else if (selectedCountry === 'peru') {
       return {
-        sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
-        air: language === 'zh' ? '7 - 14 工作日' : translatedText('7 - 14 Days',language),
+        sea: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
+        air: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
         seaLabel: language === 'zh' ? '卡亚俄（Callao）海运整箱 / 拼箱' : translatedText('Callao FCL / LCL',language),
         seaDesc: language === 'zh' ? '按船期与目的地操作规划' : translatedText('Planned against carrier schedules',language),
         airLabel: language === 'zh' ? '利马（LIM）空运服务' : translatedText('Lima (LIM) Air Freight',language),
@@ -912,8 +912,8 @@ export default function ShippingLatinAmerica() {
       };
     }
     return {
-      sea: language === 'zh' ? '35 - 50 天' : translatedText('35 - 50 Days',language),
-      air: language === 'zh' ? '7 - 14 工作日' : translatedText('7 - 14 Days',language),
+      sea: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
+      air: language === 'zh' ? "按具体行程确认" : translatedText("Confirm for the proposed route",language),
       seaLabel: language === 'zh' ? '圣安东尼奥 / 瓦尔帕莱索海运整箱 / 拼箱' : translatedText('San Antonio / Valparaíso FCL / LCL',language),
       seaDesc: language === 'zh' ? '按船期与目的地操作规划' : translatedText('Planned against carrier schedules',language),
       airLabel: language === 'zh' ? '圣地亚哥（SCL）空运服务' : translatedText('Santiago (SCL) Air Freight',language),
@@ -1088,7 +1088,7 @@ export default function ShippingLatinAmerica() {
                     </span>
                     <span className="inline-flex items-center gap-1.5 border-b border-sky-400/30 px-1 py-1.5 text-xs font-bold text-sky-300">
                       <FileText className="w-3.5 h-3.5" aria-hidden="true" />
-                      {localText({ zh: 'DDP / DAP 责任边界核对', en: 'DDP / DAP scope review', es: 'Revisión del alcance DDP / DAP' })}
+                      {localText({ zh: 'DDP / DAP 责任边界核对', en: 'DDP / DAP scope review', es: "Confirme por escrito la viabilidad de DDP, responsabilidades del importador, derechos, impuestos y exclusiones antes de reservar." })}
                     </span>
                   </div>
                 </div>

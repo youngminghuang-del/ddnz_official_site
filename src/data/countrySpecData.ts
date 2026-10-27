@@ -20,7 +20,7 @@ export const COUNTRY_SPEC_DATA: Record<
 > = {
   'Saudi-Arabia': {
     zh: {
-      specTitle: "沙特 SABER 认证合规保障体系",
+      specTitle: "沙特 SABER 产品与装运文件核对",
       specSub: "对受管制产品，进口商通常需要通过 SABER 完成适用的产品或装运合规程序；具体要求应按 HS 编码、产品类别与当前规则确认。",
       tab1Title: "Product Certificate (PC) 产品证书",
       tab1Header: "SABER PC 证书 - 针对具体品类长期备案",
@@ -37,7 +37,7 @@ export const COUNTRY_SPEC_DATA: Record<
         { id: "⑤", title: "SASO 能效与产品规则", desc: "制冷、空调、照明等产品可能适用能效或产品合规要求。请按 HS 编码、产品规格和最新目的地规则进行核对。" }
       ],
       guideTitle: "沙特专线物流实战操作守则",
-      guideSub: "高能避坑指南，沙特专线全链路控制要点，保障货款与货物安全。",
+      guideSub: "订舱前核对文件、包装和交付安排，并确认各环节责任。",
       guideCards: [
         {
           title: "订舱审单与清关资料",
@@ -117,7 +117,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Сроки доставки и праздники",
-          desc: "Транзит из Китая в Джидду занимает 18-25 дней. Сделайте 'четыре фотографии' при погрузке для фиксации состояния груза. Планируйте отправку за месяц до Ид."
+          desc: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса. Сделайте 'четыре фотографии' при погрузке для фиксации состояния груза. Планируйте отправку за месяц до Ид."
         }
       ]
     },
@@ -126,7 +126,7 @@ export const COUNTRY_SPEC_DATA: Record<
       specSub: "Selon les directives de la douane saoudienne (SASO), tous les produits contrôlés exportés en Arabie Saoudite doivent être enregistrés sur le portail SABER sous peine de refus d'entrée !",
       tab1Title: "Product Certificate (PC)",
       tab1Header: "SABER PC - Enregistrement de produit à long terme",
-      tab1Desc: "Enregistrement de produit valable 1 an par catégorie. Basé sur des rapports d'essais en laboratoire, délivré en 2-4 jours ouvrables. Le PC actif est la condition préalable absolue pour le Shipment Certificate (SC).",
+      tab1Desc: "Enregistrement de produit valable 1 an par catégorie. Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale. Le PC actif est la condition préalable absolue pour le Shipment Certificate (SC).",
       tab2Title: "Shipment Certificate (SC)",
       tab2Header: "SABER SC - Certificat d'expédition par lot unique",
       tab2Desc: "Requis pour chaque envoi. Délivré sur le portail SABER après validation de la facture d'expédition, de la liste de colisage et du PC actif.",
@@ -151,7 +151,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Transit et planification des vacances",
-          desc: "Le transit de Chine vers Djeddah est de 18-25 jours. Prenez 'quatre photos' au chargement pour éviter les litiges. Planifiez les envois 1 mois avant l'Aïd."
+          desc: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale. Prenez 'quatre photos' au chargement pour éviter les litiges. Planifiez les envois 1 mois avant l'Aïd."
         }
       ]
     }
@@ -162,7 +162,7 @@ export const COUNTRY_SPEC_DATA: Record<
       specSub: "阿联酋（迪拜/杰贝阿里）作为中东首要自由贸易港，对于跨境电商（FBA/FBM）、大宗建材及新能源车辆/锂电池货品具有极高的通关效率，但也实施了严苛的产地和安全合规审查。",
       tab1Title: "Special Project & Bulk Cargo 大宗工程货物流",
       tab1Header: "特殊项目与大宗建材物流 - 针对工程建材与特种柜",
-      tab1Desc: "针对大型建筑工程、钢材、新能源汽车、锂电池及机械设备出口。提供框架柜、开顶柜等特种柜订舱与加固，以及到杰贝阿里港的专业双清门到门、卸货与吊装一站式服务。",
+      tab1Desc: "订舱前书面确认 DDP 是否适用、进口方责任、税费及除外项目。",
       tab2Title: "Free Zone (JAFZA) Logistics 自由贸易区保税物流",
       tab2Header: "迪拜杰贝阿里自贸区 (JAFZA) - 免税清关转口保税",
       tab2Desc: "针对免税自贸区入仓及国际转口贸易客户。货物进入 JAFZA 自由贸易区保税仓库，可免征进口关税和增值税，提供保税仓储、贴签分拣及面向GCC海合会国家的再出口拼箱物流。",
@@ -247,7 +247,7 @@ export const COUNTRY_SPEC_DATA: Record<
       guideCards: [
         {
           title: "Оформление за 24 часа",
-          desc: "Очистка в ОАЭ обычно занимает менее суток. Коносамент должен указывать реального получателя. В отсутствие импортной лицензии мы предоставим DDP D&D."
+          desc: "До бронирования письменно подтвердите возможность DDP, обязанности импортёра, пошлины, налоги и исключения."
         },
         {
           title: "Закрепление проектных и опасных грузов",
@@ -255,7 +255,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Дистрибуция в ОАЭ и сезонные особенности",
-          desc: "Доставка из Китая в Дубай занимает 15-22 дня. Наш флот доставляет грузы в Абу-Даби, Дубай, Шарджу. Учитывайте задержки во время крупных выставок и Рамадана."
+          desc: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса. Наш флот доставляет грузы в Абу-Даби, Дубай, Шарджу. Учитывайте задержки во время крупных выставок и Рамадана."
         }
       ]
     },
@@ -281,7 +281,7 @@ export const COUNTRY_SPEC_DATA: Record<
       guideCards: [
         {
           title: "Dédouanement en 24 Heures",
-          desc: "Les dédouanements se résolvent généralement en moins de 24 heures. Si vous n'avez pas de licence d'importation, utilisez notre procuration DDP."
+          desc: "Confirmez par écrit la faisabilité du DDP, les responsabilités de l’importateur, droits, taxes et exclusions avant réservation."
         },
         {
           title: "Serrage de cargaison de projet",
@@ -289,7 +289,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Distribution et ralentissements de saison",
-          desc: "Le transit de Chine vers Dubaï prend 15-22 jours. DDNZ livre par camion à Abu Dhabi, Dubaï et Sharjah. Anticipez les ralentissements pendant le Ramadan."
+          desc: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale. DDNZ livre par camion à Abu Dhabi, Dubaï et Sharjah. Anticipez les ralentissements pendant le Ramadan."
         }
       ]
     }
@@ -393,7 +393,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Сроки транзита и праздничные дни",
-          desc: "Доставка морем занимает 18-28 дней. Сделайте четыре фотографии при погрузке для фиксации состояния груза. Планируйте логистику заранее из-за каникул во время Ид."
+          desc: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса. Сделайте четыре фотографии при погрузке для фиксации состояния груза. Планируйте логистику заранее из-за каникул во время Ид."
         }
       ]
     },
@@ -427,7 +427,7 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "Preuve de perte de voyage et ralentissements des fêtes",
-          desc: "Le transit moyen est de 18 à 28 jours. Mettez en œuvre la « vérification en quatre photos » (vide, à moitié chargé, entièrement chargé et serrure de porte scellée) à l'origine comme assurance contre les réclamations pour dommages excessifs aux conteneurs. Planifiez en fonction des ralentissements de l'Aïd."
+          desc: "Confirmez le délai pour le point de départ, la destination et le départ prévus. Convenez séparément de l’enlèvement, des formalités douanières et de la livraison finale. Mettez en œuvre la « vérification en quatre photos » (vide, à moitié chargé, entièrement chargé et serrure de porte scellée) à l'origine comme assurance contre les réclamations pour dommages excessifs aux conteneurs. Planifiez en fonction des ralentissements de l'Aïd."
         }
       ]
     }
