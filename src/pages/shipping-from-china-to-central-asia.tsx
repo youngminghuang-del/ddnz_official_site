@@ -831,7 +831,7 @@ export default function ShippingCentralAsia() {
   const redlines = UNIVERSAL_REDLINES[activeLang] || UNIVERSAL_REDLINES.en;
 
   return (
-    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden ${selectedCountry==='uzbekistan'?'country-editorial country-editorial--legacy':''}`}>
+    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden country-editorial country-editorial--legacy`}>
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -919,7 +919,7 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
-        {routeDepthPreview && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <FreightRouteMap variant={selectedCountry === 'uzbekistan' ? 'uzbekistan' : 'central-asia'} />

@@ -91,3 +91,11 @@
 @media(max-width:540px){.freight-related-links{padding:32px 16px}.freight-related-grid{grid-template-columns:1fr}.freight-related-grid nav{padding:20px}.freight-region-unified .freight-region-intro{padding-block:28px 36px}}
 .freight-region-unified :is(.freight-region-gateway-list,.freight-region-stage-mark){background:#eee5f3;color:var(--country-accent)}
 .freight-region-unified .freight-region-gateway-list>div{border-color:var(--country-line)}
+/* Remaining country templates retain their own evidence and share the same palette. */
+.gulf-page .country-editorial .gulf-wrap{max-width:1260px}
+.gulf-page .country-editorial .gulf-hero{align-items:start}
+.gulf-page .country-editorial .gulf-hero-image{border-radius:14px}
+.gulf-page .country-editorial .gulf-chapters{background:var(--country-tint);border:1px solid var(--country-line);border-radius:14px;padding:20px}
+.gulf-page .country-editorial .gulf-cta{background:#cc4d2d}
+.gulf-page .country-editorial .route-depth{margin-block:32px}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is([class*="text-amber-300"],[class*="text-yellow-300"]){color:#934025!important}

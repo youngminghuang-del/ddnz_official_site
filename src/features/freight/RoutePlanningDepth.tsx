@@ -1,3 +1,4 @@
+import {remainingRouteCopy} from './remainingRouteCopy';
 import southAsiaCopy from './route-locales/india-pakistan.json';
 import westAfricaCopy from './route-locales/ghana-nigeria.json';
 import destinationCopy from './route-locales/mexico-uae.json';
@@ -41,7 +42,7 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
  const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
  const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
  const south: Record<string, Record<string, RouteCopy>> = southAsiaCopy;
- const c = south[locale]?.[country] || west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
+ const c = remainingRouteCopy(country,locale) || south[locale]?.[country] || west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
  if (!c) return null;
  const labels=routePlanningUi(locale);
 

@@ -1,3 +1,4 @@
+import RoutePlanningDepth from './RoutePlanningDepth';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import { Fragment, type ReactNode } from 'react';
 import { useLocation } from 'react-router-dom';
@@ -77,14 +78,14 @@ export default function GulfFreightPage() {
     <SEO title={data.title} description={data.desc} contentLanguage={locale} />
     <SchemaMarkup type="Service" data={{ name: data.title, description: data.desc, serviceType: 'Freight planning from China', areaServed: { '@type': 'Country', name: destination }, url: `https://www.ddnzglobal.com${pathname}` }} />
     <SourcingHomepageNav showFreightExecutor />
-    <main id="main-content" data-country-cargo-planning="gulf-story" data-destination={destination}>
+    <main className="country-editorial" id="main-content" data-country-cargo-planning="gulf-story" data-destination={destination}>
       <div className="gulf-wrap">
         <nav aria-label={ui[locale].breadcrumb} className="gulf-breadcrumb"><a href={`${prefix}/shipping-from-china-to-middle-east/`}>{ui[locale].middleEastRoutes}</a><span aria-hidden="true">/</span><span>{map.country[locale]}</span></nav>
         <header className="gulf-hero">
           <div className="gulf-hero-copy"><p className="gulf-eyebrow">{ui[locale][country].heroEyebrow}</p><h1>{data.heading}</h1><p className="gulf-lede">{data.intro}</p><div className="gulf-actions">{cta()}{cta(true)}</div></div>
           <figure className="gulf-hero-image"><GulfCountryMark map={map} locale={locale} /><img src={`/media/freight-20261014/${heroId}-poster.jpg`} width="540" height={country === 'qatar' ? '756' : '984'} fetchPriority="high" alt={ui[locale][country].posterAlt} /><figcaption>{ui[locale][country].heroCaption}<small>{ui[locale].chinaRecord}</small></figcaption></figure>
         </header>
-        <GulfChapters country={country} locale={locale} />
+        <GulfChapters country={country} locale={locale} /><RoutePlanningDepth country={country} locale={locale}/>
         {country === 'qatar' ? <>
           {section(0, <QatarCargoGallery key={`production-${locale}`} group="production" locale={locale} />, 'gulf-cargo-intro')}
           <section className="gulf-section qatar-style-section"><QatarCargoGallery key={`style-${locale}`} group="style" locale={locale} /></section>

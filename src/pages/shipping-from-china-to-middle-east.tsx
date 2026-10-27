@@ -1402,7 +1402,7 @@ export default function MiddleEastRoute() {
   })();
 
   return (
-    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden ${selectedCountry==='UAE'?'country-editorial country-editorial--legacy':''}`}>
+    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden country-editorial country-editorial--legacy`}>
       <SEO title={countrySeo.title} description={countrySeo.description} />
       <SchemaMarkup
         type="Service"
@@ -1573,7 +1573,7 @@ export default function MiddleEastRoute() {
           </div>
         </section>
 
-        {selectedCountry === 'UAE' && <RoutePlanningDepth country="uae" locale={activeLang}/>}
+        {<RoutePlanningDepth country={slugByCountry[selectedCountry]} locale={activeLang}/>}
         <MarketSourcingHandoff destination={selectedCountryLabel} />
         {selectedCountry === 'UAE' && ['zh', 'en', 'es'].includes(activeLang) && <NewFreightEvidence locale={activeLang as 'zh' | 'en' | 'es'} uaeOnly />}
 

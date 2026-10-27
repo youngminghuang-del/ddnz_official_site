@@ -963,7 +963,7 @@ export default function ShippingLatinAmerica() {
   const redlines = UNIVERSAL_REDLINES[activeLang];
 
   return (
-    <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fffdf9] font-sans text-[#10243f] ${['mexico','brazil'].includes(selectedCountry)?'country-editorial country-editorial--legacy':''}`}>
+    <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fffdf9] font-sans text-[#10243f] country-editorial country-editorial--legacy`}>
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -1162,7 +1162,7 @@ export default function ShippingLatinAmerica() {
       {/* Main Content Sections */}
       <main className="relative z-10">
 
-        {['brazil','mexico'].includes(selectedCountry) && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <LatinAmericaFreightDepth
