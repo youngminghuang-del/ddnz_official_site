@@ -1,5 +1,5 @@
 import {useRef} from 'react';
-import {inductionModels,multiZoneModels,steamModels,noodleModels} from '../data/inductionModels.mjs';
+import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels} from '../data/inductionModels.mjs';
 import copies from '../locales/planning/induction-catalogue.json';
 import {buildQuoteHref} from '../../../lib/quoteLinks';
 import {foodPrefix} from '../../food-processing/localization';
@@ -8,10 +8,11 @@ function Photo({src,model,caption,locale}:{src:string;model:string;caption:strin
  const dialog=useRef<HTMLDialogElement>(null),c=copies[locale];
  return <figure className="induction-photo"><button type="button" aria-label={`${c.enlarge}: ${model}`} onClick={()=>dialog.current?.showModal()}><img src={src} alt={`${model} · ${caption}`} width="1536" height="1024" loading="lazy"/><span>{c.enlarge} ↗</span></button><figcaption>{caption}</figcaption><dialog ref={dialog} aria-label={`${c.enlarge}: ${model}`} onClick={e=>{if(e.target===dialog.current)dialog.current.close();}}><header><strong><bdi>{model}</bdi></strong><button type="button" onClick={()=>dialog.current?.close()} aria-label={c.close}>×</button></header><img src={src} alt={`${model} · ${caption}`} width="1536" height="1024"/></dialog></figure>;
 }
-export default function InductionCatalogue({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'}){
+export default function InductionCatalogue({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round'}){
  const locale=language==='zh-cn'?'zh':language;
  const base=copies[locale];
  const groups={
+  round:{models:roundCookerModels,id:'soup-bun-cookers',copy:{...base,heading:base.roundHeading,intro:base.roundIntro,names:base.roundNames,bodies:base.roundBodies,caption:base.roundCaption,configuration:base.roundConfiguration,fields:{...base.fields,power:base.roundPower}}},
   single:{models:inductionModels,id:'induction-cooking',copy:base},
   multi:{models:multiZoneModels,id:'multi-zone-cooking',copy:{...base,heading:base.multiHeading,intro:base.multiIntro,names:base.multiNames,bodies:base.multiBodies}},
   steam:{models:steamModels,id:'steam-cabinets',copy:{...base,heading:base.steamHeading,intro:base.steamIntro,names:base.steamNames,bodies:base.steamBodies,caption:base.steamCaption,configuration:base.steamConfiguration,fields:{...base.fields,power:base.steamPower}}},
@@ -27,4 +28,4 @@ export default function InductionCatalogue({locale:language='en',group='single'}
  })}</div></section>;
 }
 
-export function InductionEntry({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'}){const locale=language==='zh-cn'?'zh':language;return <a href={group==='multi'?'#multi-zone-cooking':group==='steam'?'#steam-cabinets':group==='noodle'?'#noodle-cookers':'#induction-cooking'}>{group==='multi'?copies[locale].multiNav:group==='steam'?copies[locale].steamNav:group==='noodle'?copies[locale].noodleNav:copies[locale].nav}</a>;}
+export function InductionEntry({locale:language='en',group='single'}:{locale?:Locale|'zh-cn';group?:'single'|'multi'|'steam'|'noodle'|'round'}){const locale=language==='zh-cn'?'zh':language;return <a href={group==='multi'?'#multi-zone-cooking':group==='steam'?'#steam-cabinets':group==='noodle'?'#noodle-cookers':group==='round'?'#soup-bun-cookers':'#induction-cooking'}>{group==='multi'?copies[locale].multiNav:group==='steam'?copies[locale].steamNav:group==='noodle'?copies[locale].noodleNav:group==='round'?copies[locale].roundNav:copies[locale].nav}</a>;}

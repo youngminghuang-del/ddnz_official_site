@@ -25,7 +25,8 @@
       "total": "Total rated power",
       "zones": "Cooking zones",
       "doors": "Doors",
-      "baskets": "Basket positions"
+      "baskets": "Basket positions",
+      "openings": "Steamer opening options"
     },
     "details": "Configuration details",
     "quote": "Request a model quotation",
@@ -74,7 +75,21 @@
     "noodleNav": "Noodle cookers",
     "noodlePower": "Power configuration",
     "noodleCaption": "Basket layout, controls and front drain tap.",
-    "noodleConfiguration": "Confirm basket size, water volume, batch size, heat recovery, draining and cleaning access. The four-basket catalogue lists 5 / 8 kW and 220 / 380 V as configuration options; their pairing and the final connection must be confirmed in the quotation. Basket count does not establish independent heating zones or portions per hour."
+    "noodleConfiguration": "Confirm basket size, water volume, batch size, heat recovery, draining and cleaning access. The four-basket catalogue lists 5 / 8 kW and 220 / 380 V as configuration options; their pairing and the final connection must be confirmed in the quotation. Basket count does not establish independent heating zones or portions per hour.",
+    "roundHeading": "Soup or steamed buns. Choose the working layout.",
+    "roundIntro": "Source commercial induction soup cookers and round bun steamers from China. Compare the high-rim basin and five/seven-opening steamer layouts, power options and kitchen footprint.",
+    "roundNames": [
+      "High-rim induction soup cooker",
+      "Round five/seven-opening bun steamer"
+    ],
+    "roundBodies": [
+      "A high-rim round basin on an 800 mm-wide base, with a rear faucet and front controls. Start with the soup or stock process and required vessel capacity.",
+      "A round steamer with five- or seven-opening configurations on an 800 mm-wide base. Match the opening arrangement and steaming vessels to your menu and working batch."
+    ],
+    "roundNav": "Soup & bun steamers",
+    "roundPower": "Power options",
+    "roundCaption": "Round working surface, faucet and front controls.",
+    "roundConfiguration": "Choose one 12, 15 or 20 kW configuration when requesting a quotation. Confirm vessel dimensions, usable capacity, heating or steaming time, water and drain arrangements. Automatic water filling can be requested as a configuration option; confirm the final equipment, electrical connection, packing and destination."
   },
   "zh": {
     "heading": "电磁烹饪设备，按工位选择。",
@@ -102,7 +117,8 @@
       "total": "额定总功率",
       "zones": "加热工位数量",
       "doors": "柜门数量",
-      "baskets": "煮面篮位"
+      "baskets": "煮面篮位",
+      "openings": "蒸包孔位选项"
     },
     "details": "展开配置详情",
     "quote": "询问此型号报价",
@@ -151,7 +167,21 @@
     "noodleNav": "台式煮面炉",
     "noodlePower": "功率配置",
     "noodleCaption": "煮面篮位、控制面板与前置排水阀。",
-    "noodleConfiguration": "请确认篮筐尺寸、水槽容量、每批用量、回温表现、排水和清洁空间。四头款手册列示5 / 8 kW与220 / 380 V备选配置，具体功率和电压的对应关系及接线方式在报价时确认。篮位数量不代表独立加热区或每小时出餐量。"
+    "noodleConfiguration": "请确认篮筐尺寸、水槽容量、每批用量、回温表现、排水和清洁空间。四头款手册列示5 / 8 kW与220 / 380 V备选配置，具体功率和电压的对应关系及接线方式在报价时确认。篮位数量不代表独立加热区或每小时出餐量。",
+    "roundHeading": "汤品与蒸包，按烹饪工序选设备。",
+    "roundIntro": "从中国采购商用高边电磁汤炉和圆桶蒸包炉，比较高边汤锅位、五孔／七孔蒸包配置、功率选项与厨房占地。",
+    "roundNames": [
+      "高边电磁汤炉",
+      "圆桶五孔／七孔蒸包炉"
+    ],
+    "roundBodies": [
+      "800 mm宽底座配置高边圆形汤锅位、后置水龙头及前置控制面板。先明确煲汤、熬汤工序和所需锅体容量。",
+      "800 mm宽底座提供五孔或七孔蒸包配置。结合菜单与每批用量，核对孔位布局和配套蒸具尺寸。"
+    ],
+    "roundNav": "汤炉与蒸包炉",
+    "roundPower": "可选功率配置",
+    "roundCaption": "圆形操作面、水龙头与前置控制布局。",
+    "roundConfiguration": "询价时选择12、15或20 kW配置之一，并确认锅体或蒸具尺寸、可用容量、加热或蒸制时间、供水和排水。自动加水可作为选配需求提出；具体配置、电气连接、包装和目的地在报价中确认。"
   },
   "es": {
     "heading": "Cocción por inducción. Tres puestos de trabajo.",
@@ -179,7 +209,8 @@
       "total": "Potencia nominal total",
       "zones": "Zonas de cocción",
       "doors": "Puertas",
-      "baskets": "Posiciones para cestas"
+      "baskets": "Posiciones para cestas",
+      "openings": "Opciones de aberturas"
     },
     "details": "Ver configuración",
     "quote": "Solicitar cotización del modelo",
@@ -228,7 +259,21 @@
     "noodleNav": "Cocedores de pasta",
     "noodlePower": "Configuración de potencia",
     "noodleCaption": "Cestas, controles y grifo de vaciado frontal.",
-    "noodleConfiguration": "Confirme tamaño de cestas, volumen de agua, carga, recuperación térmica y acceso para vaciado y limpieza. El catálogo de cuatro cestas indica opciones de 5 / 8 kW y 220 / 380 V; confirme su correspondencia y conexión final en la cotización. El número de cestas no establece zonas de calentamiento independientes ni raciones por hora."
+    "noodleConfiguration": "Confirme tamaño de cestas, volumen de agua, carga, recuperación térmica y acceso para vaciado y limpieza. El catálogo de cuatro cestas indica opciones de 5 / 8 kW y 220 / 380 V; confirme su correspondencia y conexión final en la cotización. El número de cestas no establece zonas de calentamiento independientes ni raciones por hora.",
+    "roundHeading": "Sopas o bollos al vapor. Elija el puesto de trabajo.",
+    "roundIntro": "Compre cocinas de sopa por inducción y vaporeras redondas para bollos de China. Compare recipiente de borde alto, cinco/siete aberturas, potencia y espacio.",
+    "roundNames": [
+      "Cocina de sopa por inducción con borde alto",
+      "Vaporera redonda de cinco/siete aberturas"
+    ],
+    "roundBodies": [
+      "Recipiente redondo de borde alto sobre base de 800 mm de ancho, con grifo trasero y controles frontales. Defina el proceso y la capacidad necesaria.",
+      "Configuraciones de cinco o siete aberturas sobre base de 800 mm. Compare disposición y recipientes de vapor con el menú y la tanda de trabajo."
+    ],
+    "roundNav": "Sopas y vaporeras",
+    "roundPower": "Opciones de potencia",
+    "roundCaption": "Superficie redonda, grifo y controles frontales.",
+    "roundConfiguration": "Elija una configuración de 12, 15 o 20 kW. Confirme recipientes, capacidad útil, tiempo de calentamiento o vapor, agua y desagüe. Puede solicitar llenado automático como opción; confirme configuración, conexión, embalaje y destino en la cotización."
   },
   "ar": {
     "heading": "الطهي بالحث. ثلاثة تصاميم لمحطات العمل.",
@@ -256,7 +301,8 @@
       "total": "إجمالي القدرة الاسمية",
       "zones": "عدد مناطق الطهي",
       "doors": "عدد الأبواب",
-      "baskets": "مواضع السلال"
+      "baskets": "مواضع السلال",
+      "openings": "خيارات فتحات البخار"
     },
     "details": "تفاصيل التكوين",
     "quote": "اطلب عرض سعر للطراز",
@@ -305,7 +351,21 @@
     "noodleNav": "مواقد المعكرونة",
     "noodlePower": "تكوين القدرة",
     "noodleCaption": "السلال والتحكم وصنبور التصريف الأمامي.",
-    "noodleConfiguration": "أكد مقاسات السلال وحجم الماء وحمولة الدفعة واستعادة الحرارة والتصريف والتنظيف. يسرد كتالوج الأربع سلال خيارات 5 / 8 kW و220 / 380 V؛ يجب تأكيد توافقها والتوصيل النهائي في عرض السعر. عدد السلال لا يثبت مناطق تسخين مستقلة أو حصصاً في الساعة."
+    "noodleConfiguration": "أكد مقاسات السلال وحجم الماء وحمولة الدفعة واستعادة الحرارة والتصريف والتنظيف. يسرد كتالوج الأربع سلال خيارات 5 / 8 kW و220 / 380 V؛ يجب تأكيد توافقها والتوصيل النهائي في عرض السعر. عدد السلال لا يثبت مناطق تسخين مستقلة أو حصصاً في الساعة.",
+    "roundHeading": "الحساء أو الخبز المطهو بالبخار. اختر تصميم العمل.",
+    "roundIntro": "اشترِ مواقد حساء بالحث وأجهزة بخار دائرية من الصين. قارن الحوض مرتفع الحافة وخيارات خمس أو سبع فتحات والقدرة والمساحة.",
+    "roundNames": [
+      "موقد حساء حثي مرتفع الحافة",
+      "جهاز بخار دائري بخمس أو سبع فتحات"
+    ],
+    "roundBodies": [
+      "حوض دائري مرتفع الحافة على قاعدة بعرض 800 مم مع صنبور خلفي وتحكم أمامي. حدد عملية الطهي والسعة المطلوبة.",
+      "خيارات خمس أو سبع فتحات على قاعدة بعرض 800 مم. طابق ترتيب الفتحات وأواني البخار مع القائمة وحجم الدفعة."
+    ],
+    "roundNav": "مواقد الحساء والبخار",
+    "roundPower": "خيارات القدرة",
+    "roundCaption": "سطح دائري وصنبور وتحكم أمامي.",
+    "roundConfiguration": "اختر تكويناً بقدرة 12 أو 15 أو 20 kW. أكد أبعاد الأواني والسعة الفعلية ووقت التسخين أو البخار والماء والصرف. يمكن طلب تعبئة ماء آلية كخيار؛ أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر."
   },
   "fr": {
     "heading": "Cuisson à induction. Trois postes de travail.",
@@ -333,7 +393,8 @@
       "total": "Puissance nominale totale",
       "zones": "Nombre de zones",
       "doors": "Nombre de portes",
-      "baskets": "Emplacements pour paniers"
+      "baskets": "Emplacements pour paniers",
+      "openings": "Options d’ouvertures"
     },
     "details": "Détails de configuration",
     "quote": "Demander un devis pour ce modèle",
@@ -382,7 +443,21 @@
     "noodleNav": "Cuiseurs à pâtes",
     "noodlePower": "Configuration de puissance",
     "noodleCaption": "Paniers, commandes et robinet de vidange avant.",
-    "noodleConfiguration": "Confirmez dimensions des paniers, volume d’eau, charge, remontée en température, vidange et nettoyage. Le catalogue quatre paniers indique 5 / 8 kW et 220 / 380 V ; leur association et le raccordement final sont à confirmer au devis. Le nombre de paniers ne définit ni zones de chauffe indépendantes ni portions par heure."
+    "noodleConfiguration": "Confirmez dimensions des paniers, volume d’eau, charge, remontée en température, vidange et nettoyage. Le catalogue quatre paniers indique 5 / 8 kW et 220 / 380 V ; leur association et le raccordement final sont à confirmer au devis. Le nombre de paniers ne définit ni zones de chauffe indépendantes ni portions par heure.",
+    "roundHeading": "Soupes ou pains vapeur. Choisissez le poste de travail.",
+    "roundIntro": "Achetez des cuiseurs à soupe à induction et des cuiseurs vapeur ronds en Chine. Comparez cuve à rebord haut, cinq/sept ouvertures, puissances et encombrement.",
+    "roundNames": [
+      "Cuiseur à soupe à induction à rebord haut",
+      "Cuiseur vapeur rond à cinq/sept ouvertures"
+    ],
+    "roundBodies": [
+      "Cuve ronde à rebord haut sur base de 800 mm de large, avec robinet arrière et commandes avant. Définissez le procédé et le volume requis.",
+      "Configurations à cinq ou sept ouvertures sur base de 800 mm. Comparez disposition et récipients vapeur avec le menu et la charge."
+    ],
+    "roundNav": "Soupes et vapeur",
+    "roundPower": "Puissances proposées",
+    "roundCaption": "Surface ronde, robinet et commandes avant.",
+    "roundConfiguration": "Choisissez une configuration de 12, 15 ou 20 kW. Confirmez dimensions des récipients, volume utile, durée de chauffe ou vapeur, eau et évacuation. Le remplissage automatique peut être demandé en option ; validez configuration, raccordement, emballage et destination au devis."
   },
   "pt": {
     "heading": "Cozinha por indução. Três postos de trabalho.",
@@ -410,7 +485,8 @@
       "total": "Potência nominal total",
       "zones": "Número de zonas",
       "doors": "Número de portas",
-      "baskets": "Posições para cestos"
+      "baskets": "Posições para cestos",
+      "openings": "Opções de aberturas"
     },
     "details": "Detalhes da configuração",
     "quote": "Solicitar cotação do modelo",
@@ -459,7 +535,21 @@
     "noodleNav": "Cozedores de massas",
     "noodlePower": "Configuração de potência",
     "noodleCaption": "Cestos, controles e torneira de drenagem frontal.",
-    "noodleConfiguration": "Confirme tamanho dos cestos, volume de água, carga, recuperação térmica, drenagem e limpeza. O catálogo de quatro cestos lista 5 / 8 kW e 220 / 380 V; confirme a correspondência e a ligação final na cotação. O número de cestos não define zonas de aquecimento independentes nem porções por hora."
+    "noodleConfiguration": "Confirme tamanho dos cestos, volume de água, carga, recuperação térmica, drenagem e limpeza. O catálogo de quatro cestos lista 5 / 8 kW e 220 / 380 V; confirme a correspondência e a ligação final na cotação. O número de cestos não define zonas de aquecimento independentes nem porções por hora.",
+    "roundHeading": "Sopas ou pães a vapor. Escolha o posto de trabalho.",
+    "roundIntro": "Compre cozedores de sopa por indução e vaporizadores redondos da China. Compare cuba de borda alta, cinco/sete aberturas, potência e espaço.",
+    "roundNames": [
+      "Cozedor de sopa por indução de borda alta",
+      "Vaporizador redondo de cinco/sete aberturas"
+    ],
+    "roundBodies": [
+      "Cuba redonda de borda alta em base de 800 mm de largura, com torneira traseira e controles frontais. Defina o processo e a capacidade necessária.",
+      "Configurações de cinco ou sete aberturas em base de 800 mm. Compare disposição e recipientes de vapor com o menu e a carga."
+    ],
+    "roundNav": "Sopas e vaporizadores",
+    "roundPower": "Opções de potência",
+    "roundCaption": "Superfície redonda, torneira e controles frontais.",
+    "roundConfiguration": "Escolha uma configuração de 12, 15 ou 20 kW. Confirme recipientes, volume útil, tempo de aquecimento ou vapor, água e drenagem. Pode solicitar abastecimento automático de água como opção; confirme configuração, ligação, embalagem e destino na cotação."
   },
   "ru": {
     "heading": "Индукционное оборудование. Три рабочих поста.",
@@ -487,7 +577,8 @@
       "total": "Общая номинальная мощность",
       "zones": "Количество зон",
       "doors": "Количество дверей",
-      "baskets": "Места для корзин"
+      "baskets": "Места для корзин",
+      "openings": "Варианты отверстий"
     },
     "details": "Подробности комплектации",
     "quote": "Запросить цену модели",
@@ -536,7 +627,21 @@
     "noodleNav": "Макароноварки",
     "noodlePower": "Вариант мощности",
     "noodleCaption": "Корзины, управление и передний сливной кран.",
-    "noodleConfiguration": "Уточните размер корзин, объём воды, загрузку, восстановление температуры, слив и очистку. Для четырёх корзин указаны варианты 5 / 8 kW и 220 / 380 V; их сочетание и подключение подтверждаются в запросе цены. Число корзин не означает независимые зоны нагрева или порции в час."
+    "noodleConfiguration": "Уточните размер корзин, объём воды, загрузку, восстановление температуры, слив и очистку. Для четырёх корзин указаны варианты 5 / 8 kW и 220 / 380 V; их сочетание и подключение подтверждаются в запросе цены. Число корзин не означает независимые зоны нагрева или порции в час.",
+    "roundHeading": "Супы или булочки на пару. Выберите рабочую схему.",
+    "roundIntro": "Закупайте индукционные суповые котлы и круглые пароварки из Китая. Сравните высокие борта, пять/семь отверстий, варианты мощности и площадь.",
+    "roundNames": [
+      "Индукционный суповой котёл с высокими бортами",
+      "Круглая пароварка с пятью/семью отверстиями"
+    ],
+    "roundBodies": [
+      "Круглая ёмкость с высоким бортом на основании шириной 800 мм, с задним краном и передним управлением. Укажите процесс и требуемую ёмкость.",
+      "Пять или семь отверстий на основании шириной 800 мм. Сопоставьте их расположение и паровые ёмкости с меню и загрузкой."
+    ],
+    "roundNav": "Суповые котлы и пароварки",
+    "roundPower": "Варианты мощности",
+    "roundCaption": "Круглая рабочая поверхность, кран и переднее управление.",
+    "roundConfiguration": "Выберите комплектацию 12, 15 или 20 kW. Уточните размеры ёмкостей, полезный объём, время нагрева или приготовления, воду и слив. Автоматическое наполнение водой можно запросить как опцию; подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены."
   },
   "tr": {
     "heading": "İndüksiyonla pişirme. Üç çalışma düzeni.",
@@ -564,7 +669,8 @@
       "total": "Toplam anma gücü",
       "zones": "Pişirme bölgesi sayısı",
       "doors": "Kapı sayısı",
-      "baskets": "Sepet konumları"
+      "baskets": "Sepet konumları",
+      "openings": "Açıklık seçenekleri"
     },
     "details": "Yapılandırma ayrıntıları",
     "quote": "Bu model için fiyat isteyin",
@@ -613,6 +719,20 @@
     "noodleNav": "Makarna pişiriciler",
     "noodlePower": "Güç yapılandırması",
     "noodleCaption": "Sepetler, kumandalar ve ön tahliye musluğu.",
-    "noodleConfiguration": "Sepet ölçüsünü, su hacmini, parti yükünü, ısı toparlanmasını, tahliye ve temizliği teyit edin. Dört sepetli katalog 5 / 8 kW ve 220 / 380 V seçeneklerini listeler; eşleşmeleri ve son bağlantı teklifte doğrulanmalıdır. Sepet sayısı bağımsız ısıtma bölgelerini veya saatteki porsiyonu göstermez."
+    "noodleConfiguration": "Sepet ölçüsünü, su hacmini, parti yükünü, ısı toparlanmasını, tahliye ve temizliği teyit edin. Dört sepetli katalog 5 / 8 kW ve 220 / 380 V seçeneklerini listeler; eşleşmeleri ve son bağlantı teklifte doğrulanmalıdır. Sepet sayısı bağımsız ısıtma bölgelerini veya saatteki porsiyonu göstermez.",
+    "roundHeading": "Çorba veya buharda hamur işi. Çalışma düzenini seçin.",
+    "roundIntro": "Çin’den ticari indüksiyonlu çorba ocakları ve yuvarlak buharlı pişiriciler satın alın. Yüksek kenarlı hazneyi, beş/yedi açıklığı, güç seçeneklerini ve alanı karşılaştırın.",
+    "roundNames": [
+      "Yüksek kenarlı indüksiyonlu çorba ocağı",
+      "Beş/yedi açıklıklı yuvarlak buharlı pişirici"
+    ],
+    "roundBodies": [
+      "800 mm genişliğinde tabanda yüksek kenarlı yuvarlak hazne, arka musluk ve ön kumandalar. İşlemi ve gerekli kapasiteyi belirleyin.",
+      "800 mm genişliğinde tabanda beş veya yedi açıklık seçeneği. Açıklık düzenini ve buhar kaplarını menü ve partiyle eşleştirin."
+    ],
+    "roundNav": "Çorba ve buharlı pişiriciler",
+    "roundPower": "Güç seçenekleri",
+    "roundCaption": "Yuvarlak çalışma yüzeyi, musluk ve ön kumandalar.",
+    "roundConfiguration": "12, 15 veya 20 kW yapılandırmalarından birini seçin. Kap ölçüsünü, kullanılabilir hacmi, ısıtma veya buhar süresini, suyu ve gideri teyit edin. Otomatik su dolumu seçenek olarak istenebilir; yapılandırmayı, bağlantıyı, ambalajı ve varış yerini teklifte doğrulayın."
   }
 }

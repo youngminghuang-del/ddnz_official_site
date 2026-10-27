@@ -118,3 +118,27 @@ export const noodleModels = [
     "image": "/commercial-kitchen-media/induction/yst-zml50-2.webp"
   }
 ];
+
+export const roundCookerModels = [
+  {
+    "id": "yst-dtl150x",
+    "model": "YST-DTL150X",
+    "kind": "round",
+    "power": "12 / 15 / 20 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "800 × 800 mm",
+    "dimensions": "800 × 800 × (800 + 150) mm",
+    "image": "/commercial-kitchen-media/induction/yst-dtl150x.webp"
+  },
+  {
+    "id": "yst-zbl150x",
+    "model": "YST-ZBL150X",
+    "kind": "round",
+    "power": "12 / 15 / 20 kW",
+    "supply": "380 V · 50 Hz",
+    "footprint": "800 × 800 mm",
+    "dimensions": "800 × 800 × (800 + 150) mm",
+    "openings": "5 / 7",
+    "image": "/commercial-kitchen-media/induction/yst-zbl150x.webp"
+  }
+];
