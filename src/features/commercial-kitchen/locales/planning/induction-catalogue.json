@@ -24,7 +24,8 @@
       "pan": "Listed wok diameter",
       "total": "Total rated power",
       "zones": "Cooking zones",
-      "doors": "Doors"
+      "doors": "Doors",
+      "baskets": "Basket positions"
     },
     "details": "Configuration details",
     "quote": "Request a model quotation",
@@ -59,7 +60,21 @@
     "steamPower": "Power configurations",
     "steamDoors": "Doors",
     "steamCaption": "Cabinet appearance and base controls.",
-    "steamConfiguration": "Confirm tray quantity and size, food load per batch, cycle requirements, water supply, drainage and ventilation. 15 / 20 kW denotes alternative configurations; for the double-door model the catalogue lists two groups. Confirm the chosen configuration, electrical connection, packing and destination in the quotation."
+    "steamConfiguration": "Confirm tray quantity and size, food load per batch, cycle requirements, water supply, drainage and ventilation. 15 / 20 kW denotes alternative configurations; for the double-door model the catalogue lists two groups. Confirm the chosen configuration, electrical connection, packing and destination in the quotation.",
+    "noodleHeading": "Noodle cookers. Compare basket positions and counter space.",
+    "noodleIntro": "Source commercial countertop noodle cookers from China. Compare two- and four-basket layouts, power configurations and countertop footprints for restaurant or takeaway orders.",
+    "noodleNames": [
+      "Two-basket countertop noodle cooker",
+      "Four-basket countertop noodle cooker"
+    ],
+    "noodleBodies": [
+      "Two basket positions in a 350 mm-wide countertop unit, with a front drain tap. Plan basket handling and space for preparing and draining portions.",
+      "Four basket positions in a 520 mm-wide countertop unit. Compare the extra positions with working depth, basket access and the required electrical configuration."
+    ],
+    "noodleNav": "Noodle cookers",
+    "noodlePower": "Power configuration",
+    "noodleCaption": "Basket layout, controls and front drain tap.",
+    "noodleConfiguration": "Confirm basket size, water volume, batch size, heat recovery, draining and cleaning access. The four-basket catalogue lists 5 / 8 kW and 220 / 380 V as configuration options; their pairing and the final connection must be confirmed in the quotation. Basket count does not establish independent heating zones or portions per hour."
   },
   "zh": {
     "heading": "电磁烹饪设备，按工位选择。",
@@ -86,7 +101,8 @@
       "pan": "手册配锅直径",
       "total": "额定总功率",
       "zones": "加热工位数量",
-      "doors": "柜门数量"
+      "doors": "柜门数量",
+      "baskets": "煮面篮位"
     },
     "details": "展开配置详情",
     "quote": "询问此型号报价",
@@ -121,7 +137,21 @@
     "steamPower": "可选功率配置",
     "steamDoors": "柜门数量",
     "steamCaption": "蒸柜柜体与底部控制布局。",
-    "steamConfiguration": "请确认托盘数量与尺寸、每批食品装载量、周期要求、供水、排水与通风。15 / 20 kW表示备选配置，双门款手册列示两组；报价时确认所选组合、电气连接、包装与目的地。"
+    "steamConfiguration": "请确认托盘数量与尺寸、每批食品装载量、周期要求、供水、排水与通风。15 / 20 kW表示备选配置，双门款手册列示两组；报价时确认所选组合、电气连接、包装与目的地。",
+    "noodleHeading": "双头还是四头，先比较篮位与台面空间。",
+    "noodleIntro": "从中国采购商用台式煮面炉，为餐厅和外卖门店比较双头、四头篮位、功率配置与台面占地。",
+    "noodleNames": [
+      "台式双头煮面炉",
+      "台式四头煮面炉"
+    ],
+    "noodleBodies": [
+      "350 mm宽台式机身配置两个煮面篮位和前置排水阀，便于规划提篮、配餐及沥水操作空间。",
+      "520 mm宽台式机身配置四个煮面篮位。增加篮位时，一起比较操作进深、提篮空间和所需供电配置。"
+    ],
+    "noodleNav": "台式煮面炉",
+    "noodlePower": "功率配置",
+    "noodleCaption": "煮面篮位、控制面板与前置排水阀。",
+    "noodleConfiguration": "请确认篮筐尺寸、水槽容量、每批用量、回温表现、排水和清洁空间。四头款手册列示5 / 8 kW与220 / 380 V备选配置，具体功率和电压的对应关系及接线方式在报价时确认。篮位数量不代表独立加热区或每小时出餐量。"
   },
   "es": {
     "heading": "Cocción por inducción. Tres puestos de trabajo.",
@@ -148,7 +178,8 @@
       "pan": "Diámetro del wok indicado",
       "total": "Potencia nominal total",
       "zones": "Zonas de cocción",
-      "doors": "Puertas"
+      "doors": "Puertas",
+      "baskets": "Posiciones para cestas"
     },
     "details": "Ver configuración",
     "quote": "Solicitar cotización del modelo",
@@ -183,7 +214,21 @@
     "steamPower": "Configuraciones de potencia",
     "steamDoors": "Puertas",
     "steamCaption": "Estructura del armario y controles inferiores.",
-    "steamConfiguration": "Confirme número y tamaño de bandejas, carga por tanda, ciclo, agua, desagüe y ventilación. 15 / 20 kW indica opciones alternativas; el modelo de dos puertas tiene dos grupos. Confirme configuración, conexión, embalaje y destino en la cotización."
+    "steamConfiguration": "Confirme número y tamaño de bandejas, carga por tanda, ciclo, agua, desagüe y ventilación. 15 / 20 kW indica opciones alternativas; el modelo de dos puertas tiene dos grupos. Confirme configuración, conexión, embalaje y destino en la cotización.",
+    "noodleHeading": "Cocedores de pasta. Compare cestas y encimera.",
+    "noodleIntro": "Compre cocedores comerciales de pasta de sobremesa de China. Compare dos o cuatro cestas, opciones de potencia y espacio para restaurantes y comida para llevar.",
+    "noodleNames": [
+      "Cocedor de pasta de sobremesa con dos cestas",
+      "Cocedor de pasta de sobremesa con cuatro cestas"
+    ],
+    "noodleBodies": [
+      "Dos posiciones para cestas en una unidad de 350 mm de ancho con grifo de vaciado frontal. Reserve espacio para levantar las cestas y escurrir las porciones.",
+      "Cuatro posiciones para cestas en una unidad de 520 mm de ancho. Compare profundidad, acceso a las cestas y configuración eléctrica."
+    ],
+    "noodleNav": "Cocedores de pasta",
+    "noodlePower": "Configuración de potencia",
+    "noodleCaption": "Cestas, controles y grifo de vaciado frontal.",
+    "noodleConfiguration": "Confirme tamaño de cestas, volumen de agua, carga, recuperación térmica y acceso para vaciado y limpieza. El catálogo de cuatro cestas indica opciones de 5 / 8 kW y 220 / 380 V; confirme su correspondencia y conexión final en la cotización. El número de cestas no establece zonas de calentamiento independientes ni raciones por hora."
   },
   "ar": {
     "heading": "الطهي بالحث. ثلاثة تصاميم لمحطات العمل.",
@@ -210,7 +255,8 @@
       "pan": "قطر الووك المذكور",
       "total": "إجمالي القدرة الاسمية",
       "zones": "عدد مناطق الطهي",
-      "doors": "عدد الأبواب"
+      "doors": "عدد الأبواب",
+      "baskets": "مواضع السلال"
     },
     "details": "تفاصيل التكوين",
     "quote": "اطلب عرض سعر للطراز",
@@ -245,7 +291,21 @@
     "steamPower": "خيارات القدرة",
     "steamDoors": "عدد الأبواب",
     "steamCaption": "هيكل الخزانة وأجهزة التحكم السفلية.",
-    "steamConfiguration": "أكد عدد الصواني ومقاساتها وحمولة الدفعة والدورة والماء والصرف والتهوية. تشير 15 / 20 kW إلى خيارات بديلة؛ يسرد الكتالوج مجموعتين لطراز البابين. أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر."
+    "steamConfiguration": "أكد عدد الصواني ومقاساتها وحمولة الدفعة والدورة والماء والصرف والتهوية. تشير 15 / 20 kW إلى خيارات بديلة؛ يسرد الكتالوج مجموعتين لطراز البابين. أكد التكوين والتوصيل والتغليف والوجهة في عرض السعر.",
+    "noodleHeading": "مواقد سلق المعكرونة. قارن السلال ومساحة الطاولة.",
+    "noodleIntro": "اشترِ مواقد سلق معكرونة تجارية للطاولة من الصين. قارن تصميم السلتين والأربع سلال وخيارات القدرة والمساحة للمطاعم والوجبات الجاهزة.",
+    "noodleNames": [
+      "موقد معكرونة للطاولة بسلتين",
+      "موقد معكرونة للطاولة بأربع سلال"
+    ],
+    "noodleBodies": [
+      "موضعان للسلال ضمن جهاز بعرض 350 مم مع صنبور تصريف أمامي. خصص مساحة لرفع السلال وتجهيز الحصص وتصفيتها.",
+      "أربعة مواضع للسلال ضمن جهاز بعرض 520 مم. قارن العمق والوصول إلى السلال والتكوين الكهربائي المطلوب."
+    ],
+    "noodleNav": "مواقد المعكرونة",
+    "noodlePower": "تكوين القدرة",
+    "noodleCaption": "السلال والتحكم وصنبور التصريف الأمامي.",
+    "noodleConfiguration": "أكد مقاسات السلال وحجم الماء وحمولة الدفعة واستعادة الحرارة والتصريف والتنظيف. يسرد كتالوج الأربع سلال خيارات 5 / 8 kW و220 / 380 V؛ يجب تأكيد توافقها والتوصيل النهائي في عرض السعر. عدد السلال لا يثبت مناطق تسخين مستقلة أو حصصاً في الساعة."
   },
   "fr": {
     "heading": "Cuisson à induction. Trois postes de travail.",
@@ -272,7 +332,8 @@
       "pan": "Diamètre du wok indiqué",
       "total": "Puissance nominale totale",
       "zones": "Nombre de zones",
-      "doors": "Nombre de portes"
+      "doors": "Nombre de portes",
+      "baskets": "Emplacements pour paniers"
     },
     "details": "Détails de configuration",
     "quote": "Demander un devis pour ce modèle",
@@ -307,7 +368,21 @@
     "steamPower": "Configurations de puissance",
     "steamDoors": "Nombre de portes",
     "steamCaption": "Corps de l’armoire et commandes inférieures.",
-    "steamConfiguration": "Confirmez nombre et dimensions des plateaux, charge par cycle, durée, eau, évacuation et ventilation. 15 / 20 kW désigne des configurations alternatives ; le modèle deux portes comporte deux groupes. Précisez configuration, raccordement, emballage et destination dans le devis."
+    "steamConfiguration": "Confirmez nombre et dimensions des plateaux, charge par cycle, durée, eau, évacuation et ventilation. 15 / 20 kW désigne des configurations alternatives ; le modèle deux portes comporte deux groupes. Précisez configuration, raccordement, emballage et destination dans le devis.",
+    "noodleHeading": "Cuiseurs à pâtes. Comparez paniers et plan de travail.",
+    "noodleIntro": "Achetez des cuiseurs à pâtes professionnels de table en Chine. Comparez deux ou quatre paniers, les puissances et l’encombrement pour la restauration et la vente à emporter.",
+    "noodleNames": [
+      "Cuiseur à pâtes de table à deux paniers",
+      "Cuiseur à pâtes de table à quatre paniers"
+    ],
+    "noodleBodies": [
+      "Deux emplacements pour paniers dans un appareil de 350 mm de large avec robinet de vidange avant. Prévoyez le levage et l’égouttage des portions.",
+      "Quatre emplacements pour paniers dans un appareil de 520 mm de large. Comparez profondeur, accès et configuration électrique."
+    ],
+    "noodleNav": "Cuiseurs à pâtes",
+    "noodlePower": "Configuration de puissance",
+    "noodleCaption": "Paniers, commandes et robinet de vidange avant.",
+    "noodleConfiguration": "Confirmez dimensions des paniers, volume d’eau, charge, remontée en température, vidange et nettoyage. Le catalogue quatre paniers indique 5 / 8 kW et 220 / 380 V ; leur association et le raccordement final sont à confirmer au devis. Le nombre de paniers ne définit ni zones de chauffe indépendantes ni portions par heure."
   },
   "pt": {
     "heading": "Cozinha por indução. Três postos de trabalho.",
@@ -334,7 +409,8 @@
       "pan": "Diâmetro do wok indicado",
       "total": "Potência nominal total",
       "zones": "Número de zonas",
-      "doors": "Número de portas"
+      "doors": "Número de portas",
+      "baskets": "Posições para cestos"
     },
     "details": "Detalhes da configuração",
     "quote": "Solicitar cotação do modelo",
@@ -369,7 +445,21 @@
     "steamPower": "Configurações de potência",
     "steamDoors": "Número de portas",
     "steamCaption": "Corpo do armário e controles inferiores.",
-    "steamConfiguration": "Confirme número e tamanho das bandejas, carga por ciclo, tempo, água, drenagem e ventilação. 15 / 20 kW indica opções alternativas; o modelo de duas portas lista dois grupos. Confirme configuração, ligação, embalagem e destino na cotação."
+    "steamConfiguration": "Confirme número e tamanho das bandejas, carga por ciclo, tempo, água, drenagem e ventilação. 15 / 20 kW indica opções alternativas; o modelo de duas portas lista dois grupos. Confirme configuração, ligação, embalagem e destino na cotação.",
+    "noodleHeading": "Cozedores de massas. Compare cestos e bancada.",
+    "noodleIntro": "Compre cozedores comerciais de massas de bancada da China. Compare dois ou quatro cestos, potências e espaço para restaurantes e refeições para levar.",
+    "noodleNames": [
+      "Cozedor de massas de bancada com dois cestos",
+      "Cozedor de massas de bancada com quatro cestos"
+    ],
+    "noodleBodies": [
+      "Duas posições para cestos em unidade de 350 mm de largura com torneira de drenagem frontal. Reserve espaço para levantar os cestos e escorrer as porções.",
+      "Quatro posições para cestos em unidade de 520 mm de largura. Compare profundidade, acesso e configuração elétrica."
+    ],
+    "noodleNav": "Cozedores de massas",
+    "noodlePower": "Configuração de potência",
+    "noodleCaption": "Cestos, controles e torneira de drenagem frontal.",
+    "noodleConfiguration": "Confirme tamanho dos cestos, volume de água, carga, recuperação térmica, drenagem e limpeza. O catálogo de quatro cestos lista 5 / 8 kW e 220 / 380 V; confirme a correspondência e a ligação final na cotação. O número de cestos não define zonas de aquecimento independentes nem porções por hora."
   },
   "ru": {
     "heading": "Индукционное оборудование. Три рабочих поста.",
@@ -396,7 +486,8 @@
       "pan": "Указанный диаметр вока",
       "total": "Общая номинальная мощность",
       "zones": "Количество зон",
-      "doors": "Количество дверей"
+      "doors": "Количество дверей",
+      "baskets": "Места для корзин"
     },
     "details": "Подробности комплектации",
     "quote": "Запросить цену модели",
@@ -431,7 +522,21 @@
     "steamPower": "Варианты мощности",
     "steamDoors": "Количество дверей",
     "steamCaption": "Корпус шкафа и нижние органы управления.",
-    "steamConfiguration": "Уточните число и размер противней, загрузку, цикл, водоснабжение, слив и вентиляцию. 15 / 20 kW — альтернативные варианты; для двухдверного шкафа указаны две группы. Подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены."
+    "steamConfiguration": "Уточните число и размер противней, загрузку, цикл, водоснабжение, слив и вентиляцию. 15 / 20 kW — альтернативные варианты; для двухдверного шкафа указаны две группы. Подтвердите комплектацию, подключение, упаковку и пункт назначения в запросе цены.",
+    "noodleHeading": "Макароноварки. Сравните корзины и место на столе.",
+    "noodleIntro": "Закупайте настольные профессиональные макароноварки из Китая. Сравните два или четыре места для корзин, варианты мощности и площадь для ресторанов и заказов навынос.",
+    "noodleNames": [
+      "Настольная макароноварка с двумя корзинами",
+      "Настольная макароноварка с четырьмя корзинами"
+    ],
+    "noodleBodies": [
+      "Два места для корзин в корпусе шириной 350 мм с передним сливным краном. Предусмотрите подъём корзин и слив воды с порций.",
+      "Четыре места для корзин в корпусе шириной 520 мм. Сопоставьте глубину, доступ к корзинам и электрическую комплектацию."
+    ],
+    "noodleNav": "Макароноварки",
+    "noodlePower": "Вариант мощности",
+    "noodleCaption": "Корзины, управление и передний сливной кран.",
+    "noodleConfiguration": "Уточните размер корзин, объём воды, загрузку, восстановление температуры, слив и очистку. Для четырёх корзин указаны варианты 5 / 8 kW и 220 / 380 V; их сочетание и подключение подтверждаются в запросе цены. Число корзин не означает независимые зоны нагрева или порции в час."
   },
   "tr": {
     "heading": "İndüksiyonla pişirme. Üç çalışma düzeni.",
@@ -458,7 +563,8 @@
       "pan": "Belirtilen wok çapı",
       "total": "Toplam anma gücü",
       "zones": "Pişirme bölgesi sayısı",
-      "doors": "Kapı sayısı"
+      "doors": "Kapı sayısı",
+      "baskets": "Sepet konumları"
     },
     "details": "Yapılandırma ayrıntıları",
     "quote": "Bu model için fiyat isteyin",
@@ -493,6 +599,20 @@
     "steamPower": "Güç seçenekleri",
     "steamDoors": "Kapı sayısı",
     "steamCaption": "Dolap gövdesi ve alt kontrol düzeni.",
-    "steamConfiguration": "Tepsi sayısını ve ölçüsünü, parti yükünü, çevrimi, suyu, gideri ve havalandırmayı teyit edin. 15 / 20 kW alternatif yapılandırmaları belirtir; çift kapılı modelde iki grup listelenir. Teklifte yapılandırmayı, bağlantıyı, ambalajı ve varış yerini doğrulayın."
+    "steamConfiguration": "Tepsi sayısını ve ölçüsünü, parti yükünü, çevrimi, suyu, gideri ve havalandırmayı teyit edin. 15 / 20 kW alternatif yapılandırmaları belirtir; çift kapılı modelde iki grup listelenir. Teklifte yapılandırmayı, bağlantıyı, ambalajı ve varış yerini doğrulayın.",
+    "noodleHeading": "Makarna pişiriciler. Sepet ve tezgâh alanını karşılaştırın.",
+    "noodleIntro": "Çin’den ticari tezgâh üstü makarna pişiriciler satın alın. Restoran ve paket servis için iki veya dört sepeti, güç seçeneklerini ve kaplanan alanı karşılaştırın.",
+    "noodleNames": [
+      "İki sepetli tezgâh üstü makarna pişirici",
+      "Dört sepetli tezgâh üstü makarna pişirici"
+    ],
+    "noodleBodies": [
+      "Ön tahliye musluklu, 350 mm genişliğinde gövdede iki sepet konumu. Sepet kaldırma ve porsiyon süzme alanını planlayın.",
+      "520 mm genişliğinde gövdede dört sepet konumu. Derinliği, sepet erişimini ve elektrik yapılandırmasını karşılaştırın."
+    ],
+    "noodleNav": "Makarna pişiriciler",
+    "noodlePower": "Güç yapılandırması",
+    "noodleCaption": "Sepetler, kumandalar ve ön tahliye musluğu.",
+    "noodleConfiguration": "Sepet ölçüsünü, su hacmini, parti yükünü, ısı toparlanmasını, tahliye ve temizliği teyit edin. Dört sepetli katalog 5 / 8 kW ve 220 / 380 V seçeneklerini listeler; eşleşmeleri ve son bağlantı teklifte doğrulanmalıdır. Sepet sayısı bağımsız ısıtma bölgelerini veya saatteki porsiyonu göstermez."
   }
 }

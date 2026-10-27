@@ -93,3 +93,28 @@ export const steamModels = [
     "image": "/commercial-kitchen-media/induction/yst-zfg24x.webp"
   }
 ];
+
+export const noodleModels = [
+  {
+    "id": "yst-zml50x",
+    "model": "YST-ZML50X",
+    "kind": "noodle",
+    "power": "5 kW",
+    "supply": "220 V · 50 Hz",
+    "footprint": "350 × 530 mm",
+    "dimensions": "350 × 530 × (360 + 100) mm",
+    "baskets": "2",
+    "image": "/commercial-kitchen-media/induction/yst-zml50x.webp"
+  },
+  {
+    "id": "yst-zml50-2",
+    "model": "YST-ZML50-2",
+    "kind": "noodle",
+    "power": "5 / 8 kW",
+    "supply": "220 / 380 V · 50 Hz",
+    "footprint": "520 × 630 mm",
+    "dimensions": "520 × 630 × (340 + 100) mm",
+    "baskets": "4",
+    "image": "/commercial-kitchen-media/induction/yst-zml50-2.webp"
+  }
+];
