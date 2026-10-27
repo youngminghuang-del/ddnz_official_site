@@ -1,3 +1,5 @@
+import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
+import '../features/freight/freight.css';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
 import {translatedText} from '../features/site-localization/translate.mjs';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
@@ -1537,7 +1539,7 @@ export default function MiddleEastRoute() {
                       {t('seaDdpText')}
                     </span>
                     <span className="text-sm font-extrabold text-[#c94f2f]">
-                      {getTransitEstimate('sea')}
+                      {selectedCountry === 'UAE' ? routePlanningUi(activeLang)[2] : getTransitEstimate('sea')}
                     </span>
                   </div>
                   <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
@@ -1545,7 +1547,7 @@ export default function MiddleEastRoute() {
                       {t('airDdpText')}
                     </span>
                     <span className="text-sm font-extrabold text-[#c94f2f]">
-                      {getTransitEstimate('air')}
+                      {selectedCountry === 'UAE' ? routePlanningUi(activeLang)[2] : getTransitEstimate('air')}
                     </span>
                   </div>
                   <div className="flex items-center justify-between border-b border-white/[0.08] pb-3">
@@ -1570,6 +1572,7 @@ export default function MiddleEastRoute() {
           </div>
         </section>
 
+        {selectedCountry === 'UAE' && <RoutePlanningDepth country="uae" locale={activeLang}/>}
         <MarketSourcingHandoff destination={selectedCountryLabel} />
         {selectedCountry === 'UAE' && ['zh', 'en', 'es'].includes(activeLang) && <NewFreightEvidence locale={activeLang as 'zh' | 'en' | 'es'} uaeOnly />}
 

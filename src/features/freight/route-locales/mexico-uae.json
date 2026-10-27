@@ -1,0 +1,418 @@
+{
+  "en": {
+    "mexico": {
+      "title": "Choose the Mexican gateway with the inland leg",
+      "intro": "Compare the same cargo and final address across quotations.",
+      "routes": [
+        [
+          "Manzanillo → receiving city",
+          "Sea + inland delivery",
+          "Request the sailing, discharge charges and road leg to Guadalajara or your actual address."
+        ],
+        [
+          "Lázaro Cárdenas → inland terminal",
+          "Sea + rail / road",
+          "Ask whether rail or road is offered for your receiving city. Include terminal collection and final delivery."
+        ],
+        [
+          "Urgent cartons or spare parts",
+          "Separate air quotation",
+          "Compare chargeable weight and airport release with the cost of splitting the order."
+        ]
+      ],
+      "arrivalTitle": "Before the container leaves China",
+      "arrival": "Agree who clears, collects and unloads; record free time, delivery appointments and empty-container return responsibilities.",
+      "cargo": "Send supplier locations, cargo-ready dates, packed sizes, weights, postcode and importer contact. Flag heavy pallets and batteries separately.",
+      "note": "The quotation must identify the booked gateway, inland mode and handover point; port arrival is not warehouse delivery."
+    },
+    "uae": {
+      "title": "Plan the UAE gateway and final handover",
+      "intro": "Start with the receiving address and the carrier’s available routing for your shipment.",
+      "routes": [
+        [
+          "Sea freight → confirmed discharge port",
+          "FCL / LCL",
+          "Confirm the actual discharge port and whether onward transport uses a feeder or a road transfer. Do not assume a direct Jebel Ali call."
+        ],
+        [
+          "Arrival port → UAE receiving point",
+          "Transfer + clearance + delivery",
+          "Request separate costs and responsibilities for port handling, any transfer, clearance and delivery to Dubai or Abu Dhabi."
+        ],
+        [
+          "Urgent parts → confirmed airport",
+          "Air freight",
+          "Compare flight space and chargeable weight. Identify batteries and agree airport release and local delivery."
+        ]
+      ],
+      "arrivalTitle": "Warehouse, free zone or installation site?",
+      "arrival": "Send the full address and receiving entity. Agree the clearance point, delivery appointment, unloading equipment and container return location.",
+      "cargo": "For kitchen equipment, provide crate dimensions, gross weight, lifting points and upright or stacking limits. Identify parts that must arrive separately.",
+      "note": "Routing and acceptance can change. Confirm the carrier, discharge point, transfers and current charges before booking."
+    }
+  },
+  "zh": {
+    "mexico": {
+      "title": "目的港和墨西哥内陆段一起选",
+      "intro": "用同一批货物、同一个最终地址比较完整报价。",
+      "routes": [
+        [
+          "曼萨尼约 → 收货城市",
+          "海运 + 内陆配送",
+          "询明船期、卸货费用，以及到瓜达拉哈拉或实际地址的公路段。"
+        ],
+        [
+          "拉萨罗卡德纳斯 → 内陆场站",
+          "海运 + 铁路 / 公路",
+          "确认收货城市可选的铁路或公路方案，并包含场站提货和末端配送。"
+        ],
+        [
+          "急需纸箱货或备件",
+          "单独比较空运",
+          "把计费重量、机场放货和拆分订单增加的费用一起比较。"
+        ]
+      ],
+      "arrivalTitle": "货柜离开中国之前",
+      "arrival": "约定谁清关、提货和卸货，列明免费期、配送预约及空箱归还责任。",
+      "cargo": "提供供应商地址、备货日期、包装尺寸、重量、邮编和进口方联系人。重托盘与含电池产品单列。",
+      "note": "报价明确实际订舱港口、内陆方式和交接点；到港时间不等于到仓时间。"
+    },
+    "uae": {
+      "title": "先确认阿联酋卸货点，再安排交付",
+      "intro": "按实际收货地址与承运人可接受的出运方案比较。",
+      "routes": [
+        [
+          "海运 → 确认后的卸货港",
+          "整柜 / 拼箱",
+          "确认实际卸货港，以及后续使用支线船还是公路转运，不预设直靠杰贝阿里。"
+        ],
+        [
+          "到港 → 阿联酋收货点",
+          "转运 + 清关 + 配送",
+          "分别核算港口操作、可能的转运、清关，以及送往迪拜或阿布扎比的费用和责任。"
+        ],
+        [
+          "急需备件 → 确认后的机场",
+          "空运",
+          "比较航班舱位与计费重量；单列电池资料，约定机场放货和当地配送。"
+        ]
+      ],
+      "arrivalTitle": "送仓库、自由区，还是安装现场？",
+      "arrival": "提供完整地址和收货主体，明确清关地点、预约、卸货设备与还箱地点。",
+      "cargo": "餐厨设备提供木箱尺寸、毛重、吊装点，以及直立或堆叠限制；急需零件单独列明。",
+      "note": "路线与收货条件可能变化，订舱前确认承运人、卸货点、转运段及当期费用。"
+    }
+  },
+  "es": {
+    "mexico": {
+      "title": "Elegir puerto y tramo interior en México",
+      "intro": "Comparar presupuestos para la misma carga y dirección final.",
+      "routes": [
+        [
+          "Manzanillo → ciudad receptora",
+          "Marítimo + carretera",
+          "Solicitar salida, gastos de descarga y transporte a Guadalajara o a la dirección real."
+        ],
+        [
+          "Lázaro Cárdenas → terminal interior",
+          "Marítimo + tren / carretera",
+          "Confirmar la opción disponible para la ciudad receptora, incluyendo recogida en terminal y entrega final."
+        ],
+        [
+          "Cajas urgentes o repuestos",
+          "Cotización aérea separada",
+          "Comparar peso facturable, liberación aeroportuaria y coste de dividir el pedido."
+        ]
+      ],
+      "arrivalTitle": "Antes de salir de China",
+      "arrival": "Asignar despacho, recogida y descarga; acordar días libres, citas y devolución del contenedor vacío.",
+      "cargo": "Enviar ubicaciones de proveedores, fechas de preparación, medidas, pesos, código postal y contacto del importador. Separar palés pesados y baterías.",
+      "note": "El presupuesto debe identificar puerto, transporte interior y punto de entrega; llegada al puerto no significa entrega al almacén."
+    },
+    "uae": {
+      "title": "Confirmar la entrada y entrega en EAU",
+      "intro": "Comparar según la dirección receptora y la ruta que acepte el transportista.",
+      "routes": [
+        [
+          "Marítimo → puerto confirmado",
+          "FCL / LCL",
+          "Confirmar puerto de descarga y conexión por buque o carretera. No presuponer escala directa en Jebel Ali."
+        ],
+        [
+          "Puerto → destino en EAU",
+          "Traslado + despacho + entrega",
+          "Desglosar gastos y responsabilidades de puerto, traslado, aduana y entrega en Dubái o Abu Dabi."
+        ],
+        [
+          "Repuestos urgentes → aeropuerto confirmado",
+          "Carga aérea",
+          "Comparar espacio y peso facturable; declarar baterías y acordar liberación y entrega local."
+        ]
+      ],
+      "arrivalTitle": "¿Almacén, zona franca u obra?",
+      "arrival": "Enviar dirección y entidad receptora; acordar lugar de despacho, cita, equipos de descarga y devolución del contenedor.",
+      "cargo": "Para equipos de cocina: medidas embaladas, peso bruto, puntos de elevación y límites de apilado. Separar repuestos urgentes.",
+      "note": "Rutas y aceptación pueden cambiar. Confirmar transportista, descarga, traslados y gastos vigentes antes de reservar."
+    }
+  },
+  "pt": {
+    "mexico": {
+      "title": "Escolher o porto e o percurso interior no México",
+      "intro": "Compare propostas para a mesma carga e endereço final.",
+      "routes": [
+        [
+          "Manzanillo → cidade de destino",
+          "Marítimo + rodoviário",
+          "Solicite saída, custos de descarga e transporte até Guadalajara ou ao endereço real."
+        ],
+        [
+          "Lázaro Cárdenas → terminal interior",
+          "Marítimo + ferrovia / estrada",
+          "Confirme a opção disponível, incluindo retirada no terminal e entrega final."
+        ],
+        [
+          "Caixas urgentes ou peças",
+          "Cotação aérea separada",
+          "Compare peso tarifável, liberação no aeroporto e custo de dividir o pedido."
+        ]
+      ],
+      "arrivalTitle": "Antes da saída da China",
+      "arrival": "Defina responsáveis pelo desembaraço, retirada e descarga; confirme dias livres, agendamento e devolução do contêiner.",
+      "cargo": "Envie fornecedores, datas de prontidão, medidas, pesos, código postal e contato do importador. Separe paletes pesados e baterias.",
+      "note": "A cotação deve indicar porto, transporte interior e ponto de entrega; chegada ao porto não equivale à entrega no armazém."
+    },
+    "uae": {
+      "title": "Confirmar a entrada e a entrega nos EAU",
+      "intro": "Compare o endereço de recebimento com a rota aceita pelo transportador.",
+      "routes": [
+        [
+          "Marítimo → porto confirmado",
+          "FCL / LCL",
+          "Confirme o porto de descarga e a conexão por navio ou estrada. Não presuma escala direta em Jebel Ali."
+        ],
+        [
+          "Porto → destino nos EAU",
+          "Transferência + desembaraço + entrega",
+          "Separe custos e responsabilidades de porto, transferência, alfândega e entrega em Dubai ou Abu Dhabi."
+        ],
+        [
+          "Peças urgentes → aeroporto confirmado",
+          "Carga aérea",
+          "Compare espaço e peso tarifável; identifique baterias e combine liberação e entrega local."
+        ]
+      ],
+      "arrivalTitle": "Armazém, zona franca ou local de instalação?",
+      "arrival": "Envie endereço e entidade receptora; confirme local do desembaraço, agendamento, descarga e devolução do contêiner.",
+      "cargo": "Para equipamentos de cozinha: dimensões embaladas, peso bruto, pontos de içamento e limites de empilhamento. Separe peças urgentes.",
+      "note": "Rotas e aceitação podem mudar. Confirme transportador, descarga, transferências e custos atuais antes da reserva."
+    }
+  },
+  "fr": {
+    "mexico": {
+      "title": "Choisir le port et le trajet intérieur au Mexique",
+      "intro": "Comparez les devis pour une même cargaison et une même adresse finale.",
+      "routes": [
+        [
+          "Manzanillo → ville de réception",
+          "Mer + route",
+          "Demandez le départ, les frais de déchargement et le transport vers Guadalajara ou votre adresse."
+        ],
+        [
+          "Lázaro Cárdenas → terminal intérieur",
+          "Mer + rail / route",
+          "Confirmez le mode disponible, avec enlèvement au terminal et livraison finale."
+        ],
+        [
+          "Cartons urgents ou pièces",
+          "Devis aérien distinct",
+          "Comparez poids taxable, mainlevée à l’aéroport et coût de fractionnement de la commande."
+        ]
+      ],
+      "arrivalTitle": "Avant le départ de Chine",
+      "arrival": "Désignez les responsables du dédouanement, de l’enlèvement et du déchargement ; fixez franchise, rendez-vous et retour du conteneur vide.",
+      "cargo": "Envoyez adresses fournisseurs, dates de disponibilité, dimensions, poids, code postal et contact importateur. Signalez palettes lourdes et batteries.",
+      "note": "Le devis doit préciser port, transport intérieur et lieu de remise ; arrivée au port ne signifie pas livraison en entrepôt."
+    },
+    "uae": {
+      "title": "Confirmer l’entrée et la remise aux EAU",
+      "intro": "Comparez l’adresse de réception avec l’itinéraire accepté par le transporteur.",
+      "routes": [
+        [
+          "Mer → port confirmé",
+          "FCL / LCL",
+          "Confirmez le port de déchargement et la liaison maritime ou routière. Ne présumez pas une escale directe à Jebel Ali."
+        ],
+        [
+          "Port → destination aux EAU",
+          "Transfert + douane + livraison",
+          "Détaillez coûts et responsabilités du port, du transfert, de la douane et de la livraison à Dubaï ou Abou Dhabi."
+        ],
+        [
+          "Pièces urgentes → aéroport confirmé",
+          "Fret aérien",
+          "Comparez capacité et poids taxable ; signalez les batteries et convenez de la mainlevée et de la livraison locale."
+        ]
+      ],
+      "arrivalTitle": "Entrepôt, zone franche ou site d’installation ?",
+      "arrival": "Envoyez adresse et destinataire ; confirmez lieu de dédouanement, rendez-vous, moyens de déchargement et retour du conteneur.",
+      "cargo": "Équipements de cuisine : dimensions emballées, poids brut, points de levage et limites d’empilage. Identifiez les pièces urgentes.",
+      "note": "Itinéraires et acceptation peuvent changer. Confirmez transporteur, déchargement, transferts et frais actuels avant réservation."
+    }
+  },
+  "ru": {
+    "mexico": {
+      "title": "Выберите порт и внутренний маршрут в Мексике",
+      "intro": "Сравнивайте предложения для одного груза и конечного адреса.",
+      "routes": [
+        [
+          "Мансанильо → город получения",
+          "Море + автодоставка",
+          "Запросите рейс, расходы на выгрузку и доставку в Гвадалахару или по вашему адресу."
+        ],
+        [
+          "Ласаро-Карденас → внутренний терминал",
+          "Море + железная дорога / авто",
+          "Уточните доступный вариант, включая получение на терминале и доставку до адреса."
+        ],
+        [
+          "Срочные коробки или запчасти",
+          "Отдельный расчёт авиадоставки",
+          "Сравните оплачиваемый вес, выпуск в аэропорту и стоимость разделения заказа."
+        ]
+      ],
+      "arrivalTitle": "До отправки из Китая",
+      "arrival": "Назначьте ответственных за оформление, получение и выгрузку; согласуйте бесплатный период, запись на доставку и возврат порожнего контейнера.",
+      "cargo": "Передайте адреса поставщиков, даты готовности, размеры, вес, индекс и контакт импортёра. Отдельно укажите тяжёлые палеты и батареи.",
+      "note": "В предложении нужны порт, внутренний транспорт и место передачи; прибытие в порт не означает доставку на склад."
+    },
+    "uae": {
+      "title": "Уточните пункт прибытия и передачи в ОАЭ",
+      "intro": "Сопоставьте адрес получателя с маршрутом, который принимает перевозчик.",
+      "routes": [
+        [
+          "Море → подтверждённый порт",
+          "FCL / LCL",
+          "Уточните порт выгрузки и дальнейший морской или автомобильный участок. Не предполагайте прямой заход в Джебель-Али."
+        ],
+        [
+          "Порт → получатель в ОАЭ",
+          "Перевозка + таможня + доставка",
+          "Разделите расходы и ответственность за порт, перегрузку, оформление и доставку в Дубай или Абу-Даби."
+        ],
+        [
+          "Срочные запчасти → согласованный аэропорт",
+          "Авиаперевозка",
+          "Сравните наличие места и оплачиваемый вес; укажите батареи и согласуйте выпуск и доставку."
+        ]
+      ],
+      "arrivalTitle": "Склад, свободная зона или место установки?",
+      "arrival": "Укажите адрес и получателя; согласуйте место оформления, время приёмки, разгрузочную технику и возврат контейнера.",
+      "cargo": "Для кухонного оборудования нужны размеры упаковки, вес брутто, точки подъёма и ограничения штабелирования. Выделите срочные детали.",
+      "note": "Маршрут и условия приёма могут меняться. До бронирования подтвердите перевозчика, порт выгрузки, пересадки и действующие расходы."
+    }
+  },
+  "tr": {
+    "mexico": {
+      "title": "Meksika limanını iç taşıma ile birlikte seçin",
+      "intro": "Aynı yük ve son teslimat adresi için teklifleri karşılaştırın.",
+      "routes": [
+        [
+          "Manzanillo → alıcı şehir",
+          "Deniz + kara",
+          "Seferi, boşaltma ücretlerini ve Guadalajara veya gerçek adrese kara taşımasını sorun."
+        ],
+        [
+          "Lázaro Cárdenas → iç terminal",
+          "Deniz + demiryolu / kara",
+          "Terminalden alım ve son teslimat dahil sunulan seçeneği doğrulayın."
+        ],
+        [
+          "Acil koliler veya yedek parçalar",
+          "Ayrı hava kargo teklifi",
+          "Ücretlendirilen ağırlığı, havalimanı çıkışını ve siparişi bölme maliyetini karşılaştırın."
+        ]
+      ],
+      "arrivalTitle": "Çin’den çıkıştan önce",
+      "arrival": "Gümrük, teslim alma ve boşaltma sorumlularını belirleyin; serbest süreyi, randevuyu ve boş konteyner iadesini kararlaştırın.",
+      "cargo": "Tedarikçi adresleri, hazır olma tarihleri, ölçüler, ağırlıklar, posta kodu ve ithalatçı iletişimini gönderin. Ağır palet ve bataryaları ayrı belirtin.",
+      "note": "Teklif limanı, iç taşıma türünü ve teslim noktasını belirtmelidir; limana varış depoya teslim değildir."
+    },
+    "uae": {
+      "title": "BAE giriş ve teslim noktasını doğrulayın",
+      "intro": "Alıcı adresini taşıyıcının kabul ettiği güzergâhla birlikte değerlendirin.",
+      "routes": [
+        [
+          "Deniz → doğrulanan boşaltma limanı",
+          "FCL / LCL",
+          "Boşaltma limanını ve sonraki gemi veya kara aktarımını doğrulayın. Cebel Ali’ye doğrudan uğrak varsaymayın."
+        ],
+        [
+          "Liman → BAE alıcı noktası",
+          "Aktarma + gümrük + teslimat",
+          "Liman, aktarma, gümrük ve Dubai veya Abu Dabi teslimatının ücret ve sorumluluklarını ayırın."
+        ],
+        [
+          "Acil parçalar → doğrulanan havalimanı",
+          "Hava kargo",
+          "Kapasite ve ücretlendirilen ağırlığı karşılaştırın; bataryaları belirtip çıkış ve yerel teslimatı kararlaştırın."
+        ]
+      ],
+      "arrivalTitle": "Depo, serbest bölge veya kurulum sahası mı?",
+      "arrival": "Adres ve alıcı kuruluşu gönderin; gümrük noktası, randevu, boşaltma ekipmanı ve konteyner iadesini doğrulayın.",
+      "cargo": "Mutfak ekipmanı için ambalaj ölçüleri, brüt ağırlık, kaldırma noktaları ve istif sınırlarını bildirin. Acil parçaları ayırın.",
+      "note": "Güzergâh ve kabul koşulları değişebilir. Rezervasyondan önce taşıyıcıyı, boşaltmayı, aktarmaları ve güncel ücretleri doğrulayın."
+    }
+  },
+  "ar": {
+    "mexico": {
+      "title": "اختيار ميناء المكسيك مع مسار النقل الداخلي",
+      "intro": "قارن العروض للشحنة نفسها وعنوان التسليم النهائي نفسه.",
+      "routes": [
+        [
+          "مانزانيو ← مدينة الاستلام",
+          "بحري + بري",
+          "اطلب موعد الرحلة ورسوم التفريغ والنقل إلى غوادالاخارا أو عنوانك الفعلي."
+        ],
+        [
+          "لازارو كارديناس ← محطة داخلية",
+          "بحري + سكك حديدية / بري",
+          "تأكد من الخيار المتاح، شاملاً الاستلام من المحطة والتسليم النهائي."
+        ],
+        [
+          "كراتين عاجلة أو قطع غيار",
+          "عرض جوي منفصل",
+          "قارن الوزن المحتسب والإفراج في المطار وتكلفة تقسيم الطلب."
+        ]
+      ],
+      "arrivalTitle": "قبل المغادرة من الصين",
+      "arrival": "حدد مسؤوليات التخليص والاستلام والتفريغ، وفترة السماح ومواعيد التسليم وإعادة الحاوية الفارغة.",
+      "cargo": "أرسل مواقع الموردين ومواعيد الجاهزية والأبعاد والأوزان والرمز البريدي وبيانات المستورد. افصل بيانات الطبالي الثقيلة والبطاريات.",
+      "note": "يجب أن يحدد العرض الميناء ووسيلة النقل الداخلي ونقطة التسليم؛ الوصول إلى الميناء لا يعني التسليم للمستودع."
+    },
+    "uae": {
+      "title": "تأكيد منفذ الوصول والتسليم في الإمارات",
+      "intro": "قارن عنوان الاستلام بالمسار الذي يقبله الناقل للشحنة.",
+      "routes": [
+        [
+          "شحن بحري ← ميناء تفريغ مؤكد",
+          "حاوية كاملة / شحن جزئي",
+          "أكد ميناء التفريغ والنقل اللاحق بسفينة أو شاحنة. لا تفترض وجود توقف مباشر في جبل علي."
+        ],
+        [
+          "الميناء ← جهة الاستلام في الإمارات",
+          "نقل + تخليص + تسليم",
+          "افصل رسوم ومسؤوليات الميناء والنقل والتخليص والتسليم إلى دبي أو أبوظبي."
+        ],
+        [
+          "قطع عاجلة ← مطار مؤكد",
+          "شحن جوي",
+          "قارن السعة والوزن المحتسب؛ حدد البطاريات واتفق على الإفراج والتسليم المحلي."
+        ]
+      ],
+      "arrivalTitle": "مستودع أم منطقة حرة أم موقع تركيب؟",
+      "arrival": "أرسل العنوان والجهة المستلمة؛ أكد مكان التخليص والموعد ومعدات التفريغ وموقع إعادة الحاوية.",
+      "cargo": "لمعدات المطابخ: أبعاد التغليف والوزن الإجمالي ونقاط الرفع وقيود التكديس أو الوضع العمودي. حدد القطع العاجلة منفصلة.",
+      "note": "قد تتغير المسارات وشروط القبول. أكد الناقل ونقطة التفريغ والنقل اللاحق والرسوم الحالية قبل الحجز."
+    }
+  }
+}

@@ -1161,7 +1161,7 @@ export default function ShippingLatinAmerica() {
       {/* Main Content Sections */}
       <main className="relative z-10">
 
-        {selectedCountry==='brazil' && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {['brazil','mexico'].includes(selectedCountry) && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <LatinAmericaFreightDepth

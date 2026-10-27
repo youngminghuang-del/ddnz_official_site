@@ -1,3 +1,4 @@
+import destinationCopy from './route-locales/mexico-uae.json';
 import es from './route-locales/es.json';
 import pt from './route-locales/pt.json';
 import fr from './route-locales/fr.json';
@@ -6,7 +7,7 @@ import ar from './route-locales/ar.json';
 import tr from './route-locales/tr.json';
 
 type RouteCountry = 'bangladesh' | 'uzbekistan' | 'peru' | 'brazil';
-type RouteCopy = {title:string;intro:string;routes:string[][];arrivalTitle:string;arrival:string;cargo:string};
+type RouteCopy = {title:string;intro:string;routes:string[][];arrivalTitle:string;arrival:string;cargo:string;note?:string};
 // Public copy stays concise. Source dates and adoption decisions live in docs/freight-depth-20261019.md.
 const copy:Record<'en'|'zh',Record<RouteCountry,RouteCopy>> = {
  en:{
@@ -35,13 +36,15 @@ const ui: Record<string, string[]> = {
 };
 export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
 export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
- if (!(locale in localized) || !(country in copy.en)) return null;
- const c=localized[locale][country as RouteCountry], labels=routePlanningUi(locale);
+ const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
+ const c = extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
+ if (!c) return null;
+ const labels=routePlanningUi(locale);
 
  return <section lang={locale === 'zh' ? 'zh-CN' : locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} id="freight-route-options" className="route-depth" aria-labelledby="route-depth-heading" data-route-depth={country}>
   <div className="route-depth-inner"><p className="route-depth-kicker">{labels[0]}</p><h2 id="route-depth-heading">{c.title}</h2><p className="route-depth-intro">{c.intro}</p>
    <div className="route-depth-grid">{c.routes.map(([route,time,body],i)=><article key={route}><span className="route-depth-number">0{i+1}</span><h3>{route}</h3><p className="route-depth-time">{time}</p><p>{body}</p></article>)}</div>
-   <p className="route-depth-note">{labels[1]}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
+   <p className="route-depth-note">{c.note || labels[1]}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
 }
