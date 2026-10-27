@@ -1,3 +1,4 @@
+import egyptScooterRelease from '../src/data/egyptScooterRelease.json';
 import egyptLclRelease from '../src/data/egyptLclRelease.json';
 import solarCableRelease from '../src/data/solarCableRelease.json';
 import indonesiaKitchenCostApproval from '../src/data/indonesiaKitchenCostApproval.json';
@@ -539,7 +540,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === egyptLclRelease.slug
+      const rendered = slug === egyptScooterRelease.slug
+        ? { html: egyptScooterRelease.content, toc: egyptScooterRelease.toc, wordCount: egyptScooterRelease.wordCount, readMinutes: egyptScooterRelease.readMinutes }
+        : slug === egyptLclRelease.slug
         ? { html: egyptLclRelease.content, toc: egyptLclRelease.toc, wordCount: egyptLclRelease.wordCount, readMinutes: egyptLclRelease.readMinutes }
         : slug === solarCableRelease.slug
         ? { html: solarCableRelease.content, toc: solarCableRelease.toc, wordCount: solarCableRelease.wordCount, readMinutes: solarCableRelease.readMinutes }
