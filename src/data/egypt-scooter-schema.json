@@ -1,0 +1,301 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#article",
+      "headline": "أفضل 10 شركات سكوتر كهربائي في الصين: دليل الجملة والاستيراد إلى مصر",
+      "inLanguage": "ar",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Egyptian importers, wholesalers and distributors"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Electric kickscooter wholesale and OEM sourcing"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#supplier-list"
+      },
+      "description": "تجمع هذه القائمة عشر شركات وعلامات للمقارنة، مع موديلات محددة وطريقة الشراء من كل منها. تعمل DDNZ بنموذج الصناعة والتجارة، وتوفر أسعار مصنع وخيارات تجربة بكميات منخفضة ومتابعة مرئية للإنتاج. أرسل الموديل المرجعي والكمية والميزانية لنقارن عروض الجهاز والتغليف وقطع الغيار على التكوين نفسه.",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-D"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-F"
+        }
+      ],
+      "datePublished": "2026-10-27",
+      "dateModified": "2026-10-27",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#webpage",
+      "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/",
+      "name": "أفضل 10 شركات سكوتر كهربائي في الصين: دليل الجملة والاستيراد إلى مصر",
+      "inLanguage": "ar",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#article"
+      },
+      "description": "تجمع هذه القائمة عشر شركات وعلامات للمقارنة، مع موديلات محددة وطريقة الشراء من كل منها. تعمل DDNZ بنموذج الصناعة والتجارة، وتوفر أسعار مصنع وخيارات تجربة بكميات منخفضة ومتابعة مرئية للإنتاج. أرسل الموديل المرجعي والكمية والميزانية لنقارن عروض الجهاز والتغليف وقطع الغيار على التكوين نفسه.",
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#supplier-list"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#faq"
+        }
+      ],
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-A"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#breadcrumb"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "هل كل شركة في القائمة تقبل علامتي الخاصة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. ابدأ بالشركات التي تعرض OEM/ODM، واطلب قبولًا مكتوبًا للموديل والشعار والتغليف. شراء علامة جاهزة يحتاج شروط توزيع مختلفة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكنني البدء بكمية صغيرة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اطلب عرض تجربة لموديل جاهز أولًا. لدى DDNZ خيارات توريد منخفضة الكمية، ويحدد العرض عدد القطع لكل موديل ولون. التخصيص قد يحتاج كمية مختلفة؛ لا تجمع شروطه مع طلب التجربة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ما أرخص سكوتر يمكنني استيراده؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اطلب أقل سعر لتكوين محدد، لا أقل سعر لكلمة «سكوتر». أرسل ميزانية الشراء ونوع العميل، ثم قارن البطارية والمحرك والفرامل والشاحن والضمان على الأساس نفسه."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل السعر المنشور في المتجر هو سعر المصنع؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. سعر التجزئة قد يرتبط بضريبة أو مخزون أو توصيل محلي أو حملة ترويجية. اطلب سعرًا تجاريًا يوضح الكمية والتكوين وشرط التسليم."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أشتري قطع غيار مع أول شحنة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "نعم، اتفق على قائمة قطع للموديل قبل اعتماد الطلب. اطلب تسعير الإطارات والفرامل والشاحن والشاشة ووحدة التحكم، وحدد ما ستخزنه وما يمكن توريده لاحقًا؛ لا تشترِ قطعًا عامة بلا توافق مؤكد."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل CE أو نسخة أوروبية تعني أن الاستيراد والاستخدام في مصر مسموحان؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. أرسل ملف الموديل للمخلص لتأكيد متطلبات الاستيراد، وراجع الاستخدام المحلي بشكل مستقل. وللاتصال اللاسلكي، افحص اعتماد الموديل لدى الجهة المختصة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا أرسل إلى DDNZ للحصول على خطة توريد؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اسم الشركة ومدينة البيع في مصر، وطريقة البيع، وصورة أو موديل مرجعي، والكمية الأولى والميزانية، ومتطلبات العلامة وقطع الغيار. اكتب SCOOTER EGYPT في رسالة WhatsApp أو WeChat لطلب مقارنة التوريد وأسعار المصنع وخيارات التجربة والمتابعة المرئية."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#supplier-list",
+      "name": "قائمة المقارنة للمستورد",
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "HX / Kixin"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "OKAI"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Titan / Unigogo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Kaabo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "INMOTION"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "NIU"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "TEVERUN"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "KuKirin"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Segway-Ninebot"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "NAVEE"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-mantis-wide.webp",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-mantis-wide.webp",
+      "width": 1920,
+      "height": 806,
+      "name": "Kaabo Mantis King GT أثناء القيادة",
+      "description": "Kaabo Mantis King GT أثناء القيادة",
+      "inLanguage": "ar",
+      "isBasedOn": "https://www.kaabo.com/mantis-king-gt/",
+      "representativeOfPage": true
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/hx-x9-battery.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/hx-x9-battery.jpg",
+      "width": 1000,
+      "height": 1000,
+      "name": "إزالة بطارية HX X9 من سطح السكوتر",
+      "description": "إزالة بطارية HX X9 من سطح السكوتر",
+      "inLanguage": "ar",
+      "isBasedOn": "https://hxescooter.com/product/x9-scooter/",
+      "representativeOfPage": false
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-detail.webp",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-detail.webp",
+      "width": 2048,
+      "height": 2560,
+      "name": "سكوتر Kaabo مطوي مع ظهور العجلة الأمامية",
+      "description": "سكوتر Kaabo مطوي مع ظهور العجلة الأمامية",
+      "inLanguage": "ar",
+      "isBasedOn": "https://www.kaabo.com/mantis-king-gt/",
+      "representativeOfPage": false
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-D",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-factory-1.webp",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/kaabo-factory-1.webp",
+      "width": 593,
+      "height": 387,
+      "name": "عامل وتجهيزات سكوتر في صورة منشورة بموقع مصنع Kaabo",
+      "description": "عامل وتجهيزات سكوتر في صورة منشورة بموقع مصنع Kaabo",
+      "inLanguage": "ar",
+      "isBasedOn": "https://www.kaabo.com/the-factory/",
+      "representativeOfPage": false
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#image-F",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/okai-about.jpg",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-manufacturers-china-egypt/okai-about.jpg",
+      "width": 1240,
+      "height": 800,
+      "name": "معدات تجميع آلية في صورة منشورة بموقع OKAI",
+      "description": "معدات تجميع آلية في صورة منشورة بموقع OKAI",
+      "inLanguage": "ar",
+      "isBasedOn": "https://b2b.okai.co/pages/about",
+      "representativeOfPage": false
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/ar/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "أفضل 10 شركات سكوتر كهربائي في الصين: دليل الجملة والاستيراد إلى مصر",
+          "item": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/"
+        }
+      ]
+    }
+  ],
+  "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/"
+}
