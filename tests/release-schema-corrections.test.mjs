@@ -18,3 +18,10 @@ test('solar cable breadcrumb uses the same real Spanish resource hub as visible 
  assert.equal(crumb.itemListElement[1].name,'Recursos');
  assert.equal(crumb.itemListElement[2].item,page.url);
 });
+
+test('solar cable graph container does not emit route-matching metadata as an untyped entity',()=>{
+ assert.deepEqual(Object.keys(schema).sort(),['@context','@graph']);
+ const page=schema['@graph'].find(n=>n['@type']==='WebPage');
+ assert.equal(page.url,'https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/');
+ assert.ok(schema['@graph'].every(n=>n['@type']&&n['@id']));
+});
