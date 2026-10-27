@@ -1,3 +1,4 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import type { Language } from '../../i18n/translations';
 import { RegionalFreightMap } from '../../components/FreightRouteMap';
@@ -67,7 +68,7 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
   const originImage = region === 'latin-america' ? '/images/operations/peru-tile-loading-case.webp' : region === 'west-africa' ? '/media/freight-20260918/mixed-cargo-loading.jpg' : '/media/freight-20260918/factory-container.jpg';
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-region-stage">
     <header className="freight-region-intro"><div className="freight-wrap">
-      <nav className="freight-region-breadcrumb" aria-label="Breadcrumb"><a href={`${prefix}/`}>{c.home}</a><span>/</span><a href={`${prefix}/services/sea-freight/`}>{c.freight}</a><span>/</span><span aria-current="page">{name}</span></nav>
+      <FreightBreadcrumbs path={`/shipping-from-china-to-${region}/`} locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{c.eyebrow}</p><h1>{heading} <em>{name}.</em></h1>
       <p className="freight-intro">{regionDescription(region, locale)}</p>
       <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a></div>

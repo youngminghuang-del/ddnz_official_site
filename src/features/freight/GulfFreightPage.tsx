@@ -1,3 +1,4 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import { Fragment, type ReactNode } from 'react';
@@ -80,7 +81,7 @@ export default function GulfFreightPage() {
     <SourcingHomepageNav showFreightExecutor />
     <main className="country-editorial" id="main-content" data-country-cargo-planning="gulf-story" data-destination={destination}>
       <div className="gulf-wrap">
-        <nav aria-label={ui[locale].breadcrumb} className="gulf-breadcrumb"><a href={`${prefix}/shipping-from-china-to-middle-east/`}>{ui[locale].middleEastRoutes}</a><span aria-hidden="true">/</span><span>{map.country[locale]}</span></nav>
+        <FreightBreadcrumbs path={`/shipping-from-china-to-${country}/`} locale={locale} className="gulf-breadcrumb"/>
         <header className="gulf-hero">
           <div className="gulf-hero-copy"><p className="gulf-eyebrow">{ui[locale][country].heroEyebrow}</p><h1>{data.heading}</h1><p className="gulf-lede">{data.intro}</p><div className="gulf-actions">{cta()}{cta(true)}</div></div>
           <figure className="gulf-hero-image"><GulfCountryMark map={map} locale={locale} /><img src={`/media/freight-20261014/${heroId}-poster.jpg`} width="540" height={country === 'qatar' ? '756' : '984'} fetchPriority="high" alt={ui[locale][country].posterAlt} /><figcaption>{ui[locale][country].heroCaption}<small>{ui[locale].chinaRecord}</small></figcaption></figure>

@@ -1,0 +1,496 @@
+{
+  "/ar/shipping-from-china-to-central-asia/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/ar/shipping-from-china-to-latin-america/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا اللاتينية",
+      "path": "/ar/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/ar/shipping-from-china-to-middle-east/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "الشرق الأوسط",
+      "path": "/ar/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/ar/shipping-from-china-to-oman/": [
+    {
+      "name": "مسارات الشرق الأوسط",
+      "path": "/ar/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "عُمان",
+      "path": "/ar/shipping-from-china-to-oman/"
+    }
+  ],
+  "/ar/shipping-from-china-to-qatar/": [
+    {
+      "name": "مسارات الشرق الأوسط",
+      "path": "/ar/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "قطر",
+      "path": "/ar/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/ar/shipping-from-china-to-west-africa/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "غرب أفريقيا",
+      "path": "/ar/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/es/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/es/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Latinoamérica",
+      "path": "/es/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/es/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Oriente Medio",
+      "path": "/es/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/es/shipping-from-china-to-oman/": [
+    {
+      "name": "Rutas a Oriente Medio",
+      "path": "/es/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Omán",
+      "path": "/es/shipping-from-china-to-oman/"
+    }
+  ],
+  "/es/shipping-from-china-to-qatar/": [
+    {
+      "name": "Rutas a Oriente Medio",
+      "path": "/es/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Catar",
+      "path": "/es/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/es/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Occidental",
+      "path": "/es/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/fr/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/fr/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "l’Amérique latine",
+      "path": "/fr/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/fr/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "le Moyen-Orient",
+      "path": "/fr/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/fr/shipping-from-china-to-oman/": [
+    {
+      "name": "Liaisons vers le Moyen-Orient",
+      "path": "/fr/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Oman",
+      "path": "/fr/shipping-from-china-to-oman/"
+    }
+  ],
+  "/fr/shipping-from-china-to-qatar/": [
+    {
+      "name": "Liaisons vers le Moyen-Orient",
+      "path": "/fr/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Qatar",
+      "path": "/fr/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/fr/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "l’Afrique de l’Ouest",
+      "path": "/fr/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/pt/shipping-from-china-to-brazil/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Latina",
+      "path": "/pt/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Brasil",
+      "path": "/pt/shipping-from-china-to-brazil/"
+    }
+  ],
+  "/pt/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/pt/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "a América Latina",
+      "path": "/pt/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/pt/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "o Oriente Médio",
+      "path": "/pt/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/pt/shipping-from-china-to-oman/": [
+    {
+      "name": "Rotas para o Oriente Médio",
+      "path": "/pt/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Omã",
+      "path": "/pt/shipping-from-china-to-oman/"
+    }
+  ],
+  "/pt/shipping-from-china-to-qatar/": [
+    {
+      "name": "Rotas para o Oriente Médio",
+      "path": "/pt/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Catar",
+      "path": "/pt/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/pt/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "a África Ocidental",
+      "path": "/pt/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/ru/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия и Россия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/ru/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Латинскую Америку",
+      "path": "/ru/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/ru/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Ближний Восток",
+      "path": "/ru/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/ru/shipping-from-china-to-oman/": [
+    {
+      "name": "Маршруты на Ближний Восток",
+      "path": "/ru/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Оман",
+      "path": "/ru/shipping-from-china-to-oman/"
+    }
+  ],
+  "/ru/shipping-from-china-to-qatar/": [
+    {
+      "name": "Маршруты на Ближний Восток",
+      "path": "/ru/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Катар",
+      "path": "/ru/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/ru/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Западную Африку",
+      "path": "/ru/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Latin America",
+      "path": "/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "the Middle East",
+      "path": "/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/shipping-from-china-to-oman/": [
+    {
+      "name": "Middle East routes",
+      "path": "/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Oman",
+      "path": "/shipping-from-china-to-oman/"
+    }
+  ],
+  "/shipping-from-china-to-qatar/": [
+    {
+      "name": "Middle East routes",
+      "path": "/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Qatar",
+      "path": "/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "West Africa",
+      "path": "/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/tr/shipping-from-china-to-central-asia/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/tr/shipping-from-china-to-latin-america/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Latin Amerika",
+      "path": "/tr/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/tr/shipping-from-china-to-middle-east/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Doğu",
+      "path": "/tr/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/tr/shipping-from-china-to-oman/": [
+    {
+      "name": "Orta Doğu hatları",
+      "path": "/tr/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Umman",
+      "path": "/tr/shipping-from-china-to-oman/"
+    }
+  ],
+  "/tr/shipping-from-china-to-qatar/": [
+    {
+      "name": "Orta Doğu hatları",
+      "path": "/tr/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "Katar",
+      "path": "/tr/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/tr/shipping-from-china-to-west-africa/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Batı Afrika",
+      "path": "/tr/shipping-from-china-to-west-africa/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-central-asia/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-latin-america/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "拉美",
+      "path": "/zh-cn/shipping-from-china-to-latin-america/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-middle-east/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中东",
+      "path": "/zh-cn/shipping-from-china-to-middle-east/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-oman/": [
+    {
+      "name": "中东运输线路",
+      "path": "/zh-cn/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "阿曼",
+      "path": "/zh-cn/shipping-from-china-to-oman/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-qatar/": [
+    {
+      "name": "中东运输线路",
+      "path": "/zh-cn/shipping-from-china-to-middle-east/"
+    },
+    {
+      "name": "卡塔尔",
+      "path": "/zh-cn/shipping-from-china-to-qatar/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-west-africa/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "西非",
+      "path": "/zh-cn/shipping-from-china-to-west-africa/"
+    }
+  ]
+}

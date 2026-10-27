@@ -1,3 +1,4 @@
+import breadcrumbData from './freightBreadcrumbs.json';
 import {destinationForm} from './destinationGrammar';
 const origin='https://www.ddnzglobal.com';
 export const freightCountries:Record<string,string>={'saudi-arabia':'SA',uae:'AE',kuwait:'KW',qatar:'QA',oman:'OM',bahrain:'BH',kazakhstan:'KZ',uzbekistan:'UZ',kyrgyzstan:'KG',tajikistan:'TJ',turkmenistan:'TM',russia:'RU',nigeria:'NG',ghana:'GH',india:'IN',pakistan:'PK',bangladesh:'BD',mexico:'MX',brazil:'BR',argentina:'AR',peru:'PE',chile:'CL'};
@@ -13,9 +14,17 @@ export function freightPageInfo(path:string,language?:string){
  const destination=destinationForm(freightCountries[slug]||slug,locale,name);
  return {slug,locale,prefix,name,url:`${origin}${prefix}/${last}/`,title:c[0].replace('{name}',destination)+' | DDNZ',description:c[1].replace('{name}',destination),language:locale==='zh'?'zh-CN':locale==='pt'&&slug==='brazil'?'pt-BR':locale};
 }
+export function breadcrumbLabel(locale: string) {
+ return ({en:'Breadcrumb',zh:'面包屑导航',es:'Ruta de navegación',pt:'Navegação estrutural',fr:'Fil d’Ariane',ru:'Навигационная цепочка',ar:'مسار التنقل',tr:'İçerik yolu'} as Record<string,string>)[locale] || 'Breadcrumb';
+}
+export function freightBreadcrumbs(path: string, language?: string): {name:string;path:string}[] {
+ const p=freightPageInfo(path,language);
+ return p ? (breadcrumbData as Record<string,{name:string;path:string}[]>)[p.url.replace(origin,'')] || [] : [];
+}
 export function freightPageSchema(path:string,language?:string){
  const p=freightPageInfo(path,language);if(!p)return null;
- const page={'@type':freightRegions[p.slug]?'CollectionPage':'WebPage','@id':p.url,url:p.url,name:p.title,description:p.description,inLanguage:p.language,mainEntity:{'@id':p.url+(freightRegions[p.slug]?'#destinations':'#service')}};
+ const trail=freightBreadcrumbs(path,language);
+ const page={...(trail.length ? {breadcrumb:{'@id':p.url+'#breadcrumb'}} : {}),'@type':freightRegions[p.slug]?'CollectionPage':'WebPage','@id':p.url,url:p.url,name:p.title,description:p.description,inLanguage:p.language,mainEntity:{'@id':p.url+(freightRegions[p.slug]?'#destinations':'#service')}};
  const entity=freightRegions[p.slug]?{'@type':'ItemList','@id':p.url+'#destinations',itemListElement:freightRegions[p.slug].map((slug,i)=>({'@type':'ListItem',position:i+1,name:new Intl.DisplayNames([p.locale==='zh'?'zh-CN':p.locale],{type:'region'}).of(freightCountries[slug]),url:`${origin}${p.prefix}/shipping-from-china-to-${slug}/`}))}:{'@type':'Service','@id':p.url+'#service',url:p.url,name:p.title.replace(' | DDNZ',''),description:p.description,serviceType:({en:'Freight route planning and shipment coordination',zh:'货运线路规划与运输协调',es:'Planificación de rutas y coordinación de envíos',pt:'Planejamento de rotas e coordenação de remessas',fr:'Planification des itinéraires et coordination du fret',ru:'Планирование маршрутов и координация перевозок',ar:'تخطيط مسارات الشحن وتنسيق النقل',tr:'Yük güzergâhı planlama ve sevkiyat koordinasyonu'} as Record<string,string>)[p.locale],areaServed:{'@type':'Country',name:p.name,identifier:freightCountries[p.slug]},provider:{'@type':'Organization','@id':origin+'/#heaven-born',name:p.locale==='zh'?'广州华正邦泰国际货运代理有限公司':'Heaven Born International Freight Co., Ltd',url:origin+'/'},mainEntityOfPage:{'@id':p.url}};
- return {'@context':'https://schema.org','@graph':[page,entity]};
+ return {'@context':'https://schema.org','@graph':[page,entity,...(trail.length ? [{'@type':'BreadcrumbList','@id':p.url+'#breadcrumb',itemListElement:trail.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:origin+item.path}))}] : [])]};
 }

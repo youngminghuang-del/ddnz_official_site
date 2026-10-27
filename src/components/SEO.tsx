@@ -128,16 +128,16 @@ export default function SEO({
   // Calculate language-specific absolute URLs
   const getLanguageUrl = (langCode: string) => {
     const normalizedLangCode = langCode === 'zh-cn' ? 'zh' : langCode;
-    const country = new URLSearchParams(location.search).get('country');
+    const country = freightInfo ? null : new URLSearchParams(location.search).get('country');
     const countryPath = country && cleanSuffix.startsWith('shipping-from-china-to-')
       ? `shipping-from-china-to-${country.toLowerCase()}`
       : cleanSuffix;
     return localizedSiteUrl(normalizedLangCode, countryPath);
   };
 
-  const canonicalUrl = canonicalPath
+  const canonicalUrl = freightInfo?.url || (canonicalPath
     ? canonicalSiteUrl(canonicalPath)
-    : getLanguageUrl(currentLang);
+    : getLanguageUrl(currentLang));
 
   const ptTrLocalizedPages = new Set([
     '',

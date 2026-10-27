@@ -1,3 +1,4 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import { useState } from 'react';
 import type { Language } from '../../i18n/translations';
@@ -65,7 +66,7 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
   const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region)}&cargo=${encodeURIComponent(c.cargoOptions[Number(cargo)])}&mode=${encodeURIComponent(c.modeOptions[Number(mode)])}`;
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-central-overview">
     <header className="freight-region-intro"><div className="freight-wrap">
-      <nav className="freight-region-breadcrumb" aria-label="Breadcrumb"><a href={`${prefix}/`}>{c.home}</a><span>/</span><a href={`${prefix}/services/sea-freight/`}>{c.freight}</a><span>/</span><span aria-current="page">{overview.region}</span></nav>
+      <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{overview.region}</p><h1>{headline[locale]}</h1><p className="freight-intro">{c.intro}</p>
     </div></header>
     <section className="freight-wrap freight-section" aria-labelledby="route-builder-heading"><p className="freight-kicker">{c.select}</p><h2 id="route-builder-heading" className="mt-4">{c.select}</h2>

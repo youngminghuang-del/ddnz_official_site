@@ -1,3 +1,4 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import { buildQuoteHref } from '../../lib/quoteLinks';
@@ -26,7 +27,7 @@ export default function BrazilPortugueseContent() {
  const card='rounded-2xl border border-slate-200 bg-white p-6';
  return <main id="main-content" lang="pt-BR" className="country-editorial country-editorial--utility bg-slate-50 text-slate-900">
   <header className="bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
-   <nav aria-label="Navegação estrutural" className="mb-8 text-sm text-slate-300"><a href="/pt/">Início</a><span aria-hidden="true"> / </span><a href="/pt/services/sea-freight/">Frete internacional</a><span aria-hidden="true"> / Brasil</span></nav>
+   <FreightBreadcrumbs path="/pt/shipping-from-china-to-brazil/" locale="pt" className="mb-8 text-sm text-slate-300"/>
    <p className="mb-5 text-sm font-bold tracking-widest text-orange-300">DDNZ GLOBAL · HEAVEN BORN</p>
    <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">Frete da China para o Brasil.</h1>
    <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">Planeje transporte marítimo ou aéreo, consolidação de fornecedores na China e a entrega no Brasil dentro do escopo acordado. A DDNZ coordena compras e preparação na origem; a Heaven Born coordena o frete internacional.</p>
