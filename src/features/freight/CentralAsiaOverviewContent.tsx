@@ -63,7 +63,9 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
   const [cargo, setCargo] = useState('0');
   const [mode, setMode] = useState('0');
   const names = new Intl.DisplayNames([locale === 'zh' ? 'zh-CN' : locale], { type: 'region' });
-  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region)}&cargo=${encodeURIComponent(c.cargoOptions[Number(cargo)])}&mode=${encodeURIComponent(c.modeOptions[Number(mode)])}`;
+  const destination = country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region;
+  const brief = `${c.country}: ${destination}\n${c.cargo}: ${c.cargoOptions[Number(cargo)]}\n${c.mode}: ${c.modeOptions[Number(mode)]}`;
+  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(destination)}&notes=${encodeURIComponent(brief)}`;
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-central-overview">
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
