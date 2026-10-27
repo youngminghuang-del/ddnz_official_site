@@ -1056,6 +1056,10 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         ? `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${sourcingService.intent}&source=${sourcingService.source}`
         : `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'Freight+Export&dest=Brasil' : 'Freight+Only'}&source=structured_data`;
     const sourcingServiceType = sourcingCategory?.serviceType || sourcingService?.serviceType || seo.title;
+    // Scenario pages describe a scoped procurement service, not a priced offer.
+    // Keep the real, scenario-specific RFQ in the visible page content.
+    const isKitchenScenario = relPath.startsWith('sourcing/restaurant-kitchen-packages-from-china/')
+      && Object.hasOwn(allScenarios, relPath.split('/').pop()!);
     const structuredData = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -1094,14 +1098,14 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           areaServed: isShippingPage
             ? { '@type': specificCountryName ? 'Country' : 'Place', name: destinationName }
             : 'Global',
-          offers: {
+          ...(isKitchenScenario ? { url: canonicalUrl } : { offers: {
             '@type': 'Offer',
             url: sourcingOfferUrl,
             priceCurrency: 'USD',
             description: isSourcingServicePage
               ? 'Request a market-defined product sourcing, inspection, consolidation and export coordination plan.'
               : 'Request a route-specific freight quotation based on cargo details and current capacity.'
-          }
+          } })
         }
       ]
     };
