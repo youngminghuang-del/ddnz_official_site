@@ -1401,7 +1401,7 @@ export default function MiddleEastRoute() {
   })();
 
   return (
-    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden ${selectedCountry==='UAE'?'country-editorial country-editorial--legacy':''}`}>
       <SEO title={countrySeo.title} description={countrySeo.description} />
       <SchemaMarkup
         type="Service"

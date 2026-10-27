@@ -962,7 +962,7 @@ export default function ShippingLatinAmerica() {
   const redlines = UNIVERSAL_REDLINES[activeLang];
 
   return (
-    <div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffdf9] font-sans text-[#10243f]">
+    <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fffdf9] font-sans text-[#10243f] ${['mexico','brazil'].includes(selectedCountry)?'country-editorial country-editorial--legacy':''}`}>
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"

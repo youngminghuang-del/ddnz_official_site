@@ -23,7 +23,7 @@ const modes = [
 export default function BrazilPortugueseContent() {
  const quote=buildQuoteHref({intent:'Freight Export',language:'pt',source:'brazil_pt_freight',destination:'Brasil'});
  const card='rounded-2xl border border-slate-200 bg-white p-6';
- return <main id="main-content" lang="pt-BR" className="bg-slate-50 text-slate-900">
+ return <main id="main-content" lang="pt-BR" className="country-editorial country-editorial--utility bg-slate-50 text-slate-900">
   <header className="bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
    <nav aria-label="Navegação estrutural" className="mb-8 text-sm text-slate-300"><a href="/pt/">Início</a><span aria-hidden="true"> / </span><a href="/pt/services/sea-freight/">Frete internacional</a><span aria-hidden="true"> / Brasil</span></nav>
    <p className="mb-5 text-sm font-bold tracking-widest text-orange-300">DDNZ GLOBAL · HEAVEN BORN</p>

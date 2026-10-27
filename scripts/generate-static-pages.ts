@@ -1850,6 +1850,7 @@ function injectStaticRouteContent(
     const meta=seoDataMatrix[relPath]?.[lang];
     staticBody=staticBody?staticBody.replace('</main>',`${planning}</main>`):`<main><h1>${escapeStaticText(meta?.title || 'Envíos de China a Brasil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
   }
+  if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') staticBody = staticBody.replace(/<main([^>]*)>/, '<main$1 class="country-editorial">');
   const articleDiscovery = lang === 'en' && relPath.startsWith('blog/') ? kitchenArticleDiscovery[relPath.slice(5)] || mobileArticleDiscovery[relPath.slice(5)] : undefined;
   if (articleDiscovery) {
     const links = `<section><h2>${escapeStaticText(articleDiscovery.heading || 'Compare equipment for your next order')}</h2>${articleDiscovery.links.map(item => `<p><a href="${escapeStaticText(item.href)}">${escapeStaticText(item.label)}</a></p>`).join('')}</section>`;

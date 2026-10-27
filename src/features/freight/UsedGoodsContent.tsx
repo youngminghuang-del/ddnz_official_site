@@ -55,7 +55,7 @@ export default function UsedGoodsContent({country,locale='en',resources=usedGood
  const d=copy[locale],u=d.ui,i=usedGoodsCountries.indexOf(country),m=media[country],meta=usedGoodsMetadata(country,locale);
  const quote=buildQuoteHref({language:locale,intent:'Freight Export',source:'country_cargo_planning',destination:names[country]});
  const stages=[u.sorting,u.packingVideo,u.cargoVideo,u.loading];
- return <main id="main-content" className="freight-editorial used-goods" lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
+ return <main id="main-content" className={`freight-editorial used-goods ${['ghana','bangladesh'].includes(country)?'country-editorial':''}`} lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
  <div className="used-wrap"><header className="used-hero"><div className="used-hero-copy"><p className="used-kicker">{u.china} → <bdi>{d.countries[i]}</bdi></p><h1>{meta.heading}</h1><p>{d.intro}</p><a className="used-cta" href={quote}>{u.request} ↗</a></div><figure className="used-hero-image"><img src={root+m.hero} alt={u[m.heroLabel]} fetchPriority="high"/><figcaption><span>{u.record}</span><strong>{u[m.heroLabel]}</strong></figcaption></figure></header>
  {['bangladesh','ghana'].includes(country) && <RoutePlanningDepth country={country} locale={locale}/>}
  <FreightChapters items={d.chapters.map((label,n)=>({label,id:`used-section-${n+1}`}))} ariaLabel={u.chapters} reading={`${u.reading} · `}/>

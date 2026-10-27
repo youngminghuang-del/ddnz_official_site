@@ -15,7 +15,7 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
   const peru = country === 'peru';
   const destination = peru ? 'Peru' : 'Nigeria';
   const quote = `/get-a-quote/?leadGoal=Freight+Export&source=${country}_country&dest=${destination}`;
-  return <main id="main-content" className="freight-editorial market-story" data-country-cargo-planning="true">
+  return <main id="main-content" className="country-editorial freight-editorial market-story" data-country-cargo-planning="true">
     <header className="market-hero market-wrap">
       <div><a className="market-back" href={`/shipping-from-china-to-${peru ? 'latin-america' : 'west-africa'}/`}>← {peru ? 'Latin America' : 'West Africa'} freight</a>
         <p className="freight-kicker">CHINA → {destination.toUpperCase()}</p><h1>{data.heading}</h1>

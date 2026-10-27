@@ -1,0 +1,64 @@
+/* Country pages share the Nigeria editorial palette. Scoped explicitly: regional
+   overviews, product pages, global navigation and footage retain their styling. */
+.country-editorial {
+ --country-paper:#fffdf9; --country-ink:#10243e; --country-copy:#506079;
+ --country-tint:#f3edf8; --country-line:#ded2e9; --country-accent:#713396;
+ background:var(--country-paper)!important; color:var(--country-ink)!important;
+}
+.country-editorial :is(.freight-cover,.freight-dark,.freight-destination-band){background:var(--country-paper)!important;color:var(--country-ink)!important;border-bottom:1px solid var(--country-line)}
+.country-editorial .freight-cover{width:min(1180px,calc(100% - 40px));margin-inline:auto;grid-template-columns:1.35fr 1fr;gap:56px;padding-block:56px;overflow:visible}
+.country-editorial .freight-cover-copy{padding:0;align-self:start}
+.country-editorial :is(.freight-cover h1,.brazil-hero h1,.used-hero h1){font-size:clamp(32px,3.8vw,54px);line-height:1.12;letter-spacing:-.035em;margin:20px 0;color:var(--country-ink)}
+.country-editorial .freight-cover h1 em{color:inherit}
+.country-editorial :is(.freight-cover-copy>p:not(.freight-kicker),.freight-dark p,.freight-destination-band p){color:var(--country-copy)!important;font-size:17px;line-height:1.75}
+.country-editorial :is(.freight-kicker,.freight-cover .freight-kicker){color:#a5472c!important}
+.country-editorial .country-route-board{margin:0;padding:28px;background:var(--country-tint);border:1px solid var(--country-line);border-radius:20px;align-self:start}
+.country-editorial .country-route-board h2{font-size:30px;line-height:1.2;margin:0 0 24px;color:var(--country-ink)}
+.country-editorial .country-route-board li{font-size:16px;line-height:1.6;border-color:var(--country-line);padding:18px 0;color:var(--country-copy)}
+.country-editorial :is(.country-route-board li span,.country-route-board>a,.uae-back){color:var(--country-accent)}
+.country-editorial :is(.freight-wrap,.market-wrap,.used-wrap){max-width:1180px}
+.country-editorial :is(.freight-chapters){display:flex;flex-wrap:wrap;gap:12px;width:min(1180px,calc(100% - 40px));margin:16px auto 28px;background:transparent;border:0;padding:0}
+.country-editorial .freight-chapters a{flex:1 1 200px;min-height:100px;padding:22px;border:1px solid var(--country-line);border-radius:14px;background:var(--country-tint);color:var(--country-accent);display:flex;align-items:center;font-weight:650}
+.country-editorial :is(.freight-cta,.used-cta){background:#cc4d2d!important;color:#fff!important;border-radius:8px;min-height:48px}
+.country-editorial :is(.freight-section,.brazil-section,.used-section){border-color:var(--country-line);padding-block:48px}
+.country-editorial :is(.freight-dark h2,.freight-dark h3,.freight-destination-band h2,.freight-destination-band h3){color:var(--country-ink)!important}
+.country-editorial :is(.freight-dark article,.freight-dark li,.freight-destination-band li){border-color:var(--country-line);color:var(--country-copy)}
+.country-editorial .route-depth{background:var(--country-paper)}
+/* Utility-based Portuguese/Turkish templates use the same surface vocabulary. */
+.country-editorial--utility>header{background:var(--country-paper)!important;color:var(--country-ink)!important;border-bottom:1px solid var(--country-line)}
+.country-editorial--utility>header>div{max-width:1180px;padding-block:56px;margin-inline:auto}
+.country-editorial--utility h1{font-size:clamp(32px,3.8vw,54px);line-height:1.12;letter-spacing:-.035em}
+.country-editorial--utility :is([class*="text-slate-"],[class*="text-orange-300"]){color:var(--country-copy)!important}
+.country-editorial--utility :is(.bg-slate-900,.bg-slate-950,.bg-slate-100){background:var(--country-tint)!important;color:var(--country-ink)!important;border:1px solid var(--country-line)}
+.country-editorial--utility article{border-color:var(--country-line);border-radius:14px;box-shadow:none}
+.country-editorial--utility a[class*="bg-orange"]{background:#cc4d2d!important;color:white!important;border-radius:8px}
+/* Legacy region-derived country layouts: recolor only page content, not chrome. */
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main){background:var(--country-paper)!important;color:var(--country-ink)!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(section,[class*="bg-[#"],[class*="bg-white/"],[class*="bg-gradient"],.bg-slate-900,.bg-slate-950){background-color:var(--country-paper)!important;background-image:none!important;color:var(--country-ink)}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is([class*="text-white"],[class*="text-slate-"],[class*="text-gray-"],[class*="text-sky-"],[class*="text-emerald-"]){color:var(--country-copy)!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(h1,h2,h3,h4){color:var(--country-ink)!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) h1{font-size:clamp(32px,3.8vw,54px)!important;line-height:1.12!important;letter-spacing:-.035em}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) [class*="border-"]{border-color:var(--country-line)!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is([class*="shadow"],[class*="backdrop-blur"]){box-shadow:none!important;backdrop-filter:none!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(article,.rounded-2xl){border-radius:14px}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(button,a)[class*="bg-"]{background:var(--country-tint)!important;color:var(--country-accent)!important;border-color:var(--country-line)!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(button,a)[class*="bg-[#c94f2f]"],.country-editorial--legacy .freight-cta{background:#cc4d2d!important;color:white!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) .bg-clip-text{-webkit-text-fill-color:var(--country-ink);background:none!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) .pointer-events-none:not(svg){opacity:0!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(input,textarea,select){background:white!important;color:var(--country-ink)!important;border-color:var(--country-line)!important}
+.country-editorial :is(a,button,summary):focus-visible{outline:3px solid var(--country-accent);outline-offset:4px}
+@media(max-width:900px){.country-editorial .freight-cover{grid-template-columns:1fr;gap:28px;padding-block:32px}.country-editorial .country-route-board{padding:24px}.country-editorial--utility>header>div{padding-block:32px}}
+@media(max-width:540px){.country-editorial :is(.freight-cover,.freight-chapters){width:calc(100% - 32px)}.country-editorial .freight-chapters a{flex-basis:calc(50% - 12px);padding:16px;min-width:0;font-size:14px}.country-editorial .country-route-board{padding:20px}.country-editorial :is(.freight-section,.brazil-section,.used-section){padding-block:32px}}
+
+/* Remove the former ribbon backdrop; retain destination/operation photography. */
+.country-editorial .freight-cover-copy{background:transparent!important;animation:none!important}
+.country-editorial.country-editorial--utility>header{background:var(--country-paper)!important;border:0;border-bottom:1px solid var(--country-line)}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(h1,h2,h3,h4)[class]{color:var(--country-ink)!important}
+.country-editorial.country-editorial--legacy>main>section:first-child{display:flex;flex-direction:column;min-height:0;padding-bottom:40px}
+.country-editorial.country-editorial--legacy>main>section:first-child>img{position:static;width:min(1180px,calc(100% - 40px));height:300px;object-fit:cover;border-radius:14px;order:2}
+.country-editorial.country-editorial--legacy>main>section:first-child>div.absolute{display:none}
+.country-editorial.country-editorial--legacy>main>section:first-child>div.absolute:has(>img){display:block;position:static;opacity:1;width:min(1180px,calc(100% - 40px));height:260px;border-radius:14px;overflow:hidden;order:2}
+.country-editorial.country-editorial--legacy>main>section:first-child>div.absolute:has(>img)>div{display:none}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) [class*="bg-[linear-gradient"]{background:none!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is([class*="text-[#f2a47f]"],[class*="text-[#d97706]"],[class*="text-orange-"]){color:#934025!important}
+.country-editorial.country-editorial--legacy>:is(header:not(.ddnz-home),main) :is(button,a)[class*="bg-[#c94f2f]"]{color:#fff!important;border-radius:8px}

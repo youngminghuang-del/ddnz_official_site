@@ -19,7 +19,7 @@ export default function UaeContent({locale}: {locale: FreightLocale}) {
     [t('转运', 'Transfer', 'Traslado'), t('根据货物尺寸与收货条件确认车辆和装卸。', 'Match vehicles and handling to cargo dimensions and receiving conditions.', 'Ajustar vehículo y manipulación a medidas y condiciones de recepción.')],
     [t('交付', 'Delivery', 'Entrega'), t('确认预约、卸货责任及交接记录。', 'Confirm appointments, unloading responsibilities and handover records.', 'Confirmar cita, responsabilidad de descarga y registro de entrega.')],
   ];
-  return <main id="main-content" className="freight-editorial freight-next uae-page">
+  return <main id="main-content" className="country-editorial freight-editorial freight-next uae-page">
     <header className="freight-cover uae-cover"><div className="freight-cover-copy">
       <a className="uae-back" href={`${prefix}/shipping-from-china-to-middle-east/`}>← {t('中东货运', 'Middle East freight', 'Transporte a Oriente Medio')}</a>
       <p className="freight-kicker">{t("中国 → 阿联酋","CHINA → UNITED ARAB EMIRATES","CHINA → EMIRATOS ÁRABES UNIDOS")}</p>

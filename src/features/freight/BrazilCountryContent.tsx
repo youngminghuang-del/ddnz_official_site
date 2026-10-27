@@ -10,7 +10,7 @@ const copy={
 };
 export default function BrazilCountryContent({locale}:{locale:BrazilPreviewLocale}){
  const c=copy[locale],prefix=locale==='zh'?'/zh-cn':'',quote=buildQuoteHref({intent:'Freight Export',language:locale,source:'brazil_country',destination:'Brazil'});
- return <main id="main-content" className="freight-editorial market-story brazil-country" lang={locale==='zh'?'zh-CN':'en'} data-country-cargo-planning="true">
+ return <main id="main-content" className="country-editorial freight-editorial market-story brazil-country" lang={locale==='zh'?'zh-CN':'en'} data-country-cargo-planning="true">
  <header className="market-wrap brazil-hero"><div><a className="market-back" href={`${prefix}/shipping-from-china-to-latin-america/`}>← {c.back}</a><p className="freight-kicker">{c.kicker}</p><h1>{c.title}</h1><p>{c.intro}</p><a className="freight-cta" href={quote}>{c.action} ↗</a></div><figure><img src="/freight-media/brazil-ports/santos.webp" width="1280" height="769" alt={c.alt} fetchPriority="high"/><figcaption>{c.caption}</figcaption></figure></header>
  <div className="market-wrap"><FreightChapters items={c.chapters.map((label,i)=>({label,id:['freight-route-options','brazil-ports','brazil-cargo','brazil-quote'][i]}))} ariaLabel={locale==='zh'?'本页内容':'On this page'} reading={locale==='zh'?'正在阅读 ':'Reading '}/></div>
  <RoutePlanningDepth country="brazil" locale={locale}/>

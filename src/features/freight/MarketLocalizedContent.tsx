@@ -32,7 +32,7 @@ export default function MarketLocalizedContent({country,locale}:{country:MarketC
  const d=marketLocaleData[locale],u=d.ui,data=d[country],peru=country==='peru',prefix=gulfLanguagePrefix(locale);
  const quote=`${prefix}/get-a-quote/?leadGoal=Freight+Export&source=${country}_country&dest=${peru?'Peru':'Nigeria'}`;
  const labels=peru?d.chaptersPE:d.chaptersNG,ids=peru?[1,3,4,6]:[1,4,2,6];
- return <main id="main-content" className="freight-editorial market-story" lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
+ return <main id="main-content" className="country-editorial freight-editorial market-story" lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
  <header className="market-hero market-wrap"><div><a className="market-back" href={`${prefix}/shipping-from-china-to-${peru?'latin-america':'west-africa'}/`}>← {peru?u.backLatin:u.backWest}</a><p className="freight-kicker">{u.china} → <bdi>{data.country}</bdi></p><h1>{data.heading}</h1><p>{data.intro}</p><a className="freight-cta" href={quote}>{u.request} ↗</a></div>
  <aside className="market-plan"><p className="freight-kicker">{u.before}</p><h2>{u.briefHeading}</h2><ol>{[[u.cargo,peru?u.cargoPE:u.cargoNG],[u.importer,u.importHint],[u.receiving,u.receivingHint]].map(([title,hint],i)=><li key={title}><b><bdi>0{i+1}</bdi> / {title}</b><span>{hint}</span></li>)}</ol><a href="#market-section-7">{u.prepare} ↓</a></aside></header>
  <RoutePlanningDepth country={country} locale={locale}/>
