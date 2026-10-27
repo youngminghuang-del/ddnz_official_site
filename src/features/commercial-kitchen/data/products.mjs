@@ -1,4 +1,5 @@
-export default [
+import {handbookProducts} from "./handbookProducts.mjs";
+const originalProducts = [
   {
     "id": "ice-49",
     "model": "HZB-50/AB",
@@ -511,3 +512,5 @@ export default [
     "quote": null
   }
 ];
+
+export default [...originalProducts,...handbookProducts];

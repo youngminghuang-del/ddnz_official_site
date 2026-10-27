@@ -207,7 +207,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = { ...finalSchema, ...indonesiaKitchenCostSchema };
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === solarCableSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '')) {
       finalSchema = solarCableSchema;
     }
 

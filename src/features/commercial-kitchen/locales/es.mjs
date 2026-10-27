@@ -1,12 +1,12 @@
 export default {
   locale: 'es', dir: 'ltr', numberLocale: 'es-ES',
-  meta: { title: 'Equipos de cocina comercial de China | DDNZ Global', description: 'Compare 26 modelos de cocina comercial, precios orientativos en CNY y referencias de EAU, Singapur y México. Prepare su solicitud de cotización.' },
+  meta: { title: 'Equipos de cocina comercial de China | DDNZ Global', description: 'Compare 40 modelos de cocina comercial, precios orientativos en CNY y referencias de EAU, Singapur y México. Prepare su solicitud de cotización.' },
   ui: {
     pageLabel: 'Compra de equipos de cocina comercial', skip: 'Ir a los equipos', sections: 'Secciones de cocina comercial',
     equipment: 'Equipos', assortments: 'Surtidos', prices: 'Referencias de precio', guide: 'Guía de compra', list: 'Su lista', compare: 'Comparar',
     home: 'Inicio', products: 'Productos', breadcrumb: 'Ruta de navegación',
     audience: 'PARA IMPORTADORES, MAYORISTAS Y DISTRIBUIDORES', heading: 'Equipos de cocina comercial.', emphasis: 'Abastecimiento desde China.',
-    intro: 'Prepare un surtido mayorista con 26 modelos. Compare capacidades, medidas, precios orientativos de suministro y referencias minoristas antes de solicitar una cotización para su mercado.',
+    intro: 'Prepare un surtido mayorista con 40 modelos. Compare capacidades, medidas, precios orientativos de suministro y referencias minoristas antes de solicitar una cotización para su mercado.',
     explore: 'Explorar equipos', startList: 'Preparar una lista', heroAlt: 'Equipos de cocina comercial en una cocina en funcionamiento',
     heroCaption: 'DE LA PREPARACIÓN AL SERVICIO', heroLabel: 'Su próximo pedido empieza con una selección.',
     catalogTitle: 'Elija por capacidad y uso.', catalogHelp: 'Busque un modelo o una especificación. Consulte todos los detalles, compare hasta tres modelos y añada cantidades a su lista.',

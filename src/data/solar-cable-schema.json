@@ -90,10 +90,6 @@
       "dateModified": "2026-10-26",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -110,7 +106,11 @@
       "primaryImageOfPage": {
         "@id": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/#image-A"
       },
-      "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/"
+      "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
     },
     {
       "@type": "BreadcrumbList",
@@ -125,8 +125,8 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "Blog",
-          "item": "https://www.ddnzglobal.com/es/blog/"
+          "name": "Recursos",
+          "item": "https://www.ddnzglobal.com/es/insights/"
         },
         {
           "@type": "ListItem",
@@ -436,6 +436,5 @@
         "@id": "https://www.ddnzglobal.com/#organization"
       }
     }
-  ],
-  "url": "https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/"
+  ]
 }

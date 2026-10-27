@@ -1,3 +1,5 @@
+import InductionCatalogue from '../src/features/commercial-kitchen/components/InductionCatalogue';
+import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
 import egyptScooterSchema from '../src/data/egypt-scooter-schema.json';
 import type { BlogPost } from '../src/types/content';
 import { normalizeQuoteHtml } from '../src/lib/quoteLinkPolicy.mjs';
@@ -1054,6 +1056,10 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         ? `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${sourcingService.intent}&source=${sourcingService.source}`
         : `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'Freight+Export&dest=Brasil' : 'Freight+Only'}&source=structured_data`;
     const sourcingServiceType = sourcingCategory?.serviceType || sourcingService?.serviceType || seo.title;
+    // Scenario pages describe a scoped procurement service, not a priced offer.
+    // Keep the real, scenario-specific RFQ in the visible page content.
+    const isKitchenScenario = relPath.startsWith('sourcing/restaurant-kitchen-packages-from-china/')
+      && Object.hasOwn(allScenarios, relPath.split('/').pop()!);
     const structuredData = {
       '@context': 'https://schema.org',
       '@graph': [
@@ -1092,14 +1098,14 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           areaServed: isShippingPage
             ? { '@type': specificCountryName ? 'Country' : 'Place', name: destinationName }
             : 'Global',
-          offers: {
+          ...(isKitchenScenario ? { url: canonicalUrl } : { offers: {
             '@type': 'Offer',
             url: sourcingOfferUrl,
             priceCurrency: 'USD',
             description: isSourcingServicePage
               ? 'Request a market-defined product sourcing, inspection, consolidation and export coordination plan.'
               : 'Request a route-specific freight quotation based on cargo details and current capacity.'
-          }
+          } })
         }
       ]
     };
@@ -1287,7 +1293,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema.url.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
@@ -1640,7 +1646,7 @@ function injectStaticRouteContent(
     const body = lang === 'en' ? renderToStaticMarkup(createElement(FoodProcessingContent, { page })) : renderToStaticMarkup(createElement(LocalizedFoodContent, {page,locale}));
     const css = fs.readFileSync(path.resolve('src/features/food-processing/food-processing.css'), 'utf8');
     const schema = JSON.stringify(lang === 'en' ? foodPageSchema(page) : localizedFoodSchema(page,locale)).replace(/</g, '\\u003c');
-    return htmlContent.replace('</head>', `<style>${css}</style><script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+    return htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '').replace('</head>', `<style>${css}</style><script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   }
   if (freightReleasePaths.includes(relPath) || modernizedFreightServicePaths.some(path => path === relPath)) {
     const language = (lang === 'zh-cn' ? 'zh' : lang) as Language;
@@ -1743,7 +1749,7 @@ function injectStaticRouteContent(
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(meta.schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
-    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch, renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',alt:'Commercial kitchen application',scene:true,items:['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels.en[i],href:'#commercial-kitchen-equipment'}))}))).replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
+    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch, renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',alt:'Commercial kitchen application',scene:true,items:['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels.en[i],href:'#commercial-kitchen-equipment'}))}))).replace('<h2 id="commercial-kitchen-benchmarks">', renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'multi'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'steam'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'noodle'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'round'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'large'})) + '<h2 id="commercial-kitchen-benchmarks">').replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
     staticBody += renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: 'en' }));
     staticBody += '<aside lang="id"><h2>Merencanakan restoran di Indonesia?</h2><p><a href="/id/blog/desain-dapur-restoran-pengadaan-peralatan-china/">Desain dapur restoran kecil, biaya peralatan, dan pengadaan dari China</a></p></aside>';
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
@@ -1849,6 +1855,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', `${links}</main>`);
   }
   if (lang === 'en' && relPath === 'refrigeration-equipment') {
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + '</main>');
     const production = `<section id="refrigeration-evidence" class="mt-10"><h2>From the production line to the packing floor.</h2><p>Watch a short clip from an ice-maker production line.</p><figure><video controls playsinline preload="none" poster="/images/product-showcase/refrigeration/ice-maker-line-source.webp" aria-label="Ice maker production line video" style="width:100%;max-height:500px;background:#132943"><source src="/media/process/kitchen-production.mp4" type="video/mp4"><a href="/media/process/kitchen-production.mp4">Open the production video</a></video><figcaption>Ice maker production line · 9-second video</figcaption></figure><h3>Choosing a cabinet</h3><p>Confirm the selected model, cooling performance, service access and transport packaging with your quotation.</p></section>`;
     staticBody = staticBody.replace('</main>', production + '</main>');
     staticBody = staticBody.replace('</main>', renderRefrigerationEntry() + '</main>');

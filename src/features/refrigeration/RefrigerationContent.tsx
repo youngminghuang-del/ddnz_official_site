@@ -1,3 +1,4 @@
+import RefrigerationModelCatalogue from './RefrigerationModelCatalogue';
 import RefrigerationStyleGallery from './RefrigerationStyleGallery';
 import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
 import React,{useState} from 'react';
@@ -13,6 +14,7 @@ export default function RefrigerationContent({locale}:{locale:RefrigerationLocal
  const change=(k:keyof typeof form,v:string)=>{setForm(f=>({...f,[k]:v}));setReady(false);};
  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="bg-slate-50 text-slate-900"><div className="mx-auto max-w-7xl space-y-16 px-6 py-12"><header className="grid items-center gap-10 lg:grid-cols-2"><div><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.categories}</a><h1 className="mt-6 text-4xl font-bold leading-tight md:text-5xl">{c.title}</h1><p className="mt-6 text-lg leading-8">{c.intro}</p><a className="mt-7 inline-block rounded-xl bg-purple-800 px-5 py-3 font-bold text-white" href="#refrigeration-rfq">{u.quote}</a></div><img src={images[0]} alt={c.families[0][0]} width="1200" height="800" className="w-full rounded-2xl"/></header>
  <div id="refrigeration-range" dangerouslySetInnerHTML={{__html:renderLocalizedEntry('refrigeration',locale)}}/>
+ <RefrigerationModelCatalogue locale={locale}/>
  <RefrigerationStyleGallery locale={locale}/>
  <section id="comparison"><h2 className="text-3xl font-bold">{u.compare}</h2><ol className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{c.checks.map((text,i)=><li className="rounded-xl bg-white p-6 leading-7" key={text}><span className="mb-3 block font-bold text-purple-700">0{i+1}</span>{text}</li>)}</ol></section>
  <section id="sample-control"><h2 className="text-3xl font-bold">{c.labels[4]}</h2><ol className="mt-7 grid gap-5 md:grid-cols-2">{c.steps.map((text,i)=><li className="rounded-xl border border-slate-200 p-6 leading-7" key={text}><span className="font-bold">0{i+1} · </span>{text}</li>)}</ol></section>
