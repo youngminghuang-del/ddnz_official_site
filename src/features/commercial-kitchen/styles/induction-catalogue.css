@@ -2,3 +2,5 @@
 
 .induction-catalogue .induction-metrics{grid-template-columns:1fr 1.2fr 1.3fr}.induction-catalogue .induction-metrics dd{font-size:16px}.induction-catalogue .induction-copy details>p{font-size:14px;line-height:1.8;color:#52627a}
 @media(max-width:450px){.induction-catalogue .induction-metrics{grid-template-columns:1fr}.induction-catalogue .induction-metrics>div{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0;border-top:0}.induction-catalogue .induction-metrics dd{margin:0;text-align:end}}
+
+.induction-shared-actions{display:flex;flex-wrap:wrap;gap:.75rem;margin:1rem 0}.induction-shared-actions button{border:1px solid #cbb7dc;border-radius:.5rem;background:#fff;color:#7435a3;padding:.75rem 1rem;font:inherit;cursor:pointer}.induction-shared-actions button[aria-pressed=true]{background:#7435a3;color:#fff}.induction-shared-actions button:focus-visible{outline:3px solid #c64b26;outline-offset:3px}

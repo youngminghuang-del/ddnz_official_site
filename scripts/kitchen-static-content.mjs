@@ -13,10 +13,10 @@ export function renderKitchenStaticContent(products, launch, heroMedia = '') {
     <nav aria-label="Breadcrumb"><a href="/">Home</a> / <a href="/products/">Products</a> / <span aria-current="page">Commercial kitchen equipment</span></nav>
     ${heroMedia?'<section class="catalogue-hero"><div>':''}<p>For importers, wholesalers &amp; distributors</p>
     <h1>Commercial kitchen equipment. Sourced in China.</h1>
-    <p>Source commercial kitchen equipment from China for your wholesale range. Compare 26 equipment models. Compare capacity, indicative supply prices and local retail references, then request a quote for your market.</p>
+    <p>Source commercial kitchen equipment from China for your wholesale range. Compare ${products.length} equipment models. Compare capacity, indicative supply prices and local retail references, then request a quote for your market.</p>
     <nav aria-label="Plan your equipment order">${kitchenJourney.map(item=>`<a href="${item.href}">${escape(item.title)}</a>`).join(" · ")}</nav>
     <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>${heroMedia?'</div>'+heroMedia+'</section>':''}
-    <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>26 models. Eight with indicative reference prices.</p>
+    <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>${products.length} models. Eight with indicative reference prices.</p>
     <nav aria-label="Equipment buying guides">${kitchenCategories.map(item => `<a href="${item.path}">${escape(item.label)} · Compare models</a>`).join(' · ')} · <a href="/refrigeration-equipment/">Refrigeration selection guide</a></nav>
     <div>${[...featured, ...products.filter(p => !launch.featuredProductIds.includes(p.id))].map(p => `<article><img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
       <h3>${escape(p.model)} — ${escape(p.name)}</h3><p>${escape(p.metric)} · ${escape(p.dimensions)}</p>

@@ -1,3 +1,4 @@
+import {handbookCopy} from './handbookProducts.mjs';
 import zh from '../locales/zh.json' with {type:'json'};
 import ru from '../locales/ru.json' with {type:'json'};
 import fr from '../locales/fr.json' with {type:'json'};
@@ -39,6 +40,13 @@ export function getLocalizedKitchenProducts(locale) {
   const ordered = [...launch.featuredProductIds.map(id => catalog.find(product => product.id === id)), ...catalog.filter(product => !launch.featuredProductIds.includes(product.id))];
   return ordered.map(product => {
     const photo = brandedProducts.get(product.id);
+    if(product.handbookGroup){
+      const c=handbookCopy(product,locale);
+      return {...product,name:c.name,categoryLabel:t.categories[product.category],displayModel:product.model,
+        metric:localSpecValue(product.metric,locale),detail:localSpecValue(product.detail,locale),dimensions:localSpecValue(product.dimensions,locale),
+        note:c.note,configurationNote:c.note,imageNote:c.caption,
+        localizedSpecs:Object.keys(c.fields).filter(key=>product[key]).map(key=>({key:handbookCopy(product).fields[key],label:c.fields[key],value:localSpecValue(product[key],locale)}))};
+    }
     return {
       ...product,
       name: t.names[product.name], categoryLabel: t.categories[product.category],
@@ -160,6 +168,8 @@ export function buildLocalizedKitchenInquiry(locale, { list = {}, form = {}, nam
   const products = getLocalizedKitchenProducts(locale);
   const translateLine = line => {
     if (!line) return '';
+    const config=line.match(/^  Configuration for (.+?): /);
+    if(config){const product=products.find(item=>item.model===config[1]);return `  ${product.localizedSpecs.map(spec=>`${spec.label}: ${spec.value}`).join(' · ')}. ${product.configurationNote}`;}
     if (line === 'DDNZ commercial kitchen enquiry') return t.inquiry.heading;
     if (line === 'Requested models:') return `${t.inquiry.requested}:`;
     if (line.startsWith('Please confirm configuration,')) return t.inquiry.final;

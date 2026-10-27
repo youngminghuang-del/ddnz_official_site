@@ -33,7 +33,7 @@ test('every localized phone selection survives all language switches without tra
 });
 test('kitchen and phone catalogues retain complete field contracts and reference prices',()=>{
  const keys=o=>Object.keys(o).sort();const originals=getLocalizedKitchenProducts('es');
- for(const l of languages){assert.deepEqual(keys(phoneCopy(l)),keys(phoneCopy('es')),l);assert.deepEqual(keys(kitchenCopy(l)),keys(kitchenCopy('es')),l);const products=getLocalizedKitchenProducts(l);assert.equal(products.length,26);products.forEach((p,i)=>{assert.ok(p.name);assert.ok(p.categoryLabel);assert.deepEqual(p.quote,originals[i].quote);assert.equal(p.id,originals[i].id)})}
+ for(const l of languages){assert.deepEqual(keys(phoneCopy(l)),keys(phoneCopy('es')),l);assert.deepEqual(keys(kitchenCopy(l)),keys(kitchenCopy('es')),l);const products=getLocalizedKitchenProducts(l);assert.equal(products.length,37);products.forEach((p,i)=>{assert.ok(p.name);assert.ok(p.categoryLabel);assert.deepEqual(p.quote,originals[i].quote);assert.equal(p.id,originals[i].id)})}
 });
 test('reviewed purchasing copy preserves margin division, input limits and destination labels',()=>{
  for(const l of ['zh','ru','fr','pt','tr']){
