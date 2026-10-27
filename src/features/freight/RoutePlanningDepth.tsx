@@ -1,3 +1,4 @@
+import southAsiaCopy from './route-locales/india-pakistan.json';
 import westAfricaCopy from './route-locales/ghana-nigeria.json';
 import destinationCopy from './route-locales/mexico-uae.json';
 import es from './route-locales/es.json';
@@ -39,7 +40,8 @@ export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
 export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
  const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
  const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
- const c = west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
+ const south: Record<string, Record<string, RouteCopy>> = southAsiaCopy;
+ const c = south[locale]?.[country] || west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
  if (!c) return null;
  const labels=routePlanningUi(locale);
 
