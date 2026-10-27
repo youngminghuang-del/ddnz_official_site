@@ -1642,7 +1642,7 @@ function injectStaticRouteContent(
     const body = lang === 'en' ? renderToStaticMarkup(createElement(FoodProcessingContent, { page })) : renderToStaticMarkup(createElement(LocalizedFoodContent, {page,locale}));
     const css = fs.readFileSync(path.resolve('src/features/food-processing/food-processing.css'), 'utf8');
     const schema = JSON.stringify(lang === 'en' ? foodPageSchema(page) : localizedFoodSchema(page,locale)).replace(/</g, '\\u003c');
-    return htmlContent.replace('</head>', `<style>${css}</style><script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+    return htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '').replace('</head>', `<style>${css}</style><script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   }
   if (freightReleasePaths.includes(relPath) || modernizedFreightServicePaths.some(path => path === relPath)) {
     const language = (lang === 'zh-cn' ? 'zh' : lang) as Language;
