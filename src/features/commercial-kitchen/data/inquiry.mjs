@@ -57,7 +57,7 @@ export function buildInquiryMessage({products=[],list={},form={}}={}){
  if(preferredContact)lines.splice(company?4:3,0,`Preferred contact: ${preferredContact}`);
  for(const {product,units} of rows){
   lines.push(`- ${max(product.model,80)||'Model'} × ${units}`);
-  if(product.handbookGroup)lines.push(`  Configuration for ${product.model}: ${Object.entries(product.specs).map(([key,value])=>`${key}: ${value}`).join(' · ')}. ${product.note}`);
+  if(product.handbookGroup||product.coffeeSeries)lines.push(`  Configuration for ${product.model}: ${Object.entries(product.specs).map(([key,value])=>`${key}: ${value}`).join(' · ')}. ${product.note}`);
   for(const line of priceLines(product,units,form.buyingTargets?.[product.id]))lines.push(`  ${line}`);
  }
  if(!rows.length)lines.push('- No valid models selected; please describe the equipment needed.');

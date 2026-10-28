@@ -1,3 +1,4 @@
+import ProductSeries,{SeriesEntry} from '../product-series/ProductSeries';
 import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
 import InductionCatalogue, {InductionEntry} from './components/InductionCatalogue';
 import CatalogueHeroMedia, { kitchenHeroLabels } from '../../components/catalogue-hero/CatalogueHeroMedia';
@@ -128,7 +129,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
     <a className="skip" href="#commercial-kitchen-equipment">{u.skip}</a>
     <nav className="kitchen-subnav" aria-label={u.sections}>
       <a href="#commercial-kitchen-equipment">{u.equipment}</a><a href="#commercial-kitchen-compare">{u.compare}</a>
-      <InductionEntry locale={locale}/><InductionEntry locale={locale} group="multi"/><InductionEntry locale={locale} group="steam"/><InductionEntry locale={locale} group="noodle"/><InductionEntry locale={locale} group="round"/><InductionEntry locale={locale} group="large"/><a href="#commercial-kitchen-assortments">{u.assortments}</a><a href="#commercial-kitchen-benchmarks">{u.prices}</a>
+      <SeriesEntry family="coffee" locale={locale}/><InductionEntry locale={locale}/><InductionEntry locale={locale} group="multi"/><InductionEntry locale={locale} group="steam"/><InductionEntry locale={locale} group="noodle"/><InductionEntry locale={locale} group="round"/><InductionEntry locale={locale} group="large"/><a href="#commercial-kitchen-assortments">{u.assortments}</a><a href="#commercial-kitchen-benchmarks">{u.prices}</a>
       <a href="#commercial-kitchen-margin">{t.margin.nav}</a>
       <a href="#commercial-kitchen-guide">{u.guide}</a><a className="kitchen-subnav-list" href="#commercial-kitchen-list">{u.list} <bdi dir="ltr">{localNumber(count, locale)}</bdi></a>
     </nav>
@@ -177,6 +178,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
         onAction('add_to_list');
         document.getElementById('commercial-kitchen-list')?.scrollIntoView({ behavior: 'auto' });
       }}/>
+      <ProductSeries family="coffee" locale={locale} onAdd={id=>add({[id]:1})} onCompare={id=>toggleCompare(id)}/>
       <section className="section wrap" id="commercial-kitchen-guide" aria-labelledby="localized-guide-title"><h2 id="localized-guide-title">{u.guideTitle}</h2><div className="localized-two-columns">{t.guides.map(item => <article className="localized-panel" key={item.title}><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div><p className="localized-price-explanation">{u.electricity}</p></section>
       <section className="section wrap" id="commercial-kitchen-list" aria-labelledby="localized-list-title"><h2 id="localized-list-title">{u.listTitle}</h2><p>{u.listHelp}</p><p>{u.modelCount}: <bdi dir="ltr">{localNumber(selected.length, locale)}</bdi> · {u.unitCount}: <bdi dir="ltr">{localNumber(count, locale)}</bdi></p>
         {storageWarning && <p className="fine" role="status">{u.storageUnavailable}</p>}

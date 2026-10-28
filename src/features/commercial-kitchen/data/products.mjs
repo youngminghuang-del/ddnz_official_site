@@ -1,3 +1,4 @@
+import {coffeeCatalogProducts} from '../../product-series/models.mjs';
 import {handbookProducts} from "./handbookProducts.mjs";
 const originalProducts = [
   {
@@ -513,4 +514,4 @@ const originalProducts = [
   }
 ];
 
-export default [...originalProducts,...handbookProducts];
+export default [...originalProducts,...handbookProducts,...coffeeCatalogProducts];

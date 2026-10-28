@@ -1,3 +1,4 @@
+import ProductSeries,{SeriesEntry} from '../../features/product-series/ProductSeries';
 import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import {AudioCategoryLinks} from '../../features/audio/AudioCategoryContent';
 import AudioAssortments from '../../features/audio/AudioAssortments';
@@ -245,6 +246,7 @@ export function AudioSpeakersContent() {
 
       <main id="audio-main">
         <AudioCategoryLinks />
+        <div className="mx-auto max-w-7xl px-6"><SeriesEntry family="speaker"/></div>
         <section className="as-hero catalogue-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
             <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
@@ -388,6 +390,7 @@ export function AudioSpeakersContent() {
         <section className="as-handoff" aria-label="Freight handoff">
           <div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Engaged after the approved sourcing and pack-out file is ready</span></p></div><span>DDNZ remains the sourcing coordination team</span>
         </section>
+        <ProductSeries family="speaker"/>
         <AudioAssortments />
         <StartupBuyingContent kind="audio" />
       </main>

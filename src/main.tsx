@@ -1,3 +1,4 @@
+import './features/product-series/series.css';
 import './features/equipment-buying-support/support.css';
 import './features/commercial-kitchen/styles/induction-catalogue.css';
 import './features/refrigeration/catalogue.css';

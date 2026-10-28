@@ -17,7 +17,7 @@ test('40 category pages render unique titles, useful products, bundles and local
    const alternates=productAlternates(path);assert.equal(alternates.length,8);assert.ok(alternates.some(a=>a.href==='https://www.ddnzglobal.com'+meta.path));
    assert.equal(audioCategorySchema(index,locale)['@graph'][0].url,'https://www.ddnzglobal.com'+meta.path);
    const links=[...html.matchAll(/href="([^"]+)"/g)].map(m=>new URL(m[1].replaceAll('&amp;','&'),'https://www.ddnzglobal.com'));
-   for(const link of links.filter(x=>x.pathname.endsWith('/get-a-quote/'))){assert.equal(link.searchParams.get('source'),'audio_category');assert.ok(link.searchParams.get('productScope'));}
+   for(const link of links.filter(x=>x.pathname.endsWith('/get-a-quote/'))){assert.ok(['audio_category','speaker_model_catalogue'].includes(link.searchParams.get('source')!));assert.ok(link.searchParams.get('productScope'));}
   }
  }
  assert.equal(titles.size,40);
