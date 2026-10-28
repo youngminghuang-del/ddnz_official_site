@@ -1,3 +1,4 @@
+import istanbulKitchenSchema from '../data/istanbul-kitchen-schema.json';
 import {freightPageInfo} from '../features/freight/freightPageSchema';
 import egyptScooterSchema from '../data/egypt-scooter-schema.json';
 import egyptLclSchema from '../data/egypt-lcl-schema.json';
@@ -220,6 +221,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '')) {
       finalSchema = egyptScooterSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === istanbulKitchenSchema.url.replace(/\/+$/, '')) {
+      finalSchema = istanbulKitchenSchema;
     }
 
     // Create script tag and append to head

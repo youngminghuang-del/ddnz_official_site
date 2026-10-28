@@ -1,3 +1,4 @@
+import istanbulKitchenRelease from '../src/data/istanbulKitchenRelease.json';
 import egyptScooterRelease from '../src/data/egyptScooterRelease.json';
 import egyptLclRelease from '../src/data/egyptLclRelease.json';
 import solarCableRelease from '../src/data/solarCableRelease.json';
@@ -486,7 +487,7 @@ async function run() {
       const titleProperty = Object.values(properties).find((property: any) => property.type === "title") as any;
       const title = propertyText(titleProperty) || "Untitled";
       const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
-      const language = slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.language : slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
+      const language = slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.language : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.language : slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
       pageMetadata.set(page.id, {
         slug,
         language,
@@ -504,7 +505,7 @@ async function run() {
       const title = propertyText(titleProperty) || "Untitled";
       const slug = propertyText(properties.Slug || properties.slug) || generateSlug(title, page.id);
       const category = propertyText(properties.Category || properties.category) || "Logistics";
-      const language = slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.language : slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
+      const language = slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.language : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.language : slug === hayaletApproval.slug ? hayaletApproval.language : slug === kitchenApproval.slug ? kitchenApproval.language : propertyText(properties.Language || properties.language) || "en";
       const translationGroup = propertyText(properties["Translation Group"] || properties.translationGroup);
       const date = propertyDate(properties.Date || properties.date) || page.created_time.split("T")[0];
       const summary = propertyText(
@@ -540,7 +541,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === egyptScooterRelease.slug
+      const rendered = slug === istanbulKitchenRelease.slug
+        ? { html: istanbulKitchenRelease.content, toc: istanbulKitchenRelease.toc, wordCount: istanbulKitchenRelease.wordCount, readMinutes: istanbulKitchenRelease.readMinutes }
+        : slug === egyptScooterRelease.slug
         ? { html: egyptScooterRelease.content, toc: egyptScooterRelease.toc, wordCount: egyptScooterRelease.wordCount, readMinutes: egyptScooterRelease.readMinutes }
         : slug === egyptLclRelease.slug
         ? { html: egyptLclRelease.content, toc: egyptLclRelease.toc, wordCount: egyptLclRelease.wordCount, readMinutes: egyptLclRelease.readMinutes }
@@ -581,7 +584,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
