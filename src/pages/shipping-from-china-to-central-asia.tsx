@@ -1,5 +1,6 @@
+import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
-import RoutePlanningDepth from '../features/freight/RoutePlanningDepth';
+import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
 import freightFactLabels from '../features/freight/freightFactLabels.json';
 import { railTerminalAlt } from '../lib/operationalImageAlt';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
@@ -51,7 +52,7 @@ const CENTRAL_ASIA_DATA = {
       headline: "China to Kazakhstan Freight: Rail, Trucking & Customs Support",
       subheadline: "Direct block trains and cross-border trucking, with Heaven Born coordination for Horgos/Alashankou transfers and EAEU-ready documentation.",
       transitWindow: "Kazakhstan Transit Windows",
-      transitDays: "15 - 25 Days",
+      transitDays: "Confirm for the proposed route",
       complianceRowTitle: "EAEU Conformity & TN VED Review",
       complianceRowVal: "Before Booking",
       solutionsTitle: "Kazakhstan SCM Compliance Solutions",
@@ -81,31 +82,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "Air Freight (Express)",
-          days: "3 - 7 Days",
+          days: "Confirm for the proposed route",
           suitability: "Ideal for high-value cargo, samples & time-critical electronics.",
           sellingPoint: "A suitable option for time-sensitive cargo when flight schedules and destination formalities align.",
           warning: "Strict lithium battery, liquid, and powder checks are enforced."
         },
         {
           mode: "Cross-Border Trucking (Semi-Trailer Swap Mode)",
-          days: "5 - 12 Days",
+          days: "Confirm for the proposed route",
           suitability: "Highly recommended for consolidated batches around 5 tons; extremely flexible compared to whole rail containers.",
           sellingPoint: "Semi-trailer swap routing may reduce handling steps on suitable routes. The final plan depends on the border, cargo type, and local operating conditions.",
           warning: "Axle-load rules and roadside inspections apply. Loading and route requirements should be confirmed before dispatch."
         },
         {
           mode: "Rail Freight (Block Train / Bulk Rail)",
-          days: "6 - 20 Days",
+          days: "Confirm for the proposed route",
           suitability: "Best for heavy bulk machinery, building materials, and full-container-loads (FCL).",
           sellingPoint: "Rail can suit heavy or full-container cargo where the route, departure schedule and border capacity fit the shipment plan.",
           warning: "China uses 1435mm standard gauge and Kazakhstan uses 1520mm broad gauge. Containers transfer at border ports such as Horgos; timing depends on border operations."
         },
         {
           mode: "E-commerce Packet & EMS",
-          days: "5 - 18 Days",
+          days: "Confirm for the proposed route",
           suitability: "Tailored for small cross-border parcels and light consumer shipments.",
           sellingPoint: "A route option for small, lighter consumer shipments when the commodity is accepted by the carrier.",
-          warning: "Postal EMS takes 15-18 days with strict physical bans on liquids, powders, and loose batteries."
+          warning: "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately."
         }
       ],
       faqs: [
@@ -124,12 +125,12 @@ const CENTRAL_ASIA_DATA = {
       ]
     },
     zh: {
-      seoTitle: "中国至哈萨克斯坦（阿拉木图）跨境卡航与铁路班列 DDP | 华正邦泰国际货运",
+      seoTitle: "交付范围待确认",
       seoDesc: "中国至哈萨克斯坦的铁路、跨境卡航与多式联运服务，提供 EAEU 清关文件、TR CU 与 TN VED 资料的出运前协调支持。",
       headline: "中国到哈萨克斯坦货运：铁路、卡航与 EAEU 清关服务",
       subheadline: "直达阿拉木图与阿斯塔纳。华正邦泰国际货运协调霍尔果斯/阿拉山口口岸换装、进口申报与多式联运安排。",
       transitWindow: "哈萨克斯坦专线预计时效",
-      transitDays: "15 - 25 天",
+      transitDays: "按具体行程确认",
       complianceRowTitle: "EAEU 合规与 TN VED 资料核对",
       complianceRowVal: "订舱前核对",
       solutionsTitle: "哈萨克斯坦专线合规解决方案",
@@ -159,31 +160,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "空运服务 (Air Freight Express)",
-          days: "3 - 7 天",
+          days: "按具体行程确认",
           suitability: "适合高货值、样品、紧急电子配件及高精密仪器等时效敏感型货物。",
           sellingPoint: "适合时效敏感货物；实际班期、目的港操作和清关资料需在出运前确认。",
           warning: "受民航局严苛安检限制，纯锂电池、大容量液体、精细粉末等货物需提前做磁检鉴定。"
         },
         {
           mode: "跨境公路卡航 (卡航专线 - 甩挂模式)",
-          days: "5 - 12 天",
+          days: "按具体行程确认",
           suitability: "对5吨左右的小批量货量极为友好。时效灵活，比按集装箱计费的铁路班列更具性价比与操作弹性。",
           sellingPoint: "可根据口岸、货物与承运条件评估甩挂或跨境公路运输安排，并在出运前确认交接与装卸要求。",
           warning: "中亚公路运输可能涉及轴重与配载要求。请在装车前根据车辆、货物和路线核对重量与配载资料。"
         },
         {
           mode: "中欧班列 / 铁路大宗 (Rail Freight)",
-          days: "6 - 20 天",
+          days: "按具体行程确认",
           suitability: "适合重型机械、大宗原材料、建材、及全箱货（FCL）。",
           sellingPoint: "当班期、口岸能力和目的地交付要求匹配时，铁路可作为重货和整箱货的运输选择。",
           warning: "中国标准轨为 1435mm，哈萨克斯坦为 1520mm 宽轨；边境换装和旺季口岸操作会影响实际时效，请在计划中预留缓冲。"
         },
         {
           mode: "电商小包与邮政 EMS (E-commerce Packet)",
-          days: "5 - 18 天",
+          days: "按具体行程确认",
           suitability: "适用于小体积跨境电商件、个人散货包裹及轻量消费品。",
           sellingPoint: "可根据可用服务、货物属性和目的地要求安排电商小包或邮政服务；税费及申报方式应由进口方按当地要求确认。",
-          warning: "邮政 EMS 普邮时效在 15-18 天左右，且严禁携带液体、粉末、非原装锂电池。"
+          warning: "按具体行程确认"
         }
       ],
       faqs: [
@@ -207,7 +208,7 @@ const CENTRAL_ASIA_DATA = {
       headline: "Доставка из Китая в Казахстан: железная дорога, авто и таможня",
       subheadline: "Heaven Born координирует автодоставку и контейнерные перевозки в Казахстан и Центральную Азию с подготовкой документов до отправки.",
       transitWindow: "Сроки доставки в Казахстан",
-      transitDays: "15 - 25 дней",
+      transitDays: "Уточнить для выбранного маршрута",
       complianceRowTitle: "Аудит и сертификация ТР ТС ЕАЭС",
       complianceRowVal: "До бронирования",
       solutionsTitle: "Решения по комплаенсу логистики в Казахстане",
@@ -237,31 +238,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "Авиадоставка (Экспресс)",
-          days: "3 - 7 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Идеально подходит для дорогостоящих грузов, образцов и электроники.",
           sellingPoint: "Подходит для срочного груза, когда подтверждены рейс, прием товара и условия выдачи в аэропорту Алматы.",
           warning: "Проводится строгая проверка литиевых батарей, жидкостей и порошков."
         },
         {
           mode: "Автоперевозки (Режим перецепки полуприцепов)",
-          days: "5 - 12 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Рекомендуется для партий около 5 тонн; высокая гибкость по сравнению с ж/д контейнерами.",
           sellingPoint: "Схема перецепки может сократить число операций на подходящих маршрутах. Итоговый план зависит от границы, груза и условий перевозчика.",
           warning: "Применяются ограничения по осевой нагрузке и дорожные проверки. Погрузку и маршрут следует подтвердить до отправки."
         },
         {
           mode: "Железнодорожные перевозки (Контейнерные поезда)",
-          days: "6 - 20 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Подходит для тяжелого оборудования, строительных материалов и целых контейнеров (FCL).",
           sellingPoint: "Железнодорожный маршрут подходит для тяжёлых или полноконтейнерных отправок, когда график отправления и пропускная способность границы подтверждены.",
           warning: "Колея в Китае 1435 мм, в Казахстане 1520 мм. Перегрузка выполняется на пограничных станциях; сезонная загрузка и операции на границе могут влиять на график."
         },
         {
           mode: "Электронная коммерция и EMS",
-          days: "5 - 18 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Для небольших посылок e-commerce и легких потребительских товаров.",
           sellingPoint: "Вариант для легких потребительских отправлений, когда товар принимается выбранным каналом.",
-          warning: "Обычная почта EMS идет 15-18 дней с ограничениями на жидкости и аккумуляторы."
+          warning: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса."
         }
       ],
       faqs: [
@@ -287,7 +288,7 @@ const CENTRAL_ASIA_DATA = {
       headline: "Rail, multimodal and trucking from China to Uzbekistan",
       subheadline: "Plan transport to Tashkent and industrial destinations around cargo documents, border procedures and destination-side operating scope.",
       transitWindow: "Uzbekistan Transit Windows",
-      transitDays: "18 - 28 Days",
+      transitDays: "Confirm for the proposed route",
       complianceRowTitle: "GOST-UZ & HS Code Review",
       complianceRowVal: "Before Booking",
       solutionsTitle: "Before you book your Uzbekistan shipment",
@@ -312,31 +313,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "Air Freight (Express)",
-          days: "4 - 8 Days",
+          days: "Confirm for the proposed route",
           suitability: "Best for high-priority industrial spares, critical machinery, and premium medical supplies.",
           sellingPoint: "A suitable option for time-sensitive cargo when flight schedules and destination formalities align.",
           warning: "Taxed on full CIF value (goods + freight); minimize volumetric weight to limit excessive duty/VAT."
         },
         {
           mode: "Cross-Border Trucking (Semi-Trailer Swap)",
-          days: "6 - 14 Days",
+          days: "Confirm for the proposed route",
           suitability: "Highly efficient for heavy equipment, valuable auto components, and time-sensitive factory cargo.",
           sellingPoint: "Semi-trailer-swap and door-delivery options are assessed according to the border, cargo and destination operating scope.",
           warning: "Pre-declaration timing and required data should be confirmed with the carrier and destination clearance party before dispatch."
         },
         {
           mode: "Rail / Multimodal Freight (Block Train / Sea-Rail)",
-          days: "14 - 28 Days",
+          days: "Confirm for the proposed route",
           suitability: "Optimized for high-volume raw materials, minerals, and massive industrial production lines.",
           sellingPoint: "Rail and multimodal options may suit high-volume cargo when schedules, border capacity and final delivery requirements are confirmed.",
           warning: "Uzbekistan is double-landlocked. Border transfers, valuation rules and destination requirements can affect both timing and cost."
         },
         {
           mode: "E-commerce Packet & EMS",
-          days: "7 - 22 Days",
+          days: "Confirm for the proposed route",
           suitability: "Suited for retail items, consumer electronics, and lightweight individual packages.",
           sellingPoint: "An option for lighter consumer shipments when the commodity is accepted by the carrier and destination channel.",
-          warning: "Standard EMS postal option averages 18-22 days. Liquid, battery, and powder products are strictly restricted."
+          warning: "Confirm transit time for the named departure point, destination and current departure. Agree collection, customs handling and final delivery separately. Liquid, battery, and powder products are strictly restricted."
         }
       ],
       faqs: [
@@ -360,7 +361,7 @@ const CENTRAL_ASIA_DATA = {
       headline: "中国到乌兹别克斯坦的铁路、卡航与多式联运",
       subheadline: "根据货物资料、边境操作和目的地服务范围，规划到塔什干及工业区的运输方案。",
       transitWindow: "乌兹别克斯坦专线预计时效",
-      transitDays: "18 - 28 天",
+      transitDays: "按具体行程确认",
       complianceRowTitle: "乌兹别克斯坦 GOST-UZ 与 HS 资料核对",
       complianceRowVal: "订舱前核对",
       solutionsTitle: "发往乌兹别克斯坦，订舱前准备什么？",
@@ -385,31 +386,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "空运服务 (Air Freight Express)",
-          days: "4 - 8 天",
+          days: "按具体行程确认",
           suitability: "最适合紧急工业零配件、关键生产线替换件及高附加值医疗器械。",
           sellingPoint: "适合时效敏感货物；实际班期、目的港操作和清关资料需在出运前确认。",
           warning: "税款按照 CIF（货值+运费）计算，运费部分也将被计税，请务必优化体积重量以控制成本。"
         },
         {
           mode: "跨境公路卡航 (甩挂模式)",
-          days: "6 - 14 天",
+          days: "按具体行程确认",
           suitability: "适合重型非标设备、高货值汽车零部件及有刚性交期要求的工厂普货。",
           sellingPoint: "甩挂与门到门方案需根据口岸、货物和目的地服务范围确认。",
           warning: "预申报的时点和所需数据应在出运前与承运方及目的地清关方确认。"
         },
         {
           mode: "铁路大宗 / 多式联运 (Rail & Multimodal)",
-          days: "14 - 28 天",
+          days: "按具体行程确认",
           suitability: "超大规模原材料、大型基建矿山物资、以及长周期大吨位整箱（FCL）货物。",
           sellingPoint: "当班期、口岸能力和末端派送要求匹配时，铁路与多式联运可作为大宗货物的运输选项。",
           warning: "双重内陆运输可能受口岸换装、目的地估价规则和当地操作条件影响。"
         },
         {
           mode: "电商小包与邮政 EMS (E-commerce Packet)",
-          days: "7 - 22 天",
+          days: "按具体行程确认",
           suitability: "适合网购小商品、零售样版、个人自用轻便货物等。",
           sellingPoint: "适用于承运渠道接受的小体积消费品；具体时效与限制以实际产品和渠道为准。",
-          warning: "普通 EMS 邮政包裹约 18-22 天，受国际邮联公约限制，严禁夹带易燃液体、粉末和裸露电池。"
+          warning: "按具体行程确认"
         }
       ],
       faqs: [
@@ -433,7 +434,7 @@ const CENTRAL_ASIA_DATA = {
       headline: "Доставка из Китая в Узбекистан",
       subheadline: "Планируйте автодоставку, железнодорожные и мультимодальные отправки в Ташкент и промышленные регионы с проверкой документов и условий на стороне назначения.",
       transitWindow: "Сроки доставки в Узбекистан",
-      transitDays: "18 - 28 дней",
+      transitDays: "Уточнить для выбранного маршрута",
       complianceRowTitle: "Содействие в сертификации GOST-UZ",
       complianceRowVal: "До бронирования",
       solutionsTitle: "Специальные решения для доставки в Узбекистан",
@@ -458,31 +459,31 @@ const CENTRAL_ASIA_DATA = {
       multimodalTable: [
         {
           mode: "Авиадоставка (Экспресс)",
-          days: "4 - 8 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Подходит для срочных промышленных запчастей, оборудования и медицинских товаров.",
           sellingPoint: "Авиаперевозка подходит для срочных отправок, когда подтверждены место на рейсе, документы и условия выдачи в аэропорту назначения.",
           warning: "Налоги рассчитываются от стоимости CIF; минимизируйте объемный вес для оптимизации пошлин."
         },
         {
-          mode: "Автоперевозки (Режим перецепки полуприцепов DDP)",
-          days: "6 - 14 дней",
+          mode: "Условия доставки уточняются",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Очень эффективно для тяжелого оборудования, автокомпонентов и срочных заводских грузов.",
           sellingPoint: "Перецепка и доставка до двери оцениваются по выбранной границе, грузу и фактическому объему услуги в пункте назначения.",
           warning: "Потребуется полная подготовка всех документов до того, как автомобиль прибудет на границу."
         },
         {
           mode: "Железнодорожные и мультимодальные перевозки",
-          days: "14 - 28 дней",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Оптимально для сырья, крупных партий строительных материалов и промышленного оборудования.",
           sellingPoint: "Железнодорожные и мультимодальные маршруты подходят для крупных партий, когда подтверждены график, пропускная способность границы и финальная доставка.",
           warning: "Узбекистан не имеет выхода к морю. Возможны задержки из-за смены колеи и таможенных процедур."
         },
         {
           mode: "Электронная коммерция и EMS",
-          days: "7 - 22 дня",
+          days: "Уточнить для выбранного маршрута",
           suitability: "Для легких потребительских товаров и индивидуальных посылок.",
           sellingPoint: "Вариант для легких потребительских отправлений при подтвержденном приеме товара перевозчиком и каналом назначения.",
-          warning: "Обычная почта EMS идет в среднем 18-22 дня с ограничениями на батареи и жидкости."
+          warning: "Уточните срок для конкретного пункта отправления, назначения и рейса. Отдельно согласуйте забор, таможенное оформление и доставку до адреса."
         }
       ],
       faqs: [
@@ -562,7 +563,7 @@ const UNIVERSAL_REDLINES = {
       },
       {
         id: "03",
-        title: "Реальные решения от двери до двери DDP/DDU",
+        title: "Условия доставки уточняются",
         desc: "Четко определите границы доставки. Откажитесь от ложных схем доставки, когда грузовики останавливаются за пределами городской черты, заставляя клиентов самостоятельно арендовать автопогрузчики и местный транспорт."
       }
     ]
@@ -754,7 +755,7 @@ export default function ShippingCentralAsia() {
 
   const getCountrySpec = (country: EurasiaCountry) =>
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
-  const routeDepthPreview = selectedCountry === 'uzbekistan' && ['en','zh'].includes(activeLang);
+  const routeDepthPreview = selectedCountry === 'uzbekistan';
   const spec = getCountrySpec(selectedCountry);
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
   const corridorUi = EURASIA_UI[activeLang];
@@ -830,7 +831,7 @@ export default function ShippingCentralAsia() {
   const redlines = UNIVERSAL_REDLINES[activeLang] || UNIVERSAL_REDLINES.en;
 
   return (
-    <div className="ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden">
+    <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden country-editorial country-editorial--legacy`}>
       <SEO title={spec.seoTitle} description={spec.seoDesc} />
       <SchemaMarkup
         type="Service"
@@ -905,7 +906,7 @@ export default function ShippingCentralAsia() {
                     <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.routeBasis}</span>
                     <h2 className="mt-2 text-2xl font-black text-white">{corridor.name}</h2>
                   </div>
-                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{routeDepthPreview ? (activeLang==='zh'?'按具体路线安排':'Route-specific timing') : corridor.transitDays}</span>
+                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{routeDepthPreview ? routePlanningUi(activeLang)[2] : corridor.transitDays}</span>
                 </div>
                 <dl className="divide-y divide-white/[0.1]">
                   <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.entryGateway}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.gateway}</dd></div>
@@ -918,7 +919,7 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
-        {routeDepthPreview && <RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
 
         <FreightRouteMap variant={selectedCountry === 'uzbekistan' ? 'uzbekistan' : 'central-asia'} />
@@ -945,7 +946,7 @@ export default function ShippingCentralAsia() {
                       <span className="mt-2 block text-xs leading-relaxed text-slate-400">{item.gateway}</span>
                     </span>
                     <span className="flex flex-col items-end justify-between text-right">
-                      <span className="font-mono text-xs font-bold text-slate-200">{routeDepthPreview && country==='uzbekistan' ? (activeLang==='zh'?'铁路 / 公路':'Rail / road') : item.transitDays}</span>
+                      <span className="font-mono text-xs font-bold text-slate-200">{routeDepthPreview && country==='uzbekistan' ? routePlanningUi(activeLang)[3] : item.transitDays}</span>
                       <ArrowUpRight className={`h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${isActive ? 'text-[#f2a47f]' : 'text-slate-500'}`} aria-hidden="true" />
                     </span>
                   </button>
@@ -960,7 +961,7 @@ export default function ShippingCentralAsia() {
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,.95fr)] lg:items-end">
               <div className="max-w-3xl">
                 <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{delayDiagnostic.scope}</p>
-                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{routeDepthPreview ? (activeLang==='zh'?'哪些环节会影响到塔什干的交货时间？':'What affects the delivery date in Tashkent?') : delayDiagnostic.title}</h2>
+                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{routeDepthPreview ? routePlanningUi(activeLang)[4] : delayDiagnostic.title}</h2>
                 <p className="mt-5 max-w-[66ch] text-sm font-medium leading-relaxed text-slate-300 md:text-base">{delayDiagnostic.intro}</p>
               </div>
               <div className="border-y border-white/[0.14] font-mono text-xs font-bold">
@@ -1006,7 +1007,7 @@ export default function ShippingCentralAsia() {
         <section className="border-b border-white/[0.08] py-12" aria-labelledby="eurasia-evidence-title">
           <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(250px,.7fr)_minmax(0,1.3fr)] lg:px-8">
             <div>
-              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{routeDepthPreview ? (activeLang==='zh'?'订舱前的路线与文件准备':'Route and document preparation') : corridorUi.routeEvidence}</h2>
+              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{routeDepthPreview ? routePlanningUi(activeLang)[5] : corridorUi.routeEvidence}</h2>
               <p className="mt-3 text-sm leading-relaxed text-slate-400">{corridorUi.routeEvidenceBody}</p>
             </div>
             <div className="divide-y divide-white/[0.12] border-y border-white/[0.12]">
@@ -1465,7 +1466,7 @@ export default function ShippingCentralAsia() {
         </section>
 
       <CountryCargoPlanning country={selectedCountry} countryName={countryLabel(selectedCountry)} />
-      </main>
+      <FreightRelatedLinks country={selectedCountry} locale={activeLang}/></main>
 
       <Footer />
 

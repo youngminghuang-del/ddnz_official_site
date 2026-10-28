@@ -1,0 +1,418 @@
+{
+  "en": {
+    "india": {
+      "title": "Choose the Indian gateway before packing the shipment",
+      "intro": "Match product acceptance, discharge port and final receiving address.",
+      "routes": [
+        [
+          "China → Nhava Sheva / Mundra",
+          "Sea freight comparison",
+          "Ask the importer to confirm the permitted entry point for the exact goods, then compare available FCL or LCL services and destination charges."
+        ],
+        [
+          "Port → inland depot or warehouse",
+          "Rail / road enquiry",
+          "Name the inland depot or address. Agree where clearance and release occur, then include terminal collection and final delivery."
+        ],
+        [
+          "Samples → confirmed Indian airport",
+          "Separate air quotation",
+          "Compare chargeable weight and available flights. Sample status does not remove product-specific import checks."
+        ]
+      ],
+      "arrivalTitle": "Keep the packing decision tied to the product",
+      "arrival": "For used clothing, shoes or bags, identify category, condition and intended use before compressing the load. Keep bale marks aligned with the packing list.",
+      "cargo": "Send supplier cities, ready dates, package dimensions, gross weights, importer contact and the final address. Identify mixed categories and batteries separately.",
+      "note": "The quotation confirms carrier acceptance, schedule and handover scope. No fixed transit time or automatic import eligibility is promised."
+    },
+    "pakistan": {
+      "title": "Karachi Port or Port Qasim, then where?",
+      "intro": "Confirm the named discharge terminal and the complete journey to the buyer.",
+      "routes": [
+        [
+          "China → Karachi Port / Port Qasim",
+          "FCL / LCL comparison",
+          "Compare available sailings, terminal charges and release arrangements for the same cargo. The two gateways are not interchangeable collection points."
+        ],
+        [
+          "Port → Lahore / Faisalabad",
+          "Separate inland quotation",
+          "Provide the actual address and ask for the offered road or rail plan. Agree clearance location, transfers, unloading and container return."
+        ],
+        [
+          "Samples → confirmed Pakistani airport",
+          "Separate air quotation",
+          "Match the airport to the receiving city; compare chargeable weight, release and local delivery separately from the bulk order."
+        ]
+      ],
+      "arrivalTitle": "Keep handling records connected to each bale",
+      "arrival": "For sorted used goods, record category, condition, bale number and weight. Have the importer confirm classification and current acceptance before loading.",
+      "cargo": "Send supplier cities, ready dates, package dimensions, gross weights, importer contact and the final address. Identify mixed categories and batteries separately.",
+      "note": "The quotation confirms carrier acceptance, schedule and handover scope. No fixed transit time or automatic import eligibility is promised."
+    }
+  },
+  "zh": {
+    "india": {
+      "title": "先确定印度入境口岸，再安排打包出运",
+      "intro": "把货物准入、卸货港和最终收货地址一起核对。",
+      "routes": [
+        [
+          "中国 → 那瓦舍瓦 / 蒙德拉",
+          "海运方案比较",
+          "先请进口方确认具体货物适用的入境口岸，再比较可订整柜、拼箱及目的地费用。"
+        ],
+        [
+          "到港 → 内陆场站或仓库",
+          "铁路 / 公路询价",
+          "写明场站名称或实际地址，约定在哪清关和放货，再核场站提货及末端配送。"
+        ],
+        [
+          "样品 → 确认后的印度机场",
+          "单独比较空运",
+          "比较计费重量与可订航班；作为样品寄送也要核对产品适用的进口条件。"
+        ]
+      ],
+      "arrivalTitle": "打包方式与具体货类一起确认",
+      "arrival": "二手服装、鞋子和箱包先分清品类、成色和用途，再安排压缩打包；货包标识须对应装箱单。",
+      "cargo": "提供供应商城市、货好日期、包装尺寸、毛重、进口方联系人和最终地址。混装品类及含电池产品单独列明。",
+      "note": "承运条件、班次和交接范围随报价确认，不承诺固定天数或自动取得进口资格。"
+    },
+    "pakistan": {
+      "title": "卡拉奇港还是卡西姆港，之后送到哪里？",
+      "intro": "明确卸货码头，再比较到买方收货点的完整运输安排。",
+      "routes": [
+        [
+          "中国 → 卡拉奇港 / 卡西姆港",
+          "整柜 / 拼箱比较",
+          "对同一批货比较可订船期、码头费用和放货安排。两个港口不能视为同一个提货点。"
+        ],
+        [
+          "到港 → 拉合尔 / 费萨拉巴德",
+          "内陆段单独报价",
+          "提供实际地址，询明可安排的公路或铁路方案；约定清关地点、中转、卸货和还箱责任。"
+        ],
+        [
+          "样品 → 确认后的巴基斯坦机场",
+          "单独比较空运",
+          "按收货城市选择机场，与大货分开比较计费重量、机场放货及当地配送。"
+        ]
+      ],
+      "arrivalTitle": "搬运记录对应到每个货包",
+      "arrival": "分拣二手货按品类、成色、包号和重量记录。装柜前由进口方确认归类和当前接收条件。",
+      "cargo": "提供供应商城市、货好日期、包装尺寸、毛重、进口方联系人和最终地址。混装品类及含电池产品单独列明。",
+      "note": "承运条件、班次和交接范围随报价确认，不承诺固定天数或自动取得进口资格。"
+    }
+  },
+  "es": {
+    "india": {
+      "title": "Definir la entrada en India antes de embalar",
+      "intro": "Relacionar admisibilidad, puerto y dirección final.",
+      "routes": [
+        [
+          "China → Nhava Sheva / Mundra",
+          "Comparar flete marítimo",
+          "El importador confirma la entrada permitida para el producto; después, comparar FCL, LCL y gastos de destino."
+        ],
+        [
+          "Puerto → terminal interior o almacén",
+          "Consultar tren / carretera",
+          "Indicar terminal o dirección; acordar despacho y liberación, recogida y entrega final."
+        ],
+        [
+          "Muestras → aeropuerto confirmado en India",
+          "Cotización aérea separada",
+          "Comparar peso facturable y vuelos. Ser muestra no elimina las verificaciones de importación del producto."
+        ]
+      ],
+      "arrivalTitle": "Adaptar el embalaje a la mercancía",
+      "arrival": "Para ropa, calzado o bolsos usados, definir categoría, estado y uso antes de comprimir. Relacionar marcas de fardos y lista de empaque.",
+      "cargo": "Enviar ciudades de proveedores, fechas, medidas, pesos, contacto importador y dirección. Separar categorías mezcladas y baterías.",
+      "note": "El presupuesto confirma aceptación, salida y entrega; no garantiza plazo fijo ni autorización automática de importación."
+    },
+    "pakistan": {
+      "title": "¿Puerto de Karachi o Port Qasim, y después?",
+      "intro": "Precisar terminal y recorrido hasta el comprador.",
+      "routes": [
+        [
+          "China → Karachi / Port Qasim",
+          "Comparar FCL / LCL",
+          "Comparar salidas, gastos de terminal y liberación para la misma carga. Son puntos de recogida diferentes."
+        ],
+        [
+          "Puerto → Lahore / Faisalabad",
+          "Cotizar el tramo interior",
+          "Enviar dirección y consultar opción por carretera o tren; acordar despacho, traslados, descarga y devolución del contenedor."
+        ],
+        [
+          "Muestras → aeropuerto confirmado en Pakistán",
+          "Cotización aérea separada",
+          "Elegir según la ciudad receptora; comparar peso, liberación y entrega aparte del pedido grande."
+        ]
+      ],
+      "arrivalTitle": "Registrar la manipulación por fardo",
+      "arrival": "Para mercancía usada clasificada, registrar categoría, estado, número y peso. El importador confirma clasificación y aceptación antes de cargar.",
+      "cargo": "Enviar ciudades de proveedores, fechas, medidas, pesos, contacto importador y dirección. Separar categorías mezcladas y baterías.",
+      "note": "El presupuesto confirma aceptación, salida y entrega; no garantiza plazo fijo ni autorización automática de importación."
+    }
+  },
+  "pt": {
+    "india": {
+      "title": "Definir a entrada na Índia antes de embalar",
+      "intro": "Alinhe admissibilidade, porto e endereço final.",
+      "routes": [
+        [
+          "China → Nhava Sheva / Mundra",
+          "Comparar frete marítimo",
+          "O importador confirma a entrada permitida para o produto; depois, compare FCL, LCL e custos no destino."
+        ],
+        [
+          "Porto → terminal interior ou armazém",
+          "Consultar ferrovia / estrada",
+          "Informe terminal ou endereço; combine desembaraço, liberação, retirada e entrega final."
+        ],
+        [
+          "Amostras → aeroporto confirmado na Índia",
+          "Cotação aérea separada",
+          "Compare peso tarifável e voos. Ser amostra não elimina verificações de importação do produto."
+        ]
+      ],
+      "arrivalTitle": "Embalagem conforme a mercadoria",
+      "arrival": "Para roupas, calçados ou bolsas usados, defina categoria, estado e uso antes de comprimir. Relacione marcas dos fardos à lista de embalagem.",
+      "cargo": "Envie cidades dos fornecedores, datas, medidas, pesos, contato importador e endereço. Separe categorias misturadas e baterias.",
+      "note": "A cotação confirma aceitação, saída e entrega; não garante prazo fixo nem autorização automática de importação."
+    },
+    "pakistan": {
+      "title": "Porto de Karachi ou Port Qasim, e depois?",
+      "intro": "Defina terminal e percurso até o comprador.",
+      "routes": [
+        [
+          "China → Karachi / Port Qasim",
+          "Comparar FCL / LCL",
+          "Compare saídas, custos de terminal e liberação para a mesma carga. São pontos de retirada distintos."
+        ],
+        [
+          "Porto → Lahore / Faisalabad",
+          "Cotar o trecho interior",
+          "Envie endereço e consulte estrada ou ferrovia; combine desembaraço, transferências, descarga e devolução do contêiner."
+        ],
+        [
+          "Amostras → aeroporto confirmado no Paquistão",
+          "Cotação aérea separada",
+          "Escolha conforme a cidade receptora; compare peso, liberação e entrega separadamente do lote principal."
+        ]
+      ],
+      "arrivalTitle": "Registro de manuseio por fardo",
+      "arrival": "Para usados separados, registre categoria, estado, número e peso. O importador confirma classificação e aceitação antes do embarque.",
+      "cargo": "Envie cidades dos fornecedores, datas, medidas, pesos, contato importador e endereço. Separe categorias misturadas e baterias.",
+      "note": "A cotação confirma aceitação, saída e entrega; não garante prazo fixo nem autorização automática de importação."
+    }
+  },
+  "fr": {
+    "india": {
+      "title": "Définir l’entrée en Inde avant d’emballer",
+      "intro": "Alignez admissibilité, port et adresse finale.",
+      "routes": [
+        [
+          "Chine → Nhava Sheva / Mundra",
+          "Comparer le fret maritime",
+          "L’importateur confirme le point d’entrée autorisé pour le produit ; comparez ensuite FCL, LCL et frais à destination."
+        ],
+        [
+          "Port → dépôt intérieur ou entrepôt",
+          "Demander rail / route",
+          "Indiquez dépôt ou adresse ; convenez du lieu de dédouanement, de la mainlevée, de l’enlèvement et de la livraison."
+        ],
+        [
+          "Échantillons → aéroport confirmé en Inde",
+          "Devis aérien distinct",
+          "Comparez poids taxable et vols. Le statut d’échantillon ne dispense pas des vérifications propres au produit."
+        ]
+      ],
+      "arrivalTitle": "Adapter l’emballage au produit",
+      "arrival": "Pour vêtements, chaussures ou sacs d’occasion, précisez catégorie, état et usage avant compression. Faites correspondre les marques des balles au colisage.",
+      "cargo": "Envoyez villes des fournisseurs, dates, dimensions, poids, contact importateur et adresse. Identifiez catégories mélangées et batteries.",
+      "note": "Le devis confirme acceptation, départ et remise ; aucun délai fixe ni droit d’importation automatique n’est garanti."
+    },
+    "pakistan": {
+      "title": "Port de Karachi ou Port Qasim, puis où ?",
+      "intro": "Définissez terminal et parcours jusqu’à l’acheteur.",
+      "routes": [
+        [
+          "Chine → Karachi / Port Qasim",
+          "Comparer FCL / LCL",
+          "Comparez départs, frais de terminal et mainlevée pour le même chargement. Les lieux d’enlèvement sont distincts."
+        ],
+        [
+          "Port → Lahore / Faisalabad",
+          "Devis intérieur séparé",
+          "Envoyez l’adresse et demandez les options route ou rail ; convenez de la douane, des transferts, du déchargement et du retour du conteneur."
+        ],
+        [
+          "Échantillons → aéroport confirmé au Pakistan",
+          "Devis aérien distinct",
+          "Choisissez selon la ville de réception ; comparez poids, mainlevée et livraison séparément du lot principal."
+        ]
+      ],
+      "arrivalTitle": "Une trace de manutention par balle",
+      "arrival": "Pour l’occasion triée, notez catégorie, état, numéro et poids. L’importateur confirme classement et acceptation avant chargement.",
+      "cargo": "Envoyez villes des fournisseurs, dates, dimensions, poids, contact importateur et adresse. Identifiez catégories mélangées et batteries.",
+      "note": "Le devis confirme acceptation, départ et remise ; aucun délai fixe ni droit d’importation automatique n’est garanti."
+    }
+  },
+  "ru": {
+    "india": {
+      "title": "Выберите пункт ввоза в Индию до упаковки",
+      "intro": "Согласуйте допустимость товара, порт и конечный адрес.",
+      "routes": [
+        [
+          "Китай → Нава-Шева / Мундра",
+          "Сравнение морской доставки",
+          "Импортёр подтверждает разрешённый пункт ввоза товара; затем сравните FCL, LCL и расходы назначения."
+        ],
+        [
+          "Порт → внутренний терминал или склад",
+          "Запрос ж/д / автодоставки",
+          "Укажите терминал или адрес; согласуйте место оформления, выпуск, получение и конечную доставку."
+        ],
+        [
+          "Образцы → согласованный аэропорт Индии",
+          "Отдельный авиарасчёт",
+          "Сравните оплачиваемый вес и рейсы. Образцы также требуют проверки условий ввоза конкретного товара."
+        ]
+      ],
+      "arrivalTitle": "Упаковка зависит от категории товара",
+      "arrival": "Для подержанной одежды, обуви и сумок уточните категорию, состояние и назначение до прессования. Маркировка тюков должна совпадать с упаковочным листом.",
+      "cargo": "Передайте города поставщиков, даты, размеры, вес, контакт импортёра и адрес. Отдельно укажите смешанные категории и батареи.",
+      "note": "Приём, рейс и передача подтверждаются в предложении; фиксированный срок и автоматическое право ввоза не гарантируются."
+    },
+    "pakistan": {
+      "title": "Порт Карачи или Касим, а затем куда?",
+      "intro": "Уточните терминал и весь путь до покупателя.",
+      "routes": [
+        [
+          "Китай → Карачи / Касим",
+          "Сравнение FCL / LCL",
+          "Сравните рейсы, терминальные расходы и выпуск для одного груза. Это разные места получения."
+        ],
+        [
+          "Порт → Лахор / Фейсалабад",
+          "Отдельный внутренний расчёт",
+          "Передайте адрес и запросите авто- или железнодорожный вариант; согласуйте оформление, перегрузки, выгрузку и возврат контейнера."
+        ],
+        [
+          "Образцы → согласованный аэропорт Пакистана",
+          "Отдельный авиарасчёт",
+          "Выбирайте по городу получения; отдельно от основной партии сравните вес, выпуск и доставку."
+        ]
+      ],
+      "arrivalTitle": "Учёт обработки каждого тюка",
+      "arrival": "Для сортированных подержанных товаров укажите категорию, состояние, номер и вес. Импортёр подтверждает классификацию и приём до погрузки.",
+      "cargo": "Передайте города поставщиков, даты, размеры, вес, контакт импортёра и адрес. Отдельно укажите смешанные категории и батареи.",
+      "note": "Приём, рейс и передача подтверждаются в предложении; фиксированный срок и автоматическое право ввоза не гарантируются."
+    }
+  },
+  "tr": {
+    "india": {
+      "title": "Ambalajdan önce Hindistan giriş noktasını belirleyin",
+      "intro": "Ürün kabulünü, limanı ve son adresi birlikte doğrulayın.",
+      "routes": [
+        [
+          "Çin → Nhava Sheva / Mundra",
+          "Deniz taşımasını karşılaştırın",
+          "İthalatçı ürün için izin verilen giriş noktasını doğrular; sonra FCL, LCL ve varış ücretlerini karşılaştırın."
+        ],
+        [
+          "Liman → iç terminal veya depo",
+          "Demiryolu / kara talebi",
+          "Terminali veya adresi belirtin; gümrük yerini, çıkışı, teslim almayı ve son teslimatı kararlaştırın."
+        ],
+        [
+          "Numuneler → doğrulanan Hindistan havalimanı",
+          "Ayrı hava teklifi",
+          "Ücretlendirilen ağırlığı ve uçuşları karşılaştırın. Numune olması ürünün ithalat kontrollerini kaldırmaz."
+        ]
+      ],
+      "arrivalTitle": "Ambalajı ürüne göre belirleyin",
+      "arrival": "İkinci el giysi, ayakkabı veya çantada sıkıştırmadan önce kategori, durum ve kullanımı belirleyin. Balya işaretlerini çeki listesiyle eşleştirin.",
+      "cargo": "Tedarikçi şehirlerini, tarihleri, ölçüleri, ağırlıkları, ithalatçı irtibatını ve adresi gönderin. Karışık kategorileri ve bataryaları ayırın.",
+      "note": "Kabul, sefer ve teslim kapsamı teklifte doğrulanır; sabit süre veya otomatik ithalat hakkı taahhüt edilmez."
+    },
+    "pakistan": {
+      "title": "Karaçi Limanı mı, Port Qasim mi; sonra nereye?",
+      "intro": "Terminali ve alıcıya kadar tüm yolu belirleyin.",
+      "routes": [
+        [
+          "Çin → Karaçi / Port Qasim",
+          "FCL / LCL karşılaştırması",
+          "Aynı yük için seferleri, terminal ücretlerini ve çıkışı karşılaştırın. Teslim alma noktaları farklıdır."
+        ],
+        [
+          "Liman → Lahor / Faisalabad",
+          "Ayrı iç taşıma teklifi",
+          "Adresi gönderip kara veya demiryolu seçeneğini sorun; gümrük, aktarma, boşaltma ve konteyner iadesini kararlaştırın."
+        ],
+        [
+          "Numuneler → doğrulanan Pakistan havalimanı",
+          "Ayrı hava teklifi",
+          "Alıcı şehre göre seçin; ağırlık, çıkış ve teslimatı ana partiden ayrı karşılaştırın."
+        ]
+      ],
+      "arrivalTitle": "Her balya için elleçleme kaydı",
+      "arrival": "Ayrıştırılmış ikinci el mallarda kategori, durum, numara ve ağırlığı kaydedin. İthalatçı yükleme öncesi sınıflandırma ve kabulü doğrular.",
+      "cargo": "Tedarikçi şehirlerini, tarihleri, ölçüleri, ağırlıkları, ithalatçı irtibatını ve adresi gönderin. Karışık kategorileri ve bataryaları ayırın.",
+      "note": "Kabul, sefer ve teslim kapsamı teklifte doğrulanır; sabit süre veya otomatik ithalat hakkı taahhüt edilmez."
+    }
+  },
+  "ar": {
+    "india": {
+      "title": "حدد منفذ الدخول إلى الهند قبل التغليف",
+      "intro": "اربط قبول المنتج بميناء التفريغ والعنوان النهائي.",
+      "routes": [
+        [
+          "الصين ← نهافا شيفا / موندرا",
+          "مقارنة الشحن البحري",
+          "يؤكد المستورد منفذ الدخول المسموح للمنتج، ثم تُقارن الحاوية الكاملة والشحن الجزئي ورسوم الوجهة."
+        ],
+        [
+          "الميناء ← محطة داخلية أو مستودع",
+          "طلب نقل بالقطار / الشاحنة",
+          "حدد المحطة أو العنوان، واتفق على مكان التخليص والإفراج والاستلام والتسليم النهائي."
+        ],
+        [
+          "عينات ← مطار مؤكد في الهند",
+          "عرض جوي منفصل",
+          "قارن الوزن المحتسب والرحلات؛ صفة العينة لا تلغي التحقق من شروط استيراد المنتج."
+        ]
+      ],
+      "arrivalTitle": "اربط التغليف بفئة البضاعة",
+      "arrival": "للملابس والأحذية والحقائب المستعملة، حدد الفئة والحالة والاستخدام قبل الضغط. طابق علامات البالات مع قائمة التعبئة.",
+      "cargo": "أرسل مدن الموردين والمواعيد والأبعاد والأوزان وبيانات المستورد والعنوان. حدد الفئات المختلطة والبطاريات منفصلة.",
+      "note": "يؤكد العرض القبول والرحلة ونطاق التسليم؛ لا يضمن مدة ثابتة أو أهلية استيراد تلقائية."
+    },
+    "pakistan": {
+      "title": "ميناء كراتشي أم ميناء قاسم، وإلى أين بعده؟",
+      "intro": "حدد محطة التفريغ والمسار الكامل إلى المشتري.",
+      "routes": [
+        [
+          "الصين ← كراتشي / قاسم",
+          "مقارنة حاوية كاملة / شحن جزئي",
+          "قارن الرحلات ورسوم المحطة والإفراج للشحنة نفسها. الميناءان نقطتا استلام مختلفتان."
+        ],
+        [
+          "الميناء ← لاهور / فيصل آباد",
+          "عرض داخلي منفصل",
+          "أرسل العنوان واسأل عن النقل البري أو بالقطار؛ اتفق على التخليص والنقل اللاحق والتفريغ وإعادة الحاوية."
+        ],
+        [
+          "عينات ← مطار مؤكد في باكستان",
+          "عرض جوي منفصل",
+          "اختر حسب مدينة الاستلام؛ قارن الوزن والإفراج والتسليم منفصلة عن الطلب الكبير."
+        ]
+      ],
+      "arrivalTitle": "سجل المناولة لكل بالة",
+      "arrival": "للبضائع المستعملة المفروزة، سجل الفئة والحالة ورقم البالة ووزنها. يؤكد المستورد التصنيف والقبول قبل التحميل.",
+      "cargo": "أرسل مدن الموردين والمواعيد والأبعاد والأوزان وبيانات المستورد والعنوان. حدد الفئات المختلطة والبطاريات منفصلة.",
+      "note": "يؤكد العرض القبول والرحلة ونطاق التسليم؛ لا يضمن مدة ثابتة أو أهلية استيراد تلقائية."
+    }
+  }
+}

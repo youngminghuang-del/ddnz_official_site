@@ -1,3 +1,4 @@
+import './features/freight/country-editorial.css';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import RouteRecovery, { RouteLoadingFallback } from './components/RouteRecovery';
 import {audioCategoryPaths} from './features/audio/category-routes.mjs';

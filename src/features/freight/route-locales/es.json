@@ -1,0 +1,98 @@
+{
+  "bangladesh": {
+    "title": "¿Transporte marítimo a Chattogram o aéreo a Daca?",
+    "intro": "Elija el punto de llegada junto con la dirección final. El tránsito marítimo termina en puerto; la entrega en Daca requiere despacho y transporte terrestre.",
+    "routes": [
+      [
+        "Ningbo → Chattogram",
+        "Unos 9 días · de puerto a puerto",
+        "El itinerario CCE de PIL indica nueve días. Compare la salida disponible con la fecha en que la carga estará lista."
+      ],
+      [
+        "FCL o LCL → Chattogram",
+        "FCL: 15–30 días · LCL: 19–36 días",
+        "Rangos generales de planificación para Asia meridional; el servicio CCE desde Ningbo es una referencia específica más rápida. Confirme puerto de salida y cierre de recepción del LCL."
+      ],
+      [
+        "Carga aérea → Daca",
+        "Unos 4–9 días",
+        "Referencia de planificación para Asia meridional. Compare vuelos, peso facturable y fecha de recepción; recogida, despacho y entrega se acuerdan por separado."
+      ]
+    ],
+    "arrivalTitle": "De Chattogram al almacén receptor",
+    "arrival": "Para entregar en Daca, facilite dirección, contacto del importador y medios de descarga. Cotice conjuntamente operaciones portuarias, despacho y trayecto terrestre, con responsabilidades claras.",
+    "cargo": "Para fundas y protectores de pantalla, indique cajas, medidas embaladas y peso bruto. Separe los productos con batería y la maquinaria en la lista de empaque."
+  },
+  "uzbekistan": {
+    "title": "Compare ferrocarril y carretera según la ciudad de salida",
+    "intro": "El tren desde Xi’an y el camión recogido en Jiaozhou tienen puntos de partida distintos. Compare el recorrido completo hasta el punto acordado en Taskent.",
+    "routes": [
+      [
+        "Xi’an → Khorgos → Taskent",
+        "5–6 días · recorrido ferroviario publicado",
+        "El servicio expreso inaugurado en enero de 2025 comunicó este recorrido vía Kazajistán, desde Xi’an. La recogida en fábrica y la entrega final son etapas adicionales."
+      ],
+      [
+        "Jiaozhou → Khorgos → Taskent",
+        "Carretera · caso de carga existente",
+        "El registro inferior muestra cajas sujetas para este trayecto y recogida en almacén de destino. Es un envío distinto del ejemplo ferroviario."
+      ],
+      [
+        "Carga consolidada o camión exclusivo",
+        "Camión exclusivo: 7–10 días · compartido: 22–30 días",
+        "Rangos iniciales desde la salida en China hacia Taskent. Confirme ciudad, paso fronterizo y punto de entrega; la recogida y la espera de consolidación afectan al plazo total."
+      ]
+    ],
+    "arrivalTitle": "¿Llegada a estación, recogida en almacén o entrega?",
+    "arrival": "Facilite la dirección y confirme si el importador recoge en un almacén aduanero. Incluya operaciones fronterizas, despacho y reparto al acordar la fecha de entrega.",
+    "cargo": "Para equipos de cocina, maquinaria alimentaria o piezas de vehículos, indique medidas embaladas, peso bruto, puntos de izado y apilabilidad. Declare las baterías por separado."
+  },
+  "peru": {
+    "title": "Chancay o Callao: compare también el trayecto hasta Lima",
+    "intro": "Elija puerto considerando la dirección y el coste total en destino. La travesía marítima es solo una parte de la entrega de carga pesada.",
+    "routes": [
+      [
+        "Shanghái → Chancay",
+        "Unos 23 días · travesía marítima",
+        "La información publicada en 2025 sobre este corredor directo indica unos 23 días. Es una referencia de esta ruta, sin despacho ni entrega en Perú."
+      ],
+      [
+        "FCL o LCL → Callao / Chancay",
+        "FCL: 25–50 días · LCL: 30–58 días",
+        "Rangos generales para América Latina según puerto chino y salida. El corredor directo Shanghái–Chancay es una referencia más rápida y separada. Para baldosas, compare peso/volumen y gastos en destino."
+      ],
+      [
+        "Carga aérea → Lima",
+        "Unos 4–11 días",
+        "Rango inicial para América Latina. Compare vuelo y peso facturable; cotice por separado la liberación y el transporte del aeropuerto al almacén."
+      ]
+    ],
+    "arrivalTitle": "Del puerto al almacén o la obra en Lima",
+    "arrival": "Antes de reservar, confirme dirección, acceso de camiones, equipos de descarga y cita. Compare con el importador estos costes para ambos puertos.",
+    "cargo": "Para baldosas, indique dimensiones y peso bruto de los palés y si pueden apilarse. Para equipos de cocina, añada puntos de izado y embalajes que deban mantenerse verticales."
+  },
+  "brazil": {
+    "title": "Brasil por mar o aire: planifique también la entrega interior",
+    "intro": "Parta del puerto de salida en China, el importador brasileño y la ciudad receptora. Compare el transporte hasta el punto de entrega acordado.",
+    "routes": [
+      [
+        "China → Santos → São Paulo",
+        "Shanghái: unos 37 días · Shekou: unos 33 días",
+        "Referencias de puerto a puerto del plan ASAS2 de Maersk de 2025. Compare la salida elegida y añada despacho, terminal y transporte terrestre hasta la dirección final."
+      ],
+      [
+        "Consolidación en China → Santos",
+        "LCL: unos 30–58 días",
+        "Rango general para América Latina. Consolide pedidos con una lista de empaque y acuerde cierre de recepción y liberación en destino."
+      ],
+      [
+        "Carga aérea → São Paulo",
+        "Unos 4–11 días",
+        "Rango general para América Latina. Compare vuelos, peso facturable y gestión de liberación del importador; acuerde la entrega interior antes del despacho de origen."
+      ]
+    ],
+    "arrivalTitle": "¿Adónde va la carga después de Santos?",
+    "arrival": "Un almacén, un distribuidor y una instalación pueden tener condiciones de recepción distintas. Facilite dirección, horarios y medios de descarga para cotizar el trayecto adecuado.",
+    "cargo": "Separe accesorios de teléfono, productos eléctricos y maquinaria alimentaria o de cocina. Indique modelos, cantidades, medidas embaladas, pesos brutos y baterías, cuando corresponda."
+  }
+}

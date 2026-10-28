@@ -477,7 +477,10 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [product, setProduct] = useState('Other');
-  const [notes, setNotes] = useState('');
+  const [notes, setNotes] = useState(() => attributionParams.get('notes')?.slice(0, 8000) || '');
+  useEffect(() => {
+    setNotes(attributionParams.get('notes')?.slice(0, 8000) || '');
+  }, [attributionParams]);
   const [contactError, setContactError] = useState(false);
 
   useEffect(() => {

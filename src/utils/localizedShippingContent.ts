@@ -33,7 +33,7 @@ const copy = {
     faqs: [
       ['Какие документы необходимо проверить до отправки?', 'Проверьте коносамент или авианакладную, коммерческий счёт, упаковочный лист, данные получателя, описание товара и специальные документы вместе с импортёром.'],
       ['Как выбрать маршрут и пункт прибытия?', (destination: string) => `Выбор зависит от расписания, типа груза, местонахождения получателя и условий обработки в ${destination}. Маршрут подтверждается до бронирования.`],
-      ['Можно ли организовать доставку DDP или DDU?', 'Возможность зависит от товара, импортёра и местных правил. До бронирования письменно фиксируются налоги, исключения и точный объём услуги.'],
+      ['Можно ли организовать доставку DDP или DAP?', 'Возможность зависит от товара, импортёра и местных правил. До бронирования письменно фиксируются налоги, исключения и точный объём услуги.'],
     ],
     redlineTitle: 'Контрольный список перед отправкой',
     redlineSubtitle: 'Проверьте груз, документы, упаковку и границы услуги до бронирования.',
@@ -66,7 +66,7 @@ const copy = {
     faqs: [
       ['Quels documents vérifier avant l’expédition ?', 'Vérifiez le connaissement ou la LTA, la facture, la liste de colisage, le destinataire, la description du produit et les documents spécifiques avec l’importateur.'],
       ['Comment choisir l’itinéraire et le point d’arrivée ?', (destination: string) => `Le choix dépend de l’horaire, du fret, de la localisation du destinataire et des opérations à ${destination}. L’itinéraire est confirmé avant réservation.`],
-      ['Une solution DDP ou DDU est-elle possible ?', 'La faisabilité dépend du produit, de l’importateur et des règles locales. Les taxes, exclusions et responsabilités doivent être confirmées par écrit.'],
+      ['Une solution DDP ou DAP est-elle possible ?', 'La faisabilité dépend du produit, de l’importateur et des règles locales. Les taxes, exclusions et responsabilités doivent être confirmées par écrit.'],
     ],
     redlineTitle: 'Liste de contrôle avant expédition',
     redlineSubtitle: 'Vérifiez le fret, les documents, l’emballage et le périmètre de service avant réservation.',
@@ -99,7 +99,7 @@ const copy = {
     faqs: [
       ['¿Qué documentos deben revisarse antes del envío?', 'Revise conocimiento o guía aérea, factura, lista de empaque, consignatario, descripción del producto y documentos especiales con el importador.'],
       ['¿Cómo se eligen la ruta y el punto de llegada?', (destination: string) => `La elección depende del horario, la carga, la ubicación del consignatario y las operaciones en ${destination}. La ruta se confirma antes de reservar.`],
-      ['¿Puede organizarse un servicio DDP o DDU?', 'La viabilidad depende del producto, el importador y las reglas locales. Impuestos, exclusiones y responsabilidades deben confirmarse por escrito.'],
+      ['¿Puede organizarse un servicio DDP o DAP?', 'La viabilidad depende del producto, el importador y las reglas locales. Impuestos, exclusiones y responsabilidades deben confirmarse por escrito.'],
     ],
     redlineTitle: 'Lista de control previa al embarque',
     redlineSubtitle: 'Verifique carga, documentos, embalaje y alcance del servicio antes de reservar.',
@@ -132,7 +132,7 @@ const copy = {
     faqs: [
       ['ما المستندات التي يجب مراجعتها قبل الشحن؟', 'راجع بوليصة الشحن أو الشحن الجوي والفاتورة وقائمة التعبئة وبيانات المستلم ووصف المنتج والمستندات الخاصة مع المستورد.'],
       ['كيف يتم اختيار المسار ونقطة الوصول؟', (destination: string) => `يعتمد الاختيار على الجدول ونوع البضائع وموقع المستلم والعمليات في ${destination}. يتم تأكيد المسار قبل الحجز.`],
-      ['هل يمكن ترتيب خدمة DDP أو DDU؟', 'تعتمد الإمكانية على المنتج والمستورد والقواعد المحلية. يجب تأكيد الضرائب والاستثناءات والمسؤوليات كتابياً قبل الحجز.'],
+      ['هل يمكن ترتيب خدمة DDP أو DAP؟', 'تعتمد الإمكانية على المنتج والمستورد والقواعد المحلية. يجب تأكيد الضرائب والاستثناءات والمسؤوليات كتابياً قبل الحجز.'],
     ],
     redlineTitle: 'قائمة التحقق قبل الشحن',
     redlineSubtitle: 'راجع البضائع والمستندات والتغليف ونطاق الخدمة قبل الحجز.',

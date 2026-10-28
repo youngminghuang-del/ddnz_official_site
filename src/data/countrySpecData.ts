@@ -1,3 +1,5 @@
+import fr from './countrySpec.fr.json';
+import ru from './countrySpec.ru.json';
 import es from './countrySpec.es.json';
 import ar from './countrySpec.ar.json';
 export const COUNTRY_SPEC_DATA: Record<
@@ -20,15 +22,15 @@ export const COUNTRY_SPEC_DATA: Record<
 > = {
   'Saudi-Arabia': {
     zh: {
-      specTitle: "沙特 SABER 认证合规保障体系",
+      specTitle: "沙特 SABER 产品与装运文件核对",
       specSub: "对受管制产品，进口商通常需要通过 SABER 完成适用的产品或装运合规程序；具体要求应按 HS 编码、产品类别与当前规则确认。",
-      tab1Title: "Product Certificate (PC) 产品证书",
-      tab1Header: "SABER PC 证书 - 针对具体品类长期备案",
+      tab1Title: "产品证书（PC）",
+      tab1Header: "SABER PC：产品文件核对",
       tab1Desc: "适用范围、所需测试报告、有效期和处理周期会随产品类别及当前 SABER 规则而变化。请由进口商或合格机构确认该产品是否需要 PC 及后续装运文件。",
-      tab2Title: "Shipment Certificate (SC) 批次证书",
-      tab2Header: "SABER SC 证书 - 针对单批次出货清关",
+      tab2Title: "装运证书（SC）",
+      tab2Header: "SABER SC：装运文件核对",
       tab2Desc: "如适用，装运文件通常需要与商业发票、装箱单及产品合规资料保持一致。请在订舱前确认进口商、产品和装运批次所需文件。",
-      redlinesTitle: "沙特海关 5 大清关红线（SABER 审单重点）",
+      redlinesTitle: "发往沙特前的 5 项文件核对",
       redlines: [
         { id: "①", title: "SABER 装运文件", desc: "如产品适用 SABER，请在订舱前由进口商或合格机构确认 PC、SC 及装运文件的适用性和完成节点，并预留目的港操作时间。" },
         { id: "②", title: "原产地与产品标识", desc: "原产地、标签和包装要求会因货物类别而异。应按适用法规和进口商要求，在出运前核对标识方式与商业文件的一致性。" },
@@ -37,7 +39,7 @@ export const COUNTRY_SPEC_DATA: Record<
         { id: "⑤", title: "SASO 能效与产品规则", desc: "制冷、空调、照明等产品可能适用能效或产品合规要求。请按 HS 编码、产品规格和最新目的地规则进行核对。" }
       ],
       guideTitle: "沙特专线物流实战操作守则",
-      guideSub: "高能避坑指南，沙特专线全链路控制要点，保障货款与货物安全。",
+      guideSub: "订舱前核对文件、包装和交付安排，并确认各环节责任。",
       guideCards: [
         {
           title: "订舱审单与清关资料",
@@ -54,15 +56,15 @@ export const COUNTRY_SPEC_DATA: Record<
       ]
     },
     en: {
-      specTitle: "Saudi Arabia SABER Compliance Protection",
+      specTitle: "Saudi Arabia: SABER product and shipment documents",
       specSub: "For regulated products, importers may need to complete the applicable product or shipment conformity process through SABER. Requirements should be confirmed by HS code, product category and the current rule set.",
       tab1Title: "Product Certificate (PC)",
-      tab1Header: "SABER PC - Long-term Product Registration",
+      tab1Header: "SABER PC: product documentation",
       tab1Desc: "Scope, test reports, validity and processing time vary by product category and the current SABER rules. Confirm with the importer or a qualified provider whether a PC and subsequent shipment documents apply.",
       tab2Title: "Shipment Certificate (SC)",
-      tab2Header: "SABER SC - Single Batch Clearance Certificate",
+      tab2Header: "SABER SC: shipment documentation",
       tab2Desc: "Where applicable, shipment documentation should align with the commercial invoice, packing list and product-conformity records. Confirm the documentation needed for the importer, product and shipment before booking.",
-      redlinesTitle: "Saudi Customs 5 Major Redlines (SABER Priority)",
+      redlinesTitle: "Five checks before shipping to Saudi Arabia",
       redlines: [
         { id: "①", title: "SABER Shipment Documents", desc: "Where SABER applies, confirm with the importer or qualified provider which PC, SC and shipment documents are required, and complete the review before booking." },
         { id: "②", title: "Origin & Product Marking", desc: "Origin, label and packaging requirements vary by product category. Verify the required marking method and its consistency with commercial documents before shipment." },
@@ -71,7 +73,7 @@ export const COUNTRY_SPEC_DATA: Record<
         { id: "⑤", title: "SASO Energy & Product Rules", desc: "Refrigeration, air conditioning and lighting products may be subject to energy-efficiency or product-conformity requirements. Check by HS code, product specification and current destination rule." }
       ],
       guideTitle: "Saudi Arabia Logistics Practical Guide",
-      guideSub: "Frictionless delivery protocols for reliable freight transit and clearance matching.",
+      guideSub: "Confirm documents, packing and delivery responsibilities before booking.",
       guideCards: [
         {
           title: "Booking & Documentation Validation",
@@ -87,86 +89,20 @@ export const COUNTRY_SPEC_DATA: Record<
         }
       ]
     },
-    ru: {
-      specTitle: "Система соответствия SABER в Саудовской Аравии",
-      specSub: "Согласно директивам таможни и стандартов Саудовской Аравии (SASO), все подконтрольные товары должны быть зарегистрированы в системе SABER до прибытия, иначе импорт будет заблокирован!",
-      tab1Title: "Product Certificate (PC)",
-      tab1Header: "SABER PC - Долгосрочная регистрация продукта",
-      tab1Desc: "Регистрация продукта действительна в течение 1 года для конкретной категории. Оформляется на основе протоколов испытаний за 2-4 рабочих дня. Наличие активного сертификата PC является обязательным условием для оформления SC.",
-      tab2Title: "Shipment Certificate (SC)",
-      tab2Header: "SABER SC - Сертификат на разовую партию груза",
-      tab2Desc: "Требуется для каждой отдельной поставки. Оформляется на портале SABER после проверки инвойса, упаковочного листа и активного сертификата PC.",
-      redlinesTitle: "5 критических требований таможни Саудовской Аравии",
-      redlines: [
-        { id: "①", title: "Сроки оформления SC", desc: "Сертификат SC должен быть активирован до прибытия судна в порт. В противном случае грозят крупные штрафы за демередж." },
-        { id: "②", title: "Постоянная гравировка происхождения", desc: "На каждом изделии и коробке должна быть выгравирована или напечатана надпись 'Made in China'. Бумажные наклейки запрещены." },
-        { id: "③", title: "Инструкции на арабском языке", desc: "Предупреждающие этикетки и инструкции по эксплуатации должны содержать текст на арабском или арабском/английском языках." },
-        { id: "④", title: "Регистрация в SFDA", desc: "Косметика, продукты питания и медицинские товары контролируются SFDA. Требуется предварительная регистрация перед отправкой." },
-        { id: "⑤", title: "Энергоэффективность SASO", desc: "Кондиционеры, холодильники и освещение должны иметь сертификаты энергоэффективности SASO. Лампы накаливания запрещены к ввозу." }
-      ],
-      guideTitle: "Практическое руководство по логистике в Саудовской Аравии",
-      guideSub: "Инструкции для обеспечения бесперебойной доставки и комплаенса.",
-      guideCards: [
-        {
-          title: "Проверка документов и бронирование",
-          desc: "В коносаменте должен быть указан реальный налоговый номер получателя в Саудовской Аравии. Данные в инвойсе должны на 100% совпадать со сведениями в SABER."
-        },
-        {
-          title: "Происхождение и фумигация древесины",
-          desc: "Маркировка происхождения должна строго соответствовать 'Made in China'. Любая деревянная упаковка должна иметь штамп фумигации IPPC."
-        },
-        {
-          title: "Сроки доставки и праздники",
-          desc: "Транзит из Китая в Джидду занимает 18-25 дней. Сделайте 'четыре фотографии' при погрузке для фиксации состояния груза. Планируйте отправку за месяц до Ид."
-        }
-      ]
-    },
-    fr: {
-      specTitle: "Protection de conformité SABER Arabie Saoudite",
-      specSub: "Selon les directives de la douane saoudienne (SASO), tous les produits contrôlés exportés en Arabie Saoudite doivent être enregistrés sur le portail SABER sous peine de refus d'entrée !",
-      tab1Title: "Product Certificate (PC)",
-      tab1Header: "SABER PC - Enregistrement de produit à long terme",
-      tab1Desc: "Enregistrement de produit valable 1 an par catégorie. Basé sur des rapports d'essais en laboratoire, délivré en 2-4 jours ouvrables. Le PC actif est la condition préalable absolue pour le Shipment Certificate (SC).",
-      tab2Title: "Shipment Certificate (SC)",
-      tab2Header: "SABER SC - Certificat d'expédition par lot unique",
-      tab2Desc: "Requis pour chaque envoi. Délivré sur le portail SABER après validation de la facture d'expédition, de la liste de colisage et du PC actif.",
-      redlinesTitle: "Douanes saoudiennes : 5 lignes rouges majeures",
-      redlines: [
-        { id: "①", title: "Délai SABER SC", desc: "Le SC doit être émis avant l'amarrage du navire. Sinon, la cargaison déclenchera de lourdes amendes de stockage et de retard au port." },
-        { id: "②", title: "Gravure d'origine permanente", desc: "Chaque article et boîte doit porter la mention permanente 'Made in China' gravée. Les autocollants adhésifs sont interdits et passibles d'amende." },
-        { id: "③", title: "Manuels et étiquettes en arabe", desc: "Les avertissements et les manuels doivent inclure du texte en arabe ou bilingue arabe/anglais sous peine de rejet immédiat." },
-        { id: "④", title: "Enregistrement SFDA obligatoire", desc: "Les cosmétiques, les aliments et les produits médicaux sont contrôlés par la SFDA. Un enregistrement préalable est obligatoire." },
-        { id: "⑤", title: "Étiquettes d'énergie SASO", desc: "La climatisation, la réfrigération et l'éclairage doivent détenir des étiquettes d'énergie SASO. Les lampes à incandescence sont interdites." }
-      ],
-      guideTitle: "Guide pratique logistique Arabie Saoudite",
-      guideSub: "Protocoles d'expédition et de dédouanement rigoureux pour un transit fiable.",
-      guideCards: [
-        {
-          title: "Vérification des documents",
-          desc: "Les connaissements doivent mentionner le numéro de registre commercial réel du destinataire saoudien. Les valeurs doivent correspondre à 100% à l'enregistrement SABER."
-        },
-        {
-          title: "Made in China & Fumigation du bois",
-          desc: "L'origine déclarée doit être strictement 'Made in China'. Les emballages en bois doivent porter les tampons de fumigation IPPC sous peine de destruction immédiate."
-        },
-        {
-          title: "Transit et planification des vacances",
-          desc: "Le transit de Chine vers Djeddah est de 18-25 jours. Prenez 'quatre photos' au chargement pour éviter les litiges. Planifiez les envois 1 mois avant l'Aïd."
-        }
-      ]
-    }
+    ru: ru['Saudi-Arabia'],
+    fr: fr['Saudi-Arabia']
   },
   'UAE': {
     zh: {
-      specTitle: "阿联酋大宗货物与新能源项目物流通途",
-      specSub: "阿联酋（迪拜/杰贝阿里）作为中东首要自由贸易港，对于跨境电商（FBA/FBM）、大宗建材及新能源车辆/锂电池货品具有极高的通关效率，但也实施了严苛的产地和安全合规审查。",
-      tab1Title: "Special Project & Bulk Cargo 大宗工程货物流",
-      tab1Header: "特殊项目与大宗建材物流 - 针对工程建材与特种柜",
-      tab1Desc: "针对大型建筑工程、钢材、新能源汽车、锂电池及机械设备出口。提供框架柜、开顶柜等特种柜订舱与加固，以及到杰贝阿里港的专业双清门到门、卸货与吊装一站式服务。",
-      tab2Title: "Free Zone (JAFZA) Logistics 自由贸易区保税物流",
-      tab2Header: "迪拜杰贝阿里自贸区 (JAFZA) - 免税清关转口保税",
-      tab2Desc: "针对免税自贸区入仓及国际转口贸易客户。货物进入 JAFZA 自由贸易区保税仓库，可免征进口关税和增值税，提供保税仓储、贴签分拣及面向GCC海合会国家的再出口拼箱物流。",
-      redlinesTitle: "阿联酋口岸 5 大严控红线（避坑要点）",
+      specTitle: "阿联酋特殊货物与交付准备",
+      specSub: "发往迪拜或杰贝阿里，先核对产品特征、电池信息及收货地点，再确认适用的运输与交付方案。",
+      tab1Title: "重货与项目货",
+      tab1Header: "核对适用的运输设备",
+      tab1Desc: "提供尺寸、重量、吊点及搬运限制。框架柜或开顶柜方案须由承运人审核确认。",
+      tab2Title: "杰贝阿里自贸区（JAFZA）",
+      tab2Header: "确认自贸区交接范围",
+      tab2Desc: "提供收货主体、仓库及所需操作，逐票确认适用程序和税费处理；自贸区地址本身不构成免税保证。",
+      redlinesTitle: "发往阿联酋前的 5 项核对",
       redlines: [
         { id: "①", title: "原产地与产品标识", desc: "进口产品的标识、原产地信息及文件要求应按产品类别、进口商和现行规则确认，并与商业文件保持一致。" },
         { id: "②", title: "新能源与危险品（DG）申报", desc: "锂电池、含电池设备及其他受限货物应按承运人、航空/海运法规和目的地要求进行危险品或敏感货预审；所需测试和安全文件因货物而异。" },
@@ -175,7 +111,7 @@ export const COUNTRY_SPEC_DATA: Record<
         { id: "⑤", title: "HS 编码与申报一致性", desc: "商业发票、装箱单、HS 编码和货物描述应真实、完整且相互一致。品牌货和受监管货物应在出运前做资料核对。" }
       ],
       guideTitle: "阿联酋操作守则与本地配送指南",
-      guideSub: "打通中东首要自由贸易港，让您的跨境出海链路高效顺畅。",
+      guideSub: "逐票明确目的地操作及各环节责任。",
       guideCards: [
         {
           title: "清关资料与提货单核对",
@@ -192,15 +128,15 @@ export const COUNTRY_SPEC_DATA: Record<
       ]
     },
     en: {
-      specTitle: "UAE Bulk Cargo & New Energy Project Logistics Channel",
-      specSub: "UAE routes via Dubai and Jebel Ali can support e-commerce, construction materials and new-energy cargo, subject to product, marking, battery-safety and destination requirements.",
+      specTitle: "UAE special cargo and delivery planning",
+      specSub: "For Dubai or Jebel Ali, review product details, any batteries and the receiving point before selecting a service.",
       tab1Title: "Special Project & Bulk Cargo",
-      tab1Header: "Project & Bulk Materials - Flat Rack & Open Top Solutions",
-      tab1Desc: "Tailored for heavy machinery, structural steel, EVs, lithium batteries, and construction. Providing specialized equipment (Flat Rack, Open Top) shipping, secure rigging, and complete Jebel Ali port clearance.",
+      tab1Header: "Assess the transport equipment required",
+      tab1Desc: "Provide dimensions, weight, lifting points and handling limits. Flat-rack or open-top equipment depends on carrier review and acceptance.",
       tab2Title: "Free Zone (JAFZA) Logistics",
-      tab2Header: "Jebel Ali Free Zone (JAFZA) - Duty-Free Bonded Transshipment",
-      tab2Desc: "Optimized for transshipment and tax-free storage. Ship directly to JAFZA bonded warehouses to defer import tariffs and VAT, enabling cost-effective labeling, inventory split, and re-export to other GCC countries.",
-      redlinesTitle: "UAE Ports 5 Critical Compliance Redlines (Crucial Points)",
+      tab2Header: "Confirm the free-zone handover",
+      tab2Desc: "Identify the consignee, warehouse and requested operations. Confirm the applicable procedures and tax treatment; a free-zone address alone does not guarantee an exemption.",
+      redlinesTitle: "Five checks before shipping to the UAE",
       redlines: [
         { id: "①", title: "Origin & Product Marking", desc: "Product marking, origin information and document requirements should be confirmed by product category, importer and current rules, and kept consistent with commercial documents." },
         { id: "②", title: "New Energy & Dangerous Goods (DG)", desc: "Lithium batteries, battery-containing equipment and other restricted cargo need carrier, transport-regulation and destination pre-review. Required tests and safety documents vary by cargo." },
@@ -209,7 +145,7 @@ export const COUNTRY_SPEC_DATA: Record<
         { id: "⑤", title: "HS Code & Declaration Consistency", desc: "Keep the commercial invoice, packing list, HS code and cargo description accurate and consistent. Brand and regulated cargo should be reviewed before shipment." }
       ],
       guideTitle: "UAE Operational Codes & Last-Mile Delivery",
-      guideSub: "Accelerate your local business operations inside the Gulf's core commerce entry portal.",
+      guideSub: "Confirm local operations and responsibilities for each shipment.",
       guideCards: [
         {
           title: "Clearance Documents & Delivery Orders",
@@ -225,83 +161,17 @@ export const COUNTRY_SPEC_DATA: Record<
         }
       ]
     },
-    ru: {
-      specTitle: "Логистический коридор ОАЭ для крупногабаритных и энергетических проектов",
-      specSub: "ОАЭ (Дубай / Джебель-Али) является главным торговым хабом Ближнего Востока. Он предлагает быструю очистку e-commerce, строительных материалов и электромобилей, но строго контролирует маркировки и аккумуляторы.",
-      tab1Title: "Special Project & Bulk Cargo",
-      tab1Header: "Проектные грузы и спецтехника - Flat Rack и Open Top",
-      tab1Desc: "Решения для тяжелого оборудования, стали, электромобилей, литиевых батарей и стройматериалов. Предоставление спецконтейнеров (Flat Rack, Open Top) и такелажных работ в порту Джебель-Али.",
-      tab2Title: "Free Zone (JAFZA) Logistics",
-      tab2Header: "Свободная зона Джебель-Али (JAFZA) - Беспошлинный транзит",
-      tab2Desc: "Для транзитных грузов и беспошлинного хранения. Доставка напрямую на склады JAFZA без уплаты пошлин и НДС для переупаковки и реэкспорта в страны Персидского залива.",
-      redlinesTitle: "5 критических требований таможни ОАЭ (Ключевые моменты)",
-      redlines: [
-        { id: "①", title: "Физическая проверка маркировок", desc: "Таможня Дубая регулярно досматривает грузы. Маркировка 'Made in China' должна быть нанесена нестираемым способом. Наклейки вызывают штрафы." },
-        { id: "②", title: "Декларирование аккумуляторов и опасных грузов", desc: "Литиевые батареи, электротранспорт и солнечные панели требуют предоставления паспорта безопасности MSDS и отчетов UN38.3." },
-        { id: "③", title: "Весовой контроль на дорогах", desc: "Дорожная полиция ОАЭ жестко штрафует за перегруз осей грузовиков. Нарушения ведут к разгрузке контейнера на посту и штрафам." },
-        { id: "④", title: "Требования к паллетированию для маркетплейсов", desc: "Грузы для складов Amazon FBA и Noon должны быть строго паллетированы и обернуты пленкой по стандартам площадок, иначе грозит возврат." },
-        { id: "⑤", title: "ИИ-анализ таможенных деклараций", desc: "Таможня Дубая использует ИИ для сверки кодов ТН ВЭД и стоимости. Занижение инвойсов ведет к задержкам и внесению в черный список." }
-      ],
-      guideTitle: "Правила операций и доставки в ОАЭ",
-      guideSub: "Ускорьте свой бизнес на главном торговом перекрестке Ближнего Востока.",
-      guideCards: [
-        {
-          title: "Оформление за 24 часа",
-          desc: "Очистка в ОАЭ обычно занимает менее суток. Коносамент должен указывать реального получателя. В отсутствие импортной лицензии мы предоставим DDP D&D."
-        },
-        {
-          title: "Закрепление проектных и опасных грузов",
-          desc: "Крупногабаритные изделия и аккумуляторы должны крепиться в контейнерах сертифицированными стропами и брусьями по международным стандартам IMDG."
-        },
-        {
-          title: "Дистрибуция в ОАЭ и сезонные особенности",
-          desc: "Доставка из Китая в Дубай занимает 15-22 дня. Наш флот доставляет грузы в Абу-Даби, Дубай, Шарджу. Учитывайте задержки во время крупных выставок и Рамадана."
-        }
-      ]
-    },
-    fr: {
-      specTitle: "Logistique de projets et de vrac Émirats Arabes Unis",
-      specSub: "En tant que plaque tournante du commerce, les Émirats Arabes Unis (Dubaï/Jebel Ali) offrent un dédouanement extrêmement rapide pour le commerce électronique, mais imposent des contrôles stricts sur l'origine et les batteries.",
-      tab1Title: "Special Project & Bulk Cargo",
-      tab1Header: "Projets spéciaux et vrac - Solutions Flat Rack et Open Top",
-      tab1Desc: "Conçu pour les machines lourdes, l'acier de construction, les véhicules électriques, les batteries au lithium et la construction. Expédition en Flat Rack/Open Top et manutention portuaire à Jebel Ali.",
-      tab2Title: "Free Zone (JAFZA) Logistics",
-      tab2Header: "Zone franche Jebel Ali (JAFZA) - Transit sous douane hors taxes",
-      tab2Desc: "Optimisé pour le transbordement et le stockage hors taxes. Expédition directe vers les entrepôts JAFZA pour différer les droits de douane et la TVA, idéal pour la réexportation.",
-      redlinesTitle: "Douanes des Émirats : 5 lignes rouges de conformité",
-      redlines: [
-        { id: "①", title: "Contrôle physique du marquage d'origine", desc: "La douane de Dubaï vérifie fréquemment le marquage permanent 'Made in China'. Les autocollants en papier simples déclenchent souvent des amendes." },
-        { id: "②", title: "Batteries au lithium et marchandises dangereuses", desc: "Les batteries et les modules solaires sont classés comme dangereux. Vous devez présenter la fiche MSDS et les rapports UN38.3 en anglais." },
-        { id: "③", title: "Limites de charge par essieu sur route", desc: "L'autorité des transports contrôle strictement le poids des camions. Tout dépassement entraîne des amendes massives et l'immobilisation." },
-        { id: "④", title: "Exigences de palettes e-commerce", desc: "Les envois vers Amazon FBA ou Noon EAU doivent être professionnellement palettisés selon les normes d'emballage strictes, sous peine de refus." },
-        { id: "⑤", title: "Analyse automatisée des tarifs douaniers", desc: "La douane utilise l'IA pour détecter les codes HS erronés ou les valeurs sous-déclarées, plaçant les récidivistes sur une liste noire." }
-      ],
-      guideTitle: "Opérations et livraison du dernier kilomètre aux Émirats",
-      guideSub: "Améliorez l'efficacité de vos flux à l'entrée du commerce régional.",
-      guideCards: [
-        {
-          title: "Dédouanement en 24 Heures",
-          desc: "Les dédouanements se résolvent généralement en moins de 24 heures. Si vous n'avez pas de licence d'importation, utilisez notre procuration DDP."
-        },
-        {
-          title: "Serrage de cargaison de projet",
-          desc: "Les machines lourdes doivent être solidement arrimées avec des sangles en polyester et des cales en bois selon les normes maritimes IMDG."
-        },
-        {
-          title: "Distribution et ralentissements de saison",
-          desc: "Le transit de Chine vers Dubaï prend 15-22 jours. DDNZ livre par camion à Abu Dhabi, Dubaï et Sharjah. Anticipez les ralentissements pendant le Ramadan."
-        }
-      ]
-    }
+    ru: ru['UAE'],
+    fr: fr['UAE']
   },
   'Kuwait': {
     zh: {
       specTitle: "科威特 KUCAS/TABEK 合规与出运规划",
       specSub: "科威特受监管产品可通过 KUCAS/TABEK 体系办理适用的技术评估、检验或放行程序。是否适用及所需资料应按 HS 编码、产品类别与现行规则由进口商确认。",
-      tab1Title: "TER 技术评估报告 (Product Registration)",
+      tab1Title: "技术评估（TER）",
       tab1Header: "技术评估证书 - 用于后续同类产品申报",
       tab1Desc: "科威特公共工业管理局可依据进口商已取得的符合性证书签发技术评估证书，供同一产品后续海关申报使用。所需资料、适用范围和有效性请按当前产品规则确认。",
-      tab2Title: "TIR 技术检验报告 (Batch Clearance)",
+      tab2Title: "技术检验（TIR）",
       tab2Header: "TIR 技术检验报告与放行申请",
       tab2Desc: "如产品适用 TIR 放行程序，进口商通常需提交海关申报信息、TIR 信息、产品信息及规定承诺，并通过平台跟踪申请。是否需要起运前检验、测试或标签核对取决于产品和适用法规。",
       redlinesTitle: "科威特出运前 5 项核对",
@@ -359,79 +229,13 @@ export const COUNTRY_SPEC_DATA: Record<
         },
         {
           title: "In transit and arrival: timing and delivery",
-          desc: "Use the page’s normal transit range for planning and allow buffer time for peak seasons, schedule changes, inspection, public holidays and destination delivery. Loading photos, seals and packing records help with cargo-condition traceability."
+          desc: "Use the itinerary confirmed for this shipment and allow time for inspection, holidays and local delivery. Keep loading photos, seal details and packing records to track cargo condition."
         }
       ]
     },
-    ru: {
-      specTitle: "Соответствие KUCAS/TABEK и планирование доставки в Кувейт",
-      specSub: "Для регулируемых товаров система KUCAS/TABEK может использоваться для технической оценки, инспекции или процедуры выпуска. Импортёр должен подтвердить применимость и документы по коду ТН ВЭД, категории товара и действующим правилам.",
-      tab1Title: "TER Техническая оценка (Product Registration)",
-      tab1Header: "Техническая оценка — для последующих деклараций того же товара",
-      tab1Desc: "Public Authority for Industry может выдать сертификат технической оценки на основании уже полученного импортёром сертификата соответствия для последующих таможенных деклараций того же товара. Подтвердите документы, сферу действия и срок по текущим правилам продукта.",
-      tab2Title: "TIR Техническая инспекция (Batch Clearance)",
-      tab2Header: "Технический отчёт об инспекции и заявка на выпуск",
-      tab2Desc: "Если применяется процедура выпуска на базе TIR, импортёр обычно подаёт данные декларации, сведения TIR, информацию о товаре и предусмотренные обязательства, затем отслеживает заявку в платформе. Требования к инспекции, тестам и маркировке зависят от товара и применимого регулирования.",
-      redlinesTitle: "Пять проверок перед отправкой в Кувейт",
-      redlines: [
-        { id: "①", title: "Проверьте, регулируется ли товар", desc: "По коду ТН ВЭД, категории и актуальным правилам KUCAS/TABEK подтвердите, нужен ли сертификат соответствия, техническая оценка, инспекция или иной документ ведомства." },
-        { id: "②", title: "Согласуйте документы и декларации", desc: "Коммерческий инвойс, упаковочный лист, коносамент, сведения о товаре и данные импортёра должны быть согласованы между собой и с применимыми документами соответствия." },
-        { id: "③", title: "Этикетки, инструкции и технические характеристики", desc: "Для электротоваров, игрушек, строительных материалов и водосберегающей продукции могут действовать отдельные правила. Импортёр должен подтвердить требования к языку, вилке, напряжению, энергоэтикетке и инструкции." },
-        { id: "④", title: "Происхождение и ограниченные товары", desc: "Для импорта в Кувейт требуется ясная информация о стране происхождения. До бронирования подтвердите разрешения и приём груза перевозчиком для запрещённых, ограниченных, опасных и брендовых товаров." },
-        { id: "⑤", title: "Упаковка, вес и операции в пункте назначения", desc: "Уточните требования к деревянной упаковке, весу контейнера, упаковке опасных грузов и внутренней перевозке для конкретного груза, перевозчика и операции в пункте назначения." }
-      ],
-      guideTitle: "Практическое руководство по логистике в Кувейте",
-      guideSub: "Инструкции по минимизации рисков при работе с местными регламентами и ограничениями по весу.",
-      guideCards: [
-        {
-          title: "Ограничения по весу и точность декларирования",
-          desc: "В Кувейте строго контролируют вес контейнеров на дорогах! Лимит для 20-футового контейнера — 22 тонны, для 40-футового — 26 тонн. Данные декларации должны на 100% совпадать с KUCAS."
-        },
-        {
-          title: "PAC получателя и фумигация дерева",
-          desc: "В коносаменте должен быть указан гражданский ID номер получателя PAC. Любая деревянная упаковка должна сопровождаться официальным сертификатом фумигации IPPC."
-        },
-        {
-          title: "Сроки транзита и праздничные дни",
-          desc: "Доставка морем занимает 18-28 дней. Сделайте четыре фотографии при погрузке для фиксации состояния груза. Планируйте логистику заранее из-за каникул во время Ид."
-        }
-      ]
-    },
-    fr: {
-      specTitle: "Conformité KUCAS/TABEK et planification des expéditions vers le Koweït",
-      specSub: "Pour les produits réglementés, le système KUCAS/TABEK peut être utilisé pour l’évaluation technique, l’inspection ou la procédure de libération applicable. L’importateur doit confirmer l’applicabilité et les documents par code HS, catégorie de produit et règles en vigueur.",
-      tab1Title: "TER Évaluation Technique (Product Registration)",
-      tab1Header: "Évaluation technique — pour les déclarations ultérieures du même produit",
-      tab1Desc: "La Public Authority for Industry peut délivrer un certificat d’évaluation technique à partir d’un certificat de conformité déjà obtenu par l’importateur, pour les déclarations douanières ultérieures du même produit. Confirmez les documents, le périmètre et la validité selon les règles actuelles du produit.",
-      tab2Title: "TIR Inspection Technique (Batch Clearance)",
-      tab2Header: "Rapport d’inspection technique et demande de libération",
-      tab2Desc: "Lorsqu’une procédure de libération liée au TIR s’applique, l’importateur soumet généralement les données de déclaration, les détails TIR, les informations produit et les engagements prescrits, puis suit la demande sur la plateforme. L’inspection, les essais et l’étiquetage dépendent du produit et de la règle applicable.",
-      redlinesTitle: "Cinq vérifications avant expédition vers le Koweït",
-      redlines: [
-        { id: "①", title: "Vérifier si le produit est réglementé", desc: "Utilisez le code HS, la catégorie de produit et les règles KUCAS/TABEK actuelles pour confirmer si un certificat de conformité, une évaluation technique, une inspection ou un autre document est nécessaire." },
-        { id: "②", title: "Harmoniser documents et déclarations", desc: "La facture commerciale, la liste de colisage, le connaissement, les informations produit et les données de l’importateur doivent rester cohérents entre eux et avec les documents de conformité applicables." },
-        { id: "③", title: "Étiquettes, manuels et spécifications techniques", desc: "Les produits électriques, jouets, matériaux de construction et produits économes en eau peuvent relever de règles spécifiques. L’importateur doit confirmer la langue, la prise, la tension, l’étiquette énergétique ou le manuel requis." },
-        { id: "④", title: "Origine et marchandises restreintes", desc: "Les importations au Koweït doivent afficher une information claire sur l’origine. Confirmez les autorisations et l’acceptation du transporteur avant réservation pour les marchandises interdites, restreintes, dangereuses ou de marque." },
-        { id: "⑤", title: "Emballage, poids et opérations de destination", desc: "Confirmez l’emballage en bois, le poids du conteneur, l’emballage des marchandises dangereuses et les contraintes de transport intérieur selon la cargaison, le transporteur et l’opération de destination." }
-      ],
-      guideTitle: "Guide pratique de logistique au Koweït",
-      guideSub: "Manuel de mitigation des risques pour naviguer dans les opérations locales, les limites de poids et les réseaux de livraison portuaire.",
-      guideCards: [
-        {
-          title: "Enlèvements et déclarations (anti-pénalité)",
-          desc: "La douane du Koweït applique strictement les limites de poids des conteneurs ! Les conteneurs de 20 pieds sont limités à 22 tonnes, et ceux de 40 pieds à 26 tonnes. Déclarez les noms, valeurs et spécifications avec une exactitude de 100 % pour correspondre à votre certificat KUCAS."
-        },
-        {
-          title: "PAC du destinataire et fumigation du bois",
-          desc: "Les connaissements doivent mentionner le destinataire réel au Koweït et son numéro PAC obligatoire (Public Authority for Civil Information). Pour les emballages en bois, des certificats de fumigation IPPC officiels doivent être présentés."
-        },
-        {
-          title: "Preuve de perte de voyage et ralentissements des fêtes",
-          desc: "Le transit moyen est de 18 à 28 jours. Mettez en œuvre la « vérification en quatre photos » (vide, à moitié chargé, entièrement chargé et serrure de porte scellée) à l'origine comme assurance contre les réclamations pour dommages excessifs aux conteneurs. Planifiez en fonction des ralentissements de l'Aïd."
-        }
-      ]
-    }
+    ru: ru['Kuwait'],
+    fr: fr['Kuwait']
   }
 };
 
-for (const country of ['Saudi-Arabia','Kuwait'] as const) {COUNTRY_SPEC_DATA[country].es=es[country];COUNTRY_SPEC_DATA[country].ar=ar[country];}
+for (const country of ['Saudi-Arabia','UAE','Kuwait'] as const) {COUNTRY_SPEC_DATA[country].es=es[country];COUNTRY_SPEC_DATA[country].ar=ar[country];}

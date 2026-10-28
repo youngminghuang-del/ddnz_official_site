@@ -1,3 +1,6 @@
+import {freightPageInfo,freightPageSchema} from '../src/features/freight/freightPageSchema';
+import FreightRelatedLinks from '../src/features/freight/FreightRelatedLinks';
+import RoutePlanningDepth from '../src/features/freight/RoutePlanningDepth';
 import InductionCatalogue from '../src/features/commercial-kitchen/components/InductionCatalogue';
 import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
 import egyptScooterSchema from '../src/data/egypt-scooter-schema.json';
@@ -809,6 +812,8 @@ function injectSeoMeta(
   seo: SEOItem,
   articleHreflang?: ArticleHreflangSet,
 ): string {
+  const freightInfo=freightPageInfo('/'+relPath,lang);
+  if(freightInfo) seo={...seo,title:freightInfo.title,desc:freightInfo.description};
   let output = htmlContent;
 
   // 1. Update <html lang="..."> attribute
@@ -874,7 +879,7 @@ function injectSeoMeta(
     return `${completeText.trim()}…`;
   };
 
-  const optimizedDesc = optimizeDesc(seo.desc, lang);
+  const optimizedDesc = freightInfo?.description || optimizeDesc(seo.desc, lang);
 
   output = setMetaTag(output, 'title', seo.title);
   output = setMetaTag(output, 'description', optimizedDesc);
@@ -1109,7 +1114,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         }
       ]
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
@@ -1143,7 +1148,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         },
       },
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
@@ -1199,7 +1204,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         },
       ],
     };
-    const schemaJson = JSON.stringify(structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`
@@ -1845,10 +1850,11 @@ function injectStaticRouteContent(
       if (!htmlContent.includes(`/assets/${css}`)) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
     }
   } else if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') {
-    const planning=renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
+    const planning=renderToStaticMarkup(createElement(FreightRelatedLinks,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(RoutePlanningDepth,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
     const meta=seoDataMatrix[relPath]?.[lang];
     staticBody=staticBody?staticBody.replace('</main>',`${planning}</main>`):`<main><h1>${escapeStaticText(meta?.title || 'Envíos de China a Brasil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
   }
+  if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') staticBody = staticBody.replace(/<main([^>]*)>/, '<main$1 class="country-editorial">');
   const articleDiscovery = lang === 'en' && relPath.startsWith('blog/') ? kitchenArticleDiscovery[relPath.slice(5)] || mobileArticleDiscovery[relPath.slice(5)] : undefined;
   if (articleDiscovery) {
     const links = `<section><h2>${escapeStaticText(articleDiscovery.heading || 'Compare equipment for your next order')}</h2>${articleDiscovery.links.map(item => `<p><a href="${escapeStaticText(item.href)}">${escapeStaticText(item.label)}</a></p>`).join('')}</section>`;

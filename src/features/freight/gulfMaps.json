@@ -65,7 +65,7 @@
           "ru": "Пример города доставки · уточните адрес получателя",
           "fr": "Ville de livraison donnée en exemple · confirmez l’adresse de réception",
           "es": "Ciudad de entrega de ejemplo · confirme la dirección de recepción",
-          "pt": "Cidade de entrega exemplificativa · confirme a morada de receção",
+          "pt": "Cidade de entrega exemplificativa · confirme a morada de recebimento",
           "tr": "Örnek teslimat şehri · teslim alma adresini doğrulayın"
         },
         "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"
@@ -82,7 +82,7 @@
       "ru": "Хамад — порт, Доха — пример города доставки. При запросе расчёта уточните адрес получателя.",
       "fr": "Hamad est le port ; Doha est une ville de livraison donnée en exemple. Confirmez l’adresse de réception lors de la demande de devis.",
       "es": "Hamad es el puerto; Doha es una ciudad de entrega de ejemplo. Confirme la dirección de recepción al solicitar un presupuesto.",
-      "pt": "Hamad é o porto; Doha é uma cidade de entrega exemplificativa. Confirme a morada de receção ao pedir um orçamento.",
+      "pt": "Hamad é o porto; Doha é uma cidade de entrega exemplificativa. Confirme a morada de recebimento ao pedir um orçamento.",
       "tr": "Hamad limandır; Doha örnek teslimat şehridir. Teklif isterken teslim alma adresini doğrulayın."
     }
   },
@@ -152,7 +152,7 @@
           "ru": "Пример города доставки · уточните адрес получателя",
           "fr": "Ville de livraison donnée en exemple · confirmez l’adresse de réception",
           "es": "Ciudad de entrega de ejemplo · confirme la dirección de recepción",
-          "pt": "Cidade de entrega exemplificativa · confirme a morada de receção",
+          "pt": "Cidade de entrega exemplificativa · confirme a morada de recebimento",
           "tr": "Örnek teslimat şehri · teslim alma adresini doğrulayın"
         },
         "source": "https://www.naturalearthdata.com/downloads/10m-cultural-vectors/10m-populated-places/"

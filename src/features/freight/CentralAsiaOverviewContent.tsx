@@ -1,3 +1,5 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
+import FreightRelatedLinks from './FreightRelatedLinks';
 import { useState } from 'react';
 import type { Language } from '../../i18n/translations';
 import { CentralAsiaMap } from '../../components/FreightRouteMap';
@@ -61,10 +63,12 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
   const [cargo, setCargo] = useState('0');
   const [mode, setMode] = useState('0');
   const names = new Intl.DisplayNames([locale === 'zh' ? 'zh-CN' : locale], { type: 'region' });
-  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region)}&cargo=${encodeURIComponent(c.cargoOptions[Number(cargo)])}&mode=${encodeURIComponent(c.modeOptions[Number(mode)])}`;
-  return <main id="main-content" className="freight-editorial freight-next freight-central-overview">
+  const destination = country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region;
+  const brief = `${c.country}: ${destination}\n${c.cargo}: ${c.cargoOptions[Number(cargo)]}\n${c.mode}: ${c.modeOptions[Number(mode)]}`;
+  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(destination)}&notes=${encodeURIComponent(brief)}`;
+  return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-central-overview">
     <header className="freight-region-intro"><div className="freight-wrap">
-      <nav className="freight-region-breadcrumb" aria-label="Breadcrumb"><a href={`${prefix}/`}>{c.home}</a><span>/</span><a href={`${prefix}/services/sea-freight/`}>{c.freight}</a><span>/</span><span aria-current="page">{overview.region}</span></nav>
+      <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{overview.region}</p><h1>{headline[locale]}</h1><p className="freight-intro">{c.intro}</p>
     </div></header>
     <section className="freight-wrap freight-section" aria-labelledby="route-builder-heading"><p className="freight-kicker">{c.select}</p><h2 id="route-builder-heading" className="mt-4">{c.select}</h2>
@@ -85,5 +89,5 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
       <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
-  </main>;
+  <FreightRelatedLinks region="central-asia" locale={locale}/></main>;
 }

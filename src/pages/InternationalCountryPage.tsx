@@ -1,3 +1,4 @@
+import '../features/freight/freight.css';
 import { useLocation } from 'react-router-dom';
 import SEO from '../components/SEO';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';

@@ -1,3 +1,4 @@
+import {freightPageInfo,freightPageSchema} from '../features/freight/freightPageSchema';
 import { resolveSeoTitle } from '../lib/seoTitle.mjs';
 import type { Language } from '../i18n/translations';
 import { useEffect } from 'react';
@@ -82,7 +83,8 @@ export default function SEO({
 
   // Resolve final SEO fields
   const titlePath = '/' + location.pathname.split('/').filter(Boolean).join('/') + (location.pathname === '/' ? '' : '/');
-  const finalTitle = resolveSeoTitle(titlePath, title || defaults.title);
+  const freightInfo = freightPageInfo(location.pathname);
+  const finalTitle = freightInfo?.title || resolveSeoTitle(titlePath, title || defaults.title);
   const finalRawDesc = description || defaults.desc;
 
   // Keep the summary concise without cutting a word in half. Search engines
@@ -97,7 +99,7 @@ export default function SEO({
     return `${completeText.trim()}…`;
   };
 
-  const finalDesc = optimizeDesc(finalRawDesc, currentLang);
+  const finalDesc = freightInfo?.description || optimizeDesc(finalRawDesc, currentLang);
   const finalKeywords = keywords || defaults.keywords;
 
   // Resolve language-agnostic clean path suffix
@@ -126,16 +128,16 @@ export default function SEO({
   // Calculate language-specific absolute URLs
   const getLanguageUrl = (langCode: string) => {
     const normalizedLangCode = langCode === 'zh-cn' ? 'zh' : langCode;
-    const country = new URLSearchParams(location.search).get('country');
+    const country = freightInfo ? null : new URLSearchParams(location.search).get('country');
     const countryPath = country && cleanSuffix.startsWith('shipping-from-china-to-')
       ? `shipping-from-china-to-${country.toLowerCase()}`
       : cleanSuffix;
     return localizedSiteUrl(normalizedLangCode, countryPath);
   };
 
-  const canonicalUrl = canonicalPath
+  const canonicalUrl = freightInfo?.url || (canonicalPath
     ? canonicalSiteUrl(canonicalPath)
-    : getLanguageUrl(currentLang);
+    : getLanguageUrl(currentLang));
 
   const ptTrLocalizedPages = new Set([
     '',
@@ -194,6 +196,11 @@ export default function SEO({
     document.documentElement.lang = helmetLang;
     document.documentElement.dir = language === 'ar' ? 'rtl' : 'ltr';
     document.title = finalTitle;
+    const freightGraph = freightPageSchema(window.location.pathname);
+    if (freightGraph) {
+      document.head.querySelectorAll('script[type="application/ld+json"]').forEach(el=>el.remove());
+      const script=document.createElement('script');script.id='schema-jsonld-freight';script.type='application/ld+json';script.textContent=JSON.stringify(freightGraph);document.head.appendChild(script);
+    } else document.getElementById('schema-jsonld-freight')?.remove();
 
     replaceMeta('name', 'title', finalTitle);
     replaceMeta('name', 'description', finalDesc);

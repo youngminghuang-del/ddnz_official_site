@@ -1,6 +1,17 @@
+import {qualifyRouteCopy} from './qualifiedRouteCopy';
+import {remainingRouteCopy} from './remainingRouteCopy';
+import southAsiaCopy from './route-locales/india-pakistan.json';
+import westAfricaCopy from './route-locales/ghana-nigeria.json';
+import destinationCopy from './route-locales/mexico-uae.json';
+import es from './route-locales/es.json';
+import pt from './route-locales/pt.json';
+import fr from './route-locales/fr.json';
+import ru from './route-locales/ru.json';
+import ar from './route-locales/ar.json';
+import tr from './route-locales/tr.json';
 
 type RouteCountry = 'bangladesh' | 'uzbekistan' | 'peru' | 'brazil';
-type RouteCopy = {title:string;intro:string;routes:[string,string,string][];arrivalTitle:string;arrival:string;cargo:string};
+type RouteCopy = {title:string;intro:string;routes:string[][];arrivalTitle:string;arrival:string;cargo:string;note?:string};
 // Public copy stays concise. Source dates and adoption decisions live in docs/freight-depth-20261019.md.
 const copy:Record<'en'|'zh',Record<RouteCountry,RouteCopy>> = {
  en:{
@@ -16,14 +27,31 @@ const copy:Record<'en'|'zh',Record<RouteCountry,RouteCopy>> = {
  brazil:{title:'到巴西，海运与空运都要看港后交付',intro:'从中国起运港、巴西进口方和最终收货城市出发，比较到约定交接点的完整运输安排。',routes:[['中国 → 桑托斯 → 圣保罗','上海约37天 · 蛇口约33天','以上为马士基2025年公布的ASAS2线路计划中的港到港参考航程。按所选航次比较，再核算清关、码头操作及送到收货地址的公路段。'],['中国集货 → 桑托斯','拼箱参考约30–58天','按拉美拼箱参考区间安排小批次、多供应商订单，先统一装箱资料，约定入仓截仓及到港拆箱放货安排。'],['空运 → 圣保罗','空运参考约4–11天','按拉美空运参考区间比较可订航班、计费重量和进口方放货安排，出运前明确到达机场及后续配送。']],arrivalTitle:'货到桑托斯之后，还要去哪里？',arrival:'圣保罗仓库、经销商和设备安装现场的收货安排各不相同。请提供地址、收货时间和卸货条件，让报价包含合适的公路配送。',cargo:'手机配件、带电产品、食品机械和餐厨设备分别列明型号、数量、包装尺寸及毛重；含电池的产品补充电池资料。'}
  }
 };
+const localized: Record<string, Record<RouteCountry, RouteCopy>> = { ...copy, es, pt, fr, ru, ar, tr };
+const ui: Record<string, string[]> = {
+ en: ['ROUTES & TRANSIT TIME','Use these ranges to compare shipment plans; the quotation confirms the departure point, schedule and handover scope.','Route-specific timing','Rail / road','What affects the delivery date in Tashkent?','Route and document preparation'],
+ zh: ['路线与运输时间','天数供出运计划比较，具体起运地、班次和交付范围随报价确认。','按具体路线安排','铁路 / 公路','哪些环节会影响到塔什干的交货时间？','订舱前的路线与文件准备'],
+ es: ['RUTAS Y TIEMPOS DE TRANSPORTE','Los plazos sirven para comparar opciones; el presupuesto confirma origen, salida y alcance de la entrega.','Según la ruta','Ferrocarril / carretera','¿Qué afecta a la fecha de entrega en Taskent?','Preparación de la ruta y los documentos'],
+ pt: ['ROTAS E PRAZOS DE TRANSPORTE','As faixas ajudam a comparar planos; a cotação confirma origem, saída e escopo da entrega.','Conforme a rota','Ferrovia / rodovia','O que afeta a data de entrega em Tashkent?','Preparação da rota e dos documentos'],
+ fr: ['ITINÉRAIRES ET DÉLAIS','Ces fourchettes permettent de comparer les options ; le devis confirme départ, calendrier et périmètre de livraison.','Selon l’itinéraire','Rail / route','Quels facteurs influent sur la livraison à Tachkent ?','Préparer l’itinéraire et les documents'],
+ ru: ['МАРШРУТЫ И СРОКИ','Диапазоны помогают сравнить варианты; пункт отправления, рейс и объём доставки подтверждаются в предложении.','По выбранному маршруту','Железная дорога / авто','Что влияет на дату доставки в Ташкенте?','Подготовка маршрута и документов'],
+ tr: ['GÜZERGÂHLAR VE TAŞIMA SÜRELERİ','Aralıklar planları karşılaştırmak içindir; çıkış noktası, sefer ve teslimat kapsamı teklifte doğrulanır.','Güzergâha göre','Demiryolu / karayolu','Taşkent teslim tarihini neler etkiler?','Güzergâh ve belge hazırlığı'],
+ ar: ['المسارات ومدد النقل','تساعد النطاقات على مقارنة الخطط؛ يؤكّد عرض السعر نقطة المغادرة والرحلة ونطاق التسليم.','حسب المسار','سكك حديدية / نقل بري','ما الذي يؤثر في موعد التسليم في طشقند؟','تجهيز المسار والمستندات']
+};
+export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
 export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
- if ((locale!=='en' && locale!=='zh') || !(country in copy.en)) return null;
- const c=copy[locale][country as RouteCountry];
- const zh=locale==='zh';
- return <section id="freight-route-options" className="route-depth" aria-labelledby="route-depth-heading" data-route-depth={country}>
-  <div className="route-depth-inner"><p className="route-depth-kicker">{zh?'路线与运输时间':'ROUTES & TRANSIT TIME'}</p><h2 id="route-depth-heading">{c.title}</h2><p className="route-depth-intro">{c.intro}</p>
+ const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
+ const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
+ const south: Record<string, Record<string, RouteCopy>> = southAsiaCopy;
+ const raw = remainingRouteCopy(country,locale) || south[locale]?.[country] || west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
+ if (!raw) return null;
+ const c=qualifyRouteCopy(raw,country,locale);
+ const labels=routePlanningUi(locale);
+
+ return <section lang={locale === 'zh' ? 'zh-CN' : locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} id="freight-route-options" className="route-depth" aria-labelledby="route-depth-heading" data-route-depth={country}>
+  <div className="route-depth-inner"><p className="route-depth-kicker">{labels[0]}</p><h2 id="route-depth-heading">{c.title}</h2><p className="route-depth-intro">{c.intro}</p>
    <div className="route-depth-grid">{c.routes.map(([route,time,body],i)=><article key={route}><span className="route-depth-number">0{i+1}</span><h3>{route}</h3><p className="route-depth-time">{time}</p><p>{body}</p></article>)}</div>
-   <p className="route-depth-note">{zh?'天数供出运计划比较，具体起运地、班次和交付范围随报价确认。':'Use these ranges to compare shipment plans; the quotation confirms the departure point, schedule and handover scope.'}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
+   <p className="route-depth-note">{c.note || labels[1]}{c.source && <> <a href={c.source} target="_blank" rel="noreferrer" aria-label={c.routes[0][0] + " · " + c.source.split("/")[2]} style={{textDecoration:"underline"}}>{c.source.split("/")[2]} ↗</a></>}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
 }

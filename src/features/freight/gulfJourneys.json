@@ -176,8 +176,8 @@
     },
     "pt": {
       "label": "O PERCURSO DA SUA CARGA",
-      "title": "Dos pedidos aos fornecedores à receção no Catar",
-      "intro": "Exemplo de planeamento baseado num pedido de informação sobre bonés e acessórios de vários fornecedores 1688. Doha é a cidade de entrega do exemplo.",
+      "title": "Dos pedidos aos fornecedores à recebimento no Catar",
+      "intro": "Exemplo de planejamento baseado num pedido de informação sobre bonés e acessórios de vários fornecedores 1688. Doha é a cidade de entrega do exemplo.",
       "steps": [
         {
           "title": "Pedido de cotação",
@@ -188,7 +188,7 @@
           "detail": "Compare as chegadas com cada pedido. Acorde as fotografias e a consolidação, mantendo a correspondência entre artigos e caixas."
         },
         {
-          "title": "Planeamento do transporte",
+          "title": "Planejamento do transporte",
           "detail": "Para uma solução marítima, considere o porto de Hamad como ponto de entrada e confirme a rota no plano de reserva."
         },
         {
@@ -196,12 +196,12 @@
           "detail": "Antes da apresentação no Catar, verifique os dados do importador e a coerência da fatura, lista de artigos e documentos de origem."
         },
         {
-          "title": "Entrega e receção",
-          "detail": "No exemplo de Doha, confirme o endereço exato, o acesso dos veículos e o contacto de receção; verifique o número de caixas na entrega."
+          "title": "Entrega e recebimento",
+          "detail": "No exemplo de Doha, confirme o endereço exato, o acesso dos veículos e o contato de recebimento; verifique o número de caixas na entrega."
         }
       ],
-      "cta": "Planear o meu envio para o Catar",
-      "note": "Exemplo de planeamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
+      "cta": "Planejar o meu envio para o Catar",
+      "note": "Exemplo de planejamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
     },
     "tr": {
       "label": "YÜKÜNÜZÜN YOLCULUĞU",
@@ -411,7 +411,7 @@
     "pt": {
       "label": "O PERCURSO DA SUA CARGA",
       "title": "Seis mesas de bilhar: de Guangzhou ao plano de entrega em Omã",
-      "intro": "Exemplo de planeamento baseado num pedido de informação sobre seis mesas de bilhar e acessórios de Guangzhou. Mascate é a cidade de entrega do exemplo.",
+      "intro": "Exemplo de planejamento baseado num pedido de informação sobre seis mesas de bilhar e acessórios de Guangzhou. Mascate é a cidade de entrega do exemplo.",
       "steps": [
         {
           "title": "Pedido de cotação",
@@ -419,23 +419,23 @@
         },
         {
           "title": "Preparação da carga",
-          "detail": "Confirme a embalagem das mesas e acessórios, a possibilidade de empilhamento e os pontos permitidos de elevação ou manuseamento com empilhador."
+          "detail": "Confirme a embalagem das mesas e acessórios, a possibilidade de empilhamento e os pontos permitidos de elevação ou manuseio com empilhador."
         },
         {
-          "title": "Planeamento do transporte",
-          "detail": "Compare contentor partilhado e completo. Considere SOHAR como uma das opções de entrada marítima, depois confirme o porto e a rota do envio."
+          "title": "Planejamento do transporte",
+          "detail": "Compare contêiner compartilhado e completo. Considere SOHAR como uma das opções de entrada marítima, depois confirme o porto e a rota do envio."
         },
         {
           "title": "Preparação aduaneira",
           "detail": "Reveja com o importador a fatura comercial, os documentos de origem e quaisquer requisitos adicionais antes da declaração Bayan."
         },
         {
-          "title": "Entrega e receção",
+          "title": "Entrega e recebimento",
           "detail": "No exemplo de Mascate, verifique o acesso e o equipamento de descarga. Acorde separadamente a movimentação das mesas para o interior e a montagem."
         }
       ],
-      "cta": "Planear o meu envio para Omã",
-      "note": "Exemplo de planeamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
+      "cta": "Planejar o meu envio para Omã",
+      "note": "Exemplo de planejamento · As etapas podem sobrepor-se; prepare os documentos de importação antes da expedição."
     },
     "tr": {
       "label": "YÜKÜNÜZÜN YOLCULUĞU",

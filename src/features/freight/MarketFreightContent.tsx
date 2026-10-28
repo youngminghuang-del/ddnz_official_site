@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import MarketLocalizedContent from './MarketLocalizedContent';
 import {marketLocaleData} from './marketLocaleData';
@@ -15,7 +16,7 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
   const peru = country === 'peru';
   const destination = peru ? 'Peru' : 'Nigeria';
   const quote = `/get-a-quote/?leadGoal=Freight+Export&source=${country}_country&dest=${destination}`;
-  return <main id="main-content" className="freight-editorial market-story" data-country-cargo-planning="true">
+  return <main id="main-content" className="country-editorial freight-editorial market-story" data-country-cargo-planning="true">
     <header className="market-hero market-wrap">
       <div><a className="market-back" href={`/shipping-from-china-to-${peru ? 'latin-america' : 'west-africa'}/`}>← {peru ? 'Latin America' : 'West Africa'} freight</a>
         <p className="freight-kicker">CHINA → {destination.toUpperCase()}</p><h1>{data.heading}</h1>
@@ -27,7 +28,7 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
         <li><b>03 / Receiving</b><span>The exact address, access and unloading arrangements.</span></li>
       </ol><a href="#market-section-7">Prepare your shipment brief ↓</a></aside>
     </header>
-    {peru && <RoutePlanningDepth country={country} locale={locale}/>}
+    <RoutePlanningDepth country={country} locale={locale}/>
     <div className="market-wrap"><FreightChapters items={[
       {id:'market-section-1',label:peru?'Plan the heavy cargo':'Bring supplier orders together'},
       {id:'market-section-'+(peru?3:4),label:'Compare costs and responsibilities'},
@@ -47,5 +48,5 @@ export function MarketFreightContent({country,locale='en'}: {country: MarketCoun
     </section>)}</div>
     {!peru && <NigeriaMarketGuide locale="en" sectionNumber="08"/>}
     {peru && <div className="market-wrap market-related"><h2>Also sourcing equipment?</h2><a href="/sourcing/commercial-kitchen-equipment-from-china/">Commercial kitchen equipment from China →</a><a href="/sourcing/food-processing-machinery-from-china/">Food processing machinery from China →</a></div>}
-  </main>;
+  <FreightRelatedLinks country={country} locale={locale}/></main>;
 }

@@ -1,0 +1,12 @@
+// Grammatical destination forms for prose; ISO display names remain suitable for lists.
+const forms: Record<string, Record<string, string>> = {
+ fr: {SA:'l’Arabie saoudite',AE:'les Émirats arabes unis',KW:'le Koweït',QA:'le Qatar',OM:'Oman',BH:'Bahreïn',KZ:'le Kazakhstan',UZ:'l’Ouzbékistan',KG:'le Kirghizistan',TJ:'le Tadjikistan',TM:'le Turkménistan',RU:'la Russie',NG:'le Nigeria',GH:'le Ghana',IN:'l’Inde',PK:'le Pakistan',BD:'le Bangladesh',MX:'le Mexique',BR:'le Brésil',AR:'l’Argentine',PE:'le Pérou',CL:'le Chili','middle-east':'le Moyen-Orient','central-asia':'l’Asie centrale et la Russie','west-africa':'l’Afrique de l’Ouest','latin-america':'l’Amérique latine'},
+ pt: {SA:'a Arábia Saudita',AE:'os Emirados Árabes Unidos',KW:'o Kuwait',QA:'o Catar',OM:'Omã',BH:'o Barein',KZ:'o Cazaquistão',UZ:'o Uzbequistão',KG:'o Quirguistão',TJ:'o Tadjiquistão',TM:'o Turcomenistão',RU:'a Rússia',NG:'a Nigéria',GH:'Gana',IN:'a Índia',PK:'o Paquistão',BD:'Bangladesh',MX:'o México',BR:'o Brasil',AR:'a Argentina',PE:'o Peru',CL:'o Chile','middle-east':'o Oriente Médio','central-asia':'a Ásia Central e a Rússia','west-africa':'a África Ocidental','latin-america':'a América Latina'},
+ ru: {SA:'в Саудовскую Аравию',AE:'в ОАЭ',KW:'в Кувейт',QA:'в Катар',OM:'в Оман',BH:'в Бахрейн',KZ:'в Казахстан',UZ:'в Узбекистан',KG:'в Кыргызстан',TJ:'в Таджикистан',TM:'в Туркменистан',RU:'в Россию',NG:'в Нигерию',GH:'в Гану',IN:'в Индию',PK:'в Пакистан',BD:'в Бангладеш',MX:'в Мексику',BR:'в Бразилию',AR:'в Аргентину',PE:'в Перу',CL:'в Чили','middle-east':'на Ближний Восток','central-asia':'в Центральную Азию и Россию','west-africa':'в Западную Африку','latin-america':'в Латинскую Америку'},
+ tr: {SA:'Suudi Arabistan’a',AE:'Birleşik Arap Emirlikleri’ne',KW:'Kuveyt’e',QA:'Katar’a',OM:'Umman’a',BH:'Bahreyn’e',KZ:'Kazakistan’a',UZ:'Özbekistan’a',KG:'Kırgızistan’a',TJ:'Tacikistan’a',TM:'Türkmenistan’a',RU:'Rusya’ya',NG:'Nijerya’ya',GH:'Gana’ya',IN:'Hindistan’a',PK:'Pakistan’a',BD:'Bangladeş’e',MX:'Meksika’ya',BR:'Brezilya’ya',AR:'Arjantin’e',PE:'Peru’ya',CL:'Şili’ye','middle-east':'Orta Doğu’ya','central-asia':'Orta Asya ve Rusya’ya','west-africa':'Batı Afrika’ya','latin-america':'Latin Amerika’ya'},
+};
+export function destinationForm(key:string,locale:string,fallback:string){
+ if(locale==='en' && ['AE','middle-east'].includes(key))return `the ${fallback}`;
+ if(locale==='es' && key==='AE')return 'los Emiratos Árabes Unidos';
+ return forms[locale]?.[key]||fallback;
+}

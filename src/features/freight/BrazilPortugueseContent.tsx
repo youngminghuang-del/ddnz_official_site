@@ -1,3 +1,6 @@
+import FreightBreadcrumbs from './FreightBreadcrumbs';
+import FreightRelatedLinks from './FreightRelatedLinks';
+import RoutePlanningDepth from './RoutePlanningDepth';
 import { buildQuoteHref } from '../../lib/quoteLinks';
 import BrazilPortGallery from './BrazilPortGallery';
 
@@ -22,15 +25,16 @@ const modes = [
 export default function BrazilPortugueseContent() {
  const quote=buildQuoteHref({intent:'Freight Export',language:'pt',source:'brazil_pt_freight',destination:'Brasil'});
  const card='rounded-2xl border border-slate-200 bg-white p-6';
- return <main id="main-content" lang="pt-BR" className="bg-slate-50 text-slate-900">
+ return <main id="main-content" lang="pt-BR" className="country-editorial country-editorial--utility bg-slate-50 text-slate-900">
   <header className="bg-slate-950 text-white"><div className="mx-auto max-w-7xl px-6 py-16 lg:py-24">
-   <nav aria-label="Navegação estrutural" className="mb-8 text-sm text-slate-300"><a href="/pt/">Início</a><span aria-hidden="true"> / </span><a href="/pt/services/sea-freight/">Frete internacional</a><span aria-hidden="true"> / Brasil</span></nav>
+   <FreightBreadcrumbs path="/pt/shipping-from-china-to-brazil/" locale="pt" className="mb-8 text-sm text-slate-300"/>
    <p className="mb-5 text-sm font-bold tracking-widest text-orange-300">DDNZ GLOBAL · HEAVEN BORN</p>
    <h1 className="max-w-4xl text-4xl font-bold leading-tight md:text-6xl">Frete da China para o Brasil.</h1>
    <p className="mt-6 max-w-3xl text-lg leading-8 text-slate-200">Planeje transporte marítimo ou aéreo, consolidação de fornecedores na China e a entrega no Brasil dentro do escopo acordado. A DDNZ coordena compras e preparação na origem; a Heaven Born coordena o frete internacional.</p>
    <a href={quote} className="mt-8 inline-block rounded-xl bg-orange-700 px-6 py-4 font-bold text-white">Solicitar cotação para o Brasil →</a>
    <p className="mt-5 text-sm text-slate-300">Da coleta no fornecedor ao porto, aeroporto ou endereço combinado com o importador.</p>
   </div></header>
+  <RoutePlanningDepth country="brazil" locale="pt"/>
   <div className="mx-auto max-w-7xl space-y-16 px-6 py-16">
    <section aria-labelledby="br-modes"><h2 id="br-modes" className="text-3xl font-bold">Frete marítimo FCL, LCL ou aéreo?</h2><p className="mt-4 max-w-3xl leading-7">A modalidade depende do pedido e da entrega necessária. Compare o custo de toda a operação e as etapas de manuseio.</p><div className="mt-7 grid gap-5 md:grid-cols-3">{modes.map(([h,p])=><article className={card} key={h}><h3 className="text-xl font-bold">{h}</h3><p className="mt-4 leading-7">{p}</p></article>)}</div></section>
    <BrazilPortGallery/>
@@ -44,5 +48,5 @@ export default function BrazilPortugueseContent() {
    <section aria-labelledby="br-faq"><h2 id="br-faq" className="text-3xl font-bold">Perguntas sobre envio da China para o Brasil</h2><div className="mt-7 grid gap-5 md:grid-cols-2">{brazilPortugueseFaqs.map(([q,a])=><article className={card} key={q}><h3 className="text-xl font-bold">{q}</h3><p className="mt-4 leading-7">{a}</p></article>)}</div></section>
    <section className="rounded-2xl bg-slate-900 p-8 text-white" aria-labelledby="br-quote"><h2 id="br-quote" className="text-3xl font-bold">Prepare uma cotação comparável</h2><p className="mt-4 max-w-3xl leading-7">Envie mercadoria e modelo, fornecedores e pontos de coleta, quantidade de volumes, dimensões, peso bruto, data de disponibilidade, destino final e serviços necessários. Se ainda faltarem dados, indique o que precisa ser confirmado.</p><a href={quote} className="mt-6 inline-block rounded-xl bg-orange-700 px-6 py-4 font-bold">Pedir cotação de frete China–Brasil →</a><div className="mt-6 flex flex-wrap gap-6"><a className="underline" href="/pt/services/lcl-shipping-from-china/">Conhecer o serviço LCL</a><a className="underline" href="/pt/how-we-work/">Como funciona o processo</a><a className="underline" href="/pt/sourcing-services/supplier-search/">Busca de fornecedores na China</a></div></section>
   </div>
- </main>;
+ <FreightRelatedLinks country="brazil" locale="pt"/></main>;
 }

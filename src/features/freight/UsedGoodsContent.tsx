@@ -1,3 +1,4 @@
+import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import {useId, useState} from 'react';
 import {FreightChapters} from './GulfChapters';
@@ -55,9 +56,9 @@ export default function UsedGoodsContent({country,locale='en',resources=usedGood
  const d=copy[locale],u=d.ui,i=usedGoodsCountries.indexOf(country),m=media[country],meta=usedGoodsMetadata(country,locale);
  const quote=buildQuoteHref({language:locale,intent:'Freight Export',source:'country_cargo_planning',destination:names[country]});
  const stages=[u.sorting,u.packingVideo,u.cargoVideo,u.loading];
- return <main id="main-content" className="freight-editorial used-goods" lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
+ return <main id="main-content" className="freight-editorial used-goods country-editorial" lang={gulfLanguageTag(locale)} dir={locale==='ar'?'rtl':'ltr'} data-country-cargo-planning="true">
  <div className="used-wrap"><header className="used-hero"><div className="used-hero-copy"><p className="used-kicker">{u.china} → <bdi>{d.countries[i]}</bdi></p><h1>{meta.heading}</h1><p>{d.intro}</p><a className="used-cta" href={quote}>{u.request} ↗</a></div><figure className="used-hero-image"><img src={root+m.hero} alt={u[m.heroLabel]} fetchPriority="high"/><figcaption><span>{u.record}</span><strong>{u[m.heroLabel]}</strong></figcaption></figure></header>
- {country==='bangladesh' && <RoutePlanningDepth country={country} locale={locale}/>}
+ <RoutePlanningDepth country={country} locale={locale}/>
  <FreightChapters items={d.chapters.map((label,n)=>({label,id:`used-section-${n+1}`}))} ariaLabel={u.chapters} reading={`${u.reading} · `}/>
  <ol className="used-journey" aria-label={u.prepare}>{stages.map((s,n)=><li key={s}><bdi>0{n+1}</bdi><span>{s}</span></li>)}</ol>
  <section id="used-section-1" className="used-section used-preparation" tabIndex={-1} aria-labelledby="used-heading-1"><div className="used-preparation-copy"><span className="used-kicker">01 / {u.record}</span><h2 id="used-heading-1">{d.chapters[0]}</h2><p className="used-lead">{d.focus[i]}</p><p>{d.paras[0]}</p><h3>{u.categories}</h3><p>{d.paras[1]}</p></div>
@@ -69,5 +70,5 @@ export default function UsedGoodsContent({country,locale='en',resources=usedGood
  <UsedGoodsPortMap country={country} locale={locale}/></section>
  <section id="used-section-4" className="used-section" tabIndex={-1} aria-labelledby="used-heading-4"><span className="used-kicker">04 / {u.prepare}</span><h2 id="used-heading-4">{d.chapters[3]}</h2><p>{d.paras[4]}</p><h3>{u.faq}</h3><div className="used-faq">{d.questions.map((q,n)=><details key={q}><summary>{q}</summary><p>{d.answers[n]}</p></details>)}</div><a className="used-cta" href={quote}>{u.request} ↗</a></section>
  <nav className="used-related" aria-label={u.related}><h2>{u.related}</h2><div>{usedGoodsCountries.filter(c=>c!==country).map(c=><a key={c} href={`${gulfLanguagePrefix(locale)}/shipping-from-china-to-${c}/`}>{d.heading.replace('{country}',destinationName(c,locale))} →</a>)}</div></nav>
- </div></main>;
+ </div><FreightRelatedLinks country={country} locale={locale}/></main>;
 }

@@ -1,0 +1,98 @@
+{
+  "bangladesh": {
+    "title": "Frete marítimo para Chattogram ou aéreo para Daca?",
+    "intro": "Escolha o ponto de chegada junto com o endereço final. O trânsito marítimo termina no porto; a entrega em Daca exige desembaraço e transporte rodoviário.",
+    "routes": [
+      [
+        "Ningbo → Chattogram",
+        "Cerca de 9 dias · porto a porto",
+        "O itinerário CCE da PIL indica nove dias. Compare a saída disponível com a data em que a carga estará pronta."
+      ],
+      [
+        "FCL ou LCL → Chattogram",
+        "FCL: 15–30 dias · LCL: 19–36 dias",
+        "Faixas gerais de planejamento para o Sul da Ásia; o CCE de Ningbo é uma referência específica mais rápida. Confirme porto de saída e prazo de recebimento do LCL."
+      ],
+      [
+        "Frete aéreo → Daca",
+        "Cerca de 4–9 dias",
+        "Referência de planejamento para o Sul da Ásia. Compare voos, peso tarifável e prazo de recebimento; coleta, desembaraço e entrega são combinados separadamente."
+      ]
+    ],
+    "arrivalTitle": "De Chattogram ao armazém de recebimento",
+    "arrival": "Para entregar em Daca, informe endereço, contato do importador e condições de descarga. Cotize operações portuárias, desembaraço e transporte rodoviário com responsabilidades definidas.",
+    "cargo": "Para capas e películas de celular, informe caixas, medidas embaladas e peso bruto. Separe produtos com bateria e máquinas na lista de embalagem."
+  },
+  "uzbekistan": {
+    "title": "Compare ferrovia e rodovia pela cidade de partida",
+    "intro": "O trem de Xi’an e o caminhão coletado em Jiaozhou têm pontos de partida diferentes. Compare o percurso completo até o local combinado em Tashkent.",
+    "routes": [
+      [
+        "Xi’an → Khorgos → Tashkent",
+        "5–6 dias · percurso ferroviário divulgado",
+        "O serviço expresso inaugurado em janeiro de 2025 divulgou esse prazo via Cazaquistão, a partir de Xi’an. Coleta na fábrica e entrega final são etapas adicionais."
+      ],
+      [
+        "Jiaozhou → Khorgos → Tashkent",
+        "Rodoviário · registro de carregamento existente",
+        "O registro abaixo mostra caixas fixadas para essa viagem, com retirada no armazém de destino. É um embarque distinto do exemplo ferroviário."
+      ],
+      [
+        "Carga consolidada ou caminhão exclusivo",
+        "Exclusivo: 7–10 dias · compartilhado: 22–30 dias",
+        "Faixas iniciais a partir da saída na China rumo a Tashkent. Confirme cidade, fronteira e ponto de entrega; coleta e espera pela consolidação alteram o prazo total."
+      ]
+    ],
+    "arrivalTitle": "Chegada à estação, retirada no armazém ou entrega?",
+    "arrival": "Informe o endereço e se o importador retirará a carga em armazém alfandegado. Inclua operações de fronteira, desembaraço e entrega local ao combinar a data.",
+    "cargo": "Para equipamentos de cozinha, máquinas alimentícias ou peças de veículos, envie medidas embaladas, peso bruto, pontos de içamento e possibilidade de empilhamento. Identifique baterias separadamente."
+  },
+  "peru": {
+    "title": "Chancay ou Callao: compare também o trajeto até Lima",
+    "intro": "Escolha o porto considerando o endereço e o custo total no destino. A travessia marítima é apenas uma etapa da entrega de carga pesada.",
+    "routes": [
+      [
+        "Xangai → Chancay",
+        "Cerca de 23 dias · travessia marítima",
+        "O corredor direto foi divulgado em 2025 com cerca de 23 dias de navegação. É uma referência dessa rota, sem desembaraço nem entrega no Peru."
+      ],
+      [
+        "FCL ou LCL → Callao / Chancay",
+        "FCL: 25–50 dias · LCL: 30–58 dias",
+        "Faixas gerais para a América Latina, conforme porto chinês e saída. O corredor direto Xangai–Chancay é uma referência separada e mais rápida. Para pisos cerâmicos, compare peso/volume e despesas no destino."
+      ],
+      [
+        "Frete aéreo → Lima",
+        "Cerca de 4–11 dias",
+        "Faixa inicial para a América Latina. Compare voo e peso tarifável; considere separadamente liberação e transporte do aeroporto ao armazém."
+      ]
+    ],
+    "arrivalTitle": "Do porto ao armazém ou à obra em Lima",
+    "arrival": "Antes da reserva, confirme endereço, acesso de caminhões, equipamentos de descarga e agendamento. Compare com o importador esses custos para os dois portos.",
+    "cargo": "Para pisos cerâmicos, informe dimensões e peso bruto dos paletes e se são empilháveis. Para equipamentos de cozinha, acrescente pontos de içamento e embalagens que devem permanecer na vertical."
+  },
+  "brazil": {
+    "title": "Brasil por mar ou ar: planeje além da chegada",
+    "intro": "Comece pelo porto de saída na China, pelo importador brasileiro e pela cidade de recebimento. Compare o transporte até o ponto de entrega acordado.",
+    "routes": [
+      [
+        "China → Santos → São Paulo",
+        "Xangai: cerca de 37 dias · Shekou: cerca de 33 dias",
+        "Referências porto a porto do plano ASAS2 da Maersk de 2025. Compare a saída selecionada e acrescente desembaraço, terminal e transporte rodoviário até o endereço final."
+      ],
+      [
+        "Consolidação na China → Santos",
+        "LCL: cerca de 30–58 dias",
+        "Faixa geral para a América Latina. Consolide os pedidos com uma lista de embalagem e combine o prazo de recebimento e a liberação no destino."
+      ],
+      [
+        "Frete aéreo → São Paulo",
+        "Cerca de 4–11 dias",
+        "Faixa geral para a América Latina. Compare voos, peso tarifável e liberação pelo importador; combine a entrega interna antes do embarque."
+      ]
+    ],
+    "arrivalTitle": "Para onde vai a carga depois de Santos?",
+    "arrival": "Armazéns, distribuidores e locais de instalação podem ter condições de recebimento diferentes. Informe endereço, horários e descarga para cotar o trecho rodoviário adequado.",
+    "cargo": "Separe acessórios de celular, produtos elétricos e máquinas alimentícias ou de cozinha. Informe modelos, quantidades, medidas embaladas, pesos brutos e dados das baterias, quando aplicável."
+  }
+}
