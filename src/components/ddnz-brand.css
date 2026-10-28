@@ -1,7 +1,7 @@
-.ddnz-brand { display:inline-flex; align-items:center; flex-shrink:0; direction:ltr; }
-/* The transparent canvas has generous vertical margins. Cover fits the artwork,
-   not the empty canvas, into the approved horizontal lockup proportions. */
-.ddnz-brand .ddnz-brand__lockup { display:block; width:202px; height:44px; object-fit:cover; object-position:center; }
-@media(min-width:400px) { .ddnz-brand .ddnz-brand__lockup { width:236px; height:51px; } }
-@media(min-width:640px) { .ddnz-brand .ddnz-brand__lockup { width:258px; height:56px; } }
-.ddnz-footer__logo .ddnz-brand { flex-direction:row; gap:0; }
+/* Viewport onto the approved board's horizontal lockup (x=665,y=678,w=815,h=166).
+   The source pixels stay unchanged: no font replacement or generated reconstruction. */
+.ddnz-brand { --brand-width:202px; display:inline-block; position:relative; width:var(--brand-width); height:calc(var(--brand-width) * 166 / 815); overflow:hidden; flex-shrink:0; direction:ltr; }
+.ddnz-brand .ddnz-brand__lockup { display:block; position:absolute; max-width:none; width:calc(var(--brand-width) * 1774 / 815); height:auto; left:calc(var(--brand-width) * -665 / 815); top:calc(var(--brand-width) * -678 / 815); }
+@media(min-width:400px) { .ddnz-brand { --brand-width:236px; } }
+@media(min-width:640px) { .ddnz-brand { --brand-width:258px; } }
+.ddnz-footer__logo .ddnz-brand { display:inline-block; }

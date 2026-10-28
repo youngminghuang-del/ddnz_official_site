@@ -1,8 +1,8 @@
 import './ddnz-brand.css';
 
-/** Approved artwork retains the custom letterforms; never substitute browser fonts. */
+/** Display the exact approved horizontal artwork, without regenerating letterforms. */
 export default function DdnzBrand() {
   return <span className="ddnz-brand" dir="ltr" aria-hidden="true">
-    <img className="ddnz-brand__lockup" src="/images/brand/ddnz-global-lockup-v3.png" width="2172" height="724" alt="" />
+    <img className="ddnz-brand__lockup" src="/images/brand/ddnz-approved-combination.png" width="1774" height="887" alt="" />
   </span>;
 }
