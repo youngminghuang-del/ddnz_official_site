@@ -1,3 +1,4 @@
+import EquipmentBuyingSupport from '../../features/equipment-buying-support/EquipmentBuyingSupport';
 import RefrigerationModelCatalogue from '../../features/refrigeration/RefrigerationModelCatalogue';
 import RefrigerationStyleGallery from '../../features/refrigeration/RefrigerationStyleGallery';
 import { renderRefrigerationEntry } from '../../features/buyer-entry/kitchen.mjs';
@@ -304,6 +305,7 @@ export function RefrigerationEquipment() {
         <div dangerouslySetInnerHTML={{__html:renderRefrigerationEntry()}}/>
         <RefrigerationModelCatalogue/>
         <RefrigerationStyleGallery/>
+        <EquipmentBuyingSupport family="refrigeration"/>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">
           <div className="refrigeration-evidence-head">
             <div><p className="refrigeration-kicker">A CLOSER LOOK</p><h2 id="refrigeration-evidence-title">From the production line to the packing floor.</h2><p>Watch ice-maker production, view the packing photos and check what matters for your equipment selection.</p></div>

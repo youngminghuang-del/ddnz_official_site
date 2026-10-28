@@ -1,0 +1,21 @@
+.equipment-support{box-sizing:border-box;max-width:1240px;margin:64px auto;padding:36px clamp(18px,4vw,44px);background:#f5f7fa;color:#152c43;border:1px solid #d7dfe7;border-radius:18px;scroll-margin-top:170px;font-family:inherit;line-height:1.7;overflow-wrap:anywhere;text-align:start}
+.equipment-support *{box-sizing:border-box}
+.equipment-support header{max-width:850px}
+.equipment-support .equipment-support-kicker{font-size:12px;font-weight:750;letter-spacing:.08em;color:#765021;margin:0 0 12px}
+.equipment-support h2{font-size:clamp(25px,3vw,36px);line-height:1.2;letter-spacing:-.02em;margin:0 0 18px;color:#152c43}
+.equipment-support h3{font-size:19px;line-height:1.35;margin:14px 0 10px;color:#152c43}
+.equipment-support p{font-size:15px;line-height:1.75;margin:0;color:#425568}
+.equipment-support-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:30px}
+.equipment-support-grid article{border-block-start:2px solid #d1dbe4;padding-top:20px;min-width:0}
+.equipment-support-number{font-size:13px;color:#765021;font-weight:750}
+.equipment-support-checks{margin-top:28px;border-block:1px solid #d1dbe4;padding:18px 0}
+.equipment-support-checks summary{font-weight:700;font-size:16px;cursor:pointer;list-style:revert;color:#152c43}
+.equipment-support-checks ul{padding-inline-start:22px;margin:16px 0 0;list-style:disc}
+.equipment-support-checks li{font-size:15px;color:#425568;margin:10px 0;line-height:1.75}
+.equipment-support footer{margin-top:24px;background:transparent}
+.equipment-support footer>div{display:flex;flex-wrap:wrap;align-items:center;gap:18px}
+.equipment-support a.equipment-support-cta{display:inline-block;padding:12px 20px;border-radius:6px;background:#17364e;color:white;font-size:15px;font-weight:700;text-decoration:none}
+.equipment-support a.equipment-support-list{color:#17364e;text-decoration:underline;text-underline-offset:4px;font-size:15px;font-weight:650}
+.equipment-support footer p{margin-top:16px;font-size:13px}
+.equipment-support a:focus-visible,.equipment-support summary:focus-visible{outline:3px solid #af6c15;outline-offset:4px}
+@media(max-width:760px){.equipment-support{margin:40px 16px;padding:26px 20px}.equipment-support-grid{grid-template-columns:1fr;gap:18px}.equipment-support h3{margin-top:8px}.equipment-support-grid article{padding-top:14px}.equipment-support footer>div{align-items:flex-start;flex-direction:column}.equipment-support a.equipment-support-cta{max-width:100%}}

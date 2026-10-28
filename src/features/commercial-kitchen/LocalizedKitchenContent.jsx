@@ -1,3 +1,4 @@
+import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
 import InductionCatalogue, {InductionEntry} from './components/InductionCatalogue';
 import CatalogueHeroMedia, { kitchenHeroLabels } from '../../components/catalogue-hero/CatalogueHeroMedia';
 import GulfKitchenPlanning, { GulfKitchenEntry } from './components/GulfKitchenPlanning.jsx';
@@ -194,6 +195,7 @@ export default function LocalizedKitchenContent({ locale, initialList = {}, init
           {draftsAvailable && <div className="localized-drafts"><p>{u.draftHelp}</p><a className="button outline" href={links.whatsapp} target="_blank" rel="noopener noreferrer" onClick={() => { if (production) onAction('whatsapp_draft', { mode: 'production', productCount: selected.length, unitCount: count }); }}>{u.whatsapp}<span aria-hidden="true">↗</span></a><a className="text-link" href={links.email} onClick={() => { if (production) onAction('email_draft', { mode: 'production', productCount: selected.length, unitCount: count }); }}>{u.emailDraft}<Arrow locale={locale}/></a></div>}
         </form>
       </section>
+      <EquipmentBuyingSupport locale={locale}/>
       <section className="section wrap localized-faq" id="commercial-kitchen-faq" aria-labelledby="localized-faq-title"><h2 id="localized-faq-title">{u.faq}</h2>{t.faqs.map(faq => <details key={faq.question}><summary>{faq.question}</summary><p>{faq.answer}</p></details>)}</section>
     </main>
   </section>;
