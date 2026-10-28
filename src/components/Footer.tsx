@@ -1,3 +1,4 @@
+import DdnzBrand from './DdnzBrand';
 import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
 import tricycleCopies from '../features/electric-tricycles/locales.json';
@@ -72,8 +73,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
         <div className="ddnz-footer__top">
           <section className="ddnz-footer__brand">
             <Link to={localizedPath('/')} aria-label={COMPANY.brand + ' — ' + copy.home} className="ddnz-footer__logo">
-              <img src="/images/brand/ddnz-global-mark-v1.png" width="512" height="512" alt="" loading="lazy" decoding="async" />
-              <span><strong>{COMPANY.brand}</strong><small>{copy.brandLine}</small></span>
+              <DdnzBrand />
             </Link>
             {language === 'zh' && <p className="ddnz-footer__company">{COMPANY.zh}</p>}
             <p>{copy.brandDescriptor}</p>

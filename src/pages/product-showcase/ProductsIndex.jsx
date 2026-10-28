@@ -251,7 +251,7 @@ const PROCESS_RECORDS = [
 function Brand() {
   return (
     <a className="px-brand" href="/" aria-label="DDNZ Global home">
-      <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
+      <img src="/images/brand/ddnz-global-mark-v2.png" alt="" />
       <span>
         <strong>DDNZ GLOBAL</strong>
         <small>MANUFACTURING &amp; EXPORT</small>

@@ -5,7 +5,7 @@ import { companyCopy } from './copy';
 import { aboutCopy } from './aboutCopy';
 import { navigationPath } from '../../lib/productLanguageRouting';
 const companies = [
- { id: 'ddnz', logo: '/images/brand/ddnz-global-mark-v1.png', brand: 'DDNZ Global', name: COMPANY.zh, code: '91440111679736793B', date: '2008-09-16', capital: 500000 },
+ { id: 'ddnz', logo: '/images/brand/ddnz-global-mark-v2.png', brand: 'DDNZ Global', name: COMPANY.zh, code: '91440111679736793B', date: '2008-09-16', capital: 500000 },
  { id: 'hb', logo: '/images/brand/heaven-born-wing-logo-v1.png', brand: 'HB · Heaven Born', name: COMPANY.freightZh, code: '91440111778389280U', date: '2005-09-13', capital: 5000000 },
 ] as const;
 export default function CompanyIdentity({compact=false}: {compact?:boolean}) {

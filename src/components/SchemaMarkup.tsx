@@ -57,7 +57,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'name': language === 'zh' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
         'alternateName': ['DDNZ Global', '大递诺展'],
         'url': 'https://www.ddnzglobal.com',
-        'logo': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
+        'logo': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png',
         'description': positioning[language].homeDescription,
         'contactPoint': [
           {
@@ -164,7 +164,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         }))
       };
     } else if (type === 'BlogPosting') {
-      const rawImage = data.image || 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png';
+      const rawImage = data.image || 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png';
       const absoluteImage = rawImage.startsWith('http')
         ? rawImage
         : `https://www.ddnzglobal.com${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`;
@@ -188,7 +188,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
           'url': 'https://www.ddnzglobal.com/',
           'logo': {
             '@type': 'ImageObject',
-            'url': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png'
+            'url': 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png'
           }
         },
         'mainEntityOfPage': {
