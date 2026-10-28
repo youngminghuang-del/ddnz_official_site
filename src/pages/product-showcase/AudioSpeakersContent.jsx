@@ -123,7 +123,7 @@ const FACTORY_EVIDENCE = [
 function Brand() {
   return (
     <a className="as-brand" href="/products/" aria-label="DDNZ Global product sourcing">
-      <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
+      <img src="/images/brand/ddnz-global-mark-v2.png" alt="" />
       <span><strong>DDNZ GLOBAL</strong><small>MANUFACTURING &amp; EXPORT</small></span>
     </a>
   );

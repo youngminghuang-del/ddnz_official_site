@@ -1144,7 +1144,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         url: 'https://www.ddnzglobal.com/',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
+          url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png',
         },
       },
     };
@@ -1232,7 +1232,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           url: 'https://www.ddnzglobal.com/',
           logo: {
             '@type': 'ImageObject',
-            url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png',
+            url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png',
           },
           description: optimizedDesc,
           contactPoint: {
@@ -1266,7 +1266,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
   }
 
   if (relPath.startsWith('blog/')) {
-    const rawImage = seo.image || 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png';
+    const rawImage = seo.image || 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png';
     const absoluteImage = rawImage.startsWith('http')
       ? rawImage
       : `https://www.ddnzglobal.com${rawImage.startsWith('/') ? rawImage : `/${rawImage}`}`;
@@ -1291,7 +1291,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         url: 'https://www.ddnzglobal.com/',
         logo: {
           '@type': 'ImageObject',
-          url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v1.png'
+          url: 'https://www.ddnzglobal.com/images/brand/ddnz-global-mark-v2.png'
         }
       },
       mainEntityOfPage: { '@type': 'WebPage', '@id': canonicalUrl }

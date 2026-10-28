@@ -1,3 +1,4 @@
+import DdnzBrand from './DdnzBrand';
 import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import ProductDirectoryMenu from './ProductDirectoryMenu';
 import { aboutCopy } from '../features/company-identity/aboutCopy';
@@ -478,23 +479,7 @@ export default function SourcingHomepageNav({
           className="group flex shrink-0 items-center gap-2.5 rounded-md py-1 pr-1 text-[var(--ddnz-ink)] outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] focus-visible:ring-offset-4 rtl:pl-1 rtl:pr-0 sm:gap-3"
           aria-label={`DDNZ Global — ${labels.home}`}
         >
-          <span className="grid h-8 w-8 shrink-0 place-items-center min-[400px]:h-10 min-[400px]:w-10 sm:h-[46px] sm:w-[46px]" aria-hidden="true">
-            <img
-              src="/images/brand/ddnz-global-mark-v1.png"
-              alt=""
-              width="256"
-              height="228"
-              className="block h-auto w-full object-contain transition-transform duration-200 group-hover:-translate-y-px"
-            />
-          </span>
-          <span className="flex min-w-0 flex-col justify-center">
-            <span className="whitespace-nowrap bg-[linear-gradient(100deg,#6b2f8a_0%,#8d397d_42%,#b94750_76%,#b94625_100%)] bg-clip-text text-[18px] min-[400px]:text-[22px] font-extrabold leading-[0.88] tracking-[-0.025em] text-transparent 2xl:text-[26px]">
-              DDNZ<span className="ml-[0.32em] font-semibold tracking-[0.045em]">GLOBAL</span>
-            </span>
-            <span className="mt-[6px] whitespace-nowrap text-[8px] min-[400px]:text-[10px] font-semibold leading-none tracking-[0.075em] text-[#40536c] sm:text-[11px]">
-              MANUFACTURING <span className="text-[#b94625]">&amp;</span> EXPORT
-            </span>
-          </span>
+          <DdnzBrand />
         </Link>
 
         <nav className={`hidden items-center gap-0.5 ${desktopVisibility} 2xl:gap-2`} aria-label="Primary navigation">

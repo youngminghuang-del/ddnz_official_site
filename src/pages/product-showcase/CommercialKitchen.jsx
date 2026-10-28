@@ -125,7 +125,7 @@ const menuItems = {
 function Brand() {
   return (
     <a className="brand" href="#top" aria-label="DDNZ Global home">
-      <img src="/images/product-showcase/common/ddnz-global-mark.webp" alt="" />
+      <img src="/images/brand/ddnz-global-mark-v2.png" alt="" />
       <span className="brand-copy"><strong>DDNZ GLOBAL</strong><small>MANUFACTURING &amp; EXPORT</small></span>
     </a>
   );
@@ -188,7 +188,7 @@ function InlineBrief() {
 }
 
 const KITCHEN_ASSETS = "/images/product-showcase/kitchen";
-const BRAND_ASSET = "/images/product-showcase/common/ddnz-global-mark.webp";
+const BRAND_ASSET = "/images/brand/ddnz-global-mark-v2.png";
 
 const equipmentFamilies = [
   {
