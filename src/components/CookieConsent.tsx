@@ -376,6 +376,17 @@ const cookieAriaText: Record<Language, { close: string; categories: string }> = 
   ,tr: { close: 'Çerez ayarlarını kapat', categories: 'Çerez kategorileri' }
 };
 
+const continueWithoutAccepting: Record<Language, string> = {
+  en: 'Continue without accepting',
+  zh: '不接受并继续',
+  ru: 'Продолжить без согласия',
+  fr: 'Continuer sans accepter',
+  es: 'Continuar sin aceptar',
+  ar: 'المتابعة دون قبول',
+  pt: 'Continuar sem aceitar',
+  tr: 'Kabul etmeden devam et',
+};
+
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
   const [showPreferencesModal, setShowPreferencesModal] = useState(false);
@@ -574,8 +585,15 @@ export default function CookieConsent() {
       {isVisible && !showPreferencesModal && (
           <div data-cookie-banner className="fixed bottom-0 left-0 right-0 z-[90] p-2 sm:p-4 pointer-events-none">
             <div className="max-w-5xl mx-auto pointer-events-auto">
-              <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-xl shadow-2xl p-4 flex flex-col lg:flex-row items-start lg:items-center gap-3 sm:gap-4 relative overflow-hidden backdrop-blur-md">
+              <div className="bg-slate-900 border border-slate-700/50 text-slate-300 rounded-xl shadow-2xl p-4 pt-12 flex flex-col lg:flex-row items-start lg:items-center gap-3 sm:gap-4 relative overflow-hidden backdrop-blur-md">
 
+                <button
+                  type="button"
+                  onClick={handleDecline}
+                  className="absolute end-4 top-2 z-20 min-h-8 py-1 text-xs text-slate-300 underline underline-offset-4 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                >
+                  {continueWithoutAccepting[language]}
+                </button>
                 <div className="hidden flex-shrink-0 bg-[#4B27B1]/20 p-2 rounded-full relative z-10 border border-[#4B27B1]/40 sm:block">
                   <Cookie className="w-6 h-6 text-[#FF8A00]" />
                 </div>
