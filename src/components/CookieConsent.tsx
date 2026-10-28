@@ -591,16 +591,9 @@ export default function CookieConsent() {
                   <button 
                     type="button"
                     onClick={() => setShowPreferencesModal(true)}
-                    className="col-span-2 min-h-11 px-3 sm:col-span-1 sm:px-4 py-2 text-xs sm:text-sm font-bold text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg transition-colors border border-slate-700/60"
+                    className="min-h-11 px-3 sm:px-4 py-2 text-xs sm:text-sm font-bold text-slate-300 hover:text-white bg-slate-800/60 hover:bg-slate-800 rounded-lg transition-colors border border-slate-700/60"
                   >
                     {tLocal.btnSettings}
-                  </button>
-                  <button 
-                    type="button"
-                    onClick={handleDecline}
-                    className="min-h-11 px-3 sm:px-4 py-2 text-xs sm:text-sm font-semibold text-slate-400 hover:text-white bg-transparent hover:bg-slate-800/40 rounded-lg transition-colors"
-                  >
-                    {tLocal.btnDecline}
                   </button>
                   <button 
                     type="button"
@@ -780,25 +773,25 @@ export default function CookieConsent() {
                   {tLocal.consentBy}
                 </div>
 
-                <div className="flex gap-3 w-full sm:w-auto justify-end">
+                <div className="flex flex-wrap gap-3 w-full sm:w-auto justify-end">
                   <button
                     type="button"
                     onClick={handleDecline}
-                    className="px-5 py-2.5 text-xs md:text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors"
+                    className="shrink-0 min-h-11 px-5 py-2.5 text-xs md:text-sm font-bold text-slate-500 hover:text-slate-700 transition-colors"
                   >
                     {tLocal.btnDecline}
                   </button>
                   <button
                     type="button"
                     onClick={handleAccept}
-                    className="px-5 py-2.5 text-xs md:text-sm font-bold text-[#4B27B1] hover:text-white bg-purple-50 hover:bg-[#4B27B1] border border-[#4B27B1]/30 hover:border-transparent rounded-lg transition-all"
+                    className="shrink-0 min-h-11 px-5 py-2.5 text-xs md:text-sm font-bold text-[#4B27B1] hover:text-white bg-purple-50 hover:bg-[#4B27B1] border border-[#4B27B1]/30 hover:border-transparent rounded-lg transition-all"
                   >
                     {tLocal.btnAcceptAll}
                   </button>
                   <button
                     type="button"
                     onClick={handleSavePreferences}
-                    className="px-6 py-2.5 text-xs md:text-sm font-extrabold text-white bg-gradient-to-r from-[#4B27B1] to-[#3a1d91] hover:from-[#FF8A00] hover:to-[#e67c00] rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
+                    className="shrink-0 min-h-11 px-6 py-2.5 text-xs md:text-sm font-extrabold text-white bg-gradient-to-r from-[#4B27B1] to-[#3a1d91] hover:from-[#FF8A00] hover:to-[#e67c00] rounded-lg shadow-md hover:shadow-lg transition-all duration-300"
                   >
                     {tLocal.btnSave}
                   </button>
