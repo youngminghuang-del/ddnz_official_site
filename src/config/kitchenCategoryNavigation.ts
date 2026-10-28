@@ -1,3 +1,4 @@
+import {coffeePath,coffeeCopy} from '../features/coffee/data.mjs';
 import type { Language } from '../i18n/translations';
 import { kitchenCategoryPaths, kitchenPackagePath } from '../features/commercial-kitchen/routes.mjs';
 
@@ -12,5 +13,5 @@ const labels: Record<Language, string[]> = {
   tr: ['Restoran mutfak paketleri', 'Buz makineleri', 'Elektrikli fritözler', 'Elektrikli ızgaralar'],
 };
 export function kitchenCategoryNavigation(language: Language) {
-  return [kitchenPackagePath, ...kitchenCategoryPaths].map((to: string, index: number) => ({ to, label: labels[language][index] }));
+  return [...[kitchenPackagePath, ...kitchenCategoryPaths].map((to: string, index: number) => ({ to, label: labels[language][index] })), {to:coffeePath,label:coffeeCopy(language).nav}];
 }

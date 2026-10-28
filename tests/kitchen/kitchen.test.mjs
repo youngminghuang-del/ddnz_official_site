@@ -10,7 +10,7 @@ import {buildInquiryMessage,isProductionHost,submitInquiry} from '../../src/feat
 const root=new URL('../..',import.meta.url);
 const product=id=>products.find(item=>item.id===id);
 
-test('keeps all 44 catalog SKUs',()=>assert.equal(products.length,44));
+test('keeps all 46 catalog SKUs',()=>assert.equal(products.length,46));
 test('keeps exactly eight indicative supply references',()=>assert.equal(products.filter(item=>item.quote).length,8));
 test('preserves approved indicative prices, currencies and reference quantities',()=>assert.deepEqual(Object.fromEntries(products.filter(item=>item.quote).map(item=>[item.model,[item.quote.price,item.quote.currency,item.quote.minUnits]])),{'HZB-50/AB':[1318.34,'CNY',1],'ZH-101V':[348.8,'CNY',10],'GN650TNPro':[4534.41,'CNY',1],'GNT2MTNPro':[3170.91,'CNY',1],'ZH-818':[291.1,'CNY',1],'HZB-100FA':[2124.51,'CNY',1],'ZH-102V':[824.44,'CNY',1],'500W variant':[2283.06,'CNY',1]}));
 test('every product image is an actually copied commercial-kitchen media file',()=>{for(const item of products){assert.match(item.image,/^\/(?:commercial-kitchen-media|images\/product-series)\//);assert.ok(existsSync(new URL(`../../public${item.image}`,import.meta.url)),item.image);}});

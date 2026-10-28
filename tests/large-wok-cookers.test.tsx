@@ -12,7 +12,7 @@ test('large wok rows retain the distinct source diameters, power and dimensions 
  assert.deepEqual(largeWokModels.map(p=>[p.model,p.diameter,p.power,p.dimensions]),[['Z-SCD04H','Ø 900 mm','25 kW','1100 × 1200 × 800 (400) mm'],['Z-SCD05H','Ø 1000 mm','30 kW','1200 × 1300 × 800 (400) mm'],['Z-SCD06H','Ø 1200 mm','35 kW','1400 × 1470 × 800 (400) mm']]);
  for(const p of largeWokModels){assert.equal(p.supply,'380 V · 50 Hz');assert.ok(fs.existsSync('public'+p.image));assert.equal(p.capacity,undefined);assert.equal(p.current,undefined);assert.equal(p.breaker,undefined);assert.equal(p.moq,undefined);assert.equal(p.price,undefined);}
  for(const code of ['Z-SCD01H','Z-SCD02H','Z-SCD03H'])assert.ok(!catalog.some(p=>p.model===code));
- assert.equal(catalog.length,44);assert.equal(catalog.filter(p=>p.quote).length,8);
+ assert.equal(catalog.length,46);assert.equal(catalog.filter(p=>p.quote).length,8);
 });
 test('eight locales disclose the series image scope and hand off all three configurations',()=>{
  for(const locale of Object.keys(copies) as (keyof typeof copies)[]){

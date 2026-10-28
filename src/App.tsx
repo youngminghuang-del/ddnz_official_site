@@ -1,3 +1,4 @@
+import {coffeePath} from './features/coffee/data.mjs';
 import './features/freight/country-editorial.css';
 import WhatsAppFloat from './components/WhatsAppFloat';
 import RouteRecovery, { RouteLoadingFallback } from './components/RouteRecovery';
@@ -67,6 +68,7 @@ import { mobilePaths } from './features/mobile-sourcing/routes.mjs';
 import { shippingCountries as SHIPPING_COUNTRIES, sourcingCategories as SOURCING_CATEGORIES } from './config/siteNavigation';
 const LocalizedFilmGuidePage = lazy(() => import('./features/film-guide/FilmGuidePage'));
 const LocalizedRefrigerationPage = lazy(() => import('./features/refrigeration/RefrigerationPage'));
+const CoffeePage = lazy(() => import('./features/coffee/CoffeePage'));
 const AudioCategoryPage = lazy(() => import('./features/audio/AudioCategoryPage'));
 const LocalizedAudioPage = lazy(() => import('./features/audio/AudioPage'));
 const AudioSpeakers = lazy(() => import('./pages/product-showcase/AudioSpeakers'));
@@ -432,6 +434,7 @@ export default function App() {
             <Route path={`${kitchenPackagePath}/:scenarioSlug`} element={<RestaurantKitchenScenario />} />
             {kitchenCategoryPaths.flatMap(path => Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={prefix?<LocalizedCategoryPage/>:<KitchenCategoryPage/>}/>))}
             {Object.values(navigationPrefixes).filter(Boolean).map(prefix=><Route key={prefix+'audio'} path={prefix+'/sourcing/audio-speakers-from-china'} element={<LocalizedAudioPage/>}/>)}
+            {Object.values(navigationPrefixes).map(prefix=><Route key={prefix+'coffee'} path={prefix+coffeePath} element={<CoffeePage/>}/>)}
             {audioCategoryPaths.flatMap(path=>Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={<AudioCategoryPage/>}/>))}
             <Route path="/sourcing/audio-speakers-from-china" element={<AudioSpeakers />} />
             {mobilePaths.flatMap(path => productContentLanguages.map(locale => <Route key={`mobile-${locale}-${path}`} path={localizedProductPath(path, locale)} element={<MobileAccessories />} />))}

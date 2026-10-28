@@ -1,3 +1,5 @@
+import CoffeeContent from '../src/features/coffee/CoffeeContent';
+import {coffeePath,coffeeMeta,coffeeSchema} from '../src/features/coffee/data.mjs';
 import ProductSeries from '../src/features/product-series/ProductSeries';
 import EquipmentBuyingSupport from '../src/features/equipment-buying-support/EquipmentBuyingSupport';
 import istanbulKitchenSchema from '../src/data/istanbul-kitchen-schema.json';
@@ -1603,6 +1605,7 @@ function injectStaticRouteContent(
 ) {
   if(lang==='en' && '/'+relPath+'/'===smallKitchenPath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(SmallKitchenPlanningContent,{locale:'en'}))}</div>`);
   if(lang==='en' && '/'+relPath+'/'===cafePath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CafePlanningContent,{locale:'en'}))}</div>`);
+  if('/'+relPath===coffeePath){const locale=lang==='zh-cn'?'zh':lang;return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CoffeeContent,{locale}))}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(coffeeSchema(locale)).replace(/</g,'\\u003c')}</script></head>`);}
   let staticBody = '';
   const serviceKind = relPath.startsWith('sourcing-services/') ? relPath.split('/')[1] : '';
   const service = serviceCopy[serviceKind as keyof typeof serviceCopy]?.[(lang === 'zh-cn' ? 'zh' : lang) as Language];
@@ -1939,6 +1942,7 @@ function run() {
     { path: 'sourcing/restaurant-kitchen-packages-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     ...restaurantScenarioSeo.map(([slug]) => ({ path: `sourcing/restaurant-kitchen-packages-from-china/${slug}`, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
     ...audioCategoryPaths.map(path=>({path:path.slice(1),priority:'0.8',changefreq:'monthly',languages:overviewLanguages})),
+    { path: coffeePath.slice(1), priority:'0.8', changefreq:'monthly', languages:overviewLanguages },
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     { path: 'sourcing/portable-air-conditioners-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
     { path: 'sourcing/portable-compressor-fridges-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
@@ -1997,6 +2001,7 @@ function run() {
       if (['products','sourcing-services'].includes(entry.path) && lang !== 'en') seo = overviewMeta(entry.path as any, lang);
       if (modernizedFreightServicePaths.includes(entry.path as any)) seo = modernFreightServiceMetadata(entry.path as any, (lang === 'zh-cn' ? 'zh' : lang) as any);
       if(lang !== 'en' && entry.path==='screen-protectors/calculator'){const meta=calculatorMeta(lang);seo={title:meta.title,desc:meta.description,keywords:''};}
+      if('/'+entry.path===coffeePath){const meta=coffeeMeta(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       const mobilePage = mobilePageForPath(`/${entry.path}`);
       if (mobilePage) {const meta=mobileMetadata(mobilePage.id,lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (lang !== 'en' && kitchenCategories.some(c=>c.path===`/${entry.path}/`)) { const meta=categoryMeta(kitchenCategories.find(c=>c.path===`/${entry.path}/`), (lang==='zh-cn'?'zh':lang) as CategoryLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }

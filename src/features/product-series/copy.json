@@ -2,8 +2,8 @@
   "en": {
     "coffeeTitle": "Compare coffee machines for cafés, offices and hotel service.",
     "coffeeIntro": "Source coffee machines from China by workflow: a compact counter, a plumbed espresso station, a two-group bar or self-service bean-to-cup. Compare these supplier model references alongside the existing CK-129 and CK-136 range.",
-    "speakerTitle": "Bluetooth party speakers with model-specific configurations.",
-    "speakerIntro": "Source Bluetooth speakers from China for karaoke retail, compact events and dealer assortments. Compare three supplier-documented models by driver format, battery, controls and packing requirements.",
+    "speakerTitle": "Compare Bluetooth speakers by use and configuration.",
+    "speakerIntro": "Source Bluetooth speakers from China for personal audio, karaoke retail and dealer assortments. Compare model-specific power, connections and packing; confirm the final battery and accessory package.",
     "names": [
       "Plumbed single-group espresso machine",
       "Compact tank-fed espresso machine",
@@ -11,7 +11,13 @@
       "Automatic bean-to-cup machine",
       "Single-driver karaoke speaker",
       "Dual 6.5-inch party speaker",
-      "Dual 8-inch party speaker"
+      "Dual 8-inch party speaker",
+      "Two-group tea and espresso machine",
+      "Two-group tea and espresso machine",
+      "Two-group espresso machine · T5",
+      "Two-group espresso machine · compact body",
+      "Portable cylinder speaker",
+      "Wearable clip-on speaker"
     ],
     "uses": [
       "A fixed espresso counter with water connection and a separate grinder.",
@@ -20,7 +26,13 @@
       "Office, reception or breakfast service with automatic grinding and milk drinks.",
       "A smaller-footprint karaoke selection for retailers and compact venues.",
       "A taller twin-driver format for karaoke and mixed dealer orders.",
-      "A larger dual-woofer format with two tweeters for party and karaoke ranges."
+      "A larger dual-woofer format with two tweeters for party and karaoke ranges.",
+      "A tea-and-coffee counter with separate steam and extraction boilers.",
+      "A second two-group option for a staffed beverage counter.",
+      "A staffed café comparing boiler architecture and electrical load.",
+      "A two-group bar where the counter footprint needs checking.",
+      "A portable retail assortment for personal listening.",
+      "A lightweight clip-on format for hands-free personal audio."
     ],
     "notes": [
       "Confirm pump, boiler configuration, water treatment and tested throughput for the selected version.",
@@ -29,7 +41,13 @@
       "Confirm the exact Big Plus version, electrical rating and water connection. Milk cooler is optional; cleaning and milk service need an operating plan.",
       "Microphone type, rechargeable battery, adapter and retail box must match the ordered configuration. Playtime and Bluetooth version remain to confirm.",
       "The parameter sheet and later quote differ on microphone quantity. Confirm the microphone package and packing before ordering.",
-      "Keep DR-8828 separate from OK-8870: battery voltage, power and controls differ. Confirm microphone count and packing version."
+      "Keep DR-8828 separate from OK-8870: battery voltage, power and controls differ. Confirm microphone count and packing version.",
+      "Confirm electrical phase, water treatment, drainage and accessories.",
+      "Confirm the final drawing, electrical version and tea/coffee workflow.",
+      "Confirm the footprint, electrical version, service access and grinder package.",
+      "Confirm electrical version, installation clearance and grinder package.",
+      "Confirm battery capacity, charge port, measured playtime and water-resistance test. The source lists a power range; confirm rated output for the order.",
+      "Confirm exact battery capacity, clip fit, microphone performance and playtime. The source lists a power range; confirm rated output for the order."
     ],
     "fields": {
       "power": "Listed power",
@@ -45,7 +63,8 @@
       "size": "Product dimensions",
       "net": "Net weight",
       "gross": "Gross weight",
-      "packing": "Packed dimensions"
+      "packing": "Packed dimensions",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Water connection",
     "tweeters": "tweeters",
@@ -65,13 +84,14 @@
     "existing": "Existing CK-129 / CK-136 models",
     "save": "Selections are saved in this browser. Quantities are your request, not confirmed MOQ.",
     "linkCoffee": "Coffee machines",
-    "linkSpeaker": "Bluetooth model catalogue"
+    "linkSpeaker": "Bluetooth model catalogue",
+    "mixedList": "Open the complete kitchen list"
   },
   "zh": {
     "coffeeTitle": "按咖啡馆、办公与酒店用途选择咖啡机。",
-    "coffeeIntro": "从中国采购咖啡机，按紧凑吧台、直连水源工位、双头咖啡吧及全自动服务选型。四款厂家参考型号与既有CK-129、CK-136系列并列比较。",
-    "speakerTitle": "按具体配置采购蓝牙派对音箱。",
-    "speakerIntro": "面向卡拉OK零售、小型活动及经销商配货，从中国采购蓝牙音箱。三款有厂家资料的型号按喇叭配置、电池、控制面板及包装要求比较。",
+    "coffeeIntro": "从中国采购咖啡机，按紧凑吧台、直连水源工位、双头咖啡吧及全自动服务选型。这些厂家参考型号与既有CK-129、CK-136系列并列比较。",
+    "speakerTitle": "按用途与配置选购蓝牙音箱。",
+    "speakerIntro": "从中国采购蓝牙音箱，覆盖个人随身、卡拉OK零售与经销商组合。逐款比较功率、连接方式和包装，确认最终电池及附件配置。",
     "names": [
       "直连水源单头意式咖啡机",
       "水箱式紧凑意式咖啡机",
@@ -79,7 +99,13 @@
       "全自动现磨咖啡机",
       "单喇叭卡拉OK音箱",
       "双6.5英寸派对音箱",
-      "双8英寸派对音箱"
+      "双8英寸派对音箱",
+      "双头茶咖机",
+      "双头茶咖机",
+      "T5双头半自动意式咖啡机",
+      "双头半自动意式咖啡机",
+      "便携筒形蓝牙音箱",
+      "可夹式穿戴蓝牙音箱"
     ],
     "uses": [
       "固定咖啡吧台，预留进水并单配磨豆机。",
@@ -88,7 +114,13 @@
       "办公、接待与早餐服务，自动磨豆并制作奶咖。",
       "适合零售和小型场地的较小占地卡拉OK配置。",
       "双喇叭立式机身，适合卡拉OK及经销混合配货。",
-      "双低音加双高音配置，面向派对及卡拉OK产品线。"
+      "双低音加双高音配置，面向派对及卡拉OK产品线。",
+      "茶饮与意式共用吧台，独立蒸汽及萃取锅炉。",
+      "有人操作的茶咖吧台，另一款双头配置。",
+      "用于咖啡馆，按锅炉结构与供电负荷选型。",
+      "用于双头咖啡吧，先核对吧台尺寸与安装空间。",
+      "用于便携音箱零售组合与个人聆听。",
+      "用于轻量随身音频，先核对夹具及佩戴方式。"
     ],
     "notes": [
       "按所选版本确认水泵、锅炉配置、水处理及实测产能。",
@@ -97,7 +129,13 @@
       "确认Big Plus具体版本、功率及供水方式；奶柜为选配，另确认清洁和奶路维护方案。",
       "麦克风类型、充电电池、适配器及彩盒须与订单配置一致，续航和蓝牙版本待确认。",
       "参数表与后续报价的麦克风数量不同，订货前确认配件及包装版本。",
-      "DR-8828与OK-8870分开，电池电压、功率和控制面板不同；确认麦克风数量及包装版本。"
+      "DR-8828与OK-8870分开，电池电压、功率和控制面板不同；确认麦克风数量及包装版本。",
+      "确认供电相数、水处理、排水及随机附件。",
+      "确认最终尺寸图、供电版本及茶咖操作流程。",
+      "确认外形尺寸、供电版本、检修空间及磨豆机配套。",
+      "确认供电版本、安装间距及磨豆机配套。",
+      "电池容量、充电接口、实测续航及防水测试待确认。来源仅列功率区间，订单需确认额定输出。",
+      "准确电池容量、夹具适配、麦克风及续航待确认。来源仅列功率区间，订单需确认额定输出。"
     ],
     "fields": {
       "power": "资料标注功率",
@@ -113,7 +151,8 @@
       "size": "机器尺寸",
       "net": "净重",
       "gross": "毛重",
-      "packing": "包装尺寸"
+      "packing": "包装尺寸",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "连接外部水源",
     "tweeters": "高音喇叭",
@@ -133,13 +172,14 @@
     "existing": "既有CK-129／CK-136型号",
     "save": "选品保存在当前浏览器，填写数量是采购需求，不代表已确认MOQ。",
     "linkCoffee": "咖啡机",
-    "linkSpeaker": "蓝牙音箱型号目录"
+    "linkSpeaker": "蓝牙音箱型号目录",
+    "mixedList": "查看完整餐厨采购清单"
   },
   "es": {
     "coffeeTitle": "Compare cafeteras para cafeterías, oficinas y hoteles.",
     "coffeeIntro": "Compre cafeteras de China según el uso: barra compacta, conexión de agua, dos grupos o servicio automático. Compare estas referencias con CK-129 y CK-136.",
-    "speakerTitle": "Altavoces Bluetooth para fiestas, por configuración.",
-    "speakerIntro": "Compre en China tres modelos documentados para karaoke y distribuidores. Compare transductores, batería, controles y embalaje.",
+    "speakerTitle": "Compare altavoces Bluetooth por uso y configuración.",
+    "speakerIntro": "Compre altavoces Bluetooth de China para audio personal, karaoke y distribución. Compare potencia, conexiones y embalaje; confirme batería y accesorios.",
     "names": [
       "Espresso de un grupo con toma de agua",
       "Espresso compacto con depósito",
@@ -147,7 +187,13 @@
       "Cafetera automática de grano",
       "Altavoz karaoke de un transductor",
       "Altavoz de fiesta de doble 6,5 pulgadas",
-      "Altavoz de fiesta de doble 8 pulgadas"
+      "Altavoz de fiesta de doble 8 pulgadas",
+      "Máquina de té y espresso de dos grupos",
+      "Máquina de té y espresso de dos grupos",
+      "Máquina espresso de dos grupos · T5",
+      "Máquina espresso de dos grupos · compacta",
+      "Altavoz cilíndrico portátil",
+      "Altavoz portátil con pinza"
     ],
     "uses": [
       "Barra fija con toma de agua y molinillo separado.",
@@ -156,7 +202,13 @@
       "Oficina, recepción o desayuno con molienda y bebidas de leche automáticas.",
       "Formato compacto para comercios y pequeños espacios.",
       "Formato alto de dos transductores para karaoke y surtidos.",
-      "Dos woofers y dos tweeters para fiestas y karaoke."
+      "Dos woofers y dos tweeters para fiestas y karaoke.",
+      "Barra de té y café con calderas separadas.",
+      "Otra opción de dos grupos para una barra atendida.",
+      "Compare calderas y carga eléctrica para una cafetería.",
+      "Compruebe el espacio de la barra para dos grupos.",
+      "Para surtidos minoristas y escucha personal.",
+      "Formato ligero con pinza para audio personal."
     ],
     "notes": [
       "Confirme bomba, calderas, tratamiento de agua y producción ensayada para la versión elegida.",
@@ -165,7 +217,13 @@
       "Confirme versión Big Plus, potencia y suministro de agua; nevera de leche opcional y limpieza por acordar.",
       "Confirme micrófono, batería recargable, adaptador y caja; autonomía y versión Bluetooth pendientes.",
       "La ficha y la cotización posterior difieren en micrófonos; confirme accesorios y embalaje.",
-      "DR-8828 y OK-8870 son distintos en batería, potencia y controles; confirme micrófonos y embalaje."
+      "DR-8828 y OK-8870 son distintos en batería, potencia y controles; confirme micrófonos y embalaje.",
+      "Confirme fases, tratamiento de agua, desagüe y accesorios.",
+      "Confirme plano, versión eléctrica y uso de té y café.",
+      "Confirme dimensiones, electricidad, mantenimiento y molino.",
+      "Confirme electricidad, espacio de instalación y molino.",
+      "Confirme batería, puerto de carga, autonomía y ensayo de resistencia al agua. Verifique la potencia nominal dentro del intervalo publicado.",
+      "Confirme capacidad exacta, pinza, micrófono y autonomía. Verifique la potencia nominal dentro del intervalo publicado."
     ],
     "fields": {
       "power": "Potencia indicada",
@@ -181,7 +239,8 @@
       "size": "Dimensiones del equipo",
       "net": "Peso neto",
       "gross": "Peso bruto",
-      "packing": "Dimensiones embaladas"
+      "packing": "Dimensiones embaladas",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Conexión de agua",
     "tweeters": "tweeters",
@@ -201,13 +260,14 @@
     "existing": "Modelos existentes CK-129 / CK-136",
     "save": "Selección guardada en este navegador; cantidades solicitadas, no MOQ confirmado.",
     "linkCoffee": "Cafeteras",
-    "linkSpeaker": "Modelos de altavoces Bluetooth"
+    "linkSpeaker": "Modelos de altavoces Bluetooth",
+    "mixedList": "Ver la lista completa de cocina"
   },
   "fr": {
     "coffeeTitle": "Comparez les machines à café pour cafés, bureaux et hôtels.",
     "coffeeIntro": "Achetez en Chine selon l’usage : comptoir compact, raccordement d’eau, deux groupes ou service automatique. Comparez ces références aux CK-129 et CK-136.",
-    "speakerTitle": "Enceintes Bluetooth de fête, par configuration.",
-    "speakerIntro": "Achetez en Chine trois modèles documentés pour karaoké et distributeurs. Comparez haut-parleurs, batterie, commandes et emballage.",
+    "speakerTitle": "Comparez les enceintes Bluetooth par usage et configuration.",
+    "speakerIntro": "Achetez des enceintes Bluetooth de Chine pour écoute personnelle, karaoké et distribution. Comparez puissance, connexions et emballage ; confirmez batterie et accessoires.",
     "names": [
       "Espresso un groupe raccordé à l’eau",
       "Espresso compact à réservoir",
@@ -215,7 +275,13 @@
       "Machine automatique à grains",
       "Enceinte karaoké à un haut-parleur",
       "Enceinte de fête double 6,5 pouces",
-      "Enceinte de fête double 8 pouces"
+      "Enceinte de fête double 8 pouces",
+      "Machine à thé et espresso à deux groupes",
+      "Machine à thé et espresso à deux groupes",
+      "Machine espresso à deux groupes · T5",
+      "Machine espresso à deux groupes · compacte",
+      "Enceinte cylindrique portable",
+      "Enceinte portable à pince"
     ],
     "uses": [
       "Comptoir fixe avec arrivée d’eau et moulin séparé.",
@@ -224,7 +290,13 @@
       "Bureau, accueil ou petit-déjeuner avec boissons lactées automatiques.",
       "Format compact pour commerces et petits espaces.",
       "Format vertical à deux haut-parleurs pour karaoké et assortiments.",
-      "Deux woofers et deux tweeters pour fêtes et karaoké."
+      "Deux woofers et deux tweeters pour fêtes et karaoké.",
+      "Comptoir thé et café avec chaudières séparées.",
+      "Autre option à deux groupes pour un comptoir avec personnel.",
+      "Comparez chaudières et charge électrique pour un café.",
+      "Vérifiez la place disponible pour deux groupes.",
+      "Pour assortiment de détail et écoute personnelle.",
+      "Format léger à pince pour écoute individuelle."
     ],
     "notes": [
       "Confirmer pompe, chaudières, traitement d’eau et débit testé pour la version choisie.",
@@ -233,7 +305,13 @@
       "Confirmer version Big Plus, puissance et alimentation en eau ; réfrigérateur à lait en option, nettoyage à préciser.",
       "Confirmer microphone, batterie rechargeable, adaptateur et boîte ; autonomie et version Bluetooth à préciser.",
       "La fiche et le devis ultérieur diffèrent sur les microphones ; accessoires et emballage à confirmer.",
-      "DR-8828 et OK-8870 diffèrent par batterie, puissance et commandes ; confirmer microphones et emballage."
+      "DR-8828 et OK-8870 diffèrent par batterie, puissance et commandes ; confirmer microphones et emballage.",
+      "Confirmer phases, traitement d’eau, évacuation et accessoires.",
+      "Confirmer plan, version électrique et usage thé/café.",
+      "Confirmer dimensions, alimentation, accès entretien et moulin.",
+      "Confirmer alimentation, dégagement et moulin.",
+      "Confirmer batterie, port de charge, autonomie et essai de résistance à l’eau. Vérifier la puissance nominale dans la plage annoncée.",
+      "Confirmer capacité exacte, pince, microphone et autonomie. Vérifier la puissance nominale dans la plage annoncée."
     ],
     "fields": {
       "power": "Puissance indiquée",
@@ -249,7 +327,8 @@
       "size": "Dimensions machine",
       "net": "Poids net",
       "gross": "Poids brut",
-      "packing": "Dimensions emballées"
+      "packing": "Dimensions emballées",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Raccordement d’eau",
     "tweeters": "tweeters",
@@ -269,13 +348,14 @@
     "existing": "Modèles existants CK-129 / CK-136",
     "save": "Sélection enregistrée dans ce navigateur ; quantités demandées, pas MOQ confirmé.",
     "linkCoffee": "Machines à café",
-    "linkSpeaker": "Modèles Bluetooth"
+    "linkSpeaker": "Modèles Bluetooth",
+    "mixedList": "Voir la liste cuisine complète"
   },
   "pt": {
     "coffeeTitle": "Compare máquinas de café para cafeterias, escritórios e hotéis.",
     "coffeeIntro": "Compre da China por uso: balcão compacto, conexão de água, dois grupos ou serviço automático. Compare estas referências com CK-129 e CK-136.",
-    "speakerTitle": "Caixas Bluetooth para festas, por configuração.",
-    "speakerIntro": "Compre da China três modelos documentados para karaokê e distribuidores. Compare alto-falantes, bateria, controles e embalagem.",
+    "speakerTitle": "Compare caixas Bluetooth por uso e configuração.",
+    "speakerIntro": "Compre caixas Bluetooth da China para áudio pessoal, karaokê e distribuição. Compare potência, conexões e embalagem; confirme bateria e acessórios.",
     "names": [
       "Espresso de um grupo com conexão de água",
       "Espresso compacto com reservatório",
@@ -283,7 +363,13 @@
       "Máquina automática de grãos",
       "Caixa karaokê de um alto-falante",
       "Caixa de festa com dois alto-falantes de 6,5 polegadas",
-      "Caixa de festa com dois alto-falantes de 8 polegadas"
+      "Caixa de festa com dois alto-falantes de 8 polegadas",
+      "Máquina de chá e espresso de dois grupos",
+      "Máquina de chá e espresso de dois grupos",
+      "Máquina espresso de dois grupos · T5",
+      "Máquina espresso de dois grupos · compacta",
+      "Caixa de som cilíndrica portátil",
+      "Caixa de som portátil com clipe"
     ],
     "uses": [
       "Balcão fixo com água e moedor separado.",
@@ -292,7 +378,13 @@
       "Escritório, recepção ou café da manhã com moagem e leite automáticos.",
       "Formato compacto para lojas e pequenos espaços.",
       "Formato vertical com dois falantes para karaokê e mix de revenda.",
-      "Dois woofers e dois tweeters para festas e karaokê."
+      "Dois woofers e dois tweeters para festas e karaokê.",
+      "Balcão de chá e café com caldeiras separadas.",
+      "Outra opção de dois grupos para balcão com operador.",
+      "Compare caldeiras e carga elétrica para uma cafeteria.",
+      "Verifique o espaço do balcão para dois grupos.",
+      "Para sortimento de varejo e áudio pessoal.",
+      "Formato leve com clipe para uso pessoal."
     ],
     "notes": [
       "Confirme bomba, caldeiras, tratamento de água e produção testada para a versão escolhida.",
@@ -301,7 +393,13 @@
       "Confirme versão Big Plus, potência e água; refrigerador de leite opcional e limpeza a definir.",
       "Confirme microfone, bateria recarregável, adaptador e caixa; autonomia e versão Bluetooth pendentes.",
       "Ficha e cotação posterior diferem em microfones; confirme acessórios e embalagem.",
-      "DR-8828 e OK-8870 diferem em bateria, potência e controles; confirme microfones e embalagem."
+      "DR-8828 e OK-8870 diferem em bateria, potência e controles; confirme microfones e embalagem.",
+      "Confirmar fases, tratamento de água, drenagem e acessórios.",
+      "Confirmar desenho, versão elétrica e uso de chá/café.",
+      "Confirmar dimensões, alimentação, manutenção e moedor.",
+      "Confirmar alimentação, folgas e moedor.",
+      "Confirmar bateria, porta de carga, autonomia e teste de resistência à água. Verificar potência nominal dentro da faixa informada.",
+      "Confirmar capacidade exata, clipe, microfone e autonomia. Verificar potência nominal dentro da faixa informada."
     ],
     "fields": {
       "power": "Potência informada",
@@ -317,7 +415,8 @@
       "size": "Dimensões da máquina",
       "net": "Peso líquido",
       "gross": "Peso bruto",
-      "packing": "Dimensões embaladas"
+      "packing": "Dimensões embaladas",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Conexão de água",
     "tweeters": "tweeters",
@@ -337,13 +436,14 @@
     "existing": "Modelos existentes CK-129 / CK-136",
     "save": "Seleção salva neste navegador; quantidades solicitadas, não MOQ confirmado.",
     "linkCoffee": "Máquinas de café",
-    "linkSpeaker": "Modelos de caixas Bluetooth"
+    "linkSpeaker": "Modelos de caixas Bluetooth",
+    "mixedList": "Ver a lista completa de cozinha"
   },
   "ru": {
     "coffeeTitle": "Кофемашины для кафе, офисов и гостиниц.",
     "coffeeIntro": "Закупайте в Китае по задачам: компактная стойка, подключение воды, две группы или автоматическое обслуживание. Сравните эти модели с CK-129 и CK-136.",
-    "speakerTitle": "Bluetooth-колонки для вечеринок с точной комплектацией.",
-    "speakerIntro": "Закупайте в Китае три документированные модели для караоке и дилерского ассортимента. Сравните динамики, аккумулятор, панель и упаковку.",
+    "speakerTitle": "Сравните Bluetooth-колонки по назначению и комплектации.",
+    "speakerIntro": "Закупайте Bluetooth-колонки из Китая для личного аудио, караоке и дилерского ассортимента. Сравните мощность, подключения и упаковку; уточните батарею и аксессуары.",
     "names": [
       "Одногруппная эспрессо-машина с подключением воды",
       "Компактная эспрессо-машина с баком",
@@ -351,7 +451,13 @@
       "Автоматическая зерновая кофемашина",
       "Караоке-колонка с одним динамиком",
       "Колонка с двумя динамиками 6,5 дюйма",
-      "Колонка с двумя динамиками 8 дюймов"
+      "Колонка с двумя динамиками 8 дюймов",
+      "Двухгруппная машина для чая и эспрессо",
+      "Двухгруппная машина для чая и эспрессо",
+      "Двухгруппная эспрессо-машина · T5",
+      "Двухгруппная эспрессо-машина · компактная",
+      "Портативная цилиндрическая колонка",
+      "Носимая колонка с зажимом"
     ],
     "uses": [
       "Стационарная стойка с водой и отдельной кофемолкой.",
@@ -360,7 +466,13 @@
       "Офис, ресепшен или завтрак с автоматическим помолом и молочными напитками.",
       "Компактный формат для магазинов и небольших площадок.",
       "Вертикальная модель с двумя динамиками для караоке и ассортимента.",
-      "Два НЧ- и два ВЧ-динамика для вечеринок и караоке."
+      "Два НЧ- и два ВЧ-динамика для вечеринок и караоке.",
+      "Бар для чая и кофе с раздельными бойлерами.",
+      "Ещё один вариант для бара с бариста.",
+      "Сравните бойлеры и нагрузку на электросеть.",
+      "Проверьте место на стойке для двух групп.",
+      "Для розничного ассортимента и личного прослушивания.",
+      "Лёгкий формат с зажимом для личного аудио."
     ],
     "notes": [
       "Подтвердите насос, бойлеры, водоподготовку и производительность для выбранной версии.",
@@ -369,7 +481,13 @@
       "Подтвердите версию Big Plus, мощность и подачу воды; холодильник молока опционален, очистка согласуется.",
       "Подтвердите микрофон, аккумулятор, адаптер и коробку; автономность и версия Bluetooth уточняются.",
       "Комплектация микрофонами и упаковкой зависит от согласованной версии заказа.",
-      "DR-8828 и OK-8870 различаются аккумулятором, мощностью и панелью; подтвердите микрофоны и упаковку."
+      "DR-8828 и OK-8870 различаются аккумулятором, мощностью и панелью; подтвердите микрофоны и упаковку.",
+      "Уточнить фазы питания, водоподготовку, слив и комплект.",
+      "Уточнить чертёж, электропитание и работу с чаем и кофе.",
+      "Уточнить размеры, питание, доступ для сервиса и кофемолку.",
+      "Уточнить питание, монтажные зазоры и кофемолку.",
+      "Уточнить ёмкость батареи, разъём, автономность и испытания влагозащиты. Подтвердить номинальную мощность в указанном диапазоне.",
+      "Уточнить ёмкость батареи, зажим, микрофон и автономность. Подтвердить номинальную мощность в указанном диапазоне."
     ],
     "fields": {
       "power": "Заявленная мощность",
@@ -385,7 +503,8 @@
       "size": "Габариты изделия",
       "net": "Масса нетто",
       "gross": "Масса брутто",
-      "packing": "Габариты упаковки"
+      "packing": "Габариты упаковки",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Подключение воды",
     "tweeters": "ВЧ-динамики",
@@ -405,13 +524,14 @@
     "existing": "Имеющиеся CK-129 / CK-136",
     "save": "Выбор сохраняется в этом браузере; количество — запрос покупателя, не подтверждённый MOQ.",
     "linkCoffee": "Кофемашины",
-    "linkSpeaker": "Модели Bluetooth-колонок"
+    "linkSpeaker": "Модели Bluetooth-колонок",
+    "mixedList": "Открыть полный список кухни"
   },
   "tr": {
     "coffeeTitle": "Kafeler, ofisler ve oteller için kahve makinelerini karşılaştırın.",
     "coffeeIntro": "Çin’den kullanım amacına göre alın: kompakt tezgâh, su bağlantısı, iki grup veya otomatik servis. Bu referansları CK-129 ve CK-136 ile karşılaştırın.",
-    "speakerTitle": "Modele özel yapılandırmalarla Bluetooth parti hoparlörleri.",
-    "speakerIntro": "Çin’den karaoke ve bayi karması için belgeli üç modeli seçin. Sürücü, pil, kontrol paneli ve ambalajı karşılaştırın.",
+    "speakerTitle": "Bluetooth hoparlörleri kullanım ve donanıma göre karşılaştırın.",
+    "speakerIntro": "Kişisel ses, karaoke ve bayi ürün karması için Çin’den Bluetooth hoparlör tedarik edin. Güç, bağlantı ve ambalajı karşılaştırın; pil ve aksesuarları doğrulayın.",
     "names": [
       "Su bağlantılı tek gruplu espresso makinesi",
       "Depolu kompakt espresso makinesi",
@@ -419,7 +539,13 @@
       "Tam otomatik çekirdekten kahve makinesi",
       "Tek sürücülü karaoke hoparlörü",
       "Çift 6,5 inç parti hoparlörü",
-      "Çift 8 inç parti hoparlörü"
+      "Çift 8 inç parti hoparlörü",
+      "İki gruplu çay ve espresso makinesi",
+      "İki gruplu çay ve espresso makinesi",
+      "İki gruplu espresso makinesi · T5",
+      "İki gruplu espresso makinesi · kompakt",
+      "Taşınabilir silindir hoparlör",
+      "Klipsli giyilebilir hoparlör"
     ],
     "uses": [
       "Su bağlantısı ve ayrı öğütücüsü olan sabit tezgâh.",
@@ -428,7 +554,13 @@
       "Otomatik öğütme ve sütlü içeceklerle ofis, resepsiyon veya kahvaltı servisi.",
       "Mağazalar ve küçük mekânlar için kompakt biçim.",
       "Karaoke ve bayi karması için uzun, çift sürücülü biçim.",
-      "Parti ve karaoke için iki woofer ve iki tweeter."
+      "Parti ve karaoke için iki woofer ve iki tweeter.",
+      "Ayrı kazanlarla çay ve kahve tezgâhı.",
+      "Personelli tezgâh için diğer iki gruplu seçenek.",
+      "Kafe için kazanları ve elektrik yükünü karşılaştırın.",
+      "İki grup için tezgâh alanını kontrol edin.",
+      "Perakende ürün karması ve kişisel dinleme için.",
+      "Kişisel ses için hafif klipsli tasarım."
     ],
     "notes": [
       "Seçilen sürüm için pompa, kazan, su arıtma ve kapasiteyi doğrulayın.",
@@ -437,7 +569,13 @@
       "Big Plus sürümü, güç ve su beslemesini doğrulayın; süt dolabı isteğe bağlı, temizlik planlanmalı.",
       "Mikrofon, şarjlı pil, adaptör ve kutuyu doğrulayın; çalışma süresi ve Bluetooth sürümü teyit edilmeli.",
       "Mikrofon ve ambalaj kapsamı onaylanan sipariş sürümüne göre belirlenir.",
-      "DR-8828 ile OK-8870 pil, güç ve panel bakımından farklıdır; mikrofonları ve ambalajı doğrulayın."
+      "DR-8828 ile OK-8870 pil, güç ve panel bakımından farklıdır; mikrofonları ve ambalajı doğrulayın.",
+      "Elektrik fazı, su arıtma, gider ve aksesuarları doğrulayın.",
+      "Çizim, elektrik sürümü ve çay/kahve akışını doğrulayın.",
+      "Boyut, elektrik, servis alanı ve değirmeni doğrulayın.",
+      "Elektrik, montaj boşlukları ve değirmeni doğrulayın.",
+      "Pil, şarj girişi, çalışma süresi ve su dayanımı testini doğrulayın. Belirtilen aralıkta anma gücünü doğrulayın.",
+      "Kesin pil kapasitesi, klips, mikrofon ve çalışma süresini doğrulayın. Belirtilen aralıkta anma gücünü doğrulayın."
     ],
     "fields": {
       "power": "Belirtilen güç",
@@ -453,7 +591,8 @@
       "size": "Ürün ölçüleri",
       "net": "Net ağırlık",
       "gross": "Brüt ağırlık",
-      "packing": "Ambalaj ölçüleri"
+      "packing": "Ambalaj ölçüleri",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "Su bağlantısı",
     "tweeters": "tweeter",
@@ -473,13 +612,14 @@
     "existing": "Mevcut CK-129 / CK-136 modelleri",
     "save": "Seçimler bu tarayıcıda saklanır; adetler talebinizdir, doğrulanmış MOQ değildir.",
     "linkCoffee": "Kahve makineleri",
-    "linkSpeaker": "Bluetooth hoparlör modelleri"
+    "linkSpeaker": "Bluetooth hoparlör modelleri",
+    "mixedList": "Mutfak listesinin tamamını açın"
   },
   "ar": {
     "coffeeTitle": "قارن ماكينات القهوة للمقاهي والمكاتب والفنادق.",
     "coffeeIntro": "اشترِ من الصين وفق الاستخدام: سطح صغير أو توصيل مياه أو مجموعتان أو خدمة آلية. قارن هذه الموديلات المرجعية مع CK-129 وCK-136.",
-    "speakerTitle": "سماعات حفلات Bluetooth بتجهيزات محددة لكل موديل.",
-    "speakerIntro": "اشترِ من الصين ثلاثة موديلات موثقة للكاريوكي وتشكيلات الموزعين. قارن وحدات الصوت والبطارية ولوحة التحكم والتغليف.",
+    "speakerTitle": "قارن مكبرات بلوتوث حسب الاستخدام والتجهيز.",
+    "speakerIntro": "توريد مكبرات بلوتوث من الصين للاستماع الشخصي والكاريوكي وتشكيلات الموزعين. قارن القدرة والتوصيلات والتغليف وأكد البطارية والملحقات.",
     "names": [
       "ماكينة إسبريسو بمجموعة واحدة وتوصيل مياه",
       "ماكينة إسبريسو مدمجة بخزان",
@@ -487,7 +627,13 @@
       "ماكينة قهوة آلية من الحبوب",
       "سماعة كاريوكي بوحدة صوت واحدة",
       "سماعة حفلات بوحدتين 6.5 بوصة",
-      "سماعة حفلات بوحدتين 8 بوصات"
+      "سماعة حفلات بوحدتين 8 بوصات",
+      "آلة شاي وإسبريسو بمجموعتين",
+      "آلة شاي وإسبريسو بمجموعتين",
+      "آلة إسبريسو بمجموعتين · T5",
+      "آلة إسبريسو بمجموعتين · مدمجة",
+      "مكبر صوت أسطواني محمول",
+      "مكبر صوت قابل للارتداء بمشبك"
     ],
     "uses": [
       "ركن ثابت مع توصيل مياه ومطحنة منفصلة.",
@@ -496,7 +642,13 @@
       "مكتب أو استقبال أو إفطار مع طحن ومشروبات حليب آلية.",
       "حجم مدمج للمتاجر والأماكن الصغيرة.",
       "هيكل رأسي بوحدتين للكاريوكي وتشكيلات الموزعين.",
-      "وحدتا صوت جهير ووحدتا صوت عالٍ للحفلات والكاريوكي."
+      "وحدتا صوت جهير ووحدتا صوت عالٍ للحفلات والكاريوكي.",
+      "منضدة شاي وقهوة مع غلايات منفصلة.",
+      "خيار آخر بمجموعتين لمنضدة يعمل عليها موظف.",
+      "قارن الغلايات والحمل الكهربائي للمقهى.",
+      "تحقق من مساحة المنضدة لتركيب مجموعتين.",
+      "لتشكيلة التجزئة والاستماع الشخصي.",
+      "تصميم خفيف بمشبك للاستماع الشخصي."
     ],
     "notes": [
       "أكد المضخة والغلايات ومعالجة المياه والإنتاجية للإصدار المختار.",
@@ -505,7 +657,13 @@
       "أكد إصدار Big Plus والقدرة والمياه؛ مبرد الحليب اختياري والتنظيف يحتاج خطة.",
       "أكد الميكروفون والبطارية القابلة للشحن والمحول والعلبة؛ مدة التشغيل وإصدار Bluetooth قيد التأكيد.",
       "تجهيز الميكروفونات والتغليف يتبع إصدار الطلب المعتمد.",
-      "افصل DR-8828 عن OK-8870 لاختلاف البطارية والقدرة والتحكم؛ أكد الميكروفونات والتغليف."
+      "افصل DR-8828 عن OK-8870 لاختلاف البطارية والقدرة والتحكم؛ أكد الميكروفونات والتغليف.",
+      "تأكيد أطوار الكهرباء ومعالجة المياه والصرف والملحقات.",
+      "تأكيد الرسم النهائي والإصدار الكهربائي وطريقة تحضير الشاي والقهوة.",
+      "تأكيد الأبعاد والكهرباء ومساحة الصيانة والمطحنة.",
+      "تأكيد الكهرباء ومسافات التركيب والمطحنة.",
+      "تأكيد سعة البطارية ومنفذ الشحن ومدة التشغيل واختبار مقاومة الماء. تأكيد القدرة المقننة ضمن النطاق المعلن.",
+      "تأكيد سعة البطارية الدقيقة والمشبك والميكروفون ومدة التشغيل. تأكيد القدرة المقننة ضمن النطاق المعلن."
     ],
     "fields": {
       "power": "القدرة المذكورة",
@@ -521,7 +679,8 @@
       "size": "أبعاد الجهاز",
       "net": "الوزن الصافي",
       "gross": "الوزن الإجمالي",
-      "packing": "أبعاد العبوة"
+      "packing": "أبعاد العبوة",
+      "bluetooth": "Bluetooth"
     },
     "plumbed": "توصيل مياه",
     "tweeters": "وحدات صوت عالٍ",
@@ -541,6 +700,7 @@
     "existing": "الموديلات الحالية CK-129 / CK-136",
     "save": "تُحفظ الاختيارات في هذا المتصفح؛ الكمية طلب شراء وليست MOQ مؤكداً.",
     "linkCoffee": "ماكينات القهوة",
-    "linkSpeaker": "موديلات سماعات Bluetooth"
+    "linkSpeaker": "موديلات سماعات Bluetooth",
+    "mixedList": "عرض قائمة المطبخ الكاملة"
   }
 }
