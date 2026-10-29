@@ -1,3 +1,4 @@
+import commercialMixerSchema from '../src/data/commercial-mixer-schema.json';
 import kitchenSparePartsSchema from '../src/data/kitchen-spare-parts-schema.json';
 import CoffeeDirectory from '../src/features/coffee/CoffeeDirectory';
 import ProgressiveSection from '../src/features/product-experience/ProgressiveSection';
@@ -1306,7 +1307,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === kitchenSparePartsSchema.url.replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === istanbulKitchenSchema.url.replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === commercialMixerSchema.url.replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === kitchenSparePartsSchema.url.replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === istanbulKitchenSchema.url.replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
@@ -2272,4 +2273,5 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
 run();
 import FreightReleaseContent, { freightReleasePaths, modernizedFreightServicePaths } from '../src/features/freight/FreightReleaseContent';
 import type { Language } from '../src/i18n/translations';
+
 
