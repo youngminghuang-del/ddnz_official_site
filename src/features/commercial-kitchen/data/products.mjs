@@ -84,7 +84,7 @@ const originalProducts = [
       "Extraction boilers": "2 × 0.8 L",
       "Rated power": "9.5 kW"
     },
-    "image": "/commercial-kitchen-media/CK-129.webp",
+    "image": "/images/product-series/ck-129-product-v2.webp",
     "imageNote": "",
     "note": "Boiler and electrical options confirmed for the selected model.",
     "quote": null
@@ -507,7 +507,7 @@ const originalProducts = [
       "Extraction boilers": "2 × 0.8 L",
       "Rated power": "9.5 kW"
     },
-    "image": "/commercial-kitchen-media/CK-136.webp",
+    "image": "/images/product-series/ck-136-product-v2.webp",
     "imageNote": "",
     "note": "Boiler and electrical options confirmed for the selected model.",
     "quote": null
