@@ -1,7 +1,7 @@
 import {useRef,useState} from 'react';
 import galleries from './gallery.json';
 import {experienceCopy} from '../product-experience/ProgressiveSection';
-export function modelImages(model:any){const entries=[{src:model.image,kind:'photo'},...(model.panel?[{src:model.panel,kind:'controls'}]:[]),...(galleries[model.id]||[])];return entries.filter((p,i)=>entries.findIndex(v=>v.src===p.src)===i);}
+export function modelImages(model:any){const entries=[{src:model.image,kind:model.brandingPreview?'branding':'photo'},...(model.panel?[{src:model.panel,kind:'controls'}]:[]),...(galleries[model.id]||[])];return entries.filter((p,i)=>entries.findIndex(v=>v.src===p.src)===i);}
 export default function ProductGallery({model,locale='en',name}:{model:any;locale?:string;name:string}){const c=experienceCopy(locale),images=modelImages(model),ref=useRef<HTMLDialogElement>(null),[index,setIndex]=useState(0),button=useRef<HTMLButtonElement>(null);function open(i:number){setIndex(i);ref.current?.showModal();}return <div className="model-gallery">
  <button ref={button} type="button" className="product-series-photo" onClick={()=>open(0)} aria-label={`${model.model} · ${c.gallery}`}><img src={images[0].src} alt={`${model.model} · ${name}`} width="960" height="960" loading="lazy"/><span>{c.gallery} · {images.length} ↗</span></button>
  <div className="model-thumbnails">{images.slice(0,4).map((p,i)=><button type="button" key={p.src} onClick={()=>open(i)} aria-label={`${model.model} · ${c[p.kind]} · ${i+1}`}><img src={p.src} alt={`${model.model} · ${c[p.kind]}`} width="80" height="60" loading="lazy"/></button>)}</div>

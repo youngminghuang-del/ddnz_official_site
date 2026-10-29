@@ -25,7 +25,8 @@
     "planning": "More applications and order planning",
     "previous": "Previous image",
     "next": "Next image",
-    "otherRequest": "Other audio sourcing requests"
+    "otherRequest": "Other audio sourcing requests",
+    "branding": "LOGO customization preview"
   },
   "zh": {
     "all": "查看全部型号",
@@ -53,7 +54,8 @@
     "planning": "更多用途与采购规划",
     "previous": "上一张",
     "next": "下一张",
-    "otherRequest": "其他音响采购需求"
+    "otherRequest": "其他音响采购需求",
+    "branding": "LOGO定制示意"
   },
   "es": {
     "all": "Ver todos los modelos",
@@ -81,7 +83,8 @@
     "planning": "Más usos y planificación de pedidos",
     "previous": "Imagen anterior",
     "next": "Imagen siguiente",
-    "otherRequest": "Otras solicitudes de audio"
+    "otherRequest": "Otras solicitudes de audio",
+    "branding": "Vista previa de personalización LOGO"
   },
   "fr": {
     "all": "Voir tous les modèles",
@@ -109,7 +112,8 @@
     "planning": "Autres usages et préparation de commande",
     "previous": "Image précédente",
     "next": "Image suivante",
-    "otherRequest": "Autres demandes audio"
+    "otherRequest": "Autres demandes audio",
+    "branding": "Aperçu de personnalisation LOGO"
   },
   "pt": {
     "all": "Ver todos os modelos",
@@ -137,7 +141,8 @@
     "planning": "Mais usos e planejamento do pedido",
     "previous": "Imagem anterior",
     "next": "Próxima imagem",
-    "otherRequest": "Outros pedidos de áudio"
+    "otherRequest": "Outros pedidos de áudio",
+    "branding": "Prévia de personalização LOGO"
   },
   "ru": {
     "all": "Все модели",
@@ -165,7 +170,8 @@
     "planning": "Другие сценарии и планирование заказа",
     "previous": "Предыдущее фото",
     "next": "Следующее фото",
-    "otherRequest": "Другие запросы по аудиотехнике"
+    "otherRequest": "Другие запросы по аудиотехнике",
+    "branding": "Пример персонализации LOGO"
   },
   "ar": {
     "all": "عرض كل الموديلات",
@@ -193,7 +199,8 @@
     "planning": "استخدامات إضافية وتخطيط الطلب",
     "previous": "الصورة السابقة",
     "next": "الصورة التالية",
-    "otherRequest": "طلبات توريد صوتيات أخرى"
+    "otherRequest": "طلبات توريد صوتيات أخرى",
+    "branding": "معاينة تخصيص LOGO"
   },
   "tr": {
     "all": "Tüm modelleri gör",
@@ -221,6 +228,7 @@
     "planning": "Diğer kullanımlar ve sipariş planı",
     "previous": "Önceki görsel",
     "next": "Sonraki görsel",
-    "otherRequest": "Diğer ses ürünü talepleri"
+    "otherRequest": "Diğer ses ürünü talepleri",
+    "branding": "LOGO özelleştirme önizlemesi"
   }
 }
