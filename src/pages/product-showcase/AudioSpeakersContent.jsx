@@ -1,3 +1,6 @@
+import ProgressiveSection,{revealDisclosureTarget} from '../../features/product-experience/ProgressiveSection';
+import ScenePlanning from '../../features/product-experience/ScenePlanning';
+import ProductSeries,{SeriesEntry} from '../../features/product-series/ProductSeries';
 import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import {AudioCategoryLinks} from '../../features/audio/AudioCategoryContent';
 import AudioAssortments from '../../features/audio/AudioAssortments';
@@ -229,7 +232,7 @@ export function AudioSpeakersContent() {
 
   const scrollTo = (id) => {
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
-    document.getElementById(id)?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+    revealDisclosureTarget(id)?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
   };
 
   const selectFamily = (id) => {
@@ -245,13 +248,14 @@ export function AudioSpeakersContent() {
 
       <main id="audio-main">
         <AudioCategoryLinks />
+        <div className="mx-auto max-w-7xl px-6"><SeriesEntry family="speaker"/></div>
         <section className="as-hero catalogue-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
             <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
             <h1 id="audio-title">Source speakers from China. Build a range buyers can compare.</h1>
             <p>DDNZ structures portable, party, vintage and compact speaker sourcing around the intended use, declared output, power path, included accessories and retail pack—so the quotation, approved sample and shipped configuration stay aligned.</p>
             <div className="as-hero-actions">
-              <button className="as-primary" type="button" onClick={() => scrollTo("audio-range")}>Build the range <ArrowRight size={17} /></button>
+              <button className="as-primary" type="button" onClick={() => scrollTo("bluetooth-model-catalogue")}>Build the range <ArrowRight size={17} /></button>
               <button className="as-secondary" type="button" onClick={() => scrollTo("comparison")}>Review the control fields <ArrowRight size={16} /></button>
             </div>
             <div className="as-proof-row" aria-label="Audio sourcing controls">
@@ -264,6 +268,9 @@ export function AudioSpeakersContent() {
           <CatalogueHeroMedia src={FAMILIES[0].image} alt={FAMILIES[0].alt} items={FAMILIES.map(item=>({src:item.image,label:item.title,href:"#audio-range"}))}/>
         </section>
 
+        <ProductSeries family="speaker"/>
+        <ProgressiveSection title="Portable and party audio planning"><ScenePlanning family="speaker"/></ProgressiveSection>
+        <ProgressiveSection title="Other speaker ranges and buying requirements">
         <section className="as-control-strip" aria-label="Audio buying variables">
           <article><span>01</span><div><strong>Use environment</strong><small>Home · outdoor · event · gift</small></div></article>
           <article><span>02</span><div><strong>Output &amp; power</strong><small>Declaration · AC · battery</small></div></article>
@@ -362,7 +369,8 @@ export function AudioSpeakersContent() {
           <div className="as-supplier-rule"><ShieldCheck size={20} /><p><strong>A low quote with missing specifications is not yet comparable.</strong><span>DDNZ separates price, configuration, evidence status, exclusions and destination readiness before a commercial decision.</span></p></div>
         </section>
 
-        <section className="as-section as-rfq" id="audio-rfq" aria-labelledby="audio-rfq-title">
+        </ProgressiveSection>
+        <ProgressiveSection title="Other audio sourcing requests"><section className="as-section as-rfq" id="audio-rfq" aria-labelledby="audio-rfq-title">
           <div className="as-rfq-intro">
             <p className="as-kicker">SCOPED AUDIO REQUEST</p>
             <h2 id="audio-rfq-title">Define the range you want to build.</h2>
@@ -385,11 +393,13 @@ export function AudioSpeakersContent() {
           )}
         </section>
 
+        </ProgressiveSection>
         <section className="as-handoff" aria-label="Freight handoff">
           <div><Truck size={28} /><p><strong>International freight executed by Heaven Born</strong><span>Engaged after the approved sourcing and pack-out file is ready</span></p></div><span>DDNZ remains the sourcing coordination team</span>
         </section>
-        <AudioAssortments />
-        <StartupBuyingContent kind="audio" />
+
+        <ProgressiveSection title="More applications and order planning"><AudioAssortments/></ProgressiveSection>
+        <ProgressiveSection title="Wholesale buying guide"><StartupBuyingContent kind="audio"/></ProgressiveSection>
       </main>
 
     </div>

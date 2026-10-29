@@ -1,3 +1,4 @@
+import {seriesCopy,seriesSpecs} from '../../product-series/models.mjs';
 import {handbookCopy} from './handbookProducts.mjs';
 import zh from '../locales/zh.json' with {type:'json'};
 import ru from '../locales/ru.json' with {type:'json'};
@@ -20,7 +21,8 @@ export const kitchenLocales = Object.freeze({ es, ar, zh, ru, fr, pt, tr });
 export function kitchenCopy(locale) {
   locale = locale === 'zh-cn' ? 'zh' : locale;
   if (!Object.hasOwn(kitchenLocales, locale)) throw new RangeError(`Unsupported kitchen locale: ${locale}`);
-  return kitchenLocales[locale];
+  const t=kitchenLocales[locale],count=text=>text?.replace(/\b(?:26|40|44)\b/g,String(catalog.length));
+  return {...t,meta:{...t.meta,description:count(t.meta.description)},ui:{...t.ui,intro:count(t.ui.intro)}};
 }
 // Pin numbering systems: browser and Node ICU defaults for plain "ar" can differ.
 export const localNumber = (value, locale, options = {}) => new Intl.NumberFormat(kitchenCopy(locale).numberLocale, { numberingSystem: locale === 'ar' ? 'arab' : 'latn', ...options }).format(value);
@@ -40,6 +42,7 @@ export function getLocalizedKitchenProducts(locale) {
   const ordered = [...launch.featuredProductIds.map(id => catalog.find(product => product.id === id)), ...catalog.filter(product => !launch.featuredProductIds.includes(product.id))];
   return ordered.map(product => {
     const photo = brandedProducts.get(product.id);
+    if(product.coffeeSeries){const c=seriesCopy(locale);return {...product,name:c.names[product.index],categoryLabel:t.categories[product.category],displayModel:product.model,metric:localSpecValue(product.metric,locale),detail:c.uses[product.index],dimensions:localSpecValue(product.dimensions,locale),note:c.notes[product.index],configurationNote:c.notes[product.index],imageNote:c.caption,localizedSpecs:seriesSpecs(product,locale).map(s=>({...s,key:seriesSpecs(product).find(v=>v.key===s.key).label}))};}
     if(product.handbookGroup){
       const c=handbookCopy(product,locale);
       return {...product,name:c.name,categoryLabel:t.categories[product.category],displayModel:product.model,

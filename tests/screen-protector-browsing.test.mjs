@@ -72,7 +72,8 @@ test('SPA metadata preserves the global language and replaces canonical and brea
     const schemas = nodes.filter(node => node.tag === 'script');
     assert.equal(schemas.length, page === 'quote' ? 0 : 1);
     if (schemas.length) {
-      const items = JSON.parse(schemas[0].textContent).itemListElement;
+      const parsed = JSON.parse(schemas[0].textContent);
+      const items = (parsed['@graph']?.find(node => node['@type'] === 'BreadcrumbList') || parsed).itemListElement;
       assert.equal(items.at(-1).item, SITE_ORIGIN + route + '/');
       assert.equal(items[0].item, SITE_ORIGIN + '/ar/');
       assert.equal(items[0].name, 'الرئيسية');

@@ -1,0 +1,330 @@
+{
+  "en": {
+    "eyebrow": "OEM / ODM · ORDER PLANNING",
+    "title": "Turn your equipment selection into a clear order.",
+    "intro": "Send model codes, quantities, destination and required arrival date. DDNZ prepares manufacturing, OEM/ODM and export requirements around the selected configuration.",
+    "cards": [
+      [
+        "Price & minimum order",
+        "Confirm the price currency, configuration, quantity tier and validity in writing. MOQ is checked per model and customization; a mixed list does not waive it. Itemize packing, spare parts, inspection, China inland transport, freight, import charges and local installation in the quotation."
+      ],
+      [
+        "OEM / ODM & approval",
+        "Request feasibility for your logo, packaging, language labels or design changes. Confirm artwork, sample approval, tooling costs and the separate customization MOQ before production. Certificates and test reports must match the exact model and destination requirements."
+      ],
+      [
+        "Delivery & after-sales",
+        "Agree when production lead time starts, packing dimensions/weight and the delivery handoff. Separate production time from international transit and customs. Confirm the warranty period, covered parts, exclusions, labor, replacement freight and repair contact in writing; local installation or repair is subject to a separate agreement."
+      ]
+    ],
+    "details": "Check for your selected equipment",
+    "families": {
+      "kitchen": [
+        "Cooking equipment & mixed kitchen orders",
+        "Confirm voltage, frequency, phase, connections, ventilation and access for each station. Record the approved model, accessories and functional inspection before dispatch.",
+        "Request the applicable wiring diagram, manual and parts list. Match heating elements, controls and seals by model/version; confirm spare-part prices, availability and delivery separately."
+      ],
+      "ice": [
+        "Ice machines",
+        "Choose ice shape, peak demand, bin size and drainage together. Request output at the intended room and inlet-water temperatures; catalogue daily output is tied to test conditions.",
+        "Confirm cleaning guidance, water treatment and installation requirements. Request model-matched pumps, valves, sensors and service documents; confirm availability, cost and who performs repairs."
+      ],
+      "refrigeration": [
+        "Commercial refrigeration",
+        "Confirm chilled/frozen use, ambient rating, refrigerant, door clearance and ventilation for the selected cabinet. Agree temperature-test conditions and transport handling before dispatch.",
+        "Request the exact controller, gasket and refrigeration-component references. Confirm manuals, service access and a qualified local technician for installation or refrigerant work; agree parts availability and cost."
+      ]
+    },
+    "cta": "Request model-specific terms",
+    "list": "Choose models & quantities",
+    "brief": "Please confirm these terms for my selected models. Model codes / quantities / destination / required arrival date: to provide.",
+    "pending": "Prices, MOQ, production dates, documents and after-sales terms remain subject to the model-specific quotation and written agreement."
+  },
+  "zh": {
+    "eyebrow": "OEM / ODM · 订单准备",
+    "title": "从设备选型，到条件清楚的采购订单。",
+    "intro": "请提供型号、数量、目的地和期望到货日期。DDNZ围绕所选配置确认制造、OEM/ODM和出口需求。",
+    "cards": [
+      [
+        "价格与起订条件",
+        "书面确认报价币种、配置、数量档及有效期。MOQ按型号和定制内容分别核定，混合清单不代表免除起订要求。包装、备件、验货、中国境内运输、国际运费、进口费用及当地安装应在报价中逐项列明。"
+      ],
+      [
+        "OEM/ODM与确认样",
+        "商标、包装、标签语言或设计修改，先确认可行性。生产前约定图稿、样品确认、模具费用和独立的定制MOQ。证书及测试报告须对应具体型号与目的地要求。"
+      ],
+      [
+        "交付与售后分工",
+        "约定生产交期起算条件、包装尺寸重量及交货节点，生产时间与国际运输、清关时间分别计算。质保期限、涵盖零件、除外事项、人工、更换件运费及维修联系人须书面确认；当地安装或维修须另行约定。"
+      ]
+    ],
+    "details": "按所选设备进一步核对",
+    "families": {
+      "kitchen": [
+        "烹饪设备与餐厨混合订单",
+        "逐工位确认电压、频率、相数、接线、通风和进场条件。发货前记录已确认型号、附件及功能验收内容。",
+        "索取适用接线图、说明书及零件清单。发热元件、控制器与密封件按型号和版本匹配，备件价格、可供状态及交付另行确认。"
+      ],
+      "ice": [
+        "商用制冰机",
+        "冰型、峰值需求、储冰量及排水条件一起选。索取预期环境温度和进水温度下的产冰数据，目录日产量须结合测试条件。",
+        "确认清洁指引、水处理和安装要求。索取匹配型号的水泵、阀件、传感器及维修资料，确认可供状态、费用和维修执行方。"
+      ],
+      "refrigeration": [
+        "商用制冷设备",
+        "按具体冷柜确认冷藏或冷冻用途、环境等级、制冷剂、开门空间与散热条件。发货前约定温度测试条件及运输搬运要求。",
+        "索取准确控制器、门封及制冷部件编号。确认说明书、检修空间及负责安装或制冷剂作业的当地合资格人员，备件可供状态和费用另行约定。"
+      ]
+    },
+    "cta": "询问具体型号的供货条件",
+    "list": "选择型号与数量",
+    "brief": "请为我所选型号确认以下条件。型号／数量／目的地／期望到货日期：待填写。",
+    "pending": "价格、MOQ、生产日期、资料及售后条件以具体型号报价和书面约定为准。"
+  },
+  "es": {
+    "eyebrow": "OEM / ODM · PREPARAR EL PEDIDO",
+    "title": "De la selección a un pedido con condiciones claras.",
+    "intro": "Envíe modelos, cantidades, destino y fecha de llegada deseada. DDNZ define los requisitos de fabricación, OEM/ODM y exportación para la configuración elegida.",
+    "cards": [
+      [
+        "Precio y pedido mínimo",
+        "Confirme por escrito moneda, configuración, tramo de cantidad y vigencia. El MOQ se verifica por modelo y personalización; una lista mixta no lo elimina. Desglose embalaje, repuestos, inspección, transporte en China, flete, importación e instalación local."
+      ],
+      [
+        "OEM/ODM y aprobación",
+        "Consulte la viabilidad de logotipo, embalaje, idioma de etiquetas o cambios de diseño. Antes de producir, acuerde artes, muestras, moldes y MOQ de personalización. Certificados e informes deben corresponder al modelo exacto y al destino."
+      ],
+      [
+        "Entrega y posventa",
+        "Acuerde el inicio del plazo de producción, medidas/peso del embalaje y punto de entrega. Separe producción, transporte internacional y aduana. Confirme por escrito garantía, piezas cubiertas, exclusiones, mano de obra, envío de repuestos y contacto de reparación; instalación o reparación local requieren un acuerdo aparte."
+      ]
+    ],
+    "details": "Verificaciones del equipo elegido",
+    "families": {
+      "kitchen": [
+        "Cocción y pedidos mixtos de cocina",
+        "Confirme tensión, frecuencia, fases, conexiones, ventilación y acceso por estación. Registre modelo, accesorios e inspección funcional antes del despacho.",
+        "Solicite diagrama eléctrico, manual y lista de piezas aplicables. Resistencias, controles y juntas deben coincidir con modelo/versión; confirme precio, disponibilidad y entrega de repuestos."
+      ],
+      "ice": [
+        "Máquinas de hielo",
+        "Elija tipo de hielo, demanda punta, depósito y desagüe juntos. Solicite producción a la temperatura ambiente y del agua prevista; el dato de catálogo depende del ensayo.",
+        "Confirme limpieza, tratamiento de agua e instalación. Solicite bombas, válvulas, sensores y documentación del modelo; acuerde disponibilidad, coste y responsable de reparación."
+      ],
+      "refrigeration": [
+        "Refrigeración comercial",
+        "Confirme uso refrigerado/congelado, clase climática, refrigerante, apertura de puertas y ventilación del gabinete. Acuerde ensayo de temperatura y manipulación antes del despacho.",
+        "Solicite referencias exactas de controlador, juntas y componentes frigoríficos. Confirme manuales, acceso técnico y un técnico local cualificado para instalación o refrigerante; acuerde disponibilidad y coste de piezas."
+      ]
+    },
+    "cta": "Consultar condiciones por modelo",
+    "list": "Elegir modelos y cantidades",
+    "brief": "Confirmen estas condiciones para mis modelos. Modelos / cantidades / destino / llegada deseada: por completar.",
+    "pending": "Precios, MOQ, fechas de producción, documentos y posventa sujetos a cotización por modelo y acuerdo escrito."
+  },
+  "fr": {
+    "eyebrow": "OEM / ODM · PRÉPARER LA COMMANDE",
+    "title": "Passez de la sélection à une commande bien définie.",
+    "intro": "Indiquez modèles, quantités, destination et date d’arrivée souhaitée. DDNZ précise les besoins de fabrication, OEM/ODM et export pour la configuration choisie.",
+    "cards": [
+      [
+        "Prix et minimum de commande",
+        "Confirmez par écrit devise, configuration, palier de quantité et validité. Le MOQ est vérifié par modèle et personnalisation ; une liste mixte ne le supprime pas. Détaillez emballage, pièces, contrôle, transport en Chine, fret, importation et installation locale."
+      ],
+      [
+        "OEM/ODM et validation",
+        "Demandez la faisabilité du logo, de l’emballage, des langues d’étiquette ou des modifications. Avant production, validez visuels, échantillons, outillage et MOQ de personnalisation. Certificats et essais doivent correspondre au modèle exact et à la destination."
+      ],
+      [
+        "Livraison et après-vente",
+        "Convenez du départ du délai de production, des dimensions/poids emballés et du point de remise. Séparez production, transport international et douane. Confirmez par écrit durée de garantie, pièces couvertes, exclusions, main-d’œuvre, transport des pièces et contact réparation ; installation ou réparation locale sur accord séparé."
+      ]
+    ],
+    "details": "Vérifications selon l’équipement",
+    "families": {
+      "kitchen": [
+        "Cuisson et commandes mixtes de cuisine",
+        "Confirmez tension, fréquence, phases, raccordements, ventilation et accès par poste. Consignez modèle validé, accessoires et contrôle fonctionnel avant expédition.",
+        "Demandez schéma électrique, manuel et liste de pièces adaptés. Résistances, commandes et joints doivent correspondre au modèle/version ; prix, disponibilité et livraison des pièces à confirmer."
+      ],
+      "ice": [
+        "Machines à glaçons",
+        "Choisissez ensemble forme de glace, besoin de pointe, bac et évacuation. Demandez le débit aux températures ambiante et d’eau prévues ; la valeur catalogue dépend des conditions d’essai.",
+        "Confirmez nettoyage, traitement d’eau et installation. Demandez pompes, vannes, capteurs et documents du modèle ; précisez disponibilité, coût et responsable des réparations."
+      ],
+      "refrigeration": [
+        "Froid commercial",
+        "Confirmez usage positif/négatif, classe climatique, fluide, ouverture des portes et ventilation du meuble. Convenez des conditions d’essai et de manutention avant expédition.",
+        "Demandez les références exactes du régulateur, des joints et composants frigorifiques. Confirmez manuels, accès et technicien local qualifié pour installation ou fluide ; disponibilité et coût des pièces à convenir."
+      ]
+    },
+    "cta": "Demander les conditions par modèle",
+    "list": "Choisir modèles et quantités",
+    "brief": "Merci de confirmer ces conditions pour mes modèles. Modèles / quantités / destination / arrivée souhaitée : à fournir.",
+    "pending": "Prix, MOQ, dates de production, documents et après-vente soumis au devis par modèle et à un accord écrit."
+  },
+  "pt": {
+    "eyebrow": "OEM / ODM · PREPARAR O PEDIDO",
+    "title": "Da seleção a um pedido com condições claras.",
+    "intro": "Envie modelos, quantidades, destino e data de chegada desejada. A DDNZ define os requisitos de fabricação, OEM/ODM e exportação para a configuração escolhida.",
+    "cards": [
+      [
+        "Preço e pedido mínimo",
+        "Confirme por escrito moeda, configuração, faixa de quantidade e validade. O MOQ é verificado por modelo e personalização; uma lista mista não o elimina. Separe embalagem, peças, inspeção, transporte na China, frete, importação e instalação local."
+      ],
+      [
+        "OEM/ODM e aprovação",
+        "Consulte a viabilidade de logotipo, embalagem, idioma dos rótulos ou alterações de projeto. Antes da produção, aprove artes, amostras, ferramental e MOQ de personalização. Certificados e ensaios devem corresponder ao modelo exato e ao destino."
+      ],
+      [
+        "Entrega e pós-venda",
+        "Acorde o início do prazo de produção, medidas/peso embalados e ponto de entrega. Separe produção, transporte internacional e alfândega. Confirme por escrito garantia, peças cobertas, exclusões, mão de obra, frete de reposição e contato de reparo; instalação ou reparo local exigem acordo separado."
+      ]
+    ],
+    "details": "Verificações do equipamento escolhido",
+    "families": {
+      "kitchen": [
+        "Cocção e pedidos mistos de cozinha",
+        "Confirme tensão, frequência, fases, conexões, ventilação e acesso por estação. Registre modelo aprovado, acessórios e inspeção funcional antes do embarque.",
+        "Solicite esquema elétrico, manual e lista de peças aplicáveis. Resistências, controles e vedações devem corresponder ao modelo/versão; confirme preço, disponibilidade e entrega de peças."
+      ],
+      "ice": [
+        "Máquinas de gelo",
+        "Escolha tipo de gelo, demanda de pico, reservatório e drenagem em conjunto. Solicite produção nas temperaturas ambiente e da água previstas; o catálogo depende das condições de ensaio.",
+        "Confirme limpeza, tratamento de água e instalação. Solicite bombas, válvulas, sensores e documentos do modelo; acorde disponibilidade, custo e responsável pelo reparo."
+      ],
+      "refrigeration": [
+        "Refrigeração comercial",
+        "Confirme uso refrigerado/congelado, classe climática, fluido, abertura das portas e ventilação do gabinete. Acorde ensaio de temperatura e manuseio antes do embarque.",
+        "Solicite referências exatas de controlador, vedações e componentes frigoríficos. Confirme manuais, acesso e técnico local qualificado para instalação ou fluido; acorde disponibilidade e custo das peças."
+      ]
+    },
+    "cta": "Consultar condições por modelo",
+    "list": "Escolher modelos e quantidades",
+    "brief": "Confirmem estas condições para meus modelos. Modelos / quantidades / destino / chegada desejada: a informar.",
+    "pending": "Preços, MOQ, datas de produção, documentos e pós-venda sujeitos à cotação por modelo e acordo escrito."
+  },
+  "tr": {
+    "eyebrow": "OEM / ODM · SİPARİŞ PLANLAMA",
+    "title": "Ekipman seçimini koşulları net bir siparişe dönüştürün.",
+    "intro": "Model kodlarını, adetleri, varış yerini ve istenen teslim tarihini gönderin. DDNZ, seçilen yapılandırmaya göre üretim, OEM/ODM ve ihracat gereksinimlerini belirler.",
+    "cards": [
+      [
+        "Fiyat ve minimum sipariş",
+        "Para birimi, yapılandırma, adet kademesi ve geçerliliği yazılı onaylayın. MOQ model ve özelleştirmeye göre kontrol edilir; karma liste bunu kaldırmaz. Ambalaj, yedek parça, kontrol, Çin içi taşıma, navlun, ithalat ve yerel kurulumu ayrı belirtin."
+      ],
+      [
+        "OEM/ODM ve onay",
+        "Logo, ambalaj, etiket dili veya tasarım değişikliğinin yapılabilirliğini sorun. Üretimden önce çizim, numune, kalıp maliyeti ve özel üretim MOQ koşullarını onaylayın. Belge ve test raporları tam model ve hedef pazarla eşleşmelidir."
+      ],
+      [
+        "Teslimat ve satış sonrası",
+        "Üretim süresinin başlangıcını, ambalaj ölçü/ağırlığını ve teslim noktasını kararlaştırın. Üretimi uluslararası taşıma ve gümrükten ayırın. Garanti süresi, kapsam, istisnalar, işçilik, parça nakliyesi ve servis kişisini yazılı belirleyin; yerel kurulum veya onarım ayrı anlaşmaya bağlıdır."
+      ]
+    ],
+    "details": "Seçilen ekipmana özel kontroller",
+    "families": {
+      "kitchen": [
+        "Pişirme ekipmanı ve karma mutfak siparişleri",
+        "Her istasyon için gerilim, frekans, faz, bağlantı, havalandırma ve erişimi doğrulayın. Sevkten önce onaylanan modeli, aksesuarları ve işlev kontrolünü kaydedin.",
+        "Uygun elektrik şeması, kılavuz ve parça listesini isteyin. Isıtıcı, kontrol ve contaları model/sürüme göre eşleştirin; parça fiyatı, bulunabilirliği ve teslimini ayrıca doğrulayın."
+      ],
+      "ice": [
+        "Buz makineleri",
+        "Buz şekli, yoğun saat ihtiyacı, hazne ve drenajı birlikte seçin. Beklenen ortam ve giriş suyu sıcaklığında üretimi isteyin; katalog verisi test koşullarına bağlıdır.",
+        "Temizlik, su arıtma ve kurulumu doğrulayın. Modele uygun pompa, valf, sensör ve servis belgelerini isteyin; bulunabilirlik, maliyet ve onarım sorumlusunu belirleyin."
+      ],
+      "refrigeration": [
+        "Ticari soğutma",
+        "Seçilen dolabın soğutma/dondurma kullanımı, iklim sınıfı, soğutucu akışkanı, kapı boşluğu ve havalandırmasını doğrulayın. Sevkten önce sıcaklık testi ve taşıma koşullarını kararlaştırın.",
+        "Kontrolör, conta ve soğutma parçası kodlarını isteyin. Kılavuzları, servis erişimini ve kurulum/soğutucu işlemleri için yetkin yerel teknisyeni doğrulayın; parça bulunabilirliği ve maliyetini kararlaştırın."
+      ]
+    },
+    "cta": "Modele özel koşulları sorun",
+    "list": "Model ve adet seçin",
+    "brief": "Seçtiğim modeller için bu koşulları doğrulayın. Model / adet / varış yeri / istenen varış tarihi: eklenecek.",
+    "pending": "Fiyat, MOQ, üretim tarihi, belgeler ve satış sonrası koşullar modele özel teklif ve yazılı anlaşmaya tabidir."
+  },
+  "ru": {
+    "eyebrow": "OEM / ODM · ПОДГОТОВКА ЗАКАЗА",
+    "title": "От выбора оборудования к заказу с ясными условиями.",
+    "intro": "Укажите модели, количество, пункт назначения и желаемую дату прибытия. DDNZ уточнит требования к производству, OEM/ODM и экспорту для выбранной комплектации.",
+    "cards": [
+      [
+        "Цена и минимальный заказ",
+        "Письменно подтвердите валюту, комплектацию, ценовой порог количества и срок действия. MOQ проверяется по модели и доработке; смешанный список его не отменяет. Отдельно укажите упаковку, запчасти, проверку, перевозку по Китаю, фрахт, импорт и местный монтаж."
+      ],
+      [
+        "OEM/ODM и согласование",
+        "Запросите возможность нанесения логотипа, изменения упаковки, языка этикеток или конструкции. До производства согласуйте макеты, образцы, оснастку и MOQ доработки. Сертификаты и протоколы должны относиться к точной модели и рынку назначения."
+      ],
+      [
+        "Поставка и обслуживание",
+        "Согласуйте начало срока производства, габариты/вес упаковки и точку передачи. Разделяйте производство, международную перевозку и таможню. Письменно подтвердите гарантийный срок, детали, исключения, оплату труда, доставку замены и контакт сервиса; местный монтаж или ремонт требуют отдельного соглашения."
+      ]
+    ],
+    "details": "Проверки для выбранного оборудования",
+    "families": {
+      "kitchen": [
+        "Тепловое оборудование и смешанные заказы",
+        "Для каждого рабочего места подтвердите напряжение, частоту, фазы, подключения, вентиляцию и доступ. До отгрузки зафиксируйте модель, принадлежности и функциональную проверку.",
+        "Запросите подходящие электросхему, инструкцию и перечень деталей. Нагреватели, контроллеры и уплотнения подбираются по модели/версии; цену, наличие и поставку запчастей подтвердите отдельно."
+      ],
+      "ice": [
+        "Льдогенераторы",
+        "Выбирайте форму льда, пиковую потребность, бункер и слив вместе. Запросите выпуск при ожидаемой температуре воздуха и воды; данные каталога зависят от испытаний.",
+        "Подтвердите очистку, водоподготовку и монтаж. Запросите насосы, клапаны, датчики и документы для модели; уточните наличие, стоимость и исполнителя ремонта."
+      ],
+      "refrigeration": [
+        "Торговое холодильное оборудование",
+        "Для выбранного шкафа подтвердите охлаждение/заморозку, климатический класс, хладагент, открывание дверей и вентиляцию. До отгрузки согласуйте температурный тест и перевозку.",
+        "Запросите точные коды контроллера, уплотнений и холодильных компонентов. Уточните инструкции, доступ для сервиса и местного квалифицированного специалиста по монтажу/хладагенту; согласуйте наличие и стоимость деталей."
+      ]
+    },
+    "cta": "Запросить условия по модели",
+    "list": "Выбрать модели и количество",
+    "brief": "Прошу подтвердить эти условия для моих моделей. Модели / количество / назначение / желаемая дата прибытия: будут указаны.",
+    "pending": "Цены, MOQ, даты производства, документы и обслуживание определяются предложением по модели и письменным соглашением."
+  },
+  "ar": {
+    "eyebrow": "OEM / ODM · تجهيز الطلب",
+    "title": "من اختيار المعدات إلى طلب واضح الشروط.",
+    "intro": "أرسل رموز الموديلات والكميات والوجهة وتاريخ الوصول المطلوب. تحدد DDNZ متطلبات التصنيع وOEM/ODM والتصدير وفق التجهيز المختار.",
+    "cards": [
+      [
+        "السعر والحد الأدنى للطلب",
+        "أكد كتابياً العملة والتجهيز وشريحة الكمية وصلاحية السعر. يُراجع MOQ لكل موديل وتخصيص؛ القائمة المختلطة لا تلغيه. افصل التغليف وقطع الغيار والفحص والنقل داخل الصين والشحن ورسوم الاستيراد والتركيب المحلي."
+      ],
+      [
+        "OEM/ODM واعتماد العينة",
+        "استفسر عن إمكانية الشعار والتغليف ولغة الملصقات أو تعديل التصميم. قبل الإنتاج اتفق على الرسومات والعينة وتكاليف القوالب وMOQ للتخصيص. يجب أن تطابق الشهادات وتقارير الاختبار الموديل المحدد ومتطلبات الوجهة."
+      ],
+      [
+        "التسليم وخدمة ما بعد البيع",
+        "اتفق على بداية مهلة الإنتاج وأبعاد ووزن العبوة ونقطة التسليم. افصل الإنتاج عن النقل الدولي والتخليص. أكد كتابياً مدة الضمان والقطع المشمولة والاستثناءات وأجور العمل وشحن البديل وجهة الإصلاح؛ التركيب أو الإصلاح المحلي باتفاق مستقل."
+      ]
+    ],
+    "details": "فحوص بحسب المعدات المختارة",
+    "families": {
+      "kitchen": [
+        "معدات الطهي والطلبات المختلطة للمطابخ",
+        "أكد الجهد والتردد والأطوار والتوصيلات والتهوية والوصول لكل محطة. سجل الموديل المعتمد والملحقات والفحص الوظيفي قبل الشحن.",
+        "اطلب مخطط التوصيل والدليل وقائمة القطع المناسبة. طابق عناصر التسخين ووحدات التحكم والحشوات مع الموديل والإصدار؛ أكد أسعار القطع وتوافرها وتسليمها بشكل منفصل."
+      ],
+      "ice": [
+        "ماكينات الثلج",
+        "اختر شكل الثلج وطلب الذروة وسعة التخزين والصرف معاً. اطلب الإنتاج عند حرارة الجو ومياه الدخول المتوقعة؛ إنتاج الكتالوج مرتبط بشروط الاختبار.",
+        "أكد التنظيف ومعالجة المياه ومتطلبات التركيب. اطلب المضخات والصمامات والحساسات ووثائق الموديل؛ اتفق على التوافر والتكلفة ومن ينفذ الإصلاح."
+      ],
+      "refrigeration": [
+        "معدات التبريد التجاري",
+        "أكد استخدام التبريد أو التجميد والفئة المناخية ووسيط التبريد ومساحة فتح الأبواب والتهوية للخزانة المختارة. اتفق على اختبار الحرارة والمناولة قبل الشحن.",
+        "اطلب رموز وحدة التحكم وحشوات الأبواب ومكونات التبريد الدقيقة. أكد الأدلة وإمكانية الصيانة وفنياً محلياً مؤهلاً للتركيب أو أعمال وسيط التبريد؛ اتفق على توافر القطع وتكلفتها."
+      ]
+    },
+    "cta": "طلب شروط الموديل المحدد",
+    "list": "اختيار الموديلات والكميات",
+    "brief": "يرجى تأكيد هذه الشروط للموديلات المختارة. الموديلات / الكميات / الوجهة / الوصول المطلوب: تُستكمل لاحقاً.",
+    "pending": "الأسعار وMOQ ومواعيد الإنتاج والوثائق وخدمة ما بعد البيع تخضع لعرض الموديل والاتفاق الكتابي."
+  }
+}

@@ -1,3 +1,9 @@
+import CoffeeDirectory from '../src/features/coffee/CoffeeDirectory';
+import ProgressiveSection from '../src/features/product-experience/ProgressiveSection';
+import CoffeeContent from '../src/features/coffee/CoffeeContent';
+import {coffeePath,coffeeMeta,coffeeSchema} from '../src/features/coffee/data.mjs';
+import ProductSeries from '../src/features/product-series/ProductSeries';
+import EquipmentBuyingSupport from '../src/features/equipment-buying-support/EquipmentBuyingSupport';
 import istanbulKitchenSchema from '../src/data/istanbul-kitchen-schema.json';
 import {freightPageInfo,freightPageSchema} from '../src/features/freight/freightPageSchema';
 import FreightRelatedLinks from '../src/features/freight/FreightRelatedLinks';
@@ -1601,6 +1607,7 @@ function injectStaticRouteContent(
 ) {
   if(lang==='en' && '/'+relPath+'/'===smallKitchenPath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(SmallKitchenPlanningContent,{locale:'en'}))}</div>`);
   if(lang==='en' && '/'+relPath+'/'===cafePath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CafePlanningContent,{locale:'en'}))}</div>`);
+  if('/'+relPath===coffeePath){const locale=lang==='zh-cn'?'zh':lang;return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CoffeeContent,{locale}))}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(coffeeSchema(locale)).replace(/</g,'\\u003c')}</script></head>`);}
   let staticBody = '';
   const serviceKind = relPath.startsWith('sourcing-services/') ? relPath.split('/')[1] : '';
   const service = serviceCopy[serviceKind as keyof typeof serviceCopy]?.[(lang === 'zh-cn' ? 'zh' : lang) as Language];
@@ -1755,7 +1762,7 @@ function injectStaticRouteContent(
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(meta.schema).replace(/</g, '\\u003c')}</script></head>`);
   } else if (relPath === 'sourcing/commercial-kitchen-equipment-from-china' && lang === 'en') {
-    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch, renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',alt:'Commercial kitchen application',scene:true,items:['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels.en[i],href:'#commercial-kitchen-equipment'}))}))).replace('<h2 id="commercial-kitchen-benchmarks">', renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'multi'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'steam'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'noodle'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'round'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'large'})) + '<h2 id="commercial-kitchen-benchmarks">').replace('</main>', renderToStaticMarkup(createElement(GulfKitchenPlanning, {locale:'en'})) + '</main>');
+    staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch, renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',alt:'Commercial kitchen application',scene:true,items:['ice-49-studio-v2.png','ZH-8A.webp','juice-1200.webp'].map((image,i)=>({src:'/commercial-kitchen-media/'+image,label:kitchenHeroLabels.en[i],href:'#commercial-kitchen-equipment'}))}))).replace('<h2 id="commercial-kitchen-benchmarks">', renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'multi'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'steam'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'noodle'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'round'})) + renderToStaticMarkup(createElement(InductionCatalogue, {locale:'en',group:'large'})) + '<h2 id="commercial-kitchen-benchmarks">').replace('</main>', renderToStaticMarkup(createElement(ProgressiveSection,{title:'Kitchen layout and destination planning'},createElement(GulfKitchenPlanning,{locale:'en'}))) + renderToStaticMarkup(createElement(EquipmentBuyingSupport)) + renderToStaticMarkup(createElement(CoffeeDirectory)) + '</main>');
     staticBody += renderToStaticMarkup(createElement(BuyerGuideLinks, { group: 'kitchen', locale: 'en' }));
     staticBody += '<aside lang="id"><h2>Merencanakan restoran di Indonesia?</h2><p><a href="/id/blog/desain-dapur-restoran-pengadaan-peralatan-china/">Desain dapur restoran kecil, biaya peralatan, dan pengadaan dari China</a></p></aside>';
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
@@ -1862,7 +1869,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', `${links}</main>`);
   }
   if (lang === 'en' && relPath === 'refrigeration-equipment') {
-    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + '</main>');
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + renderToStaticMarkup(createElement(EquipmentBuyingSupport,{family:'refrigeration'})) + '</main>');
     const production = `<section id="refrigeration-evidence" class="mt-10"><h2>From the production line to the packing floor.</h2><p>Watch a short clip from an ice-maker production line.</p><figure><video controls playsinline preload="none" poster="/images/product-showcase/refrigeration/ice-maker-line-source.webp" aria-label="Ice maker production line video" style="width:100%;max-height:500px;background:#132943"><source src="/media/process/kitchen-production.mp4" type="video/mp4"><a href="/media/process/kitchen-production.mp4">Open the production video</a></video><figcaption>Ice maker production line · 9-second video</figcaption></figure><h3>Choosing a cabinet</h3><p>Confirm the selected model, cooling performance, service access and transport packaging with your quotation.</p></section>`;
     staticBody = staticBody.replace('</main>', production + '</main>');
     staticBody = staticBody.replace('</main>', renderRefrigerationEntry() + '</main>');
@@ -1881,7 +1888,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', foodLinks + '</main>');
   }
   if (lang === 'en' && '/'+relPath === audioPath) {
-    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(AudioCategoryLinks)) + renderToStaticMarkup(createElement(AudioAssortments)) + renderToStaticMarkup(createElement(StartupBuyingContent, {kind:'audio',locale:'en'}))+'</main>');
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(AudioCategoryLinks)) + renderToStaticMarkup(createElement(AudioAssortments)) + renderToStaticMarkup(createElement(ProductSeries,{family:'speaker'})) + renderToStaticMarkup(createElement(StartupBuyingContent, {kind:'audio',locale:'en'}))+'</main>');
   }
   if (!staticBody) return htmlContent;
   if (lang === 'en' && relPath === 'sourcing/restaurant-kitchen-packages-from-china') {
@@ -1937,6 +1944,7 @@ function run() {
     { path: 'sourcing/restaurant-kitchen-packages-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     ...restaurantScenarioSeo.map(([slug]) => ({ path: `sourcing/restaurant-kitchen-packages-from-china/${slug}`, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
     ...audioCategoryPaths.map(path=>({path:path.slice(1),priority:'0.8',changefreq:'monthly',languages:overviewLanguages})),
+    { path: coffeePath.slice(1), priority:'0.8', changefreq:'monthly', languages:overviewLanguages },
     { path: 'sourcing/audio-speakers-from-china', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     { path: 'sourcing/portable-air-conditioners-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
     { path: 'sourcing/portable-compressor-fridges-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en','zh-cn','es','ar','ru','fr','pt','tr'] },
@@ -1995,6 +2003,7 @@ function run() {
       if (['products','sourcing-services'].includes(entry.path) && lang !== 'en') seo = overviewMeta(entry.path as any, lang);
       if (modernizedFreightServicePaths.includes(entry.path as any)) seo = modernFreightServiceMetadata(entry.path as any, (lang === 'zh-cn' ? 'zh' : lang) as any);
       if(lang !== 'en' && entry.path==='screen-protectors/calculator'){const meta=calculatorMeta(lang);seo={title:meta.title,desc:meta.description,keywords:''};}
+      if('/'+entry.path===coffeePath){const meta=coffeeMeta(lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       const mobilePage = mobilePageForPath(`/${entry.path}`);
       if (mobilePage) {const meta=mobileMetadata(mobilePage.id,lang);seo={title:meta.title,desc:meta.description,keywords:'',image:meta.image};}
       if (lang !== 'en' && kitchenCategories.some(c=>c.path===`/${entry.path}/`)) { const meta=categoryMeta(kitchenCategories.find(c=>c.path===`/${entry.path}/`), (lang==='zh-cn'?'zh':lang) as CategoryLocale); seo={title:meta.title,desc:meta.description,keywords:''}; }

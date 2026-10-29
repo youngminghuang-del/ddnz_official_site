@@ -43,10 +43,11 @@ test('static breadcrumbs match the only emitted schema, including nested guide h
     const schemas = [...html.matchAll(/<script type="application\/ld\+json"[^>]*>([^]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
     if (page === 'quote') { assert.equal(schemas.length, 0); continue; }
     assert.equal(schemas.length, 1);
-    assert.equal(schemas[0]['@type'], 'BreadcrumbList');
+    const breadcrumb = page === 'products' ? schemas[0]['@graph'].find(node => node['@type'] === 'BreadcrumbList') : schemas[0];
+    assert.equal(breadcrumb['@type'], 'BreadcrumbList');
     const crumbs = screenProtectorBreadcrumbs(page);
-    assert.deepEqual(schemas[0].itemListElement.map(item => [item.name, item.item]), crumbs.map(item => [item.name, SITE_ORIGIN + item.href]));
-    assert.deepEqual(schemas[0].itemListElement.map(item => item.position), crumbs.map((_, index) => index + 1));
+    assert.deepEqual(breadcrumb.itemListElement.map(item => [item.name, item.item]), crumbs.map(item => [item.name, SITE_ORIGIN + item.href]));
+    assert.deepEqual(breadcrumb.itemListElement.map(item => item.position), crumbs.map((_, index) => index + 1));
     assert.equal(crumbs[0].href, '/');
     assert.equal(crumbs[1].href, '/sourcing/mobile-accessories-from-china/');
     assert.equal(crumbs.at(-1).href, route + '/');

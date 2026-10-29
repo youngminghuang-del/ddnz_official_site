@@ -18,11 +18,11 @@ export function renderKitchenStaticContent(products, launch, heroMedia = '') {
     <p>Serving buyers sourcing for the UAE, Singapore and Mexico.</p>${heroMedia?'</div>'+heroMedia+'</section>':''}
     <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>${products.length} models. Eight with indicative reference prices.</p>
     <nav aria-label="Equipment buying guides">${kitchenCategories.map(item => `<a href="${item.path}">${escape(item.label)} · Compare models</a>`).join(' · ')} · <a href="/refrigeration-equipment/">Refrigeration selection guide</a></nav>
-    <div>${[...featured, ...products.filter(p => !launch.featuredProductIds.includes(p.id))].map(p => `<article><img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
+    <div>${[...featured, ...products.filter(p => !launch.featuredProductIds.includes(p.id))].map((p,index) => `${index===8?'<details class="catalog-rest"><summary>View all models</summary>':''}<article><img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
       <h3>${escape(p.model)} — ${escape(p.name)}</h3><p>${escape(p.metric)} · ${escape(p.dimensions)}</p>
       <dl>${Object.entries(p.specs).map(([key, value]) => `<dt>${escape(key)}</dt><dd>${escape(value)}</dd>`).join('')}</dl>
       <p>${p.quote ? `Indicative supply price: CNY ${Number(p.quote.price).toFixed(2)} / unit. Reference order quantity: ${Number(p.quote.minUnits)} units.` : 'Request a quote for your quantity and destination.'}</p>
-      ${p.quote?.configurationNote ? `<p>${escape(p.quote.configurationNote)}</p>` : ''}<p><a href="${escape(kitchenModelHref(p.id))}">Plan an order for ${escape(p.model)}</a></p></article>`).join('')}</div>
+      ${p.quote?.configurationNote ? `<p>${escape(p.quote.configurationNote)}</p>` : ''}<p><a href="${escape(kitchenModelHref(p.id))}">Plan an order for ${escape(p.model)}</a></p></article>`).join('')}${products.length>8?'</details>':''}</div>
     <p>Freight and taxes are extra. Final price, minimum quantities and electrical configuration are confirmed with your quotation.</p>
     <h2 id="commercial-kitchen-benchmarks">Compare prices. Plan your margin.</h2>
     ${launch.markets.map(m => `<section><h3>${escape(m.title)}</h3><p>${escape(m.description)}</p></section>`).join('')}

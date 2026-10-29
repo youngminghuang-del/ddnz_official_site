@@ -6,8 +6,8 @@ import {getLocalizedKitchenProducts,filterKitchenProducts,cleanKitchenSelection,
 import {buildInquiryPayload} from '../src/features/commercial-kitchen/data/inquiry.mjs';
 import {makeBrief} from '../src/features/commercial-kitchen/data/model.mjs';
 test('fourteen handbook records extend the original catalogue without invented prices or duplicated identities',()=>{
- assert.equal(catalog.length,40);assert.equal(handbookProducts.length,14);assert.equal(new Set(catalog.map(p=>p.id)).size,40);
- assert.equal(catalog.filter(p=>!p.handbookGroup).length,26);assert.equal(catalog.filter(p=>p.quote).length,8);
+ assert.equal(catalog.length,46);assert.equal(handbookProducts.length,14);assert.equal(new Set(catalog.map(p=>p.id)).size,46);
+ assert.equal(catalog.filter(p=>!p.handbookGroup&&!p.coffeeSeries).length,26);assert.equal(catalog.filter(p=>p.quote).length,8);
  assert.ok(handbookProducts.every(p=>p.quote===null));
  assert.equal(catalog.find(p=>p.id==='yst-zfg24x').power,'2 × (15 / 20 kW)');
  assert.equal(catalog.find(p=>p.id==='yst-zml50-2').supply,'220 / 380 V · 50 Hz');

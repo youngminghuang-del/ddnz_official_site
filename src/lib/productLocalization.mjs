@@ -6,7 +6,7 @@ import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 export const powerGuidePath = '/portable-power/selection-guide';
 export const outdoorPath = '/sourcing/outdoor-products-from-china';
-export const overviewProductPaths = Object.freeze([...audioCategoryPaths,'/products', '/sourcing-services', '/sourcing/audio-speakers-from-china','/refrigeration-equipment','/screen-protectors/guides','/screen-protectors/guides/price-differences','/screen-protectors/guides/curved-glass','/screen-protectors/videos']);
+export const overviewProductPaths = Object.freeze(['/sourcing/commercial-coffee-machines-from-china',...audioCategoryPaths,'/products', '/sourcing-services', '/sourcing/audio-speakers-from-china','/refrigeration-equipment','/screen-protectors/guides','/screen-protectors/guides/price-differences','/screen-protectors/guides/curved-glass','/screen-protectors/videos']);
 export const overviewContentLanguages = Object.freeze(['en','zh','es','ar','ru','fr','pt','tr']);
 export const productContentLanguages = Object.freeze(['en','zh','es','ar','ru','fr','pt','tr']);
 export const buyerGuidePaths = Object.freeze([

@@ -10,10 +10,10 @@ import {buildInquiryMessage,isProductionHost,submitInquiry} from '../../src/feat
 const root=new URL('../..',import.meta.url);
 const product=id=>products.find(item=>item.id===id);
 
-test('keeps all 40 catalog SKUs',()=>assert.equal(products.length,40));
+test('keeps all 46 catalog SKUs',()=>assert.equal(products.length,46));
 test('keeps exactly eight indicative supply references',()=>assert.equal(products.filter(item=>item.quote).length,8));
 test('preserves approved indicative prices, currencies and reference quantities',()=>assert.deepEqual(Object.fromEntries(products.filter(item=>item.quote).map(item=>[item.model,[item.quote.price,item.quote.currency,item.quote.minUnits]])),{'HZB-50/AB':[1318.34,'CNY',1],'ZH-101V':[348.8,'CNY',10],'GN650TNPro':[4534.41,'CNY',1],'GNT2MTNPro':[3170.91,'CNY',1],'ZH-818':[291.1,'CNY',1],'HZB-100FA':[2124.51,'CNY',1],'ZH-102V':[824.44,'CNY',1],'500W variant':[2283.06,'CNY',1]}));
-test('every product image is an actually copied commercial-kitchen media file',()=>{for(const item of products){assert.match(item.image,/^\/commercial-kitchen-media\//);assert.ok(existsSync(new URL(`../../public${item.image}`,import.meta.url)),item.image);}});
+test('every product image is an actually copied commercial-kitchen media file',()=>{for(const item of products){assert.match(item.image,/^\/(?:commercial-kitchen-media|images\/product-series)\//);assert.ok(existsSync(new URL(`../../public${item.image}`,import.meta.url)),item.image);}});
 test('the public product data excludes source and supplier metadata',()=>{for(const item of products){for(const key of ['originalImage','internal_price','supplier_reference_price','source_file','sourceLabel','sourceLocation'])assert.equal(item[key],undefined);}});
 test('the eight featured IDs exist and lead the feature data',()=>{assert.equal(launch.featuredProductIds.length,8);for(const id of launch.featuredProductIds)assert.ok(product(id),id);});
 test('every assortment item refers to a catalog product',()=>{for(const kit of launch.assortments)for(const item of kit.items)assert.ok(product(item.productId),item.productId);});

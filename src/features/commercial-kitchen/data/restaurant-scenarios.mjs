@@ -69,7 +69,7 @@ export const scenarios = [
     isometric: '/images/restaurant-kitchen-packages/cafe-isometric-concept-v1.webp',
     facts: [['Footprint', '8,000 x 7,500 mm'], ['Bar aisle', '1,100 mm'], ['Opening crew', '4 to 6']],
     products: [
-      { image: '/commercial-kitchen-media/CK-136.webp', name: 'E01 two-group coffee machine', size: '860 x 620 mm' },
+      { image: '/images/product-series/ck-136-product-v2.webp', name: 'E01 two-group coffee machine', size: '860 x 620 mm' },
       { image: '/commercial-kitchen-media/ice-39.webp', name: 'E02 ice machine', size: '500 x 600 mm' },
       { image: '/commercial-kitchen-media/juice-1200.webp', name: 'E04 juice extractor', size: '300 x 450 mm' },
     ],

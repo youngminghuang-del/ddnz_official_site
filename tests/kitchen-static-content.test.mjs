@@ -4,9 +4,9 @@ import products from '../src/features/commercial-kitchen/data/products.mjs';
 import launch from '../src/features/commercial-kitchen/data/launch.mjs';
 import { renderKitchenStaticContent } from '../scripts/kitchen-static-content.mjs';
 
-test('static kitchen HTML contains 40 models and only the eight supported indicative quotes', () => {
+test('static kitchen HTML contains 46 models and only the eight supported indicative quotes', () => {
   const html = renderKitchenStaticContent(products, launch);
-  assert.equal((html.match(/<article>/g) || []).length, 40);
+  assert.equal((html.match(/<article>/g) || []).length, 46);
   assert.equal((html.match(/Indicative supply price: CNY/g) || []).length, 8);
   for (const p of products) {
     assert.ok(html.includes(p.model));
