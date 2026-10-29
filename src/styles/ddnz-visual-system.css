@@ -1,0 +1,170 @@
+/* DDNZ product surfaces share a visual grammar, not a fixed page composition.
+   Keep category imagery, editorial layouts and the original quotation flows. */
+:root {
+  --ddnz-brand-ink: #10243f;
+  --ddnz-brand-muted: #52647c;
+  --ddnz-brand-purple: #763c9c;
+  --ddnz-brand-action: #b94625;
+  --ddnz-brand-action-hover: #9f391e;
+  --ddnz-brand-paper: #fffdfb;
+  --ddnz-brand-line: #dce3ea;
+  --ddnz-frame: 1360px;
+  --ddnz-content: 1280px;
+  --ddnz-gutter: clamp(18px, 3vw, 40px);
+  --ddnz-section-space: clamp(36px, 4.5vw, 64px);
+  --ddnz-control-radius: 8px;
+  --ddnz-media-radius: 16px;
+  --ddnz-display-size: clamp(36px, 4.2vw, 60px);
+  --ddnz-section-size: clamp(28px, 2.7vw, 38px);
+  --ddnz-body-font: 'Inter', 'PingFang SC', 'Microsoft YaHei', 'Noto Sans SC', sans-serif;
+}
+
+/* A common reading edge from home to catalogue; the home image stays expansive. */
+.home-intro-grid, .home-intro-support {
+  max-width: var(--ddnz-frame);
+  padding-inline: var(--ddnz-gutter);
+}
+.ddnz-kitchen .wrap {
+  max-width: var(--ddnz-content);
+  width: calc(100% - 2 * var(--ddnz-gutter));
+}
+.phone-film main, .fp-page .fp-wrap, .audio-page .audio-page-frame,
+.coffee-page .coffee-hero, .coffee-page .coffee-plan,
+.coffee-page > .product-series, .mobility-page > section {
+  box-sizing: border-box;
+  max-width: var(--ddnz-frame);
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: var(--ddnz-gutter);
+}
+.coffee-page > .experience-disclosure {
+  max-width: var(--ddnz-content);
+  width: calc(100% - 2 * var(--ddnz-gutter));
+  margin-inline: auto;
+}
+.audio-page .product-series { max-width: none; padding-inline: 0; }
+
+/* Preserve the approved navy / purple / coral identity across product families. */
+:is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film) {
+  color: var(--ddnz-brand-ink);
+  background-color: var(--ddnz-brand-paper);
+  font-family: var(--ddnz-body-font);
+}
+.ddnz-kitchen { --ink: var(--ddnz-brand-ink); --muted: var(--ddnz-brand-muted); }
+.ddnz-home { --ddnz-action: var(--ddnz-brand-action); }
+
+.ddnz-title-phrase { display: inline-block; }
+
+/* Same role, same type scale. Home and reading/tool headings retain their roles. */
+:is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film) .catalogue-hero h1,
+.audio-page .audio-page-frame > header h1 {
+  font-size: var(--ddnz-display-size);
+  font-weight: 750;
+  line-height: 1.12;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+  max-inline-size: 22ch;
+  margin-block: 18px 24px;
+  color: var(--ddnz-brand-ink);
+}
+:is(.catalogue-hero, .coffee-hero) > div:first-child > p:not(.eyebrow):not(.product-series-kicker),
+.catalogue-hero .hero-description, .catalogue-hero .lede,
+.mobility-page .mobility-hero p:not(.mobility-eyebrow) {
+  color: var(--ddnz-brand-muted);
+  font-size: 17px;
+  line-height: 1.8;
+  max-inline-size: 60ch;
+}
+.coffee-page .coffee-plan h2, .product-series > header h2,
+.audio-page .audio-page-frame > section > h2,
+.ddnz-kitchen .section-heading h2 {
+  font-size: var(--ddnz-section-size);
+  font-weight: 700;
+  line-height: 1.24;
+  letter-spacing: -.02em;
+  text-wrap: balance;
+}
+
+/* A shared product stage; scenes fill their frame, product images stay uncropped. */
+.catalogue-hero { column-gap: clamp(28px, 3.5vw, 48px); }
+.catalogue-hero .catalogue-hero-media {
+  border-color: var(--ddnz-brand-line);
+  border-radius: var(--ddnz-media-radius);
+  box-shadow: none;
+  background: #fff;
+}
+.catalogue-hero .catalogue-hero-stage { background: #fff; }
+.catalogue-hero .catalogue-hero-stage::before { content: none; }
+.catalogue-hero .catalogue-hero-rail { background: #fff; border-color: var(--ddnz-brand-line); }
+.catalogue-hero .catalogue-hero-tiles > a { border-radius: var(--ddnz-control-radius); }
+.coffee-page .coffee-hero.catalogue-hero {
+  padding-block: 48px;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+}
+.coffee-page .coffee-hero .catalogue-hero-stage { padding: 24px; }
+.coffee-page .coffee-hero .catalogue-hero-stage > img { height: 380px; }
+
+/* Coral means the main buying action; purple remains navigation and selection. */
+.coffee-page .coffee-cta,
+.audio-page .catalogue-hero > div:first-child > a[href="#speaker-model-request"],
+.mobility-page .mobility-primary,
+.ddnz-kitchen .hero .button.primary,
+.phone-film .hero .button:not(.secondary),
+.product-series .series-request-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: var(--ddnz-control-radius);
+  background: var(--ddnz-brand-action);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.5;
+  text-decoration: none;
+  box-shadow: none;
+  transition: background-color 160ms ease;
+}
+:is(.coffee-cta, .series-request-button, .mobility-primary):hover,
+.audio-page .catalogue-hero > div:first-child > a[href="#speaker-model-request"]:hover,
+.ddnz-kitchen .hero .button.primary:hover,
+.phone-film .hero .button:not(.secondary):hover { background: var(--ddnz-brand-action-hover); color: #fff; }
+:is(.coffee-page, .audio-page, .mobility-page, .ddnz-kitchen, .phone-film) :is(a, button, summary):focus-visible {
+  outline: 3px solid var(--ddnz-brand-purple);
+  outline-offset: 3px;
+}
+.product-series .product-series-card { border-color: var(--ddnz-brand-line); border-radius: 12px; box-shadow: none; }
+.product-series .product-series-photo { background: #f5f5f4; }
+.product-series .product-series-kicker { color: var(--ddnz-brand-purple); }
+.product-series .product-series-request { border-color: var(--ddnz-brand-line); border-radius: 12px; }
+.coffee-page .coffee-plan article { border-top-color: var(--ddnz-brand-line); }
+.coffee-page .coffee-plan { padding-block: var(--ddnz-section-space); }
+
+@media (max-width: 1000px) {
+  :root { --ddnz-display-size: clamp(36px, 5vw, 48px); }
+  .coffee-page .coffee-hero.catalogue-hero { grid-template-columns: 1fr; padding-block: 36px; }
+  .coffee-page .coffee-hero .catalogue-hero-stage > img { height: 320px; }
+}
+@media (max-width: 600px) {
+  :root { --ddnz-display-size: 36px; }
+  :is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film) .catalogue-hero h1,
+  .audio-page .audio-page-frame > header h1 { line-height: 1.18; margin-block: 16px 20px; }
+  :is(.catalogue-hero, .coffee-hero) > div:first-child > p:not(.eyebrow):not(.product-series-kicker),
+  .catalogue-hero .hero-description, .catalogue-hero .lede,
+  .mobility-page .mobility-hero p:not(.mobility-eyebrow) { font-size: 16px; line-height: 1.75; }
+  .coffee-page .coffee-hero.catalogue-hero { padding-block: 28px; }
+  .coffee-page .coffee-hero .catalogue-hero-stage { padding: 18px; }
+  .coffee-page .coffee-hero .catalogue-hero-stage > img { height: 260px; }
+  .audio-page .audio-page-frame { padding-block: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  :is(.coffee-cta, .series-request-button, .mobility-primary) { transition: none; }
+}
+
+/* Arabic shaping and reading rhythm take precedence over Latin display tracking. */
+:is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film)[dir=rtl] { font-family: 'Noto Sans Arabic', Tahoma, sans-serif; }
+:is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film)[dir=rtl] .catalogue-hero h1 { letter-spacing: 0; line-height: 1.35; }
+.product-series button[aria-pressed=true] { background: var(--ddnz-brand-purple); color: #fff; }

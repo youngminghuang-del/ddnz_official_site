@@ -7,16 +7,16 @@ const copy: Record<string, [string, string]> = {
  pt: ['Modelos e detalhes', 'Ver modelo'], ru: ['Модели и детали', 'Смотреть модель'],
  tr: ['Modeller ve ayrıntılar', 'Modeli inceleyin'], ar: ['استكشف الموديلات والتفاصيل', 'عرض الموديل']
 };
-export default function CatalogueHeroMedia({src, alt, items, language='en', scene=false, label, onNavigate}: {src:string; alt:string; items:Item[]; language?:string; scene?:boolean; label?:string; onNavigate?:()=>void}) {
+export default function CatalogueHeroMedia({src, alt, items=[], language='en', scene=false, label, onNavigate}: {src:string; alt:string; items?:Item[]; language?:string; scene?:boolean; label?:string; onNavigate?:()=>void}) {
  const [heading, action] = copy[language==='zh-cn'?'zh':language] || copy.en;
  return <div className={'catalogue-hero-media'+(scene?' catalogue-hero-scene':'')}>
   <div className="catalogue-hero-stage"><img src={src} alt={alt} width="1200" height="900" fetchPriority="high"/>{label&&<span className="catalogue-hero-model"><bdi>{label}</bdi></span>}</div>
-  <div className="catalogue-hero-rail"><p className="catalogue-hero-rail-title">{heading}<span aria-hidden="true">↘</span></p>
+  {items.length>0&&<div className="catalogue-hero-rail"><p className="catalogue-hero-rail-title">{heading}<span aria-hidden="true">↘</span></p>
    <div className="catalogue-hero-tiles">{items.map(item=><a key={item.src+item.href+item.label} href={item.href} onClick={onNavigate} aria-label={`${action} · ${item.label}`}>
     <img src={item.src} alt="" width="240" height="160" loading="lazy"/>
     <span><bdi>{item.label}</bdi><span aria-hidden="true">↗</span></span>
    </a>)}</div>
-  </div>
+  </div>}
  </div>;
 }
 export const heroRanges = {

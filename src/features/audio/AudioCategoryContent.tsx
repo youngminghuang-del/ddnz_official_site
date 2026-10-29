@@ -16,8 +16,8 @@ export default function AudioCategoryContent({index,locale='en'}:{index:number,l
  const c=categoryCopy[locale],b=buyerCopy[locale],prefix=foodPrefix(locale),Icon=icons[index],products=audioCategoryProducts(index,locale);
  const quote=(name:string,body:string)=>`${prefix}/get-a-quote/?${new URLSearchParams({leadGoal:'Product Sourcing',source:'audio_category',industry:c.names[index],productScope:`${name}\n${body}`,overviewBrief:`${name}\n${body}`})}`;
  const packNames=[...c.packNames[index],...extraBundleIndices[index].map(i=>b.extraPacks[i])];
- return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="bg-slate-50 text-slate-900">
- <div className="mx-auto max-w-7xl space-y-14 px-6 py-10">
+ return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="audio-page bg-slate-50 text-slate-900">
+ <div className="audio-page-frame mx-auto max-w-7xl space-y-14 px-6 py-10">
   <nav aria-label={c.ui[0]} className="flex flex-wrap gap-3 text-sm"><a className="text-purple-800 underline" href={`${prefix}${audioCategoryRoot}/`}>{c.ui[0]}</a><span>/</span><span>{c.names[index]}</span></nav>
   <header className="max-w-4xl"><Icon size={42} className="mb-5 text-purple-700" aria-hidden="true"/><h1 className="text-4xl font-bold leading-tight md:text-5xl">{c.titles[index]}</h1><p className="mt-6 text-lg leading-8">{c.intros[index]}</p>
    <nav aria-label={b.labels[0]} className="mt-7 flex flex-wrap gap-3">{[['#product-selection',b.labels[15]],['#order-packages',b.labels[16]],['#buying-guide',b.labels[17]]].map(([href,label])=><a key={href} className="rounded-xl border border-purple-300 bg-white px-5 py-3 font-semibold text-purple-800" href={href}>{label} ↓</a>)}</nav>
