@@ -1,3 +1,4 @@
+import { renderPriceComparison, renderComparisonActions, comparisonSchema } from './price-comparison.mjs';
 import {renderBear,renderFilmNavigator} from '../mobile-sourcing/bear-gallery.mjs';
 import {renderOFold} from '../mobile-sourcing/o-fold-gallery.mjs';
 import { renderEnglishFilmHeroMedia } from './catalogue-hero.mjs';
@@ -35,8 +36,8 @@ export const SCREEN_PROTECTOR_SEO = Object.freeze({
     imageAlt: 'Glass pieces on a production fixture, filmed by the DDNZ team',
   },
   products: {
-    title: 'Compare Wholesale Screen Protectors & Prices | DDNZ Global',
-    description: 'Compare OG28, 001 and Titan wholesale screen protectors by reference price, clear or privacy finish, installer, packaging, model minimums and carton size.',
+    title: 'Wholesale Screen Protector Prices & MOQ from China | DDNZ',
+    description: 'Compare wholesale screen protector prices in CNY, clear and privacy glass, installation kits and model MOQs. Check mixed-order rules and request a quote.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },
@@ -136,12 +137,13 @@ export function applyScreenProtectorSEO(document, pathname, options) {
 
 export function screenProtectorSchema(page, breadcrumbs) {
   if (page === 'quote') return null;
-  return {
+  const breadcrumb = {
     '@context': 'https://schema.org', '@type': 'BreadcrumbList',
     itemListElement: screenProtectorBreadcrumbs(page, breadcrumbs).map((item, index) => ({
       '@type': 'ListItem', position: index + 1, name: item.name, item: SITE_ORIGIN + item.href,
     })),
   };
+  return page === 'products' ? comparisonSchema(breadcrumb) : breadcrumb;
 }
 
 export function removeScreenProtectorSchema(document) {
@@ -181,7 +183,7 @@ export function renderScreenProtectorBody(page) {
     + EN.home.journey.map(([, title, description, target]) => section(title, paragraph(description) + link(target))).join('')
     + guideLinks() + section(EN.home.offersTitle, productSummary())
     + section(EN.home.planTitle, paragraph(EN.home.planBody) + link('calculator'));
-  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderFilmNavigator() + renderBear() + renderOFold() + renderPrivacy28Showcase() + renderFilmEntry() + paragraph(EN.home.offersBody)
+  if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderComparisonActions() + renderPriceComparison() + renderFilmNavigator() + renderBear() + renderOFold() + renderPrivacy28Showcase() + renderFilmEntry() + paragraph(EN.home.offersBody)
     + productSummary(true) + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
   if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)
