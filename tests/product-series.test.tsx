@@ -56,3 +56,29 @@ test('portable and party categories keep their own models without dropping the s
  const brief=new URL(seriesQuote('zh','speaker',cleaned),'https://www.ddnzglobal.com').searchParams.get('overviewBrief');
  assert.ok(brief?.includes('SP18 × 2')&&brief.includes('DR-602 × 3'));assert.ok(brief.includes('5.4'));
 });
+
+test('model galleries retain source-specific controls and parameter sheets without substituting a different machine',async()=>{
+ const {modelImages}=await import('../src/features/product-series/ProductGallery');
+ const fs=await import('node:fs');
+ for(const m of seriesModels){const pics=modelImages(m);assert.ok(pics.length>=1);for(const p of pics)assert.ok(fs.existsSync('public'+p.src),p.src);}
+ const by=Object.fromEntries(seriesModels.map(m=>[m.model,m]));
+ assert.ok(modelImages(by['FR-E139']).length>=5);assert.ok(modelImages(by['SP18']).length>=5);assert.ok(modelImages(by['CK-129']).some(p=>p.kind==='specs'));
+ assert.equal(by['KY-168'].temperature,'88–95 °C');assert.equal(by['KY-T2'].preinfusion,'1–9 s');
+ assert.equal(by['SP18'].charging,'1–3 h');assert.equal(by['SP18'].battery,'500–1000 mAh');
+ assert.ok(!modelImages(by['YS-3120GM']).some(p=>p.src.includes('ys-3120gm-5')));
+});
+test('kitchen server HTML keeps all searchable products while making the remaining catalogue optional',async()=>{
+ const {default:Kitchen}=await import('../src/features/commercial-kitchen/LocalizedKitchenContent.jsx');
+ for(const locale of ['zh','ar','es']){
+  const html=renderToStaticMarkup(<Kitchen locale={locale}/>);
+  assert.equal((html.match(/data-product-id=/g)||[]).length,46);
+  const optional=html.indexOf('class="catalog-rest"');assert.ok(optional>0);
+  assert.equal((html.slice(0,optional).match(/data-product-id=/g)||[]).length,8);
+  assert.ok(html.includes('coffee-machine-catalogue'));assert.ok(!html.includes('coffee-machine-catalogue-schema'));
+  assert.ok(html.includes('commercial-kitchen-list'));
+ }
+});
+test('customer-facing fields are natural across languages and all gallery dialogs have an accessible title',()=>{
+ assert.equal(copy.zh.fields.power,'功率');assert.equal(copy.zh.fields.pressure,'泵压');
+ for(const locale of Object.keys(copy))for(const family of ['coffee','speaker'] as const){const html=renderToStaticMarkup(<ProductSeries family={family} locale={locale}/>);assert.ok(html.includes('<dialog'));assert.ok(html.includes('aria-labelledby="gallery-title-'));assert.ok(!html.includes('资料标注'));}
+});

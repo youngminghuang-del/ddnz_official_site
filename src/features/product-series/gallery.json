@@ -1,0 +1,122 @@
+{
+  "coffee-fr-e139": [
+    {
+      "src": "/images/product-series/fr-e139-gallery-2.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/fr-e139-gallery-3.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/fr-e139-gallery-4.webp",
+      "kind": "controls"
+    },
+    {
+      "src": "/images/product-series/fr-e139-gallery-5.webp",
+      "kind": "supplier"
+    }
+  ],
+  "coffee-g3200d": [
+    {
+      "src": "/images/product-series/g3200d-gallery-2.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/g3200d-gallery-3.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/g3200d-gallery-4.webp",
+      "kind": "controls"
+    }
+  ],
+  "coffee-f11-big-plus": [
+    {
+      "src": "/images/product-series/f11-big-plus-gallery-2.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/f11-big-plus-gallery-3.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/f11-big-plus-gallery-5.webp",
+      "kind": "supplier"
+    }
+  ],
+  "speaker-sp18": [
+    {
+      "src": "/images/product-series/sp18-gallery-1.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/sp18-gallery-6.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/sp18-gallery-2.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/sp18-gallery-3.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/sp18-gallery-4.webp",
+      "kind": "supplier"
+    }
+  ],
+  "speaker-tg117": [
+    {
+      "src": "/images/product-series/tg117-gallery-1.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/tg117-gallery-2.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/tg117-gallery-3.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/tg117-gallery-4.webp",
+      "kind": "supplier"
+    },
+    {
+      "src": "/images/product-series/tg117-gallery-5.webp",
+      "kind": "supplier"
+    }
+  ],
+  "CK-129": [
+    {
+      "src": "/images/product-series/ck129-specs.webp",
+      "kind": "specs"
+    }
+  ],
+  "CK-136": [
+    {
+      "src": "/images/product-series/ck136-specs.webp",
+      "kind": "specs"
+    }
+  ],
+  "coffee-ky168": [
+    {
+      "src": "/images/product-series/ky168-specs.webp",
+      "kind": "specs"
+    }
+  ],
+  "coffee-kyt2": [
+    {
+      "src": "/images/product-series/kyt2-specs.webp",
+      "kind": "specs"
+    }
+  ],
+  "coffee-ys-3120gm": [
+    {
+      "src": "/images/product-series/ys-3120gm-scene-source.webp",
+      "kind": "supplier"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+import {experienceCopy} from './ProgressiveSection';
+export default function ScenePlanning({family,locale='en'}:{family:'coffee'|'speaker';locale?:string}){const c=experienceCopy(locale);return <figure className="experience-scene"><img src={`/images/product-series/${family}-planning-scene.webp`} alt={family==='coffee'?c.coffeeScene:c.speakerScene} width="1536" height="1024" loading="lazy"/><figcaption><strong>{family==='coffee'?c.coffeeScene:c.speakerScene}</strong><p>{c.sceneIntro}</p><small>{c.sceneLabel}</small></figcaption></figure>;}

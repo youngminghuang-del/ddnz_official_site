@@ -21,7 +21,8 @@ export const kitchenLocales = Object.freeze({ es, ar, zh, ru, fr, pt, tr });
 export function kitchenCopy(locale) {
   locale = locale === 'zh-cn' ? 'zh' : locale;
   if (!Object.hasOwn(kitchenLocales, locale)) throw new RangeError(`Unsupported kitchen locale: ${locale}`);
-  return kitchenLocales[locale];
+  const t=kitchenLocales[locale],count=text=>text?.replace(/\b(?:26|40|44)\b/g,String(catalog.length));
+  return {...t,meta:{...t.meta,description:count(t.meta.description)},ui:{...t.ui,intro:count(t.ui.intro)}};
 }
 // Pin numbering systems: browser and Node ICU defaults for plain "ar" can differ.
 export const localNumber = (value, locale, options = {}) => new Intl.NumberFormat(kitchenCopy(locale).numberLocale, { numberingSystem: locale === 'ar' ? 'arab' : 'latn', ...options }).format(value);
