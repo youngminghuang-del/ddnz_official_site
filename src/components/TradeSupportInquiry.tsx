@@ -1,3 +1,4 @@
+import InquirySourceFields from '../features/inquiry/InquirySourceFields';
 import {roleExtras,productSelectorCopy} from '../features/product-positioning/ProductSupply';
 import {getLocalizedHomeFaqs} from '../data/homeFaqData';
 import { quoteParamsForLocation, clearQuoteContext } from '../lib/quoteLinkPolicy.mjs';
@@ -740,9 +741,7 @@ export default function TradeSupportInquiry() {
                     <input type="hidden" name="Order_Readiness" value={readiness} />
                     <input type="hidden" name="Target_Timing" value={timeline} />
                     <input type="hidden" name="Lead_Source" value={leadSource} />
-                    <input type="hidden" name="UTM_Source" value={attribution.utm_source || ''} />
-                    <input type="hidden" name="UTM_Medium" value={attribution.utm_medium || ''} />
-                    <input type="hidden" name="UTM_Campaign" value={attribution.utm_campaign || ''} />
+                    <InquirySourceFields params={params} pathname={location.pathname} />
 
                     <div className="mt-5 grid gap-4">
                       <div><label htmlFor="trade-name" className="text-sm font-bold text-[var(--ddnz-ink)]">{copy.name}</label><input ref={nameRef} id="trade-name" name="name" type="text" value={name} onChange={(event) => { markStarted(); setName(event.target.value); setError(''); }} className="mt-2 min-h-12 w-full rounded-xl border border-slate-200 px-4 text-base outline-none focus:border-[var(--ddnz-purple)] focus:ring-2 focus:ring-[var(--ddnz-purple)]/15" placeholder={copy.namePlaceholder} autoComplete="name" /></div>

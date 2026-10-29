@@ -24,7 +24,8 @@ export function sanitizeQuoteContext(input) {
       if (QUOTE_ENUMS[key].includes(value)) out[key] = value;
       else if (key === 'dest') out.destinationText = value;
       else if (key === 'subcategory') out.productScope = [out.productScope,value].filter(Boolean).join('\n').slice(0,8000);
-    } else if (TEXT_KEYS.has(key)) out[key] = value;
+    } else if (key === 'entryPage' && /^\/(?!\/)[^?#@\\\s]{0,499}$/.test(value)) out[key] = value;
+    else if (TEXT_KEYS.has(key)) out[key] = value;
   }
   return out;
 }
@@ -75,9 +76,9 @@ export function clearQuoteContext(path) {
 export function quoteParamsForLocation(search, path) {
   // Existing bookmarked / externally linked parameter URLs keep their behavior.
   const params = new URLSearchParams(search);
-  if (params.toString()) return params;
+  if ([...params.keys()].some(key => !['ddnz_test', 'preview'].includes(key))) return params;
   const values = readQuoteContext(path);
-  return values ? new URLSearchParams({ ...values, _ddnz_handoff:'1' }) : params;
+  return values ? new URLSearchParams({ ...Object.fromEntries(params), ...values, _ddnz_handoff:'1' }) : params;
 }
 export function navigateQuoteContext(value) {
   const props = quoteLinkProps(value);
@@ -85,9 +86,10 @@ export function navigateQuoteContext(value) {
   return props.href;
 }
 export function captureQuoteLink(event) {
-  const anchor = event.target?.closest?.('a[data-quote-context]');
-  if (!anchor || anchor.hasAttribute('download')) return;
-  try { saveQuoteContext(anchor.getAttribute('href'), JSON.parse(anchor.getAttribute('data-quote-context'))); } catch {}
+  const anchor = event.target?.closest?.('a');
+  if (!anchor || anchor.hasAttribute('download') || !quoteUrl(anchor.getAttribute('href'))) return;
+  if (!anchor.hasAttribute('data-quote-context')) { clearQuoteContext(anchor.getAttribute('href')); return; }
+  try { saveQuoteContext(anchor.getAttribute('href'), { ...JSON.parse(anchor.getAttribute('data-quote-context')), entryPage: window.location.pathname }); } catch {}
 }
 export function installQuoteLinkHandoff() {
   if (typeof document === 'undefined') return () => {};
