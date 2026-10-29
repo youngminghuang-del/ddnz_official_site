@@ -1,3 +1,4 @@
+import commercialDishwasherRelease from '../src/data/commercialDishwasherRelease.json';
 import commercialMixerRelease from '../src/data/commercialMixerRelease.json';
 import kitchenSparePartsRelease from '../src/data/kitchenSparePartsRelease.json';
 import istanbulKitchenRelease from '../src/data/istanbulKitchenRelease.json';
@@ -543,7 +544,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === commercialMixerRelease.slug
+      const rendered = slug === commercialDishwasherRelease.slug
+        ? { html: commercialDishwasherRelease.content, toc: commercialDishwasherRelease.toc, wordCount: commercialDishwasherRelease.wordCount, readMinutes: commercialDishwasherRelease.readMinutes }
+        : slug === commercialMixerRelease.slug
         ? { html: commercialMixerRelease.content, toc: commercialMixerRelease.toc, wordCount: commercialMixerRelease.wordCount, readMinutes: commercialMixerRelease.readMinutes }
         : slug === kitchenSparePartsRelease.slug
         ? { html: kitchenSparePartsRelease.content, toc: kitchenSparePartsRelease.toc, wordCount: kitchenSparePartsRelease.wordCount, readMinutes: kitchenSparePartsRelease.readMinutes }
@@ -590,7 +593,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
