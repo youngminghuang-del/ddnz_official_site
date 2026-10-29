@@ -1,3 +1,4 @@
+import commercialMixerSchema from '../data/commercial-mixer-schema.json';
 import kitchenSparePartsSchema from '../data/kitchen-spare-parts-schema.json';
 import istanbulKitchenSchema from '../data/istanbul-kitchen-schema.json';
 import {freightPageInfo} from '../features/freight/freightPageSchema';
@@ -232,6 +233,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = kitchenSparePartsSchema;
     }
 
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === commercialMixerSchema.url.replace(/\/+$/, '')) {
+      finalSchema = commercialMixerSchema;
+    }
+
     // Create script tag and append to head
     const script = document.createElement('script');
     script.id = scriptId;
@@ -250,4 +255,5 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
   return null;
 }
+
 
