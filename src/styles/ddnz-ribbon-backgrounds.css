@@ -1,7 +1,7 @@
 :root {
   --ddnz-ribbon-desktop: url('/images/brand/backgrounds/ddnz-ribbon-desktop-v1.webp');
   --ddnz-ribbon-mobile: url('/images/brand/backgrounds/ddnz-ribbon-mobile-v1.webp');
-  --ddnz-ribbon-paper: #fffdfb;
+  --ddnz-ribbon-paper: var(--ddnz-brand-paper);
 }
 
 /*

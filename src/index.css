@@ -12,10 +12,10 @@
   --hb-blue: #246b93;
   --hb-amber: #d97706;
   --hb-amber-strong: #b45309;
-  --hb-surface: #f5f8fa;
-  --hb-ink: #152536;
-  --hb-muted: #566b7f;
-  --hb-line: #dbe5eb;
+  --hb-surface: var(--ddnz-brand-paper);
+  --hb-ink: var(--ddnz-brand-ink);
+  --hb-muted: var(--ddnz-brand-muted);
+  --hb-line: var(--ddnz-brand-line);
   --hb-radius: 0.875rem;
 }
 
@@ -33,7 +33,7 @@ body {
   min-height: 2.75rem;
   transform: translateY(-160%);
   border-radius: 0.75rem;
-  background: #ffffff;
+  background: var(--ddnz-surface-raised);
   color: #10243f;
   padding: 0.75rem 1rem;
   font-weight: 800;
@@ -52,17 +52,17 @@ body {
 }
 
 .ddnz-home {
-  --ddnz-ink: #10243f;
-  --ddnz-purple: #763c9c;
+  --ddnz-ink: var(--ddnz-brand-ink);
+  --ddnz-purple: var(--ddnz-brand-purple);
   --ddnz-purple-strong: #632b89;
-  --ddnz-purple-soft: #f7f0fb;
-  --ddnz-coral: #c94f2f;
+  --ddnz-purple-soft:var(--ddnz-surface-soft);
+  --ddnz-coral: var(--ddnz-brand-action);
   --ddnz-coral-strong: #b94625;
   --ddnz-coral-soft: #fff2ed;
   --ddnz-action: var(--ddnz-coral);
-  --ddnz-surface: #fffdf9;
-  --ddnz-surface-muted: #f3f5f7;
-  --ddnz-line: #dce3ea;
+  --ddnz-surface: var(--ddnz-brand-paper);
+  --ddnz-surface-muted: var(--ddnz-surface-soft);
+  --ddnz-line: var(--ddnz-brand-line);
   --ddnz-radius-sm: 0.75rem;
   --ddnz-radius-md: 1rem;
   --ddnz-radius-lg: 1.5rem;
@@ -132,7 +132,7 @@ body {
 .ddnz-card {
   border: 1px solid var(--ddnz-line);
   border-radius: var(--ddnz-radius-md);
-  background: #fff;
+  background: var(--ddnz-surface-raised);
   box-shadow: 0 1px 2px rgba(16, 36, 63, 0.04);
 }
 
@@ -252,7 +252,7 @@ html {
 
 /* Embedded freight forms share the same readable surface as the quote page. */
 .dark-form-container {
-  background: #fafafc;
+  background: var(--ddnz-surface-soft);
   color: var(--ddnz-ink);
   padding: 24px 0;
 }

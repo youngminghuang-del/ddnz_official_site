@@ -8,6 +8,11 @@
   --ddnz-brand-action-hover: #9f391e;
   --ddnz-brand-paper: #fffdfb;
   --ddnz-brand-line: #dce3ea;
+  --ddnz-surface-raised: #fff;
+  --ddnz-surface-soft: #f4f5f6;
+  --ddnz-surface-selected: #f0e9f6;
+  --ddnz-control-line: #8493a5;
+  --ddnz-card-radius: 12px;
   --ddnz-frame: 1360px;
   --ddnz-content: 1280px;
   --ddnz-gutter: clamp(18px, 3vw, 40px);
@@ -168,3 +173,157 @@
 :is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film)[dir=rtl] { font-family: 'Noto Sans Arabic', Tahoma, sans-serif; }
 :is(.ddnz-kitchen, .coffee-page, .audio-page, .mobility-page, .fp-page, .phone-film)[dir=rtl] .catalogue-hero h1 { letter-spacing: 0; line-height: 1.35; }
 .product-series button[aria-pressed=true] { background: var(--ddnz-brand-purple); color: #fff; }
+
+/* F106: surface roles also apply below the first screen. These rules do not
+   alter structure, hide content, replace imagery or change control behavior. */
+body { background-color: var(--ddnz-brand-paper); }
+main { background-color: var(--ddnz-brand-paper); }
+main.ddnz-page, main.ddnz-home { background-color: var(--ddnz-brand-paper); color: var(--ddnz-brand-ink); }
+.ddnz-surface-soft { background-color: var(--ddnz-surface-soft); }
+.ddnz-line { border-color: var(--ddnz-brand-line); }
+.ddnz-radius-card { border-radius: var(--ddnz-card-radius); }
+.ddnz-control { border-radius: var(--ddnz-control-radius); }
+.ddnz-page :is(article,figure).ddnz-control { border-radius: var(--ddnz-card-radius); }
+.ddnz-page :is(input,textarea,select) {
+  background-color: var(--ddnz-surface-raised);
+  border-color: var(--ddnz-control-line);
+  border-radius: var(--ddnz-control-radius);
+  color: var(--ddnz-brand-ink);
+  caret-color: var(--ddnz-brand-purple);
+}
+.ddnz-page :is(input,textarea)::placeholder { color: var(--ddnz-brand-muted); }
+.ddnz-page :is(input,textarea)[aria-invalid=true] { border-color: #a33122; }
+.ddnz-page input[type=checkbox] { accent-color: var(--ddnz-brand-purple); }
+main ::selection { background: var(--ddnz-surface-selected); color: var(--ddnz-brand-ink); }
+
+/* Buying actions use coral; navigation, compare/filter choices and selected
+   states keep purple. Icon buttons, gallery triggers and tabs stay distinct. */
+.ddnz-action,
+.ddnz-home .ddnz-button-primary,
+.supply-links > a.supply-primary, .supply-primary,
+.ms-page .ms-button, .bear-glass .bear-action,
+.buyer-entry .entry-request .entry-request-button,
+.cold-models .cold-quote,
+.equipment-support a.equipment-support-cta,
+.ods .ods-button,
+.fp-page .fp-primary,
+.ms-page button[type=submit] {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border: 1px solid transparent;
+  border-radius: var(--ddnz-control-radius);
+  background-color: var(--ddnz-brand-action);
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: none;
+  white-space: normal;
+  transition: background-color 160ms ease;
+}
+.ddnz-action:not(:disabled):hover,
+.ddnz-home .ddnz-button-primary:hover,
+.supply-links > a.supply-primary:hover, .supply-primary:hover,
+.ms-page .ms-button:hover,
+.buyer-entry .entry-request .entry-request-button:hover,
+.cold-models .cold-quote:hover,
+.equipment-support a.equipment-support-cta:hover,
+.ods .ods-button:hover { background-color: var(--ddnz-brand-action-hover); color: #fff; }
+.ddnz-action[role=tab], .ddnz-action[aria-pressed=true] {
+  background-color: var(--ddnz-brand-purple);
+}
+.ddnz-action:disabled, .ms-page .ms-button:disabled { opacity: .55; cursor: not-allowed; }
+main :is(a,button,summary,input,textarea,select):focus-visible {
+  outline: 3px solid var(--ddnz-brand-purple);
+  outline-offset: 3px;
+}
+
+/* A consistent reading rhythm, with the existing grids and deliberate
+   editorial / tool measures retained. No blanket margin or grid resets. */
+.ms-page, .ods, .ddnz-catalogue, .ddnz-overview {
+  font-family: var(--ddnz-body-font);
+  color: var(--ddnz-brand-ink);
+}
+.ms-page { max-width: var(--ddnz-frame); padding-inline: var(--ddnz-gutter); }
+.ms-page .ms-brief { margin-inline: 0; padding: clamp(20px,3vw,36px); }
+.ms-page .ms-section, .ods .ods-section { padding-block: var(--ddnz-section-space); }
+.ms-page h1, .ddnz-catalogue header h1 {
+  font-size: var(--ddnz-display-size);
+  font-weight: 750;
+  line-height: 1.15;
+  letter-spacing: -.025em;
+  text-wrap: balance;
+}
+.ms-page h2, .ods .ods-section h2, .equipment-support h2,
+.cold-models h2, .ddnz-page section h2 {
+  font-size: var(--ddnz-section-size);
+  line-height: 1.28;
+  letter-spacing: -.02em;
+  font-weight: 700;
+  text-wrap: balance;
+}
+.ms-page .ms-lead, .ddnz-page header > div > p {
+  max-inline-size: 65ch;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--ddnz-brand-muted);
+}
+.ms-page p, .ddnz-page section p { line-height: 1.8; }
+.ddnz-catalogue > div, .ddnz-overview > .max-w-7xl,
+.cold-models { max-width: var(--ddnz-frame); padding-inline: var(--ddnz-gutter); }
+.equipment-support {
+  max-width: var(--ddnz-content);
+  background-color: var(--ddnz-surface-soft);
+  border-color: var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+}
+.equipment-support-grid article { border-block-start: 1px solid var(--ddnz-brand-line); }
+.equipment-support :is(h2,h3) { color: var(--ddnz-brand-ink); }
+.equipment-support p, .equipment-support-checks li { color: var(--ddnz-brand-muted); }
+.supply-range { background-color: var(--ddnz-brand-paper); }
+.supply-bridge { background-color: var(--ddnz-surface-soft); }
+/* White stages are neutral containers. Original product and scene pixels stay intact. */
+.product-series .product-series-photo, .supply-product-grid img,
+.supply-product-visual, .ms-page .ms-family img { background-color: var(--ddnz-surface-raised); }
+.product-series .product-series-card, .product-series .product-series-request {
+  border-color: var(--ddnz-brand-line); border-radius: var(--ddnz-card-radius);
+}
+:is(.ms-page,.ods,.ddnz-page)[dir=rtl] { font-family: 'Noto Sans Arabic',Tahoma,sans-serif; }
+:is(.ms-page,.ods,.ddnz-page)[dir=rtl] :is(h1,h2,h3) { letter-spacing: 0; line-height: 1.45; }
+@media (max-width: 600px) {
+  .ms-page .ms-lead, .ddnz-page header > div > p { font-size: 16px; }
+  .equipment-support { margin-inline: 18px; }
+  .ddnz-catalogue > div { padding-block: 32px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ddnz-action, .ms-page .ms-button, .ods .ods-button { transition: none; }
+}
+
+/* Utility-authored service, freight and form modules use the same neutral
+   roles. Saturated/error/selected utilities and dark blocks are untouched. */
+main :is([class~="bg-slate-50"],[class~="bg-gray-50"],[class~="bg-purple-50"]) {
+  background-color: var(--ddnz-surface-soft);
+}
+main :is([class~="border-slate-200"],[class~="border-gray-200"],[class~="border-purple-100"]) {
+  border-color: var(--ddnz-brand-line);
+}
+main :is(article,figure,section)[class~="rounded-2xl"],
+main :is(article,figure)[class~="rounded-xl"] { border-radius: var(--ddnz-card-radius); }
+main :is(input,select,textarea):not([type=checkbox]):not([type=radio]):not([type=range]) {
+  border-color: var(--ddnz-control-line);
+  border-radius: var(--ddnz-control-radius);
+  caret-color: var(--ddnz-brand-purple);
+}
+main :is(input,select,textarea)[aria-invalid=true] { border-color: #a33122; }
+.ddnz-service-title { font-size: var(--ddnz-display-size); font-weight: 750; line-height: 1.15; letter-spacing: -.025em; }
+.ddnz-overview header h1 { font-size: var(--ddnz-display-size); font-weight: 750; line-height: 1.15; letter-spacing: -.025em; }
+/* Selected choices remain recognisable after neutralising decorative tints. */
+.ms-page button[aria-pressed=true], .ods button[aria-pressed=true]:not(.opg-scene-hotspot) {
+  border-color: var(--ddnz-brand-purple);
+}
