@@ -8,3 +8,9 @@
 
 /* Blend the approved white artwork board into the footer surface, preserving every original letterform. */
 .ddnz-footer__logo .ddnz-brand { mix-blend-mode:multiply; }
+
+/* Leave room for language and menu controls on narrow phones. Keep the
+   approved artwork's original crop and aspect ratio at the smaller size. */
+@media(max-width:374px) {
+  header.ddnz-home .ddnz-brand { --brand-width:clamp(136px,46vw,170px); }
+}

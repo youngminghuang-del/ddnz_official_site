@@ -25,3 +25,14 @@ test('solar cable graph container does not emit route-matching metadata as an un
  assert.equal(page.url,'https://www.ddnzglobal.com/es/blog/cables-carga-solar-mayoreo-china/');
  assert.ok(schema['@graph'].every(n=>n['@type']&&n['@id']));
 });
+
+test('owner-approved article graphs attach real reviewers to WebPage and expose no untyped route metadata',()=>{
+ for(const name of ['commercial-dishwasher','commercial-mixer','kitchen-spare-parts','istanbul-kitchen','egypt-scooter','egypt-lcl']){
+  const data=JSON.parse(fs.readFileSync(new URL('../src/data/'+name+'-schema.json',import.meta.url),'utf8'));
+  assert.deepEqual(Object.keys(data).sort(),['@context','@graph']);
+  const article=data['@graph'].find(n=>n['@type']==='BlogPosting'),page=data['@graph'].find(n=>n['@type']==='WebPage');
+  assert.equal(article.reviewedBy,undefined);assert.equal(page.reviewedBy.name,'Huang Matthew');
+  assert.equal(page.url,article.url);
+  for(const image of data['@graph'].filter(n=>n['@type']==='ImageObject'&&n.contentUrl))assert.equal(image.url,image.contentUrl);
+ }
+});

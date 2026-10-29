@@ -54,10 +54,6 @@
       "dateModified": "2026-10-27",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -83,6 +79,10 @@
       },
       "breadcrumb": {
         "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/#breadcrumb"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
       }
     },
     {
@@ -296,6 +296,5 @@
         }
       ]
     }
-  ],
-  "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-manufacturers-china-egypt/"
+  ]
 }

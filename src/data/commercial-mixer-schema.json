@@ -22,7 +22,11 @@
       "primaryImageOfPage": {
         "@id": "https://www.ddnzglobal.com/blog/commercial-dough-mixers-wholesale-china/#image-A"
       },
-      "url": "https://www.ddnzglobal.com/blog/commercial-dough-mixers-wholesale-china/"
+      "url": "https://www.ddnzglobal.com/blog/commercial-dough-mixers-wholesale-china/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
     },
     {
       "@type": "BlogPosting",
@@ -94,10 +98,6 @@
       "datePublished": "2026-10-05",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -182,7 +182,8 @@
       "description": "Spiral dough mixer product photograph",
       "inLanguage": "en",
       "width": 1920,
-      "height": 1080
+      "height": 1080,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-dough-mixers-wholesale-china/A-spiral-mixer.png"
     },
     {
       "@type": "ImageObject",
@@ -192,7 +193,8 @@
       "description": "Planetary mixer product photograph",
       "inLanguage": "en",
       "width": 1200,
-      "height": 1200
+      "height": 1200,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-dough-mixers-wholesale-china/B-planetary-mixer.png"
     },
     {
       "@type": "ImageObject",
@@ -202,7 +204,8 @@
       "description": "Dough hook attachment for a planetary mixer",
       "inLanguage": "en",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-dough-mixers-wholesale-china/C-dough-hook.jpg"
     },
     {
       "@type": "ImageObject",
@@ -212,7 +215,8 @@
       "description": "Flat beater attachment for a planetary mixer",
       "inLanguage": "en",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-dough-mixers-wholesale-china/D-flat-beater.jpg"
     },
     {
       "@type": "ImageObject",
@@ -222,8 +226,8 @@
       "description": "Wire whisk attachment for a planetary mixer",
       "inLanguage": "en",
       "width": 1024,
-      "height": 1024
+      "height": 1024,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-dough-mixers-wholesale-china/E-wire-whisk.webp"
     }
-  ],
-  "url": "https://www.ddnzglobal.com/blog/commercial-dough-mixers-wholesale-china/"
+  ]
 }

@@ -43,6 +43,7 @@ export function kitchenStructuredData(launch) {
     '@graph': [
       { '@type': 'CollectionPage', '@id': url, url, name: launch.meta.title,
         description: launch.meta.description, inLanguage: 'en',
+        mainEntity: { '@type': 'ItemList', numberOfItems: catalog.length, itemListElement: catalog.map((product,index) => ({ '@type': 'ListItem', position:index+1, name:[product.model,product.name].filter(Boolean).join(' '), url:`${url}#model-${product.id}` })) },
         breadcrumb: { '@id': url + '#breadcrumb' },
         isPartOf: { '@type': 'WebSite', '@id': origin + '/#website', name: 'DDNZ Global', url: origin + '/' },
       },

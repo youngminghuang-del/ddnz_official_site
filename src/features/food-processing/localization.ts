@@ -1,3 +1,4 @@
+import {standingGrinderListItems} from './standing-grinder-models.mjs';
 import zh from './locales/zh.json';
 import es from './locales/es.json';
 import ar from './locales/ar.json';
@@ -29,7 +30,7 @@ export function localizedFoodSchema(page:any,locale:FoodLocale) {
  return {'@context':'https://schema.org','@graph':[
  {'@type':'CollectionPage','@id':`${url}#page`,name:page.title,description:page.intro,url,inLanguage:locale==='zh'?'zh-CN':locale},
  {'@type':'BreadcrumbList',itemListElement:[{name:c.ui.products,item:`https://www.ddnzglobal.com${prefix}/products/`},{name:page.title,item:url}].map((item,i)=>({'@type':'ListItem',position:i+1,...item}))},
- {'@type':'ItemList',name:c.ui.catalogueTitle,itemListElement:page.machines.map((m:any,i:number)=>({'@type':'ListItem',position:i+1,name:`${m.model} ${c.names[machines.findIndex(item=>item.id===m.id)]}`,url:`${url}#machine-${m.id}`}))}
+ {'@type':'ItemList',name:c.ui.catalogueTitle,itemListElement:[...page.machines.map((m:any,i:number)=>({'@type':'ListItem',position:i+1,name:`${m.model} ${c.names[machines.findIndex(item=>item.id===m.id)]}`,url:`${url}#machine-${m.id}`})),...standingGrinderListItems(page,locale,url,page.machines.length)]}
  ]};
 }
 export function localizedFoodInquiry(selection:Record<string,number>,destination:string,requirement:string,locale:FoodLocale) {

@@ -26,3 +26,5 @@ export function seriesQuote(locale,family,selection,notes=''){
  const brief=[family==='coffee'?c.coffeeTitle:c.speakerTitle,...models.map(m=>`${m.model} × ${selection[m.id]}\n${seriesSpecs(m,locale).map(s=>`${s.label}: ${s.value}`).join(' · ')}\n${c.notes[m.index]}`),notes,c.terms].filter(Boolean).join('\n');
  return `${prefix}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',source:family==='coffee'?'coffee_model_catalogue':'speaker_model_catalogue',industry:family==='coffee'?'Commercial Kitchen Equipment':'Audio & Speakers',overviewBrief:brief,productScope:brief});
 }
+
+export function seriesListItems(models,locale,path){const lang=locale==='zh-cn'?'zh':locale,c=seriesCopy(lang),prefix=lang==='en'?'':`/${lang==='zh'?'zh-cn':lang}`;return models.map((m,i)=>({'@type':'ListItem',position:i+1,name:`${m.model} ${c.names[m.index]}`,image:'https://www.ddnzglobal.com'+m.image,url:`https://www.ddnzglobal.com${prefix}${path}#series-model-${m.id}`}));}

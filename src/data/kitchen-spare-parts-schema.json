@@ -22,7 +22,11 @@
       "primaryImageOfPage": {
         "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-B"
       },
-      "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/"
+      "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
     },
     {
       "@type": "BlogPosting",
@@ -80,14 +84,10 @@
         }
       ],
       "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/",
-      "datePublished": "2026-10-29",
-      "dateModified": "2026-10-29",
+      "datePublished": "2026-10-29T03:31:26Z",
+      "dateModified": "2026-10-29T03:31:26Z",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -177,7 +177,8 @@
       "description": "Bakery equipment motor showing the physical component and its mounting or connection details",
       "inLanguage": "en",
       "width": 600,
-      "height": 400
+      "height": 400,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/A-bakery-motor.jpg"
     },
     {
       "@type": "ImageObject",
@@ -187,7 +188,8 @@
       "description": "Oven blower showing the physical component and its mounting or connection details",
       "inLanguage": "en",
       "width": 600,
-      "height": 400
+      "height": 400,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/B-oven-blower.jpg"
     },
     {
       "@type": "ImageObject",
@@ -197,7 +199,8 @@
       "description": "Refrigeration compressor showing the physical component and its mounting or connection details",
       "inLanguage": "en",
       "width": 600,
-      "height": 400
+      "height": 400,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/C-refrigeration-compressor.jpg"
     },
     {
       "@type": "ImageObject",
@@ -207,8 +210,8 @@
       "description": "Pilot assembly and thermocouple showing the physical component and its mounting or connection details",
       "inLanguage": "en",
       "width": 600,
-      "height": 400
+      "height": 400,
+      "url": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/D-pilot-thermocouple.jpg"
     }
-  ],
-  "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/"
+  ]
 }

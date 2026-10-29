@@ -36,7 +36,7 @@ export default function StartupBuyingContent({kind,locale='en'}) {
     <p className="mt-4 max-w-4xl leading-7">{intro}</p>
     <ol className="mt-6 list-decimal space-y-4 ps-6 leading-7">{steps.map(step=><li key={step}>{step}</li>)}</ol>
     <h3 className="mt-7 text-xl font-bold">{question}</h3><p className="mt-3 max-w-4xl leading-7">{answer}</p>
-    <div className="mt-6 flex flex-wrap items-center gap-5"><a className="font-semibold text-purple-900 underline underline-offset-4" href={navigationPath(detailPaths[i],lang)}>{label} →</a><a className="rounded-xl bg-purple-800 px-5 py-3 font-bold text-white" href={`${navigationPath('/get-a-quote/',lang)}?${query}`}>{copy.cta} →</a></div>
+    <div className="mt-6 flex flex-wrap items-center gap-5"><a className="font-semibold text-purple-900 underline underline-offset-4" href={navigationPath(detailPaths[i],lang)}>{label} →</a><a className="rounded-xl ddnz-action px-5 py-3 font-bold text-white" href={`${navigationPath('/get-a-quote/',lang)}?${query}`}>{copy.cta} →</a></div>
    </section>;
   })}
  </div>;

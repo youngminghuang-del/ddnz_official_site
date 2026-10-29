@@ -556,7 +556,7 @@ export default function HowWeWork() {
                 <span aria-hidden="true">/</span><span>{copy.eyebrow}</span>
               </nav>
               <div className="mt-8"><DdnzEyebrow icon={FileOutput}>{copy.eyebrow}</DdnzEyebrow></div>
-              <h1 className="mt-5 max-w-[17ch] text-[clamp(2.6rem,6.1vw,5.35rem)] font-black leading-[0.98] tracking-[-0.06em] text-balance">{copy.title}</h1>
+              <h1 className="mt-5 max-w-[17ch] ddnz-service-title text-balance">{copy.title}</h1>
               <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-600 sm:text-lg">{copy.intro}</p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <DdnzPrimaryLink to={quoteHref} tracking onClick={() => trackEvent('quote_click', { cta_location: 'how_we_work_hero', lead_goal: 'Product Sourcing' })}>{copy.primaryCta}</DdnzPrimaryLink>

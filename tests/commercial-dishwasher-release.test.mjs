@@ -13,7 +13,8 @@ test('owner-approved dishwasher release keeps images, FAQ and public schema in s
  assert.ok(!/file:|urn:ddnz:draft/.test(JSON.stringify(schema)));
  assert.equal(images.length,6);
  assert.ok(images.every(n=>n.contentUrl.startsWith('https://www.ddnzglobal.com/images/posts/'+release.slug+'/')));
- assert.equal(article.reviewedBy.name,'Huang Matthew');
+ assert.equal(article.reviewedBy,undefined);
+ assert.equal(schema['@graph'].find(n=>n['@type']==='WebPage').reviewedBy.name,'Huang Matthew');
  assert.equal(article.datePublished,'2026-03-29');
  assert.equal(article.dateModified,'2026-10-29');
  assert.equal(faq.mainEntity.length,4);

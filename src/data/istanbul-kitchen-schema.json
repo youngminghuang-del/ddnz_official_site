@@ -22,7 +22,11 @@
       "primaryImageOfPage": {
         "@id": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/kitchen-render-overview.jpg"
       },
-      "url": "https://www.ddnzglobal.com/tr/blog/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/"
+      "url": "https://www.ddnzglobal.com/tr/blog/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
     },
     {
       "@type": "BlogPosting",
@@ -88,10 +92,6 @@
       "dateModified": "2026-10-28",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -195,7 +195,8 @@
       "name": "3D kitchen design overview",
       "width": 1175,
       "height": 835,
-      "inLanguage": "tr"
+      "inLanguage": "tr",
+      "url": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/kitchen-render-overview.jpg"
     },
     {
       "@type": "ImageObject",
@@ -204,7 +205,8 @@
       "name": "3D kitchen design interior",
       "width": 1175,
       "height": 855,
-      "inLanguage": "tr"
+      "inLanguage": "tr",
+      "url": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/kitchen-render-interior.jpg"
     },
     {
       "@type": "ImageObject",
@@ -213,7 +215,8 @@
       "name": "Kitchen landed-cost components",
       "width": 1200,
       "height": 470,
-      "inLanguage": "tr"
+      "inLanguage": "tr",
+      "url": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/landed-cost-tr.svg"
     },
     {
       "@type": "ImageObject",
@@ -222,7 +225,8 @@
       "name": "Kitchen functional zones",
       "width": 1290,
       "height": 1268,
-      "inLanguage": "tr"
+      "inLanguage": "tr",
+      "url": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/kitchen-zones-tr.png"
     },
     {
       "@type": "ImageObject",
@@ -231,8 +235,8 @@
       "name": "Kitchen workflow design",
       "width": 1290,
       "height": 1318,
-      "inLanguage": "tr"
+      "inLanguage": "tr",
+      "url": "https://www.ddnzglobal.com/images/posts/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/kitchen-workflow-tr.png"
     }
-  ],
-  "url": "https://www.ddnzglobal.com/tr/blog/istanbul-restoran-mutfak-ekipmanlari-cinden-tedarik/"
+  ]
 }

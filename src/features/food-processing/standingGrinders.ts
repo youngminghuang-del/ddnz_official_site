@@ -2,13 +2,8 @@ import copies from './locales/standing-grinders.json';
 import {inquiryUrl,machines} from './catalog.mjs';
 import {localizedFoodInquiry,foodPrefix,foodLocales} from './localization';
 export type GrinderLocale=keyof typeof copies;
-export const standingGrinders=[
- {id:'jr-gg32a',model:'JR-GG32A',power:'2.2 kW',supply:'220 / 380 V · 50 Hz',dimensions:'480 × 800 × 780 mm',weight:'89 kg',output:'450 kg/h',quotationDimensions:'800 × 482 × 780 mm'},
- {id:'jr-gg42a',model:'JR-GG42A',power:'4 kW',supply:'380 V · 50 Hz',dimensions:'600 × 930 × 880 mm',weight:'115 kg',output:'800 kg/h',reference:{price:8700,packing:0,currency:'CNY'}},
- {id:'jr-gl22',model:'JR-GL22',series:'gl',power:'1.5 kW',supply:'220 / 380 V · 50 Hz',dimensions:'470 × 410 × 700 mm',weight:'35 kg',output:'220 kg/h',reference:{price:1950,packing:30,currency:'CNY'}},
- {id:'jr-gl32',model:'JR-GL32',series:'gl',power:'1.5 kW',supply:'220 / 380 V · 50 Hz',dimensions:'470 × 410 × 700 mm',weight:'36 kg',output:'320 kg/h',reference:{price:2100,packing:30,currency:'CNY'}},
-];
-export const grinderEligible=(page:{kind:string;category?:{slug:string}})=>page.kind==='hub'||page.category?.slug==='meat-processing-machinery';
+import {standingGrinders,grinderEligible} from './standing-grinder-models.mjs';
+export {standingGrinders,grinderEligible};
 export function grinderQuantity(value:unknown){const text=String(value??'').replace(/[٠-٩]/g,c=>String(c.charCodeAt(0)-0x660)).trim();return /^\d{1,2}$/.test(text)&&Number(text)>=1&&Number(text)<=99?Number(text):null;}
 export function cleanGrinderSelection(raw:Record<string,unknown>={}){return Object.fromEntries(standingGrinders.flatMap(p=>{const quantity=Object.hasOwn(raw,p.id)?grinderQuantity(raw[p.id]):null;return quantity===null?[]:[[p.id,quantity]];}));}
 export function grinderName(p:typeof standingGrinders[number],locale:GrinderLocale){return p.series==='gl'?copies[locale].compactName:copies[locale].name;}

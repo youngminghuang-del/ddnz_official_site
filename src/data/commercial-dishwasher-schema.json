@@ -22,7 +22,11 @@
       "primaryImageOfPage": {
         "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-D"
       },
-      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/"
+      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
     },
     {
       "@type": "BlogPosting",
@@ -107,10 +111,6 @@
       "datePublished": "2026-03-29",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
-      },
-      "reviewedBy": {
-        "@type": "Person",
-        "name": "Huang Matthew"
       }
     },
     {
@@ -242,7 +242,8 @@
       "description": "Axewood undercounter glasswasher with front door lowered and rack visible",
       "inLanguage": "en",
       "width": 1000,
-      "height": 1000
+      "height": 1000,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/A-undercounter-open.jpg"
     },
     {
       "@type": "ImageObject",
@@ -252,7 +253,8 @@
       "description": "Axewood hood-type dishwasher with hood lifted and rack exposed",
       "inLanguage": "en",
       "width": 1080,
-      "height": 1920
+      "height": 1920,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/B-hood-open.jpg"
     },
     {
       "@type": "ImageObject",
@@ -262,7 +264,8 @@
       "description": "Axewood flight conveyor dishwasher with inlet and outlet sections",
       "inLanguage": "en",
       "width": 1181,
-      "height": 787
+      "height": 787,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/C-flight-conveyor.png"
     },
     {
       "@type": "ImageObject",
@@ -272,7 +275,8 @@
       "description": "Multiple Axewood hood dishwashers on pallets in the manufacturer product gallery",
       "inLanguage": "en",
       "width": 1400,
-      "height": 1050
+      "height": 1050,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/D-factory-machine-stock.jpg"
     },
     {
       "@type": "ImageObject",
@@ -282,7 +286,8 @@
       "description": "DAVOSA company photo montage showing reception, building and workshop scenes",
       "inLanguage": "en",
       "width": 1200,
-      "height": 1000
+      "height": 1000,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/E-company-workshop.jpg"
     },
     {
       "@type": "ImageObject",
@@ -292,8 +297,8 @@
       "description": "MEIKO UPster undercounter dishwasher with front door down and rack of plates and cutlery",
       "inLanguage": "en",
       "width": 1920,
-      "height": 1964
+      "height": 1964,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/F-undercounter-rack-detail.jpg"
     }
-  ],
-  "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/"
+  ]
 }

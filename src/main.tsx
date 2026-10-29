@@ -27,3 +27,4 @@ createRoot(document.getElementById('root')!).render(
 import './components/catalogue-hero/catalogue-hero.css';
 
 import './features/mobile-sourcing/privacy-o-fold.css';
+import './styles/ddnz-visual-system.css';

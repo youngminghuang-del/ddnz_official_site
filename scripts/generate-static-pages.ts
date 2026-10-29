@@ -1,3 +1,4 @@
+import {schemaCanonicalUrl} from '../src/lib/schemaGraph.mjs';
 import commercialDishwasherSchema from '../src/data/commercial-dishwasher-schema.json';
 import commercialMixerSchema from '../src/data/commercial-mixer-schema.json';
 import kitchenSparePartsSchema from '../src/data/kitchen-spare-parts-schema.json';
@@ -1069,7 +1070,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
       ? `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=Product+Sourcing&industry=${encodeURIComponent(sourcingCategory.industry).replaceAll('%20', '+')}&source=sourcing_landing`
       : sourcingService
         ? `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${sourcingService.intent}&source=${sourcingService.source}`
-        : `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'Freight+Export&dest=Brasil' : 'Freight+Only'}&source=structured_data`;
+        : `https://www.ddnzglobal.com${lang === 'en' ? '' : `/${lang}`}/get-a-quote?leadGoal=${lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'Freight+Export&dest=Brasil' : isSourcingServicePage ? 'Product+Sourcing' : 'Freight+Only'}&source=structured_data`;
     const sourcingServiceType = sourcingCategory?.serviceType || sourcingService?.serviceType || seo.title;
     // Scenario pages describe a scoped procurement service, not a priced offer.
     // Keep the real, scenario-specific RFQ in the visible page content.
@@ -1116,7 +1117,6 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
           ...(isKitchenScenario ? { url: canonicalUrl } : { offers: {
             '@type': 'Offer',
             url: sourcingOfferUrl,
-            priceCurrency: 'USD',
             description: isSourcingServicePage
               ? 'Request a market-defined product sourcing, inspection, consolidation and export coordination plan.'
               : 'Request a route-specific freight quotation based on cargo details and current capacity.'
@@ -1308,7 +1308,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === commercialDishwasherSchema.url.replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === commercialMixerSchema.url.replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === kitchenSparePartsSchema.url.replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === istanbulKitchenSchema.url.replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
@@ -1635,7 +1635,7 @@ function injectStaticRouteContent(
   if(categoryIndex('/'+relPath)>=0){
     const index=categoryIndex('/'+relPath),locale=(lang==='zh-cn'?'zh':lang) as CategoryLanguage;
     const body=renderToStaticMarkup(createElement(AudioCategoryContent,{index,locale}));
-    return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(audioCategorySchema(index,locale)).replace(/</g,'\\u003c')}</script></head>`);
+    return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script id="schema-jsonld-static-audio-category" type="application/ld+json">${JSON.stringify(audioCategorySchema(index,locale)).replace(/</g,'\\u003c')}</script></head>`);
   }
   if (lang === 'en' && '/'+relPath===audioPath) {
     const body=renderToStaticMarkup(createElement(AudioSpeakersContent));
