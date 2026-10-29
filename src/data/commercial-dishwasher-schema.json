@@ -1,0 +1,299 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#webpage",
+      "name": "Top 10 Commercial Dishwasher Manufacturers in China: A Wholesale Buying Guide",
+      "description": "Compare 10 commercial dishwasher manufacturers in China for wholesale orders, factory-price configurations, low-MOQ trials and model-specific spare-parts support.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-D"
+      },
+      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#article",
+      "headline": "Top 10 Commercial Dishwasher Manufacturers in China: A Wholesale Buying Guide",
+      "description": "Compare 10 commercial dishwasher manufacturers in China for wholesale orders, factory-price configurations, low-MOQ trials and model-specific spare-parts support.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Commercial kitchen equipment importers, wholesalers and dealers"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Commercial dishwasher manufacturers in China"
+        },
+        {
+          "@type": "Thing",
+          "name": "Factory-price wholesale and model-specific low-MOQ trials"
+        },
+        {
+          "@type": "Thing",
+          "name": "Spare parts and after-sales arrangements"
+        }
+      ],
+      "citation": [
+        "https://www.veetsan-china.com/wp-content/uploads/brochure-veetsan-china-draft3-%E4%BF%AE%E6%94%B9.pdf",
+        "https://www.szdavosa.com/about-us.html",
+        "https://www.szdavosa.com/hood-type-dishwasher.html",
+        "https://axewood.net/pages/about-axewood",
+        "https://www.phedaton.net/phedaton-kitchen-equipment-manufacturer/",
+        "https://www.phedaton.net/product/t60-hood-type-dishwasher/",
+        "https://www.laikeer.com/",
+        "https://www.ytdishwasher.com/",
+        "https://www.chinengkitchen.com/",
+        "https://www.shinelongkitchen.com/products-75595.html",
+        "https://www.hobartchina.com/history.aspx?id=369",
+        "https://www.hobartchina.com/en/about.aspx?id=368",
+        "https://www.hobartchina.com/en/productsInfo.aspx?id=36",
+        "https://www.meiko.cn/en-cn/our-company/the-meiko-group",
+        "https://www.meiko.cn/en-cn/products/warewashing/undercounter-dishwashers-and-glasswashers",
+        "https://webstore.iec.ch/en/publication/26912"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#faq"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#manufacturers"
+        }
+      ],
+      "dateCreated": "2026-03-29",
+      "dateModified": "2026-10-29",
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-D"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-E"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-F"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/",
+      "datePublished": "2026-03-29",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which manufacturer should a new importer contact first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with the machine type your customers already request. For OEM, include DAVOSA in the comparison; for a specialist branded range, examine Veetsan. Send DDNZ your customer type and destination so we can narrow the supply brief before discussing trial quantities."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I trial a small quantity at a factory price?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask for a standard-model trial first. DDNZ can propose model-specific low-MOQ options; logo changes, packaging and electrical customisation need separate confirmation. Compare the written configuration and shipping terms, rather than treating a small-order unit price as an all-in cost."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I request for after-sales support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Request the exact model’s parts list, wiring diagram, service instructions and warranty procedure before ordering. Name the local technician or service partner who will handle installation and repairs, and agree the price and freight responsibility for replacement parts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can DDNZ help if I only have a kitchen drawing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Send the floor plan, menu or operation type, destination and expected busy-service load. We can start with the wash-up layout and equipment plan, then develop the purchasing list and factory-price supply options."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#manufacturers",
+      "name": "Commercial dishwasher manufacturer shortlist",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Veetsan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "DAVOSA"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Axewood"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "PHEDATON"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "LAIKEER / Haoba"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Yongtuo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "CHINENG"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "SHINELONG"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "HOBART China"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "MEIKO China"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Top 10 Commercial Dishwasher Manufacturers in China: A Wholesale Buying Guide"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/A-undercounter-open.jpg",
+      "name": "Undercounter glasswasher",
+      "description": "Axewood undercounter glasswasher with front door lowered and rack visible",
+      "inLanguage": "en",
+      "width": 1000,
+      "height": 1000
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/B-hood-open.jpg",
+      "name": "Hood dishwasher, open",
+      "description": "Axewood hood-type dishwasher with hood lifted and rack exposed",
+      "inLanguage": "en",
+      "width": 1080,
+      "height": 1920
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/C-flight-conveyor.png",
+      "name": "Flight conveyor dishwasher",
+      "description": "Axewood flight conveyor dishwasher with inlet and outlet sections",
+      "inLanguage": "en",
+      "width": 1181,
+      "height": 787
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-D",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/D-factory-machine-stock.jpg",
+      "name": "Hood dishwasher batch",
+      "description": "Multiple Axewood hood dishwashers on pallets in the manufacturer product gallery",
+      "inLanguage": "en",
+      "width": 1400,
+      "height": 1050
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-E",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/E-company-workshop.jpg",
+      "name": "Company and workshop photographs",
+      "description": "DAVOSA company photo montage showing reception, building and workshop scenes",
+      "inLanguage": "en",
+      "width": 1200,
+      "height": 1000
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/#image-F",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-dishwasher-manufacturers-china/F-undercounter-rack-detail.jpg",
+      "name": "Undercounter dishwasher loaded with tableware",
+      "description": "MEIKO UPster undercounter dishwasher with front door down and rack of plates and cutlery",
+      "inLanguage": "en",
+      "width": 1920,
+      "height": 1964
+    }
+  ],
+  "url": "https://www.ddnzglobal.com/blog/top-10-commercial-dishwasher-manufacturers-china/"
+}

@@ -1,3 +1,4 @@
+import commercialDishwasherSchema from '../data/commercial-dishwasher-schema.json';
 import commercialMixerSchema from '../data/commercial-mixer-schema.json';
 import kitchenSparePartsSchema from '../data/kitchen-spare-parts-schema.json';
 import istanbulKitchenSchema from '../data/istanbul-kitchen-schema.json';
@@ -235,6 +236,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === commercialMixerSchema.url.replace(/\/+$/, '')) {
       finalSchema = commercialMixerSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === commercialDishwasherSchema.url.replace(/\/+$/, '')) {
+      finalSchema = commercialDishwasherSchema;
     }
 
     // Create script tag and append to head
