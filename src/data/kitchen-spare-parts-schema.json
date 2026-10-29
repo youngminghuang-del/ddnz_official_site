@@ -1,0 +1,214 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#webpage",
+      "name": "Wholesale Commercial Kitchen Spare Parts from China: Match Models and Plan Your First Stock Order",
+      "description": "Buy commercial kitchen spare parts from China: identify models and part codes, check replacements and plan a first stock order. Send DDNZ your nameplate photos or parts list.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-B"
+      },
+      "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#article",
+      "headline": "Wholesale Commercial Kitchen Spare Parts from China: Match Models and Plan Your First Stock Order",
+      "description": "Buy commercial kitchen spare parts from China: identify models and part codes, check replacements and plan a first stock order. Send DDNZ your nameplate photos or parts list.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Commercial kitchen equipment importers, dealers and repair businesses"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Commercial kitchen spare parts procurement"
+        },
+        {
+          "@type": "Thing",
+          "name": "Model and part identification and first-order inventory planning"
+        }
+      ],
+      "citation": [
+        "https://hoshizaki.com.hk/support/regular-maintenance/",
+        "https://secure.hoshizakiamerica.com/docs/manuals/FH_-AAC%28-HD%29_pts.pdf",
+        "https://www.bitzer.de/shared_media/documentation/se-270-1.pdf",
+        "https://www.bitzer.de/en-lv/services/digital-services/mybitzer",
+        "https://webstore.iec.ch/en/publication/66089"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#faq"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#stock-groups"
+        }
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-D"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/",
+      "datePublished": "2026-10-29",
+      "dateModified": "2026-10-29",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I get a reliable match from a photograph alone?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A photograph can start the search. Before accepting a fit claim, send the equipment nameplate, existing part markings and connection details. If the match remains unresolved, keep the item out of confirmed resale stock."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a different stock line for each equipment version?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Keep separate lines until interchangeability is confirmed. Where a documented replacement covers several versions, retain that cross-reference with the stock item so staff can check the application."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many pieces should I buy first?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use your own service demand and available cash to propose a trial quantity. Ask for the item’s MOQ, sample terms and replenishment time. There is no single starting quantity that suits every part or dealer."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does a replacement-parts warranty include local repair labour?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Only if the written terms include it. Agree the claim evidence, return requirements, replacement supply, labour and transport costs before paying."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#stock-groups",
+      "name": "First stock order groups",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Shelf stock"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Order against a job"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Identification pending"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Wholesale Commercial Kitchen Spare Parts from China: Match Models and Plan Your First Stock Order"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/A-bakery-motor.jpg",
+      "name": "Bakery equipment motor",
+      "description": "Bakery equipment motor showing the physical component and its mounting or connection details",
+      "inLanguage": "en",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/B-oven-blower.jpg",
+      "name": "Oven blower",
+      "description": "Oven blower showing the physical component and its mounting or connection details",
+      "inLanguage": "en",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/C-refrigeration-compressor.jpg",
+      "name": "Refrigeration compressor",
+      "description": "Refrigeration compressor showing the physical component and its mounting or connection details",
+      "inLanguage": "en",
+      "width": 600,
+      "height": 400
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/#image-D",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-kitchen-spare-parts-wholesale-china/D-pilot-thermocouple.jpg",
+      "name": "Pilot assembly and thermocouple",
+      "description": "Pilot assembly and thermocouple showing the physical component and its mounting or connection details",
+      "inLanguage": "en",
+      "width": 600,
+      "height": 400
+    }
+  ],
+  "url": "https://www.ddnzglobal.com/blog/commercial-kitchen-spare-parts-wholesale-china/"
+}
