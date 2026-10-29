@@ -1,3 +1,4 @@
+import { inquiryPageSchema } from '../src/features/inquiry/schema.mjs';
 import {schemaCanonicalUrl} from '../src/lib/schemaGraph.mjs';
 import commercialDishwasherSchema from '../src/data/commercial-dishwasher-schema.json';
 import commercialMixerSchema from '../src/data/commercial-mixer-schema.json';
@@ -1166,55 +1167,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
   }
 
   if (relPath === 'get-a-quote') {
-    const localizedServiceNames: Record<string, string> = {
-      en: 'China sourcing, inspection, consolidation and freight enquiry',
-      'zh-cn': '中国采购、验货、集货与国际货运询盘',
-      ru: 'Запрос на закупку, инспекцию, консолидацию и доставку из Китая',
-      fr: 'Demande de sourcing, inspection, consolidation et transport depuis la Chine',
-      es: 'Solicitud de compras, inspección, consolidación y transporte desde China',
-      ar: 'طلب التوريد والفحص والتجميع والشحن من الصين',
-    };
-    const structuredData = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'ContactPage',
-          '@id': canonicalUrl,
-          url: canonicalUrl,
-          name: seo.title,
-          description: optimizedDesc,
-          inLanguage: targetLang,
-          isPartOf: {
-            '@type': 'WebSite',
-            '@id': 'https://www.ddnzglobal.com/#website',
-          },
-          mainEntity: { '@id': `${canonicalUrl}#service` },
-        },
-        {
-          '@type': 'Service',
-          '@id': `${canonicalUrl}#service`,
-          name: localizedServiceNames[lang] || localizedServiceNames.en,
-          description: optimizedDesc,
-          provider: {
-            '@type': 'Organization',
-            '@id': 'https://www.ddnzglobal.com/#organization',
-            name: lang === 'zh-cn' ? '大递诺展贸易有限公司' : 'DDNZ Global Trade Co., Ltd.',
-            url: 'https://www.ddnzglobal.com/',
-          },
-          areaServed: [
-            { '@type': 'Place', name: 'Middle East' },
-            { '@type': 'Place', name: 'West Africa' },
-            { '@type': 'Place', name: 'Latin America' },
-          ],
-          offers: {
-            '@type': 'Offer',
-            url: canonicalUrl,
-            description: optimizedDesc,
-          },
-        },
-      ],
-    };
-    const schemaJson = JSON.stringify(freightPageSchema('/'+relPath,lang) || structuredData).replace(/</g, '\\u003c');
+    const schemaJson = JSON.stringify(inquiryPageSchema(lang)).replace(/</g, '\\u003c');
     output = output.replace(
       /<\/head>/i,
       `  <script id="schema-jsonld-static-page" type="application/ld+json">${schemaJson}</script>\n</head>`

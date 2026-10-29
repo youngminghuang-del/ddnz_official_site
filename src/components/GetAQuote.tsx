@@ -1,3 +1,6 @@
+import { currentHostname, isProductionHost } from '../features/commercial-kitchen/data/inquiry.mjs';
+import { localPreviewCopy } from '../local-preview/locales';
+import InquirySourceFields from '../features/inquiry/InquirySourceFields';
 import { useState, useEffect, useRef, useMemo, type FormEvent } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
@@ -27,6 +30,8 @@ import { trackEvent } from '../lib/utils';
 import { readAttribution } from '../lib/attribution';
 
 import { quoteParamsForLocation, clearQuoteContext } from '../lib/quoteLinkPolicy.mjs';
+
+declare const __LOCAL_CANDIDATE__: boolean;
 
 // Multi-language translation map for the interactive funnel
 const funnelTranslations: Record<string, Record<string, string>> = {
@@ -368,6 +373,10 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   }, []);
   const { language, t } = useLanguage();
   const location = useLocation();
+  const [isLocalPreview, setIsLocalPreview] = useState(typeof __LOCAL_CANDIDATE__ !== 'undefined' && __LOCAL_CANDIDATE__);
+  useEffect(() => { if (!isProductionHost(currentHostname())) setIsLocalPreview(true); }, []);
+  const previewCopy = localPreviewCopy[language] || localPreviewCopy.en;
+  const [localPayload, setLocalPayload] = useState<Record<string, FormDataEntryValue> | null>(null);
   const isQuotePage = location.pathname.includes('get-a-quote');
   const attributionParams = useMemo(() => quoteParamsForLocation(location.search, location.pathname), [location.search, location.pathname, location.key]);
   const attribution = readAttribution(attributionParams.toString());
@@ -553,6 +562,9 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
       product_category: product,
       lead_source: leadSource,
     });
+    if (isLocalPreview || !isProductionHost(currentHostname())) {
+      event.preventDefault(); setLocalPayload(Object.fromEntries(new FormData(event.currentTarget))); return;
+    }
     handleSubmit(event);
   };
 
@@ -695,6 +707,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
 
   return (
     <section ref={quoteSectionRef} id="get-a-quote" dir={language === 'ar' ? 'rtl' : 'ltr'} className="scroll-mt-24 py-16 md:py-28 bg-[#fafafc] font-sans relative overflow-hidden">
+      {isLocalPreview ? <p role="note" className="relative z-10 mx-auto mb-6 max-w-4xl px-5 text-center text-sm font-semibold text-slate-700">{previewCopy.notice}</p> : null}
       {/* Background ambient mesh gradients */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-sky-200/20 rounded-full blur-3xl pointer-events-none -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-orange-100/30 rounded-full blur-3xl pointer-events-none translate-x-1/3 translate-y-1/3" />
@@ -1106,11 +1119,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                             <input type="hidden" name="Product_Category" value={product} />
                             <input type="hidden" name="Product_Subcategory" value={attributedSubcategory} />
                             <input type="hidden" name="Lead_Source" value={leadSource} />
-                            <input type="hidden" name="Source_Article_Slug" value={sourceArticle} />
-                            <input type="hidden" name="UTM_Source" value={utmSource} />
-                            <input type="hidden" name="UTM_Medium" value={utmMedium} />
-                            <input type="hidden" name="UTM_Campaign" value={utmCampaign} />
-                            <input type="hidden" name="UTM_Content" value={utmContent} />
+                    <InquirySourceFields params={attributionParams} pathname={location.pathname} />
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                               {/* Contact Name */}
@@ -1246,12 +1255,16 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                                   </>
                                 ) : (
                                   <>
-                                    {ft('submitQuote')} <ArrowRight className="w-5 h-5 ml-2" />
+                                    {isLocalPreview ? previewCopy.submit : ft('submitQuote')} <ArrowRight className="w-5 h-5 ml-2" />
                                   </>
                                 )}
                               </button>
                             </div>
                           </form>
+                          {isLocalPreview && localPayload ? <div role="status" data-local-submit-result="true" className="mt-5 rounded-xl border border-emerald-200 bg-emerald-50 p-4">
+                            <h2 className="font-bold">{previewCopy.resultTitle}</h2><p className="mt-2 text-sm">{previewCopy.resultText}</p>
+                            <details><summary className="cursor-pointer py-3 text-sm font-bold">{previewCopy.review}</summary><pre dir="ltr" className="max-h-80 overflow-auto whitespace-pre-wrap break-all text-left text-xs">{JSON.stringify(localPayload, null, 2)}</pre></details>
+                          </div> : null}
                         </div>
                       )}
                     </motion.div>
