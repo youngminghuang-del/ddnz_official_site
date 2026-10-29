@@ -9,6 +9,7 @@ import ScrollToTop from '../components/ScrollToTop';
 import SEO from '../components/SEO';
 import { useLanguage } from '../contexts/LanguageContext';
 
+import { inquiryPageSchema, replaceInquirySchema } from '../features/inquiry/schema.mjs';
 import IntentChoice, { intentCopy } from '../features/inquiry/IntentChoice';
 import { inquiryIntent } from '../features/inquiry/intent.mjs';
 import { saveQuoteContext, clearQuoteContext, quoteParamsForLocation } from '../lib/quoteLinkPolicy.mjs';
@@ -25,6 +26,8 @@ export default function GetAQuotePage() {
   };
   const resetIntent = () => { clearQuoteContext(location.pathname); navigate(location.pathname, { replace: true }); };
   const isTradeSupport = leadGoal === 'Product Sourcing' || leadGoal === 'Supplier Inspection & Consolidation';
+
+  useEffect(() => replaceInquirySchema(document, inquiryPageSchema(language, leadGoal)), [language, leadGoal, location.key]);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
