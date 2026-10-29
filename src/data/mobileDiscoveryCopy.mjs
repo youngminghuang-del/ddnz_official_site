@@ -26,7 +26,7 @@ export const mobileDiscoveryCopy = {
   },
   "es": {
     "name": "Accesorios móviles",
-    "description": "Compre fundas de teléfono al por mayor en China: marcos de color, traseras texturizadas y fundas plegables. Prepare su surtido por modelo y color, compare costos y apruebe una muestra.",
+    "description": "Compre fundas para celular de China: silicona, TPU, transparentes y tipo cartera. Compare precios de referencia en CNY y mínimos por modelo y color; prepare su reposición o consulte su marca propia.",
     "cases": "Fundas para móvil",
     "straps": "Correas y adornos"
   },
