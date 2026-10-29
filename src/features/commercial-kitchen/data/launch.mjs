@@ -1,3 +1,4 @@
+import catalog from './products.mjs';
 export default {
   "featuredProductIds": [
     "ice-49",
@@ -92,7 +93,7 @@ export default {
   ],
   "meta": {
     "title": "Commercial Kitchen Equipment from China | DDNZ Global",
-    "description": "Compare 40 commercial kitchen models, reference supply prices and local retail prices. Plan a wholesale order for the UAE, Singapore or Mexico."
+    "description": `Compare ${catalog.length} commercial kitchen models, reference supply prices and local retail prices. Plan a wholesale order for the UAE, Singapore or Mexico.`
   },
   "faq": [
     {

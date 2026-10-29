@@ -1,7 +1,8 @@
+import catalog from './products.mjs';
 export const KITCHEN_PATH = '/sourcing/commercial-kitchen-equipment-from-china/';
 
 export const kitchenJourney = [
-  { step: '01', title: 'Choose your equipment', copy: 'Compare 40 models by capacity, size and use.', href: '#commercial-kitchen-equipment' },
+  { step: '01', title: 'Choose your equipment', copy: `Compare ${catalog.length} models by capacity, size and use.`, href: '#commercial-kitchen-equipment' },
   { step: '02', title: 'Work out your margin', copy: 'Compare supply prices, local retail and import costs.', href: '#commercial-kitchen-benchmarks' },
   { step: '03', title: 'Check before you order', copy: 'Review the details that change a quotation.', href: '#commercial-kitchen-guide' },
 ];
