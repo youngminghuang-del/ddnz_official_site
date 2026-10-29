@@ -161,7 +161,7 @@ export default function BlogDetail() {
         data={{
           headline: post.title,
           inLanguage: language,
-          description: post.summary,
+          description: post.slug === 'top-10-privacy-screen-protector-manufacturers-china' ? seoDesc : post.summary,
           image: post.thumbnailUrl,
           datePublished: post.date,
           dateModified: post.lastEdited || verifiedDate,

@@ -2099,7 +2099,7 @@ function run() {
             ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
             : rawDesc;
 
-          const discovery = lang === 'en' ? kitchenArticleDiscovery[post.slug] : undefined;
+          const discovery = lang === 'en' ? kitchenArticleDiscovery[post.slug] || mobileArticleDiscovery[post.slug] : undefined;
           seo = {
             title: discovery?.title || computedTitle,
             desc: discovery?.description || computedDesc,

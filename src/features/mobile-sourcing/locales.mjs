@@ -82,3 +82,11 @@ export const supplierRows=[
 pages.hub.heading=accessoryCopy.heroHeading;
 pages.hub.intro=accessoryCopy.heroIntro;
 pages.hub.desc=accessoryCopy.heroIntro;
+
+// GSC preview: retain other locales and their approved product information.
+pages.cases.heading.es='Fundas para celular de China al por mayor';
+pages.cases.title.es='Fundas para celular al por mayor de China | DDNZ';
+pages.cases.intro.es='Compre fundas para celular de China: silicona, TPU, transparentes y tipo cartera. Compare precios de referencia en CNY y mínimos por modelo y color; prepare su reposición o consulte su marca propia.';
+pages.cases.desc.es='Fundas para celular de China: silicona, TPU y tipo cartera. Compare precios en CNY y mínimos por modelo y color; consulte embalaje y personalización.';
+pages.hub.title.es='Accesorios para celulares al por mayor de China | DDNZ';
+pages.hub.desc.es='Compare fundas, protectores, auriculares y cargadores de China. Revise precios en CNY, mínimos y embalaje; reúna los productos en una solicitud de compra.';
