@@ -27,7 +27,7 @@ test('solar cable graph container does not emit route-matching metadata as an un
 });
 
 test('owner-approved article graphs attach real reviewers to WebPage and expose no untyped route metadata',()=>{
- for(const name of ['commercial-mixer','kitchen-spare-parts','istanbul-kitchen','egypt-scooter','egypt-lcl']){
+ for(const name of ['commercial-dishwasher','commercial-mixer','kitchen-spare-parts','istanbul-kitchen','egypt-scooter','egypt-lcl']){
   const data=JSON.parse(fs.readFileSync(new URL('../src/data/'+name+'-schema.json',import.meta.url),'utf8'));
   assert.deepEqual(Object.keys(data).sort(),['@context','@graph']);
   const article=data['@graph'].find(n=>n['@type']==='BlogPosting'),page=data['@graph'].find(n=>n['@type']==='WebPage');
