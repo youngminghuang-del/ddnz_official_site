@@ -1,0 +1,11 @@
+{
+  "article": "commercial-kitchen-spare-parts-wholesale-china",
+  "firstObservedPublicDeployment": "2026-10-29T03:31:26Z",
+  "source": "https://github.com/youngminghuang-del/ddnz_official_site/actions/runs/40812272024/job/123246067473",
+  "commit": "3e212d2d1c577662c70c96666994b0af8c579d5f",
+  "evidence": [
+    "2026-10-29T03:31:00.1598517Z Created deployment for 3e212d2d1c577662c70c96666994b0af8c579d5f",
+    "2026-10-29T03:31:26.0546759Z Reported success!"
+  ],
+  "interpretation": "Timestamp of the original public deployment, not a newly invented midnight or the time of this local schema correction. Initial published and modified dates remain October 29 in the visible article."
+}

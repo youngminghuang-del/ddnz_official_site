@@ -1,3 +1,4 @@
+import {standingGrinderListItems} from './standing-grinder-models.mjs';
 import { foodProcessingPath as root, foodProcessingMeta, machines, packages, machineById } from './catalog.mjs';
 export const categoryPages = [
   { slug: 'dough-and-bakery-machinery', title: 'Dough & bakery machinery', keyword: 'commercial dough and bakery machinery', families: ['dough','bakery'], intro: 'Compare kneaders, spiral mixers, planetary mixers, dough rollers and bread slicers by the job they perform. Select a motor and guard configuration before comparing prices.', checks: ['Kneaders and spiral mixers handle dough; a planetary mixer provides a different attachment-based mixing function.', 'A bowl volume is not a flour capacity. Supply recipe, batch weight and hydration when requesting a working trial.', 'Confirm guard and interlock configuration, speed control, available electrical supply and the selected roller or cutter.'], faq: [{q:'Does the H20 model mean 20 kg of flour?',a:'No. The catalogue lists a 20 L bowl and a maximum flour capacity of 8 kg for H20. Confirm recipe and operating conditions before sizing a batch.'},{q:'Does the YH-GT300 price include a noodle cutter?',a:'No. The displayed configuration excludes the cutter. A standard 1.5–6 mm flat cutter is listed at CNY 225 each before tax; other cutters are priced separately.'}], bundles: ['noodles','bakery'] },
@@ -28,6 +29,6 @@ export function foodPageSchema(page) {
   return {'@context':'https://schema.org','@graph':[
     {'@type':'CollectionPage','@id':site+page.path+'/#page',name:foodPageMeta(page).title,url:site+page.path+'/',description:foodPageMeta(page).description},
     {'@type':'BreadcrumbList',itemListElement:crumbs.map((c,i)=>({'@type':'ListItem',position:i+1,...c}))},
-    {'@type':'ItemList',name:'Equipment selection',itemListElement:page.machines.map((m,i)=>({'@type':'ListItem',position:i+1,name:`${m.model} ${m.name} — ${m.variant}`,url:site+page.path+'/#machine-'+m.id}))}
+    {'@type':'ItemList',name:'Equipment selection',itemListElement:[...page.machines.map((m,i)=>({'@type':'ListItem',position:i+1,name:`${m.model} ${m.name} — ${m.variant}`,url:site+page.path+'/#machine-'+m.id})),...standingGrinderListItems(page,'en',site+page.path+'/',page.machines.length)]}
   ]};
 }

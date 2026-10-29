@@ -13,7 +13,8 @@ test('owner-approved spare-parts release keeps images, FAQ and public schema in 
  assert.ok(!/file:|urn:ddnz:draft/.test(JSON.stringify(schema)));
  assert.equal(images.length,4);
  assert.ok(images.every(n=>n.contentUrl.startsWith('https://www.ddnzglobal.com/images/posts/'+release.slug+'/')));
- assert.equal(article.reviewedBy.name,'Huang Matthew');
+ assert.equal(article.reviewedBy,undefined);
+ assert.equal(schema['@graph'].find(n=>n['@type']==='WebPage').reviewedBy.name,'Huang Matthew');
  assert.equal(faq.mainEntity.length,4);
  for(const q of faq.mainEntity){assert.ok(release.content.includes(q.name));assert.ok(release.content.includes(q.acceptedAnswer.text.replaceAll('&','&amp;')));}
  const cover=JSON.parse(fs.readFileSync('public/images/posts/'+release.slug+'/preview-assets.json','utf8'));

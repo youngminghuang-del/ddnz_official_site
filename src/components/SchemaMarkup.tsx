@@ -1,3 +1,4 @@
+import {schemaCanonicalUrl} from '../lib/schemaGraph.mjs';
 import commercialMixerSchema from '../data/commercial-mixer-schema.json';
 import kitchenSparePartsSchema from '../data/kitchen-spare-parts-schema.json';
 import istanbulKitchenSchema from '../data/istanbul-kitchen-schema.json';
@@ -104,8 +105,7 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
             'Tuesday',
             'Wednesday',
             'Thursday',
-            'Friday',
-            'Saturday'
+            'Friday'
           ],
           'opens': '09:00',
           'closes': '18:00'
@@ -133,7 +133,6 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
         'name': data.name || 'Logistics Service',
         'offers': {
           '@type': 'Offer',
-          'priceCurrency': 'USD',
           'url': data.offerUrl || defaultOfferUrl,
           'description': data.offerDescription || 'Request a route-specific freight quotation based on cargo details and current capacity.'
         }
@@ -217,23 +216,23 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = solarCableSchema;
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === egyptLclSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '')) {
       finalSchema = egyptLclSchema;
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === egyptScooterSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '')) {
       finalSchema = egyptScooterSchema;
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === istanbulKitchenSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '')) {
       finalSchema = istanbulKitchenSchema;
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === kitchenSparePartsSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '')) {
       finalSchema = kitchenSparePartsSchema;
     }
 
-    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === commercialMixerSchema.url.replace(/\/+$/, '')) {
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '')) {
       finalSchema = commercialMixerSchema;
     }
 
