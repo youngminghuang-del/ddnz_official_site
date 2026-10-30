@@ -24,3 +24,7 @@ B1研究：见B1-04与B1-05文件。它们是草稿/研究，不是已上架商�
 
 
 2026-10-29 F107：[结构化数据复核与Google结论](结构化数据复核-20261029.md)，承接F106仅本地4255预览。826静态/72运行时/88FAQ/410测试已核对，Google17个路径修复后结果，首页与英文食品机械最终复测已完成。未推送、无PR部署，最新PR98须发布前另行合并。
+
+
+## 2026-10-31 Turkish magnetic case blog
+Owner-approved publication reviewed by QI YANG. [Release record](magnetic-case-wholesale-20261031.md). PR105 preserved PR104 freight content; PR106 aligns this article revision date with its explicit publication date.
