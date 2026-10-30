@@ -1,18 +1,18 @@
+import {customerFreightEndpoint,customerRatesAllowed,validateCustomerFreight} from './public-feed.mjs';
 import {freightLocalizations,localePrefix,localizedDestination,localizedFee,localizedCutoff} from '../locales/index.mjs';
 import {rateCopy,countryNamesEn,originNamesEn,routeLabelEn} from './copy.mjs';
 import {useEffect,useId,useState,type ReactNode} from 'react';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
 import {trackEvent} from '../../../lib/utils';
-import {sampleCountries,sampleRegions,countryNames,regionCountries,portNames,originNames,previewAllowed,filteredRates,routeExamples,inquiryNotes,referencePrice,customerConditions,additionalOrigins,routeDescription} from './model.mjs';
+import {sampleCountries,sampleRegions,countryNames,regionCountries,portNames,originNames,filteredRates,routeExamples,inquiryNotes,additionalOrigins,routeDescription} from './model.mjs';
 
-type Fee={name:string;values:(number|null)[];ticket:number|null;currency:string;other:string};
-type Rate={id:string;country:string;port:string;origin:string;carrier:string;service:string;days:number;route:string;validity:string;cutoff:string;prices:Record<string,number|null>;fees:Fee[];notes:string;schedule:string;flags:string[]};
-type Coverage={country:string;port:string;status:string;count:number|null};
-type Payload={asOf:string;rows:Rate[];coverage:Coverage[]};
+type Fee={name:string;values:(number|null)[];ticket:number|null;currency:string};
+type Rate={id:string;country:string;port:string;origin:string;carrier:string;service:string;days:number|null;route:string;cutoff:string;prices:Record<string,number|null>;fees:Fee[];conditionalFreeTime:boolean};
+type Coverage={country:string;port:string;portUnconfirmed:boolean;count:number|null};
+type Payload={schemaVersion:number;kind:string;period:string;currency:string;referenceOnly:boolean;rows:Rate[];coverage:Coverage[]};
 let cachedPayload:Promise<Payload>|undefined;
-const enabled=import.meta.env?.VITE_FREIGHT_RATE_PREVIEW==='1';
-const money=(cost:number|null,locale='en')=>{const value=referencePrice(cost);return value==null?'待询价':new Intl.NumberFormat(locale==='zh'?'en-US':locale,{style:'currency',currency:'USD',...(freightLocalizations[locale]?{currencyDisplay:'code' as const}:{}),maximumFractionDigits:2}).format(value).replace(/\u00a0/g,' ');};
-const feeMoney=(cost:number,locale='en')=>referencePrice(cost)!.toLocaleString(locale==='zh'?'en-US':locale,{maximumFractionDigits:2});
+const money=(value:number|null,locale='en')=>{return value==null?'待询价':new Intl.NumberFormat(locale==='zh'?'en-US':locale,{style:'currency',currency:'USD',...(freightLocalizations[locale]?{currencyDisplay:'code' as const}:{}),maximumFractionDigits:2}).format(value).replace(/\u00a0/g,' ');};
+const feeMoney=(value:number,locale='en')=>value.toLocaleString(locale==='zh'?'en-US':locale,{maximumFractionDigits:2});
 const feeNamesEn:Record<string,string>={'THC':'Terminal handling charge (THC)','SEAL CHARGE':'Seal charge','EQUIPMENT INTERCHANGE RECEIPT':'Equipment interchange receipt','DOC FEE':'Document fee','TELEX RELEASE FEE':'Telex release fee','INTERNATIONAL SHIP AND PORT FACILITY SECURITY':'Port facility security','AMS FEE':'AMS filing fee','DHC':'DHC (scope to confirm)'};
 const feeNames:Record<string,string>={'THC':'码头操作费','SEAL CHARGE':'封条费','EQUIPMENT INTERCHANGE RECEIPT':'设备交接费','DOC FEE':'文件费','TELEX RELEASE FEE':'电放费','INTERNATIONAL SHIP AND PORT FACILITY SECURITY':'港口安保费','AMS FEE':'AMS申报费','DHC':'DHC（范围待确认）'};
 function quoteProps(row:Rate,container:string,context:string,locale:string) {
@@ -25,12 +25,12 @@ function FeeDetails({row,container,locale}:{row:Rate;container:string;locale:str
  const index=['20GP','40GP','40HQ'].indexOf(container);
  return <div className="frp-details">
   <div><h4>{c.feeHeading}</h4><p>{c.feeIntro}</p>
-   {row.fees.length?<div className="frp-fees">{row.fees.map((f,i)=><div key={i}><span>{freightLocalizations[locale]?localizedFee(f.name,locale):locale==='en'?feeNamesEn[f.name]||f.name:feeNames[f.name]||f.name}</span><strong>{f.ticket!=null?`${feeMoney(f.ticket,locale)} ${f.currency} / ${c.ticket}`:f.values[index]!=null?`${feeMoney(f.values[index]!,locale)} ${f.currency} / ${container}`:f.other||x?.otherContainer||(locale==='en'?'Request this container price':'此柜型待询价')}</strong></div>)}</div>:<p className="frp-warning">{c.missingFee}</p>}
+   {row.fees.length?<div className="frp-fees">{row.fees.map((f,i)=><div key={i}><span>{freightLocalizations[locale]?localizedFee(f.name,locale):locale==='en'?feeNamesEn[f.name]||f.name:feeNames[f.name]||f.name}</span><strong>{f.ticket!=null?`${feeMoney(f.ticket,locale)} ${f.currency} / ${c.ticket}`:f.values[index]!=null?`${feeMoney(f.values[index]!,locale)} ${f.currency} / ${container}`:x?.otherContainer||(locale==='en'?'Request this container price':'此柜型待询价')}</strong></div>)}</div>:<p className="frp-warning">{c.missingFee}</p>}
    <p className="frp-footnote">{c.feeNote}</p>
   </div>
   <div><h4>{c.scope}</h4><p>{c.scopeNote}</p><p>{c.scopeBrief}</p>
-   <details className="frp-source"><summary>{c.conditions}</summary><p>{c.conditionNote}</p><p>{x?localizedCutoff(row.cutoff,locale):locale!=='zh'?row.cutoff.replace(/^cutting\/ETD[：:]\s*/,x?.cutoff?x.cutoff+': ':'Cut-off / ETD: '):row.cutoff.replace(/^cutting\/ETD[：:]\s*/,'截关 / 开船：').replace(/Mon|Tue|Wed|Thu|Fri|Sat|Sun/g,d=>({Mon:'周一',Tue:'周二',Wed:'周三',Thu:'周四',Fri:'周五',Sat:'周六',Sun:'周日'}[d]!))}</p><pre>{c.sailing}</pre><pre>{x?x.sourceConditions:locale==='en'?'Confirm route-specific free time, cargo weight limits, approval requirements and any surcharges with HB before booking.':customerConditions(row.notes)}</pre></details>
-   {row.flags.includes('免柜期有条件')&&<p className="frp-warning">{c.conditional}</p>}
+   <details className="frp-source"><summary>{c.conditions}</summary><p>{c.conditionNote}</p><p>{x?localizedCutoff(row.cutoff,locale):locale!=='zh'?row.cutoff.replace(/^cutting\/ETD[：:]\s*/,x?.cutoff?x.cutoff+': ':'Cut-off / ETD: '):row.cutoff.replace(/^cutting\/ETD[：:]\s*/,'截关 / 开船：').replace(/Mon|Tue|Wed|Thu|Fri|Sat|Sun/g,d=>({Mon:'周一',Tue:'周二',Wed:'周三',Thu:'周四',Fri:'周五',Sat:'周六',Sun:'周日'}[d]!))}</p><pre>{c.sailing}</pre><pre>{x?x.sourceConditions:locale==='en'?'Confirm route-specific free time, cargo weight limits, approval requirements and any surcharges with HB before booking.':'请按实际货物与出运日期向HB核对免柜期、重量限制、审批条件及附加费用。'}</pre></details>
+   {row.conditionalFreeTime&&<p className="frp-warning">{c.conditional}</p>}
   </div>
  </div>;
 }
@@ -59,12 +59,12 @@ function Rates({payload,context,locale}:{payload:Payload;context:string;locale:s
    <div className="frp-table-note"><p>{region?c.regionNote:c.tableNote} {c.unit}: <bdi dir="ltr">USD / {container}</bdi>.</p><span>{local?<>{region?c.example:c.option}: {shown.length.toLocaleString(locale)}</>:<>{shown.length} {en?'':'条'}{region?c.example:c.option}</>}</span></div>
    {display.length?<div className="frp-list"><div className="frp-column-head" aria-hidden="true"><span>{c.route}</span><span>{c.journey}</span><span>{container} {c.freight}</span><span>{c.periodLabel}</span><span>{c.actions}</span></div>{display.map(row=><article className="frp-row" key={row.id}>
     <div className="frp-main"><div><span className="frp-mobile-label">{c.route}</span><h3><bdi>{origins[row.origin]||row.origin}</bdi> {locale==='ar'?'←':'→'} <bdi>{portLabel(row.port)}</bdi></h3><p>{row.carrier} <span>· {row.service}</span></p><small>{names[row.country]} · {row.port}</small></div>
-     <div><span className="frp-mobile-label">{c.journey}</span><strong className="frp-days" dir="auto">{row.days.toLocaleString(locale==='zh'?'en':locale)} <small>{c.days}</small></strong><p>{local?(row.route.startsWith('Direct')?x.direct:!row.route.replace(/^Transfer\s*/i,'').trim()||row.route.replace(/^Transfer\s*/i,'').trim().toUpperCase()===row.port.toUpperCase()?x.pendingTransit:<>{x.via} <bdi>{row.route.replace(/^Transfer\s*/i,'')}</bdi></>):en?routeLabelEn(row):routeDescription(row)}</p></div>
+     <div><span className="frp-mobile-label">{c.journey}</span><strong className="frp-days" dir="auto">{row.days==null?c.ask:<>{row.days.toLocaleString(locale==='zh'?'en':locale)} <small>{c.days}</small></>}</strong><p>{local?(row.route.startsWith('Direct')?x.direct:!row.route.replace(/^Transfer\s*/i,'').trim()||row.route.replace(/^Transfer\s*/i,'').trim().toUpperCase()===row.port.toUpperCase()?x.pendingTransit:<>{x.via} <bdi>{row.route.replace(/^Transfer\s*/i,'')}</bdi></>):en?routeLabelEn(row):routeDescription(row)}</p></div>
      <div><span className="frp-mobile-label">{container} {c.freight}</span><strong className="frp-money" dir="auto">{row.prices[container]==null?c.ask:money(row.prices[container],locale)}</strong><small>{c.feesBelow}</small></div>
      <div><span className="frp-mobile-label">{c.periodLabel}</span><strong className="frp-validity">{c.period}</strong><small>{c.actual}</small></div>
      <div className="frp-row-action"><a {...quoteProps(row,container,context,locale)} onClick={()=>trackEvent('lead_table_cta_click',{page_type:'freight_rate_preview',country:row.country,model:row.id})}>{c.quote}</a></div>
     </div><details className="frp-expand"><summary>{c.details}<span>{c.detailHint}</span></summary><FeeDetails row={row} container={container} locale={locale}/></details>
-   </article>)}</div>:<div className="frp-empty"><h3>{empty?.status==='港名待确认'?c.portPending:c.emptyHeading}</h3><p>{empty?.status==='港名待确认'?c.portNote:c.emptyNote}</p></div>}
+   </article>)}</div>:<div className="frp-empty"><h3>{empty?.portUnconfirmed?c.portPending:c.emptyHeading}</h3><p>{empty?.portUnconfirmed?c.portNote:c.emptyNote}</p></div>}
    {shown.length>initial&&<button type="button" className="frp-more" onClick={()=>setMore(!more)} aria-expanded={more}>{more?c.collapse:`${c.more} (${shown.length-initial})`} <span aria-hidden="true">{more?'−':'+'}</span></button>}
    <div className="frp-bottom"><p><strong>{c.bottom}</strong><span>{c.bottomNote}</span></p><a {...quoteLinkProps(`${localePrefix(locale)}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:region?`freight_region_${context}`:'international_country',originText:origin==='all'?'':origins[origin]||origin,destinationText:[country==='all'?(region?'':names[context]):names[country],port==='all'?'':portLabel(port)].filter(Boolean).join(' · '),notes:local?`${c.notice} ${freightLocalizations[locale].door.prepText} ${origin} → ${port}; ${container}.`:en?`Please assess the cargo and delivery address; confirm freight, additional charges, clearance, duties, taxes and delivery separately. Loading port: ${origin}; destination: ${port}; container: ${container}. ${rows.length?'':'No reference is listed for this selection; please confirm the route.'}`:`请按货物与收货地址评估运输方案，并分别确认主运费、杂费、清关、税费与到门派送范围。${origin==='all'?'':`起运港：${origins[origin]||origin}。`}${port==='all'?'':`目的港：${port}；当前比较柜型：${container}。`}${rows.length?'':'本表暂无该路线参考价，请另行核对港名、路线及价格。'}`})}`)}>{c.send}</a></div>
   </div>
@@ -72,10 +72,10 @@ function Rates({payload,context,locale}:{payload:Payload;context:string;locale:s
 }
 export default function FreightRatePreview({context,locale,children}:{context:string;locale:string;children?:ReactNode}) {
  const [payload,setPayload]=useState<Payload|null>(null);
- const allowed=typeof window!=='undefined'&&previewAllowed(enabled,window.location.hostname,locale,context);
+ const allowed=customerRatesAllowed(locale,context);
  useEffect(()=>{
   if(!allowed)return;let live=true;
-  cachedPayload??=fetch('/__internal/freight-preview.json',{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('No local rate snapshot');return r.json();}).catch(e=>{cachedPayload=undefined;throw e;});
+  cachedPayload??=fetch(customerFreightEndpoint,{cache:'no-store'}).then(r=>{if(!r.ok)throw new Error('Customer reference unavailable');return r.json();}).then(d=>validateCustomerFreight(d)).catch(e=>{cachedPayload=undefined;throw e;});
   cachedPayload.then(d=>{if(live)setPayload(d);}).catch(()=>{});return()=>{live=false;};
  },[allowed]);
  useEffect(()=>{if(payload&&window.location.hash==='#freight-rates')document.getElementById('freight-rates')?.scrollIntoView({block:'start'});},[payload]);

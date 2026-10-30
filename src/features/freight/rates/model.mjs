@@ -24,8 +24,8 @@ export function customerConditions(text) {
 export function previewAllowed(enabled,hostname,locale,context) {
  return enabled===true && ['127.0.0.1','localhost'].includes(hostname) && ['zh','en','es','fr','ru','ar','pt','tr'].includes(locale) && [...sampleCountries,...sampleRegions].includes(context);
 }
-// A capture date is not a validity year. No source row can become a public rate
-// until an explicit price approval and complete validity dates are provided.
+// Firm, bookable offers require approval and complete validity dates.
+// The separate customer feed is explicitly a quarterly reference, never an offer.
 export function publicRateEligible(row,now) {
  if(row.publicPriceApproved!==true || !row.validFromISO || !row.validThroughISO) return false;
  const a=Date.parse(row.validFromISO),b=Date.parse(row.validThroughISO),n=Date.parse(now);
