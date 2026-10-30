@@ -176,7 +176,7 @@ const serviceMediaCopy: Record<ModernFreightServicePath, Record<ModernServiceLoc
 
 const serviceMedia: Record<ModernFreightServicePath, { hero: string; evidence: string[] }> = {
   'services/air-freight': {
-    hero: '/images/operations/pexels-wuhan-warehouse-receiving-ddnz-vest-v1.webp',
+    hero: '/images/operations/pexels-warehouse-workers-aisle-4487383-v1.webp',
     evidence: ['/images/cargo-inspection-origin-operations.webp', '/images/operations/warehouse-barcode-scan-candid-v1.webp', '/images/operations/carton-cargo-net-restraint-anonymized.webp'],
   },
   'services/amazon-fba': {
@@ -187,6 +187,17 @@ const serviceMedia: Record<ModernFreightServicePath, { hero: string; evidence: s
     hero: '/images/operations/warehouse-wheel-hub-pallet-inspection-client-case.webp',
     evidence: ['/images/operations/warehouse-receiving-count-candid-v1.webp', '/images/operations/warehouse-barcode-scan-candid-v1.webp', '/images/operations/container-loading-forklift-wide-v1.webp'],
   },
+};
+
+const airWarehouseIllustration: Record<Language, string> = {
+  en: 'Warehouse handling · illustrative scene',
+  zh: '仓储作业 · 场景示意',
+  es: 'Operaciones de almacén · imagen ilustrativa',
+  pt: 'Operações de armazém · imagem ilustrativa',
+  fr: 'Manutention en entrepôt · illustration',
+  ru: 'Складские операции · иллюстрация',
+  tr: 'Depo işlemleri · temsili görsel',
+  ar: 'عمليات المستودع · صورة توضيحية',
 };
 
 export function modernFreightServiceMetadata(path: ModernFreightServicePath, language: Language) {
@@ -201,9 +212,10 @@ export default function ModernFreightServiceContent({ path, language }: { path: 
   const s = shared[locale];
   const media = serviceMedia[path];
   const mediaCopy = serviceMediaCopy[path][locale];
+  const heroCaption = path === 'services/air-freight' ? airWarehouseIllustration[language] : mediaCopy.hero;
   const prefix = freightLanguagePrefix(language);
   const slug = path.split('/').at(-1) || 'freight-service';
-  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=${slug.replaceAll('-', '_')}`;
+  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=${slug.replaceAll('-', '_')}&notes=${encodeURIComponent(c.title)}`;
 
   return <main id="main-content" className="freight-editorial freight-next freight-service-modern" lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
     <header className="freight-cover freight-service-cover">
@@ -214,7 +226,7 @@ export default function ModernFreightServiceContent({ path, language }: { path: 
         <div className="freight-cover-actions"><a className="freight-cta" href={quote}>{s.primary} ↗</a><a href="#service-evidence">{s.secondary} <span aria-hidden="true">↓</span></a></div>
         <div className="freight-cover-signature"><span>{s.signature}</span></div>
       </div>
-      <figure className="freight-cover-image"><img src={media.hero} alt={mediaCopy.hero} fetchPriority="high" /><figcaption><span>{s.fieldRecord} / 01</span>{mediaCopy.hero}</figcaption></figure>
+      <figure className="freight-cover-image"><img src={media.hero} alt={heroCaption} fetchPriority="high" /><figcaption><span>{path === 'services/air-freight' ? c.title : s.fieldRecord} / 01</span>{heroCaption}</figcaption></figure>
     </header>
 
     <nav className="freight-chapters" aria-label={s.chapters.join(', ')}>

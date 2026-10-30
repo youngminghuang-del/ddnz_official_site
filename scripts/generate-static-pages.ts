@@ -1,3 +1,4 @@
+import { freightServiceSchema } from '../src/features/freight/freightServiceSchema';
 import commercialIceMachineSchema from '../src/data/commercial-ice-machine-schema.json';
 import { inquiryPageSchema } from '../src/features/inquiry/schema.mjs';
 import {schemaCanonicalUrl} from '../src/lib/schemaGraph.mjs';
@@ -1622,7 +1623,8 @@ function injectStaticRouteContent(
     const language = (lang === 'zh-cn' ? 'zh' : lang) as Language;
     const body = renderToStaticMarkup(createElement(FreightReleaseContent, {path: relPath, language}));
     const css = fs.readFileSync(path.resolve('src/features/freight/freight.css'), 'utf8');
-    return htmlContent.replace('</head>', '<style>'+css+'</style></head>').replace('<div id="root"></div>', '<div id="root" dir="'+(lang === 'ar' ? 'rtl' : 'ltr')+'">'+body+'</div>');
+    const schema = JSON.stringify(freightServiceSchema(relPath, language, freightReleaseMetadata(relPath, language))).replace(/</g, '\\u003c');
+    return htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '').replace('</head>', '<style>'+css+'</style><script id="schema-jsonld-static-page" type="application/ld+json">'+schema+'</script></head>').replace('<div id="root"></div>', '<div id="root" dir="'+(lang === 'ar' ? 'rtl' : 'ltr')+'">'+body+'</div>');
   }
   if (relPath === 'services/dangerous-goods-shipping-from-china' || (relPath === 'services/sea-freight' && ['ru','fr','ar','pt','tr'].includes(lang))) {
     const content = relPath === 'services/sea-freight'
@@ -2226,7 +2228,7 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
 }
 
 run();
-import FreightReleaseContent, { freightReleasePaths, modernizedFreightServicePaths } from '../src/features/freight/FreightReleaseContent';
+import FreightReleaseContent, { freightReleaseMetadata, freightReleasePaths, modernizedFreightServicePaths } from '../src/features/freight/FreightReleaseContent';
 import type { Language } from '../src/i18n/translations';
 
 
