@@ -1,0 +1,37 @@
+/* Scoped visual sample: only the Chinese Russia route uses this component.
+   Local semantic colours let the legacy country rules inherit correctly. */
+.russia-overlay-hero {
+  --country-ink:#fff; --country-copy:#f1f4f8; --country-paper:transparent;
+  position:relative; isolation:isolate; min-height:480px; display:flex; align-items:center;
+  overflow:hidden; background:#10243f;
+}
+.russia-overlay-hero > img { position:absolute; inset:0; z-index:-2; width:100%; height:100%; object-fit:cover; object-position:62% 54%; }
+.russia-overlay-hero__shade { position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,rgba(9,24,43,.87),rgba(9,24,43,.58) 48%,rgba(9,24,43,.12)); }
+.russia-overlay-hero__content { width:min(1180px,calc(100% - 64px)); margin-inline:auto; padding-block:76px 88px; }
+.russia-overlay-hero__content h1 { max-width:17ch; margin:0; font-weight:780; text-wrap:balance; letter-spacing:-.025em; }
+.russia-overlay-hero__content > p { max-width:47ch; margin:25px 0 30px; color:#f1f4f8; font-size:18px; line-height:1.85; }
+.russia-overlay-hero__action { display:inline-flex; align-items:center; justify-content:center; gap:16px; min-height:50px; padding:13px 23px; border:0; border-radius:var(--ddnz-control-radius,8px); background:#b94625; color:#fff; font-weight:700; cursor:pointer; }
+.russia-overlay-hero__action:hover { background:#9f391e; }
+.russia-overlay-hero .russia-overlay-hero__caption { position:absolute; right:32px; bottom:18px; margin:0; color:#f1f4f8; font-size:12px; }
+.russia-overlay-facts { width:min(1180px,calc(100% - 64px)); margin:0 auto; padding:28px 0 36px; }
+.russia-overlay-facts nav { padding-bottom:22px; border-bottom:1px solid var(--country-line); }
+.russia-overlay-facts nav > div { display:flex; flex-wrap:wrap; gap:6px; margin-top:9px; }
+.russia-overlay-facts nav button { min-height:44px; padding:9px 14px; border:1px solid var(--country-line); border-radius:var(--ddnz-control-radius,8px); background:transparent; color:var(--country-ink); cursor:pointer; }
+.russia-overlay-facts nav button[aria-current="page"] { background:var(--country-tint); color:var(--country-accent); }
+.russia-overlay-facts h2 { margin:24px 0 12px; font-size:22px; font-weight:750; }
+.russia-overlay-facts dl { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:26px; }
+.russia-overlay-facts dt { margin-bottom:8px; font-size:13px; color:var(--country-copy); }
+.russia-overlay-facts dd { margin:0; font-size:15px; line-height:1.75; }
+.russia-overlay-facts__note { margin-top:18px; color:var(--country-copy); font-size:12px; line-height:1.8; }
+@media(min-width:1600px){.russia-overlay-hero{min-height:540px}.russia-overlay-hero__content{padding-block:100px}}
+@media(max-width:640px){
+  .russia-overlay-hero{min-height:430px;align-items:flex-end}
+  .russia-overlay-hero > img{object-position:66% center}
+  .russia-overlay-hero__shade{background:linear-gradient(0deg,rgba(9,24,43,.95),rgba(9,24,43,.82) 68%,rgba(9,24,43,.3))}
+  .russia-overlay-hero__content{width:calc(100% - 36px);padding-block:78px 54px}
+  .russia-overlay-hero__content > p{font-size:16px;line-height:1.8;margin:18px 0 24px}
+  .russia-overlay-hero__action{width:100%;gap:10px;padding-inline:12px}
+  .russia-overlay-hero .russia-overlay-hero__caption{right:18px;bottom:13px;font-size:11px}
+  .russia-overlay-facts{width:calc(100% - 36px);padding-block:20px 26px}
+  .russia-overlay-facts dl{grid-template-columns:1fr;gap:18px}
+}

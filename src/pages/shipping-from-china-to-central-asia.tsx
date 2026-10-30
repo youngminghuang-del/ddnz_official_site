@@ -1,3 +1,4 @@
+import RussiaOverlayHero from '../features/freight/RussiaOverlayHero';
 import CountryRegionalReference from '../features/freight/CountryRegionalReference';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
@@ -848,6 +849,12 @@ export default function ShippingCentralAsia() {
 
       <main>
 
+        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
+          {!isLocked && <nav aria-label={corridorUi.selectDestination}><span>{corridorUi.selectDestination}</span><div>{EURASIA_COUNTRIES.map(country => <button key={country} type="button" aria-current={country === selectedCountry ? 'page' : undefined} onClick={()=>handleCountryTabChange(country)}>{countryLabel(country)}</button>)}</div></nav>}
+          <h2>{corridorUi.routeBasis} · {corridor.name}</h2>
+          <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
+          <p className="russia-overlay-facts__note">{corridorUi.quoteConfirmed}</p>
+        </RussiaOverlayHero> : <>
         <section className="relative min-h-[660px] flex items-center overflow-hidden border-b border-white/[0.08]">
           <img
             src="/images/operations/china-eurasia-rail-border-hero-v1.webp"
@@ -919,6 +926,8 @@ export default function ShippingCentralAsia() {
             </div>
           </div>
         </section>
+
+        </>}
 
         {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
