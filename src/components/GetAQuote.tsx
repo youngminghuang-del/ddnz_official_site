@@ -1,3 +1,4 @@
+import { freightQuoteService } from '../lib/freightQuoteService';
 import { currentHostname, isProductionHost } from '../features/commercial-kitchen/data/inquiry.mjs';
 import { localPreviewCopy } from '../local-preview/locales';
 import InquirySourceFields from '../features/inquiry/InquirySourceFields';
@@ -398,7 +399,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   const formErrorTrackedRef = useRef<unknown>(null);
 
   // Core Funnel Data
-  const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>('Sea');
+  const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>(() => freightQuoteService(attributionParams.get('source'), presetService));
   const [origin, setOrigin] = useState('');
   const [destination, setDestination] = useState('');
   const [isParamFilled, setIsParamFilled] = useState(false);
@@ -412,10 +413,8 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   }, [presetDestination]);
 
   useEffect(() => {
-    if (presetService) {
-      setSelectedService(presetService);
-    }
-  }, [presetService]);
+    setSelectedService(freightQuoteService(attributionParams.get('source'), presetService));
+  }, [presetService, attributionParams]);
 
   // Auto-set localized default origin on mount or language change if not already custom filled
   useEffect(() => {
@@ -862,6 +861,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               return (
                                 <button
                                   key={item.id}
+                                  aria-pressed={isActive}
                                   type="button"
                                   onClick={() => handleServiceSelect(item.id as any)}
                                   className={`p-5 rounded-2xl border-2 text-start transition-all duration-300 flex items-start gap-4 cursor-pointer relative overflow-hidden group ${

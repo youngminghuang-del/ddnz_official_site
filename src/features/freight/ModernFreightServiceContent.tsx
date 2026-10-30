@@ -203,7 +203,7 @@ export default function ModernFreightServiceContent({ path, language }: { path: 
   const mediaCopy = serviceMediaCopy[path][locale];
   const prefix = freightLanguagePrefix(language);
   const slug = path.split('/').at(-1) || 'freight-service';
-  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=${slug.replaceAll('-', '_')}`;
+  const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=${slug.replaceAll('-', '_')}&notes=${encodeURIComponent(c.title)}`;
 
   return <main id="main-content" className="freight-editorial freight-next freight-service-modern" lang={locale} dir={locale === 'ar' ? 'rtl' : 'ltr'}>
     <header className="freight-cover freight-service-cover">
