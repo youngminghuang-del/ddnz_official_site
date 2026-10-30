@@ -1,3 +1,4 @@
+import { quoteReadinessCopy } from '../features/freight/quoteReadinessCopy';
 import { freightQuoteService } from '../lib/freightQuoteService';
 import { currentHostname, isProductionHost } from '../features/commercial-kitchen/data/inquiry.mjs';
 import { localPreviewCopy } from '../local-preview/locales';
@@ -478,6 +479,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   const [weight, setWeight] = useState('');
   const [volume, setVolume] = useState('');
   const cargoCopy = quoteCargoCopy[language];
+  const readiness = quoteReadinessCopy[language];
   const cargoValid = isValidCargoMeasurement(weight) && isValidCargoMeasurement(volume);
 
   // Step 4 Details
@@ -485,10 +487,13 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
   const [product, setProduct] = useState('Other');
+  const productLabels: Record<string, string> = { 'Commercial Kitchen Equipment': quoteSummaryCopy[language].kitchen, 'Outdoor Products': quoteSummaryCopy[language].outdoor, 'Commercial Furniture': quoteSummaryCopy[language].furniture, 'New Energy / ESS': quoteSummaryCopy[language].energy, 'Project Cargo / Heavy Lift': quoteSummaryCopy[language].project };
   const [notes, setNotes] = useState(() => attributionParams.get('notes')?.slice(0, 8000) || '');
   useEffect(() => {
     setNotes(attributionParams.get('notes')?.slice(0, 8000) || '');
   }, [attributionParams]);
+  const [detailsOpen, setDetailsOpen] = useState(Boolean(attributionParams.get('notes')));
+  useEffect(() => { setDetailsOpen(Boolean(attributionParams.get('notes'))); }, [attributionParams]);
   const [contactError, setContactError] = useState(false);
 
   useEffect(() => {
@@ -669,6 +674,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
     setPhone('');
     setProduct(attributedCategory || 'Other');
     setNotes('');
+    setDetailsOpen(false);
     setIsSubmitted(false);
     successTrackedRef.current = false;
     formErrorTrackedRef.current = null;
@@ -1070,7 +1076,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                           </p>
 
                           {/* Dynamic Configuration Summary Box */}
-                          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-4 mb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                          <div className="bg-slate-50 rounded-2xl border border-slate-200 p-4 mb-6 flex flex-wrap flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
                             <div>
                               <span className="block text-[10px] font-black text-slate-400 uppercase tracking-widest mb-1.5">
                                 {ft('summaryTitle')}
@@ -1094,6 +1100,12 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               </div>
                             </div>
 
+                            {/* The review mirrors the exact existing message field, never inferred cargo data. */}
+                            <div className="w-full min-w-0 text-sm text-slate-700" data-quote-notes-review>
+                              <strong>{readiness.notes}</strong>
+                              {product !== 'Other' && <p className="mt-1">{quoteSummaryCopy[language].industry}: {productLabels[product] || product}</p>}
+                              <p className="mt-1 whitespace-pre-wrap break-words">{notes.trim() ? notes : readiness.empty}</p>
+                            </div>
                             {/* Fast route speed indicator tag */}
                             <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
@@ -1196,12 +1208,16 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               )}
                             </div>
 
-                            <details className="group rounded-xl border border-slate-200 bg-slate-50/70 open:bg-white">
+                            <details open={detailsOpen} onToggle={event => setDetailsOpen(event.currentTarget.open)} className="group rounded-xl border border-slate-200 bg-slate-50/70 open:bg-white">
                               <summary className="cursor-pointer list-none px-4 py-3 text-sm font-extrabold text-slate-700 flex items-center justify-between gap-3">
                                 {ft('optionalDetails')}
                                 <ChevronRight className="h-4 w-4 text-slate-400 transition-transform group-open:rotate-90" aria-hidden="true" />
                               </summary>
                               <div className="grid grid-cols-1 gap-4 border-t border-slate-200 p-4">
+                                <div id="quote-readiness-guidance" className="space-y-2 text-sm leading-relaxed text-slate-600">
+                                  <h4 className="font-semibold text-slate-800">{readiness.title}</h4>
+                                  <p>{readiness.optional}</p><p>{readiness.modes[selectedService]}</p><p>{readiness.scope}</p>
+                                </div>
                                 <div>
                                   <label htmlFor="quote-industry" className="mb-2 block text-sm font-semibold text-slate-700">{quoteSummaryCopy[language].industry}</label>
                                   <select
@@ -1225,16 +1241,18 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                                   <textarea
                                     id="quote-cargo-notes"
                                     name="message"
-                                    rows={2}
+                                    rows={4}
+                                    aria-describedby="quote-readiness-guidance"
                                     value={notes}
                                     onChange={(e) => setNotes(e.target.value)}
-                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none resize-none transition-all placeholder-slate-400 font-bold text-base"
+                                    className="w-full px-4 py-3 rounded-xl border border-slate-200 focus:border-[#0b4f8a] focus:ring-2 focus:ring-sky-100 outline-none resize-y transition-all placeholder-slate-400 font-bold text-base"
                                     placeholder={ft('notesPlaceholder')}
                                   />
                                 </div>
                               </div>
                             </details>
 
+                            <p className="text-xs leading-relaxed text-slate-500">{readiness.next}</p>
                             <ValidationError errors={state.errors} className="text-sm font-semibold text-red-700" />
 
                             {/* Live Submission Button */}
