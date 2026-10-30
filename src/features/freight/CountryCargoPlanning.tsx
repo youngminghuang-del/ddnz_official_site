@@ -21,10 +21,14 @@ export default function CountryCargoPlanning({country, countryName}:{country:str
  const prefix=language==='en'?'':`/${language==='zh'?'zh-cn':language}`;
  return <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="country-cargo-planning" data-country-cargo-planning>
   <h2 id="country-cargo-planning" className="text-2xl font-bold text-slate-900">{c.title}</h2>
-  <div className="mt-8 grid gap-8 md:grid-cols-3">
-   <article><h3 className="text-lg font-bold">{c.equipment(countryName)}</h3><p className="mt-3 leading-7">{c.equipmentBody}</p><a className="mt-4 block underline" href="/sourcing/food-processing-machinery-from-china/" hrefLang="en">{c.product}</a><a className="mt-3 block underline" href={localizedProductPath('/sourcing/commercial-kitchen-equipment-from-china',language)}>{c.kitchen}</a></article>
-   <article><h3 className="text-lg font-bold">{rail?c.rail:c.sea}</h3><p className="mt-3 leading-7">{c.modeBody}</p><a className="mt-4 block underline" href={`${prefix}/sourcing-services/consolidation-export/`}>{c.service}</a></article>
-   <article><h3 className="text-lg font-bold">{c.address}</h3><p className="mt-3 leading-7">{c.addressBody} <span dir="ltr">{cities[country]}</span></p><p className="mt-3 leading-7">{c.addressNote}</p><a className="mt-4 block underline" href={buildQuoteHref({intent:'Freight Export',language,source:'country_cargo_planning',destination:countryName})}>{c.quote}</a></article>
+  <div className="mt-5 max-w-4xl">
+   <p className="leading-7">{c.equipmentBody}</p>
+   <nav className="mt-4 flex flex-wrap gap-x-6 gap-y-2" aria-label={c.title}>
+    <a className="inline-flex min-h-11 items-center underline" href="/sourcing/food-processing-machinery-from-china/" hrefLang="en">{c.product}</a>
+    <a className="inline-flex min-h-11 items-center underline" href={localizedProductPath('/sourcing/commercial-kitchen-equipment-from-china',language)}>{c.kitchen}</a>
+    <a className="inline-flex min-h-11 items-center underline" href={`${prefix}/sourcing-services/consolidation-export/`}>{c.service}</a>
+    <a className="inline-flex min-h-11 items-center underline" href={buildQuoteHref({intent:'Freight Export',language,source:'country_cargo_planning',destination:countryName})}>{c.quote}</a>
+   </nav>
   </div>
  </section>;
 }

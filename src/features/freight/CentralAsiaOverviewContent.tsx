@@ -1,3 +1,4 @@
+import EurasiaRegionalGuide from './EurasiaRegionalGuide';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import { useState } from 'react';
@@ -89,5 +90,5 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
       <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
-  <FreightRelatedLinks region="central-asia" locale={locale}/></main>;
+  <EurasiaRegionalGuide locale={locale}/><FreightRelatedLinks region="central-asia" locale={locale}/></main>;
 }

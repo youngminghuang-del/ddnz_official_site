@@ -1,3 +1,4 @@
+import { freightRoles } from '../features/freight/freightRoles';
 import { quoteReadinessCopy } from '../features/freight/quoteReadinessCopy';
 import { freightQuoteService } from '../lib/freightQuoteService';
 import { currentHostname, isProductionHost } from '../features/commercial-kitchen/data/inquiry.mjs';
@@ -755,7 +756,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
           </p>
           <div className="flex items-center justify-center gap-2 text-[var(--hb-amber)] font-bold text-xs bg-amber-50/70 w-fit mx-auto px-4 py-2 rounded-full border border-amber-100/60 shadow-sm">
             <Info className="w-3.5 h-3.5 shrink-0" />
-            {{tr:'Alibaba veya 1688’den tedarik mi yapıyorsunuz? DDNZ Global Trade Co., Ltd., Heaven Born taşıma ekibiyle birlikte tedarikçi kontrollerini, denetimleri ve ihracat desteğini koordine eder.',es:'¿Compra en Alibaba o 1688? DDNZ Global Trade Co., Ltd. coordina la verificación de proveedores, inspecciones y apoyo a la exportación con el equipo de transporte Heaven Born.',ar:'هل تشتري من Alibaba أو 1688؟ تنسق DDNZ Global Trade Co., Ltd. التحقق من الموردين والفحص ودعم التصدير مع فريق الشحن Heaven Born.'}[language] || t('hero.alibaba_cta')}
+            {freightRoles[language].description}
           </div>
         </div>
 

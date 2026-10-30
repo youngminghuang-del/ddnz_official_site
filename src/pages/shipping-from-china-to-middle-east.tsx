@@ -1565,39 +1565,8 @@ export default function MiddleEastRoute() {
         </section>
 
         {<RoutePlanningDepth country={slugByCountry[selectedCountry]} locale={activeLang}/>}
-        <MarketSourcingHandoff destination={selectedCountryLabel} />
+        <MarketSourcingHandoff compact destination={selectedCountryLabel} />
         {selectedCountry === 'UAE' && ['zh', 'en', 'es'].includes(activeLang) && <NewFreightEvidence locale={activeLang as 'zh' | 'en' | 'es'} uaeOnly />}
-
-        {/* Section 2: Red Sea Operational Reality Update (Market Insight Box) */}
-        <section className="py-12 bg-[#27212f] border-y border-white/[0.05]">
-          <div className="max-w-4xl mx-auto px-4">
-            <div className="bg-white/[0.02] rounded-2xl border-l-8 border-[#c94f2f] p-6 md:p-8 shadow-md border border-white/[0.08]">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 rounded-lg bg-[#c94f2f]/10 text-[#c94f2f]">
-                  <AlertTriangle className="w-6 h-6" />
-                </div>
-                <div>
-                  <span className="text-[10px] tracking-widest font-black uppercase text-[#c94f2f]">
-                    {t('alertTag')}
-                  </span>
-                  <h2 className="text-lg md:text-xl font-black text-white leading-tight">
-                    {t('alertTitle')}
-                  </h2>
-                </div>
-              </div>
-
-              <p className="text-sm text-slate-300 leading-relaxed font-semibold mb-2">
-                {t('alertContent')}
-              </p>
-
-              <div className="mt-4 flex items-center gap-2 text-xs font-black text-slate-400">
-                <Globe className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />
-                <span>{t('insightPortfolio')}</span>
-                <span>2026</span>
-              </div>
-            </div>
-          </div>
-        </section>
 
         {/* Section 3: All-in-One Transit Time & Reference Matrix */}
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
@@ -1675,81 +1644,6 @@ export default function MiddleEastRoute() {
                 <p className="text-[10px] text-slate-400 font-semibold">
                   {t('matrixFootnote')}
                 </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: SME Advantage Tri-Cards */}
-        <section className="py-16 md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center max-w-3xl mx-auto mb-16">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white mb-4 tracking-tight leading-tight">
-                {t('cardsHeading')}
-              </h2>
-              <div className="w-10 h-1 bg-gradient-to-r from-sky-400 to-[#c94f2f] mx-auto rounded-full mb-6" />
-              <p className="text-slate-400 text-sm sm:text-base font-semibold leading-relaxed">
-                {t('cardsSubheading')}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-
-              {/* Card 1 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
-                    <Ship className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
-                    {t('card1Title')}
-                  </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                    {t('card1Desc')}
-                  </p>
-                </div>
-                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
-                  <span>{t('card1Cta')}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </button>
-              </div>
-
-              {/* Card 2 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
-                    <Search className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
-                    {t('card2Title')}
-                  </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                    {t('card2Desc')}
-                  </p>
-                </div>
-                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
-                  <span>{t('card2Cta')}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </button>
-              </div>
-
-              {/* Card 3 */}
-              <div className="bg-white/[0.03] backdrop-blur-md border border-white/[0.08] rounded-2xl p-8 hover:border-[#c94f2f]/50 hover:shadow-[0_0_30px_rgba(11,28,44,0.22)] hover:bg-white/[0.05] hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group">
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#c94f2f]/10 text-[#c94f2f] flex items-center justify-center mb-6 p-3">
-                    <ShieldCheck className="w-6 h-6" />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-semibold text-white mb-3">
-                    {getCountryContent('card3Title')}
-                  </h3>
-                  <p className="text-sm text-slate-400 leading-relaxed font-medium">
-                    {selectedCountry === 'Saudi-Arabia' ? factLabels.saudiSaber : factLabels.importPlanning}
-                  </p>
-                </div>
-                <button type="button" onClick={() => { const form = document.getElementById('middle-east-quote-form'); form?.focus({ preventScroll: true }); form?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }} className="mt-6 pt-4 border-t border-white/[0.08] flex items-center gap-2 text-xs font-bold text-[#c94f2f]">
-                  <span>{t('card3Cta')}</span>
-                  <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 duration-200" />
-                </button>
               </div>
             </div>
           </div>

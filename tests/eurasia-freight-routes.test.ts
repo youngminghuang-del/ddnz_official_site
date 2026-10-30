@@ -139,11 +139,13 @@ test('routing, static generation and navigation expose all six Eurasia destinati
   }
 
   assert.match(page, /china-eurasia-rail-border-hero-v1\.webp/);
-  assert.match(page, /eec\.eaeunion\.org/);
-  assert.match(page, /unece\.org/);
-  assert.match(page, /cpmm\.carecprogram\.org/);
-  assert.match(page, /sw2\.customs\.uz/);
-  assert.match(page, /bis\.gov/);
+  const guide = readFileSync(new URL('../src/features/freight/EurasiaRegionalGuide.tsx', import.meta.url), 'utf8');
+  assert.match(page, /CountryRegionalReference/);
+  assert.match(guide, /eec\.eaeunion\.org/);
+  assert.match(guide, /unece\.org/);
+  assert.match(guide, /cpmm\.carecprogram\.org/);
+  assert.match(guide, /sw2\.customs\.uz/);
+  assert.match(guide, /bis\.gov/);
   assert.doesNotMatch(page, /29\+ лет/);
   assert.doesNotMatch(page, /в течение 2 часов/);
 });
