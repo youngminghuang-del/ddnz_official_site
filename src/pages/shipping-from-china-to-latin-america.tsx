@@ -315,7 +315,7 @@ const LATAM_DATA = {
       transitDays: "Confirm for the proposed route",
       complianceRowTitle: "CUIT & Import-Requirement Review",
       complianceRowVal: "Confirm for the proposed route",
-      solutionsTitle: "Argentina SCM Compliance Solutions",
+      solutionsTitle: "Documents to prepare for Argentina",
       solutionsSubtitle: "Supporting shipment planning around import documentation, CUIT data, and destination operating requirements.",
       solutions: [
         {
@@ -488,7 +488,7 @@ LATAM_LOCALIZED.chile = {
     headline: 'Shipping from China to Chile | Port and Destination Planning',
     subheadline: 'FCL, LCL, and air freight planning from China to Chile, with shipment-document and destination-operation coordination.',
     transitWindow: 'Chile Transit Windows', transitDays: "Confirm for the proposed route",
-    solutionsTitle: 'Chile Freight and Import-Document Planning',
+    solutionsTitle: 'Documents to prepare for Chile',
     solutionsSubtitle: 'Plan cargo data, product classification, and destination handling requirements before shipment.',
     solutions: [
       { title: 'Commercial Document Consistency', desc: 'Review consignee details, product descriptions, quantities, and values across shipping and commercial documents before dispatch.', icon: 'FileText' },
@@ -580,8 +580,8 @@ const PAGE_LANG_DATA = {
     tabArgentina: "Argentina (CUIT & Import Documents)",
     tabPeru: "Peru (Callao & Lima)",
     tabChile: "Chile (Ports & Santiago)",
-    faqHeading: "Latin America SCM Compliance FAQ",
-    faqSubheading: "Proactive compliance checks to keep your cargo moving securely through Latin American customs corridors.",
+    faqHeading: "Questions before shipping",
+    faqSubheading: "Confirm the documents and delivery scope for your destination.",
     formTitle: "Instant Latin America Shipping Inquiry",
     formSub: "Send your cargo requirements directly to our senior Latin America trade lane managers.",
     formName: "Your Name / Company",
@@ -1163,7 +1163,7 @@ export default function ShippingLatinAmerica() {
       <main className="relative z-10">
 
         {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
-        <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
+        <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         <LatinAmericaFreightDepth
           country={selectedCountry}
@@ -1377,40 +1377,6 @@ export default function ShippingLatinAmerica() {
             </div>
           </section>
         )}
-
-        {/* Universal LATAM Avoid-Pitfall & SCM Insights */}
-        <section className="relative border-b border-[#dce3ea] bg-[#fffdf9] py-16 text-[#10243f] md:py-24">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div className="mb-12 max-w-3xl">
-              <span className="mb-3 inline-block border-l-2 border-[#c94f2f] pl-3 text-xs font-black uppercase tracking-widest text-[#c94f2f]">
-                {language === 'zh' ? '出运注意事项' : translatedText('Shipping Notes',language)}
-              </span>
-              <h2 className="mb-4 text-2xl font-black tracking-tight sm:text-3xl md:text-4xl">
-                {redlines.title}
-              </h2>
-              <p className="text-sm font-semibold leading-7 text-slate-600 sm:text-base">
-                {redlines.subtitle}
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 border-l border-t border-[#dce3ea] md:grid-cols-2">
-              {redlines.items.map((item) => (
-                <div key={item.id} className="group relative overflow-hidden border-b border-r border-[#dce3ea] bg-white p-8 transition-colors hover:bg-[#f8f5ef]">
-                  <div className="absolute right-0 top-0 select-none p-4 text-7xl font-black leading-none text-[#10243f]/[0.04]">
-                    {item.id}
-                  </div>
-                  <div className="mb-4 flex items-center gap-2.5 text-sm font-black text-[#c94f2f] sm:text-base">
-                    <ShieldAlert className="w-5.5 h-5.5 flex-shrink-0 text-[#c94f2f]" />
-                    <h3>{item.title}</h3>
-                  </div>
-                  <p className="relative z-10 text-xs font-semibold leading-relaxed text-slate-600 sm:text-sm">
-                    {item.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* Latin America FAQ */}
         <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">

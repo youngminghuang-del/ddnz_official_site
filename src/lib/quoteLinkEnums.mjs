@@ -1,6 +1,7 @@
 // Fixed reviewed values from the 2026-09-28 inventory and existing form routes.
 // Free destination text belongs in the local brief, never in an enum or href.
 export const QUOTE_ENUMS = Object.freeze({
+  "deliveryAssessment": ["1"],
   "leadGoal": [
     "Freight Export",
     "Freight Only",
@@ -35,6 +36,7 @@ export const QUOTE_ENUMS = Object.freeze({
     "homepage_v2_freight",
     "how_we_work",
     "international_country",
+    "land_door_delivery",
     "kitchen_catalogue",
     "kitchen_category",
     "lcl_shipping",

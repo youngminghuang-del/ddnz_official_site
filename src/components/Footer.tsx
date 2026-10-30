@@ -1,3 +1,4 @@
+import { freightRoles } from '../features/freight/freightRoles';
 import DdnzBrand from './DdnzBrand';
 import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
@@ -110,7 +111,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
         </div>
         {contextualLinks.length > 0 && <nav aria-label={copy.onPage} className="ddnz-footer__page-links">{contextualLinks.map(link => <a href={link.href.startsWith('/') ? canonicalSitePath(link.href) : link.href} key={link.href}>{link.label}</a>)}</nav>}
         <div className="ddnz-footer__bottom">
-          <div><p>{copy.legalNote}</p><p>© 2026 {companyName(language)} · {copy.rights}</p>{language === 'en' && note && <p>{note}</p>}</div>
+          <div><p>{/\/(?:shipping-from-china-to-|services\/|get-a-quote)/.test(pathname) ? freightRoles[language].badge : copy.legalNote}</p><p>© 2026 {companyName(language)} · {copy.rights}</p>{language === 'en' && note && <p>{note}</p>}</div>
           <div className="ddnz-footer__legal">
             <a href={localizedPath('/about/')}>{aboutCopy[language].nav}</a>
             <Link to={localizedPath('/insights')}>{copy.insights}</Link>

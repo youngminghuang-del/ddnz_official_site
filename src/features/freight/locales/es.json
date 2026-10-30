@@ -1,0 +1,196 @@
+{
+  "rate": {
+    "fcl": "FCL / CONTENEDOR COMPLETO",
+    "heading": "Compare flete y tránsito por tipo de contenedor.",
+    "regionHeading": "Elija el puerto de destino y compare las rutas.",
+    "intro": "Compare el puerto real de carga, el destino y el contenedor. El tránsito indicado corresponde al tramo marítimo; los gastos a la llegada y la entrega final se confirman aparte.",
+    "regionIntro": "Son ejemplos de rutas concretas. Compare cada puerto, contenedor y gasto adicional.",
+    "quarter": "Fletes orientativos · 4.º trimestre de 2026",
+    "period": "4.º trimestre de 2026",
+    "notice": "Las referencias pueden actualizarse según el mercado y no fijan un precio. Solicite confirmación del flete, las salidas y los gastos de su envío.",
+    "country": "País de destino",
+    "allCountries": "Todos los países de la región",
+    "port": "Puerto de destino",
+    "allPorts": "Todos los puertos de destino",
+    "origin": "Puerto real de carga",
+    "allOrigins": "Todos los puertos de carga",
+    "container": "Contenedor",
+    "ask": "Consultar tarifa",
+    "unit": "Moneda / unidad",
+    "example": "Rutas de ejemplo",
+    "option": "Opciones orientativas",
+    "tableNote": "Referencias trimestrales de distintas opciones de transporte. Confirme la salida al solicitar la cotización.",
+    "regionNote": "Cada ejemplo identifica el puerto de carga y el de destino; no representa una tarifa mínima regional.",
+    "route": "Ruta / naviera",
+    "journey": "Tránsito / transbordo",
+    "freight": "flete marítimo orientativo",
+    "periodLabel": "Periodo de referencia",
+    "actions": "Gastos / consulta",
+    "days": "días",
+    "feesBelow": "Gastos adicionales abajo",
+    "actual": "Solicite una cotización actual",
+    "quote": "Consultar esta ruta",
+    "details": "Gastos y condiciones del envío",
+    "detailHint": "Gastos adicionales · Días libres y peso · Entrega a domicilio",
+    "feeHeading": "¿Qué otros gastos debe prever?",
+    "feeIntro": "Referencias del 4.º trimestre de 2026, separadas del flete marítimo. RMB y USD se mantienen en su moneda original. Los gastos por envío no se multiplican por el número de contenedores.",
+    "ticket": "envío",
+    "missingFee": "No figuran gastos adicionales para este registro. Pida a HB que los confirme.",
+    "feeNote": "Confirme si se cobran tanto documentación como liberación por télex y si los gastos de destino son adicionales, según la modalidad de entrega documental y el alcance acordado.",
+    "scope": "Despacho, impuestos y entrega a domicilio",
+    "scopeNote": "Es una referencia de transporte marítimo FCL. No implica que incluya despacho de importación, aranceles, impuestos locales, inspección, almacenaje, retirada del contenedor ni entrega en una dirección.",
+    "scopeBrief": "Para evaluar una entrega con derechos e impuestos pagados, facilite mercancía, código HS si lo conoce, embalaje, valor y dirección. HB confirmará viabilidad y responsabilidades.",
+    "conditions": "Días libres, límites de peso y condiciones",
+    "conditionNote": "Las condiciones sirven para planificar. Confirme salidas, aceptación de mercancía y gastos adicionales al cotizar.",
+    "sailing": "Confirme buque, viaje y fecha de salida con la cotización actual.",
+    "conditional": "Los días libres, contenedores pesados y mercancías especiales pueden requerir aprobación. Prevalece el plan confirmado.",
+    "portPending": "Confirme la identidad del puerto de destino",
+    "emptyHeading": "Solicite cotización para esta ruta",
+    "portNote": "No se ha equiparado un nombre parecido al puerto solicitado. Facilite el punto exacto de entrada y la dirección para que HB revise la ruta.",
+    "emptyNote": "La tabla no incluye una opción para esta combinación de puertos. Envíe los datos de la mercancía y la fecha de salida para consultar ruta y flete.",
+    "collapse": "Mostrar menos opciones",
+    "more": "Ver más referencias",
+    "bottom": "¿Necesita LCL, transporte aéreo o entrega con impuestos pagados?",
+    "bottomNote": "HB cotiza estas opciones por separado según la mercancía, fecha y dirección. DDNZ coordina fabricación y exportación; HB ejecuta el transporte en el alcance acordado.",
+    "send": "Enviar mercancía y requisitos de entrega",
+    "original": "Otras modalidades y gestiones a la llegada"
+  },
+  "extra": {
+    "direct": "Directo",
+    "via": "Vía",
+    "pendingTransit": "Transbordo por confirmar",
+    "feeConditional": "Gasto por confirmar",
+    "otherContainer": "Consultar este contenedor",
+    "terminalPending": "Terminal por confirmar",
+    "sourceConditions": "Confirme con HB los días libres, límites de peso, autorizaciones y recargos de la ruta antes de reservar.",
+    "cutoff": "Cierre / salida"
+  },
+  "door": {
+    "title": "Envíos DDP desde China | Evaluación de entrega con impuestos pagados | DDNZ Global",
+    "description": "Evalúe envíos DDP o DAP desde China según mercancía, destino e importador. HB confirma despacho, aranceles, impuestos, entrega y descarga para cada envío.",
+    "home": "Inicio",
+    "freight": "Transporte internacional",
+    "breadcrumb": "Entrega con impuestos pagados",
+    "kicker": "Desde China / evaluación de entrega",
+    "h1": "Envíos DDP desde China. Acordemos el alcance antes de embarcar.",
+    "intro": "Revise transporte, despacho de importación, aranceles, impuestos y entrega final en un mismo plan. La viabilidad DDP depende del país, la mercancía, el importador y la ejecución local. HB debe confirmar cada envío.",
+    "cta": "Evaluar mis requisitos de entrega",
+    "compare": "Comparar opciones de entrega",
+    "alt": "Carga de mercancías para su salida desde China",
+    "caption": "Registro de carga en origen. Muestra la preparación; no acredita que este envío se realizara en DDP ni que completara el despacho de importación.",
+    "deliveryHeading": "La entrega a domicilio no incluye automáticamente los impuestos.",
+    "allocation": "Los términos comerciales reparten responsabilidades entre vendedor y comprador. El servicio de HB se define por separado en el plan y la cotización acordados.",
+    "cards": [
+      [
+        "DDP · Entregado con derechos pagados",
+        "El vendedor asume transporte, despacho de importación y aranceles e impuestos aplicables hasta el destino pactado. La entrega suele hacerse sobre el vehículo de llegada, lista para que el comprador descargue. Acuerde la descarga aparte."
+      ],
+      [
+        "DAP · Entregado en lugar",
+        "El vendedor lleva la mercancía al lugar acordado, lista para descargar del vehículo de llegada. El comprador normalmente se ocupa del despacho de importación y de los aranceles e impuestos."
+      ],
+      [
+        "Otras entregas a domicilio",
+        "Transporte, representación aduanera y reparto pueden contratarse por separado. «A domicilio» no equivale a DDP ni confirma que incluya impuestos, inspección u otros gastos."
+      ]
+    ],
+    "rule": "Indique la versión de Incoterms®, el lugar convenido y las condiciones contractuales. Referencia: ICC Academy · DAP y DDP.",
+    "costsHeading": "Confirme qué incluye y excluye cada tramo.",
+    "costs": [
+      [
+        "Origen y transporte principal",
+        "Recogida, consolidación, declaración de exportación, manipulación y transporte marítimo, aéreo, ferroviario o por carretera. Confirme moneda y unidad de cada gasto."
+      ],
+      [
+        "Importación e impuestos",
+        "Revise código HS, valor, importador habilitado, despacho, aranceles, impuestos locales y justificantes de pago. Inspección y almacenaje deben figurar por separado."
+      ],
+      [
+        "Entrega y recepción",
+        "Dirección, código postal, cita, zonas remotas, acceso, descarga y comprobante de entrega. Acuerde recargos e incidencias antes del envío."
+      ]
+    ],
+    "reference": "El FCL de las páginas de países es orientativo para el 4.º trimestre de 2026: flete marítimo y gastos indicados. No permite calcular un total DDP. LCL, aéreo y DDP se cotizan por envío.",
+    "prepHeading": "Comparta lo que sepa; deje lo demás por confirmar.",
+    "prepText": "Mercancía y uso, HS si se conoce, valor y moneda, bultos, embalaje, peso bruto, volumen, baterías o líquidos, fecha prevista y recogida en China. Añada país, ciudad, código postal, dirección, importador, justificantes fiscales, cita y medios de descarga.",
+    "steps": [
+      "HB revisa aceptación, ruta e importación local.",
+      "Confirme transporte, despacho, impuestos, entrega y exclusiones por separado.",
+      "Acorde importador, punto de entrega, transferencia de responsabilidades y pago.",
+      "Conserve declaraciones, justificantes fiscales y prueba de entrega."
+    ],
+    "rolesHeading": "DDNZ coordina fabricación y exportación; HB ejecuta el transporte.",
+    "rolesText": "Heaven Born (HB) realiza el transporte internacional en el alcance acordado. Despacho, gestión de impuestos y reparto deben confirmarse por país y mercancía; no se garantiza cobertura universal.",
+    "services": [
+      "Marítimo FCL",
+      "Consolidación LCL",
+      "Transporte aéreo",
+      "Amazon FBA"
+    ],
+    "supportHeading": "¿Qué falta entre la llegada y su dirección?",
+    "supportText": "El transporte principal no determina un precio con impuestos pagados a domicilio. HB debe confirmar despacho, impuestos, gastos portuarios o fronterizos, entrega y descarga según la mercancía y dirección.",
+    "supportCompare": "Comparar DDP, DAP y el alcance de entrega",
+    "fees": [
+      "Gasto de terminal (THC)",
+      "Precinto",
+      "Intercambio de equipo",
+      "Documentación",
+      "Liberación por télex",
+      "Seguridad portuaria",
+      "Declaración AMS",
+      "DHC (alcance por confirmar)",
+      "Reserva",
+      "Congestión",
+      "DDC (alcance por confirmar)",
+      "Intercambio electrónico de datos",
+      "Lista de carga electrónica",
+      "ENS (alcance por confirmar)",
+      "TANK (alcance por confirmar)",
+      "Declaración VGM"
+    ]
+  },
+  "form": {
+    "fields": [
+      "Modalidad de entrega solicitada",
+      "Código postal de destino",
+      "Dirección / ciudad de entrega",
+      "Valor de la mercancía",
+      "Moneda del valor",
+      "Código HS (si se conoce)",
+      "Importador previsto",
+      "Justificante del pago de impuestos",
+      "Medios de descarga"
+    ],
+    "checkbox": "Evaluar despacho, impuestos o entrega a domicilio (opcional)",
+    "help": "Puede dejar campos vacíos: se enviarán como «Por confirmar». Son sus requisitos, no una confirmación de capacidad o gastos incluidos por HB.",
+    "unknown": "Por confirmar",
+    "placeholder": "Opcional; puede quedar por confirmar",
+    "header": "Evaluación de entrega a domicilio (requisitos del cliente, no alcance confirmado)",
+    "edit": "Modificar requisitos de entrega",
+    "options": [
+      [
+        "DDP",
+        "DAP",
+        "Comparar opciones"
+      ],
+      [
+        "USD",
+        "CNY",
+        "Otra (indíquela en notas)"
+      ],
+      [
+        "El comprador puede gestionar al importador",
+        "El vendedor puede gestionar al importador",
+        "Necesito evaluar la gestión del importador"
+      ],
+      [
+        "Necesario",
+        "No solicitado"
+      ],
+      [
+        "El destinatario puede descargar",
+        "Necesito evaluar la descarga"
+      ]
+    ]
+  }
+}

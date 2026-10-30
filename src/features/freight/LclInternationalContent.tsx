@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import { lclInternationalCopy, type LclExtraLocale } from './lclInternationalCopy';
 export function internationalLclMetadata(locale: LclExtraLocale) {
   const c = lclInternationalCopy[locale];
@@ -22,5 +23,5 @@ export default function LclInternationalContent({ locale }: { locale: LclExtraLo
     <section id="lcl-loading-mistakes" className="lcl-errors"><div className="freight-wrap freight-section lcl-loading-details"><p className="freight-kicker">{c.errorLabel}</p><h2>{c.errorsTitle}</h2><p className="freight-intro">{c.errorsIntro}</p><div className="lcl-error-grid">{c.errors.map(([title,body],i)=>{const src=`/media/lcl-20260920/wrong-example-${i === 0 ? 'mixed' : 'carton'}-stack.webp`;return <figure key={src}><a className="lcl-detail-image" href={src} target="_blank" rel="noreferrer" aria-label={`${c.open}: ${title}`}><span className="lcl-error-badge">{c.errorLabel}</span><img src={src} alt={title} width={1200} height={i === 0 ? 1901 : 1615} loading="lazy" decoding="async"/><span className="lcl-image-open">{c.open} ↗</span></a><figcaption><h3>{title}</h3><p>{body}</p></figcaption></figure>})}</div><a className="lcl-review-link" href="#lcl-brief">{c.quote} →</a></div></section>
     <section className="freight-wrap freight-section"><h2>{c.sourcingTitle}</h2><p className="freight-intro">{c.sourcingBody}</p><a href={`/${locale}/sourcing-services/consolidation-export/`}>{c.sourcingLink} →</a></section>
     <section id="lcl-brief" className="freight-destination-band"><div className="freight-wrap freight-section"><h2>{c.briefTitle}</h2><p className="freight-intro">{c.brief}</p><p className="freight-intro">{c.scope}</p><a href={quote} className="freight-cta">{c.quote} ↗</a></div></section>
-  </main>;
+  <DoorDeliveryLink locale={locale} context="services/lcl-shipping-from-china"/></main>;
 }

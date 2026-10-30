@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import { freightPrefix, words, type FreightLocale } from './regions';
 import ShipmentPreparation from './ShipmentPreparation';
 import LclLoadingDetails from './LclLoadingDetails';
@@ -31,5 +32,5 @@ export default function LclContent({locale, materialPreview}: {locale: FreightLo
     {materialPreview}
     <section className="freight-wrap freight-section"><h2>{t('供应商订单还没理顺？','Still coordinating supplier orders?','¿Aún coordinando pedidos?')}</h2><p className="freight-intro">{t('供应商交期、订单数量与异常处理属于采购交接准备。需要这部分协助，可查看集货与出口交付服务。','Supplier dates, order quantities and exceptions belong to sourcing preparation. Explore our consolidation and export handoff service for that support.','Fechas, cantidades e incidencias de proveedores forman parte de la preparación de compras. Consulta el servicio de consolidación y entrega para exportación.')}</p><a href={`${prefix}/sourcing-services/consolidation-export/`}>{t('查看采购端集货与出口交付','Explore sourcing-side consolidation','Ver consolidación de compras')} →</a></section>
     <section id="lcl-brief" className="freight-destination-band"><div className="freight-wrap freight-section"><h2>{t('带上这份货物资料，\n开始比较。','Bring the cargo details.\nCompare on equal terms.','Trae los datos de carga.\nCompara el mismo alcance.')}</h2><p className="freight-intro">{t('品名与用途、包装照片、件数、外尺寸、毛重、中国提货地址、货好日期、目的地地址，以及希望到港还是到门。报价时确认起运地、海运、目的地操作、税费及配送分别包含哪些项目。','Send product and use, packing photos, count, dimensions, gross weight, China pickup address, ready date, destination and port or door scope. Confirm inclusions for origin, ocean, destination handling, taxes and delivery.','Envía producto y uso, fotos, bultos, medidas, peso, recogida en China, fecha, destino y alcance. Confirma inclusiones de origen, flete, destino, impuestos y entrega.')}</p><a className="freight-cta" href={quote}>{t('询 LCL 拼箱方案','Request an LCL plan','Consultar un plan LCL')} ↗</a></div></section>
-  </main>;
+  <DoorDeliveryLink locale={locale} context="services/lcl-shipping-from-china"/></main>;
 }

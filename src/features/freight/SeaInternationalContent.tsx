@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import { seaInternationalCopy } from './seaInternationalCopy';
 import { lclInternationalCopy, type LclExtraLocale } from './lclInternationalCopy';
 export const internationalSeaMetadata=(locale:LclExtraLocale)=>({title:`${seaInternationalCopy[locale].title} | DDNZ Global`,desc:seaInternationalCopy[locale].intro,keywords:''});
@@ -18,5 +19,5 @@ export default function SeaInternationalContent({locale}:{locale:LclExtraLocale}
   <section id="load-planning" className="freight-wrap freight-section"><div className="freight-planning-layout"><div><h2>{c.planTitle}</h2><p className="freight-intro">{c.plan}</p><a className="freight-cta" href={quote}>{c.quote} ↗</a></div><figure><a href={`${base}load-plan.png`} target="_blank" rel="noreferrer"><img src={`${base}load-plan.webp`} alt={c.simulation} loading="lazy"/></a><figcaption>{c.simulation}</figcaption></figure></div></section>
   <section id="freight-destinations" className="freight-destination-band"><div className="freight-wrap freight-section"><h2>{c.destTitle}</h2>{regionLanguageNote&&<p className="mt-4">{regionLanguageNote}</p>}<div className="freight-destination-links">{['latin-america','west-africa','middle-east'].map((id,i)=><a key={id} href={`${regionPrefix}/shipping-from-china-to-${id}/`} hrefLang={regionLanguageNote?'en':locale}>{c.destinations[i]} ↗</a>)}</div><a className="freight-specialist-link" href={`${prefix}/services/dangerous-goods-shipping-from-china/`}>{c.specialist} →</a></div></section>
   <section id="rfq-form-section" className="freight-wrap freight-section freight-close"><h2>{c.close}</h2><p>{l.brief}</p><p>{l.scope}</p><a className="freight-cta" href={quote}>{c.quote} ↗</a><small>{c.signature}</small></section>
- </main>;
+ <DoorDeliveryLink locale={locale} context="services/sea-freight"/></main>;
 }

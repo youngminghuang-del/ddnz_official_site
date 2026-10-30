@@ -14,6 +14,7 @@ test('explicit air and warehouse entries retain their mode without overriding em
  assert.equal(freightQuoteService('dangerous_goods_shipping'),'Sea');
  assert.equal(freightQuoteService(null),'Sea');
  assert.equal(freightQuoteService('central_asia_route_builder'),'Land');
+ assert.equal(freightQuoteService('land_door_delivery'),'Land');
  assert.equal(freightQuoteService('air_freight','Land'),'Land');
 });
 test('service handoff survives the existing query-free link policy, including localized brief',()=>{

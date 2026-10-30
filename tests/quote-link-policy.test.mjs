@@ -4,6 +4,15 @@ import { transformSync } from '@babel/core';
 import plugin from '../scripts/quote-link-babel-plugin.mjs';
 import { quoteLinkProps,normalizeQuoteHtml,sanitizeQuoteContext,saveQuoteContext,readQuoteContext,quoteParamsForLocation,clearQuoteContext } from '../src/lib/quoteLinkPolicy.mjs';
 const store=()=>{const m=new Map();return {getItem:k=>m.get(k)??null,setItem:(k,v)=>m.set(k,v),removeItem:k=>m.delete(k)}};
+test('freight origins survive local handoff without entering the quote URL',()=>{
+ for(const origin of ['深圳·盐田','上海','宁波','南沙']){
+  const link=quoteLinkProps('/zh-cn/get-a-quote/?'+new URLSearchParams({leadGoal:'Freight Export',originText:origin,destinationText:'巴西 · Paranaguá'}));
+  assert.equal(link.href,'/zh-cn/get-a-quote/');
+  saveQuoteContext(link.href,JSON.parse(link['data-quote-context']));
+  assert.equal(quoteParamsForLocation('',link.href).get('originText'),origin);
+ }
+ clearQuoteContext('/zh-cn/get-a-quote/');
+});
 globalThis.window={location:{origin:'https://www.ddnzglobal.com'},sessionStorage:store(),localStorage:store()};
 test('eight languages emit plain links and retain multilingual briefs outside href',()=>{
  for(const locale of ['', 'zh-cn/','ar/','fr/','ru/','es/','pt/','tr/']){

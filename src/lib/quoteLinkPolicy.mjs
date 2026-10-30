@@ -4,7 +4,7 @@ const BASE = 'https://www.ddnzglobal.com';
 const PATH = /^\/(?:zh-cn\/|es\/|ar\/|ru\/|fr\/|pt\/|tr\/)?get-a-quote\/?$/;
 const PREFIX = 'ddnz_quote_context_v2:';
 const TTL = 10 * 60 * 1000;
-const TEXT_KEYS = new Set(['overviewBrief','productScope','industry','notes','article','country','projectNeed','buyingStage','orderVolume','sourcingPath','buyerType','skuCount','quantityPerSku','freightPreference','destinationText','utm_source','utm_medium','utm_campaign','utm_content','utm_term']);
+const TEXT_KEYS = new Set(['overviewBrief','productScope','industry','notes','article','country','projectNeed','buyingStage','orderVolume','sourcingPath','buyerType','skuCount','quantityPerSku','freightPreference','destinationText','originText','utm_source','utm_medium','utm_campaign','utm_content','utm_term']);
 let memoryDraft = null;
 function baseUrl() { return typeof window === 'undefined' ? BASE : window.location.origin; }
 function quoteUrl(value) {

@@ -1,0 +1,196 @@
+{
+  "rate": {
+    "fcl": "FCL / TAM KONTEYNER",
+    "heading": "Navlun ve süreyi konteyner tipine göre karşılaştırın.",
+    "regionHeading": "Varış limanını seçin, ardından rotaları karşılaştırın.",
+    "intro": "Gerçek yükleme limanını, varış noktasını ve konteyneri karşılaştırın. Belirtilen süre deniz ayağı içindir; varış masrafları ve son teslimat ayrıca teyit edilir.",
+    "regionIntro": "Bunlar belirli rota örnekleridir. Liman, konteyner ve ek masrafları ayrı ayrı karşılaştırın.",
+    "quarter": "Referans navlunlar · 2026 4. çeyrek",
+    "period": "2026 4. çeyrek",
+    "notice": "Referanslar piyasaya göre değişebilir ve fiyatı sabitlemez. Sevkiyatınız için navlun, çıkış tarihi ve ek masrafların teyidini isteyin.",
+    "country": "Varış ülkesi",
+    "allCountries": "Bölgedeki tüm ülkeler",
+    "port": "Varış limanı",
+    "allPorts": "Tüm varış limanları",
+    "origin": "Gerçek yükleme limanı",
+    "allOrigins": "Tüm yükleme limanları",
+    "container": "Konteyner",
+    "ask": "Teklif isteyin",
+    "unit": "Para birimi / birim",
+    "example": "Rota örnekleri",
+    "option": "Referans seçenekler",
+    "tableNote": "Farklı taşıma seçeneklerinin çeyreklik referanslarıdır. Fiilî çıkışı teklif sırasında teyit edin.",
+    "regionNote": "Her örnekte yükleme ve varış limanı belirtilir; bunlar bölgesel en düşük fiyat değildir.",
+    "route": "Rota / hat",
+    "journey": "Süre / aktarma",
+    "freight": "deniz navlunu referansı",
+    "periodLabel": "Referans dönemi",
+    "actions": "Masraflar / talep",
+    "days": "gün",
+    "feesBelow": "Ek masraflar aşağıda",
+    "actual": "Güncel teklif isteyin",
+    "quote": "Bu rotayı sorun",
+    "details": "Masraflar ve sevkiyat koşulları",
+    "detailHint": "Ek masraflar · Serbest süre ve ağırlık · Adrese teslim",
+    "feeHeading": "Başka hangi masrafları planlamalısınız?",
+    "feeIntro": "2026 4. çeyrek referansları deniz navlunundan ayrıdır. RMB ve USD tutarları özgün para biriminde kalır. Sevkiyat başına ücretler konteyner sayısıyla çarpılmaz.",
+    "ticket": "sevkiyat",
+    "missingFee": "Bu kayıtta ek masraf belirtilmemiştir. HB’den teyit isteyin.",
+    "feeNote": "Belge ve teleks teslim ücretlerinin birlikte uygulanıp uygulanmadığını ve varış masraflarının ayrıca ödenip ödenmediğini, teslim şekli ve anlaşılan kapsamla birlikte teyit edin.",
+    "scope": "Gümrükleme, vergiler ve adrese teslim",
+    "scopeNote": "Bu bir FCL deniz navlunu referansıdır. İthalat gümrüklemesi, gümrük vergileri, yerel vergiler, muayene, depolama, konteyner çekimi veya adrese teslimin dahil olduğunu göstermez.",
+    "scopeBrief": "Vergileri ödenmiş adrese teslimi değerlendirmek için ürün, biliniyorsa HS kodu, ambalaj, değer ve adresi paylaşın. HB uygulanabilirliği ve sorumlulukları teyit eder.",
+    "conditions": "Serbest süre, ağırlık sınırları ve sevkiyat koşulları",
+    "conditionNote": "Koşullar planlama içindir. Teklif sırasında çıkışları, yük kabulünü ve ek masrafları teyit edin.",
+    "sailing": "Gemi, sefer ve çıkış tarihini güncel teklifle teyit edin.",
+    "conditional": "Serbest süre, ağır konteynerler ve özel yükler onaya tabi olabilir. Teyit edilmiş plan geçerlidir.",
+    "portPending": "Varış limanının kimliği teyit edilmeli",
+    "emptyHeading": "Bu rota için teklif isteyin",
+    "portNote": "Benzer bir ad aynı liman olarak kabul edilmemiştir. HB’nin rotayı kontrol etmesi için kesin giriş noktası ve adresi belirtin.",
+    "emptyNote": "Tabloda seçilen liman çifti için seçenek yoktur. Rota ve navlunu sorgulamak için yük bilgilerini ve çıkış tarihini gönderin.",
+    "collapse": "Daha az seçenek göster",
+    "more": "Diğer referansları göster",
+    "bottom": "LCL, hava kargo veya vergileri ödenmiş teslimat mı gerekiyor?",
+    "bottomNote": "HB bunları yük, tarih ve adrese göre ayrı fiyatlandırır. DDNZ üretim ve ihracatı koordine eder; HB taşımayı anlaşılan kapsamda yürütür.",
+    "send": "Yük ve teslimat gereksinimlerini gönderin",
+    "original": "Diğer taşıma türleri ve varış işlemleri"
+  },
+  "extra": {
+    "direct": "Doğrudan",
+    "via": "Üzerinden",
+    "pendingTransit": "Aktarma teyit edilmeli",
+    "feeConditional": "Masraf teyit edilmeli",
+    "otherContainer": "Bu konteyner için teklif isteyin",
+    "terminalPending": "Terminal teyit edilmeli",
+    "sourceConditions": "Rezervasyondan önce rotaya özel serbest süreyi, ağırlık sınırlarını, onayları ve ek masrafları HB ile teyit edin.",
+    "cutoff": "Yük kabul kapanışı / çıkış"
+  },
+  "door": {
+    "title": "Çin’den DDP taşımacılığı | Vergileri ödenmiş teslimat değerlendirmesi | DDNZ Global",
+    "description": "Çin’den DDP veya DAP taşımayı yük, varış ve ithalatçıya göre değerlendirin. HB her sevkiyat için gümrükleme, vergiler, teslimat ve boşaltmayı teyit eder.",
+    "home": "Ana sayfa",
+    "freight": "Uluslararası taşımacılık",
+    "breadcrumb": "Vergileri ödenmiş teslimat",
+    "kicker": "Çin’den / teslimat değerlendirmesi",
+    "h1": "Çin’den DDP taşımacılığı. Sevkiyattan önce kapsamı belirleyin.",
+    "intro": "Taşıma, ithalat gümrüklemesi, gümrük vergileri, yerel vergiler ve son teslimatı aynı planda inceleyin. DDP’nin uygulanabilirliği ülke, yük, ithalatçı ve yerel uygulamaya bağlıdır. HB her sevkiyatı teyit etmelidir.",
+    "cta": "Teslimat gereksinimlerimi değerlendirin",
+    "compare": "Teslimat seçeneklerini karşılaştırın",
+    "alt": "Çin’den sevk edilmek üzere yüklenen mallar",
+    "caption": "Çıkış noktasındaki yükleme kaydıdır. Hazırlığı gösterir; bu sevkiyatın DDP ile yapıldığını veya ithalat gümrüklemesinin tamamlandığını kanıtlamaz.",
+    "deliveryHeading": "Adrese teslim, vergilerin otomatik olarak dahil olduğu anlamına gelmez.",
+    "allocation": "Ticari kurallar satıcı ile alıcının sorumluluklarını ayırır. HB’nin hizmet kapsamı, mutabık kalınan plan ve teklifte ayrıca belirlenir.",
+    "cards": [
+      [
+        "DDP · Gümrük vergileri ödenmiş teslim",
+        "Satıcı, kararlaştırılan yere kadar taşıma, ithalat gümrüklemesi ve uygulanabilir vergi ve harçları üstlenir. Teslim genellikle varan taşıt üzerinde, alıcının boşaltmasına hazır şekilde yapılır. Boşaltmayı ayrıca kararlaştırın."
+      ],
+      [
+        "DAP · Belirlenen yerde teslim",
+        "Satıcı, yükü kararlaştırılan yere, varan taşıttan boşaltılmaya hazır halde getirir. İthalat gümrüklemesi ile gümrük ve yerel vergileri genellikle alıcı üstlenir."
+      ],
+      [
+        "Diğer adrese teslim düzenlemeleri",
+        "Taşıma, gümrük müşavirliği ve son teslimat ayrı görevlendirilebilir. “Adrese teslim” DDP demek değildir; vergi, muayene veya diğer masrafların dahil olduğunu teyit etmez."
+      ]
+    ],
+    "rule": "Incoterms® sürümünü, belirlenen yeri ve sözleşme koşullarını yazın. Kaynak: ICC Academy · DAP ve DDP.",
+    "costsHeading": "Her aşamanın dahil ve hariç kalemlerini kontrol edin.",
+    "costs": [
+      [
+        "Çıkış ve ana taşıma",
+        "Teslim alma, konsolidasyon, ihracat beyanı, elleçleme ve deniz, hava, demir veya karayolu ayağı. Her kalemin para birimi ve ücretlendirme esasını teyit edin."
+      ],
+      [
+        "İthalat ve vergiler",
+        "HS kodu, değer, yetkili ithalatçı, gümrükleme, gümrük vergileri, yerel vergiler ve ödeme belgelerini kontrol edin. Muayene ve depolama ayrıca belirtilmelidir."
+      ],
+      [
+        "Teslimat ve kabul",
+        "Adres, posta kodu, randevu, uzak bölge, araç erişimi, boşaltma ve teslim belgesi. Ek ücretleri ve istisna işlemlerini önceden kararlaştırın."
+      ]
+    ],
+    "reference": "Ülke sayfalarındaki FCL tutarları, deniz navlunu ve listelenen masraflar için 2026 4. çeyrek referansıdır. Bunlardan toplam DDP fiyatı hesaplanamaz. LCL, hava kargo ve DDP sevkiyata özel teklif gerektirir.",
+    "prepHeading": "Bildiklerinizi paylaşın; diğer bilgileri teyide bırakın.",
+    "prepText": "Ürün ve kullanım, biliniyorsa HS kodu, değer ve para birimi, koli, ambalaj, brüt ağırlık, hacim, pil veya sıvılar, planlanan tarih ve Çin’deki teslim alma noktası. Ülke, şehir, posta kodu, adres, ithalatçı, vergi belgeleri, randevu ve boşaltma imkanlarını ekleyin.",
+    "steps": [
+      "HB yük kabulünü, rotayı ve yerel ithalat düzenini kontrol eder.",
+      "Taşıma, gümrükleme, vergiler, teslimat ve hariç kalemleri ayrı teyit edin.",
+      "İthalatçı, teslim noktası, sorumluluk geçişi ve ödemede anlaşın.",
+      "Beyanları, vergi ödeme belgelerini ve teslim kanıtını saklayın."
+    ],
+    "rolesHeading": "DDNZ üretim ve ihracatı koordine eder; HB taşımayı yürütür.",
+    "rolesText": "Heaven Born (HB), uluslararası taşımayı anlaşılan kapsamda yürütür. Gümrükleme, vergi işlemleri ve teslimat ülke ve yüke göre teyit edilmelidir; tüm ülkeleri kapsayan bir hizmet taahhüdü yoktur.",
+    "services": [
+      "Deniz FCL",
+      "LCL konsolidasyon",
+      "Hava kargo",
+      "Amazon FBA"
+    ],
+    "supportHeading": "Varış ile adresiniz arasında hangi işlemler var?",
+    "supportText": "Ana taşıma ücreti, vergileri ödenmiş adrese teslim fiyatını belirlemez. HB, yük ve adrese göre gümrükleme, vergiler, liman veya sınır masrafları, teslimat ve boşaltmayı teyit etmelidir.",
+    "supportCompare": "DDP, DAP ve teslimat kapsamını karşılaştırın",
+    "fees": [
+      "Terminal elleçleme (THC)",
+      "Mühür",
+      "Ekipman değişimi",
+      "Belgelendirme",
+      "Teleks teslim",
+      "Liman güvenliği",
+      "AMS bildirimi",
+      "DHC (kapsam teyit edilmeli)",
+      "Rezervasyon",
+      "Sıkışıklık",
+      "DDC (kapsam teyit edilmeli)",
+      "Elektronik veri değişimi",
+      "Elektronik çeki listesi",
+      "ENS (kapsam teyit edilmeli)",
+      "TANK (kapsam teyit edilmeli)",
+      "VGM bildirimi"
+    ]
+  },
+  "form": {
+    "fields": [
+      "Talep edilen teslimat düzeni",
+      "Varış posta kodu",
+      "Teslimat adresi / şehir",
+      "Yük değeri",
+      "Değerin para birimi",
+      "HS kodu (biliniyorsa)",
+      "İthalatçıyı kim sağlayacak?",
+      "Vergi ödeme belgesi",
+      "Boşaltma düzenlemesi"
+    ],
+    "checkbox": "Gümrükleme, vergiler veya adrese teslimi değerlendirin (isteğe bağlı)",
+    "help": "Boş alanlar “Teyit edilecek” olarak iletilir. Bunlar sizin gereksinimlerinizdir; HB’nin kapasitesini veya dahil masrafları teyit etmez.",
+    "unknown": "Teyit edilecek",
+    "placeholder": "İsteğe bağlı; daha sonra teyit edilebilir",
+    "header": "Adrese teslim değerlendirmesi (müşteri gereksinimleri, teyit edilmiş kapsam değil)",
+    "edit": "Teslimat gereksinimlerini düzenle",
+    "options": [
+      [
+        "DDP",
+        "DAP",
+        "Seçenekleri karşılaştır"
+      ],
+      [
+        "USD",
+        "CNY",
+        "Diğer (notlarda belirtin)"
+      ],
+      [
+        "Alıcı ithalatçıyı organize edebilir",
+        "Satıcı ithalatçıyı organize edebilir",
+        "İthalatçı düzenini değerlendirmem gerekiyor"
+      ],
+      [
+        "Gerekli",
+        "Talep edilmedi"
+      ],
+      [
+        "Alıcı boşaltabilir",
+        "Boşaltma düzenini değerlendirmem gerekiyor"
+      ]
+    ]
+  }
+}

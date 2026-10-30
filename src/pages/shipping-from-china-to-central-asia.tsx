@@ -1,3 +1,5 @@
+import RussiaOverlayHero from '../features/freight/RussiaOverlayHero';
+import CountryRegionalReference from '../features/freight/CountryRegionalReference';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
@@ -847,6 +849,12 @@ export default function ShippingCentralAsia() {
 
       <main>
 
+        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
+          {!isLocked && <nav aria-label={corridorUi.selectDestination}><span>{corridorUi.selectDestination}</span><div>{EURASIA_COUNTRIES.map(country => <button key={country} type="button" aria-current={country === selectedCountry ? 'page' : undefined} onClick={()=>handleCountryTabChange(country)}>{countryLabel(country)}</button>)}</div></nav>}
+          <h2>{corridorUi.routeBasis} · {corridor.name}</h2>
+          <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
+          <p className="russia-overlay-facts__note">{corridorUi.quoteConfirmed}</p>
+        </RussiaOverlayHero> : <>
         <section className="relative min-h-[660px] flex items-center overflow-hidden border-b border-white/[0.08]">
           <img
             src="/images/operations/china-eurasia-rail-border-hero-v1.webp"
@@ -919,234 +927,22 @@ export default function ShippingCentralAsia() {
           </div>
         </section>
 
+        </>}
+
         {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
-        <MarketSourcingHandoff destination={countryLabel(selectedCountry)} />
+        <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
-        <FreightRouteMap variant={selectedCountry === 'uzbekistan' ? 'uzbekistan' : 'central-asia'} />
+        {selectedCountry === 'uzbekistan' && <FreightRouteMap variant="uzbekistan" />}
+        <CountryRegionalReference locale={activeLang} region="central-asia" />
 
-        <section className="border-b border-white/[0.08] bg-[#081e39]/45 py-14 md:py-20" aria-labelledby="eurasia-destinations-title">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="max-w-3xl">
-              <h2 id="eurasia-destinations-title" className="text-3xl font-black tracking-[-0.04em] text-white md:text-4xl">{corridorUi.destinationMatrix}</h2>
-              <p className="mt-4 max-w-[65ch] text-sm leading-relaxed text-slate-300 md:text-base">{corridorUi.destinationMatrixIntro}</p>
-            </div>
-            <div className="mt-10 grid border-t border-white/[0.14] md:grid-cols-2">
-              {EURASIA_COUNTRIES.map((country, index) => {
-                const item = localizedCorridorProfile(country, activeLang);
-                const isActive = country === selectedCountry;
-                return (
-                  <button
-                    key={country}
-                    type="button"
-                    onClick={() => handleCountryTabChange(country)}
-                    className={`group grid min-h-32 grid-cols-[minmax(0,1fr)_auto] gap-6 border-b border-white/[0.12] px-1 py-6 text-left transition-colors md:px-6 ${index % 2 === 0 ? 'md:border-r' : ''} ${isActive ? 'bg-[#c94f2f]/12' : 'hover:bg-white/[0.035]'}`}
-                  >
-                    <span>
-                      <span className={`block text-lg font-black ${isActive ? 'text-[#f2a47f]' : 'text-white'}`}>{item.name}</span>
-                      <span className="mt-2 block text-xs leading-relaxed text-slate-400">{item.gateway}</span>
-                    </span>
-                    <span className="flex flex-col items-end justify-between text-right">
-                      <span className="font-mono text-xs font-bold text-slate-200">{routeDepthPreview && country==='uzbekistan' ? routePlanningUi(activeLang)[3] : item.transitDays}</span>
-                      <ArrowUpRight className={`h-4 w-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 ${isActive ? 'text-[#f2a47f]' : 'text-slate-500'}`} aria-hidden="true" />
-                    </span>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
+        <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8">
+          <details><summary className="flex min-h-11 cursor-pointer items-center justify-between gap-4 text-xl font-bold">{corridorUi.modesTitle}<span aria-hidden="true">▾</span></summary>
+            <div className="mt-5 grid gap-5 md:grid-cols-2">{spec.multimodalTable?.map((row:any) => <article key={row.mode} className="border-t border-slate-300 py-4">
+              <h3 className="font-bold">{row.mode}</h3><p className="mt-3 leading-7">{row.suitability}</p><p className="mt-2 leading-7">{row.sellingPoint}</p><p className="mt-2 leading-7">{row.warning}</p>
+              <button type="button" className="mt-3 min-h-11 font-bold underline" onClick={()=>{document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'});trackEvent('lead_table_cta_click',{mode:row.mode,selectedCountry});}}>{corridorUi.requestMode} ↗</button>
+            </article>)}</div>
+          </details>
         </section>
-
-        <section className="border-b border-white/[0.08] bg-[#081E39] py-16 md:py-24" aria-labelledby="eurasia-delay-title">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,.95fr)] lg:items-end">
-              <div className="max-w-3xl">
-                <p className="text-xs font-black uppercase tracking-[0.14em] text-[#f2a47f]">{delayDiagnostic.scope}</p>
-                <h2 id="eurasia-delay-title" className="mt-4 text-3xl font-black leading-[1.05] tracking-[-0.045em] text-white md:text-5xl">{routeDepthPreview ? routePlanningUi(activeLang)[4] : delayDiagnostic.title}</h2>
-                <p className="mt-5 max-w-[66ch] text-sm font-medium leading-relaxed text-slate-300 md:text-base">{delayDiagnostic.intro}</p>
-              </div>
-              <div className="border-y border-white/[0.14] font-mono text-xs font-bold">
-                <div className="grid grid-cols-[32px_1fr] gap-3 border-b border-white/[0.12] py-4 text-emerald-300">
-                  <CheckCircle2 className="h-4 w-4" aria-hidden="true" />
-                  <span>{delayDiagnostic.faster}</span>
-                </div>
-                <div className="grid grid-cols-[32px_1fr] gap-3 py-4 text-[#f2a47f]">
-                  <AlertTriangle className="h-4 w-4" aria-hidden="true" />
-                  <span>{delayDiagnostic.slower}</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="mt-12 border-t border-white/[0.16]">
-              {delayDiagnostic.items.map((item, index) => {
-                const DiagnosticIcon = [Scale, TrainFront, FileText, ShieldCheck, Globe][index] || Route;
-                return (
-                  <article key={item.title} className="grid gap-4 border-b border-white/[0.12] py-7 md:grid-cols-[48px_minmax(200px,.65fr)_minmax(0,1.35fr)] md:gap-7">
-                    <DiagnosticIcon className="h-5 w-5 text-[#f2a47f]" aria-hidden="true" />
-                    <h3 className="text-base font-black text-white md:text-lg">{item.title}</h3>
-                    <div>
-                      <p className="text-sm font-medium leading-relaxed text-slate-300">{item.body}</p>
-                      <p className="mt-3 border-l-2 border-[#c94f2f] pl-3 text-xs font-bold leading-relaxed text-slate-400">{item.check}</p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-
-            <div className="mt-12 bg-[#c94f2f] p-6 text-white md:p-8">
-              <h3 className="max-w-3xl text-xl font-black tracking-[-0.025em] md:text-2xl">{delayDiagnostic.questionsTitle}</h3>
-              <div className="mt-7 grid border-t border-white/35 md:grid-cols-3">
-                {delayDiagnostic.questions.map((question, index) => (
-                  <p key={question} className={`py-5 text-sm font-bold leading-relaxed md:px-6 ${index > 0 ? 'border-t border-white/35 md:border-l md:border-t-0' : ''}`}>{question}</p>
-                ))}
-              </div>
-              <p className="border-t border-white/35 pt-5 text-xs font-semibold leading-relaxed text-orange-50">{delayDiagnostic.closing}</p>
-            </div>
-          </div>
-        </section>
-
-        <section className="border-b border-white/[0.08] py-12" aria-labelledby="eurasia-evidence-title">
-          <div className="mx-auto grid max-w-7xl gap-8 px-4 sm:px-6 lg:grid-cols-[minmax(250px,.7fr)_minmax(0,1.3fr)] lg:px-8">
-            <div>
-              <h2 id="eurasia-evidence-title" className="text-2xl font-black tracking-[-0.035em] text-white">{routeDepthPreview ? routePlanningUi(activeLang)[5] : corridorUi.routeEvidence}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{corridorUi.routeEvidenceBody}</p>
-            </div>
-            <div className="divide-y divide-white/[0.12] border-y border-white/[0.12]">
-              {[
-                { label: corridorUi.sourceEaeu, href: 'https://eec.eaeunion.org/en/news/01-01-2015-1/' },
-                { label: corridorUi.sourceTir, href: 'https://unece.org/es/node/350813' },
-                { label: delayDiagnostic.sourceCarec, href: 'https://cpmm.carecprogram.org/2023-report/kazakhstan/' },
-                { label: delayDiagnostic.sourceKazakhstanCustoms, href: 'https://www.gov.kz/services/3635?lang=en' },
-                { label: delayDiagnostic.sourceUzbekistanCustoms, href: 'https://sw2.customs.uz/?lang=en_EN' },
-                { label: corridorUi.sourceRussia, href: 'https://www.bis.gov/licensing/country-guidance' },
-              ].map((source) => (
-                <a key={source.href} href={source.href} target="_blank" rel="noreferrer" className="group flex min-h-14 items-center justify-between gap-4 py-3 text-sm font-bold text-slate-200 transition-colors hover:text-[#f2a47f]">
-                  <span>{source.label}</span>
-                  <ArrowUpRight className="h-4 w-4 text-slate-500 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-[#f2a47f]" aria-hidden="true" />
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 2.5: Interactive Lead-Generation Table (核心时效透视数据表) */}
-        {!routeDepthPreview && <section className="py-16 border-b border-white/[0.05]">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 max-w-3xl">
-              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{corridorUi.modesTitle}</h2>
-              <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{corridorUi.modesIntro}</p>
-            </div>
-
-            {/* Interactive Grid & Detail Card */}
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-
-              {/* Left Column: The Menu of Transport Options */}
-              <div className="lg:col-span-5 space-y-3">
-                {spec.multimodalTable && spec.multimodalTable.map((row: any, idx: number) => {
-                  const isSelected = activeTransportMode === idx;
-                  return (
-                    <button
-                      key={idx}
-                      type="button"
-                      onClick={() => setActiveTransportMode(idx)}
-                      className={`w-full p-5 rounded-2xl text-left border transition-all duration-300 flex items-center justify-between ${
-                        isSelected
-                          ? 'bg-gradient-to-r from-[#763c9c] to-[#c94f2f]/35 text-white border-[#c94f2f]/30 shadow-xl translate-x-1'
-                          : 'bg-white/[0.02] text-slate-300 border-white/[0.08] hover:border-white/[0.15] hover:bg-white/[0.04]'
-                      }`}
-                    >
-                      <div className="flex items-center gap-3">
-                        {(() => {
-                          const ModeIcon = transportIcons[idx] || Package;
-                          return <ModeIcon className="w-5 h-5 text-sky-300 shrink-0" aria-hidden="true" />;
-                        })()}
-                        <div>
-                          <h4 className="text-sm font-black tracking-tight text-white">{row.mode}</h4>
-                          <span className={`text-[10px] font-bold uppercase ${isSelected ? 'text-sky-100' : 'text-slate-500'}`}>{corridorUi.planningWindow}</span>
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <span className="font-mono text-base font-bold text-white">
-                          {row.days}
-                        </span>
-                      </div>
-                    </button>
-                  );
-                })}
-              </div>
-
-              {/* Right Column: Detailed Blueprint & Diagnostic Card */}
-              <div className="lg:col-span-7">
-                {spec.multimodalTable && spec.multimodalTable[activeTransportMode] && (
-                  <div className="bg-white/[0.02] backdrop-blur-md rounded-3xl p-6 md:p-8 border border-white/[0.08] shadow-lg relative overflow-hidden min-h-[380px] flex flex-col justify-between">
-                    <div className="relative z-10 space-y-6">
-                      <div>
-                        <span className="text-[10px] font-black uppercase tracking-wider text-[#f2a47f]">{corridorUi.routeDetail}</span>
-                        <h3 className="text-xl md:text-2xl font-black text-white mt-2">
-                          {spec.multimodalTable[activeTransportMode].mode}
-                        </h3>
-                        <p className="text-[#F2A47F] text-sm font-black mt-1 inline-flex items-center gap-1.5">
-                          <Timer className="w-4 h-4" aria-hidden="true" />{corridorUi.planningWindow}: <span className="font-mono text-base font-bold text-white">{spec.multimodalTable[activeTransportMode].days}</span>
-                        </p>
-                      </div>
-
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
-                        <div>
-                          <h5 className="text-xs font-black text-slate-400 uppercase tracking-widest mb-1.5 inline-flex items-center gap-1.5">
-                            <Target className="w-3.5 h-3.5 text-sky-300" aria-hidden="true" />{corridorUi.bestFor}
-                          </h5>
-                          <p className="text-xs text-slate-300 leading-relaxed font-semibold">
-                            {spec.multimodalTable[activeTransportMode].suitability}
-                          </p>
-                        </div>
-                        <div>
-                          <h5 className="text-xs font-black text-[#F2A47F] uppercase tracking-widest mb-1.5 inline-flex items-center gap-1.5">
-                            <Lightbulb className="w-3.5 h-3.5" aria-hidden="true" />{corridorUi.operatingPoint}
-                          </h5>
-                          <p className="text-xs text-slate-300 leading-relaxed font-semibold">
-                            {spec.multimodalTable[activeTransportMode].sellingPoint}
-                          </p>
-                        </div>
-                      </div>
-
-                      <div className="p-4 bg-rose-950/20 rounded-2xl border border-rose-900/30 flex items-start gap-3">
-                        <ShieldAlert className="w-5 h-5 text-rose-500 shrink-0 mt-0.5" />
-                        <div>
-                          <h5 className="text-xs font-black text-rose-200 uppercase tracking-wider mb-0.5">
-                            {corridorUi.riskControl}
-                          </h5>
-                          <p className="text-[11px] text-slate-400 leading-relaxed font-medium">
-                            {spec.multimodalTable[activeTransportMode].warning}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="pt-6 border-t border-white/[0.05] flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
-                      <span className="text-xs text-slate-400 font-bold">
-                        {corridorUi.quoteConfirmed}
-                      </span>
-                      <button
-                        type="button"
-                        onClick={() => {
-                          const targetForm = document.getElementById('central-asia-quote-form');
-                          if (targetForm) {
-                            targetForm.scrollIntoView({ behavior: 'smooth' });
-                            trackEvent('lead_table_cta_click', { mode: spec.multimodalTable[activeTransportMode].mode, selectedCountry });
-                          }
-                        }}
-                        className="px-5 py-2.5 bg-gradient-to-r from-[#763c9c] to-[#c94f2f] hover:opacity-90 text-white text-xs font-black tracking-widest uppercase rounded-xl flex items-center gap-1.5 shadow-md shadow-sky-950/30 active:scale-95 transition-all self-start sm:self-center"
-                      >
-                        <span>{corridorUi.requestMode}</span>
-                        <ArrowUpRight className="w-3.5 h-3.5" />
-                      </button>
-                    </div>
-                  </div>
-                )}
-              </div>
-
-            </div>
-          </div>
-        </section>}
 
         {selectedCountry === 'uzbekistan' && (
           <section id="uzbekistan-road-loading-case" className="scroll-mt-24 border-b border-[#cfd6dc] bg-[#f3f1eb] py-16 text-[#10243f] md:py-24" aria-labelledby="uzbekistan-road-case-title">
@@ -1355,7 +1151,7 @@ export default function ShippingCentralAsia() {
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12 max-w-3xl">
-              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{spec.solutionsTitle}</h2>
+              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{activeLang === 'en' ? `Documents and shipment checks for ${countryLabel(selectedCountry)}` : spec.solutionsTitle}</h2>
               <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{spec.solutionsSubtitle}</p>
             </div>
 
@@ -1373,26 +1169,6 @@ export default function ShippingCentralAsia() {
                       {item.desc}
                     </p>
                   </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section 4: Universal Avoid-Pitfall / Operation Redlines (Persistent Bottom Section) */}
-        <section className="py-16 md:py-24 border-b border-white/[0.05] bg-transparent">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="mb-12 max-w-3xl">
-              <h2 className="text-3xl font-black leading-tight tracking-[-0.04em] text-white md:text-4xl">{redlines.title}</h2>
-              <p className="mt-4 max-w-[65ch] text-sm font-medium leading-relaxed text-slate-400 md:text-base">{redlines.subtitle}</p>
-            </div>
-
-            <div className="border-y border-white/[0.12]">
-              {redlines.items.map((item) => (
-                <article key={item.id} className="grid gap-4 border-b border-white/[0.12] py-7 last:border-b-0 md:grid-cols-[52px_minmax(220px,.7fr)_minmax(0,1.3fr)] md:items-start md:gap-7">
-                  <ShieldAlert className="h-6 w-6 text-[#c94f2f]" aria-hidden="true" />
-                  <h3 className="text-base font-black text-white md:text-lg">{item.title}</h3>
-                  <p className="text-sm font-medium leading-relaxed text-slate-400">{item.desc}</p>
                 </article>
               ))}
             </div>

@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import ptCopy from './locales/modern-pt.json';
 import trCopy from './locales/modern-tr.json';
 import type { Language } from '../../i18n/translations';
@@ -262,5 +263,5 @@ export default function ModernFreightServiceContent({ path, language }: { path: 
     </div></section>
 
     <section className="freight-wrap freight-section freight-close" id="rfq-form-section"><p className="freight-kicker">{s.closeKicker}</p><h2>{c.close}</h2><p>{c.intro}</p><a className="freight-cta" href={quote}>{s.primary} ↗</a><small>{s.signature}</small></section>
-  </main>;
+  <DoorDeliveryLink locale={locale} context={path}/></main>;
 }

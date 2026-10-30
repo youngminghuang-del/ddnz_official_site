@@ -1,3 +1,4 @@
+import { freightRoles } from '../features/freight/freightRoles';
 import { ClipboardCheck, PackageCheck, Ship } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -21,7 +22,7 @@ const copy: Record<Language, MarketHandoffCopy> = {
     title: 'A destination route starts before cargo reaches the port.',
     intro: 'Market delivery is only reliable when the released product, cartons, documents and cargo data still match the buying brief. This checkpoint connects DDNZ origin control with Heaven Born freight execution.',
     roles: [
-      { label: 'DDNZ · Product release', title: 'Order evidence is closed first', body: 'Approved model, quantity, packing, labels and open exceptions are recorded before the goods move forward.' },
+      { label: 'DDNZ · Product release', title: 'Confirm the order before release', body: 'Approved model, quantity, packing, labels and open exceptions are recorded before the goods move forward.' },
       { label: 'DDNZ · Export handoff', title: 'Cargo and documents are reconciled', body: 'Supplier deliveries, carton data and shipment documents are matched to the approved order scope.' },
       { label: 'Heaven Born · Freight execution', title: 'The confirmed route is then executed', body: 'Booking, loading and international freight are handled by Heaven Born when included in the confirmed scope.' },
     ],
@@ -34,7 +35,7 @@ const copy: Record<Language, MarketHandoffCopy> = {
     title: '目的国线路在货物到港之前就已经开始。',
     intro: '只有放行产品、纸箱、单证与货物数据仍与采购需求一致，目的国交付才可控。本节点把 DDNZ 的中国源头管控与 Heaven Born 的货运执行连接起来。',
     roles: [
-      { label: 'DDNZ · 产品放行', title: '先关闭订单证据', body: '货物进入下一环节前，记录已确认型号、数量、包装、标签与未关闭异常。' },
+      { label: 'DDNZ · 产品放行', title: '先确认订单与待处理问题', body: '货物进入下一环节前，记录已确认型号、数量、包装、标签与未关闭异常。' },
       { label: 'DDNZ · 出口交接', title: '核对货物与单证', body: '把供应商送货、箱数数据及出货单证与已确认订单范围逐项匹配。' },
       { label: 'Heaven Born · 货运执行', title: '再执行已确认线路', body: '如已纳入确认服务范围，由 Heaven Born 执行订舱、装载与国际运输。' },
     ],
@@ -127,7 +128,7 @@ const evidenceAlt: Record<Language, string> = {
 };
 const icons = [ClipboardCheck, PackageCheck, Ship];
 
-export default function MarketSourcingHandoff({ destination }: { destination?: string }) {
+export default function MarketSourcingHandoff({ destination, compact = false }: { destination?: string; compact?: boolean }) {
   const { language } = useLanguage();
   const content = copy[language];
   const quoteHref = buildQuoteHref({
@@ -136,6 +137,14 @@ export default function MarketSourcingHandoff({ destination }: { destination?: s
     source: 'market_sourcing_handoff',
     destination,
   });
+
+  if (compact) return <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-12 sm:px-6 lg:px-8" data-country-handoff>
+    <div className="grid gap-6 md:grid-cols-[1fr_240px] md:items-center">
+      <div><h2 className="text-2xl font-bold">{freightRoles[language].badge}</h2><p className="mt-4 max-w-3xl leading-7">{freightRoles[language].description}</p>
+      <Link className="mt-3 inline-flex min-h-11 items-center font-bold underline" to={`${prefix[language]}/how-we-work`}>{content.processLink} ↗</Link></div>
+      <figure><img src="/media/process/export-loading-poster.webp" alt={content.evidence} width="800" height="600" loading="lazy" className="aspect-[4/3] w-full object-cover"/><figcaption className="mt-2 text-xs leading-5">{content.evidence}</figcaption></figure>
+    </div>
+  </section>;
 
   return (
     <section className="border-y border-slate-200 bg-[#fbfaf7] py-16 text-[var(--ddnz-ink)] sm:py-20">

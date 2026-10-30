@@ -1,3 +1,5 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
+import EurasiaRegionalGuide from './EurasiaRegionalGuide';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import { useState } from 'react';
@@ -70,7 +72,7 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{overview.region}</p><h1>{headline[locale]}</h1><p className="freight-intro">{c.intro}</p>
-    </div></header>
+    </div></header><DoorDeliveryLink locale={locale} context="central-asia"/>
     <section className="freight-wrap freight-section" aria-labelledby="route-builder-heading"><p className="freight-kicker">{c.select}</p><h2 id="route-builder-heading" className="mt-4">{c.select}</h2>
       <div className="freight-central-selector">
         <label>{c.country}<select value={country} onChange={event => setCountry(event.target.value)}><option value="">{c.prompt}</option>{destinations.map(item => <option key={item.slug} value={item.slug}>{names.of(item.iso)}</option>)}</select></label>
@@ -89,5 +91,5 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
       <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
-  <FreightRelatedLinks region="central-asia" locale={locale}/></main>;
+  <EurasiaRegionalGuide locale={locale}/><FreightRelatedLinks region="central-asia" locale={locale}/></main>;
 }

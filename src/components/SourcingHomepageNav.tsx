@@ -1,3 +1,4 @@
+import { freightRoles } from '../features/freight/freightRoles';
 import DdnzBrand from './DdnzBrand';
 import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
 import ProductDirectoryMenu from './ProductDirectoryMenu';
@@ -597,7 +598,7 @@ export default function SourcingHomepageNav({
       {showFreightExecutor ? (
         <div
           className="relative overflow-hidden border-t border-white/10 bg-[var(--ddnz-ink)] text-white"
-          aria-label={freightExecutor.desktop}
+          aria-label={freightRoles[language].badge}
         >
           <div className="absolute inset-x-0 top-0 h-px bg-[linear-gradient(90deg,var(--ddnz-purple),var(--ddnz-coral))]" aria-hidden="true" />
           <div className="mx-auto flex min-h-9 max-w-[1536px] items-center justify-center gap-2.5 px-5 py-1.5 text-center sm:px-8 lg:px-12">
@@ -611,8 +612,8 @@ export default function SourcingHomepageNav({
               />
             </span>
             <span className="text-[11px] font-semibold leading-4 tracking-[0.025em] text-slate-200 sm:text-xs">
-              <span className="md:hidden">{freightExecutor.mobile}</span>
-              <span className="hidden md:inline">{freightExecutor.desktop}</span>
+              <span className="md:hidden">{freightRoles[language].badge}</span>
+              <span className="hidden md:inline">{freightRoles[language].badge}</span>
             </span>
           </div>
         </div>
