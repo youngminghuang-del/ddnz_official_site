@@ -4,6 +4,6 @@ export function freightQuoteService(source: string | null, preset?: FreightQuote
   if (preset) return preset;
   if (source === 'air_freight') return 'Air';
   if (source === 'warehouse_services') return 'Warehouse';
-  if (source === 'central_asia_route_builder') return 'Land';
+  if (source === 'central_asia_route_builder' || source === 'land_door_delivery') return 'Land';
   return 'Sea';
 }

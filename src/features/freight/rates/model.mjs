@@ -1,9 +1,10 @@
-export const sampleCountries = ['ghana','uae','brazil','bangladesh','peru'];
-export const sampleRegions = ['west-africa','latin-america'];
+export const sampleCountries = ['ghana','nigeria','saudi-arabia','uae','kuwait','qatar','oman','bahrain','india','pakistan','bangladesh','mexico','brazil','argentina','peru','chile'];
+export const sampleRegions = ['middle-east','west-africa','latin-america'];
 export const countryNames = {ghana:'加纳',nigeria:'尼日利亚',uae:'阿联酋',brazil:'巴西',bangladesh:'孟加拉',peru:'秘鲁',mexico:'墨西哥',argentina:'阿根廷',chile:'智利'};
-export const regionCountries = {'west-africa':['ghana','nigeria'],'latin-america':['mexico','brazil','argentina','peru','chile']};
+Object.assign(countryNames,{'saudi-arabia':'沙特',kuwait:'科威特',qatar:'卡塔尔',oman:'阿曼',bahrain:'巴林',india:'印度',pakistan:'巴基斯坦'});
+export const regionCountries = {'middle-east':['saudi-arabia','uae','kuwait','qatar','oman','bahrain'],'west-africa':['ghana','nigeria'],'latin-america':['mexico','brazil','argentina','peru','chile']};
 export const portNames = {TEMA:'特马',TAKORADI:'塔科拉迪',APAPA:'阿帕帕',TINCAN:'廷坎','JEBEL ALI':'杰贝阿里',KHALIFA:'哈利法',SANTOS:'桑托斯',CHATTOGRAM:'吉大港',MONGLA:'蒙格拉',CALLAO:'卡亚俄',CHANCAY:'钱凯','MANZANILLO,MEXICO':'曼萨尼约','LAZARO CARDENAS':'拉萨罗卡德纳斯','BUENOS AIRES':'布宜诺斯艾利斯','SAN ANTONIO,CL':'圣安东尼奥','VALPARAISO,CL':'瓦尔帕莱索'};
-Object.assign(portNames,{PARANAGUA:'Paranaguá',ITAJAI:'Itajaí',NAVEGANTES:'Navegantes',SUAPE:'Suape','RIO DE JANEIRO':'Rio de Janeiro'});
+Object.assign(portNames,{JEDDAH:'吉达',SHUWAIKH:'舒韦赫',HAMAD:'哈马德',SOHAR:'苏哈尔',BAHRAIN:'巴林（码头待确认）','NHAVA SHEVA':'那瓦舍瓦',KARACHI:'卡拉奇',PARANAGUA:'Paranaguá',ITAJAI:'Itajaí',NAVEGANTES:'Navegantes',SUAPE:'Suape','RIO DE JANEIRO':'Rio de Janeiro'});
 export const originNames = {NANSHA:'南沙',HUANGPU:'黄埔',SHEKOU:'蛇口',YANTIAN:'深圳·盐田',NINGBO:'宁波',SHANGHAI:'上海'};
 export const additionalOrigins=['YANTIAN','NINGBO','SHANGHAI'];
 // 10% gross margin is revenue less cost, divided by revenue, not a 10% markup.

@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import EurasiaRegionalGuide from './EurasiaRegionalGuide';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
@@ -71,7 +72,7 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{overview.region}</p><h1>{headline[locale]}</h1><p className="freight-intro">{c.intro}</p>
-    </div></header>
+    </div></header><DoorDeliveryLink locale={locale} context="central-asia"/>
     <section className="freight-wrap freight-section" aria-labelledby="route-builder-heading"><p className="freight-kicker">{c.select}</p><h2 id="route-builder-heading" className="mt-4">{c.select}</h2>
       <div className="freight-central-selector">
         <label>{c.country}<select value={country} onChange={event => setCountry(event.target.value)}><option value="">{c.prompt}</option>{destinations.map(item => <option key={item.slug} value={item.slug}>{names.of(item.iso)}</option>)}</select></label>

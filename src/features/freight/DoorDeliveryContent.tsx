@@ -1,0 +1,29 @@
+import {countryNames,regionCountries} from './rates/model.mjs';
+import {quoteLinkProps} from '../../lib/quoteLinkPolicy.mjs';
+export const ddpPath='services/ddp-shipping-from-china';
+export const ddpMetadata={title:'中国出口含税清关到门服务｜DDP方案评估 | DDNZ Global',desc:'从中国出口货物，按目的国、货类和收货地址评估含税清关到门方案。核对进口主体、关税与当地税费、清关、派送及卸货责任；由HB按货询价。'};
+const landLabels:Record<string,string>={russia:'俄罗斯',kazakhstan:'哈萨克斯坦',kyrgyzstan:'吉尔吉斯斯坦',uzbekistan:'乌兹别克斯坦',tajikistan:'塔吉克斯坦',turkmenistan:'土库曼斯坦','central-asia':'中亚'};
+const deliveryLabels:Record<string,string>={...countryNames,...landLabels,'middle-east':'中东','west-africa':'西非','latin-america':'拉美','services/sea-freight':'整柜海运','services/lcl-shipping-from-china':'海运拼箱','services/air-freight':'空运','services/amazon-fba':'FBA入仓','services/warehouse-services':'仓储集货'};
+export function doorQuote(context='含税清关到门方案评估'){
+ const destination=countryNames[context]||landLabels[context]|| (regionCountries[context]?deliveryLabels[context]:'');
+ const label=deliveryLabels[context]||context;
+ const source=landLabels[context]?'land_door_delivery':context==='services/air-freight'?'air_freight':context==='services/warehouse-services'?'warehouse_services':'international_country';
+ return quoteLinkProps(`/zh-cn/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source,destinationText:destination,notes:`${label}。请分别核对DDP、DAP或其他交付方案的可承接范围。需要确认：目的国家/城市/邮编及地址、品名及用途、HS编码、货值与币种、件数/毛重/体积、是否含电池或受限品、预计出运日期、贸易条款、进口主体及资质、清关/税费/派送/卸货范围。`})}`);
+}
+export function DoorDeliveryLink({locale,context='国际运输'}:{locale:string;context?:string}){
+ if(locale!=='zh')return null;
+ return <aside className="ddp-support" data-door-delivery-support><div><p className="freight-kicker">交付范围 / 到门方案</p><h2>从中国发货，到收货地址还差哪些环节？</h2><p>主运输费用不等于含税到门总价。结合货物与地址，向 HB 确认进口清关、税费、目的港或口岸费用、派送及卸货责任。货运由华正邦泰（Heaven Born，HB）按约定范围执行。</p></div><div className="freight-links"><a href="/zh-cn/services/ddp-shipping-from-china/">比较 DDP、DAP 与到门范围 ↗</a><a {...doorQuote(context)}>提交货物与交付要求 ↗</a></div></aside>;
+}
+export default function DoorDeliveryContent(){
+ return <main id="main-content" className="freight-editorial freight-next ddp-page" lang="zh-CN">
+ <header className="freight-hero"><div className="freight-wrap freight-split"><div><nav aria-label="面包屑"><a href="/zh-cn/">首页</a> / <a href="/zh-cn/services/sea-freight/">国际货运服务</a> / 含税清关到门</nav><p className="freight-kicker">从中国出口 / 交付方案评估</p><h1>含税清关到门，<br/>先把责任和费用说清楚。</h1><p className="freight-intro">把中国端出运、进口清关、税费与末端派送放在同一份方案中核对。能否采用 DDP，取决于目的国、货类、进口主体和当地执行条件，由 HB 按实际货物确认。</p><div className="freight-links"><a className="freight-cta" {...doorQuote()}>评估我的到门需求 ↗</a><a href="#delivery-scope">先比较交付方式 ↓</a></div></div><figure><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt="中国端货物装车作业" fetchPriority="high"/><figcaption>中国端装车实拍。用于说明出运准备，不代表该票采用 DDP 或已完成进口清关。</figcaption></figure></div></header>
+ <section id="delivery-scope" className="freight-wrap freight-section"><p className="freight-kicker">01 / 交付方式</p><h2>到门，不一定包含进口税费。</h2><p className="freight-intro">贸易条款约定买卖双方责任；HB 的运输执行范围另以确认的服务方案和报价为准。</p><div className="ddp-options">
+ <article><h3>DDP · 完税后交货</h3><p>卖方承担约定目的地交付前的运输、进口清关及适用税费责任。交付通常为到达的运输工具上、可供买方卸货；卸货安排需另行约定。</p><p><strong>先核对：</strong>卖方能否在目的国办理进口、谁担任进口主体、税费与税票范围，以及具体交付地点。</p></article>
+ <article><h3>DAP · 目的地交货</h3><p>卖方将货物运至约定目的地，在到达运输工具上待卸货。进口清关和进口税费通常由买方负责。</p><p><strong>适合讨论：</strong>收货人具备当地进口能力，希望安排运输至指定地址的情形。</p></article>
+ <article><h3>其他到门运输安排</h3><p>可以将运输、清关代理及派送分项委托，但“送到门”本身不等于 DDP，也不自动包含关税、进口 VAT/GST 或查验费用。</p><p><strong>先核对：</strong>每一项费用的承担方、支付方式、执行方和报价排除项。</p></article></div>
+ <p className="ddp-rule">条款参考：<a href="https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/" target="_blank" rel="noreferrer">ICC Academy · DAP 与 DDP</a>。具体采用的 Incoterms® 版本、约定地点和合同条款应写入交易文件。</p></section>
+ <section className="freight-evidence"><div className="freight-wrap freight-section"><p className="freight-kicker">02 / 费用边界</p><h2>报价要看到每一段的包含与排除。</h2><div className="freight-steps"><article><h3>中国端与主运输</h3><p>提货、集货、出口申报、起运港或机场操作、海运/空运/铁路或公路费用，分别确认计费单位及币种。</p></article><article><h3>进口与税费</h3><p>按品名、HS编码、货值和进口条件核对关税、当地税、清关代理费及缴税凭证。查验、仓储等费用是否包含应单列。</p></article><article><h3>末端与签收</h3><p>核对港口或机场到地址的距离、邮编、预约、偏远地区、限行、卸货条件和签收凭证。异常费用与退件处理提前约定。</p></article></div><p className="ddp-rule">国家页 FCL 运价是2026年Q4主运费及列示杂费参考，不能折算成含税到门价。LCL、空运及 DDP 均按货询价。</p></div></section>
+ <section className="freight-wrap freight-section"><p className="freight-kicker">03 / 准备询价</p><h2>提供这些信息，才能判断是否适合含税到门。</h2><div className="ddp-brief"><div><h3>货物与出运</h3><p>品名、用途、HS编码（如已知）、货值及币种、包装件数、毛重与体积；电池、液体、食品等特殊属性，以及预计出运日期和中国提货地点。</p><h3>收货与进口</h3><p>国家、城市、邮编和完整地址；收货人是否具备进口资格、是否需要税费凭证；预约、叉车或卸货条件。</p></div><div><h3>确认后再选择交付方案</h3><ol><li>HB 核对货类、路线和当地进口执行条件。</li><li>逐项确认主运输、清关、税费、派送与排除项。</li><li>明确进口主体、交付点、责任转移及付款条件。</li><li>订舱后跟进节点，按方案留存申报、缴税和签收证据。</li></ol></div></div></section>
+ <section className="freight-evidence"><div className="freight-wrap freight-section"><h2>DDNZ 衔接制造与出口，HB 执行国际货运。</h2><p>DDNZ 负责制造、出口及采购业务衔接；国际运输由 HB 执行。货运执行方：广州华正邦泰国际货运代理有限公司（Heaven Born，HB）。具体清关、税费与派送能力，需按目的国和货物逐票确认。</p><div className="freight-links"><a href="/zh-cn/services/sea-freight/">整柜海运</a><a href="/zh-cn/services/lcl-shipping-from-china/">海运拼箱</a><a href="/zh-cn/services/air-freight/">空运</a><a href="/zh-cn/services/amazon-fba/">FBA入仓</a></div><div className="freight-links"><a className="freight-cta" {...doorQuote()}>提交到门需求，确认可行范围 ↗</a></div></div></section>
+ </main>;
+}

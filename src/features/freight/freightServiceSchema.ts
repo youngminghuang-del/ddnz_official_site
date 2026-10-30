@@ -11,7 +11,7 @@ export function freightServiceSchema(path: string, language: string, meta: {titl
   return {'@context':'https://schema.org','@graph':[
     {'@type':'WebPage','@id':url,url,name:resolveSeoTitle(`${prefix}/${cleanPath}/`,meta.title),description:meta.desc,inLanguage:locale==='zh'?'zh-CN':locale,mainEntity:{'@id':url+'#service'}},
     {'@type':'Service','@id':url+'#service',url,name,description:meta.desc,serviceType:name,
-      provider:{'@type':'Organization','@id':origin+'/#freight-executor',name:'Heaven Born International Freight (Guangzhou) Co., Ltd.',url:origin+'/'},
+      provider:{'@type':'Organization','@id':origin+(locale==='zh'?'/#heaven-born':'/#freight-executor'),name:locale==='zh'?'广州华正邦泰国际货运代理有限公司':'Heaven Born International Freight (Guangzhou) Co., Ltd.',url:origin+'/'},
       availableChannel:{'@type':'ServiceChannel',serviceUrl:`${origin}${prefix}/get-a-quote/`},
       mainEntityOfPage:{'@id':url}}
   ]};

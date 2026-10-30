@@ -1,3 +1,4 @@
+import {DoorDeliveryLink} from './DoorDeliveryContent';
 import FreightRatePreview from './rates/FreightRatePreview';
 import {qualifyRouteCopy} from './qualifiedRouteCopy';
 import {remainingRouteCopy} from './remainingRouteCopy';
@@ -45,7 +46,7 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
  const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
  const south: Record<string, Record<string, RouteCopy>> = southAsiaCopy;
  const raw = remainingRouteCopy(country,locale) || south[locale]?.[country] || west[locale]?.[country] || extra[locale]?.[country] || localized[locale]?.[country as RouteCountry];
- if (!raw) return null;
+ if (!raw) return <DoorDeliveryLink locale={locale} context={country}/>;
  const c=qualifyRouteCopy(raw,country,locale);
  const labels=routePlanningUi(locale);
 
@@ -55,5 +56,5 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
    <p className="route-depth-note">{c.note || labels[1]}{c.source && <> <a href={c.source} target="_blank" rel="noreferrer" aria-label={c.routes[0][0] + " · " + c.source.split("/")[2]} style={{textDecoration:"underline"}}>{c.source.split("/")[2]} ↗</a></>}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
- return <FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview>;
+ return <><FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview><DoorDeliveryLink locale={locale} context={country}/></>;
 }

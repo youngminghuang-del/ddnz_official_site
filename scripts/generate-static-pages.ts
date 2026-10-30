@@ -1,3 +1,4 @@
+import {ddpPath,ddpMetadata} from '../src/features/freight/DoorDeliveryContent';
 import { freightServiceSchema } from '../src/features/freight/freightServiceSchema';
 import commercialIceMachineSchema from '../src/data/commercial-ice-machine-schema.json';
 import { inquiryPageSchema } from '../src/features/inquiry/schema.mjs';
@@ -715,6 +716,7 @@ for (const [slug, name, image] of restaurantScenarioSeo) {
 
 seoDataMatrix[cafePath.slice(1,-1)].en={title:cafeMeta.en.title,desc:cafeMeta.en.description,keywords:'cafe equipment packages China, coffee bar layout, espresso workstation, undercounter refrigeration',image:'/images/cafe-planning/3d-concept.webp'};
 seoDataMatrix[smallKitchenPath.slice(1,-1)].en={title:smallKitchenMeta.en.title,desc:smallKitchenMeta.en.description,keywords:'small restaurant kitchen layout, bistro kitchen equipment, restaurant equipment package China',image:'/images/small-kitchen/rendering.webp'};
+seoDataMatrix[ddpPath]={'zh-cn':{...ddpMetadata,keywords:'中国出口,DDP,含税清关到门,进口清关,派送'}};
 seoDataMatrix['services/lcl-shipping-from-china'] = {};
 for (const locale of ['ru','fr','ar','pt','tr'] as const) {
   seoDataMatrix['services/lcl-shipping-from-china'][locale] = internationalLclMetadata(locale);
@@ -940,7 +942,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = relPath===ddpPath?['zh-cn']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1619,7 +1621,7 @@ function injectStaticRouteContent(
     const schema = JSON.stringify(lang === 'en' ? foodPageSchema(page) : localizedFoodSchema(page,locale)).replace(/</g, '\\u003c');
     return htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '').replace('</head>', `<style>${css}</style><script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`).replace('<div id="root"></div>', `<div id="root">${body}</div>`);
   }
-  if (freightReleasePaths.includes(relPath) || modernizedFreightServicePaths.some(path => path === relPath)) {
+  if (relPath===ddpPath || freightReleasePaths.includes(relPath) || modernizedFreightServicePaths.some(path => path === relPath)) {
     const language = (lang === 'zh-cn' ? 'zh' : lang) as Language;
     const body = renderToStaticMarkup(createElement(FreightReleaseContent, {path: relPath, language}));
     const css = fs.readFileSync(path.resolve('src/features/freight/freight.css'), 'utf8');
@@ -1885,6 +1887,7 @@ function run() {
     { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'how-we-work', priority: '0.9', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'insights', priority: '0.8', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
+    { path: ddpPath, priority: '0.8', changefreq: 'monthly', languages: ['zh-cn'] },
     { path: 'services/sea-freight', priority: '0.9', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'services/lcl-shipping-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'services/dangerous-goods-shipping-from-china', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
@@ -2135,7 +2138,7 @@ function run() {
       const routePost = postSlugOrId ? findArticleByRoute(blogPosts, lang, postSlugOrId) : undefined;
       const articleHreflang = routePost ? getArticleHreflangSet(routePost, blogPosts) : undefined;
       const loc = routePost ? articleAbsoluteUrl(routePost) : localizedSiteUrl(lang, entry.path);
-      const alternateLanguages = ['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
+      const alternateLanguages = entry.path===ddpPath?['zh-cn']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
       const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
         hrefLang: code === 'pt' && entry.path === 'shipping-from-china-to-brazil' ? 'pt-BR' : normalizeArticleLocale(code),
         href: localizedSiteUrl(code, entry.path),

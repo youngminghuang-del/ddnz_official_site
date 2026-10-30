@@ -35,6 +35,7 @@ export const QUOTE_ENUMS = Object.freeze({
     "homepage_v2_freight",
     "how_we_work",
     "international_country",
+    "land_door_delivery",
     "kitchen_catalogue",
     "kitchen_category",
     "lcl_shipping",

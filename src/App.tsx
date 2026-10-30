@@ -397,6 +397,7 @@ export default function App() {
           <RouteRecovery>
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
+            <Route path="/zh-cn/services/ddp-shipping-from-china" element={<FreightReleasePage/>}/>
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => ['sea-freight', 'lcl-shipping-from-china', 'dangerous-goods-shipping-from-china'].map(slug => <Route key={prefix + slug} path={prefix + '/services/' + slug} element={<FreightReleasePage/>}/>))}
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => modernizedFreightServicePaths.map(path => <Route key={prefix + path} path={`${prefix}/${path}`} element={<FreightReleasePage/>}/>))}
             {/* English Default / Fallback Hub */}
