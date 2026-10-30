@@ -1,4 +1,4 @@
-import DoorDeliveryContent,{ddpPath,ddpMetadata} from './DoorDeliveryContent';
+import DoorDeliveryContent,{ddpPath,doorDeliveryMetadata} from './DoorDeliveryContent';
 import type { Language } from '../../i18n/translations';
 import SeaFreightContent, { seaFreightMetadata } from './SeaFreightContent';
 import SeaInternationalContent, { internationalSeaMetadata } from './SeaInternationalContent';
@@ -16,7 +16,7 @@ import ModernFreightServiceContent, {
 export const freightReleasePaths = ['services/sea-freight', 'services/lcl-shipping-from-china', 'services/dangerous-goods-shipping-from-china'];
 export { modernizedFreightServicePaths };
 export function freightReleaseMetadata(path: string, language: Language) {
-  if(path===ddpPath)return ddpMetadata;
+  if(path===ddpPath)return doorDeliveryMetadata(language);
   if (modernizedFreightServicePaths.includes(path as ModernFreightServicePath)) {
     return modernFreightServiceMetadata(path as ModernFreightServicePath, language);
   }
@@ -27,7 +27,7 @@ export function freightReleaseMetadata(path: string, language: Language) {
   return { title: `${copy[language].title} | DDNZ Global`, desc: copy[language].intro };
 }
 export default function FreightReleaseContent({path, language}: {path: string; language: Language}) {
-  if(path===ddpPath)return <DoorDeliveryContent/>;
+  if(path===ddpPath)return <DoorDeliveryContent language={language}/>;
   if (modernizedFreightServicePaths.includes(path as ModernFreightServicePath)) {
     return <ModernFreightServiceContent path={path as ModernFreightServicePath} language={language}/>;
   }

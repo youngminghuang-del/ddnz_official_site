@@ -167,7 +167,7 @@ test('all six product catalogues preserve their eight authored locale routes',()
  }
 });
 
- test("DDP preview offers only its authored Chinese route",()=>{
- assert.deepEqual(supportedNavigationLanguages("/zh-cn/services/ddp-shipping-from-china/"),["zh"]);
- assert.equal(navigationPath("/services/ddp-shipping-from-china", "en"),"/zh-cn/services/ddp-shipping-from-china");
+ test("DDP preview offers only its authored English and Chinese routes",()=>{
+ assert.deepEqual(supportedNavigationLanguages("/zh-cn/services/ddp-shipping-from-china/"),["en","zh"]);
+ assert.equal(navigationPath("/services/ddp-shipping-from-china", "en"),"/services/ddp-shipping-from-china");
  });

@@ -1,3 +1,4 @@
+import {rateCopy,countryNamesEn,originNamesEn,routeLabelEn} from './copy.mjs';
 import {useEffect,useId,useState,type ReactNode} from 'react';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
 import {trackEvent} from '../../../lib/utils';
@@ -11,25 +12,29 @@ let cachedPayload:Promise<Payload>|undefined;
 const enabled=import.meta.env?.VITE_FREIGHT_RATE_PREVIEW==='1';
 const money=(cost:number|null)=>{const value=referencePrice(cost);return value==null?'待询价':new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:2}).format(value);};
 const feeMoney=(cost:number)=>referencePrice(cost)!.toLocaleString('en-US',{maximumFractionDigits:2});
+const feeNamesEn:Record<string,string>={'THC':'Terminal handling charge (THC)','SEAL CHARGE':'Seal charge','EQUIPMENT INTERCHANGE RECEIPT':'Equipment interchange receipt','DOC FEE':'Document fee','TELEX RELEASE FEE':'Telex release fee','INTERNATIONAL SHIP AND PORT FACILITY SECURITY':'Port facility security','AMS FEE':'AMS filing fee','DHC':'DHC (scope to confirm)'};
 const feeNames:Record<string,string>={'THC':'码头操作费','SEAL CHARGE':'封条费','EQUIPMENT INTERCHANGE RECEIPT':'设备交接费','DOC FEE':'文件费','TELEX RELEASE FEE':'电放费','INTERNATIONAL SHIP AND PORT FACILITY SECURITY':'港口安保费','AMS FEE':'AMS申报费','DHC':'DHC（范围待确认）'};
-function quoteProps(row:Rate,container:string,context:string) {
- const params=new URLSearchParams({leadGoal:'Freight Export',source:sampleRegions.includes(context)?`freight_region_${context}`:row.country==='ghana'?'ghana_country':'international_country',originText:originNames[row.origin]||row.origin,destinationText:`${countryNames[row.country]} · ${portNames[row.port]||row.port}`,notes:inquiryNotes(row,container)});
- return quoteLinkProps(`/zh-cn/get-a-quote/?${params}`);
+function quoteProps(row:Rate,container:string,context:string,locale:string) {
+ const names=locale==='en'?countryNamesEn:countryNames;const origins=locale==='en'?originNamesEn:originNames;
+ const params=new URLSearchParams({leadGoal:'Freight Export',source:sampleRegions.includes(context)?`freight_region_${context}`:row.country==='ghana'?'ghana_country':'international_country',originText:origins[row.origin]||row.origin,destinationText:`${names[row.country]} · ${locale==='en'?row.port:portNames[row.port]||row.port}`,notes:locale==='en'?`Q4 2026 FCL reference: ${row.origin} → ${row.port}; ${container}. Record ${row.id}; ${row.carrier} / ${row.service}. Not a locked price. Please confirm actual sailings, freight, origin/destination charges, clearance, duties, taxes and final delivery for this shipment.`:inquiryNotes(row,container)});
+ return quoteLinkProps(`${locale==='en'?'':'/zh-cn'}/get-a-quote/?${params}`);
 }
-function FeeDetails({row,container}:{row:Rate;container:string}) {
+function FeeDetails({row,container,locale}:{row:Rate;container:string;locale:string}) {
+ const c=rateCopy[locale];
  const index=['20GP','40GP','40HQ'].indexOf(container);
  return <div className="frp-details">
-  <div><h4>这条路线还需考虑哪些费用？</h4><p>下列为2026年Q4费用参考，与主运费分开列示。人民币、美元各按原币种计费，按票费用不按柜数重复计算。</p>
-   {row.fees.length?<div className="frp-fees">{row.fees.map((f,i)=><div key={i}><span>{feeNames[f.name]||f.name}</span><strong>{f.ticket!=null?`${feeMoney(f.ticket)} ${f.currency} / 票`:f.values[index]!=null?`${feeMoney(f.values[index]!)} ${f.currency} / ${container}`:f.other||'此柜型待询价'}</strong></div>)}</div>:<p className="frp-warning">本条未列杂费，请向 HB 补询。</p>}
-   <p className="frp-footnote">是否同时收取文件费与电放费、是否另有目的港费用，需按实际放货方式和报价范围确认。</p>
+  <div><h4>{c.feeHeading}</h4><p>{c.feeIntro}</p>
+   {row.fees.length?<div className="frp-fees">{row.fees.map((f,i)=><div key={i}><span>{locale==='en'?feeNamesEn[f.name]||f.name:feeNames[f.name]||f.name}</span><strong>{f.ticket!=null?`${feeMoney(f.ticket)} ${f.currency} / ${c.ticket}`:f.values[index]!=null?`${feeMoney(f.values[index]!)} ${f.currency} / ${container}`:f.other||(locale==='en'?'Request this container price':'此柜型待询价')}</strong></div>)}</div>:<p className="frp-warning">{c.missingFee}</p>}
+   <p className="frp-footnote">{c.feeNote}</p>
   </div>
-  <div><h4>清关、税费与派送到门</h4><p>本页为 FCL 整柜海运参考。进口清关、关税与当地税费、查验、仓储、提柜及送到收货地址的费用，不能据此视为已经包含。</p><p>需要含税清关到门服务，请提供品名、HS 编码、包装、货值和收货地址，由 HB 确认可承接范围及责任。</p>
-   <details className="frp-source"><summary>查看免柜、限重与运输条件</summary><p>运输条件供规划参考，具体船期、可接货物和附加费用请在询价时确认。</p><p>{row.cutoff.replace(/^cutting\/ETD[：:]\s*/,'截关 / 开船：').replace(/Mon|Tue|Wed|Thu|Fri|Sat|Sun/g,d=>({Mon:'周一',Tue:'周二',Wed:'周三',Thu:'周四',Fri:'周五',Sat:'周六',Sun:'周日'}[d]!))}</p><pre>{'具体船名、航次和开船日期随询价确认。'}</pre><pre>{customerConditions(row.notes)}</pre></details>
-   {row.flags.includes('免柜期有条件')&&<p className="frp-warning">免柜期、重柜和特殊货物可能附有申请条件，实际以确认的方案为准。</p>}
+  <div><h4>{c.scope}</h4><p>{c.scopeNote}</p><p>{c.scopeBrief}</p>
+   <details className="frp-source"><summary>{c.conditions}</summary><p>{c.conditionNote}</p><p>{locale==='en'?row.cutoff:row.cutoff.replace(/^cutting\/ETD[：:]\s*/,'截关 / 开船：').replace(/Mon|Tue|Wed|Thu|Fri|Sat|Sun/g,d=>({Mon:'周一',Tue:'周二',Wed:'周三',Thu:'周四',Fri:'周五',Sat:'周六',Sun:'周日'}[d]!))}</p><pre>{c.sailing}</pre><pre>{locale==='en'?'Confirm route-specific free time, cargo weight limits, approval requirements and any surcharges with HB before booking.':customerConditions(row.notes)}</pre></details>
+   {row.flags.includes('免柜期有条件')&&<p className="frp-warning">{c.conditional}</p>}
   </div>
  </div>;
 }
-function Rates({payload,context}:{payload:Payload;context:string}) {
+function Rates({payload,context,locale}:{payload:Payload;context:string;locale:string}) {
+ const c=rateCopy[locale];const en=locale==='en';const names=en?countryNamesEn:countryNames;const origins=en?originNamesEn:originNames;const portLabel=(p:string)=>en?(p==='BAHRAIN'?'Bahrain (terminal to confirm)':p):portNames[p]||p;
  const region=sampleRegions.includes(context);const allCountries=region?regionCountries[context]:[context];
  const [country,setCountry]=useState('all');const [port,setPort]=useState<string>(({ghana:'TEMA',uae:'JEBEL ALI',brazil:'SANTOS',bangladesh:'CHATTOGRAM',peru:'CALLAO'} as Record<string,string>)[context]||'all');const [origin,setOrigin]=useState('NANSHA');const [container,setContainer]=useState('40HQ');const [more,setMore]=useState(false);
  const uid=useId().replace(/:/g,'');
@@ -39,28 +44,28 @@ function Rates({payload,context}:{payload:Payload;context:string}) {
  const shown=region?routeExamples(rows):rows;const initial=region?5:3;const display=more?shown:shown.slice(0,initial);
  const setFilter=(setter:(v:string)=>void,value:string)=>{setter(value);setMore(false);};
  const empty=available.find(x=>x.port===port);
- const contextHeading=region?'先选目的港，再比较具体班次。':`到${countryNames[context]}，按柜型比较运价与航程。`;
+ const contextHeading=region?c.regionHeading:en?`${names[context]}: ${c.heading}`:`到${names[context]}，${c.heading}`;
  return <section id="freight-rates" className="frp" aria-labelledby={`${uid}-heading`} data-freight-rate-preview={context}>
   <div className="frp-wrap">
-   <div className="frp-heading"><div><p className="frp-kicker">FCL / 整柜海运</p><h2 id={`${uid}-heading`}>{contextHeading}</h2><p className="frp-intro">{region?'区域页展示具体路线样例；不同港口、柜型和附加费应逐项比较。':'按实际装运港、目的港与柜型比较。航程仅供海运段规划，到港后的费用和交付范围另行确认。'}</p></div></div>
-   <div className="frp-review"><strong>2026年Q4运价参考</strong><span>参考值根据市场情况不定期调整，不代表锁价。实际运费、船期和附加费用请以询价确认的方案为准。</span></div>
+   <div className="frp-heading"><div><p className="frp-kicker">{c.fcl}</p><h2 id={`${uid}-heading`}>{contextHeading}</h2><p className="frp-intro">{region?c.regionIntro:c.intro}</p></div></div>
+   <div className="frp-review"><strong>{c.quarter}</strong><span>{c.notice}</span></div>
    <div className="frp-controls">
-    {region&&<label>目的国家<select value={country} onChange={e=>{setCountry(e.target.value);setPort('all');setMore(false);}}><option value="all">区域内全部国家</option>{allCountries.map(c=><option key={c} value={c}>{countryNames[c]}</option>)}</select></label>}
-    <label>目的港<select value={port} onChange={e=>setFilter(setPort,e.target.value)}><option value="all">全部目的港</option>{available.map(c=><option key={c.port} value={c.port}>{portNames[c.port]||c.port}{!c.count?' · 单独询价':''}</option>)}</select></label>
-    <label>实际起运港<select value={origin} onChange={e=>setFilter(setOrigin,e.target.value)}><option value="all">全部起运港</option>{[...new Set([...payload.rows.filter(r=>allCountries.includes(r.country)).map(r=>r.origin),...additionalOrigins])].map(o=><option key={o} value={o}>{originNames[o]||o}{payload.rows.some(r=>countries.includes(r.country)&&r.origin===o&&(port==='all'||r.port===port))?'':' · 单独询价'}</option>)}</select></label>
-    <label>柜型<select value={container} onChange={e=>setContainer(e.target.value)}>{['20GP','40GP','40HQ'].map(t=><option key={t}>{t}</option>)}</select></label>
+    {region&&<label>{c.country}<select value={country} onChange={e=>{setCountry(e.target.value);setPort('all');setMore(false);}}><option value="all">{c.allCountries}</option>{allCountries.map(code=><option key={code} value={code}>{names[code]}</option>)}</select></label>}
+    <label>{c.port}<select value={port} onChange={e=>setFilter(setPort,e.target.value)}><option value="all">{c.allPorts}</option>{available.map(item=><option key={item.port} value={item.port}>{portLabel(item.port)}{!item.count?` · ${c.ask}`:''}</option>)}</select></label>
+    <label>{c.origin}<select value={origin} onChange={e=>setFilter(setOrigin,e.target.value)}><option value="all">{c.allOrigins}</option>{[...new Set([...payload.rows.filter(r=>allCountries.includes(r.country)).map(r=>r.origin),...additionalOrigins])].map(o=><option key={o} value={o}>{origins[o]||o}{payload.rows.some(r=>countries.includes(r.country)&&r.origin===o&&(port==='all'||r.port===port))?'':` · ${c.ask}`}</option>)}</select></label>
+    <label>{c.container}<select value={container} onChange={e=>setContainer(e.target.value)}>{['20GP','40GP','40HQ'].map(t=><option key={t}>{t}</option>)}</select></label>
    </div>
-   <div className="frp-table-note"><p>{region?'每条均为明确起运港与目的港的路线样例，非区域最低价。':'各条为不同承运方案的季度参考，实际班次请询价确认。'} 费用单位：USD / {container}。</p><span>{shown.length} 条{region?'路线样例':'参考方案'}</span></div>
-   {display.length?<div className="frp-list"><div className="frp-column-head" aria-hidden="true"><span>路线 / 船公司</span><span>航程 / 中转</span><span>{container} 主运费参考</span><span>参考期间</span><span>费用与询价</span></div>{display.map(row=><article className="frp-row" key={row.id}>
-    <div className="frp-main"><div><span className="frp-mobile-label">路线 / 船公司</span><h3>{originNames[row.origin]||row.origin} → {portNames[row.port]||row.port}</h3><p>{row.carrier} <span>· {row.service}</span></p><small>{countryNames[row.country]} · {row.port}</small></div>
-     <div><span className="frp-mobile-label">航程 / 中转</span><strong className="frp-days">{row.days} <small>天</small></strong><p>{routeDescription(row)}</p></div>
-     <div><span className="frp-mobile-label">{container} 主运费参考</span><strong className="frp-money">{money(row.prices[container])}</strong><small>杂费见下方明细</small></div>
-     <div><span className="frp-mobile-label">参考期间</span><strong className="frp-validity">2026年Q4</strong><small>实际价格请询价</small></div>
-     <div className="frp-row-action"><a {...quoteProps(row,container,context)} onClick={()=>trackEvent('lead_table_cta_click',{page_type:'freight_rate_preview',country:row.country,model:row.id})}>按此路线询价 ↗</a></div>
-    </div><details className="frp-expand"><summary>费用明细与运输条件 <span>附加费用 · 免柜与限重 · 到门范围</span></summary><FeeDetails row={row} container={container}/></details>
-   </article>)}</div>:<div className="frp-empty"><h3>{empty?.status==='港名待确认'?'目的港名称还需确认':'这条路线请单独询价'}</h3><p>{empty?.status==='港名待确认'?'尚未将近似名称当作同一港口。请提交实际入港点及收货地址，由 HB 确认路线。':'参考表暂未列出这组起运港与目的港方案。请提供货物和出运日期，由 HB 单独确认路线及运价。'}</p></div>}
-   {shown.length>initial&&<button type="button" className="frp-more" onClick={()=>setMore(!more)} aria-expanded={more}>{more?'收起更多班次':`查看其余 ${shown.length-initial} 条${region?'路线样例':'参考方案'}`} <span aria-hidden="true">{more?'−':'+'}</span></button>}
-   <div className="frp-bottom"><p><strong>需要拼箱、空运或含税清关到门？</strong><span>由 HB 按货物、出运日期与收货地址单独询价。DDNZ 负责制造与出口业务衔接，国际运输由 HB 执行。</span></p><a {...quoteLinkProps(`/zh-cn/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:region?`freight_region_${context}`:'international_country',originText:origin==='all'?'':originNames[origin]||origin,destinationText:[country==='all'?(region?'':countryNames[context]):countryNames[country],port==='all'?'':portNames[port]||port].filter(Boolean).join(' · '),notes:`请按货物与收货地址评估运输方案，并分别确认主运费、杂费、清关、税费与到门派送范围。${origin==='all'?'':`起运港：${originNames[origin]||origin}。`}${port==='all'?'':`目的港：${port}；当前比较柜型：${container}。`}${rows.length?'':'本表暂无该路线参考价，请另行核对港名、路线及价格。'}`})}`)}>提交货物与交付要求 ↗</a></div>
+   <div className="frp-table-note"><p>{region?c.regionNote:c.tableNote} {c.unit}: USD / {container}.</p><span>{shown.length} {en?'':'条'}{region?c.example:c.option}</span></div>
+   {display.length?<div className="frp-list"><div className="frp-column-head" aria-hidden="true"><span>{c.route}</span><span>{c.journey}</span><span>{container} {c.freight}</span><span>{c.periodLabel}</span><span>{c.actions}</span></div>{display.map(row=><article className="frp-row" key={row.id}>
+    <div className="frp-main"><div><span className="frp-mobile-label">{c.route}</span><h3>{origins[row.origin]||row.origin} → {portLabel(row.port)}</h3><p>{row.carrier} <span>· {row.service}</span></p><small>{names[row.country]} · {row.port}</small></div>
+     <div><span className="frp-mobile-label">{c.journey}</span><strong className="frp-days">{row.days} <small>{c.days}</small></strong><p>{en?routeLabelEn(row):routeDescription(row)}</p></div>
+     <div><span className="frp-mobile-label">{container} {c.freight}</span><strong className="frp-money">{row.prices[container]==null?c.ask:money(row.prices[container])}</strong><small>{c.feesBelow}</small></div>
+     <div><span className="frp-mobile-label">{c.periodLabel}</span><strong className="frp-validity">{c.period}</strong><small>{c.actual}</small></div>
+     <div className="frp-row-action"><a {...quoteProps(row,container,context,locale)} onClick={()=>trackEvent('lead_table_cta_click',{page_type:'freight_rate_preview',country:row.country,model:row.id})}>{c.quote}</a></div>
+    </div><details className="frp-expand"><summary>{c.details}<span>{c.detailHint}</span></summary><FeeDetails row={row} container={container} locale={locale}/></details>
+   </article>)}</div>:<div className="frp-empty"><h3>{empty?.status==='港名待确认'?c.portPending:c.emptyHeading}</h3><p>{empty?.status==='港名待确认'?c.portNote:c.emptyNote}</p></div>}
+   {shown.length>initial&&<button type="button" className="frp-more" onClick={()=>setMore(!more)} aria-expanded={more}>{more?c.collapse:`${c.more} (${shown.length-initial})`} <span aria-hidden="true">{more?'−':'+'}</span></button>}
+   <div className="frp-bottom"><p><strong>{c.bottom}</strong><span>{c.bottomNote}</span></p><a {...quoteLinkProps(`${en?'':'/zh-cn'}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:region?`freight_region_${context}`:'international_country',originText:origin==='all'?'':origins[origin]||origin,destinationText:[country==='all'?(region?'':names[context]):names[country],port==='all'?'':portLabel(port)].filter(Boolean).join(' · '),notes:en?`Please assess the cargo and delivery address; confirm freight, additional charges, clearance, duties, taxes and delivery separately. Loading port: ${origin}; destination: ${port}; container: ${container}. ${rows.length?'':'No reference is listed for this selection; please confirm the route.'}`:`请按货物与收货地址评估运输方案，并分别确认主运费、杂费、清关、税费与到门派送范围。${origin==='all'?'':`起运港：${origins[origin]||origin}。`}${port==='all'?'':`目的港：${port}；当前比较柜型：${container}。`}${rows.length?'':'本表暂无该路线参考价，请另行核对港名、路线及价格。'}`})}`)}>{c.send}</a></div>
   </div>
  </section>;
 }
@@ -74,5 +79,5 @@ export default function FreightRatePreview({context,locale,children}:{context:st
  },[allowed]);
  useEffect(()=>{if(payload&&window.location.hash==='#freight-rates')document.getElementById('freight-rates')?.scrollIntoView({block:'start'});},[payload]);
  if(!allowed||!payload)return <>{children}</>;
- return <><Rates key={context} payload={payload} context={context}/>{children&&<details className="frp-existing"><summary>其他运输方式与到港后的交付安排</summary>{children}</details>}</>;
+ return <><Rates key={context+locale} payload={payload} context={context} locale={locale}/>{children&&<details className="frp-existing"><summary>{rateCopy[locale].original}</summary>{children}</details>}</>;
 }

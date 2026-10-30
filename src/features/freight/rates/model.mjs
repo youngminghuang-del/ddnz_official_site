@@ -22,7 +22,7 @@ export function customerConditions(text) {
   .replace(/[+＋]\s*[\d,.]+(?:\s*\/\s*[\d,.]+)+(?![\dA-Za-z'’′])/g,'（费用另询）');
 }
 export function previewAllowed(enabled,hostname,locale,context) {
- return enabled===true && ['127.0.0.1','localhost'].includes(hostname) && locale==='zh' && [...sampleCountries,...sampleRegions].includes(context);
+ return enabled===true && ['127.0.0.1','localhost'].includes(hostname) && ['zh','en'].includes(locale) && [...sampleCountries,...sampleRegions].includes(context);
 }
 // A capture date is not a validity year. No source row can become a public rate
 // until an explicit price approval and complete validity dates are provided.

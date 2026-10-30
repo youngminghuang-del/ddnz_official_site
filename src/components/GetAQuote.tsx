@@ -1,3 +1,5 @@
+import DoorDeliveryAssessment from '../features/freight/DoorDeliveryAssessment';
+import {emptyDeliveryAssessment,deliveryAssessmentSummary,deliveryMessage} from '../features/freight/deliveryAssessment.mjs';
 import { freightRoles } from '../features/freight/freightRoles';
 import { quoteReadinessCopy } from '../features/freight/quoteReadinessCopy';
 import { freightQuoteService } from '../lib/freightQuoteService';
@@ -498,6 +500,11 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   useEffect(() => {
     setNotes(attributionParams.get('notes')?.slice(0, 8000) || '');
   }, [attributionParams]);
+  const deliveryLocale=language==='zh'||language==='en';
+  const [deliveryEnabled,setDeliveryEnabled]=useState(attributionParams.get('deliveryAssessment')==='1');
+  const [deliveryValues,setDeliveryValues]=useState<Record<string,string>>(emptyDeliveryAssessment);
+  useEffect(()=>{setDeliveryEnabled(attributionParams.get('deliveryAssessment')==='1');setDeliveryValues(emptyDeliveryAssessment());},[attributionParams]);
+  const deliveryBrief=deliveryLocale&&deliveryEnabled?deliveryAssessmentSummary(deliveryValues,language):'';
   const [detailsOpen, setDetailsOpen] = useState(Boolean(attributionParams.get('notes')));
   useEffect(() => { setDetailsOpen(Boolean(attributionParams.get('notes'))); }, [attributionParams]);
   const [contactError, setContactError] = useState(false);
@@ -680,6 +687,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
     setPhone('');
     setProduct(attributedCategory || 'Other');
     setNotes('');
+    setDeliveryEnabled(false);setDeliveryValues(emptyDeliveryAssessment());
     setDetailsOpen(false);
     setIsSubmitted(false);
     successTrackedRef.current = false;
@@ -1067,6 +1075,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                             </div>)}
                           </div>
                           <button type="button" onClick={() => { setWeight(''); setVolume(''); }} className="mt-4 min-h-11 self-start rounded-lg border border-slate-300 px-4 py-2 text-start text-sm font-semibold text-[var(--ddnz-purple-strong)] hover:bg-[var(--ddnz-purple-soft)]">{cargoCopy.clear}</button>
+                          {deliveryLocale&&<DoorDeliveryAssessment locale={language} enabled={deliveryEnabled} value={deliveryValues} onToggle={setDeliveryEnabled} onChange={setDeliveryValues}/>}
                         </div>
                       )}
 
@@ -1106,12 +1115,13 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               </div>
                             </div>
 
-                            {/* The review mirrors the exact existing message field, never inferred cargo data. */}
+                            {/* Notes and the customer delivery brief together form the existing message field. */}
                             <div className="w-full min-w-0 text-sm text-slate-700" data-quote-notes-review>
                               <strong>{readiness.notes}</strong>
                               {product !== 'Other' && <p className="mt-1">{quoteSummaryCopy[language].industry}: {productLabels[product] || product}</p>}
                               <p className="mt-1 whitespace-pre-wrap break-words">{notes.trim() ? notes : readiness.empty}</p>
                             </div>
+                            {deliveryBrief&&<div className="w-full min-w-0 text-sm text-slate-700" data-delivery-review><pre className="whitespace-pre-wrap break-words font-sans leading-7">{deliveryBrief}</pre><button type="button" onClick={()=>{setDirection(-1);setStep(3);}} className="mt-2 underline underline-offset-4">{language==='zh'?'修改到门要求':'Edit delivery requirements'}</button></div>}
                             {/* Fast route speed indicator tag */}
                             <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">
@@ -1126,6 +1136,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                           <form id="quote-form" onSubmit={handleQuoteSubmit} className="space-y-4 flex-1 flex flex-col justify-between">
                             {/* Hidden inputs to feed Formspree the multi-step details */}
                             <input type="hidden" name="Inquiry_Type" value="Interactive Funnel (Lead Rate Optimizer)" />
+                            <input type="hidden" name="message" value={deliveryMessage(notes,deliveryBrief)}/>
                             <input type="hidden" name="Selected_Service" value={selectedService} />
                             <input type="hidden" name="Origin" value={origin} />
                             <input type="hidden" name="Destination" value={destination} />
@@ -1246,7 +1257,6 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                                   <label htmlFor="quote-cargo-notes" className="mb-2 block text-sm font-semibold text-slate-700">{ft('notesPlaceholder')}</label>
                                   <textarea
                                     id="quote-cargo-notes"
-                                    name="message"
                                     rows={4}
                                     aria-describedby="quote-readiness-guidance"
                                     value={notes}

@@ -4,7 +4,8 @@ import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNot
 
 test('internal preview cannot run on production or with a disabled build flag',()=>{
  assert.equal(previewAllowed(true,'127.0.0.1','zh','ghana'),true);
- for(const args of [[false,'127.0.0.1','zh','ghana'],[true,'www.ddnzglobal.com','zh','ghana'],[true,'127.0.0.1','en','ghana'],[true,'127.0.0.1','zh','russia']])assert.equal(previewAllowed(...args),false);
+ assert.equal(previewAllowed(true,'127.0.0.1','en','ghana'),true);
+ for(const args of [[false,'127.0.0.1','zh','ghana'],[true,'www.ddnzglobal.com','zh','ghana'],[true,'127.0.0.1','fr','ghana'],[true,'127.0.0.1','zh','russia']])assert.equal(previewAllowed(...args),false);
 });
 test('source captures without a confirmed year or approved selling price are never public offers',()=>{
  const now='2026-10-30T06:00:00Z';
@@ -53,4 +54,11 @@ test('a source route that repeats its destination requires transit confirmation'
  assert.equal(routeDescription({route:'Transfer JEBEL ALI',port:'JEBEL ALI'}),'中转安排待确认');
  assert.equal(routeDescription({route:'Transfer SINGAPORE',port:'TEMA'}),'中转 · SINGAPORE');
  assert.equal(routeDescription({route:'Direct',port:'CALLAO'}),'直航');
+});
+
+test('English routing leaves ambiguous transshipment for confirmation',async()=>{
+ const {routeLabelEn}=await import('./copy.mjs');
+ assert.equal(routeLabelEn({route:'Transfer JEBEL ALI',port:'JEBEL ALI'}),'Transshipment to confirm');
+ assert.equal(routeLabelEn({route:'Transfer singapore',port:'TEMA'}),'Via Singapore');
+ assert.equal(routeLabelEn({route:'Transfer',port:'TEMA'}),'Transshipment to confirm');
 });
