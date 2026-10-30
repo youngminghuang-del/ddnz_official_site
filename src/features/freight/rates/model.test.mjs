@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNotes} from './model.mjs';
+import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNotes,referencePrice,customerConditions} from './model.mjs';
 
 test('internal preview cannot run on production or with a disabled build flag',()=>{
  assert.equal(previewAllowed(true,'127.0.0.1','zh','ghana'),true);
@@ -30,6 +30,18 @@ test('regional examples preserve explicit route identity and do not choose a min
 });
 test('inquiry handoff identifies the selected container and route without presenting a source cost as an offer',()=>{
  const notes=inquiryNotes({id:'FCL-EXAMPLE',origin:'NANSHA',port:'TEMA',carrier:'MSC',service:'AFRICA',price:5470},'40HQ');
- for(const term of ['FCL-EXAMPLE','40HQ','特马','南沙','非有效报价'])assert.ok(notes.includes(term));
+ for(const term of ['FCL-EXAMPLE','40HQ','特马','南沙','不是锁价报价'])assert.ok(notes.includes(term));
  assert.equal(notes.includes('5470'),false);
+});
+
+
+test('quarter reference uses a 10 percent gross margin rather than a 10 percent markup',()=>{
+ assert.equal(referencePrice(450),500);assert.equal(referencePrice(5070),5633.34);
+ assert.equal(referencePrice(645),716.67);assert.equal(referencePrice(210),233.34);
+ assert.equal(referencePrice(null),null);assert.equal(referencePrice(0),0);
+ assert.ok((referencePrice(5070)-5070)/referencePrice(5070)>=0.1);
+});
+test('customer condition copy preserves cargo thresholds but leaves conditional carrier costs to inquiry',()=>{
+ const text=customerConditions('小柜超过21.5吨，NANSHA100RMB；40HQ超过26吨加USD300');
+ assert.ok(text.includes('21.5吨'));assert.ok(text.includes('26吨'));assert.ok(!text.includes('100RMB'));assert.ok(!text.includes('USD300'));
 });
