@@ -582,7 +582,7 @@ async function run() {
         language,
         translationGroup,
         date,
-        lastEdited: page.last_edited_time,
+        lastEdited: slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
         summary,
         thumbnailUrl,
         content: rendered.html,
