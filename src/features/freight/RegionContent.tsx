@@ -1,3 +1,4 @@
+import FreightRatePreview from './rates/FreightRatePreview';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import type { Language } from '../../i18n/translations';
@@ -73,6 +74,7 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
       <p className="freight-intro">{regionDescription(region, locale)}</p>
       <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a></div>
     </div></header>
+    <FreightRatePreview context={region} locale={locale}/>
     <section className="freight-region-map-section" aria-labelledby="region-map-heading"><div className="freight-wrap">
       <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.network}</p><h2 id="region-map-heading">{c.network}</h2></div>
       <RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />

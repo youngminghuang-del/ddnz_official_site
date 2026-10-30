@@ -1,3 +1,4 @@
+@import './rates/rates.css';
 .freight-editorial { color:var(--ddnz-brand-ink); background:var(--ddnz-brand-paper); }
 .freight-editorial[id], .freight-editorial [id] { scroll-margin-top:125px; }
 .freight-editorial .freight-wrap { width:min(1180px,100% - 40px); margin-inline:auto; }
