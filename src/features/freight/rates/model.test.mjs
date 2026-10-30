@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNotes,referencePrice,customerConditions} from './model.mjs';
+import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNotes,referencePrice,customerConditions,routeDescription} from './model.mjs';
 
 test('internal preview cannot run on production or with a disabled build flag',()=>{
  assert.equal(previewAllowed(true,'127.0.0.1','zh','ghana'),true);
@@ -44,4 +44,13 @@ test('quarter reference uses a 10 percent gross margin rather than a 10 percent 
 test('customer condition copy preserves cargo thresholds but leaves conditional carrier costs to inquiry',()=>{
  const text=customerConditions('小柜超过21.5吨，NANSHA100RMB；40HQ超过26吨加USD300');
  assert.ok(text.includes('21.5吨'));assert.ok(text.includes('26吨'));assert.ok(!text.includes('100RMB'));assert.ok(!text.includes('USD300'));
+ const compound=customerConditions('DG USD150/250；CIC $150/300；21天+100/200；USD150/20’ USD250/40’；USD100/20GP；26TON、66CBM');
+ for(const unit of ['21天','20’','40’','20GP','26TON','66CBM'])assert.ok(compound.includes(unit),unit);
+ for(const cost of ['USD150','USD250','$150','/250','/300','100/200'])assert.ok(!compound.includes(cost),cost);
+});
+
+test('a source route that repeats its destination requires transit confirmation',()=>{
+ assert.equal(routeDescription({route:'Transfer JEBEL ALI',port:'JEBEL ALI'}),'中转安排待确认');
+ assert.equal(routeDescription({route:'Transfer SINGAPORE',port:'TEMA'}),'中转 · SINGAPORE');
+ assert.equal(routeDescription({route:'Direct',port:'CALLAO'}),'直航');
 });

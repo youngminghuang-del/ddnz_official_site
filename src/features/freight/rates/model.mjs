@@ -16,7 +16,9 @@ export function referencePrice(cost) {
 export function customerConditions(text) {
  // Source conditions remain verbatim internally. Conditional carrier charges
  // require a quote rather than exposing raw cost amounts in customer copy.
- return text.replace(/(?:USD|RMB|CNY)\s*[\d,.]+|[\d,.]+\s*(?:USD|RMB|CNY)/gi,'（费用另询）');
+ return text
+  .replace(/(?:USD|RMB|CNY|\$)\s*[\d,.]+(?:\s*\/\s*(?:(?:USD|RMB|CNY|\$)\s*)?[\d,.]+(?![\dA-Za-z'’′]))*|[\d,.]+\s*(?:USD|RMB|CNY)/gi,'（费用另询）')
+  .replace(/[+＋]\s*[\d,.]+(?:\s*\/\s*[\d,.]+)+(?![\dA-Za-z'’′])/g,'（费用另询）');
 }
 export function previewAllowed(enabled,hostname,locale,context) {
  return enabled===true && ['127.0.0.1','localhost'].includes(hostname) && locale==='zh' && [...sampleCountries,...sampleRegions].includes(context);
@@ -30,6 +32,11 @@ export function publicRateEligible(row,now) {
 }
 export function filteredRates(rows,{countries,port='all',origin='all'}) {
  return rows.filter(r=>countries.includes(r.country)&&(port==='all'||r.port===port)&&(origin==='all'||r.origin===origin));
+}
+export function routeDescription(row) {
+ if(row.route.startsWith('Direct'))return '直航';
+ const transit=row.route.replace(/^Transfer\s*/,'').trim();
+ return !transit||transit.toUpperCase()===row.port.toUpperCase()?'中转安排待确认':`中转 · ${transit}`;
 }
 // Region rows are concrete route examples, never a regional minimum price.
 export function routeExamples(rows) {

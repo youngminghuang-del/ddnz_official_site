@@ -402,7 +402,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
 
   // Core Funnel Data
   const [selectedService, setSelectedService] = useState<'Sea' | 'Land' | 'Air' | 'Warehouse'>(() => freightQuoteService(attributionParams.get('source'), presetService));
-  const [origin, setOrigin] = useState('');
+  const [origin, setOrigin] = useState(() => attributionParams.get('originText')?.slice(0, 160) || '');
   const [destination, setDestination] = useState('');
   const [isParamFilled, setIsParamFilled] = useState(false);
 
@@ -419,6 +419,11 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   }, [presetService, attributionParams]);
 
   // Auto-set localized default origin on mount or language change if not already custom filled
+  useEffect(() => {
+    const value = attributionParams.get('originText');
+    if (value) setOrigin(value.slice(0, 160));
+  }, [attributionParams]);
+
   useEffect(() => {
     if (!origin) {
       setOrigin(language === 'zh' ? '广州' : 'Guangzhou');
