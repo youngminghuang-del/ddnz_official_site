@@ -1,3 +1,4 @@
+import commercialIceMachineSchema from '../data/commercial-ice-machine-schema.json';
 import {schemaCanonicalUrl} from '../lib/schemaGraph.mjs';
 import commercialDishwasherSchema from '../data/commercial-dishwasher-schema.json';
 import commercialMixerSchema from '../data/commercial-mixer-schema.json';
@@ -239,6 +240,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '')) {
       finalSchema = commercialDishwasherSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialIceMachineSchema).replace(/\/+$/, '')) {
+      finalSchema = commercialIceMachineSchema;
     }
 
     // Create script tag and append to head

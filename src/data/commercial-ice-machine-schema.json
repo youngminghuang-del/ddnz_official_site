@@ -1,0 +1,335 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#webpage",
+      "name": "Top 10 Commercial Ice Machine Manufacturers in China: Factory Prices, Private Label and Trial Orders",
+      "description": "Compare commercial ice machine manufacturers in China for factory-price supply, private-label configurations, low-MOQ trial orders and model-specific spare parts.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-G"
+      },
+      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#article",
+      "headline": "Top 10 Commercial Ice Machine Manufacturers in China: Factory Prices, Private Label and Trial Orders",
+      "description": "Compare commercial ice machine manufacturers in China for factory-price supply, private-label configurations, low-MOQ trial orders and model-specific spare parts.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Commercial kitchen equipment importers, wholesalers and dealers"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Commercial ice machine manufacturers in China"
+        },
+        {
+          "@type": "Thing",
+          "name": "Factory-price supply and private-label trial orders"
+        },
+        {
+          "@type": "Thing",
+          "name": "Model-specific spare parts and after-sales scope"
+        }
+      ],
+      "citation": [
+        "https://kaisonicemachine.com/",
+        "https://kaisonicemachine.com/oem-odm/",
+        "https://www.snooker.tm/",
+        "https://www.snooker.tm/productinfo/id/21",
+        "https://snowsman.com/about-us/",
+        "https://snowsman.com/product/under-counter-type-cube-lce-machine-bt-120/",
+        "https://naixer.com/",
+        "https://naixer.com/ice-machines/cube-ice-series/built-in-bin-cube-ice-machine/",
+        "https://www.icemaker-bzx.com/product/cube-ice-machine/fb200-300-500-cube-ice-machine.html",
+        "https://www.icema.com/",
+        "https://www.icema.com/40P~280P.html",
+        "https://www.kollericemaker.com/commercial-ice-solutions.html",
+        "https://www.icemakerkoller.com/products/commercial-ice-machine-ice-cube-machine-cv100-100kg-day-capacity/",
+        "https://www.icemachinesource.com/about-us",
+        "https://www.icemachinesource.com/cube-ice-machine/ice-cube-maker-machine-1000kg.html",
+        "https://www.hoshizaki.com/en/news/20241101",
+        "https://hoshizaki.com.hk/wp-content/uploads/2022/03/IM_Suzhou_Self-contained_User_Manual.pdf",
+        "https://www.manitowocice.cn/About-Us.ice",
+        "https://webstore.iec.ch/en/publication/62243"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#faq"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#manufacturers"
+        }
+      ],
+      "dateCreated": "2026-10-29",
+      "dateModified": "2026-10-30",
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-G"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-D"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-E"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-F"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-H"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/",
+      "datePublished": "2026-10-30",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which manufacturers should I compare for my own brand?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with manufacturers that explicitly offer OEM, such as KAISON, Snowsman and Changshu Shenghai. Ask for an existing model, the permitted branding changes and a written MOQ for each change. Have the selected model’s destination documents checked before committing to printed packaging."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I start with a low-MOQ trial?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start with standard-model availability and ask DDNZ for the trial quantity on each model. Confirm logo, carton and electrical changes separately. Keep the first order focused; adding many different configurations makes the trial harder to evaluate and support."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What information gets me a useful factory quotation?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Send your destination country and city, customer application, ice type, intended daily output, power supply and quantities. Include the bin, branding and parts requirements—or send an existing machine photo or quotation."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does the machine price include installation and after-sales service?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Count installation, labour, replacement parts and freight as separate items unless the written offer includes them. Name the local installer or service partner before ordering, and agree the warranty claim process. DDNZ can help define the required supply and support scope in the quotation."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#manufacturers",
+      "name": "Commercial ice machine manufacturer shortlist",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 10,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "KAISON"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Snooker / Shanghai Chuangli"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Snowsman"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Naixer"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Changshu Shenghai"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "ICEMA / ETD"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Koller"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "CBFI / Icesource"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "Hoshizaki China"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Manitowoc China"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Top 10 Commercial Ice Machine Manufacturers in China: Factory Prices, Private Label and Trial Orders"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-G",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/assembly-workshop.webp",
+      "name": "Assembly workshop",
+      "description": "KAISON workshop with ice machine cabinets in assembly rows",
+      "inLanguage": "en",
+      "width": 1100,
+      "height": 868,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/assembly-workshop.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/snowsman-undercounter.jpg",
+      "name": "Self-contained machine",
+      "description": "Snowsman self-contained ice machine with integrated ice bin",
+      "inLanguage": "en",
+      "width": 800,
+      "height": 800,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/snowsman-undercounter.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/separate-bin-machine.webp",
+      "name": "Modular machine with separate bin",
+      "description": "KAISON modular ice machine head mounted above a separate storage bin",
+      "inLanguage": "en",
+      "width": 1254,
+      "height": 1254,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/separate-bin-machine.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-R.webp",
+      "name": "Cube ice",
+      "description": "Close view of clear cube ice",
+      "inLanguage": "en",
+      "width": 800,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-R.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-D",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-S.webp",
+      "name": "Crescent ice",
+      "description": "Close view of crescent-shaped ice",
+      "inLanguage": "en",
+      "width": 800,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-S.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-E",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-T.webp",
+      "name": "Nugget ice",
+      "description": "Close view of small nugget ice pieces",
+      "inLanguage": "en",
+      "width": 800,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-T.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-F",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-U.webp",
+      "name": "Flake ice",
+      "description": "Close view of thin irregular ice flakes",
+      "inLanguage": "en",
+      "width": 800,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/clean-U.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/top-10-commercial-ice-machine-manufacturers-china/#image-H",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/inspection-workshop.webp",
+      "name": "Machine inspection line",
+      "description": "KAISON workshop with rows of commercial ice machines at inspection stations",
+      "inLanguage": "en",
+      "width": 1100,
+      "height": 811,
+      "url": "https://www.ddnzglobal.com/images/posts/top-10-commercial-ice-machine-manufacturers-china/inspection-workshop.webp"
+    }
+  ]
+}
