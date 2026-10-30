@@ -1,3 +1,4 @@
+import magneticCaseWholesaleSchema from '../src/data/magnetic-case-wholesale-schema.json';
 import {ddpPath,doorDeliveryMetadata} from '../src/features/freight/DoorDeliveryContent';
 import { freightServiceSchema } from '../src/features/freight/freightServiceSchema';
 import commercialIceMachineSchema from '../src/data/commercial-ice-machine-schema.json';
@@ -1266,7 +1267,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialIceMachineSchema).replace(/\/+$/, '') ? commercialIceMachineSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(magneticCaseWholesaleSchema).replace(/\/+$/, '') ? magneticCaseWholesaleSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialIceMachineSchema).replace(/\/+$/, '') ? commercialIceMachineSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
@@ -2234,5 +2235,6 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
 run();
 import FreightReleaseContent, { freightReleaseMetadata, freightReleasePaths, modernizedFreightServicePaths } from '../src/features/freight/FreightReleaseContent';
 import type { Language } from '../src/i18n/translations';
+
 
 

@@ -1,0 +1,286 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#webpage",
+      "name": "Çin’den Toptan Manyetik Telefon Kılıfı: Fabrika Fiyatı, Logo ve Düşük Adetli Deneme Siparişi",
+      "description": "Çin’den toptan manyetik telefon kılıfı: fabrika fiyatı, mevcut gövdeye logo, ambalaj ve model-renk bazında düşük adetli deneme siparişi.",
+      "inLanguage": "tr",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-A"
+      },
+      "url": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "QI YANG"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#article",
+      "headline": "Çin’den Toptan Manyetik Telefon Kılıfı: Fabrika Fiyatı, Logo ve Düşük Adetli Deneme Siparişi",
+      "description": "Çin’den toptan manyetik telefon kılıfı: fabrika fiyatı, mevcut gövdeye logo, ambalaj ve model-renk bazında düşük adetli deneme siparişi.",
+      "inLanguage": "tr",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Türkiye telefon aksesuarı ithalatçıları, toptancıları ve bayileri"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Çin’den toptan manyetik telefon kılıfı"
+        },
+        {
+          "@type": "Thing",
+          "name": "Fabrika fiyatı ve logo uygulaması"
+        },
+        {
+          "@type": "Thing",
+          "name": "Model ve renk bazında deneme siparişi"
+        }
+      ],
+      "citation": [
+        "https://developer.apple.com/accessories/",
+        "https://support.apple.com/en-gb/105047",
+        "https://www.aikusu.com/custom-phone-case.html",
+        "https://www.aikusu.com/oem.html",
+        "https://www.imdcases.com/"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#faq"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#case-types"
+        }
+      ],
+      "dateCreated": "2026-10-30",
+      "dateModified": "2026-10-31",
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-A"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-B"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-C"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-D"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-E"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-H"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-F"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-G"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/",
+      "datePublished": "2026-10-31",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#faq",
+      "inLanguage": "tr",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Yeni kalıp yaptırmadan kendi logomu kullanabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Evet, uygun bir mevcut kılıf üzerine logo uygulamasıyla başlayabilirsiniz. Tasarımı ve istediğiniz konumu gönderin. Sipariş teklifi öncesinde o ürünün uygulama yöntemini, numunesini ve minimum adedini netleştiririz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "MOQ’yu tamamlamak için model ve renkleri karıştırabilir miyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "İstediğiniz karmayı gönderin, fakat her kombinasyon için yanıt isteyin. Toplam sipariş minimumuyla telefon veya renk başına minimum farklı olabilir. Bir kombinasyon şartı karşılamıyorsa onu çıkarmayı, standart renge geçmeyi veya kişiselleştirmeden almayı karşılaştırın."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Bütün manyetik kılıflar kablosuz şarja uygun mu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hayır. Gereken uyumlu sürümü seçin ve tam kılıf, telefon ve şarj cihazı kombinasyonunda kontrol edin. Standa tutunma, kablosuz şarj ve sertifikasyon farklı konulardır; tek bir halka üçünü de kanıtlamaz."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "DDNZ’den teklif almak için ne göndermeliyim?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fotoğraf veya ürün referansı, tam telefon modelleri, renk başına adetler ve teslimat şehrini gönderin. Varsa logoyu ve ambalaj isteğini de ekleyin. Bu bilgilerle ürün seçimini, fabrika fiyatını ve her modelin deneme koşullarını görüşebiliriz."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#case-types",
+      "name": "Toptan sipariş için manyetik kılıf türleri",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Manyetik halkalı şeffaf kılıf"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Yumuşak yüzeyli veya dokulu manyetik kılıf"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Dahili standlı manyetik kılıf"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Çin’den Toptan Manyetik Telefon Kılıfı: Fabrika Fiyatı, Logo ve Düşük Adetli Deneme Siparişi"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-A",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/a-product-clean-v2.jpg",
+      "name": "Şeffaf manyetik kılıf renkleri",
+      "description": "Açık gri zeminde yan yana altı şeffaf ve yarı şeffaf halkalı telefon kılıfının düzenlenmiş fotoğrafı",
+      "inLanguage": "tr",
+      "width": 1774,
+      "height": 887,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/a-product-clean-v2.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-B",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/b-product-clean-v2.jpg",
+      "name": "Şeffaf kılıfın elde görünümü",
+      "description": "Halka yapısı ve kamera açıklığı görünen elde tutulan şeffaf telefon kılıfı",
+      "inLanguage": "tr",
+      "width": 1254,
+      "height": 1254,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/b-product-clean-v2.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-C",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/c-product-clean-v2.jpg",
+      "name": "Dokulu kılıf yüzeyleri",
+      "description": "Farklı dokulu yüzeylere sahip telefon kılıflarının birlikte görünümü",
+      "inLanguage": "tr",
+      "width": 1254,
+      "height": 1254,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/c-product-clean-v2.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-D",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/d-product-clean-v2.jpg",
+      "name": "Halkalı stand tasarımları",
+      "description": "Halka standı ve menteşesi görünen farklı renklerde dokulu telefon kılıfları",
+      "inLanguage": "tr",
+      "width": 1167,
+      "height": 1348,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/d-product-clean-v2.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-E",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/oem-workshop-4.jpg",
+      "name": "Logo ve desen için baskı ekipmanı",
+      "description": "Üreticinin OEM sayfasındaki telefon kılıfı baskı ekipmanı ve çalışma tablası",
+      "inLanguage": "tr",
+      "width": 960,
+      "height": 620,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/oem-workshop-4.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-H",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-3.jpg",
+      "name": "Telefon kılıfı kalıbının yakından görünümü",
+      "description": "Sağlanan videodan bir karede telefon kılıfı biçimli metal kalıp",
+      "inLanguage": "tr",
+      "width": 1080,
+      "height": 1922,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-3.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-F",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-4.jpg",
+      "name": "Üretim hattındaki otomatik çalışma istasyonu",
+      "description": "Sağlanan üretim videosundan bir karede otomatik ekipman ve telefon kılıfı parçaları",
+      "inLanguage": "tr",
+      "width": 1080,
+      "height": 1922,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-4.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/tr/blog/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/#image-G",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-1.jpg",
+      "name": "Telefon kılıflarının üretim askıları",
+      "description": "Sağlanan üretim videosundan bir karede askılara dizilmiş şeffaf telefon kılıfları",
+      "inLanguage": "tr",
+      "width": 1080,
+      "height": 1922,
+      "url": "https://www.ddnzglobal.com/images/posts/cinden-toptan-manyetik-telefon-kilifi-fabrika-fiyati-logo/owner-factory-1.jpg"
+    }
+  ]
+}

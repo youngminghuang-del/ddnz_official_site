@@ -1,3 +1,4 @@
+import magneticCaseWholesaleSchema from '../data/magnetic-case-wholesale-schema.json';
 import commercialIceMachineSchema from '../data/commercial-ice-machine-schema.json';
 import {schemaCanonicalUrl} from '../lib/schemaGraph.mjs';
 import commercialDishwasherSchema from '../data/commercial-dishwasher-schema.json';
@@ -246,6 +247,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = commercialIceMachineSchema;
     }
 
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(magneticCaseWholesaleSchema).replace(/\/+$/, '')) {
+      finalSchema = magneticCaseWholesaleSchema;
+    }
+
     // Create script tag and append to head
     const script = document.createElement('script');
     script.id = scriptId;
@@ -264,5 +269,6 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
   return null;
 }
+
 
 
