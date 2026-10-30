@@ -1,3 +1,4 @@
+import {freightLocales,freightLocalizations} from '../features/freight/locales/index.mjs';
 import DoorDeliveryAssessment from '../features/freight/DoorDeliveryAssessment';
 import {emptyDeliveryAssessment,deliveryAssessmentSummary,deliveryMessage} from '../features/freight/deliveryAssessment.mjs';
 import { freightRoles } from '../features/freight/freightRoles';
@@ -500,7 +501,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
   useEffect(() => {
     setNotes(attributionParams.get('notes')?.slice(0, 8000) || '');
   }, [attributionParams]);
-  const deliveryLocale=language==='zh'||language==='en';
+  const deliveryLocale=freightLocales.includes(language);
   const [deliveryEnabled,setDeliveryEnabled]=useState(attributionParams.get('deliveryAssessment')==='1');
   const [deliveryValues,setDeliveryValues]=useState<Record<string,string>>(emptyDeliveryAssessment);
   useEffect(()=>{setDeliveryEnabled(attributionParams.get('deliveryAssessment')==='1');setDeliveryValues(emptyDeliveryAssessment());},[attributionParams]);
@@ -1121,7 +1122,7 @@ export default function GetAQuote({ presetDestination, presetService, hideLandRe
                               {product !== 'Other' && <p className="mt-1">{quoteSummaryCopy[language].industry}: {productLabels[product] || product}</p>}
                               <p className="mt-1 whitespace-pre-wrap break-words">{notes.trim() ? notes : readiness.empty}</p>
                             </div>
-                            {deliveryBrief&&<div className="w-full min-w-0 text-sm text-slate-700" data-delivery-review><pre className="whitespace-pre-wrap break-words font-sans leading-7">{deliveryBrief}</pre><button type="button" onClick={()=>{setDirection(-1);setStep(3);}} className="mt-2 underline underline-offset-4">{language==='zh'?'修改到门要求':'Edit delivery requirements'}</button></div>}
+                            {deliveryBrief&&<div className="w-full min-w-0 text-sm text-slate-700" data-delivery-review><pre className="whitespace-pre-wrap break-words font-sans leading-7">{deliveryBrief}</pre><button type="button" onClick={()=>{setDirection(-1);setStep(3);}} className="mt-2 underline underline-offset-4">{freightLocalizations[language]?.form.edit||(language==='zh'?'修改到门要求':'Edit delivery requirements')}</button></div>}
                             {/* Fast route speed indicator tag */}
                             <div className="text-end text-[10px] text-slate-500 bg-white/80 border border-slate-100 rounded-xl px-3 py-1.5 self-stretch sm:self-auto flex sm:flex-col justify-between items-center sm:items-end gap-1.5 shadow-sm">
                               <span className="font-extrabold text-[var(--hb-amber)] uppercase tracking-wide flex items-center gap-1">

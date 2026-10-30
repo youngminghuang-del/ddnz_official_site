@@ -52,7 +52,7 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
-  if(route==='/services/ddp-shipping-from-china') return ['en','zh'];
+  if(route==='/services/ddp-shipping-from-china') return allNavigationLanguages;
   if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/electric-tricycles-from-china','/sourcing/electric-utility-vehicles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(route)) return allNavigationLanguages;
   if (route.startsWith('/shipping-from-china-to-')) return freightDestinationLanguages;
   if (route.startsWith('/services/') && !fullyLocalizedFreightServicePaths.has(route)) return freightDestinationLanguages;
@@ -82,7 +82,7 @@ export function isEnglishProductPath(path: string) {
 /** Product links use an authored translation when one exists; other guides stay English. */
 export function navigationPath(path: string, language: Language) {
   const { pathname, suffix } = splitNavigationPath(path);
-  if(pathname==='/services/ddp-shipping-from-china') return `${language==='zh'?'/zh-cn':''}${pathname}${suffix}`;
+  if(pathname==='/services/ddp-shipping-from-china') return `${navigationPrefixes[language]}${pathname}${suffix}`;
   const product = englishProductPath(path);
   if (product && hasProductTranslation(product, language)) return localizedProductPath(`${product}${suffix}`, language);
   const targetLanguage = supportedNavigationLanguages(pathname).includes(language) ? language : 'en';

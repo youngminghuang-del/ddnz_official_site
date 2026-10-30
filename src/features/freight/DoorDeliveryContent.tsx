@@ -1,3 +1,5 @@
+import LocalizedDoorDeliveryContent from './LocalizedDoorDeliveryContent';
+import {freightLocalizations,freightLocales,localePrefix,localizedDestination} from './locales/index.mjs';
 import DoorDeliveryEnglishContent,{ddpMetadataEn} from './DoorDeliveryEnglishContent';
 import {countryNamesEn} from './rates/copy.mjs';
 import {countryNames,regionCountries} from './rates/model.mjs';
@@ -8,18 +10,21 @@ const landLabels:Record<string,string>={russia:'俄罗斯',kazakhstan:'哈萨克
 const deliveryLabels:Record<string,string>={...countryNames,...landLabels,'middle-east':'中东','west-africa':'西非','latin-america':'拉美','services/sea-freight':'整柜海运','services/lcl-shipping-from-china':'海运拼箱','services/air-freight':'空运','services/amazon-fba':'FBA入仓','services/warehouse-services':'仓储集货'};
 export function doorQuote(context='含税清关到门方案评估',locale='zh'){
  const en=locale==='en';
+ if(freightLocalizations[locale]){const d=freightLocalizations[locale].door;const destination=localizedDestination(context,locale);const source=landLabels[context]?'land_door_delivery':context==='services/air-freight'?'air_freight':context==='services/warehouse-services'?'warehouse_services':'international_country';return quoteLinkProps(`${localePrefix(locale)}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source,destinationText:destination,deliveryAssessment:'1',notes:d.h1+'\n'+d.prepText+'\n'+d.rolesText})}`);}
  const destination=en?countryNamesEn[context]||'':countryNames[context]||landLabels[context]|| (regionCountries[context]?deliveryLabels[context]:'');
  const label=en?countryNamesEn[context]||context.replace('services/','').replaceAll('-',' '):deliveryLabels[context]||context;
  const source=landLabels[context]?'land_door_delivery':context==='services/air-freight'?'air_freight':context==='services/warehouse-services'?'warehouse_services':'international_country';
  return quoteLinkProps(`${en?'':'/zh-cn'}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source,destinationText:destination,deliveryAssessment:'1',notes:en?`${label}. Please assess DDP, DAP or another door-delivery arrangement for this shipment. Confirm the country, city, postcode, address, goods, HS code if known, value/currency, packing, gross weight/volume, special cargo, shipping date, trade terms, importer and clearance/tax/delivery/unloading scope.`:`${label}。请分别核对DDP、DAP或其他交付方案的可承接范围。需要确认：目的国家/城市/邮编及地址、品名及用途、HS编码、货值与币种、件数/毛重/体积、是否含电池或受限品、预计出运日期、贸易条款、进口主体及资质、清关/税费/派送/卸货范围。`})}`);
 }
 export function DoorDeliveryLink({locale,context='国际运输'}:{locale:string;context?:string}){
- if(!['zh','en'].includes(locale))return null;
+ if(!freightLocales.includes(locale))return null;
+ if(freightLocalizations[locale]){const d=freightLocalizations[locale].door;return <aside className="ddp-support" dir={locale==='ar'?'rtl':'ltr'} data-door-delivery-support><div><p className="freight-kicker">{d.kicker}</p><h2>{d.supportHeading}</h2><p>{d.supportText}</p></div><div className="freight-links"><a href={localePrefix(locale)+'/services/ddp-shipping-from-china/'}>{d.supportCompare} ↗</a><a {...doorQuote(context,locale)}>{d.cta} ↗</a></div></aside>;}
  if(locale==='en')return <aside className="ddp-support" data-door-delivery-support><div><p className="freight-kicker">Delivery scope / door-delivery assessment</p><h2>What happens between arrival and your delivery address?</h2><p>Main transport charges do not establish a duty-paid delivered price. Ask HB to confirm import clearance, duties, taxes, port or border charges, delivery and unloading against the cargo and address. Heaven Born (HB) executes freight within the agreed scope.</p></div><div className="freight-links"><a href="/services/ddp-shipping-from-china/">Compare DDP, DAP and delivery scope ↗</a><a {...doorQuote(context,'en')}>Send cargo and delivery requirements ↗</a></div></aside>;
  return <aside className="ddp-support" data-door-delivery-support><div><p className="freight-kicker">交付范围 / 到门方案</p><h2>从中国发货，到收货地址还差哪些环节？</h2><p>主运输费用不等于含税到门总价。结合货物与地址，向 HB 确认进口清关、税费、目的港或口岸费用、派送及卸货责任。货运由华正邦泰（Heaven Born，HB）按约定范围执行。</p></div><div className="freight-links"><a href="/zh-cn/services/ddp-shipping-from-china/">比较 DDP、DAP 与到门范围 ↗</a><a {...doorQuote(context)}>提交货物与交付要求 ↗</a></div></aside>;
 }
-export function doorDeliveryMetadata(locale:string){return locale==='en'?ddpMetadataEn:ddpMetadata;}
+export function doorDeliveryMetadata(locale:string){return freightLocalizations[locale]?{title:freightLocalizations[locale].door.title,desc:freightLocalizations[locale].door.description}:locale==='en'?ddpMetadataEn:ddpMetadata;}
 export default function DoorDeliveryContent({language='zh'}:{language?:string}){
+ if(freightLocalizations[language])return <LocalizedDoorDeliveryContent locale={language}/>;
  if(language==='en')return <DoorDeliveryEnglishContent/>;
  return <main id="main-content" className="freight-editorial freight-next ddp-page" lang="zh-CN">
  <header className="freight-hero"><div className="freight-wrap freight-split"><div><nav aria-label="面包屑"><a href="/zh-cn/">首页</a> / <a href="/zh-cn/services/sea-freight/">国际货运服务</a> / 含税清关到门</nav><p className="freight-kicker">从中国出口 / 交付方案评估</p><h1>含税清关到门，<br/>先把责任和费用说清楚。</h1><p className="freight-intro">把中国端出运、进口清关、税费与末端派送放在同一份方案中核对。能否采用 DDP，取决于目的国、货类、进口主体和当地执行条件，由 HB 按实际货物确认。</p><div className="freight-links"><a className="freight-cta" {...doorQuote()}>评估我的到门需求 ↗</a><a href="#delivery-scope">先比较交付方式 ↓</a></div></div><figure><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt="中国端货物装车作业" fetchPriority="high"/><figcaption>中国端装车实拍。用于说明出运准备，不代表该票采用 DDP 或已完成进口清关。</figcaption></figure></div></header>

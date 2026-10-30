@@ -1,3 +1,4 @@
+import {freightLocalizations} from '../locales/index.mjs';
 export const countryNamesEn={ghana:'Ghana',nigeria:'Nigeria','saudi-arabia':'Saudi Arabia',uae:'United Arab Emirates',kuwait:'Kuwait',qatar:'Qatar',oman:'Oman',bahrain:'Bahrain',india:'India',pakistan:'Pakistan',bangladesh:'Bangladesh',mexico:'Mexico',brazil:'Brazil',argentina:'Argentina',peru:'Peru',chile:'Chile',russia:'Russia',kazakhstan:'Kazakhstan',kyrgyzstan:'Kyrgyzstan',uzbekistan:'Uzbekistan',tajikistan:'Tajikistan',turkmenistan:'Turkmenistan','middle-east':'Middle East','west-africa':'West Africa','latin-america':'Latin America','central-asia':'Central Asia'};
 export const originNamesEn={NANSHA:'Nansha',HUANGPU:'Huangpu',SHEKOU:'Shekou',YANTIAN:'Yantian, Shenzhen',NINGBO:'Ningbo',SHANGHAI:'Shanghai'};
 export const rateCopy={
@@ -6,3 +7,5 @@ export const rateCopy={
 };
 
 export function routeLabelEn(row){if(row.route.startsWith('Direct'))return 'Direct';const transit=row.route.replace(/^Transfer\s*/i,'').trim();return !transit||transit.toUpperCase()===row.port.toUpperCase()?'Transshipment to confirm':`Via ${transit.replace(/\b[a-z]/g,c=>c.toUpperCase())}`;}
+
+for(const [locale,data]of Object.entries(freightLocalizations))rateCopy[locale]=data.rate;

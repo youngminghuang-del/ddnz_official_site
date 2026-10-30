@@ -5,7 +5,7 @@ import {previewAllowed,publicRateEligible,filteredRates,routeExamples,inquiryNot
 test('internal preview cannot run on production or with a disabled build flag',()=>{
  assert.equal(previewAllowed(true,'127.0.0.1','zh','ghana'),true);
  assert.equal(previewAllowed(true,'127.0.0.1','en','ghana'),true);
- for(const args of [[false,'127.0.0.1','zh','ghana'],[true,'www.ddnzglobal.com','zh','ghana'],[true,'127.0.0.1','fr','ghana'],[true,'127.0.0.1','zh','russia']])assert.equal(previewAllowed(...args),false);
+ for(const args of [[false,'127.0.0.1','zh','ghana'],[true,'www.ddnzglobal.com','zh','ghana'],[true,'127.0.0.1','id','ghana'],[true,'127.0.0.1','zh','russia']])assert.equal(previewAllowed(...args),false);
 });
 test('source captures without a confirmed year or approved selling price are never public offers',()=>{
  const now='2026-10-30T06:00:00Z';

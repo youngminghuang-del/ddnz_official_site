@@ -1,0 +1,12 @@
+import {freightLocalizations,localePrefix} from './locales/index.mjs';
+import {doorQuote} from './DoorDeliveryContent';
+export default function LocalizedDoorDeliveryContent({locale}:{locale:string}){
+ const d=freightLocalizations[locale].door;const prefix=localePrefix(locale);
+ return <main id="main-content" className="freight-editorial freight-next ddp-page" lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
+ <header className="freight-hero"><div className="freight-wrap freight-split"><div><nav aria-label={d.breadcrumb}><a href={prefix+'/'}>{d.home}</a> / <a href={prefix+'/services/sea-freight/'}>{d.freight}</a> / {d.breadcrumb}</nav><p className="freight-kicker">{d.kicker}</p><h1>{d.h1}</h1><p className="freight-intro">{d.intro}</p><div className="freight-links"><a className="freight-cta" {...doorQuote('',locale)}>{d.cta} ↗</a><a href="#delivery-scope">{d.compare} ↓</a></div></div><figure><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={d.alt} fetchPriority="high"/><figcaption>{d.caption}</figcaption></figure></div></header>
+ <section id="delivery-scope" className="freight-wrap freight-section"><h2>{d.deliveryHeading}</h2><p className="freight-intro">{d.allocation}</p><div className="ddp-options">{d.cards.map(([h,p]:string[])=><article key={h}><h3>{h}</h3><p>{p}</p></article>)}</div><p className="ddp-rule"><a href="https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/" target="_blank" rel="noreferrer">{d.rule}</a></p></section>
+ <section className="freight-evidence"><div className="freight-wrap freight-section"><h2>{d.costsHeading}</h2><div className="freight-steps">{d.costs.map(([h,p]:string[])=><article key={h}><h3>{h}</h3><p>{p}</p></article>)}</div><p className="ddp-rule">{d.reference}</p></div></section>
+ <section className="freight-wrap freight-section"><h2>{d.prepHeading}</h2><div className="ddp-brief"><p>{d.prepText}</p><ol>{d.steps.map((s:string)=><li key={s}>{s}</li>)}</ol></div></section>
+ <section className="freight-evidence"><div className="freight-wrap freight-section"><h2>{d.rolesHeading}</h2><p>{d.rolesText}</p><div className="freight-links">{['sea-freight','lcl-shipping-from-china','air-freight','amazon-fba'].map((slug,i)=><a href={prefix+'/services/'+slug+'/'} key={slug}>{d.services[i]}</a>)}</div><div className="freight-links"><a className="freight-cta" {...doorQuote('',locale)}>{d.cta} ↗</a></div></div></section>
+ </main>;
+}

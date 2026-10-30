@@ -1,0 +1,196 @@
+{
+  "rate": {
+    "fcl": "FCL / CONTENEUR COMPLET",
+    "heading": "Comparez fret et transit selon le conteneur.",
+    "regionHeading": "Choisissez le port de destination, puis comparez les itinéraires.",
+    "intro": "Comparez le port réel de chargement, la destination et le conteneur. Le transit indiqué couvre le trajet maritime ; frais à l’arrivée et livraison finale sont à confirmer séparément.",
+    "regionIntro": "Exemples d’itinéraires précis : comparez chaque port, conteneur et supplément.",
+    "quarter": "Fret indicatif · 4e trimestre 2026",
+    "period": "4e trimestre 2026",
+    "notice": "Ces références peuvent évoluer avec le marché et ne bloquent aucun prix. Faites confirmer fret, départs et suppléments pour votre envoi.",
+    "country": "Pays de destination",
+    "allCountries": "Tous les pays de la région",
+    "port": "Port de destination",
+    "allPorts": "Tous les ports de destination",
+    "origin": "Port réel de chargement",
+    "allOrigins": "Tous les ports de chargement",
+    "container": "Conteneur",
+    "ask": "Demander un devis",
+    "unit": "Devise / unité",
+    "example": "Exemples d’itinéraires",
+    "option": "Options indicatives",
+    "tableNote": "Références trimestrielles de différentes options de transport. Confirmez le départ lors du devis.",
+    "regionNote": "Chaque exemple précise les ports de chargement et de destination ; ce n’est pas un tarif régional minimum.",
+    "route": "Itinéraire / compagnie",
+    "journey": "Transit / transbordement",
+    "freight": "fret maritime indicatif",
+    "periodLabel": "Période de référence",
+    "actions": "Frais / demande",
+    "days": "jours",
+    "feesBelow": "Frais supplémentaires ci-dessous",
+    "actual": "Demandez un devis actualisé",
+    "quote": "Se renseigner sur cet itinéraire",
+    "details": "Frais et conditions d’expédition",
+    "detailHint": "Suppléments · Franchise et poids · Livraison finale",
+    "feeHeading": "Quels autres frais faut-il prévoir ?",
+    "feeIntro": "Références du 4e trimestre 2026, distinctes du fret maritime. RMB et USD restent dans leur devise d’origine. Les frais par envoi ne sont pas multipliés par le nombre de conteneurs.",
+    "ticket": "envoi",
+    "missingFee": "Aucun frais supplémentaire n’est indiqué pour cette ligne. Demandez confirmation à HB.",
+    "feeNote": "Vérifiez si les frais de documentation et de mainlevée télex s’appliquent tous deux et si les frais à destination s’ajoutent, selon la procédure de remise et le périmètre convenus.",
+    "scope": "Dédouanement, taxes et livraison à l’adresse",
+    "scopeNote": "Il s’agit d’une référence maritime FCL. Elle ne confirme pas l’inclusion du dédouanement import, des droits, taxes locales, contrôles, stockage, enlèvement du conteneur ou transport jusqu’à une adresse.",
+    "scopeBrief": "Pour étudier une livraison droits et taxes acquittés, indiquez marchandises, code SH si connu, emballage, valeur et adresse. HB confirmera faisabilité et responsabilités.",
+    "conditions": "Franchise, limites de poids et conditions",
+    "conditionNote": "Conditions destinées à la préparation : confirmez départs, acceptation des marchandises et suppléments lors du devis.",
+    "sailing": "Confirmez navire, voyage et date de départ avec le devis actualisé.",
+    "conditional": "La franchise, les conteneurs lourds et les marchandises particulières peuvent être soumis à accord. Le plan confirmé fait foi.",
+    "portPending": "Confirmer l’identité du port de destination",
+    "emptyHeading": "Demandez un devis pour cet itinéraire",
+    "portNote": "Un nom proche n’a pas été considéré comme un port équivalent. Précisez le point d’entrée et l’adresse pour que HB vérifie l’itinéraire.",
+    "emptyNote": "Le tableau ne présente pas d’option pour cette combinaison de ports. Envoyez les marchandises et la date prévue afin de vérifier itinéraire et fret.",
+    "collapse": "Réduire la liste",
+    "more": "Afficher d’autres références",
+    "bottom": "Besoin de LCL, de fret aérien ou d’une livraison droits et taxes acquittés ?",
+    "bottomNote": "HB chiffre ces prestations selon les marchandises, la date et l’adresse. DDNZ coordonne fabrication et exportation ; HB exécute le transport dans le périmètre convenu.",
+    "send": "Transmettre marchandises et besoins de livraison",
+    "original": "Autres modes et opérations à l’arrivée"
+  },
+  "extra": {
+    "direct": "Direct",
+    "via": "Via",
+    "pendingTransit": "Transbordement à confirmer",
+    "feeConditional": "Frais à confirmer",
+    "otherContainer": "Demander un devis pour ce conteneur",
+    "terminalPending": "Terminal à confirmer",
+    "sourceConditions": "Avant réservation, confirmez avec HB la franchise, le poids admissible, les autorisations et les suppléments propres à l’itinéraire.",
+    "cutoff": "Clôture / départ"
+  },
+  "door": {
+    "title": "Transport DDP depuis la Chine | Étude de livraison droits acquittés | DDNZ Global",
+    "description": "Étudiez un transport DDP ou DAP depuis la Chine selon vos marchandises, la destination et l’importateur. HB confirme dédouanement, droits, taxes, livraison et déchargement.",
+    "home": "Accueil",
+    "freight": "Transport international",
+    "breadcrumb": "Livraison droits et taxes acquittés",
+    "kicker": "Depuis la Chine / étude de livraison",
+    "h1": "Transport DDP depuis la Chine. Définissons le périmètre avant l’expédition.",
+    "intro": "Examinez transport, dédouanement import, droits, taxes et livraison finale dans un même plan. La faisabilité DDP dépend du pays, des marchandises, de l’importateur et de l’exécution locale. HB doit confirmer chaque envoi.",
+    "cta": "Étudier mes besoins de livraison",
+    "compare": "Comparer les modalités de livraison",
+    "alt": "Chargement de marchandises pour un départ de Chine",
+    "caption": "Opération de chargement à l’origine. Elle illustre la préparation et ne prouve ni une prestation DDP ni un dédouanement import terminé.",
+    "deliveryHeading": "Une livraison à l’adresse n’inclut pas automatiquement les taxes.",
+    "allocation": "Les règles commerciales répartissent les responsabilités entre vendeur et acheteur. La prestation de HB est définie séparément dans le plan et le devis convenus.",
+    "cards": [
+      [
+        "DDP · Rendu droits acquittés",
+        "Le vendeur assume transport, dédouanement import, droits et taxes applicables jusqu’au lieu convenu. La livraison se fait normalement sur le véhicule d’arrivée, marchandise prête à être déchargée par l’acheteur. Convenez séparément du déchargement."
+      ],
+      [
+        "DAP · Rendu au lieu de destination",
+        "Le vendeur achemine les marchandises au lieu convenu, prêtes à être déchargées du véhicule d’arrivée. L’acheteur prend normalement en charge les formalités import, droits et taxes."
+      ],
+      [
+        "Autres livraisons à l’adresse",
+        "Transport, représentation en douane et livraison peuvent être confiés séparément. « À l’adresse » ne signifie pas DDP et ne confirme pas l’inclusion des taxes, contrôles ou autres frais."
+      ]
+    ],
+    "rule": "Précisez la version des Incoterms®, le lieu nommé et les conditions contractuelles. Référence : ICC Academy · DAP et DDP.",
+    "costsHeading": "Vérifiez les inclusions et exclusions à chaque étape.",
+    "costs": [
+      [
+        "Origine et transport principal",
+        "Enlèvement, groupage, déclaration export, manutention et trajet maritime, aérien, ferroviaire ou routier : confirmez devise et unité de facturation."
+      ],
+      [
+        "Importation et fiscalité",
+        "Vérifiez code SH, valeur, importateur habilité, dédouanement, droits, taxes locales et justificatifs de paiement. Contrôles et stockage doivent être précisés séparément."
+      ],
+      [
+        "Livraison et réception",
+        "Adresse, code postal, rendez-vous, zone éloignée, accès, moyens de déchargement et preuve de livraison. Convenez des suppléments et incidents avant expédition."
+      ]
+    ],
+    "reference": "Les montants FCL des pages pays sont indicatifs pour le 4e trimestre 2026 : fret maritime et frais listés. Ils ne permettent pas de calculer un total DDP. LCL, aérien et DDP nécessitent un devis par envoi.",
+    "prepHeading": "Indiquez ce que vous savez ; laissez le reste à confirmer.",
+    "prepText": "Marchandises et usage, code SH si connu, valeur et devise, colis, emballage, poids brut, volume, batteries ou liquides, date et enlèvement en Chine. Ajoutez pays, ville, code postal, adresse, importateur, justificatifs fiscaux, rendez-vous et déchargement.",
+    "steps": [
+      "HB vérifie acceptation, itinéraire et modalités import locales.",
+      "Confirmez séparément transport, dédouanement, taxes, livraison et exclusions.",
+      "Convenez de l’importateur, du point de livraison, du transfert des responsabilités et du paiement.",
+      "Conservez déclarations, justificatifs fiscaux et preuve de livraison."
+    ],
+    "rolesHeading": "DDNZ coordonne fabrication et exportation ; HB exécute le transport.",
+    "rolesText": "Heaven Born (HB) assure le transport international dans le périmètre convenu. Dédouanement, gestion fiscale et livraison restent à confirmer selon le pays et les marchandises ; aucune couverture universelle n’est garantie.",
+    "services": [
+      "Maritime FCL",
+      "Groupage LCL",
+      "Fret aérien",
+      "Amazon FBA"
+    ],
+    "supportHeading": "Quelles étapes entre l’arrivée et votre adresse ?",
+    "supportText": "Le transport principal ne détermine pas un prix livré droits et taxes acquittés. HB doit confirmer dédouanement, fiscalité, frais portuaires ou frontaliers, livraison et déchargement selon les marchandises et l’adresse.",
+    "supportCompare": "Comparer DDP, DAP et le périmètre de livraison",
+    "fees": [
+      "Manutention terminal (THC)",
+      "Scellé",
+      "Échange d’équipement",
+      "Documentation",
+      "Mainlevée télex",
+      "Sûreté portuaire",
+      "Déclaration AMS",
+      "DHC (périmètre à confirmer)",
+      "Réservation",
+      "Congestion",
+      "DDC (périmètre à confirmer)",
+      "Échange électronique de données",
+      "Liste de chargement électronique",
+      "ENS (périmètre à confirmer)",
+      "TANK (périmètre à confirmer)",
+      "Déclaration VGM"
+    ]
+  },
+  "form": {
+    "fields": [
+      "Modalité de livraison demandée",
+      "Code postal de destination",
+      "Adresse / ville de livraison",
+      "Valeur des marchandises",
+      "Devise de la valeur",
+      "Code SH (si connu)",
+      "Importateur prévu",
+      "Justificatif de paiement des taxes",
+      "Moyens de déchargement"
+    ],
+    "checkbox": "Étudier dédouanement, droits / taxes ou livraison à l’adresse (facultatif)",
+    "help": "Les champs vides seront indiqués « À confirmer ». Il s’agit de vos besoins, pas d’un engagement de HB sur ses capacités ou les frais inclus.",
+    "unknown": "À confirmer",
+    "placeholder": "Facultatif ; peut rester à confirmer",
+    "header": "Étude de livraison (besoins du client, périmètre non confirmé)",
+    "edit": "Modifier les besoins de livraison",
+    "options": [
+      [
+        "DDP",
+        "DAP",
+        "Comparer les options"
+      ],
+      [
+        "USD",
+        "CNY",
+        "Autre (préciser en notes)"
+      ],
+      [
+        "L’acheteur peut organiser l’importateur",
+        "Le vendeur peut organiser l’importateur",
+        "Besoin d’évaluer l’organisation de l’importateur"
+      ],
+      [
+        "Nécessaire",
+        "Non demandé"
+      ],
+      [
+        "Le destinataire peut décharger",
+        "Besoin d’étudier le déchargement"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,196 @@
+{
+  "rate": {
+    "fcl": "FCL / CONTÊINER COMPLETO",
+    "heading": "Compare frete e trânsito por tipo de contêiner.",
+    "regionHeading": "Escolha o porto de destino e compare as rotas.",
+    "intro": "Compare o porto real de embarque, o destino e o contêiner. O prazo indicado cobre o trecho marítimo; despesas na chegada e entrega final exigem confirmação separada.",
+    "regionIntro": "São exemplos de rotas específicas. Compare cada porto, contêiner e cobrança adicional.",
+    "quarter": "Fretes de referência · 4º trimestre de 2026",
+    "period": "4º trimestre de 2026",
+    "notice": "As referências podem mudar conforme o mercado e não fixam o preço. Solicite a confirmação do frete, dos embarques e das despesas da sua carga.",
+    "country": "País de destino",
+    "allCountries": "Todos os países da região",
+    "port": "Porto de destino",
+    "allPorts": "Todos os portos de destino",
+    "origin": "Porto real de embarque",
+    "allOrigins": "Todos os portos de embarque",
+    "container": "Contêiner",
+    "ask": "Solicitar cotação",
+    "unit": "Moeda / unidade",
+    "example": "Exemplos de rotas",
+    "option": "Opções de referência",
+    "tableNote": "Referências trimestrais de diferentes opções de transporte. Confirme o embarque ao solicitar a cotação.",
+    "regionNote": "Cada exemplo identifica os portos de embarque e destino; não representa o menor preço da região.",
+    "route": "Rota / armador",
+    "journey": "Trânsito / transbordo",
+    "freight": "frete marítimo de referência",
+    "periodLabel": "Período de referência",
+    "actions": "Despesas / consulta",
+    "days": "dias",
+    "feesBelow": "Despesas adicionais abaixo",
+    "actual": "Solicite uma cotação atualizada",
+    "quote": "Consultar esta rota",
+    "details": "Despesas e condições de embarque",
+    "detailHint": "Adicionais · Franquia e peso · Entrega no endereço",
+    "feeHeading": "Quais outras despesas considerar?",
+    "feeIntro": "Referências do 4º trimestre de 2026, separadas do frete marítimo. RMB e USD permanecem na moeda original. As cobranças por embarque não são multiplicadas pelo número de contêineres.",
+    "ticket": "embarque",
+    "missingFee": "Não há despesas adicionais listadas neste registro. Solicite a confirmação ao HB.",
+    "feeNote": "Confirme se as taxas de documentação e liberação por telex são cobradas simultaneamente e se há despesas de destino adicionais, conforme a modalidade de liberação e o escopo acordado.",
+    "scope": "Desembaraço, tributos e entrega no endereço",
+    "scopeNote": "Esta é uma referência marítima FCL. Não confirma a inclusão de desembaraço de importação, direitos aduaneiros, tributos locais, inspeção, armazenagem, retirada do contêiner ou entrega em um endereço.",
+    "scopeBrief": "Para avaliar uma entrega com tributos pagos, informe mercadoria, código HS se conhecido, embalagem, valor e endereço. O HB confirmará viabilidade e responsabilidades.",
+    "conditions": "Franquia, limites de peso e condições",
+    "conditionNote": "Condições para planejamento. Confirme embarques, aceitação da carga e despesas adicionais na cotação.",
+    "sailing": "Confirme navio, viagem e data de embarque na cotação atualizada.",
+    "conditional": "Franquia, contêineres pesados e cargas especiais podem depender de aprovação. Vale o plano confirmado.",
+    "portPending": "Confirme a identificação do porto de destino",
+    "emptyHeading": "Solicite uma cotação para esta rota",
+    "portNote": "Um nome semelhante não foi considerado o mesmo porto. Informe o ponto exato de entrada e o endereço para o HB verificar a rota.",
+    "emptyNote": "A tabela não apresenta opção para a combinação de portos selecionada. Envie os dados da carga e a data prevista para consultar rota e frete.",
+    "collapse": "Mostrar menos opções",
+    "more": "Ver outras referências",
+    "bottom": "Precisa de LCL, frete aéreo ou entrega com tributos pagos?",
+    "bottomNote": "O HB cota essas opções separadamente conforme carga, data e endereço. A DDNZ coordena fabricação e exportação; o HB executa o transporte no escopo acordado.",
+    "send": "Enviar carga e requisitos de entrega",
+    "original": "Outros modais e operações na chegada"
+  },
+  "extra": {
+    "direct": "Direto",
+    "via": "Via",
+    "pendingTransit": "Transbordo a confirmar",
+    "feeConditional": "Despesa a confirmar",
+    "otherContainer": "Consultar este contêiner",
+    "terminalPending": "Terminal a confirmar",
+    "sourceConditions": "Antes da reserva, confirme com o HB a franquia, os limites de peso, as aprovações e os adicionais da rota.",
+    "cutoff": "Fechamento / embarque"
+  },
+  "door": {
+    "title": "Envio DDP da China | Avaliação de entrega com tributos pagos | DDNZ Global",
+    "description": "Avalie DDP ou DAP da China conforme carga, destino e importador. O HB confirma desembaraço, direitos, tributos, entrega e descarga para cada embarque.",
+    "home": "Início",
+    "freight": "Transporte internacional",
+    "breadcrumb": "Entrega com tributos pagos",
+    "kicker": "Da China / avaliação de entrega",
+    "h1": "Envio DDP da China. Defina o escopo antes do embarque.",
+    "intro": "Analise transporte, desembaraço de importação, direitos, tributos e entrega final no mesmo plano. A viabilidade do DDP depende do país, da carga, do importador e da execução local. O HB deve confirmar cada embarque.",
+    "cta": "Avaliar meus requisitos de entrega",
+    "compare": "Comparar modalidades de entrega",
+    "alt": "Carregamento de mercadorias para saída da China",
+    "caption": "Registro de carregamento na origem. Mostra a preparação e não comprova que este embarque foi realizado em DDP ou concluiu o desembaraço de importação.",
+    "deliveryHeading": "Entrega no endereço não inclui automaticamente os tributos.",
+    "allocation": "Os termos comerciais distribuem responsabilidades entre vendedor e comprador. A prestação do HB é definida separadamente no plano e na cotação acordados.",
+    "cards": [
+      [
+        "DDP · Entregue com direitos pagos",
+        "O vendedor assume transporte, desembaraço de importação e direitos e tributos aplicáveis até o local acordado. A entrega normalmente ocorre no veículo de chegada, pronta para descarga pelo comprador. Combine a descarga separadamente."
+      ],
+      [
+        "DAP · Entregue no local",
+        "O vendedor leva a mercadoria ao local acordado, pronta para descarregar do veículo de chegada. O comprador normalmente assume o desembaraço de importação e os direitos e tributos."
+      ],
+      [
+        "Outras entregas no endereço",
+        "Transporte, representação aduaneira e entrega podem ser contratados separadamente. “No endereço” não equivale a DDP nem confirma a inclusão de tributos, inspeção ou outras despesas."
+      ]
+    ],
+    "rule": "Indique a versão dos Incoterms®, o local nomeado e os termos contratuais. Referência: ICC Academy · DAP e DDP.",
+    "costsHeading": "Verifique inclusões e exclusões em cada etapa.",
+    "costs": [
+      [
+        "Origem e transporte principal",
+        "Coleta, consolidação, declaração de exportação, manuseio e trecho marítimo, aéreo, ferroviário ou rodoviário. Confirme moeda e unidade de cobrança."
+      ],
+      [
+        "Importação e tributos",
+        "Confira HS, valor, importador habilitado, desembaraço, direitos, tributos locais e comprovantes de pagamento. Inspeção e armazenagem devem ser discriminadas."
+      ],
+      [
+        "Entrega e recebimento",
+        "Endereço, código postal, agendamento, áreas remotas, acesso, descarga e comprovante de entrega. Combine adicionais e tratamento de ocorrências antes de embarcar."
+      ]
+    ],
+    "reference": "Os valores FCL das páginas de países são referências do 4º trimestre de 2026 para frete marítimo e despesas listadas. Não permitem calcular um total DDP. LCL, aéreo e DDP exigem cotação por embarque.",
+    "prepHeading": "Informe o que souber; deixe o restante a confirmar.",
+    "prepText": "Mercadoria e uso, HS se conhecido, valor e moeda, volumes, embalagem, peso bruto, cubagem, baterias ou líquidos, data prevista e coleta na China. Acrescente país, cidade, código postal, endereço, importador, comprovantes fiscais, agendamento e meios de descarga.",
+    "steps": [
+      "O HB verifica aceitação da carga, rota e procedimentos locais de importação.",
+      "Confirme transporte, desembaraço, tributos, entrega e exclusões separadamente.",
+      "Acorde importador, ponto de entrega, transferência de responsabilidades e pagamento.",
+      "Guarde declarações, comprovantes fiscais e prova de entrega."
+    ],
+    "rolesHeading": "A DDNZ coordena fabricação e exportação; o HB executa o transporte.",
+    "rolesText": "A Heaven Born (HB) executa o transporte internacional no escopo acordado. Desembaraço, gestão de tributos e entrega dependem de confirmação por país e mercadoria; não há promessa de cobertura universal.",
+    "services": [
+      "Marítimo FCL",
+      "Consolidação LCL",
+      "Frete aéreo",
+      "Amazon FBA"
+    ],
+    "supportHeading": "Quais etapas faltam entre a chegada e o endereço?",
+    "supportText": "O frete principal não determina o preço entregue com tributos pagos. O HB deve confirmar desembaraço, tributos, despesas portuárias ou fronteiriças, entrega e descarga conforme carga e endereço.",
+    "supportCompare": "Comparar DDP, DAP e o escopo da entrega",
+    "fees": [
+      "Manuseio no terminal (THC)",
+      "Lacre",
+      "Intercâmbio de equipamento",
+      "Documentação",
+      "Liberação por telex",
+      "Segurança portuária",
+      "Declaração AMS",
+      "DHC (escopo a confirmar)",
+      "Reserva",
+      "Congestionamento",
+      "DDC (escopo a confirmar)",
+      "Intercâmbio eletrônico de dados",
+      "Lista de volumes eletrônica",
+      "ENS (escopo a confirmar)",
+      "TANK (escopo a confirmar)",
+      "Declaração VGM"
+    ]
+  },
+  "form": {
+    "fields": [
+      "Modalidade de entrega solicitada",
+      "Código postal do destino",
+      "Endereço / cidade de entrega",
+      "Valor da mercadoria",
+      "Moeda do valor",
+      "Código HS (se conhecido)",
+      "Definição do importador",
+      "Comprovante de pagamento de tributos",
+      "Condições de descarga"
+    ],
+    "checkbox": "Avaliar desembaraço, tributos ou entrega no endereço (opcional)",
+    "help": "Campos vazios serão indicados como “A confirmar”. São seus requisitos, não uma confirmação da capacidade do HB ou das despesas incluídas.",
+    "unknown": "A confirmar",
+    "placeholder": "Opcional; pode ficar a confirmar",
+    "header": "Avaliação de entrega (requisitos do cliente, escopo não confirmado)",
+    "edit": "Editar requisitos de entrega",
+    "options": [
+      [
+        "DDP",
+        "DAP",
+        "Comparar opções"
+      ],
+      [
+        "USD",
+        "CNY",
+        "Outra (informar nas observações)"
+      ],
+      [
+        "O comprador pode organizar o importador",
+        "O vendedor pode organizar o importador",
+        "Preciso avaliar a organização do importador"
+      ],
+      [
+        "Necessário",
+        "Não solicitado"
+      ],
+      [
+        "O destinatário pode descarregar",
+        "Preciso avaliar a descarga"
+      ]
+    ]
+  }
+}
