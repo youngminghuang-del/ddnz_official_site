@@ -52,6 +52,7 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
+  if(route==='/shipping-from-china-to-ecuador') return allNavigationLanguages;
   if(route==='/services/ddp-shipping-from-china') return allNavigationLanguages;
   if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/electric-tricycles-from-china','/sourcing/electric-utility-vehicles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(route)) return allNavigationLanguages;
   if (route.startsWith('/shipping-from-china-to-')) return freightDestinationLanguages;

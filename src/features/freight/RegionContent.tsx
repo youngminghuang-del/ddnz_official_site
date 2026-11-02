@@ -1,3 +1,4 @@
+import EcuadorRegionEntry from './EcuadorRegionEntry';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
 import FreightRatePreview from './rates/FreightRatePreview';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
@@ -90,6 +91,7 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
         return <a className="freight-country" key={country.slug} href={`${countryPrefix}/shipping-from-china-to-${country.slug}/`}><span className="font-mono text-[#8c7398]">{String(index + 1).padStart(2, '0')}</span><h3>{countryName}</h3><p>{focus}{englishGuideLabel && <small className="freight-english-guide">{englishGuideLabel}</small>}</p><span className="freight-arrow" aria-hidden="true">↗</span></a>;
       })}</div>
     </section>
+    {region==='latin-america' && <EcuadorRegionEntry locale={locale} prefix={prefix}/>}
     {region === 'west-africa' ? <NigeriaMarketGuide locale={locale} compact /> : <section className="freight-region-evidence" aria-labelledby="region-evidence-heading"><div className="freight-wrap freight-section">
       <p className="freight-kicker">03 / {c.evidence}</p><h2 id="region-evidence-heading">{c.evidenceHeading}</h2>
       <div className="freight-region-evidence-grid">

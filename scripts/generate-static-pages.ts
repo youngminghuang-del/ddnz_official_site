@@ -1,3 +1,5 @@
+import EcuadorContent from '../src/features/freight/EcuadorContent';
+import {ecuadorCopy} from '../src/features/freight/ecuadorCopy';
 import egyptScooterPartsSchema from '../src/data/egypt-scooter-parts-schema.json';
 import magneticCaseWholesaleSchema from '../src/data/magnetic-case-wholesale-schema.json';
 import {ddpPath,doorDeliveryMetadata} from '../src/features/freight/DoorDeliveryContent';
@@ -815,6 +817,7 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
 }
 
 seoDataMatrix.about = Object.fromEntries(aboutLanguages.map(locale => [locale === 'zh' ? 'zh-cn' : locale, aboutMeta(locale)]));
+seoDataMatrix['shipping-from-china-to-ecuador']=Object.fromEntries(Object.entries(ecuadorCopy).map(([l,c])=>[l==='zh'?'zh-cn':l,{title:c.title+' | DDNZ',desc:c.description,keywords:''}]));
 const distDir = path.resolve(process.cwd(), 'dist');
 for (const [locale, copy] of Object.entries(positioning)) {
   const lang = locale === 'zh' ? 'zh-cn' : locale;
@@ -945,7 +948,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = relPath==='shipping-from-china-to-ecuador'?['en','zh-cn','es','ar','fr','ru','pt','tr']:relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1647,6 +1650,11 @@ function injectStaticRouteContent(
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
     return htmlContent.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
   }
+  if (relPath==='shipping-from-china-to-ecuador') {
+    const body=renderToStaticMarkup(createElement(EcuadorContent,{locale:(lang==='zh-cn'?'zh':lang) as import('../src/features/freight/ecuadorCopy').EcuadorLocale}));
+    for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|EcuadorFreightPage|market-preparation|gulf-stories)-.*\.css$/.test(f))) if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+    return htmlContent.replace('<div id="root"></div>', '<div id="root">'+body+'</div>');
+  }
   if (relPath === 'shipping-from-china-to-brazil' && lang === 'pt') {
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+renderToStaticMarkup(createElement(BrazilPortugueseContent))+'</div>');
   }
@@ -1945,6 +1953,7 @@ function run() {
     }
   }
 
+  basePaths.push({path:'shipping-from-china-to-ecuador',priority:'0.8',changefreq:'monthly',languages:['en','zh-cn','es','ar','fr','ru','pt','tr']});
   const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod?: string; languages?: string[] }> = [...basePaths, ...countryPaths];
   blogPosts.forEach((post) => {
     if (post && (post.slug || post.id)) {

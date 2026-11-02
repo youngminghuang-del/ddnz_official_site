@@ -1,0 +1,60 @@
+{
+ "ecuador":{
+  "title":"Çin’den Ekvador’a yük taşımacılığı",
+  "description":"Çin’deki iki fabrikanın ekipmanlarını hazırlayın; paketleme ve ihracat belgelerini karşılaştırıp Ekvador’daki teslim noktasına taşımayı değerlendirin.",
+  "home":"Ana sayfa","region":"Latin Amerika","name":"Ekvador",
+  "kicker":"ÇİN’DEN TEDARİK · İKİ FABRİKADAN KONSOLİDASYON · İHRACAT DEVİR SÜRECİ",
+  "heading":"İki fabrika. Koordineli bir sevkiyat planı.",
+  "intro":"İki fabrikadan kapsül oyuncak otomatları veya başka ekipmanlar mı alıyorsunuz? Birlikte sevkiyatı planlamadan önce her fabrikanın modellerini, ambalajlı ölçülerini, hazır olma tarihlerini ve ihracat belgelerini kontrol edin.",
+  "quote":"Ekipman konsolidasyon planı isteyin",
+  "roles":"DDNZ, Çin’deki tedarik, konsolidasyon ve belge teslimini kararlaştırılan kapsamda koordine eder. HB, ilgili yükün taşınıp taşınamayacağını değerlendirir. Sorumlu ihracatçı, gümrükleme düzenlemeleri, vergi ve harçlar ile teslimat kapsamı ayrıca yazılı olarak teyit edilmelidir.",
+  "diagram":"İki fabrikayla hazırlık şeması · tamamlanmış bir sevkiyat örneği değildir",
+  "factoryA":"Fabrika A","factoryB":"Fabrika B","factoryNote":"Model · koli · hazır olma tarihi",
+  "hub":"Kontrol edin, ardından birleştirin","hubNote":"Fabrika bazlı kayıt + ortak çeki listesi",
+  "destination":"Ekvador’daki teslim noktası","destinationNote":"Liman / terminal / adres teyit edilecek",
+  "sequence":"İki siparişten tutarlı bir ihracat dosyasına",
+  "steps":[
+   ["Her fabrikanın yükünü kaydedin","Makineleri, aksesuarları ve beraberindeki oyuncakları ayrı listeleyin. Fabrika, model, adet, değer, paket sayısı, ambalajlı ölçüler, brüt ağırlık ve hazır olma tarihini kaydedin."],
+   ["Toplama ve ambalajı koordine edin","Adresleri, depoya giriş tarihlerini, sandık korumasını ve elleçleme koşullarını kontrol edin. İki fabrika da hazır olduğunda siparişlerin birlikte sevk edilip edilemeyeceğini teyit edin."],
+   ["Belgeleri ve ihracatçıyı belirleyin","Sözleşmeleri, faturaları, çeki listelerini ve gerçek yükü karşılaştırın. İhracat beyanı ve imzalardan sorumlu tarafları belirleyin; düzenlemeyi değerlendirmeden önce eksik belgeleri listeleyin."],
+   ["Güzergâh ve teslimi kararlaştırın","Gerçek liman, ithalatçı ve teslim noktasına göre FCL, LCL ve havayolunu karşılaştırın. Teklifte çıkış masraflarını, ana navlunu ve varış masraflarını ayırın."]
+  ],
+  "docs":"Menşe şahadetnamesi veya ihracat belgeleri eksik mi?",
+  "docIntro":"Menşe şahadetnamesi (CO) ile ihracat için gereken kayıt farklı gerekliliklerdir. İthalatçı, gümrük müşaviri ve belgeyi düzenleyen kurum; yük için tercihli olmayan bir CO mu, yoksa Çin–Ekvador anlaşması kapsamında tercihli menşe belgesi mi gerektiğini teyit etmelidir.",
+  "docCards":[
+   ["Menşe kanıtları","Gerçek üreticiyi, üretim yerini ve menşe belgelerini kaydedin. Tercihli uygulama anlaşma koşullarına bağlıdır; genel CO, tercihli menşe belgesinin yerini kendiliğinden almaz."],
+   ["Sorumlu ihracatçı","Doğrudan veya yasal yetkiye sahip bir aracıyla ihracatı değerlendirmeden önce eksik kayıt, belge veya hesabı belirleyin. Sözleşme, faturalandırma, ödeme ve beyanlar tutarlı olmalıdır."],
+   ["Sevkiyattan önce eksikleri giderin","Her fabrikanın gerçek bilgilerini koruyun. Ortak beyan, ayrı başvuru ve belge türleri incelenmelidir. Belge düzenlenmesi, tarife avantajı veya gümrükten çekme garanti edilmez."]
+  ],
+  "ports":"Guayaquil ve Posorja’yı terminale göre karşılaştırın",
+  "portIntro":"Guayaquil ve Posorja, farklı terminal masraflarıyla değerlendirilebilecek limanlardır. Şehir, adres ve boşaltma koşullarını bildirin. Burada yer almaları HB’nin yükü kabul ettiğini doğrulamaz.",
+  "portA":"Guayaquil · terminal teyit edilecek","portB":"Posorja · güzergâh teyit edilecek",
+  "portNote":"Gümrükleme ve sonraki taşımayı karşılaştırmadan önce hat, liman kodu, terminal ve konşimento teslim koşullarını teyit edin.",
+  "rates":"Navlun ve süre yük bazında değerlendirilmeli",
+  "rateBody":"Bu sayfada henüz Ekvador için doğrulanmış navlun veya taşıma süresi sunmuyoruz. Güzergâh, masraf ve koşulların değerlendirilebilmesi için her fabrikanın ambalajlı ölçülerini, brüt ağırlıklarını ve hazır olma tarihlerini, ayrıca teslim noktasını bildirin. Limana kadar verilen teklif, açıkça kararlaştırılmadıkça vergileri ödenmiş adrese teslimi kapsamaz.",
+  "brief":"Talep için şu altı bilgiyi hazırlayın",
+  "fields":["İki fabrikanın adı, adresi ve iletişim kişileri","Makinelerin kullanım amacı, modeli ve fotoğrafları; oyuncak, batarya veya ödeme modülü içerip içermediği","Fabrika bazında adet, paket sayısı, ambalajlı ölçüler, brüt ağırlık ve hazır olma tarihi","Önerilen ihracatçı, mevcut ve eksik belgeler","İthalatçı, liman veya son adres ve boşaltma koşulları","Gerekli toplama, konsolidasyon, taşıma, gümrükleme veya teslimat; bilinmeyen bilgiler daha sonra teyit edilebilir"],
+  "sources":"İthalat ve menşe koşullarını kontrol edin",
+  "importGuide":"SENAE · ithalata hazırlık","fta":"SENAE · Çin–Ekvador menşe koşulları","origin":"CCPIT · menşe belgesi süreci",
+  "service":"Çok tedarikçili konsolidasyon ve ihracat koordinasyonu",
+  "notes":"İki fabrikadan alınan ekipmanları birleştirerek Ekvador’a göndermek istiyorum. Lütfen her fabrikanın çeki listesini, sorumlu ihracatçıyı, menşe belgesi (CO) türünü ve eksik belgeleri kontrol edin. Taşıma şeklini, navlunu, süreyi ve gümrükleme ile teslimattan kimin sorumlu olduğunu ayrı ayrı teyit edin."
+ },
+ "market":{
+  "title":"Giyim ve ayakkabı siparişlerini teslim noktasına göre kontrol edin",
+  "qatar":"Katar: Hamad Limanı’nı ve Doha’daki teslim adresini teyit edin",
+  "bahrain":"Bahreyn: terminali ve Manama’daki teslim noktasını teyit edin",
+  "intro":"FCL, LCL ve havayolunu karşılaştırmadan önce tedarikçilerin yük ve belgelerini eşleştirin. Kabul koşullarının incelenmesi için gerçek ürün ve adres bilgilerini gönderin.",
+  "cards":[
+   ["Yük ve marka belgeleri","Şapka, ayakkabı ve diğer ürünleri tedarikçi bazında; malzeme, adet, koli ölçüsü ve brüt ağırlıkla listeleyin. Markalı ürünler için yetki veya hak belgesi sunun; taşıyıcı ve ithalat koşullarını sevkiyat öncesi kontrol edin."],
+   ["İki uçtaki masrafları ayırın","Çıkış elleçlemesi, ana navlun, varış masrafları, vergiler ve yerel teslimatı ayrı teyit edin. LCL için ayrıştırma, depolama ve asgari ücretleri kontrol edin; FCL fiyatlarını doğrudan uygulamayın."],
+   ["Teslim alma ve boşaltma","Alıcı, ithalatçı, şehir, posta kodu ve tam adresi bildirin. Boşaltma ekipmanı, randevu, kamyon erişimi ve bekleme ücretlerini kontrol edin. Limana varış, adrese teslim değildir."],
+   ["Hazır olma tarihi ve taşıma seçimi","Her fabrikanın hazır olma ve depoya giriş tarihini kaydedin. Toplama, sefer bekleme, ana taşıma, gümrükleme ve teslim sürelerini ayırın. Havayolunda ücretlendirilebilir ağırlık ve kabul koşulları ayrıca incelenir."]
+  ],
+  "bahrainNote":"Mevcut referanslarda varış alanı BAHRAIN olarak geçiyor; terminal henüz teyit edilmedi. Bu kayıtlar belirli bir terminalde hizmetin doğrulandığı anlamına gelmez.",
+  "qatarNote":"Deniz limanı olarak HAMAD’ı kontrol edin. Doha’daki adres, gümrükleme ve sonraki teslimat ayrıca teyit edilmelidir.",
+  "cta":"Yük ve teslim alma bilgilerini gönderin",
+  "notes":"Lütfen giyim ürünlerini, şapkaları ve ayakkabıları, marka iznini veya diğer hak sahipliği belgelerini, tedarikçilerin çeki listelerini, limanı ve teslim adresini kontrol edin. Navlun, vergi ve harçlar ile yerel teslim koşullarını ayrı ayrı teyit edin."
+ },
+ "region":{"title":"İki fabrikadan Ekvador’a ekipman","intro":"Limanı ve teslimatı değerlendirmeden önce paketleme, ihracatçı ve menşe kayıtlarını karşılaştırın.","link":"Ekvador hazırlık rehberini inceleyin"},
+ "serviceType":"Ekipman konsolidasyonu ve ihracat belgesi koordinasyonu"
+}
