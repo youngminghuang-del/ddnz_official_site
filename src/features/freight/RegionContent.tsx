@@ -1,3 +1,4 @@
+import marketRegions from './marketRegions.json';
 import EcuadorRegionEntry from './EcuadorRegionEntry';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
 import FreightRatePreview from './rates/FreightRatePreview';
@@ -29,18 +30,18 @@ const copy: Record<Language, Copy> = {
   tr: { home: 'Ana sayfa', freight: 'Yük hizmetleri', eyebrow: 'ÇİN → VARIŞ', heading: 'Çin’den sevkiyat:', intro: 'Önce ülkeyi seçin. Sonra yük, liman, ithalatçı ve teslim kapsamını birlikte netleştirelim.', choose: 'Ülke seçin', quote: 'Sevkiyatı görüşün', network: 'Liman ve geçit ağı', networkNote: 'Noktalar koordinatlara göre yerleştirildi. Çizgiler olası koridorları gösterir, kesin gemi programını değil.', routes: 'ÜLKE ROTALARI', routesHeading: 'Önce pazar, sonra teslimat planı.', countryPrompt: 'İthalatçı, belgeler, liman ve son teslim kapsamını kontrol edin.', evidence: 'SEVKİYAT KANITI', evidenceHeading: 'Sadece rota çizgisine değil, kanıta bakın.', origin: '01 / Çin çıkışı', border: '02 / Rota ve devir', destination: '03 / Varış', originCaption: 'Çin’de gerçek yükleme; varışı kanıtlamaz.', destinationCaption: 'BAE’de gerçek boşaltma; yeni sevkiyat için tarih ve kapsamı teyit edin.', pending: 'Bu bölge için doğrulanmış varış fotoğrafı henüz yok. Sevkiyata özel gümrük ve teslim kayıtlarını isteyin.', evidenceNote: 'Harita ve çıkış fotoğrafı gümrükleme veya teslimatı kanıtlamaz.', caseLink: 'Ülke vakasını görün', planning: 'TEKLİFTEN ÖNCE', planningHeading: 'Toplam maliyeti etkileyen üç karar.', cargo: 'Yük ve ambalaj', cargoBody: 'Ürün, adet, ölçü, brüt ağırlık, fotoğraf ve hazır tarihi gönderin.', import: 'İthalatçı ve belgeler', importBody: 'Rezervasyon öncesinde ithalatçı, belgeler ve ürün koşullarını teyit edin.', scope: 'Teslim kapsamı', scopeBody: 'Liman, gümrük deposu, teslim alma ve adrese teslimi ayrı fiyatlandırın.' },
 };
 
-const regionNames: Record<RegionId, Record<Language, string>> = {
+const regionNames: Record<RegionId, Record<Language, string>> = {"central-america":{"en": "Central America", "zh": "中美洲", "es": "América Central", "ar": "أمريكا الوسطى", "fr": "Amérique centrale", "ru": "Центральная Америка", "pt": "América Central", "tr": "Orta Amerika"},"europe":{"en": "Europe", "zh": "欧洲", "es": "Europa", "ar": "أوروبا", "fr": "Europe", "ru": "Европа", "pt": "Europa", "tr": "Avrupa"},
   'middle-east': { en: 'the Middle East', zh: '中东', es: 'Oriente Medio', ru: 'Ближний Восток', fr: 'le Moyen-Orient', ar: 'الشرق الأوسط', pt: 'o Oriente Médio', tr: 'Orta Doğu' },
   'west-africa': { en: 'West Africa', zh: '西非', es: 'África Occidental', ru: 'Западную Африку', fr: 'l’Afrique de l’Ouest', ar: 'غرب أفريقيا', pt: 'a África Ocidental', tr: 'Batı Afrika' },
   'latin-america': { en: 'Latin America', zh: '拉美', es: 'Latinoamérica', ru: 'Латинскую Америку', fr: 'l’Amérique latine', ar: 'أمريكا اللاتينية', pt: 'a América Latina', tr: 'Latin Amerika' },
 };
 
-const countryIso: Record<string, string> = {colombia:'CO','ivory-coast':'CI',senegal:'SN',
+const countryIso: Record<string, string> = {panama:'PA','costa-rica':'CR',spain:'ES',germany:'DE',colombia:'CO','ivory-coast':'CI',senegal:'SN',
   mexico: 'MX', brazil: 'BR', argentina: 'AR', peru: 'PE', chile: 'CL', nigeria: 'NG', ghana: 'GH',
   'saudi-arabia': 'SA', uae: 'AE', kuwait: 'KW', qatar: 'QA', oman: 'OM', bahrain: 'BH',
 };
 const languageTag: Record<Language, string> = { en: 'en', zh: 'zh-CN', es: 'es', ru: 'ru', fr: 'fr', ar: 'ar', pt: 'pt', tr: 'tr' };
-const gatewayNames: Record<RegionId, string[]> = {
+const gatewayNames: Record<RegionId, string[]> = {'central-america':['Balboa','Caldera / Moín'],europe:['Valencia','Hamburg'],
   'middle-east': ['Jebel Ali / AEJEA', 'Jeddah / SAJED', 'Shuwaikh / KWSWK'],
   'west-africa': ['Lagos / NGLOS', 'Tema / GHTEM', 'Abidjan / CIABJ'],
   'latin-america': ['Callao / PECLL', 'Santos / BRSSZ', 'Manzanillo / MXZLO'],
@@ -48,10 +49,12 @@ const gatewayNames: Record<RegionId, string[]> = {
 
 export function regionDisplayName(region: RegionId, locale: Language) { return regionNames[region][locale]; }
 export function regionDescription(region: RegionId, locale: Language) {
+  if(region==='central-america'||region==='europe')return marketRegions[region][locale].intro;
   const local = locale === 'zh' || locale === 'es' ? locale : 'en';
   return locale === 'en' || locale === 'zh' || locale === 'es' ? regions[region].intro[local] : copy[locale].intro;
 }
 export function regionPageMetadata(region: RegionId, locale: Language) {
+  if(region==='central-america'||region==='europe')return {title:marketRegions[region][locale].title+' | DDNZ Global',desc:marketRegions[region][locale].intro,keywords:''};
   const titleStart: Record<Language, string> = { en: 'Shipping from China to', zh: '中国至', es: 'Envíos de China a', ru: 'Доставка из Китая в', fr: 'Expédier de Chine vers', ar: 'الشحن من الصين إلى', pt: 'Envio da China para', tr: 'Çin’den sevkiyat:' };
   const start = locale === 'ru' && region === 'middle-east' ? 'Доставка из Китая на' : titleStart[locale];
   return { title: `${start} ${regionDisplayName(region, locale)} | DDNZ Global`, desc: regionDescription(region, locale), keywords: '' };
@@ -72,16 +75,16 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-region-stage">
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path={`/shipping-from-china-to-${region}/`} locale={locale} className="freight-region-breadcrumb"/>
-      <p className="freight-kicker">{c.eyebrow}</p><h1>{heading} <em>{name}.</em></h1>
+      <p className="freight-kicker">{c.eyebrow}</p><h1>{region==='central-america'||region==='europe'?marketRegions[region][locale].title:<>{heading} <em>{name}.</em></>}</h1>
       <p className="freight-intro">{regionDescription(region, locale)}</p>
       <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a></div>
     </div></header>
     <FreightRatePreview context={region} locale={locale}/><DoorDeliveryLink locale={locale} context={region}/>
     <section className="freight-region-map-section" aria-labelledby="region-map-heading"><div className="freight-wrap">
       <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.network}</p><h2 id="region-map-heading">{c.network}</h2></div>
-      <RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />
+      {region==='central-america'||region==='europe'?<figure className="market-region-route"><p><bdi>{new Intl.DisplayNames([locale],{type:'region'}).of('CN')}</bdi><span aria-hidden="true">{locale==='ar'?'←':'→'}</span><bdi>{gatewayNames[region].join(' / ')}</bdi></p><figcaption>{marketRegions[region][locale].diagram}</figcaption></figure>:<RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />}
       <ChinaOriginGuide locale={locale} destination={name} />
-      <OriginDestinationOpportunities context={region} locale={locale} />
+      {region!=='central-america'&&region!=='europe'&&<OriginDestinationOpportunities context={region} locale={locale} />}
     </div></section>
     <section id="country-routes" className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><h2 className="mt-4">{c.routesHeading}</h2>
       <div className="mt-8 border-t border-[#dedde1]">{data.countries.map((country, index) => {

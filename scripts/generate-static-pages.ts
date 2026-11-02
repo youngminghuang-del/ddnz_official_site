@@ -735,6 +735,7 @@ for (const locale of ['zh', 'en', 'es'] as const) {
   seoDataMatrix['services/sea-freight'][locale === 'zh' ? 'zh-cn' : locale] = seaFreightMetadata(locale);
 }
 for (const region of Object.keys(regions) as RegionId[]) {
+  seoDataMatrix[`shipping-from-china-to-${region}`] ??= {};
   for (const locale of ['zh', 'en', 'es', 'ru', 'fr', 'ar', 'pt', 'tr'] as const) {
     seoDataMatrix[`shipping-from-china-to-${region}`][locale === 'zh' ? 'zh-cn' : locale] = regionPageMetadata(region, locale);
   }
@@ -1917,6 +1918,8 @@ function run() {
     { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
+    { path: 'shipping-from-china-to-central-america', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
+    { path: 'shipping-from-china-to-europe', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'get-a-quote', priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
     { path: 'products', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },
     { path: 'sourcing-services', priority: '0.9', changefreq: 'monthly', languages: overviewLanguages },

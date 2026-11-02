@@ -52,5 +52,77 @@
       "ar": "خطط للشحن البحري عبر ميناء داكار وللشحن الجوي عبر DSS. تحقق من المحطة ونقطة الإفراج وعنوان الاستلام كل على حدة؛ المطار والميناء البحري نقطتا تسليم مختلفتان.",
       "tr": "Denizyolu için Dakar’ı, havayolu planlaması için DSS’yi belirtin. Terminali, yük teslim noktasını ve alıcı adresini ayrı doğrulayın; havalimanı ve liman farklı teslim noktalarıdır."
     }
+  },
+  "panama": {
+    "iso": "PA",
+    "port": "BALBOA,PA",
+    "gateway": "Balboa",
+    "airport": "PTY",
+    "region": "central-america",
+    "source": "https://www.amp.gob.pa/noticias/notas-de-prensa/panama-garantiza-continuidad-operativa-en-puertos-estrategicos/",
+    "notes": {
+      "en": "Use Balboa on the Pacific side for this reference. Colón and Cristóbal are Atlantic gateways and need separate route and cost checks. Confirm the named terminal and final delivery address.",
+      "zh": "本页参考以太平洋侧巴尔博亚港为目的港。科隆、克里斯托瓦尔位于大西洋侧，路线和费用须分别核对。询价时请写明码头与最终收货地址。",
+      "es": "Esta referencia corresponde a Balboa, en el Pacífico. Colón y Cristóbal están en el Atlántico y requieren revisar ruta y costes por separado. Indique terminal y dirección final.",
+      "ar": "يخص هذا المرجع بالبوا على جانب المحيط الهادئ. تقع كولون وكريستوبال على جانب الأطلسي وتحتاجان إلى مراجعة منفصلة للمسار والتكلفة. حدد المحطة وعنوان التسليم النهائي.",
+      "fr": "Cette référence concerne Balboa, côté Pacifique. Colón et Cristóbal, côté Atlantique, nécessitent une vérification distincte du trajet et des frais. Précisez le terminal et l’adresse finale.",
+      "ru": "Этот ориентир относится к Бальбоа на тихоокеанской стороне. Колон и Кристобаль находятся на атлантической стороне: маршрут и расходы проверяются отдельно. Укажите терминал и конечный адрес.",
+      "pt": "Esta referência é para Balboa, no Pacífico. Colón e Cristóbal ficam no Atlântico e exigem análise separada da rota e dos custos. Informe o terminal e o endereço final.",
+      "tr": "Bu referans Pasifik kıyısındaki Balboa içindir. Atlantik kıyısındaki Colón ve Cristóbal için güzergâh ve masraflar ayrıca incelenmelidir. Terminali ve son teslimat adresini belirtin."
+    }
+  },
+  "costa-rica": {
+    "iso": "CR",
+    "port": "CALDERA",
+    "gateway": "Caldera / Moín",
+    "airport": "SJO",
+    "region": "central-america",
+    "source": "https://www.saamterminals.com/business-area-section/port-terminals/caldera/",
+    "notes": {
+      "en": "Compare Caldera on the Pacific side with Moín on the Caribbean side using the actual receiving address. No FCL price is listed here yet; request a route-specific quote rather than applying a Panama rate.",
+      "zh": "按最终收货地址比较太平洋侧卡尔德拉港与加勒比海侧莫因港。本页暂未列出整柜价格，请按实际港口询价，不套用巴拿马运价。",
+      "es": "Compare Caldera, en el Pacífico, y Moín, en el Caribe, según la dirección de recepción. Aún no se publica una tarifa FCL; solicite cotización para el puerto concreto, sin aplicar tarifas de Panamá.",
+      "ar": "قارن كالديرا على المحيط الهادئ بموين على البحر الكاريبي وفق عنوان الاستلام الفعلي. لا يُعرض سعر FCL حالياً؛ اطلب عرضاً للميناء المحدد بدلاً من تطبيق أسعار بنما.",
+      "fr": "Comparez Caldera, côté Pacifique, et Moín, côté Caraïbes, selon l’adresse de réception. Aucun tarif FCL n’est encore affiché ; demandez un devis pour le port retenu, sans reprendre un tarif du Panama.",
+      "ru": "Сравните Кальдеру на тихоокеанском побережье и Моин на карибском с учётом адреса получателя. Ставок FCL пока нет: запросите расчёт до выбранного порта, не подставляя тарифы Панамы.",
+      "pt": "Compare Caldera, no Pacífico, e Moín, no Caribe, conforme o endereço de recebimento. Ainda não há tarifa FCL publicada; solicite cotação para o porto escolhido, sem aplicar valores do Panamá.",
+      "tr": "Alıcı adresine göre Pasifik kıyısındaki Caldera ile Karayip kıyısındaki Moín’i karşılaştırın. Henüz FCL fiyatı yayımlanmıyor; Panama fiyatlarını kullanmak yerine seçilen liman için teklif isteyin."
+    }
+  },
+  "spain": {
+    "iso": "ES",
+    "port": "VALENCIA",
+    "gateway": "Valencia",
+    "airport": "MAD / BCN",
+    "region": "europe",
+    "source": "https://www.valenciaport.com/en/port-authority-valencia/infrastructure/port-terminals-facilities/port-of-valencia/",
+    "notes": {
+      "en": "This reference is for Valencia, Spain. Confirm the terminal, importer, product documents and final postcode. Barcelona, other mainland ports and island deliveries require separate route and charge checks.",
+      "zh": "本页参考以西班牙瓦伦西亚港为目的港。请确认码头、进口方、产品文件与最终邮编。巴塞罗那、其他本土港口和岛屿配送须分别核对路线与费用。",
+      "es": "Esta referencia corresponde a Valencia, España. Confirme terminal, importador, documentos del producto y código postal final. Barcelona, otros puertos peninsulares y las islas requieren revisar rutas y gastos aparte.",
+      "ar": "يخص هذا المرجع فالنسيا في إسبانيا. حدد المحطة والمستورد ومستندات المنتج والرمز البريدي النهائي. تحتاج برشلونة والموانئ الأخرى والجزر إلى مراجعة منفصلة للمسار والرسوم.",
+      "fr": "Cette référence concerne Valence, en Espagne. Confirmez le terminal, l’importateur, les documents produit et le code postal final. Barcelone, les autres ports continentaux et les îles nécessitent une étude distincte.",
+      "ru": "Ориентир относится к Валенсии в Испании. Уточните терминал, импортёра, документы на товар и конечный почтовый индекс. Для Барселоны, других портов и островов маршрут и расходы рассчитываются отдельно.",
+      "pt": "Esta referência é para Valência, na Espanha. Confirme terminal, importador, documentos do produto e código postal final. Barcelona, outros portos continentais e as ilhas exigem análise separada da rota e dos custos.",
+      "tr": "Bu referans İspanya’daki Valencia içindir. Terminali, ithalatçıyı, ürün belgelerini ve son posta kodunu doğrulayın. Barcelona, diğer anakara limanları ve adalar için güzergâh ve masraflar ayrıca incelenmelidir."
+    }
+  },
+  "germany": {
+    "iso": "DE",
+    "port": "HAMBURG",
+    "gateway": "Hamburg",
+    "airport": "FRA",
+    "region": "europe",
+    "source": "https://www.hafen-hamburg.de/en/destinations/china/",
+    "notes": {
+      "en": "Use Hamburg as the sea gateway and specify the final postcode. Frankfurt airport and inland rail terminals are different handover points; their timings and charges cannot be substituted for a Hamburg sea shipment.",
+      "zh": "海运参考以汉堡港为交接节点，并需提供最终邮编。法兰克福机场与内陆铁路站是不同交接点，时效和费用不能直接套用于汉堡海运。",
+      "es": "Use Hamburgo como puerto marítimo e indique el código postal final. El aeropuerto de Fráncfort y las terminales ferroviarias interiores son puntos distintos; sus plazos y gastos no sustituyen los de un envío marítimo a Hamburgo.",
+      "ar": "استخدم هامبورغ كنقطة وصول بحرية وحدد الرمز البريدي النهائي. مطار فرانكفورت ومحطات السكك الداخلية نقاط تسليم مختلفة؛ ولا تنطبق مددها ورسومها مباشرة على الشحن البحري إلى هامبورغ.",
+      "fr": "Retenez Hambourg comme port maritime et précisez le code postal final. L’aéroport de Francfort et les terminaux ferroviaires intérieurs sont d’autres points de remise ; leurs délais et frais ne remplacent pas ceux du maritime.",
+      "ru": "Для морского груза указывайте Гамбург и конечный почтовый индекс. Аэропорт Франкфурта и внутренние железнодорожные терминалы — другие пункты передачи: их сроки и расходы не заменяют морской расчёт до Гамбурга.",
+      "pt": "Use Hamburgo como porto marítimo e informe o código postal final. O aeroporto de Frankfurt e os terminais ferroviários interiores são pontos distintos; seus prazos e custos não substituem os de um embarque marítimo para Hamburgo.",
+      "tr": "Denizyolu varışı için Hamburg’u ve son posta kodunu belirtin. Frankfurt Havalimanı ile iç demiryolu terminalleri farklı teslim noktalarıdır; süreleri ve masrafları Hamburg denizyolu sevkiyatına uygulanamaz."
+    }
   }
 }

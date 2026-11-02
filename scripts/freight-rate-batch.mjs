@@ -41,7 +41,18 @@ export function buildFreightRateBatch({source,baselineText,idMap={version:1,ids:
   if(!/^FCL26Q4-\d{4}$/.test(id)||used.has(id)||(before&&before.country!==row.country))fail('ID collision; reconcile the internal map');
   used.add(id);row.id=id;
  });
- const candidate={...baseline,rows:[...preserved,...exported.rows],coverage:[...baseline.coverage.filter(c=>!scope.includes(c.country)),...exported.coverage]};
+ // Keep existing display order and byte identity for a no-op refresh, even when
+ // the reviewed country sits between other destinations in the snapshot.
+ const replacementRows=new Map(exported.rows.map(row=>[row.id,row]));
+ const rows=baseline.rows.flatMap(row=>!scope.includes(row.country)?[row]:replacementRows.has(row.id)?[replacementRows.get(row.id)]:[]);
+ const priorIds=new Set(baseline.rows.map(row=>row.id));
+ rows.push(...exported.rows.filter(row=>!priorIds.has(row.id)));
+ const coverageKey=row=>row.country+'|'+row.port;
+ const replacementCoverage=new Map(exported.coverage.map(row=>[coverageKey(row),row]));
+ const coverage=baseline.coverage.flatMap(row=>!scope.includes(row.country)?[row]:replacementCoverage.has(coverageKey(row))?[replacementCoverage.get(coverageKey(row))]:[]);
+ const priorCoverage=new Set(baseline.coverage.map(coverageKey));
+ coverage.push(...exported.coverage.filter(row=>!priorCoverage.has(coverageKey(row))));
+ const candidate={...baseline,rows,coverage};
  validateCustomerFreight(candidate,'2026-11-02T00:00:00Z');
  const prior=new Map(baseline.rows.map(r=>[r.id,r])),current=new Map(candidate.rows.map(r=>[r.id,r]));
  const added=candidate.rows.filter(r=>!prior.has(r.id)).map(r=>r.id);
