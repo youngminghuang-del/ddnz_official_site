@@ -1,3 +1,5 @@
+import {hasCountryTransitPlan} from '../features/freight/CountryTransitPlanner';
+import {hasLatinArrivalPlan} from '../features/freight/LatinArrivalPlanner';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
 import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePlanningDepth';
@@ -986,7 +988,7 @@ export default function ShippingLatinAmerica() {
       <CountryRegionLink region="latin-america" />
 
       {/* Hero Section */}
-      <header className="relative overflow-hidden bg-[#0b1c2c] pb-20 pt-16 text-white md:pb-28 md:pt-24">
+      <header className={`relative overflow-hidden bg-[#0b1c2c] pb-20 pt-16 text-white md:pb-28 md:pt-24 ${(hasLatinArrivalPlan(selectedCountry)||hasCountryTransitPlan(selectedCountry))?'latin-transit-hero':''}`}>
         <div
           className="pointer-events-none absolute inset-0 opacity-20"
           style={{
@@ -1118,7 +1120,7 @@ export default function ShippingLatinAmerica() {
             </div>
 
             {/* 右侧硬核时效侧边栏：占据 5 列 */}
-            <div className="lg:col-span-5 space-y-4">
+            {!(hasLatinArrivalPlan(selectedCountry)||hasCountryTransitPlan(selectedCountry)) && <div className="lg:col-span-5 space-y-4">
               <h3 className="mb-2 text-sm font-black uppercase tracking-[0.18em] text-amber-300">
                 {localText({ zh: '运输方式与参考时效', en: 'Freight modes and planning windows', es: 'Modalidades y plazos de planificación' })}
               </h3>
@@ -1153,7 +1155,7 @@ export default function ShippingLatinAmerica() {
                   compact
                 />
               )}
-            </div>
+            </div>}
 
           </div>
         </div>

@@ -488,3 +488,32 @@
 .ddp-page[dir="rtl"] .ddp-brief ol{padding-left:0;padding-inline-start:22px}.ddp-page[dir="rtl"] .freight-kicker{letter-spacing:normal}
 .frp .frp-main>div{min-width:0}.frp .frp-main h3{overflow-wrap:anywhere}
 @media(max-width:680px){.frp .frp-table-note{flex-wrap:wrap}.frp .frp-table-note>span{white-space:normal}}
+
+/* Visible transit ranges: scope stays beside each mode rather than hidden below rates. */
+.latin-arrival{padding-block:clamp(28px,4vw,48px)}
+.latin-transit-table{width:100%;border-collapse:collapse;margin-top:24px;text-align:start;font-size:15px;line-height:1.6}
+.latin-transit-table th,.latin-transit-table td{padding:18px 14px;border-bottom:1px solid var(--ddnz-brand-line);vertical-align:middle;text-align:start}
+.latin-transit-table thead th{font-size:13px;color:var(--ddnz-text-muted,#4d5f79);font-weight:600;padding-block:10px}
+.latin-transit-table tbody th{width:25%;font-weight:650}
+.latin-transit-table tbody th>span{display:block;font-weight:400;font-size:14px;margin-top:5px;overflow-wrap:anywhere}
+.latin-transit-table .latin-transit-days{width:17%;font-size:24px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.latin-transit-days>span{font-size:14px;font-weight:400}
+.latin-transit-table td:nth-child(3){width:40%;color:var(--ddnz-text-muted,#4d5f79)}
+.latin-transit-table a{text-decoration:underline;text-underline-offset:4px;display:inline-block;min-height:28px;white-space:normal}
+.latin-arrival .latin-transit-stages{font-size:14px;margin-top:22px;max-width:90ch}
+.latin-transit-sources{margin-top:18px;font-size:14px}
+.latin-transit-sources summary{cursor:pointer;min-height:30px;width:fit-content;text-decoration:underline;text-underline-offset:4px}
+.latin-transit-sources p{font-size:14px;margin-block:12px;max-width:90ch}
+.latin-transit-sources a{display:inline-block;margin-inline-end:20px;margin-block:6px;text-decoration:underline}
+.latin-arrival :is(a,summary):focus-visible{outline:2px solid currentColor;outline-offset:4px}
+@media(max-width:700px){.latin-transit-table thead{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.latin-transit-table tbody tr{display:grid;grid-template-columns:minmax(0,1fr) auto;padding-block:16px;border-bottom:1px solid var(--ddnz-brand-line);gap:10px 14px}.latin-transit-table tbody :is(th,td){border:0;padding:0;width:auto;min-width:0}.latin-transit-table td:nth-child(3){grid-column:1/-1;width:auto}.latin-transit-table td:last-child{grid-column:1/-1}.latin-transit-table .latin-transit-days{width:auto;font-size:23px}}
+
+.latin-transit-hero{padding-block:40px!important}.latin-transit-hero>div.relative>div{display:block;padding-block:0}.latin-transit-hero>div.relative>div>div{max-width:960px}.latin-transit-date{display:block;margin-top:6px;font-size:12px}
+
+/* Compact country timing module shares the reviewed table and keeps route detail optional. */
+.freight-transit{padding-block:clamp(28px,4vw,48px)}
+.freight-transit :is(a,summary):focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.ecuador-page .freight-transit{margin-block:32px;padding-inline:clamp(12px,2vw,24px)}
+.country-editorial:has(.freight-transit)>main>section:first-child:has(.lg\:col-span-7)>div.relative>div{align-items:start}
+
+.country-transit-hero>div.relative{padding-block:40px}.country-transit-hero>div.relative>div.grid{display:block}.country-transit-hero>div.relative>div.grid>div{max-width:960px}

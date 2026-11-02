@@ -1,3 +1,4 @@
+import {hasCountryTransitPlan} from '../features/freight/CountryTransitPlanner';
 import {reviewedMiddleEastFaqs} from '../features/freight/reviewedMiddleEastFaqs';
 import {reviewedMiddleEastIntro,reviewedMiddleEastLabel} from '../features/freight/reviewedMiddleEastCopy';
 import {freightPageInfo} from '../features/freight/freightPageSchema';
@@ -1411,7 +1412,7 @@ export default function MiddleEastRoute() {
       <main>
 
         {/* Section 1: Hero Segment */}
-        <section className="relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden">
+        <section className={`relative min-h-[500px] md:min-h-[600px] flex items-center overflow-hidden ${hasDedicatedCountryRoute && hasCountryTransitPlan(slugByCountry[selectedCountry])?'country-transit-hero':''}`}>
           {/* Visual shipping backdrop layer */}
           <div className="absolute inset-0 z-0 opacity-15">
             <img
@@ -1520,7 +1521,7 @@ export default function MiddleEastRoute() {
               </div>
 
               {/* Mini Quick Fact Widget */}
-              <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/[0.08] shadow-2xl">
+              {!(hasDedicatedCountryRoute && hasCountryTransitPlan(slugByCountry[selectedCountry])) && <div className="lg:col-span-5 bg-white/[0.03] backdrop-blur-md rounded-2xl p-6 md:p-8 border border-white/[0.08] shadow-2xl">
                 <h3 className="text-lg font-black tracking-wide text-[#c94f2f] uppercase mb-4">
                   {t('transitWindowTitle')}
                 </h3>
@@ -1558,7 +1559,7 @@ export default function MiddleEastRoute() {
                     {t('transitIncludeText')}
                   </p>
                 </div>
-              </div>
+              </div>}
 
             </div>
           </div>

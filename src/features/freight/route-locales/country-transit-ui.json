@@ -1,0 +1,234 @@
+{
+  "en": {
+    "title": "Transit times and delivery planning",
+    "intro": "Compare the ranges for the route shown, then confirm the departure date and handover point for your shipment.",
+    "method": "Scope and sources",
+    "preparation": "Loading and delivery preparation",
+    "methodText": "FCL record ranges summarise populated Q4 2026 transit-day fields across different origins and services; they are not averages. Other ranges are published route references or existing regional planning ranges, not confirmed HB departures or delivery guarantees.",
+    "stages": "Allow for supplier readiness, collection, waiting for departure, clearance and final delivery according to the clock shown. A port or station arrival is not delivery to the receiving address.",
+    "scopes": {
+      "ocean-records": "Ocean-leg range from existing records; collection, clearance and inland delivery are separate.",
+      "ocean-public": "Published ocean-route planning reference; compare separately with the specific FCL records below.",
+      "lcl": "LCL route reference; cutoff, consolidation and cargo release affect the full receiving timeline.",
+      "lcl-planning": "Regional LCL planning range; confirm the consolidation service, cutoff and destination release.",
+      "air": "Air-route reference; confirm connections, airport handling, clearance and final-delivery scope.",
+      "air-planning": "Regional air-freight planning range; confirm the airports, routing and handling scope.",
+      "road": "Road-route reference; borders, transfers, clearance and delivery scope affect the actual duration.",
+      "road-documents": "Road and document-handling reference; confirm the warehouse handover and border arrangements.",
+      "corridor": "Alternative road corridors have different times; season and border conditions determine the routing.",
+      "rail": "Rail-route reference; allow for consolidation, departure slots, border gauge changes and onward delivery.",
+      "warehouse": "Departure from the China warehouse to the destination warehouse; predeparture receiving and consolidation are excluded.",
+      "road-planning": "Existing truck-planning reference; confirm the departure city, full/shared load and delivery endpoint."
+    },
+    "modes": {
+      "rail": "Rail freight",
+      "road": "Road freight",
+      "road-full": "Dedicated truck",
+      "road-shared": "Shared truck"
+    },
+    "source": "Route reference"
+  },
+  "zh": {
+    "title": "运输时效与交付安排",
+    "intro": "先按所列路线的参考区间安排备货，再确认本票货物的出运日期与交接点。",
+    "method": "参考口径与来源",
+    "preparation": "装运与收货准备",
+    "methodText": "整柜记录区间汇总2026年Q4已有记录中填写的天数，涵盖不同起运地与班次，不是平均值。其他区间采用公开线路或既有区域规划参考，不代表HB已确认班次或保证交期。",
+    "stages": "按各行计时范围，衔接供应商备货、提货、等班、清关与派送。到港或到站时间不等于送到收货地址的时间。",
+    "scopes": {
+      "ocean-records": "已有记录的海运段范围；提货、清关和内陆配送另行衔接。",
+      "ocean-public": "公开海运线路的规划参考，与下方具体整柜记录分开比较。",
+      "lcl": "拼箱线路参考；截仓、集货及拆箱放货影响完整收货时间。",
+      "lcl-planning": "区域拼箱规划区间；具体拼箱班次、截仓与目的地放货随方案确认。",
+      "air": "航空线路参考；航班衔接、机场处理、清关与末端配送范围随方案确认。",
+      "air-planning": "区域空运规划区间；起降机场、转机与操作范围随方案确认。",
+      "road": "公路线路参考；口岸、换装、清关与交付范围影响实际时间。",
+      "road-documents": "公路与单证处理参考；按仓库交接点和口岸安排确认计时。",
+      "corridor": "不同公路走廊分别安排；季节和口岸条件会影响选路与时效。",
+      "rail": "铁路线路参考；集货、等班、口岸换轨及到站后配送需衔接。",
+      "warehouse": "中国集货仓发运至目的地仓库；不含发运前收货与等拼时间。",
+      "road-planning": "既有卡车规划参考；起运城市、整车或拼车与交付终点随方案确认。"
+    },
+    "modes": {
+      "rail": "铁路运输",
+      "road": "公路运输",
+      "road-full": "公路整车",
+      "road-shared": "公路拼车"
+    },
+    "source": "线路参考"
+  },
+  "es": {
+    "title": "Plazos de transporte y entrega",
+    "intro": "Planifique la carga con el intervalo de cada ruta y confirme después la salida y el punto de entrega de su envío.",
+    "method": "Alcance y fuentes",
+    "preparation": "Preparación del envío y la recepción",
+    "methodText": "Los intervalos FCL resumen los días indicados en los registros del cuarto trimestre de 2026, con distintos orígenes y servicios; no son promedios. Los demás son referencias publicadas o de planificación regional, no salidas confirmadas de HB ni garantías de entrega.",
+    "stages": "Según el tramo indicado, prever preparación del proveedor, recogida, espera de salida, aduana y reparto. Llegar al puerto o terminal no equivale a entregar en la dirección final.",
+    "scopes": {
+      "ocean-records": "Tramo marítimo de los registros existentes; recogida, aduana y transporte interior se coordinan aparte.",
+      "ocean-public": "Referencia publicada para planificar; comparar por separado con los registros FCL de abajo.",
+      "lcl": "Referencia LCL; cierre de almacén, consolidación y liberación afectan al plazo total.",
+      "lcl-planning": "Intervalo regional LCL; confirmar salida de grupaje, cierre y liberación en destino.",
+      "air": "Referencia aérea; confirmar conexiones, gestión aeroportuaria, aduana y entrega final.",
+      "air-planning": "Intervalo regional aéreo; confirmar aeropuertos, conexiones y alcance operativo.",
+      "road": "Referencia por carretera; fronteras, transbordos, aduana y alcance afectan al plazo real.",
+      "road-documents": "Referencia de carretera y documentos; confirmar puntos de entrega y pasos fronterizos.",
+      "corridor": "Los corredores tienen plazos distintos; temporada y fronteras condicionan la ruta.",
+      "rail": "Referencia ferroviaria; prever consolidación, salida, cambio de ancho y entrega posterior.",
+      "warehouse": "Desde la salida del almacén en China hasta el almacén de destino; recepción y consolidación previas excluidas.",
+      "road-planning": "Referencia de camión; confirmar origen, carga completa o compartida y punto final."
+    },
+    "modes": {
+      "rail": "Ferrocarril",
+      "road": "Carretera",
+      "road-full": "Camión completo",
+      "road-shared": "Camión compartido"
+    },
+    "source": "Referencia de la ruta"
+  },
+  "fr": {
+    "title": "Délais de transport et livraison",
+    "intro": "Planifiez la disponibilité selon la fourchette de chaque itinéraire, puis confirmez le départ et le point de remise de votre envoi.",
+    "method": "Périmètre et sources",
+    "preparation": "Préparer l’expédition et la réception",
+    "methodText": "Les fourchettes FCL regroupent les durées renseignées au quatrième trimestre 2026 pour différents départs et services ; ce ne sont pas des moyennes. Les autres sont des références publiées ou régionales, sans départ HB confirmé ni garantie de livraison.",
+    "stages": "Selon le trajet indiqué, prévoir disponibilité, enlèvement, attente du départ, douane et livraison. L’arrivée au port ou au terminal n’est pas la livraison à l’adresse finale.",
+    "scopes": {
+      "ocean-records": "Trajet maritime des données existantes ; enlèvement, douane et transport intérieur à coordonner séparément.",
+      "ocean-public": "Référence maritime publiée ; à comparer séparément aux données FCL ci-dessous.",
+      "lcl": "Référence LCL ; clôture, groupage et mise à disposition influent sur le délai total.",
+      "lcl-planning": "Fourchette régionale LCL ; confirmer départ de groupage, clôture et mise à disposition.",
+      "air": "Référence aérienne ; confirmer correspondances, opérations aéroportuaires, douane et livraison.",
+      "air-planning": "Fourchette aérienne régionale ; confirmer aéroports, correspondances et opérations.",
+      "road": "Référence routière ; frontières, transbordements, douane et remise influent sur le délai.",
+      "road-documents": "Référence incluant route et documents ; confirmer entrepôts de remise et frontières.",
+      "corridor": "Les corridors ont des délais différents ; saison et frontières déterminent l’itinéraire.",
+      "rail": "Référence ferroviaire ; prévoir groupage, départ, changement d’écartement et acheminement final.",
+      "warehouse": "Du départ de l’entrepôt en Chine à l’entrepôt de destination ; réception et groupage préalables exclus.",
+      "road-planning": "Référence camion ; confirmer origine, lot complet ou groupage et point de remise."
+    },
+    "modes": {
+      "rail": "Fret ferroviaire",
+      "road": "Transport routier",
+      "road-full": "Camion complet",
+      "road-shared": "Groupage routier"
+    },
+    "source": "Référence de l’itinéraire"
+  },
+  "ru": {
+    "title": "Сроки перевозки и планирование доставки",
+    "intro": "Планируйте готовность по диапазону выбранного маршрута, затем уточняйте отправление и пункт передачи груза.",
+    "method": "Границы расчёта и источники",
+    "preparation": "Подготовка отправки и приёмки",
+    "methodText": "Диапазоны FCL основаны на заполненных сроках за IV квартал 2026 года для разных отправлений и сервисов; это не средние значения. Остальные — опубликованные или региональные ориентиры, а не подтверждённые рейсы HB и не гарантия доставки.",
+    "stages": "С учётом указанного участка планируйте готовность, забор, ожидание отправления, таможню и доставку. Прибытие в порт или на станцию не означает доставку по адресу.",
+    "scopes": {
+      "ocean-records": "Морской участок по имеющимся данным; забор, таможня и наземная доставка отдельно.",
+      "ocean-public": "Опубликованный морской ориентир; сравнивайте отдельно с данными FCL ниже.",
+      "lcl": "Ориентир LCL; приёмка на склад, консолидация и выдача влияют на общий срок.",
+      "lcl-planning": "Региональный ориентир LCL; уточните сборный рейс, закрытие приёмки и выдачу.",
+      "air": "Авиационный ориентир; уточните пересадки, аэропорт, таможню и доставку.",
+      "air-planning": "Региональный авиационный ориентир; уточните аэропорты, пересадки и операции.",
+      "road": "Автомобильный ориентир; границы, перегрузки, таможня и пункт передачи меняют срок.",
+      "road-documents": "Ориентир перевозки и документов; уточните склады передачи и погранпереходы.",
+      "corridor": "У коридоров разные сроки; сезон и ситуация на границе влияют на маршрут.",
+      "rail": "Железнодорожный ориентир; учтите консолидацию, отправление, смену колеи и доставку со станции.",
+      "warehouse": "От отправления со склада в Китае до склада назначения; предварительная приёмка и консолидация исключены.",
+      "road-planning": "Ориентир по автоперевозке; уточните город отправления, отдельную или сборную машину и конечный пункт."
+    },
+    "modes": {
+      "rail": "Железнодорожная перевозка",
+      "road": "Автоперевозка",
+      "road-full": "Отдельная машина",
+      "road-shared": "Сборная автоперевозка"
+    },
+    "source": "Ориентир маршрута"
+  },
+  "pt": {
+    "title": "Prazos de transporte e entrega",
+    "intro": "Planeje a disponibilidade conforme a faixa de cada rota e confirme depois a saída e o ponto de entrega da carga.",
+    "method": "Escopo e fontes",
+    "preparation": "Preparação do embarque e recebimento",
+    "methodText": "As faixas FCL resumem os prazos preenchidos no quarto trimestre de 2026, com diferentes origens e serviços; não são médias. As demais são referências publicadas ou regionais, não saídas confirmadas da HB nem garantias de entrega.",
+    "stages": "Conforme o trecho indicado, prever preparação, coleta, espera da saída, desembaraço e entrega. A chegada ao porto ou terminal não equivale à entrega no endereço final.",
+    "scopes": {
+      "ocean-records": "Trecho marítimo dos registros existentes; coleta, desembaraço e transporte interior separados.",
+      "ocean-public": "Referência marítima publicada; comparar separadamente com os registros FCL abaixo.",
+      "lcl": "Referência LCL; fechamento, consolidação e liberação afetam o prazo total.",
+      "lcl-planning": "Faixa regional LCL; confirmar saída consolidada, fechamento e liberação no destino.",
+      "air": "Referência aérea; confirmar conexões, operações aeroportuárias, desembaraço e entrega.",
+      "air-planning": "Faixa aérea regional; confirmar aeroportos, conexões e operações.",
+      "road": "Referência rodoviária; fronteiras, transbordos, desembaraço e entrega afetam o prazo.",
+      "road-documents": "Referência de transporte e documentos; confirmar armazéns e fronteiras.",
+      "corridor": "Os corredores têm prazos distintos; estação do ano e fronteiras condicionam a rota.",
+      "rail": "Referência ferroviária; prever consolidação, saída, mudança de bitola e transporte final.",
+      "warehouse": "Da saída do armazém na China ao armazém de destino; recebimento e consolidação anteriores excluídos.",
+      "road-planning": "Referência de caminhão; confirmar origem, carga completa ou compartilhada e ponto final."
+    },
+    "modes": {
+      "rail": "Transporte ferroviário",
+      "road": "Transporte rodoviário",
+      "road-full": "Caminhão completo",
+      "road-shared": "Carga rodoviária compartilhada"
+    },
+    "source": "Referência da rota"
+  },
+  "tr": {
+    "title": "Taşıma süreleri ve teslimat planı",
+    "intro": "Yük hazırlığını belirtilen güzergâh aralığıyla planlayın; ardından çıkışı ve yük teslim noktasını teyit edin.",
+    "method": "Kapsam ve kaynaklar",
+    "preparation": "Sevkiyat ve teslim alma hazırlığı",
+    "methodText": "FCL aralıkları farklı çıkış ve servisler için mevcut 2026 son çeyrek kayıtlarındaki süreleri özetler; ortalama değildir. Diğer aralıklar yayımlanmış veya bölgesel planlama referanslarıdır; teyitli HB seferi ya da teslimat garantisi değildir.",
+    "stages": "Belirtilen etaba göre hazırlık, toplama, çıkış bekleme, gümrükleme ve teslimatı planlayın. Limana veya istasyona varış, son adrese teslim anlamına gelmez.",
+    "scopes": {
+      "ocean-records": "Mevcut kayıtlardaki deniz etabı; toplama, gümrükleme ve iç taşıma ayrıca planlanır.",
+      "ocean-public": "Yayımlanmış deniz güzergâhı referansı; aşağıdaki FCL kayıtlarıyla ayrı karşılaştırın.",
+      "lcl": "LCL referansı; kapanış, konsolidasyon ve yükün serbest bırakılması toplam süreyi etkiler.",
+      "lcl-planning": "Bölgesel LCL aralığı; konsolidasyon seferi, kapanış ve varış işlemlerini teyit edin.",
+      "air": "Hava yolu referansı; aktarma, havalimanı işlemleri, gümrükleme ve teslimatı teyit edin.",
+      "air-planning": "Bölgesel hava aralığı; havalimanlarını, aktarmayı ve işlemleri teyit edin.",
+      "road": "Karayolu referansı; sınırlar, aktarmalar, gümrükleme ve teslim kapsamı süreyi etkiler.",
+      "road-documents": "Karayolu ve belge işlemleri referansı; depo teslim noktaları ile sınırları teyit edin.",
+      "corridor": "Koridorların süreleri farklıdır; mevsim ve sınır koşulları güzergâhı belirler.",
+      "rail": "Demiryolu referansı; konsolidasyon, çıkış, hat açıklığı değişimi ve son taşıma ayrıca planlanır.",
+      "warehouse": "Çin deposundan çıkıştan varış deposuna kadar; çıkış öncesi kabul ve konsolidasyon dahil değildir.",
+      "road-planning": "Kamyon planlama referansı; çıkış şehri, tam veya parsiyel yük ve son noktayı teyit edin."
+    },
+    "modes": {
+      "rail": "Demiryolu",
+      "road": "Karayolu",
+      "road-full": "Komple kamyon",
+      "road-shared": "Parsiyel karayolu"
+    },
+    "source": "Güzergâh referansı"
+  },
+  "ar": {
+    "title": "مدد النقل وتخطيط التسليم",
+    "intro": "خطّط لجاهزية البضاعة وفق نطاق المسار المبيّن، ثم أكّد المغادرة ونقطة تسليم الشحنة.",
+    "method": "نطاق المدد ومصادرها",
+    "preparation": "تجهيز الشحن والاستلام",
+    "methodText": "تلخّص نطاقات الحاويات الكاملة المدد المدرجة في سجلات الربع الرابع لعام 2026 لموانئ وخدمات مختلفة، وليست متوسطات. أما بقية النطاقات فهي مراجع منشورة أو إقليمية للتخطيط، وليست رحلات مؤكدة لدى HB أو ضماناً للتسليم.",
+    "stages": "بحسب المرحلة المذكورة، تُراعى جاهزية البضاعة والاستلام وانتظار المغادرة والتخليص والتوصيل. الوصول إلى الميناء أو المحطة لا يعني التسليم إلى العنوان النهائي.",
+    "scopes": {
+      "ocean-records": "المرحلة البحرية وفق السجلات الحالية؛ الاستلام والتخليص والنقل الداخلي مراحل منفصلة.",
+      "ocean-public": "مرجع منشور للمسار البحري؛ يُقارن منفصلاً عن سجلات الحاويات الكاملة أدناه.",
+      "lcl": "مرجع للشحن المجمّع؛ موعد الإغلاق والتجميع والإفراج تؤثر في مدة الاستلام الكاملة.",
+      "lcl-planning": "نطاق إقليمي للشحن المجمّع؛ تُؤكَّد الرحلة وموعد الإغلاق والإفراج في الوجهة.",
+      "air": "مرجع للمسار الجوي؛ تُؤكَّد رحلات الربط وإجراءات المطار والتخليص والتوصيل.",
+      "air-planning": "نطاق إقليمي للشحن الجوي؛ تُؤكَّد المطارات والربط ونطاق الإجراءات.",
+      "road": "مرجع للمسار البري؛ تؤثر الحدود وإعادة التحميل والتخليص ونقطة التسليم في المدة.",
+      "road-documents": "مرجع للنقل البري وإجراءات المستندات؛ تُؤكَّد مستودعات التسليم والمعابر.",
+      "corridor": "للممرات البرية مدد مختلفة؛ تحدد المواسم وظروف المعابر اختيار المسار.",
+      "rail": "مرجع للسكك الحديدية؛ تُراعى مراحل التجميع وانتظار المغادرة وتغيير عرض السكة والنقل النهائي.",
+      "warehouse": "من مغادرة المستودع في الصين إلى مستودع الوجهة؛ لا يشمل الاستلام والتجميع قبل المغادرة.",
+      "road-planning": "مرجع لتخطيط الشاحنات؛ تُؤكَّد مدينة المغادرة والشاحنة الكاملة أو المشتركة ونقطة التسليم."
+    },
+    "modes": {
+      "rail": "النقل بالسكك الحديدية",
+      "road": "النقل البري",
+      "road-full": "شاحنة كاملة",
+      "road-shared": "شاحنة مشتركة"
+    },
+    "source": "مرجع المسار"
+  }
+}
