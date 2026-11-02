@@ -131,6 +131,7 @@
     "supportText": "El transporte principal no determina un precio con impuestos pagados a domicilio. HB debe confirmar despacho, impuestos, gastos portuarios o fronterizos, entrega y descarga según la mercancía y dirección.",
     "supportCompare": "Comparar DDP, DAP y el alcance de entrega",
     "fees": [
+      "Recargo por combustible (BAF)",
       "Gasto de terminal (THC)",
       "Precinto",
       "Intercambio de equipo",

@@ -604,5 +604,341 @@
       "name": "Ekvador",
       "path": "/tr/shipping-from-china-to-ecuador/"
     }
+  ],
+  "/shipping-from-china-to-colombia/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Latin America",
+      "path": "/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Colombia",
+      "path": "/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-colombia/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "拉美",
+      "path": "/zh-cn/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "哥伦比亚",
+      "path": "/zh-cn/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/es/shipping-from-china-to-colombia/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "América Latina",
+      "path": "/es/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Colombia",
+      "path": "/es/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/ar/shipping-from-china-to-colombia/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا اللاتينية",
+      "path": "/ar/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "كولومبيا",
+      "path": "/ar/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/fr/shipping-from-china-to-colombia/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Amérique latine",
+      "path": "/fr/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Colombie",
+      "path": "/fr/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/ru/shipping-from-china-to-colombia/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Латинская Америка",
+      "path": "/ru/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Колумбия",
+      "path": "/ru/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/pt/shipping-from-china-to-colombia/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Latina",
+      "path": "/pt/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Colômbia",
+      "path": "/pt/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/tr/shipping-from-china-to-colombia/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Latin Amerika",
+      "path": "/tr/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Kolombiya",
+      "path": "/tr/shipping-from-china-to-colombia/"
+    }
+  ],
+  "/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "West Africa",
+      "path": "/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Côte d’Ivoire",
+      "path": "/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "西非",
+      "path": "/zh-cn/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "科特迪瓦",
+      "path": "/zh-cn/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/es/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Occidental",
+      "path": "/es/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Côte d’Ivoire",
+      "path": "/es/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/ar/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "غرب أفريقيا",
+      "path": "/ar/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "ساحل العاج",
+      "path": "/ar/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/fr/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique de l’Ouest",
+      "path": "/fr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Côte d’Ivoire",
+      "path": "/fr/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/ru/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Западная Африка",
+      "path": "/ru/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Кот-д’Ивуар",
+      "path": "/ru/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/pt/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Ocidental",
+      "path": "/pt/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Costa do Marfim",
+      "path": "/pt/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/tr/shipping-from-china-to-ivory-coast/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Batı Afrika",
+      "path": "/tr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Côte d’Ivoire",
+      "path": "/tr/shipping-from-china-to-ivory-coast/"
+    }
+  ],
+  "/shipping-from-china-to-senegal/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "West Africa",
+      "path": "/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Senegal",
+      "path": "/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-senegal/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "西非",
+      "path": "/zh-cn/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "塞内加尔",
+      "path": "/zh-cn/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/es/shipping-from-china-to-senegal/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Occidental",
+      "path": "/es/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Senegal",
+      "path": "/es/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/ar/shipping-from-china-to-senegal/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "غرب أفريقيا",
+      "path": "/ar/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "السنغال",
+      "path": "/ar/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/fr/shipping-from-china-to-senegal/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique de l’Ouest",
+      "path": "/fr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Sénégal",
+      "path": "/fr/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/ru/shipping-from-china-to-senegal/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Западная Африка",
+      "path": "/ru/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Сенегал",
+      "path": "/ru/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/pt/shipping-from-china-to-senegal/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Ocidental",
+      "path": "/pt/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Senegal",
+      "path": "/pt/shipping-from-china-to-senegal/"
+    }
+  ],
+  "/tr/shipping-from-china-to-senegal/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Batı Afrika",
+      "path": "/tr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Senegal",
+      "path": "/tr/shipping-from-china-to-senegal/"
+    }
   ]
 }

@@ -131,6 +131,7 @@
     "supportText": "O frete principal não determina o preço entregue com tributos pagos. O HB deve confirmar desembaraço, tributos, despesas portuárias ou fronteiriças, entrega e descarga conforme carga e endereço.",
     "supportCompare": "Comparar DDP, DAP e o escopo da entrega",
     "fees": [
+      "Adicional de combustível (BAF)",
       "Manuseio no terminal (THC)",
       "Lacre",
       "Intercâmbio de equipamento",

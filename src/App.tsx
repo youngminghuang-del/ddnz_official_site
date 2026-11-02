@@ -1,3 +1,4 @@
+import {isNewMarket} from './features/freight/new-markets/model';
 import './features/freight/market-preparation.css';
 import {coffeePath} from './features/coffee/data.mjs';
 import './features/freight/country-editorial.css';
@@ -8,6 +9,7 @@ import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavig
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 const Home = lazy(() => import('./pages/Home'));
+const NewMarketFreightPage = lazy(() => import('./features/freight/new-markets/NewMarketFreightPage'));
 const EcuadorFreightPage = lazy(() => import('./features/freight/EcuadorFreightPage'));
 
 import InternalPageNavigation from './components/InternalPageNavigation';
@@ -89,6 +91,7 @@ function CountryShippingRoute() {
   const location = useLocation();
   const normalizedCountry = location.pathname.split('/').filter(Boolean).at(-1)?.replace('shipping-from-china-to-', '').toLowerCase() || '';
 
+  if (isNewMarket(normalizedCountry)) return <NewMarketFreightPage />;
   if (normalizedCountry==='brazil' && /^\/(?:zh-cn\/)?shipping-from-china-to-brazil\/?$/.test(location.pathname)) return <BrazilCountryPage />;
   if (['ghana','india','bangladesh','pakistan'].includes(normalizedCountry)) return <UsedGoodsPage />;
   if (/^\/(?:(?:zh-cn|es|fr|pt|tr|ru|ar)\/)?shipping-from-china-to-(nigeria|peru)\/?$/.test(location.pathname)) return <MarketFreightPage />;
@@ -615,7 +618,7 @@ export default function App() {
             <Route path="/pt/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
+              <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={isNewMarket(country) ? <NewMarketFreightPage /> : ['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/pt/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/pt/products" element={<LocalizedOverviewPage kind="products" />} />
@@ -641,7 +644,7 @@ export default function App() {
             <Route path="/tr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
-              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />
+              <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={isNewMarket(country) ? <NewMarketFreightPage /> : ['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />
             ))}
             <Route path="/tr/get-a-quote" element={<GetAQuotePage />} />
             <Route path="/tr/products" element={<LocalizedOverviewPage kind="products" />} />

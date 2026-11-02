@@ -7,7 +7,7 @@ import CountryTransitPlanner from '../src/features/freight/CountryTransitPlanner
 import profiles from '../src/features/freight/route-locales/country-transit.json';
 import {freightQuoteService} from '../src/lib/freightQuoteService';
 
-test('twenty country plans expose scoped time ranges in eight languages before optional sources',()=>{
+test('country plans expose scoped time ranges in eight languages before optional sources',()=>{
  for(const country of Object.keys(profiles) as (keyof typeof profiles)[])for(const locale of ['en','zh','es','ar','fr','ru','pt','tr']){
   const html=renderToStaticMarkup(<CountryTransitPlanner country={country} locale={locale}/>);
   const visibleTable=html.slice(0,html.indexOf('<details'));
