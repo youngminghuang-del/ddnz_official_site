@@ -1,3 +1,5 @@
+import CountryTransitPlanner, {hasCountryTransitPlan,countryTransitUi} from './CountryTransitPlanner';
+import LatinArrivalPlanner, {hasLatinArrivalPlan} from './LatinArrivalPlanner';
 import MarketPreparationDepth from './MarketPreparationDepth';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
 import FreightRatePreview from './rates/FreightRatePreview';
@@ -43,6 +45,7 @@ const ui: Record<string, string[]> = {
 };
 export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
 export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
+ const hasTransit=hasLatinArrivalPlan(country)||hasCountryTransitPlan(country);
  const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
  const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
  const south: Record<string, Record<string, RouteCopy>> = southAsiaCopy;
@@ -51,11 +54,11 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
  const c=qualifyRouteCopy(raw,country,locale);
  const labels=routePlanningUi(locale);
 
- const content = <section lang={locale === 'zh' ? 'zh-CN' : locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} id="freight-route-options" className="route-depth" aria-labelledby="route-depth-heading" data-route-depth={country}>
-  <div className="route-depth-inner"><p className="route-depth-kicker">{labels[0]}</p><h2 id="route-depth-heading">{c.title}</h2><p className="route-depth-intro">{c.intro}</p>
+ const content = <section lang={locale === 'zh' ? 'zh-CN' : locale} dir={locale === 'ar' ? 'rtl' : 'ltr'} id={hasTransit?"freight-transit-reference":"freight-route-options"} className="route-depth" aria-labelledby={hasTransit?"freight-transit-heading":"route-depth-heading"} data-route-depth={country}>
+  <div className="route-depth-inner"><p className="route-depth-kicker">{labels[0]}</p><h2 id={hasTransit?"freight-transit-heading":"route-depth-heading"}>{c.title}</h2><p className="route-depth-intro">{c.intro}</p>
    <div className="route-depth-grid">{c.routes.map(([route,time,body],i)=><article key={route}><span className="route-depth-number">0{i+1}</span><h3>{route}</h3><p className="route-depth-time">{time}</p><p>{body}</p></article>)}</div>
    <p className="route-depth-note">{c.note || labels[1]}{c.source && <> <a href={c.source} target="_blank" rel="noreferrer" aria-label={c.routes[0][0] + " · " + c.source.split("/")[2]} style={{textDecoration:"underline"}}>{c.source.split("/")[2]} ↗</a></>}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
- return <><FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview><MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
+ return <>{hasCountryTransitPlan(country) && <CountryTransitPlanner country={country} locale={locale}/>} {hasLatinArrivalPlan(country) && <LatinArrivalPlanner country={country} locale={locale}/>}{hasCountryTransitPlan(country)?<><FreightRatePreview context={country} locale={locale}/><details className="frp-existing"><summary>{countryTransitUi(locale).preparation}</summary>{content}</details></>:<FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview>}<MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
 }

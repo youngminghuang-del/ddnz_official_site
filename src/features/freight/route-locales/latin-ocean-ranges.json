@@ -1,0 +1,33 @@
+{
+  "mexico": {
+    "LAZARO CARDENAS": {
+      "min": 18,
+      "max": 38,
+      "records": 15
+    },
+    "MANZANILLO,MEXICO": {
+      "min": 16,
+      "max": 38,
+      "records": 29
+    }
+  },
+  "chile": {
+    "SAN ANTONIO,CL": {
+      "min": 38,
+      "max": 47,
+      "records": 8
+    },
+    "VALPARAISO,CL": {
+      "min": 40,
+      "max": 59,
+      "records": 19
+    }
+  },
+  "argentina": {
+    "BUENOS AIRES": {
+      "min": 33,
+      "max": 60,
+      "records": 9
+    }
+  }
+}

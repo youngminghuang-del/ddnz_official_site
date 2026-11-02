@@ -1,0 +1,739 @@
+{
+  "bahrain": {
+    "iso": "BH",
+    "sources": [
+      "https://www.dantful.com/how-long-is-freight-from-china-to-bahrain/",
+      "https://www.dantful.com/ship-by-region/middle-east/bahrain/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          30,
+          35
+        ],
+        "route": "China → Khalifa Bin Salman",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          25,
+          35
+        ],
+        "route": "China → Khalifa Bin Salman",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          2,
+          5
+        ],
+        "route": "China → BAH",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 4
+  },
+  "qatar": {
+    "iso": "QA",
+    "sources": [
+      "https://www.dantful.com/ship-by-region/middle-east/qatar/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          29,
+          42
+        ],
+        "route": "China → Hamad",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          22,
+          35
+        ],
+        "route": "China → Hamad",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          2,
+          5
+        ],
+        "route": "China → DOH",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 4
+  },
+  "kuwait": {
+    "iso": "KW",
+    "sources": [
+      "https://www.dantful.com/sea-freight-from-china-to-kuwait/",
+      "https://www.dantful.com/SHIP-BY-REGION/middle-east/kuwait/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          22,
+          35
+        ],
+        "route": "China → Shuwaikh / Shuaiba",
+        "scope": "ocean-public"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          25,
+          40
+        ],
+        "route": "China → Shuwaikh / Shuaiba",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          2,
+          5
+        ],
+        "route": "China → KWI",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 1
+  },
+  "oman": {
+    "iso": "OM",
+    "sources": [
+      "https://www.dantful.com/how-long-is-freight-from-china-to-oman-in-2026-sea-air-express-door-to-door-transit-times/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          21,
+          31
+        ],
+        "route": "China → Sohar",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          18,
+          29
+        ],
+        "route": "China → Sohar",
+        "scope": "lcl",
+        "derivation": "Published Sohar FCL 16–22 + published LCL allowance 2–7 = 18–29; independent of customer-feed FCL range."
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          7
+        ],
+        "route": "China → MCT",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 5
+  },
+  "saudi-arabia": {
+    "iso": "SA",
+    "sources": [
+      "https://sinoshipment.com/blogs/china-to-saudi-arabia-lcl-container-shipping/",
+      "https://www.dantful.com/shipping-service-from-china/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          19,
+          34
+        ],
+        "route": "China → Jeddah / Dammam",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          18,
+          28
+        ],
+        "route": "China → Jeddah / Dammam",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          7
+        ],
+        "route": "China → JED / RUH",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 16
+  },
+  "uae": {
+    "iso": "AE",
+    "sources": [
+      "https://cnyuntuo.com/shipping-from-china-to-uae/",
+      "https://www.dantful.com/ship-by-region/middle-east/uae/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          14,
+          29
+        ],
+        "route": "China → Jebel Ali",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          25,
+          35
+        ],
+        "route": "China → Jebel Ali",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          1,
+          4
+        ],
+        "route": "China → DXB / AUH",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 8
+  },
+  "india": {
+    "iso": "IN",
+    "sources": [
+      "https://scic.group/how-long-does-shipping-from-china-to-india-take/",
+      "https://www.seaaircargosystems.com/blog-china-india-freight-rates-2026.html"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          12,
+          24
+        ],
+        "route": "China → Nhava Sheva / Mundra",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          15,
+          35
+        ],
+        "route": "China → Nhava Sheva / Mundra",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          5
+        ],
+        "route": "China → BOM / DEL",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 17
+  },
+  "pakistan": {
+    "iso": "PK",
+    "sources": [
+      "https://tjchinalogistics.com/shipping-from-china-to-pakistan/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          16,
+          29
+        ],
+        "route": "China → Karachi",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          20,
+          30
+        ],
+        "route": "China → Karachi",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          4
+        ],
+        "route": "China → KHI",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 8
+  },
+  "bangladesh": {
+    "iso": "BD",
+    "sources": [
+      "https://www.pilship.com/wp-content/uploads/2024/08/CCE-CHINA-CHITTAGONG-EXPRESS_PIL-1.pdf"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          9,
+          20
+        ],
+        "route": "China → Chattogram / Mongla",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          19,
+          36
+        ],
+        "route": "China → Chattogram / Mongla",
+        "scope": "lcl-planning"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          9
+        ],
+        "route": "China → DAC",
+        "scope": "air-planning"
+      }
+    ],
+    "recordCount": 20,
+    "planningBasis": "Existing user-adopted regional planning brief, documented docs/freight-depth-20261019.md; not HB measured transit."
+  },
+  "ghana": {
+    "iso": "GH",
+    "sources": [
+      "https://www.ndlgh.com/lanes/china",
+      "https://www.dantful.com/ship-by-region/africa/ghana/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          35,
+          42
+        ],
+        "route": "China → Tema / Takoradi",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          35,
+          45
+        ],
+        "route": "China → Tema / Takoradi",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          7
+        ],
+        "route": "China → ACC",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 8
+  },
+  "nigeria": {
+    "iso": "NG",
+    "sources": [
+      "https://septmax.com/news/2026/10/05/shipping-from-china-to-nigeria-guide/",
+      "https://www.dtfulogistics.com/news/air-shipping-from-china-to-nigeria/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          35,
+          45
+        ],
+        "route": "China → Apapa / Tin Can",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          35,
+          50
+        ],
+        "route": "China → Apapa / Tin Can",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          8
+        ],
+        "route": "China → LOS",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 10
+  },
+  "brazil": {
+    "iso": "BR",
+    "sources": [
+      "https://www.chinalatinagent.com/pt/news/frete-da-china-para-america-latina.html"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          28,
+          62
+        ],
+        "route": "China → Santos / Navegantes / Paranaguá / Rio de Janeiro / Itajaí / Suape",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          30,
+          58
+        ],
+        "route": "China → Santos / Navegantes / Paranaguá / Rio de Janeiro / Itajaí / Suape",
+        "scope": "lcl-planning"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          11
+        ],
+        "route": "China → GRU",
+        "scope": "air-planning"
+      }
+    ],
+    "recordCount": 49,
+    "planningBasis": "Existing user-adopted regional planning brief, documented docs/freight-depth-20261019.md; not HB measured transit."
+  },
+  "peru": {
+    "iso": "PE",
+    "sources": [
+      "https://www.chinalatinagent.com/pt/news/frete-da-china-para-america-latina.html"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          28,
+          44
+        ],
+        "route": "China → Callao",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          30,
+          58
+        ],
+        "route": "China → Callao",
+        "scope": "lcl-planning"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          11
+        ],
+        "route": "China → LIM",
+        "scope": "air-planning"
+      }
+    ],
+    "recordCount": 17,
+    "planningBasis": "Existing user-adopted regional planning brief, documented docs/freight-depth-20261019.md; not HB measured transit."
+  },
+  "ecuador": {
+    "iso": "EC",
+    "sources": [
+      "https://dantful.us/ship/america/shipping-from-china-to-ecuador/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          27,
+          42
+        ],
+        "route": "China → Guayaquil / Posorja",
+        "scope": "ocean-public"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          33,
+          45
+        ],
+        "route": "China → Guayaquil / Posorja",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          6,
+          10
+        ],
+        "route": "China → UIO",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "russia": {
+    "iso": "RU",
+    "sources": [
+      "https://www.ydxtrans.com/rail-freight_en/china-to-russia/",
+      "https://kitay.kg/en/destinations/",
+      "https://www.dantful.com/shipping-service-from-china/"
+    ],
+    "rows": [
+      {
+        "mode": "rail",
+        "days": [
+          18,
+          25
+        ],
+        "route": "China terminal → Moscow",
+        "scope": "rail"
+      },
+      {
+        "mode": "road",
+        "days": [
+          20,
+          30
+        ],
+        "route": "China warehouse → Russia",
+        "scope": "road"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          12
+        ],
+        "route": "China → Moscow",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "kazakhstan": {
+    "iso": "KZ",
+    "sources": [
+      "https://transeasyglobal.com/freight-to-central-asia-russia.html",
+      "https://kitay.kg/en/destinations/",
+      "https://www.tonlexing.com/shipping-from-china-to-kazakhstan/"
+    ],
+    "rows": [
+      {
+        "mode": "rail",
+        "days": [
+          10,
+          14
+        ],
+        "route": "Lianyungang → Almaty",
+        "scope": "rail"
+      },
+      {
+        "mode": "road",
+        "days": [
+          12,
+          25
+        ],
+        "route": "China warehouse → Kazakhstan",
+        "scope": "road"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          5
+        ],
+        "route": "China → ALA",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "kyrgyzstan": {
+    "iso": "KG",
+    "sources": [
+      "https://kitay.kg/en/destinations/"
+    ],
+    "rows": [
+      {
+        "mode": "road",
+        "days": [
+          10,
+          23
+        ],
+        "route": "China → Bishkek",
+        "scope": "road-documents"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          7
+        ],
+        "route": "Guangzhou → Bishkek",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "tajikistan": {
+    "iso": "TJ",
+    "sources": [
+      "https://chenxincargo.com/blog/blog-tajikistan-shipping.html"
+    ],
+    "rows": [
+      {
+        "mode": "road",
+        "days": [
+          18,
+          35
+        ],
+        "route": "China → Dushanbe",
+        "scope": "corridor"
+      },
+      {
+        "mode": "rail",
+        "days": [
+          20,
+          30
+        ],
+        "route": "China → Uzbekistan → Dushanbe",
+        "scope": "rail"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          10
+        ],
+        "route": "China → DYU",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "turkmenistan": {
+    "iso": "TM",
+    "sources": [
+      "https://www.tonlexing.com/road-freight-from-china-to-turkmenistan/"
+    ],
+    "rows": [
+      {
+        "mode": "road",
+        "days": [
+          8,
+          12
+        ],
+        "route": "China → Ashgabat",
+        "scope": "road"
+      },
+      {
+        "mode": "rail",
+        "days": [
+          7,
+          9
+        ],
+        "route": "China → Ashgabat",
+        "scope": "rail"
+      },
+      {
+        "mode": "air",
+        "days": [
+          2,
+          4
+        ],
+        "route": "China → ASB",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 0
+  },
+  "uzbekistan": {
+    "iso": "UZ",
+    "sources": [
+      "https://gsrlogistics.uz/en/guides/air-vs-truck-vs-rail/",
+      "https://english.www.gov.cn/news/202501/03/content_WS677746d3c6d0868f4e8ee7c1.html"
+    ],
+    "rows": [
+      {
+        "mode": "road-full",
+        "days": [
+          7,
+          10
+        ],
+        "route": "China departure → Tashkent",
+        "scope": "road-planning"
+      },
+      {
+        "mode": "road-shared",
+        "days": [
+          22,
+          30
+        ],
+        "route": "China departure → Tashkent",
+        "scope": "road-planning"
+      },
+      {
+        "mode": "rail",
+        "days": [
+          20,
+          35
+        ],
+        "route": "Yiwu warehouse → Tashkent warehouse",
+        "scope": "warehouse"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          10
+        ],
+        "route": "Yiwu warehouse → Tashkent warehouse",
+        "scope": "warehouse"
+      }
+    ],
+    "recordCount": 0,
+    "planningBasis": "Dedicated/shared truck ranges retained from existing user-adopted 2026-10-19 planning brief; GSR warehouse ranges exclude predeparture receiving/consolidation."
+  }
+}
