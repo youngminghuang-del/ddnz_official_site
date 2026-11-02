@@ -1,0 +1,56 @@
+{
+  "colombia": {
+    "iso": "CO",
+    "port": "CARTAGENA,CO",
+    "gateway": "Cartagena · SPRC / Contecar",
+    "airport": "BOG",
+    "region": "latin-america",
+    "source": "https://puertocartagena.com/en/sprc-online",
+    "notes": {
+      "en": "Use CARTAGENA,CO, not the Spanish port with the same name. Confirm whether SPRC or Contecar is named in the arrival documents before arranging collection or inland transport.",
+      "zh": "目的港使用 CARTAGENA,CO，避免与西班牙同名港混淆。提货及内陆运输前，按到港单证确认是 SPRC 还是 Contecar 码头。",
+      "es": "Use CARTAGENA,CO para evitar confundirlo con el puerto español. Antes del retiro y el transporte interior, confirme si los documentos de llegada indican SPRC o Contecar.",
+      "fr": "Utilisez CARTAGENA,CO pour éviter la confusion avec le port espagnol. Avant l’enlèvement et le transport intérieur, vérifiez si les documents d’arrivée indiquent SPRC ou Contecar.",
+      "ru": "Указывайте CARTAGENA,CO, чтобы не спутать его с одноимённым портом Испании. До вывоза и внутренней доставки уточните по документам терминал SPRC или Contecar.",
+      "pt": "Use CARTAGENA,CO para evitar confusão com o porto espanhol. Antes da retirada e do transporte interno, confirme nos documentos de chegada se o terminal é SPRC ou Contecar.",
+      "ar": "استخدم CARTAGENA,CO لتجنب الخلط مع الميناء الإسباني الذي يحمل الاسم نفسه. قبل الاستلام والنقل الداخلي، تحقق مما إذا كانت مستندات الوصول تحدد محطة SPRC أو Contecar.",
+      "tr": "İspanya’daki aynı adlı limanla karışmaması için CARTAGENA,CO kullanın. Yük çekimi ve iç nakliye öncesinde varış belgelerinde SPRC mi Contecar mı yazdığını doğrulayın."
+    }
+  },
+  "ivory-coast": {
+    "iso": "CI",
+    "port": "ABIDJAN",
+    "gateway": "Abidjan",
+    "airport": "ABJ",
+    "region": "west-africa",
+    "source": "https://www.abidjan-terminal.com/",
+    "notes": {
+      "en": "Plan around Abidjan and confirm the named container terminal, release process and consignee arrangements. Treat the sea leg, terminal charges and onward delivery as separate parts of the shipment plan.",
+      "zh": "以阿比让为到港节点，核对具体集装箱码头、放货流程及收货方安排。海上航程、码头费用与后续配送分别列入运输计划。",
+      "es": "Planifique la llegada por Abiyán y confirme la terminal de contenedores, la liberación y los acuerdos con el consignatario. Distinga el tramo marítimo, los gastos de terminal y la entrega posterior.",
+      "fr": "Préparez l’arrivée à Abidjan en précisant le terminal à conteneurs, la mise à disposition et l’organisation du destinataire. Distinguez le trajet maritime, les frais de terminal et la livraison ultérieure.",
+      "ru": "Планируйте прибытие через Абиджан и уточняйте контейнерный терминал, выдачу и действия получателя. Морской участок, терминальные расходы и дальнейшую доставку учитывайте отдельно.",
+      "pt": "Planeje a chegada por Abidjan e confirme o terminal de contêineres, a liberação e os procedimentos do destinatário. Separe o trecho marítimo, os custos de terminal e a entrega posterior.",
+      "ar": "خطط للوصول عبر أبيدجان وحدد محطة الحاويات وإجراءات الإفراج وترتيبات المرسل إليه. افصل الرحلة البحرية ورسوم المحطة والتوصيل اللاحق في خطة الشحنة.",
+      "tr": "Abidjan varışını planlarken konteyner terminalini, yükün teslim sürecini ve alıcının düzenlemelerini doğrulayın. Deniz etabını, terminal masraflarını ve sonraki teslimatı ayrı değerlendirin."
+    }
+  },
+  "senegal": {
+    "iso": "SN",
+    "port": "DAKAR",
+    "gateway": "Dakar",
+    "airport": "DSS",
+    "region": "west-africa",
+    "source": "https://www.dpworld.com/en/ports-terminals/senegal/dakar",
+    "notes": {
+      "en": "Use Dakar for the sea route and DSS for air-route planning. Confirm the terminal, cargo-release point and receiving address separately; the airport and seaport are different handover points.",
+      "zh": "海运按达喀尔港规划，空运按 DSS 机场规划。分别核对码头、放货地点和收货地址，机场与海港是不同交接节点。",
+      "es": "Planifique la ruta marítima por Dakar y la aérea por DSS. Confirme por separado la terminal, el punto de liberación y la dirección de recepción; puerto y aeropuerto son puntos de entrega distintos.",
+      "fr": "Distinguez Dakar pour le maritime et DSS pour l’aérien. Confirmez séparément le terminal, le point de mise à disposition et l’adresse de réception : port et aéroport sont des points de remise différents.",
+      "ru": "Для морского маршрута указывайте порт Дакар, для авиационного — DSS. Отдельно уточняйте терминал, место выдачи и адрес получения: аэропорт и морской порт — разные пункты передачи.",
+      "pt": "Planeje a rota marítima por Dakar e a aérea por DSS. Confirme separadamente o terminal, o ponto de liberação e o endereço de recebimento; porto e aeroporto são pontos de entrega diferentes.",
+      "ar": "خطط للشحن البحري عبر ميناء داكار وللشحن الجوي عبر DSS. تحقق من المحطة ونقطة الإفراج وعنوان الاستلام كل على حدة؛ المطار والميناء البحري نقطتا تسليم مختلفتان.",
+      "tr": "Denizyolu için Dakar’ı, havayolu planlaması için DSS’yi belirtin. Terminali, yük teslim noktasını ve alıcı adresini ayrı doğrulayın; havalimanı ve liman farklı teslim noktalarıdır."
+    }
+  }
+}

@@ -13,6 +13,7 @@ export const regions = {
       { slug: 'brazil', name: words('巴西', 'Brazil', 'Brasil'), focus: words('将进口商、单证、目的港费用与内陆运输放在同一份报价范围里核对。', 'Review importer details, documents, destination charges and inland transport together.', 'Revisar importador, documentos, gastos en destino y transporte interior en conjunto.') },
       { slug: 'argentina', name: words('阿根廷', 'Argentina', 'Argentina'), focus: words('明确由谁处理进口手续，先确认货好时间与收货安排，再确定运输方案。', 'Agree who handles import formalities, cargo readiness and receiving arrangements.', 'Acordar quién gestiona la importación, la fecha de carga y la recepción.') },
       { slug: 'peru', name: words('秘鲁', 'Peru', 'Perú'), focus: words('分别确认到港与到门范围，把拆箱、提货和内陆派送列清楚。', 'Separate port delivery from door delivery, including release, collection and inland transport.', 'Distinguir entrega a puerto y a domicilio, incluyendo retiro y transporte interior.') },
+      {slug:'colombia',name:words('哥伦比亚','Colombia','Colombia'),focus:words('明确卡塔赫纳的国家、码头与最终地址，分开比较到港和内陆交付。','Identify Cartagena in Colombia, its terminal and the final receiving address.','Identificar Cartagena en Colombia, la terminal y la dirección final.')},
       { slug: 'chile', name: words('智利', 'Chile', 'Chile'), focus: words('从最终收货城市倒推港口与运输衔接，比较整柜和拼箱的完整费用。', 'Work back from the delivery city to compare gateways and complete FCL/LCL costs.', 'Partir de la ciudad de entrega para comparar puertos y costos completos FCL/LCL.') },
     ],
   },
@@ -21,6 +22,8 @@ export const regions = {
     intro: words('海运到港只是其中一段。把清关分工、提货、内陆配送与补货安排放在一起，才能比较一票货的完整成本。', 'Arrival at port is only one stage. Compare clearance responsibilities, collection, inland delivery and replenishment as one shipment plan.', 'La llegada al puerto es solo una etapa. Compara despacho, retiro, entrega interior y reposición dentro de un mismo plan.'),
     countries: [
       { slug: 'nigeria', name: words('尼日利亚', 'Nigeria', 'Nigeria'), focus: words('不仅看运到哪里，还要看订单在哪里：将到港提货、库存位置和后续配送一起规划。', 'Plan port collection, stock location and onward delivery around actual customer orders.', 'Planificar retiro, ubicación del inventario y reparto según los pedidos reales.') },
+      {slug:'ivory-coast',name:words('科特迪瓦','Côte d’Ivoire','Costa de Marfil'),focus:words('按阿比让具体码头核对放货、目的港费用与收货安排。','Confirm the Abidjan terminal, cargo release, arrival charges and receiving arrangements.','Confirmar terminal de Abiyán, liberación, gastos en destino y recepción.')},
+      {slug:'senegal',name:words('塞内加尔','Senegal','Senegal'),focus:words('区分达喀尔港与DSS机场，核对各自交接点及后续配送。','Distinguish Dakar seaport from DSS airport and confirm the final handover.','Distinguir el puerto de Dakar del aeropuerto DSS y confirmar la entrega final.')},
       { slug: 'ghana', name: words('加纳', 'Ghana', 'Ghana'), focus: words('先明确进口文件与收货主体，再核对目的港操作及最终地址的派送范围。', 'Confirm the importer and documents, then destination handling and final-address delivery.', 'Confirmar importador y documentos, después la operación portuaria y entrega final.') },
     ],
   },

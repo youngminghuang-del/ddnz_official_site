@@ -131,6 +131,7 @@
     "supportText": "Ana taşıma ücreti, vergileri ödenmiş adrese teslim fiyatını belirlemez. HB, yük ve adrese göre gümrükleme, vergiler, liman veya sınır masrafları, teslimat ve boşaltmayı teyit etmelidir.",
     "supportCompare": "DDP, DAP ve teslimat kapsamını karşılaştırın",
     "fees": [
+      "Yakıt ayarlama bedeli (BAF)",
       "Terminal elleçleme (THC)",
       "Mühür",
       "Ekipman değişimi",

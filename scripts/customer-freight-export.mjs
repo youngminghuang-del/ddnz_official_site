@@ -1,6 +1,6 @@
 import {referencePrice,sampleCountries} from '../src/features/freight/rates/model.mjs';
 
-const feeNames=new Set(['AMS FEE','BOOKING FEE','CONGESTION FEE','DDC CHARGE','DHC','DOC FEE','DOCUMENTS FEE','ELECTRONIC DATA INTERCHARGE','ELECTRONIC PACKING LIST CHARGE','ENS','EQUIPMENT INTERCHANGE RECEIPT','INTERNATIONAL SHIP AND PORT FACILITY SECURITY','SEAL CHARGE','TANK FEE','TELEX RELEASE FEE','THC','VGM FEE']);
+const feeNames=new Set(['BUNKER ADJUSTMENT FACTOR','AMS FEE','BOOKING FEE','CONGESTION FEE','DDC CHARGE','DHC','DOC FEE','DOCUMENTS FEE','ELECTRONIC DATA INTERCHARGE','ELECTRONIC PACKING LIST CHARGE','ENS','EQUIPMENT INTERCHANGE RECEIPT','INTERNATIONAL SHIP AND PORT FACILITY SECURITY','SEAL CHARGE','TANK FEE','TELEX RELEASE FEE','THC','VGM FEE']);
 const text=value=>typeof value==='string'&&value.length<=160&&!/[<>\r\n]/.test(value)?value:null;
 const price=value=>value==null?null:typeof value==='number'&&Number.isFinite(value)&&value>=0?referencePrice(value):null;
 

@@ -1,3 +1,5 @@
+import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
+import {newMarkets,isNewMarket,newMarketMetadata,marketInfo,type NewMarketLocale} from '../src/features/freight/new-markets/model';
 import EcuadorContent from '../src/features/freight/EcuadorContent';
 import {ecuadorCopy} from '../src/features/freight/ecuadorCopy';
 import egyptScooterPartsSchema from '../src/data/egypt-scooter-parts-schema.json';
@@ -766,6 +768,7 @@ const countryNames: Record<string, Record<string, string>> = {
   chile: { en: 'Chile', 'zh-cn': '智利', ru: 'Чили', fr: 'le Chili', es: 'Chile', ar: 'تشيلي' },
 };
 
+for(const country of newMarkets){const m=marketInfo(country);countryNames[country]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>[l,new Intl.DisplayNames([l==='zh-cn'?'zh-CN':l],{type:'region'}).of(m.iso)!]));seoDataMatrix[`shipping-from-china-to-${country}`]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>{const x=newMarketMetadata(country,(l==='zh-cn'?'zh':l) as NewMarketLocale);return [l,{title:x.title+' | DDNZ',desc:x.description,keywords:''}];}));}
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
@@ -1649,6 +1652,11 @@ function injectStaticRouteContent(
     const css = fs.readdirSync(path.resolve('dist/assets')).find(file => /^freight-.*\.css$/.test(file));
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
     return htmlContent.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
+  }
+  if (isNewMarket(relPath.replace('shipping-from-china-to-',''))) {
+    const body=renderToStaticMarkup(createElement(NewMarketContent,{country:relPath.replace('shipping-from-china-to-','') as import('../src/features/freight/new-markets/model').NewMarket,locale:(lang==='zh-cn'?'zh':lang) as NewMarketLocale}));
+    for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|NewMarketFreightPage|market-preparation)-.*\.css$/.test(f)))if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+    return htmlContent.replace('<div id="root"></div>','<div id="root">'+body+'</div>');
   }
   if (relPath==='shipping-from-china-to-ecuador') {
     const body=renderToStaticMarkup(createElement(EcuadorContent,{locale:(lang==='zh-cn'?'zh':lang) as import('../src/features/freight/ecuadorCopy').EcuadorLocale}));

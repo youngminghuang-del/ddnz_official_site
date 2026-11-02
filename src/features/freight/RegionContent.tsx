@@ -35,7 +35,7 @@ const regionNames: Record<RegionId, Record<Language, string>> = {
   'latin-america': { en: 'Latin America', zh: '拉美', es: 'Latinoamérica', ru: 'Латинскую Америку', fr: 'l’Amérique latine', ar: 'أمريكا اللاتينية', pt: 'a América Latina', tr: 'Latin Amerika' },
 };
 
-const countryIso: Record<string, string> = {
+const countryIso: Record<string, string> = {colombia:'CO','ivory-coast':'CI',senegal:'SN',
   mexico: 'MX', brazil: 'BR', argentina: 'AR', peru: 'PE', chile: 'CL', nigeria: 'NG', ghana: 'GH',
   'saudi-arabia': 'SA', uae: 'AE', kuwait: 'KW', qatar: 'QA', oman: 'OM', bahrain: 'BH',
 };

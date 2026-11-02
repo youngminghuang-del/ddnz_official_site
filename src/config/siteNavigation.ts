@@ -21,6 +21,9 @@ export const shippingCountries = [
   'argentina',
   'peru',
   'chile',
+  'colombia',
+  'ivory-coast',
+  'senegal',
 ] as const;
 
 export const sourcingCategories = [

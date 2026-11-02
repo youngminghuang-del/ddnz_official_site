@@ -131,6 +131,7 @@
     "supportText": "Le transport principal ne détermine pas un prix livré droits et taxes acquittés. HB doit confirmer dédouanement, fiscalité, frais portuaires ou frontaliers, livraison et déchargement selon les marchandises et l’adresse.",
     "supportCompare": "Comparer DDP, DAP et le périmètre de livraison",
     "fees": [
+      "Surcharge carburant (BAF)",
       "Manutention terminal (THC)",
       "Scellé",
       "Échange d’équipement",
