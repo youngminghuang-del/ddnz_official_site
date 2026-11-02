@@ -1,0 +1,22 @@
+{
+  "benin": {
+    "en": "The 5–10 air-freight reference is in business days to the destination airport; it excludes import clearance and final delivery. Confirm the working-day calendar for the quoted service.",
+    "zh": "空运 5–10 的参考单位为工作日，交接点为目的机场，不含进口清关和最后派送。具体服务采用的工作日历须在询价时确认。",
+    "es": "La referencia aérea de 5–10 corresponde a días laborables hasta el aeropuerto; excluye despacho de importación y entrega final. Confirme el calendario del servicio cotizado.",
+    "ar": "مرجع الشحن الجوي 5–10 هو بأيام العمل حتى مطار الوصول، ولا يشمل التخليص عند الاستيراد أو التوصيل النهائي. أكد تقويم العمل الخاص بالخدمة المعروضة.",
+    "fr": "Le délai aérien de 5 à 10 est exprimé en jours ouvrés jusqu’à l’aéroport ; il exclut le dédouanement à l’importation et la livraison finale. Confirmez le calendrier du service proposé.",
+    "ru": "Авиаориентир 5–10 указан в рабочих днях до аэропорта назначения, без импортного оформления и конечной доставки. Уточните рабочий календарь выбранной услуги.",
+    "pt": "A referência aérea de 5–10 é em dias úteis até o aeroporto de destino; não inclui desembaraço de importação nem entrega final. Confirme o calendário do serviço cotado.",
+    "tr": "Hava taşımacılığı için 5–10 referansı, varış havalimanına kadar iş günüdür; ithalat işlemleri ve son teslimat dahil değildir. Teklif edilen hizmetin iş günü takvimini teyit edin."
+  },
+  "cameroon": {
+    "en": "The 60–90-day LCL reference comes from published China–Douala consolidation examples via Rotterdam. It is not a direct service or an HB routing commitment; confirm the actual transfer and counting scope before booking.",
+    "zh": "拼箱 60–90 天参考来自中国经鹿特丹中转至杜阿拉的公开集拼方案，不代表直航或 HB 承诺采用的路线。订舱前须核对实际中转方案与计时范围。",
+    "es": "La referencia LCL de 60–90 días procede de ejemplos publicados China–Duala vía Róterdam. No implica servicio directo ni una ruta comprometida por HB; confirme transbordo y alcance del plazo antes de reservar.",
+    "ar": "مرجع التجميع البحري 60–90 يوماً مستمد من أمثلة منشورة من الصين إلى دوالا عبر روتردام. لا يمثل خدمة مباشرة أو التزاماً من HB بمسار محدد؛ أكد العبور ونطاق احتساب المدة قبل الحجز.",
+    "fr": "Le délai LCL de 60 à 90 jours provient d’exemples publiés de groupage Chine–Douala via Rotterdam. Il ne désigne ni un service direct ni un itinéraire garanti par HB ; vérifiez le transbordement et le périmètre du délai avant réservation.",
+    "ru": "Ориентир LCL 60–90 дней взят из опубликованных примеров сборных отправок Китай–Дуала через Роттердам. Это не прямой рейс и не обязательство HB по маршруту; до бронирования уточните пересадку и границы расчёта срока.",
+    "pt": "A referência LCL de 60–90 dias vem de exemplos publicados China–Douala via Roterdã. Não representa serviço direto nem compromisso de rota da HB; confirme transbordo e escopo da contagem antes da reserva.",
+    "tr": "LCL için 60–90 gün, Çin–Douala hattında Rotterdam aktarmalı yayımlanmış konsolidasyon örneklerine dayanır. Doğrudan sefer veya HB güzergâh taahhüdü değildir; rezervasyon öncesinde aktarma ve süre kapsamını teyit edin."
+  }
+}

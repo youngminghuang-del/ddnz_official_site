@@ -1,3 +1,4 @@
+import centralAfricaCopy from '../features/freight/centralAfricaCopy.json';
 import marketRegions from '../features/freight/marketRegions.json';
 import { freightRoles } from '../features/freight/freightRoles';
 import DdnzBrand from './DdnzBrand';
@@ -59,6 +60,7 @@ export default function Footer({ quotePath, footerId, pageKey = 'site', descript
     { label: copy.centralAsia, to: localizedPath('/shipping-from-china-to-central-asia') },
     { label: copy.westAfrica, to: localizedPath('/shipping-from-china-to-west-africa') },
     { label: copy.latinAmerica, to: localizedPath('/shipping-from-china-to-latin-america') },
+    { label: centralAfricaCopy[language].name, to: localizedPath("/shipping-from-china-to-central-africa") },
     ...(['central-america','europe'] as const).map(reg=>({label:marketRegions[reg][language].name,to:localizedPath('/shipping-from-china-to-'+reg)})),
   ];
   const serviceCopy = serviceNavigationLabels[language];

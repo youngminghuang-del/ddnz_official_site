@@ -1,3 +1,4 @@
+import centralAfricaCopy from '../features/freight/centralAfricaCopy.json';
 import marketRegions from '../features/freight/marketRegions.json';
 import { freightRoles } from '../features/freight/freightRoles';
 import DdnzBrand from './DdnzBrand';
@@ -117,10 +118,11 @@ const regionOverviewLabels: Record<Language, string> = {
 const destinationGroups = [
   { id: 'middle-east', countries: [['uae', 'AE'], ['saudi-arabia', 'SA'], ['kuwait', 'KW'], ['qatar', 'QA'], ['oman', 'OM'], ['bahrain', 'BH']] },
   { id: 'central-asia', countries: [['russia', 'RU'], ['kazakhstan', 'KZ'], ['uzbekistan', 'UZ'], ['kyrgyzstan', 'KG'], ['tajikistan', 'TJ'], ['turkmenistan', 'TM']] },
-  { id: 'west-africa', countries: [['nigeria', 'NG'], ['ghana', 'GH']] },
+  { id: 'west-africa', countries: [['nigeria', 'NG'], ['ghana', 'GH'], ['ivory-coast','CI'], ['senegal','SN'], ['togo','TG'], ['benin','BJ']] },
   { id: 'latin-america', countries: [['mexico', 'MX'], ['brazil', 'BR'], ['argentina', 'AR'], ['peru', 'PE'], ['chile', 'CL']] },
   { id: 'central-america', countries: [['panama','PA'],['costa-rica','CR']] },
   { id: 'europe', countries: [['spain','ES'],['germany','DE']] },
+  { id: 'central-africa', countries: [['cameroon','CM']] },
   { id: 'south-asia', countries: [['india', 'IN'], ['bangladesh', 'BD'], ['pakistan', 'PK']] },
 ] as const;
 
@@ -128,7 +130,7 @@ function DestinationRegions({ language, onNavigate }: { language: Language; onNa
   const [expanded, setExpanded] = useState<string | null>(null);
   const instanceId = useId();
   const names = new Intl.DisplayNames([language === 'zh' ? 'zh-CN' : language], { type: 'region' });
-  const labels = [navLabels[language].middleEast, freightNavCopy[language].central, navLabels[language].africa, navLabels[language].latinAmerica, marketRegions['central-america'][language].name,marketRegions.europe[language].name,southAsiaLabels[language]];
+  const labels = [navLabels[language].middleEast, freightNavCopy[language].central, navLabels[language].africa, navLabels[language].latinAmerica, marketRegions['central-america'][language].name,marketRegions.europe[language].name,centralAfricaCopy[language].name,southAsiaLabels[language]];
   return <div data-destination-regions>
     {destinationGroups.map((group, index) => {
       const open = expanded === group.id;

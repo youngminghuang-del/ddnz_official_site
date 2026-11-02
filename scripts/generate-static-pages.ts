@@ -770,6 +770,7 @@ const countryNames: Record<string, Record<string, string>> = {
 };
 
 for(const country of newMarkets){const m=marketInfo(country);countryNames[country]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>[l,new Intl.DisplayNames([l==='zh-cn'?'zh-CN':l],{type:'region'}).of(m.iso)!]));seoDataMatrix[`shipping-from-china-to-${country}`]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>{const x=newMarketMetadata(country,(l==='zh-cn'?'zh':l) as NewMarketLocale);return [l,{title:x.title+' | DDNZ',desc:x.description,keywords:''}];}));}
+seoDataMatrix['shipping-from-china-to-central-africa']=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>{const m=regionPageMetadata('central-africa',(l==='zh-cn'?'zh':l) as NewMarketLocale);return [l,{title:m.title,desc:m.desc,keywords:''}];}));
 const countryRouteSlugs = Object.keys(countryNames);
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
@@ -1917,6 +1918,7 @@ function run() {
     { path: 'shipping-from-china-to-middle-east', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-central-asia', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-west-africa', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
+    { path: 'shipping-from-china-to-central-africa', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-latin-america', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-central-america', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },
     { path: 'shipping-from-china-to-europe', priority: '0.9', changefreq: 'weekly', languages: ['en','zh-cn','ru','fr','es','ar','pt','tr'] },

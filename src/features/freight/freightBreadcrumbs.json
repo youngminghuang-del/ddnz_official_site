@@ -1548,5 +1548,421 @@
       "name": "Almanya",
       "path": "/tr/shipping-from-china-to-germany/"
     }
+  ],
+  "/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Africa",
+      "path": "/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/shipping-from-china-to-togo/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "West Africa",
+      "path": "/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Togo",
+      "path": "/shipping-from-china-to-togo/"
+    }
+  ],
+  "/shipping-from-china-to-benin/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "West Africa",
+      "path": "/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Benin",
+      "path": "/shipping-from-china-to-benin/"
+    }
+  ],
+  "/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Africa",
+      "path": "/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Cameroon",
+      "path": "/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-central-africa/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中非",
+      "path": "/zh-cn/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-togo/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "西非",
+      "path": "/zh-cn/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "多哥",
+      "path": "/zh-cn/shipping-from-china-to-togo/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-benin/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "西非",
+      "path": "/zh-cn/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "贝宁",
+      "path": "/zh-cn/shipping-from-china-to-benin/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-cameroon/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中非",
+      "path": "/zh-cn/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "喀麦隆",
+      "path": "/zh-cn/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/es/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Central",
+      "path": "/es/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/es/shipping-from-china-to-togo/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Occidental",
+      "path": "/es/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Togo",
+      "path": "/es/shipping-from-china-to-togo/"
+    }
+  ],
+  "/es/shipping-from-china-to-benin/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Occidental",
+      "path": "/es/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Benín",
+      "path": "/es/shipping-from-china-to-benin/"
+    }
+  ],
+  "/es/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "África Central",
+      "path": "/es/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Camerún",
+      "path": "/es/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/ar/shipping-from-china-to-central-africa/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أفريقيا الوسطى",
+      "path": "/ar/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/ar/shipping-from-china-to-togo/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "غرب أفريقيا",
+      "path": "/ar/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "توغو",
+      "path": "/ar/shipping-from-china-to-togo/"
+    }
+  ],
+  "/ar/shipping-from-china-to-benin/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "غرب أفريقيا",
+      "path": "/ar/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "بنين",
+      "path": "/ar/shipping-from-china-to-benin/"
+    }
+  ],
+  "/ar/shipping-from-china-to-cameroon/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أفريقيا الوسطى",
+      "path": "/ar/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "الكاميرون",
+      "path": "/ar/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/fr/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique centrale",
+      "path": "/fr/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/fr/shipping-from-china-to-togo/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique de l’Ouest",
+      "path": "/fr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Togo",
+      "path": "/fr/shipping-from-china-to-togo/"
+    }
+  ],
+  "/fr/shipping-from-china-to-benin/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique de l’Ouest",
+      "path": "/fr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Bénin",
+      "path": "/fr/shipping-from-china-to-benin/"
+    }
+  ],
+  "/fr/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Afrique centrale",
+      "path": "/fr/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Cameroun",
+      "path": "/fr/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/ru/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Африка",
+      "path": "/ru/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/ru/shipping-from-china-to-togo/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Западная Африка",
+      "path": "/ru/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Того",
+      "path": "/ru/shipping-from-china-to-togo/"
+    }
+  ],
+  "/ru/shipping-from-china-to-benin/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Западная Африка",
+      "path": "/ru/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Бенин",
+      "path": "/ru/shipping-from-china-to-benin/"
+    }
+  ],
+  "/ru/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Африка",
+      "path": "/ru/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Камерун",
+      "path": "/ru/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/pt/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Central",
+      "path": "/pt/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/pt/shipping-from-china-to-togo/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Ocidental",
+      "path": "/pt/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Togo",
+      "path": "/pt/shipping-from-china-to-togo/"
+    }
+  ],
+  "/pt/shipping-from-china-to-benin/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Ocidental",
+      "path": "/pt/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Benim",
+      "path": "/pt/shipping-from-china-to-benin/"
+    }
+  ],
+  "/pt/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "África Central",
+      "path": "/pt/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Camarões",
+      "path": "/pt/shipping-from-china-to-cameroon/"
+    }
+  ],
+  "/tr/shipping-from-china-to-central-africa/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Afrika",
+      "path": "/tr/shipping-from-china-to-central-africa/"
+    }
+  ],
+  "/tr/shipping-from-china-to-togo/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Batı Afrika",
+      "path": "/tr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Togo",
+      "path": "/tr/shipping-from-china-to-togo/"
+    }
+  ],
+  "/tr/shipping-from-china-to-benin/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Batı Afrika",
+      "path": "/tr/shipping-from-china-to-west-africa/"
+    },
+    {
+      "name": "Benin",
+      "path": "/tr/shipping-from-china-to-benin/"
+    }
+  ],
+  "/tr/shipping-from-china-to-cameroon/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Afrika",
+      "path": "/tr/shipping-from-china-to-central-africa/"
+    },
+    {
+      "name": "Kamerun",
+      "path": "/tr/shipping-from-china-to-cameroon/"
+    }
   ]
 }

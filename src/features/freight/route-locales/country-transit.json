@@ -991,5 +991,118 @@
         "scope": "air-march-2026"
       }
     ]
+  },
+  "togo": {
+    "iso": "TG",
+    "sources": [
+      "https://goodhopefreight.com/togo.html"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          30,
+          51
+        ],
+        "route": "China → LOME",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          35,
+          45
+        ],
+        "route": "China → LOME",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          10
+        ],
+        "route": "China → LFW",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 11,
+    "referenceNote": "FCL ranges from complete visible source rows. LCL/air are independent provider planning references, not HB service commitments. Benin air is business days. Cameroon LCL sample is a Europe/Rotterdam transfer, not a direct service."
+  },
+  "benin": {
+    "iso": "BJ",
+    "sources": [
+      "https://goodhopefreight.com/benin.html"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          37,
+          46
+        ],
+        "route": "China → COTONOU",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          40,
+          55
+        ],
+        "route": "China → COTONOU",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          10
+        ],
+        "route": "China → COO",
+        "scope": "air",
+        "dayUnit": "business"
+      }
+    ],
+    "recordCount": 11,
+    "referenceNote": "FCL ranges from complete visible source rows. LCL/air are independent provider planning references, not HB service commitments. Benin air is business days. Cameroon LCL sample is a Europe/Rotterdam transfer, not a direct service."
+  },
+  "cameroon": {
+    "iso": "CM",
+    "sources": [
+      "https://goodhopefreight.com/cameroon/lcl.html",
+      "https://welltrans-logistics.com/shipping-from-china-to-cameroon/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          30,
+          50
+        ],
+        "route": "China → DOUALA",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          60,
+          90
+        ],
+        "route": "China → DOUALA",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          3,
+          7
+        ],
+        "route": "China → DLA",
+        "scope": "air"
+      }
+    ],
+    "recordCount": 5,
+    "referenceNote": "FCL ranges from complete visible source rows. LCL/air are independent provider planning references, not HB service commitments. Benin air is business days. Cameroon LCL sample is a Europe/Rotterdam transfer, not a direct service."
   }
 }
