@@ -1,0 +1,247 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#webpage",
+      "name": "سكوتر كهربائي بالجملة من الصين إلى مصر: كيف تجمع الموديلات وقطع الغيار في أول طلب؟",
+      "description": "دليل للمستورد وتاجر الجملة في مصر: اختيار السكوتر وقطع الغيار المطابقة، مقارنة أسعار المصنع، وتجهيز طلب تجريبي وخطة ضمان وصيانة واضحة.",
+      "inLanguage": "ar",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#breadcrumb"
+      },
+      "relatedLink": [
+        "https://www.ddnzglobal.com/ar/sourcing/electric-scooters-from-china/",
+        "https://www.ddnzglobal.com/ar/blog/china-egypt-lcl-cost-acid/"
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-a"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#article",
+      "headline": "سكوتر كهربائي بالجملة من الصين إلى مصر: كيف تجمع الموديلات وقطع الغيار في أول طلب؟",
+      "description": "دليل للمستورد وتاجر الجملة في مصر: اختيار السكوتر وقطع الغيار المطابقة، مقارنة أسعار المصنع، وتجهيز طلب تجريبي وخطة ضمان وصيانة واضحة.",
+      "inLanguage": "ar",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#webpage"
+      },
+      "dateCreated": "2026-11-02",
+      "dateModified": "2026-11-02",
+      "creativeWorkStatus": "Published",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Egyptian electric kickscooter importers, wholesalers and dealers"
+      },
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "استيراد سكوتر كهربائي بالجملة من الصين إلى مصر"
+        },
+        {
+          "@type": "Thing",
+          "name": "قطع غيار مطابقة للموديل"
+        },
+        {
+          "@type": "Thing",
+          "name": "أسعار المصنع والطلب التجريبي وخدمة ما بعد البيع"
+        }
+      ],
+      "citation": [
+        "https://store.segway.com/controller-assembly-f2-f2-plus",
+        "https://shop.niu.com/products/kqi-air-series-kqi-300-series-super-charger",
+        "https://www.kaabo.com/wp-content/uploads/2023/05/Mantis-8-10.pdf",
+        "https://www.kaabousa.com/pages/warranty-info",
+        "https://www.nafeza.gov.eg/en/pages/16",
+        "https://unece.org/sites/default/files/2025-09/Manual%20of%20Tests%20and%20Criteria%20Rev.8%20EN.pdf",
+        "https://customs.gov.eg/Upload/ECAAdminace/2c2777f7-499b-4ce9-8171-78deb005de42.pdf",
+        "https://www.phmsa.dot.gov/sites/phmsa.dot.gov/files/2024-09/Lithium-Battery-Test-Summary-2024.pdf"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#parts-groups"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#faq"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-b"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-e"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-f"
+        }
+      ],
+      "datePublished": "2026-11-02",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "كيف أبدأ بكمية تجريبية صغيرة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أرسل الموديل المرجعي والكمية المطلوبة. نبحث معك خيار النسخة القياسية أولاً، ثم نفصل متطلبات الشعار واللون والتغليف. يحدد عرض DDNZ الكمية المقبولة لكل نسخة؛ جمع موديلات مختلفة في طلب واحد لا يلغي شروط كل موديل."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يمكن شراء قطع غيار عامة لكل السكوترات؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا. ابدأ بكود القطعة وقائمة الموديلات المطابقة، ثم تحقق من المقاس والتوصيلات والنسخة. اعتمد البديل بعد تأكيد ملاءمته، وليس لأن صورته تشبه القطعة الأصلية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل أحتاج بطاريات احتياطية من أول شحنة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "ليس بالضرورة. اطلب سعر البطارية المطابقة ومدة إعادة توريدها وشروط ضمانها ونقلها، ثم قرر مع جهة الصيانة ما يستحق التخزين. لا تضف بطاريات لموديلات متعددة دون خطة خدمة ومكان تخزين مناسب وتعليمات واضحة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل الضمان يشمل شحن البديل وأجرة الفني؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "لا تفترض ذلك. اطلب تحديد المسؤول عن كل تكلفة في العرض قبل الدفع، مع خطوات اعتماد المطالبة. إعطاء قطعة بديلة لا يعني تلقائياً تغطية النقل إلى مصر أو أجرة الإصلاح المحلي."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#parts-groups",
+      "name": "مجموعات قطع الغيار لأول طلب",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "مستهلكات الصيانة"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "قطع إعادة الدراجة للخدمة"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "أجزاء مرتفعة التكلفة"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/ar/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "مقالات",
+          "item": "https://www.ddnzglobal.com/ar/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "سكوتر كهربائي بالجملة من الصين إلى مصر: كيف تجمع الموديلات وقطع الغيار في أول طلب؟"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-mantis-wide.webp",
+      "caption": "سكوتر Kaabo Mantis King GT كامل أثناء القيادة",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-mantis-wide.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-detail.webp",
+      "caption": "سكوتر Kaabo مطوي مع العجلة الأمامية",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-detail.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/niu-kqi2-tire.png",
+      "caption": "إطار بديل لسكوتر NIU KQi2",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/niu-kqi2-tire.png"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/segway-f2-controller.png",
+      "caption": "لوحة تحكم Segway F2 مع موصلات ظاهرة",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/segway-f2-controller.png"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-e",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/segway-charger.png",
+      "caption": "شاحن Segway مع سلك وموصل الخرج",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/segway-charger.png"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/electric-scooter-wholesale-egypt-spare-parts/#image-f",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-factory-1.webp",
+      "caption": "عامل في خط تجميع Kaabo",
+      "inLanguage": "ar",
+      "url": "https://www.ddnzglobal.com/images/posts/electric-scooter-wholesale-egypt-spare-parts/kaabo-factory-1.webp"
+    }
+  ]
+}
