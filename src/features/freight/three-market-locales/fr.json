@@ -1,0 +1,60 @@
+{
+ "ecuador":{
+  "title":"Transport de Chine vers l’Équateur",
+  "description":"Préparez les équipements de deux usines en Chine, rapprochez colisage et documents d’exportation, puis étudiez le transport vers votre point de réception en Équateur.",
+  "home":"Accueil","region":"Amérique latine","name":"Équateur",
+  "kicker":"ACHATS EN CHINE · REGROUPEMENT DE DEUX USINES · REMISE À L’EXPORT",
+  "heading":"Deux usines. Un plan d’expédition coordonné.",
+  "intro":"Vous achetez des distributeurs automatiques de jouets en capsules ou d’autres équipements auprès de deux usines ? Vérifiez les modèles, les dimensions après emballage, les dates de disponibilité et les documents de chaque usine avant de prévoir un envoi groupé.",
+  "quote":"Demander un plan de regroupement d’équipements",
+  "roles":"DDNZ coordonne les achats, le regroupement et la transmission des documents en Chine dans le cadre convenu. HB évalue la possibilité de transporter la marchandise concernée. L’exportateur responsable, les modalités de dédouanement, les droits et taxes ainsi que le périmètre de livraison doivent être confirmés séparément par écrit.",
+  "diagram":"Schéma de préparation avec deux usines · il ne s’agit pas d’une expédition réalisée",
+  "factoryA":"Usine A","factoryB":"Usine B","factoryNote":"Modèles · colis · disponibilité",
+  "hub":"Vérifier, puis regrouper","hubNote":"Suivi par usine + liste de colisage commune",
+  "destination":"Point de réception en Équateur","destinationNote":"Port / terminal / adresse à confirmer",
+  "sequence":"De deux commandes à un dossier d’exportation clair",
+  "steps":[
+   ["Recenser les marchandises par usine","Distinguez machines, accessoires et jouets fournis. Notez usine, modèle, quantité, valeur, nombre de colis, dimensions emballées, poids brut et date de disponibilité."],
+   ["Coordonner enlèvement et emballage","Vérifiez adresses, dates d’entrée en entrepôt, protection des caisses et manutention. Confirmez si les commandes peuvent voyager ensemble lorsque les deux usines sont prêtes."],
+   ["Identifier les documents et l’exportateur","Rapprochez contrats, factures, listes de colisage et marchandises réelles. Définissez les responsables des déclarations et signatures ; listez les pièces manquantes avant d’étudier les modalités."],
+   ["Convenir du trajet et du point de remise","Comparez FCL, LCL et fret aérien selon le port réel, l’importateur et le lieu de réception. Séparez frais d’origine, fret principal et frais à destination dans le devis."]
+  ],
+  "docs":"Certificat d’origine ou documents d’exportation manquants ?",
+  "docIntro":"Le certificat d’origine (CO) et l’enregistrement nécessaire pour exporter sont deux exigences distinctes. L’importateur, le représentant en douane et l’organisme émetteur doivent confirmer si les marchandises nécessitent un CO non préférentiel ou un certificat d’origine préférentielle au titre de l’accord Chine–Équateur.",
+  "docCards":[
+   ["Justificatifs d’origine","Conservez l’identité réelle du producteur, le lieu de fabrication et les justificatifs d’origine. Le traitement préférentiel dépend des conditions de l’accord ; un CO général ne remplace pas automatiquement un certificat préférentiel."],
+   ["Exportateur responsable","Identifiez précisément l’enregistrement, la pièce ou le compte manquant avant d’étudier l’exportation directe ou par un mandataire habilité. Contrats, facturation, paiements et déclarations doivent concorder."],
+   ["Résoudre les écarts avant l’expédition","Gardez les informations réelles de chaque usine. Déclarations communes, demandes séparées et types de certificats restent à examiner. Ni délivrance du certificat, ni avantage tarifaire, ni mainlevée ne sont garantis."]
+  ],
+  "ports":"Comparer Guayaquil et Posorja par terminal",
+  "portIntro":"Guayaquil et Posorja sont des ports à étudier, avec des frais de terminal distincts. Indiquez ville, adresse et conditions de déchargement. Leur présence ici ne confirme pas l’acceptation du transport par HB.",
+  "portA":"Guayaquil · terminal à confirmer","portB":"Posorja · itinéraire à confirmer",
+  "portNote":"Confirmez compagnie, code du port, terminal et modalités de remise du connaissement avant de comparer dédouanement et transport final.",
+  "rates":"Fret et délai : une étude selon les équipements",
+  "rateBody":"Nous ne présentons pas encore de tarifs de fret ni de délais de transit vérifiés pour l’Équateur. Envoyez les dimensions après emballage, les poids bruts et les dates de disponibilité pour chaque usine, ainsi que le lieu de réception, afin d’étudier les trajets, les frais et les conditions. Un devis jusqu’au port n’inclut pas la livraison à une adresse, droits et taxes acquittés, sauf accord explicite.",
+  "brief":"Six éléments à préparer pour la demande",
+  "fields":["Noms, adresses et contacts des deux usines","Usage, modèle et photos des machines ; jouets, batteries ou modules de paiement éventuels","Quantités, colis, dimensions emballées, poids brut et disponibilité par usine","Exportateur envisagé, pièces disponibles et manquantes","Importateur, port ou adresse finale et conditions de déchargement","Enlèvement, regroupement, fret, dédouanement ou livraison souhaités ; les inconnues peuvent rester à confirmer"],
+  "sources":"Vérifier les exigences d’importation et d’origine",
+  "importGuide":"SENAE · préparer l’importation","fta":"SENAE · règles d’origine Chine–Équateur","origin":"CCPIT · démarche du certificat d’origine",
+  "service":"Regroupement de fournisseurs et coordination export",
+  "notes":"Je souhaite regrouper des équipements de deux usines pour une expédition vers l’Équateur. Merci de vérifier les listes de colisage de chaque usine, l’exportateur responsable, le type de certificat d’origine (CO) et les documents manquants. Merci de confirmer séparément le mode de transport, le fret, le délai de transit et les responsabilités de dédouanement et de livraison."
+ },
+ "market":{
+  "title":"Vérifier les commandes de vêtements et chaussures selon le point de réception",
+  "qatar":"Qatar : confirmer le port Hamad et l’adresse de réception à Doha",
+  "bahrain":"Bahreïn : confirmer le terminal et le point de réception à Manama",
+  "intro":"Rapprochez marchandises et documents des fournisseurs avant de comparer FCL, LCL et fret aérien. Transmettez les données réelles et l’adresse pour examiner les conditions d’acceptation.",
+  "cards":[
+   ["Marchandises et droits de marque","Détaillez casquettes, chaussures et autres produits par fournisseur : matières, quantités, dimensions des cartons et poids brut. Pour les articles de marque, fournissez autorisation ou justificatif de droits et vérifiez les exigences du transporteur et de l’importation."],
+   ["Séparer les frais aux deux extrémités","Confirmez manutention d’origine, fret principal, frais à destination, droits, taxes et livraison locale séparément. En LCL, vérifiez dégroupage, stockage et minimums de facturation ; les prix FCL ne s’appliquent pas directement."],
+   ["Réception et déchargement","Indiquez destinataire, importateur, ville, code postal et adresse complète. Vérifiez moyens de déchargement, rendez-vous, accès camion et frais d’attente. L’arrivée au port ne signifie pas une livraison à l’adresse."],
+   ["Disponibilité et choix du transport","Notez disponibilité et entrée en entrepôt pour chaque usine. Distinguez enlèvement, attente du départ, transport principal, dédouanement et livraison. Le fret aérien nécessite une étude distincte du poids taxable et de l’acceptation."]
+  ],
+  "bahrainNote":"Les références existantes indiquent BAHRAIN ; le terminal précis reste à confirmer. Elles ne constituent pas un service confirmé sur un terminal donné.",
+  "qatarNote":"Vérifiez HAMAD comme port maritime. L’adresse à Doha, le dédouanement et la livraison finale nécessitent une confirmation séparée.",
+  "cta":"Transmettre la marchandise et le lieu de réception",
+  "notes":"Merci de vérifier les vêtements, casquettes et chaussures, les autorisations de marque ou autres justificatifs de droits, les listes de colisage des fournisseurs, le port et l’adresse de réception. Merci de confirmer séparément le fret, les droits et taxes et les conditions de livraison locale."
+ },
+ "region":{"title":"Équipements de deux usines pour l’Équateur","intro":"Rapprochez colisage, exportateur et justificatifs d’origine avant d’étudier le port et la livraison.","link":"Consulter le guide de préparation pour l’Équateur"},
+ "serviceType":"Regroupement d’équipements et coordination des documents d’exportation"
+}

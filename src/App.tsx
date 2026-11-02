@@ -1,3 +1,4 @@
+import './features/freight/market-preparation.css';
 import {coffeePath} from './features/coffee/data.mjs';
 import './features/freight/country-editorial.css';
 import WhatsAppFloat from './components/WhatsAppFloat';
@@ -7,6 +8,8 @@ import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavig
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 const Home = lazy(() => import('./pages/Home'));
+const EcuadorFreightPage = lazy(() => import('./features/freight/EcuadorFreightPage'));
+
 import InternalPageNavigation from './components/InternalPageNavigation';
 import CookieConsent from './components/CookieConsent';
 const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
@@ -551,7 +554,15 @@ export default function App() {
             <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/es/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/zh-cn/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/es/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/ar/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/fr/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/ru/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/pt/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/tr/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+<Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`es-${country}`} path={`/es/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />

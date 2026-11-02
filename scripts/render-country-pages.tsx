@@ -1,3 +1,4 @@
+import EcuadorFreightPage from '../src/features/freight/EcuadorFreightPage';
 import ElectricUtilityVehiclesPage from '../src/features/electric-utility-vehicles/ElectricUtilityVehiclesPage';
 import ElectricTricyclesPage from '../src/features/electric-tricycles/ElectricTricyclesPage';
 import HomeV2Preview from '../src/pages/HomeV2Preview';
@@ -24,9 +25,9 @@ import LatinAmerica from '../src/pages/shipping-from-china-to-latin-america';
 export function renderCountryPage(route: string) {
   const parts = route.split('/').filter(Boolean);
   const country = parts.at(-1)!.replace('shipping-from-china-to-', '');
-  if (!['saudi-arabia','uae','kuwait','qatar','oman','bahrain','kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia','nigeria','ghana','mexico','brazil','argentina','peru','chile'].includes(country)) throw new Error(`Unsupported country: ${country}`);
+  if (!['ecuador','saudi-arabia','uae','kuwait','qatar','oman','bahrain','kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia','nigeria','ghana','mexico','brazil','argentina','peru','chile'].includes(country)) throw new Error(`Unsupported country: ${country}`);
   const language = parts.length === 1 ? 'en' : parts[0] === 'zh-cn' ? 'zh' : parts[0];
-  const Component = country==='brazil' && ['en','zh'].includes(language) ? BrazilCountryPage : ['qatar','oman'].includes(country) ? GulfFreightPage : ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
+  const Component = country==='ecuador'?EcuadorFreightPage:country==='brazil' && ['en','zh'].includes(language) ? BrazilCountryPage : ['qatar','oman'].includes(country) ? GulfFreightPage : ['saudi-arabia','uae','kuwait','qatar','oman','bahrain'].includes(country) ? MiddleEast
     : ['kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia'].includes(country) ? CentralAsia
     : ['nigeria','ghana'].includes(country) ? WestAfrica : LatinAmerica;
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language as any}><Component /></LanguageProvider></MemoryRouter></HelmetProvider>);

@@ -1,3 +1,4 @@
+import MarketPreparationDepth from './MarketPreparationDepth';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
 import FreightRatePreview from './rates/FreightRatePreview';
 import {qualifyRouteCopy} from './qualifiedRouteCopy';
@@ -56,5 +57,5 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
    <p className="route-depth-note">{c.note || labels[1]}{c.source && <> <a href={c.source} target="_blank" rel="noreferrer" aria-label={c.routes[0][0] + " · " + c.source.split("/")[2]} style={{textDecoration:"underline"}}>{c.source.split("/")[2]} ↗</a></>}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
- return <><FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview><DoorDeliveryLink locale={locale} context={country}/></>;
+ return <><FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview><MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
 }

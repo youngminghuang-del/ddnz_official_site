@@ -1,0 +1,60 @@
+{
+ "ecuador":{
+  "title":"Transporte da China para o Equador",
+  "description":"Prepare equipamentos de duas fábricas na China, concilie embalagem e documentos de exportação e avalie o transporte até o ponto de recebimento no Equador.",
+  "home":"Início","region":"América Latina","name":"Equador",
+  "kicker":"COMPRAS NA CHINA · CONSOLIDAÇÃO DE DUAS FÁBRICAS · ENTREGA PARA EXPORTAÇÃO",
+  "heading":"Duas fábricas. Um plano de embarque coordenado.",
+  "intro":"Vai comprar máquinas de venda automática de brinquedos em cápsulas ou outros equipamentos de duas fábricas? Confira os modelos, as dimensões com embalagem, as datas de disponibilidade e os documentos de cada fábrica antes de planejar um embarque conjunto.",
+  "quote":"Solicitar um plano de consolidação de equipamentos",
+  "roles":"A DDNZ coordena as compras, a consolidação e a entrega dos documentos na China dentro do escopo acordado. A HB avalia se a carga pode ser transportada. O exportador responsável, o desembaraço aduaneiro, os tributos e o escopo da entrega precisam ser confirmados separadamente por escrito.",
+  "diagram":"Esquema de preparação com duas fábricas · não representa um embarque realizado",
+  "factoryA":"Fábrica A","factoryB":"Fábrica B","factoryNote":"Modelos · volumes · disponibilidade",
+  "hub":"Conferir e consolidar","hubNote":"Registro por fábrica + lista de volumes conjunta",
+  "destination":"Ponto de recebimento no Equador","destinationNote":"Porto / terminal / endereço a confirmar",
+  "sequence":"De dois pedidos a um conjunto claro de documentos",
+  "steps":[
+   ["Registrar a carga de cada fábrica","Separe máquinas, acessórios e brinquedos incluídos. Registre fábrica, modelo, quantidade, valor, volumes, medidas embaladas, peso bruto e data de disponibilidade."],
+   ["Coordenar coleta e embalagem","Confira endereços, datas de entrada no armazém, proteção das caixas e movimentação. Confirme se os pedidos podem seguir juntos quando ambas as fábricas estiverem prontas."],
+   ["Identificar documentos e exportador","Concilie contratos, faturas, listas de volumes e mercadorias. Defina quem declara e assina a exportação; liste os documentos pendentes antes de avaliar como organizar o processo."],
+   ["Acordar rota e ponto de entrega","Compare FCL, LCL e transporte aéreo conforme porto real, importador e destino final. Separe despesas na origem, frete principal e despesas no destino na cotação."]
+  ],
+  "docs":"Falta certificado de origem ou documentação de exportação?",
+  "docIntro":"O certificado de origem (CO) e o registro necessário para exportar são requisitos diferentes. O importador, o despachante aduaneiro e a entidade emissora devem confirmar se a mercadoria exige um CO não preferencial ou um certificado de origem preferencial do acordo China–Equador.",
+  "docCards":[
+   ["Comprovação de origem","Mantenha os dados reais do produtor, local de fabricação e documentos de origem. O tratamento preferencial exige cumprir o acordo; um CO geral não substitui automaticamente o certificado preferencial."],
+   ["Exportador responsável","Identifique o registro, documento ou conta que falta antes de avaliar exportação direta ou por agente legalmente habilitado. Contratos, faturamento, pagamentos e declarações devem ser coerentes."],
+   ["Resolver pendências antes do embarque","Preserve os dados reais de cada fábrica. Declarações conjuntas, pedidos separados e tipos de certificado precisam de análise. Não há garantia de emissão, benefício tarifário ou liberação aduaneira."]
+  ],
+  "ports":"Compare Guayaquil e Posorja pelo terminal",
+  "portIntro":"Guayaquil e Posorja são portos a avaliar, com despesas de terminal distintas. Informe cidade, endereço e condições de descarga. A menção ao porto não confirma aceitação da carga pela HB.",
+  "portA":"Guayaquil · terminal a confirmar","portB":"Posorja · rota a confirmar",
+  "portNote":"Confirme armador, código do porto, terminal e entrega do conhecimento de embarque antes de comparar desembaraço e transporte posterior.",
+  "rates":"Frete e prazo dependem da análise da carga",
+  "rateBody":"Ainda não apresentamos tarifas de frete nem prazos de trânsito verificados para o Equador. Envie as dimensões com embalagem, os pesos brutos e as datas de disponibilidade de cada fábrica, além do local de recebimento, para avaliar rotas, despesas e condições. Uma cotação até o porto não inclui entrega no endereço com tributos pagos, salvo acordo expresso.",
+  "brief":"Prepare estes seis dados para a consulta",
+  "fields":["Nomes, endereços e contatos das duas fábricas","Uso, modelos e fotos das máquinas; presença de brinquedos, baterias ou módulos de pagamento","Quantidade, volumes, medidas embaladas, peso bruto e disponibilidade por fábrica","Exportador proposto, documentos disponíveis e pendências","Importador, porto ou endereço final e condições de descarga","Coleta, consolidação, frete, desembaraço ou entrega necessários; dados desconhecidos podem ficar para confirmação"],
+  "sources":"Consultar requisitos de importação e origem",
+  "importGuide":"SENAE · preparação para importar","fta":"SENAE · origem no acordo China–Equador","origin":"CCPIT · processo do certificado de origem",
+  "service":"Consolidação de fornecedores e coordenação de exportação",
+  "notes":"Quero consolidar equipamentos de duas fábricas para envio ao Equador. Por favor, confiram as listas de volumes de cada fábrica, o exportador responsável, o tipo de certificado de origem (CO) e os documentos pendentes. Confirmem separadamente a modalidade, o frete, o prazo de trânsito e os responsáveis pelo desembaraço aduaneiro e pela entrega."
+ },
+ "market":{
+  "title":"Confira pedidos de vestuário e calçados conforme o ponto de recebimento",
+  "qatar":"Catar: confirmar o porto de Hamad e o endereço de recebimento em Doha",
+  "bahrain":"Barein: confirmar terminal e ponto de recebimento em Manama",
+  "intro":"Concilie mercadorias e documentos dos fornecedores antes de comparar FCL, LCL e aéreo. Envie os dados reais da carga e o endereço para verificar as condições de aceitação.",
+  "cards":[
+   ["Mercadorias e documentos de marca","Liste bonés, calçados e outros produtos por fornecedor, com materiais, quantidades, medidas das caixas e peso bruto. Para produtos de marca, apresente autorização ou comprovação de direitos e confira requisitos de transporte e importação."],
+   ["Separar despesas nas duas pontas","Confirme movimentação na origem, frete principal, despesas no destino, tributos e entrega local separadamente. Em LCL, confira desconsolidação, armazenagem e cobranças mínimas; preços FCL não se aplicam diretamente."],
+   ["Recebimento e descarga","Informe destinatário, importador, cidade, código postal e endereço completo. Confira equipamentos de descarga, agendamento, acesso de caminhão e taxas de espera. Chegar ao porto não significa entregar no endereço."],
+   ["Disponibilidade e modalidade","Registre disponibilidade e entrada no armazém de cada fábrica. Separe coleta, espera da saída, transporte principal, desembaraço e entrega. O aéreo exige análise separada de peso tarifável e aceitação."]
+  ],
+  "bahrainNote":"As referências existentes indicam BAHRAIN; o terminal específico ainda precisa de confirmação. Elas não comprovam serviço confirmado em determinado terminal.",
+  "qatarNote":"Confira HAMAD como porto marítimo. Endereço em Doha, desembaraço e entrega posterior precisam de confirmação separada.",
+  "cta":"Enviar dados da carga e do recebimento",
+  "notes":"Por favor, confiram roupas, bonés e calçados, a autorização de marca ou outra comprovação de direitos, as listas de volumes dos fornecedores, o porto e o endereço de recebimento. Confirmem separadamente o frete, os tributos e as condições de entrega local."
+ },
+ "region":{"title":"Equipamentos de duas fábricas para o Equador","intro":"Confira embalagens, exportador e origem antes de avaliar porto e entrega.","link":"Ver o guia de preparação para o Equador"},
+ "serviceType":"Consolidação de equipamentos e coordenação documental de exportação"
+}

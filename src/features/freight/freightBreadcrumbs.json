@@ -492,5 +492,117 @@
       "name": "西非",
       "path": "/zh-cn/shipping-from-china-to-west-africa/"
     }
+  ],
+  "/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Latin America",
+      "path": "/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Ecuador",
+      "path": "/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-ecuador/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "拉丁美洲",
+      "path": "/zh-cn/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "厄瓜多尔",
+      "path": "/zh-cn/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/es/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "América Latina",
+      "path": "/es/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Ecuador",
+      "path": "/es/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/ar/shipping-from-china-to-ecuador/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا اللاتينية",
+      "path": "/ar/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "الإكوادور",
+      "path": "/ar/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/fr/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Amérique latine",
+      "path": "/fr/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Équateur",
+      "path": "/fr/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/ru/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Латинская Америка",
+      "path": "/ru/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Эквадор",
+      "path": "/ru/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/pt/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Latina",
+      "path": "/pt/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Equador",
+      "path": "/pt/shipping-from-china-to-ecuador/"
+    }
+  ],
+  "/tr/shipping-from-china-to-ecuador/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Latin Amerika",
+      "path": "/tr/shipping-from-china-to-latin-america/"
+    },
+    {
+      "name": "Ekvador",
+      "path": "/tr/shipping-from-china-to-ecuador/"
+    }
   ]
 }
