@@ -1,3 +1,4 @@
+import egyptScooterPartsSchema from '../data/egypt-scooter-parts-schema.json';
 import magneticCaseWholesaleSchema from '../data/magnetic-case-wholesale-schema.json';
 import commercialIceMachineSchema from '../data/commercial-ice-machine-schema.json';
 import {schemaCanonicalUrl} from '../lib/schemaGraph.mjs';
@@ -249,6 +250,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(magneticCaseWholesaleSchema).replace(/\/+$/, '')) {
       finalSchema = magneticCaseWholesaleSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterPartsSchema).replace(/\/+$/, '')) {
+      finalSchema = egyptScooterPartsSchema;
     }
 
     // Create script tag and append to head
