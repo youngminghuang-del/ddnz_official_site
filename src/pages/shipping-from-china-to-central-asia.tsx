@@ -1,3 +1,4 @@
+import FreightBreadcrumbs from '../features/freight/FreightBreadcrumbs';
 import RussiaOverlayHero from '../features/freight/RussiaOverlayHero';
 import CountryRegionalReference from '../features/freight/CountryRegionalReference';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
@@ -759,6 +760,7 @@ export default function ShippingCentralAsia() {
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
   const routeDepthPreview = selectedCountry === 'uzbekistan';
   const spec = getCountrySpec(selectedCountry);
+  const isRussiaRu = selectedCountry === 'russia' && language === 'ru';
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
   const corridorUi = EURASIA_UI[activeLang];
   const delayDiagnostic = EURASIA_DELAY_DIAGNOSTIC[activeLang];
@@ -891,6 +893,11 @@ export default function ShippingCentralAsia() {
 
             <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]">
               <div className="max-w-3xl text-left">
+                {isRussiaRu && <FreightBreadcrumbs
+                  path="/ru/shipping-from-china-to-russia/"
+                  locale="ru"
+                  className="mb-4 text-sm leading-relaxed text-slate-300 [&_a]:underline [&_a:hover]:text-white"
+                />}
                 <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{corridorUi.regionTag}</p>
                 <h1 className="max-w-[16ch] text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
                   {spec.headline}
@@ -898,6 +905,9 @@ export default function ShippingCentralAsia() {
                 <p className="mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg">
                   {spec.subheadline}
                 </p>
+                {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
+                  Для расчёта доставки до двери укажите описание груза, вес, объём и адрес получателя. Heaven Born проверит, возможны ли условия DDP или DAP для вашего груза, и уточнит, что входит в стоимость.
+                </p>}
                 <button
                   type="button"
                   onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })}

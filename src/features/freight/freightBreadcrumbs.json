@@ -263,6 +263,20 @@
       "path": "/ru/shipping-from-china-to-central-asia/"
     }
   ],
+  "/ru/shipping-from-china-to-russia/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия и Россия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Россия",
+      "path": "/ru/shipping-from-china-to-russia/"
+    }
+  ],
   "/ru/shipping-from-china-to-latin-america/": [
     {
       "name": "Главная",
