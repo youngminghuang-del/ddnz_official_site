@@ -1979,6 +1979,20 @@
       "path": "/tr/shipping-from-china-to-cameroon/"
     }
   ],
+  "/ru/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Таджикистан",
+      "path": "/ru/shipping-from-china-to-tajikistan/"
+    }
+  ],
   "/ru/shipping-from-china-to-kazakhstan/": [
     {
       "name": "Главная",
