@@ -251,9 +251,9 @@ export function AudioSpeakersContent() {
         <div className="mx-auto max-w-7xl px-6"><SeriesEntry family="speaker"/></div>
         <section className="as-hero catalogue-hero" aria-labelledby="audio-title">
           <div className="as-hero-copy">
-            <p className="as-kicker">AUDIO &amp; SPEAKER SOURCING · RANGE CONTROL</p>
-            <h1 id="audio-title">Source speakers from China. Build a range buyers can compare.</h1>
-            <p>DDNZ structures portable, party, vintage and compact speaker sourcing around the intended use, declared output, power path, included accessories and retail pack—so the quotation, approved sample and shipped configuration stay aligned.</p>
+            <p className="as-kicker">SPEAKER MANUFACTURING &amp; EXPORT</p>
+            <h1 id="audio-title">Build your wholesale speaker range in China</h1>
+            <p>DDNZ is a manufacturer and exporter based in Guangzhou, China. Explore portable, party, vintage and compact speakers for your wholesale range. For OEM/ODM enquiries, share your target use, output, power requirements, accessories and packaging. We can confirm the options for your model and help you approve a sample before production.</p>
             <div className="as-hero-actions">
               <button className="as-primary" type="button" onClick={() => scrollTo("bluetooth-model-catalogue")}>Build the range <ArrowRight size={17} /></button>
               <button className="as-secondary" type="button" onClick={() => scrollTo("comparison")}>Review the control fields <ArrowRight size={16} /></button>
