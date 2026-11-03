@@ -81,7 +81,9 @@ export const supplierRows=[
 // Keep the hub title and opening aligned with the complete assortment.
 pages.hub.heading=accessoryCopy.heroHeading;
 pages.hub.intro=accessoryCopy.heroIntro;
+pages.hub.eyebrow = { ...pages.hub.eyebrow, fr: 'Approvisionnement en Chine' };
 pages.hub.desc = {
   ...accessoryCopy.heroIntro,
   en: 'Source cases, screen protectors, earbuds and charging accessories from China. Compare supplier quotes, check samples and coordinate mixed orders.',
+  fr: 'Achetez coques, protections d’écran, écouteurs et chargeurs en Chine. Comparez les devis, validez les échantillons et regroupez vos achats.',
 };
