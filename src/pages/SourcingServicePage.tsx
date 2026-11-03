@@ -1,4 +1,4 @@
-import { englishSupplierSearch, russianInspectionBreadcrumbs, russianInspectionBrief } from '../features/sourcing-services/copy';
+import { russianConsolidationBreadcrumbs, englishSupplierSearch, russianInspectionBreadcrumbs, russianInspectionBrief } from '../features/sourcing-services/copy';
 import InspectionEvidence from '../features/sourcing-services/InspectionEvidence';
 import SupplierBuyingGuide from '../features/sourcing-services/SupplierBuyingGuide';
 import './sourcing-service-aligned.css';
@@ -162,7 +162,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
   const description = englishSupplier ? englishSupplierSearch.description : copy.intro;
   const russianInspection = language === 'ru' && kind === 'inspection-quality-control';
 
-  const breadcrumbs = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : undefined;
+  const breadcrumbs = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : language === 'ru' && kind === 'consolidation-export' ? russianConsolidationBreadcrumbs : undefined;
 
   return (
     <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fbfaf7] text-[var(--ddnz-ink)] ${aligned ? 'sd-aligned' : ''}`} dir={language === 'ar' ? 'rtl' : undefined}>

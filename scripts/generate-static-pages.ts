@@ -79,7 +79,7 @@ import InternationalCountryContent, { internationalCountryMeta } from '../src/fe
 import { modernFreightServiceMetadata } from '../src/features/freight/ModernFreightServiceContent';
 import BrazilPortugueseContent, { brazilPortugueseMeta } from '../src/features/freight/BrazilPortugueseContent';
 import { positioning } from '../src/features/search-intent/positioning.mjs';
-import { englishSupplierSearch, serviceCopy, russianInspectionBreadcrumbs, russianInspectionBrief } from '../src/features/sourcing-services/copy';
+import { russianConsolidationBreadcrumbs, englishSupplierSearch, serviceCopy, russianInspectionBreadcrumbs, russianInspectionBrief } from '../src/features/sourcing-services/copy';
 import { allScenarios } from '../src/features/commercial-kitchen/data/restaurant-scenarios.mjs';
 import FoodProcessingContent from '../src/features/food-processing/FoodProcessingContent.jsx';
 import { foodProcessingRoutes, foodPage, foodPageMeta, foodPageSchema } from '../src/features/food-processing/pages.mjs';
@@ -1114,6 +1114,8 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
             ? englishSupplierSearch.breadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
             : lang === 'ru' && relPath === 'sourcing-services/inspection-quality-control'
             ? russianInspectionBreadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
+            : lang === 'ru' && relPath === 'sourcing-services/consolidation-export'
+            ? russianConsolidationBreadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
             : breadcrumbItems.map((item, index) => index === 0
             ? { ...item, item: localizedHomeUrl }
             : item)
@@ -1631,7 +1633,7 @@ function injectStaticRouteContent(
     if (service) {
       const russianInspection = lang === 'ru' && serviceKind === 'inspection-quality-control';
       const englishSupplier = lang === 'en' && serviceKind === 'supplier-search';
-      const breadcrumbItems = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : undefined;
+      const breadcrumbItems = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : lang === 'ru' && serviceKind === 'consolidation-export' ? russianConsolidationBreadcrumbs : undefined;
       const breadcrumbs = breadcrumbItems ? `<nav aria-label="${englishSupplier ? 'Breadcrumb' : 'Путь к странице'}"><ol>${breadcrumbItems.map(({name, path}, index) => index === breadcrumbItems.length - 1
         ? `<li aria-current="page">${esc(name)}</li>`
         : `<li><a href="${path}">${esc(name)}</a></li>`).join('')}</ol></nav>` : '';
