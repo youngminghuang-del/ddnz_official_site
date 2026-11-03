@@ -1,3 +1,4 @@
+import CairoBuyingLinks from './CairoBuyingLinks';
 import {useEffect,useRef} from 'react';
 import {ArrowLeft,ArrowRight,Calendar,Clock3,ChevronDown} from 'lucide-react';
 import type {BlogPost,ArticleTocItem} from '../../types/content';
@@ -12,6 +13,11 @@ export default function ArticleReadingContent({post,language,articleHtml,primary
  const locale=readingLocale(language),ui=articleUi[locale as keyof typeof articleUi]||articleUi.en,root=useRef<HTMLDivElement>(null);
  const viewer=useRef<HTMLDialogElement>(null),viewerImage=useRef<HTMLImageElement>(null),viewerCaption=useRef<HTMLParagraphElement>(null),lastFocus=useRef<HTMLElement|null>(null),imageLabels=articleImageLabels[locale]||articleImageLabels.en;
  const prefix=locale==='id'?'':articleLocalePrefix(locale),toc=post.toc?.filter(t=>t.level===2)||[],items=toc.length?toc:(post.toc||[]),showToc=items.length>=3;
+ // Insert between the first-order selection section and the landed-cost section.
+ const costHeading = '<h2 id="احسب-تكلفة-وصول-القطعة-ا-لى-القاهرة-قبل-ا-ن-تقرر">';
+ const buyingLinksAt = locale === 'ar' && post.slug === 'cairo-mobile-accessories-wholesale-attaba-china'
+  ? articleHtml.__html.indexOf(costHeading)
+  : -1;
  const updated=(post.lastEdited||post.lastVerified||post.date).slice(0,10),reviewer=post.reviewMode==='human'&&post.reviewer?.length?post.reviewer.join(', '):'';
  useEffect(()=>{
   const node=root.current;if(!node)return;
@@ -49,7 +55,11 @@ export default function ArticleReadingContent({post,language,articleHtml,primary
    {showToc&&<aside className="article-reading-sidebar"><div className="article-reading-sticky"><Contents items={items} label={ui.onThisPage}/><a className="article-reading-top" href="#article-title">{(readingLabels[locale]||readingLabels.en)[16]} ↑</a></div></aside>}
    <article className="article-reading-main">
     {showToc&&<details className="article-reading-mobile-toc"><summary>{ui.onThisPage}<ChevronDown aria-hidden="true"/></summary><Contents items={items} label={ui.onThisPage}/></details>}
-    <div className="article-reading-body blog-content post-content" dangerouslySetInnerHTML={articleHtml}/>
+    {buyingLinksAt > 0 ? <>
+     <div className="article-reading-body blog-content post-content" dangerouslySetInnerHTML={{__html:articleHtml.__html.slice(0,buyingLinksAt)}}/>
+     <CairoBuyingLinks/>
+     <div className="article-reading-body blog-content post-content" dangerouslySetInnerHTML={{__html:articleHtml.__html.slice(buyingLinksAt)}}/>
+    </> : <div className="article-reading-body blog-content post-content" dangerouslySetInnerHTML={articleHtml}/>}
     {discovery&&<section className="article-reading-discovery" lang="en" aria-label="Related buying guides"><h2>{discovery.heading||'Compare equipment for your next order'}</h2><div>{discovery.links.map(link=><a key={link.href} href={link.href} onClick={()=>onDiscovery?.(link.href)}>{link.label}<ArrowRight aria-hidden="true"/></a>)}</div></section>}
     <section id="article-primary-cta" className="article-reading-cta"><p className="article-reading-kicker">{ui.nextStep}</p><h2>{ui.ctaTitle}</h2><p>{ui.ctaBody}</p><a className="article-reading-action" href={primaryCta.href} rel={primaryCta.href.includes('/get-a-quote')?undefined:'nofollow'} data-analytics-tracked="true" onClick={onCta}>{primaryCta.label}<ArrowRight aria-hidden="true"/></a></section>
     <a className="article-reading-back" href={canonicalSitePath(prefix+'/insights')}><ArrowLeft aria-hidden="true"/>{ui.backInsights}</a>
