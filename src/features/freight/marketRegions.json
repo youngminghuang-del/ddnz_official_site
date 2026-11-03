@@ -1,0 +1,102 @@
+{
+  "central-america": {
+    "en": {
+      "name": "Central America",
+      "title": "Shipping from China to Central America",
+      "intro": "Start with Panama and Costa Rica. Compare Pacific and Caribbean gateways against the final address; confirm importer, documents and any onward border crossing for each shipment.",
+      "diagram": "Routing illustration, not a completed shipment case."
+    },
+    "zh": {
+      "name": "中美洲",
+      "title": "中国到中美洲货运",
+      "intro": "先从巴拿马与哥斯达黎加规划运输，按最终地址比较太平洋与加勒比海门户。每票货分别确认进口方、单证和是否涉及后续跨境运输。",
+      "diagram": "线路示意，不代表已完成的交付案例。"
+    },
+    "es": {
+      "name": "América Central",
+      "title": "Envíos de China a América Central",
+      "intro": "Empiece por Panamá y Costa Rica. Compare puertos del Pacífico y del Caribe según la dirección final; confirme importador, documentos y posibles cruces fronterizos para cada envío.",
+      "diagram": "Esquema de ruta; no representa un envío realizado."
+    },
+    "ar": {
+      "name": "أمريكا الوسطى",
+      "title": "الشحن من الصين إلى أمريكا الوسطى",
+      "intro": "ابدأ ببنما وكوستاريكا. قارن بوابات الهادئ والكاريبي وفق العنوان النهائي، وحدد المستورد والمستندات وأي نقل لاحق عبر الحدود لكل شحنة.",
+      "diagram": "مخطط للمسار وليس حالة شحن منفذة."
+    },
+    "fr": {
+      "name": "Amérique centrale",
+      "title": "Expédier de Chine vers l’Amérique centrale",
+      "intro": "Commencez par le Panama et le Costa Rica. Comparez les ports du Pacifique et des Caraïbes selon l’adresse finale ; confirmez importateur, documents et éventuel passage de frontière pour chaque envoi.",
+      "diagram": "Schéma de trajet, sans référence à une expédition réalisée."
+    },
+    "ru": {
+      "name": "Центральная Америка",
+      "title": "Доставка из Китая в Центральную Америку",
+      "intro": "Начните с Панамы и Коста-Рики. Сравните тихоокеанские и карибские порты с учётом конечного адреса; отдельно согласуйте импортёра, документы и возможное пересечение границы.",
+      "diagram": "Схема маршрута, а не пример выполненной перевозки."
+    },
+    "pt": {
+      "name": "América Central",
+      "title": "Envio da China para a América Central",
+      "intro": "Comece por Panamá e Costa Rica. Compare portos do Pacífico e do Caribe conforme o endereço final; confirme importador, documentos e eventual travessia de fronteira para cada remessa.",
+      "diagram": "Esquema de rota; não representa um embarque realizado."
+    },
+    "tr": {
+      "name": "Orta Amerika",
+      "title": "Çin’den Orta Amerika’ya yük taşımacılığı",
+      "intro": "Panama ve Kosta Rika ile başlayın. Son adrese göre Pasifik ve Karayip limanlarını karşılaştırın; her sevkiyat için ithalatçıyı, belgeleri ve varsa devam sınır geçişini doğrulayın.",
+      "diagram": "Güzergâh şemasıdır; tamamlanmış bir sevkiyat örneği değildir."
+    }
+  },
+  "europe": {
+    "en": {
+      "name": "Europe",
+      "title": "Shipping from China to Europe",
+      "intro": "Start with Spain and Germany, using Valencia and Hamburg as separate reference gateways. Compare sea and air timings, importer documents and the final postcode; a port quote does not include delivery across Europe.",
+      "diagram": "Routing illustration, not a completed shipment case."
+    },
+    "zh": {
+      "name": "欧洲",
+      "title": "中国到欧洲货运",
+      "intro": "先从西班牙和德国规划运输，瓦伦西亚与汉堡分别作为参考门户。比较海运和空运时效，确认进口文件与最终邮编；到港报价不等于覆盖全欧洲的到门服务。",
+      "diagram": "线路示意，不代表已完成的交付案例。"
+    },
+    "es": {
+      "name": "Europa",
+      "title": "Envíos de China a Europa",
+      "intro": "Empiece por España y Alemania, con Valencia y Hamburgo como referencias distintas. Compare plazos marítimos y aéreos, documentos del importador y código postal final; una tarifa a puerto no incluye entrega en toda Europa.",
+      "diagram": "Esquema de ruta; no representa un envío realizado."
+    },
+    "ar": {
+      "name": "أوروبا",
+      "title": "الشحن من الصين إلى أوروبا",
+      "intro": "ابدأ بإسبانيا وألمانيا، مع فالنسيا وهامبورغ كبوابتين مرجعيتين منفصلتين. قارن مدد البحر والجو وحدد مستندات المستورد والرمز البريدي؛ سعر الوصول للميناء لا يشمل التسليم في أنحاء أوروبا.",
+      "diagram": "مخطط للمسار وليس حالة شحن منفذة."
+    },
+    "fr": {
+      "name": "Europe",
+      "title": "Expédier de Chine vers l’Europe",
+      "intro": "Commencez par l’Espagne et l’Allemagne, avec Valence et Hambourg comme références distinctes. Comparez délais maritimes et aériens, documents de l’importateur et code postal final ; un tarif portuaire n’inclut pas la livraison partout en Europe.",
+      "diagram": "Schéma de trajet, sans référence à une expédition réalisée."
+    },
+    "ru": {
+      "name": "Европа",
+      "title": "Доставка из Китая в Европу",
+      "intro": "Начните с Испании и Германии: Валенсия и Гамбург — отдельные ориентиры. Сравните морские и авиационные сроки, документы импортёра и конечный индекс; ставка до порта не включает доставку по всей Европе.",
+      "diagram": "Схема маршрута, а не пример выполненной перевозки."
+    },
+    "pt": {
+      "name": "Europa",
+      "title": "Envio da China para a Europa",
+      "intro": "Comece por Espanha e Alemanha, usando Valência e Hamburgo como referências distintas. Compare prazos marítimos e aéreos, documentos do importador e código postal final; uma tarifa até o porto não inclui entrega em toda a Europa.",
+      "diagram": "Esquema de rota; não representa um embarque realizado."
+    },
+    "tr": {
+      "name": "Avrupa",
+      "title": "Çin’den Avrupa’ya yük taşımacılığı",
+      "intro": "İspanya ve Almanya ile başlayın; Valencia ve Hamburg ayrı referans limanlarıdır. Deniz ve hava sürelerini, ithalat belgelerini ve son posta kodunu karşılaştırın; liman fiyatı tüm Avrupa’ya teslimatı kapsamaz.",
+      "diagram": "Güzergâh şemasıdır; tamamlanmış bir sevkiyat örneği değildir."
+    }
+  }
+}

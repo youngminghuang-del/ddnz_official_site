@@ -940,5 +940,613 @@
       "name": "Senegal",
       "path": "/tr/shipping-from-china-to-senegal/"
     }
+  ],
+  "/shipping-from-china-to-central-america/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central America",
+      "path": "/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/shipping-from-china-to-panama/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central America",
+      "path": "/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Panama",
+      "path": "/shipping-from-china-to-panama/"
+    }
+  ],
+  "/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central America",
+      "path": "/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Costa Rica",
+      "path": "/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/shipping-from-china-to-europe/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Europe",
+      "path": "/shipping-from-china-to-europe/"
+    }
+  ],
+  "/shipping-from-china-to-spain/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Europe",
+      "path": "/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Spain",
+      "path": "/shipping-from-china-to-spain/"
+    }
+  ],
+  "/shipping-from-china-to-germany/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Europe",
+      "path": "/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Germany",
+      "path": "/shipping-from-china-to-germany/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-central-america/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中美洲",
+      "path": "/zh-cn/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-panama/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中美洲",
+      "path": "/zh-cn/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "巴拿马",
+      "path": "/zh-cn/shipping-from-china-to-panama/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中美洲",
+      "path": "/zh-cn/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "哥斯达黎加",
+      "path": "/zh-cn/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-europe/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "欧洲",
+      "path": "/zh-cn/shipping-from-china-to-europe/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-spain/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "欧洲",
+      "path": "/zh-cn/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "西班牙",
+      "path": "/zh-cn/shipping-from-china-to-spain/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-germany/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "欧洲",
+      "path": "/zh-cn/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "德国",
+      "path": "/zh-cn/shipping-from-china-to-germany/"
+    }
+  ],
+  "/es/shipping-from-china-to-central-america/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "América Central",
+      "path": "/es/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/es/shipping-from-china-to-panama/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "América Central",
+      "path": "/es/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Panamá",
+      "path": "/es/shipping-from-china-to-panama/"
+    }
+  ],
+  "/es/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "América Central",
+      "path": "/es/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Costa Rica",
+      "path": "/es/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/es/shipping-from-china-to-europe/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Europa",
+      "path": "/es/shipping-from-china-to-europe/"
+    }
+  ],
+  "/es/shipping-from-china-to-spain/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Europa",
+      "path": "/es/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "España",
+      "path": "/es/shipping-from-china-to-spain/"
+    }
+  ],
+  "/es/shipping-from-china-to-germany/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Europa",
+      "path": "/es/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Alemania",
+      "path": "/es/shipping-from-china-to-germany/"
+    }
+  ],
+  "/ar/shipping-from-china-to-central-america/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا الوسطى",
+      "path": "/ar/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/ar/shipping-from-china-to-panama/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا الوسطى",
+      "path": "/ar/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "بنما",
+      "path": "/ar/shipping-from-china-to-panama/"
+    }
+  ],
+  "/ar/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أمريكا الوسطى",
+      "path": "/ar/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "كوستاريكا",
+      "path": "/ar/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/ar/shipping-from-china-to-europe/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أوروبا",
+      "path": "/ar/shipping-from-china-to-europe/"
+    }
+  ],
+  "/ar/shipping-from-china-to-spain/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أوروبا",
+      "path": "/ar/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "إسبانيا",
+      "path": "/ar/shipping-from-china-to-spain/"
+    }
+  ],
+  "/ar/shipping-from-china-to-germany/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "أوروبا",
+      "path": "/ar/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "ألمانيا",
+      "path": "/ar/shipping-from-china-to-germany/"
+    }
+  ],
+  "/fr/shipping-from-china-to-central-america/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Amérique centrale",
+      "path": "/fr/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/fr/shipping-from-china-to-panama/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Amérique centrale",
+      "path": "/fr/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Panama",
+      "path": "/fr/shipping-from-china-to-panama/"
+    }
+  ],
+  "/fr/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Amérique centrale",
+      "path": "/fr/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Costa Rica",
+      "path": "/fr/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/fr/shipping-from-china-to-europe/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Europe",
+      "path": "/fr/shipping-from-china-to-europe/"
+    }
+  ],
+  "/fr/shipping-from-china-to-spain/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Europe",
+      "path": "/fr/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Espagne",
+      "path": "/fr/shipping-from-china-to-spain/"
+    }
+  ],
+  "/fr/shipping-from-china-to-germany/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Europe",
+      "path": "/fr/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Allemagne",
+      "path": "/fr/shipping-from-china-to-germany/"
+    }
+  ],
+  "/ru/shipping-from-china-to-central-america/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Америка",
+      "path": "/ru/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/ru/shipping-from-china-to-panama/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Америка",
+      "path": "/ru/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Панама",
+      "path": "/ru/shipping-from-china-to-panama/"
+    }
+  ],
+  "/ru/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Америка",
+      "path": "/ru/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Коста-Рика",
+      "path": "/ru/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/ru/shipping-from-china-to-europe/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Европа",
+      "path": "/ru/shipping-from-china-to-europe/"
+    }
+  ],
+  "/ru/shipping-from-china-to-spain/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Европа",
+      "path": "/ru/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Испания",
+      "path": "/ru/shipping-from-china-to-spain/"
+    }
+  ],
+  "/ru/shipping-from-china-to-germany/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Европа",
+      "path": "/ru/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Германия",
+      "path": "/ru/shipping-from-china-to-germany/"
+    }
+  ],
+  "/pt/shipping-from-china-to-central-america/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Central",
+      "path": "/pt/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/pt/shipping-from-china-to-panama/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Central",
+      "path": "/pt/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Panamá",
+      "path": "/pt/shipping-from-china-to-panama/"
+    }
+  ],
+  "/pt/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "América Central",
+      "path": "/pt/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Costa Rica",
+      "path": "/pt/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/pt/shipping-from-china-to-europe/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Europa",
+      "path": "/pt/shipping-from-china-to-europe/"
+    }
+  ],
+  "/pt/shipping-from-china-to-spain/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Europa",
+      "path": "/pt/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Espanha",
+      "path": "/pt/shipping-from-china-to-spain/"
+    }
+  ],
+  "/pt/shipping-from-china-to-germany/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Europa",
+      "path": "/pt/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Alemanha",
+      "path": "/pt/shipping-from-china-to-germany/"
+    }
+  ],
+  "/tr/shipping-from-china-to-central-america/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Amerika",
+      "path": "/tr/shipping-from-china-to-central-america/"
+    }
+  ],
+  "/tr/shipping-from-china-to-panama/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Amerika",
+      "path": "/tr/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Panama",
+      "path": "/tr/shipping-from-china-to-panama/"
+    }
+  ],
+  "/tr/shipping-from-china-to-costa-rica/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Amerika",
+      "path": "/tr/shipping-from-china-to-central-america/"
+    },
+    {
+      "name": "Kosta Rika",
+      "path": "/tr/shipping-from-china-to-costa-rica/"
+    }
+  ],
+  "/tr/shipping-from-china-to-europe/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Avrupa",
+      "path": "/tr/shipping-from-china-to-europe/"
+    }
+  ],
+  "/tr/shipping-from-china-to-spain/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Avrupa",
+      "path": "/tr/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "İspanya",
+      "path": "/tr/shipping-from-china-to-spain/"
+    }
+  ],
+  "/tr/shipping-from-china-to-germany/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Avrupa",
+      "path": "/tr/shipping-from-china-to-europe/"
+    },
+    {
+      "name": "Almanya",
+      "path": "/tr/shipping-from-china-to-germany/"
+    }
   ]
 }

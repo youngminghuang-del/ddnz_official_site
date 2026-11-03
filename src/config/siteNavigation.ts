@@ -24,6 +24,10 @@ export const shippingCountries = [
   'colombia',
   'ivory-coast',
   'senegal',
+  'panama',
+  'costa-rica',
+  'spain',
+  'germany',
 ] as const;
 
 export const sourcingCategories = [
@@ -52,6 +56,8 @@ export const siteNavigation = {
     '/shipping-from-china-to-middle-east',
     '/shipping-from-china-to-central-asia',
     '/shipping-from-china-to-west-africa',
+    '/shipping-from-china-to-central-america',
+    '/shipping-from-china-to-europe',
     '/shipping-from-china-to-latin-america',
   ],
   featuredFreightCountries: [

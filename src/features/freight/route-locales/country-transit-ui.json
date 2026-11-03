@@ -18,7 +18,10 @@
       "corridor": "Alternative road corridors have different times; season and border conditions determine the routing.",
       "rail": "Rail-route reference; allow for consolidation, departure slots, border gauge changes and onward delivery.",
       "warehouse": "Departure from the China warehouse to the destination warehouse; predeparture receiving and consolidation are excluded.",
-      "road-planning": "Existing truck-planning reference; confirm the departure city, full/shared load and delivery endpoint."
+      "road-planning": "Existing truck-planning reference; confirm the departure city, full/shared load and delivery endpoint.",
+      "lcl-door-public": "Published LCL door-to-door planning range, including handling and delivery; not the ocean leg alone. Scope must be confirmed by quote.",
+      "lcl-march-2026": "LCL route reference; cutoff, consolidation and cargo release affect the full receiving timeline. Published March 2026 route reference; a historical planning range, not a current departure or delivery commitment.",
+      "air-march-2026": "Air-route reference; confirm connections, airport handling, clearance and final-delivery scope. Published March 2026 route reference; a historical planning range, not a current departure or delivery commitment."
     },
     "modes": {
       "rail": "Rail freight",
@@ -47,7 +50,10 @@
       "corridor": "不同公路走廊分别安排；季节和口岸条件会影响选路与时效。",
       "rail": "铁路线路参考；集货、等班、口岸换轨及到站后配送需衔接。",
       "warehouse": "中国集货仓发运至目的地仓库；不含发运前收货与等拼时间。",
-      "road-planning": "既有卡车规划参考；起运城市、整车或拼车与交付终点随方案确认。"
+      "road-planning": "既有卡车规划参考；起运城市、整车或拼车与交付终点随方案确认。",
+      "lcl-door-public": "公开拼箱到门规划区间，含操作与配送，不是单独海上航程；实际范围须询价确认。",
+      "lcl-march-2026": "拼箱线路参考；截仓、集货及拆箱放货影响完整收货时间。 2026年3月公开线路参考，作为历史规划区间，不代表当前班期或交付承诺。",
+      "air-march-2026": "航空线路参考；航班衔接、机场处理、清关与末端配送范围随方案确认。 2026年3月公开线路参考，作为历史规划区间，不代表当前班期或交付承诺。"
     },
     "modes": {
       "rail": "铁路运输",
@@ -76,7 +82,10 @@
       "corridor": "Los corredores tienen plazos distintos; temporada y fronteras condicionan la ruta.",
       "rail": "Referencia ferroviaria; prever consolidación, salida, cambio de ancho y entrega posterior.",
       "warehouse": "Desde la salida del almacén en China hasta el almacén de destino; recepción y consolidación previas excluidas.",
-      "road-planning": "Referencia de camión; confirmar origen, carga completa o compartida y punto final."
+      "road-planning": "Referencia de camión; confirmar origen, carga completa o compartida y punto final.",
+      "lcl-door-public": "Rango público orientativo de LCL puerta a puerta, con manipulación y entrega; no solo navegación. Confirme el alcance en la cotización.",
+      "lcl-march-2026": "Referencia LCL; cierre de almacén, consolidación y liberación afectan al plazo total. Referencia pública de marzo de 2026; rango histórico de planificación, no una salida actual ni un compromiso de entrega.",
+      "air-march-2026": "Referencia aérea; confirmar conexiones, gestión aeroportuaria, aduana y entrega final. Referencia pública de marzo de 2026; rango histórico de planificación, no una salida actual ni un compromiso de entrega."
     },
     "modes": {
       "rail": "Ferrocarril",
@@ -105,7 +114,10 @@
       "corridor": "Les corridors ont des délais différents ; saison et frontières déterminent l’itinéraire.",
       "rail": "Référence ferroviaire ; prévoir groupage, départ, changement d’écartement et acheminement final.",
       "warehouse": "Du départ de l’entrepôt en Chine à l’entrepôt de destination ; réception et groupage préalables exclus.",
-      "road-planning": "Référence camion ; confirmer origine, lot complet ou groupage et point de remise."
+      "road-planning": "Référence camion ; confirmer origine, lot complet ou groupage et point de remise.",
+      "lcl-door-public": "Fourchette publique indicative LCL de porte à porte, manutention et livraison comprises ; il ne s’agit pas du seul trajet maritime. Périmètre à confirmer sur devis.",
+      "lcl-march-2026": "Référence LCL ; clôture, groupage et mise à disposition influent sur le délai total. Référence publiée en mars 2026 : fourchette historique de planification, ni départ actuel ni engagement de livraison.",
+      "air-march-2026": "Référence aérienne ; confirmer correspondances, opérations aéroportuaires, douane et livraison. Référence publiée en mars 2026 : fourchette historique de planification, ni départ actuel ni engagement de livraison."
     },
     "modes": {
       "rail": "Fret ferroviaire",
@@ -134,7 +146,10 @@
       "corridor": "У коридоров разные сроки; сезон и ситуация на границе влияют на маршрут.",
       "rail": "Железнодорожный ориентир; учтите консолидацию, отправление, смену колеи и доставку со станции.",
       "warehouse": "От отправления со склада в Китае до склада назначения; предварительная приёмка и консолидация исключены.",
-      "road-planning": "Ориентир по автоперевозке; уточните город отправления, отдельную или сборную машину и конечный пункт."
+      "road-planning": "Ориентир по автоперевозке; уточните город отправления, отдельную или сборную машину и конечный пункт.",
+      "lcl-door-public": "Опубликованный ориентир LCL от двери до двери, с обработкой и доставкой, а не только морской участок. Объём услуги уточняется в расчёте.",
+      "lcl-march-2026": "Ориентир LCL; приёмка на склад, консолидация и выдача влияют на общий срок. Опубликованный ориентир за март 2026 года: исторический диапазон для планирования, а не актуальное отправление или обязательство по доставке.",
+      "air-march-2026": "Авиационный ориентир; уточните пересадки, аэропорт, таможню и доставку. Опубликованный ориентир за март 2026 года: исторический диапазон для планирования, а не актуальное отправление или обязательство по доставке."
     },
     "modes": {
       "rail": "Железнодорожная перевозка",
@@ -163,7 +178,10 @@
       "corridor": "Os corredores têm prazos distintos; estação do ano e fronteiras condicionam a rota.",
       "rail": "Referência ferroviária; prever consolidação, saída, mudança de bitola e transporte final.",
       "warehouse": "Da saída do armazém na China ao armazém de destino; recebimento e consolidação anteriores excluídos.",
-      "road-planning": "Referência de caminhão; confirmar origem, carga completa ou compartilhada e ponto final."
+      "road-planning": "Referência de caminhão; confirmar origem, carga completa ou compartilhada e ponto final.",
+      "lcl-door-public": "Faixa pública de planejamento LCL porta a porta, com manuseio e entrega; não apenas o trecho marítimo. Confirme o escopo na cotação.",
+      "lcl-march-2026": "Referência LCL; fechamento, consolidação e liberação afetam o prazo total. Referência publicada em março de 2026; faixa histórica de planejamento, não uma partida atual nem compromisso de entrega.",
+      "air-march-2026": "Referência aérea; confirmar conexões, operações aeroportuárias, desembaraço e entrega. Referência publicada em março de 2026; faixa histórica de planejamento, não uma partida atual nem compromisso de entrega."
     },
     "modes": {
       "rail": "Transporte ferroviário",
@@ -192,7 +210,10 @@
       "corridor": "Koridorların süreleri farklıdır; mevsim ve sınır koşulları güzergâhı belirler.",
       "rail": "Demiryolu referansı; konsolidasyon, çıkış, hat açıklığı değişimi ve son taşıma ayrıca planlanır.",
       "warehouse": "Çin deposundan çıkıştan varış deposuna kadar; çıkış öncesi kabul ve konsolidasyon dahil değildir.",
-      "road-planning": "Kamyon planlama referansı; çıkış şehri, tam veya parsiyel yük ve son noktayı teyit edin."
+      "road-planning": "Kamyon planlama referansı; çıkış şehri, tam veya parsiyel yük ve son noktayı teyit edin.",
+      "lcl-door-public": "Elleçleme ve teslimatı içeren, yayımlanmış LCL kapıdan kapıya planlama aralığıdır; yalnızca deniz etabı değildir. Kapsam teklifte doğrulanmalıdır.",
+      "lcl-march-2026": "LCL referansı; kapanış, konsolidasyon ve yükün serbest bırakılması toplam süreyi etkiler. Mart 2026’da yayımlanmış tarihsel planlama aralığıdır; güncel sefer veya teslimat taahhüdü değildir.",
+      "air-march-2026": "Hava yolu referansı; aktarma, havalimanı işlemleri, gümrükleme ve teslimatı teyit edin. Mart 2026’da yayımlanmış tarihsel planlama aralığıdır; güncel sefer veya teslimat taahhüdü değildir."
     },
     "modes": {
       "rail": "Demiryolu",
@@ -221,7 +242,10 @@
       "corridor": "للممرات البرية مدد مختلفة؛ تحدد المواسم وظروف المعابر اختيار المسار.",
       "rail": "مرجع للسكك الحديدية؛ تُراعى مراحل التجميع وانتظار المغادرة وتغيير عرض السكة والنقل النهائي.",
       "warehouse": "من مغادرة المستودع في الصين إلى مستودع الوجهة؛ لا يشمل الاستلام والتجميع قبل المغادرة.",
-      "road-planning": "مرجع لتخطيط الشاحنات؛ تُؤكَّد مدينة المغادرة والشاحنة الكاملة أو المشتركة ونقطة التسليم."
+      "road-planning": "مرجع لتخطيط الشاحنات؛ تُؤكَّد مدينة المغادرة والشاحنة الكاملة أو المشتركة ونقطة التسليم.",
+      "lcl-door-public": "نطاق تخطيطي منشور للشحن المجمع من الباب إلى الباب يشمل المناولة والتوصيل، وليس الرحلة البحرية وحدها. يؤكد النطاق في عرض السعر.",
+      "lcl-march-2026": "مرجع للشحن المجمّع؛ موعد الإغلاق والتجميع والإفراج تؤثر في مدة الاستلام الكاملة. مرجع مسار منشور في مارس 2026؛ نطاق تخطيطي تاريخي وليس موعد مغادرة حالي أو التزاماً بالتسليم.",
+      "air-march-2026": "مرجع للمسار الجوي؛ تُؤكَّد رحلات الربط وإجراءات المطار والتخليص والتوصيل. مرجع مسار منشور في مارس 2026؛ نطاق تخطيطي تاريخي وليس موعد مغادرة حالي أو التزاماً بالتسليم."
     },
     "modes": {
       "rail": "النقل بالسكك الحديدية",

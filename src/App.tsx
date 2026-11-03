@@ -415,7 +415,7 @@ export default function App() {
             <Route path="/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`en-${country}`} path={`/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -482,7 +482,7 @@ export default function App() {
             <Route path="/zh-cn/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/zh-cn/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/zh-cn/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/zh-cn/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/zh-cn/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/zh-cn/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/zh-cn/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/zh-cn/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`zh-${country}`} path={`/zh-cn/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -507,7 +507,7 @@ export default function App() {
             <Route path="/ru/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ru/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/ru/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/ru/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/ru/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/ru/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/ru/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/ru/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`ru-${country}`} path={`/ru/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -532,7 +532,7 @@ export default function App() {
             <Route path="/fr/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/fr/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/fr/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/fr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/fr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/fr/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/fr/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/fr/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`fr-${country}`} path={`/fr/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -565,7 +565,7 @@ export default function App() {
 <Route path="/ru/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
 <Route path="/pt/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
 <Route path="/tr/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+<Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/es/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/es/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`es-${country}`} path={`/es/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -590,7 +590,7 @@ export default function App() {
             <Route path="/ar/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/ar/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/ar/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/ar/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/ar/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/ar/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/ar/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/ar/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`ar-${country}`} path={`/ar/shipping-from-china-to-${country}`} element={<CountryShippingRoute />} />
@@ -615,7 +615,7 @@ export default function App() {
             <Route path="/pt/services/:serviceId" element={<EnglishLocaleFallback prefix="/pt" />} />
             <Route path="/pt/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/pt/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/pt/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/pt/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/pt/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/pt/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`pt-${country}`} path={`/pt/shipping-from-china-to-${country}`} element={isNewMarket(country) ? <NewMarketFreightPage /> : ['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : country === 'brazil' ? <BrazilPortuguesePage /> : <InternationalCountryPage />} />
@@ -641,7 +641,7 @@ export default function App() {
             <Route path="/tr/services/:serviceId" element={<EnglishLocaleFallback prefix="/tr" />} />
             <Route path="/tr/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/tr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
+            <Route path="/tr/shipping-from-china-to-west-africa" element={<FreightRegionPage />} /><Route path="/tr/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/tr/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/tr/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
             {SHIPPING_COUNTRIES.map((country) => (
               <Route key={`tr-${country}`} path={`/tr/shipping-from-china-to-${country}`} element={isNewMarket(country) ? <NewMarketFreightPage /> : ['ghana','india','bangladesh','pakistan'].includes(country) ? <UsedGoodsPage /> : ['nigeria','peru'].includes(country) ? <MarketFreightPage /> : ['qatar','oman'].includes(country) ? <GulfFreightPage /> : <InternationalCountryPage />} />

@@ -847,5 +847,149 @@
     ],
     "recordCount": 9,
     "referenceNote": "FCL uses this batch of complete visible source records; LCL/air are provider planning references. Senegal air source is an air-express reference with service scope to confirm. Colombia LCL 40–55 derives from published Cartagena ocean 35–45 plus LCL allowance 5–10; it does not derive from the fastest collected FCL option."
+  },
+  "panama": {
+    "iso": "PA",
+    "recordCount": 8,
+    "sources": [
+      "https://gwtlatam.com/china-to-latin-america-transit-time/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          24,
+          36
+        ],
+        "route": "China → Balboa",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          30,
+          45
+        ],
+        "route": "China → Balboa",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          8
+        ],
+        "route": "China → PTY",
+        "scope": "air"
+      }
+    ]
+  },
+  "costa-rica": {
+    "iso": "CR",
+    "recordCount": 0,
+    "sources": [
+      "https://www.vslogistics.cr/en/blog/cuanto-tarda-un-envio-de-china-a-costa-rica"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          30,
+          45
+        ],
+        "route": "China → Costa Rica",
+        "scope": "ocean-public"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          35,
+          50
+        ],
+        "route": "China → Costa Rica",
+        "scope": "lcl"
+      },
+      {
+        "mode": "air",
+        "days": [
+          5,
+          10
+        ],
+        "route": "China → SJO",
+        "scope": "air"
+      }
+    ]
+  },
+  "spain": {
+    "iso": "ES",
+    "recordCount": 23,
+    "sources": [
+      "https://www.cslglobe.com/ship-to-spain/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          33,
+          57
+        ],
+        "route": "China → Valencia",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          41,
+          55
+        ],
+        "route": "China → Valencia",
+        "scope": "lcl-door-public"
+      },
+      {
+        "mode": "air",
+        "days": [
+          2,
+          3
+        ],
+        "route": "China → MAD / BCN",
+        "scope": "air"
+      }
+    ]
+  },
+  "germany": {
+    "iso": "DE",
+    "recordCount": 13,
+    "sources": [
+      "https://www.dantful.com/how-long-is-freight-from-china-to-germany/"
+    ],
+    "rows": [
+      {
+        "mode": "fcl",
+        "days": [
+          38,
+          53
+        ],
+        "route": "China → Hamburg",
+        "scope": "ocean-records"
+      },
+      {
+        "mode": "lcl",
+        "days": [
+          40,
+          52
+        ],
+        "route": "China → Hamburg",
+        "scope": "lcl-march-2026"
+      },
+      {
+        "mode": "air",
+        "days": [
+          4,
+          7
+        ],
+        "route": "China → FRA",
+        "scope": "air-march-2026"
+      }
+    ]
   }
 }

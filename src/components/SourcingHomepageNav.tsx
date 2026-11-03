@@ -1,3 +1,4 @@
+import marketRegions from '../features/freight/marketRegions.json';
 import { freightRoles } from '../features/freight/freightRoles';
 import DdnzBrand from './DdnzBrand';
 import serviceNavigationLabels from '../config/serviceNavigationLabels.json';
@@ -118,6 +119,8 @@ const destinationGroups = [
   { id: 'central-asia', countries: [['russia', 'RU'], ['kazakhstan', 'KZ'], ['uzbekistan', 'UZ'], ['kyrgyzstan', 'KG'], ['tajikistan', 'TJ'], ['turkmenistan', 'TM']] },
   { id: 'west-africa', countries: [['nigeria', 'NG'], ['ghana', 'GH']] },
   { id: 'latin-america', countries: [['mexico', 'MX'], ['brazil', 'BR'], ['argentina', 'AR'], ['peru', 'PE'], ['chile', 'CL']] },
+  { id: 'central-america', countries: [['panama','PA'],['costa-rica','CR']] },
+  { id: 'europe', countries: [['spain','ES'],['germany','DE']] },
   { id: 'south-asia', countries: [['india', 'IN'], ['bangladesh', 'BD'], ['pakistan', 'PK']] },
 ] as const;
 
@@ -125,10 +128,11 @@ function DestinationRegions({ language, onNavigate }: { language: Language; onNa
   const [expanded, setExpanded] = useState<string | null>(null);
   const instanceId = useId();
   const names = new Intl.DisplayNames([language === 'zh' ? 'zh-CN' : language], { type: 'region' });
-  const labels = [navLabels[language].middleEast, freightNavCopy[language].central, navLabels[language].africa, navLabels[language].latinAmerica, southAsiaLabels[language]];
+  const labels = [navLabels[language].middleEast, freightNavCopy[language].central, navLabels[language].africa, navLabels[language].latinAmerica, marketRegions['central-america'][language].name,marketRegions.europe[language].name,southAsiaLabels[language]];
   return <div data-destination-regions>
     {destinationGroups.map((group, index) => {
       const open = expanded === group.id;
+      const overview=siteNavigation.freightRegions.find(path=>path.endsWith('-'+group.id));
       const panelId = `${instanceId}-${group.id}`;
       return <div key={group.id}>
         <button type="button" aria-expanded={open} aria-controls={panelId}
@@ -137,7 +141,7 @@ function DestinationRegions({ language, onNavigate }: { language: Language; onNa
           <span>{labels[index]}</span><ChevronDown aria-hidden="true" className={`h-4 w-4 shrink-0 ${open ? 'rotate-180' : ''}`} />
         </button>
         <div id={panelId} hidden={!open} className="ms-3 mb-2 border-s border-slate-200 ps-2">
-          {index < siteNavigation.freightRegions.length && <DropdownLink onNavigate={onNavigate} to={navigationPath(siteNavigation.freightRegions[index], language)}>{regionOverviewLabels[language]} ↗</DropdownLink>}
+          {overview && <DropdownLink onNavigate={onNavigate} to={navigationPath(overview, language)}>{regionOverviewLabels[language]} ↗</DropdownLink>}
           {group.countries.map(([slug, iso]) => <DropdownLink key={slug} onNavigate={onNavigate} to={navigationPath(`/shipping-from-china-to-${slug}`, language)}>{names.of(iso)}</DropdownLink>)}
         </div>
       </div>;
