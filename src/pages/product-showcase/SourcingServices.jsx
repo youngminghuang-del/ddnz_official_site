@@ -297,6 +297,11 @@ export function SourcingServices() {
               <a className="ss-primary" href="/get-a-quote/?leadGoal=Product+Sourcing&source=services_product">Get a wholesale quote <ArrowRight size={17} /></a>
               <button className="ss-text-button" type="button" onClick={() => scrollTo("paths")}>Existing supplier support <ArrowRight size={16} /></button>
             </div>
+            <p>
+              <a href="/sourcing-services/supplier-search/">Compare suppliers</a>
+              {' · '}<a href="/sourcing-services/inspection-quality-control/">Arrange quality inspection</a>
+              {' · '}<a href="/sourcing-services/consolidation-export/">Consolidate orders for export</a>
+            </p>
             <div className="ss-proof-row" aria-label="DDNZ sourcing service principles">
               <span><Boxes size={20} /><b>Mixed-SKU</b><small>retail flexibility</small></span>
               <span><SearchCheck size={20} /><b>Comparable</b><small>supplier offers</small></span>

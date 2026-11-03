@@ -15,7 +15,7 @@ const pages = {
   },
   services: {
     title: entryKeywords.en.servicesMetaTitle,
-    description: entryKeywords.en.servicesIntro,
+    description: entryKeywords.en.servicesDescription,
     keywords: "China sourcing and export support, OEM ODM wholesale orders, supplier verification, quality control China",
     path: "/sourcing-services",
     image: "/images/product-showcase/kitchen/kitchen-factory-inspection-sanitized.webp",

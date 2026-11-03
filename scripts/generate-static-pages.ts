@@ -660,7 +660,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
   'sourcing-services': {
     en: {
       title: entryKeywords.en.servicesMetaTitle,
-      desc: entryKeywords.en.servicesIntro,
+      desc: entryKeywords.en.servicesDescription,
       keywords: 'China sourcing services, sourcing agent China, mixed SKU sourcing, supplier verification, production follow up China',
       image: '/images/product-showcase/kitchen/kitchen-factory-inspection-sanitized.webp'
     }
