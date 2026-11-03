@@ -19,8 +19,9 @@ export function freightPageInfo(path:string,language?:string){
  if(slug==='central-africa'){const x=centralAfricaCopy[locale as keyof typeof centralAfricaCopy];return {slug,locale,prefix,name:x.name,url:`${origin}${prefix}/${last}/`,title:x.title+' | DDNZ Global',description:x.intro,language:locale==='zh'?'zh-CN':locale};}
  if(slug==='central-america'||slug==='europe'){const x=marketRegions[slug][locale as keyof typeof marketRegions.europe];return {slug,locale,prefix,name:x.name,url:`${origin}${prefix}/${last}/`,title:x.title+' | DDNZ Global',description:x.intro,language:locale==='zh'?'zh-CN':locale};}
  const name=freightCountries[slug]?new Intl.DisplayNames([locale==='zh'?'zh-CN':locale],{type:'region'}).of(freightCountries[slug])!:c[2+Object.keys(freightRegions).indexOf(slug)];
+ const isRussiaRu = slug === 'russia' && locale === 'ru';
  const destination=destinationForm(freightCountries[slug]||slug,locale,name);
- return {slug,locale,prefix,name,url:`${origin}${prefix}/${last}/`,title:c[0].replace('{name}',destination)+' | DDNZ',description:c[1].replace('{name}',destination),language:locale==='zh'?'zh-CN':locale==='pt'&&slug==='brazil'?'pt-BR':locale};
+ return {slug,locale,prefix,name,url:`${origin}${prefix}/${last}/`,title:isRussiaRu?'Грузоперевозки из Китая в Россию: маршруты и сроки | DDNZ':c[0].replace('{name}',destination)+' | DDNZ',description:isRussiaRu?'Сравните способы доставки из Китая в Россию и ориентировочные сроки. Укажите груз и адрес, чтобы уточнить стоимость и условия DDP или DAP.':c[1].replace('{name}',destination),language:locale==='zh'?'zh-CN':locale==='pt'&&slug==='brazil'?'pt-BR':locale};
 }
 export function breadcrumbLabel(locale: string) {
  return ({en:'Breadcrumb',zh:'面包屑导航',es:'Ruta de navegación',pt:'Navegação estrutural',fr:'Fil d’Ariane',ru:'Навигационная цепочка',ar:'مسار التنقل',tr:'İçerik yolu'} as Record<string,string>)[locale] || 'Breadcrumb';

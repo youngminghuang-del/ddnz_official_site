@@ -36,8 +36,8 @@ export const SCREEN_PROTECTOR_SEO = Object.freeze({
     imageAlt: 'Glass pieces on a production fixture, filmed by the DDNZ team',
   },
   products: {
-    title: 'Wholesale Screen Protector Prices & MOQ from China | DDNZ',
-    description: 'Compare wholesale screen protector prices in CNY, clear and privacy glass, installation kits and model MOQs. Check mixed-order rules and request a quote.',
+    title: 'Wholesale Screen Protector Price Comparison | DDNZ',
+    description: 'Compare reference unit prices and minimum orders for clear and privacy screen protectors from China. Check packaging and request a quote by phone model.',
     image: asset('001-kit-photo.jpg'),
     imageAlt: EN.guides.kit001,
   },

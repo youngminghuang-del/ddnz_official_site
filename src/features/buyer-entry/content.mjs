@@ -12,7 +12,7 @@ export function renderCaseEntry(){
     ['Silicone cases','Soft-touch cases with an inner lining.','#style-silicone-jmetec','Browse silicone cases'],
     ['Clear TPU cases','A clear everyday style for a simple retail range.','#style-clear-trendcomm','Browse clear TPU cases'],
     ['PC cases','A mesh PC case for Samsung.','#style-mesh-longan','Browse PC cases'],
-    ['PU / leather-style cases','Choose a flip wallet or a textured PU back.','#style-folio-bida','Browse flip-wallet cases', [['#style-fabric-feishile','Browse textured PU cases']]],
+    ['Foldable folio & card-slot wallet','Check C04 for foldable phone fit. C05 is a separate PU + TPU flip wallet with a card slot. Its supplier reference tier starts at 5 pieces. Confirm the exact phone model and order minimum before buying.','#style-fold-folio','View C04 foldable fit sample', [['#style-folio-bida','View C05 card-slot wallet'], ['#style-fabric-feishile','Browse textured PU cases']]],
   ])+`<div class="case-request"><div class="case-request-copy"><h3>Need a different model or style?</h3><p>Looking for phone cases for iPhone, Samsung, Xiaomi / Redmi, OPPO or vivo? Share the models, preferred styles and quantities you need.</p></div><a class="case-request-button" href="/get-a-quote/" data-quote-context="${context}">Request matching cases <span aria-hidden="true">→</span></a></div>`);
 }
 
