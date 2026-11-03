@@ -25,7 +25,7 @@ test('collection graph uses one real breadcrumb and all visible groups without i
   assert.deepEqual(list.itemListElement.map(x=>x.url.split('#')[1]),comparisonGroups().map(x=>x.anchor));
   assert.ok(!JSON.stringify(graph).match(/AggregateOffer|"offers"|AggregateRating|InStock/));
   assert.equal(screenProtectorSchema('home')['@type'],'BreadcrumbList');
-  assert.match(screenProtectorMetadata('/screen-protectors/compare/').title,/Prices & MOQ from China/);
+  assert.match(screenProtectorMetadata('/screen-protectors/compare/').title,/Wholesale Screen Protector Price Comparison/);
 });
 
 test('request CTA retains the existing private brief route', () => {
