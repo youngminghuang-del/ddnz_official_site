@@ -1,4 +1,4 @@
-import { russianInspectionBreadcrumbs, russianInspectionBrief } from '../features/sourcing-services/copy';
+import { englishSupplierSearch, russianInspectionBreadcrumbs, russianInspectionBrief } from '../features/sourcing-services/copy';
 import InspectionEvidence from '../features/sourcing-services/InspectionEvidence';
 import SupplierBuyingGuide from '../features/sourcing-services/SupplierBuyingGuide';
 import './sourcing-service-aligned.css';
@@ -158,13 +158,16 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
               : language === 'tr'
                 ? `Çin’de ${copy.eyebrow.toLocaleLowerCase('tr-TR')} | DDNZ Global`
                 : `${copy.eyebrow} from China | DDNZ Global`;
-  const description = copy.intro;
+  const englishSupplier = language === 'en' && kind === 'supplier-search';
+  const description = englishSupplier ? englishSupplierSearch.description : copy.intro;
   const russianInspection = language === 'ru' && kind === 'inspection-quality-control';
+
+  const breadcrumbs = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : undefined;
 
   return (
     <div className={`ddnz-home min-h-screen overflow-x-hidden bg-[#fbfaf7] text-[var(--ddnz-ink)] ${aligned ? 'sd-aligned' : ''}`} dir={language === 'ar' ? 'rtl' : undefined}>
       <SEO
-        title={title}
+        title={englishSupplier ? englishSupplierSearch.metaTitle : title}
         description={description}
         keywords={`${copy.eyebrow}, China sourcing service, supplier control China, DDNZ Global`}
         canonicalPath={canonicalPath}
@@ -180,7 +183,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
         url: `https://www.ddnzglobal.com${canonicalPath}`,
         providerName: 'DDNZ Global Trade Co., Ltd.',
       }} />
-      <SchemaMarkup type="BreadcrumbList" data={{ items: russianInspection ? russianInspectionBreadcrumbs.map(({ name, path }) => ({ name, url: `https://www.ddnzglobal.com${path}` })) : [
+      <SchemaMarkup type="BreadcrumbList" data={{ items: breadcrumbs ? breadcrumbs.map(({ name, path }) => ({ name, url: `https://www.ddnzglobal.com${path}` })) : [
         { name: shared.home, url: `https://www.ddnzglobal.com${localePrefix[language] || '/'}` },
         { name: copy.eyebrow, url: `https://www.ddnzglobal.com${canonicalPath}` },
       ] }} />
@@ -197,10 +200,10 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           <div className="sd-hero-inner relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-[1.05fr_.75fr] lg:items-center lg:px-8 lg:py-24">
             <div>
               <nav aria-label="Breadcrumb" className="flex flex-wrap items-center gap-2 text-xs font-bold text-slate-300">
-                {russianInspection ? russianInspectionBreadcrumbs.map(({ name, path }, index) => (
+                {breadcrumbs ? breadcrumbs.map(({ name, path }, index) => (
                   <span key={path} className="inline-flex gap-2">
                     {index > 0 && <span aria-hidden="true">/</span>}
-                    {index === russianInspectionBreadcrumbs.length - 1 ? <span aria-current="page">{name}</span> : <Link to={path}>{name}</Link>}
+                    {index === breadcrumbs.length - 1 ? <span aria-current="page">{name}</span> : <Link to={path}>{name}</Link>}
                   </span>
                 )) : <>
                 <Link to={localePrefix[language] || '/'} className="hover:text-white">{shared.home}</Link>
@@ -210,6 +213,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
               <div className="mt-8"><DdnzEyebrow icon={ServiceIcon} dark={!aligned}>{copy.eyebrow}</DdnzEyebrow></div>
               <h1 className="mt-5 max-w-[18ch] text-[clamp(2.5rem,5.5vw,4.75rem)] font-black leading-[1.02] tracking-[-0.055em] text-balance">{copy.title}</h1>
               <p className="mt-6 max-w-2xl text-base font-medium leading-8 text-slate-200 sm:text-lg">{copy.intro}</p>
+              {englishSupplier && <p className="mt-3 text-sm leading-6 text-slate-200">{englishSupplierSearch.brief}</p>}
               {russianInspection && <p className="mt-3 text-sm leading-6 text-slate-200">{russianInspectionBrief}</p>}
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <DdnzPrimaryLink
@@ -221,6 +225,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
                 </DdnzPrimaryLink>
                 <DdnzSecondaryLink to="#service-scope" className="border-white/30 text-white hover:bg-white/10">{copy.outputTitle}</DdnzSecondaryLink>
               </div>
+              {englishSupplier && <Link className="mt-4 inline-block text-sm font-semibold underline" to={englishSupplierSearch.rangePath}>{englishSupplierSearch.rangeLabel}</Link>}
             </div>
 
             {aligned && kind === 'supplier-search' ? <SupplierFieldPreview image={config.image} alt={config.imageAlt} /> : aligned ? <ServiceVisual inspection={kind === 'inspection-quality-control'} /> : <figure className="sd-photo relative overflow-hidden rounded-2xl border border-white/15 bg-slate-900 shadow-[0_24px_70px_rgba(0,0,0,.35)]">

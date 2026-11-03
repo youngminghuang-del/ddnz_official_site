@@ -17,11 +17,24 @@ type ServiceCopy = {
   cta: string;
 };
 
+export const englishSupplierSearch = {
+  metaTitle: 'Supplier Search in China | DDNZ',
+  description: 'Work with DDNZ, a manufacturer in China. Get a supplier shortlist and compare factory quotes when your project needs a specialist partner.',
+  brief: 'Send a product reference, target market, estimated order quantity and key specifications.',
+  rangePath: '/about/',
+  rangeLabel: 'Explore our manufacturing range',
+  breadcrumbs: [
+    { name: 'Home', path: '/' },
+    { name: 'Sourcing services', path: '/sourcing-services/' },
+    { name: 'Supplier search & comparison', path: '/sourcing-services/supplier-search/' },
+  ],
+};
+
 export const serviceCopy: Record<SourcingServiceKind, Record<Language, ServiceCopy>> = {
   'supplier-search': {
     en: {
-      eyebrow: 'Supplier search & comparison', title: 'Shortlist China suppliers against one comparable buying brief.',
-      intro: 'DDNZ turns product references and market requirements into a structured brief, searches suitable manufacturers and normalizes quotations before a buyer chooses whom to sample or audit.',
+      eyebrow: 'Supplier search & comparison', title: 'Find the right manufacturing option for your product in China',
+      intro: 'DDNZ is a manufacturer and exporter based in Guangzhou, China. Our product range includes commercial kitchen equipment, food processing machinery, portable power stations, home energy storage systems, electric bicycles, electric scooters and mobile accessories. Share your specifications and quantity so we can confirm the production option for your project. If you need a specialist manufacturing partner, we can shortlist suitable factories and compare quotes against the same specifications.',
       useTitle: 'Use this service when', useCases: ['You have a product photo or target model but no verified factory.', 'Supplier quotations use different specifications or inclusions.', 'You need a shortlist before samples, audit or negotiation.'],
       outputTitle: 'What you receive', outputs: ['A clarified product and market brief.', 'A comparable supplier and quotation matrix.', 'Open questions, evidence gaps and recommended next checks.'],
       sequenceTitle: 'From brief to shortlist', sequence: [
