@@ -42,7 +42,7 @@
       },
       "creativeWorkStatus": "Published",
       "dateCreated": "2026-11-03",
-      "dateModified": "2026-11-03",
+      "dateModified": "2026-11-03T15:44:25+08:00",
       "audience": {
         "@type": "BusinessAudience",
         "audienceType": "Importers, buying offices and project contractors shipping packed goods from China"
@@ -53,9 +53,6 @@
         "https://www.sunat.gob.pe/legislacion/procedim/despacho/importacion/importac/procGeneral/despa-pg.01.htm"
       ],
       "hasPart": [
-        {
-          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#quote-comparison"
-        },
         {
           "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#faq"
         }
@@ -75,7 +72,7 @@
           "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-i"
         }
       ],
-      "datePublished": "2026-11-03",
+      "datePublished": "2026-11-03T15:44:25+08:00",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
       }
