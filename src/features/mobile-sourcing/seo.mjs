@@ -4,7 +4,7 @@ import { copyFor,mobileProducts } from './catalog.mjs';
 import { localizedProductPath } from '../../lib/productLocalization.mjs';
 export function mobileMetadata(id,locale='en'){
  const page=mobilePages.find(p=>p.id===id),copy=pages[id],base='https://www.ddnzglobal.com';const path=localizedProductPath(page.path,locale);
- const productsBreadcrumb = id === 'hub' && locale === 'en'
+ const productsBreadcrumb = id === 'hub' && (locale === 'en' || locale === 'fr')
    ? [{name:copyFor(ui.products,locale),item:base+localizedProductPath('/products',locale)}]
    : [];
  const schema={'@context':'https://schema.org','@graph':[
