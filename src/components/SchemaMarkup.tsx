@@ -1,3 +1,4 @@
+import latamLclQuoteSchema from '../data/latam-lcl-quote-schema.json';
 import egyptScooterPartsSchema from '../data/egypt-scooter-parts-schema.json';
 import magneticCaseWholesaleSchema from '../data/magnetic-case-wholesale-schema.json';
 import commercialIceMachineSchema from '../data/commercial-ice-machine-schema.json';
@@ -254,6 +255,9 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterPartsSchema).replace(/\/+$/, '')) {
       finalSchema = egyptScooterPartsSchema;
+    }
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(latamLclQuoteSchema).replace(/\/+$/, '')) {
+      finalSchema = latamLclQuoteSchema;
     }
 
     // Create script tag and append to head

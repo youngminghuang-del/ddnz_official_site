@@ -1,3 +1,4 @@
+import latamLclQuoteRelease from '../src/data/latamLclQuoteRelease.json';
 import egyptScooterPartsRelease from '../src/data/egyptScooterPartsRelease.json';
 import magneticCaseWholesaleRelease from '../src/data/magneticCaseWholesaleRelease.json';
 import commercialIceMachineRelease from '../src/data/commercialIceMachineRelease.json';
@@ -547,7 +548,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === egyptScooterPartsRelease.slug
+      const rendered = slug === latamLclQuoteRelease.slug
+        ? { html: latamLclQuoteRelease.content, toc: latamLclQuoteRelease.toc, wordCount: latamLclQuoteRelease.wordCount, readMinutes: latamLclQuoteRelease.readMinutes }
+        : slug === egyptScooterPartsRelease.slug
         ? { html: egyptScooterPartsRelease.content, toc: egyptScooterPartsRelease.toc, wordCount: egyptScooterPartsRelease.wordCount, readMinutes: egyptScooterPartsRelease.readMinutes }
         : slug === magneticCaseWholesaleRelease.slug
         ? { html: magneticCaseWholesaleRelease.content, toc: magneticCaseWholesaleRelease.toc, wordCount: magneticCaseWholesaleRelease.wordCount, readMinutes: magneticCaseWholesaleRelease.readMinutes }
@@ -585,7 +588,7 @@ async function run() {
         language,
         translationGroup,
         date,
-        lastEdited: slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
+        lastEdited: slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
         summary,
         thumbnailUrl,
         content: rendered.html,
@@ -602,7 +605,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.reviewer : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),

@@ -1,0 +1,208 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#webpage",
+      "name": "Cómo comparar cotizaciones de carga consolidada (LCL) desde China a Centroamérica y Sudamérica",
+      "description": "Compara dos ofertas LCL desde China con la misma entrega. Revisa W/M, mínimos, cargos en destino y costo hasta tu almacén.",
+      "inLanguage": "es",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#breadcrumb"
+      },
+      "url": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-f"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#article",
+      "headline": "Cómo comparar cotizaciones de carga consolidada (LCL) desde China a Centroamérica y Sudamérica",
+      "description": "Compara dos ofertas LCL desde China con la misma entrega. Revisa W/M, mínimos, cargos en destino y costo hasta tu almacén.",
+      "inLanguage": "es",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#webpage"
+      },
+      "creativeWorkStatus": "Published",
+      "dateCreated": "2026-11-03",
+      "dateModified": "2026-11-03",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Importers, buying offices and project contractors shipping packed goods from China"
+      },
+      "citation": [
+        "https://www.dhl.com/pl-en/home/global-forwarding/freight-forwarding-education-center/the-cost-drivers-of-lcl-rates.html",
+        "https://www.dhl.com/content/dam/dhl/local/br/dhl-global-forwarding/documents/pdf/br-dgf-legal-terms-and-conditions-en.pdf",
+        "https://www.sunat.gob.pe/legislacion/procedim/despacho/importacion/importac/procGeneral/despa-pg.01.htm"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#quote-comparison"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#faq"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-f"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-g"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-h"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-i"
+        }
+      ],
+      "datePublished": "2026-11-03",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#faq",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Puedo comparar dos precios por metro cúbico?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí, cuando las dos líneas usan la misma base, el mismo mínimo y el mismo alcance. Pide además los importes por embarque y los cargos en destino para comparar el total hasta el punto acordado."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo registro un cargo de destino que todavía no tiene importe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Déjalo como pendiente, con el nombre de quien lo debe cotizar y su unidad de cobro. Solicita su confirmación escrita antes de reservar si necesitas cerrar el costo hasta tu almacén."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Qué datos necesita DDNZ para revisar las ofertas?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Envía país y ciudad de entrega, descripción de la mercancía, número de bultos, dimensiones exteriores, peso bruto, ubicaciones de recogida y fecha estimada de disponibilidad. Si ya tienes dos ofertas, puedes ocultar los nombres comerciales y mantener visibles los importes y condiciones."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#quote-comparison",
+      "name": "Comparación de cotizaciones LCL",
+      "itemListOrder": "https://schema.org/ItemListUnordered",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Recogida y almacén en China"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Flete marítimo y recargos"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Desconsolidación y retiro en destino"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Despacho e importación"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Entrega final"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Artículos",
+          "item": "https://www.ddnzglobal.com/es/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cómo comparar cotizaciones de carga consolidada (LCL) desde China a Centroamérica y Sudamérica"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-f",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2172.jpg",
+      "description": "Operarios, cajas y un camión junto a un contenedor abierto",
+      "width": 1290,
+      "height": 934,
+      "url": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2172.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-g",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2173.jpg",
+      "description": "Operarios y cajas en la entrada de un contenedor",
+      "width": 1290,
+      "height": 1696,
+      "url": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2173.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-h",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2176.jpg",
+      "description": "Cajas y embalaje de madera en la plataforma de un camión",
+      "width": 1290,
+      "height": 1702,
+      "url": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/owner-img-2176.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/#image-i",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/lcl-destination-deconsolidation-illustration.png",
+      "description": "Ilustración de la descarga y separación de lotes LCL en el almacén de destino",
+      "width": 1752,
+      "height": 897,
+      "url": "https://www.ddnzglobal.com/images/posts/comparar-cotizaciones-lcl-china-centroamerica-sudamerica/lcl-destination-deconsolidation-illustration.png"
+    }
+  ]
+}
