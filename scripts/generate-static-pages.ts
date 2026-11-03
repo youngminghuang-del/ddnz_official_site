@@ -76,7 +76,7 @@ import InternationalCountryContent, { internationalCountryMeta } from '../src/fe
 import { modernFreightServiceMetadata } from '../src/features/freight/ModernFreightServiceContent';
 import BrazilPortugueseContent, { brazilPortugueseMeta } from '../src/features/freight/BrazilPortugueseContent';
 import { positioning } from '../src/features/search-intent/positioning.mjs';
-import { serviceCopy } from '../src/features/sourcing-services/copy';
+import { serviceCopy, russianInspectionBreadcrumbs, russianInspectionBrief } from '../src/features/sourcing-services/copy';
 import { allScenarios } from '../src/features/commercial-kitchen/data/restaurant-scenarios.mjs';
 import FoodProcessingContent from '../src/features/food-processing/FoodProcessingContent.jsx';
 import { foodProcessingRoutes, foodPage, foodPageMeta, foodPageSchema } from '../src/features/food-processing/pages.mjs';
@@ -1107,7 +1107,9 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         ...(hasVisibleBreadcrumb ? [{
           '@type': 'BreadcrumbList',
           '@id': `${canonicalUrl}#breadcrumb`,
-          itemListElement: breadcrumbItems.map((item, index) => index === 0
+          itemListElement: lang === 'ru' && relPath === 'sourcing-services/inspection-quality-control'
+            ? russianInspectionBreadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
+            : breadcrumbItems.map((item, index) => index === 0
             ? { ...item, item: localizedHomeUrl }
             : item)
         }] : []),
@@ -1622,7 +1624,12 @@ function injectStaticRouteContent(
     const esc = escapeStaticText;
     const prefix = lang === 'en' ? '' : `/${lang}`;
     if (service) {
-      staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}"><p>${esc(service.eyebrow)}</p><h1>${esc(service.title)}</h1><p>${esc(service.intro)}</p><h2>${esc(service.useTitle)}</h2><ul>${service.useCases.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.outputTitle)}</h2><ul>${service.outputs.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.sequenceTitle)}</h2><ol>${service.sequence.map(v=>`<li><h3>${esc(v.title)}</h3><p>${esc(v.body)}</p></li>`).join('')}</ol><h2>${esc(service.boundaryTitle)}</h2><p>${esc(service.boundary)}</p><a href="${prefix}/get-a-quote/">${esc(service.cta)}</a></main>`;
+      const russianInspection = lang === 'ru' && serviceKind === 'inspection-quality-control';
+      const breadcrumbs = russianInspection ? `<nav aria-label="Путь к странице"><ol>${russianInspectionBreadcrumbs.map(({name, path}, index) => index === russianInspectionBreadcrumbs.length - 1
+        ? `<li aria-current="page">${esc(name)}</li>`
+        : `<li><a href="${path}">${esc(name)}</a></li>`).join('')}</ol></nav>` : '';
+      const brief = russianInspection ? `<p>${esc(russianInspectionBrief)}</p>` : '';
+      staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${breadcrumbs}<p>${esc(service.eyebrow)}</p><h1>${esc(service.title)}</h1><p>${esc(service.intro)}</p>${brief}<h2>${esc(service.useTitle)}</h2><ul>${service.useCases.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.outputTitle)}</h2><ul>${service.outputs.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.sequenceTitle)}</h2><ol>${service.sequence.map(v=>`<li><h3>${esc(v.title)}</h3><p>${esc(v.body)}</p></li>`).join('')}</ol><h2>${esc(service.boundaryTitle)}</h2><p>${esc(service.boundary)}</p><a href="${prefix}/get-a-quote/">${esc(service.cta)}</a></main>`;
     } else {
       staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="en"><p>${esc(scenario.status)}</p><h1>${esc(scenario.tab)} kitchen equipment package from China</h1><p>Source a ${esc(scenario.tab.toLowerCase())} kitchen equipment package from China around your menu, floor plan and utility requirements. ${esc(scenario.title)}</p><p>${esc(scenario.summary)}</p><h2>Equipment groups</h2><ul>${scenario.equipment.map(v=>`<li>${esc(v[1])}: ${esc(v[3] || v[2])}</li>`).join('')}</ul><h2>Utility review</h2><ul>${scenario.utilities.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><p>Final loads, connection points, fire, MEP and authority drawings require selected models, a measured site and local professional approval.</p><a href="/sourcing/restaurant-kitchen-packages-from-china/">Compare restaurant kitchen packages from China</a><p><a href="/get-a-quote/?leadGoal=Product+Sourcing">Request a package sourcing quote</a></p></main>`;
     }
