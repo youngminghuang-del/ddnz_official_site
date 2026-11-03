@@ -1,3 +1,4 @@
+import { addAlibabaBuyingGuidance } from '../src/lib/alibabaArticleBuying';
 import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
 import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
 import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
@@ -1740,7 +1741,7 @@ function injectStaticRouteContent(
     const prefix = locale === 'en' || locale === 'id' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
     staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
       post: article, language: locale,
-      articleHtml: { __html: addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))) },
+      articleHtml: { __html: addAlibabaBuyingGuidance(post.slug, addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || '')))) },
       primaryCta: buildPrimaryCta(article, prefix, ui),
       discovery: kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''],
     }));
