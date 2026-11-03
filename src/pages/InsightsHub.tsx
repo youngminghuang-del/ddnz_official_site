@@ -1,9 +1,8 @@
 import { positioning } from '../features/search-intent/positioning.mjs';
 import BuyerDecisionContent from '../features/search-intent/BuyerDecisionContent';
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion, AnimatePresence } from "framer-motion";
-import { Calendar, ArrowRight, BookOpen, Clock, Tag } from "lucide-react";
+import { ArrowRight, BookOpen } from "lucide-react";
 import notionBlogPosts from "../data/notionBlogData.json";
 import SourcingHomepageNav from "../components/SourcingHomepageNav";
 import Footer from "../components/Footer";
@@ -19,7 +18,14 @@ export default function InsightsHub() {
   const [posts] = useState<BlogPost[]>(notionBlogPosts as BlogPost[]);
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [selectedLanguage, setSelectedLanguage] = useState<string>("all");
-  const [isLoading] = useState<boolean>(false);
+  const [page, setPage] = useState(1);
+  const resultsStart = useRef<HTMLParagraphElement>(null);
+  const changePage = (next: number) => {
+    setPage(next);
+    resultsStart.current?.focus({ preventScroll: true });
+    resultsStart.current?.scrollIntoView({ block: "start" });
+  };
+  const [query, setQuery] = useState("");
 
   const seoMetrics: Record<string, { title: string; desc: string; keywords: string }> = {
     en: {
@@ -78,7 +84,7 @@ export default function InsightsHub() {
   // Compute unique categories dynamically from database pages
   const getPostPath = (post: BlogPost) => articleRoutePath(post);
   const languageLabels: Record<string, string> = {
-    all: language === 'es'
+    all: language === 'zh' ? '全部语言' : language === 'fr' ? 'Toutes les langues' : language === 'ru' ? 'Все языки' : language === 'es'
       ? 'Todos los idiomas'
       : language === 'ar'
         ? 'جميع اللغات'
@@ -97,26 +103,34 @@ export default function InsightsHub() {
     tr: 'Türkçe',
   };
   const availableLanguages = ['all', ...Array.from(new Set(posts.map((post) => normalizeArticleLocale(post.language))))];
-  const loadingLabel: Record<string, string> = {
-    en: 'Synchronizing items with Notion Engine...',
-    zh: '正在同步 Notion 内容…',
-    ru: 'Синхронизация материалов из Notion…',
-    fr: 'Synchronisation des contenus avec Notion…',
-    es: 'Sincronizando artículos con Notion...',
-    ar: 'جارٍ مزامنة المقالات مع Notion…',
-    pt: 'A sincronizar conteúdos com o Notion…',
-    tr: 'İçerikler Notion ile eşitleniyor…',
-  };
   const languageFilteredPosts = selectedLanguage === 'all'
     ? posts
     : posts.filter((post) => normalizeArticleLocale(post.language) === selectedLanguage);
   const categories = ["All", ...Array.from(new Set(languageFilteredPosts.map((p) => p.category)))];
 
-  // Filter posts based on selected category
-  const filteredPosts =
-    selectedCategory === "All"
-      ? languageFilteredPosts
-      : languageFilteredPosts.filter((p) => p.category === selectedCategory);
+  const filteredPosts = languageFilteredPosts.filter(post =>
+    (selectedCategory === 'All' || post.category === selectedCategory) &&
+    (post.title + ' ' + (post.summary || '')).toLocaleLowerCase().includes(query.trim().toLocaleLowerCase())
+  );
+  const pageCount = Math.max(1, Math.ceil(filteredPosts.length / 6));
+  const items = filteredPosts.slice((page - 1) * 6, page * 6);
+  const featured = items.filter(post => post.listingThumbnailUrl || post.thumbnailUrl).slice(0, 3);
+  const remaining = items.filter(post => !featured.includes(post));
+  const controls = ({
+    zh: ['搜索文章','上一页','下一页','更多文章','全部主题'], en: ['Search articles','Previous','Next','More articles','All topics'],
+    es: ['Buscar artículos','Anterior','Siguiente','Más artículos','Todos los temas'], ar: ['ابحث في المقالات','السابق','التالي','مقالات أخرى','جميع المواضيع'],
+    fr: ['Rechercher un article','Précédent','Suivant','Autres articles','Tous les thèmes'], ru: ['Поиск статей','Назад','Далее','Другие статьи','Все темы'],
+    pt: ['Pesquisar artigos','Anterior','Seguinte','Mais artigos','Todos os temas'], tr: ['Makale ara','Önceki','Sonraki','Diğer makaleler','Tüm konular'],
+  })[language] || ['Search articles','Previous','Next','More articles','All topics'];
+  const metadata = (post: BlogPost) => <span className="text-xs font-medium opacity-85">
+    {post.category} · {languageLabels[normalizeArticleLocale(post.language)] || post.language} · <bdi>{post.date}</bdi>
+  </span>;
+  const feature = (post: BlogPost, lead = false) => <Link key={post.id} to={getPostPath(post)} className="group flex min-w-0 flex-col overflow-hidden rounded-xl bg-[#302039] text-white hover:bg-[#442953] focus-visible:outline focus-visible:outline-2">
+    <img src={post.listingThumbnailUrl || post.thumbnailUrl} srcSet={post.listingThumbnailSrcSet} sizes={lead ? '(min-width: 1024px) 55vw, 100vw' : '(min-width: 1024px) 38vw, 50vw'} alt="" width={960} height={540} loading={lead ? 'eager' : 'lazy'} decoding="async" referrerPolicy="no-referrer" className={lead ? 'aspect-video w-full object-cover' : 'h-24 w-full object-cover sm:h-32'} />
+    <div className={lead ? 'p-5 sm:p-6' : 'p-3 sm:p-4'}>{metadata(post)}
+      <h2 dir="auto" lang={normalizeArticleLocale(post.language)} className={lead ? 'mt-2 text-xl font-bold sm:text-2xl' : 'mt-1 text-sm font-bold sm:text-base'}>{post.title}</h2>
+    </div>
+  </Link>;
 
   return (
     <div className="ddnz-home flex min-h-screen flex-col justify-between bg-[#fbfaf7] font-sans text-slate-900">
@@ -125,10 +139,10 @@ export default function InsightsHub() {
         <SourcingHomepageNav />
 
         {/* Page Header */}
-        <section className="ddnz-ribbon-surface relative overflow-hidden border-b border-slate-200 px-4 py-14 sm:px-6 sm:py-18 lg:px-8 lg:py-20">
+        <section className="ddnz-ribbon-surface relative overflow-hidden border-b border-slate-200 px-4 py-7 sm:px-6 sm:py-9 lg:px-8">
           <div className="relative z-10 mx-auto max-w-7xl">
             <DdnzEyebrow>{t('insights.hubLabel')}</DdnzEyebrow>
-            <h1 className="mt-5 max-w-[16ch] text-[clamp(2.5rem,5vw,4.5rem)] font-black leading-[1.03] tracking-[-0.05em] text-[var(--ddnz-ink)]">
+            <h1 className="mt-5 text-[clamp(2rem,4vw,3.5rem)] font-black leading-[1.03] tracking-[-0.05em] text-[var(--ddnz-ink)]">
               {positioning[language].insightsHeading}
             </h1>
             <p className="mt-6 max-w-3xl text-base font-medium leading-8 text-slate-600 md:text-lg">
@@ -138,147 +152,40 @@ export default function InsightsHub() {
         </section>
 
         {/* Filters and Blog list */}
-        <main className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-14 lg:px-8">
-          {/* Language-first discovery makes the active content library visible
-              while still helping visitors find a language they can read. */}
-          <div className="mb-4 flex flex-wrap items-center gap-2">
-            {availableLanguages.map((lang) => {
-              const isActive = selectedLanguage === lang;
-              return (
-                <button
-                  key={lang}
-                  onClick={() => {
-                    setSelectedLanguage(lang);
-                    setSelectedCategory('All');
-                  }}
-                  aria-pressed={isActive}
-                  className={`min-h-11 rounded-full px-4 py-2 text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${
-                    isActive
-                      ? 'bg-[var(--ddnz-ink)] text-white'
-                      : 'bg-white text-slate-600 hover:bg-slate-100 border border-slate-200'
-                  }`}
-                >
-                  {languageLabels[lang] || lang}
-                </button>
-              );
-            })}
+        <main className="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
+          <div className="mb-4 grid grid-cols-2 gap-2 sm:grid-cols-[2fr_1fr_1fr]">
+            <input aria-label={controls[0]} type="search" value={query} placeholder={controls[0]} onChange={event => { setQuery(event.target.value); setPage(1); }} className="col-span-2 min-h-11 min-w-0 rounded-lg border border-slate-300 bg-white px-3 text-base sm:col-span-1" />
+            <select aria-label={languageLabels.all} value={selectedLanguage} onChange={event => { setSelectedLanguage(event.target.value); setSelectedCategory('All'); setPage(1); }} className="min-h-11 min-w-0 rounded-lg border border-slate-300 bg-white px-2 text-base">
+              {availableLanguages.map(lang => <option key={lang} value={lang}>{languageLabels[lang] || lang}</option>)}
+            </select>
+            <select aria-label={controls[4]} value={selectedCategory} onChange={event => { setSelectedCategory(event.target.value); setPage(1); }} className="min-h-11 min-w-0 rounded-lg border border-slate-300 bg-white px-2 text-base">
+              {categories.map(cat => <option key={cat} value={cat}>{cat === 'All' ? controls[4] : cat}</option>)}
+            </select>
           </div>
-
-          {/* Topic filter */}
-          <div className="mb-10 flex flex-wrap items-center gap-2 md:gap-3">
-            {categories.map((cat) => {
-              const isActive = selectedCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  onClick={() => setSelectedCategory(cat)}
-                  aria-pressed={isActive}
-                  className={`min-h-11 rounded-full px-5 py-2.5 text-xs font-bold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)] ${
-                    isActive
-                      ? "bg-[var(--ddnz-purple-strong)] text-white"
-                      : "bg-white text-slate-600 hover:bg-slate-100 border border-slate-200"
-                  }`}
-                >
-                  {cat === "All" ? t('insights.showAll') : cat}
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Loader */}
-          {isLoading && posts.length === 0 ? (
-            <div className="py-24 text-center">
-              <div className="mx-auto mb-4 h-12 w-12 animate-spin rounded-full border-4 border-[var(--ddnz-purple-strong)] border-t-transparent" />
-              <p className="text-slate-500 font-bold">{loadingLabel[language] || loadingLabel.en}</p>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-              <AnimatePresence mode="popLayout">
-                {filteredPosts.map((post, index) => (
-                  <motion.div
-                    key={post.id}
-                    layout
-                    initial={{ opacity: 0, y: 14 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 8 }}
-                    transition={{ duration: 0.24, delay: Math.min(index, 5) * 0.025, ease: 'easeOut' }}
-                    className="ddnz-card group flex h-full flex-col overflow-hidden transition-[border-color,box-shadow] duration-200 hover:border-[var(--ddnz-purple)]/30 hover:shadow-[var(--ddnz-shadow-soft)]"
-                  >
-                    <Link to={getPostPath(post)} className="block h-56 overflow-hidden relative bg-slate-100">
-                      <img
-                        src={post.listingThumbnailUrl || post.thumbnailUrl}
-                        srcSet={post.listingThumbnailSrcSet}
-                        sizes="(min-width: 1024px) 30vw, (min-width: 768px) 50vw, 100vw"
-                        alt={post.title}
-                        width="960"
-                        height="540"
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                        loading={index === 0 ? "eager" : "lazy"}
-                        decoding="async"
-                        fetchPriority={index === 0 ? "high" : "auto"}
-                        referrerPolicy="no-referrer"
-                      />
-                      <div className="absolute left-4 top-4 z-10 flex items-center gap-1.5 rounded-xl bg-white/95 px-3 py-1.5 text-[10px] font-black uppercase tracking-wider text-[var(--ddnz-purple-strong)] shadow backdrop-blur-sm">
-                        <Tag className="h-3 w-3 text-[var(--ddnz-coral)]" />
-                        <span>{post.contentType || post.category}</span>
-                      </div>
-                      <div className="absolute top-4 right-4 bg-slate-900/90 backdrop-blur-sm px-2.5 py-1.5 rounded-lg z-10 text-[10px] font-black text-white tracking-wider">
-                        {languageLabels[normalizeArticleLocale(post.language)] || normalizeArticleLocale(post.language).toUpperCase()}
-                      </div>
-                    </Link>
-
-                    <div className="flex flex-1 flex-col justify-between p-6 sm:p-7">
-                      <div>
-                        {/* Date Line */}
-                        <div className="flex items-center text-slate-400 font-mono text-[11px] mb-3 uppercase tracking-wider font-bold">
-                          <Calendar className="w-3.5 h-3.5 mr-1.5 text-purple-300" />
-                          {post.date}
-                          {post.audienceMarket && <span className="ml-2">· {post.audienceMarket}</span>}
-                        </div>
-
-                        {/* Title Link */}
-                        <h3 className="mb-4 line-clamp-2 text-xl font-extrabold leading-tight text-[var(--ddnz-ink)] transition-colors group-hover:text-[var(--ddnz-purple-strong)]">
-                          <Link to={getPostPath(post)}>{post.title}</Link>
-                        </h3>
-
-                        {/* Paragraph Shortened Summary */}
-                        <p className="text-slate-600 text-sm leading-relaxed mb-6 line-clamp-3">
-                          {post.summary}
-                        </p>
-                      </div>
-
-                      <div className="pt-4 border-t border-slate-50 flex items-center justify-between">
-                        <Link
-                          to={getPostPath(post)}
-                          className="group/btn inline-flex items-center text-sm font-extrabold text-[var(--ddnz-purple-strong)] hover:text-[var(--ddnz-coral-strong)]"
-                        >
-                          <span>{t('insights.deep_dive_read')}</span>
-                          <ArrowRight className="w-4 h-4 ml-2 group-hover/btn:translate-x-1.5 transition-transform" />
-                        </Link>
-
-                        <div className="flex items-center gap-1 text-slate-300 text-xs font-mono font-bold">
-                          <Clock className="w-3.5 h-3.5" />
-                          <span>{post.readMinutes || 5} min</span>
-                        </div>
-                      </div>
-                    </div>
-                  </motion.div>
-                ))}
-              </AnimatePresence>
-            </div>
-          )}
-
-          {/* Empty state conditional */}
-          {!isLoading && filteredPosts.length === 0 && (
-            <div className="py-24 text-center bg-white rounded-3xl border border-slate-200">
-              <BookOpen className="w-16 h-16 text-slate-300 mx-auto mb-4" />
-              <h3 className="text-lg font-bold text-slate-700 mb-1">{t('insights.no_articles')}</h3>
-              <p className="text-slate-500 text-sm">
-                {t('insights.no_articles_desc')}{" "}
-                {selectedCategory !== "All" && `(${selectedCategory})`}
-              </p>
-            </div>
-          )}
+          <p ref={resultsStart} tabIndex={-1} aria-live="polite" className="mb-3 scroll-mt-32 text-sm text-slate-600">{filteredPosts.length ? (page - 1) * 6 + 1 : 0}–{(page - 1) * 6 + items.length} / {filteredPosts.length}</p>
+          {featured.length > 0 && <div className={featured.length > 1 ? 'grid gap-4 lg:grid-cols-[1.45fr_1fr]' : 'grid'}>
+            {feature(featured[0], true)}
+            {featured.length > 1 && <div className="grid grid-cols-2 gap-3 lg:grid-cols-1">{featured.slice(1).map(post => feature(post))}</div>}
+          </div>}
+          {remaining.length > 0 && <section className="mt-5">
+            <h2 className="mb-2 text-lg font-bold">{controls[3]}</h2>
+            <ul className="divide-y divide-slate-200 border-y border-slate-200">{remaining.map(post => <li key={post.id}>
+              <Link to={getPostPath(post)} className="flex items-center justify-between gap-4 px-2 py-3 hover:bg-purple-50 focus-visible:outline focus-visible:outline-2">
+                <div className="min-w-0">{metadata(post)}<p dir="auto" lang={normalizeArticleLocale(post.language)} className="font-semibold">{post.title}</p></div>
+                <ArrowRight aria-hidden="true" className="h-4 w-4 shrink-0 rtl:rotate-180" />
+              </Link>
+            </li>)}</ul>
+          </section>}
+          {items.length === 0 && <div className="rounded-xl border border-slate-200 bg-white p-8 text-center">
+            <BookOpen aria-hidden="true" className="mx-auto mb-2 h-8 w-8 text-purple-400" />
+            <h2 className="font-bold">{t('insights.no_articles')}</h2>
+            <p>{t('insights.no_articles_desc')}</p>
+          </div>}
+          {pageCount > 1 && <div className="my-5 flex items-center justify-center gap-4">
+            <button type="button" disabled={page <= 1} onClick={() => changePage(page - 1)} className="min-h-11 rounded-lg border px-3 disabled:opacity-40">{controls[1]}</button>
+            <bdi>{page} / {pageCount}</bdi>
+            <button type="button" disabled={page >= pageCount} onClick={() => changePage(page + 1)} className="min-h-11 rounded-lg border px-3 disabled:opacity-40">{controls[2]}</button>
+          </div>}
         <BuyerDecisionContent page="insights" locale={language} />
       </main>
       </div>
