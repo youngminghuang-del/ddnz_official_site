@@ -3,7 +3,8 @@
 export const entryKeywords = {
  en: {
   productsTitle: 'Wholesale products and equipment sourcing from China',
-  servicesTitle: "China sourcing and export support for wholesale orders",
+  servicesTitle: "Manufacturing and export support from China",
+  servicesDescription: "DDNZ manufactures and exports from China. Get OEM/ODM support, supplier comparison, quality inspection and order consolidation.",
   productsMetaTitle: 'Wholesale Products & Equipment from China | DDNZ',
   servicesMetaTitle: "China Sourcing & Export Support | DDNZ",
   servicesIntro: "DDNZ manufactures and exports products from China, with OEM/ODM customization, sample approval, quality control and export preparation for wholesale orders. Buyers with existing suppliers can also request supplier comparison, inspection and consolidation. Heaven Born executes international freight within the agreed scope.",
