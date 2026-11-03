@@ -327,6 +327,20 @@
       "path": "/ru/shipping-from-china-to-west-africa/"
     }
   ],
+  "/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kyrgyzstan",
+      "path": "/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
   "/shipping-from-china-to-central-asia/": [
     {
       "name": "Home",

@@ -1,3 +1,4 @@
+import { addLatinAmericaFreightTiming } from '../lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
 import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
@@ -85,7 +86,7 @@ export default function BlogDetail() {
   // Keep the HTML prop stable across hash-navigation/context renders so native
   // form nodes, input values and their listeners are not replaced.
   const articleHtml = useMemo(() => ({
-    __html: addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || '')))),
+    __html: addLatinAmericaFreightTiming(post?.slug, addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))))),
   }), [post?.content, post?.slug]);
 
   useEffect(() => {
