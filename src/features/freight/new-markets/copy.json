@@ -23,7 +23,8 @@
     "sources": "Port information and planning sources",
     "exportLink": "Product preparation and export coordination",
     "compare": "Compare the exact service",
-    "compareText": "Different transshipment routes can have very different times. Compare each price with its own transit and conditions. LCL and air figures are published planning references, not confirmed HB schedules."
+    "compareText": "Different transshipment routes can have very different times. Compare each price with its own transit and conditions. LCL and air figures are published planning references, not confirmed HB schedules.",
+    "central": "Central Africa"
   },
   "zh": {
     "home": "首页",
@@ -49,7 +50,8 @@
     "sources": "港口资料与规划来源",
     "exportLink": "产品准备与出口协调",
     "compare": "按具体承运方案比较",
-    "compareText": "不同中转线路的航程可能相差较大。每条价格须与自身时效、条件一起比较；拼箱与空运区间是公开规划参考，不代表 HB 已确认班次。"
+    "compareText": "不同中转线路的航程可能相差较大。每条价格须与自身时效、条件一起比较；拼箱与空运区间是公开规划参考，不代表 HB 已确认班次。",
+    "central": "中非"
   },
   "es": {
     "home": "Inicio",
@@ -75,7 +77,8 @@
     "sources": "Información portuaria y fuentes",
     "exportLink": "Preparación del producto y coordinación de exportación",
     "compare": "Compare cada servicio concreto",
-    "compareText": "Los transbordos pueden cambiar mucho el plazo. Compare cada precio con su propio tránsito y condiciones. Los plazos LCL y aéreos son referencias públicas, no salidas confirmadas por HB."
+    "compareText": "Los transbordos pueden cambiar mucho el plazo. Compare cada precio con su propio tránsito y condiciones. Los plazos LCL y aéreos son referencias públicas, no salidas confirmadas por HB.",
+    "central": "África Central"
   },
   "fr": {
     "home": "Accueil",
@@ -101,7 +104,8 @@
     "sources": "Informations portuaires et sources",
     "exportLink": "Préparation des produits et coordination export",
     "compare": "Comparer chaque service",
-    "compareText": "Les transbordements peuvent fortement modifier les délais. Comparez chaque prix avec son propre trajet et ses conditions. Les fourchettes LCL et aériennes sont des références publiques, pas des départs confirmés par HB."
+    "compareText": "Les transbordements peuvent fortement modifier les délais. Comparez chaque prix avec son propre trajet et ses conditions. Les fourchettes LCL et aériennes sont des références publiques, pas des départs confirmés par HB.",
+    "central": "Afrique centrale"
   },
   "ru": {
     "home": "Главная",
@@ -127,7 +131,8 @@
     "sources": "Портовая информация и источники",
     "exportLink": "Подготовка товара и координация экспорта",
     "compare": "Сравнивайте конкретные варианты",
-    "compareText": "Перевалка может существенно менять срок. Сопоставляйте цену со сроком и условиями того же варианта. Диапазоны LCL и авиаперевозок взяты из открытых материалов и не являются подтверждённым расписанием HB."
+    "compareText": "Перевалка может существенно менять срок. Сопоставляйте цену со сроком и условиями того же варианта. Диапазоны LCL и авиаперевозок взяты из открытых материалов и не являются подтверждённым расписанием HB.",
+    "central": "Центральная Африка"
   },
   "pt": {
     "home": "Início",
@@ -153,7 +158,8 @@
     "sources": "Informações portuárias e fontes",
     "exportLink": "Preparação do produto e coordenação de exportação",
     "compare": "Compare cada serviço",
-    "compareText": "Os transbordos podem alterar bastante o prazo. Compare cada preço com o trânsito e as condições do próprio serviço. As faixas LCL e aéreas são referências públicas, não saídas confirmadas pela HB."
+    "compareText": "Os transbordos podem alterar bastante o prazo. Compare cada preço com o trânsito e as condições do próprio serviço. As faixas LCL e aéreas são referências públicas, não saídas confirmadas pela HB.",
+    "central": "África Central"
   },
   "ar": {
     "home": "الرئيسية",
@@ -179,7 +185,8 @@
     "sources": "معلومات الموانئ ومصادر التخطيط",
     "exportLink": "تجهيز المنتجات وتنسيق التصدير",
     "compare": "قارن كل خدمة على حدة",
-    "compareText": "قد تختلف المدد كثيراً حسب موانئ الترانزيت. قارن سعر كل خدمة بمدتها وشروطها. مدد الشحن المجمع والجوي مراجع منشورة وليست مواعيد مؤكدة من HB."
+    "compareText": "قد تختلف المدد كثيراً حسب موانئ الترانزيت. قارن سعر كل خدمة بمدتها وشروطها. مدد الشحن المجمع والجوي مراجع منشورة وليست مواعيد مؤكدة من HB.",
+    "central": "أفريقيا الوسطى"
   },
   "tr": {
     "home": "Ana sayfa",
@@ -205,6 +212,7 @@
     "sources": "Liman bilgileri ve planlama kaynakları",
     "exportLink": "Ürün hazırlığı ve ihracat koordinasyonu",
     "compare": "Her hizmeti ayrı karşılaştırın",
-    "compareText": "Aktarma güzergâhları süreyi ciddi biçimde değiştirebilir. Her fiyatı kendi süresi ve koşullarıyla karşılaştırın. LCL ve hava süreleri yayımlanmış planlama referanslarıdır; HB tarafından onaylanmış seferler değildir."
+    "compareText": "Aktarma güzergâhları süreyi ciddi biçimde değiştirebilir. Her fiyatı kendi süresi ve koşullarıyla karşılaştırın. LCL ve hava süreleri yayımlanmış planlama referanslarıdır; HB tarafından onaylanmış seferler değildir.",
+    "central": "Orta Afrika"
   }
 }

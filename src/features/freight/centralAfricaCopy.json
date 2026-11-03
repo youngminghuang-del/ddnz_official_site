@@ -1,0 +1,50 @@
+{
+  "en": {
+    "name": "Central Africa",
+    "title": "Shipping from China to Central Africa",
+    "intro": "Start with Cameroon and Douala. Compare port arrival with inland delivery, confirm the importer and documents, and assess any wider Central African destination separately.",
+    "diagram": "Routing illustration, not a completed shipment case."
+  },
+  "zh": {
+    "name": "中非",
+    "title": "中国到中非货运",
+    "intro": "先从喀麦隆杜阿拉规划运输，区分到港与内陆交付，确认进口主体和单证分工。其他中非目的地须按货物与实际路线另行评估。",
+    "diagram": "线路示意，不代表已完成的交付案例。"
+  },
+  "es": {
+    "name": "África Central",
+    "title": "Envíos de China a África Central",
+    "intro": "Empiece por Camerún y Duala. Distinga llegada a puerto y entrega interior, confirme importador y documentos, y evalúe por separado cualquier otro destino de África Central.",
+    "diagram": "Esquema de ruta; no representa un envío realizado."
+  },
+  "ar": {
+    "name": "أفريقيا الوسطى",
+    "title": "الشحن من الصين إلى أفريقيا الوسطى",
+    "intro": "ابدأ بالكاميرون ودوالا. ميّز بين الوصول إلى الميناء والتسليم الداخلي، وحدد المستورد ومسؤولية المستندات؛ وتحتاج الوجهات الأخرى في أفريقيا الوسطى إلى تقييم منفصل.",
+    "diagram": "مخطط للمسار وليس حالة شحن منفذة."
+  },
+  "fr": {
+    "name": "Afrique centrale",
+    "title": "Expédier de Chine vers l’Afrique centrale",
+    "intro": "Commencez par le Cameroun et Douala. Distinguez arrivée au port et livraison intérieure, précisez l’importateur et les documents ; toute autre destination d’Afrique centrale doit être étudiée séparément.",
+    "diagram": "Schéma de trajet, sans référence à une expédition réalisée."
+  },
+  "ru": {
+    "name": "Центральная Африка",
+    "title": "Доставка из Китая в Центральную Африку",
+    "intro": "Начните с Камеруна и Дуалы. Разделите прибытие в порт и внутреннюю доставку, определите импортёра и документы; другие направления Центральной Африки оцениваются отдельно.",
+    "diagram": "Схема маршрута, а не пример выполненной перевозки."
+  },
+  "pt": {
+    "name": "África Central",
+    "title": "Envio da China para a África Central",
+    "intro": "Comece por Camarões e Douala. Separe chegada ao porto e entrega no interior, defina importador e documentos e avalie separadamente outros destinos da África Central.",
+    "diagram": "Esquema de rota; não representa um embarque realizado."
+  },
+  "tr": {
+    "name": "Orta Afrika",
+    "title": "Çin’den Orta Afrika’ya yük taşımacılığı",
+    "intro": "Kamerun ve Douala ile başlayın. Limana varışı iç teslimattan ayırın, ithalatçı ve belge sorumluluklarını belirleyin; diğer Orta Afrika varışları ayrıca değerlendirilmelidir.",
+    "diagram": "Güzergâh şemasıdır; tamamlanmış bir sevkiyat örneği değildir."
+  }
+}

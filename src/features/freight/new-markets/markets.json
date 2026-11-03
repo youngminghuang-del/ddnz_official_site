@@ -124,5 +124,59 @@
       "pt": "Use Hamburgo como porto marítimo e informe o código postal final. O aeroporto de Frankfurt e os terminais ferroviários interiores são pontos distintos; seus prazos e custos não substituem os de um embarque marítimo para Hamburgo.",
       "tr": "Denizyolu varışı için Hamburg’u ve son posta kodunu belirtin. Frankfurt Havalimanı ile iç demiryolu terminalleri farklı teslim noktalarıdır; süreleri ve masrafları Hamburg denizyolu sevkiyatına uygulanamaz."
     }
+  },
+  "togo": {
+    "iso": "TG",
+    "port": "LOME",
+    "gateway": "Lomé",
+    "airport": "LFW",
+    "region": "west-africa",
+    "source": "https://www.lct-togo.com/who-we-are/",
+    "notes": {
+      "en": "Confirm whether Lomé is the final port or a transit point for another country. Name the terminal and final receiver; any onward border crossing needs a separate assessment.",
+      "zh": "先确认洛美是最终目的港，还是转往其他国家的中转点。列明码头与最终收货人，跨境后续运输须另行评估。",
+      "es": "Confirme si Lomé es el puerto final o un punto de tránsito hacia otro país. Indique terminal y destinatario; el transporte posterior con cruce de frontera requiere una evaluación aparte.",
+      "ar": "حدد ما إذا كانت لومي ميناء الوصول النهائي أم نقطة عبور إلى بلد آخر. اذكر المحطة والمستلم النهائي؛ ويحتاج النقل اللاحق عبر الحدود إلى تقييم منفصل.",
+      "fr": "Précisez si Lomé est le port final ou un point de transit vers un autre pays. Indiquez le terminal et le destinataire ; tout acheminement transfrontalier doit être étudié séparément.",
+      "ru": "Уточните, является ли Ломе конечным портом или пунктом транзита в другую страну. Укажите терминал и получателя; дальнейшую перевозку через границу нужно оценивать отдельно.",
+      "pt": "Confirme se Lomé é o porto final ou um ponto de trânsito para outro país. Indique o terminal e o destinatário; qualquer transporte posterior através da fronteira exige avaliação separada.",
+      "tr": "Lomé’nin son varış limanı mı yoksa başka bir ülkeye transit noktası mı olduğunu belirtin. Terminali ve son alıcıyı bildirin; sınır geçişli devam taşıması ayrıca değerlendirilmelidir."
+    }
+  },
+  "benin": {
+    "iso": "BJ",
+    "port": "COTONOU",
+    "gateway": "Cotonou",
+    "airport": "COO",
+    "region": "west-africa",
+    "source": "https://portdecotonou.bj/",
+    "notes": {
+      "en": "Specify Cotonou in the Republic of Benin, not Benin City in Nigeria. Agree who supplies the shipping documents and handles import clearance before arranging collection and onward delivery.",
+      "zh": "目的港明确为贝宁共和国科托努，不要与尼日利亚的贝宁市混淆。提货和后续派送前，确认运输单证由谁提供、进口清关由谁办理。",
+      "es": "Indique Cotonú, en la República de Benín, y no Benin City, en Nigeria. Antes del retiro y la entrega posterior, acuerde quién aporta los documentos y quién tramita la importación.",
+      "ar": "حدد كوتونو في جمهورية بنين، وليس مدينة بنين في نيجيريا. قبل الاستلام والتوصيل اللاحق، اتفقوا على مسؤولية مستندات الشحن والتخليص عند الاستيراد.",
+      "fr": "Indiquez Cotonou, en République du Bénin, et non Benin City au Nigeria. Avant l’enlèvement et la livraison, précisez qui fournit les documents et qui effectue le dédouanement à l’importation.",
+      "ru": "Указывайте Котону в Республике Бенин, а не город Бенин-Сити в Нигерии. До вывоза и дальнейшей доставки согласуйте, кто предоставляет документы и оформляет импорт.",
+      "pt": "Indique Cotonou, na República do Benim, e não Benin City, na Nigéria. Antes da retirada e da entrega posterior, defina quem fornece os documentos e quem cuida do desembaraço de importação.",
+      "tr": "Nijerya’daki Benin City yerine Benin Cumhuriyeti’ndeki Cotonou limanını belirtin. Yük çekimi ve devam teslimatı öncesinde belgeleri kimin sağlayacağını ve ithalat işlemlerini kimin yürüteceğini netleştirin."
+    }
+  },
+  "cameroon": {
+    "iso": "CM",
+    "port": "DOUALA",
+    "gateway": "Douala",
+    "airport": "DLA",
+    "region": "central-africa",
+    "source": "https://www.pad.cm/a-propos-du-pad/?lang=fr",
+    "notes": {
+      "en": "Cameroon is in Central Africa. Specify Douala for this reference; a Kribi quote cannot be substituted without checking the actual port, release arrangements and inland receiving address.",
+      "zh": "喀麦隆属于中非。本页参考以杜阿拉为目的港；克里比报价不能直接套用，须分别核实实际港口、放货安排及内陆收货地址。",
+      "es": "Camerún está en África Central. Esta referencia corresponde a Duala; no sustituya una cotización de Kribi sin verificar puerto, liberación de la carga y dirección de recepción interior.",
+      "ar": "تقع الكاميرون في أفريقيا الوسطى. يخص هذا المرجع ميناء دوالا؛ ولا يمكن استخدام عرض كريبي بدلاً منه دون التحقق من الميناء الفعلي وإجراءات الإفراج وعنوان الاستلام الداخلي.",
+      "fr": "Le Cameroun se situe en Afrique centrale. Cette référence concerne Douala ; un devis pour Kribi ne peut pas s’y substituer sans vérifier le port, la mise à disposition et l’adresse intérieure de réception.",
+      "ru": "Камерун относится к Центральной Африке. Этот ориентир касается Дуалы; нельзя подменять его ставкой до Криби без проверки порта, выдачи груза и адреса получателя в глубине страны.",
+      "pt": "Camarões fica na África Central. Esta referência é para Douala; uma cotação para Kribi não a substitui sem conferir porto, liberação da carga e endereço de recebimento no interior.",
+      "tr": "Kamerun Orta Afrika’dadır. Bu referans Douala içindir; Kribi teklifini kullanmadan önce gerçek liman, yükün teslim süreci ve iç bölgedeki alıcı adresi ayrıca doğrulanmalıdır."
+    }
   }
 }

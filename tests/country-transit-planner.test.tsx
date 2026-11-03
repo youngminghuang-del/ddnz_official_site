@@ -32,3 +32,8 @@ test('FCL summary never silently diverges from populated customer records; landl
  for(const country of ['kazakhstan','kyrgyzstan','tajikistan','turkmenistan','uzbekistan'] as const)assert.ok(profiles[country].rows.every(row=>!['fcl','lcl'].includes(row.mode)));
  assert.deepEqual(profiles.kyrgyzstan.rows.map(row=>row.mode),['road','air']);
 });
+
+test('Benin air reference retains business-day units in all eight visible languages and quote notes',()=>{
+ const units={en:'business days',zh:'工作日',es:'días laborables',ar:'أيام عمل',fr:'jours ouvrés',ru:'рабочих дней',pt:'dias úteis',tr:'iş günü'};
+ for(const [locale,unit] of Object.entries(units)){const html=renderToStaticMarkup(<CountryTransitPlanner country="benin" locale={locale}/>);const air=html.match(/<tr data-transit-mode="air"[\s\S]*?<\/tr>/)![0];assert.ok(air.includes(`<span>${unit}</span>`),locale);const raw=air.match(/data-quote-context="([^"]+)"/)![1];const context=JSON.parse(raw.replaceAll("&quot;",'"').replaceAll("&#x27;", "'").replaceAll("&amp;", "&"));assert.ok(context.notes.includes(unit),locale);}
+});

@@ -524,3 +524,5 @@
 .market-region-route{padding:1.5rem;border:1px solid var(--ddnz-border,#dedde1);border-radius:16px;background:var(--ddnz-purple-soft,#f6f4f8)}.market-region-route p{display:flex;flex-wrap:wrap;gap:1rem;align-items:center;font-size:clamp(1rem,3vw,1.7rem);font-weight:700}.market-region-route figcaption{font-size:.875rem;color:#54627a}
 
 .new-market-product-links{display:flex;gap:1rem;flex-wrap:wrap}.new-market-product-links a{padding:.75rem 1rem;border:1px solid var(--ddnz-border,#dedde1);border-radius:8px}
+
+.new-central-route{padding:2rem;border:1px solid var(--ddnz-border,#dedde1);border-radius:18px;background:#f6f4f8}.new-central-route p{display:flex;justify-content:space-between;gap:1rem;align-items:center;font-size:clamp(1rem,3vw,1.8rem);font-weight:700}.new-central-route figcaption{font-size:.875rem;color:#54627a}

@@ -2,7 +2,7 @@ import test from 'node:test';import assert from 'node:assert/strict';import fs f
 import {buildFreightRateBatch,sha256} from '../scripts/freight-rate-batch.mjs';
 import {validateCustomerFreight} from '../src/features/freight/rates/public-feed.mjs';
 const published=JSON.parse(fs.readFileSync(new URL('../public/api/freight-rates/q4-2026.json',import.meta.url),'utf8'));
-const countries=['colombia','ivory-coast','senegal','panama','costa-rica','spain','germany'];
+const countries=['togo','benin','cameroon','colombia','ivory-coast','senegal','panama','costa-rica','spain','germany'];
 const base={...published,rows:published.rows.filter(r=>!countries.includes(r.country)),coverage:published.coverage.filter(r=>!countries.includes(r.country))};
 const baselineText=JSON.stringify(base);
 function source(){return {kind:'internal-freight-cost-snapshot',currency:'USD',period:'2026-Q4',collectedAt:'2026-11-02',reviewStatus:'reviewed',reviewedCountries:['colombia'],coverage:[{country:'colombia',port:'CARTAGENA,CO',status:'已确认港名'}],rows:[{sourceKey:'CO-TEST-1',country:'colombia',origin:'NANSHA',port:'CARTAGENA,CO',carrier:'TEST',service:'TEST',route:'Transfer TEST',cutoff:'Thu/Fri',days:44,prices:{'20GP':90,'40GP':180,'40HQ':null},fees:[{name:'THC',values:[9,18,null],ticket:null,currency:'RMB'}],flags:[],remarksRaw:'PRIVATE-SUPPLIER-CONDITIONS',validityRaw:'PRIVATE-VALIDITY'}]};}
@@ -23,7 +23,7 @@ test('batch preparation rejects stale baselines, already-public data, accidental
  const wrongScope=source();wrongScope.rows[0].country='senegal';assert.throws(()=>run(wrongScope),/outside the reviewed scope/);
 });
 test('the preview extension preserves the first published rows and adds only reviewed markets',()=>{
- assert.equal(base.rows.length,366);assert.equal(published.rows.length,454);assert.deepEqual(new Set(published.rows.slice(366).map(r=>r.country)),new Set(countries.filter(c=>c!='costa-rica')));assert.equal(new Set(published.rows.map(r=>r.id)).size,454);
+ assert.equal(base.rows.length,366);assert.equal(published.rows.length,481);assert.deepEqual(new Set(published.rows.slice(366).map(r=>r.country)),new Set(countries.filter(c=>c!='costa-rica')));assert.equal(new Set(published.rows.map(r=>r.id)).size,481);
 });
 
 test('an unchanged refresh preserves snapshot order and hash when a country is not last',()=>{
