@@ -852,7 +852,7 @@ export default function ShippingCentralAsia() {
 
       <main>
 
-        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={isKazakhstanRu ? 'Сравните автомобильную и железнодорожную доставку из Китая в Казахстан. Heaven Born поможет подобрать маршрут и подготовить документы до отправки.' : spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
+        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
           {!isLocked && <nav aria-label={corridorUi.selectDestination}><span>{corridorUi.selectDestination}</span><div>{EURASIA_COUNTRIES.map(country => <button key={country} type="button" aria-current={country === selectedCountry ? 'page' : undefined} onClick={()=>handleCountryTabChange(country)}>{countryLabel(country)}</button>)}</div></nav>}
           <h2>{corridorUi.routeBasis} · {corridor.name}</h2>
           <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
@@ -904,7 +904,7 @@ export default function ShippingCentralAsia() {
                   {spec.headline}
                 </h1>
                 <p className="mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg">
-                  {spec.subheadline}
+                  {isKazakhstanRu ? 'Сравните автомобильную и железнодорожную доставку из Китая в Казахстан. Heaven Born поможет подобрать маршрут и подготовить документы до отправки.' : spec.subheadline}
                 </p>
                 {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   Для расчёта доставки до двери укажите описание груза, вес, объём и адрес получателя. Heaven Born проверит, возможны ли условия DDP или DAP для вашего груза, и уточнит, что входит в стоимость.
