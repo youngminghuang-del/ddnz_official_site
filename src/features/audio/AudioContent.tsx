@@ -1,3 +1,4 @@
+import TurkishBuyingPaths from './TurkishBuyingPaths';
 import CatalogueHeroHeading from '../../components/catalogue-hero/CatalogueHeroHeading';
 import ProgressiveSection,{experienceCopy} from '../product-experience/ProgressiveSection';
 import ScenePlanning from '../product-experience/ScenePlanning';
@@ -18,6 +19,7 @@ export default function AudioContent({locale}:{locale:AudioLocale}){
  const url=`${prefix}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',source:'audio_speakers',industry:c.families[family][0],overviewBrief:[c.title,...fields.map(([k,v])=>`${k}: ${v}`)].join('\n'),dest:form.destination,orderVolume:form.quantity,buyingStage:form.stage});
  const change=(k:keyof typeof form,v:string)=>{setForm(f=>({...f,[k]:v}));setReady(false);};
  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="audio-page ddnz-page text-slate-900"><div className="audio-page-frame mx-auto max-w-7xl space-y-16 px-6 py-12"><header className="catalogue-hero grid items-center gap-10 lg:grid-cols-2"><div><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.categories}</a><CatalogueHeroHeading text={c.title} language={locale}/><p className="mt-6 text-lg leading-8">{c.intro}</p><a className="mt-7 inline-block ddnz-control ddnz-action px-5 py-3 font-bold text-white" href="#speaker-model-request">{u.quote}</a></div><CatalogueHeroMedia src={images[0]} alt={c.families[0][0]} language={locale} items={images.map((src,i)=>({src,label:c.families[i][0],href:"#audio-range"}))}/></header>
+ {locale==='tr'&&<TurkishBuyingPaths/>}
  <SeriesEntry family="speaker" locale={locale}/>
  <div id="audio-range"><AudioCategoryLinks locale={locale}/></div>
  <ProductSeries family="speaker" locale={locale}/>
