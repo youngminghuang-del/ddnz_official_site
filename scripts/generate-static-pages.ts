@@ -1612,7 +1612,10 @@ function injectStaticRouteContent(
   if (lang !== 'en' && '/'+relPath===audioPath) {
     const locale=(lang==='zh-cn'?'zh':lang) as AudioLocale;
     const body=renderToStaticMarkup(createElement(AudioContent,{locale}));
-    return htmlContent.replace('<div id="root"></div>',`<div id="root">${body}</div>`).replace('</head>',`<script type="application/ld+json">${JSON.stringify(audioSchema(locale)).replace(/</g,'\\u003c')}</script></head>`);
+    const collectionSchema = `<script type="application/ld+json">${JSON.stringify(audioSchema(locale)).replace(/</g,'\\u003c')}</script>`;
+    // React replaces the prerendered root, including this copy of the Turkish schema.
+    if (locale === 'tr') return htmlContent.replace('<div id="root"></div>', `<div id="root">${body}${collectionSchema}</div>`);
+    return htmlContent.replace('<div id="root"></div>', `<div id="root">${body}</div>`).replace('</head>', `${collectionSchema}</head>`);
   }
   if (service || scenario) {
     const esc = escapeStaticText;
