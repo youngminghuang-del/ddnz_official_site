@@ -1,3 +1,4 @@
+import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
 import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml } from '../lib/quoteLinkPolicy.mjs';
@@ -84,7 +85,7 @@ export default function BlogDetail() {
   // Keep the HTML prop stable across hash-navigation/context renders so native
   // form nodes, input values and their listeners are not replaced.
   const articleHtml = useMemo(() => ({
-    __html: addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))),
+    __html: addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || '')))),
   }), [post?.content, post?.slug]);
 
   useEffect(() => {
