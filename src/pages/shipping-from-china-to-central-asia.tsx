@@ -760,6 +760,7 @@ export default function ShippingCentralAsia() {
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
   const routeDepthPreview = selectedCountry === 'uzbekistan';
   const spec = getCountrySpec(selectedCountry);
+  const isTajikistanRu = selectedCountry === 'tajikistan' && language === 'ru';
   const isKazakhstanRu = selectedCountry === 'kazakhstan' && language === 'ru';
   const isRussiaRu = selectedCountry === 'russia' && language === 'ru';
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
@@ -894,12 +895,12 @@ export default function ShippingCentralAsia() {
 
             <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]">
               <div className="max-w-3xl text-left">
-                {(isRussiaRu || isKazakhstanRu) && <FreightBreadcrumbs
-                  path={isKazakhstanRu ? "/ru/shipping-from-china-to-kazakhstan/" : "/ru/shipping-from-china-to-russia/"}
+                {(isRussiaRu || isKazakhstanRu || isTajikistanRu) && <FreightBreadcrumbs
+                  path={`/ru/shipping-from-china-to-${selectedCountry}/`}
                   locale="ru"
                   className="mb-4 text-sm leading-relaxed text-slate-300 [&_a]:underline [&_a:hover]:text-white"
                 />}
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{corridorUi.regionTag}</p>
+                <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{isTajikistanRu ? 'Доставка грузов из Китая в Таджикистан' : corridorUi.regionTag}</p>
                 <h1 className="max-w-[16ch] text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
                   {spec.headline}
                 </h1>
@@ -908,6 +909,9 @@ export default function ShippingCentralAsia() {
                 </p>
                 {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   Для расчёта доставки до двери укажите описание груза, вес, объём и адрес получателя. Heaven Born проверит, возможны ли условия DDP или DAP для вашего груза, и уточнит, что входит в стоимость.
+                </p>}
+                {isTajikistanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
+                  Для предварительной оценки укажите город отправления в Китае, город назначения в Таджикистане, тип груза, вес и объём.
                 </p>}
                 {isKazakhstanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   Для предварительной оценки укажите город отправления в Китае, город назначения в Казахстане, тип груза, вес и объём.
