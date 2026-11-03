@@ -760,6 +760,7 @@ export default function ShippingCentralAsia() {
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
   const routeDepthPreview = selectedCountry === 'uzbekistan';
   const spec = getCountrySpec(selectedCountry);
+  const isKazakhstanRu = selectedCountry === 'kazakhstan' && language === 'ru';
   const isRussiaRu = selectedCountry === 'russia' && language === 'ru';
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
   const corridorUi = EURASIA_UI[activeLang];
@@ -851,7 +852,7 @@ export default function ShippingCentralAsia() {
 
       <main>
 
-        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
+        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero title={spec.headline} intro={isKazakhstanRu ? 'Сравните автомобильную и железнодорожную доставку из Китая в Казахстан. Heaven Born поможет подобрать маршрут и подготовить документы до отправки.' : spec.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
           {!isLocked && <nav aria-label={corridorUi.selectDestination}><span>{corridorUi.selectDestination}</span><div>{EURASIA_COUNTRIES.map(country => <button key={country} type="button" aria-current={country === selectedCountry ? 'page' : undefined} onClick={()=>handleCountryTabChange(country)}>{countryLabel(country)}</button>)}</div></nav>}
           <h2>{corridorUi.routeBasis} · {corridor.name}</h2>
           <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
@@ -893,8 +894,8 @@ export default function ShippingCentralAsia() {
 
             <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]">
               <div className="max-w-3xl text-left">
-                {isRussiaRu && <FreightBreadcrumbs
-                  path="/ru/shipping-from-china-to-russia/"
+                {(isRussiaRu || isKazakhstanRu) && <FreightBreadcrumbs
+                  path={isKazakhstanRu ? "/ru/shipping-from-china-to-kazakhstan/" : "/ru/shipping-from-china-to-russia/"}
                   locale="ru"
                   className="mb-4 text-sm leading-relaxed text-slate-300 [&_a]:underline [&_a:hover]:text-white"
                 />}
@@ -908,12 +909,15 @@ export default function ShippingCentralAsia() {
                 {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   Для расчёта доставки до двери укажите описание груза, вес, объём и адрес получателя. Heaven Born проверит, возможны ли условия DDP или DAP для вашего груза, и уточнит, что входит в стоимость.
                 </p>}
+                {isKazakhstanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
+                  Для предварительной оценки укажите город отправления в Китае, город назначения в Казахстане, тип груза, вес и объём.
+                </p>}
                 <button
                   type="button"
                   onClick={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({ behavior: 'smooth' })}
                   className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px"
                 >
-                  <span>{t('heroCta')}</span>
+                  <span>{isKazakhstanRu ? 'Запросить маршрут и оценку стоимости' : t('heroCta')}</span>
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
               </div>

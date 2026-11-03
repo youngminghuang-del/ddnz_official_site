@@ -1978,5 +1978,19 @@
       "name": "Kamerun",
       "path": "/tr/shipping-from-china-to-cameroon/"
     }
+  ],
+  "/ru/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Казахстан",
+      "path": "/ru/shipping-from-china-to-kazakhstan/"
+    }
   ]
 }
