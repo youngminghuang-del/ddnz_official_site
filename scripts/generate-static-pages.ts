@@ -1,3 +1,4 @@
+import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
 import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
 import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
 import {newMarkets,isNewMarket,newMarketMetadata,marketInfo,type NewMarketLocale} from '../src/features/freight/new-markets/model';
@@ -1739,7 +1740,7 @@ function injectStaticRouteContent(
     const prefix = locale === 'en' || locale === 'id' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
     staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
       post: article, language: locale,
-      articleHtml: { __html: normalizeQuoteHtml(normalizeNotionLinks(post.content || '')) },
+      articleHtml: { __html: addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))) },
       primaryCta: buildPrimaryCta(article, prefix, ui),
       discovery: kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''],
     }));
@@ -2096,8 +2097,8 @@ function run() {
 
           const discovery = lang === 'en' ? kitchenArticleDiscovery[post.slug] : undefined;
           seo = {
-            title: discovery?.title || computedTitle,
-            desc: discovery?.description || computedDesc,
+            title: post.slug === privacyArticleSlug ? privacyArticleSeo.title : discovery?.title || computedTitle,
+            desc: post.slug === privacyArticleSlug ? privacyArticleSeo.description : discovery?.description || computedDesc,
             keywords: `${post.primaryQuery || cat}, China sourcing, China freight forwarder, DDNZ Global`,
             image: post.thumbnailUrl,
             datePublished: post.date,

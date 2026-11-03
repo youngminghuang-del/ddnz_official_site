@@ -1,3 +1,4 @@
+import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -83,8 +84,8 @@ export default function BlogDetail() {
   // Keep the HTML prop stable across hash-navigation/context renders so native
   // form nodes, input values and their listeners are not replaced.
   const articleHtml = useMemo(() => ({
-    __html: normalizeQuoteHtml(normalizeNotionLinks(post?.content || '')),
-  }), [post?.content]);
+    __html: addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))),
+  }), [post?.content, post?.slug]);
 
   useEffect(() => {
     if (!isLoading && post?.slug === 'top-10-privacy-screen-protector-manufacturers-china') return bindPrivacyWorksheet();
@@ -125,7 +126,8 @@ export default function BlogDetail() {
     ? prefixCandidate.slice(0, prefixSpace)
     : prefixCandidate;
   const articleDiscovery = kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''];
-  const seoTitle = articleDiscovery?.title || (post.slug === 'cheap-speakers-china-african-trader-verification'
+  const privacySeo = post.slug === privacyArticleSlug ? privacyArticleSeo : undefined;
+  const seoTitle = privacySeo?.title || articleDiscovery?.title || (post.slug === 'cheap-speakers-china-african-trader-verification'
     ? 'Cheap China Speakers: African Trader Verification | DDNZ Global'
     : rawTitle.length + suffix.length <= maxTitleLen
       ? `${rawTitle}${suffix}`
@@ -135,7 +137,7 @@ export default function BlogDetail() {
   const rawDesc = post.summary || post.title;
   const descCandidate = rawDesc.slice(0, 154);
   const descSpace = descCandidate.lastIndexOf(' ');
-  const seoDesc = articleDiscovery?.description || (rawDesc.length > 155
+  const seoDesc = privacySeo?.description || articleDiscovery?.description || (rawDesc.length > 155
     ? `${(descSpace > 112 ? descCandidate.slice(0, descSpace) : descCandidate).trim()}…`
     : rawDesc);
   const postPath = articleRoutePath(post);
