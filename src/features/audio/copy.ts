@@ -9,5 +9,5 @@ export const audioSchema=(locale:AudioLocale)=>({'@context':'https://schema.org'
 
 export const englishAudioMeta = {
  title: 'Audio & Speaker Sourcing from China | DDNZ Global',
- description: 'Source portable, party and specialty speakers from China with exact-model comparison, sample approval, production evidence and export release control.',
+ description: 'Work with DDNZ, a China manufacturer and exporter, on portable, party, vintage and compact speakers. Compare models, approve samples and plan packaging.',
 };
