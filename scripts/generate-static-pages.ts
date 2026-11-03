@@ -78,7 +78,7 @@ import InternationalCountryContent, { internationalCountryMeta } from '../src/fe
 import { modernFreightServiceMetadata } from '../src/features/freight/ModernFreightServiceContent';
 import BrazilPortugueseContent, { brazilPortugueseMeta } from '../src/features/freight/BrazilPortugueseContent';
 import { positioning } from '../src/features/search-intent/positioning.mjs';
-import { serviceCopy, russianInspectionBreadcrumbs, russianInspectionBrief } from '../src/features/sourcing-services/copy';
+import { englishSupplierSearch, serviceCopy, russianInspectionBreadcrumbs, russianInspectionBrief } from '../src/features/sourcing-services/copy';
 import { allScenarios } from '../src/features/commercial-kitchen/data/restaurant-scenarios.mjs';
 import FoodProcessingContent from '../src/features/food-processing/FoodProcessingContent.jsx';
 import { foodProcessingRoutes, foodPage, foodPageMeta, foodPageSchema } from '../src/features/food-processing/pages.mjs';
@@ -673,7 +673,7 @@ const seoDataMatrix: Record<string, Record<string, SEOItem>> = {
     }
   },
   'sourcing-services/supplier-search': {
-    en: { title: 'China Supplier Search & Comparison | DDNZ Global', desc: 'Build a comparable China supplier shortlist from one market-defined buying brief, with quotation normalization and evidence gaps recorded.', keywords: 'China supplier search, sourcing agent China, supplier comparison, supplier shortlist', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
+    en: { title: englishSupplierSearch.metaTitle, desc: englishSupplierSearch.description, keywords: 'China supplier search, sourcing agent China, supplier comparison, supplier shortlist', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
     'zh-cn': { title: '中国供应商搜索与比价 | DDNZ Global', desc: '根据统一采购需求搜索中国供应商、规范报价口径，并记录证据缺口与后续核验建议。', keywords: '中国供应商搜索, 中国采购代理, 供应商比价, 工厂筛选', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
     ru: { title: 'Поиск и сравнение поставщиков в Китае | DDNZ', desc: 'Сформируйте сопоставимый шорт-лист поставщиков из Китая по единому закупочному заданию.', keywords: 'поиск поставщиков Китай, агент по закупкам, сравнение поставщиков', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
     fr: { title: 'Recherche et comparaison fournisseurs en Chine | DDNZ', desc: 'Créez une présélection comparable de fournisseurs chinois à partir d’un brief d’achat commun.', keywords: 'recherche fournisseur Chine, agent sourcing Chine, comparaison fournisseurs', image: '/images/operations/pexels-warehouse-workers-aisle-ddnz-vest-v1.webp' },
@@ -1109,7 +1109,9 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
         ...(hasVisibleBreadcrumb ? [{
           '@type': 'BreadcrumbList',
           '@id': `${canonicalUrl}#breadcrumb`,
-          itemListElement: lang === 'ru' && relPath === 'sourcing-services/inspection-quality-control'
+          itemListElement: lang === 'en' && relPath === 'sourcing-services/supplier-search'
+            ? englishSupplierSearch.breadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
+            : lang === 'ru' && relPath === 'sourcing-services/inspection-quality-control'
             ? russianInspectionBreadcrumbs.map(({name, path}, index) => ({'@type':'ListItem', position:index + 1, name, item:`https://www.ddnzglobal.com${path}`}))
             : breadcrumbItems.map((item, index) => index === 0
             ? { ...item, item: localizedHomeUrl }
@@ -1627,10 +1629,12 @@ function injectStaticRouteContent(
     const prefix = lang === 'en' ? '' : `/${lang}`;
     if (service) {
       const russianInspection = lang === 'ru' && serviceKind === 'inspection-quality-control';
-      const breadcrumbs = russianInspection ? `<nav aria-label="Путь к странице"><ol>${russianInspectionBreadcrumbs.map(({name, path}, index) => index === russianInspectionBreadcrumbs.length - 1
+      const englishSupplier = lang === 'en' && serviceKind === 'supplier-search';
+      const breadcrumbItems = englishSupplier ? englishSupplierSearch.breadcrumbs : russianInspection ? russianInspectionBreadcrumbs : undefined;
+      const breadcrumbs = breadcrumbItems ? `<nav aria-label="${englishSupplier ? 'Breadcrumb' : 'Путь к странице'}"><ol>${breadcrumbItems.map(({name, path}, index) => index === breadcrumbItems.length - 1
         ? `<li aria-current="page">${esc(name)}</li>`
         : `<li><a href="${path}">${esc(name)}</a></li>`).join('')}</ol></nav>` : '';
-      const brief = russianInspection ? `<p>${esc(russianInspectionBrief)}</p>` : '';
+      const brief = englishSupplier ? `<p>${esc(englishSupplierSearch.brief)}</p><a href="${englishSupplierSearch.rangePath}">${esc(englishSupplierSearch.rangeLabel)}</a>` : russianInspection ? `<p>${esc(russianInspectionBrief)}</p>` : '';
       staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${breadcrumbs}<p>${esc(service.eyebrow)}</p><h1>${esc(service.title)}</h1><p>${esc(service.intro)}</p>${brief}<h2>${esc(service.useTitle)}</h2><ul>${service.useCases.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.outputTitle)}</h2><ul>${service.outputs.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.sequenceTitle)}</h2><ol>${service.sequence.map(v=>`<li><h3>${esc(v.title)}</h3><p>${esc(v.body)}</p></li>`).join('')}</ol><h2>${esc(service.boundaryTitle)}</h2><p>${esc(service.boundary)}</p><a href="${prefix}/get-a-quote/">${esc(service.cta)}</a></main>`;
     } else {
       staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="en"><p>${esc(scenario.status)}</p><h1>${esc(scenario.tab)} kitchen equipment package from China</h1><p>Source a ${esc(scenario.tab.toLowerCase())} kitchen equipment package from China around your menu, floor plan and utility requirements. ${esc(scenario.title)}</p><p>${esc(scenario.summary)}</p><h2>Equipment groups</h2><ul>${scenario.equipment.map(v=>`<li>${esc(v[1])}: ${esc(v[3] || v[2])}</li>`).join('')}</ul><h2>Utility review</h2><ul>${scenario.utilities.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><p>Final loads, connection points, fire, MEP and authority drawings require selected models, a measured site and local professional approval.</p><a href="/sourcing/restaurant-kitchen-packages-from-china/">Compare restaurant kitchen packages from China</a><p><a href="/get-a-quote/?leadGoal=Product+Sourcing">Request a package sourcing quote</a></p></main>`;
