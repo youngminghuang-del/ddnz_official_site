@@ -346,3 +346,15 @@
  .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction p:nth-child(4) { margin-top:16px; }
  .gulf-page:not([lang="en"]):not([lang="ar"]) .qatar-packing-section .gulf-distinction span { display:block; }
 }
+
+.europe-country-visual {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: 20px;
+  background: var(--ddnz-surface-raised);
+}
+.europe-country-visual .freight-map-svg { min-width: 0; }
+.europe-country-visual p { margin: 14px 4px 4px; font-weight: 750; text-align: center; }
+.europe-country-visual small { display: block; margin: 0 4px 4px; color: #556174; text-align: center; }
+.europe-country-freight [id^="spain-"], .europe-country-freight [id^="germany-"] { scroll-margin-top: 120px; }

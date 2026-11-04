@@ -257,17 +257,23 @@ const worldRoutes: MapRoute[] = [
   { id: 'manzanillo', kind: 'secondary', coordinates: [[114.26, 22.57], [150, 30], [-155, 26], [-104.3, 19.05]] },
 ];
 
-type OceanRegion = 'middle-east' | 'west-africa' | 'latin-america';
+type OceanRegion = 'middle-east' | 'west-africa' | 'latin-america' | 'europe';
 // Additional representative gateways checked against UNECE UN/LOCODE coordinates:
 // SAJED 21°28'N 39°10'E; KWSWK 29°21'N 47°56'E.
 const additionalRegionNodes: MapNode[] = [
+  { id: 'valencia', label: 'Valencia', code: 'ESVLC', coordinates: [-0.32, 39.44], labelDx: -25, labelDy: 35 },
+  { id: 'hamburg', label: 'Hamburg', code: 'DEHAM', coordinates: [9.92, 53.52], labelDx: 24, labelDy: -18 },
   { id: 'ningbo', label: 'Ningbo', code: 'EAST CHINA', coordinates: [121.55, 29.8667], labelDx: 24, labelDy: -15, kind: 'origin' },
   { id: 'qingdao', label: 'Qingdao', code: 'NORTH CHINA', coordinates: [120.3167, 36.05], labelDx: -38, labelDy: -49, kind: 'origin' },
   { id: 'jeddah', label: 'Jeddah', code: 'SAJED', coordinates: [39.1667, 21.4667], labelDx: -24, labelDy: 42 },
   { id: 'shuwaikh', label: 'Shuwaikh', code: 'KWSWK', coordinates: [47.9333, 29.35], labelDx: -25, labelDy: -42 },
   { id: 'abidjan', label: 'Abidjan', code: 'CIABJ', coordinates: [-4.0167, 5.3333], labelDx: -26, labelDy: -48 },
 ];
+// Illustrative sea corridor via the Cape, with separate branches for each gateway.
+const europeSeaApproach: Coordinate[] = [[114.26, 22.57], [109, 10], [104, 1.3], [97, 6], [78, 1], [46, -28], [21, -37], [12, -35], [-10, -5], [-20, 25], [-13, 36]];
 const additionalRegionRoutes: MapRoute[] = [
+  { id: 'valencia', kind: 'sea', coordinates: [...europeSeaApproach, [-5.6, 35.95], [-1.4, 36.3], [0.7, 39], [-0.32, 39.44]] },
+  { id: 'hamburg', kind: 'secondary', coordinates: [...europeSeaApproach, [-11, 44], [-6.5, 49], [1, 50.5], [4, 53.1], [8.1, 54.1], [9.92, 53.52]] },
   { id: 'jeddah', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [45.3, 12.7], [39.1667, 21.4667]] },
   { id: 'shuwaikh', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [56.6, 25.8], [47.9333, 29.35]] },
   { id: 'abidjan', kind: 'secondary', coordinates: [[114.26, 22.57], [103.85, 1.3], [79.85, 6.95], [18.42, -34.25], [-4.0167, 5.3333]] },
@@ -275,18 +281,23 @@ const additionalRegionRoutes: MapRoute[] = [
 const regionalNetwork: Record<OceanRegion, { nodes: string[]; routes: string[]; countries: string[]; title: string }> = {
   'middle-east': { nodes: ['south-china', 'ningbo', 'qingdao', 'jebel-ali', 'jeddah', 'shuwaikh'], routes: ['uae', 'jeddah', 'shuwaikh'], countries: ['156', '784', '682', '414'], title: 'China to Middle East sea gateways' },
   'west-africa': { nodes: ['south-china', 'ningbo', 'qingdao', 'lagos', 'tema', 'abidjan'], routes: ['west-africa', 'tema', 'abidjan'], countries: ['156', '566', '288', '384'], title: 'China to West Africa sea gateways' },
+  europe: { nodes: ['south-china', 'valencia', 'hamburg'], routes: ['valencia', 'hamburg'], countries: ['156', '724', '276'], title: 'China to Europe sea gateways' },
   'latin-america': { nodes: ['south-china', 'ningbo', 'qingdao', 'callao', 'santos', 'manzanillo'], routes: ['callao', 'santos', 'manzanillo'], countries: ['156', '604', '076', '484'], title: 'China to Latin America sea gateways' },
 };
 const regionalProjections: Record<OceanRegion, GeoProjection> = {
   'middle-east': geoMercator().fitExtent([[36, 45], [WIDTH - 36, HEIGHT - 45]], extentFeature(28, -12, 128, 48)),
   'west-africa': geoMercator().fitExtent([[36, 45], [WIDTH - 36, HEIGHT - 45]], extentFeature(-21, -40, 128, 48)),
   'latin-america': worldProjection,
+  europe: geoMercator().fitExtent([[36, 38], [WIDTH - 36, HEIGHT - 38]], { type: 'MultiPoint', coordinates: [[-24, -41], [135, 59]] }),
 };
 
 /** Regional network view: exact port nodes, illustrative corridors, never a sailing schedule. */
-export function RegionalFreightMap({ region, locale = 'en', title, description }: { region: OceanRegion; locale?: Language; title?: string; description?: string }) {
+export function RegionalFreightMap({ region, locale = 'en', title, description, europeGateway }: { region: OceanRegion; locale?: Language; title?: string; description?: string; europeGateway?: 'valencia' | 'hamburg' }) {
   const network = regionalNetwork[region];
-  const nodes = [...worldNodes, ...additionalRegionNodes].filter(node => network.nodes.includes(node.id)).map(node => node.id === 'south-china'
+  const gateway = region === 'europe' ? europeGateway : undefined;
+  const nodeIds = gateway ? ['south-china', gateway] : network.nodes;
+  const routeIds = gateway ? [gateway] : network.routes;
+  const nodes = [...worldNodes, ...additionalRegionNodes].filter(node => nodeIds.includes(node.id)).map(node => node.id === 'south-china'
     ? { ...node, label: 'Shenzhen', code: 'SOUTH CHINA', labelDx: 20, labelDy: 34 }
     : {...node});
   const originCodes: Record<Language,string[]> = {en:['SOUTH CHINA','EAST CHINA','NORTH CHINA'],zh:['华南','华东','华北'],es:['SUR DE CHINA','ESTE DE CHINA','NORTE DE CHINA'],pt:['SUL DA CHINA','LESTE DA CHINA','NORTE DA CHINA'],fr:['SUD DE LA CHINE','EST DE LA CHINE','NORD DE LA CHINE'],ru:['ЮГ КИТАЯ','ВОСТОК КИТАЯ','СЕВЕР КИТАЯ'],ar:['جنوب الصين','شرق الصين','شمال الصين'],tr:['GÜNEY ÇİN','DOĞU ÇİN','KUZEY ÇİN']};
@@ -299,7 +310,7 @@ export function RegionalFreightMap({ region, locale = 'en', title, description }
       <desc id={`regional-${region}-desc`}>{description || 'Geolocated ports and illustrative sea corridors. The actual vessel itinerary is confirmed for each shipment.'}</desc>
       <MapChrome clipId={clipId} />
       <MapBase projection={projection} highlighted={new Set(network.countries)} clipId={clipId} regional />
-      <MapRoutes routes={[...worldRoutes, ...additionalRegionRoutes].filter(route => network.routes.includes(route.id))} projection={projection} />
+      <MapRoutes routes={[...worldRoutes, ...additionalRegionRoutes].filter(route => routeIds.includes(route.id))} projection={projection} />
       <MapNodes nodes={nodes} projection={projection} />
     </svg>
   </figure>;
