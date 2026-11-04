@@ -1,3 +1,4 @@
+import euPhoneCaseTrialRelease from '../../data/euPhoneCaseTrialRelease.json';
 import CairoBuyingLinks from './CairoBuyingLinks';
 import {useEffect,useRef} from 'react';
 import {ArrowLeft,ArrowRight,Calendar,Clock3,ChevronDown} from 'lucide-react';
@@ -41,15 +42,17 @@ export default function ArticleReadingContent({post,language,articleHtml,primary
   node.addEventListener('click',click);node.addEventListener('keydown',key);dialog.addEventListener('close',close);
   return()=>{node.removeEventListener('click',click);node.removeEventListener('keydown',key);dialog.removeEventListener('close',close);for(const {trigger,attrs} of saved)for(const [a,v] of attrs){if(v===null)trigger.removeAttribute(a);else trigger.setAttribute(a,v);}};
  },[post.id,language]);
+ const coverHtml = post.slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.coverHtml : '';
  return <div className="article-reading ddnz-home" ref={root} lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
   <header className="article-reading-hero"><div className="article-reading-wrap">
    <nav className="article-reading-breadcrumb" aria-label={ui.home+' / '+ui.insights}><a href={canonicalSitePath(prefix||'/')}>{ui.home}</a><span aria-hidden="true">/</span><a href={canonicalSitePath(prefix+'/insights')}>{ui.insights}</a></nav>
-   <div className={'article-reading-hero-grid'+(!post.thumbnailUrl?' article-reading-no-cover':'')}><div className="article-reading-heading">
+   <div className={'article-reading-hero-grid'+(!post.thumbnailUrl || coverHtml ? ' article-reading-no-cover' : '')}><div className="article-reading-heading">
     <p className="article-reading-kicker"><span>{articleLabel(post.contentType||post.category,locale)}</span>{post.audienceMarket&&<span>{articleLabel(post.audienceMarket,locale)}</span>}</p>
     <h1 id="article-title">{post.title}</h1>{post.summary&&<p className="article-reading-summary">{post.summary}</p>}
     <div className="article-reading-meta"><span><Calendar aria-hidden="true"/>{ui.published} <time dateTime={post.date}>{readingDate(post.date,locale)}</time></span><span><Clock3 aria-hidden="true"/>{post.readMinutes||5} {ui.minRead}</span>{updated!==post.date&&<span>{ui.updated} <time dateTime={updated}>{readingDate(updated,locale)}</time></span>}</div>
     <p className="article-reading-byline"><strong>DDNZ GLOBAL</strong>{reviewer&&<span>{ui.reviewedBy} <bdi>{reviewer}</bdi></span>}</p>
-   </div>{post.thumbnailUrl&&<figure className="article-reading-cover"><button type="button" className="article-reading-cover-button" data-reader-image aria-label={imageLabels[0]}><img src={post.thumbnailUrl} alt={post.title} width="1000" height="800" fetchPriority="high" referrerPolicy="no-referrer"/><span>{imageLabels[0]} ↗</span></button></figure>}</div>
+   </div>{!coverHtml&&post.thumbnailUrl&&<figure className="article-reading-cover"><button type="button" className="article-reading-cover-button" data-reader-image aria-label={imageLabels[0]}><img src={post.thumbnailUrl} alt={post.title} width="1000" height="800" fetchPriority="high" referrerPolicy="no-referrer"/><span>{imageLabels[0]} ↗</span></button></figure>}</div>
+   {coverHtml&&<div dangerouslySetInnerHTML={{__html:coverHtml}}/>}
   </div></header>
   <main id="main-content" className={'article-reading-layout article-reading-wrap'+(!showToc?' article-reading-without-toc':'')}>
    {showToc&&<aside className="article-reading-sidebar"><div className="article-reading-sticky"><Contents items={items} label={ui.onThisPage}/><a className="article-reading-top" href="#article-title">{(readingLabels[locale]||readingLabels.en)[16]} ↑</a></div></aside>}
