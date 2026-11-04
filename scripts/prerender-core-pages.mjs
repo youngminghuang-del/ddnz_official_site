@@ -19,6 +19,13 @@ try {
   const rootPattern=/<div id="root"(?: data-core-prerender="true")?>[\s\S]*<\/div>(?=\s*<\/body>)/;
   if(!rootPattern.test(html))throw new Error(`Core root not found: ${route}`);
   let output=html.replace(rootPattern,`<div id="root" data-core-prerender="true">${body}</div>`);
+  if (route === '/products/') {
+   const manifest=JSON.parse(fs.readFileSync(path.join(dist,'.vite/manifest.json'),'utf8'));
+   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav');
+   if (!navigation?.css?.length) throw new Error('Missing navigation CSS in Vite manifest');
+   const styles=navigation.css.map(file=>fs.readFileSync(path.join(dist,file),'utf8')).join('\n');
+   output=output.replace('</head>',()=>`<style data-prerender-navigation>${styles}</style></head>`);
+  }
   // Core routes use their existing page CSS; bundle filenames vary by build.
   const cssPrefixes=route==='/products/'?['ProductsIndex-','food-processing-','ShowcaseContactFooter-']:route==='/sourcing-services/'?['SourcingServices-','ServiceMotion-','ShowcaseContactFooter-']:/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?$/.test(route)?['Footer-','Home-']:['Footer-'];
   if(/sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china/.test(route))cssPrefixes.push('PortablePowerPage-','ElectricScootersPage-','ElectricBicyclesPage-','HomeStoragePage-','electric-mobility-','supplements-');
