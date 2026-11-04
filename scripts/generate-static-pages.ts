@@ -1,3 +1,4 @@
+import { addGulfRefrigerationSelection } from '../src/lib/gulfRefrigerationSelection';
 import SpanishInspectionScope from '../src/features/sourcing-services/SpanishInspectionScope';
 import { addSpanishCaseQuote } from '../src/lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../src/lib/latinAmericaFreightTiming';
@@ -1754,7 +1755,7 @@ function injectStaticRouteContent(
     const prefix = locale === 'en' || locale === 'id' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
     staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
       post: article, language: locale,
-      articleHtml: { __html: addSpanishCaseQuote(post.slug, addLatinAmericaFreightTiming(post.slug, addAlibabaBuyingGuidance(post.slug, addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || '')))))) },
+      articleHtml: { __html: addGulfRefrigerationSelection(post.slug, addSpanishCaseQuote(post.slug, addLatinAmericaFreightTiming(post.slug, addAlibabaBuyingGuidance(post.slug, addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))))))) },
       primaryCta: buildPrimaryCta(article, prefix, ui),
       discovery: kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''],
     }));
