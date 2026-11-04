@@ -1,8 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useLayoutEffect, useRef } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import SourcingHomepageNav from '../../components/SourcingHomepageNav';
 import Footer from '../../components/Footer';
-import { mountScreenProtectors } from './controller.mjs';
+import { mountScreenProtectors, renderComparisonView } from './controller.mjs';
 import { pageForPath, ROUTES } from './routes.mjs';
 import { applyScreenProtectorSEO, removeScreenProtectorSchema } from './seo.mjs';
 import { canonicalSitePath } from '../../lib/notionArticleRouting';
@@ -17,7 +17,7 @@ import { buyerJourneyAnalytics } from '../buyer-guides/data.mjs';
 
 declare const __LOCAL_CANDIDATE__: boolean;
 
-export default function ScreenProtectorPage() {
+export default function ScreenProtectorPage({ prerenderComparison = false } = {}) {
   const root = useRef<HTMLDivElement>(null);
   const controller = useRef<ReturnType<typeof mountScreenProtectors> | null>(null);
   const navigate = useNavigate();
@@ -27,7 +27,7 @@ export default function ScreenProtectorPage() {
   const destination = useRef(navigate);
   destination.current = navigate;
   const page = pageForPath(location.pathname);
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (!root.current) return;
     const mounted = mountScreenProtectors(root.current, (path: string) => destination.current(canonicalSitePath(path)), (action: string) => {
       const payload = screenProtectorJourneyAnalytics(action);
@@ -45,10 +45,10 @@ export default function ScreenProtectorPage() {
         || ['localhost', '127.0.0.1', '[::1]'].includes(window.location.hostname),
     });
   }, [location.pathname, page, language, prefixHomeLink]);
-  useEffect(() => {
+  useLayoutEffect(() => {
     controller.current?.activate(location.pathname, location.hash);
   }, [location.pathname, location.hash, page]);
   if (!page) return <Navigate to={canonicalSitePath(ROUTES.home)} replace />;
   // The shared navigation renders ProductLanguageNotice outside the English body.
-  return <><SourcingHomepageNav quotePath={ROUTES.quote} /><div className="phone-film" lang="en" dir="ltr" ref={root} />{['home','products'].includes(page) && <BuyerGuideLinks group="phone" locale="en" onAction={(id: string, action: string) => { const payload = buyerJourneyAnalytics(id, 'en', action); if (payload) trackEvent(payload.event, payload.params); }} />}<Footer quotePath={ROUTES.quote} /></>;
+  return <><SourcingHomepageNav quotePath={ROUTES.quote} /><div className="phone-film" lang="en" dir="ltr" ref={root} dangerouslySetInnerHTML={prerenderComparison ? { __html: renderComparisonView() } : undefined} />{['home','products'].includes(page) && <BuyerGuideLinks group="phone" locale="en" onAction={(id: string, action: string) => { const payload = buyerJourneyAnalytics(id, 'en', action); if (payload) trackEvent(payload.event, payload.params); }} />}<Footer quotePath={ROUTES.quote} /></>;
 }

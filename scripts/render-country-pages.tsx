@@ -42,6 +42,7 @@ import GetAQuotePage from '../src/pages/get-a-quote';
 import InsightsHub from '../src/pages/InsightsHub';
 import LocalizedOverviewPage from '../src/pages/LocalizedOverviewPage';
 import MobileSourcingPage from '../src/features/mobile-sourcing/MobileSourcingPage';
+import ScreenProtectorPage from '../src/features/screen-protectors/ScreenProtectorPage';
 import ProductsIndex from '../src/pages/product-showcase/ProductsIndex';
 import SourcingServices from '../src/pages/product-showcase/SourcingServices';
 import { getLocalizedHomeFaqs } from '../src/data/homeFaqData';
@@ -51,7 +52,7 @@ export function renderCorePage(route: string) {
   const language=(match?.[1]==='zh-cn'?'zh':match?.[1] || 'en') as any;
   const relative=(match?route.slice(match[0].length):route).replace(/^\/+|\/+$/g,'');
   const home=<div className="ddnz-home min-h-screen overflow-x-hidden bg-[#fffefb] font-sans text-slate-900"><SourcingHomepageNav/><main><SourcingHomepageHero/><HomeOneTeamBridge/><WorldFreightMap language={language}/><HomeV2Preview embedded beforeFinal={<><Insights/><Partners/></>}/></main><Footer/></div>;
-  const content=relative==='sourcing/mobile-accessories-from-china'?<MobileSourcingPage/>:relative==='sourcing/electric-utility-vehicles-from-china'?<ElectricUtilityVehiclesPage/>:relative==='sourcing/electric-tricycles-from-china'?<ElectricTricyclesPage/>:relative==='sourcing/portable-power-stations-from-china'?<PortablePowerPage/>:relative==='sourcing/electric-bicycles-from-china'?<ElectricBicyclesPage/>:relative==='sourcing/home-energy-storage-from-china'?<HomeStoragePage/>:relative==='sourcing/electric-scooters-from-china'?<ElectricScootersPage/>:relative===''?home:relative==='about'?<About/>:relative==='get-a-quote'?<GetAQuotePage/>:relative==='insights'?<InsightsHub/>:relative==='how-we-work'?<HowWeWork/>:relative==='products'?(language==='en'?<ProductsIndex/>:<LocalizedOverviewPage kind="products"/>):relative==='sourcing-services'?(language==='en'?<SourcingServices/>:<LocalizedOverviewPage kind="sourcing-services"/>):null;
+  const content=relative==='screen-protectors/compare'?<ScreenProtectorPage prerenderComparison/>:relative==='sourcing/mobile-accessories-from-china'?<MobileSourcingPage/>:relative==='sourcing/electric-utility-vehicles-from-china'?<ElectricUtilityVehiclesPage/>:relative==='sourcing/electric-tricycles-from-china'?<ElectricTricyclesPage/>:relative==='sourcing/portable-power-stations-from-china'?<PortablePowerPage/>:relative==='sourcing/electric-bicycles-from-china'?<ElectricBicyclesPage/>:relative==='sourcing/home-energy-storage-from-china'?<HomeStoragePage/>:relative==='sourcing/electric-scooters-from-china'?<ElectricScootersPage/>:relative===''?home:relative==='about'?<About/>:relative==='get-a-quote'?<GetAQuotePage/>:relative==='insights'?<InsightsHub/>:relative==='how-we-work'?<HowWeWork/>:relative==='products'?(language==='en'?<ProductsIndex/>:<LocalizedOverviewPage kind="products"/>):relative==='sourcing-services'?(language==='en'?<SourcingServices/>:<LocalizedOverviewPage kind="sourcing-services"/>):null;
   if(!content)throw new Error(`Unsupported core page ${route}`);
   return renderToStaticMarkup(<HelmetProvider><MemoryRouter initialEntries={[route]}><LanguageProvider initialLanguage={language}>{content}</LanguageProvider></MemoryRouter></HelmetProvider>);
 }
