@@ -280,6 +280,48 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
                 </li>;
               })}
             </ol>
+            {language === 'ru' && kind === 'consolidation-export' && (
+              <div className="mt-10 rounded-xl border border-slate-200 bg-white p-5 sm:p-8">
+                <h3 id="multi-supplier-consolidation" className="text-2xl font-black">Консолидация грузов от нескольких поставщиков в Китае</h3>
+                <p className="mt-3 max-w-3xl leading-7 text-slate-600">
+                  DDNZ согласует приёмку партий от разных поставщиков в Китае, сверяет количество мест,
+                  маркировку и упаковочные листы и объединяет согласованные партии в одну отправку.
+                </p>
+                <figure className="mt-6 max-w-3xl">
+                  <figcaption className="mb-3 font-bold">Как объединяются партии</figcaption>
+                  <ul className="grid grid-cols-3 gap-2 text-center text-sm font-semibold">
+                    {['А', 'Б', 'В'].map((supplier) => (
+                      <li key={supplier} className="rounded-lg bg-slate-100 px-1 py-3">
+                        Поставщик {supplier}<span aria-hidden="true" className="mt-1 block">↓</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <ol className="mt-2 grid gap-2">
+                    {[
+                      'DDNZ принимает партии и сверяет количество мест, маркировку и упаковочные листы.',
+                      'DDNZ фиксирует расхождения и согласует, какие партии объединить.',
+                      'DDNZ готовит сводный список для отправки.',
+                      'Если заказана международная перевозка, DDNZ передаёт подтверждённую партию Heaven Born.',
+                    ].map((step, index) => (
+                      <li key={step} className="flex items-start gap-3 rounded-lg border border-slate-200 p-3">
+                        <span aria-hidden="true" className="shrink-0 font-bold text-[var(--ddnz-purple-strong)]">{index + 1}</span>
+                        <span>{step}</span>
+                      </li>
+                    ))}
+                  </ol>
+                </figure>
+                <h4 className="mt-6 font-bold">Что указать в запросе на консолидацию</h4>
+                <ul className="mt-2 list-disc space-y-1 pl-5 text-slate-600">
+                  <li>Список поставщиков, города отгрузки и даты готовности партий.</li>
+                  <li>Наименование товара, количество мест, размеры и вес по каждой партии.</li>
+                  <li>Упаковочные листы и данные маркировки, если они уже есть.</li>
+                  <li>Пункт назначения и нужна ли международная перевозка.</li>
+                </ul>
+                <Link to={quoteHref} className="mt-4 inline-flex min-h-11 items-center font-bold text-[var(--ddnz-purple-strong)] underline underline-offset-4">
+                  Отправить данные для расчёта консолидации
+                </Link>
+              </div>
+            )}
             <Link
               to={processPath}
               className="mt-6 inline-flex min-h-11 items-center text-sm font-black text-[var(--ddnz-purple-strong)] underline decoration-transparent underline-offset-4 transition hover:decoration-current focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--ddnz-purple)]"
