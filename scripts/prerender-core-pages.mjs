@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 import { createRequire } from 'node:module';
 const root=process.cwd(), dist=path.join(root,'dist');
 const routes=[...fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname)
- .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china\/$/.test(p)||/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/','/sourcing/mobile-accessories-from-china/','/fr/sourcing/mobile-accessories-from-china/'].includes(p));
+ .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china\/$/.test(p)||/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/screen-protectors/compare/','/products/','/sourcing-services/','/sourcing/mobile-accessories-from-china/','/fr/sourcing/mobile-accessories-from-china/'].includes(p));
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ddnz-core-ssr-'));
 try {
  const bundle=path.join(temporary,'renderer.cjs');
@@ -25,6 +25,14 @@ try {
    if (!navigation?.css?.length) throw new Error('Missing navigation CSS in Vite manifest');
    const styles=navigation.css.map(file=>fs.readFileSync(path.join(dist,file),'utf8')).join('\n');
    output=output.replace('</head>',()=>`<style data-prerender-navigation>${styles}</style></head>`);
+  }
+  if (route === '/screen-protectors/compare/') {
+   const manifest=JSON.parse(fs.readFileSync(path.join(dist,'.vite/manifest.json'),'utf8'));
+   const comparison=manifest['src/features/screen-protectors/ScreenProtectorPage.tsx'];
+   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav');
+   if (!comparison?.css?.length || !navigation?.css?.length) throw new Error('Missing comparison or navigation styles');
+   const styles=[...new Set([...comparison.css,...navigation.css])].map(file=>fs.readFileSync(path.join(dist,file),'utf8')).join('\n');
+   output=output.replace('</head>',()=>`<style>${styles}</style></head>`);
   }
   // Core routes use their existing page CSS; bundle filenames vary by build.
   const cssPrefixes=route==='/products/'?['ProductsIndex-','food-processing-','ShowcaseContactFooter-']:route==='/sourcing-services/'?['SourcingServices-','ServiceMotion-','ShowcaseContactFooter-']:/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?$/.test(route)?['Footer-','Home-']:['Footer-'];

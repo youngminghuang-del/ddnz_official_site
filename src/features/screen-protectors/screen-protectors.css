@@ -99,3 +99,10 @@
 @media(max-width:800px){.phone-film .film-price-row{grid-template-columns:1fr 1fr;gap:16px}.phone-film .film-price-comparison{margin-top:30px}.phone-film .compare-intro-actions{flex-wrap:wrap}}
 @media(max-width:460px){.phone-film .film-price-row{grid-template-columns:1fr;gap:12px;padding:22px 0}.phone-film .film-price-name{padding-bottom:4px}.phone-film .film-price-amount strong{font-size:16px}.phone-film .compare-intro-actions a{width:100%;text-align:center}}
 @media(max-width:359px){body:has(.film-price-comparison) .ddnz-brand{width:170px;max-width:170px}body:has(.film-price-comparison) .ddnz-brand__lockup{width:100%;max-width:170px;height:auto}}
+
+/* Reserve the final intro height while Inter is loading on narrow screens. */
+@media (370px <= width <= 420px) {
+  .phone-film[lang="en"] #view-products > .page-heading > .lede {
+    min-block-size: 7lh;
+  }
+}

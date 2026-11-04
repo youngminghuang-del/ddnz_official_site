@@ -39,7 +39,8 @@ const ShippingCentralAsia = lazy(() => import('./pages/shipping-from-china-to-ce
 const ShippingWestAfrica = lazy(() => import('./pages/shipping-from-china-to-west-africa'));
 const ShippingLatinAmerica = lazy(() => import('./pages/shipping-from-china-to-latin-america'));
 const GetAQuotePage = lazy(() => import('./pages/get-a-quote'));
-const ScreenProtectorPage = lazy(() => import('./features/screen-protectors/ScreenProtectorPage'));
+const loadScreenProtectorPage = () => import('./features/screen-protectors/ScreenProtectorPage');
+let ScreenProtectorPage: ComponentType = lazy(loadScreenProtectorPage);
 const SourcingServicePage = lazy(() => import('./pages/SourcingServicePage'));
 const About = lazy(() => import('./pages/About'));
 const HowWeWork = lazy(() => import('./pages/HowWeWork'));
@@ -392,6 +393,9 @@ function GlobalConversionTracker() {
 // Keep the generated HTML in place until the initial route can render synchronously.
 export function preparePrerenderedRoute(pathname: string) {
   const route = pathname.replace(/\/+$/, '');
+  if (route === '/screen-protectors/compare') {
+    return loadScreenProtectorPage().then(module => { ScreenProtectorPage = module.default; });
+  }
   if (route === '/products') {
     return loadProductsIndex().then(module => { ProductsIndex = module.default; });
   }

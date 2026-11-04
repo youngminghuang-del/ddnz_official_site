@@ -26,7 +26,7 @@ for(const route of routes){
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
-assert.equal(count,106,'Expected core pages, localized product catalogues and two mobile-accessory hubs');
+assert.equal(count,107,'Expected core pages, localized product catalogues and three sourcing landing pages');
 for (const locale of ['', 'zh-cn/', 'ru/', 'fr/', 'es/', 'ar/', 'pt/', 'tr/']) {
  const route = `${locale}get-a-quote`;
  const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');
