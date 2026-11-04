@@ -77,7 +77,19 @@ test('all twelve SSR pages have complete localized content, valid media and reci
   assert.ok(html.includes(`lang="${locale}" dir="${locale==='ar'?'rtl':'ltr'}"`));
   assert.ok(html.includes('id="buying-brief"'));assert.ok(html.includes('id="price-comparison"'));
   assert.doesNotMatch(html,/Supplier [A-D]|Good \/ Better|iPhone18fold|\[object Object\]|undefined|NaN|JPY|From samples to repeatable orders/);
-  if(['compare','hub'].includes(page.id)){assert.equal(supplierDimensions.length,7);for(const d of supplierDimensions)assert.ok(html.includes(d.name[locale].replaceAll('&','&amp;')));}
+  if (page.id === 'hub' && locale === 'es') {
+   assert.ok(html.includes('id="pedido-mixto"'));
+   assert.ok(html.includes('Solicitar cotización de fábrica'));
+   assert.ok(!html.includes('id="factory-sourcing"'));
+   for (const dimension of supplierDimensions) {
+    assert.ok(!html.includes(dimension.name[locale].replaceAll('&','&amp;')));
+   }
+  } else if (['compare', 'hub'].includes(page.id)) {
+   assert.equal(supplierDimensions.length, 7);
+   for (const dimension of supplierDimensions) {
+    assert.ok(html.includes(dimension.name[locale].replaceAll('&','&amp;')));
+   }
+  }
   if(page.id!=='straps')for(const step of orderCheckSteps)assert.ok(html.includes(step.title[locale]));
   for(const [,src] of html.matchAll(/<(?:img|source)[^>]*src="([^"]+)"/g))assert.ok(fs.existsSync(new URL('../public'+src,import.meta.url)),src);
   const meta=mobileMetadata(page.id,locale);assert.equal(meta.path,localizedProductPath(page.path,locale));assert.equal(meta.schema['@graph'][0].inLanguage,locale);
