@@ -23,7 +23,8 @@ export default function LclLoadingDetails({ locale }: { locale: FreightLocale })
       <p className="freight-kicker">LCL / PACKAGING DETAILS</p>
       <h2>{t('同样是拼柜，\n要看的细节并不一样。', 'Shared container.\nDifferent packing details.', 'Un contenedor compartido.\nDistintos detalles de embalaje.')}</h2>
       <p className="freight-intro">{t('从木箱、托盘到袋装货，先把货物拍清楚，再讨论怎么装。', 'From crates and pallets to bags: show the cargo clearly before discussing the loading plan.', 'Desde cajones y palés hasta sacos: muestra la carga antes de hablar del plan de estiba.')}</p>
-      <div className="lcl-detail-grid">{photos.map(item => photo(item))}</div>
+      <div className="lcl-detail-grid">{photos.filter(item => locale !== 'zh' || item.file !== 'crates-and-pallets').map(item => photo(item))}</div>
+      {locale === 'zh' && <a className="lcl-review-link" href="#lcl-quote-scope">查看木箱与托盘同柜实拍 ↑</a>}
     </section>
     <section id="lcl-loading-mistakes" className="lcl-errors">
       <div className="freight-wrap freight-section lcl-loading-details">

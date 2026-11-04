@@ -24,6 +24,30 @@ export default function LclContent({locale, materialPreview}: {locale: FreightLo
       [t('到港后谁来提？','Who collects at destination?','¿Quién recoge en destino?'),t('确认目的地拆箱仓、放货条件、提货预约和卸货设备；到港、到仓与到门的报价范围要分别写清。','Confirm deconsolidation warehouse, release conditions, collection appointment and unloading equipment. Define port, warehouse or door scope in writing.','Confirma almacén de desconsolidación, liberación, cita y equipos. Define por escrito el alcance hasta puerto, almacén o domicilio.')],
     ].map(([title,body])=><details key={title}><summary>{title}</summary><p>{body}</p></details>)}</div></section>
     <div id="lcl-costs"><ShipmentPreparation locale={locale} consolidation /></div>
+    {locale === 'zh' && (
+      <section id="lcl-quote-scope" className="freight-wrap freight-section">
+        <h2>中国出口海运拼箱怎么报价</h2>
+        <p className="freight-intro">DDNZ 提供供货及多供应商集货支持。需要国际运输时，由 Heaven Born 按确认的航线和交付范围执行。</p>
+        <figure className="mt-6 max-w-3xl">
+          <img className="w-full rounded-xl" src="/media/lcl-20260920/crates-and-pallets.webp" alt="木箱和托盘货物装入同一集装箱的现场" loading="lazy"/>
+          <figcaption className="mt-2 text-sm">装柜实拍。木箱与托盘同柜时，应在订舱前确认外尺寸、重量和能否堆叠。</figcaption>
+        </figure>
+        <ol aria-label="拼箱流程与费用范围" className="mt-6 grid gap-4 sm:grid-cols-3">
+          {[
+            ['01 起运端收货与拼箱', '确认是否包含提货、入仓操作、拼箱和出口报关。'],
+            ['02 海运', '核对起运港、目的港、海运费和适用附加费。'],
+            ['03 目的地拆箱与交付', '分别确认拆箱、仓储、清关、税费和配送的计费范围。'],
+          ].map(([title, body]) => (
+            <li key={title} className="rounded-xl border border-current/20 p-4">
+              <h3 className="font-bold">{title}</h3>
+              <p className="mt-2">{body}</p>
+            </li>
+          ))}
+        </ol>
+        <p className="mt-5">询价时请提供中国提货地址、货好日期、目的港或收货地址、品名与包装照片、件数、逐件外尺寸和毛重。说明是否可堆叠，以及希望到港、拆箱仓自提还是送仓。</p>
+        <a className="freight-cta mt-5" href={quote}>提交拼箱报价资料 ↗</a>
+      </section>
+    )}
     <ShipmentPreparation locale={locale}/>
     <section className="freight-wrap freight-section" id="lcl-field-record"><p className="freight-kicker">{t("海运拼箱 / 现场记录","LCL / FIELD RECORDS","LCL / REGISTROS DE OPERACIONES")}</p><h2>{t('不同包装，怎么一起装？','Different packages. How do they load together?','¿Cómo cargar juntos distintos embalajes?')}</h2>
       <div className="mt-8 grid gap-8 md:grid-cols-2"><figure><a href="/media/freight-20260918/mixed-cargo-loading.jpg" target="_blank" rel="noreferrer"><img src="/media/freight-20260918/mixed-cargo-loading.jpg" alt={t('不同包装混合装柜的现场', 'Different packaging types in a mixed load', 'Distintos embalajes en una carga mixta')} loading="lazy" /></a><figcaption>01 / {t('不同包装同柜：先确认尺寸与堆叠条件。', 'Mixed packaging: confirm dimensions and stacking constraints.', 'Embalajes mixtos: confirmar medidas y apilamiento.')}</figcaption></figure><figure><a href="/media/lcl-20260920/loading-in-progress.webp" target="_blank" rel="noreferrer"><img src="/media/lcl-20260920/loading-in-progress.webp" width={1200} height={1547} alt={t('木箱、托盘与成组货物的 LCL 装柜过程', 'LCL loading in progress with crates, pallets and bundled cargo', 'Carga LCL de cajones, palés y mercancía agrupada')} loading="lazy" /></a><figcaption>02 / {t('木箱与托盘装柜过程 · 点击查看完整图片。', 'Crates and pallets during loading · View full image.', 'Cajones y palés durante la carga · Ver imagen completa.')}</figcaption></figure></div>
