@@ -1,3 +1,4 @@
+import { addGulfRefrigerationSelection } from '../lib/gulfRefrigerationSelection';
 import { addSpanishCaseQuote } from '../lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
@@ -87,7 +88,7 @@ export default function BlogDetail() {
   // Keep the HTML prop stable across hash-navigation/context renders so native
   // form nodes, input values and their listeners are not replaced.
   const articleHtml = useMemo(() => ({
-    __html: addSpanishCaseQuote(post?.slug, addLatinAmericaFreightTiming(post?.slug, addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || '')))))),
+    __html: addGulfRefrigerationSelection(post?.slug, addSpanishCaseQuote(post?.slug, addLatinAmericaFreightTiming(post?.slug, addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))))))),
   }), [post?.content, post?.slug]);
 
   useEffect(() => {

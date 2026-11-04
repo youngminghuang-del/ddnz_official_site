@@ -201,6 +201,25 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
    const anchor=event.target.closest('a[href^="#style-"]');
    if(anchor&&!document.getElementById(anchor.hash.slice(1)))flushSync(()=>setFilter('all'));
  }} dangerouslySetInnerHTML={{__html:locale==='en'?renderCaseEntry():renderLocalizedEntry('cases',locale)}}/>}
+ {pageId === 'cases' && locale === 'pt' && (
+   <section className="ms-section" id="capas-estilos-atacado">
+     <h2>Capas de celular no atacado: compare estilos e acabamentos</h2>
+     <p>Veja duas amostras antes de definir o mix. Confirme o material, o encaixe e o acabamento por referência na cotação de fábrica.</p>
+     <div className="my-4 grid gap-4 sm:grid-cols-2">
+       {[
+         ['/images/product-showcase/mobile/phone-case-colorway-proof-v1.webp', 'Capas coloridas', 'Compare o acabamento e as cores da amostra.'],
+         ['/mobile-sourcing-media/textured-clean-v2.webp', 'Capa com traseira texturizada', 'Confira a textura e peça a composição do material.'],
+       ].map(([src, title, detail]) => (
+         <figure key={src} className="min-w-0 rounded-xl border border-slate-200 p-4">
+           <img src={src} alt={title} className="aspect-video w-full object-contain" loading="lazy"/>
+           <figcaption className="mt-3"><strong>{title}</strong><p>{detail}</p></figcaption>
+         </figure>
+       ))}
+     </div>
+     <p>Para cotar, informe o modelo exato do aparelho, estilo, cor, quantidade por variante, embalagem e destino.</p>
+     <a className="ms-button mt-4" href="#buying-brief">Preparar cotação de fábrica ↓</a>
+   </section>
+ )}
  {pageId==='cases'&&locale==='es'&&<SpanishRestock onApply={note=>setDraft(d=>({...d,contact:{...d.contact,notes:d.contact.notes.includes(note)?d.contact.notes:[d.contact.notes,note].filter(Boolean).join('\n')}}))}/>}
  {pageId==='compare'&&<section className="ms-section ms-editorial"><h2>{c('checks')}</h2><div>{editorial.compare.map(([title,body],i)=><article key={i}><span className="ms-step">0{i+1}</span><h3>{copyFor(title,locale)}</h3><p>{copyFor(body,locale)}</p></article>)}</div><a className="ms-secondary" href={link('cases',locale)}>{c('cases')} ↗</a></section>}
  {pageId!=='compare'&&<section className="ms-section" id="collection"><span id="assortment"/><div className="ms-section-head"><div><p className="ms-eyebrow">{c('products')}</p><h2>{pageId==='hub'?copyFor(accessoryCopy.catalogTitle,locale):c('range')}</h2>{pageId==='hub'&&<p>{copyFor(accessoryCopy.rangeIntro,locale)}</p>}</div><a href="#buying-brief" className="ms-brief-count" aria-live="polite">{c('brief')} · {formatNumber(draft.rows.length,locale)} ↓</a></div>

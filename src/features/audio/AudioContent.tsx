@@ -22,6 +22,26 @@ export default function AudioContent({locale}:{locale:AudioLocale}){
  return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="audio-page ddnz-page text-slate-900"><div className="audio-page-frame mx-auto max-w-7xl space-y-16 px-6 py-12"><header className="catalogue-hero grid items-center gap-10 lg:grid-cols-2"><div><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.categories}</a><CatalogueHeroHeading text={c.title} language={locale}/><p className="mt-6 text-lg leading-8">{c.intro}</p><a className="mt-7 inline-block ddnz-control ddnz-action px-5 py-3 font-bold text-white" href="#speaker-model-request">{u.quote}</a>{locale==='ru' && <p className="mt-4"><a className="underline" href={`${prefix}${audioCategoryPaths[2]}/`}>Смотреть портативные колонки ↓</a></p>}</div><CatalogueHeroMedia src={images[0]} alt={c.families[0][0]} language={locale} items={images.map((src,i)=>({src,label:c.families[i][0],href:"#audio-range"}))}/></header>
  {locale==='tr'&&<TurkishBuyingPaths/>}
  <SeriesEntry family="speaker" locale={locale}/>
+ {locale === 'es' && (
+   <section id="seleccion-altavoces" className="scroll-mt-28">
+     <h2 className="text-3xl font-bold">Altavoces Bluetooth portátiles de China</h2>
+     <p className="mt-3">Elige el formato según el uso y el espacio. DDNZ confirma las dimensiones, la alimentación y la configuración de cada modelo al preparar la cotización de fábrica.</p>
+     <div className="mt-5 grid gap-4 sm:grid-cols-2">
+       {[
+         ['mini-black-product-v1.webp', 'Altavoz compacto', 'Indica el tamaño máximo, cómo se transportará y qué conexión de carga necesita.'],
+         ['bts07-shower-reference.webp', 'BTS07 · Altavoz portátil', 'Indica dónde se usará y solicita la ficha del modelo para confirmar la batería, la carga y la protección.'],
+       ].map(([image, title, description]) => (
+         <article className="min-w-0 rounded-xl border p-4" key={image}>
+           <img className="aspect-video w-full object-contain" loading="lazy" src={`/images/product-showcase/audio/${image}`} alt={title}/>
+           <h3 className="mt-3 font-bold">{title}</h3>
+           <p className="mt-2">{description}</p>
+         </article>
+       ))}
+     </div>
+     <p className="mt-4">Para una cotización al por mayor, indica el formato, las medidas, la alimentación, las unidades, el empaque y el destino.</p>
+     <a className="mt-3 inline-block font-bold text-purple-800 underline" href="#audio-rfq">Solicitar cotización de altavoces portátiles ↓</a>
+   </section>
+ )}
  <div id="audio-range"><AudioCategoryLinks locale={locale}/></div>
  <ProductSeries family="speaker" locale={locale}/>
  <ProgressiveSection title={experienceCopy(locale).speakerScene} locale={locale}><ScenePlanning family="speaker" locale={locale}/></ProgressiveSection>

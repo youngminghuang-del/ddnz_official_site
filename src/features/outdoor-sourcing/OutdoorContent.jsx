@@ -42,6 +42,25 @@ export default function OutdoorContent({locale='en',category='all',onCategoryCha
     <div className="ods-hero-copy"><p className="ods-eyebrow">{t('eyebrow')}</p><h1>{t('heading')}</h1><p className="ods-lead">{t('intro')}</p><div className="ods-actions"><a className="ods-button" href="#outdoor-range">{t('browse')}<ArrowDown size={18}/></a><a className="ods-text-link" href="#buying-brief">{t('brief')}<ArrowUpRight size={18}/></a></div></div>
     <figure className="ods-hero-image"><img src={media+'outdoor-camp.webp'} alt={tr('A power station and folding solar panel in a mountain campsite catalogue scene','Estación de energía y panel plegable en una escena de camping del catálogo','محطة طاقة ولوح قابل للطي في مشهد تخييم جبلي من الكتالوج')} width="1356" height="763" fetchPriority="high"/></figure>
    </section>
+   {locale === 'en' && (
+     <section id="outdoor-use-cases" className="ods-section">
+       <h2>Choose outdoor equipment by use</h2>
+       <div className="mt-5 grid gap-4 sm:grid-cols-3">
+         {[
+           ['/sourcing/portable-power-stations-from-china/', '/images/sourcing/outdoor-portable-energy-brand-neutral-v1.webp', 'Portable power', 'Match battery capacity and AC output to the equipment you run.'],
+           ['/sourcing/portable-compressor-fridges-from-china/', '/images/sourcing/outdoor-portable-refrigerator-catalog.webp', 'Portable refrigeration', 'Choose a compressor fridge for your storage volume and vehicle power supply.'],
+           ['#charging-guide', '/outdoor-sourcing-media/glory-100.webp', 'Solar recharging', 'Match the panel to the power station’s PV input before ordering.'],
+         ].map(([href, image, title, description]) => (
+           <article key={title} className="min-w-0 rounded-xl border border-slate-200 p-4">
+             <img src={image} alt={title} loading="lazy" className="aspect-video w-full object-contain"/>
+             <h3 className="mt-3 font-bold">{title}</h3>
+             <p className="mt-2">{description}</p>
+             <a className="ods-text-link mt-2 inline-block" href={href === '#charging-guide' ? localizedProductPath(powerGuidePath, locale) + href : href}>Explore {title.toLowerCase()} ↗</a>
+           </article>
+         ))}
+       </div>
+     </section>
+   )}
    <a className="ods-guide-entry" href={localizedProductPath(powerGuidePath,locale)} aria-labelledby="outdoor-guide-title">
     <div className="ods-guide-copy"><span className="ods-guide-kicker">{tr('Interactive power guide','Guía interactiva de energía','دليل الطاقة التفاعلي')}</span><h2 id="outdoor-guide-title">{tr('Which power station fits your day?','¿Qué estación se adapta a su día?','أي محطة طاقة تناسب يومك؟')}</h2><p>{tr('Compare six models. Try your appliances. See how long they could run.','Compare seis modelos. Pruebe sus aparatos y estime cuánto durarían.','قارن ستة طرازات. جرّب أجهزتك وقدّر مدة تشغيلها.')}</p><span className="ods-guide-cta">{tr('Find your power station','Encuentre su estación','اختر محطة الطاقة المناسبة')}<ArrowUpRight size={21}/></span></div>
     <div className="ods-guide-preview" aria-hidden="true"><BatteryCharging size={68} strokeWidth={1.4}/><div className="ods-guide-numbers"><span><strong>Wh</strong><small>{tr('Capacity','Capacidad','السعة')}</small></span><span><strong>W</strong><small>{tr('Power','Potencia','القدرة')}</small></span><span><strong>h</strong><small>{tr('Runtime','Autonomía','مدة التشغيل')}</small></span></div></div>
