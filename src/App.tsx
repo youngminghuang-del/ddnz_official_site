@@ -6,7 +6,7 @@ import WhatsAppFloat from './components/WhatsAppFloat';
 import RouteRecovery, { RouteLoadingFallback } from './components/RouteRecovery';
 import {audioCategoryPaths} from './features/audio/category-routes.mjs';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
-import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, type ComponentType } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
 const Home = lazy(() => import('./pages/Home'));
 const NewMarketFreightPage = lazy(() => import('./features/freight/new-markets/NewMarketFreightPage'));
@@ -55,7 +55,8 @@ const ElectricBicyclesPage = lazy(() => import('./features/electric-bicycles/Ele
 const HomeStoragePage = lazy(() => import('./features/home-storage/HomeStoragePage'));
 const ElectricScootersPage = lazy(() => import('./features/electric-mobility/ElectricScootersPage'));
 const LocalizedOverviewPage = lazy(() => import('./pages/LocalizedOverviewPage'));
-const ProductsIndex = lazy(() => import('./pages/product-showcase/ProductsIndex'));
+const loadProductsIndex = () => import('./pages/product-showcase/ProductsIndex');
+let ProductsIndex: ComponentType = lazy(loadProductsIndex);
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
 const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
 const LocalizedPackagePage = lazy(() => import('./features/commercial-kitchen/LocalizedPackagePage'));
@@ -68,7 +69,8 @@ const LocalizedKitchenPage = lazy(() => import('./features/commercial-kitchen/Lo
 const LocalizedScreenProtectorPage = lazy(() => import('./features/screen-protectors/LocalizedScreenProtectorPage'));
 const BuyerGuidePage = lazy(() => import('./features/buyer-guides/BuyerGuidePage'));
 const RefrigerationEquipment = lazy(() => import('./pages/product-showcase/RefrigerationEquipment').then((module) => ({ default: module.RefrigerationEquipment })));
-const MobileAccessories = lazy(() => import('./features/mobile-sourcing/MobileSourcingPage'));
+const loadMobileAccessories = () => import('./features/mobile-sourcing/MobileSourcingPage');
+let MobileAccessories: ComponentType = lazy(loadMobileAccessories);
 import { mobilePaths } from './features/mobile-sourcing/routes.mjs';
 import { shippingCountries as SHIPPING_COUNTRIES, sourcingCategories as SOURCING_CATEGORIES } from './config/siteNavigation';
 const LocalizedFilmGuidePage = lazy(() => import('./features/film-guide/FilmGuidePage'));
@@ -385,6 +387,18 @@ function GlobalConversionTracker() {
   }, []);
 
   return null;
+}
+
+// Keep the generated HTML in place until the initial route can render synchronously.
+export function preparePrerenderedRoute(pathname: string) {
+  const route = pathname.replace(/\/+$/, '');
+  if (route === '/products') {
+    return loadProductsIndex().then(module => { ProductsIndex = module.default; });
+  }
+  if (route === '/sourcing/mobile-accessories-from-china' ||
+      route === '/fr/sourcing/mobile-accessories-from-china') {
+    return loadMobileAccessories().then(module => { MobileAccessories = module.default; });
+  }
 }
 
 export default function App() {

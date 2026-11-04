@@ -389,6 +389,7 @@ const continueWithoutAccepting: Record<Language, string> = {
 
 export default function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false);
+  const [initialBannerPending, setInitialBannerPending] = useState(true);
   const [showPreferencesModal, setShowPreferencesModal] = useState(false);
   const [activeTab, setActiveTab] = useState<'privacy' | 'necessary' | 'functionality' | 'tracking' | 'targeting' | 'more'>('privacy');
   
@@ -466,9 +467,13 @@ export default function CookieConsent() {
     }
 
     if (!consent) {
-      const timer = setTimeout(() => setIsVisible(true), 1500);
+      const timer = setTimeout(() => {
+        setIsVisible(true);
+        setInitialBannerPending(false);
+      }, 1500);
       return () => clearTimeout(timer);
     }
+    setInitialBannerPending(false);
   }, []);
 
   useEffect(() => {
@@ -581,6 +586,7 @@ export default function CookieConsent() {
 
   return (
     <>
+      {initialBannerPending && <span hidden data-cookie-banner-pending />}
       {/* Cookie Banner */}
       {isVisible && !showPreferencesModal && (
           <div data-cookie-banner className="fixed bottom-0 left-0 right-0 z-[90] p-2 sm:p-4 pointer-events-none">

@@ -11,18 +11,26 @@ import './features/company-identity/company-identity.css';
 import { installQuoteLinkHandoff } from './lib/quoteLinkPolicy.mjs';
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
-import App from './App.tsx';
+import App, { preparePrerenderedRoute } from './App.tsx';
 import './index.css';
 import './styles/ddnz-ribbon-backgrounds.css';
 import './styles/ddnz-refinement.css';
 
 installQuoteLinkHandoff();
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const mount = () => createRoot(root).render(
   <StrictMode>
     <App />
   </StrictMode>,
 );
+const preparation = root.querySelector('main') && preparePrerenderedRoute(location.pathname);
+if (preparation) {
+  // On a rejected import, hand off to the existing route error boundary.
+  void preparation.then(mount, mount);
+} else {
+  mount();
+}
 
 import './components/catalogue-hero/catalogue-hero.css';
 

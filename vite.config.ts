@@ -94,6 +94,7 @@ ${verificationTags}
     build: {
       // 确保构建输出目录正确
       outDir: 'dist',
+      manifest: true,
       emptyOutDir: true,
       // 防止生成过大的 sourcemap 文件
       sourcemap: false,

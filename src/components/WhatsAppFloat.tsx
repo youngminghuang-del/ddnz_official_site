@@ -19,6 +19,7 @@ export default function WhatsAppFloat() {
   const { language } = useLanguage();
   const { pathname } = useLocation();
   const [clearance, setClearance] = useState(24);
+  const [bannerMeasured, setBannerMeasured] = useState(false);
   const [galleryBlocked, setGalleryBlocked] = useState(false);
   const excluded = /^\/(?:content-ops|design-preview)(?:\/|$)/.test(pathname);
 
@@ -29,10 +30,12 @@ export default function WhatsAppFloat() {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
         let bottom = window.innerWidth < 768 ? 20 : 32;
+        let measured = false;
         document.querySelectorAll('[data-cookie-banner], .opg-mobile-shortcuts, .ddnz-kitchen .floating-list, .ddnz-kitchen .toast').forEach(element => {
           const rect = element.getBoundingClientRect();
           if (getComputedStyle(element).position === 'fixed' && rect.width && rect.height && rect.top < window.innerHeight) {
             bottom = Math.max(bottom, window.innerHeight - rect.top + 16);
+            measured ||= element.hasAttribute('data-cookie-banner');
           }
         });
         const floating = document.querySelector('[data-whatsapp-float]')?.getBoundingClientRect();
@@ -42,6 +45,7 @@ export default function WhatsAppFloat() {
         });
         setGalleryBlocked(current => current === overlapsGallery ? current : overlapsGallery);
         setClearance(current => current === bottom ? current : bottom);
+        setBannerMeasured(measured);
         document.documentElement.style.setProperty('--contact-clearance', `${bottom}px`);
       });
     };
@@ -51,7 +55,7 @@ export default function WhatsAppFloat() {
     window.addEventListener('scroll', update, { passive: true });
     update();
     return () => { observer.disconnect(); cancelAnimationFrame(frame); window.removeEventListener('resize', update); window.removeEventListener('scroll', update); document.documentElement.style.removeProperty('--contact-clearance'); };
-  }, [pathname, excluded, clearance]);
+  }, [pathname, excluded]);
 
   if (excluded) return null;
   const handleClick = () => {
@@ -59,7 +63,7 @@ export default function WhatsAppFloat() {
     trackEvent('whatsapp_click', { cta_location: 'floating_button', utm_source: attribution.utm_source, utm_campaign: attribution.utm_campaign, utm_content: attribution.utm_content });
     window.open(buildAttributedWhatsAppUrl(copy[language].message, attribution), '_blank', 'noopener,noreferrer');
   };
-  return <div data-floating-control data-whatsapp-float data-gallery-blocked={galleryBlocked || undefined} className="ddnz-whatsapp-float" style={{ bottom: `max(${clearance}px, calc(env(safe-area-inset-bottom) + 16px))` }}>
+  return <div data-floating-control data-whatsapp-float data-banner-measured={bannerMeasured || undefined} data-gallery-blocked={galleryBlocked || undefined} className="ddnz-whatsapp-float" style={{ bottom: `max(${clearance}px, calc(env(safe-area-inset-bottom) + 16px))` }}>
     <button type="button" data-analytics-tracked="true" onClick={handleClick} aria-label={copy[language].label} title={copy[language].label}>
       <svg viewBox="0 0 32 32" width="32" height="32" fill="none" aria-hidden="true">
         <path d="M26.8 15.5a11.3 11.3 0 0 1-16.7 9.9L4.5 27l1.6-5.4a11.3 11.3 0 1 1 20.7-6.1Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round"/>
