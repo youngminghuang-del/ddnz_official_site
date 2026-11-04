@@ -1916,6 +1916,9 @@ function run() {
 
   // Read base built HTML
   const originalHtml = fs.readFileSync(sourceHtmlPath, 'utf-8');
+  const manifest = JSON.parse(fs.readFileSync(path.join(distDir, '.vite/manifest.json'), 'utf-8')) as Record<
+    string, { file: string; name?: string; imports?: string[]; css?: string[] }
+  >;
 
   const basePaths = [
     {path:'sourcing/electric-utility-vehicles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
@@ -2159,7 +2162,27 @@ function run() {
       const localizedHtml = injectSeoMeta(originalHtml, lang, entry.path, seo, articleHreflang);
       const crawlableHtml = injectStaticRouteContent(localizedHtml, lang, entry.path, routePost);
       const targetFilePath = path.join(targetDir, 'index.html');
-      fs.writeFileSync(targetFilePath, crawlableHtml, 'utf-8');
+      const mobileHub = entry.path === 'sourcing/mobile-accessories-from-china' && (lang === 'en' || lang === 'fr');
+      if (mobileHub) {
+        const routeEntry = 'src/features/mobile-sourcing/MobileSourcingPage.tsx';
+        const route = manifest[routeEntry];
+        const navigation = route?.imports?.map(key => manifest[key])
+          .find(chunk => chunk?.name === 'SourcingHomepageNav');
+        if (!route?.file || !navigation?.css?.length) {
+          throw new Error(`Missing route bundle or navigation stylesheet in Vite manifest: ${routeEntry}`);
+        }
+        const links = [
+          `<link rel="modulepreload" crossorigin href="/${route.file}">`,
+          ...navigation.css.map(file => `<link rel="preload" as="style" crossorigin href="/${file}">`),
+        ];
+        // Match the interactive layout before the route stylesheets arrive.
+        const files = new Set([...navigation.css, ...(route.css || [])]);
+        const styles = [...files].map(file => fs.readFileSync(path.join(distDir, file), 'utf-8'));
+        links.push(`<style>${styles.join('\n')}</style>`);
+        fs.writeFileSync(targetFilePath, crawlableHtml.replace('</head>', `${links.join('\n')}\n</head>`), 'utf-8');
+      } else {
+        fs.writeFileSync(targetFilePath, crawlableHtml, 'utf-8');
+      }
     });
   });
 

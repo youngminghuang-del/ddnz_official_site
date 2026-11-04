@@ -5,7 +5,7 @@ import { build } from 'esbuild';
 import { createRequire } from 'node:module';
 const root=process.cwd(), dist=path.join(root,'dist');
 const routes=[...fs.readFileSync(path.join(dist,'sitemap.xml'),'utf8').matchAll(/<loc>([^<]+)<\/loc>/g)].map(m=>new URL(m[1]).pathname)
- .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china\/$/.test(p)||/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/'].includes(p));
+ .filter(p=>/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?sourcing\/(?:electric-utility-vehicles|electric-tricycles|electric-scooters|electric-bicycles|home-energy-storage|portable-power-stations)-from-china\/$/.test(p)||/^\/(?:(?:zh-cn|ru|fr|es|ar|pt|tr)\/)?(?:(?:about|insights|how-we-work|products|sourcing-services|get-a-quote)\/)?$/.test(p)||['/products/','/sourcing-services/','/sourcing/mobile-accessories-from-china/','/fr/sourcing/mobile-accessories-from-china/'].includes(p));
 const temporary=fs.mkdtempSync(path.join(os.tmpdir(),'ddnz-core-ssr-'));
 try {
  const bundle=path.join(temporary,'renderer.cjs');
