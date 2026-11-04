@@ -10,6 +10,7 @@ import { foodLocales, foodPrefix, localizedFoodInquiry, type FoodLocale } from '
 import { overviewCopy } from '../overview/copy';
 import { serviceCopy } from '../sourcing-services/copy';
 export default function LocalizedFoodContent({page,locale}:{page:any;locale:FoodLocale}) {
+ const isSpanishBakery = locale === 'es' && page.category?.slug === 'dough-and-bakery-machinery';
  const hero=[machineById.h20,machineById['jr-gg22'],machineById['dq-ps300-copper']];
  const c=foodLocales[locale],u=c.ui,o=overviewCopy[locale],prefix=foodPrefix(locale);
  const [selection,setSelection]=useState<Record<string,number>>(()=>page.bundle?packageSelection(page.bundle):{});
@@ -28,13 +29,58 @@ export default function LocalizedFoodContent({page,locale}:{page:any;locale:Food
  const bundleCard=(bundle:any)=>{const i=packages.indexOf(bundle),t=selectionTotals(packageSelection(bundle));return <a className="fp-package-link" key={bundle.id} href={localLink(packagePath(bundle))}><h3>{o.packageNames[i]}</h3><p>{o.packageDescriptions[i]}</p><strong dir="ltr">{money(t.equipment)}</strong><span>{u.equipment}</span><p>{u.packing}: <bdi>{money(t.packing)}</bdi></p></a>;};
  return <main id="main-content" className="fp-page" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}><div className="fp-wrap">
  <nav className="fp-breadcrumb" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a><span>/</span><a href={localLink(foodProcessingPath)}>{u.catalogueTitle}</a></nav>
- <section className={'fp-hero'+(page.kind==='hub'?' catalogue-hero':'')}><div><p className="fp-overline">{u.source}</p><h1>{page.title}</h1><p className="fp-lead">{page.intro}</p><div className="fp-actions"><a className="fp-primary" href="#equipment">{u.compare}</a><a className="fp-secondary" href="#your-list">{u.list}</a></div></div>{page.kind==='hub'?<CatalogueHeroMedia onNavigate={()=>setFamily('all')} src={'/food-processing-media/'+hero[0].image+'.webp'} alt={hero[0].model} label={hero[0].model} language={locale} items={hero.map(m=>({src:'/food-processing-media/'+m.image+'.webp',label:m.model,href:'#machine-'+m.id}))}/>:<div className="fp-hero-media"><div className="fp-machine-stage">{page.machines.slice(0,3).map((m:any)=><img key={m.id} src={`/food-processing-media/${m.image}.webp`} alt={`${c.names[machines.indexOf(m)]} ${m.model}`} width="500" height="500"/>)}</div><p>{u.imageNote}</p></div>}</section>
+ <section className={'fp-hero'+(page.kind==='hub'?' catalogue-hero':'')}><div><p className="fp-overline">{u.source}</p><h1>{page.title}</h1><p className="fp-lead">{page.intro}</p><div className="fp-actions"><a className="fp-primary" href="#equipment">{u.compare}</a><a className="fp-secondary" href="#your-list">{u.list}</a></div></div>{page.kind==='hub'?<CatalogueHeroMedia onNavigate={()=>setFamily('all')} src={'/food-processing-media/'+hero[0].image+'.webp'} alt={hero[0].model} label={hero[0].model} language={locale} items={hero.map(m=>({src:'/food-processing-media/'+m.image+'.webp',label:m.model,href:'#machine-'+m.id}))}/>:isSpanishBakery ? (
+   <div className="grid min-w-0 grid-cols-2 gap-3" aria-label="Equipos para preparar masa">
+     {[
+       ['hw-j15-copper', 'Amasadora'],
+       ['yh-gt300', 'Laminadora de masa'],
+       ['h20', 'Amasadora espiral'],
+     ].map(([id, label], index) => {
+       const model = machineById[id];
+       return (
+         <a key={id} href={`#seleccion-${id}`} className={`min-w-0 overflow-hidden rounded-xl border border-slate-200 bg-white text-inherit no-underline hover:border-slate-500 focus-visible:outline-2 focus-visible:outline-offset-2 ${index === 0 ? 'col-span-2' : ''}`}>
+           <img src={`/food-processing-media/${model.image}.webp`} alt={`${label} ${model.model}`} width="627" height="627" className={`block w-full bg-slate-50 object-contain ${index === 0 ? 'h-44 sm:h-52' : 'h-28 sm:h-32'}`}/>
+           <span className="flex items-center justify-between gap-2 px-3 py-2">
+             <span className="min-w-0 text-sm leading-snug"><strong className="block">{model.model}</strong>{label}</span>
+             <span aria-hidden="true">↓</span>
+           </span>
+         </a>
+       );
+     })}
+   </div>
+ ):<div className="fp-hero-media"><div className="fp-machine-stage">{page.machines.slice(0,3).map((m:any)=><img key={m.id} src={`/food-processing-media/${m.image}.webp`} alt={`${c.names[machines.indexOf(m)]} ${m.model}`} width="500" height="500"/>)}</div><p>{u.imageNote}</p></div>}</section>
  {page.category?.slug==='vegetable-processing-machinery'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('vegetables',locale)}}/>}
  <p className="fp-price-note">{o.priceNote}</p>
  {page.kind==='hub'&&<section className="fp-section"><h2>{u.catalogueTitle}</h2><div className="fp-family-grid">{categoryPages.map((category,i)=><a key={category.slug} href={localLink(categoryPath(category))}><h3>{c.categories[i][0]}</h3><p>{c.categories[i][1]}</p></a>)}</div></section>}
  {page.bundle&&<section className="fp-section fp-workflow"><h2>{u.scope}</h2><p>{c.scopes[page.bundleIndex]}</p><p>{u.selectionNote}</p></section>}
  {page.bundles.length>0&&<section id="packages" className="fp-section"><h2>{u.packages}</h2><div className="fp-package-grid">{page.bundles.map(bundleCard)}</div></section>}
  {grinderEligible(page)&&<p className="fp-standing-entry"><a href="#standing-grinders">{gc.nav} ↓</a></p>}
+ {isSpanishBakery && (
+   <section className="fp-section" id="cotizacion-panaderia">
+     <h2>Amasadoras y equipos de panadería de China</h2>
+     <p className="mt-3">Elige el equipo según el trabajo que necesitas hacer con la masa. DDNZ fabrica y exporta maquinaria alimentaria desde China. Al cotizar, confirmamos las especificaciones, la configuración y el fabricante de cada modelo.</p>
+     <div className="mt-5 grid gap-4 sm:grid-cols-3">
+       {[
+         ['hw-j15-copper', 'Amasar', 'Para preparar masa por tandas. Indica la receta y el peso de masa por lote.'],
+         ['yh-gt300', 'Laminar', 'Para extender la masa en láminas. Indica el ancho y el espesor que necesitas.'],
+         ['h20', 'Mezclar con espiral', 'Para mezclar y amasar en cuba. Indica los kilos de harina por lote y la hidratación.'],
+       ].map(([id, label, description]) => {
+         const model = machineById[id];
+         return (
+           <article key={id} id={`seleccion-${id}`} className="min-w-0 scroll-mt-28 rounded-xl border border-slate-200 p-4">
+             <FoodModelPhoto src={`/food-processing-media/${model.image}.webp`} alt={`${label} · ${model.model}`} locale={locale}/>
+             <h3 className="mt-3">{label} · {model.model}</h3>
+             <p>{description}</p>
+             <a className="fp-secondary mt-3" href="#your-list" onClick={() => setSelection(current => current[id] ? current : {...current, [id]: 1})}>
+               Cotizar {model.model} de fábrica
+             </a>
+           </article>
+         );
+       })}
+     </div>
+     <p className="mt-4">Para cotizar, indica el tipo de masa, el tamaño de cada lote, la producción prevista, la alimentación eléctrica disponible y la ciudad y el país de destino.</p>
+   </section>
+ )}
  <section id="equipment" className="fp-section"><div className="fp-section-heading"><h2>{u.compare}</h2><a href="#your-list">{u.list} ({totals.units})</a></div>
  <div className="fp-filters" aria-label={u.catalogueTitle}><button type="button" aria-pressed={family==='all'} onClick={()=>setFamily('all')}>{u.all}</button>{families.filter(f=>page.machines.some((m:any)=>m.family===f)).map(f=><button key={f} type="button" aria-pressed={family===f} onClick={()=>setFamily(f)}>{c.families[families.indexOf(f)]}</button>)}</div>
  <div className="fp-equipment-grid">{page.machines.filter((m:any)=>family==='all'||m.family===family).map((m:any)=>{const i=machines.indexOf(m);return <article className="fp-machine" id={`machine-${m.id}`} key={m.id}><FoodModelPhoto src={`/food-processing-media/${m.image}.webp`} alt={`${m.model} · ${c.names[i]}`} locale={locale}/><div className="fp-machine-copy"><p className="fp-overline"><bdi>{m.model}</bdi></p><h3>{c.names[i]}</h3><p className="fp-variant">{c.variants[i]}</p><div className="fp-machine-price"><strong dir="ltr">{money(m.price)}</strong><span>{u.unit}</span></div><p className="fp-packing">{c.packingTypes[m.packingType as keyof typeof c.packingTypes]}: <bdi>{money(m.packing)}</bdi></p><details><summary>{u.specs}</summary><dl><dt>{u.power}</dt><dd dir="ltr">{m.power}</dd><dt>{u.size}</dt><dd dir="ltr">{m.dimensions}</dd><dt>{u.weight}</dt><dd dir="ltr">{m.weight} kg</dd></dl><FoodModelFacts id={m.id} locale={locale}/><p>{c.notes[i]}</p><p>{u.confirm}</p></details><button type="button" className="fp-add" disabled={selection[m.id]>=99} onClick={()=>{quantity(m.id,(selection[m.id]||0)+1);setNotice(`${m.model}: ${u.added}`);}}>{u.add}{selection[m.id]?` (${selection[m.id]})`:''}</button></div></article>;})}</div><p role="status" aria-live="polite">{notice}</p></section>
