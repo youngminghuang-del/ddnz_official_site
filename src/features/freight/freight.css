@@ -526,3 +526,73 @@
 .new-market-product-links{display:flex;gap:1rem;flex-wrap:wrap}.new-market-product-links a{padding:.75rem 1rem;border:1px solid var(--ddnz-border,#dedde1);border-radius:8px}
 
 .new-central-route{padding:2rem;border:1px solid var(--ddnz-border,#dedde1);border-radius:18px;background:#f6f4f8}.new-central-route p{display:flex;justify-content:space-between;gap:1rem;align-items:center;font-size:clamp(1rem,3vw,1.8rem);font-weight:700}.new-central-route figcaption{font-size:.875rem;color:#54627a}
+
+.europe-port-map-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px 24px;
+  margin-block: 18px 32px;
+  color: var(--country-copy);
+}
+.europe-port-map-links div { display: flex; flex-wrap: wrap; gap: 8px 20px; }
+.europe-port-map-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 44px;
+  color: var(--country-accent);
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+#europe-port-network, #europe-handover { scroll-margin-top: 130px; }
+#europe-port-network .freight-map-svg { min-width: 0; }
+
+.europe-documents { margin-top: 48px; scroll-margin-top: 130px; }
+.europe-documents h3 { font-size: clamp(1.35rem, 3vw, 1.85rem); font-weight: 750; }
+.europe-documents > p { margin-block: 8px 24px; color: var(--country-copy); }
+.europe-document-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+.europe-document-grid figure { margin: 0; min-width: 0; }
+.europe-document-grid figcaption { margin-block-end: 10px; font-weight: 700; }
+.europe-document-paper {
+  background: #fafaf8;
+  border: 1px solid #c5ced5;
+  border-radius: 4px;
+  color: #172e41;
+  font-size: .875rem;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.europe-document-title { display: grid; gap: 4px; padding: 14px; border-bottom: 1px solid #a4b4bf; background: #e9eff2; }
+.europe-document-title span { color: #445d70; font-family: monospace; font-size: .75rem; letter-spacing: .12em; }
+.europe-document-paper dl { margin: 0; }
+.europe-document-paper dl > div { display: grid; grid-template-columns: 1fr 1.15fr; gap: 10px; padding: 8px 14px; }
+.europe-document-paper dl > div + div { border-top: 1px solid #d8dfe4; }
+.europe-document-paper dt { color: #445d70; }
+.europe-document-paper dd { margin: 0; font-weight: 650; }
+
+@media (max-width: 760px) {
+  .europe-document-grid { grid-template-columns: 1fr; }
+}
+
+.europe-documents > .europe-document-comparison {
+  margin-block: 18px 0;
+  padding: 14px 18px;
+  border-inline-start: 2px solid #8097a7;
+  background: #e9eff2;
+  line-height: 1.65;
+}
+
+.europe-document-paper [data-document-group="A"] { background: #e7f0f5; }
+.europe-document-paper [data-document-group="B"] { background: #f2ede3; }
+.europe-document-marker {
+  display: inline-block;
+  min-width: 1.15rem;
+  margin-inline-end: 5px;
+  border: 1px solid currentColor;
+  border-radius: 3px;
+  font-size: .75rem;
+  font-weight: 750;
+  text-align: center;
+}

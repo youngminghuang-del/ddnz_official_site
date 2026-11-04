@@ -1,3 +1,5 @@
+import CentralAsiaRouteOptions from './CentralAsiaRouteOptions';
+import EuropeDocumentExamples from "./EuropeDocumentExamples";
 import centralAfricaCopy from './centralAfricaCopy.json';
 import marketRegions from './marketRegions.json';
 import EcuadorRegionEntry from './EcuadorRegionEntry';
@@ -30,6 +32,18 @@ const copy: Record<Language, Copy> = {
   pt: { home: 'Início', freight: 'Serviços de frete', eyebrow: 'CHINA → DESTINO', heading: 'Envio da China para', intro: 'Escolha primeiro o país. Depois alinhamos carga, porto, importador e escopo de entrega.', choose: 'Escolher país', quote: 'Consultar remessa', network: 'Rede de portos', networkNote: 'Nós geolocalizados; linhas indicam corredores possíveis, não uma escala confirmada.', routes: 'ROTAS POR PAÍS', routesHeading: 'Primeiro o mercado, depois a entrega.', countryPrompt: 'Revise importador, documentos, porto e entrega final.', evidence: 'EVIDÊNCIAS', evidenceHeading: 'Siga as evidências, não só a linha.', origin: '01 / Origem na China', border: '02 / Rota e transferência', destination: '03 / Destino', originCaption: 'Carga real na China; não comprova chegada.', destinationCaption: 'Descarga real nos EAU; confirme data e escopo para nova remessa.', pending: 'Sem foto verificada no destino desta região. Solicite registros específicos de desembaraço e retirada.', evidenceNote: 'Mapa ilustrativo e foto de origem não comprovam desembaraço ou entrega.', caseLink: 'Ver caso do país', planning: 'ANTES DA COTAÇÃO', planningHeading: 'Três decisões que afetam o custo total.', cargo: 'Carga e embalagem', cargoBody: 'Informe produto, volumes, medidas, peso, fotos e data.', import: 'Importador e documentos', importBody: 'Confirme importador, documentos e requisitos do produto antes da reserva.', scope: 'Escopo da entrega', scopeBody: 'Separe porto, armazém, retirada e entrega na cotação.' },
   tr: { home: 'Ana sayfa', freight: 'Yük hizmetleri', eyebrow: 'ÇİN → VARIŞ', heading: 'Çin’den sevkiyat:', intro: 'Önce ülkeyi seçin. Sonra yük, liman, ithalatçı ve teslim kapsamını birlikte netleştirelim.', choose: 'Ülke seçin', quote: 'Sevkiyatı görüşün', network: 'Liman ve geçit ağı', networkNote: 'Noktalar koordinatlara göre yerleştirildi. Çizgiler olası koridorları gösterir, kesin gemi programını değil.', routes: 'ÜLKE ROTALARI', routesHeading: 'Önce pazar, sonra teslimat planı.', countryPrompt: 'İthalatçı, belgeler, liman ve son teslim kapsamını kontrol edin.', evidence: 'SEVKİYAT KANITI', evidenceHeading: 'Sadece rota çizgisine değil, kanıta bakın.', origin: '01 / Çin çıkışı', border: '02 / Rota ve devir', destination: '03 / Varış', originCaption: 'Çin’de gerçek yükleme; varışı kanıtlamaz.', destinationCaption: 'BAE’de gerçek boşaltma; yeni sevkiyat için tarih ve kapsamı teyit edin.', pending: 'Bu bölge için doğrulanmış varış fotoğrafı henüz yok. Sevkiyata özel gümrük ve teslim kayıtlarını isteyin.', evidenceNote: 'Harita ve çıkış fotoğrafı gümrükleme veya teslimatı kanıtlamaz.', caseLink: 'Ülke vakasını görün', planning: 'TEKLİFTEN ÖNCE', planningHeading: 'Toplam maliyeti etkileyen üç karar.', cargo: 'Yük ve ambalaj', cargoBody: 'Ürün, adet, ölçü, brüt ağırlık, fotoğraf ve hazır tarihi gönderin.', import: 'İthalatçı ve belgeler', importBody: 'Rezervasyon öncesinde ithalatçı, belgeler ve ürün koşullarını teyit edin.', scope: 'Teslim kapsamı', scopeBody: 'Liman, gümrük deposu, teslim alma ve adrese teslimi ayrı fiyatlandırın.' },
 };
+
+const europeIllustrationCopy: Record<Language, [string, string, string]> = {
+  en: ['LCL consolidation and full-container pickup', 'LCL consolidation diagram. Goods from several shippers share one container and are sorted by shipment after unloading.', 'Full-container pickup diagram. Check the transport document and release status, confirm the pickup appointment, then count and sign for the goods at the warehouse.'],
+  zh: ['拼箱怎么合装，整柜到港怎么提箱', '拼箱合装示意。不同发货人的货物共用一个集装箱，到港拆箱后按票分拨。', '整柜到港提箱示意。先核对运输单证和放行状态，再确认提货预约，最后在仓库清点货物并签收。'],
+  es: ['Consolidación LCL y recogida de contenedores completos', 'Esquema de consolidación LCL. La mercancía de varios expedidores comparte un contenedor y se separa por envío tras la descarga.', 'Esquema de recogida de un contenedor completo. Compruebe el documento de transporte y el estado de liberación, confirme la cita y luego cuente y firme la recepción en el almacén.'],
+  ru: ['Консолидация сборного груза и вывоз полного контейнера', 'Схема сборной перевозки. Грузы нескольких отправителей едут в одном контейнере. После выгрузки их распределяют по отправкам.', 'Схема вывоза полного контейнера. Проверьте транспортный документ и статус выпуска, согласуйте время вывоза, затем пересчитайте и примите груз на складе.'],
+  fr: ['Groupage LCL et retrait de conteneurs complets', 'Schéma de groupage LCL. Les marchandises de plusieurs expéditeurs partagent un conteneur, puis sont triées par envoi après déchargement.', 'Schéma de retrait d’un conteneur complet. Vérifiez le document de transport et le statut de mainlevée, confirmez le créneau, puis comptez et réceptionnez les colis à l’entrepôt.'],
+  ar: ['تجميع الشحنات الجزئية واستلام الحاويات الكاملة', 'مخطط التجميع. تتشارك بضائع عدة مرسلين حاوية واحدة، ثم تُفرز حسب الشحنة بعد التفريغ.', 'مخطط استلام حاوية كاملة. راجع مستند النقل وحالة الإفراج، وأكّد موعد الاستلام، ثم عُدّ الطرود ووقّع عند الاستلام في المستودع.'],
+  pt: ['Consolidação LCL e retirada de contêineres completos', 'Esquema de consolidação LCL. Mercadorias de vários embarcadores compartilham um contêiner e são separadas por remessa após a descarga.', 'Esquema de retirada de contêiner completo. Confira o documento de transporte e a liberação, confirme o agendamento e depois conte e assine o recebimento no armazém.'],
+  tr: ['Parsiyel yük birleştirme ve tam konteyner teslim alma', 'Parsiyel yük şeması. Birden fazla göndericinin yükü aynı konteynere alınır ve boşaltıldıktan sonra sevkiyata göre ayrılır.', 'Tam konteyner teslim alma şeması. Taşıma belgesini ve yükün serbest bırakılma durumunu kontrol edin, randevuyu doğrulayın ve depoda yükü sayıp teslim alın.'],
+};
+const europePorts = [['Valencia', 'Port of Valencia, Spain'], ['Hamburg', 'Port of Hamburg, Germany']];
 
 const regionNames: Record<RegionId, Record<Language, string>> = {
   'central-africa': {"en": "Central Africa", "zh": "中非", "es": "África Central", "ar": "أفريقيا الوسطى", "fr": "l’Afrique centrale", "ru": "Центральную Африку", "pt": "a África Central", "tr": "Orta Afrika"},"central-america":{"en": "Central America", "zh": "中美洲", "es": "América Central", "ar": "أمريكا الوسطى", "fr": "Amérique centrale", "ru": "Центральная Америка", "pt": "América Central", "tr": "Orta Amerika"},"europe":{"en": "Europe", "zh": "欧洲", "es": "Europa", "ar": "أوروبا", "fr": "Europe", "ru": "Европа", "pt": "Europa", "tr": "Avrupa"},
@@ -76,21 +90,30 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
   const heading = locale === 'ru' && region === 'middle-east' ? 'Доставка из Китая на' : c.heading;
   const displayNames = new Intl.DisplayNames([languageTag[locale]], { type: 'region' });
   const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=freight_region_${region}&dest=${encodeURIComponent(name)}`;
+  const europeTitle = marketRegions.europe[locale].title;
+  const europeName = locale === 'ru' ? 'Европу' : marketRegions.europe[locale].name;
+  const europeNameStart = europeTitle.indexOf(europeName);
+  const highlightedEuropeTitle = europeNameStart < 0 ? europeTitle : <>{europeTitle.slice(0, europeNameStart)}<em>{europeName}</em>{europeTitle.slice(europeNameStart + europeName.length)}</>;
   const originImage = region === 'latin-america' ? '/images/operations/peru-tile-loading-case.webp' : region === 'west-africa' ? '/media/freight-20260918/mixed-cargo-loading.jpg' : '/media/freight-20260918/factory-container.jpg';
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-region-stage">
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path={`/shipping-from-china-to-${region}/`} locale={locale} className="freight-region-breadcrumb"/>
-      <p className="freight-kicker">{c.eyebrow}</p><h1>{region==='central-america'||region==='europe'?marketRegions[region][locale].title:<>{heading} <em>{name}.</em></>}</h1>
+      <p className="freight-kicker">{c.eyebrow}</p><h1>{region==='europe'?highlightedEuropeTitle:region==='central-america'?marketRegions[region][locale].title:<>{heading} <em>{name}.</em></>}</h1>
       <p className="freight-intro">{regionDescription(region, locale)}</p>
       <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a></div>
     </div></header>
     <FreightRatePreview context={region} locale={locale}/><DoorDeliveryLink locale={locale} context={region}/>
-    <section className="freight-region-map-section" aria-labelledby="region-map-heading"><div className="freight-wrap">
+    <section id={region === 'europe' ? 'europe-port-network' : undefined} className="freight-region-map-section" aria-labelledby="region-map-heading"><div className="freight-wrap">
       <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.network}</p><h2 id="region-map-heading">{c.network}</h2></div>
-      {region==='central-africa'?<figure className="new-central-route"><p><bdi>{displayNames.of('CN')}</bdi> <span aria-hidden="true">{locale==='ar'?'←':'→'}</span> <bdi>Douala / CMDLA</bdi></p><figcaption>{centralAfricaCopy[locale].diagram}</figcaption></figure>:region==='central-america'||region==='europe'?<figure className="market-region-route"><p><bdi>{new Intl.DisplayNames([locale],{type:'region'}).of('CN')}</bdi><span aria-hidden="true">{locale==='ar'?'←':'→'}</span><bdi>{gatewayNames[region].join(' / ')}</bdi></p><figcaption>{marketRegions[region][locale].diagram}</figcaption></figure>:<RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />}
+      {region==='central-africa'?<figure className="new-central-route"><p><bdi>{displayNames.of('CN')}</bdi> <span aria-hidden="true">{locale==='ar'?'←':'→'}</span> <bdi>Douala / CMDLA</bdi></p><figcaption>{centralAfricaCopy[locale].diagram}</figcaption></figure>:region==='central-america'?<figure className="market-region-route"><p><bdi>{new Intl.DisplayNames([locale],{type:'region'}).of('CN')}</bdi><span aria-hidden="true">{locale==='ar'?'←':'→'}</span><bdi>{gatewayNames[region].join(' / ')}</bdi></p><figcaption>{marketRegions[region][locale].diagram}</figcaption></figure>:<RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />}
+      {region === 'europe' && <div className="europe-port-map-links">
+        <p>{c.networkNote}</p>
+        <div>{europePorts.map(([name, query]) => <a key={name} href={`https://www.google.com/maps/search/?${new URLSearchParams({api: '1', query})}`} target="_blank" rel="noopener noreferrer"><bdi>{name}</bdi> · Google Maps ↗</a>)}</div>
+      </div>}
       <ChinaOriginGuide locale={locale} destination={name} />
       {region!=='central-america'&&region!=='europe'&&region!=='central-africa'&&<OriginDestinationOpportunities context={region} locale={locale} />}
     </div></section>
+    {region === 'europe' && <CentralAsiaRouteOptions locale={locale} destination="europe" />}
     <section id="country-routes" className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><h2 className="mt-4">{c.routesHeading}</h2>
       <div className="mt-8 border-t border-[#dedde1]">{data.countries.map((country, index) => {
         const countryName = locale === 'en' || locale === 'zh' || locale === 'es'
@@ -100,13 +123,14 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
       })}</div>
     </section>
     {region==='latin-america' && <EcuadorRegionEntry locale={locale} prefix={prefix}/>}
-    {region === 'west-africa' ? <NigeriaMarketGuide locale={locale} compact /> : <section className="freight-region-evidence" aria-labelledby="region-evidence-heading"><div className="freight-wrap freight-section">
-      <p className="freight-kicker">03 / {c.evidence}</p><h2 id="region-evidence-heading">{c.evidenceHeading}</h2>
+    {region === 'west-africa' ? <NigeriaMarketGuide locale={locale} compact /> : <section id={region === 'europe' ? 'europe-handover' : undefined} className="freight-region-evidence" aria-labelledby="region-evidence-heading"><div className="freight-wrap freight-section">
+      <p className="freight-kicker">03{region !== 'europe' && ` / ${c.evidence}`}</p><h2 id="region-evidence-heading">{region === 'europe' ? europeIllustrationCopy[locale][0] : c.evidenceHeading}</h2>
       <div className="freight-region-evidence-grid">
         <article><span>{c.origin}</span><img src={originImage} alt={c.originCaption} loading="lazy" /><p>{c.originCaption}</p></article>
-        <article><span>{c.border}</span><div className="freight-region-gateway-list">{gatewayNames[region].map((gateway, index) => <div key={gateway}><small>{String(index + 1).padStart(2, '0')}</small><strong>{gateway}</strong></div>)}</div></article>
-        <article><span>{c.destination}</span>{region === 'middle-east' ? <><img src="/media/freight-20260919/uae-kitchen-unloading.jpg" alt={c.destinationCaption} loading="lazy" /><p>{c.destinationCaption}</p><a href={`${prefix}/shipping-from-china-to-uae/`}>{c.caseLink} ↗</a></> : <><div className="freight-region-stage-mark freight-region-stage-pending">03</div><p>{c.pending}</p></>}</article>
-      </div><p className="freight-region-evidence-note">{c.evidenceNote}</p>
+        <article><span>{c.border}</span>{region === 'europe' ? <><img src="/media/freight-europe/lcl-consolidation-technical.webp" alt="" width="960" height="720" loading="lazy" /><p>{europeIllustrationCopy[locale][1]}</p></> : <div className="freight-region-gateway-list">{gatewayNames[region].map((gateway, index) => <div key={gateway}><small>{String(index + 1).padStart(2, '0')}</small><strong>{gateway}</strong></div>)}</div>}</article>
+        <article><span>{c.destination}</span>{region === 'middle-east' ? <><img src="/media/freight-20260919/uae-kitchen-unloading.jpg" alt={c.destinationCaption} loading="lazy" /><p>{c.destinationCaption}</p><a href={`${prefix}/shipping-from-china-to-uae/`}>{c.caseLink} ↗</a></> : region === 'europe' ? <><img src="/media/freight-europe/port-pickup-technical.webp" alt="" width="960" height="720" loading="lazy" /><p>{europeIllustrationCopy[locale][2]}</p></> : <><div className="freight-region-stage-mark freight-region-stage-pending">03</div><p>{c.pending}</p></>}</article>
+      </div><p className="freight-region-evidence-note">{c.evidenceNote} {region === 'europe' && c.pending}</p>
+      {region === "europe" && <EuropeDocumentExamples locale={locale} />}
     </div></section>}
     <section className="freight-wrap freight-section"><p className="freight-kicker">04 / {c.planning}</p><h2 className="mt-4">{c.planningHeading}</h2>
       <div className="freight-steps">{[[c.cargo, c.cargoBody], [c.import, c.importBody], [c.scope, c.scopeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>

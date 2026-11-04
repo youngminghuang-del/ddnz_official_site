@@ -1,3 +1,4 @@
+import './features/freight/central-asia-route-options.css';
 import './features/product-series/series.css';
 import './features/equipment-buying-support/support.css';
 import './features/commercial-kitchen/styles/induction-catalogue.css';
