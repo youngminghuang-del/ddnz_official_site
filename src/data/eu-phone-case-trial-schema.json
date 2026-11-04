@@ -1,0 +1,209 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#webpage",
+      "name": "Small Phone Case Orders from China to Europe: Air Freight or Sea LCL?",
+      "description": "Plan a small mixed phone case order from China to Europe. Compare sea LCL, courier and air quotes to your postcode before you buy.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-c"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "QI YANG"
+      },
+      "url": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#article",
+      "headline": "Small Phone Case Orders from China to Europe: Air Freight or Sea LCL?",
+      "description": "Plan a small mixed phone case order from China to Europe. Compare sea LCL, courier and air quotes to your postcode before you buy.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "European phone accessory retailers and importers"
+      },
+      "citation": [
+        "https://terms.maersk.com/LCL",
+        "https://eur-lex.europa.eu/legal-content/EN/ALL/?uri=OJ%3AC_202506233",
+        "https://taxation-customs.ec.europa.eu/online-services/online-services-and-databases-customs/eu-customs-tariff-taric_en"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#faq"
+        }
+      ],
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-f"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-e"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-b"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/",
+      "datePublished": "2026-11-04T19:46:38+08:00",
+      "dateModified": "2026-11-04T19:46:38+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I combine phone cases from different factories in one LCL shipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask the consolidation warehouse to confirm both suppliers’ inbound references and deadlines. Request an itemised receiving report and one final packing list so you can reconcile the shipment by supplier and SKU."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I use air freight to test the market with a small order?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Ask for an air freight quote for the models you want to test first. Send carton dimensions, gross weight and your delivery postcode. Compare with courier and sea LCL using the same delivery scope and the date you need stock on the shelf."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I order different models and colours in small quantities?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask for the minimum per model, colour and pack type. Send the quantities on separate lines so the supplier can show which combinations qualify for a trial order."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#quote-checklist",
+      "name": "Delivery quote checklist",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Air freight"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Express courier"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Sea LCL"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Import charges"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Exceptions"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Small Phone Case Orders from China to Europe: Air Freight or Sea LCL?"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-assortment.jpg",
+      "description": "Pink, light and green phone cases displayed together",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-f",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-colourways.jpg",
+      "description": "Phone case shells in blue, green and purple",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-ring-stand.jpg",
+      "description": "Light phone case with the fold-out ring opened",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-side.jpg",
+      "description": "Light-coloured phone case shown from the side, with button covers and a circular back ring",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-e",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-interior.jpg",
+      "description": "Interior of a green phone case showing the camera opening",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/small-wholesale-phone-cases-china-europe-lcl/#image-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/small-wholesale-phone-cases-china-europe-lcl/case-buttons.jpg",
+      "description": "Green-edged phone case held sideways to show the button covers",
+      "inLanguage": "en"
+    }
+  ]
+}
