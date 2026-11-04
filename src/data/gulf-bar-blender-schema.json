@@ -1,0 +1,190 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#webpage",
+      "name": "Commercial Bar Blenders from China for Saudi and Gulf Dealers",
+      "description": "Compare commercial bar blenders, jars and first service stock for Saudi and Gulf dealers. Request factory pricing and model-specific trial quantities.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-a"
+      },
+      "url": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#article",
+      "headline": "Commercial Bar Blenders from China for Saudi and Gulf Dealers",
+      "description": "Compare commercial bar blenders, jars and first service stock for Saudi and Gulf dealers. Request factory pricing and model-specific trial quantities.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Saudi and Gulf commercial beverage equipment dealers"
+      },
+      "citation": [
+        "https://www.shanice.com.cn/Products_details_1/28.html",
+        "https://m.apexdura.com/apexdura-bl-9856-commercial-silent-blender-1200w-2l/",
+        "https://www.saso.gov.sa/ar/Laws-And-Regulations/Technical_regulations/Pages/regulation29.aspx",
+        "https://www.saso.gov.sa/ar/eservices/Pages/MainEServicesDetails.aspx?serviceid=387"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#faq"
+        }
+      ],
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-b"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-d"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/",
+      "datePublished": "2026-11-04T10:42:58+08:00",
+      "dateModified": "2026-11-04T10:42:58+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I use another jar of the same capacity?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask for a written match against the base and jar part codes. Check the seating, drive connection and enclosure clearance on the sample before buying the spare."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I buy first for after-sales support?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Start by pricing a complete spare jar for the machine you plan to stock. Add separate blade kits or drive sockets where the supplier provides service instructions and your technicians can install them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What should I send DDNZ for a trial quote?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Send the destination country and city, drinks and ingredients, busiest service pattern, electrical requirements and trial quantities. Add a machine or jar photo if you have one."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#compatibility",
+      "name": "Machine and spare compatibility",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Complete machine"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Complete spare jar"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Lid and lid plug"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Blade assembly and seal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Base-side drive socket"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Commercial Bar Blenders from China for Saudi and Gulf Dealers"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-bar-blenders-china-saudi-gulf/a-retouched.png",
+      "description": "JTC OmniBlend TM-800A commercial blender",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-bar-blenders-china-saudi-gulf/b-alibaba.png",
+      "description": "Ideamay 1.5 L replacement blender jar with lid and blade",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-bar-blenders-china-saudi-gulf/c-retouched.png",
+      "description": "Retouched reference image of a Beishun blender blade assembly",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/commercial-bar-blenders-china-saudi-gulf/#image-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/commercial-bar-blenders-china-saudi-gulf/d-alibaba.png",
+      "description": "Blender drive socket listed for the 767 model, shown from two sides",
+      "inLanguage": "en"
+    }
+  ]
+}
