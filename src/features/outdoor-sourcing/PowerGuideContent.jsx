@@ -45,6 +45,19 @@ export default function PowerGuideContent({locale='en',onAction=(_action,_detail
   <div className="ods-actions"><a className="ods-text-link" href={localizedProductPath('/sourcing/portable-power-stations-from-china',locale)}>{{zh:'查看便携电源产品与批发配置',en:'Explore portable power products and wholesale configurations',fr:'Voir les stations portables et les configurations de gros',es:'Ver estaciones portátiles y configuraciones al por mayor',pt:'Ver estações portáteis e configurações por atacado',tr:'Taşınabilir güç ürünlerini ve toptan yapılandırmaları inceleyin',ru:'Посмотреть портативные станции и оптовые комплектации',ar:'استعرض محطات الطاقة المحمولة وتجهيزات الجملة'}[locale]} <ArrowUpRight size={18}/></a></div>
   <nav className="ods-section-nav" aria-label={t('eyebrow')}>{sections.map((id,i)=><a key={id} href={'#'+id}><small>0{i+1}</small> {c(guideUI.nav[navOrder[i]])}</a>)}</nav>
   <div className="opg-mobile-shortcuts"><a href="#appliance-plan">{c(launchCopy.appliances)}</a><a href="#power-plan-result">{c(launchCopy.result)} <ArrowDown size={15}/></a></div>
+  {locale === 'en' && (
+    <section id="runtime-estimate-example" className="ods-section">
+      <h2>Wh, W and estimated runtime</h2>
+      <p>Watt-hours (Wh) measure stored energy. Watts (W) measure how much power your appliances draw at a given moment.</p>
+      <div className="my-4 grid gap-3 sm:grid-cols-3" aria-label="Example runtime calculation">
+        <div className="rounded-xl border border-slate-200 p-4"><strong>500 Wh rated</strong><p>Example battery capacity</p></div>
+        <div className="rounded-xl border border-slate-200 p-4"><strong>400 Wh usable</strong><p>Assume 80% usable through the chosen output</p></div>
+        <div className="rounded-xl border border-slate-200 p-4"><strong>About 4 hours</strong><p>400 Wh ÷ 100 W of steady load</p></div>
+      </div>
+      <p>Check continuous output and startup surge separately. Actual runtime varies with output losses, idle draw, temperature and the load’s duty cycle.</p>
+      <a className="ods-text-link" href="#appliance-plan">Estimate runtime for your appliances ↓</a>
+    </section>
+  )}
   <section id="appliance-plan" className="ods-section"><header className="ods-section-header"><div><p className="ods-eyebrow">01 / Wh ÷ W = h</p><h2>{c(sceneCopy.lab)}</h2><p>{c(sceneCopy.labIntro)}</p></div></header>
    <div className="opg-draft-tools"><p role="status">{ready?c(launchCopy[saveStatus]):''}</p><button type="button" onClick={resetDraft}>{c(launchCopy.reset)}</button></div>
    <div className="opg-presets">{presets.map((p,i)=>{const Icon=[Tent,Laptop,Store][i];return <button type="button" key={p.id} aria-pressed={scenario===p.id} onClick={()=>choosePreset(p.id)}><Icon/><span>{c(p.name)}</span><small>{p.hours} h</small></button>;})}</div>{scenario?<p className="ods-note">{c(presets.find(p=>p.id===scenario).note)}</p>:<p className="ods-note">{c(sceneCopy.custom)}</p>}

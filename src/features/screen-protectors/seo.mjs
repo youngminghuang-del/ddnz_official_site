@@ -1,3 +1,4 @@
+import { bulkSupply, priceFactorsTable } from './wholesale-guidance.mjs';
 import { renderPriceComparison, renderComparisonActions, comparisonSchema } from './price-comparison.mjs';
 import {renderBear,renderFilmNavigator} from '../mobile-sourcing/bear-gallery.mjs';
 import {renderOFold} from '../mobile-sourcing/o-fold-gallery.mjs';
@@ -178,7 +179,7 @@ const productSummary = (anchors = false) => Object.entries(PRODUCTS).map(([id, p
 export function renderScreenProtectorBody(page) {
   if (!Object.hasOwn(ROUTES, page)) throw new Error(`Unknown screen protector page: ${page}`);
   let body;
-  if (page === 'home') body = '<header class="hero catalogue-hero"><div>' + heading(EN.home.title, EN.home.intro) + '<div class="actions">' + link('products', EN.home.compare) + '</div></div>' + renderEnglishFilmHeroMedia() + '</header>' + renderFilmNavigator() + renderBear() + renderOFold() + renderPrivacy28Showcase()
+  if (page === 'home') body = '<header class="hero catalogue-hero"><div>' + heading(EN.home.title, EN.home.intro) + '<div class="actions">' + link('products', EN.home.compare) + '</div></div>' + renderEnglishFilmHeroMedia() + '</header>' + bulkSupply + renderFilmNavigator() + renderBear() + renderOFold() + renderPrivacy28Showcase()
     + paragraph(EN.home.offersBody) + section(EN.home.videoLabel, paragraph(EN.home.credit) + paragraph(EN.home.transcript) + link('videos', VIDEO_COPY.watch))
     + EN.home.journey.map(([, title, description, target]) => section(title, paragraph(description) + link(target))).join('')
     + guideLinks() + section(EN.home.offersTitle, productSummary())
@@ -186,7 +187,7 @@ export function renderScreenProtectorBody(page) {
   if (page === 'products') body = heading(EN.product.title, EN.product.intro) + renderComparisonActions() + renderPriceComparison() + renderFilmNavigator() + renderBear() + renderOFold() + renderPrivacy28Showcase() + renderFilmEntry() + paragraph(EN.home.offersBody)
     + productSummary(true) + renderPrivacy001() + paragraph(EN.product.detailNote) + paragraph(EN.product.priceNote) + link('calculator');
   if (page === 'guides') body = heading(EN.guides.title, EN.guides.intro) + guideLinks() + checks(Object.keys(EN.requests)) + link('quote');
-  if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro)
+  if (page === 'prices') body = heading(EN.guides.priceTitle, EN.guides.priceIntro) + priceFactorsTable
     + section(EN.guides.factorsTitle, pairs(EN.guides.factors))
     + section(EN.guides.configuration, image(asset('001-kit-photo.jpg'), EN.guides.kit001) + image(asset('titan-kit.jpg'), EN.guides.kitTitan))
     + section(EN.guides.actions, EN.media.clips.slice(0, 2).map(clip).join(''))
