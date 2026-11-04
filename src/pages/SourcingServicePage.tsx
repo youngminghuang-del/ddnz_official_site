@@ -1,3 +1,4 @@
+import SpanishInspectionScope from '../features/sourcing-services/SpanishInspectionScope';
 import { russianConsolidationBreadcrumbs, englishSupplierSearch, russianInspectionBreadcrumbs, russianInspectionBrief } from '../features/sourcing-services/copy';
 import InspectionEvidence from '../features/sourcing-services/InspectionEvidence';
 import SupplierBuyingGuide from '../features/sourcing-services/SupplierBuyingGuide';
@@ -262,6 +263,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
+        {language === 'es' && kind === 'inspection-quality-control' && <SpanishInspectionScope quoteHref={quoteHref} />}
         {kind === 'inspection-quality-control' && <InspectionEvidence quoteHref={quoteHref} />}
         {kind === 'supplier-search' && <SupplierBuyingGuide quoteHref={quoteHref} />}
 
