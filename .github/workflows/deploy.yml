@@ -88,6 +88,9 @@ jobs:
           retention-days: 14
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Gate rendered blog structured data
+        run: python3 scripts/check_deployed_blog_schema.py dist --allow-live-baseline
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
