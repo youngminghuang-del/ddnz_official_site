@@ -32,7 +32,7 @@ const media = file => `/screen-protector-media/media/${file}`;
 export const SCREEN_PROTECTOR_SEO = Object.freeze({
   home: {
     title: 'Wholesale Screen Protectors from China | DDNZ Global',
-    description: 'Source wholesale screen protectors from China. Compare product options, model minimums and retail packaging, then prepare your sourcing brief.',
+    description: 'Order clear and privacy screen protectors direct from DDNZ’s factory. Check minimum orders by phone model and request a bulk quote.',
     image: media('factory-fixture-poster.jpg'),
     imageAlt: 'Glass pieces on a production fixture, filmed by the DDNZ team',
   },
