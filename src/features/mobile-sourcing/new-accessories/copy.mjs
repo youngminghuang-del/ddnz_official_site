@@ -182,7 +182,7 @@ export const accessoryCopy = {
   "heroIntro": {
     "en": "Source cases, screen protectors, earbuds, straps and charging accessories. DDNZ helps compare suppliers and factory quotations, confirm samples and coordinate your order in China.",
     "zh": "选购手机壳、保护膜、耳机、挂绳及充电配件。DDNZ 协助比较供应商与工厂报价、确认样品，并跟进中国采购订单。",
-    "es": "Compre fundas, protectores, auriculares, correas y accesorios de carga. DDNZ le ayuda a comparar proveedores y ofertas de fábrica, validar muestras y coordinar su pedido en China.",
+    "es": "DDNZ fabrica accesorios para celulares en China y los exporta directamente. Solicite una cotización de fábrica para su pedido mayorista de fundas y añada los accesorios complementarios que necesita para su mercado.",
     "ar": "اشتر الأغطية والواقيات والسماعات والأحزمة وإكسسوارات الشحن. تساعدك DDNZ في مقارنة الموردين وعروض المصانع واعتماد العينات ومتابعة الطلب في الصين.",
     "fr": "Achetez coques, protections, écouteurs, sangles et accessoires de charge. DDNZ vous aide à comparer fournisseurs et devis d’usines, valider les échantillons et suivre votre commande en Chine.",
     "pt": "Compre capas, películas, fones, alças e acessórios de carga. A DDNZ ajuda a comparar fornecedores e propostas de fábricas, aprovar amostras e acompanhar seu pedido na China.",

@@ -145,7 +145,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  const add=id=>{if(draft.rows.some(r=>r.id===id)){document.getElementById('buying-brief')?.scrollIntoView({behavior:'smooth'});return;}if(draft.rows.length>=100)return;const p=productById(id);setDraft(d=>({...d,rows:[...d.rows,{id,quantity:String(p.addQty||p.tiers?.[0][0]||100),model:p.group==='power'?p.sourceRecord.model:'',colours:''}]}));onAction('add_style');};
  return <main className={'ms-page ms-'+pageId} lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
  <nav className="ms-breadcrumbs" aria-label={c('home')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{c('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{c('products')}</a>{pageId!=='hub'&&<><span>/</span><a href={link('hub',locale)}>{c('hub')}</a></>}<span>/</span><span aria-current="page">{c(pageId)}</span></nav>
- <section className={'ms-hero'+(['hub','cases','straps'].includes(pageId)?' catalogue-hero':'')}><div><p className="ms-eyebrow">{copyFor(page.eyebrow,locale)}</p><h1>{pageId==='straps' && locale==='en'?'Wholesale Phone Lanyards, Straps & Charms from China':copyFor(pageId==='hub'?accessoryCopy.heroHeading:page.heading,locale)}</h1><p className="ms-lead">{copyFor(pageId==='hub'?accessoryCopy.heroIntro:page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?copyFor({en:'Build my sourcing request',es:'Preparar mi solicitud',ar:'إعداد طلب التوريد'},locale):pageId==='straps' && locale==='en'?'Browse styles and MOQ':c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#categories':'#buying-brief'} className="ms-secondary">{pageId==='hub'?copyFor(accessoryCopy.browse,locale):c('brief')} ↗</a></div>
+ <section className={'ms-hero'+(['hub','cases','straps'].includes(pageId)?' catalogue-hero':'')}><div><p className="ms-eyebrow">{copyFor(page.eyebrow,locale)}</p><h1>{pageId==='straps' && locale==='en'?'Wholesale Phone Lanyards, Straps & Charms from China':copyFor(pageId==='hub'?accessoryCopy.heroHeading:page.heading,locale)}</h1><p className="ms-lead">{copyFor(pageId==='hub'?accessoryCopy.heroIntro:page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?copyFor({en:'Build my sourcing request',es:'Solicitar cotización de fábrica',ar:'إعداد طلب التوريد'},locale):pageId==='straps' && locale==='en'?'Browse styles and MOQ':c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#categories':'#buying-brief'} className="ms-secondary">{pageId==='hub'?copyFor(accessoryCopy.browse,locale):c('brief')} ↗</a></div>
  {pageId === 'hub' && locale === 'en' && <p className="ms-lead">
    For a mixed order, list the accessory categories, compatible device models, quantities per item and packaging requirements.
  </p>}
@@ -156,12 +156,46 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  {pageId!=='hub'&&<MobileCategoryLinks locale={locale} current={pageId}/>}
  {pageId==='hub'&&<nav id="categories" className="ms-range-nav" aria-label={copyFor(accessoryCopy.browse,locale)}><span className="ms-range-nav-label">{copyFor(accessoryCopy.browse,locale)}</span>{[['case-selection',ui.cases],['strap-selection',ui.straps],['film-selection',ui.film],['audio-selection',accessoryCopy.audio],['power-selection',accessoryCopy.gear]].map(([target,label])=><a href={'#'+target} key={target}>{copyFor(label,locale)} ↓</a>)}</nav>}
 
+ {pageId === 'hub' && locale === 'es' && (
+   <section className="ms-section" id="pedido-mixto">
+     <div className="ms-section-head">
+       <div>
+         <h2>Fabricación propia, pedidos mixtos y exportación</h2>
+         <p>Consulte nuestra línea de fundas de fabricación propia. Cotizamos por modelo, acabado y cantidad, y confirmamos las opciones de personalización y empaque para su pedido.</p>
+         <p>Puede complementar el pedido con protectores de pantalla, correas, cables, cargadores, baterías externas y accesorios de audio. La cotización distingue las referencias de fabricación propia de las complementarias e indica el alcance de la entrega de exportación.</p>
+       </div>
+     </div>
+     <figure className="m-0">
+       <div className="grid grid-cols-1 gap-3 min-[420px]:grid-cols-3">
+         {[
+           ['/images/product-showcase/mobile/phone-case-colorway-proof-v1.webp', 'Fundas y muestras de color'],
+           ['/images/product-showcase/mobile/privacy28-product.jpg', 'Protectores de pantalla'],
+           ['/images/product-showcase/mobile/power-bank-final-sample-v1.webp', 'Baterías externas'],
+         ].map(([src, label]) => (
+           <div key={src} className="overflow-hidden rounded-xl border border-slate-200 bg-white">
+             <img className="block aspect-[4/3] w-full bg-slate-50 object-contain" src={src} alt={label} loading="lazy" decoding="async"/>
+             <p className="px-3 py-2 text-sm font-semibold">{label}</p>
+           </div>
+         ))}
+       </div>
+       <figcaption className="mt-2 text-sm">Fotos de muestras para preparar un surtido de accesorios.</figcaption>
+     </figure>
+     <h3 className="mt-6">Qué indicar para cotizar un pedido mixto</h3>
+     <ul className="mt-2 list-disc space-y-1 pl-5">
+       <li>Categorías, referencias, colores y modelos de teléfono compatibles.</li>
+       <li>Cantidad por referencia y variante.</li>
+       <li>Marca, etiquetas y tipo de empaque.</li>
+       <li>País y ciudad de destino.</li>
+     </ul>
+     <a className="ms-button mt-4" href="#buying-brief">Cotizar mi pedido mixto <span aria-hidden="true">↓</span></a>
+   </section>
+ )}
  {pageId==='hub'&&<BearFeature locale={locale} onSelect={add}/>}
  {pageId==='hub'&&<OFoldFeature locale={locale} selected={draft.rows.some(r=>r.id==='privacy-o-fold')} onSelect={add}/>}
  {pageId==='hub'&&<Privacy28Feature locale={locale} selected={draft.rows.some(r=>r.id==='privacy28-hd')} onSelect={add}/>}
  {pageId==='hub'&&<ShenzhenSourcing locale={locale}/>}
  {pageId==='hub'&&<AccessoryShowcase locale={locale} draft={draft} onSelect={add}/>}
- {pageId==='hub'&&<FactorySourcing locale={locale}/>}
+ {pageId==='hub'&&locale!=='es'&&<FactorySourcing locale={locale}/>}
  {pageId==='cases'&&<div onClick={event=>{
    if(locale!=='en'||filter==='all'||event.button!==0||event.metaKey||event.ctrlKey||event.shiftKey||event.altKey)return;
    const anchor=event.target.closest('a[href^="#style-"]');
@@ -180,7 +214,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  {storageFailed&&<p role="alert">{copyFor(mixedCopy.storage,locale)}</p>}
  <Brief pageId={pageId} draft={draft} setDraft={setDraft} locale={locale} onPrivacy={onPrivacy} onAction={onAction}/>
  <QuoteTable products={quoted} locale={locale} qty={draft.comparisonQty} onQuantity={v=>{setDraft(d=>({...d,comparisonQty:v}));onAction('compare_quantity');}}/>
- {(pageId==='compare'||pageId==='hub')&&<SupplierComparison locale={locale} pageId={pageId} onRequest={requestInspection}/>}
+ {(pageId==='compare'||(pageId==='hub'&&locale!=='es'))&&<SupplierComparison locale={locale} pageId={pageId} onRequest={requestInspection}/>}
  {pageId!=='compare'&&<section className="ms-section ms-editorial" id="control"><h2>{c('checks')}</h2><div>{editorial[pageId].map(([title,body],i)=><article key={i}><span className="ms-step">0{i+1}</span><h3>{copyFor(title,locale)}</h3><p>{copyFor(body,locale)}</p></article>)}</div>{pageId==='cases'&&<a className="ms-secondary" href={link('compare',locale)}>{c('compare')} ↗</a>}</section>}
  {pageId!=='straps'&&<OrderChecks locale={locale} onAction={onAction} onRequest={requestInspection}/>}
  <Calculator locale={locale} input={draft.calculator} onChange={v=>setDraft(d=>({...d,calculator:v}))} onAction={onAction}/>
