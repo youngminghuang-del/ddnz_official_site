@@ -1,3 +1,4 @@
+import suezNovemberSchema from '../data/suez-november-schema.json';
 import polandPhoneCaseGpsrSchema from '../data/poland-phone-case-gpsr-schema.json';
 import euPhoneCaseTrialSchema from '../data/eu-phone-case-trial-schema.json';
 import gulfBarBlenderSchema from '../data/gulf-bar-blender-schema.json';
@@ -270,6 +271,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
     }
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(latamLclQuoteSchema).replace(/\/+$/, '')) {
       finalSchema = latamLclQuoteSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(suezNovemberSchema).replace(/\/+$/, '')) {
+      finalSchema = suezNovemberSchema;
     }
 
     // Create script tag and append to head
