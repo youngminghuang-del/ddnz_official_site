@@ -1,3 +1,4 @@
+import polandPhoneCaseGpsrSchema from '../src/data/poland-phone-case-gpsr-schema.json';
 import euPhoneCaseTrialSchema from '../src/data/eu-phone-case-trial-schema.json';
 import { addGulfRefrigerationSelection } from '../src/lib/gulfRefrigerationSelection';
 import SpanishInspectionScope from '../src/features/sourcing-services/SpanishInspectionScope';
@@ -862,7 +863,8 @@ function injectSeoMeta(
     'ar': 'ar',
     'pt': 'pt',
     'tr': 'tr',
-    'id': 'id'
+    'id': 'id',
+    'pl': 'pl'
   };
   const targetLang = lang === 'pt' && relPath === 'shipping-from-china-to-brazil' ? 'pt-BR' : htmlLangMap[lang] || 'en';
   output = output.replace(/<html lang="[^"]*"/i, `<html lang="${targetLang}"`);
@@ -1291,7 +1293,7 @@ ${alternates.map((alternate) => `    <link rel="alternate" hreflang="${alternate
     };
     output = output.replace(
       /<\/head>/i,
-      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(euPhoneCaseTrialSchema).replace(/\/+$/, '') ? euPhoneCaseTrialSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(gulfBarBlenderSchema).replace(/\/+$/, '') ? gulfBarBlenderSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(latamLclQuoteSchema).replace(/\/+$/, '') ? latamLclQuoteSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterPartsSchema).replace(/\/+$/, '') ? egyptScooterPartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(magneticCaseWholesaleSchema).replace(/\/+$/, '') ? magneticCaseWholesaleSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialIceMachineSchema).replace(/\/+$/, '') ? commercialIceMachineSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
+      `  <script id="schema-jsonld-static-blog" type="application/ld+json">${JSON.stringify(canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(polandPhoneCaseGpsrSchema).replace(/\/+$/, '') ? polandPhoneCaseGpsrSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(euPhoneCaseTrialSchema).replace(/\/+$/, '') ? euPhoneCaseTrialSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(gulfBarBlenderSchema).replace(/\/+$/, '') ? gulfBarBlenderSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(latamLclQuoteSchema).replace(/\/+$/, '') ? latamLclQuoteSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterPartsSchema).replace(/\/+$/, '') ? egyptScooterPartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(magneticCaseWholesaleSchema).replace(/\/+$/, '') ? magneticCaseWholesaleSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialIceMachineSchema).replace(/\/+$/, '') ? commercialIceMachineSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialDishwasherSchema).replace(/\/+$/, '') ? commercialDishwasherSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(commercialMixerSchema).replace(/\/+$/, '') ? commercialMixerSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(kitchenSparePartsSchema).replace(/\/+$/, '') ? kitchenSparePartsSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(istanbulKitchenSchema).replace(/\/+$/, '') ? istanbulKitchenSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterSchema).replace(/\/+$/, '') ? egyptScooterSchema : canonicalUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptLclSchema).replace(/\/+$/, '') ? egyptLclSchema : canonicalUrl.replace(/\/+$/, '') === solarCableSchema['@graph'].find(node => node['@type'] === 'WebPage')!.url!.replace(/\/+$/, '') ? solarCableSchema : canonicalUrl.replace(/\/+$/, '') === indonesiaKitchenCostSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...indonesiaKitchenCostSchema } : canonicalUrl.replace(/\/+$/, '') === cairoMobileWholesaleSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...cairoMobileWholesaleSchema } : canonicalUrl.replace(/\/+$/, '') === homeStorageMarketSchema.url.replace(/\/+$/, '') ? { ...blogSchema, ...homeStorageMarketSchema } : blogSchema).replace(/</g, '\\u003c')}</script>\n</head>`
     );
   }
 
@@ -1753,7 +1755,7 @@ function injectStaticRouteContent(
     const article = post as BlogPost;
     const locale = readingLocale(lang);
     const ui = articleUi[locale as keyof typeof articleUi] || articleUi.en;
-    const prefix = locale === 'en' || locale === 'id' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
+    const prefix = locale === 'en' || locale === 'id' || locale === 'pl' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
     staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
       post: article, language: locale,
       articleHtml: { __html: addGulfRefrigerationSelection(post.slug, addSpanishCaseQuote(post.slug, addLatinAmericaFreightTiming(post.slug, addAlibabaBuyingGuidance(post.slug, addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))))))) },
@@ -2309,6 +2311,3 @@ Sitemap: https://www.ddnzglobal.com/sitemap.xml
 run();
 import FreightReleaseContent, { freightReleaseMetadata, freightReleasePaths, modernizedFreightServicePaths } from '../src/features/freight/FreightReleaseContent';
 import type { Language } from '../src/i18n/translations';
-
-
-

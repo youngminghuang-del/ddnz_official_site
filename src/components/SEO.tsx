@@ -16,7 +16,7 @@ interface SEOProps {
   type?: 'website' | 'article';
   publishedTime?: string;
   modifiedTime?: string;
-  contentLanguage?: Language | 'id';
+  contentLanguage?: Language | 'id' | 'pl';
 }
 
 export default function SEO({

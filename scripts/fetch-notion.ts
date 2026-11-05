@@ -1,3 +1,4 @@
+import polandPhoneCaseGpsrRelease from '../src/data/polandPhoneCaseGpsrRelease.json';
 import euPhoneCaseTrialRelease from '../src/data/euPhoneCaseTrialRelease.json';
 import gulfBarBlenderRelease from '../src/data/gulfBarBlenderRelease.json';
 import latamLclQuoteRelease from '../src/data/latamLclQuoteRelease.json';
@@ -550,7 +551,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === euPhoneCaseTrialRelease.slug
+      const rendered = slug === polandPhoneCaseGpsrRelease.slug
+        ? { html: polandPhoneCaseGpsrRelease.content, toc: polandPhoneCaseGpsrRelease.toc, wordCount: polandPhoneCaseGpsrRelease.wordCount, readMinutes: polandPhoneCaseGpsrRelease.readMinutes }
+        : slug === euPhoneCaseTrialRelease.slug
         ? { html: euPhoneCaseTrialRelease.content, toc: euPhoneCaseTrialRelease.toc, wordCount: euPhoneCaseTrialRelease.wordCount, readMinutes: euPhoneCaseTrialRelease.readMinutes }
         : slug === gulfBarBlenderRelease.slug
         ? { html: gulfBarBlenderRelease.content, toc: gulfBarBlenderRelease.toc, wordCount: gulfBarBlenderRelease.wordCount, readMinutes: gulfBarBlenderRelease.readMinutes }
@@ -594,7 +597,7 @@ async function run() {
         language,
         translationGroup,
         date,
-        lastEdited: slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
+        lastEdited: slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.articleDate : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
         summary,
         thumbnailUrl,
         content: rendered.html,
@@ -611,7 +614,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.reviewer : slug === gulfBarBlenderRelease.slug ? gulfBarBlenderRelease.reviewer : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.reviewer : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.reviewer : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.reviewer : slug === gulfBarBlenderRelease.slug ? gulfBarBlenderRelease.reviewer : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.reviewer : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
@@ -675,6 +678,3 @@ async function run() {
 }
 
 run();
-
-
-

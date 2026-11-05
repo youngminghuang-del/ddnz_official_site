@@ -78,6 +78,16 @@ await check('keeps Indonesian articles distinct from English routes', () => {
     [{hrefLang: 'id', href: 'https://www.ddnzglobal.com/id/blog/dapur/'}]);
 });
 
+await check('keeps Polish articles on their own canonical route', () => {
+  const post = {id: 'pl-cases', slug: 'phone-cases', language: 'pl', status: 'Published'};
+  assert.equal(normalizeArticleLocale('pl-PL'), 'pl');
+  assert.equal(articleRoutePath(post), '/pl/blog/phone-cases/');
+  assert.equal(findArticleByRoute([post], 'en', 'phone-cases'), undefined);
+  assert.equal(findArticleByRoute([post], 'pl', 'phone-cases')?.id, 'pl-cases');
+  assert.deepEqual(getArticleHreflangSet(post, [post]).alternates,
+    [{hrefLang: 'pl', href: 'https://www.ddnzglobal.com/pl/blog/phone-cases/'}]);
+});
+
 await check('resolves the same slug by route locale instead of first match', () => {
   assert.equal(findArticleByRoute(translatedPosts, 'en', 'shared-guide')?.id, 'en-id');
   assert.equal(findArticleByRoute(translatedPosts, 'zh', 'shared-guide')?.id, 'zh-id');

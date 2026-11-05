@@ -34,7 +34,11 @@ export type ArticleUi = {
   freightCta: string;
 };
 
-export const articleUi: Record<Language | 'id', ArticleUi> = {
+export const articleUi: Record<Language | 'id' | 'pl', ArticleUi> = {
+  pl: {
+    loading:'Ładowanie artykułu…', missing:'Nie znaleziono artykułu', back:'Wróć na stronę główną', home:'Strona główna', insights:'Artykuły', published:'Opublikowano', minRead:'min czytania', verified:'Sprawdzono', updated:'Zaktualizowano', reviewedBy:'Sprawdził', evidenceRecords:'Materiały źródłowe', linked:'powiązane', legacyRecord:'Archiwum', lastVerified:'Ostatnia weryfikacja', lastUpdated:'Ostatnia aktualizacja', onThisPage:'Spis treści', nextStep:'Zaplanuj zamówienie próbne', ctaTitle:'Wyślij listę modeli i ilości do DDNZ.', ctaBody:'Podaj modele telefonów, kolory, ilości, sposób pakowania i miejsce dostawy w Polsce. Ustalimy warunki małego zamówienia dla wybranych wariantów.', backInsights:'Wróć do artykułów', automatedReview:'Przegląd redakcyjny DDNZ', editorialDesk:'Redakcja DDNZ', legacyEditorial:'Archiwum redakcyjne', commercialCta:'Omów zakup wyposażenia kuchni', outdoorCta:'Omów zamówienie', sourcingCta:'Omów zamówienie próbne', freightCta:'Zapytaj o transport',
+  },
+
   id: {
     loading: 'Memuat artikel...', missing: 'Artikel tidak ditemukan', back: 'Kembali ke beranda', home: 'Beranda', insights: 'Artikel', published: 'Diterbitkan', minRead: 'menit baca', verified: 'Diperiksa', updated: 'Diperbarui', reviewedBy: 'Ditinjau oleh', evidenceRecords: 'Sumber pendukung', linked: 'terkait', legacyRecord: 'Arsip', lastVerified: 'Terakhir diperiksa', lastUpdated: 'Terakhir diperbarui', onThisPage: 'Daftar isi', nextStep: 'Rencanakan dapur Anda', ctaTitle: 'Mulai dari denah, menu, dan anggaran.', ctaBody: 'Kirim denah, konsep menu, kota tujuan, dan target pembukaan kepada DDNZ. Kami membantu desain layout, pembagian fungsi, pemilihan peralatan, dan pengadaan dari China. Satu outlet pun dapat ditangani.', backInsights: 'Kembali ke artikel', automatedReview: 'Tinjauan editorial DDNZ', editorialDesk: 'Tim editorial DDNZ', legacyEditorial: 'Arsip editorial', commercialCta: 'Diskusikan desain dapur dengan DDNZ', outdoorCta: 'Diskusikan pengadaan', sourcingCta: 'Diskusikan pengadaan', freightCta: 'Diskusikan pengiriman',
   },
@@ -132,6 +136,7 @@ export function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
 }
 
 export const readingLabels: Record<string, string[]> = {
+ pl:['Poradnik zakupowy','Porównanie','Rynek','Zakupy','Rynek','Logistyka projektowa','Transport kolejowy','Łańcuch dostaw','Zgodność produktu','Świat','Ameryka Łacińska','Afryka','Europa','Bliski Wschód','Azja Centralna','Ameryka Północna','Do góry'],
  en:['Buyer guide','Comparison','Market update','Sourcing','Market','Project logistics','Railway','Supply chain strategy','Compliance','Global','Latin America','Africa','Europe','Middle East','Central Asia','North America','Back to top'],
  zh:['采购指南','产品比较','市场观察','产品采购','市场','项目物流','铁路运输','供应链规划','进口文件','全球','拉丁美洲','非洲','欧洲','中东','中亚','北美','返回顶部'],
  es:['Guía de compra','Comparativa','Actualidad del mercado','Abastecimiento','Mercado','Logística de proyectos','Transporte ferroviario','Estrategia de suministro','Documentación de importación','Global','Latinoamérica','África','Europa','Oriente Medio','Asia Central','Norteamérica','Volver arriba'],
@@ -154,4 +159,4 @@ export function readingDate(value:string,locale:string){
  return new Intl.DateTimeFormat(locale==='zh'?'zh-CN':locale,{day:'numeric',month:'short',year:'numeric',timeZone:'UTC'}).format(date);
 }
 
-export const articleImageLabels:Record<string,[string,string]>={en:['View image','Close image'],zh:['查看大图','关闭图片'],es:['Ampliar imagen','Cerrar imagen'],fr:['Agrandir l’image','Fermer l’image'],pt:['Ampliar imagem','Fechar imagem'],ru:['Открыть изображение','Закрыть изображение'],tr:['Görseli büyüt','Görseli kapat'],ar:['تكبير الصورة','إغلاق الصورة'],id:['Perbesar gambar','Tutup gambar']};
+export const articleImageLabels:Record<string,[string,string]>={pl:['Powiększ zdjęcie','Zamknij zdjęcie'],en:['View image','Close image'],zh:['查看大图','关闭图片'],es:['Ampliar imagen','Cerrar imagen'],fr:['Agrandir l’image','Fermer l’image'],pt:['Ampliar imagem','Fechar imagem'],ru:['Открыть изображение','Закрыть изображение'],tr:['Görseli büyüt','Görseli kapat'],ar:['تكبير الصورة','إغلاق الصورة'],id:['Perbesar gambar','Tutup gambar']};

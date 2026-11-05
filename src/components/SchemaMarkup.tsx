@@ -1,3 +1,4 @@
+import polandPhoneCaseGpsrSchema from '../data/poland-phone-case-gpsr-schema.json';
 import euPhoneCaseTrialSchema from '../data/eu-phone-case-trial-schema.json';
 import gulfBarBlenderSchema from '../data/gulf-bar-blender-schema.json';
 import latamLclQuoteSchema from '../data/latam-lcl-quote-schema.json';
@@ -258,6 +259,9 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(egyptScooterPartsSchema).replace(/\/+$/, '')) {
       finalSchema = egyptScooterPartsSchema;
     }
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(polandPhoneCaseGpsrSchema).replace(/\/+$/, '')) {
+      finalSchema = polandPhoneCaseGpsrSchema;
+    }
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(euPhoneCaseTrialSchema).replace(/\/+$/, '')) {
       finalSchema = euPhoneCaseTrialSchema;
     }
@@ -286,6 +290,3 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
   return null;
 }
-
-
-
