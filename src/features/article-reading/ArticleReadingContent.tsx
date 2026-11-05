@@ -13,7 +13,7 @@ function Contents({items,label}:{items:ArticleTocItem[];label:string}){
 export default function ArticleReadingContent({post,language,articleHtml,primaryCta,discovery,onCta,onDiscovery}:Props){
  const locale=readingLocale(language),ui=articleUi[locale as keyof typeof articleUi]||articleUi.en,root=useRef<HTMLDivElement>(null);
  const viewer=useRef<HTMLDialogElement>(null),viewerImage=useRef<HTMLImageElement>(null),viewerCaption=useRef<HTMLParagraphElement>(null),lastFocus=useRef<HTMLElement|null>(null),imageLabels=articleImageLabels[locale]||articleImageLabels.en;
- const prefix=locale==='id'?'':articleLocalePrefix(locale),toc=post.toc?.filter(t=>t.level===2)||[],items=toc.length?toc:(post.toc||[]),showToc=items.length>=3;
+ const prefix=locale==='id'||locale==='pl'?'':articleLocalePrefix(locale),toc=post.toc?.filter(t=>t.level===2)||[],items=toc.length?toc:(post.toc||[]),showToc=items.length>=3;
  // Insert between the first-order selection section and the landed-cost section.
  const costHeading = '<h2 id="احسب-تكلفة-وصول-القطعة-ا-لى-القاهرة-قبل-ا-ن-تقرر">';
  const buyingLinksAt = locale === 'ar' && post.slug === 'cairo-mobile-accessories-wholesale-attaba-china'

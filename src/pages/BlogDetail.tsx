@@ -35,9 +35,12 @@ export default function BlogDetail() {
   const progressSent = useRef(new Set<number>());
   const { language: navigationLanguage } = useLanguage();
   const location = useLocation();
-  const language = location.pathname.startsWith('/id/blog/') ? 'id' : navigationLanguage;
+  const language = location.pathname.startsWith('/pl/blog/') ? 'pl' : location.pathname.startsWith('/id/blog/') ? 'id' : navigationLanguage;
+  useEffect(() => {
+    if (language === 'pl') document.documentElement.lang = 'pl';
+  }, [language]);
   // Indonesian is authored for articles; the rest of the site retains its existing navigation.
-  const prefix = language === 'id' ? '' : articleLocalePrefix(language);
+  const prefix = language === 'id' || language === 'pl' ? '' : articleLocalePrefix(language);
   const ui = articleUi[language];
 
   useEffect(() => {

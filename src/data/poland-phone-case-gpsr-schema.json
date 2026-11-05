@@ -1,0 +1,231 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#webpage",
+      "name": "Import etui na telefon z Chin do Polski — dokumenty, oznakowanie GPSR i identyfikacja partii",
+      "description": "Import etui z Chin do Polski. Kto przygotowuje CI, PL i dokument transportowy, kto podaje EORI i jak przechowywać dokumentację GPSR.",
+      "inLanguage": "pl",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-1"
+      },
+      "url": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#article",
+      "headline": "Import etui na telefon z Chin do Polski — dokumenty, oznakowanie GPSR i identyfikacja partii",
+      "description": "Import etui z Chin do Polski. Kto przygotowuje CI, PL i dokument transportowy, kto podaje EORI i jak przechowywać dokumentację GPSR.",
+      "inLanguage": "pl",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Polish phone accessory importers and wholesalers"
+      },
+      "citation": [
+        "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX%3A02023R0988-20260529",
+        "https://uokik.gov.pl/bezpieczenstwo-produktow-pytania-i-odpowiedzi",
+        "https://podatki.gov.pl/informacje-o-cle/podstawowe-informacje-o-cle/informacje-dla-przedsiebiorcow/eori",
+        "https://puesc.gov.pl/documents/d/guest/ais-import-plus-cci-faq-pytania-i-odpowiedzi-26-06-2025",
+        "https://eur-lex.europa.eu/eli/C/2025/6233/oj/eng/pdf",
+        "https://www.trade.gov/common-export-documents"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#faq"
+        }
+      ],
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-1"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-2"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-3"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-4"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-5"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-6"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/",
+      "datePublished": "2026-11-05T13:58:28+08:00",
+      "dateModified": "2026-11-05T13:58:28+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#faq",
+      "inLanguage": "pl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy kod kreskowy może być identyfikatorem produktu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Może przenosić dane identyfikacyjne, jeżeli pozwala rozpoznać produkt zgodnie z wymaganiami. Sprawdź, co rzeczywiście koduje i czy oznaczenie widoczne dla konsumenta spełnia wymagania identyfikacji i czytelności."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy na każdym etui trzeba drukować numer partii?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "GPSR dopuszcza typ, numer partii, numer seryjny lub inny element identyfikacyjny. Ustal z dostawcą, jakie oznaczenie zastosuje i gdzie je umieści. Jeśli dostawca podaje partię, powiąż ją z wewnętrzną ewidencją."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy jedna oferta może obejmować kilka kolorów?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sprawdź zdjęcie, typ i dane identyfikacyjne dla każdego wybieranego wariantu. Odpowiednie dane podmiotów i wymagane ostrzeżenia powinny być wyraźnie widoczne w ofercie."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#label-checklist",
+      "name": "Lista kontroli produktu i oznakowania",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Identyfikacja produktu"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Dane podmiotów"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Dokumentacja bezpieczeństwa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Oferta internetowa"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Odbiór dostawy"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Import etui z Chin do Polski",
+          "item": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-1",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/phone-cases-sorted-cartons.jpg",
+      "name": "Etui w przezroczystych woreczkach posegregowane w opisanych pojemnikach na regałach, obok otwartych kartonów",
+      "description": "Etui w przezroczystych woreczkach posegregowane w opisanych pojemnikach na regałach, obok otwartych kartonów",
+      "inLanguage": "pl",
+      "width": 1290,
+      "height": 2054
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-2",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/phone-cases-neutral-bags.jpg",
+      "name": "Dwa przezroczyste etui w prostych woreczkach z niebieskim zamknięciem i białą wkładką ochronną",
+      "description": "Dwa przezroczyste etui w prostych woreczkach z niebieskim zamknięciem i białą wkładką ochronną",
+      "inLanguage": "pl",
+      "width": 900,
+      "height": 819
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-3",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/phone-case-model-colour-labels.jpg",
+      "name": "Opakowania etui w sześciu kolorach z widocznymi naklejkami modelu telefonu i nazwami kolorów",
+      "description": "Opakowania etui w sześciu kolorach z widocznymi naklejkami modelu telefonu i nazwami kolorów",
+      "inLanguage": "pl",
+      "width": 1384,
+      "height": 936
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-4",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/document-pi-sample.pl.svg",
+      "name": "Przykładowa faktura pro forma PI, fikcyjne zamówienie dwóch etui o łącznej ilości 200 sztuk i wartości 240 USD",
+      "description": "Przykładowa faktura pro forma PI, fikcyjne zamówienie dwóch etui o łącznej ilości 200 sztuk i wartości 240 USD",
+      "inLanguage": "pl",
+      "width": 1200,
+      "height": 950
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-5",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/document-ci-sample.pl.svg",
+      "name": "Przykładowa faktura handlowa CI z tymi samymi fikcyjnymi kodami, ilościami i wartościami co PI",
+      "description": "Przykładowa faktura handlowa CI z tymi samymi fikcyjnymi kodami, ilościami i wartościami co PI",
+      "inLanguage": "pl",
+      "width": 1200,
+      "height": 950
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/#photo-6",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/import-phone-cases-poland-gpsr-traceability/document-pl-sample.pl.svg",
+      "name": "Przykładowa lista pakowa PL dla dwóch kartonów z 200 etui, z kodami, ilościami i fikcyjnymi wagami oraz wymiarami",
+      "description": "Przykładowa lista pakowa PL dla dwóch kartonów z 200 etui, z kodami, ilościami i fikcyjnymi wagami oraz wymiarami",
+      "inLanguage": "pl",
+      "width": 1200,
+      "height": 950
+    }
+  ]
+}
