@@ -1,0 +1,177 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#webpage",
+      "name": "Red Sea and Suez Shipping Update: November 2026 Sailings to Check Before Booking",
+      "description": "Check November 2026 Red Sea and Suez service plans, conflicting vessel dates and the routing details to confirm before booking cargo from China.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#image-cover"
+      },
+      "url": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#article",
+      "headline": "Red Sea and Suez Shipping Update: November 2026 Sailings to Check Before Booking",
+      "description": "Check November 2026 Red Sea and Suez service plans, conflicting vessel dates and the routing details to confirm before booking cargo from China.",
+      "inLanguage": "en",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Importers and exporters booking China-origin freight"
+      },
+      "citation": [
+        "https://www.maersk.com/news/articles/2026/11/02/me1-gemini-service-transitions-to-suez-route",
+        "https://www.hapag-lloyd.com/pt/services-information/news/2026/11/here-s-an-update-for-our-indian-ocean-service-ios.html",
+        "https://www.portnews.it/en/premier-alliance-back-to-suez/",
+        "https://www.one-line.com/en/local-information/in/news/advisory-premier-alliance-update-md1-and-ms2-service-routing-change",
+        "https://www.linerlytica.com/allPostList/"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#faq"
+        }
+      ],
+      "creativeWorkStatus": "Published",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#image-cover"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#image-schedule"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/",
+      "datePublished": "2026-11-06T00:15:13+08:00",
+      "dateModified": "2026-11-06T00:15:13+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Do the November dates confirm that these vessels have passed through Suez?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. They are published departure or first-port schedule entries. Ask the carrier for the current voyage status and expected canal transit when checking your shipment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Which date should I use when two sources disagree?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Use the latest schedule confirmed by the carrier handling your booking. Give them the vessel, voyage, loading port and booking reference, and ask them to reconcile the differing dates before you arrange cargo delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will a return to Suez automatically reduce my freight bill?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No automatic saving is established by these notices. Request a fresh quote for the same cargo and delivery scope, including applicable surcharges, local charges and quote validity, before comparing the total."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#schedule-checklist",
+      "name": "November service schedule entries",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ME1 / IOS westbound — ATLANTA EXPRESS 644W"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "MD1 — YM TRUST"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "OGRD — EVER SUPERB"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "ME1 / IOS eastbound — SAVANNAH EXPRESS 644E"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "MS2 — ONE SYNERGY"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Red Sea and Suez Shipping Update: November 2026 Sailings to Check Before Booking"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#image-cover",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/red-sea-suez-shipping-update-november-2026/red-sea-suez-cover.png",
+      "description": "Editorial illustration of a container ship for the November 2026 Red Sea and Suez shipping update",
+      "inLanguage": "en",
+      "width": 1672,
+      "height": 941,
+      "url": "https://www.ddnzglobal.com/images/posts/red-sea-suez-shipping-update-november-2026/red-sea-suez-cover.png"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/red-sea-suez-shipping-update-november-2026/#image-schedule",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/red-sea-suez-shipping-update-november-2026/november-schedule.en.png",
+      "description": "November 2026 Red Sea and Suez schedule infographic showing five entries, source differences and booking checks",
+      "inLanguage": "en",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://www.ddnzglobal.com/images/posts/red-sea-suez-shipping-update-november-2026/november-schedule.en.png"
+    }
+  ]
+}
