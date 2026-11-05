@@ -34,6 +34,7 @@ class CopyParser(HTMLParser):
         if self.capture!='title':self.body.append(data)
 
 LEXICON={
+ 'pl':(r'chin',r'import|zakup|zamów|hurt|dostaw|kontrol|konsolid|eksport'),
  'id':(r'china|tiongkok',r'pengadaan|beli|pembelian|pemasok|impor|ekspor'),
  'en':(r'\bchina\b|\bchinese\b',r'\b(source|sourc\w+|buy|buying|wholesale|purchas\w+|suppliers?|inspection|consolidation|export)\b'),
  'es':(r'china|chinos?',r'compr|adqui|mayor|abastec|proveedor|inspecci|consolida|export|sourcing'),
