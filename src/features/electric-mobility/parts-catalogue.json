@@ -1,0 +1,657 @@
+[
+  {
+    "id": "KP-001",
+    "slug": "charge-port",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "充电口",
+      "en": "Charging port"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "DC 5.5 × 2.1 mm",
+    "package": {
+      "cm": [
+        15,
+        10,
+        5
+      ],
+      "grams": 40
+    },
+    "image": "/images/scooter-parts/charge-port.webp"
+  },
+  {
+    "id": "KP-002",
+    "slug": "throttle",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "加速指拨",
+      "en": "Thumb throttle"
+    },
+    "models": [
+      "G2",
+      "G3",
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        5
+      ],
+      "grams": 40
+    },
+    "image": "/images/scooter-parts/throttle.webp"
+  },
+  {
+    "id": "KP-003",
+    "slug": "g4-display-mainboard",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示主板（有锁）",
+      "en": "Display mainboard — lock version"
+    },
+    "models": [
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        2
+      ],
+      "grams": 70
+    },
+    "image": null
+  },
+  {
+    "id": "KP-004",
+    "slug": "g2-display-mainboard",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示控制主板",
+      "en": "Display control mainboard"
+    },
+    "models": [
+      "G2"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        2
+      ],
+      "grams": 70
+    },
+    "image": null
+  },
+  {
+    "id": "KP-005",
+    "slug": "g3-controller-a",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "控制器 A",
+      "en": "Controller A"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "electrical",
+    "spec": "A",
+    "package": {
+      "cm": [
+        15,
+        10,
+        3
+      ],
+      "grams": 110
+    },
+    "image": "/images/scooter-parts/g3-controller-a.webp"
+  },
+  {
+    "id": "KP-006",
+    "slug": "g3-controller-b",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "控制器 B",
+      "en": "Controller B"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "electrical",
+    "spec": "B",
+    "package": {
+      "cm": [
+        15,
+        10,
+        3
+      ],
+      "grams": 110
+    },
+    "image": null
+  },
+  {
+    "id": "KP-007",
+    "slug": "display-panel",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示板",
+      "en": "Display panel"
+    },
+    "models": [
+      "G2",
+      "G3",
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        3
+      ],
+      "grams": 110
+    },
+    "image": null
+  },
+  {
+    "id": "KP-008",
+    "slug": "g2-display-assembly",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示屏组件",
+      "en": "Display assembly"
+    },
+    "models": [
+      "G2"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        21,
+        13,
+        10
+      ],
+      "grams": 530
+    },
+    "image": null
+  },
+  {
+    "id": "KP-009",
+    "slug": "g3-display-assembly",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示屏组件",
+      "en": "Display assembly"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        21,
+        13,
+        10
+      ],
+      "grams": 530
+    },
+    "image": "/images/scooter-parts/g3-display-assembly.webp"
+  },
+  {
+    "id": "KP-010",
+    "slug": "g4-display-assembly",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "显示屏组件",
+      "en": "Display assembly"
+    },
+    "models": [
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        21,
+        13,
+        10
+      ],
+      "grams": 530
+    },
+    "image": null
+  },
+  {
+    "id": "KP-011",
+    "slug": "rear-fender-reflector",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "后挡泥板＋反光片",
+      "en": "Rear fender with reflector"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        16,
+        8,
+        5
+      ],
+      "grams": 200
+    },
+    "image": "/images/scooter-parts/rear-fender-reflector.webp"
+  },
+  {
+    "id": "KP-012",
+    "slug": "rear-fender",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "后挡泥板（无反光片）",
+      "en": "Rear fender without reflector"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        16,
+        8,
+        5
+      ],
+      "grams": 180
+    },
+    "image": null
+  },
+  {
+    "id": "KP-013",
+    "slug": "rear-reflector",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "后挡反光片",
+      "en": "Rear fender reflector"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        13,
+        9,
+        2
+      ],
+      "grams": 20
+    },
+    "image": null
+  },
+  {
+    "id": "KP-014",
+    "slug": "front-caliper",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "前碟刹器",
+      "en": "Front brake caliper"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "braking",
+    "spec": "G3右前 / A1右前左后；安装位置待核",
+    "package": {
+      "cm": [
+        24,
+        16,
+        3
+      ],
+      "grams": 300
+    },
+    "image": null
+  },
+  {
+    "id": "KP-015",
+    "slug": "rear-caliper",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "后碟刹器",
+      "en": "Rear brake caliper"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "braking",
+    "spec": "右后 / right rear",
+    "package": {
+      "cm": [
+        15,
+        10,
+        4
+      ],
+      "grams": 200
+    },
+    "image": "/images/scooter-parts/rear-caliper.webp"
+  },
+  {
+    "id": "KP-016",
+    "slug": "kickstand",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "脚撑",
+      "en": "Kickstand"
+    },
+    "models": [
+      "G2",
+      "G3"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        16,
+        8,
+        5
+      ],
+      "grams": 200
+    },
+    "image": null
+  },
+  {
+    "id": "KP-017",
+    "slug": "side-reflector",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "反光贴",
+      "en": "Side reflector"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        13,
+        9,
+        2
+      ],
+      "grams": 20
+    },
+    "image": null
+  },
+  {
+    "id": "KP-018",
+    "slug": "light-horn-switch",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "灯喇叭开关",
+      "en": "Light and horn switch"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "electrical",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        5
+      ],
+      "grams": 40
+    },
+    "image": "/images/scooter-parts/light-horn-switch.webp"
+  },
+  {
+    "id": "KP-019",
+    "slug": "left-brake-lever",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "左边刹把",
+      "en": "Left brake lever"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "braking",
+    "spec": "",
+    "package": {
+      "cm": [
+        24,
+        16,
+        3
+      ],
+      "grams": 150
+    },
+    "image": "/images/scooter-parts/left-brake-lever.webp"
+  },
+  {
+    "id": "KP-020",
+    "slug": "right-brake-lever",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "右边刹把",
+      "en": "Right brake lever"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "braking",
+    "spec": "",
+    "package": {
+      "cm": [
+        24,
+        16,
+        3
+      ],
+      "grams": 150
+    },
+    "image": "/images/scooter-parts/right-brake-lever.webp"
+  },
+  {
+    "id": "KP-021",
+    "slug": "deck-mat",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "踏板硅胶脚垫",
+      "en": "Silicone deck mat"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        4
+      ],
+      "grams": 200
+    },
+    "image": "/images/scooter-parts/deck-mat.webp"
+  },
+  {
+    "id": "KP-022",
+    "slug": "grips",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "长短把套（一对）",
+      "en": "Long and short grips — pair"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "body",
+    "spec": "",
+    "package": {
+      "cm": [
+        15,
+        10,
+        3
+      ],
+      "grams": 120
+    },
+    "image": "/images/scooter-parts/grips.webp"
+  },
+  {
+    "id": "KP-023",
+    "slug": "brake-disc",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "六孔波浪边碟刹盘",
+      "en": "Six-bolt wave brake disc"
+    },
+    "models": [],
+    "category": "braking",
+    "spec": "140 mm · 6孔 / 6 bolts",
+    "package": {
+      "cm": [
+        17,
+        20,
+        2
+      ],
+      "grams": 150
+    },
+    "image": "/images/scooter-parts/brake-disc.webp"
+  },
+  {
+    "id": "KP-024",
+    "slug": "bearing",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "红圈滚珠轴承",
+      "en": "Red-seal ball bearing"
+    },
+    "models": [
+      "G3",
+      "G4"
+    ],
+    "category": "wheels",
+    "spec": "",
+    "package": {
+      "cm": [
+        12,
+        8,
+        2
+      ],
+      "grams": 30
+    },
+    "image": "/images/scooter-parts/bearing.webp"
+  },
+  {
+    "id": "KP-025",
+    "slug": "motor-fasteners",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "电机螺丝套件",
+      "en": "Motor fastener set"
+    },
+    "models": [
+      "G2",
+      "G3",
+      "G4"
+    ],
+    "category": "wheels",
+    "spec": "",
+    "package": {
+      "cm": [
+        12,
+        8,
+        2
+      ],
+      "grams": 40
+    },
+    "image": "/images/scooter-parts/motor-fasteners.webp"
+  },
+  {
+    "id": "KP-026",
+    "slug": "front-rim",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "前轮毂",
+      "en": "Front wheel rim"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "wheels",
+    "spec": "",
+    "package": {
+      "cm": [
+        20,
+        20,
+        9
+      ],
+      "grams": 730
+    },
+    "image": "/images/scooter-parts/front-rim.webp"
+  },
+  {
+    "id": "KP-027",
+    "slug": "tubeless-tyre",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "越野真空胎",
+      "en": "Off-road tubeless tyre"
+    },
+    "models": [],
+    "category": "wheels",
+    "spec": "10 × 2.75–6.5",
+    "package": {
+      "cm": [
+        25,
+        25,
+        9
+      ],
+      "grams": 1200
+    },
+    "image": "/images/scooter-parts/tubeless-tyre.webp"
+  },
+  {
+    "id": "KP-028",
+    "slug": "motor-wheel",
+    "brand": "KuKirin",
+    "name": {
+      "zh": "电机轮胎总成",
+      "en": "Motor wheel with tyre"
+    },
+    "models": [
+      "G3"
+    ],
+    "category": "wheels",
+    "spec": "10 × 2.75–6.5（图示 / pictured）",
+    "package": {
+      "cm": [
+        26,
+        26,
+        18
+      ],
+      "grams": 5000
+    },
+    "image": "/images/scooter-parts/motor-wheel.webp"
+  }
+]

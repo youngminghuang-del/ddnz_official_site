@@ -82,6 +82,7 @@ export function isEnglishProductPath(path: string) {
 
 /** Product links use an authored translation when one exists; other guides stay English. */
 export function navigationPath(path: string, language: Language) {
+  if (splitNavigationPath(path).pathname==='/sourcing/electric-scooter-spare-parts-from-china') return canonicalSitePath(`${language==='zh'?'/zh-cn':''}/sourcing/electric-scooter-spare-parts-from-china${splitNavigationPath(path).suffix}`);
   const { pathname, suffix } = splitNavigationPath(path);
   if(pathname==='/services/ddp-shipping-from-china') return `${navigationPrefixes[language]}${pathname}${suffix}`;
   const product = englishProductPath(path);

@@ -55,6 +55,7 @@ const ElectricUtilityVehiclesPage = lazy(() => import('./features/electric-utili
 const ElectricTricyclesPage = lazy(() => import('./features/electric-tricycles/ElectricTricyclesPage'));
 const ElectricBicyclesPage = lazy(() => import('./features/electric-bicycles/ElectricBicyclesPage'));
 const HomeStoragePage = lazy(() => import('./features/home-storage/HomeStoragePage'));
+const ScooterPartsPage = lazy(() => import('./features/electric-mobility/ScooterPartsPage'));
 const ElectricScootersPage = lazy(() => import('./features/electric-mobility/ElectricScootersPage'));
 const LocalizedOverviewPage = lazy(() => import('./pages/LocalizedOverviewPage'));
 const loadProductsIndex = () => import('./pages/product-showcase/ProductsIndex');
@@ -468,6 +469,7 @@ export default function App() {
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-tricycles'} path={prefix+'/sourcing/electric-tricycles-from-china'} element={<ElectricTricyclesPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-bicycles'} path={prefix+'/sourcing/electric-bicycles-from-china'} element={<ElectricBicyclesPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'home-storage'} path={prefix+'/sourcing/home-energy-storage-from-china'} element={<HomeStoragePage/>}/>)}
+            {['','/zh-cn'].map(prefix=><Route key={prefix+'scooter-parts'} path={prefix+'/sourcing/electric-scooter-spare-parts-from-china'} element={<ScooterPartsPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-scooters'} path={prefix+'/sourcing/electric-scooters-from-china'} element={<ElectricScootersPage/>}/>)}
             {foodProcessingRoutes.flatMap(path => Object.values(navigationPrefixes).map(prefix => <Route key={prefix+path} path={prefix+path} element={<FoodProcessingPage />} />))}
             <Route path="/sourcing-services" element={<SourcingServices />} />
