@@ -21,6 +21,7 @@ import './features/buyer-guides/buyer-guides.css';
 import './components/freight-route-map.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
 import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
+import { isQuoteEntry } from './lib/quoteEntry';
 import { readAttribution, rememberAttribution } from './lib/attribution';
 import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
 import { modernizedFreightServicePaths } from './features/freight/modernServiceRoutes';
@@ -374,11 +375,7 @@ function GlobalConversionTracker() {
         trackEvent('phone_click', { cta_location: ctaLocation });
       } else if (href.startsWith('mailto:')) {
         trackEvent('email_click', { cta_location: ctaLocation });
-      } else if (
-        href.includes('get-a-quote') ||
-        href.includes('#get-a-quote') ||
-        href.includes('#rfq-form-section')
-      ) {
+      } else if (isQuoteEntry(href, window.location.href)) {
         trackEvent('quote_click', { cta_location: ctaLocation });
       }
     };

@@ -106,3 +106,44 @@
     min-block-size: 7lh;
   }
 }
+
+/* Keep the factory sample captions and order controls clear of the page reset. */
+.phone-film #bulk-screen-protector-supply > p {
+  margin-top: 16px;
+  color: var(--muted);
+}
+.phone-film #bulk-screen-protector-supply > figure {
+  margin-block: 24px;
+}
+.phone-film #bulk-screen-protector-supply figure > div {
+  gap: 24px;
+}
+.phone-film #bulk-screen-protector-supply figure img {
+  border-radius: var(--ddnz-media-radius);
+  background: var(--soft);
+}
+.phone-film #bulk-screen-protector-supply figure p {
+  margin-top: 12px;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.phone-film #bulk-screen-protector-supply figcaption {
+  margin-top: 18px;
+  max-width: 70ch;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.phone-film .bear-series .bear-minimum {
+  margin-block: 24px;
+}
+.phone-film .bear-series .bear-packing {
+  margin-top: 14px;
+}
+.phone-film .bear-series .bear-action {
+  color: #fff;
+}
+.phone-film .bear-series .bear-gallery > p {
+  margin-top: 14px;
+}
