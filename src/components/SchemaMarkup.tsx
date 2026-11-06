@@ -1,3 +1,4 @@
+import usbCableSchema from '../data/usb-cable-schema.json';
 import suezNovemberSchema from '../data/suez-november-schema.json';
 import polandPhoneCaseGpsrSchema from '../data/poland-phone-case-gpsr-schema.json';
 import euPhoneCaseTrialSchema from '../data/eu-phone-case-trial-schema.json';
@@ -277,6 +278,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
       finalSchema = suezNovemberSchema;
     }
 
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(usbCableSchema).replace(/\/+$/, '')) {
+      finalSchema = usbCableSchema;
+    }
+
     // Create script tag and append to head
     const script = document.createElement('script');
     script.id = scriptId;
@@ -295,3 +300,4 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
   return null;
 }
+
