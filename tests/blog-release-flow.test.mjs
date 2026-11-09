@@ -11,6 +11,17 @@ import {planWriteback,releaseRevision,schemaRevision} from '../scripts/blog-publ
 const root=fileURLToPath(new URL('../',import.meta.url));
 const read=async f=>JSON.parse(await fs.readFile(path.join(root,f),'utf8'));
 const make=urls=>({version:1,site:'https://www.ddnzglobal.com',urls});
+test('preview stages a language correction on an existing post without changing unrelated posts',async()=>{
+ const p=await fs.mkdtemp(path.join(os.tmpdir(),'blog-language-'));await fs.mkdir(path.join(p,'src/data'),{recursive:true});
+ const catalog=await read('src/data/blog-release-manifest.json'),e=catalog.releases.find(e=>e.slug==='coffee-shop-equipment-checklist');
+ const r=await read(e.release_file),g=await read(e.schema_file),other={id:'unrelated',slug:'other',language:'es',title:'Keep this',date:'2020-01-01'};
+ await fs.writeFile(path.join(p,'src/data/blog-release-manifest.json'),JSON.stringify({...catalog,releases:[e]}));
+ for(const f of [e.release_file,e.schema_file])await fs.writeFile(path.join(p,f),JSON.stringify(await read(f)));
+ await fs.writeFile(path.join(p,'src/data/notionBlogData.json'),JSON.stringify([{id:e.notion_page_id,slug:e.slug,language:'zh-CN',title:'旧中文标题',summary:'旧摘要'},other]));
+ const result=spawnSync(process.execPath,[path.join(root,'scripts/stage-blog-release-preview.mjs')],{cwd:p,encoding:'utf8'});assert.equal(result.status,0,result.stderr);
+ const posts=JSON.parse(await fs.readFile(path.join(p,'src/data/notionBlogData.json'),'utf8')),post=posts[0],article=g['@graph'].find(n=>n['@type']==='BlogPosting');
+ assert.equal(post.language,e.language);assert.equal(post.title,article.headline);assert.equal(post.summary,article.description);assert.equal(post.date,r.articleDate);assert.equal(post.lastEdited,r.modifiedAt || r.articleDate);assert.deepEqual(posts[1],other);
+});
 const a='https://www.ddnzglobal.com/a/',b='https://www.ddnzglobal.com/b/',c='https://www.ddnzglobal.com/c/';
 test('IndexNow bootstraps without a bulk push and selects only added/changed URLs',()=>{
  const old=make({[a]:'a'.repeat(64),[b]:'b'.repeat(64)});assert.deepEqual(diffManifests(old,null).urls,[]);assert.deepEqual(diffManifests(old,old).urls,[]);

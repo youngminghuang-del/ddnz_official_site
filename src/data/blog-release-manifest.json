@@ -26,8 +26,8 @@
     },
     {
       "slug": "coffee-shop-equipment-checklist",
-      "canonical": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/",
-      "language": "zh-CN",
+      "canonical": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/",
+      "language": "en",
       "release_file": "src/data/cafeEquipmentRelease.json",
       "schema_file": "src/data/cafe-equipment-schema.json",
       "notion_page_id": "413eac33-2618-81fe-9626-ec7f8ef04675",
