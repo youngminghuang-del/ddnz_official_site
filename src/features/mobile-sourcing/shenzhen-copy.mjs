@@ -1,10 +1,10 @@
 export const shenzhenCopy = {
   "en": [
-    "Shenzhen · Huaqiangbei sourcing",
-    "From a style reference to your retail range.",
-    "Sourcing mobile accessories in Shenzhen or comparing styles from Huaqiangbei? Start with the phones your customers use, the finishes they prefer and the quantities you need for each model.",
-    "DDNZ brings your references into one sourcing brief: phone cases, tempered glass and privacy screen protectors, straps and charging accessories. We compare supplier quotations against the same model mix, materials and packaging, then coordinate samples and order follow-up.",
-    "A market price is a starting point. For a factory quotation or custom packaging, specify quantities by model and colour, the pack you want and your delivery timing. Before shipment, agree which fit, appearance, quantity and packing checks you need.",
+    "DDNZ · Manufacturing & export",
+    "From our factory range to your wholesale order.",
+    "Start with phone cases and screen protectors for the devices your customers use. DDNZ combines own-factory manufacturing with complementary product supply and export delivery.",
+    "Our quotation distinguishes the factory-made references and manufacturing scope for your selected models from complementary items such as straps, charging accessories and wireless audio. A shared buying brief keeps the products, quantities and packaging together; it does not make every catalogue item an in-house product.",
+    "For a factory quote, send quantities by model and colour, branding or packaging requirements and your destination. Confirm samples, minimums and production timing for each reference before ordering. Export packing and transport scope are confirmed separately.",
     "Phone case finish samples",
     "Retail packaging examples",
     "Explore phone cases",

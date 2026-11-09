@@ -9,7 +9,7 @@ import SpanishInspectionScope from '../src/features/sourcing-services/SpanishIns
 import { addSpanishCaseQuote } from '../src/lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../src/lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../src/lib/alibabaArticleBuying';
-import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
+import { addPrivacyComparisonLink, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
 import gulfBarBlenderSchema from '../src/data/gulf-bar-blender-schema.json';
 import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
 import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
@@ -2075,7 +2075,7 @@ function run() {
       // If it's a blog post, build it dynamically
       if (entry.path.startsWith('blog/')) {
         const postSlugOrId = entry.path.replace('blog/', '');
-        const post = findArticleByRoute(blogPosts, lang, postSlugOrId);
+        const post = positionPrivacyPost(findArticleByRoute(blogPosts, lang, postSlugOrId));
         if (post) {
           routePost = post;
           articleHreflang = getArticleHreflangSet(post, blogPosts);

@@ -180,7 +180,7 @@ export const accessoryCopy = {
     "tr": "Çin’den toptan telefon aksesuarları"
   },
   "heroIntro": {
-    "en": "Source cases, screen protectors, earbuds, straps and charging accessories. DDNZ helps compare suppliers and factory quotations, confirm samples and coordinate your order in China.",
+    "en": "DDNZ is a China manufacturer and exporter with our own factory and complementary accessory supply. Start with phone cases and screen protectors, then add the items your wholesale range needs. Your quote identifies factory-made and complementary products.",
     "zh": "选购手机壳、保护膜、耳机、挂绳及充电配件。DDNZ 协助比较供应商与工厂报价、确认样品，并跟进中国采购订单。",
     "es": "DDNZ fabrica accesorios para celulares en China y los exporta directamente. Solicite una cotización de fábrica para su pedido mayorista de fundas y añada los accesorios complementarios que necesita para su mercado.",
     "ar": "اشتر الأغطية والواقيات والسماعات والأحزمة وإكسسوارات الشحن. تساعدك DDNZ في مقارنة الموردين وعروض المصانع واعتماد العينات ومتابعة الطلب في الصين.",
