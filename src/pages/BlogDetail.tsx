@@ -2,7 +2,7 @@ import { addGulfRefrigerationSelection } from '../lib/gulfRefrigerationSelection
 import { addSpanishCaseQuote } from '../lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
-import { addPrivacyComparisonLink, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
+import { addPrivacyComparisonLink, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -46,7 +46,7 @@ export default function BlogDetail() {
   useEffect(() => {
     if (!slug) return;
     setIsLoading(true);
-    const found = findArticleByRoute(notionBlogPosts as BlogPost[], language, slug);
+    const found = positionPrivacyPost(findArticleByRoute(notionBlogPosts as BlogPost[], language, slug));
     setPost(found || null);
     setIsLoading(false);
     progressSent.current.clear();
