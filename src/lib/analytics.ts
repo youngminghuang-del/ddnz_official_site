@@ -228,14 +228,30 @@ export function initializeAnalyticsConsent() {
   updateAnalyticsConsent(Boolean(preferences.tracking), Boolean(preferences.targeting));
 }
 
-export function trackEvent(eventName: string, params: AnalyticsParams = {}) {
+// Snapshot before a client-side navigation; retain the existing privacy filter.
+export function captureAnalyticsPageContext(): AnalyticsParams {
+  if (typeof window === 'undefined') return {};
+  return sanitizeAnalyticsParams({
+    ...getSafeAnalyticsPageFields(window.location.href),
+    ...getPageContext(),
+    page_title: document.title,
+  });
+}
+
+export function trackEvent(
+  eventName: string,
+  params: AnalyticsParams = {},
+  sourceContext?: AnalyticsParams,
+) {
   if (typeof window === 'undefined' || isAnalyticsDisabled()) return;
 
   ensureGoogleAnalytics();
 
   const eventParams = sanitizeAnalyticsParams({
-    ...getSafeAnalyticsPageFields(window.location.href),
-    ...getPageContext(),
+    ...(sourceContext ?? {
+      ...getSafeAnalyticsPageFields(window.location.href),
+      ...getPageContext(),
+    }),
     ...params,
     consent_state: analyticsConsentGranted ? 'granted' : 'denied',
   });
