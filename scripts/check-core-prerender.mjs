@@ -26,7 +26,13 @@ for(const route of routes){
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
-assert.equal(count,107,'Expected core pages, localized product catalogues and three sourcing landing pages');
+assert.equal(count,115,'Expected existing core pages plus eight scooter spare-parts catalogues');
+for(const route of ['','/zh-cn','/ar','/es','/fr','/ru','/pt','/tr'].map(p=>p+'/sourcing/electric-scooter-spare-parts-from-china/')){
+ const html=fs.readFileSync(path.join(root,route,'index.html'),'utf8');
+ assert.equal((html.match(/class="sp-card"/g)||[]).length,17,`${route}: pictured parts catalogue`);
+ assert.equal((html.match(/class="sp-additional-row"/g)||[]).length,11,`${route}: additional parts retained as compact enquiry rows`);
+ assert(html.includes('schema-jsonld-static-page')&&html.includes('CollectionPage'),`${route}: parts collection schema`);
+}
 for (const locale of ['', 'zh-cn/', 'ru/', 'fr/', 'es/', 'ar/', 'pt/', 'tr/']) {
  const route = `${locale}get-a-quote`;
  const html = fs.readFileSync(path.join(root, route, 'index.html'), 'utf8');
