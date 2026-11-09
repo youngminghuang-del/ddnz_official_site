@@ -23,6 +23,28 @@
       ],
       "faq_count": 4,
       "item_list_count": 6
+    },
+    {
+      "slug": "coffee-shop-equipment-checklist",
+      "canonical": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/",
+      "language": "zh-CN",
+      "release_file": "src/data/cafeEquipmentRelease.json",
+      "schema_file": "src/data/cafe-equipment-schema.json",
+      "notion_page_id": "413eac33-2618-81fe-9626-ec7f8ef04675",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/coffee-shop-equipment-checklist/cover-cafe-workstation.webp",
+      "images": [
+        "/images/posts/coffee-shop-equipment-checklist/cover-cafe-workstation.webp",
+        "/images/posts/coffee-shop-equipment-checklist/ky168-espresso-machine.webp",
+        "/images/posts/coffee-shop-equipment-checklist/mahlkoenig-e65s-grinder.png",
+        "/images/posts/coffee-shop-equipment-checklist/dr-coffee-f11-big-plus.webp",
+        "/images/posts/coffee-shop-equipment-checklist/snowsman-bt-ice-maker.jpg",
+        "/images/posts/coffee-shop-equipment-checklist/kaison-modular-ice-bin.webp"
+      ],
+      "faq_count": 3,
+      "item_list_count": 8
     }
   ]
 }

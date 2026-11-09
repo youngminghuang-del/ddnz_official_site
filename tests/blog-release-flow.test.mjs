@@ -42,7 +42,8 @@ test('date writer rejects old URLs, changed content, unapproved releases and unv
 });
 async function fixture(mutate=x=>x){
  const p=await fs.mkdtemp(path.join(os.tmpdir(),'blog-template-'));await fs.mkdir(path.join(p,'src/data'),{recursive:true});const catalog=await read('src/data/blog-release-manifest.json'),e=catalog.releases[0],r=await read(e.release_file),g=await read(e.schema_file);
- for(const f of ['blog-release-manifest.json','blog-publications.json'])await fs.copyFile(path.join(root,'src/data',f),path.join(p,'src/data',f));
+ await fs.writeFile(path.join(p,'src/data/blog-release-manifest.json'),JSON.stringify({...catalog,releases:[e]}));
+ await fs.copyFile(path.join(root,'src/data/blog-publications.json'),path.join(p,'src/data/blog-publications.json'));
  await fs.writeFile(path.join(p,'src/data/blog-release-legacy-ids.json'),JSON.stringify({ids:[]}));await fs.writeFile(path.join(p,'src/data/notionBlogData.json'),JSON.stringify([{id:e.notion_page_id,slug:e.slug}]));await fs.writeFile(path.join(p,e.release_file),JSON.stringify(r));await fs.writeFile(path.join(p,e.schema_file),JSON.stringify(g));
  for(const src of e.images){const dest=path.join(p,'dist',src);await fs.mkdir(path.dirname(dest),{recursive:true});await fs.copyFile(path.join(root,'public',src),dest);}
  const dest=path.join(p,'dist',new URL(e.canonical).pathname,'index.html');await fs.mkdir(path.dirname(dest),{recursive:true});await fs.writeFile(dest,`<html lang="es"><head><meta property="article:published_time" content="${r.articleDate}"><link rel="canonical" href="${e.canonical}"><script type="application/ld+json">${JSON.stringify(g)}</script></head><body><h1>${g['@graph'].find(n=>n['@type']==='BlogPosting').headline}</h1><p>Huang Matthew</p><time datetime="${r.articleDate}"></time><img src="${e.cover}" alt="Cover">${mutate(r.content)}</body></html>`);return {p,e,g,r};
@@ -65,4 +66,8 @@ test('older notification replays do not roll checkpoints back; dry runs never wr
  const result=await submitChanges({current,previous,key:'test-key-12345',keyLocation:'https://www.ddnzglobal.com/key.txt',fetchImpl:()=>{throw new Error('Must not notify older content')}});assert.equal(result.stale,true);assert.equal(result.submitted,0);
  const dir=await fs.mkdtemp(path.join(os.tmpdir(),'indexnow-dry-'));await fs.writeFile(path.join(dir,'current.json'),JSON.stringify(make({[a]:'b'.repeat(64)})));await fs.writeFile(path.join(dir,'prior.json'),JSON.stringify(make({[a]:'a'.repeat(64)})));
  const checkpoint=path.join(dir,'checkpoint.json');const r=spawnSync(process.execPath,['scripts/push-indexnow-urls.mjs','--manifest',path.join(dir,'current.json'),'--baseline',path.join(dir,'prior.json'),'--checkpoint',checkpoint,'--dry-run'],{cwd:root,encoding:'utf8'});assert.equal(r.status,0,r.stderr);await assert.rejects(fs.stat(checkpoint));
+});
+
+test('complete template blocks unconfirmed image rights',async()=>{
+ const f=await fixture();const manifest=JSON.parse(await fs.readFile(path.join(f.p,'src/data/blog-release-manifest.json'),'utf8'));manifest.releases[0].image_rights_confirmed=false;await fs.writeFile(path.join(f.p,'src/data/blog-release-manifest.json'),JSON.stringify(manifest));const result=check(f);assert.notEqual(result.status,0);assert.match(result.stdout,/rights/);
 });
