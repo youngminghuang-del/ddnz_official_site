@@ -1,3 +1,4 @@
+import lclClaimsSchema from '../data/lcl-claims-schema.json';
 import usbCableSchema from '../data/usb-cable-schema.json';
 import suezNovemberSchema from '../data/suez-november-schema.json';
 import polandPhoneCaseGpsrSchema from '../data/poland-phone-case-gpsr-schema.json';
@@ -280,6 +281,10 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
 
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(usbCableSchema).replace(/\/+$/, '')) {
       finalSchema = usbCableSchema;
+    }
+
+    if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(lclClaimsSchema).replace(/\/+$/, '')) {
+      finalSchema = lclClaimsSchema;
     }
 
     // Create script tag and append to head
