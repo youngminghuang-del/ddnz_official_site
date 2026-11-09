@@ -1,3 +1,4 @@
+import {partsText} from '../features/electric-mobility/parts-i18n';
 import directoryLabels from '../config/productDirectoryLabels.json';
 import utilityVehicleCopies from '../features/electric-utility-vehicles/locales.json';
 import tricycleCopies from '../features/electric-tricycles/locales.json';
@@ -53,7 +54,7 @@ export function productDirectoryGroups(language:Language){
   ]},
   {label:c[3],to:'/products',children:[
    {label:labels.vehicles,to:'/products',children:[{label:c[10],to:'/sourcing/electric-bicycles-from-china'},{label:tricycleCopies[language].nav,to:'/sourcing/electric-tricycles-from-china'},{label:utilityVehicleCopies[language].nav,to:'/sourcing/electric-utility-vehicles-from-china'},{label:c[11],to:scooter},{label:c[12],to:scooter+'/#sc-b01'}]},
-   {label:labels.parts,to:scooter+'/#scooter-hub-motors',children:[{label:supplementCopies[language].motor.nav,to:scooter+'/#scooter-hub-motors'}]},
+   {label:labels.parts,to:scooter+'/#scooter-hub-motors',children:[{label:partsText(language,'滑板车配件','Spare parts'),to:'/sourcing/electric-scooter-spare-parts-from-china'},{label:supplementCopies[language].motor.nav,to:scooter+'/#scooter-hub-motors'}]},
   ]},
   {label:c[4],to:'/products',children:[{label:c[13],to:'/sourcing/mobile-accessories-from-china',children:[{label:overviewLabels[language][0],to:'/sourcing/mobile-accessories-from-china'},...mobileCategoryNavigation(language).map(({label,to})=>({label,to})),screenProtectorNavigation(language)]},{label:c[14],to:'/sourcing/audio-speakers-from-china',children:[{label:overviewLabels[language][1],to:'/sourcing/audio-speakers-from-china'},...audioCategoryNavigation(language)]}]},
  ] satisfies Entry[];
