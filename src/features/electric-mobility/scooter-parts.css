@@ -27,3 +27,6 @@
 .sp-filters>label,.sp-field{min-width:0}
 .sp-filters input,.sp-filters select,.sp-field input,.sp-field textarea{width:100%;min-width:0}
 @media(max-width:760px){.sp-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.sp-page .sp-sticky{flex-wrap:wrap}.sp-page .sp-sticky a{flex:1 1 auto;text-align:center}}
+
+/* Allow long localized model-category headings to shrink within the hero grid. */
+.sp-hero-copy,.sp-hero-media{min-width:0}.sp-hero h1{overflow-wrap:anywhere}
