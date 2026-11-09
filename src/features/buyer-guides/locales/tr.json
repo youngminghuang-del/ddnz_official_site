@@ -201,10 +201,10 @@
     },
     "private-label": {
       "title": "Çin’den özel markalı ekran koruyucu tedariki | DDNZ",
-      "description": "Markanız için Çin’den ekran koruyucu satın alın; ürün ve ambalaj şartlarını belirleyin. Mevcut gruptan başlayarak değişiklikleri ve kullanım deneyimini tedarikçi incelemesine sunun.",
-      "eyebrow": "Kendi markasıyla ve çevrim içi satış yapanlar",
+      "description": "Çin’den DDNZ özel markalı ekran koruyucular. Fabrika teklifi için modelleri, ürün ve ambalaj minimumlarını, tasarımı ve numuneleri doğrulayın.",
+      "eyebrow": "DDNZ / MARKANIZ İÇİN FABRİKA TEDARİKİ",
       "heading": "Çin’den özel markalı ekran koruyucu tedariki",
-      "intro": "Markanız için Çin’den ekran koruyucu satın alın; ürün ve ambalaj şartlarını belirleyin. Mevcut gruptan başlayarak değişiklikleri ve kullanım deneyimini tedarikçi incelemesine sunun.",
+      "intro": "DDNZ Çin’de ekran koruyucu üretir ve üretim ile ihracatı birleştirir. Mevcut şeffaf ve gizlilik serilerinden başlayın; model, adet ve marka gereksinimlerini belirtin. Teklif koruyucu, ambalaj ve tamamlayıcı aksesuarları ayrı açıklar.",
       "card": "Kendi markasıyla ve çevrim içi satış yapanlar",
       "cardCopy": "Koruyucu, uygulama kiti ve teklif alınacak ambalajı tanımlayın.",
       "steps": [
@@ -214,7 +214,7 @@
         ],
         [
           "Ürün ve ambalaj değişikliklerini ayırın",
-          "Etiket, baskılı kutu, kılavuz veya aksesuar değişikliklerini açıklayın. Marka uygulanabilirliği, tasarım dosyaları, hazırlık ücretleri ve minimumlar seçilen tedarikçiyle doğrulanır."
+          "Etiketleri, baskılı kutuları, talimatları ve aksesuar değişikliklerini belirtin. DDNZ özelleştirme kapsamını, tasarımı, hazırlık ücretlerini ve ürün ile ambalaj minimumlarını teklifte ayrı doğrular."
         ],
         [
           "Tekrarlanabilir şartnameyi onaylayın",
@@ -228,7 +228,7 @@
         ],
         [
           "Özel marka için sabit minimum var mı?",
-          "Özelleştirme minimumları değiştirebilir. Tedarikçi incelemesi için telefon başına miktarı ve ambalaj değişikliklerini bildirin."
+          "Tüm seçenekler için tek bir minimum yoktur. Telefon modeline göre adetleri ve ürün, baskı ve ambalaj değişikliklerini bildirin. DDNZ her minimumu doğrular; standart ürün minimumu özel ambalaj minimumunu belirlemez."
         ],
         [
           "Toplu siparişten önce numune isteyebilir miyim?",
@@ -251,7 +251,19 @@
           "label": "Özelleştirme ve numuneler",
           "hint": "Logo etiketi, kutu, kılavuz, aksesuarlar veya onay numunesi"
         }
-      ]
+      ],
+      "factoryQuote": "Fabrika teklifi isteyin",
+      "factoryScope": {
+        "scopeEyebrow": "ÜRÜN / AMBALAJ / ONAY",
+        "scopeHeading": "Markanız için yapılacak değişiklikleri belirleyin.",
+        "scopeIntro": "Mevcut bir DDNZ ürününden başlayın. Camı, kurulum kitini ve telefon uyumunu; baskılı ambalaj, ekler ve etiketlerden ayrı doğrulayın. Ürün ve ambalaj minimumları, tasarım ve numune ücretleri seçilen ürüne göre teklif edilir.",
+        "kitCaption": "001 numunesi: istediğiniz koruyucuyu ve kutu içi aksesuarları listeleyin.",
+        "titanCaption": "Titan örneği: perakende ambalajını, kurulum biçimini ve marka değişikliklerini onaylayın.",
+        "note": "Özelleştirme öncesi mevcut seriden örneklerdir. Numuneyi, tasarım sürümünü, etiketleri ve çeki listesini onaylayın.",
+        "compare": "Mevcut seçenekleri karşılaştırın",
+        "kitAlt": "001 numunesi: istediğiniz koruyucuyu ve kutu içi aksesuarları listeleyin.",
+        "titanAlt": "Titan örneği: perakende ambalajını, kurulum biçimini ve marka değişikliklerini onaylayın."
+      }
     }
   },
   "english": "İngilizce"

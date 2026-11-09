@@ -201,10 +201,10 @@
     },
     "private-label": {
       "title": "Acheter des protections d’écran de marque propre en Chine | DDNZ",
-      "description": "Achetez en Chine des protections d’écran pour votre marque avec des spécifications de produit et d’emballage. Partez de la gamme actuelle et décrivez les modifications pour examen par le fournisseur.",
-      "eyebrow": "Marques propres et vendeurs en ligne",
+      "description": "Protections d’écran de marque propre DDNZ en Chine. Confirmez modèles, minimums produit et emballage, fichiers et échantillons pour un devis usine.",
+      "eyebrow": "DDNZ / FOURNITURE USINE POUR VOTRE MARQUE",
       "heading": "Acheter des protections d’écran de marque propre en Chine",
-      "intro": "Achetez en Chine des protections d’écran pour votre marque avec des spécifications de produit et d’emballage. Partez de la gamme actuelle et décrivez les modifications pour examen par le fournisseur.",
+      "intro": "DDNZ fabrique des protections d’écran en Chine et associe fabrication et fourniture à l’export. Partez de la gamme transparente et confidentialité. Indiquez modèles, quantités et marquage ; le devis distingue protection, emballage et accessoires complémentaires.",
       "card": "Marques propres et vendeurs en ligne",
       "cardCopy": "Définissez protection, kit de pose et emballage à chiffrer.",
       "steps": [
@@ -214,7 +214,7 @@
         ],
         [
           "Séparer produit et emballage",
-          "Décrivez étiquette, boîte imprimée, notice ou accessoires différents. Faisabilité, fichiers graphiques, frais de préparation et minimums sont confirmés par le fournisseur retenu."
+          "Précisez étiquettes, boîtes imprimées, notices et accessoires différents. DDNZ confirme séparément personnalisation, fichiers, frais de préparation et minimums produit et emballage dans le devis."
         ],
         [
           "Valider une spécification reproductible",
@@ -228,7 +228,7 @@
         ],
         [
           "Existe-t-il un minimum fixe pour la marque propre ?",
-          "La personnalisation peut modifier les minimums. Indiquez quantités par téléphone et changements d’emballage pour examen."
+          "Il n’existe pas de minimum unique. Indiquez quantités par téléphone et changements du produit, de l’impression et de l’emballage. DDNZ confirme chaque minimum ; celui du produit standard ne valide pas celui de l’emballage personnalisé."
         ],
         [
           "Puis-je demander un échantillon avant la série ?",
@@ -251,7 +251,19 @@
           "label": "Personnalisation et échantillons",
           "hint": "Étiquette logo, boîte, notice, accessoires ou échantillon de validation"
         }
-      ]
+      ],
+      "factoryQuote": "Demander un devis usine",
+      "factoryScope": {
+        "scopeEyebrow": "PRODUIT / EMBALLAGE / VALIDATION",
+        "scopeHeading": "Définissez les changements pour votre marque.",
+        "scopeIntro": "Partez d’une configuration DDNZ existante. Confirmez verre, kit de pose et ajustement au téléphone séparément des boîtes imprimées, inserts et étiquettes. Minimums produit et emballage, fichiers graphiques et échantillons sont chiffrés selon la configuration.",
+        "kitCaption": "Échantillon 001 : listez la protection et les accessoires à inclure.",
+        "titanCaption": "Exemple Titan : confirmez emballage de vente, pose et changements de marque.",
+        "note": "Exemples de la gamme actuelle avant personnalisation. Confirmez échantillon, version graphique, étiquettes et liste de colisage.",
+        "compare": "Comparer les configurations actuelles",
+        "kitAlt": "Échantillon 001 : listez la protection et les accessoires à inclure.",
+        "titanAlt": "Exemple Titan : confirmez emballage de vente, pose et changements de marque."
+      }
     }
   },
   "english": "en anglais"

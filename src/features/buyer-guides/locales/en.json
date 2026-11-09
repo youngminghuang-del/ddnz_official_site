@@ -251,7 +251,19 @@
           "label": "Changes and sample requests",
           "hint": "Logo label, retail box, instructions, accessories or approval sample"
         }
-      ]
+      ],
+      "factoryQuote": "Request a factory quote",
+      "factoryScope": {
+        "scopeEyebrow": "PRODUCT / PACKAGING / APPROVAL",
+        "scopeHeading": "Define what changes for your brand.",
+        "scopeIntro": "Start with an existing DDNZ protector configuration. Confirm the glass, installation kit and phone-model fit separately from printed packaging, inserts and labels. Product and packaging minimums, artwork charges and sample costs are quoted for the selected configuration.",
+        "kitAlt": "001 screen protector, protective sleeve and installation accessories sample",
+        "kitCaption": "001 sample: list the protector and accessories you need included.",
+        "titanAlt": "Titan screen protector retail packaging and installation tool example",
+        "titanCaption": "Titan example: confirm the retail pack, installation format and any branding changes.",
+        "note": "Examples from the current range, before any requested branding changes. Confirm the approved sample, artwork version, labels and packing list for your order.",
+        "compare": "Compare current configurations"
+      }
     }
   },
   "english": "English"

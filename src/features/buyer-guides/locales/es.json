@@ -201,10 +201,10 @@
     },
     "private-label": {
       "title": "Micas de marca propia desde China | DDNZ Global",
-      "description": "Solicite micas para su marca: vidrio, instalación, empaque, modelos de celular y muestras. Defina los cambios antes de cotizar con el proveedor.",
-      "eyebrow": "PARA MARCAS PROPIAS Y VENDEDORES EN LÍNEA",
+      "description": "Micas de marca propia de DDNZ en China. Confirme modelos, mínimos de producto y empaque, diseño y muestras para cotización de fábrica.",
+      "eyebrow": "DDNZ / FÁBRICA PARA SU MARCA",
       "heading": "Defina el producto que llevará su marca.",
-      "intro": "Obtenga protectores de pantalla de marca propia de China con especificaciones de producto y embalaje. Use la gama actual de micas como punto de partida. Describa el producto, el empaque y la experiencia de instalación que busca y solicite al proveedor una revisión de los cambios.",
+      "intro": "DDNZ fabrica micas en China e integra fabricación y exportación. Parta de la gama transparente y de privacidad; indique modelos, cantidades y requisitos de marca. La cotización distingue mica, empaque y accesorios complementarios.",
       "card": "Su propia marca de micas",
       "cardCopy": "Defina la mica, el instalador y el empaque que desea cotizar.",
       "steps": [
@@ -214,7 +214,7 @@
         ],
         [
           "Separe los cambios de producto y empaque",
-          "Indique si necesita etiqueta, caja impresa, instrucciones o accesorios diferentes. El proveedor seleccionado confirma la personalización disponible, requisitos de diseño, costos de preparación y mínimos."
+          "Especifique etiquetas, cajas impresas, instrucciones y cambios de accesorios. DDNZ confirma por separado el alcance de personalización, diseño, preparación y mínimos de producto y empaque en su cotización."
         ],
         [
           "Apruebe una especificación reproducible",
@@ -228,7 +228,7 @@
         ],
         [
           "¿Hay un mínimo fijo para marca propia?",
-          "La personalización puede cambiar las cantidades mínimas. Comparta cantidades por modelo de celular y cambios de empaque para que el proveedor los revise."
+          "No hay un mínimo único para todas las configuraciones. Envíe cantidades por celular y cambios de producto, impresión y empaque. DDNZ confirma cada mínimo; el mínimo estándar no confirma el del empaque personalizado."
         ],
         [
           "¿Puedo pedir una muestra antes del pedido de mayoreo?",
@@ -251,7 +251,19 @@
           "label": "Personalización y muestras",
           "hint": "Etiqueta con logo, caja, instrucciones, accesorios o muestra de aprobación"
         }
-      ]
+      ],
+      "factoryQuote": "Solicitar cotización de fábrica",
+      "factoryScope": {
+        "scopeEyebrow": "PRODUCTO / EMPAQUE / APROBACIÓN",
+        "scopeHeading": "Defina qué cambia para su marca.",
+        "scopeIntro": "Parta de una configuración actual de DDNZ. Confirme vidrio, kit de instalación y ajuste al celular por separado del empaque impreso, insertos y etiquetas. Los mínimos de producto y empaque, diseño y muestras se cotizan según la configuración.",
+        "kitCaption": "Muestra 001: indique la mica y los accesorios incluidos que necesita.",
+        "titanCaption": "Ejemplo Titan: confirme empaque comercial, instalación y cambios de marca.",
+        "note": "Ejemplos de la gama actual, antes de personalizar. Confirme muestra, versión del diseño, etiquetas y lista de empaque.",
+        "compare": "Comparar configuraciones actuales",
+        "kitAlt": "Muestra 001: indique la mica y los accesorios incluidos que necesita.",
+        "titanAlt": "Ejemplo Titan: confirme empaque comercial, instalación y cambios de marca."
+      }
     }
   },
   "english": "inglés"
