@@ -2020,5 +2020,621 @@
       "name": "Казахстан",
       "path": "/ru/shipping-from-china-to-kazakhstan/"
     }
+  ],
+  "/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kazakhstan",
+      "path": "/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Uzbekistan",
+      "path": "/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Tajikistan",
+      "path": "/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Turkmenistan",
+      "path": "/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/shipping-from-china-to-russia/": [
+    {
+      "name": "Home",
+      "path": "/"
+    },
+    {
+      "name": "Central Asia & Russia",
+      "path": "/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Russia",
+      "path": "/shipping-from-china-to-russia/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "哈萨克斯坦",
+      "path": "/zh-cn/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "乌兹别克斯坦",
+      "path": "/zh-cn/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "吉尔吉斯斯坦",
+      "path": "/zh-cn/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "塔吉克斯坦",
+      "path": "/zh-cn/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "土库曼斯坦",
+      "path": "/zh-cn/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/zh-cn/shipping-from-china-to-russia/": [
+    {
+      "name": "首页",
+      "path": "/zh-cn/"
+    },
+    {
+      "name": "中亚五国及俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "俄罗斯",
+      "path": "/zh-cn/shipping-from-china-to-russia/"
+    }
+  ],
+  "/es/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kazajistán",
+      "path": "/es/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/es/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Uzbekistán",
+      "path": "/es/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/es/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kirguistán",
+      "path": "/es/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/es/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Tayikistán",
+      "path": "/es/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/es/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Turkmenistán",
+      "path": "/es/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/es/shipping-from-china-to-russia/": [
+    {
+      "name": "Inicio",
+      "path": "/es/"
+    },
+    {
+      "name": "Asia Central y Rusia",
+      "path": "/es/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Rusia",
+      "path": "/es/shipping-from-china-to-russia/"
+    }
+  ],
+  "/ar/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "كازاخستان",
+      "path": "/ar/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/ar/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "أوزبكستان",
+      "path": "/ar/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/ar/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "قيرغيزستان",
+      "path": "/ar/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/ar/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "طاجيكستان",
+      "path": "/ar/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/ar/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "تركمانستان",
+      "path": "/ar/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/ar/shipping-from-china-to-russia/": [
+    {
+      "name": "الرئيسية",
+      "path": "/ar/"
+    },
+    {
+      "name": "آسيا الوسطى وروسيا",
+      "path": "/ar/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "روسيا",
+      "path": "/ar/shipping-from-china-to-russia/"
+    }
+  ],
+  "/fr/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kazakhstan",
+      "path": "/fr/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/fr/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Ouzbékistan",
+      "path": "/fr/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/fr/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kirghizstan",
+      "path": "/fr/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/fr/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Tadjikistan",
+      "path": "/fr/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/fr/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Turkménistan",
+      "path": "/fr/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/fr/shipping-from-china-to-russia/": [
+    {
+      "name": "Accueil",
+      "path": "/fr/"
+    },
+    {
+      "name": "Asie centrale et Russie",
+      "path": "/fr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Russie",
+      "path": "/fr/shipping-from-china-to-russia/"
+    }
+  ],
+  "/ru/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия и Россия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Узбекистан",
+      "path": "/ru/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/ru/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия и Россия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Киргизия",
+      "path": "/ru/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/ru/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Главная",
+      "path": "/ru/"
+    },
+    {
+      "name": "Центральная Азия и Россия",
+      "path": "/ru/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Туркменистан",
+      "path": "/ru/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Cazaquistão",
+      "path": "/pt/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Uzbequistão",
+      "path": "/pt/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Quirguistão",
+      "path": "/pt/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Tadjiquistão",
+      "path": "/pt/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Turcomenistão",
+      "path": "/pt/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/pt/shipping-from-china-to-russia/": [
+    {
+      "name": "Início",
+      "path": "/pt/"
+    },
+    {
+      "name": "Ásia Central e Rússia",
+      "path": "/pt/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Rússia",
+      "path": "/pt/shipping-from-china-to-russia/"
+    }
+  ],
+  "/tr/shipping-from-china-to-kazakhstan/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kazakistan",
+      "path": "/tr/shipping-from-china-to-kazakhstan/"
+    }
+  ],
+  "/tr/shipping-from-china-to-uzbekistan/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Özbekistan",
+      "path": "/tr/shipping-from-china-to-uzbekistan/"
+    }
+  ],
+  "/tr/shipping-from-china-to-kyrgyzstan/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Kırgızistan",
+      "path": "/tr/shipping-from-china-to-kyrgyzstan/"
+    }
+  ],
+  "/tr/shipping-from-china-to-tajikistan/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Tacikistan",
+      "path": "/tr/shipping-from-china-to-tajikistan/"
+    }
+  ],
+  "/tr/shipping-from-china-to-turkmenistan/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Türkmenistan",
+      "path": "/tr/shipping-from-china-to-turkmenistan/"
+    }
+  ],
+  "/tr/shipping-from-china-to-russia/": [
+    {
+      "name": "Ana sayfa",
+      "path": "/tr/"
+    },
+    {
+      "name": "Orta Asya ve Rusya",
+      "path": "/tr/shipping-from-china-to-central-asia/"
+    },
+    {
+      "name": "Rusya",
+      "path": "/tr/shipping-from-china-to-russia/"
+    }
   ]
 }

@@ -11,7 +11,6 @@ type MarketHandoffCopy = {
   title: string;
   intro: string;
   roles: Array<{ label: string; title: string; body: string }>;
-  evidence: string;
   processLink: string;
   cta: string;
 };
@@ -26,7 +25,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · Export handoff', title: 'Cargo and documents are reconciled', body: 'Supplier deliveries, carton data and shipment documents are matched to the approved order scope.' },
       { label: 'Heaven Born · Freight execution', title: 'The confirmed route is then executed', body: 'Booking, loading and international freight are handled by Heaven Born when included in the confirmed scope.' },
     ],
-    evidence: 'Authorized field material · loading preparation at China origin',
     processLink: 'See the complete six-checkpoint workflow',
     cta: 'Scope a China-to-market shipment',
   },
@@ -39,7 +37,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · 出口交接', title: '核对货物与单证', body: '把供应商送货、箱数数据及出货单证与已确认订单范围逐项匹配。' },
       { label: 'Heaven Born · 货运执行', title: '再执行已确认线路', body: '如已纳入确认服务范围，由 Heaven Born 执行订舱、装载与国际运输。' },
     ],
-    evidence: '已授权现场素材 · 中国源头装货准备',
     processLink: '查看完整六节点流程',
     cta: '提交中国到目的市场需求',
   },
@@ -52,7 +49,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · Экспортная передача', title: 'Груз и документы сверяются', body: 'Поставки, данные коробок и отгрузочные документы сопоставляются с утвержденным объемом заказа.' },
       { label: 'Heaven Born · Перевозка', title: 'Затем исполняется подтвержденный маршрут', body: 'Heaven Born выполняет бронирование, погрузку и международную перевозку, если они входят в согласованный объем.' },
     ],
-    evidence: 'Разрешенные полевые материалы · подготовка погрузки в Китае',
     processLink: 'Посмотреть полный процесс из шести этапов',
     cta: 'Определить маршрут из Китая',
   },
@@ -65,7 +61,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · Transmission export', title: 'Cargo et documents sont rapprochés', body: 'Livraisons fournisseurs, données cartons et documents sont comparés au périmètre approuvé.' },
       { label: 'Heaven Born · Exécution fret', title: 'L’itinéraire confirmé est ensuite exécuté', body: 'Heaven Born gère réservation, chargement et fret international lorsqu’ils sont inclus au périmètre.' },
     ],
-    evidence: 'Matériel terrain autorisé · préparation du chargement en Chine',
     processLink: 'Voir le processus complet en six étapes',
     cta: 'Cadrer une expédition depuis la Chine',
   },
@@ -78,7 +73,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · Entrega de exportación', title: 'Se concilian carga y documentos', body: 'Entregas, datos de cajas y documentos se cotejan con el alcance aprobado del pedido.' },
       { label: 'Heaven Born · Ejecución del transporte', title: 'Después se ejecuta la ruta confirmada', body: 'Heaven Born gestiona reserva, carga y transporte internacional cuando forman parte del alcance.' },
     ],
-    evidence: 'Material de campo autorizado · preparación de carga en China',
     processLink: 'Ver el proceso completo de seis puntos',
     cta: 'Definir un envío desde China',
   },
@@ -91,7 +85,6 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · تسليم التصدير', title: 'تُطابق البضاعة والمستندات', body: 'تُطابق تسليمات الموردين وبيانات الطرود ومستندات الشحنة مع نطاق الطلب المعتمد.' },
       { label: 'Heaven Born · تنفيذ الشحن', title: 'ثم يُنفذ المسار المؤكد', body: 'تنفذ Heaven Born الحجز والتحميل والشحن الدولي عند إدراجها في النطاق المؤكد.' },
     ],
-    evidence: 'مواد ميدانية مصرح بها · تجهيز التحميل في منشأ الصين',
     processLink: 'عرض المسار الكامل من ست نقاط',
     cta: 'حدد نطاق شحنة من الصين',
   },
@@ -102,7 +95,7 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · Entrega para exportação', title: 'Carga e documentos são conciliados', body: 'Entregas, dados das caixas e documentos são comparados ao escopo aprovado.' },
       { label: 'Heaven Born · Execução do frete', title: 'Depois, a rota confirmada é executada', body: 'Reserva, carregamento e transporte internacional são executados quando incluídos no escopo.' },
     ],
-    evidence: 'Material autorizado · preparação de carga na China', processLink: 'Ver o fluxo completo em seis pontos', cta: 'Planejar uma remessa da China',
+    processLink: 'Ver o fluxo completo em seis pontos', cta: 'Planejar uma remessa da China',
   },
   tr: {
     eyebrow: 'Tedarikten pazara teslim', title: 'Varış rotası, yük limana ulaşmadan önce başlar.', intro: 'Teslimat; serbest bırakılan ürün, koliler, belgeler ve yük verileri satın alma talebiyle eşleştiğinde güvenilirdir. Bu nokta DDNZ kaynak kontrolünü Heaven Born nakliye uygulamasına bağlar.',
@@ -111,24 +104,20 @@ const copy: Record<Language, MarketHandoffCopy> = {
       { label: 'DDNZ · İhracat teslimi', title: 'Yük ve belgeler uzlaştırılır', body: 'Tedarikçi teslimatları, koli verileri ve sevkiyat belgeleri onaylı kapsamla eşleştirilir.' },
       { label: 'Heaven Born · Nakliye uygulaması', title: 'Sonra onaylı rota uygulanır', body: 'Kapsama dahilse rezervasyon, yükleme ve uluslararası nakliye Heaven Born tarafından yürütülür.' },
     ],
-    evidence: 'Yetkili saha materyali · Çin çıkışı yükleme hazırlığı', processLink: 'Altı kontrol noktalı tam süreci görün', cta: 'Çin’den pazara sevkiyat planla',
+    processLink: 'Altı kontrol noktalı tam süreci görün', cta: 'Çin’den pazara sevkiyat planla',
   },
 };
 
 const prefix: Record<Language, string> = { en: '', zh: '/zh-cn', ru: '/ru', fr: '/fr', es: '/es', ar: '/ar', pt: '/pt', tr: '/tr' };
-const evidenceAlt: Record<Language, string> = {
-  en: 'Wooden-crated cargo moved by pallet jack during loading preparation in China',
-  zh: '中国装货准备现场使用托盘搬运车移动木箱货物',
-  ru: 'Перемещение груза в деревянной обрешетке гидравлической тележкой при подготовке погрузки в Китае',
-  fr: 'Caisse en bois déplacée au transpalette pendant la préparation du chargement en Chine',
-  es: 'Carga en caja de madera movida con transpaleta durante la preparación en China',
-  ar: 'نقل حمولة بصندوق خشبي بعربة منصات أثناء تجهيز التحميل في الصين',
-  pt: 'Carga em caixa de madeira movida com paleteira durante a preparação na China',
-  tr: 'Çin’de yükleme hazırlığı sırasında transpaletle taşınan ahşap kasalı yük',
-};
 const icons = [ClipboardCheck, PackageCheck, Ship];
 
-export default function MarketSourcingHandoff({ destination, compact = false }: { destination?: string; compact?: boolean }) {
+export default function MarketSourcingHandoff({
+  destination,
+  compact = false,
+}: {
+  destination?: string;
+  compact?: boolean;
+}) {
   const { language } = useLanguage();
   const content = copy[language];
   const quoteHref = buildQuoteHref({
@@ -139,11 +128,9 @@ export default function MarketSourcingHandoff({ destination, compact = false }: 
   });
 
   if (compact) return <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-12 sm:px-6 lg:px-8" data-country-handoff>
-    <div className="grid gap-6 md:grid-cols-[1fr_240px] md:items-center">
-      <div><h2 className="text-2xl font-bold">{freightRoles[language].badge}</h2><p className="mt-4 max-w-3xl leading-7">{freightRoles[language].description}</p>
-      <Link className="mt-3 inline-flex min-h-11 items-center font-bold underline" to={`${prefix[language]}/how-we-work`}>{content.processLink} ↗</Link></div>
-      <figure><img src="/media/process/export-loading-poster.webp" alt={content.evidence} width="800" height="600" loading="lazy" className="aspect-[4/3] w-full object-cover"/><figcaption className="mt-2 text-xs leading-5">{content.evidence}</figcaption></figure>
-    </div>
+    <h2 className="text-2xl font-bold">{freightRoles[language].badge}</h2>
+    <p className="mt-4 max-w-3xl leading-7">{freightRoles[language].description}</p>
+    <Link className="mt-3 inline-flex min-h-11 items-center font-bold underline" to={`${prefix[language]}/how-we-work`}>{content.processLink} ↗</Link>
   </section>;
 
   return (
@@ -181,18 +168,6 @@ export default function MarketSourcingHandoff({ destination, compact = false }: 
               );
             })}
           </ol>
-
-          <figure className="mt-4 grid overflow-hidden border border-slate-200 bg-[var(--ddnz-ink)] text-white sm:grid-cols-[220px_1fr] sm:items-center">
-            <img
-              src="/media/process/export-loading-poster.webp"
-              alt={evidenceAlt[language]}
-              width="720"
-              height="1280"
-              loading="lazy"
-              className="h-52 w-full object-cover sm:h-44"
-            />
-            <figcaption className="p-5 text-xs font-bold leading-5 text-slate-200 sm:p-6">{content.evidence}</figcaption>
-          </figure>
         </div>
       </div>
     </section>

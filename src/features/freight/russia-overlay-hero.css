@@ -35,3 +35,6 @@
   .russia-overlay-facts{width:calc(100% - 36px);padding-block:20px 26px}
   .russia-overlay-facts dl{grid-template-columns:1fr;gap:18px}
 }
+
+.russia-overlay-hero__breadcrumb { display:flex; flex-wrap:wrap; gap:8px; font-size:13px; line-height:1.6; margin-bottom:20px; color:#f1f4f8; }
+.russia-overlay-hero__breadcrumb a { color:inherit; text-decoration:underline; text-underline-offset:3px; }
