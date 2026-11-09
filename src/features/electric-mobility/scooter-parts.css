@@ -16,3 +16,14 @@
 .sp-additional-row .sp-code{margin-bottom:7px}.sp-additional-row .sp-model,.sp-additional-row .sp-spec{margin-bottom:0}
 .sp-additional-action .sp-quantity{justify-content:flex-end}
 @media(max-width:760px){.sp-additional{padding:0 16px}.sp-additional>summary{font-size:16px;min-height:68px}.sp-additional-row{grid-template-columns:minmax(0,1fr);gap:13px}.sp-additional-action{justify-self:start;min-width:170px}.sp-additional-action .sp-quantity{justify-content:flex-start;flex-wrap:nowrap}.sp-additional-action .sp-quantity label{width:auto}.sp-additional-intro{font-size:13px}}
+/* Keep technical identifiers readable inside Arabic copy. */
+.sp-page[dir="rtl"] .sp-breadcrumb,.sp-page[dir="rtl"] .sp-actions,.sp-page[dir="rtl"] .sp-section-head,.sp-page[dir="rtl"] .sp-filters,.sp-page[dir="rtl"] .sp-tabs,.sp-page[dir="rtl"] .sp-additional-row{direction:rtl}
+.sp-page[dir="rtl"] .sp-guidance ul{padding-left:0;padding-right:20px}
+.sp-page[dir="rtl"] input[type="number"],.sp-page[dir="rtl"] .sp-spec{direction:ltr;unicode-bidi:isolate}
+.sp-page[dir="rtl"] .sp-hero-detail{direction:rtl}
+.sp-page .sp-code bdi,.sp-page .sp-model span{unicode-bidi:isolate}
+.sp-page .sp-card h3,.sp-page .sp-additional-row h3,.sp-page .sp-button,.sp-page .sp-sticky a{overflow-wrap:anywhere}
+.sp-page .sp-sticky>span{min-width:0}.sp-page .sp-sticky a{flex-shrink:0}
+.sp-filters>label,.sp-field{min-width:0}
+.sp-filters input,.sp-filters select,.sp-field input,.sp-field textarea{width:100%;min-width:0}
+@media(max-width:760px){.sp-filters{grid-template-columns:repeat(2,minmax(0,1fr))}.sp-page .sp-sticky{flex-wrap:wrap}.sp-page .sp-sticky a{flex:1 1 auto;text-align:center}}

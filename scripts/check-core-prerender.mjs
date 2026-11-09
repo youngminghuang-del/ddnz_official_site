@@ -26,8 +26,8 @@ for(const route of routes){
  }
  if(route.endsWith('/insights/'))assert(html.includes('/blog/'),`${route}: article discovery missing`);
 }
-assert.equal(count,109,'Expected existing core pages plus two scooter spare-parts catalogues');
-for(const route of ['/sourcing/electric-scooter-spare-parts-from-china/','/zh-cn/sourcing/electric-scooter-spare-parts-from-china/']){
+assert.equal(count,115,'Expected existing core pages plus eight scooter spare-parts catalogues');
+for(const route of ['','/zh-cn','/ar','/es','/fr','/ru','/pt','/tr'].map(p=>p+'/sourcing/electric-scooter-spare-parts-from-china/')){
  const html=fs.readFileSync(path.join(root,route,'index.html'),'utf8');
  assert.equal((html.match(/class="sp-card"/g)||[]).length,17,`${route}: pictured parts catalogue`);
  assert.equal((html.match(/class="sp-additional-row"/g)||[]).length,11,`${route}: additional parts retained as compact enquiry rows`);
