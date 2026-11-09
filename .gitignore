@@ -10,3 +10,6 @@ tmp/
 
 # Cloud-sync conflict copies of installed dependencies
 node_modules [0-9]*/
+
+# Local/CI release evidence is uploaded as Actions artifacts, not committed.
+artifacts/

@@ -1,3 +1,6 @@
+import blogReleaseManifest from '../src/data/blog-release-manifest.json';
+import blogPublications from '../src/data/blog-publications.json';
+import { execFileSync } from 'node:child_process';
 import lclClaimsRelease from '../src/data/lclClaimsRelease.json';
 import usbCableRelease from '../src/data/usbCableRelease.json';
 import suezNovemberRelease from '../src/data/suezNovemberRelease.json';
@@ -554,7 +557,9 @@ async function run() {
 
       const initialContent = propertyText(properties.Content || properties.content);
       console.log(`Compiling Notion article "${title}" (${page.id}).`);
-      const rendered = slug === lclClaimsRelease.slug
+      const controlledEntry = blogReleaseManifest.releases.find(entry => entry.slug === slug);
+      const controlledRelease = controlledEntry ? JSON.parse(fs.readFileSync(path.join(process.cwd(), controlledEntry.release_file), 'utf8')) : null;
+      const rendered = controlledRelease ? { html: controlledRelease.content, toc: controlledRelease.toc, wordCount: controlledRelease.wordCount, readMinutes: controlledRelease.readMinutes } : slug === lclClaimsRelease.slug
         ? { html: lclClaimsRelease.content, toc: lclClaimsRelease.toc, wordCount: lclClaimsRelease.wordCount, readMinutes: lclClaimsRelease.readMinutes }
         : slug === usbCableRelease.slug
         ? { html: usbCableRelease.content, toc: usbCableRelease.toc, wordCount: usbCableRelease.wordCount, readMinutes: usbCableRelease.readMinutes }
@@ -605,8 +610,8 @@ async function run() {
         category,
         language,
         translationGroup,
-        date,
-        lastEdited: slug === lclClaimsRelease.slug ? lclClaimsRelease.articleDate : slug === usbCableRelease.slug ? usbCableRelease.articleDate : slug === suezNovemberRelease.slug ? suezNovemberRelease.articleDate : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.articleDate : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
+        date: controlledRelease ? (blogPublications.publications[slug]?.published_at || controlledRelease.articleDate) : date,
+        lastEdited: controlledRelease ? controlledRelease.articleDate : slug === lclClaimsRelease.slug ? lclClaimsRelease.articleDate : slug === usbCableRelease.slug ? usbCableRelease.articleDate : slug === suezNovemberRelease.slug ? suezNovemberRelease.articleDate : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.articleDate : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
         summary,
         thumbnailUrl,
         content: rendered.html,
@@ -623,7 +628,7 @@ async function run() {
         contentType: propertyText(properties["Content Type"]),
         // QI YANG approved this article in the owner review on 2026-10-13.
         // No matching Notion account exists; retain the confirmed display name.
-        reviewer: slug === lclClaimsRelease.slug ? lclClaimsRelease.reviewer : slug === usbCableRelease.slug ? usbCableRelease.reviewer : slug === suezNovemberRelease.slug ? suezNovemberRelease.reviewer : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.reviewer : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.reviewer : slug === gulfBarBlenderRelease.slug ? gulfBarBlenderRelease.reviewer : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.reviewer : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
+        reviewer: controlledRelease ? controlledRelease.reviewer : slug === lclClaimsRelease.slug ? lclClaimsRelease.reviewer : slug === usbCableRelease.slug ? usbCableRelease.reviewer : slug === suezNovemberRelease.slug ? suezNovemberRelease.reviewer : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.reviewer : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.reviewer : slug === gulfBarBlenderRelease.slug ? gulfBarBlenderRelease.reviewer : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.reviewer : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.reviewer : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.reviewer : slug === commercialIceMachineRelease.slug ? commercialIceMachineRelease.reviewer : slug === commercialDishwasherRelease.slug ? commercialDishwasherRelease.reviewer : slug === commercialMixerRelease.slug ? commercialMixerRelease.reviewer : slug === kitchenSparePartsRelease.slug ? kitchenSparePartsRelease.reviewer : slug === istanbulKitchenRelease.slug ? istanbulKitchenRelease.reviewer : slug === indonesiaKitchenCostApproval.slug ? indonesiaKitchenCostApproval.reviewer : slug === hayaletApproval.slug ? hayaletApproval.reviewer : slug === kitchenApproval.slug ? kitchenApproval.reviewer : slug === privacyArticleSlug ? ['QI YANG'] : propertyPeople(properties.Reviewer),
         lastVerified: propertyDate(properties["Last Verified"]),
         qualityScore: propertyNumber(properties["Quality Score"]),
         primaryCTA: propertyText(properties["Primary CTA"]),
@@ -686,5 +691,5 @@ async function run() {
   }
 }
 
-run();
+run().then(() => execFileSync('python3', ['scripts/check_blog_release.py'], { stdio: 'inherit' })).catch(error => { console.error(error.message); process.exitCode = 1; });
 
