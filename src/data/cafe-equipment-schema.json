@@ -9,20 +9,20 @@
     },
     {
       "@type": "WebPage",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#webpage",
-      "name": "咖啡店设备采购清单：咖啡机、磨豆机、制冰机怎样搭配？",
-      "description": "按菜单和高峰订单搭配咖啡机、磨豆机与制冰机，核对储冰、净水、水电点位和首批设备报价范围，整理咖啡店采购清单。",
-      "inLanguage": "zh-CN",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#webpage",
+      "name": "Coffee Shop Equipment Checklist: Matching the Espresso Machine, Grinder and Ice Maker",
+      "description": "Build a café equipment list around peak orders: match espresso machines, grinders, ice production, storage and utilities before requesting a factory quotation.",
+      "inLanguage": "en",
       "mainEntity": {
-        "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#article"
+        "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#article"
       },
       "breadcrumb": {
-        "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#breadcrumb"
+        "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#breadcrumb"
       },
       "primaryImageOfPage": {
-        "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-g"
+        "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-g"
       },
-      "url": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/",
+      "url": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/",
       "reviewedBy": {
         "@type": "Person",
         "name": "Huang Matthew"
@@ -30,12 +30,12 @@
     },
     {
       "@type": "BlogPosting",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#article",
-      "headline": "咖啡店设备采购清单：咖啡机、磨豆机、制冰机怎样搭配？",
-      "description": "按菜单和高峰订单搭配咖啡机、磨豆机与制冰机，核对储冰、净水、水电点位和首批设备报价范围，整理咖啡店采购清单。",
-      "inLanguage": "zh-CN",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#article",
+      "headline": "Coffee Shop Equipment Checklist: Matching the Espresso Machine, Grinder and Ice Maker",
+      "description": "Build a café equipment list around peak orders: match espresso machines, grinders, ice production, storage and utilities before requesting a factory quotation.",
+      "inLanguage": "en",
       "mainEntityOfPage": {
-        "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#webpage"
+        "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#webpage"
       },
       "publisher": {
         "@id": "https://www.ddnzglobal.com/#organization"
@@ -56,119 +56,119 @@
       ],
       "hasPart": [
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#faq"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#faq"
         }
       ],
       "image": [
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-g"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-g"
         },
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-b"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-b"
         },
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-c"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-c"
         },
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-d"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-d"
         },
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-e"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-e"
         },
         {
-          "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-f"
+          "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-f"
         }
       ],
-      "url": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/",
+      "url": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/",
       "datePublished": "2026-11-09T09:35:59Z",
-      "dateModified": "2026-11-09T09:35:59Z",
+      "dateModified": "2026-11-09T21:27:30+08:00",
       "author": {
         "@id": "https://www.ddnzglobal.com/#organization"
       }
     },
     {
       "@type": "FAQPage",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#faq",
-      "inLanguage": "zh-CN",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#faq",
+      "inLanguage": "en",
       "mainEntity": [
         {
           "@type": "Question",
-          "name": "小咖啡店一定要双头咖啡机吗？",
+          "name": "Does a small café always need a two-group espresso machine?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "不必先定头数。先列高峰饮品组合、奶咖比例和操作人数，再用候选机型演示连续出杯。把冲煮、蒸汽与磨豆等待一起比较后决定。"
+            "text": "Start with peak orders, milk-drink share and staffing. Demonstrate consecutive drinks with shortlisted models and compare brewing, steam and grinding waits before choosing the group arrangement."
           }
         },
         {
           "@type": "Question",
-          "name": "一台磨豆机够不够？",
+          "name": "Is one grinder enough?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "先看是否只用一种豆、一种出品方式。若同时供应第二豆种、低因或手冲，要安排切换和清洁，再判断是否另配设备。使用内置研磨的全自动机时，先核实其实际配置。"
+            "text": "Check the bean and brewing-method range. Another bean, decaf or filter offering requires a switching and cleaning plan before deciding on extra equipment. Check integrated grinding first when choosing a bean-to-cup machine."
           }
         },
         {
           "@type": "Question",
-          "name": "制冰机的日产量够大，就不用看储冰量了吗？",
+          "name": "If daily ice production is sufficient, can storage be ignored?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "仍要看。按配方算出忙时用冰，结合安装工况下的产冰、忙时开始前可用储冰和补冰节奏一起判断。询价时把储冰箱是否包含单独写明。"
+            "text": "No. Compare recipe-based peak demand with production at the installation conditions, usable ice before the rush and replenishment. State separately whether the storage bin is included."
           }
         }
       ]
     },
     {
       "@type": "ItemList",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#equipment-schedule",
-      "name": "咖啡店设备采购配套表",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#equipment-schedule",
+      "name": "Café equipment purchasing schedule",
       "numberOfItems": 8,
       "itemListOrder": "https://schema.org/ItemListOrderAscending",
       "itemListElement": [
         {
           "@type": "ListItem",
           "position": 1,
-          "name": "咖啡机"
+          "name": "Coffee machine"
         },
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "意式主磨或内置研磨系统"
+          "name": "Main espresso grinder or integrated grinding"
         },
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "第二磨或手冲设备（按菜单选配）"
+          "name": "Second grinder or filter equipment, if required"
         },
         {
           "@type": "ListItem",
           "position": 4,
-          "name": "制冰机与储冰配置"
+          "name": "Ice maker and storage"
         },
         {
           "@type": "ListItem",
           "position": 5,
-          "name": "水处理系统"
+          "name": "Water treatment"
         },
         {
           "@type": "ListItem",
           "position": 6,
-          "name": "奶品冷藏"
+          "name": "Milk refrigeration"
         },
         {
           "@type": "ListItem",
           "position": 7,
-          "name": "清洗与排水"
+          "name": "Washing and drainage"
         },
         {
           "@type": "ListItem",
           "position": 8,
-          "name": "吧台工具与首批维护件"
+          "name": "Bar tools and initial service parts"
         }
       ]
     },
     {
       "@type": "BreadcrumbList",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#breadcrumb",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#breadcrumb",
       "itemListElement": [
         {
           "@type": "ListItem",
@@ -179,68 +179,68 @@
         {
           "@type": "ListItem",
           "position": 2,
-          "name": "咖啡店设备采购清单：咖啡机、磨豆机、制冰机怎样搭配？"
+          "name": "Coffee Shop Equipment Checklist: Matching the Espresso Machine, Grinder and Ice Maker"
         }
       ]
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-g",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-g",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/cover-cafe-workstation.webp",
-      "description": "吧台上的拉杆咖啡机与独立磨豆机实拍",
+      "description": "Lever espresso machine and a standalone grinder on a café counter",
       "width": 1200,
       "height": 800,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/cover-cafe-workstation.webp"
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-b",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-b",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/ky168-espresso-machine.webp",
-      "description": "产品库标为KY-168的双头咖啡机",
+      "description": "Two-group espresso machine identified as KY-168 in the product library",
       "width": 1448,
       "height": 1086,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/ky168-espresso-machine.webp"
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-c",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-c",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/mahlkoenig-e65s-grinder.png",
-      "description": "Mahlkönig E65S独立意式磨豆机",
+      "description": "Mahlkönig E65S standalone espresso grinder",
       "width": 800,
       "height": 1000,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/mahlkoenig-e65s-grinder.png"
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-d",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-d",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/dr-coffee-f11-big-plus.webp",
-      "description": "Dr. Coffee F11 Big Plus全自动咖啡机",
+      "description": "Dr. Coffee F11 Big Plus bean-to-cup coffee machine",
       "width": 700,
       "height": 700,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/dr-coffee-f11-big-plus.webp"
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-e",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-e",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/snowsman-bt-ice-maker.jpg",
-      "description": "Snowsman BT系列台下式方冰机产品图",
+      "description": "Snowsman BT-series undercounter cube ice maker product image",
       "width": 800,
       "height": 800,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/snowsman-bt-ice-maker.jpg"
     },
     {
       "@type": "ImageObject",
-      "@id": "https://www.ddnzglobal.com/zh-cn/blog/coffee-shop-equipment-checklist/#image-f",
+      "@id": "https://www.ddnzglobal.com/blog/coffee-shop-equipment-checklist/#image-f",
       "contentUrl": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/kaison-modular-ice-bin.webp",
-      "description": "KAISON分体式制冰主机与储冰箱产品图",
+      "description": "KAISON modular ice maker shown with an ice storage bin",
       "width": 1254,
       "height": 1254,
-      "inLanguage": "zh-CN",
+      "inLanguage": "en",
       "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/kaison-modular-ice-bin.webp"
     }
   ]

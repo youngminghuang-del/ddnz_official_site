@@ -611,7 +611,7 @@ async function run() {
         language,
         translationGroup,
         date: controlledRelease ? (blogPublications.publications[slug]?.published_at || controlledRelease.articleDate) : date,
-        lastEdited: controlledRelease ? controlledRelease.articleDate : slug === lclClaimsRelease.slug ? lclClaimsRelease.articleDate : slug === usbCableRelease.slug ? usbCableRelease.articleDate : slug === suezNovemberRelease.slug ? suezNovemberRelease.articleDate : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.articleDate : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
+        lastEdited: controlledRelease ? (controlledRelease.modifiedAt || controlledRelease.articleDate) : slug === lclClaimsRelease.slug ? lclClaimsRelease.articleDate : slug === usbCableRelease.slug ? usbCableRelease.articleDate : slug === suezNovemberRelease.slug ? suezNovemberRelease.articleDate : slug === polandPhoneCaseGpsrRelease.slug ? polandPhoneCaseGpsrRelease.articleDate : slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.articleDate : slug === latamLclQuoteRelease.slug ? latamLclQuoteRelease.articleDate : slug === egyptScooterPartsRelease.slug ? egyptScooterPartsRelease.articleDate : slug === magneticCaseWholesaleRelease.slug ? magneticCaseWholesaleRelease.articleDate : page.last_edited_time,
         summary,
         thumbnailUrl,
         content: rendered.html,
