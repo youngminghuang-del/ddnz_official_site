@@ -1,0 +1,245 @@
+{
+  "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.ddnzglobal.com/#organization",
+        "name": "DDNZ Global Trade Co., Ltd.",
+        "url": "https://www.ddnzglobal.com/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#webpage",
+        "name": "Carga LCL desde China con faltantes o daños: qué documentar al recibir y cómo reclamar",
+        "description": "Qué registrar si su carga LCL desde China llega dañada o incompleta: recepción, fotografías, avisos y documentos para importadores de Latinoamérica.",
+        "inLanguage": "es",
+        "mainEntity": {
+          "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#article"
+        },
+        "breadcrumb": {
+          "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#breadcrumb"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-d"
+        },
+        "url": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/",
+        "reviewedBy": {
+          "@type": "Person",
+          "name": "Huang Matthew"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#article",
+        "headline": "Carga LCL desde China con faltantes o daños: qué documentar al recibir y cómo reclamar",
+        "description": "Qué registrar si su carga LCL desde China llega dañada o incompleta: recepción, fotografías, avisos y documentos para importadores de Latinoamérica.",
+        "inLanguage": "es",
+        "mainEntityOfPage": {
+          "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#webpage"
+        },
+        "publisher": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        },
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Importadores y distribuidores de Centroamérica y Sudamérica"
+        },
+        "citation": [
+          "https://www.maersk.com/support/faqs/lost-or-damaged-cargo",
+          "https://www.dhl.com/ch-en/home/global-forwarding/help-center/how-to-prepare-a-claim.html",
+          "https://www.tokiomarine.com/sg/en/non-life/claim/step-by-step-claim-guide/marine-cargo-claims-process.html",
+          "https://www.hapag-lloyd.com/en/online-business/documentation/cargo-claims.html",
+          "https://terms.maersk.com/carriage"
+        ],
+        "hasPart": [
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#faq"
+          }
+        ],
+        "image": [
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-d"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-a"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-b"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-c"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-e"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-f"
+          }
+        ],
+        "url": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/",
+        "datePublished": "2026-11-09T11:50:48+08:00",
+        "dateModified": "2026-11-09T11:50:48+08:00",
+        "creativeWorkStatus": "Published",
+        "author": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#faq",
+        "inLanguage": "es",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "¿Firmé sin observaciones: ya no puedo reclamar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No se puede concluir eso sin revisar el caso. Si el daño apareció al abrir, documente el descubrimiento y avise de inmediato. La firma sin salvedades puede dificultar la prueba; los efectos dependen del contrato y las normas aplicables."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Reclamo al proveedor, al agente o al seguro?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Comunique la incidencia a la contraparte de transporte y, si tiene cobertura, al asegurador. Consulte también al proveedor si hay diferencias de contenido o embalaje. La responsabilidad se determina con los documentos y los hechos, no únicamente por quién recibió el primer mensaje."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Espero a calcular toda la pérdida antes de avisar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. Envíe el aviso con las referencias y los hechos disponibles, indique lo pendiente y complete después la reclamación cuantificada según el procedimiento aplicable."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "¿Cuántos días tengo y cuánto me van a pagar?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No hay una respuesta única para toda Latinoamérica. Revise por separado el plazo de aviso, el de presentar documentación y el de ejercer acciones, además de las condiciones del seguro. Notificar o negociar no debe darse por hecho que suspenda esos plazos; tampoco garantiza un importe de pago."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#receipt-claim-checklist",
+        "name": "Checklist de recepción y reclamación",
+        "numberOfItems": 6,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Identificación del embarque"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Conteo de bultos"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Estado al recibir"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Apertura y contenido"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Avisos y seguimiento"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Pérdida documentada"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DDNZ",
+            "item": "https://www.ddnzglobal.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://www.ddnzglobal.com/es/blog/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Carga LCL desde China con faltantes o daños: qué documentar al recibir y cómo reclamar"
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-a",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/recepcion-conteo-cajas.jpg",
+        "description": "Personal de almacén verificando cajas y anotando los datos de recepción",
+        "width": 500,
+        "height": 534,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/recepcion-conteo-cajas.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-b",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/verificacion-lista-bultos.jpg",
+        "description": "Operario cotejando mercancía embalada con una lista en el almacén",
+        "width": 888,
+        "height": 1024,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/verificacion-lista-bultos.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-c",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/cajas-rasgadas-contenedor.jpg",
+        "description": "Cajas aplastadas y rasgadas con contenido expuesto entre mercancías de un contenedor",
+        "width": 1564,
+        "height": 1576,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/cajas-rasgadas-contenedor.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-d",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/fotografia-antes-descarga.jpg",
+        "description": "Operario fotografiando el interior de un contenedor antes de descargar",
+        "width": 1088,
+        "height": 984,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/fotografia-antes-descarga.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-e",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/apertura-caja-identificada.jpg",
+        "description": "Apertura de una caja identificada con etiquetas para inspeccionar su contenido",
+        "width": 1024,
+        "height": 666,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/apertura-caja-identificada.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/#image-f",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/registro-contenido-cajas.webp",
+        "description": "Inspección de cajas abiertas y registro con un teléfono del contenido y embalaje interior",
+        "width": 3648,
+        "height": 1712,
+        "url": "https://www.ddnzglobal.com/images/posts/carga-lcl-china-faltantes-danos-reclamacion/registro-contenido-cajas.webp"
+      }
+    ]
+  }
+}

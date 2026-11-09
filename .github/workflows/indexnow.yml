@@ -1,0 +1,101 @@
+name: Notify changed URLs with IndexNow
+on:
+  workflow_run:
+    workflows: [Deploy to GitHub Pages]
+    branches: [main]
+    types: [completed]
+  workflow_dispatch:
+    inputs:
+      run_id:
+        description: Successful production run to notify or retry
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: indexnow-notifications
+  cancel-in-progress: false
+jobs:
+  notify:
+    if: github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      # Execute trusted default-branch code. Artifacts below are JSON data only.
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - name: Select verified production and prior successful checkpoint
+        id: select
+        uses: actions/github-script@v7
+        env:
+          SOURCE_RUN: ${{ github.event.workflow_run.id || inputs.run_id }}
+        with:
+          script: |
+            const runId = Number(process.env.SOURCE_RUN);
+            if (!Number.isSafeInteger(runId) || runId <= 0) throw new Error('Invalid production run');
+            const {data: source} = await github.rest.actions.getWorkflowRun({...context.repo, run_id: runId});
+            if (source.head_branch !== 'main' || source.head_repository.full_name !== process.env.GITHUB_REPOSITORY || source.path !== '.github/workflows/deploy.yml' || source.conclusion !== 'success') throw new Error('Trusted successful production run required');
+            const {data: artifacts} = await github.rest.actions.listWorkflowRunArtifacts({...context.repo, run_id: runId});
+            const current = artifacts.artifacts.find(a => a.name === 'url-manifest-reconciled' && !a.expired) || artifacts.artifacts.find(a => a.name === 'url-manifest' && !a.expired);
+            if (!current) throw new Error('Production content manifest missing');
+            core.setOutput('source_run', runId);
+            core.setOutput('completed_at', source.updated_at);
+            core.setOutput('source_artifact', current.name);
+            const {data: history} = await github.rest.actions.listWorkflowRuns({...context.repo, workflow_id:'indexnow.yml', status:'success', per_page:100});
+            let prior;
+            for (const run of history.workflow_runs) {
+              if (run.id === context.runId || run.head_branch !== 'main') continue;
+              const {data: saved} = await github.rest.actions.listWorkflowRunArtifacts({...context.repo, run_id:run.id});
+              if (saved.artifacts.some(a => a.name === 'indexnow-checkpoint' && !a.expired)) {prior=run;break;}
+            }
+            if (history.total_count && !prior) throw new Error('Prior checkpoint expired; explicit baseline recovery required');
+            core.setOutput('baseline_run', prior ? prior.id : '');
+      - uses: actions/download-artifact@v4
+        with:
+          name: ${{ steps.select.outputs.source_artifact }}
+          path: current
+          run-id: ${{ steps.select.outputs.source_run }}
+          github-token: ${{ github.token }}
+      - uses: actions/download-artifact@v4
+        if: steps.select.outputs.baseline_run != ''
+        with:
+          name: indexnow-checkpoint
+          path: baseline
+          run-id: ${{ steps.select.outputs.baseline_run }}
+          github-token: ${{ github.token }}
+      - name: Attach verified production ordering
+        env:
+          SOURCE_RUN: ${{ steps.select.outputs.source_run }}
+          COMPLETED_AT: ${{ steps.select.outputs.completed_at }}
+        run: >-
+          node --input-type=module -e "import fs from 'node:fs'; const p='current/url-manifest.json'; const m=JSON.parse(fs.readFileSync(p)); m.source_run_id=Number(process.env.SOURCE_RUN); m.deployment_completed_at=process.env.COMPLETED_AT; fs.writeFileSync(p,JSON.stringify(m,null,2));"
+      - name: Submit only added or changed canonical URLs
+        env:
+          HAS_BASELINE: ${{ steps.select.outputs.baseline_run != '' }}
+        run: |
+          args=(--manifest current/url-manifest.json --checkpoint artifacts/indexnow-checkpoint.json)
+          if [ "$HAS_BASELINE" = "true" ]; then args+=(--baseline baseline/indexnow-checkpoint.json); fi
+          node scripts/push-indexnow-urls.mjs "${args[@]}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: indexnow-checkpoint
+          path: |
+            artifacts/indexnow-checkpoint.json
+            artifacts/indexnow-checkpoint.receipt.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Record paused Baidu submission
+        if: vars.BAIDU_HTTP_PUSH_APPROVED != 'true'
+        run: echo 'Baidu submission remains paused.' >> "$GITHUB_STEP_SUMMARY"
+      - name: Optional approved Baidu notification
+        if: vars.BAIDU_HTTP_PUSH_APPROVED == 'true'
+        continue-on-error: true
+        env:
+          BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
+        run: node scripts/push-baidu-urls.mjs --sitemap https://www.ddnzglobal.com/sitemap.xml --recent-days 2

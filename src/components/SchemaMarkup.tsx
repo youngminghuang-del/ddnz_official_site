@@ -1,3 +1,4 @@
+import registeredBlogSchemas from '../data/blogReleaseSchemas.json';
 import lclClaimsSchema from '../data/lcl-claims-schema.json';
 import usbCableSchema from '../data/usb-cable-schema.json';
 import suezNovemberSchema from '../data/suez-november-schema.json';
@@ -286,6 +287,9 @@ export default function SchemaMarkup({ type, data }: SchemaProps) {
     if (type === 'BlogPosting' && pageUrl.replace(/\/+$/, '') === schemaCanonicalUrl(lclClaimsSchema).replace(/\/+$/, '')) {
       finalSchema = lclClaimsSchema;
     }
+
+    const registeredSchema = (registeredBlogSchemas as Record<string, any>)[pageUrl.endsWith('/') ? pageUrl : pageUrl + '/'];
+    if (type === 'BlogPosting' && registeredSchema) finalSchema = registeredSchema;
 
     // Create script tag and append to head
     const script = document.createElement('script');

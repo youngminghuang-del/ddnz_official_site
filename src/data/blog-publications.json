@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "publications": {
+    "carga-lcl-china-faltantes-danos-reclamacion": {
+      "published_at": "2026-11-09T11:50:48+08:00",
+      "run_id": 42558303009,
+      "commit": "6227ae2b583c9b65f1c540f75bb6ebca3e4228b0",
+      "source": "Verified successful Deploy to GitHub Pages step; migrated without editing article files."
+    }
+  }
+}

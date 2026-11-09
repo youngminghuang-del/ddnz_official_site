@@ -20,10 +20,15 @@
     "audit:seo": "node scripts/audit-seo-output.mjs",
     "audit:deployment": "node scripts/audit-deployment-files.mjs",
     "push:baidu": "node scripts/push-baidu-urls.mjs --sitemap public/sitemap.xml",
-    "push:indexnow": "node scripts/push-indexnow-urls.mjs --sitemap public/sitemap.xml",
+    "push:indexnow": "node scripts/push-indexnow-urls.mjs --manifest artifacts/url-manifest.json",
     "clean": "rm -rf dist",
     "lint": "tsc --noEmit",
-    "audit:freight-public": "node scripts/audit-public-freight.mjs"
+    "audit:freight-public": "node scripts/audit-public-freight.mjs",
+    "prebuild": "node scripts/build-blog-release-index.mjs",
+    "prebuild:preview": "node scripts/build-blog-release-index.mjs && node scripts/stage-blog-release-preview.mjs",
+    "postbuild": "python3 scripts/check_blog_release.py --dist dist --report artifacts/blog-template-validation.json && node scripts/build-url-manifest.mjs",
+    "postbuild:preview": "python3 scripts/check_blog_release.py --dist dist --report artifacts/blog-template-validation.json && node scripts/build-url-manifest.mjs",
+    "audit:blog-release": "python3 scripts/check_blog_release.py --dist dist --report artifacts/blog-template-validation.json"
   },
   "dependencies": {
     "@formspree/react": "^3.0.0",

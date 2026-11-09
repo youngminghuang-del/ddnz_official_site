@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "site": "https://www.ddnzglobal.com",
+  "releases": [
+    {
+      "slug": "carga-lcl-china-faltantes-danos-reclamacion",
+      "canonical": "https://www.ddnzglobal.com/es/blog/carga-lcl-china-faltantes-danos-reclamacion/",
+      "language": "es",
+      "release_file": "src/data/lclClaimsRelease.json",
+      "schema_file": "src/data/lcl-claims-schema.json",
+      "notion_page_id": "413eac33-2618-81c7-92ba-eb9a6367afb6",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/fotografia-antes-descarga.jpg",
+      "images": [
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/fotografia-antes-descarga.jpg",
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/recepcion-conteo-cajas.jpg",
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/verificacion-lista-bultos.jpg",
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/cajas-rasgadas-contenedor.jpg",
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/apertura-caja-identificada.jpg",
+        "/images/posts/carga-lcl-china-faltantes-danos-reclamacion/registro-contenido-cajas.webp"
+      ],
+      "faq_count": 4,
+      "item_list_count": 6
+    }
+  ]
+}

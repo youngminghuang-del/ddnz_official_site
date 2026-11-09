@@ -24,6 +24,7 @@ concurrency:
   cancel-in-progress: false
 
 permissions:
+  actions: read
   contents: read
   pages: write
   id-token: write
@@ -33,6 +34,8 @@ env:
 
 jobs:
   build:
+    outputs:
+      pending: ${{ steps.pending.outputs.count }}
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -74,6 +77,23 @@ jobs:
           npm run audit:search-intent
           node --import tsx scripts/test-freight-eight-languages.ts
           node scripts/test-market-static.mjs
+      - name: Prepare first-publication candidates
+        id: pending
+        run: node scripts/prepare-blog-publication.mjs
+      - name: Upload complete-template gate and URL fingerprints
+        uses: actions/upload-artifact@v4
+        with:
+          name: url-manifest
+          path: |
+            artifacts/url-manifest.json
+            artifacts/blog-template-validation.json
+          if-no-files-found: error
+      - name: Upload publication candidates
+        uses: actions/upload-artifact@v4
+        with:
+          name: blog-publication-inputs
+          path: artifacts/blog-pending.json
+          if-no-files-found: error
       - name: Write auditable sync summary
         run: >-
           node --input-type=module -e "import fs from 'node:fs'; const posts=JSON.parse(fs.readFileSync('src/data/notionBlogData.json','utf8')); const lines=['## Notion content sync','','- Trigger: **'+process.env.GITHUB_EVENT_NAME+'**','- Published articles compiled: **'+posts.length+'**','- Build time: **'+new Date().toISOString()+'**','- Strict sync: **enabled**','']; fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,lines.join('\n'));"
@@ -104,32 +124,117 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-      - name: Checkout submission script
+      - name: Checkout verified release scripts
         uses: actions/checkout@v4
-      - name: Set up Node for search-engine submission
+      - name: Set up Node
         uses: actions/setup-node@v4
         with:
           node-version: 24
-      - name: Record paused Baidu submission
-        if: vars.BAIDU_HTTP_PUSH_APPROVED != 'true'
-        run: echo "Baidu submission paused pending approval for its HTTP token endpoint." >> "$GITHUB_STEP_SUMMARY"
-      - name: Submit deployed sitemap URLs to Baidu
-        if: vars.BAIDU_HTTP_PUSH_APPROVED == 'true'
-        continue-on-error: true
+      - name: Record successful Pages timestamp
         env:
-          BAIDU_PUSH_TOKEN: ${{ secrets.BAIDU_PUSH_TOKEN }}
-        run: >-
-          node scripts/push-baidu-urls.mjs
-          --sitemap https://www.ddnzglobal.com/sitemap.xml
-          --recent-days ${{ github.event_name == 'schedule' && '2' || '0' }}
-      - name: Submit deployed sitemap URLs to IndexNow
-        continue-on-error: true
-        run: >-
-          node scripts/push-indexnow-urls.mjs
-          --sitemap https://www.ddnzglobal.com/sitemap.xml
-          --recent-days ${{ github.event_name == 'schedule' && '2' || '0' }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node scripts/capture-pages-receipt.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pages-receipt
+          path: artifacts/pages-receipt.json
+          if-no-files-found: error
       - name: Verify the deployed sitemap remains reachable
-        run: curl --fail --silent --show-error --retry 6 --retry-delay 10 https://www.ddnzglobal.com/sitemap.xml > /dev/null
+        run: curl --fail --silent --show-error --max-time 30 --retry 2 https://www.ddnzglobal.com/sitemap.xml > /dev/null
       - name: Audit deployed security headers
+        continue-on-error: true
+        run: node scripts/check-security-headers.mjs https://www.ddnzglobal.com/
+
+  write-publication:
+    needs: [build, deploy]
+    if: needs.build.outputs.pending != '0'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    outputs:
+      reconcile: ${{ steps.write.outputs.reconcile }}
+      commit: ${{ steps.write.outputs.commit }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@v4
+        with:
+          name: blog-publication-inputs
+          path: artifacts
+      - uses: actions/download-artifact@v4
+        with:
+          name: pages-receipt
+          path: artifacts
+      - name: Write the first publication time once
+        id: write
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+        run: node scripts/write-blog-publication.mjs
+
+  reconcile-publication:
+    needs: [deploy, write-publication]
+    if: needs.write-publication.outputs.reconcile == 'true'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ needs.write-publication.outputs.commit }}
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - name: Validate reconciled release
+        run: |
+          npm run lint
+          node --import tsx --test tests/*.test.mjs tests/*.test.ts tests/*.test.tsx tests/kitchen/*.test.mjs
+          npm run test:notion-routing
+          npm run test:notion-guards
+      - name: Rebuild full templates and preserve schema gate
+        env:
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          STRICT_NOTION_SYNC: "true"
+          VITE_GOOGLE_SITE_VERIFICATION: ${{ secrets.GOOGLE_SITE_VERIFICATION }}
+          VITE_BING_SITE_VERIFICATION: ${{ secrets.BING_SITE_VERIFICATION }}
+          VITE_BAIDU_SITE_VERIFICATION: ${{ secrets.BAIDU_SITE_VERIFICATION }}
+        run: npm run build
+      - name: Audit reconciled complete release
+        run: |
+          npm run audit:search-intent
+          node --import tsx scripts/test-freight-eight-languages.ts
+          node scripts/test-market-static.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: url-manifest-reconciled
+          path: |
+            artifacts/url-manifest.json
+            artifacts/blog-template-validation.json
+          if-no-files-found: error
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          name: github-pages-reconciled
+          path: dist
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+        with:
+          artifact_name: github-pages-reconciled
+      - name: Verify reconciled sitemap
+        run: curl --fail --silent --show-error --max-time 30 --retry 2 https://www.ddnzglobal.com/sitemap.xml > /dev/null
+      - name: Audit reconciled security headers
         continue-on-error: true
         run: node scripts/check-security-headers.mjs https://www.ddnzglobal.com/
