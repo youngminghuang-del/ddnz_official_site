@@ -64,18 +64,21 @@ const overviewUrl = 'https://www.ddnzglobal.com/screen-protectors/';
 assert.equal(isQuoteEntry('/screen-protectors/brief/', overviewUrl), true);
 assert.equal(isQuoteEntry('/fr/get-a-quote/?source=audio', overviewUrl), true);
 assert.equal(isQuoteEntry('#audio-rfq', overviewUrl), true);
+assert.equal(isQuoteEntry('#buying-brief', overviewUrl), true);
 assert.equal(isQuoteEntry('#lcl-quote-scope', overviewUrl), false);
 assert.equal(isQuoteEntry('https://example.com/get-a-quote/', overviewUrl), false);
 assert.equal(isQuoteEntry('/another-page/#audio-rfq', overviewUrl), false);
+assert.equal(isQuoteEntry('/another-page/#buying-brief', overviewUrl), false);
 
 // Exercise the actual global click handler with tracked and untracked anchors.
 const { readFileSync } = await import('node:fs');
 const { transpileModule } = await import('typescript');
 const appSource = readFileSync(new URL('../src/App.tsx', import.meta.url), 'utf8');
-const handlerSource = appSource.split('const handleClick = (event: MouseEvent) => {')[1]
-  .split("document.addEventListener('click', handleClick);")[0];
+const trackerStart = appSource.indexOf('const clickContexts =', appSource.indexOf('function GlobalConversionTracker()'));
+const trackerEnd = appSource.indexOf("document.addEventListener('click', captureClick, true);", trackerStart);
+assert.ok(trackerStart >= 0 && trackerEnd > trackerStart);
 const compiledHandler = transpileModule(
-  'const handleClick = (event: MouseEvent) => {' + handlerSource + '\nreturn handleClick;',
+  appSource.slice(trackerStart, trackerEnd) + '\nreturn { captureClick, handleClick };',
   { compilerOptions: { target: 99 } },
 ).outputText;
 class TestElement {
@@ -91,11 +94,25 @@ class TestAnchor extends TestElement {
   getAttribute(name: string) { return name === 'href' ? this.href : null; }
 }
 const emitted: string[] = [];
-const clickHandler = new Function('Element', 'HTMLAnchorElement', 'window', 'trackEvent',
-  'readAttribution', 'isQuoteEntry', compiledHandler)(TestElement, TestAnchor,
-  { location: { href: overviewUrl } }, (name: string) => emitted.push(name), () => ({}), isQuoteEntry);
-clickHandler({ target: new TestAnchor('/screen-protectors/brief/') });
+const testWindow = { location: { href: overviewUrl } };
+const payloads: Array<{ params: Record<string, unknown>; source?: Record<string, unknown> }> = [];
+const tracker = new Function('Element', 'HTMLAnchorElement', 'window', 'trackEvent',
+  'readAttribution', 'isQuoteEntry', 'captureAnalyticsPageContext', compiledHandler)(TestElement, TestAnchor,
+  testWindow, (name: string, params: Record<string, unknown>, source?: Record<string, unknown>) => {
+    emitted.push(name);
+    payloads.push({ params, source });
+  }, () => ({}), isQuoteEntry, () => ({
+    ...getSafeAnalyticsPageFields(testWindow.location.href),
+    page_language: testWindow.location.href.includes('/fr/') ? 'fr' : 'en',
+  }));
+const clickHandler = tracker.handleClick;
+const firstClick = { target: new TestAnchor('/screen-protectors/brief/') };
+tracker.captureClick(firstClick);
+testWindow.location.href = 'https://www.ddnzglobal.com/screen-protectors/brief/';
+clickHandler(firstClick);
 assert.deepEqual(emitted, ['quote_click']);
+assert.equal(payloads.at(-1)?.source?.page_path, '/screen-protectors/');
+testWindow.location.href = overviewUrl;
 emitted.length = 0;
 // A component has already emitted its own quote event before bubbling.
 emitted.push('quote_click');
@@ -110,3 +127,78 @@ emitted.length = 0;
 clickHandler({ target: new TestAnchor('https://example.com/get-a-quote/') });
 assert.equal(emitted.length, 0);
 console.log('Actual global purchase click handler deduplication passed.');
+
+// A component may mark the anchor during its own handler, after capture.
+emitted.length = 0;
+const componentClick = { target: new TestAnchor('/get-a-quote/') };
+tracker.captureClick(componentClick);
+assert.equal(emitted.length, 0, 'Capture must never dispatch an event');
+componentClick.target.dataset.analyticsTracked = 'true';
+clickHandler(componentClick);
+assert.equal(emitted.length, 0);
+
+// Keyboard activation is still a click, and source language must survive routing.
+const frenchUrl = 'https://www.ddnzglobal.com/fr/sourcing/mobile-accessories-from-china/?email=buyer%40example.com';
+testWindow.location.href = frenchUrl;
+const keyboardClick = { target: new TestAnchor('/get-a-quote/'), detail: 0 };
+tracker.captureClick(keyboardClick);
+testWindow.location.href = 'https://www.ddnzglobal.com/get-a-quote/';
+clickHandler(keyboardClick);
+assert.deepEqual(emitted, ['quote_click']);
+assert.equal(payloads.at(-1)?.source?.page_language, 'fr');
+assert.equal(payloads.at(-1)?.source?.page_path, '/fr/sourcing/mobile-accessories-from-china/');
+assert.ok(!JSON.stringify(payloads.at(-1)).includes('buyer'));
+
+// Classify same-page anchors against the captured URL even when it is longer
+// than the analytics text limit, then preserve independent per-click snapshots.
+emitted.length = 0;
+testWindow.location.href = `https://www.ddnzglobal.com/blog/${'long-article-'.repeat(12)}/`;
+const hashClick = { target: new TestAnchor('#audio-rfq') };
+tracker.captureClick(hashClick);
+testWindow.location.href = 'https://www.ddnzglobal.com/get-a-quote/';
+clickHandler(hashClick);
+assert.deepEqual(emitted, ['quote_click']);
+assert.equal(payloads.at(-1)?.source?.page_path, new URL(`https://www.ddnzglobal.com/blog/${'long-article-'.repeat(12)}/`).pathname);
+
+// Use the actual production payload builder and sender to verify that an old
+// source snapshot wins over the current URL, while consent and sanitization
+// still apply. Network/script loading is stubbed; nothing leaves this test.
+const analyticsSource = readFileSync(new URL('../src/lib/analytics.ts', import.meta.url), 'utf8');
+const contextCode = analyticsSource.slice(analyticsSource.indexOf('function getPageLanguage('), analyticsSource.indexOf('function ensureGtagQueue('));
+const eventCode = analyticsSource.slice(analyticsSource.indexOf('export function captureAnalyticsPageContext('), analyticsSource.indexOf('export function trackPageView('));
+const senderCode = transpileModule(
+  contextCode + eventCode.replaceAll('export function', 'function') + '\nreturn { captureAnalyticsPageContext, trackEvent };',
+  { compilerOptions: { target: 99 } },
+).outputText;
+for (const granted of [false, true]) {
+  let disabled = false;
+  const events: unknown[][] = [];
+  const clarityEvents: unknown[][] = [];
+  const browserWindow = {
+    location: { href: frenchUrl },
+    gtag: (...args: unknown[]) => events.push(args),
+    clarity: (...args: unknown[]) => clarityEvents.push(args),
+  };
+  const sender = new Function('window', 'document', 'getSafeAnalyticsPageFields', 'sanitizeAnalyticsParams',
+    'readAttribution', 'isAnalyticsDisabled', 'ensureGoogleAnalytics', 'analyticsConsentGranted', senderCode)(
+    browserWindow, { title: 'Accessoires pour téléphones' }, getSafeAnalyticsPageFields, sanitizeAnalyticsParams,
+    () => ({}), () => disabled, () => {}, granted,
+  );
+  const snapshot = sender.captureAnalyticsPageContext();
+  browserWindow.location.href = 'https://www.ddnzglobal.com/get-a-quote/?message=private';
+  sender.trackEvent('quote_click', { cta_location: 'mobile-accessories-request', email: 'buyer@example.com' }, snapshot);
+  assert.equal(events.length, 1);
+  const eventParams = events[0][2] as Record<string, unknown>;
+  assert.equal(eventParams.page_path, '/fr/sourcing/mobile-accessories-from-china/');
+  assert.equal(eventParams.page_location, 'https://www.ddnzglobal.com/fr/sourcing/mobile-accessories-from-china/');
+  assert.equal(eventParams.page_language, 'fr');
+  assert.equal(eventParams.page_title, 'Accessoires pour téléphones');
+  assert.equal(eventParams.consent_state, granted ? 'granted' : 'denied');
+  assert.equal(clarityEvents.length, granted ? 1 : 0);
+  assert.ok(!JSON.stringify(eventParams).includes('buyer'));
+  assert.ok(!JSON.stringify(eventParams).includes('private'));
+  disabled = true;
+  sender.trackEvent('quote_click', {}, snapshot);
+  assert.equal(events.length, 1, 'Local/test opt-out must still suppress dispatch');
+}
+console.log('Navigation source, language, keyboard click, late dedup and consent/privacy regression checks passed.');

@@ -1,7 +1,7 @@
 const quoteSectionIds = new Set([
   'get-a-quote', 'rfq-form-section', 'rfq', 'package-rfq', 'gulf-quote',
   'uae-quote', 'ghana-quote', 'mexico-quote', 'audio-rfq',
-  'speaker-model-request', 'refrigeration-rfq',
+  'speaker-model-request', 'refrigeration-rfq', 'buying-brief',
 ]);
 
 export function isQuoteEntry(href: string, currentUrl: string) {

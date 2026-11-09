@@ -20,7 +20,7 @@ import { buyerGuidePaths, overviewContentLanguages, productContentLanguages, loc
 import './features/buyer-guides/buyer-guides.css';
 import './components/freight-route-map.css';
 import { LanguageProvider, useLanguage } from './contexts/LanguageContext';
-import { initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
+import { captureAnalyticsPageContext, initializeAnalyticsConsent, trackEvent, trackPageView } from './lib/analytics';
 import { isQuoteEntry } from './lib/quoteEntry';
 import { readAttribution, rememberAttribution } from './lib/attribution';
 import { englishProductPaths, englishProductRedirect, isEnglishProductPath, navigationPrefixes, navigationState, resolveNavigationLanguage, routeHashId, routeScrollAction, scrollPositionKey } from './lib/productLanguageRouting';
@@ -351,6 +351,18 @@ function SkipToMainContent() {
 
 function GlobalConversionTracker() {
   useEffect(() => {
+    const clickContexts = new WeakMap<MouseEvent, {
+      href: string;
+      analytics: ReturnType<typeof captureAnalyticsPageContext>;
+    }>();
+    const captureClick = (event: MouseEvent) => {
+      if (event.target instanceof Element && event.target.closest('a, button')) {
+        clickContexts.set(event, {
+          href: window.location.href,
+          analytics: captureAnalyticsPageContext(),
+        });
+      }
+    };
     const handleClick = (event: MouseEvent) => {
       const target = event.target;
       if (!(target instanceof Element)) return;
@@ -362,6 +374,9 @@ function GlobalConversionTracker() {
         ? clickable.getAttribute('href') || ''
         : '';
       const ctaLocation = clickable.closest('section')?.id || 'global_navigation';
+      const source = clickContexts.get(event);
+      const sourceContext = source?.analytics;
+      const sourceUrl = source?.href ?? window.location.href;
 
       if (href.includes('wa.me') || href.includes('api.whatsapp.com')) {
         const attribution = readAttribution();
@@ -370,18 +385,24 @@ function GlobalConversionTracker() {
           utm_source: attribution.utm_source,
           utm_campaign: attribution.utm_campaign,
           utm_content: attribution.utm_content,
-        });
+        }, sourceContext);
       } else if (href.startsWith('tel:')) {
-        trackEvent('phone_click', { cta_location: ctaLocation });
+        trackEvent('phone_click', { cta_location: ctaLocation }, sourceContext);
       } else if (href.startsWith('mailto:')) {
-        trackEvent('email_click', { cta_location: ctaLocation });
-      } else if (isQuoteEntry(href, window.location.href)) {
-        trackEvent('quote_click', { cta_location: ctaLocation });
+        trackEvent('email_click', { cta_location: ctaLocation }, sourceContext);
+      } else if (isQuoteEntry(href, sourceUrl)) {
+        trackEvent('quote_click', { cta_location: ctaLocation }, sourceContext);
       }
     };
 
+    // Capture only context. Dispatch after component handlers so their dedup
+    // markers still take precedence over this global fallback.
+    document.addEventListener('click', captureClick, true);
     document.addEventListener('click', handleClick);
-    return () => document.removeEventListener('click', handleClick);
+    return () => {
+      document.removeEventListener('click', captureClick, true);
+      document.removeEventListener('click', handleClick);
+    };
   }, []);
 
   return null;
