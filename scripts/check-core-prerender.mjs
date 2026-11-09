@@ -29,7 +29,8 @@ for(const route of routes){
 assert.equal(count,109,'Expected existing core pages plus two scooter spare-parts catalogues');
 for(const route of ['/sourcing/electric-scooter-spare-parts-from-china/','/zh-cn/sourcing/electric-scooter-spare-parts-from-china/']){
  const html=fs.readFileSync(path.join(root,route,'index.html'),'utf8');
- assert.equal((html.match(/class="sp-card"/g)||[]).length,28,`${route}: complete initial parts catalogue`);
+ assert.equal((html.match(/class="sp-card"/g)||[]).length,17,`${route}: pictured parts catalogue`);
+ assert.equal((html.match(/class="sp-additional-row"/g)||[]).length,11,`${route}: additional parts retained as compact enquiry rows`);
  assert(html.includes('schema-jsonld-static-page')&&html.includes('CollectionPage'),`${route}: parts collection schema`);
 }
 for (const locale of ['', 'zh-cn/', 'ru/', 'fr/', 'es/', 'ar/', 'pt/', 'tr/']) {
