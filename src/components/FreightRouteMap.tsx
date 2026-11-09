@@ -1,5 +1,5 @@
 import WorldFreightMap from './WorldFreightMap';
-import { geoGraticule, geoMercator, geoNaturalEarth1, geoPath, type GeoProjection } from 'd3-geo';
+import { geoCentroid, geoGraticule, geoMercator, geoNaturalEarth1, geoPath, type GeoProjection } from 'd3-geo';
 import { ArrowUpRight, MapPinned, Ship, TrainFront, Truck } from 'lucide-react';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, Geometry, LineString, Polygon } from 'geojson';
@@ -314,6 +314,41 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
       <MapNodes nodes={nodes} projection={projection} />
     </svg>
   </figure>;
+}
+
+// Country centroids come from the existing Natural Earth atlas. These maps locate
+// countries, not terminals or vessel itineraries; gateway names remain in the copy.
+const gatewayCountryIds: Record<string, string> = {
+ colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
+ senegal: '686', togo: '768', benin: '204', cameroon: '120',
+};
+const gatewayAfricaProjection = geoMercator().fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], extentFeature(-25, -18, 132, 55));
+const gatewayPacificProjection = geoMercator().rotate([-165, 0]).fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], {
+ type: 'MultiPoint', coordinates: [[100, -15], [100, 48], [-65, 48], [-65, -15]],
+});
+export function CountryGatewayMap({ country, locale, destination, title, description }: {
+ country: string; locale: Language; destination: string; title: string; description: string;
+}) {
+ const countryId = gatewayCountryIds[country];
+ const target = countries.features.find(f => String(f.id).padStart(3, '0') === countryId);
+ const china = countries.features.find(f => String(f.id).padStart(3, '0') === '156');
+ if (!target || !china) return null;
+ const pacific = ['colombia', 'panama', 'costa-rica'].includes(country);
+ const projection = pacific ? gatewayPacificProjection : gatewayAfricaProjection;
+ const clipId = `gateway-${country}-clip`;
+ const chinaLabel = mapRegionLabels[locale][0];
+ const nodes: MapNode[] = [
+  { id: 'china', label: chinaLabel, coordinates: geoCentroid(china), labelDx: 20, labelDy: -28, kind: 'origin' },
+  { id: country, label: destination, coordinates: geoCentroid(target), labelDx: pacific ? -20 : 20, labelDy: 40 },
+ ];
+ return <figure className="freight-regional-map country-gateway-map" aria-label={title}>
+  <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby={`${clipId}-title ${clipId}-desc`}>
+   <title id={`${clipId}-title`}>{title}</title><desc id={`${clipId}-desc`}>{description}</desc>
+   <MapChrome clipId={clipId} />
+   <MapBase projection={projection} highlighted={new Set([countryId])} clipId={clipId} regional />
+   <MapNodes nodes={nodes} projection={projection} />
+  </svg>
+ </figure>;
 }
 
 const centralNodes: MapNode[] = [
