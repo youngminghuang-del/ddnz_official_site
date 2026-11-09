@@ -138,7 +138,7 @@ test('routing, static generation and navigation expose all six Eurasia destinati
     assert.match(navbar, new RegExp(`en: '${localizedCountryName(country, 'en')}'`));
   }
 
-  assert.match(page, /china-eurasia-rail-border-hero-v1\.webp/);
+  assert.doesNotMatch(page, /src=["']\/images\/operations\/china-eurasia-rail-border-hero-v1\.webp["']/);
   const guide = readFileSync(new URL('../src/features/freight/EurasiaRegionalGuide.tsx', import.meta.url), 'utf8');
   assert.match(page, /CountryRegionalReference/);
   assert.match(guide, /eec\.eaeunion\.org/);
