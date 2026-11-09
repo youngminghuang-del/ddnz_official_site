@@ -201,10 +201,10 @@
     },
     "private-label": {
       "title": "Compre películas de marca própria da China | DDNZ",
-      "description": "Compre películas de marca própria da China com especificações de produto e embalagem. Use a linha atual como ponto de partida e descreva alterações e experiência de aplicação para análise do fornecedor.",
-      "eyebrow": "Marcas próprias e vendedores on-line",
+      "description": "Películas de marca própria DDNZ da China. Confirme modelos, mínimos de produto e embalagem, arte e amostras para uma cotação de fábrica.",
+      "eyebrow": "DDNZ / FORNECIMENTO DE FÁBRICA PARA SUA MARCA",
       "heading": "Compre películas de marca própria da China",
-      "intro": "Compre películas de marca própria da China com especificações de produto e embalagem. Use a linha atual como ponto de partida e descreva alterações e experiência de aplicação para análise do fornecedor.",
+      "intro": "A DDNZ fabrica películas na China e integra fabricação e exportação. Parta da linha transparente e de privacidade; informe modelos, quantidades e requisitos da marca. A cotação distingue película, embalagem e acessórios complementares.",
       "card": "Marcas próprias e vendedores on-line",
       "cardCopy": "Defina película, kit de aplicação e embalagem para cotação.",
       "steps": [
@@ -214,7 +214,7 @@
         ],
         [
           "Separe alterações no produto e na embalagem",
-          "Descreva etiqueta, caixa impressa, manual ou acessórios diferentes. Viabilidade da marca, arte, custos de preparação e mínimos dependem do fornecedor escolhido."
+          "Informe etiquetas, caixas impressas, instruções e alterações de acessórios. A DDNZ confirma separadamente personalização, arte, custos de preparação e mínimos de produto e embalagem na cotação."
         ],
         [
           "Aprove uma especificação repetível",
@@ -228,7 +228,7 @@
         ],
         [
           "Existe mínimo fixo para marca própria?",
-          "A personalização pode alterar mínimos. Informe quantidades por aparelho e mudanças de embalagem para avaliação do fornecedor."
+          "Não existe um mínimo único. Envie quantidades por celular e mudanças de produto, impressão e embalagem. A DDNZ confirma cada mínimo; o mínimo do produto padrão não confirma o da embalagem personalizada."
         ],
         [
           "Posso pedir amostra antes do lote?",
@@ -251,7 +251,19 @@
           "label": "Personalização e amostras",
           "hint": "Etiqueta com logotipo, caixa, manual, acessórios ou amostra de aprovação"
         }
-      ]
+      ],
+      "factoryQuote": "Solicitar cotação de fábrica",
+      "factoryScope": {
+        "scopeEyebrow": "PRODUTO / EMBALAGEM / APROVAÇÃO",
+        "scopeHeading": "Defina as mudanças para sua marca.",
+        "scopeIntro": "Parta de uma configuração atual da DDNZ. Confirme vidro, kit de instalação e encaixe no celular separadamente da embalagem impressa, dos encartes e das etiquetas. Mínimos de produto e embalagem, arte e amostras são cotados por configuração.",
+        "kitCaption": "Amostra 001: liste a película e os acessórios que devem acompanhar o produto.",
+        "titanCaption": "Exemplo Titan: confirme embalagem de varejo, instalação e mudanças da marca.",
+        "note": "Exemplos da linha atual antes da personalização. Confirme amostra, versão da arte, etiquetas e lista de volumes.",
+        "compare": "Comparar configurações atuais",
+        "kitAlt": "Amostra 001: liste a película e os acessórios que devem acompanhar o produto.",
+        "titanAlt": "Exemplo Titan: confirme embalagem de varejo, instalação e mudanças da marca."
+      }
     }
   },
   "english": "em inglês"

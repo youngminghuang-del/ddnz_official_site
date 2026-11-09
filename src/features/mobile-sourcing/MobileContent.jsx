@@ -1,5 +1,5 @@
 import CaseFactoryScope from './CaseFactoryScope.jsx';
-import { caseFactoryCopy } from './case-factory-copy.mjs';
+import { caseFactoryFor } from './case-factory-copy.mjs';
 import { flushSync } from 'react-dom';
 import BearFeature from './BearFeature.jsx';
 import OFoldFeature from './OFoldFeature.jsx';
@@ -136,7 +136,8 @@ function Brief({draft,setDraft,locale,onPrivacy,onAction,pageId}){
  </form></section>;
 }
 export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>{},onAction=(_action)=>{}}){
- const c=tr(locale),page=pageId==='cases'&&locale==='en'?{...pages.cases,eyebrow:{en:caseFactoryCopy.eyebrow},heading:{en:caseFactoryCopy.heading},intro:{en:caseFactoryCopy.intro}}:pages[pageId],[draft,setDraft]=useState(emptyDraft),[loaded,setLoaded]=useState(false),[filter,setFilter]=useState('all'),[storageFailed,setStorageFailed]=useState(false);
+ const factoryCopy=caseFactoryFor(locale);
+ const c=tr(locale),page=pageId==='cases'?{...pages.cases,eyebrow:{[locale==='zh-cn'?'zh':locale]:factoryCopy.eyebrow},heading:{[locale==='zh-cn'?'zh':locale]:factoryCopy.heading},intro:{[locale==='zh-cn'?'zh':locale]:factoryCopy.intro}}:pages[pageId],[draft,setDraft]=useState(emptyDraft),[loaded,setLoaded]=useState(false),[filter,setFilter]=useState('all'),[storageFailed,setStorageFailed]=useState(false);
  useEffect(()=>{try{setDraft(readMixedDraft(sessionStorage));}catch{setStorageFailed(true);}setLoaded(true);},[]);
  useEffect(()=>{if(loaded)try{saveMixedDraft(sessionStorage,draft);setStorageFailed(false);}catch{setStorageFailed(true);}},[draft,loaded]);
  useEffect(()=>setFilter('all'),[pageId]);
@@ -147,7 +148,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
  const add=id=>{if(draft.rows.some(r=>r.id===id)){document.getElementById('buying-brief')?.scrollIntoView({behavior:'smooth'});return;}if(draft.rows.length>=100)return;const p=productById(id);setDraft(d=>({...d,rows:[...d.rows,{id,quantity:String(p.addQty||p.tiers?.[0][0]||100),model:p.group==='power'?p.sourceRecord.model:'',colours:''}]}));onAction('add_style');};
  return <main className={'ms-page ms-'+pageId} lang={locale} dir={locale==='ar'?'rtl':'ltr'}>
  <nav className="ms-breadcrumbs" aria-label={c('home')}><a href={locale==='en'?'/':`/${locale==='zh'?'zh-cn':locale}/`}>{c('home')}</a><span>/</span><a href={localizedProductPath('/products',locale)}>{c('products')}</a>{pageId!=='hub'&&<><span>/</span><a href={link('hub',locale)}>{c('hub')}</a></>}<span>/</span><span aria-current="page">{c(pageId)}</span></nav>
- <section className={'ms-hero'+(['hub','cases','straps'].includes(pageId)?' catalogue-hero':'')}><div><p className="ms-eyebrow">{pageId==='hub'&&locale==='en'?'DDNZ / FACTORY MANUFACTURING & EXPORT':copyFor(page.eyebrow,locale)}</p><h1>{pageId==='straps' && locale==='en'?'Wholesale Phone Lanyards, Straps & Charms from China':copyFor(pageId==='hub'?accessoryCopy.heroHeading:page.heading,locale)}</h1><p className="ms-lead">{copyFor(pageId==='hub'?accessoryCopy.heroIntro:page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?(locale==='en'?'Request a factory quote':copyFor({en:'Build my sourcing request',es:'Solicitar cotización de fábrica',ar:'إعداد طلب التوريد'},locale)):pageId==='straps' && locale==='en'?'Browse styles and MOQ':c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#categories':'#buying-brief'} className="ms-secondary">{pageId==='hub'?copyFor(accessoryCopy.browse,locale):pageId==='cases'&&locale==='en'?'Request a factory quote':c('brief')} ↗</a></div>
+ <section className={'ms-hero'+(['hub','cases','straps'].includes(pageId)?' catalogue-hero':'')}><div><p className="ms-eyebrow">{pageId==='hub'&&locale==='en'?'DDNZ / FACTORY MANUFACTURING & EXPORT':copyFor(page.eyebrow,locale)}</p><h1>{pageId==='straps' && locale==='en'?'Wholesale Phone Lanyards, Straps & Charms from China':copyFor(pageId==='hub'?accessoryCopy.heroHeading:page.heading,locale)}</h1><p className="ms-lead">{copyFor(pageId==='hub'?accessoryCopy.heroIntro:page.intro,locale)}</p><div className="ms-actions"><a className="ms-button" href={pageId==='hub'?'#buying-brief':pageId==='compare'?'#price-comparison':'#collection'}>{pageId==='hub'?(locale==='en'?'Request a factory quote':copyFor({en:'Build my sourcing request',es:'Solicitar cotización de fábrica',ar:'إعداد طلب التوريد'},locale)):pageId==='straps' && locale==='en'?'Browse styles and MOQ':c(pageId==='compare'?'comparison':'range')}<span aria-hidden="true">↓</span></a><a href={pageId==='hub'?'#categories':'#buying-brief'} className="ms-secondary">{pageId==='hub'?copyFor(accessoryCopy.browse,locale):pageId==='cases'?factoryCopy.quote:c('brief')} ↗</a></div>
  {pageId === 'hub' && locale === 'en' && <p className="ms-lead">
    For a mixed order, list the accessory categories, compatible device models, quantities per item and packaging requirements.
  </p>}
@@ -203,7 +204,7 @@ export default function MobileContent({pageId='cases',locale='en',onPrivacy=()=>
    const anchor=event.target.closest('a[href^="#style-"]');
    if(anchor&&!document.getElementById(anchor.hash.slice(1)))flushSync(()=>setFilter('all'));
  }} dangerouslySetInnerHTML={{__html:locale==='en'?renderCaseEntry():renderLocalizedEntry('cases',locale)}}/>}
- {pageId==='cases'&&locale==='en'&&<CaseFactoryScope/>}
+ {pageId==='cases'&&<CaseFactoryScope locale={locale}/>}
  {pageId === 'cases' && locale === 'pt' && (
    <section className="ms-section" id="capas-estilos-atacado">
      <h2>Capas de celular no atacado: compare estilos e acabamentos</h2>
