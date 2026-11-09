@@ -358,3 +358,14 @@
 .europe-country-visual p { margin: 14px 4px 4px; font-weight: 750; text-align: center; }
 .europe-country-visual small { display: block; margin: 0 4px 4px; color: #556174; text-align: center; }
 .europe-country-freight [id^="spain-"], .europe-country-freight [id^="germany-"] { scroll-margin-top: 120px; }
+
+/* Country pages share the approved reading order; geographic context stays compact. */
+.market-country-freight [id] { scroll-margin-top: 120px; }
+.market-country-freight:not(.europe-country-freight) .market-country-visual > p > span { display: block; font-size: 12px; color: #556174; margin-bottom: 6px; }
+.market-country-freight:not(.europe-country-freight) .market-country-visual > p > bdi { display: block; font-size: clamp(19px, 2vw, 25px); line-height: 1.35; }
+.market-country-visual .country-gateway-map { overflow: hidden; }
+.country-gateway-map .freight-node-label { font-size: 30px; }
+@media (max-width: 640px) {
+ .market-country-freight:not(.europe-country-freight) .market-country-visual { padding: 8px; }
+ .market-country-freight:not(.europe-country-freight) .market-country-visual > small { font-size: 12px; line-height: 1.6; }
+}
