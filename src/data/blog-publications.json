@@ -6,6 +6,12 @@
       "run_id": 42558303009,
       "commit": "6227ae2b583c9b65f1c540f75bb6ebca3e4228b0",
       "source": "Verified successful Deploy to GitHub Pages step; migrated without editing article files."
+    },
+    "coffee-shop-equipment-checklist": {
+      "published_at": "2026-11-09T09:35:59Z",
+      "run_id": 42594267715,
+      "commit": "734641200af578c947a30d926df81ca1d25fff89",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
