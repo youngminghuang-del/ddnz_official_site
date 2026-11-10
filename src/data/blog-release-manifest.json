@@ -45,6 +45,27 @@
       ],
       "faq_count": 3,
       "item_list_count": 8
+    },
+    {
+      "slug": "wholesale-foldable-wallet-phone-case-sample-checks",
+      "canonical": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/",
+      "language": "en",
+      "release_file": "src/data/phoneCaseSampleRelease.json",
+      "schema_file": "src/data/phone-case-sample-schema.json",
+      "notion_page_id": "414eac33-2618-8151-8885-ed47f51c7f68",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/A.jpg",
+      "images": [
+        "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/A.jpg",
+        "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/E.webp",
+        "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/B.jpg",
+        "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/C.jpg",
+        "/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/D.jpg"
+      ],
+      "faq_count": 4,
+      "item_list_count": 8
     }
   ]
 }

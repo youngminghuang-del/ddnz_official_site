@@ -1,3 +1,4 @@
+import phoneCaseSampleRelease from '../../data/phoneCaseSampleRelease.json';
 import euPhoneCaseTrialRelease from '../../data/euPhoneCaseTrialRelease.json';
 import CairoBuyingLinks from './CairoBuyingLinks';
 import {useEffect,useRef} from 'react';
@@ -42,7 +43,7 @@ export default function ArticleReadingContent({post,language,articleHtml,primary
   node.addEventListener('click',click);node.addEventListener('keydown',key);dialog.addEventListener('close',close);
   return()=>{node.removeEventListener('click',click);node.removeEventListener('keydown',key);dialog.removeEventListener('close',close);for(const {trigger,attrs} of saved)for(const [a,v] of attrs){if(v===null)trigger.removeAttribute(a);else trigger.setAttribute(a,v);}};
  },[post.id,language]);
- const coverHtml = post.slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.coverHtml : '';
+ const coverHtml = post.slug === phoneCaseSampleRelease.slug ? phoneCaseSampleRelease.coverHtml : post.slug === euPhoneCaseTrialRelease.slug ? euPhoneCaseTrialRelease.coverHtml : '';
  return <div className="article-reading ddnz-home" ref={root} lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
   <header className="article-reading-hero"><div className="article-reading-wrap">
    <nav className="article-reading-breadcrumb" aria-label={ui.home+' / '+ui.insights}><a href={canonicalSitePath(prefix||'/')}>{ui.home}</a><span aria-hidden="true">/</span><a href={canonicalSitePath(prefix+'/insights')}>{ui.insights}</a></nav>

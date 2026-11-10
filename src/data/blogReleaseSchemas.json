@@ -488,5 +488,245 @@
         "url": "https://www.ddnzglobal.com/images/posts/coffee-shop-equipment-checklist/kaison-modular-ice-bin.webp"
       }
     ]
+  },
+  "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.ddnzglobal.com/#organization",
+        "name": "DDNZ Global Trade Co., Ltd.",
+        "url": "https://www.ddnzglobal.com/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#webpage",
+        "name": "Wholesale Phone Case Samples from China: Foldable-Phone Cases vs Flip Wallet Cases",
+        "description": "Compare foldable-phone cases and flip wallet cases before wholesale ordering: check model fit, hinge movement, card storage, closure and sample approval.",
+        "inLanguage": "en",
+        "mainEntity": {
+          "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#article"
+        },
+        "breadcrumb": {
+          "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#breadcrumb"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-A"
+        },
+        "url": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/",
+        "reviewedBy": {
+          "@type": "Person",
+          "name": "Huang Matthew"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#article",
+        "headline": "Wholesale Phone Case Samples from China: Foldable-Phone Cases vs Flip Wallet Cases",
+        "description": "Compare foldable-phone cases and flip wallet cases before wholesale ordering: check model fit, hinge movement, card storage, closure and sample approval.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+          "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#webpage"
+        },
+        "publisher": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        },
+        "creativeWorkStatus": "Published",
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Phone-case importers, wholesalers and private-label buyers"
+        },
+        "citation": [
+          "https://www.samsung.com/us/support/answer/ANS10007285/",
+          "https://www.samsung.com/sg/support/mobile-devices/remove-the-case-or-cover-on-the-galaxy-z-flip-and-z-fold-series/",
+          "https://www.spigen.com/products/galaxy-z-fold-6-series-case-slim-armor-pro",
+          "https://support.apple.com/en-ie/105047",
+          "https://echa.europa.eu/scip-suppliers-of-articles"
+        ],
+        "hasPart": [
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#faq"
+          }
+        ],
+        "image": [
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-A"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-E"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-B"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-C"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-D"
+          }
+        ],
+        "url": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/",
+        "datePublished": "2026-11-10T10:10:29+08:00",
+        "dateModified": "2026-11-10T10:10:29+08:00",
+        "author": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#faq",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Does “foldable case” always mean a case for a folding-screen phone?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. It can describe a folding front cover. Confirm the handset model number, empty-case construction and installed open-and-closed views before requesting prices."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can one sample approve every phone model and colour?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "It cannot establish every variant's fit or finish. Define which variants require their own sample or checks, and record any agreed grouping before production."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How many cards should a wallet case hold?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Use the intended retail claim and exact case design to set the load. Record test-card dimensions, thickness, retention and loaded closure rather than assuming a universal capacity."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I trial neutral packaging before ordering a logo version?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ask for separate stock, logo and packaging quotations. Confirm model-by-colour minimums and whether later branding changes the material, construction or sample that needs approval."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#sample-acceptance",
+        "name": "Phone case sample acceptance sheet",
+        "numberOfItems": 8,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Product identity"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Installed fit"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Folding movement"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Attachment pads, if used"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Card pocket and closure"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "name": "Stand and charging, if offered"
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "name": "Material and finish"
+          },
+          {
+            "@type": "ListItem",
+            "position": 8,
+            "name": "Trial-order identity"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DDNZ",
+            "item": "https://www.ddnzglobal.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Wholesale Phone Case Samples from China: Foldable-Phone Cases vs Flip Wallet Cases"
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-A",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/A.jpg",
+        "name": "Spigen Slim Armor Pro ACS07820 case for Samsung Galaxy Z Fold6, front and rear views",
+        "width": 1430,
+        "height": 1430,
+        "inLanguage": "en",
+        "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/A.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-E",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/E.webp",
+        "name": "Guangzhou Bida flip wallet case, Alibaba reference 1601492636282, card pocket and stand; handset model unconfirmed",
+        "width": 960,
+        "height": 960,
+        "inLanguage": "en",
+        "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/E.webp"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-B",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/B.jpg",
+        "name": "Spigen Slim Armor Pro ACS07820 for Samsung Galaxy Z Fold6 shown partly folded",
+        "width": 1430,
+        "height": 1430,
+        "inLanguage": "en",
+        "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/B.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-C",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/C.jpg",
+        "name": "Spigen Slim Armor Pro ACS07820 for Samsung Galaxy Z Fold6, hinge cover and frame detail",
+        "width": 1200,
+        "height": 1200,
+        "inLanguage": "en",
+        "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/C.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/wholesale-foldable-wallet-phone-case-sample-checks/#image-D",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/D.jpg",
+        "name": "Spigen Slim Armor Pro ACS07820 for Samsung Galaxy Z Fold6, inner rear shell",
+        "width": 1430,
+        "height": 1430,
+        "inLanguage": "en",
+        "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/D.jpg"
+      }
+    ]
   }
 }
