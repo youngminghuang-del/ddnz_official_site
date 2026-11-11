@@ -805,8 +805,8 @@
           }
         ],
         "url": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/",
-        "datePublished": "2026-11-11T12:29:10+08:00",
-        "dateModified": "2026-11-11T12:29:10+08:00",
+        "datePublished": "2026-11-11T05:03:15Z",
+        "dateModified": "2026-11-11T05:03:15Z",
         "author": {
           "@id": "https://www.ddnzglobal.com/#organization"
         }
@@ -912,7 +912,13 @@
         "creditText": "Goterrestrial",
         "license": "https://creativecommons.org/licenses/by/4.0/",
         "isBasedOn": "https://commons.wikimedia.org/wiki/File:Container_loading_with_forklift_at_warehouse_in_Thailand.jpg",
-        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/sea-freight-forklift-container-loading.jpg"
+        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/sea-freight-forklift-container-loading.jpg",
+        "creator": {
+          "@type": "Person",
+          "name": "Goterrestrial"
+        },
+        "copyrightNotice": "© Goterrestrial",
+        "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Container_loading_with_forklift_at_warehouse_in_Thailand.jpg"
       },
       {
         "@type": "ImageObject",
