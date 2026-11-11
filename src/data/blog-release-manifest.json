@@ -66,6 +66,26 @@
       ],
       "faq_count": 4,
       "item_list_count": 8
+    },
+    {
+      "slug": "ramadan-2027-gulf-stock-china-sea-air-shipping",
+      "canonical": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/",
+      "language": "en",
+      "release_file": "src/data/gulfRamadanStockRelease.json",
+      "schema_file": "src/data/gulf-ramadan-stock-schema.json",
+      "notion_page_id": "415eac33-2618-81c2-bd13-c820a5859314",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/shipping-container-cargo-handling.jpg",
+      "images": [
+        "/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/shipping-container-cargo-handling.jpg",
+        "/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/sea-freight-forklift-container-loading.jpg",
+        "/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/air-freight-pallet-cargo-net.jpg",
+        "/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/warehouse-receiving-carton-check.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }

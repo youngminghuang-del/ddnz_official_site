@@ -728,5 +728,210 @@
         "url": "https://www.ddnzglobal.com/images/posts/wholesale-foldable-wallet-phone-case-sample-checks/D.jpg"
       }
     ]
+  },
+  "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://www.ddnzglobal.com/#organization",
+        "name": "DDNZ Global Trade Co., Ltd.",
+        "url": "https://www.ddnzglobal.com/"
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#webpage",
+        "name": "Ramadan 2027 Gulf Stock Planning: When to Ship from China by Sea or Air",
+        "description": "Plan Ramadan 2027 Gulf stock from China with sea and air delivery estimates, clear day-count rules and a warehouse-arrival countdown table.",
+        "inLanguage": "en",
+        "mainEntity": {
+          "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#article"
+        },
+        "breadcrumb": {
+          "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#breadcrumb"
+        },
+        "primaryImageOfPage": {
+          "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-a"
+        },
+        "url": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/",
+        "reviewedBy": {
+          "@type": "Person",
+          "name": "Huang Matthew"
+        }
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#article",
+        "headline": "Ramadan 2027 Gulf Stock Planning: When to Ship from China by Sea or Air",
+        "description": "Plan Ramadan 2027 Gulf stock from China with sea and air delivery estimates, clear day-count rules and a warehouse-arrival countdown table.",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+          "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#webpage"
+        },
+        "publisher": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        },
+        "creativeWorkStatus": "Published",
+        "audience": {
+          "@type": "BusinessAudience",
+          "audienceType": "Saudi and UAE importers and wholesalers"
+        },
+        "citation": [
+          "https://astronomycenter.net/icop/ram48.html?l=en",
+          "https://astronomycenter.net/icop/shw48.html?l=en",
+          "https://english.www.gov.cn/policies/latestreleases/202611/06/content_WS6aed74dcc6d00ca5f9a0e22e.html",
+          "https://www.maersk.com/news/articles/2026/11/06/maersk-asia-pacific-market-update-november",
+          "https://www.maersk.com/support/faqs/how-long-does-ocean-freight-take",
+          "https://commons.wikimedia.org/wiki/File:Container_loading_with_forklift_at_warehouse_in_Thailand.jpg",
+          "https://creativecommons.org/licenses/by/4.0/"
+        ],
+        "hasPart": [
+          {
+            "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#faq"
+          }
+        ],
+        "image": [
+          {
+            "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-a"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-b"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-d"
+          },
+          {
+            "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-f"
+          }
+        ],
+        "url": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/",
+        "datePublished": "2026-11-11T12:29:10+08:00",
+        "dateModified": "2026-11-11T12:29:10+08:00",
+        "author": {
+          "@id": "https://www.ddnzglobal.com/#organization"
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#faq",
+        "inLanguage": "en",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is an early-December sea departure early enough for Ramadan 2027?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Under the 45–55 working-day planning estimate, a 7 December departure calculates to 8–22 February before extra holiday allowances. That is too late for the example 29 January main-stock target. Check a route-specific delivery window, then move earlier or split the urgent items into another shipment."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Why does sea freight use working days while air uses calendar days?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "These are the stated planning conventions for this guide: sea uses a five-day week and air counts every day. Both estimates finish at warehouse receipt and include clearance and delivery. Ask the forwarder to convert its quotation into dated arrival windows so different counting conventions do not distort the comparison."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I wait until after Chinese New Year to buy the Eid top-up?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Only if finished-stock availability and a confirmed delivery plan still meet your own Eid distribution deadline. Check reopening and cargo-ready dates first. For important SKUs, reserving finished goods or sending a pre-holiday batch gives you an alternative to relying entirely on post-holiday production."
+            }
+          }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#stock-countdown",
+        "name": "Illustrative Ramadan and Eid stock countdown",
+        "numberOfItems": 5,
+        "itemListOrder": "https://schema.org/ItemListOrderAscending",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Earlier main stock by sea"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Later main stock by sea"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Early-December stock by sea"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "name": "Pre-Ramadan air top-up"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "name": "Eid reserve by air before the China holiday"
+          }
+        ]
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "DDNZ",
+            "item": "https://www.ddnzglobal.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Ramadan 2027 Gulf Stock Planning: When to Ship from China by Sea or Air"
+          }
+        ]
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-a",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/shipping-container-cargo-handling.jpg",
+        "description": "Workers handling cartons beside an open shipping container and a truck",
+        "width": 1290,
+        "height": 934,
+        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/shipping-container-cargo-handling.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-b",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/sea-freight-forklift-container-loading.jpg",
+        "description": "Forklift loading palletized cartons into an open shipping container",
+        "width": 3024,
+        "height": 4032,
+        "creditText": "Goterrestrial",
+        "license": "https://creativecommons.org/licenses/by/4.0/",
+        "isBasedOn": "https://commons.wikimedia.org/wiki/File:Container_loading_with_forklift_at_warehouse_in_Thailand.jpg",
+        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/sea-freight-forklift-container-loading.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-d",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/air-freight-pallet-cargo-net.jpg",
+        "description": "Airport cargo staff tightening a cargo net over wrapped cartons on an aircraft pallet",
+        "width": 1600,
+        "height": 1200,
+        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/air-freight-pallet-cargo-net.jpg"
+      },
+      {
+        "@type": "ImageObject",
+        "@id": "https://www.ddnzglobal.com/blog/ramadan-2027-gulf-stock-china-sea-air-shipping/#image-f",
+        "contentUrl": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/warehouse-receiving-carton-check.jpg",
+        "description": "Two warehouse workers checking cartons on a pallet against receiving notes",
+        "width": 500,
+        "height": 534,
+        "url": "https://www.ddnzglobal.com/images/posts/ramadan-2027-gulf-stock-china-sea-air-shipping/warehouse-receiving-carton-check.jpg"
+      }
+    ]
   }
 }
