@@ -1,12 +1,19 @@
+import {referenceTier} from '../data/model.mjs';
+import {parseKitchenQuantity} from '../data/localization.mjs';
 import React, { useState } from 'react';
 import { calculateLocalizedKitchenMargin, getLocalizedKitchenProducts, kitchenCopy, localMoney, localNumber } from '../data/localization.mjs';
 import { IsolatedText } from './LocalizedKitchenText.jsx';
 
-export default function LocalizedKitchenMargin({ locale, onAction = (_action) => {}, onUseQuantity = (_id, _units) => {} }) {
+export default function LocalizedKitchenMargin({ locale, initialModel, initialQuantity, onAction = (_action) => {}, onUseQuantity = (_id, _units) => {} }) {
   const t = kitchenCopy(locale), m = t.margin, products = getLocalizedKitchenProducts(locale).filter(product => product.quote);
-  const [draft, setDraft] = useState({ productId: products[0].id, units: localNumber(products[0].quote.minUnits, locale, { useGrouping: false }), selling: '', landed: '' });
+  const [draft, setDraft] = useState(() => {
+    const selected = products.find(item => item.id === initialModel) || products[0];
+    const quantity = (selected.id === initialModel && parseKitchenQuantity(initialQuantity)) || selected.quote.minUnits;
+    return { productId: selected.id, units: localNumber(quantity, locale, { useGrouping: false }), selling: '', landed: '' };
+  });
   const [calculation, setCalculation] = useState({ result: null, errors: {} });
   const product = products.find(item => item.id === draft.productId), result = calculation.result;
+  const tier=referenceTier(product.quote,parseKitchenQuantity(draft.units)) ?? product.quote;
   const negative = result?.unitProfit < 0;
   const format = value => localMoney(value, 'CNY', locale);
   function update(field, value) {
@@ -30,7 +37,7 @@ export default function LocalizedKitchenMargin({ locale, onAction = (_action) =>
     <h2 id="kitchen-margin-heading">{m.title}</h2><p>{m.intro}</p>
     <div className="localized-two-columns"><form className="localized-panel localized-margin-form" onSubmit={calculate} noValidate>
       <label>{m.model}<select value={draft.productId} onChange={event => selectProduct(event.target.value)}>{products.map(item => <option value={item.id} key={item.id}>{item.displayModel} — {item.name}</option>)}</select></label>
-      <div className="localized-margin-reference"><p>{m.purchase}: <strong><bdi dir="ltr">{format(product.quote.price)}</bdi></strong></p><p>{t.ui.referenceTier}: <bdi dir="ltr">{localNumber(product.quote.minUnits, locale)}</bdi> {t.ui.units}</p><p className="fine"><IsolatedText>{t.ui.quoteOnly}</IsolatedText></p>{product.configurationNote && <p className="fine"><IsolatedText>{product.configurationNote}</IsolatedText></p>}</div>
+      <div className="localized-margin-reference"><p>{m.purchase}: <strong><bdi dir="ltr">{format(tier.price)}</bdi></strong></p><p>{t.ui.referenceTier}: <bdi dir="ltr">{localNumber(tier.minUnits, locale)}</bdi> {t.ui.units}</p><p className="fine"><IsolatedText>{t.ui.quoteOnly}</IsolatedText></p>{product.configurationNote && <p className="fine"><IsolatedText>{product.configurationNote}</IsolatedText></p>}</div>
       {['units', 'selling', 'landed'].map(field => <label key={field} htmlFor={`kitchen-margin-${field}`}>{field === 'units' ? m.quantity : m[field]}<input id={`kitchen-margin-${field}`} inputMode={field === 'units' ? 'numeric' : 'decimal'} dir="ltr" value={draft[field]} required onChange={event => update(field, event.target.value)} aria-invalid={Boolean(calculation.errors[field])} aria-describedby={`kitchen-margin-input-help${calculation.errors[field] ? ` kitchen-margin-${field}-error` : ''}`}/>{error(field)}</label>)}
       <p className="fine" id="kitchen-margin-input-help">{m.inputHelp}</p><button className="button primary" type="submit">{m.calculate}</button>
     </form>

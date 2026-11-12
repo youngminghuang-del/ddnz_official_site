@@ -4,7 +4,7 @@ import {existsSync,readFileSync} from 'node:fs';
 import products from '../../src/features/commercial-kitchen/data/products.mjs';
 import launch from '../../src/features/commercial-kitchen/data/launch.mjs';
 import benchmarks from '../../src/features/commercial-kitchen/data/benchmarks.mjs';
-import {addItems,cleanList,createPriceDraft,makeBrief,quantity,validateBuyingTarget} from '../../src/features/commercial-kitchen/data/model.mjs';
+import {addItems,cleanList,createPriceDraft,makeBrief,quantity,referenceTier,validateBuyingTarget} from '../../src/features/commercial-kitchen/data/model.mjs';
 import {buildInquiryMessage,isProductionHost,submitInquiry} from '../../src/features/commercial-kitchen/data/inquiry.mjs';
 
 const root=new URL('../..',import.meta.url);
@@ -12,7 +12,7 @@ const product=id=>products.find(item=>item.id===id);
 
 test('keeps all 46 catalog SKUs',()=>assert.equal(products.length,46));
 test('keeps exactly eight indicative supply references',()=>assert.equal(products.filter(item=>item.quote).length,8));
-test('preserves approved indicative prices, currencies and reference quantities',()=>assert.deepEqual(Object.fromEntries(products.filter(item=>item.quote).map(item=>[item.model,[item.quote.price,item.quote.currency,item.quote.minUnits]])),{'HZB-50/AB':[1318.34,'CNY',1],'ZH-101V':[348.8,'CNY',10],'GN650TNPro':[4534.41,'CNY',1],'GNT2MTNPro':[3170.91,'CNY',1],'ZH-818':[291.1,'CNY',1],'HZB-100FA':[2124.51,'CNY',1],'ZH-102V':[824.44,'CNY',1],'500W variant':[2283.06,'CNY',1]}));
+test('preserves approved indicative prices, currencies and reference quantities',()=>assert.deepEqual(Object.fromEntries(products.filter(item=>item.quote).map(item=>[item.model,[item.quote.price,item.quote.currency,item.quote.minUnits]])),{'HZB-50/AB':[1318.34,'CNY',1],'ZH-101V':[348.8,'CNY',10],'GN650TNPro':[4534.41,'CNY',1],'GNT2MTNPro':[3170.91,'CNY',1],'ZH-818':[291.1,'CNY',1],'HZB-100FA':[2124.51,'CNY',1],'ZH-102V':[824.44,'CNY',1],'TK-600':[4048.00,'CNY',1]}));
 test('every product image is an actually copied commercial-kitchen media file',()=>{for(const item of products){assert.match(item.image,/^\/(?:commercial-kitchen-media|images\/product-series)\//);assert.ok(existsSync(new URL(`../../public${item.image}`,import.meta.url)),item.image);}});
 test('the public product data excludes source and supplier metadata',()=>{for(const item of products){for(const key of ['originalImage','internal_price','supplier_reference_price','source_file','sourceLabel','sourceLocation'])assert.equal(item[key],undefined);}});
 test('the eight featured IDs exist and lead the feature data',()=>{assert.equal(launch.featuredProductIds.length,8);for(const id of launch.featuredProductIds)assert.ok(product(id),id);});
@@ -28,3 +28,18 @@ test('the concise enquiry includes optional company and preferred contact',()=>{
 test('local enquiry simulation does not invoke fetch',async()=>{let calls=0;const result=await submitInquiry({},{hostname:'localhost',fetchImpl:async()=>{calls++;}});assert.deepEqual(result,{mode:'preview',networked:false});assert.equal(calls,0);});
 test('production sending remains restricted to the two approved hostnames',()=>{assert.equal(isProductionHost('ddnzglobal.com'),true);assert.equal(isProductionHost('www.ddnzglobal.com'),true);assert.equal(isProductionHost('preview.ddnzglobal.com'),false);});
 test('the module has explicit kitchen prefixes, no preview shell, and accepts the privacy callback',()=>{const source=readFileSync(new URL('../../src/features/commercial-kitchen/KitchenContent.jsx',import.meta.url),'utf8');const css=readFileSync(new URL('../../src/features/commercial-kitchen/styles/kitchen.css',import.meta.url),'utf8');assert.match(source,/export default function KitchenContent\(\{onPrivacy(?:,.*?)?\}\)/);assert.match(source,/className="ddnz-kitchen(?: [^"]*)?"/);assert.match(source,/onPrivacy=\{onPrivacy\}/);assert.doesNotMatch(source,/createRoot|CONTENT PREVIEW|className="header"|className="footer"/);assert.doesNotMatch(css,/@scope/);assert.match(css,/\.ddnz-kitchen \.wrap/);assert.match(css,/dialog\.detail-dialog\[open\]/);});
+
+test('TK-600 quantity boundaries agree across the planner, list brief and enquiry', () => {
+  const juicer=product('juice-500');
+  for (const [units,price] of [[1,4048.00],[99,4048.00],[100,2833.60],[499,2833.60],[500,2428.80]]) {
+    assert.equal(referenceTier(juicer.quote,units).price,price);
+    const draft={...createPriceDraft(juicer,'CNY',units),units,productId:juicer.id,intent:'trial'};
+    const target=validateBuyingTarget(products,draft);
+    assert.equal(target.price,price);
+    assert.ok(buildInquiryMessage({products,list:{[juicer.id]:units}}).includes(`CNY ${price.toLocaleString('en',{minimumFractionDigits:2})} / unit`));
+  }
+  assert.equal(validateBuyingTarget(products,{...createPriceDraft(juicer,'CNY'),units:500,productId:juicer.id,intent:'trial'}),null);
+  const buyingTargets={[juicer.id]:validateBuyingTarget(products,{...createPriceDraft(juicer,'CNY'),productId:juicer.id,intent:'trial'})};
+  assert.match(makeBrief(products,{[juicer.id]:500},{buyingTargets}), /Indicative buying price: CNY 2428\.80/);
+  assert.equal(product('juice-1200').quote,null);
+});

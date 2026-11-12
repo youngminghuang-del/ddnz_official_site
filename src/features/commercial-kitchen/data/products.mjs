@@ -455,26 +455,65 @@ const originalProducts = [
   },
   {
     "id": "juice-500",
-    "model": "500W variant",
-    "name": "Commercial juice extractor",
+    "model": "TK-600",
+    "name": "Commercial cold press juicer",
     "category": "Beverage equipment",
-    "metric": "500 W",
-    "detail": "Juice extraction",
-    "dimensions": "250 × 220 × 480 mm",
+    "metric": "600 W",
+    "detail": "Rated power",
+    "dimensions": "260 × 190 × 570 mm",
     "specs": {
-      "Rated power": "500 W",
-      "Configuration": "Plug-in variant"
+      "Rated power": "600 W",
+      "Voltage": "220 V",
+      "Capacity": "500 mL",
+      "Net weight": "9 kg",
+      "Blade count": "1"
     },
-    "image": "/commercial-kitchen-media/juice-500.webp",
+    "image": "/commercial-kitchen-media/tk-600-front.webp",
     "imageNote": "",
-    "note": "Power option shown. Model code and final dimensions will be confirmed during quotation.",
+    "note": "Confirm frequency, plug and packing for your destination.",
     "quote": {
-      "price": 2283.06,
+      "price": 4048.00,
       "currency": "CNY",
       "minUnits": 1,
       "status": "indicative",
-      "configurationNote": "500 W standard version; dimensions and material configuration to confirm."
-    }
+      "tiers": [
+        {
+          "minUnits": 1,
+          "price": 4048.00
+        },
+        {
+          "minUnits": 100,
+          "price": 2833.60
+        },
+        {
+          "minUnits": 500,
+          "price": 2428.80
+        }
+      ]
+    },
+    "gallery": [
+      {
+        "src": "/commercial-kitchen-media/tk-600-straight.webp",
+        "label": "Front view"
+      },
+      {
+        "src": "/commercial-kitchen-media/tk-600-controls.webp",
+        "label": "Control panel"
+      },
+      {
+        "src": "/commercial-kitchen-media/tk-600-carton.webp",
+        "label": "Carton example"
+      }
+    ],
+    "otherPowers": [
+      300,
+      500,
+      1200,
+      1500,
+      2000,
+      3000,
+      4000
+    ]
   },
   {
     "id": "juice-1200",

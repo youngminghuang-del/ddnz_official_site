@@ -1,3 +1,5 @@
+import '../commercial-kitchen/styles/kitchen.css';
+import '../commercial-kitchen/styles/localized-kitchen.css';
 import { useEffect, useState } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO';
@@ -10,7 +12,7 @@ import { buyerGuideForPath, buyerMeta, buyerSchema, buyerJourneyAnalytics } from
 import BuyerGuideContent from './BuyerGuideContent.jsx';
 
 export default function BuyerGuidePage() {
-  const { pathname } = useLocation();
+  const { pathname, search, hash } = useLocation();
   const guide = buyerGuideForPath(pathname), locale = productRouteParts(pathname).locale as 'en' | 'es' | 'ar' | 'zh' | 'ru' | 'fr' | 'pt' | 'tr';
   const [legal, setLegal] = useState<LegalType>(null);
   useEffect(() => {
@@ -20,11 +22,18 @@ export default function BuyerGuidePage() {
     node.textContent = JSON.stringify(buyerSchema(guide, locale)); document.head.appendChild(node);
     return () => node.remove();
   }, [guide, locale]);
+  useEffect(() => {
+    if (!hash) return;
+    const frame = requestAnimationFrame(() => document.getElementById(hash.slice(1))?.scrollIntoView());
+    return () => cancelAnimationFrame(frame);
+  }, [hash, pathname]);
   if (!guide) return <Navigate to="/products/" replace />;
   const meta = buyerMeta(guide, locale);
+  const indonesiaEntry = guide.id === 'restaurant-projects' && locale === 'en'
+    && new URLSearchParams(search).get('entry') === 'indonesia-kitchen-guide';
   return <><SEO title={meta.title} description={meta.description} image={meta.image} canonicalPath={meta.path} contentLanguage={locale} alternateUrls={productAlternates(guide.path)} />
     <SourcingHomepageNav quotePath={`${meta.path}#buyer-brief`} />
-    <BuyerGuideContent key={`${guide.id}-${locale}`} guide={guide} locale={locale} onPrivacy={() => setLegal('privacy')} onAction={(action: string) => {
+    <BuyerGuideContent key={`${guide.id}-${locale}`} guide={guide} locale={locale} modelQuery={search} initialCountry={indonesiaEntry ? 'Indonesia' : ''} onPrivacy={() => setLegal('privacy')} onAction={(action: string) => {
       const payload = buyerJourneyAnalytics(guide.id, locale, action); if (payload) trackEvent(payload.event, payload.params);
     }} />
     <Footer quotePath={`${meta.path}#buyer-brief`} pageKey={guide.id} />

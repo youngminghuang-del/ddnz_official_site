@@ -612,3 +612,222 @@
 .ddnz-kitchen .equipment-spec-scroll thead{background:var(--ddnz-surface-soft)}
 .ddnz-kitchen .equipment-spec-scroll a{color:#803c98;text-decoration:underline}
 @media(max-width:760px){.ddnz-kitchen .equipment-config-grid{grid-template-columns:1fr}.ddnz-kitchen .equipment-config-fields{padding:18px}}
+
+.kitchen-purchase-paths{display:grid;gap:.5rem;margin:1.1rem 0;max-width:35rem}
+.kitchen-purchase-paths>a{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:.65rem .85rem;min-width:0;border:1px solid #dae0e8;border-radius:.55rem;background:#fff;color:#172940;text-decoration:none}
+.kitchen-purchase-paths>a:hover{border-color:#652b91}
+.kitchen-purchase-paths>a:focus-visible{outline:2px solid #652b91;outline-offset:3px}
+.kitchen-purchase-paths>a strong{display:block;font-size:.95rem;line-height:1.4}
+.kitchen-purchase-paths>a div span{display:block;color:#4e6076;font-size:.8rem;line-height:1.45}
+.kitchen-purchase-paths>a>span{flex:none;color:#652b91}
+.ddnz-kitchen #kitchen-induction-range{padding-block:1rem}
+
+.ddnz-kitchen .supply-price-tiers{margin:5px 0 0;font-size:13px}
+.ddnz-kitchen .supply-price-tiers>div{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:2px 14px;padding:6px 0;border-bottom:1px solid var(--line)}
+.ddnz-kitchen .supply-price-tiers dd{margin:0;color:var(--blue);font-weight:700;white-space:nowrap}
+.ddnz-kitchen .product-bottom:has(.supply-price-tiers)>div{flex-basis:100%}
+.ddnz-kitchen .juicer-options{margin-top:12px;padding-top:10px;border-top:1px solid var(--line);font-size:13px}
+.ddnz-kitchen .juicer-options p{margin:0 0 4px;line-height:1.55}
+.ddnz-kitchen .juicer-options a{display:inline-flex;gap:4px;align-items:center;min-height:36px}
+.ddnz-kitchen .juicer-gallery{display:grid;grid-template-columns:repeat(auto-fit,minmax(82px,1fr));gap:8px;margin-top:10px}
+.ddnz-kitchen .juicer-gallery figure{margin:0;min-width:0}
+.ddnz-kitchen .juicer-gallery img{display:block;width:100%;height:108px;object-fit:contain;background:#f4f4f6;border-radius:5px}
+.ddnz-kitchen .juicer-gallery figcaption{margin-top:4px;font-size:11px}
+
+.ddnz-kitchen .hot-cooking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 0.75rem;
+  margin-block: 1rem;
+}
+.ddnz-kitchen .hot-cooking-card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--line);
+  border-radius: 0.75rem;
+}
+.ddnz-kitchen .hot-cooking-card a, .ddnz-kitchen a.hot-cooking-card { color: var(--ink); }
+.ddnz-kitchen .hot-cooking-card a { text-decoration: underline; text-underline-offset: 0.18em; }
+.ddnz-kitchen .hot-cooking-card p { margin: 0.4rem 0; color: var(--muted); }
+.ddnz-kitchen .hot-cooking-shortcuts { padding-inline-start: 1rem; margin-block: 0.65rem 0; }
+.ddnz-kitchen .hot-cooking-shortcuts li { margin-block: 0.3rem; }
+.ddnz-kitchen .old-model-link, .ddnz-kitchen .coffee-model-shortcuts a { display: none; }
+.ddnz-kitchen .old-model-link:target, .ddnz-kitchen .old-model-link.is-current-anchor,
+.ddnz-kitchen .coffee-model-shortcuts a:target, .ddnz-kitchen .coffee-model-shortcuts .is-current-anchor { display: inline-block; }
+.ddnz-kitchen .hot-cooking-directory [id], .ddnz-kitchen.induction-page [id] { scroll-margin-top: 8rem; }
+.ddnz-kitchen .induction-intro-section p, .ddnz-kitchen .induction-quote-checks p { max-width: 68ch; }
+.ddnz-kitchen .induction-page-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 1rem; margin-block: 1rem; }
+.ddnz-kitchen .induction-list-status { min-height: 1.5em; }
+
+.ddnz-kitchen .hot-cooking-models {
+  padding: 1.25rem 0 0;
+}
+.ddnz-kitchen .hot-cooking-models h2 {
+  margin: 0 0 0.75rem;
+  font-size: clamp(1.25rem, 2.1vw, 1.65rem);
+}
+.ddnz-kitchen .hot-cooking-models .induction-list {
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 25rem), 1fr));
+  gap: 0.75rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-card {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+}
+.ddnz-kitchen .hot-cooking-models .induction-photo {
+  padding: 0.75rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-photo>button span {
+  padding-block: 0.35rem 0;
+  font-size: 0.75rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-copy {
+  padding: 0.875rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-copy h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.125rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-metrics {
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 0.35rem 0.75rem;
+  margin-block: 0.5rem 0.75rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-metrics>div {
+  display: block;
+  padding-block: 0.3rem;
+  border: 0;
+}
+.ddnz-kitchen .hot-cooking-models .induction-metrics dd {
+  margin: 0;
+  font-size: 0.875rem;
+  text-align: start;
+}
+.ddnz-kitchen .hot-cooking-models .induction-shared-actions {
+  gap: 0.4rem;
+  margin-block: 0.6rem;
+}
+.ddnz-kitchen .hot-cooking-models .induction-shared-actions button,
+.ddnz-kitchen .hot-cooking-models .induction-quote {
+  min-height: 44px;
+  padding: 0.4rem 0.65rem;
+  font-size: 0.875rem;
+}
+@media (max-width: 500px) {
+  .ddnz-kitchen .hot-cooking-models .induction-card {
+    grid-template-columns: 1fr;
+  }
+  .ddnz-kitchen .hot-cooking-models .induction-photo>button img {
+    height: 8rem;
+  }
+}
+
+.ddnz-kitchen .kitchen-subnav button {
+  margin-inline-start: auto;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  padding: 0.55rem 0.7rem;
+  background: white;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.ddnz-kitchen .kitchen-subnav button + .kitchen-subnav-list { margin-inline-start: 0; }
+.ddnz-kitchen .kitchen-subnav button:disabled { opacity: 0.6; }
+.ddnz-kitchen .catalogue-range-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  margin-block: 0.75rem;
+  font-size: 0.875rem;
+}
+.ddnz-kitchen .catalogue-range-links a, .ddnz-kitchen .estimate-price { text-decoration: underline; text-underline-offset: 0.18em; }
+.ddnz-kitchen .catalogue-anchor { display: block; scroll-margin-top: 9rem; }
+.ddnz-kitchen .catalogue-hidden-anchor { display: none; }
+.ddnz-kitchen .catalogue-key-specs {
+  display: grid;
+  grid-template-columns: repeat(2,minmax(0,1fr));
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  margin: 0;
+}
+.ddnz-kitchen .catalogue-key-specs dd { margin: 0; font-weight: 650; }
+.ddnz-kitchen .catalogue-support .category-entry-links { margin-block: 0.75rem 0; }
+.ddnz-kitchen .dealer-market-picker { display: grid; max-width: 20rem; gap: 0.35rem; margin: 1rem 0; }
+.ddnz-kitchen .dealer-market-picker select { border: 1px solid var(--line); border-radius: 0.5rem; padding: 0.6rem; }
+
+.kitchen-purchase-illustrated>a,
+.ddnz-kitchen .kitchen-support-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.75rem;
+}
+.kitchen-purchase-illustrated>a {
+  padding: 0.4rem 0.7rem 0.4rem 0.4rem;
+}
+.kitchen-purchase-illustrated img,
+.ddnz-kitchen .kitchen-support-card img {
+  display: block;
+  border-radius: 0.4rem;
+  object-fit: cover;
+  background: #f1f1f5;
+}
+.kitchen-purchase-illustrated img {
+  width: 4rem;
+  height: 3rem;
+}
+.ddnz-kitchen .kitchen-support-cards {
+  display: grid;
+  grid-template-columns: repeat(3,minmax(0,1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.ddnz-kitchen .kitchen-support-card {
+  padding: 0.55rem;
+  border: 1px solid var(--line);
+  border-radius: 0.7rem;
+  background: #fff;
+  color: var(--ink);
+  text-decoration: none;
+  scroll-margin-top: 9rem;
+}
+.ddnz-kitchen .kitchen-support-card:hover { border-color: #71339a; }
+.ddnz-kitchen .kitchen-support-card:focus-visible { outline: 2px solid #71339a; outline-offset: 3px; }
+.ddnz-kitchen .kitchen-support-card img { width: 5rem; height: 4rem; }
+.ddnz-kitchen .kitchen-support-card strong { display: block; font-size: 0.9rem; line-height: 1.35; }
+.ddnz-kitchen .kitchen-support-card div span { display: block; color: var(--muted); font-size: 0.8rem; line-height: 1.45; margin-top: 0.2rem; }
+.ddnz-kitchen .kitchen-support-card>span { color: #71339a; }
+@media(max-width: 1020px) {
+  .ddnz-kitchen .kitchen-support-cards { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width: 600px) {
+  .ddnz-kitchen .kitchen-support-cards { grid-template-columns: minmax(0,1fr); }
+}
+
+.zh-cooking-directory {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1rem;
+}
+.zh-cooking-card-link {
+  display: grid;
+  grid-template-columns: minmax(0, 7rem) minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+}
+.zh-cooking-card-link img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 3 / 2;
+  object-fit: contain;
+  background: var(--ddnz-surface-soft, #f5f5f8);
+  border-radius: var(--ddnz-card-radius, .5rem);
+}
+.zh-cooking-legacy:not(:target):not(:has(:target)) {
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+}
+.zh-cooking-directory [id] { scroll-margin-top: 9rem; }

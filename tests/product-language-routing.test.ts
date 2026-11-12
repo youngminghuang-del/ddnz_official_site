@@ -6,15 +6,18 @@ import {
   routeScrollAction, scrollPositionKey, splitNavigationPath, supportedNavigationLanguages,
 } from '../src/lib/productLanguageRouting.ts';
 import type { Language } from '../src/i18n/translations.ts';
+import { hotCookingPath, inductionCookingPath } from '../src/features/commercial-kitchen/routes.mjs';
 
 const languages = Object.keys(navigationPrefixes) as Language[];
 
 test('all eight navigation languages use only authored product URLs', () => {
-  const translated = new Set(['/portable-power/selection-guide', '/sourcing/outdoor-products-from-china', '/sourcing/mobile-accessories-from-china', '/phone-cases', '/phone-cases/materials-and-pricing', '/phone-straps-charms', '/sourcing/commercial-kitchen-equipment-from-china', '/screen-protectors', '/screen-protectors/compare', '/sourcing/kitchen-equipment-for-distributors', '/sourcing/restaurant-project-equipment', '/screen-protectors/wholesale-for-stores', '/screen-protectors/private-label']);
+  assert.deepEqual(supportedNavigationLanguages(inductionCookingPath), ['en', 'zh']);
+  assert.deepEqual(supportedNavigationLanguages(hotCookingPath), ['zh']);
   for (const language of languages) {
     for (const path of englishProductPaths) {
-      const fallback = path==='/screen-protectors/brief';
-      const target = `${fallback?'':navigationPrefixes[language]}${path}/`;
+      const fallback = path === '/screen-protectors/brief' || (path === inductionCookingPath && language !== 'zh');
+      const prefix = path === hotCookingPath ? '/zh-cn' : fallback ? '' : navigationPrefixes[language];
+      const target = `${prefix}${path}/`;
       assert.equal(navigationPath(path, language), target);
       assert.equal(navigationPath(`${navigationPrefixes[language]}${path}/?utm_source=guide#details`, language), `${target}?utm_source=guide#details`);
     }

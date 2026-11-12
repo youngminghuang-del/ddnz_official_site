@@ -1,3 +1,4 @@
+import './components/shared-kitchen-list.css';
 import {useEffect} from 'react';
 import {useLocation} from 'react-router-dom';
 import SEO from '../../components/SEO';

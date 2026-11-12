@@ -18,7 +18,7 @@ export { getLocalizedKitchenMetadata } from './data/localization.mjs';
 export { LocalizedKitchenContent } from './LocalizedKitchenContent.jsx';
 
 export default function LocalizedKitchenPage({ locale: providedLocale }: { locale?: 'zh' | 'es' | 'ar' | 'ru' | 'fr' | 'pt' | 'tr' } = {}) {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
   const locale = providedLocale || productRouteParts(pathname).locale as Language;
   const metadata = useMemo(() => getLocalizedKitchenMetadata(locale), [locale]);
   const copy = kitchenCopy(locale).ui;
@@ -47,7 +47,7 @@ export default function LocalizedKitchenPage({ locale: providedLocale }: { local
     <SEO title={metadata.title} description={metadata.description} contentLanguage={locale}
       canonicalPath={metadata.canonicalPath} alternateUrls={metadata.alternateUrls} image={metadata.image}/>
     <SourcingHomepageNav quotePath={quotePath}/>
-    <LocalizedKitchenContent locale={locale} onAction={onAction}/>
+    <LocalizedKitchenContent locale={locale} activeAnchor={hash} onAction={onAction}/>
     <BuyerGuideLinks group="kitchen" locale={locale} onAction={(id: string, action: string) => {
       const payload = buyerJourneyAnalytics(id, locale, action);
       if (payload) trackEvent(payload.event, payload.params);

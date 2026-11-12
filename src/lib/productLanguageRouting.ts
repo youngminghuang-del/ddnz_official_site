@@ -2,7 +2,7 @@ import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 import type { Language } from '../i18n/translations';
 import { canonicalSitePath } from './notionArticleRouting';
-import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
+import { inductionCookingPath, hotCookingPath, kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, hasProductTranslation, isLocalizedProductPath, localizedProductPath } from './productLocalization.mjs';
 
 export const navigationPrefixes: Record<Language, string> = {
@@ -28,7 +28,7 @@ export const englishProductPaths = [
   ...audioCategoryPaths,
   ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
-  ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
+  inductionCookingPath, hotCookingPath, ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
   '/products', '/sourcing-services', '/refrigeration-equipment',
   '/sourcing/commercial-kitchen-equipment-from-china', '/sourcing/audio-speakers-from-china',
   '/sourcing/outdoor-products-from-china',
@@ -52,6 +52,8 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
+  if (route === inductionCookingPath) return ['en', 'zh'];
+  if (route === hotCookingPath) return ['zh'];
   if(route==='/shipping-from-china-to-ecuador') return allNavigationLanguages;
   if(route==='/services/ddp-shipping-from-china') return allNavigationLanguages;
   if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/electric-tricycles-from-china','/sourcing/electric-utility-vehicles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(route)) return allNavigationLanguages;
@@ -86,8 +88,9 @@ export function navigationPath(path: string, language: Language) {
   const { pathname, suffix } = splitNavigationPath(path);
   if(pathname==='/services/ddp-shipping-from-china') return `${navigationPrefixes[language]}${pathname}${suffix}`;
   const product = englishProductPath(path);
-  if (product && hasProductTranslation(product, language)) return localizedProductPath(`${product}${suffix}`, language);
-  const targetLanguage = supportedNavigationLanguages(pathname).includes(language) ? language : 'en';
+  const supported = supportedNavigationLanguages(pathname);
+  const targetLanguage = supported.includes(language) ? language : supported[0];
+  if (product && hasProductTranslation(product, targetLanguage)) return localizedProductPath(`${product}${suffix}`, targetLanguage);
   return canonicalSitePath(`${product || `${navigationPrefixes[targetLanguage]}${pathname === '/' ? '' : pathname}` || '/'}${suffix}`);
 }
 

@@ -101,3 +101,154 @@
   .localized-kitchen .localized-card-body { padding:20px; }
   .localized-kitchen[dir=rtl] .hero-label { right:0; }
 }
+
+.localized-kitchen .product.kitchen-model-paged:not(:target) {
+  display: none;
+}
+.localized-kitchen .kitchen-load-more {
+  margin-block: 1.25rem 0;
+}
+.localized-kitchen #commercial-kitchen-guide a + a {
+  margin-inline-start: 1rem;
+}
+
+.localized-kitchen .kitchen-coffee-entry {
+  scroll-margin-top: 8rem;
+}
+.localized-kitchen .kitchen-coffee-card {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  align-items: stretch;
+  overflow: hidden;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+  color: var(--ink);
+  text-decoration: none;
+}
+.localized-kitchen .kitchen-coffee-card:hover {
+  border-color: var(--ddnz-brand-action);
+}
+.localized-kitchen .kitchen-coffee-card:focus-visible {
+  outline: 2px solid var(--ddnz-brand-action);
+  outline-offset: 4px;
+}
+.localized-kitchen .kitchen-coffee-image {
+  display: grid;
+  place-items: center;
+  min-width: 0;
+  padding: clamp(1rem, 3vw, 2rem);
+  background: var(--ddnz-surface-soft);
+}
+.localized-kitchen .kitchen-coffee-image img {
+  display: block;
+  width: 100%;
+  height: clamp(9rem, 18vw, 14rem);
+  object-fit: contain;
+}
+.localized-kitchen .kitchen-coffee-copy {
+  align-self: center;
+  padding: clamp(1.25rem, 4vw, 2.75rem);
+}
+.localized-kitchen .kitchen-coffee-copy p {
+  margin: .75rem 0 1.25rem;
+}
+.localized-kitchen .kitchen-coffee-action {
+  display: inline-flex;
+  gap: .5rem;
+  align-items: center;
+  min-height: 44px;
+  padding: .55rem .9rem;
+  border: 1px solid var(--ddnz-brand-action);
+  border-radius: var(--ddnz-card-radius);
+  color: var(--ddnz-brand-action);
+  font-weight: 700;
+}
+.localized-kitchen .kitchen-coffee-card:hover .kitchen-coffee-action {
+  text-decoration: underline;
+}
+.localized-kitchen .kitchen-coffee-entry .coffee-model-shortcuts a {
+  scroll-margin-top: 8rem;
+}
+@media (max-width: 620px) {
+  .localized-kitchen .kitchen-coffee-card {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.localized-kitchen .zh-cooking-group-links {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+  list-style: none;
+  margin: .75rem 0 0;
+  padding: 0;
+}
+.localized-kitchen .zh-cooking-group-link {
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+  min-height: 100%;
+  padding: .5rem .25rem;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+  text-align: center;
+  text-decoration: none;
+  font-size: .875rem;
+}
+.localized-kitchen .zh-cooking-group-link:hover {
+  border-color: var(--ddnz-brand-action);
+  text-decoration: underline;
+}
+.localized-kitchen .zh-cooking-group-link:focus-visible {
+  outline: 2px solid var(--ddnz-brand-action);
+  outline-offset: 2px;
+}
+.localized-kitchen .zh-cooking-group-link img {
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  object-fit: contain;
+}
+.localized-kitchen .zh-assortment-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.localized-kitchen .zh-assortment-card .button {
+  margin-top: auto;
+}
+.localized-kitchen .localized-panel .zh-assortment-models {
+  display: grid;
+  width: 100%;
+  gap: .45rem;
+  padding: 0;
+  margin: .75rem 0 1.25rem;
+  list-style: none;
+}
+.localized-kitchen .zh-assortment-models li {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  min-width: 0;
+}
+.localized-kitchen .zh-assortment-models img {
+  width: 4rem;
+  height: 3rem;
+  flex: none;
+  object-fit: contain;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+}
+.localized-kitchen .zh-assortment-model {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: .45rem;
+}
+@media (max-width: 360px) {
+  .localized-kitchen .zh-cooking-group-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

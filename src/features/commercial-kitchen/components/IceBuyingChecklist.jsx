@@ -1,4 +1,33 @@
 import React from 'react';
-export default function IceBuyingChecklist(){
- return <section className="section wrap equipment-config" id="ice-site-check"><p className="eyebrow">BEFORE YOU SELECT A MODEL</p><h2>Match ice production to the working day</h2><div className="equipment-config-grid"><article><h3>Daily production</h3><p>The listed 50–250 kg/day range describes rated production. Ask for the ambient and inlet-water temperatures used in the test, then request output at your site conditions.</p></article><article><h3>Peak service and storage</h3><p>Record ice needed during your busiest service period. A daily production rating does not tell you how much ice the bin holds. Confirm usable bin capacity and time available to refill it.</p></article><article><h3>Installation and support</h3><p>Provide the destination, voltage and frequency, available footprint, water supply and drain arrangement. Include the required ice shape, cleaning access and a starter spare-parts list.</p></article></div><p>For a café, specify drinks per peak hour and ice per drink. For a kitchen or distributor, describe the ice application and operating hours. These inputs help compare suppliers on the same basis.</p><a className="text-link" href="#equipment-configuration">Add your site requirements to the configuration request →</a></section>;
+import { kitchenListHref } from '../data/inductionPage.mjs';
+
+export default function IceBuyingChecklist({ reading, children }) {
+  return <section className="section wrap equipment-config ice-selection-check" id="category-buying">
+    <h2 id="ice-site-check">Check output, storage and installation</h2>
+    <div className="equipment-config-grid">
+      <article><h3>Daily production</h3><p>Compare kg/day at the same room and inlet water temperatures. Ask for expected output under your site conditions.</p></article>
+      <article><h3>Peak service and storage</h3><p>Estimate ice used during the busiest period, then confirm usable bin capacity and refill time.</p></article>
+      <article><h3>Installation</h3><p>Confirm voltage and frequency, footprint, water supply, drain and cleaning access.</p></article>
+    </div>
+    <p><a className="text-link" href={'/blog/' + reading.slug + '/'} data-category-action="read_guide">{reading.title} ↗</a></p>
+    {children}
+  </section>;
+}
+
+export function IceQuotePaths({ count }) {
+  return <section className="wrap ice-quote-paths" aria-labelledby="ice-quote-paths-title">
+    <h2 id="ice-quote-paths-title">Ready for a quote?</h2>
+    <div className="ice-quote-path-grid">
+      <a className="ice-site-request" href={kitchenListHref} data-category-action="start_brief">
+        <img src="/media/process/brief-spec-discussion-poster.webp" alt="" width="96" height="72" loading="lazy" decoding="async"/>
+        <div><strong>View equipment list ({count})</strong><span>Review selected models and quantities for a mixed order.</span></div>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <a className="ice-site-request" href="#equipment-configuration">
+        <img src="/commercial-kitchen-media/ddnz-products/ice-49-ddnz-v1-600.webp" alt="" width="96" height="72" loading="lazy" decoding="async"/>
+        <div><strong>Add your site requirements</strong><span>Share electrical supply, water, drainage and installation space for a configuration quote.</span></div>
+        <span aria-hidden="true">↓</span>
+      </a>
+    </div>
+  </section>;
 }

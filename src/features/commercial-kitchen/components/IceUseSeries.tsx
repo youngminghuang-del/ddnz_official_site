@@ -3,10 +3,10 @@ import copy from '../locales/ice-use-series.json';
 import {iceUseModels} from '../data/iceUseModels.mjs';
 import {buildQuoteHref} from '../../../lib/quoteLinks';
 type Locale=keyof typeof copy;
-export default function IceUseSeries({locale='en'}:{locale?:Locale}) {
+export default function IceUseSeries({locale='en', inCatalogue=false}:{locale?:Locale; inCatalogue?:boolean}) {
  const c=copy[locale];
  const title=(kind:string)=>c[kind as 'crescent'|'granular'|'split'];
- return <section id="ice-shapes" className="section wrap ice-use-series" aria-labelledby="ice-shapes-title">
+ return <section id="ice-shapes" className={inCatalogue ? 'ice-use-series ice-use-in-catalogue' : 'section wrap ice-use-series'} aria-labelledby="ice-shapes-title">
   <p className="eyebrow">DDNZ GLOBAL</p><h2 id="ice-shapes-title">{c.heading}</h2><p className="ice-use-intro">{c.intro}</p>
   <nav className="ice-use-nav" aria-label={c.heading}>{iceUseModels.map(p=><a key={p.id} href={'#model-'+p.id}>{title(p.kind)}<span aria-hidden="true"> ↓</span></a>)}</nav>
   <div className="ice-use-models">{iceUseModels.map(p=>{

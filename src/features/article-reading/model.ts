@@ -1,3 +1,4 @@
+import { indonesiaKitchenArticle, indonesiaProjectBrief } from '../buyer-guides/indonesia-project.mjs';
 import { sanitizeQuoteContext } from '../../lib/quoteLinkPolicy.mjs';
 import { canonicalSitePath } from '../../lib/notionArticleRouting';
 import { kitchenArticleDiscovery } from '../../data/kitchenArticleDiscovery.mjs';
@@ -85,6 +86,10 @@ export function normalizeNotionLinks(content: string) {
 }
 
 export function buildPrimaryCta(post: BlogPost, prefix: string, ui: ArticleUi) {
+  if (post.slug === indonesiaKitchenArticle) return {
+    href: indonesiaProjectBrief,
+    label: 'Isi formulir proyek (bahasa Inggris)',
+  };
   if (post.language === 'id' && post.productCategory === 'Commercial Kitchen Equipment') return {
     href: 'https://wa.me/85261077362?text=Saya%20ingin%20merencanakan%20dapur%20restoran%20di%20Indonesia.%20Kota%3A%20%20Menu%3A%20%20Anggaran%3A',
     label: ui.commercialCta,

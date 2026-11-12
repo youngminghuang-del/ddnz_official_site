@@ -6,13 +6,15 @@ import { renderKitchenStaticContent } from '../scripts/kitchen-static-content.mj
 import products from '../src/features/commercial-kitchen/data/products.mjs';
 import launch from '../src/features/commercial-kitchen/data/launch.mjs';
 
-test('discovery links remain in the crawlable HTML and every journey has a target', () => {
+test('the static catalogue retains legacy anchors and links to the relocated resources', () => {
   const html = renderKitchenStaticContent(products, launch);
   for (const item of kitchenJourney) {
-    assert.ok(html.includes(`href="${item.href}"`));
     assert.ok(html.includes(`id="${item.href.slice(1)}"`));
   }
-  for (const item of kitchenReading) assert.ok(html.includes(`/blog/${item.slug}/`));
+  assert.match(html, /href="\/sourcing\/kitchen-equipment-for-distributors\/#commercial-kitchen-trade-pricing"/);
+  assert.match(html, /href="\/sourcing\/restaurant-project-equipment\/#kitchen-production-reference"/);
+  assert.match(html, /href="\/refrigeration-equipment\/"/);
+  assert.match(html, /href="\/sourcing\/commercial-ice-machines-from-china\/"/);
   for (const item of kitchenFaq) assert.ok(html.includes(item.question));
 });
 

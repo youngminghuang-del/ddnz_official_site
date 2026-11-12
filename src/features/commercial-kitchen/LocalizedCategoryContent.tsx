@@ -1,3 +1,8 @@
+import { SharedKitchenListBar, sharedKitchenListHref, useSharedKitchenList } from './components/SharedKitchenList';
+import { purchaseFlow } from './locales/purchase-flow.mjs';
+import configurationCopy from './locales/planning/configuration.json';
+import sdCopy from './locales/sd-series.json';
+import iceShapeCopy from './locales/ice-use-series.json';
 import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
 import IceUseSeries from './components/IceUseSeries';
 import SdIceSeries from './components/SdIceSeries';
@@ -24,26 +29,44 @@ import {foodLocales,foodPrefix} from '../food-processing/localization';
 import {overviewCopy} from '../overview/copy';
 export default function LocalizedCategoryContent({category,locale}:{category:any;locale:CategoryLocale}){
  const c=categoryCopy[locale],u=foodLocales[locale].ui,o=overviewCopy[locale],i=kitchenCategories.indexOf(category),prefix=foodPrefix(locale),products=categoryProducts(category),hero=products.find(p=>p.id===category.heroId)!;
+ const sharedList=useSharedKitchenList(locale);
+ const sharedCopy=kitchenCopy(locale).ui;
+ const flow=purchaseFlow[locale];
  const [selection,setSelection]=useState<Record<string,number>>({});const [destination,setDestination]=useState('');const [notes,setNotes]=useState('');
  const [configuration,setConfiguration]=useState(emptyConfiguration);
  const allProducts=[...products,...(additionalCookingModels[category.id]||[])];
  const chosen=allProducts.filter(p=>selection[p.id]>0);const amount=(id:string,n:number)=>setSelection(s=>({...s,[id]:Math.max(0,Math.min(999,Math.floor(n)||0))}));
  const brief=[c.titles[i],...chosen.map(p=>`${p.model} × ${selection[p.id]} · ${p.metric} · ${p.dimensions}${p.power?` · ${p.power}`:''}${p.thickness?` · ${cookingCopy[locale].thickness}: ${p.thickness} · ${cookingCopy[locale].controls}: ${p.controls}`:''}`),`${u.destination}: ${destination}`,notes,configurationBrief(locale,configuration),c.ui.priceNote].join('\n');
  const quote=`${prefix}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',source:'kitchen_category',industry:c.titles[i],overviewBrief:brief,dest:destination});
+ const chineseBuyingTip = [
+   '每日额定产冰量与储冰量是两个指标。选型时同时核对测试条件、现场环境温度和进水温度。',
+   '按每批装载量和出餐节奏核对油缸容量、炸篮和台面空间。油缸容量不能直接换算成每小时出餐量。',
+   '按同时使用的烹饪区核对板面、台面深度和操作空间。板面面积不能直接换算成每小时出餐量。',
+ ][i];
  const keys:Record<string,string>={'Daily output':c.ui.output,'Tank volume':c.ui.volume,'Tanks':c.ui.tanks,'Rated power':u.power,'Cooking plate':c.ui.plate,'Surface':c.ui.surface};
  return <main id="main-content" className="ddnz-kitchen kitchen-category kitchen-brand category-brand" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
  <nav className="kitchen-breadcrumb wrap" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a></nav>
  <section className="category-hero wrap"><div><p className="eyebrow">{o.ui.services}</p><h1>{c.titles[i]}</h1><p className="hero-description">{c.intros[i]}</p><div className="actions"><a className="button primary" href="#category-models">{u.compare}</a><a className="text-link" href="#category-buying">{u.scope}</a></div>{i===0&&<GulfIceEntry locale={locale}/>}</div><figure className="category-hero-photo"><img src={hero.image} alt={`${hero.model} · ${c.titles[i]}`} width="1200" height="900"/><figcaption><strong dir="ltr">{category.statistic}</strong><span>{i===0?c.ui.output:i===1?c.ui.volume:c.ui.plate}</span></figcaption></figure></section>
  <nav className="category-navigation wrap" aria-label={u.related}>{kitchenCategories.map((cat,index)=><a key={cat.id} href={`${prefix}${cat.path}`} aria-current={index===i?'page':undefined}>{c.titles[index]}</a>)}</nav>
- {i===0&&<IceSpecificationComparison locale={locale}/>}
- <section id="category-models" className="section wrap"><h2>{u.compare}</h2><div className="category-model-grid">{products.map(p=><article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><h3><bdi>{p.model}</bdi></h3><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/><div className="category-price">{p.quote?<><span>{c.ui.price}</span><strong dir="ltr">CNY {p.quote.price.toFixed(2)}</strong><span>{u.unit} · {c.ui.reference}: {p.quote.minUnits}</span></>:<strong>{c.ui.request}</strong>}</div><button type="button" className="button primary" onClick={()=>{amount(p.id,(selection[p.id]||0)+1);document.getElementById('category-rfq')?.scrollIntoView();}}>{u.add}</button></div></article>)}</div><p className="fine category-price-note">{c.ui.priceNote}</p></section>
- {i===0&&<><SdIceSeries locale={locale}/><IceUseSeries locale={locale}/></>}
+ <SharedKitchenListBar locale={locale} count={sharedList.count} status={sharedList.status}/>
+ <section id="category-models" className="section wrap"><h2>{u.compare}</h2>
+ {i===0&&<nav className="ice-use-nav" aria-label={u.compare}><a href="#hzb-series">HZB ↓</a><a href="#sd-series">{sdCopy[locale].heading} ↓</a><a href="#ice-shapes">{iceShapeCopy[locale].heading} ↓</a></nav>}
+ <div id={i===0?'hzb-series':undefined} className="category-model-grid">{products.map(p=><article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><h3><bdi>{p.model}</bdi></h3><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/><div className="category-price">{p.quote?<><span>{c.ui.price}</span><strong dir="ltr">CNY {p.quote.price.toFixed(2)}</strong><span>{u.unit} · {c.ui.reference}: {p.quote.minUnits}</span></>:<strong>{c.ui.request}</strong>}</div><div className="shared-kitchen-model-actions"><button type="button" className="button primary" aria-label={`${sharedCopy.add} · ${p.model}`} onClick={()=>sharedList.add(p.id)}>{sharedCopy.add}</button><button type="button" className="text-link" onClick={()=>{amount(p.id,(selection[p.id]||0)+1);document.getElementById('category-rfq')?.scrollIntoView();}}>{c.ui.request}</button></div></div></article>)}</div><p className="fine category-price-note">{c.ui.priceNote}</p>
+ {i===0&&<><SdIceSeries locale={locale} inCatalogue/><IceUseSeries locale={locale} inCatalogue/></>}
+ </section>
  <CookingVisuals category={category} locale={locale}/>
  <CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)}/>
- <section id="category-buying" className="section wrap category-buying"><h2>{u.scope}</h2><div className="category-buying-grid">{c.notes[i].map((text,j)=><article key={j}><span className="category-step">0{j+1}</span>{i===0&&<h3>{iceCopy[locale].headings[j]}</h3>}<p>{text}</p></article>)}</div></section>
+ <section id="category-buying" className="section wrap category-buying"><h2>{u.scope}</h2>{locale==='zh'&&<p>{chineseBuyingTip}</p>}<div className="category-buying-grid">{c.notes[i].map((text,j)=><article key={j}><span className="category-step">0{j+1}</span>{i===0&&<h3>{iceCopy[locale].headings[j]}</h3>}<p>{text}</p></article>)}</div></section>
+ {i===0&&<>
+   <details className="wrap ice-installation-details"><summary>{configurationCopy[locale].compare}</summary><IceSpecificationComparison locale={locale}/></details>
+   <nav className="section wrap ice-quote-path-grid" aria-label={flow.nav}>
+     <a className="ice-site-request" href={sharedKitchenListHref(locale)}><img src="/media/process/brief-spec-discussion-poster.webp" alt="" width="96" height="72" loading="lazy"/><div><strong>{sharedCopy.list}</strong></div><span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a>
+     <a className="ice-site-request" href="#category-rfq"><img src="/commercial-kitchen-media/ddnz-products/ice-49-ddnz-v1-600.webp" alt="" width="96" height="72" loading="lazy"/><div><strong>{flow.site}</strong></div><span aria-hidden="true">↓</span></a>
+   </nav>
+ </>}
  {i===0&&<EquipmentBuyingSupport locale={locale} family="ice"/>}
  <section id="category-rfq" className="section wrap"><h2>{u.list}</h2><p>{i===0?iceCopy[locale].brief:o.ui.formIntro}</p>{chosen.length?chosen.map(p=><div className="my-4 flex flex-wrap items-center gap-5" key={p.id}><strong><bdi>{p.model}</bdi></strong><label>{u.quantity}<input className="mx-3 rounded border border-slate-400 p-3" aria-label={`${p.model} ${u.quantity}`} type="number" min="1" max="999" value={selection[p.id]} onChange={e=>amount(p.id,Number(e.target.value))}/></label><button className="text-link" type="button" onClick={()=>amount(p.id,0)}>{u.remove} {p.model}</button></div>):<p>{u.empty}</p>}<div className="my-6 grid gap-5 md:grid-cols-2"><label>{u.destination}<input className="mt-2 block w-full rounded border border-slate-400 p-3" value={destination} onChange={e=>setDestination(e.target.value)} maxLength={160}/></label><label>{o.ui.notes}<textarea className="mt-2 block w-full rounded border border-slate-400 p-3" value={notes} onChange={e=>setNotes(e.target.value)} maxLength={1500}/></label></div><ConfigurationFields locale={locale} value={configuration} onChange={setConfiguration}/>
-{chosen.length>0&&<a className="button primary" href={quote}>{u.continue}</a>}<p className="fine">{u.review}</p></section>
+{(chosen.length>0 || (i===0 && Boolean(destination.trim() || notes.trim() || configuration.electrical.trim() || configuration.documents.trim() || configuration.standard!=='0')))&&<a className="button primary" href={quote}>{u.continue}</a>}<p className="fine">{u.review}</p></section>
  <section className="section wrap"><h2>{u.related}</h2><div className="category-reading"><a href={i===0?`${prefix}/sourcing/commercial-kitchen-equipment-from-china/`:kitchenModelHref(hero.id)} hrefLang={i===0?locale:'en'}>{o.ui.compare}{i!==0&&` · ${c.ui.english}`}</a>{category.reading.map((article:any)=><a key={article.slug} href={`/blog/${article.slug}/`} hrefLang="en">{c.ui.reading} · {c.ui.english}</a>)}<a href={`${prefix}/sourcing-services/`}>{o.ui.services}</a></div></section>
  </main>;
 }

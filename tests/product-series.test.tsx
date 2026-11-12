@@ -67,13 +67,20 @@ test('model galleries retain source-specific controls and parameter sheets witho
  assert.equal(by['SP18'].charging,'1–3 h');assert.equal(by['SP18'].battery,'500–1000 mAh');
  assert.ok(!modelImages(by['YS-3120GM']).some(p=>p.src.includes('ys-3120gm-5')));
 });
-test('kitchen server HTML keeps all searchable products while making the remaining catalogue optional',async()=>{
+test('kitchen server HTML keeps the model cards and links to Chinese cooking categories',async()=>{
  const {default:Kitchen}=await import('../src/features/commercial-kitchen/LocalizedKitchenContent.jsx');
  for(const locale of ['zh','ar','es']){
   const html=renderToStaticMarkup(<Kitchen locale={locale}/>);
-  assert.equal((html.match(/data-product-id=/g)||[]).length,46);
-  const optional=html.indexOf('class="catalog-rest"');assert.ok(optional>0);
-  assert.equal((html.slice(0,optional).match(/data-product-id=/g)||[]).length,8);
+  assert.equal((html.match(/data-product-id=/g)||[]).length,locale==='zh'?32:46);
+  if(locale==='zh'){
+   const {chineseCookingModelLinks}=await import('../src/features/commercial-kitchen/data/inductionPage.mjs');
+   for(const [id,href] of chineseCookingModelLinks){
+    assert.ok(html.includes(`id="model-${id}" href="${href}"`));
+   }
+  }else{
+   const optional=html.indexOf('class="catalog-rest"');assert.ok(optional>0);
+   assert.equal((html.slice(0,optional).match(/data-product-id=/g)||[]).length,8);
+  }
   assert.ok(html.includes('coffee-machine-catalogue'));assert.ok(!html.includes('coffee-machine-catalogue-schema'));
   assert.ok(html.includes('commercial-kitchen-list'));
  }

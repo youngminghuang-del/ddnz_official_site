@@ -1,8 +1,8 @@
-import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
+import { SharedKitchenListBar, useSharedKitchenList } from './components/SharedKitchenList';
 import IceUseSeries from './components/IceUseSeries';
 import SdIceSeries from './components/SdIceSeries';
 import {IceModelDetails,IceModelPhoto} from './components/IceModelDetails';
-import IceBuyingChecklist from './components/IceBuyingChecklist.jsx';
+import IceBuyingChecklist, {IceQuotePaths} from './components/IceBuyingChecklist.jsx';
 import CookingVisuals from './components/CookingVisuals';
 import CookingModelSelection from './components/CookingModelSelection';
 import EquipmentConfiguration, {IceSpecificationComparison} from './components/EquipmentConfiguration';
@@ -13,7 +13,9 @@ import { KITCHEN_PATH } from './data/discovery.mjs';
 const currency = value => new Intl.NumberFormat('en', { minimumFractionDigits: 2, maximumFractionDigits: 2 }).format(value);
 
 export default function KitchenCategoryContent({ category, homeHref = '/', onTrack = (_action) => {} }) {
+  const isIce = category.id === 'ice-machines';
   const products = categoryProducts(category);
+  const sharedList = useSharedKitchenList();
   const hero = products.find(p => p.id === category.heroId);
   return <main id="main-content" className="ddnz-kitchen kitchen-category kitchen-brand category-brand" lang="en" dir="ltr" onClick={event => {
     const action = event.target.closest?.('[data-category-action]')?.dataset.categoryAction;
@@ -26,27 +28,48 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
       <figure className="category-hero-photo"><img src={hero.image} srcSet={`${hero.imageSmall} 600w, ${hero.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), 46vw" alt={`${hero.model} ${hero.name}`} width="1200" height="900" fetchPriority="high"/><figcaption><strong>{category.statistic}</strong><span>{category.statisticLabel}</span></figcaption></figure>
     </section>
     <nav className="category-navigation wrap" aria-label="Commercial kitchen categories">{kitchenCategories.map(item => <a key={item.id} href={item.path} aria-current={item.id === category.id ? 'page' : undefined}>{item.label}</a>)}<a href="/refrigeration-equipment/">Refrigeration</a><a href={KITCHEN_PATH}>All equipment <span aria-hidden="true">↗</span></a></nav>
-    {category.id === 'ice-machines' && <><IceSpecificationComparison/><IceBuyingChecklist/></>}
+    <SharedKitchenListBar count={sharedList.count} status={sharedList.status}/>
     <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{category.comparisonTitle}</h2></div><p>{category.comparisonCopy}</p></div>
-      <div className="category-model-grid">{products.map(p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
+      {isIce && <nav className="ice-use-nav" aria-label="Browse ice machines by series or ice shape">
+        <a href="#hzb-series">HZB cube ice</a>
+        <a href="#sd-series">SD cube ice</a>
+        <a href="#ice-shapes">Crescent &amp; granular ice and split systems</a>
+      </nav>}
+      <div id={isIce ? 'hzb-series' : undefined} className="category-model-grid">{products.map(p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
         {category.id==='ice-machines'?<IceModelPhoto src={p.image} alt={`${p.model} ${p.name}`} model={p.model}/>:(<div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>)}
         <div className="category-model-copy"><p className="model">{p.model}</p><h3>{p.name}</h3><strong className="category-model-metric">{p.metric}</strong><dl>{category.comparisonKeys.filter(key => p.specs[key]).map(key => <div key={key}><dt>{key}</dt><dd>{p.specs[key]}</dd></div>)}<div><dt>Overall dimensions</dt><dd>{p.dimensions}</dd></div></dl>
           <IceModelDetails id={p.id}/><div className="category-price">{p.quote ? <><span>Indicative supply price</span><strong>CNY {currency(p.quote.price)} <small>/ unit</small></strong><span>Reference quantity: {p.quote.minUnits} {p.quote.minUnits === 1 ? 'unit' : 'units'}</span></> : <><span>Wholesale pricing</span><strong>Request a quote</strong><span>For your quantity and destination</span></>}</div>
-          <a className="button primary" href={kitchenModelHref(p.id)} data-category-action="select_model">Plan an order for {p.model} <span aria-hidden="true">→</span></a>
+          <div className="shared-kitchen-model-actions">
+            <button type="button" className="button primary" aria-label={`Add ${p.model} to equipment list`}
+              onClick={()=>sharedList.add(p.id)} data-category-action="select_model">Add to equipment list</button>
+            <a className="text-link" href={kitchenModelHref(p.id)} data-category-action="select_model">Open {p.model} in catalogue ↗</a>
+          </div>
           {p.imageNote && <p className="fine">{p.imageNote}</p>}
           {p.quote?.configurationNote && <p className="fine">{p.quote.configurationNote}</p>}
         </div>
       </article>)}</div>
       <p className="fine category-price-note">Product images are retouched. Prices are indicative for the stated reference quantities. Freight and taxes are extra. Final price, availability and electrical configuration are confirmed with your quotation.{category.id === 'ice-machines' && ' Ice output figures are rated values; test conditions and bin capacity will be confirmed.'}</p>
+      {isIce && <><SdIceSeries inCatalogue/><IceUseSeries inCatalogue/></>}
     </section>
-    {category.id==='ice-machines'&&<><SdIceSeries/><IceUseSeries/></>}
-    <CookingVisuals category={category}/>
- <CookingModelSelection category={category}/>
+    {isIce ? <>
+      <IceBuyingChecklist reading={category.reading[0]}>
+        <details className="ice-installation-details">
+          <summary>Compare HZB installation specifications</summary>
+          <IceSpecificationComparison/>
+        </details>
+      </IceBuyingChecklist>
+      <IceQuotePaths count={sharedList.count}/>
+      <EquipmentConfiguration/>
+      <aside id="equipment-buying-support" className="wrap category-reading" aria-label="Order support">
+        <a href="/how-we-work/">See how we inspect, pack and ship equipment ↗</a>
+      </aside>
+    </> : <>
+      <CookingVisuals category={category}/>
+      <CookingModelSelection category={category}/>
     <section id="category-buying" className="section wrap category-buying"><p className="eyebrow">BEFORE YOU BUY</p><h2>{category.buyingTitle}</h2><div className="category-buying-grid">{category.buying.map((item, i) => <article key={item.title}><span className="category-step">0{i + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></section>
-    {category.id === 'ice-machines' && <EquipmentConfiguration/>}
     <section className="category-brief-band"><div className="wrap category-brief-layout"><div><p className="eyebrow">BUILD A COMPARABLE QUOTE</p><h2>Bring the right details<br/>to your next order.</h2><p>Choose a model above to open the shared equipment planner. Set the quantity and destination, add your target price or selling price, and review your sourcing brief.</p><a className="button primary" href={kitchenModelHref(hero.id)} data-category-action="start_brief">Start with {hero.model} <span aria-hidden="true">→</span></a><p className="fine">Voltage, frequency, phase and plug follow the selected model and destination during quotation.</p></div><div><h3>Include in your request</h3><ul>{category.quoteChecks.map(item => <li key={item}>{item}</li>)}</ul><a className="text-link" href={`${KITCHEN_PATH}#commercial-kitchen-benchmarks`} data-category-action="price_context">Compare local prices and plan your margin <span aria-hidden="true">→</span></a></div></div></section>
-    {category.id === 'ice-machines' && <EquipmentBuyingSupport family="ice"/>}
+    </>}
     <section className="section wrap faq"><div><p className="eyebrow">BUYING QUESTIONS</p><h2>Before you decide.</h2></div><div>{category.faqs.map(item => <details key={item.question}><summary>{item.question}<span aria-hidden="true">+</span></summary><p>{item.answer}</p></details>)}</div></section>
-    <section className="wrap category-reading"><p className="eyebrow">CONTINUE YOUR RESEARCH</p><div>{category.reading.map(item => <a key={item.slug} href={`/blog/${item.slug}/`} data-category-action="read_guide"><h3>{item.title} <span aria-hidden="true">↗</span></h3><p>{item.copy}</p></a>)}<a href={KITCHEN_PATH} data-category-action="browse_range"><h3>Build a wider equipment range <span aria-hidden="true">↗</span></h3><p>Combine cooking, cold storage and beverage equipment in one sourcing list.</p></a></div></section>
+    {category.id!=='ice-machines'&&<section className="wrap category-reading"><p className="eyebrow">CONTINUE YOUR RESEARCH</p><div>{category.reading.filter((_,index)=>category.id!=='ice-machines'||index>0).map(item => <a key={item.slug} href={`/blog/${item.slug}/`} data-category-action="read_guide"><h3>{item.title} <span aria-hidden="true">↗</span></h3><p>{item.copy}</p></a>)}<a href={KITCHEN_PATH} data-category-action="browse_range"><h3>Build a wider equipment range <span aria-hidden="true">↗</span></h3><p>Combine cooking, cold storage and beverage equipment in one sourcing list.</p></a></div></section>}
   </main>;
 }

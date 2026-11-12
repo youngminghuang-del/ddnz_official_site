@@ -104,7 +104,7 @@ export function categoryProducts(category) {
 
 export function kitchenModelHref(id) {
   if (!products.some(p => p.id === id)) throw new Error(`Unknown kitchen model: ${id}`);
-  return `${KITCHEN_PATH}?model=${encodeURIComponent(id)}#commercial-kitchen-trade-pricing`;
+  return `${KITCHEN_PATH}?model=${encodeURIComponent(id)}#model-${id}`;
 }
 
 export function requestedKitchenModel(search) {
