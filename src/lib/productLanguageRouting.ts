@@ -88,8 +88,9 @@ export function navigationPath(path: string, language: Language) {
   const { pathname, suffix } = splitNavigationPath(path);
   if(pathname==='/services/ddp-shipping-from-china') return `${navigationPrefixes[language]}${pathname}${suffix}`;
   const product = englishProductPath(path);
-  if (product && hasProductTranslation(product, language)) return localizedProductPath(`${product}${suffix}`, language);
-  const targetLanguage = supportedNavigationLanguages(pathname).includes(language) ? language : 'en';
+  const supported = supportedNavigationLanguages(pathname);
+  const targetLanguage = supported.includes(language) ? language : supported[0];
+  if (product && hasProductTranslation(product, targetLanguage)) return localizedProductPath(`${product}${suffix}`, targetLanguage);
   return canonicalSitePath(`${product || `${navigationPrefixes[targetLanguage]}${pathname === '/' ? '' : pathname}` || '/'}${suffix}`);
 }
 
