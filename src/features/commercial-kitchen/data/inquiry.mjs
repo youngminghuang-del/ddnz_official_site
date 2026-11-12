@@ -1,3 +1,4 @@
+import {referenceTier} from './model.mjs';
 export const FORMSPREE_ENDPOINT='https://formspree.io/f/mdabvqbd';
 export const WHATSAPP_URL='https://wa.me/85261077362';
 export const INQUIRY_EVENT='ddnz:inquiry';
@@ -29,7 +30,8 @@ function priceLines(product,units,target){
  const lines=[];
  const quote=product.quote;
  if(quote?.status==='indicative'&&amount(quote.price)&&max(quote.currency,8)&&Number.isInteger(quote.minUnits)){
-  if(units>=quote.minUnits)lines.push(`Indicative reference: ${money(quote.price,quote.currency)} / unit (based on ${quote.minUnits} ${quote.minUnits===1?'unit':'units'}; subject to quotation).`);
+  const tier=referenceTier(quote,units);
+  if(tier)lines.push(`Indicative reference: ${money(tier.price,quote.currency)} / unit (based on ${tier.minUnits} ${tier.minUnits===1?'unit':'units'}; subject to quotation).`);
   else lines.push(`Quantity is below the ${quote.minUnits}-unit indicative reference; please quote this quantity.`);
  }
  if(target&&target.priceBasis!=='reference'&&amount(target.price)&&max(target.currency,8))lines.push(`Buyer target: ${money(target.price,max(target.currency,8))} / unit (buyer target; subject to quotation).`);

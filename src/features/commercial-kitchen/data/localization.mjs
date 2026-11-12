@@ -9,8 +9,9 @@ import catalog from './products.mjs';
 import launch from './launch.mjs';
 import benchmarks from './benchmarks.mjs';
 import { categoryProducts, kitchenCategories } from './categories.mjs';
+import { chineseCookingModelLinks } from './inductionPage.mjs';
 import { buildInquiryPayload, validateInquiryContact } from './inquiry.mjs';
-import { calculateMargin } from './model.mjs';
+import { calculateMargin, referenceTier } from './model.mjs';
 import { localizedProductPath, productAlternates } from '../../../lib/productLocalization.mjs';
 import es from '../locales/es.mjs';
 import ar from '../locales/ar.mjs';
@@ -36,6 +37,15 @@ export function localSpecValue(value, locale) {
     .replace(/(\d|[٠-٩])mm\b/g, '$1 mm');
 }
 
+const tk600Copy = {
+  zh:['商用冷压榨汁机','确认目的地所需频率、插头及包装。','电压','净重','刀片数量'],
+  es:['Extractor comercial de zumo en frío','Confirme la frecuencia, el enchufe y el embalaje para el destino.','Tensión','Peso neto','Número de cuchillas'],
+  fr:['Extracteur de jus professionnel à froid','Confirmez la fréquence, la prise et l’emballage pour la destination.','Tension','Poids net','Nombre de lames'],
+  pt:['Extrator comercial de sumo a frio','Confirme a frequência, a ficha e a embalagem para o destino.','Tensão','Peso líquido','Número de lâminas'],
+  ru:['Коммерческая соковыжималка холодного отжима','Уточните частоту, тип вилки и упаковку для страны назначения.','Напряжение','Масса нетто','Количество лезвий'],
+  ar:['عصارة تجارية بالكبس البارد','أكّد التردد ونوع القابس والتعبئة المناسبة للوجهة.','الجهد','الوزن الصافي','عدد الشفرات'],
+  tr:['Ticari soğuk sıkım meyve sıkacağı','Varış ülkesi için frekansı, fiş tipini ve ambalajı doğrulayın.','Gerilim','Net ağırlık','Bıçak sayısı'],
+};
 const brandedProducts = new Map(kitchenCategories.flatMap(categoryProducts).map(product => [product.id, product]));
 export function getLocalizedKitchenProducts(locale) {
   const t = kitchenCopy(locale);
@@ -50,16 +60,18 @@ export function getLocalizedKitchenProducts(locale) {
         note:c.note,configurationNote:c.note,imageNote:c.caption,
         localizedSpecs:Object.keys(c.fields).filter(key=>product[key]).map(key=>({key:handbookCopy(product).fields[key],label:c.fields[key],value:localSpecValue(product[key],locale)}))};
     }
+    const juicer = product.model === 'TK-600' ? tk600Copy[locale === 'zh-cn' ? 'zh' : locale] : null;
+    const juicerLabels = juicer ? {Voltage:juicer[2],'Net weight':juicer[3],'Blade count':juicer[4]} : {};
     return {
       ...product,
-      name: t.names[product.name], categoryLabel: t.categories[product.category],
+      name: juicer?.[0] || t.names[product.name], categoryLabel: t.categories[product.category],
       displayModel: t.values[product.model] ? localSpecValue(product.model, locale) : product.model,
-      metric: localSpecValue(product.metric, locale), detail: localSpecValue(product.detail, locale),
-      dimensions: localSpecValue(product.dimensions, locale), note: t.notes[product.note.trim()],
+      metric: localSpecValue(product.metric, locale), detail: juicer ? t.specLabels[product.detail] : localSpecValue(product.detail, locale),
+      dimensions: localSpecValue(product.dimensions, locale), note: juicer?.[1] || t.notes[product.note.trim()],
       configurationNote: product.quote?.configurationNote ? t.notes[product.quote.configurationNote] : '',
       image: photo?.image || product.image, imageSmall: photo?.imageSmall,
-      imageNote: product.imageNote ? t.notes[product.note.trim()] : t.ui.catalogPhoto,
-      localizedSpecs: Object.entries(product.specs).map(([key, value]) => ({ key, label: t.specLabels[key], value: localSpecValue(value, locale) })),
+      imageNote: juicer ? '' : product.imageNote ? t.notes[product.note.trim()] : t.ui.catalogPhoto,
+      localizedSpecs: Object.entries(product.specs).map(([key, value]) => ({ key, label: juicerLabels[key] || t.specLabels[key], value: localSpecValue(value, locale) })),
     };
   });
 }
@@ -91,7 +103,7 @@ export function calculateLocalizedKitchenMargin(locale, { productId, units, sell
   if (sale === null || sale <= 0) errors.selling = t.margin.sellingError;
   if (extras === null) errors.landed = t.margin.landedError;
   if (Object.keys(errors).length) return { result: null, errors };
-  return { result: calculateMargin({ purchase: product.quote.price, selling: sale, landed: extras, units: count }), errors };
+  return { result: calculateMargin({ purchase: referenceTier(product.quote,count).price, selling: sale, landed: extras, units: count }), errors };
 }
 export function cleanKitchenSelection(raw) {
   if (!raw || typeof raw !== 'object' || Array.isArray(raw)) return {};
@@ -124,7 +136,8 @@ export function getLocalizedKitchenMetadata(locale) {
   const t = kitchenCopy(locale);
   const canonicalPath = localizedProductPath(LOCALIZED_KITCHEN_PATH, locale);
   const canonicalUrl = `https://www.ddnzglobal.com${canonicalPath}`;
-  const products = getLocalizedKitchenProducts(locale);
+  const products = getLocalizedKitchenProducts(locale).filter(product =>
+    (locale !== 'zh' && locale !== 'zh-cn') || !chineseCookingModelLinks.has(product.id));
   return {
     ...t.meta, contentLanguage: locale, canonicalPath, canonicalUrl,
     alternateUrls: productAlternates(LOCALIZED_KITCHEN_PATH), image: '/commercial-kitchen-media/kitchen-hero.webp',

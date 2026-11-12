@@ -95,3 +95,54 @@
 
 /* Ice shape selection keeps source-series illustrations separate from existing HZB models. */
 .kitchen-category .ice-use-intro{max-width:850px}.kitchen-category .ice-use-nav{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0 32px}.kitchen-category .ice-use-nav a{border:1px solid var(--line);padding:12px 18px;border-radius:999px;color:#763c9c;min-height:44px;background:var(--ddnz-surface-raised)}.kitchen-category .ice-use-models{display:grid;gap:28px}.kitchen-category .ice-use-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);border:1px solid var(--line);border-radius:var(--ddnz-card-radius);background:var(--ddnz-surface-raised);overflow:hidden;scroll-margin-top:120px}.kitchen-category .ice-use-card figure{margin:0;min-width:0;align-self:center;padding:18px}.kitchen-category .ice-use-card .category-model-photo{aspect-ratio:3/2;background:var(--ddnz-surface-raised)}.kitchen-category .ice-use-card .category-model-photo img{object-fit:contain}.kitchen-category .ice-use-card figcaption{font-size:13px;line-height:1.6;color:var(--muted);margin-top:12px}.kitchen-category .ice-use-copy{padding:30px;min-width:0;overflow-wrap:anywhere}.kitchen-category .ice-use-copy h3{font-size:clamp(24px,3vw,32px);margin:8px 0 16px}.kitchen-category .ice-use-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin:24px 0}.kitchen-category .ice-use-metrics div{padding:14px 0;border-block:1px solid var(--line)}.kitchen-category .ice-use-metrics dt{font-size:13px;color:var(--muted)}.kitchen-category .ice-use-metrics dd{margin:8px 0 0;font-size:19px;font-weight:700;color:#10243f}.kitchen-category .ice-use-details{border-top:1px solid var(--line);padding:16px 0;margin-bottom:14px}.kitchen-category .ice-use-details summary{cursor:pointer;min-height:30px;color:#763c9c;font-weight:600}.kitchen-category .ice-use-details dl>div{display:flex;justify-content:space-between;gap:16px;margin:12px 0}.kitchen-category .ice-use-details dd{margin:0;text-align:end}.kitchen-category .ice-use-details p{font-size:14px;line-height:1.75}.kitchen-category .ice-use-copy .button{white-space:normal;min-height:44px}.kitchen-category #ice-shapes{scroll-margin-top:120px}@media(max-width:760px){.kitchen-category .ice-use-card{grid-template-columns:1fr}.kitchen-category .ice-use-copy{padding:22px}.kitchen-category .ice-use-metrics dd{font-size:17px}.kitchen-category .ice-use-nav{gap:8px}.kitchen-category .ice-use-nav a{padding:10px 14px}}
+
+.kitchen-category .ice-site-request {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 0.85rem;
+  max-width: 43rem;
+  margin-top: 1.1rem;
+  padding: 0.65rem 0.85rem 0.65rem 0.65rem;
+  border: 1px solid #ccb7df;
+  border-radius: 0.65rem;
+  background: #f4edf9;
+  color: #2c1940;
+  text-decoration: none;
+}
+.kitchen-category .ice-site-request:hover { border-color: #71339a; background: #eee2f7; }
+.kitchen-category .ice-site-request:focus-visible { outline: 2px solid #71339a; outline-offset: 3px; }
+.kitchen-category .ice-site-request img { width: 5rem; height: 3.75rem; border-radius: 0.4rem; object-fit: cover; }
+.kitchen-category .ice-site-request strong { display: block; font-size: 1rem; line-height: 1.3; }
+.kitchen-category .ice-site-request div span { display: block; margin-top: 0.2rem; font-size: 0.875rem; line-height: 1.45; }
+.kitchen-category .ice-site-request>span { color: #71339a; }
+.kitchen-category .sd-in-catalogue {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--line);
+}
+.kitchen-category .sd-in-catalogue .sd-series-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 15rem);
+  gap: 0.9rem;
+  align-items: start;
+}
+.kitchen-category .sd-in-catalogue .sd-series-photo { margin: 0; }
+.kitchen-category .sd-in-catalogue .sd-series-photo .ice-photo-button img { object-fit: contain; max-height: 8.5rem; }
+.kitchen-category .sd-in-catalogue .sd-series-photo figcaption { padding: 0.3rem 0; font-size: 0.8rem; }
+.kitchen-category .sd-in-catalogue h2 { font-size: clamp(1.25rem, 2.1vw, 1.65rem); margin-bottom: 0.5rem; }
+@media(max-width: 600px) {
+  .kitchen-category .sd-in-catalogue .sd-series-intro { grid-template-columns: 1fr; }
+  .kitchen-category .sd-in-catalogue .sd-series-photo { max-width: 15rem; }
+}
+
+.kitchen-category .ice-use-in-catalogue { margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--line); }
+.kitchen-category .ice-selection-check { padding-block: clamp(2rem, 5vw, 4rem); }
+.kitchen-category .ice-installation-details { border-top: 1px solid var(--line); padding-top: 0.75rem; }
+.kitchen-category .ice-installation-details summary { cursor: pointer; font-weight: 600; }
+.kitchen-category .ice-installation-details .section { width: 100%; padding: 1rem 0 0; }
+.kitchen-category .ice-quote-path-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.75rem; }
+.kitchen-category .ice-quote-path-grid .ice-site-request { max-width: none; margin: 0; }
+@media (max-width: 760px) {
+  .kitchen-category .ice-quote-path-grid { grid-template-columns: minmax(0, 1fr); }
+}

@@ -45,7 +45,7 @@ export function validateBuyerBrief(guide, input) {
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(clean(input.email, 254)) || String(input.email || '').length > 254) errors.email = 'invalidEmail';
   return errors;
 }
-export function buildBuyerPayload(guide, locale, input) {
+export function buildBuyerPayload(guide, locale, input, starter = '') {
   const copy = buyerLocales[buyerLocale(locale)];
   const page = copy.guides[guide.id];
   const f = copy.form;
@@ -54,6 +54,7 @@ export function buildBuyerPayload(guide, locale, input) {
     subject: `${page.card} — DDNZ ${f.request}`,
     message: [page.card, `${f.country}: ${clean(input.country, 100)}`,
       input.company && `${f.company}: ${clean(input.company, 120)}`,
+      starter && clean(starter),
       ...page.fields.map(field => `${field.label}: ${clean(input[field.key]) || '—'}`),
       input.notes && `${f.notesLabel}: ${clean(input.notes)}`,
     ].filter(Boolean).join('\n\n'),

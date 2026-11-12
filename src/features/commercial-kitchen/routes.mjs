@@ -26,3 +26,6 @@ export function canonicalKitchenHash(hash) {
   const target = Object.hasOwn(aliases, key) ? aliases[key] : null;
   return target ? `#commercial-kitchen-${target}` : hash;
 }
+
+export const inductionCookingPath = '/sourcing/commercial-induction-cooking-equipment-from-china';
+export const hotCookingPath = '/sourcing/commercial-hot-cooking-equipment-from-china';

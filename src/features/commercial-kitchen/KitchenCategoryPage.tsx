@@ -1,3 +1,4 @@
+import './components/shared-kitchen-list.css';
 import {categoryAlternates} from './categoryLocalization';
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';

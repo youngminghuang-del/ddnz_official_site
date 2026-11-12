@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {calculateMargin} from '../data/model.mjs';
 
-const money = (n, currency) => new Intl.NumberFormat('en', {style:'currency',currency,maximumFractionDigits:2}).format(n);
+import {formatPrice as money} from '../data/fx.mjs';
 const example = calculateMargin({purchase:220,selling:500,landed:80,units:20});
 
 export default function MarginPreview({purchase, selling, landed, units, currency}) {
@@ -10,7 +10,7 @@ export default function MarginPreview({purchase, selling, landed, units, currenc
   const hasInputs = [purchase,selling,landed].some(v => String(v??'').trim()!=='');
   const sample = exampleRequested || !hasInputs;
   const result = sample ? example : calculateMargin({purchase,selling,landed,units});
-  const displayCurrency = sample ? 'USD' : currency;
+  const displayCurrency = currency;
   const negative = result && result.unitProfit < 0;
   const scale = result ? Math.max(result.selling,result.unitCost) : 1;
   const parts = result ? [
@@ -32,6 +32,6 @@ export default function MarginPreview({purchase, selling, landed, units, currenc
       <div className="margin-order-cost"><span>Landed cost / {result.units} {result.units===1?'unit':'units'}</span><b>{money(result.orderCost,displayCurrency)}</b></div>
     </> : <div className="margin-pending"><div className="margin-empty-bar"/><p>Buying cost <span>+</span> landed costs <span>+</span> gross profit <span>=</span> selling price</p><button type="button" className="text-link" onClick={()=>setExampleRequested(true)}>Preview a worked example <span aria-hidden="true">→</span></button></div>}
     <p className="margin-footnote">Gross margin = (selling price − buying cost − landed costs) ÷ selling price. Before operating costs and income tax.</p>
-    {sample&&<p className="margin-example-note">Illustration: sell at USD 500, buy at USD 220, allow USD 80 for freight and import costs. Enter your own figures to plan your order.</p>}
+    {sample&&<p className="margin-example-note">Illustration: sell at CNY 500, buy at CNY 220, allow CNY 80 for freight and import costs. Enter your own figures to plan your order.</p>}
   </div>;
 }

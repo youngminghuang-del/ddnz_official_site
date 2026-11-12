@@ -1,5 +1,5 @@
 import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
-import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
+import { inductionCookingPath, hotCookingPath, kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 // Only routes with a complete, authored product body belong to this cluster.
 // Other product routes retain their English canonical and the language notice.
 import { foodProcessingRoutes } from '../features/food-processing/pages.mjs';
@@ -28,12 +28,14 @@ export function productRouteParts(path = '/') {
 }
 export function hasProductTranslation(path, locale) {
   const base = productRouteParts(path).path;
+  if (base === inductionCookingPath) return ['en', 'zh', 'zh-cn'].includes(locale);
+  if (base === hotCookingPath) return ['zh', 'zh-cn'].includes(locale);
   if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(base)) return overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale);
   return (buyerGuidePaths.includes(base) || overviewProductPaths.includes(base) || foodProcessingRoutes.includes(base) || [...kitchenCategoryPaths,kitchenPackagePath,...kitchenPackageScenarioPaths].includes(base)) ? overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) : productContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) && localizableProductPaths.includes(base);
 }
 export function localizedProductPath(path, locale = 'en') {
   const parts = productRouteParts(path);
-  const prefix = hasProductTranslation(parts.path, locale) && locale !== 'en' ? `/${locale === 'zh' ? 'zh-cn' : locale}` : '';
+  const prefix = hasProductTranslation(parts.path, locale) && locale !== 'en' ? `/${locale === 'zh' || locale === 'zh-cn' ? 'zh-cn' : locale}` : '';
   return `${prefix}${parts.path === '/' ? '' : parts.path}/${parts.suffix}`;
 }
 export function isLocalizedProductPath(path) {

@@ -23,10 +23,24 @@ export function StartupBuyingLinks({locale='en'}) {
  </section>;
 }
 
-export default function StartupBuyingContent({kind,locale='en'}) {
+export default function StartupBuyingContent({kind,locale='en',compact=false}) {
  const lang=language(locale), copy=startupCopy[lang];
  const indexes=kind==='restaurant-projects'?[0,1,4,5]:kind==='phone-stores'?[2]:kind==='hub'?[3]:kind==='audio'?[6]:kind==='cases'?[7]:[];
  if(!copy||!indexes.length)return null;
+ if (compact) {
+  const es = lang === 'es';
+  return <section className="dealer-plans" aria-labelledby="project-budget-heading">
+   <div id={startupRoutes[0][1]} className="scroll-mt-28">
+    <h2 id="project-budget-heading">{es ? 'Equipo esencial para la apertura' : 'Equipment for opening day'}</h2>
+    <p id={startupRoutes[1][1]} className="scroll-mt-28">{es ? 'Defina el menú inicial y el volumen en hora punta. Cotice primero los equipos esenciales y deje la ampliación en una partida aparte.' : 'Set the opening menu and peak volume first. Quote the essential equipment, with expansion items priced separately.'}</p>
+    <a className="buyer-secondary" href={navigationPath(detailPaths[0],lang)}>{es ? 'Ver configuraciones de cocina' : 'Explore kitchen layouts'} ↗</a>
+   </div>
+   <div className="dealer-plan-grid mt-5">
+    <article id={startupRoutes[4][1]} className="dealer-plan scroll-mt-28"><h3>{es ? 'Cafetería' : 'Café'}</h3><p>{es ? 'Parta de las bebidas por hora y reserve espacio para café, lavado y refrigeración bajo barra.' : 'Start with drinks per hour and leave room for coffee, washing and undercounter cooling.'}</p><a className="buyer-secondary" href={navigationPath(detailPaths[4],lang)}>{es ? 'Ver el escenario de cafetería' : 'Explore the café layout'} ↗</a></article>
+    <article id={startupRoutes[5][1]} className="dealer-plan scroll-mt-28"><h3>{es ? 'Bar y coctelería' : 'Bar and cocktail service'}</h3><p>{es ? 'Dimensione por separado la producción y la reserva de hielo para el servicio punta.' : 'Size ice production and storage separately for peak service.'}</p><a className="buyer-secondary" href={navigationPath(detailPaths[5],lang)}>{es ? 'Comparar máquinas de hielo' : 'Compare ice machines'} ↗</a></article>
+   </div>
+  </section>;
+ }
  return <div className="mx-auto max-w-7xl space-y-10 px-5 py-12 text-slate-900" dir={lang==='ar'?'rtl':'ltr'}>
   {indexes.map(i=>{
    const [title,intro,steps,question,answer,label]=copy.items[i], id=startupRoutes[i][1];

@@ -61,10 +61,10 @@ export default {
       ]
     },
     "juice-500": {
-      "useCase": "A plug-in juice extractor for a compact beverage assortment.",
+      "useCase": "A plug-in cold press juicer for beverage counters.",
       "sellingPoints": [
-        "500 W rated power",
-        "250 × 220 × 480 mm listed size"
+        "600 W rated power",
+        "500 mL capacity · 9 kg net weight"
       ]
     }
   },
