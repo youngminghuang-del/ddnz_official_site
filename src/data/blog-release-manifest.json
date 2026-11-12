@@ -86,6 +86,30 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "saudi-central-kitchen-blast-chiller-5-vs-10-trays",
+      "canonical": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/",
+      "language": "ar",
+      "release_file": "src/data/saudiBlastChillerRelease.json",
+      "schema_file": "src/data/gulf-saudi-blast-chiller-schema.json",
+      "notion_page_id": "416eac33-2618-817b-aa57-dac5290591b8",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cover-en-ar.webp",
+      "images": [
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cover-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cabinet-sizes-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-applications-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-food-loading-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-insulation-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-interior-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-evaporator-en-ar.webp",
+        "/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-compressor-en-ar.webp"
+      ],
+      "faq_count": 3,
+      "item_list_count": 6
     }
   ]
 }

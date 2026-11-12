@@ -1,0 +1,253 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#webpage",
+      "name": "كيف تختار مبردًا سريعًا لمطبخ مركزي في السعودية؟ 5 صوانٍ أم 10 حسب وزن الدفعة",
+      "description": "قارن مبردات المطابخ المركزية في السعودية بخمس وعشر صوانٍ حسب وزن الدفعة وحرارة قلب الطعام وزمن الدورة، مع جدول لطلب العرض واختبار القبول.",
+      "inLanguage": "ar",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#breadcrumb"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-cover"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      },
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/"
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#article",
+      "headline": "كيف تختار مبردًا سريعًا لمطبخ مركزي في السعودية؟ 5 صوانٍ أم 10 حسب وزن الدفعة",
+      "description": "قارن مبردات المطابخ المركزية في السعودية بخمس وعشر صوانٍ حسب وزن الدفعة وحرارة قلب الطعام وزمن الدورة، مع جدول لطلب العرض واختبار القبول.",
+      "inLanguage": "ar",
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#webpage"
+      },
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "creativeWorkStatus": "Published",
+      "audience": {
+        "@type": "BusinessAudience",
+        "audienceType": "Saudi central kitchen equipment dealers, importers and project contractors"
+      },
+      "citation": [
+        "https://spec-sheets.hoshizaki-europe.com/pdf.php?lang=en_MidE&sku=865780554",
+        "https://www.irinoxprofessional.com/media/6316/d-1/t-file/MF_NEXT_SL_EN_R15.pdf",
+        "https://www.sfda.gov.sa/sites/default/files/2020-12/FoodHygieneRequirementsEn.pdf",
+        "https://balady.gov.sa/sites/default/files/2025-11/ashtratat%20almta%60m.pdf"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#faq"
+        }
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-cover"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-cabinet-sizes"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-applications"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-food-loading"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-insulation"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-interior"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-evaporator"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-compressor"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/",
+      "datePublished": "2026-11-12T13:03:55+08:00",
+      "dateModified": "2026-11-12T13:03:55+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "متى يكفي مبرد سريع بخمس صوانٍ؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عندما تتسع الصواني الفعلية لأكبر دفعة ويمكن للموديل تبريد وزنها إلى هدف قلب الطعام ضمن الوقت المتاح، بما في ذلك تتابع الدورات عند الذروة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "هل يبرد جهاز العشر صواني ضعف حمولة جهاز الخمس؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قارن الحمولة التي أثبتها كل موديل في ظروف اختبار متكافئة. عدد مواضع الصواني يحدد ترتيب الحمولة داخل الجهاز، وتحدد نتيجة الاختبار كم كيلوغرامًا يصل إلى درجة الهدف خلال الوقت المتفق عليه."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ماذا أسجل عند استلام الجهاز؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "سجّل الموديل وتوزيع الصواني ووزن الطعام ووقت الدورة وقراءات حرارة القلب في المواضع المتفق عليها. أرفق السجل بمحضر القبول وقارنه بمواصفات طلب الشراء."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#batch-acceptance",
+      "name": "جدول طلب العرض واختبار القبول بحمولة",
+      "numberOfItems": 6,
+      "itemListOrder": "https://schema.org/ItemListOrderAscending",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "وزن الدفعة ونوع الطعام"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "الصواني وعمق التعبئة"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "حرارة قلب الطعام"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "زمن الدورة وتتابع الدفعات"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "ظروف التركيب"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "الخدمة وقطع الغيار"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "كيف تختار مبردًا سريعًا لمطبخ مركزي في السعودية؟ 5 صوانٍ أم 10 حسب وزن الدفعة",
+          "item": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-cover",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cover-en-ar.webp",
+      "description": "ثلاث خزائن تجارية بسعة 5 و10 و15 صينية مع أبعاد كل خزانة",
+      "width": 1490,
+      "height": 1055,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cover-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-cabinet-sizes",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cabinet-sizes-en-ar.webp",
+      "description": "خزائن تجارية بأحجام مختلفة",
+      "width": 1086,
+      "height": 1448,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-cabinet-sizes-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-applications",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-applications-en-ar.webp",
+      "description": "أمثلة لاستخدام أجهزة التبريد في مطبخ فندق ومطعم مأكولات بحرية ومطبخ مركزي",
+      "width": 1024,
+      "height": 1536,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-applications-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-food-loading",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-food-loading-en-ar.webp",
+      "description": "أمثلة لأغذية مرتبة في صوانٍ ورفوف",
+      "width": 886,
+      "height": 1776,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-food-loading-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-insulation",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-insulation-en-ar.webp",
+      "description": "خزانة مفتوحة ومقطع يوضح طبقة العزل بين لوحين معدنيين",
+      "width": 1082,
+      "height": 1454,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-insulation-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-interior",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-interior-en-ar.webp",
+      "description": "خزانة مفتوحة تظهر فيها المروحة ومسارات الصواني",
+      "width": 851,
+      "height": 1847,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-interior-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-evaporator",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-evaporator-en-ar.webp",
+      "description": "مبخر ذو زعانف وأنابيب نحاسية ظاهرة",
+      "width": 927,
+      "height": 1697,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-evaporator-en-ar.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-blast-chiller-5-vs-10-trays/#image-compressor",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-compressor-en-ar.webp",
+      "description": "ضاغط ومروحة وأنابيب داخل وحدة التبريد",
+      "width": 1254,
+      "height": 1254,
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-blast-chiller-5-vs-10-trays/supplier-compressor-en-ar.webp"
+    }
+  ]
+}
