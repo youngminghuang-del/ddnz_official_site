@@ -116,6 +116,7 @@ const originalProducts = [
   {
     "id": "ZH-818",
     "model": "ZH-818",
+    "controls": "1",
     "name": "Electric flat griddle",
     "category": "Cooking & baking",
     "metric": "548 × 350 mm",
@@ -420,6 +421,7 @@ const originalProducts = [
   {
     "id": "ZH-820",
     "model": "ZH-820",
+    "controls": "2",
     "name": "Electric flat griddle",
     "category": "Cooking & baking",
     "metric": "728 × 400 mm",
