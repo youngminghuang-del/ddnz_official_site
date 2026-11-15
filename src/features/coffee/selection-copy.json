@@ -1,0 +1,58 @@
+{
+  "en": {
+    "action": "Choose a machine type",
+    "title": "Choose a coffee machine by how you serve",
+    "single": ["Single-group espresso", "For compact, staffed bars. Compare a refillable tank with a fixed water connection."],
+    "double": ["Two-group espresso", "For staffed bars preparing orders in parallel. Check counter width and the available electrical circuit."],
+    "automatic": ["Fully automatic", "For office and hotel self-service. Confirm who refills water and cleans the machine."]
+  },
+  "zh": {
+    "action": "按类型选机",
+    "title": "按出品方式选咖啡机",
+    "single": ["单头意式咖啡机", "适合空间有限、有人操作的吧台。先确定用水箱补水，还是接固定水源。"],
+    "double": ["双头意式咖啡机", "适合需要同时出品的咖啡吧。先核对吧台宽度和可用供电回路。"],
+    "automatic": ["全自动咖啡机", "适合办公室和酒店自助。确认补水和日常清洁由谁负责。"]
+  },
+  "es": {
+    "action": "Elegir tipo de máquina",
+    "title": "Elija la máquina según su forma de servicio",
+    "single": ["Espresso de un grupo", "Para barras compactas con barista. Compare el depósito rellenable con la conexión a la red de agua."],
+    "double": ["Espresso de dos grupos", "Para barras con baristas que preparan pedidos simultáneos. Revise el ancho de la barra y el circuito eléctrico disponible."],
+    "automatic": ["Cafetera superautomática", "Para autoservicio en oficinas y hoteles. Defina quién repone el agua y limpia la máquina."]
+  },
+  "fr": {
+    "action": "Choisir un type de machine",
+    "title": "Choisir une machine selon le mode de service",
+    "single": ["Machine espresso à un groupe", "Pour les petits comptoirs avec barista. Comparez le réservoir à remplir et le raccordement à l’eau."],
+    "double": ["Machine espresso à deux groupes", "Pour les comptoirs qui préparent plusieurs commandes à la fois. Vérifiez la largeur du comptoir et le circuit électrique disponible."],
+    "automatic": ["Machine tout automatique", "Pour le libre-service dans les bureaux et les hôtels. Définissez qui remplit le réservoir et nettoie la machine."]
+  },
+  "pt": {
+    "action": "Escolher o tipo de máquina",
+    "title": "Escolha a máquina conforme o tipo de serviço",
+    "single": ["Máquina de espresso de um grupo", "Para balcões compactos com barista. Compare reservatório reabastecível e ligação direta à rede de água."],
+    "double": ["Máquina de espresso de dois grupos", "Para balcões que preparam pedidos simultâneos. Confira a largura da bancada e o circuito elétrico disponível."],
+    "automatic": ["Máquina de café superautomática", "Para autoatendimento em escritórios e hotéis. Defina quem repõe a água e limpa a máquina."]
+  },
+  "ar": {
+    "action": "اختر نوع ماكينة القهوة",
+    "title": "اختر ماكينة القهوة حسب طريقة الخدمة",
+    "single": ["ماكينة إسبريسو بمجموعة واحدة", "لمحطات القهوة الصغيرة التي يديرها باريستا. قارن بين خزان يُملأ يدويًا والتوصيل المباشر بالمياه."],
+    "double": ["ماكينة إسبريسو بمجموعتين", "لمحطات القهوة التي تحضّر عدة طلبات بالتوازي. تحقق من عرض سطح العمل والدائرة الكهربائية المتاحة."],
+    "automatic": ["ماكينة قهوة أوتوماتيكية بالكامل", "للخدمة الذاتية في المكاتب والفنادق. حدّد من يتولى تعبئة الماء وتنظيف الماكينة."]
+  },
+  "ru": {
+    "action": "Выбрать тип кофемашины",
+    "title": "Выберите кофемашину по формату обслуживания",
+    "single": ["Одногруппная эспрессо-машина", "Для компактных стоек с бариста. Сравните модели с пополняемым баком и подключением к водопроводу."],
+    "double": ["Двухгруппная эспрессо-машина", "Для кофеен, где несколько заказов готовят одновременно. Проверьте ширину стойки и доступную электрическую линию."],
+    "automatic": ["Суперавтоматическая кофемашина", "Для самообслуживания в офисах и отелях. Определите, кто будет доливать воду и чистить машину."]
+  },
+  "tr": {
+    "action": "Makine tipini seçin",
+    "title": "Servis biçimine göre kahve makinesi seçin",
+    "single": ["Tek gruplu espresso makinesi", "Baristanın çalıştığı küçük tezgâhlar için. Doldurulabilir hazne ile şebeke suyu bağlantısını karşılaştırın."],
+    "double": ["Çift gruplu espresso makinesi", "Aynı anda sipariş hazırlayan kahve barları için. Tezgâh genişliğini ve kullanılabilir elektrik hattını kontrol edin."],
+    "automatic": ["Tam otomatik kahve makinesi", "Ofis ve otellerde self servis için. Su doldurma ve günlük temizlik sorumlularını belirleyin."]
+  }
+}
