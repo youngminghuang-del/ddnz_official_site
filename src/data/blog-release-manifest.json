@@ -110,6 +110,26 @@
       ],
       "faq_count": 3,
       "item_list_count": 6
+    },
+    {
+      "slug": "top-10-commercial-deep-fryer-manufacturers-china",
+      "canonical": "https://www.ddnzglobal.com/blog/top-10-commercial-deep-fryer-manufacturers-china/",
+      "language": "en",
+      "notion_page_id": "409eac33-2618-81da-8a46-ce3e023bd111",
+      "release_file": "src/data/commercialFryerRelease.json",
+      "schema_file": "src/data/commercial-fryer-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/top-10-commercial-deep-fryer-manufacturers-china/zh-102v-twin-tank-electric-fryer.webp",
+      "images": [
+        "/images/posts/top-10-commercial-deep-fryer-manufacturers-china/zh-102v-twin-tank-electric-fryer.webp",
+        "/images/posts/top-10-commercial-deep-fryer-manufacturers-china/shangbang-hw-rq-wg001-de-gas-fryer.webp",
+        "/images/posts/top-10-commercial-deep-fryer-manufacturers-china/marchef-efsj-9-auto-lift-fryer-retouched.png",
+        "/images/posts/top-10-commercial-deep-fryer-manufacturers-china/zh-101v-single-tank-electric-fryer.webp"
+      ],
+      "faq_count": 4,
+      "item_list_count": 10
     }
   ]
 }
