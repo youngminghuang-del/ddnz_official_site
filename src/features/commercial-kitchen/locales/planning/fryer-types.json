@@ -1,0 +1,50 @@
+{
+  "en": {
+    "title": "Choose a fryer by tank layout",
+    "single": "For one frying station. Check basket size and available counter width.",
+    "twin": "For two batches at once. Compare capacity per tank and check the electrical supply.",
+    "drain": "An 8 L option with a drain valve. Check space for the oil collection container."
+  },
+  "zh": {
+    "title": "按油缸配置选电炸炉",
+    "single": "适合一个油炸工位。先核对炸篮尺寸和可用台面宽度。",
+    "twin": "适合同时炸两批。按单缸比较容量，再确认现场供电。",
+    "drain": "8 L 带排油阀。核对阀口下方是否放得下接油容器。"
+  },
+  "es": {
+    "title": "Elija la freidora por la configuración de las cubas",
+    "single": "Para un puesto de fritura. Revise el tamaño de la cesta y el ancho disponible en la encimera.",
+    "twin": "Para freír dos tandas a la vez. Compare la capacidad por cuba y confirme la alimentación eléctrica.",
+    "drain": "Opción de 8 L con grifo de vaciado. Revise el espacio para el recipiente de recogida de aceite."
+  },
+  "fr": {
+    "title": "Choisir la friteuse selon la configuration des cuves",
+    "single": "Pour un seul poste de friture. Vérifiez la taille du panier et la largeur disponible sur le plan de travail.",
+    "twin": "Pour frire deux lots en parallèle. Comparez le volume de chaque cuve et vérifiez l’alimentation électrique.",
+    "drain": "Modèle de 8 L avec robinet de vidange. Vérifiez la place disponible pour le récipient de récupération de l’huile."
+  },
+  "pt": {
+    "title": "Escolha a fritadeira pela configuração das cubas",
+    "single": "Para um posto de fritura. Confira o tamanho do cesto e a largura disponível na bancada.",
+    "twin": "Para fritar duas porções ao mesmo tempo. Compare a capacidade por cuba e confira a alimentação elétrica.",
+    "drain": "Opção de 8 L com torneira de drenagem. Confira o espaço para o recipiente de coleta de óleo."
+  },
+  "ar": {
+    "title": "اختر القلاية حسب ترتيب الأحواض",
+    "single": "لمحطة قلي واحدة. تحقّق من حجم السلة وعرض سطح العمل المتاح.",
+    "twin": "لقلي دفعتين في الوقت نفسه. قارن سعة الحوض الواحد وتحقّق من التغذية الكهربائية.",
+    "drain": "خيار بسعة 8 لترات مع صمام تصريف. تحقّق من المساحة المتاحة لوعاء تجميع الزيت."
+  },
+  "ru": {
+    "title": "Выберите фритюрницу по конфигурации ванн",
+    "single": "Для одного поста жарки. Проверьте размер корзины и свободную ширину столешницы.",
+    "twin": "Для одновременной жарки двух партий. Сравните объём одной ванны и проверьте электропитание.",
+    "drain": "Модель на 8 л со сливным краном. Проверьте, есть ли место для ёмкости для слива масла."
+  },
+  "tr": {
+    "title": "Fritözü hazne düzenine göre seçin",
+    "single": "Tek kızartma istasyonu için. Sepet ölçüsünü ve kullanılabilir tezgâh genişliğini kontrol edin.",
+    "twin": "İki partiyi aynı anda kızartmak için. Hazne başına kapasiteyi ve elektrik beslemesini kontrol edin.",
+    "drain": "Yağ tahliye vanalı 8 L seçenek. Yağ toplama kabı için yeterli yer olup olmadığını kontrol edin."
+  }
+}
