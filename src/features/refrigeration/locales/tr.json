@@ -35,9 +35,9 @@
     "10/100: eşit kapsamda fiyat, koşul ve varsayımlar. Örnek yöntemdir, gerçek tedarikçi puanı değildir. Doğrulanmamış kimlik, yanlış model, çözülmeyen elektrik/akışkan eksikleri veya başarısız sıcaklık kanıtı sevki engeller."
   ],
   "evidence": [
-    "Buz hattı: yaklaşık 9 saniyelik mevcut video; seçilen modelin performans onayı değildir.",
+    "Buz makinesi üretim hattı: yaklaşık 9 saniyelik video.",
     "Koruma: sarma ve palet desteği; sipariş ölçülerini ve dik taşımayı doğrulayın.",
-    "Depolama: paketli makineler adet ve sevk kontrolü yerine geçmez.",
+    "Depoda ambalajlanmış buz makineleri.",
     "Hava ve erişim çizimseldir. Planlanan ortam ve yükte ölçüm isteyin; temizlik, conta ve gideri doğrulayın."
   ],
   "labels": [

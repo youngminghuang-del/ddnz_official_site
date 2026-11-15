@@ -1,3 +1,4 @@
+import { BuyingGuideIllustration, comparisonIllustrations, evaluationIllustrations } from '../../features/refrigeration/BuyingGuideIllustration';
 import EquipmentBuyingSupport from '../../features/equipment-buying-support/EquipmentBuyingSupport';
 import RefrigerationModelCatalogue from '../../features/refrigeration/RefrigerationModelCatalogue';
 import RefrigerationStyleGallery from '../../features/refrigeration/RefrigerationStyleGallery';
@@ -11,7 +12,6 @@ import {
   CheckCircle2,
   CircleGauge,
   ClipboardCheck,
-  Database,
   Globe2,
   Image as ImageIcon,
   Layers3,
@@ -28,7 +28,6 @@ import {
   Thermometer,
   Truck,
   Wind,
-  Wrench,
   X,
 } from "lucide-react";
 import "./refrigeration.css";
@@ -83,12 +82,12 @@ const productFamilies = [
 ];
 
 const controlPoints = [
-  [Database, "Confirm the model", "Match the model and configuration across your quotation, sample and order."],
-  [Thermometer, "Pull-down & hold test", "Temperature recovery, set point and test conditions are recorded—not inferred from the display."],
-  [Wind, "Ambient & airflow review", "Climate class, ventilation clearance and condenser direction are checked for the destination kitchen."],
-  [PlugZap, "Electrical & refrigerant match", "Voltage, frequency, plug, refrigerant and rated power remain visible in the approval file."],
-  [Wrench, "Door, gasket & defrost check", "Door closure, seals, drainage and defrost behavior are checked against the approved unit."],
-  [PackageCheck, "Pack-out & handling plan", "Corner protection, crate or carton, upright marks and loading constraints are confirmed before release."],
+  ["Confirm the model", "Match the model and configuration across your quotation, sample and order."],
+  ["Pull-down & hold test", "Temperature recovery, set point and test conditions are recorded—not inferred from the display."],
+  ["Ambient & airflow review", "Climate class, ventilation clearance and condenser direction are checked for the destination kitchen."],
+  ["Electrical & refrigerant match", "Voltage, frequency, plug, refrigerant and rated power remain visible in the approval file."],
+  ["Door, gasket & defrost check", "Door closure, seals, drainage and defrost behavior are checked against the approved unit."],
+  ["Pack-out & handling plan", "Corner protection, crate or carton, upright marks and loading constraints are confirmed before release."],
 ];
 
 const evidenceTracks = {
@@ -104,7 +103,7 @@ const evidenceTracks = {
     checks: [
       ["Production line", "Ice makers at the assembly stations."],
       ["Protective packing", "A wrapped unit secured on a pallet."],
-      ["Warehouse storage", "Packed ice makers ready for handling."],
+      ["Warehouse storage", "Packaged ice makers in the warehouse."],
       ["Model specifications", "The SD-50F sheet below is a separate model example."],
     ],
     thumbs: [
@@ -244,7 +243,7 @@ export function RefrigerationEquipment() {
             <p>DDNZ turns temperature, capacity, ambient conditions and service workflow into like-for-like quotations, model-linked approval evidence and export-ready pack-out.</p>
             <div className="refrigeration-hero-actions">
               <button className="refrigeration-primary" type="button" onClick={() => scrollTo("refrigeration-rfq")}>Start a scoped request <ArrowRight size={17} /></button>
-              <button className="refrigeration-link-button" type="button" onClick={() => scrollTo("refrigeration-control")}>Review the control plan <ArrowRight size={16} /></button>
+              <a className="refrigeration-link-button" href="#refrigeration-models">Choose by cabinet use <ArrowRight size={16} /></a>
             </div>
             <div className="refrigeration-proof-row">
               {[
@@ -266,9 +265,11 @@ export function RefrigerationEquipment() {
           </div>
         </section>
 
+        <RefrigerationModelCatalogue/>
+
         <section className="refrigeration-section refrigeration-range" aria-labelledby="refrigeration-range-title">
           <div className="refrigeration-section-head">
-            <div><p className="refrigeration-kicker">EQUIPMENT MATRIX</p><h2 id="refrigeration-range-title">Choose the operating role, then lock the variables.</h2><p>Four commercial cold-side families, compared by duty—not by catalogue appearance.</p></div>
+            <div><p className="refrigeration-kicker">EQUIPMENT MATRIX</p><h2 id="refrigeration-range-title">Equipment examples and ice makers.</h2><p>Review typical formats and representative configurations.</p></div>
             <div className="refrigeration-segmented" role="group" aria-label="Equipment matrix view">
               <button className={!technical ? "active" : ""} type="button" onClick={() => setTechnical(false)}>Operating fit</button>
               <button className={technical ? "active" : ""} type="button" onClick={() => setTechnical(true)}>Representative specs</button>
@@ -298,12 +299,11 @@ export function RefrigerationEquipment() {
         <section className="refrigeration-section refrigeration-control" id="refrigeration-control" aria-labelledby="refrigeration-control-title">
           <div className="refrigeration-control-head"><div><p className="refrigeration-kicker">BEFORE YOU ORDER</p><h2 id="refrigeration-control-title">Get the details right for your kitchen.</h2></div><p>Start with the equipment you need. Confirm the model, operating conditions and delivery requirements as we prepare your quotation.</p></div>
           <div className="refrigeration-control-grid">
-            {controlPoints.map(([Icon, title, copy], index) => <article key={title}><span>0{index + 1}</span><Icon size={27} /><h3>{title}</h3><p>{copy}</p></article>)}
+            {controlPoints.map(([title, copy], index) => <article key={title}><span>0{index + 1}</span><BuyingGuideIllustration subject={comparisonIllustrations[index]} /><h3>{title}</h3><p>{copy}</p></article>)}
           </div>
         </section>
 
         <div dangerouslySetInnerHTML={{__html:renderRefrigerationEntry()}}/>
-        <RefrigerationModelCatalogue/>
         <RefrigerationStyleGallery/>
         <EquipmentBuyingSupport family="refrigeration"/>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">
@@ -381,7 +381,7 @@ export function RefrigerationEquipment() {
           <section className="refrigeration-modal" role="dialog" aria-modal="true" aria-labelledby="refrigeration-score-title">
             <button type="button" className="refrigeration-modal-close" onClick={() => setScoreOpen(false)} aria-label="Close scoring method"><X size={20} /></button>
             <p className="refrigeration-kicker">SUPPLIER SCORING METHOD</p><h2 id="refrigeration-score-title">Thermal evidence carries more weight than catalogue breadth.</h2>
-            <div className="refrigeration-method-grid">{[["30 PTS", "Thermal performance", "Pull-down, hold, recovery and high-ambient evidence."], ["25 PTS", "Specification integrity", "Model, component, electrical and refrigerant consistency."], ["20 PTS", "Factory & service", "Build control, issue response and spare-parts clarity."], ["15 PTS", "Delivery & pack-out", "Lead-time realism, protection and handling control."], ["10 PTS", "Commercial terms", "Like-for-like scope, cost and stated assumptions."]].map(([points, title, copy]) => <article key={title}><span>{points}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+            <div className="refrigeration-method-grid">{[["30 PTS", "Thermal performance", "Pull-down, hold, recovery and high-ambient evidence."], ["25 PTS", "Specification integrity", "Model, component, electrical and refrigerant consistency."], ["20 PTS", "Factory & service", "Build control, issue response and spare-parts clarity."], ["15 PTS", "Delivery & pack-out", "Lead-time realism, protection and handling control."], ["10 PTS", "Commercial terms", "Like-for-like scope, cost and stated assumptions."]].map(([points, title, copy], index) => <article className="cold-guide-item" key={title}><BuyingGuideIllustration subject={evaluationIllustrations[index]} /><div><span>{points}</span><h3>{title}</h3><p>{copy}</p></div></article>)}</div>
             <div className="refrigeration-veto"><strong>Veto gates</strong><span>Unverified identity</span><span>Model mismatch</span><span>Unresolved refrigerant or electrical gap</span><span>Failed temperature evidence</span></div>
             <button type="button" className="refrigeration-primary" onClick={() => { setScoreOpen(false); scrollTo("refrigeration-rfq"); }}>Use this method for my brief <ArrowRight size={17} /></button>
           </section>
