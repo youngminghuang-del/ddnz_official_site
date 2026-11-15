@@ -1,3 +1,5 @@
+import FryerTypeNavigation from './components/FryerTypeNavigation';
+import fryerTypeCopy from './locales/planning/fryer-types.json';
 import { SharedKitchenListBar, sharedKitchenListHref, useSharedKitchenList } from './components/SharedKitchenList';
 import { purchaseFlow } from './locales/purchase-flow.mjs';
 import configurationCopy from './locales/planning/configuration.json';
@@ -29,6 +31,7 @@ import {foodLocales,foodPrefix} from '../food-processing/localization';
 import {overviewCopy} from '../overview/copy';
 export default function LocalizedCategoryContent({category,locale}:{category:any;locale:CategoryLocale}){
  const c=categoryCopy[locale],u=foodLocales[locale].ui,o=overviewCopy[locale],i=kitchenCategories.indexOf(category),prefix=foodPrefix(locale),products=categoryProducts(category),hero=products.find(p=>p.id===category.heroId)!;
+ const isFryer = category.id === 'electric-fryers';
  const sharedList=useSharedKitchenList(locale);
  const sharedCopy=kitchenCopy(locale).ui;
  const flow=purchaseFlow[locale];
@@ -44,18 +47,27 @@ export default function LocalizedCategoryContent({category,locale}:{category:any
    '按同时使用的烹饪区核对板面、台面深度和操作空间。板面面积不能直接换算成每小时出餐量。',
  ][i];
  const keys:Record<string,string>={'Daily output':c.ui.output,'Tank volume':c.ui.volume,'Tanks':c.ui.tanks,'Rated power':u.power,'Cooking plate':c.ui.plate,'Surface':c.ui.surface};
+ const ModelHeading = isFryer ? 'h4' : 'h3';
+ const renderModel = (p: typeof hero) => <article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><ModelHeading><bdi>{p.model}</bdi></ModelHeading><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/><div className="category-price">{p.quote?<><span>{c.ui.price}</span><strong dir="ltr">CNY {p.quote.price.toFixed(2)}</strong><span>{u.unit} · {c.ui.reference}: {p.quote.minUnits}</span></>:<strong>{c.ui.request}</strong>}</div><div className="shared-kitchen-model-actions"><button type="button" className="button primary" aria-label={`${sharedCopy.add} · ${p.model}`} onClick={()=>sharedList.add(p.id)}>{sharedCopy.add}</button><button type="button" className="text-link" onClick={()=>{amount(p.id,(selection[p.id]||0)+1);document.getElementById('category-rfq')?.scrollIntoView();}}>{c.ui.request}</button></div></div></article>;
  return <main id="main-content" className="ddnz-kitchen kitchen-category kitchen-brand category-brand" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
  <nav className="kitchen-breadcrumb wrap" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a></nav>
  <section className="category-hero wrap"><div><p className="eyebrow">{o.ui.services}</p><h1>{c.titles[i]}</h1><p className="hero-description">{c.intros[i]}</p><div className="actions"><a className="button primary" href="#category-models">{u.compare}</a><a className="text-link" href="#category-buying">{u.scope}</a></div>{i===0&&<GulfIceEntry locale={locale}/>}</div><figure className="category-hero-photo"><img src={hero.image} alt={`${hero.model} · ${c.titles[i]}`} width="1200" height="900"/><figcaption><strong dir="ltr">{category.statistic}</strong><span>{i===0?c.ui.output:i===1?c.ui.volume:c.ui.plate}</span></figcaption></figure></section>
  <nav className="category-navigation wrap" aria-label={u.related}>{kitchenCategories.map((cat,index)=><a key={cat.id} href={`${prefix}${cat.path}`} aria-current={index===i?'page':undefined}>{c.titles[index]}</a>)}</nav>
  <SharedKitchenListBar locale={locale} count={sharedList.count} status={sharedList.status}/>
- <section id="category-models" className="section wrap"><h2>{u.compare}</h2>
+ <section id="category-models" className="section wrap"><h2>{isFryer ? fryerTypeCopy[locale].title : u.compare}</h2>
  {i===0&&<nav className="ice-use-nav" aria-label={u.compare}><a href="#hzb-series">HZB ↓</a><a href="#sd-series">{sdCopy[locale].heading} ↓</a><a href="#ice-shapes">{iceShapeCopy[locale].heading} ↓</a></nav>}
- <div id={i===0?'hzb-series':undefined} className="category-model-grid">{products.map(p=><article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><h3><bdi>{p.model}</bdi></h3><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/><div className="category-price">{p.quote?<><span>{c.ui.price}</span><strong dir="ltr">CNY {p.quote.price.toFixed(2)}</strong><span>{u.unit} · {c.ui.reference}: {p.quote.minUnits}</span></>:<strong>{c.ui.request}</strong>}</div><div className="shared-kitchen-model-actions"><button type="button" className="button primary" aria-label={`${sharedCopy.add} · ${p.model}`} onClick={()=>sharedList.add(p.id)}>{sharedCopy.add}</button><button type="button" className="text-link" onClick={()=>{amount(p.id,(selection[p.id]||0)+1);document.getElementById('category-rfq')?.scrollIntoView();}}>{c.ui.request}</button></div></div></article>)}</div><p className="fine category-price-note">{c.ui.priceNote}</p>
+ {isFryer ? <>
+   <FryerTypeNavigation category={category} locale={locale}/>
+   <CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)} featuredCards={{
+     single: products.filter(p => p.specs.Tanks === '1').map(renderModel),
+     twin: products.filter(p => p.specs.Tanks === '2').map(renderModel),
+   }}/>
+ </> : <div id={i===0?'hzb-series':undefined} className="category-model-grid">{products.map(renderModel)}</div>}
+ <p className="fine category-price-note">{c.ui.priceNote}</p>
  {i===0&&<><SdIceSeries locale={locale} inCatalogue/><IceUseSeries locale={locale} inCatalogue/></>}
  </section>
  <CookingVisuals category={category} locale={locale}/>
- <CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)}/>
+ {!isFryer&&<CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)}/>}
  <section id="category-buying" className="section wrap category-buying"><h2>{u.scope}</h2>{locale==='zh'&&<p>{chineseBuyingTip}</p>}<div className="category-buying-grid">{c.notes[i].map((text,j)=><article key={j}><span className="category-step">0{j+1}</span>{i===0&&<h3>{iceCopy[locale].headings[j]}</h3>}<p>{text}</p></article>)}</div></section>
  {i===0&&<>
    <details className="wrap ice-installation-details"><summary>{configurationCopy[locale].compare}</summary><IceSpecificationComparison locale={locale}/></details>

@@ -146,3 +146,54 @@
 @media (max-width: 760px) {
   .kitchen-category .ice-quote-path-grid { grid-template-columns: minmax(0, 1fr); }
 }
+
+.fryer-type-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-block: 20px 26px;
+}
+.fryer-type-nav a {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  color: inherit;
+}
+.fryer-type-nav a:hover { background: var(--ddnz-surface-soft); }
+.fryer-type-nav img {
+  inline-size: 100%;
+  block-size: 62px;
+  object-fit: contain;
+}
+.fryer-type-nav strong { display: block; color: #602986; }
+.fryer-type-description { display: block; margin-block-start: 5px; font-size: 14px; line-height: 1.5; }
+.kitchen-category :is(.fryer-models, .fryer-models .cooking-model-group, #cooking-rfq) {
+  scroll-margin-top: 110px;
+}
+.fryer-models .cooking-model-group > h3 { font-size: clamp(21px, 2.2vw, 28px); }
+.kitchen-category .fryer-models .category-model {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr);
+  margin-block-end: 16px;
+}
+.kitchen-category .fryer-models .category-model-copy h4 {
+  font-size: 22px;
+  line-height: 1.25;
+  margin: 10px 0 20px;
+}
+.kitchen-category .fryer-models .category-model-photo { display: grid; place-items: center; }
+.kitchen-category .fryer-models .category-model-photo img { max-block-size: 320px; }
+@media (max-width: 760px) {
+  .fryer-type-nav, .kitchen-category .fryer-models .category-model { grid-template-columns: 1fr; }
+  .fryer-models :is(th, td):last-child {
+    position: sticky;
+    inset-inline-end: 0;
+    background: var(--ddnz-surface-raised);
+    border-inline-start: 1px solid var(--ddnz-brand-line);
+  }
+  .kitchen-category .fryer-models .category-model-photo img { max-block-size: 220px; }
+}
