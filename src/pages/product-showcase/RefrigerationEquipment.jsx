@@ -244,7 +244,7 @@ export function RefrigerationEquipment() {
             <p>DDNZ turns temperature, capacity, ambient conditions and service workflow into like-for-like quotations, model-linked approval evidence and export-ready pack-out.</p>
             <div className="refrigeration-hero-actions">
               <button className="refrigeration-primary" type="button" onClick={() => scrollTo("refrigeration-rfq")}>Start a scoped request <ArrowRight size={17} /></button>
-              <button className="refrigeration-link-button" type="button" onClick={() => scrollTo("refrigeration-control")}>Review the control plan <ArrowRight size={16} /></button>
+              <a className="refrigeration-link-button" href="#refrigeration-models">Choose by cabinet use <ArrowRight size={16} /></a>
             </div>
             <div className="refrigeration-proof-row">
               {[
@@ -266,9 +266,11 @@ export function RefrigerationEquipment() {
           </div>
         </section>
 
+        <RefrigerationModelCatalogue/>
+
         <section className="refrigeration-section refrigeration-range" aria-labelledby="refrigeration-range-title">
           <div className="refrigeration-section-head">
-            <div><p className="refrigeration-kicker">EQUIPMENT MATRIX</p><h2 id="refrigeration-range-title">Choose the operating role, then lock the variables.</h2><p>Four commercial cold-side families, compared by duty—not by catalogue appearance.</p></div>
+            <div><p className="refrigeration-kicker">EQUIPMENT MATRIX</p><h2 id="refrigeration-range-title">Equipment examples and ice makers.</h2><p>Review typical formats and representative configurations.</p></div>
             <div className="refrigeration-segmented" role="group" aria-label="Equipment matrix view">
               <button className={!technical ? "active" : ""} type="button" onClick={() => setTechnical(false)}>Operating fit</button>
               <button className={technical ? "active" : ""} type="button" onClick={() => setTechnical(true)}>Representative specs</button>
@@ -303,7 +305,6 @@ export function RefrigerationEquipment() {
         </section>
 
         <div dangerouslySetInnerHTML={{__html:renderRefrigerationEntry()}}/>
-        <RefrigerationModelCatalogue/>
         <RefrigerationStyleGallery/>
         <EquipmentBuyingSupport family="refrigeration"/>
         <section className="refrigeration-section refrigeration-evidence" id="refrigeration-evidence" aria-labelledby="refrigeration-evidence-title">

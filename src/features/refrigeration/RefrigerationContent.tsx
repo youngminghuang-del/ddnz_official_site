@@ -4,6 +4,7 @@ import RefrigerationModelCatalogue from './RefrigerationModelCatalogue';
 import RefrigerationStyleGallery from './RefrigerationStyleGallery';
 import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
 import React,{useState} from 'react';
+import {selectionCopy} from './selection-copy';
 import {refrigerationCopy,type RefrigerationLocale} from './copy';
 import {foodPrefix} from '../food-processing/localization';
 import {overviewCopy} from '../overview/copy';
@@ -14,9 +15,9 @@ export default function RefrigerationContent({locale}:{locale:RefrigerationLocal
  const fields=[[u.category,c.families[family][0]],[u.destination,form.destination],[c.labels[0],form.temperature],[c.labels[1],form.capacity],[c.labels[2],form.cooling],[u.stage,form.stage],[u.notes,form.notes]].filter(([,v])=>v);
  const url=`${prefix}/get-a-quote/?`+new URLSearchParams({leadGoal:'Product Sourcing',source:'refrigeration_equipment_product',industry:c.families[family][0],overviewBrief:[c.title,...fields.map(([k,v])=>`${k}: ${v}`)].join('\n'),dest:form.destination,buyingStage:form.stage});
  const change=(k:keyof typeof form,v:string)=>{setForm(f=>({...f,[k]:v}));setReady(false);};
- return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="ddnz-catalogue ddnz-page text-slate-900"><div className="mx-auto max-w-7xl space-y-16 px-6 py-12"><header className="grid items-center gap-10 lg:grid-cols-2"><div><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.categories}</a><CatalogueHeroHeading text={c.title} language={locale} className="mt-6 text-4xl font-bold leading-tight md:text-5xl"/><p className="mt-6 text-lg leading-8">{c.intro}</p><a className="mt-7 inline-block ddnz-control ddnz-action px-5 py-3 font-bold text-white" href="#refrigeration-rfq">{u.quote}</a></div><img src={images[0]} alt={c.families[0][0]} width="1200" height="800" className="w-full ddnz-radius-card"/></header>
- <div id="refrigeration-range" dangerouslySetInnerHTML={{__html:renderLocalizedEntry('refrigeration',locale)}}/>
+ return <main id="main-content" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'} className="ddnz-catalogue ddnz-page text-slate-900"><div className="mx-auto max-w-7xl space-y-16 px-6 py-12"><header className="grid items-center gap-10 lg:grid-cols-2"><div><a className="text-purple-800 underline" href={`${prefix}/products/`}>{u.categories}</a><CatalogueHeroHeading text={c.title} language={locale} className="mt-6 text-4xl font-bold leading-tight md:text-5xl"/><p className="mt-6 text-lg leading-8">{c.intro}</p><a className="mt-7 inline-block ddnz-control ddnz-action px-5 py-3 font-bold text-white" href="#refrigeration-rfq">{u.quote}</a><a className="mt-4 block font-semibold text-purple-800 underline underline-offset-4" href="#refrigeration-models">{selectionCopy[locale].heading} ↓</a></div><img src={images[0]} alt={c.families[0][0]} width="1200" height="800" className="w-full ddnz-radius-card"/></header>
  <RefrigerationModelCatalogue locale={locale}/>
+ <div id="refrigeration-range" dangerouslySetInnerHTML={{__html:renderLocalizedEntry('refrigeration',locale)}}/>
  <RefrigerationStyleGallery locale={locale}/>
  <section id="comparison"><h2 className="text-3xl font-bold">{u.compare}</h2>{locale==='zh'&&<p className="mt-4">先确认冷藏或冷冻需求，再核对有效容积、设备外形、进门尺寸和安装后的通风空间。</p>}<ol className="mt-7 grid gap-5 md:grid-cols-2 lg:grid-cols-3">{c.checks.map((text,i)=><li className="ddnz-control bg-white p-6 leading-7" key={text}><span className="mb-3 block font-bold text-purple-700">0{i+1}</span>{text}</li>)}</ol></section>
  <section id="sample-control"><h2 className="text-3xl font-bold">{c.labels[4]}</h2><ol className="mt-7 grid gap-5 md:grid-cols-2">{c.steps.map((text,i)=><li className="ddnz-control border ddnz-line p-6 leading-7" key={text}><span className="font-bold">0{i+1} · </span>{text}</li>)}</ol></section>
