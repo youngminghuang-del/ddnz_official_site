@@ -212,7 +212,9 @@ function Dropdown({
 
   return (
     <div className="relative" onBlur={(event) => {
-      if (open && !event.currentTarget.contains(event.relatedTarget as Node | null)) onToggle(id);
+      const next = event.relatedTarget;
+      if (id === 'language' && !next) return;
+      if (open && !event.currentTarget.contains(next as Node | null)) onToggle(id);
     }}>
       <button
         type="button"
@@ -581,7 +583,10 @@ export default function SourcingHomepageNav({
 
         <div className={`flex shrink-0 items-center gap-1 ${mobileVisibility}`}>
           <div ref={mobileLanguageRef} className="relative" onBlur={(event) => {
-            if (!event.currentTarget.contains(event.relatedTarget as Node | null)) setMobileLanguageOpen(false);
+            // Safari can blur the focused link with no next target before a tap fires click.
+            // Outside taps already close the menu in the pointerdown handler.
+            const next = event.relatedTarget;
+            if (next instanceof Node && !event.currentTarget.contains(next)) setMobileLanguageOpen(false);
           }}>
             <button ref={mobileLanguageTriggerRef} type="button" aria-label={languagePrompts[language]} aria-controls="mobile-language-menu" aria-expanded={mobileLanguageOpen}
               className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-slate-200 px-2 text-sm font-semibold text-[var(--ddnz-purple-strong)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--ddnz-purple)]"
