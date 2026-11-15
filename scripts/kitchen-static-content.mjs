@@ -2,7 +2,7 @@ import { equipmentFilters, legacyHotGroups } from '../src/features/commercial-ki
 import {quantityBand} from '../src/features/commercial-kitchen/data/model.mjs';
 import { kitchenPurchasePaths, orderSupportPaths } from '../src/features/commercial-kitchen/data/purchase-paths.mjs';
 import { kitchenFaq } from '../src/features/commercial-kitchen/data/discovery.mjs';
-import { steamCabinetPath } from '../src/features/commercial-kitchen/routes.mjs';
+import { steamCabinetPath, noodleCookerPath } from '../src/features/commercial-kitchen/routes.mjs';
 import { kitchenModelHref } from '../src/features/commercial-kitchen/data/categories.mjs';
 const escape = value => String(value).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
@@ -23,7 +23,7 @@ export function renderKitchenStaticContent(products, launch, heroMedia = '') {
     <h2 id="commercial-kitchen-equipment">Compare commercial kitchen equipment</h2><p>${products.length} models. Eight with indicative reference prices.</p>
     <span id="kitchen-induction-range"></span><span id="coffee-machine-catalogue"></span>
     ${Object.keys(legacyHotGroups).map(id=>`<span id="${id}"></span>`).join('')}
-    <nav aria-label="Equipment ranges">${equipmentFilters.flatMap(item=>item.links).map(item=>`<a href="${item.path}">${escape(item.label)} ↗</a>`).join(' · ')} · <a href="${steamCabinetPath}/">Commercial induction steam cabinets ↗</a></nav>
+    <nav aria-label="Equipment ranges">${equipmentFilters.flatMap(item=>item.links).map(item=>`<a href="${item.path}">${escape(item.label)} ↗</a>`).join(' · ')} · <a href="${steamCabinetPath}/">Commercial induction steam cabinets ↗</a> · <a href="${noodleCookerPath}/">Commercial countertop noodle cookers ↗</a></nav>
     <div>${[...featured, ...products.filter(p => !launch.featuredProductIds.includes(p.id))].map((p,index) => `${index===8?'<details class="catalog-rest"><summary>View all models</summary>':''}<article id="model-${escape(p.id)}">${p.handbookGroup?`<span id="catalog-${escape(p.id)}"></span>`: ''}<img src="${escape(p.image)}" alt="${escape(p.model + ' ' + p.name)}" width="420" height="290" loading="lazy" />
       <h3>${escape(p.model)} — ${escape(p.name)}</h3><p>${escape(p.metric)} · ${escape(p.dimensions)}</p>
       <dl>${Object.entries(p.specs).map(([key, value]) => `<dt>${escape(key)}</dt><dd>${escape(value)}</dd>`).join('')}</dl>

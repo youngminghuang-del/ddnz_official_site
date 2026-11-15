@@ -1,0 +1,66 @@
+{
+  "en": {
+    "label": "Commercial countertop noodle cookers",
+    "heading": "Source commercial countertop noodle cookers from China",
+    "intro": "Choose a two- or four-basket model for your noodle station. Compare basket positions, electrical options and the countertop space each model needs.",
+    "choose": "Compare two- and four-basket models",
+    "note": "For the four-basket model, confirm which power and voltage options go together before ordering.",
+    "footprint": "Countertop footprint"
+  },
+  "zh": {
+    "label": "商用台式煮面炉",
+    "heading": "从中国采购商用台式煮面炉",
+    "intro": "按双头、四头挑选煮面工位设备，对比篮位数量、功率、供电规格与台面占地。",
+    "choose": "比较双头与四头",
+    "note": "四头款的 5／8 kW 和 220／380 V 为目录选项，具体功率与电压的搭配需在下单前确认。",
+    "footprint": "台面占地（宽 × 深）"
+  },
+  "es": {
+    "label": "Cocedores comerciales de pasta de sobremesa",
+    "heading": "Compre cocedores comerciales de pasta de sobremesa en China",
+    "intro": "Elija un modelo de dos o cuatro cestas. Compare los puestos de cocción, las opciones eléctricas y el espacio que ocupa cada equipo sobre la encimera.",
+    "choose": "Comparar modelos de dos y cuatro cestas",
+    "note": "Para el modelo de cuatro cestas, confirme la combinación de potencia y tensión antes de hacer el pedido.",
+    "footprint": "Espacio en la encimera"
+  },
+  "ar": {
+    "label": "أجهزة سلق المعكرونة التجارية للطاولة",
+    "heading": "توريد أجهزة سلق المعكرونة التجارية للطاولة من الصين",
+    "intro": "اختر طرازاً بسلتين أو أربع سلال. قارن عدد مواضع السلال وخيارات التغذية الكهربائية والمساحة التي يشغلها كل جهاز على سطح العمل.",
+    "choose": "مقارنة طرازي السلتين والأربع سلال",
+    "note": "أكد تركيبة القدرة والجهد للطراز ذي الأربع سلال قبل الطلب.",
+    "footprint": "المساحة على سطح العمل"
+  },
+  "ru": {
+    "label": "Профессиональные настольные лапшеварки",
+    "heading": "Закупка профессиональных настольных лапшеварок из Китая",
+    "intro": "Выберите модель с двумя или четырьмя корзинами. Сравните число мест для корзин, параметры питания и размеры основания.",
+    "choose": "Сравнить модели с двумя и четырьмя корзинами",
+    "note": "Перед заказом модели с четырьмя корзинами уточните сочетание мощности и напряжения.",
+    "footprint": "Габариты основания"
+  },
+  "fr": {
+    "label": "Cuiseurs à pâtes professionnels à poser",
+    "heading": "Achetez des cuiseurs à pâtes professionnels à poser en Chine",
+    "intro": "Choisissez un modèle à deux ou quatre paniers. Comparez le nombre d’emplacements, les options électriques et l’encombrement sur le plan de travail.",
+    "choose": "Comparer les modèles à deux et quatre paniers",
+    "note": "Avant de commander le modèle à quatre paniers, confirmez la combinaison de puissance et de tension.",
+    "footprint": "Encombrement sur le plan de travail"
+  },
+  "pt": {
+    "label": "Cozedores de massas comerciais de bancada",
+    "heading": "Compre cozedores de massas comerciais de bancada na China",
+    "intro": "Escolha um modelo de dois ou quatro cestos. Compare o número de posições, as opções elétricas e o espaço ocupado na bancada.",
+    "choose": "Comparar modelos de dois e quatro cestos",
+    "note": "Antes de encomendar o modelo de quatro cestos, confirme a combinação de potência e tensão.",
+    "footprint": "Espaço na bancada"
+  },
+  "tr": {
+    "label": "Ticari tezgâh üstü makarna pişiriciler",
+    "heading": "Çin’den ticari tezgâh üstü makarna pişirici tedariki",
+    "intro": "İki veya dört sepetli modeli seçin. Sepet yuvası sayısını, elektrik seçeneklerini ve tezgâhta gereken alanı karşılaştırın.",
+    "choose": "İki ve dört sepetli modelleri karşılaştırın",
+    "note": "Dört sepetli model için güç ve gerilim seçeneklerinin eşleşmesini siparişten önce teyit edin.",
+    "footprint": "Tezgâhta kapladığı alan"
+  }
+}
