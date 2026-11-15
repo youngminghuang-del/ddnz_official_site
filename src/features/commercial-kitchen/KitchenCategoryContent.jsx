@@ -1,3 +1,4 @@
+import griddleCopy from './locales/planning/griddle-thickness.json';
 import FryerTypeNavigation from './components/FryerTypeNavigation';
 import fryerTypeCopy from './locales/planning/fryer-types.json';
 import { SharedKitchenListBar, useSharedKitchenList } from './components/SharedKitchenList';
@@ -17,20 +18,21 @@ const currency = value => new Intl.NumberFormat('en', { minimumFractionDigits: 2
 export default function KitchenCategoryContent({ category, homeHref = '/', onTrack = (_action) => {} }) {
   const isIce = category.id === 'ice-machines';
   const isFryer = category.id === 'electric-fryers';
+  const isGriddle = category.id === 'electric-griddles';
   const products = categoryProducts(category);
   const sharedList = useSharedKitchenList();
   const hero = products.find(p => p.id === category.heroId);
   const ModelHeading = isFryer ? 'h4' : 'h3';
-  const renderModel = p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
-        {category.id==='ice-machines'?<IceModelPhoto src={p.image} alt={`${p.model} ${p.name}`} model={p.model}/>:(<div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>)}
-        <div className="category-model-copy"><p className="model">{p.model}</p><ModelHeading>{p.name}</ModelHeading><strong className="category-model-metric">{p.metric}</strong><dl>{category.comparisonKeys.filter(key => p.specs[key]).map(key => <div key={key}><dt>{key}</dt><dd>{p.specs[key]}</dd></div>)}<div><dt>Overall dimensions</dt><dd>{p.dimensions}</dd></div></dl>
-          <IceModelDetails id={p.id}/><div className="category-price">{p.quote ? <><span>Indicative supply price</span><strong>CNY {currency(p.quote.price)} <small>/ unit</small></strong><span>Reference quantity: {p.quote.minUnits} {p.quote.minUnits === 1 ? 'unit' : 'units'}</span></> : <><span>Wholesale pricing</span><strong>Request a quote</strong><span>For your quantity and destination</span></>}</div>
+  const renderCatalogueActions = p => <><div className="category-price">{p.quote ? <><span>Indicative supply price</span><strong>CNY {currency(p.quote.price)} <small>/ unit</small></strong><span>Reference quantity: {p.quote.minUnits} {p.quote.minUnits === 1 ? 'unit' : 'units'}</span></> : <><span>Wholesale pricing</span><strong>Request a quote</strong><span>For your quantity and destination</span></>}</div>
           <div className="shared-kitchen-model-actions">
             <button type="button" className="button primary" aria-label={`Add ${p.model} to equipment list`}
               onClick={()=>sharedList.add(p.id)} data-category-action="select_model">Add to equipment list</button>
             <a className="text-link" href={kitchenModelHref(p.id)} data-category-action="select_model">Open {p.model} in catalogue ↗</a>
-          </div>
-          {p.imageNote && <p className="fine">{p.imageNote}</p>}
+          </div></>;
+  const renderModel = p => <article id={`model-${p.id}`} className="category-model" key={p.id}>
+        {category.id==='ice-machines'?<IceModelPhoto src={p.image} alt={`${p.model} ${p.name}`} model={p.model}/>:(<div className="category-model-photo"><img src={p.image} srcSet={`${p.imageSmall} 600w, ${p.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), (min-width: 1200px) 40vw, 46vw" alt={`${p.model} ${p.name}`} width="1200" height="900" loading="lazy"/></div>)}
+        <div className="category-model-copy"><p className="model">{p.model}</p><ModelHeading>{p.name}</ModelHeading><strong className="category-model-metric">{p.metric}</strong><dl>{category.comparisonKeys.filter(key => p.specs[key]).map(key => <div key={key}><dt>{key}</dt><dd>{p.specs[key]}</dd></div>)}<div><dt>Overall dimensions</dt><dd>{p.dimensions}</dd></div></dl>
+          <IceModelDetails id={p.id}/>{renderCatalogueActions(p)}          {p.imageNote && <p className="fine">{p.imageNote}</p>}
           {p.quote?.configurationNote && <p className="fine">{p.quote.configurationNote}</p>}
         </div>
       </article>;
@@ -46,7 +48,7 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
     </section>
     <nav className="category-navigation wrap" aria-label="Commercial kitchen categories">{kitchenCategories.map(item => <a key={item.id} href={item.path} aria-current={item.id === category.id ? 'page' : undefined}>{item.label}</a>)}<a href="/refrigeration-equipment/">Refrigeration</a><a href={KITCHEN_PATH}>All equipment <span aria-hidden="true">↗</span></a></nav>
     <SharedKitchenListBar count={sharedList.count} status={sharedList.status}/>
-    <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{isFryer ? fryerTypeCopy.en.title : category.comparisonTitle}</h2></div>{!isFryer&&<p>{category.comparisonCopy}</p>}</div>
+    <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{isFryer ? fryerTypeCopy.en.title : isGriddle ? griddleCopy.en[0] : category.comparisonTitle}</h2></div>{!isFryer&&<p>{category.comparisonCopy}</p>}</div>
       {isIce && <nav className="ice-use-nav" aria-label="Browse ice machines by series or ice shape">
         <a href="#hzb-series">HZB cube ice</a>
         <a href="#sd-series">SD cube ice</a>
@@ -58,7 +60,8 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
           single: products.filter(p => p.specs.Tanks === '1').map(renderModel),
           twin: products.filter(p => p.specs.Tanks === '2').map(renderModel),
         }} />
-      </> : <div id={isIce ? 'hzb-series' : undefined} className="category-model-grid">{products.map(renderModel)}</div>}
+      </> : isGriddle ? <CookingModelSelection category={category} griddleCatalogue={products} catalogueActions={renderCatalogueActions}/>
+      : <div id={isIce ? 'hzb-series' : undefined} className="category-model-grid">{products.map(renderModel)}</div>}
       <p className="fine category-price-note">Product images are retouched. Prices are indicative for the stated reference quantities. Freight and taxes are extra. Final price, availability and electrical configuration are confirmed with your quotation.{category.id === 'ice-machines' && ' Ice output figures are rated values; test conditions and bin capacity will be confirmed.'}</p>
       {isIce && <><SdIceSeries inCatalogue/><IceUseSeries inCatalogue/></>}
     </section>
@@ -75,8 +78,7 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
         <a href="/how-we-work/">See how we inspect, pack and ship equipment ↗</a>
       </aside>
     </> : <>
-      <CookingVisuals category={category}/>
-      {!isFryer&&<CookingModelSelection category={category}/>}
+      <CookingVisuals category={category} showGallery={!isGriddle}/>
     <section id="category-buying" className="section wrap category-buying"><p className="eyebrow">BEFORE YOU BUY</p><h2>{category.buyingTitle}</h2><div className="category-buying-grid">{category.buying.map((item, i) => <article key={item.title}><span className="category-step">0{i + 1}</span><h3>{item.title}</h3><p>{item.copy}</p></article>)}</div></section>
     <section className="category-brief-band"><div className="wrap category-brief-layout"><div><p className="eyebrow">BUILD A COMPARABLE QUOTE</p><h2>Bring the right details<br/>to your next order.</h2><p>Choose a model above to open the shared equipment planner. Set the quantity and destination, add your target price or selling price, and review your sourcing brief.</p><a className="button primary" href={kitchenModelHref(hero.id)} data-category-action="start_brief">Start with {hero.model} <span aria-hidden="true">→</span></a><p className="fine">Voltage, frequency, phase and plug follow the selected model and destination during quotation.</p></div><div><h3>Include in your request</h3><ul>{category.quoteChecks.map(item => <li key={item}>{item}</li>)}</ul><a className="text-link" href={`${KITCHEN_PATH}#commercial-kitchen-benchmarks`} data-category-action="price_context">Compare local prices and plan your margin <span aria-hidden="true">→</span></a></div></div></section>
     </>}

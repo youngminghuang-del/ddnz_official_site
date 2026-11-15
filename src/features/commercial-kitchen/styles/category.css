@@ -197,3 +197,55 @@
   }
   .kitchen-category .fryer-models .category-model-photo img { max-block-size: 220px; }
 }
+
+.griddle-thickness-nav {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-block: 18px;
+}
+.griddle-thickness-nav a {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  color: #602986;
+  background: var(--ddnz-surface-raised);
+}
+.griddle-thickness-nav a:hover { background: var(--ddnz-surface-soft); }
+.griddle-nav-photo, .griddle-row-photo { inline-size: 96px; }
+.griddle-comparison { margin-block: 28px; scroll-margin-top: 110px; }
+.griddle-comparison h3 { margin-block-end: 10px; font-size: clamp(21px, 2.2vw, 28px); }
+.griddle-comparison table {
+  width: 100%;
+  table-layout: fixed;
+  background: var(--ddnz-surface-raised);
+  border-collapse: collapse;
+}
+.griddle-comparison thead th { background: var(--ddnz-surface-soft); }
+.griddle-comparison tr > :first-child { width: 46%; }
+.griddle-comparison :is(th, td) {
+  padding: 12px;
+  border: 1px solid var(--ddnz-brand-line);
+  text-align: start;
+  vertical-align: middle;
+  overflow-wrap: anywhere;
+}
+.griddle-model-name { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; font-weight: 750; }
+.griddle-comparison details { margin-block-start: 6px; font-weight: 400; }
+.griddle-comparison summary { cursor: pointer; color: #602986; }
+.griddle-comparison dl { margin-block: 10px; }
+.griddle-comparison dt { font-weight: 650; }
+.griddle-comparison dd { margin: 0 0 5px; }
+.griddle-comparison .category-price strong { font-size: 18px; }
+@media (max-width: 760px) {
+  .griddle-thickness-nav { gap: 7px; }
+  .griddle-thickness-nav a { display: grid; justify-items: center; gap: 4px; padding: 8px; }
+  .griddle-nav-photo { inline-size: min(100%, 76px); }
+  .griddle-row-photo { inline-size: 70px; }
+  .griddle-comparison :is(th, td) { padding: 8px; }
+  .griddle-model-name { display: grid; gap: 4px; }
+}
