@@ -38,10 +38,10 @@ import istanbulKitchenSchema from '../src/data/istanbul-kitchen-schema.json';
 import {freightPageInfo,freightPageSchema} from '../src/features/freight/freightPageSchema';
 import FreightRelatedLinks from '../src/features/freight/FreightRelatedLinks';
 import RoutePlanningDepth from '../src/features/freight/RoutePlanningDepth';
-import InductionCookingContent from '../src/features/commercial-kitchen/InductionCookingContent';
+import InductionCookingContent, { type InductionLocale } from '../src/features/commercial-kitchen/InductionCookingContent';
 import ChineseCookingContent from '../src/features/commercial-kitchen/ChineseCookingContent';
 import { hotCookingPath } from '../src/features/commercial-kitchen/routes.mjs';
-import { inductionPage, inductionPageSchema, zhInductionPage, zhHotCookingPage, chineseCookingSchema } from '../src/features/commercial-kitchen/data/inductionPage.mjs';
+import { inductionPage, getInductionPage, inductionPageSchema, zhHotCookingPage, chineseCookingSchema } from '../src/features/commercial-kitchen/data/inductionPage.mjs';
 const inductionRelPath = inductionPage.path.slice(1, -1);
 const hotCookingRelPath = hotCookingPath.slice(1);
 import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
@@ -974,7 +974,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = relPath===inductionRelPath?['en','zh-cn']:relPath===hotCookingRelPath?['zh-cn']:relPath==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:relPath==='shipping-from-china-to-ecuador'?['en','zh-cn','es','ar','fr','ru','pt','tr']:relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = relPath===inductionRelPath?overviewLanguages:relPath===hotCookingRelPath?['zh-cn']:relPath==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:relPath==='shipping-from-china-to-ecuador'?['en','zh-cn','es','ar','fr','ru','pt','tr']:relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1790,11 +1790,12 @@ function injectStaticRouteContent(
         alt:'Commercial kitchen application',scene:true,items:kitchenHeroItems})));
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
   } else if (relPath === inductionRelPath || relPath === hotCookingRelPath) {
-    const chinesePage = lang === 'zh-cn' ? (relPath === hotCookingRelPath ? zhHotCookingPage : zhInductionPage) : undefined;
-    staticBody = chinesePage
-      ? renderToStaticMarkup(createElement(ChineseCookingContent, { page: chinesePage }))
-      : renderToStaticMarkup(createElement(InductionCookingContent));
-    const schema = JSON.stringify(chinesePage ? chineseCookingSchema(chinesePage) : inductionPageSchema()).replace(/</g, '\\u003c');
+    const hotCooking = relPath === hotCookingRelPath;
+    const locale = (lang === 'zh-cn' ? 'zh' : lang) as InductionLocale;
+    staticBody = hotCooking
+      ? renderToStaticMarkup(createElement(ChineseCookingContent, { page: zhHotCookingPage }))
+      : renderToStaticMarkup(createElement(InductionCookingContent, { locale }));
+    const schema = JSON.stringify(hotCooking ? chineseCookingSchema(zhHotCookingPage) : inductionPageSchema(locale)).replace(/</g, '\\u003c');
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`);
   } else if (kitchenCategories.some(category => category.path === `/${relPath}/`)) {
@@ -1957,7 +1958,7 @@ function run() {
     ...mobilePages.map(page => ({path:page.path.slice(1),priority:'0.9',changefreq:'monthly',languages:[...overviewLanguages]})),
     ...['screen-protectors','screen-protectors/compare'].map(path => ({ path, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages.filter(l=>l!=='en') })),
     ...buyerGuides.map(guide => ({ path: guide.path.slice(1), priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
-    { path: inductionRelPath, priority: '0.8', changefreq: 'monthly', languages: ['en', 'zh-cn'] },
+    { path: inductionRelPath, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages },
     { path: hotCookingRelPath, priority: '0.8', changefreq: 'monthly', languages: ['zh-cn'] },
     ...kitchenCategories.map(category => ({ path: category.path.replace(/^\/|\/$/g, ''), priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
     { path: '', priority: '1.0', changefreq: 'weekly', languages: ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr'] },
@@ -2081,7 +2082,7 @@ function run() {
         seo = { title: meta.title, desc: meta.description, keywords: '', image: meta.image };
       }
       if (entry.path === inductionRelPath || entry.path === hotCookingRelPath) {
-        const page = entry.path === hotCookingRelPath ? zhHotCookingPage : lang === 'zh-cn' ? zhInductionPage : inductionPage;
+        const page = entry.path === hotCookingRelPath ? zhHotCookingPage : getInductionPage(lang);
         seo = { title: page.title, desc: page.description, keywords: '', image: page.image };
       }
       const equipmentCategory = kitchenCategories.find(category => category.path === `/${entry.path}/`);
@@ -2243,7 +2244,7 @@ function run() {
       const routePost = postSlugOrId ? findArticleByRoute(blogPosts, lang, postSlugOrId) : undefined;
       const articleHreflang = routePost ? getArticleHreflangSet(routePost, blogPosts) : undefined;
       const loc = routePost ? articleAbsoluteUrl(routePost) : localizedSiteUrl(lang, entry.path);
-      const alternateLanguages = entry.path===inductionRelPath?['en','zh-cn']:entry.path===hotCookingRelPath?['zh-cn']:entry.path==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:entry.path===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
+      const alternateLanguages = entry.path===inductionRelPath?overviewLanguages:entry.path===hotCookingRelPath?['zh-cn']:entry.path==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:entry.path===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(entry.path)?overviewLanguages:(['products','sourcing-services'].includes(entry.path) || foodProcessingRoutes.includes('/'+entry.path) || kitchenCategories.some(c=>c.path===`/${entry.path}/`) || restaurantPackagePaths.includes('/'+entry.path) || '/'+entry.path===audioPath || ('/'+entry.path===filmGuidePath || entry.path.startsWith('screen-protectors/guides/') || entry.path==='screen-protectors/videos') || '/'+entry.path===refrigerationPath || buyerGuideForPath('/'+entry.path)) ? overviewLanguages : hasProductTranslation(`/${entry.path}`, 'en') ? overviewLanguages : entry.path.startsWith('blog/') ? [lang] : (entry.languages || languages);
       const alternates = articleHreflang?.alternates || alternateLanguages.map((code) => ({
         hrefLang: code === 'pt' && entry.path === 'shipping-from-china-to-brazil' ? 'pt-BR' : normalizeArticleLocale(code),
         href: localizedSiteUrl(code, entry.path),

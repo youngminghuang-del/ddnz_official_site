@@ -4,11 +4,11 @@ import { useLocation } from 'react-router-dom';
 import SEO from '../../components/SEO';
 import SourcingHomepageNav from '../../components/SourcingHomepageNav';
 import Footer from '../../components/Footer';
-import { productAlternates } from '../../lib/productLocalization.mjs';
+import { productAlternates, productRouteParts } from '../../lib/productLocalization.mjs';
 import ChineseCookingContent from './ChineseCookingContent';
-import InductionCookingContent from './InductionCookingContent';
+import InductionCookingContent, { type InductionLocale } from './InductionCookingContent';
 import { sharedKitchenListHref, useSharedKitchenList } from './components/SharedKitchenList';
-import { inductionPage, inductionPageSchema, chineseCookingSchema, zhInductionPage, zhHotCookingPage } from './data/inductionPage.mjs';
+import { getInductionPage, inductionPageSchema, chineseCookingSchema, zhHotCookingPage } from './data/inductionPage.mjs';
 import './styles/kitchen.css';
 import './styles/category.css';
 import './styles/induction-catalogue.css';
@@ -16,9 +16,9 @@ import './styles/induction-catalogue.css';
 export default function InductionCookingPage() {
   const { pathname, hash } = useLocation();
   const normalized = pathname.replace(/\/$/, '') + '/';
-  const chinesePage = [zhInductionPage, zhHotCookingPage].find(page => page.path === normalized);
-  const page = chinesePage || inductionPage;
-  const locale = chinesePage ? 'zh' : 'en';
+  const hotCooking = normalized === zhHotCookingPage.path;
+  const locale = productRouteParts(pathname).locale as InductionLocale;
+  const page = hotCooking ? zhHotCookingPage : getInductionPage(locale);
   const sharedList = useSharedKitchenList(locale);
   const quotePath = sharedKitchenListHref(locale);
 
@@ -26,10 +26,10 @@ export default function InductionCookingPage() {
     document.getElementById('schema-jsonld-static-page')?.remove();
     const schema = document.createElement('script');
     schema.type = 'application/ld+json';
-    schema.textContent = JSON.stringify(chinesePage ? chineseCookingSchema(chinesePage) : inductionPageSchema());
+    schema.textContent = JSON.stringify(hotCooking ? chineseCookingSchema(zhHotCookingPage) : inductionPageSchema(locale));
     document.head.appendChild(schema);
     return () => schema.remove();
-  }, [chinesePage]);
+  }, [hotCooking, locale]);
 
   useEffect(() => {
     if (!hash) return;
@@ -41,10 +41,10 @@ export default function InductionCookingPage() {
     <SEO title={page.title} description={page.description} image={page.image}
       canonicalPath={page.path} contentLanguage={locale}
       alternateUrls={productAlternates(page.path)}/>
-    <SourcingHomepageNav quotePath={quotePath} supportedLanguages={chinesePage === zhHotCookingPage ? ['zh'] : ['en', 'zh']}/>
-    {chinesePage
-      ? <ChineseCookingContent page={chinesePage} onAdd={sharedList.add} count={sharedList.count} status={sharedList.status}/>
-      : <InductionCookingContent onAdd={sharedList.add} count={sharedList.count} status={sharedList.status}/>}
+    <SourcingHomepageNav quotePath={quotePath} supportedLanguages={hotCooking ? ['zh'] : undefined}/>
+    {hotCooking
+      ? <ChineseCookingContent page={zhHotCookingPage} onAdd={sharedList.add} count={sharedList.count} status={sharedList.status}/>
+      : <InductionCookingContent locale={locale} onAdd={sharedList.add} count={sharedList.count} status={sharedList.status}/>}
     <Footer quotePath={quotePath} pageKey="commercial_kitchen" description={page.description}/>
   </>;
 }

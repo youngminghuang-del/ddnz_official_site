@@ -52,7 +52,6 @@ export function isNavigationLanguage(value: unknown): value is Language {
 /** Only offer language switches that keep the visitor on the same authored page. */
 export function supportedNavigationLanguages(path: string): Language[] {
   const route = splitNavigationPath(path).pathname;
-  if (route === inductionCookingPath) return ['en', 'zh'];
   if (route === hotCookingPath) return ['zh'];
   if(route==='/shipping-from-china-to-ecuador') return allNavigationLanguages;
   if(route==='/services/ddp-shipping-from-china') return allNavigationLanguages;

@@ -1,0 +1,90 @@
+{
+  "en": {
+    "labels": ["Home", "Products", "Commercial kitchen equipment", "Induction cooking equipment", "Breadcrumb"],
+    "heading": "Commercial induction cooking equipment from China",
+    "intro": "Source eight commercial induction models from China. Choose by cooking task, then compare rated power, listed electrical supply and installation space.",
+    "choose": "Choose by cooking task",
+    "uses": [["Countertop cooking", "A compact station for flat-bottom cookware."], ["Wok cooking", "A dedicated wok station for stir-frying."], ["Soups and stocks", "A station for stockpots and soups."], ["Multi-zone cooking", "Four- and six-zone ranges for cooking several dishes in parallel."], ["Large-wok cooking", "Large woks for cooking in batches."]],
+    "install": "Check the installation site",
+    "checks": [["Rated power", "Use total rated power to plan the supply for a multi-zone range. Check which stations will run together."], ["Electrical supply", "Match the listed voltage and frequency to the destination. Confirm phase, circuit and connection for the quoted version."], ["Space and cookware", "Check the final outline drawing, ventilation and service access. Confirm cookware size and compatibility."]],
+    "quote": "Review your equipment list",
+    "more": "Browse all kitchen equipment"
+  },
+  "zh": {
+    "labels": ["首页", "产品目录", "商用厨房设备", "商用电磁烹饪设备", "面包屑导航"],
+    "heading": "从中国采购商用电磁烹饪设备",
+    "intro": "按烹饪用途比较 8 款商用电磁设备。选定工位后，再核对额定功率、标注电压与频率，以及现场安装空间。",
+    "choose": "按烹饪用途选型",
+    "uses": [["台面烹饪", "适合台面和平底锅具，先核对台面深度。"], ["小炒", "专用炒锅工位，按锅径和加热区域选型。"], ["汤炉", "用于熬汤和高汤，核对汤桶尺寸。"], ["多头烹饪", "四头和六头适合同时出品，先核对额定总功率。"], ["大锅灶", "按批量烹饪需求比较锅径和占地。"]],
+    "install": "安装前核对",
+    "checks": [["额定功率", "多头设备按额定总功率核对供电容量，并确认哪些工位会同时使用。"], ["现场供电", "按目录标注核对电压和频率。以询价确认的版本核对相数、回路和接线方式。"], ["安装空间与锅具", "核对最终外形图、通风和检修空间，确认锅具尺寸及适配性。"]],
+    "quote": "查看设备清单并询价",
+    "more": "浏览全部商用厨房设备"
+  },
+  "es": {
+    "labels": ["Inicio", "Productos", "Equipos de cocina comercial", "Equipos de inducción", "Ruta de navegación"],
+    "heading": "Equipos comerciales de inducción de China",
+    "intro": "Compre en China entre ocho modelos comerciales de inducción. Elija según el uso y compare potencia nominal, alimentación indicada y espacio de instalación.",
+    "choose": "Elija según lo que va a cocinar",
+    "uses": [["Cocción sobre encimera", "Puesto compacto para recipientes de fondo plano."], ["Salteado en wok", "Puesto dedicado para saltear en wok."], ["Sopas y caldos", "Puesto para ollas altas y preparación de sopas."], ["Cocción multizona", "Cuatro o seis zonas para preparar platos en paralelo."], ["Wok de gran capacidad", "Para preparar lotes en un wok grande."]],
+    "install": "Revise el lugar de instalación",
+    "checks": [["Potencia nominal", "En equipos multizona, use la potencia nominal total para planificar la alimentación. Identifique las zonas de uso simultáneo."], ["Alimentación eléctrica", "Compare la tensión y la frecuencia indicadas con las del lugar. Confirme fases, circuito y conexión para la versión cotizada."], ["Espacio y recipientes", "Revise el plano final, la ventilación y el acceso de servicio. Confirme el tamaño y la compatibilidad de los recipientes."]],
+    "quote": "Revisar la lista de equipos",
+    "more": "Ver todos los equipos de cocina"
+  },
+  "fr": {
+    "labels": ["Accueil", "Produits", "Équipement de cuisine professionnel", "Équipement à induction", "Fil d’Ariane"],
+    "heading": "Équipements de cuisson à induction professionnels de Chine",
+    "intro": "Achetez en Chine parmi huit modèles professionnels à induction. Choisissez selon l’usage, puis comparez puissance nominale, alimentation indiquée et espace d’installation.",
+    "choose": "Choisir selon l’usage en cuisine",
+    "uses": [["Cuisson sur plan de travail", "Poste compact pour récipients à fond plat."], ["Cuisson au wok", "Poste dédié aux sautés au wok."], ["Soupes et bouillons", "Poste pour marmites et soupes."], ["Cuisson multizone", "Quatre ou six foyers pour cuisiner en parallèle."], ["Cuisson au grand wok", "Pour préparer des volumes importants par lots."]],
+    "install": "Vérifier le lieu d’installation",
+    "checks": [["Puissance nominale", "Pour un appareil multizone, retenez la puissance nominale totale. Identifiez les foyers utilisés simultanément."], ["Alimentation électrique", "Comparez tension et fréquence indiquées à celles du site. Confirmez phases, circuit et raccordement pour la version chiffrée."], ["Espace et récipients", "Vérifiez le plan final, la ventilation et l’accès d’entretien. Confirmez dimensions et compatibilité des récipients."]],
+    "quote": "Consulter la liste d’équipements",
+    "more": "Voir tous les équipements de cuisine"
+  },
+  "pt": {
+    "labels": ["Início", "Produtos", "Equipamentos de cozinha comercial", "Equipamentos de indução", "Caminho de navegação"],
+    "heading": "Equipamentos comerciais de indução da China",
+    "intro": "Compre na China entre oito modelos comerciais de indução. Escolha pelo uso e compare potência nominal, alimentação indicada e espaço para instalação.",
+    "choose": "Escolha pelo tipo de preparo",
+    "uses": [["Cocção de bancada", "Posto compacto para panelas de fundo plano."], ["Cocção em wok", "Posto dedicado a saltear em wok."], ["Sopas e caldos", "Posto para caldeirões e sopas."], ["Cocção multizona", "Quatro ou seis zonas para preparar pratos ao mesmo tempo."], ["Wok de grande capacidade", "Para cocção em lotes em um wok grande."]],
+    "install": "Confira o local de instalação",
+    "checks": [["Potência nominal", "Em equipamentos multizona, use a potência nominal total para planejar a alimentação. Identifique as zonas usadas simultaneamente."], ["Alimentação elétrica", "Compare tensão e frequência indicadas com as do local. Confirme fases, circuito e conexão da versão cotada."], ["Espaço e utensílios", "Confira o desenho final, a ventilação e o acesso para manutenção. Confirme tamanho e compatibilidade das panelas."]],
+    "quote": "Revisar a lista de equipamentos",
+    "more": "Ver todos os equipamentos de cozinha"
+  },
+  "ar": {
+    "labels": ["الرئيسية", "المنتجات", "معدات المطابخ التجارية", "معدات الطهي بالحث", "مسار التنقل"],
+    "heading": "معدات الطهي التجارية بالحث من الصين",
+    "intro": "اشترِ معدات الطهي بالحث من الصين من بين ثمانية موديلات تجارية. اختر حسب الاستخدام وقارن القدرة الاسمية والتغذية الكهربائية ومساحة التركيب.",
+    "choose": "اختر حسب طريقة الطهي",
+    "uses": [["طهي على سطح العمل", "محطة مدمجة للأواني ذات القاعدة المسطحة."], ["طهي بالووك", "محطة مخصصة للتقليب السريع في الووك."], ["الشوربة والمرق", "محطة لقدور الشوربة والمرق."], ["طهي متعدد المناطق", "أربع أو ست مناطق لإعداد عدة أطباق بالتوازي."], ["طهي بووك كبير", "للطهي على دفعات في وعاء ووْك كبير."]],
+    "install": "تحقّق من موقع التركيب",
+    "checks": [["القدرة الاسمية", "استخدم إجمالي القدرة الاسمية لتخطيط التغذية للمواقد متعددة المناطق. حدّد المناطق التي ستعمل معًا."], ["تغذية الموقع الكهربائية", "طابق الجهد والتردد المذكورين مع الموقع. أكّد عدد الأطوار والدائرة وطريقة التوصيل للنسخة المشمولة بالعرض."], ["المساحة والأواني", "راجع الرسم النهائي والتهوية ومساحة الصيانة. تحقّق من مقاس الأواني وتوافقها."]],
+    "quote": "راجع قائمة المعدات",
+    "more": "تصفّح جميع معدات المطبخ"
+  },
+  "ru": {
+    "labels": ["Главная", "Продукция", "Оборудование для профессиональной кухни", "Индукционное оборудование", "Навигационная цепочка"],
+    "heading": "Профессиональное индукционное оборудование из Китая",
+    "intro": "Закупайте профессиональное индукционное оборудование из Китая. Выберите назначение и сравните номинальную мощность, параметры питания и место установки для восьми моделей.",
+    "choose": "Выберите по способу приготовления",
+    "uses": [["Настольные плиты", "Компактный пост для посуды с плоским дном."], ["Жарка на воке", "Отдельный пост для быстрой жарки на воке."], ["Супы и бульоны", "Пост для высоких кастрюль и приготовления супов."], ["Многозонные плиты", "Четыре или шесть зон для одновременного приготовления."], ["Большие воки", "Для приготовления больших партий в воке."]],
+    "install": "Проверьте место установки",
+    "checks": [["Номинальная мощность", "При планировании питания многозонной плиты учитывайте суммарную номинальную мощность. Определите, какие зоны будут работать одновременно."], ["Электропитание на объекте", "Сопоставьте напряжение и частоту с параметрами объекта. Для версии в предложении уточните фазы, линию и способ подключения."], ["Место и посуда", "Проверьте окончательный чертёж, вентиляцию и доступ для обслуживания. Уточните размер и совместимость посуды."]],
+    "quote": "Открыть список оборудования",
+    "more": "Посмотреть всё кухонное оборудование"
+  },
+  "tr": {
+    "labels": ["Ana sayfa", "Ürünler", "Ticari mutfak ekipmanları", "İndüksiyonlu pişirme ekipmanları", "Gezinme yolu"],
+    "heading": "Çin’den ticari indüksiyonlu pişirme ekipmanları",
+    "intro": "Çin’den sekiz ticari indüksiyon modeli arasından seçim yapın. Kullanım alanını belirleyip nominal gücü, belirtilen elektrik beslemesini ve kurulum alanını karşılaştırın.",
+    "choose": "Pişirme işine göre seçim yapın",
+    "uses": [["Tezgâh üstü pişirme", "Düz tabanlı kaplar için kompakt istasyon."], ["Wok ile pişirme", "Wokta hızlı soteleme için ayrı istasyon."], ["Çorba ve et suyu", "Derin tencereler ve çorbalar için istasyon."], ["Çok bölgeli pişirme", "Birden fazla yemeği aynı anda hazırlamak için dört veya altı bölge."], ["Büyük wok ile pişirme", "Büyük wokta parti halinde pişirme için."]],
+    "install": "Kurulum yerini kontrol edin",
+    "checks": [["Nominal güç", "Çok bölgeli ocakların beslemesini planlarken toplam nominal gücü kullanın. Eşzamanlı kullanılacak bölgeleri belirleyin."], ["Sahadaki elektrik beslemesi", "Belirtilen gerilim ve frekansı sahayla karşılaştırın. Teklif edilen sürümün fazını, hattını ve bağlantısını teyit edin."], ["Alan ve pişirme kapları", "Son ölçü çizimini, havalandırmayı ve servis erişimini kontrol edin. Kap boyutunu ve uyumluluğunu teyit edin."]],
+    "quote": "Ekipman listesini inceleyin",
+    "more": "Tüm mutfak ekipmanlarını görün"
+  }
+}

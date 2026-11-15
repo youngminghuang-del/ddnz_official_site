@@ -1,3 +1,5 @@
+import copy from '../locales/planning/induction-use.json' with {type:'json'};
+import {localizedProductPath} from '../../../lib/productLocalization.mjs';
 import { KITCHEN_PATH } from './discovery.mjs';
 import { inductionCookingPath, hotCookingPath } from '../routes.mjs';
 import { inductionModels, multiZoneModels, largeWokModels, steamModels, noodleModels, roundCookerModels } from './inductionModels.mjs';
@@ -17,15 +19,26 @@ export const inductionGroups = /** @type {const} */ ([
 export const inductionModelsForPage = inductionGroups.flatMap(group => group.models);
 export const kitchenListHref = KITCHEN_PATH + '#commercial-kitchen-list';
 
-export function inductionPageSchema() {
+export function getInductionPage(locale = 'en') {
+  if (locale === 'en') return inductionPage;
+  if (locale === 'zh' || locale === 'zh-cn') return zhInductionPage;
+  const c = copy[locale];
+  return { ...inductionPage, path: localizedProductPath(inductionPage.path, locale), label: c.labels[3], title: c.heading + ' | DDNZ', description: c.intro };
+}
+
+export function inductionPageSchema(locale = 'en') {
+  if (locale === 'zh' || locale === 'zh-cn') return chineseCookingSchema(zhInductionPage);
+  const page = getInductionPage(locale);
+  const [home, products, kitchen] = copy[locale].labels;
+  const homePath = locale === 'en' ? '/' : `/${locale}/`;
   const origin = 'https://www.ddnzglobal.com';
-  const url = origin + inductionPage.path;
+  const url = origin + page.path;
   return {
     '@context': 'https://schema.org',
     '@graph': [
       {
-        '@type': 'CollectionPage', '@id': url, url, inLanguage: 'en',
-        name: inductionPage.title, description: inductionPage.description,
+        '@type': 'CollectionPage', '@id': url, url, inLanguage: locale,
+        name: page.title, description: page.description,
         mainEntity: { '@type': 'ItemList', itemListElement: inductionModelsForPage.map((model, index) => ({
           '@type': 'ListItem', position: index + 1, name: model.model, url: url + '#model-' + model.id,
         })) },
@@ -95,3 +108,5 @@ export function chineseCookingSchema(page) {
     ],
   };
 }
+
+export const inductionPages = Object.keys(copy).map(getInductionPage);
