@@ -1,0 +1,122 @@
+{
+  "en": {
+    "label": "Commercial induction steam cabinets",
+    "heading": "Source commercial induction steam cabinets from China",
+    "intro": "Compare single-door and double-door cabinets by power configuration, electrical supply and installation space. Confirm tray capacity and water connections for the selected model.",
+    "doors": ["Single door", "Double door"],
+    "choose": "Compare cabinet models",
+    "trays": ["Tray count", "To be confirmed"],
+    "installation": "Installation checklist",
+    "checks": [
+      ["Electrical supply", "Both models are listed at 380 V · 50 Hz. Confirm the power option, phase, circuit and wiring for the unit ordered."],
+      ["Water inlet", "Confirm the inlet connection and its position, required water pressure and water treatment with the supplier."],
+      ["Drainage", "Confirm the drain outlet size and position, and where the unit will drain on site. Allow access for cleaning."],
+      ["Trays and clearance", "Confirm tray count, tray dimensions and what is included. Check door swing and service access against the installation layout."]
+    ]
+  },
+  "zh": {
+    "label": "商用电磁蒸柜",
+    "heading": "从中国采购商用电磁蒸柜",
+    "intro": "按单门、双门比较功率配置、供电和安装空间。选定型号后，再核对蒸盘数量和进排水接口。",
+    "doors": ["单门电磁蒸柜", "双门电磁蒸柜"],
+    "choose": "比较单门与双门",
+    "trays": ["蒸盘数量", "待确认"],
+    "installation": "安装前核对",
+    "checks": [
+      ["供电与接线", "两款目录均标注 380 V · 50 Hz。按所选功率配置核对相数、回路和接线方式。"],
+      ["进水", "向供应商确认进水接口规格与位置、所需水压，以及是否需要水处理。"],
+      ["排水", "核对排水口规格与位置，确认现场排水点，并预留清洁空间。"],
+      ["蒸盘与安装空间", "确认蒸盘数量、尺寸及是否随柜配套。按安装图核对开门空间和检修通道。"]
+    ]
+  },
+  "es": {
+    "label": "Armarios de vapor comerciales por inducción",
+    "heading": "Compre armarios de vapor comerciales por inducción en China",
+    "intro": "Compare los modelos de una y dos puertas por potencia, alimentación eléctrica y espacio de instalación. Confirme la cantidad de bandejas y las conexiones de agua del modelo elegido.",
+    "doors": ["Armario de una puerta", "Armario de dos puertas"],
+    "choose": "Comparar modelos",
+    "trays": ["Cantidad de bandejas", "Por confirmar"],
+    "installation": "Comprobaciones de instalación",
+    "checks": [
+      ["Alimentación eléctrica", "Ambos modelos indican 380 V · 50 Hz. Confirme la opción de potencia, las fases, el circuito y el cableado de la unidad solicitada."],
+      ["Entrada de agua", "Confirme con el proveedor el tipo y la ubicación de la conexión, la presión requerida y el tratamiento del agua."],
+      ["Desagüe", "Confirme el tamaño y la ubicación de la salida, el punto de desagüe y el acceso para la limpieza."],
+      ["Bandejas y espacio libre", "Confirme la cantidad, las dimensiones y las bandejas incluidas. Compruebe el espacio para abrir las puertas y realizar el mantenimiento."]
+    ]
+  },
+  "ar": {
+    "label": "خزائن طهي تجارية بالبخار تعمل بالحث",
+    "heading": "توريد خزائن طهي تجارية بالبخار تعمل بالحث من الصين",
+    "intro": "قارن بين الخزائن ذات الباب الواحد والبابين حسب القدرة والتغذية الكهربائية ومساحة التركيب. تحقق من عدد الصواني ووصلات المياه للطراز المختار.",
+    "doors": ["خزانة بباب واحد", "خزانة ببابين"],
+    "choose": "مقارنة الطرازات",
+    "trays": ["عدد الصواني", "يُؤكَّد عند الطلب"],
+    "installation": "متطلبات التركيب",
+    "checks": [
+      ["التغذية الكهربائية", "المواصفة المدرجة للطرازين هي 380 فولت و50 هرتز. أكد خيار القدرة وعدد الأطوار والدائرة والتوصيلات للوحدة المطلوبة."],
+      ["مدخل المياه", "أكد مع المورد مواصفات وصلة المدخل وموقعها وضغط المياه المطلوب وحاجتها إلى المعالجة."],
+      ["الصرف", "تحقق من مقاس مخرج الصرف وموقعه، وحدد نقطة التصريف في الموقع واترك مساحة للتنظيف."],
+      ["الصواني والمساحة", "أكد عدد الصواني ومقاساتها وما يشمله الطلب. تحقق من مساحة فتح الأبواب والوصول للصيانة."]
+    ]
+  },
+  "ru": {
+    "label": "Профессиональные индукционные паровые шкафы",
+    "heading": "Профессиональные индукционные паровые шкафы из Китая",
+    "intro": "Для закупки сравните одно- и двухдверные модели по мощности, электропитанию и месту установки. Уточните число поддонов и подключение воды для выбранной модели.",
+    "doors": ["Однодверный шкаф", "Двухдверный шкаф"],
+    "choose": "Сравнить модели",
+    "trays": ["Число поддонов", "Уточняется"],
+    "installation": "Проверка перед монтажом",
+    "checks": [
+      ["Электропитание", "Для обеих моделей указано 380 В · 50 Гц. Уточните выбранную мощность, число фаз, цепь и схему подключения."],
+      ["Подача воды", "Уточните у поставщика тип и расположение входного соединения, необходимое давление и требования к водоподготовке."],
+      ["Слив", "Уточните размер и расположение выхода, точку слива на объекте и доступ для очистки."],
+      ["Поддоны и зазоры", "Уточните число, размеры и комплектацию поддонов. Проверьте место для открывания дверей и обслуживания."]
+    ]
+  },
+  "fr": {
+    "label": "Armoires de cuisson vapeur professionnelles à induction",
+    "heading": "Achetez des armoires vapeur professionnelles à induction en Chine",
+    "intro": "Comparez les modèles à une ou deux portes selon la puissance, l’alimentation et l’espace disponible. Confirmez le nombre de plateaux et les raccordements d’eau du modèle retenu.",
+    "doors": ["Armoire à une porte", "Armoire à deux portes"],
+    "choose": "Comparer les modèles",
+    "trays": ["Nombre de plateaux", "À confirmer"],
+    "installation": "Vérifications avant installation",
+    "checks": [
+      ["Alimentation électrique", "Les deux modèles indiquent 380 V · 50 Hz. Confirmez la puissance choisie, le nombre de phases, le circuit et le câblage."],
+      ["Arrivée d’eau", "Confirmez avec le fournisseur le raccord et son emplacement, la pression requise et le traitement éventuel de l’eau."],
+      ["Évacuation", "Vérifiez la taille et la position de la sortie, le point d’évacuation sur place et l’accès pour le nettoyage."],
+      ["Plateaux et dégagement", "Confirmez le nombre, les dimensions et les plateaux fournis. Vérifiez le dégagement pour ouvrir les portes et assurer l’entretien."]
+    ]
+  },
+  "pt": {
+    "label": "Armários comerciais de cocção a vapor por indução",
+    "heading": "Compre armários comerciais de cocção a vapor por indução na China",
+    "intro": "Compare os modelos de uma e duas portas por potência, alimentação elétrica e espaço de instalação. Confirme a quantidade de bandejas e as conexões de água do modelo escolhido.",
+    "doors": ["Armário de uma porta", "Armário de duas portas"],
+    "choose": "Comparar modelos",
+    "trays": ["Quantidade de bandejas", "A confirmar"],
+    "installation": "Verificações antes da instalação",
+    "checks": [
+      ["Alimentação elétrica", "Os dois modelos indicam 380 V · 50 Hz. Confirme a opção de potência, as fases, o circuito e a ligação elétrica do equipamento."],
+      ["Entrada de água", "Confirme com o fornecedor o tipo e a localização da conexão, a pressão necessária e o tratamento da água."],
+      ["Drenagem", "Verifique o tamanho e a posição da saída, o ponto de drenagem no local e o acesso para limpeza."],
+      ["Bandejas e espaço livre", "Confirme a quantidade, as dimensões e as bandejas inclusas. Verifique o espaço para abertura das portas e manutenção."]
+    ]
+  },
+  "tr": {
+    "label": "Ticari indüksiyonlu buharlı pişirme dolapları",
+    "heading": "Çin’den ticari indüksiyonlu buharlı pişirme dolabı tedariki",
+    "intro": "Tek ve çift kapılı modelleri güç, elektrik beslemesi ve kurulum alanına göre karşılaştırın. Seçilen modelin tepsi sayısını ve su bağlantılarını teyit edin.",
+    "doors": ["Tek kapılı dolap", "Çift kapılı dolap"],
+    "choose": "Modelleri karşılaştırın",
+    "trays": ["Tepsi sayısı", "Teyit edilecek"],
+    "installation": "Kurulum öncesi kontroller",
+    "checks": [
+      ["Elektrik beslemesi", "Her iki model için 380 V · 50 Hz belirtilir. Sipariş edilen cihazın güç seçeneğini, faz sayısını, devresini ve bağlantısını teyit edin."],
+      ["Su girişi", "Giriş bağlantısını ve yerini, gerekli su basıncını ve su arıtma ihtiyacını tedarikçiyle teyit edin."],
+      ["Tahliye", "Çıkış ölçüsünü, yerini ve sahadaki tahliye noktasını kontrol edin. Temizlik için erişim bırakın."],
+      ["Tepsi ve boşluk", "Tepsi sayısını, boyutlarını ve pakete dahil olanları teyit edin. Kapı açılımı ve servis alanını kontrol edin."]
+    ]
+  }
+}

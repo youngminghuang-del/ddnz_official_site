@@ -1,3 +1,4 @@
+import { steamCabinetPages } from "./features/commercial-kitchen/data/steamCabinetPage.mjs";
 import { inductionPages, zhHotCookingPage } from './features/commercial-kitchen/data/inductionPage.mjs';
 import {isNewMarket} from './features/freight/new-markets/model';
 import './features/freight/market-preparation.css';
@@ -480,7 +481,7 @@ export default function App() {
             {Object.values(navigationPrefixes).filter(Boolean).flatMap(prefix=>[kitchenPackagePath,...kitchenPackageScenarioPaths].map(path=><Route key={prefix+path} path={prefix+path} element={<LocalizedPackagePage/>}/>))}
             <Route path={kitchenPackagePath} element={<RestaurantKitchenPackages />} />
             <Route path={`${kitchenPackagePath}/:scenarioSlug`} element={<RestaurantKitchenScenario />} />
-            {[...inductionPages, zhHotCookingPage].map(page => <Route key={page.path} path={page.path} element={<InductionCookingPage/>}/>)}
+            {[...inductionPages, ...steamCabinetPages, zhHotCookingPage].map(page => <Route key={page.path} path={page.path} element={<InductionCookingPage/>}/>)}
             {kitchenCategoryPaths.flatMap(path => Object.values(navigationPrefixes).map(prefix=><Route key={prefix+path} path={prefix+path} element={prefix?<LocalizedCategoryPage/>:<KitchenCategoryPage/>}/>))}
             {Object.values(navigationPrefixes).filter(Boolean).map(prefix=><Route key={prefix+'audio'} path={prefix+'/sourcing/audio-speakers-from-china'} element={<LocalizedAudioPage/>}/>)}
             {Object.values(navigationPrefixes).map(prefix=><Route key={prefix+'coffee'} path={prefix+coffeePath} element={<CoffeePage/>}/>)}

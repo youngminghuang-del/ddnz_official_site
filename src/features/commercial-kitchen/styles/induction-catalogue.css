@@ -85,3 +85,8 @@
   .ddnz-kitchen.induction-page .induction-intro-section { grid-template-columns: 1fr; }
   .induction-site-checks { grid-template-columns: 1fr; }
 }
+
+@media (min-width: 761px) {
+  .steam-cabinet-page .induction-site-checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.ddnz-kitchen.steam-cabinet-page :is(.induction-use-section, #steam-cabinets) { padding-block: 2rem; }

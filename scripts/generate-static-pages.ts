@@ -42,6 +42,10 @@ import InductionCookingContent, { type InductionLocale } from '../src/features/c
 import ChineseCookingContent from '../src/features/commercial-kitchen/ChineseCookingContent';
 import { hotCookingPath } from '../src/features/commercial-kitchen/routes.mjs';
 import { inductionPage, getInductionPage, inductionPageSchema, zhHotCookingPage, chineseCookingSchema } from '../src/features/commercial-kitchen/data/inductionPage.mjs';
+import SteamCabinetContent from '../src/features/commercial-kitchen/SteamCabinetContent';
+import { getSteamCabinetPage, steamCabinetSchema } from '../src/features/commercial-kitchen/data/steamCabinetPage.mjs';
+import { steamCabinetPath } from '../src/features/commercial-kitchen/routes.mjs';
+const steamCabinetRelPath = steamCabinetPath.slice(1);
 const inductionRelPath = inductionPage.path.slice(1, -1);
 const hotCookingRelPath = hotCookingPath.slice(1);
 import RefrigerationModelCatalogue from '../src/features/refrigeration/RefrigerationModelCatalogue';
@@ -1789,13 +1793,15 @@ function injectStaticRouteContent(
       renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',
         alt:'Commercial kitchen application',scene:true,items:kitchenHeroItems})));
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
-  } else if (relPath === inductionRelPath || relPath === hotCookingRelPath) {
+  } else if (relPath === inductionRelPath || relPath === hotCookingRelPath || relPath === steamCabinetRelPath) {
     const hotCooking = relPath === hotCookingRelPath;
+    const steamCabinet = relPath === steamCabinetRelPath;
     const locale = (lang === 'zh-cn' ? 'zh' : lang) as InductionLocale;
     staticBody = hotCooking
       ? renderToStaticMarkup(createElement(ChineseCookingContent, { page: zhHotCookingPage }))
-      : renderToStaticMarkup(createElement(InductionCookingContent, { locale }));
-    const schema = JSON.stringify(hotCooking ? chineseCookingSchema(zhHotCookingPage) : inductionPageSchema(locale)).replace(/</g, '\\u003c');
+      : steamCabinet ? renderToStaticMarkup(createElement(SteamCabinetContent, { locale }))
+        : renderToStaticMarkup(createElement(InductionCookingContent, { locale }));
+    const schema = JSON.stringify(hotCooking ? chineseCookingSchema(zhHotCookingPage) : steamCabinet ? steamCabinetSchema(locale) : inductionPageSchema(locale)).replace(/</g, '\\u003c');
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g, '');
     htmlContent = htmlContent.replace('</head>', `<script id="schema-jsonld-static-page" type="application/ld+json">${schema}</script></head>`);
   } else if (kitchenCategories.some(category => category.path === `/${relPath}/`)) {
@@ -1958,6 +1964,7 @@ function run() {
     ...mobilePages.map(page => ({path:page.path.slice(1),priority:'0.9',changefreq:'monthly',languages:[...overviewLanguages]})),
     ...['screen-protectors','screen-protectors/compare'].map(path => ({ path, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages.filter(l=>l!=='en') })),
     ...buyerGuides.map(guide => ({ path: guide.path.slice(1), priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
+    { path: steamCabinetRelPath, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages },
     { path: inductionRelPath, priority: '0.8', changefreq: 'monthly', languages: overviewLanguages },
     { path: hotCookingRelPath, priority: '0.8', changefreq: 'monthly', languages: ['zh-cn'] },
     ...kitchenCategories.map(category => ({ path: category.path.replace(/^\/|\/$/g, ''), priority: '0.8', changefreq: 'monthly', languages: overviewLanguages })),
@@ -2081,8 +2088,8 @@ function run() {
         const meta = buyerMeta(buyerGuide, lang);
         seo = { title: meta.title, desc: meta.description, keywords: '', image: meta.image };
       }
-      if (entry.path === inductionRelPath || entry.path === hotCookingRelPath) {
-        const page = entry.path === hotCookingRelPath ? zhHotCookingPage : getInductionPage(lang);
+      if (entry.path === inductionRelPath || entry.path === hotCookingRelPath || entry.path === steamCabinetRelPath) {
+        const page = entry.path === hotCookingRelPath ? zhHotCookingPage : entry.path === steamCabinetRelPath ? getSteamCabinetPage(lang) : getInductionPage(lang);
         seo = { title: page.title, desc: page.description, keywords: '', image: page.image };
       }
       const equipmentCategory = kitchenCategories.find(category => category.path === `/${entry.path}/`);

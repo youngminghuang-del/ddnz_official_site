@@ -29,3 +29,5 @@ export function canonicalKitchenHash(hash) {
 
 export const inductionCookingPath = '/sourcing/commercial-induction-cooking-equipment-from-china';
 export const hotCookingPath = '/sourcing/commercial-hot-cooking-equipment-from-china';
+
+export const steamCabinetPath = '/sourcing/commercial-induction-steam-cabinets-from-china';
