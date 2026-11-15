@@ -3,11 +3,14 @@ import InductionCatalogue from './components/InductionCatalogue';
 import { KITCHEN_PATH } from './data/discovery.mjs';
 import { inductionGroups, zhHotCookingPage } from './data/inductionPage.mjs';
 import { localizedProductPath } from '../../lib/productLocalization.mjs';
+import catalogueCopy from './locales/planning/induction-catalogue.json';
 import copy from './locales/planning/induction-use.json';
 
 export type InductionLocale = keyof typeof copy;
 
 const [single, multi, large] = inductionGroups;
+const sixZoneModelIndex = 1;
+const heroModel = multi.models[sixZoneModelIndex];
 const useEntries = [
   ...single.models.map(model => ({ anchor: 'model-' + model.id, image: model.image })),
   { anchor: multi.anchor, image: multi.models[0].image },
@@ -33,12 +36,19 @@ export default function InductionCookingContent({ locale = 'en', onAdd, count = 
       <li aria-current="page">{current}</li>
     </ol></nav>
     <section className="section wrap induction-intro-section">
-      <h1>{text.heading}</h1>
-      <p>{text.intro}</p>
-      <div className="induction-page-actions">
-        <a className="button primary" href="#induction-uses">{text.choose} ↓</a>
-        <a className="text-link" href="#induction-installation">{text.install} ↓</a>
+      <div className="induction-intro-copy">
+        <h1>{text.heading}</h1>
+        <p>{text.intro}</p>
+        <div className="induction-page-actions">
+          <a className="button primary" href="#induction-uses">{text.choose} ↓</a>
+          <a className="text-link" href="#induction-installation">{text.install} ↓</a>
+        </div>
       </div>
+      <figure className="induction-hero-photo">
+        <img src={heroModel.image} alt={catalogueCopy[locale].multiNames[sixZoneModelIndex]}
+          width="1536" height="1024" fetchPriority="high" />
+        <figcaption><bdi>{heroModel.model}</bdi></figcaption>
+      </figure>
     </section>
     <SharedKitchenListBar locale={locale} count={count} status={status}/>
     <section className="section wrap induction-use-section" id="induction-uses" aria-labelledby="induction-uses-title">

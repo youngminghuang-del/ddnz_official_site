@@ -13,6 +13,38 @@
 }
 .cold-model-copy .shared-kitchen-add { margin-inline-end: 0.6rem; margin-bottom: 0.4rem; }
 
+.ddnz-kitchen.induction-page .induction-intro-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding-block: clamp(1.5rem, 4.5vw, 4.25rem);
+}
+.ddnz-kitchen.induction-page .induction-intro-copy h1 {
+  margin-block-start: 0;
+  font-size: clamp(1.95rem, 4vw, 3.5rem);
+  overflow-wrap: anywhere;
+}
+.induction-hero-photo {
+  margin: 0;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-media-radius);
+  overflow: hidden;
+  background: var(--ddnz-surface-raised);
+}
+.induction-hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.induction-hero-photo figcaption {
+  border-block-start: 1px solid var(--ddnz-brand-line);
+  padding: 0.625rem 1rem;
+  color: #52627a;
+  font-size: 0.8125rem;
+  font-weight: 650;
+}
+
 .induction-page .induction-use-nav {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
@@ -50,5 +82,6 @@
   .induction-catalogue .induction-metrics-total { grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 760px) {
+  .ddnz-kitchen.induction-page .induction-intro-section { grid-template-columns: 1fr; }
   .induction-site-checks { grid-template-columns: 1fr; }
 }
