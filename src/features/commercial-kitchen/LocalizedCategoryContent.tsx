@@ -1,11 +1,10 @@
+import IceSelectionGuide from './components/IceSelectionGuide';
 import griddleCopy from './locales/planning/griddle-thickness.json';
 import FryerTypeNavigation from './components/FryerTypeNavigation';
 import fryerTypeCopy from './locales/planning/fryer-types.json';
 import { SharedKitchenListBar, sharedKitchenListHref, useSharedKitchenList } from './components/SharedKitchenList';
 import { purchaseFlow } from './locales/purchase-flow.mjs';
 import configurationCopy from './locales/planning/configuration.json';
-import sdCopy from './locales/sd-series.json';
-import iceShapeCopy from './locales/ice-use-series.json';
 import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
 import IceUseSeries from './components/IceUseSeries';
 import SdIceSeries from './components/SdIceSeries';
@@ -54,11 +53,11 @@ export default function LocalizedCategoryContent({category,locale}:{category:any
  const renderModel = (p: typeof hero) => <article className="category-model" id={`model-${p.id}`} key={p.id}>{i===0?<IceModelPhoto src={p.image} alt={`${p.model} · ${c.titles[i]}`} model={p.model} locale={locale}/>:(<div className="category-model-photo"><img src={p.image} alt={`${p.model} · ${c.titles[i]}`} width="1200" height="900" loading="lazy"/></div>)}<div className="category-model-copy"><ModelHeading><bdi>{p.model}</bdi></ModelHeading><strong className="category-model-metric" dir="ltr">{p.metric}</strong><dl>{category.comparisonKeys.filter((k:string)=>p.specs[k]).map((k:string)=><div key={k}><dt>{keys[k] || kitchenCopy(locale).specLabels[k]}</dt><dd>{p.specs[k]==='Flat'?c.ui.flat:<bdi>{localSpecValue(p.specs[k],locale)}</bdi>}</dd></div>)}<div><dt>{u.size}</dt><dd><bdi>{p.dimensions}</bdi></dd></div></dl><IceModelDetails id={p.id} locale={locale}/>{renderCatalogueActions(p)}</div></article>;
  return <main id="main-content" className="ddnz-kitchen kitchen-category kitchen-brand category-brand" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}>
  <nav className="kitchen-breadcrumb wrap" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a></nav>
- <section className="category-hero wrap"><div><p className="eyebrow">{o.ui.services}</p><h1>{c.titles[i]}</h1><p className="hero-description">{c.intros[i]}</p><div className="actions"><a className="button primary" href="#category-models">{u.compare}</a><a className="text-link" href="#category-buying">{u.scope}</a></div>{i===0&&<GulfIceEntry locale={locale}/>}</div><figure className="category-hero-photo"><img src={hero.image} alt={`${hero.model} · ${c.titles[i]}`} width="1200" height="900"/><figcaption><strong dir="ltr">{category.statistic}</strong><span>{i===0?c.ui.output:i===1?c.ui.volume:c.ui.plate}</span></figcaption></figure></section>
+ <section className="category-hero wrap"><div><p className="eyebrow">{o.ui.services}</p><h1>{c.titles[i]}</h1><p className="hero-description">{c.intros[i]}</p><div className="actions"><a className="button primary" href="#category-models">{u.compare}</a><a className="text-link" href={i===0?"#ice-installation-check":"#category-buying"}>{u.scope}</a></div>{i===0&&<GulfIceEntry locale={locale}/>}</div><figure className="category-hero-photo"><img src={hero.image} alt={`${hero.model} · ${c.titles[i]}`} width="1200" height="900"/><figcaption><strong dir="ltr">{category.statistic}</strong><span>{i===0?c.ui.output:i===1?c.ui.volume:c.ui.plate}</span></figcaption></figure></section>
  <nav className="category-navigation wrap" aria-label={u.related}>{kitchenCategories.map((cat,index)=><a key={cat.id} href={`${prefix}${cat.path}`} aria-current={index===i?'page':undefined}>{c.titles[index]}</a>)}</nav>
  <SharedKitchenListBar locale={locale} count={sharedList.count} status={sharedList.status}/>
- <section id="category-models" className="section wrap"><h2>{isFryer ? fryerTypeCopy[locale].title : isGriddle ? griddleCopy[locale][0] : u.compare}</h2>
- {i===0&&<nav className="ice-use-nav" aria-label={u.compare}><a href="#hzb-series">HZB ↓</a><a href="#sd-series">{sdCopy[locale].heading} ↓</a><a href="#ice-shapes">{iceShapeCopy[locale].heading} ↓</a></nav>}
+ <section id="category-models" className="section wrap">
+ {i===0 ? <IceSelectionGuide products={products} locale={locale}/> : <h2>{isFryer ? fryerTypeCopy[locale].title : isGriddle ? griddleCopy[locale][0] : u.compare}</h2>}
  {isFryer ? <>
    <FryerTypeNavigation category={category} locale={locale}/>
    <CookingModelSelection category={category} locale={locale} onAdd={id=>amount(id,(selection[id]||0)+1)} featuredCards={{

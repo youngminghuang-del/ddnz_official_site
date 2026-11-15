@@ -249,3 +249,64 @@
   .griddle-comparison :is(th, td) { padding: 8px; }
   .griddle-model-name { display: grid; gap: 4px; }
 }
+
+.ice-selection-nav {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-block: 18px;
+}
+.ice-selection-nav a {
+  display: grid;
+  grid-template-columns: 70px minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  color: inherit;
+  background: var(--ddnz-surface-raised);
+}
+.ice-selection-nav a:hover { background: var(--ddnz-surface-soft); }
+.ice-selection-nav img { width: 100%; height: 66px; object-fit: contain; }
+.ice-selection-nav strong { display: block; color: #602986; }
+.ice-selection-nav a > span > span { display: block; margin-block-start: 4px; font-size: 14px; }
+.ice-selection-note { max-width: 840px; margin-block: 18px; }
+.ice-selection-tables {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 14px 18px;
+  margin-block: 20px 24px;
+}
+.ice-type-group { min-width: 0; }
+.ice-type-group:first-child { grid-row: span 3; }
+.ice-type-group h3 { font-size: 21px; margin-block-end: 8px; }
+.ice-type-group table { width: 100%; border-collapse: collapse; background: var(--ddnz-surface-raised); }
+.ice-type-group :is(th, td) {
+  padding: 9px 10px;
+  border: 1px solid var(--ddnz-brand-line);
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+.ice-type-group thead { background: var(--ddnz-surface-soft); }
+.ice-type-group a { color: #602986; text-decoration: underline; text-underline-offset: 3px; }
+.ice-selection-installation {
+  padding: 18px;
+  margin-block: 22px 32px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+}
+.ice-selection-installation h3 { font-size: 22px; margin-block-end: 8px; }
+.ice-selection-installation > div { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.ice-selection-installation h4 { font-weight: 700; margin-block-end: 5px; }
+.ice-selection-installation a { display: inline-block; margin-block-start: 12px; }
+@media (max-width: 1120px) {
+  .ice-selection-nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 760px) {
+  .ice-selection-nav, .ice-selection-tables, .ice-selection-installation > div { grid-template-columns: 1fr; }
+  .ice-type-group:first-child { grid-row: auto; }
+  .ice-type-group :is(th, td) { padding: 8px 6px; }
+}
