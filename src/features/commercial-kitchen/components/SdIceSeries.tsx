@@ -1,12 +1,8 @@
+import {sdIceModels} from '../data/sdIceModels.mjs';
 import {IceModelPhoto} from './IceModelDetails';
 import copies from '../locales/sd-series.json';
 import {supplyPositioning} from '../../product-positioning/ProductSupply';
 import {buildQuoteHref} from '../../../lib/quoteLinks';
-const models=[
- {model:'SD-50F',output:'25 kg / 24h',storage:'20 kg',power:'300 W',size:'530 × 620 × 750/800 mm'},
- {model:'SD-80F',output:'36 kg / 24h',storage:'20 kg',power:'380 W',size:'530 × 620 × 750/800 mm'},
- {model:'SD-120F',output:'54 kg / 24h',storage:'20 kg',power:'412 W',size:'530 × 620 × 780/800 mm'},
-];
 export default function SdIceSeries({locale='en',inCatalogue=false}:{locale?:keyof typeof copies;inCatalogue?:boolean}){
  const c=copies[locale];
  const heading=inCatalogue && locale==='en' ? 'SD cube ice machines' : c.heading;
@@ -19,7 +15,7 @@ export default function SdIceSeries({locale='en',inCatalogue=false}:{locale?:key
      <div><h2 id="sd-series-heading">{heading}</h2><p>{c.intro}</p></div>
      {photo}
    </div>
-   <div className="sd-model-grid">{models.map(p=><article id={`model-${p.model.toLowerCase()}`} key={p.model}>
+   <div className="sd-model-grid">{sdIceModels.map(p=><article id={`model-${p.model.toLowerCase()}`} key={p.model}>
      <h3><bdi>{p.model}</bdi></h3>
      <dl>{(['output','storage','power','size'] as const).map(key=><div key={key}><dt>{c[key]}</dt><dd><bdi>{p[key]}</bdi></dd></div>)}</dl>
      <a className="button primary" href={buildQuoteHref({

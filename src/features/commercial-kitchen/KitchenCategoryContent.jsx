@@ -1,3 +1,4 @@
+import IceSelectionGuide from './components/IceSelectionGuide';
 import griddleCopy from './locales/planning/griddle-thickness.json';
 import FryerTypeNavigation from './components/FryerTypeNavigation';
 import fryerTypeCopy from './locales/planning/fryer-types.json';
@@ -43,17 +44,13 @@ export default function KitchenCategoryContent({ category, homeHref = '/', onTra
     <a className="skip" href="#category-models">Skip to models</a>
     <nav className="kitchen-breadcrumb wrap" aria-label="Breadcrumb"><ol><li><a href={homeHref}>Home</a></li><li><a href="/products/">Products</a></li><li><a href={KITCHEN_PATH}>Commercial kitchen</a></li><li aria-current="page">{category.label}</li></ol></nav>
     <section className="category-hero wrap">
-      <div><p className="eyebrow">CHINA SOURCING · FOR IMPORTERS &amp; DISTRIBUTORS</p><h1>{category.heading}<br/><em>{category.emphasis}</em></h1><p className="hero-description">{category.intro}</p><div className="actions"><a className="button primary" href="#category-models" data-category-action="compare_models">Compare the models <span aria-hidden="true">↓</span></a><a className="text-link" href="#category-buying">What to check before buying <span aria-hidden="true">→</span></a></div><p className="category-market-note">{category.id === 'ice-machines' ? <a href={`${KITCHEN_PATH}#commercial-kitchen-gulf`}>Buying for Saudi Arabia or the Gulf? Plan the site and shipment →</a> : 'Sourcing for the UAE, Singapore, Mexico and other destinations.'}</p></div>
+      <div><p className="eyebrow">CHINA SOURCING · FOR IMPORTERS &amp; DISTRIBUTORS</p><h1>{category.heading}<br/><em>{category.emphasis}</em></h1><p className="hero-description">{category.intro}</p><div className="actions"><a className="button primary" href="#category-models" data-category-action="compare_models">Compare the models <span aria-hidden="true">↓</span></a><a className="text-link" href={isIce ? "#ice-installation-check" : "#category-buying"}>What to check before buying <span aria-hidden="true">→</span></a></div><p className="category-market-note">{category.id === 'ice-machines' ? <a href={`${KITCHEN_PATH}#commercial-kitchen-gulf`}>Buying for Saudi Arabia or the Gulf? Plan the site and shipment →</a> : 'Sourcing for the UAE, Singapore, Mexico and other destinations.'}</p></div>
       <figure className="category-hero-photo"><img src={hero.image} srcSet={`${hero.imageSmall} 600w, ${hero.image} 1200w`} sizes="(max-width: 760px) calc(100vw - 36px), 46vw" alt={`${hero.model} ${hero.name}`} width="1200" height="900" fetchPriority="high"/><figcaption><strong>{category.statistic}</strong><span>{category.statisticLabel}</span></figcaption></figure>
     </section>
     <nav className="category-navigation wrap" aria-label="Commercial kitchen categories">{kitchenCategories.map(item => <a key={item.id} href={item.path} aria-current={item.id === category.id ? 'page' : undefined}>{item.label}</a>)}<a href="/refrigeration-equipment/">Refrigeration</a><a href={KITCHEN_PATH}>All equipment <span aria-hidden="true">↗</span></a></nav>
     <SharedKitchenListBar count={sharedList.count} status={sharedList.status}/>
-    <section id="category-models" className="section wrap"><div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{isFryer ? fryerTypeCopy.en.title : isGriddle ? griddleCopy.en[0] : category.comparisonTitle}</h2></div>{!isFryer&&<p>{category.comparisonCopy}</p>}</div>
-      {isIce && <nav className="ice-use-nav" aria-label="Browse ice machines by series or ice shape">
-        <a href="#hzb-series">HZB cube ice</a>
-        <a href="#sd-series">SD cube ice</a>
-        <a href="#ice-shapes">Crescent &amp; granular ice and split systems</a>
-      </nav>}
+    <section id="category-models" className="section wrap">{!isIce&&<div className="section-heading"><div><p className="eyebrow">COMPARE THE RANGE</p><h2>{isFryer ? fryerTypeCopy.en.title : isGriddle ? griddleCopy.en[0] : category.comparisonTitle}</h2></div>{!isFryer&&<p>{category.comparisonCopy}</p>}</div>}
+      {isIce&&<IceSelectionGuide products={products}/>}
       {isFryer ? <>
         <FryerTypeNavigation category={category} />
         <CookingModelSelection category={category} featuredCards={{
