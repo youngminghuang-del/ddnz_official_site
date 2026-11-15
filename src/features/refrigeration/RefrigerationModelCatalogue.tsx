@@ -27,8 +27,13 @@ function ModelOptions({ kind, locale }: {kind: keyof typeof alternatives; locale
    if (!model) return null;
    const name = locale==='en' ? model.name : kitchenCopy(locale).names[model.name];
    return <li key={id}>
-    <a href={foodPrefix(locale) + kitchenModelHref(id)}><bdi>{model.model}</bdi><span aria-hidden="true"> ↗</span></a>
-    <p className="cold-option-name">{name}</p>
+    <a className="cold-option-model" href={foodPrefix(locale) + kitchenModelHref(id)}>
+     <img src={model.image} alt="" width="88" height="72" loading="lazy" decoding="async"/>
+     <span>
+      <bdi>{model.model}</bdi><span aria-hidden="true"> ↗</span>
+      <span className="cold-option-name">{name}</span>
+     </span>
+    </a>
     <dl>
      <div><dt>{c.capacity}</dt><dd><bdi>{model.specs.Capacity}</bdi></dd></div>
      <div><dt>{c.temperature}</dt><dd><bdi>{model.specs.Temperature.replace(' to ', ' – ')}</bdi></dd></div>

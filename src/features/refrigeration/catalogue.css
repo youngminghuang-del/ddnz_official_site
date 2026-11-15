@@ -47,3 +47,39 @@
 }
 .cold-option-name { margin: 0 0 8px; color: #52627a; font-size: 14px; }
 .refrigeration-page .cold-models { padding-inline: clamp(16px, 3vw, 24px); }
+
+.cold-options li .cold-option-model {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  text-decoration: none;
+}
+.cold-option-model bdi { text-decoration: underline; }
+.cold-option-model img {
+  flex: 0 0 auto;
+  width: 88px;
+  height: 72px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: white;
+}
+.cold-option-model .cold-option-name {
+  display: block;
+  margin: 3px 0 0;
+  font-weight: 400;
+}
+.cold-guide-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+}
+.cold-guide-illustration {
+  display: block;
+  width: clamp(58px, 7vw, 88px);
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 8px;
+}
