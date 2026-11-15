@@ -1,5 +1,5 @@
 import StandingGrinderCatalogue,{StandingGrinderRequest} from './StandingGrinderCatalogue';
-import {grinderEligible,cleanGrinderSelection,standingGrinderTotals,combinedFoodInquiry,grinderCopy} from './standingGrinders';
+import {grinderEligible,cleanGrinderSelection,standingGrinderTotals,combinedFoodInquiry,grinderCopy,standingGrinders,grinderImageFor} from './standingGrinders';
 import CatalogueHeroMedia from '../../components/catalogue-hero/CatalogueHeroMedia';
 import { FoodModelFacts, FoodModelPhoto } from './FoodModelDetails';
 import { renderLocalizedEntry } from '../buyer-entry/localized.mjs';
@@ -9,8 +9,17 @@ import { categoryPages, categoryPath, packagePath } from './pages.mjs';
 import { foodLocales, foodPrefix, localizedFoodInquiry, type FoodLocale } from './localization';
 import { overviewCopy } from '../overview/copy';
 import { serviceCopy } from '../sourcing-services/copy';
+
+const meatHeroModels = [
+ ['dq-t', 'Cortar'],
+ ['jr-gg22', 'Picar'],
+ ['dj-h18', 'Mezclar'],
+ ['cx-l', 'Formar albóndigas'],
+];
+
 export default function LocalizedFoodContent({page,locale}:{page:any;locale:FoodLocale}) {
  const isSpanishBakery = locale === 'es' && page.category?.slug === 'dough-and-bakery-machinery';
+ const isSpanishMeat = locale === 'es' && page.category?.slug === 'meat-processing-machinery';
  const hero=[machineById.h20,machineById['jr-gg22'],machineById['dq-ps300-copper']];
  const c=foodLocales[locale],u=c.ui,o=overviewCopy[locale],prefix=foodPrefix(locale);
  const [selection,setSelection]=useState<Record<string,number>>(()=>page.bundle?packageSelection(page.bundle):{});
@@ -26,7 +35,20 @@ export default function LocalizedFoodContent({page,locale}:{page:any;locale:Food
  const families=['dough','bakery','meat','vegetables','grain','poultry'];
  const quantity=(id:string,value:number)=>{const q=Math.max(0,Math.min(99,Math.floor(value)||0));setSelection(current=>{const next={...current};if(q)next[id]=q;else delete next[id];return next;});};
  const localLink=(path:string)=>`${prefix}${path}/`;
- const bundleCard=(bundle:any)=>{const i=packages.indexOf(bundle),t=selectionTotals(packageSelection(bundle));return <a className="fp-package-link" key={bundle.id} href={localLink(packagePath(bundle))}><h3>{o.packageNames[i]}</h3><p>{o.packageDescriptions[i]}</p><strong dir="ltr">{money(t.equipment)}</strong><span>{u.equipment}</span><p>{u.packing}: <bdi>{money(t.packing)}</bdi></p></a>;};
+ const bundleCard=(bundle:any)=>{
+  const i=packages.indexOf(bundle),t=selectionTotals(packageSelection(bundle));
+  return <a className="fp-package-link" key={bundle.id} href={localLink(packagePath(bundle))}>
+   <h3>{o.packageNames[i]}</h3><p>{o.packageDescriptions[i]}</p>
+   {isSpanishMeat&&<ul className="fp-meat-bundle-models" aria-label="Modelos del conjunto">
+    {bundle.items.map((id:string)=>{
+     const model=machineById[id];
+     return <li key={id}><img src={'/food-processing-media/'+model.image+'.webp'} alt={c.names[machines.indexOf(model)]} width="627" height="627" loading="lazy" decoding="async"/><span>{model.model}</span></li>;
+    })}
+   </ul>}
+   <strong dir="ltr">{money(t.equipment)}</strong><span>{u.equipment}</span><p>{u.packing}: <bdi>{money(t.packing)}</bdi></p>
+   {isSpanishMeat&&<span className="fp-meat-bundle-cta">Ver el conjunto <span aria-hidden="true">↗</span></span>}
+  </a>;
+ };
  return <main id="main-content" className="fp-page" lang={locale==='zh'?'zh-CN':locale} dir={locale==='ar'?'rtl':'ltr'}><div className="fp-wrap">
  <nav className="fp-breadcrumb" aria-label={u.products}><a href={`${prefix}/products/`}>{u.products}</a><span>/</span><a href={localLink(foodProcessingPath)}>{u.catalogueTitle}</a></nav>
  <section className={'fp-hero'+(page.kind==='hub'?' catalogue-hero':'')}><div><p className="fp-overline">{u.source}</p><h1>{page.title}</h1><p className="fp-lead">{page.intro}</p><div className="fp-actions"><a className="fp-primary" href="#equipment">{u.compare}</a><a className="fp-secondary" href="#your-list">{u.list}</a></div></div>{page.kind==='hub'?<CatalogueHeroMedia onNavigate={()=>setFamily('all')} src={'/food-processing-media/'+hero[0].image+'.webp'} alt={hero[0].model} label={hero[0].model} language={locale} items={hero.map(m=>({src:'/food-processing-media/'+m.image+'.webp',label:m.model,href:'#machine-'+m.id}))}/>:isSpanishBakery ? (
@@ -48,12 +70,25 @@ export default function LocalizedFoodContent({page,locale}:{page:any;locale:Food
        );
      })}
    </div>
+ ):isSpanishMeat ? (
+   <div className="fp-meat-hero-media">
+     <div className="fp-meat-hero-grid" aria-label="Equipos por operación">
+       {meatHeroModels.map(([id, operation]) => {
+         const model = machineById[id];
+         return <a key={id} href={'#machine-'+id} className="fp-meat-hero-card">
+           <img src={'/food-processing-media/'+model.image+'.webp'} alt={c.names[machines.indexOf(model)]} width="627" height="627" decoding="async"/>
+           <span><strong>{operation}</strong><small>{model.model}</small><span aria-hidden="true">↓</span></span>
+         </a>;
+       })}
+     </div>
+     <p className="fp-meat-image-note">{u.imageNote}</p>
+   </div>
  ):<div className="fp-hero-media"><div className="fp-machine-stage">{page.machines.slice(0,3).map((m:any)=><img key={m.id} src={`/food-processing-media/${m.image}.webp`} alt={`${c.names[machines.indexOf(m)]} ${m.model}`} width="500" height="500"/>)}</div><p>{u.imageNote}</p></div>}</section>
  {page.category?.slug==='vegetable-processing-machinery'&&<div dangerouslySetInnerHTML={{__html:renderLocalizedEntry('vegetables',locale)}}/>}
  <p className="fp-price-note">{o.priceNote}</p>
  {page.kind==='hub'&&<section className="fp-section"><h2>{u.catalogueTitle}</h2><div className="fp-family-grid">{categoryPages.map((category,i)=><a key={category.slug} href={localLink(categoryPath(category))}><h3>{c.categories[i][0]}</h3><p>{c.categories[i][1]}</p></a>)}</div></section>}
  {page.bundle&&<section className="fp-section fp-workflow"><h2>{u.scope}</h2><p>{c.scopes[page.bundleIndex]}</p><p>{u.selectionNote}</p></section>}
- {page.bundles.length>0&&<section id="packages" className="fp-section"><h2>{u.packages}</h2><div className="fp-package-grid">{page.bundles.map(bundleCard)}</div></section>}
+ {page.bundles.length>0&&<section id="packages" className="fp-section"><h2>{u.packages}</h2><div className={'fp-package-grid'+(isSpanishMeat?' fp-meat-bundle-grid':'')}>{page.bundles.map(bundleCard)}</div></section>}
  {grinderEligible(page)&&<p className="fp-standing-entry"><a href="#standing-grinders">{gc.nav} ↓</a></p>}
  {isSpanishBakery && (
    <section className="fp-section" id="cotizacion-panaderia">
@@ -79,6 +114,32 @@ export default function LocalizedFoodContent({page,locale}:{page:any;locale:Food
        })}
      </div>
      <p className="mt-4">Para cotizar, indica el tipo de masa, el tamaño de cada lote, la producción prevista, la alimentación eléctrica disponible y la ciudad y el país de destino.</p>
+   </section>
+ )}
+ {isSpanishMeat && (
+   <section className="fp-section" aria-labelledby="comparar-molinos-compactos">
+     <h2 id="comparar-molinos-compactos">Compara dos molinos compactos para carne</h2>
+     <p className="mt-3">Si solo necesitas moler carne, empieza por estos dos modelos. Para cortar, mezclar o formar albóndigas, revisa los equipos de cada operación en el catálogo.</p>
+     <div className="mt-5 grid gap-4 sm:grid-cols-2">
+       {standingGrinders.filter(model => model.series === 'gl').map(model => (
+         <article key={model.id} className="rounded-xl border border-slate-200 bg-white p-4">
+           <div className="fp-meat-compare-model">
+             <img src={grinderImageFor(model)} alt="Vista de referencia de la serie JR-GL" width="1536" height="1024" fetchPriority="low" decoding="async"/>
+             <div><h3>{model.model}</h3>
+               <p className="mt-2"><strong>{model.output}</strong> de capacidad de referencia · {model.power}</p>
+             </div>
+           </div>
+           <div className="fp-actions">
+             <a className="fp-secondary" href={'#machine-' + model.id}>Ver ficha del {model.model}</a>
+             <a className="fp-primary" href="#your-list" onClick={() => {
+               setGrinders(current => current[model.id] ? current : { ...current, [model.id]: 1 });
+             }}>Añadir {model.model} a mi cotización</a>
+           </div>
+         </article>
+       ))}
+     </div>
+     <p className="fp-meat-image-note">Ambas tarjetas muestran la foto de referencia de la serie JR-GL.</p>
+     <p className="mt-4">Indica el tipo y la temperatura de la carne, los kilos por hora que necesitas, el diámetro de la placa y la alimentación eléctrica del local. Confirma las placas incluidas, la limpieza y la producción real para tu aplicación antes de pedir.</p>
    </section>
  )}
  <section id="equipment" className="fp-section"><div className="fp-section-heading"><h2>{u.compare}</h2><a href="#your-list">{u.list} ({totals.units})</a></div>

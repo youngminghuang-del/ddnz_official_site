@@ -12,3 +12,76 @@
 /* Unquoted standing-grinder configurations share the equipment enquiry, not its price subtotal. */
 .fp-standing-list{display:grid;gap:28px;margin-top:32px}.fp-standing-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;border:1px solid var(--fp-line);border-radius:var(--ddnz-card-radius);background:var(--ddnz-surface-raised);padding:24px}.fp-standing-card figure{min-width:0;margin:0}.fp-standing-card .fp-machine-image{height:340px;padding:0;background:var(--ddnz-surface-raised)}.fp-standing-card .fp-photo-open img{width:100%;max-height:300px}.fp-standing-card figcaption{font-size:12px;line-height:1.6;color:var(--fp-muted);margin:12px 0}.fp-standing-copy{min-width:0}.fp-standing-copy h3{font-size:clamp(24px,3vw,34px);line-height:1.25;margin:12px 0 24px}.fp-standing-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.fp-standing-metrics>div{border-block:1px solid var(--fp-line);padding:16px 0}.fp-standing-card dt{font-size:12px;color:var(--fp-muted);margin-bottom:8px}.fp-standing-card dd{margin:0;font-weight:700;font-size:15px;overflow-wrap:anywhere}.fp-standing-card details{margin:20px 0;line-height:1.7}.fp-standing-card summary{cursor:pointer;color:var(--fp-accent);font-weight:700;padding:12px 0}.fp-standing-card details dl>div{display:flex;justify-content:space-between;gap:16px;border-top:1px solid var(--fp-line);padding:10px 0}.fp-standing-card details p{font-size:13px}.fp-standing-pending{color:var(--fp-accent);font-weight:700}.fp-standing-card .fp-actions>*{min-height:44px}.fp-standing-request{border-block:1px solid var(--fp-line);padding:16px 0;margin:20px 0}.fp-standing-request .fp-list-item{grid-template-columns:minmax(0,1fr) 100px 40px}.fp-standing-request label{font-size:12px}.fp-standing-request input{display:block;width:80px;min-height:44px;padding:8px;border:1px solid var(--fp-line);border-radius:var(--ddnz-control-radius);background:var(--ddnz-surface-raised);color:var(--fp-ink)}.fp-standing button:focus-visible,.fp-standing-request button:focus-visible,.fp-standing-request input:focus-visible{outline:3px solid var(--fp-accent);outline-offset:3px}.fp-standing-entry a{color:var(--fp-accent);font-weight:700}.fp-standing-copy .fp-secondary{font:inherit;cursor:pointer}
 @media(max-width:700px){.fp-standing-card{grid-template-columns:minmax(0,1fr);padding:18px;gap:12px}.fp-standing-card .fp-machine-image{height:280px}.fp-standing-card .fp-photo-open img{max-height:240px}.fp-standing-metrics{grid-template-columns:minmax(0,1fr)}.fp-standing-metrics>div{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:0}.fp-standing-metrics dt{margin:0}.fp-standing-metrics dd{text-align:end}.fp-standing-card .fp-actions{align-items:stretch}.fp-standing-request .fp-list-item{grid-template-columns:minmax(0,1fr) 85px 36px;gap:10px}}
+
+.fp-meat-hero-media {
+  padding: clamp(10px, 1.3vw, 16px);
+  border: 1px solid var(--fp-line);
+  border-radius: var(--ddnz-media-radius);
+  background: var(--ddnz-surface-soft);
+}
+.fp-meat-hero-grid, .fp-package-grid.fp-meat-bundle-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+.fp-meat-hero-card {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--fp-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+  color: var(--fp-ink);
+  text-decoration: none;
+}
+.fp-meat-hero-card:hover, .fp-meat-hero-card:focus-visible { border-color: var(--fp-accent); }
+.fp-meat-hero-card > img {
+  display: block;
+  width: 100%;
+  height: clamp(104px, 15vw, 178px);
+  padding: 8px;
+  object-fit: contain;
+  background: #f6f7f9;
+}
+.fp-meat-hero-card > span {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2px 6px;
+  padding: 9px 11px;
+  line-height: 1.3;
+}
+.fp-meat-hero-card strong { font-size: .9rem; }
+.fp-meat-hero-card small { grid-row: 2; color: var(--fp-muted); }
+.fp-meat-hero-card > span > span { grid-column: 2; grid-row: 1 / span 2; align-self: center; color: var(--fp-accent); }
+.fp-meat-image-note { margin-top: 10px; color: var(--fp-muted); font-size: .82rem; }
+.fp-package-grid.fp-meat-bundle-grid { gap: 18px; }
+.fp-meat-bundle-models { display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; padding: 0; list-style: none; }
+.fp-meat-bundle-models li {
+  width: 82px;
+  padding: 5px;
+  border: 1px solid var(--fp-line);
+  border-radius: 8px;
+  background: var(--ddnz-surface-soft);
+  text-align: center;
+  font-size: .72rem;
+  font-weight: 650;
+}
+.fp-meat-bundle-models img { width: 100%; height: 58px; object-fit: contain; }
+.fp-meat-bundle-cta { margin-top: 4px; color: var(--fp-accent); font-size: .9rem; font-weight: 650; }
+.fp-meat-compare-model {
+  display: grid;
+  grid-template-columns: clamp(84px, 24%, 128px) minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+.fp-meat-compare-model img {
+  width: 100%;
+  height: 92px;
+  object-fit: contain;
+  border-radius: 8px;
+  background: var(--ddnz-surface-soft);
+}
+.fp-meat-compare-model h3 { font-weight: 700; }
+@media (max-width: 700px) {
+  .fp-package-grid.fp-meat-bundle-grid { grid-template-columns: minmax(0, 1fr); }
+}

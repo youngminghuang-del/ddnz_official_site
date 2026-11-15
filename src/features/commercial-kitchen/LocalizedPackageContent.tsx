@@ -1,5 +1,6 @@
 import SmallKitchenPlanningContent from './SmallKitchenPlanningContent';
 import CafePlanningContent from './CafePlanningContent';
+import QsrReferencePlan from './QsrReferencePlan';
 import { renderLocalizedEntry, buyerEntryCopy } from '../buyer-entry/localized.mjs';
 import React,{useState} from 'react';
 import {packageCopy,packageInquiry,type PackageLocale} from './packageLocalization';
@@ -21,9 +22,24 @@ export default function LocalizedPackageContent({locale,slug}:{locale:PackageLoc
  <PackagePlanner locale={locale} standalone={Boolean(slug)}>
  {!slug&&<label className="block text-lg font-bold">{c.ui.scenarios}<select className="mt-3 block w-full rounded-xl border border-slate-400 bg-white p-4" value={selected} onChange={e=>setSelected(e.target.value)}>{libraryOrder.map((key:string,i:number)=><option value={key} key={key}>{c.scenarios[i].name}</option>)}</select></label>}
  <section><h2 className="text-3xl font-bold">{s.name} · {c.ui.workflow}</h2><p className="mt-5 leading-8">{s.summary}</p><dl className="my-7 grid gap-4 sm:grid-cols-3">{[[c.ui.area,`${numeric(base.footprint)} m²`],[c.ui.aisle,`${numeric(base.aisle)} mm`],[c.ui.crew,numeric(base.crew)]].map(([label,value])=><div className="rounded-xl bg-white p-5" key={label}><dt>{label}</dt><dd className="mt-2 text-xl font-bold"><bdi>{value}</bdi></dd></div>)}</dl><ol className="flex flex-wrap gap-3">{s.zones.map((zone,i)=><li className="rounded-xl bg-purple-100 px-4 py-3" key={zone}>{i+1}. {zone}</li>)}</ol></section>
- {base.plan&&<section><h2 className="mb-6 text-3xl font-bold">{c.ui.plan}</h2><ConceptPlan base={base} copy={s} label={`${s.name} · ${c.ui.plan}`}/><p className="mt-4 text-sm leading-7">{c.ui.concept}</p></section>}
+ {base.plan&&<section id="reference-plan" className="scroll-mt-32"><h2 className="mb-6 text-3xl font-bold">{c.ui.plan}</h2>
+  {locale==='es'&&slug==='takeaway-qsr'
+   ? <QsrReferencePlan equipment={base.equipment} names={s.equipment} concept={c.ui.concept}/>
+   : <><ConceptPlan base={base} copy={s} label={`${s.name} · ${c.ui.plan}`}/><p className="mt-4 text-sm leading-7">{c.ui.concept}</p></>}
+ </section>}
  <section className="grid gap-8 lg:grid-cols-2"><div><h2 className="text-3xl font-bold">{c.ui.equipment}</h2><ol className="mt-6 divide-y divide-slate-200 rounded-2xl bg-white p-6">{s.equipment.map((text,j)=><li className="py-4 leading-7" key={text}><bdi className="font-bold">{base.equipment[j][0]}</bdi> · {text}{base.equipment[j].length>3&&<p className="text-sm text-slate-600"><bdi>{base.equipment[j][2]} mm</bdi></p>}</li>)}</ol></div><div><h2 className="text-3xl font-bold">{c.ui.utilities}</h2><ul className="mt-6 list-disc space-y-5 ps-6 leading-7">{s.utilities.map(text=><li key={text}>{text}</li>)}</ul><p className="mt-8 rounded-xl bg-amber-50 p-5 leading-7">{c.ui.boundary}</p></div></section>
  </PackagePlanner>
+ {locale === 'es' && slug === 'takeaway-qsr' && (
+   <section className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8" aria-labelledby="datos-cocina-para-llevar">
+     <h2 id="datos-cocina-para-llevar" className="text-2xl font-bold">Qué enviar para cotizar tu cocina para llevar</h2>
+     <div className="mt-5 grid gap-5 md:grid-cols-3">
+       <div><h3 className="font-bold">Menú y pedidos en hora punta</h3><p className="mt-2">Indica qué vas a freír o cocinar a la plancha y cuántos pedidos esperas en la hora de mayor demanda.</p></div>
+       <div><h3 className="font-bold">Plano y conexiones</h3><p className="mt-2">Envía las medidas, el acceso para recibir equipos y los puntos de electricidad, agua, desagüe y extracción.</p></div>
+       <div><h3 className="font-bold">Equipo existente y alcance</h3><p className="mt-2">Distingue lo que ya tienes de lo que necesitas comprar. Indica qué tareas de instalación o puesta en marcha debe confirmar tu equipo local.</p></div>
+     </div>
+     <a className="mt-6 inline-block font-bold text-purple-800 underline" href="#package-rfq">Continuar con la cotización del proyecto</a>
+   </section>
+ )}
  <section id="package-rfq" className="scroll-mt-32 rounded-2xl bg-purple-50 p-7"><h2 className="text-3xl font-bold">{o.ui.quote}</h2><p className="mt-4 leading-7">{c.ui.scope}</p><div className="my-6 grid gap-5 md:grid-cols-2"><label>{u.destination}<input className="mt-2 block w-full rounded-lg border border-slate-400 bg-white p-3" value={destination} onChange={e=>setDestination(e.target.value)} maxLength={160}/></label><label>{c.ui.menu}<textarea className="mt-2 block w-full rounded-lg border border-slate-400 bg-white p-3" value={requirements} onChange={e=>setRequirements(e.target.value)} maxLength={1500}/></label></div><a className="inline-block rounded-xl bg-purple-800 px-5 py-3 font-bold text-white" href={packageInquiry(locale,selected,destination,requirements)}>{u.continue}</a><p className="mt-4 text-sm">{u.review}</p></section>
  <div className="flex flex-wrap gap-5"><a className="text-purple-800 underline" href={`${kitchenPackagePath}/${selected}/`} hrefLang="en">{c.ui.pdf} · {c.ui.english}</a><a className="text-purple-800 underline" href={`${prefix}/sourcing-services/`}>{o.ui.services}</a><a className="text-purple-800 underline" href={`${prefix}/sourcing/food-processing-machinery-from-china/`}>{u.catalogueTitle}</a></div>
  </div></main>;
