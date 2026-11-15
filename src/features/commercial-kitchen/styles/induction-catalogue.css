@@ -90,3 +90,9 @@
   .steam-cabinet-page .induction-site-checks { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 .ddnz-kitchen.steam-cabinet-page :is(.induction-use-section, #steam-cabinets) { padding-block: 2rem; }
+
+.ddnz-kitchen.noodle-cooker-page :is(.induction-use-section, #noodle-cookers) { padding-block: 2rem; }
+.ddnz-kitchen.noodle-cooker-page .noodle-configuration-note {
+  margin-block: 1rem 0;
+  color: var(--muted);
+}
