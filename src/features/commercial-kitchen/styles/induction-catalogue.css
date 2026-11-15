@@ -12,3 +12,43 @@
   flex-wrap: wrap;
 }
 .cold-model-copy .shared-kitchen-add { margin-inline-end: 0.6rem; margin-bottom: 0.4rem; }
+
+.induction-page .induction-use-nav {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 190px), 1fr));
+  gap: 12px;
+  margin-block-start: 18px;
+}
+.induction-use-nav a {
+  display: grid;
+  grid-template-columns: 70px minmax(0,1fr);
+  align-items: center;
+  gap: 10px;
+  padding: 12px;
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+}
+.induction-use-nav a:hover { background: var(--ddnz-surface-soft); }
+.induction-use-nav img { width: 100%; height: 66px; object-fit: contain; }
+.induction-use-nav strong { display: block; color: #602986; }
+.induction-use-nav a > span > span { display: block; margin-block-start: 4px; font-size: 14px; }
+.induction-site-checks {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: 12px;
+  margin-block-start: 18px;
+}
+.induction-site-checks article {
+  border: 1px solid var(--ddnz-brand-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-raised);
+  padding: 16px;
+}
+.induction-site-checks h3 { font-weight: 700; margin-block-end: 6px; }
+@media (min-width: 451px) {
+  .induction-catalogue .induction-metrics-total { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 760px) {
+  .induction-site-checks { grid-template-columns: 1fr; }
+}

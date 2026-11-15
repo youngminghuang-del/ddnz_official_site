@@ -11,11 +11,11 @@ import { hotCookingPath, inductionCookingPath } from '../src/features/commercial
 const languages = Object.keys(navigationPrefixes) as Language[];
 
 test('all eight navigation languages use only authored product URLs', () => {
-  assert.deepEqual(supportedNavigationLanguages(inductionCookingPath), ['en', 'zh']);
+  assert.deepEqual(supportedNavigationLanguages(inductionCookingPath), languages);
   assert.deepEqual(supportedNavigationLanguages(hotCookingPath), ['zh']);
   for (const language of languages) {
     for (const path of englishProductPaths) {
-      const fallback = path === '/screen-protectors/brief' || (path === inductionCookingPath && language !== 'zh');
+      const fallback = path === '/screen-protectors/brief';
       const prefix = path === hotCookingPath ? '/zh-cn' : fallback ? '' : navigationPrefixes[language];
       const target = `${prefix}${path}/`;
       assert.equal(navigationPath(path, language), target);
