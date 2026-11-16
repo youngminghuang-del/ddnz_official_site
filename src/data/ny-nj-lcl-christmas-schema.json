@@ -1,0 +1,206 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#webpage",
+      "name": "China to New York/New Jersey LCL: Can You Pick Up Before Christmas?",
+      "description": "Plan Christmas pickup for China to New York/New Jersey LCL freight. Check vessel arrival, CFS unpacking, cargo availability, last free day and truck booking.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#breadcrumb"
+      },
+      "url": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#newark-port-container-crane"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#article",
+      "headline": "China to New York/New Jersey LCL: Can You Pick Up Before Christmas?",
+      "description": "Plan Christmas pickup for China to New York/New Jersey LCL freight. Check vessel arrival, CFS unpacking, cargo availability, last free day and truck booking.",
+      "inLanguage": "en",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#webpage"
+      },
+      "citation": [
+        "https://akamai.apmterminals.com/en/port-elizabeth/practical-information/hours-of-operation",
+        "https://www.stgusa.com/cfs-transload-solutions/",
+        "https://www.shipco.com/web-apps/shipping-glossary/arrival-notice",
+        "https://vanguardlogistics.com/up-to-date-forecast-freight-availability-launched-online-1-21-2022/",
+        "https://www.vanguardlogistics.com/usa-terms-and-conditions/",
+        "https://www.hapag-lloyd.com/en/services-information/offices-localinfo/local-news/2026/08/import-last-free-day---visibility-for-port-demurrage---detention.html",
+        "https://www.help.cbp.gov/s/article/Article1844"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#faq"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#newark-port-container-crane"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#forklift-unpacking-ocean-container"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#palletized-lcl-freight-staging"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#warehouse-dock-truck-pickup"
+        }
+      ],
+      "datePublished": "2026-11-16T21:56:42+08:00",
+      "dateModified": "2026-11-16T21:56:42+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I collect LCL freight on the vessel arrival date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Plan pickup from the destination CFS once it verifies that your HBL is available for collection, the applicable releases are in place, and a truck can collect within the station’s hours. Use the vessel arrival date to start those checks."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does an arrival notice confirm that my cargo is available?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check the arrival notice for shipment details and next steps. For dispatch, use the destination agent’s confirmed pickup status for your HBL and check for any remaining freight or customs hold."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do Christmas and New Year’s Day count toward CFS storage?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask the named station or destination agent how it counts holidays under the terms for your shipment. Request the exact last free day and local cutoff in writing before committing to a truck."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#pickup-milestones",
+      "name": "Five milestones from port arrival to pickup",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Vessel arrival"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Container unpacking"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cargo availability notice"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Last free day"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Truck pickup appointment"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.ddnzglobal.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "China to New York/New Jersey LCL: Can You Pick Up Before Christmas?",
+          "item": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#newark-port-container-crane",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/newark-port-container-crane.jpg",
+      "description": "A quay crane lifts a red shipping container beside a vessel at Port Newark",
+      "width": 1200,
+      "height": 777,
+      "url": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/newark-port-container-crane.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#forklift-unpacking-ocean-container",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/forklift-unpacking-ocean-container.jpg",
+      "description": "A forklift handles pallets at the open doors of an ocean container",
+      "width": 1170,
+      "height": 1170,
+      "url": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/forklift-unpacking-ocean-container.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#palletized-lcl-freight-staging",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/palletized-lcl-freight-staging.jpg",
+      "description": "Groups of cartons and pallets staged inside a freight warehouse",
+      "width": 548,
+      "height": 616,
+      "url": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/palletized-lcl-freight-staging.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/#warehouse-dock-truck-pickup",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/warehouse-dock-truck-pickup.jpg",
+      "description": "View from a truck trailer of a forklift carrying a pallet past the loading dock",
+      "width": 1400,
+      "height": 934,
+      "license": "https://unsplash.com/license",
+      "creditText": "Elevate",
+      "url": "https://www.ddnzglobal.com/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/warehouse-dock-truck-pickup.jpg"
+    }
+  ]
+}

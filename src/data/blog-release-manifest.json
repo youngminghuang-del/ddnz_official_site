@@ -149,6 +149,26 @@
       ],
       "faq_count": 3,
       "item_list_count": 8
+    },
+    {
+      "slug": "china-new-york-new-jersey-lcl-christmas-pickup",
+      "canonical": "https://www.ddnzglobal.com/blog/china-new-york-new-jersey-lcl-christmas-pickup/",
+      "language": "en",
+      "notion_page_id": "41aeac33-2618-81bb-b0d6-e5b2561d8fbe",
+      "release_file": "src/data/nyNjLclChristmasRelease.json",
+      "schema_file": "src/data/ny-nj-lcl-christmas-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/newark-port-container-crane.jpg",
+      "images": [
+        "/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/newark-port-container-crane.jpg",
+        "/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/forklift-unpacking-ocean-container.jpg",
+        "/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/palletized-lcl-freight-staging.jpg",
+        "/images/posts/china-new-york-new-jersey-lcl-christmas-pickup/warehouse-dock-truck-pickup.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }
