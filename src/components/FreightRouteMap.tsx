@@ -319,9 +319,10 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
 // Country centroids come from the existing Natural Earth atlas. These maps locate
 // countries, not terminals or vessel itineraries; gateway names remain in the copy.
 const gatewayCountryIds: Record<string, string> = {
- colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
+ netherlands: '528', 'united-kingdom': '826', france: '250', colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
  senegal: '686', togo: '768', benin: '204', cameroon: '120',
 };
+const gatewayEuropeProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(-16,10,132,63));
 const gatewayAfricaProjection = geoMercator().fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], extentFeature(-25, -18, 132, 55));
 const gatewayPacificProjection = geoMercator().rotate([-165, 0]).fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], {
  type: 'MultiPoint', coordinates: [[100, -15], [100, 48], [-65, 48], [-65, -15]],
@@ -334,7 +335,7 @@ export function CountryGatewayMap({ country, locale, destination, title, descrip
  const china = countries.features.find(f => String(f.id).padStart(3, '0') === '156');
  if (!target || !china) return null;
  const pacific = ['colombia', 'panama', 'costa-rica'].includes(country);
- const projection = pacific ? gatewayPacificProjection : gatewayAfricaProjection;
+ const projection = ['netherlands', 'united-kingdom', 'france'].includes(country) ? gatewayEuropeProjection : pacific ? gatewayPacificProjection : gatewayAfricaProjection;
  const clipId = `gateway-${country}-clip`;
  const chinaLabel = mapRegionLabels[locale][0];
  const nodes: MapNode[] = [

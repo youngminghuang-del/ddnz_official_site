@@ -21,7 +21,7 @@ try {
   let output=html.replace(rootPattern,`<div id="root" data-core-prerender="true">${body}</div>`);
   if (route === '/products/') {
    const manifest=JSON.parse(fs.readFileSync(path.join(dist,'.vite/manifest.json'),'utf8'));
-   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav');
+   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav'||chunk.css?.some(file=>fs.readFileSync(path.join(dist,file),'utf8').includes('.ddnz-brand{--brand-width:')));
    if (!navigation?.css?.length) throw new Error('Missing navigation CSS in Vite manifest');
    const styles=navigation.css.map(file=>fs.readFileSync(path.join(dist,file),'utf8')).join('\n');
    output=output.replace('</head>',()=>`<style data-prerender-navigation>${styles}</style></head>`);
@@ -29,7 +29,7 @@ try {
   if (route === '/screen-protectors/compare/') {
    const manifest=JSON.parse(fs.readFileSync(path.join(dist,'.vite/manifest.json'),'utf8'));
    const comparison=manifest['src/features/screen-protectors/ScreenProtectorPage.tsx'];
-   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav');
+   const navigation=Object.values(manifest).find(chunk=>chunk.name==='SourcingHomepageNav'||chunk.css?.some(file=>fs.readFileSync(path.join(dist,file),'utf8').includes('.ddnz-brand{--brand-width:')));
    if (!comparison?.css?.length || !navigation?.css?.length) throw new Error('Missing comparison or navigation styles');
    const styles=[...new Set([...comparison.css,...navigation.css])].map(file=>fs.readFileSync(path.join(dist,file),'utf8')).join('\n');
    output=output.replace('</head>',()=>`<style>${styles}</style></head>`);

@@ -1,3 +1,4 @@
+import {CandidateRegionLinks} from './candidate-markets/CandidateRegionLinks';
 import CentralAsiaRouteOptions from './CentralAsiaRouteOptions';
 import EuropeDocumentExamples from "./EuropeDocumentExamples";
 import centralAfricaCopy from './centralAfricaCopy.json';
@@ -113,6 +114,7 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
       <ChinaOriginGuide locale={locale} destination={name} />
       {region!=='central-america'&&region!=='europe'&&region!=='central-africa'&&<OriginDestinationOpportunities context={region} locale={locale} />}
     </div></section>
+    {region === 'europe' && <div className="freight-wrap"><CandidateRegionLinks locale={locale}/></div>}
     {region === 'europe' && <CentralAsiaRouteOptions locale={locale} destination="europe" />}
     <section id="country-routes" className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><h2 className="mt-4">{c.routesHeading}</h2>
       <div className="mt-8 border-t border-[#dedde1]">{data.countries.map((country, index) => {
