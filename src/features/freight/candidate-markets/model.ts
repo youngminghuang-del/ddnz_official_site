@@ -3,11 +3,19 @@ import { freightDestinationLanguages, navigationPrefixes } from '../../../lib/pr
 import type { Language } from '../../../i18n/translations';
 import countryCopy from './countryCopy.json';
 import sharedCopy from './sharedCopy.json';
+import pacificCopy from './pacificCopy.json';
 
 export { sharedCopy };
 export type CandidateLocale = Language;
 export const candidateLocales = freightDestinationLanguages;
-export const candidateSlugs = ['netherlands', 'united-kingdom', 'france'] as const;
+export const europeCandidateSlugs = ['netherlands', 'united-kingdom', 'france'] as const;
+export const pacificCandidateSlugs = ['canada', 'australia'] as const;
+export const candidateSlugs = [...europeCandidateSlugs,...pacificCandidateSlugs] as const;
+export type PacificCandidate = typeof pacificCandidateSlugs[number];
+export const isPacificCandidate = (slug: string): slug is PacificCandidate => pacificCandidateSlugs.includes(slug as PacificCandidate);
+const seaLabels = {en:'Sea freight',zh:'海运服务',es:'Flete marítimo',fr:'Fret maritime',ru:'Морские перевозки',ar:'الشحن البحري',pt:'Frete marítimo',tr:'Deniz taşımacılığı'};
+export const candidateSeaLabel = (locale: CandidateLocale) => seaLabels[locale];
+export const pacificCountryCopy = (country:PacificCandidate,locale:CandidateLocale) => pacificCopy[country][locale];
 export type CandidateCountry = typeof candidateSlugs[number];
 export const isCandidate = (slug: string): slug is CandidateCountry => candidateSlugs.includes(slug as CandidateCountry);
 export const candidatePrefix = (locale: CandidateLocale) => navigationPrefixes[locale];
@@ -21,10 +29,12 @@ export const candidateData = {
  netherlands: { iso: 'NL', gateway: 'Rotterdam', airport: 'AMS' },
  'united-kingdom': { iso: 'GB', gateway: 'Southampton', airport: 'LHR' },
  france: { iso: 'FR', gateway: 'Le Havre', airport: 'CDG' },
+ canada: { iso:'CA', gateway:'Vancouver', airport:'YVR' },
+ australia: { iso:'AU', gateway:'Sydney', airport:'SYD' },
 } as const;
 
 export function candidateCopy(country: CandidateCountry, locale: CandidateLocale) {
- return { ...sharedCopy[locale], ...countryCopy[country][locale] };
+ return { ...sharedCopy[locale], ...(isPacificCandidate(country) ? pacificCountryCopy(country,locale) : countryCopy[country][locale]) };
 }
 const origin = 'https://www.ddnzglobal.com';
 
@@ -36,7 +46,7 @@ export function candidateInfo(slug: CandidateCountry, locale: CandidateLocale) {
 export function candidateTrail(slug: CandidateCountry, locale: CandidateLocale) {
  const p = candidateInfo(slug,locale);
  const c = candidateCopy(slug, locale);
- return [{name:c.home,path:p.prefix+'/'},{name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'},{name:p.name,path:candidatePath(slug,locale)}];
+ return [{name:c.home,path:p.prefix+'/'},(isPacificCandidate(slug) ? {name:candidateSeaLabel(locale),path:p.prefix+'/services/sea-freight/'} : {name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'}),{name:p.name,path:candidatePath(slug,locale)}];
 }
 
 export function candidateSchema(slug: CandidateCountry, locale: CandidateLocale) {
