@@ -1,8 +1,9 @@
 import { ClipboardList, Clock3, ReceiptText, ShieldCheck, Ship } from 'lucide-react';
+import { pacificPorts } from '../locales/index.mjs';
 import { originNames } from '../rates/model.mjs';
 import { originNamesEn } from '../rates/copy.mjs';
 import guide from './marketGuideCopy.json';
-import { candidateCopy, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, isPacificCandidate, pacificCountryCopy, type CandidateCountry, type CandidateLocale } from './model';
 
 export const marketGuide = guide;
 
@@ -14,6 +15,8 @@ export type MarketRateRow = {
  prices: Record<typeof containers[number], number | null>;
 };
 const ports = {
+ canada: pacificPorts['VANCOUVER,CA'],
+ australia: pacificPorts.SYDNEY,
  netherlands: { en:'Rotterdam', zh:'鹿特丹', es:'Róterdam', fr:'Rotterdam', ru:'Роттердам', ar:'روتردام', pt:'Roterdã', tr:'Rotterdam' },
  'united-kingdom': { en:'Southampton', zh:'南安普敦', es:'Southampton', fr:'Southampton', ru:'Саутгемптон', ar:'ساوثهامبتون', pt:'Southampton', tr:'Southampton' },
  france: { en:'Le Havre', zh:'勒阿弗尔', es:'Le Havre', fr:'Le Havre', ru:'Гавр', ar:'لوهافر', pt:'Le Havre', tr:'Le Havre' },
@@ -72,6 +75,17 @@ export function MarketRateOverview({ country, locale, rows }: {
 export function MarketImportRules({ country, locale }: {country: CandidateCountry; locale: CandidateLocale}) {
  const c = guide[locale];
  const page = candidateCopy(country, locale);
+ if (isPacificCandidate(country)) {
+  const rules = pacificCountryCopy(country,locale);
+  return <section id="import-rules" className="gulf-section candidate-market-guide" aria-labelledby="import-rules-title">
+   <h2 id="import-rules-title">{c.rulesTitle}</h2>
+   <ImportCards cards={[
+    { icon:ClipboardList, badge:country==='canada'?'CARM / RM':'BICON', title:page.importHeading, text:page.importText },
+    { icon:ReceiptText, badge:country==='canada'?'GST / RPP':'ABF / GST', title:rules.taxTitle, text:rules.taxBody },
+    { icon:ShieldCheck, badge:country==='canada'?'Vancouver':'ISPM 15', title:rules.checkTitle, text:rules.checkBody },
+   ]}/>
+  </section>;
+ }
  const p = policy[country];
  const cards = [
   { icon:ClipboardList, badge:p.entry, title:page.importHeading, text:page.importText },
@@ -80,9 +94,13 @@ export function MarketImportRules({ country, locale }: {country: CandidateCountr
  ];
  return <section id="import-rules" className="gulf-section candidate-market-guide" aria-labelledby="import-rules-title">
   <h2 id="import-rules-title">{c.rulesTitle}</h2>
-  <div className="candidate-policy-grid">{cards.map(({icon:Icon,badge,title,text}) => <article key={badge}>
-   <div className="candidate-policy-label"><Icon size={20} aria-hidden="true"/><bdi>{badge}</bdi></div>
-   <h3>{title}</h3><p>{text}</p>
-  </article>)}</div>
+  <ImportCards cards={cards}/>
  </section>;
+}
+
+function ImportCards({cards}: {cards:{icon:typeof ClipboardList;badge:string;title:string;text:string}[]}) {
+ return <div className="candidate-policy-grid">{cards.map(({icon:Icon,badge,title,text}) => <article key={badge}>
+  <div className="candidate-policy-label"><Icon size={20} aria-hidden="true"/><bdi>{badge}</bdi></div>
+  <h3>{title}</h3><p>{text}</p>
+ </article>)}</div>;
 }

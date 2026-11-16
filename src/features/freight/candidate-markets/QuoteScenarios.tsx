@@ -1,6 +1,6 @@
 import { ArrowRight, ClipboardList, Ship, Truck } from 'lucide-react';
 import { quoteLinkProps } from '../../../lib/quoteLinkPolicy.mjs';
-import { candidateCopy, candidateData, candidatePrefix, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, candidateData, candidatePrefix, isPacificCandidate, pacificCountryCopy, type CandidateCountry, type CandidateLocale } from './model';
 import scenarioCopy from './quoteScenarioCopy.json';
 
 const subjects = {
@@ -13,13 +13,17 @@ export function QuoteScenarios({country,locale}: {country:CandidateCountry; loca
  const c = scenarioCopy[locale];
  const page = candidateCopy(country, locale);
  const gateway = candidateData[country].gateway;
- const subject = subjects[country];
- const clearanceSteps = subject.steps.map(step => c[step]);
+ const pacific = isPacificCandidate(country);
+ const guidance = pacific ? pacificCountryCopy(country, locale) : null;
+ const subject = pacific ? null : subjects[country];
+ const clearanceSteps = guidance?.steps ?? subject!.steps.map(step => c[step]);
+ const doorScope = guidance?.door ?? c[subject!.door];
+ const tag = subject?.tag ?? (country==='canada'?'CARM · BN9 / RM':'BICON · ISPM 15');
  const doorRows = [
   [page.origin, page.originBody],
   [page.mainLeg, page.mainLegBody],
   [c.clearance, c.doorTaxes],
-  [page.destination, c[subject.door]],
+  [page.destination, doorScope],
  ];
  const quote = (scenario: string, notes: string) => quoteLinkProps(
   `${candidatePrefix(locale)}/get-a-quote/?${new URLSearchParams({
@@ -47,12 +51,12 @@ export function QuoteScenarios({country,locale}: {country:CandidateCountry; loca
      <dl>{doorRows.map(([label,body]) => <div key={label}><dt>{label}</dt><dd>{body}</dd></div>)}</dl>
      <p>{page.quoteBoundary}</p>
     </details>
-    <a className="candidate-scenario-cta" {...quote(c.door,c[subject.door])}>{c.doorQuote}<ArrowRight className="candidate-direction" size={16} aria-hidden="true"/></a>
+    <a className="candidate-scenario-cta" {...quote(c.door,doorScope)}>{c.doorQuote}<ArrowRight className="candidate-direction" size={16} aria-hidden="true"/></a>
    </article>
    <article data-quote-scenario="clearance">
     <ClipboardList size={23} aria-hidden="true"/>
     <h3>{c.clearance}</h3>
-    <p className="candidate-scenario-tag"><bdi>{subject.tag}</bdi></p>
+    <p className="candidate-scenario-tag"><bdi>{tag}</bdi></p>
     <details>
      <summary>{c.clearanceDetails}</summary>
      <ol>{clearanceSteps.map(step => <li key={step}>{step}</li>)}</ol>
