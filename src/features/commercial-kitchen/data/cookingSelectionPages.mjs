@@ -1,18 +1,22 @@
+import roundCopy from '../locales/planning/round-cookers.json' with { type: 'json' };
 import noodleCopy from '../locales/planning/noodle-cookers.json' with { type: 'json' };
 import steamCopy from '../locales/planning/steam-cabinets.json' with { type: 'json' };
 import navigationCopy from '../locales/planning/induction-use.json' with { type: 'json' };
 import { localizedProductPath } from '../../../lib/productLocalization.mjs';
-import { noodleCookerPath, steamCabinetPath } from '../routes.mjs';
+import { noodleCookerPath, soupBunCookerPath, steamCabinetPath } from '../routes.mjs';
 import { KITCHEN_PATH } from './discovery.mjs';
-import { noodleModels, steamModels } from './inductionModels.mjs';
+import { noodleModels, roundCookerModels, steamModels } from './inductionModels.mjs';
 
 export const cookingSelections = {
   steam: { path: steamCabinetPath, models: steamModels, copy: steamCopy, id: 'steam-cabinet' },
   noodle: { path: noodleCookerPath, models: noodleModels, copy: noodleCopy, id: 'noodle-cooker' },
+  round: { path: soupBunCookerPath, models: roundCookerModels, copy: roundCopy, id: 'soup-bun-cooker' },
 };
 
 export function cookingSelectionGroup(path) {
-  return path === steamCabinetPath ? 'steam' : path === noodleCookerPath ? 'noodle' : undefined;
+  if (path === steamCabinetPath) return 'steam';
+  if (path === noodleCookerPath) return 'noodle';
+  if (path === soupBunCookerPath) return 'round';
 }
 
 export function cookingSelectionBreadcrumb(group, locale) {

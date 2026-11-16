@@ -2,7 +2,7 @@ import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 import type { Language } from '../i18n/translations';
 import { canonicalSitePath } from './notionArticleRouting';
-import { inductionCookingPath, steamCabinetPath, noodleCookerPath, hotCookingPath, kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
+import { inductionCookingPath, steamCabinetPath, noodleCookerPath, soupBunCookerPath, hotCookingPath, kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, hasProductTranslation, isLocalizedProductPath, localizedProductPath } from './productLocalization.mjs';
 
 export const navigationPrefixes: Record<Language, string> = {
@@ -28,7 +28,7 @@ export const englishProductPaths = [
   ...audioCategoryPaths,
   ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
-  inductionCookingPath, steamCabinetPath, noodleCookerPath, hotCookingPath, ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
+  inductionCookingPath, steamCabinetPath, noodleCookerPath, soupBunCookerPath, hotCookingPath, ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
   '/products', '/sourcing-services', '/refrigeration-equipment',
   '/sourcing/commercial-kitchen-equipment-from-china', '/sourcing/audio-speakers-from-china',
   '/sourcing/outdoor-products-from-china',

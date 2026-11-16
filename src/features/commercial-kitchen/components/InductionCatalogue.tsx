@@ -1,12 +1,13 @@
 import ProgressiveSection from '../../product-experience/ProgressiveSection';
 import {kitchenLocales} from '../data/localization.mjs';
 import {useRef} from 'react';
-import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels,largeWokModels} from '../data/inductionModels.mjs';
+import {inductionModels,multiZoneModels,steamModels,noodleModels,roundCookerModels,roundSteamerOpeningOptions,largeWokModels} from '../data/inductionModels.mjs';
 import copies from '../locales/planning/induction-catalogue.json';
 import {buildQuoteHref} from '../../../lib/quoteLinks';
 import steamCopy from '../locales/planning/steam-cabinets.json';
+import roundCopy from '../locales/planning/round-cookers.json';
 import noodleCopy from '../locales/planning/noodle-cookers.json';
-import { steamCabinetPath, noodleCookerPath } from '../routes.mjs';
+import { steamCabinetPath, noodleCookerPath, soupBunCookerPath } from '../routes.mjs';
 import { localizedProductPath } from '../../../lib/productLocalization.mjs';
 type Locale=keyof typeof copies;
 function Photo({src,model,caption,locale}:{src:string;model:string;caption:string;locale:Locale}){
@@ -28,7 +29,8 @@ export default function InductionCatalogue({locale:language='en',group='single',
  const titleId=sectionId+'-title';
  const compact=Boolean(compactTitle);
  const selectionLink = group === 'steam' ? [steamCabinetPath, steamCopy[locale].choose]
-   : group === 'noodle' ? [noodleCookerPath, noodleCopy[locale].choose] : undefined;
+   : group === 'noodle' ? [noodleCookerPath, noodleCopy[locale].choose]
+   : group === 'round' ? [soupBunCookerPath, roundCopy[locale].choose] : undefined;
  const noodleSelection = standaloneSelection && group === 'noodle';
  const content = <section id={sectionId}
    className={compact ? 'induction-catalogue hot-cooking-models' : 'induction-catalogue wrap section'}
@@ -43,7 +45,8 @@ export default function InductionCatalogue({locale:language='en',group='single',
      </nav>
    </>}
    <div className="induction-list">{models.map((p,i)=>{
-     const caption=p.kind==='wok'?c.seriesCaption:c.caption;
+     const roundSteamer = standaloneSelection && group === 'round' && 'openings' in p;
+     const caption=roundSteamer ? roundCopy[locale].photo : p.kind==='wok'?c.seriesCaption:c.caption;
      const fields=Object.keys(c.fields).filter(k=>p[k]);
      const extraMetric=compact ? fields.find(k=>['doors','baskets','openings'].includes(k)) : undefined;
      const keys=[...(noodleSelection ? ['baskets'] : []),'power',...(showTotal && fields.includes('total')?['total']:[]),'supply','footprint',...(extraMetric?[extraMetric]:[])];
@@ -54,9 +57,15 @@ export default function InductionCatalogue({locale:language='en',group='single',
          <p className="induction-eyebrow"><bdi>{p.model}</bdi></p>
          <h3>{c.names[i]}</h3>
          {!compact && <p>{c.bodies[i]}</p>}
+         {roundSteamer && <dl className="round-steamer-options" aria-label={c.fields.openings}>
+           {roundSteamerOpeningOptions.map((option, index) => <div key={option.id} id={option.id}>
+             <dt>{roundCopy[locale].options[index + 1]}</dt>
+             <dd><bdi>{option.count}</bdi></dd>
+           </div>)}
+         </dl>}
          <dl className={standaloneSelection || keys.includes('total')?'induction-metrics induction-metrics-total':'induction-metrics'}>{keys.map(k=><div key={k}><dt>{noodleSelection && k === 'footprint' ? noodleCopy[locale].footprint : c.fields[k]}</dt><dd><bdi dir="ltr">{p[k]}</bdi></dd></div>)}{standaloneSelection && group === 'steam' && <div><dt>{steamCopy[locale].trays[0]}</dt><dd>{steamCopy[locale].trays[1]}</dd></div>}</dl>
          <details><summary>{c.details}</summary>
-           <dl className="induction-details">{fields.filter(k=>!keys.includes(k)).map(k=><div key={k}><dt>{c.fields[k]}</dt><dd><bdi dir="ltr">{p[k]}</bdi></dd></div>)}</dl>
+           <dl className="induction-details">{fields.filter(k=>!keys.includes(k) && !(roundSteamer && k === 'openings')).map(k=><div key={k}><dt>{c.fields[k]}</dt><dd><bdi dir="ltr">{p[k]}</bdi></dd></div>)}</dl>
            {compact && <p>{c.bodies[i]}</p>}
            <p>{c.configuration}</p>
          </details>

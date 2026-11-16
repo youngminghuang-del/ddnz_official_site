@@ -143,6 +143,11 @@ export const roundCookerModels = [
   }
 ];
 
+export const roundSteamerOpeningOptions = roundCookerModels[1].openings.split(' / ').map(count => ({
+  count,
+  id: 'steamer-openings-' + count,
+}));
+
 // The shared codes 01–03 are intentionally excluded pending supplier clarification.
 export const largeWokModels = [
   {
