@@ -42,6 +42,12 @@
       "run_id": 43800795698,
       "commit": "8767c820c67389b210f474763727a96462734d52",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "china-new-york-new-jersey-lcl-christmas-pickup": {
+      "published_at": "2026-11-16T14:14:24Z",
+      "run_id": 43882988379,
+      "commit": "4e145ac142ae8c79caa4f9f4d67c9d2714471698",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
