@@ -1,3 +1,4 @@
+import {isCandidate,candidateInfo,candidateLocale,candidateSchema,candidateTrail,type CandidateLocale} from './candidate-markets/model';
 import { centralAsiaHeadline, centralAsiaIntro } from './centralAsiaOverviewIntro';
 import { COMPANY } from '../../config/companyIdentity';
 import { resolveEurasiaIntro } from './eurasiaPageIntro';
@@ -14,7 +15,7 @@ const labels:Record<string,string[]>={en:['Shipping from China to {name}','Compa
 export function freightPageInfo(path:string,language?:string){
  const parts=path.split('?')[0].split('#')[0].split('/').filter(Boolean);const last=parts.at(-1)||'';
  if(!last.startsWith('shipping-from-china-to-'))return null;
- const slug=last.slice('shipping-from-china-to-'.length);if(slug==='ecuador'){const locale=(language||(parts.length>1?parts[0]:'en')).replace('zh-cn','zh');if(!ecuadorLocales.includes(locale as EcuadorLocale))return null;const c=ecuadorCopy[locale as keyof typeof ecuadorCopy],prefix=ecuadorPrefix(locale as EcuadorLocale);return {slug,locale,prefix,name:c.name,url:`${origin}${prefix}/${last}/`,title:c.title+' | DDNZ',description:c.description,language:locale==='zh'?'zh-CN':locale};}
+ const slug=last.slice('shipping-from-china-to-'.length);if(isCandidate(slug)){const locale=candidateLocale(language||(parts.length>1?parts[0]:'en'));return locale?candidateInfo(slug,locale):null;}if(slug==='ecuador'){const locale=(language||(parts.length>1?parts[0]:'en')).replace('zh-cn','zh');if(!ecuadorLocales.includes(locale as EcuadorLocale))return null;const c=ecuadorCopy[locale as keyof typeof ecuadorCopy],prefix=ecuadorPrefix(locale as EcuadorLocale);return {slug,locale,prefix,name:c.name,url:`${origin}${prefix}/${last}/`,title:c.title+' | DDNZ',description:c.description,language:locale==='zh'?'zh-CN':locale};}
  if(isNewMarket(slug)){const locale=(language||(parts.length>1?parts[0]:'en')).replace('zh-cn','zh') as NewMarketLocale;const m=newMarketMetadata(slug,locale),prefix=locale==='en'?'':locale==='zh'?'/zh-cn':`/${locale}`;return {slug,locale,prefix,name:m.name,url:origin+m.path,title:m.title+' | DDNZ',description:m.description,language:locale==='zh'?'zh-CN':locale};}
  if(!freightCountries[slug]&&!freightRegions[slug])return null;
  const locale=(language|| (parts.length>1?parts[0]:'en')).replace('zh-cn','zh');const c=labels[locale]||labels.en;
@@ -31,10 +32,12 @@ export function breadcrumbLabel(locale: string) {
 }
 export function freightBreadcrumbs(path: string, language?: string): {name:string;path:string}[] {
  const p=freightPageInfo(path,language);
+ if(p && isCandidate(p.slug))return candidateTrail(p.slug,p.locale as CandidateLocale);
  return p ? (breadcrumbData as Record<string,{name:string;path:string}[]>)[p.url.replace(origin,'')] || [] : [];
 }
 export function freightPageSchema(path:string,language?:string){
  const p=freightPageInfo(path,language);if(!p)return null;
+ if(isCandidate(p.slug))return candidateSchema(p.slug,p.locale as CandidateLocale);
  const trail=freightBreadcrumbs(path,language);
  const hero = resolveEurasiaIntro(p.slug, p.locale, p.title.replace(' | DDNZ',''));
  const centralAsiaLocale = p.locale as keyof typeof centralAsiaIntro;

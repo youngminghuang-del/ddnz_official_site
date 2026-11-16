@@ -37,7 +37,7 @@ function FeeDetails({row,container,locale}:{row:Rate;container:string;locale:str
 function Rates({payload,context,locale}:{payload:Payload;context:string;locale:string}) {
  const c=rateCopy[locale];const en=locale==='en';const local=freightLocalizations[locale];const x=local?.extra;const names=local?new Proxy({},{get:(_,key)=>localizedDestination(String(key),locale)}):en?countryNamesEn:countryNames;const origins=locale!=='zh'?originNamesEn:originNames;const portLabel=(p:string)=>local?(p==='BAHRAIN'?`${localizedDestination('bahrain',locale)} · ${x.terminalPending}`:p):en?(p==='BAHRAIN'?'Bahrain (terminal to confirm)':p):portNames[p]||p;
  const region=sampleRegions.includes(context);const allCountries=region?regionCountries[context]:[context];
- const [country,setCountry]=useState('all');const [port,setPort]=useState<string>(({ghana:'TEMA',uae:'JEBEL ALI',brazil:'SANTOS',bangladesh:'CHATTOGRAM',peru:'CALLAO'} as Record<string,string>)[context]||'all');const [origin,setOrigin]=useState(['panama','costa-rica','spain','germany','central-america','europe'].includes(context)?'all':'NANSHA');const [container,setContainer]=useState('40HQ');const [more,setMore]=useState(false);
+ const [country,setCountry]=useState('all');const [port,setPort]=useState<string>(({ghana:'TEMA',uae:'JEBEL ALI',brazil:'SANTOS',bangladesh:'CHATTOGRAM',peru:'CALLAO'} as Record<string,string>)[context]||'all');const [origin,setOrigin]=useState(['panama','costa-rica','spain','germany','netherlands','united-kingdom','france','central-america','europe'].includes(context)?'all':'NANSHA');const [container,setContainer]=useState('40HQ');const [more,setMore]=useState(false);
  const uid=useId().replace(/:/g,'');
  const countries=country==='all'?allCountries:[country];
  const available=payload.coverage.filter(c=>countries.includes(c.country));
@@ -70,7 +70,7 @@ function Rates({payload,context,locale}:{payload:Payload;context:string;locale:s
   </div>
  </section>;
 }
-export default function FreightRatePreview({context,locale,children}:{context:string;locale:string;children?:ReactNode}) {
+export default function FreightRatePreview({context,locale,children,renderOverview}:{context:string;locale:string;children?:ReactNode;renderOverview?:(payload:Payload|null)=>ReactNode}) {
  const [payload,setPayload]=useState<Payload|null>(null);
  const allowed=customerRatesAllowed(locale,context);
  useEffect(()=>{
@@ -79,6 +79,6 @@ export default function FreightRatePreview({context,locale,children}:{context:st
   cachedPayload.then(d=>{if(live)setPayload(d);}).catch(()=>{});return()=>{live=false;};
  },[allowed]);
  useEffect(()=>{if(payload&&window.location.hash==='#freight-rates')document.getElementById('freight-rates')?.scrollIntoView({block:'start'});},[payload]);
- if(!allowed||!payload)return <>{children}</>;
- return <><Rates key={context+locale} payload={payload} context={context} locale={locale}/>{children&&<details className="frp-existing"><summary>{rateCopy[locale].original}</summary>{children}</details>}</>;
+ if(!allowed||!payload)return <>{renderOverview?.(null)}{children}</>;
+ return <>{renderOverview?.(payload)}<Rates key={context+locale} payload={payload} context={context} locale={locale}/>{children&&<details className="frp-existing"><summary>{rateCopy[locale].original}</summary>{children}</details>}</>;
 }

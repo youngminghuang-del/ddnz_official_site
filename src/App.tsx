@@ -1,5 +1,6 @@
 import { cookingSelectionPages } from "./features/commercial-kitchen/data/cookingSelectionPages.mjs";
 import { inductionPages, zhHotCookingPage } from './features/commercial-kitchen/data/inductionPage.mjs';
+import {candidateLocales,candidatePath,candidateSlugs} from './features/freight/candidate-markets/model';
 import {isNewMarket} from './features/freight/new-markets/model';
 import './features/freight/market-preparation.css';
 import {coffeePath} from './features/coffee/data.mjs';
@@ -10,6 +11,7 @@ import {audioCategoryPaths} from './features/audio/category-routes.mjs';
 import { BrowserRouter as Router, Navigate, Routes, Route, useLocation, useNavigationType } from 'react-router-dom';
 import { lazy, Suspense, useEffect, useLayoutEffect, useRef, useState, type ComponentType } from 'react';
 import { HelmetProvider } from 'react-helmet-async';
+const CandidateFreightPage = lazy(() => import('./features/freight/candidate-markets/CandidatePage'));
 const Home = lazy(() => import('./pages/Home'));
 const NewMarketFreightPage = lazy(() => import('./features/freight/new-markets/NewMarketFreightPage'));
 const EcuadorFreightPage = lazy(() => import('./features/freight/EcuadorFreightPage'));
@@ -443,6 +445,10 @@ export default function App() {
           <RouteRecovery>
           <Suspense fallback={<RouteLoadingFallback />}>
           <Routes>
+            {candidateSlugs.flatMap(country => candidateLocales.map(locale => {
+              const path = candidatePath(country,locale);
+              return <Route key={path} path={path} element={<CandidateFreightPage />} />;
+            }))}
             {['','/zh-cn','/es','/fr','/ru','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'ddp'} path={prefix+'/services/ddp-shipping-from-china'} element={<FreightReleasePage/>}/>)}
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => ['sea-freight', 'lcl-shipping-from-china', 'dangerous-goods-shipping-from-china'].map(slug => <Route key={prefix + slug} path={prefix + '/services/' + slug} element={<FreightReleasePage/>}/>))}
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => modernizedFreightServicePaths.map(path => <Route key={prefix + path} path={`${prefix}/${path}`} element={<FreightReleasePage/>}/>))}

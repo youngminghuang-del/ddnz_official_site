@@ -1,5 +1,8 @@
 import { kitchenHeroItems } from '../src/features/commercial-kitchen/data/catalogueNavigation.mjs';
 import {partsMetadata} from '../src/features/electric-mobility/parts-i18n';
+import {customerFreightEndpoint,customerFreightPeriodActive,validateCustomerFreight} from '../src/features/freight/rates/public-feed.mjs';
+import CandidateContent from '../src/features/freight/candidate-markets/CandidateContent';
+import {candidateSlugs,isCandidate,candidateInfo,candidateLocale,candidateLocales} from '../src/features/freight/candidate-markets/model';
 import registeredBlogSchemas from '../src/data/blogReleaseSchemas.json';
 import lclClaimsSchema from '../src/data/lcl-claims-schema.json';
 import usbCableSchema from '../src/data/usb-cable-schema.json';
@@ -796,6 +799,11 @@ const countryNames: Record<string, Record<string, string>> = {
 for(const country of newMarkets){const m=marketInfo(country);countryNames[country]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>[l,new Intl.DisplayNames([l==='zh-cn'?'zh-CN':l],{type:'region'}).of(m.iso)!]));seoDataMatrix[`shipping-from-china-to-${country}`]=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>{const x=newMarketMetadata(country,(l==='zh-cn'?'zh':l) as NewMarketLocale);return [l,{title:x.title+' | DDNZ',desc:x.description,keywords:''}];}));}
 seoDataMatrix['shipping-from-china-to-central-africa']=Object.fromEntries(['en','zh-cn','es','ar','fr','ru','pt','tr'].map(l=>{const m=regionPageMetadata('central-africa',(l==='zh-cn'?'zh':l) as NewMarketLocale);return [l,{title:m.title,desc:m.desc,keywords:''}];}));
 const countryRouteSlugs = Object.keys(countryNames);
+const candidateRateRows = customerFreightPeriodActive()
+ ? validateCustomerFreight(JSON.parse(fs.readFileSync(path.join('public',customerFreightEndpoint),'utf8'))).rows
+ : [];
+const candidateStaticLanguages = candidateLocales.map(locale => locale==='zh'?'zh-cn':locale);
+for(const country of candidateSlugs){seoDataMatrix[`shipping-from-china-to-${country}`]=Object.fromEntries(candidateLocales.map(locale=>{const p=candidateInfo(country,locale);return [locale==='zh'?'zh-cn':locale,{title:p.title,desc:p.description,keywords:''}];}));}
 
 function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
  if (['ghana','india','bangladesh','pakistan'].includes(countrySlug)) {const m=usedGoodsMetadata(countrySlug as UsedGoodsCountry,(lang==='zh-cn'?'zh':lang) as Parameters<typeof usedGoodsMetadata>[1]);return {title:m.title,desc:m.description,keywords:''};}
@@ -978,7 +986,7 @@ function injectSeoMeta(
     'sourcing-services/inspection-quality-control',
     'sourcing-services/consolidation-export',
   ]);
-  const alternateLanguages = relPath===inductionRelPath?overviewLanguages:relPath===hotCookingRelPath?['zh-cn']:relPath==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:relPath==='shipping-from-china-to-ecuador'?['en','zh-cn','es','ar','fr','ru','pt','tr']:relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
+  const alternateLanguages = isCandidate(relPath.replace('shipping-from-china-to-',''))?candidateStaticLanguages:relPath===inductionRelPath?overviewLanguages:relPath===hotCookingRelPath?['zh-cn']:relPath==='sourcing/electric-scooter-spare-parts-from-china'?overviewLanguages:relPath==='shipping-from-china-to-ecuador'?['en','zh-cn','es','ar','fr','ru','pt','tr']:relPath===ddpPath?['en','zh-cn','es','fr','ru','ar','pt','tr']:['sourcing/home-energy-storage-from-china','sourcing/electric-bicycles-from-china','sourcing/electric-tricycles-from-china','sourcing/electric-utility-vehicles-from-china','sourcing/portable-power-stations-from-china','sourcing/electric-scooters-from-china'].includes(relPath)?overviewLanguages:(['products','sourcing-services'].includes(relPath) || foodProcessingRoutes.includes('/'+relPath) || kitchenCategories.some(c=>c.path===`/${relPath}/`) || restaurantPackagePaths.includes('/'+relPath) || '/'+relPath===audioPath || ('/'+relPath===filmGuidePath || relPath.startsWith('screen-protectors/guides/') || relPath==='screen-protectors/videos') || '/'+relPath===refrigerationPath || buyerGuideForPath('/'+relPath)) ? overviewLanguages : relPath.startsWith('shipping-from-china-to-') ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : ['services/lcl-shipping-from-china','services/dangerous-goods-shipping-from-china','services/sea-freight',...modernizedFreightServicePaths].includes(relPath) ? ['en','zh-cn','ru','fr','es','ar','pt','tr'] : hasProductTranslation(`/${relPath}`, 'en') ? overviewLanguages : relPath.startsWith('blog/') || relPath.startsWith('sourcing/') || isEnglishShowcase
     ? [lang]
     : ptTrLocalizedPages.has(relPath)
       ? ['en', 'zh-cn', 'ru', 'fr', 'es', 'ar', 'pt', 'tr']
@@ -1700,6 +1708,11 @@ function injectStaticRouteContent(
     if (css) htmlContent = htmlContent.replace('</head>', `<link rel="stylesheet" href="/assets/${css}"></head>`);
     return htmlContent.replace('<div id="root"></div>', `<div id="root">${content}</div>`);
   }
+  if (isCandidate(relPath.replace('shipping-from-china-to-',''))) {
+    const body=renderToStaticMarkup(createElement(CandidateContent,{country:relPath.replace('shipping-from-china-to-','') as import('../src/features/freight/candidate-markets/model').CandidateCountry,locale:candidateLocale(lang)!,initialRates:candidateRateRows}));
+    for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|CandidatePage|gulf-stories|candidate)-.*\.css$/.test(f)))if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+    return htmlContent.replace('<div id="root"></div>','<div id="root">'+body+'</div>');
+  }
   if (isNewMarket(relPath.replace('shipping-from-china-to-',''))) {
     const body=renderToStaticMarkup(createElement(NewMarketContent,{country:relPath.replace('shipping-from-china-to-','') as import('../src/features/freight/new-markets/model').NewMarket,locale:(lang==='zh-cn'?'zh':lang) as NewMarketLocale}));
     for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|NewMarketFreightPage|market-preparation)-.*\.css$/.test(f)))if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
@@ -2030,6 +2043,7 @@ function run() {
   }
 
   basePaths.push({path:'shipping-from-china-to-ecuador',priority:'0.8',changefreq:'monthly',languages:['en','zh-cn','es','ar','fr','ru','pt','tr']});
+  basePaths.push(...candidateSlugs.map(country=>({path:`shipping-from-china-to-${country}`,priority:'0.8',changefreq:'monthly',languages:candidateStaticLanguages})));
   const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod?: string; languages?: string[] }> = [...basePaths, ...countryPaths];
   blogPosts.forEach((post) => {
     if (post && (post.slug || post.id)) {
@@ -2206,7 +2220,8 @@ function run() {
         const routeEntry = 'src/features/mobile-sourcing/MobileSourcingPage.tsx';
         const route = manifest[routeEntry];
         const navigation = route?.imports?.map(key => manifest[key])
-          .find(chunk => chunk?.name === 'SourcingHomepageNav');
+          .find(chunk => chunk?.name === 'SourcingHomepageNav' || chunk?.css?.some(file =>
+            fs.readFileSync(path.join(distDir, file), 'utf8').includes('.ddnz-brand{--brand-width:')));
         if (!route?.file || !navigation?.css?.length) {
           throw new Error(`Missing route bundle or navigation stylesheet in Vite manifest: ${routeEntry}`);
         }
