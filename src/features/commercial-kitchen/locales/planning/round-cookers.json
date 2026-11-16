@@ -1,0 +1,74 @@
+{
+  "en": {
+    "label": "Commercial soup cookers and bun steamers",
+    "heading": "Source commercial soup cookers and bun steamers from China",
+    "intro": "Compare a high-rim induction soup cooker with five- and seven-opening bun steamer configurations. Check power, electrical supply and floor space before ordering.",
+    "choose": "Compare soup and bun stations",
+    "options": ["High-rim soup cooker", "Five-opening bun steamer", "Seven-opening bun steamer"],
+    "photo": "Seven-opening configuration shown",
+    "note": "The five- and seven-opening options share model code YST-ZBL150X. The catalogue image shows the seven-opening configuration."
+  },
+  "zh": {
+    "label": "商用汤炉和蒸包炉",
+    "heading": "从中国采购商用汤炉和蒸包炉",
+    "intro": "按汤品和蒸包工位选型，对比高边汤炉、五孔蒸包炉和七孔蒸包炉的功率、供电与占地。",
+    "choose": "比较高边汤炉、五孔与七孔",
+    "options": ["高边电磁汤炉", "五孔蒸包炉", "七孔蒸包炉"],
+    "photo": "图示为七孔配置",
+    "note": "五孔与七孔是 YST-ZBL150X 的两种配置，目录图展示七孔款。"
+  },
+  "es": {
+    "label": "Cocedores comerciales de sopa y vaporeras para bollos",
+    "heading": "Compre cocedores comerciales de sopa y vaporeras para bollos en China",
+    "intro": "Compare un cocedor de sopa por inducción con borde alto y vaporeras de cinco o siete aberturas. Revise la potencia, la alimentación y el espacio en el suelo.",
+    "choose": "Comparar equipos para sopa y bollos",
+    "options": ["Cocedor de sopa con borde alto", "Vaporera de cinco aberturas", "Vaporera de siete aberturas"],
+    "photo": "Configuración de siete aberturas en la imagen",
+    "note": "Las configuraciones de cinco y siete aberturas comparten el código YST-ZBL150X. La imagen del catálogo muestra la de siete."
+  },
+  "ar": {
+    "label": "مواقد شوربة وأجهزة تبخير الكعك التجارية",
+    "heading": "توريد مواقد شوربة وأجهزة تبخير الكعك التجارية من الصين",
+    "intro": "قارن موقد الشوربة بالحث ذي الحافة المرتفعة مع جهاز تبخير بخمس أو سبع فتحات. راجع القدرة والتغذية الكهربائية والمساحة الأرضية.",
+    "choose": "مقارنة خيارات الشوربة والتبخير",
+    "options": ["موقد شوربة بحافة مرتفعة", "جهاز تبخير بخمس فتحات", "جهاز تبخير بسبع فتحات"],
+    "photo": "الصورة لتكوين السبع فتحات",
+    "note": "يشترك خيارا الخمس والسبع فتحات في رمز الطراز YST-ZBL150X. تعرض صورة الكتالوج خيار السبع فتحات."
+  },
+  "ru": {
+    "label": "Профессиональные суповарки и пароварки для булочек",
+    "heading": "Закупка профессиональных суповарок и пароварок для булочек из Китая",
+    "intro": "Сравните индукционную суповарку с высоким бортом и пароварку на пять или семь отверстий по мощности, электропитанию и размерам основания.",
+    "choose": "Сравнить суповарку и пароварки",
+    "options": ["Суповарка с высоким бортом", "Пароварка на пять отверстий", "Пароварка на семь отверстий"],
+    "photo": "На фото вариант на семь отверстий",
+    "note": "Варианты на пять и семь отверстий имеют общий код YST-ZBL150X. На фото в каталоге показан вариант на семь отверстий."
+  },
+  "fr": {
+    "label": "Cuiseurs à soupe et cuiseurs vapeur pour brioches professionnels",
+    "heading": "Achetez des cuiseurs à soupe et des cuiseurs vapeur pour brioches en Chine",
+    "intro": "Comparez un cuiseur à soupe à induction à rebord haut et des cuiseurs vapeur à cinq ou sept ouvertures selon la puissance, l’alimentation et l’encombrement au sol.",
+    "choose": "Comparer les postes soupe et vapeur",
+    "options": ["Cuiseur à soupe à rebord haut", "Cuiseur vapeur à cinq ouvertures", "Cuiseur vapeur à sept ouvertures"],
+    "photo": "Configuration à sept ouvertures sur la photo",
+    "note": "Les deux configurations portent la référence YST-ZBL150X. La photo du catalogue montre la version à sept ouvertures."
+  },
+  "pt": {
+    "label": "Cozedores de sopa e de pães a vapor comerciais",
+    "heading": "Compre cozedores de sopa e de pães a vapor comerciais na China",
+    "intro": "Compare um cozedor de sopa por indução com borda alta e opções de vapor com cinco ou sete aberturas. Confira a potência, a alimentação e o espaço no piso.",
+    "choose": "Comparar opções para sopa e vapor",
+    "options": ["Cozedor de sopa com borda alta", "Cozedor a vapor de cinco aberturas", "Cozedor a vapor de sete aberturas"],
+    "photo": "Foto da configuração de sete aberturas",
+    "note": "As configurações de cinco e sete aberturas usam o mesmo código YST-ZBL150X. A foto do catálogo mostra a opção de sete."
+  },
+  "tr": {
+    "label": "Ticari çorba ve buharlı çörek pişiriciler",
+    "heading": "Çin’den ticari çorba ve buharlı çörek pişirici tedariki",
+    "intro": "Yüksek kenarlı indüksiyonlu çorba pişiriciyi beş veya yedi açıklıklı buharlı pişiriciyle karşılaştırın. Gücü, elektrik beslemesini ve zeminde kapladığı alanı kontrol edin.",
+    "choose": "Çorba ve buhar seçeneklerini karşılaştırın",
+    "options": ["Yüksek kenarlı çorba pişirici", "Beş açıklıklı buharlı pişirici", "Yedi açıklıklı buharlı pişirici"],
+    "photo": "Fotoğrafta yedi açıklıklı seçenek",
+    "note": "Beş ve yedi açıklıklı seçenekler YST-ZBL150X model kodunu kullanır. Katalog fotoğrafında yedi açıklıklı seçenek gösterilir."
+  }
+}

@@ -1,6 +1,7 @@
 import { SharedKitchenListBar } from './components/SharedKitchenList';
 import InductionCatalogue from './components/InductionCatalogue';
 import { cookingSelectionBreadcrumb, cookingSelections } from './data/cookingSelectionPages.mjs';
+import { roundSteamerOpeningOptions } from './data/inductionModels.mjs';
 import catalogueCopy from './locales/planning/induction-catalogue.json';
 import navigationCopy from './locales/planning/induction-use.json';
 
@@ -16,6 +17,15 @@ export default function CookingSelectionContent({ group, locale, onAdd, count = 
   const breadcrumb = cookingSelectionBreadcrumb(group, locale);
   const heroModel = models[1];
   const names = 'doors' in text ? text.doors : catalogueCopy[locale].noodleNames;
+  const modelEntries = models.map((model, index) => ({
+    model, name: names[index], target: 'model-' + model.id,
+  }));
+  const entries = 'options' in text ? [
+    { model: models[0], name: text.options[0], target: 'model-' + models[0].id },
+    ...roundSteamerOpeningOptions.map((option, index) => ({
+      model: heroModel, name: text.options[index + 1], target: option.id,
+    })),
+  ] : modelEntries;
   const selectionId = id + '-selection';
   const titleId = selectionId + '-title';
   const installationId = id + '-installation';
@@ -35,20 +45,20 @@ export default function CookingSelectionContent({ group, locale, onAdd, count = 
         </div>
       </div>
       <figure className="induction-hero-photo">
-        <img src={heroModel.image} alt={names[1]} width="1536" height="1024" fetchPriority="high"/>
-        <figcaption><bdi>{heroModel.model}</bdi></figcaption>
+        <img src={heroModel.image} alt={'options' in text ? text.options[2] : names[1]} width="1536" height="1024" fetchPriority="high"/>
+        <figcaption><bdi>{heroModel.model}</bdi>{'photo' in text && <> · {text.photo}</>}</figcaption>
       </figure>
     </section>
     <SharedKitchenListBar locale={locale} count={count} status={status}/>
     <section className="section wrap induction-use-section" id={selectionId} aria-labelledby={titleId}>
       <h2 id={titleId}>{text.choose}</h2>
       <nav className="induction-use-nav" aria-labelledby={titleId}>
-        {models.map((model, index) => <a key={model.id} href={'#model-' + model.id}>
+        {entries.map(({model, name, target}) => <a key={target} href={'#' + target}>
           <img src={model.image} width="100" height="78" alt="" loading="lazy"/>
-          <span><strong>{names[index]} <span aria-hidden="true">↓</span></strong><span><bdi>{model.model}</bdi></span></span>
+          <span><strong>{name} <span aria-hidden="true">↓</span></strong><span><bdi>{model.model}</bdi></span></span>
         </a>)}
       </nav>
-      {'note' in text && <p className="noodle-configuration-note">{text.note}</p>}
+      {'note' in text && <p className={group === 'round' ? 'round-configuration-note' : 'noodle-configuration-note'}>{text.note}</p>}
     </section>
     <InductionCatalogue locale={locale} group={group} expanded showTotal standaloneSelection onAdd={onAdd}/>
     {'checks' in text && <section className="section wrap induction-quote-checks" id={installationId}>

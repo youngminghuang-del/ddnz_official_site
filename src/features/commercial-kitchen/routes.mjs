@@ -32,3 +32,4 @@ export const hotCookingPath = '/sourcing/commercial-hot-cooking-equipment-from-c
 
 export const steamCabinetPath = '/sourcing/commercial-induction-steam-cabinets-from-china';
 export const noodleCookerPath = '/sourcing/commercial-countertop-noodle-cookers-from-china';
+export const soupBunCookerPath = '/sourcing/commercial-soup-cookers-and-bun-steamers-from-china';
