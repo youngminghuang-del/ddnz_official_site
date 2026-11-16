@@ -130,6 +130,25 @@
       ],
       "faq_count": 4,
       "item_list_count": 10
+    },
+    {
+      "slug": "lcl-door-to-door-warehouse-unloading",
+      "canonical": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/",
+      "language": "en",
+      "notion_page_id": "41aeac33-2618-81c5-b2d9-ff4eb6af42ba",
+      "release_file": "src/data/lclDoorDeliveryRelease.json",
+      "schema_file": "src/data/lcl-door-delivery-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/lcl-door-to-door-warehouse-unloading/cover-export.jpg",
+      "images": [
+        "/images/posts/lcl-door-to-door-warehouse-unloading/cover-export.jpg",
+        "/images/posts/lcl-door-to-door-warehouse-unloading/truck-liftgate-pallet-jack.jpg",
+        "/images/posts/lcl-door-to-door-warehouse-unloading/delivery-crew-doorway.png"
+      ],
+      "faq_count": 3,
+      "item_list_count": 8
     }
   ]
 }

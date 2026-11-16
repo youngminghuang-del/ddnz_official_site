@@ -1,0 +1,208 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#webpage",
+      "name": "LCL Door-to-Door Shipping: Who Unloads at Your Warehouse?",
+      "description": "Compare LCL door-to-door rates with the full address, unloading method, liftgate and inside delivery confirmed. Includes a warehouse receiving checklist.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#breadcrumb"
+      },
+      "url": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#warehouse-dock"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#article",
+      "headline": "LCL Door-to-Door Shipping: Who Unloads at Your Warehouse?",
+      "description": "Compare LCL door-to-door rates with the full address, unloading method, liftgate and inside delivery confirmed. Includes a warehouse receiving checklist.",
+      "inLanguage": "en",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#webpage"
+      },
+      "creativeWorkStatus": "Published",
+      "dateCreated": "2026-11-16",
+      "dateModified": "2026-11-16T11:52:11+08:00",
+      "citation": [
+        "https://academy.iccwbo.org/incoterms/article/incoterms-2020-c-or-d-rules/",
+        "https://academy.iccwbo.org/incoterms/article/incoterms-2020-dap-or-ddp/",
+        "https://terms.maersk.com/LCL",
+        "https://www.fedexfreight.com/en-us/rate-ship/shipping",
+        "https://www.fedexfreight.com/en-us/services/custom-critical/information",
+        "https://www.fedexfreight.com/en-us/rate-ship/shipping/forms",
+        "https://www.ryder.com/en-us/logistics/last-mile-delivery/white-glove-delivery"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#faq"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#warehouse-dock"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#liftgate"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#inside-delivery"
+        }
+      ],
+      "datePublished": "2026-11-16T11:52:11+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does DDP include unloading at my warehouse?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Under DDP, the goods are delivered ready for unloading at the named point. Confirm separately who performs unloading, whether the carriage price includes it, and where the handover occurs."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is a liftgate enough if there is no loading dock?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A liftgate can lower compatible freight to ground level. Confirm that the platform and rated capacity suit the heaviest packed unit and that a suitable truck can stop on safe, level ground. Agree who moves the freight from that point."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "When should I ask the warehouse to book a time slot?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask for the warehouse’s notice period before you book freight. Confirm the slot with the local carrier once cargo availability and the dispatch plan are confirmed, allowing enough time to meet the warehouse’s booking deadline."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#receiving-checklist",
+      "name": "Warehouse receiving checklist",
+      "numberOfItems": 8,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Address type and delivery point"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Packed units"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Vehicle access"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Unloading and movement"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Inside delivery and extra handling"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Appointment"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Exceptions and fees"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Handover record"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.ddnzglobal.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LCL Door-to-Door Shipping: Who Unloads at Your Warehouse?",
+          "item": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#warehouse-dock",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/cover-export.jpg",
+      "description": "Forklift handling a pallet between a warehouse loading dock and a truck",
+      "width": 1200,
+      "height": 802,
+      "url": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/cover-export.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#liftgate",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/truck-liftgate-pallet-jack.jpg",
+      "description": "Pallet and pallet jack on a truck liftgate below the cargo floor",
+      "width": 1000,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/truck-liftgate-pallet-jack.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/lcl-door-to-door-warehouse-unloading/#inside-delivery",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/delivery-crew-doorway.png",
+      "description": "Delivery crew guiding a wrapped item through a residential doorway",
+      "width": 1240,
+      "height": 620,
+      "url": "https://www.ddnzglobal.com/images/posts/lcl-door-to-door-warehouse-unloading/delivery-crew-doorway.png"
+    }
+  ]
+}
