@@ -116,3 +116,17 @@
 @media (max-width:540px) {
   .ecuador-form-preview ul { min-height:auto; }
 }
+
+.ecuador-terminal-photo { margin:0 0 12px; min-width:0; }
+.ecuador-terminal-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:2;
+  object-fit:cover;
+  border-radius:10px;
+  background:#edf2f6;
+}
+.ecuador-terminal-photo figcaption { margin-block-start:6px; color:#506079; font-size:12px; }
+.ecuador-origin-reference { margin-block:8px; }
+.ecuador-origin-preview { width:min(100%,345px); }

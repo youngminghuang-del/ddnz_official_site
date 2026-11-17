@@ -1,6 +1,7 @@
 import {Building2, CheckSquare2, ClipboardCheck, ClipboardList, FileCheck2, FileSearch, FileText, MapPin, Ruler, ScanLine, Truck, Warehouse} from 'lucide-react';
 import {LatinDoorRouteMap} from '../../components/FreightRouteMap';
 import {FreightChapters} from './GulfChapters';
+import {EcuadorOriginFields, EcuadorPortPhoto} from './EcuadorReferenceVisuals';
 import {EcuadorProcessPhoto, LatinDoorFaq} from './LatinDoorVisuals';
 import visualCopy from './latinDoorVisualCopy.json';
 import gulfUi from './gulfUi.json';
@@ -79,14 +80,14 @@ export default function EcuadorContent({locale,market='ecuador',initialRates}:{
    return <article key={heading}><span className="latin-small-visual"><Icon aria-hidden="true" size={24}/>{i===0&&<bdi>CO</bdi>}</span><h3>{heading}</h3><p>{locale==='ar'?<MarketBidiText text={body}/>:body}</p></article>;
   })}</div>
  </section>
- <section className="mp-section"><h2>{c.ports}</h2><p className="mp-lede">{locale==='ar'?<MarketBidiText text={c.portIntro}/>:c.portIntro}</p><div className="mp-port-list"><article><h3>{locale==='ar'?<MarketBidiText text={c.portA}/>:c.portA}</h3><a href="https://www.ictsi.com/our-offering/our-terminals/contecon-guayaquil-sa" rel="noreferrer" target="_blank">ICTSI · Contecon Guayaquil <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></article><article><h3>{locale==='ar'?<MarketBidiText text={c.portB}/>:c.portB}</h3><a href="https://www.dpworld.com/en/news/dp-world-inaugurates-posorja-terminal-expansion-boosting-ecuadors-global-trade-capacity" rel="noreferrer" target="_blank">DP World · Posorja <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></article></div><p>{locale==='ar'?<MarketBidiText text={c.portNote}/>:c.portNote}</p></section>
+ <section className="mp-section" id="ecuador-port-comparison"><h2>{c.ports}</h2><p className="mp-lede">{locale==='ar'?<MarketBidiText text={c.portIntro}/>:c.portIntro}</p><div className="mp-port-list"><article><EcuadorPortPhoto locale={locale} terminal="contecon"/><h3>{locale==='ar'?<MarketBidiText text={c.portA}/>:c.portA}</h3><a href="https://www.ictsi.com/our-offering/our-terminals/contecon-guayaquil-sa" rel="noreferrer" target="_blank">ICTSI · Contecon Guayaquil <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></article><article><EcuadorPortPhoto locale={locale} terminal="posorja"/><h3>{locale==='ar'?<MarketBidiText text={c.portB}/>:c.portB}</h3><a href="https://www.dpworld.com/en/news/dp-world-inaugurates-posorja-terminal-expansion-boosting-ecuadors-global-trade-capacity" rel="noreferrer" target="_blank">DP World · Posorja <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></article></div><p>{locale==='ar'?<MarketBidiText text={c.portNote}/>:c.portNote}</p></section>
  <section className="mp-section" id="quote-checklist"><h2>{c.brief}</h2>
   <ul className="mp-checks">{c.fields.map((field,i)=>{
    const Icon=checklistIcons[i];
    return <li key={field}><span className="latin-small-visual"><Icon aria-hidden="true" size={22}/></span><span>{field}</span></li>;
   })}</ul>
  </section>
- <section className="mp-section mp-sources"><h2>{c.sources}</h2><a href="https://www.aduana.gob.ec/servicio-al-ciudadano/para-importar/" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.importGuide}/>:c.importGuide} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a><a href="https://www.aduana.gob.ec/gaceta-boletin/informacion-relevante-sobre-aplicacion-de-certificado-de-origen-china/" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.fta}/>:c.fta} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a><a href="https://co.ccpit.org/front/process" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.origin}/>:c.origin} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></section>
+ <section className="mp-section mp-sources" id="ecuador-origin-references"><h2>{c.sources}</h2><a href="https://www.aduana.gob.ec/servicio-al-ciudadano/para-importar/" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.importGuide}/>:c.importGuide} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a><div className="ecuador-origin-reference"><a href="https://www.aduana.gob.ec/gaceta-boletin/informacion-relevante-sobre-aplicacion-de-certificado-de-origen-china/" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.fta}/>:c.fta} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a><EcuadorOriginFields locale={locale}/></div><a href="https://co.ccpit.org/front/process" target="_blank" rel="noreferrer">{locale==='ar'?<MarketBidiText text={c.origin}/>:c.origin} <span aria-hidden="true">{locale==='ar'?'↖':'↗'}</span></a></section>
    </>}
    <LatinDoorFaq market={market} locale={locale}/>
   </div>
