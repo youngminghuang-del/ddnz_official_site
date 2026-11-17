@@ -3,6 +3,7 @@ import {ArrowRight, Ship, PackageCheck, Truck, FileText} from 'lucide-react';
 import { MarketImportRules, MarketRateOverview, marketGuide, type MarketRateRow } from './MarketGuides';
 import scenarioCopy from './quoteScenarioCopy.json';
 import { QuoteScenarios } from './QuoteScenarios';
+import { FactoryHandoff } from './FactoryHandoff';
 import FreightRatePreview from '../rates/FreightRatePreview';
 import {CountryGatewayMap} from '../../../components/FreightRouteMap';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
@@ -40,7 +41,9 @@ export default function CandidateContent({country,locale,initialRates=[]}:{count
     </span>
     <span><strong>{c.documentLink}</strong><small>{c.documentLinkBody}</small></span>
     <ArrowRight className="candidate-direction" size={20} aria-hidden="true"/>
-   </a>}</section>
+   </a>}
+    <FactoryHandoff country={country} locale={locale}/>
+   </section>
    <section id="arrival" className="gulf-section"><p className="gulf-eyebrow">04 / {c.arrivalSection}</p><h2>{c.gatewayHeading}</h2><p>{c.gatewayText}</p><div className="candidate-handover"><article><PackageCheck size={28}/><h3>{c.release}</h3><p>{c.releaseBody}</p></article><article><Truck size={28}/><h3>{c.addressDelivery}</h3><p>{c.inlandText}</p></article></div></section>
    <section className="gulf-section candidate-final"><p className="gulf-eyebrow">05 / {c.shipment}</p><h2>{c.shipmentHeading}</h2><p>{c.shipmentBody}</p><p data-freight-provider>{c.providerBody}</p><a className="gulf-cta" {...quote}>{c.ask} ↗</a><div className="candidate-related"><a href={pacific?`${prefix}/services/sea-freight/`:`${prefix}/shipping-from-china-to-europe/`}>{pacific?candidateSeaLabel(locale):c.europeLink} ↗</a><a href={`${prefix}/services/lcl-shipping-from-china/`}>{c.lclLink} ↗</a><a href={`${prefix}/sourcing-services/consolidation-export/`}>{c.consolidationLink} ↗</a>{(pacific?pacificCandidateSlugs:europeCandidateSlugs).filter(s=>s!==country).map(s=><a key={s} href={candidatePath(s,locale)}>{candidateInfo(s,locale).name} ↗</a>)}</div></section>
   </div>
