@@ -9,7 +9,9 @@ import eastAsiaCopy from './eastAsiaCopy.json';
 
 import southeastAsiaCopy from './southeastAsiaCopy.json';
 
-const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy, ...southeastAsiaCopy};
+import additionalSoutheastAsiaCopy from './additionalSoutheastAsiaCopy.json';
+
+const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy, ...southeastAsiaCopy, ...additionalSoutheastAsiaCopy};
 
 export { sharedCopy };
 export type CandidateLocale = Language;
@@ -17,7 +19,7 @@ export const candidateLocales = freightDestinationLanguages;
 export const europeCandidateSlugs = ['netherlands', 'united-kingdom', 'france'] as const;
 export const pacificCountrySlugs = ['canada', 'australia'] as const;
 export const eastAsiaCountrySlugs = ['japan', 'south-korea'] as const;
-export const southeastAsiaCountrySlugs = ['vietnam', 'malaysia', 'singapore'] as const;
+export const southeastAsiaCountrySlugs = ['vietnam', 'malaysia', 'singapore', 'thailand', 'indonesia', 'philippines'] as const;
 export const pacificCandidateSlugs = [...pacificCountrySlugs, ...eastAsiaCountrySlugs, ...southeastAsiaCountrySlugs] as const;
 export const candidateSlugs = [...europeCandidateSlugs,...pacificCandidateSlugs] as const;
 export type PacificCandidate = typeof pacificCandidateSlugs[number];
@@ -45,12 +47,15 @@ export const candidateData = {
  vietnam: {iso:'VN',gateway:'Ho Chi Minh City · Cat Lai',airport:'SGN'},
  malaysia: {iso:'MY',gateway:'Port Klang',airport:'KUL'},
  singapore: {iso:'SG',gateway:'Singapore',airport:'SIN'},
+ thailand: {iso:'TH',gateway:'Laem Chabang',airport:'BKK'},
+ indonesia: {iso:'ID',gateway:'Jakarta · Tanjung Priok',airport:'CGK'},
+ philippines: {iso:'PH',gateway:'Manila',airport:'MNL'},
 } as const;
 
 export function candidateCopy(country: CandidateCountry, locale: CandidateLocale) {
  return { ...sharedCopy[locale], ...(isPacificCandidate(country) ? pacificCountryCopy(country,locale) : countryCopy[country][locale]) };
 }
-const southeastQuotePorts = { vietnam: 'HOCHIMINH CAT LAI', malaysia: 'PORT KELANG', singapore: 'SINGAPORE' } as const;
+const southeastQuotePorts = { vietnam: 'HOCHIMINH CAT LAI', malaysia: 'PORT KELANG', singapore: 'SINGAPORE', thailand: 'LAEM CHABANG', indonesia: 'JAKARTA', philippines: 'MANILA' } as const;
 export function candidateQuoteDestination(country: CandidateCountry, locale: CandidateLocale, name: string) {
  const quotePort = southeastQuotePorts[country as keyof typeof southeastQuotePorts];
  const gateway = quotePort ? localizedPacificPort(quotePort,locale) : candidateData[country].gateway;
@@ -65,6 +70,9 @@ export const pacificMarketBadges = {
  vietnam: ['VNACCS','HS','Cat Lai','VNACCS · CAT LAI'],
  malaysia: ['K1','HS','Westports / Northport','K1 · PORT KLANG'],
  singapore: ['TradeNet','GST','FTZ','TradeNet · GST'],
+ thailand: ['e-Customs','HS / VAT','Laem Chabang','e-Customs · HS'],
+ indonesia: ['PIB','PDRI','INSW','PIB · INSW'],
+ philippines: ['BOC / E2M','CMTA','PNTR','BOC · E2M'],
 } as const;
 const origin = 'https://www.ddnzglobal.com';
 

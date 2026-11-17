@@ -768,5 +768,443 @@
       "note": "Serbest bölgede kalış tek başına aktarma statüsünü belirlemez. Belgeleri ve fiilî hareketi forwarder’a doğrulatın.",
       "link": "Çin’de yük birleştirme ve ihracat koordinasyonunu inceleyin"
     }
+  },
+  "thailand": {
+    "zh": {
+      "title": "中国工厂发设备到林查班，如何准备装柜",
+      "steps": [
+        [
+          "工厂资料",
+          "记录每个木箱的毛重、外尺寸及重心，注明叉车进叉或吊点。"
+        ],
+        [
+          "装运前核对",
+          "用设备尺寸和单件重量核对箱型及装柜方案，再把工厂提货时间与码头截箱时间排到一起。"
+        ],
+        [
+          "交接与放行",
+          "向泰国收货方交接卸货资料，确认进场条件与预约。"
+        ]
+      ],
+      "link": "查看中国海运订舱服务"
+    },
+    "en": {
+      "title": "How to prepare factory equipment in China for Laem Chabang",
+      "steps": [
+        [
+          "Factory details",
+          "Record each crate’s gross weight, outer dimensions, centre of gravity and fork pockets or lifting points."
+        ],
+        [
+          "Pre-shipment checks",
+          "Check the container and loading plan against those measurements and align factory collection with the terminal cutoff."
+        ],
+        [
+          "Handover and release",
+          "Give the Thai receiver the unloading details and confirm site access and its appointment."
+        ]
+      ],
+      "link": "See sea freight booking from China"
+    },
+    "es": {
+      "title": "Cómo preparar maquinaria de una fábrica china para Laem Chabang",
+      "steps": [
+        [
+          "Datos de fábrica",
+          "Registre el peso bruto, las dimensiones, el centro de gravedad y los puntos de izado o de horquilla de cada caja."
+        ],
+        [
+          "Control previo al embarque",
+          "Compruebe el plan de carga y el contenedor y coordine la recogida con el cierre de la terminal."
+        ],
+        [
+          "Entrega y liberación",
+          "Entregue al receptor tailandés los datos de descarga y confirme el acceso y el turno."
+        ]
+      ],
+      "link": "Ver el servicio de reserva marítima en China"
+    },
+    "fr": {
+      "title": "Préparer des machines en usine en Chine pour Laem Chabang",
+      "steps": [
+        [
+          "Données de l’usine",
+          "Relevez poids brut, dimensions, centre de gravité et points de levage ou de fourche de chaque caisse."
+        ],
+        [
+          "Contrôle avant départ",
+          "Vérifiez le conteneur et le plan de chargement, puis alignez la collecte sur l’heure limite du terminal."
+        ],
+        [
+          "Transmission et mainlevée",
+          "Transmettez au destinataire thaïlandais les consignes de déchargement et confirmez l’accès et le créneau."
+        ]
+      ],
+      "link": "Voir la réservation de fret maritime en Chine"
+    },
+    "ru": {
+      "title": "Подготовка оборудования на заводе в Китае к отправке в Лаемчабанг",
+      "steps": [
+        [
+          "Данные завода",
+          "Запишите массу брутто, размеры, центр тяжести и точки строповки или захвата каждой тары."
+        ],
+        [
+          "Проверка до отправки",
+          "Проверьте тип контейнера и схему погрузки, согласуйте забор с крайним сроком приёма на терминале."
+        ],
+        [
+          "Передача и выпуск",
+          "Передайте получателю условия выгрузки и подтвердите доступ и время."
+        ]
+      ],
+      "link": "Посмотреть бронирование морской перевозки из Китая"
+    },
+    "ar": {
+      "title": "تجهيز معدات المصنع في الصين للشحن إلى ليم تشابانغ",
+      "steps": [
+        [
+          "بيانات المصنع",
+          "سجّل الوزن الإجمالي والأبعاد ومركز الثقل ونقاط الرفع أو مسارات الرافعة لكل صندوق."
+        ],
+        [
+          "التحقق قبل الشحن",
+          "راجع مقاس الحاوية وخطة التحميل ونسّق الاستلام من المصنع مع موعد إغلاق المحطة."
+        ],
+        [
+          "التسليم والإفراج",
+          "سلّم للمستلم في تايلاند تعليمات التفريغ وثبّت موعده وشروط دخول الموقع."
+        ]
+      ],
+      "link": "اطّلع على حجز الشحن البحري من الصين"
+    },
+    "pt": {
+      "title": "Como preparar máquinas na fábrica chinesa para Laem Chabang",
+      "steps": [
+        [
+          "Dados da fábrica",
+          "Registre peso bruto, dimensões, centro de gravidade e pontos de içamento ou de garfo de cada caixa."
+        ],
+        [
+          "Verificação antes do embarque",
+          "Confira o contêiner e o plano de carregamento e alinhe a coleta ao fechamento do terminal."
+        ],
+        [
+          "Entrega e liberação",
+          "Passe ao destinatário tailandês os dados de descarga e confirme acesso e agendamento."
+        ]
+      ],
+      "link": "Veja a reserva de frete marítimo na China"
+    },
+    "tr": {
+      "title": "Çin fabrikasındaki makineyi Laem Chabang sevkiyatına hazırlama",
+      "steps": [
+        [
+          "Fabrika bilgileri",
+          "Her sandığın brüt ağırlığını, ölçülerini, ağırlık merkezini ve kaldırma noktalarını kaydedin."
+        ],
+        [
+          "Sevk öncesi kontrol",
+          "Ölçülerle konteyneri ve yükleme planını doğrulayın. Fabrikadan alımı terminal kapanışına göre ayarlayın."
+        ],
+        [
+          "Devir ve çıkış",
+          "Tayland’daki alıcıya boşaltma bilgilerini verin ve giriş koşullarıyla randevuyu doğrulayın."
+        ]
+      ],
+      "link": "Çin’den deniz taşımacılığı rezervasyonunu inceleyin"
+    }
+  },
+  "indonesia": {
+    "zh": {
+      "title": "中国工厂发货到雅加达前，如何交接型号和进口许可资料",
+      "steps": [
+        [
+          "工厂资料",
+          "逐型号交接用途、材质、照片和铭牌信息，供进口方确认税号。"
+        ],
+        [
+          "装运前核对",
+          "请进口方用 INSW 核对禁限和适用文件，确定商业发票的货描和数量。"
+        ],
+        [
+          "交接与放行",
+          "装箱前复核实物、标签和单证。将核对结果交给报关代理。"
+        ]
+      ],
+      "link": "查看中国工厂验货服务"
+    },
+    "en": {
+      "title": "Handover of factory model and permit details before shipping from China to Jakarta",
+      "steps": [
+        [
+          "Factory details",
+          "Share each model’s use, material, photos and nameplate so the importer can verify classification."
+        ],
+        [
+          "Pre-shipment checks",
+          "Have the importer check restrictions and documents in INSW and agree the invoice descriptions and quantities."
+        ],
+        [
+          "Handover and release",
+          "Check the physical items, labels and documents before packing. Share the findings with the customs broker."
+        ]
+      ],
+      "link": "See factory inspection in China"
+    },
+    "es": {
+      "title": "Cómo entregar datos de modelos y permisos antes de enviar de una fábrica china a Yakarta",
+      "steps": [
+        [
+          "Datos de fábrica",
+          "Comparta usos, materiales, fotos y placas por modelo para verificar la clasificación."
+        ],
+        [
+          "Control previo al embarque",
+          "El importador comprueba restricciones y documentos en INSW y valida las descripciones y cantidades de factura."
+        ],
+        [
+          "Entrega y liberación",
+          "Coteje mercancía, etiquetas y documentos antes de embalar y comparta el resultado con el agente aduanal."
+        ]
+      ],
+      "link": "Ver la inspección de fábrica en China"
+    },
+    "fr": {
+      "title": "Transmettre références des modèles et pièces d’autorisation avant le départ de l’usine chinoise vers Jakarta",
+      "steps": [
+        [
+          "Données de l’usine",
+          "Fournissez usage, matières, photos et plaques par modèle pour vérifier le classement."
+        ],
+        [
+          "Contrôle avant départ",
+          "L’importateur vérifie les restrictions et documents dans INSW et valide les désignations et quantités de la facture."
+        ],
+        [
+          "Transmission et mainlevée",
+          "Contrôlez marchandise, étiquettes et documents avant emballage et partagez le relevé avec le déclarant."
+        ]
+      ],
+      "link": "Voir l’inspection en usine en Chine"
+    },
+    "ru": {
+      "title": "Подготовка сведений о моделях и разрешениях перед отправкой с завода в Китае в Джакарту",
+      "steps": [
+        [
+          "Данные завода",
+          "Передайте назначение, материал, фото и данные шильдика каждой модели для проверки кода."
+        ],
+        [
+          "Проверка до отправки",
+          "Импортёр проверяет ограничения и документы в INSW и согласует описания и количества в счёте."
+        ],
+        [
+          "Передача и выпуск",
+          "До упаковки сверьте товары, маркировку и документы и передайте результат брокеру."
+        ]
+      ],
+      "link": "Посмотреть проверку на заводе в Китае"
+    },
+    "ar": {
+      "title": "تسليم بيانات الطرازات والتصاريح قبل الشحن من مصنع الصين إلى جاكرتا",
+      "steps": [
+        [
+          "بيانات المصنع",
+          "أرسل الاستعمال والمادة والصور وبيانات اللوحة لكل طراز للتحقق من التصنيف."
+        ],
+        [
+          "التحقق قبل الشحن",
+          "يتحقق المستورد من القيود والمستندات في INSW ويعتمد وصف الفاتورة والكميات."
+        ],
+        [
+          "التسليم والإفراج",
+          "طابق البضاعة وملصقاتها ومستنداتها قبل التعبئة وأرسل نتيجة التحقق للمخلص."
+        ]
+      ],
+      "link": "اطّلع على خدمة فحص المصانع في الصين"
+    },
+    "pt": {
+      "title": "Como entregar dados de modelos e licenças antes de enviar da fábrica chinesa para Jacarta",
+      "steps": [
+        [
+          "Dados da fábrica",
+          "Envie uso, material, fotos e placa de cada modelo para confirmar a classificação."
+        ],
+        [
+          "Verificação antes do embarque",
+          "O importador confere restrições e documentos no INSW e aprova descrições e quantidades da fatura."
+        ],
+        [
+          "Entrega e liberação",
+          "Confira mercadoria, rótulos e documentos antes da embalagem e passe o resultado ao despachante."
+        ]
+      ],
+      "link": "Veja a inspeção de fábrica na China"
+    },
+    "tr": {
+      "title": "Çin fabrikasından Cakarta’ya sevk öncesi model ve izin bilgilerinin devri",
+      "steps": [
+        [
+          "Fabrika bilgileri",
+          "Sınıflandırma için her modelin kullanımını, malzemesini, fotoğrafını ve plaka bilgilerini paylaşın."
+        ],
+        [
+          "Sevk öncesi kontrol",
+          "İthalatçı INSW’de kısıtları ve belgeleri kontrol edip faturadaki tanım ve adetleri onaylar."
+        ],
+        [
+          "Devir ve çıkış",
+          "Ambalajdan önce ürünü, etiketleri ve belgeleri karşılaştırıp sonucu müşavire verin."
+        ]
+      ],
+      "link": "Çin’de fabrika denetimini inceleyin"
+    }
+  },
+  "philippines": {
+    "zh": {
+      "title": "两家中国工厂合柜到马尼拉，如何统一外箱唛头",
+      "steps": [
+        [
+          "工厂资料",
+          "按工厂和订单登记型号、批次、箱数和外箱照片，为不同批次保留可追溯的箱号。"
+        ],
+        [
+          "装运前核对",
+          "装柜前让进口方核对适用的商品标签及收货人法定名称，再统一箱号和装箱单。"
+        ],
+        [
+          "交接与放行",
+          "交接装柜清单、封条号和提单草稿，并核实南港或北港对应的实际卸货码头。"
+        ]
+      ],
+      "link": "查看中国端集货与出口服务"
+    },
+    "en": {
+      "title": "How to align carton marks when two Chinese factories share a container to Manila",
+      "steps": [
+        [
+          "Factory details",
+          "Log the model, batch, carton count and exterior photos by factory and order. Retain traceable carton numbers across batches."
+        ],
+        [
+          "Pre-shipment checks",
+          "Have the importer check applicable product labels and the consignee’s legal name before loading, then reconcile carton numbers and the packing list."
+        ],
+        [
+          "Handover and release",
+          "Hand over the loading list, seal number and bill of lading draft. Confirm the actual North or South discharge terminal."
+        ]
+      ],
+      "link": "See consolidation and export from China"
+    },
+    "es": {
+      "title": "Cómo unificar las marcas de cajas de dos fábricas chinas en un contenedor a Manila",
+      "steps": [
+        [
+          "Datos de fábrica",
+          "Registre modelos, lotes, cajas y fotos por fábrica y pedido. Mantenga números de caja trazables."
+        ],
+        [
+          "Control previo al embarque",
+          "Pida al importador que confirme etiquetas aplicables y razón social del consignatario. Coteje numeración y lista de empaque antes de cargar."
+        ],
+        [
+          "Entrega y liberación",
+          "Entregue lista de carga, precinto y borrador del conocimiento y confirme la terminal Norte o Sur."
+        ]
+      ],
+      "link": "Ver consolidación y exportación desde China"
+    },
+    "fr": {
+      "title": "Harmoniser le marquage des cartons de deux usines chinoises dans un conteneur pour Manille",
+      "steps": [
+        [
+          "Données de l’usine",
+          "Relevez modèles, lots, cartons et photos par usine et commande. Gardez des numéros de carton traçables."
+        ],
+        [
+          "Contrôle avant départ",
+          "Faites confirmer les étiquettes applicables et la raison sociale du destinataire. Rapprochez numéros et liste de colisage avant chargement."
+        ],
+        [
+          "Transmission et mainlevée",
+          "Remettez la liste de chargement, le numéro du scellé et le projet de connaissement. Confirmez le terminal Nord ou Sud."
+        ]
+      ],
+      "link": "Voir la consolidation et l’export depuis la Chine"
+    },
+    "ru": {
+      "title": "Маркировка коробок двух китайских заводов в одном контейнере до Манилы",
+      "steps": [
+        [
+          "Данные завода",
+          "Запишите модели, партии, число коробок и фото по заводу и заказу. Сохраните прослеживаемую нумерацию коробок."
+        ],
+        [
+          "Проверка до отправки",
+          "Попросите импортёра подтвердить маркировку и юридическое наименование получателя. Сверьте номера с упаковочным листом."
+        ],
+        [
+          "Передача и выпуск",
+          "Передайте список загрузки, номер пломбы и черновик коносамента. Проверьте Северный или Южный терминал."
+        ]
+      ],
+      "link": "Посмотреть консолидацию и экспорт из Китая"
+    },
+    "ar": {
+      "title": "توحيد علامات كراتين مصنعين صينيين في حاوية إلى مانيلا",
+      "steps": [
+        [
+          "بيانات المصنع",
+          "سجّل الطراز والدفعة وعدد الكراتين وصورها لكل مصنع وطلب. احتفظ بأرقام كراتين قابلة للتتبع."
+        ],
+        [
+          "التحقق قبل الشحن",
+          "اطلب من المستورد تأكيد الملصقات المطلوبة والاسم القانوني للمستلم. طابق أرقام الكراتين مع قائمة التعبئة قبل التحميل."
+        ],
+        [
+          "التسليم والإفراج",
+          "سلّم قائمة التحميل ورقم الختم ومسودة البوليصة وأكّد محطة التفريغ الشمالية أو الجنوبية."
+        ]
+      ],
+      "link": "اطّلع على التجميع والتصدير من الصين"
+    },
+    "pt": {
+      "title": "Como unificar marcas de caixas de duas fábricas chinesas em um contêiner para Manila",
+      "steps": [
+        [
+          "Dados da fábrica",
+          "Registre modelos, lotes, quantidades e fotos por fábrica e pedido. Preserve números rastreáveis nas caixas."
+        ],
+        [
+          "Verificação antes do embarque",
+          "Peça ao importador que confirme os rótulos aplicáveis e a razão social do consignatário. Confira números e romaneio antes de carregar."
+        ],
+        [
+          "Entrega e liberação",
+          "Entregue lista de carregamento, número do lacre e minuta do conhecimento. Confirme o terminal Norte ou Sul."
+        ]
+      ],
+      "link": "Veja consolidação e exportação na China"
+    },
+    "tr": {
+      "title": "İki Çin fabrikasının Manila’ya giden ortak konteynerinde koli işaretlerini birleştirme",
+      "steps": [
+        [
+          "Fabrika bilgileri",
+          "Fabrika ve siparişe göre model, parti, koli sayısı ve fotoğrafları kaydedin. İzlenebilir koli numaralarını koruyun."
+        ],
+        [
+          "Sevk öncesi kontrol",
+          "İthalatçıya gereken etiketleri ve alıcının resmî unvanını doğrulatın. Yüklemeden önce koli numaralarını ve çeki listesini karşılaştırın."
+        ],
+        [
+          "Devir ve çıkış",
+          "Yükleme listesini, mühür numarasını ve konşimento taslağını verin. Kuzey ya da Güney terminalini doğrulayın."
+        ]
+      ],
+      "link": "Çin’de konsolidasyon ve ihracatı inceleyin"
+    }
   }
 }

@@ -8,6 +8,9 @@ const servicePaths = {
  vietnam: '/services/sea-freight/',
  malaysia: '/services/ddp-shipping-from-china/#delivery-scope',
  singapore: '/sourcing-services/consolidation-export/',
+ thailand: '/services/sea-freight/',
+ indonesia: '/sourcing-services/inspection-quality-control/',
+ philippines: '/sourcing-services/consolidation-export/',
 };
 
 function hasFactoryHandoff(country: CandidateCountry): country is keyof typeof servicePaths {
@@ -16,14 +19,15 @@ function hasFactoryHandoff(country: CandidateCountry): country is keyof typeof s
 
 export function FactoryHandoff({country, locale}: {country: CandidateCountry; locale: CandidateLocale}) {
  if (!hasFactoryHandoff(country)) return null;
- const {title, steps, note, link} = copy[country][locale];
+ const content = copy[country][locale];
+ const {title, steps, link} = content;
  return <section id="factory-handoff" className="candidate-factory-handoff" aria-labelledby="factory-handoff-title">
   <h3 id="factory-handoff-title">{title}</h3>
   <ol>{steps.map(([heading, body]) => <li key={heading}>
    <strong>{heading}</strong>
    <p>{body}</p>
   </li>)}</ol>
-  <p>{note}</p>
+  {'note' in content && <p>{content.note}</p>}
   <a href={candidatePrefix(locale)+servicePaths[country]}>
    {link}<ArrowRight className="candidate-direction" size={16} aria-hidden="true"/>
   </a>
