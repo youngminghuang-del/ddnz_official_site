@@ -5,10 +5,17 @@ import { candidatePrefix, type CandidateCountry, type CandidateLocale } from './
 const servicePaths = {
  japan: '/sourcing-services/inspection-quality-control/',
  'south-korea': '/sourcing-services/consolidation-export/',
+ vietnam: '/services/sea-freight/',
+ malaysia: '/services/ddp-shipping-from-china/#delivery-scope',
+ singapore: '/sourcing-services/consolidation-export/',
 };
 
+function hasFactoryHandoff(country: CandidateCountry): country is keyof typeof servicePaths {
+ return Object.prototype.hasOwnProperty.call(servicePaths, country);
+}
+
 export function FactoryHandoff({country, locale}: {country: CandidateCountry; locale: CandidateLocale}) {
- if (country !== 'japan' && country !== 'south-korea') return null;
+ if (!hasFactoryHandoff(country)) return null;
  const {title, steps, note, link} = copy[country][locale];
  return <section id="factory-handoff" className="candidate-factory-handoff" aria-labelledby="factory-handoff-title">
   <h3 id="factory-handoff-title">{title}</h3>
