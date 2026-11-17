@@ -1,6 +1,6 @@
 import { ArrowRight, ClipboardList, Ship, Truck } from 'lucide-react';
 import { quoteLinkProps } from '../../../lib/quoteLinkPolicy.mjs';
-import { candidateCopy, candidateData, candidatePrefix, isPacificCandidate, pacificCountryCopy, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, candidateData, candidatePrefix, isPacificCandidate, pacificCountryCopy, pacificMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
 import scenarioCopy from './quoteScenarioCopy.json';
 
 const subjects = {
@@ -18,7 +18,7 @@ export function QuoteScenarios({country,locale}: {country:CandidateCountry; loca
  const subject = pacific ? null : subjects[country];
  const clearanceSteps = guidance?.steps ?? subject!.steps.map(step => c[step]);
  const doorScope = guidance?.door ?? c[subject!.door];
- const tag = subject?.tag ?? (country==='canada'?'CARM · BN9 / RM':'BICON · ISPM 15');
+ const tag = pacific ? pacificMarketBadges[country][3] : subject!.tag;
  const doorRows = [
   [page.origin, page.originBody],
   [page.mainLeg, page.mainLegBody],

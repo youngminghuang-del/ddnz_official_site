@@ -125,3 +125,37 @@
  .candidate-port-comparison th,.candidate-port-comparison td { padding: 8px 6px; font-size: 13px; }
 }
 .candidate-scenario-grid .candidate-scenario-tag bdi { display: inline-block; background: #f4edf7; color: #562778; padding: 2px 7px; border-radius: 4px; font-size: 13px; }
+
+.candidate-factory-handoff {
+ scroll-margin-top: 9rem;
+ margin-top: 2.5rem;
+ padding: clamp(1.125rem, 3vw, 2rem);
+ border: 1px solid var(--candidate-line);
+ border-inline-start: 3px solid #74458f;
+ background: #f6f2f8;
+ overflow-wrap: anywhere;
+}
+.candidate-factory-handoff ol {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ gap: 1.75rem;
+ margin-block: 1.25rem;
+ padding-inline-start: 1.4rem;
+ list-style: decimal;
+}
+.candidate-factory-handoff li::marker { color: #74458f; font-weight: 700; }
+.candidate-factory-handoff li p { margin-block: .35rem 0; }
+.candidate-factory-handoff > a {
+ display: inline-flex;
+ align-items: center;
+ gap: .5rem;
+ min-height: 44px;
+ color: #632b89;
+ font-weight: 700;
+ text-decoration: underline;
+ text-underline-offset: .2em;
+}
+.candidate-factory-handoff > a svg { flex: none; }
+@media (max-width: 767px) {
+ .candidate-factory-handoff ol { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
+}

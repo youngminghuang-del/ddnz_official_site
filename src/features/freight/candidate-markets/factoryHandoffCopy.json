@@ -1,0 +1,310 @@
+{
+  "japan": {
+    "zh": {
+      "title": "中国工厂发货到日本，AFR 资料怎么交接？",
+      "steps": [
+        [
+          "工厂交货前提供实装数据",
+          "按商业发票和最终装箱单核对具体品名、包装件数、唛头与毛重。记录发货人和收货人信息。"
+        ],
+        [
+          "货代核对提单补料",
+          "把发票、装箱单和提单补料交给订舱货代，确认品名、件数和收发货人一致，并问清资料截单时间。"
+        ],
+        [
+          "承运人或无船承运人确认申报",
+          "让负责申报的一方确认收到最终资料。装箱后有变动，及时告知申报方并确认是否需要更正。"
+        ]
+      ],
+      "note": "承运人或无船承运人负责适用的 AFR 申报。短程航线可能适用不同的海关截止时间，工厂按本票承运人或货代给出的交资料时间准备。",
+      "link": "查看中国出货前验货与包装核对"
+    },
+    "en": {
+      "title": "What should the Chinese factory hand over before Japan’s AFR cutoff?",
+      "steps": [
+        [
+          "Record the packed cargo",
+          "Before pickup, check the specific cargo description, package count, shipping marks and gross weight against the invoice and final packing list. Record the shipper and consignee details."
+        ],
+        [
+          "Check the shipping instructions",
+          "Send the invoice, packing list and bill of lading instructions to the booking forwarder. Reconcile the cargo and party details and ask when the forwarder needs the final file."
+        ],
+        [
+          "Confirm receipt with the filer",
+          "Ask the carrier or NVOCC responsible for filing to confirm receipt. Report any changes after packing promptly and check whether the filing needs amendment."
+        ]
+      ],
+      "note": "The carrier or NVOCC submits the applicable AFR filing. Customs timing can differ for short-sea services. Have the factory work to the document cutoff given for the chosen sailing.",
+      "link": "View pre-shipment inspection and packaging checks in China"
+    },
+    "es": {
+      "title": "¿Qué debe entregar la fábrica china antes del cierre del AFR de Japón?",
+      "steps": [
+        [
+          "Registre la carga embalada",
+          "Antes de la recogida, coteje la descripción precisa, el número de bultos, las marcas y el peso bruto con la factura y la lista de empaque final. Anote los datos del expedidor y del consignatario."
+        ],
+        [
+          "Revise las instrucciones del conocimiento de embarque",
+          "Entregue al transitario la factura, la lista de empaque y las instrucciones del conocimiento de embarque. Concilie los datos de la carga y las partes y confirme la fecha límite documental."
+        ],
+        [
+          "Confirme la recepción con el responsable",
+          "Pida a la naviera o al NVOCC responsable que confirme la recepción. Notifique de inmediato los cambios posteriores al embalaje y compruebe si debe corregirse la declaración."
+        ]
+      ],
+      "note": "La naviera o el NVOCC presenta el AFR aplicable. El plazo aduanero puede variar en rutas cortas. La fábrica debe seguir el cierre documental de la salida elegida.",
+      "link": "Ver inspección previa al embarque y revisión del embalaje en China"
+    },
+    "fr": {
+      "title": "Que doit remettre l’usine chinoise avant la clôture AFR pour le Japon ?",
+      "steps": [
+        [
+          "Relever les données de la marchandise emballée",
+          "Avant l’enlèvement, vérifiez la désignation précise, le nombre de colis, les marques et le poids brut avec la facture et la liste de colisage finale. Relevez les coordonnées de l’expéditeur et du destinataire."
+        ],
+        [
+          "Vérifier les instructions de connaissement",
+          "Remettez la facture, la liste de colisage et les instructions de connaissement au transitaire chargé de la réservation. Rapprochez les données et confirmez la clôture documentaire."
+        ],
+        [
+          "Confirmer la réception avec le déclarant AFR",
+          "Demandez au transporteur ou au NVOCC chargé de la déclaration de confirmer la réception. Signalez tout changement après emballage et vérifiez si une rectification est nécessaire."
+        ]
+      ],
+      "note": "Le transporteur ou le NVOCC dépose l’AFR applicable. Le délai douanier peut varier sur les liaisons courtes. L’usine suit la clôture documentaire de la traversée retenue.",
+      "link": "Voir le contrôle avant expédition et la vérification des emballages en Chine"
+    },
+    "ru": {
+      "title": "Какие данные китайский завод передаёт до срока AFR для Японии?",
+      "steps": [
+        [
+          "Зафиксировать данные упакованного груза",
+          "До вывоза сверьте точное наименование, количество мест, маркировку и вес брутто с инвойсом и окончательным упаковочным листом. Запишите данные отправителя и получателя."
+        ],
+        [
+          "Сверить инструкции к коносаменту",
+          "Передайте инвойс, упаковочный лист и инструкции к коносаменту экспедитору, который бронирует перевозку. Сверьте сведения и уточните срок подачи документов."
+        ],
+        [
+          "Получить подтверждение от подающей стороны",
+          "Попросите перевозчика или NVOCC, ответственного за подачу, подтвердить получение. Сообщайте об изменениях после упаковки и уточняйте, нужна ли корректировка."
+        ]
+      ],
+      "note": "Применимую декларацию AFR подаёт перевозчик или NVOCC. На коротких маршрутах таможенный срок может отличаться. Заводу следует ориентироваться на срок передачи документов для выбранного рейса.",
+      "link": "Проверка товара и упаковки перед отгрузкой в Китае"
+    },
+    "ar": {
+      "title": "ما البيانات التي يسلّمها المصنع الصيني قبل الموعد المحدد لـ AFR في اليابان؟",
+      "steps": [
+        [
+          "تسجيل بيانات الشحنة بعد التعبئة",
+          "قبل الاستلام، طابق الوصف الدقيق وعدد الطرود وعلاماتها والوزن الإجمالي مع الفاتورة وقائمة التعبئة النهائية. سجّل بيانات المرسل والمرسل إليه."
+        ],
+        [
+          "مراجعة تعليمات بوليصة الشحن",
+          "أرسل الفاتورة وقائمة التعبئة وتعليمات البوليصة إلى وكيل الشحن الذي يدير الحجز. طابق بيانات البضاعة والأطراف وأكّد موعد تسليم المستندات."
+        ],
+        [
+          "تأكيد الاستلام مع مقدم البيان",
+          "اطلب تأكيد الاستلام من الناقل أو الناقل غير المشغّل للسفن (NVOCC) المسؤول عن التقديم. أبلغ عن أي تعديل بعد التعبئة وتحقّق من الحاجة إلى تصحيح البيان."
+        ]
+      ],
+      "note": "يقدّم الناقل أو NVOCC بيان AFR عند انطباقه. قد يختلف الموعد الجمركي في المسارات القصيرة. على المصنع الالتزام بموعد تسليم المستندات للرحلة المختارة.",
+      "link": "اطّلع على فحص البضائع والتعبئة قبل الشحن في الصين"
+    },
+    "pt": {
+      "title": "O que a fábrica chinesa deve enviar antes do prazo do AFR para o Japão?",
+      "steps": [
+        [
+          "Registre os dados da carga embalada",
+          "Antes da coleta, confira a descrição específica, o número de volumes, as marcas e o peso bruto com a fatura e o romaneio definitivo. Registre os dados do embarcador e do consignatário."
+        ],
+        [
+          "Confira as instruções do conhecimento de embarque",
+          "Envie fatura, romaneio e instruções ao agente responsável pela reserva. Confira os dados da carga e das partes e confirme o prazo documental."
+        ],
+        [
+          "Confirme o recebimento com o declarante",
+          "Peça que a companhia marítima ou o NVOCC responsável confirme o recebimento. Comunique mudanças após a embalagem e verifique se é preciso retificar a declaração."
+        ]
+      ],
+      "note": "A companhia marítima ou o NVOCC apresenta o AFR aplicável. O prazo aduaneiro pode variar em rotas curtas. A fábrica deve seguir o prazo documental da saída escolhida.",
+      "link": "Veja a inspeção pré-embarque e a conferência da embalagem na China"
+    },
+    "tr": {
+      "title": "Japonya AFR bildiriminden önce Çin’deki fabrika hangi bilgileri teslim etmeli?",
+      "steps": [
+        [
+          "Paketlenmiş yükü kaydedin",
+          "Alımdan önce ayrıntılı ürün tanımını, paket adedini, işaretleri ve brüt ağırlığı fatura ve nihai paketleme listesiyle karşılaştırın. Gönderici ve alıcı bilgilerini kaydedin."
+        ],
+        [
+          "Konşimento talimatlarını kontrol edin",
+          "Faturayı, paketleme listesini ve konşimento talimatlarını rezervasyonu yapan forwarder’a verin. Yük ve taraf bilgilerini karşılaştırıp belge teslim saatini teyit edin."
+        ],
+        [
+          "Bildirim sahibinden teyit alın",
+          "Bildirimden sorumlu taşıyıcı veya NVOCC’den teslim aldığını teyit etmesini isteyin. Paketleme sonrasında değişiklik olursa bildirin ve düzeltme gerekip gerekmediğini sorun."
+        ]
+      ],
+      "note": "İlgili AFR bildirimini taşıyıcı veya NVOCC yapar. Kısa hatlarda gümrük süresi değişebilir. Fabrika seçili sefer için belirlenen belge teslim saatine göre hazırlanmalıdır.",
+      "link": "Çin’de sevkiyat öncesi ürün ve ambalaj kontrolünü inceleyin"
+    }
+  },
+  "south-korea": {
+    "zh": {
+      "title": "多家中国工厂合柜到釜山，单证怎么整理？",
+      "steps": [
+        [
+          "按工厂留存原始资料",
+          "每家工厂单独保留货物明细、相应发票和装箱单，记录型号、件数、毛重和唛头，便于仓库逐批验收。"
+        ],
+        [
+          "集货后核对实际装柜",
+          "以集货仓实收和最终装柜记录汇总件数、毛重和唛头，再与申报用发票、装箱单及提单补料核对，保留每批货与汇总项的对应关系。"
+        ],
+        [
+          "把原产地资料交给韩国申报方",
+          "如拟申请协定税率，请韩国进口方或报关代理按商品及适用协定核对所需原产地证明，并在申报前处理缺项。"
+        ]
+      ],
+      "note": "合柜汇总便于追溯各家工厂的货物。协定税率所需的原产地证明由申报方按实际货物核对。",
+      "link": "查看中国多供应商集货与出口交付"
+    },
+    "en": {
+      "title": "How to organise documents for one Busan container from several Chinese factories",
+      "steps": [
+        [
+          "Keep source records by factory",
+          "Keep each factory’s item details, corresponding invoice and packing list together. Record models, packages, gross weight and shipping marks for warehouse receipt checks."
+        ],
+        [
+          "Reconcile the actual container load",
+          "Use warehouse receipts and the final loading record to reconcile packages, gross weight and marks with the declaration invoice, packing list and bill of lading instructions. Preserve the link from each lot to the totals."
+        ],
+        [
+          "Give origin evidence to the Korean declarant",
+          "If claiming preferential duty, have the Korean importer or customs broker check the required proof for each product under the applicable agreement and resolve gaps before filing."
+        ]
+      ],
+      "note": "The consolidated list traces the cargo back to each factory. The declarant checks origin evidence for the goods and agreement involved.",
+      "link": "View multi-supplier consolidation and export coordination in China"
+    },
+    "es": {
+      "title": "Cómo ordenar los documentos de varias fábricas chinas para un contenedor a Busan",
+      "steps": [
+        [
+          "Conserve los documentos por fábrica",
+          "Agrupe el detalle de artículos, la factura correspondiente y la lista de empaque de cada fábrica. Registre modelos, bultos, peso bruto y marcas para la recepción."
+        ],
+        [
+          "Concilie la carga efectivamente embarcada",
+          "Use los recibos del almacén y el registro final de carga para conciliar bultos, pesos y marcas con la factura de la declaración, la lista de empaque y las instrucciones del conocimiento de embarque. Vincule cada lote con el total."
+        ],
+        [
+          "Entregue las pruebas de origen al declarante coreano",
+          "Si solicita trato preferencial, pida al importador coreano o al agente de aduanas que revise la prueba necesaria para cada producto según el acuerdo y resuelva los faltantes antes de declarar."
+        ]
+      ],
+      "note": "El consolidado permite identificar la mercancía de cada fábrica. El declarante verifica las pruebas de origen para los productos y el acuerdo aplicable.",
+      "link": "Ver consolidación de varios proveedores y coordinación de exportación en China"
+    },
+    "fr": {
+      "title": "Comment réunir les documents de plusieurs usines chinoises pour un conteneur vers Busan ?",
+      "steps": [
+        [
+          "Conserver les pièces par usine",
+          "Regroupez les références des articles, la facture correspondante et la liste de colisage de chaque usine. Relevez les modèles, colis, poids bruts et marques pour la réception."
+        ],
+        [
+          "Rapprocher le chargement réel",
+          "À partir des réceptions et du relevé d’empotage final, rapprochez colis, poids et marques de la facture déclarée, de la liste de colisage et des instructions de connaissement. Gardez le lien entre chaque lot et les totaux."
+        ],
+        [
+          "Transmettre les preuves d’origine au déclarant coréen",
+          "Pour demander un tarif préférentiel, faites vérifier par l’importateur coréen ou son représentant les preuves de chaque produit selon l’accord applicable. Complétez les pièces avant la déclaration."
+        ]
+      ],
+      "note": "Le récapitulatif permet de retrouver les marchandises de chaque usine. Le déclarant vérifie les preuves d’origine selon les produits et l’accord applicable.",
+      "link": "Voir le groupage de plusieurs fournisseurs et la coordination export en Chine"
+    },
+    "ru": {
+      "title": "Как собрать документы нескольких китайских заводов для одного контейнера в Пусан?",
+      "steps": [
+        [
+          "Сохранить документы по каждому заводу",
+          "Храните перечень товаров, соответствующий инвойс и упаковочный лист по каждому заводу. Укажите модели, количество мест, вес брутто и маркировку для приёмки."
+        ],
+        [
+          "Сверить фактическую загрузку",
+          "По складской приёмке и итоговому листу загрузки сверьте места, вес и маркировку с инвойсом для декларации, упаковочным листом и инструкциями к коносаменту. Сохраните связь каждой партии с итогами."
+        ],
+        [
+          "Передать подтверждение происхождения в Корею",
+          "При запросе льготной ставки попросите корейского импортёра или брокера проверить подтверждение по каждому товару и применимому соглашению. Устраните пробелы до подачи декларации."
+        ]
+      ],
+      "note": "Сводный список позволяет проследить груз до каждого завода. Декларант проверяет подтверждение происхождения для конкретного товара и соглашения.",
+      "link": "Консолидация заказов нескольких поставщиков и экспорт из Китая"
+    },
+    "ar": {
+      "title": "كيف تُنظّم مستندات عدة مصانع صينية لحاوية واحدة إلى بوسان؟",
+      "steps": [
+        [
+          "احتفظ بمستندات كل مصنع على حدة",
+          "اجمع تفاصيل الأصناف والفاتورة المقابلة وقائمة التعبئة لكل مصنع. سجّل الطرازات والطرود والوزن الإجمالي والعلامات لفحص الاستلام."
+        ],
+        [
+          "طابق الحمولة الفعلية للحاوية",
+          "استخدم إيصالات المستودع وسجل التحميل النهائي لمطابقة الطرود والأوزان والعلامات مع فاتورة التصريح وقائمة التعبئة وتعليمات البوليصة. اربط كل دفعة بالإجمالي."
+        ],
+        [
+          "سلّم إثبات المنشأ لمقدم التصريح الكوري",
+          "عند طلب المعاملة التفضيلية، اطلب من المستورد الكوري أو المخلّص مراجعة الإثبات المطلوب لكل منتج بموجب الاتفاق المعمول به واستكمال النواقص قبل التقديم."
+        ]
+      ],
+      "note": "تربط القائمة المجمعة البضائع بكل مصنع. يتحقق مقدم التصريح من إثبات المنشأ للمنتجات والاتفاق المعنيين.",
+      "link": "اطّلع على تجميع طلبات عدة مورّدين وتنسيق التصدير في الصين"
+    },
+    "pt": {
+      "title": "Como organizar documentos de várias fábricas chinesas para um contêiner a Busan?",
+      "steps": [
+        [
+          "Guarde os documentos por fábrica",
+          "Reúna o detalhamento dos itens, a fatura correspondente e o romaneio de cada fábrica. Registre modelos, volumes, peso bruto e marcas para a conferência no recebimento."
+        ],
+        [
+          "Concilie a carga real do contêiner",
+          "Use os comprovantes de recebimento e o registro final de carregamento para conferir volumes, pesos e marcas com a fatura da declaração, o romaneio e as instruções do conhecimento. Mantenha o vínculo de cada lote com o total."
+        ],
+        [
+          "Entregue a prova de origem ao declarante coreano",
+          "Para solicitar tarifa preferencial, peça ao importador coreano ou ao despachante que confira a prova exigida por produto no acordo aplicável e resolva pendências antes de declarar."
+        ]
+      ],
+      "note": "A lista consolidada permite rastrear a carga até cada fábrica. O declarante confere a prova de origem conforme o produto e o acordo aplicável.",
+      "link": "Veja a consolidação de vários fornecedores e a coordenação de exportação na China"
+    },
+    "tr": {
+      "title": "Birden çok Çin fabrikasından Busan’a giden tek konteynerin belgeleri nasıl düzenlenir?",
+      "steps": [
+        [
+          "Belgeleri fabrika bazında saklayın",
+          "Her fabrikanın ürün ayrıntılarını, ilgili faturasını ve paketleme listesini birlikte saklayın. Depo kabulü için model, paket adedi, brüt ağırlık ve işaretleri kaydedin."
+        ],
+        [
+          "Fiilî yüklemeyi belgelerle karşılaştırın",
+          "Depo kabul ve son yükleme kayıtlarını kullanarak paket, ağırlık ve işaretleri beyanda kullanılan fatura, paketleme listesi ve konşimento talimatlarıyla karşılaştırın. Her partiyi toplamla ilişkilendirin."
+        ],
+        [
+          "Menşe kanıtını Kore’deki beyan sahibine iletin",
+          "Tercihli tarife isteniyorsa Kore’deki ithalatçı veya müşavir, anlaşmaya göre her ürün için gerekli kanıtı kontrol etmeli ve eksikleri beyandan önce tamamlamalıdır."
+        ]
+      ],
+      "note": "Konsolide liste, yükün hangi fabrikadan geldiğini gösterir. Beyan sahibi, ürün ve anlaşmaya göre menşe kanıtını kontrol eder.",
+      "link": "Çin’de birden çok tedarikçinin yüklerini birleştirme ve ihracat koordinasyonunu inceleyin"
+    }
+  }
+}
