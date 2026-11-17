@@ -169,6 +169,25 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "australia-lcl-bmsb-container-hold",
+      "canonical": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/",
+      "language": "en",
+      "notion_page_id": "41beac33-2618-814d-8e32-e2d326eed2b7",
+      "release_file": "src/data/australiaLclBmsbRelease.json",
+      "schema_file": "src/data/australia-lcl-bmsb-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/australia-lcl-bmsb-container-hold/sydney-port-botany-container-crane.jpg",
+      "images": [
+        "/images/posts/australia-lcl-bmsb-container-hold/sydney-port-botany-container-crane.jpg",
+        "/images/posts/australia-lcl-bmsb-container-hold/forklift-at-warehouse-dock.jpg",
+        "/images/posts/australia-lcl-bmsb-container-hold/darwin-port-biosecurity-inspection.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 6
     }
   ]
 }

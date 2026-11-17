@@ -1,0 +1,201 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#webpage",
+      "name": "Australia BMSB Season: Why LCL Cargo Gets Held",
+      "description": "Shipping from China to Australia? Check for sailing changes, port delays and LCL pickup holds, and get six questions to send your forwarder.",
+      "inLanguage": "en",
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#article"
+      },
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#breadcrumb"
+      },
+      "url": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-port-botany"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#article",
+      "headline": "Australia BMSB Season: Why LCL Cargo Gets Held",
+      "description": "Shipping from China to Australia? Check for sailing changes, port delays and LCL pickup holds, and get six questions to send your forwarder.",
+      "inLanguage": "en",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#webpage"
+      },
+      "citation": [
+        "https://www.agriculture.gov.au/biosecurity-trade/import/industry-advice/2026/151-2026",
+        "https://www.agriculture.gov.au/biosecurity-trade/import/before/brown-marmorated-stink-bugs",
+        "https://www.agriculture.gov.au/biosecurity-trade/import/before/brown-marmorated-stink-bugs/lclcontainers",
+        "https://www.agriculture.gov.au/import/before/brown-marmorated-stink-bugs/arrival",
+        "https://www.abf.gov.au/help-and-support/ics/integrated-cargo-system-%28ics%29/using-the-ics/contact-cargo-systems-support",
+        "https://www.hapag-lloyd.com/en/services-information/operational-updates/updates/2026/11/ops-updates-asia-week45.html",
+        "https://www.agriculture.gov.au/biosecurity-trade/import/industry-advice/2026/193-2026",
+        "https://www.reddit.com/r/Alibaba/comments/1xbcglf/4000_alibaba_shipment_stuck_at_australian_customs/",
+        "https://www.abc.net.au/news/2026-08-26/tobacco-crackdown-puts-legitimate-parcels-in-limbo/107071132",
+        "https://www.abf.gov.au/newsroom-subsite/Pages/MAST-detectives-dismantle-%2480-million-criminal-network-after-investigation-into-alleged-importation-of-vapes-and-illicit-to.aspx",
+        "https://www.thedcn.com.au/news/top-logistics-depot-licences-remain-in-effect"
+      ],
+      "hasPart": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#faq"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-port-botany"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-warehouse-forklift"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-darwin-biosecurity"
+        }
+      ],
+      "datePublished": "2026-11-17T11:50:30+08:00",
+      "dateModified": "2026-11-17T11:50:30+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-port-botany",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/sydney-port-botany-container-crane.jpg",
+      "description": "Red container cranes at Port Botany in Sydney, Australia",
+      "width": 2240,
+      "height": 1488,
+      "url": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/sydney-port-botany-container-crane.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-warehouse-forklift",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/forklift-at-warehouse-dock.jpg",
+      "description": "Forklift carrying palletized freight past the opening of a trailer at a warehouse dock",
+      "width": 1400,
+      "height": 934,
+      "url": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/forklift-at-warehouse-dock.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#image-darwin-biosecurity",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/darwin-port-biosecurity-inspection.jpg",
+      "description": "Australian biosecurity inspector beside shipping containers at East Wharf, Port Darwin",
+      "width": 1999,
+      "height": 1333,
+      "url": "https://www.ddnzglobal.com/images/posts/australia-lcl-bmsb-container-hold/darwin-port-biosecurity-inspection.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can I pick up as soon as my broker says “cleared”?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Ask the warehouse or forwarder to confirm your own shipment is ready to collect. Then book the truck."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can the warehouse take out my pallets before treatment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "If Australian biosecurity officers require treatment of the container after arrival, the warehouse has to wait before taking out your pallets for normal delivery."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Who pays if someone else’s goods hold up my shipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Check your booking terms. Ask for a written breakdown of the additional costs and how any shared charges are divided."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#pre-booking-checklist",
+      "name": "Questions to ask before booking",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Your goods"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Route"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Other goods in the container"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Who to contact"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Extra costs"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Pickup"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Insights",
+          "item": "https://www.ddnzglobal.com/insights/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Australia BMSB Season: Why LCL Cargo Gets Held",
+          "item": "https://www.ddnzglobal.com/blog/australia-lcl-bmsb-container-hold/"
+        }
+      ]
+    }
+  ]
+}
