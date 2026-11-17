@@ -84,3 +84,35 @@
 #ecuador-import-start { scroll-margin-top:150px; margin-block:24px 14px; padding-block:18px; border-block-start:1px solid #d7dce4; }
 #ecuador-import-start .mp-cards { margin-block:14px; }
 #ecuador-import-start h4 { font-size:16px; line-height:1.4; }
+.ecuador-form-preview {
+  margin:10px 0 12px;
+  min-width:0;
+  padding:12px 14px;
+  border:1px solid #d7dfe8;
+  border-radius:8px;
+  background:#f4f6fa;
+  color:#223754;
+  font-size:13px;
+}
+.ecuador-form-preview__header {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#653484;
+  font-weight:750;
+}
+.ecuador-form-preview__title { margin-block:5px; font-weight:650; }
+.ecuador-form-preview ul { padding:0; margin:0; list-style:none; min-height:88px; }
+.ecuador-form-preview li {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(15px,24%);
+  align-items:center;
+  gap:8px;
+  padding-block:2px;
+  border-block-start:1px solid #dde3ec;
+}
+.ecuador-form-preview li span { height:5px; border-radius:2px; background:#c6d0e0; }
+.ecuador-form-preview figcaption { margin-block-start:5px; font-size:12px; color:#4e6078; }
+@media (max-width:540px) {
+  .ecuador-form-preview ul { min-height:auto; }
+}

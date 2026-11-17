@@ -3,6 +3,7 @@ import {quoteLinkProps} from '../../lib/quoteLinkPolicy.mjs';
 import {localizedPacificPort} from './locales/index.mjs';
 import {marketGuide, type MarketRateRow} from './candidate-markets/MarketGuides';
 import sharedCopy from './candidate-markets/sharedCopy.json';
+import {EcuadorImportFormPreview} from './EcuadorImportForms';
 import ecuadorImportCopy from './ecuadorImportCopy.json';
 import scenarioCopy from './candidate-markets/quoteScenarioCopy.json';
 import FreightRatePreview from './rates/FreightRatePreview';
@@ -76,7 +77,11 @@ export function LatinDoorClearance({market,locale}:Props) {
     <ol className="latin-door-steps">{[c.clearanceStart,c.clearanceDeclare,c.clearanceRelease].map(step=><li key={step}>{step}</li>)}</ol>
     {market==='ecuador'&&<div id="ecuador-import-start">
       <h3>{ecuadorImportCopy[locale].title}</h3>
-      <div className="mp-cards">{ecuadorImportCopy[locale].cards.map(([title,body])=><article key={title}><h4>{title}</h4><p>{body}</p></article>)}</div>
+      <div className="mp-cards">{ecuadorImportCopy[locale].cards.map(([title,body],index)=><article key={title}>
+        <h4>{title}</h4>
+        <EcuadorImportFormPreview locale={locale} index={index}/>
+        <p>{body}</p>
+      </article>)}</div>
       <p>{ecuadorImportCopy[locale].partner}</p>
     </div>}
     <a href={d.authorityUrl} target="_blank" rel="noreferrer">{d.authority} <span aria-hidden="true">↗</span></a>
