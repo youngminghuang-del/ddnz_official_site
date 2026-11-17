@@ -54,6 +54,12 @@
       "run_id": 44013257283,
       "commit": "0aaf3590b872b92030d0c6fd733b62cb97a90c13",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "envios-puerta-a-puerta-china-ecuador": {
+      "published_at": "2026-11-17T10:18:48Z",
+      "run_id": 44063075216,
+      "commit": "7590d4e093588edd846dcf8c9857aac78411bbc0",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
