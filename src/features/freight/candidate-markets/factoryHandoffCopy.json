@@ -306,5 +306,467 @@
       "note": "Konsolide liste, yükün hangi fabrikadan geldiğini gösterir. Beyan sahibi, ürün ve anlaşmaya göre menşe kanıtını kontrol eder.",
       "link": "Çin’de birden çok tedarikçinin yüklerini birleştirme ve ihracat koordinasyonunu inceleyin"
     }
+  },
+  "vietnam": {
+    "zh": {
+      "title": "中国工厂发货到卡莱，订舱前要交哪些资料？",
+      "steps": [
+        [
+          "工厂先交货物与提货信息",
+          "提供提货地址、货好日期、品名、包装件数、毛重和柜型，同时交商业发票和装箱单供货代核对。"
+        ],
+        [
+          "请货代分别确认直达和经头顿中转",
+          "两种方案都写明中国起运码头和最终卸货码头卡莱。中转方案另列头顿转船安排、预计衔接和到港时间。"
+        ],
+        [
+          "核对截单与越南接货人",
+          "订舱前确认进港和提单补料截止时间，核对提单收货人与进口方信息，并约定谁接收到货通知。"
+        ]
+      ],
+      "note": "比较时用同一批货物、柜型和最终卸货码头，另问中转等待是否计入预计到港时间。",
+      "link": "查看中国海运订舱与装运服务"
+    },
+    "en": {
+      "title": "What should a Chinese factory send to book freight to Cat Lai?",
+      "steps": [
+        [
+          "Send cargo and pickup details",
+          "Give the pickup address, cargo-ready date, description, package count, gross weight and container size. Send the invoice and packing list for review."
+        ],
+        [
+          "Compare direct and Vung Tau services",
+          "Ask the forwarder to name the Chinese loading terminal and Cat Lai as the discharge terminal on both options. For Vung Tau, request the connection and estimated arrival."
+        ],
+        [
+          "Confirm cutoffs and the Vietnamese receiver",
+          "Check terminal gate-in and shipping-instruction cutoffs. Match the B/L consignee with the importer details and agree who receives the arrival notice."
+        ]
+      ],
+      "note": "Use the same cargo, container size and discharge terminal for both quotes. Ask how the estimate accounts for connection waiting time.",
+      "link": "View sea freight booking and shipment services from China"
+    },
+    "es": {
+      "title": "¿Qué necesita la fábrica china para reservar un envío a Cat Lai?",
+      "steps": [
+        [
+          "Envíe los datos de carga y recogida",
+          "Indique dirección, fecha de carga lista, descripción, bultos, peso bruto y tamaño de contenedor. Entregue factura y lista de empaque para revisión."
+        ],
+        [
+          "Compare el servicio directo y vía Vung Tau",
+          "Pida al transitario indicar terminal de salida en China y descarga en Cat Lai para ambas opciones. Para Vung Tau, solicite la conexión y la llegada estimada."
+        ],
+        [
+          "Confirme cierres y receptor en Vietnam",
+          "Revise los plazos de ingreso y de instrucciones del conocimiento. Coteje consignatario e importador, y acuerde quién recibe el aviso de llegada."
+        ]
+      ],
+      "note": "Compare la misma carga, tamaño y terminal final. Pregunte cómo se incluye la espera de conexión en la estimación.",
+      "link": "Ver servicios de reserva y embarque marítimo desde China"
+    },
+    "fr": {
+      "title": "Que doit transmettre l’usine chinoise pour réserver vers Cat Lai ?",
+      "steps": [
+        [
+          "Transmettre les données de collecte et de chargement",
+          "Indiquez l’adresse, la date de disponibilité, la désignation, les colis, le poids brut et le format du conteneur. Transmettez facture et liste de colisage."
+        ],
+        [
+          "Comparer le direct et la liaison via Vung Tau",
+          "Demandez au transitaire le terminal chinois de chargement et Cat Lai comme terminal de déchargement pour les deux options. Pour Vung Tau, demandez la correspondance et l’arrivée estimée."
+        ],
+        [
+          "Confirmer les clôtures et le destinataire vietnamien",
+          "Vérifiez la clôture d’entrée au terminal et celle des instructions de connaissement. Rapprochez destinataire et importateur, puis convenez du contact pour l’avis d’arrivée."
+        ]
+      ],
+      "note": "Comparez la même cargaison, le même conteneur et le même terminal final. Vérifiez comment l’attente de correspondance entre dans l’estimation.",
+      "link": "Voir la réservation et l’expédition maritimes depuis la Chine"
+    },
+    "ru": {
+      "title": "Что китайскому заводу передать для бронирования в Катлай?",
+      "steps": [
+        [
+          "Передать данные о грузе и вывозе",
+          "Укажите адрес, дату готовности, наименование груза, число мест, вес брутто и тип контейнера. Передайте инвойс и упаковочный лист."
+        ],
+        [
+          "Сравнить прямой рейс и маршрут через Вунгтау",
+          "Запросите китайский терминал погрузки и выгрузку в Катлае для обоих вариантов. Для Вунгтау уточните стыковку и расчётное прибытие."
+        ],
+        [
+          "Уточнить сроки и получателя во Вьетнаме",
+          "Сверьте сроки завоза и подачи инструкций к коносаменту. Проверьте данные получателя и импортёра и согласуйте адресата уведомления о прибытии."
+        ]
+      ],
+      "note": "Сравнивайте одинаковый груз, контейнер и терминал выгрузки. Уточните, входит ли ожидание стыковки в расчётное время.",
+      "link": "Бронирование и морские перевозки из Китая"
+    },
+    "ar": {
+      "title": "ما البيانات التي يسلّمها المصنع الصيني لحجز شحنة إلى كات لاي؟",
+      "steps": [
+        [
+          "بيانات البضاعة والاستلام",
+          "قدّم عنوان الاستلام، وتاريخ جاهزية الشحنة، والوصف، وعدد الطرود، والوزن الإجمالي، ومقاس الحاوية. أرسل الفاتورة وقائمة التعبئة للمراجعة."
+        ],
+        [
+          "مقارنة المسار المباشر والمسار عبر فونغ تاو",
+          "اطلب من وكيل الشحن تحديد محطة التحميل الصينية وكات لاي للتفريغ في العرضين. في خيار فونغ تاو، اطلب تفاصيل الربط والوصول المتوقع."
+        ],
+        [
+          "تأكيد المواعيد والمستلم في فيتنام",
+          "تحقّق من آخر موعد لدخول المحطة وتسليم تعليمات البوليصة. طابق بيانات المرسل إليه والمستورد وحدّد من يستلم إشعار الوصول."
+        ]
+      ],
+      "note": "قارن الشحنة ومقاس الحاوية ومحطة التفريغ نفسها. اسأل كيف يدخل انتظار الربط في موعد الوصول المتوقع.",
+      "link": "خدمات حجز الشحن البحري من الصين"
+    },
+    "pt": {
+      "title": "O que a fábrica chinesa deve enviar para reservar frete a Cat Lai?",
+      "steps": [
+        [
+          "Envie dados da carga e da coleta",
+          "Informe endereço de coleta, data de carga pronta, descrição, volumes, peso bruto e tamanho do contêiner. Envie fatura e romaneio para conferência."
+        ],
+        [
+          "Compare a rota direta e via Vung Tau",
+          "Peça ao agente o terminal de embarque na China e o desembarque em Cat Lai para as duas opções. Para Vung Tau, peça a conexão e a chegada prevista."
+        ],
+        [
+          "Confirme prazos e recebedor no Vietnã",
+          "Confira os prazos de entrada no terminal e de instruções do conhecimento. Valide consignatário e importador e defina quem recebe o aviso de chegada."
+        ]
+      ],
+      "note": "Compare a mesma carga, tamanho e terminal final. Pergunte como a espera no transbordo entra na previsão.",
+      "link": "Veja serviços de reserva e embarque marítimo na China"
+    },
+    "tr": {
+      "title": "Cat Lai rezervasyonu için Çin’deki fabrika hangi bilgileri vermeli?",
+      "steps": [
+        [
+          "Yük ve alım bilgilerini verin",
+          "Alım adresini, yükün hazır olacağı tarihi, ürün tanımını, paket adedini, brüt ağırlığı ve konteyner boyutunu bildirin. Fatura ve paketleme listesini iletin."
+        ],
+        [
+          "Doğrudan ve Vung Tau aktarmalı hatları karşılaştırın",
+          "Forwarder’dan iki teklif için Çin’deki yükleme terminalini ve Cat Lai boşaltma terminalini isteyin. Aktarmalı seçenek için bağlantıyı ve tahmini varışı sorun."
+        ],
+        [
+          "Son tarihleri ve Vietnam’daki alıcıyı teyit edin",
+          "Terminale giriş ve konşimento talimatı sürelerini kontrol edin. Alıcı ve ithalatçı bilgilerini karşılaştırıp varış bildirimini kimin alacağını belirleyin."
+        ]
+      ],
+      "note": "Aynı yükü, konteyner boyutunu ve boşaltma terminalini karşılaştırın. Aktarma beklemesinin tahmine dahil olup olmadığını sorun.",
+      "link": "Çin’den deniz taşımacılığı rezervasyonunu inceleyin"
+    }
+  },
+  "malaysia": {
+    "zh": {
+      "title": "中国工厂发货到巴生港，西港和北港的到仓价怎么报？",
+      "steps": [
+        [
+          "工厂交提货和装柜数据",
+          "提供提货地址、货好日期、柜型、包装件数和毛重，注明装货设备、限重或特殊操作。"
+        ],
+        [
+          "收货方确认仓库条件",
+          "提供巴生谷收货地址与邮编、预约时段、车辆限行、卸货方式和卸完还空柜的要求。"
+        ],
+        [
+          "请货代分码头拆报价",
+          "按西港和北港各列提柜、拖车、等候、卸货和还空柜费用，并写清进口清关与税费由谁负责。"
+        ]
+      ],
+      "note": "等船公司确认实际卸货码头后，再确认对应的到仓费用和交付范围。",
+      "link": "查看到门费用和交付责任"
+    },
+    "en": {
+      "title": "What does the Chinese factory need for Westports and Northport delivery quotes?",
+      "steps": [
+        [
+          "Send pickup and loading data",
+          "Give the pickup address, cargo-ready date, container size, package count and gross weight. Flag loading equipment, weight limits and special handling."
+        ],
+        [
+          "Confirm the receiving warehouse conditions",
+          "Provide the Klang Valley address, postcode, appointment window, vehicle restrictions, unloading method and empty return requirements."
+        ],
+        [
+          "Ask the forwarder to price by terminal",
+          "Request separate Westports and Northport lines for pickup, trucking, waiting, unloading and empty return. Agree who handles import clearance and taxes."
+        ]
+      ],
+      "note": "Once the carrier confirms the discharge terminal, reconfirm the matching price and delivery scope.",
+      "link": "Review door-delivery costs and responsibilities"
+    },
+    "es": {
+      "title": "¿Qué datos necesita la fábrica china para cotizar desde Westports y Northport hasta el almacén?",
+      "steps": [
+        [
+          "Datos de recogida y carga",
+          "Indique dirección, fecha de carga lista, tamaño del contenedor, bultos y peso bruto. Señale equipos, límites de peso y manejo especial."
+        ],
+        [
+          "Condiciones del almacén receptor",
+          "Facilite dirección y código postal en el valle de Klang, cita, restricciones al vehículo, descarga y devolución del vacío."
+        ],
+        [
+          "Solicite costes por terminal",
+          "Pida líneas separadas por Westports y Northport para recogida, camión, espera, descarga y devolución del vacío. Defina quién gestiona el despacho e impuestos."
+        ]
+      ],
+      "note": "Al confirmar la naviera la terminal de descarga, valide de nuevo el precio y el alcance correspondientes.",
+      "link": "Revisar costes y responsabilidades de entrega a puerta"
+    },
+    "fr": {
+      "title": "Que fournir depuis l’usine chinoise pour chiffrer Westports et Northport jusqu’à l’entrepôt ?",
+      "steps": [
+        [
+          "Renseigner la collecte et le chargement",
+          "Indiquez adresse, disponibilité, conteneur, nombre de colis et poids brut. Précisez l’équipement, les limites de poids et la manutention spéciale."
+        ],
+        [
+          "Valider les conditions de réception",
+          "Donnez l’adresse et le code postal dans la vallée de Klang, le créneau, les restrictions de circulation, le déchargement et les modalités de retour du vide."
+        ],
+        [
+          "Faire chiffrer chaque terminal",
+          "Demandez des lignes distinctes par Westports et Northport pour retrait, camion, attente, déchargement et retour du vide. Précisez qui gère le dédouanement et les taxes."
+        ]
+      ],
+      "note": "Après confirmation du terminal de déchargement par la compagnie, validez le prix et le périmètre correspondants.",
+      "link": "Voir les coûts et responsabilités de la livraison à l’adresse"
+    },
+    "ru": {
+      "title": "Какие данные нужны для доставки с Westports и Northport от китайского завода до склада?",
+      "steps": [
+        [
+          "Передать данные о вывозе и загрузке",
+          "Укажите адрес, готовность, тип контейнера, число мест и вес брутто. Сообщите о погрузочной технике, ограничениях по весу и особых условиях."
+        ],
+        [
+          "Уточнить условия приёмки",
+          "Укажите адрес и индекс в долине Кланг, время приёмки, ограничения для машины, способ разгрузки и условия возврата порожнего контейнера."
+        ],
+        [
+          "Запросить отдельный расчёт по терминалам",
+          "Для Westports и Northport запросите отдельные расходы на вывоз, машину, ожидание, разгрузку и возврат. Согласуйте, кто отвечает за оформление и налоги."
+        ]
+      ],
+      "note": "После подтверждения терминала перевозчиком перепроверьте соответствующую цену и объём доставки.",
+      "link": "Расходы и ответственность при доставке до адреса"
+    },
+    "ar": {
+      "title": "ما المطلوب من المصنع الصيني لتسعير النقل من ويستبورتس أو نورثبورت إلى المستودع؟",
+      "steps": [
+        [
+          "بيانات الاستلام والتحميل",
+          "قدّم العنوان وتاريخ الجاهزية ومقاس الحاوية وعدد الطرود والوزن الإجمالي. اذكر معدات التحميل وحدود الوزن والمناولة الخاصة."
+        ],
+        [
+          "شروط الاستلام في المستودع",
+          "قدّم عنوان وادي كلانغ والرمز البريدي والموعد وقيود الشاحنة وطريقة التفريغ ومتطلبات إعادة الحاوية الفارغة."
+        ],
+        [
+          "تسعير مستقل لكل محطة",
+          "اطلب بنودًا منفصلة لكل محطة للاستلام والشاحنة والانتظار والتفريغ وإرجاع الحاوية الفارغة. حدّد المسؤول عن التخليص والضرائب."
+        ]
+      ],
+      "note": "بعد أن يؤكد الناقل محطة التفريغ، أعد تأكيد السعر ونطاق التسليم المرتبطين بها.",
+      "link": "راجع تكاليف ومسؤوليات التسليم إلى العنوان"
+    },
+    "pt": {
+      "title": "O que a fábrica chinesa precisa enviar para cotar a entrega desde Westports e Northport?",
+      "steps": [
+        [
+          "Dados de coleta e carregamento",
+          "Informe endereço, data de carga pronta, tamanho do contêiner, volumes e peso bruto. Sinalize equipamentos, limites de peso e manuseio especial."
+        ],
+        [
+          "Condições do armazém receptor",
+          "Informe endereço e CEP no Vale de Klang, agendamento, restrições ao veículo, forma de descarga e requisitos de devolução do vazio."
+        ],
+        [
+          "Peça cotação por terminal",
+          "Solicite linhas separadas para Westports e Northport, com retirada, caminhão, espera, descarga e devolução. Defina quem cuida do desembaraço e dos tributos."
+        ]
+      ],
+      "note": "Após a confirmação do terminal pela companhia, valide o preço e o escopo de entrega correspondentes.",
+      "link": "Confira custos e responsabilidades na entrega ao endereço"
+    },
+    "tr": {
+      "title": "Çin’deki fabrika Westports ve Northport’tan depoya teklif için ne vermeli?",
+      "steps": [
+        [
+          "Alım ve yükleme bilgilerini verin",
+          "Adresi, yükün hazır olacağı tarihi, konteyner boyutunu, paket adedini ve brüt ağırlığı belirtin. Ekipmanı, ağırlık sınırlarını ve özel işlemleri bildirin."
+        ],
+        [
+          "Depo kabul koşullarını belirleyin",
+          "Klang Vadisi’ndeki adresi ve posta kodunu, randevuyu, araç kısıtlarını, boşaltma ve boş konteyner iade koşullarını bildirin."
+        ],
+        [
+          "Terminal bazında fiyat isteyin",
+          "Westports ve Northport için alım, kamyon, bekleme, boşaltma ve iade kalemlerini ayrı isteyin. Gümrük ve vergilerden kimin sorumlu olacağını belirleyin."
+        ]
+      ],
+      "note": "Taşıyıcı boşaltma terminalini doğrulayınca ilgili fiyat ve teslimat kapsamını tekrar kontrol edin.",
+      "link": "Adrese teslim masraflarını ve sorumlulukları inceleyin"
+    }
+  },
+  "singapore": {
+    "zh": {
+      "title": "中国工厂发货到新加坡，怎么向货代交接本地进口或港区中转？",
+      "steps": [
+        [
+          "交清货物与单证",
+          "提供品名、包装件数、毛重、货好日期、商业发票和装箱单，并注明最终目的地、收货人和通知方。"
+        ],
+        [
+          "按交付方式补充资料",
+          "本地进口提供新加坡进口方、申报代理和送仓地址。中转提供境外最终目的港、前后段航次或订舱参考、码头，并注明是否跨码头。"
+        ],
+        [
+          "让货代确认申报和接驳责任",
+          "请货代根据提单、参与方和实际移动方式核对适用的 TradeNet 许可，并明确谁申报、转运或接货。"
+        ]
+      ],
+      "note": "货物留在自由贸易区并不能单独决定是否属于中转。请货代按单证与实际安排确认。",
+      "link": "查看中国端集货与出口交付"
+    },
+    "en": {
+      "title": "How should a Chinese factory brief the forwarder on Singapore import or transhipment?",
+      "steps": [
+        [
+          "Hand over cargo and documents",
+          "Send the goods description, package count, gross weight, cargo-ready date, invoice and packing list. Name the final destination, consignee and notify party."
+        ],
+        [
+          "Add the details for the chosen operation",
+          "For local import, give the Singapore importer, declaring agent and warehouse address. For transhipment, give the overseas final port, inbound and outbound sailings or booking references, terminals and any terminal transfer."
+        ],
+        [
+          "Confirm who files and who moves the cargo",
+          "Ask the forwarder to check the applicable TradeNet permit against the transport documents, parties and intended movement. Confirm who declares, transfers or receives the cargo."
+        ]
+      ],
+      "note": "A stay in a free trade zone alone does not determine transhipment status. Have the forwarder check the documents and actual movement.",
+      "link": "View China consolidation and export handover"
+    },
+    "es": {
+      "title": "¿Cómo informa una fábrica china al transitario sobre importación o transbordo en Singapur?",
+      "steps": [
+        [
+          "Entregue los datos y documentos",
+          "Envíe descripción, bultos, peso bruto, fecha de carga lista, factura y lista de empaque. Indique destino final, consignatario y parte a notificar."
+        ],
+        [
+          "Añada datos según la operación",
+          "Para importación local, indique importador, declarante y almacén de Singapur. Para transbordo, facilite puerto final extranjero, buques o referencias de ambas reservas, terminales y cualquier traslado."
+        ],
+        [
+          "Confirme la declaración y el traslado",
+          "Pida al transitario verificar el permiso aplicable en TradeNet según documentos, partes y movimiento, y definir quién declara, traslada o recibe la carga."
+        ]
+      ],
+      "note": "La permanencia en zona franca por sí sola no determina el transbordo. El transitario debe revisar los documentos y el movimiento real.",
+      "link": "Ver consolidación y coordinación de exportación en China"
+    },
+    "fr": {
+      "title": "Comment l’usine chinoise distingue-t-elle importation et transbordement pour le transitaire à Singapour ?",
+      "steps": [
+        [
+          "Transmettre la marchandise et les pièces",
+          "Indiquez désignation, nombre de colis, poids brut, disponibilité, facture et liste de colisage. Précisez destination finale, destinataire et partie à notifier."
+        ],
+        [
+          "Compléter selon l’opération",
+          "Pour l’importation locale, indiquez importateur, déclarant et adresse à Singapour. Pour le transbordement, communiquez port final à l’étranger, navires ou réservations entrante et sortante, terminaux et transfert éventuel."
+        ],
+        [
+          "Confirmer qui déclare et qui déplace le fret",
+          "Demandez au transitaire de vérifier le permis TradeNet applicable selon les documents, les parties et le mouvement. Précisez les responsables de la déclaration, du transfert et de la réception."
+        ]
+      ],
+      "note": "Le seul séjour en zone franche ne détermine pas le statut du transbordement. Faites vérifier les documents et le mouvement réel.",
+      "link": "Voir le groupage et la coordination export en Chine"
+    },
+    "ru": {
+      "title": "Как китайскому заводу передать экспедитору данные для импорта или перевалки в Сингапуре?",
+      "steps": [
+        [
+          "Передать данные о грузе и документы",
+          "Укажите наименование, количество мест, вес брутто и дату готовности. Передайте инвойс и упаковочный лист, назовите конечный пункт, получателя и уведомляемую сторону."
+        ],
+        [
+          "Дополнить данные по операции",
+          "Для импорта укажите импортёра, декларанта и адрес склада в Сингапуре. Для перевалки дайте зарубежный порт назначения, оба рейса или номера бронирования, терминалы и сведения о переносе."
+        ],
+        [
+          "Согласовать декларацию и перемещение",
+          "Попросите экспедитора проверить применимое разрешение TradeNet по документам, сторонам и перемещению. Уточните, кто декларирует, перевозит или принимает груз."
+        ]
+      ],
+      "note": "Само пребывание в свободной зоне не определяет статус перевалки. Сверьте документы и реальное перемещение с экспедитором.",
+      "link": "Консолидация заказов и экспорт из Китая"
+    },
+    "ar": {
+      "title": "كيف يسلّم المصنع الصيني لوكيل الشحن تفاصيل الاستيراد أو إعادة الشحن في سنغافورة؟",
+      "steps": [
+        [
+          "إرسال بيانات البضاعة والمستندات",
+          "قدّم الوصف وعدد الطرود والوزن الإجمالي وتاريخ الجاهزية والفاتورة وقائمة التعبئة. حدّد الوجهة النهائية والمرسل إليه والجهة المُخطَرة."
+        ],
+        [
+          "استكمال البيانات بحسب العملية",
+          "للاستيراد المحلي، حدّد المستورد ووكيل التصريح وعنوان المستودع في سنغافورة. لإعادة الشحن، اذكر الميناء النهائي خارجها والرحلتين أو مرجعي الحجز والمحطتين وأي نقل بينهما."
+        ],
+        [
+          "تحديد مسؤولية التصريح والنقل",
+          "اطلب من الوكيل مراجعة تصريح TradeNet المناسب حسب المستندات والأطراف والحركة، وحدّد من يصرّح ومن ينقل أو يستلم البضاعة."
+        ]
+      ],
+      "note": "وجود البضاعة في المنطقة الحرة وحده لا يحدد وضع إعادة الشحن. اطلب مراجعة المستندات والحركة الفعلية.",
+      "link": "اطّلع على تجميع الشحنات وتنسيق التصدير في الصين"
+    },
+    "pt": {
+      "title": "Como a fábrica chinesa informa ao agente sobre importação ou transbordo em Singapura?",
+      "steps": [
+        [
+          "Entregue dados e documentos da carga",
+          "Informe descrição, volumes, peso bruto, data de prontidão, fatura e romaneio. Indique destino final, consignatário e parte a notificar."
+        ],
+        [
+          "Complete os dados da operação",
+          "Para importação, informe importador, declarante e armazém em Singapura. Para transbordo, informe porto final no exterior, navios ou reservas dos dois trechos, terminais e eventual transferência."
+        ],
+        [
+          "Defina quem declara e movimenta a carga",
+          "Peça ao agente conferir o eventual documento TradeNet conforme documentos, partes e movimento e definir quem declara, transfere ou recebe a carga."
+        ]
+      ],
+      "note": "A permanência em zona franca por si só não determina o transbordo. Peça ao agente conferir documentos e movimentação real.",
+      "link": "Veja a consolidação e a coordenação de exportação na China"
+    },
+    "tr": {
+      "title": "Çin’deki fabrika Singapur ithalatı veya aktarması için forwarder’a ne iletmeli?",
+      "steps": [
+        [
+          "Yük bilgilerini ve belgeleri iletin",
+          "Ürün tanımı, paket adedi, brüt ağırlık, hazır olma tarihi, fatura ve paketleme listesini iletin. Nihai varış, alıcı ve ihbar tarafını belirtin."
+        ],
+        [
+          "İşleme göre bilgileri tamamlayın",
+          "Yerel ithalat için Singapur’daki ithalatçıyı, beyan acentesini ve depo adresini verin. Aktarma için yurt dışındaki son limanı, iki seferi veya rezervasyonları, terminalleri ve terminal değişikliğini belirtin."
+        ],
+        [
+          "Beyan ve taşıma sorumluluğunu teyit edin",
+          "Forwarder’a belgeler, taraflar ve fiilî harekete göre gerekli TradeNet iznini kontrol ettirin. Beyanı, aktarmayı ve teslim almayı kimin yapacağını belirleyin."
+        ]
+      ],
+      "note": "Serbest bölgede kalış tek başına aktarma statüsünü belirlemez. Belgeleri ve fiilî hareketi forwarder’a doğrulatın.",
+      "link": "Çin’de yük birleştirme ve ihracat koordinasyonunu inceleyin"
+    }
   }
 }

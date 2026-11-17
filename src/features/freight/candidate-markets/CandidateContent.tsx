@@ -7,11 +7,11 @@ import { FactoryHandoff } from './FactoryHandoff';
 import FreightRatePreview from '../rates/FreightRatePreview';
 import {CountryGatewayMap} from '../../../components/FreightRouteMap';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
-import {candidateData,candidateCopy,candidateInfo,candidateTrail,candidatePrefix,europeCandidateSlugs,pacificCandidateSlugs,isPacificCandidate,candidateSeaLabel,candidatePath,type CandidateCountry,type CandidateLocale} from './model';
+import {candidateData,candidateQuoteDestination,candidateCopy,candidateInfo,candidateTrail,candidatePrefix,europeCandidateSlugs,pacificCandidateSlugs,isPacificCandidate,candidateSeaLabel,candidatePath,type CandidateCountry,type CandidateLocale} from './model';
 
 export default function CandidateContent({country,locale,initialRates=[]}:{country:CandidateCountry;locale:CandidateLocale;initialRates?:readonly MarketRateRow[]}) {
  const m=candidateData[country],c=candidateCopy(country,locale),p=candidateInfo(country,locale),prefix=candidatePrefix(locale);
- const quote=quoteLinkProps(`${prefix}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:'international_country',destinationText:`${p.name} · ${m.gateway}`,notes:`${c.summary}\n${c.quoteNote}`})}`);
+ const quote=quoteLinkProps(`${prefix}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:'international_country',destinationText:candidateQuoteDestination(country,locale,p.name),notes:`${c.summary}\n${c.quoteNote}`})}`);
  const breadcrumb=candidateTrail(country,locale);
  const pacific=isPacificCandidate(country);
  const modes=[

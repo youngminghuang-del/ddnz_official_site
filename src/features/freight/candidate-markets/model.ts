@@ -1,12 +1,15 @@
 import { COMPANY } from '../../../config/companyIdentity';
 import { freightDestinationLanguages, navigationPrefixes } from '../../../lib/productLanguageRouting';
 import type { Language } from '../../../i18n/translations';
+import { localizedPacificPort } from '../locales/index.mjs';
 import countryCopy from './countryCopy.json';
 import sharedCopy from './sharedCopy.json';
 import pacificCopy from './pacificCopy.json';
 import eastAsiaCopy from './eastAsiaCopy.json';
 
-const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy};
+import southeastAsiaCopy from './southeastAsiaCopy.json';
+
+const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy, ...southeastAsiaCopy};
 
 export { sharedCopy };
 export type CandidateLocale = Language;
@@ -14,7 +17,8 @@ export const candidateLocales = freightDestinationLanguages;
 export const europeCandidateSlugs = ['netherlands', 'united-kingdom', 'france'] as const;
 export const pacificCountrySlugs = ['canada', 'australia'] as const;
 export const eastAsiaCountrySlugs = ['japan', 'south-korea'] as const;
-export const pacificCandidateSlugs = [...pacificCountrySlugs, ...eastAsiaCountrySlugs] as const;
+export const southeastAsiaCountrySlugs = ['vietnam', 'malaysia', 'singapore'] as const;
+export const pacificCandidateSlugs = [...pacificCountrySlugs, ...eastAsiaCountrySlugs, ...southeastAsiaCountrySlugs] as const;
 export const candidateSlugs = [...europeCandidateSlugs,...pacificCandidateSlugs] as const;
 export type PacificCandidate = typeof pacificCandidateSlugs[number];
 export const isPacificCandidate = (slug: string): slug is PacificCandidate => pacificCandidateSlugs.includes(slug as PacificCandidate);
@@ -38,16 +42,29 @@ export const candidateData = {
  australia: { iso:'AU', gateway:'Sydney', airport:'SYD' },
  japan: { iso:'JP', gateway:'Tokyo', airport:'NRT / HND' },
  'south-korea': { iso:'KR', gateway:'Busan', airport:'ICN' },
+ vietnam: {iso:'VN',gateway:'Ho Chi Minh City · Cat Lai',airport:'SGN'},
+ malaysia: {iso:'MY',gateway:'Port Klang',airport:'KUL'},
+ singapore: {iso:'SG',gateway:'Singapore',airport:'SIN'},
 } as const;
 
 export function candidateCopy(country: CandidateCountry, locale: CandidateLocale) {
  return { ...sharedCopy[locale], ...(isPacificCandidate(country) ? pacificCountryCopy(country,locale) : countryCopy[country][locale]) };
 }
+const southeastQuotePorts = { vietnam: 'HOCHIMINH CAT LAI', malaysia: 'PORT KELANG', singapore: 'SINGAPORE' } as const;
+export function candidateQuoteDestination(country: CandidateCountry, locale: CandidateLocale, name: string) {
+ const quotePort = southeastQuotePorts[country as keyof typeof southeastQuotePorts];
+ const gateway = quotePort ? localizedPacificPort(quotePort,locale) : candidateData[country].gateway;
+ return gateway && gateway !== name ? `${name} · ${gateway}` : name;
+}
+
 export const pacificMarketBadges = {
  canada: ['CARM / RM','GST / RPP','Vancouver','CARM · BN9 / RM'],
  australia: ['BICON','ABF / GST','ISPM 15','BICON · ISPM 15'],
  japan: ['NACCS','HS','AFR','NACCS · AFR'],
  'south-korea': ['UNI-PASS','HS / FTA','Busan','UNI-PASS · HS'],
+ vietnam: ['VNACCS','HS','Cat Lai','VNACCS · CAT LAI'],
+ malaysia: ['K1','HS','Westports / Northport','K1 · PORT KLANG'],
+ singapore: ['TradeNet','GST','FTZ','TradeNet · GST'],
 } as const;
 const origin = 'https://www.ddnzglobal.com';
 

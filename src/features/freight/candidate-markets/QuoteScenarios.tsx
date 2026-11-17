@@ -1,6 +1,6 @@
 import { ArrowRight, ClipboardList, Ship, Truck } from 'lucide-react';
 import { quoteLinkProps } from '../../../lib/quoteLinkPolicy.mjs';
-import { candidateCopy, candidateData, candidatePrefix, isPacificCandidate, pacificCountryCopy, pacificMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, candidateQuoteDestination, candidatePrefix, isPacificCandidate, pacificCountryCopy, pacificMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
 import scenarioCopy from './quoteScenarioCopy.json';
 
 const subjects = {
@@ -12,7 +12,6 @@ const subjects = {
 export function QuoteScenarios({country,locale}: {country:CandidateCountry; locale:CandidateLocale}) {
  const c = scenarioCopy[locale];
  const page = candidateCopy(country, locale);
- const gateway = candidateData[country].gateway;
  const pacific = isPacificCandidate(country);
  const guidance = pacific ? pacificCountryCopy(country, locale) : null;
  const subject = pacific ? null : subjects[country];
@@ -29,7 +28,7 @@ export function QuoteScenarios({country,locale}: {country:CandidateCountry; loca
   `${candidatePrefix(locale)}/get-a-quote/?${new URLSearchParams({
    leadGoal: 'Freight Export',
    source: 'international_country',
-   destinationText: `${page.name} · ${gateway}`,
+   destinationText: candidateQuoteDestination(country,locale,page.name),
    notes: `${scenario}\n${notes}`,
   })}`);
  return <section id="quotation" className="gulf-section candidate-scenarios" aria-labelledby="quote-scenario-title">

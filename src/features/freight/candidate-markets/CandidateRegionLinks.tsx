@@ -1,4 +1,4 @@
-import {europeCandidateSlugs,pacificCountrySlugs,eastAsiaCountrySlugs,candidatePath,candidateInfo,sharedCopy,type CandidateLocale} from './model';
+import {europeCandidateSlugs,pacificCountrySlugs,eastAsiaCountrySlugs,southeastAsiaCountrySlugs,candidatePath,candidateInfo,sharedCopy,type CandidateLocale} from './model';
 export function CandidateRegionLinks({locale}:{locale:CandidateLocale}) {
  return <div className="mt-8 border-t border-[#dedde1] py-6"><p>{sharedCopy[locale].moreDestinations}</p><div className="flex flex-wrap gap-6 mt-4">{europeCandidateSlugs.map(slug=><a className="underline underline-offset-4" key={slug} href={candidatePath(slug,locale)}>{candidateInfo(slug,locale).name} ↗</a>)}</div></div>;
 }
@@ -10,6 +10,13 @@ const eastAsiaHeading = {
  pt:'Frete marítimo para o Japão e a Coreia do Sul', tr:'Japonya ve Güney Kore’ye deniz taşımacılığı',
 };
 
+const southeastAsiaHeading = {
+ en:'Sea freight to Southeast Asia', zh:'东南亚海运',
+ es:'Flete marítimo al Sudeste Asiático', fr:'Fret maritime vers l’Asie du Sud-Est',
+ ru:'Морской фрахт в Юго-Восточную Азию', ar:'الشحن البحري إلى جنوب شرق آسيا',
+ pt:'Frete marítimo para o Sudeste Asiático', tr:'Güneydoğu Asya’ya deniz taşımacılığı',
+};
+
 export function PacificCountryLinks({locale}:{locale:CandidateLocale}) {
  const heading = {en:'Sea freight to Canada and Australia',zh:'加拿大与澳大利亚海运',es:'Flete marítimo a Canadá y Australia',fr:'Fret maritime vers le Canada et l’Australie',ru:'Морской фрахт в Канаду и Австралию',ar:'الشحن البحري إلى كندا وأستراليا',pt:'Frete marítimo para Canadá e Austrália',tr:'Kanada ve Avustralya’ya deniz taşımacılığı'}[locale];
  return <section className="freight-wrap freight-section">
@@ -19,6 +26,10 @@ export function PacificCountryLinks({locale}:{locale:CandidateLocale}) {
   )}</div>
   <h2 className="mt-8">{eastAsiaHeading[locale]}</h2>
   <div className="flex flex-wrap gap-6 mt-4">{eastAsiaCountrySlugs.map(country=>
+   <a className="underline underline-offset-4" key={country} href={candidatePath(country,locale)}>{candidateInfo(country,locale).name} ↗</a>
+  )}</div>
+  <h2 className="mt-8">{southeastAsiaHeading[locale]}</h2>
+  <div className="flex flex-wrap gap-6 mt-4">{southeastAsiaCountrySlugs.map(country=>
    <a className="underline underline-offset-4" key={country} href={candidatePath(country,locale)}>{candidateInfo(country,locale).name} ↗</a>
   )}</div>
  </section>;

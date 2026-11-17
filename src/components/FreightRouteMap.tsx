@@ -319,7 +319,7 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
 // Country centroids come from the existing Natural Earth atlas. These maps locate
 // countries, not terminals or vessel itineraries; gateway names remain in the copy.
 const gatewayCountryIds: Record<string, string> = {
- canada: '124', australia: '036', japan:'392', 'south-korea':'410', netherlands: '528', 'united-kingdom': '826', france: '250', colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
+ canada: '124', australia: '036', japan:'392', 'south-korea':'410', vietnam:'704', malaysia:'458', singapore:'702', netherlands: '528', 'united-kingdom': '826', france: '250', colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
  senegal: '686', togo: '768', benin: '204', cameroon: '120',
 };
 const gatewayEuropeProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(-16,10,132,63));
@@ -332,20 +332,22 @@ const gatewayCanadaProjection = geoMercator().rotate([-170,0]).fitExtent([[52,42
 });
 const gatewayAustraliaProjection = geoMercator().fitExtent([[52,42],[WIDTH-52,HEIGHT-42]],extentFeature(95,-46,159,53));
 const gatewayEastAsiaProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(78,17,152,52));
+const gatewaySoutheastAsiaProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(88,-3,126,42));
 export function CountryGatewayMap({ country, locale, destination, title, description }: {
  country: string; locale: Language; destination: string; title: string; description: string;
 }) {
  const countryId = gatewayCountryIds[country];
  const target = countries.features.find(f => String(f.id).padStart(3, '0') === countryId);
  const china = countries.features.find(f => String(f.id).padStart(3, '0') === '156');
- if (!target || !china) return null;
+ const destinationCoordinates: [number,number] | undefined = target ? geoCentroid(target) : country==='singapore' ? [103.82,1.35] : undefined;
+ if (!destinationCoordinates || !china) return null;
  const pacific = ['colombia', 'panama', 'costa-rica'].includes(country);
- const projection = country==='canada' ? gatewayCanadaProjection : country==='australia' ? gatewayAustraliaProjection : (country==='japan'||country==='south-korea') ? gatewayEastAsiaProjection : ['netherlands', 'united-kingdom', 'france'].includes(country) ? gatewayEuropeProjection : pacific ? gatewayPacificProjection : gatewayAfricaProjection;
+ const projection = ['vietnam','malaysia','singapore'].includes(country) ? gatewaySoutheastAsiaProjection : country==='canada' ? gatewayCanadaProjection : country==='australia' ? gatewayAustraliaProjection : (country==='japan'||country==='south-korea') ? gatewayEastAsiaProjection : ['netherlands', 'united-kingdom', 'france'].includes(country) ? gatewayEuropeProjection : pacific ? gatewayPacificProjection : gatewayAfricaProjection;
  const clipId = `gateway-${country}-clip`;
  const chinaLabel = mapRegionLabels[locale][0];
  const nodes: MapNode[] = [
   { id: 'china', label: chinaLabel, coordinates: geoCentroid(china), labelDx: 20, labelDy: -28, kind: 'origin' },
-  { id: country, label: destination, coordinates: geoCentroid(target), labelDx: pacific ? -20 : 20, labelDy: 40 },
+  { id: country, label: destination, coordinates: destinationCoordinates, labelDx: pacific ? -20 : 20, labelDy: 40 },
  ];
  return <figure className="freight-regional-map country-gateway-map" aria-label={title}>
   <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby={`${clipId}-title ${clipId}-desc`}>
