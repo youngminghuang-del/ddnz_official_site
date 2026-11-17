@@ -81,3 +81,6 @@
   max-width:none;
   font-size:clamp(25px,4vw,48px);
 }
+#ecuador-import-start { scroll-margin-top:150px; margin-block:24px 14px; padding-block:18px; border-block-start:1px solid #d7dce4; }
+#ecuador-import-start .mp-cards { margin-block:14px; }
+#ecuador-import-start h4 { font-size:16px; line-height:1.4; }
