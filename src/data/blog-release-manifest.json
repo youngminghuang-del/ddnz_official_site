@@ -188,6 +188,25 @@
       ],
       "faq_count": 3,
       "item_list_count": 6
+    },
+    {
+      "slug": "envios-puerta-a-puerta-china-ecuador",
+      "canonical": "https://www.ddnzglobal.com/es/blog/envios-puerta-a-puerta-china-ecuador/",
+      "language": "es",
+      "notion_page_id": "41beac33-2618-81c0-9d6f-e0f9389b51d8",
+      "release_file": "src/data/ecuadorDoorToDoorRelease.json",
+      "schema_file": "src/data/ecuador-door-to-door-schema.json",
+      "reviewer": "QI YANG",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/envios-puerta-a-puerta-china-ecuador/puerto-yangshan-shanghai.jpg",
+      "images": [
+        "/images/posts/envios-puerta-a-puerta-china-ecuador/puerto-yangshan-shanghai.jpg",
+        "/images/posts/envios-puerta-a-puerta-china-ecuador/montacargas-muelle-bodega.jpg",
+        "/images/posts/envios-puerta-a-puerta-china-ecuador/carretera-playas-posorja-ecuador.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 6
     }
   ]
 }
