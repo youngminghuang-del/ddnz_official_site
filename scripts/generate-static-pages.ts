@@ -21,7 +21,7 @@ import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
 import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
 import {newMarkets,isNewMarket,newMarketMetadata,marketInfo,type NewMarketLocale} from '../src/features/freight/new-markets/model';
 import EcuadorContent from '../src/features/freight/EcuadorContent';
-import {ecuadorCopy} from '../src/features/freight/ecuadorCopy';
+import {isLatinDoorMarket,latinDoorInfo,latinDoorMarkets,type LatinDoorMarket} from '../src/features/freight/latinDoorMarket';
 import egyptScooterPartsSchema from '../src/data/egypt-scooter-parts-schema.json';
 import magneticCaseWholesaleSchema from '../src/data/magnetic-case-wholesale-schema.json';
 import {ddpPath,doorDeliveryMetadata} from '../src/features/freight/DoorDeliveryContent';
@@ -854,7 +854,12 @@ function buildCountrySeo(countrySlug: string, lang: string): SEOItem {
 }
 
 seoDataMatrix.about = Object.fromEntries(aboutLanguages.map(locale => [locale === 'zh' ? 'zh-cn' : locale, aboutMeta(locale)]));
-seoDataMatrix['shipping-from-china-to-ecuador']=Object.fromEntries(Object.entries(ecuadorCopy).map(([l,c])=>[l==='zh'?'zh-cn':l,{title:c.title+' | DDNZ',desc:c.description,keywords:''}]));
+for (const market of Object.keys(latinDoorMarkets) as LatinDoorMarket[]) {
+  seoDataMatrix['shipping-from-china-to-'+market]=Object.fromEntries(candidateLocales.map(locale=>{
+    const page=latinDoorInfo(market,locale);
+    return [locale==='zh'?'zh-cn':locale,{title:page.title,desc:page.description,keywords:''}];
+  }));
+}
 const distDir = path.resolve(process.cwd(), 'dist');
 for (const [locale, copy] of Object.entries(positioning)) {
   const lang = locale === 'zh' ? 'zh-cn' : locale;
@@ -1718,9 +1723,10 @@ function injectStaticRouteContent(
     for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|NewMarketFreightPage|market-preparation)-.*\.css$/.test(f)))if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
     return htmlContent.replace('<div id="root"></div>','<div id="root">'+body+'</div>');
   }
-  if (relPath==='shipping-from-china-to-ecuador') {
-    const body=renderToStaticMarkup(createElement(EcuadorContent,{locale:(lang==='zh-cn'?'zh':lang) as import('../src/features/freight/ecuadorCopy').EcuadorLocale}));
-    for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|EcuadorFreightPage|market-preparation|gulf-stories)-.*\.css$/.test(f))) if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
+  const latinDoorMarket=relPath.replace('shipping-from-china-to-','');
+  if (isLatinDoorMarket(latinDoorMarket)) {
+    const body=renderToStaticMarkup(createElement(EcuadorContent,{market:latinDoorMarket,locale:candidateLocale(lang)!,initialRates:candidateRateRows}));
+    for(const css of fs.readdirSync(path.resolve('dist/assets')).filter(f=>/^(?:freight|EcuadorFreightPage|market-preparation|gulf-stories|candidate)-.*\.css$/.test(f))) if(!htmlContent.includes('/assets/'+css))htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
     return htmlContent.replace('<div id="root"></div>', '<div id="root">'+body+'</div>');
   }
   if (relPath === 'shipping-from-china-to-brazil' && lang === 'pt') {
@@ -2042,7 +2048,7 @@ function run() {
     }
   }
 
-  basePaths.push({path:'shipping-from-china-to-ecuador',priority:'0.8',changefreq:'monthly',languages:['en','zh-cn','es','ar','fr','ru','pt','tr']});
+  basePaths.push(...Object.keys(latinDoorMarkets).map(market=>({path:'shipping-from-china-to-'+market,priority:'0.8',changefreq:'monthly',languages:candidateStaticLanguages})));
   basePaths.push(...candidateSlugs.map(country=>({path:`shipping-from-china-to-${country}`,priority:'0.8',changefreq:'monthly',languages:candidateStaticLanguages})));
   const allPaths: Array<{ path: string; priority: string; changefreq: string; lastmod?: string; languages?: string[] }> = [...basePaths, ...countryPaths];
   blogPosts.forEach((post) => {

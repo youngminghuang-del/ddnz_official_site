@@ -5,7 +5,8 @@ import { resolveEurasiaIntro } from './eurasiaPageIntro';
 import centralAfricaCopy from './centralAfricaCopy.json';
 import marketRegions from './marketRegions.json';
 import {isNewMarket,newMarketMetadata,type NewMarketLocale} from './new-markets/model';
-import {ecuadorCopy,ecuadorLocales,ecuadorPrefix,ecuadorServiceType,type EcuadorLocale} from './ecuadorCopy';
+import {isLatinDoorMarket,latinDoorInfo,latinDoorMarkets,latinDoorTrail} from './latinDoorMarket';
+import scenarioCopy from './candidate-markets/quoteScenarioCopy.json';
 import breadcrumbData from './freightBreadcrumbs.json';
 import {destinationForm} from './destinationGrammar';
 const origin='https://www.ddnzglobal.com';
@@ -15,7 +16,10 @@ const labels:Record<string,string[]>={en:['Shipping from China to {name}','Compa
 export function freightPageInfo(path:string,language?:string){
  const parts=path.split('?')[0].split('#')[0].split('/').filter(Boolean);const last=parts.at(-1)||'';
  if(!last.startsWith('shipping-from-china-to-'))return null;
- const slug=last.slice('shipping-from-china-to-'.length);if(isCandidate(slug)){const locale=candidateLocale(language||(parts.length>1?parts[0]:'en'));return locale?candidateInfo(slug,locale):null;}if(slug==='ecuador'){const locale=(language||(parts.length>1?parts[0]:'en')).replace('zh-cn','zh');if(!ecuadorLocales.includes(locale as EcuadorLocale))return null;const c=ecuadorCopy[locale as keyof typeof ecuadorCopy],prefix=ecuadorPrefix(locale as EcuadorLocale);return {slug,locale,prefix,name:c.name,url:`${origin}${prefix}/${last}/`,title:c.title+' | DDNZ',description:c.description,language:locale==='zh'?'zh-CN':locale};}
+ const slug=last.slice('shipping-from-china-to-'.length);if(isCandidate(slug)){const locale=candidateLocale(language||(parts.length>1?parts[0]:'en'));return locale?candidateInfo(slug,locale):null;}if(isLatinDoorMarket(slug)){
+  const locale=candidateLocale(language||(parts.length>1?parts[0]:'en'));
+  return locale?{...latinDoorInfo(slug,locale),url:`${origin}${latinDoorInfo(slug,locale).prefix}/${last}/`}:null;
+ }
  if(isNewMarket(slug)){const locale=(language||(parts.length>1?parts[0]:'en')).replace('zh-cn','zh') as NewMarketLocale;const m=newMarketMetadata(slug,locale),prefix=locale==='en'?'':locale==='zh'?'/zh-cn':`/${locale}`;return {slug,locale,prefix,name:m.name,url:origin+m.path,title:m.title+' | DDNZ',description:m.description,language:locale==='zh'?'zh-CN':locale};}
  if(!freightCountries[slug]&&!freightRegions[slug])return null;
  const locale=(language|| (parts.length>1?parts[0]:'en')).replace('zh-cn','zh');const c=labels[locale]||labels.en;
@@ -33,6 +37,7 @@ export function breadcrumbLabel(locale: string) {
 export function freightBreadcrumbs(path: string, language?: string): {name:string;path:string}[] {
  const p=freightPageInfo(path,language);
  if(p && isCandidate(p.slug))return candidateTrail(p.slug,p.locale as CandidateLocale);
+ if(p && isLatinDoorMarket(p.slug))return latinDoorTrail(p.slug,p.locale as CandidateLocale);
  return p ? (breadcrumbData as Record<string,{name:string;path:string}[]>)[p.url.replace(origin,'')] || [] : [];
 }
 export function freightPageSchema(path:string,language?:string){
@@ -43,6 +48,6 @@ export function freightPageSchema(path:string,language?:string){
  const centralAsiaLocale = p.locale as keyof typeof centralAsiaIntro;
  const isCentralAsia = p.slug === 'central-asia';
  const page={...(trail.length ? {breadcrumb:{'@id':p.url+'#breadcrumb'}} : {}),'@type':freightRegions[p.slug]?'CollectionPage':'WebPage','@id':p.url,url:p.url,name:isCentralAsia ? centralAsiaHeadline[centralAsiaLocale] : p.slug === 'europe' ? marketRegions.europe[p.locale as keyof typeof marketRegions.europe].title : p.title,description:isCentralAsia ? centralAsiaIntro[centralAsiaLocale] : p.description,inLanguage:p.language,mainEntity:{'@id':p.url+(freightRegions[p.slug]?'#destinations':'#service')}};
- const entity=freightRegions[p.slug]?{'@type':'ItemList','@id':p.url+'#destinations',itemListElement:freightRegions[p.slug].map((slug,i)=>({'@type':'ListItem',position:i+1,name:new Intl.DisplayNames([p.locale==='zh'?'zh-CN':p.locale],{type:'region'}).of(freightCountries[slug]),url:`${origin}${p.prefix}/shipping-from-china-to-${slug}/`}))}:{'@type':'Service','@id':p.url+'#service',url:p.url,name:hero?.headline ?? p.title.replace(' | DDNZ',''),description:hero?.subheadline ?? p.description,serviceType:p.slug==='ecuador'?ecuadorServiceType(p.locale as EcuadorLocale):({en:'Freight route planning and shipment coordination',zh:'货运线路规划与运输协调',es:'Planificación de rutas y coordinación de envíos',pt:'Planejamento de rotas e coordenação de remessas',fr:'Planification des itinéraires et coordination du fret',ru:'Планирование маршрутов и координация перевозок',ar:'تخطيط مسارات الشحن وتنسيق النقل',tr:'Yük güzergâhı planlama ve sevkiyat koordinasyonu'} as Record<string,string>)[p.locale],areaServed:{'@type':'Country',name:p.name,identifier:p.slug==='ecuador'?'EC':freightCountries[p.slug]},provider:p.slug==='ecuador'?{'@type':'Organization','@id':origin+'/#organization',name:'DDNZ Global',url:origin+'/'}:{'@type':'Organization','@id':origin+'/#heaven-born',name:p.locale==='zh'?COMPANY.freightZh:COMPANY.freightEn},mainEntityOfPage:{'@id':p.url}};
+ const entity=freightRegions[p.slug]?{'@type':'ItemList','@id':p.url+'#destinations',itemListElement:freightRegions[p.slug].map((slug,i)=>({'@type':'ListItem',position:i+1,name:new Intl.DisplayNames([p.locale==='zh'?'zh-CN':p.locale],{type:'region'}).of(freightCountries[slug]),url:`${origin}${p.prefix}/shipping-from-china-to-${slug}/`}))}:{'@type':'Service','@id':p.url+'#service',url:p.url,name:hero?.headline ?? p.title.replace(' | DDNZ',''),description:hero?.subheadline ?? p.description,serviceType:isLatinDoorMarket(p.slug)?scenarioCopy[p.locale as CandidateLocale][p.slug==='ecuador'?'door':'port']:({en:'Freight route planning and shipment coordination',zh:'货运线路规划与运输协调',es:'Planificación de rutas y coordinación de envíos',pt:'Planejamento de rotas e coordenação de remessas',fr:'Planification des itinéraires et coordination du fret',ru:'Планирование маршрутов и координация перевозок',ar:'تخطيط مسارات الشحن وتنسيق النقل',tr:'Yük güzergâhı planlama ve sevkiyat koordinasyonu'} as Record<string,string>)[p.locale],areaServed:{'@type':'Country',name:p.name,identifier:isLatinDoorMarket(p.slug)?latinDoorMarkets[p.slug].iso:freightCountries[p.slug]},provider:{'@type':'Organization','@id':origin+'/#heaven-born',name:p.locale==='zh'?COMPANY.freightZh:COMPANY.freightEn},mainEntityOfPage:{'@id':p.url}};
  return {'@context':'https://schema.org','@graph':[page,entity,...(trail.length ? [{'@type':'BreadcrumbList','@id':p.url+'#breadcrumb',itemListElement:trail.map((item,i)=>({'@type':'ListItem',position:i+1,name:item.name,item:origin+item.path}))}] : [])]};
 }
