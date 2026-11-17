@@ -1,0 +1,656 @@
+{
+  "thailand": {
+    "zh": {
+      "name": "泰国",
+      "title": "中国到泰国货运",
+      "intro": "比较深圳和南沙到林查班的整柜海运，按曼谷或泰国东部工厂的地址核算提柜与派送。",
+      "summary": "区分直达与中转，并按订舱确认实际卸货码头。",
+      "gatewayHeading": "林查班提柜与卸货",
+      "gatewayText": "提供准确收货地址、卸货窗口及叉车或吊装情况，请车队分列提柜、等候及还空柜费用。",
+      "importHeading": "通过 e-Customs 申报",
+      "importText": "由泰国进口方或报关代理核对商业发票、装箱单和提单，再提交电子进口申报。",
+      "inlandText": "提供准确收货地址、卸货窗口及叉车或吊装情况，请车队分列提柜、等候及还空柜费用。",
+      "routeText": "区分直达与中转，并按订舱确认实际卸货码头。",
+      "documentText": "由泰国进口方或报关代理核对商业发票、装箱单和提单，再提交电子进口申报。",
+      "door": "提供准确收货地址、卸货窗口及叉车或吊装情况，请车队分列提柜、等候及还空柜费用。",
+      "steps": [
+        "由泰国进口方或报关代理核对商业发票、装箱单和提单，再提交电子进口申报。",
+        "按商品税号、原产地及完税价格核算。装船前核对是否需许可证或产品监管文件。",
+        "提供准确收货地址、卸货窗口及叉车或吊装情况，请车队分列提柜、等候及还空柜费用。"
+      ],
+      "taxTitle": "关税与进口增值税",
+      "taxBody": "按商品税号、原产地及完税价格核算。装船前核对是否需许可证或产品监管文件。",
+      "checkTitle": "林查班提柜与卸货",
+      "checkBody": "提供准确收货地址、卸货窗口及叉车或吊装情况，请车队分列提柜、等候及还空柜费用。",
+      "freightQuestion": [
+        "林查班到泰国工厂的报价包含吊装吗？",
+        "询价时把码头提柜、送厂和现场吊装分列，并确认吊车由谁安排。提供最重木箱的毛重、吊点和厂门限高。"
+      ]
+    },
+    "en": {
+      "name": "Thailand",
+      "title": "Shipping from China to Thailand",
+      "intro": "Compare FCL shipping from Shenzhen and Nansha to Laem Chabang, then price pickup and delivery to your Bangkok or eastern Thailand factory address.",
+      "summary": "Compare direct and transshipment options and confirm the discharge terminal on the booking.",
+      "gatewayHeading": "Container pickup and unloading in Laem Chabang",
+      "gatewayText": "Send the delivery address, unloading slot and forklift or lifting arrangements so the trucker can separate pickup, waiting and empty return.",
+      "importHeading": "File through e-Customs",
+      "importText": "Have the Thai importer or broker reconcile the commercial invoice, packing list and bill of lading before filing the import declaration.",
+      "inlandText": "Send the delivery address, unloading slot and forklift or lifting arrangements so the trucker can separate pickup, waiting and empty return.",
+      "routeText": "Compare direct and transshipment options and confirm the discharge terminal on the booking.",
+      "documentText": "Have the Thai importer or broker reconcile the commercial invoice, packing list and bill of lading before filing the import declaration.",
+      "door": "Send the delivery address, unloading slot and forklift or lifting arrangements so the trucker can separate pickup, waiting and empty return.",
+      "steps": [
+        "Have the Thai importer or broker reconcile the commercial invoice, packing list and bill of lading before filing the import declaration.",
+        "Check classification, origin and customs value. Confirm any product permits or regulatory documents before loading.",
+        "Send the delivery address, unloading slot and forklift or lifting arrangements so the trucker can separate pickup, waiting and empty return."
+      ],
+      "taxTitle": "Duty and import VAT",
+      "taxBody": "Check classification, origin and customs value. Confirm any product permits or regulatory documents before loading.",
+      "checkTitle": "Container pickup and unloading in Laem Chabang",
+      "checkBody": "Send the delivery address, unloading slot and forklift or lifting arrangements so the trucker can separate pickup, waiting and empty return.",
+      "freightQuestion": [
+        "Does a Laem Chabang-to-factory quote include lifting?",
+        "Ask for separate prices for port pickup, factory delivery and on-site lifting. Confirm who supplies the crane, and provide the heaviest crate’s weight, lifting points and gate height."
+      ]
+    },
+    "es": {
+      "name": "Tailandia",
+      "title": "Transporte de China a Tailandia",
+      "intro": "Compare contenedores completos de Shenzhen y Nansha a Laem Chabang y cotice el retiro y la entrega a su fábrica en Bangkok o el este de Tailandia.",
+      "summary": "Compare servicios directos y con transbordo y confirme la terminal de descarga al reservar.",
+      "gatewayHeading": "Retiro y descarga en Laem Chabang",
+      "gatewayText": "Indique dirección, turno de descarga y equipo de manipulación para desglosar retiro, espera y devolución del contenedor vacío.",
+      "importHeading": "Declaración en e-Customs",
+      "importText": "Pida al importador tailandés o a su agente que coteje factura, lista de empaque y conocimiento de embarque antes de declarar.",
+      "inlandText": "Indique dirección, turno de descarga y equipo de manipulación para desglosar retiro, espera y devolución del contenedor vacío.",
+      "routeText": "Compare servicios directos y con transbordo y confirme la terminal de descarga al reservar.",
+      "documentText": "Pida al importador tailandés o a su agente que coteje factura, lista de empaque y conocimiento de embarque antes de declarar.",
+      "door": "Indique dirección, turno de descarga y equipo de manipulación para desglosar retiro, espera y devolución del contenedor vacío.",
+      "steps": [
+        "Pida al importador tailandés o a su agente que coteje factura, lista de empaque y conocimiento de embarque antes de declarar.",
+        "Revise clasificación, origen y valor en aduana. Confirme permisos y documentos de control antes de embarcar.",
+        "Indique dirección, turno de descarga y equipo de manipulación para desglosar retiro, espera y devolución del contenedor vacío."
+      ],
+      "taxTitle": "Arancel e IVA de importación",
+      "taxBody": "Revise clasificación, origen y valor en aduana. Confirme permisos y documentos de control antes de embarcar.",
+      "checkTitle": "Retiro y descarga en Laem Chabang",
+      "checkBody": "Indique dirección, turno de descarga y equipo de manipulación para desglosar retiro, espera y devolución del contenedor vacío.",
+      "freightQuestion": [
+        "¿La cotización de Laem Chabang a fábrica incluye el izaje?",
+        "Separe retiro, entrega e izaje. Confirme quién aporta la grúa e indique peso de la caja más pesada, puntos de izaje y altura de acceso."
+      ]
+    },
+    "fr": {
+      "name": "Thaïlande",
+      "title": "Transport de la Chine vers la Thaïlande",
+      "intro": "Comparez les conteneurs complets de Shenzhen et Nansha à Laem Chabang, puis chiffrez le retrait et la livraison à votre usine à Bangkok ou dans l’est de la Thaïlande.",
+      "summary": "Comparez les services directs et avec transbordement et confirmez le terminal de déchargement à la réservation.",
+      "gatewayHeading": "Retrait et déchargement à Laem Chabang",
+      "gatewayText": "Communiquez l’adresse, le créneau et les moyens de levage pour chiffrer séparément le retrait, l’attente et le retour du vide.",
+      "importHeading": "Déclaration via e-Customs",
+      "importText": "L’importateur thaïlandais ou son déclarant rapproche la facture, la liste de colisage et le connaissement avant le dépôt électronique.",
+      "inlandText": "Communiquez l’adresse, le créneau et les moyens de levage pour chiffrer séparément le retrait, l’attente et le retour du vide.",
+      "routeText": "Comparez les services directs et avec transbordement et confirmez le terminal de déchargement à la réservation.",
+      "documentText": "L’importateur thaïlandais ou son déclarant rapproche la facture, la liste de colisage et le connaissement avant le dépôt électronique.",
+      "door": "Communiquez l’adresse, le créneau et les moyens de levage pour chiffrer séparément le retrait, l’attente et le retour du vide.",
+      "steps": [
+        "L’importateur thaïlandais ou son déclarant rapproche la facture, la liste de colisage et le connaissement avant le dépôt électronique.",
+        "Vérifiez le classement, l’origine et la valeur en douane. Confirmez les autorisations et pièces réglementaires avant embarquement.",
+        "Communiquez l’adresse, le créneau et les moyens de levage pour chiffrer séparément le retrait, l’attente et le retour du vide."
+      ],
+      "taxTitle": "Droits et TVA à l’importation",
+      "taxBody": "Vérifiez le classement, l’origine et la valeur en douane. Confirmez les autorisations et pièces réglementaires avant embarquement.",
+      "checkTitle": "Retrait et déchargement à Laem Chabang",
+      "checkBody": "Communiquez l’adresse, le créneau et les moyens de levage pour chiffrer séparément le retrait, l’attente et le retour du vide.",
+      "freightQuestion": [
+        "Le devis de Laem Chabang à l’usine inclut-il le levage ?",
+        "Chiffrez séparément retrait, livraison et levage. Précisez qui fournit la grue et communiquez le poids de la caisse la plus lourde, ses points de levage et la hauteur d’accès."
+      ]
+    },
+    "ru": {
+      "name": "Таиланд",
+      "title": "Грузоперевозки из Китая в Таиланд",
+      "intro": "Сравните ставки на полные контейнеры из Шэньчжэня и Наньша в Лаемчабанг и рассчитайте вывоз и доставку на завод в Бангкоке или на востоке Таиланда.",
+      "summary": "Сравните прямой рейс и перегрузку, затем проверьте терминал выгрузки в бронировании.",
+      "gatewayHeading": "Вывоз и разгрузка в Лаемчабанге",
+      "gatewayText": "Передайте адрес, окно разгрузки и сведения о технике, чтобы отдельно посчитать вывоз, ожидание и возврат порожнего контейнера.",
+      "importHeading": "Декларация через e-Customs",
+      "importText": "Импортёр в Таиланде или брокер сверяет счёт, упаковочный лист и коносамент и подаёт электронную декларацию.",
+      "inlandText": "Передайте адрес, окно разгрузки и сведения о технике, чтобы отдельно посчитать вывоз, ожидание и возврат порожнего контейнера.",
+      "routeText": "Сравните прямой рейс и перегрузку, затем проверьте терминал выгрузки в бронировании.",
+      "documentText": "Импортёр в Таиланде или брокер сверяет счёт, упаковочный лист и коносамент и подаёт электронную декларацию.",
+      "door": "Передайте адрес, окно разгрузки и сведения о технике, чтобы отдельно посчитать вывоз, ожидание и возврат порожнего контейнера.",
+      "steps": [
+        "Импортёр в Таиланде или брокер сверяет счёт, упаковочный лист и коносамент и подаёт электронную декларацию.",
+        "Проверьте код товара, происхождение и таможенную стоимость. Уточните разрешения и документы до погрузки.",
+        "Передайте адрес, окно разгрузки и сведения о технике, чтобы отдельно посчитать вывоз, ожидание и возврат порожнего контейнера."
+      ],
+      "taxTitle": "Пошлина и импортный НДС",
+      "taxBody": "Проверьте код товара, происхождение и таможенную стоимость. Уточните разрешения и документы до погрузки.",
+      "checkTitle": "Вывоз и разгрузка в Лаемчабанге",
+      "checkBody": "Передайте адрес, окно разгрузки и сведения о технике, чтобы отдельно посчитать вывоз, ожидание и возврат порожнего контейнера.",
+      "freightQuestion": [
+        "Включён ли подъём груза в ставку от Лаемчабанга до завода?",
+        "Запросите отдельно вывоз, доставку и подъём. Уточните, кто предоставляет кран, и передайте вес самой тяжёлой тары, точки строповки и высоту ворот."
+      ]
+    },
+    "ar": {
+      "name": "تايلاند",
+      "title": "الشحن من الصين إلى تايلاند",
+      "intro": "قارن أسعار الحاويات الكاملة من شنتشن ونانشا إلى ليم تشابانغ، ثم احسب الاستلام والتسليم إلى مصنعك في بانكوك أو شرق تايلاند.",
+      "summary": "قارن الرحلات المباشرة ورحلات إعادة الشحن وثبّت محطة التفريغ عند الحجز.",
+      "gatewayHeading": "استلام الحاوية والتفريغ في ليم تشابانغ",
+      "gatewayText": "قدّم العنوان وموعد التفريغ ومعدات الرفع لتسعير الاستلام والانتظار وإعادة الحاوية الفارغة كل على حدة.",
+      "importHeading": "الإقرار عبر e-Customs",
+      "importText": "يراجع المستورد التايلاندي أو المخلص الفاتورة وقائمة التعبئة وبوليصة الشحن قبل تقديم إقرار الاستيراد إلكترونياً.",
+      "inlandText": "قدّم العنوان وموعد التفريغ ومعدات الرفع لتسعير الاستلام والانتظار وإعادة الحاوية الفارغة كل على حدة.",
+      "routeText": "قارن الرحلات المباشرة ورحلات إعادة الشحن وثبّت محطة التفريغ عند الحجز.",
+      "documentText": "يراجع المستورد التايلاندي أو المخلص الفاتورة وقائمة التعبئة وبوليصة الشحن قبل تقديم إقرار الاستيراد إلكترونياً.",
+      "door": "قدّم العنوان وموعد التفريغ ومعدات الرفع لتسعير الاستلام والانتظار وإعادة الحاوية الفارغة كل على حدة.",
+      "steps": [
+        "يراجع المستورد التايلاندي أو المخلص الفاتورة وقائمة التعبئة وبوليصة الشحن قبل تقديم إقرار الاستيراد إلكترونياً.",
+        "تحقق من التصنيف والمنشأ والقيمة الجمركية والتصاريح أو المستندات المطلوبة قبل التحميل.",
+        "قدّم العنوان وموعد التفريغ ومعدات الرفع لتسعير الاستلام والانتظار وإعادة الحاوية الفارغة كل على حدة."
+      ],
+      "taxTitle": "الرسوم وضريبة الاستيراد",
+      "taxBody": "تحقق من التصنيف والمنشأ والقيمة الجمركية والتصاريح أو المستندات المطلوبة قبل التحميل.",
+      "checkTitle": "استلام الحاوية والتفريغ في ليم تشابانغ",
+      "checkBody": "قدّم العنوان وموعد التفريغ ومعدات الرفع لتسعير الاستلام والانتظار وإعادة الحاوية الفارغة كل على حدة.",
+      "freightQuestion": [
+        "هل يشمل عرض النقل من ليم تشابانغ إلى المصنع عملية الرفع؟",
+        "اطلب أسعاراً منفصلة للاستلام والتسليم والرفع. حدّد من يوفر الرافعة وأرسل وزن أثقل صندوق ونقاط رفعه وارتفاع البوابة."
+      ]
+    },
+    "pt": {
+      "name": "Tailândia",
+      "title": "Transporte da China para a Tailândia",
+      "intro": "Compare contêineres completos de Shenzhen e Nansha para Laem Chabang e cote a retirada e a entrega na sua fábrica em Bangkok ou no leste da Tailândia.",
+      "summary": "Compare serviço direto e com transbordo e confirme o terminal de descarga na reserva.",
+      "gatewayHeading": "Retirada e descarga em Laem Chabang",
+      "gatewayText": "Informe endereço, janela de descarga e equipamento de içamento para separar retirada, espera e devolução do vazio.",
+      "importHeading": "Declaração via e-Customs",
+      "importText": "O importador tailandês ou despachante confere fatura, romaneio e conhecimento de embarque antes de declarar eletronicamente.",
+      "inlandText": "Informe endereço, janela de descarga e equipamento de içamento para separar retirada, espera e devolução do vazio.",
+      "routeText": "Compare serviço direto e com transbordo e confirme o terminal de descarga na reserva.",
+      "documentText": "O importador tailandês ou despachante confere fatura, romaneio e conhecimento de embarque antes de declarar eletronicamente.",
+      "door": "Informe endereço, janela de descarga e equipamento de içamento para separar retirada, espera e devolução do vazio.",
+      "steps": [
+        "O importador tailandês ou despachante confere fatura, romaneio e conhecimento de embarque antes de declarar eletronicamente.",
+        "Confira classificação, origem e valor aduaneiro. Verifique licenças e documentos de controle antes do embarque.",
+        "Informe endereço, janela de descarga e equipamento de içamento para separar retirada, espera e devolução do vazio."
+      ],
+      "taxTitle": "Tarifa e IVA de importação",
+      "taxBody": "Confira classificação, origem e valor aduaneiro. Verifique licenças e documentos de controle antes do embarque.",
+      "checkTitle": "Retirada e descarga em Laem Chabang",
+      "checkBody": "Informe endereço, janela de descarga e equipamento de içamento para separar retirada, espera e devolução do vazio.",
+      "freightQuestion": [
+        "A cotação de Laem Chabang até a fábrica inclui içamento?",
+        "Separe retirada, entrega e içamento. Confirme quem fornece o guindaste e informe o peso da caixa mais pesada, os pontos de içamento e a altura do portão."
+      ]
+    },
+    "tr": {
+      "name": "Tayland",
+      "title": "Çin’den Tayland’a yük taşımacılığı",
+      "intro": "Shenzhen ve Nansha’dan Laem Chabang’a tam konteyner seçeneklerini karşılaştırın. Bangkok veya Tayland’ın doğusundaki fabrikanıza teslimatı adresle fiyatlandırın.",
+      "summary": "Doğrudan ve aktarmalı seferleri karşılaştırıp rezervasyonda tahliye terminalini doğrulayın.",
+      "gatewayHeading": "Laem Chabang’da konteyner teslim alma ve boşaltma",
+      "gatewayText": "Teslimat adresini, boşaltma saatini ve kaldırma donanımını verin. Çekim, bekleme ve boş iade kalemlerini ayrı fiyatlandırın.",
+      "importHeading": "e-Customs üzerinden beyan",
+      "importText": "Taylandlı ithalatçı veya müşavir, faturayı, çeki listesini ve konşimentoyu karşılaştırıp elektronik ithalat beyannamesini verir.",
+      "inlandText": "Teslimat adresini, boşaltma saatini ve kaldırma donanımını verin. Çekim, bekleme ve boş iade kalemlerini ayrı fiyatlandırın.",
+      "routeText": "Doğrudan ve aktarmalı seferleri karşılaştırıp rezervasyonda tahliye terminalini doğrulayın.",
+      "documentText": "Taylandlı ithalatçı veya müşavir, faturayı, çeki listesini ve konşimentoyu karşılaştırıp elektronik ithalat beyannamesini verir.",
+      "door": "Teslimat adresini, boşaltma saatini ve kaldırma donanımını verin. Çekim, bekleme ve boş iade kalemlerini ayrı fiyatlandırın.",
+      "steps": [
+        "Taylandlı ithalatçı veya müşavir, faturayı, çeki listesini ve konşimentoyu karşılaştırıp elektronik ithalat beyannamesini verir.",
+        "Sınıflandırma, menşe ve gümrük kıymetini kontrol edin. İzin ve belgeleri yüklemeden önce doğrulayın.",
+        "Teslimat adresini, boşaltma saatini ve kaldırma donanımını verin. Çekim, bekleme ve boş iade kalemlerini ayrı fiyatlandırın."
+      ],
+      "taxTitle": "Gümrük vergisi ve ithalat KDV’si",
+      "taxBody": "Sınıflandırma, menşe ve gümrük kıymetini kontrol edin. İzin ve belgeleri yüklemeden önce doğrulayın.",
+      "checkTitle": "Laem Chabang’da konteyner teslim alma ve boşaltma",
+      "checkBody": "Teslimat adresini, boşaltma saatini ve kaldırma donanımını verin. Çekim, bekleme ve boş iade kalemlerini ayrı fiyatlandırın.",
+      "freightQuestion": [
+        "Laem Chabang’dan fabrikaya teklif kaldırmayı kapsar mı?",
+        "Limandan çekim, teslimat ve sahada kaldırma bedellerini ayrı isteyin. Vinci kimin sağlayacağını, en ağır sandığın ağırlığını, kaldırma noktalarını ve kapı yüksekliğini bildirin."
+      ]
+    }
+  },
+  "indonesia": {
+    "zh": {
+      "name": "印度尼西亚",
+      "title": "中国到印度尼西亚货运",
+      "intro": "比较深圳和南沙至雅加达的整柜海运，询价时提供印度尼西亚进口方、货物型号和最终收货地址。",
+      "summary": "雅加达样本按具体码头或港口分列，订舱时核对丹戎不碌的卸货点及还柜堆场。",
+      "gatewayHeading": "雅加达提柜与送仓",
+      "gatewayText": "核对丹戎不碌的卸货码头和放行状态，向车队提供仓库地址、预约窗口及还空柜堆场。",
+      "importHeading": "准备 PIB 进口申报",
+      "importText": "将商业发票、装箱单和提单交给进口方或其报关代理，用一致的货描和数量编制 PIB。",
+      "inlandText": "核对丹戎不碌的卸货码头和放行状态，向车队提供仓库地址、预约窗口及还空柜堆场。",
+      "routeText": "雅加达样本按具体码头或港口分列，订舱时核对丹戎不碌的卸货点及还柜堆场。",
+      "documentText": "将商业发票、装箱单和提单交给进口方或其报关代理，用一致的货描和数量编制 PIB。",
+      "door": "核对丹戎不碌的卸货码头和放行状态，向车队提供仓库地址、预约窗口及还空柜堆场。",
+      "steps": [
+        "将商业发票、装箱单和提单交给进口方或其报关代理，用一致的货描和数量编制 PIB。",
+        "请印度尼西亚进口方按商品归类和完税价格核算关税及适用的进口税费，确认缴税与放行节点。",
+        "核对丹戎不碌的卸货码头和放行状态，向车队提供仓库地址、预约窗口及还空柜堆场。"
+      ],
+      "taxTitle": "核对进口税费 PDRI",
+      "taxBody": "请印度尼西亚进口方按商品归类和完税价格核算关税及适用的进口税费，确认缴税与放行节点。",
+      "checkTitle": "装船前查 INSW 限制",
+      "checkBody": "进口方按商品税号在 INSW 核对 lartas 禁限和文件。码头确认后安排放行、提柜和送仓。",
+      "freightQuestion": [
+        "多款设备可以用同一条货物描述申报吗？",
+        "先把用途、型号、材质和附件拆到明细行，让进口方判断哪些货物可合并申报、哪些需要独立税号或文件。"
+      ]
+    },
+    "en": {
+      "name": "Indonesia",
+      "title": "Shipping from China to Indonesia",
+      "intro": "Compare FCL shipping from Shenzhen and Nansha to Jakarta. Send the Indonesian importer’s details, item models and final delivery address for a quote.",
+      "summary": "Jakarta samples retain the terminal when supplied. Confirm the discharge point at Tanjung Priok and the empty return depot.",
+      "gatewayHeading": "Jakarta container pickup and delivery",
+      "gatewayText": "Confirm the discharge terminal and release at Tanjung Priok. Give the trucker the warehouse address, receiving slot and empty return depot.",
+      "importHeading": "Prepare the PIB import declaration",
+      "importText": "Give the commercial invoice, packing list and bill of lading to the importer or broker and reconcile descriptions and quantities for the PIB.",
+      "inlandText": "Confirm the discharge terminal and release at Tanjung Priok. Give the trucker the warehouse address, receiving slot and empty return depot.",
+      "routeText": "Jakarta samples retain the terminal when supplied. Confirm the discharge point at Tanjung Priok and the empty return depot.",
+      "documentText": "Give the commercial invoice, packing list and bill of lading to the importer or broker and reconcile descriptions and quantities for the PIB.",
+      "door": "Confirm the discharge terminal and release at Tanjung Priok. Give the trucker the warehouse address, receiving slot and empty return depot.",
+      "steps": [
+        "Give the commercial invoice, packing list and bill of lading to the importer or broker and reconcile descriptions and quantities for the PIB.",
+        "Ask the Indonesian importer to confirm duty and applicable import taxes using the classification and customs value, then agree payment and release responsibilities.",
+        "Confirm the discharge terminal and release at Tanjung Priok. Give the trucker the warehouse address, receiving slot and empty return depot."
+      ],
+      "taxTitle": "Check duties and import taxes (PDRI)",
+      "taxBody": "Ask the Indonesian importer to confirm duty and applicable import taxes using the classification and customs value, then agree payment and release responsibilities.",
+      "checkTitle": "Check INSW restrictions before loading",
+      "checkBody": "The importer checks lartas restrictions and documents in INSW by tariff code. Confirm the terminal, then arrange release, pickup and delivery.",
+      "freightQuestion": [
+        "Can several machine models share one declaration line?",
+        "List the use, model, material and accessories separately. Ask the importer which items can share a declaration line and which need a separate code or document."
+      ]
+    },
+    "es": {
+      "name": "Indonesia",
+      "title": "Transporte de China a Indonesia",
+      "intro": "Compare contenedores completos de Shenzhen y Nansha a Yakarta. Para cotizar, indique el importador indonesio, los modelos y la dirección de entrega.",
+      "summary": "Las referencias de Yakarta identifican la terminal cuando consta. Confirme la descarga en Tanjung Priok y el depósito de devolución.",
+      "gatewayHeading": "Retiro y entrega en Yakarta",
+      "gatewayText": "Confirme terminal y levante en Tanjung Priok. Facilite al transportista la dirección del almacén, el turno de recepción y el depósito de devolución.",
+      "importHeading": "Preparar la declaración PIB",
+      "importText": "Entregue factura, lista de empaque y conocimiento al importador o agente. Coteje descripciones y cantidades para la PIB.",
+      "inlandText": "Confirme terminal y levante en Tanjung Priok. Facilite al transportista la dirección del almacén, el turno de recepción y el depósito de devolución.",
+      "routeText": "Las referencias de Yakarta identifican la terminal cuando consta. Confirme la descarga en Tanjung Priok y el depósito de devolución.",
+      "documentText": "Entregue factura, lista de empaque y conocimiento al importador o agente. Coteje descripciones y cantidades para la PIB.",
+      "door": "Confirme terminal y levante en Tanjung Priok. Facilite al transportista la dirección del almacén, el turno de recepción y el depósito de devolución.",
+      "steps": [
+        "Entregue factura, lista de empaque y conocimiento al importador o agente. Coteje descripciones y cantidades para la PIB.",
+        "El importador revisa clasificación, valor en aduana e impuestos aplicables y coordina pago y levante.",
+        "Confirme terminal y levante en Tanjung Priok. Facilite al transportista la dirección del almacén, el turno de recepción y el depósito de devolución."
+      ],
+      "taxTitle": "Aranceles e impuestos de importación (PDRI)",
+      "taxBody": "El importador revisa clasificación, valor en aduana e impuestos aplicables y coordina pago y levante.",
+      "checkTitle": "Consultar restricciones en INSW antes de cargar",
+      "checkBody": "El importador comprueba requisitos lartas por código arancelario. Confirme la terminal y coordine levante, retiro y entrega.",
+      "freightQuestion": [
+        "¿Varios modelos pueden compartir una línea de declaración?",
+        "Desglose uso, modelo, material y accesorios. El importador determinará qué artículos pueden agruparse y cuáles requieren un código o documento separado."
+      ]
+    },
+    "fr": {
+      "name": "Indonésie",
+      "title": "Transport de la Chine vers l’Indonésie",
+      "intro": "Comparez les conteneurs complets de Shenzhen et Nansha à Jakarta. Indiquez l’importateur indonésien, les modèles et l’adresse finale pour le devis.",
+      "summary": "Les références de Jakarta précisent le terminal lorsqu’il est indiqué. Confirmez la décharge à Tanjung Priok et le dépôt de retour du vide.",
+      "gatewayHeading": "Retrait et livraison à Jakarta",
+      "gatewayText": "Confirmez terminal et mainlevée à Tanjung Priok. Indiquez au transporteur l’adresse de l’entrepôt, le créneau de réception et le dépôt de retour du vide.",
+      "importHeading": "Préparer la déclaration PIB",
+      "importText": "Transmettez facture, liste de colisage et connaissement à l’importateur ou déclarant. Rapprochez désignations et quantités pour la PIB.",
+      "inlandText": "Confirmez terminal et mainlevée à Tanjung Priok. Indiquez au transporteur l’adresse de l’entrepôt, le créneau de réception et le dépôt de retour du vide.",
+      "routeText": "Les références de Jakarta précisent le terminal lorsqu’il est indiqué. Confirmez la décharge à Tanjung Priok et le dépôt de retour du vide.",
+      "documentText": "Transmettez facture, liste de colisage et connaissement à l’importateur ou déclarant. Rapprochez désignations et quantités pour la PIB.",
+      "door": "Confirmez terminal et mainlevée à Tanjung Priok. Indiquez au transporteur l’adresse de l’entrepôt, le créneau de réception et le dépôt de retour du vide.",
+      "steps": [
+        "Transmettez facture, liste de colisage et connaissement à l’importateur ou déclarant. Rapprochez désignations et quantités pour la PIB.",
+        "L’importateur vérifie classement, valeur en douane et taxes applicables, puis coordonne paiement et mainlevée.",
+        "Confirmez terminal et mainlevée à Tanjung Priok. Indiquez au transporteur l’adresse de l’entrepôt, le créneau de réception et le dépôt de retour du vide."
+      ],
+      "taxTitle": "Droits et taxes à l’importation (PDRI)",
+      "taxBody": "L’importateur vérifie classement, valeur en douane et taxes applicables, puis coordonne paiement et mainlevée.",
+      "checkTitle": "Vérifier les restrictions dans INSW avant l’embarquement",
+      "checkBody": "L’importateur vérifie les exigences lartas par code tarifaire. Confirmez le terminal avant d’organiser mainlevée, retrait et livraison.",
+      "freightQuestion": [
+        "Plusieurs modèles peuvent-ils figurer sur la même ligne de déclaration ?",
+        "Détaillez usage, modèle, matière et accessoires. L’importateur détermine quels articles peuvent être regroupés et lesquels exigent un code ou une pièce distincte."
+      ]
+    },
+    "ru": {
+      "name": "Индонезия",
+      "title": "Грузоперевозки из Китая в Индонезию",
+      "intro": "Сравните ставки на контейнеры из Шэньчжэня и Наньша в Джакарту. Для расчёта передайте сведения об импортёре, модели товара и адрес доставки.",
+      "summary": "В примерах по Джакарте указан терминал, если он известен. Уточните выгрузку в Танджунг-Приоке и место возврата порожнего контейнера.",
+      "gatewayHeading": "Вывоз контейнера и доставка в Джакарте",
+      "gatewayText": "Уточните терминал и выпуск в Танджунг-Приоке. Передайте перевозчику адрес склада, окно приёмки и место возврата порожнего контейнера.",
+      "importHeading": "Подготовить декларацию PIB",
+      "importText": "Передайте счёт, упаковочный лист и коносамент импортёру или брокеру. Сверьте описания и количества для PIB.",
+      "inlandText": "Уточните терминал и выпуск в Танджунг-Приоке. Передайте перевозчику адрес склада, окно приёмки и место возврата порожнего контейнера.",
+      "routeText": "В примерах по Джакарте указан терминал, если он известен. Уточните выгрузку в Танджунг-Приоке и место возврата порожнего контейнера.",
+      "documentText": "Передайте счёт, упаковочный лист и коносамент импортёру или брокеру. Сверьте описания и количества для PIB.",
+      "door": "Уточните терминал и выпуск в Танджунг-Приоке. Передайте перевозчику адрес склада, окно приёмки и место возврата порожнего контейнера.",
+      "steps": [
+        "Передайте счёт, упаковочный лист и коносамент импортёру или брокеру. Сверьте описания и количества для PIB.",
+        "Импортёр проверяет код, таможенную стоимость и применимые налоги, согласует оплату и выпуск.",
+        "Уточните терминал и выпуск в Танджунг-Приоке. Передайте перевозчику адрес склада, окно приёмки и место возврата порожнего контейнера."
+      ],
+      "taxTitle": "Пошлины и налоги PDRI",
+      "taxBody": "Импортёр проверяет код, таможенную стоимость и применимые налоги, согласует оплату и выпуск.",
+      "checkTitle": "Проверить ограничения в INSW до погрузки",
+      "checkBody": "Импортёр проверяет требования lartas по коду товара. После уточнения терминала согласуйте выпуск, вывоз и доставку.",
+      "freightQuestion": [
+        "Можно ли указать несколько моделей в одной строке декларации?",
+        "Разнесите назначение, модель, материал и принадлежности. Импортёр определит, что можно объединить и где нужны отдельные код или документ."
+      ]
+    },
+    "ar": {
+      "name": "إندونيسيا",
+      "title": "الشحن من الصين إلى إندونيسيا",
+      "intro": "قارن شحن الحاوية الكاملة من شنتشن ونانشا إلى جاكرتا. أرسل بيانات المستورد الإندونيسي وطرازات البضاعة وعنوان التسليم لطلب السعر.",
+      "summary": "تُذكر محطة جاكرتا متى ظهرت في المرجع. أكد نقطة التفريغ في تانجونغ بريوك ومستودع إعادة الحاوية الفارغة.",
+      "gatewayHeading": "استلام الحاوية والتسليم في جاكرتا",
+      "gatewayText": "أكد محطة التفريغ والإفراج في تانجونغ بريوك. أرسل للناقل البري عنوان المستودع وموعد الاستلام ومستودع إعادة الحاوية الفارغة.",
+      "importHeading": "إعداد إقرار الاستيراد PIB",
+      "importText": "سلّم الفاتورة وقائمة التعبئة وبوليصة الشحن للمستورد أو المخلص وطابق وصف البضاعة وكمياتها لإقرار PIB.",
+      "inlandText": "أكد محطة التفريغ والإفراج في تانجونغ بريوك. أرسل للناقل البري عنوان المستودع وموعد الاستلام ومستودع إعادة الحاوية الفارغة.",
+      "routeText": "تُذكر محطة جاكرتا متى ظهرت في المرجع. أكد نقطة التفريغ في تانجونغ بريوك ومستودع إعادة الحاوية الفارغة.",
+      "documentText": "سلّم الفاتورة وقائمة التعبئة وبوليصة الشحن للمستورد أو المخلص وطابق وصف البضاعة وكمياتها لإقرار PIB.",
+      "door": "أكد محطة التفريغ والإفراج في تانجونغ بريوك. أرسل للناقل البري عنوان المستودع وموعد الاستلام ومستودع إعادة الحاوية الفارغة.",
+      "steps": [
+        "سلّم الفاتورة وقائمة التعبئة وبوليصة الشحن للمستورد أو المخلص وطابق وصف البضاعة وكمياتها لإقرار PIB.",
+        "يتحقق المستورد من التصنيف والقيمة الجمركية والضرائب المطبقة وينسق الدفع والإفراج.",
+        "أكد محطة التفريغ والإفراج في تانجونغ بريوك. أرسل للناقل البري عنوان المستودع وموعد الاستلام ومستودع إعادة الحاوية الفارغة."
+      ],
+      "taxTitle": "الرسوم وضرائب الاستيراد PDRI",
+      "taxBody": "يتحقق المستورد من التصنيف والقيمة الجمركية والضرائب المطبقة وينسق الدفع والإفراج.",
+      "checkTitle": "التحقق من القيود عبر INSW قبل التحميل",
+      "checkBody": "يتحقق المستورد من متطلبات lartas حسب الرمز الجمركي. أكّد المحطة ثم نسّق الإفراج والاستلام والتسليم.",
+      "freightQuestion": [
+        "هل يمكن إدراج عدة طرازات في بند إقرار واحد؟",
+        "أدرج الاستعمال والطراز والمادة والملحقات لكل صنف. يحدد المستورد الأصناف التي يمكن جمعها وما يحتاج رمزاً أو مستنداً منفصلاً."
+      ]
+    },
+    "pt": {
+      "name": "Indonésia",
+      "title": "Transporte da China para a Indonésia",
+      "intro": "Compare contêineres completos de Shenzhen e Nansha para Jacarta. Para cotar, informe o importador indonésio, os modelos e o endereço final.",
+      "summary": "As referências de Jacarta preservam o terminal quando informado. Confirme a descarga em Tanjung Priok e o depósito de devolução.",
+      "gatewayHeading": "Retirada e entrega em Jacarta",
+      "gatewayText": "Confirme o terminal e a liberação em Tanjung Priok. Informe ao transportador o endereço do armazém, a janela de recebimento e o depósito de devolução.",
+      "importHeading": "Preparar a declaração de importação PIB",
+      "importText": "Envie fatura, romaneio e conhecimento ao importador ou despachante. Confira descrições e quantidades para a PIB.",
+      "inlandText": "Confirme o terminal e a liberação em Tanjung Priok. Informe ao transportador o endereço do armazém, a janela de recebimento e o depósito de devolução.",
+      "routeText": "As referências de Jacarta preservam o terminal quando informado. Confirme a descarga em Tanjung Priok e o depósito de devolução.",
+      "documentText": "Envie fatura, romaneio e conhecimento ao importador ou despachante. Confira descrições e quantidades para a PIB.",
+      "door": "Confirme o terminal e a liberação em Tanjung Priok. Informe ao transportador o endereço do armazém, a janela de recebimento e o depósito de devolução.",
+      "steps": [
+        "Envie fatura, romaneio e conhecimento ao importador ou despachante. Confira descrições e quantidades para a PIB.",
+        "O importador verifica classificação, valor aduaneiro e tributos aplicáveis e coordena pagamento e liberação.",
+        "Confirme o terminal e a liberação em Tanjung Priok. Informe ao transportador o endereço do armazém, a janela de recebimento e o depósito de devolução."
+      ],
+      "taxTitle": "Tarifas e tributos de importação (PDRI)",
+      "taxBody": "O importador verifica classificação, valor aduaneiro e tributos aplicáveis e coordena pagamento e liberação.",
+      "checkTitle": "Verificar restrições no INSW antes de embarcar",
+      "checkBody": "O importador verifica requisitos lartas pelo código tarifário. Confirme o terminal e coordene liberação, retirada e entrega.",
+      "freightQuestion": [
+        "Vários modelos podem usar uma única linha da declaração?",
+        "Liste uso, modelo, material e acessórios por item. O importador indica o que pode ser agrupado e o que exige código ou documento separado."
+      ]
+    },
+    "tr": {
+      "name": "Endonezya",
+      "title": "Çin’den Endonezya’ya yük taşımacılığı",
+      "intro": "Shenzhen ve Nansha’dan Cakarta’ya tam konteyner seçeneklerini karşılaştırın. Teklif için ithalatçı bilgilerini, modelleri ve son teslimat adresini verin.",
+      "summary": "Cakarta örneklerinde bildirilen terminal korunur. Tanjung Priok’taki tahliye noktasını ve boş iade deposunu doğrulayın.",
+      "gatewayHeading": "Cakarta’da konteyner çekimi ve teslimat",
+      "gatewayText": "Tanjung Priok’ta terminali ve serbest bırakmayı doğrulayın. Taşıyıcıya depo adresini, kabul saatini ve boş iade deposunu bildirin.",
+      "importHeading": "PIB ithalat beyannamesinin hazırlanması",
+      "importText": "Faturayı, çeki listesini ve konşimentoyu ithalatçıya veya müşavire verin. PIB için tanım ve adetleri karşılaştırın.",
+      "inlandText": "Tanjung Priok’ta terminali ve serbest bırakmayı doğrulayın. Taşıyıcıya depo adresini, kabul saatini ve boş iade deposunu bildirin.",
+      "routeText": "Cakarta örneklerinde bildirilen terminal korunur. Tanjung Priok’taki tahliye noktasını ve boş iade deposunu doğrulayın.",
+      "documentText": "Faturayı, çeki listesini ve konşimentoyu ithalatçıya veya müşavire verin. PIB için tanım ve adetleri karşılaştırın.",
+      "door": "Tanjung Priok’ta terminali ve serbest bırakmayı doğrulayın. Taşıyıcıya depo adresini, kabul saatini ve boş iade deposunu bildirin.",
+      "steps": [
+        "Faturayı, çeki listesini ve konşimentoyu ithalatçıya veya müşavire verin. PIB için tanım ve adetleri karşılaştırın.",
+        "İthalatçı sınıflandırmayı, gümrük kıymetini ve uygulanacak vergileri kontrol eder. Ödeme ve serbest bırakmayı koordine eder.",
+        "Tanjung Priok’ta terminali ve serbest bırakmayı doğrulayın. Taşıyıcıya depo adresini, kabul saatini ve boş iade deposunu bildirin."
+      ],
+      "taxTitle": "Gümrük vergisi ve ithalat vergileri (PDRI)",
+      "taxBody": "İthalatçı sınıflandırmayı, gümrük kıymetini ve uygulanacak vergileri kontrol eder. Ödeme ve serbest bırakmayı koordine eder.",
+      "checkTitle": "Yüklemeden önce INSW kısıtlarını kontrol etme",
+      "checkBody": "İthalatçı tarife koduna göre lartas şartlarını kontrol eder. Terminali doğruladıktan sonra çıkış, çekim ve teslimatı planlayın.",
+      "freightQuestion": [
+        "Birden fazla makine modeli tek beyan satırına yazılabilir mi?",
+        "Kullanım, model, malzeme ve aksesuarları ayrı listeleyin. İthalatçı hangi kalemlerin birleşebileceğini ve hangilerinin ayrı kod veya belge gerektirdiğini belirler."
+      ]
+    }
+  },
+  "philippines": {
+    "zh": {
+      "name": "菲律宾",
+      "title": "中国到菲律宾货运",
+      "intro": "比较深圳和南沙至马尼拉南港、北港的整柜海运。询价时提供菲律宾进口方、送货地址与卸货条件。",
+      "summary": "同一城市的不同码头分开核价，向承运人确认订舱码头、提单目的地和到港放货要求。",
+      "gatewayHeading": "马尼拉分码头提柜",
+      "gatewayText": "先核实海关放行和承运人放货，再按订舱码头确认提柜、送仓、卸货和还空柜时间。",
+      "importHeading": "核对 BOC 进口资质与 E2M",
+      "importText": "由菲律宾进口方确认适用的海关注册或认证，进口方或报关代理按 E2M 办理电子货物申报。",
+      "inlandText": "先核实海关放行和承运人放货，再按订舱码头确认提柜、送仓、卸货和还空柜时间。",
+      "routeText": "同一城市的不同码头分开核价，向承运人确认订舱码头、提单目的地和到港放货要求。",
+      "documentText": "由菲律宾进口方确认适用的海关注册或认证，进口方或报关代理按 E2M 办理电子货物申报。",
+      "door": "先核实海关放行和承运人放货，再按订舱码头确认提柜、送仓、卸货和还空柜时间。",
+      "steps": [
+        "由菲律宾进口方确认适用的海关注册或认证，进口方或报关代理按 E2M 办理电子货物申报。",
+        "按商品税号核实应纳税费，用 PNTR 查需许可的货类。装船前交接商业发票、装箱单和提单资料。",
+        "先核实海关放行和承运人放货，再按订舱码头确认提柜、送仓、卸货和还空柜时间。"
+      ],
+      "taxTitle": "核对税费和进口许可",
+      "taxBody": "按商品税号核实应纳税费，用 PNTR 查需许可的货类。装船前交接商业发票、装箱单和提单资料。",
+      "checkTitle": "马尼拉分码头提柜",
+      "checkBody": "先核实海关放行和承运人放货，再按订舱码头确认提柜、送仓、卸货和还空柜时间。",
+      "freightQuestion": [
+        "船公司改了马尼拉码头，工厂需要改什么？",
+        "请货代先更新订舱确认和提单草稿，并将新码头通知进口方及车队。外箱已经贴唛时，核对需更新的运输标记，同时保留原箱号链路。"
+      ]
+    },
+    "en": {
+      "name": "Philippines",
+      "title": "Shipping from China to the Philippines",
+      "intro": "Compare FCL shipping from Shenzhen and Nansha to Manila North and South. Send the Philippine importer, delivery address and unloading conditions for a quote.",
+      "summary": "Price the terminals separately and confirm the booked terminal, bill of lading destination and cargo release requirements with the carrier.",
+      "gatewayHeading": "Container pickup by Manila terminal",
+      "gatewayText": "Check customs and carrier release, then confirm pickup, delivery, unloading and empty return against the booked terminal.",
+      "importHeading": "Confirm BOC accreditation and E2M filing",
+      "importText": "Have the Philippine importer confirm applicable customs registration or accreditation. The importer or broker files the goods declaration electronically through E2M.",
+      "inlandText": "Check customs and carrier release, then confirm pickup, delivery, unloading and empty return against the booked terminal.",
+      "routeText": "Price the terminals separately and confirm the booked terminal, bill of lading destination and cargo release requirements with the carrier.",
+      "documentText": "Have the Philippine importer confirm applicable customs registration or accreditation. The importer or broker files the goods declaration electronically through E2M.",
+      "door": "Check customs and carrier release, then confirm pickup, delivery, unloading and empty return against the booked terminal.",
+      "steps": [
+        "Have the Philippine importer confirm applicable customs registration or accreditation. The importer or broker files the goods declaration electronically through E2M.",
+        "Verify charges by tariff code and check regulated goods in PNTR. Share the commercial invoice, packing list and bill of lading details before loading.",
+        "Check customs and carrier release, then confirm pickup, delivery, unloading and empty return against the booked terminal."
+      ],
+      "taxTitle": "Check duties, taxes and import permits",
+      "taxBody": "Verify charges by tariff code and check regulated goods in PNTR. Share the commercial invoice, packing list and bill of lading details before loading.",
+      "checkTitle": "Container pickup by Manila terminal",
+      "checkBody": "Check customs and carrier release, then confirm pickup, delivery, unloading and empty return against the booked terminal.",
+      "freightQuestion": [
+        "What changes if the carrier switches the Manila terminal?",
+        "Have the forwarder revise the booking confirmation and bill of lading draft and inform the importer and trucker. Check any routing marks on cartons while retaining traceable carton numbers."
+      ]
+    },
+    "es": {
+      "name": "Filipinas",
+      "title": "Transporte de China a Filipinas",
+      "intro": "Compare contenedores completos de Shenzhen y Nansha a Manila Norte y Sur. Indique importador, dirección y condiciones de descarga para cotizar.",
+      "summary": "Cotice las terminales por separado y confirme con la naviera la terminal reservada, el destino del conocimiento y la liberación.",
+      "gatewayHeading": "Retiro por terminal en Manila",
+      "gatewayText": "Compruebe liberación aduanera y de la naviera y coordine retiro, entrega, descarga y retorno de vacío según la terminal reservada.",
+      "importHeading": "Acreditación BOC y declaración E2M",
+      "importText": "El importador filipino confirma el registro o la acreditación que corresponda. El importador o agente declara electrónicamente en E2M.",
+      "inlandText": "Compruebe liberación aduanera y de la naviera y coordine retiro, entrega, descarga y retorno de vacío según la terminal reservada.",
+      "routeText": "Cotice las terminales por separado y confirme con la naviera la terminal reservada, el destino del conocimiento y la liberación.",
+      "documentText": "El importador filipino confirma el registro o la acreditación que corresponda. El importador o agente declara electrónicamente en E2M.",
+      "door": "Compruebe liberación aduanera y de la naviera y coordine retiro, entrega, descarga y retorno de vacío según la terminal reservada.",
+      "steps": [
+        "El importador filipino confirma el registro o la acreditación que corresponda. El importador o agente declara electrónicamente en E2M.",
+        "Verifique tributos por código y consulte mercancías reguladas en PNTR. Comparta factura, lista de empaque y datos del conocimiento antes de cargar.",
+        "Compruebe liberación aduanera y de la naviera y coordine retiro, entrega, descarga y retorno de vacío según la terminal reservada."
+      ],
+      "taxTitle": "Aranceles, impuestos y permisos",
+      "taxBody": "Verifique tributos por código y consulte mercancías reguladas en PNTR. Comparta factura, lista de empaque y datos del conocimiento antes de cargar.",
+      "checkTitle": "Retiro por terminal en Manila",
+      "checkBody": "Compruebe liberación aduanera y de la naviera y coordine retiro, entrega, descarga y retorno de vacío según la terminal reservada.",
+      "freightQuestion": [
+        "¿Qué cambia si la naviera cambia de terminal en Manila?",
+        "Pida al transitario que actualice reserva y borrador del conocimiento y avise al importador y al transportista terrestre. Revise las marcas de ruta y conserve los números de caja trazables."
+      ]
+    },
+    "fr": {
+      "name": "Philippines",
+      "title": "Transport de la Chine vers les Philippines",
+      "intro": "Comparez les conteneurs complets de Shenzhen et Nansha vers Manille Nord et Sud. Indiquez importateur, adresse et conditions de déchargement pour le devis.",
+      "summary": "Chiffrez chaque terminal séparément. Confirmez avec le transporteur le terminal réservé, la destination du connaissement et les modalités de remise.",
+      "gatewayHeading": "Retrait du conteneur par terminal à Manille",
+      "gatewayText": "Vérifiez la mainlevée et la remise par le transporteur, puis organisez retrait, livraison, déchargement et retour du vide selon le terminal réservé.",
+      "importHeading": "Accréditation BOC et déclaration E2M",
+      "importText": "L’importateur philippin vérifie l’enregistrement ou l’accréditation applicable. Il dépose la déclaration électronique via E2M, directement ou via un déclarant.",
+      "inlandText": "Vérifiez la mainlevée et la remise par le transporteur, puis organisez retrait, livraison, déchargement et retour du vide selon le terminal réservé.",
+      "routeText": "Chiffrez chaque terminal séparément. Confirmez avec le transporteur le terminal réservé, la destination du connaissement et les modalités de remise.",
+      "documentText": "L’importateur philippin vérifie l’enregistrement ou l’accréditation applicable. Il dépose la déclaration électronique via E2M, directement ou via un déclarant.",
+      "door": "Vérifiez la mainlevée et la remise par le transporteur, puis organisez retrait, livraison, déchargement et retour du vide selon le terminal réservé.",
+      "steps": [
+        "L’importateur philippin vérifie l’enregistrement ou l’accréditation applicable. Il dépose la déclaration électronique via E2M, directement ou via un déclarant.",
+        "Contrôlez les montants par code tarifaire et consultez les produits réglementés dans le PNTR. Transmettez facture, colisage et connaissement avant chargement.",
+        "Vérifiez la mainlevée et la remise par le transporteur, puis organisez retrait, livraison, déchargement et retour du vide selon le terminal réservé."
+      ],
+      "taxTitle": "Droits, taxes et autorisations d’importation",
+      "taxBody": "Contrôlez les montants par code tarifaire et consultez les produits réglementés dans le PNTR. Transmettez facture, colisage et connaissement avant chargement.",
+      "checkTitle": "Retrait du conteneur par terminal à Manille",
+      "checkBody": "Vérifiez la mainlevée et la remise par le transporteur, puis organisez retrait, livraison, déchargement et retour du vide selon le terminal réservé.",
+      "freightQuestion": [
+        "Que faire si le transporteur change de terminal à Manille ?",
+        "Le transitaire met à jour la réservation et le projet de connaissement puis informe importateur et transporteur routier. Vérifiez le marquage d’acheminement tout en gardant les numéros traçables."
+      ]
+    },
+    "ru": {
+      "name": "Филиппины",
+      "title": "Грузоперевозки из Китая на Филиппины",
+      "intro": "Сравните перевозку полных контейнеров из Шэньчжэня и Наньша в Северный и Южный порты Манилы. Для расчёта укажите импортёра, адрес и условия выгрузки.",
+      "summary": "Рассчитайте терминалы отдельно. Сверьте с перевозчиком терминал, пункт назначения в коносаменте и условия выдачи.",
+      "gatewayHeading": "Вывоз контейнера с терминала Манилы",
+      "gatewayText": "Проверьте выпуск таможней и выдачу перевозчиком. Согласуйте вывоз, доставку, выгрузку и возврат порожнего контейнера.",
+      "importHeading": "Аккредитация BOC и подача через E2M",
+      "importText": "Филиппинский импортёр проверяет применимые требования к регистрации и аккредитации. Импортёр или брокер подаёт электронную декларацию через E2M.",
+      "inlandText": "Проверьте выпуск таможней и выдачу перевозчиком. Согласуйте вывоз, доставку, выгрузку и возврат порожнего контейнера.",
+      "routeText": "Рассчитайте терминалы отдельно. Сверьте с перевозчиком терминал, пункт назначения в коносаменте и условия выдачи.",
+      "documentText": "Филиппинский импортёр проверяет применимые требования к регистрации и аккредитации. Импортёр или брокер подаёт электронную декларацию через E2M.",
+      "door": "Проверьте выпуск таможней и выдачу перевозчиком. Согласуйте вывоз, доставку, выгрузку и возврат порожнего контейнера.",
+      "steps": [
+        "Филиппинский импортёр проверяет применимые требования к регистрации и аккредитации. Импортёр или брокер подаёт электронную декларацию через E2M.",
+        "Проверьте начисления по коду товара и ограничения в PNTR. Перед погрузкой передайте счёт, упаковочный лист и сведения коносамента.",
+        "Проверьте выпуск таможней и выдачу перевозчиком. Согласуйте вывоз, доставку, выгрузку и возврат порожнего контейнера."
+      ],
+      "taxTitle": "Пошлины, налоги и разрешения",
+      "taxBody": "Проверьте начисления по коду товара и ограничения в PNTR. Перед погрузкой передайте счёт, упаковочный лист и сведения коносамента.",
+      "checkTitle": "Вывоз контейнера с терминала Манилы",
+      "checkBody": "Проверьте выпуск таможней и выдачу перевозчиком. Согласуйте вывоз, доставку, выгрузку и возврат порожнего контейнера.",
+      "freightQuestion": [
+        "Что меняется при смене терминала в Маниле?",
+        "Экспедитор обновляет бронирование и проект коносамента и уведомляет импортёра и автоперевозчика. Проверьте маршрутную маркировку, сохранив нумерацию коробок."
+      ]
+    },
+    "ar": {
+      "name": "الفلبين",
+      "title": "الشحن من الصين إلى الفلبين",
+      "intro": "قارن الحاويات الكاملة من شنتشن ونانشا إلى شمال مانيلا وجنوبها. أرسل بيانات المستورد وعنوان التسليم وشروط التفريغ لطلب السعر.",
+      "summary": "اطلب سعراً لكل محطة وأكّد مع الناقل المحطة المحجوزة ووجهة البوليصة وشروط تسليم البضاعة.",
+      "gatewayHeading": "استلام الحاوية من محطة مانيلا",
+      "gatewayText": "تحقق من إفراج الجمارك والناقل ثم نسّق الاستلام والتسليم والتفريغ وإعادة الفارغ حسب المحطة المحجوزة.",
+      "importHeading": "اعتماد BOC والإقرار عبر E2M",
+      "importText": "يتحقق المستورد الفلبيني من التسجيل أو الاعتماد المطلوب. يقدم المستورد أو المخلص الإقرار إلكترونياً عبر E2M.",
+      "inlandText": "تحقق من إفراج الجمارك والناقل ثم نسّق الاستلام والتسليم والتفريغ وإعادة الفارغ حسب المحطة المحجوزة.",
+      "routeText": "اطلب سعراً لكل محطة وأكّد مع الناقل المحطة المحجوزة ووجهة البوليصة وشروط تسليم البضاعة.",
+      "documentText": "يتحقق المستورد الفلبيني من التسجيل أو الاعتماد المطلوب. يقدم المستورد أو المخلص الإقرار إلكترونياً عبر E2M.",
+      "door": "تحقق من إفراج الجمارك والناقل ثم نسّق الاستلام والتسليم والتفريغ وإعادة الفارغ حسب المحطة المحجوزة.",
+      "steps": [
+        "يتحقق المستورد الفلبيني من التسجيل أو الاعتماد المطلوب. يقدم المستورد أو المخلص الإقرار إلكترونياً عبر E2M.",
+        "راجع المستحقات حسب الرمز الجمركي والسلع المقيدة في PNTR. أرسل الفاتورة وقائمة التعبئة وبيانات البوليصة قبل التحميل.",
+        "تحقق من إفراج الجمارك والناقل ثم نسّق الاستلام والتسليم والتفريغ وإعادة الفارغ حسب المحطة المحجوزة."
+      ],
+      "taxTitle": "الرسوم والضرائب وتصاريح الاستيراد",
+      "taxBody": "راجع المستحقات حسب الرمز الجمركي والسلع المقيدة في PNTR. أرسل الفاتورة وقائمة التعبئة وبيانات البوليصة قبل التحميل.",
+      "checkTitle": "استلام الحاوية من محطة مانيلا",
+      "checkBody": "تحقق من إفراج الجمارك والناقل ثم نسّق الاستلام والتسليم والتفريغ وإعادة الفارغ حسب المحطة المحجوزة.",
+      "freightQuestion": [
+        "ماذا يتغير إذا بدّل الناقل محطة مانيلا؟",
+        "اطلب من وكيل الشحن تحديث تأكيد الحجز ومسودة البوليصة وإبلاغ المستورد والناقل البري. راجع علامات المسار على الكراتين مع الحفاظ على أرقامها القابلة للتتبع."
+      ]
+    },
+    "pt": {
+      "name": "Filipinas",
+      "title": "Transporte da China para as Filipinas",
+      "intro": "Compare contêineres completos de Shenzhen e Nansha para Manila Norte e Sul. Informe importador, endereço e condições de descarga para cotar.",
+      "summary": "Cote cada terminal separadamente e confirme com o armador o terminal reservado, o destino no conhecimento e a liberação da carga.",
+      "gatewayHeading": "Retirada por terminal em Manila",
+      "gatewayText": "Verifique a liberação da alfândega e do armador antes de combinar retirada, entrega, descarga e devolução do vazio.",
+      "importHeading": "Credenciamento BOC e declaração E2M",
+      "importText": "O importador filipino confirma o registro ou credenciamento aplicável. O importador ou despachante envia a declaração eletrônica pelo E2M.",
+      "inlandText": "Verifique a liberação da alfândega e do armador antes de combinar retirada, entrega, descarga e devolução do vazio.",
+      "routeText": "Cote cada terminal separadamente e confirme com o armador o terminal reservado, o destino no conhecimento e a liberação da carga.",
+      "documentText": "O importador filipino confirma o registro ou credenciamento aplicável. O importador ou despachante envia a declaração eletrônica pelo E2M.",
+      "door": "Verifique a liberação da alfândega e do armador antes de combinar retirada, entrega, descarga e devolução do vazio.",
+      "steps": [
+        "O importador filipino confirma o registro ou credenciamento aplicável. O importador ou despachante envia a declaração eletrônica pelo E2M.",
+        "Confira tributos pelo código tarifário e produtos sujeitos a controle no PNTR. Envie fatura, romaneio e conhecimento antes do embarque.",
+        "Verifique a liberação da alfândega e do armador antes de combinar retirada, entrega, descarga e devolução do vazio."
+      ],
+      "taxTitle": "Tarifas, tributos e licenças",
+      "taxBody": "Confira tributos pelo código tarifário e produtos sujeitos a controle no PNTR. Envie fatura, romaneio e conhecimento antes do embarque.",
+      "checkTitle": "Retirada por terminal em Manila",
+      "checkBody": "Verifique a liberação da alfândega e do armador antes de combinar retirada, entrega, descarga e devolução do vazio.",
+      "freightQuestion": [
+        "O que muda se o armador trocar o terminal em Manila?",
+        "Peça ao agente para atualizar a reserva e a minuta do conhecimento e avisar importador e transportadora. Revise as marcas de rota mantendo os números rastreáveis das caixas."
+      ]
+    },
+    "tr": {
+      "name": "Filipinler",
+      "title": "Çin’den Filipinler’e yük taşımacılığı",
+      "intro": "Shenzhen ve Nansha’dan Manila Kuzey ve Güney limanlarına tam konteynerleri karşılaştırın. Teklif için ithalatçıyı, adresi ve boşaltma koşullarını bildirin.",
+      "summary": "Terminalleri ayrı fiyatlandırın. Rezervasyon terminalini, konşimentodaki varış yerini ve teslim şartlarını taşıyıcıyla doğrulayın.",
+      "gatewayHeading": "Manila’da terminale göre konteyner çekimi",
+      "gatewayText": "Gümrük ve taşıyıcı onaylarını kontrol edin. Çekim, teslimat, boşaltma ve boş iadeyi rezervasyon terminaline göre planlayın.",
+      "importHeading": "BOC kaydı ve E2M beyanı",
+      "importText": "Filipinli ithalatçı gerekli kaydı veya akreditasyonu kontrol eder. İthalatçı veya müşavir E2M üzerinden elektronik beyan verir.",
+      "inlandText": "Gümrük ve taşıyıcı onaylarını kontrol edin. Çekim, teslimat, boşaltma ve boş iadeyi rezervasyon terminaline göre planlayın.",
+      "routeText": "Terminalleri ayrı fiyatlandırın. Rezervasyon terminalini, konşimentodaki varış yerini ve teslim şartlarını taşıyıcıyla doğrulayın.",
+      "documentText": "Filipinli ithalatçı gerekli kaydı veya akreditasyonu kontrol eder. İthalatçı veya müşavir E2M üzerinden elektronik beyan verir.",
+      "door": "Gümrük ve taşıyıcı onaylarını kontrol edin. Çekim, teslimat, boşaltma ve boş iadeyi rezervasyon terminaline göre planlayın.",
+      "steps": [
+        "Filipinli ithalatçı gerekli kaydı veya akreditasyonu kontrol eder. İthalatçı veya müşavir E2M üzerinden elektronik beyan verir.",
+        "Tarife koduna göre vergileri ve PNTR’de kontrole tabi malları inceleyin. Yükleme öncesinde fatura, çeki listesi ve konşimento bilgilerini verin.",
+        "Gümrük ve taşıyıcı onaylarını kontrol edin. Çekim, teslimat, boşaltma ve boş iadeyi rezervasyon terminaline göre planlayın."
+      ],
+      "taxTitle": "Vergi ve ithalat izinleri",
+      "taxBody": "Tarife koduna göre vergileri ve PNTR’de kontrole tabi malları inceleyin. Yükleme öncesinde fatura, çeki listesi ve konşimento bilgilerini verin.",
+      "checkTitle": "Manila’da terminale göre konteyner çekimi",
+      "checkBody": "Gümrük ve taşıyıcı onaylarını kontrol edin. Çekim, teslimat, boşaltma ve boş iadeyi rezervasyon terminaline göre planlayın.",
+      "freightQuestion": [
+        "Taşıyıcı Manila terminalini değiştirirse ne yapılır?",
+        "Forwarder rezervasyon teyidini ve konşimento taslağını güncelleyip ithalatçıya ve karayolu taşıyıcısına bildirir. İzlenebilir koli numaralarını koruyarak güzergâh işaretlerini kontrol edin."
+      ]
+    }
+  }
+}

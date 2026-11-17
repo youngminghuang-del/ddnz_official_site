@@ -1,3 +1,4 @@
+import { CountryGatewayMap } from '../../components/FreightRouteMap';
 import FreightRelatedLinks from './FreightRelatedLinks';
 import RoutePlanningDepth from './RoutePlanningDepth';
 import {useId,useState} from 'react';
@@ -27,7 +28,7 @@ function Resources({locale,country}:{locale:MarketTranslatedLocale;country:Marke
 }
 function DestinationMap({locale,country}:{locale:MarketTranslatedLocale;country:MarketCountry}){
  const u=marketLocaleData[locale].ui;const cities=country==='peru'?['Callao, Peru','Chancay, Peru','Lima, Peru']:['Lagos Port Complex, Nigeria','Onitsha, Nigeria','Kano, Nigeria'];
- return <figure className="market-route-map"><div className="market-gallery-title"><strong>{u.mapHeading}</strong></div><img src={root+country+'-map.svg'} alt={u.mapIntro} loading="lazy"/><figcaption><p>{u.mapIntro}</p><div>{cities.map(city=><a key={city} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(city)}`} target="_blank" rel="noreferrer"><bdi>{city}</bdi> ↗</a>)}</div><small>{u.mapNote} <a href="https://www.naturalearthdata.com/">Natural Earth</a></small></figcaption></figure>;
+ return <div className="market-route-map"><CountryGatewayMap country={country} locale={locale} destination={marketLocaleData[locale][country].country}/><div className="market-route-links"><p>{u.mapIntro}</p><div>{cities.map(city=><a key={city} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(city)}`} target="_blank" rel="noreferrer"><bdi>{city}</bdi> ↗</a>)}</div><small>{u.mapNote} <a href="https://www.naturalearthdata.com/">Natural Earth</a></small></div></div>;
 }
 export default function MarketLocalizedContent({country,locale}:{country:MarketCountry;locale:MarketTranslatedLocale}) {
  const d=marketLocaleData[locale],u=d.ui,data=d[country],peru=country==='peru',prefix=gulfLanguagePrefix(locale);

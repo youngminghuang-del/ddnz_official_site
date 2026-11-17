@@ -1,5 +1,5 @@
 import WorldFreightMap from './WorldFreightMap';
-import { geoCentroid, geoGraticule, geoMercator, geoNaturalEarth1, geoPath, type GeoProjection } from 'd3-geo';
+import { geoGraticule, geoMercator, geoNaturalEarth1, geoPath, type GeoProjection } from 'd3-geo';
 import { ArrowUpRight, MapPinned, Ship, TrainFront, Truck } from 'lucide-react';
 import { feature } from 'topojson-client';
 import type { Feature, FeatureCollection, Geometry, LineString, Polygon } from 'geojson';
@@ -7,6 +7,9 @@ import type { GeometryCollection, Topology } from 'topojson-specification';
 import worldAtlas from 'world-atlas/countries-110m.json';
 import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
+import { countryGateways, countryGatewayLabels } from '../features/freight/countryGatewayData';
+import singaporeCoastline from '../features/freight/singapore-coastline.json';
+import bahrainCoastline from '../features/freight/bahrain-coastline.json';
 
 type MapVariant = 'world' | 'central-asia' | 'uzbekistan';
 type FreightRouteMapProps = { variant: MapVariant; locale?: Language };
@@ -316,47 +319,81 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
   </figure>;
 }
 
-// Country centroids come from the existing Natural Earth atlas. These maps locate
-// countries, not terminals or vessel itineraries; gateway names remain in the copy.
-const gatewayCountryIds: Record<string, string> = {
- canada: '124', australia: '036', japan:'392', 'south-korea':'410', vietnam:'704', malaysia:'458', singapore:'702', netherlands: '528', 'united-kingdom': '826', france: '250', colombia: '170', panama: '591', 'costa-rica': '188', 'ivory-coast': '384',
- senegal: '686', togo: '768', benin: '204', cameroon: '120',
-};
-const gatewayEuropeProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(-16,10,132,63));
-const gatewayAfricaProjection = geoMercator().fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], extentFeature(-25, -18, 132, 55));
-const gatewayPacificProjection = geoMercator().rotate([-165, 0]).fitExtent([[55, 45], [WIDTH - 55, HEIGHT - 45]], {
- type: 'MultiPoint', coordinates: [[100, -15], [100, 48], [-65, 48], [-65, -15]],
-});
-const gatewayCanadaProjection = geoMercator().rotate([-170,0]).fitExtent([[52,42],[WIDTH-52,HEIGHT-42]], {
- type:'MultiPoint', coordinates:[[102,17],[102,68],[-79,68],[-79,17]],
-});
-const gatewayAustraliaProjection = geoMercator().fitExtent([[52,42],[WIDTH-52,HEIGHT-42]],extentFeature(95,-46,159,53));
-const gatewayEastAsiaProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(78,17,152,52));
-const gatewaySoutheastAsiaProjection = geoMercator().fitExtent([[55,45],[WIDTH-55,HEIGHT-45]],extentFeature(88,-3,126,42));
-export function CountryGatewayMap({ country, locale, destination, title, description }: {
- country: string; locale: Language; destination: string; title: string; description: string;
+const gatewayWidth = 600;
+const gatewayHeight = 320;
+const gatewayViewport: [Coordinate, Coordinate] = [[0,0],[gatewayWidth,gatewayHeight]];
+// The low-resolution world map omits some small islands.
+const islandCoastlines = [singaporeCoastline, bahrainCoastline] as Feature<Geometry>[];
+const islandIds = new Set(islandCoastlines.map(island => island.id));
+const gatewayAtlas = [...countries.features.filter(country => !islandIds.has(country.id)), ...islandCoastlines];
+
+function portLabels(points: Coordinate[]): Coordinate[] {
+  const labels: Coordinate[] = [];
+  const angles = [-135, 135, -45, 45, 180, 0, -90, 90];
+  for (const [index, point] of points.entries()) {
+    const [x,y] = point;
+    const nearby = points.some(([px,py], i) => i !== index && Math.hypot(px-x, py-y) < 62);
+    const options: Coordinate[] = nearby ? [] : [point];
+    for (const radius of [43, 65, 87]) {
+      for (const angle of angles) {
+        const radians = angle * Math.PI / 180;
+        options.push([x + radius * Math.cos(radians), y + radius * Math.sin(radians)]);
+      }
+    }
+    const fits = ([lx,ly]: Coordinate) =>
+      lx >= 22 && lx <= gatewayWidth - 22 && ly >= 22 && ly <= gatewayHeight - 22 &&
+      labels.every(([px,py]) => Math.hypot(px-lx, py-ly) >= 38) &&
+      points.every(([px,py], i) => i === index || Math.hypot(px-lx, py-ly) >= 22);
+    labels.push(options.find(fits) ?? point);
+  }
+  return labels;
+}
+
+export function CountryGatewayMap({ country, locale, destination }: {
+  country: string; locale: Language; destination: string;
 }) {
- const countryId = gatewayCountryIds[country];
- const target = countries.features.find(f => String(f.id).padStart(3, '0') === countryId);
- const china = countries.features.find(f => String(f.id).padStart(3, '0') === '156');
- const destinationCoordinates: [number,number] | undefined = target ? geoCentroid(target) : country==='singapore' ? [103.82,1.35] : undefined;
- if (!destinationCoordinates || !china) return null;
- const pacific = ['colombia', 'panama', 'costa-rica'].includes(country);
- const projection = ['vietnam','malaysia','singapore'].includes(country) ? gatewaySoutheastAsiaProjection : country==='canada' ? gatewayCanadaProjection : country==='australia' ? gatewayAustraliaProjection : (country==='japan'||country==='south-korea') ? gatewayEastAsiaProjection : ['netherlands', 'united-kingdom', 'france'].includes(country) ? gatewayEuropeProjection : pacific ? gatewayPacificProjection : gatewayAfricaProjection;
- const clipId = `gateway-${country}-clip`;
- const chinaLabel = mapRegionLabels[locale][0];
- const nodes: MapNode[] = [
-  { id: 'china', label: chinaLabel, coordinates: geoCentroid(china), labelDx: 20, labelDy: -28, kind: 'origin' },
-  { id: country, label: destination, coordinates: destinationCoordinates, labelDx: pacific ? -20 : 20, labelDy: 40 },
- ];
- return <figure className="freight-regional-map country-gateway-map" aria-label={title}>
-  <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby={`${clipId}-title ${clipId}-desc`}>
-   <title id={`${clipId}-title`}>{title}</title><desc id={`${clipId}-desc`}>{description}</desc>
-   <MapChrome clipId={clipId} />
-   <MapBase projection={projection} highlighted={new Set([countryId])} clipId={clipId} regional />
-   <MapNodes nodes={nodes} projection={projection} />
-  </svg>
- </figure>;
+  const data = countryGateways[country];
+  if (!data) return null;
+  const target = gatewayAtlas.find(shape => String(shape.id).padStart(3, '0') === data.id);
+  if (!target) return null;
+
+  const { title, note, ports } = countryGatewayLabels(country, locale);
+  const projection = geoMercator().fitExtent([[44,38],[gatewayWidth-44,gatewayHeight-38]],
+    data.bounds ? extentFeature(...data.bounds) : target).clipExtent(gatewayViewport);
+  const path = geoPath(projection);
+  const points = ports.map(port => projection(port.coordinates)!);
+  const labels = portLabels(points);
+  const mapId = `gateway-${country}`;
+  return <figure className="freight-regional-map country-gateway-map" data-country-gateway-map={country}>
+    <svg viewBox={`0 0 ${gatewayWidth} ${gatewayHeight}`} role="img" aria-labelledby={`${mapId}-title ${mapId}-description`}>
+      <title id={`${mapId}-title`}>{destination} · {title}</title>
+      <desc id={`${mapId}-description`}>{ports.map(port => port.name).join(' · ')}. {note}</desc>
+      <rect width={gatewayWidth} height={gatewayHeight} className="freight-map-ocean" />
+      <g aria-hidden="true">
+        {gatewayAtlas.map(shape => {
+          const d = path(shape);
+          return d ? <path key={String(shape.id)} d={d} className="freight-map-country" /> : null;
+        })}
+        <path d={path(target) ?? undefined} className="freight-map-country freight-map-country-focus" />
+        {points.map(([x,y], index) => {
+          const [labelX,labelY] = labels[index];
+          return <g key={ports[index].name} className="country-gateway-pin" data-port-pin={index+1}>
+            <line x1={x} y1={y} x2={labelX} y2={labelY} />
+            <circle cx={x} cy={y} r="3" />
+            <circle cx={labelX} cy={labelY} r="17" />
+            <text x={labelX} y={labelY} dominantBaseline="central" textAnchor="middle">{index+1}</text>
+          </g>;
+        })}
+      </g>
+    </svg>
+    <figcaption>
+      <p className="country-gateway-heading"><strong>{destination}</strong><span>{title}</span></p>
+      <ol>{ports.map((port, index) => <li key={port.name}>
+        <span aria-hidden="true">{index+1}</span><bdi>{port.name}</bdi>
+      </li>)}</ol>
+      <p className="country-gateway-note">{note}</p>
+    </figcaption>
+  </figure>;
 }
 
 const centralNodes: MapNode[] = [

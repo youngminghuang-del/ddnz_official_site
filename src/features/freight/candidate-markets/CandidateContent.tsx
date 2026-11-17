@@ -24,7 +24,7 @@ export default function CandidateContent({country,locale,initialRates=[]}:{count
    <nav className="gulf-breadcrumb" aria-label={c.breadcrumb} data-freight-breadcrumb>{breadcrumb.map((b,n)=><Fragment key={b.path}>{n>0&&<span aria-hidden="true"> / </span>}{n===breadcrumb.length-1?<span aria-current="page">{b.name}</span>:<a href={b.path}>{b.name}</a>}</Fragment>)}</nav>
    <header className="gulf-hero">
     <div className="gulf-hero-copy"><p className="gulf-eyebrow">{(pacific ? p.name : c.europe)} · {m.gateway.toUpperCase()}</p><h1>{c.title}</h1><p className="gulf-lede">{p.description}</p><p className="candidate-hero-detail">{c.summary}</p><div className="gulf-actions"><a className="gulf-cta" {...quote}>{c.ask} ↗</a><a className="gulf-secondary" href="#arrival">{c.arrivalLink} ↓</a></div></div>
-    <div className="candidate-hero-map"><CountryGatewayMap country={country} locale={locale} destination={p.name} title={c.mapTitle.replace('{country}',p.name)} description={c.mapDescription}/><div className="candidate-map-caption"><span>{c.china}</span><ArrowRight className="candidate-direction" size={20} aria-hidden="true"/><strong>{m.gateway}</strong></div><p>{c.mapCaption}</p></div>
+    <div className="candidate-hero-map"><CountryGatewayMap country={country} locale={locale} destination={p.name}/></div>
    </header>
    <nav className="gulf-chapters" aria-label={c.onPage}><a href="#quotation">{scenarioCopy[locale].title}</a><a href="#cost-transit">{marketGuide[locale].costNav}</a><a href="#routes">{c.routes}</a><a href="#import-rules">{marketGuide[locale].rulesNav}</a><a href="#preparation">{c.documents}</a><a href="#arrival">{c.arrival}</a></nav>
    <QuoteScenarios country={country} locale={locale}/>
@@ -45,6 +45,12 @@ export default function CandidateContent({country,locale,initialRates=[]}:{count
     <FactoryHandoff country={country} locale={locale}/>
    </section>
    <section id="arrival" className="gulf-section"><p className="gulf-eyebrow">04 / {c.arrivalSection}</p><h2>{c.gatewayHeading}</h2><p>{c.gatewayText}</p><div className="candidate-handover"><article><PackageCheck size={28}/><h3>{c.release}</h3><p>{c.releaseBody}</p></article><article><Truck size={28}/><h3>{c.addressDelivery}</h3><p>{c.inlandText}</p></article></div></section>
+   {'freightQuestion' in c && c.freightQuestion && <section className="gulf-section candidate-market-guide">
+    <details className="candidate-scenario-details">
+     <summary>{c.freightQuestion[0]}</summary>
+     <p>{c.freightQuestion[1]}</p>
+    </details>
+   </section>}
    <section className="gulf-section candidate-final"><p className="gulf-eyebrow">05 / {c.shipment}</p><h2>{c.shipmentHeading}</h2><p>{c.shipmentBody}</p><p data-freight-provider>{c.providerBody}</p><a className="gulf-cta" {...quote}>{c.ask} ↗</a><div className="candidate-related"><a href={pacific?`${prefix}/services/sea-freight/`:`${prefix}/shipping-from-china-to-europe/`}>{pacific?candidateSeaLabel(locale):c.europeLink} ↗</a><a href={`${prefix}/services/lcl-shipping-from-china/`}>{c.lclLink} ↗</a><a href={`${prefix}/sourcing-services/consolidation-export/`}>{c.consolidationLink} ↗</a>{(pacific?pacificCandidateSlugs:europeCandidateSlugs).filter(s=>s!==country).map(s=><a key={s} href={candidatePath(s,locale)}>{candidateInfo(s,locale).name} ↗</a>)}</div></section>
   </div>
  </main>;

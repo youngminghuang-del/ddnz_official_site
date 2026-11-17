@@ -1,3 +1,7 @@
+import { CountryGatewayMap } from '../../components/FreightRouteMap';
+import { countryGateways } from './countryGatewayData';
+import { localizedDestination } from './locales/index.mjs';
+import type { Language } from '../../i18n/translations';
 import CountryTransitPlanner, {hasCountryTransitPlan,countryTransitUi} from './CountryTransitPlanner';
 import LatinArrivalPlanner, {hasLatinArrivalPlan} from './LatinArrivalPlanner';
 import MarketPreparationDepth from './MarketPreparationDepth';
@@ -60,5 +64,8 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
    <p className="route-depth-note">{c.note || labels[1]}{c.source && <> <a href={c.source} target="_blank" rel="noreferrer" aria-label={c.routes[0][0] + " · " + c.source.split("/")[2]} style={{textDecoration:"underline"}}>{c.source.split("/")[2]} ↗</a></>}</p><div className="route-depth-arrival"><h3>{c.arrivalTitle}</h3><div><p>{c.arrival}</p><p>{c.cargo}</p></div></div>
   </div>
  </section>;
- return <>{hasCountryTransitPlan(country) && <CountryTransitPlanner country={country} locale={locale}/>} {hasLatinArrivalPlan(country) && <LatinArrivalPlanner country={country} locale={locale}/>}{hasCountryTransitPlan(country)?<><FreightRatePreview context={country} locale={locale}/><details className="frp-existing"><summary>{countryTransitUi(locale).preparation}</summary>{content}</details></>:<FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview>}<MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
+ const destinationMap = countryGateways[country]?.placement === 'route-planning'
+  ? <div id="destination-ports" className="route-depth-destination-map"><CountryGatewayMap country={country} locale={locale as Language} destination={localizedDestination(country,locale)}/></div>
+  : null;
+ return <>{hasCountryTransitPlan(country) && <CountryTransitPlanner country={country} locale={locale}/>} {hasLatinArrivalPlan(country) && <LatinArrivalPlanner country={country} locale={locale}/>}{destinationMap}{hasCountryTransitPlan(country)?<><FreightRatePreview context={country} locale={locale}/><details className="frp-existing"><summary>{countryTransitUi(locale).preparation}</summary>{content}</details></>:<FreightRatePreview context={country} locale={locale}>{content}</FreightRatePreview>}<MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
 }

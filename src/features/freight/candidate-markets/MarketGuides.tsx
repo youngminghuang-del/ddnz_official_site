@@ -22,9 +22,17 @@ const ports = {
  vietnam: pacificPorts['HOCHIMINH CAT LAI'],
  malaysia: pacificPorts['PORT KELANG'],
  singapore: pacificPorts.SINGAPORE,
+ thailand: pacificPorts['LAEM CHABANG'],
+ indonesia: pacificPorts.JAKARTA,
+ philippines: pacificPorts.MANILA,
  netherlands: { en:'Rotterdam', zh:'鹿特丹', es:'Róterdam', fr:'Rotterdam', ru:'Роттердам', ar:'روتردام', pt:'Roterdã', tr:'Rotterdam' },
  'united-kingdom': { en:'Southampton', zh:'南安普敦', es:'Southampton', fr:'Southampton', ru:'Саутгемптон', ar:'ساوثهامبتون', pt:'Southampton', tr:'Southampton' },
  france: { en:'Le Havre', zh:'勒阿弗尔', es:'Le Havre', fr:'Le Havre', ru:'Гавр', ar:'لوهافر', pt:'Le Havre', tr:'Le Havre' },
+};
+const importReferences: Partial<Record<CandidateCountry, { name: string; url: string }>> = {
+ thailand: { name: 'Thai Customs · e-Customs', url: 'https://lcpcb.customs.go.th/th/import-procedures' },
+ indonesia: { name: 'Bea Cukai · PIB', url: 'https://beacukai.go.id/impor-untuk-dipakai' },
+ philippines: { name: 'Bureau of Customs · Importation', url: 'https://customs.gov.ph/guidelines-on-importation/' },
 };
 const policy = {
  'united-kingdom': { entry: 'GB / XI EORI', tax: 'VAT', taxTitle: 'ukTax', taxBody: 'ukTaxBody', marking: 'CE / UKCA', markTitle: 'ukMark', markBody: 'ukMarkBody' },
@@ -83,6 +91,7 @@ export function MarketImportRules({ country, locale }: {country: CandidateCountr
  if (isPacificCandidate(country)) {
   const rules = pacificCountryCopy(country,locale);
   const [entry, tax, check] = pacificMarketBadges[country];
+  const reference = importReferences[country];
   return <section id="import-rules" className="gulf-section candidate-market-guide" aria-labelledby="import-rules-title">
    <h2 id="import-rules-title">{c.rulesTitle}</h2>
    <ImportCards cards={[
@@ -90,6 +99,7 @@ export function MarketImportRules({ country, locale }: {country: CandidateCountr
     { icon:ReceiptText, badge:tax, title:rules.taxTitle, text:rules.taxBody },
     { icon:ShieldCheck, badge:check, title:rules.checkTitle, text:rules.checkBody },
    ]}/>
+   {reference && <p><a href={reference.url} target="_blank" rel="noreferrer"><bdi>{reference.name}</bdi> <span aria-hidden="true">↗</span></a></p>}
   </section>;
  }
  const p = policy[country];

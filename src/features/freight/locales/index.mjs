@@ -3,7 +3,7 @@ import es from './es.json';import fr from './fr.json';import ru from './ru.json'
 export const freightLocalizations={es,fr,ru,ar,pt,tr};
 export const freightLocales=['en','zh','es','fr','ru','ar','pt','tr'];
 export const localePrefix=l=>l==='en'?'':l==='zh'?'/zh-cn':`/${l}`;
-const iso={ecuador:'EC','dominican-republic':'DO',togo:'TG',benin:'BJ',cameroon:'CM',panama:'PA','costa-rica':'CR',spain:'ES',germany:'DE',netherlands:'NL','united-kingdom':'GB',france:'FR',canada:'CA',australia:'AU',japan:'JP','south-korea':'KR',vietnam:'VN',malaysia:'MY',singapore:'SG',colombia:'CO','ivory-coast':'CI',senegal:'SN',ghana:'GH',nigeria:'NG','saudi-arabia':'SA',uae:'AE',kuwait:'KW',qatar:'QA',oman:'OM',bahrain:'BH',india:'IN',pakistan:'PK',bangladesh:'BD',mexico:'MX',brazil:'BR',argentina:'AR',peru:'PE',chile:'CL',russia:'RU',kazakhstan:'KZ',kyrgyzstan:'KG',uzbekistan:'UZ',tajikistan:'TJ',turkmenistan:'TM'};
+const iso={ecuador:'EC','dominican-republic':'DO',togo:'TG',benin:'BJ',cameroon:'CM',panama:'PA','costa-rica':'CR',spain:'ES',germany:'DE',netherlands:'NL','united-kingdom':'GB',france:'FR',canada:'CA',australia:'AU',japan:'JP','south-korea':'KR',vietnam:'VN',malaysia:'MY',singapore:'SG',thailand:'TH',indonesia:'ID',philippines:'PH',colombia:'CO','ivory-coast':'CI',senegal:'SN',ghana:'GH',nigeria:'NG','saudi-arabia':'SA',uae:'AE',kuwait:'KW',qatar:'QA',oman:'OM',bahrain:'BH',india:'IN',pakistan:'PK',bangladesh:'BD',mexico:'MX',brazil:'BR',argentina:'AR',peru:'PE',chile:'CL',russia:'RU',kazakhstan:'KZ',kyrgyzstan:'KG',uzbekistan:'UZ',tajikistan:'TJ',turkmenistan:'TM'};
 const regions={es:['Oriente Medio','África Occidental','América Latina','Asia Central',"América Central","Europa"],fr:['Moyen-Orient','Afrique de l’Ouest','Amérique latine','Asie centrale',"Amérique centrale","Europe"],ru:['Ближний Восток','Западная Африка','Латинская Америка','Центральная Азия',"Центральная Америка","Европа"],ar:['الشرق الأوسط','غرب أفريقيا','أمريكا اللاتينية','آسيا الوسطى',"أمريكا الوسطى","أوروبا"],pt:['Oriente Médio','África Ocidental','América Latina','Ásia Central',"América Central","Europa"],tr:['Orta Doğu','Batı Afrika','Latin Amerika','Orta Asya',"Orta Amerika","Avrupa"]};
 export function localizedDestination(slug,locale){if(slug==="central-africa")return centralAfricaCopy[locale]?.name||"";if(iso[slug])return new Intl.DisplayNames([locale],{type:'region'}).of(iso[slug]);return regions[locale]?.[['middle-east','west-africa','latin-america','central-asia','central-america','europe'].indexOf(slug)]||'';}
 export const feeKeys=['BUNKER ADJUSTMENT FACTOR','THC','SEAL CHARGE','EQUIPMENT INTERCHANGE RECEIPT','DOC FEE','TELEX RELEASE FEE','INTERNATIONAL SHIP AND PORT FACILITY SECURITY','AMS FEE','DHC','BOOKING FEE','CONGESTION FEE','DDC CHARGE','ELECTRONIC DATA INTERCHARGE','ELECTRONIC PACKING LIST CHARGE','ENS','TANK FEE','VGM FEE'];
@@ -20,6 +20,11 @@ export function localizedFee(name,locale){const extra=localizedExtraFee(name,loc
 export function localizedCutoff(text,locale){const keys=['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];const fmt=new Intl.DateTimeFormat(locale,{weekday:'short',timeZone:'UTC'});const days=Object.fromEntries(keys.map((k,i)=>[k,fmt.format(new Date(Date.UTC(2020,0,6+i)))]));return text.replace(/^cutting\/ETD[：:]\s*/,freightLocalizations[locale].extra.cutoff+': ').replace(/\b(Mon|Tue|Wed|Thu|Fri|Sat|Sun)\b/g,k=>days[k]);}
 
 export const pacificPorts = {
+ 'LAEM CHABANG': {en:'Laem Chabang',zh:'林查班',es:'Laem Chabang',fr:'Laem Chabang',ru:'Лаемчабанг',ar:'ليم تشابانغ',pt:'Laem Chabang',tr:'Laem Chabang'},
+ JAKARTA: {en:'Jakarta',zh:'雅加达',es:'Yakarta',fr:'Jakarta',ru:'Джакарта',ar:'جاكرتا',pt:'Jacarta',tr:'Cakarta'},
+ MANILA: {en:'Manila',zh:'马尼拉',es:'Manila',fr:'Manille',ru:'Манила',ar:'مانيلا',pt:'Manila',tr:'Manila'},
+ 'MANILA NORTH': {en:'Manila North',zh:'马尼拉北港',es:'Puerto Norte de Manila',fr:'Manille Nord',ru:'Северный порт Манилы',ar:'ميناء مانيلا الشمالي',pt:'Porto Norte de Manila',tr:'Manila Kuzey Limanı'},
+ 'MANILA SOUTH': {en:'Manila South',zh:'马尼拉南港',es:'Puerto Sur de Manila',fr:'Manille Sud',ru:'Южный порт Манилы',ar:'ميناء مانيلا الجنوبي',pt:'Porto Sul de Manila',tr:'Manila Güney Limanı'},
  GUAYAQUIL: {en:'Guayaquil',zh:'瓜亚基尔',es:'Guayaquil',fr:'Guayaquil',ru:'Гуаякиль',ar:'غواياكيل',pt:'Guayaquil',tr:'Guayaquil'},
  POSORJA: {en:'Posorja',zh:'波索尔哈',es:'Posorja',fr:'Posorja',ru:'Посорха',ar:'بوسورخا',pt:'Posorja',tr:'Posorja'},
  CAUCEDO: {en:'Caucedo',zh:'考塞多',es:'Caucedo',fr:'Caucedo',ru:'Кауседо',ar:'كاوسيدو',pt:'Caucedo',tr:'Caucedo'},
@@ -33,4 +38,10 @@ export const pacificPorts = {
  'VANCOUVER,CA': {en:'Vancouver',zh:'温哥华',es:'Vancouver',fr:'Vancouver',ru:'Ванкувер',ar:'فانكوفر',pt:'Vancouver',tr:'Vancouver'},
  SYDNEY: {en:'Sydney',zh:'悉尼',es:'Sídney',fr:'Sydney',ru:'Сидней',ar:'سيدني',pt:'Sydney',tr:'Sydney'},
 };
-export const localizedPacificPort = (port,locale)=>pacificPorts[port]?.[locale];
+const terminalPrefixes = ['JAKARTA ', 'LAEM CHABANG '];
+export const localizedPacificPort = (port, locale) => {
+ const localized = pacificPorts[port]?.[locale];
+ if (localized) return localized;
+ const prefix = terminalPrefixes.find(value => port.startsWith(value));
+ if (prefix) return `${pacificPorts[prefix.trim()][locale]} · ${port.slice(prefix.length)}`;
+};
