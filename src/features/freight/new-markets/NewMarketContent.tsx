@@ -5,7 +5,7 @@ import marketRegions from '../marketRegions.json';
 import senegalScopes from './senegalScopes.json';
 import CountryTransitPlanner from '../CountryTransitPlanner';
 import FreightRatePreview from '../rates/FreightRatePreview';
-import { CountryGatewayMap, RegionalFreightMap } from '../../../components/FreightRouteMap';
+import { CountryGatewayMap } from '../../../components/FreightRouteMap';
 import FreightBreadcrumbs from '../FreightBreadcrumbs';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
 const documentExamplesLink: Record<NewMarketLocale, string> = {
@@ -17,17 +17,6 @@ const documentExamplesLink: Record<NewMarketLocale, string> = {
   ar: 'قارن أمثلة وثائق الشحن البحري',
   pt: 'Comparar exemplos de documentos marítimos',
   tr: 'Örnek deniz taşımacılığı belgelerini karşılaştırın',
-};
-
-const gatewayMapNote: Record<NewMarketLocale, string> = {
- en: 'China and destination location guide. Confirm the origin port, transshipment and final delivery for your shipment.',
- zh: '中国与目的国位置示意。实际起运港、中转及最终交付地点按具体货物确认。',
- es: 'Ubicación de China y el país de destino. Confirme el puerto de origen, los transbordos y la entrega final para cada envío.',
- fr: 'Repères géographiques de la Chine et du pays de destination. Confirmez le port de départ, les transbordements et la livraison finale pour chaque envoi.',
- ru: 'Расположение Китая и страны назначения. Порт отправления, перевалки и конечная доставка уточняются для каждого груза.',
- ar: 'دليل لموقع الصين وبلد الوجهة. يُؤكَّد ميناء المنشأ وإعادة الشحن والتسليم النهائي لكل شحنة.',
- pt: 'Localização da China e do país de destino. Confirme o porto de origem, os transbordos e a entrega final para cada remessa.',
- tr: 'Çin ve varış ülkesinin konumu. Çıkış limanı, aktarmalar ve son teslim noktası her sevkiyat için teyit edilir.',
 };
 
 export default function NewMarketContent({country,locale}:{country:NewMarket;locale:NewMarketLocale}){
@@ -50,11 +39,7 @@ export default function NewMarketContent({country,locale}:{country:NewMarket;loc
        </div>
       </div>
       <div className="europe-country-visual market-country-visual">
-       {isEurope
-        ? <RegionalFreightMap region="europe" europeGateway={country === 'spain' ? 'valencia' : 'hamburg'} locale={locale} title={meta.title} description={c.diagram} />
-        : <CountryGatewayMap country={country} locale={locale} destination={meta.name} title={meta.title} description={gatewayMapNote[locale]} />}
-       {isEurope ? <p dir="ltr"><bdi>Shenzhen</bdi> → <bdi>{m.port}</bdi></p> : <p><span>{c.gateway}</span><bdi dir="ltr">{m.gateway}</bdi></p>}
-       <small>{isEurope ? c.diagram : gatewayMapNote[locale]}</small>
+       <CountryGatewayMap country={country} locale={locale} destination={meta.name} />
       </div>
      </header>
      <nav className="gulf-chapters" aria-label={c.heading}>

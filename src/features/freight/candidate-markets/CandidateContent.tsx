@@ -24,7 +24,7 @@ export default function CandidateContent({country,locale,initialRates=[]}:{count
    <nav className="gulf-breadcrumb" aria-label={c.breadcrumb} data-freight-breadcrumb>{breadcrumb.map((b,n)=><Fragment key={b.path}>{n>0&&<span aria-hidden="true"> / </span>}{n===breadcrumb.length-1?<span aria-current="page">{b.name}</span>:<a href={b.path}>{b.name}</a>}</Fragment>)}</nav>
    <header className="gulf-hero">
     <div className="gulf-hero-copy"><p className="gulf-eyebrow">{(pacific ? p.name : c.europe)} · {m.gateway.toUpperCase()}</p><h1>{c.title}</h1><p className="gulf-lede">{p.description}</p><p className="candidate-hero-detail">{c.summary}</p><div className="gulf-actions"><a className="gulf-cta" {...quote}>{c.ask} ↗</a><a className="gulf-secondary" href="#arrival">{c.arrivalLink} ↓</a></div></div>
-    <div className="candidate-hero-map"><CountryGatewayMap country={country} locale={locale} destination={p.name} title={c.mapTitle.replace('{country}',p.name)} description={c.mapDescription}/><div className="candidate-map-caption"><span>{c.china}</span><ArrowRight className="candidate-direction" size={20} aria-hidden="true"/><strong>{m.gateway}</strong></div><p>{c.mapCaption}</p></div>
+    <div className="candidate-hero-map"><CountryGatewayMap country={country} locale={locale} destination={p.name}/></div>
    </header>
    <nav className="gulf-chapters" aria-label={c.onPage}><a href="#quotation">{scenarioCopy[locale].title}</a><a href="#cost-transit">{marketGuide[locale].costNav}</a><a href="#routes">{c.routes}</a><a href="#import-rules">{marketGuide[locale].rulesNav}</a><a href="#preparation">{c.documents}</a><a href="#arrival">{c.arrival}</a></nav>
    <QuoteScenarios country={country} locale={locale}/>

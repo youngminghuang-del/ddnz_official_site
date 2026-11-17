@@ -1,3 +1,4 @@
+import { CountryGatewayMap } from '../../components/FreightRouteMap';
 import {useId,useState} from 'react';
 import type {MarketCountry} from './MarketFreightContent';
 const root='/media/freight-20261014-round19/';
@@ -34,7 +35,7 @@ export function MarketOfficialResources({country}:{country:MarketCountry}) {
 }
 export function MarketRouteMap({country}:{country:MarketCountry}) {
  const peru=country==='peru';const cities=peru?['Callao port, Peru','Chancay port, Peru','Lima, Peru']:['Lagos Port Complex, Nigeria','Onitsha, Nigeria','Kano, Nigeria'];
- return <figure className="market-route-map"><div className="market-gallery-title"><span>DESTINATION CONTEXT</span><strong>{peru?'Peru':'Nigeria'}</strong></div><img src={root+country+'-map.svg'} alt={peru?'Peru country outline with Callao gateway marked':'Nigeria country outline with Lagos gateway marked'} loading="lazy"/><figcaption><p>Locate the gateway, then confirm the collection point or final receiving address.</p><div>{cities.map(city=><a key={city} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(city)}`} target="_blank" rel="noreferrer">{city} ↗</a>)}</div><small>Geographic context, not a sailing itinerary. <a href="https://www.naturalearthdata.com/">Boundaries: Natural Earth</a>.</small></figcaption></figure>;
+ return <div className="market-route-map"><CountryGatewayMap country={country} locale="en" destination={peru?'Peru':'Nigeria'}/><div className="market-route-links"><p>Locate the gateway, then confirm the collection point or final receiving address.</p><div>{cities.map(city=><a key={city} href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(city)}`} target="_blank" rel="noreferrer">{city} ↗</a>)}</div><small>Geographic context, not a sailing itinerary. <a href="https://www.naturalearthdata.com/">Boundaries: Natural Earth</a>.</small></div></div>;
 }
 export function MarketJourney({country}:{country:MarketCountry}) {
  const stages=country==='peru'?['Check each pallet','Confirm importer data','Review freight & gateway','Arrange unloading']:['List supplier orders','Reconcile arrivals','Confirm import readiness','Agree the handover'];
