@@ -554,3 +554,61 @@ export default function FreightRouteMap({ variant, locale }: FreightRouteMapProp
     </section>
   );
 }
+
+type LatinDoorMapProps = {
+  market: 'ecuador' | 'dominican-republic';
+  labels: { china: string; country: string; ports: string[]; city: string; caption: string };
+};
+
+const latinMapWidth = 620;
+const latinMapHeight = 172;
+const latinViewport:[[number,number],[number,number]]=[[0,0],[latinMapWidth,latinMapHeight]];
+const latinOverview = geoMercator().rotate([-168, 0]).fitExtent([[38,24],[582,148]], {
+  type:'MultiPoint', coordinates:[[102, 2],[102,37],[-60,37],[-60,2]],
+}).clipExtent(latinViewport);
+const latinChina: Coordinate = [114.26,22.57];
+const latinMaps = {
+  ecuador: {
+    id:'218', ports:[[-79.907,-2.270],[-80.247,-2.692]], city:[-78.538,-0.211],
+    frame:extentFeature(-82.8,-3.5,-76.1,0.65), crossing:[[145,16],[175,11],[-145,8],[-110,4],[-85,-2]],
+    labelOffsets:[[-57,-16],[-54,21],[28,-13]],
+  },
+  'dominican-republic': {
+    id:'214', ports:[[-69.629,18.424]], city:[-69.883,18.469],
+    frame:extentFeature(-70.35,18.08,-69.14,18.82), crossing:[[146,20],[175,20],[-142,20],[-106,15],[-84,9],[-79.7,9.15],[-75,15]],
+    labelOffsets:[[50,22],[-60,-12]],
+  },
+} satisfies Record<LatinDoorMapProps['market'],{id:string;ports:Coordinate[];city:Coordinate;frame:Feature<Polygon>;crossing:Coordinate[];labelOffsets:Coordinate[]}>;
+
+export function LatinDoorRouteMap({market,labels}: LatinDoorMapProps) {
+  const data=latinMaps[market];
+  const local=geoMercator().fitExtent([[30,17],[590,155]],data.frame).clipExtent(latinViewport);
+  const overviewNodes=[latinChina,data.ports[0]];
+  const localNodes=[...data.ports,data.city];
+  const mapId='door-route-'+market;
+  const describePoint=(projection:GeoProjection, coordinates:Coordinate, name:string, offset:Coordinate, city=false)=>{
+    const [x,y]=projection(coordinates)!;
+    const [dx,dy]=offset;
+    return <g key={name}>
+      <circle className={city?'latin-map-city':'latin-map-port'} cx={x} cy={y} r={city?5:5.5}/>
+      <text x={x+dx} y={y+dy} textAnchor="middle" unicodeBidi="plaintext">{name}</text>
+    </g>;
+  };
+  return <figure className="latin-route-map" aria-label={[labels.china,labels.country,...labels.ports,labels.city,labels.caption].join(" · ")}>
+    <svg viewBox={`0 0 ${latinMapWidth} ${latinMapHeight}`} aria-hidden="true">
+      <defs><clipPath id={mapId}><rect width={latinMapWidth} height={latinMapHeight}/></clipPath></defs>
+      <rect width={latinMapWidth} height={latinMapHeight} className="freight-map-ocean"/>
+      <MapBase projection={latinOverview} highlighted={new Set([data.id])} clipId={mapId}/>
+      <MapRoutes projection={latinOverview} routes={[{id:mapId+'-ocean',kind:'sea',coordinates:[latinChina,...data.crossing,data.ports[0]]}]}/>
+      {overviewNodes.map((node,i)=>describePoint(latinOverview,node,i?labels.country:labels.china,i?[-102,-10]:[32,24]))}
+    </svg>
+    <svg className="latin-route-detail" viewBox={`0 0 ${latinMapWidth} ${latinMapHeight}`} aria-hidden="true">
+      <defs><clipPath id={mapId+'-detail'}><rect width={latinMapWidth} height={latinMapHeight}/></clipPath></defs>
+      <rect width={latinMapWidth} height={latinMapHeight} className="freight-map-ocean"/>
+      <MapBase projection={local} highlighted={new Set([data.id])} clipId={mapId+'-detail'} regional/>
+      <MapRoutes projection={local} routes={data.ports.map((port,i)=>({id:mapId+'-land-'+i,kind:'land',coordinates:[port,data.city]}))}/>
+      {localNodes.map((node,i)=>describePoint(local,node,i===data.ports.length?labels.city:labels.ports[i],data.labelOffsets[i],i===data.ports.length))}
+    </svg>
+    <figcaption>{labels.caption}</figcaption>
+  </figure>;
+}

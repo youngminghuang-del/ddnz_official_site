@@ -12,3 +12,121 @@
 .market-preparation bdi{unicode-bidi:isolate}
 .market-preparation[dir="rtl"] .mp-kicker{letter-spacing:normal}
 .market-preparation[dir="rtl"] .mp-number{unicode-bidi:isolate}
+
+.latin-door-page { --candidate-line:#d7dce4; }
+.latin-door-page section[id] { scroll-margin-top: 150px; }
+.latin-door-hero { padding-block: clamp(26px, 5vw, 58px); align-items:start; gap:clamp(26px,4vw,58px); }
+.latin-door-hero .mp-primary { background:#ad3c1f; }
+.latin-door-hero .mp-primary:hover { background:#8f3019; }
+.latin-door-gateway { min-width:0; }
+.latin-gateway-note { padding:14px 0 0; }
+.latin-gateway-note h2 { margin:0; font-size:clamp(18px, 2vw, 24px); }
+.latin-gateway-note p { margin-block:6px; color:#506079; font-size:14px; }
+.latin-gateway-note a { display:inline-flex; align-items:center; min-height:44px; }
+.latin-route-map { margin:0; border:1px solid #cfdbe5; border-radius:14px; overflow:hidden; background:#eff3f7; }
+.latin-route-map svg { width:100%; height:auto; display:block; }
+.latin-route-detail { border-block-start:1px solid #cbd6df; }
+.latin-route-map text {
+  fill:#132944; font-size:21px; font-weight:700;
+  paint-order:stroke fill; stroke:#edf3f7; stroke-width:5px; stroke-linejoin:round;
+}
+.latin-route-map .latin-map-port,.latin-route-map .latin-map-city { stroke:#fff; stroke-width:1.5px; }
+.latin-route-map .latin-map-port { fill:#662c89; }
+.latin-route-map .latin-map-city { fill:#a63820; }
+.latin-route-map .freight-route { stroke-dasharray:4 4; stroke-width:1.6px; filter:none; }
+.latin-route-map figcaption { padding:10px 14px; color:#46566b; font-size:12px; line-height:1.5; }
+.latin-door-page[dir="rtl"] .gulf-chapter-arrow { transform:scaleX(-1); }
+.latin-door-page :is(a,summary):focus-visible { outline:3px solid #74458f; outline-offset:3px; }
+.latin-door-page .latin-door-scenarios article:first-child { border-block-start: 3px solid #74458f; }
+.latin-door-steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; padding-inline-start:24px; }
+.latin-door-steps li { padding-inline-start:4px; }
+.latin-door-steps li::marker { color:#74458f; font-weight:700; }
+.latin-door-source { margin-inline-start:18px; }
+.latin-door-factory,.latin-door-consolidation { display:grid; align-items:start; grid-template-columns:minmax(0,1.5fr) minmax(0,1fr); gap:clamp(20px,4vw,52px); }
+.latin-door-factory { grid-template-columns:minmax(0,1fr) minmax(0,285px); }
+.ecuador-process-photo { margin:0; min-width:0; }
+.ecuador-process-photo a { display:block; border-radius:12px; overflow:hidden; }
+.ecuador-process-photo img { display:block; max-width:100%; width:100%; height:auto; }
+.ecuador-process-photo figcaption,.latin-consolidation-note { margin-block:9px 0; color:#506079; font-size:13px; }
+.latin-small-visual {
+  display:inline-flex; min-width:48px; min-height:48px; gap:5px; align-items:center; justify-content:center;
+  padding:8px; background:#f0e9f5; color:#633282; border-radius:7px;
+}
+.latin-door-page :is(.mp-steps,.mp-cards) h3 { margin-block:12px 6px; }
+.latin-door-page .mp-checks { list-style:none; padding:0; }
+.latin-door-page .mp-checks li { display:grid; grid-template-columns:48px 1fr; align-items:start; gap:14px; margin:0; }
+.latin-door-page .mp-checks li > span + span { padding-block:7px; }
+.latin-door-page .mp-checks li::before { content:none; }
+.latin-handoff-diagram {
+  display:flex; justify-content:center; align-items:center; gap:20px;
+  padding:25px; background:#f0e9f5; color:#633282; border-radius:12px;
+}
+.latin-door-faq details { border-block-start:1px solid #d7dce4; }
+.latin-door-faq summary { min-height:44px; padding-block:10px; font-weight:650; cursor:pointer; }
+.latin-door-faq details p { margin-block:0 14px; }
+.latin-door-scenarios summary,.latin-door-factory .candidate-scenario-detail { min-height:44px; }
+
+@media (max-width: 740px) {
+  .latin-door-hero { gap:24px; }
+  .latin-door-steps,.latin-door-consolidation,.latin-door-factory { grid-template-columns:1fr; gap:14px; }
+}
+.latin-door-factory .candidate-scenario-detail {
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  max-width:100%;
+}
+.latin-door-factory .candidate-scenario-detail svg { flex:none; }
+.latin-door-page[lang="zh-CN"] .mp-hero h1 {
+  max-width:none;
+  font-size:clamp(25px,4vw,48px);
+}
+#ecuador-import-start { scroll-margin-top:150px; margin-block:24px 14px; padding-block:18px; border-block-start:1px solid #d7dce4; }
+#ecuador-import-start .mp-cards { margin-block:14px; }
+#ecuador-import-start h4 { font-size:16px; line-height:1.4; }
+.ecuador-form-preview {
+  margin:10px 0 12px;
+  min-width:0;
+  padding:12px 14px;
+  border:1px solid #d7dfe8;
+  border-radius:8px;
+  background:#f4f6fa;
+  color:#223754;
+  font-size:13px;
+}
+.ecuador-form-preview__header {
+  display:flex;
+  align-items:center;
+  gap:8px;
+  color:#653484;
+  font-weight:750;
+}
+.ecuador-form-preview__title { margin-block:5px; font-weight:650; }
+.ecuador-form-preview ul { padding:0; margin:0; list-style:none; min-height:88px; }
+.ecuador-form-preview li {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(15px,24%);
+  align-items:center;
+  gap:8px;
+  padding-block:2px;
+  border-block-start:1px solid #dde3ec;
+}
+.ecuador-form-preview li span { height:5px; border-radius:2px; background:#c6d0e0; }
+.ecuador-form-preview figcaption { margin-block-start:5px; font-size:12px; color:#4e6078; }
+@media (max-width:540px) {
+  .ecuador-form-preview ul { min-height:auto; }
+}
+
+.ecuador-terminal-photo { margin:0 0 12px; min-width:0; }
+.ecuador-terminal-photo img {
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:2;
+  object-fit:cover;
+  border-radius:10px;
+  background:#edf2f6;
+}
+.ecuador-terminal-photo figcaption { margin-block-start:6px; color:#506079; font-size:12px; }
+.ecuador-origin-reference { margin-block:8px; }
+.ecuador-origin-preview { width:min(100%,345px); }

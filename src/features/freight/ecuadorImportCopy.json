@@ -1,0 +1,146 @@
+{
+  "zh": {
+    "title": "第一次从中国进口到厄瓜多尔",
+    "cards": [
+      [
+        "商业海运先确认进口方",
+        "第一次走拼箱或整柜，先让厄瓜多尔进口方核对 RUC（税号）、电子签名和 ECUAPASS 注册。装船前按商品税号查许可和监管文件，备好发票和运输单证。"
+      ],
+      [
+        "税费和服务费分开列",
+        "按商品税号和申报条件核算关税、FODINFA、进口增值税 IVA 及适用时的 ICE。请把报关服务、港杂和送仓另列，并确认谁缴税、何时放行。"
+      ],
+      [
+        "样品或小包先核对申报类别",
+        "个人用途的小包可先让获授权的快件公司核对是否符合 4×4。涉及转售、批发或设备整批进口时，按货物用途、品类和许可评估商业运输方案。"
+      ]
+    ],
+    "partner": "厄瓜多尔端可与当地合作方 Importa Easy 对接进口准备及清关资料。由进口方或获认可的报关代理办理申报，服务和费用按票确认。"
+  },
+  "en": {
+    "title": "First shipment from China to Ecuador",
+    "cards": [
+      [
+        "Identify the importer for commercial sea freight",
+        "Before an LCL or FCL shipment, ask the Ecuadorian importer to check their RUC tax registration, electronic signature and ECUAPASS registration. Check permits by tariff code before loading and prepare the invoice and transport document."
+      ],
+      [
+        "Separate taxes from service fees",
+        "Calculate customs duty, FODINFA, import VAT (IVA) and ICE where applicable using the tariff code and declaration details. Itemize brokerage, terminal charges and delivery separately. Agree who pays taxes and when cargo can be released."
+      ],
+      [
+        "Check the regime for samples or small parcels",
+        "For personal-use parcels, ask an authorized courier whether 4×4 applies. For resale, wholesale or equipment shipments, assess a commercial option against the purpose, goods and permits."
+      ]
+    ],
+    "partner": "Local partner Importa Easy can help coordinate import preparation and clearance documents in Ecuador. The importer or accredited broker files the declaration. Confirm scope and fees for each shipment."
+  },
+  "es": {
+    "title": "Primera importación desde China a Ecuador",
+    "cards": [
+      [
+        "Identifique al importador para el flete comercial",
+        "Antes de un embarque LCL o FCL, pida al importador ecuatoriano verificar su RUC, firma electrónica y registro en ECUAPASS. Consulte los permisos por subpartida antes de cargar y prepare factura y documento de transporte."
+      ],
+      [
+        "Separe tributos de servicios",
+        "Calcule arancel, FODINFA, IVA de importación e ICE cuando corresponda, según la subpartida y la declaración. Desglose agente, terminal y entrega. Acuerde quién paga y cuándo se autoriza el levante."
+      ],
+      [
+        "Revise el régimen para muestras o paquetes pequeños",
+        "Para paquetes de uso personal, confirme con un courier autorizado si aplica el 4×4. Si la mercancía es para reventa, venta mayorista o un embarque de equipos, evalúe una operación comercial según el uso, el producto y los permisos."
+      ]
+    ],
+    "partner": "En Ecuador podemos coordinar la preparación y la documentación de despacho con nuestro socio local Importa Easy. El importador o agente acreditado presenta la declaración. Alcance y costos se confirman por embarque."
+  },
+  "fr": {
+    "title": "Première importation de Chine en Équateur",
+    "cards": [
+      [
+        "Identifier l’importateur pour le fret commercial",
+        "Avant un envoi LCL ou FCL, demandez à l’importateur équatorien de vérifier son RUC, sa signature électronique et son inscription à ECUAPASS. Vérifiez les autorisations par code tarifaire et préparez la facture et le titre de transport."
+      ],
+      [
+        "Distinguer taxes et frais de service",
+        "Évaluez les droits, le FODINFA, la TVA à l’importation (IVA) et, le cas échéant, l’ICE selon le code tarifaire et la déclaration. Chiffrez séparément le déclarant, le terminal et la livraison. Précisez le payeur et les conditions de mainlevée."
+      ],
+      [
+        "Vérifier le régime des échantillons et petits colis",
+        "Pour les colis à usage personnel, demandez à un opérateur autorisé si le régime 4×4 s’applique. Pour la revente, le gros ou les équipements, étudiez un régime commercial selon l’usage, le produit et les autorisations."
+      ]
+    ],
+    "partner": "Notre partenaire local Importa Easy peut coordonner la préparation et les documents de dédouanement en Équateur. L’importateur ou le déclarant agréé dépose la déclaration. Le périmètre et les frais se confirment par envoi."
+  },
+  "ru": {
+    "title": "Первый импорт из Китая в Эквадор",
+    "cards": [
+      [
+        "Уточните импортёра для коммерческой перевозки",
+        "Перед отправкой LCL или FCL проверьте у эквадорского импортёра RUC, электронную подпись и регистрацию в ECUAPASS. До погрузки проверьте разрешения по тарифному коду и подготовьте счёт и транспортный документ."
+      ],
+      [
+        "Отделите налоги от платы за услуги",
+        "Рассчитайте пошлину, FODINFA, импортный НДС (IVA) и применимый ICE по коду и данным декларации. Укажите отдельно услуги брокера, терминала и доставку. Согласуйте плательщика и условия выпуска."
+      ],
+      [
+        "Уточните режим для образцов или небольших посылок",
+        "Для посылок личного пользования узнайте у авторизованного курьера, применим ли 4×4. Продажу, оптовые партии и поставки оборудования оценивайте по коммерческому режиму с учётом товара и разрешений."
+      ]
+    ],
+    "partner": "Местный партнёр Importa Easy может помочь с подготовкой импорта и документов в Эквадоре. Декларацию подаёт импортёр или аккредитованный брокер. Состав услуг и цены уточняются для каждой отправки."
+  },
+  "ar": {
+    "title": "أول شحنة من الصين إلى الإكوادور",
+    "cards": [
+      [
+        "حدّد المستورد للشحن التجاري",
+        "قبل شحن حاوية كاملة أو مشتركة، اطلب من المستورد الإكوادوري مراجعة رقم RUC والتوقيع الإلكتروني والتسجيل في ECUAPASS. تحقّق من التصاريح حسب رمز التعرفة وجهّز الفاتورة ووثيقة النقل قبل التحميل."
+      ],
+      [
+        "افصل الضرائب عن رسوم الخدمات",
+        "احسب الرسوم الجمركية وFODINFA وضريبة الاستيراد IVA وضريبة ICE عند انطباقها حسب رمز التعرفة والإقرار. افصل رسوم المخلّص والمحطة والتسليم، وحدّد من يدفع وشروط الإفراج."
+      ],
+      [
+        "تحقّق من نظام العينات والطرود الصغيرة",
+        "للطرود الشخصية، اسأل شركة بريد سريع معتمدة عن انطباق نظام 4×4. للشحنات المخصصة لإعادة البيع أو الجملة أو المعدات، قيّم المسار التجاري حسب الاستخدام والسلعة والتصاريح."
+      ]
+    ],
+    "partner": "يمكن لشريكنا المحلي Importa Easy المساعدة في تنسيق تجهيز الاستيراد ومستندات التخليص في الإكوادور. يقدّم المستورد أو المخلّص المعتمد الإقرار. يُؤكّد نطاق الخدمة ورسومها لكل شحنة."
+  },
+  "pt": {
+    "title": "Primeira importação da China para o Equador",
+    "cards": [
+      [
+        "Identifique o importador da carga comercial",
+        "Antes de embarcar LCL ou FCL, peça ao importador equatoriano que confira seu RUC, a assinatura eletrônica e o registro no ECUAPASS. Consulte as licenças pelo código fiscal e prepare fatura e documento de transporte antes do embarque."
+      ],
+      [
+        "Separe tributos de serviços",
+        "Calcule imposto de importação, FODINFA, IVA e ICE quando aplicável, conforme o código fiscal e a declaração. Discrimine despachante, terminal e entrega. Combine quem paga e as condições de liberação."
+      ],
+      [
+        "Confira o regime de amostras e pequenos volumes",
+        "Para encomendas de uso pessoal, confirme com um courier autorizado se o 4×4 se aplica. Para revenda, atacado ou equipamentos, avalie a operação comercial pelo uso, produto e licenças."
+      ]
+    ],
+    "partner": "O parceiro local Importa Easy pode ajudar a coordenar a preparação e os documentos de desembaraço no Equador. O importador ou despachante credenciado apresenta a declaração. Confirme escopo e custos por embarque."
+  },
+  "tr": {
+    "title": "Çin’den Ekvador’a ilk ithalat",
+    "cards": [
+      [
+        "Ticari yükün ithalatçısını belirleyin",
+        "LCL veya FCL yükü çıkmadan önce Ekvador’daki ithalatçıyla RUC vergi kaydını, elektronik imzayı ve ECUAPASS kaydını kontrol edin. Tarife koduna göre izinleri inceleyin, fatura ve taşıma belgesini hazırlayın."
+      ],
+      [
+        "Vergileri hizmet ücretlerinden ayırın",
+        "Gümrük vergisini, FODINFA’yı, ithalat KDV’sini (IVA) ve varsa ICE’yi tarife kodu ile beyan bilgilerine göre hesaplayın. Müşavirlik, terminal ve teslimatı ayrı yazın. Ödemeyi ve yükün serbest bırakılmasını kimin üstleneceğini kararlaştırın."
+      ],
+      [
+        "Numune ve küçük paket rejimini kontrol edin",
+        "Kişisel paketlerde 4×4 rejiminin uygunluğunu yetkili kuryeye sorun. Yeniden satış, toptan alım veya ekipman gönderisinde kullanım, ürün ve izinlere göre ticari seçeneği değerlendirin."
+      ]
+    ],
+    "partner": "Yerel ortağımız Importa Easy, Ekvador’da ithalat hazırlığı ve gümrük belgelerinin koordinasyonuna yardımcı olabilir. Beyanı ithalatçı veya yetkili müşavir verir. Kapsam ve ücretler sevkiyat bazında teyit edilir."
+  }
+}

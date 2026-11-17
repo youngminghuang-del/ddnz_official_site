@@ -1,6 +1,7 @@
 import { cookingSelectionPages } from "./features/commercial-kitchen/data/cookingSelectionPages.mjs";
 import { inductionPages, zhHotCookingPage } from './features/commercial-kitchen/data/inductionPage.mjs';
 import {candidateLocales,candidatePath,candidateSlugs} from './features/freight/candidate-markets/model';
+import {latinDoorMarkets,latinDoorPath,type LatinDoorMarket} from './features/freight/latinDoorMarket';
 import {isNewMarket} from './features/freight/new-markets/model';
 import './features/freight/market-preparation.css';
 import {coffeePath} from './features/coffee/data.mjs';
@@ -452,6 +453,10 @@ export default function App() {
             {['','/zh-cn','/es','/fr','/ru','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'ddp'} path={prefix+'/services/ddp-shipping-from-china'} element={<FreightReleasePage/>}/>)}
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => ['sea-freight', 'lcl-shipping-from-china', 'dangerous-goods-shipping-from-china'].map(slug => <Route key={prefix + slug} path={prefix + '/services/' + slug} element={<FreightReleasePage/>}/>))}
             {['', '/zh-cn', '/ru', '/fr', '/es', '/ar', '/pt', '/tr'].flatMap(prefix => modernizedFreightServicePaths.map(path => <Route key={prefix + path} path={`${prefix}/${path}`} element={<FreightReleasePage/>}/>))}
+            {(Object.keys(latinDoorMarkets) as LatinDoorMarket[]).flatMap(market => candidateLocales.map(locale => {
+              const path=latinDoorPath(market,locale);
+              return <Route key={path} path={path} element={<EcuadorFreightPage />} />;
+            }))}
             {/* English Default / Fallback Hub */}
             <Route path="/" element={<Home />} />
             <Route path="/blog/:slug" element={<BlogDetail />} />
@@ -609,14 +614,14 @@ export default function App() {
             <Route path="/es/services/:serviceId" element={<ServiceDetail />} />
             <Route path="/es/shipping-from-china-to-middle-east" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-central-asia" element={<CentralAsiaOverviewPage />} />
-            <Route path="/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/zh-cn/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/es/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/ar/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/fr/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/ru/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/pt/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
-<Route path="/tr/shipping-from-china-to-ecuador" element={<EcuadorFreightPage />} />
+
+
+
+
+
+
+
+
 <Route path="/es/shipping-from-china-to-west-africa" element={<FreightRegionPage />} />
 <Route path="/es/shipping-from-china-to-central-africa" element={<FreightRegionPage />} /><Route path="/es/shipping-from-china-to-central-america" element={<FreightRegionPage />} /><Route path="/es/shipping-from-china-to-europe" element={<FreightRegionPage />} />
             <Route path="/es/shipping-from-china-to-latin-america" element={<FreightRegionPage />} />
