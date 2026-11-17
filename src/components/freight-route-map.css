@@ -428,3 +428,9 @@
 @media (max-width: 600px) {
   .country-gateway-map figcaption { padding: 12px 14px; }
 }
+
+.route-depth-destination-map {
+  width: min(calc(100% - 32px), 680px);
+  margin: 24px auto 32px;
+  scroll-margin-block-start: 130px;
+}

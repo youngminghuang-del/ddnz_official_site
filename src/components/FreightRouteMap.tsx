@@ -9,6 +9,7 @@ import { useLanguage } from '../contexts/LanguageContext';
 import type { Language } from '../i18n/translations';
 import { countryGateways, countryGatewayLabels } from '../features/freight/countryGatewayData';
 import singaporeCoastline from '../features/freight/singapore-coastline.json';
+import bahrainCoastline from '../features/freight/bahrain-coastline.json';
 
 type MapVariant = 'world' | 'central-asia' | 'uzbekistan';
 type FreightRouteMapProps = { variant: MapVariant; locale?: Language };
@@ -321,23 +322,31 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
 const gatewayWidth = 600;
 const gatewayHeight = 320;
 const gatewayViewport: [Coordinate, Coordinate] = [[0,0],[gatewayWidth,gatewayHeight]];
-const gatewayAtlas = countries.features.map(country =>
-  String(country.id).padStart(3, '0') === '702' ? singaporeCoastline as Feature<Geometry> : country
-);
-if (!gatewayAtlas.some(country => String(country.id).padStart(3, '0') === '702')) {
-  gatewayAtlas.push(singaporeCoastline as Feature<Geometry>);
-}
+// The low-resolution world map omits some small islands.
+const islandCoastlines = [singaporeCoastline, bahrainCoastline] as Feature<Geometry>[];
+const islandIds = new Set(islandCoastlines.map(island => island.id));
+const gatewayAtlas = [...countries.features.filter(country => !islandIds.has(country.id)), ...islandCoastlines];
 
 function portLabels(points: Coordinate[]): Coordinate[] {
-  return points.map(([x, y], index) => {
-    const nearby = points.map(([px, py], i) => Math.hypot(px-x, py-y) < 62 ? i : -1).filter(i => i >= 0);
-    if (nearby.length === 1) return [x, y];
-    const angle = -Math.PI * (0.75 - 1.5 * nearby.indexOf(index) / (nearby.length - 1));
-    return [
-      Math.max(24, Math.min(gatewayWidth - 24, x + 42 * Math.cos(angle))),
-      Math.max(24, Math.min(gatewayHeight - 24, y + 42 * Math.sin(angle))),
-    ];
-  });
+  const labels: Coordinate[] = [];
+  const angles = [-135, 135, -45, 45, 180, 0, -90, 90];
+  for (const [index, point] of points.entries()) {
+    const [x,y] = point;
+    const nearby = points.some(([px,py], i) => i !== index && Math.hypot(px-x, py-y) < 62);
+    const options: Coordinate[] = nearby ? [] : [point];
+    for (const radius of [43, 65, 87]) {
+      for (const angle of angles) {
+        const radians = angle * Math.PI / 180;
+        options.push([x + radius * Math.cos(radians), y + radius * Math.sin(radians)]);
+      }
+    }
+    const fits = ([lx,ly]: Coordinate) =>
+      lx >= 22 && lx <= gatewayWidth - 22 && ly >= 22 && ly <= gatewayHeight - 22 &&
+      labels.every(([px,py]) => Math.hypot(px-lx, py-ly) >= 38) &&
+      points.every(([px,py], i) => i === index || Math.hypot(px-lx, py-ly) >= 22);
+    labels.push(options.find(fits) ?? point);
+  }
+  return labels;
 }
 
 export function CountryGatewayMap({ country, locale, destination }: {

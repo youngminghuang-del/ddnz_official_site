@@ -3,7 +3,7 @@ import { localizedPacificPort } from './locales/index.mjs';
 
 type Port = readonly [name: string, chinese: string, longitude: number, latitude: number, lookup?: string];
 type Bounds = [west: number, south: number, east: number, north: number];
-type GatewayMap = { id: string; bounds?: Bounds; ports: readonly Port[] };
+type GatewayMap = { id: string; bounds?: Bounds; placement?: 'route-planning'; ports: readonly Port[] };
 
 // Page gateways only. Terminal positions use the SMDG Terminal Code List,
 // and named port areas use UN/LOCODE or the port authority's published layout.
@@ -48,6 +48,40 @@ export const countryGateways: Record<string, GatewayMap> = {
  benin: {id:'204', ports:[['Cotonou','科托努',2.44,6.35]]},
  cameroon: {id:'120', ports:[['Douala','杜阿拉',9.69,4.04]]},
  nigeria: {id:'566', ports:[['Apapa','阿帕帕',3.365,6.44],['Tin Can Island','廷坎岛',3.34,6.44]]},
+ 'saudi-arabia': {id:'682', placement:'route-planning', ports:[
+  ['Jeddah','吉达',39.1667,21.4667],
+  ['Dammam','达曼',50.208,26.498],
+ ]},
+ uae: {id:'784', placement:'route-planning', ports:[
+  ['Jebel Ali','杰贝阿里',55.027,24.985],
+  ['Khalifa Port','哈利法港',54.649444,24.8075],
+ ]},
+ kuwait: {id:'414', placement:'route-planning', ports:[
+  ['Shuwaikh','舒韦赫',47.9333,29.35],
+  ['Shuaiba','舒艾巴',48.154639,29.045833],
+ ]},
+ bahrain: {id:'048', bounds:[50.33,25.91,50.8,26.34], placement:'route-planning', ports:[
+  ['Khalifa Bin Salman Port','哈利法·本·萨勒曼港',50.713333,26.185],
+ ]},
+ mexico: {id:'484', placement:'route-planning', ports:[
+  ['Manzanillo','曼萨尼约',-104.3025,19.084722],
+  ['Lázaro Cárdenas','拉萨罗卡德纳斯',-102.172778,17.974444],
+ ]},
+ brazil: {id:'076', bounds:[-56,-31,-30,-5], placement:'route-planning', ports:[
+  ['Santos','桑托斯',-46.3167,-23.9333],
+  ['Paranaguá','巴拉那瓜',-48.51,-25.50],
+  ['Itajaí','伊塔雅伊',-48.66,-26.90],
+  ['Navegantes','纳维根特斯',-48.662778,-26.896389],
+  ['Suape','苏阿佩',-34.9675,-8.393056],
+  ['Rio de Janeiro','里约热内卢',-43.207,-22.878],
+ ]},
+ argentina: {id:'032', bounds:[-65,-39,-53,-28], placement:'route-planning', ports:[
+  ['Buenos Aires','布宜诺斯艾利斯',-58.36,-34.58],
+ ]},
+ chile: {id:'152', bounds:[-75,-38,-67,-28], placement:'route-planning', ports:[
+  ['San Antonio','圣安东尼奥',-71.616667,-33.591667],
+  ['Valparaíso','瓦尔帕莱索',-71.625833,-33.036944],
+ ]},
  peru: {id:'604', ports:[['Callao','卡亚俄',-77.147,-12.055],['Chancay','钱凯',-77.27,-11.57]]},
 };
 
