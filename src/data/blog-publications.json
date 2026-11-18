@@ -60,6 +60,12 @@
       "run_id": 44063075216,
       "commit": "7590d4e093588edd846dcf8c9857aac78411bbc0",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "jeddah-madinah-air-cargo-delays": {
+      "published_at": "2026-11-18T05:07:16Z",
+      "run_id": 44241521021,
+      "commit": "e4c44fe2ab1c4e17c5aa816f25a226bc1fe2b544",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
