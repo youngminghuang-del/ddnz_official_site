@@ -207,6 +207,23 @@
       ],
       "faq_count": 3,
       "item_list_count": 6
+    },
+    {
+      "slug": "jeddah-madinah-air-cargo-delays",
+      "canonical": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/",
+      "language": "en",
+      "notion_page_id": "41ceac33-2618-81e2-bde1-d1d0ec96cb52",
+      "release_file": "src/data/saudiAirCargoRelease.json",
+      "schema_file": "src/data/saudi-air-cargo-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-poster.jpg",
+      "images": [
+        "/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-poster.jpg"
+      ],
+      "faq_count": 0,
+      "item_list_count": 2
     }
   ]
 }

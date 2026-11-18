@@ -1,0 +1,122 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#webpage",
+      "name": "Saudi Air Cargo Update: Jeddah and Madinah Terminals Face Delays",
+      "inLanguage": "en",
+      "description": "Freight forwarders report cargo backlogs in Jeddah and Madinah. See their clearance estimates and what to check before booking a truck.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#article"
+      },
+      "url": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#cover-image"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#article",
+      "headline": "Saudi Air Cargo Update: Jeddah and Madinah Terminals Face Delays",
+      "inLanguage": "en",
+      "description": "Freight forwarders report cargo backlogs in Jeddah and Madinah. See their clearance estimates and what to check before booking a truck.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#webpage"
+      },
+      "citation": [
+        "https://sal.sa/trackshipment"
+      ],
+      "video": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#terminal-video"
+      },
+      "url": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/",
+      "datePublished": "2026-11-18T12:46:24+08:00",
+      "dateModified": "2026-11-18T12:46:24+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "image": {
+        "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#cover-image"
+      }
+    },
+    {
+      "@type": "VideoObject",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#terminal-video",
+      "name": "Footage from Jeddah airport cargo terminal",
+      "description": "Rows of air cargo pallets and containers in the outdoor handling area at Jeddah airport cargo terminal, filmed around November 13, 2026.",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-nov-2026.mp4",
+      "thumbnailUrl": "https://www.ddnzglobal.com/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-poster.jpg",
+      "duration": "PT10.6S",
+      "uploadDate": "2026-11-18"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#clearance-estimates",
+      "name": "Clearance estimates from freight forwarders",
+      "numberOfItems": 2,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Jeddah (JED)"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Madinah (MED)"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Saudi Air Cargo Update: Jeddah and Madinah Terminals Face Delays",
+          "item": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/"
+        }
+      ]
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/jeddah-madinah-air-cargo-delays/#cover-image",
+      "url": "https://www.ddnzglobal.com/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-poster.jpg",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/jeddah-madinah-air-cargo-delays/jeddah-cargo-terminal-poster.jpg",
+      "width": 480,
+      "height": 852,
+      "description": "Rows of air cargo pallets at the Jeddah airport cargo terminal"
+    }
+  ]
+}
