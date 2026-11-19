@@ -349,8 +349,8 @@ function portLabels(points: Coordinate[]): Coordinate[] {
   return labels;
 }
 
-export function CountryGatewayMap({ country, locale, destination }: {
-  country: string; locale: Language; destination: string;
+export function CountryGatewayMap({ country, locale, destination, showDestinationHeading = true }: {
+  country: string; locale: Language; destination: string; showDestinationHeading?: boolean;
 }) {
   const data = countryGateways[country];
   if (!data) return null;
@@ -387,7 +387,7 @@ export function CountryGatewayMap({ country, locale, destination }: {
       </g>
     </svg>
     <figcaption>
-      <p className="country-gateway-heading"><strong>{destination}</strong><span>{title}</span></p>
+      <p className="country-gateway-heading"><strong>{showDestinationHeading ? destination : title}</strong>{showDestinationHeading && <span>{title}</span>}</p>
       <ol>{ports.map((port, index) => <li key={port.name}>
         <span aria-hidden="true">{index+1}</span><bdi>{port.name}</bdi>
       </li>)}</ol>

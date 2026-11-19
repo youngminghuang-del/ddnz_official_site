@@ -255,11 +255,14 @@ export const EURASIA_DELAY_DIAGNOSTIC: Record<EurasiaLocale, {
   },
 };
 
+export const EURASIA_CASE_LOADING = { src: '/images/operations/central-asia-wheel-hub-case-forklift.webp', key: 'forklift' } as const;
+export const EURASIA_CASE_PALLET = { src: '/images/operations/central-asia-wheel-hub-case-pallet.webp', key: 'pallet' } as const;
+
 export const EURASIA_CASE_IMAGES = [
-  { src: '/images/operations/central-asia-wheel-hub-case-forklift.webp', key: 'forklift' },
+  EURASIA_CASE_LOADING,
   { src: '/images/operations/central-asia-wheel-hub-case-truck.webp', key: 'truck' },
   { src: '/images/operations/central-asia-wheel-hub-case-product.webp', key: 'product' },
-  { src: '/images/operations/central-asia-wheel-hub-case-pallet.webp', key: 'pallet' },
+  EURASIA_CASE_PALLET,
   { src: '/images/operations/central-asia-wheel-hub-case-check.webp', key: 'check' },
 ] as const;
 

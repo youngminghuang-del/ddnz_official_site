@@ -21,7 +21,7 @@ import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
-import FreightRouteMap from '../components/FreightRouteMap';
+import FreightRouteMap, { CountryGatewayMap } from '../components/FreightRouteMap';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   ChevronDown, AlertTriangle, Package, ShieldCheck,
@@ -34,6 +34,8 @@ import { createLocalizedShippingRedlines } from '../utils/localizedShippingConte
 import {
   buildSupplementalCorridorSpec,
   EURASIA_CASE_IMAGES,
+  EURASIA_CASE_LOADING,
+  EURASIA_CASE_PALLET,
   EURASIA_CHEMICAL_CASE,
   EURASIA_CHEMICAL_CASE_IMAGES,
   EURASIA_CORRIDORS,
@@ -310,7 +312,7 @@ export default function ShippingCentralAsia() {
   const pageIntro = resolveEurasiaIntro(selectedCountry, language)!;
   // Verified origin records are decoration here; the case sections explain their scope.
   const originPhoto = selectedCountry === 'kazakhstan'
-    ? '/images/operations/central-asia-wheel-hub-case-forklift.webp'
+    ? EURASIA_CASE_LOADING.src
     : selectedCountry === 'uzbekistan'
       ? '/images/operations/central-asia-uzbekistan-road-loading-overview.webp'
       : null;
@@ -322,6 +324,9 @@ export default function ShippingCentralAsia() {
   const corridorUi = EURASIA_UI[activeLang];
   const delayDiagnostic = EURASIA_DELAY_DIAGNOSTIC[activeLang];
   const caseStudy = EURASIA_WHEEL_HUB_CASE[activeLang];
+  const caseImages = isKazakhstanRu
+    ? EURASIA_CASE_IMAGES.filter(({ key }) => key !== EURASIA_CASE_LOADING.key && key !== EURASIA_CASE_PALLET.key)
+    : EURASIA_CASE_IMAGES;
   const chemicalCase = EURASIA_CHEMICAL_CASE[activeLang];
   const uzbekistanRoadCase = UZBEKISTAN_ROAD_CASE[activeLang];
   const t = (key: string) => {
@@ -390,6 +395,23 @@ export default function ShippingCentralAsia() {
   };
 
   const redlines = UNIVERSAL_REDLINES[activeLang] || UNIVERSAL_REDLINES.en;
+  const routeFacts = (
+    <aside className="border border-white/[0.14] bg-[#071a33]/88 p-6 shadow-[0_24px_80px_rgba(2,12,27,.35)] backdrop-blur-md sm:p-7" aria-label={isKazakhstanRu ? 'Маршрут и передача груза' : corridorUi.routeBasis}>
+      <div className="flex items-start justify-between gap-5 border-b border-white/[0.12] pb-5">
+        <div>
+          {!isKazakhstanRu && <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.routeBasis}</span>}
+          <h2 className="mt-2 text-2xl font-black text-white">{isKazakhstanRu ? 'Маршрут и передача груза' : corridor.name}</h2>
+        </div>
+        <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{routeDepthPreview ? routePlanningUi(activeLang)[2] : corridor.transitDays}</span>
+      </div>
+      <dl className="divide-y divide-white/[0.1]">
+        <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.entryGateway}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.gateway}</dd></div>
+        <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.destinationScope}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.destinations}</dd></div>
+        <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.customsFrame}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.customs}</dd></div>
+      </dl>
+      <p className="border-t border-white/[0.12] pt-4 text-[11px] leading-relaxed text-slate-400">{corridorUi.quoteConfirmed}</p>
+    </aside>
+  );
 
   return (
     <div className={`ddnz-home min-h-screen hb-region-shell font-sans overflow-x-hidden country-editorial country-editorial--legacy`}>
@@ -414,8 +436,8 @@ export default function ShippingCentralAsia() {
           <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
           <p className="russia-overlay-facts__note">{corridorUi.quoteConfirmed}</p>
         </RussiaOverlayHero> : <>
-        <section className={`eurasia-country-intro relative flex items-center overflow-hidden border-b border-white/[0.08] ${hero ? 'central-asia-country-hero' : ''}`}>
-          {originPhoto && <div
+        <section className={`eurasia-country-intro relative flex items-center overflow-hidden border-b border-white/[0.08] ${hero ? 'central-asia-country-hero' : ''} ${isKazakhstanRu ? 'kazakhstan-ru-hero' : ''}`}>
+          {originPhoto && !isKazakhstanRu && <div
             className="eurasia-country-intro__media"
             aria-hidden="true"
             style={{ '--eurasia-origin-photo': `url("${originPhoto}")` } as CSSProperties}
@@ -423,7 +445,7 @@ export default function ShippingCentralAsia() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
             {!isLocked && (
-              <nav aria-label={corridorUi.selectDestination} className="mb-9 border-y border-white/[0.12] py-3">
+              <nav aria-label={corridorUi.selectDestination} className={`mb-9 border-y border-white/[0.12] py-3 ${isKazakhstanRu ? 'max-md:mb-4' : ''}`}>
                 <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.selectDestination}</span>
                 <div className="flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {EURASIA_COUNTRIES.map((country) => {
@@ -444,18 +466,18 @@ export default function ShippingCentralAsia() {
               </nav>
             )}
 
-            <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]">
-              <div className="max-w-3xl text-left">
+            <div className={`grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)] ${isKazakhstanRu ? 'kazakhstan-ru-hero-grid' : ''}`}>
+              <div className="max-w-3xl text-left" data-whatsapp-clear={isKazakhstanRu || undefined}>
                 <FreightBreadcrumbs
                   path={`/shipping-from-china-to-${selectedCountry}/`}
                   locale={language}
                   className="mb-4 text-sm leading-relaxed text-slate-300 [&_a]:underline [&_a:hover]:text-white"
                 />
-                <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{isTajikistanRu ? 'Доставка грузов из Китая в Таджикистан' : corridorUi.regionTag}</p>
+                {!isKazakhstanRu && <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{isTajikistanRu ? 'Доставка грузов из Китая в Таджикистан' : corridorUi.regionTag}</p>}
                 <h1 className="max-w-[16ch] text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
                   {pageIntro.headline}
                 </h1>
-                <p className="mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg">
+                <p className={`mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg ${isKazakhstanRu ? 'max-md:mt-4' : ''}`}>
                   {pageIntro.subheadline}
                 </p>
                 {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
@@ -467,9 +489,6 @@ export default function ShippingCentralAsia() {
                 {isTajikistanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   Для предварительной оценки укажите город отправления в Китае, город назначения в Таджикистане, тип груза, вес и объём.
                 </p>}
-                {isKazakhstanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
-                  Для предварительной оценки укажите город отправления в Китае, город назначения в Казахстане, тип груза, вес и объём.
-                </p>}
                 <button
                   type="button"
                   onClick={() => {
@@ -477,35 +496,45 @@ export default function ShippingCentralAsia() {
                     if (hero) quote?.focus({ preventScroll: true });
                     quote?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className="mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px"
+                  className={`mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px ${isKazakhstanRu ? 'max-md:mt-4' : ''}`}
                 >
-                  <span>{isKazakhstanRu ? 'Запросить маршрут и оценку стоимости' : t('heroCta')}</span>
+                  <span>{isKazakhstanRu ? 'Запросить расчёт стоимости' : t('heroCta')}</span>
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
+                {isKazakhstanRu && <p className="mt-3 max-w-[50ch] text-sm leading-relaxed text-slate-200">
+                  Для расчёта укажите города отправления и назначения, тип груза, вес и объём.
+                </p>}
               </div>
 
-              <aside className="border border-white/[0.14] bg-[#071a33]/88 p-6 shadow-[0_24px_80px_rgba(2,12,27,.35)] backdrop-blur-md sm:p-7" aria-label={corridorUi.routeBasis}>
-                <div className="flex items-start justify-between gap-5 border-b border-white/[0.12] pb-5">
-                  <div>
-                    <span className="text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.routeBasis}</span>
-                    <h2 className="mt-2 text-2xl font-black text-white">{corridor.name}</h2>
-                  </div>
-                  <span className="inline-flex items-center gap-1.5 whitespace-nowrap font-mono text-sm font-bold text-white"><Timer className="h-4 w-4 text-[#f2a47f]" aria-hidden="true" />{routeDepthPreview ? routePlanningUi(activeLang)[2] : corridor.transitDays}</span>
+              {isKazakhstanRu ? (
+                <div className="kazakhstan-ru-map" data-whatsapp-clear>
+                  <CountryGatewayMap country="kazakhstan" locale="ru" destination={corridor.name} showDestinationHeading={false} />
                 </div>
-                <dl className="divide-y divide-white/[0.1]">
-                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.entryGateway}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.gateway}</dd></div>
-                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.destinationScope}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.destinations}</dd></div>
-                  <div className="grid gap-1 py-4 sm:grid-cols-[140px_1fr] sm:gap-5"><dt className="text-xs font-bold text-slate-400">{corridorUi.customsFrame}</dt><dd className="text-sm font-semibold leading-relaxed text-white">{corridor.customs}</dd></div>
-                </dl>
-                <p className="border-t border-white/[0.12] pt-4 text-[11px] leading-relaxed text-slate-400">{corridorUi.quoteConfirmed}</p>
-              </aside>
+              ) : routeFacts}
             </div>
           </div>
         </section>
 
         </>}
 
+        {isKazakhstanRu && <div className="kazakhstan-ru-route-facts mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" data-whatsapp-clear>
+          {routeFacts}
+          <figure className="kazakhstan-ru-inline-photo">
+            <img src={EURASIA_CASE_LOADING.src} alt={caseStudy.captions.forklift} width={1290} height={1586} loading="lazy" />
+            <figcaption>Погрузка ступиц в Китае перед отправкой в Центральную Азию.</figcaption>
+          </figure>
+        </div>}
         <CentralAsiaRouteOptions locale={language} destination={selectedCountry} />
+        {isKazakhstanRu && <section className="kazakhstan-ru-quote-prep mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="kazakhstan-quote-prep-title" data-whatsapp-clear>
+          <div>
+            <h2 id="kazakhstan-quote-prep-title" className="text-2xl font-black">Какие данные нужны для расчёта</h2>
+            <p className="mt-3 max-w-[60ch] text-sm leading-relaxed text-slate-200">Попросите поставщика указать число грузовых мест, размеры и вес брутто после упаковки. Для тяжёлых деталей приложите фото готовой палеты, чтобы уточнить условия погрузки.</p>
+          </div>
+          <figure className="kazakhstan-ru-inline-photo">
+            <img src={EURASIA_CASE_PALLET.src} alt={caseStudy.captions.pallet} width={1290} height={1573} loading="lazy" />
+            <figcaption>Палета со ступицами из проекта перевозки в Центральную Азию.</figcaption>
+          </figure>
+        </section>}
         {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
@@ -614,16 +643,16 @@ export default function ShippingCentralAsia() {
               ))}
             </dl>
 
-            <div className="mt-10 grid gap-4 md:grid-cols-12">
-              {EURASIA_CASE_IMAGES.map((item, index) => (
-                <figure key={item.src} className={`${index === 0 ? 'md:col-span-7 md:row-span-2' : index === 1 || index === 2 ? 'md:col-span-5' : 'md:col-span-6'} border border-white/[0.1] bg-white/[0.025]`}>
+            <div className={`mt-10 grid gap-4 ${isKazakhstanRu ? 'kazakhstan-ru-case-gallery grid-cols-2 md:grid-cols-3' : 'md:grid-cols-12'}`}>
+              {caseImages.map((item, index) => (
+                <figure key={item.src} className={`${isKazakhstanRu ? 'first:col-span-2 md:first:col-span-1' : index === 0 ? 'md:col-span-7 md:row-span-2' : index === 1 || index === 2 ? 'md:col-span-5' : 'md:col-span-6'} border border-white/[0.1] bg-white/[0.025]`}>
                   <img
                     src={item.src}
                     alt={caseStudy.captions[item.key]}
                     width="1400"
                     height="1867"
                     loading="lazy"
-                    className={`w-full object-cover ${index === 0 ? 'h-[520px] md:h-[704px]' : 'h-[330px]'}`}
+                    className={`w-full object-cover ${isKazakhstanRu ? 'aspect-[4/3]' : index === 0 ? 'h-[520px] md:h-[704px]' : 'h-[330px]'}`}
                   />
                   <figcaption className="border-t border-white/[0.1] px-4 py-3 text-xs font-semibold leading-relaxed text-slate-400">{caseStudy.captions[item.key]}</figcaption>
                 </figure>
