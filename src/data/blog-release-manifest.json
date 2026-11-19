@@ -244,6 +244,26 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "china-central-asia-road-vs-rail",
+      "canonical": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/",
+      "language": "en",
+      "notion_page_id": "41deac33-2618-81fc-9cc7-edfbc83074cd",
+      "release_file": "src/data/centralAsiaRoadRailRelease.json",
+      "schema_file": "src/data/central-asia-road-rail-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/china-central-asia-road-vs-rail/khorgos-dry-port-container-lift.jpg",
+      "images": [
+        "/images/posts/china-central-asia-road-vs-rail/khorgos-dry-port-container-lift.jpg",
+        "/images/posts/china-central-asia-road-vs-rail/ceva-tir-truck-china-kyrgyzstan-uzbekistan.jpg",
+        "/images/posts/china-central-asia-road-vs-rail/china-tajikistan-intermodal-container-train.jpg",
+        "/images/posts/china-central-asia-road-vs-rail/alashankou-rail-container-transfer.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }

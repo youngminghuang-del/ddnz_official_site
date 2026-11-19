@@ -1,0 +1,204 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#webpage",
+      "name": "China to Central Asia by Road or Rail: When to Switch to Trucking",
+      "inLanguage": "en",
+      "description": "Compare truck and rail freight from China to five Central Asian markets. Check November rail availability, border handovers and when to switch to trucking.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#article"
+      },
+      "url": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/",
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-d"
+      },
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#article",
+      "headline": "China to Central Asia by Road or Rail: When to Switch to Trucking",
+      "inLanguage": "en",
+      "description": "Compare truck and rail freight from China to five Central Asian markets. Check November rail availability, border handovers and when to switch to trucking.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#webpage"
+      },
+      "citation": [
+        "https://www.maersk.com.cn/news/articles/2026/11/18/middle-east-operational-update-55",
+        "https://www.cma-cgm.com/assets/public/documents/Customer%20advisory%20-%20EFS%20APPLICATION_0.pdf",
+        "https://www.zencargo.com/resources/zencargo-market-update-17-november-2026/",
+        "https://jtyst.xinjiang.gov.cn/xjjtysj/gjdlys/202405/074f2d0ae89744b39f146a0852449e37.shtml",
+        "https://www.ktze.kz/en/services/railway-shipping",
+        "https://www.iru.org/news-resources/newsroom/chinas-major-manufacturing-hub-opens-new-tir-route-uzbekistan",
+        "https://www.iru.org/news-resources/newsroom/faster-china-trade-display-following-new-transport-deal",
+        "https://en.kabar.kg/news/chinakyrgyzstanuzbekistan-railway-22-to-be-completed-by-year-end/",
+        "https://tj.china-embassy.gov.cn/sgzc/202603/t20260323_11879429.htm",
+        "https://transit.gov.az/en/corridors/east-west-corridor",
+        "https://www.linkedin.com/posts/emil-aliyev-central-asian-bridge_china-europe-by-land-via-the-middle-corridor-activity-7499042659680849920-5f8I",
+        "https://index1520.com/en/analytics/monitoring-logisticheskogo-rynka-evrazii-noyabr-2026-vypusk-43/"
+      ],
+      "url": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-f"
+        }
+      ],
+      "datePublished": "2026-11-19T06:15:07Z",
+      "dateModified": "2026-11-19T06:15:07Z",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/khorgos-dry-port-container-lift.jpg",
+      "description": "Gantry crane lifting a shipping container above rail tracks at Khorgos Gateway dry port in Kazakhstan",
+      "width": 1200,
+      "height": 799,
+      "url": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/khorgos-dry-port-container-lift.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/ceva-tir-truck-china-kyrgyzstan-uzbekistan.jpg",
+      "description": "Front of a CEVA truck with a TIR plate in IRU reporting on the China–Kyrgyzstan–Uzbekistan route",
+      "width": 2822,
+      "height": 2091,
+      "url": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/ceva-tir-truck-china-kyrgyzstan-uzbekistan.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/china-tajikistan-intermodal-container-train.jpg",
+      "description": "Red locomotive and container wagons in a report on the China–Tajikistan intermodal pilot",
+      "width": 819,
+      "height": 614,
+      "url": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/china-tajikistan-intermodal-container-train.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#photo-f",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/alashankou-rail-container-transfer.jpg",
+      "description": "Overhead crane spreader above a container on a flatcar inside the Alashankou rail transfer shed",
+      "width": 800,
+      "height": 536,
+      "url": "https://www.ddnzglobal.com/images/posts/china-central-asia-road-vs-rail/alashankou-rail-container-transfer.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Is China–Europe rail fully booked?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Availability is specific to the departure and service. A sold-out route may have alternatives from another hub or to a nearby terminal. Ask for a confirmed booking with an onward delivery plan."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does TIR guarantee a nonstop truck or a fixed delivery date?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "TIR provides a framework for customs transit under guarantee. The dispatch window, vehicle handovers, inspections and delivery schedule still depend on the route and booking."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How can I tell whether the Iran sea rate has risen for my shipment?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Compare two dated offers for the same origin, destination, container type and service scope. Ask the forwarder to show which base rate or surcharge changed and whether the carrier still accepts the booking."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#route-comparison",
+      "name": "Road and rail options for the five Central Asian destinations",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Kazakhstan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Uzbekistan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Kyrgyzstan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Tajikistan"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Turkmenistan"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "China to Central Asia by Road or Rail: When to Switch to Trucking",
+          "item": "https://www.ddnzglobal.com/blog/china-central-asia-road-vs-rail/"
+        }
+      ]
+    }
+  ]
+}

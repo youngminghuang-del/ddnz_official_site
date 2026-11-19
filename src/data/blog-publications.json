@@ -72,6 +72,12 @@
       "run_id": 44457204508,
       "commit": "9d96fe77a10695a6f74c7a9a13478103a7e14a28",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "china-central-asia-road-vs-rail": {
+      "published_at": "2026-11-19T06:15:07Z",
+      "run_id": 44470301951,
+      "commit": "7174fb15272aaede0b48450dedeb8c4613c1e27b",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
