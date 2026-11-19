@@ -224,6 +224,26 @@
       ],
       "faq_count": 0,
       "item_list_count": 2
+    },
+    {
+      "slug": "central-kitchen-steam-kettle-vs-tilting-braising-pan",
+      "canonical": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/",
+      "language": "en",
+      "notion_page_id": "41deac33-2618-8189-930b-d2e06fe35ce3",
+      "release_file": "src/data/centralKitchenKettleRelease.json",
+      "schema_file": "src/data/central-kitchen-kettle-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kgl40t-steam-jacketed-kettle.jpg",
+      "images": [
+        "/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kgl40t-steam-jacketed-kettle.jpg",
+        "/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-sgl30t1-open-braising-pan.jpg",
+        "/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/rational-ivario-cooking-stations.jpg",
+        "/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kettle-sauce-discharge.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }

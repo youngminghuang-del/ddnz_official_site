@@ -1,0 +1,197 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#webpage",
+      "name": "Steam-Jacketed Kettle or Tilting Braising Pan for a Central Kitchen?",
+      "inLanguage": "en",
+      "description": "Compare steam-jacketed kettles and tilting braising pans for stock, stews and sauces. Check usable batch size, browning area and discharge before requesting a quote.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#article"
+      },
+      "url": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-kettle"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#article",
+      "headline": "Steam-Jacketed Kettle or Tilting Braising Pan for a Central Kitchen?",
+      "inLanguage": "en",
+      "description": "Compare steam-jacketed kettles and tilting braising pans for stock, stews and sauces. Check usable batch size, browning area and discharge before requesting a quote.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#webpage"
+      },
+      "citation": [
+        "https://www.clevelandrange.com/product/kgl40t-gas-steam-kettle-tilting/",
+        "https://www.clevelandrange.com/product/mkgl40t-gas-tilting-mixer-kettle/",
+        "https://www.clevelandrange.com/product/sgl-sgl40t1-braising-pan-tilting-skillet/",
+        "https://www.groen.com/sites/groen/files/literature/Groen/Steam%20Jacketed%20Kettles/International/177453-TDHTDHC-CE-Manual.pdf",
+        "https://saber.sa/home/NonRegulatedProducts?culture=en-US"
+      ],
+      "url": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/",
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-kettle"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-pan"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-process"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-pour"
+        }
+      ],
+      "datePublished": "2026-11-19T12:15:33+08:00",
+      "dateModified": "2026-11-19T12:15:33+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-kettle",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kgl40t-steam-jacketed-kettle.jpg",
+      "description": "Cleveland KGL40T steam-jacketed kettle with a round vessel and side tilt control",
+      "width": 600,
+      "height": 700,
+      "url": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kgl40t-steam-jacketed-kettle.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-pan",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-sgl30t1-open-braising-pan.jpg",
+      "description": "Cleveland SGL30T1 tilting braising pan with its lid raised and flat cooking base visible",
+      "width": 700,
+      "height": 600,
+      "url": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-sgl30t1-open-braising-pan.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-process",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/rational-ivario-cooking-stations.jpg",
+      "description": "Open RATIONAL iVario cooking pans at separate workstations with food in each vessel",
+      "width": 1440,
+      "height": 960,
+      "url": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/rational-ivario-cooking-stations.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#image-pour",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kettle-sauce-discharge.jpg",
+      "description": "A Cleveland tilting kettle pouring red sauce into a stainless steel receiving pan",
+      "width": 700,
+      "height": 700,
+      "url": "https://www.ddnzglobal.com/images/posts/central-kitchen-steam-kettle-vs-tilting-braising-pan/cleveland-kettle-sauce-discharge.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Can a steam-jacketed kettle cook stew?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, a kettle suits stew that cooks mainly in liquid. If the recipe calls for browning first, plan that step separately or compare a braising pan that can finish the batch in the same vessel."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can a tilting braising pan replace a kettle for soup?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "It can handle soup if the usable fill and discharge arrangement fit the batch. For repeated large stock or soup runs, compare usable yield and turnaround time against a kettle on the same recipe."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need an agitator for thick sauce?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Specify the sauce and the batch before choosing. Ask the supplier to show how the agitator reaches the base and walls, preserves the desired texture and comes apart for cleaning."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#equipment-comparison",
+      "name": "Central kitchen equipment by menu and cooking process",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Stock or soup with a large liquid load"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Meat browned before adding stock"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Meat stewed in liquid after browning elsewhere"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Thick sauce that simmers or reduces"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Sauce that starts by frying aromatics or paste"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Steam-Jacketed Kettle or Tilting Braising Pan for a Central Kitchen?",
+          "item": "https://www.ddnzglobal.com/blog/central-kitchen-steam-kettle-vs-tilting-braising-pan/"
+        }
+      ]
+    }
+  ]
+}
