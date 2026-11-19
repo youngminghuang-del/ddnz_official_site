@@ -5,9 +5,18 @@ type Port = readonly [name: string, chinese: string, longitude: number, latitude
 type Bounds = [west: number, south: number, east: number, north: number];
 type GatewayMap = { id: string; bounds?: Bounds; placement?: 'route-planning'; ports: readonly Port[] };
 
+const kazakhstanLandmarks = [
+ { coordinates: [80.411, 44.213], labels: ['Khorgos', '霍尔果斯', 'Хоргос'] },
+ { coordinates: [82.57, 45.17], labels: ['Alashankou / Dostyk', '阿拉山口 / 多斯特克', 'Алашанькоу / Достык'] },
+ { coordinates: [76.945, 43.238], labels: ['Almaty', '阿拉木图', 'Алматы'] },
+ { coordinates: [71.43, 51.13], labels: ['Astana', '阿斯塔纳', 'Астана'] },
+] as const;
+
 // Page gateways only. Terminal positions use the SMDG Terminal Code List,
 // and named port areas use UN/LOCODE or the port authority's published layout.
 export const countryGateways: Record<string, GatewayMap> = {
+ kazakhstan: {id:'398', ports:kazakhstanLandmarks.map(({ coordinates: [longitude, latitude], labels: [en, zh] }) =>
+  [en, zh, longitude, latitude])},
  thailand: {id:'764', ports:[
   ['Laem Chabang','林查班',100.882,13.075,'LAEM CHABANG'],
   ['Siam Commercial Seaport','Siam Commercial Seaport（SSP）',100.877222,13.13],
@@ -97,6 +106,15 @@ const mapText: Record<Language, [string, string]> = {
 };
 
 export function countryGatewayLabels(country: string, locale: Language) {
+ if (country === 'kazakhstan' && locale === 'ru') {
+  return {
+   title: 'Погранпереходы и города доставки',
+   note: 'Переход и место выдачи уточняются для каждой отправки.',
+   ports: kazakhstanLandmarks.map(({ coordinates: [longitude, latitude], labels: [, , ru] }) => ({
+    name: ru, coordinates: [longitude, latitude] as [number, number],
+   })),
+  };
+ }
  const [title, note] = mapText[locale];
  const ports = countryGateways[country].ports.map(([name, chinese, longitude, latitude, lookup]) => ({
   name: (lookup && localizedPacificPort(lookup, locale)) || (locale === 'zh' ? chinese : name),
