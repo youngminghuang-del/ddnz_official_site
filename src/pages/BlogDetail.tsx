@@ -2,7 +2,7 @@ import { addGulfRefrigerationSelection } from '../lib/gulfRefrigerationSelection
 import { addSpanishCaseQuote } from '../lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
-import { addPrivacyComparisonLink, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
+import { addPrivacyBuyingLinks, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml } from '../lib/quoteLinkPolicy.mjs';
 import { useEffect, useMemo, useRef, useState } from 'react';
@@ -91,7 +91,7 @@ export default function BlogDetail() {
   // Keep the HTML prop stable across hash-navigation/context renders so native
   // form nodes, input values and their listeners are not replaced.
   const articleHtml = useMemo(() => ({
-    __html: addGulfRefrigerationSelection(post?.slug, addSpanishCaseQuote(post?.slug, addLatinAmericaFreightTiming(post?.slug, addAlibabaBuyingGuidance(post?.slug, addPrivacyComparisonLink(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))))))),
+    __html: addGulfRefrigerationSelection(post?.slug, addSpanishCaseQuote(post?.slug, addLatinAmericaFreightTiming(post?.slug, addAlibabaBuyingGuidance(post?.slug, addPrivacyBuyingLinks(post?.slug, normalizeQuoteHtml(normalizeNotionLinks(post?.content || ''))))))),
   }), [post?.content, post?.slug]);
 
   useEffect(() => {
@@ -187,9 +187,9 @@ export default function BlogDetail() {
         primaryCta={primaryCta}
         discovery={articleDiscovery}
         onDiscovery={(href) => trackEvent('article_equipment_click', { article_slug: post.slug, link_path: href })}
-        onCta={() => trackEvent('article_cta_click', {
+        onCta={(action) => trackEvent('article_cta_click', {
           article_slug: post.slug || post.id,
-          cta_type: post.primaryCTA || 'Freight Quote',
+          cta_type: action || post.primaryCTA || 'Freight Quote',
           lead_goal: post.leadGoal,
           product_category: post.productCategory,
         })}

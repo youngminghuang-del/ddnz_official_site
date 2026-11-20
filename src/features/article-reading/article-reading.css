@@ -11,3 +11,19 @@
 .article-reading-cover-button{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in;color:var(--reader-purple)}.article-reading-cover-button>span{display:block;font-size:11px;padding-top:8px;text-align:end}.article-reading-body [data-reader-image]{cursor:zoom-in}.article-reading-body [data-reader-image]:focus-visible{outline:3px solid var(--reader-purple);outline-offset:4px}.article-reading-viewer{width:min(1120px,94vw);max-height:94dvh;padding:16px;border:1px solid var(--ddnz-brand-line);border-radius:var(--ddnz-card-radius);color:#10243f;background:var(--ddnz-surface-raised)}.article-reading-viewer::backdrop{background:#10243fcc}.article-reading-viewer>div{display:flex;align-items:center;justify-content:space-between;gap:16px;font-size:14px}.article-reading-viewer button{min-width:44px;min-height:44px;border:1px solid var(--ddnz-control-line);border-radius:var(--ddnz-control-radius);background:var(--ddnz-surface-soft);color:#10243f;font-size:24px;cursor:pointer}.article-reading-viewer>img{display:block;width:100%;max-height:75dvh;object-fit:contain;margin-block:12px}.article-reading-viewer>p{font-size:12px;line-height:1.6;color:#52637a;margin:8px 0 0}.article-reading .lead-box{background:var(--ddnz-surface-soft);border-color:var(--ddnz-brand-line)}.article-reading .lead-box button,.article-reading .lead-box .download-button{background:#c94f2f}.article-reading .lead-box input,.article-reading .lead-box textarea,.article-reading .lead-box select{border-color:var(--ddnz-control-line)}
 /* Notion's .table wrapper must remain a scroll container, not a CSS table. */
 .article-reading .article-reading-body .table{display:block;max-width:100%;overflow-x:auto;overscroll-behavior-inline:contain}
+
+.article-reading-buying-actions {
+  margin-block: 28px;
+  padding: clamp(16px, 3vw, 24px);
+  border: 1px solid var(--ddnz-control-line);
+  border-radius: var(--ddnz-card-radius);
+  background: var(--ddnz-surface-soft);
+}
+.article-reading-buying-actions p { margin-block: 0; }
+.article-reading .article-reading-buying-actions > a.article-reading-action {
+  margin-block: 12px 0;
+  min-height: 48px;
+  color: #fff;
+  text-decoration: none;
+}
+.article-reading-buying-actions > div { margin-block-start: 8px; }

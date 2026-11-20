@@ -1,4 +1,5 @@
 import { ArrowRight } from 'lucide-react';
+import southAfricaCopy from './southAfricaCopy.json';
 import copy from './factoryHandoffCopy.json';
 import { candidatePrefix, type CandidateCountry, type CandidateLocale } from './model';
 
@@ -18,6 +19,16 @@ function hasFactoryHandoff(country: CandidateCountry): country is keyof typeof s
 }
 
 export function FactoryHandoff({country, locale}: {country: CandidateCountry; locale: CandidateLocale}) {
+ if (country === 'south-africa') {
+  const c = southAfricaCopy[locale];
+  return <section id="factory-handoff" className="candidate-factory-handoff" aria-labelledby="factory-handoff-title">
+   <h3 id="factory-handoff-title">{c.factoryTitle}</h3>
+   <p>{c.factoryText}</p>
+   <a href={candidatePrefix(locale)+'/sourcing-services/consolidation-export/'}>
+    {c.factoryLink}<ArrowRight className="candidate-direction" size={16} aria-hidden="true"/>
+   </a>
+  </section>;
+ }
  if (!hasFactoryHandoff(country)) return null;
  const content = copy[country][locale];
  const {title, steps, link} = content;

@@ -2,8 +2,9 @@ import { ClipboardList, Clock3, ReceiptText, ShieldCheck, Ship } from 'lucide-re
 import { pacificPorts } from '../locales/index.mjs';
 import { originNames } from '../rates/model.mjs';
 import { originNamesEn } from '../rates/copy.mjs';
+import southAfricaCopy from './southAfricaCopy.json';
 import guide from './marketGuideCopy.json';
-import { candidateCopy, isPacificCandidate, pacificCountryCopy, pacificMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, isSeaCandidate, seaCountryCopy, seaMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
 
 export const marketGuide = guide;
 
@@ -57,7 +58,7 @@ export function MarketRateOverview({ country, locale, rows }: {
  const originCodes = [...new Set(selected.map(row => row.origin))];
  const originLabels = originCodes.map(origin => origins[origin] || origin);
  return <section id="cost-transit" className="gulf-section candidate-market-guide" aria-labelledby="cost-transit-title">
-  <h2 id="cost-transit-title">{c.costTitle.replace('{port}', ports[country][locale])}</h2>
+  <h2 id="cost-transit-title">{c.costTitle.replace('{port}', country === 'south-africa' ? southAfricaCopy[locale].durban : ports[country][locale])}</h2>
   {selected.length>0 && <>
    <div className="candidate-rate-summary">
     <div className="candidate-rate-transit">
@@ -88,9 +89,9 @@ export function MarketRateOverview({ country, locale, rows }: {
 export function MarketImportRules({ country, locale }: {country: CandidateCountry; locale: CandidateLocale}) {
  const c = guide[locale];
  const page = candidateCopy(country, locale);
- if (isPacificCandidate(country)) {
-  const rules = pacificCountryCopy(country,locale);
-  const [entry, tax, check] = pacificMarketBadges[country];
+ if (isSeaCandidate(country)) {
+  const rules = seaCountryCopy(country,locale);
+  const [entry, tax, check] = seaMarketBadges[country];
   const reference = importReferences[country];
   return <section id="import-rules" className="gulf-section candidate-market-guide" aria-labelledby="import-rules-title">
    <h2 id="import-rules-title">{c.rulesTitle}</h2>

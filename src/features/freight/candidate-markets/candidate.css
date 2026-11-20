@@ -157,3 +157,22 @@
 @media (max-width: 767px) {
  .candidate-factory-handoff ol { grid-template-columns: minmax(0, 1fr); gap: .9rem; }
 }
+
+.candidate-za-prices {margin:.75rem 0;}
+.candidate-za-prices div {display:flex; flex-wrap:wrap; gap:.25rem .75rem; justify-content:space-between;}
+.candidate-za-prices dd {margin:0; font-weight:700;}
+
+.freight-local-air-intro {display:grid; grid-template-columns:minmax(0,1fr) minmax(13rem,19rem); gap:clamp(1.25rem,4vw,3rem); align-items:center;}
+.freight-local-air-intro figure {margin:0;}
+.freight-local-air-intro img {display:block; width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; border-radius:.5rem;}
+.freight-local-air-intro figcaption {margin-block-start:.5rem; font-size:.875rem; color:#526278;}
+.freight-local-market-grid {display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(1.25rem,4vw,3rem);}
+.freight-local-market-grid article {min-width:0;}
+.freight-local-market-grid img {display:block; width:100%; height:auto; aspect-ratio:16/9; object-fit:cover; border-radius:.5rem;}
+.freight-local-market-grid h3 {margin-block:1rem .5rem;}
+.freight-local-trade a svg {display:inline-block; vertical-align:middle; margin-inline-start:.25rem;}
+.freight-local-trade-routes-title {margin-block:clamp(2rem,5vw,4rem) 1rem;}
+@media (max-width:640px) {
+ .freight-local-air-intro,.freight-local-market-grid {grid-template-columns:minmax(0,1fr);}
+ .freight-local-air-intro figure {max-width:19rem;}
+}

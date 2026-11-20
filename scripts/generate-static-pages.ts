@@ -15,7 +15,7 @@ import SpanishInspectionScope from '../src/features/sourcing-services/SpanishIns
 import { addSpanishCaseQuote } from '../src/lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../src/lib/latinAmericaFreightTiming';
 import { addAlibabaBuyingGuidance } from '../src/lib/alibabaArticleBuying';
-import { addPrivacyComparisonLink, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
+import { addPrivacyBuyingLinks, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
 import gulfBarBlenderSchema from '../src/data/gulf-bar-blender-schema.json';
 import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
 import NewMarketContent from '../src/features/freight/new-markets/NewMarketContent';
@@ -1792,7 +1792,7 @@ function injectStaticRouteContent(
     const prefix = locale === 'en' || locale === 'id' || locale === 'pl' ? '' : `/${locale === 'zh' ? 'zh-cn' : locale}`;
     staticBody = renderToStaticMarkup(createElement(ArticleReadingContent, {
       post: article, language: locale,
-      articleHtml: { __html: addGulfRefrigerationSelection(post.slug, addSpanishCaseQuote(post.slug, addLatinAmericaFreightTiming(post.slug, addAlibabaBuyingGuidance(post.slug, addPrivacyComparisonLink(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))))))) },
+      articleHtml: { __html: addGulfRefrigerationSelection(post.slug, addSpanishCaseQuote(post.slug, addLatinAmericaFreightTiming(post.slug, addAlibabaBuyingGuidance(post.slug, addPrivacyBuyingLinks(post.slug, normalizeQuoteHtml(normalizeNotionLinks(post.content || ''))))))) },
       primaryCta: buildPrimaryCta(article, prefix, ui),
       discovery: kitchenArticleDiscovery[post.slug || ''] || mobileArticleDiscovery[post.slug || ''],
     }));
