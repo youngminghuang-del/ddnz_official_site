@@ -1,0 +1,212 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#webpage",
+      "name": "Hurtowe domówienia etui do Polski: jak rozdzielić zamówienie według modelu i koloru?",
+      "inLanguage": "pl",
+      "description": "Zaplanuj hurtowe domówienie etui do Polski według modelu i koloru. Policz zapas, porównaj minima dla wariantu i partii oraz zatwierdź zamienniki.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-cover"
+      },
+      "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#article",
+      "headline": "Hurtowe domówienia etui do Polski: jak rozdzielić zamówienie według modelu i koloru?",
+      "inLanguage": "pl",
+      "description": "Zaplanuj hurtowe domówienie etui do Polski według modelu i koloru. Policz zapas, porównaj minima dla wariantu i partii oraz zatwierdź zamienniki.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#webpage"
+      },
+      "citation": [
+        "https://help.shopify.com/en/manual/reports-and-analytics/shopify-reports/report-types/default-reports/inventory-reports",
+        "https://support.apple.com/pl-pl/108044",
+        "https://www.ddnzglobal.com/pl/blog/import-phone-cases-poland-gpsr-traceability/"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-cover"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-stock"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-style"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-replacement"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/",
+      "datePublished": "2026-11-20T10:13:26+08:00",
+      "dateModified": "2026-11-20T10:13:26+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-cover",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-retail-packs-colours.jpg",
+      "description": "Opakowania etui w różnych kolorach z naklejkami modelu telefonu",
+      "width": 1384,
+      "height": 936,
+      "url": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-retail-packs-colours.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-stock",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-stock-shelf-bins.jpg",
+      "description": "Etui w oznaczonych pojemnikach na regałach obok otwartych kartonów",
+      "width": 1290,
+      "height": 2054,
+      "url": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-stock-shelf-bins.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-style",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/ring-case-style-reference.jpg",
+      "description": "Przykładowe etui z pierścieniem w kilku kolorach",
+      "width": 1076,
+      "height": 1331,
+      "url": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/ring-case-style-reference.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#image-replacement",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-replacement-cutout-detail.jpg",
+      "description": "Zielone etui z widocznym otworem na aparat, bocznymi przyciskami i ramką",
+      "width": 1290,
+      "height": 1652,
+      "url": "https://www.ddnzglobal.com/images/posts/hurtowe-domowienia-etui-polska-model-kolor/phone-case-replacement-cutout-detail.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#faq",
+      "inLanguage": "pl",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Czy można połączyć kilka kolorów, żeby osiągnąć MOQ?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Można, jeśli dostawca pozwala sumować odpowiednie kolory w danym minimum. Poproś o pisemne potwierdzenie, które wiersze można zsumować i czy nadal obowiązuje dolny limit dla każdego zamawianego koloru."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Czy uwzględniać etui, które są jeszcze w transporcie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Uwzględnij potwierdzoną ilość, która dotrze w planowanym okresie. Osobno sprawdź, czy towar trafi do magazynu przed wyczerpaniem zapasu. Jeżeli termin nie jest potwierdzony, przelicz też wariant bez tej dostawy."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Co zrobić, gdy dostawca nie ma najlepiej sprzedającego się koloru?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Zapytaj o datę gotowości i możliwość wcześniejszej wysyłki dostępnych pozycji. Jeżeli dopuszczasz inny kolor, zatwierdź dokładny model telefonu, SKU, ilość, cenę i termin zamiennika przed pakowaniem."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#replenishment-table",
+      "name": "Tabela domówienia etui według modelu i koloru",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Apple iPhone 16",
+          "description": "Etui z pierścieniem · Czarny",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Samsung Galaxy A56 5G",
+          "description": "Etui z pierścieniem · Czarny",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Redmi Note 14 5G",
+          "description": "Etui z pierścieniem · Czarny",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Apple iPhone 16",
+          "description": "Etui z pierścieniem · Przezroczysty",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Samsung Galaxy A56 5G",
+          "description": "Etui z pierścieniem · Przezroczysty",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Redmi Note 14 5G",
+          "description": "Etui z pierścieniem · Przezroczysty",
+          "url": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#sku-6"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/pl/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Hurtowe domówienia etui do Polski: jak rozdzielić zamówienie według modelu i koloru?",
+          "item": "https://www.ddnzglobal.com/pl/blog/hurtowe-domowienia-etui-polska-model-kolor/"
+        }
+      ]
+    }
+  ]
+}
