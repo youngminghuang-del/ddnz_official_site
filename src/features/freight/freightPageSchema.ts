@@ -34,7 +34,9 @@ export function freightPageInfo(path:string,language?:string){
   ? 'Автоперевозки и доставка грузов по железной дороге из Китая в Казахстан. Укажите маршрут и параметры груза, чтобы запросить расчёт стоимости у Heaven Born.'
   : isRussiaRu
    ? 'Сравните способы доставки из Китая в Россию и ориентировочные сроки. Укажите груз и адрес, чтобы уточнить стоимость и условия DDP или DAP.'
-   : c[1].replace('{name}',destination);
+   : locale === 'ru' && (slug === 'tajikistan' || slug === 'turkmenistan')
+    ? resolveEurasiaIntro(slug, locale)!.subheadline
+    : c[1].replace('{name}',destination);
  return {slug,locale,prefix,name,url:`${origin}${prefix}/${last}/`,title:isRussiaRu?'Грузоперевозки из Китая в Россию: маршруты и сроки | DDNZ':c[0].replace('{name}',destination)+' | DDNZ',description,language:locale==='zh'?'zh-CN':locale==='pt'&&slug==='brazil'?'pt-BR':locale};
 }
 export function breadcrumbLabel(locale: string) {

@@ -12,7 +12,7 @@ import RoutePlanningDepth, { routePlanningUi } from '../features/freight/RoutePl
 import freightFactLabels from '../features/freight/freightFactLabels.json';
 import CountryCargoPlanning from '../features/freight/CountryCargoPlanning';
 import { useState, useEffect, type CSSProperties } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
 import SourcingHomepageNav from '../components/SourcingHomepageNav';
 import Footer from '../components/Footer';
@@ -318,6 +318,8 @@ export default function ShippingCentralAsia() {
       : null;
   const isKyrgyzstanEn = selectedCountry === 'kyrgyzstan' && language === 'en';
   const isTajikistanRu = selectedCountry === 'tajikistan' && language === 'ru';
+  const isTurkmenistanRu = selectedCountry === 'turkmenistan' && language === 'ru';
+  const showDirectQuote = isTajikistanRu || isTurkmenistanRu;
   const isKazakhstanRu = selectedCountry === 'kazakhstan' && language === 'ru';
   const isRussiaRu = selectedCountry === 'russia' && language === 'ru';
   const corridor = localizedCorridorProfile(selectedCountry, activeLang);
@@ -445,7 +447,7 @@ export default function ShippingCentralAsia() {
 
           <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-12 sm:px-6 md:py-16 lg:px-8">
             {!isLocked && (
-              <nav aria-label={corridorUi.selectDestination} className={`mb-9 border-y border-white/[0.12] py-3 ${isKazakhstanRu ? 'max-md:mb-4' : ''}`}>
+              <nav aria-label={corridorUi.selectDestination} className={`mb-9 border-y border-white/[0.12] py-3 ${isKazakhstanRu || showDirectQuote ? 'max-md:mb-4' : ''}`}>
                 <span className="mb-2 block text-[10px] font-black uppercase tracking-[0.14em] text-[#f2a47f]">{corridorUi.selectDestination}</span>
                 <div className="flex gap-1 overflow-x-auto pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
                   {EURASIA_COUNTRIES.map((country) => {
@@ -467,17 +469,17 @@ export default function ShippingCentralAsia() {
             )}
 
             <div className={`grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)] ${isKazakhstanRu ? 'kazakhstan-ru-hero-grid' : ''}`}>
-              <div className="max-w-3xl text-left" data-whatsapp-clear={isKazakhstanRu || undefined}>
+              <div className="max-w-3xl text-left" data-whatsapp-clear={isKazakhstanRu || showDirectQuote || undefined}>
                 <FreightBreadcrumbs
                   path={`/shipping-from-china-to-${selectedCountry}/`}
                   locale={language}
                   className="mb-4 text-sm leading-relaxed text-slate-300 [&_a]:underline [&_a:hover]:text-white"
                 />
-                {!isKazakhstanRu && <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{isTajikistanRu ? 'Доставка грузов из Китая в Таджикистан' : corridorUi.regionTag}</p>}
+                {!isKazakhstanRu && !showDirectQuote && <p className="mb-4 text-xs font-black uppercase tracking-[0.16em] text-[#f2a47f]">{corridorUi.regionTag}</p>}
                 <h1 className="max-w-[16ch] text-4xl font-black leading-[1.02] tracking-[-0.045em] text-white sm:text-5xl lg:text-6xl">
                   {pageIntro.headline}
                 </h1>
-                <p className={`mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg ${isKazakhstanRu ? 'max-md:mt-4' : ''}`}>
+                <p className={`mt-6 max-w-[60ch] text-base font-medium leading-relaxed text-slate-200 sm:text-lg ${isKazakhstanRu || showDirectQuote ? 'max-md:mt-4' : ''}`}>
                   {pageIntro.subheadline}
                 </p>
                 {isRussiaRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
@@ -486,9 +488,6 @@ export default function ShippingCentralAsia() {
                 {isKyrgyzstanEn && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
                   For an estimate, share your origin city in China, destination in Kyrgyzstan, cargo type, gross weight and volume. Ask us to confirm whether DDP is available for your shipment.
                 </p>}
-                {isTajikistanRu && <p className="mt-4 max-w-[60ch] text-sm leading-relaxed text-slate-200">
-                  Для предварительной оценки укажите город отправления в Китае, город назначения в Таджикистане, тип груза, вес и объём.
-                </p>}
                 <button
                   type="button"
                   onClick={() => {
@@ -496,12 +495,12 @@ export default function ShippingCentralAsia() {
                     if (hero) quote?.focus({ preventScroll: true });
                     quote?.scrollIntoView({ behavior: 'smooth' });
                   }}
-                  className={`mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px ${isKazakhstanRu ? 'max-md:mt-4' : ''}`}
+                  className={`mt-8 inline-flex min-h-12 items-center gap-2 bg-[#c94f2f] px-6 py-3 text-sm font-black text-white transition hover:bg-[#b94625] active:translate-y-px ${isKazakhstanRu || showDirectQuote ? 'max-md:mt-4' : ''}`}
                 >
-                  <span>{isKazakhstanRu ? 'Запросить расчёт стоимости' : t('heroCta')}</span>
+                  <span>{isKazakhstanRu || showDirectQuote ? 'Запросить расчёт стоимости' : t('heroCta')}</span>
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </button>
-                {isKazakhstanRu && <p className="mt-3 max-w-[50ch] text-sm leading-relaxed text-slate-200">
+                {(isKazakhstanRu || showDirectQuote) && <p className="mt-3 max-w-[50ch] text-sm leading-relaxed text-slate-200">
                   Для расчёта укажите города отправления и назначения, тип груза, вес и объём.
                 </p>}
               </div>
@@ -536,6 +535,13 @@ export default function ShippingCentralAsia() {
           </figure>
         </section>}
         {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {isTurkmenistanRu && <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="turkmenistan-cargo-prep">
+          <h2 id="turkmenistan-cargo-prep" className="text-2xl font-black">Как заказать товар у поставщика в Китае и отправить в Туркменистан</h2>
+          <p className="mt-3 max-w-3xl leading-7">
+            До оплаты заказа запросите у поставщика адрес склада, дату готовности, число мест, вес брутто и размеры упаковки. Если поставщиков несколько, DDNZ может согласовать забор и консолидацию в Китае. Для расчёта перевозки передайте эти данные Heaven Born вместе с городом назначения.
+          </p>
+          <Link to="/ru/sourcing-services/consolidation-export/" className="mt-3 inline-flex min-h-11 items-center font-bold underline">Консолидация и экспорт из Китая ↗</Link>
+        </section>}
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         {selectedCountry === 'uzbekistan' && <FreightRouteMap variant="uzbekistan" />}
