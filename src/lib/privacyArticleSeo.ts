@@ -4,11 +4,16 @@ export const privacyArticleSeo = {
   description: 'Compare 10 privacy screen protector manufacturers in China. Explore DDNZ factory supply, model fit, privacy samples and packaging for wholesale orders.',
 };
 
-export function addPrivacyComparisonLink(slug: string | undefined, html: string) {
-  if (slug !== privacyArticleSlug || html.includes('href="/screen-protectors/compare/"')) return html;
-  const nextSection = '<h2 id="wholesale-and-oem-questions">';
-  const comparisonLink = '<p>Ready to compare buying terms? <a class="inline-block" href="/screen-protectors/compare/">Compare screen protector prices, packaging and minimum orders</a>.</p>';
-  return html.replace(nextSection, comparisonLink + nextSection);
+export function addPrivacyBuyingLinks(slug: string | undefined, html: string) {
+  if (slug !== privacyArticleSlug) return html;
+  const comparisonLink = html.includes('href="/screen-protectors/compare/"') ? '' :
+    '<p>Ready to compare buying terms? <a class="inline-block" href="/screen-protectors/compare/">Compare screen protector prices, packaging and minimum orders</a>.</p>';
+  const quoteAction = '<aside class="article-reading-buying-actions" aria-label="Wholesale privacy glass quote"><p>Ready to price samples or a bulk order? Have your phone models, quantity per model, privacy direction or finish, packaging and destination ready.</p><a class="article-reading-action" data-article-cta="privacy_factory_quote" href="/screen-protectors/brief/">Request a DDNZ factory quote</a></aside>';
+  return html
+    .replace('<h2 id="wholesale-and-oem-questions">', comparisonLink + quoteAction + '<h2 id="wholesale-and-oem-questions">')
+    .replace('>Get the free privacy-glass enquiry worksheet</a>', ' data-article-cta="privacy_worksheet_open">Download the supplier comparison worksheet</a>')
+    .replace(/<a href="(#buyer-pack)"([^>]*)>Share my buying requirements and get the worksheet<\/a>/, '<a href="$1"$2 data-article-cta="privacy_worksheet_open">Open the supplier comparison worksheet</a>')
+    .replace('id="download-link"', 'id="download-link" data-article-cta="privacy_worksheet_download"');
 }
 
 // Keep the preview's article body, visible summary, TOC and schema description

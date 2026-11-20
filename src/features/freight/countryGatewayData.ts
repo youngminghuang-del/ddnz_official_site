@@ -1,6 +1,8 @@
 import type { Language } from '../../i18n/translations';
 import { localizedPacificPort } from './locales/index.mjs';
 
+import southAfricaCopy from './candidate-markets/southAfricaCopy.json';
+
 type Port = readonly [name: string, chinese: string, longitude: number, latitude: number, lookup?: string];
 type Bounds = [west: number, south: number, east: number, north: number];
 type GatewayMap = { id: string; bounds?: Bounds; placement?: 'route-planning'; ports: readonly Port[] };
@@ -34,6 +36,10 @@ export const countryGateways: Record<string, GatewayMap> = {
  malaysia: {id:'458', bounds:[98,0,106,7.7], ports:[
   ['Port Klang · Westports','巴生港 · 西港',101.295,2.935,'PORT KELANG WEST'],
   ['Port Klang · Northport','巴生港 · 北港',101.357222,3.037222,'PORT KELANG NORTH'],
+ ]},
+ 'south-africa': {id:'710', ports:[
+  ['Durban','德班',31.03,-29.88],
+  ['Johannesburg','约翰内斯堡',28.05,-26.20],
  ]},
  singapore: {id:'702', bounds:[103.56,1.16,104.11,1.49], ports:[['Singapore','新加坡',103.776667,1.283333,'SINGAPORE']]},
  japan: {id:'392', ports:[['Tokyo','东京',139.78,35.62,'TOKYO']]},
@@ -112,6 +118,17 @@ export function countryGatewayLabels(country: string, locale: Language) {
    note: 'Переход и место выдачи уточняются для каждой отправки.',
    ports: kazakhstanLandmarks.map(({ coordinates: [longitude, latitude], labels: [, , ru] }) => ({
     name: ru, coordinates: [longitude, latitude] as [number, number],
+   })),
+  };
+ }
+ if (country === 'south-africa') {
+  const c = southAfricaCopy[locale];
+  return {
+   title: c.mapTitle,
+   note: c.mapNote,
+   ports: countryGateways[country].ports.map(([, , longitude, latitude], i) => ({
+    name: i === 0 ? c.durban : c.johannesburg,
+    coordinates: [longitude, latitude] as [number, number],
    })),
   };
  }
