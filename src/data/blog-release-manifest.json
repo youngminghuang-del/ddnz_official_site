@@ -284,6 +284,27 @@
       ],
       "faq_count": 3,
       "item_list_count": 6
+    },
+    {
+      "slug": "cairo-mixed-phone-cases-screen-protectors-packing",
+      "canonical": "https://www.ddnzglobal.com/ar/blog/cairo-mixed-phone-cases-screen-protectors-packing/",
+      "language": "ar",
+      "notion_page_id": "420eac33-2618-8164-9b62-fd8d4f5ec16a",
+      "release_file": "src/data/cairoMixedCartonsRelease.json",
+      "schema_file": "src/data/cairo-mixed-cartons-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/open-cartons-content-check.webp",
+      "images": [
+        "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/open-cartons-content-check.webp",
+        "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/phone-cases-sorted-by-model.jpg",
+        "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/phone-case-model-stickers.jpg",
+        "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/labelled-outer-carton-opening.jpg",
+        "/images/posts/cairo-mixed-phone-cases-screen-protectors-packing/warehouse-carton-count.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }
