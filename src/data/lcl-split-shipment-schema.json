@@ -1,0 +1,240 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#webpage",
+      "name": "LCL desde China con varios proveedores: ¿esperar el siguiente barco o dividir el envío?",
+      "inLanguage": "es",
+      "description": "¿Una fábrica perdió el cierre de almacén en China? Compara cuándo retirar cada lote, cuánto cuesta esperar y qué cargos se repiten al dividir tu envío LCL.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-b"
+      },
+      "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#article",
+      "headline": "LCL desde China con varios proveedores: ¿esperar el siguiente barco o dividir el envío?",
+      "inLanguage": "es",
+      "description": "¿Una fábrica perdió el cierre de almacén en China? Compara cuándo retirar cada lote, cuánto cuesta esperar y qué cargos se repiten al dividir tu envío LCL.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#webpage"
+      },
+      "citation": [
+        "https://terms.maersk.com/LCL",
+        "https://www.maersk.com/es-mx/support/faqs/shipping-instructions-submission-deadline",
+        "https://www.dhl.com/us-en/home/global-forwarding/products-and-solutions/ocean-freight/less-than-container-load.html"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-b"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-d"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/",
+      "datePublished": "2026-11-23T10:17:11+08:00",
+      "dateModified": "2026-11-23T10:17:11+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-receiving-checklist.jpg",
+      "description": "Operaria con chaleco reflectante revisa cajas de cartón con una lista en mano",
+      "width": 1600,
+      "height": 1068,
+      "creator": {
+        "@type": "Person",
+        "name": "Kampus Production"
+      },
+      "license": "https://www.pexels.com/license/",
+      "acquireLicensePage": "https://www.pexels.com/photo/a-woman-holding-a-clipboard-7843976/",
+      "creditText": "Kampus Production / Pexels",
+      "url": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-receiving-checklist.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/truck-pallet-handling.jpg",
+      "description": "Montacargas traslada un pallet con cajas junto a un camión con el remolque abierto",
+      "width": 1400,
+      "height": 933,
+      "creator": {
+        "@type": "Person",
+        "name": "Caleb Oquendo"
+      },
+      "license": "https://www.pexels.com/license/",
+      "acquireLicensePage": "https://www.pexels.com/photo/forklift-operators-loading-pallets-on-truck-34585120/",
+      "creditText": "Caleb Oquendo / Pexels",
+      "url": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/truck-pallet-handling.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-staged-cartons.jpg",
+      "description": "Grupos de cajas de cartón flejadas o envueltas, apiladas en un almacén",
+      "width": 1400,
+      "height": 933,
+      "creator": {
+        "@type": "Person",
+        "name": "Freek Wolsink"
+      },
+      "license": "https://www.pexels.com/license/",
+      "acquireLicensePage": "https://www.pexels.com/photo/industrial-warehouse-with-stacked-cardboard-boxes-34221998/",
+      "creditText": "Freek Wolsink / Pexels",
+      "url": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-staged-cartons.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/forklift-loading-container.jpg",
+      "description": "Montacargas acerca un pallet de cajas a un contenedor abierto en un almacén de Tailandia",
+      "width": 500,
+      "height": 667,
+      "creator": {
+        "@type": "Person",
+        "name": "Goterrestrial"
+      },
+      "license": "https://creativecommons.org/licenses/by/4.0/",
+      "acquireLicensePage": "https://commons.wikimedia.org/wiki/File:Container_loading_with_forklift_at_warehouse_in_Thailand.jpg",
+      "creditText": "Goterrestrial / Wikimedia Commons",
+      "url": "https://www.ddnzglobal.com/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/forklift-loading-container.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#faq",
+      "inLanguage": "es",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Y si los bultos llegan antes del cierre, pero faltan los documentos?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pide al consolidador el plazo documental por separado y confirma qué información falta. Si no puedes completar los datos a tiempo, pregunta por escrito si admite enviarlos más tarde o si debes cambiar de salida."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Puedo mover solo los bultos del proveedor que se atrasó?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Pide que el consolidador confirme si puede ajustar la primera reserva y abrir otra para el saldo. Antes de autorizar el cambio, confirma los dos espacios, los cargos y los documentos de cada lote."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cuándo puedo programar el retiro en destino?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Usa la fecha estimada de disponibilidad para comparar escenarios. Para enviar un camión, espera el aviso de que tu lote está disponible y confirma con tu agente que se cumplieron las condiciones de retiro."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-table",
+      "name": "Tabla para decidir si esperar o dividir el embarque",
+      "numberOfItems": 6,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Fecha de entrega de cada fábrica",
+          "description": "A y B ya están en almacén el día D−1. C llega el día D+1. Confirma que el almacén pueda guardar A y B hasta la siguiente consolidación. · A y B ya están recibidas. C queda para el segundo embarque. Confirma cuántas unidades de A y B se pueden usar por separado.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Cierre de recepción en China",
+          "description": "El primer cierre es el día D a las 12:00. Pide el nuevo cierre y comprueba que C llegue con margen. · Pide que el consolidador acepte la reserva ajustada a A y B antes de ese cierre. Confirma un cierre propio para C.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Cierre de instrucciones de embarque",
+          "description": "El primer plazo vence el día D a las 15:00. Pide el de la siguiente salida para los bultos de A, B y C. · Entrega antes de las 15:00 los datos que correspondan a A y B. Prepara la documentación de C para su propia reserva.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Salida, llegada a puerto y retiro",
+          "description": "Confirma espacio en el siguiente barco, con salida prevista D+9. Llegada estimada a puerto D+33 y retiro D+36 para todo el pedido. · Confirma espacio para ambos embarques. A y B salen D+2, llegan a puerto D+26 y se estiman disponibles D+29. C llega D+33 y se estima disponible D+36 si toma la siguiente salida.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Costo hasta el mismo punto de entrega",
+          "description": "Cotización actualizada de un solo embarque más almacenaje, cambio de reserva u otros cargos de espera que correspondan. · Suma las dos cotizaciones y los cambios aplicables. Revisa qué mínimos, documentos, cargos de almacén y despachos se cobran por separado.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-5"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Decisión según la fecha del cliente",
+          "description": "D+36 queda fuera del plazo D+31. Si C completa el producto, estima el costo de llegar tarde con el pedido completo. · A y B podrían retirarse en D+29, con dos días de margen. Envía primero solo si ese lote ya le sirve al cliente y justifica el costo adicional.",
+          "url": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#decision-6"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/es/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "LCL desde China con varios proveedores: ¿esperar el siguiente barco o dividir el envío?",
+          "item": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/"
+        }
+      ]
+    }
+  ]
+}
