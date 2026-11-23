@@ -1,0 +1,218 @@
+{
+  "en": {
+    "name": "Italy",
+    "title": "Shipping from China to Italy",
+    "intro": "Compare full-container (FCL) and less-than-container (LCL) shipping from China to Genoa and La Spezia, with separate quotes for delivery to Milan and northern Italy.",
+    "ports": [
+      "Genoa",
+      "La Spezia"
+    ],
+    "inland": "Milan",
+    "delivery": "Use the warehouse postcode to compare total delivery costs via both ports. Confirm the discharge terminal, container pickup, unloading equipment and empty return.",
+    "customs": [
+      "Confirm the importer’s EORI and who will file the customs declaration. Give the broker the commercial invoice, packing list and transport document.",
+      "Check TARIC by commodity code and origin for duties, restrictions and required documents. Confirm Italian import VAT and who pays charges before release.",
+      "For regulated equipment, confirm the applicable conformity documents, markings and instructions with the importer before loading."
+    ],
+    "factoryTitle": "Shipping commercial refrigerators from China to a Milan warehouse",
+    "factory": [
+      "For upright or undercounter units, give the freight team the model, packed dimensions and gross weight. Send a nameplate photo and the refrigerant type and charge so the carrier can confirm acceptance.",
+      "Before booking via Genoa or La Spezia, check whether crates must stay upright and how they can be lifted. For Milan delivery, supply the receiving postcode, dock height and forklift capacity."
+    ],
+    "factoryLink": "View commercial refrigeration equipment",
+    "photo": "Forklift loading a container at origin",
+    "faq": [
+      "Can you quote the same Milan warehouse via both ports?",
+      "Yes. Send the same refrigerator model list, crate dimensions, ready date and postcode for both routes. Confirm who handles terminal pickup, delivery and unloading."
+    ]
+  },
+  "zh": {
+    "name": "意大利",
+    "title": "中国到意大利货运",
+    "intro": "比较中国到热那亚和拉斯佩齐亚的整柜与拼箱海运，另按实际收货邮编询米兰及意大利北部到仓价。",
+    "ports": [
+      "热那亚",
+      "拉斯佩齐亚"
+    ],
+    "inland": "米兰",
+    "delivery": "用同一个到仓邮编比较两港的交付总价。确认实际卸货码头、提柜安排、收货点卸货设备和还空地点。",
+    "customs": [
+      "确认进口方 EORI 和申报责任人。向报关代理交接商业发票、装箱单和运输单证。",
+      "按商品税号和原产地查 TARIC 的关税、限制和单证要求，放行前确认意大利进口增值税及费用由谁支付。",
+      "受监管设备装柜前，由进口方核对适用的符合性文件、标识和说明书。"
+    ],
+    "factoryTitle": "中国商用冷柜怎么海运到米兰仓库？",
+    "factory": [
+      "立式冷柜和台下冷柜按型号提供包装后尺寸和毛重。发货前把设备铭牌照片、制冷剂型号和充注量交给货代，由承运人核实接货条件。",
+      "比较热那亚和拉斯佩齐亚前，先确认木箱是否须直立、从哪里起吊。询米兰到仓时补上收货邮编、月台高度和叉车承载能力。"
+    ],
+    "factoryLink": "查看商用制冷设备",
+    "photo": "起运端叉车装柜作业",
+    "faq": [
+      "同一批冷柜可以同时询两港到米兰仓库吗？",
+      "可以。用相同的冷柜型号、木箱尺寸、货好日期和收货邮编比较，分别确认码头提货、派送和卸货由谁负责。"
+    ]
+  },
+  "es": {
+    "name": "Italia",
+    "title": "Envíos de China a Italia",
+    "intro": "Compare el transporte marítimo FCL y LCL de China a Génova y La Spezia, con cotizaciones separadas para la entrega en Milán y el norte de Italia.",
+    "ports": [
+      "Génova",
+      "La Spezia"
+    ],
+    "inland": "Milán",
+    "delivery": "Use el mismo código postal del almacén para comparar el coste total por ambos puertos. Confirme terminal, retirada, equipo de descarga y devolución del contenedor vacío.",
+    "customs": [
+      "Confirme el EORI del importador y quién presenta la declaración. Entregue al agente la factura, la lista de empaque y el documento de transporte.",
+      "Consulte TARIC por código y origen para conocer aranceles, restricciones y documentos exigidos. Confirme el IVA de importación italiano y quién paga antes del levante.",
+      "Para equipos regulados, confirme con el importador la documentación, el marcado y las instrucciones aplicables antes de cargar."
+    ],
+    "factoryTitle": "Envío de frigoríficos comerciales de China a un almacén en Milán",
+    "factory": [
+      "Para equipos verticales o bajo mostrador, indique modelo, dimensiones embaladas y peso bruto. Envíe una foto de la placa, el tipo de refrigerante y su carga para que el transportista confirme la aceptación.",
+      "Antes de reservar vía Génova o La Spezia, confirme si las cajas deben mantenerse en vertical y por dónde se levantan. Para Milán, indique código postal, altura del muelle y capacidad de la carretilla."
+    ],
+    "factoryLink": "Ver equipos de refrigeración comercial",
+    "photo": "Carga de un contenedor con carretilla elevadora en origen",
+    "faq": [
+      "¿Puedo cotizar el mismo almacén en Milán por los dos puertos?",
+      "Sí. Use los mismos modelos, dimensiones de cajas, fecha de disponibilidad y código postal. Confirme quién se ocupa de la retirada, la entrega y la descarga."
+    ]
+  },
+  "fr": {
+    "name": "Italie",
+    "title": "Transport de Chine vers l’Italie",
+    "intro": "Comparez le fret maritime FCL et LCL de Chine vers Gênes et La Spezia et chiffrez séparément la livraison à Milan ou dans le nord de l’Italie.",
+    "ports": [
+      "Gênes",
+      "La Spezia"
+    ],
+    "inland": "Milan",
+    "delivery": "Comparez le coût total via les deux ports pour le même code postal. Confirmez le terminal, le retrait du conteneur, le matériel de déchargement et le retour du vide.",
+    "customs": [
+      "Confirmez l’EORI de l’importateur et le déclarant en douane. Remettez au représentant la facture, la liste de colisage et le document de transport.",
+      "Consultez TARIC selon le code douanier et l’origine pour les droits, restrictions et pièces requises. Confirmez la TVA à l’importation en Italie et le payeur avant la mainlevée.",
+      "Pour les équipements réglementés, validez les documents de conformité, marquages et notices applicables avec l’importateur avant chargement."
+    ],
+    "factoryTitle": "Expédier des réfrigérateurs professionnels de Chine vers un entrepôt à Milan",
+    "factory": [
+      "Pour les armoires et les meubles sous comptoir, indiquez le modèle, les dimensions emballées et le poids brut. Envoyez la photo de la plaque, le type de fluide et la charge pour validation par le transporteur.",
+      "Avant de réserver via Gênes ou La Spezia, vérifiez si les caisses doivent rester debout et par où les soulever. Pour Milan, indiquez le code postal, la hauteur du quai et la capacité du chariot élévateur."
+    ],
+    "factoryLink": "Voir les équipements de réfrigération professionnelle",
+    "photo": "Chargement d’un conteneur au départ avec un chariot élévateur",
+    "faq": [
+      "Puis-je chiffrer le même entrepôt à Milan via les deux ports ?",
+      "Oui. Indiquez les mêmes modèles, dimensions de caisse, date de disponibilité et code postal. Confirmez qui assure le retrait, la livraison et le déchargement."
+    ]
+  },
+  "ru": {
+    "name": "Италия",
+    "title": "Доставка грузов из Китая в Италию",
+    "intro": "Сравните морские перевозки FCL и LCL из Китая в Геную и Специю и запросите отдельный расчёт доставки в Милан или на север Италии.",
+    "ports": [
+      "Генуя",
+      "Специя"
+    ],
+    "inland": "Милан",
+    "delivery": "Сравните полную стоимость через оба порта по одному почтовому индексу склада. Уточните терминал, выдачу контейнера, технику для разгрузки и место возврата порожнего контейнера.",
+    "customs": [
+      "Проверьте EORI импортёра и определите, кто подаёт декларацию. Передайте брокеру коммерческий инвойс, упаковочный лист и транспортный документ.",
+      "Проверьте пошлины, ограничения и документы в TARIC по коду товара и стране происхождения. Уточните итальянский импортный НДС и плательщика до выпуска.",
+      "Для регулируемого оборудования согласуйте с импортёром применимые документы о соответствии, маркировку и инструкции до загрузки."
+    ],
+    "factoryTitle": "Морская доставка коммерческих холодильников из Китая на склад в Милане",
+    "factory": [
+      "Для холодильных шкафов и подстольных моделей укажите модель, размеры в упаковке и массу брутто. Передайте фото шильдика, тип и заправочный объём хладагента для проверки условий приёмки перевозчиком.",
+      "Перед бронированием через Геную или Специю уточните, нужно ли держать ящики вертикально, и проверьте точки подъёма. Для Милана укажите индекс, высоту рампы и грузоподъёмность погрузчика."
+    ],
+    "factoryLink": "Посмотреть коммерческое холодильное оборудование",
+    "photo": "Погрузка контейнера вилочным погрузчиком в пункте отправления",
+    "faq": [
+      "Можно ли рассчитать доставку на один склад в Милане через оба порта?",
+      "Да. Используйте одинаковые модели, размеры ящиков, дату готовности и индекс. Уточните, кто отвечает за вывоз из терминала, доставку и разгрузку."
+    ]
+  },
+  "ar": {
+    "name": "إيطاليا",
+    "title": "الشحن من الصين إلى إيطاليا",
+    "intro": "قارن الشحن البحري بالحاوية الكاملة أو المجمعة من الصين إلى جنوة ولا سبيتسيا، واطلب تسعيراً منفصلاً للتوصيل إلى ميلانو وشمال إيطاليا.",
+    "ports": [
+      "جنوة",
+      "لا سبيتسيا"
+    ],
+    "inland": "ميلانو",
+    "delivery": "قارن التكلفة الإجمالية عبر الميناءين لنفس الرمز البريدي للمستودع. أكد محطة التفريغ واستلام الحاوية ومعدات التفريغ ومكان إعادة الحاوية الفارغة.",
+    "customs": [
+      "تحقق من رقم EORI للمستورد وحدد من يقدم البيان الجمركي. سلم المخلص الفاتورة التجارية وقائمة التعبئة ووثيقة النقل.",
+      "راجع TARIC حسب رمز السلعة ومنشئها لمعرفة الرسوم والقيود والوثائق. أكد ضريبة القيمة المضافة عند الاستيراد في إيطاليا ومن يتحمل الرسوم قبل الإفراج.",
+      "للمعدات الخاضعة للرقابة، أكد مع المستورد وثائق المطابقة والعلامات والتعليمات المطلوبة قبل التحميل."
+    ],
+    "factoryTitle": "شحن ثلاجات تجارية من الصين إلى مستودع في ميلانو",
+    "factory": [
+      "للثلاجات العمودية أو التي توضع تحت الطاولة، قدم الطراز وأبعاد العبوة والوزن الإجمالي. أرسل صورة لوحة البيانات ونوع مادة التبريد وكمية الشحنة ليؤكد الناقل قبول البضاعة.",
+      "قبل الحجز عبر جنوة أو لا سبيتسيا، تحقق مما إذا كان يجب إبقاء الصناديق عمودية وحدد نقاط الرفع. للتسليم في ميلانو، اذكر الرمز البريدي وارتفاع الرصيف وقدرة الرافعة الشوكية."
+    ],
+    "factoryLink": "استعرض معدات التبريد التجاري",
+    "photo": "تحميل حاوية برافعة شوكية في نقطة الانطلاق",
+    "faq": [
+      "هل يمكن طلب سعر لنفس المستودع في ميلانو عبر الميناءين؟",
+      "نعم. قدم قائمة الطرازات وأبعاد الصناديق وتاريخ الجاهزية والرمز البريدي نفسها. حدد المسؤول عن الاستلام من المحطة والتوصيل والتفريغ."
+    ]
+  },
+  "pt": {
+    "name": "Itália",
+    "title": "Transporte de carga da China para a Itália",
+    "intro": "Compare o frete marítimo FCL e LCL da China para Gênova e La Spezia e cote separadamente a entrega em Milão e no norte da Itália.",
+    "ports": [
+      "Gênova",
+      "La Spezia"
+    ],
+    "inland": "Milão",
+    "delivery": "Compare o custo total pelos dois portos para o mesmo CEP. Confirme o terminal, a retirada do contêiner, o equipamento para descarga e a devolução do vazio.",
+    "customs": [
+      "Confirme o EORI do importador e quem fará a declaração aduaneira. Envie ao despachante a fatura comercial, a lista de volumes e o documento de transporte.",
+      "Consulte o TARIC por código e origem para verificar tarifas, restrições e documentos. Confirme o IVA de importação italiano e quem paga os encargos antes da liberação.",
+      "Para equipamentos regulamentados, confirme com o importador os documentos de conformidade, marcações e instruções aplicáveis antes de carregar."
+    ],
+    "factoryTitle": "Envio de refrigeradores comerciais da China para um armazém em Milão",
+    "factory": [
+      "Para modelos verticais ou sob bancada, informe modelo, dimensões embaladas e peso bruto. Envie foto da placa, tipo e carga de fluido refrigerante para o transportador confirmar a aceitação.",
+      "Antes de reservar via Gênova ou La Spezia, confirme se as caixas devem ficar na vertical e os pontos de içamento. Para Milão, indique o CEP, a altura da doca e a capacidade da empilhadeira."
+    ],
+    "factoryLink": "Ver equipamentos de refrigeração comercial",
+    "photo": "Carregamento de contêiner com empilhadeira na origem",
+    "faq": [
+      "Posso cotar o mesmo armazém em Milão pelos dois portos?",
+      "Sim. Use os mesmos modelos, dimensões das caixas, data de disponibilidade e CEP. Confirme quem fará a retirada, a entrega e a descarga."
+    ]
+  },
+  "tr": {
+    "name": "İtalya",
+    "title": "Çin’den İtalya’ya yük taşımacılığı",
+    "intro": "Çin’den Cenova ve La Spezia’ya FCL ve LCL deniz taşımacılığını karşılaştırın. Milano ve Kuzey İtalya’daki depoya teslimi ayrı fiyatlandırın.",
+    "ports": [
+      "Cenova",
+      "La Spezia"
+    ],
+    "inland": "Milano",
+    "delivery": "Aynı depo posta koduyla iki liman üzerinden toplam maliyeti karşılaştırın. Terminali, konteyner teslimini, boşaltma ekipmanını ve boş iade yerini teyit edin.",
+    "customs": [
+      "İthalatçının EORI numarasını ve beyanı kimin vereceğini doğrulayın. Ticari fatura, çeki listesi ve taşıma belgesini gümrük müşavirine iletin.",
+      "Vergi, kısıtlama ve belge gerekliliklerini ürün kodu ve menşe ile TARIC’te kontrol edin. İthalat KDV’sini ve ödemeyi yapacak tarafı mal çekilmeden teyit edin.",
+      "Düzenlemeye tabi ekipman için geçerli uygunluk belgelerini, işaretleri ve talimatları yüklemeden önce ithalatçıyla kontrol edin."
+    ],
+    "factoryTitle": "Çin’den Milano’daki depoya ticari buzdolabı gönderimi",
+    "factory": [
+      "Dik tip ve tezgâh altı modeller için model kodu, ambalajlı ölçüler ve brüt ağırlığı verin. Taşıyıcının kabul koşullarını teyit etmesi için cihaz etiketinin fotoğrafını, soğutucu akışkan türünü ve miktarını iletin.",
+      "Cenova veya La Spezia üzerinden rezervasyondan önce sandıkların dik tutulup tutulmayacağını ve kaldırma noktalarını teyit edin. Milano teslimi için posta kodu, rampa yüksekliği ve forklift kapasitesini verin."
+    ],
+    "factoryLink": "Ticari soğutma ekipmanlarını inceleyin",
+    "photo": "Çıkış noktasında forkliftle konteyner yükleme",
+    "faq": [
+      "Aynı Milano deposuna iki liman üzerinden fiyat alabilir miyim?",
+      "Evet. Aynı model listesini, sandık ölçülerini, hazır olma tarihini ve posta kodunu kullanın. Terminalden alım, teslimat ve boşaltma sorumlularını teyit edin."
+    ]
+  }
+}
