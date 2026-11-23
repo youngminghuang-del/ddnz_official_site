@@ -211,6 +211,7 @@
 
 .candidate-factory-panel figure { margin: 0; }
 .candidate-factory-panel img { display: block; width: 100%; max-height: 20rem; object-fit: cover; border-radius: .5rem; }
+.candidate-factory-panel .candidate-factory-product-image { object-fit: contain; background: #fff; }
 .candidate-factory-panel figcaption { margin-block-start: .5rem; font-size: .85rem; color: #526278; }
 
 @media (max-width: 680px) {

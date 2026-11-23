@@ -1,0 +1,218 @@
+{
+  "en": {
+    "name": "Belgium",
+    "title": "Shipping from China to Belgium",
+    "intro": "Compare container and LCL shipping from China to Antwerp and Zeebrugge, then request delivery to a warehouse in Ghent or elsewhere in Belgium by postcode.",
+    "ports": [
+      "Antwerp",
+      "Zeebrugge"
+    ],
+    "inland": "Ghent",
+    "delivery": "Compare both terminals against the same warehouse postcode. Confirm the pickup right, truck access, forklift availability and empty-container return. If the site is a shop with no dock, quote delivery and unloading to that address separately.",
+    "customs": [
+      "Confirm the importer’s EORI and broker mandate. Give the declarant the commercial invoice, packing list and bill of lading for the Belgian import declaration in IDMS, where applicable.",
+      "Identify the goods and materials by line item. Check the commodity code and origin in TARIC and confirm the duty, import VAT and any measures before release.",
+      "Check the actual terminal’s container-release process. Use Certified Pick up at Antwerp and confirm the applicable release process for CSP Zeebrugge with the shipping agent and pickup operator."
+    ],
+    "factoryTitle": "Ship flat-pack metal retail display racks from a Chinese factory to Belgium",
+    "factory": [
+      "Break the quote down by uprights, shelves and hardware. List bundles or cartons per set, the longest packed piece, gross weight and whether the bundles can be stacked. Match carton marks to the assembly list so the warehouse can count complete sets.",
+      "Have the factory photograph edge protection and bundle blocking before closing the shipment. Give the haulier the loading length, forklift access and delivery appointment. For Ghent, price both ports against the same delivery address."
+    ],
+    "factoryLink": "Arrange a packing and quantity inspection",
+    "photo": "Example of origin-side blocking and securing in a container",
+    "faq": [
+      "What should the factory send if one display rack arrives in several cartons?",
+      "Send a numbered carton list by set, including separately packed fasteners. Add the longest packed dimension and handling weight so the warehouse can plan intake and the haulier can price unloading."
+    ]
+  },
+  "zh": {
+    "name": "比利时",
+    "title": "中国到比利时货运",
+    "intro": "比较中国到安特卫普和泽布吕赫的整柜与拼箱海运。送根特或比利时其他仓库时，按收货邮编另询到门价。",
+    "ports": [
+      "安特卫普",
+      "泽布吕赫"
+    ],
+    "inland": "根特",
+    "delivery": "以同一个收货邮编比较两个卸货港。订车前确认提箱权限、车辆进场、叉车和还空地点。门店无月台时，按实际地址单独核配送和卸货。",
+    "customs": [
+      "确认进口方 EORI 和报关代理授权。按适用的比利时 IDMS 进口程序交接商业发票、装箱单和提单。",
+      "逐项列明商品及材质，按税号和原产地查 TARIC。放行前核实关税、进口增值税和适用措施。",
+      "按实际码头确认放箱和提箱。安特卫普走 Certified Pick up，泽布吕赫 CSP 码头按船代及提箱方确认的流程办理。"
+    ],
+    "factoryTitle": "中国工厂的拆装式金属陈列架怎么发往比利时？",
+    "factory": [
+      "把立柱、层板和五金分开列明，提供每套包数、最长包装尺寸、毛重及可否堆叠。箱唛按套与组装清单对应，方便到仓盘点整套数量。",
+      "请工厂拍下护角、长件及箱内固定。报到门价时提供可装载长度、卸货叉车条件和预约时段。走根特仓时用同一收货地址比较两港。"
+    ],
+    "factoryLink": "查看装箱与数量验货服务",
+    "photo": "起运端集装箱内支撑与固定示例",
+    "faq": [
+      "一套陈列架分几个箱，怎样给收货仓交接？",
+      "按套列出箱号，把单独包装的螺丝配件也计入。补最长包装尺寸和搬运重量，方便仓库安排收货、拖车方核算卸货。"
+    ]
+  },
+  "es": {
+    "name": "Bélgica",
+    "title": "Envíos de China a Bélgica",
+    "intro": "Compara contenedores completos y grupaje marítimo desde China a Amberes y Zeebrugge. Cotiza aparte la entrega a un almacén en Gante u otra localidad belga con el código postal.",
+    "ports": [
+      "Amberes",
+      "Zeebrugge"
+    ],
+    "inland": "Gante",
+    "delivery": "Compara las dos terminales para el mismo código postal. Confirma la autorización de retirada, el acceso del camión, la carretilla y la devolución del vacío. Si la tienda no tiene muelle, cotiza la descarga en esa dirección.",
+    "customs": [
+      "Confirma el EORI del importador y la representación aduanera. Entrega la factura, la lista de empaque y el conocimiento de embarque para tramitar la declaración belga mediante IDMS cuando corresponda.",
+      "Identifica cada mercancía y su material. Consulta TARIC por código y origen y confirma aranceles, IVA de importación y medidas antes del levante.",
+      "Comprueba la retirada en la terminal indicada. En Amberes se usa Certified Pick up. Para la terminal CSP Zeebrugge, coordina el proceso con el agente y el transportista."
+    ],
+    "factoryTitle": "Envío de expositores metálicos desmontados desde una fábrica china a Bélgica",
+    "factory": [
+      "Separa montantes, baldas y herrajes. Indica bultos por conjunto, la pieza embalada más larga, peso bruto y posibilidad de apilar. Relaciona las marcas de caja con la lista de montaje para recibir conjuntos completos.",
+      "Pide fotos de cantoneras y de la sujeción antes de cerrar el envío. Comunica al transportista la longitud de carga, el acceso de carretilla y la cita. Para Gante, compara ambos puertos con la misma dirección."
+    ],
+    "factoryLink": "Consulta el control de embalaje y cantidades",
+    "photo": "Ejemplo de bloqueo y sujeción en un contenedor en origen",
+    "faq": [
+      "¿Qué debe enviar la fábrica si un expositor ocupa varias cajas?",
+      "Facilita una lista numerada de cajas por conjunto, incluidos los tornillos embalados aparte. Añade la longitud máxima embalada y el peso de manipulación para organizar la recepción y cotizar la descarga."
+    ]
+  },
+  "fr": {
+    "name": "Belgique",
+    "title": "Expédition de Chine vers la Belgique",
+    "intro": "Comparez le conteneur complet et le groupage maritime de Chine vers Anvers et Zeebrugge. Demandez séparément un prix de livraison à Gand ou ailleurs en Belgique avec le code postal de l’entrepôt.",
+    "ports": [
+      "Anvers",
+      "Zeebrugge"
+    ],
+    "inland": "Gand",
+    "delivery": "Comparez les deux terminaux pour le même code postal. Confirmez le droit d’enlèvement, l’accès du camion, le chariot élévateur et le retour du conteneur vide. Si le magasin est sans quai, chiffrez le déchargement à l’adresse réelle.",
+    "customs": [
+      "Confirmez l’EORI de l’importateur et le mandat du représentant. Remettez la facture, la liste de colisage et le connaissement au déclarant pour la procédure belge IDMS selon le cas.",
+      "Identifiez les marchandises et matériaux ligne par ligne. Consultez TARIC selon le classement et l’origine puis vérifiez les droits, la TVA à l’importation et les mesures applicables.",
+      "Vérifiez la procédure du terminal de déchargement. À Anvers, l’enlèvement passe par Certified Pick up. Pour CSP Zeebrugge, confirmez la procédure auprès de l’agent maritime et du transporteur."
+    ],
+    "factoryTitle": "Expédier des présentoirs métalliques démontés d’une usine chinoise vers la Belgique",
+    "factory": [
+      "Distinguez montants, tablettes et quincaillerie. Indiquez les colis par ensemble, la plus grande longueur emballée, le poids brut et la possibilité d’empiler. Faites correspondre les marques de colis à la nomenclature de montage pour compter les ensembles complets.",
+      "Demandez des photos des protections d’angle et du calage avant fermeture. Donnez au transporteur la longueur de chargement, les accès pour le chariot et le créneau de réception. Pour Gand, comparez les deux ports à la même adresse."
+    ],
+    "factoryLink": "Voir le contrôle de l’emballage et des quantités",
+    "photo": "Exemple de calage et d’arrimage en conteneur au départ",
+    "faq": [
+      "Comment réceptionner un présentoir réparti sur plusieurs cartons ?",
+      "Listez les cartons numérotés par ensemble, avec la visserie emballée séparément. Ajoutez la longueur maximale emballée et le poids de manutention pour préparer la réception et chiffrer le déchargement."
+    ]
+  },
+  "ru": {
+    "name": "Бельгия",
+    "title": "Доставка грузов из Китая в Бельгию",
+    "intro": "Сравните контейнерные и сборные морские перевозки из Китая в Антверпен и Зебрюгге. Доставку на склад в Генте или другом городе Бельгии рассчитайте отдельно по почтовому индексу.",
+    "ports": [
+      "Антверпен",
+      "Зебрюгге"
+    ],
+    "inland": "Гент",
+    "delivery": "Сравните оба терминала для одного почтового индекса. Уточните право на выдачу, подъезд машины, наличие погрузчика и возврат порожнего контейнера. Для магазина без рампы отдельно рассчитайте выгрузку по фактическому адресу.",
+    "customs": [
+      "Подтвердите EORI импортёра и полномочия представителя. Для бельгийской декларации в IDMS, где это применимо, передайте инвойс, упаковочный лист и коносамент.",
+      "Укажите товар и материал по каждой позиции. По коду и происхождению проверьте в TARIC пошлину, НДС при ввозе и применимые меры.",
+      "Уточните порядок выдачи в конкретном терминале. В Антверпене используют Certified Pick up. Для CSP Zeebrugge подтвердите порядок у судового агента и перевозчика."
+    ],
+    "factoryTitle": "Как отправить разборные металлические торговые стеллажи с китайской фабрики в Бельгию",
+    "factory": [
+      "Разделите стойки, полки и крепёж. Укажите число мест на комплект, длину самого длинного упакованного элемента, вес брутто и возможность штабелирования. Сверьте маркировку коробок со сборочной ведомостью.",
+      "Запросите фото уголков и крепления до закрытия груза. Сообщите перевозчику длину грузового места, условия работы погрузчика и время приёмки. Для склада в Генте сравните оба порта по одному адресу."
+    ],
+    "factoryLink": "Проверка упаковки и количества",
+    "photo": "Пример раскрепления и фиксации груза в контейнере",
+    "faq": [
+      "Как принять торговый стеллаж, если комплект разбит на несколько коробок?",
+      "Составьте список номеров коробок по комплектам, включая отдельный крепёж. Укажите максимальную длину места и его вес, чтобы склад подготовил приёмку, а перевозчик рассчитал выгрузку."
+    ]
+  },
+  "ar": {
+    "name": "بلجيكا",
+    "title": "الشحن من الصين إلى بلجيكا",
+    "intro": "قارن شحن الحاويات الكاملة والشحن البحري الجزئي من الصين إلى أنتويرب وزيبروغ. اطلب سعر التوصيل إلى مستودع في غنت أو أي مدينة بلجيكية بحسب الرمز البريدي.",
+    "ports": [
+      "أنتويرب",
+      "زيبروغ"
+    ],
+    "inland": "غنت",
+    "delivery": "قارن الميناءين باستخدام الرمز البريدي نفسه. تحقق من تفويض الاستلام ودخول الشاحنة وتوفر الرافعة وإعادة الحاوية الفارغة. للمتاجر التي لا تملك رصيفاً، اطلب تسعير التفريغ في العنوان الفعلي.",
+    "customs": [
+      "أكد رقم EORI للمستورد وتفويض المخلص. سلّمه الفاتورة التجارية وقائمة التعبئة وبوليصة الشحن للإقرار البلجيكي عبر IDMS، بحسب الإجراء المنطبق.",
+      "حدد البضاعة ومادتها لكل بند. تحقق من التصنيف والمنشأ في TARIC، وأكد الرسوم وضريبة الاستيراد والتدابير قبل الإفراج.",
+      "تحقق من إجراءات استلام الحاوية في المحطة المحددة. تستخدم أنتويرب Certified Pick up، ويُنسق الإجراء في محطة CSP Zeebrugge مع وكيل الشحن والناقل البري."
+    ],
+    "factoryTitle": "شحن رفوف العرض المعدنية المفككة من مصنع صيني إلى بلجيكا",
+    "factory": [
+      "افصل القوائم والرفوف وقطع التثبيت في القائمة. اذكر عدد الطرود لكل طقم وطول أطول قطعة بعد التعبئة والوزن الإجمالي وإمكان الرص. طابق علامات الصناديق مع قائمة التجميع لعد الأطقم الكاملة.",
+      "اطلب صور حماية الزوايا وتثبيت الطرود قبل إغلاق الشحنة. أعط الناقل طول الطرد ومتطلبات الرافعة وموعد التسليم. قارن الميناءين لعنوان المستودع نفسه في غنت."
+    ],
+    "factoryLink": "اطّلع على فحص التعبئة والكميات",
+    "photo": "مثال لتدعيم الشحنة وتثبيتها داخل حاوية عند المنشأ",
+    "faq": [
+      "كيف يستلم المستودع رف عرض موزعاً على عدة صناديق؟",
+      "أرسل قائمة مرقمة بالصناديق لكل طقم، بما فيها المثبتات المعبأة منفصلة. أضف أقصى طول بعد التعبئة ووزن المناولة لتخطيط الاستلام وتسعير التفريغ."
+    ]
+  },
+  "pt": {
+    "name": "Bélgica",
+    "title": "Transporte da China para a Bélgica",
+    "intro": "Compare contêiner completo e carga consolidada da China para Antuérpia e Zeebrugge. Solicite a entrega a um armazém em Gante ou em outra cidade belga pelo código postal.",
+    "ports": [
+      "Antuérpia",
+      "Zeebrugge"
+    ],
+    "inland": "Gante",
+    "delivery": "Compare os dois terminais para o mesmo código postal. Confira a autorização de retirada, o acesso do caminhão, a empilhadeira e a devolução do contêiner vazio. Para lojas sem doca, cotize a descarga no endereço real.",
+    "customs": [
+      "Confirme o EORI do importador e os poderes do despachante. Entregue a fatura, o romaneio e o conhecimento de embarque para a declaração belga via IDMS, conforme o caso.",
+      "Identifique o produto e o material de cada item. Consulte o TARIC por código e origem e confirme o imposto de importação, o IVA e as demais medidas antes da liberação.",
+      "Confirme a retirada no terminal de descarga. Antuérpia utiliza o Certified Pick up. Para o CSP Zeebrugge, confira o procedimento com o agente marítimo e o transportador."
+    ],
+    "factoryTitle": "Como enviar expositores de metal desmontados de uma fábrica chinesa à Bélgica",
+    "factory": [
+      "Separe montantes, prateleiras e ferragens. Informe volumes por conjunto, peça embalada mais longa, peso bruto e possibilidade de empilhar. Relacione as marcas das caixas à lista de montagem para conferir conjuntos completos.",
+      "Solicite fotos da proteção de cantos e da fixação antes do fechamento. Informe comprimento, acesso da empilhadeira e agendamento da entrega. Para Gante, compare os dois portos com o mesmo endereço."
+    ],
+    "factoryLink": "Veja a inspeção de embalagem e quantidade",
+    "photo": "Exemplo de calçamento e fixação da carga no contêiner na origem",
+    "faq": [
+      "Como receber um expositor dividido em várias caixas?",
+      "Envie uma lista numerada de caixas por conjunto, inclusive parafusos embalados à parte. Inclua comprimento máximo embalado e peso de manuseio para planejar o recebimento e cotar a descarga."
+    ]
+  },
+  "tr": {
+    "name": "Belçika",
+    "title": "Çin’den Belçika’ya yük taşımacılığı",
+    "intro": "Çin’den Anvers ve Zeebrugge’ye komple konteyner ve parsiyel deniz taşımacılığını karşılaştırın. Gent veya Belçika’daki başka bir depo için posta koduyla ayrı teslimat teklifi alın.",
+    "ports": [
+      "Anvers",
+      "Zeebrugge"
+    ],
+    "inland": "Gent",
+    "delivery": "Aynı posta koduyla iki terminali karşılaştırın. Konteyneri teslim alma yetkisini, araç girişini, forklifti ve boş konteyner iadesini doğrulayın. Yükleme rampası olmayan mağazalar için boşaltmayı gerçek adrese göre fiyatlandırın.",
+    "customs": [
+      "İthalatçının EORI numarasını ve gümrük temsilcisinin yetkisini doğrulayın. Uygun olduğunda Belçika IDMS ithalat beyanı için fatura, çeki listesi ve konşimentoyu iletin.",
+      "Her satırda malı ve malzemesini belirtin. Eşya kodu ve menşeye göre TARIC’i kontrol edin. Serbest bırakmadan önce vergi, ithalat KDV’si ve geçerli tedbirleri teyit edin.",
+      "Boşaltma terminalindeki teslim prosedürünü doğrulayın. Anvers’te Certified Pick up kullanılır. CSP Zeebrugge için acente ve kara taşıyıcısından prosedürü teyit edin."
+    ],
+    "factoryTitle": "Çin fabrikasından Belçika’ya demonte metal teşhir rafı gönderimi",
+    "factory": [
+      "Dikmeleri, rafları ve bağlantı parçalarını ayrı yazın. Set başına koli adedini, en uzun ambalajlı parçayı, brüt ağırlığı ve istif durumunu belirtin. Depo tam setleri sayabilsin diye koli işaretlerini montaj listesiyle eşleştirin.",
+      "Yük kapatılmadan önce köşe koruması ve sabitleme fotoğraflarını isteyin. Parça uzunluğunu, forklift erişimini ve teslimat randevusunu taşıyıcıya bildirin. Gent için iki limanı aynı adresle karşılaştırın."
+    ],
+    "factoryLink": "Ambalaj ve adet kontrolünü inceleyin",
+    "photo": "Çıkışta konteyner içi destekleme ve sabitleme örneği",
+    "faq": [
+      "Bir teşhir rafı birden fazla koliye dağıtılmışsa depo nasıl teslim alır?",
+      "Ayrı paketlenen bağlantı elemanları dâhil, set bazında numaralı koli listesi verin. Teslim alma planı ve boşaltma teklifi için en uzun ambalaj ölçüsünü ve taşıma ağırlığını ekleyin."
+    ]
+  }
+}
