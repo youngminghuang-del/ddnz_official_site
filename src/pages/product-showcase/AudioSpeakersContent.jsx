@@ -1,3 +1,4 @@
+import { quoteLinkProps } from '../../lib/quoteLinkPolicy.mjs';
 import ProgressiveSection,{revealDisclosureTarget} from '../../features/product-experience/ProgressiveSection';
 import ScenePlanning from '../../features/product-experience/ScenePlanning';
 import ProductSeries,{SeriesEntry} from '../../features/product-series/ProductSeries';
@@ -217,8 +218,15 @@ export function AudioSpeakersContent() {
 
   const quoteUrl = useMemo(() => {
     const selected = FAMILIES.find((item) => item.id === form.family);
+    const overviewBrief = [
+      form.scope,
+      form.volume && `Approximate volume: ${form.volume}`,
+      form.stage && `Request stage: ${form.stage}`,
+      form.notes && `Priorities or constraints: ${form.notes}`,
+    ].filter(Boolean).join("\n");
     const params = new URLSearchParams({
       leadGoal: "Product Sourcing",
+      overviewBrief,
       industry: `Audio & Speakers · ${selected?.title || "Audio range"}`,
       productScope: form.scope,
       dest: form.destination,
@@ -233,6 +241,12 @@ export function AudioSpeakersContent() {
   const scrollTo = (id) => {
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     revealDisclosureTarget(id)?.scrollIntoView({ behavior: reduced ? "auto" : "smooth", block: "start" });
+  };
+
+  const openOemRequest = () => {
+    setForm(current => ({ ...current, stage: "OEM / private-label quote" }));
+    setSubmitted(false);
+    scrollTo("audio-rfq");
   };
 
   const selectFamily = (id) => {
@@ -253,10 +267,10 @@ export function AudioSpeakersContent() {
           <div className="as-hero-copy">
             <p className="as-kicker">SPEAKER MANUFACTURING &amp; EXPORT</p>
             <h1 id="audio-title">Build your wholesale speaker range in China</h1>
-            <p>DDNZ is a manufacturer and exporter based in Guangzhou, China. Explore portable, party, vintage and compact speakers for your wholesale range. For OEM/ODM enquiries, share your target use, output, power requirements, accessories and packaging. We can confirm the options for your model and help you approve a sample before production.</p>
+            <p>Source rechargeable party and karaoke speakers, portable Bluetooth models and other wholesale audio from DDNZ, a manufacturer and exporter in Guangzhou, China. Compare battery, output and microphone options, request a sample by model, or specify branding and packaging for an OEM quote.</p>
             <div className="as-hero-actions">
-              <button className="as-primary" type="button" onClick={() => scrollTo("bluetooth-model-catalogue")}>Build the range <ArrowRight size={17} /></button>
-              <button className="as-secondary" type="button" onClick={() => scrollTo("comparison")}>Review the control fields <ArrowRight size={16} /></button>
+              <button className="as-primary" type="button" onClick={() => scrollTo("bluetooth-model-catalogue")}>Compare models and request samples <ArrowRight size={17} /></button>
+              <button className="as-secondary" type="button" onClick={openOemRequest}>Request an OEM quote <ArrowRight size={16} /></button>
             </div>
             <div className="as-proof-row" aria-label="Audio sourcing controls">
               <span><Speaker size={20} /><b>Range-led</b><small>by use case</small></span>
@@ -268,7 +282,7 @@ export function AudioSpeakersContent() {
           <CatalogueHeroMedia src={FAMILIES[0].image} alt={FAMILIES[0].alt} items={FAMILIES.map(item=>({src:item.image,label:item.title,href:"#audio-range"}))}/>
         </section>
 
-        <ProductSeries family="speaker"/>
+        <ProductSeries family="speaker" offerSpeakerSamples/>
         <ProgressiveSection title="Portable and party audio planning"><ScenePlanning family="speaker"/></ProgressiveSection>
         <ProgressiveSection title="Other speaker ranges and buying requirements">
         <section className="as-control-strip" aria-label="Audio buying variables">
@@ -374,7 +388,7 @@ export function AudioSpeakersContent() {
           <div className="as-rfq-intro">
             <p className="as-kicker">SCOPED AUDIO REQUEST</p>
             <h2 id="audio-rfq-title">Define the range you want to build.</h2>
-            <p>Start with the product family, destination, approximate volume and buying stage. Detailed specifications and reference files can follow after the sourcing-fit review.</p>
+            <p>For an OEM quote, share the speaker model or intended use, destination and approximate units per model. Include required output, battery or charging, microphone set, logo and retail packaging where known.</p>
             <div><span><Globe2 size={18} /><b>Destination captured early</b></span><span><ShieldCheck size={18} /><b>Secure inquiry handoff</b></span></div>
           </div>
           {!submitted ? (
@@ -383,13 +397,13 @@ export function AudioSpeakersContent() {
               <label htmlFor="as-destination">Destination market *<input id="as-destination" name="destination" value={form.destination} onChange={updateForm} placeholder="Country or region" required /></label>
               <label className="as-wide" htmlFor="as-scope">Product scope *<input id="as-scope" name="scope" value={form.scope} onChange={updateForm} placeholder="Use case, models, functions, microphones or pack needs" required /></label>
               <label htmlFor="as-volume">Approximate volume<input id="as-volume" name="volume" value={form.volume} onChange={updateForm} placeholder="Per model or mixed order" /></label>
-              <label htmlFor="as-stage">Buying stage *<select id="as-stage" name="stage" value={form.stage} onChange={updateForm} required><option value="">Select stage</option><option>Exploring an audio range</option><option>Comparing supplier offers</option><option>Sample / specification stage</option><option>Test order or replenishment</option><option>Order-ready</option></select></label>
+              <label htmlFor="as-stage">Buying stage *<select id="as-stage" name="stage" value={form.stage} onChange={updateForm} required><option value="">Select stage</option><option>Exploring an audio range</option><option>Comparing supplier offers</option><option>Sample / specification stage</option><option>OEM / private-label quote</option><option>Test order or replenishment</option><option>Order-ready</option></select></label>
               <label className="as-wide" htmlFor="as-notes">Priorities or constraints<input id="as-notes" name="notes" value={form.notes} onChange={updateForm} placeholder="Target position, timeline, certification or private-label needs" /></label>
               <button className="as-primary" type="submit">Prepare audio brief <ArrowRight size={17} /></button>
               <p className="as-form-note"><ShieldCheck size={15} /> Review and submit your details on DDNZ’s secure inquiry page.</p>
             </form>
           ) : (
-            <div className="as-rfq-success" role="status"><CheckCircle2 size={42} /><div><p className="as-kicker">AUDIO SCOPE READY</p><h3>{FAMILIES.find((item) => item.id === form.family)?.title}</h3><p>Your range, destination and buying stage are ready for the centralized DDNZ brief.</p></div><a className="as-primary" href={quoteUrl}>Continue to secure brief <ArrowRight size={17} /></a><button className="as-secondary" type="button" onClick={() => setSubmitted(false)}>Edit request</button></div>
+            <div className="as-rfq-success" role="status"><CheckCircle2 size={42} /><div><p className="as-kicker">AUDIO SCOPE READY</p><h3>{FAMILIES.find((item) => item.id === form.family)?.title}</h3><p>Your range, destination and buying stage are ready for the centralized DDNZ brief.</p></div><a className="as-primary" {...quoteLinkProps(quoteUrl)}>Continue to secure brief <ArrowRight size={17} /></a><button className="as-secondary" type="button" onClick={() => setSubmitted(false)}>Edit request</button></div>
           )}
         </section>
 
