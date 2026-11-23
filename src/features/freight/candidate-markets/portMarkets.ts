@@ -2,20 +2,26 @@ import italy from './italyCopy.json';
 import morocco from './moroccoCopy.json';
 import belgium from './belgiumCopy.json';
 import poland from './polandCopy.json';
+import sweden from './swedenCopy.json';
+import turkey from './turkeyCopy.json';
 
-export const portMarketSlugs = ['italy', 'morocco', 'belgium', 'poland'] as const;
+export const portMarketSlugs = ['italy', 'morocco', 'belgium', 'poland', 'sweden', 'turkey'] as const;
 export type PortMarketCountry = typeof portMarketSlugs[number];
 export function isPortMarketCountry(slug: string): slug is PortMarketCountry {
   return portMarketSlugs.some(country => country === slug);
 }
 
-export const portMarketCopy = {italy, morocco, belgium, poland};
+export const portMarketCopy = {italy, morocco, belgium, poland, sweden, turkey};
 
 const italySchedule = 'https://www.cma-cgm.com/assets/public/documents/MEX%202_1.pdf';
 const tangerSchedule = 'https://www.cma-cgm.com/ebusiness/schedules/line-services/exportserviceschedules?ScheduleCode=FAL&ScheduleName=French+Asia+Line+1+%28FAL%29';
 const casablancaMarket = 'https://www.jhz56.com/en/ports/macas.html';
 
 const britanniaSchedule = 'https://www.msc.com/-/media/files/msc-cargo/msc-solutions/trades/east-west-network/via-cape-asia-north-europe-network-2026.pdf?rev=6c1fd7c0a72f478abf9978f745183c87';
+
+const gothenburgMarket = 'https://www.jhz56.com/en/ports/segot.html';
+const helsingborgMarket = 'https://www.jhz56.com/en/ports/sehel.html';
+const bexSchedule = 'https://www.cma-cgm.com/assets/public/documents/BEX%201_Mersin%20connection.pdf';
 
 export const portMarkets = {
   italy: {
@@ -73,6 +79,35 @@ export const portMarkets = {
     ],
     factoryPath: '/sourcing/audio-speakers-from-china/portable-outdoor-speakers/',
     photo: {src: '/images/product-showcase/audio/mini-black-product-v1.webp', width: 1000, height: 1000, className: 'candidate-factory-product-image'},
+    doorAssessment: true,
+  },
+  sweden: {
+    ports: [
+      {code: 'SEGOT', days: '≈49', shanghai: false, transitSource: 'JHZ', transitUrl: gothenburgMarket, rate: 3628, rateUrl: gothenburgMarket},
+      {code: 'SEHEL', days: '≈52', shanghai: false, transitSource: 'JHZ', transitUrl: helsingborgMarket, rate: 3890, rateUrl: helsingborgMarket},
+    ],
+    customsBadges: ['EORI', 'Tulltaxan / VAT', 'EEE / EPR'],
+    authorities: [
+      {name: 'Tullverket · Import', url: 'https://www.tullverket.se/en/startpage/business/internationalbusiness/importinggoods/startimporting.4.4776b304199f1ed58cc39708.html'},
+      {name: 'Tullverket · Tulltaxan', url: 'https://www.tullverket.se/en/startpage/business/applyanddeclare/tulltaxantaric.4.7df61c5915510cfe9e760c3.html'},
+      {name: 'Naturvårdsverket · EEE', url: 'https://www.naturvardsverket.se/en/guidance/extended-producer-responsibility-epr/producer-responsibility-for-electrical-and-electronic-equipment/'},
+    ],
+    factoryPath: '/sourcing-services/inspection-quality-control/',
+    photo: {src: '/images/posts/cables-carga-solar-mayoreo-china/panel160-product-2.png', width: 2034, height: 2034},
+    doorAssessment: true,
+  },
+  turkey: {
+    ports: [
+      {code: 'TRAMR', days: '39', shanghai: true, transitSource: 'CMA CGM · BEX', transitUrl: bexSchedule, rate: 4900, rateUrl: 'https://www.jhz56.com/en/ports/tramr.html'},
+      {code: 'TRIZT', days: '38', shanghai: true, transitSource: 'CMA CGM · BEX', transitUrl: bexSchedule, rate: 5300, rateUrl: 'https://www.jhz56.com/en/ports/trizt.html'},
+    ],
+    customsBadges: ['İthalat', 'GTİP / KDV', 'TAREKS'],
+    authorities: [
+      {name: 'Ticaret Bakanlığı · Import', url: 'https://www.trade.gov.tr/customs-formalities/frequently-asked-questions/import-regime'},
+      {name: 'Ticaret Bakanlığı · Product Safety', url: 'https://www.trade.gov.tr/legislation/product-safety-and-technical-regulation'},
+    ],
+    factoryPath: '/sourcing/food-processing-machinery-from-china/dough-and-bakery-machinery/',
+    photo: {src: '/images/posts/commercial-dough-mixers-wholesale-china/A-spiral-mixer.png', width: 1920, height: 1080, className: 'candidate-factory-product-image'},
     doorAssessment: true,
   },
 } as const;
