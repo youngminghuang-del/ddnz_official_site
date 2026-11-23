@@ -1,7 +1,7 @@
 import { addGulfRefrigerationSelection } from '../lib/gulfRefrigerationSelection';
 import { addSpanishCaseQuote } from '../lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../lib/latinAmericaFreightTiming';
-import { addAlibabaBuyingGuidance } from '../lib/alibabaArticleBuying';
+import { addAlibabaBuyingGuidance, alibabaArticleDescription, alibabaArticleSlug } from '../lib/alibabaArticleBuying';
 import { addPrivacyBuyingLinks, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../lib/privacyArticleSeo';
 import { bindPrivacyWorksheet } from '../lib/privacyWorksheet.mjs';
 import { normalizeQuoteHtml } from '../lib/quoteLinkPolicy.mjs';
@@ -141,7 +141,8 @@ export default function BlogDetail() {
       : titleLead.length >= 24 && titleLead.length + suffix.length <= maxTitleLen
         ? `${titleLead}${suffix}`
         : `${completePrefix.trim()}…${suffix}`);
-  const rawDesc = post.summary || post.title;
+  const articleDescription = post.slug === alibabaArticleSlug ? alibabaArticleDescription : post.summary;
+  const rawDesc = articleDescription || post.title;
   const descCandidate = rawDesc.slice(0, 154);
   const descSpace = descCandidate.lastIndexOf(' ');
   const seoDesc = privacySeo?.description || articleDiscovery?.description || (rawDesc.length > 155
@@ -170,7 +171,7 @@ export default function BlogDetail() {
         data={{
           headline: post.title,
           inLanguage: language,
-          description: post.summary,
+          description: articleDescription,
           image: post.thumbnailUrl,
           datePublished: post.date,
           dateModified: post.lastEdited || verifiedDate,

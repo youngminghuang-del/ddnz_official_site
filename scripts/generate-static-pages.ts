@@ -14,7 +14,7 @@ import { addGulfRefrigerationSelection } from '../src/lib/gulfRefrigerationSelec
 import SpanishInspectionScope from '../src/features/sourcing-services/SpanishInspectionScope';
 import { addSpanishCaseQuote } from '../src/lib/spanishCaseQuote';
 import { addLatinAmericaFreightTiming } from '../src/lib/latinAmericaFreightTiming';
-import { addAlibabaBuyingGuidance } from '../src/lib/alibabaArticleBuying';
+import { addAlibabaBuyingGuidance, alibabaArticleDescription, alibabaArticleSlug } from '../src/lib/alibabaArticleBuying';
 import { addPrivacyBuyingLinks, positionPrivacyPost, privacyArticleSeo, privacyArticleSlug } from '../src/lib/privacyArticleSeo';
 import gulfBarBlenderSchema from '../src/data/gulf-bar-blender-schema.json';
 import latamLclQuoteSchema from '../src/data/latam-lcl-quote-schema.json';
@@ -2165,7 +2165,9 @@ function run() {
             }
           }
 
-          const rawDesc = post.summary || post.title || '';
+          const rawDesc = post.slug === alibabaArticleSlug
+            ? alibabaArticleDescription
+            : post.summary || post.title || '';
           const descCandidate = rawDesc.slice(0, 154);
           const descSpace = descCandidate.lastIndexOf(' ');
           const computedDesc = rawDesc.length > 155
