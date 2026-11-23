@@ -1,7 +1,17 @@
-const articleSlug = 'top-10-screen-protector-manufacturers-alibaba';
+export const alibabaArticleSlug = 'top-10-screen-protector-manufacturers-alibaba';
+export const alibabaArticleDescription = 'Compare 10 Alibaba suppliers for wholesale screen protectors. Check minimum orders by phone model, what each pack includes and how well samples fit.';
 
 export function addAlibabaBuyingGuidance(slug: string | undefined, html: string) {
-  if (slug !== articleSlug || html.includes('id="custom-screen-protector-rfq"')) return html;
+  if (slug !== alibabaArticleSlug) return html;
+
+  const shortlistHeading = '<h2 id="the-shortlist">';
+  const comparisonPath = '/screen-protectors/compare/';
+  const comparisonLink = `<p><a href="${comparisonPath}">Compare wholesale screen protectors by material, MOQ and packaging</a>.</p>`;
+  if (!html.includes(`href="${comparisonPath}"`)) {
+    html = html.replace(shortlistHeading, comparisonLink + shortlistHeading);
+  }
+
+  if (html.includes('id="custom-screen-protector-rfq"')) return html;
 
   const enquiryHeading = '<h2 id="start-with-three-enquiries">';
   const questionsHeading = '<h2 id="questions-buyers-ask">';
