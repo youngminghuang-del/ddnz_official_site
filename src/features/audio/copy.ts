@@ -8,6 +8,6 @@ export const videoHeading={en:'Production and function references',zh:'生产与
 export const audioSchema=(locale:AudioLocale)=>({'@context':'https://schema.org','@type':'CollectionPage',url:`https://www.ddnzglobal.com${foodPrefix(locale)}${audioPath}/`,name:audioCopy[locale].title,description:audioCopy[locale].intro,inLanguage:locale==='zh'?'zh-CN':locale});
 
 export const englishAudioMeta = {
- title: 'Audio & Speaker Sourcing from China | DDNZ Global',
- description: 'Work with DDNZ, a China manufacturer and exporter, on portable, party, vintage and compact speakers. Compare models, approve samples and plan packaging.',
+ title: 'Wholesale & OEM Speakers from China | DDNZ',
+ description: 'Compare rechargeable party and karaoke speakers from China. Request a sample by model or get an OEM quote for your specifications, branding and packaging.',
 };

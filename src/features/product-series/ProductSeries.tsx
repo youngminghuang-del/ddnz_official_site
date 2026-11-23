@@ -1,4 +1,5 @@
 import ProductGallery from './ProductGallery';
+import {quoteLinkProps} from '../../lib/quoteLinkPolicy.mjs';
 import React,{useEffect,useState} from 'react';
 import catalog from '../commercial-kitchen/data/products.mjs';
 import {cleanList} from '../commercial-kitchen/data/model.mjs';
@@ -10,7 +11,7 @@ export function cleanSeriesSelection(raw:unknown,family:string):Record<string,nu
 export function SeriesEntry({family,locale='en'}:{family:'coffee'|'speaker';locale?:string}){const c=seriesCopy(locale);return <a className="series-entry-link" href={family==='coffee'?'#coffee-machine-catalogue':'#bluetooth-model-catalogue'}>{family==='coffee'?c.linkCoffee:c.linkSpeaker} ↗</a>;}
 type CatalogueGroup = {id:string; title:string; modelIds:readonly string[]};
 
-export default function ProductSeries({family,locale='en',onAdd,onCompare,standalone=false,segment,canonicalPath,emitSchema=true,catalogueGroups}:{family:'coffee'|'speaker';locale?:string;onAdd?:(id:string)=>void;onCompare?:(id:string)=>void;standalone?:boolean;segment?:'portable'|'party';canonicalPath?:string;emitSchema?:boolean;catalogueGroups?:readonly CatalogueGroup[]}){
+export default function ProductSeries({family,locale='en',onAdd,onCompare,standalone=false,segment,canonicalPath,emitSchema=true,catalogueGroups,offerSpeakerSamples=false}:{family:'coffee'|'speaker';locale?:string;onAdd?:(id:string)=>void;onCompare?:(id:string)=>void;standalone?:boolean;segment?:'portable'|'party';canonicalPath?:string;emitSchema?:boolean;catalogueGroups?:readonly CatalogueGroup[];offerSpeakerSamples?:boolean}){
  const lang=locale==='zh-cn'?'zh':locale,c=seriesCopy(lang),allModels=seriesModels.filter(m=>m.family===family),models=allModels.filter(m=>!segment||(m.segment||'party')===segment),id=family==='coffee'?'coffee-machine-catalogue':'bluetooth-model-catalogue';
  const [selected,setSelected]=useState<Record<string,number>>({}),[notes,setNotes]=useState(''),[notice,setNotice]=useState(''),[comparison,setComparison]=useState<string[]>([]);
  useEffect(()=>{try{setSelected(standalone?cleanList(JSON.parse(localStorage.getItem('ddnz-kitchen-list-v1')||'{}'),catalog):cleanSeriesSelection(JSON.parse(localStorage.getItem('ddnz-model-series-'+family)||'{}'),family));}catch{}},[family,standalone]);
@@ -24,7 +25,8 @@ export default function ProductSeries({family,locale='en',onAdd,onCompare,standa
  <ProductGallery model={m} locale={lang} name={c.names[m.index]}/>
  <div className="product-series-copy"><p className="product-series-code"><bdi>{m.model}</bdi></p><ModelHeading>{c.names[m.index]}</ModelHeading><p>{c.uses[m.index]}</p><dl>{specs.slice(0,3).map(s=><div key={s.key}><dt>{s.label}</dt><dd><bdi>{s.value}</bdi></dd></div>)}</dl>
  <details><summary>{c.details}</summary><dl>{specs.slice(3).map(s=><div key={s.key}><dt>{s.label}</dt><dd><bdi>{s.value}</bdi></dd></div>)}</dl><p>{c.notes[m.index]}</p><small>{c.caption}</small></details>
- <div className="product-series-actions">{onAdd&&<button type="button" onClick={()=>{onAdd(m.id);setNotice(`${m.model} · ${c.add}`);}}>{c.add} +</button>}{onCompare&&<button className="series-secondary" type="button" onClick={()=>onCompare(m.id)}>{c.compare}</button>}<a href={seriesQuote(lang,family,{[m.id]:1})}>{c.quote} ↗</a></div>
+ <div className="product-series-actions">{onAdd&&<button type="button" onClick={()=>{onAdd(m.id);setNotice(`${m.model} · ${c.add}`);}}>{c.add} +</button>}{onCompare&&<button className="series-secondary" type="button" onClick={()=>onCompare(m.id)}>{c.compare}</button>}<a href={seriesQuote(lang,family,{[m.id]:1})}>{c.quote} ↗</a>
+ {offerSpeakerSamples&&<a aria-label={`Request sample for ${m.model}`} {...quoteLinkProps(seriesQuote(lang,family,{[m.id]:1},'Sample request. Please confirm availability, sample cost and lead time.'))}>Request sample ↗</a>}</div>
  {standalone&&<button className="series-secondary" type="button" aria-pressed={comparison.includes(m.id)} onClick={()=>setComparison(prev=>prev.includes(m.id)?prev.filter(v=>v!==m.id):[...prev.slice(-2),m.id])}>{c.compare} · {m.model}</button>}
  {((family==='speaker')||standalone)&&<label className="product-series-quantity">{c.quantity}<input aria-label={`${m.model} ${c.quantity}`} type="number" min="0" max="99" step="1" value={selected[m.id]||0} onChange={e=>quantity(m.id,Number(e.target.value))}/></label>}
  </div></article>;})}</div>;

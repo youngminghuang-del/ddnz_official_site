@@ -62,6 +62,7 @@ export const QUOTE_ENUMS = Object.freeze({
     "sourcing_decisions",
     "sourcing_services",
     "sourcing_services_turkiye_case",
+    "speaker_model_catalogue",
     "startup_plan",
     "supplier_search_service",
     "uae_country",
