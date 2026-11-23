@@ -87,6 +87,9 @@ import { entryKeywords } from '../src/features/search-intent/entry-keywords.mjs'
 import LocalizedCalculator,{calculatorMeta,calculatorSchema} from '../src/features/screen-protectors/LocalizedCalculator.jsx';
 import FilmGuideContent from '../src/features/film-guide/FilmGuideContent';
 import {filmGuideMeta,filmGuidePath,filmGuideKind,filmGuideSchema,type FilmGuideLocale} from '../src/features/film-guide/copy';
+import {BakeryFrontCounter, MerchandisingContent, merchandisingMetadata, RefrigerationMerchandising, type MerchandisingLocale} from '../src/features/refrigeration/MerchandisingContent';
+import KitchenManufacturing from '../src/features/commercial-kitchen/KitchenManufacturing';
+import {merchandisingPages} from '../src/features/refrigeration/merchandisingModels.mjs';
 import RefrigerationContent from '../src/features/refrigeration/RefrigerationContent';
 import {refrigerationMeta,refrigerationPath,refrigerationSchema,type RefrigerationLocale} from '../src/features/refrigeration/copy';
 import AudioContent from '../src/features/audio/AudioContent';
@@ -1624,6 +1627,12 @@ function injectStaticRouteContent(
   if(lang==='en' && '/'+relPath+'/'===cafePath) return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CafePlanningContent,{locale:'en'}))}</div>`);
   if('/'+relPath===coffeePath){const locale=lang==='zh-cn'?'zh':lang;return htmlContent.replace('<div id="root"></div>',`<div id="root">${renderToStaticMarkup(createElement(CoffeeContent,{locale}))}</div>`);}
   if(relPath==='sourcing/electric-scooter-spare-parts-from-china') return htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/g,'').replace('</head>',`<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(partsSchema((lang==='zh-cn'?'zh':lang) as Language)).replace(/</g,'\\u003c')}</script></head>`);
+  const merchandisingPath = ('/' + relPath) as keyof typeof merchandisingPages;
+  if (merchandisingPages[merchandisingPath]) {
+    const locale = (lang === 'zh-cn' ? 'zh' : lang) as MerchandisingLocale;
+    const body = renderToStaticMarkup(createElement(MerchandisingContent, {path: merchandisingPath, locale}));
+    return htmlContent.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+  }
   let staticBody = '';
   const serviceKind = relPath.startsWith('sourcing-services/') ? relPath.split('/')[1] : '';
   const service = serviceCopy[serviceKind as keyof typeof serviceCopy]?.[(lang === 'zh-cn' ? 'zh' : lang) as Language];
@@ -1682,6 +1691,10 @@ function injectStaticRouteContent(
       staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="${lang}" dir="${lang === 'ar' ? 'rtl' : 'ltr'}">${breadcrumbs}<p>${esc(service.eyebrow)}</p><h1>${esc(service.title)}</h1><p>${esc(service.intro)}</p>${brief}${inspectionScope}<h2>${esc(service.useTitle)}</h2><ul>${service.useCases.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.outputTitle)}</h2><ul>${service.outputs.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><h2>${esc(service.sequenceTitle)}</h2><ol>${service.sequence.map(v=>`<li><h3>${esc(v.title)}</h3><p>${esc(v.body)}</p></li>`).join('')}</ol><h2>${esc(service.boundaryTitle)}</h2><p>${esc(service.boundary)}</p><a href="${esc(spanishInspectionQuote || `${prefix}/get-a-quote/`)}">${esc(service.cta)}</a></main>`;
     } else {
       staticBody = `<main class="mx-auto max-w-5xl px-4 py-16" lang="en"><p>${esc(scenario.status)}</p><h1>${esc(scenario.tab)} kitchen equipment package from China</h1><p>Source a ${esc(scenario.tab.toLowerCase())} kitchen equipment package from China around your menu, floor plan and utility requirements. ${esc(scenario.title)}</p><p>${esc(scenario.summary)}</p><h2>Equipment groups</h2><ul>${scenario.equipment.map(v=>`<li>${esc(v[1])}: ${esc(v[3] || v[2])}</li>`).join('')}</ul><h2>Utility review</h2><ul>${scenario.utilities.map(v=>`<li>${esc(v)}</li>`).join('')}</ul><p>Final loads, connection points, fire, MEP and authority drawings require selected models, a measured site and local professional approval.</p><a href="/sourcing/restaurant-kitchen-packages-from-china/">Compare restaurant kitchen packages from China</a><p><a href="/get-a-quote/?leadGoal=Product+Sourcing">Request a package sourcing quote</a></p></main>`;
+    }
+    if (scenario && relPath.endsWith('/bakery-pastry')) {
+      const frontCounter = renderToStaticMarkup(createElement(BakeryFrontCounter));
+      staticBody = staticBody.replace('<p><a href="/get-a-quote/', frontCounter + '<p id="package-rfq"><a href="/get-a-quote/');
     }
     return htmlContent.replace('<div id="root"></div>', `<div id="root">${staticBody}</div>`);
   }
@@ -1814,6 +1827,8 @@ function injectStaticRouteContent(
     staticBody = renderKitchenStaticContent(kitchenProducts, kitchenLaunch,
       renderToStaticMarkup(createElement(CatalogueHeroMedia, {src:'/commercial-kitchen-media/kitchen-hero.webp',
         alt:'Commercial kitchen application',scene:true,items:kitchenHeroItems})));
+    staticBody = staticBody.replace('<h2 id="commercial-kitchen-list">',
+      heading => renderToStaticMarkup(createElement(KitchenManufacturing)) + heading);
     htmlContent = htmlContent.replace(/<script id="schema-jsonld-static-page"[^>]*>[\s\S]*?<\/script>/, `<script id="schema-jsonld-static-page" type="application/ld+json">${JSON.stringify(kitchenStructuredData(kitchenLaunch)).replace(/</g, '\\u003c')}</script>`);
   } else if (relPath === inductionRelPath || relPath === hotCookingRelPath || cookingSelectionRelPaths.includes(relPath)) {
     const hotCooking = relPath === hotCookingRelPath;
@@ -1929,7 +1944,7 @@ function injectStaticRouteContent(
     staticBody = staticBody.replace('</main>', `${links}</main>`);
   }
   if (lang === 'en' && relPath === 'refrigeration-equipment') {
-    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + renderToStaticMarkup(createElement(EquipmentBuyingSupport,{family:'refrigeration'})) + '</main>');
+    staticBody = staticBody.replace('</main>', renderToStaticMarkup(createElement(RefrigerationModelCatalogue)) + renderToStaticMarkup(createElement(RefrigerationMerchandising)) + renderToStaticMarkup(createElement(EquipmentBuyingSupport,{family:'refrigeration'})) + '</main>');
     const production = `<section id="refrigeration-evidence" class="mt-10"><h2>From the production line to the packing floor.</h2><p>Watch a short clip from an ice-maker production line.</p><figure><video controls playsinline preload="none" poster="/images/product-showcase/refrigeration/ice-maker-line-source.webp" aria-label="Ice maker production line video" style="width:100%;max-height:500px;background:#132943"><source src="/media/process/kitchen-production.mp4" type="video/mp4"><a href="/media/process/kitchen-production.mp4">Open the production video</a></video><figcaption>Ice maker production line · 9-second video</figcaption></figure><h3>Choosing a cabinet</h3><p>Confirm the selected model, cooling performance, service access and transport packaging with your quotation.</p></section>`;
     staticBody = staticBody.replace('</main>', production + '</main>');
     staticBody = staticBody.replace('</main>', renderRefrigerationEntry() + '</main>');
@@ -1972,6 +1987,7 @@ function run() {
   >;
 
   const basePaths = [
+    ...Object.keys(merchandisingPages).map(path => ({path:path.slice(1),priority:'0.8',changefreq:'monthly',languages:overviewLanguages})),
     {path:'sourcing/electric-utility-vehicles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     {path:'sourcing/electric-tricycles-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
     {path:'sourcing/portable-power-stations-from-china',priority:'0.8',changefreq:'monthly',languages:overviewLanguages},
@@ -2073,6 +2089,11 @@ function run() {
     (entry.languages || languages).forEach((lang) => {
       // Find or build the SEO metadata
       let seo: SEOItem | undefined = seoDataMatrix[entry.path]?.[lang];
+      const merchandisingPath = ('/' + entry.path) as keyof typeof merchandisingPages;
+      if (merchandisingPages[merchandisingPath]) {
+        const meta = merchandisingMetadata(merchandisingPath, (lang === 'zh-cn' ? 'zh' : lang) as MerchandisingLocale);
+        seo = { title:meta.title, desc:meta.description, keywords:'', image:meta.image };
+      }
       if (['products','sourcing-services'].includes(entry.path) && lang !== 'en') seo = overviewMeta(entry.path as any, lang);
       if (modernizedFreightServicePaths.includes(entry.path as any)) seo = modernFreightServiceMetadata(entry.path as any, (lang === 'zh-cn' ? 'zh' : lang) as any);
       if(lang !== 'en' && entry.path==='screen-protectors/calculator'){const meta=calculatorMeta(lang);seo={title:meta.title,desc:meta.description,keywords:''};}

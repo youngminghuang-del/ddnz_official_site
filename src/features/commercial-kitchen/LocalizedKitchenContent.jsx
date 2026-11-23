@@ -8,6 +8,7 @@ import { purchaseFlow } from './locales/purchase-flow.mjs';
 import ProgressiveSection,{experienceCopy,revealDisclosureTarget} from '../product-experience/ProgressiveSection';
 import CoffeeDirectory from '../coffee/CoffeeDirectory';
 import ProductSeries,{SeriesEntry} from '../product-series/ProductSeries';
+import KitchenManufacturing from './KitchenManufacturing';
 import EquipmentBuyingSupport from '../equipment-buying-support/EquipmentBuyingSupport';
 import InductionCatalogue, {InductionEntry} from './components/InductionCatalogue';
 import CatalogueHeroMedia, { kitchenHeroLabels } from '../../components/catalogue-hero/CatalogueHeroMedia';
@@ -243,6 +244,7 @@ export default function LocalizedKitchenContent({ locale, activeAnchor = '', ini
           </article>)}
         </div>
       </section>
+      <KitchenManufacturing locale={chinese ? 'zh' : locale}/>
       {chinese && inquirySection}
       {chinese ? <ChineseKitchenSupport/> : <>
       <ProgressiveSection title={u.guideTitle} locale={locale}><GulfKitchenPlanning locale={locale}/></ProgressiveSection>

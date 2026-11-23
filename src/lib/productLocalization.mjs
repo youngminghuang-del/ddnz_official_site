@@ -1,3 +1,4 @@
+import { merchandisingPaths } from '../features/refrigeration/merchandisingRoutes.mjs';
 import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { inductionCookingPath, steamCabinetPath, noodleCookerPath, soupBunCookerPath, hotCookingPath, kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from '../features/commercial-kitchen/routes.mjs';
 // Only routes with a complete, authored product body belong to this cluster.
@@ -29,6 +30,7 @@ export function productRouteParts(path = '/') {
 export function hasProductTranslation(path, locale) {
   const base = productRouteParts(path).path;
   if (base === inductionCookingPath || base === steamCabinetPath || base === noodleCookerPath || base === soupBunCookerPath) return overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale);
+  if (merchandisingPaths.includes(base)) return overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale);
   if (base === hotCookingPath) return ['zh', 'zh-cn'].includes(locale);
   if(['/sourcing/home-energy-storage-from-china','/sourcing/electric-bicycles-from-china','/sourcing/portable-power-stations-from-china','/sourcing/electric-scooters-from-china'].includes(base)) return overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale);
   return (buyerGuidePaths.includes(base) || overviewProductPaths.includes(base) || foodProcessingRoutes.includes(base) || [...kitchenCategoryPaths,kitchenPackagePath,...kitchenPackageScenarioPaths].includes(base)) ? overviewContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) : productContentLanguages.includes(locale === 'zh-cn' ? 'zh' : locale) && localizableProductPaths.includes(base);
