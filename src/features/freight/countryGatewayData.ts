@@ -63,6 +63,14 @@ export const countryGateways: Record<string, GatewayMap> = {
   ['Gdańsk','格但斯克',18.65,54.42],
   ['Gdynia','格丁尼亚',18.55,54.5],
  ]},
+ sweden: {id:'752', bounds:[10.75,54.8,18.6,60.05], ports:[
+  ['Gothenburg','哥德堡',11.967,57.7],
+  ['Helsingborg','赫尔辛堡',12.7,56.033],
+ ]},
+ turkey: {id:'792', bounds:[25.3,38.5,33,42.45], ports:[
+  ['Ambarlı','安巴尔勒',28.7,40.9667],
+  ['İzmit','伊兹米特',29.95,40.7833],
+ ]},
  netherlands: {id:'528', ports:[['Rotterdam','鹿特丹',4.14,51.95]]},
  'united-kingdom': {id:'826', ports:[['Southampton','南安普敦',-1.44,50.91]]},
  france: {id:'250', bounds:[-5.4,41.2,9.8,51.5], ports:[['Le Havre','勒阿弗尔',0.16,49.48]]},

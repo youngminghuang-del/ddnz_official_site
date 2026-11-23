@@ -75,6 +75,8 @@ export const candidateData = {
  morocco: {iso:'MA'},
  belgium: {iso:'BE'},
  poland: {iso:'PL'},
+ sweden: {iso:'SE'},
+ turkey: {iso:'TR'},
 } as const;
 
 export function candidateCopy(country: StandardCandidateCountry, locale: CandidateLocale) {
@@ -114,7 +116,7 @@ export function candidateInfo(slug: CandidateCountry, locale: CandidateLocale) {
 export function candidateTrail(slug: CandidateCountry, locale: CandidateLocale) {
  const p = candidateInfo(slug,locale);
  const c = sharedCopy[locale];
- return [{name:c.home,path:p.prefix+'/'},(isSeaCandidate(slug) || slug === 'morocco' ? {name:candidateSeaLabel(locale),path:p.prefix+'/services/sea-freight/'} : {name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'}),{name:p.name,path:candidatePath(slug,locale)}];
+ return [{name:c.home,path:p.prefix+'/'},(isSeaCandidate(slug) || slug === 'morocco' || slug === 'turkey' ? {name:candidateSeaLabel(locale),path:p.prefix+'/services/sea-freight/'} : {name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'}),{name:p.name,path:candidatePath(slug,locale)}];
 }
 
 export function candidateSchema(slug: CandidateCountry, locale: CandidateLocale) {

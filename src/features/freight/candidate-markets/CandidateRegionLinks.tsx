@@ -1,6 +1,6 @@
 import southAfricaCopy from './southAfricaCopy.json';
 import {europeCandidateSlugs,pacificCountrySlugs,eastAsiaCountrySlugs,southeastAsiaCountrySlugs,candidatePath,candidateInfo,sharedCopy,type CandidateLocale} from './model';
-const northernPortMarkets = ['belgium', 'poland'] as const;
+const northernPortMarkets = ['belgium', 'poland', 'sweden'] as const;
 
 export function CandidateRegionLinks({locale}:{locale:CandidateLocale}) {
  return <div className="mt-8 border-t border-[#dedde1] py-6"><p>{sharedCopy[locale].moreDestinations}</p><div className="flex flex-wrap gap-6 mt-4">{[...europeCandidateSlugs, 'italy' as const, ...northernPortMarkets].map(slug=><a className="underline underline-offset-4" key={slug} href={candidatePath(slug,locale)}>{candidateInfo(slug,locale).name} ↗</a>)}</div></div>;
@@ -39,6 +39,7 @@ export function PacificCountryLinks({locale}:{locale:CandidateLocale}) {
    <a className="underline underline-offset-4 me-6" href={candidatePath('italy',locale)}>{candidateInfo('italy',locale).name} ↗</a>
    {northernPortMarkets.map(country=><a className="underline underline-offset-4 me-6" key={country} href={candidatePath(country,locale)}>{candidateInfo(country,locale).name} ↗</a>)}
    <a className="underline underline-offset-4 me-6" href={candidatePath('morocco',locale)}>{candidateInfo('morocco',locale).name} ↗</a>
+   <a className="underline underline-offset-4 me-6" href={candidatePath('turkey',locale)}>{candidateInfo('turkey',locale).name} ↗</a>
    <a className="underline underline-offset-4" href={candidatePath('south-africa',locale)}>{southAfricaCopy[locale].title} ↗</a>
   </div>
  </section>;

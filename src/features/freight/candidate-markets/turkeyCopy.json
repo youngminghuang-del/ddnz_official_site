@@ -1,0 +1,218 @@
+{
+  "en": {
+    "name": "Türkiye",
+    "title": "Shipping from China to Türkiye",
+    "intro": "Compare ocean freight from China to Ambarlı and İzmit. Request a separate warehouse delivery quote for Istanbul or Kocaeli using the receiving postcode.",
+    "ports": [
+      "Ambarlı",
+      "İzmit"
+    ],
+    "inland": "Istanbul",
+    "delivery": "Compare both discharge ports to the same Istanbul or Kocaeli warehouse. Give the postcode, truck access limits, unloading equipment and appointment window. Confirm the terminal and empty return when comparing costs.",
+    "customs": [
+      "Confirm the Turkish importer and customs representative. Send the commercial invoice, packing list and bill of lading, with origin evidence when required.",
+      "Verify the GTİP tariff code and origin with the broker. Confirm duty, import VAT and the applicable declaration or inspection requirements before dispatch.",
+      "For machinery, have the importer confirm whether TAREKS or other product checks apply to the specific model and tariff code and prepare the applicable conformity documents."
+    ],
+    "factoryTitle": "Shipping a commercial spiral dough mixer from a Chinese factory to Türkiye",
+    "factory": [
+      "Before crating, record the machine model and serial number, photograph the nameplate, and match the electrical configuration, bowl and included parts to the order. Match each crate number to the machine in the packing list.",
+      "Send gross weight, crate dimensions and the manufacturer’s lifting points. For Istanbul delivery, confirm the unloading equipment, access and appointment before booking the truck."
+    ],
+    "factoryLink": "Explore dough and bakery machinery",
+    "photo": "Commercial spiral mixer product reference",
+    "faq": [
+      "The mixer and spare bowl travel in separate crates. What should the factory send?",
+      "List the machine serial number and both crate IDs, weights and dimensions. Link the spare bowl to the correct machine model so the broker and warehouse can identify both items."
+    ]
+  },
+  "zh": {
+    "name": "土耳其",
+    "title": "中国到土耳其货运",
+    "intro": "比较中国到安巴尔勒和伊兹米特的海运。送伊斯坦布尔或科贾埃利仓库时，按收货邮编另询到门价。",
+    "ports": [
+      "安巴尔勒",
+      "伊兹米特"
+    ],
+    "inland": "伊斯坦布尔",
+    "delivery": "用同一个伊斯坦布尔或科贾埃利收货地址比两港。提供邮编、车辆限行、卸货设备和预约时段，另核实际码头和还空地点。",
+    "customs": [
+      "确认土耳其进口方和报关代理。交接商业发票、装箱单和提单，按要求准备原产地凭证。",
+      "请代理核对 GTİP 商品税号和原产地，发货前确认关税、进口增值税及适用的申报或查验要求。",
+      "机械设备由进口方按具体型号和税号确认是否涉及 TAREKS 或其他产品检查，并准备适用的符合性文件。"
+    ],
+    "factoryTitle": "中国工厂的商用螺旋和面机怎么发往土耳其？",
+    "factory": [
+      "装箱前记录整机型号和序列号，拍铭牌，按订单核对电气配置、面桶及标配件。装箱单把每个木箱号与对应整机关联。",
+      "提供箱体尺寸、毛重和厂方认可的吊装或叉运位置。送伊斯坦布尔仓时，订车前确认车辆进场限制、卸货设备和预约时段。"
+    ],
+    "factoryLink": "查看和面及烘焙设备",
+    "photo": "商用螺旋和面机产品示例",
+    "faq": [
+      "和面机和备用面桶分箱，工厂应怎么写装箱单？",
+      "列明整机序列号、两个箱号、各箱尺寸和毛重。把备用面桶对应到整机型号，方便报关代理和收货仓核对。"
+    ]
+  },
+  "es": {
+    "name": "Turquía",
+    "title": "Envíos de China a Turquía",
+    "intro": "Compara el flete marítimo de China a Ambarlı y İzmit. Pide una cotización aparte para la entrega en un almacén de Estambul o Kocaeli con el código postal.",
+    "ports": [
+      "Ambarlı",
+      "İzmit"
+    ],
+    "inland": "Estambul",
+    "delivery": "Compara ambos puertos para un mismo almacén en Estambul o Kocaeli. Indica código postal, acceso de camiones, medios de descarga y horario. Confirma terminal y devolución del vacío.",
+    "customs": [
+      "Confirma el importador turco y su representante. Facilita factura, lista de empaque y conocimiento de embarque, con prueba de origen cuando proceda.",
+      "Verifica el código GTİP y el origen con el agente. Confirma aranceles, IVA de importación y requisitos de declaración o inspección antes de expedir.",
+      "Para maquinaria, pide al importador que confirme si corresponde TAREKS u otros controles según modelo y código y prepare la documentación de conformidad aplicable."
+    ],
+    "factoryTitle": "Envío de una amasadora espiral comercial de una fábrica china a Turquía",
+    "factory": [
+      "Antes de encajonar, anota el modelo y número de serie, fotografía la placa y verifica la configuración eléctrica, la cuba y las piezas contra el pedido. Relaciona cada cajón con la máquina en la lista de empaque.",
+      "Envía peso bruto, medidas y puntos de elevación autorizados por el fabricante. Para Estambul, confirma el acceso, medios de descarga y cita antes de reservar el camión."
+    ],
+    "factoryLink": "Consulta la maquinaria de amasado y panadería",
+    "photo": "Ejemplo de amasadora espiral comercial",
+    "faq": [
+      "La amasadora y la cuba de repuesto van en cajones distintos. ¿Qué debe enviar la fábrica?",
+      "Indica el número de serie, identificadores de ambos cajones, dimensiones y pesos. Vincula la cuba de repuesto al modelo de máquina para su identificación en aduana y almacén."
+    ]
+  },
+  "fr": {
+    "name": "Turquie",
+    "title": "Expédition de Chine vers la Turquie",
+    "intro": "Comparez le fret maritime de Chine vers Ambarlı et İzmit. Demandez un devis séparé pour un entrepôt à Istanbul ou Kocaeli en indiquant son code postal.",
+    "ports": [
+      "Ambarlı",
+      "İzmit"
+    ],
+    "inland": "Istanbul",
+    "delivery": "Comparez les deux ports pour la même adresse à Istanbul ou Kocaeli. Indiquez le code postal, l’accès camion, le matériel de déchargement et le créneau. Confirmez le terminal et le retour du vide.",
+    "customs": [
+      "Confirmez l’importateur turc et son représentant. Remettez la facture, la liste de colisage et le connaissement, avec un justificatif d’origine si nécessaire.",
+      "Vérifiez le code GTİP et l’origine avec le déclarant. Confirmez les droits, la TVA à l’importation et les formalités ou contrôles avant expédition.",
+      "Pour les machines, l’importateur vérifie si le modèle et le classement relèvent de TAREKS ou d’un autre contrôle et prépare les documents de conformité applicables."
+    ],
+    "factoryTitle": "Expédier un pétrin professionnel à spirale d’une usine chinoise vers la Turquie",
+    "factory": [
+      "Avant la mise en caisse, relevez modèle et numéro de série, photographiez la plaque et contrôlez la configuration électrique, la cuve et les pièces. Reliez chaque caisse à la machine dans la liste de colisage.",
+      "Communiquez le poids brut, les dimensions et les points de levage validés par le fabricant. Pour Istanbul, confirmez l’accès, les moyens de déchargement et le rendez-vous avant de réserver le camion."
+    ],
+    "factoryLink": "Voir les pétrins et machines de boulangerie",
+    "photo": "Exemple de pétrin professionnel à spirale",
+    "faq": [
+      "Le pétrin et la cuve de rechange voyagent dans deux caisses. Que fournir ?",
+      "Indiquez le numéro de série, les identifiants des deux caisses, leurs dimensions et poids. Associez la cuve de rechange au modèle pour faciliter les contrôles et la réception."
+    ]
+  },
+  "ru": {
+    "name": "Турция",
+    "title": "Доставка грузов из Китая в Турцию",
+    "intro": "Сравните морские перевозки из Китая в Амбарлы и Измит. Для доставки на склад в Стамбуле или Коджаэли запросите отдельный расчёт по почтовому индексу.",
+    "ports": [
+      "Амбарлы",
+      "Измит"
+    ],
+    "inland": "Стамбул",
+    "delivery": "Сравните порты для одного склада в Стамбуле или Коджаэли. Укажите индекс, ограничения для машин, средства выгрузки и время приёмки. Уточните терминал и возврат пустого контейнера.",
+    "customs": [
+      "Подтвердите турецкого импортёра и полномочия представителя. Предоставьте инвойс, упаковочный лист и коносамент, а по требованию — подтверждение происхождения.",
+      "Сверьте код GTİP и происхождение с брокером. До отправки проверьте пошлину, ввозной НДС и требования к декларированию или проверке.",
+      "По модели и коду оборудования импортёр проверяет применимость TAREKS и других процедур и готовит необходимые документы о соответствии."
+    ],
+    "factoryTitle": "Отправка коммерческого спирального тестомеса с китайской фабрики в Турцию",
+    "factory": [
+      "До упаковки запишите модель и серийный номер, сфотографируйте табличку и сверьте электрическое исполнение, дежу и комплектность с заказом. В упаковочном листе свяжите номера ящиков с машиной.",
+      "Укажите размеры, вес брутто и точки подъёма по данным изготовителя. До заказа машины в Стамбул уточните въезд, оборудование для выгрузки и время приёмки."
+    ],
+    "factoryLink": "Посмотреть оборудование для теста и выпечки",
+    "photo": "Пример коммерческого спирального тестомеса",
+    "faq": [
+      "Что предоставить, если тестомес и запасная дежа в разных ящиках?",
+      "Укажите серийный номер, номера обоих ящиков, их размеры и вес. Свяжите запасную дежу с моделью тестомеса для таможни и склада."
+    ]
+  },
+  "ar": {
+    "name": "تركيا",
+    "title": "الشحن من الصين إلى تركيا",
+    "intro": "قارن الشحن البحري من الصين إلى أمبارلي وإزميت. اطلب سعراً منفصلاً للتوصيل إلى مستودع في إسطنبول أو كوجالي باستخدام الرمز البريدي.",
+    "ports": [
+      "أمبارلي",
+      "إزميت"
+    ],
+    "inland": "إسطنبول",
+    "delivery": "قارن الميناءين للعنوان نفسه في إسطنبول أو كوجالي. اذكر الرمز البريدي وقيود دخول الشاحنة ومعدات التفريغ والموعد. أكد محطة التفريغ وإعادة الحاوية الفارغة.",
+    "customs": [
+      "أكد هوية المستورد التركي وممثله الجمركي. سلّم الفاتورة وقائمة التعبئة وبوليصة الشحن وإثبات المنشأ عند الحاجة.",
+      "تحقق من رمز التعرفة GTİP والمنشأ مع المخلص. أكّد الرسوم وضريبة الاستيراد ومتطلبات التصريح أو التفتيش قبل الشحن.",
+      "للآلات، يتحقق المستورد من انطباق TAREKS أو ضوابط أخرى بحسب الطراز والرمز الجمركي ويجهّز مستندات المطابقة المطلوبة."
+    ],
+    "factoryTitle": "شحن عجانة حلزونية تجارية من مصنع صيني إلى تركيا",
+    "factory": [
+      "قبل وضعها في الصندوق، سجل الطراز والرقم التسلسلي وصوّر لوحة البيانات وطابق الكهرباء والوعاء والملحقات مع الطلب. اربط رقم الصندوق بالآلة في قائمة التعبئة.",
+      "أرسل أبعاد الصندوق والوزن الإجمالي ونقاط الرفع المعتمدة من المصنع. قبل حجز الشاحنة إلى إسطنبول، تحقق من الدخول ومعدات التفريغ والموعد."
+    ],
+    "factoryLink": "اطّلع على معدات العجن والمخابز",
+    "photo": "مثال لعجانة حلزونية تجارية",
+    "faq": [
+      "ما المستندات إذا شُحنت العجانة والوعاء الاحتياطي في صندوقين؟",
+      "اذكر الرقم التسلسلي ورقمي الصندوقين وأبعاد كل منهما ووزنه. اربط الوعاء الاحتياطي بطراز العجانة لتسهيل التحقق لدى المخلص والمستودع."
+    ]
+  },
+  "pt": {
+    "name": "Turquia",
+    "title": "Transporte da China para a Turquia",
+    "intro": "Compare o frete marítimo da China para Ambarlı e İzmit. Solicite uma cotação separada para um armazém em Istambul ou Kocaeli com o código postal.",
+    "ports": [
+      "Ambarlı",
+      "İzmit"
+    ],
+    "inland": "Istambul",
+    "delivery": "Compare ambos os portos para o mesmo endereço em Istambul ou Kocaeli. Informe código postal, acesso, equipamento de descarga e agendamento. Confirme terminal e devolução do vazio.",
+    "customs": [
+      "Confirme o importador turco e o representante aduaneiro. Entregue fatura, romaneio e conhecimento de embarque, com prova de origem quando exigida.",
+      "Verifique o código GTİP e a origem com o despachante. Confirme tributos, IVA e exigências de declaração ou inspeção antes de embarcar.",
+      "Para máquinas, verifique com o importador se modelo e código entram no TAREKS ou em outro controle e reúna os documentos de conformidade aplicáveis."
+    ],
+    "factoryTitle": "Envio de masseira espiral comercial de uma fábrica chinesa à Turquia",
+    "factory": [
+      "Antes de embalar, registre modelo e número de série, fotografe a placa e confira a configuração elétrica, a cuba e os itens do pedido. Vincule cada caixa à máquina no romaneio.",
+      "Envie peso bruto, dimensões e pontos de içamento indicados pelo fabricante. Para Istambul, confirme acesso, equipamento de descarga e horário antes de reservar o caminhão."
+    ],
+    "factoryLink": "Veja máquinas de massa e panificação",
+    "photo": "Exemplo de masseira espiral comercial",
+    "faq": [
+      "A masseira e a cuba extra vão em caixas separadas. O que informar?",
+      "Inclua número de série, identificadores, pesos e dimensões das duas caixas. Associe a cuba ao modelo da máquina para conferência na alfândega e no armazém."
+    ]
+  },
+  "tr": {
+    "name": "Türkiye",
+    "title": "Çin’den Türkiye’ye yük taşımacılığı",
+    "intro": "Çin’den Ambarlı ve İzmit’e deniz navlununu karşılaştırın. İstanbul veya Kocaeli’deki depoya teslimat için adresin posta koduyla ayrı teklif alın.",
+    "ports": [
+      "Ambarlı",
+      "İzmit"
+    ],
+    "inland": "İstanbul",
+    "delivery": "İki limanı İstanbul veya Kocaeli’deki aynı adres için karşılaştırın. Posta kodunu, araç giriş kısıtlarını, boşaltma ekipmanını ve randevuyu bildirin. Terminal ve boş konteyner iadesini doğrulayın.",
+    "customs": [
+      "Türkiye’deki ithalatçıyı ve gümrük temsilcisini belirleyin. Faturayı, çeki listesini ve konşimentoyu, gerektiğinde menşe belgesiyle iletin.",
+      "GTİP ve menşeyi gümrük temsilcisiyle doğrulayın. Sevkiyattan önce vergileri, ithalat KDV’sini ve beyan veya denetim gerekliliklerini kontrol edin.",
+      "Makinenin modeli ve GTİP’e göre TAREKS veya başka bir ürün denetimine tabi olup olmadığını ithalatçıyla doğrulayın ve ilgili uygunluk belgelerini hazırlayın."
+    ],
+    "factoryTitle": "Çin fabrikasından Türkiye’ye ticari spiral hamur yoğurma makinesi gönderimi",
+    "factory": [
+      "Sandığa koymadan önce modeli ve seri numarasını kaydedin, etiketi fotoğraflayın. Elektrik yapılandırmasını, kazanı ve parçaları siparişle karşılaştırın. Çeki listesinde sandık numarasını makineyle eşleştirin.",
+      "Brüt ağırlığı, sandık ölçülerini ve üreticinin gösterdiği kaldırma noktalarını paylaşın. İstanbul deposuna kamyon ayırmadan önce giriş, boşaltma ekipmanı ve randevuyu doğrulayın."
+    ],
+    "factoryLink": "Hamur ve fırın makinelerini inceleyin",
+    "photo": "Ticari spiral yoğurma makinesi örneği",
+    "faq": [
+      "Makine ve yedek kazan ayrı sandıklardaysa fabrika ne vermeli?",
+      "Seri numarasını, iki sandığın numarasını, ağırlığını ve ölçülerini kaydedin. Gümrük ve depo kontrolü için yedek kazanı makine modeliyle eşleştirin."
+    ]
+  }
+}

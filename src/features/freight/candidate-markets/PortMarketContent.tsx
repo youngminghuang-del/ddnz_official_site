@@ -71,7 +71,7 @@ export function PortMarketContent({country, locale}: {country: PortMarketCountry
             </article>;
           })}
         </div>
-        <p className="candidate-market-sample">{labels.scope}</p>
+        <p className="candidate-market-sample">{labels.scope}{'transitBasis' in c && ` ${c.transitBasis}`}</p>
       </section>
       <section className="gulf-section candidate-market-guide" id="import-rules" aria-labelledby="import-rules-title">
         <h2 id="import-rules-title">{guide[locale].rulesTitle}</h2>

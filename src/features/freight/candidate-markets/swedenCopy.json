@@ -1,0 +1,226 @@
+{
+  "en": {
+    "name": "Sweden",
+    "title": "Shipping from China to Sweden",
+    "intro": "Compare full-container and LCL ocean freight from China to Gothenburg and Helsingborg. Request delivery to Jönköping or another Swedish warehouse by postcode.",
+    "ports": [
+      "Gothenburg",
+      "Helsingborg"
+    ],
+    "inland": "Jönköping",
+    "delivery": "For both ports, send the same receiving postcode, delivery window and pallet unloading conditions. Confirm the discharge terminal, pickup location and empty-container return before comparing delivered costs.",
+    "customs": [
+      "Confirm the importer’s EORI and customs representative. Supply the commercial invoice, packing list and transport document for the Swedish import declaration.",
+      "Check the commodity code and origin in Tulltaxan. Confirm applicable duties, restrictions and how the importer accounts for import VAT.",
+      "For electrical goods placed on the Swedish market, have the importer check whether producer responsibility applies to the actual model."
+    ],
+    "factoryTitle": "Shipping foldable solar panels from a Chinese factory to Sweden",
+    "factory": [
+      "List the panel model, folded carton dimensions, packed weight and carton count. Have the factory protect the hinges and connectors and state the permitted stacking limit on the packing sheet.",
+      "For delivery to Jönköping, send pallet dimensions, forklift access and a receiving window. List any power station with a lithium battery separately so the carrier can review it before combining cargo."
+    ],
+    "factoryLink": "See pre-shipment packing inspection",
+    "photo": "Foldable solar panel product reference",
+    "faq": [
+      "Can I include battery power stations with the foldable panels?",
+      "List them as a separate cargo line with the battery configuration. Confirm the carrier’s acceptance and any extra handling charges before consolidation."
+    ],
+    "transitBasis": "Both Swedish transit figures are JHZ port-to-port estimates across Chinese origins. Confirm the sailing and any feeder connection for your actual loading port."
+  },
+  "zh": {
+    "name": "瑞典",
+    "title": "中国到瑞典货运",
+    "intro": "比较中国到哥德堡和赫尔辛堡的整柜与拼箱海运。送延雪平或瑞典其他仓库，可按收货邮编另询到门价。",
+    "ports": [
+      "哥德堡",
+      "赫尔辛堡"
+    ],
+    "inland": "延雪平",
+    "delivery": "用同一个收货邮编、预约时段和托盘卸货条件比两港。先确认卸货码头、提货点和还空地点，再比较到仓总费用。",
+    "customs": [
+      "确认进口方 EORI 和报关代理授权，为瑞典进口申报准备商业发票、装箱单和运输单证。",
+      "按商品税号与原产地查 Tulltaxan，核实适用的关税、限制及进口增值税申报方式。",
+      "电气产品在瑞典销售前，由进口方按实际型号核对电气电子设备生产者责任的适用性。"
+    ],
+    "factoryTitle": "中国工厂的折叠太阳能板怎么发往瑞典？",
+    "factory": [
+      "提供面板型号、折叠后的外箱尺寸、毛重和箱数。请工厂保护折叠关节和接口，在装箱单中写明允许堆叠的上限。",
+      "询延雪平到仓时补托盘尺寸、叉车条件和预约时段。若同单有带锂电池的便携电源，单独列为一项，请承运人审核后再决定是否合运。"
+    ],
+    "factoryLink": "查看出货前包装验货",
+    "photo": "折叠太阳能板产品示例",
+    "faq": [
+      "折叠太阳能板能和带电池的便携电源合运吗？",
+      "把带电池的便携电源及电池配置单独列明。集货前请承运人确认是否接受合运及相关操作费。"
+    ],
+    "transitBasis": "瑞典两港的航程均为 JHZ 中国多起运港的港对港估时。按实际装运港确认班次和支线中转。"
+  },
+  "es": {
+    "name": "Suecia",
+    "title": "Envíos de China a Suecia",
+    "intro": "Compara contenedores completos y grupaje marítimo de China a Gotemburgo y Helsingborg. Cotiza la entrega en Jönköping u otro almacén sueco con el código postal.",
+    "ports": [
+      "Gotemburgo",
+      "Helsingborg"
+    ],
+    "inland": "Jönköping",
+    "delivery": "Usa el mismo código postal, horario y condiciones de descarga para comparar ambos puertos. Confirma la terminal, el punto de recogida y la devolución del contenedor vacío.",
+    "customs": [
+      "Confirma el EORI del importador y la representación aduanera. Prepara factura, lista de empaque y documento de transporte para la declaración sueca.",
+      "Consulta Tulltaxan por código y origen. Confirma aranceles, restricciones y cómo se declara el IVA de importación.",
+      "Para productos eléctricos comercializados en Suecia, pide al importador que revise si al modelo le corresponde responsabilidad del productor."
+    ],
+    "factoryTitle": "Cómo enviar paneles solares plegables de una fábrica china a Suecia",
+    "factory": [
+      "Indica modelo, dimensiones de la caja con el panel plegado, peso bruto y número de cajas. Protege bisagras y conectores y pide a la fábrica que indique el límite de apilado.",
+      "Para entregar en Jönköping, informa las dimensiones del palé, el acceso para la carretilla y la cita. Si el pedido incluye una estación de energía con batería de litio, declárala aparte para que el transportista evalúe si puede viajar junto a los paneles."
+    ],
+    "factoryLink": "Ver la inspección de embalaje antes del envío",
+    "photo": "Ejemplo de panel solar plegable",
+    "faq": [
+      "¿Se pueden enviar los paneles plegables con estaciones de energía con batería?",
+      "Declara por separado la estación y la configuración de batería. Confirma la aceptación y los cargos de manipulación con el transportista antes de consolidar."
+    ],
+    "transitBasis": "Ambos plazos son estimaciones de JHZ de puerto a puerto desde varios orígenes chinos. Confirma la salida y el servicio de enlace para tu puerto de carga."
+  },
+  "fr": {
+    "name": "Suède",
+    "title": "Expédition de Chine vers la Suède",
+    "intro": "Comparez le conteneur complet et le groupage de Chine vers Göteborg et Helsingborg. Demandez un tarif de livraison à Jönköping ou dans un autre entrepôt suédois avec le code postal.",
+    "ports": [
+      "Göteborg",
+      "Helsingborg"
+    ],
+    "inland": "Jönköping",
+    "delivery": "Comparez les ports pour le même code postal, créneau et moyen de déchargement. Confirmez le terminal, le point d’enlèvement et le retour du conteneur vide.",
+    "customs": [
+      "Confirmez l’EORI de l’importateur et le représentant en douane. Préparez la facture, la liste de colisage et le document de transport pour la déclaration suédoise.",
+      "Vérifiez le classement et l’origine dans Tulltaxan. Confirmez les droits, les restrictions et les modalités de déclaration de la TVA à l’importation.",
+      "Pour les produits électriques mis sur le marché suédois, demandez à l’importateur si la responsabilité du producteur s’applique au modèle concerné."
+    ],
+    "factoryTitle": "Expédier des panneaux solaires pliables d’une usine chinoise vers la Suède",
+    "factory": [
+      "Indiquez le modèle, les dimensions et le poids brut du carton après pliage ainsi que le nombre de colis. Faites protéger charnières et connecteurs et demandez la limite d’empilement.",
+      "Pour une livraison à Jönköping, précisez les dimensions des palettes, l’accès au chariot et le créneau. Déclarez à part toute station d’énergie à batterie lithium pour examen par le transporteur avant le groupage."
+    ],
+    "factoryLink": "Voir le contrôle du colisage avant expédition",
+    "photo": "Exemple de panneau solaire pliable",
+    "faq": [
+      "Peut-on grouper les panneaux pliables avec des stations d’énergie à batterie ?",
+      "Déclarez les stations et la configuration des batteries à part. Faites confirmer par le transporteur l’acceptation et les frais de manutention avant le groupage."
+    ],
+    "transitBasis": "Les deux délais sont des estimations JHZ de port à port depuis plusieurs ports chinois. Confirmez le départ et la correspondance pour le port de chargement choisi."
+  },
+  "ru": {
+    "name": "Швеция",
+    "title": "Доставка грузов из Китая в Швецию",
+    "intro": "Сравните контейнерные и сборные морские перевозки из Китая в Гётеборг и Хельсингборг. Доставку на склад в Йёнчёпинге или другом городе Швеции рассчитайте по индексу.",
+    "ports": [
+      "Гётеборг",
+      "Хельсингборг"
+    ],
+    "inland": "Йёнчёпинг",
+    "delivery": "Сравните оба порта для одного индекса, времени приёмки и условий выгрузки. Подтвердите терминал, место выдачи и возврата порожнего контейнера.",
+    "customs": [
+      "Подтвердите EORI импортёра и полномочия брокера. Подготовьте инвойс, упаковочный лист и транспортный документ для шведской декларации.",
+      "Проверьте код и происхождение товара в Tulltaxan. Согласуйте пошлины, ограничения и порядок учёта ввозного НДС.",
+      "При продаже электротоваров в Швеции импортёр проверяет применимость ответственности производителя к конкретной модели."
+    ],
+    "factoryTitle": "Как отправить складные солнечные панели с китайской фабрики в Швецию",
+    "factory": [
+      "Укажите модель, размеры упакованной панели в сложенном виде, вес брутто и число коробок. Попросите завод защитить шарниры и разъёмы и указать допустимое штабелирование.",
+      "Для доставки в Йёнчёпинг сообщите габариты палет, доступ для погрузчика и время приёмки. Зарядную станцию с литиевой батареей укажите отдельно для проверки перевозчиком перед объединением грузов."
+    ],
+    "factoryLink": "Проверка упаковки перед отгрузкой",
+    "photo": "Пример складной солнечной панели",
+    "faq": [
+      "Можно ли объединить панели и станции с аккумулятором?",
+      "Укажите станции и конфигурацию батарей отдельной строкой. До консолидации подтвердите приём и сборы за обработку у перевозчика."
+    ],
+    "transitBasis": "Для обоих портов указаны оценки JHZ от порта до порта по разным портам Китая. Уточните рейс и фидерное плечо для фактического порта погрузки."
+  },
+  "ar": {
+    "name": "السويد",
+    "title": "الشحن من الصين إلى السويد",
+    "intro": "قارن شحن الحاويات الكاملة والشحن البحري الجزئي من الصين إلى غوتنبرغ وهلسينغبوري. اطلب سعر التوصيل إلى يونشوبينغ أو أي مستودع سويدي بحسب الرمز البريدي.",
+    "ports": [
+      "غوتنبرغ",
+      "هلسينغبوري"
+    ],
+    "inland": "يونشوبينغ",
+    "delivery": "استخدم الرمز البريدي وموعد الاستلام وشروط التفريغ نفسها للميناءين. تحقق من المحطة ونقطة الاستلام وإعادة الحاوية الفارغة قبل مقارنة تكلفة التوصيل.",
+    "customs": [
+      "أكد رقم EORI للمستورد وتفويض المخلص. جهز الفاتورة وقائمة التعبئة ومستند النقل للتصريح السويدي.",
+      "راجع رمز السلعة ومنشأها في Tulltaxan. تحقق من الرسوم والقيود وكيفية التصريح بضريبة الاستيراد.",
+      "للمنتجات الكهربائية المطروحة في السويد، يتحقق المستورد من انطباق مسؤولية المنتج على الطراز المعني."
+    ],
+    "factoryTitle": "شحن ألواح شمسية قابلة للطي من مصنع صيني إلى السويد",
+    "factory": [
+      "اذكر الطراز وأبعاد الصندوق بعد الطي والوزن الإجمالي وعدد الصناديق. اطلب حماية المفاصل والموصلات والسماح بالرص وفق الحد الذي يحدده المصنع.",
+      "لتسعير التوصيل إلى يونشوبينغ، أرسل أبعاد الطبالي وشروط الرافعة وموعد الاستلام. سجل محطة الطاقة ذات بطارية الليثيوم في بند منفصل ليراجع الناقل قبولها قبل التجميع."
+    ],
+    "factoryLink": "اطّلع على فحص التغليف قبل الشحن",
+    "photo": "مثال للوح شمسي قابل للطي",
+    "faq": [
+      "هل يمكن شحن الألواح مع محطات طاقة تحتوي على بطاريات؟",
+      "اذكر محطات الطاقة وترتيب البطاريات في بند منفصل. تحقق من قبول الناقل ورسوم المناولة قبل التجميع."
+    ],
+    "transitBasis": "المدتان تقديران من JHZ للشحن من ميناء إلى ميناء عبر عدة موانئ صينية. تحقق من الرحلة وأي وصلة بحرية بحسب ميناء التحميل الفعلي."
+  },
+  "pt": {
+    "name": "Suécia",
+    "title": "Transporte da China para a Suécia",
+    "intro": "Compare contêiner completo e carga consolidada da China para Gotemburgo e Helsingborg. Solicite a entrega em Jönköping ou outro armazém sueco pelo código postal.",
+    "ports": [
+      "Gotemburgo",
+      "Helsingborg"
+    ],
+    "inland": "Jönköping",
+    "delivery": "Use o mesmo código postal, janela e condições de descarga para comparar os portos. Confirme terminal, retirada e devolução do contêiner vazio.",
+    "customs": [
+      "Confirme o EORI do importador e os poderes do despachante. Prepare fatura, romaneio e documento de transporte para a declaração sueca.",
+      "Consulte a classificação e origem no Tulltaxan. Confira direitos, restrições e a declaração do IVA de importação.",
+      "Para produtos elétricos colocados no mercado sueco, peça ao importador que confirme se a responsabilidade do produtor se aplica ao modelo."
+    ],
+    "factoryTitle": "Envio de painéis solares dobráveis de uma fábrica chinesa à Suécia",
+    "factory": [
+      "Informe modelo, dimensões do painel dobrado na caixa, peso bruto e número de volumes. Peça proteção para articulações e conectores e o limite permitido de empilhamento.",
+      "Para Jönköping, informe as medidas dos paletes, acesso da empilhadeira e horário de recebimento. Liste separadamente qualquer estação de energia com bateria de lítio para avaliação da transportadora antes de consolidar."
+    ],
+    "factoryLink": "Veja a inspeção de embalagem pré-embarque",
+    "photo": "Exemplo de painel solar dobrável",
+    "faq": [
+      "Posso enviar os painéis junto com estações de energia com bateria?",
+      "Declare as estações e a configuração das baterias em linha separada. Confirme aceitação e custos de movimentação antes de consolidar."
+    ],
+    "transitBasis": "Os dois prazos são estimativas JHZ de porto a porto a partir de vários portos chineses. Confirme a saída e a conexão para o porto de embarque real."
+  },
+  "tr": {
+    "name": "İsveç",
+    "title": "Çin’den İsveç’e yük taşımacılığı",
+    "intro": "Çin’den Göteborg ve Helsingborg’a komple konteyner ve parsiyel deniz taşımacılığını karşılaştırın. Jönköping veya başka bir İsveç deposuna teslimat için posta koduyla teklif alın.",
+    "ports": [
+      "Göteborg",
+      "Helsingborg"
+    ],
+    "inland": "Jönköping",
+    "delivery": "İki limanı aynı posta kodu, teslimat saati ve boşaltma koşullarıyla karşılaştırın. Terminali, teslim alma noktasını ve boş konteyner iadesini teyit edin.",
+    "customs": [
+      "İthalatçının EORI numarasını ve temsilci yetkisini doğrulayın. İsveç ithalat beyanı için fatura, çeki listesi ve taşıma belgesini hazırlayın.",
+      "Eşya kodu ve menşeyi Tulltaxan’da kontrol edin. Vergileri, kısıtlamaları ve ithalat KDV’sinin nasıl beyan edildiğini doğrulayın.",
+      "İsveç’te satışa sunulan elektrikli ürünlerde, üretici sorumluluğunun ilgili modeli kapsayıp kapsamadığını ithalatçıyla doğrulayın."
+    ],
+    "factoryTitle": "Çin fabrikasından İsveç’e katlanabilir güneş paneli gönderimi",
+    "factory": [
+      "Modeli, katlanmış ve ambalajlanmış ölçüleri, brüt ağırlığı ve koli sayısını verin. Fabrikanın menteşe ve konnektörleri korumasını ve izin verilen istif sınırını yazmasını isteyin.",
+      "Jönköping teslimatı için palet ölçülerini, forklift erişimini ve randevuyu belirtin. Lityum bataryalı taşınabilir güç istasyonlarını ayrı satıra yazın ve birleştirmeden önce taşıyıcıya kontrol ettirin."
+    ],
+    "factoryLink": "Sevkiyat öncesi ambalaj kontrolü",
+    "photo": "Katlanabilir güneş paneli örneği",
+    "faq": [
+      "Paneller bataryalı güç istasyonuyla birlikte gönderilebilir mi?",
+      "Güç istasyonunu ve batarya düzenini ayrı bildirin. Yükleri birleştirmeden önce taşıma kabulünü ve elleçleme ücretlerini doğrulayın."
+    ],
+    "transitBasis": "İki İsveç limanı için süreler, farklı Çin limanlarından JHZ limandan limana tahminleridir. Yükleme limanınıza göre seferi ve aktarmayı doğrulayın."
+  }
+}
