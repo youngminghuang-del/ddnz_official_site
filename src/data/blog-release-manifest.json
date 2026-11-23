@@ -305,6 +305,26 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "china-lcl-varios-proveedores-cierre-almacen-dividir-envio",
+      "canonical": "https://www.ddnzglobal.com/es/blog/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/",
+      "language": "es",
+      "notion_page_id": "421eac33-2618-812e-b083-f7786b093b98",
+      "release_file": "src/data/lclSplitShipmentRelease.json",
+      "schema_file": "src/data/lcl-split-shipment-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-receiving-checklist.jpg",
+      "images": [
+        "/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-receiving-checklist.jpg",
+        "/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/truck-pallet-handling.jpg",
+        "/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/warehouse-staged-cartons.jpg",
+        "/images/posts/china-lcl-varios-proveedores-cierre-almacen-dividir-envio/forklift-loading-container.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 6
     }
   ]
 }
