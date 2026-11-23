@@ -1,7 +1,7 @@
 import { ArrowRight } from 'lucide-react';
 import southAfricaCopy from './southAfricaCopy.json';
 import copy from './factoryHandoffCopy.json';
-import { candidatePrefix, type CandidateCountry, type CandidateLocale } from './model';
+import { candidatePrefix, type StandardCandidateCountry, type CandidateLocale } from './model';
 
 const servicePaths = {
  japan: '/sourcing-services/inspection-quality-control/',
@@ -14,11 +14,11 @@ const servicePaths = {
  philippines: '/sourcing-services/consolidation-export/',
 };
 
-function hasFactoryHandoff(country: CandidateCountry): country is keyof typeof servicePaths {
+function hasFactoryHandoff(country: StandardCandidateCountry): country is keyof typeof servicePaths {
  return Object.prototype.hasOwnProperty.call(servicePaths, country);
 }
 
-export function FactoryHandoff({country, locale}: {country: CandidateCountry; locale: CandidateLocale}) {
+export function FactoryHandoff({country, locale}: {country: StandardCandidateCountry; locale: CandidateLocale}) {
  if (country === 'south-africa') {
   const c = southAfricaCopy[locale];
   return <section id="factory-handoff" className="candidate-factory-handoff" aria-labelledby="factory-handoff-title">

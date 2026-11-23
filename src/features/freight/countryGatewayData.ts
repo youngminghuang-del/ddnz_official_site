@@ -2,6 +2,7 @@ import type { Language } from '../../i18n/translations';
 import { localizedPacificPort } from './locales/index.mjs';
 
 import southAfricaCopy from './candidate-markets/southAfricaCopy.json';
+import {isMediterraneanCountry, mediterraneanCopy} from './candidate-markets/mediterraneanMarkets';
 
 type Port = readonly [name: string, chinese: string, longitude: number, latitude: number, lookup?: string];
 type Bounds = [west: number, south: number, east: number, north: number];
@@ -46,6 +47,14 @@ export const countryGateways: Record<string, GatewayMap> = {
  'south-korea': {id:'410', ports:[['Busan','釜山',129.03,35.10,'BUSAN']]},
  canada: {id:'124', bounds:[-132,45,-114,53], ports:[['Vancouver','温哥华',-123.10,49.29,'VANCOUVER,CA']]},
  australia: {id:'036', ports:[['Sydney · Port Botany','悉尼 · 博塔尼港',151.218,-33.974]]},
+ italy: {id:'380', bounds:[6.4,40.7,14.7,46.6], ports:[
+  ['Genoa','热那亚',8.95,44.4167],
+  ['La Spezia','拉斯佩齐亚',9.8333,44.1],
+ ]},
+ morocco: {id:'504', bounds:[-10,30.5,-2.4,36.3], ports:[
+  ['Tanger Med','丹吉尔地中海港',-5.50,35.89],
+  ['Casablanca','卡萨布兰卡',-7.6167,33.6],
+ ]},
  netherlands: {id:'528', ports:[['Rotterdam','鹿特丹',4.14,51.95]]},
  'united-kingdom': {id:'826', ports:[['Southampton','南安普敦',-1.44,50.91]]},
  france: {id:'250', bounds:[-5.4,41.2,9.8,51.5], ports:[['Le Havre','勒阿弗尔',0.16,49.48]]},
@@ -133,8 +142,10 @@ export function countryGatewayLabels(country: string, locale: Language) {
   };
  }
  const [title, note] = mapText[locale];
- const ports = countryGateways[country].ports.map(([name, chinese, longitude, latitude, lookup]) => ({
-  name: (lookup && localizedPacificPort(lookup, locale)) || (locale === 'zh' ? chinese : name),
+ const ports = countryGateways[country].ports.map(([name, chinese, longitude, latitude, lookup], i) => ({
+  name: isMediterraneanCountry(country)
+   ? mediterraneanCopy[country][locale].ports[i]
+   : (lookup && localizedPacificPort(lookup, locale)) || (locale === 'zh' ? chinese : name),
   coordinates: [longitude, latitude] as [number, number],
  }));
  return {title, note, ports};

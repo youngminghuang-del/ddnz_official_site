@@ -1,4 +1,6 @@
 import {Fragment} from 'react';
+import {MediterraneanContent} from './MediterraneanContent';
+import {isMediterraneanCountry} from './mediterraneanMarkets';
 import {ArrowRight, Ship, PackageCheck, Truck, FileText} from 'lucide-react';
 import { MarketImportRules, MarketRateOverview, marketGuide, type MarketRateRow } from './MarketGuides';
 import scenarioCopy from './quoteScenarioCopy.json';
@@ -13,6 +15,7 @@ import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
 import {candidateData,candidateQuoteDestination,candidateCopy,candidateInfo,candidateTrail,candidatePrefix,europeCandidateSlugs,pacificCandidateSlugs,isSeaCandidate,candidateSeaLabel,candidatePath,type CandidateCountry,type CandidateLocale} from './model';
 
 export default function CandidateContent({country,locale,initialRates=[]}:{country:CandidateCountry;locale:CandidateLocale;initialRates?:readonly MarketRateRow[]}) {
+ if (isMediterraneanCountry(country)) return <MediterraneanContent country={country} locale={locale}/>;
  const m=candidateData[country],c=candidateCopy(country,locale),p=candidateInfo(country,locale),prefix=candidatePrefix(locale);
  const quote=quoteLinkProps(`${prefix}/get-a-quote/?${new URLSearchParams({leadGoal:'Freight Export',source:'international_country',destinationText:candidateQuoteDestination(country,locale,p.name),notes:`${c.summary}\n${c.quoteNote}`})}`);
  const breadcrumb=candidateTrail(country,locale);

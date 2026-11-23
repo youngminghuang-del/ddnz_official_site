@@ -13,6 +13,7 @@ import additionalSoutheastAsiaCopy from './additionalSoutheastAsiaCopy.json';
 
 import southAfricaTradeCopy from './southAfricaTradeCopy.json';
 import southAfricaCopy from './southAfricaCopy.json';
+import {isMediterraneanCountry, mediterraneanCopy, mediterraneanSlugs} from './mediterraneanMarkets';
 
 const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy, ...southeastAsiaCopy, ...additionalSoutheastAsiaCopy};
 
@@ -25,7 +26,9 @@ export const eastAsiaCountrySlugs = ['japan', 'south-korea'] as const;
 export const southeastAsiaCountrySlugs = ['vietnam', 'malaysia', 'singapore', 'thailand', 'indonesia', 'philippines'] as const;
 export const pacificCandidateSlugs = [...pacificCountrySlugs, ...eastAsiaCountrySlugs, ...southeastAsiaCountrySlugs] as const;
 const seaCandidateSlugs = [...pacificCandidateSlugs, 'south-africa'] as const;
-export const candidateSlugs = [...europeCandidateSlugs, ...seaCandidateSlugs] as const;
+const standardCandidateSlugs = [...europeCandidateSlugs, ...seaCandidateSlugs] as const;
+export const candidateSlugs = [...standardCandidateSlugs, ...mediterraneanSlugs] as const;
+export type StandardCandidateCountry = typeof standardCandidateSlugs[number];
 type SeaCandidate = typeof seaCandidateSlugs[number];
 export const isSeaCandidate = (slug: string): slug is SeaCandidate => seaCandidateSlugs.includes(slug as SeaCandidate);
 const seaLabels = {en:'Sea freight',zh:'海运服务',es:'Flete marítimo',fr:'Fret maritime',ru:'Морские перевозки',ar:'الشحن البحري',pt:'Frete marítimo',tr:'Deniz taşımacılığı'};
@@ -68,13 +71,15 @@ export const candidateData = {
  indonesia: {iso:'ID',gateway:'Jakarta · Tanjung Priok',airport:'CGK'},
  philippines: {iso:'PH',gateway:'Manila',airport:'MNL'},
  'south-africa': {iso:'ZA', gateway:'Durban', airport:'JNB'},
+ italy: {iso:'IT'},
+ morocco: {iso:'MA'},
 } as const;
 
-export function candidateCopy(country: CandidateCountry, locale: CandidateLocale) {
+export function candidateCopy(country: StandardCandidateCountry, locale: CandidateLocale) {
  return { ...sharedCopy[locale], ...(isSeaCandidate(country) ? seaCountryCopy(country,locale) : countryCopy[country][locale]) };
 }
 const southeastQuotePorts = { vietnam: 'HOCHIMINH CAT LAI', malaysia: 'PORT KELANG', singapore: 'SINGAPORE', thailand: 'LAEM CHABANG', indonesia: 'JAKARTA', philippines: 'MANILA' } as const;
-export function candidateQuoteDestination(country: CandidateCountry, locale: CandidateLocale, name: string, scope: 'port' | 'door' = 'port') {
+export function candidateQuoteDestination(country: StandardCandidateCountry, locale: CandidateLocale, name: string, scope: 'port' | 'door' = 'port') {
  if (country === 'south-africa') {
   const c = southAfricaCopy[locale];
   return `${name} · ${scope === 'door' ? c.johannesburg : c.durban}`;
@@ -100,19 +105,21 @@ export const seaMarketBadges = {
 const origin = 'https://www.ddnzglobal.com';
 
 export function candidateInfo(slug: CandidateCountry, locale: CandidateLocale) {
- const {name,title,intro} = candidateCopy(slug, locale);
+ const {name,title,intro} = isMediterraneanCountry(slug) ? mediterraneanCopy[slug][locale] : candidateCopy(slug, locale);
  return {slug, locale, prefix:candidatePrefix(locale), name, url:origin+candidatePath(slug,locale), title:title+' | DDNZ', description:intro, language:candidateLanguage(locale)};
 }
 
 export function candidateTrail(slug: CandidateCountry, locale: CandidateLocale) {
  const p = candidateInfo(slug,locale);
- const c = candidateCopy(slug, locale);
- return [{name:c.home,path:p.prefix+'/'},(isSeaCandidate(slug) ? {name:candidateSeaLabel(locale),path:p.prefix+'/services/sea-freight/'} : {name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'}),{name:p.name,path:candidatePath(slug,locale)}];
+ const c = sharedCopy[locale];
+ return [{name:c.home,path:p.prefix+'/'},(isSeaCandidate(slug) || slug === 'morocco' ? {name:candidateSeaLabel(locale),path:p.prefix+'/services/sea-freight/'} : {name:c.europe,path:p.prefix+'/shipping-from-china-to-europe/'}),{name:p.name,path:candidatePath(slug,locale)}];
 }
 
 export function candidateSchema(slug: CandidateCountry, locale: CandidateLocale) {
  const p = candidateInfo(slug,locale);
- const c = candidateCopy(slug, locale);
+ const c = isMediterraneanCountry(slug)
+  ? {...mediterraneanCopy[slug][locale], serviceType:sharedCopy[locale].serviceType}
+  : candidateCopy(slug, locale);
  return {'@context':'https://schema.org','@graph':[
   {'@type':'WebPage','@id':p.url,url:p.url,name:p.title,description:p.description,inLanguage:p.language,breadcrumb:{'@id':p.url+'#breadcrumb'},mainEntity:{'@id':p.url+'#service'}},
   {'@type':'Service','@id':p.url+'#service',url:p.url,name:c.title,description:p.description,serviceType:c.serviceType,areaServed:{'@type':'Country',name:p.name,identifier:candidateData[slug].iso},provider:{'@type':'Organization','@id':origin+'/#heaven-born',name:locale==='zh'?COMPANY.freightZh:COMPANY.freightEn},mainEntityOfPage:{'@id':p.url}},

@@ -1,6 +1,6 @@
 import { ArrowRight, ClipboardList, Ship, Truck } from 'lucide-react';
 import { quoteLinkProps } from '../../../lib/quoteLinkPolicy.mjs';
-import { candidateCopy, candidateQuoteDestination, candidatePrefix, isSeaCandidate, seaCountryCopy, seaMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, candidateQuoteDestination, candidatePrefix, isSeaCandidate, seaCountryCopy, seaMarketBadges, type StandardCandidateCountry, type CandidateLocale } from './model';
 import scenarioCopy from './quoteScenarioCopy.json';
 
 const subjects = {
@@ -9,7 +9,7 @@ const subjects = {
  netherlands: { tag: 'T1 · Article 23', door: 'nlDoor', steps: ['nlStart', 'nlDeclare', 'nlRelease'] },
 } as const;
 
-export function QuoteScenarios({country,locale}: {country:CandidateCountry; locale:CandidateLocale}) {
+export function QuoteScenarios({country,locale}: {country:StandardCandidateCountry; locale:CandidateLocale}) {
  const c = scenarioCopy[locale];
  const page = candidateCopy(country, locale);
  const sea = isSeaCandidate(country);

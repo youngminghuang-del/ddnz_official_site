@@ -1,0 +1,226 @@
+{
+  "en": {
+    "name": "Morocco",
+    "title": "Shipping from China to Morocco",
+    "intro": "Compare container shipping from China to Tanger Med and Casablanca. Quote multi-supplier consolidation and delivery to your receiving address separately.",
+    "ports": [
+      "Tanger Med",
+      "Casablanca"
+    ],
+    "inland": "Casablanca",
+    "delivery": "For a Casablanca warehouse, compare local pickup with onward transport from Tanger Med. Confirm the discharge terminal, any transshipment, the delivery address and who returns the empty.",
+    "customs": [
+      "Have the importer or declarant confirm the required import title through PortNet and check whether the product requires an import licence.",
+      "Give the broker the commercial invoice, packing list and transport document. Confirm the commodity code, origin, duties and who pays before release. Confirm the DUM import declaration with the broker.",
+      "Check whether each product is subject to conformity control at origin. When a CoC applies, the factory should provide the matching model details and supporting documents before dispatch."
+    ],
+    "factoryTitle": "Prepare USB charging cables and wall chargers in China for shipment to Morocco",
+    "factory": [
+      "List USB cables and wall chargers separately by factory and model. For cables, record the connector types and rated power. For chargers, match the plug and input/output ratings to the nameplate.",
+      "Before consolidating cartons, give the importer the model list, nameplate photos and matching product documents. Ask which models need origin conformity checks or a CoC, and keep the carton numbers linked to the models."
+    ],
+    "factoryLink": "Consolidation and export services from China",
+    "photo": "Barcode check on cartons at the origin warehouse",
+    "faq": [
+      "Can USB cables and wall chargers share one shipment to Morocco?",
+      "Ask the importer and forwarder before consolidation. Keep model and carton records separate, and confirm any conformity documents and cargo acceptance for each product."
+    ],
+    "connection": "CMA CGM’s MPS lists a Barcelona–Casablanca connection. Confirm any through sailing and transfer time at booking."
+  },
+  "zh": {
+    "name": "摩洛哥",
+    "title": "中国到摩洛哥货运",
+    "intro": "比较中国到丹吉尔地中海港和卡萨布兰卡的整柜与拼箱海运，按多家供应商的集货需求和实际收货地址询价。",
+    "ports": [
+      "丹吉尔地中海港",
+      "卡萨布兰卡"
+    ],
+    "inland": "卡萨布兰卡",
+    "delivery": "送卡萨布兰卡仓库时，分别核卡萨布兰卡港提货和丹吉尔地中海港提货后转公路的交付费用。确认卸货码头、是否转船、收货地址和还空责任。",
+    "customs": [
+      "由当地进口方或申报人通过 PortNet 确认所需进口凭证，并核实该产品是否需要进口许可证。",
+      "向报关代理交接发票、装箱单和运输单证，核对商品税号、原产地、应缴税费及支付方。与报关代理确认 DUM 进口申报。",
+      "按品类确认货物是否须在起运地做符合性检查。适用 CoC 时，装运前由工厂交付与实际型号匹配的资料。"
+    ],
+    "factoryTitle": "中国 USB 充电线和插墙充电器发摩洛哥，装运前怎么核单？",
+    "factory": [
+      "按工厂和型号拆开列 USB 充电线与插墙充电器。线材写清两端接口和额定功率，充电器逐款核插头、输入和输出参数，和铭牌对上。",
+      "合箱或装柜前，把型号表、铭牌照片及对应的产品文件交给进口方。确认哪些型号适用起运地符合性检查或 CoC，并保留箱号与型号的对应关系。"
+    ],
+    "factoryLink": "查看中国集货与出口服务",
+    "photo": "中国起运仓核对外箱条码",
+    "faq": [
+      "USB 充电线和插墙充电器可以同票发往摩洛哥吗？",
+      "合货前请进口方和货代确认。两类货分别列型号和箱号，逐款核适用的符合性文件及承运条件。"
+    ],
+    "connection": "CMA CGM 的 MPS 航线列有巴塞罗那到卡萨布兰卡的接驳段，全程走法和转船等待时间以订舱方案为准。"
+  },
+  "es": {
+    "name": "Marruecos",
+    "title": "Envíos de China a Marruecos",
+    "intro": "Compare el flete marítimo FCL y LCL de China a Tanger Med y Casablanca. Cotice la consolidación de varios proveedores y la entrega en su dirección.",
+    "ports": [
+      "Tanger Med",
+      "Casablanca"
+    ],
+    "inland": "Casablanca",
+    "delivery": "Para un almacén en Casablanca, compare la retirada local con el transporte desde Tanger Med. Confirme terminal, transbordo, dirección y devolución del contenedor vacío.",
+    "customs": [
+      "Pida al importador o declarante que confirme en PortNet el título de importación y si el producto exige licencia.",
+      "Entregue al agente la factura, lista de empaque y documento de transporte. Confirme código arancelario, origen, tributos y pagador antes del levante. Confirme la declaración DUM con el agente.",
+      "Verifique qué productos requieren control en origen. Si se aplica un CoC, pida a la fábrica los datos del modelo y las pruebas antes de embarcar."
+    ],
+    "factoryTitle": "Preparar cables de carga USB y cargadores de pared en China para enviarlos a Marruecos",
+    "factory": [
+      "Separe cables USB y cargadores de pared por fábrica y modelo. Para cada cable, indique conectores y potencia nominal. Para los cargadores, coteje enchufe y datos de entrada y salida con la placa.",
+      "Antes de consolidar, envíe al importador la lista de modelos, fotos de las placas y fichas correspondientes. Confirme qué modelos requieren control en origen o CoC y vincule los números de caja con cada modelo."
+    ],
+    "factoryLink": "Servicios de consolidación y exportación en China",
+    "photo": "Verificación de códigos de barras en el almacén de origen",
+    "faq": [
+      "¿Pueden viajar juntos los cables USB y los cargadores de pared?",
+      "Confírmelo con el importador y el transitario antes de consolidar. Mantenga separados los registros de modelos y cajas y confirme documentos de conformidad y aceptación por producto."
+    ],
+    "connection": "El MPS de CMA CGM publica una conexión Barcelona–Casablanca. Confirme el itinerario completo y el tiempo de transbordo al reservar."
+  },
+  "fr": {
+    "name": "Maroc",
+    "title": "Transport de Chine vers le Maroc",
+    "intro": "Comparez le fret maritime FCL et LCL de Chine vers Tanger Med et Casablanca. Chiffrez le groupage multi-fournisseurs et la livraison à votre adresse.",
+    "ports": [
+      "Tanger Med",
+      "Casablanca"
+    ],
+    "inland": "Casablanca",
+    "delivery": "Pour un entrepôt à Casablanca, comparez l’enlèvement au port local et l’acheminement depuis Tanger Med. Confirmez terminal, transbordement, adresse de livraison et retour du vide.",
+    "customs": [
+      "Demandez à l’importateur ou au déclarant de confirmer le titre d’importation sur PortNet et de vérifier si le produit exige une licence.",
+      "Remettez la facture, la liste de colisage et le document de transport au représentant. Confirmez le code douanier, l’origine, les droits et le payeur avant la mainlevée. Confirmez la déclaration DUM avec le déclarant.",
+      "Vérifiez quels produits font l’objet d’un contrôle à l’origine. Lorsqu’un CoC est requis, demandez à l’usine les références de modèle et les pièces justificatives avant l’expédition."
+    ],
+    "factoryTitle": "Préparer en Chine des câbles de charge USB et des chargeurs secteur pour le Maroc",
+    "factory": [
+      "Séparez câbles et chargeurs par usine et modèle. Indiquez les connecteurs et la puissance nominale des câbles. Pour chaque chargeur, vérifiez la fiche secteur et les caractéristiques d’entrée et de sortie sur la plaque.",
+      "Avant le groupage, remettez à l’importateur la liste des modèles, les photos des plaques et les fiches correspondantes. Confirmez les modèles soumis au contrôle à l’origine ou au CoC, et reliez les numéros des cartons aux modèles."
+    ],
+    "factoryLink": "Groupage et exportation depuis la Chine",
+    "photo": "Vérification du code-barres d’un carton à l’entrepôt de départ",
+    "faq": [
+      "Peut-on expédier ensemble les câbles USB et les chargeurs secteur ?",
+      "Vérifiez auprès de l’importateur et du transitaire avant le groupage. Tenez des relevés distincts de modèles et de cartons et confirmez les pièces de conformité et l’acceptation par produit."
+    ],
+    "connection": "Le MPS de CMA CGM publie une liaison Barcelone–Casablanca. Confirmez le trajet de bout en bout et le temps de transbordement lors de la réservation."
+  },
+  "ru": {
+    "name": "Марокко",
+    "title": "Доставка грузов из Китая в Марокко",
+    "intro": "Сравните морские перевозки FCL и LCL из Китая в Танжер-Мед и Касабланку. Запросите расчёт консолидации нескольких поставщиков и доставки по вашему адресу.",
+    "ports": [
+      "Танжер-Мед",
+      "Касабланка"
+    ],
+    "inland": "Касабланка",
+    "delivery": "Для склада в Касабланке сравните местный вывоз и автодоставку из Танжер-Меда. Подтвердите терминал, возможную перегрузку, адрес и возврат порожнего контейнера.",
+    "customs": [
+      "Попросите импортёра или декларанта подтвердить импортный документ в PortNet и проверить, нужна ли лицензия.",
+      "Передайте брокеру инвойс, упаковочный лист и транспортный документ. До выпуска уточните код товара, происхождение, платежи и плательщика. Согласуйте импортную декларацию DUM с брокером.",
+      "Проверьте, какие товары требуют контроля в стране отправления. Если нужен CoC, запросите у завода данные конкретной модели и подтверждающие документы."
+    ],
+    "factoryTitle": "Подготовка USB-кабелей и сетевых зарядных устройств в Китае для отправки в Марокко",
+    "factory": [
+      "Разделите USB-кабели и зарядные устройства по заводам и моделям. Для кабелей укажите разъёмы и номинальную мощность. Для зарядных устройств сверьте вилку, входные и выходные параметры с маркировкой.",
+      "До объединения коробок передайте импортёру список моделей, фотографии маркировки и соответствующие документы. Уточните, для каких моделей нужен контроль в стране отправления или CoC, и сопоставьте номера коробок с моделями."
+    ],
+    "factoryLink": "Консолидация и экспорт из Китая",
+    "photo": "Проверка штрихкода коробки на складе отправления",
+    "faq": [
+      "Можно ли отправить USB-кабели и сетевые зарядные устройства одной партией?",
+      "Уточните у импортёра и экспедитора до консолидации. Ведите отдельный учёт моделей и коробок и проверьте документы о соответствии и условия приёмки для каждого изделия."
+    ],
+    "connection": "Сервис MPS CMA CGM включает участок Барселона — Касабланка. При бронировании уточните полный маршрут и ожидание перегрузки."
+  },
+  "ar": {
+    "name": "المغرب",
+    "title": "الشحن من الصين إلى المغرب",
+    "intro": "قارن الشحن البحري بالحاوية الكاملة أو المجمعة من الصين إلى طنجة المتوسط والدار البيضاء، واطلب تسعيراً لتجميع شحنات الموردين والتوصيل إلى عنوان الاستلام.",
+    "ports": [
+      "طنجة المتوسط",
+      "الدار البيضاء"
+    ],
+    "inland": "الدار البيضاء",
+    "delivery": "لمستودع في الدار البيضاء، قارن الاستلام من الميناء المحلي مع النقل البري من طنجة المتوسط. أكد محطة التفريغ وإعادة الشحن عند الحاجة والعنوان وإعادة الحاوية الفارغة.",
+    "customs": [
+      "اطلب من المستورد أو المصرح التحقق من سند الاستيراد على PortNet وما إذا كانت السلعة تحتاج إلى ترخيص.",
+      "سلّم المخلص الفاتورة وقائمة التعبئة ووثيقة النقل. أكد رمز السلعة ومنشأها والرسوم ومن يدفعها قبل الإفراج. أكد البيان الجمركي الموحد DUM مع المخلّص.",
+      "تحقق من المنتجات الخاضعة للفحص عند المنشأ. عند طلب شهادة CoC، اطلب من المصنع بيانات الطراز المطابقة والمستندات المؤيدة قبل الشحن."
+    ],
+    "factoryTitle": "تجهيز كابلات الشحن USB وشواحن الحائط في الصين للشحن إلى المغرب",
+    "factory": [
+      "افصل كابلات USB عن شواحن الحائط في القائمة حسب المصنع والطراز. سجل أنواع الموصلات والقدرة الاسمية للكابلات. طابق القابس وقيم الدخل والخرج لكل شاحن مع لوحة البيانات.",
+      "قبل تجميع الصناديق، سلّم المستورد قائمة الطرازات وصور اللوحات والمستندات المطابقة. تحقق من الطرازات التي تخضع للفحص عند المنشأ أو تتطلب شهادة CoC، واربط أرقام الصناديق بالطرازات."
+    ],
+    "factoryLink": "خدمات التجميع والتصدير من الصين",
+    "photo": "فحص الرمز الشريطي للصناديق في مستودع الانطلاق",
+    "faq": [
+      "هل يمكن شحن كابلات USB وشواحن الحائط في شحنة واحدة؟",
+      "تحقق من المستورد ووكيل الشحن قبل التجميع. احتفظ بسجلات منفصلة للطرازات والصناديق وتحقق من وثائق المطابقة وشروط القبول لكل منتج."
+    ],
+    "connection": "تدرج خدمة MPS لدى CMA CGM وصلة من برشلونة إلى الدار البيضاء. أكد المسار الكامل ومدة الانتظار عند إعادة الشحن وقت الحجز."
+  },
+  "pt": {
+    "name": "Marrocos",
+    "title": "Transporte de carga da China para Marrocos",
+    "intro": "Compare o frete marítimo FCL e LCL da China para Tanger Med e Casablanca. Cote a consolidação de vários fornecedores e a entrega no endereço de recebimento.",
+    "ports": [
+      "Tanger Med",
+      "Casablanca"
+    ],
+    "inland": "Casablanca",
+    "delivery": "Para armazéns em Casablanca, compare a retirada local com o transporte rodoviário desde Tanger Med. Confirme terminal, transbordo, endereço e devolução do vazio.",
+    "customs": [
+      "Peça ao importador ou declarante para confirmar o título de importação no PortNet e verificar se o produto exige licença.",
+      "Entregue fatura, lista de volumes e documento de transporte ao despachante. Confirme código, origem, tributos e responsável pelo pagamento antes da liberação. Confirme a declaração de importação DUM com o despachante.",
+      "Verifique quais produtos exigem controle na origem. Quando o CoC for aplicável, solicite à fábrica os dados do modelo e os documentos comprobatórios antes do embarque."
+    ],
+    "factoryTitle": "Preparação de cabos USB e carregadores de tomada na China para envio a Marrocos",
+    "factory": [
+      "Separe cabos e carregadores por fábrica e modelo. Registre os conectores e a potência nominal dos cabos. Nos carregadores, confira o plugue e as especificações de entrada e saída na placa.",
+      "Antes de consolidar as caixas, entregue ao importador a lista de modelos, fotos das placas e documentos correspondentes. Confirme quais modelos precisam de controle na origem ou CoC e relacione as caixas aos modelos."
+    ],
+    "factoryLink": "Serviços de consolidação e exportação na China",
+    "photo": "Conferência do código de barras das caixas no armazém de origem",
+    "faq": [
+      "Posso enviar cabos USB e carregadores de tomada na mesma remessa?",
+      "Confirme com o importador e o agente de carga antes de consolidar. Mantenha registros separados dos modelos e caixas e confirme os documentos de conformidade e a aceitação por produto."
+    ],
+    "connection": "O MPS da CMA CGM indica uma conexão Barcelona–Casablanca. Confirme o itinerário completo e a espera pelo transbordo na reserva."
+  },
+  "tr": {
+    "name": "Fas",
+    "title": "Çin’den Fas’a yük taşımacılığı",
+    "intro": "Çin’den Tanger Med ve Kazablanka’ya FCL ve LCL deniz taşımacılığını karşılaştırın. Tedarikçi konsolidasyonu ve alıcı adresine teslim için fiyat isteyin.",
+    "ports": [
+      "Tanger Med",
+      "Kazablanka"
+    ],
+    "inland": "Kazablanka",
+    "delivery": "Kazablanka’daki depo için yerel limandan teslim almayı Tanger Med’den karayolu teslimiyle karşılaştırın. Terminali, varsa aktarmayı, adresi ve boş iade sorumluluğunu teyit edin.",
+    "customs": [
+      "İthalatçıdan veya beyan sahibinden PortNet üzerinden ithalat belgesini ve ürünün lisans gerektirip gerektirmediğini doğrulamasını isteyin.",
+      "Fatura, çeki listesi ve taşıma belgesini müşavire verin. Mal çekilmeden ürün kodu, menşe, vergiler ve ödemeyi yapacak tarafı teyit edin. DUM ithalat beyanını gümrük müşaviriyle teyit edin.",
+      "Çıkışta uygunluk kontrolü gerektiren ürünleri belirleyin. CoC gerekiyorsa sevkiyat öncesi fabrikadan ilgili model bilgilerini ve destekleyici belgeleri alın."
+    ],
+    "factoryTitle": "Fas’a gönderilecek USB şarj kablolarını ve priz tipi şarj cihazlarını Çin’de hazırlama",
+    "factory": [
+      "USB kabloları ile şarj cihazlarını fabrika ve model bazında ayrı listeleyin. Kablolarda uç tipini ve anma gücünü yazın. Şarj cihazlarında fiş ile giriş ve çıkış değerlerini ürün etiketiyle karşılaştırın.",
+      "Kolileri birleştirmeden önce model listesini, etiket fotoğraflarını ve ilgili ürün belgelerini ithalatçıya verin. Hangi modeller için çıkışta uygunluk kontrolü veya CoC gerektiğini doğrulayın ve koli numaralarını modellerle eşleştirin."
+    ],
+    "factoryLink": "Çin’de konsolidasyon ve ihracat hizmetleri",
+    "photo": "Çıkış deposunda kolilerin barkod kontrolü",
+    "faq": [
+      "USB kabloları ve priz tipi şarj cihazları aynı sevkiyatta gönderilebilir mi?",
+      "Konsolidasyondan önce ithalatçı ve taşıma işleri organizatörüyle teyit edin. Model ve koli kayıtlarını ayrı tutun, her ürün için uygunluk belgelerini ve kabul koşullarını doğrulayın."
+    ],
+    "connection": "CMA CGM’nin MPS hattında Barselona–Kazablanka bağlantısı bulunur. Rezervasyonda tüm güzergâhı ve aktarma bekleme süresini doğrulayın."
+  }
+}

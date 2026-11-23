@@ -4,7 +4,7 @@ import { originNames } from '../rates/model.mjs';
 import { originNamesEn } from '../rates/copy.mjs';
 import southAfricaCopy from './southAfricaCopy.json';
 import guide from './marketGuideCopy.json';
-import { candidateCopy, isSeaCandidate, seaCountryCopy, seaMarketBadges, type CandidateCountry, type CandidateLocale } from './model';
+import { candidateCopy, isSeaCandidate, seaCountryCopy, seaMarketBadges, type StandardCandidateCountry, type CandidateLocale } from './model';
 
 export const marketGuide = guide;
 
@@ -30,7 +30,7 @@ const ports = {
  'united-kingdom': { en:'Southampton', zh:'南安普敦', es:'Southampton', fr:'Southampton', ru:'Саутгемптон', ar:'ساوثهامبتون', pt:'Southampton', tr:'Southampton' },
  france: { en:'Le Havre', zh:'勒阿弗尔', es:'Le Havre', fr:'Le Havre', ru:'Гавр', ar:'لوهافر', pt:'Le Havre', tr:'Le Havre' },
 };
-const importReferences: Partial<Record<CandidateCountry, { name: string; url: string }>> = {
+const importReferences: Partial<Record<StandardCandidateCountry, { name: string; url: string }>> = {
  thailand: { name: 'Thai Customs · e-Customs', url: 'https://lcpcb.customs.go.th/th/import-procedures' },
  indonesia: { name: 'Bea Cukai · PIB', url: 'https://beacukai.go.id/impor-untuk-dipakai' },
  philippines: { name: 'Bureau of Customs · Importation', url: 'https://customs.gov.ph/guidelines-on-importation/' },
@@ -42,7 +42,7 @@ const policy = {
 } as const;
 
 export function MarketRateOverview({ country, locale, rows }: {
- country: CandidateCountry; locale: CandidateLocale; rows: readonly MarketRateRow[];
+ country: StandardCandidateCountry; locale: CandidateLocale; rows: readonly MarketRateRow[];
 }) {
  const c = guide[locale];
  const selected = rows.filter(row => row.country === country);
@@ -86,7 +86,7 @@ export function MarketRateOverview({ country, locale, rows }: {
  </section>;
 }
 
-export function MarketImportRules({ country, locale }: {country: CandidateCountry; locale: CandidateLocale}) {
+export function MarketImportRules({ country, locale }: {country: StandardCandidateCountry; locale: CandidateLocale}) {
  const c = guide[locale];
  const page = candidateCopy(country, locale);
  if (isSeaCandidate(country)) {
