@@ -140,7 +140,13 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
   const shared = sharedCopy[language];
   const config = serviceConfig[kind];
   const ServiceIcon = config.icon;
-  const quoteHref = buildQuoteHref({ intent: config.intent, language, source: config.quoteSource });
+  const spanishInspection = language === 'es' && kind === 'inspection-quality-control';
+  const quoteHref = buildQuoteHref({
+    intent: config.intent,
+    language,
+    source: config.quoteSource,
+    industry: spanishInspection ? 'Other' : undefined,
+  });
   const canonicalPath = `${localePrefix[language]}/sourcing-services/${config.canonicalSlug}`;
   const processPath = `${localePrefix[language]}/how-we-work`;
 
@@ -263,7 +269,7 @@ export default function SourcingServicePage({ kind }: { kind: SourcingServiceKin
           </div>
         </section>
 
-        {language === 'es' && kind === 'inspection-quality-control' && <SpanishInspectionScope quoteHref={quoteHref} />}
+        {spanishInspection && <SpanishInspectionScope quoteHref={quoteHref} />}
         {kind === 'inspection-quality-control' && <InspectionEvidence quoteHref={quoteHref} />}
         {kind === 'supplier-search' && <SupplierBuyingGuide quoteHref={quoteHref} />}
 
