@@ -1,3 +1,4 @@
+import {RefrigerationMerchandising} from '../../features/refrigeration/MerchandisingContent';
 import { BuyingGuideIllustration, comparisonIllustrations, evaluationIllustrations } from '../../features/refrigeration/BuyingGuideIllustration';
 import EquipmentBuyingSupport from '../../features/equipment-buying-support/EquipmentBuyingSupport';
 import RefrigerationModelCatalogue from '../../features/refrigeration/RefrigerationModelCatalogue';
@@ -244,6 +245,7 @@ export function RefrigerationEquipment() {
             <div className="refrigeration-hero-actions">
               <button className="refrigeration-primary" type="button" onClick={() => scrollTo("refrigeration-rfq")}>Start a scoped request <ArrowRight size={17} /></button>
               <a className="refrigeration-link-button" href="#refrigeration-models">Choose by cabinet use <ArrowRight size={16} /></a>
+              <a className="refrigeration-link-button" href="#display-merchandising">Front-of-house displays and countertop prep <ArrowRight size={16} /></a>
             </div>
             <div className="refrigeration-proof-row">
               {[
@@ -266,6 +268,7 @@ export function RefrigerationEquipment() {
         </section>
 
         <RefrigerationModelCatalogue/>
+        <div className="mx-auto max-w-7xl px-6 py-12"><RefrigerationMerchandising/></div>
 
         <section className="refrigeration-section refrigeration-range" aria-labelledby="refrigeration-range-title">
           <div className="refrigeration-section-head">

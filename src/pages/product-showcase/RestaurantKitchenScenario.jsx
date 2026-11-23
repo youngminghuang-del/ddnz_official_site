@@ -1,3 +1,4 @@
+import {BakeryFrontCounter} from '../../features/refrigeration/MerchandisingContent';
 import SmallKitchenPlanningContent, {smallKitchenMeta} from '../../features/commercial-kitchen/SmallKitchenPlanningContent';
 import CafePlanningContent, {cafeMeta} from '../../features/commercial-kitchen/CafePlanningContent';
 import {packageAlternates} from '../../features/commercial-kitchen/packageLocalization';
@@ -59,7 +60,9 @@ export default function RestaurantKitchenScenario() {
           </div>
         </section>
 
-        <section className="rkp-detail-next">
+        {scenarioSlug === 'bakery-pastry' && <div className="mx-auto max-w-7xl px-6 py-10"><BakeryFrontCounter/></div>}
+
+        <section className="rkp-detail-next" id={scenarioSlug === 'bakery-pastry' ? 'package-rfq' : undefined}>
           <div><p className="rkp-kicker">NEXT SCENARIO</p><h2>Continue through the planning library.</h2></div>
           <div className="rkp-detail-next-links">{libraryOrder.filter((slug) => slug !== scenarioSlug).slice(0, 3).map((slug) => <a href={`${BASE}/${slug}/`} key={slug}>{allScenarios[slug].tab}<ArrowRight size={16} /></a>)}</div>
           {complete ? <a className="rkp-primary" href={`${BASE}/#complete-plan`}>Unlock the 8-page plan PDF <Download size={17} /></a> : <a className="rkp-primary" href={quote}>Turn this brief into a plan <ArrowRight size={17} /></a>}

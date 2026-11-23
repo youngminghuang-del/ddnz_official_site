@@ -20,6 +20,7 @@ const EcuadorFreightPage = lazy(() => import('./features/freight/EcuadorFreightP
 import InternalPageNavigation from './components/InternalPageNavigation';
 import CookieConsent from './components/CookieConsent';
 const FreightReleasePage = lazy(() => import('./pages/FreightReleasePage'));
+import {merchandisingPaths} from './features/refrigeration/merchandisingRoutes.mjs';
 import { kitchenCategoryPaths, kitchenPackagePath, kitchenPackageScenarioPaths } from './features/commercial-kitchen/routes.mjs';
 import { buyerGuidePaths, overviewContentLanguages, productContentLanguages, localizedProductPath, isLocalizedProductPath, productRouteParts } from './lib/productLocalization.mjs';
 import './features/buyer-guides/buyer-guides.css';
@@ -68,6 +69,7 @@ let ProductsIndex: ComponentType = lazy(loadProductsIndex);
 const SourcingServices = lazy(() => import('./pages/product-showcase/SourcingServices'));
 const CommercialKitchen = lazy(() => import('./features/commercial-kitchen/KitchenPage'));
 const LocalizedPackagePage = lazy(() => import('./features/commercial-kitchen/LocalizedPackagePage'));
+const MerchandisingPage = lazy(() => import('./features/refrigeration/MerchandisingPage'));
 const RestaurantKitchenPackages = lazy(() => import('./pages/product-showcase/RestaurantKitchenPackages'));
 const RestaurantKitchenScenario = lazy(() => import('./pages/product-showcase/RestaurantKitchenScenario'));
 const LocalizedCategoryPage = lazy(() => import('./features/commercial-kitchen/LocalizedCategoryPage'));
@@ -485,6 +487,7 @@ export default function App() {
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'home-storage'} path={prefix+'/sourcing/home-energy-storage-from-china'} element={<HomeStoragePage/>}/>)}
             {['','/zh-cn','/ar','/es','/fr','/ru','/pt','/tr'].map(prefix=><Route key={prefix+'scooter-parts'} path={prefix+'/sourcing/electric-scooter-spare-parts-from-china'} element={<ScooterPartsPage/>}/>)}
             {['','/zh-cn','/ru','/fr','/es','/ar','/pt','/tr'].map(prefix=><Route key={prefix+'electric-scooters'} path={prefix+'/sourcing/electric-scooters-from-china'} element={<ElectricScootersPage/>}/>)}
+            {merchandisingPaths.flatMap(path => Object.values(navigationPrefixes).map(prefix => <Route key={prefix+path} path={prefix+path} element={<MerchandisingPage />} />))}
             {foodProcessingRoutes.flatMap(path => Object.values(navigationPrefixes).map(prefix => <Route key={prefix+path} path={prefix+path} element={<FoodProcessingPage />} />))}
             <Route path="/sourcing-services" element={<SourcingServices />} />
             <Route path="/refrigeration-equipment" element={<RefrigerationEquipment />} />

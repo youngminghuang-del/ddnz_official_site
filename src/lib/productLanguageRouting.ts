@@ -1,3 +1,4 @@
+import { merchandisingPaths } from '../features/refrigeration/merchandisingRoutes.mjs';
 import {audioCategoryPaths} from '../features/audio/category-routes.mjs';
 import { mobilePaths } from '../features/mobile-sourcing/routes.mjs';
 import type { Language } from '../i18n/translations';
@@ -28,7 +29,7 @@ export const englishProductPaths = [
   ...audioCategoryPaths,
   ...foodProcessingRoutes,
   ...buyerGuidePaths, ...mobilePaths,
-  inductionCookingPath, steamCabinetPath, noodleCookerPath, soupBunCookerPath, hotCookingPath, ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
+  inductionCookingPath, steamCabinetPath, noodleCookerPath, soupBunCookerPath, hotCookingPath, ...merchandisingPaths, ...kitchenCategoryPaths, kitchenPackagePath, ...kitchenPackageScenarioPaths,
   '/products', '/sourcing-services', '/refrigeration-equipment',
   '/sourcing/commercial-kitchen-equipment-from-china', '/sourcing/audio-speakers-from-china',
   '/sourcing/outdoor-products-from-china',

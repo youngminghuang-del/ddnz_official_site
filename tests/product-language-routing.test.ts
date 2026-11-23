@@ -8,15 +8,19 @@ import {
 import type { Language } from '../src/i18n/translations.ts';
 import { hotCookingPath, inductionCookingPath } from '../src/features/commercial-kitchen/routes.mjs';
 
+import {merchandisingPaths} from '../src/features/refrigeration/merchandisingRoutes.mjs';
+
 const languages = Object.keys(navigationPrefixes) as Language[];
 
 test('all eight navigation languages use only authored product URLs', () => {
   assert.deepEqual(supportedNavigationLanguages(inductionCookingPath), languages);
-  assert.deepEqual(supportedNavigationLanguages(hotCookingPath), ['zh']);
+  const chineseOnly = [hotCookingPath];
+  for (const path of merchandisingPaths) assert.deepEqual(supportedNavigationLanguages(path), languages);
+  for (const path of chineseOnly) assert.deepEqual(supportedNavigationLanguages(path), ['zh']);
   for (const language of languages) {
     for (const path of englishProductPaths) {
       const fallback = path === '/screen-protectors/brief';
-      const prefix = path === hotCookingPath ? '/zh-cn' : fallback ? '' : navigationPrefixes[language];
+      const prefix = chineseOnly.includes(path as typeof chineseOnly[number]) ? '/zh-cn' : fallback ? '' : navigationPrefixes[language];
       const target = `${prefix}${path}/`;
       assert.equal(navigationPath(path, language), target);
       assert.equal(navigationPath(`${navigationPrefixes[language]}${path}/?utm_source=guide#details`, language), `${target}?utm_source=guide#details`);
