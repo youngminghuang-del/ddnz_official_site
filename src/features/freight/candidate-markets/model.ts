@@ -13,7 +13,7 @@ import additionalSoutheastAsiaCopy from './additionalSoutheastAsiaCopy.json';
 
 import southAfricaTradeCopy from './southAfricaTradeCopy.json';
 import southAfricaCopy from './southAfricaCopy.json';
-import {isMediterraneanCountry, mediterraneanCopy, mediterraneanSlugs} from './mediterraneanMarkets';
+import {isPortMarketCountry, portMarketCopy, portMarketSlugs} from './portMarkets';
 
 const seaMarketCopy = {...pacificCopy, ...eastAsiaCopy, ...southeastAsiaCopy, ...additionalSoutheastAsiaCopy};
 
@@ -27,7 +27,7 @@ export const southeastAsiaCountrySlugs = ['vietnam', 'malaysia', 'singapore', 't
 export const pacificCandidateSlugs = [...pacificCountrySlugs, ...eastAsiaCountrySlugs, ...southeastAsiaCountrySlugs] as const;
 const seaCandidateSlugs = [...pacificCandidateSlugs, 'south-africa'] as const;
 const standardCandidateSlugs = [...europeCandidateSlugs, ...seaCandidateSlugs] as const;
-export const candidateSlugs = [...standardCandidateSlugs, ...mediterraneanSlugs] as const;
+export const candidateSlugs = [...standardCandidateSlugs, ...portMarketSlugs] as const;
 export type StandardCandidateCountry = typeof standardCandidateSlugs[number];
 type SeaCandidate = typeof seaCandidateSlugs[number];
 export const isSeaCandidate = (slug: string): slug is SeaCandidate => seaCandidateSlugs.includes(slug as SeaCandidate);
@@ -73,6 +73,8 @@ export const candidateData = {
  'south-africa': {iso:'ZA', gateway:'Durban', airport:'JNB'},
  italy: {iso:'IT'},
  morocco: {iso:'MA'},
+ belgium: {iso:'BE'},
+ poland: {iso:'PL'},
 } as const;
 
 export function candidateCopy(country: StandardCandidateCountry, locale: CandidateLocale) {
@@ -105,7 +107,7 @@ export const seaMarketBadges = {
 const origin = 'https://www.ddnzglobal.com';
 
 export function candidateInfo(slug: CandidateCountry, locale: CandidateLocale) {
- const {name,title,intro} = isMediterraneanCountry(slug) ? mediterraneanCopy[slug][locale] : candidateCopy(slug, locale);
+ const {name,title,intro} = isPortMarketCountry(slug) ? portMarketCopy[slug][locale] : candidateCopy(slug, locale);
  return {slug, locale, prefix:candidatePrefix(locale), name, url:origin+candidatePath(slug,locale), title:title+' | DDNZ', description:intro, language:candidateLanguage(locale)};
 }
 
@@ -117,8 +119,8 @@ export function candidateTrail(slug: CandidateCountry, locale: CandidateLocale) 
 
 export function candidateSchema(slug: CandidateCountry, locale: CandidateLocale) {
  const p = candidateInfo(slug,locale);
- const c = isMediterraneanCountry(slug)
-  ? {...mediterraneanCopy[slug][locale], serviceType:sharedCopy[locale].serviceType}
+ const c = isPortMarketCountry(slug)
+  ? {...portMarketCopy[slug][locale], serviceType:sharedCopy[locale].serviceType}
   : candidateCopy(slug, locale);
  return {'@context':'https://schema.org','@graph':[
   {'@type':'WebPage','@id':p.url,url:p.url,name:p.title,description:p.description,inLanguage:p.language,breadcrumb:{'@id':p.url+'#breadcrumb'},mainEntity:{'@id':p.url+'#service'}},

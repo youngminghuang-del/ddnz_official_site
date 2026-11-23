@@ -1,0 +1,218 @@
+{
+  "en": {
+    "name": "Poland",
+    "title": "Shipping from China to Poland",
+    "intro": "Compare sea freight from China to Gdańsk and Gdynia, plus separate door-delivery quotes to Łódź or another Polish warehouse. Flag battery-powered cargo when requesting a quote.",
+    "ports": [
+      "Gdańsk",
+      "Gdynia"
+    ],
+    "inland": "Łódź",
+    "delivery": "Give the receiving postcode, appointment window and unloading arrangements. Confirm the actual container terminal, release and collection. If goods will move under customs transit, agree where clearance will take place before pricing delivery.",
+    "customs": [
+      "Confirm the importer’s EORI, broker mandate and who pays duty and import VAT. Supply the commercial invoice, packing list and transport document.",
+      "Confirm the commodity code and origin with the broker. For an import declaration filed in Poland, check AIS/IMPORT PLUS via PUESC and the required documents for the goods.",
+      "For Bluetooth models sold in the EU, ask the importer to confirm applicable radio-equipment requirements, including the EU declaration of conformity, CE marking and product information."
+    ],
+    "factoryTitle": "Ship portable Bluetooth speakers with built-in batteries from a Chinese factory to Poland",
+    "factory": [
+      "Before booking a Gdańsk or Gdynia shipment, match the finished speaker SKU to the installed lithium battery model, Wh rating and available UN 38.3 test summary. Flag separately packed spares or a change in battery supplier before quoting.",
+      "Give the carrier the carton list, battery configuration and package marks for its IMDG acceptance review. Ask for written acceptance and a separate price for battery-handling charges before packing or consolidating the order."
+    ],
+    "factoryLink": "View portable speaker models",
+    "photo": "Compact speaker product reference",
+    "faq": [
+      "Can the factory substitute another battery pack before shipment?",
+      "Send the new pack model, Wh rating and matching UN 38.3 test summary. Have the carrier and importer review the change before the updated cartons are booked or mixed with the original batch."
+    ]
+  },
+  "zh": {
+    "name": "波兰",
+    "title": "中国到波兰货运",
+    "intro": "比较中国到格但斯克、格丁尼亚的海运，另按实际地址询罗兹或波兰其他仓库的到门价。询价时说明货物是否带电池。",
+    "ports": [
+      "格但斯克",
+      "格丁尼亚"
+    ],
+    "inland": "罗兹",
+    "delivery": "提供收货邮编、预约时段和卸货条件，确认卸货码头、放箱及提柜安排。若走海关转运，核配送费前先明确在哪里清关。",
+    "customs": [
+      "确认进口方 EORI、报关授权以及关税和进口增值税由谁支付。向申报方提供商业发票、装箱单和运输单证。",
+      "与报关代理核对商品税号及原产地。在波兰申报进口时，确认 PUESC 的 AIS/IMPORT PLUS 程序和对应单证。",
+      "蓝牙型号在欧盟销售前，由进口方核对适用的无线电设备要求，包括欧盟符合性声明、CE 标识和产品信息。"
+    ],
+    "factoryTitle": "中国工厂的内置电池便携蓝牙音箱怎么发往波兰？",
+    "factory": [
+      "订格但斯克或格丁尼亚前，把整机型号与内置锂电池型号、瓦时数和对应的 UN 38.3 测试概要核对。备用电池如单独装箱，或工厂换过电池供应商，询价时说明。",
+      "把各箱装载内容、电池配置和外箱标识交给承运人按 IMDG 审核。装箱或集货前，请承运人书面确认是否接货，并单列带电货物的操作费。"
+    ],
+    "factoryLink": "查看便携音箱型号",
+    "photo": "紧凑型音箱产品示例",
+    "faq": [
+      "下单后工厂换了电池包，还能按原订舱发吗？",
+      "先提供新电池包型号、瓦时数及与其对应的 UN 38.3 测试概要。在重新订舱或混入原批次前，请承运人和进口方复核变更。"
+    ]
+  },
+  "es": {
+    "name": "Polonia",
+    "title": "Envíos de China a Polonia",
+    "intro": "Compara el flete marítimo desde China a Gdańsk y Gdynia, con entrega aparte a Łódź u otro almacén polaco. Indica en la solicitud si la mercancía lleva baterías.",
+    "ports": [
+      "Gdańsk",
+      "Gdynia"
+    ],
+    "inland": "Łódź",
+    "delivery": "Indica el código postal, el horario de recepción y la descarga. Confirma la terminal real, el levante y la recogida. Si la carga va bajo tránsito aduanero, acuerda primero dónde se despacha.",
+    "customs": [
+      "Confirma el EORI del importador, el mandato del agente y quién paga los aranceles y el IVA de importación. Entrega factura, lista de empaque y documento de transporte.",
+      "Verifica con el agente el código y el origen. Para despachar en Polonia, revisa AIS/IMPORT PLUS a través de PUESC y los documentos exigidos para la mercancía.",
+      "Antes de comercializar modelos Bluetooth en la UE, pide al importador que compruebe las obligaciones de equipos radioeléctricos, incluida la declaración UE de conformidad, el marcado CE y la información del producto."
+    ],
+    "factoryTitle": "Envío a Polonia de altavoces Bluetooth portátiles con batería integrada desde una fábrica china",
+    "factory": [
+      "Antes de reservar para Gdańsk o Gdynia, relaciona el modelo del altavoz con la batería de litio instalada, los Wh y el resumen de ensayos UN 38.3 correspondiente. Declara los repuestos en cajas separadas y los cambios de proveedor de baterías.",
+      "Entrega al transportista la lista de cajas, la configuración de las baterías y el marcado para la revisión IMDG. Solicita aceptación por escrito y los gastos de manipulación por separado antes de embalar o consolidar."
+    ],
+    "factoryLink": "Consulta los modelos de altavoces portátiles",
+    "photo": "Ejemplo de altavoz compacto",
+    "faq": [
+      "¿Puede la fábrica cambiar la batería antes de embarcar?",
+      "Envía la referencia de la batería nueva, sus Wh y el resumen UN 38.3 correspondiente. Pide al transportista y al importador que revisen el cambio antes de reservar las cajas actualizadas o mezclarlas con el lote original."
+    ]
+  },
+  "fr": {
+    "name": "Pologne",
+    "title": "Expédition de Chine vers la Pologne",
+    "intro": "Comparez le fret maritime de Chine vers Gdańsk et Gdynia et demandez séparément la livraison à Łódź ou dans un autre entrepôt polonais. Précisez si la marchandise contient des batteries.",
+    "ports": [
+      "Gdańsk",
+      "Gdynia"
+    ],
+    "inland": "Łódź",
+    "delivery": "Indiquez le code postal, le créneau et les moyens de déchargement. Confirmez le terminal, la mainlevée et l’enlèvement. Si les marchandises circulent sous transit douanier, fixez le lieu du dédouanement avant de chiffrer la livraison.",
+    "customs": [
+      "Confirmez l’EORI de l’importateur, le mandat du représentant et le paiement des droits et de la TVA à l’importation. Fournissez la facture, la liste de colisage et le document de transport.",
+      "Vérifiez le classement et l’origine avec le déclarant. Pour déclarer en Pologne, consultez AIS/IMPORT PLUS sur PUESC et les pièces qui s’appliquent au produit.",
+      "Avant la mise sur le marché de modèles Bluetooth dans l’UE, vérifiez avec l’importateur les obligations relatives aux équipements radioélectriques, dont la déclaration UE de conformité, le marquage CE et les informations produit."
+    ],
+    "factoryTitle": "Expédier en Pologne des enceintes Bluetooth portables à batterie intégrée depuis une usine chinoise",
+    "factory": [
+      "Avant de réserver vers Gdańsk ou Gdynia, vérifiez la référence de l’enceinte, le modèle de batterie au lithium installée, sa capacité en Wh et le résumé d’essais UN 38.3 correspondant. Signalez les batteries de rechange emballées à part et tout changement de fournisseur.",
+      "Remettez au transporteur la liste des colis, la configuration des batteries et les marques pour son contrôle IMDG. Demandez son accord écrit et le détail des frais de manutention avant l’emballage ou le groupage."
+    ],
+    "factoryLink": "Voir les modèles d’enceintes portables",
+    "photo": "Exemple d’enceinte compacte",
+    "faq": [
+      "L’usine peut-elle changer de bloc-batterie avant l’envoi ?",
+      "Transmettez le nouveau modèle, sa capacité en Wh et le résumé UN 38.3 correspondant. Faites valider le changement par le transporteur et l’importateur avant de réserver les colis modifiés ou de les mélanger au lot initial."
+    ]
+  },
+  "ru": {
+    "name": "Польша",
+    "title": "Доставка грузов из Китая в Польшу",
+    "intro": "Сравните морские перевозки из Китая в Гданьск и Гдыню. Доставку до склада в Лодзи или другом городе Польши рассчитайте отдельно. В заявке укажите наличие аккумуляторов.",
+    "ports": [
+      "Гданьск",
+      "Гдыня"
+    ],
+    "inland": "Лодзь",
+    "delivery": "Укажите почтовый индекс, время и условия выгрузки на складе. Уточните фактический терминал, выпуск и выдачу контейнера. Если груз идёт под таможенным транзитом, заранее согласуйте место оформления.",
+    "customs": [
+      "Подтвердите EORI импортёра, полномочия брокера и порядок уплаты пошлины и ввозного НДС. Предоставьте инвойс, упаковочный лист и транспортный документ.",
+      "Согласуйте с брокером код товара и происхождение. При оформлении в Польше проверьте порядок подачи через PUESC в AIS/IMPORT PLUS и список документов.",
+      "Для продажи Bluetooth-моделей в ЕС импортёр проверяет требования к радиооборудованию, в том числе декларацию соответствия ЕС, маркировку CE и информацию о товаре."
+    ],
+    "factoryTitle": "Как отправить в Польшу портативные Bluetooth-колонки со встроенными аккумуляторами с китайской фабрики",
+    "factory": [
+      "До бронирования через Гданьск или Гдыню сверьте модель колонки, модель литиевого аккумулятора, энергоёмкость в Вт·ч и соответствующее резюме испытаний UN 38.3. Сообщите о запасных батареях в отдельных коробках и смене поставщика.",
+      "Передайте перевозчику список коробок, конфигурацию батарей и маркировку для проверки по IMDG. До упаковки или консолидации получите письменное согласие на приём и отдельную цену обработки."
+    ],
+    "factoryLink": "Посмотреть модели портативных колонок",
+    "photo": "Пример компактной колонки",
+    "faq": [
+      "Что делать, если фабрика заменила аккумулятор после заказа?",
+      "Передайте модель нового блока, энергоёмкость в Вт·ч и подходящее резюме UN 38.3. Согласуйте замену с перевозчиком и импортёром до бронирования новых коробок или их объединения с исходной партией."
+    ]
+  },
+  "ar": {
+    "name": "بولندا",
+    "title": "الشحن من الصين إلى بولندا",
+    "intro": "قارن الشحن البحري من الصين إلى غدانسك وغدينيا، واطلب سعراً منفصلاً للتوصيل إلى وودج أو مستودع آخر في بولندا. اذكر وجود بطاريات عند طلب السعر.",
+    "ports": [
+      "غدانسك",
+      "غدينيا"
+    ],
+    "inland": "وودج",
+    "delivery": "اذكر الرمز البريدي وموعد الاستلام وشروط التفريغ. أكد محطة التفريغ الفعلية والإفراج والاستلام. إذا كانت البضاعة ستنتقل تحت العبور الجمركي، فاتفق أولاً على مكان التخليص.",
+    "customs": [
+      "أكد رقم EORI للمستورد وتفويض المخلص والجهة التي تدفع الرسوم وضريبة الاستيراد. سلّم الفاتورة التجارية وقائمة التعبئة ومستند النقل.",
+      "راجع رمز السلعة ومنشأها مع المخلص. للإقرار في بولندا، تحقق من إجراء AIS/IMPORT PLUS عبر PUESC والمستندات المطلوبة للبضاعة.",
+      "قبل بيع طرازات بلوتوث في الاتحاد الأوروبي، يراجع المستورد متطلبات المعدات اللاسلكية المنطبقة، بما فيها إعلان المطابقة الأوروبي وعلامة CE ومعلومات المنتج."
+    ],
+    "factoryTitle": "شحن سماعات بلوتوث محمولة ببطاريات مدمجة من مصنع صيني إلى بولندا",
+    "factory": [
+      "قبل حجز الشحن إلى غدانسك أو غدينيا، طابق طراز السماعة مع طراز بطارية الليثيوم المركبة وسعتها بالواط ساعة وملخص اختبارات UN 38.3 المطابق. اذكر البطاريات الاحتياطية المعبأة منفصلة وأي تغيير في المورد.",
+      "أعط الناقل قائمة الصناديق وترتيب البطاريات وعلامات العبوات لمراجعة IMDG. اطلب قبول الناقل كتابةً وسعراً منفصلاً للمناولة قبل التعبئة أو التجميع."
+    ],
+    "factoryLink": "اطّلع على طرازات السماعات المحمولة",
+    "photo": "مثال لسماعة صغيرة الحجم",
+    "faq": [
+      "هل يمكن للمصنع تغيير حزمة البطارية قبل الشحن؟",
+      "أرسل طراز الحزمة الجديدة وسعتها بالواط ساعة وملخص UN 38.3 المطابق. اطلب من الناقل والمستورد مراجعة التغيير قبل حجز الصناديق المعدلة أو خلطها بالدفعة الأصلية."
+    ]
+  },
+  "pt": {
+    "name": "Polônia",
+    "title": "Transporte da China para a Polônia",
+    "intro": "Compare o frete marítimo da China para Gdańsk e Gdynia e solicite à parte a entrega em Łódź ou outro armazém na Polônia. Informe se a carga tem bateria.",
+    "ports": [
+      "Gdańsk",
+      "Gdynia"
+    ],
+    "inland": "Łódź",
+    "delivery": "Informe código postal, horário de recebimento e estrutura de descarga. Confirme o terminal de descarga, a liberação e a retirada. Se a carga seguir em trânsito aduaneiro, defina o local de desembaraço antes de cotar a entrega.",
+    "customs": [
+      "Confirme o EORI do importador, o mandato do despachante e quem paga impostos e IVA de importação. Entregue fatura comercial, romaneio e documento de transporte.",
+      "Confira a classificação e a origem com o despachante. Para declarar na Polônia, verifique o AIS/IMPORT PLUS no PUESC e os documentos exigidos para a mercadoria.",
+      "Antes de vender modelos Bluetooth na UE, confirme com o importador os requisitos de equipamentos de rádio, incluindo declaração UE de conformidade, marcação CE e informações do produto."
+    ],
+    "factoryTitle": "Envio de caixas de som Bluetooth portáteis com bateria integrada de uma fábrica chinesa à Polônia",
+    "factory": [
+      "Antes da reserva para Gdańsk ou Gdynia, confira o modelo da caixa de som com a bateria de lítio instalada, sua energia em Wh e o resumo de testes UN 38.3 correspondente. Informe baterias sobressalentes embaladas à parte e qualquer troca de fornecedor.",
+      "Entregue à transportadora a lista de caixas, a configuração das baterias e a marcação para a análise conforme o IMDG. Peça o aceite por escrito e a cotação separada da movimentação antes de embalar ou consolidar."
+    ],
+    "factoryLink": "Veja os modelos de caixas de som portáteis",
+    "photo": "Exemplo de caixa de som compacta",
+    "faq": [
+      "A fábrica pode trocar a bateria antes do embarque?",
+      "Envie o modelo novo, a energia em Wh e o resumo UN 38.3 correspondente. Solicite a revisão do transportador e do importador antes de reservar as caixas alteradas ou misturá-las com o lote original."
+    ]
+  },
+  "tr": {
+    "name": "Polonya",
+    "title": "Çin’den Polonya’ya yük taşımacılığı",
+    "intro": "Çin’den Gdańsk ve Gdynia’ya deniz taşımacılığını karşılaştırın. Łódź veya başka bir Polonya deposuna teslimatı ayrıca fiyatlandırın. Teklifte bataryalı yükü belirtin.",
+    "ports": [
+      "Gdańsk",
+      "Gdynia"
+    ],
+    "inland": "Łódź",
+    "delivery": "Depo posta kodunu, teslimat saatini ve boşaltma koşullarını verin. Fiili terminali, serbest bırakmayı ve konteyner alımını doğrulayın. Yük gümrük transitinde ilerleyecekse önce gümrükleme yerini belirleyin.",
+    "customs": [
+      "İthalatçı EORI numarasını, temsil yetkisini ve ithalat vergileriyle KDV’yi kimin ödeyeceğini doğrulayın. Ticari fatura, çeki listesi ve taşıma belgesini iletin.",
+      "Eşya kodunu ve menşeyi gümrük temsilcisiyle doğrulayın. Polonya’da ithalat beyanı için PUESC üzerinden AIS/IMPORT PLUS sürecini ve ürüne ait evrakı kontrol edin.",
+      "Bluetooth modelleri AB’de satışa sunulmadan önce ithalatçı, telsiz ekipmanı kurallarını, AB uygunluk beyanını, CE işaretini ve ürün bilgilerini kontrol etmelidir."
+    ],
+    "factoryTitle": "Çin fabrikasından Polonya’ya dahili bataryalı taşınabilir Bluetooth hoparlör gönderimi",
+    "factory": [
+      "Gdańsk veya Gdynia rezervasyonundan önce hoparlör modelini takılı lityum batarya modeli, Wh değeri ve ilgili UN 38.3 test özetiyle eşleştirin. Ayrı paketlenen yedek bataryaları ve tedarikçi değişikliklerini bildirin.",
+      "Taşıyıcıya IMDG incelemesi için koli listesini, batarya düzenini ve ambalaj işaretlerini verin. Paketleme veya konsolidasyondan önce yazılı kabul ve bataryalı yük elleçleme ücretini ayrı isteyin."
+    ],
+    "factoryLink": "Taşınabilir hoparlör modellerini inceleyin",
+    "photo": "Kompakt hoparlör örneği",
+    "faq": [
+      "Fabrika sevkiyattan önce bataryayı değiştirebilir mi?",
+      "Yeni bataryanın modelini, Wh değerini ve ilgili UN 38.3 özetini gönderin. Değişen kolileri rezerve etmeden veya eski partiye katmadan önce taşıyıcıya ve ithalatçıya kontrol ettirin."
+    ]
+  }
+}

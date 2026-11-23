@@ -2,7 +2,7 @@ import type { Language } from '../../i18n/translations';
 import { localizedPacificPort } from './locales/index.mjs';
 
 import southAfricaCopy from './candidate-markets/southAfricaCopy.json';
-import {isMediterraneanCountry, mediterraneanCopy} from './candidate-markets/mediterraneanMarkets';
+import {isPortMarketCountry, portMarketCopy} from './candidate-markets/portMarkets';
 
 type Port = readonly [name: string, chinese: string, longitude: number, latitude: number, lookup?: string];
 type Bounds = [west: number, south: number, east: number, north: number];
@@ -54,6 +54,14 @@ export const countryGateways: Record<string, GatewayMap> = {
  morocco: {id:'504', bounds:[-10,30.5,-2.4,36.3], ports:[
   ['Tanger Med','丹吉尔地中海港',-5.50,35.89],
   ['Casablanca','卡萨布兰卡',-7.6167,33.6],
+ ]},
+ belgium: {id:'056', bounds:[2.35,49.35,6.5,52.0], ports:[
+  ['Antwerp','安特卫普',4.4,51.22],
+  ['Zeebrugge','泽布吕赫',3.2,51.33],
+ ]},
+ poland: {id:'616', bounds:[13.5,48.7,24.8,55.5], ports:[
+  ['Gdańsk','格但斯克',18.65,54.42],
+  ['Gdynia','格丁尼亚',18.55,54.5],
  ]},
  netherlands: {id:'528', ports:[['Rotterdam','鹿特丹',4.14,51.95]]},
  'united-kingdom': {id:'826', ports:[['Southampton','南安普敦',-1.44,50.91]]},
@@ -143,8 +151,8 @@ export function countryGatewayLabels(country: string, locale: Language) {
  }
  const [title, note] = mapText[locale];
  const ports = countryGateways[country].ports.map(([name, chinese, longitude, latitude, lookup], i) => ({
-  name: isMediterraneanCountry(country)
-   ? mediterraneanCopy[country][locale].ports[i]
+  name: isPortMarketCountry(country)
+   ? portMarketCopy[country][locale].ports[i]
    : (lookup && localizedPacificPort(lookup, locale)) || (locale === 'zh' ? chinese : name),
   coordinates: [longitude, latitude] as [number, number],
  }));

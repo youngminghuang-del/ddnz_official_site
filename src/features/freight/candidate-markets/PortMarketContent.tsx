@@ -2,26 +2,28 @@ import {ClipboardList, Clock3, ReceiptText, ShieldCheck, Ship} from 'lucide-reac
 import {CountryGatewayMap} from '../../../components/FreightRouteMap';
 import {quoteLinkProps} from '../../../lib/quoteLinkPolicy.mjs';
 import {candidateInfo, candidatePrefix, candidateTrail, sharedCopy, candidateLanguage, type CandidateLocale} from './model';
-import {mediterraneanCopy, mediterraneanLabels, mediterraneanMarkets, type MediterraneanCountry} from './mediterraneanMarkets';
+import {portMarketCopy, portMarketLabels, portMarkets, type PortMarketCountry} from './portMarkets';
 import guide from './marketGuideCopy.json';
 import scenarios from './quoteScenarioCopy.json';
 
 const customsIcons = [ClipboardList, ReceiptText, ShieldCheck];
 
-export function MediterraneanContent({country, locale}: {country: MediterraneanCountry; locale: CandidateLocale}) {
-  const c = mediterraneanCopy[country][locale];
-  const labels = mediterraneanLabels[locale];
-  const market = mediterraneanMarkets[country];
+export function PortMarketContent({country, locale}: {country: PortMarketCountry; locale: CandidateLocale}) {
+  const c = portMarketCopy[country][locale];
+  const labels = portMarketLabels[locale];
+  const market = portMarkets[country];
   const common = sharedCopy[locale];
   const scenario = scenarios[locale];
   const page = candidateInfo(country, locale);
   const prefix = candidatePrefix(locale);
   const currency = new Intl.NumberFormat(candidateLanguage(locale));
   const breadcrumb = candidateTrail(country, locale);
-  const connection = country === 'morocco' ? mediterraneanCopy.morocco[locale].connection : null;
-  const quote = (destinationText: string, notes: string) => quoteLinkProps(
-    `${prefix}/get-a-quote/?${new URLSearchParams({leadGoal: 'Freight Export', source: 'international_country', destinationText, notes})}`
-  );
+  const connection = country === 'morocco' ? portMarketCopy.morocco[locale].connection : null;
+  const quote = (destinationText: string, notes: string, door = false) => {
+    const params = new URLSearchParams({leadGoal: 'Freight Export', source: 'international_country', destinationText, notes});
+    if (door && 'doorAssessment' in market) params.set('deliveryAssessment', '1');
+    return quoteLinkProps(`${prefix}/get-a-quote/?${params}`);
+  };
 
   return <main id="main-content" className="country-editorial gulf-page candidate-freight" lang={page.language} dir={locale === 'ar' ? 'rtl' : 'ltr'} data-country-cargo-planning={country}>
     <div className="gulf-wrap">
@@ -64,7 +66,7 @@ export function MediterraneanContent({country, locale}: {country: MediterraneanC
               </dl>
               <div className="candidate-port-actions">
                 <a className="candidate-scenario-cta" data-port-quote={port.code} {...quote(destination, `${scenario.port} · ${routeNote}`)}>{scenario.portQuote} ↗</a>
-                <a className="candidate-scenario-cta" data-door-quote={port.code} {...quote(`${c.name} · ${c.inland}`, `${scenario.door} · ${routeNote}\n${c.delivery}`)}>{scenario.doorQuote} ↗</a>
+                <a className="candidate-scenario-cta" data-door-quote={port.code} {...quote(`${c.name} · ${c.inland}`, `${scenario.door} · ${routeNote}\n${c.delivery}`, true)}>{scenario.doorQuote} ↗</a>
               </div>
             </article>;
           })}
