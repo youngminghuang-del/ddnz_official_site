@@ -325,6 +325,27 @@
       ],
       "faq_count": 3,
       "item_list_count": 6
+    },
+    {
+      "slug": "saudi-central-kitchen-hot-meal-transport",
+      "canonical": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/",
+      "language": "ar",
+      "notion_page_id": "422eac33-2618-815a-b422-de81615b367a",
+      "release_file": "src/data/saudiHotMealTransportRelease.json",
+      "schema_file": "src/data/saudi-hot-meal-transport-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/saudi-central-kitchen-hot-meal-transport/commercial-kitchen-prep.webp",
+      "images": [
+        "/images/posts/saudi-central-kitchen-hot-meal-transport/commercial-kitchen-prep.webp",
+        "/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-hc711.webp",
+        "/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-bc0521.webp",
+        "/images/posts/saudi-central-kitchen-hot-meal-transport/jingyao-jy-a90.jpg",
+        "/images/posts/saudi-central-kitchen-hot-meal-transport/testo-food-temperature.jpg"
+      ],
+      "faq_count": 4,
+      "item_list_count": 3
     }
   ]
 }

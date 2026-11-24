@@ -1,0 +1,218 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#webpage",
+      "name": "توصيل الوجبات الساخنة في السعودية: كيف تختار معدات حفظ الحرارة للفروع؟",
+      "inLanguage": "ar",
+      "description": "دليل لمطابخ السعودية المركزية لاختيار خزانة حفظ الطعام الساخن أو عربة كهربائية أو صندوق معزول بحسب سعة أوعية GN وظروف نقل الوجبات إلى الفروع.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-a"
+      },
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#article",
+      "headline": "توصيل الوجبات الساخنة في السعودية: كيف تختار معدات حفظ الحرارة للفروع؟",
+      "inLanguage": "ar",
+      "description": "دليل لمطابخ السعودية المركزية لاختيار خزانة حفظ الطعام الساخن أو عربة كهربائية أو صندوق معزول بحسب سعة أوعية GN وظروف نقل الوجبات إلى الفروع.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#webpage"
+      },
+      "citation": [
+        "https://www.sfda.gov.sa/sites/default/files/2020-12/FoodHygieneRequirementsEn.pdf",
+        "https://www.sfda.gov.sa/sites/default/files/2025-09/FDTFP.pdf",
+        "https://www.alto-shaam.com/en/products/heated-holding/1200-s",
+        "https://www.alto-shaam.com/en/products/heated-holding/1000-mh2-1",
+        "https://www.cambro.com/Industries/catering/front-loading-food-pan-carriers/upc400/"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-b"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-e"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/",
+      "datePublished": "2026-11-24T10:57:10+08:00",
+      "dateModified": "2026-11-24T10:57:10+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/commercial-kitchen-prep.webp",
+      "description": "فريق مطبخ تجاري يحضّر الطعام على طاولة عمل بجانب أوعية من الفولاذ المقاوم للصدأ",
+      "width": 1600,
+      "height": 1000,
+      "creditText": "DDNZ Global",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/commercial-kitchen-prep.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-hc711.webp",
+      "description": "خزانة حفظ الطعام الساخن Rebenet HC711 بباب زجاجي ولوحة تحكم علوية",
+      "width": 800,
+      "height": 800,
+      "creditText": "Rebenet",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-hc711.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-bc0521.webp",
+      "description": "عربة حفظ الطعام الساخن الكهربائية Rebenet BC0521 بباب مفتوح ورفوف وعجلات",
+      "width": 800,
+      "height": 800,
+      "creditText": "Rebenet / Made-in-China",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/rebenet-bc0521.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/jingyao-jy-a90.jpg",
+      "description": "صندوق Jingyao JY-A90 المعزول غير الكهربائي بباب مفتوح وأوعية طعام معدنية",
+      "width": 940,
+      "height": 940,
+      "creditText": "Jingyao",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/jingyao-jy-a90.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#photo-e",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/testo-food-temperature.jpg",
+      "description": "قياس درجة حرارة الطعام بمسبار داخل وعاء تقديم",
+      "width": 900,
+      "height": 600,
+      "creditText": "Testo",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-central-kitchen-hot-meal-transport/testo-food-temperature.jpg"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "يخرج الأرز والدجاج واليخنة على دفعتين قبل الغداء، فهل تكفي خزانة ثابتة واحدة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "احسب عدد الأوعية التي تنتظر التحميل في الوقت نفسه. لنفترض أن الدفعة الأولى تملأ 6 أوعية وأن الدفعة الثانية تضيف 4 قبل وصول السائق. ستحتاج إلى خزانة تتسع لعشرة أوعية دفعة واحدة. إذا كانت كلها من مقاس GN 1/1 وبعمق 100 مم، فاكتب هذا العمق ونوع الأغطية في طلب السعر. اطلب من المورد تجربة تحميل الأوعية العشرة وإغلاق الباب ثم سحب الأوعية من كل مستوى. وإذا أمكن تسليم الدفعتين في وقتين مختلفين، فأعد حساب العدد حسب جدول الطبخ والانطلاق لترى إن كانت خزانة أصغر تكفي."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "لا يوجد مقبس عند باب الاستلام الخلفي، فهل تستحق العربة الكهربائية الشراء؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "قس العرض الصافي للباب الخلفي والمساحة المتاحة عند منعطف الممر، ثم اطلب من موظف الاستلام تجربة العربة المرشحة بحمولة التشغيل الكاملة. إذا وصلت إلى المطبخ وفيه نقطة كهرباء مناسبة، فسجّل مدة انقطاع الكهرباء من فصل العربة في المطبخ المركزي إلى إعادة توصيلها في الفرع، بما فيها التوقفات وانتظار فتح الباب، ثم قِس حرارة الطعام وفق خطة المشروع. وإذا توقفت العربة عند الباب وكان الفريق يستلم الأوعية واحداً واحداً، فقارن هذا الترتيب بتخصيص صناديق لكل فرع ونقل الأوعية إلى خزانة حفظ ثابتة عند الاستلام. وإذا أردت تشغيل العربة في المركبة، فاطلب تأكيداً كتابياً من المصنّع للطراز المرشح وراجع التغذية الكهربائية والتثبيت في المركبة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "يفتح السائق الصندوق في كل محطة بحثاً عن الأطباق. كيف نحافظ على حمولة الفرع الأخير؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "إذا كانت الرحلة تمر بثلاثة فروع، فخصّص الصناديق لكل فرع في المطبخ، واكتب على كل صندوق اسم الفرع ورقم الدفعة وعدد الأوعية. رتّب حمولة الفرع الأخير بحيث تبقى صناديقه مغلقة أثناء تسليم الطلبات الأخرى. في الرحلة التجريبية، دع السائق يتوقف ويفرغ ويسلّم كالمعتاد، واطلب من موظف الفرع الأخير قياس حرارة الطعام بالمسبار في الوعاء المحدد في خطة المشروع. إذا لم تستوفِ الحرارة حد الاستلام، عدّل المسار أو قلّل عدد الفروع في الرحلة ثم أعد التجربة. وإذا تكررت المشكلة، فأعد تقييم وسيلة التحكم في الحرارة أثناء النقل."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "وصلت الوجبات قبل موعد التقديم. من يتولى حفظها ساخنة؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "عيّن موظفاً من الوردية لاستلام الشحنة. يعدّ الأوعية ويقيس حرارة الطعام ويسجّل وقت الوصول. وإذا استوفت الدفعة شروط الاستلام، ينقلها فوراً إلى خزانة الحفظ التي جُهّزت مسبقاً وفق خطة المشروع. يعيد القياس قبل التقديم حسب إجراءات الفرع. وإذا كانت الخزانة تمتلئ عادةً وقت الذروة، فاحجز فيها مساحة لأوعية التوصيل قبل تحديد موعد الوصول. أما الدفعة التي تقع حرارتها خارج حد الاستلام، فاعزلها وأحلها إلى المسؤول للتصرف وفق إجراءات سلامة الغذاء في المشروع."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#decision-table",
+      "name": "مقارنة معدات حفظ الحرارة على خط التوزيع",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "خزانة حفظ ساخن ثابتة",
+          "description": "انتظار الدفعات قبل التحميل، أو حفظها في الفرع قبل التقديم · عدد أوعية GN مع الأغطية، عمق كل وعاء، استعادة الحرارة بعد فتح الباب، ومكان التغذية الكهربائية",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "عربة حفظ ساخن كهربائية",
+          "description": "نقل دفعة كاملة على عجلات، مع نقاط كهرباء مؤكدة قبل الانطلاق وعند الوصول · موافقة المصنع على وضع التشغيل أثناء النقل، مواصفات الكهرباء والتثبيت، عرض الأبواب، الحمولة المسموح بها وأطول فترة دون توصيل تحققت في الاختبار",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "صندوق معزول غير كهربائي",
+          "description": "تسليم أوعية منفصلة لكل فرع عند غياب الكهرباء أثناء الرحلة، بعد التحقق من المسار · سعة الصندوق بالعمق الفعلي، ظروف اختبار الاحتفاظ بالحرارة، الوزن عند الامتلاء، وإمكانية تنظيف الغطاء والمزلاج واستبدالهما",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#decision-3"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المدونة",
+          "item": "https://www.ddnzglobal.com/ar/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "توصيل الوجبات الساخنة في السعودية: كيف تختار معدات حفظ الحرارة للفروع؟",
+          "item": "https://www.ddnzglobal.com/ar/blog/saudi-central-kitchen-hot-meal-transport/"
+        }
+      ]
+    }
+  ]
+}
