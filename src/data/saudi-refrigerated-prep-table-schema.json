@@ -1,0 +1,329 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#webpage",
+      "name": "طاولة تحضير مبردة للمطاعم في السعودية: كيف تتحقق من برودة المكونات وقت الذروة؟",
+      "inLanguage": "ar",
+      "description": "دليل لشراء طاولة تحضير مبردة للمطاعم في السعودية، مع جدول لقياس حرارة المكونات في الأوعية العلوية والخزانة السفلية وقت الذروة.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-a"
+      },
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#article",
+      "headline": "طاولة تحضير مبردة للمطاعم في السعودية: كيف تتحقق من برودة المكونات وقت الذروة؟",
+      "inLanguage": "ar",
+      "description": "دليل لشراء طاولة تحضير مبردة للمطاعم في السعودية، مع جدول لقياس حرارة المكونات في الأوعية العلوية والخزانة السفلية وقت الذروة.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#webpage"
+      },
+      "citation": [
+        "https://www.sfda.gov.sa/sites/default/files/2020-12/FoodHygieneRequirementsAR.pdf",
+        "https://www.truemfg.com/wp-content/uploads/true-media/spec-sheets/TSSU-60-08-HC.pdf",
+        "https://www.turboairinc.com/products/product-category/food-prep-tables/sandwich-salad-units/solid-door-sandwich-salad-units/prep-work-station/tst-48sd-12m-n-sl-lw/",
+        "https://www.vollrathfoodservice.com/downloads/103205/CAT2024SmallwaresCountertopEquipmentCatalogen-pdf",
+        "https://www.nist.gov/pml/special-publication-811/nist-guide-si-appendix-b-conversion-factors/nist-guide-si-appendix-b8",
+        "https://www.cambro.com/Products/food-storage/square-food-storage-containers/freshpro/"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-b"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-e"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-g"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-h"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-i"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-j"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-k"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-l"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-m"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-f"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/",
+      "datePublished": "2026-11-25T22:49:10+08:00",
+      "dateModified": "2026-11-25T22:49:10+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/prep-station-overview.webp",
+      "description": "طاولة التحضير المبردة وتظهر الأوعية العلوية وسطح العمل الجانبي والخزانة السفلية",
+      "width": 1200,
+      "height": 1666,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/prep-station-overview.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/ingredient-pan-layout.webp",
+      "description": "صفوف أوعية المكونات الفارغة على سطح التحضير",
+      "width": 1397,
+      "height": 1126,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/ingredient-pan-layout.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/lift-out-pan.webp",
+      "description": "وعاء مكونات مرفوع يظهر الفتحة أسفله",
+      "width": 1390,
+      "height": 1132,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/lift-out-pan.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/upper-shelf.webp",
+      "description": "الرف المعدني العلوي فوق أوعية المكونات",
+      "width": 1143,
+      "height": 1376,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/upper-shelf.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-e",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/side-work-surface.webp",
+      "description": "سطح العمل الجانبي خالياً إلى جوار أوعية المكونات",
+      "width": 1466,
+      "height": 1073,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/side-work-surface.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-g",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/hotel-pan-size-layout.webp",
+      "description": "مخطط لأحجام أوعية الفندق وترتيبها داخل فتحة مشتركة",
+      "width": 1290,
+      "height": 1896,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/hotel-pan-size-layout.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-h",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/solid-and-perforated-food-pans.webp",
+      "description": "غطاء ووعاء مثقب ووعاء مصمت بأعماق مختلفة",
+      "width": 1290,
+      "height": 1114,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/solid-and-perforated-food-pans.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-i",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/sheet-pan-format.webp",
+      "description": "أمثلة لصواني الخَبز المسطحة بمقاسات مختلفة",
+      "width": 1290,
+      "height": 431,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/sheet-pan-format.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-j",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/covered-backup-containers.webp",
+      "description": "حاويات تخزين شفافة مدرّجة بأغطية ملونة",
+      "width": 1290,
+      "height": 1286,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/covered-backup-containers.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-k",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/portion-containers.webp",
+      "description": "عبوات دائرية بغطاء بثلاث سعات مرجعية",
+      "width": 1290,
+      "height": 830,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/portion-containers.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-l",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/squeeze-bottles.webp",
+      "description": "عبوات ضغط للصلصات بمقاسات مختلفة",
+      "width": 1290,
+      "height": 1527,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/squeeze-bottles.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-m",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/bus-tub.webp",
+      "description": "حوض تجميع مستطيل للأواني المستخدمة",
+      "width": 1290,
+      "height": 680,
+      "creditText": "Reference screenshot provided for editorial review",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/bus-tub.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#photo-f",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/lower-cabinet-controls.webp",
+      "description": "الخزانة السفلية وفتحات التهوية ولوحة التحكم",
+      "width": 980,
+      "height": 432,
+      "creditText": "Video footage provided by the article owner",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-refrigerated-prep-table/lower-cabinet-controls.webp"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "تظهر الشاشة 3 درجات مئوية، فهل تكفي القراءة لقبول الأوعية العلوية؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "حدد أولاً موضع حساس الشاشة. قِس بالمسبار حرارة المكونات في الأوعية العلوية وفي مخزون الخزانة خلال الفتح المتكرر. دوّن الوقت وموضع كل قراءة في الجدول، وقارنها بحد القبول المعتمد في مشروعك. الرقم المذكور في السؤال قراءة افتراضية."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ينفد وعاء الدجاج بسرعة وقت الغداء، فهل أشتري وعاء أعمق؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "جرّب طريقتين على خط العمل. عند استخدام وعاء أعمق، قِس الطعام بمستوى التعبئة المعتاد وتأكد من سهولة الوصول إليه. وعند استخدام وعاء أقل عمقاً، ضع بديلاً مبرداً في الخزانة وبدّل الوعاء كاملاً حسب وتيرة الطلبات. سجّل أعلى حرارة وعدد مرات التبديل قبل أن تختار."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "أريد وضع موزع شراب على السطح الجانبي، فما الأبعاد المطلوبة للعرض؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "أرسل أبعاد قاعدة الموزع ووزنه أثناء التشغيل وموقع المقبس ومسار السلك والفراغ المطلوب لوضع الكوب تحته. اطلب رسماً يوضح موضع الجهاز والأوعية ومدى حركة الغطاء. بعد وضع الجهاز يجب أن يستطيع العامل سحب الأوعية وتنظيف السطح وفتح الخزانة بسهولة."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-table",
+      "name": "جدول طلب السعر واختبار الطاولة وقت الذروة",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "الأوعية العلوية",
+          "description": "الترتيب ومقاس كل وعاء وعمقه ومستوى التعبئة والأغطية والفواصل · حمّل الطاولة حسب القائمة، وجرّب السحب والتبديل، وقِس حرارة الطعام في الصف الأمامي والزاوية والوسط",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "مخزون الخزانة",
+          "description": "نوع الأبواب أو الأدراج، وعدد أوعية الاحتياط، وموضع حساس الشاشة · ضع أوعية احتياط مبردة مسبقاً، وافتح الخزانة حسب وتيرة العمل، وقِس حرارة الطعام فيها على حدة",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ظروف الذروة",
+          "description": "طريقة فتح الغطاء وتوقيت التبديل وحرارة المكان ومصادر الحرارة القريبة · سجّل حرارة البداية والجو وأوقات الفتح والتبديل، وقارن القياسات أثناء الذروة وعند نهايتها",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "المساحة والصيانة",
+          "description": "أبعاد السطح وفراغ فتح الأبواب والغطاء والتهوية والتغذية الكهربائية والتنظيف · طابق اللوحة التعريفية بالنسخة المعروضة، وتحقق من إمكان تبديل الأوعية والوصول إلى مواضع التنظيف والصيانة",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "قرار القبول",
+          "description": "حد حرارة الطعام الذي يعتمده مسؤول السلامة، ونقاط القياس وشروط الإعادة · سجّل أعلى قراءة وموضعها، وعالج أي تجاوز وفق إجراءات المشروع، ثم أعد التجربة تحت الظروف نفسها",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#decision-5"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المدونة",
+          "item": "https://www.ddnzglobal.com/ar/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "طاولة تحضير مبردة للمطاعم في السعودية: كيف تتحقق من برودة المكونات وقت الذروة؟",
+          "item": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/"
+        }
+      ]
+    }
+  ]
+}

@@ -346,6 +346,35 @@
       ],
       "faq_count": 4,
       "item_list_count": 3
+    },
+    {
+      "slug": "saudi-refrigerated-prep-table",
+      "canonical": "https://www.ddnzglobal.com/ar/blog/saudi-refrigerated-prep-table/",
+      "language": "ar",
+      "notion_page_id": "423eac33-2618-818b-822e-d6c795eeb042",
+      "release_file": "src/data/saudiRefrigeratedPrepTableRelease.json",
+      "schema_file": "src/data/saudi-refrigerated-prep-table-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/saudi-refrigerated-prep-table/prep-station-overview.webp",
+      "images": [
+        "/images/posts/saudi-refrigerated-prep-table/prep-station-overview.webp",
+        "/images/posts/saudi-refrigerated-prep-table/ingredient-pan-layout.webp",
+        "/images/posts/saudi-refrigerated-prep-table/lift-out-pan.webp",
+        "/images/posts/saudi-refrigerated-prep-table/upper-shelf.webp",
+        "/images/posts/saudi-refrigerated-prep-table/side-work-surface.webp",
+        "/images/posts/saudi-refrigerated-prep-table/lower-cabinet-controls.webp",
+        "/images/posts/saudi-refrigerated-prep-table/hotel-pan-size-layout.webp",
+        "/images/posts/saudi-refrigerated-prep-table/solid-and-perforated-food-pans.webp",
+        "/images/posts/saudi-refrigerated-prep-table/sheet-pan-format.webp",
+        "/images/posts/saudi-refrigerated-prep-table/covered-backup-containers.webp",
+        "/images/posts/saudi-refrigerated-prep-table/portion-containers.webp",
+        "/images/posts/saudi-refrigerated-prep-table/squeeze-bottles.webp",
+        "/images/posts/saudi-refrigerated-prep-table/bus-tub.webp"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }
