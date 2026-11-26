@@ -96,24 +96,34 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
   const europeNameStart = europeTitle.indexOf(europeName);
   const highlightedEuropeTitle = europeNameStart < 0 ? europeTitle : <>{europeTitle.slice(0, europeNameStart)}<em>{europeName}</em>{europeTitle.slice(europeNameStart + europeName.length)}</>;
   const originImage = region === 'latin-america' ? '/images/operations/peru-tile-loading-case.webp' : region === 'west-africa' ? '/media/freight-20260918/mixed-cargo-loading.jpg' : '/media/freight-20260918/factory-container.jpg';
+  const earlyMap = region === 'latin-america' && locale === 'es';
+  const originPlanning = <>
+      <ChinaOriginGuide locale={locale} destination={name} />
+      {region!=='central-america'&&region!=='europe'&&region!=='central-africa'&&<OriginDestinationOpportunities context={region} locale={locale} />}
+  </>;
+  const networkSection = (
+    <section id={region === 'europe' ? 'europe-port-network' : region === 'latin-america' ? 'latin-america-route-map' : undefined} className={`freight-region-map-section${region === 'latin-america' ? ' scroll-mt-32' : ''}`} aria-labelledby="region-map-heading"><div className="freight-wrap">
+      <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.network}</p><h2 id="region-map-heading">{c.network}</h2></div>
+      {earlyMap && <p className="freight-map-mobile-hint">Desliza para ver todo el mapa.</p>}
+      {region==='central-africa'?<figure className="new-central-route"><p><bdi>{displayNames.of('CN')}</bdi> <span aria-hidden="true">{locale==='ar'?'←':'→'}</span> <bdi>Douala / CMDLA</bdi></p><figcaption>{centralAfricaCopy[locale].diagram}</figcaption></figure>:region==='central-america'?<figure className="market-region-route"><p><bdi>{new Intl.DisplayNames([locale],{type:'region'}).of('CN')}</bdi><span aria-hidden="true">{locale==='ar'?'←':'→'}</span><bdi>{gatewayNames[region].join(' / ')}</bdi></p><figcaption>{marketRegions[region][locale].diagram}</figcaption></figure>:<RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} keyboardScroll={earlyMap} />}
+      {region === 'europe' && <div className="europe-port-map-links">
+        <p>{c.networkNote}</p>
+        <div>{europePorts.map(([name, query]) => <a key={name} href={`https://www.google.com/maps/search/?${new URLSearchParams({api: '1', query})}`} target="_blank" rel="noopener noreferrer"><bdi>{name}</bdi> · Google Maps ↗</a>)}</div>
+      </div>}
+      {!earlyMap && originPlanning}
+    </div></section>
+  );
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-region-stage">
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path={`/shipping-from-china-to-${region}/`} locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{c.eyebrow}</p><h1>{region==='europe'?highlightedEuropeTitle:region==='central-america'?marketRegions[region][locale].title:<>{heading} <em>{name}.</em></>}</h1>
       <p className="freight-intro">{regionDescription(region, locale)}</p>
-      <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a></div>
+      <div className="freight-region-actions"><a className="freight-cta" href="#country-routes">{c.choose} ↓</a><a href={quote}>{c.quote} ↗</a>{earlyMap && <a href="#latin-america-route-map">Ver el mapa de puertos ↓</a>}</div>
     </div></header>
+    {earlyMap && networkSection}
     <FreightRatePreview context={region} locale={locale}/><DoorDeliveryLink locale={locale} context={region}/>
-    <section id={region === 'europe' ? 'europe-port-network' : undefined} className="freight-region-map-section" aria-labelledby="region-map-heading"><div className="freight-wrap">
-      <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.network}</p><h2 id="region-map-heading">{c.network}</h2></div>
-      {region==='central-africa'?<figure className="new-central-route"><p><bdi>{displayNames.of('CN')}</bdi> <span aria-hidden="true">{locale==='ar'?'←':'→'}</span> <bdi>Douala / CMDLA</bdi></p><figcaption>{centralAfricaCopy[locale].diagram}</figcaption></figure>:region==='central-america'?<figure className="market-region-route"><p><bdi>{new Intl.DisplayNames([locale],{type:'region'}).of('CN')}</bdi><span aria-hidden="true">{locale==='ar'?'←':'→'}</span><bdi>{gatewayNames[region].join(' / ')}</bdi></p><figcaption>{marketRegions[region][locale].diagram}</figcaption></figure>:<RegionalFreightMap region={region} locale={locale} title={c.network} description={c.networkNote} />}
-      {region === 'europe' && <div className="europe-port-map-links">
-        <p>{c.networkNote}</p>
-        <div>{europePorts.map(([name, query]) => <a key={name} href={`https://www.google.com/maps/search/?${new URLSearchParams({api: '1', query})}`} target="_blank" rel="noopener noreferrer"><bdi>{name}</bdi> · Google Maps ↗</a>)}</div>
-      </div>}
-      <ChinaOriginGuide locale={locale} destination={name} />
-      {region!=='central-america'&&region!=='europe'&&region!=='central-africa'&&<OriginDestinationOpportunities context={region} locale={locale} />}
-    </div></section>
+    {!earlyMap && networkSection}
+    {earlyMap && <div className="freight-wrap">{originPlanning}</div>}
     {region === 'europe' && <div className="freight-wrap"><CandidateRegionLinks locale={locale}/></div>}
     {region === 'europe' && <CentralAsiaRouteOptions locale={locale} destination="europe" />}
     <section id="country-routes" className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><h2 className="mt-4">{c.routesHeading}</h2>
@@ -138,5 +148,23 @@ export default function RegionContent({ region, locale }: { region: RegionId; lo
       <div className="freight-steps">{[[c.cargo, c.cargoBody], [c.import, c.importBody], [c.scope, c.scopeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
       <a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
+    {region === 'latin-america' && locale === 'es' && <section id="latin-america-shipping-checklist" className="freight-wrap freight-section scroll-mt-32">
+      <h2>Modalidades de transporte y documentos para Latinoamérica</h2>
+      <div className="freight-steps mt-6">
+        <article><h3>Marítimo FCL o LCL</h3><p>Compara el costo total de un contenedor completo con el de un envío consolidado. Incluye la desconsolidación, la espera y el retiro en destino según el alcance de la cotización.</p></article>
+        <article><h3>Transporte aéreo</h3><p>Para muestras, repuestos o reposición urgente, compara el peso facturable y el tiempo hasta la entrega. Confirma con el transportista la aceptación de baterías, líquidos o polvos antes del despacho.</p></article>
+        <article><h3>Tramo terrestre</h3><p>Cotiza la entrega desde el puerto o aeropuerto hasta el código postal final. Aclara quién coordina el retiro y qué maniobras incluye la descarga.</p></article>
+      </div>
+      <div className="mt-6 max-w-3xl">
+        <details className="border-t border-slate-300 py-4">
+          <summary className="cursor-pointer font-bold">¿Qué documentos se revisan antes de la salida?</summary>
+          <p className="mt-3 leading-7">Coteja el conocimiento de embarque o la guía aérea con la factura, la lista de empaque y los datos del consignatario. Pide al importador que confirme la clasificación y los permisos que correspondan al producto.</p>
+        </details>
+        <details className="border-t border-slate-300 py-4">
+          <summary className="cursor-pointer font-bold">¿Qué debe quedar por escrito al cotizar DAP o DDP?</summary>
+          <p className="mt-3 leading-7">Define el lugar de entrega, el responsable del despacho y qué aranceles, impuestos y gastos de terceros incluye la oferta. Confirma la viabilidad con el importador antes de reservar.</p>
+        </details>
+      </div>
+    </section>}
   <FreightRelatedLinks region={region} locale={locale}/></main>;
 }

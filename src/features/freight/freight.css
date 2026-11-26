@@ -596,3 +596,201 @@
   font-weight: 750;
   text-align: center;
 }
+
+/* Route decision tables keep the option and all its details together on mobile. */
+.freight-decision-table td{overflow-wrap:anywhere}
+.freight-decision-table a{display:inline-flex;align-items:center;min-height:44px}
+@media(max-width:700px){
+ .freight-decision-table tbody tr{grid-template-columns:minmax(0,1fr)}
+ .freight-decision-table tbody th{width:auto}
+}
+
+.freight-decision-photos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 1rem;
+  margin: 1.25rem 0 1.5rem;
+}
+
+.freight-decision-photos--single {
+  grid-template-columns: minmax(0, 42rem);
+  justify-content: center;
+}
+
+.freight-decision-photos figure {
+  margin: 0;
+  border: 1px solid #dce3ea;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.freight-decision-photos img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.freight-decision-photos figcaption {
+  padding: 0.75rem 0.875rem;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+.freight-decision-photo-caption {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  column-gap: 0.75rem;
+}
+
+.freight-decision-photo-source[open] {
+  grid-column: 1 / -1;
+}
+
+.freight-decision-photo-source summary {
+  width: max-content;
+  margin-inline-start: auto;
+  color: #425570;
+  cursor: pointer;
+}
+
+.freight-decision-photo-source .freight-decision-photo-credit {
+  overflow-wrap: anywhere;
+}
+
+.freight-decision-photo-credit {
+  margin-top: 0.375rem;
+  color: #425570;
+  font-size: 0.75rem;
+}
+
+.freight-decision-photo-credit a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+@media (max-width: 640px) {
+  .freight-decision-photos {
+    grid-template-columns: 1fr;
+  }
+}
+
+.freight-decision-photo-link {
+  color: #425570;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.freight-map-mobile-hint {
+  display: none;
+}
+
+@media (max-width: 640px) {
+  .freight-map-mobile-hint {
+    display: block;
+    margin: 0 0 0.5rem;
+    font-size: 0.8125rem;
+  }
+}
+
+#central-asia-route-map .freight-route-rail {
+  stroke: #763c9c;
+}
+
+#central-asia-route-map .freight-route-secondary {
+  stroke: #54687f;
+}
+
+.freight-central-map-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  margin: 0 0 0.875rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.875rem;
+}
+
+.freight-central-map-legend li {
+  display: inline-flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.freight-central-map-legend span {
+  width: 1.5rem;
+  border-top: 3px solid #763c9c;
+}
+
+.freight-central-map-legend .road {
+  border-color: #c94f2f;
+}
+
+.freight-central-map-legend .connection {
+  border-top: 2px dashed #54687f;
+}
+
+.freight-central-map-sources {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+}
+
+.freight-central-map-sources summary {
+  cursor: pointer;
+}
+
+.freight-central-map-sources ul {
+  margin: 0.5rem 0 0;
+  padding-inline-start: 1.25rem;
+  list-style: disc;
+}
+
+.freight-central-map-sources a {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
+.freight-central-country-grid .freight-central-country-code {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+}
+
+.freight-central-country-code img {
+  display: block;
+  width: 32px;
+  height: 24px;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px #10243f24;
+}
+
+.freight-central-map-switch {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0 0 1rem;
+}
+
+.freight-central-map-switch button {
+  min-height: 44px;
+  padding: .5rem 1rem;
+  border: 1px solid #a79ab6;
+  border-radius: .5rem;
+  background: #fffdf9;
+  color: #10243f;
+  font-weight: 700;
+}
+
+.freight-central-map-switch button[aria-pressed="true"] {
+  background: #10243f;
+  border-color: #10243f;
+  color: #fff;
+}
+
+#central-asia-route-map .freight-route-rail-mongolia { stroke: #2458a1; }
+#central-asia-route-map .freight-route-rail-northeast { stroke: #14766e; }
+.freight-central-map-legend .mongolia { border-color: #2458a1; }
+.freight-central-map-legend .northeast { border-color: #14766e; }

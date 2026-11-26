@@ -564,6 +564,10 @@ export function localizedCorridorProfile(country: EurasiaCountry, locale: Eurasi
   };
 }
 
+export function supplementalCorridorFaqs(locale: EurasiaLocale) {
+  return SUPPLEMENTAL_COPY[locale].faqs.map(([q, a]) => ({ q, a }));
+}
+
 export function buildSupplementalCorridorSpec(country: EurasiaCountry, locale: EurasiaLocale) {
   const profile = localizedCorridorProfile(country, locale);
   const copy = SUPPLEMENTAL_COPY[locale];
@@ -592,6 +596,6 @@ export function buildSupplementalCorridorSpec(country: EurasiaCountry, locale: E
       sellingPoint,
       warning,
     })),
-    faqs: copy.faqs.map(([q, a]) => ({ q, a })),
+    faqs: supplementalCorridorFaqs(locale),
   };
 }

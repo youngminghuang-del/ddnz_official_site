@@ -19,7 +19,7 @@ type MapNode = {
   id: string; label: string; code?: string; coordinates: Coordinate; labelDx: number; labelDy: number;
   anchor?: 'start' | 'middle' | 'end'; kind?: 'origin' | 'gateway' | 'destination';
 };
-type MapRoute = { id: string; coordinates: Coordinate[]; kind: 'sea' | 'land' | 'secondary' };
+type MapRoute = { id: string; coordinates: Coordinate[]; kind: 'sea' | 'land' | 'secondary' | 'rail' | 'rail-mongolia' | 'rail-northeast' };
 
 const mapCopyZh: Record<MapVariant, MapCopy> = {
   world: {
@@ -295,7 +295,7 @@ const regionalProjections: Record<OceanRegion, GeoProjection> = {
 };
 
 /** Regional network view: exact port nodes, illustrative corridors, never a sailing schedule. */
-export function RegionalFreightMap({ region, locale = 'en', title, description, europeGateway }: { region: OceanRegion; locale?: Language; title?: string; description?: string; europeGateway?: 'valencia' | 'hamburg' }) {
+export function RegionalFreightMap({ region, locale = 'en', title, description, europeGateway, keyboardScroll = false }: { region: OceanRegion; locale?: Language; title?: string; description?: string; europeGateway?: 'valencia' | 'hamburg'; keyboardScroll?: boolean }) {
   const network = regionalNetwork[region];
   const gateway = region === 'europe' ? europeGateway : undefined;
   const nodeIds = gateway ? ['south-china', gateway] : network.nodes;
@@ -307,7 +307,7 @@ export function RegionalFreightMap({ region, locale = 'en', title, description, 
   for (const node of nodes) { const index=['south-china','ningbo','qingdao'].indexOf(node.id); if(index>=0)node.code=originCodes[locale][index]; }
   const clipId = `regional-${region}-clip`;
   const projection = regionalProjections[region];
-  return <figure className="freight-regional-map" aria-label={title || network.title}>
+  return <figure className="freight-regional-map" aria-label={title || network.title} tabIndex={keyboardScroll ? 0 : undefined}>
     <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby={`regional-${region}-title regional-${region}-desc`}>
       <title id={`regional-${region}-title`}>{title || network.title}</title>
       <desc id={`regional-${region}-desc`}>{description || 'Geolocated ports and illustrative sea corridors. The actual vessel itinerary is confirmed for each shipment.'}</desc>
@@ -428,30 +428,69 @@ const centralRoutes: MapRoute[] = [
   { id: 'khorgos-moscow', kind: 'secondary', coordinates: [[80.411, 44.213], [71.43, 51.17], [37.617, 55.756]] },
 ];
 
+const railOrigins: MapNode[] = [
+  { id: 'tianjin', label: '天津', coordinates: [117.72, 39.02], labelDx: 17, labelDy: -15 },
+  { id: 'zhengzhou', label: '郑州', coordinates: [113.79, 34.73], labelDx: 17, labelDy: 30 },
+  { id: 'guangzhou', label: '广州增城西', coordinates: [113.69, 23.22], labelDx: -16, labelDy: -16 },
+];
+
+const centralOverviewRoutes: MapRoute[] = [
+  { id: 'jiaozhou-road-example', kind: 'land', coordinates: [[120.033, 36.264], [104.2, 35.1], [96, 39.3], [87.62, 43.82], [80.411, 44.213], [76.89, 42.32], [69.24, 41.299]] },
+  { id: 'tianjin-to-alashankou', kind: 'rail', coordinates: [railOrigins[0].coordinates, [113, 40], [104, 39], [96, 41], [87.62, 43.82], [82.57, 45.17]] },
+  { id: 'zhengzhou-to-western-trunk', kind: 'rail', coordinates: [railOrigins[1].coordinates, [108.8, 34.4]] },
+  { id: 'guangzhou-to-western-trunk', kind: 'rail', coordinates: [railOrigins[2].coordinates, [111.7, 28.1], [108.8, 34.4]] },
+  { id: 'western-trunk-to-khorgos', kind: 'rail', coordinates: [[108.8, 34.4], [103.83, 36.06], [94, 40.5], [87.62, 43.82], [80.411, 44.213]] },
+  { id: 'alashankou-regional-connection', kind: 'secondary', coordinates: [[82.57, 45.17], [79.7, 45.35], [76.945, 43.238]] },
+  ...centralRoutes.filter(route => route.kind === 'secondary' && route.id !== 'china-alashankou'),
+];
+
+const northRailNodes: MapNode[] = [
+  { id: 'wuhan', label: '武汉', coordinates: [114.2, 30.65], labelDx: -16, labelDy: 24 },
+  { id: 'shenyang', label: '沈阳', coordinates: [123.43, 41.8], labelDx: 14, labelDy: 24 },
+  { id: 'erenhot', label: '二连浩特', coordinates: [111.98, 43.65], labelDx: -13, labelDy: 26, kind: 'gateway' },
+  { id: 'manzhouli', label: '满洲里', coordinates: [117.43, 49.6], labelDx: 18, labelDy: -14, kind: 'gateway' },
+  { id: 'ulaanbaatar', label: '乌兰巴托', coordinates: [106.91, 47.92], labelDx: -15, labelDy: -14 },
+  { id: 'moscow', label: '莫斯科', coordinates: [37.617, 55.756], labelDx: -15, labelDy: 28 },
+];
+
+const northRailRoutes: MapRoute[] = [
+  { id: 'wuhan-mongolia-moscow', kind: 'rail-mongolia', coordinates: [[114.2, 30.65], [113.1, 38.2], [111.98, 43.65], [106.91, 47.92], [104.1, 51.9], [82.9, 54.9], [60.6, 56.8]] },
+  { id: 'shenyang-manzhouli-moscow', kind: 'rail-northeast', coordinates: [[123.43, 41.8], [124.1, 46.6], [117.43, 49.6], [113.5, 52.3], [94.8, 56.8], [75, 58.3], [60.6, 56.8]] },
+  { id: 'north-rail-shared-direction', kind: 'rail', coordinates: [[60.6, 56.8], [37.617, 55.756]] },
+];
+
 const regionLabels: Array<{ label: string; coordinates: Coordinate }> = [
   { label: 'CHINA', coordinates: [101, 31] }, { label: 'KAZAKHSTAN', coordinates: [66, 49] },
   { label: 'UZBEKISTAN', coordinates: [61.5, 38.5] }, { label: 'RUSSIA', coordinates: [53, 57] },
 ];
 
-export function CentralAsiaMap({ language }: { language: Language }) {
+export function CentralAsiaMap({ language, showRailOrigins = false, northRail = false }: { language: Language; showRailOrigins?: boolean; northRail?: boolean }) {
   const localized = language === 'zh';
   const ui = mapSvgUi[language];
   const nodeUi = mapNodeUi[language];
   const nodes = (localized ? centralNodes : centralNodesEn).map(node => node.id === 'jiaozhou' ? { ...node, code: nodeUi.origin } : node.id === 'khorgos' ? { ...node, code: nodeUi.roadRail } : node.id === 'alashankou' ? { ...node, code: nodeUi.rail } : node);
+  const overviewNodes = showRailOrigins
+    ? [...nodes.map(node => ({
+        ...node,
+        label: node.label.split(' / ')[0],
+        code: node.id === 'jiaozhou' ? '公路案例' : node.code,
+        ...(node.id === 'jiaozhou' ? { labelDx: 20, labelDy: 18 } : {}),
+      })), ...railOrigins]
+    : nodes;
   const localizedRegionLabels = regionLabels.map((item, index) => ({ ...item, label: mapRegionLabels[language][index] }));
   return (
     <svg className="freight-map-svg" viewBox={`0 0 ${WIDTH} ${HEIGHT}`} role="img" aria-labelledby="freight-central-title freight-central-desc">
-      <title id="freight-central-title">{ui.centralTitle}</title>
-      <desc id="freight-central-desc">{ui.centralDesc}</desc>
+      <title id="freight-central-title">{northRail ? '中国至俄罗斯北向铁路走廊示意' : ui.centralTitle}</title>
+      <desc id="freight-central-desc">{northRail ? '武汉经二连浩特和蒙古国至莫斯科，沈阳经满洲里至莫斯科。线条表示运输走廊。' : showRailOrigins ? '天津、郑州、广州增城西等铁路始发站和阿拉山口、霍尔果斯口岸的走廊示意，另标出胶州至塔什干的公路案例。' : ui.centralDesc}</desc>
       <MapChrome clipId="central-map-clip" />
       <MapBase projection={centralProjection} highlighted={centralCountryIds} clipId="central-map-clip" regional />
-      <MapCartouche label={ui.centralCartouche} />
+      <MapCartouche label={northRail ? '北向铁路走廊' : ui.centralCartouche} />
       <g className="freight-region-labels" aria-hidden="true">{localizedRegionLabels.map((item) => {
         const point = centralProjection(item.coordinates);
         return point ? <text key={item.label} x={point[0]} y={point[1]}>{item.label}</text> : null;
       })}</g>
-      <MapRoutes routes={centralRoutes} projection={centralProjection} />
-      <MapNodes nodes={nodes} projection={centralProjection} />
+      <MapRoutes routes={northRail ? northRailRoutes : showRailOrigins ? centralOverviewRoutes : centralRoutes} projection={centralProjection} />
+      <MapNodes nodes={northRail ? northRailNodes : overviewNodes} projection={centralProjection} />
     </svg>
   );
 }

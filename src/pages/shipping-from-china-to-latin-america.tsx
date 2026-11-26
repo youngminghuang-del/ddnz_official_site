@@ -16,6 +16,7 @@ import SEO from '../components/SEO';
 import SchemaMarkup from '../components/SchemaMarkup';
 import GetAQuote from '../components/GetAQuote';
 import MarketSourcingHandoff from '../components/MarketSourcingHandoff';
+import CountryPlanningLinks, { countryPlanningNote } from '../features/freight/CountryPlanningLinks';
 import LatinAmericaFreightDepth from '../components/LatinAmericaFreightDepth';
 import PeruTileFreightCase from '../components/PeruTileFreightCase';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -845,6 +846,7 @@ export default function ShippingLatinAmerica() {
   const activeLang = language === 'zh' ? 'zh' : language === 'ru' ? 'ru' : language === 'fr' ? 'fr' : language === 'es' ? 'es' : language === 'ar' ? 'ar' : 'en';
 
   const spec = LATAM_LOCALIZED[selectedCountry][activeLang];
+  const planningNote = countryPlanningNote(selectedCountry, activeLang);
   const t = (key: string) => {
     const data = PAGE_LANG_DATA[activeLang];
     return data[key] || '';
@@ -977,13 +979,13 @@ export default function ShippingLatinAmerica() {
           url: `https://www.ddnzglobal.com${location.pathname}`
         }}
       />
-      <SchemaMarkup
+      {!planningNote && <SchemaMarkup
         type="FAQPage"
         data={{
           url: `https://www.ddnzglobal.com${location.pathname}`,
           faqs: spec.faqs.map((faq) => ({ question: faq.q, answer: faq.a })),
         }}
-      />
+      />}
       <SourcingHomepageNav showFreightExecutor />
       <CountryRegionLink region="latin-america" />
 
@@ -1171,13 +1173,17 @@ export default function ShippingLatinAmerica() {
           country={selectedCountry}
           language={activeLang}
           onQuote={scrollToQuote}
+          showConsolidation={!planningNote}
         />
+
+        {planningNote && <CountryPlanningLinks note={planningNote} locale="es" />}
 
         {selectedCountry === 'peru' && (
           <PeruTileFreightCase locale={activeLang} onQuote={scrollToQuote} />
         )}
 
 
+        {!planningNote && <>
         {/* Section: Compliant Solutions Checklist (3 Columns) */}
         <section className="border-b border-[#dce3ea] bg-[#fffdf9] py-16 md:py-24">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1367,6 +1373,8 @@ export default function ShippingLatinAmerica() {
           </div>
         </section>}
 
+        </>}
+
         {SHOW_MEDIA_PLANNING && (
           <section className="border-b border-[#dce3ea] bg-[#fffdf9] py-12" aria-label="Destination proof media planning preview">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -1381,7 +1389,7 @@ export default function ShippingLatinAmerica() {
         )}
 
         {/* Latin America FAQ */}
-        <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
+        {!planningNote && <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 md:py-24">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="mb-12">
               <h2 className="mb-4 text-2xl font-black leading-tight text-[#10243f] sm:text-3xl md:text-4xl">
@@ -1430,7 +1438,7 @@ export default function ShippingLatinAmerica() {
               })}
             </div>
           </div>
-        </section>
+        </section>}
 
         {/* Lead Generation RFQ Form */}
         <section id="latam-quote-form" className="bg-[#0b1c2c] py-16 md:py-24">

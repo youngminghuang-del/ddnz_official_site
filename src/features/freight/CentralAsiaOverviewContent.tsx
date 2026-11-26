@@ -1,6 +1,7 @@
 import { centralAsiaHeadline, centralAsiaIntro } from './centralAsiaOverviewIntro';
 import CentralAsiaRouteOptions from './CentralAsiaRouteOptions';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
+import { supplementalCorridorFaqs } from './eurasiaCorridors';
 import EurasiaRegionalGuide from './EurasiaRegionalGuide';
 import FreightBreadcrumbs from './FreightBreadcrumbs';
 import FreightRelatedLinks from './FreightRelatedLinks';
@@ -58,28 +59,71 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
   const names = new Intl.DisplayNames([locale === 'zh' ? 'zh-CN' : locale], { type: 'region' });
   const destination = country ? names.of(destinations.find(item => item.slug === country)?.iso || '') || country : overview.region;
   const brief = `${c.country}: ${destination}\n${c.cargo}: ${c.cargoOptions[Number(cargo)]}\n${c.mode}: ${c.modeOptions[Number(mode)]}`;
+  const [northRail, setNorthRail] = useState(false);
   const quote = `${prefix}/get-a-quote/?leadGoal=Freight+Export&source=central_asia_route_builder&dest=${encodeURIComponent(destination)}&notes=${encodeURIComponent(brief)}`;
   return <main id="main-content" className="country-editorial freight-region-unified freight-editorial freight-next freight-central-overview">
     <header className="freight-region-intro"><div className="freight-wrap">
       <FreightBreadcrumbs path="/shipping-from-china-to-central-asia/" locale={locale} className="freight-region-breadcrumb"/>
       <p className="freight-kicker">{overview.region}</p><h1>{centralAsiaHeadline[locale]}</h1><p className="freight-intro">{centralAsiaIntro[locale]}</p>
-    </div></header><DoorDeliveryLink locale={locale} context="central-asia"/>
+    </div></header>{locale !== 'zh' && <DoorDeliveryLink locale={locale} context="central-asia"/>}
     <section className="freight-wrap freight-section" aria-labelledby="route-builder-heading"><p className="freight-kicker">{c.select}</p><h2 id="route-builder-heading" className="mt-4">{c.select}</h2>
       <div className="freight-central-selector">
         <label>{c.country}<select value={country} onChange={event => setCountry(event.target.value)}><option value="">{c.prompt}</option>{destinations.map(item => <option key={item.slug} value={item.slug}>{names.of(item.iso)}</option>)}</select></label>
         <label>{c.cargo}<select value={cargo} onChange={event => setCargo(event.target.value)}>{c.cargoOptions.map((value, index) => <option key={value} value={index}>{value}</option>)}</select></label>
         <label>{c.mode}<select value={mode} onChange={event => setMode(event.target.value)}>{c.modeOptions.map((value, index) => <option key={value} value={index}>{value}</option>)}</select></label>
-      </div><div className="freight-region-actions">{country && <a className="freight-cta" href={`${countryPrefix}/shipping-from-china-to-${country}/`}>{c.open}{englishGuideLabel && ` · ${englishGuideLabel}`} ↗</a>}<a href={quote}>{c.quote} ↗</a></div>
+      </div><div className="freight-region-actions">{country && <a className="freight-cta" href={`${countryPrefix}/shipping-from-china-to-${country}/`}>{c.open}{englishGuideLabel && ` · ${englishGuideLabel}`} ↗</a>}<a href={quote}>{c.quote} ↗</a>{locale === 'zh' && <a href="#central-asia-route-map">查看口岸与目的城市 ↓</a>}</div>
     </section>
-    <section className="freight-region-map-section" aria-labelledby="central-map-heading"><div className="freight-wrap">
-      <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.map}</p><h2 id="central-map-heading">{c.map}</h2><p>{c.mapNote}</p></div>
-      <figure className="freight-regional-map"><CentralAsiaMap language={locale} /></figure>
+    <section id="central-asia-route-map" className="freight-region-map-section scroll-mt-32" aria-labelledby="central-map-heading"><div className="freight-wrap">
+      <div className="freight-region-section-head"><p className="freight-kicker">01 / {c.map}</p><h2 id="central-map-heading">{c.map}</h2><p>{locale === 'zh' ? '切换查看中亚和北向铁路。图中连线为走廊示意。先按货源地和目的站选始发站，再确认出境口岸、换装和接续运输。' : c.mapNote}</p></div>
+      {locale === 'zh' && <div className="freight-central-map-switch" role="group" aria-label="选择走廊">
+        <button type="button" aria-pressed={!northRail} aria-controls="central-asia-corridor-map" onClick={() => setNorthRail(false)}>中亚走廊</button>
+        <button type="button" aria-pressed={northRail} aria-controls="central-asia-corridor-map" onClick={() => setNorthRail(true)}>北向铁路</button>
+      </div>}
+      {locale === 'zh' && (northRail ? <ul className="freight-central-map-legend" aria-label="图例">
+        <li><span className="mongolia" aria-hidden="true" />武汉经二连浩特、蒙古国至莫斯科</li>
+        <li><span className="northeast" aria-hidden="true" />沈阳经满洲里至莫斯科</li>
+        <li><span aria-hidden="true" />共同向西方向</li>
+      </ul> : <ul className="freight-central-map-legend" aria-label="图例">
+        <li><span className="rail" aria-hidden="true" />铁路走廊</li>
+        <li><span className="road" aria-hidden="true" />胶州至塔什干公路案例</li>
+        <li><span className="connection" aria-hidden="true" />区域接续方向</li>
+      </ul>)}
+      {locale === 'zh' && <p className="freight-map-mobile-hint">左右滑动查看完整地图</p>}
+      <figure id={locale === 'zh' ? 'central-asia-corridor-map' : undefined} className="freight-regional-map" tabIndex={locale === 'zh' ? 0 : undefined} aria-label={locale === 'zh' ? c.map : undefined}><CentralAsiaMap language={locale} showRailOrigins={locale === 'zh'} northRail={northRail} /></figure>
+      {locale === 'zh' && <details className="freight-central-map-sources">
+        <summary>查看始发站与线路来源</summary>
+        <ul>
+          <li><a href="https://www.tj.gov.cn/sy/tjxw/202604/t20260417_7283182.html">天津集装箱中心站 → 阿拉山口</a></li>
+          <li><a href="https://www.zhengzhou.gov.cn/yshj01/10118608.jhtml">郑州国际陆港 → 霍尔果斯 → 土库曼斯坦阿加拉站</a></li>
+          <li><a href="https://www.zc.gov.cn/gzzcjt/gkmlpt/content/10/10347/post_10347462.html">广州增城西站 → 霍尔果斯 → 哈萨克斯坦</a></li>
+          <li><a href="https://cbip.xa.gov.cn/xwzx/zyxw/1874719561268363266.html">西安国际港站 → 塔什干</a></li>
+          <li><a href="https://www.wuhan.gov.cn/sy/whyw/202611/t20261120_2882972.shtml">武汉吴家山站 → 二连浩特 → 莫斯科</a></li>
+          <li><a href="https://swt.ln.gov.cn/swt/ztzl/lnszcqzhfwpt/chfw/gjwltdfw/zoybl%28wyblfw/zoblsyzyxlzyjyssx/index.shtml">沈阳 → 满洲里 → 莫斯科别雷拉斯特站</a></li>
+        </ul>
+      </details>}
       <OriginDestinationOpportunities context="central-asia" locale={locale} />
     </div></section>
-    <section className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><div className="freight-central-country-grid">{destinations.map(item => <a key={item.slug} href={`${countryPrefix}/shipping-from-china-to-${item.slug}/`}><span>{item.iso}{englishGuideLabel && ` · ${englishGuideLabel}`}</span><h3>{names.of(item.iso)}</h3><span aria-hidden="true">↗</span></a>)}</div></section>
-    <section className="freight-central-risk"><div className="freight-wrap freight-section"><p className="freight-kicker">03 / {overview.preparation}</p><div className="freight-steps">{[[c.gateway, c.gatewayBody], [c.papers, c.papersBody], [c.consignee, c.consigneeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div></div></section>
+    {locale === 'zh' && <DoorDeliveryLink locale={locale} context="central-asia"/>}
+    <section className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><div className="freight-central-country-grid">{destinations.map(item => <a key={item.slug} href={`${countryPrefix}/shipping-from-china-to-${item.slug}/`}><span className={locale === 'zh' ? 'freight-central-country-code' : undefined}>{locale === 'zh' && <img src={`/images/flags/central-asia/${item.iso.toLowerCase()}.svg`} alt="" width="32" height="24" loading="lazy" />}{item.iso}{englishGuideLabel && ` · ${englishGuideLabel}`}</span><h3>{names.of(item.iso)}</h3><span aria-hidden="true">↗</span></a>)}</div></section>
+    <section id={locale === 'zh' ? 'central-asia-shipping-checklist' : undefined} className="freight-central-risk scroll-mt-32">
+      <div className="freight-wrap freight-section">
+        <p className="freight-kicker">03 / {overview.preparation}</p>
+        {locale === 'zh' && <h2 className="mb-6 mt-4">中亚出运前核对与常见问题</h2>}
+        <div className="freight-steps">{[[c.gateway, c.gatewayBody], [c.papers, c.papersBody], [c.consignee, c.consigneeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
+        {locale === 'zh' && <div className="mt-6 max-w-3xl">
+          {supplementalCorridorFaqs('zh').map(({ q, a }) => (
+            <details key={q} className="border-t border-slate-300 py-4">
+              <summary className="cursor-pointer font-bold">{q}</summary>
+              <p className="mt-3 leading-7">{a}</p>
+            </details>
+          ))}
+          <a className="inline-flex min-h-11 items-center font-bold underline" href="#freight-route-options">比较公路、铁路及铁公联运</a>
+          <p className="mt-2 leading-7">紧急样品和备件也可询空运。先确认航班接货条件、机场提货安排，以及电池、液体和粉末是否可收。</p>
+        </div>}
+      </div>
+    </section>
     <section className="freight-wrap freight-section"><p className="freight-kicker">04 / {c.proof}</p><h2 className="mt-4">{c.proofHeading}</h2>
-      <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src="/images/operations/central-asia-uzbekistan-road-loading-overview.webp" alt={c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
+      <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src={locale === 'zh' ? '/images/operations/central-asia-uzbekistan-road-loading-detail.webp' : '/images/operations/central-asia-uzbekistan-road-loading-overview.webp'} alt={locale === 'zh' ? '胶州至塔什干货运的车厢纸箱状态与装载顺序' : c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
   <CentralAsiaRouteOptions locale={locale}/><EurasiaRegionalGuide locale={locale}/><FreightRelatedLinks region="central-asia" locale={locale}/></main>;
