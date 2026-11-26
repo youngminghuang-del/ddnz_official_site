@@ -375,6 +375,25 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "china-us-maersk-shipping-instructions",
+      "canonical": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/",
+      "language": "en",
+      "notion_page_id": "424eac33-2618-8126-827c-d7ca714d6804",
+      "release_file": "src/data/chinaUsMaerskShippingInstructionsRelease.json",
+      "schema_file": "src/data/china-us-maersk-shipping-instructions-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/china-us-maersk-shipping-instructions/seattle-container-terminal.webp",
+      "images": [
+        "/images/posts/china-us-maersk-shipping-instructions/seattle-container-terminal.webp",
+        "/images/posts/china-us-maersk-shipping-instructions/warehouse-checklist-review.webp",
+        "/images/posts/china-us-maersk-shipping-instructions/document-review-desk.webp"
+      ],
+      "faq_count": 0,
+      "item_list_count": 5
     }
   ]
 }

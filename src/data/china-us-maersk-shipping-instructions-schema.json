@@ -1,0 +1,169 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#webpage",
+      "name": "China–US Sea Freight: Who’s on the Bill of Lading?",
+      "inLanguage": "en",
+      "description": "Maersk’s November 25 advisory explains who must appear on China–US bills of lading. Use this checklist to review your Price Owner, agent and LCL draft.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-a"
+      },
+      "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#article",
+      "headline": "China–US Sea Freight: Who’s on the Bill of Lading?",
+      "inLanguage": "en",
+      "description": "Maersk’s November 25 advisory explains who must appear on China–US bills of lading. Use this checklist to review your Price Owner, agent and LCL draft.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#webpage"
+      },
+      "citation": [
+        "https://www.maersk.com/news/articles/2026/11/25/shipping-instruction-requirements-fmc-trades",
+        "https://www.maersk.com/~/media_sc9/maersk/local-information/files/asia-pacific/singapore/overview/maerskcom-new-shipment-details.pdf",
+        "https://www.cbp.gov/sites/default/files/documents/10_2faq_0.pdf",
+        "https://www.maersk.com/support/faqs/how-do-i-change-the-consignee-or-notify-party-on-my-bill-of-lading"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-d"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-c"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/",
+      "datePublished": "2026-11-26T11:10:47+08:00",
+      "dateModified": "2026-11-26T11:10:47+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/seattle-container-terminal.webp",
+      "description": "Container ship, gantry cranes and stacked containers at a Seattle terminal",
+      "width": 1600,
+      "height": 899,
+      "creditText": "K via Pexels",
+      "license": "https://www.pexels.com/license/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/seattle-container-terminal.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/warehouse-checklist-review.webp",
+      "description": "Two warehouse workers reviewing a checklist beside storage racks",
+      "width": 1400,
+      "height": 932,
+      "creditText": "Centre for Ageing Better via Pexels",
+      "license": "https://www.pexels.com/license/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/warehouse-checklist-review.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/document-review-desk.webp",
+      "description": "Two people reviewing a paper form on a clipboard beside a laptop",
+      "width": 1200,
+      "height": 1200,
+      "creditText": "Mikhail Nilov via Pexels",
+      "license": "https://www.pexels.com/license/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-maersk-shipping-instructions/document-review-desk.webp"
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-table",
+      "name": "Bill of lading draft checklist",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Document and booking reference",
+          "description": "Is this the carrier MBL or our HBL? Which booking and draft version are we checking? · Forwarder or consolidator",
+          "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Price Owner and agent wording",
+          "description": "What is the legal name on the rate arrangement? Which Maersk documentation field carries it? If an agent acts for that company, what wording belongs in the shipper or consignee address? · Party placing the Maersk booking",
+          "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Shipper",
+          "description": "What exact legal name and address belong in the shipper field on this bill? · Export contact and document issuer",
+          "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Consignee and notify party",
+          "description": "Who is named as consignee on this bill, and who should receive the notice? Verify the contact information with the receiving team. · US receiving contact and document issuer",
+          "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Cutoff and correction",
+          "description": "When are shipping instructions due? Who checks the latest draft and requests a correction if a name or address is wrong? · Forwarder’s documentation team",
+          "url": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#decision-5"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "China–US Sea Freight: Who’s on the Bill of Lading?",
+          "item": "https://www.ddnzglobal.com/blog/china-us-maersk-shipping-instructions/"
+        }
+      ]
+    }
+  ]
+}
