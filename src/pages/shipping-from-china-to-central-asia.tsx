@@ -297,7 +297,7 @@ export default function ShippingCentralAsia() {
   }, [selectedCountry]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!window.location.hash) window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
   const handleCountryTabChange = (country: EurasiaCountry) => {

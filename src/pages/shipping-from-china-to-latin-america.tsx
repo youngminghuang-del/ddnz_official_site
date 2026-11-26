@@ -835,7 +835,7 @@ export default function ShippingLatinAmerica() {
   }, [location.pathname, location.search, selectedCountry]);
 
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    if (!window.location.hash) window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [location.pathname, selectedCountry]);
 
   useEffect(() => {
