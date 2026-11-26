@@ -10,8 +10,8 @@
     {
       "@type": "WebPage",
       "@id": "https://www.ddnzglobal.com/es/blog/envios-puerta-a-puerta-china-ecuador/#webpage",
-      "name": "Envíos puerta a puerta de China a Ecuador",
-      "description": "Compara envíos puerta a puerta de China a Ecuador. Revisa DAP, DDP, requisitos de aduana y seis partidas antes de cotizar la entrega a tu bodega.",
+      "name": "Envío puerta a puerta a Ecuador: costos y aduana",
+      "description": "Revise qué incluye una cotización puerta a puerta de China a Ecuador, cómo comparar DAP y DDP y quién se encarga del despacho, los tributos y la entrega.",
       "inLanguage": "es",
       "mainEntity": {
         "@id": "https://www.ddnzglobal.com/es/blog/envios-puerta-a-puerta-china-ecuador/#article"
@@ -31,8 +31,8 @@
     {
       "@type": "BlogPosting",
       "@id": "https://www.ddnzglobal.com/es/blog/envios-puerta-a-puerta-china-ecuador/#article",
-      "headline": "Envíos puerta a puerta de China a Ecuador",
-      "description": "Compara envíos puerta a puerta de China a Ecuador. Revisa DAP, DDP, requisitos de aduana y seis partidas antes de cotizar la entrega a tu bodega.",
+      "headline": "Envío puerta a puerta a Ecuador: costos y aduana",
+      "description": "Revise qué incluye una cotización puerta a puerta de China a Ecuador, cómo comparar DAP y DDP y quién se encarga del despacho, los tributos y la entrega.",
       "inLanguage": "es",
       "creativeWorkStatus": "Published",
       "publisher": {
@@ -185,7 +185,7 @@
         {
           "@type": "ListItem",
           "position": 3,
-          "name": "Envíos puerta a puerta de China a Ecuador",
+          "name": "Envío puerta a puerta a Ecuador: costos y aduana",
           "item": "https://www.ddnzglobal.com/es/blog/envios-puerta-a-puerta-china-ecuador/"
         }
       ]

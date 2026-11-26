@@ -5,6 +5,7 @@ import { centralAsiaCountryHero } from '../features/freight/centralAsiaCountryHe
 import '../features/freight/central-asia-country-preview.css';
 import FreightBreadcrumbs from '../features/freight/FreightBreadcrumbs';
 import RussiaOverlayHero from '../features/freight/RussiaOverlayHero';
+import CountryPlanningLinks, { countryPlanningNote } from '../features/freight/CountryPlanningLinks';
 import CountryRegionalReference from '../features/freight/CountryRegionalReference';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
 import '../features/freight/freight.css';
@@ -308,6 +309,7 @@ export default function ShippingCentralAsia() {
     CENTRAL_ASIA_LOCALIZED[country][activeLang] || CENTRAL_ASIA_LOCALIZED[country].en;
   const routeDepthPreview = selectedCountry === 'uzbekistan';
   const spec = getCountrySpec(selectedCountry);
+  const planningNote = countryPlanningNote(selectedCountry, activeLang);
   const hero = centralAsiaCountryHero(selectedCountry, language);
   const pageIntro = resolveEurasiaIntro(selectedCountry, language)!;
   // Verified origin records are decoration here; the case sections explain their scope.
@@ -545,6 +547,7 @@ export default function ShippingCentralAsia() {
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         {selectedCountry === 'uzbekistan' && <FreightRouteMap variant="uzbekistan" />}
+        {planningNote ? <CountryPlanningLinks note={planningNote} locale="zh" /> : <>
         <CountryRegionalReference locale={activeLang} region="central-asia" />
 
         <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8">
@@ -555,6 +558,8 @@ export default function ShippingCentralAsia() {
             </article>)}</div>
           </details>
         </section>
+
+        </>}
 
         {selectedCountry === 'uzbekistan' && (
           <section id="uzbekistan-road-loading-case" className="scroll-mt-24 border-b border-[#cfd6dc] bg-[#f3f1eb] py-16 text-[#10243f] md:py-24" aria-labelledby="uzbekistan-road-case-title">
@@ -759,6 +764,7 @@ export default function ShippingCentralAsia() {
         </section>
         )}
 
+        {!planningNote && <>
         {/* Section 3: Compliance & Solutions Grid */}
         <section className="py-16 md:py-24 border-b border-white/[0.05]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -838,6 +844,8 @@ export default function ShippingCentralAsia() {
             </div>
           </div>
         </section>
+
+        </>}
 
         {/* Lead Capture Container */}
         <section id="central-asia-quote-form" tabIndex={hero ? -1 : undefined} className="py-16 md:py-24 border-t border-white/[0.05]">

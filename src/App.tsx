@@ -205,7 +205,14 @@ function HashScrollHandler() {
         if (Math.abs(window.scrollY - saved.y) < 2) stop();
       } else if (action === 'hash') {
         const target = document.getElementById(routeHashId(location.hash) || '');
-        if (target) { target.scrollIntoView({ block: 'start', behavior: 'instant' }); stop(); }
+        if (target) {
+          // Match native fragment navigation for content inside a closed disclosure.
+          for (let details = target.parentElement?.closest('details'); details; details = details.parentElement?.closest('details')) {
+            if (!details.querySelector(':scope > summary')?.contains(target)) details.open = true;
+          }
+          target.scrollIntoView({ block: 'start', behavior: 'instant' });
+          stop();
+        }
       } else if (action === 'top') {
         window.scrollTo({ left: 0, top: 0, behavior: 'instant' });
         stop();

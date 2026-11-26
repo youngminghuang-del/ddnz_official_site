@@ -14,6 +14,7 @@ type SupportedLanguage = 'zh' | 'en' | 'es';
 
 interface LatinAmericaFreightDepthProps {
   country: Country;
+  showConsolidation?: boolean;
   language: string;
   onQuote: () => void;
   media?: Array<{
@@ -258,7 +259,7 @@ const PAGE_COPY: Record<SupportedLanguage, {
   },
 };
 
-export default function LatinAmericaFreightDepth({ country, language, onQuote, media = [] }: LatinAmericaFreightDepthProps) {
+export default function LatinAmericaFreightDepth({ country, language, onQuote, media = [], showConsolidation = true }: LatinAmericaFreightDepthProps) {
   const activeLanguage: SupportedLanguage | null = language === 'zh' || language === 'en' || language === 'es' ? language : null;
 
   if (!activeLanguage) return null;
@@ -356,7 +357,7 @@ export default function LatinAmericaFreightDepth({ country, language, onQuote, m
         </section>
       )}
 
-      <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 text-[#10243f] md:py-24" aria-labelledby="latam-consolidation-title">
+      {showConsolidation && <section className="border-b border-[#dce3ea] bg-[#f3f5f7] py-16 text-[#10243f] md:py-24" aria-labelledby="latam-consolidation-title">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl">
             <Warehouse className="h-9 w-9 text-[#c94f2f]" aria-hidden="true" />
@@ -375,7 +376,7 @@ export default function LatinAmericaFreightDepth({ country, language, onQuote, m
             ))}
           </ol>}
         </div>
-      </section>
+      </section>}
     </>
   );
 }
