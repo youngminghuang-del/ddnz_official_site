@@ -108,6 +108,12 @@
       "run_id": 45639116769,
       "commit": "cf70ae618cc976f6a7f511210cc698ead4e22d1b",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "china-us-maersk-shipping-instructions": {
+      "published_at": "2026-11-26T03:16:32Z",
+      "run_id": 45747411653,
+      "commit": "7be1918b54244aa108d6d4c70d3ec40c625f89f1",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
