@@ -413,6 +413,25 @@
       ],
       "faq_count": 3,
       "item_list_count": 5
+    },
+    {
+      "slug": "china-us-fcl-demurrage-detention-invoice",
+      "canonical": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/",
+      "language": "en",
+      "notion_page_id": "425eac33-2618-81c1-a57c-e78720c20a31",
+      "release_file": "src/data/chinaUsFclInvoiceRelease.json",
+      "schema_file": "src/data/china-us-fcl-demurrage-detention-invoice-schema.json",
+      "reviewer": "Huang Matthew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/china-us-fcl-demurrage-detention-invoice/baltimore-container-terminal.webp",
+      "images": [
+        "/images/posts/china-us-fcl-demurrage-detention-invoice/baltimore-container-terminal.webp",
+        "/images/posts/china-us-fcl-demurrage-detention-invoice/container-terminal-operations.webp",
+        "/images/posts/china-us-fcl-demurrage-detention-invoice/paperwork-and-calculator.webp"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }

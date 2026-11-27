@@ -1,0 +1,217 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#webpage",
+      "name": "China–US Demurrage & Detention Disputes",
+      "inLanguage": "en",
+      "description": "Check a China–US FCL demurrage or detention invoice. Match billed days to free time, gate records and empty-return receipts.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-a"
+      },
+      "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Matthew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#article",
+      "headline": "China–US Demurrage & Detention Disputes",
+      "inLanguage": "en",
+      "description": "Check a China–US FCL demurrage or detention invoice. Match billed days to free time, gate records and empty-return receipts.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#webpage"
+      },
+      "citation": [
+        "https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-541",
+        "https://www.ecfr.gov/current/title-46/chapter-IV/subchapter-B/part-545/section-545.5",
+        "https://www.fmc.gov/articles/u-s-court-of-appeals-issues-decision-in-case-on-demurrage-and-detention-billing-practices/",
+        "https://www.govinfo.gov/app/details/FR-2026-09-01/2026-17876",
+        "https://www.maersk.com/local-information/north-america/united-states-of-america/import",
+        "https://www.cma-cgm.com/local/united-states/detention-and-demurrage/"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-c"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-d"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/",
+      "datePublished": "2026-11-27T23:30:47+08:00",
+      "dateModified": "2026-11-27T23:30:47+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/baltimore-container-terminal.webp",
+      "description": "Aerial view of a container ship, cranes and stacked containers at the Port of Baltimore",
+      "width": 1600,
+      "height": 899,
+      "creditText": "K",
+      "license": "https://www.pexels.com/license/",
+      "creator": {
+        "@type": "Person",
+        "name": "K"
+      },
+      "acquireLicensePage": "https://www.pexels.com/photo/cargo-ship-unloading-colorful-containers-in-port-6595779/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/baltimore-container-terminal.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-c",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/container-terminal-operations.webp",
+      "description": "Dock workers beside stacked shipping containers at a terminal in rainy weather",
+      "width": 1600,
+      "height": 1064,
+      "creditText": "Simon R. Minshall",
+      "license": "https://www.pexels.com/license/",
+      "creator": {
+        "@type": "Person",
+        "name": "Simon R. Minshall"
+      },
+      "acquireLicensePage": "https://www.pexels.com/photo/shipping-containers-at-port-dock-workers-prepare-for-loading-28438301/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/container-terminal-operations.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#photo-d",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/paperwork-and-calculator.webp",
+      "description": "Hands using a calculator beside paperwork on a wooden desk",
+      "width": 1600,
+      "height": 1068,
+      "creditText": "Pavel Danilyuk",
+      "license": "https://www.pexels.com/license/",
+      "creator": {
+        "@type": "Person",
+        "name": "Pavel Danilyuk"
+      },
+      "acquireLicensePage": "https://www.pexels.com/photo/a-person-using-calculator-7654591/",
+      "url": "https://www.ddnzglobal.com/images/posts/china-us-fcl-demurrage-detention-invoice/paperwork-and-calculator.webp"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Which date should I use to track my request deadline?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "For a covered invoice, start with its issue date and check the issuer’s terms for any longer period. Submit through the listed channel and save the acknowledgment."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the invoice leaves out the applicable rate or dispute contact?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Identify the missing fields and request a complete invoice in writing. Part 541.5 ties payment obligation to the required information in § 541.6 for covered invoices. Keep the original and track your request from the original issue date while you seek clarification."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I dispute days when I could not book an empty return?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Document each attempt, including the specified depot, available slots or rejection message, and any revised return instruction. Ask the issuer to review the affected dates against those records."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-table",
+      "name": "Demurrage and detention invoice checklist",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Invoice and container",
+          "description": "Invoice number, bill of lading and container number · Confirm the issuing company, charge type and shipment reference.",
+          "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Free time and rate",
+          "description": "Service contract or applicable tariff, equipment type and last free day · Identify the rule, free-time start and daily rate tiers used.",
+          "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Pickup and empty return",
+          "description": "Terminal availability record, out-gate and empty-return receipts · Reconcile the first and last charged days with the recorded events.",
+          "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Blocked pickup or return",
+          "description": "Appointment attempts, closure notices and depot instructions · Review the specified dates and explain how access restrictions were treated.",
+          "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Invoice and request dates",
+          "description": "Invoice issue date, last day charged, upstream invoice if the issuer is an NVOCC, and submission receipt · Confirm the applicable issuance and request dates, then acknowledge the case.",
+          "url": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#decision-5"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Blog",
+          "item": "https://www.ddnzglobal.com/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "China–US Demurrage & Detention Disputes",
+          "item": "https://www.ddnzglobal.com/blog/china-us-fcl-demurrage-detention-invoice/"
+        }
+      ]
+    }
+  ]
+}
