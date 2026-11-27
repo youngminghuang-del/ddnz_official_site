@@ -4,7 +4,6 @@ import CentralAsiaRouteOptions from '../features/freight/CentralAsiaRouteOptions
 import { centralAsiaCountryHero } from '../features/freight/centralAsiaCountryHero';
 import '../features/freight/central-asia-country-preview.css';
 import FreightBreadcrumbs from '../features/freight/FreightBreadcrumbs';
-import RussiaOverlayHero from '../features/freight/RussiaOverlayHero';
 import CountryPlanningLinks, { countryPlanningNote } from '../features/freight/CountryPlanningLinks';
 import CountryRegionalReference from '../features/freight/CountryRegionalReference';
 import FreightRelatedLinks from '../features/freight/FreightRelatedLinks';
@@ -434,13 +433,7 @@ export default function ShippingCentralAsia() {
 
       <main>
 
-        {selectedCountry === 'russia' && language === 'zh' ? <RussiaOverlayHero breadcrumb={<FreightBreadcrumbs path="/shipping-from-china-to-russia/" locale={language} className="russia-overlay-hero__breadcrumb" />} title={pageIntro.headline} intro={pageIntro.subheadline} onQuote={() => document.getElementById('central-asia-quote-form')?.scrollIntoView({behavior:'smooth'})}>
-          {!isLocked && <nav aria-label={corridorUi.selectDestination}><span>{corridorUi.selectDestination}</span><div>{EURASIA_COUNTRIES.map(country => <button key={country} type="button" aria-current={country === selectedCountry ? 'page' : undefined} onClick={()=>handleCountryTabChange(country)}>{countryLabel(country)}</button>)}</div></nav>}
-          <h2>{corridorUi.routeBasis} · {corridor.name}</h2>
-          <dl><div><dt>{corridorUi.entryGateway}</dt><dd>{corridor.gateway}</dd></div><div><dt>{corridorUi.destinationScope}</dt><dd>{corridor.destinations}</dd></div><div><dt>{corridorUi.customsFrame}</dt><dd>{corridor.customs}</dd></div></dl>
-          <p className="russia-overlay-facts__note">{corridorUi.quoteConfirmed}</p>
-        </RussiaOverlayHero> : <>
-        <section className={`eurasia-country-intro relative flex items-center overflow-hidden border-b border-white/[0.08] ${hero ? 'central-asia-country-hero' : ''} ${isKazakhstanRu ? 'kazakhstan-ru-hero' : ''}`}>
+        <section className={`eurasia-country-intro relative flex items-center overflow-hidden border-b border-white/[0.08] ${hero ? 'central-asia-country-hero' : ''}`}>
           {originPhoto && !isKazakhstanRu && <div
             className="eurasia-country-intro__media"
             aria-hidden="true"
@@ -470,7 +463,7 @@ export default function ShippingCentralAsia() {
               </nav>
             )}
 
-            <div className={`grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)] ${isKazakhstanRu ? 'kazakhstan-ru-hero-grid' : ''}`}>
+            <div className={`grid items-end gap-10 lg:grid-cols-[minmax(0,1.12fr)_minmax(360px,.88fr)]`}>
               <div className="max-w-3xl text-left" data-whatsapp-clear={isKazakhstanRu || showDirectQuote || undefined}>
                 <FreightBreadcrumbs
                   path={`/shipping-from-china-to-${selectedCountry}/`}
@@ -507,19 +500,15 @@ export default function ShippingCentralAsia() {
                 </p>}
               </div>
 
-              {isKazakhstanRu ? (
-                <div className="kazakhstan-ru-map" data-whatsapp-clear>
-                  <CountryGatewayMap country="kazakhstan" locale="ru" destination={corridor.name} showDestinationHeading={false} />
-                </div>
-              ) : routeFacts}
+              {routeFacts}
             </div>
           </div>
         </section>
 
-        </>}
-
         {isKazakhstanRu && <div className="kazakhstan-ru-route-facts mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8" data-whatsapp-clear>
-          {routeFacts}
+          <div className="kazakhstan-ru-map" data-whatsapp-clear>
+            <CountryGatewayMap country="kazakhstan" locale="ru" destination={corridor.name} showDestinationHeading={false} />
+          </div>
           <figure className="kazakhstan-ru-inline-photo">
             <img src={EURASIA_CASE_LOADING.src} alt={caseStudy.captions.forklift} width={1290} height={1586} loading="lazy" />
             <figcaption>Погрузка ступиц в Китае перед отправкой в Центральную Азию.</figcaption>

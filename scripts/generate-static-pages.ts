@@ -143,7 +143,6 @@ import NewFreightEvidence from '../src/features/freight/NewFreightEvidence';
 import UaeContent, { uaeMetadata } from '../src/features/freight/UaeContent';
 import NigeriaContent, { nigeriaMetadata } from '../src/features/freight/NigeriaContent';
 import MexicoContent, { mexicoMetadata } from '../src/features/freight/MexicoContent';
-import ImportOrderPlanning from '../src/features/freight/ImportOrderPlanning';
 import LclContent, { lclMetadata } from '../src/features/freight/LclContent';
 import LclInternationalContent, { internationalLclMetadata } from '../src/features/freight/LclInternationalContent';
 import type { LclExtraLocale } from '../src/features/freight/lclInternationalCopy';
@@ -1932,12 +1931,8 @@ function injectStaticRouteContent(
     for (const css of fs.readdirSync(path.resolve('dist/assets')).filter(file=>/^(freight|gulf-stories|market-stories|MarketFreightPage|BrazilCountryPage)-.*\.css$/.test(file))) {
       if (!htmlContent.includes(`/assets/${css}`)) htmlContent=htmlContent.replace('</head>',`<link rel="stylesheet" href="/assets/${css}"></head>`);
     }
-  } else if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') {
-    const planning=renderToStaticMarkup(createElement(FreightRelatedLinks,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(RoutePlanningDepth,{country:'brazil',locale:'es'}))+renderToStaticMarkup(createElement(ImportOrderPlanning,{market:'brazil',locale:'es'}));
-    const meta=seoDataMatrix[relPath]?.[lang];
-    staticBody=staticBody?staticBody.replace('</main>',`${planning}</main>`):`<main><h1>${escapeStaticText(meta?.title || 'Envíos de China a Brasil')}</h1><p>${escapeStaticText(meta?.desc || '')}</p>${planning}</main>`;
   }
-  if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') staticBody = staticBody.replace(/<main([^>]*)>/, '<main$1 class="country-editorial">');
+  if (relPath === 'shipping-from-china-to-brazil' && lang === 'es') return htmlContent;
   const articleDiscovery = lang === 'en' && relPath.startsWith('blog/') ? kitchenArticleDiscovery[relPath.slice(5)] || mobileArticleDiscovery[relPath.slice(5)] : undefined;
   if (articleDiscovery) {
     const links = `<section><h2>${escapeStaticText(articleDiscovery.heading || 'Compare equipment for your next order')}</h2>${articleDiscovery.links.map(item => `<p><a href="${escapeStaticText(item.href)}">${escapeStaticText(item.label)}</a></p>`).join('')}</section>`;
