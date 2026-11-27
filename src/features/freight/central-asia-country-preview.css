@@ -24,10 +24,6 @@
 .central-asia-country-hero aside > div:first-of-type {
   flex-wrap: wrap;
 }
-.kazakhstan-ru-hero-grid {
-  align-items: start;
-  gap: clamp(1.5rem, 4vw, 3rem);
-}
 .kazakhstan-ru-map .country-gateway-map {
   box-shadow: none;
 }
@@ -41,9 +37,6 @@
   display: grid;
   gap: 1.25rem;
 }
-.kazakhstan-ru-route-facts aside { border-radius: 1rem; }
-.kazakhstan-ru-route-facts aside > div:first-child { flex-wrap: wrap; gap: .625rem; }
-.kazakhstan-ru-route-facts aside > div:first-child > span { white-space: normal; }
 .kazakhstan-ru-inline-photo {
   margin: 0;
   min-width: 0;
@@ -75,23 +68,6 @@
     grid-template-columns: minmax(0, 1fr) minmax(16rem, 32%);
     gap: clamp(1.25rem, 3vw, 2.5rem);
     align-items: center;
-  }
-}
-@media (min-width: 880px) and (max-width: 1023px) {
-  .kazakhstan-ru-hero-grid {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  }
-}
-@media (min-width: 768px) {
-  .kazakhstan-ru-route-facts dl {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 1.5rem;
-  }
-  .kazakhstan-ru-route-facts dl > div {
-    grid-template-columns: minmax(0, 1fr);
-    gap: .375rem;
-    border: 0;
   }
 }
 main:has(.central-asia-country-hero) #freight-route-options,
@@ -128,15 +104,6 @@ main:has(.central-asia-country-hero) #central-asia-quote-form {
 .eurasia-country-intro__media { display: none; }
 .eurasia-country-intro > .relative {
   padding-block: clamp(2rem, 4vw, 3.5rem);
-}
-@media (max-width: 767px) {
-  .kazakhstan-ru-hero > .relative {
-    padding-top: 1rem;
-  }
-  .kazakhstan-ru-hero nav > div {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-  }
 }
 @media (min-width: 1024px) {
   .eurasia-country-intro__media {
