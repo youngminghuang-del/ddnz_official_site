@@ -120,6 +120,12 @@
       "run_id": 45930748572,
       "commit": "ef9be512244374205e23412acd19222823120043",
       "source": "Successful Deploy to GitHub Pages step"
+    },
+    "china-us-fcl-demurrage-detention-invoice": {
+      "published_at": "2026-11-27T15:43:55Z",
+      "run_id": 46026954375,
+      "commit": "2ed7f134ea1a21ff9526b9c8e55e9ccb064fe722",
+      "source": "Successful Deploy to GitHub Pages step"
     }
   }
 }
