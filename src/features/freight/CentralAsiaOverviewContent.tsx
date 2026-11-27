@@ -1,3 +1,4 @@
+import { CentralAsiaInspectionCard } from './CentralAsiaCasePhotos';
 import { centralAsiaHeadline, centralAsiaIntro } from './centralAsiaOverviewIntro';
 import CentralAsiaRouteOptions from './CentralAsiaRouteOptions';
 import {DoorDeliveryLink} from './DoorDeliveryContent';
@@ -105,25 +106,26 @@ export default function CentralAsiaOverviewContent({ locale }: { locale: Languag
     </div></section>
     {locale === 'zh' && <DoorDeliveryLink locale={locale} context="central-asia"/>}
     <section className="freight-wrap freight-section"><p className="freight-kicker">02 / {c.routes}</p><div className="freight-central-country-grid">{destinations.map(item => <a key={item.slug} href={`${countryPrefix}/shipping-from-china-to-${item.slug}/`}><span className={locale === 'zh' ? 'freight-central-country-code' : undefined}>{locale === 'zh' && <img src={`/images/flags/central-asia/${item.iso.toLowerCase()}.svg`} alt="" width="32" height="24" loading="lazy" />}{item.iso}{englishGuideLabel && ` · ${englishGuideLabel}`}</span><h3>{names.of(item.iso)}</h3><span aria-hidden="true">↗</span></a>)}</div></section>
-    <section id={locale === 'zh' ? 'central-asia-shipping-checklist' : undefined} className="freight-central-risk scroll-mt-32">
+    <section id={locale === 'zh' || locale === 'en' ? 'central-asia-shipping-checklist' : undefined} className="freight-central-risk scroll-mt-32">
       <div className="freight-wrap freight-section">
         <p className="freight-kicker">03 / {overview.preparation}</p>
+        {locale === 'en' && <h2 className="mb-6 mt-4">Central Asia shipment checklist and FAQs</h2>}
         {locale === 'zh' && <h2 className="mb-6 mt-4">中亚出运前核对与常见问题</h2>}
         <div className="freight-steps">{[[c.gateway, c.gatewayBody], [c.papers, c.papersBody], [c.consignee, c.consigneeBody]].map(([title, body]) => <article key={title}><h3>{title}</h3><p>{body}</p></article>)}</div>
-        {locale === 'zh' && <div className="mt-6 max-w-3xl">
-          {supplementalCorridorFaqs('zh').map(({ q, a }) => (
+        {(locale === 'zh' || locale === 'en') && <div className="mt-6 max-w-3xl">
+          {supplementalCorridorFaqs(locale).map(({ q, a }) => (
             <details key={q} className="border-t border-slate-300 py-4">
               <summary className="cursor-pointer font-bold">{q}</summary>
               <p className="mt-3 leading-7">{a}</p>
             </details>
           ))}
-          <a className="inline-flex min-h-11 items-center font-bold underline" href="#freight-route-options">比较公路、铁路及铁公联运</a>
-          <p className="mt-2 leading-7">紧急样品和备件也可询空运。先确认航班接货条件、机场提货安排，以及电池、液体和粉末是否可收。</p>
+          <a className="inline-flex min-h-11 items-center font-bold underline" href={locale === 'en' ? '#central-asia-road-rail' : '#freight-route-options'}>{locale === 'zh' ? '比较公路、铁路及铁公联运' : 'Compare road, rail and rail-to-road freight'}</a>
+          <p className="mt-2 leading-7">{locale === 'zh' ? '紧急样品和备件也可询空运。先确认航班接货条件、机场提货安排，以及电池、液体和粉末是否可收。' : 'For urgent samples or spare parts, ask about air freight. Confirm airline acceptance and airport collection, especially for batteries, liquids and powders.'}</p>
         </div>}
       </div>
     </section>
     <section className="freight-wrap freight-section"><p className="freight-kicker">04 / {c.proof}</p><h2 className="mt-4">{c.proofHeading}</h2>
-      <div className="freight-central-cases"><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src={locale === 'zh' ? '/images/operations/central-asia-uzbekistan-road-loading-detail.webp' : '/images/operations/central-asia-uzbekistan-road-loading-overview.webp'} alt={locale === 'zh' ? '胶州至塔什干货运的车厢纸箱状态与装载顺序' : c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article></div>
+      <div id={locale === 'zh' ? undefined : 'route-photos'} className={locale === 'zh' ? 'freight-central-cases' : 'freight-central-cases freight-central-cases--three'}><article><img src="/images/operations/central-asia-wheel-hub-case-pallet.webp" alt={c.wheel} loading="lazy" /><div><h3>{c.wheel}</h3><p>{c.wheelBody}</p></div></article><article><img src={locale === 'zh' ? '/images/operations/central-asia-uzbekistan-road-loading-detail.webp' : '/images/operations/central-asia-uzbekistan-road-loading-overview.webp'} alt={locale === 'zh' ? '胶州至塔什干货运的车厢纸箱状态与装载顺序' : c.road} loading="lazy" /><div><h3>{c.road}</h3><p>{c.roadBody}</p></div></article>{locale !== 'zh' && <CentralAsiaInspectionCard locale={locale}/>}</div>
       <p className="freight-region-evidence-note">{c.scope}</p><a className="freight-cta mt-8" href={quote}>{c.quote} ↗</a>
     </section>
   <CentralAsiaRouteOptions locale={locale}/><EurasiaRegionalGuide locale={locale}/><FreightRelatedLinks region="central-asia" locale={locale}/></main>;

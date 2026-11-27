@@ -1,6 +1,10 @@
 type PlanningNote = readonly [heading: string, instruction: string];
 
 const pilotNotes = {
+  en: {
+    kyrgyzstan: ['Confirm the importer and receiving plan', 'Have the Kyrgyz importer or broker check which EAEU customs and product documents apply. For a split load, give them carton marks and a packing breakdown by receiving city before pickup.'],
+    tajikistan: ['Confirm clearance and warehouse access', 'Ask the Tajik importer or broker which documents apply under Tajikistan’s import rules. Give the carrier the receiving hours and unloading equipment at the final address before booking either option.'],
+  },
   zh: {
     kyrgyzstan: ['吉尔吉斯斯坦交接前确认', '若比什凯克和奥什分别收货，按仓库拆分箱单和唛头，逐仓确认联系人、卸货条件及二次分拨是否单独计费。'],
     tajikistan: ['塔吉克斯坦到仓前确认', '如果报价含铁转公，列明铁路段截至哪个站、谁安排接车，以及杜尚别或苦盏仓库的卸货和等待费用由谁承担。'],
@@ -12,6 +16,7 @@ const pilotNotes = {
 } as const;
 
 const regionalLinks = {
+  en: [{ href: '/shipping-from-china-to-central-asia/#central-asia-shipping-checklist', label: 'See the Central Asia shipment checklist and FAQs' }],
   zh: [{ href: '/zh-cn/shipping-from-china-to-central-asia/#central-asia-shipping-checklist', label: '查看中亚口岸、单证与运输常见问题' }],
   es: [
     { href: '/es/shipping-from-china-to-latin-america/#latin-america-shipping-checklist', label: 'Comparar modalidades y preparar el despacho en Latinoamérica' },
@@ -20,12 +25,12 @@ const regionalLinks = {
 };
 
 export function countryPlanningNote(country: string, locale: string) {
-  if (locale !== 'zh' && locale !== 'es') return undefined;
+  if (locale !== 'en' && locale !== 'zh' && locale !== 'es') return undefined;
   const notes: Record<string, PlanningNote> = pilotNotes[locale];
   return notes[country];
 }
 
-export default function CountryPlanningLinks({ note, locale }: { note: PlanningNote; locale: 'zh' | 'es' }) {
+export default function CountryPlanningLinks({ note, locale }: { note: PlanningNote; locale: keyof typeof regionalLinks }) {
   return (
     <section className="border-y border-slate-200 bg-[#f3f5f7] text-[#10243f]" aria-labelledby="country-planning-heading">
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">

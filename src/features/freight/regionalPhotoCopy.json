@@ -1,0 +1,738 @@
+{
+  "en": {
+    "kg-road-loading": {
+      "caption": "Road loading in Central Asia",
+      "alt": "Worker loading cartons into a truck trailer",
+      "detail": "For a quote, list package counts and carton numbers separately for Bishkek and Osh. The photo shows an example of loading for a Central Asia route."
+    },
+    "kg-erkeshtam": {
+      "caption": "Kyrgyz side of the Irkeshtam Pass · 2017",
+      "alt": "Mountain road on the Kyrgyz side of the Irkeshtam Pass",
+      "detail": "Ask the carrier to confirm the border crossing and where the cargo changes trucks."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Cargo handover in Central Asia",
+      "alt": "Warehouse workers checking wheel hubs secured with stretch wrap on a pallet",
+      "detail": "For delivery to two cities, confirm who signs for the goods and what proof of handover is required at each stop."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Securing cargo on a pallet",
+      "alt": "Wheel hubs secured to a pallet with stretch wrap and straps",
+      "detail": "Provide pallet dimensions, gross weight and stackability so the carrier can price the transfer."
+    },
+    "tj-rail-freight": {
+      "caption": "Freight train in Tajikistan · 2014",
+      "alt": "A Tajik locomotive pulling a freight train",
+      "detail": "For rail-to-road transport, confirm the arrival station and where the truck takes over."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Forklift handling example",
+      "alt": "Forklift moving a stretch-wrapped pallet into a trailer",
+      "detail": "Share the unloading conditions at the receiving address and agree who handles the final road leg and unloading."
+    },
+    "cl-origin-container": {
+      "caption": "Container loading in China",
+      "alt": "An open container on a trailer inside a warehouse",
+      "detail": "Origin example. Compare both ports using the same equipment and cargo-ready date."
+    },
+    "cl-san-antonio": {
+      "caption": "San Antonio terminal · 2012",
+      "alt": "Cranes unloading containers at San Antonio, Chile",
+      "detail": "Confirm the discharge terminal and the depot for returning the empty container."
+    },
+    "cl-valparaiso": {
+      "caption": "Valparaíso terminal · 2017",
+      "alt": "The container terminal and bay of Valparaíso",
+      "detail": "Coordinate terminal pickup with the warehouse receiving hours in Santiago."
+    },
+    "ar-consolidation": {
+      "caption": "Mixed cargo loading in China",
+      "alt": "Cartons and packages of different sizes inside a container",
+      "detail": "Origin example. Prepare a packing list for the commercial order and ask for a separate sample quote."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Puerto Nuevo, Buenos Aires · 2010",
+      "alt": "Cranes and containers in the port of Buenos Aires",
+      "detail": "Port reference. Ask the carrier to confirm the terminal or depot for collection."
+    },
+    "ar-receiving-scan": {
+      "caption": "Checking package labels at receipt",
+      "alt": "Worker using a barcode scanner beside shipping cartons",
+      "detail": "Receiving example. Match labels to the packing list and confirm who signs for delivery."
+    },
+    "ru-container-origin": {
+      "caption": "Container loading in China",
+      "alt": "Loaded container with a forklift beside the doors",
+      "detail": "List package sizes, gross weights and forklift access at collection."
+    },
+    "ru-border-rail": {
+      "caption": "Manzhouli–Zabaykalsk rail crossing · 2009",
+      "alt": "Freight train entering China from Russia near Manzhouli",
+      "detail": "Historical reference. Ask the carrier to confirm the crossing and any rail transfer on the outbound route."
+    },
+    "ru-unloading-reference": {
+      "caption": "Container unloading example",
+      "alt": "Crew handling crates and cartons between a container and a box truck",
+      "detail": "Check the Russian receiving address for a dock or forklift and agree who pays for unloading."
+    },
+    "tm-staged-cargo": {
+      "caption": "Cargo staged before loading",
+      "alt": "Crates and wrapped packages stacked under a covered loading area",
+      "detail": "List counts and shipping marks for each type of package before loading."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Railway north of Ashgabat · 2015",
+      "alt": "Turkmen locomotives passing a cement plant north of Ashgabat",
+      "detail": "Historical reference. Confirm the arrival terminal and the road leg to your warehouse."
+    },
+    "tm-reception-count": {
+      "caption": "Carton count at receipt",
+      "alt": "Warehouse worker checking carton quantities beside a floor scale",
+      "detail": "For Ashgabat or Turkmenabat, agree on who checks the cartons, signs for delivery and records shortages."
+    }
+  },
+  "zh": {
+    "kg-road-loading": {
+      "caption": "中亚公路装货示例",
+      "alt": "车厢里的纸箱和正在装货的工作人员",
+      "detail": "询价时按比什凯克、奥什分别提供件数和箱号。照片为中亚装货作业参考。"
+    },
+    "kg-erkeshtam": {
+      "caption": "伊尔克什坦山口吉方路段 · 2017 年",
+      "alt": "伊尔克什坦山口吉尔吉斯斯坦一侧的山间公路",
+      "detail": "请承运商确认口岸及换车地点。"
+    },
+    "kg-pallet-handoff": {
+      "caption": "中亚货物交接示例",
+      "alt": "工作人员在仓库检查托盘上缠膜固定的轮毂",
+      "detail": "两地分拨时，分别确认签收人和各站交接凭证。"
+    },
+    "tj-pallet-restraint": {
+      "caption": "托盘加固示例",
+      "alt": "缠膜并用打包带固定在托盘上的轮毂",
+      "detail": "询价时提供单托尺寸、毛重和可否叠放，便于核算换装。"
+    },
+    "tj-rail-freight": {
+      "caption": "塔吉克斯坦铁路货运列车 · 2014 年",
+      "alt": "塔吉克斯坦铁路机车牵引的货运列车",
+      "detail": "铁转公方案需确认实际到站及公路交接地点。"
+    },
+    "tj-forklift-transfer": {
+      "caption": "叉车装卸示例",
+      "alt": "叉车把缠膜固定的托盘送入车厢",
+      "detail": "提供收货点卸货条件，明确谁负责最后一段运输和卸货。"
+    },
+    "cl-origin-container": {
+      "caption": "中国端集装箱装货",
+      "alt": "仓库里的半挂车上放着一个开门的集装箱",
+      "detail": "中国端作业示例。按同一柜型和货好日期比较两个目的港的报价。"
+    },
+    "cl-san-antonio": {
+      "caption": "圣安东尼奥码头 · 2012 年",
+      "alt": "智利圣安东尼奥码头正在卸集装箱的岸吊",
+      "detail": "请确认卸船码头及还空柜的堆场。"
+    },
+    "cl-valparaiso": {
+      "caption": "瓦尔帕莱索码头 · 2017 年",
+      "alt": "瓦尔帕莱索集装箱码头和海湾",
+      "detail": "安排提柜预约时，请核对圣地亚哥仓库的收货时间。"
+    },
+    "ar-consolidation": {
+      "caption": "中国端混装",
+      "alt": "集装箱内不同大小的纸箱和包装件",
+      "detail": "中国端作业示例。为商业订单整理装箱单，样品单独询价。"
+    },
+    "ar-puerto-nuevo": {
+      "caption": "布宜诺斯艾利斯新港 · 2010 年",
+      "alt": "布宜诺斯艾利斯港的岸吊和集装箱",
+      "detail": "港口参考。请承运商确认提货码头或仓库。"
+    },
+    "ar-receiving-scan": {
+      "caption": "收货时核对包裹标签",
+      "alt": "工作人员在货运纸箱旁使用条码扫描器",
+      "detail": "收货示例。按装箱单核对标签，并确认签收负责人。"
+    },
+    "ru-container-origin": {
+      "caption": "中国端装柜参考",
+      "alt": "集装箱内装有货物，柜门旁停着叉车",
+      "detail": "发货时列明每件外尺寸和毛重，并确认提货点的叉车条件。"
+    },
+    "ru-border-rail": {
+      "caption": "满洲里—后贝加尔斯克铁路口岸 · 2009 年",
+      "alt": "货运列车从俄罗斯进入中国满洲里",
+      "detail": "历史口岸实拍。出运前与承运商确认实际口岸和铁路换装安排。"
+    },
+    "ru-unloading-reference": {
+      "caption": "拆柜转运参考",
+      "alt": "工作人员在集装箱与厢式货车之间搬运木箱和纸箱",
+      "detail": "确认俄罗斯收货点有无月台或叉车，并明确卸货费由谁承担。"
+    },
+    "tm-staged-cargo": {
+      "caption": "装车前集货参考",
+      "alt": "有顶装货区内堆放的木箱和包裹",
+      "detail": "装车前按包装类型列明件数和唛头。"
+    },
+    "tm-ashgabat-rail": {
+      "caption": "阿什哈巴德北郊铁路 · 2015 年",
+      "alt": "土库曼斯坦机车驶过阿什哈巴德北郊水泥厂",
+      "detail": "历史线路实拍。请确认到达场站和到仓公路段。"
+    },
+    "tm-reception-count": {
+      "caption": "到仓清点纸箱",
+      "alt": "仓库工作人员在地磅旁核对纸箱数量",
+      "detail": "发往阿什哈巴德或土库曼纳巴德时，确认谁清点、签收和记录短少。"
+    }
+  },
+  "es": {
+    "cl-origin-container": {
+      "caption": "Carga de contenedor en China",
+      "alt": "Contenedor abierto sobre un semirremolque dentro de un almacén",
+      "detail": "Ejemplo en origen. Compare ambos puertos para el mismo equipo y la misma fecha de carga."
+    },
+    "cl-san-antonio": {
+      "caption": "Terminal de San Antonio · 2012",
+      "alt": "Grúas durante la descarga de contenedores en San Antonio, Chile",
+      "detail": "Confirme la terminal de descarga y el depósito para devolver el contenedor vacío."
+    },
+    "cl-valparaiso": {
+      "caption": "Terminal de Valparaíso · 2017",
+      "alt": "Terminal de contenedores y bahía de Valparaíso",
+      "detail": "Coordine la cita de retiro con los horarios de recepción en Santiago."
+    },
+    "ar-consolidation": {
+      "caption": "Carga mixta en China",
+      "alt": "Cajas y bultos de distintos tamaños dentro de un contenedor",
+      "detail": "Ejemplo en origen. Prepare una lista de empaque para el pedido comercial y cotice la muestra por separado."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Puerto Nuevo, Buenos Aires · 2010",
+      "alt": "Grúas y contenedores en el puerto de Buenos Aires",
+      "detail": "Referencia del puerto. Pida a la naviera que confirme la terminal o el depósito de retiro."
+    },
+    "ar-receiving-scan": {
+      "caption": "Identificación de bultos al recibir",
+      "alt": "Operario con lector de códigos junto a cajas de mercancía",
+      "detail": "Ejemplo de recepción. Cruce las etiquetas con la lista de empaque y confirme quién firma la entrega."
+    },
+    "kg-road-loading": {
+      "caption": "Carga por carretera en Asia Central",
+      "alt": "Operario cargando cajas en el remolque de un camión",
+      "detail": "Para cotizar, indique por separado los bultos y números de caja de Biskek y Osh. La foto muestra un ejemplo de carga para una ruta de Asia Central."
+    },
+    "kg-erkeshtam": {
+      "caption": "Paso de Irkeshtam, lado kirguís · 2017",
+      "alt": "Carretera de montaña en el lado kirguís del paso de Irkeshtam",
+      "detail": "Pida al transportista que confirme el paso fronterizo y el lugar de cambio de camión."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Entrega de mercancía en Asia Central",
+      "alt": "Operarios revisando cubos de rueda sujetos con film a un palé en un almacén",
+      "detail": "Si hay dos ciudades de entrega, confirme quién firma la recepción y qué comprobante se necesita en cada parada."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Sujeción de mercancía en un palé",
+      "alt": "Cubos de rueda sujetos a un palé con film y flejes",
+      "detail": "Indique las dimensiones, el peso bruto y si el palé se puede apilar para cotizar el transbordo."
+    },
+    "tj-rail-freight": {
+      "caption": "Tren de carga en Tayikistán · 2014",
+      "alt": "Locomotora tayika arrastrando un tren de carga",
+      "detail": "Para combinar ferrocarril y carretera, confirme la estación de llegada y el punto de transbordo al camión."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Manipulación con montacargas",
+      "alt": "Montacargas introduciendo un palé envuelto en film en un remolque",
+      "detail": "Indique las condiciones de descarga en destino y acuerde quién se encarga del último tramo por carretera y de la descarga."
+    },
+    "ru-container-origin": {
+      "caption": "Carga de contenedor en China",
+      "alt": "Contenedor cargado con un montacargas junto a las puertas",
+      "detail": "Indique dimensiones y peso bruto por bulto y si hay montacargas en la recogida."
+    },
+    "ru-border-rail": {
+      "caption": "Paso ferroviario Manzhouli–Zabaikalsk · 2009",
+      "alt": "Tren de carga que entra en China desde Rusia cerca de Manzhouli",
+      "detail": "Referencia histórica. Confirme con el transportista el paso y los transbordos del envío de salida."
+    },
+    "ru-unloading-reference": {
+      "caption": "Ejemplo de descarga de contenedor",
+      "alt": "Operarios moviendo cajones y cajas entre un contenedor y un camión de caja",
+      "detail": "Confirme si la dirección de entrega en Rusia tiene muelle o montacargas y quién paga la descarga."
+    },
+    "tm-staged-cargo": {
+      "caption": "Mercancía preparada para la carga",
+      "alt": "Cajones y bultos envueltos apilados en una zona de carga cubierta",
+      "detail": "Indique cantidades y marcas por tipo de bulto antes de cargar."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Ferrocarril al norte de Asjabad · 2015",
+      "alt": "Locomotoras turcomanas pasando junto a una cementera al norte de Asjabad",
+      "detail": "Referencia histórica. Confirme la terminal de llegada y el tramo por carretera hasta su almacén."
+    },
+    "tm-reception-count": {
+      "caption": "Recuento de cajas en recepción",
+      "alt": "Operaria contando cajas junto a una báscula de suelo",
+      "detail": "Para Asjabad o Türkmenabat, acuerde quién cuenta las cajas, firma la entrega y registra los faltantes."
+    }
+  },
+  "fr": {
+    "kg-road-loading": {
+      "caption": "Chargement routier en Asie centrale",
+      "alt": "Opérateur chargeant des cartons dans la remorque d’un camion",
+      "detail": "Pour le devis, indiquez séparément le nombre de colis et les numéros de cartons pour Bichkek et Och. La photo illustre un chargement pour un itinéraire d’Asie centrale."
+    },
+    "kg-erkeshtam": {
+      "caption": "Col d’Irkechtam, côté kirghiz · 2017",
+      "alt": "Route de montagne du côté kirghiz du col d’Irkechtam",
+      "detail": "Demandez au transporteur de confirmer le poste-frontière et le lieu de changement de camion."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Remise de marchandises en Asie centrale",
+      "alt": "Opérateurs vérifiant des moyeux de roue filmés sur une palette dans un entrepôt",
+      "detail": "Pour deux villes de livraison, précisez qui signe à la réception et quel justificatif est requis à chaque arrêt."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Arrimage de la marchandise sur palette",
+      "alt": "Moyeux de roue maintenus sur une palette par du film et des feuillards",
+      "detail": "Indiquez les dimensions, le poids brut et la possibilité de gerbage pour chiffrer le transbordement."
+    },
+    "tj-rail-freight": {
+      "caption": "Train de fret au Tadjikistan · 2014",
+      "alt": "Locomotive tadjike tractant un train de fret",
+      "detail": "Pour un trajet rail-route, confirmez la gare d’arrivée et le lieu du transfert sur camion."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Manutention au chariot élévateur",
+      "alt": "Chariot élévateur introduisant une palette filmée dans une remorque",
+      "detail": "Indiquez les conditions de déchargement et convenez de qui assure le dernier trajet routier et le déchargement."
+    },
+    "cl-origin-container": {
+      "caption": "Chargement d’un conteneur en Chine",
+      "alt": "Conteneur ouvert sur une remorque à l’intérieur d’un entrepôt",
+      "detail": "Exemple au départ. Comparez les deux ports avec le même équipement et la même date de disponibilité du fret."
+    },
+    "cl-san-antonio": {
+      "caption": "Terminal de San Antonio · 2012",
+      "alt": "Grues déchargeant des conteneurs à San Antonio, au Chili",
+      "detail": "Confirmez le terminal de déchargement et le dépôt de retour du conteneur vide."
+    },
+    "cl-valparaiso": {
+      "caption": "Terminal de Valparaíso · 2017",
+      "alt": "Terminal à conteneurs et baie de Valparaíso",
+      "detail": "Coordonnez l’enlèvement au terminal avec les horaires de réception de l’entrepôt à Santiago."
+    },
+    "ar-consolidation": {
+      "caption": "Chargement de marchandises mixtes en Chine",
+      "alt": "Cartons et colis de tailles différentes dans un conteneur",
+      "detail": "Exemple au départ. Préparez une liste de colisage pour la commande commerciale et demandez un devis distinct pour l’échantillon."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Puerto Nuevo, Buenos Aires · 2010",
+      "alt": "Grues et conteneurs au port de Buenos Aires",
+      "detail": "Repère portuaire. Demandez au transporteur de confirmer le terminal ou le dépôt d’enlèvement."
+    },
+    "ar-receiving-scan": {
+      "caption": "Contrôle des étiquettes à la réception",
+      "alt": "Opérateur utilisant un lecteur de codes-barres près de cartons d’expédition",
+      "detail": "Exemple de réception. Vérifiez les étiquettes avec la liste de colisage et précisez qui signe le bon de livraison."
+    },
+    "ru-container-origin": {
+      "caption": "Chargement en conteneur en Chine",
+      "alt": "Conteneur chargé avec un chariot élévateur près des portes",
+      "detail": "Indiquez les dimensions et le poids brut par colis ainsi que l’accès au chariot élévateur à l’enlèvement."
+    },
+    "ru-border-rail": {
+      "caption": "Passage ferroviaire Manzhouli–Zabaïkalsk · 2009",
+      "alt": "Train de marchandises entrant en Chine depuis la Russie près de Manzhouli",
+      "detail": "Photo d’archive. Confirmez avec le transporteur le passage et les transbordements à l’export."
+    },
+    "ru-unloading-reference": {
+      "caption": "Exemple de déchargement de conteneur",
+      "alt": "Opérateurs manipulant caisses et cartons entre un conteneur et un camion fourgon",
+      "detail": "Vérifiez si le site en Russie dispose d’un quai ou d’un chariot élévateur et convenez du paiement du déchargement."
+    },
+    "tm-staged-cargo": {
+      "caption": "Marchandises regroupées avant chargement",
+      "alt": "Caisses et colis emballés empilés dans une zone de chargement couverte",
+      "detail": "Avant le chargement, indiquez les quantités et les marques par type de colis."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Voie ferrée au nord d’Achgabat · 2015",
+      "alt": "Locomotives turkmènes passant devant une cimenterie au nord d’Achgabat",
+      "detail": "Photo d’archive. Confirmez le terminal d’arrivée et le trajet routier jusqu’à votre entrepôt."
+    },
+    "tm-reception-count": {
+      "caption": "Comptage des cartons à la réception",
+      "alt": "Opératrice comptant les cartons près d’une balance au sol",
+      "detail": "Pour Achgabat ou Türkmenabat, convenez de qui compte les cartons, signe la réception et relève les manquants."
+    }
+  },
+  "ru": {
+    "kg-road-loading": {
+      "caption": "Погрузка для автоперевозки в Центральной Азии",
+      "alt": "Работник загружает коробки в полуприцеп",
+      "detail": "Для расчёта укажите число грузовых мест и номера коробок отдельно для Бишкека и Оша. На фото показан пример погрузки для маршрута по Центральной Азии."
+    },
+    "kg-erkeshtam": {
+      "caption": "Перевал Иркештам с кыргызской стороны · 2017",
+      "alt": "Горная дорога на кыргызской стороне перевала Иркештам",
+      "detail": "Уточните у перевозчика погранпереход и место перегрузки в другой автомобиль."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Передача груза в Центральной Азии",
+      "alt": "Работники склада проверяют ступицы, закреплённые плёнкой на палете",
+      "detail": "При доставке в два города уточните, кто принимает груз и какой документ подтверждает передачу в каждой точке."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Крепление груза на палете",
+      "alt": "Ступицы на палете, закреплённые плёнкой и лентами",
+      "detail": "Для расчёта перегрузки укажите габариты, массу брутто и возможность штабелирования."
+    },
+    "tj-rail-freight": {
+      "caption": "Грузовой поезд в Таджикистане · 2014",
+      "alt": "Таджикский локомотив ведёт грузовой состав",
+      "detail": "Для железнодорожно-автомобильной перевозки уточните станцию прибытия и место передачи груза автоперевозчику."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Пример работы вилочного погрузчика",
+      "alt": "Вилочный погрузчик перемещает обёрнутую плёнкой палету в полуприцеп",
+      "detail": "Укажите условия разгрузки по адресу приёмки и согласуйте, кто отвечает за последний участок и разгрузку."
+    },
+    "cl-origin-container": {
+      "caption": "Загрузка контейнера в Китае",
+      "alt": "Открытый контейнер на полуприцепе внутри склада",
+      "detail": "Пример в пункте отправления. Сравните оба порта для одинакового контейнера и одной даты готовности груза."
+    },
+    "cl-san-antonio": {
+      "caption": "Терминал Сан-Антонио · 2012",
+      "alt": "Краны выгружают контейнеры в чилийском порту Сан-Антонио",
+      "detail": "Уточните терминал выгрузки и депо для возврата порожнего контейнера."
+    },
+    "cl-valparaiso": {
+      "caption": "Терминал Вальпараисо · 2017",
+      "alt": "Контейнерный терминал и бухта Вальпараисо",
+      "detail": "Согласуйте вывоз из терминала с часами приёмки на складе в Сантьяго."
+    },
+    "ar-consolidation": {
+      "caption": "Загрузка разнородных грузов в Китае",
+      "alt": "Коробки и упаковки разных размеров в контейнере",
+      "detail": "Пример в пункте отправления. Подготовьте упаковочный лист для коммерческой партии и запросите отдельную цену для образца."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Пуэрто-Нуэво, Буэнос-Айрес · 2010",
+      "alt": "Краны и контейнеры в порту Буэнос-Айреса",
+      "detail": "Фото порта для ориентира. Попросите перевозчика подтвердить терминал или склад выдачи."
+    },
+    "ar-receiving-scan": {
+      "caption": "Проверка маркировки при приёмке",
+      "alt": "Работник со сканером штрихкодов рядом с грузовыми коробками",
+      "detail": "Пример приёмки. Сверьте этикетки с упаковочным листом и подтвердите, кто подпишет документы о доставке."
+    },
+    "ru-container-origin": {
+      "caption": "Загрузка контейнера в Китае",
+      "alt": "Загруженный контейнер с погрузчиком у дверей",
+      "detail": "Укажите размеры и вес брутто каждого места и наличие погрузчика на месте забора."
+    },
+    "ru-border-rail": {
+      "caption": "Железнодорожный переход Маньчжурия — Забайкальск · 2009",
+      "alt": "Грузовой поезд входит в Китай из России в районе Маньчжурии",
+      "detail": "Архивное фото. Уточните у перевозчика погранпереход и перегрузку на маршруте отправки."
+    },
+    "ru-unloading-reference": {
+      "caption": "Пример разгрузки контейнера",
+      "alt": "Работники перемещают ящики и коробки между контейнером и фургоном",
+      "detail": "Уточните наличие рампы или погрузчика по адресу в России и согласуйте оплату разгрузки."
+    },
+    "tm-staged-cargo": {
+      "caption": "Груз подготовлен к погрузке",
+      "alt": "Ящики и упакованные места под навесом погрузочной зоны",
+      "detail": "До погрузки укажите число мест и маркировку по каждому виду упаковки."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Железная дорога к северу от Ашхабада · 2015",
+      "alt": "Туркменские локомотивы проходят мимо цементного завода к северу от Ашхабада",
+      "detail": "Архивное фото. Уточните станцию назначения и автодоставку до склада."
+    },
+    "tm-reception-count": {
+      "caption": "Пересчёт коробок при приёмке",
+      "alt": "Сотрудница пересчитывает коробки рядом с напольными весами",
+      "detail": "Для Ашхабада или Туркменабада согласуйте, кто пересчитывает коробки, подписывает приёмку и фиксирует недостачу."
+    }
+  },
+  "ar": {
+    "kg-road-loading": {
+      "caption": "تحميل الشاحنات في آسيا الوسطى",
+      "alt": "عامل يحمّل كراتين في مقطورة شاحنة",
+      "detail": "لطلب عرض سعر، افصل عدد الطرود وأرقام الكراتين المتجهة إلى بيشكيك عن تلك المتجهة إلى أوش. الصورة مثال للتحميل على مسار في آسيا الوسطى."
+    },
+    "kg-erkeshtam": {
+      "caption": "الجانب القرغيزي من ممر إركشتام · 2017",
+      "alt": "طريق جبلي على الجانب القرغيزي من ممر إركشتام",
+      "detail": "اطلب من الناقل تأكيد المعبر الحدودي ومكان نقل البضائع إلى شاحنة أخرى."
+    },
+    "kg-pallet-handoff": {
+      "caption": "تسليم البضائع في آسيا الوسطى",
+      "alt": "عاملان يفحصان صُرر عجلات مثبّتة على منصة نقالة بغلاف بلاستيكي في مستودع",
+      "detail": "عند التسليم في مدينتين، حدّد من يوقّع على الاستلام وإثبات التسليم المطلوب في كل محطة."
+    },
+    "tj-pallet-restraint": {
+      "caption": "تثبيت البضائع على منصة نقالة",
+      "alt": "صُرر عجلات مثبّتة على منصة نقالة بغلاف وأحزمة",
+      "detail": "أرسل أبعاد المنصة ووزنها الإجمالي وإمكانية تكديسها لتسعير المناولة عند النقل."
+    },
+    "tj-rail-freight": {
+      "caption": "قطار بضائع في طاجيكستان · 2014",
+      "alt": "قاطرة طاجيكية تجرّ قطار بضائع",
+      "detail": "عند الجمع بين السكك الحديدية والنقل البري، أكّد محطة الوصول وموقع نقل البضائع إلى الشاحنة."
+    },
+    "tj-forklift-transfer": {
+      "caption": "مثال للمناولة برافعة شوكية",
+      "alt": "رافعة شوكية تُدخل منصة نقالة ملفوفة بالبلاستيك إلى مقطورة",
+      "detail": "اذكر شروط التفريغ في موقع الاستلام واتفق على من يتولّى المرحلة البرية الأخيرة والتفريغ."
+    },
+    "cl-origin-container": {
+      "caption": "تحميل حاوية في الصين",
+      "alt": "حاوية مفتوحة فوق مقطورة داخل مستودع",
+      "detail": "مثال في بلد المنشأ. قارن بين الميناءين لنفس نوع الحاوية وتاريخ جاهزية البضائع."
+    },
+    "cl-san-antonio": {
+      "caption": "محطة سان أنطونيو · 2012",
+      "alt": "رافعات تفرّغ حاويات في سان أنطونيو بتشيلي",
+      "detail": "أكّد محطة التفريغ والمستودع المخصّص لإعادة الحاوية الفارغة."
+    },
+    "cl-valparaiso": {
+      "caption": "محطة فالبارايسو · 2017",
+      "alt": "محطة الحاويات وخليج فالبارايسو",
+      "detail": "نسّق موعد الاستلام من المحطة مع ساعات الاستلام في مستودع سانتياغو."
+    },
+    "ar-consolidation": {
+      "caption": "تحميل بضائع متنوعة في الصين",
+      "alt": "كراتين وطرود بأحجام مختلفة داخل حاوية",
+      "detail": "مثال في بلد المنشأ. جهّز قائمة تعبئة للطلب التجاري واطلب عرض سعر منفصلًا للعينة."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "بويرتو نويفو، بوينس آيرس · 2010",
+      "alt": "رافعات وحاويات في ميناء بوينس آيرس",
+      "detail": "صورة مرجعية للميناء. اطلب من الناقل تأكيد محطة الاستلام أو المستودع."
+    },
+    "ar-receiving-scan": {
+      "caption": "فحص ملصقات الطرود عند الاستلام",
+      "alt": "عامل يستخدم قارئ رموز شريطية بجانب كراتين الشحن",
+      "detail": "مثال للاستلام. طابق الملصقات مع قائمة التعبئة وأكّد من يوقّع على الاستلام."
+    },
+    "ru-container-origin": {
+      "caption": "تحميل الحاوية في الصين",
+      "alt": "حاوية محمّلة ورافعة شوكية قرب أبوابها",
+      "detail": "أدرج أبعاد كل طرد ووزنه الإجمالي وتحقق من توفر رافعة شوكية عند الاستلام."
+    },
+    "ru-border-rail": {
+      "caption": "معبر مانتشولي–زابايكالسْك للسكك الحديدية · 2009",
+      "alt": "قطار بضائع يدخل الصين من روسيا قرب مانتشولي",
+      "detail": "صورة أرشيفية. اطلب من الناقل تأكيد المعبر ونقاط نقل الحمولة على خط التصدير."
+    },
+    "ru-unloading-reference": {
+      "caption": "مثال لتفريغ الحاوية",
+      "alt": "عمال ينقلون صناديق خشبية وكرتونية بين حاوية وشاحنة مغلقة",
+      "detail": "تحقق من توفر رصيف أو رافعة شوكية في موقع التسليم في روسيا واتفق على من يدفع تكلفة التفريغ."
+    },
+    "tm-staged-cargo": {
+      "caption": "تجميع البضائع قبل التحميل",
+      "alt": "صناديق وطرود مغلّفة مكدّسة في منطقة تحميل مغطاة",
+      "detail": "أدرج عدد الطرود وعلاماتها لكل نوع تغليف قبل التحميل."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "خط سكة حديد شمال عشق آباد · 2015",
+      "alt": "قاطرات تركمانية تمر أمام مصنع أسمنت شمال عشق آباد",
+      "detail": "صورة أرشيفية. أكد محطة الوصول والمرحلة البرية إلى مستودعك."
+    },
+    "tm-reception-count": {
+      "caption": "عدّ الصناديق عند الاستلام",
+      "alt": "عاملة تتحقق من عدد الصناديق بجوار ميزان أرضي",
+      "detail": "عند التسليم إلى عشق آباد أو تركمان آباد، اتفق على من يعد الصناديق ويوقّع ويسجّل أي نقص."
+    }
+  },
+  "pt": {
+    "kg-road-loading": {
+      "caption": "Carregamento rodoviário na Ásia Central",
+      "alt": "Operário carregando caixas na carreta de um caminhão",
+      "detail": "Para cotar, separe a quantidade de volumes e os números das caixas para Bishkek e Osh. A foto mostra um exemplo de carregamento para uma rota da Ásia Central."
+    },
+    "kg-erkeshtam": {
+      "caption": "Passo de Irkeshtam, lado quirguiz · 2017",
+      "alt": "Estrada de montanha no lado quirguiz do passo de Irkeshtam",
+      "detail": "Peça à transportadora que confirme o posto de fronteira e o local da troca de caminhão."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Entrega de mercadoria na Ásia Central",
+      "alt": "Operários conferindo cubos de roda protegidos com filme em um palete no armazém",
+      "detail": "Para entregas em duas cidades, confirme quem assina o recebimento e qual comprovante será necessário em cada parada."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Fixação da carga no palete",
+      "alt": "Cubos de roda presos ao palete com filme e cintas",
+      "detail": "Informe as dimensões, o peso bruto e a possibilidade de empilhamento para cotar o transbordo."
+    },
+    "tj-rail-freight": {
+      "caption": "Trem de carga no Tajiquistão · 2014",
+      "alt": "Locomotiva tajique puxando um trem de carga",
+      "detail": "Para combinar ferrovia e rodovia, confirme a estação de chegada e o ponto de transferência para o caminhão."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Movimentação com empilhadeira",
+      "alt": "Empilhadeira colocando um palete envolto em filme dentro de uma carreta",
+      "detail": "Informe as condições de descarga no destino e combine quem fará o último trecho rodoviário e a descarga."
+    },
+    "cl-origin-container": {
+      "caption": "Carregamento de contêiner na China",
+      "alt": "Contêiner aberto sobre um semirreboque dentro de um armazém",
+      "detail": "Exemplo na origem. Compare os dois portos com o mesmo equipamento e a mesma data de disponibilidade da carga."
+    },
+    "cl-san-antonio": {
+      "caption": "Terminal de San Antonio · 2012",
+      "alt": "Guindastes descarregando contêineres em San Antonio, Chile",
+      "detail": "Confirme o terminal de descarga e o depósito para devolução do contêiner vazio."
+    },
+    "cl-valparaiso": {
+      "caption": "Terminal de Valparaíso · 2017",
+      "alt": "Terminal de contêineres e baía de Valparaíso",
+      "detail": "Coordene a retirada no terminal com os horários de recebimento do armazém em Santiago."
+    },
+    "ar-consolidation": {
+      "caption": "Carregamento de carga mista na China",
+      "alt": "Caixas e volumes de tamanhos diferentes dentro de um contêiner",
+      "detail": "Exemplo na origem. Prepare uma lista de embalagem para o pedido comercial e cote a amostra separadamente."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Puerto Nuevo, Buenos Aires · 2010",
+      "alt": "Guindastes e contêineres no porto de Buenos Aires",
+      "detail": "Referência do porto. Peça à transportadora que confirme o terminal ou depósito de retirada."
+    },
+    "ar-receiving-scan": {
+      "caption": "Conferência de etiquetas no recebimento",
+      "alt": "Operário usando um leitor de códigos de barras ao lado de caixas de embarque",
+      "detail": "Exemplo de recebimento. Compare as etiquetas com a lista de embalagem e confirme quem assina o comprovante de entrega."
+    },
+    "ru-container-origin": {
+      "caption": "Carregamento do contentor na China",
+      "alt": "Contentor carregado com um empilhador junto às portas",
+      "detail": "Indique dimensões e peso bruto por volume e confirme o acesso a um empilhador na recolha."
+    },
+    "ru-border-rail": {
+      "caption": "Passagem ferroviária Manzhouli–Zabaikalsk · 2009",
+      "alt": "Comboio de mercadorias a entrar na China vindo da Rússia, perto de Manzhouli",
+      "detail": "Foto de arquivo. Confirme com o transportador a passagem e os transbordos do trajeto de exportação."
+    },
+    "ru-unloading-reference": {
+      "caption": "Exemplo de descarga de contentor",
+      "alt": "Operadores a mover caixotes e caixas entre um contentor e um camião fechado",
+      "detail": "Confirme se a morada de entrega na Rússia tem cais ou empilhador e quem paga a descarga."
+    },
+    "tm-staged-cargo": {
+      "caption": "Mercadoria agrupada antes do carregamento",
+      "alt": "Caixotes e volumes embalados empilhados numa zona de carga coberta",
+      "detail": "Indique as quantidades e marcas por tipo de volume antes do carregamento."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Via férrea a norte de Asgabate · 2015",
+      "alt": "Locomotivas turcomenas a passar junto a uma fábrica de cimento a norte de Asgabate",
+      "detail": "Foto de arquivo. Confirme o terminal de chegada e o percurso rodoviário até ao armazém."
+    },
+    "tm-reception-count": {
+      "caption": "Contagem de caixas na receção",
+      "alt": "Operadora a contar caixas junto a uma balança de chão",
+      "detail": "Para Asgabate ou Türkmenabat, combine quem conta as caixas, assina a receção e regista as faltas."
+    }
+  },
+  "tr": {
+    "kg-road-loading": {
+      "caption": "Orta Asya’da karayolu yüklemesi",
+      "alt": "Kamyon römorkuna koli yükleyen çalışan",
+      "detail": "Teklif için Bişkek ve Oş’a gidecek yüklerin paket adetlerini ve koli numaralarını ayrı ayrı belirtin. Fotoğraf, Orta Asya güzergâhına ait bir yükleme örneğidir."
+    },
+    "kg-erkeshtam": {
+      "caption": "İrkeştam Geçidi’nin Kırgızistan tarafı · 2017",
+      "alt": "İrkeştam Geçidi’nin Kırgızistan tarafındaki dağ yolu",
+      "detail": "Sınır kapısını ve yükün başka bir kamyona aktarılacağı yeri taşıyıcıdan teyit edin."
+    },
+    "kg-pallet-handoff": {
+      "caption": "Orta Asya’da yük teslimi",
+      "alt": "Depoda streç filmle palete sabitlenmiş tekerlek poyralarını kontrol eden çalışanlar",
+      "detail": "İki şehre teslimatta her durakta kimin imza atacağını ve hangi teslim belgesinin gerektiğini belirleyin."
+    },
+    "tj-pallet-restraint": {
+      "caption": "Yükün palete sabitlenmesi",
+      "alt": "Streç film ve çemberlerle palete sabitlenmiş tekerlek poyraları",
+      "detail": "Aktarma maliyeti için palet ölçülerini, brüt ağırlığı ve istiflenebilirliğini bildirin."
+    },
+    "tj-rail-freight": {
+      "caption": "Tacikistan’da yük treni · 2014",
+      "alt": "Yük treni çeken bir Tacik lokomotifi",
+      "detail": "Demiryolu ve karayolu birlikte kullanılacaksa varış istasyonunu ve kamyona aktarma noktasını teyit edin."
+    },
+    "tj-forklift-transfer": {
+      "caption": "Forkliftle elleçleme örneği",
+      "alt": "Streç filmle sarılmış paleti römorka yerleştiren forklift",
+      "detail": "Teslimat adresindeki boşaltma koşullarını bildirin. Son karayolu ayağını ve boşaltmayı kimin üstleneceğini kararlaştırın."
+    },
+    "cl-origin-container": {
+      "caption": "Çin’de konteyner yüklemesi",
+      "alt": "Depo içinde yarı römork üzerinde kapısı açık konteyner",
+      "detail": "Çıkış noktasından bir örnek. Aynı ekipman ve yük hazırlık tarihiyle iki limanı karşılaştırın."
+    },
+    "cl-san-antonio": {
+      "caption": "San Antonio terminali · 2012",
+      "alt": "Şili’nin San Antonio limanında konteyner boşaltan vinçler",
+      "detail": "Boşaltma terminalini ve boş konteynerin iade edileceği depoyu teyit edin."
+    },
+    "cl-valparaiso": {
+      "caption": "Valparaíso terminali · 2017",
+      "alt": "Valparaíso konteyner terminali ve körfezi",
+      "detail": "Terminalden teslim alma randevusunu Santiago’daki deponun mal kabul saatlerine göre ayarlayın."
+    },
+    "ar-consolidation": {
+      "caption": "Çin’de karma yük yüklemesi",
+      "alt": "Konteyner içinde farklı boyutlarda koliler ve paketler",
+      "detail": "Çıkış noktasından bir örnek. Ticari sipariş için çeki listesi hazırlayın ve numune için ayrı teklif isteyin."
+    },
+    "ar-puerto-nuevo": {
+      "caption": "Puerto Nuevo, Buenos Aires · 2010",
+      "alt": "Buenos Aires limanındaki vinçler ve konteynerler",
+      "detail": "Limanı gösteren referans fotoğraf. Teslim alınacak terminali veya depoyu taşıyıcıdan teyit edin."
+    },
+    "ar-receiving-scan": {
+      "caption": "Mal kabulde paket etiketi kontrolü",
+      "alt": "Sevkiyat kolilerinin yanında barkod okuyucu kullanan çalışan",
+      "detail": "Mal kabul örneği. Etiketleri çeki listesiyle karşılaştırın ve teslim belgesini kimin imzalayacağını teyit edin."
+    },
+    "ru-container-origin": {
+      "caption": "Çin’de konteyner yükleme",
+      "alt": "Kapılarının yanında forklift bulunan yüklü konteyner",
+      "detail": "Her paketin ölçülerini ve brüt ağırlığını belirtin, alım yerinde forklift olup olmadığını doğrulayın."
+    },
+    "ru-border-rail": {
+      "caption": "Manzhouli–Zabaykalsk demiryolu geçişi · 2009",
+      "alt": "Manzhouli yakınında Rusya’dan Çin’e giren yük treni",
+      "detail": "Arşiv fotoğrafı. Taşıyıcıdan çıkış güzergâhındaki sınır geçişini ve varsa aktarma noktasını teyit edin."
+    },
+    "ru-unloading-reference": {
+      "caption": "Konteyner boşaltma örneği",
+      "alt": "Konteyner ile kapalı kasa kamyon arasında sandık ve koli taşıyan görevliler",
+      "detail": "Rusya’daki teslimat adresinde rampa veya forklift olup olmadığını ve boşaltma ücretini kimin ödeyeceğini netleştirin."
+    },
+    "tm-staged-cargo": {
+      "caption": "Yükleme öncesi hazırlanan yük",
+      "alt": "Kapalı yükleme alanında istiflenmiş sandıklar ve sarılı paketler",
+      "detail": "Yüklemeden önce her ambalaj türü için adet ve işaretleri belirtin."
+    },
+    "tm-ashgabat-rail": {
+      "caption": "Aşkabat’ın kuzeyindeki demiryolu · 2015",
+      "alt": "Aşkabat’ın kuzeyinde çimento fabrikasının önünden geçen Türkmen lokomotifleri",
+      "detail": "Arşiv fotoğrafı. Varış terminalini ve depoya kadar olan kara yolu etabını teyit edin."
+    },
+    "tm-reception-count": {
+      "caption": "Teslimatta koli sayımı",
+      "alt": "Zemin kantarının yanında koli sayan depo görevlisi",
+      "detail": "Aşkabat veya Türkmenabat için kolileri kimin sayacağını, teslimi kimin imzalayacağını ve eksikleri kimin kaydedeceğini kararlaştırın."
+    }
+  }
+}

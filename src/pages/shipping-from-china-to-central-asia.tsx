@@ -525,7 +525,7 @@ export default function ShippingCentralAsia() {
             <figcaption>Палета со ступицами из проекта перевозки в Центральную Азию.</figcaption>
           </figure>
         </section>}
-        {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {<RoutePlanningDepth country={selectedCountry} locale={activeLang} countryPage={location.pathname.replace(/\/$/, '') === buildShippingCountryPath(location.pathname, selectedCountry)}/>}
         {isTurkmenistanRu && <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8" aria-labelledby="turkmenistan-cargo-prep">
           <h2 id="turkmenistan-cargo-prep" className="text-2xl font-black">Как заказать товар у поставщика в Китае и отправить в Туркменистан</h2>
           <p className="mt-3 max-w-3xl leading-7">
@@ -536,7 +536,7 @@ export default function ShippingCentralAsia() {
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         {selectedCountry === 'uzbekistan' && <FreightRouteMap variant="uzbekistan" />}
-        {planningNote ? <CountryPlanningLinks note={planningNote} locale="zh" /> : <>
+        {planningNote ? <CountryPlanningLinks note={planningNote} locale={activeLang === 'en' ? 'en' : 'zh'} /> : <>
         <CountryRegionalReference locale={activeLang} region="central-asia" />
 
         <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8">

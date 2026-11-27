@@ -1,0 +1,164 @@
+{
+  "kyrgyzstan": {
+    "entries": [
+      {
+        "file": "kg-road-loading",
+        "width": 760,
+        "height": 895,
+        "focus": "center 67%"
+      },
+      {
+        "file": "kg-erkeshtam",
+        "width": 760,
+        "height": 570,
+        "credit": {
+          "name": "Radosław Botev / Fundacja Nomos",
+          "source": "https://commons.wikimedia.org/wiki/File:Erkeshtam_Pass_-_road_on_the_Kyrgyz_side.jpg",
+          "license": "CC BY 3.0 PL",
+          "licensePath": "by/3.0/pl"
+        }
+      },
+      {
+        "file": "kg-pallet-handoff",
+        "width": 760,
+        "height": 924,
+        "focus": "center 62%"
+      }
+    ]
+  },
+  "tajikistan": {
+    "entries": [
+      {
+        "file": "tj-pallet-restraint",
+        "width": 760,
+        "height": 927
+      },
+      {
+        "file": "tj-rail-freight",
+        "width": 760,
+        "height": 570,
+        "credit": {
+          "name": "Serguei Bolachenko",
+          "source": "https://commons.wikimedia.org/wiki/File:TE33A-0113_with_freight_train.jpg",
+          "license": "CC BY-SA 3.0",
+          "licensePath": "by-sa/3.0"
+        }
+      },
+      {
+        "file": "tj-forklift-transfer",
+        "width": 760,
+        "height": 935,
+        "focus": "center 58%"
+      }
+    ]
+  },
+  "chile": {
+    "entries": [
+      {
+        "file": "cl-origin-container",
+        "width": 760,
+        "height": 865,
+        "focus": "center 67%"
+      },
+      {
+        "file": "cl-san-antonio",
+        "width": 704,
+        "height": 400,
+        "credit": {
+          "name": "Cristiangonzalo.m",
+          "source": "https://commons.wikimedia.org/wiki/File:Descarga_contenedores_san_antonio_terminal_internacional.jpg",
+          "license": "CC BY-SA 3.0",
+          "licensePath": "by-sa/3.0"
+        }
+      },
+      {
+        "file": "cl-valparaiso",
+        "width": 760,
+        "height": 507,
+        "credit": {
+          "name": "Falk2",
+          "source": "https://commons.wikimedia.org/wiki/File:J28_126_Valpara%C3%ADso%2C_Container-_und_Milit%C3%A4rhafen.jpg",
+          "license": "CC BY-SA 4.0",
+          "licensePath": "by-sa/4.0"
+        }
+      }
+    ]
+  },
+  "argentina": {
+    "entries": [
+      {
+        "file": "ar-consolidation",
+        "width": 760,
+        "height": 878,
+        "focus": "center 68%"
+      },
+      {
+        "file": "ar-puerto-nuevo",
+        "width": 760,
+        "height": 505,
+        "credit": {
+          "name": "Dan DeLuca",
+          "source": "https://commons.wikimedia.org/wiki/File:Container-port_in_Buenos_Aires.jpg",
+          "license": "CC BY 2.0",
+          "licensePath": "by/2.0"
+        }
+      },
+      {
+        "file": "ar-receiving-scan",
+        "width": 760,
+        "height": 1189,
+        "focus": "center 54%"
+      }
+    ]
+  },
+  "russia": {
+    "entries": [
+      {
+        "file": "ru-container-origin",
+        "width": 760,
+        "height": 428
+      },
+      {
+        "file": "ru-border-rail",
+        "width": 760,
+        "height": 506,
+        "credit": {
+          "name": "Jack No1",
+          "source": "https://commons.wikimedia.org/wiki/File:China_-_Russia_Railway.jpg",
+          "license": "CC BY-SA 3.0",
+          "licensePath": "by-sa/3.0"
+        }
+      },
+      {
+        "file": "ru-unloading-reference",
+        "width": 760,
+        "height": 553
+      }
+    ]
+  },
+  "turkmenistan": {
+    "entries": [
+      {
+        "file": "tm-staged-cargo",
+        "width": 760,
+        "height": 575
+      },
+      {
+        "file": "tm-ashgabat-rail",
+        "width": 760,
+        "height": 403,
+        "credit": {
+          "name": "Bohndorf Film-Team / Herbert Ortner (crop)",
+          "source": "https://commons.wikimedia.org/wiki/File:Transkaspische_Bahn_vor_der_Zementfabrik_Aschgabat.jpg",
+          "license": "CC BY-SA 4.0",
+          "licensePath": "by-sa/4.0"
+        }
+      },
+      {
+        "file": "tm-reception-count",
+        "width": 760,
+        "height": 950
+      }
+    ]
+  }
+}
