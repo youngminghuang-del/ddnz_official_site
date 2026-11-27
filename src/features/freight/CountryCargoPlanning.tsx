@@ -15,6 +15,19 @@ const copy = {
  ru:{title:'Оборудование, заказы поставщиков и адрес доставки',equipment:(c:string)=>`Доставка пищевого оборудования из Китая — ${c}`,equipmentBody:'Укажите модель, количество, размеры упаковки и вес брутто. Согласуйте точки подъема, защиту ящиков, двигатели и комплектующие; сообщите о батареях, жидкостях и ограниченных компонентах до проверки груза.',rail:'Железнодорожная или автомобильная доставка из Китая: сравните весь маршрут',sea:'Перевозка FCL или LCL из Китая: сравните полный состав услуги',modeBody:'Сравнивайте забор, консолидацию, погрузку, обработку в пункте назначения и доставку по единому списку груза. Доступность и маршрут подтверждаются по товару, дате и адресу; название транспорта не гарантирует доставку.',address:'Прибытие в порт или на терминал отличается от доставки по адресу.',addressBody:'Примеры городов получения для заявки:',addressNote:'Укажите точный адрес, условия разгрузки и импортера. Примеры не гарантируют маршрут или местную доставку.',product:'Сравнить пищевое оборудование из Китая',kitchen:'Сравнить оборудование для профессиональной кухни',service:'Консолидация заказов и экспортная координация',quote:'Запросить план по вашему грузу'},
  ar:{title:'المعدات وطلبات الموردين وعنوان التسليم النهائي',equipment:(c:string)=>`شحن آلات تجهيز الأغذية من الصين إلى ${c}`,equipmentBody:'حدد الطراز والكمية وأبعاد التغليف والوزن الإجمالي. أكد نقاط الرفع وحماية الصناديق والمحركات والملحقات، واذكر البطاريات والسوائل والمكونات المقيدة قبل مراجعة الشحن.',rail:'الشحن بالسكك أو الطرق من الصين: قارن المسار الكامل',sea:'شحن الحاويات الكاملة أو المشتركة من الصين: قارن النطاق الكامل',modeBody:'قارن الاستلام والتجميع والتحميل والمناولة في الوجهة والتسليم وفق قائمة بضائع واحدة. يتطلب المسار والتوفر تأكيد نوع البضاعة والتاريخ والعنوان؛ اسم الوسيلة وحده ليس التزاماً بالتسليم.',address:'الوصول إلى الميناء أو المحطة يختلف عن التسليم إلى عنوانك.',addressBody:'أمثلة لمواقع الاستلام التي يمكن تحديدها في الطلب:',addressNote:'قدم العنوان الفعلي وشروط التفريغ وبيانات المستورد. لا تضمن الأمثلة مساراً أو تغطية توصيل محلية.',product:'قارن آلات تجهيز الأغذية من الصين',kitchen:'قارن معدات المطابخ التجارية',service:'تجميع طلبات الموردين وتنسيق التصدير',quote:'اطلب خطة شحن حسب بضاعتك'},
 };
+const equipmentHandoffs: Record<string, Record<string, string>> = {
+  fr: {
+    kyrgyzstan: 'Si les machines et les pièces partent vers deux villes, affectez chaque caisse à Bichkek ou à Och. Indiquez par quai le poids de la caisse la plus lourde et le moyen de levage disponible. Déclarez les batteries ou liquides avant enlèvement.',
+    tajikistan: 'Pour une machine acheminée par rail puis camion, envoyez le plan de caisse, le poids brut et les points de levage avant le choix de la gare de transfert. Confirmez que la même caisse peut être reprise par le camion et déchargée au quai final. Signalez tout composant soumis à restriction.',
+    chile: 'Pour une machine livrée à Santiago, vérifiez si le conteneur doit être vidé à l’entrepôt ou dans un dépôt avant le dernier trajet. Transmettez le gabarit de la caisse, les points de levage et le temps de déchargement prévu pour chiffrer le retour du vide.',
+    argentina: 'Pour un échantillon avant réassort, identifiez séparément la caisse d’essai et les accessoires destinés au stock. Indiquez le poids et la valeur de chaque envoi, le destinataire qui signera et l’adresse de remise. Déclarez les composants soumis à restriction avant le devis.',
+  },
+  es: {
+    kyrgyzstan: 'Si las máquinas y los repuestos van a ciudades distintas, marque cada caja para Biskek u Osh. Indique el peso de la pieza más pesada y los medios de izaje en cada punto de recepción. Declare baterías o líquidos antes del retiro.',
+    tajikistan: 'Si la máquina pasa del tren a un camión, comparta el plano de embalaje, el peso bruto y los puntos de izaje antes de elegir la estación de transferencia. Confirme que se pueda recoger la misma caja y descargarla en la bodega final. Avise de componentes sujetos a restricciones.',
+  },
+};
+
 export default function CountryCargoPlanning({country, countryName}:{country:string;countryName:string}) {
  const {language}=useLanguage(); const lang=language in copy ? language as keyof typeof copy : 'en'; const c=copy[lang];
  const rail=['kazakhstan','uzbekistan','kyrgyzstan','tajikistan','turkmenistan','russia'].includes(country);
@@ -22,7 +35,7 @@ export default function CountryCargoPlanning({country, countryName}:{country:str
  return <section className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8" aria-labelledby="country-cargo-planning" data-country-cargo-planning>
   <h2 id="country-cargo-planning" className="text-2xl font-bold text-slate-900">{c.title}</h2>
   <div className="mt-5 max-w-4xl">
-   <p className="leading-7">{c.equipmentBody}</p>
+   <p className="leading-7">{equipmentHandoffs[lang]?.[country] ?? c.equipmentBody}</p>
    <nav className="mt-4 flex flex-wrap gap-x-6 gap-y-2" aria-label={c.title}>
     <a className="inline-flex min-h-11 items-center underline" href="/sourcing/food-processing-machinery-from-china/" hrefLang="en">{c.product}</a>
     <a className="inline-flex min-h-11 items-center underline" href={localizedProductPath('/sourcing/commercial-kitchen-equipment-from-china',language)}>{c.kitchen}</a>

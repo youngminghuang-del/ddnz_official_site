@@ -536,7 +536,7 @@ export default function ShippingCentralAsia() {
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         {selectedCountry === 'uzbekistan' && <FreightRouteMap variant="uzbekistan" />}
-        {planningNote ? <CountryPlanningLinks note={planningNote} locale={activeLang === 'en' ? 'en' : 'zh'} /> : <>
+        {planningNote ? <CountryPlanningLinks note={planningNote} locale={activeLang} region="central-asia" /> : <>
         <CountryRegionalReference locale={activeLang} region="central-asia" />
 
         <section className="mx-auto max-w-7xl border-b border-slate-200 px-4 py-8 sm:px-6 lg:px-8">

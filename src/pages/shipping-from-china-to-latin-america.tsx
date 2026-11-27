@@ -1176,7 +1176,7 @@ export default function ShippingLatinAmerica() {
           showConsolidation={!planningNote}
         />
 
-        {planningNote && <CountryPlanningLinks note={planningNote} locale="es" />}
+        {planningNote && <CountryPlanningLinks note={planningNote} locale={activeLang} region="latin-america" />}
 
         {selectedCountry === 'peru' && (
           <PeruTileFreightCase locale={activeLang} onQuote={scrollToQuote} />
