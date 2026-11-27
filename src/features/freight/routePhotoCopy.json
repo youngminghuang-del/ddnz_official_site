@@ -1,0 +1,290 @@
+{
+  "en": {
+    "credit": "Photo credit",
+    "adjustment": "Resized, displayed cropped, converted to WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Groupage loading in China",
+        "alt": "Crates and secured pallets inside a container during loading",
+        "detail": "Origin example. Give the depot the dimensions and gross weight of each pallet or crate."
+      },
+      "southampton-terminal": {
+        "caption": "Southampton container terminal · 2023",
+        "alt": "A container ship and quayside cranes at Southampton container terminal",
+        "detail": "Confirm the collection point for your full container or the unpacking depot for groupage."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Liftgate unloading at the delivery address",
+        "alt": "Worker with a pallet jack and a loaded pallet on a truck liftgate",
+        "detail": "Unloading example. If your site has no dock or forklift, confirm pallet weight and whether a liftgate is suitable."
+      },
+      "ph-container-loading": {
+        "caption": "Full-container loading in China",
+        "alt": "Wrapped cargo stacked inside a shipping container with a forklift mast beside the doors",
+        "detail": "Origin example. Keep the container size and cargo-ready date the same when comparing sailings."
+      },
+      "manila-container-terminal": {
+        "caption": "Manila International Container Terminal · 2024",
+        "alt": "Quayside cranes and rows of containers at Manila International Container Terminal",
+        "detail": "Port reference. Check the discharge terminal for your sailing on the carrier booking."
+      },
+      "ph-receiving-check": {
+        "caption": "Carton check at warehouse handover",
+        "alt": "Warehouse worker recording a carton count beside a floor scale",
+        "detail": "Receiving example. Confirm who checks carton counts, signs for delivery and arranges empty return."
+      }
+    }
+  },
+  "zh": {
+    "credit": "图片来源",
+    "adjustment": "已缩放、裁切显示并转换为 WebP。",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "中国端拼箱装货",
+        "alt": "装货中的集装箱内摆放木箱和已固定的托盘",
+        "detail": "中国端作业示例。向集货仓提供每个托盘或木箱的尺寸和毛重。"
+      },
+      "southampton-terminal": {
+        "caption": "南安普敦集装箱码头 · 2023 年",
+        "alt": "南安普敦集装箱码头的集装箱船和岸吊",
+        "detail": "整柜请确认提柜地点，拼箱请确认拆箱仓。"
+      },
+      "uk-receiving-liftgate": {
+        "caption": "送货地点的尾板卸货",
+        "alt": "工作人员用托盘车在货车尾板上移动装有货物的托盘",
+        "detail": "卸货示例。如果收货点没有月台或叉车，请确认托盘重量以及是否适合使用尾板。"
+      },
+      "ph-container-loading": {
+        "caption": "中国端整柜装货",
+        "alt": "集装箱内堆放有包裹保护的货物，箱门旁可见叉车门架",
+        "detail": "中国端作业示例。对比航次报价时，请统一柜型和货好日期。"
+      },
+      "manila-container-terminal": {
+        "caption": "马尼拉国际集装箱码头 · 2024 年",
+        "alt": "马尼拉国际集装箱码头的岸吊及成排集装箱",
+        "detail": "港口参考。以船公司订舱确认为准，核对该航次的卸船码头。"
+      },
+      "ph-receiving-check": {
+        "caption": "到仓交接时清点外箱",
+        "alt": "仓库人员在地磅旁记录纸箱件数",
+        "detail": "收货示例。请确认谁清点外箱、签收货物以及安排还空柜。"
+      }
+    }
+  },
+  "es": {
+    "credit": "Créditos de la foto",
+    "adjustment": "Imagen redimensionada, mostrada con recorte y convertida a WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Carga consolidada en China",
+        "alt": "Cajas de madera y palés sujetos dentro de un contenedor durante la carga",
+        "detail": "Ejemplo en origen. Facilite al almacén de consolidación las dimensiones y el peso bruto de cada palé o caja."
+      },
+      "southampton-terminal": {
+        "caption": "Terminal de contenedores de Southampton · 2023",
+        "alt": "Portacontenedores y grúas de muelle en la terminal de Southampton",
+        "detail": "Confirme el punto de retiro del contenedor completo o el almacén de desconsolidación para la carga LCL."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Descarga con plataforma elevadora en destino",
+        "alt": "Operario con una transpaleta y un palé cargado sobre la plataforma elevadora de un camión",
+        "detail": "Ejemplo de descarga. Si el lugar no tiene muelle ni montacargas, confirme el peso del palé y si se puede usar una plataforma elevadora."
+      },
+      "ph-container-loading": {
+        "caption": "Carga de contenedor completo en China",
+        "alt": "Mercancía embalada dentro de un contenedor con el mástil de un montacargas junto a las puertas",
+        "detail": "Ejemplo en origen. Compare las salidas con el mismo tipo de contenedor y la misma fecha de disponibilidad de la carga."
+      },
+      "manila-container-terminal": {
+        "caption": "Terminal Internacional de Contenedores de Manila · 2024",
+        "alt": "Grúas portuarias y filas de contenedores en la Terminal Internacional de Contenedores de Manila",
+        "detail": "Referencia del puerto. Verifique la terminal de descarga en la confirmación de reserva de la naviera."
+      },
+      "ph-receiving-check": {
+        "caption": "Recuento de cajas al recibir en almacén",
+        "alt": "Operaria de almacén anotando el número de cajas junto a una báscula de suelo",
+        "detail": "Ejemplo de recepción. Confirme quién cuenta las cajas, firma la recepción y coordina la devolución del contenedor vacío."
+      }
+    }
+  },
+  "fr": {
+    "credit": "Crédits photo",
+    "adjustment": "Image redimensionnée, affichée avec recadrage et convertie en WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Chargement en groupage en Chine",
+        "alt": "Caisses et palettes arrimées dans un conteneur en cours de chargement",
+        "detail": "Exemple au départ. Communiquez au dépôt les dimensions et le poids brut de chaque palette ou caisse."
+      },
+      "southampton-terminal": {
+        "caption": "Terminal à conteneurs de Southampton · 2023",
+        "alt": "Porte-conteneurs et grues de quai au terminal de Southampton",
+        "detail": "Confirmez le lieu de retrait du conteneur complet ou le dépôt de dégroupage pour un envoi LCL."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Déchargement par hayon à l’adresse de livraison",
+        "alt": "Opérateur avec un transpalette et une palette chargée sur le hayon d’un camion",
+        "detail": "Exemple de déchargement. Si le site ne dispose ni de quai ni de chariot élévateur, vérifiez le poids de la palette et la compatibilité avec un hayon."
+      },
+      "ph-container-loading": {
+        "caption": "Chargement d’un conteneur complet en Chine",
+        "alt": "Marchandises emballées dans un conteneur, avec le mât d’un chariot élévateur près des portes",
+        "detail": "Exemple au départ. Comparez les départs pour le même type de conteneur et la même date de disponibilité du fret."
+      },
+      "manila-container-terminal": {
+        "caption": "Terminal international à conteneurs de Manille · 2024",
+        "alt": "Grues de quai et rangées de conteneurs au terminal international de Manille",
+        "detail": "Repère portuaire. Vérifiez le terminal de déchargement indiqué dans la confirmation de réservation de la compagnie maritime."
+      },
+      "ph-receiving-check": {
+        "caption": "Comptage des cartons à la réception en entrepôt",
+        "alt": "Employée d’entrepôt notant le nombre de cartons à côté d’une balance au sol",
+        "detail": "Exemple de réception. Confirmez qui compte les cartons, signe le récépissé et organise le retour du conteneur vide."
+      }
+    }
+  },
+  "ru": {
+    "credit": "Сведения о фотографии",
+    "adjustment": "Размер изменён, при показе используется кадрирование. Файл преобразован в WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Загрузка сборного груза в Китае",
+        "alt": "Ящики и закреплённые палеты внутри контейнера во время погрузки",
+        "detail": "Пример на отправлении. Передайте складу консолидации габариты и массу брутто каждой палеты или ящика."
+      },
+      "southampton-terminal": {
+        "caption": "Контейнерный терминал Саутгемптона · 2023",
+        "alt": "Контейнеровоз и причальные краны на терминале в Саутгемптоне",
+        "detail": "Уточните место получения полного контейнера или склад расформирования сборного груза."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Разгрузка гидробортом по адресу доставки",
+        "alt": "Работник с грузовой тележкой и палетой на гидроборте грузовика",
+        "detail": "Пример разгрузки. Если на объекте нет рампы и погрузчика, уточните массу палеты и возможность разгрузки гидробортом."
+      },
+      "ph-container-loading": {
+        "caption": "Загрузка полного контейнера в Китае",
+        "alt": "Упакованный груз внутри контейнера и мачта погрузчика у дверей",
+        "detail": "Пример на отправлении. Сравнивайте рейсы для одного типа контейнера и одинаковой даты готовности груза."
+      },
+      "manila-container-terminal": {
+        "caption": "Международный контейнерный терминал Манилы · 2024",
+        "alt": "Причальные краны и ряды контейнеров на международном терминале Манилы",
+        "detail": "Фото порта для ориентира. Сверьте терминал выгрузки с подтверждением бронирования перевозчика."
+      },
+      "ph-receiving-check": {
+        "caption": "Пересчёт коробок при приёмке на складе",
+        "alt": "Сотрудница склада записывает количество коробок рядом с напольными весами",
+        "detail": "Пример приёмки. Уточните, кто пересчитывает коробки, подписывает документы о доставке и организует возврат порожнего контейнера."
+      }
+    }
+  },
+  "ar": {
+    "credit": "مصدر الصورة",
+    "adjustment": "عُدّل حجم الصورة، وعُرضت بإطار مقتطع، وحُوّلت إلى صيغة WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "تحميل شحنة مجمّعة في الصين",
+        "alt": "صناديق خشبية ومنصات نقالة مثبّتة داخل حاوية أثناء التحميل",
+        "detail": "مثال في بلد المنشأ. أرسل إلى مستودع التجميع أبعاد كل منصة أو صندوق ووزنه الإجمالي."
+      },
+      "southampton-terminal": {
+        "caption": "محطة حاويات ساوثهامبتون · 2023",
+        "alt": "سفينة حاويات ورافعات على الرصيف في محطة ساوثهامبتون",
+        "detail": "أكّد موقع استلام الحاوية الكاملة أو المستودع الذي تُفرّغ فيه الشحنة المجمّعة."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "التفريغ بمنصة رفع عند عنوان التسليم",
+        "alt": "عامل يستخدم عربة منصات على منصة الرفع الخلفية لشاحنة تحمل منصة محمّلة",
+        "detail": "مثال للتفريغ. إذا لم يتوفر رصيف أو رافعة شوكية في الموقع، فتحقّق من وزن المنصة ومن ملاءمة منصة الرفع."
+      },
+      "ph-container-loading": {
+        "caption": "تحميل حاوية كاملة في الصين",
+        "alt": "بضائع مغلّفة داخل حاوية وقائم رافعة شوكية بجانب الأبواب",
+        "detail": "مثال في بلد المنشأ. قارن الرحلات البحرية لنفس نوع الحاوية وتاريخ جاهزية البضاعة."
+      },
+      "manila-container-terminal": {
+        "caption": "محطة مانيلا الدولية للحاويات · 2024",
+        "alt": "رافعات رصيف وصفوف من الحاويات في محطة مانيلا الدولية للحاويات",
+        "detail": "صورة مرجعية للميناء. تحقّق من محطة التفريغ المحددة في تأكيد الحجز لدى الناقل."
+      },
+      "ph-receiving-check": {
+        "caption": "عدّ الكراتين عند الاستلام في المستودع",
+        "alt": "عاملة في المستودع تدوّن عدد الكراتين بجانب ميزان أرضي",
+        "detail": "مثال للاستلام. حدّد من يعدّ الكراتين ويوقّع على الاستلام وينسّق إعادة الحاوية الفارغة."
+      }
+    }
+  },
+  "pt": {
+    "credit": "Créditos da foto",
+    "adjustment": "Imagem redimensionada, exibida com recorte e convertida para WebP.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Carregamento de carga consolidada na China",
+        "alt": "Caixotes e paletes fixados dentro de um contêiner durante o carregamento",
+        "detail": "Exemplo na origem. Envie ao armazém de consolidação as dimensões e o peso bruto de cada palete ou caixote."
+      },
+      "southampton-terminal": {
+        "caption": "Terminal de contêineres de Southampton · 2023",
+        "alt": "Navio porta-contêineres e guindastes de cais no terminal de Southampton",
+        "detail": "Confirme o ponto de retirada do contêiner completo ou o armazém de desconsolidação da carga LCL."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Descarga com plataforma elevatória no destino",
+        "alt": "Operador com paleteira e palete carregado sobre a plataforma elevatória de um caminhão",
+        "detail": "Exemplo de descarga. Se não houver doca nem empilhadeira no local, confira o peso do palete e a possibilidade de usar uma plataforma elevatória."
+      },
+      "ph-container-loading": {
+        "caption": "Carregamento de contêiner completo na China",
+        "alt": "Mercadorias embaladas dentro de um contêiner, com o mastro de uma empilhadeira junto às portas",
+        "detail": "Exemplo na origem. Compare as saídas para o mesmo tipo de contêiner e a mesma data de disponibilidade da carga."
+      },
+      "manila-container-terminal": {
+        "caption": "Terminal Internacional de Contêineres de Manila · 2024",
+        "alt": "Guindastes de cais e fileiras de contêineres no terminal internacional de Manila",
+        "detail": "Referência do porto. Confira o terminal de descarga na confirmação de reserva da companhia marítima."
+      },
+      "ph-receiving-check": {
+        "caption": "Contagem de caixas na chegada ao armazém",
+        "alt": "Funcionária registra a quantidade de caixas ao lado de uma balança de piso",
+        "detail": "Exemplo de recebimento. Confirme quem conta as caixas, assina o comprovante e organiza a devolução do contêiner vazio."
+      }
+    }
+  },
+  "tr": {
+    "credit": "Fotoğraf bilgisi",
+    "adjustment": "Yeniden boyutlandırıldı, kırpılarak gösterildi ve WebP biçimine dönüştürüldü.",
+    "photos": {
+      "uk-groupage-loading": {
+        "caption": "Çin’de parsiyel yükleme",
+        "alt": "Yükleme sırasında konteynerin içindeki ahşap sandıklar ve sabitlenmiş paletler",
+        "detail": "Çıkış noktasından bir örnek. Her paletin veya sandığın ölçülerini ve brüt ağırlığını konsolidasyon deposuna bildirin."
+      },
+      "southampton-terminal": {
+        "caption": "Southampton konteyner terminali · 2023",
+        "alt": "Southampton terminalinde bir konteyner gemisi ve rıhtım vinçleri",
+        "detail": "Dolu konteynerin teslim alınacağı noktayı veya parsiyel yükün ayrıştırılacağı depoyu teyit edin."
+      },
+      "uk-receiving-liftgate": {
+        "caption": "Teslimat adresinde liftli araçla boşaltma",
+        "alt": "Kamyonun arka kaldırma platformunda transpalet kullanan bir çalışan ve yüklü palet",
+        "detail": "Boşaltma örneği. Tesiste rampa ya da forklift yoksa palet ağırlığını ve arka kaldırma platformunun uygunluğunu kontrol edin."
+      },
+      "ph-container-loading": {
+        "caption": "Çin’de tam konteyner yükleme",
+        "alt": "Konteyner içinde ambalajlı yük ve kapıların yanında forklift direği",
+        "detail": "Çıkış noktasından bir örnek. Seferleri aynı konteyner tipi ve yükün hazır olacağı aynı tarih için karşılaştırın."
+      },
+      "manila-container-terminal": {
+        "caption": "Manila Uluslararası Konteyner Terminali · 2024",
+        "alt": "Manila Uluslararası Konteyner Terminali’nde rıhtım vinçleri ve konteyner sıraları",
+        "detail": "Limanı gösteren referans fotoğraf. Rezervasyon onayında geminin boşaltma yapacağı terminali teyit edin."
+      },
+      "ph-receiving-check": {
+        "caption": "Depo tesliminde koli sayımı",
+        "alt": "Yer kantarının yanında koli adedini kaydeden depo çalışanı",
+        "detail": "Teslim alma örneği. Kolileri kimin sayacağını, teslim belgesini kimin imzalayacağını ve boş konteyner iadesini kimin ayarlayacağını teyit edin."
+      }
+    }
+  }
+}

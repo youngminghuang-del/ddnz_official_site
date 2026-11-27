@@ -18,7 +18,16 @@ type Decision = {
 };
 
 const decisions: Partial<Record<string, Partial<Record<string, Decision>>>> = {
-  kyrgyzstan: { zh: {
+  kyrgyzstan: { en: {
+    source: 'central_asia_route_builder',
+    title: 'One warehouse in Bishkek or split delivery to Osh?',
+    intro: 'Ask the carrier which crossing it proposes for your cargo, such as Irkeshtam or Torugart, and where the truck would change. Then price both receiving plans using the same shipment.',
+    options: [
+      {name:'One warehouse in Bishkek', handoff:'Give the warehouse address, unloading hours and receiving contact. Confirm whether the quote ends at a terminal or includes delivery to the warehouse.', charges:'Ask which charges cover border waiting, any truck change and unloading at the warehouse.', destination:'Kyrgyzstan · Bishkek', quoteNote:'Quote one Bishkek warehouse. Identify the planned border crossing, any truck change, waiting, final delivery and unloading.'},
+      {name:'Split delivery to Bishkek and Osh', handoff:'List carton marks, package counts, weights and receiving contacts for each city. Ask where the load would be split and how each delivery will be signed for.', charges:'Itemise sorting and handling, the second delivery leg and any separate unloading charge.', destination:'Kyrgyzstan · Bishkek / Osh', quoteNote:'Quote split delivery to Bishkek and Osh. Identify the split point, second delivery charges and proof of delivery for each city.'},
+    ],
+    note:'Ask the carrier to confirm the crossing and transfer plan for your cargo and ready date.',
+  }, zh: {
     source: 'central_asia_route_builder',
     title: '吉尔吉斯斯坦送货怎么选：比什凯克单仓还是分拨到奥什？',
     intro: '请承运商按同一批货比较伊尔克什坦、吐尔尕特或经哈萨克斯坦的备选线路，并注明计划口岸、换车地点和边境等待是否包含。',
@@ -28,7 +37,16 @@ const decisions: Partial<Record<string, Partial<Record<string, Decision>>>> = {
     ],
     note:'过境安排以承运商对实际起运地、货物和货好日的确认为准。',
   }},
-  tajikistan: { zh: {
+  tajikistan: { en: {
+    source: 'central_asia_route_builder',
+    title: 'All-road or rail-to-road delivery to Dushanbe or Khujand?',
+    intro: 'Use the same warehouse address and cargo dimensions for both quotes. Compare when the warehouse can receive the cargo and who takes responsibility at each handover.',
+    options: [
+      {name:'All-road to the warehouse', handoff:'Ask which countries and crossings the load would pass through. Confirm whether the same truck reaches the warehouse and whether it can enter the receiving yard.', charges:'Ask if border waiting, a truck change and unloading are included. Confirm the waiting allowance at delivery.', destination:'Tajikistan · Dushanbe / Khujand', quoteNote:'Quote all-road delivery to Dushanbe or Khujand. List transit countries, any truck change, waiting allowances and unloading scope.'},
+      {name:'Rail-to-road to the warehouse', handoff:'Ask for the last rail station, the point where the cargo is loaded onto a truck and who arranges collection. Give the trucker the warehouse access requirements.', charges:'Separate transfer handling, short-term storage and the final truck leg. Confirm who pays if collection is delayed.', destination:'Tajikistan · Dushanbe / Khujand', quoteNote:'Quote rail-to-road delivery to Dushanbe or Khujand. Name the last rail station, transfer point and receiving party. Itemise handling, storage and final trucking.'},
+    ],
+    note:'Confirm availability, handover points and charges against the actual shipment and address.',
+  }, zh: {
     source: 'central_asia_route_builder',
     title: '杜尚别或苦盏到仓：全程公路和铁转公怎么比？',
     intro: '把同一个最终地址写进两份询价。提前确认铁路与公路的交接地点、负责接货的一方，以及到中转点和送达仓库的费用差别。',
@@ -61,6 +79,7 @@ const decisions: Partial<Record<string, Partial<Record<string, Decision>>>> = {
 };
 
 const labels = {
+  en: {option:'Delivery option', handoff:'What to confirm at handover', charges:'Charges to itemise', quote:'Get a quote for this option', reference:'See route timing and sources'},
   zh: {option:'报价方案', handoff:'交接要确认什么', charges:'哪些费用要单列', quote:'按此方案询价', reference:'查看线路时效及来源'},
   es: {option:'Opción', handoff:'Qué confirmar para la entrega', charges:'Qué costos separar', quote:'Cotizar esta opción', reference:'Ver plazos y fuentes de la ruta'},
 };
@@ -70,8 +89,8 @@ export function routeDecision(country: string, locale: string) {
 }
 
 export default function RouteDecision({decision, country, locale}: {decision: Decision; country: string; locale: string}) {
-  const text = locale === 'zh' ? labels.zh : labels.es;
-  const prefix = locale === 'zh' ? '/zh-cn' : '/es';
+  const text = locale === 'en' ? labels.en : locale === 'zh' ? labels.zh : labels.es;
+  const prefix = locale === 'en' ? '' : locale === 'zh' ? '/zh-cn' : '/es';
   return <section className="route-depth latin-arrival" id="freight-transit-reference" aria-labelledby="freight-decision-heading" data-route-decision>
     <div className="route-depth-inner">
       <h2 id="freight-decision-heading">{decision.title}</h2>

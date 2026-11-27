@@ -1166,7 +1166,7 @@ export default function ShippingLatinAmerica() {
       {/* Main Content Sections */}
       <main className="relative z-10">
 
-        {<RoutePlanningDepth country={selectedCountry} locale={activeLang}/>}
+        {<RoutePlanningDepth country={selectedCountry} locale={activeLang} countryPage={location.pathname.replace(/\/$/, '') === buildShippingCountryPath(location.pathname, selectedCountry)}/>}
         <MarketSourcingHandoff compact destination={countryLabel(selectedCountry)} />
 
         <LatinAmericaFreightDepth

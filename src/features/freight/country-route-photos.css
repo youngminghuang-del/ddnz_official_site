@@ -1,0 +1,52 @@
+.freight-central-cases--three { scroll-margin-top: 145px; }
+@media (min-width: 761px) {
+ .freight-central-cases.freight-central-cases--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.candidate-route-photos {
+ display: grid;
+ grid-template-columns: repeat(3, minmax(0, 1fr));
+ align-items: start;
+ gap: clamp(12px, 2vw, 24px);
+ margin: 28px 0;
+ scroll-margin-top: 145px;
+}
+.candidate-route-photos--pair {
+ grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.candidate-route-photos figure {
+ margin: 0;
+ min-width: 0;
+ overflow: hidden;
+ border: 1px solid var(--candidate-line, #dce2e9);
+ border-radius: 12px;
+ background: #fff;
+}
+.candidate-route-photos img {
+ display: block;
+ width: 100%;
+ height: auto;
+ aspect-ratio: 4 / 3;
+ object-fit: cover;
+ background: #eef1f5;
+}
+.candidate-route-photos--pair img { aspect-ratio: 16 / 10; }
+.candidate-route-photos figcaption {
+ padding: 14px 16px 16px;
+ font-size: 0.875rem;
+ line-height: 1.55;
+}
+.candidate-route-photos figcaption p {
+ margin: 5px 0 0;
+ color: #526278;
+}
+.candidate-route-photos details {
+ margin-top: 6px;
+ font-size: 0.75rem;
+ overflow-wrap: anywhere;
+}
+.candidate-route-photos summary { cursor: pointer; color: #425570; }
+.candidate-route-photos details a { text-decoration: underline; }
+@media (max-width: 640px) {
+ .candidate-route-photos { grid-template-columns: 1fr; }
+}

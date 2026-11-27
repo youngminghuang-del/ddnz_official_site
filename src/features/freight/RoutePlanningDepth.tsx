@@ -10,6 +10,7 @@ import FreightRatePreview from './rates/FreightRatePreview';
 import {qualifyRouteCopy} from './qualifiedRouteCopy';
 import {remainingRouteCopy} from './remainingRouteCopy';
 import RouteDecision, {routeDecision} from './RouteDecision';
+import RouteDecisionPhotos from './RouteDecisionPhotos';
 import southAsiaCopy from './route-locales/india-pakistan.json';
 import westAfricaCopy from './route-locales/ghana-nigeria.json';
 import destinationCopy from './route-locales/mexico-uae.json';
@@ -49,7 +50,7 @@ const ui: Record<string, string[]> = {
  ar: ['المسارات ومدد النقل','تساعد النطاقات على مقارنة الخطط؛ يؤكّد عرض السعر نقطة المغادرة والرحلة ونطاق التسليم.','حسب المسار','سكك حديدية / نقل بري','ما الذي يؤثر في موعد التسليم في طشقند؟','تجهيز المسار والمستندات']
 };
 export function routePlanningUi(locale: string) { return ui[locale] || ui.en; }
-export default function RoutePlanningDepth({country,locale}:{country:string;locale:string}) {
+export default function RoutePlanningDepth({country,locale,countryPage=false}:{country:string;locale:string;countryPage?:boolean}) {
  const hasTransit=hasLatinArrivalPlan(country)||hasCountryTransitPlan(country);
  const extra: Record<string, Record<string, RouteCopy>> = destinationCopy;
  const west: Record<string, Record<string, RouteCopy>> = westAfricaCopy;
@@ -69,5 +70,5 @@ export default function RoutePlanningDepth({country,locale}:{country:string;loca
  const destinationMap = countryGateways[country]?.placement === 'route-planning'
   ? <div id="destination-ports" className="route-depth-destination-map"><CountryGatewayMap country={country} locale={locale as Language} destination={localizedDestination(country,locale)}/></div>
   : null;
- return <>{decision && <RouteDecision decision={decision} country={country} locale={locale}/>} {hasCountryTransitPlan(country) && <CountryTransitPlanner country={country} locale={locale}/>} {hasLatinArrivalPlan(country) && <LatinArrivalPlanner country={country} locale={locale}/>}{destinationMap}{hasCountryTransitPlan(country)?<><FreightRatePreview context={country} locale={locale}/>{!decision && <details className="frp-existing"><summary>{countryTransitUi(locale).preparation}</summary>{content}</details>}</>:<FreightRatePreview context={country} locale={locale}>{!decision && content}</FreightRatePreview>}<MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
+ return <>{decision ? <RouteDecision decision={decision} country={country} locale={locale}/> : countryPage && <RouteDecisionPhotos country={country} locale={locale} standalone/>} {hasCountryTransitPlan(country) && <CountryTransitPlanner country={country} locale={locale}/>} {hasLatinArrivalPlan(country) && <LatinArrivalPlanner country={country} locale={locale}/>}{destinationMap}{hasCountryTransitPlan(country)?<><FreightRatePreview context={country} locale={locale}/>{!decision && <details className="frp-existing"><summary>{countryTransitUi(locale).preparation}</summary>{content}</details>}</>:<FreightRatePreview context={country} locale={locale}>{!decision && content}</FreightRatePreview>}<MarketPreparationDepth country={country} locale={locale}/><DoorDeliveryLink locale={locale} context={country}/></>;
 }
