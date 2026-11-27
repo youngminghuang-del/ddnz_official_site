@@ -1,0 +1,198 @@
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.ddnzglobal.com/#organization",
+      "name": "DDNZ Global Trade Co., Ltd.",
+      "url": "https://www.ddnzglobal.com/"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#webpage",
+      "name": "ماكينة ثلج لمقهى سعودي: إنتاج أعلى أم خزان أكبر؟",
+      "inLanguage": "ar",
+      "description": "اختيار ماكينة ثلج أو خزان أكبر لمقهى في السعودية بأرقام الذروة: عدد الأكواب، ووزن الثلج لكل كوب، ومخزون البداية، والثلج المضاف.",
+      "breadcrumb": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#breadcrumb"
+      },
+      "mainEntity": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#article"
+      },
+      "primaryImageOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-a"
+      },
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/",
+      "reviewedBy": {
+        "@type": "Person",
+        "name": "Huang Mathew"
+      }
+    },
+    {
+      "@type": "BlogPosting",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#article",
+      "headline": "ماكينة ثلج لمقهى سعودي: إنتاج أعلى أم خزان أكبر؟",
+      "inLanguage": "ar",
+      "description": "اختيار ماكينة ثلج أو خزان أكبر لمقهى في السعودية بأرقام الذروة: عدد الأكواب، ووزن الثلج لكل كوب، ومخزون البداية، والثلج المضاف.",
+      "creativeWorkStatus": "Published",
+      "publisher": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      },
+      "mainEntityOfPage": {
+        "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#webpage"
+      },
+      "citation": [
+        "https://secure.hoshizakiamerica.com/docs/manuals/KM-350_520_660M_J_serv.pdf",
+        "https://portal.scotsman-ice.com/ResourceCenter/Files/GetFile/SIS-SS-PE-MC0322_0126.pdf/1153",
+        "https://www.hoshizakiamerica.com/ice-machines/crescent-cuber-series/modular/",
+        "https://sfda.gov.sa/sites/default/files/2020-12/FoodHygieneRequirementsEn.pdf"
+      ],
+      "image": [
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-a"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-e"
+        },
+        {
+          "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-b"
+        }
+      ],
+      "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/",
+      "datePublished": "2026-11-27T10:36:13+08:00",
+      "dateModified": "2026-11-27T10:36:13+08:00",
+      "author": {
+        "@id": "https://www.ddnzglobal.com/#organization"
+      }
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-a",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-80fa-ice-machine.webp",
+      "description": "ماكينة ثلج HZB-80FA بغطاء مفتوح فوق فتحة أخذ الثلج",
+      "width": 1200,
+      "height": 900,
+      "creditText": "DDNZ 产品目录图",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-80fa-ice-machine.webp"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-e",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/counter-ice-scoop.jpg",
+      "description": "مغرفة تضع مكعبات الثلج في وعاء معدني عند المنضدة",
+      "width": 1000,
+      "height": 1500,
+      "creditText": "Antoni Shkraba · Pexels",
+      "license": "https://www.pexels.com/license/",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/counter-ice-scoop.jpg"
+    },
+    {
+      "@type": "ImageObject",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#photo-b",
+      "contentUrl": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-250-modular-ice-machine.webp",
+      "description": "رأس ماكينة الثلج HZB-250 فوق خزان الثلج المنفصل",
+      "width": 1200,
+      "height": 900,
+      "creditText": "DDNZ 产品目录图",
+      "url": "https://www.ddnzglobal.com/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-250-modular-ice-machine.webp"
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#faq",
+      "inLanguage": "ar",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "الماكينة مكتوب عليها 100 كغ في اليوم. هل تكفي لساعتين؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اطلب بيانات الموديل عند حرارة الهواء والماء في موقعك، ثم راقب وقت سقوط الدفعات خلال الساعتين. قارن كمية الثلج التي تصل قبل كل فترة سحب مع المخزون الموجود عند بدء الذروة."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "الخزان مكتوب عليه 20 كغ. هل يحقق هدف 19 كغ في المثال؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "اطلب من المورد وزن الثلج القابل للسحب عند نقطة توقف حساس الامتلاء باستخدام شكل الثلج الذي ستشغّله. أعد القياس بعد فترة الانتظار المعتادة قبل الذروة ثم قارن الكمية المتبقية بهدف 19 كغ."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "لماذا ينفد الثلج قبل انتهاء نصف الساعة رغم أن الرصيد المحسوب موجب؟",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "راجع وقت الطلبات ووقت وصول الدفعة. إذا وصل الثلج في آخر الفترة، فقد يظل مجموع النصف ساعة موجبًا رغم نفاد الرصيد قبل وصوله. قسّم الفترة إلى مقاطع أقصر أو سجّل السحب عند كل دفعة."
+          }
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-table",
+      "name": "جدول اختيار الماكينة والخزان وقت الذروة",
+      "numberOfItems": 5,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "15:00–15:30",
+          "description": "30 · 180 · 12 · 3 · 5.4 · 9.6",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-1"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "15:30–16:00",
+          "description": "50 · 180 · 9.6 · 2 · 9.0 · 2.6",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-2"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "16:00–16:30",
+          "description": "40 · 180 · 2.6 · 3 · 7.2 · −1.6",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-3"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "16:30–17:00",
+          "description": "30 · 180 · −1.6 · 2 · 5.4 · −5.0",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-4"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "إجمالي الساعتين",
+          "description": "150 · 180 · 12 · 10 · 27.0 · −5.0",
+          "url": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#decision-5"
+        }
+      ]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "DDNZ Global",
+          "item": "https://www.ddnzglobal.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "المدونة",
+          "item": "https://www.ddnzglobal.com/ar/blog/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "ماكينة ثلج لمقهى سعودي: إنتاج أعلى أم خزان أكبر؟",
+          "item": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/"
+        }
+      ]
+    }
+  ]
+}

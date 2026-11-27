@@ -394,6 +394,25 @@
       ],
       "faq_count": 0,
       "item_list_count": 5
+    },
+    {
+      "slug": "saudi-cafe-ice-machine-vs-storage-bin",
+      "canonical": "https://www.ddnzglobal.com/ar/blog/saudi-cafe-ice-machine-vs-storage-bin/",
+      "language": "ar",
+      "notion_page_id": "425eac33-2618-818a-a093-ea866188ea58",
+      "release_file": "src/data/saudiCafeIceStorageRelease.json",
+      "schema_file": "src/data/saudi-cafe-ice-machine-vs-storage-bin-schema.json",
+      "reviewer": "Huang Mathew",
+      "publication_authorized": true,
+      "image_rights_confirmed": true,
+      "cover": "/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-80fa-ice-machine.webp",
+      "images": [
+        "/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-80fa-ice-machine.webp",
+        "/images/posts/saudi-cafe-ice-machine-vs-storage-bin/hzb-250-modular-ice-machine.webp",
+        "/images/posts/saudi-cafe-ice-machine-vs-storage-bin/counter-ice-scoop.jpg"
+      ],
+      "faq_count": 3,
+      "item_list_count": 5
     }
   ]
 }
